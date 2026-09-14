@@ -55,6 +55,9 @@ interface LearningDao {
     @Query("SELECT * FROM spaced_repetition WHERE nextReviewTimestamp <= :currentTimestamp AND isMastered = 0")
     suspend fun getDueReviews(currentTimestamp: Long): List<SpacedRepetitionItemEntity>
 
+    @Query("SELECT * FROM spaced_repetition WHERE conceptId = :conceptId LIMIT 1")
+    suspend fun getRepetitionById(conceptId: String): SpacedRepetitionItemEntity?
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertOrUpdateRepetition(item: SpacedRepetitionItemEntity)
 
