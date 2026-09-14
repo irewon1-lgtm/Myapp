@@ -1,0 +1,164 @@
+# Acceptance Tests
+
+기존 기능 Acceptance Test 65개. 아래 `AT-036-X01~X60` 및 `AT-036-C01~C25`는 이미 요구된 극한 60개/CLEAN 25개를 빠짐없이 실행·추적하기 위한 AT-036 하위 시험이며, 새로운 기능 범위를 추가하지 않는다.
+
+- AT-001 [MUST] R001 Scope: 초급+중급만 구현 — 결과는 PASS/FAIL/NOT-RUN 중 하나와 증거 경로를 기록한다.
+- AT-002 [MUST] R002 Purpose: 취업용이 아닌 미래 기술 Power User 훈련 — 결과는 PASS/FAIL/NOT-RUN 중 하나와 증거 경로를 기록한다.
+- AT-003 [MUST] R003 Learning: 암기+읽기+수정+직접작성+디버깅+AI협업 — 결과는 PASS/FAIL/NOT-RUN 중 하나와 증거 경로를 기록한다.
+- AT-004 [MUST] R004 Learning: 간격 반복 암기 — 결과는 PASS/FAIL/NOT-RUN 중 하나와 증거 경로를 기록한다.
+- AT-005 [MUST] R005 Learning: 개인 오류 노트 — 결과는 PASS/FAIL/NOT-RUN 중 하나와 증거 경로를 기록한다.
+- AT-006 [MUST] R006 Learning: 설명하기 훈련 — 결과는 PASS/FAIL/NOT-RUN 중 하나와 증거 경로를 기록한다.
+- AT-007 [MUST] R007 Learning: AI 오답 판별 훈련 — 결과는 PASS/FAIL/NOT-RUN 중 하나와 증거 경로를 기록한다.
+- AT-008 [MUST] R008 Practice: Python 실제 실행 — 결과는 PASS/FAIL/NOT-RUN 중 하나와 증거 경로를 기록한다.
+- AT-009 [MUST] R009 Practice: HTML/CSS/JS 실제 미리보기 — 결과는 PASS/FAIL/NOT-RUN 중 하나와 증거 경로를 기록한다.
+- AT-010 [MUST] R010 Practice: SQL 실제 실행 — 결과는 PASS/FAIL/NOT-RUN 중 하나와 증거 경로를 기록한다.
+- AT-011 [MUST] R011 Practice: TypeScript 실습 — 결과는 PASS/FAIL/NOT-RUN 중 하나와 증거 경로를 기록한다.
+- AT-012 [MUST] R012 Practice: 자동채점 — 결과는 PASS/FAIL/NOT-RUN 중 하나와 증거 경로를 기록한다.
+- AT-013 [MUST] R013 Practice: 3단계 힌트 — 결과는 PASS/FAIL/NOT-RUN 중 하나와 증거 경로를 기록한다.
+- AT-014 [MUST] R014 AI: 혼자/힌트/AI협업 3모드 — 결과는 PASS/FAIL/NOT-RUN 중 하나와 증거 경로를 기록한다.
+- AT-015 [MUST] R015 AI: 초급 AI 대신작성 제한 — 결과는 PASS/FAIL/NOT-RUN 중 하나와 증거 경로를 기록한다.
+- AT-016 [MUST] R016 AI: 중급 AI 협업 해금 — 결과는 PASS/FAIL/NOT-RUN 중 하나와 증거 경로를 기록한다.
+- AT-017 [MUST] R017 Project: 초급 최종 프로젝트 — 결과는 PASS/FAIL/NOT-RUN 중 하나와 증거 경로를 기록한다.
+- AT-018 [MUST] R018 Project: 중급 최종 프로젝트 — 결과는 PASS/FAIL/NOT-RUN 중 하나와 증거 경로를 기록한다.
+- AT-019 [MUST] R019 Project: 실전 제작 모드 — 결과는 PASS/FAIL/NOT-RUN 중 하나와 증거 경로를 기록한다.
+- AT-020 [MUST] R020 UI: 고급스럽고 전문적이고 차분한 UI — 결과는 PASS/FAIL/NOT-RUN 중 하나와 증거 경로를 기록한다.
+- AT-021 [MUST] R021 UI: 명확한 섹션 구분 — 결과는 PASS/FAIL/NOT-RUN 중 하나와 증거 경로를 기록한다.
+- AT-022 [MUST] R022 UI: 360px급 작은 화면 가로넘침 최소화 — 결과는 PASS/FAIL/NOT-RUN 중 하나와 증거 경로를 기록한다.
+- AT-023 [SHOULD] R023 UI: 다크/라이트 가독성 — 결과는 PASS/FAIL/NOT-RUN 중 하나와 증거 경로를 기록한다.
+- AT-024 [MUST] R024 Accessibility: 충분한 글자와 터치영역 — 결과는 PASS/FAIL/NOT-RUN 중 하나와 증거 경로를 기록한다.
+- AT-025 [MUST] R025 Data: 진도 저장 — 결과는 PASS/FAIL/NOT-RUN 중 하나와 증거 경로를 기록한다.
+- AT-026 [MUST] R026 Data: 복습 일정 저장 — 결과는 PASS/FAIL/NOT-RUN 중 하나와 증거 경로를 기록한다.
+- AT-027 [MUST] R027 Data: 오류노트 저장 — 결과는 PASS/FAIL/NOT-RUN 중 하나와 증거 경로를 기록한다.
+- AT-028 [MUST] R028 Resilience: 앱 재실행 후 상태 유지 — 결과는 PASS/FAIL/NOT-RUN 중 하나와 증거 경로를 기록한다.
+- AT-029 [MUST] R029 Resilience: 인터넷 없음 처리 — 결과는 PASS/FAIL/NOT-RUN 중 하나와 증거 경로를 기록한다.
+- AT-030 [MUST] R030 Resilience: AI/API 실패 처리 — 결과는 PASS/FAIL/NOT-RUN 중 하나와 증거 경로를 기록한다.
+- AT-031 [MUST] R031 Security: 코드 실행 샌드박스 — 학습자 코드가 실제 앱 DB/API Key/private 파일에 접근하지 못하고 외부 네트워크가 기본 차단되며 timeout/메모리·출력 제한이 작동하는지 escape test 증거를 기록한다.
+- AT-032 [MUST] R032 Security: API Key 하드코딩·평문 저장 금지 — 바이너리/로그/평문 SharedPreferences·일반 파일에 Key가 없고, 영구 저장 시 Keystore 기반 보호 저장 또는 세션 전용 보관임을 증명한다.
+- AT-033 [MUST] R033 Security: 민감정보 로그 금지 — 결과는 PASS/FAIL/NOT-RUN 중 하나와 증거 경로를 기록한다.
+- AT-034 [MUST] R034 Architecture: 전체 원격 WebView 래퍼 금지 — 결과는 PASS/FAIL/NOT-RUN 중 하나와 증거 경로를 기록한다.
+- AT-035 [SHOULD] R035 Architecture: 모듈/용량 최적화 검토 — 결과는 PASS/FAIL/NOT-RUN 중 하나와 증거 경로를 기록한다.
+- AT-036 [MUST] R036 Testing: Unit/UI/통합 테스트 — 결과는 PASS/FAIL/NOT-RUN 중 하나와 증거 경로를 기록한다.
+- AT-037 [MUST] R037 Evidence: 실제 테스트 로그 — 결과는 PASS/FAIL/NOT-RUN 중 하나와 증거 경로를 기록한다.
+- AT-038 [MUST] R038 Evidence: APK SHA-256 — 최종 검증 APK 1개의 경로·크기·SHA-256과 그 동일 APK의 설치 명령/package/version/실행·스크린샷 증거를 하나의 체인으로 기록한다.
+- AT-039 [MUST] R039 Evidence: 실제 실행 스크린샷 — 결과는 PASS/FAIL/NOT-RUN 중 하나와 증거 경로를 기록한다.
+- AT-040 [MUST] R040 Evidence: 미완료 숨김 금지 — 결과는 PASS/FAIL/NOT-RUN 중 하나와 증거 경로를 기록한다.
+- AT-041 [MUST] R041 Delivery: APK — 결과는 PASS/FAIL/NOT-RUN 중 하나와 증거 경로를 기록한다.
+- AT-042 [MUST] R042 Delivery: 전체 소스 ZIP — 결과는 PASS/FAIL/NOT-RUN 중 하나와 증거 경로를 기록한다.
+- AT-043 [MUST] R043 Delivery: README/BUILD/TEST — 결과는 PASS/FAIL/NOT-RUN 중 하나와 증거 경로를 기록한다.
+- AT-044 [MUST] R044 Delivery: HANDOFF — 결과는 PASS/FAIL/NOT-RUN 중 하나와 증거 경로를 기록한다.
+- AT-045 [MUST] R045 Truthfulness: 읽지 않은 것/안 한 것 완료 주장 금지 — SPEC_CLEAN_PASS와 앱 COMPLETE를 별도 판정하고 미실행 항목을 앱 PASS로 승격하지 않는다.
+- AT-046 [MUST] 앱 첫 실행 후 3분 이내 초급 첫 레슨 시작 가능 — 실제 실행 증거 필요.
+- AT-047 [MUST] 코드 실행 무한루프 타임아웃 — 실제 실행 증거 필요.
+- AT-048 [MUST] 잘못된 Python 문법 오류 메시지 표시 — 실제 실행 증거 필요.
+- AT-049 [MUST] 잘못된 SQL 문법 오류 메시지 표시 — 실제 실행 증거 필요.
+- AT-050 [MUST] 잘못된 JSON 예제 판별 — 실제 실행 증거 필요.
+- AT-051 [MUST] AI 응답 지연/실패 시 학습 진도 손상 없음 — 실제 실행 증거 필요.
+- AT-052 [MUST] 강제 종료 후 마지막 레슨/진도 복원 — 실제 실행 증거 필요.
+- AT-053 [MUST] 복습 예정 100개에서 앱 멈춤 없음 — 실제 실행 증거 필요.
+- AT-054 [MUST] 긴 한국어 텍스트에서 레이아웃 깨짐 없음 — 실제 실행 증거 필요.
+- AT-055 [MUST] 작은 화면에서 주요 버튼 잘림 없음 — 실제 실행 증거 필요.
+- AT-056 [MUST] 다크모드 대비 확인 — 실제 실행 증거 필요.
+- AT-057 [MUST] 초급에서는 전체코드 자동작성 기능이 기본 비활성/제한 — 실제 실행 증거 필요.
+- AT-058 [MUST] 중급에서는 AI협업 단계별 해금 — 실제 실행 증거 필요.
+- AT-059 [MUST] 오답 누적 후 오류노트 자동 반영 — 실제 실행 증거 필요.
+- AT-060 [MUST] 설명하기 문제에서 핵심 개념 누락 피드백 — 실제 실행 증거 필요.
+- AT-061 [MUST] 가짜 AI 오답 문제에서 사용자가 오류를 찾을 수 있는 UX — 실제 실행 증거 필요.
+- AT-062 [MUST] Git 복구 실습 흐름 — 실제 실행 증거 필요.
+- AT-063 [MUST] 초급 프로젝트 완주 가능 — 실제 실행 증거 필요.
+- AT-064 [MUST] 중급 프로젝트 핵심 흐름 완주 가능 — 실제 실행 증거 필요.
+- AT-065 [MUST] 최종 보고서에 FAIL 항목 숨김 없음 — 실제 실행 증거 필요.
+
+---
+
+# 필수 추적 하위 시험 — 극한 60 + CLEAN 25
+
+아래 85개는 기존 요구의 실행 누락을 막기 위한 추적 ID다. 각 항목마다 `PASS/FAIL/NOT-RUN`, 실행 절차/명령, 기대 결과, 실제 결과, 증거 경로를 남긴다. 하나라도 기록이 없으면 앱 COMPLETE 금지.
+
+## 극한 시뮬레이션 60개 → AT-036 하위 시험
+- AT-036-X01 [MUST] 극한 1: 완전 초보 사용자가 첫 실행.
+- AT-036-X02 [MUST] 극한 2: 사용자가 변수와 함수를 계속 혼동.
+- AT-036-X03 [MUST] 극한 3: Python 문법을 일부러 틀림.
+- AT-036-X04 [MUST] 극한 4: 무한루프 코드.
+- AT-036-X05 [MUST] 극한 5: JSON 오류.
+- AT-036-X06 [MUST] 극한 6: SQL 문법 오류.
+- AT-036-X07 [MUST] 극한 7: GET/POST 혼동.
+- AT-036-X08 [MUST] 극한 8: API 응답 없음.
+- AT-036-X09 [MUST] 극한 9: 인터넷 차단.
+- AT-036-X10 [MUST] 극한 10: AI 서비스 차단.
+- AT-036-X11 [MUST] 극한 11: API Key 없음.
+- AT-036-X12 [MUST] 극한 12: 학습팩 다운로드 중단.
+- AT-036-X13 [MUST] 극한 13: 앱 강제 종료.
+- AT-036-X14 [MUST] 극한 14: 재실행 후 진도 복원.
+- AT-036-X15 [MUST] 극한 15: 동일 문제를 여러 번 틀림.
+- AT-036-X16 [MUST] 극한 16: 오류노트 반영 확인.
+- AT-036-X17 [MUST] 극한 17: 힌트 없이 정답 요청.
+- AT-036-X18 [MUST] 극한 18: AI 전체코드 요구.
+- AT-036-X19 [MUST] 극한 19: 초급에서 AI 대신작성 제한 확인.
+- AT-036-X20 [MUST] 극한 20: 중급에서 AI 협업 해금 확인.
+- AT-036-X21 [MUST] 극한 21: 긴 한국어 설명.
+- AT-036-X22 [MUST] 극한 22: 작은 화면.
+- AT-036-X23 [MUST] 극한 23: 큰 글씨 설정.
+- AT-036-X24 [MUST] 극한 24: 다크모드.
+- AT-036-X25 [MUST] 극한 25: 코드 영역 긴 줄.
+- AT-036-X26 [MUST] 극한 26: 화면 가로 넘침.
+- AT-036-X27 [MUST] 극한 27: 복습 예정 문제 100개.
+- AT-036-X28 [MUST] 극한 28: 학습 진도 100+ 레슨.
+- AT-036-X29 [MUST] 극한 29: DB 데이터 누적.
+- AT-036-X30 [MUST] 극한 30: 잘못된 외부 API JSON.
+- AT-036-X31 [MUST] 극한 31: Rate Limit.
+- AT-036-X32 [MUST] 극한 32: 네트워크 지연.
+- AT-036-X33 [MUST] 극한 33: 앱 재설치 전 데이터 처리 정책 확인.
+- AT-036-X34 [MUST] 극한 34: 사용자 개인정보 입력 시 경고.
+- AT-036-X35 [MUST] 극한 35: 피싱 학습 문제.
+- AT-036-X36 [MUST] 극한 36: Deepfake 판별 문제.
+- AT-036-X37 [MUST] 극한 37: AI 환각 판별 문제.
+- AT-036-X38 [MUST] 극한 38: Git 복구 시뮬레이션.
+- AT-036-X39 [MUST] 극한 39: 프로젝트 생성 중 오류.
+- AT-036-X40 [MUST] 극한 40: 코드 실행 타임아웃.
+- AT-036-X41 [MUST] 극한 41: 실행 중 앱 백그라운드 이동.
+- AT-036-X42 [MUST] 극한 42: 배터리/메모리 과도 사용 점검.
+- AT-036-X43 [MUST] 극한 43: 접근성 label.
+- AT-036-X44 [MUST] 극한 44: 버튼 터치 영역.
+- AT-036-X45 [MUST] 극한 45: 초급 최종 프로젝트.
+- AT-036-X46 [MUST] 극한 46: 중급 최종 프로젝트.
+- AT-036-X47 [MUST] 극한 47: 진도 완료 판정.
+- AT-036-X48 [MUST] 극한 48: 같은 계정/기기 재실행 일관성.
+- AT-036-X49 [MUST] 극한 49: 빈 입력값.
+- AT-036-X50 [MUST] 극한 50: 매우 긴 입력값.
+- AT-036-X51 [MUST] 극한 51: SQL Injection 개념상 안전성.
+- AT-036-X52 [MUST] 극한 52: 악성 HTML/JS 샌드박스.
+- AT-036-X53 [MUST] 극한 53: 임의 파일 접근 시도.
+- AT-036-X54 [MUST] 극한 54: 임의 네트워크 접근 시도.
+- AT-036-X55 [MUST] 극한 55: AI가 틀린 코드 제공.
+- AT-036-X56 [MUST] 극한 56: 사용자가 AI 오답을 수정.
+- AT-036-X57 [MUST] 극한 57: 실전 제작 프로젝트 난이도 과대.
+- AT-036-X58 [MUST] 극한 58: 프로젝트 자동 축소.
+- AT-036-X59 [MUST] 극한 59: 없는 기능을 AI가 있다고 주장하는 상황.
+- AT-036-X60 [MUST] 극한 60: 테스트 실패가 있는데 완료로 표시하지 않는지 확인.
+
+## CLEAN 25개 → AT-036 하위 시험
+- AT-036-C01 [MUST] CLEAN-01 요구사항: 모든 요구사항이 구현됨/의도적 제외/미완료 중 하나로 명시.
+- AT-036-C02 [MUST] CLEAN-02 가짜 완료 금지: 증거 없는 PASS 없음.
+- AT-036-C03 [MUST] CLEAN-03 빌드: Release APK 실제 생성.
+- AT-036-C04 [MUST] CLEAN-04 설치: 에뮬레이터 또는 사용 가능한 Android 실행환경에서 실제 설치.
+- AT-036-C05 [MUST] CLEAN-05 실행: 첫 화면 실제 실행.
+- AT-036-C06 [MUST] CLEAN-06 재실행: 앱 종료 후 재실행 및 진도 유지.
+- AT-036-C07 [MUST] CLEAN-07 코드실행: 지원 언어별 실제 실행 증거.
+- AT-036-C08 [MUST] CLEAN-08 자동채점: 정답/오답 각각 검증.
+- AT-036-C09 [MUST] CLEAN-09 힌트: 3단계 힌트와 정답 공개 흐름.
+- AT-036-C10 [MUST] CLEAN-10 데이터: 진도/오류/복습 저장.
+- AT-036-C11 [MUST] CLEAN-11 복구: DB/상태 기본 복구 또는 안전 실패.
+- AT-036-C12 [MUST] CLEAN-12 UI: 360px 수준에서 주요 화면 가로 넘침 점검.
+- AT-036-C13 [MUST] CLEAN-13 가독성: 텍스트 과밀/작은 폰트/구분 불명확 영역 점검.
+- AT-036-C14 [MUST] CLEAN-14 접근성: 기본 label/터치영역 확인.
+- AT-036-C15 [MUST] CLEAN-15 오프라인: 기본 학습 접근 가능 여부.
+- AT-036-C16 [MUST] CLEAN-16 네트워크 실패: AI/API 오류 UX.
+- AT-036-C17 [MUST] CLEAN-17 보안: Key 하드코딩/민감로그/샌드박스 확인.
+- AT-036-C18 [MUST] CLEAN-18 성능: 앱 시작/주요 화면/코드 실행 체감 지연 기록.
+- AT-036-C19 [MUST] CLEAN-19 용량: APK/설치 크기 기록.
+- AT-036-C20 [MUST] CLEAN-20 소스: 재현 가능한 전체 소스 포함.
+- AT-036-C21 [MUST] CLEAN-21 테스트 로그: 실제 명령/결과 로그 포함.
+- AT-036-C22 [MUST] CLEAN-22 해시: APK 및 주요 산출물 SHA-256 기록.
+- AT-036-C23 [MUST] CLEAN-23 스크린샷: 실제 실행 화면 캡처.
+- AT-036-C24 [MUST] CLEAN-24 미완료: 남은 항목 숨기지 않음.
+- AT-036-C25 [MUST] CLEAN-25 재개 가능: 다른 작업자가 이어갈 수 있는 HANDOFF 포함.
