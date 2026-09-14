@@ -1,30 +1,42 @@
 # Test Instructions
 
-## 유닛 테스트 및 문제 엔진 검증
+## 자동 검증 명령
 
 ```bash
-./gradlew testDebugUnitTest
+./gradlew testDebugUnitTest --stacktrace
+./gradlew assembleDebug --stacktrace
 ```
 
-### 테스트 항목
-1. `SandboxedExecutionEngineTest`:
-   - Python 코드 실행 성공 및 산출물 검증
-   - 3초 타임아웃 / 무한루프 차단 검증
-   - SQL 샌드박스 조회 검증
-   - Security Escape Test 1: 앱 DB `/data/data/com.futuretech.poweruser/databases/app.db` 접근 차단 확인
-   - Security Escape Test 2: 외부 네트워크 호출 `import requests` 차단 확인
-2. `CurriculumDataRepositoryTest`:
-   - 초급 8개, 중급 10개 레슨 데이터 완전성 검증
-   - 힌트 3단계 및 AI 오답 옵션 유효성 검증
-3. `QuizEngineTest`:
-   - 커리큘럼 원문에 `[ 정답 ]` 형태로 들어 있던 답을 문제 화면에서 숨기는지 검증
-   - `환각 / Hallucination` 같은 복수 정답 허용 검증
-   - 디버깅 정답 비교 시 공백·주석 차이를 무시하고 실제 수정값을 비교하는지 검증
+## 현재 자동 테스트 범위
 
-## 빌드 검증
+1. `SandboxedExecutionEngineTest`
+   - Python 학습용 실행기 성공/오류
+   - 무한루프/시간 제한
+   - SQL 연습 DB
+   - 앱 DB/KeyStore/민감 경로 접근 차단
+   - 임의 외부 네트워크 호출 차단
 
-```bash
-./gradlew assembleDebug
-```
+2. `CurriculumDataRepositoryTest`
+   - 초급 **40개** 마이크로 레슨
+   - 중급 **50개** 마이크로 레슨
+   - 초급 8모듈 / 중급 10모듈
+   - 각 모듈 Level 1→5 정확히 존재
+   - 레슨 ID/순서 중복 없음
+   - 모든 레슨에 설명, 목표, 코드, 실습, 빈칸, 디버깅, AI 판별 문제, 설명 키워드 포함
+   - 최소 예상 학습시간 값 검증
 
-`fix/problem-engine-v2` 브랜치에는 위 두 명령을 실행하는 GitHub Actions 검증 워크플로도 포함되어 있습니다.
+3. `QuizEngineTest`
+   - 빈칸 정답이 문제 화면에서 숨겨지는지
+   - 복수 허용 정답 채점
+   - 코드 채점 시 공백/주석 정규화
+   - 자기 설명이 단순 글자 수가 아니라 핵심개념 포함률을 만족해야 통과하는지
+   - 짧은 키워드 나열과 길기만 한 무관 문장은 FAIL 처리
+
+## 최근 실제 CI 증거
+
+최신 `fix/problem-engine-v2` head `3bb133dc4d59b6763074dc96126b574ea29a9282`에 대해 GitHub Actions run **34909167948**에서:
+
+- `testDebugUnitTest` — **PASS**
+- `assembleDebug` — **PASS**
+
+이 결과는 컴파일/Unit Test/Debug APK 빌드 검증이며, 실기 설치·실행·Release APK·극한60/CLEAN25 전체 완료를 의미하지 않습니다.
