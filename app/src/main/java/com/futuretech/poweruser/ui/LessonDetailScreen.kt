@@ -227,7 +227,7 @@ fun LessonDetailScreen(
                             FeedbackBox(
                                 success = fillBlankCorrect,
                                 text = if (fillBlankCorrect) "정답입니다. 다음 단계로 진행할 수 있습니다."
-                                else "오답입니다. 다시 생각해보세요. (시도 $fillBlankAttempts회)"
+                                else "오답입니다. 다시 생각해보세요. (시도 ${fillBlankAttempts}회)"
                             )
                         }
                     }
@@ -364,7 +364,7 @@ fun LessonDetailScreen(
                             FeedbackBox(
                                 success = debugCorrect,
                                 text = if (debugCorrect) "수정 성공. 정답입니다."
-                                else "아직 해결되지 않았습니다. (시도 $debugAttempts회)"
+                                else "아직 해결되지 않았습니다. (시도 ${debugAttempts}회)"
                             )
                         }
 
