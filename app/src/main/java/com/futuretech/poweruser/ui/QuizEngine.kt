@@ -37,9 +37,19 @@ fun isFillBlankCorrect(input: String, acceptedAnswers: List<String>): Boolean {
     return acceptedAnswers.any { normalizeQuizAnswer(it) == normalizedInput }
 }
 
+private fun stripLineComment(line: String): String {
+    val hashIndex = line.indexOf('#')
+    val slashIndex = line.indexOf("//")
+    val cutAt = listOf(hashIndex, slashIndex)
+        .filter { it >= 0 }
+        .minOrNull()
+        ?: line.length
+    return line.substring(0, cutAt)
+}
+
 fun canonicalizeCode(code: String): String = code
     .lines()
-    .map { it.trim() }
+    .map { stripLineComment(it).trim() }
     .filter { it.isNotEmpty() }
     .joinToString("\n")
     .replace(Regex("\\s+"), "")
