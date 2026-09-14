@@ -23,10 +23,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             FutureTechTheme {
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
+                Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
                     AppNavigation()
                 }
             }
@@ -40,7 +37,6 @@ fun AppNavigation() {
     val context = LocalContext.current
     val repository = remember { AppRepository(context) }
     val scope = rememberCoroutineScope()
-
     val progressList by repository.getAllProgress().collectAsState(initial = emptyList())
     val errorNotesList by repository.getAllErrorNotes().collectAsState(initial = emptyList())
 
@@ -57,15 +53,13 @@ fun AppNavigation() {
             )
         }
         composable("lesson/{lessonId}") { backStackEntry ->
-            val lessonId = backStackEntry.arguments?.getString("lessonId") ?: "B01"
+            val lessonId = backStackEntry.arguments?.getString("lessonId") ?: "B01-01"
             LessonDetailScreen(
                 lessonId = lessonId,
                 onNavigateBack = { navController.popBackStack() },
                 onStepCompleted = { id, cType, unitNum ->
                     scope.launch {
-                        val lesson = CurriculumDataRepository.beginnerLessons.find { it.lessonId == id }
-                            ?: CurriculumDataRepository.intermediateLessons.find { it.lessonId == id }
-
+                        val lesson = CurriculumDataRepository.lessonById(id)
                         repository.updateProgress(
                             lessonId = id,
                             curriculumType = cType,
@@ -75,7 +69,6 @@ fun AppNavigation() {
                             completionPercentage = 100,
                             isCompleted = true
                         )
-
                         if (lesson != null) {
                             repository.addSpacedRepetitionItem(
                                 conceptId = lesson.lessonId,
@@ -90,32 +83,14 @@ fun AppNavigation() {
                     }
                 },
                 onRecordErrorNote = { type, code, msg, guide ->
-                    scope.launch {
-                        repository.recordErrorNote(type, code, msg, guide)
-                    }
+                    scope.launch { repository.recordErrorNote(type, code, msg, guide) }
                 }
             )
         }
-        composable("review") {
-            SpacedRepetitionReviewScreen(
-                repository = repository,
-                onNavigateBack = { navController.popBackStack() }
-            )
-        }
-        composable("error_notes") {
-            PersonalErrorNotesScreen(
-                errorNotesList = errorNotesList,
-                onNavigateBack = { navController.popBackStack() }
-            )
-        }
-        composable("beginner_project") {
-            BeginnerStockScoreProjectScreen(onNavigateBack = { navController.popBackStack() })
-        }
-        composable("intermediate_project") {
-            IntermediateStockResearchProjectScreen(onNavigateBack = { navController.popBackStack() })
-        }
-        composable("custom_project") {
-            CustomProjectBuilderScreen(onNavigateBack = { navController.popBackStack() })
-        }
+        composable("review") { SpacedRepetitionReviewScreen(repository = repository, onNavigateBack = { navController.popBackStack() }) }
+        composable("error_notes") { PersonalErrorNotesScreen(errorNotesList = errorNotesList, onNavigateBack = { navController.popBackStack() }) }
+        composable("beginner_project") { BeginnerStockScoreProjectScreen(onNavigateBack = { navController.popBackStack() }) }
+        composable("intermediate_project") { IntermediateStockResearchProjectScreen(onNavigateBack = { navController.popBackStack() }) }
+        composable("custom_project") { CustomProjectBuilderScreen(onNavigateBack = { navController.popBackStack() }) }
     }
 }
