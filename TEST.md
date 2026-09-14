@@ -1,6 +1,6 @@
 # Test Instructions
 
-## 유닛 테스트 및 샌드박스 보안 검증
+## 유닛 테스트 및 문제 엔진 검증
 
 ```bash
 ./gradlew testDebugUnitTest
@@ -16,3 +16,15 @@
 2. `CurriculumDataRepositoryTest`:
    - 초급 8개, 중급 10개 레슨 데이터 완전성 검증
    - 힌트 3단계 및 AI 오답 옵션 유효성 검증
+3. `QuizEngineTest`:
+   - 커리큘럼 원문에 `[ 정답 ]` 형태로 들어 있던 답을 문제 화면에서 숨기는지 검증
+   - `환각 / Hallucination` 같은 복수 정답 허용 검증
+   - 디버깅 정답 비교 시 공백·주석 차이를 무시하고 실제 수정값을 비교하는지 검증
+
+## 빌드 검증
+
+```bash
+./gradlew assembleDebug
+```
+
+`fix/problem-engine-v2` 브랜치에는 위 두 명령을 실행하는 GitHub Actions 검증 워크플로도 포함되어 있습니다.
