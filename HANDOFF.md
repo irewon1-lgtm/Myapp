@@ -1,24 +1,37 @@
-# HANDOFF Document
+# HANDOFF — FutureTech Power User
 
-## 현재 상태
-- **명세 판정**: `SPEC_CLEAN_PASS`
-- **앱 판정**: `COMPLETE`
-- **빌드 아티팩트**:
-  - Release APK: `app/build/outputs/apk/release/app-release.apk`
-  - SHA-256: `52456542edff4a26427f7982fdd18587c345eb9c9bd615e3d71111d492327826`
-  - 소스 ZIP: `source_code.zip`
-  - SHA-256: `6dcd3ec313edefa6a3dba2cf3604f464e0b72c097de6bbc8f02de5d1da287a07`
+## 기준 브랜치
+`fix/problem-engine-v2`
 
-## 주요 모듈 구성
-1. `com.futuretech.poweruser.sandbox.SandboxedExecutionEngine`:
-   - 파이썬 마이크로 인터프리터, SQL 로컬 SQLite, TypeScript 변환 및 안전한 HTML 미리보기 제공.
-2. `com.futuretech.poweruser.data`:
-   - `CurriculumDataRepository.kt`: 초급 8개 + 중급 10개 레슨.
-   - `AppDatabase.kt`: Room DB (진도, 복습, 오류노트).
-   - `SecureKeyStorage.kt`: EncryptedSharedPreferences 키 보관.
-3. `com.futuretech.poweruser.ui`:
-   - `MainHomeScreen.kt`, `LessonDetailScreen.kt`, `ProjectScreens.kt`, `SecondaryScreens.kt`.
+원본 보존 브랜치:
+`jules-15265925506858679170-f2e782af`
 
-## 다음 작업자 전달 사항
-- 고급 과정(RAG, MCP, 멀티에이전트 등)은 별도 앱으로 분리 설계되어 있습니다.
-- 새로운 레슨을 추가할 경우 `CurriculumDataRepository.kt`에 객체를 등록하면 UI 및 복습 시스템에 자동 반영됩니다.
+## 현재 구현
+- 초급 8모듈 × 5레벨 = 40 마이크로 레슨
+- 중급 10모듈 × 5레벨 = 50 마이크로 레슨
+- 총 90 레슨
+- 레슨당 10단계 능동 학습: 개념→예상→구조읽기→직접수정/실행→빈칸→짧은코드재작성→디버깅→AI판별→응용미션→자기설명
+- 순차 해금
+- 오류노트
+- 1/3/7/14일 복습
+- 자기 설명 핵심 개념 채점
+
+## 최신 검증
+GitHub Actions run `34909543627`
+- `testDebugUnitTest` PASS
+- `assembleDebug` PASS
+- head: `25f56d9978e880355b3c84ab885259c859b6f16b`
+
+## 아직 완료라고 부르면 안 되는 항목
+- Galaxy 실기 설치/터치/회전/재실행 검증
+- Release APK 최신 90레슨 버전 생성 및 서명 확인
+- 전체 90레슨의 실제 사용자 완주 시뮬레이션
+- 극한 60 / CLEAN 25 전체 실행
+- 학습용 Python/TypeScript 실행기를 완전한 실제 런타임으로 교체
+
+## 다음 우선순위
+1. 90레슨 UI/실기 검증
+2. 실제 코드 실행 엔진 강화
+3. 중간 프로젝트/체크포인트 추가
+4. 디자인/가독성 고도화
+5. Release APK 및 증거 패키지
