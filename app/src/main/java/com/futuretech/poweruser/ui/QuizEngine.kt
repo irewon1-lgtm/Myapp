@@ -5,11 +5,16 @@ data class FillBlankQuestion(
     val acceptedAnswers: List<String>
 )
 
+data class ExplanationEvaluation(
+    val passed: Boolean,
+    val matchedKeywords: List<String>,
+    val missingKeywords: List<String>,
+    val coverage: Float
+)
+
 /**
- * Existing curriculum text stores the answer inside square brackets, for example:
- * "앱과 서버 간 접속 규칙을 [ API ]라고 부릅니다."
- *
- * The UI must never show that answer before the learner submits an attempt.
+ * Curriculum text stores accepted fill-blank answers inside square brackets.
+ * The learner-facing UI removes the answer until an attempt is submitted.
  */
 fun parseFillBlankPrompt(raw: String): FillBlankQuestion {
     val match = Regex("\\[(.+?)]").find(raw)
@@ -35,6 +40,16 @@ fun isFillBlankCorrect(input: String, acceptedAnswers: List<String>): Boolean {
     if (acceptedAnswers.isEmpty()) return false
     val normalizedInput = normalizeQuizAnswer(input)
     return acceptedAnswers.any { normalizeQuizAnswer(it) == normalizedInput }
+}
+
+fun evaluateExplanation(input: String, keywords: List<String>): ExplanationEvaluation {
+    val normalized = normalizeQuizAnswer(input)
+    val matched = keywords.filter { normalized.contains(normalizeQuizAnswer(it)) }
+    val missing = keywords.filterNot { it in matched }
+    val coverage = if (keywords.isEmpty()) 0f else matched.size.toFloat() / keywords.size.toFloat()
+    // A meaningful explanation must be more than a short keyword dump and cover at least half the concepts.
+    val passed = input.trim().length >= 40 && matched.size >= 2 && coverage >= 0.5f
+    return ExplanationEvaluation(passed, matched, missing, coverage)
 }
 
 private fun stripLineComment(line: String): String {
