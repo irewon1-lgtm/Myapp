@@ -6,13 +6,17 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.futuretech.poweruser.data.AppRepository
+import com.futuretech.poweruser.data.LearningProgressEntity
 import com.futuretech.poweruser.ui.*
 import com.futuretech.poweruser.ui.theme.FutureTechTheme
+import kotlinx.coroutines.launch
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,10 +37,17 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun AppNavigation() {
     val navController = rememberNavController()
+    val context = LocalContext.current
+    val repository = remember { AppRepository(context) }
+    val scope = rememberCoroutineScope()
+
+    val progressList by repository.getAllProgress().collectAsState(initial = emptyList())
+    val errorNotesList by repository.getAllErrorNotes().collectAsState(initial = emptyList())
 
     NavHost(navController = navController, startDestination = "home") {
         composable("home") {
             MainHomeScreen(
+                progressList = progressList,
                 onNavigateToLesson = { lessonId -> navController.navigate("lesson/$lessonId") },
                 onNavigateToReview = { navController.navigate("review") },
                 onNavigateToErrorNotes = { navController.navigate("error_notes") },
@@ -50,14 +61,37 @@ fun AppNavigation() {
             LessonDetailScreen(
                 lessonId = lessonId,
                 onNavigateBack = { navController.popBackStack() },
-                onRecordErrorNote = { type, code, msg, guide -> }
+                onStepCompleted = { id, cType, unitNum ->
+                    scope.launch {
+                        repository.updateProgress(
+                            lessonId = id,
+                            curriculumType = cType,
+                            unitNumber = unitNum,
+                            title = id,
+                            status = "VERIFIABLE",
+                            completionPercentage = 100,
+                            isCompleted = true
+                        )
+                    }
+                },
+                onRecordErrorNote = { type, code, msg, guide ->
+                    scope.launch {
+                        repository.recordErrorNote(type, code, msg, guide)
+                    }
+                }
             )
         }
         composable("review") {
-            SpacedRepetitionReviewScreen(onNavigateBack = { navController.popBackStack() })
+            SpacedRepetitionReviewScreen(
+                repository = repository,
+                onNavigateBack = { navController.popBackStack() }
+            )
         }
         composable("error_notes") {
-            PersonalErrorNotesScreen(onNavigateBack = { navController.popBackStack() })
+            PersonalErrorNotesScreen(
+                errorNotesList = errorNotesList,
+                onNavigateBack = { navController.popBackStack() }
+            )
         }
         composable("beginner_project") {
             BeginnerStockScoreProjectScreen(onNavigateBack = { navController.popBackStack() })
