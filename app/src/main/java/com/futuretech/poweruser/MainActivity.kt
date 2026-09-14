@@ -13,7 +13,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.futuretech.poweruser.data.AppRepository
-import com.futuretech.poweruser.data.LearningProgressEntity
+import com.futuretech.poweruser.data.CurriculumDataRepository
 import com.futuretech.poweruser.ui.*
 import com.futuretech.poweruser.ui.theme.FutureTechTheme
 import kotlinx.coroutines.launch
@@ -63,15 +63,30 @@ fun AppNavigation() {
                 onNavigateBack = { navController.popBackStack() },
                 onStepCompleted = { id, cType, unitNum ->
                     scope.launch {
+                        val lesson = CurriculumDataRepository.beginnerLessons.find { it.lessonId == id }
+                            ?: CurriculumDataRepository.intermediateLessons.find { it.lessonId == id }
+
                         repository.updateProgress(
                             lessonId = id,
                             curriculumType = cType,
                             unitNumber = unitNum,
-                            title = id,
+                            title = lesson?.title ?: id,
                             status = "VERIFIABLE",
                             completionPercentage = 100,
                             isCompleted = true
                         )
+
+                        if (lesson != null) {
+                            repository.addSpacedRepetitionItem(
+                                conceptId = lesson.lessonId,
+                                conceptTitle = lesson.title,
+                                category = lesson.curriculumType,
+                                definition = lesson.explanation,
+                                analogy = lesson.expectedOutcome,
+                                example = lesson.codeSample,
+                                comparison = lesson.aiHallucinationQuestion
+                            )
+                        }
                     }
                 },
                 onRecordErrorNote = { type, code, msg, guide ->
