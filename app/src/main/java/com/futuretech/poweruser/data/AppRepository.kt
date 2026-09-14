@@ -80,6 +80,10 @@ class AppRepository(context: Context) {
         example: String,
         comparison: String
     ) {
+        val existing = dao.getRepetitionById(conceptId)
+        if (existing != null) return
+
+        val oneDayMs = 24 * 60 * 60 * 1000L
         val item = SpacedRepetitionItemEntity(
             conceptId = conceptId,
             conceptTitle = conceptTitle,
@@ -89,7 +93,7 @@ class AppRepository(context: Context) {
             example = example,
             comparison = comparison,
             reviewIntervalDays = 1,
-            nextReviewTimestamp = System.currentTimeMillis() + (1 * 24 * 60 * 60 * 1000L),
+            nextReviewTimestamp = System.currentTimeMillis() + oneDayMs,
             reviewCount = 0,
             isMastered = false
         )
@@ -97,6 +101,41 @@ class AppRepository(context: Context) {
     }
 
     suspend fun getDueReviews(): List<SpacedRepetitionItemEntity> {
-        return dao.getDueReviews(System.currentTimeMillis() + (24 * 60 * 60 * 1000L))
+        return dao.getDueReviews(System.currentTimeMillis())
+    }
+
+    suspend fun recordReview(conceptId: String, remembered: Boolean) {
+        val current = dao.getRepetitionById(conceptId) ?: return
+        val now = System.currentTimeMillis()
+        val oneDayMs = 24 * 60 * 60 * 1000L
+
+        if (!remembered) {
+            dao.insertOrUpdateRepetition(
+                current.copy(
+                    reviewIntervalDays = 1,
+                    nextReviewTimestamp = now + oneDayMs,
+                    isMastered = false
+                )
+            )
+            return
+        }
+
+        val nextCount = current.reviewCount + 1
+        val mastered = nextCount >= 4
+        val nextIntervalDays = when (nextCount) {
+            1 -> 3
+            2 -> 7
+            3 -> 14
+            else -> 14
+        }
+
+        dao.insertOrUpdateRepetition(
+            current.copy(
+                reviewIntervalDays = nextIntervalDays,
+                nextReviewTimestamp = if (mastered) Long.MAX_VALUE else now + (nextIntervalDays * oneDayMs),
+                reviewCount = nextCount,
+                isMastered = mastered
+            )
+        )
     }
 }
