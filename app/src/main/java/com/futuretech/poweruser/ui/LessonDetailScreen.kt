@@ -1,7 +1,6 @@
 package com.futuretech.poweruser.ui
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -40,19 +39,59 @@ fun LessonDetailScreen(
             ?: CurriculumDataRepository.beginnerLessons.first()
     }
 
-    var currentStep by remember { mutableStateOf(1) } // Step 1: 개념 -> Step 2: 코드읽기 -> Step 3: 직접실행 -> Step 4: 디버깅/검증 -> Step 5: 복습/설명
-    var currentHintStep by remember { mutableStateOf(0) }
-    var codeInput by remember { mutableStateOf(lesson.initialPracticeCode) }
-    var executionResult by remember { mutableStateOf<ExecutionResult?>(null) }
-    var userExplanation by remember { mutableStateOf("") }
-    var explanationFeedback by remember { mutableStateOf("") }
-    var selectedOption by remember { mutableStateOf(-1) }
-    var isAnswerChecked by remember { mutableStateOf(false) }
+    val fillBlankQuestion = remember(lesson.fillInBlankPrompt) {
+        parseFillBlankPrompt(lesson.fillInBlankPrompt)
+    }
+
+    var currentStep by remember(lessonId) { mutableStateOf(1) }
+    var predictionText by remember(lessonId) { mutableStateOf("") }
+    var predictionSubmitted by remember(lessonId) { mutableStateOf(false) }
+
+    var fillBlankInput by remember(lessonId) { mutableStateOf("") }
+    var fillBlankCorrect by remember(lessonId) { mutableStateOf(false) }
+    var fillBlankChecked by remember(lessonId) { mutableStateOf(false) }
+    var fillBlankAttempts by remember(lessonId) { mutableStateOf(0) }
+
+    var codeInput by remember(lessonId) {
+        mutableStateOf(if (lesson.lessonId == "I01") lesson.codeSample else lesson.initialPracticeCode)
+    }
+    var executionResult by remember(lessonId) { mutableStateOf<ExecutionResult?>(null) }
+    var practiceAttempted by remember(lessonId) { mutableStateOf(false) }
+    var currentHintStep by remember(lessonId) { mutableStateOf(0) }
+
+    var debugInput by remember(lessonId) { mutableStateOf(lesson.brokenCode) }
+    var debugCorrect by remember(lessonId) { mutableStateOf(false) }
+    var debugChecked by remember(lessonId) { mutableStateOf(false) }
+    var debugAttempts by remember(lessonId) { mutableStateOf(0) }
+    var showDebugAnswer by remember(lessonId) { mutableStateOf(false) }
+
+    var selectedOption by remember(lessonId) { mutableStateOf(-1) }
+    var aiChecked by remember(lessonId) { mutableStateOf(false) }
+    var aiCorrect by remember(lessonId) { mutableStateOf(false) }
+
+    var userExplanation by remember(lessonId) { mutableStateOf("") }
+    var completionSaved by remember(lessonId) { mutableStateOf(false) }
+
+    fun canAdvance(step: Int): Boolean = when (step) {
+        1 -> true
+        2 -> predictionSubmitted
+        3 -> fillBlankCorrect
+        4 -> practiceAttempted
+        5 -> debugCorrect
+        6 -> aiCorrect
+        else -> false
+    }
 
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("${lesson.lessonId} - Step $currentStep/5", fontSize = 17.sp, fontWeight = FontWeight.Bold) },
+                title = {
+                    Text(
+                        "${lesson.lessonId} · Step $currentStep/7",
+                        fontSize = 17.sp,
+                        fontWeight = FontWeight.Bold
+                    )
+                },
                 navigationIcon = {
                     TextButton(onClick = onNavigateBack) {
                         Text("← 목록으로", color = MaterialTheme.colorScheme.primary)
@@ -69,18 +108,18 @@ fun LessonDetailScreen(
                 .verticalScroll(rememberScrollState()),
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
-            // Step Progress Bar
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.spacedBy(4.dp)
             ) {
-                for (i in 1..5) {
+                for (i in 1..7) {
                     Box(
                         modifier = Modifier
                             .weight(1f)
                             .height(6.dp)
                             .background(
-                                if (i <= currentStep) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.outline.copy(alpha = 0.3f),
+                                if (i <= currentStep) MaterialTheme.colorScheme.primary
+                                else MaterialTheme.colorScheme.outline.copy(alpha = 0.3f),
                                 RoundedCornerShape(3.dp)
                             )
                     )
@@ -96,280 +135,451 @@ fun LessonDetailScreen(
 
             when (currentStep) {
                 1 -> {
-                    // Step 1: 개념 설명
-                    Card(
-                        modifier = Modifier.fillMaxWidth(),
-                        shape = RoundedCornerShape(12.dp),
-                        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
-                    ) {
-                        Column(modifier = Modifier.padding(16.dp)) {
-                            Text("Step 1. 핵심 개념 이해 [이론]", fontSize = 15.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.primary)
-                            Spacer(modifier = Modifier.height(8.dp))
-                            Text(lesson.explanation, fontSize = 14.sp, lineHeight = 22.sp)
-                            Spacer(modifier = Modifier.height(12.dp))
-                            Text("학습 목표: ${lesson.expectedOutcome}", fontSize = 13.sp, fontWeight = FontWeight.SemiBold, color = MaterialTheme.colorScheme.secondary)
-                        }
+                    LearningCard("Step 1. 핵심 개념 이해") {
+                        Text(lesson.explanation, fontSize = 14.sp, lineHeight = 22.sp)
+                        Spacer(modifier = Modifier.height(12.dp))
+                        Text(
+                            "학습 목표: ${lesson.expectedOutcome}",
+                            fontSize = 13.sp,
+                            fontWeight = FontWeight.SemiBold,
+                            color = MaterialTheme.colorScheme.secondary
+                        )
                     }
                 }
+
                 2 -> {
-                    // Step 2: 구조 / 코드 읽기
-                    Card(
-                        modifier = Modifier.fillMaxWidth(),
-                        shape = RoundedCornerShape(12.dp),
-                        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
-                    ) {
-                        Column(modifier = Modifier.padding(16.dp)) {
-                            Text("Step 2. 예시 구조 및 코드 읽기", fontSize = 15.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.primary)
-                            Spacer(modifier = Modifier.height(8.dp))
-                            Box(
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                                    .background(MaterialTheme.colorScheme.background, RoundedCornerShape(8.dp))
-                                    .padding(12.dp)
-                            ) {
-                                Text(lesson.codeSample, style = CodeTypography, color = MaterialTheme.colorScheme.onBackground)
-                            }
+                    LearningCard("Step 2. 결과 먼저 예상하기") {
+                        Text(
+                            "정답을 보기 전에 아래 구조/코드가 무엇을 하게 될지 본인 말로 먼저 예상하세요.",
+                            fontSize = 13.sp
+                        )
+                        Spacer(modifier = Modifier.height(10.dp))
+                        CodeBox(lesson.codeSample)
+                        Spacer(modifier = Modifier.height(10.dp))
+                        OutlinedTextField(
+                            value = predictionText,
+                            onValueChange = {
+                                predictionText = it
+                                predictionSubmitted = false
+                            },
+                            modifier = Modifier.fillMaxWidth(),
+                            label = { Text("내 예상") },
+                            minLines = 2
+                        )
+                        Spacer(modifier = Modifier.height(8.dp))
+                        Button(
+                            onClick = { predictionSubmitted = predictionText.trim().isNotEmpty() },
+                            enabled = predictionText.trim().isNotEmpty()
+                        ) {
+                            Text("예상 제출")
+                        }
+                        if (predictionSubmitted) {
+                            Spacer(modifier = Modifier.height(10.dp))
+                            FeedbackBox(success = true, text = "비교 기준: ${lesson.expectedOutcome}")
+                            Text(
+                                "이 단계는 자동 정답 판정이 아니라, 실행 전 예측 습관을 만드는 단계입니다.",
+                                fontSize = 12.sp,
+                                color = MaterialTheme.colorScheme.outline
+                            )
                         }
                     }
                 }
+
                 3 -> {
-                    // Step 3: 직접 실행 샌드박스
-                    Card(
-                        modifier = Modifier.fillMaxWidth(),
-                        shape = RoundedCornerShape(12.dp),
-                        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
-                    ) {
-                        Column(modifier = Modifier.padding(16.dp)) {
-                            Row(
-                                horizontalArrangement = Arrangement.SpaceBetween,
-                                verticalAlignment = Alignment.CenterVertically,
-                                modifier = Modifier.fillMaxWidth()
-                            ) {
-                                Text("Step 3. 코드 실행 실습장", fontSize = 15.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.primary)
-                                Surface(
-                                    shape = RoundedCornerShape(4.dp),
-                                    color = MaterialTheme.colorScheme.primary.copy(alpha = 0.1f)
-                                ) {
-                                    val engineLabel = when {
-                                        lesson.lessonId.startsWith("I01") -> "HTML safe preview"
-                                        lesson.lessonId.startsWith("I04") -> "SQLite SQL"
-                                        lesson.lessonId.startsWith("I02") -> "문법 변환 데모"
-                                        else -> "학습용 Mini Python"
-                                    }
-                                    Text(engineLabel, fontSize = 11.sp, modifier = Modifier.padding(6.dp, 2.dp), color = MaterialTheme.colorScheme.primary)
+                    LearningCard("Step 3. 빈칸 문제") {
+                        Text(fillBlankQuestion.displayText, fontSize = 14.sp, lineHeight = 22.sp)
+                        Spacer(modifier = Modifier.height(10.dp))
+                        OutlinedTextField(
+                            value = fillBlankInput,
+                            onValueChange = {
+                                fillBlankInput = it
+                                fillBlankChecked = false
+                                fillBlankCorrect = false
+                            },
+                            modifier = Modifier.fillMaxWidth(),
+                            label = { Text("정답 입력") },
+                            singleLine = true
+                        )
+                        Spacer(modifier = Modifier.height(8.dp))
+                        Button(
+                            onClick = {
+                                fillBlankAttempts++
+                                fillBlankChecked = true
+                                fillBlankCorrect = isFillBlankCorrect(
+                                    fillBlankInput,
+                                    fillBlankQuestion.acceptedAnswers
+                                )
+                                if (!fillBlankCorrect) {
+                                    onRecordErrorNote(
+                                        "${lesson.lessonId}_FILL_BLANK",
+                                        fillBlankInput,
+                                        "빈칸 문제 오답",
+                                        "정답을 바로 보지 말고 개념 설명과 학습 목표를 다시 확인하세요."
+                                    )
                                 }
-                            }
+                            },
+                            enabled = fillBlankInput.trim().isNotEmpty()
+                        ) {
+                            Text("정답 확인")
+                        }
+                        if (fillBlankChecked) {
                             Spacer(modifier = Modifier.height(8.dp))
-
-                            OutlinedTextField(
-                                value = codeInput,
-                                onValueChange = { codeInput = it },
-                                modifier = Modifier.fillMaxWidth(),
-                                label = { Text("실습 코드 입력") },
-                                textStyle = CodeTypography,
-                                minLines = 4
+                            FeedbackBox(
+                                success = fillBlankCorrect,
+                                text = if (fillBlankCorrect) "정답입니다. 다음 단계로 진행할 수 있습니다."
+                                else "오답입니다. 다시 생각해보세요. (시도 $fillBlankAttempts회)"
                             )
-
-                            Spacer(modifier = Modifier.height(8.dp))
-
-                            Row(
-                                modifier = Modifier.fillMaxWidth(),
-                                horizontalArrangement = Arrangement.SpaceBetween
-                            ) {
-                                Button(
-                                    onClick = {
-                                        scope.launch {
-                                            val lang = if (lesson.lessonId.startsWith("I04")) ProgrammingLanguage.SQL else ProgrammingLanguage.PYTHON
-                                            val res = sandboxEngine.execute(lang, codeInput)
-                                            executionResult = res
-                                            if (!res.isSuccess) {
-                                                onRecordErrorNote(
-                                                    "MINI_PYTHON_ERROR",
-                                                    codeInput,
-                                                    res.errorMessage ?: "Execution error",
-                                                    "학습용 Mini Python 문법 규칙(기본 변수, print, if, while)을 점검하세요."
-                                                )
-                                            }
-                                        }
-                                    },
-                                    shape = RoundedCornerShape(8.dp)
-                                ) {
-                                    Text("▶ 코드 실행")
-                                }
-
-                                OutlinedButton(
-                                    onClick = { if (currentHintStep < 3) currentHintStep++ },
-                                    shape = RoundedCornerShape(8.dp)
-                                ) {
-                                    Text("💡 힌트 (${currentHintStep}/3)")
-                                }
-                            }
-
-                            if (currentHintStep > 0) {
-                                Spacer(modifier = Modifier.height(8.dp))
-                                Box(
-                                    modifier = Modifier
-                                        .fillMaxWidth()
-                                        .background(MaterialTheme.colorScheme.primary.copy(alpha = 0.08f), RoundedCornerShape(8.dp))
-                                        .padding(10.dp)
-                                ) {
-                                    val hintText = when (currentHintStep) {
-                                        1 -> "힌트 1 (방향): ${lesson.hintLevel1}"
-                                        2 -> "힌트 2 (위치): ${lesson.hintLevel2}"
-                                        else -> "힌트 3 (정답 가이드): ${lesson.hintLevel3}"
-                                    }
-                                    Text(hintText, fontSize = 13.sp, color = MaterialTheme.colorScheme.primary)
-                                }
-                            }
-
-                            if (lesson.lessonId.startsWith("I01")) {
-                                Spacer(modifier = Modifier.height(8.dp))
-                                Text("HTML/CSS/JS 안전한 미리보기 WebView Sandbox:", fontSize = 12.sp, fontWeight = FontWeight.Bold)
-                                HtmlPreviewSandboxView(htmlContent = codeInput)
-                            } else {
-                                executionResult?.let { res ->
-                                    Spacer(modifier = Modifier.height(8.dp))
-                                    Box(
-                                        modifier = Modifier
-                                            .fillMaxWidth()
-                                            .background(
-                                                if (res.isSuccess) MaterialTheme.colorScheme.secondary.copy(alpha = 0.1f)
-                                                else MaterialTheme.colorScheme.error.copy(alpha = 0.1f),
-                                                RoundedCornerShape(8.dp)
-                                            )
-                                            .padding(10.dp)
-                                    ) {
-                                        Column {
-                                            Text(
-                                                if (res.isSuccess) "실행 결과 (성공):" else "실행 오류:",
-                                                fontWeight = FontWeight.Bold,
-                                                color = if (res.isSuccess) MaterialTheme.colorScheme.secondary else MaterialTheme.colorScheme.error
-                                            )
-                                            Text(
-                                                res.output.ifEmpty { res.errorMessage ?: "" },
-                                                style = CodeTypography
-                                            )
-                                        }
-                                    }
-                                }
-                            }
                         }
                     }
                 }
+
                 4 -> {
-                    // Step 4: 디버깅 및 AI 환각 검증
-                    Card(
-                        modifier = Modifier.fillMaxWidth(),
-                        shape = RoundedCornerShape(12.dp),
-                        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
-                    ) {
-                        Column(modifier = Modifier.padding(16.dp)) {
-                            Text("Step 4. 고장난 예제 고치기 & AI 환각 판별", fontSize = 15.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.primary)
-                            Spacer(modifier = Modifier.height(8.dp))
-                            Text("고장난 코드 디버깅:", fontSize = 13.sp, fontWeight = FontWeight.Bold)
-                            Box(
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                                    .background(MaterialTheme.colorScheme.background, RoundedCornerShape(8.dp))
-                                    .padding(10.dp)
-                            ) {
-                                Text(lesson.brokenCode, style = CodeTypography, color = MaterialTheme.colorScheme.error)
-                            }
-                            Spacer(modifier = Modifier.height(6.dp))
-                            Text("올바른 수정안: ${lesson.brokenCodeFix}", style = CodeTypography, fontSize = 12.sp, color = MaterialTheme.colorScheme.secondary)
-
-                            Spacer(modifier = Modifier.height(14.dp))
-                            Text("AI 환각 검증 문제:", fontSize = 13.sp, fontWeight = FontWeight.Bold)
-                            Text(lesson.aiHallucinationQuestion, fontSize = 13.sp)
-
-                            lesson.aiHallucinationOptions.forEachIndexed { index, optionText ->
-                                Row(verticalAlignment = Alignment.CenterVertically) {
-                                    RadioButton(selected = selectedOption == index, onClick = {
-                                        selectedOption = index
-                                        isAnswerChecked = true
-                                    })
-                                    Text(optionText, fontSize = 13.sp)
-                                }
-                            }
-                        }
-                    }
-                }
-                5 -> {
-                    // Step 5: 설명하기 & 완주
-                    Card(
-                        modifier = Modifier.fillMaxWidth(),
-                        shape = RoundedCornerShape(12.dp),
-                        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
-                    ) {
-                        Column(modifier = Modifier.padding(16.dp)) {
-                            Text("Step 5. 본인 말로 설명하기 [로컬 규칙 피드백]", fontSize = 15.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.primary)
-                            Spacer(modifier = Modifier.height(8.dp))
-                            Text(lesson.explainPrompt, fontSize = 14.sp)
-                            Spacer(modifier = Modifier.height(8.dp))
-
-                            OutlinedTextField(
-                                value = userExplanation,
-                                onValueChange = { userExplanation = it },
-                                modifier = Modifier.fillMaxWidth(),
-                                label = { Text("내 언어로 설명 입력") },
-                                minLines = 3
-                            )
-
-                            Spacer(modifier = Modifier.height(8.dp))
-
+                    LearningCard("Step 4. 직접 수정하고 실행하기") {
+                        Text(
+                            "코드를 직접 바꿔본 뒤 실행하세요. 이 단계는 실행을 실제로 시도해야 넘어갈 수 있습니다.",
+                            fontSize = 13.sp
+                        )
+                        Spacer(modifier = Modifier.height(8.dp))
+                        OutlinedTextField(
+                            value = codeInput,
+                            onValueChange = { codeInput = it },
+                            modifier = Modifier.fillMaxWidth(),
+                            label = { Text("실습 코드") },
+                            textStyle = CodeTypography,
+                            minLines = 5
+                        )
+                        Spacer(modifier = Modifier.height(8.dp))
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.SpaceBetween
+                        ) {
                             Button(
                                 onClick = {
-                                    explanationFeedback = if (userExplanation.length > 10) {
-                                        "[LOCAL RULE] 피드백: 핵심 설명이 10자 이상 포함되었습니다. 우수한 이해도입니다."
-                                    } else {
-                                        "[LOCAL RULE] 피드백: 설명이 다소 짧습니다. 핵심 개념 키워드를 더 채워보세요."
+                                    scope.launch {
+                                        practiceAttempted = true
+                                        val language = when (lesson.lessonId) {
+                                            "I01" -> ProgrammingLanguage.HTML_JS
+                                            "I02" -> ProgrammingLanguage.TYPESCRIPT
+                                            "I04" -> ProgrammingLanguage.SQL
+                                            else -> ProgrammingLanguage.PYTHON
+                                        }
+                                        val result = sandboxEngine.execute(language, codeInput)
+                                        executionResult = result
+                                        if (!result.isSuccess) {
+                                            onRecordErrorNote(
+                                                "${lesson.lessonId}_PRACTICE_ERROR",
+                                                codeInput,
+                                                result.errorMessage ?: "실행 오류",
+                                                "오류 메시지를 읽고 입력 코드의 문법과 구조를 다시 확인하세요."
+                                            )
+                                        }
                                     }
-                                    onStepCompleted(lesson.lessonId, lesson.curriculumType, lesson.unitNumber)
-                                },
-                                modifier = Modifier.fillMaxWidth(),
-                                shape = RoundedCornerShape(8.dp)
+                                }
                             ) {
-                                Text("설명 제출 및 레슨 최종 완주 저장")
+                                Text("▶ 실행")
                             }
 
-                            if (explanationFeedback.isNotEmpty()) {
-                                Spacer(modifier = Modifier.height(8.dp))
-                                Box(
-                                    modifier = Modifier
-                                        .fillMaxWidth()
-                                        .background(MaterialTheme.colorScheme.primary.copy(alpha = 0.08f), RoundedCornerShape(8.dp))
-                                        .padding(10.dp)
-                                ) {
-                                    Text(explanationFeedback, fontSize = 13.sp, color = MaterialTheme.colorScheme.primary)
+                            OutlinedButton(
+                                onClick = { if (currentHintStep < 3) currentHintStep++ }
+                            ) {
+                                Text("💡 힌트 $currentHintStep/3")
+                            }
+                        }
+
+                        if (currentHintStep > 0) {
+                            Spacer(modifier = Modifier.height(8.dp))
+                            val hint = when (currentHintStep) {
+                                1 -> lesson.hintLevel1
+                                2 -> lesson.hintLevel2
+                                else -> lesson.hintLevel3
+                            }
+                            FeedbackBox(success = true, text = "힌트: $hint")
+                        }
+
+                        if (lesson.lessonId == "I01") {
+                            Spacer(modifier = Modifier.height(10.dp))
+                            Text("HTML/CSS/JS 미리보기", fontSize = 12.sp, fontWeight = FontWeight.Bold)
+                            HtmlPreviewSandboxView(htmlContent = codeInput)
+                        }
+
+                        executionResult?.let { result ->
+                            Spacer(modifier = Modifier.height(10.dp))
+                            FeedbackBox(
+                                success = result.isSuccess,
+                                text = if (result.isSuccess) {
+                                    "실행 결과:\n${result.output.ifEmpty { "출력 없음" }}"
+                                } else {
+                                    "실행 오류:\n${result.errorMessage ?: "알 수 없는 오류"}"
+                                }
+                            )
+                            Text(
+                                "※ 현재 일부 언어는 학습용 제한 실행기입니다. 실행 성공 여부만으로 이해도를 판정하지 않습니다.",
+                                fontSize = 11.sp,
+                                color = MaterialTheme.colorScheme.outline
+                            )
+                        }
+                    }
+                }
+
+                5 -> {
+                    LearningCard("Step 5. 고장난 코드 직접 고치기") {
+                        Text(
+                            "정답은 처음부터 보여주지 않습니다. 아래 코드를 직접 수정한 뒤 검사하세요.",
+                            fontSize = 13.sp
+                        )
+                        Spacer(modifier = Modifier.height(8.dp))
+                        OutlinedTextField(
+                            value = debugInput,
+                            onValueChange = {
+                                debugInput = it
+                                debugChecked = false
+                                debugCorrect = false
+                            },
+                            modifier = Modifier.fillMaxWidth(),
+                            label = { Text("수정할 코드") },
+                            textStyle = CodeTypography,
+                            minLines = 4
+                        )
+                        Spacer(modifier = Modifier.height(8.dp))
+                        Button(
+                            onClick = {
+                                debugAttempts++
+                                debugChecked = true
+                                debugCorrect = isDebugFixCorrect(debugInput, lesson.brokenCodeFix)
+                                if (!debugCorrect) {
+                                    onRecordErrorNote(
+                                        "${lesson.lessonId}_DEBUG",
+                                        debugInput,
+                                        "디버깅 문제 오답",
+                                        if (debugAttempts == 1) lesson.hintLevel1 else lesson.hintLevel2
+                                    )
                                 }
                             }
+                        ) {
+                            Text("수정안 검사")
+                        }
+
+                        if (debugChecked) {
+                            Spacer(modifier = Modifier.height(8.dp))
+                            FeedbackBox(
+                                success = debugCorrect,
+                                text = if (debugCorrect) "수정 성공. 정답입니다."
+                                else "아직 해결되지 않았습니다. (시도 $debugAttempts회)"
+                            )
+                        }
+
+                        if (!debugCorrect && debugAttempts >= 2) {
+                            Spacer(modifier = Modifier.height(8.dp))
+                            OutlinedButton(onClick = { showDebugAnswer = !showDebugAnswer }) {
+                                Text(if (showDebugAnswer) "정답 숨기기" else "2회 실패 · 정답 보기")
+                            }
+                        }
+
+                        if (showDebugAnswer) {
+                            Spacer(modifier = Modifier.height(8.dp))
+                            CodeBox(lesson.brokenCodeFix)
+                            Text(
+                                "정답을 본 뒤 그대로 넘기지 말고, 위 입력칸을 직접 수정한 후 다시 검사해야 통과됩니다.",
+                                fontSize = 12.sp,
+                                color = MaterialTheme.colorScheme.outline
+                            )
+                        }
+                    }
+                }
+
+                6 -> {
+                    LearningCard("Step 6. AI 답변 판별 문제") {
+                        Text(lesson.aiHallucinationQuestion, fontSize = 14.sp, lineHeight = 22.sp)
+                        Spacer(modifier = Modifier.height(8.dp))
+                        lesson.aiHallucinationOptions.forEachIndexed { index, optionText ->
+                            Row(verticalAlignment = Alignment.CenterVertically) {
+                                RadioButton(
+                                    selected = selectedOption == index,
+                                    onClick = {
+                                        selectedOption = index
+                                        aiChecked = false
+                                        aiCorrect = false
+                                    }
+                                )
+                                Text(optionText, fontSize = 13.sp)
+                            }
+                        }
+                        Spacer(modifier = Modifier.height(8.dp))
+                        Button(
+                            onClick = {
+                                aiChecked = true
+                                aiCorrect = selectedOption == lesson.correctOptionIndex
+                                if (!aiCorrect) {
+                                    onRecordErrorNote(
+                                        "${lesson.lessonId}_AI_JUDGEMENT",
+                                        selectedOption.toString(),
+                                        "AI 판별 객관식 오답",
+                                        "문제의 사실 주장과 검증 가능한 근거를 구분해서 다시 판단하세요."
+                                    )
+                                }
+                            },
+                            enabled = selectedOption >= 0
+                        ) {
+                            Text("선택한 답 채점")
+                        }
+                        if (aiChecked) {
+                            Spacer(modifier = Modifier.height(8.dp))
+                            FeedbackBox(
+                                success = aiCorrect,
+                                text = if (aiCorrect) "정답입니다."
+                                else "오답입니다. 다른 선택지를 다시 검토하세요."
+                            )
+                        }
+                    }
+                }
+
+                7 -> {
+                    LearningCard("Step 7. 본인 말로 설명하고 완주") {
+                        Text(lesson.explainPrompt, fontSize = 14.sp, lineHeight = 22.sp)
+                        Spacer(modifier = Modifier.height(8.dp))
+                        OutlinedTextField(
+                            value = userExplanation,
+                            onValueChange = { userExplanation = it },
+                            modifier = Modifier.fillMaxWidth(),
+                            label = { Text("내 언어로 설명") },
+                            minLines = 4
+                        )
+                        Spacer(modifier = Modifier.height(10.dp))
+
+                        Text("완주 조건", fontWeight = FontWeight.Bold, fontSize = 13.sp)
+                        Text("• 빈칸 문제 정답 ${if (fillBlankCorrect) "✓" else "✗"}", fontSize = 12.sp)
+                        Text("• 코드 실행 시도 ${if (practiceAttempted) "✓" else "✗"}", fontSize = 12.sp)
+                        Text("• 디버깅 문제 정답 ${if (debugCorrect) "✓" else "✗"}", fontSize = 12.sp)
+                        Text("• AI 판별 문제 정답 ${if (aiCorrect) "✓" else "✗"}", fontSize = 12.sp)
+                        Text("• 자기 설명 20자 이상 ${if (userExplanation.trim().length >= 20) "✓" else "✗"}", fontSize = 12.sp)
+                        Spacer(modifier = Modifier.height(8.dp))
+                        Text(
+                            "자기 설명은 글자 수만으로 '우수'라고 자동 판정하지 않습니다. 핵심 객관 문제를 통과했는지와 별도로 저장합니다.",
+                            fontSize = 11.sp,
+                            color = MaterialTheme.colorScheme.outline
+                        )
+                        Spacer(modifier = Modifier.height(10.dp))
+
+                        Button(
+                            onClick = {
+                                onStepCompleted(lesson.lessonId, lesson.curriculumType, lesson.unitNumber)
+                                completionSaved = true
+                            },
+                            modifier = Modifier.fillMaxWidth(),
+                            enabled = fillBlankCorrect && practiceAttempted && debugCorrect && aiCorrect &&
+                                userExplanation.trim().length >= 20 && !completionSaved
+                        ) {
+                            Text(if (completionSaved) "완주 저장 완료" else "레슨 완주 저장")
+                        }
+
+                        if (completionSaved) {
+                            Spacer(modifier = Modifier.height(8.dp))
+                            FeedbackBox(
+                                success = true,
+                                text = "완주 기록이 저장되었습니다. 이 레슨은 간격 반복 복습 대상으로 등록됩니다."
+                            )
                         }
                     }
                 }
             }
 
-            // Bottom Step Controller Navigation
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween
-            ) {
+            if (currentStep < 7) {
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween
+                ) {
+                    OutlinedButton(
+                        onClick = { if (currentStep > 1) currentStep-- },
+                        enabled = currentStep > 1
+                    ) {
+                        Text("← 이전")
+                    }
+
+                    Button(
+                        onClick = { if (currentStep < 7) currentStep++ },
+                        enabled = canAdvance(currentStep)
+                    ) {
+                        Text("다음 →")
+                    }
+                }
+
+                if (!canAdvance(currentStep) && currentStep > 1) {
+                    Text(
+                        when (currentStep) {
+                            2 -> "예상을 먼저 제출해야 다음 단계로 갈 수 있습니다."
+                            3 -> "빈칸 문제를 맞혀야 다음 단계로 갈 수 있습니다."
+                            4 -> "코드 실행을 최소 1회 시도해야 다음 단계로 갈 수 있습니다."
+                            5 -> "디버깅 문제를 해결해야 다음 단계로 갈 수 있습니다."
+                            6 -> "AI 판별 문제를 맞혀야 다음 단계로 갈 수 있습니다."
+                            else -> ""
+                        },
+                        fontSize = 12.sp,
+                        color = MaterialTheme.colorScheme.error
+                    )
+                }
+            } else {
                 OutlinedButton(
-                    onClick = { if (currentStep > 1) currentStep-- },
-                    enabled = currentStep > 1,
-                    shape = RoundedCornerShape(8.dp)
+                    onClick = { currentStep-- },
+                    modifier = Modifier.fillMaxWidth()
                 ) {
                     Text("← 이전 단계")
                 }
-
-                Button(
-                    onClick = {
-                        if (currentStep < 5) currentStep++
-                    },
-                    shape = RoundedCornerShape(8.dp)
-                ) {
-                    Text(if (currentStep == 5) "학습 완료" else "다음 단계 →")
-                }
             }
         }
+    }
+}
+
+@Composable
+private fun LearningCard(
+    title: String,
+    content: @Composable ColumnScope.() -> Unit
+) {
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        shape = RoundedCornerShape(12.dp),
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
+    ) {
+        Column(modifier = Modifier.padding(16.dp)) {
+            Text(
+                title,
+                fontSize = 15.sp,
+                fontWeight = FontWeight.Bold,
+                color = MaterialTheme.colorScheme.primary
+            )
+            Spacer(modifier = Modifier.height(8.dp))
+            content()
+        }
+    }
+}
+
+@Composable
+private fun CodeBox(text: String) {
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .background(MaterialTheme.colorScheme.background, RoundedCornerShape(8.dp))
+            .padding(12.dp)
+    ) {
+        Text(text, style = CodeTypography, color = MaterialTheme.colorScheme.onBackground)
+    }
+}
+
+@Composable
+private fun FeedbackBox(success: Boolean, text: String) {
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .background(
+                if (success) MaterialTheme.colorScheme.secondary.copy(alpha = 0.10f)
+                else MaterialTheme.colorScheme.error.copy(alpha = 0.10f),
+                RoundedCornerShape(8.dp)
+            )
+            .padding(10.dp)
+    ) {
+        Text(
+            text,
+            fontSize = 13.sp,
+            color = if (success) MaterialTheme.colorScheme.secondary else MaterialTheme.colorScheme.error
+        )
     }
 }
