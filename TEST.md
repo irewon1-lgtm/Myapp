@@ -32,11 +32,11 @@
    - 자기 설명이 단순 글자 수가 아니라 핵심개념 포함률을 만족해야 통과하는지
    - 짧은 키워드 나열과 길기만 한 무관 문장은 FAIL 처리
 
-## 최근 실제 CI 증거
+## 실제 CI 증거
 
-최신 `fix/problem-engine-v2` head `3bb133dc4d59b6763074dc96126b574ea29a9282`에 대해 GitHub Actions run **34909167948**에서:
+`fix/problem-engine-v2`의 90레슨/10단계 학습엔진 코드가 포함된 head에서 GitHub Actions run **34909285299**를 실행했고:
 
 - `testDebugUnitTest` — **PASS**
 - `assembleDebug` — **PASS**
 
-이 결과는 컴파일/Unit Test/Debug APK 빌드 검증이며, 실기 설치·실행·Release APK·극한60/CLEAN25 전체 완료를 의미하지 않습니다.
+이 결과는 컴파일/Unit Test/Debug APK 빌드 검증입니다. 실기 설치·실행·Release APK·극한60/CLEAN25 전체 완료를 뜻하지 않습니다.
