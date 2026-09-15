@@ -3,7 +3,6 @@ package com.futuretech.poweruser.ui
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
@@ -67,7 +66,6 @@ fun SelfUpdateBanner(modifier: Modifier = Modifier) {
                     state = UpdateUiState.HIDDEN
                 }
                 is AppUpdateManager.CheckResult.Unavailable -> {
-                    // A temporary network/API failure must never block the learning UI.
                     detail = result.reason
                     state = UpdateUiState.HIDDEN
                 }
@@ -113,7 +111,9 @@ fun SelfUpdateBanner(modifier: Modifier = Modifier) {
                 }
             } else {
                 state = UpdateUiState.NEEDS_PERMISSION
-                AppUpdateManager.installPermissionIntent(context)?.let(permissionLauncher::launch)
+                AppUpdateManager.installPermissionIntent(context)?.let { intent ->
+                    permissionLauncher.launch(intent)
+                }
             }
         }
     }
