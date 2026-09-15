@@ -26,6 +26,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.futuretech.poweruser.BuildConfig
 import com.futuretech.poweruser.textbook.*
 import kotlinx.coroutines.flow.distinctUntilChanged
 
@@ -163,7 +164,7 @@ private fun AiCommandBar(
             Column(Modifier.weight(1f)) {
                 Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                     Text("AI CODING OS", fontSize = 11.sp, fontWeight = FontWeight.ExtraBold, color = AiCyan, letterSpacing = 1.2.sp)
-                    StatusPill("v1.2.0", AiViolet)
+                    StatusPill("v${BuildConfig.VERSION_NAME}", AiViolet)
                     StatusPill("ONLINE", AiGreen)
                 }
                 Spacer(Modifier.height(3.dp))
