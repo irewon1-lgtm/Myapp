@@ -3,6 +3,7 @@ package com.futuretech.poweruser.education
 import android.content.Context
 import androidx.compose.ui.test.hasSetTextAction
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
+import androidx.compose.ui.test.onAllNodes
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
@@ -31,10 +32,17 @@ class LearningPracticeModeUiInstrumentedTest {
     }
 
     @Test
-    fun challengeUsesSeparateRouteAndLocksHintsAndAi() {
+    fun completedLessonReopensLectureAndChallengeStillLocksHintsAndAi() {
         composeRule.onNodeWithTag("learning_home_button").performClick()
         composeRule.waitForIdle()
         composeRule.onNodeWithText("이어서 학습 ▶").performClick()
+
+        composeRule.onNodeWithTag("lecture_root").assertExists()
+        composeRule.onNodeWithTag("practice_unlocked_label").assertExists()
+        composeRule.onNodeWithTag("session_mode_practice").assertDoesNotExist()
+
+        composeRule.onNodeWithTag("lecture_start_practice").performClick()
+        composeRule.waitForIdle()
         composeRule.onNodeWithTag("session_mode_practice").assertExists()
 
         composeRule.onNodeWithText("Challenge").performClick()
