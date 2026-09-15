@@ -95,7 +95,8 @@ if screen_path.exists() and overview_path.exists():
 
 if main_path.exists():
     s = main_path.read_text(encoding="utf-8")
-    ck("Curriculum-first launch", 'startDestination = "curriculum"' in s, "startDestination")
+    ck("Learner-home-first launch", 'startDestination = "home"' in s, "startDestination=home")
+    ck("Learning home route", 'composable("home")' in s, "route")
     ck("Overall curriculum route", 'composable("curriculum")' in s, "route")
     ck("Chapter route", 'composable("textbook_v1/{chapterId}")' in s, "route")
     ck("Practice route preserved", 'textbook_v1/practice/{lessonId}' in s, "route")
@@ -104,7 +105,7 @@ failed = [x for x in checks if not x[1]]
 report = [
     "# Curriculum 1-3 Extreme60 / CLEAN25 Report",
     "",
-    "Scope: (1) learner-facing internal label removal, (2) 9-book -> Chapter -> Section -> practice navigation, (3) non-destructive 4-7 minute section presentation.",
+    "Scope: (1) learner-facing internal label removal, (2) learner-home -> 9-book -> Chapter -> Section -> practice navigation, (3) non-destructive 4-7 minute section presentation.",
     "",
     f"- Extreme60: **{extreme[0]}/60**, failures={extreme[1]}, errors={extreme[2]}, skipped={extreme[3]}",
     f"- CLEAN25: **{clean[0]}/25**, failures={clean[1]}, errors={clean[2]}, skipped={clean[3]}",
