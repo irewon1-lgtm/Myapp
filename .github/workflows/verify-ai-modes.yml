@@ -1,0 +1,91 @@
+name: Verify AI three modes
+
+on:
+  push:
+    branches:
+      - fix/problem-engine-v2
+    paths:
+      - 'app/src/main/java/com/futuretech/poweruser/ai/**'
+      - 'app/src/main/java/com/futuretech/poweruser/ui/components/AiLearningPanel.kt'
+      - 'app/src/main/java/com/futuretech/poweruser/ui/LessonDetailScreen.kt'
+      - 'app/src/main/java/com/futuretech/poweruser/data/SecureKeyStorage.kt'
+      - 'app/src/main/AndroidManifest.xml'
+      - 'app/src/test/java/com/futuretech/poweruser/ai/**'
+      - 'app/src/androidTest/java/com/futuretech/poweruser/ai/**'
+      - 'app/build.gradle.kts'
+      - 'tools/ai_cleanpass.py'
+      - '.github/workflows/verify-ai-modes.yml'
+  workflow_dispatch:
+
+jobs:
+  ai-extreme-clean:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: gradle
+
+      - name: Set up Python 3.13 for Chaquopy build and evidence
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Set up Node for TypeScript assets
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Prepare TypeScript compiler assets
+        run: |
+          npm install --ignore-scripts --no-audit --no-fund
+          npm run prepare:typescript
+          test -s app/src/main/assets/typescript.js
+          test -s app/src/main/assets/ts_libs.js
+
+      - name: Make Gradle wrapper executable
+        run: chmod +x ./gradlew
+
+      - name: Run all JVM unit tests including AI Extreme60
+        run: ./gradlew testDebugUnitTest --stacktrace
+
+      - name: Build debug APK
+        run: ./gradlew assembleDebug --stacktrace
+
+      - name: Enable KVM
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+
+      - name: Android emulator AI credential UI and runtime regression tests
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 34
+          arch: x86_64
+          profile: pixel_6
+          disable-animations: true
+          script: ./gradlew connectedDebugAndroidTest --stacktrace
+
+      - name: Generate scoped AI Extreme60 and CLEAN25 evidence
+        run: python tools/ai_cleanpass.py
+
+      - name: Upload AI scoped evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ai-three-mode-extreme-clean-evidence
+          if-no-files-found: warn
+          path: |
+            ai_extreme_report.json
+            ai_cleanpass_report.md
+            app/build/test-results/testDebugUnitTest/**
+            app/build/outputs/androidTest-results/connected/**
+            app/build/reports/androidTests/connected/**
+            app/build/outputs/apk/debug/app-debug.apk
