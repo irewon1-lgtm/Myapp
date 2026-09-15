@@ -31,10 +31,10 @@ class AppRepository(context: Context) {
         val entity = LearningProgressEntity(
             lessonId = lessonId,
             curriculumType = curriculumType,
-            unitNumber = unitNumber,
+            unitNumber = unitNumSafe(unitNumber),
             title = title,
             status = status,
-            completionPercentage = completionPercentage,
+            completionPercentage = completionPercentage.coerceIn(0, 100),
             isCompleted = isCompleted,
             lastStudiedTimestamp = System.currentTimeMillis()
         )
@@ -99,11 +99,25 @@ class AppRepository(context: Context) {
         )
     }
 
+    suspend fun scheduleReviewAfterLearning(
+        conceptId: String,
+        maxHintLevel: Int,
+        now: Long = System.currentTimeMillis()
+    ) {
+        val current = dao.getRepetitionById(conceptId) ?: return
+        dao.insertOrUpdateRepetition(
+            SpacedRepetitionEngine.scheduleAfterLearning(
+                current = current,
+                maxHintLevel = maxHintLevel,
+                now = now
+            )
+        )
+    }
+
     fun observeDueReviewCount(now: Long = System.currentTimeMillis()): Flow<Int> =
         dao.observeDueReviewCount(now)
 
     suspend fun getDueReviews(now: Long = System.currentTimeMillis()): List<SpacedRepetitionItemEntity> {
-        dao.promoteLegacyFirstReviews(now)
         return dao.getDueReviews(now)
             .sortedWith(compareBy<SpacedRepetitionItemEntity> { it.nextReviewTimestamp }.thenBy { it.conceptTitle })
     }
@@ -111,6 +125,7 @@ class AppRepository(context: Context) {
     suspend fun recordReview(
         conceptId: String,
         remembered: Boolean,
+        failureStreak: Int = 1,
         now: Long = System.currentTimeMillis()
     ) {
         val current = dao.getRepetitionById(conceptId) ?: return
@@ -118,8 +133,11 @@ class AppRepository(context: Context) {
             SpacedRepetitionEngine.recordReview(
                 current = current,
                 remembered = remembered,
-                now = now
+                now = now,
+                failureStreak = failureStreak
             )
         )
     }
+
+    private fun unitNumSafe(value: Int): Int = value.coerceAtLeast(0)
 }
