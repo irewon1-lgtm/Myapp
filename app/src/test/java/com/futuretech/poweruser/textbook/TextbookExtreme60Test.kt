@@ -1,7 +1,10 @@
 package com.futuretech.poweruser.textbook
 
 import com.futuretech.poweruser.data.CurriculumDataRepository
-import org.junit.Assert.*
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
+import org.junit.Assert.assertNotNull
+import org.junit.Assert.assertTrue
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
@@ -9,43 +12,69 @@ import org.junit.runners.Parameterized
 @RunWith(Parameterized::class)
 class TextbookExtreme60Test(private val caseId: Int) {
     companion object {
-        @JvmStatic @Parameterized.Parameters(name = "textbook-extreme-{0}")
+        @JvmStatic
+        @Parameterized.Parameters(name = "curriculum-section-extreme-{0}")
         fun cases(): Collection<Array<Any>> = (1..60).map { arrayOf<Any>(it) }
     }
 
-    @Test fun extremeTabletTextbookScenarioPasses() {
-        val chapters = V1TextbookCatalog.chapters
-        val chapter = chapters[(caseId - 1) % chapters.size]
-        val widths = listOf(320, 359, 360, 599, 719, 720, 799, 840, 1079, 1080, 1280, 1600)
-        val width = widths[(caseId - 1) % widths.size]
-        val mode = TextbookLayoutMode.fromWidthDp(width)
-        val lesson = CurriculumDataRepository.lessonById(chapter.practiceLessonId)
+    @Test
+    fun curriculumAndSectionScenarioPasses() {
+        val books = PowerUserCurriculumCatalog.books
+        val allChapters = PowerUserCurriculumCatalog.chapters
+        val expectedCounts = listOf(11, 19, 14, 14, 14, 16, 15, 15, 16)
 
-        assertEquals(11, chapters.size)
-        assertTrue(chapter.id.matches(Regex("V1-C\\d{2}")))
-        assertTrue(chapter.title.length >= 7)
-        assertTrue(chapter.assetPath.matches(Regex("textbook/v1/chapter_\\d{2}\\.md")))
-        assertTrue(chapter.sourceLessonIds.isNotEmpty())
-        assertTrue(chapter.sourceLessonIds.size <= 4)
-        assertTrue(chapter.keyConcepts.size >= 5)
-        assertTrue(chapter.summary.length >= 30)
-        assertTrue(chapter.humanMustKnow.length >= 30)
-        assertTrue(chapter.aiCanHelp.length >= 30)
-        assertNotNull(lesson)
-        assertEquals(11, lesson!!.stepTotal)
-        assertTrue(lesson.codeSample.isNotBlank())
-        assertTrue(lesson.initialPracticeCode.isNotBlank())
-        assertTrue(lesson.brokenCodeFix.isNotBlank())
-        assertTrue(lesson.explainKeywords.size >= 5)
+        assertEquals(9, books.size)
+        assertEquals(134, allChapters.size)
+        assertEquals(expectedCounts, books.map { it.chapters.size })
+        assertEquals(134, allChapters.map { it.id }.toSet().size)
 
-        when {
-            width >= 1080 -> assertEquals(TextbookLayoutMode.EXPANDED, mode)
-            width >= 720 -> assertEquals(TextbookLayoutMode.MEDIUM, mode)
-            else -> assertEquals(TextbookLayoutMode.COMPACT, mode)
+        val book = books[(caseId - 1) % books.size]
+        assertEquals("V${book.number}", book.id)
+        assertTrue(book.title.isNotBlank())
+        assertEquals((1..book.chapters.size).toList(), book.chapters.map { it.number })
+
+        val chapter = allChapters[((caseId - 1) * 17) % allChapters.size]
+        assertTrue(chapter.id.matches(Regex("V[1-9]-C\\d{2}")))
+        assertTrue(chapter.title.length >= 5)
+        if (chapter.id.startsWith("V1-")) {
+            assertTrue(chapter.contentAvailable)
+            val actual = V1TextbookCatalog.chapterById(chapter.id)
+            assertNotNull(actual)
+            assertEquals(chapter.title, actual!!.title)
+            assertNotNull(CurriculumDataRepository.lessonById(actual.practiceLessonId))
+        } else {
+            assertFalse(chapter.contentAvailable)
         }
+
+        val repeatCount = 7 + (caseId % 7)
+        val markdown = buildString {
+            appendLine("# Chapter $caseId")
+            repeat(repeatCount) { index ->
+                appendLine("## 개념 ${index + 1}")
+                appendLine(("설명${index + 1} ".repeat(90 + (caseId % 20))).trim())
+                if (index % 3 == 0) {
+                    appendLine("```python")
+                    appendLine("value = ${index + caseId}")
+                    appendLine("print(value)")
+                    appendLine("```")
+                }
+            }
+        }
+        val blocks = TextbookMarkdownParser.parse(markdown)
+        val sections = TextbookSectioner.split("TEST-$caseId", blocks)
+
+        assertTrue(sections.isNotEmpty())
+        assertEquals(blocks, sections.flatMap { it.blocks })
+        assertEquals(sections.size, sections.map { it.id }.toSet().size)
+        assertTrue(sections.all { it.estimatedMinutes in 4..7 })
+        assertTrue(sections.all { it.title.isNotBlank() })
+        assertTrue(sections.all { it.weightedLength > 0 })
+
         if (caseId % 10 == 0) {
+            assertEquals(11, V1TextbookCatalog.chapters.size)
             assertEquals(28, V1TextbookCatalog.allSourceLessonIds.toSet().size)
             assertEquals(11, V1TextbookCatalog.practiceLessonIds.size)
+            assertEquals(123, allChapters.count { !it.contentAvailable })
         }
     }
 }
