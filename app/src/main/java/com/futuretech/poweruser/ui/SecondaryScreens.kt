@@ -17,6 +17,7 @@ import com.futuretech.poweruser.data.AppRepository
 import com.futuretech.poweruser.data.PersonalErrorNoteEntity
 import com.futuretech.poweruser.data.SpacedRepetitionItemEntity
 import com.futuretech.poweruser.education.MemoryPriority
+import com.futuretech.poweruser.education.ReviewVariationEngine
 import com.futuretech.poweruser.education.SpacedRepetitionEngine
 import com.futuretech.poweruser.ui.theme.CodeTypography
 import kotlinx.coroutines.launch
@@ -29,6 +30,7 @@ fun SpacedRepetitionReviewScreen(
 ) {
     var dueReviews by remember { mutableStateOf<List<SpacedRepetitionItemEntity>>(emptyList()) }
     var revealedIds by remember { mutableStateOf<Set<String>>(emptySet()) }
+    var failureStreaks by remember { mutableStateOf<Map<String, Int>>(emptyMap()) }
     val scope = rememberCoroutineScope()
 
     suspend fun refresh() {
@@ -36,15 +38,13 @@ fun SpacedRepetitionReviewScreen(
         revealedIds = revealedIds.intersect(dueReviews.map { it.conceptId }.toSet())
     }
 
-    LaunchedEffect(Unit) {
-        refresh()
-    }
+    LaunchedEffect(Unit) { refresh() }
 
     Scaffold(
         modifier = Modifier.testTag("review_screen"),
         topBar = {
             TopAppBar(
-                title = { Text("암기 · 자동복습", fontSize = 18.sp, fontWeight = FontWeight.Bold) },
+                title = { Text("복습 · 변형 문제", fontSize = 18.sp, fontWeight = FontWeight.Bold) },
                 navigationIcon = { TextButton(onClick = onNavigateBack) { Text("← 뒤로") } }
             )
         }
@@ -61,17 +61,10 @@ fun SpacedRepetitionReviewScreen(
                 colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primaryContainer)
             ) {
                 Column(modifier = Modifier.padding(15.dp)) {
-                    Row(
-                        modifier = Modifier.fillMaxWidth(),
-                        horizontalArrangement = Arrangement.SpaceBetween,
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        Text("오늘 복습 ${dueReviews.size}개", fontSize = 17.sp, fontWeight = FontWeight.Bold)
-                        Text("오늘 → 1 → 3 → 7 → 14일", fontSize = 12.sp, fontWeight = FontWeight.SemiBold)
-                    }
+                    Text("오늘 복습 ${dueReviews.size}개", fontSize = 17.sp, fontWeight = FontWeight.Bold)
                     Spacer(modifier = Modifier.height(6.dp))
                     Text(
-                        "먼저 스스로 설명한 뒤 ‘답 확인’을 누르세요. 틀리면 10분 뒤 다시 나오고, 맞히면 다음 간격으로 이동합니다.",
+                        "같은 문장을 그대로 외우게 하지 않습니다. 입력·비교·문맥을 바꾼 문제로 다시 적용합니다. 틀림과 힌트 사용은 더 빨리, 독립 정답은 더 길게 간격을 조정합니다.",
                         fontSize = 13.sp,
                         lineHeight = 19.sp,
                         color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.82f)
@@ -85,13 +78,9 @@ fun SpacedRepetitionReviewScreen(
                     contentAlignment = Alignment.Center
                 ) {
                     Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                        Text("오늘 복습 완료 ✓", fontSize = 18.sp, fontWeight = FontWeight.Bold)
+                        Text("현재 복습 완료 ✓", fontSize = 18.sp, fontWeight = FontWeight.Bold)
                         Spacer(modifier = Modifier.height(6.dp))
-                        Text(
-                            "지금 복습할 카드가 없습니다.",
-                            fontSize = 14.sp,
-                            color = MaterialTheme.colorScheme.outline
-                        )
+                        Text("지금 시점에 다시 볼 항목이 없습니다.", fontSize = 14.sp, color = MaterialTheme.colorScheme.outline)
                     }
                 }
             } else {
@@ -101,6 +90,7 @@ fun SpacedRepetitionReviewScreen(
                 ) {
                     items(dueReviews, key = { it.conceptId }) { item ->
                         val guidance = SpacedRepetitionEngine.guidance(item)
+                        val variation = ReviewVariationEngine.forItem(item)
                         val revealed = item.conceptId in revealedIds
                         val priorityColor = when (guidance.priority) {
                             MemoryPriority.MUST_REMEMBER -> MaterialTheme.colorScheme.error
@@ -119,10 +109,7 @@ fun SpacedRepetitionReviewScreen(
                                     horizontalArrangement = Arrangement.SpaceBetween,
                                     verticalAlignment = Alignment.CenterVertically
                                 ) {
-                                    Surface(
-                                        shape = RoundedCornerShape(6.dp),
-                                        color = priorityColor.copy(alpha = 0.12f)
-                                    ) {
+                                    Surface(shape = RoundedCornerShape(6.dp), color = priorityColor.copy(alpha = 0.12f)) {
                                         Text(
                                             guidance.priority.label,
                                             fontSize = 11.sp,
@@ -140,40 +127,34 @@ fun SpacedRepetitionReviewScreen(
 
                                 Spacer(modifier = Modifier.height(10.dp))
                                 Text(item.conceptTitle, fontSize = 18.sp, fontWeight = FontWeight.Bold)
-                                Spacer(modifier = Modifier.height(5.dp))
-                                Text(
-                                    "이 개념을 보지 않고 본인 말로 설명해 보세요.",
-                                    fontSize = 14.sp,
-                                    fontWeight = FontWeight.SemiBold
-                                )
+                                Spacer(modifier = Modifier.height(6.dp))
+                                Text(variation.prompt, fontSize = 14.sp, lineHeight = 21.sp, fontWeight = FontWeight.SemiBold)
                                 Spacer(modifier = Modifier.height(4.dp))
-                                Text(
-                                    guidance.instruction,
-                                    fontSize = 12.sp,
-                                    lineHeight = 18.sp,
-                                    color = MaterialTheme.colorScheme.outline
-                                )
+                                Text(variation.focus, fontSize = 12.sp, lineHeight = 18.sp, color = MaterialTheme.colorScheme.outline)
+
+                                variation.changedExample?.let { changed ->
+                                    Spacer(modifier = Modifier.height(10.dp))
+                                    Box(
+                                        modifier = Modifier
+                                            .fillMaxWidth()
+                                            .background(MaterialTheme.colorScheme.background, RoundedCornerShape(8.dp))
+                                            .padding(10.dp)
+                                    ) {
+                                        Text(changed, style = CodeTypography, fontSize = 12.sp)
+                                    }
+                                }
 
                                 Spacer(modifier = Modifier.height(12.dp))
                                 if (!revealed) {
                                     Button(
                                         onClick = { revealedIds = revealedIds + item.conceptId },
                                         modifier = Modifier.fillMaxWidth().testTag("reveal_${item.conceptId}")
-                                    ) {
-                                        Text("답 확인")
-                                    }
+                                    ) { Text("답·기준 확인") }
                                 } else {
                                     ReviewAnswerBlock("한 문장 정의", item.definition)
-                                    if (item.analogy.isNotBlank()) {
-                                        ReviewAnswerBlock("쉬운 비유 · 학습 목표", item.analogy)
-                                    }
+                                    if (item.analogy.isNotBlank()) ReviewAnswerBlock("원래 학습 목표/비유", item.analogy)
                                     if (item.example.isNotBlank()) {
-                                        Text(
-                                            "실제 예시",
-                                            fontSize = 12.sp,
-                                            fontWeight = FontWeight.Bold,
-                                            color = MaterialTheme.colorScheme.primary
-                                        )
+                                        Text("원래 예시", fontSize = 12.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.primary)
                                         Spacer(modifier = Modifier.height(4.dp))
                                         Box(
                                             modifier = Modifier
@@ -185,9 +166,7 @@ fun SpacedRepetitionReviewScreen(
                                         }
                                         Spacer(modifier = Modifier.height(9.dp))
                                     }
-                                    if (item.comparison.isNotBlank()) {
-                                        ReviewAnswerBlock("헷갈림 방지", item.comparison)
-                                    }
+                                    if (item.comparison.isNotBlank()) ReviewAnswerBlock("헷갈림 방지", item.comparison)
 
                                     Row(
                                         modifier = Modifier.fillMaxWidth(),
@@ -195,28 +174,27 @@ fun SpacedRepetitionReviewScreen(
                                     ) {
                                         OutlinedButton(
                                             onClick = {
+                                                val streak = (failureStreaks[item.conceptId] ?: 0) + 1
+                                                failureStreaks = failureStreaks + (item.conceptId to streak)
                                                 scope.launch {
-                                                    repository.recordReview(item.conceptId, remembered = false)
+                                                    repository.recordReview(item.conceptId, remembered = false, failureStreak = streak)
                                                     revealedIds = revealedIds - item.conceptId
                                                     refresh()
                                                 }
                                             },
                                             modifier = Modifier.weight(1f).testTag("again_${item.conceptId}")
-                                        ) {
-                                            Text("다시 보기")
-                                        }
+                                        ) { Text("다시 보기") }
                                         Button(
                                             onClick = {
+                                                failureStreaks = failureStreaks - item.conceptId
                                                 scope.launch {
-                                                    repository.recordReview(item.conceptId, remembered = true)
+                                                    repository.recordReview(item.conceptId, remembered = true, failureStreak = 0)
                                                     revealedIds = revealedIds - item.conceptId
                                                     refresh()
                                                 }
                                             },
                                             modifier = Modifier.weight(1f).testTag("remember_${item.conceptId}")
-                                        ) {
-                                            Text("기억남 ✓")
-                                        }
+                                        ) { Text("혼자 설명 가능 ✓") }
                                     }
                                 }
                             }
@@ -257,7 +235,7 @@ fun PersonalErrorNotesScreen(
                 .padding(16.dp)
         ) {
             Text(
-                "빈칸 오답·디버깅 실패·AI 판별 오답·실행 오류를 자동 누적합니다.",
+                "여기 누적된 실제 오답은 Chapter Challenge 추가 출제 슬롯에 자동 가중됩니다.",
                 fontSize = 14.sp,
                 fontWeight = FontWeight.Bold,
                 color = MaterialTheme.colorScheme.error
@@ -265,13 +243,9 @@ fun PersonalErrorNotesScreen(
             Spacer(modifier = Modifier.height(8.dp))
 
             if (errorNotesList.isEmpty()) {
-                Box(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(24.dp)
-                ) {
+                Box(modifier = Modifier.fillMaxWidth().padding(24.dp)) {
                     Text(
-                        "아직 기록된 오류가 없습니다. 문제를 틀리거나 실행 오류가 발생하면 여기에 자동 수집됩니다.",
+                        "아직 기록된 오류가 없습니다. 문제를 틀리거나 제출 테스트가 실패하면 자동 수집됩니다.",
                         fontSize = 14.sp,
                         color = MaterialTheme.colorScheme.outline
                     )
@@ -289,16 +263,8 @@ fun PersonalErrorNotesScreen(
                                     horizontalArrangement = Arrangement.SpaceBetween,
                                     modifier = Modifier.fillMaxWidth()
                                 ) {
-                                    Text(
-                                        note.errorType,
-                                        fontSize = 15.sp,
-                                        fontWeight = FontWeight.Bold,
-                                        color = MaterialTheme.colorScheme.error
-                                    )
-                                    Surface(
-                                        shape = RoundedCornerShape(4.dp),
-                                        color = MaterialTheme.colorScheme.error.copy(alpha = 0.1f)
-                                    ) {
+                                    Text(note.errorType, fontSize = 15.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.error)
+                                    Surface(shape = RoundedCornerShape(4.dp), color = MaterialTheme.colorScheme.error.copy(alpha = 0.1f)) {
                                         Text(
                                             "발생 ${note.occurrenceCount}회",
                                             fontSize = 11.sp,
@@ -313,15 +279,9 @@ fun PersonalErrorNotesScreen(
                                         .fillMaxWidth()
                                         .background(MaterialTheme.colorScheme.background, RoundedCornerShape(6.dp))
                                         .padding(8.dp)
-                                ) {
-                                    Text(note.codeSnippet, style = CodeTypography, fontSize = 12.sp)
-                                }
+                                ) { Text(note.codeSnippet, style = CodeTypography, fontSize = 12.sp) }
                                 Spacer(modifier = Modifier.height(6.dp))
-                                Text(
-                                    "오류: ${note.errorMessage}",
-                                    fontSize = 12.sp,
-                                    color = MaterialTheme.colorScheme.error
-                                )
+                                Text("오류: ${note.errorMessage}", fontSize = 12.sp, color = MaterialTheme.colorScheme.error)
                                 Text(
                                     "교정 가이드: ${note.correctionGuide}",
                                     fontSize = 13.sp,
