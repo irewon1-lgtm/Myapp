@@ -90,16 +90,25 @@ jobs:
           disable-animations: true
           script: |
             set -e
+            adb logcat -c
             adb install -r final-dist/FutureTechPowerUser_v1.0.0_FINAL.apk
             adb shell am force-stop com.futuretech.poweruser
             adb shell am start -W -n com.futuretech.poweruser/.MainActivity | tee final-dist/launch_smoke.txt
             sleep 3
-            PID="$(adb shell pidof com.futuretech.poweruser | tr -d '\r')"
-            test -n "$PID"
+            PID="$(adb shell pidof com.futuretech.poweruser | tr -d '\r' || true)"
+            if [ -z "$PID" ]; then
+              echo "PROCESS_EXITED_AFTER_LAUNCH" | tee -a final-dist/launch_smoke.txt
+              adb logcat -d -v threadtime > final-dist/logcat_full.txt || true
+              grep -E -i 'FATAL EXCEPTION|AndroidRuntime|futuretech|Process: com.futuretech.poweruser|Exception|Error' final-dist/logcat_full.txt | tail -n 250 > final-dist/logcat_crash_excerpt.txt || true
+              cat final-dist/logcat_crash_excerpt.txt || true
+              exit 1
+            fi
             echo "PID=$PID" | tee -a final-dist/launch_smoke.txt
             adb shell dumpsys package com.futuretech.poweruser | grep -E 'versionCode|versionName' | head -n 4 | tee -a final-dist/launch_smoke.txt
+            adb logcat -d -v threadtime > final-dist/logcat_full.txt || true
 
-      - name: Upload final signed APK
+      - name: Upload final signed APK and diagnostics
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: FutureTechPowerUser-final-signed-release
@@ -110,3 +119,5 @@ jobs:
             final-dist/FutureTechPowerUser_v1.0.0_FINAL.sha256
             final-dist/apksigner_verify.txt
             final-dist/launch_smoke.txt
+            final-dist/logcat_full.txt
+            final-dist/logcat_crash_excerpt.txt
