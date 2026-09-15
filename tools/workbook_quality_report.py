@@ -48,7 +48,10 @@ for index, path in enumerate(workbooks, start=1):
     workbook_chars += len(text)
     training_count = sum(
         1 for line in text.splitlines()
-        if line.startswith("## 훈련") or line.startswith("## 프로젝트") or line.startswith("# 프로젝트")
+        if line.startswith("## 훈련")
+        or line.startswith("## 프로젝트")
+        or line.startswith("# 프로젝트")
+        or line.startswith("# 종합 시나리오")
     )
     training_counts.append(training_count)
 
@@ -57,7 +60,7 @@ for index, path in enumerate(workbooks, start=1):
     ck(f"{path.name}: code/data examples", "```" in text, "code fence")
     ck(
         f"{path.name}: direct learner action",
-        any(word in text for word in ("직접", "수정", "판정", "실행", "디버깅", "프로젝트")),
+        any(word in text for word in ("직접", "수정", "판정", "실행", "디버깅", "프로젝트", "시나리오")),
         "action verbs",
     )
     ck(
