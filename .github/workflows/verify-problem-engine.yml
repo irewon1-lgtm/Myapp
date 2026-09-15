@@ -1,4 +1,4 @@
-name: Verify real runtimes
+name: Verify real runtimes and AI modes
 
 on:
   push:
@@ -7,9 +7,9 @@ on:
   workflow_dispatch:
 
 jobs:
-  runtime-extreme-clean:
+  runtime-ai-extreme-clean:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 50
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -39,9 +39,9 @@ jobs:
           test -s app/src/main/assets/ts_libs.js
 
       - name: Make scripts executable
-        run: chmod +x ./gradlew tools/run_runtime_extreme.sh tools/runtime_cleanpass.py
+        run: chmod +x ./gradlew tools/run_runtime_extreme.sh tools/runtime_cleanpass.py tools/ai_cleanpass.py
 
-      - name: Run JVM unit tests
+      - name: Run JVM unit tests and AI Extreme60
         run: ./gradlew testDebugUnitTest --stacktrace
 
       - name: Build debug APK
@@ -53,7 +53,7 @@ jobs:
           sudo udevadm control --reload-rules
           sudo udevadm trigger --name-match=kvm
 
-      - name: Android emulator Runtime Extreme60 + scoped CLEAN25
+      - name: Android emulator Runtime Extreme60 + AI UI credential tests + Runtime CLEAN25
         uses: reactivecircus/android-emulator-runner@v2
         with:
           api-level: 34
@@ -62,15 +62,21 @@ jobs:
           disable-animations: true
           script: bash tools/run_runtime_extreme.sh
 
-      - name: Upload runtime evidence
+      - name: AI three-mode CLEAN25
+        run: python tools/ai_cleanpass.py
+
+      - name: Upload combined evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: runtime-extreme-clean-evidence
+          name: runtime-ai-extreme-clean-evidence
           if-no-files-found: warn
           path: |
             runtime_extreme_report.json
             runtime_cleanpass_report.md
+            runtime_instrumentation_output.txt
+            ai_extreme_report.json
+            ai_cleanpass_report.md
             app/build/test-results/testDebugUnitTest/**
             app/build/outputs/androidTest-results/connected/**
             app/build/reports/androidTests/connected/**
