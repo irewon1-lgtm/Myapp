@@ -43,9 +43,14 @@ fun TeachingLessonScreen(
     }
 
     if (lectureCompleted) {
-        LessonDetailScreen(
+        FeedbackPracticeScreen(
             lessonId = lesson.lessonId,
             onNavigateBack = onNavigateBack,
+            onReviewLecture = { targetIndex ->
+                sectionIndex = targetIndex.coerceIn(0, lecture.sections.lastIndex)
+                progressStore.saveSectionIndex(lesson.lessonId, sectionIndex)
+                lectureCompleted = false
+            },
             onStepCompleted = onStepCompleted,
             onRecordErrorNote = onRecordErrorNote
         )
