@@ -72,8 +72,9 @@ object PracticeFeedbackEngine {
     }
 
     fun codeRewrite(lesson: LessonContent, actual: String, expected: String, attempt: Int): PracticeFeedback {
-        val ok = canonical(actual) == canonical(expected)
-        val diff = firstDifference(actual, expected)
+        val preserveIndentation = lesson.practiceLanguage.equals("PYTHON", ignoreCase = true)
+        val ok = canonical(actual, preserveIndentation) == canonical(expected, preserveIndentation)
+        val diff = firstDifference(actual, expected, preserveIndentation)
         return PracticeFeedback(
             if (ok) FeedbackVerdict.CORRECT else FeedbackVerdict.INCORRECT,
             if (ok) "핵심 코드 재작성 성공" else "아직 핵심 코드가 다릅니다",
@@ -92,15 +93,16 @@ object PracticeFeedbackEngine {
 
     fun debug(lesson: LessonContent, actual: String, attempt: Int): PracticeFeedback {
         val expected = lesson.brokenCodeFix
-        val ok = canonical(actual) == canonical(expected)
-        val diff = firstDifference(actual, expected)
+        val preserveIndentation = lesson.practiceLanguage.equals("PYTHON", ignoreCase = true)
+        val ok = canonical(actual, preserveIndentation) == canonical(expected, preserveIndentation)
+        val diff = firstDifference(actual, expected, preserveIndentation)
         return PracticeFeedback(
             if (ok) FeedbackVerdict.CORRECT else FeedbackVerdict.INCORRECT,
             if (ok) "디버깅 성공" else "아직 오류가 해결되지 않았습니다",
             actual.trim().ifEmpty { "(입력 없음)" },
             expected.trim(),
-            if (ok) "고장난 예제와 수정 예제의 차이를 찾아 핵심 오류를 바로잡았습니다. ${fixReason(lesson.brokenCode, expected)}"
-            else "수정안이 목표 수정과 아직 다릅니다. ${diff.ifBlank { fixReason(lesson.brokenCode, expected) }}",
+            if (ok) "고장난 예제와 수정 예제의 차이를 찾아 핵심 오류를 바로잡았습니다. ${fixReason(lesson.brokenCode, expected, preserveIndentation)}"
+            else "수정안이 목표 수정과 아직 다릅니다. ${diff.ifBlank { fixReason(lesson.brokenCode, expected, preserveIndentation) }}",
             if (ok) "정답 코드를 외우기보다 ‘증상 → 원인 → 최소 수정’을 기억해야 다음 오류에도 적용할 수 있습니다."
             else when (attempt) {
                 1 -> "처음부터 전체 코드를 바꾸면 원인을 놓치기 쉽습니다. 고장난 줄 하나만 좁혀보세요."
@@ -208,19 +210,21 @@ object PracticeFeedbackEngine {
         LectureContentRepository.forLesson(lesson).glossary.firstOrNull { normalize(it.term) == normalize(answer) }?.memoryHook
             ?: "‘$answer’을(를) 보면 ${lesson.moduleTitle}에서 어떤 역할인지 먼저 떠올리세요."
 
-    private fun fixReason(broken: String, fixed: String) =
-        firstDifference(broken, fixed).ifBlank { "수정 전후의 핵심 구조 차이를 확인했습니다." }
+    private fun fixReason(broken: String, fixed: String, preserveIndentation: Boolean = false) =
+        firstDifference(broken, fixed, preserveIndentation).ifBlank { "수정 전후의 핵심 구조 차이를 확인했습니다." }
 
-    private fun firstDifference(actual: String, expected: String): String {
-        val a = meaningfulLines(actual)
-        val e = meaningfulLines(expected)
+    private fun firstDifference(actual: String, expected: String, preserveIndentation: Boolean = false): String {
+        val a = meaningfulLines(actual, preserveIndentation)
+        val e = meaningfulLines(expected, preserveIndentation)
         for (i in 0 until maxOf(a.size, e.size)) {
             val av = a.getOrNull(i)
             val ev = e.getOrNull(i)
-            if (normalizeCodeLine(av.orEmpty()) != normalizeCodeLine(ev.orEmpty())) {
+            if (normalizeCodeLine(av.orEmpty(), preserveIndentation) != normalizeCodeLine(ev.orEmpty(), preserveIndentation)) {
                 return when {
                     av == null -> "${i + 1}번째 핵심 줄이 빠졌습니다. 기대 줄: `${ev.orEmpty()}`"
                     ev == null -> "${i + 1}번째에 불필요한 줄이 있습니다: `$av`"
+                    preserveIndentation && normalizeCodeLine(av, false) == normalizeCodeLine(ev, false) && leadingIndent(av) != leadingIndent(ev) ->
+                        "${i + 1}번째 핵심 줄의 들여쓰기가 다릅니다. 내 코드 들여쓰기 ${leadingIndent(av)}칸 / 학습 예제 ${leadingIndent(ev)}칸"
                     else -> "${i + 1}번째 핵심 줄이 다릅니다. 내 코드: `$av` / 학습 예제: `$ev`"
                 }
             }
@@ -241,9 +245,20 @@ object PracticeFeedbackEngine {
         }
     }
 
-    private fun meaningfulLines(code: String) = code.lines().map { stripComment(it).trim() }.filter { it.isNotEmpty() }
-    private fun canonical(code: String) = meaningfulLines(code).joinToString("\n") { normalizeCodeLine(it) }
-    private fun normalizeCodeLine(value: String) = value.replace(Regex("\\s+"), "")
+    private fun meaningfulLines(code: String, preserveIndentation: Boolean = false) = code.lines()
+        .map { stripComment(it).replace("\t", "    ").let { line -> if (preserveIndentation) line.trimEnd() else line.trim() } }
+        .filter { it.trim().isNotEmpty() }
+    private fun canonical(code: String, preserveIndentation: Boolean = false) =
+        meaningfulLines(code, preserveIndentation).joinToString("\n") { normalizeCodeLine(it, preserveIndentation) }
+    private fun normalizeCodeLine(value: String, preserveIndentation: Boolean = false): String {
+        if (!preserveIndentation) return value.replace(Regex("\\s+"), "")
+        val expanded = value.replace("\t", "    ")
+        return "${leadingIndent(expanded)}:${expanded.trimStart().replace(Regex("\\s+"), "")}"
+    }
+    private fun leadingIndent(value: String): Int {
+        val expanded = value.replace("\t", "    ")
+        return expanded.length - expanded.trimStart().length
+    }
     private fun normalize(value: String) = value.trim().lowercase().replace(Regex("\\s+"), "").replace("-", "").replace("_", "")
     private fun stripComment(line: String): String {
         val cut = listOf(line.indexOf('#'), line.indexOf("//")).filter { it >= 0 }.minOrNull() ?: line.length
