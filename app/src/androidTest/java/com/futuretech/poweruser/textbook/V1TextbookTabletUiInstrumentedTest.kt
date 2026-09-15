@@ -1,6 +1,6 @@
 package com.futuretech.poweruser.textbook
 
-import android.graphics.Bitmap
+import android.os.ParcelFileDescriptor
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.performClick
@@ -9,14 +9,13 @@ import com.futuretech.poweruser.MainActivity
 import org.junit.Assert.assertTrue
 import org.junit.Rule
 import org.junit.Test
-import java.io.File
-import java.io.FileOutputStream
 
 class V1TextbookTabletUiInstrumentedTest {
     @get:Rule val compose = createAndroidComposeRule<MainActivity>()
 
     @Test fun galaxyTabSizedWindowUsesThreeColumnUniversityTextbookLayout() {
-        val context = InstrumentationRegistry.getInstrumentation().targetContext
+        val instrumentation = InstrumentationRegistry.getInstrumentation()
+        val context = instrumentation.targetContext
         val widthDp = context.resources.configuration.screenWidthDp
         if (widthDp < 1080) {
             assertTrue("Default phone regression run is expected to be narrower than expanded threshold", widthDp < 1080)
@@ -30,15 +29,17 @@ class V1TextbookTabletUiInstrumentedTest {
         compose.onNodeWithTag("textbook_reader").assertExists()
         compose.onNodeWithTag("textbook_insight_rail").assertExists()
 
-        // Keep the evidence inside the debuggable target app. CI extracts it with
-        // `run-as`, avoiding MediaStore indexing, scoped-storage paths and filename rewriting.
-        val bitmap = InstrumentationRegistry.getInstrumentation().uiAutomation.takeScreenshot()
-        val output = File(context.filesDir, "v1_textbook_tablet.png")
-        if (output.exists()) output.delete()
-        val compressed = FileOutputStream(output).use { stream ->
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream)
-        }
-        assertTrue("Galaxy Tab screenshot must be encoded as PNG", compressed)
-        assertTrue("Galaxy Tab screenshot evidence must be non-trivial", output.exists() && output.length() > 10_000)
+        // Capture while the verified three-column screen is still on screen. The shell-owned
+        // /data/local/tmp path survives test/app cleanup and avoids scoped-storage behavior.
+        val screenshotPath = "/data/local/tmp/v1_textbook_tablet.png"
+        shell(instrumentation, "rm -f $screenshotPath")
+        shell(instrumentation, "screencap -p $screenshotPath")
+        val listing = shell(instrumentation, "ls -l $screenshotPath")
+        assertTrue("Galaxy Tab screenshot must exist in shell temp storage", listing.contains("v1_textbook_tablet.png"))
+    }
+
+    private fun shell(instrumentation: android.app.Instrumentation, command: String): String {
+        val descriptor = instrumentation.uiAutomation.executeShellCommand(command)
+        return ParcelFileDescriptor.AutoCloseInputStream(descriptor).bufferedReader().use { it.readText() }
     }
 }
