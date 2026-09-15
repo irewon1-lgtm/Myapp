@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
+import androidx.compose.ui.test.performScrollTo
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.futuretech.poweruser.MainActivity
@@ -38,10 +39,10 @@ class LectureTeachingUiInstrumentedTest {
     fun practiceOpensOnlyAfterAll13LectureSections() {
         composeRule.onNodeWithText("이어서 학습 ▶").performClick()
         repeat(12) {
-            composeRule.onNodeWithTag("lecture_next").performClick()
+            composeRule.onNodeWithTag("lecture_next").performScrollTo().performClick()
             composeRule.waitForIdle()
         }
-        composeRule.onNodeWithTag("lecture_finish").assertExists().performClick()
+        composeRule.onNodeWithTag("lecture_finish").performScrollTo().assertExists().performClick()
         composeRule.waitForIdle()
         composeRule.onNodeWithText("Step 1. 개념을 작은 단위로 이해").assertExists()
     }
