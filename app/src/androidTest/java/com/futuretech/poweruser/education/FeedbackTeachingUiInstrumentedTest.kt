@@ -38,10 +38,16 @@ class FeedbackTeachingUiInstrumentedTest {
     }
 
     @Test
-    fun predictionFeedbackExplainsAndCanReturnToLecture() {
+    fun predictionFeedbackExplainsAndCanReturnToCompletedLecture() {
         composeRule.onNodeWithTag("learning_home_button").performClick()
         composeRule.waitForIdle()
         composeRule.onNodeWithText("이어서 학습 ▶").performClick()
+
+        composeRule.onNodeWithTag("lecture_root").assertExists()
+        composeRule.onNodeWithTag("practice_unlocked_label").assertExists()
+        composeRule.onNodeWithTag("lecture_start_practice").performClick()
+        composeRule.waitForIdle()
+
         waitForText("1. 실행 결과 예상")
         composeRule.onNodeWithTag("session_mode_practice").assertExists()
 
@@ -56,6 +62,8 @@ class FeedbackTeachingUiInstrumentedTest {
         composeRule.onNodeWithText("관련 강의 다시 보기").performScrollTo().performClick()
 
         composeRule.onNodeWithTag("lecture_root").assertExists()
-        composeRule.onNodeWithTag("practice_locked_label").assertExists()
+        composeRule.onNodeWithTag("practice_unlocked_label").assertExists()
+        composeRule.onNodeWithTag("lecture_start_practice").assertExists()
+        composeRule.onNodeWithTag("practice_locked_label").assertDoesNotExist()
     }
 }
