@@ -26,7 +26,10 @@ class V1WorkbookQualityTest {
             val chapterNumber = index + 1
             val text = file.readText(Charsets.UTF_8)
             val trainingHeadings = text.lineSequence().count {
-                it.startsWith("## 훈련") || it.startsWith("## 프로젝트") || it.startsWith("# 프로젝트")
+                it.startsWith("## 훈련") ||
+                    it.startsWith("## 프로젝트") ||
+                    it.startsWith("# 프로젝트") ||
+                    it.startsWith("# 종합 시나리오")
             }
 
             assertTrue("workbook $chapterNumber: accidental truncation", text.length >= 5_500)
@@ -34,7 +37,7 @@ class V1WorkbookQualityTest {
             assertTrue("workbook $chapterNumber: needs code/data examples", text.contains("```"))
             assertTrue(
                 "workbook $chapterNumber: must include direct learner action",
-                listOf("직접", "수정", "판정", "실행", "디버깅", "프로젝트").any(text::contains)
+                listOf("직접", "수정", "판정", "실행", "디버깅", "프로젝트", "시나리오").any(text::contains)
             )
             assertTrue(
                 "workbook $chapterNumber: placeholder text found",
