@@ -68,6 +68,20 @@ jobs:
           echo "code=$VERSION_CODE" >> "$GITHUB_OUTPUT"
           echo "tag=v$VERSION" >> "$GITHUB_OUTPUT"
 
+      - name: Guard release identity
+        shell: bash
+        run: |
+          TAG="${{ steps.version.outputs.tag }}"
+          VERIFIED_SHA="${{ steps.commit.outputs.sha }}"
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            EXISTING_BODY="$(gh release view "$TAG" --json body --jq '.body')"
+            if ! grep -Fq -- "- Source commit: ${VERIFIED_SHA}" <<<"$EXISTING_BODY"; then
+              echo "Refusing to overwrite existing release ${TAG} with a different source commit." >&2
+              echo "Bump versionName/versionCode before publishing a new verified source." >&2
+              exit 1
+            fi
+          fi
+
       - name: Build release APK
         run: |
           chmod +x ./gradlew
