@@ -111,9 +111,7 @@ jobs:
             adb shell settings put system accelerometer_rotation 0
             adb shell settings put system user_rotation 1
             adb shell am force-stop com.futuretech.poweruser || true
-            ./gradlew connectedDebugAndroidTest \
-              -Pandroid.testInstrumentationRunnerArguments.class=com.futuretech.poweruser.textbook.V1TextbookTabletUiInstrumentedTest \
-              --stacktrace | tee textbook_evidence/tablet_instrumentation.txt
+            ./gradlew connectedDebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.class=com.futuretech.poweruser.textbook.V1TextbookTabletUiInstrumentedTest --stacktrace | tee textbook_evidence/tablet_instrumentation.txt
             adb pull /sdcard/Android/data/com.futuretech.poweruser/files/v1_textbook_tablet.png textbook_evidence/v1_textbook_tablet.png
             test -s textbook_evidence/v1_textbook_tablet.png
 
