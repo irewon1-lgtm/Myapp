@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - feat/v1-tablet-textbook
-      - fix/learning-flow-4-6
       - main
   workflow_dispatch:
 
