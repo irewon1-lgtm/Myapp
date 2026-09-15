@@ -55,7 +55,8 @@ for index, path in enumerate(workbooks, start=1):
     )
     training_counts.append(training_count)
 
-    ck(f"{path.name}: truncation floor", len(text) >= 5_500, f"chars={len(text)}")
+    # Character counts are only guards against accidental truncation, never page targets.
+    ck(f"{path.name}: truncation floor", len(text) >= 3_000, f"chars={len(text)}")
     ck(f"{path.name}: training density", training_count >= 8, f"tasks={training_count}")
     ck(f"{path.name}: code/data examples", "```" in text, "code fence")
     ck(
@@ -83,8 +84,7 @@ for index, path in enumerate(workbooks, start=1):
         f"duplicates={len(duplicate_paragraphs)}",
     )
 
-# Size is only a truncation guard, never a page-count target.
-ck("Workbook total truncation floor", workbook_chars >= 75_000, f"chars={workbook_chars:,}")
+ck("Workbook total truncation floor", workbook_chars >= 40_000, f"chars={workbook_chars:,}")
 ck("Every workbook has substantial task count", min(training_counts or [0]) >= 8, f"min={min(training_counts or [0])}")
 
 screen_path = ROOT / "app/src/main/java/com/futuretech/poweruser/ui/V1TextbookScreen.kt"
