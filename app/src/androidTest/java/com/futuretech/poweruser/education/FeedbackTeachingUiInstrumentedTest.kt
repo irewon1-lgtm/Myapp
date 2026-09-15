@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.compose.ui.test.hasSetTextAction
 import androidx.compose.ui.test.hasText
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
+import androidx.compose.ui.test.onAllNodes
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
@@ -38,10 +39,16 @@ class FeedbackTeachingUiInstrumentedTest {
     }
 
     @Test
-    fun predictionFeedbackExplainsAndCanReturnToLecture() {
+    fun predictionFeedbackExplainsAndCanReturnToCompletedLecture() {
         composeRule.onNodeWithTag("learning_home_button").performClick()
         composeRule.waitForIdle()
         composeRule.onNodeWithText("이어서 학습 ▶").performClick()
+
+        composeRule.onNodeWithTag("lecture_root").assertExists()
+        composeRule.onNodeWithTag("practice_unlocked_label").assertExists()
+        composeRule.onNodeWithTag("lecture_start_practice").performClick()
+        composeRule.waitForIdle()
+
         waitForText("1. 실행 결과 예상")
         composeRule.onNodeWithTag("session_mode_practice").assertExists()
 
@@ -56,6 +63,8 @@ class FeedbackTeachingUiInstrumentedTest {
         composeRule.onNodeWithText("관련 강의 다시 보기").performScrollTo().performClick()
 
         composeRule.onNodeWithTag("lecture_root").assertExists()
-        composeRule.onNodeWithTag("practice_locked_label").assertExists()
+        composeRule.onNodeWithTag("practice_unlocked_label").assertExists()
+        composeRule.onNodeWithTag("lecture_start_practice").assertExists()
+        composeRule.onNodeWithTag("practice_locked_label").assertDoesNotExist()
     }
 }
