@@ -27,15 +27,15 @@ class LectureTeachingUiInstrumentedTest {
             .commit()
     }
 
-    private fun openLearningHome() {
-        composeRule.onNodeWithTag("learning_home_button").performClick()
+    private fun assertLearningHome() {
+        composeRule.onNodeWithTag("learning_home").assertExists()
         composeRule.waitForIdle()
     }
 
     @Test
     fun lessonStartsWithLectureAndPracticeIsNotVisible() {
-        openLearningHome()
-        composeRule.onNodeWithText("이어서 학습 ▶").performClick()
+        assertLearningHome()
+        composeRule.onNodeWithTag("home_continue").performClick()
         composeRule.onNodeWithTag("lecture_root").assertExists()
         composeRule.onNodeWithTag("practice_locked_label").assertExists()
         composeRule.onNodeWithText("1. 실행 결과 예상").assertDoesNotExist()
@@ -43,8 +43,8 @@ class LectureTeachingUiInstrumentedTest {
 
     @Test
     fun focusedPracticeOpensOnlyAfterAll13LectureSections() {
-        openLearningHome()
-        composeRule.onNodeWithText("이어서 학습 ▶").performClick()
+        assertLearningHome()
+        composeRule.onNodeWithTag("home_continue").performClick()
         repeat(12) {
             composeRule.onNodeWithTag("lecture_next").performScrollTo().performClick()
             composeRule.waitForIdle()
