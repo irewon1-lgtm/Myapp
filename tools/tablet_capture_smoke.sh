@@ -81,13 +81,13 @@ fi
 grep -q 'CONFIG widthDp=' "$LOGCAT_OUT"
 CONFIG_WIDTH="$(sed -n 's/.*CONFIG widthDp=\([0-9][0-9]*\).*/\1/p' "$LOGCAT_OUT" | tail -n 1)"
 if [[ -z "$CONFIG_WIDTH" || "$CONFIG_WIDTH" -lt 1080 ]]; then
-  echo "TABLET_EXPANDED_WIDTH_NOT_REACHED=${CONFIG_WIDTH:-missing}" >&2
+  echo "TABLET_WIDTH_NOT_REACHED=${CONFIG_WIDTH:-missing}" >&2
   cat "$LOGCAT_OUT" >&2 || true
   exit 1
 fi
 printf 'TABLET_SCREEN_WIDTH_DP=%s\n' "$CONFIG_WIDTH" | tee "$EVIDENCE_DIR/tablet_width_dp.txt"
 
-# Capture from host adb while the verified expanded Activity is deliberately held open.
+# Capture from host adb while the verified focused reader Activity is deliberately held open.
 adb exec-out screencap -p > "$SCREENSHOT"
 test -s "$SCREENSHOT"
 SCREENSHOT_BYTES="$(wc -c < "$SCREENSHOT")"
@@ -112,6 +112,6 @@ grep -q 'OK (1 test)' "$INSTRUMENTATION_OUT"
 grep -q 'INSTRUMENTATION_CODE: -1' "$INSTRUMENTATION_OUT"
 grep -q 'READY_FOR_SCREENSHOT' "$LOGCAT_OUT"
 
-echo "GALAXY_TAB_3COLUMN_SCREENSHOT_PASS"
+echo "GALAXY_TAB_FOCUSED_READER_SCREENSHOT_PASS"
 trap - EXIT
 cleanup
