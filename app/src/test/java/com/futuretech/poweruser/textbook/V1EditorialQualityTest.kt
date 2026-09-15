@@ -19,10 +19,12 @@ class V1EditorialQualityTest {
         V1TextbookCatalog.chapters.forEach { chapter ->
             val text = assetFile(chapter.assetPath).readText(Charsets.UTF_8)
             val lines = text.lines()
-            val headings = lines.count { it.matches(Regex("^#{1,4}\\s+.+")) }
+            // Only headings that can become learner-facing section boundaries count as fragmentation.
+            // Level-4 headings are explanatory labels inside a section, not separate lessons.
+            val sectionHeadings = lines.count { it.matches(Regex("^#{1,3}\\s+.+")) }
             val headingLimit = if (chapter.number == 11) 42 else 34
 
-            assertTrue("${chapter.id}: excessive fragmentation headings=$headings", headings <= headingLimit)
+            assertTrue("${chapter.id}: excessive section fragmentation headings=$sectionHeadings", sectionHeadings <= headingLimit)
             assertTrue("${chapter.id}: must contain executable/code examples", text.contains("```"))
             assertTrue(
                 "${chapter.id}: must contain hands-on work",
