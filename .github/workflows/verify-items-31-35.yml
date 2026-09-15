@@ -1,0 +1,76 @@
+name: Verify items 31-35 mastery quality
+
+on:
+  push:
+    branches:
+      - fix/items-31-35-mastery-quality
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: gradle
+
+      - name: Set up Python 3.13
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Set up Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Prepare TypeScript compiler assets
+        run: |
+          npm install --ignore-scripts --no-audit --no-fund
+          npm run prepare:typescript
+          test -s app/src/main/assets/typescript.js
+          test -s app/src/main/assets/ts_libs.js
+
+      - name: Make Gradle executable
+        run: chmod +x ./gradlew
+
+      - name: User-flow Extreme60 only
+        run: ./gradlew testDebugUnitTest --tests "com.futuretech.poweruser.education.Items31To35UserFlowExtreme60Test" --stacktrace
+
+      - name: Verify Extreme60 really executed 60 cases
+        run: python tools/items_31_35_extreme60_report.py
+
+      - name: Dedicated CLEAN25 policy tests
+        run: ./gradlew testDebugUnitTest --tests "com.futuretech.poweruser.education.Items31To35VisualClean25Test" --stacktrace
+
+      - name: CLEAN25 actual source gates
+        run: python tools/items_31_35_clean25.py
+
+      - name: Full JVM regression
+        run: ./gradlew testDebugUnitTest --stacktrace
+
+      - name: Compile Debug APK
+        run: ./gradlew assembleDebug --stacktrace
+
+      - name: Upload APK and evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: items-31-35-mastery-quality-evidence
+          if-no-files-found: warn
+          path: |
+            items_31_35_extreme60_report.md
+            items_31_35_clean25_report.md
+            app/build/test-results/testDebugUnitTest/**
+            app/build/reports/tests/testDebugUnitTest/**
+            app/build/outputs/apk/debug/app-debug.apk
