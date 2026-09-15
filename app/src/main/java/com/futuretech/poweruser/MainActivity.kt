@@ -91,7 +91,7 @@ fun AppNavigation() {
                         .align(Alignment.BottomEnd)
                         .padding(20.dp)
                         .testTag("textbook_v1_entry"),
-                    content = { Text("V1 대학교재 · v${BuildConfig.VERSION_NAME}") }
+                    content = { Text("V1 대학교재 · v1.1.0") }
                 )
             }
         }
