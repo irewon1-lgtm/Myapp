@@ -99,6 +99,9 @@ class AppRepository(context: Context) {
         )
     }
 
+    fun observeDueReviewCount(now: Long = System.currentTimeMillis()): Flow<Int> =
+        dao.observeDueReviewCount(now)
+
     suspend fun getDueReviews(now: Long = System.currentTimeMillis()): List<SpacedRepetitionItemEntity> {
         dao.promoteLegacyFirstReviews(now)
         return dao.getDueReviews(now)
