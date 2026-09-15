@@ -44,6 +44,7 @@ class LectureTeachingUiInstrumentedTest {
         }
         composeRule.onNodeWithTag("lecture_finish").performScrollTo().assertExists().performClick()
         composeRule.waitForIdle()
-        composeRule.onNodeWithText("Step 1. 개념을 작은 단위로 이해").assertExists()
+        composeRule.onNodeWithText("Step 1. 강의 핵심 30초 복습").assertExists()
+        composeRule.onNodeWithTag("practice_locked_label").assertDoesNotExist()
     }
 }
