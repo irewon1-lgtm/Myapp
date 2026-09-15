@@ -17,12 +17,12 @@ class V1TextbookUiInstrumentedTest {
         compose.onNodeWithTag("v1_textbook_root").assertExists()
         compose.onNodeWithTag("textbook_reader").assertExists()
         compose.onNodeWithText("AI CODING OS").assertExists()
-        compose.onNodeWithText("Chapter 01").assertExists()
+        compose.onNodeWithText("CHAPTER 01").assertExists()
 
         compose.onNodeWithTag("textbook_reader")
             .performScrollToNode(hasTestTag("textbook_practice_button"))
         compose.onNodeWithTag("textbook_practice_button").assertExists()
         compose.onNodeWithTag("textbook_next_chapter").assertExists().performClick()
-        compose.onNodeWithText("Chapter 02").assertExists()
+        compose.onNodeWithText("CHAPTER 02").assertExists()
     }
 }
