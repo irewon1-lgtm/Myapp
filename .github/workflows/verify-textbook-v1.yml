@@ -1,0 +1,146 @@
+name: Verify V1 university textbook, tablet UI and full app regression
+
+on:
+  push:
+    branches:
+      - feat/v1-tablet-textbook
+      - main
+  workflow_dispatch:
+
+jobs:
+  textbook-extreme-clean-full-regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 65
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: gradle
+
+      - name: Set up Python 3.13
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Set up Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Prepare TypeScript runtime assets
+        run: |
+          npm install --ignore-scripts --no-audit --no-fund
+          npm run prepare:typescript
+          test -s app/src/main/assets/typescript.js
+          test -s app/src/main/assets/ts_libs.js
+
+      - name: Make scripts executable
+        run: |
+          chmod +x ./gradlew
+          chmod +x tools/lecture_quality_report.py
+          chmod +x tools/feedback_quality_report.py
+          chmod +x tools/review_quality_report.py
+          chmod +x tools/textbook_quality_report.py
+          chmod +x tools/final_release_smoke.sh
+
+      - name: Run every JVM test from start to finish
+        run: ./gradlew testDebugUnitTest --stacktrace
+
+      - name: Verify lecture engine regression
+        run: python tools/lecture_quality_report.py
+
+      - name: Verify feedback engine regression
+        run: python tools/feedback_quality_report.py
+
+      - name: Verify spaced review regression
+        run: python tools/review_quality_report.py
+
+      - name: Verify textbook Extreme60 and CLEAN25 plus static depth gates
+        run: python tools/textbook_quality_report.py
+
+      - name: Build debug APK
+        run: ./gradlew assembleDebug --stacktrace
+
+      - name: Build release APK
+        run: ./gradlew assembleRelease --stacktrace
+
+      - name: Sign and verify release APK
+        run: |
+          BUILD_TOOLS="$(ls -1 "$ANDROID_HOME/build-tools" | sort -V | tail -n 1)"
+          ZIPALIGN="$ANDROID_HOME/build-tools/$BUILD_TOOLS/zipalign"
+          APKSIGNER="$ANDROID_HOME/build-tools/$BUILD_TOOLS/apksigner"
+          mkdir -p final-dist textbook_evidence
+          "$ZIPALIGN" -p -f 4 app/build/outputs/apk/release/app-release-unsigned.apk final-dist/FutureTechPowerUser_v1.0.0_TEXTBOOK_aligned.apk
+          "$APKSIGNER" sign \
+            --ks test.keystore \
+            --ks-key-alias testkey \
+            --ks-pass pass:password \
+            --key-pass pass:password \
+            --out final-dist/FutureTechPowerUser_v1.0.0_TEXTBOOK_FINAL.apk \
+            final-dist/FutureTechPowerUser_v1.0.0_TEXTBOOK_aligned.apk
+          "$APKSIGNER" verify --verbose --print-certs final-dist/FutureTechPowerUser_v1.0.0_TEXTBOOK_FINAL.apk | tee final-dist/apksigner_verify.txt
+          sha256sum final-dist/FutureTechPowerUser_v1.0.0_TEXTBOOK_FINAL.apk | tee final-dist/FutureTechPowerUser_v1.0.0_TEXTBOOK_FINAL.sha256
+          rm final-dist/FutureTechPowerUser_v1.0.0_TEXTBOOK_aligned.apk
+          cp final-dist/FutureTechPowerUser_v1.0.0_TEXTBOOK_FINAL.apk final-dist/FutureTechPowerUser_v1.0.0_FINAL.apk
+
+      - name: Enable KVM
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+
+      - name: Android API 34 phone regression, Galaxy Tab layout simulation, release install smoke
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 34
+          arch: x86_64
+          profile: pixel_6
+          disable-animations: true
+          script: |
+            set -euo pipefail
+            mkdir -p textbook_evidence
+            ./gradlew connectedDebugAndroidTest --stacktrace
+
+            adb shell wm size 2560x1600
+            adb shell wm density 320
+            adb shell settings put system accelerometer_rotation 0
+            adb shell settings put system user_rotation 1
+            adb shell am force-stop com.futuretech.poweruser || true
+            ./gradlew connectedDebugAndroidTest \
+              -Pandroid.testInstrumentationRunnerArguments.class=com.futuretech.poweruser.textbook.V1TextbookTabletUiInstrumentedTest \
+              --stacktrace | tee textbook_evidence/tablet_instrumentation.txt
+            adb pull /sdcard/Android/data/com.futuretech.poweruser/files/v1_textbook_tablet.png textbook_evidence/v1_textbook_tablet.png
+            test -s textbook_evidence/v1_textbook_tablet.png
+
+            adb shell wm size reset
+            adb shell wm density reset
+            adb shell settings put system accelerometer_rotation 1 || true
+            bash tools/final_release_smoke.sh
+
+      - name: Upload textbook evidence and signed APK
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v1-textbook-tablet-full-regression-evidence
+          if-no-files-found: warn
+          retention-days: 90
+          path: |
+            textbook_evidence/
+            review_evidence/
+            feedback_evidence/
+            lecture_evidence/
+            app/build/test-results/testDebugUnitTest/
+            app/build/reports/tests/testDebugUnitTest/
+            app/build/reports/androidTests/connected/
+            app/build/outputs/apk/debug/app-debug.apk
+            final-dist/FutureTechPowerUser_v1.0.0_TEXTBOOK_FINAL.apk
+            final-dist/FutureTechPowerUser_v1.0.0_TEXTBOOK_FINAL.sha256
+            final-dist/apksigner_verify.txt
+            final-dist/launch_smoke.txt
+            final-dist/logcat_full.txt
+            final-dist/logcat_crash_excerpt.txt
