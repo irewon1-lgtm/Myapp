@@ -14,6 +14,19 @@ enum class LessonProblemType {
     VERIFY_AI_ANSWER
 }
 
+enum class MasteryStage(val label: String, val rank: Int) {
+    SEE("봄", 1),
+    UNDERSTAND("이해", 2),
+    EXECUTE("실행", 3),
+    APPLY("응용", 4),
+    AI_COLLAB("AI 협업", 5),
+    VERIFIABLE("검증 가능", 6);
+
+    companion object {
+        fun fromStorage(value: String?): MasteryStage? = entries.firstOrNull { it.name == value }
+    }
+}
+
 enum class MasteryEvidenceStrength(
     val label: String,
     val needsReview: Boolean
@@ -25,6 +38,7 @@ enum class MasteryEvidenceStrength(
 
 data class MasteryEvidence(
     val mode: LearningSessionMode,
+    val stage: MasteryStage,
     val strength: MasteryEvidenceStrength,
     val maxHintLevel: Int,
     val completionPercentage: Int,
@@ -32,14 +46,14 @@ data class MasteryEvidence(
 )
 
 /**
- * Product policy for items 13-15 of the learning-flow refactor.
+ * Learning evidence policy.
  *
- * 13) Hints never subtract points or completion. They only reduce the strength of
- *     the mastery evidence produced by a successful practice session.
- * 14) Practice and Chapter Challenge are separate modes. Practice allows hints,
- *     AI assistance and retries; Challenge exposes none of those assists.
- * 15) A regular lesson ends with exactly six short, varied problems (within the
- *     4-6 product limit), not a long ten-question exam.
+ * A completion percentage is not treated as mastery. The persisted stage describes
+ * what the learner has actually demonstrated:
+ * 봄 -> 이해 -> 실행 -> 응용 -> AI 협업 -> 검증 가능.
+ *
+ * Practice can prove up to AI_COLLAB. VERIFIABLE is reserved for an independent
+ * Challenge pass with hints/AI/solution reveal disabled.
  */
 object LearningPracticePolicy {
     const val MIN_REGULAR_LESSON_PROBLEMS = 4
@@ -74,8 +88,15 @@ object LearningPracticePolicy {
             safeHintLevel <= 2 -> MasteryEvidenceStrength.SUPPORTED
             else -> MasteryEvidenceStrength.REVIEW_REQUIRED
         }
+        val stage = when {
+            mode == LearningSessionMode.CHALLENGE -> MasteryStage.VERIFIABLE
+            safeHintLevel == 0 -> MasteryStage.AI_COLLAB
+            safeHintLevel <= 2 -> MasteryStage.APPLY
+            else -> MasteryStage.EXECUTE
+        }
         return MasteryEvidence(
             mode = mode,
+            stage = stage,
             strength = strength,
             maxHintLevel = safeHintLevel,
             completionPercentage = 100,
@@ -83,29 +104,21 @@ object LearningPracticePolicy {
         )
     }
 
-    fun progressStatus(evidence: MasteryEvidence): String = when (evidence.strength) {
-        MasteryEvidenceStrength.STRONG -> "VERIFIABLE"
-        MasteryEvidenceStrength.SUPPORTED -> "APPLY"
-        MasteryEvidenceStrength.REVIEW_REQUIRED -> "EXECUTE"
-    }
+    fun progressStatus(evidence: MasteryEvidence): String = evidence.stage.name
+
+    fun displayStage(status: String?): String = MasteryStage.fromStorage(status)?.label ?: MasteryStage.SEE.label
 
     /**
      * A later guided practice must not erase stronger evidence already earned.
      * A clean Challenge can upgrade a guided practice to VERIFIABLE.
      */
     fun strongerProgressStatus(existing: String?, candidate: String): String {
-        val existingRank = progressStatusRank(existing)
-        val candidateRank = progressStatusRank(candidate)
-        return if (existingRank >= candidateRank && existing != null) existing else candidate
-    }
-
-    private fun progressStatusRank(status: String?): Int = when (status) {
-        "SEE" -> 1
-        "UNDERSTAND" -> 2
-        "EXECUTE" -> 3
-        "APPLY" -> 4
-        "AI_COLLAB" -> 5
-        "VERIFIABLE" -> 6
-        else -> 0
+        val existingStage = MasteryStage.fromStorage(existing)
+        val candidateStage = MasteryStage.fromStorage(candidate) ?: MasteryStage.SEE
+        return if (existingStage != null && existingStage.rank >= candidateStage.rank) {
+            existingStage.name
+        } else {
+            candidateStage.name
+        }
     }
 }
