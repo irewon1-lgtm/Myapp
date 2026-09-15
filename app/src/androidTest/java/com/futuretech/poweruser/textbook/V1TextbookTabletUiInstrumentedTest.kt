@@ -1,9 +1,8 @@
 package com.futuretech.poweruser.textbook
 
 import android.util.Log
-import androidx.compose.ui.test.assertDoesNotExist
-import androidx.compose.ui.test.assertExists
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
+import androidx.compose.ui.test.onAllNodesWithTag
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.performClick
 import androidx.test.platform.app.InstrumentationRegistry
@@ -37,17 +36,28 @@ class V1TextbookTabletUiInstrumentedTest {
             return
         }
 
-        compose.onNodeWithTag("curriculum_overview_root").assertExists()
-        compose.onNodeWithTag("curriculum_chapter_V1-C01").assertExists().performClick()
-        compose.onNodeWithTag("v1_textbook_root").assertExists()
-        compose.onNodeWithTag("textbook_section_strip").assertExists()
-        compose.onNodeWithTag("textbook_reader").assertExists()
-        compose.onNodeWithTag("textbook_toc").assertDoesNotExist()
-        compose.onNodeWithTag("textbook_insight_rail").assertDoesNotExist()
+        assertTagPresent("curriculum_overview_root")
+        assertTagPresent("curriculum_chapter_V1-C01")
+        compose.onNodeWithTag("curriculum_chapter_V1-C01").performClick()
+        assertTagPresent("v1_textbook_root")
+        assertTagPresent("textbook_section_strip")
+        assertTagPresent("textbook_reader")
+        assertTagAbsent("textbook_toc")
+        assertTagAbsent("textbook_insight_rail")
 
         Log.i(EVIDENCE_TAG, "READY_FOR_SCREENSHOT widthDp=$widthDp heightDp=$heightDp focusedReader=true")
         Thread.sleep(15_000)
         Log.i(EVIDENCE_TAG, "SCREENSHOT_WINDOW_COMPLETE")
+    }
+
+    private fun assertTagPresent(tag: String) {
+        val nodes = compose.onAllNodesWithTag(tag).fetchSemanticsNodes()
+        assertTrue("Expected tag to exist on tablet: $tag", nodes.isNotEmpty())
+    }
+
+    private fun assertTagAbsent(tag: String) {
+        val nodes = compose.onAllNodesWithTag(tag).fetchSemanticsNodes()
+        assertTrue("Legacy permanent rail must be absent: $tag", nodes.isEmpty())
     }
 
     companion object {
