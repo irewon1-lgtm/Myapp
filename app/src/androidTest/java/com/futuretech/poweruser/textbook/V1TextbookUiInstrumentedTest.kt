@@ -13,16 +13,12 @@ import org.junit.Test
 class V1TextbookUiInstrumentedTest {
     @get:Rule val compose = createAndroidComposeRule<MainActivity>()
 
-    @Test fun homeOpensRealV1TextbookAndChapterNavigationWorks() {
-        compose.onNodeWithTag("textbook_v1_entry").assertExists().performClick()
+    @Test fun appLaunchesDirectlyIntoAiTextbookAndChapterNavigationWorks() {
         compose.onNodeWithTag("v1_textbook_root").assertExists()
         compose.onNodeWithTag("textbook_reader").assertExists()
+        compose.onNodeWithText("AI CODING OS").assertExists()
         compose.onNodeWithText("Chapter 01").assertExists()
 
-        // The action card is intentionally at the end of the long university-style
-        // chapter. LazyColumn does not compose it until it is brought into view,
-        // so exercise the real reading/scroll path instead of assuming it exists
-        // in the initial semantics tree.
         compose.onNodeWithTag("textbook_reader")
             .performScrollToNode(hasTestTag("textbook_practice_button"))
         compose.onNodeWithTag("textbook_practice_button").assertExists()
