@@ -23,17 +23,17 @@ import com.futuretech.poweruser.data.CurriculumDataRepository
 import com.futuretech.poweruser.education.LearningPracticePolicy
 import com.futuretech.poweruser.education.LearningSessionMode
 import com.futuretech.poweruser.education.MasteryEvidence
+import com.futuretech.poweruser.ui.AdaptiveFocusedPracticeScreen
+import com.futuretech.poweruser.ui.AdaptiveTextbookScreen
 import com.futuretech.poweruser.ui.BeginnerStockScoreProjectScreen
 import com.futuretech.poweruser.ui.CurriculumOverviewScreen
 import com.futuretech.poweruser.ui.CustomProjectBuilderScreen
-import com.futuretech.poweruser.ui.FocusedPracticeScreen
 import com.futuretech.poweruser.ui.IntermediateStockResearchProjectScreen
 import com.futuretech.poweruser.ui.MainHomeScreen
 import com.futuretech.poweruser.ui.PersonalErrorNotesScreen
 import com.futuretech.poweruser.ui.SelfUpdateBanner
 import com.futuretech.poweruser.ui.SpacedRepetitionReviewScreen
 import com.futuretech.poweruser.ui.TeachingLessonScreen
-import com.futuretech.poweruser.ui.V1TextbookScreen
 import com.futuretech.poweruser.ui.theme.FutureTechTheme
 import kotlinx.coroutines.launch
 
@@ -141,7 +141,7 @@ fun AppNavigation() {
             )
         }
         composable("textbook_v1") {
-            V1TextbookScreen(
+            AdaptiveTextbookScreen(
                 practiceCompletedIds = progressList.filter { it.isCompleted }.map { it.lessonId }.toSet(),
                 onNavigateBack = { navController.navigate("curriculum") },
                 onStartPractice = { lessonId -> navController.navigate("textbook_v1/practice/$lessonId") }
@@ -149,7 +149,7 @@ fun AppNavigation() {
         }
         composable("textbook_v1/{chapterId}") { backStackEntry ->
             val chapterId = backStackEntry.arguments?.getString("chapterId") ?: "V1-C01"
-            V1TextbookScreen(
+            AdaptiveTextbookScreen(
                 practiceCompletedIds = progressList.filter { it.isCompleted }.map { it.lessonId }.toSet(),
                 onNavigateBack = { navController.popBackStack() },
                 onStartPractice = { lessonId -> navController.navigate("textbook_v1/practice/$lessonId") },
@@ -182,7 +182,7 @@ fun AppNavigation() {
         }
         composable("lesson/challenge/{lessonId}") { backStackEntry ->
             val lessonId = backStackEntry.arguments?.getString("lessonId") ?: "B01-01"
-            FocusedPracticeScreen(
+            AdaptiveFocusedPracticeScreen(
                 lessonId = lessonId,
                 mode = LearningSessionMode.CHALLENGE,
                 onNavigateBack = { navController.popBackStack() },
@@ -196,7 +196,7 @@ fun AppNavigation() {
         }
         composable("textbook_v1/practice/{lessonId}") { backStackEntry ->
             val lessonId = backStackEntry.arguments?.getString("lessonId") ?: "TB1-C01"
-            FocusedPracticeScreen(
+            AdaptiveFocusedPracticeScreen(
                 lessonId = lessonId,
                 mode = LearningSessionMode.PRACTICE,
                 onNavigateBack = { navController.popBackStack() },
@@ -210,7 +210,7 @@ fun AppNavigation() {
         }
         composable("textbook_v1/challenge/{lessonId}") { backStackEntry ->
             val lessonId = backStackEntry.arguments?.getString("lessonId") ?: "TB1-C01"
-            FocusedPracticeScreen(
+            AdaptiveFocusedPracticeScreen(
                 lessonId = lessonId,
                 mode = LearningSessionMode.CHALLENGE,
                 onNavigateBack = { navController.popBackStack() },
