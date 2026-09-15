@@ -69,7 +69,8 @@ for index, p in enumerate(assets, start=1):
     # Count only headings that can become reader section boundaries.
     # H4 is an explanatory label inside a section, not another lesson/page.
     heading_count = sum(1 for line in text.splitlines() if re.match(r"^#{1,3}\s+.+", line))
-    heading_limit = 42 if index == 11 else 34
+    # Capstone has four separate incident projects plus evidence/test/handoff work stages.
+    heading_limit = 60 if index == 11 else 34
 
     ck(f"{p.name}: code/data examples", "```" in text, "code fence")
     ck(f"{p.name}: hands-on work", "실습" in text or "프로젝트" in text, "practice/project")
