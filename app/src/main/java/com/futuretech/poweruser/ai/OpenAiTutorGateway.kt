@@ -197,17 +197,20 @@ class OpenAiTutorGateway(
         }
     }
 
-    private fun safeErrorMessage(body: String): String? = try {
-        val root = JsonParser.parseString(body).takeIf { it.isJsonObject }?.asJsonObject ?: return null
-        root.getAsJsonObject("error")
-            ?.get("message")
-            ?.takeIf { it.isJsonPrimitive }
-            ?.asString
-            ?.trim()
-            ?.takeIf { it.isNotEmpty() }
-            ?.take(180)
-    } catch (_: Exception) {
-        null
+    private fun safeErrorMessage(body: String): String? {
+        return try {
+            val root = JsonParser.parseString(body).takeIf { it.isJsonObject }?.asJsonObject
+                ?: return null
+            root.getAsJsonObject("error")
+                ?.get("message")
+                ?.takeIf { it.isJsonPrimitive }
+                ?.asString
+                ?.trim()
+                ?.takeIf { it.isNotEmpty() }
+                ?.take(180)
+        } catch (_: Exception) {
+            null
+        }
     }
 
     private fun String?.toSuffix(): String = if (this.isNullOrBlank()) "" else " ($this)"
