@@ -42,15 +42,15 @@ if engine[0] < 9 or engine[1] or engine[2] or engine[3]:
         f'SpacedRepetitionEngine broad tests not clean: tests={engine[0]} failures={engine[1]} errors={engine[2]} skipped={engine[3]}'
     )
 
-report = f'''# Spaced Review Engine Extreme/CLEAN Evidence
+report = f'''# Adaptive Review Engine Extreme/CLEAN Evidence
 
 - Review Extreme scenarios: **{extreme[0]}/60**, failures={extreme[1]}, errors={extreme[2]}, skipped={extreme[3]}
 - Review CLEAN gates: **{clean[0]}/25**, failures={clean[1]}, errors={clean[2]}, skipped={clean[3]}
 - Review engine broad tests: **{engine[0]}**, failures={engine[1]}, errors={engine[2]}, skipped={engine[3]}
-- Overall spaced-review evidence: **{'PASS' if not problems else 'FAIL'}**
+- Overall adaptive-review evidence: **{'PASS' if not problems else 'FAIL'}**
 
 ## Scope
-Checks same-day first recall, 1/3/7/14-day progression, final mastery, lapse regression, 10-minute same-day retry, no negative stages, no timestamp overflow, mastered-card idempotency, due-state correctness, and the memorize/understand/AI-assist guidance split.
+Checks hint-sensitive first review timing, adaptive 1/3/7/14/30-day growth, long-term mastery, repeated-failure acceleration, lapse regression, no negative stages, no timestamp overflow, mastered-card idempotency, transformed review prompts, due-state correctness, and the memorize/understand/AI-assist guidance split.
 '''
 
 (OUT / 'REVIEW_EXTREME60_CLEAN25_REPORT.md').write_text(report, encoding='utf-8')
