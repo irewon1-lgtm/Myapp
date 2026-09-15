@@ -35,7 +35,7 @@
       module: ts.ModuleKind.None,
       strict: true,
       noEmitOnError: true,
-      noLib: true,
+      noLib: false,
       skipLibCheck: true
     };
 
@@ -60,7 +60,7 @@
       realpath(fileName) { return fileName; }
     };
 
-    const roots = ['lib.es2020.full.d.ts', 'user.ts'];
+    const roots = ['user.ts'];
     const program = ts.createProgram(roots, options, host);
     const diagnostics = ts.getPreEmitDiagnostics(program)
       .filter((d) => d.category === ts.DiagnosticCategory.Error)
