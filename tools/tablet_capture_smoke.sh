@@ -11,7 +11,7 @@ TEST_APK="app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk"
 INSTRUMENTATION_OUT="$EVIDENCE_DIR/tablet_instrumentation.txt"
 SCREENSHOT="$EVIDENCE_DIR/v1_textbook_tablet.png"
 LOGCAT_OUT="$EVIDENCE_DIR/tablet_capture_logcat.txt"
-REMOTE_META="$EVIDENCE_DIR/tablet_device_metrics.txt"
+DEVICE_META="$EVIDENCE_DIR/tablet_device_metrics.txt"
 
 mkdir -p "$EVIDENCE_DIR"
 test -s "$APP_APK"
@@ -41,15 +41,20 @@ adb shell pm list instrumentation | tee "$EVIDENCE_DIR/instrumentation_list.txt"
 grep -q "$RUNNER" "$EVIDENCE_DIR/instrumentation_list.txt"
 
 adb logcat -c
+# Galaxy Tab-class landscape simulation: 2560px / 2.0 density = 1280dp width.
 adb shell wm size 2560x1600
 adb shell wm density 320
 adb shell settings put system accelerometer_rotation 0
-adb shell settings put system user_rotation 1
-adb shell wm size > "$REMOTE_META"
-adb shell wm density >> "$REMOTE_META"
+adb shell settings put system user_rotation 0
+sleep 2
+{
+  adb shell wm size
+  adb shell wm density
+  adb shell dumpsys window displays | grep -E 'mCurrentFocus|init=|cur=' | head -n 20 || true
+} > "$DEVICE_META"
 adb shell am force-stop "$APP_ID" || true
 
-adb shell am instrument -w -r -e class "$TEST_CLASS" "$RUNNER" > "$INSTRUMENTATION_OUT" 2>&1 &
+adb shell am instrument -w -r -e requireExpanded true -e class "$TEST_CLASS" "$RUNNER" > "$INSTRUMENTATION_OUT" 2>&1 &
 INSTR_PID=$!
 
 ready=0
@@ -69,10 +74,20 @@ if [[ "$ready" -ne 1 ]]; then
   echo "TABLET_READY_MARKER_MISSING" >&2
   cat "$INSTRUMENTATION_OUT" >&2 || true
   cat "$LOGCAT_OUT" >&2 || true
+  cat "$DEVICE_META" >&2 || true
   exit 1
 fi
 
-# Capture from the host adb shell while the verified Activity is deliberately held open.
+grep -q 'CONFIG widthDp=' "$LOGCAT_OUT"
+CONFIG_WIDTH="$(sed -n 's/.*CONFIG widthDp=\([0-9][0-9]*\).*/\1/p' "$LOGCAT_OUT" | tail -n 1)"
+if [[ -z "$CONFIG_WIDTH" || "$CONFIG_WIDTH" -lt 1080 ]]; then
+  echo "TABLET_EXPANDED_WIDTH_NOT_REACHED=${CONFIG_WIDTH:-missing}" >&2
+  cat "$LOGCAT_OUT" >&2 || true
+  exit 1
+fi
+printf 'TABLET_SCREEN_WIDTH_DP=%s\n' "$CONFIG_WIDTH" | tee "$EVIDENCE_DIR/tablet_width_dp.txt"
+
+# Capture from host adb while the verified expanded Activity is deliberately held open.
 adb exec-out screencap -p > "$SCREENSHOT"
 test -s "$SCREENSHOT"
 SCREENSHOT_BYTES="$(wc -c < "$SCREENSHOT")"
