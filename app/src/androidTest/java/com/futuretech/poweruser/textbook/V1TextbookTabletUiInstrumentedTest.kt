@@ -1,5 +1,6 @@
 package com.futuretech.poweruser.textbook
 
+import android.graphics.Bitmap
 import android.os.ParcelFileDescriptor
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.test.onNodeWithTag
@@ -9,6 +10,8 @@ import com.futuretech.poweruser.MainActivity
 import org.junit.Assert.assertTrue
 import org.junit.Rule
 import org.junit.Test
+import java.io.File
+import java.io.FileOutputStream
 
 class V1TextbookTabletUiInstrumentedTest {
     @get:Rule val compose = createAndroidComposeRule<MainActivity>()
@@ -29,13 +32,29 @@ class V1TextbookTabletUiInstrumentedTest {
         compose.onNodeWithTag("textbook_reader").assertExists()
         compose.onNodeWithTag("textbook_insight_rail").assertExists()
 
-        // Capture while the verified three-column screen is still on screen. The shell-owned
-        // /data/local/tmp path survives test/app cleanup and avoids scoped-storage behavior.
-        val screenshotPath = "/data/local/tmp/v1_textbook_tablet.png"
-        shell(instrumentation, "rm -f $screenshotPath")
-        shell(instrumentation, "screencap -p $screenshotPath")
-        val listing = shell(instrumentation, "ls -l $screenshotPath")
-        assertTrue("Galaxy Tab screenshot must exist in shell temp storage", listing.contains("v1_textbook_tablet.png"))
+        // Capture the exact verified three-column frame while the Activity is still alive.
+        val appScreenshot = File(context.filesDir, "v1_textbook_tablet.png")
+        if (appScreenshot.exists()) appScreenshot.delete()
+        val bitmap = instrumentation.uiAutomation.takeScreenshot()
+        val compressed = FileOutputStream(appScreenshot).use { stream ->
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream)
+        }
+        assertTrue("Galaxy Tab screenshot must encode as PNG", compressed)
+        assertTrue(
+            "Galaxy Tab screenshot must be a non-trivial image",
+            appScreenshot.exists() && appScreenshot.length() > 10_000
+        )
+
+        // Copy before test teardown. The outer shell opens /data/local/tmp while run-as reads
+        // the target app's private file, so the evidence survives app/test cleanup.
+        val shellPath = "/data/local/tmp/v1_textbook_tablet.png"
+        shell(instrumentation, "rm -f $shellPath")
+        shell(
+            instrumentation,
+            "/system/bin/sh -c 'run-as com.futuretech.poweruser cat files/v1_textbook_tablet.png > $shellPath'"
+        )
+        val byteCount = shell(instrumentation, "stat -c %s $shellPath").trim().toLongOrNull() ?: 0L
+        assertTrue("Shell-owned Galaxy Tab screenshot must exceed 10KB", byteCount > 10_000L)
     }
 
     private fun shell(instrumentation: android.app.Instrumentation, command: String): String {
