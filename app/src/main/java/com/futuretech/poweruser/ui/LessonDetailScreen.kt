@@ -17,6 +17,7 @@ import com.futuretech.poweruser.data.CurriculumDataRepository
 import com.futuretech.poweruser.sandbox.ExecutionResult
 import com.futuretech.poweruser.sandbox.ProgrammingLanguage
 import com.futuretech.poweruser.sandbox.SandboxedExecutionEngine
+import com.futuretech.poweruser.ui.components.AiLearningPanel
 import com.futuretech.poweruser.ui.components.HtmlPreviewSandboxView
 import com.futuretech.poweruser.ui.theme.CodeTypography
 import kotlinx.coroutines.launch
@@ -192,12 +193,12 @@ fun LessonDetailScreen(
                                 )
                             }
                         }) { Text("▶ 실행") }
-                        OutlinedButton(onClick = { if (currentHintStep < 3) currentHintStep++ }) { Text("💡 힌트 $currentHintStep/3") }
+                        OutlinedButton(onClick = { if (currentHintStep < 3) currentHintStep++ }) { Text("💡 기본 힌트 $currentHintStep/3") }
                     }
                     if (currentHintStep > 0) {
                         Spacer(modifier = Modifier.height(8.dp))
                         val hint = when (currentHintStep) { 1 -> lesson.hintLevel1; 2 -> lesson.hintLevel2; else -> lesson.hintLevel3 }
-                        FeedbackBox(true, "힌트: $hint")
+                        FeedbackBox(true, "기본 힌트: $hint")
                     }
                     if (lesson.practiceLanguage == "HTML_JS") {
                         Spacer(modifier = Modifier.height(10.dp))
@@ -397,6 +398,29 @@ fun LessonDetailScreen(
                         FeedbackBox(true, "저장 완료. 다음 Level이 해금되고 이 개념은 1·3·7·14일 복습 대상으로 등록됩니다.")
                     }
                 }
+            }
+
+            if (currentStep in setOf(4, 7, 9, 10)) {
+                val aiCodeSnapshot = when (currentStep) {
+                    4 -> codeInput
+                    7 -> debugInput
+                    9 -> missionCode
+                    10 -> userExplanation
+                    else -> ""
+                }
+                val aiAttempted = when (currentStep) {
+                    4 -> practiceAttempted
+                    7 -> debugAttempts > 0
+                    9 -> missionAttempted
+                    10 -> explanationChecked
+                    else -> false
+                }
+                AiLearningPanel(
+                    lesson = lesson,
+                    currentStep = currentStep,
+                    practiceAttempted = aiAttempted,
+                    codeSnapshot = aiCodeSnapshot
+                )
             }
 
             if (currentStep < 10) {
