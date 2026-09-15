@@ -2,9 +2,8 @@ package com.futuretech.poweruser.ai
 
 import androidx.compose.ui.test.assertIsEnabled
 import androidx.compose.ui.test.assertIsNotEnabled
-import androidx.compose.ui.test.junit4.createAndroidComposeRule
+import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithTag
-import com.futuretech.poweruser.MainActivity
 import com.futuretech.poweruser.data.CurriculumDataRepository
 import com.futuretech.poweruser.ui.components.AiLearningPanel
 import com.futuretech.poweruser.ui.theme.FutureTechTheme
@@ -13,7 +12,7 @@ import org.junit.Test
 
 class AiLearningPanelInstrumentedTest {
     @get:Rule
-    val composeRule = createAndroidComposeRule<MainActivity>()
+    val composeRule = createComposeRule()
 
     @Test
     fun beginnerCollaborationChipIsLocked() {
