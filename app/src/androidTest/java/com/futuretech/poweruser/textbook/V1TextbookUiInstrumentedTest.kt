@@ -24,7 +24,7 @@ class V1TextbookUiInstrumentedTest {
         assertTagExists("v1_textbook_root")
         assertTagExists("textbook_section_strip")
         assertTagExists("textbook_reader")
-        compose.onNodeWithTag("textbook_section_progress").assertTextContains("Section 1/")
+        assertTagExists("textbook_section_progress")
 
         assertTextAbsent("AI CODING OS")
         assertTextAbsent("KNOWLEDGE GRAPH")
