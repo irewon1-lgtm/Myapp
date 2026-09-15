@@ -48,6 +48,7 @@ jobs:
           chmod +x tools/feedback_quality_report.py
           chmod +x tools/review_quality_report.py
           chmod +x tools/textbook_quality_report.py
+          chmod +x tools/workbook_quality_report.py
           chmod +x tools/tablet_capture_smoke.sh
           chmod +x tools/final_release_smoke.sh
 
@@ -65,6 +66,9 @@ jobs:
 
       - name: Verify textbook Extreme60 and CLEAN25 plus static depth gates
         run: python tools/textbook_quality_report.py
+
+      - name: Verify workbook practice depth and reader integration
+        run: python tools/workbook_quality_report.py
 
       - name: Build debug APK
         run: ./gradlew assembleDebug --stacktrace
