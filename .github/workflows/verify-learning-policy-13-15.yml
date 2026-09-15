@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - fix/learning-policy-13-15
-      - main
   workflow_dispatch:
 
 permissions:
