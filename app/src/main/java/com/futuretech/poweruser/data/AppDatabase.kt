@@ -24,7 +24,7 @@ data class SpacedRepetitionItemEntity(
     val analogy: String,
     val example: String,
     val comparison: String,
-    val reviewIntervalDays: Int, // 1, 3, 7, 14
+    val reviewIntervalDays: Int, // 0(today), 1, 3, 7, 14
     val nextReviewTimestamp: Long,
     val reviewCount: Int,
     val isMastered: Boolean
@@ -60,6 +60,16 @@ interface LearningDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertOrUpdateRepetition(item: SpacedRepetitionItemEntity)
+
+    @Query(
+        """UPDATE spaced_repetition
+            SET reviewIntervalDays = 0, nextReviewTimestamp = :currentTimestamp
+            WHERE reviewCount = 0
+              AND reviewIntervalDays = 1
+              AND isMastered = 0
+              AND nextReviewTimestamp > :currentTimestamp"""
+    )
+    suspend fun promoteLegacyFirstReviews(currentTimestamp: Long): Int
 
     @Query("SELECT * FROM error_notes ORDER BY occurrenceCount DESC")
     fun getAllErrorNotes(): Flow<List<PersonalErrorNoteEntity>>
