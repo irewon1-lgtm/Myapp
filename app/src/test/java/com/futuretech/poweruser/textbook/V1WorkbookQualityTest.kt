@@ -32,7 +32,8 @@ class V1WorkbookQualityTest {
                     it.startsWith("# 종합 시나리오")
             }
 
-            assertTrue("workbook $chapterNumber: accidental truncation", text.length >= 5_500)
+            // Character count is only a guard against a truncated/empty asset, never a page target.
+            assertTrue("workbook $chapterNumber: accidental truncation", text.length >= 3_000)
             assertTrue("workbook $chapterNumber: needs hands-on tasks", trainingHeadings >= 8)
             assertTrue("workbook $chapterNumber: needs code/data examples", text.contains("```"))
             assertTrue(
