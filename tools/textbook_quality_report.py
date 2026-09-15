@@ -66,8 +66,11 @@ for index, p in enumerate(assets, start=1):
         paragraph for paragraph in substantive
         if substantive.count(paragraph) > 1
     }
-    heading_count = sum(1 for line in text.splitlines() if re.match(r"^#{1,4}\s+.+", line))
-    heading_limit = 42 if index == 11 else 34
+    # Count only headings that can become reader section boundaries.
+    # H4 is an explanatory label inside a section, not another lesson/page.
+    heading_count = sum(1 for line in text.splitlines() if re.match(r"^#{1,3}\s+.+", line))
+    # Capstone has four separate incident projects plus evidence/test/handoff work stages.
+    heading_limit = 60 if index == 11 else 34
 
     ck(f"{p.name}: code/data examples", "```" in text, "code fence")
     ck(f"{p.name}: hands-on work", "실습" in text or "프로젝트" in text, "practice/project")
@@ -81,7 +84,7 @@ for index, p in enumerate(assets, start=1):
         )
     ck(f"{p.name}: substantive paragraph count", len(substantive) >= 12, f"paragraphs={len(substantive)}")
     ck(f"{p.name}: no exact repeated explanatory paragraph", not duplicate_paragraphs, f"duplicates={len(duplicate_paragraphs)}")
-    ck(f"{p.name}: no over-fragmentation", heading_count <= heading_limit, f"headings={heading_count} limit={heading_limit}")
+    ck(f"{p.name}: no over-fragmentation", heading_count <= heading_limit, f"sectionHeadings={heading_count} limit={heading_limit}")
     ck(f"{p.name}: accidental-truncation floor", len(text) >= 3500, f"chars={len(text)}")
     ck(f"{p.name}: no placeholder", not re.search(r"\b(TODO|TBD|LOREM)\b|준비중|나중에 작성", text, re.I), "placeholder scan")
 
