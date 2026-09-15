@@ -84,14 +84,14 @@ fun CurriculumOverviewScreen(
                         }
                     }
                     Text(
-                        text = "${PowerUserCurriculumCatalog.TOTAL_BOOKS}권 · ${PowerUserCurriculumCatalog.TOTAL_CHAPTERS} Chapter",
+                        text = "${PowerUserCurriculumCatalog.TOTAL_BOOKS}권 · ${PowerUserCurriculumCatalog.TOTAL_CHAPTERS}장",
                         modifier = Modifier.testTag("curriculum_chapter_count"),
                         color = CurriculumAccent,
                         fontSize = 17.sp,
                         fontWeight = FontWeight.SemiBold
                     )
                     Text(
-                        text = "권 → Chapter → Section → 문제·실습 순서로 학습합니다.",
+                        text = "권 → 장 → 단원 → 문제·실습 순서로 학습합니다.",
                         color = CurriculumMuted,
                         fontSize = 14.sp,
                         lineHeight = 21.sp
@@ -155,7 +155,7 @@ private fun BookCard(
                     )
                     Spacer(Modifier.height(3.dp))
                     Text(
-                        text = "${book.chapters.size} Chapter",
+                        text = "${book.chapters.size}장",
                         color = CurriculumMuted,
                         fontSize = 12.sp
                     )
@@ -215,7 +215,7 @@ private fun ChapterRow(
             if (!enabled) {
                 Spacer(Modifier.height(2.dp))
                 Text(
-                    text = "커리큘럼 확정 · 본문 미탑재",
+                    text = "구성 확정 · 본문 준비 중",
                     color = CurriculumMuted.copy(alpha = .72f),
                     fontSize = 11.sp
                 )

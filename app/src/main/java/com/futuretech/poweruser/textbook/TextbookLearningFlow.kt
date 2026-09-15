@@ -31,7 +31,7 @@ data class LearningConcept(
     val index: Int,
     val title: String,
     val blocks: List<TextbookBlock>,
-    val problem: InlineLearningProblem
+    val problem: InlineLearningProblem?
 )
 
 /**
@@ -39,8 +39,8 @@ data class LearningConcept(
  *
  * A 4-7 minute [TextbookSection] is the learner-facing page. The complete section content is kept
  * together so explanation, examples, code, and worked examples stay visible before assessment.
- * Exactly one low-stakes retrieval problem is attached at the end of the section. This avoids the
- * previous regression where every small concept chunk became a problem-heavy page.
+ * Main-text sections get one low-stakes retrieval problem. Workbook sections already contain their
+ * own exercises, so adding the same lesson-based auto problem there would create repetition/noise.
  */
 object TextbookLearningFlow {
     /** Kept for source compatibility with older tests/tools; section pages are no longer chunked. */
@@ -60,11 +60,15 @@ object TextbookLearningFlow {
                 index = 0,
                 title = section.title,
                 blocks = section.blocks,
-                problem = problemFor(
-                    problemId = "$chapterId-${section.id}-P01",
-                    lesson = lesson,
-                    type = type
-                )
+                problem = if (section.isWorkbook) {
+                    null
+                } else {
+                    problemFor(
+                        problemId = "$chapterId-${section.id}-P01",
+                        lesson = lesson,
+                        type = type
+                    )
+                }
             )
         )
     }

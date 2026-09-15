@@ -8,7 +8,8 @@ data class TextbookSection(
     val title: String,
     val estimatedMinutes: Int,
     val blocks: List<TextbookBlock>,
-    val weightedLength: Int
+    val weightedLength: Int,
+    val isWorkbook: Boolean = false
 )
 
 /**
@@ -40,11 +41,14 @@ object TextbookSectioner {
         blocks.forEach { block ->
             val weight = weightOf(block)
             val isMeaningfulHeading = block is TextbookBlock.Heading && block.level <= 3
+            val isWorkbookHeading = block is TextbookBlock.Heading &&
+                block.text.contains("실전 훈련편")
             val headingBoundary = isMeaningfulHeading && current.isNotEmpty() && currentWeight >= MIN_WEIGHT
             val sizeBoundary = current.isNotEmpty() && currentWeight >= TARGET_WEIGHT && currentWeight + weight > MAX_WEIGHT
             val hardBoundary = current.isNotEmpty() && currentWeight + weight > HARD_MERGE_LIMIT
 
-            if (headingBoundary || sizeBoundary || hardBoundary) flush()
+            // The workbook must start on a clean reader page even when the chapter tail is short.
+            if ((isWorkbookHeading && current.isNotEmpty()) || headingBoundary || sizeBoundary || hardBoundary) flush()
             current += block
             currentWeight += weight
         }
@@ -60,6 +64,11 @@ object TextbookSectioner {
             }
         }
 
+        val workbookStartIndex = raw.indexOfFirst { sectionBlocks ->
+            sectionBlocks.filterIsInstance<TextbookBlock.Heading>()
+                .any { it.text.contains("실전 훈련편") }
+        }
+
         return raw.mapIndexed { index, sectionBlocks ->
             val weightedLength = sectionBlocks.sumOf(::weightOf)
             val heading = sectionBlocks.filterIsInstance<TextbookBlock.Heading>()
@@ -69,10 +78,11 @@ object TextbookSectioner {
             TextbookSection(
                 id = "$chapterId-S${(index + 1).toString().padStart(2, '0')}",
                 index = index,
-                title = heading ?: "Section ${index + 1}",
+                title = heading ?: "단원 ${index + 1}",
                 estimatedMinutes = ceil(weightedLength / WEIGHT_PER_MINUTE.toDouble()).toInt().coerceIn(4, 7),
                 blocks = sectionBlocks.toList(),
-                weightedLength = weightedLength
+                weightedLength = weightedLength,
+                isWorkbook = workbookStartIndex >= 0 && index >= workbookStartIndex
             )
         }
     }

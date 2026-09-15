@@ -1,217 +1,449 @@
-## V1-C07. 로그를 읽고 시간축으로 사건 재구성하기
+## V1-C07. 로그를 읽는 법 — 시간축·stack trace·correlation
 
-**원본 Lesson 매핑:** V1-20
-
-### 1. 현실 문제에서 시작하기
-
-오류가 나면 사람은 마지막에 보인 빨간 문장을 원인이라고 생각하기 쉽다. 그러나 마지막 오류는 앞에서 이미 발생한 실패의 결과일 수 있다. 예를 들어 인증토큰 갱신 실패 → API 401 → 데이터 없음 → 화면 null 처리 실패 → crash가 이어졌다면, crash 줄만 고치면 진짜 문제를 숨길 수 있다.
-
-로그는 컴퓨터가 남긴 사건 기록이다. 이 장에서는 로그를 “검색할 문자열”이 아니라 **시간순 사건과 상관관계를 복원하는 증거**로 읽는다.
-
-### 2. Mental Model
-
-```text
-10:00:00.100  INFO  request start id=abc
-10:00:00.220  WARN  token expired id=abc
-10:00:00.310  ERROR refresh failed id=abc
-10:00:00.450  ERROR API 401 id=abc
-10:00:00.480  ERROR UI state missing id=abc
-```
-
-마지막 줄만 보면 UI 문제처럼 보이지만 최초 의미 있는 실패는 token refresh다. **시간 + 요청 식별자 + 계층 + 결과**를 묶어 읽으면 원인과 후속오류를 분리할 수 있다.
-
-### 3. 핵심 개념 해부
-
-#### timestamp와 timezone
-
-로그의 시간은 사건 순서를 복원하는 기본 축이다. 여러 서버·휴대폰·클라우드가 서로 다른 timezone을 쓰면 같은 사건이 시간상 어긋나 보일 수 있다. 가능하면 UTC나 offset이 명시된 시간형식을 사용하고, 비교할 때 기준을 통일한다.
-
-초 단위만 기록하면 빠르게 연속된 이벤트의 순서를 놓칠 수 있다. 반대로 nanosecond 정밀도가 항상 필요한 것도 아니다. 시스템 요구에 맞는 정밀도를 쓴다.
-
-#### log level
-
-DEBUG/INFO/WARN/ERROR 같은 level은 중요도와 용도를 분류하지만 프로젝트마다 규칙이 다르다. ERROR가 많다고 반드시 원인이 여러 개인 것은 아니다. 한 원인이 후속 ERROR를 연쇄적으로 만들 수 있다.
-
-운영에서는 지나치게 많은 DEBUG가 비용과 개인정보 위험을 만들 수 있고, 너무 적은 로그는 재현 불가능한 장애를 만든다. 무엇을 기록할지 설계가 필요하다.
-
-#### correlation id와 요청 추적
-
-동시에 여러 요청이 처리되면 시간만으로 어떤 로그가 같은 작업에 속하는지 구분하기 어렵다. request ID, job ID, user-safe identifier 같은 correlation clue가 있으면 한 흐름을 묶을 수 있다.
-
-민감한 개인정보를 그대로 로그에 남기는 것은 금지해야 한다. 식별을 위해 최소한의 비민감 ID를 사용한다.
-
-#### 최초 오류와 후속 오류
-
-근본원인(root cause)은 언제나 첫 번째 ERROR 줄이라는 뜻은 아니다. 더 앞의 WARN이나 상태 변화가 실제 원인일 수 있다. 따라서 장애 시점 직전 구간을 넓게 보고 “정상에서 비정상으로 처음 바뀐 지점”을 찾는다.
-
-후속 오류를 제거하면 증상은 바뀔 수 있지만 원인이 남는다. 반대로 원인을 고치면 후속 오류가 자연스럽게 사라질 수 있다.
-
-#### 로그와 다른 증거 결합
-
-로그만 믿어도 안 된다. 로그 코드 자체가 잘못되었거나 일부 이벤트를 기록하지 않을 수 있다. 네트워크 trace, DB row, 앱 상태, 테스트 결과, 사용자 재현 시각과 교차검증한다.
-
-좋은 장애보고서는 “내 생각에는”이 아니라 `10:02:13에 X 발생 → 120ms 뒤 Y 실패 → 같은 request ID → 재현 3/3`처럼 증거와 추론을 분리한다.
-
-### 3A. 개념을 연결해서 생각하기 — 로그는 “사건의 데이터베이스”다
-
-좋은 로그는 나중에 읽을 문장이 아니라 **사건을 재구성할 수 있는 구조화된 증거**다. 최소한 언제(timestamp), 어디(module/component), 무엇이 일어났는지(event), 어떤 작업에 속하는지(correlation id), 결과가 무엇인지(status)를 남긴다. 이 다섯 요소가 있으면 사람이 읽든 AI가 읽든 훨씬 정확한 추적이 가능하다.
-
-로그 설계의 첫 원칙은 정상 흐름도 어느 정도 기록하는 것이다. 실패 로그만 있으면 “어디까지 성공했는가”를 알기 어렵다. 예를 들어 push 알림이 안 왔을 때 서버 스케줄러 시작, 대상자 계산, provider 전송, provider response가 각각 남아 있어야 어느 경계에서 멈췄는지 알 수 있다.
-
-두 번째 원칙은 **민감정보 최소화**다. Access token, password, 전체 이메일, 주민정보, 의료정보를 로그에 그대로 남기면 디버깅 도구가 또 다른 데이터 유출 경로가 된다. 필요한 경우 masking, hashing, internal id를 쓰되 재식별 위험을 검토한다.
-
-세 번째는 시간의 의미를 명확히 하는 것이다. 사용자 기기 시간은 틀릴 수 있고, 서버는 UTC, 앱은 local time을 기록할 수 있다. timestamp에 timezone/offset을 포함하거나 한 기준으로 normalize해야 한다. 또한 “이벤트 발생시각”과 “로그가 수집된 시각”이 다를 수 있는 비동기 시스템에서는 둘을 구분하는 것이 좋다.
-
-네 번째는 **로그와 metric/trace의 역할 차이**다. 로그는 개별 사건의 세부를 보여주고, metric은 오류율·지연시간 같은 집계 추세를 보여주며, trace는 한 요청이 여러 서비스를 통과한 경로와 시간을 연결한다. 작은 개인 앱에서 모두 거대한 관측시스템을 만들 필요는 없지만, 어떤 질문에 어떤 증거가 적합한지는 알아야 한다.
-
-마지막으로 로그 분석에서는 “원인”과 “상관관계”를 분리한다. crash 직전에 memory warning이 있었다고 해서 무조건 메모리가 root cause라는 뜻은 아니다. 코드 경로, 재현, 정상 비교군과 결합해 causality를 확인한다. AI가 특히 이 부분에서 과잉추론하기 쉽다.
-
-### 4. Worked Examples
-
-#### Worked Example A — 100줄 로그에서 최초 실패
-
-1. 사용자 신고 시각 ±2분을 자른다.
-2. ERROR만 먼저 보되 바로 결론내리지 않는다.
-3. 첫 ERROR 직전 WARN/INFO를 확장한다.
-4. request/job ID가 있으면 같은 ID만 모은다.
-5. 정상 요청 하나와 실패 요청 하나를 나란히 비교한다.
-6. 가장 먼저 달라지는 지점을 후보 원인으로 표시한다.
-
-#### Worked Example B — timezone 착시
-
-휴대폰 로그는 KST, 서버 로그는 UTC라고 하자. 휴대폰 `15:00` 사건과 서버 `06:00` 사건이 사실 같은 시점일 수 있다. timezone을 통일하지 않으면 서버 응답이 요청보다 9시간 전에 일어난 것처럼 보인다. 사건순서 분석 전에 시간기준부터 맞춘다.
-
-### 4A. 미니 사례집
-
-**사례 1 — 알림 09:00 미수신**  
-scheduler log는 성공, provider send도 성공, device receive는 없음. 이제 서버보다 token validity, provider delivery status, device restriction을 본다.
-
-**사례 2 — API 500 뒤 UI crash**  
-마지막 crash stack만 고치면 사용자에게 빈 화면 대신 오류화면은 보일 수 있지만 server 500은 남는다. 1차 원인과 방어코드를 둘 다 처리한다.
-
-**사례 3 — 한국 사용자만 “하루 전” 일정 표시**  
-timezone normalization 로그를 비교한다. DB UTC timestamp와 UI local conversion을 분리한다.
-
-**사례 4 — AI가 request A와 B 로그를 섞어 분석**  
-correlation id가 없었다. 다음 버전부터 request id를 모든 계층에 전파한다.
-
-### 5. 그럴듯하지만 틀린 판단
-
-1. 마지막 ERROR 줄이 항상 root cause라고 생각한다.
-2. ERROR level이 가장 많았던 모듈이 원인이라고 생각한다.
-3. 로그에 사용자의 이메일·토큰을 남기면 디버깅이 쉬우니 괜찮다고 생각한다.
-4. 로그 한 종류만으로 모든 사실을 확정한다.
-
-### 5A. 로그 한 줄을 볼 때 묻는 질문
-
-- 언제 일어났는가? timezone은?
-- 어느 component인가?
-- 같은 요청/작업 ID는 무엇인가?
-- 이 줄 직전에 정상 상태는 무엇이었나?
-- 이 줄 뒤 오류는 원인인가 결과인가?
-- 정상 비교군에서는 같은 지점이 어떻게 다른가?
-- 로그가 말하지 않는 사실을 내가 추정하고 있지 않은가?
-- 개인정보/secret이 노출되지 않았는가?
-
-**장애 분석의 기본 단위는 한 줄이 아니라 사건 묶음이다.**
-
-### 5B. 로그를 “읽기” 전에 로그를 “설계”한다
-
-문제 발생 후 로그가 없어서 원인을 못 찾는 일을 줄이려면 기능을 만들 때부터 관찰지점을 넣어야 한다. 예를 들어 자동화 작업이라면 `job_scheduled`, `job_started`, `input_loaded`, `external_request_sent`, `external_response_received`, `result_saved`, `job_finished` 같은 핵심 전환을 기록한다. 모든 함수 진입을 찍는 것이 아니라 **업무적으로 의미 있는 상태변화**를 찍는다.
-
-구조화 로그는 자유문장보다 분석이 쉽다. `{"event":"api_response","request_id":"abc","status":429,"duration_ms":320}`처럼 key/value를 사용하면 필터·집계·AI 분석이 안정적이다. 다만 작은 앱에서는 JSON 로그 시스템을 무리하게 구축하기보다 필드 규칙을 일관되게 유지하는 것부터 시작한다.
-
-오류 메시지에는 “무엇이 실패했는지”뿐 아니라 **어떤 대상과 어떤 조건에서** 실패했는지 포함하는 것이 좋다. `save failed`보다 `customerId=42 activity save failed: database locked`가 유용하다. 단, 개인정보와 secret은 포함하지 않는다.
-
-로그 보존기간도 설계사항이다. 너무 짧으면 주말에 발생한 장애를 월요일에 조사할 수 없고, 너무 길면 비용과 개인정보 위험이 커진다. 사용빈도와 데이터 민감도에 맞는 retention을 정한다.
-
-AI에게 로그를 분석시킬 때는 원본 전체를 무조건 보내지 않는다. 관련 시간범위와 필요한 필드만 추리고 민감정보를 redaction한 뒤, “관찰된 사실 / 가능한 가설 / 추가로 필요한 증거” 세 칸으로 답하게 하면 과잉추론을 줄일 수 있다.
-
-### 6. Guided Lab
-
-제공된 100줄 샘플 로그를 `시간/level/request id/module/message` 표로 정규화한다. 실패 요청 하나를 골라 최초 이상징후, 첫 명백한 실패, 후속 오류를 각각 다른 표시로 구분한다. 정상 요청과 비교해 처음 달라지는 줄을 찾는다.
-
-### 7. Independent Lab
-
-자신이 쓰는 앱의 가상 장애 로그 15줄을 직접 설계한다. 네트워크 timeout 하나가 후속 UI 오류 두 개를 만드는 흐름으로 구성하고, 다른 사람이 마지막 오류만 보고 오진하도록 일부러 그럴듯하게 만든다. 그런 다음 정답 해설을 쓴다.
-
-### 8. Debug Challenge
-
-**상황:** 사용자는 21:03에 알림이 오지 않았다고 한다. 앱 로그는 12:03, 서버 로그는 12:02:59로 남아 있다. timezone, 스케줄러 실행, push 요청, 기기 수신, notification permission의 사건을 한 시간축에 재구성하고 끊긴 지점을 찾는다.
-
-### 9. AI Audit
-
-로그 300줄을 AI에게 주고 “원인을 찾아라”라고 시킬 때는 개인정보·secret 제거가 먼저다. AI가 지목한 원인 줄의 앞뒤 사건, request ID, 정상 비교군, 재현결과를 인간이 확인한다. AI가 확신 있게 말해도 로그에 없는 사실을 추정했는지 표시한다.
-
-### 9A. 진단 미니드릴 — 증상을 보면 첫 질문부터 고른다
-
-**드릴 1. ERROR가 20개 연속**  
-첫 판단: 첫 정상→비정상 전환과 같은 request id를 찾는다.  
-증거 없이 바로 수정하지 말고, 이 판단을 반박할 수 있는 확인 항목도 하나 적는다.
-
-**드릴 2. 사용자 15:00, 서버 06:00**  
-첫 판단: timezone/offset을 통일한 뒤 사건순서를 복원한다.  
-증거 없이 바로 수정하지 말고, 이 판단을 반박할 수 있는 확인 항목도 하나 적는다.
-
-**드릴 3. 로그에 token 전체값**  
-첫 판단: 즉시 redaction하고 노출범위/rotation을 검토한다.  
-증거 없이 바로 수정하지 말고, 이 판단을 반박할 수 있는 확인 항목도 하나 적는다.
-
-**드릴 4. 문제 사용자 로그만 있음**  
-첫 판단: 정상 비교군 로그를 같은 조건으로 수집한다.  
-증거 없이 바로 수정하지 말고, 이 판단을 반박할 수 있는 확인 항목도 하나 적는다.
-
-**드릴 5. AI가 마지막 stacktrace를 root cause라 단정**  
-첫 판단: 앞선 WARN/state change와 재현을 요구한다.  
-증거 없이 바로 수정하지 말고, 이 판단을 반박할 수 있는 확인 항목도 하나 적는다.
-
-**드릴 6. job이 중복 실행**  
-첫 판단: job id, trigger source, retry count를 구조화 로그에 추가한다.  
-증거 없이 바로 수정하지 말고, 이 판단을 반박할 수 있는 확인 항목도 하나 적는다.
-
-이 미니드릴의 목표는 정답 암기가 아니다. **증상 → 계층 → 확인할 증거**를 30초 안에 연결하는 습관을 만드는 것이다.
-
-### 9B. 로그 분석 결과를 보고서로 바꾸기
-
-로그를 다 읽고 나면 반드시 세 칸으로 정리한다.
-
-1. **확인된 사실:** 실제 로그·trace·DB에서 관찰한 것만 적는다.
-2. **해석/가설:** 사실을 바탕으로 추정한 원인 후보를 적는다.
-3. **다음 검증:** 각 가설을 틀렸다고 만들 수 있는 실험을 적는다.
-
-예를 들어 `12:03:01 provider accepted`는 사실이다. “기기에 알림이 도착했다”는 해석일 수 있다. 다음 검증은 device receive log와 notification permission을 확인하는 것이다. 이 세 칸을 분리하면 AI와 사람 모두 “추정”을 “확정”으로 바꾸는 실수를 줄일 수 있다.
-
-### 10. 회상 문제
-
-1. timestamp가 장애 분석에 필요한 이유는?
-2. timezone이 다르면 어떤 착시가 생기는가?
-3. log level은 무엇을 의미하고 무엇을 보장하지 않는가?
-4. correlation ID의 목적은?
-5. 최초 ERROR가 root cause가 아닐 수 있는 이유는?
-6. 정상/실패 로그 비교가 유용한 이유는?
-7. 로그에 secret을 남기면 안 되는 이유는?
-8. 로그 외에 교차검증할 증거 세 가지를 말하라.
-
-### 11. 전이 문제
-
-1. FCM 알림 실패를 앱/서버/Google 서비스/기기 수신 단계로 나눠 로그 필드를 설계하라.
-2. 주식 데이터 수집이 하루 한 번 중복 실행된다. job ID와 timestamp를 이용해 중복 원인을 찾는 방법을 적어라.
-3. 로그에 에러가 없지만 화면이 비어 있다. 어떤 비로그 증거를 수집할지 적어라.
-
-### 12. Chapter 완료 증거
-
-- Guided Lab의 실행/관찰 결과를 남긴다.
-- 정상 케이스뿐 아니라 실패·경계 케이스를 최소 1개 보존한다.
-- “무엇을 바꿨는가 / 왜 바꿨는가 / 무엇으로 맞음을 확인했는가”를 5문장 이내로 적는다.
-- AI를 사용했다면 AI 답의 오류·누락·과잉변경 여부를 체크한 기록을 남긴다.
-- 결과가 예상과 다르면 PASS라고 쓰지 않고, 재현 조건과 다음 실험을 기록한다.
-
-### 13. 참고 렌즈
-
-- Release It!, 2e
-- Systems Performance, 2e
-- Android Developers — debugging/logging guidance
-- Software Engineering at Google
-- Site Reliability Engineering practices
+**목표:** 오류 메시지 한 줄만 보고 결론내리지 않고, 로그를 시간순으로 재구성해 **최초 비정상 사건 → 후속 오류 → 사용자 증상**을 구분할 수 있게 된다.
 
 ---
+
+### 1. 로그는 사건 기록이다
+
+**로그(log)**는 프로그램이 실행 중 남긴 기록이다.
+
+좋은 로그에는 보통 다음 정보가 있다.
+
+```text
+시간
+심각도
+어느 구성요소인지
+무슨 일이 있었는지
+관련 요청/사용자/작업 식별자
+```
+
+예:
+
+```text
+10:00:01 INFO  StockApi   request started symbol=AAPL
+10:00:02 ERROR StockApi   timeout requestId=abc123
+10:00:02 WARN  Screen     showing cached data requestId=abc123
+```
+
+사용자는 “가격이 예전 값으로 보여요”라고 말할 수 있다. 로그를 보면 그 전에 네트워크 timeout이 있었고, 화면은 후속 조치로 캐시를 보여준 것을 알 수 있다.
+
+---
+
+### 2. 마지막 ERROR가 원인이라는 보장은 없다
+
+다음 로그를 보자.
+
+```text
+10:00:01 ERROR DB      failed to open database
+10:00:02 ERROR Repo    user data unavailable
+10:00:03 ERROR Screen  cannot render profile
+```
+
+가장 마지막 줄은 화면 오류지만 첫 번째 실패는 DB다.
+
+```text
+DB 실패
+↓
+데이터 없음
+↓
+화면 렌더링 실패
+```
+
+마지막 오류만 고치면 원인을 놓칠 수 있다.
+
+그래서 로그를 볼 때는 **사용자 증상 발생 시각보다 조금 앞**에서 시작한다.
+
+---
+
+### 3. timestamp — 시간순으로 다시 세운다
+
+분산된 로그는 파일 순서가 실제 사건 순서와 다를 수 있다.
+
+```text
+10:00:03 WARN retry
+10:00:01 INFO request
+10:00:02 ERROR timeout
+```
+
+시간순으로 정렬하면:
+
+```text
+10:00:01 request
+10:00:02 timeout
+10:00:03 retry
+```
+
+이제 원인 흐름이 보인다.
+
+시간대(timezone)도 중요하다. 서버 로그는 UTC, 휴대폰 화면은 한국시간일 수 있다.
+
+```text
+서버: 00:00 UTC
+기기: 09:00 KST
+```
+
+같은 사건인데 시각이 다르게 보일 수 있다.
+
+---
+
+### 4. log level — 심각도 힌트일 뿐 정답은 아니다
+
+자주 보는 수준:
+
+```text
+DEBUG = 개발/세부 추적 정보
+INFO  = 정상 흐름의 중요한 사건
+WARN  = 이상 가능성이 있지만 계속 진행
+ERROR = 실패 발생
+```
+
+하지만 `ERROR`라고 해서 항상 root cause인 것은 아니다.
+
+라이브러리가 같은 실패를 여러 번 ERROR로 기록하거나, 실제 원인이 그보다 앞의 WARN에 있을 수도 있다.
+
+**level은 필터링 힌트이지 원인 판정기가 아니다.**
+
+---
+
+### 5. component를 나누면 계층이 보인다
+
+로그에 구성요소 이름이 있으면 어느 계층이 실패했는지 좁힐 수 있다.
+
+```text
+Network
+ApiClient
+Parser
+Database
+Repository
+Screen
+NotificationWorker
+```
+
+예:
+
+```text
+Network 200 OK
+Parser success
+Database save success
+Screen old value=180
+```
+
+네트워크와 데이터 저장은 정상이고 화면 상태 연결 쪽이 우선 후보다.
+
+반대로:
+
+```text
+Network timeout
+Parser not started
+```
+
+파서 코드를 먼저 고치는 것은 우선순위가 아니다.
+
+---
+
+### 6. stack trace — “어디서 터졌는지” 역추적한다
+
+프로그램 예외가 발생하면 호출 경로가 **stack trace**로 남을 수 있다.
+
+단순 예:
+
+```text
+NullPointerException
+at StockFormatter.format(StockFormatter.kt:42)
+at StockScreen.render(StockScreen.kt:88)
+at MainActivity.onCreate(MainActivity.kt:30)
+```
+
+초보자가 모든 줄을 이해할 필요는 없다.
+
+먼저 본다.
+
+```text
+예외 종류
+내 코드가 처음 등장하는 줄
+파일명과 줄번호
+그 직전에 어떤 값이 들어왔는지
+```
+
+라이브러리 내부 줄 수십 개보다 **내 코드와 연결되는 첫 지점**이 더 유용할 수 있다.
+
+---
+
+### 7. correlation id — 한 요청의 로그를 묶는다
+
+동시에 여러 사용자가 여러 요청을 보내면 로그가 섞인다.
+
+```text
+requestId=A1 start AAPL
+requestId=B7 start MSFT
+requestId=A1 timeout
+requestId=B7 success
+```
+
+AAPL 요청과 MSFT 요청을 구분하려면 같은 작업에 공통 식별자가 필요하다.
+
+이런 값을 **correlation id** 또는 request id라고 부른다.
+
+```text
+A1 로그만 모음
+↓
+AAPL 요청 전체 흐름 복원
+```
+
+분산 시스템에서는 앱 → API → DB → 외부 서비스가 같은 ID를 전달하면 훨씬 추적하기 쉽다.
+
+---
+
+### 8. 로그에 비밀정보를 남기면 안 된다
+
+디버깅을 위해 모든 값을 출력하는 습관은 위험하다.
+
+나쁜 로그:
+
+```text
+Authorization: Bearer REAL_TOKEN
+password=MyPassword123
+residentNumber=...
+```
+
+로그 파일은 개발자, 서버, 모니터링 도구, 백업 시스템 등 여러 곳에 복제될 수 있다.
+
+비밀값은 마스킹한다.
+
+```text
+token=***
+email=w***@example.com
+```
+
+필요한 증거는 남기되 **민감정보 자체는 남기지 않는다.**
+
+---
+
+### 9. 로그가 없으면 관찰 가능성이 떨어진다
+
+문제 발생 시 이런 기록만 있다면:
+
+```text
+"실패"
+```
+
+원인을 찾기 어렵다.
+
+더 좋은 기록:
+
+```text
+2026-09-16T09:00:01+09:00
+component=PriceSync
+symbol=AAPL
+stage=api_request
+status=timeout
+requestId=ab12
+elapsedMs=5000
+```
+
+이런 구조는 검색·정렬·집계를 쉽게 한다.
+
+로그 설계의 목적은 문장을 많이 남기는 것이 아니라 **나중에 필요한 질문에 답할 수 있게 하는 것**이다.
+
+---
+
+### 10. 실제 사례 — 알림이 한 기기에서만 안 옴
+
+사용자 증상:
+
+```text
+엄마 폰: 알림 옴
+배우자 폰: 알림 안 옴
+```
+
+로그를 단계별로 본다.
+
+```text
+09:00:00 schedule triggered
+09:00:01 recipients=3
+09:00:01 deviceToken wife=XYZ
+09:00:02 provider accepted messageId=123
+```
+
+서버 로그만 보면 push provider까지 요청은 갔다.
+
+그렇다고 기기 화면에 알림이 표시됐다는 뜻은 아니다.
+
+다음 단계는:
+
+```text
+기기 token 최신 여부
+notification permission
+notification channel
+battery/background restriction
+```
+
+이다.
+
+**provider accepted = 사용자에게 표시 완료**가 아니다.
+
+관찰과 추론을 분리한다.
+
+---
+
+### 11. 실제 사례 — 자동화가 두 번 실행됨
+
+로그:
+
+```text
+10:00:00 scheduler trigger job=J1
+10:00:01 worker start run=R1
+10:00:05 retry start run=R2
+10:00:08 R1 success
+10:00:10 R2 success
+```
+
+최종 데이터가 두 번 저장됐다.
+
+중복 결과만 삭제하면 재발한다.
+
+확인할 것:
+
+```text
+retry가 왜 시작됐는가?
+R1이 살아 있는데 R2를 시작했는가?
+중복 방지 키가 있는가?
+worker가 idempotent한가?
+```
+
+로그가 시간축과 run id를 포함하면 원인을 재구성하기 쉽다.
+
+---
+
+### 12. 로그 분석 순서
+
+```text
+1. 사용자 증상 시각 고정
+2. 시각 전후 로그 수집
+3. timezone 통일
+4. request/run/device id로 묶기
+5. 최초 비정상 사건 찾기
+6. 후속 오류와 분리
+7. 가설 작성
+8. 추가로 필요한 로그 결정
+```
+
+처음부터 전체 로그를 AI에 던져 “원인 찾아줘”라고 하기보다, 비밀값을 제거하고 관련 시간창과 component를 좁히는 편이 안전하고 정확하다.
+
+---
+
+## 실습 1 — root cause 후보 찾기
+
+```text
+12:00:00 INFO  API request
+12:00:01 ERROR DNS lookup failed
+12:00:02 ERROR request failed
+12:00:03 WARN  showing empty state
+```
+
+첫 번째 조사 후보는?
+
+정답: DNS lookup failure.
+
+---
+
+## 실습 2 — 두 요청 분리
+
+```text
+A1 start AAPL
+B2 start MSFT
+B2 success
+A1 timeout
+```
+
+AAPL 로그만 추리면:
+
+```text
+A1 start AAPL
+A1 timeout
+```
+
+---
+
+## 실습 3 — 민감정보 제거
+
+나쁜 로그:
+
+```text
+authToken=eyJhbGciOi...
+```
+
+더 나은 로그:
+
+```text
+authTokenPresent=true
+```
+
+토큰의 존재 여부만 필요하다면 실제 값은 기록하지 않는다.
+
+---
+
+## 실습 4 — 관찰과 추론 분리
+
+관찰:
+
+```text
+provider response=200
+```
+
+잘못된 결론:
+
+```text
+사용자 폰에 알림이 반드시 표시됐다.
+```
+
+200 응답은 provider가 요청을 받아들였다는 증거일 수 있지만 기기 표시까지 증명하지는 않는다.
+
+---
+
+## 장 끝 미니 프로젝트 — 장애 시간축 만들기
+
+가상의 오류 로그 20줄을 만든다고 생각하고, 실제로 필요한 컬럼을 설계한다.
+
+| 필드 | 이유 |
+|---|---|
+| timestamp | 사건 순서 |
+| timezone | 시각 비교 |
+| level | 필터링 |
+| component | 계층 분리 |
+| request/run id | 같은 작업 묶기 |
+| stage | 어느 단계인지 |
+| result | 성공/실패 |
+| elapsedMs | 지연 확인 |
+| safe context | 민감정보 제외한 입력 정보 |
+
+그 다음 실제 앱 문제 하나에 이 표를 적용해본다.
+
+---
+
+## 핵심 용어
+
+| 용어 | 뜻 |
+|---|---|
+| log | 실행 중 발생한 사건 기록 |
+| timestamp | 사건 발생 시각 |
+| log level | DEBUG/INFO/WARN/ERROR 같은 심각도/용도 분류 |
+| component | 로그를 남긴 기능/계층 |
+| stack trace | 예외가 어떤 호출 경로를 거쳐 발생했는지 보여주는 기록 |
+| correlation id | 같은 요청/작업 로그를 묶는 식별자 |
+| root cause | 연쇄 오류를 만든 근본 원인 |
+| masking | 민감정보 일부를 숨겨 기록하는 것 |
+
+---
+
+## 이 장을 끝내고 할 수 있어야 하는 것
+
+1. 마지막 ERROR와 최초 실패를 구분한다.
+2. 로그를 시간순으로 재구성한다.
+3. timezone 차이를 확인한다.
+4. component별로 실패 계층을 좁힌다.
+5. stack trace에서 내 코드와 연결되는 지점을 찾는다.
+6. request/run id로 섞인 로그를 분리한다.
+7. 로그에 secret을 그대로 남기지 않는다.
+8. 관찰된 사실과 추론을 분리한다.
