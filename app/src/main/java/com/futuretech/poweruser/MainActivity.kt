@@ -23,10 +23,10 @@ import com.futuretech.poweruser.data.CurriculumDataRepository
 import com.futuretech.poweruser.ui.BeginnerStockScoreProjectScreen
 import com.futuretech.poweruser.ui.CurriculumOverviewScreen
 import com.futuretech.poweruser.ui.CustomProjectBuilderScreen
-import com.futuretech.poweruser.ui.FeedbackPracticeScreen
 import com.futuretech.poweruser.ui.IntermediateStockResearchProjectScreen
 import com.futuretech.poweruser.ui.MainHomeScreen
 import com.futuretech.poweruser.ui.PersonalErrorNotesScreen
+import com.futuretech.poweruser.ui.RunSubmitPracticeScreen
 import com.futuretech.poweruser.ui.SelfUpdateBanner
 import com.futuretech.poweruser.ui.SpacedRepetitionReviewScreen
 import com.futuretech.poweruser.ui.TeachingLessonScreen
@@ -135,7 +135,7 @@ fun AppNavigation() {
         }
         composable("textbook_v1/practice/{lessonId}") { backStackEntry ->
             val lessonId = backStackEntry.arguments?.getString("lessonId") ?: "TB1-C01"
-            FeedbackPracticeScreen(
+            RunSubmitPracticeScreen(
                 lessonId = lessonId,
                 onNavigateBack = { navController.popBackStack() },
                 onReviewLecture = { navController.popBackStack() },
