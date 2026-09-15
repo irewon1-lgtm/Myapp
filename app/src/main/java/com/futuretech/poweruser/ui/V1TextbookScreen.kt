@@ -226,7 +226,11 @@ private fun ReaderTopBar(
     readCount: Int,
     onNavigateBack: () -> Unit
 ) {
-    Surface(color = ReaderPaper, shadowElevation = 2.dp) {
+    Surface(
+        modifier = Modifier.testTag("textbook_top_bar"),
+        color = ReaderPaper,
+        shadowElevation = 2.dp
+    ) {
         Row(
             modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 11.dp),
             verticalAlignment = Alignment.CenterVertically,
@@ -234,9 +238,10 @@ private fun ReaderTopBar(
         ) {
             OutlinedButton(
                 onClick = onNavigateBack,
-                border = BorderStroke(1.dp, ReaderBorder)
+                border = BorderStroke(1.dp, ReaderBorder),
+                contentPadding = PaddingValues(horizontal = 10.dp, vertical = 6.dp)
             ) {
-                Text("전체 과정", color = ReaderInk)
+                Text("전체 과정", color = ReaderInk, fontSize = 13.sp, maxLines = 1)
             }
             Column(Modifier.weight(1f)) {
                 Text(
@@ -253,12 +258,14 @@ private fun ReaderTopBar(
                     fontWeight = FontWeight.Bold,
                     maxLines = 2
                 )
+                Text(
+                    text = "읽기 완료 $readCount/11",
+                    modifier = Modifier.testTag("textbook_read_progress"),
+                    color = ReaderMuted,
+                    fontSize = 11.sp,
+                    maxLines = 1
+                )
             }
-            Text(
-                text = "읽기 완료 $readCount/11",
-                color = ReaderMuted,
-                fontSize = 12.sp
-            )
         }
     }
 }
@@ -600,10 +607,14 @@ private fun InlineProblemCard(
                             minLines = if (problem.type == LearningProblemType.OUTPUT_PREDICTION) 3 else 5,
                             colors = readerTextFieldColors()
                         )
-                        Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                        Column(
+                            modifier = Modifier.fillMaxWidth(),
+                            verticalArrangement = Arrangement.spacedBy(8.dp)
+                        ) {
                             Button(
                                 onClick = { checked = true },
                                 enabled = textAnswer.isNotBlank(),
+                                modifier = Modifier.fillMaxWidth(),
                                 colors = ButtonDefaults.buttonColors(
                                     containerColor = ReaderAction,
                                     contentColor = ReaderInk
@@ -611,7 +622,10 @@ private fun InlineProblemCard(
                             ) {
                                 Text(if (problem.type == LearningProblemType.OUTPUT_PREDICTION) "예상 저장" else "작성 완료")
                             }
-                            OutlinedButton(onClick = onOpenPractice) {
+                            OutlinedButton(
+                                onClick = onOpenPractice,
+                                modifier = Modifier.fillMaxWidth()
+                            ) {
                                 Text("전체 실습에서 실행", color = ReaderAccent)
                             }
                         }
