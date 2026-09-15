@@ -2,8 +2,8 @@ package com.futuretech.poweruser.ai
 
 object AiTutorPolicy {
     private val likelySecretPatterns = listOf(
-        Regex("(?i)\\bsk-[A-Za-z0-9_-]{16,}\\b"),
-        Regex("(?i)\\bBearer\\s+[A-Za-z0-9._~-]{20,}\\b"),
+        Regex("(?i)sk-[A-Za-z0-9_-]{16,}"),
+        Regex("(?i)\\bBearer\\s+[A-Za-z0-9._~-]{20,}"),
         Regex("-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----"),
         Regex("(?i)\\b(?:password|passwd|api[_ -]?key|secret|access[_ -]?token)\\s*[:=]\\s*[^\\s]{8,}")
     )
