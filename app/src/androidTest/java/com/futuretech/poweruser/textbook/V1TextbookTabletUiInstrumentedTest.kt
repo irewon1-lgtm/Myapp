@@ -36,9 +36,15 @@ class V1TextbookTabletUiInstrumentedTest {
             return
         }
 
+        assertTagPresent("learning_home")
+        assertTagPresent("home_curriculum")
+        compose.onNodeWithTag("home_curriculum").performClick()
+        compose.waitForIdle()
+
         assertTagPresent("curriculum_overview_root")
         assertTagPresent("curriculum_chapter_V1-C01")
         compose.onNodeWithTag("curriculum_chapter_V1-C01").performClick()
+        compose.waitForIdle()
         assertTagPresent("v1_textbook_root")
         assertTagPresent("textbook_section_strip")
         assertTagPresent("textbook_reader")
