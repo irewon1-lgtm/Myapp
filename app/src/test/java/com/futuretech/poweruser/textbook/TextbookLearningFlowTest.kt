@@ -36,7 +36,7 @@ class TextbookLearningFlowTest {
     }
 
     @Test
-    fun syntheticSection_splitsAtConceptHeadingsAndNeverExceedsSixBlocks() {
+    fun syntheticSection_staysOneLearningPageAndPreservesAllContent() {
         val chapter = V1TextbookCatalog.chapters.first()
         val lesson = requireNotNull(CurriculumDataRepository.lessonById(chapter.practiceLessonId))
         val blocks = buildList {
@@ -56,41 +56,40 @@ class TextbookLearningFlowTest {
 
         val concepts = TextbookLearningFlow.buildConcepts(chapter.id, section, lesson)
 
-        assertTrue(concepts.size >= 3)
-        assertEquals(blocks, concepts.flatMap { it.blocks })
-        assertTrue(concepts.all { it.blocks.isNotEmpty() })
-        assertTrue(concepts.all { it.blocks.size <= TextbookLearningFlow.MAX_BLOCKS_PER_CONCEPT })
-        assertEquals(concepts.size, concepts.map { it.id }.toSet().size)
+        assertEquals(1, concepts.size)
+        assertEquals(blocks, concepts.single().blocks)
+        assertEquals(section.title, concepts.single().title)
+        assertEquals("${section.id}-C01", concepts.single().id)
+        assertTrue(concepts.single().problem.prompt.isNotBlank())
     }
 
     @Test
-    fun eightSyntheticConcepts_cycleAcrossAllEightProblemTypes() {
+    fun eightSyntheticSections_cycleAcrossAllEightProblemTypes() {
         val chapter = V1TextbookCatalog.chapters.first()
         val lesson = requireNotNull(CurriculumDataRepository.lessonById(chapter.practiceLessonId))
-        val blocks = buildList {
-            repeat(8) { index ->
-                add(TextbookBlock.Heading(3, "개념 ${index + 1}"))
-                add(TextbookBlock.Paragraph("내용 ${index + 1}"))
-            }
+
+        val pages = (0 until 8).map { sectionIndex ->
+            val blocks = listOf(
+                TextbookBlock.Heading(3, "개념 ${sectionIndex + 1}"),
+                TextbookBlock.Paragraph("내용 ${sectionIndex + 1}")
+            )
+            val section = TextbookSection(
+                id = "${chapter.id}-S${(sectionIndex + 1).toString().padStart(2, '0')}",
+                index = sectionIndex,
+                title = "Section ${sectionIndex + 1}",
+                estimatedMinutes = 5,
+                blocks = blocks,
+                weightedLength = blocks.sumOf(TextbookSectioner::weightOf)
+            )
+            TextbookLearningFlow.buildConcepts(chapter.id, section, lesson).single()
         }
-        val section = TextbookSection(
-            id = "${chapter.id}-S01",
-            index = 0,
-            title = "8종 문제 테스트",
-            estimatedMinutes = 5,
-            blocks = blocks,
-            weightedLength = blocks.sumOf(TextbookSectioner::weightOf)
-        )
 
-        val concepts = TextbookLearningFlow.buildConcepts(chapter.id, section, lesson)
-
-        assertEquals(8, concepts.size)
-        assertEquals(LearningProblemType.entries.toSet(), concepts.map { it.problem.type }.toSet())
-        assertFalse(concepts.any { it.problem.id.isBlank() || it.problem.prompt.isBlank() })
+        assertEquals(LearningProblemType.entries.toSet(), pages.map { it.problem.type }.toSet())
+        assertFalse(pages.any { it.problem.id.isBlank() || it.problem.prompt.isBlank() })
     }
 
     @Test
-    fun allRealV1Sections_preserveContentAndGetConceptProblems() {
+    fun allRealV1Sections_preserveFullLearningContentAndUseOneProblemPerSection() {
         val usedTypes = mutableSetOf<LearningProblemType>()
 
         V1TextbookCatalog.chapters.forEach { chapter ->
@@ -101,15 +100,12 @@ class TextbookLearningFlowTest {
 
             sections.forEach { section ->
                 val concepts = TextbookLearningFlow.buildConcepts(chapter.id, section, lesson)
-                assertTrue("${section.id}: at least one concept", concepts.isNotEmpty())
-                assertEquals("${section.id}: source blocks preserved", section.blocks, concepts.flatMap { it.blocks })
-                assertTrue(
-                    "${section.id}: one concept page stays bounded",
-                    concepts.all { it.blocks.size in 1..TextbookLearningFlow.MAX_BLOCKS_PER_CONCEPT }
-                )
-                assertTrue("${section.id}: every concept titled", concepts.all { it.title.isNotBlank() })
-                assertTrue("${section.id}: every concept has a problem", concepts.all { it.problem.prompt.isNotBlank() })
-                usedTypes += concepts.map { it.problem.type }
+                assertEquals("${section.id}: exactly one learning page", 1, concepts.size)
+                val page = concepts.single()
+                assertEquals("${section.id}: all source blocks preserved", section.blocks, page.blocks)
+                assertTrue("${section.id}: page titled", page.title.isNotBlank())
+                assertTrue("${section.id}: one end-of-section problem", page.problem.prompt.isNotBlank())
+                usedTypes += page.problem.type
             }
         }
 
