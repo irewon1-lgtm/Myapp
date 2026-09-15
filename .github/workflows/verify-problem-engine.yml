@@ -38,8 +38,8 @@ jobs:
           test -s app/src/main/assets/typescript.js
           test -s app/src/main/assets/ts_libs.js
 
-      - name: Make Gradle wrapper executable
-        run: chmod +x ./gradlew
+      - name: Make scripts executable
+        run: chmod +x ./gradlew tools/run_runtime_extreme.sh tools/runtime_cleanpass.py
 
       - name: Run JVM unit tests
         run: ./gradlew testDebugUnitTest --stacktrace
@@ -60,17 +60,7 @@ jobs:
           arch: x86_64
           profile: pixel_6
           disable-animations: true
-          script: |
-            set +e
-            ./gradlew connectedDebugAndroidTest --stacktrace
-            TEST_STATUS=$?
-            adb shell run-as com.futuretech.poweruser cat files/runtime_extreme_report.json > runtime_extreme_report.json 2>/dev/null
-            PULL_STATUS=$?
-            python tools/runtime_cleanpass.py runtime_extreme_report.json
-            CLEAN_STATUS=$?
-            if [ "$TEST_STATUS" -ne 0 ] || [ "$PULL_STATUS" -ne 0 ] || [ "$CLEAN_STATUS" -ne 0 ]; then
-              exit 1
-            fi
+          script: bash tools/run_runtime_extreme.sh
 
       - name: Upload runtime evidence
         if: always()
