@@ -69,7 +69,7 @@ object TextbookSectioner {
             TextbookSection(
                 id = "$chapterId-S${(index + 1).toString().padStart(2, '0')}",
                 index = index,
-                title = heading ?: "Section ${index + 1}",
+                title = heading ?: "단원 ${index + 1}",
                 estimatedMinutes = ceil(weightedLength / WEIGHT_PER_MINUTE.toDouble()).toInt().coerceIn(4, 7),
                 blocks = sectionBlocks.toList(),
                 weightedLength = weightedLength
