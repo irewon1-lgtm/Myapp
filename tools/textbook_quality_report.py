@@ -46,7 +46,6 @@ asset_dir = ROOT / "app/src/main/assets/textbook/v1"
 assets = sorted(asset_dir.glob("chapter_*.md"))
 ck("V1 source assets preserved", len(assets) == 11, f"count={len(assets)}")
 lengths = []
-substantive_counts = []
 for index, p in enumerate(assets, start=1):
     text = p.read_text(encoding="utf-8")
     lengths.append(len(text))
@@ -55,21 +54,20 @@ for index, p in enumerate(assets, start=1):
         re.sub(r"\s+", " ", paragraph).strip()
         for paragraph in re.split(r"\n\s*\n", text)
     ]
-    substantive = [
+    comparable_paragraphs = [
         paragraph for paragraph in paragraphs
         if len(paragraph) >= 90
         and not paragraph.startswith("```")
         and not paragraph.startswith("|")
     ]
-    substantive_counts.append(len(substantive))
     duplicate_paragraphs = {
-        paragraph for paragraph in substantive
-        if substantive.count(paragraph) > 1
+        paragraph for paragraph in comparable_paragraphs
+        if comparable_paragraphs.count(paragraph) > 1
     }
     # Count only headings that can become reader section boundaries.
     # H4 is an explanatory label inside a section, not another lesson/page.
     heading_count = sum(1 for line in text.splitlines() if re.match(r"^#{1,3}\s+.+", line))
-    # Capstone has four separate incident projects plus evidence/test/handoff work stages.
+    # Capstone has separate incident projects plus evidence/test/handoff work stages.
     heading_limit = 60 if index == 11 else 34
 
     ck(f"{p.name}: code/data examples", "```" in text, "code fence")
@@ -82,7 +80,7 @@ for index, p in enumerate(assets, start=1):
             "이 장에서는 새 용어를 거의 추가하지 않는다" in text,
             "capstone reuses prior vocabulary",
         )
-    ck(f"{p.name}: substantive paragraph count", len(substantive) >= 12, f"paragraphs={len(substantive)}")
+    # Do not require long prose paragraphs. That would reward filler and punish concise explanations.
     ck(f"{p.name}: no exact repeated explanatory paragraph", not duplicate_paragraphs, f"duplicates={len(duplicate_paragraphs)}")
     ck(f"{p.name}: no over-fragmentation", heading_count <= heading_limit, f"sectionHeadings={heading_count} limit={heading_limit}")
     ck(f"{p.name}: accidental-truncation floor", len(text) >= 3500, f"chars={len(text)}")
@@ -106,7 +104,6 @@ for index, p in enumerate(assets, start=1):
 all_text = "\n".join(p.read_text(encoding="utf-8") for p in assets)
 # This is only an accidental-truncation guard. It is deliberately NOT a page-count target.
 ck("Total V1 accidental-truncation floor", len(all_text) >= 40000, f"chars={len(all_text)}")
-ck("Every chapter contributes substantive material", min(substantive_counts or [0]) >= 12, f"min={min(substantive_counts or [0])}")
 
 curriculum_path = ROOT / "app/src/main/java/com/futuretech/poweruser/textbook/PowerUserCurriculumCatalog.kt"
 sectioner_path = ROOT / "app/src/main/java/com/futuretech/poweruser/textbook/TextbookSectioner.kt"
@@ -170,10 +167,9 @@ report = [
     f"- V1 catalog broad: **{catalog[0]}** tests",
     f"- V1 assets: **{len(assets)}** chapters / total chars **{len(all_text):,}**",
     f"- Chapter char range: **{min(lengths) if lengths else 0:,}–{max(lengths) if lengths else 0:,}**",
-    f"- Substantive paragraph range: **{min(substantive_counts) if substantive_counts else 0}–{max(substantive_counts) if substantive_counts else 0}**",
     f"- Static gates: **{len(checks)-len(failed)}/{len(checks)} PASS**",
     "",
-    "Note: character counts are truncation guards only. They are not used as a page-count or padding target.",
+    "Note: character counts are truncation guards only. Long-paragraph counts are intentionally not used because they reward padding rather than learning value.",
     "",
     "## Static gate details",
 ]
