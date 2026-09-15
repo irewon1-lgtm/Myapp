@@ -35,7 +35,7 @@ class ReviewClean25Test(private val gate: Int) {
         assertTrue(SpacedRepetitionEngine.isDue(item, now))
         assertEquals(0, item.reviewIntervalDays)
 
-        val successes = (gate - 1) % 5
+        val successes = (gate - 1) % SpacedRepetitionEngine.TOTAL_REVIEW_SUCCESSES
         repeat(successes) {
             item = SpacedRepetitionEngine.recordReview(item, true, now)
             now = item.nextReviewTimestamp
@@ -43,7 +43,7 @@ class ReviewClean25Test(private val gate: Int) {
 
         if (gate % 4 == 0 && !item.isMastered) {
             val before = item.reviewCount
-            item = SpacedRepetitionEngine.recordReview(item, false, now)
+            item = SpacedRepetitionEngine.recordReview(item, false, now, failureStreak = 2)
             assertEquals((before - 1).coerceAtLeast(0), item.reviewCount)
             assertEquals(0, item.reviewIntervalDays)
             assertFalse(item.isMastered)
@@ -51,9 +51,9 @@ class ReviewClean25Test(private val gate: Int) {
             item = SpacedRepetitionEngine.recordReview(item, true, now)
         }
 
-        assertTrue(item.reviewCount in 0..5)
-        assertTrue(item.reviewIntervalDays in setOf(0, 1, 3, 7, 14))
-        assertEquals(item.isMastered, item.reviewCount == 5)
+        assertTrue(item.reviewCount in 0..SpacedRepetitionEngine.TOTAL_REVIEW_SUCCESSES)
+        assertTrue(item.reviewIntervalDays in setOf(0, 1, 3, 7, 14, 30, 60))
+        assertEquals(item.isMastered, item.reviewCount == SpacedRepetitionEngine.TOTAL_REVIEW_SUCCESSES)
         assertTrue(SpacedRepetitionEngine.guidance(item).instruction.isNotBlank())
 
         if (item.isMastered) {
