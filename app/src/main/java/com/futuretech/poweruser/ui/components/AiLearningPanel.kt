@@ -24,7 +24,8 @@ fun AiLearningPanel(
     lesson: LessonContent,
     currentStep: Int,
     practiceAttempted: Boolean,
-    codeSnapshot: String
+    codeSnapshot: String,
+    deterministicEvidence: String = ""
 ) {
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
@@ -122,7 +123,10 @@ fun AiLearningPanel(
                                     practiceLanguage = lesson.practiceLanguage,
                                     mode = AiLearningMode.HINT,
                                     task = taskForStep(currentStep),
-                                    userMessage = "현재 내 시도에서 다음으로 확인할 것 한 가지만 힌트로 알려줘.",
+                                    userMessage = attachDeterministicEvidence(
+                                        "현재 내 시도에서 다음으로 확인할 것 한 가지만 힌트로 알려줘.",
+                                        deterministicEvidence
+                                    ),
                                     code = codeSnapshot,
                                     hintLevel = nextLevel,
                                     practiceAttempted = practiceAttempted
@@ -196,7 +200,7 @@ fun AiLearningPanel(
                                     practiceLanguage = lesson.practiceLanguage,
                                     mode = AiLearningMode.COLLABORATE,
                                     task = taskForStep(currentStep),
-                                    userMessage = question,
+                                    userMessage = attachDeterministicEvidence(question, deterministicEvidence),
                                     code = codeSnapshot,
                                     hintLevel = 1,
                                     practiceAttempted = practiceAttempted,
@@ -304,6 +308,17 @@ private fun AiKeyDialog(
             }
         }
     )
+}
+
+private fun attachDeterministicEvidence(message: String, evidence: String): String {
+    val clean = evidence.trim()
+    if (clean.isBlank()) return message
+    return buildString {
+        append(message.trim())
+        append("\n\n[앱의 deterministic 채점 결과 · 읽기 전용]\n")
+        append(clean.take(2_500))
+        append("\n\n위 PASS/FAIL은 앱 runtime과 deterministic test가 이미 결정했습니다. 재채점하거나 뒤집지 말고 원인 설명과 다음 확인점만 제시하세요.")
+    }
 }
 
 private fun taskForStep(step: Int): AiTutorTask = when (step) {

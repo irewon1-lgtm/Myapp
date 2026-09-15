@@ -1,0 +1,65 @@
+name: Verify items 10-12 deterministic feedback hints
+
+on:
+  push:
+    branches:
+      - fix/items-10-12-extreme
+  workflow_dispatch:
+
+jobs:
+  items-10-12-extreme-clean:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: gradle
+
+      - name: Set up Python 3.13
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Set up Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Prepare TypeScript runtime assets
+        run: |
+          npm install --ignore-scripts --no-audit --no-fund
+          npm run prepare:typescript
+          test -s app/src/main/assets/typescript.js
+          test -s app/src/main/assets/ts_libs.js
+
+      - name: JVM full regression
+        run: |
+          chmod +x ./gradlew
+          ./gradlew testDebugUnitTest --stacktrace
+
+      - name: Items 10-12 Extreme60
+        run: python tools/items_10_12_extreme60.py
+
+      - name: Items 10-12 CLEAN25
+        run: python tools/items_10_12_clean25.py
+
+      - name: Build debug APK
+        run: ./gradlew assembleDebug --stacktrace
+
+      - name: Upload evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: items-10-12-extreme-clean-evidence
+          if-no-files-found: warn
+          path: |
+            items_10_12_extreme60_report.md
+            items_10_12_clean25_report.md
+            app/build/test-results/testDebugUnitTest/**
+            app/build/outputs/apk/debug/app-debug.apk

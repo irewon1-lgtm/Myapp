@@ -26,6 +26,22 @@ data class PracticeTestCaseResult(
     val evidence: String
 )
 
+data class SubmissionFailureFeedback(
+    val whatFailed: String,
+    val evidence: String,
+    val why: String,
+    val focus: String,
+    val retry: String
+) {
+    fun asText(): String = listOf(
+        "무엇이 실패했나: $whatFailed",
+        "증거: $evidence",
+        "왜 그런가: $why",
+        "어디를 생각해볼까: $focus",
+        "다시 실행: $retry"
+    ).joinToString("\n")
+}
+
 data class PracticeSubmissionResult(
     val results: List<PracticeTestCaseResult>
 ) {
@@ -43,6 +59,42 @@ data class PracticeSubmissionResult(
 
     val hiddenTotal: Int
         get() = results.count { it.visibility == PracticeTestVisibility.HIDDEN }
+
+    fun failureFeedback(): SubmissionFailureFeedback {
+        val publicFailure = results.firstOrNull {
+            it.visibility == PracticeTestVisibility.PUBLIC && !it.passed
+        }
+        if (publicFailure != null) {
+            return SubmissionFailureFeedback(
+                whatFailed = publicFailure.label,
+                evidence = publicFailure.evidence,
+                why = "제출 코드가 공개 요구사항을 아직 만족하지 못했습니다. 판정은 실제 runtime과 deterministic test 결과만 사용합니다.",
+                focus = "입력→처리→출력 흐름과 기준 예제를 비교하고, 첫 번째로 달라지는 지점을 찾으세요.",
+                retry = "수정 후 ▶ 실행으로 확인하고 다시 ✓ 제출하세요."
+            )
+        }
+
+        val hiddenFailures = results.count {
+            it.visibility == PracticeTestVisibility.HIDDEN && !it.passed
+        }
+        if (hiddenFailures > 0) {
+            return SubmissionFailureFeedback(
+                whatFailed = "숨은 경계조건",
+                evidence = "숨은 테스트 $hiddenPassed/$hiddenTotal 통과 · 실패 입력값 자체는 비공개",
+                why = "기본 예제는 동작하지만 빈 값·음수·큰 값·중복 같은 변형에서 결과가 달라졌습니다.",
+                focus = "특정 예제 값에만 맞춘 로직, 경계값 처리, 조건 분기를 확인하세요.",
+                retry = "테스트 값을 직접 바꿔 ▶ 실행한 뒤 다시 ✓ 제출하세요."
+            )
+        }
+
+        return SubmissionFailureFeedback(
+            whatFailed = "제출 상태 재확인",
+            evidence = "공개 $publicPassed/$publicTotal · 숨은 $hiddenPassed/$hiddenTotal",
+            why = "현재 실패 테스트를 특정하지 못했습니다.",
+            focus = "코드를 다시 실행해 최신 테스트 증거를 만든 뒤 제출하세요.",
+            retry = "▶ 실행 → ✓ 제출 순서로 다시 확인하세요."
+        )
+    }
 }
 
 data class EdgeVariant(
