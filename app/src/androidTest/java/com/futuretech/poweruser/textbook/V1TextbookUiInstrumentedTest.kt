@@ -17,7 +17,7 @@ class V1TextbookUiInstrumentedTest {
     @Test
     fun appLaunchesIntoCurriculumThenOpensConceptFirstSectionReader() {
         assertTagExists("curriculum_overview_root")
-        compose.onNodeWithTag("curriculum_chapter_count").assertTextContains("9권 · 134 Chapter")
+        compose.onNodeWithTag("curriculum_chapter_count").assertTextContains("9권 · 134장")
         assertTagExists("curriculum_chapter_V1-C01")
         compose.onNodeWithTag("curriculum_chapter_V1-C01").performClick()
 
