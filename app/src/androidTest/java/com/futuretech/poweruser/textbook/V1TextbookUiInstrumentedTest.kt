@@ -15,7 +15,7 @@ class V1TextbookUiInstrumentedTest {
     @get:Rule val compose = createAndroidComposeRule<MainActivity>()
 
     @Test
-    fun appLaunchesIntoCurriculumThenOpensSectionReader() {
+    fun appLaunchesIntoCurriculumThenOpensConceptFirstSectionReader() {
         assertTagExists("curriculum_overview_root")
         compose.onNodeWithTag("curriculum_chapter_count").assertTextContains("9권 · 134 Chapter")
         assertTagExists("curriculum_chapter_V1-C01")
@@ -25,6 +25,7 @@ class V1TextbookUiInstrumentedTest {
         assertTagExists("textbook_section_strip")
         assertTagExists("textbook_reader")
         assertTagExists("textbook_section_progress")
+        assertTagExists("textbook_concept_progress")
 
         assertTextAbsent("AI CODING OS")
         assertTextAbsent("KNOWLEDGE GRAPH")
