@@ -15,9 +15,12 @@ class V1TextbookUiInstrumentedTest {
         compose.onNodeWithTag("textbook_v1_entry").assertExists().performClick()
         compose.onNodeWithTag("v1_textbook_root").assertExists()
         compose.onNodeWithTag("textbook_reader").assertExists()
-        compose.onNodeWithText("시스템 전체 그림", substring = true).assertExists()
+        // Chapter titles also appear in the TOC, so verify the reader's unique
+        // "Chapter NN" label instead of requiring the duplicated title text
+        // to resolve to exactly one semantics node.
+        compose.onNodeWithText("Chapter 01").assertExists()
         compose.onNodeWithTag("textbook_practice_button").assertExists()
         compose.onNodeWithTag("textbook_next_chapter").performClick()
-        compose.onNodeWithText("파일·경로", substring = true).assertExists()
+        compose.onNodeWithText("Chapter 02").assertExists()
     }
 }
