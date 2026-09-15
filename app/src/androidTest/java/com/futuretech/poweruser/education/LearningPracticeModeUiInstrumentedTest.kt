@@ -2,7 +2,6 @@ package com.futuretech.poweruser.education
 
 import android.content.Context
 import androidx.compose.ui.test.hasSetTextAction
-import androidx.compose.ui.test.hasText
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
@@ -17,7 +16,7 @@ import org.junit.Test
 import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4::class)
-class FeedbackTeachingUiInstrumentedTest {
+class LearningPracticeModeUiInstrumentedTest {
     @get:Rule
     val composeRule = createAndroidComposeRule<MainActivity>()
 
@@ -31,31 +30,28 @@ class FeedbackTeachingUiInstrumentedTest {
             .commit()
     }
 
-    private fun waitForText(text: String, timeoutMillis: Long = 5000) {
-        composeRule.waitUntil(timeoutMillis = timeoutMillis) {
-            composeRule.onAllNodes(hasText(text)).fetchSemanticsNodes().isNotEmpty()
-        }
-    }
-
     @Test
-    fun predictionFeedbackExplainsAndCanReturnToLecture() {
+    fun challengeUsesSeparateRouteAndLocksHintsAndAi() {
         composeRule.onNodeWithTag("learning_home_button").performClick()
         composeRule.waitForIdle()
         composeRule.onNodeWithText("이어서 학습 ▶").performClick()
-        waitForText("1. 실행 결과 예상")
         composeRule.onNodeWithTag("session_mode_practice").assertExists()
 
+        composeRule.onNodeWithText("Challenge").performClick()
+        composeRule.waitForIdle()
+        composeRule.onNodeWithTag("session_mode_challenge").assertExists()
+        composeRule.onNodeWithText("Chapter Challenge · 힌트/AI/정답 보기 잠금 · 제출 결과로만 독립 수행을 확인")
+            .assertExists()
+
         composeRule.onAllNodes(hasSetTextAction())[0]
-            .performTextInput("입력 처리 결과를 먼저 예상하고 실제 실행과 비교합니다")
+            .performTextInput("입력에서 처리 과정을 거쳐 결과가 나온다고 예상합니다")
         composeRule.onNodeWithText("예상 제출").performScrollTo().performClick()
+        composeRule.onNodeWithText("다음 →").performScrollTo().performClick()
+        composeRule.waitForIdle()
 
-        waitForText("예상 답안을 기준과 비교해 보세요")
-        composeRule.onNodeWithText("무엇이 확인됐나").assertExists()
-        composeRule.onNodeWithText("헷갈리기 쉬운 지점").assertExists()
-        composeRule.onNodeWithText("다시 할 때").assertExists()
-        composeRule.onNodeWithText("관련 강의 다시 보기").performScrollTo().performClick()
-
-        composeRule.onNodeWithTag("lecture_root").assertExists()
-        composeRule.onNodeWithTag("practice_locked_label").assertExists()
+        composeRule.onNodeWithText("2. 코드 수정 → 실행 → 제출").assertExists()
+        composeRule.onNodeWithText("Chapter Challenge에서는 힌트가 잠깁니다.").assertExists()
+        composeRule.onNodeWithTag("practice_hint_button").assertDoesNotExist()
+        composeRule.onNodeWithText("AI 학습 모드").assertDoesNotExist()
     }
 }

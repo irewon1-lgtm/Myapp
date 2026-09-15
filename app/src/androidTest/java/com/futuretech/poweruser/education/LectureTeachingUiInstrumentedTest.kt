@@ -38,11 +38,11 @@ class LectureTeachingUiInstrumentedTest {
         composeRule.onNodeWithText("이어서 학습 ▶").performClick()
         composeRule.onNodeWithTag("lecture_root").assertExists()
         composeRule.onNodeWithTag("practice_locked_label").assertExists()
-        composeRule.onNodeWithText("Step 2. 실행 전에 결과 예상").assertDoesNotExist()
+        composeRule.onNodeWithText("1. 실행 결과 예상").assertDoesNotExist()
     }
 
     @Test
-    fun practiceOpensOnlyAfterAll13LectureSections() {
+    fun focusedPracticeOpensOnlyAfterAll13LectureSections() {
         openLearningHome()
         composeRule.onNodeWithText("이어서 학습 ▶").performClick()
         repeat(12) {
@@ -51,7 +51,9 @@ class LectureTeachingUiInstrumentedTest {
         }
         composeRule.onNodeWithTag("lecture_finish").performScrollTo().assertExists().performClick()
         composeRule.waitForIdle()
-        composeRule.onNodeWithText("Step 1. 강의 핵심 30초 복습").assertExists()
+        composeRule.onNodeWithText("1. 실행 결과 예상").assertExists()
+        composeRule.onNodeWithText("B01-01 · 문제 1/6").assertExists()
+        composeRule.onNodeWithTag("session_mode_practice").assertExists()
         composeRule.onNodeWithTag("practice_locked_label").assertDoesNotExist()
     }
 }
