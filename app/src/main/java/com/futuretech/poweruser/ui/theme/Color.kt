@@ -4,52 +4,72 @@ import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.ui.graphics.Color
 
-val AiBackground = Color(0xFF070A12)
-val AiSurface = Color(0xFF0D1320)
-val AiSurfaceRaised = Color(0xFF121A2B)
-val AiSurfaceSoft = Color(0xFF172033)
-val AiCyan = Color(0xFF6BE7FF)
-val AiViolet = Color(0xFF9B8CFF)
-val AiGreen = Color(0xFF59F2AE)
-val AiAmber = Color(0xFFFFC66B)
-val AiRed = Color(0xFFFF7187)
-val AiText = Color(0xFFF4F7FF)
-val AiTextMuted = Color(0xFF9AA8BF)
-val AiBorder = Color(0xFF263248)
+// Items 21-25 visual policy: charcoal/off-white foundation + one restrained blue accent.
+// Success/failure must also be communicated with ✓ / ! + text, not color alone.
+val UiBackground = Color(0xFF0B0C0F)
+val UiSurface = Color(0xFF111318)
+val UiSurfaceRaised = Color(0xFF171A20)
+val UiSurfaceSoft = Color(0xFF1D2026)
+val UiAccent = Color(0xFF8AB4F8)
+val UiAccentDeep = Color(0xFF1E3553)
+val UiText = Color(0xFFF3F1EA)
+val UiTextMuted = Color(0xFFADB2BC)
+val UiBorder = Color(0xFF30343C)
+val UiError = Color(0xFFFF8A8A)
+
+// Legacy names stay as aliases so older screens keep compiling while the visible palette is unified.
+val AiBackground = UiBackground
+val AiSurface = UiSurface
+val AiSurfaceRaised = UiSurfaceRaised
+val AiSurfaceSoft = UiSurfaceSoft
+val AiCyan = UiAccent
+val AiViolet = UiAccent
+val AiGreen = UiTextMuted
+val AiAmber = UiTextMuted
+val AiRed = UiError
+val AiText = UiText
+val AiTextMuted = UiTextMuted
+val AiBorder = UiBorder
 
 val DarkColorScheme = darkColorScheme(
-    primary = AiCyan,
-    onPrimary = Color(0xFF001218),
-    primaryContainer = Color(0xFF0D3340),
-    onPrimaryContainer = Color(0xFFC8F5FF),
-    secondary = AiViolet,
-    onSecondary = Color(0xFF120B2B),
-    secondaryContainer = Color(0xFF2A214E),
-    onSecondaryContainer = Color(0xFFE9E2FF),
-    tertiary = AiGreen,
-    onTertiary = Color(0xFF002116),
-    tertiaryContainer = Color(0xFF123B2D),
-    onTertiaryContainer = Color(0xFFC6FFE4),
-    error = AiRed,
-    background = AiBackground,
-    onBackground = AiText,
-    surface = AiSurface,
-    onSurface = AiText,
-    surfaceVariant = AiSurfaceSoft,
-    onSurfaceVariant = AiTextMuted,
-    outline = AiBorder,
-    outlineVariant = Color(0xFF1B2639)
+    primary = UiAccent,
+    onPrimary = Color(0xFF0A1728),
+    primaryContainer = UiAccentDeep,
+    onPrimaryContainer = UiText,
+    secondary = UiTextMuted,
+    onSecondary = UiBackground,
+    secondaryContainer = UiSurfaceSoft,
+    onSecondaryContainer = UiText,
+    tertiary = UiTextMuted,
+    onTertiary = UiBackground,
+    tertiaryContainer = UiSurfaceSoft,
+    onTertiaryContainer = UiText,
+    error = UiError,
+    errorContainer = Color(0xFF3A2024),
+    onErrorContainer = UiText,
+    background = UiBackground,
+    onBackground = UiText,
+    surface = UiSurface,
+    onSurface = UiText,
+    surfaceVariant = UiSurfaceSoft,
+    onSurfaceVariant = UiTextMuted,
+    outline = UiBorder,
+    outlineVariant = Color(0xFF242830)
 )
 
 val LightColorScheme = lightColorScheme(
-    primary = Color(0xFF005F73),
-    secondary = Color(0xFF5B4CC4),
-    tertiary = Color(0xFF007A52),
-    background = Color(0xFFF6F8FC),
-    surface = Color.White,
-    onBackground = Color(0xFF101828),
-    onSurface = Color(0xFF101828),
-    surfaceVariant = Color(0xFFEDF1F7),
-    onSurfaceVariant = Color(0xFF4B5870),
-    outline = Color(0xFFD5DCE8)
+    primary = Color(0xFF315F96),
+    onPrimary = Color.White,
+    primaryContainer = Color(0xFFDCE9FA),
+    onPrimaryContainer = Color(0xFF172535),
+    secondary = Color(0xFF636872),
+    tertiary = Color(0xFF636872),
+    error = Color(0xFFB3261E),
+    background = Color(0xFFF5F3EC),
+    surface = Color(0xFFFCFAF4),
+    onBackground = Color(0xFF202226),
+    onSurface = Color(0xFF202226),
+    surfaceVariant = Color(0xFFEAE7DF),
+    onSurfaceVariant = Color(0xFF565A62),
+    outline = Color(0xFFC9C5BC)
 )
