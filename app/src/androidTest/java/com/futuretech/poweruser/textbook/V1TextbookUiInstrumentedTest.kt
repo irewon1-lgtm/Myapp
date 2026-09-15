@@ -27,10 +27,12 @@ class V1TextbookUiInstrumentedTest {
         compose.onNodeWithTag("curriculum_chapter_V1-C01").performClick()
 
         assertTagExists("v1_textbook_root")
+        assertTagExists("textbook_top_bar")
         assertTagExists("textbook_section_strip")
         assertTagExists("textbook_reader")
         assertTagExists("textbook_section_progress")
         assertTagExists("textbook_concept_progress")
+        assertNodeWithinRoot("textbook_top_bar", "v1_textbook_root")
 
         assertTextAbsent("AI CODING OS")
         assertTextAbsent("KNOWLEDGE GRAPH")
@@ -41,6 +43,13 @@ class V1TextbookUiInstrumentedTest {
     private fun assertTagExists(tag: String) {
         val nodes = compose.onAllNodesWithTag(tag).fetchSemanticsNodes()
         assertTrue("Expected learner UI tag to exist: $tag", nodes.isNotEmpty())
+    }
+
+    private fun assertNodeWithinRoot(nodeTag: String, rootTag: String) {
+        val root = compose.onNodeWithTag(rootTag).fetchSemanticsNode().boundsInRoot
+        val node = compose.onNodeWithTag(nodeTag).fetchSemanticsNode().boundsInRoot
+        assertTrue("$nodeTag overflows left", node.left >= root.left - 0.5f)
+        assertTrue("$nodeTag overflows right", node.right <= root.right + 0.5f)
     }
 
     private fun assertTextAbsent(text: String) {
