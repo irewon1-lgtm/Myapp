@@ -312,8 +312,14 @@ fun RunSubmitPracticeScreen(
                                 }
                             }
                         ) { Text("✓ 제출") }
-                        OutlinedButton(onClick = { if (practiceHintLevel < 3) practiceHintLevel++ }) {
-                            Text("💡 ${practiceHintLevel}/3")
+                        OutlinedButton(
+                            onClick = { if (practiceHintLevel < 3) practiceHintLevel++ },
+                            enabled = practiceHintLevel < 3
+                        ) {
+                            Text(
+                                if (practiceHintLevel >= 3) "💡 힌트 3/3 사용"
+                                else "💡 힌트 ${practiceHintLevel + 1}/3 받기"
+                            )
                         }
                     }
                     if (practiceHintLevel > 0) {
@@ -323,7 +329,7 @@ fun RunSubmitPracticeScreen(
                             2 -> lesson.hintLevel2
                             else -> lesson.hintLevel3
                         }
-                        RsNeutralBox("힌트", hint)
+                        RsNeutralBox("힌트 ${practiceHintLevel}/3", hint)
                     }
                     practiceRun?.let { RsRunCard(it) }
                     practiceSubmit?.let { RsSubmissionCard(it) }
@@ -730,11 +736,20 @@ fun RunSubmitPracticeScreen(
                     9 -> missionSubmit != null
                     else -> explanationFeedback != null
                 }
+                val deterministicEvidence = when (step) {
+                    4 -> practiceSubmit?.let(::rsDeterministicEvidence).orEmpty()
+                    7 -> debugSubmit?.let(::rsDeterministicEvidence).orEmpty()
+                    9 -> missionSubmit?.let(::rsDeterministicEvidence).orEmpty()
+                    else -> explanationFeedback?.let {
+                        "앱 피드백=${it.verdict}\n근거=${it.why}"
+                    }.orEmpty()
+                }
                 AiLearningPanel(
                     lesson = lesson,
                     currentStep = step,
                     practiceAttempted = submitted,
-                    codeSnapshot = snapshot
+                    codeSnapshot = snapshot,
+                    deterministicEvidence = deterministicEvidence
                 )
             }
 
@@ -1060,11 +1075,13 @@ private fun RsSubmissionCard(result: PracticeSubmissionResult) {
                     }
             }
             if (!result.passed) {
-                Text(
-                    "실패한 테스트를 고친 뒤 ▶ 실행으로 확인하고 다시 ✓ 제출하세요.",
-                    fontSize = 12.sp,
-                    fontWeight = FontWeight.Medium
-                )
+                val failure = result.failureFeedback()
+                HorizontalDivider()
+                RsFeedbackLine("무엇이 실패했나", failure.whatFailed)
+                RsFeedbackLine("증거", failure.evidence)
+                RsFeedbackLine("왜 그런가", failure.why)
+                RsFeedbackLine("어디를 생각해볼까", failure.focus)
+                RsFeedbackLine("다시 실행", failure.retry)
             }
         }
     }
@@ -1087,9 +1104,25 @@ private fun RsFeedbackCard(
     ) {
         Column(Modifier.padding(14.dp), verticalArrangement = Arrangement.spacedBy(7.dp)) {
             Text(feedback.headline, fontWeight = FontWeight.Bold, fontSize = 14.sp)
-            RsFeedbackLine("무엇이 확인됐나", feedback.why)
-            RsFeedbackLine("헷갈리기 쉬운 지점", feedback.misconception)
-            RsFeedbackLine("다시 할 때", feedback.retryGuidance)
+            if (feedback.verdict == FeedbackVerdict.INCORRECT || feedback.verdict == FeedbackVerdict.ERROR) {
+                val evidence = buildString {
+                    append("내 답/코드: ")
+                    append(feedback.learnerAnswer.take(500).ifBlank { "(입력 없음)" })
+                    if (feedback.correctAnswer.isNotBlank()) {
+                        append("\n기준: ")
+                        append(feedback.correctAnswer.take(500))
+                    }
+                }
+                RsFeedbackLine("무엇이 실패했나", feedback.headline)
+                RsFeedbackLine("증거", evidence)
+                RsFeedbackLine("왜 그런가", feedback.why)
+                RsFeedbackLine("어디를 생각해볼까", feedback.misconception)
+                RsFeedbackLine("다시 실행", feedback.retryGuidance)
+            } else {
+                RsFeedbackLine("무엇이 확인됐나", feedback.why)
+                RsFeedbackLine("헷갈리기 쉬운 지점", feedback.misconception)
+                RsFeedbackLine("다시 할 때", feedback.retryGuidance)
+            }
             OutlinedButton(
                 onClick = { onReviewLecture(feedback.reviewSectionIndex) },
                 modifier = Modifier.fillMaxWidth()
@@ -1157,24 +1190,19 @@ private fun RsNeutralBox(title: String, text: String) {
     }
 }
 
-private fun rsFailureGuide(result: PracticeSubmissionResult): String {
-    val publicFailure = result.results.firstOrNull {
-        it.visibility == PracticeTestVisibility.PUBLIC && !it.passed
-    }
-    return if (publicFailure != null) {
-        "무엇이 실패했나: ${publicFailure.label}\n" +
-            "증거: ${publicFailure.evidence}\n" +
-            "왜 그런가: 제출 코드는 공개 요구사항을 아직 만족하지 못했습니다.\n" +
-            "어디를 생각해볼까: 입력→처리→출력 흐름과 기준 예제를 비교하세요.\n" +
-            "다시 실행: 수정 후 ▶ 실행으로 확인하고 ✓ 제출하세요."
-    } else {
-        "무엇이 실패했나: 숨은 경계조건\n" +
-            "증거: 숨은 테스트 ${result.hiddenPassed}/${result.hiddenTotal} 통과\n" +
-            "왜 그런가: 기본 예제는 되지만 빈 값·음수·큰 값·중복과 같은 변형에서 동작이 달라졌습니다.\n" +
-            "어디를 생각해볼까: 특정 예제 값에만 맞춘 코드는 아닌지 확인하세요.\n" +
-            "다시 실행: 테스트 값을 직접 바꿔 ▶ 실행한 뒤 다시 ✓ 제출하세요."
+private fun rsDeterministicEvidence(result: PracticeSubmissionResult): String = buildString {
+    append("APP_GRADE=")
+    append(if (result.passed) "PASS" else "FAIL")
+    append("\npublic=${result.publicPassed}/${result.publicTotal}")
+    append("\nhidden=${result.hiddenPassed}/${result.hiddenTotal}")
+    if (!result.passed) {
+        append("\n")
+        append(result.failureFeedback().asText())
     }
 }
+
+private fun rsFailureGuide(result: PracticeSubmissionResult): String =
+    result.failureFeedback().asText()
 
 private fun rsBlockReason(step: Int): String = when (step) {
     2 -> "예상을 적고 제출해야 합니다."

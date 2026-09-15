@@ -12,6 +12,10 @@ object AiTutorPolicy {
         "(?i)(전체\\s*코드|정답\\s*(?:전부|그대로)?|완성\\s*코드|다\\s*해줘|대신\\s*(?:작성|코딩)|write\\s+the\\s+whole\\s+code|full\\s+solution)"
     )
 
+    private val aiGradingVerdict = Regex(
+        """(?i)(정답\s*(?:입니다|이라고\s*판정|으로\s*판정|처리)|오답\s*(?:입니다|이라고\s*판정|으로\s*판정|처리)|(?:PASS|FAIL)\s*(?:입니다|로\s*판정|판정)|AI\s*(?:가|에게)?\s*채점|(?:this|your)\s+(?:answer|code)\s+is\s+(?:correct|incorrect))"""
+    )
+
     fun availability(curriculumType: String, level: Int, practiceAttempted: Boolean): AiModeAvailability {
         val intermediate = curriculumType.equals("INTERMEDIATE", ignoreCase = true)
         val collaboration = intermediate
@@ -67,6 +71,8 @@ object AiTutorPolicy {
         val common = """
             너는 '미래기술 Power User' 학습앱의 코딩·AI 튜터다.
             사용자의 목표는 정답 복사가 아니라 구조 이해, 직접 수정, 실행, 오류 범위 좁히기, AI 결과 검증 능력 향상이다.
+            코드의 정답/오답과 PASS/FAIL은 앱의 실제 runtime + deterministic public/hidden tests만 결정한다.
+            너는 채점자가 아니다. 앱이 전달한 판정을 바꾸거나 새 판정을 선언하지 말고, 테스트 증거를 바탕으로 원인과 다음 확인점을 설명한다.
             한국어로 쉽고 정확하게 답한다. 모르는 내용을 있는 것처럼 꾸미지 않는다.
             사용자의 API Key, 비밀번호, 토큰 등 민감정보를 요구하지 않는다.
             현재 레슨: ${request.lessonId} / ${request.lessonTitle}
@@ -119,6 +125,13 @@ object AiTutorPolicy {
         }
         if (text.length > 8_000) {
             return AiPolicyDecision(false, AiFailureKind.BAD_RESPONSE, "AI 응답이 학습용 제한보다 너무 깁니다.")
+        }
+        if (aiGradingVerdict.containsMatchIn(text)) {
+            return AiPolicyDecision(
+                false,
+                AiFailureKind.POLICY_BLOCKED,
+                "AI는 정답/오답 또는 PASS/FAIL 판정을 내릴 수 없습니다. 앱의 runtime·deterministic test 결과만 채점에 사용합니다."
+            )
         }
         if (request.mode == AiLearningMode.HINT) {
             val lines = text.lines().filter { it.isNotBlank() }
