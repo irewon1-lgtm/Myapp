@@ -60,7 +60,7 @@ class TextbookLearningFlowTest {
         assertEquals(blocks, concepts.single().blocks)
         assertEquals(section.title, concepts.single().title)
         assertEquals("${section.id}-C01", concepts.single().id)
-        assertTrue(concepts.single().problem.prompt.isNotBlank())
+        assertTrue(requireNotNull(concepts.single().problem).prompt.isNotBlank())
     }
 
     @Test
@@ -84,12 +84,18 @@ class TextbookLearningFlowTest {
             TextbookLearningFlow.buildConcepts(chapter.id, section, lesson).single()
         }
 
-        assertEquals(LearningProblemType.entries.toSet(), pages.map { it.problem.type }.toSet())
-        assertFalse(pages.any { it.problem.id.isBlank() || it.problem.prompt.isBlank() })
+        assertEquals(
+            LearningProblemType.entries.toSet(),
+            pages.map { requireNotNull(it.problem).type }.toSet()
+        )
+        assertFalse(pages.any {
+            val problem = it.problem
+            problem == null || problem.id.isBlank() || problem.prompt.isBlank()
+        })
     }
 
     @Test
-    fun allRealV1Sections_preserveFullLearningContentAndUseOneProblemPerSection() {
+    fun allRealV1MainTextSections_preserveFullLearningContentAndUseOneProblemPerSection() {
         val usedTypes = mutableSetOf<LearningProblemType>()
 
         V1TextbookCatalog.chapters.forEach { chapter ->
@@ -104,12 +110,39 @@ class TextbookLearningFlowTest {
                 val page = concepts.single()
                 assertEquals("${section.id}: all source blocks preserved", section.blocks, page.blocks)
                 assertTrue("${section.id}: page titled", page.title.isNotBlank())
-                assertTrue("${section.id}: one end-of-section problem", page.problem.prompt.isNotBlank())
-                usedTypes += page.problem.type
+                val problem = requireNotNull(page.problem)
+                assertTrue("${section.id}: one end-of-section problem", problem.prompt.isNotBlank())
+                usedTypes += problem.type
             }
         }
 
         assertEquals("real textbook flow exposes all eight problem types", LearningProblemType.entries.toSet(), usedTypes)
+    }
+
+    @Test
+    fun combinedWorkbookSections_areMarkedAndDoNotGetDuplicateAutoProblems() {
+        V1TextbookCatalog.chapters.forEach { chapter ->
+            val lesson = requireNotNull(CurriculumDataRepository.lessonById(chapter.practiceLessonId))
+            val chapterText = assetFile(chapter.assetPath).readText(Charsets.UTF_8)
+            val workbookPath = "textbook/v1/workbook_${chapter.number.toString().padStart(2, '0')}.md"
+            val workbookText = assetFile(workbookPath).readText(Charsets.UTF_8)
+            val blocks = TextbookMarkdownParser.parse("$chapterText\n\n---\n\n$workbookText")
+            val sections = TextbookSectioner.split(chapter.id, blocks)
+            val workbookStart = sections.indexOfFirst { it.isWorkbook }
+
+            assertTrue("${chapter.id}: workbook start missing", workbookStart > 0)
+            assertTrue("${chapter.id}: all sections after workbook start marked", sections.drop(workbookStart).all { it.isWorkbook })
+            assertTrue("${chapter.id}: main text remains non-workbook", sections.take(workbookStart).none { it.isWorkbook })
+
+            sections.forEach { section ->
+                val page = TextbookLearningFlow.buildConcepts(chapter.id, section, lesson).single()
+                if (section.isWorkbook) {
+                    assertTrue("${section.id}: workbook must not get duplicate auto problem", page.problem == null)
+                } else {
+                    assertTrue("${section.id}: main text keeps low-stakes check", page.problem != null)
+                }
+            }
+        }
     }
 
     @Test
