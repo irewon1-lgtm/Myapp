@@ -96,13 +96,7 @@ internal fun LessonSeed.toLesson(): LessonContent = LessonContent(
 
 object CurriculumDataRepository {
     val beginnerLessons: List<LessonContent> = BeginnerCurriculum.seeds.map { it.toLesson() }
-
-    // Items 31-35 keep their stable IDs/progress keys but use the rebuilt local-first lessons.
-    val intermediateLessons: List<LessonContent> = IntermediateCurriculum.seeds
-        .map { IntermediateCurriculum31To35.replace(it) }
-        .map(::enrichIntermediate31To35)
-        .map { it.toLesson() }
-
+    val intermediateLessons: List<LessonContent> = IntermediateCurriculum.seeds.map { it.toLesson() }
     val v1TextbookPracticeLessons: List<LessonContent> = V1TextbookPracticeData.lessons
 
     // Preserve the original 90-lesson contract for existing regression tests and legacy screens.
