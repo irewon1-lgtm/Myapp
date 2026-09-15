@@ -28,6 +28,7 @@ extreme = collect("TextbookExtreme60Test")
 clean = collect("TextbookClean25Test")
 parser = collect("TextbookMarkdownParserTest")
 catalog = collect("V1TextbookCatalogTest")
+editorial = collect("V1EditorialQualityTest")
 checks = []
 
 
@@ -39,21 +40,62 @@ ck("Extreme60 exact count", extreme[0] == 60 and extreme[1:4] == (0, 0, 0), str(
 ck("CLEAN25 exact count", clean[0] == 25 and clean[1:4] == (0, 0, 0), str(clean[:4]))
 ck("Markdown parser tests", parser[0] >= 3 and parser[1:4] == (0, 0, 0), str(parser[:4]))
 ck("V1 catalog regression tests", catalog[0] >= 4 and catalog[1:4] == (0, 0, 0), str(catalog[:4]))
+ck("V1 anti-bloat editorial test", editorial[0] >= 1 and editorial[1:4] == (0, 0, 0), str(editorial[:4]))
 
 asset_dir = ROOT / "app/src/main/assets/textbook/v1"
 assets = sorted(asset_dir.glob("chapter_*.md"))
 ck("V1 source assets preserved", len(assets) == 11, f"count={len(assets)}")
 lengths = []
-for p in assets:
+substantive_counts = []
+for index, p in enumerate(assets, start=1):
     text = p.read_text(encoding="utf-8")
     lengths.append(len(text))
-    for marker in ("Guided Lab", "Independent Lab", "Debug Challenge", "AI Audit", "회상 문제", "전이 문제", "Chapter 완료 증거"):
-        ck(f"{p.name}: {marker}", marker in text, marker)
-    ck(f"{p.name}: minimum depth", len(text) >= 8000, f"chars={len(text)}")
+
+    paragraphs = [
+        re.sub(r"\s+", " ", paragraph).strip()
+        for paragraph in re.split(r"\n\s*\n", text)
+    ]
+    substantive = [
+        paragraph for paragraph in paragraphs
+        if len(paragraph) >= 90
+        and not paragraph.startswith("```")
+        and not paragraph.startswith("|")
+    ]
+    substantive_counts.append(len(substantive))
+    duplicate_paragraphs = {
+        paragraph for paragraph in substantive
+        if substantive.count(paragraph) > 1
+    }
+    heading_count = sum(1 for line in text.splitlines() if re.match(r"^#{1,4}\s+.+", line))
+
+    ck(f"{p.name}: code/data examples", "```" in text, "code fence")
+    ck(f"{p.name}: hands-on work", "실습" in text or "프로젝트" in text, "practice/project")
+    ck(f"{p.name}: terminology support", "핵심 용어" in text, "glossary")
+    ck(f"{p.name}: substantive paragraph count", len(substantive) >= 12, f"paragraphs={len(substantive)}")
+    ck(f"{p.name}: no exact repeated explanatory paragraph", not duplicate_paragraphs, f"duplicates={len(duplicate_paragraphs)}")
+    ck(f"{p.name}: no over-fragmentation", heading_count <= 34, f"headings={heading_count}")
+    ck(f"{p.name}: minimum useful depth floor", len(text) >= 4500, f"chars={len(text)}")
     ck(f"{p.name}: no placeholder", not re.search(r"\b(TODO|TBD|LOREM)\b|준비중|나중에 작성", text, re.I), "placeholder scan")
 
+    if index < 11:
+        ck(
+            f"{p.name}: capability-based exit criteria",
+            "이 장을 끝내고 할 수 있어야 하는 것" in text,
+            "capability checklist",
+        )
+        ck(
+            f"{p.name}: real end-of-chapter task",
+            "장 끝 미니 프로젝트" in text,
+            "mini project",
+        )
+    else:
+        ck(f"{p.name}: capstone pass criteria", "합격 기준" in text, "capstone rubric")
+        ck(f"{p.name}: multi-case capstone", text.count("# 프로젝트") >= 4, f"projects={text.count('# 프로젝트')}")
+
 all_text = "\n".join(p.read_text(encoding="utf-8") for p in assets)
-ck("Total V1 textbook depth", len(all_text) >= 90000, f"chars={len(all_text)}")
+# This is only a floor against accidental truncation. It is NOT a page-count target.
+ck("Total V1 accidental-truncation floor", len(all_text) >= 60000, f"chars={len(all_text)}")
+ck("Every chapter contributes substantive material", min(substantive_counts or [0]) >= 12, f"min={min(substantive_counts or [0])}")
 
 curriculum_path = ROOT / "app/src/main/java/com/futuretech/poweruser/textbook/PowerUserCurriculumCatalog.kt"
 sectioner_path = ROOT / "app/src/main/java/com/futuretech/poweruser/textbook/TextbookSectioner.kt"
@@ -76,6 +118,7 @@ if sectioner_path.exists():
     s = sectioner_path.read_text(encoding="utf-8")
     ck("Section layer exists", "data class TextbookSection" in s and "object TextbookSectioner" in s, "section model + splitter")
     ck("Section estimate clamps 4-7", ".coerceIn(4, 7)" in s, "4..7")
+    ck("Korean fallback label", '"단원 ${index + 1}"' in s, "단원")
     ck("Source is presentation-split only", "source asset remains the single source of truth" in s.lower(), "non-destructive")
 
 if screen_path.exists() and overview_path.exists():
@@ -92,6 +135,9 @@ if screen_path.exists() and overview_path.exists():
     ck("Permanent TOC rail removed", "textbook_toc" not in learner_ui, "no permanent chapter rail")
     ck("Permanent insight rail removed", "textbook_insight_rail" not in learner_ui, "no permanent context rail")
     ck("Reader width limited", "widthIn(max = 780.dp)" in learner_ui, "780dp reading column")
+    ck("Learner-facing chapter label Koreanized", 'text = "1권 · ${chapter.number}장/11"' in learner_ui, "장")
+    ck("Learner-facing section label Koreanized", 'text = "단원 ${section.index + 1}/$sectionCount' in learner_ui, "단원")
+    ck("Meaningless concept 1/1 progress removed", "textbook_concept_progress" not in learner_ui, "no concept 1/1")
 
 if main_path.exists():
     s = main_path.read_text(encoding="utf-8")
@@ -102,24 +148,28 @@ if main_path.exists():
 
 failed = [x for x in checks if not x[1]]
 report = [
-    "# Curriculum 1-3 Extreme60 / CLEAN25 Report",
+    "# V1 Beginner-Depth / Anti-Bloat Quality Report",
     "",
-    "Scope: (1) learner-facing internal label removal, (2) 9-book -> Chapter -> Section -> practice navigation, (3) non-destructive 4-7 minute section presentation.",
+    "Scope: beginner readability without padding, substantive examples/practice, 9-book -> 장 -> 단원 -> practice navigation, and full V1 regression.",
     "",
     f"- Extreme60: **{extreme[0]}/60**, failures={extreme[1]}, errors={extreme[2]}, skipped={extreme[3]}",
     f"- CLEAN25: **{clean[0]}/25**, failures={clean[1]}, errors={clean[2]}, skipped={clean[3]}",
+    f"- Anti-bloat editorial: **{editorial[0]}** tests, failures={editorial[1]}, errors={editorial[2]}",
     f"- Parser broad: **{parser[0]}** tests",
     f"- V1 catalog broad: **{catalog[0]}** tests",
-    f"- Preserved V1 assets: **{len(assets)}** chapters / total chars **{len(all_text):,}**",
+    f"- V1 assets: **{len(assets)}** chapters / total chars **{len(all_text):,}**",
     f"- Chapter char range: **{min(lengths) if lengths else 0:,}–{max(lengths) if lengths else 0:,}**",
+    f"- Substantive paragraph range: **{min(substantive_counts) if substantive_counts else 0}–{max(substantive_counts) if substantive_counts else 0}**",
     f"- Static gates: **{len(checks)-len(failed)}/{len(checks)} PASS**",
+    "",
+    "Note: character counts are truncation guards only. They are not used as a page-count or padding target.",
     "",
     "## Static gate details",
 ]
 for name, ok, detail in checks:
     report.append(f"- {'PASS' if ok else 'FAIL'} — {name}: {detail}")
 report += ["", "## Final", f"**{'PASS' if not failed else 'FAIL'}**"]
-out = EVIDENCE / "CURRICULUM_1_3_EXTREME60_CLEAN25_REPORT.md"
+out = EVIDENCE / "V1_BEGINNER_DEPTH_ANTI_BLOAT_REPORT.md"
 out.write_text("\n".join(report) + "\n", encoding="utf-8")
 print(out.read_text(encoding="utf-8"))
 if failed:
