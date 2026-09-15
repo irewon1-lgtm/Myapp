@@ -15,10 +15,12 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.futuretech.poweruser.data.CurriculumDataRepository
+import com.futuretech.poweruser.education.LearningSessionMode
 import com.futuretech.poweruser.education.LectureContentRepository
 import com.futuretech.poweruser.education.LectureProgressStore
 import com.futuretech.poweruser.education.LectureSection
 import com.futuretech.poweruser.education.LearningImportance
+import com.futuretech.poweruser.education.MasteryEvidence
 import com.futuretech.poweruser.ui.theme.CodeTypography
 
 @Composable
@@ -26,7 +28,9 @@ fun TeachingLessonScreen(
     lessonId: String,
     onNavigateBack: () -> Unit,
     onStepCompleted: (String, String, Int) -> Unit,
-    onRecordErrorNote: (String, String, String, String) -> Unit
+    onRecordErrorNote: (String, String, String, String) -> Unit,
+    onMasteryCompleted: ((String, String, Int, MasteryEvidence) -> Unit)? = null,
+    onStartChallenge: (() -> Unit)? = null
 ) {
     val context = LocalContext.current
     val lesson = remember(lessonId) {
@@ -43,15 +47,23 @@ fun TeachingLessonScreen(
     }
 
     if (lectureCompleted) {
-        FeedbackPracticeScreen(
+        FocusedPracticeScreen(
             lessonId = lesson.lessonId,
+            mode = LearningSessionMode.PRACTICE,
             onNavigateBack = onNavigateBack,
+            onSwitchMode = onStartChallenge ?: {},
             onReviewLecture = { targetIndex ->
                 sectionIndex = targetIndex.coerceIn(0, lecture.sections.lastIndex)
                 progressStore.saveSectionIndex(lesson.lessonId, sectionIndex)
                 lectureCompleted = false
             },
-            onStepCompleted = onStepCompleted,
+            onMasteryCompleted = { id, type, unit, evidence ->
+                if (onMasteryCompleted != null) {
+                    onMasteryCompleted(id, type, unit, evidence)
+                } else {
+                    onStepCompleted(id, type, unit)
+                }
+            },
             onRecordErrorNote = onRecordErrorNote
         )
         return
