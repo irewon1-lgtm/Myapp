@@ -18,7 +18,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.HorizontalDivider
-import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -46,7 +46,8 @@ private val CurriculumAccent = Color(0xFF8FB3FF)
 
 @Composable
 fun CurriculumOverviewScreen(
-    onOpenChapter: (String) -> Unit
+    onOpenChapter: (String) -> Unit,
+    onOpenLearningHome: () -> Unit
 ) {
     var expandedBookId by rememberSaveable { mutableStateOf("V1") }
 
@@ -61,14 +62,27 @@ fun CurriculumOverviewScreen(
             item {
                 Column(
                     modifier = Modifier.fillMaxWidth().padding(bottom = 8.dp),
-                    verticalArrangement = Arrangement.spacedBy(7.dp)
+                    verticalArrangement = Arrangement.spacedBy(9.dp)
                 ) {
-                    Text(
-                        text = "전체 과정",
-                        color = CurriculumText,
-                        fontSize = 30.sp,
-                        fontWeight = FontWeight.Bold
-                    )
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Text(
+                            text = "전체 과정",
+                            color = CurriculumText,
+                            fontSize = 30.sp,
+                            fontWeight = FontWeight.Bold
+                        )
+                        OutlinedButton(
+                            onClick = onOpenLearningHome,
+                            modifier = Modifier.testTag("learning_home_button"),
+                            border = BorderStroke(1.dp, CurriculumBorder)
+                        ) {
+                            Text("학습 홈", color = CurriculumText, fontWeight = FontWeight.SemiBold)
+                        }
+                    }
                     Text(
                         text = "${PowerUserCurriculumCatalog.TOTAL_BOOKS}권 · ${PowerUserCurriculumCatalog.TOTAL_CHAPTERS} Chapter",
                         modifier = Modifier.testTag("curriculum_chapter_count"),
