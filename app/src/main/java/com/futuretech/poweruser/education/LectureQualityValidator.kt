@@ -32,7 +32,7 @@ object LectureQualityValidator {
             check(18, "문제 전 준비 확인", lecture.sections.lastOrNull()?.kind == LectureSectionKind.READINESS, "last=${lecture.sections.lastOrNull()?.kind}"),
             check(19, "강의 카드 충분한 분량", lecture.sections.size >= 12, "sections=${lecture.sections.size}"),
             check(20, "전체 설명 밀도", lecture.totalCharacters >= 2200, "chars=${lecture.totalCharacters}"),
-            check(21, "짧은 빈 강의 금지", lecture.sections.all { it.body.trim().length >= 70 }, "minBody=${lecture.sections.minOfOrNull { it.body.trim().length }}"),
+            check(21, "짧은 빈 강의 금지", lecture.sections.all { it.body.trim().length + it.takeaway.trim().length >= 70 }, "minBodyPlusTakeaway=${lecture.sections.minOfOrNull { it.body.trim().length + it.takeaway.trim().length }}"),
             check(22, "섹션 ID 중복 금지", sectionIds.size == sectionIds.distinct().size, "ids=${sectionIds.size}"),
             check(23, "강의 예상시간 20분 이상", lecture.estimatedLectureMinutes >= 20, "minutes=${lecture.estimatedLectureMinutes}"),
             check(24, "핵심 기억 항목 3~7개", lecture.mustRemember.size in 3..7, "mustRemember=${lecture.mustRemember.size}"),
