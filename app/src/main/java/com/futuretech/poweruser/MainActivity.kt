@@ -9,7 +9,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
@@ -28,6 +27,7 @@ import com.futuretech.poweruser.education.MasteryStage
 import com.futuretech.poweruser.ui.AdaptiveFocusedPracticeScreen
 import com.futuretech.poweruser.ui.AdaptiveTextbookScreen
 import com.futuretech.poweruser.ui.BeginnerStockScoreProjectScreen
+import com.futuretech.poweruser.ui.ChapterChallengeScreen
 import com.futuretech.poweruser.ui.CurriculumOverviewScreen
 import com.futuretech.poweruser.ui.CustomProjectBuilderScreen
 import com.futuretech.poweruser.ui.IntermediateStockResearchProjectScreen
@@ -64,16 +64,13 @@ fun AppNavigation() {
     val context = LocalContext.current
     val repository = remember { AppRepository(context) }
     val scope = rememberCoroutineScope()
-    val reviewClock = remember { System.currentTimeMillis() }
     val progressList by repository.getAllProgress().collectAsState(initial = emptyList())
     val errorNotesList by repository.getAllErrorNotes().collectAsState(initial = emptyList())
+    val reviewClock = remember { System.currentTimeMillis() }
     val dueReviewCount by repository.observeDueReviewCount(reviewClock).collectAsState(initial = 0)
+    val completedLessonIds = progressList.filter { it.isCompleted }.map { it.lessonId }.toSet()
 
-    LaunchedEffect(repository) {
-        repository.getDueReviews(reviewClock)
-    }
-
-    fun addReviewItem(id: String) {
+    fun addReviewItem(id: String, maxHintLevel: Int = 0) {
         scope.launch {
             val lesson = CurriculumDataRepository.lessonById(id) ?: return@launch
             repository.addSpacedRepetitionItem(
@@ -84,6 +81,10 @@ fun AppNavigation() {
                 analogy = lesson.expectedOutcome,
                 example = lesson.codeSample,
                 comparison = lesson.aiHallucinationQuestion
+            )
+            repository.scheduleReviewAfterLearning(
+                conceptId = lesson.lessonId,
+                maxHintLevel = maxHintLevel
             )
         }
     }
@@ -101,7 +102,7 @@ fun AppNavigation() {
                 isCompleted = true
             )
         }
-        addReviewItem(id)
+        addReviewItem(id, maxHintLevel = 0)
     }
 
     fun recordMasteryCompletion(
@@ -137,6 +138,10 @@ fun AppNavigation() {
                     example = lesson.codeSample,
                     comparison = lesson.aiHallucinationQuestion
                 )
+                repository.scheduleReviewAfterLearning(
+                    conceptId = lesson.lessonId,
+                    maxHintLevel = evidence.maxHintLevel
+                )
             }
         }
     }
@@ -150,7 +155,7 @@ fun AppNavigation() {
         }
         composable("textbook_v1") {
             AdaptiveTextbookScreen(
-                practiceCompletedIds = progressList.filter { it.isCompleted }.map { it.lessonId }.toSet(),
+                practiceCompletedIds = completedLessonIds,
                 onNavigateBack = { navController.navigate("curriculum") },
                 onStartPractice = { lessonId -> navController.navigate("textbook_v1/practice/$lessonId") }
             )
@@ -158,7 +163,7 @@ fun AppNavigation() {
         composable("textbook_v1/{chapterId}") { backStackEntry ->
             val chapterId = backStackEntry.arguments?.getString("chapterId") ?: "V1-C01"
             AdaptiveTextbookScreen(
-                practiceCompletedIds = progressList.filter { it.isCompleted }.map { it.lessonId }.toSet(),
+                practiceCompletedIds = completedLessonIds,
                 onNavigateBack = { navController.popBackStack() },
                 onStartPractice = { lessonId -> navController.navigate("textbook_v1/practice/$lessonId") },
                 initialChapterId = chapterId
@@ -190,12 +195,11 @@ fun AppNavigation() {
         }
         composable("lesson/challenge/{lessonId}") { backStackEntry ->
             val lessonId = backStackEntry.arguments?.getString("lessonId") ?: "B01-01"
-            AdaptiveFocusedPracticeScreen(
+            ChapterChallengeScreen(
                 lessonId = lessonId,
-                mode = LearningSessionMode.CHALLENGE,
+                errorNotes = errorNotesList,
                 onNavigateBack = { navController.popBackStack() },
-                onSwitchMode = { navController.popBackStack() },
-                onReviewLecture = {},
+                onSwitchToPractice = { navController.popBackStack() },
                 onMasteryCompleted = ::recordMasteryCompletion,
                 onRecordErrorNote = { type, code, msg, guide ->
                     scope.launch { repository.recordErrorNote(type, code, msg, guide) }
@@ -218,12 +222,11 @@ fun AppNavigation() {
         }
         composable("textbook_v1/challenge/{lessonId}") { backStackEntry ->
             val lessonId = backStackEntry.arguments?.getString("lessonId") ?: "TB1-C01"
-            AdaptiveFocusedPracticeScreen(
+            ChapterChallengeScreen(
                 lessonId = lessonId,
-                mode = LearningSessionMode.CHALLENGE,
+                errorNotes = errorNotesList,
                 onNavigateBack = { navController.popBackStack() },
-                onSwitchMode = { navController.popBackStack() },
-                onReviewLecture = {},
+                onSwitchToPractice = { navController.popBackStack() },
                 onMasteryCompleted = ::recordMasteryCompletion,
                 onRecordErrorNote = { type, code, msg, guide ->
                     scope.launch { repository.recordErrorNote(type, code, msg, guide) }
@@ -237,10 +240,16 @@ fun AppNavigation() {
             PersonalErrorNotesScreen(errorNotesList = errorNotesList, onNavigateBack = { navController.popBackStack() })
         }
         composable("beginner_project") {
-            BeginnerStockScoreProjectScreen(onNavigateBack = { navController.popBackStack() })
+            BeginnerStockScoreProjectScreen(
+                completedLessonIds = completedLessonIds,
+                onNavigateBack = { navController.popBackStack() }
+            )
         }
         composable("intermediate_project") {
-            IntermediateStockResearchProjectScreen(onNavigateBack = { navController.popBackStack() })
+            IntermediateStockResearchProjectScreen(
+                completedLessonIds = completedLessonIds,
+                onNavigateBack = { navController.popBackStack() }
+            )
         }
         composable("custom_project") {
             CustomProjectBuilderScreen(onNavigateBack = { navController.popBackStack() })
