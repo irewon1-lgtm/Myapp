@@ -3,6 +3,7 @@ package com.futuretech.poweruser.ui
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.gestures.detectHorizontalDragGestures
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -25,10 +26,13 @@ import androidx.compose.foundation.text.selection.SelectionContainer
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.FilterChip
+import androidx.compose.material3.FilterChipDefaults
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.RadioButton
+import androidx.compose.material3.RadioButtonDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -43,7 +47,9 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
@@ -62,14 +68,15 @@ import com.futuretech.poweruser.textbook.TextbookSection
 import com.futuretech.poweruser.textbook.TextbookSectioner
 import com.futuretech.poweruser.textbook.V1TextbookCatalog
 
-private val ReaderShell = Color(0xFFEDEAE3)
-private val ReaderPaper = Color(0xFFF9F7F2)
-private val ReaderInk = Color(0xFF22252A)
-private val ReaderMuted = Color(0xFF656B74)
-private val ReaderBorder = Color(0xFFD7D2C8)
-private val ReaderAccent = Color(0xFF315A94)
-private val ReaderSoft = Color(0xFFE8EDF5)
-private val ReaderCode = Color(0xFF171A20)
+private val ReaderShell = Color(0xFF090A0D)
+private val ReaderPaper = Color(0xFF111318)
+private val ReaderInk = Color(0xFFF4F6F8)
+private val ReaderMuted = Color(0xFFADB5C2)
+private val ReaderBorder = Color(0xFF2A2F38)
+private val ReaderAccent = Color(0xFF8AB4F8)
+private val ReaderAction = Color(0xFF315A94)
+private val ReaderSoft = Color(0xFF171C24)
+private val ReaderCode = Color(0xFF07090C)
 private val ReaderCodeText = Color(0xFFE9EDF3)
 private const val ORDER_SEPARATOR = "\u001F"
 
@@ -271,9 +278,16 @@ private fun SectionStrip(
             FilterChip(
                 selected = index == selectedIndex,
                 onClick = { onSelect(index) },
+                colors = FilterChipDefaults.filterChipColors(
+                    containerColor = Color.Transparent,
+                    labelColor = ReaderMuted,
+                    selectedContainerColor = ReaderSoft,
+                    selectedLabelColor = ReaderInk
+                ),
                 label = {
                     Text(
                         text = "${index + 1}. ${section.title.take(18)} · ${section.estimatedMinutes}분",
+                        color = if (index == selectedIndex) ReaderInk else ReaderMuted,
                         fontSize = 12.sp
                     )
                 },
@@ -302,9 +316,29 @@ private fun ConceptReader(
     val state = rememberLazyListState()
     val isLastConceptInSection = concept.index == conceptCount - 1
     val isLastConceptInChapter = section.index == sectionCount - 1 && isLastConceptInSection
+    val swipeThresholdPx = with(LocalDensity.current) { 86.dp.toPx() }
+    val swipePrevious = onPreviousConcept ?: onPreviousChapter
+    val swipeNext = onNextConcept ?: onNextChapter
 
     LazyColumn(
-        modifier = Modifier.fillMaxSize().testTag("textbook_reader"),
+        modifier = Modifier
+            .fillMaxSize()
+            .testTag("textbook_reader")
+            .pointerInput(concept.id, swipePrevious, swipeNext, swipeThresholdPx) {
+                var dragTotal = 0f
+                detectHorizontalDragGestures(
+                    onDragStart = { dragTotal = 0f },
+                    onHorizontalDrag = { _, dragAmount -> dragTotal += dragAmount },
+                    onDragEnd = {
+                        when {
+                            dragTotal <= -swipeThresholdPx -> swipeNext?.invoke()
+                            dragTotal >= swipeThresholdPx -> swipePrevious?.invoke()
+                        }
+                        dragTotal = 0f
+                    },
+                    onDragCancel = { dragTotal = 0f }
+                )
+            },
         state = state,
         contentPadding = PaddingValues(horizontal = 18.dp, vertical = 22.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -429,7 +463,11 @@ private fun InlineProblemCard(
                                     onClick = {
                                         selectedOption = index
                                         checked = false
-                                    }
+                                    },
+                                    colors = RadioButtonDefaults.colors(
+                                        selectedColor = ReaderAccent,
+                                        unselectedColor = ReaderMuted
+                                    )
                                 )
                                 Text(option, Modifier.weight(1f), color = ReaderInk, fontSize = 14.sp, lineHeight = 21.sp)
                             }
@@ -437,7 +475,10 @@ private fun InlineProblemCard(
                         Button(
                             onClick = { checked = true },
                             enabled = selectedOption >= 0,
-                            colors = ButtonDefaults.buttonColors(containerColor = ReaderAccent)
+                            colors = ButtonDefaults.buttonColors(
+                                containerColor = ReaderAction,
+                                contentColor = ReaderInk
+                            )
                         ) { Text("확인") }
                         if (checked) {
                             val correct = selectedOption == problem.correctOptionIndex
@@ -478,7 +519,10 @@ private fun InlineProblemCard(
                             Button(
                                 onClick = { checked = true },
                                 enabled = pickedOrder.size == problem.correctOrder.size,
-                                colors = ButtonDefaults.buttonColors(containerColor = ReaderAccent)
+                                colors = ButtonDefaults.buttonColors(
+                                    containerColor = ReaderAction,
+                                    contentColor = ReaderInk
+                                )
                             ) { Text("순서 확인") }
                             OutlinedButton(onClick = {
                                 pickedOrderEncoded = ""
@@ -504,12 +548,16 @@ private fun InlineProblemCard(
                             },
                             modifier = Modifier.fillMaxWidth(),
                             label = { Text(if (problem.type == LearningProblemType.FILL_CODE) "빈칸 답" else "고칠 한 줄") },
-                            minLines = if (problem.type == LearningProblemType.ONE_LINE_FIX) 2 else 1
+                            minLines = if (problem.type == LearningProblemType.ONE_LINE_FIX) 2 else 1,
+                            colors = readerTextFieldColors()
                         )
                         Button(
                             onClick = { checked = true },
                             enabled = textAnswer.isNotBlank(),
-                            colors = ButtonDefaults.buttonColors(containerColor = ReaderAccent)
+                            colors = ButtonDefaults.buttonColors(
+                                containerColor = ReaderAction,
+                                contentColor = ReaderInk
+                            )
                         ) { Text("확인") }
                         if (checked) {
                             if (problem.acceptedAnswers.isEmpty()) {
@@ -549,13 +597,17 @@ private fun InlineProblemCard(
                                     }
                                 )
                             },
-                            minLines = if (problem.type == LearningProblemType.OUTPUT_PREDICTION) 3 else 5
+                            minLines = if (problem.type == LearningProblemType.OUTPUT_PREDICTION) 3 else 5,
+                            colors = readerTextFieldColors()
                         )
                         Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                             Button(
                                 onClick = { checked = true },
                                 enabled = textAnswer.isNotBlank(),
-                                colors = ButtonDefaults.buttonColors(containerColor = ReaderAccent)
+                                colors = ButtonDefaults.buttonColors(
+                                    containerColor = ReaderAction,
+                                    contentColor = ReaderInk
+                                )
                             ) {
                                 Text(if (problem.type == LearningProblemType.OUTPUT_PREDICTION) "예상 저장" else "작성 완료")
                             }
@@ -575,6 +627,20 @@ private fun InlineProblemCard(
         }
     }
 }
+
+@Composable
+private fun readerTextFieldColors() = OutlinedTextFieldDefaults.colors(
+    focusedTextColor = ReaderInk,
+    unfocusedTextColor = ReaderInk,
+    disabledTextColor = ReaderMuted,
+    focusedContainerColor = ReaderPaper,
+    unfocusedContainerColor = ReaderPaper,
+    cursorColor = ReaderAccent,
+    focusedBorderColor = ReaderAccent,
+    unfocusedBorderColor = ReaderBorder,
+    focusedLabelColor = ReaderAccent,
+    unfocusedLabelColor = ReaderMuted
+)
 
 @Composable
 private fun MiniResult(correct: Boolean?, text: String) {
@@ -619,7 +685,7 @@ private fun ConceptActions(
                 text = if (isLastConceptInChapter) {
                     "이 Chapter의 읽기 흐름을 마쳤습니다. 전체 실습으로 확인하세요."
                 } else {
-                    "짧은 확인을 마친 뒤 다음 개념으로 이어갑니다."
+                    "짧은 확인을 마친 뒤 다음 개념으로 이어갑니다. 좌우로 밀어도 이동할 수 있습니다."
                 },
                 color = ReaderInk,
                 fontSize = 15.sp,
@@ -640,7 +706,10 @@ private fun ConceptActions(
                         onClick = { onNextConcept?.invoke() },
                         enabled = onNextConcept != null,
                         modifier = Modifier.weight(1f).testTag(nextTag),
-                        colors = ButtonDefaults.buttonColors(containerColor = ReaderAccent)
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = ReaderAction,
+                            contentColor = ReaderInk
+                        )
                     ) {
                         Text(if (isLastConceptInSection) "다음 Section →" else "다음 개념 →")
                     }
@@ -649,7 +718,10 @@ private fun ConceptActions(
                         onClick = onMarkRead,
                         enabled = !readComplete,
                         modifier = Modifier.weight(1f),
-                        colors = ButtonDefaults.buttonColors(containerColor = ReaderAccent)
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = ReaderAction,
+                            contentColor = ReaderInk
+                        )
                     ) {
                         Text(if (readComplete) "읽기 완료 ✓" else "Chapter 읽기 완료")
                     }
@@ -778,12 +850,12 @@ private fun MiniCodeBlock(
         Column {
             if (language.isNotBlank()) {
                 Row(
-                    Modifier.fillMaxWidth().background(Color(0xFF20242B)).padding(horizontal = 13.dp, vertical = 8.dp),
+                    Modifier.fillMaxWidth().background(Color(0xFF151920)).padding(horizontal = 13.dp, vertical = 8.dp),
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Text(
                         text = language.uppercase(),
-                        color = Color(0xFFB8C7DF),
+                        color = ReaderAccent,
                         fontSize = 11.sp,
                         fontWeight = FontWeight.Bold
                     )
