@@ -1,13 +1,13 @@
 package com.futuretech.poweruser.textbook
 
-import androidx.compose.ui.test.assertDoesNotExist
-import androidx.compose.ui.test.assertExists
 import androidx.compose.ui.test.assertTextContains
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
+import androidx.compose.ui.test.onAllNodesWithTag
+import androidx.compose.ui.test.onAllNodesWithText
 import androidx.compose.ui.test.onNodeWithTag
-import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import com.futuretech.poweruser.MainActivity
+import org.junit.Assert.assertTrue
 import org.junit.Rule
 import org.junit.Test
 
@@ -16,18 +16,29 @@ class V1TextbookUiInstrumentedTest {
 
     @Test
     fun appLaunchesIntoCurriculumThenOpensSectionReader() {
-        compose.onNodeWithTag("curriculum_overview_root").assertExists()
+        assertTagExists("curriculum_overview_root")
         compose.onNodeWithTag("curriculum_chapter_count").assertTextContains("9권 · 134 Chapter")
-        compose.onNodeWithTag("curriculum_chapter_V1-C01").assertExists().performClick()
+        assertTagExists("curriculum_chapter_V1-C01")
+        compose.onNodeWithTag("curriculum_chapter_V1-C01").performClick()
 
-        compose.onNodeWithTag("v1_textbook_root").assertExists()
-        compose.onNodeWithTag("textbook_section_strip").assertExists()
-        compose.onNodeWithTag("textbook_reader").assertExists()
+        assertTagExists("v1_textbook_root")
+        assertTagExists("textbook_section_strip")
+        assertTagExists("textbook_reader")
         compose.onNodeWithTag("textbook_section_progress").assertTextContains("Section 1/")
 
-        compose.onNodeWithText("AI CODING OS").assertDoesNotExist()
-        compose.onNodeWithText("KNOWLEDGE GRAPH").assertDoesNotExist()
-        compose.onNodeWithText("LEARNING MATRIX").assertDoesNotExist()
-        compose.onNodeWithText(">_ LAB").assertDoesNotExist()
+        assertTextAbsent("AI CODING OS")
+        assertTextAbsent("KNOWLEDGE GRAPH")
+        assertTextAbsent("LEARNING MATRIX")
+        assertTextAbsent(">_ LAB")
+    }
+
+    private fun assertTagExists(tag: String) {
+        val nodes = compose.onAllNodesWithTag(tag).fetchSemanticsNodes()
+        assertTrue("Expected learner UI tag to exist: $tag", nodes.isNotEmpty())
+    }
+
+    private fun assertTextAbsent(text: String) {
+        val nodes = compose.onAllNodesWithText(text).fetchSemanticsNodes()
+        assertTrue("Internal label must not be learner-visible: $text", nodes.isEmpty())
     }
 }
