@@ -54,7 +54,7 @@ fun AppNavigation() {
         }
         composable("lesson/{lessonId}") { backStackEntry ->
             val lessonId = backStackEntry.arguments?.getString("lessonId") ?: "B01-01"
-            LessonDetailScreen(
+            TeachingLessonScreen(
                 lessonId = lessonId,
                 onNavigateBack = { navController.popBackStack() },
                 onStepCompleted = { id, cType, unitNum ->
