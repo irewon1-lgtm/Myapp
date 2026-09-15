@@ -146,7 +146,7 @@ fun AppNavigation() {
         }
     }
 
-    NavHost(navController = navController, startDestination = "curriculum") {
+    NavHost(navController = navController, startDestination = "home") {
         composable("curriculum") {
             CurriculumOverviewScreen(
                 onOpenChapter = { chapterId -> navController.navigate("textbook_v1/$chapterId") },
