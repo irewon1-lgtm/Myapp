@@ -1,0 +1,71 @@
+package com.futuretech.poweruser.textbook
+
+import java.io.File
+import org.junit.Assert.assertTrue
+import org.junit.Test
+
+class V1EditorialQualityTest {
+    private fun assetFile(assetPath: String): File {
+        val candidates = listOf(
+            File("src/main/assets/$assetPath"),
+            File("app/src/main/assets/$assetPath")
+        )
+        return candidates.firstOrNull { it.isFile }
+            ?: error("Cannot locate V1 asset: $assetPath")
+    }
+
+    @Test
+    fun v1RejectsBloatRepetitionAndExerciseFreeChapters() {
+        V1TextbookCatalog.chapters.forEach { chapter ->
+            val text = assetFile(chapter.assetPath).readText(Charsets.UTF_8)
+            val lines = text.lines()
+            val headings = lines.count { it.matches(Regex("^#{1,4}\\s+.+")) }
+
+            assertTrue("${chapter.id}: excessive fragmentation headings=$headings", headings <= 34)
+            assertTrue("${chapter.id}: must contain executable/code examples", text.contains("```"))
+            assertTrue(
+                "${chapter.id}: must contain hands-on work",
+                text.contains("실습") || text.contains("프로젝트")
+            )
+            assertTrue(
+                "${chapter.id}: must contain a real end-of-chapter task",
+                text.contains("장 끝 미니 프로젝트") ||
+                    text.contains("V1 최종 실기시험") ||
+                    text.contains("종합 훈련")
+            )
+
+            val paragraphs = text
+                .split(Regex("\\n\\s*\\n"))
+                .map { it.replace(Regex("\\s+"), " ").trim() }
+                .filter { paragraph ->
+                    paragraph.length >= 100 &&
+                        !paragraph.startsWith("```") &&
+                        !paragraph.startsWith("|")
+                }
+            val duplicateParagraphs = paragraphs
+                .groupingBy { it }
+                .eachCount()
+                .filterValues { it > 1 }
+
+            assertTrue(
+                "${chapter.id}: duplicate explanatory paragraphs found: ${duplicateParagraphs.keys.take(3)}",
+                duplicateParagraphs.isEmpty()
+            )
+
+            val placeholders = listOf("TODO", "TBD", "LOREM", "나중에 작성", "준비중")
+            assertTrue(
+                "${chapter.id}: placeholder text found",
+                placeholders.none { marker -> text.contains(marker, ignoreCase = true) }
+            )
+
+            if (chapter.number < 11) {
+                assertTrue(
+                    "${chapter.id}: must end with capability-based completion criteria",
+                    text.contains("이 장을 끝내고 할 수 있어야 하는 것")
+                )
+            } else {
+                assertTrue("${chapter.id}: capstone must have explicit pass criteria", text.contains("합격 기준"))
+            }
+        }
+    }
+}
