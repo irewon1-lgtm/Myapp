@@ -100,6 +100,7 @@ object CurriculumDataRepository {
     // Items 31-35 keep their stable IDs/progress keys but use the rebuilt local-first lessons.
     val intermediateLessons: List<LessonContent> = IntermediateCurriculum.seeds
         .map { IntermediateCurriculum31To35.replace(it) }
+        .map(::enrichIntermediate31To35)
         .map { it.toLesson() }
 
     val v1TextbookPracticeLessons: List<LessonContent> = V1TextbookPracticeData.lessons
