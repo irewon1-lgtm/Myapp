@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
@@ -23,6 +24,7 @@ import com.futuretech.poweruser.data.CurriculumDataRepository
 import com.futuretech.poweruser.education.LearningPracticePolicy
 import com.futuretech.poweruser.education.LearningSessionMode
 import com.futuretech.poweruser.education.MasteryEvidence
+import com.futuretech.poweruser.education.MasteryStage
 import com.futuretech.poweruser.ui.AdaptiveFocusedPracticeScreen
 import com.futuretech.poweruser.ui.AdaptiveTextbookScreen
 import com.futuretech.poweruser.ui.BeginnerStockScoreProjectScreen
@@ -62,8 +64,14 @@ fun AppNavigation() {
     val context = LocalContext.current
     val repository = remember { AppRepository(context) }
     val scope = rememberCoroutineScope()
+    val reviewClock = remember { System.currentTimeMillis() }
     val progressList by repository.getAllProgress().collectAsState(initial = emptyList())
     val errorNotesList by repository.getAllErrorNotes().collectAsState(initial = emptyList())
+    val dueReviewCount by repository.observeDueReviewCount(reviewClock).collectAsState(initial = 0)
+
+    LaunchedEffect(repository) {
+        repository.getDueReviews(reviewClock)
+    }
 
     fun addReviewItem(id: String) {
         scope.launch {
@@ -88,7 +96,7 @@ fun AppNavigation() {
                 curriculumType = cType,
                 unitNumber = unitNum,
                 title = lesson?.title ?: id,
-                status = "VERIFIABLE",
+                status = MasteryStage.UNDERSTAND.name,
                 completionPercentage = 100,
                 isCompleted = true
             )
@@ -159,12 +167,12 @@ fun AppNavigation() {
         composable("home") {
             MainHomeScreen(
                 progressList = progressList,
+                dueReviewCount = dueReviewCount,
                 onNavigateToLesson = { lessonId -> navController.navigate("lesson/$lessonId") },
                 onNavigateToReview = { navController.navigate("review") },
-                onNavigateToErrorNotes = { navController.navigate("error_notes") },
-                onNavigateToCustomProject = { navController.navigate("custom_project") },
-                onNavigateToBeginnerProject = { navController.navigate("beginner_project") },
-                onNavigateToIntermediateProject = { navController.navigate("intermediate_project") }
+                onNavigateToProject = { navController.navigate("custom_project") },
+                onNavigateToCurriculum = { navController.navigate("curriculum") },
+                onNavigateToErrorNotes = { navController.navigate("error_notes") }
             )
         }
         composable("lesson/{lessonId}") { backStackEntry ->
