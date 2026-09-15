@@ -42,11 +42,12 @@ fun TeachingLessonScreen(
     var lectureCompleted by rememberSaveable(lesson.lessonId) {
         mutableStateOf(progressStore.isLectureCompleted(lesson.lessonId))
     }
+    var showPractice by rememberSaveable(lesson.lessonId) { mutableStateOf(false) }
     var sectionIndex by rememberSaveable(lesson.lessonId) {
         mutableStateOf(progressStore.sectionIndex(lesson.lessonId).coerceIn(0, lecture.sections.lastIndex))
     }
 
-    if (lectureCompleted) {
+    if (showPractice) {
         FocusedPracticeScreen(
             lessonId = lesson.lessonId,
             mode = LearningSessionMode.PRACTICE,
@@ -55,7 +56,7 @@ fun TeachingLessonScreen(
             onReviewLecture = { targetIndex ->
                 sectionIndex = targetIndex.coerceIn(0, lecture.sections.lastIndex)
                 progressStore.saveSectionIndex(lesson.lessonId, sectionIndex)
-                lectureCompleted = false
+                showPractice = false
             },
             onMasteryCompleted = { id, type, unit, evidence ->
                 if (onMasteryCompleted != null) {
@@ -78,6 +79,7 @@ fun TeachingLessonScreen(
         section = lecture.sections[sectionIndex],
         sectionIndex = sectionIndex,
         totalSections = lecture.sections.size,
+        practiceUnlocked = lectureCompleted,
         onBack = onNavigateBack,
         onPrevious = {
             if (sectionIndex > 0) {
@@ -91,9 +93,11 @@ fun TeachingLessonScreen(
                 progressStore.saveSectionIndex(lesson.lessonId, sectionIndex)
             }
         },
+        onStartPractice = { showPractice = true },
         onFinishLecture = {
             progressStore.markLectureCompleted(lesson.lessonId)
             lectureCompleted = true
+            showPractice = true
         }
     )
 }
@@ -109,9 +113,11 @@ private fun LecturePhaseScreen(
     section: LectureSection,
     sectionIndex: Int,
     totalSections: Int,
+    practiceUnlocked: Boolean,
     onBack: () -> Unit,
     onPrevious: () -> Unit,
     onNext: () -> Unit,
+    onStartPractice: () -> Unit,
     onFinishLecture: () -> Unit
 ) {
     val isLast = sectionIndex == totalSections - 1
@@ -157,17 +163,42 @@ private fun LecturePhaseScreen(
                 }
             }
 
-            Surface(
-                modifier = Modifier.fillMaxWidth().testTag("practice_locked_label"),
-                color = MaterialTheme.colorScheme.secondaryContainer,
-                shape = RoundedCornerShape(10.dp)
-            ) {
-                Text(
-                    "문제·코딩 실습은 이 강의를 모두 본 뒤 열립니다.",
-                    modifier = Modifier.padding(12.dp),
-                    fontSize = 13.sp,
-                    fontWeight = FontWeight.SemiBold
-                )
+            if (practiceUnlocked) {
+                Surface(
+                    modifier = Modifier.fillMaxWidth().testTag("practice_unlocked_label"),
+                    color = MaterialTheme.colorScheme.secondaryContainer,
+                    shape = RoundedCornerShape(10.dp)
+                ) {
+                    Column(
+                        modifier = Modifier.padding(12.dp),
+                        verticalArrangement = Arrangement.spacedBy(8.dp)
+                    ) {
+                        Text(
+                            "이 강의는 완료했습니다. 학습 내용은 언제든 다시 볼 수 있습니다.",
+                            fontSize = 13.sp,
+                            fontWeight = FontWeight.SemiBold
+                        )
+                        Button(
+                            onClick = onStartPractice,
+                            modifier = Modifier.fillMaxWidth().testTag("lecture_start_practice")
+                        ) {
+                            Text("실습으로 이동 →")
+                        }
+                    }
+                }
+            } else {
+                Surface(
+                    modifier = Modifier.fillMaxWidth().testTag("practice_locked_label"),
+                    color = MaterialTheme.colorScheme.secondaryContainer,
+                    shape = RoundedCornerShape(10.dp)
+                ) {
+                    Text(
+                        "문제·코딩 실습은 이 강의를 모두 본 뒤 열립니다.",
+                        modifier = Modifier.padding(12.dp),
+                        fontSize = 13.sp,
+                        fontWeight = FontWeight.SemiBold
+                    )
+                }
             }
 
             Card(
@@ -227,6 +258,11 @@ private fun LecturePhaseScreen(
                         onClick = onNext,
                         modifier = Modifier.weight(1f).testTag("lecture_next")
                     ) { Text("다음 강의 →") }
+                } else if (practiceUnlocked) {
+                    Button(
+                        onClick = onStartPractice,
+                        modifier = Modifier.weight(1f).testTag("lecture_start_practice_bottom")
+                    ) { Text("실습 시작 →") }
                 } else {
                     Button(
                         onClick = onFinishLecture,
