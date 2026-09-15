@@ -15,7 +15,7 @@ class V1TextbookTabletUiInstrumentedTest {
     @get:Rule val compose = createAndroidComposeRule<MainActivity>()
 
     @Test
-    fun galaxyTabSizedWindowUsesFocusedSingleColumnReader() {
+    fun galaxyTabSizedWindowUsesFocusedSingleConceptReader() {
         val instrumentation = InstrumentationRegistry.getInstrumentation()
         val context = instrumentation.targetContext
         val config = context.resources.configuration
@@ -42,10 +42,11 @@ class V1TextbookTabletUiInstrumentedTest {
         assertTagPresent("v1_textbook_root")
         assertTagPresent("textbook_section_strip")
         assertTagPresent("textbook_reader")
+        assertTagPresent("textbook_concept_progress")
         assertTagAbsent("textbook_toc")
         assertTagAbsent("textbook_insight_rail")
 
-        Log.i(EVIDENCE_TAG, "READY_FOR_SCREENSHOT widthDp=$widthDp heightDp=$heightDp focusedReader=true")
+        Log.i(EVIDENCE_TAG, "READY_FOR_SCREENSHOT widthDp=$widthDp heightDp=$heightDp focusedConceptReader=true")
         Thread.sleep(15_000)
         Log.i(EVIDENCE_TAG, "SCREENSHOT_WINDOW_COMPLETE")
     }
