@@ -28,9 +28,9 @@ object ZeroCostLearningPolicy {
     private val secretPatterns = listOf(
         "API Key/토큰" to Regex("(?i)(sk-[A-Za-z0-9_-]{12,}|Bearer\\s+[A-Za-z0-9._~-]{16,}|api[_ -]?key\\s*[:=]\\s*\\S+|access[_ -]?token\\s*[:=]\\s*\\S+)"),
         "비밀번호" to Regex("(?i)(password|passwd|비밀번호)\\s*[:=]\\s*\\S{6,}"),
-        "주민등록번호처럼 보이는 값" to Regex("\\b\\d{6}-?[1-4]\\d{6}\\b"),
-        "휴대전화번호" to Regex("\\b01[016789]-?\\d{3,4}-?\\d{4}\\b"),
-        "이메일 주소" to Regex("\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}\\b")
+        "주민등록번호처럼 보이는 값" to Regex("(?<!\\d)\\d{6}-?[1-4]\\d{6}(?!\\d)"),
+        "휴대전화번호" to Regex("(?<!\\d)01[016789]-?\\d{3,4}-?\\d{4}(?!\\d)"),
+        "이메일 주소" to Regex("(?<![A-Za-z0-9._%+-])[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}(?![A-Za-z])")
     )
 
     fun simulateApi(scenario: LocalApiScenario): LocalApiSimulation = when (scenario) {
