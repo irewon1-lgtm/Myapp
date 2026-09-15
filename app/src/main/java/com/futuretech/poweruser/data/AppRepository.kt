@@ -11,7 +11,7 @@ class AppRepository(context: Context) {
         context.applicationContext,
         AppDatabase::class.java,
         "futuretech_poweruser.db"
-    ).fallbackToDestructiveMigration().build()
+    ).addMigrations(AppDatabase.MIGRATION_1_2).build()
 
     private val dao = db.learningDao()
 
