@@ -114,7 +114,7 @@ class RuntimeExtremeInstrumentedTest {
         C("RX-T25", ProgrammingLanguage.TYPESCRIPT, "while(true){}", false, timeout=true),
         C("RX-T26", ProgrammingLanguage.TYPESCRIPT, "throw new Error('boom');", false, err="boom"),
         C("RX-T27", ProgrammingLanguage.TYPESCRIPT, "const s:string='타입스크립트 성공'; console.log(s);", true, "타입스크립트 성공"),
-        C("RX-T28", ProgrammingLanguage.TYPESCRIPT, "const n:number=4; console.log(`value=${n}`);", true, "value=4"),
+        C("RX-T28", ProgrammingLanguage.TYPESCRIPT, "const n:number=4; console.log(`value=${'$'}{n}`);", true, "value=4"),
         C("RX-T29", ProgrammingLanguage.TYPESCRIPT, "const u:{a?:{b:number}}={}; console.log(u.a?.b ?? 0);", true, "0"),
         C("RX-T30", ProgrammingLanguage.TYPESCRIPT, "let x:string=null; console.log(x);", false, err="not assignable")
     )
