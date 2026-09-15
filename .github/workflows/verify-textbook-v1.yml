@@ -115,6 +115,7 @@ jobs:
             adb shell pm list instrumentation | tee textbook_evidence/instrumentation_list.txt
             grep -q 'com.futuretech.poweruser.test/androidx.test.runner.AndroidJUnitRunner' textbook_evidence/instrumentation_list.txt
 
+            adb shell rm -f /sdcard/Download/v1_textbook_tablet.png || true
             adb shell wm size 2560x1600
             adb shell wm density 320
             adb shell settings put system accelerometer_rotation 0
@@ -124,7 +125,8 @@ jobs:
             cat textbook_evidence/tablet_instrumentation.txt
             grep -q 'OK (1 test)' textbook_evidence/tablet_instrumentation.txt
             grep -q 'INSTRUMENTATION_CODE: -1' textbook_evidence/tablet_instrumentation.txt
-            adb pull /sdcard/Android/data/com.futuretech.poweruser/files/v1_textbook_tablet.png textbook_evidence/v1_textbook_tablet.png
+            adb shell ls -l /sdcard/Download/v1_textbook_tablet.png | tee textbook_evidence/tablet_screenshot_remote.txt
+            adb pull /sdcard/Download/v1_textbook_tablet.png textbook_evidence/v1_textbook_tablet.png
             test -s textbook_evidence/v1_textbook_tablet.png
 
             adb shell wm size reset
