@@ -2,14 +2,14 @@ package com.futuretech.poweruser.data
 
 data class LessonContent(
     val lessonId: String,
-    val curriculumType: String, // BEGINNER or INTERMEDIATE
-    val unitNumber: Int, // sequential lesson number inside curriculum
+    val curriculumType: String, // BEGINNER, INTERMEDIATE or TEXTBOOK_V1
+    val unitNumber: Int,
     val moduleNumber: Int,
     val moduleTitle: String,
     val stepNumber: Int,
     val stepTotal: Int = 5,
     val estimatedMinutes: Int = 25,
-    val practiceLanguage: String = "PYTHON", // PYTHON, SQL, TYPESCRIPT, HTML_JS
+    val practiceLanguage: String = "PYTHON",
     val title: String,
     val explanation: String,
     val expectedOutcome: String,
@@ -48,7 +48,8 @@ internal data class LessonSeed(
     val aiOptions: List<String>,
     val aiAnswer: Int,
     val keywords: List<String>,
-    val minutes: Int = 25
+    val minutes: Int = 25,
+    val stepTotal: Int = 5
 )
 
 internal fun LessonSeed.toLesson(): LessonContent = LessonContent(
@@ -58,6 +59,7 @@ internal fun LessonSeed.toLesson(): LessonContent = LessonContent(
     moduleNumber = module,
     moduleTitle = moduleTitle,
     stepNumber = step,
+    stepTotal = stepTotal,
     estimatedMinutes = minutes,
     practiceLanguage = language,
     title = title,
@@ -81,7 +83,11 @@ internal fun LessonSeed.toLesson(): LessonContent = LessonContent(
 object CurriculumDataRepository {
     val beginnerLessons: List<LessonContent> = BeginnerCurriculum.seeds.map { it.toLesson() }
     val intermediateLessons: List<LessonContent> = IntermediateCurriculum.seeds.map { it.toLesson() }
+    val v1TextbookPracticeLessons: List<LessonContent> = V1TextbookPracticeData.lessons
+
+    // Preserve the original 90-lesson contract for existing regression tests and legacy screens.
     val allLessons: List<LessonContent> = beginnerLessons + intermediateLessons
 
-    fun lessonById(id: String): LessonContent? = allLessons.find { it.lessonId == id }
+    fun lessonById(id: String): LessonContent? =
+        v1TextbookPracticeLessons.find { it.lessonId == id } ?: allLessons.find { it.lessonId == id }
 }
