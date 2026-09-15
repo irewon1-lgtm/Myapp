@@ -27,14 +27,14 @@ class LectureTeachingUiInstrumentedTest {
             .commit()
     }
 
-    private fun openLegacyLab() {
-        composeRule.onNodeWithText(">_ LAB").performClick()
+    private fun openLearningHome() {
+        composeRule.onNodeWithTag("learning_home_button").performClick()
         composeRule.waitForIdle()
     }
 
     @Test
     fun lessonStartsWithLectureAndPracticeIsNotVisible() {
-        openLegacyLab()
+        openLearningHome()
         composeRule.onNodeWithText("이어서 학습 ▶").performClick()
         composeRule.onNodeWithTag("lecture_root").assertExists()
         composeRule.onNodeWithTag("practice_locked_label").assertExists()
@@ -43,7 +43,7 @@ class LectureTeachingUiInstrumentedTest {
 
     @Test
     fun practiceOpensOnlyAfterAll13LectureSections() {
-        openLegacyLab()
+        openLearningHome()
         composeRule.onNodeWithText("이어서 학습 ▶").performClick()
         repeat(12) {
             composeRule.onNodeWithTag("lecture_next").performScrollTo().performClick()
