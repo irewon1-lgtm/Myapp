@@ -66,23 +66,20 @@ object AppUpdateManager {
             }
 
             val body = connection.inputStream.bufferedReader().use { it.readText() }
-            val json = JSONObject(body)
-            val tag = json.optString("tag_name")
+            val release = parseReleaseJson(body)
+                ?: return@withContext CheckResult.Unavailable("release_json_invalid")
+            val tag = release.tagName
             val latestVersion = tag.removePrefix("v").trim()
             if (latestVersion.isBlank()) {
                 return@withContext CheckResult.Unavailable("release_version_missing")
             }
 
-            val assets = json.optJSONArray("assets")
-                ?: return@withContext CheckResult.Unavailable("release_assets_missing")
-
             var fallbackApkUrl: String? = null
             var preferredApkUrl: String? = null
-            for (index in 0 until assets.length()) {
-                val asset = assets.optJSONObject(index) ?: continue
-                val name = asset.optString("name")
-                val url = asset.optString("browser_download_url")
-                if (url.isBlank()) continue
+            release.assets.forEach { asset ->
+                val name = asset.name
+                val url = asset.browserDownloadUrl
+                if (!url.startsWith("https://", ignoreCase = true)) return@forEach
                 if (name == PREFERRED_ASSET) preferredApkUrl = url
                 if (fallbackApkUrl == null && name.endsWith(".apk", ignoreCase = true)) {
                     fallbackApkUrl = url
@@ -101,7 +98,7 @@ object AppUpdateManager {
                     versionName = latestVersion,
                     tagName = tag,
                     apkUrl = apkUrl,
-                    releaseNotes = json.optString("body")
+                    releaseNotes = release.releaseNotes
                 )
             )
         } catch (t: Throwable) {
@@ -187,6 +184,45 @@ object AppUpdateManager {
         } catch (_: Throwable) {
             false
         }
+    }
+}
+
+internal data class ReleaseAssetJson(
+    val name: String,
+    val browserDownloadUrl: String
+)
+
+internal data class ParsedReleaseJson(
+    val tagName: String,
+    val releaseNotes: String,
+    val assets: List<ReleaseAssetJson>
+)
+
+internal fun parseReleaseJson(body: String): ParsedReleaseJson? {
+    if (body.isBlank() || body.length > 512 * 1024) return null
+    return try {
+        val json = JSONObject(body)
+        val tag = json.optString("tag_name").trim()
+        val assetsJson = json.optJSONArray("assets") ?: return null
+        if (tag.isBlank()) return null
+
+        val assets = buildList {
+            for (index in 0 until assetsJson.length()) {
+                val asset = assetsJson.optJSONObject(index) ?: continue
+                val name = asset.optString("name").trim()
+                val url = asset.optString("browser_download_url").trim()
+                if (name.isNotBlank() && url.isNotBlank()) {
+                    add(ReleaseAssetJson(name, url))
+                }
+            }
+        }
+        ParsedReleaseJson(
+            tagName = tag,
+            releaseNotes = json.optString("body").take(20_000),
+            assets = assets
+        )
+    } catch (_: Throwable) {
+        null
     }
 }
 

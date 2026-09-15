@@ -61,13 +61,14 @@ fun SpacedRepetitionReviewScreen(
                 colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primaryContainer)
             ) {
                 Column(modifier = Modifier.padding(15.dp)) {
-                    Row(
-                        modifier = Modifier.fillMaxWidth(),
-                        horizontalArrangement = Arrangement.SpaceBetween,
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
+                    Column(verticalArrangement = Arrangement.spacedBy(3.dp)) {
                         Text("오늘 복습 ${dueReviews.size}개", fontSize = 17.sp, fontWeight = FontWeight.Bold)
-                        Text("오늘 → 1 → 3 → 7 → 14일", fontSize = 12.sp, fontWeight = FontWeight.SemiBold)
+                        Text(
+                            "오늘 → 1 → 3 → 7 → 14일",
+                            fontSize = 12.sp,
+                            fontWeight = FontWeight.SemiBold,
+                            color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.78f)
+                        )
                     }
                     Spacer(modifier = Modifier.height(6.dp))
                     Text(
@@ -114,11 +115,7 @@ fun SpacedRepetitionReviewScreen(
                             colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
                         ) {
                             Column(modifier = Modifier.padding(16.dp)) {
-                                Row(
-                                    modifier = Modifier.fillMaxWidth(),
-                                    horizontalArrangement = Arrangement.SpaceBetween,
-                                    verticalAlignment = Alignment.CenterVertically
-                                ) {
+                                Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
                                     Surface(
                                         shape = RoundedCornerShape(6.dp),
                                         color = priorityColor.copy(alpha = 0.12f)
@@ -134,6 +131,7 @@ fun SpacedRepetitionReviewScreen(
                                     Text(
                                         "${guidance.stageLabel} · ${guidance.progressLabel}",
                                         fontSize = 11.sp,
+                                        lineHeight = 16.sp,
                                         color = MaterialTheme.colorScheme.outline
                                     )
                                 }
