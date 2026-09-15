@@ -73,7 +73,7 @@ add("RC-16", "TypeScript worker timeout/termination verified", "worker.terminate
 add("RC-17", "TypeScript network/worker escape attempts blocked", case_ok("RX-T19") and case_ok("RX-T20") and case_ok("RX-T21") and case_ok("RX-T22") and case_ok("RX-T23") and case_ok("RX-T24"))
 add("RC-18", "WebView external requests blocked by asset loader", "WebViewAssetLoader" in ts_engine and "blockedResponse" in ts_engine)
 add("RC-19", "No Android JavaScript bridge exposed", "addJavascriptInterface" not in ts_engine and "addJavascriptInterface" not in ts_html)
-add("RC-20", "App has no INTERNET permission", "android.permission.INTERNET" not in manifest)
+add("RC-20", "App INTERNET permission is isolated from learner-code sandbox", "android.permission.INTERNET" in manifest and case_ok("RX-P19") and case_ok("RX-T19") and "NETWORK_RE" in ts_html and "SecurityValidator" in py, "AI tutor needs app network permission; learner Python/TypeScript network escape tests still pass")
 add("RC-21", "Legacy string-replacement TypeScript engine removed", "executeTypeScriptSandbox" not in main_engine and "replace(Regex" not in main_engine)
 unit_ok, unit_detail = xml_clean("app/build/test-results/testDebugUnitTest/*.xml")
 add("RC-22", "JVM unit tests pass", unit_ok, unit_detail)
@@ -89,7 +89,7 @@ passed = sum(1 for _,_,ok,_ in results if ok)
 lines = [
     "# Runtime Issue #1 — Extreme60 / CLEAN25 evidence",
     "",
-    "Scope: real Python and TypeScript execution engines only. This is NOT the full-app Extreme60/CLEAN25 completion claim.",
+    "Scope: real Python and TypeScript execution engines only. The app has INTERNET permission for the separate AI tutor, while learner-code network access remains blocked and is regression-tested. This is NOT the full-app Extreme60/CLEAN25 completion claim.",
     "",
     f"Result: **{passed}/25 PASS**",
     "",
