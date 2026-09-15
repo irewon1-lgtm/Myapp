@@ -69,7 +69,7 @@ if screen_path.exists():
 
 if main_path.exists():
     s = main_path.read_text(encoding="utf-8")
-    ck("Home textbook entry", "textbook_v1_entry" in s, "testTag")
+    ck("Direct textbook launch", 'startDestination = "textbook_v1"' in s, "startDestination")
     ck("Textbook route", 'composable("textbook_v1")' in s, "route")
     ck("Practice route", 'textbook_v1/practice/{lessonId}' in s, "route")
 
