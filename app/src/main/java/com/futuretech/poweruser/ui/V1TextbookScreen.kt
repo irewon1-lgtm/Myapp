@@ -382,12 +382,14 @@ private fun ConceptReader(
             BlockView(block, Modifier.fillMaxWidth().widthIn(max = 780.dp))
         }
 
-        item(key = "inline-problem-${concept.problem.id}") {
-            InlineProblemCard(
-                problem = concept.problem,
-                onOpenPractice = onPractice,
-                modifier = Modifier.fillMaxWidth().widthIn(max = 780.dp)
-            )
+        concept.problem?.let { problem ->
+            item(key = "inline-problem-${problem.id}") {
+                InlineProblemCard(
+                    problem = problem,
+                    onOpenPractice = onPractice,
+                    modifier = Modifier.fillMaxWidth().widthIn(max = 780.dp)
+                )
+            }
         }
 
         item(key = "concept-actions-${concept.id}") {
@@ -395,6 +397,7 @@ private fun ConceptReader(
                 chapter = chapter,
                 isLastConceptInSection = isLastConceptInSection,
                 isLastConceptInChapter = isLastConceptInChapter,
+                hasInlineProblem = concept.problem != null,
                 readComplete = readComplete,
                 practiceComplete = practiceComplete,
                 onPreviousConcept = onPreviousConcept,
@@ -661,6 +664,7 @@ private fun ConceptActions(
     chapter: TextbookChapter,
     isLastConceptInSection: Boolean,
     isLastConceptInChapter: Boolean,
+    hasInlineProblem: Boolean,
     readComplete: Boolean,
     practiceComplete: Boolean,
     onPreviousConcept: (() -> Unit)?,
@@ -678,10 +682,10 @@ private fun ConceptActions(
     ) {
         Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(11.dp)) {
             Text(
-                text = if (isLastConceptInChapter) {
-                    "이 장의 읽기를 마쳤습니다. 전체 실습으로 확인하세요."
-                } else {
-                    "짧은 확인을 마친 뒤 다음 단원으로 이어갑니다. 좌우로 밀어도 이동할 수 있습니다."
+                text = when {
+                    isLastConceptInChapter -> "이 장의 읽기와 실전 훈련을 마쳤습니다. 전체 실습으로 확인하세요."
+                    hasInlineProblem -> "짧은 확인을 마친 뒤 다음 단원으로 이어갑니다. 좌우로 밀어도 이동할 수 있습니다."
+                    else -> "이 훈련을 마친 뒤 다음 단원으로 이어갑니다. 좌우로 밀어도 이동할 수 있습니다."
                 },
                 color = ReaderInk,
                 fontSize = 15.sp,
