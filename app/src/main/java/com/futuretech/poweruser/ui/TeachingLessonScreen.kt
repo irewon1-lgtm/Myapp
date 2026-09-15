@@ -71,6 +71,7 @@ fun TeachingLessonScreen(
     }
 
     LecturePhaseScreen(
+        lessonId = lesson.lessonId,
         lessonTitle = lesson.title,
         moduleTitle = lesson.moduleTitle,
         levelNumber = lesson.stepNumber,
@@ -105,6 +106,7 @@ fun TeachingLessonScreen(
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun LecturePhaseScreen(
+    lessonId: String,
     lessonTitle: String,
     moduleTitle: String,
     levelNumber: Int,
@@ -245,6 +247,8 @@ private fun LecturePhaseScreen(
                     }
                 }
             }
+
+            ZeroCostLearningLab(lessonId = lessonId)
 
             Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                 OutlinedButton(
