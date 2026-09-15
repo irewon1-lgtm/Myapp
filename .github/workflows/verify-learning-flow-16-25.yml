@@ -1,0 +1,93 @@
+name: Verify integrated learning flow 16-25
+
+on:
+  push:
+    branches:
+      - integrate/learning-flow-16-25
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: gradle
+
+      - name: Set up Python 3.13 for Chaquopy build
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Set up Node 20 for TypeScript compiler bundle
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Prepare local TypeScript compiler assets
+        run: |
+          npm install --ignore-scripts --no-audit --no-fund
+          npm run prepare:typescript
+          test -s app/src/main/assets/typescript.js
+          test -s app/src/main/assets/ts_libs.js
+
+      - name: Make Gradle executable
+        run: chmod +x ./gradlew
+
+      - name: Items 16-25 focused unit gates
+        run: |
+          ./gradlew testDebugUnitTest \
+            --tests "com.futuretech.poweruser.education.LearningFlow16To20Test" \
+            --tests "com.futuretech.poweruser.education.LearningUi21To25PolicyTest" \
+            --tests "com.futuretech.poweruser.education.SpacedRepetitionEngineTest" \
+            --tests "com.futuretech.poweruser.education.ReviewExtreme60Test" \
+            --tests "com.futuretech.poweruser.education.ReviewClean25Test" \
+            --stacktrace
+
+      - name: Full JVM regression
+        run: ./gradlew testDebugUnitTest --stacktrace
+
+      - name: Adaptive review evidence report
+        run: python tools/review_quality_report.py
+
+      - name: Compile debug APK and instrumentation tests
+        run: ./gradlew assembleDebug assembleDebugAndroidTest --stacktrace
+
+      - name: Enable KVM
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+
+      - name: Challenge and transformed-review UI on Android 14
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 34
+          arch: x86_64
+          profile: pixel_6
+          disable-animations: true
+          script: ./gradlew connectedDebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.class=com.futuretech.poweruser.education.LearningPracticeModeUiInstrumentedTest,com.futuretech.poweruser.education.ReviewUiInstrumentedTest --stacktrace
+
+      - name: Upload integration evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: learning-flow-16-25-evidence
+          if-no-files-found: warn
+          path: |
+            app/build/test-results/testDebugUnitTest/**
+            app/build/reports/tests/testDebugUnitTest/**
+            app/build/outputs/androidTest-results/connected/**
+            app/build/reports/androidTests/connected/**
+            app/build/outputs/apk/debug/app-debug.apk
+            review_evidence/**
