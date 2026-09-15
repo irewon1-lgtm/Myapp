@@ -20,6 +20,13 @@ class TextbookProgressStore(context: Context) {
 
     fun readCompletedIds(): Set<String> = prefs.getStringSet("read_completed", emptySet())?.toSet().orEmpty()
 
+    fun saveSectionIndex(id: String, index: Int) {
+        prefs.edit().putInt("section_index_$id", index.coerceAtLeast(0)).apply()
+    }
+
+    fun sectionIndex(id: String): Int = prefs.getInt("section_index_$id", 0).coerceAtLeast(0)
+
+    // Legacy scroll state is kept for compatibility with the previous continuous-reader UI.
     fun saveScroll(id: String, index: Int, offset: Int) {
         prefs.edit()
             .putInt("scroll_index_$id", index.coerceAtLeast(0))
