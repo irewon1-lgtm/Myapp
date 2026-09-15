@@ -33,13 +33,24 @@ class V1TextbookTabletUiInstrumentedTest {
 
         val bitmap = InstrumentationRegistry.getInstrumentation().uiAutomation.takeScreenshot()
         val resolver = context.contentResolver
+        val downloads = MediaStore.Downloads.EXTERNAL_CONTENT_URI
+        val fileName = "v1_textbook_tablet.png"
+
+        // A shell rm does not necessarily remove the corresponding MediaStore row.
+        // Remove every stale variant first so the provider cannot silently rename the new file.
+        resolver.delete(
+            downloads,
+            "${MediaStore.MediaColumns.DISPLAY_NAME} LIKE ?",
+            arrayOf("v1_textbook_tablet%")
+        )
+
         val values = ContentValues().apply {
-            put(MediaStore.MediaColumns.DISPLAY_NAME, "v1_textbook_tablet.png")
+            put(MediaStore.MediaColumns.DISPLAY_NAME, fileName)
             put(MediaStore.MediaColumns.MIME_TYPE, "image/png")
             put(MediaStore.MediaColumns.RELATIVE_PATH, Environment.DIRECTORY_DOWNLOADS)
             put(MediaStore.MediaColumns.IS_PENDING, 1)
         }
-        val uri = requireNotNull(resolver.insert(MediaStore.Downloads.EXTERNAL_CONTENT_URI, values))
+        val uri = requireNotNull(resolver.insert(downloads, values))
         val compressed = resolver.openOutputStream(uri).use { stream ->
             requireNotNull(stream)
             bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream)
@@ -47,6 +58,6 @@ class V1TextbookTabletUiInstrumentedTest {
         assertTrue("Galaxy Tab screenshot must be encoded as PNG", compressed)
         values.clear()
         values.put(MediaStore.MediaColumns.IS_PENDING, 0)
-        assertTrue("Galaxy Tab screenshot must be published to Downloads", resolver.update(uri, values, null, null) >= 0)
+        assertTrue("Galaxy Tab screenshot must be published to Downloads", resolver.update(uri, values, null, null) == 1)
     }
 }
