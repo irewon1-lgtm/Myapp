@@ -29,9 +29,9 @@ class LearningPracticeModeUiInstrumentedTest {
 
     @Test
     fun completedLessonCanOpenPracticeAndTenProblemChallengeLocksAssists() {
-        composeRule.onNodeWithTag("learning_home_button").performClick()
+        composeRule.onNodeWithTag("learning_home").assertExists()
+        composeRule.onNodeWithTag("home_continue").performClick()
         composeRule.waitForIdle()
-        composeRule.onNodeWithText("이어서 학습 ▶").performClick()
 
         composeRule.onNodeWithTag("lecture_root").assertExists()
         composeRule.onNodeWithTag("practice_unlocked_label").assertExists()
