@@ -31,32 +31,29 @@ class LearningPracticePolicyExtreme60Test {
                 assertFalse("scenario $index: challenge blocks AI assistance", LearningPracticePolicy.aiAssistanceAllowed(mode))
                 assertFalse("scenario $index: challenge blocks solution reveal", LearningPracticePolicy.solutionRevealAllowed(mode))
                 assertEquals("scenario $index: challenge cannot carry hint evidence", 0, evidence.maxHintLevel)
-                assertEquals(
-                    "scenario $index: independent challenge pass is strong evidence",
-                    MasteryEvidenceStrength.STRONG,
-                    evidence.strength
-                )
-                assertEquals("scenario $index: challenge pass is verifiable", "VERIFIABLE", LearningPracticePolicy.progressStatus(evidence))
+                assertEquals(MasteryEvidenceStrength.STRONG, evidence.strength)
+                assertEquals(MasteryStage.VERIFIABLE, evidence.stage)
+                assertEquals("VERIFIABLE", LearningPracticePolicy.progressStatus(evidence))
             } else {
                 assertTrue("scenario $index: practice allows hints", LearningPracticePolicy.hintsAllowed(mode))
                 assertTrue("scenario $index: practice allows AI assistance", LearningPracticePolicy.aiAssistanceAllowed(mode))
                 assertTrue("scenario $index: practice allows solution reveal", LearningPracticePolicy.solutionRevealAllowed(mode))
 
                 val clampedHint = requestedHintLevel.coerceIn(0, 3)
-                assertEquals("scenario $index: practice records only the highest valid hint level", clampedHint, evidence.maxHintLevel)
+                assertEquals(clampedHint, evidence.maxHintLevel)
                 val expectedStrength = when (clampedHint) {
                     0 -> MasteryEvidenceStrength.STRONG
                     1, 2 -> MasteryEvidenceStrength.SUPPORTED
                     else -> MasteryEvidenceStrength.REVIEW_REQUIRED
                 }
-                assertEquals("scenario $index: hint changes evidence, not completion", expectedStrength, evidence.strength)
-
-                val expectedStatus = when (expectedStrength) {
-                    MasteryEvidenceStrength.STRONG -> "VERIFIABLE"
-                    MasteryEvidenceStrength.SUPPORTED -> "APPLY"
-                    MasteryEvidenceStrength.REVIEW_REQUIRED -> "EXECUTE"
+                val expectedStage = when (clampedHint) {
+                    0 -> MasteryStage.AI_COLLAB
+                    1, 2 -> MasteryStage.APPLY
+                    else -> MasteryStage.EXECUTE
                 }
-                assertEquals("scenario $index: mastery status follows evidence strength", expectedStatus, LearningPracticePolicy.progressStatus(evidence))
+                assertEquals(expectedStrength, evidence.strength)
+                assertEquals(expectedStage, evidence.stage)
+                assertEquals(expectedStage.name, LearningPracticePolicy.progressStatus(evidence))
             }
 
             val preserved = LearningPracticePolicy.strongerProgressStatus("VERIFIABLE", LearningPracticePolicy.progressStatus(evidence))

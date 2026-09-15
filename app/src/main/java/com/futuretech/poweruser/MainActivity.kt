@@ -23,6 +23,7 @@ import com.futuretech.poweruser.data.CurriculumDataRepository
 import com.futuretech.poweruser.education.LearningPracticePolicy
 import com.futuretech.poweruser.education.LearningSessionMode
 import com.futuretech.poweruser.education.MasteryEvidence
+import com.futuretech.poweruser.education.MasteryStage
 import com.futuretech.poweruser.ui.AdaptiveFocusedPracticeScreen
 import com.futuretech.poweruser.ui.AdaptiveTextbookScreen
 import com.futuretech.poweruser.ui.BeginnerStockScoreProjectScreen
@@ -65,6 +66,8 @@ fun AppNavigation() {
     val scope = rememberCoroutineScope()
     val progressList by repository.getAllProgress().collectAsState(initial = emptyList())
     val errorNotesList by repository.getAllErrorNotes().collectAsState(initial = emptyList())
+    val reviewClock = remember { System.currentTimeMillis() }
+    val dueReviewCount by repository.observeDueReviewCount(reviewClock).collectAsState(initial = 0)
     val completedLessonIds = progressList.filter { it.isCompleted }.map { it.lessonId }.toSet()
 
     fun addReviewItem(id: String, maxHintLevel: Int = 0) {
@@ -94,7 +97,7 @@ fun AppNavigation() {
                 curriculumType = cType,
                 unitNumber = unitNum,
                 title = lesson?.title ?: id,
-                status = "VERIFIABLE",
+                status = MasteryStage.UNDERSTAND.name,
                 completionPercentage = 100,
                 isCompleted = true
             )
@@ -143,7 +146,7 @@ fun AppNavigation() {
         }
     }
 
-    NavHost(navController = navController, startDestination = "curriculum") {
+    NavHost(navController = navController, startDestination = "home") {
         composable("curriculum") {
             CurriculumOverviewScreen(
                 onOpenChapter = { chapterId -> navController.navigate("textbook_v1/$chapterId") },
@@ -169,12 +172,12 @@ fun AppNavigation() {
         composable("home") {
             MainHomeScreen(
                 progressList = progressList,
+                dueReviewCount = dueReviewCount,
                 onNavigateToLesson = { lessonId -> navController.navigate("lesson/$lessonId") },
                 onNavigateToReview = { navController.navigate("review") },
-                onNavigateToErrorNotes = { navController.navigate("error_notes") },
-                onNavigateToCustomProject = { navController.navigate("custom_project") },
-                onNavigateToBeginnerProject = { navController.navigate("beginner_project") },
-                onNavigateToIntermediateProject = { navController.navigate("intermediate_project") }
+                onNavigateToProject = { navController.navigate("custom_project") },
+                onNavigateToCurriculum = { navController.navigate("curriculum") },
+                onNavigateToErrorNotes = { navController.navigate("error_notes") }
             )
         }
         composable("lesson/{lessonId}") { backStackEntry ->

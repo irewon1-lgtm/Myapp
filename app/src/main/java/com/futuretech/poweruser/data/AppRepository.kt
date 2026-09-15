@@ -114,6 +114,9 @@ class AppRepository(context: Context) {
         )
     }
 
+    fun observeDueReviewCount(now: Long = System.currentTimeMillis()): Flow<Int> =
+        dao.observeDueReviewCount(now)
+
     suspend fun getDueReviews(now: Long = System.currentTimeMillis()): List<SpacedRepetitionItemEntity> {
         return dao.getDueReviews(now)
             .sortedWith(compareBy<SpacedRepetitionItemEntity> { it.nextReviewTimestamp }.thenBy { it.conceptTitle })
