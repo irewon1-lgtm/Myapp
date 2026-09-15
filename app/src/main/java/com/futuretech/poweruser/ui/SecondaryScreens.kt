@@ -101,11 +101,7 @@ fun SpacedRepetitionReviewScreen(
                             colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
                         ) {
                             Column(modifier = Modifier.padding(16.dp)) {
-                                Row(
-                                    modifier = Modifier.fillMaxWidth(),
-                                    horizontalArrangement = Arrangement.SpaceBetween,
-                                    verticalAlignment = Alignment.CenterVertically
-                                ) {
+                                Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
                                     Surface(shape = RoundedCornerShape(6.dp), color = priorityColor.copy(alpha = 0.12f)) {
                                         Text(
                                             guidance.priority.label,
@@ -118,6 +114,7 @@ fun SpacedRepetitionReviewScreen(
                                     Text(
                                         "${guidance.stageLabel} · ${guidance.progressLabel}",
                                         fontSize = 11.sp,
+                                        lineHeight = 16.sp,
                                         color = MaterialTheme.colorScheme.outline
                                     )
                                 }
