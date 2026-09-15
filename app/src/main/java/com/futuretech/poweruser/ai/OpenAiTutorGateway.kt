@@ -1,8 +1,9 @@
 package com.futuretech.poweruser.ai
 
+import com.google.gson.JsonObject
+import com.google.gson.JsonParser
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import org.json.JSONObject
 import java.io.BufferedInputStream
 import java.io.ByteArrayOutputStream
 import java.net.ConnectException
@@ -90,13 +91,13 @@ class OpenAiTutorGateway(
             )
         }
 
-        val payload = JSONObject()
-            .put("model", model)
-            .put("instructions", AiTutorPolicy.buildInstructions(request))
-            .put("input", AiTutorPolicy.buildInput(request))
-            .put("max_output_tokens", if (request.mode == AiLearningMode.HINT) 350 else 900)
-            .put("store", false)
-            .toString()
+        val payload = JsonObject().apply {
+            addProperty("model", model)
+            addProperty("instructions", AiTutorPolicy.buildInstructions(request))
+            addProperty("input", AiTutorPolicy.buildInput(request))
+            addProperty("max_output_tokens", if (request.mode == AiLearningMode.HINT) 350 else 900)
+            addProperty("store", false)
+        }.toString()
 
         return try {
             val http = transport.postJson(
@@ -155,25 +156,33 @@ class OpenAiTutorGateway(
 
     internal fun extractOutputText(body: String): String? {
         if (body.isBlank()) return null
-        val root = JSONObject(body)
-        val convenience = root.optString("output_text", "").trim()
-        if (convenience.isNotEmpty()) return convenience
+        return try {
+            val root = JsonParser.parseString(body).takeIf { it.isJsonObject }?.asJsonObject ?: return null
+            val convenience = root.get("output_text")
+                ?.takeIf { it.isJsonPrimitive }
+                ?.asString
+                ?.trim()
+                .orEmpty()
+            if (convenience.isNotEmpty()) return convenience
 
-        val output = root.optJSONArray("output") ?: return null
-        val pieces = mutableListOf<String>()
-        for (i in 0 until output.length()) {
-            val item = output.optJSONObject(i) ?: continue
-            val content = item.optJSONArray("content") ?: continue
-            for (j in 0 until content.length()) {
-                val part = content.optJSONObject(j) ?: continue
-                val type = part.optString("type")
-                if (type == "output_text" || type == "text") {
-                    val text = part.optString("text", "").trim()
-                    if (text.isNotEmpty()) pieces += text
+            val output = root.getAsJsonArray("output") ?: return null
+            val pieces = mutableListOf<String>()
+            output.forEach { itemElement ->
+                val item = itemElement.takeIf { it.isJsonObject }?.asJsonObject ?: return@forEach
+                val content = item.getAsJsonArray("content") ?: return@forEach
+                content.forEach { partElement ->
+                    val part = partElement.takeIf { it.isJsonObject }?.asJsonObject ?: return@forEach
+                    val type = part.get("type")?.takeIf { it.isJsonPrimitive }?.asString.orEmpty()
+                    if (type == "output_text" || type == "text") {
+                        val text = part.get("text")?.takeIf { it.isJsonPrimitive }?.asString?.trim().orEmpty()
+                        if (text.isNotEmpty()) pieces += text
+                    }
                 }
             }
+            pieces.takeIf { it.isNotEmpty() }?.joinToString("\n")
+        } catch (_: Exception) {
+            null
         }
-        return pieces.takeIf { it.isNotEmpty() }?.joinToString("\n")
     }
 
     private fun mapHttpFailure(status: Int, body: String): AiTutorResponse {
@@ -189,8 +198,14 @@ class OpenAiTutorGateway(
     }
 
     private fun safeErrorMessage(body: String): String? = try {
-        val root = JSONObject(body)
-        root.optJSONObject("error")?.optString("message")?.trim()?.takeIf { it.isNotEmpty() }?.take(180)
+        val root = JsonParser.parseString(body).takeIf { it.isJsonObject }?.asJsonObject ?: return null
+        root.getAsJsonObject("error")
+            ?.get("message")
+            ?.takeIf { it.isJsonPrimitive }
+            ?.asString
+            ?.trim()
+            ?.takeIf { it.isNotEmpty() }
+            ?.take(180)
     } catch (_: Exception) {
         null
     }
