@@ -6,6 +6,7 @@ ROOT = Path(__file__).resolve().parents[1]
 def read(path: str) -> str:
     return (ROOT / path).read_text(encoding="utf-8")
 
+main_activity = read("app/src/main/java/com/futuretech/poweruser/MainActivity.kt")
 home = read("app/src/main/java/com/futuretech/poweruser/ui/MainHomeScreen.kt")
 adaptive_practice = read("app/src/main/java/com/futuretech/poweruser/ui/AdaptiveFocusedPracticeScreen.kt")
 adaptive_reader = read("app/src/main/java/com/futuretech/poweruser/ui/AdaptiveTextbookScreen.kt")
@@ -15,7 +16,6 @@ manifest = read("app/src/main/AndroidManifest.xml")
 color = read("app/src/main/java/com/futuretech/poweruser/ui/theme/Color.kt")
 policy = read("app/src/main/java/com/futuretech/poweruser/education/LearningPracticePolicy.kt")
 ui_policy = read("app/src/main/java/com/futuretech/poweruser/education/LearningUi21To25Policy.kt")
-quality = read("app/src/main/java/com/futuretech/poweruser/education/Items31To35QualityContract.kt")
 update_gateway = read("app/src/main/java/com/futuretech/poweruser/ai/OpenAiTutorGateway.kt")
 
 checks = [
@@ -39,7 +39,7 @@ checks = [
     ("C18 code editors reserve usable height", focused.count('minLines = 5') >= 3),
     ("C19 body code and helper typography roles are separate", 'CodeTypography' in focused and 'onSurfaceVariant' in adaptive_practice),
     ("C20 home hides internal problem engine jargon", all(x not in home for x in ("TabRow", "hidden test", "테스트 엔진", "문제 시스템", "초급 40", "중급 50"))),
-    ("C21 home centers five learner actions", all(x in home for x in ("오늘 12분", "이어서 학습", "복습 ${dueReviewCount", "프로젝트", "전체 과정"))),
+    ("C21 home is default and centers learner actions", 'startDestination = "home"' in main_activity and all(x in home for x in ("오늘 12분", "이어서 학습", "복습 ${dueReviewCount", "프로젝트", "전체 과정"))),
     ("C22 mastery uses stages rather than one numeric score", 'enum class MasteryStage' in policy and 'VERIFIABLE("검증 가능"' in policy),
     ("C23 challenge locks hint AI and solution reveal", all(x in policy for x in ('hintsAllowed', 'aiAssistanceAllowed', 'solutionRevealAllowed')) and 'mode == LearningSessionMode.PRACTICE' in policy),
     ("C24 reading position persists locally", 'TextbookProgressStore' in reader and 'saveSelectedSectionIndex' in reader and 'selectedSectionIndex' in reader),
