@@ -120,7 +120,10 @@ fun V1TextbookScreen(
         }
     ) { padding ->
         val markdown = remember(selected.id) {
-            context.assets.open(selected.assetPath).bufferedReader().use { it.readText() }
+            val chapterText = context.assets.open(selected.assetPath).bufferedReader().use { it.readText() }
+            val workbookPath = "textbook/v1/workbook_${selected.number.toString().padStart(2, '0')}.md"
+            val workbookText = context.assets.open(workbookPath).bufferedReader().use { it.readText() }
+            "$chapterText\n\n---\n\n$workbookText"
         }
         val blocks = remember(markdown) { TextbookMarkdownParser.parse(markdown) }
         val sections = remember(selected.id, blocks) { TextbookSectioner.split(selected.id, blocks) }
