@@ -6,9 +6,9 @@ object AiTutorPolicy {
         Regex("(?i)\\bBearer\\s+[A-Za-z0-9._~-]{20,}"),
         Regex("-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----"),
         Regex("(?i)\\b(?:password|passwd|api[_ -]?key|secret|access[_ -]?token)\\s*[:=]\\s*[^\\s]{8,}"),
-        Regex("\\b\\d{6}-?[1-4]\\d{6}\\b"),
-        Regex("\\b01[016789]-?\\d{3,4}-?\\d{4}\\b"),
-        Regex("\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}\\b")
+        Regex("(?<!\\d)\\d{6}-?[1-4]\\d{6}(?!\\d)"),
+        Regex("(?<!\\d)01[016789]-?\\d{3,4}-?\\d{4}(?!\\d)"),
+        Regex("(?<![A-Za-z0-9._%+-])[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}(?![A-Za-z])")
     )
 
     private val fullSolutionIntent = Regex(
