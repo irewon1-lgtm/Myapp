@@ -5,3 +5,8 @@ app/build/
 .idea/
 local.properties
 test_evidence/
+node_modules/
+app/src/main/assets/typescript.js
+app/src/main/assets/ts_libs.js
+runtime_extreme_report.json
+runtime_cleanpass_report.md

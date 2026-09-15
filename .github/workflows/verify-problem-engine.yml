@@ -1,17 +1,15 @@
-name: Verify problem engine
+name: Verify real runtimes
 
 on:
   push:
     branches:
       - fix/problem-engine-v2
-  pull_request:
-    branches:
-      - jules-15265925506858679170-f2e782af
   workflow_dispatch:
 
 jobs:
-  test-and-build:
+  runtime-extreme-clean:
     runs-on: ubuntu-latest
+    timeout-minutes: 45
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -23,11 +21,67 @@ jobs:
           java-version: '17'
           cache: gradle
 
+      - name: Set up Python 3.13 for Chaquopy build
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Set up Node 20 for TypeScript compiler bundle
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Prepare official TypeScript compiler assets
+        run: |
+          npm install --ignore-scripts --no-audit --no-fund
+          npm run prepare:typescript
+          test -s app/src/main/assets/typescript.js
+          test -s app/src/main/assets/ts_libs.js
+
       - name: Make Gradle wrapper executable
         run: chmod +x ./gradlew
 
-      - name: Run unit tests
+      - name: Run JVM unit tests
         run: ./gradlew testDebugUnitTest --stacktrace
 
       - name: Build debug APK
         run: ./gradlew assembleDebug --stacktrace
+
+      - name: Enable KVM
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+
+      - name: Android emulator Runtime Extreme60 + scoped CLEAN25
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 34
+          arch: x86_64
+          profile: pixel_6
+          disable-animations: true
+          script: |
+            set +e
+            ./gradlew connectedDebugAndroidTest --stacktrace
+            TEST_STATUS=$?
+            adb shell run-as com.futuretech.poweruser cat files/runtime_extreme_report.json > runtime_extreme_report.json 2>/dev/null
+            PULL_STATUS=$?
+            python tools/runtime_cleanpass.py runtime_extreme_report.json
+            CLEAN_STATUS=$?
+            if [ "$TEST_STATUS" -ne 0 ] || [ "$PULL_STATUS" -ne 0 ] || [ "$CLEAN_STATUS" -ne 0 ]; then
+              exit 1
+            fi
+
+      - name: Upload runtime evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: runtime-extreme-clean-evidence
+          if-no-files-found: warn
+          path: |
+            runtime_extreme_report.json
+            runtime_cleanpass_report.md
+            app/build/test-results/testDebugUnitTest/**
+            app/build/outputs/androidTest-results/connected/**
+            app/build/reports/androidTests/connected/**
+            app/build/outputs/apk/debug/app-debug.apk
