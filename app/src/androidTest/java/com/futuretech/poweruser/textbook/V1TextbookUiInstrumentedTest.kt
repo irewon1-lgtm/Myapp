@@ -1,6 +1,7 @@
 package com.futuretech.poweruser.textbook
 
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
+import androidx.compose.ui.test.onAllNodesWithText
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
@@ -15,7 +16,7 @@ class V1TextbookUiInstrumentedTest {
     @Test fun appLaunchesIntoSectionedTextbookAndMovesOneConceptAtATime() {
         compose.onNodeWithTag("v1_textbook_root").assertExists()
         compose.onNodeWithTag("textbook_chapter_title").assertExists()
-        compose.onNodeWithText("개념 1/", substring = true).assertExists()
+        compose.onAllNodesWithText("개념 1/", substring = true).assertCountEquals(2)
         compose.onNodeWithText("짧은 확인", substring = true).assertExists()
 
         // Item 4: the learner no longer sees the old OS/dashboard chrome or permanent knowledge rails.
@@ -28,7 +29,7 @@ class V1TextbookUiInstrumentedTest {
             .performScrollTo()
             .assertExists()
             .performClick()
-        compose.onNodeWithText("개념 2/", substring = true).assertExists()
+        compose.onAllNodesWithText("개념 2/", substring = true).assertCountEquals(2)
         compose.onNodeWithText("짧은 확인", substring = true).assertExists()
     }
 }
