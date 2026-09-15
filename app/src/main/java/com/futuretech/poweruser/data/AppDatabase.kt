@@ -1,6 +1,8 @@
 package com.futuretech.poweruser.data
 
 import androidx.room.*
+import androidx.room.migration.Migration
+import androidx.sqlite.db.SupportSQLiteDatabase
 import kotlinx.coroutines.flow.Flow
 
 @Entity(tableName = "learning_progress")
@@ -15,7 +17,10 @@ data class LearningProgressEntity(
     val lastStudiedTimestamp: Long
 )
 
-@Entity(tableName = "spaced_repetition")
+@Entity(
+    tableName = "spaced_repetition",
+    indices = [Index(value = ["isMastered", "nextReviewTimestamp"])]
+)
 data class SpacedRepetitionItemEntity(
     @PrimaryKey val conceptId: String,
     val conceptTitle: String,
@@ -30,7 +35,10 @@ data class SpacedRepetitionItemEntity(
     val isMastered: Boolean
 )
 
-@Entity(tableName = "error_notes")
+@Entity(
+    tableName = "error_notes",
+    indices = [Index(value = ["occurrenceCount"])]
+)
 data class PersonalErrorNoteEntity(
     @PrimaryKey(autoGenerate = true) val id: Long = 0,
     val errorType: String, // INDENTATION, JSON_SYNTAX, SQL_WHERE, API_KEY_MISSING, etc.
@@ -83,9 +91,24 @@ interface LearningDao {
 
 @Database(
     entities = [LearningProgressEntity::class, SpacedRepetitionItemEntity::class, PersonalErrorNoteEntity::class],
-    version = 1,
+    version = 2,
     exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {
     abstract fun learningDao(): LearningDao
+
+    companion object {
+        val MIGRATION_1_2 = object : Migration(1, 2) {
+            override fun migrate(db: SupportSQLiteDatabase) {
+                db.execSQL(
+                    "CREATE INDEX IF NOT EXISTS index_spaced_repetition_isMastered_nextReviewTimestamp " +
+                        "ON spaced_repetition (isMastered, nextReviewTimestamp)"
+                )
+                db.execSQL(
+                    "CREATE INDEX IF NOT EXISTS index_error_notes_occurrenceCount " +
+                        "ON error_notes (occurrenceCount)"
+                )
+            }
+        }
+    }
 }
