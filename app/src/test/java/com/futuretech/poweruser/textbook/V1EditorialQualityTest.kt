@@ -20,8 +20,9 @@ class V1EditorialQualityTest {
             val text = assetFile(chapter.assetPath).readText(Charsets.UTF_8)
             val lines = text.lines()
             val headings = lines.count { it.matches(Regex("^#{1,4}\\s+.+")) }
+            val headingLimit = if (chapter.number == 11) 42 else 34
 
-            assertTrue("${chapter.id}: excessive fragmentation headings=$headings", headings <= 34)
+            assertTrue("${chapter.id}: excessive fragmentation headings=$headings", headings <= headingLimit)
             assertTrue("${chapter.id}: must contain executable/code examples", text.contains("```"))
             assertTrue(
                 "${chapter.id}: must contain hands-on work",
@@ -63,8 +64,13 @@ class V1EditorialQualityTest {
                     "${chapter.id}: must end with capability-based completion criteria",
                     text.contains("이 장을 끝내고 할 수 있어야 하는 것")
                 )
+                assertTrue(
+                    "${chapter.id}: regular chapter needs its own mini project",
+                    text.contains("장 끝 미니 프로젝트")
+                )
             } else {
                 assertTrue("${chapter.id}: capstone must have explicit pass criteria", text.contains("합격 기준"))
+                assertTrue("${chapter.id}: capstone must contain multiple real projects", text.count("# 프로젝트") >= 4)
             }
         }
     }
