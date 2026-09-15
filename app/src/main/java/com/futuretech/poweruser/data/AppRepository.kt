@@ -2,6 +2,7 @@ package com.futuretech.poweruser.data
 
 import android.content.Context
 import androidx.room.Room
+import com.futuretech.poweruser.education.SpacedRepetitionEngine
 import kotlinx.coroutines.flow.Flow
 
 class AppRepository(context: Context) {
@@ -78,63 +79,43 @@ class AppRepository(context: Context) {
         definition: String,
         analogy: String,
         example: String,
-        comparison: String
+        comparison: String,
+        now: Long = System.currentTimeMillis()
     ) {
         val existing = dao.getRepetitionById(conceptId)
         if (existing != null) return
 
-        val oneDayMs = 24 * 60 * 60 * 1000L
-        val item = SpacedRepetitionItemEntity(
-            conceptId = conceptId,
-            conceptTitle = conceptTitle,
-            category = category,
-            definition = definition,
-            analogy = analogy,
-            example = example,
-            comparison = comparison,
-            reviewIntervalDays = 1,
-            nextReviewTimestamp = System.currentTimeMillis() + oneDayMs,
-            reviewCount = 0,
-            isMastered = false
-        )
-        dao.insertOrUpdateRepetition(item)
-    }
-
-    suspend fun getDueReviews(): List<SpacedRepetitionItemEntity> {
-        return dao.getDueReviews(System.currentTimeMillis())
-    }
-
-    suspend fun recordReview(conceptId: String, remembered: Boolean) {
-        val current = dao.getRepetitionById(conceptId) ?: return
-        val now = System.currentTimeMillis()
-        val oneDayMs = 24 * 60 * 60 * 1000L
-
-        if (!remembered) {
-            dao.insertOrUpdateRepetition(
-                current.copy(
-                    reviewIntervalDays = 1,
-                    nextReviewTimestamp = now + oneDayMs,
-                    isMastered = false
-                )
-            )
-            return
-        }
-
-        val nextCount = current.reviewCount + 1
-        val mastered = nextCount >= 4
-        val nextIntervalDays = when (nextCount) {
-            1 -> 3
-            2 -> 7
-            3 -> 14
-            else -> 14
-        }
-
         dao.insertOrUpdateRepetition(
-            current.copy(
-                reviewIntervalDays = nextIntervalDays,
-                nextReviewTimestamp = if (mastered) Long.MAX_VALUE else now + (nextIntervalDays * oneDayMs),
-                reviewCount = nextCount,
-                isMastered = mastered
+            SpacedRepetitionEngine.createItem(
+                conceptId = conceptId,
+                conceptTitle = conceptTitle,
+                category = category,
+                definition = definition,
+                analogy = analogy,
+                example = example,
+                comparison = comparison,
+                now = now
+            )
+        )
+    }
+
+    suspend fun getDueReviews(now: Long = System.currentTimeMillis()): List<SpacedRepetitionItemEntity> {
+        dao.promoteLegacyFirstReviews(now)
+        return dao.getDueReviews(now)
+            .sortedWith(compareBy<SpacedRepetitionItemEntity> { it.nextReviewTimestamp }.thenBy { it.conceptTitle })
+    }
+
+    suspend fun recordReview(
+        conceptId: String,
+        remembered: Boolean,
+        now: Long = System.currentTimeMillis()
+    ) {
+        val current = dao.getRepetitionById(conceptId) ?: return
+        dao.insertOrUpdateRepetition(
+            SpacedRepetitionEngine.recordReview(
+                current = current,
+                remembered = remembered,
+                now = now
             )
         )
     }
