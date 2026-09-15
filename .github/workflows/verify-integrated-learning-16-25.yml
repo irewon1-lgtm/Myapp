@@ -6,6 +6,10 @@ on:
       - integrate/learning-flow-16-25
   workflow_dispatch:
 
+concurrency:
+  group: integrated-learning-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: read
 
