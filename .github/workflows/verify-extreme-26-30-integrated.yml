@@ -1,0 +1,75 @@
+name: Verify integrated Extreme 26-30
+
+on:
+  push:
+    branches:
+      - fix/extreme-26-30-integrated
+    paths:
+      - .github/workflows/verify-extreme-26-30-integrated.yml
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 70
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: gradle
+
+      - name: Set up Python 3.13
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Set up Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Prepare runtime assets
+        run: |
+          npm install --ignore-scripts --no-audit --no-fund
+          npm run prepare:typescript
+          test -s app/src/main/assets/typescript.js
+          test -s app/src/main/assets/ts_libs.js
+
+      - name: Full JVM and quality gates
+        run: |
+          chmod +x ./gradlew
+          chmod +x tools/lecture_quality_report.py tools/feedback_quality_report.py tools/review_quality_report.py tools/textbook_quality_report.py
+          ./gradlew testDebugUnitTest --stacktrace
+          python tools/lecture_quality_report.py
+          python tools/feedback_quality_report.py
+          python tools/review_quality_report.py
+          python tools/textbook_quality_report.py
+          ./gradlew assembleDebug assembleRelease --stacktrace
+
+      - name: Enable KVM
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+
+      - name: Android 14 at 360dp
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 34
+          arch: x86_64
+          profile: pixel_6
+          disable-animations: true
+          script: |
+            set -eu
+            adb shell wm size 1080x2400
+            adb shell wm density 480
+            adb shell wm size
+            adb shell wm density
+            ./gradlew connectedDebugAndroidTest --stacktrace
