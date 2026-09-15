@@ -39,7 +39,7 @@ class FeedbackTeachingUiInstrumentedTest {
 
     @Test
     fun wrongFillAnswerShowsReasonCorrectAnswerAndLectureReturn() {
-        composeRule.onNodeWithText(">_ LAB").performClick()
+        composeRule.onNodeWithTag("learning_home_button").performClick()
         composeRule.waitForIdle()
         composeRule.onNodeWithText("이어서 학습 ▶").performClick()
         waitForText("Step 1. 강의 핵심 30초 복습")

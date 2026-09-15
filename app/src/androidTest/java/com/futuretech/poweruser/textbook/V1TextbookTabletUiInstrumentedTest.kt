@@ -2,7 +2,9 @@ package com.futuretech.poweruser.textbook
 
 import android.util.Log
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
+import androidx.compose.ui.test.onAllNodesWithTag
 import androidx.compose.ui.test.onNodeWithTag
+import androidx.compose.ui.test.performClick
 import androidx.test.platform.app.InstrumentationRegistry
 import com.futuretech.poweruser.MainActivity
 import org.junit.Assert.assertTrue
@@ -12,7 +14,8 @@ import org.junit.Test
 class V1TextbookTabletUiInstrumentedTest {
     @get:Rule val compose = createAndroidComposeRule<MainActivity>()
 
-    @Test fun galaxyTabSizedWindowUsesThreeColumnAiTextbookLayout() {
+    @Test
+    fun galaxyTabSizedWindowUsesFocusedSingleColumnReader() {
         val instrumentation = InstrumentationRegistry.getInstrumentation()
         val context = instrumentation.targetContext
         val config = context.resources.configuration
@@ -25,23 +28,36 @@ class V1TextbookTabletUiInstrumentedTest {
         if (widthDp < 1080) {
             if (requireExpanded) {
                 assertTrue(
-                    "Galaxy Tab verification must actually enter expanded mode: widthDp=$widthDp heightDp=$heightDp",
+                    "Galaxy Tab verification requires tablet-sized width: widthDp=$widthDp heightDp=$heightDp",
                     widthDp >= 1080
                 )
             }
-            assertTrue("Default phone regression run is expected to be narrower than expanded threshold", widthDp < 1080)
+            assertTrue("Default phone regression is expected below tablet verification width", widthDp < 1080)
             return
         }
 
-        compose.onNodeWithTag("v1_textbook_root").assertExists()
-        compose.onNodeWithTag("textbook_layout_expanded").assertExists()
-        compose.onNodeWithTag("textbook_toc").assertExists()
-        compose.onNodeWithTag("textbook_reader").assertExists()
-        compose.onNodeWithTag("textbook_insight_rail").assertExists()
+        assertTagPresent("curriculum_overview_root")
+        assertTagPresent("curriculum_chapter_V1-C01")
+        compose.onNodeWithTag("curriculum_chapter_V1-C01").performClick()
+        assertTagPresent("v1_textbook_root")
+        assertTagPresent("textbook_section_strip")
+        assertTagPresent("textbook_reader")
+        assertTagAbsent("textbook_toc")
+        assertTagAbsent("textbook_insight_rail")
 
-        Log.i(EVIDENCE_TAG, "READY_FOR_SCREENSHOT widthDp=$widthDp heightDp=$heightDp")
+        Log.i(EVIDENCE_TAG, "READY_FOR_SCREENSHOT widthDp=$widthDp heightDp=$heightDp focusedReader=true")
         Thread.sleep(15_000)
         Log.i(EVIDENCE_TAG, "SCREENSHOT_WINDOW_COMPLETE")
+    }
+
+    private fun assertTagPresent(tag: String) {
+        val nodes = compose.onAllNodesWithTag(tag).fetchSemanticsNodes()
+        assertTrue("Expected tag to exist on tablet: $tag", nodes.isNotEmpty())
+    }
+
+    private fun assertTagAbsent(tag: String) {
+        val nodes = compose.onAllNodesWithTag(tag).fetchSemanticsNodes()
+        assertTrue("Legacy permanent rail must be absent: $tag", nodes.isEmpty())
     }
 
     companion object {

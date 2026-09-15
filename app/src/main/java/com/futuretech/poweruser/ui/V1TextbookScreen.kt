@@ -2,23 +2,42 @@ package com.futuretech.poweruser.ui
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.horizontalScroll
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
-import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.selection.SelectionContainer
-import androidx.compose.material3.*
-import androidx.compose.runtime.*
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.FilterChip
+import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.OutlinedButton
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.key
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.testTag
@@ -26,111 +45,114 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.futuretech.poweruser.BuildConfig
-import com.futuretech.poweruser.textbook.*
-import kotlinx.coroutines.flow.distinctUntilChanged
+import com.futuretech.poweruser.textbook.TextbookBlock
+import com.futuretech.poweruser.textbook.TextbookChapter
+import com.futuretech.poweruser.textbook.TextbookMarkdownParser
+import com.futuretech.poweruser.textbook.TextbookProgressStore
+import com.futuretech.poweruser.textbook.TextbookSection
+import com.futuretech.poweruser.textbook.TextbookSectioner
+import com.futuretech.poweruser.textbook.V1TextbookCatalog
 
-private val AiBg = Color(0xFF070A12)
-private val AiPanel = Color(0xFF0D1320)
-private val AiPanel2 = Color(0xFF121A2B)
-private val AiBorder = Color(0xFF263248)
-private val AiCyan = Color(0xFF6BE7FF)
-private val AiViolet = Color(0xFF9B8CFF)
-private val AiGreen = Color(0xFF59F2AE)
-private val AiMuted = Color(0xFF9AA8BF)
+private val ReaderShell = Color(0xFFEDEAE3)
+private val ReaderPaper = Color(0xFFF9F7F2)
+private val ReaderInk = Color(0xFF22252A)
+private val ReaderMuted = Color(0xFF656B74)
+private val ReaderBorder = Color(0xFFD7D2C8)
+private val ReaderAccent = Color(0xFF315A94)
+private val ReaderSoft = Color(0xFFE8EDF5)
+private val ReaderCode = Color(0xFF171A20)
+private val ReaderCodeText = Color(0xFFE9EDF3)
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun V1TextbookScreen(
     practiceCompletedIds: Set<String>,
     onNavigateBack: () -> Unit,
-    onStartPractice: (String) -> Unit
+    onStartPractice: (String) -> Unit,
+    initialChapterId: String = "V1-C01"
 ) {
     val context = LocalContext.current
     val store = remember { TextbookProgressStore(context) }
-    var selectedId by rememberSaveable {
-        mutableStateOf(store.selectedChapterId()?.takeIf { V1TextbookCatalog.chapterById(it) != null } ?: "V1-C01")
-    }
+    val safeInitial = initialChapterId.takeIf { V1TextbookCatalog.chapterById(it) != null }
+        ?: store.selectedChapterId()?.takeIf { V1TextbookCatalog.chapterById(it) != null }
+        ?: "V1-C01"
+    var selectedId by rememberSaveable { mutableStateOf(safeInitial) }
     var readCompleted by remember { mutableStateOf(store.readCompletedIds()) }
     val selected = V1TextbookCatalog.chapterById(selectedId) ?: V1TextbookCatalog.chapters.first()
-    val practiceCount = V1TextbookCatalog.chapters.count { it.practiceLessonId in practiceCompletedIds }
-    fun select(id: String) { selectedId = id; store.saveSelectedChapter(id) }
+
+    fun selectChapter(id: String) {
+        if (V1TextbookCatalog.chapterById(id) != null) {
+            selectedId = id
+            store.saveSelectedChapter(id)
+        }
+    }
 
     Scaffold(
         modifier = Modifier.testTag("v1_textbook_root"),
-        containerColor = AiBg,
+        containerColor = ReaderShell,
         topBar = {
-            AiCommandBar(
+            ReaderTopBar(
                 chapter = selected,
                 readCount = readCompleted.size,
-                practiceCount = practiceCount,
-                onOpenLab = onNavigateBack
+                onNavigateBack = onNavigateBack
             )
         }
     ) { padding ->
-        BoxWithConstraints(
+        val markdown = remember(selected.id) {
+            context.assets.open(selected.assetPath).bufferedReader().use { it.readText() }
+        }
+        val blocks = remember(markdown) { TextbookMarkdownParser.parse(markdown) }
+        val sections = remember(selected.id, blocks) { TextbookSectioner.split(selected.id, blocks) }
+        val restoredIndex = store.selectedSectionIndex(selected.id).coerceIn(0, sections.lastIndex.coerceAtLeast(0))
+        var sectionIndex by rememberSaveable(selected.id) { mutableStateOf(restoredIndex) }
+        val currentSection = sections.getOrNull(sectionIndex) ?: sections.firstOrNull()
+
+        Column(
             Modifier
                 .fillMaxSize()
                 .padding(padding)
-                .background(
-                    Brush.verticalGradient(
-                        listOf(Color(0xFF090D17), AiBg, Color(0xFF060810))
-                    )
-                )
+                .background(ReaderShell)
         ) {
-            when (TextbookLayoutMode.fromWidthDp(maxWidth.value.toInt())) {
-                TextbookLayoutMode.EXPANDED -> Row(
-                    Modifier.fillMaxSize().testTag("textbook_layout_expanded")
-                ) {
-                    Toc(
-                        selected.id, readCompleted, practiceCompletedIds, ::select,
-                        Modifier.width(286.dp).fillMaxHeight()
-                    )
-                    Separator()
-                    Reader(
-                        selected, store, selected.id in readCompleted,
-                        selected.practiceLessonId in practiceCompletedIds, false,
-                        onRead = { store.markReadComplete(selected.id); readCompleted = store.readCompletedIds() },
-                        onPractice = { onStartPractice(selected.practiceLessonId) },
-                        onSelect = ::select,
-                        Modifier.weight(1f).fillMaxHeight()
-                    )
-                    Separator()
-                    Insight(
-                        selected, selected.id in readCompleted,
-                        selected.practiceLessonId in practiceCompletedIds,
-                        Modifier.width(318.dp).fillMaxHeight().testTag("textbook_insight_rail")
-                    )
+            SectionStrip(
+                sections = sections,
+                selectedIndex = sectionIndex,
+                onSelect = { index ->
+                    sectionIndex = index
+                    store.saveSelectedSectionIndex(selected.id, index)
                 }
-                TextbookLayoutMode.MEDIUM -> Row(
-                    Modifier.fillMaxSize().testTag("textbook_layout_medium")
-                ) {
-                    Toc(
-                        selected.id, readCompleted, practiceCompletedIds, ::select,
-                        Modifier.width(228.dp).fillMaxHeight()
-                    )
-                    Separator()
-                    Reader(
-                        selected, store, selected.id in readCompleted,
-                        selected.practiceLessonId in practiceCompletedIds, true,
-                        onRead = { store.markReadComplete(selected.id); readCompleted = store.readCompletedIds() },
+            )
+            HorizontalDivider(color = ReaderBorder)
+
+            if (currentSection != null) {
+                key(selected.id, currentSection.id) {
+                    SectionReader(
+                        chapter = selected,
+                        section = currentSection,
+                        sectionCount = sections.size,
+                        readComplete = selected.id in readCompleted,
+                        practiceComplete = selected.practiceLessonId in practiceCompletedIds,
+                        onPreviousSection = if (sectionIndex > 0) {
+                            {
+                                sectionIndex -= 1
+                                store.saveSelectedSectionIndex(selected.id, sectionIndex)
+                            }
+                        } else null,
+                        onNextSection = if (sectionIndex < sections.lastIndex) {
+                            {
+                                sectionIndex += 1
+                                store.saveSelectedSectionIndex(selected.id, sectionIndex)
+                            }
+                        } else null,
+                        onMarkRead = {
+                            store.markReadComplete(selected.id)
+                            readCompleted = store.readCompletedIds()
+                        },
                         onPractice = { onStartPractice(selected.practiceLessonId) },
-                        onSelect = ::select,
-                        Modifier.weight(1f).fillMaxHeight()
-                    )
-                }
-                TextbookLayoutMode.COMPACT -> Column(
-                    Modifier.fillMaxSize().testTag("textbook_layout_compact")
-                ) {
-                    CompactStrip(selected.id, readCompleted, ::select)
-                    ThinDivider()
-                    Reader(
-                        selected, store, selected.id in readCompleted,
-                        selected.practiceLessonId in practiceCompletedIds, true,
-                        onRead = { store.markReadComplete(selected.id); readCompleted = store.readCompletedIds() },
-                        onPractice = { onStartPractice(selected.practiceLessonId) },
-                        onSelect = ::select,
-                        Modifier.weight(1f).fillMaxWidth()
+                        onPreviousChapter = V1TextbookCatalog.chapters.getOrNull(selected.number - 2)?.let { previous ->
+                            { selectChapter(previous.id) }
+                        },
+                        onNextChapter = V1TextbookCatalog.chapters.getOrNull(selected.number)?.let { next ->
+                            { selectChapter(next.id) }
+                        }
                     )
                 }
             }
@@ -139,236 +161,225 @@ fun V1TextbookScreen(
 }
 
 @Composable
-private fun AiCommandBar(
+private fun ReaderTopBar(
     chapter: TextbookChapter,
     readCount: Int,
-    practiceCount: Int,
-    onOpenLab: () -> Unit
+    onNavigateBack: () -> Unit
 ) {
-    Surface(color = Color(0xFF090E18), tonalElevation = 0.dp) {
+    Surface(color = ReaderPaper, shadowElevation = 2.dp) {
         Row(
-            Modifier.fillMaxWidth().heightIn(min = 72.dp).padding(horizontal = 18.dp, vertical = 11.dp),
+            modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 11.dp),
             verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.spacedBy(14.dp)
+            horizontalArrangement = Arrangement.spacedBy(12.dp)
         ) {
-            Surface(
-                shape = RoundedCornerShape(14.dp),
-                color = Color(0xFF102331),
-                border = BorderStroke(1.dp, AiCyan.copy(alpha = .35f))
+            OutlinedButton(
+                onClick = onNavigateBack,
+                border = BorderStroke(1.dp, ReaderBorder)
             ) {
-                Text(
-                    "✦", modifier = Modifier.padding(horizontal = 14.dp, vertical = 10.dp),
-                    fontSize = 20.sp, color = AiCyan, fontWeight = FontWeight.Bold
-                )
+                Text("전체 과정", color = ReaderInk)
             }
             Column(Modifier.weight(1f)) {
-                Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                    Text("AI CODING OS", fontSize = 11.sp, fontWeight = FontWeight.ExtraBold, color = AiCyan, letterSpacing = 1.2.sp)
-                    StatusPill("v${BuildConfig.VERSION_NAME}", AiViolet)
-                    StatusPill("ONLINE", AiGreen)
-                }
-                Spacer(Modifier.height(3.dp))
                 Text(
-                    "${chapter.number.toString().padStart(2, '0')} / 11  ${chapter.title}",
-                    fontSize = 16.sp, fontWeight = FontWeight.Bold, maxLines = 1
+                    text = "1권 · Chapter ${chapter.number}/11",
+                    color = ReaderMuted,
+                    fontSize = 12.sp,
+                    fontWeight = FontWeight.Medium
+                )
+                Text(
+                    text = chapter.title,
+                    color = ReaderInk,
+                    fontSize = 17.sp,
+                    lineHeight = 22.sp,
+                    fontWeight = FontWeight.Bold,
+                    maxLines = 2
                 )
             }
-            Column(horizontalAlignment = Alignment.End) {
-                Text("LEARNING MATRIX", fontSize = 9.sp, color = AiMuted, letterSpacing = .8.sp)
-                Text("본문 $readCount/11  ·  실습 $practiceCount/11", fontSize = 12.sp, fontWeight = FontWeight.SemiBold)
-            }
-            OutlinedButton(
-                onClick = onOpenLab,
-                border = BorderStroke(1.dp, AiBorder),
-                colors = ButtonDefaults.outlinedButtonColors(contentColor = AiCyan)
-            ) { Text(">_ LAB", fontWeight = FontWeight.Bold) }
-        }
-        ThinDivider()
-    }
-}
-
-@Composable
-private fun StatusPill(text: String, color: Color) {
-    Surface(
-        color = color.copy(alpha = .12f),
-        shape = RoundedCornerShape(999.dp),
-        border = BorderStroke(1.dp, color.copy(alpha = .35f))
-    ) {
-        Text(text, Modifier.padding(horizontal = 7.dp, vertical = 3.dp), fontSize = 9.sp, color = color, fontWeight = FontWeight.Bold)
-    }
-}
-
-@Composable
-private fun Toc(
-    selectedId: String,
-    read: Set<String>,
-    practices: Set<String>,
-    onSelect: (String) -> Unit,
-    modifier: Modifier
-) {
-    Surface(modifier.testTag("textbook_toc"), color = Color(0xFF080D16)) {
-        LazyColumn(
-            contentPadding = PaddingValues(horizontal = 13.dp, vertical = 16.dp),
-            verticalArrangement = Arrangement.spacedBy(8.dp)
-        ) {
-            item {
-                Text("KNOWLEDGE GRAPH", fontSize = 10.sp, color = AiCyan, fontWeight = FontWeight.ExtraBold, letterSpacing = 1.1.sp)
-                Spacer(Modifier.height(4.dp))
-                Text("11 Chapter", fontSize = 22.sp, fontWeight = FontWeight.Bold)
-                Text("진도 · 실습 · 현재 위치 자동 동기화", fontSize = 11.sp, color = AiMuted)
-                Spacer(Modifier.height(8.dp))
-            }
-            items(V1TextbookCatalog.chapters, key = { it.id }) { chapter ->
-                val selected = chapter.id == selectedId
-                val done = chapter.id in read
-                val practiceDone = chapter.practiceLessonId in practices
-                Surface(
-                    Modifier.fillMaxWidth().clickable { onSelect(chapter.id) }.testTag("textbook_chapter_${chapter.id}"),
-                    color = if (selected) Color(0xFF102231) else Color.Transparent,
-                    border = BorderStroke(1.dp, if (selected) AiCyan.copy(alpha = .55f) else Color.Transparent),
-                    shape = RoundedCornerShape(14.dp)
-                ) {
-                    Row(Modifier.padding(11.dp), horizontalArrangement = Arrangement.spacedBy(10.dp), verticalAlignment = Alignment.Top) {
-                        Surface(
-                            shape = RoundedCornerShape(9.dp),
-                            color = if (selected) AiCyan.copy(alpha = .16f) else AiPanel2
-                        ) {
-                            Text(
-                                chapter.number.toString().padStart(2, '0'),
-                                Modifier.padding(horizontal = 8.dp, vertical = 7.dp),
-                                fontSize = 11.sp,
-                                fontWeight = FontWeight.Bold,
-                                color = if (selected) AiCyan else AiMuted
-                            )
-                        }
-                        Column(Modifier.weight(1f)) {
-                            Text(chapter.title, fontSize = 12.sp, lineHeight = 17.sp, fontWeight = if (selected) FontWeight.Bold else FontWeight.Medium)
-                            Spacer(Modifier.height(5.dp))
-                            Text(
-                                "${if (done) "● READ" else "○ READ"}   ${if (practiceDone) "● RUN" else "○ RUN"}",
-                                fontSize = 9.sp,
-                                color = if (done && practiceDone) AiGreen else AiMuted,
-                                fontWeight = FontWeight.Bold
-                            )
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-@Composable
-private fun CompactStrip(selectedId: String, read: Set<String>, onSelect: (String) -> Unit) {
-    LazyRow(
-        Modifier.fillMaxWidth().background(Color(0xFF080D16)).padding(vertical = 9.dp),
-        contentPadding = PaddingValues(horizontal = 12.dp),
-        horizontalArrangement = Arrangement.spacedBy(7.dp)
-    ) {
-        items(V1TextbookCatalog.chapters, key = { it.id }) { chapter ->
-            FilterChip(
-                selected = chapter.id == selectedId,
-                onClick = { onSelect(chapter.id) },
-                label = { Text("${chapter.number}${if (chapter.id in read) " ✓" else ""}") }
+            Text(
+                text = "읽기 완료 $readCount/11",
+                color = ReaderMuted,
+                fontSize = 12.sp
             )
         }
     }
 }
 
 @Composable
-private fun Reader(
+private fun SectionStrip(
+    sections: List<TextbookSection>,
+    selectedIndex: Int,
+    onSelect: (Int) -> Unit
+) {
+    LazyRow(
+        modifier = Modifier.fillMaxWidth().background(ReaderPaper).testTag("textbook_section_strip"),
+        contentPadding = PaddingValues(horizontal = 14.dp, vertical = 10.dp),
+        horizontalArrangement = Arrangement.spacedBy(8.dp)
+    ) {
+        itemsIndexed(sections, key = { _, section -> section.id }) { index, section ->
+            FilterChip(
+                selected = index == selectedIndex,
+                onClick = { onSelect(index) },
+                label = {
+                    Text(
+                        text = "${index + 1}. ${section.title.take(18)} · ${section.estimatedMinutes}분",
+                        fontSize = 12.sp
+                    )
+                },
+                modifier = Modifier.testTag("textbook_section_${index + 1}")
+            )
+        }
+    }
+}
+
+@Composable
+private fun SectionReader(
     chapter: TextbookChapter,
-    store: TextbookProgressStore,
+    section: TextbookSection,
+    sectionCount: Int,
     readComplete: Boolean,
     practiceComplete: Boolean,
-    inlineGuide: Boolean,
-    onRead: () -> Unit,
+    onPreviousSection: (() -> Unit)?,
+    onNextSection: (() -> Unit)?,
+    onMarkRead: () -> Unit,
     onPractice: () -> Unit,
-    onSelect: (String) -> Unit,
-    modifier: Modifier
+    onPreviousChapter: (() -> Unit)?,
+    onNextChapter: (() -> Unit)?
 ) {
-    val context = LocalContext.current
-    val markdown = remember(chapter.id) { context.assets.open(chapter.assetPath).bufferedReader().use { it.readText() } }
-    val blocks = remember(markdown) { TextbookMarkdownParser.parse(markdown) }
-    key(chapter.id) {
-        val state = rememberLazyListState(
-            initialFirstVisibleItemIndex = store.scrollIndex(chapter.id).coerceAtMost(blocks.lastIndex.coerceAtLeast(0)),
-            initialFirstVisibleItemScrollOffset = store.scrollOffset(chapter.id)
-        )
-        LaunchedEffect(chapter.id, state) {
-            snapshotFlow { state.firstVisibleItemIndex to state.firstVisibleItemScrollOffset }
-                .distinctUntilChanged()
-                .collect { (i, o) -> store.saveScroll(chapter.id, i, o) }
+    val state = rememberLazyListState()
+    LazyColumn(
+        modifier = Modifier.fillMaxSize().testTag("textbook_reader"),
+        state = state,
+        contentPadding = PaddingValues(horizontal = 18.dp, vertical = 22.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.spacedBy(14.dp)
+    ) {
+        item(key = "section-head-${section.id}") {
+            Column(
+                Modifier.fillMaxWidth().widthIn(max = 780.dp),
+                verticalArrangement = Arrangement.spacedBy(7.dp)
+            ) {
+                Text(
+                    text = "Section ${section.index + 1}/$sectionCount · 약 ${section.estimatedMinutes}분",
+                    modifier = Modifier.testTag("textbook_section_progress"),
+                    color = ReaderAccent,
+                    fontSize = 13.sp,
+                    fontWeight = FontWeight.SemiBold
+                )
+                Text(
+                    text = section.title,
+                    modifier = Modifier.testTag("textbook_section_title"),
+                    color = ReaderInk,
+                    fontSize = 28.sp,
+                    lineHeight = 35.sp,
+                    fontWeight = FontWeight.Bold
+                )
+                Text(
+                    text = chapter.summary,
+                    color = ReaderMuted,
+                    fontSize = 14.sp,
+                    lineHeight = 22.sp
+                )
+            }
         }
-        LazyColumn(
-            modifier = modifier.testTag("textbook_reader"),
-            state = state,
-            contentPadding = PaddingValues(horizontal = 28.dp, vertical = 22.dp),
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.spacedBy(15.dp)
-        ) {
-            item(key = "head-${chapter.id}") {
-                Column(Modifier.fillMaxWidth().widthIn(max = 820.dp)) {
-                    Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                        StatusPill("CHAPTER ${chapter.number.toString().padStart(2, '0')}", AiCyan)
-                        StatusPill(if (readComplete) "READ ✓" else "READING", if (readComplete) AiGreen else AiViolet)
-                        StatusPill(if (practiceComplete) "RUN ✓" else "PRACTICE", if (practiceComplete) AiGreen else AiViolet)
+
+        itemsIndexed(section.blocks, key = { index, _ -> "${section.id}-block-$index" }) { _, block ->
+            BlockView(block, Modifier.fillMaxWidth().widthIn(max = 780.dp))
+        }
+
+        item(key = "section-actions-${section.id}") {
+            SectionActions(
+                chapter = chapter,
+                isLastSection = section.index == sectionCount - 1,
+                readComplete = readComplete,
+                practiceComplete = practiceComplete,
+                onPreviousSection = onPreviousSection,
+                onNextSection = onNextSection,
+                onMarkRead = onMarkRead,
+                onPractice = onPractice,
+                onPreviousChapter = onPreviousChapter,
+                onNextChapter = onNextChapter
+            )
+        }
+    }
+}
+
+@Composable
+private fun SectionActions(
+    chapter: TextbookChapter,
+    isLastSection: Boolean,
+    readComplete: Boolean,
+    practiceComplete: Boolean,
+    onPreviousSection: (() -> Unit)?,
+    onNextSection: (() -> Unit)?,
+    onMarkRead: () -> Unit,
+    onPractice: () -> Unit,
+    onPreviousChapter: (() -> Unit)?,
+    onNextChapter: (() -> Unit)?
+) {
+    Surface(
+        modifier = Modifier.fillMaxWidth().widthIn(max = 780.dp),
+        color = ReaderPaper,
+        border = BorderStroke(1.dp, ReaderBorder),
+        shape = RoundedCornerShape(16.dp)
+    ) {
+        Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(11.dp)) {
+            Text(
+                text = if (isLastSection) "이 Chapter를 문제로 확인합니다." else "읽은 내용을 짧게 확인하거나 다음 Section으로 이동합니다.",
+                color = ReaderInk,
+                fontSize = 15.sp,
+                lineHeight = 22.sp,
+                fontWeight = FontWeight.SemiBold
+            )
+            Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                OutlinedButton(
+                    onClick = onPractice,
+                    modifier = Modifier.weight(1f).testTag("textbook_practice_button"),
+                    border = BorderStroke(1.dp, ReaderAccent)
+                ) {
+                    Text(if (practiceComplete) "문제·실습 다시 풀기" else "문제·실습", color = ReaderAccent)
+                }
+                if (isLastSection) {
+                    Button(
+                        onClick = onMarkRead,
+                        enabled = !readComplete,
+                        modifier = Modifier.weight(1f),
+                        colors = ButtonDefaults.buttonColors(containerColor = ReaderAccent)
+                    ) {
+                        Text(if (readComplete) "읽기 완료 ✓" else "Chapter 읽기 완료")
                     }
-                    Spacer(Modifier.height(14.dp))
-                    Text(chapter.title, Modifier.testTag("textbook_chapter_title"), fontSize = 31.sp, lineHeight = 38.sp, fontWeight = FontWeight.ExtraBold)
-                    Spacer(Modifier.height(9.dp))
-                    Text(chapter.summary, fontSize = 15.sp, lineHeight = 25.sp, color = AiMuted)
-                    Spacer(Modifier.height(16.dp))
-                    LinearProgressIndicator(
-                        progress = { chapter.number / 11f },
-                        modifier = Modifier.fillMaxWidth().height(4.dp),
-                        color = AiCyan,
-                        trackColor = AiPanel2
-                    )
+                } else {
+                    Button(
+                        onClick = { onNextSection?.invoke() },
+                        enabled = onNextSection != null,
+                        modifier = Modifier.weight(1f).testTag("textbook_next_section"),
+                        colors = ButtonDefaults.buttonColors(containerColor = ReaderAccent)
+                    ) {
+                        Text("다음 Section")
+                    }
                 }
             }
-            if (inlineGuide) item(key = "guide-${chapter.id}") {
-                InlineGuide(chapter, readComplete, practiceComplete, Modifier.fillMaxWidth().widthIn(max = 820.dp))
+            Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                OutlinedButton(
+                    onClick = { onPreviousSection?.invoke() },
+                    enabled = onPreviousSection != null,
+                    modifier = Modifier.weight(1f)
+                ) { Text("이전 Section") }
+                if (isLastSection) {
+                    OutlinedButton(
+                        onClick = { onNextChapter?.invoke() },
+                        enabled = onNextChapter != null,
+                        modifier = Modifier.weight(1f).testTag("textbook_next_chapter")
+                    ) { Text("다음 Chapter") }
+                } else {
+                    OutlinedButton(
+                        onClick = { onNextSection?.invoke() },
+                        enabled = onNextSection != null,
+                        modifier = Modifier.weight(1f)
+                    ) { Text("계속 읽기") }
+                }
             }
-            itemsIndexed(blocks, key = { index, _ -> "${chapter.id}-$index" }) { _, block ->
-                BlockView(block, Modifier.fillMaxWidth().widthIn(max = 820.dp))
-            }
-            item(key = "actions-${chapter.id}") {
-                Surface(
-                    Modifier.fillMaxWidth().widthIn(max = 820.dp),
-                    color = Color(0xFF101B27),
-                    border = BorderStroke(1.dp, AiCyan.copy(alpha = .3f)),
-                    shape = RoundedCornerShape(18.dp)
-                ) {
-                    Column(Modifier.padding(20.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
-                        Text("EXECUTION GATE", fontSize = 10.sp, color = AiCyan, fontWeight = FontWeight.ExtraBold, letterSpacing = 1.sp)
-                        Text("읽었으면 끝이 아니라, 직접 실행해서 증명", fontSize = 20.sp, fontWeight = FontWeight.Bold)
-                        Text("예상 → 실행 → 디버깅 → AI 판별 → 응용 → 설명의 10단계 루프를 통과합니다.", fontSize = 14.sp, lineHeight = 22.sp, color = AiMuted)
-                        Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(9.dp)) {
-                            Button(
-                                onClick = onRead,
-                                enabled = !readComplete,
-                                modifier = Modifier.weight(1f).testTag("textbook_mark_read")
-                            ) { Text(if (readComplete) "본문 완료 ✓" else "본문 완료") }
-                            Button(
-                                onClick = onPractice,
-                                modifier = Modifier.weight(1f).testTag("textbook_practice_button"),
-                                colors = ButtonDefaults.buttonColors(containerColor = AiViolet, contentColor = Color(0xFF0C0720))
-                            ) { Text(if (practiceComplete) "실습 재실행 ✓" else ">_ 10단계 실행") }
-                        }
-                        Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(9.dp)) {
-                            OutlinedButton(
-                                onClick = { V1TextbookCatalog.chapters.getOrNull(chapter.number - 2)?.let { onSelect(it.id) } },
-                                enabled = chapter.number > 1,
-                                modifier = Modifier.weight(1f)
-                            ) { Text("← PREV") }
-                            OutlinedButton(
-                                onClick = { V1TextbookCatalog.chapters.getOrNull(chapter.number)?.let { onSelect(it.id) } },
-                                enabled = chapter.number < 11,
-                                modifier = Modifier.weight(1f).testTag("textbook_next_chapter")
-                            ) { Text("NEXT →") }
-                        }
-                    }
+            if (isLastSection && onPreviousChapter != null && chapter.number > 1) {
+                OutlinedButton(onClick = onPreviousChapter, modifier = Modifier.fillMaxWidth()) {
+                    Text("이전 Chapter")
                 }
             }
         }
@@ -379,146 +390,109 @@ private fun Reader(
 private fun BlockView(block: TextbookBlock, modifier: Modifier) {
     when (block) {
         is TextbookBlock.Heading -> {
-            val size = when (block.level) { 1 -> 27.sp; 2 -> 24.sp; 3 -> 20.sp; else -> 17.sp }
-            Column(modifier.padding(top = 9.dp)) {
-                if (block.level <= 2) Box(Modifier.width(34.dp).height(3.dp).background(AiCyan, RoundedCornerShape(9.dp)))
-                if (block.level <= 2) Spacer(Modifier.height(8.dp))
-                Text(block.text, fontSize = size, lineHeight = when (block.level) { 1 -> 34.sp; 2 -> 31.sp; 3 -> 27.sp; else -> 24.sp }, fontWeight = FontWeight.Bold)
+            val size = when (block.level) {
+                1 -> 24.sp
+                2 -> 21.sp
+                3 -> 18.sp
+                else -> 16.sp
             }
+            Text(
+                text = block.text,
+                modifier = modifier.padding(top = 6.dp),
+                color = ReaderInk,
+                fontSize = size,
+                lineHeight = when (block.level) {
+                    1 -> 31.sp
+                    2 -> 28.sp
+                    3 -> 25.sp
+                    else -> 23.sp
+                },
+                fontWeight = FontWeight.Bold
+            )
         }
-        is TextbookBlock.Paragraph -> Text(block.text, modifier, fontSize = 16.sp, lineHeight = 28.sp, color = Color(0xFFE7ECF5))
+
+        is TextbookBlock.Paragraph -> Text(
+            text = block.text,
+            modifier = modifier,
+            color = ReaderInk,
+            fontSize = 16.sp,
+            lineHeight = 27.sp
+        )
+
         is TextbookBlock.BulletList -> Surface(
-            modifier,
-            color = AiPanel,
-            border = BorderStroke(1.dp, AiBorder),
-            shape = RoundedCornerShape(15.dp)
+            modifier = modifier,
+            color = ReaderPaper,
+            border = BorderStroke(1.dp, ReaderBorder),
+            shape = RoundedCornerShape(13.dp)
         ) {
             Column(Modifier.padding(15.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                block.items.forEachIndexed { i, item ->
+                block.items.forEachIndexed { index, item ->
                     Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.Top) {
-                        Text(if (block.ordered) "${i + 1}." else "›", Modifier.width(28.dp), color = AiCyan, fontWeight = FontWeight.Bold)
-                        Text(item, Modifier.weight(1f), fontSize = 15.sp, lineHeight = 24.sp)
+                        Text(
+                            text = if (block.ordered) "${index + 1}." else "•",
+                            modifier = Modifier.width(28.dp),
+                            color = ReaderAccent,
+                            fontWeight = FontWeight.Bold
+                        )
+                        Text(item, Modifier.weight(1f), color = ReaderInk, fontSize = 15.sp, lineHeight = 24.sp)
                     }
                 }
             }
         }
+
         is TextbookBlock.Code -> Surface(
-            modifier,
-            color = Color(0xFF050910),
-            border = BorderStroke(1.dp, Color(0xFF213049)),
-            shape = RoundedCornerShape(15.dp)
+            modifier = modifier,
+            color = ReaderCode,
+            border = BorderStroke(1.dp, Color(0xFF343A44)),
+            shape = RoundedCornerShape(13.dp)
         ) {
             Column {
                 Row(
-                    Modifier.fillMaxWidth().background(Color(0xFF0E1624)).padding(horizontal = 13.dp, vertical = 9.dp),
+                    Modifier.fillMaxWidth().background(Color(0xFF20242B)).padding(horizontal = 13.dp, vertical = 8.dp),
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    Text("● ● ●", fontSize = 10.sp, color = AiMuted)
-                    Spacer(Modifier.width(10.dp))
-                    Text(if (block.language.isBlank()) "CODE" else block.language.uppercase(), fontSize = 10.sp, fontWeight = FontWeight.Bold, color = AiCyan)
-                    Spacer(Modifier.weight(1f))
-                    Text("EXECUTION CELL", fontSize = 9.sp, color = AiMuted)
+                    Text(
+                        text = if (block.language.isBlank()) "CODE" else block.language.uppercase(),
+                        color = Color(0xFFB8C7DF),
+                        fontSize = 11.sp,
+                        fontWeight = FontWeight.Bold
+                    )
                 }
                 SelectionContainer {
                     Text(
-                        block.text,
-                        Modifier.fillMaxWidth().padding(14.dp).horizontalScroll(rememberScrollState()),
+                        text = block.text,
+                        modifier = Modifier.fillMaxWidth().padding(14.dp).horizontalScroll(rememberScrollState()),
+                        color = ReaderCodeText,
                         fontFamily = FontFamily.Monospace,
                         fontSize = 13.sp,
                         lineHeight = 20.sp,
-                        softWrap = false,
-                        color = Color(0xFFD7F8FF)
+                        softWrap = false
                     )
                 }
             }
         }
+
         is TextbookBlock.Table -> Surface(
-            modifier,
-            color = AiPanel,
-            border = BorderStroke(1.dp, AiBorder),
-            shape = RoundedCornerShape(14.dp)
+            modifier = modifier,
+            color = ReaderPaper,
+            border = BorderStroke(1.dp, ReaderBorder),
+            shape = RoundedCornerShape(13.dp)
         ) {
             Column(Modifier.fillMaxWidth()) {
-                block.rows.forEachIndexed { ri, row ->
-                    if (ri > 0) ThinDivider()
-                    Column(Modifier.padding(13.dp)) {
-                        block.headers.forEachIndexed { ci, h ->
-                            row.getOrNull(ci)?.takeIf { it.isNotBlank() }?.let {
-                                Text(h.uppercase(), fontSize = 9.sp, fontWeight = FontWeight.ExtraBold, color = AiCyan, letterSpacing = .7.sp)
-                                Text(it, fontSize = 14.sp, lineHeight = 21.sp)
-                                Spacer(Modifier.height(6.dp))
+                block.rows.forEachIndexed { rowIndex, row ->
+                    if (rowIndex > 0) HorizontalDivider(color = ReaderBorder)
+                    Column(Modifier.padding(13.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
+                        block.headers.forEachIndexed { columnIndex, header ->
+                            row.getOrNull(columnIndex)?.takeIf { it.isNotBlank() }?.let { value ->
+                                Text(header, color = ReaderAccent, fontSize = 11.sp, fontWeight = FontWeight.Bold)
+                                Text(value, color = ReaderInk, fontSize = 14.sp, lineHeight = 21.sp)
                             }
                         }
                     }
                 }
             }
         }
-        TextbookBlock.Divider -> ThinDivider(modifier.padding(vertical = 6.dp))
+
+        TextbookBlock.Divider -> HorizontalDivider(modifier = modifier.padding(vertical = 5.dp), color = ReaderBorder)
     }
-}
-
-@Composable
-private fun Insight(chapter: TextbookChapter, read: Boolean, practice: Boolean, modifier: Modifier) {
-    Surface(modifier, color = Color(0xFF080D16)) {
-        Column(Modifier.fillMaxSize().padding(17.dp), verticalArrangement = Arrangement.spacedBy(13.dp)) {
-            Text("AI COPILOT CONTEXT", fontSize = 10.sp, color = AiViolet, fontWeight = FontWeight.ExtraBold, letterSpacing = 1.sp)
-            Text("학습 컨텍스트", fontSize = 21.sp, fontWeight = FontWeight.Bold)
-            Status("본문 이해", read)
-            Status("실행 실습", practice)
-            ThinDivider()
-            Text("CORE TOKENS", fontSize = 10.sp, color = AiMuted, fontWeight = FontWeight.Bold, letterSpacing = .8.sp)
-            chapter.keyConcepts.forEach { concept ->
-                Surface(color = AiPanel2, shape = RoundedCornerShape(10.dp), border = BorderStroke(1.dp, AiBorder)) {
-                    Text("# $concept", Modifier.fillMaxWidth().padding(10.dp), fontSize = 12.sp, lineHeight = 18.sp)
-                }
-            }
-            ThinDivider()
-            Guide("HUMAN DECISION", chapter.humanMustKnow, Color(0xFF16313B), AiCyan)
-            Guide("AI DELEGATION", chapter.aiCanHelp, Color(0xFF282241), AiViolet)
-            Spacer(Modifier.weight(1f))
-            Text("SOURCE · ${chapter.sourceLessonIds.joinToString(" / ")}", fontSize = 9.sp, color = AiMuted)
-        }
-    }
-}
-
-@Composable
-private fun InlineGuide(chapter: TextbookChapter, read: Boolean, practice: Boolean, modifier: Modifier) {
-    Surface(modifier, color = AiPanel, border = BorderStroke(1.dp, AiBorder), shape = RoundedCornerShape(16.dp)) {
-        Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(9.dp)) {
-            Text("AI CONTEXT WINDOW", fontSize = 10.sp, color = AiViolet, fontWeight = FontWeight.ExtraBold, letterSpacing = .8.sp)
-            Text("본문 ${if (read) "✓" else "○"}  ·  실습 ${if (practice) "✓" else "○"}", fontWeight = FontWeight.Bold)
-            Text("핵심: ${chapter.keyConcepts.joinToString(" · ")}", fontSize = 13.sp, lineHeight = 20.sp, color = AiMuted)
-            Text("사람이 판단: ${chapter.humanMustKnow}", fontSize = 13.sp, lineHeight = 20.sp)
-            Text("AI 보조: ${chapter.aiCanHelp}", fontSize = 13.sp, lineHeight = 20.sp)
-        }
-    }
-}
-
-@Composable
-private fun Guide(title: String, text: String, color: Color, accent: Color) {
-    Surface(color = color, shape = RoundedCornerShape(13.dp), border = BorderStroke(1.dp, accent.copy(alpha = .25f))) {
-        Column(Modifier.padding(13.dp)) {
-            Text(title, fontSize = 10.sp, fontWeight = FontWeight.ExtraBold, color = accent, letterSpacing = .8.sp)
-            Spacer(Modifier.height(5.dp))
-            Text(text, fontSize = 12.sp, lineHeight = 19.sp)
-        }
-    }
-}
-
-@Composable
-private fun Status(label: String, done: Boolean) {
-    Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
-        Text(label, fontSize = 13.sp, color = AiMuted)
-        StatusPill(if (done) "PASS" else "WAIT", if (done) AiGreen else AiViolet)
-    }
-}
-
-@Composable
-private fun ThinDivider(modifier: Modifier = Modifier) {
-    Box(modifier.fillMaxWidth().height(1.dp).background(Color(0xFF1B2639)))
-}
-
-@Composable
-private fun Separator() {
-    Box(Modifier.fillMaxHeight().width(1.dp).background(Color(0xFF1B2639)))
 }

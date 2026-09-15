@@ -11,6 +11,13 @@ class TextbookProgressStore(context: Context) {
         prefs.edit().putString("selected_chapter", id).apply()
     }
 
+    fun selectedSectionIndex(chapterId: String): Int =
+        prefs.getInt("selected_section_$chapterId", 0).coerceAtLeast(0)
+
+    fun saveSelectedSectionIndex(chapterId: String, sectionIndex: Int) {
+        prefs.edit().putInt("selected_section_$chapterId", sectionIndex.coerceAtLeast(0)).apply()
+    }
+
     fun markReadComplete(id: String) {
         val updated = readCompletedIds().toMutableSet().apply { add(id) }
         prefs.edit().putStringSet("read_completed", updated).apply()
