@@ -33,7 +33,7 @@ object AppUpdateManager {
         "https://api.github.com/repos/irewon1-lgtm/Myapp/releases/latest"
     private const val PREFERRED_ASSET = "Myapp_AI_Coding_Textbook_latest.apk"
     private const val APK_MIME = "application/vnd.android.package-archive"
-    private const val USER_AGENT = "Myapp-AutoUpdater/${BuildConfig.VERSION_NAME}"
+    private val USER_AGENT = "Myapp-AutoUpdater/${BuildConfig.VERSION_NAME}"
 
     data class UpdateInfo(
         val versionName: String,
