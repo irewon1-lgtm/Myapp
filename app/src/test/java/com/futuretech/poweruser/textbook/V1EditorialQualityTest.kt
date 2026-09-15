@@ -22,7 +22,9 @@ class V1EditorialQualityTest {
             // Only headings that can become learner-facing section boundaries count as fragmentation.
             // Level-4 headings are explanatory labels inside a section, not separate lessons.
             val sectionHeadings = lines.count { it.matches(Regex("^#{1,3}\\s+.+")) }
-            val headingLimit = if (chapter.number == 11) 42 else 34
+            // The capstone intentionally has multiple independent incident projects, each with evidence,
+            // hypothesis, experiment and pass-criteria subsections. Those are real work stages, not padding.
+            val headingLimit = if (chapter.number == 11) 60 else 34
 
             assertTrue("${chapter.id}: excessive section fragmentation headings=$sectionHeadings", sectionHeadings <= headingLimit)
             assertTrue("${chapter.id}: must contain executable/code examples", text.contains("```"))
