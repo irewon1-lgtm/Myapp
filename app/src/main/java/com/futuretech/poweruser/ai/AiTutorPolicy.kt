@@ -5,7 +5,10 @@ object AiTutorPolicy {
         Regex("(?i)sk-[A-Za-z0-9_-]{16,}"),
         Regex("(?i)\\bBearer\\s+[A-Za-z0-9._~-]{20,}"),
         Regex("-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----"),
-        Regex("(?i)\\b(?:password|passwd|api[_ -]?key|secret|access[_ -]?token)\\s*[:=]\\s*[^\\s]{8,}")
+        Regex("(?i)\\b(?:password|passwd|api[_ -]?key|secret|access[_ -]?token)\\s*[:=]\\s*[^\\s]{8,}"),
+        Regex("\\b\\d{6}-?[1-4]\\d{6}\\b"),
+        Regex("\\b01[016789]-?\\d{3,4}-?\\d{4}\\b"),
+        Regex("\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}\\b")
     )
 
     private val fullSolutionIntent = Regex(
@@ -45,7 +48,11 @@ object AiTutorPolicy {
             return AiPolicyDecision(false, AiFailureKind.INVALID_INPUT, "AI 요청이 너무 깁니다. 질문은 4,000자, 코드는 12,000자 이하로 줄여주세요.")
         }
         if (containsLikelySecret(text) || containsLikelySecret(request.code)) {
-            return AiPolicyDecision(false, AiFailureKind.SENSITIVE_INPUT, "API Key·비밀번호·토큰처럼 보이는 민감정보가 감지되어 전송을 막았습니다.")
+            return AiPolicyDecision(
+                false,
+                AiFailureKind.SENSITIVE_INPUT,
+                "API Key·비밀번호·토큰·주민번호·전화번호·이메일처럼 보이는 민감정보가 감지되어 전송을 막았습니다."
+            )
         }
 
         val availability = availability(request.curriculumType, request.level, request.practiceAttempted)
@@ -74,7 +81,7 @@ object AiTutorPolicy {
             코드의 정답/오답과 PASS/FAIL은 앱의 실제 runtime + deterministic public/hidden tests만 결정한다.
             너는 채점자가 아니다. 앱이 전달한 판정을 바꾸거나 새 판정을 선언하지 말고, 테스트 증거를 바탕으로 원인과 다음 확인점을 설명한다.
             한국어로 쉽고 정확하게 답한다. 모르는 내용을 있는 것처럼 꾸미지 않는다.
-            사용자의 API Key, 비밀번호, 토큰 등 민감정보를 요구하지 않는다.
+            사용자의 API Key, 비밀번호, 토큰, 주민번호, 전화번호, 이메일 등 민감정보를 요구하지 않는다.
             현재 레슨: ${request.lessonId} / ${request.lessonTitle}
             과정: ${request.curriculumType}, Level ${request.level}
             언어: ${request.practiceLanguage}
