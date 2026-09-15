@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - feat/v1-tablet-textbook
+      - rewrite/v1-book-beginner-depth
       - main
   workflow_dispatch:
 
