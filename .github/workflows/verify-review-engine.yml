@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - feat/spaced-review-engine-v1
-      - main
   workflow_dispatch:
 
 jobs:
