@@ -67,20 +67,32 @@ jobs:
           disable-animations: true
           script: |
             set -e
+            mkdir -p lecture_evidence
             ./gradlew connectedDebugAndroidTest --stacktrace
             adb install -r app/build/outputs/apk/debug/app-debug.apk
+            adb shell pm clear com.futuretech.poweruser || true
+            adb logcat -c || true
             adb shell am force-stop com.futuretech.poweruser
             adb shell am start -W -n com.futuretech.poweruser/.MainActivity | tee lecture_evidence/app_launch.txt
             sleep 3
-            PID="$(adb shell pidof com.futuretech.poweruser | tr -d '\r')"
-            test -n "$PID"
+            PID="$(adb shell pidof com.futuretech.poweruser | tr -d '\r' || true)"
+            if [ -z "$PID" ]; then
+              echo "PROCESS_EXITED_AFTER_LAUNCH" | tee -a lecture_evidence/app_launch.txt
+              adb logcat -d -v threadtime > lecture_evidence/logcat_full.txt || true
+              grep -E -i 'FATAL EXCEPTION|AndroidRuntime|futuretech|Process: com.futuretech.poweruser|Exception|Error' lecture_evidence/logcat_full.txt | tail -n 250 > lecture_evidence/logcat_crash_excerpt.txt || true
+              cat lecture_evidence/logcat_crash_excerpt.txt || true
+              exit 1
+            fi
             echo "PID=$PID" | tee -a lecture_evidence/app_launch.txt
+            adb logcat -d -v threadtime > lecture_evidence/logcat_full.txt || true
+            echo "LECTURE_ENGINE_INSTALL_LAUNCH_PASS" | tee -a lecture_evidence/app_launch.txt
 
       - name: Upload lecture engine evidence
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: lecture-engine-extreme60-clean25-evidence
-          if-no-files-found: error
+          if-no-files-found: warn
           retention-days: 90
           path: |
             lecture_evidence/
