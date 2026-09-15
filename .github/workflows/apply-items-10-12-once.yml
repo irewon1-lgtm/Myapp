@@ -40,6 +40,30 @@ jobs:
       - name: Apply items 10-12 patch
         run: python tools/apply_items_10_12.py
 
+      - name: Normalize Kotlin verdict regex literal
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('app/src/main/java/com/futuretech/poweruser/ai/AiTutorPolicy.kt')
+          lines = path.read_text(encoding='utf-8').splitlines()
+          found = False
+          for i, line in enumerate(lines):
+              if 'private val aiGradingVerdict = Regex(' in line:
+                  j = i + 1
+                  raw = lines[j]
+                  stripped = raw.strip()
+                  if not (stripped.startswith('"') and stripped.endswith('"')):
+                      raise SystemExit(f'unexpected regex line: {raw}')
+                  indent = raw[:len(raw) - len(raw.lstrip())]
+                  lines[j] = indent + '"""' + stripped[1:-1] + '"""'
+                  found = True
+                  break
+          if not found:
+              raise SystemExit('aiGradingVerdict regex not found')
+          path.write_text('\n'.join(lines) + '\n', encoding='utf-8')
+          PY
+
       - name: Prepare TypeScript runtime assets
         run: |
           npm install --ignore-scripts --no-audit --no-fund
