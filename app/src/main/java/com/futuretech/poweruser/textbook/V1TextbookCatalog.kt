@@ -121,7 +121,7 @@ object V1TextbookCatalog {
         id,
         number,
         title,
-        "textbook/v1/chapter_${number.toString().padStart(2, '0')}.md",
+        "textbook/v1/chapter_${number.toString().padStart(2, '0')}_full.md",
         practice,
         source,
         summary,
