@@ -69,8 +69,9 @@ class V1EditorialQualityTest {
                     text.contains("장 끝 미니 프로젝트")
                 )
             } else {
+                val projectCount = Regex("(?m)^# 프로젝트\\s+[A-Z]\\.").findAll(text).count()
                 assertTrue("${chapter.id}: capstone must have explicit pass criteria", text.contains("합격 기준"))
-                assertTrue("${chapter.id}: capstone must contain multiple real projects", text.count("# 프로젝트") >= 4)
+                assertTrue("${chapter.id}: capstone must contain multiple real projects, found=$projectCount", projectCount >= 4)
             }
         }
     }
