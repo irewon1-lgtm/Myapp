@@ -52,6 +52,12 @@ jobs:
       - name: Run every JVM test from start to finish
         run: ./gradlew testDebugUnitTest --stacktrace
 
+      - name: Verify items 31-35 user-flow Extreme60 executed all 60 cases
+        run: python tools/items_31_35_extreme60_report.py
+
+      - name: Verify items 31-35 visual/state CLEAN25 source gates
+        run: python tools/items_31_35_clean25.py
+
       - name: Verify lecture engine regression
         run: python tools/lecture_quality_report.py
 
@@ -121,6 +127,8 @@ jobs:
             review_evidence/
             feedback_evidence/
             lecture_evidence/
+            items_31_35_extreme60_report.md
+            items_31_35_clean25_report.md
             app/build/test-results/testDebugUnitTest/
             app/build/reports/tests/testDebugUnitTest/
             app/build/reports/androidTests/connected/
