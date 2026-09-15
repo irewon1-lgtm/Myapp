@@ -23,7 +23,7 @@ class SpacedRepetitionEngineTest {
     )
 
     @Test
-    fun newCardIsDueImmediately() {
+    fun newCardIsDueImmediatelyBeforeLearningEvidenceSchedulesIt() {
         val item = newItem()
         assertEquals(0, item.reviewIntervalDays)
         assertEquals(baseNow, item.nextReviewTimestamp)
@@ -33,10 +33,24 @@ class SpacedRepetitionEngineTest {
     }
 
     @Test
-    fun successfulReviewsFollowTodayOneThreeSevenFourteenThenMastery() {
+    fun hintLevelChangesFirstIndependentReviewDelayWithoutPenalty() {
+        val clean = SpacedRepetitionEngine.scheduleAfterLearning(newItem(), 0, baseNow)
+        val hint1 = SpacedRepetitionEngine.scheduleAfterLearning(newItem(), 1, baseNow)
+        val hint2 = SpacedRepetitionEngine.scheduleAfterLearning(newItem(), 2, baseNow)
+        val hint3 = SpacedRepetitionEngine.scheduleAfterLearning(newItem(), 3, baseNow)
+
+        assertEquals(baseNow + SpacedRepetitionEngine.DAY_MS, clean.nextReviewTimestamp)
+        assertEquals(baseNow + 12 * SpacedRepetitionEngine.HOUR_MS, hint1.nextReviewTimestamp)
+        assertEquals(baseNow + 6 * SpacedRepetitionEngine.HOUR_MS, hint2.nextReviewTimestamp)
+        assertEquals(baseNow + SpacedRepetitionEngine.HOUR_MS, hint3.nextReviewTimestamp)
+        assertEquals(0, hint3.reviewCount)
+    }
+
+    @Test
+    fun successfulReviewsGrowOneThreeSevenFourteenThirtyThenMastery() {
         var now = baseNow
         var item = newItem()
-        val expectedIntervals = listOf(1, 3, 7, 14)
+        val expectedIntervals = listOf(1, 3, 7, 14, 30)
 
         expectedIntervals.forEachIndexed { index, expectedDays ->
             item = SpacedRepetitionEngine.recordReview(item, remembered = true, now = now)
@@ -49,12 +63,26 @@ class SpacedRepetitionEngineTest {
 
         item = SpacedRepetitionEngine.recordReview(item, remembered = true, now = now)
         assertEquals(SpacedRepetitionEngine.TOTAL_REVIEW_SUCCESSES, item.reviewCount)
+        assertEquals(60, item.reviewIntervalDays)
         assertTrue(item.isMastered)
         assertEquals(Long.MAX_VALUE, item.nextReviewTimestamp)
     }
 
     @Test
-    fun forgottenCardMovesBackwardAndRetriesSameDay() {
+    fun repeatedFailuresReturnSooner() {
+        val first = SpacedRepetitionEngine.recordReview(newItem(), false, baseNow, failureStreak = 1)
+        val second = SpacedRepetitionEngine.recordReview(newItem(), false, baseNow, failureStreak = 2)
+        val third = SpacedRepetitionEngine.recordReview(newItem(), false, baseNow, failureStreak = 3)
+
+        assertEquals(baseNow + SpacedRepetitionEngine.RETRY_DELAY_MS, first.nextReviewTimestamp)
+        assertEquals(baseNow + SpacedRepetitionEngine.REPEATED_RETRY_DELAY_MS, second.nextReviewTimestamp)
+        assertEquals(baseNow + SpacedRepetitionEngine.SEVERE_RETRY_DELAY_MS, third.nextReviewTimestamp)
+        assertTrue(third.nextReviewTimestamp < second.nextReviewTimestamp)
+        assertTrue(second.nextReviewTimestamp < first.nextReviewTimestamp)
+    }
+
+    @Test
+    fun forgottenCardMovesBackwardWithoutNegativeStage() {
         var item = newItem()
         item = SpacedRepetitionEngine.recordReview(item, true, baseNow)
         item = SpacedRepetitionEngine.recordReview(item, true, item.nextReviewTimestamp)
@@ -64,15 +92,6 @@ class SpacedRepetitionEngineTest {
         item = SpacedRepetitionEngine.recordReview(item, false, failNow)
         assertEquals(1, item.reviewCount)
         assertEquals(0, item.reviewIntervalDays)
-        assertEquals(failNow + SpacedRepetitionEngine.RETRY_DELAY_MS, item.nextReviewTimestamp)
-        assertFalse(item.isMastered)
-    }
-
-    @Test
-    fun failureAtFirstReviewNeverCreatesNegativeStage() {
-        val item = SpacedRepetitionEngine.recordReview(newItem(), false, baseNow)
-        assertEquals(0, item.reviewCount)
-        assertEquals(0, item.reviewIntervalDays)
         assertFalse(item.isMastered)
     }
 
@@ -80,7 +99,7 @@ class SpacedRepetitionEngineTest {
     fun masteredCardIsIdempotent() {
         var item = newItem()
         var now = baseNow
-        repeat(5) {
+        repeat(SpacedRepetitionEngine.TOTAL_REVIEW_SUCCESSES) {
             item = SpacedRepetitionEngine.recordReview(item, true, now)
             now = item.nextReviewTimestamp
         }

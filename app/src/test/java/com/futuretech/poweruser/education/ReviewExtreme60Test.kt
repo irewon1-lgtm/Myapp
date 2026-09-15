@@ -16,16 +16,17 @@ class ReviewExtreme60Test(private val caseId: Int) {
 
     @Test
     fun extremeSchedulingScenarioPasses() {
-        val stage = (caseId - 1) % 5
+        val stage = (caseId - 1) % SpacedRepetitionEngine.TOTAL_REVIEW_SUCCESSES
         val remembered = caseId % 3 != 0
         val normalNow = 1_700_000_000_000L + caseId * 1_234_567L
         val now = if (caseId % 15 == 0) Long.MAX_VALUE - 500L else normalNow
         val item = itemAtStage(stage, now)
-        val result = SpacedRepetitionEngine.recordReview(item, remembered, now)
+        val failureStreak = if (remembered) 0 else (caseId % 3) + 1
+        val result = SpacedRepetitionEngine.recordReview(item, remembered, now, failureStreak)
         val guidance = SpacedRepetitionEngine.guidance(result)
 
         assertTrue(result.reviewCount in 0..SpacedRepetitionEngine.TOTAL_REVIEW_SUCCESSES)
-        assertTrue(result.reviewIntervalDays in setOf(0, 1, 3, 7, 14))
+        assertTrue(result.reviewIntervalDays in setOf(0, 1, 3, 7, 14, 30, 60))
         assertTrue(result.nextReviewTimestamp >= now || result.nextReviewTimestamp == Long.MAX_VALUE)
         assertTrue(guidance.stageLabel.isNotBlank())
         assertTrue(guidance.progressLabel.isNotBlank())
@@ -35,18 +36,17 @@ class ReviewExtreme60Test(private val caseId: Int) {
             assertFalse(result.isMastered)
             assertEquals(0, result.reviewIntervalDays)
             assertTrue(result.reviewCount <= stage)
-        } else if (stage == 4) {
+        } else if (stage == SpacedRepetitionEngine.TOTAL_REVIEW_SUCCESSES - 1) {
             assertTrue(result.isMastered)
-            assertEquals(5, result.reviewCount)
+            assertEquals(SpacedRepetitionEngine.TOTAL_REVIEW_SUCCESSES, result.reviewCount)
+            assertEquals(60, result.reviewIntervalDays)
             assertEquals(Long.MAX_VALUE, result.nextReviewTimestamp)
         } else {
             assertFalse(result.isMastered)
             assertEquals(stage + 1, result.reviewCount)
         }
 
-        if (result.isMastered) {
-            assertFalse(SpacedRepetitionEngine.isDue(result, Long.MAX_VALUE))
-        }
+        if (result.isMastered) assertFalse(SpacedRepetitionEngine.isDue(result, Long.MAX_VALUE))
     }
 
     private fun itemAtStage(stage: Int, now: Long): SpacedRepetitionItemEntity {
@@ -55,13 +55,7 @@ class ReviewExtreme60Test(private val caseId: Int) {
             1 -> "클라우드 구조 이해"
             else -> "복잡한 CSS 세부 명령"
         }
-        val interval = when (stage) {
-            0 -> 0
-            1 -> 1
-            2 -> 3
-            3 -> 7
-            else -> 14
-        }
+        val intervals = listOf(0, 1, 3, 7, 14, 30)
         return SpacedRepetitionItemEntity(
             conceptId = "case-$caseId",
             conceptTitle = title,
@@ -70,7 +64,7 @@ class ReviewExtreme60Test(private val caseId: Int) {
             analogy = "비유 $caseId",
             example = "value = $caseId",
             comparison = "비교 기준 $caseId",
-            reviewIntervalDays = interval,
+            reviewIntervalDays = intervals[stage],
             nextReviewTimestamp = now,
             reviewCount = stage,
             isMastered = false
