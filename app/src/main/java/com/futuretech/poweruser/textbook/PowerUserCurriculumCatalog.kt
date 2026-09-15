@@ -20,16 +20,16 @@ object PowerUserCurriculumCatalog {
 
     val books: List<CurriculumBook> = listOf(
         CurriculumBook("V1", 1, "컴퓨터·인터넷·디지털 시스템", listOf(
-            CurriculumChapterRef("V1-C01", 1, "시스템 전체 그림과 디지털 표현", true),
-            CurriculumChapterRef("V1-C02", 2, "파일·경로·형식·무결성", true),
-            CurriculumChapterRef("V1-C03", 3, "프로세스와 동시성", true),
-            CurriculumChapterRef("V1-C04", 4, "메모리·연산장치·커널 경계", true),
-            CurriculumChapterRef("V1-C05", 5, "권한·터미널·환경변수", true),
-            CurriculumChapterRef("V1-C06", 6, "설치·버전·설정과 의존성", true),
-            CurriculumChapterRef("V1-C07", 7, "로그를 읽고 시간축으로 사건 재구성하기", true),
-            CurriculumChapterRef("V1-C08", 8, "포트·DNS·앱/웹/서버 경계", true),
-            CurriculumChapterRef("V1-C09", 9, "Android 권한·동기화·백업", true),
-            CurriculumChapterRef("V1-C10", 10, "성능 병목과 장애를 계층별로 진단하기", true),
+            CurriculumChapterRef("V1-C01", 1, "컴퓨터와 코드의 첫 지도", true),
+            CurriculumChapterRef("V1-C02", 2, "파일과 폴더를 처음부터", true),
+            CurriculumChapterRef("V1-C03", 3, "프로그램이 실행된다는 뜻", true),
+            CurriculumChapterRef("V1-C04", 4, "컴퓨터가 일하는 곳", true),
+            CurriculumChapterRef("V1-C05", 5, "권한과 터미널 첫걸음", true),
+            CurriculumChapterRef("V1-C06", 6, "설치·버전·의존성 이해하기", true),
+            CurriculumChapterRef("V1-C07", 7, "로그를 읽는 법", true),
+            CurriculumChapterRef("V1-C08", 8, "인터넷이 연결되는 순서", true),
+            CurriculumChapterRef("V1-C09", 9, "Android 앱이 실제로 사는 곳", true),
+            CurriculumChapterRef("V1-C10", 10, "느림·멈춤·오류를 찾는 법", true),
             CurriculumChapterRef("V1-C11", 11, "종합 시스템 장애 진단 프로젝트", true)
         )),
         CurriculumBook("V2", 2, "프로그래밍 사고 + Python", listOf(
