@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - fix/learning-policy-13-15
+      - main
   workflow_dispatch:
 
 permissions:
@@ -12,7 +13,7 @@ permissions:
 jobs:
   extreme-clean:
     runs-on: ubuntu-latest
-    timeout-minutes: 50
+    timeout-minutes: 55
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -44,12 +45,20 @@ jobs:
       - name: Make Gradle executable
         run: chmod +x ./gradlew
 
-      - name: Extreme60 and CLEAN25
+      - name: Full JVM regression
+        run: ./gradlew testDebugUnitTest --stacktrace
+
+      - name: Items 13-15 Extreme60 and CLEAN25
         run: |
           ./gradlew testDebugUnitTest \
             --tests "com.futuretech.poweruser.education.LearningPracticePolicyExtreme60Test" \
             --tests "com.futuretech.poweruser.education.LearningPracticePolicyClean25Test" \
             --stacktrace
+
+      - name: Preserve integrated items 10-12 gates
+        run: |
+          python tools/items_10_12_extreme60.py
+          python tools/items_10_12_clean25.py
 
       - name: Compile app and instrumentation tests
         run: ./gradlew assembleDebug assembleDebugAndroidTest --stacktrace
@@ -81,3 +90,5 @@ jobs:
             app/build/outputs/androidTest-results/connected/**
             app/build/reports/androidTests/connected/**
             app/build/outputs/apk/debug/app-debug.apk
+            items_10_12_extreme60_report.md
+            items_10_12_clean25_report.md
