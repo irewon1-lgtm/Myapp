@@ -120,7 +120,10 @@ fun V1TextbookScreen(
         }
     ) { padding ->
         val markdown = remember(selected.id) {
-            context.assets.open(selected.assetPath).bufferedReader().use { it.readText() }
+            val chapterText = context.assets.open(selected.assetPath).bufferedReader().use { it.readText() }
+            val workbookPath = "textbook/v1/workbook_${selected.number.toString().padStart(2, '0')}.md"
+            val workbookText = context.assets.open(workbookPath).bufferedReader().use { it.readText() }
+            "$chapterText\n\n---\n\n$workbookText"
         }
         val blocks = remember(markdown) { TextbookMarkdownParser.parse(markdown) }
         val sections = remember(selected.id, blocks) { TextbookSectioner.split(selected.id, blocks) }
@@ -245,7 +248,7 @@ private fun ReaderTopBar(
             }
             Column(Modifier.weight(1f)) {
                 Text(
-                    text = "1권 · Chapter ${chapter.number}/11",
+                    text = "1권 · ${chapter.number}장/11",
                     color = ReaderMuted,
                     fontSize = 12.sp,
                     fontWeight = FontWeight.Medium
@@ -357,18 +360,11 @@ private fun ConceptReader(
                 verticalArrangement = Arrangement.spacedBy(7.dp)
             ) {
                 Text(
-                    text = "Section ${section.index + 1}/$sectionCount · 약 ${section.estimatedMinutes}분",
+                    text = "단원 ${section.index + 1}/$sectionCount · 약 ${section.estimatedMinutes}분",
                     modifier = Modifier.testTag("textbook_section_progress"),
                     color = ReaderAccent,
                     fontSize = 13.sp,
                     fontWeight = FontWeight.SemiBold
-                )
-                Text(
-                    text = "개념 ${concept.index + 1}/$conceptCount",
-                    modifier = Modifier.testTag("textbook_concept_progress"),
-                    color = ReaderMuted,
-                    fontSize = 12.sp,
-                    fontWeight = FontWeight.Medium
                 )
                 Text(
                     text = concept.title,
@@ -393,12 +389,14 @@ private fun ConceptReader(
             BlockView(block, Modifier.fillMaxWidth().widthIn(max = 780.dp))
         }
 
-        item(key = "inline-problem-${concept.problem.id}") {
-            InlineProblemCard(
-                problem = concept.problem,
-                onOpenPractice = onPractice,
-                modifier = Modifier.fillMaxWidth().widthIn(max = 780.dp)
-            )
+        concept.problem?.let { problem ->
+            item(key = "inline-problem-${problem.id}") {
+                InlineProblemCard(
+                    problem = problem,
+                    onOpenPractice = onPractice,
+                    modifier = Modifier.fillMaxWidth().widthIn(max = 780.dp)
+                )
+            }
         }
 
         item(key = "concept-actions-${concept.id}") {
@@ -406,6 +404,7 @@ private fun ConceptReader(
                 chapter = chapter,
                 isLastConceptInSection = isLastConceptInSection,
                 isLastConceptInChapter = isLastConceptInChapter,
+                hasInlineProblem = concept.problem != null,
                 readComplete = readComplete,
                 practiceComplete = practiceComplete,
                 onPreviousConcept = onPreviousConcept,
@@ -492,7 +491,7 @@ private fun InlineProblemCard(
                             MiniResult(
                                 correct = correct,
                                 text = if (correct) {
-                                    "근거에 맞습니다. 다음 개념으로 넘어가도 됩니다."
+                                    "근거에 맞습니다. 다음 단원으로 넘어가도 됩니다."
                                 } else {
                                     "본문 근거를 다시 확인하세요. 이 미니문제는 숙련도 점수를 깎지 않습니다."
                                 }
@@ -607,14 +606,10 @@ private fun InlineProblemCard(
                             minLines = if (problem.type == LearningProblemType.OUTPUT_PREDICTION) 3 else 5,
                             colors = readerTextFieldColors()
                         )
-                        Column(
-                            modifier = Modifier.fillMaxWidth(),
-                            verticalArrangement = Arrangement.spacedBy(8.dp)
-                        ) {
+                        Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                             Button(
                                 onClick = { checked = true },
                                 enabled = textAnswer.isNotBlank(),
-                                modifier = Modifier.fillMaxWidth(),
                                 colors = ButtonDefaults.buttonColors(
                                     containerColor = ReaderAction,
                                     contentColor = ReaderInk
@@ -622,10 +617,7 @@ private fun InlineProblemCard(
                             ) {
                                 Text(if (problem.type == LearningProblemType.OUTPUT_PREDICTION) "예상 저장" else "작성 완료")
                             }
-                            OutlinedButton(
-                                onClick = onOpenPractice,
-                                modifier = Modifier.fillMaxWidth()
-                            ) {
+                            OutlinedButton(onClick = onOpenPractice) {
                                 Text("전체 실습에서 실행", color = ReaderAccent)
                             }
                         }
@@ -679,6 +671,7 @@ private fun ConceptActions(
     chapter: TextbookChapter,
     isLastConceptInSection: Boolean,
     isLastConceptInChapter: Boolean,
+    hasInlineProblem: Boolean,
     readComplete: Boolean,
     practiceComplete: Boolean,
     onPreviousConcept: (() -> Unit)?,
@@ -696,10 +689,10 @@ private fun ConceptActions(
     ) {
         Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(11.dp)) {
             Text(
-                text = if (isLastConceptInChapter) {
-                    "이 Chapter의 읽기 흐름을 마쳤습니다. 전체 실습으로 확인하세요."
-                } else {
-                    "짧은 확인을 마친 뒤 다음 개념으로 이어갑니다. 좌우로 밀어도 이동할 수 있습니다."
+                text = when {
+                    isLastConceptInChapter -> "이 장의 읽기와 실전 훈련을 마쳤습니다. 전체 실습으로 확인하세요."
+                    hasInlineProblem -> "짧은 확인을 마친 뒤 다음 단원으로 이어갑니다. 좌우로 밀어도 이동할 수 있습니다."
+                    else -> "이 훈련을 마친 뒤 다음 단원으로 이어갑니다. 좌우로 밀어도 이동할 수 있습니다."
                 },
                 color = ReaderInk,
                 fontSize = 15.sp,
@@ -712,7 +705,7 @@ private fun ConceptActions(
                     onClick = { onPreviousConcept?.invoke() },
                     enabled = onPreviousConcept != null,
                     modifier = Modifier.weight(1f)
-                ) { Text("← 이전 개념", color = ReaderInk) }
+                ) { Text("← 이전 단원", color = ReaderInk) }
 
                 if (!isLastConceptInChapter) {
                     val nextTag = if (isLastConceptInSection) "textbook_next_section" else "textbook_next_concept"
@@ -725,7 +718,7 @@ private fun ConceptActions(
                             contentColor = ReaderInk
                         )
                     ) {
-                        Text(if (isLastConceptInSection) "다음 Section →" else "다음 개념 →")
+                        Text(if (isLastConceptInSection) "다음 단원 →" else "다음 내용 →")
                     }
                 } else {
                     Button(
@@ -737,7 +730,7 @@ private fun ConceptActions(
                             contentColor = ReaderInk
                         )
                     ) {
-                        Text(if (readComplete) "읽기 완료 ✓" else "Chapter 읽기 완료")
+                        Text(if (readComplete) "읽기 완료 ✓" else "이 장 읽기 완료")
                     }
                 }
             }
@@ -756,12 +749,12 @@ private fun ConceptActions(
                         onClick = { onPreviousChapter?.invoke() },
                         enabled = onPreviousChapter != null && chapter.number > 1,
                         modifier = Modifier.weight(1f)
-                    ) { Text("이전 Chapter", color = ReaderInk) }
+                    ) { Text("이전 장", color = ReaderInk) }
                     OutlinedButton(
                         onClick = { onNextChapter?.invoke() },
                         enabled = onNextChapter != null,
                         modifier = Modifier.weight(1f).testTag("textbook_next_chapter")
-                    ) { Text("다음 Chapter", color = ReaderInk) }
+                    ) { Text("다음 장", color = ReaderInk) }
                 }
             }
         }

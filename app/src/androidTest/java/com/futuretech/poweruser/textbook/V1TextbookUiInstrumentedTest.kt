@@ -15,23 +15,25 @@ class V1TextbookUiInstrumentedTest {
     @get:Rule val compose = createAndroidComposeRule<MainActivity>()
 
     @Test
-    fun appLaunchesIntoLearningHomeThenOpensCurriculumAndConceptReader() {
+    fun appLaunchesIntoLearningHomeThenOpensCurriculumAndSectionReader() {
         assertTagExists("learning_home")
         assertTagExists("home_curriculum")
         compose.onNodeWithTag("home_curriculum").performClick()
         compose.waitForIdle()
 
         assertTagExists("curriculum_overview_root")
-        compose.onNodeWithTag("curriculum_chapter_count").assertTextContains("9권 · 134 Chapter")
+        compose.onNodeWithTag("curriculum_chapter_count").assertTextContains("9권 · 134장")
         assertTagExists("curriculum_chapter_V1-C01")
         compose.onNodeWithTag("curriculum_chapter_V1-C01").performClick()
+        compose.waitForIdle()
 
         assertTagExists("v1_textbook_root")
         assertTagExists("textbook_top_bar")
         assertTagExists("textbook_section_strip")
         assertTagExists("textbook_reader")
         assertTagExists("textbook_section_progress")
-        assertTagExists("textbook_concept_progress")
+        assertTagExists("textbook_section_title")
+        assertTagAbsent("textbook_concept_progress")
         assertNodeWithinRoot("textbook_top_bar", "v1_textbook_root")
 
         assertTextAbsent("AI CODING OS")
@@ -43,6 +45,11 @@ class V1TextbookUiInstrumentedTest {
     private fun assertTagExists(tag: String) {
         val nodes = compose.onAllNodesWithTag(tag).fetchSemanticsNodes()
         assertTrue("Expected learner UI tag to exist: $tag", nodes.isNotEmpty())
+    }
+
+    private fun assertTagAbsent(tag: String) {
+        val nodes = compose.onAllNodesWithTag(tag).fetchSemanticsNodes()
+        assertTrue("Learner UI tag must be absent: $tag", nodes.isEmpty())
     }
 
     private fun assertNodeWithinRoot(nodeTag: String, rootTag: String) {
