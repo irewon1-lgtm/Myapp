@@ -24,6 +24,7 @@ import com.futuretech.poweruser.education.LearningPracticePolicy
 import com.futuretech.poweruser.education.LearningSessionMode
 import com.futuretech.poweruser.education.MasteryEvidence
 import com.futuretech.poweruser.ui.BeginnerStockScoreProjectScreen
+import com.futuretech.poweruser.ui.ChapterChallengeScreen
 import com.futuretech.poweruser.ui.CurriculumOverviewScreen
 import com.futuretech.poweruser.ui.CustomProjectBuilderScreen
 import com.futuretech.poweruser.ui.FocusedPracticeScreen
@@ -64,8 +65,9 @@ fun AppNavigation() {
     val scope = rememberCoroutineScope()
     val progressList by repository.getAllProgress().collectAsState(initial = emptyList())
     val errorNotesList by repository.getAllErrorNotes().collectAsState(initial = emptyList())
+    val completedLessonIds = progressList.filter { it.isCompleted }.map { it.lessonId }.toSet()
 
-    fun addReviewItem(id: String) {
+    fun addReviewItem(id: String, maxHintLevel: Int = 0) {
         scope.launch {
             val lesson = CurriculumDataRepository.lessonById(id) ?: return@launch
             repository.addSpacedRepetitionItem(
@@ -76,6 +78,10 @@ fun AppNavigation() {
                 analogy = lesson.expectedOutcome,
                 example = lesson.codeSample,
                 comparison = lesson.aiHallucinationQuestion
+            )
+            repository.scheduleReviewAfterLearning(
+                conceptId = lesson.lessonId,
+                maxHintLevel = maxHintLevel
             )
         }
     }
@@ -93,7 +99,7 @@ fun AppNavigation() {
                 isCompleted = true
             )
         }
-        addReviewItem(id)
+        addReviewItem(id, maxHintLevel = 0)
     }
 
     fun recordMasteryCompletion(
@@ -129,6 +135,10 @@ fun AppNavigation() {
                     example = lesson.codeSample,
                     comparison = lesson.aiHallucinationQuestion
                 )
+                repository.scheduleReviewAfterLearning(
+                    conceptId = lesson.lessonId,
+                    maxHintLevel = evidence.maxHintLevel
+                )
             }
         }
     }
@@ -142,7 +152,7 @@ fun AppNavigation() {
         }
         composable("textbook_v1") {
             V1TextbookScreen(
-                practiceCompletedIds = progressList.filter { it.isCompleted }.map { it.lessonId }.toSet(),
+                practiceCompletedIds = completedLessonIds,
                 onNavigateBack = { navController.navigate("curriculum") },
                 onStartPractice = { lessonId -> navController.navigate("textbook_v1/practice/$lessonId") }
             )
@@ -150,7 +160,7 @@ fun AppNavigation() {
         composable("textbook_v1/{chapterId}") { backStackEntry ->
             val chapterId = backStackEntry.arguments?.getString("chapterId") ?: "V1-C01"
             V1TextbookScreen(
-                practiceCompletedIds = progressList.filter { it.isCompleted }.map { it.lessonId }.toSet(),
+                practiceCompletedIds = completedLessonIds,
                 onNavigateBack = { navController.popBackStack() },
                 onStartPractice = { lessonId -> navController.navigate("textbook_v1/practice/$lessonId") },
                 initialChapterId = chapterId
@@ -182,12 +192,11 @@ fun AppNavigation() {
         }
         composable("lesson/challenge/{lessonId}") { backStackEntry ->
             val lessonId = backStackEntry.arguments?.getString("lessonId") ?: "B01-01"
-            FocusedPracticeScreen(
+            ChapterChallengeScreen(
                 lessonId = lessonId,
-                mode = LearningSessionMode.CHALLENGE,
+                errorNotes = errorNotesList,
                 onNavigateBack = { navController.popBackStack() },
-                onSwitchMode = { navController.popBackStack() },
-                onReviewLecture = {},
+                onSwitchToPractice = { navController.popBackStack() },
                 onMasteryCompleted = ::recordMasteryCompletion,
                 onRecordErrorNote = { type, code, msg, guide ->
                     scope.launch { repository.recordErrorNote(type, code, msg, guide) }
@@ -210,12 +219,11 @@ fun AppNavigation() {
         }
         composable("textbook_v1/challenge/{lessonId}") { backStackEntry ->
             val lessonId = backStackEntry.arguments?.getString("lessonId") ?: "TB1-C01"
-            FocusedPracticeScreen(
+            ChapterChallengeScreen(
                 lessonId = lessonId,
-                mode = LearningSessionMode.CHALLENGE,
+                errorNotes = errorNotesList,
                 onNavigateBack = { navController.popBackStack() },
-                onSwitchMode = { navController.popBackStack() },
-                onReviewLecture = {},
+                onSwitchToPractice = { navController.popBackStack() },
                 onMasteryCompleted = ::recordMasteryCompletion,
                 onRecordErrorNote = { type, code, msg, guide ->
                     scope.launch { repository.recordErrorNote(type, code, msg, guide) }
@@ -229,10 +237,16 @@ fun AppNavigation() {
             PersonalErrorNotesScreen(errorNotesList = errorNotesList, onNavigateBack = { navController.popBackStack() })
         }
         composable("beginner_project") {
-            BeginnerStockScoreProjectScreen(onNavigateBack = { navController.popBackStack() })
+            BeginnerStockScoreProjectScreen(
+                completedLessonIds = completedLessonIds,
+                onNavigateBack = { navController.popBackStack() }
+            )
         }
         composable("intermediate_project") {
-            IntermediateStockResearchProjectScreen(onNavigateBack = { navController.popBackStack() })
+            IntermediateStockResearchProjectScreen(
+                completedLessonIds = completedLessonIds,
+                onNavigateBack = { navController.popBackStack() }
+            )
         }
         composable("custom_project") {
             CustomProjectBuilderScreen(onNavigateBack = { navController.popBackStack() })
