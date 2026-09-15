@@ -57,7 +57,7 @@ fun AiLearningPanel(
         Column(modifier = Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
             Text("AI 학습 모드", fontSize = 15.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.primary)
             Text(
-                "AI가 대신 공부하지 않도록 모드별 권한을 분리했습니다.",
+                "혼자 풀기와 3단계 힌트는 무료 로컬 처리입니다. 외부 AI 호출은 ‘AI와 같이’에서 사용자가 직접 실행할 때만 발생합니다.",
                 fontSize = 12.sp,
                 color = MaterialTheme.colorScheme.onSurfaceVariant
             )
@@ -96,15 +96,12 @@ fun AiLearningPanel(
                 }
 
                 AiLearningMode.HINT -> {
-                    Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                        Text(
-                            if (hasKey) "실제 AI 연결 준비됨" else "API Key 없음 · 로컬 3단계 힌트로 안전 대체",
-                            modifier = Modifier.weight(1f).testTag("ai_key_status"),
-                            fontSize = 12.sp,
-                            color = if (hasKey) MaterialTheme.colorScheme.secondary else MaterialTheme.colorScheme.onSurfaceVariant
-                        )
-                        TextButton(onClick = { showKeyDialog = true }) { Text(if (hasKey) "AI 설정" else "AI 연결") }
-                    }
+                    Text(
+                        "무료 로컬 힌트 · 외부 AI 호출 0회 · API Key 불필요",
+                        modifier = Modifier.fillMaxWidth().testTag("ai_key_status"),
+                        fontSize = 12.sp,
+                        color = MaterialTheme.colorScheme.secondary
+                    )
                     Button(
                         onClick = {
                             if (hintLevel >= 3 || busy) return@Button
@@ -132,7 +129,7 @@ fun AiLearningPanel(
                                     practiceAttempted = practiceAttempted
                                 )
                                 response = coordinator.run(
-                                    keyStorage.getApiKey(),
+                                    null,
                                     request,
                                     Triple(lesson.hintLevel1, lesson.hintLevel2, lesson.hintLevel3)
                                 )
@@ -143,7 +140,7 @@ fun AiLearningPanel(
                         modifier = Modifier.fillMaxWidth().testTag("ai_hint_request")
                     ) {
                         if (busy) CircularProgressIndicator(modifier = Modifier.size(18.dp), strokeWidth = 2.dp)
-                        else Text(if (hintLevel == 0) "AI/로컬 힌트 1 받기" else "다음 힌트 ${hintLevel + 1}/3")
+                        else Text(if (hintLevel == 0) "무료 힌트 1 받기" else "무료 힌트 ${hintLevel + 1}/3")
                     }
                     if (hintLevel >= 3) Text("3단계 힌트를 모두 사용했습니다. 이제 직접 수정·실행해 보세요.", fontSize = 12.sp)
                 }
@@ -151,7 +148,7 @@ fun AiLearningPanel(
                 AiLearningMode.COLLABORATE -> {
                     Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                         Text(
-                            if (hasKey) "실제 AI 협업 연결 준비됨" else "실제 AI 협업에는 API Key가 필요합니다.",
+                            if (hasKey) "실제 AI 협업 연결 준비됨 · 호출 시 비용 발생 가능" else "실제 AI 협업에는 API Key가 필요합니다.",
                             modifier = Modifier.weight(1f).testTag("ai_key_status"),
                             fontSize = 12.sp
                         )
@@ -162,7 +159,7 @@ fun AiLearningPanel(
                         onValueChange = { question = it; response = null },
                         modifier = Modifier.fillMaxWidth().testTag("ai_collab_question"),
                         label = { Text("AI와 같이 풀 질문") },
-                        supportingText = { Text("API Key·비밀번호·토큰은 입력하지 마세요. 최대 4,000자") },
+                        supportingText = { Text("API Key·비밀번호·토큰·주민번호·전화번호·이메일은 입력하지 마세요. 최대 4,000자") },
                         minLines = 3,
                         maxLines = 8
                     )
@@ -218,7 +215,7 @@ fun AiLearningPanel(
                         modifier = Modifier.fillMaxWidth().testTag("ai_collab_request")
                     ) {
                         if (busy) CircularProgressIndicator(modifier = Modifier.size(18.dp), strokeWidth = 2.dp)
-                        else Text("AI와 같이 풀기")
+                        else Text("외부 AI로 같이 풀기")
                     }
                 }
             }
@@ -226,7 +223,7 @@ fun AiLearningPanel(
             response?.let { result ->
                 HorizontalDivider()
                 val title = when {
-                    result.success && result.usedLocalFallback -> "연결 실패/미연결 → 로컬 힌트"
+                    result.success && result.usedLocalFallback -> "무료 로컬 힌트"
                     result.success -> "AI 응답"
                     else -> "AI 요청 실패"
                 }
@@ -279,11 +276,16 @@ private fun AiKeyDialog(
         text = {
             Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
                 Text(
-                    "개인 API Key를 입력하면 실제 AI 튜터 요청이 전송됩니다. 사용량에 따라 API 비용이 발생할 수 있습니다.",
+                    "개인 API Key를 입력하면 ‘AI와 같이’에서만 실제 AI 튜터 요청이 전송됩니다. 무료 힌트는 Key가 있어도 외부 AI를 호출하지 않습니다.",
                     fontSize = 13.sp
                 )
                 Text(
-                    "Key는 앱 바이너리에 넣지 않고 Android Keystore 기반 암호화 저장소에 보관합니다. 학습 질문과 현재 코드/답안은 AI 제공자에게 전송될 수 있으므로 개인정보·비밀번호·토큰을 넣지 마세요.",
+                    "실제 AI 협업 사용량에 따라 API 비용이 발생할 수 있습니다. Key는 앱 바이너리에 넣지 않고 Android Keystore 기반 암호화 저장소에 보관합니다.",
+                    fontSize = 12.sp,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+                Text(
+                    "학습 질문과 현재 코드/답안은 AI 제공자에게 전송될 수 있으므로 개인정보·비밀번호·토큰을 넣지 마세요. 앱 삭제 후 재설치 시 저장 Key는 다시 입력해야 할 수 있습니다.",
                     fontSize = 12.sp,
                     color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
