@@ -13,6 +13,7 @@ on:
       - 'gradle.properties'
       - 'package.json'
       - 'tools/build_ts_runtime.mjs'
+      - 'tools/final_release_smoke.sh'
       - 'test.keystore'
   workflow_dispatch:
 
@@ -88,24 +89,7 @@ jobs:
           arch: x86_64
           profile: pixel_6
           disable-animations: true
-          script: |
-            set -e
-            adb logcat -c
-            adb install -r final-dist/FutureTechPowerUser_v1.0.0_FINAL.apk
-            adb shell am force-stop com.futuretech.poweruser
-            adb shell am start -W -n com.futuretech.poweruser/.MainActivity | tee final-dist/launch_smoke.txt
-            sleep 3
-            PID="$(adb shell pidof com.futuretech.poweruser | tr -d '\r' || true)"
-            if [ -z "$PID" ]; then
-              echo "PROCESS_EXITED_AFTER_LAUNCH" | tee -a final-dist/launch_smoke.txt
-              adb logcat -d -v threadtime > final-dist/logcat_full.txt || true
-              grep -E -i 'FATAL EXCEPTION|AndroidRuntime|futuretech|Process: com.futuretech.poweruser|Exception|Error' final-dist/logcat_full.txt | tail -n 250 > final-dist/logcat_crash_excerpt.txt || true
-              cat final-dist/logcat_crash_excerpt.txt || true
-              exit 1
-            fi
-            echo "PID=$PID" | tee -a final-dist/launch_smoke.txt
-            adb shell dumpsys package com.futuretech.poweruser | grep -E 'versionCode|versionName' | head -n 4 | tee -a final-dist/launch_smoke.txt
-            adb logcat -d -v threadtime > final-dist/logcat_full.txt || true
+          script: bash tools/final_release_smoke.sh
 
       - name: Upload final signed APK and diagnostics
         if: always()
