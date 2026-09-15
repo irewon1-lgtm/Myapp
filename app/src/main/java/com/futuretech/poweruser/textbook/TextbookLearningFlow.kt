@@ -35,78 +35,38 @@ data class LearningConcept(
 )
 
 /**
- * Item 4-6 presentation layer.
+ * Textbook-first presentation layer.
  *
- * The 4-7 minute Section produced by [TextbookSectioner] remains intact as the curriculum unit.
- * This class only divides that Section into focused concept pages and attaches one low-stakes
- * retrieval problem to each page. Source markdown and the existing runtime/practice engine are
- * deliberately left untouched.
+ * A 4-7 minute [TextbookSection] is the learner-facing page. The complete section content is kept
+ * together so explanation, examples, code, and worked examples stay visible before assessment.
+ * Exactly one low-stakes retrieval problem is attached at the end of the section. This avoids the
+ * previous regression where every small concept chunk became a problem-heavy page.
  */
 object TextbookLearningFlow {
-    const val MAX_BLOCKS_PER_CONCEPT = 6
+    /** Kept for source compatibility with older tests/tools; section pages are no longer chunked. */
+    const val MAX_BLOCKS_PER_CONCEPT = 2147483647
 
     fun buildConcepts(
         chapterId: String,
         section: TextbookSection,
         lesson: LessonContent
     ): List<LearningConcept> {
-        val rawConcepts = splitAtConceptHeadings(section)
-        val bounded = rawConcepts.flatMap { (title, blocks) ->
-            blocks.chunked(MAX_BLOCKS_PER_CONCEPT).mapIndexed { chunkIndex, chunk ->
-                val suffix = if (chunkIndex == 0) "" else " · 계속 ${chunkIndex + 1}"
-                "$title$suffix" to chunk
-            }
-        }.filter { it.second.isNotEmpty() }
+        if (section.blocks.isEmpty()) return emptyList()
 
-        val safeConcepts = if (bounded.isEmpty()) {
-            listOf(section.title to section.blocks.take(MAX_BLOCKS_PER_CONCEPT))
-        } else {
-            bounded
-        }
-
-        return safeConcepts.mapIndexed { index, (title, blocks) ->
-            val typeIndex = (section.index * 3 + index) % LearningProblemType.entries.size
-            val type = LearningProblemType.entries[typeIndex]
+        val type = LearningProblemType.entries[section.index % LearningProblemType.entries.size]
+        return listOf(
             LearningConcept(
-                id = "${section.id}-C${(index + 1).toString().padStart(2, '0')}",
-                index = index,
-                title = title.ifBlank { section.title },
-                blocks = blocks,
+                id = "${section.id}-C01",
+                index = 0,
+                title = section.title,
+                blocks = section.blocks,
                 problem = problemFor(
-                    problemId = "$chapterId-${section.id}-P${(index + 1).toString().padStart(2, '0')}",
+                    problemId = "$chapterId-${section.id}-P01",
                     lesson = lesson,
                     type = type
                 )
             )
-        }
-    }
-
-    private fun splitAtConceptHeadings(section: TextbookSection): List<Pair<String, List<TextbookBlock>>> {
-        val result = mutableListOf<Pair<String, List<TextbookBlock>>>()
-        var title = section.title
-        var current = mutableListOf<TextbookBlock>()
-
-        fun hasSubstance(): Boolean = current.any { block ->
-            block !is TextbookBlock.Heading && block != TextbookBlock.Divider
-        }
-
-        fun flush() {
-            if (current.isNotEmpty()) {
-                result += title to current.toList()
-                current = mutableListOf()
-            }
-        }
-
-        section.blocks.forEach { block ->
-            val isConceptHeading = block is TextbookBlock.Heading && block.level in 3..4
-            if (isConceptHeading && hasSubstance()) {
-                flush()
-                title = (block as TextbookBlock.Heading).text
-            }
-            current += block
-        }
-        flush()
-        return result
+        )
     }
 
     private fun problemFor(
