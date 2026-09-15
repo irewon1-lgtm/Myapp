@@ -6,6 +6,9 @@ import androidx.compose.ui.test.onAllNodesWithTag
 import androidx.compose.ui.test.onAllNodesWithText
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.performClick
+import androidx.compose.ui.test.performTouchInput
+import androidx.compose.ui.test.swipeLeft
+import androidx.compose.ui.test.swipeRight
 import com.futuretech.poweruser.MainActivity
 import org.junit.Assert.assertTrue
 import org.junit.Rule
@@ -16,10 +19,7 @@ class V1TextbookUiInstrumentedTest {
 
     @Test
     fun appLaunchesIntoCurriculumThenOpensConceptFirstSectionReader() {
-        assertTagExists("curriculum_overview_root")
-        compose.onNodeWithTag("curriculum_chapter_count").assertTextContains("9권 · 134 Chapter")
-        assertTagExists("curriculum_chapter_V1-C01")
-        compose.onNodeWithTag("curriculum_chapter_V1-C01").performClick()
+        openFirstChapter()
 
         assertTagExists("v1_textbook_root")
         assertTagExists("textbook_section_strip")
@@ -31,6 +31,28 @@ class V1TextbookUiInstrumentedTest {
         assertTextAbsent("KNOWLEDGE GRAPH")
         assertTextAbsent("LEARNING MATRIX")
         assertTextAbsent(">_ LAB")
+    }
+
+    @Test
+    fun textbookReaderSupportsHorizontalSwipeForwardAndBack() {
+        openFirstChapter()
+        compose.onNodeWithTag("textbook_concept_progress").assertTextContains("개념 1/")
+
+        compose.onNodeWithTag("textbook_reader").performTouchInput { swipeLeft() }
+        compose.waitForIdle()
+        compose.onNodeWithTag("textbook_concept_progress").assertTextContains("개념 2/")
+
+        compose.onNodeWithTag("textbook_reader").performTouchInput { swipeRight() }
+        compose.waitForIdle()
+        compose.onNodeWithTag("textbook_concept_progress").assertTextContains("개념 1/")
+    }
+
+    private fun openFirstChapter() {
+        assertTagExists("curriculum_overview_root")
+        compose.onNodeWithTag("curriculum_chapter_count").assertTextContains("9권 · 134 Chapter")
+        assertTagExists("curriculum_chapter_V1-C01")
+        compose.onNodeWithTag("curriculum_chapter_V1-C01").performClick()
+        compose.waitForIdle()
     }
 
     private fun assertTagExists(tag: String) {
