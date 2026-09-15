@@ -74,7 +74,7 @@ fun AppNavigation() {
 
     NavHost(navController = navController, startDestination = "textbook_v1") {
         composable("textbook_v1") {
-            V1TextbookScreen(
+            V1LearningFlowScreen(
                 practiceCompletedIds = progressList.filter { it.isCompleted }.map { it.lessonId }.toSet(),
                 onNavigateBack = { navController.navigate("home") },
                 onStartPractice = { lessonId -> navController.navigate("textbook_v1/practice/$lessonId") }
