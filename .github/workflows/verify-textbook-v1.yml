@@ -5,6 +5,7 @@ on:
     branches:
       - feat/v1-tablet-textbook
       - rewrite/v1-book-beginner-depth
+      - rewrite/v1-workbook-depth
       - main
   workflow_dispatch:
 
