@@ -17,7 +17,6 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -42,7 +41,7 @@ private val CurriculumSoft = Color(0xFF171C24)
 @Composable
 fun CurriculumOverviewScreen(
     onOpenChapter: (String) -> Unit,
-    onOpenLearningHome: () -> Unit
+    @Suppress("UNUSED_PARAMETER") onOpenLearningHome: () -> Unit
 ) {
     Surface(
         modifier = Modifier.fillMaxSize().testTag("curriculum_overview_root"),
@@ -57,35 +56,19 @@ fun CurriculumOverviewScreen(
                     modifier = Modifier.fillMaxWidth().padding(bottom = 10.dp),
                     verticalArrangement = Arrangement.spacedBy(9.dp)
                 ) {
-                    Row(
-                        modifier = Modifier.fillMaxWidth(),
-                        horizontalArrangement = Arrangement.SpaceBetween,
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        Column(Modifier.weight(1f)) {
-                            Text(
-                                text = "코딩 완전과정",
-                                color = CurriculumText,
-                                fontSize = 30.sp,
-                                lineHeight = 36.sp,
-                                fontWeight = FontWeight.Bold
-                            )
-                            Text(
-                                text = "완전 초보 → 설계·검증 가능한 개발자",
-                                color = CurriculumAccent,
-                                fontSize = 15.sp,
-                                fontWeight = FontWeight.SemiBold
-                            )
-                        }
-                        Spacer(Modifier.width(12.dp))
-                        OutlinedButton(
-                            onClick = onOpenLearningHome,
-                            modifier = Modifier.testTag("learning_home_button"),
-                            border = BorderStroke(1.dp, CurriculumBorder)
-                        ) {
-                            Text("학습 기록", color = CurriculumText, fontWeight = FontWeight.SemiBold)
-                        }
-                    }
+                    Text(
+                        text = "코딩 완전과정",
+                        color = CurriculumText,
+                        fontSize = 30.sp,
+                        lineHeight = 36.sp,
+                        fontWeight = FontWeight.Bold
+                    )
+                    Text(
+                        text = "완전 초보 → 설계·검증 가능한 개발자",
+                        color = CurriculumAccent,
+                        fontSize = 15.sp,
+                        fontWeight = FontWeight.SemiBold
+                    )
                     Text(
                         text = "TRACK 11개 · BLOCK → LESSON → 짧은 회상 → TRACK 실전",
                         modifier = Modifier.testTag("curriculum_chapter_count"),
