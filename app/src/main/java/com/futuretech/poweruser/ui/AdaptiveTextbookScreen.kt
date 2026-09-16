@@ -27,8 +27,8 @@ import com.futuretech.poweruser.textbook.V1TextbookCatalog
 import kotlinx.coroutines.launch
 
 /**
- * Item 23: reading stays a single centered book column on phone/tablet.
- * Chapter navigation is hidden in a temporary drawer instead of permanently consuming width.
+ * Reading stays a single centered book column on phone/tablet.
+ * TRACK navigation is hidden in a temporary drawer instead of permanently consuming width.
  */
 @Composable
 fun AdaptiveTextbookScreen(
@@ -54,7 +54,7 @@ fun AdaptiveTextbookScreen(
                     verticalArrangement = Arrangement.spacedBy(4.dp)
                 ) {
                     Text(
-                        text = "1권 목차",
+                        text = "11 TRACK 목차",
                         modifier = Modifier.padding(horizontal = 20.dp, vertical = 8.dp),
                         fontSize = 19.sp,
                         fontWeight = FontWeight.Bold
@@ -68,17 +68,17 @@ fun AdaptiveTextbookScreen(
                     Spacer(Modifier.height(8.dp))
                     HorizontalDivider()
                     Spacer(Modifier.height(6.dp))
-                    V1TextbookCatalog.chapters.forEach { chapter ->
+                    V1TextbookCatalog.chapters.forEach { track ->
                         NavigationDrawerItem(
                             label = {
                                 Text(
-                                    text = "${chapter.number}. ${chapter.title}",
+                                    text = "TRACK ${track.number.toString().padStart(2, '0')} · ${track.title}",
                                     maxLines = 2
                                 )
                             },
-                            selected = chapter.id == selectedChapterId,
+                            selected = track.id == selectedChapterId,
                             onClick = {
-                                selectedChapterId = chapter.id
+                                selectedChapterId = track.id
                                 scope.launch { drawerState.close() }
                             },
                             modifier = Modifier.padding(horizontal = 10.dp)
