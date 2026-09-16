@@ -29,7 +29,7 @@ class V1TextbookTabletUiInstrumentedTest {
     }
 
     @Test
-    fun galaxyTabSizedWindowUsesFocusedTrackLessonReader() {
+    fun galaxyTabSizedWindowUsesSinglePageBookReader() {
         val instrumentation = InstrumentationRegistry.getInstrumentation()
         val context = instrumentation.targetContext
         val config = context.resources.configuration
@@ -51,17 +51,23 @@ class V1TextbookTabletUiInstrumentedTest {
         }
 
         assertTagPresent("curriculum_overview_root")
+        assertTagPresent("curriculum_track_shelf")
         assertTagPresent("curriculum_chapter_V1-C01")
         compose.onNodeWithTag("curriculum_chapter_V1-C01").performClick()
         assertTagPresent("v1_textbook_root")
         assertTagPresent("textbook_section_strip")
         assertTagPresent("textbook_reader")
         assertTagPresent("textbook_section_progress")
+        assertTagPresent("textbook_lesson_cover")
+        assertTagPresent("textbook_page_indicator")
+        assertTagPresent("textbook_left_tap_zone")
+        assertTagPresent("textbook_right_tap_zone")
+        assertTagPresent("reader_toc_button")
         assertTagAbsent("textbook_concept_progress")
         assertTagAbsent("textbook_toc")
         assertTagAbsent("textbook_insight_rail")
 
-        Log.i(EVIDENCE_TAG, "READY_FOR_SCREENSHOT widthDp=$widthDp heightDp=$heightDp trackLessonReader=true")
+        Log.i(EVIDENCE_TAG, "READY_FOR_SCREENSHOT widthDp=$widthDp heightDp=$heightDp pagedBookReader=true")
         Thread.sleep(15_000)
         Log.i(EVIDENCE_TAG, "SCREENSHOT_WINDOW_COMPLETE")
     }
@@ -77,6 +83,6 @@ class V1TextbookTabletUiInstrumentedTest {
     }
 
     companion object {
-        const val EVIDENCE_TAG = "V2TrackTabletEvidence"
+        const val EVIDENCE_TAG = "V4BookReaderEvidence"
     }
 }
