@@ -88,14 +88,6 @@ private sealed interface V4ReaderPage {
     data object LessonEnd : V4ReaderPage
 }
 
-/**
- * Full-page e-book reader.
- *
- * Normal reading pages are non-scrolling and are paginated from actual Compose text measurement.
- * Width, density and fontScale therefore participate in layout instead of an approximate
- * characters-per-line / fixed-line-height formula. The chrome is deliberately thin so the content
- * display area consumes almost the entire reader viewport.
- */
 @Composable
 fun V4PagedBookScreen(
     practiceCompletedIds: Set<String>,
@@ -131,11 +123,7 @@ fun V4PagedBookScreen(
         modifier = Modifier.testTag("v1_textbook_root"),
         containerColor = BookShell,
         topBar = {
-            V4BookTopBar(
-                chapter = chapter,
-                onNavigateBack = onNavigateBack,
-                onOpenToc = onOpenToc
-            )
+            V4BookTopBar(chapter = chapter, onNavigateBack = onNavigateBack, onOpenToc = onOpenToc)
         }
     ) { scaffoldPadding ->
         val markdown = remember(chapter.id) {
@@ -157,10 +145,7 @@ fun V4PagedBookScreen(
         val concept = concepts.getOrNull(conceptIndex) ?: return@Scaffold
 
         Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(scaffoldPadding)
-                .background(BookShell)
+            modifier = Modifier.fillMaxSize().padding(scaffoldPadding).background(BookShell)
         ) {
             V4LessonStrip(
                 section = section,
@@ -248,17 +233,12 @@ private fun V4BookTopBar(
 ) {
     Surface(color = BookShell) {
         Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(BOOK_TOP_BAR_HEIGHT)
-                .padding(horizontal = 6.dp),
+            modifier = Modifier.fillMaxWidth().height(BOOK_TOP_BAR_HEIGHT).padding(horizontal = 6.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
             Text(
                 "‹ 서재",
-                modifier = Modifier
-                    .clickable(onClick = onNavigateBack)
-                    .padding(horizontal = 6.dp, vertical = 7.dp),
+                modifier = Modifier.clickable(onClick = onNavigateBack).padding(horizontal = 6.dp, vertical = 7.dp),
                 color = BookInk,
                 fontSize = 12.sp,
                 fontWeight = FontWeight.SemiBold
@@ -297,11 +277,7 @@ private fun V4BookTopBar(
 }
 
 @Composable
-private fun V4LessonStrip(
-    section: TextbookSection,
-    sectionCount: Int,
-    extraMinutes: Int
-) {
+private fun V4LessonStrip(section: TextbookSection, sectionCount: Int, extraMinutes: Int) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -325,11 +301,7 @@ private fun V4LessonStrip(
             fontSize = 10.sp,
             maxLines = 1
         )
-        Text(
-            "${section.estimatedMinutes + extraMinutes}분",
-            color = BookFaint,
-            fontSize = 9.sp
-        )
+        Text("${section.estimatedMinutes + extraMinutes}분", color = BookFaint, fontSize = 9.sp)
     }
     HorizontalDivider(color = BookRule)
 }
@@ -353,10 +325,7 @@ private fun V4BookReader(
     onNextTrack: (() -> Unit)?
 ) {
     BoxWithConstraints(
-        modifier = modifier
-            .fillMaxSize()
-            .background(BookShell)
-            .testTag("textbook_reader")
+        modifier = modifier.fillMaxSize().background(BookShell).testTag("textbook_reader")
     ) {
         val density = LocalDensity.current
         val textMeasurer = rememberTextMeasurer(cacheSize = 128)
@@ -385,9 +354,7 @@ private fun V4BookReader(
         val pages = remember(concept.id, measuredPages) {
             buildList<V4ReaderPage> {
                 add(V4ReaderPage.LessonCover)
-                measuredPages.forEach { measured ->
-                    add(V4ReaderPage.Content(measured.content, measured.utilization))
-                }
+                measuredPages.forEach { measured -> add(V4ReaderPage.Content(measured.content, measured.utilization)) }
                 add(V4ReaderPage.Recall)
                 add(V4ReaderPage.LessonEnd)
             }
@@ -421,10 +388,7 @@ private fun V4BookReader(
         Box(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(
-                    horizontal = BOOK_OUTER_HORIZONTAL_PADDING,
-                    vertical = BOOK_OUTER_VERTICAL_PADDING
-                )
+                .padding(horizontal = BOOK_OUTER_HORIZONTAL_PADDING, vertical = BOOK_OUTER_VERTICAL_PADDING)
                 .pointerInput(concept.id, pageIndex, pages.size) {
                     var total = 0f
                     detectHorizontalDragGestures(
@@ -442,10 +406,7 @@ private fun V4BookReader(
                 }
         ) {
             Surface(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .align(Alignment.Center)
-                    .testTag("textbook_page_surface"),
+                modifier = Modifier.fillMaxSize().align(Alignment.Center).testTag("textbook_page_surface"),
                 color = BookPaper,
                 shape = RoundedCornerShape(2.dp),
                 border = BorderStroke(1.dp, BookRule)
@@ -453,10 +414,7 @@ private fun V4BookReader(
                 Column(
                     modifier = Modifier
                         .fillMaxSize()
-                        .padding(
-                            horizontal = BOOK_PAGE_HORIZONTAL_PADDING,
-                            vertical = BOOK_PAGE_VERTICAL_PADDING
-                        )
+                        .padding(horizontal = BOOK_PAGE_HORIZONTAL_PADDING, vertical = BOOK_PAGE_VERTICAL_PADDING)
                 ) {
                     Box(modifier = Modifier.weight(1f).fillMaxWidth()) {
                         when (page) {
@@ -570,12 +528,7 @@ private fun V4LessonCoverPage(
         Spacer(Modifier.height(14.dp))
         HorizontalDivider(color = BookRule)
         Spacer(Modifier.height(12.dp))
-        Text(
-            chapter.summary,
-            color = BookMuted,
-            fontSize = 15.sp,
-            lineHeight = 24.sp
-        )
+        Text(chapter.summary, color = BookMuted, fontSize = 15.sp, lineHeight = 24.sp)
         Spacer(Modifier.height(12.dp))
         Row(horizontalArrangement = Arrangement.spacedBy(14.dp)) {
             Text("${section.index + 1}/$sectionCount", color = BookFaint, fontSize = 10.sp)
@@ -634,7 +587,7 @@ private fun V4BookBlock(block: TextbookBlock, modifier: Modifier) {
             block.items.forEachIndexed { index, item ->
                 Row(modifier = Modifier.fillMaxWidth(), verticalAlignment = Alignment.Top) {
                     Text(
-                        if (block.ordered) "${index + 1}." else "•",
+                        if (block.ordered) "${block.startNumber + index}." else "•",
                         modifier = Modifier.width(28.dp),
                         color = BookAccent,
                         fontSize = 14.sp,
@@ -677,7 +630,10 @@ private fun V4BookBlock(block: TextbookBlock, modifier: Modifier) {
             }
         }
 
-        TextbookBlock.Divider -> HorizontalDivider(modifier = modifier.padding(vertical = 3.dp), color = BookRule)
+        TextbookBlock.Divider -> HorizontalDivider(
+            modifier = modifier.padding(vertical = 3.dp),
+            color = BookRule
+        )
     }
 }
 
