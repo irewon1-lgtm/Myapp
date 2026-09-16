@@ -80,10 +80,15 @@ class V1EditorialQualityTest {
                 duplicates.isEmpty()
             )
 
-            val placeholders = listOf("TODO", "TBD", "LOREM", "나중에 작성", "준비중")
+            // Match actual author placeholders, not legitimate identifiers such as Todo/todos.
+            val placeholderPatterns = listOf(
+                Regex("(?im)^\\s*(TODO|TBD|LOREM)(?:\\s|:|$)"),
+                Regex("나중에 작성", RegexOption.IGNORE_CASE),
+                Regex("준비중", RegexOption.IGNORE_CASE)
+            )
             assertTrue(
                 "${track.id}: placeholder text found",
-                placeholders.none { marker -> text.contains(marker, ignoreCase = true) }
+                placeholderPatterns.none { it.containsMatchIn(text) }
             )
         }
     }
