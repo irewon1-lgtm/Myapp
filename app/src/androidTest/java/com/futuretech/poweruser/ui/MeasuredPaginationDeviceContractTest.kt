@@ -8,7 +8,6 @@ import androidx.compose.ui.test.junit4.createComposeRule
 import com.futuretech.poweruser.textbook.TextbookBlock
 import java.util.concurrent.atomic.AtomicReference
 import org.junit.Assert.assertEquals
-import org.junit.Assert.assertNotNull
 import org.junit.Assert.assertTrue
 import org.junit.Rule
 import org.junit.Test
@@ -44,7 +43,6 @@ class MeasuredPaginationDeviceContractTest {
 
         composeRule.waitForIdle()
         val pages = result.get()
-        assertNotNull(pages)
         assertTrue(pages.isNotEmpty())
         assertTrue("Measured pages must not overflow", pages.all { it.usedHeightPx <= it.availableHeightPx })
 
@@ -92,6 +90,45 @@ class MeasuredPaginationDeviceContractTest {
         assertSemanticContentPreserved(blocks, pages.flatMap { it.content.blocks })
     }
 
+    @Test
+    fun orderedListContinuationKeepsAuthoredNumberingAcrossMeasuredPages() {
+        val result = AtomicReference<List<MeasuredTextbookPageComposer.ResultPage>>()
+        val items = (0 until 36).map { index ->
+            "단계 ${7 + index}: 이 항목은 페이지가 나뉘어도 작성자가 부여한 순서를 유지해야 한다."
+        }
+        val block = TextbookBlock.BulletList(items = items, ordered = true, startNumber = 7)
+
+        composeRule.setContent {
+            val density = LocalDensity.current
+            val measurer = rememberTextMeasurer(cacheSize = 64)
+            val pages = MeasuredTextbookPageComposer.paginate(
+                blocks = listOf(block),
+                contentWidthPx = with(density) { 300.dp.roundToPx() },
+                contentHeightPx = with(density) { 330.dp.roundToPx() },
+                density = density,
+                textMeasurer = measurer
+            )
+            SideEffect { result.set(pages) }
+        }
+
+        composeRule.waitForIdle()
+        val listFragments = result.get().flatMap { page ->
+            page.content.blocks.filterIsInstance<TextbookBlock.BulletList>()
+        }
+        assertTrue("Test must force an actual ordered-list page split", listFragments.size >= 2)
+
+        var expectedStart = 7
+        val reconstructedItems = mutableListOf<String>()
+        listFragments.forEach { fragment ->
+            assertTrue(fragment.ordered)
+            assertEquals(expectedStart, fragment.startNumber)
+            reconstructedItems += fragment.items
+            expectedStart += fragment.items.size
+        }
+        assertEquals(items, reconstructedItems)
+        assertEquals(43, expectedStart)
+    }
+
     private fun mixedStressBlocks(): List<TextbookBlock> = listOf(
         TextbookBlock.Heading(2, "주소가 보인다고 물리 메모리 주소인 것은 아니다"),
         TextbookBlock.Paragraph(
@@ -132,38 +169,33 @@ println(encoded.joinToString(" ") { "%02x".format(it) })"""
     )
 
     /**
-     * Splitting is allowed, reordering or dropping is not. Normalize only whitespace introduced at
-     * split boundaries so the semantic sequence can be compared without requiring identical block
-     * boundaries.
+     * Splitting is allowed, reordering or dropping is not. Repeated table headers on continuation
+     * pages are presentation metadata, so row payload is compared independently while every
+     * continuation table must keep one of the original authored header sets.
      */
     private fun assertSemanticContentPreserved(
         original: List<TextbookBlock>,
         reconstructed: List<TextbookBlock>
     ) {
-        fun canonical(blocks: List<TextbookBlock>): String = blocks.joinToString("\n") { block ->
-            when (block) {
-                is TextbookBlock.Heading -> "H${block.level}:${block.text}"
-                is TextbookBlock.Paragraph -> "P:${block.text}"
-                is TextbookBlock.BulletList -> "L:${block.items.joinToString("|")}"
-                is TextbookBlock.Code -> "C:${block.language}:${block.text}"
-                is TextbookBlock.Table -> "T:${block.headers.joinToString("|")}:${block.rows.flatten().joinToString("|")}"
-                TextbookBlock.Divider -> "D"
-            }
-        }.replace(Regex("\\s+"), " ").trim()
+        val originalTableHeaders = original.filterIsInstance<TextbookBlock.Table>().map { it.headers }.toSet()
+        val reconstructedTables = reconstructed.filterIsInstance<TextbookBlock.Table>()
+        assertTrue(
+            "Every continued table must preserve an authored header",
+            reconstructedTables.all { it.headers in originalTableHeaders }
+        )
 
-        // Block splitting changes P:/L:/C:/T: markers, so compare content payload as a second pass.
         fun payload(blocks: List<TextbookBlock>): String = blocks.joinToString(" ") { block ->
             when (block) {
                 is TextbookBlock.Heading -> block.text
                 is TextbookBlock.Paragraph -> block.text
                 is TextbookBlock.BulletList -> block.items.joinToString(" ")
                 is TextbookBlock.Code -> block.text
-                is TextbookBlock.Table -> (block.headers + block.rows.flatten()).joinToString(" ")
+                is TextbookBlock.Table -> block.rows.flatten().joinToString(" ")
                 TextbookBlock.Divider -> ""
             }
         }.replace(Regex("\\s+"), " ").trim()
 
-        assertTrue(canonical(original).isNotBlank())
+        assertTrue(payload(original).isNotBlank())
         assertEquals(payload(original), payload(reconstructed))
     }
 }
