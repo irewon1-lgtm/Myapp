@@ -37,13 +37,16 @@ internal data class ExpertDepthPack(
 internal fun expertPack(sectionId: String, vararg blocks: TextbookBlock) =
     ExpertDepthPack(sectionId, blocks.toList())
 
-internal fun depthTitle(text: String) = TextbookBlock.Heading(3, text)
-internal fun depthHeading(text: String) = TextbookBlock.Heading(4, text)
-internal fun depthParagraph(text: String) = TextbookBlock.Paragraph(text.trim())
+private fun cleanEditorialText(text: String): String =
+    text.replace("\\\"", "\"")
+
+internal fun depthTitle(text: String) = TextbookBlock.Heading(3, cleanEditorialText(text))
+internal fun depthHeading(text: String) = TextbookBlock.Heading(4, cleanEditorialText(text))
+internal fun depthParagraph(text: String) = TextbookBlock.Paragraph(cleanEditorialText(text.trim()))
 internal fun depthCode(text: String, language: String = "text") =
-    TextbookBlock.Code(language, text.trimIndent().trim())
+    TextbookBlock.Code(language, cleanEditorialText(text.trimIndent().trim()))
 internal fun depthBullets(vararg items: String) =
-    TextbookBlock.BulletList(items.map(String::trim), ordered = false)
+    TextbookBlock.BulletList(items.map { cleanEditorialText(it.trim()) }, ordered = false)
 
 /**
  * V4 is not a recap layer. It only adds knowledge materially deeper than the V3 authored lesson:
