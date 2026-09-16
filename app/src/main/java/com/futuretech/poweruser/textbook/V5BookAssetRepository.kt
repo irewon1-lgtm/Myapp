@@ -34,7 +34,9 @@ data class V5SectionEvidence(
  * Loads exactly one V5 part at a time.
  *
  * Large books never become one track-sized String. A source map is validated independently for the
- * current part so learner-facing prose cannot silently reference an unknown evidence anchor.
+ * current part and is bound one-to-one, in order, to every learner-facing H2 CHAPTER. This prevents
+ * an author from dropping a token source-map file beside prose while leaving whole chapters without
+ * evidence coverage.
  */
 class V5BookAssetRepository(
     private val context: Context,
@@ -58,6 +60,7 @@ class V5BookAssetRepository(
 
     fun loadSourceMap(part: V5BookPartRef): V5PartSourceMap {
         validateRelativeAssetPath(part.sourceMapPath)
+        validateRelativeAssetPath(part.assetPath)
         val map = context.assets.open(part.sourceMapPath).bufferedReader().use { reader ->
             gson.fromJson(reader, V5PartSourceMap::class.java)
         }
@@ -67,12 +70,27 @@ class V5BookAssetRepository(
         require(map.sections.map { it.sectionId }.distinct().size == map.sections.size) {
             "Duplicate source-map section ids in ${part.id}"
         }
-        map.sections.forEach { evidence ->
-            require(evidence.sectionId.startsWith("${part.id}-")) {
-                "Section ${evidence.sectionId} is outside part ${part.id}"
+
+        val markdown = context.assets.open(part.assetPath).bufferedReader().use { it.readText() }
+        val chapterHeadings = TextbookMarkdownParser.parse(markdown)
+            .filterIsInstance<TextbookBlock.Heading>()
+            .filter { it.level == 2 && it.text.startsWith("CHAPTER ") }
+
+        require(chapterHeadings.isNotEmpty()) { "${part.id} has no learner-facing H2 CHAPTER headings" }
+        require(map.sections.size == chapterHeadings.size) {
+            "${part.id} evidence coverage mismatch: chapters=${chapterHeadings.size} evidence=${map.sections.size}"
+        }
+
+        map.sections.forEachIndexed { index, evidence ->
+            val expectedPrefix = "${part.id}-S${(index + 1).toString().padStart(2, '0')}-"
+            require(evidence.sectionId.startsWith(expectedPrefix)) {
+                "${part.id} evidence order/gap mismatch at chapter ${index + 1}: expectedPrefix=$expectedPrefix actual=${evidence.sectionId}"
             }
             require(evidence.sourceIds.isNotEmpty()) {
                 "Section ${evidence.sectionId} has no evidence source"
+            }
+            require(evidence.sourceIds.distinct().size == evidence.sourceIds.size) {
+                "Section ${evidence.sectionId} repeats the same source id"
             }
             val unknown = evidence.sourceIds.filterNot(V5BookAllSources.byId::containsKey)
             require(unknown.isEmpty()) {
@@ -99,9 +117,13 @@ class V5BookAssetRepository(
         require(orders == (1..manifest.parts.size).toList()) {
             "Part orders must be contiguous in $expectedTrackId: $orders"
         }
-        manifest.parts.forEach { part ->
-            require(part.id.startsWith("$expectedTrackId-P")) {
-                "Part ${part.id} is outside $expectedTrackId"
+        manifest.parts.forEachIndexed { index, part ->
+            val expectedPartPrefix = "$expectedTrackId-P${(index + 1).toString().padStart(2, '0')}"
+            require(part.id == expectedPartPrefix) {
+                "Part ids must be contiguous in $expectedTrackId: expected=$expectedPartPrefix actual=${part.id}"
+            }
+            require(part.order == index + 1) {
+                "Part order does not match list order in $expectedTrackId: ${part.id} order=${part.order}"
             }
             require(part.title.isNotBlank()) { "Blank part title: ${part.id}" }
             validateRelativeAssetPath(part.assetPath)
