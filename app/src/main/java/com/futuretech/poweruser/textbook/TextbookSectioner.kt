@@ -15,11 +15,8 @@ data class TextbookSection(
  * Builds learner-facing textbook pages.
  *
  * Legacy/non-V3 callers keep the authored H2/H3 split so existing tools and synthetic tests can
- * continue to exercise the parser deterministically. The V3 beginner rewrite intentionally does
- * something different: closely related authored BLOCKs are grouped into one large learner-facing
- * LESSON. Inside that page the BLOCK headings remain visible as subchapters and the old tiny H3
- * LESSON headings are demoted to ordinary subheadings. This keeps TRACK -> LESSON -> BLOCK/subtopic
- * navigation readable without regressing into hundreds of five-line vocabulary pages.
+ * continue to exercise the parser deterministically. V3 groups authored BLOCKs into textbook-sized
+ * learner LESSONs while preserving every authored block in order.
  */
 object TextbookSectioner {
     private const val WEIGHT_PER_MINUTE = 330
@@ -34,16 +31,20 @@ object TextbookSectioner {
     /**
      * V3 learner-facing grouping contract.
      *
-     * IMPORTANT: this is not a silent best-effort hint. If an authored BLOCK count changes without
-     * updating the grouping contract, V3 must fail fast instead of falling back to hundreds of
-     * atomic vocabulary-like pages.
+     * A real Actions run proved that several 3-4 BLOCK pages exceeded the 60 minute upper bound.
+     * The contract therefore keeps ordinary merged pages to at most two major BLOCKs, while TRACK 01
+     * uses one BLOCK per LESSON because its first three-BLOCK page also exceeded the editorial depth
+     * ceiling. The total remains inside the 20..50 learner-page quality range.
      */
     private val v3Groupings: Map<String, LessonGrouping> = mapOf(
         "V1-C01" to LessonGrouping(
-            sizes = listOf(3, 2),
+            sizes = listOf(1, 1, 1, 1, 1),
             titles = listOf(
-                "컴퓨터·파일·문자는 어떻게 데이터가 되는가",
-                "프로그램과 코드를 읽고 실행하는 첫걸음"
+                "컴퓨터는 입력을 받고 처리해 결과를 내놓는다",
+                "파일·폴더·경로와 bit·byte를 연결한다",
+                "문자·Unicode·UTF-8이 byte가 되는 과정을 이해한다",
+                "운영체제·프로그램·코드 실행을 연결한다",
+                "첫 코드를 읽고 일부러 망가뜨린 뒤 고친다"
             )
         ),
         "V1-C02" to LessonGrouping(
@@ -56,10 +57,12 @@ object TextbookSectioner {
             )
         ),
         "V1-C03" to LessonGrouping(
-            sizes = listOf(3, 4),
+            sizes = listOf(2, 1, 2, 2),
             titles = listOf(
-                "배열·연결구조·해시·트리로 데이터를 담는 방법",
-                "그래프·검색·정렬·복잡도로 문제를 푸는 방법"
+                "배열·연결구조·스택·큐·해시로 데이터를 담는다",
+                "트리·BST·heap·trie로 계층 데이터를 다룬다",
+                "그래프·검색·정렬로 연결된 데이터를 푼다",
+                "Big-O·BFS·DFS·greedy·DP로 문제 해결을 확장한다"
             )
         ),
         "V1-C04" to LessonGrouping(
@@ -80,31 +83,39 @@ object TextbookSectioner {
             )
         ),
         "V1-C06" to LessonGrouping(
-            sizes = listOf(2, 2, 3),
+            sizes = listOf(2, 2, 1, 1, 1),
             titles = listOf(
                 "내 기기에서 서버까지 IP·DNS·TCP의 길을 따라간다",
                 "TLS·URL·HTTP 요청과 응답을 실제 메시지로 읽는다",
-                "MIME·API·CORS까지 실제 통신 문제를 해결한다"
+                "MIME·Content-Type·multipart를 파일 업로드로 이해한다",
+                "API·REST·인증·cookie·token을 연결한다",
+                "CORS·cache·실시간 통신과 Network 진단을 연결한다"
             )
         ),
         "V1-C07" to LessonGrouping(
-            sizes = listOf(3, 3),
+            sizes = listOf(2, 1, 2, 1),
             titles = listOf(
-                "서버가 요청을 받고 검증해 업무 로직으로 보내는 전체 흐름",
-                "인증·캐시·큐·동시성·관측성으로 운영 서버를 만든다"
+                "서버가 요청을 받고 parsing·validation까지 처리한다",
+                "service·repository·DI로 업무 규칙의 책임을 나눈다",
+                "인증·권한·cache·queue로 안전한 처리 흐름을 만든다",
+                "동시성·rate limit·logs·metrics·traces로 운영을 관찰한다"
             )
         ),
         "V1-C08" to LessonGrouping(
-            sizes = listOf(4, 4),
+            sizes = listOf(2, 2, 2, 2),
             titles = listOf(
-                "DB 구조·SQL·집계·무결성으로 데이터를 올바르게 저장한다",
-                "관계·JOIN·index·transaction으로 DB를 실제 서비스에 연결한다"
+                "DB 구조와 SQL CRUD로 데이터를 저장하고 찾는다",
+                "집계와 constraint로 통계와 데이터 무결성을 지킨다",
+                "관계·정규화·JOIN으로 여러 table을 연결한다",
+                "index·EXPLAIN·transaction·ACID로 성능과 동시성을 다룬다"
             )
         ),
         "V1-C09" to LessonGrouping(
-            sizes = listOf(3),
+            sizes = listOf(1, 1, 1),
             titles = listOf(
-                "보안을 처음부터 끝까지: 신뢰·암호·웹 공격을 연결한다"
+                "보안 자산·위협·신뢰 경계·인증·권한을 구분한다",
+                "encoding·hash·password·encryption·signature를 구분한다",
+                "SQLi·XSS·CSRF·SSRF와 secret·파일 업로드 위험을 막는다"
             )
         ),
         "V1-C10" to LessonGrouping(
@@ -115,10 +126,11 @@ object TextbookSectioner {
             )
         ),
         "V1-C11" to LessonGrouping(
-            sizes = listOf(2, 3),
+            sizes = listOf(2, 1, 2),
             titles = listOf(
                 "요구사항에서 모듈·아키텍처까지 시스템의 뼈대를 설계한다",
-                "상태·확장·장애대응을 종합 프로젝트로 연결한다"
+                "state·cache·queue·동시성으로 시간 순서 문제를 다룬다",
+                "확장·장애대응·관측성을 종합 프로젝트로 연결한다"
             )
         )
     )
@@ -169,9 +181,9 @@ object TextbookSectioner {
      * Original deterministic authoring split. Unknown/synthetic chapter ids always use this path.
      *
      * V3 authored files use H3 for more than learner LESSON headings (for example TRACK projects
-     * and completion criteria). Those H3 headings belong to the surrounding BLOCK and must not be
-     * mistaken for an extra atomic lesson. Only an authored `LESSON ...` H3 can start a new V3
-     * atomic lesson. Legacy/synthetic callers retain the historical "every H3 may split" behavior.
+     * and completion criteria). Those headings remain in the surrounding BLOCK. Only an authored
+     * `LESSON ...` H3 can start a new V3 atomic lesson. Legacy/synthetic callers retain the historical
+     * behavior where H3 headings may split pages.
      */
     private fun splitAtomic(chapterId: String, blocks: List<TextbookBlock>): List<TextbookSection> {
         val raw = mutableListOf<MutableList<TextbookBlock>>()
@@ -233,12 +245,7 @@ object TextbookSectioner {
         }
     }
 
-    /**
-     * A merged learner-facing LESSON already has its own title in the reader header.
-     * - TRACK H1 is removed to avoid duplicate chapter headings.
-     * - authored BLOCK H2 becomes an internal H3 subchapter but keeps the BLOCK label.
-     * - authored H3 headings become H4 subsections; only legacy `LESSON 01 · ...` labels are stripped.
-     */
+    /** A merged learner-facing LESSON already has its own title in the reader header. */
     private fun asInternalLessonBlock(block: TextbookBlock): TextbookBlock? = when (block) {
         is TextbookBlock.Heading -> when (block.level) {
             1 -> null
