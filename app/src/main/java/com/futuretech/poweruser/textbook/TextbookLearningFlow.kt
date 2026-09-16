@@ -37,10 +37,11 @@ data class LearningConcept(
 /**
  * Textbook-first presentation layer.
  *
- * Each learner-facing LESSON keeps the complete explanation/examples/code together. The inline
- * activity is deliberately one low-stakes retrieval prompt grounded in the LESSON just read.
- * Full executable grading belongs to the TRACK practice screen, preventing the textbook from
- * regressing into a problem-first UI or asking stale questions from an unrelated legacy lesson.
+ * Each learner-facing LESSON keeps the complete authored explanation/examples/code together.
+ * V3BeginnerGuidance adds a non-destructive beginner layer around that authored body: required
+ * takeaways, plain-language previews for abrupt terms, defer-to-later markers, and a concise
+ * answer/explanation summary. The low-stakes retrieval prompt comes after that summary so the
+ * learner immediately closes the loop by recalling it again without looking upward.
  */
 object TextbookLearningFlow {
     const val MAX_BLOCKS_PER_CONCEPT = Int.MAX_VALUE
@@ -52,11 +53,13 @@ object TextbookLearningFlow {
     ): List<LearningConcept> {
         if (section.blocks.isEmpty()) return emptyList()
 
-        val title = section.title
+        val guide = V3BeginnerGuidance.forSection(section.id)
+        val title = V3BeginnerGuidance.decoratedTitle(section.id, section.title)
         val recall = InlineLearningProblem(
             id = "$chapterId-${section.id}-P01",
             type = LearningProblemType.DIRECT_WRITE,
-            prompt = "방금 읽은 ‘$title’을 책을 보지 않고 자기 말로 설명하세요. 무엇인지, 왜 필요한지, 실제 코드·앱에서 어디에 쓰이는지 중 최소 2가지를 포함하세요. 여기서는 점수를 깎지 않으며, 실행 채점은 TRACK 실전에서 합니다."
+            prompt = "방금 읽은 ‘${section.title}’의 본문과 정답·해설을 확인했습니다. 이제 화면을 위로 보지 말고 자기 말로 다시 설명하세요. ‘무엇인지 → 왜 필요한지 → 실제 코드·앱에서 어떻게 쓰이는지’ 중 최소 2가지를 포함하세요. 여기서는 점수를 깎지 않으며, 실행 채점은 TRACK 실전에서 합니다.",
+            referenceAnswer = guide.answerPoints.joinToString("\n")
         )
 
         return listOf(
@@ -64,7 +67,7 @@ object TextbookLearningFlow {
                 id = "${section.id}-C01",
                 index = 0,
                 title = title,
-                blocks = section.blocks,
+                blocks = V3BeginnerGuidance.decorateBlocks(section.id, section.blocks),
                 problem = recall
             )
         )
