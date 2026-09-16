@@ -77,7 +77,7 @@ object TextbookPageComposer {
             val slice = sliceForCapacity(block, layout.charsPerLine, remaining)
             if (slice != null) {
                 add(slice.first)
-                slice.second?.let(queue::addFirst)
+                slice.second?.let { queue.addFirst(it) }
                 // A sliced block intentionally finishes this page after consuming the available tail.
                 flush()
                 continue
@@ -150,7 +150,7 @@ object TextbookPageComposer {
         val maxChars = (charsPerLine * textLines).coerceAtLeast(charsPerLine)
         val (head, tail) = splitTextOnce(block.text, maxChars) ?: return null
         val first = TextbookBlock.Paragraph(head)
-        val rest = tail?.takeIf { it.isNotBlank() }?.let(TextbookBlock::Paragraph)
+        val rest = tail?.takeIf { it.isNotBlank() }?.let { TextbookBlock.Paragraph(it) }
         return first to rest
     }
 
