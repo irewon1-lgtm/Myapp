@@ -1,815 +1,263 @@
-# PART 09 · 추측하지 않고 증거로 디버깅한다 — 로그, stack, profile, trace, metric
+# PART 09 · 증거 기반 디버깅 — reproduction, timeline, causal proof
 
-개발자가 가장 많이 낭비하는 시간은 `원인이 아마 이것일 것`이라는 첫 추측을 고치는 데 들어간다. 시스템은 여러 계층이 연결돼 있으므로 같은 증상이 전혀 다른 원인에서 나올 수 있다.
-
-```text
-앱이 느림
-→ CPU 병목일 수도 있음
-→ main thread lock 대기일 수도 있음
-→ network tail latency일 수도 있음
-→ storage writeback일 수도 있음
-→ GC pressure일 수도 있음
-```
-
-이 PART의 목표는 디버깅 도구 이름을 외우는 것이 아니라 **증상을 재현 가능한 관측으로 바꾸고, 시간축과 causal chain으로 범위를 줄이는 방법**을 만드는 것이다.
+디버깅은 원인을 떠올리는 능력이 아니라 **관측 가능한 사실을 만들고 가설을 제거하는 과정**이다. 로그·metric·trace·profile·dump는 각각 다른 질문에 답하므로 한 도구의 결과를 전체 원인으로 확대하지 않는다.
 
 ---
 
-## CHAPTER 01 · 증상과 원인을 한 문장에 섞지 않는다
+## CHAPTER 01 · observation과 hypothesis를 같은 문장에 섞지 않는다
 
-잘못된 bug report:
+`화면이 4.8초 뒤 나타났다`는 observation이고 `DB가 느리다`는 hypothesis다. 두 문장을 분리해야 새 증거가 나왔을 때 가설을 버릴 수 있다. bug report에는 expected/actual, 시작 시각, input, build, device/environment를 먼저 고정한다.
 
-```text
-DB가 느려서 앱이 멈춤
-```
-
-여기에는 아직 검증되지 않은 원인이 들어 있다.
-
-더 좋은 기록:
-
-```text
-2026-09-17 build X에서
-주문 상세 진입 후 3~8초 동안 터치 반응이 없고
-main 화면 frame update가 멈춘다.
-재현율 7/10.
-```
-
-이렇게 쓰면 관찰과 가설이 분리된다.
-
-### 관찰
-
-직접 측정/재현된 사실.
-
-### 가설
-
-관찰을 설명하기 위한 후보.
-
-### 증거
-
-가설을 지지하거나 반박하는 측정값.
-
-세 칸을 섞지 않는다.
+가설은 반증 가능한 형태로 쓴다. `DB가 느리다`보다 `request latency 4.8초 중 DB span이 3초 이상이며 동일 query의 lock wait가 증가했다`가 강하다. 다음 실험은 이 조건을 측정하도록 설계한다.
 
 ---
 
-## CHAPTER 02 · 재현 조건을 입력 변수로 만든다
+## CHAPTER 02 · reproduction은 실패 조건을 하나의 실험으로 고정한다
 
-`가끔 발생`은 테스트 조건이 아니다.
+재현 가능한 버그는 input, initial state, build artifact, environment, action sequence를 반복할 수 있어야 한다. `가끔`이라는 표현은 확률이 아니라 통제하지 못한 변수의 존재를 뜻한다.
 
-다음 축을 기록한다.
-
-```text
-device/model
-OS version
-app build/commit
-account/data size
-network type
-battery/thermal state
-cold/warm start
-permissions
-locale/timezone
-exact steps
-frequency
-```
-
-### 최소 재현
-
-원래 20단계에서 발생하는 bug라면 step을 하나씩 제거한다.
-
-```text
-20 step
-→ 12 step
-→ 7 step
-→ 3 step
-```
-
-최소 재현은 단순히 QA 문서를 짧게 하는 작업이 아니다.
-
-**원인에 필요한 조건과 우연히 같이 있던 조건을 분리하는 실험**이다.
+재현율도 증거다. 100회 중 2회 발생하던 문제가 변경 후 100회 중 0회라고 해서 바로 해결을 증명할 수 없다. confidence를 높이려면 failure probability와 test count를 고려하고 deterministic trigger를 찾는다.
 
 ---
 
-## CHAPTER 03 · binary search는 code뿐 아니라 원인 공간에도 쓴다
+## CHAPTER 03 · binary isolation은 원인 공간을 반씩 줄인다
 
-가능한 layer가 많다고 하나씩 순서대로 전부 보지 않는다.
+큰 시스템에서 모든 component를 동시에 읽지 않는다. feature, commit, request path, shard, device class를 기준으로 정상군/실패군을 나누면 원인 후보가 급격히 줄어든다.
 
-```text
-UI
-↓
-view model
-↓
-repository
-↓
-DB/network
-```
-
-중간 boundary에서 timestamp와 input/output을 관측한다.
-
-```text
-UI→repository: 5ms
-repository→HTTP: 20ms setup
-HTTP wait: 1800ms
-JSON parse: 30ms
-UI render: 12ms
-```
-
-이제 1.8초의 핵심 구간은 HTTP wait다.
-
-### divide and conquer debugging
-
-시스템 중간에서 `여기까지 정상인가?`를 반복하면 탐색 범위를 절반씩 줄일 수 있다.
+Git bisect와 같은 원리는 runtime에도 적용된다. middleware 절반을 bypass하거나 data set을 절반으로 줄여 failure가 어느 쪽에 남는지 본다. 단, isolation change가 timing이나 state를 바꾸어 bug를 숨길 수 있으므로 control group을 유지한다.
 
 ---
 
-## CHAPTER 04 · 로그는 사건 기록이지 프로그램 설명문이 아니다
+## CHAPTER 04 · log는 문장이 아니라 structured event다
 
-좋지 않은 로그:
+운영 로그는 사람이 읽는 설명문만 남기기보다 timestamp, event name, request ID, principal, resource ID, outcome, duration, error category를 구조화한다. 동일 event schema를 사용하면 query와 aggregation이 가능하다.
 
-```text
-here
-worked
-error
-value = 3
-```
-
-좋은 event log는 질문에 답한다.
-
-```text
-무슨 operation?
-어떤 entity/request?
-언제 시작/끝?
-결과 status?
-어떤 failure class?
-얼마나 걸림?
-```
-
-예:
-
-```text
-payment.authorize
-requestId=r-123
-orderId=o-77
-attempt=2
-latencyMs=842
-result=timeout
-```
-
-### 구조화 로그
-
-문자열 문장을 parser로 다시 뜯기보다 key/value field로 남기면 query와 aggregation이 쉽다.
-
-```json
-{
-  "event": "payment.authorize",
-  "requestId": "r-123",
-  "latencyMs": 842,
-  "result": "timeout"
-}
-```
-
-### PII/secret를 로그에 넣지 않는다
-
-password, access token, full card data, private health data 같은 민감정보는 debugging 편의보다 노출 위험이 크다.
-
-필요한 correlation ID와 non-sensitive metadata로 추적한다.
+민감정보를 그대로 기록하지 않는다. token, password, personal payload는 redaction 정책을 두고 debugging에 필요한 stable identifier만 남긴다. log schema도 외부 데이터처럼 versioning과 compatibility가 필요하다.
 
 ---
 
-## CHAPTER 05 · log level은 심각도와 운영 비용을 통제한다
+## CHAPTER 05 · log level은 심각도와 actionability를 표현한다
 
-일반적인 분류:
+DEBUG/INFO/WARN/ERROR를 감정적으로 선택하면 운영에서 의미가 무너진다. ERROR는 일반적으로 요청 또는 system invariant가 실제로 실패해 operator/action이 필요한 사건에 사용하고, 예상 가능한 validation reject를 모두 ERROR로 남기면 signal-to-noise가 붕괴한다.
 
-```text
-DEBUG
-INFO
-WARN
-ERROR
-```
-
-정확한 정책은 조직마다 다르다.
-
-### ERROR 남발
-
-retry로 자동 복구되는 transient failure를 매번 ERROR로 남기면 alert fatigue가 생긴다.
-
-반대로 data corruption 가능성을 DEBUG로 숨기면 중요한 사건을 놓친다.
-
-level은 `개발자가 놀란 정도`가 아니라 **운영자가 행동해야 하는 정도**와 연결한다.
+같은 failure를 여러 layer가 중복 ERROR로 기록하면 incident count가 부풀려진다. error ownership layer를 정하고 lower layer는 context를 attach한 뒤 propagate하는 방식으로 중복을 줄인다.
 
 ---
 
-## CHAPTER 06 · correlation ID가 분산된 사건을 한 요청으로 묶는다
+## CHAPTER 06 · correlation은 분산된 event를 하나의 request lifetime으로 묶는다
 
-사용자 한 번의 버튼 클릭이 여러 service를 통과할 수 있다.
+request ID, trace ID, job ID는 여러 process/service의 event를 연결한다. ID가 없으면 timestamp와 payload를 추측해 같은 요청을 찾게 되고 concurrency가 높을수록 잘못 연결할 가능성이 커진다.
 
-```text
-mobile app
-→ API gateway
-→ order service
-→ payment service
-→ DB
-```
-
-각 system log timestamp만 보고 수동으로 맞추면 어렵다.
-
-request/correlation ID를 propagation하면 같은 logical request를 묶을 수 있다.
-
-### ID를 새로 만들지 이어 전달할 때
-
-service마다 완전히 새 ID만 만들면 parent-child 관계를 잃는다.
-
-trace context와 span ID 같은 구조는 하나의 request tree를 표현한다.
+correlation ID는 security identity가 아니다. 사용자가 누구인지 증명하거나 authorization을 부여하지 않는다. 동일 request가 retry되어 새 attempt가 생길 때 logical operation ID와 attempt ID를 분리하면 duplicate execution을 분석하기 쉽다.
 
 ---
 
-## CHAPTER 07 · stack trace는 `어디서 죽었나`와 `어떻게 여기 왔나`를 보여 준다
+## CHAPTER 07 · stack trace는 실패 시점의 call chain이지 전체 timeline이 아니다
 
-exception stack:
+exception stack은 현재 thread가 어떤 call chain을 거쳤는지 보여 준다. optimized code, coroutine, async callback에서는 source-level logical call chain이 physical stack과 다를 수 있다.
 
-```text
-parseAmount()
-called by createOrder()
-called by onSubmit()
-```
-
-현재 failure point뿐 아니라 call chain을 보여 준다.
-
-### 가장 위 한 줄만 읽지 않는다
-
-wrapper exception이 여러 층으로 감싸질 수 있다.
-
-```text
-UI exception
-caused by repository exception
-caused by SQL constraint violation
-```
-
-root cause chain을 끝까지 본다.
-
-### stack에 없는 원인
-
-data race, stale remote response, corrupted persistent file처럼 원인이 이전 시점에 발생한 경우 현재 stack은 결과만 보여 줄 수 있다.
-
-stack trace는 강력하지만 완전한 역사 기록은 아니다.
+stack의 top frame만 고치지 않는다. exception type, root cause chain, input state, thread context를 함께 본다. native crash에서는 symbol file/build ID가 없으면 raw address만 남으므로 release artifact와 symbol을 보존한다.
 
 ---
 
-## CHAPTER 08 · thread dump는 기다림 관계를 본다
+## CHAPTER 08 · thread dump는 wait graph를 만들 때 가치가 커진다
 
-hang/deadlock에서는 한 thread stack만 부족하다.
+thread dump는 각 thread가 runnable, blocked, waiting, sleeping 중 어떤 상태인지와 stack을 보여 줄 수 있다. 한 장의 dump에서 동일 lock을 기다리는 thread와 owner를 연결하면 contention/deadlock 구조를 찾을 수 있다.
 
-동시에 여러 thread state를 capture한다.
-
-```text
-Main: waiting Future.get
-Worker-1: waiting DB pool
-Worker-2: holds DB connection, waiting main callback
-```
-
-이제 wait cycle 후보가 보인다.
-
-### timestamp가 같은 snapshot
-
-5초 간격으로 각 thread를 따로 수집하면 상태가 바뀔 수 있다.
-
-가능한 한 같은 시점의 thread dump로 wait graph를 만든다.
+순간 snapshot만으로 starvation을 증명하기 어렵다. 일정 간격의 여러 dump 또는 scheduler trace를 통해 상태가 지속되는지 확인한다. runnable thread가 오래 CPU를 못 받는 문제와 monitor wait를 구분한다.
 
 ---
 
-## CHAPTER 09 · crash dump/core/tombstone은 process가 죽는 순간의 낮은 수준 상태를 보존한다
+## CHAPTER 09 · crash dump는 process가 사라지기 직전의 machine state를 보존한다
 
-native crash에서 source exception stack이 없을 수 있다.
+native crash dump/tombstone에는 signal, fault address, register, module mapping, backtrace가 포함될 수 있다. faulting instruction과 memory address relation을 보면 null dereference, use-after-free, stack corruption 후보를 좁힐 수 있다.
 
-register, fault address, native backtrace, loaded module, signal 같은 정보가 필요하다.
-
-### symbolization
-
-native address:
-
-```text
-0x7a12bc...
-```
-
-만 보면 source function을 알기 어렵다.
-
-정확한 build의 symbol/debug information으로 address를 function/file/line에 mapping해야 한다.
-
-### build mismatch
-
-다른 version symbol을 사용하면 그럴듯하지만 틀린 stack이 나올 수 있다.
-
-crash artifact와 exact build ID/version을 보존해야 한다.
+ASLR 때문에 address는 실행마다 달라질 수 있으므로 module base와 build ID가 필요하다. crash dump를 source revision, compiler flags, native library version과 연결해야 symbolization 결과를 신뢰할 수 있다.
 
 ---
 
-## CHAPTER 10 · metric은 시간에 따른 시스템 상태를 수량화한다
+## CHAPTER 10 · metric은 사건이 아니라 population을 본다
 
-예:
+counter는 누적 사건 수, gauge는 시점 값, histogram은 분포를 표현한다. request latency를 gauge 평균 하나로 저장하면 tail을 잃는다. retry count를 request count와 분리해야 실제 load amplification을 볼 수 있다.
 
-```text
-request count
-error rate
-CPU utilization
-heap usage
-queue depth
-DB connections
-cache hit ratio
-latency histogram
-```
-
-### gauge/counter/histogram
-
-counter는 누적 사건 수, gauge는 현재 값, histogram/distribution은 값의 분포를 표현한다.
-
-모든 것을 평균 하나로 만들지 않는다.
+metric name보다 label cardinality가 운영 비용을 좌우할 수 있다. user ID나 raw URL을 label로 넣으면 time series 수가 폭발한다. bounded dimension만 metric label로 사용하고 high-cardinality detail은 trace/log로 보낸다.
 
 ---
 
-## CHAPTER 11 · 평균 latency는 tail을 숨긴다
+## CHAPTER 11 · percentile은 tail latency를 드러내지만 aggregation 방식에 주의한다
 
-요청 100개의 latency:
+p99는 request의 99%가 그 값 이하라는 distribution statistic이다. 평균이 안정적이어도 소수 request가 수초로 늘어나면 사용자 체감과 timeout rate가 악화될 수 있다.
 
-```text
-99개 = 50ms
-1개 = 5000ms
-```
-
-평균은 약 99.5ms지만 한 사용자는 5초를 경험했다.
-
-p50/p95/p99 같은 percentile을 보면 tail을 드러낼 수 있다.
-
-### percentile aggregation 주의
-
-각 server의 p99를 평균내서 전체 p99라고 부를 수 없다.
-
-원래 distribution/histogram을 적절히 aggregate해야 한다.
+instance별 p99를 다시 평균내면 전체 population p99가 되지 않는다. merge 가능한 histogram/quantile sketch를 사용하거나 raw bucket을 집계한다. sample count가 적은 interval의 high percentile은 불안정할 수 있다.
 
 ---
 
-## CHAPTER 12 · rate, error, duration을 함께 본다
+## CHAPTER 12 · RED와 USE는 관측 질문을 구조화한다
 
-서비스 요청을 본다면 최소한:
+request-driven service에서는 Rate, Errors, Duration을 보면 traffic과 failure/latency 변화를 빠르게 파악할 수 있다. resource 관점에서는 Utilization, Saturation, Errors가 CPU, pool, disk, queue 병목을 찾는 출발점이 된다.
 
-```text
-rate
-= 얼마나 들어오는가
-
-errors
-= 얼마나 실패하는가
-
-duration
-= 얼마나 오래 걸리는가
-```
-
-를 함께 본다.
-
-latency가 좋아졌는데 request가 절반 drop된 것일 수도 있다.
-
-성능 metric 하나의 개선을 성공으로 선언하지 않는다.
+framework 이름을 외우는 목적이 아니다. 증상 metric만 보지 말고 demand와 capacity, queue/saturation을 같이 보라는 구조다. latency가 오를 때 request rate, error, queue depth, utilization을 같은 시간축에 놓는다.
 
 ---
 
-## CHAPTER 13 · trace는 한 요청의 시간 구간을 연결한다
+## CHAPTER 13 · distributed trace는 service boundary의 시간과 causal parent를 연결한다
 
-trace span:
+trace는 request를 span으로 나누어 service, DB, queue, external API의 duration을 연결한다. parent-child 관계가 있으면 단순 timestamp보다 causal path를 이해하기 쉽다.
 
-```text
-request 1200ms
-├─ auth 20ms
-├─ DB query 80ms
-├─ downstream API 900ms
-└─ render response 30ms
-```
-
-숫자 합이 정확히 parent duration과 같지 않을 수 있다. parallel span, scheduling gap, instrumentation overhead가 있기 때문이다.
-
-### critical path
-
-전체 latency를 줄이려면 가장 긴 causal path를 찾는다.
-
-parallel work 3개 중 가장 짧은 하나를 50% 줄여도 total latency는 그대로일 수 있다.
+sampling 때문에 모든 slow request가 trace에 남지 않을 수 있다. head sampling, tail sampling의 trade-off를 이해하고 error/high-latency trace 보존 정책을 설계한다. async queue를 건널 때 trace context propagation을 잃지 않는다.
 
 ---
 
-## CHAPTER 14 · sampling profiler와 instrumentation profiler를 구분한다
+## CHAPTER 14 · profiler는 CPU 시간을 function에 귀속하지만 wait를 설명하지 못할 수 있다
 
-### sampling
+sampling CPU profiler는 주기적으로 instruction pointer/stack을 관찰해 on-CPU time 분포를 추정한다. instrumentation profiler는 함수 진입/종료를 기록해 세밀한 데이터를 얻지만 overhead가 더 클 수 있다.
 
-주기적으로 execution stack을 샘플링해 CPU 시간을 어디서 쓰는지 추정한다.
-
-overhead가 비교적 낮아 production-like workload에 유리할 수 있다.
-
-### instrumentation
-
-function entry/exit 등에 측정 코드를 넣어 호출과 duration을 더 직접 기록할 수 있다.
-
-세밀하지만 overhead와 timing distortion이 커질 수 있다.
-
-### profiler가 프로그램을 바꾼다
-
-관측 자체가 timing/cache/scheduling을 바꿀 수 있다.
-
-특히 concurrency bug에서 profiler 켜면 bug가 사라질 수도 있다.
+CPU profile에 hotspot이 없는데 wall latency가 길다면 off-CPU wait를 의심한다. 반대로 profiler overhead가 scheduling을 바꾸어 race를 숨길 수 있으므로 production-safe sampling과 lab instrumentation을 구분한다.
 
 ---
 
-## CHAPTER 15 · flame graph는 stack sample을 넓이로 본다
+## CHAPTER 15 · flame graph는 stack sample의 집계다
 
-개념:
+flame graph의 width는 일반적으로 sample에 나타난 비중이며 시간 순서가 아니다. 넓은 box가 반드시 느린 단일 call을 뜻하지 않고 매우 자주 실행된 짧은 call일 수도 있다.
 
-```text
-width = sample에서 차지한 비율
-vertical = call stack depth
-```
-
-넓은 block이 CPU sample을 많이 차지한 path 후보다.
-
-### 가장 위 함수만 고치지 않는다
-
-넓은 leaf function이 library memcpy라면 실제 원인은 caller가 너무 큰 data를 너무 자주 복사하는 구조일 수 있다.
-
-call path 전체를 본다.
+top-down으로 request path를, bottom-up으로 CPU-consuming leaf를 본다. recursion과 async stack stitching 여부도 확인한다. wall-clock flame graph와 CPU flame graph는 의미가 다를 수 있다.
 
 ---
 
-## CHAPTER 16 · CPU profile과 wall-time profile은 다르다
+## CHAPTER 16 · off-CPU 분석은 기다린 이유와 깨운 주체를 찾는다
 
-thread가 network를 2초 기다리면 wall time은 2초지만 CPU time은 거의 없을 수 있다.
+thread가 sleep, mutex, I/O, scheduler queue에서 시간을 보낸다면 CPU profiler에는 원인이 충분히 보이지 않는다. off-CPU trace는 block 시작, wakeup, 실제 reschedule까지의 구간을 분해한다.
 
-CPU profiler에는 병목이 안 보인다.
-
-```text
-wall latency 2s
-CPU 20ms
-wait 1980ms
-```
-
-이럴 때 scheduler/I/O trace가 필요하다.
-
-### off-CPU analysis
-
-thread가 실행되지 않는 시간을 분류한다.
-
-```text
-sleep
-lock wait
-I/O wait
-run queue wait
-```
-
-`느리다 = CPU profile` 공식에서 벗어난다.
+lock owner가 CPU를 못 받아 waiter가 늘어나는 priority/scheduling 문제도 가능하다. wait site와 wakeup source를 연결해야 단순히 `read()`가 느렸다는 오판을 피할 수 있다.
 
 ---
 
-## CHAPTER 17 · system trace는 scheduler와 I/O까지 시간축에 놓는다
+## CHAPTER 17 · system trace는 app, scheduler, Binder, frame을 하나의 시간축에 놓는다
 
-Android/Linux system trace에서는 thread running/runnable/sleep state, CPU scheduling, I/O event, frame event 등을 시간축으로 볼 수 있다.
+Android system trace/Perfetto에서는 main thread slice, Binder transaction, CPU scheduling, frame timeline, I/O event를 함께 볼 수 있다. UI jank가 application code인지 remote Binder service인지 scheduler delay인지 분리할 수 있다.
 
-### main thread gap
-
-```text
-main runnable but not running
-→ CPU contention/scheduling 문제 후보
-
-main sleeping on futex
-→ lock/condition wait 후보
-
-main running 200ms continuously
-→ CPU-heavy work 후보
-```
-
-같은 200ms freeze도 원인이 다르다.
+trace buffer 크기와 category가 너무 많으면 overhead와 data loss가 생긴다. investigation question에 필요한 event를 선택하고 정확한 failure window를 capture한다.
 
 ---
 
-## CHAPTER 18 · allocation profile은 object count보다 lifetime을 본다
+## CHAPTER 18 · allocation profile은 누가 memory를 만들었는지 보여 준다
 
-object 100만 개를 매우 짧게 만들고 즉시 수거하는 workload와 object 1만 개가 계속 retained되는 leak은 다른 문제다.
+heap size만 보면 allocation churn을 놓친다. allocation profile은 type, allocation site, rate를 보여 주어 short-lived object가 GC pressure를 만드는 path를 찾게 한다.
 
-관측:
-
-```text
-allocation rate
-live object count
-retained size
-GC frequency
-pause time
-```
-
-### dominant type
-
-특정 bitmap/string/list가 memory 대부분을 차지하면 왜 그 object가 살아 있는지 reference path를 추적한다.
+높은 allocation count가 곧 leak은 아니다. object가 빠르게 수거되면 retention은 낮다. latency issue라면 allocation rate와 GC pause를, memory growth라면 retained object graph를 본다.
 
 ---
 
-## CHAPTER 19 · heap dump에서 retained size를 본다
+## CHAPTER 19 · retained size와 dominator는 leak root를 찾는 데 사용한다
 
-object 자체는 100byte여도 그 object가 root에서 큰 graph를 잡아 두면 retained size가 수백 MB일 수 있다.
+object 하나의 shallow size가 작아도 그것이 reference chain의 유일한 root이면 거대한 graph를 살려 둘 수 있다. dominator/retained size는 해당 object가 제거될 때 함께 reclaim 가능한 graph 규모를 추정한다.
 
-```text
-Activity
-↓ listener
-↓ repository
-↓ cache
-↓ huge bitmap graph
-```
-
-작은 reference 하나가 큰 memory를 유지할 수 있다.
-
-### GC root
-
-왜 수거되지 않는지 알려면 root까지 reference chain을 본다.
-
-`object가 있다`보다 `누가 아직 참조하는가`가 핵심이다.
+leak fix는 큰 object를 직접 찾는 작업이 아니다. GC root에서 왜 reference가 유지되는지 ownership/lifecycle을 추적한다. listener, callback, static cache, native reference가 lifecycle보다 오래 살 수 있다.
 
 ---
 
-## CHAPTER 20 · DB slow query는 query text만 보지 않는다
+## CHAPTER 20 · database evidence는 query time을 parse/plan/lock/I/O로 분해한다
 
-필요한 evidence:
+slow query에서 SQL text만 수정하기 전에 execution plan, row estimate, actual row count, index usage, buffer/cache hit, lock wait를 확인한다. 같은 query도 data distribution과 parameter에 따라 plan이 달라질 수 있다.
 
-```text
-actual parameters
-query plan
-rows examined/returned
-index used?
-lock wait?
-cache state?
-I/O latency?
-transaction context?
-```
-
-같은 SQL도 parameter selectivity와 data distribution에 따라 plan이 달라질 수 있다.
-
-DB 파트에서 더 깊게 배우지만 관측 원칙은 동일하다.
+transaction이 오래 열린 경우 query 자체는 짧아도 다른 transaction을 block할 수 있다. DB latency와 application pool wait를 분리한다. connection 획득 시간이 query execution time에 섞이지 않게 span을 나눈다.
 
 ---
 
-## CHAPTER 21 · network latency를 DNS/TCP/TLS/server/download로 분해한다
+## CHAPTER 21 · network timing은 DNS, connect, TLS, server, transfer를 분리한다
 
-`HTTP 2초`는 하나의 시간값이 아니다.
+end-to-end request latency를 하나의 HTTP duration으로만 기록하면 원인을 찾기 어렵다. DNS lookup, TCP/QUIC connection, TLS handshake, request queue, server processing, TTFB, body transfer를 가능한 범위에서 분리한다.
 
-```text
-DNS
-connect
-TLS handshake
-request queue/upload
-server processing
-TTFB
-response download
-client parse
-```
-
-어느 구간이 2초인지 알아야 최적화 대상이 정해진다.
-
-### retry가 latency를 숨길 수 있다
-
-첫 request가 timeout 후 자동 retry 성공하면 최종 status는 200이어도 user latency가 길어진다.
-
-attempt count를 trace/log에 남긴다.
+retry가 숨겨져 있으면 사용자는 한 request로 보지만 실제 network attempt는 여러 번일 수 있다. attempt별 status와 timeout 원인을 기록하고 connection reuse 여부도 함께 본다.
 
 ---
 
-## CHAPTER 22 · clock과 timestamp에도 오류가 있다
+## CHAPTER 22 · wall clock과 monotonic clock은 용도가 다르다
 
-wall clock은 NTP/user 설정으로 앞으로/뒤로 조정될 수 있다.
+wall clock은 사람이 보는 날짜/시각과 동기화되며 NTP/manual adjustment로 점프할 수 있다. duration 측정에는 monotonic clock이 적합하다.
 
-duration 측정에는 monotonic clock이 적합하다.
-
-```text
-wall clock
-→ 실제 시각 기록
-
-monotonic clock
-→ elapsed duration
-```
-
-분산 시스템에서는 machine별 clock skew도 고려한다.
-
-trace ordering을 timestamp 하나만으로 절대 진리처럼 사용하지 않는다.
+분산 시스템의 서로 다른 host timestamp를 exact causal order로 믿으면 clock skew가 문제를 만든다. trace context와 sequence/event relation을 이용하고 wall time은 근사적인 cross-host 정렬에 사용한다.
 
 ---
 
-## CHAPTER 23 · 로그를 추가해 bug가 사라졌다면 중요한 증거다
+## CHAPTER 23 · Heisenbug는 관측이 timing을 바꾸는 현상까지 포함한다
 
-로그 I/O는 thread scheduling과 timing을 바꾼다.
+추가 로그, debugger breakpoint, sanitizer가 thread scheduling과 allocation layout을 바꾸어 race 증상을 사라지게 할 수 있다. instrumentation 후 재현이 안 된다는 사실은 수정 증거가 아니다.
 
-race condition이 사라질 수 있다.
-
-이때 `재현 안 됨`으로 닫지 않는다.
-
-오히려 timing-sensitive race 가능성을 높이는 evidence다.
-
-### low-intrusion instrumentation
-
-가능하면 tracing buffer, sampling, counter처럼 timing perturbation이 적은 방법을 사용한다.
+observer effect를 줄이려면 low-overhead trace, sampling, hardware counter를 사용하고 reproduction condition을 유지한다. race detector처럼 의도적으로 execution을 바꾸는 도구는 결과를 보조 증거로 해석한다.
 
 ---
 
-## CHAPTER 24 · feature flag와 canary는 원인 격리 도구가 될 수 있다
+## CHAPTER 24 · feature flag와 canary는 변화 범위를 제어하는 실험 도구다
 
-production bug가 새 feature 이후 발생했다고 하자.
+새 code path를 일부 traffic에만 적용하면 control/canary의 metric을 같은 시간대에 비교할 수 있다. 전체 rollback보다 빠르게 hypothesis를 검증하고 blast radius를 제한한다.
 
-전체 rollback 대신 일부 traffic에서 feature를 끄고 metric을 비교할 수 있다.
-
-```text
-flag ON cohort
-error 5%
-
-flag OFF cohort
-error 0.1%
-```
-
-강한 correlation evidence가 된다.
-
-하지만 cohort의 user/data distribution이 다르면 confounder가 생길 수 있다.
+flag 자체가 장기간 남으면 두 code path를 유지하는 complexity가 된다. owner, expiration, default state를 관리한다. data migration처럼 되돌릴 수 없는 변화는 flag만으로 rollback되지 않는다.
 
 ---
 
-## CHAPTER 25 · bisect는 회귀 commit을 찾는다
+## CHAPTER 25 · Git bisect는 regression boundary를 commit 단위로 찾는다
 
-좋았던 commit G와 나쁜 commit B 사이가 크다고 하자.
+good와 bad commit 사이에서 test를 자동 실행하면 binary search로 regression introduction point를 찾을 수 있다. test가 deterministic할수록 bisect 결과가 강하다.
 
-중간 commit을 build/test하며 범위를 절반씩 줄인다.
-
-```text
-G -------- M -------- B
-            test
-```
-
-재현 테스트가 deterministic할수록 강력하다.
-
-flaky test로 bisect하면 잘못된 commit을 지목할 수 있다.
+build environment와 dependency가 commit 외부에서 변하면 과거 commit을 동일하게 재현하지 못할 수 있다. lockfile, toolchain, artifact source를 고정해 commit 비교가 실제 code difference를 반영하게 한다.
 
 ---
 
-## CHAPTER 26 · experiment에는 control이 필요하다
+## CHAPTER 26 · debugging experiment는 한 번에 한 가설을 바꾼다
 
-성능 변경 전후 비교에서 동시에 여러 것을 바꾸지 않는다.
+여러 설정과 코드를 동시에 바꾸고 증상이 사라지면 어떤 변화가 효과였는지 모른다. experiment는 independent variable, measurement, expected result를 미리 적는다.
 
-```text
-before: old cache + old DB + debug build
-
-after: new cache + new DB + release build
-```
-
-이 비교로 무엇이 효과였는지 모른다.
-
-한 번에 하나의 주요 variable을 바꾸거나 factorial experiment를 설계한다.
+negative result도 후보를 제거한 증거다. 실험 결과를 기록하면 같은 추측을 반복하지 않는다. production에서 실험할 때는 safety limit와 rollback 조건을 먼저 정한다.
 
 ---
 
-## CHAPTER 27 · observability overhead도 budget을 가진다
+## CHAPTER 27 · observability 자체도 CPU, storage, network budget을 소비한다
 
-모든 function에 full log/trace를 남기면:
+모든 request의 full payload와 stack을 기록하면 system을 관찰하기 위해 system을 망가뜨릴 수 있다. sampling, aggregation, retention tier로 비용을 통제한다.
 
-```text
-CPU overhead
-allocation
-I/O
-network cost
-storage cost
-privacy risk
-```
-
-가 커진다.
-
-sampling rate, aggregation, retention, redaction을 설계한다.
-
-### cardinality explosion
-
-metric label에 userId/requestId처럼 거의 무한한 값을 넣으면 time-series 수가 폭발한다.
-
-high-cardinality identity는 trace/log가 더 적합할 수 있다.
+trace span과 log field에 high-cardinality 데이터를 무제한 넣으면 backend 비용이 폭증한다. debugging 가치가 높은 field와 개인정보/비용 risk를 함께 평가한다.
 
 ---
 
-## CHAPTER 28 · alert는 symptom 중심으로 설계한다
+## CHAPTER 28 · alert는 원인 추측보다 사용자 영향에 가까워야 한다
 
-`CPU 80%`가 항상 incident는 아니다.
+CPU 80% 하나로 alert하면 정상 batch workload에서도 noise가 발생할 수 있다. availability, latency, correctness처럼 SLO/user impact에 가까운 signal을 primary alert로 두고 resource metric은 diagnosis에 사용한다.
 
-사용자 영향과 직접 연결된 SLI를 우선한다.
-
-예:
-
-```text
-request success rate
-p99 latency
-checkout completion
-freshness
-```
-
-resource metric은 원인 진단에 유용하지만 symptom alert와 구분한다.
+alert마다 owner, severity, runbook, deduplication, auto-resolve 조건을 둔다. action 없는 alert는 운영자가 무시하게 되고 실제 incident signal도 묻힌다.
 
 ---
 
-## CHAPTER 29 · incident timeline은 원인보다 먼저 사실을 고정한다
+## CHAPTER 29 · incident timeline은 사실과 결정의 순서를 보존한다
 
-```text
-10:02 deploy start
-10:05 error rate 0.2%→8%
-10:07 oncall alerted
-10:10 rollback start
-10:14 error back to 0.3%
-```
+incident 중에는 symptom 시작, alert, deploy, mitigation, recovery를 timestamp와 evidence link로 기록한다. 사후 기억만으로 timeline을 재구성하면 hindsight bias가 생긴다.
 
-이 timeline은 나중에 `누가 실수했나`보다 causal relation을 분석하는 기반이다.
-
-### postmortem
-
-좋은 postmortem은 개인 비난보다 system condition을 분석한다.
-
-```text
-trigger
-contributing factors
-why detection late
-why blast radius large
-what safeguard missing
-```
+postmortem은 사람의 실수를 단일 root cause로 끝내지 않고 detection gap, unsafe default, missing rollback, capacity assumption 같은 system condition을 찾는다. action item은 owner와 검증 방법을 가져야 한다.
 
 ---
 
-## CHAPTER 30 · AI가 제시한 원인도 같은 증거 규칙을 적용한다
+## CHAPTER 30 · AI debugging은 가설 생성에 쓰고 사실 판정에는 evidence를 요구한다
 
-AI가 log를 보고 `race condition 같습니다`라고 말해도 그것은 hypothesis다.
+AI가 stack trace나 code를 보고 가능한 원인을 빠르게 나열할 수 있지만 실행하지 않은 path와 실제 runtime state를 알 수 없는 경우가 많다. 제안마다 `이 가설이 맞다면 어떤 observable이 보여야 하는가`를 요구한다.
 
-요구해야 할 것:
-
-```text
-어떤 log line이 근거인가?
-어떤 alternate hypothesis가 있는가?
-무슨 추가 측정으로 둘을 구분하는가?
-재현 test는 무엇인가?
-수정 후 어떤 regression test가 필요한가?
-```
-
-AI가 자신 있게 말하는 정도와 evidence quality는 별개다.
+AI가 만든 fix는 reproduction test, regression test, performance/security impact로 검증한다. `그럴듯한 원인 설명`과 `실제 failure cause가 입증됨`을 구분한다. 로그에 없는 값을 AI가 추정한 경우 FACT로 기록하지 않는다.
 
 ---
 
-## CHAPTER 31 · 종합 장애 추적
+## CHAPTER 31 · 통합 디버깅은 가장 이른 깨진 invariant를 찾는 과정이다
 
-증상:
-
-> 앱에서 사진 업로드를 누르면 5% 확률로 10초 멈춘 뒤 실패한다.
-
-### 1. UI trace
-
-main thread는 10초 동안 running이 아니라 lock wait.
-
-### 2. wait graph
-
-main waits `uploadStateMutex`.
-
-worker owns mutex while synchronous network upload 중.
-
-### 3. network trace
-
-packet loss 상황에서 retry/backoff로 10초.
-
-### 4. code review
-
-worker가 mutex 안에서 network call 수행.
-
-### root mechanism
-
-network 자체의 지연이 main freeze가 된 이유는 **긴 external I/O를 잡은 채 UI가 필요한 shared lock을 보유했기 때문**이다.
-
-### 수정
-
-network I/O를 lock 밖에서 수행하고, lock 안에서는 version 확인 + 짧은 state commit만 한다.
-
-### 검증
+실전 순서는 다음 원칙으로 고정할 수 있다.
 
 ```text
-packet loss injection
-50회
-main frame responsiveness
-upload correctness
-cancel behavior
-state race
+증상을 수치화한다
+→ failing build/input/environment를 고정한다
+→ 정상군과 실패군을 나눈다
+→ request timeline을 만든다
+→ CPU/wait/memory/I/O 중 병목 범주를 고른다
+→ 해당 계층 evidence를 추가한다
+→ 가장 이른 invariant violation을 찾는다
+→ 최소 수정한다
+→ 동일 reproduction과 회귀 범위를 재실행한다
 ```
 
-하나의 layer만 봤으면 `network 느림`으로 끝났을 문제다.
-
----
-
-## PART 09 종료 점검
-
-1. observation과 hypothesis를 왜 분리해야 하는가?
-2. 최소 재현이 원인 공간을 어떻게 줄이는가?
-3. 구조화 로그와 correlation ID가 왜 필요한가?
-4. stack trace가 보여 주지 못하는 history 문제에는 무엇이 있는가?
-5. thread dump에서 wait graph를 만드는 이유는 무엇인가?
-6. native crash symbolization에서 exact build가 왜 필요한가?
-7. 평균 latency가 tail latency를 숨기는 예를 설명할 수 있는가?
-8. CPU profiler에 network wait가 잘 안 보이는 이유는 무엇인가?
-9. sampling과 instrumentation profiler의 trade-off는 무엇인가?
-10. heap dump에서 retained size와 GC root를 왜 보는가?
-11. system trace에서 running/runnable/sleep state는 어떻게 원인 후보를 나누는가?
-12. duration 측정에 monotonic clock을 쓰는 이유는 무엇인가?
-13. logging 후 race가 사라졌을 때 왜 bug가 해결됐다고 하면 안 되는가?
-14. metric high-cardinality가 왜 운영 비용을 폭발시키는가?
-15. AI의 debugging 답을 hypothesis로 다뤄야 하는 이유는 무엇인가?
-
-이제 디버깅을 `코드 보면서 이상한 곳 찾기`로 정의하지 않는다. **재현 → 관측 → 시간축 → 가설 → 분리 실험 → 수정 → 회귀 검증**의 증거 과정으로 정의한다.
+수정 후 증상이 사라졌다는 사실만으로 원인을 증명하지 않는다. **원인 가설이 예측한 evidence가 사라지고, 재현 test가 통과하며, 인접 invariant가 유지되는 것**까지 확인해야 디버깅이 끝난다.
