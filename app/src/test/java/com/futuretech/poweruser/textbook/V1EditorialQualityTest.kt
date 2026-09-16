@@ -1,6 +1,7 @@
 package com.futuretech.poweruser.textbook
 
 import java.io.File
+import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test
 
@@ -11,42 +12,56 @@ class V1EditorialQualityTest {
             File("app/src/main/assets/$assetPath")
         )
         return candidates.firstOrNull { it.isFile }
-            ?: error("Cannot locate V2 TRACK asset: $assetPath")
+            ?: error("Cannot locate V3 TRACK asset: $assetPath")
     }
 
     @Test
-    fun v2TracksHaveBookScaleHierarchyPracticeAndNoPadding() {
+    fun v3TracksUseFewLargeBeginnerBlocksInsteadOfVocabularyPages() {
         V1TextbookCatalog.chapters.forEach { track ->
             val text = assetFile(track.assetPath).readText(Charsets.UTF_8)
             val lines = text.lines()
             val blockRows = lines.mapIndexedNotNull { index, line ->
                 if (line.startsWith("## BLOCK ")) index to line else null
             }
-            val lessonIndices = lines.mapIndexedNotNull { index, line ->
-                index.takeIf { line.startsWith("### LESSON ") }
-            }
-            val supportLabels = listOf("핵심 용어 사전", "완료 기준")
-            val instructionalBlocks = blockRows.filter { (_, heading) ->
-                supportLabels.none { heading.contains(it) }
+            val lessonRows = lines.mapIndexedNotNull { index, line ->
+                if (line.startsWith("### LESSON ")) index to line else null
             }
 
-            assertTrue("${track.id}: must start as TRACK", text.startsWith("# TRACK ${track.number.toString().padStart(2, '0')}"))
-            assertTrue("${track.id}: book-scale BLOCK count=${blockRows.size}", blockRows.size >= 25)
-            assertTrue("${track.id}: lesson count=${lessonIndices.size}", lessonIndices.size >= instructionalBlocks.size)
-            assertTrue("${track.id}: accidental-truncation floor chars=${text.length}", text.length >= 8_000)
-            assertTrue("${track.id}: code/data examples required", text.contains("```"))
-            assertTrue("${track.id}: glossary required", text.contains("핵심 용어 사전"))
-            assertTrue("${track.id}: completion criteria required", text.contains("완료 기준"))
             assertTrue(
-                "${track.id}: project/practice required",
-                text.contains("TRACK 프로젝트") || text.contains("최종 프로젝트") || text.contains("프로젝트 ·")
+                "${track.id}: must start as TRACK",
+                text.startsWith("# TRACK ${track.number.toString().padStart(2, '0')}")
             )
+            assertTrue(
+                "${track.id}: V3 intentionally uses a small number of large authored BLOCKs; count=${blockRows.size}",
+                blockRows.size in 3..8
+            )
+            assertEquals(
+                "${track.id}: each authored BLOCK owns one deep source lesson",
+                blockRows.size,
+                lessonRows.size
+            )
+            assertTrue(
+                "${track.id}: accidental-truncation floor chars=${text.length}",
+                text.length >= 25_000
+            )
+            assertTrue("${track.id}: executable/code or structured-data examples required", text.contains("```"))
 
-            instructionalBlocks.forEach { (blockStart, heading) ->
-                val nextBlockStart = blockRows.firstOrNull { it.first > blockStart }?.first ?: lines.size
+            blockRows.forEachIndexed { blockIndex, (blockStart, heading) ->
+                val nextBlockStart = blockRows.getOrNull(blockIndex + 1)?.first ?: lines.size
+                val blockText = lines.subList(blockStart, nextBlockStart).joinToString("\n")
+                val stepCount = lines.subList(blockStart, nextBlockStart).count { it.startsWith("#### ") }
+
                 assertTrue(
-                    "${track.id}: instructional BLOCK needs LESSON, heading=$heading",
-                    lessonIndices.any { it in (blockStart + 1) until nextBlockStart }
+                    "${track.id}: $heading is still too short (${blockText.length} chars)",
+                    blockText.length >= 2_500
+                )
+                assertTrue(
+                    "${track.id}: $heading needs step-by-step subsections; count=$stepCount",
+                    stepCount >= 5
+                )
+                assertTrue(
+                    "${track.id}: $heading needs an authored LESSON heading",
+                    lines.subList(blockStart, nextBlockStart).any { it.startsWith("### LESSON ") }
                 )
             }
 
@@ -73,15 +88,15 @@ class V1EditorialQualityTest {
     }
 
     @Test
-    fun prerequisiteHeavyTopicsAppearInTeachingOrder() {
+    fun prerequisiteHeavyTopicsStillProgressFromEasyProblemToAdvancedMechanism() {
         fun text(trackNumber: Int): String = assetFile(
             requireNotNull(V1TextbookCatalog.chapters.find { it.number == trackNumber }).assetPath
         ).readText(Charsets.UTF_8)
 
-        fun ordered(source: String, headings: List<String>): Boolean {
+        fun ordered(source: String, markers: List<String>): Boolean {
             var cursor = -1
-            for (heading in headings) {
-                val next = source.indexOf(heading, startIndex = cursor + 1)
+            for (marker in markers) {
+                val next = source.indexOf(marker, startIndex = cursor + 1)
                 if (next < 0 || next <= cursor) return false
                 cursor = next
             }
@@ -89,50 +104,40 @@ class V1EditorialQualityTest {
         }
 
         assertTrue(
-            "TRACK 05 async prerequisites must be incremental",
+            "TRACK 05 async teaching order must stay incremental",
             ordered(
                 text(5),
                 listOf(
-                    "## BLOCK 24 · 비동기를 배우기 전에 기다림",
-                    "## BLOCK 28 · callback",
-                    "## BLOCK 29 · Promise",
-                    "## BLOCK 38 · event loop",
-                    "## BLOCK 39 · microtask",
-                    "## BLOCK 44 · race condition"
+                    "## BLOCK 04 · 시간이 걸리는 일을 기다리는 방법부터 비동기를 시작한다",
+                    "## BLOCK 05 · Promise와 async/await는 미래의 성공과 실패를 다루는 방법이다",
+                    "## BLOCK 06 · \"나중\"은 정확히 언제 실행되는가",
+                    "## BLOCK 07 · 여러 비동기 작업이 동시에 존재할 때 생기는 문제를 다룬다"
                 )
             )
         )
 
         assertTrue(
-            "TRACK 06 MIME/upload vocabulary must be introduced in order",
+            "TRACK 06 HTTP/data/API/browser-policy order must stay incremental",
             ordered(
                 text(6),
                 listOf(
-                    "## BLOCK 31 · 데이터 종류를 왜 알려줘야 하나",
-                    "## BLOCK 32 · MIME type",
-                    "## BLOCK 34 · Content-Type",
-                    "## BLOCK 35 · Accept",
-                    "## BLOCK 38 · 파일 업로드 문제",
-                    "## BLOCK 39 · multipart/form-data",
-                    "## BLOCK 40 · boundary"
+                    "## BLOCK 04 · HTTP 요청과 응답을 실제 메시지처럼 읽는다",
+                    "## BLOCK 05 · 데이터가 무엇인지 알려 주고 여러 종류를 한 요청에 담는다",
+                    "## BLOCK 06 · API는 프로그램이 다른 프로그램의 기능을 쓰는 약속이다",
+                    "## BLOCK 07 · 브라우저 보안 정책과 cache, 실시간 통신, 실제 네트워크 디버깅을 연결한다"
                 )
             )
         )
 
         assertTrue(
-            "TRACK 08 database integrity/ACID vocabulary must be incremental",
+            "TRACK 08 integrity must precede relations/performance/transaction",
             ordered(
                 text(8),
                 listOf(
-                    "## BLOCK 20 · PRIMARY KEY",
-                    "## BLOCK 26 · FOREIGN KEY",
-                    "## BLOCK 28 · 데이터 무결성",
-                    "## BLOCK 44 · transaction을 배우기 전에",
-                    "## BLOCK 45 · transaction",
-                    "## BLOCK 47 · Atomicity",
-                    "## BLOCK 48 · Consistency",
-                    "## BLOCK 49 · Isolation",
-                    "## BLOCK 50 · Durability"
+                    "## BLOCK 04 · 데이터가 말이 안 되는 상태가 되지 않도록 DB 자체에 규칙을 둔다",
+                    "## BLOCK 05 · 현실의 관계를 table로 설계한다",
+                    "## BLOCK 07 · 원하는 row를 빨리 찾도록 index와 query plan을 이해한다",
+                    "## BLOCK 08 · 여러 변경을 한 작업처럼 안전하게 처리한다"
                 )
             )
         )
