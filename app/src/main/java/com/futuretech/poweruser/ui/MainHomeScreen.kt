@@ -2,120 +2,186 @@ package com.futuretech.poweruser.ui
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.*
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.futuretech.poweruser.data.CurriculumDataRepository
 import com.futuretech.poweruser.data.LearningProgressEntity
+import com.futuretech.poweruser.textbook.TextbookProgressStore
+import com.futuretech.poweruser.textbook.V1TextbookCatalog
 
-@OptIn(ExperimentalMaterial3Api::class)
+private val LibraryBg = Color(0xFF090A0D)
+private val LibraryPaper = Color(0xFF111318)
+private val LibraryBorder = Color(0xFF2A2F38)
+private val LibraryText = Color(0xFFF4F6F8)
+private val LibraryMuted = Color(0xFFAAB2BE)
+private val LibraryAccent = Color(0xFF8AB4F8)
+private val LibraryCoverTop = Color(0xFF18263A)
+private val LibraryCoverBottom = Color(0xFF0D1118)
+
 @Composable
 fun MainHomeScreen(
     progressList: List<LearningProgressEntity>,
     dueReviewCount: Int,
-    onNavigateToLesson: (String) -> Unit,
+    onOpenBook: () -> Unit,
     onNavigateToReview: () -> Unit,
     onNavigateToProject: () -> Unit,
     onNavigateToCurriculum: () -> Unit,
     onNavigateToErrorNotes: () -> Unit
 ) {
-    val completedIds = progressList.filter { it.isCompleted }.map { it.lessonId }.toSet()
-    val allLessons = CurriculumDataRepository.beginnerLessons + CurriculumDataRepository.intermediateLessons
-    val nextLesson = allLessons.firstOrNull { it.lessonId !in completedIds } ?: allLessons.last()
-    val completedCount = allLessons.count { it.lessonId in completedIds }
+    val context = LocalContext.current
+    val bookStore = remember { TextbookProgressStore(context) }
+    val currentTrack = V1TextbookCatalog.chapterById(bookStore.selectedChapterId() ?: "V1-C01")
+        ?: V1TextbookCatalog.chapters.first()
+    val currentLesson = bookStore.selectedSectionIndex(currentTrack.id) + 1
+    val readTracks = bookStore.readCompletedIds().size
+    val completedPractice = progressList.count { it.isCompleted }
 
     Scaffold(
         modifier = Modifier.testTag("learning_home"),
-        topBar = {
-            TopAppBar(
-                title = {
-                    Column {
-                        Text("학습", fontSize = 20.sp, fontWeight = FontWeight.Bold)
-                        Text(
-                            "오늘 할 것만 간단하게",
-                            fontSize = 12.sp,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant
-                        )
-                    }
-                },
-                colors = TopAppBarDefaults.topAppBarColors(containerColor = MaterialTheme.colorScheme.surface)
-            )
-        }
+        containerColor = LibraryBg
     ) { innerPadding ->
-        Column(
+        LazyColumn(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(innerPadding)
-                .background(MaterialTheme.colorScheme.background)
-                .verticalScroll(rememberScrollState())
-                .padding(horizontal = 16.dp, vertical = 14.dp),
-            verticalArrangement = Arrangement.spacedBy(12.dp)
+                .background(LibraryBg),
+            contentPadding = PaddingValues(horizontal = 18.dp, vertical = 22.dp),
+            verticalArrangement = Arrangement.spacedBy(14.dp)
         ) {
-            Surface(
-                modifier = Modifier.fillMaxWidth().testTag("home_today_12min"),
-                shape = RoundedCornerShape(14.dp),
-                color = MaterialTheme.colorScheme.primaryContainer
-            ) {
-                Column(modifier = Modifier.padding(18.dp)) {
-                    Text("오늘 12분", fontSize = 24.sp, fontWeight = FontWeight.Bold)
-                    Spacer(Modifier.height(4.dp))
+            item {
+                Column(verticalArrangement = Arrangement.spacedBy(5.dp)) {
+                    Text("내 코딩책", color = LibraryText, fontSize = 30.sp, fontWeight = FontWeight.Bold)
                     Text(
-                        "한 번에 많이 하지 말고, 이어서 한 단위만 끝냅니다.",
+                        "읽고 · 직접 풀고 · 다시 복습하는 한 권의 교재",
+                        color = LibraryMuted,
                         fontSize = 13.sp,
-                        color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.82f)
+                        lineHeight = 20.sp
                     )
                 }
             }
 
-            HomeActionCard(
-                title = "이어서 학습",
-                subtitle = "${nextLesson.title} · 약 ${nextLesson.estimatedMinutes}분",
-                tag = "home_continue",
-                onClick = { onNavigateToLesson(nextLesson.lessonId) }
-            )
-
-            HomeActionCard(
-                title = "복습 ${dueReviewCount.coerceAtLeast(0)}개",
-                subtitle = if (dueReviewCount > 0) "지금 다시 보면 좋은 내용만 모았습니다." else "오늘 예정된 복습이 없습니다.",
-                tag = "home_review",
-                onClick = onNavigateToReview
-            )
-
-            HomeActionCard(
-                title = "프로젝트",
-                subtitle = "배운 내용을 실제 작은 기능으로 연결합니다.",
-                tag = "home_project",
-                onClick = onNavigateToProject
-            )
-
-            HomeActionCard(
-                title = "전체 과정",
-                subtitle = "초급·중급 전체 과정과 현재 위치를 봅니다.",
-                tag = "home_curriculum",
-                onClick = onNavigateToCurriculum
-            )
-
-            HorizontalDivider(modifier = Modifier.padding(top = 2.dp))
-
-            Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
-                Text(
-                    "진행 $completedCount/${allLessons.size}",
-                    fontSize = 12.sp,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant
-                )
-                TextButton(
-                    onClick = onNavigateToErrorNotes,
-                    modifier = Modifier.testTag("home_error_notes")
+            item {
+                Card(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .clickable(onClick = onOpenBook)
+                        .testTag("home_continue"),
+                    colors = CardDefaults.cardColors(containerColor = LibraryPaper),
+                    shape = RoundedCornerShape(20.dp),
+                    border = androidx.compose.foundation.BorderStroke(1.dp, LibraryBorder)
                 ) {
-                    Text("내 오류")
+                    Row(
+                        modifier = Modifier.fillMaxWidth().padding(16.dp),
+                        horizontalArrangement = Arrangement.spacedBy(16.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        BookCover()
+                        Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                            Text("이어서 읽기", color = LibraryAccent, fontSize = 12.sp, fontWeight = FontWeight.Bold)
+                            Text(
+                                currentTrack.title,
+                                color = LibraryText,
+                                fontSize = 20.sp,
+                                lineHeight = 26.sp,
+                                fontWeight = FontWeight.Bold,
+                                maxLines = 3
+                            )
+                            Text(
+                                "TRACK ${currentTrack.number.toString().padStart(2, '0')} · LESSON $currentLesson",
+                                color = LibraryMuted,
+                                fontSize = 12.sp
+                            )
+                            Text(
+                                "마지막으로 보던 페이지에서 그대로 이어집니다.",
+                                color = LibraryMuted,
+                                fontSize = 12.sp,
+                                lineHeight = 18.sp
+                            )
+                            Surface(
+                                color = LibraryAccent.copy(alpha = .12f),
+                                shape = RoundedCornerShape(10.dp)
+                            ) {
+                                Text(
+                                    "책 열기  →",
+                                    modifier = Modifier.padding(horizontal = 12.dp, vertical = 8.dp),
+                                    color = LibraryAccent,
+                                    fontSize = 13.sp,
+                                    fontWeight = FontWeight.Bold
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+
+            item {
+                Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+                    LibraryActionCard(
+                        modifier = Modifier.weight(1f).testTag("home_curriculum"),
+                        title = "목차",
+                        subtitle = "11개 TRACK 전체",
+                        onClick = onNavigateToCurriculum
+                    )
+                    LibraryActionCard(
+                        modifier = Modifier.weight(1f).testTag("home_review"),
+                        title = "복습",
+                        subtitle = if (dueReviewCount > 0) "$dueReviewCount개 예정" else "오늘은 없음",
+                        onClick = onNavigateToReview
+                    )
+                }
+            }
+
+            item {
+                LibraryActionCard(
+                    modifier = Modifier.fillMaxWidth().testTag("home_project"),
+                    title = "직접 만들어보기",
+                    subtitle = "읽은 내용을 실제 작은 기능과 코드로 연결합니다.",
+                    onClick = onNavigateToProject
+                )
+            }
+
+            item {
+                HorizontalDivider(color = LibraryBorder)
+                Row(
+                    modifier = Modifier.fillMaxWidth().padding(top = 10.dp),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Column {
+                        Text("읽기 완료 $readTracks/${V1TextbookCatalog.TRACK_COUNT} TRACK", color = LibraryMuted, fontSize = 12.sp)
+                        Text("실습 완료 $completedPractice개", color = LibraryMuted, fontSize = 12.sp)
+                    }
+                    TextButton(onClick = onNavigateToErrorNotes, modifier = Modifier.testTag("home_error_notes")) {
+                        Text("내 오류", color = LibraryAccent)
+                    }
                 }
             }
         }
@@ -123,29 +189,54 @@ fun MainHomeScreen(
 }
 
 @Composable
-private fun HomeActionCard(
+private fun BookCover() {
+    Box(
+        modifier = Modifier
+            .width(112.dp)
+            .height(164.dp)
+            .background(
+                Brush.verticalGradient(listOf(LibraryCoverTop, LibraryCoverBottom)),
+                RoundedCornerShape(13.dp)
+            )
+            .testTag("home_book_cover")
+    ) {
+        Box(
+            Modifier
+                .width(7.dp)
+                .height(164.dp)
+                .background(LibraryAccent.copy(alpha = .75f), RoundedCornerShape(topStart = 13.dp, bottomStart = 13.dp))
+                .align(Alignment.CenterStart)
+        )
+        Column(
+            modifier = Modifier.fillMaxSize().padding(start = 18.dp, end = 10.dp, top = 18.dp, bottom = 14.dp),
+            verticalArrangement = Arrangement.SpaceBetween
+        ) {
+            Column {
+                Text("CODING", color = LibraryAccent, fontSize = 10.sp, fontWeight = FontWeight.Bold)
+                Spacer(Modifier.height(6.dp))
+                Text("코딩\n완전과정", color = LibraryText, fontSize = 20.sp, lineHeight = 24.sp, fontWeight = FontWeight.Bold)
+            }
+            Text("초급 · 중급", color = LibraryMuted, fontSize = 10.sp)
+        }
+    }
+}
+
+@Composable
+private fun LibraryActionCard(
+    modifier: Modifier,
     title: String,
     subtitle: String,
-    tag: String,
     onClick: () -> Unit
 ) {
     Card(
-        modifier = Modifier
-            .fillMaxWidth()
-            .testTag(tag)
-            .clickable(onClick = onClick),
-        shape = RoundedCornerShape(14.dp),
-        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
+        modifier = modifier.clickable(onClick = onClick),
+        colors = CardDefaults.cardColors(containerColor = LibraryPaper),
+        border = androidx.compose.foundation.BorderStroke(1.dp, LibraryBorder),
+        shape = RoundedCornerShape(16.dp)
     ) {
-        Column(modifier = Modifier.padding(horizontal = 18.dp, vertical = 17.dp)) {
-            Text(title, fontSize = 17.sp, fontWeight = FontWeight.Bold)
-            Spacer(Modifier.height(4.dp))
-            Text(
-                subtitle,
-                fontSize = 13.sp,
-                lineHeight = 19.sp,
-                color = MaterialTheme.colorScheme.onSurfaceVariant
-            )
+        Column(Modifier.fillMaxWidth().padding(16.dp), verticalArrangement = Arrangement.spacedBy(5.dp)) {
+            Text(title, color = LibraryText, fontSize = 16.sp, fontWeight = FontWeight.Bold)
+            Text(subtitle, color = LibraryMuted, fontSize = 12.sp, lineHeight = 18.sp)
         }
     }
 }
