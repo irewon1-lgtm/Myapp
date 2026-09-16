@@ -46,7 +46,7 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.rememberTextMeasurer
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.futuretech.poweruser.data.CurriculumDataRepository
@@ -56,38 +56,45 @@ import com.futuretech.poweruser.textbook.TextbookChapter
 import com.futuretech.poweruser.textbook.TextbookContentPage
 import com.futuretech.poweruser.textbook.TextbookLearningFlow
 import com.futuretech.poweruser.textbook.TextbookMarkdownParser
-import com.futuretech.poweruser.textbook.TextbookPageComposer
-import com.futuretech.poweruser.textbook.TextbookPageLayout
 import com.futuretech.poweruser.textbook.TextbookProgressStore
 import com.futuretech.poweruser.textbook.TextbookSection
 import com.futuretech.poweruser.textbook.TextbookSectioner
 import com.futuretech.poweruser.textbook.V1TextbookCatalog
 import com.futuretech.poweruser.textbook.V4BookDepthLibrary
 
-private val BookShell = Color(0xFF07080A)
-private val BookPaper = Color(0xFF121419)
+private val BookShell = Color(0xFF050608)
+private val BookPaper = Color(0xFF101216)
 private val BookPaperRaised = Color(0xFF171A20)
-private val BookInk = Color(0xFFF1F2F4)
-private val BookMuted = Color(0xFF9BA3AE)
-private val BookFaint = Color(0xFF6F7782)
-private val BookRule = Color(0xFF2A2E35)
-private val BookAccent = Color(0xFF9DBAE0)
+private val BookInk = Color(0xFFF2F3F5)
+private val BookMuted = Color(0xFFA2A9B3)
+private val BookFaint = Color(0xFF707782)
+private val BookRule = Color(0xFF292D34)
+private val BookAccent = Color(0xFFA8C4E8)
 private val BookCode = Color(0xFF08090B)
+
+private val BOOK_TOP_BAR_HEIGHT = 34.dp
+private val BOOK_LESSON_STRIP_HEIGHT = 24.dp
+private val BOOK_OUTER_HORIZONTAL_PADDING = 2.dp
+private val BOOK_OUTER_VERTICAL_PADDING = 1.dp
+private val BOOK_PAGE_HORIZONTAL_PADDING = 16.dp
+private val BOOK_PAGE_VERTICAL_PADDING = 8.dp
+private val BOOK_FOOTER_HEIGHT = 22.dp
 private const val OPEN_LAST_PAGE_V4 = Int.MAX_VALUE
 
 private sealed interface V4ReaderPage {
     data object LessonCover : V4ReaderPage
-    data class Content(val page: TextbookContentPage) : V4ReaderPage
+    data class Content(val page: TextbookContentPage, val utilization: Double) : V4ReaderPage
     data object Recall : V4ReaderPage
     data object LessonEnd : V4ReaderPage
 }
 
 /**
- * Reader designed as an actual book page rather than a stack of cards.
+ * Full-page e-book reader.
  *
- * Content pages use the available viewport height to derive their line budget. This keeps the page
- * visually full on a Galaxy Tab while remaining non-scrolling on a phone. Lists render as ordinary
- * book typography; only code/data examples receive a separate visual container.
+ * Normal reading pages are non-scrolling and are paginated from actual Compose text measurement.
+ * Width, density and fontScale therefore participate in layout instead of an approximate
+ * characters-per-line / fixed-line-height formula. The chrome is deliberately thin so the content
+ * display area consumes almost the entire reader viewport.
  */
 @Composable
 fun V4PagedBookScreen(
@@ -139,9 +146,7 @@ fun V4PagedBookScreen(
         val restoredSection = store.selectedSectionIndex(chapter.id)
             .coerceIn(0, sections.lastIndex.coerceAtLeast(0))
         var sectionIndex by rememberSaveable(chapter.id) { mutableIntStateOf(restoredSection) }
-        val section = sections.getOrNull(sectionIndex)
-
-        if (section == null) return@Scaffold
+        val section = sections.getOrNull(sectionIndex) ?: return@Scaffold
 
         val concepts = remember(chapter.id, section.id, lesson.lessonId) {
             TextbookLearningFlow.buildConcepts(chapter.id, section, lesson)
@@ -149,9 +154,7 @@ fun V4PagedBookScreen(
         val restoredConcept = store.selectedConceptIndex(section.id)
             .coerceIn(0, concepts.lastIndex.coerceAtLeast(0))
         var conceptIndex by rememberSaveable(section.id) { mutableIntStateOf(restoredConcept) }
-        val concept = concepts.getOrNull(conceptIndex)
-
-        if (concept == null) return@Scaffold
+        val concept = concepts.getOrNull(conceptIndex) ?: return@Scaffold
 
         Column(
             modifier = Modifier
@@ -190,7 +193,9 @@ fun V4PagedBookScreen(
                                 val previousSection = sections[sectionIndex - 1]
                                 val previousConcepts = TextbookLearningFlow.buildConcepts(chapter.id, previousSection, lesson)
                                 store.saveSelectedConceptIndex(previousSection.id, previousConcepts.lastIndex.coerceAtLeast(0))
-                                previousConcepts.lastOrNull()?.let { store.saveSelectedPageIndex(it.id, OPEN_LAST_PAGE_V4) }
+                                previousConcepts.lastOrNull()?.let {
+                                    store.saveSelectedPageIndex(it.id, OPEN_LAST_PAGE_V4)
+                                }
                                 sectionIndex -= 1
                                 store.saveSelectedSectionIndex(chapter.id, sectionIndex)
                             }
@@ -245,13 +250,19 @@ private fun V4BookTopBar(
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(48.dp)
-                .padding(horizontal = 4.dp),
+                .height(BOOK_TOP_BAR_HEIGHT)
+                .padding(horizontal = 6.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            TextButton(onClick = onNavigateBack) {
-                Text("‹ 서재", color = BookInk, fontSize = 13.sp, fontWeight = FontWeight.SemiBold)
-            }
+            Text(
+                "‹ 서재",
+                modifier = Modifier
+                    .clickable(onClick = onNavigateBack)
+                    .padding(horizontal = 6.dp, vertical = 7.dp),
+                color = BookInk,
+                fontSize = 12.sp,
+                fontWeight = FontWeight.SemiBold
+            )
             Column(
                 modifier = Modifier.weight(1f),
                 horizontalAlignment = Alignment.CenterHorizontally,
@@ -260,24 +271,27 @@ private fun V4BookTopBar(
                 Text(
                     "TRACK ${chapter.number.toString().padStart(2, '0')} / ${V1TextbookCatalog.TRACK_COUNT}",
                     color = BookFaint,
-                    fontSize = 9.sp,
-                    letterSpacing = 0.6.sp
+                    fontSize = 8.sp,
+                    letterSpacing = 0.5.sp
                 )
                 Text(
                     chapter.title,
                     color = BookInk,
-                    fontSize = 13.sp,
+                    fontSize = 11.sp,
                     fontWeight = FontWeight.Bold,
                     maxLines = 1
                 )
             }
-            TextButton(
-                onClick = { onOpenToc?.invoke() },
-                enabled = onOpenToc != null,
-                modifier = Modifier.testTag("reader_toc_button")
-            ) {
-                Text("목차", color = BookAccent, fontSize = 12.sp, fontWeight = FontWeight.Bold)
-            }
+            Text(
+                "목차",
+                modifier = Modifier
+                    .clickable(enabled = onOpenToc != null) { onOpenToc?.invoke() }
+                    .padding(horizontal = 7.dp, vertical = 7.dp)
+                    .testTag("reader_toc_button"),
+                color = BookAccent,
+                fontSize = 11.sp,
+                fontWeight = FontWeight.Bold
+            )
         }
     }
 }
@@ -291,30 +305,30 @@ private fun V4LessonStrip(
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .height(38.dp)
+            .height(BOOK_LESSON_STRIP_HEIGHT)
             .background(BookShell)
-            .padding(horizontal = 18.dp)
+            .padding(horizontal = 12.dp)
             .testTag("textbook_section_strip"),
         verticalAlignment = Alignment.CenterVertically
     ) {
         Text(
-            "LESSON ${section.index + 1}/$sectionCount",
+            "${section.index + 1}/$sectionCount",
             color = BookAccent,
-            fontSize = 10.sp,
+            fontSize = 9.sp,
             fontWeight = FontWeight.Bold
         )
-        Spacer(Modifier.width(9.dp))
+        Spacer(Modifier.width(7.dp))
         Text(
             section.title,
             modifier = Modifier.weight(1f),
             color = BookInk,
-            fontSize = 11.sp,
+            fontSize = 10.sp,
             maxLines = 1
         )
         Text(
-            "약 ${section.estimatedMinutes + extraMinutes}분",
+            "${section.estimatedMinutes + extraMinutes}분",
             color = BookFaint,
-            fontSize = 10.sp
+            fontSize = 9.sp
         )
     }
     HorizontalDivider(color = BookRule)
@@ -344,33 +358,46 @@ private fun V4BookReader(
             .background(BookShell)
             .testTag("textbook_reader")
     ) {
-        val widthDp = maxWidth.value
-        val heightDp = maxHeight.value
-        val charsPerLine = when {
-            widthDp >= 720f -> 46
-            widthDp >= 600f -> 40
-            widthDp >= 480f -> 34
-            else -> 25
+        val density = LocalDensity.current
+        val textMeasurer = rememberTextMeasurer(cacheSize = 128)
+        val measuredWidthDp = maxWidth - BOOK_OUTER_HORIZONTAL_PADDING * 2 - BOOK_PAGE_HORIZONTAL_PADDING * 2
+        val measuredHeightDp = maxHeight - BOOK_OUTER_VERTICAL_PADDING * 2 - BOOK_PAGE_VERTICAL_PADDING * 2 - BOOK_FOOTER_HEIGHT
+        val contentWidthPx = with(density) { measuredWidthDp.roundToPx().coerceAtLeast(1) }
+        val contentHeightPx = with(density) { measuredHeightDp.roundToPx().coerceAtLeast(1) }
+
+        val measuredPages = remember(
+            concept.id,
+            concept.blocks,
+            contentWidthPx,
+            contentHeightPx,
+            density.density,
+            density.fontScale,
+            textMeasurer
+        ) {
+            MeasuredTextbookPageComposer.paginate(
+                blocks = concept.blocks,
+                contentWidthPx = contentWidthPx,
+                contentHeightPx = contentHeightPx,
+                density = density,
+                textMeasurer = textMeasurer
+            )
         }
-        // The footer and page margins consume about 100dp. 27dp per text line is intentionally
-        // conservative enough for 16-17sp book typography while still using the actual viewport.
-        val maxLines = ((heightDp - 102f) / 27f).toInt().coerceIn(18, 40)
-        val layout = remember(charsPerLine, maxLines) { TextbookPageLayout(charsPerLine, maxLines) }
-        val contentPages = remember(concept.id, concept.blocks, layout) {
-            TextbookPageComposer.paginate(concept.blocks, layout)
-        }
-        val pages = remember(concept.id, contentPages) {
+        val pages = remember(concept.id, measuredPages) {
             buildList<V4ReaderPage> {
                 add(V4ReaderPage.LessonCover)
-                contentPages.forEach { add(V4ReaderPage.Content(it)) }
+                measuredPages.forEach { measured ->
+                    add(V4ReaderPage.Content(measured.content, measured.utilization))
+                }
                 add(V4ReaderPage.Recall)
                 add(V4ReaderPage.LessonEnd)
             }
         }
         val start = initialPageIndex.coerceIn(0, pages.lastIndex.coerceAtLeast(0))
-        var pageIndex by rememberSaveable(concept.id) { mutableIntStateOf(start) }
+        var pageIndex by rememberSaveable(concept.id, contentWidthPx, contentHeightPx, density.fontScale) {
+            mutableIntStateOf(start)
+        }
         val page = pages[pageIndex]
-        val swipeThresholdPx = with(LocalDensity.current) { 64.dp.toPx() }
+        val swipeThresholdPx = with(density) { 48.dp.toPx() }
         val isLastLessonInTrack = section.index == sectionCount - 1
 
         fun previous() {
@@ -394,7 +421,10 @@ private fun V4BookReader(
         Box(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(horizontal = 8.dp, vertical = 7.dp)
+                .padding(
+                    horizontal = BOOK_OUTER_HORIZONTAL_PADDING,
+                    vertical = BOOK_OUTER_VERTICAL_PADDING
+                )
                 .pointerInput(concept.id, pageIndex, pages.size) {
                     var total = 0f
                     detectHorizontalDragGestures(
@@ -414,16 +444,19 @@ private fun V4BookReader(
             Surface(
                 modifier = Modifier
                     .fillMaxSize()
-                    .align(Alignment.Center),
+                    .align(Alignment.Center)
+                    .testTag("textbook_page_surface"),
                 color = BookPaper,
-                shape = RoundedCornerShape(7.dp),
-                border = BorderStroke(1.dp, BookRule),
-                shadowElevation = 3.dp
+                shape = RoundedCornerShape(2.dp),
+                border = BorderStroke(1.dp, BookRule)
             ) {
                 Column(
                     modifier = Modifier
                         .fillMaxSize()
-                        .padding(horizontal = 30.dp, vertical = 22.dp)
+                        .padding(
+                            horizontal = BOOK_PAGE_HORIZONTAL_PADDING,
+                            vertical = BOOK_PAGE_VERTICAL_PADDING
+                        )
                 ) {
                     Box(modifier = Modifier.weight(1f).fillMaxWidth()) {
                         when (page) {
@@ -457,7 +490,7 @@ private fun V4BookReader(
                 modifier = Modifier
                     .align(Alignment.CenterStart)
                     .fillMaxHeight()
-                    .width(48.dp)
+                    .width(44.dp)
                     .clickable { previous() }
                     .testTag("textbook_left_tap_zone")
             )
@@ -465,7 +498,7 @@ private fun V4BookReader(
                 modifier = Modifier
                     .align(Alignment.CenterEnd)
                     .fillMaxHeight()
-                    .width(48.dp)
+                    .width(44.dp)
                     .clickable { next() }
                     .testTag("textbook_right_tap_zone")
             )
@@ -475,9 +508,8 @@ private fun V4BookReader(
 
 @Composable
 private fun V4PageFooter(section: TextbookSection, pageIndex: Int, pageCount: Int) {
-    HorizontalDivider(color = BookRule)
     Row(
-        modifier = Modifier.fillMaxWidth().height(38.dp),
+        modifier = Modifier.fillMaxWidth().height(BOOK_FOOTER_HEIGHT),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
@@ -485,15 +517,15 @@ private fun V4PageFooter(section: TextbookSection, pageIndex: Int, pageCount: In
             section.title,
             modifier = Modifier.weight(1f),
             color = BookFaint,
-            fontSize = 9.sp,
+            fontSize = 8.sp,
             maxLines = 1
         )
-        Spacer(Modifier.width(12.dp))
+        Spacer(Modifier.width(8.dp))
         Text(
             "${pageIndex + 1} / $pageCount",
             modifier = Modifier.testTag("textbook_page_indicator"),
             color = BookMuted,
-            fontSize = 10.sp,
+            fontSize = 9.sp,
             fontWeight = FontWeight.SemiBold
         )
     }
@@ -514,47 +546,43 @@ private fun V4LessonCoverPage(
         Text(
             "TRACK ${chapter.number.toString().padStart(2, '0')}",
             color = BookAccent,
-            fontSize = 11.sp,
+            fontSize = 10.sp,
             fontWeight = FontWeight.Bold,
-            letterSpacing = 1.sp
+            letterSpacing = 0.8.sp
         )
-        Spacer(Modifier.height(18.dp))
+        Spacer(Modifier.height(12.dp))
         Text(
             "LESSON ${section.index + 1}",
             modifier = Modifier.testTag("textbook_section_progress"),
             color = BookMuted,
-            fontSize = 15.sp,
+            fontSize = 13.sp,
             fontWeight = FontWeight.SemiBold
         )
-        Spacer(Modifier.height(8.dp))
+        Spacer(Modifier.height(6.dp))
         Text(
             concept.title,
             modifier = Modifier.testTag("textbook_section_title"),
             color = BookInk,
-            fontSize = 31.sp,
-            lineHeight = 39.sp,
+            fontSize = 29.sp,
+            lineHeight = 36.sp,
             fontWeight = FontWeight.Bold
         )
-        Spacer(Modifier.height(20.dp))
+        Spacer(Modifier.height(14.dp))
         HorizontalDivider(color = BookRule)
-        Spacer(Modifier.height(18.dp))
+        Spacer(Modifier.height(12.dp))
         Text(
             chapter.summary,
             color = BookMuted,
             fontSize = 15.sp,
-            lineHeight = 25.sp
+            lineHeight = 24.sp
         )
-        Spacer(Modifier.height(20.dp))
-        Row(horizontalArrangement = Arrangement.spacedBy(18.dp)) {
-            Text("${section.index + 1} / $sectionCount LESSON", color = BookFaint, fontSize = 11.sp)
-            Text("약 ${section.estimatedMinutes + extraMinutes}분", color = BookFaint, fontSize = 11.sp)
+        Spacer(Modifier.height(12.dp))
+        Row(horizontalArrangement = Arrangement.spacedBy(14.dp)) {
+            Text("${section.index + 1}/$sectionCount", color = BookFaint, fontSize = 10.sp)
+            Text("약 ${section.estimatedMinutes + extraMinutes}분", color = BookFaint, fontSize = 10.sp)
         }
-        Spacer(Modifier.height(18.dp))
-        Text(
-            "오른쪽 가장자리 터치 또는 왼쪽으로 밀어 다음 장",
-            color = BookAccent,
-            fontSize = 11.sp
-        )
+        Spacer(Modifier.height(12.dp))
+        Text("오른쪽 끝 터치 · 왼쪽으로 밀기 → 다음 장", color = BookAccent, fontSize = 10.sp)
     }
 }
 
@@ -565,9 +593,7 @@ private fun V4ContentBookPage(page: TextbookContentPage) {
             modifier = Modifier.fillMaxSize(),
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
-            page.blocks.forEach { block ->
-                V4BookBlock(block, Modifier.fillMaxWidth())
-            }
+            page.blocks.forEach { block -> V4BookBlock(block, Modifier.fillMaxWidth()) }
         }
     }
 }
@@ -692,20 +718,17 @@ private fun V4RecallPage(concept: LearningConcept, onPractice: () -> Unit) {
     var answer by rememberSaveable(concept.problem.id) { mutableStateOf("") }
     var saved by rememberSaveable(concept.problem.id) { mutableStateOf(false) }
 
-    Column(
-        modifier = Modifier.fillMaxSize(),
-        verticalArrangement = Arrangement.Center
-    ) {
+    Column(modifier = Modifier.fillMaxSize(), verticalArrangement = Arrangement.Center) {
         Text("책을 잠깐 덮고 기억에서 꺼내기", color = BookAccent, fontSize = 12.sp, fontWeight = FontWeight.Bold)
-        Spacer(Modifier.height(12.dp))
+        Spacer(Modifier.height(10.dp))
         Text(
             concept.problem.prompt,
             color = BookInk,
-            fontSize = 18.sp,
-            lineHeight = 28.sp,
+            fontSize = 17.sp,
+            lineHeight = 26.sp,
             fontWeight = FontWeight.SemiBold
         )
-        Spacer(Modifier.height(16.dp))
+        Spacer(Modifier.height(12.dp))
         OutlinedTextField(
             value = answer,
             onValueChange = {
@@ -714,10 +737,10 @@ private fun V4RecallPage(concept: LearningConcept, onPractice: () -> Unit) {
             },
             modifier = Modifier.fillMaxWidth(),
             label = { Text("내 말로 설명") },
-            minLines = 5,
+            minLines = 4,
             colors = v4ReaderTextFieldColors()
         )
-        Spacer(Modifier.height(10.dp))
+        Spacer(Modifier.height(8.dp))
         Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
             Button(
                 onClick = { saved = true },
@@ -727,12 +750,12 @@ private fun V4RecallPage(concept: LearningConcept, onPractice: () -> Unit) {
             OutlinedButton(onClick = onPractice) { Text("전체 실습", color = BookAccent) }
         }
         if (saved) {
-            Spacer(Modifier.height(12.dp))
+            Spacer(Modifier.height(10.dp))
             Text(
-                "점수는 깎지 않습니다. ‘왜 필요한지’와 ‘어디서 실패하는지’까지 빠졌는지 스스로 확인하세요.",
+                "정의만 반복하지 말고 원인·작동 순서·실패 조건까지 빠졌는지 확인하세요.",
                 color = BookMuted,
                 fontSize = 12.sp,
-                lineHeight = 19.sp
+                lineHeight = 18.sp
             )
         }
     }
@@ -750,29 +773,23 @@ private fun V4LessonEndPage(
     onNextTrack: (() -> Unit)?,
     onPreviousTrack: (() -> Unit)?
 ) {
-    Column(
-        modifier = Modifier.fillMaxSize(),
-        verticalArrangement = Arrangement.Center
-    ) {
+    Column(modifier = Modifier.fillMaxSize(), verticalArrangement = Arrangement.Center) {
         Text(
             if (isLastLessonInTrack) "TRACK 읽기 완료" else "LESSON 읽기 완료",
             color = BookAccent,
             fontSize = 12.sp,
             fontWeight = FontWeight.Bold
         )
-        Spacer(Modifier.height(10.dp))
+        Spacer(Modifier.height(8.dp))
         Text(
-            if (isLastLessonInTrack) {
-                "읽기만 끝난 것이 아니라 이제 문제·실습으로 실제 이해를 검증할 차례입니다."
-            } else {
-                "여기까지가 한 묶음입니다. 다음 LESSON은 앞의 개념을 한 단계 더 연결합니다."
-            },
+            if (isLastLessonInTrack) "이제 문제·실습으로 실제 이해를 검증합니다."
+            else "다음 LESSON에서 앞의 원리를 이어서 확장합니다.",
             color = BookInk,
-            fontSize = 22.sp,
-            lineHeight = 32.sp,
+            fontSize = 21.sp,
+            lineHeight = 30.sp,
             fontWeight = FontWeight.Bold
         )
-        Spacer(Modifier.height(22.dp))
+        Spacer(Modifier.height(16.dp))
 
         if (!isLastLessonInTrack) {
             Button(
@@ -790,14 +807,14 @@ private fun V4LessonEndPage(
             ) { Text(if (readComplete) "TRACK 읽기 완료 ✓" else "이 TRACK 읽기 완료") }
         }
 
-        Spacer(Modifier.height(9.dp))
+        Spacer(Modifier.height(8.dp))
         OutlinedButton(
             onClick = onPractice,
             modifier = Modifier.fillMaxWidth().testTag("textbook_practice_button"),
             border = BorderStroke(1.dp, BookAccent)
         ) { Text(if (practiceComplete) "전체 문제·실습 다시 풀기 ✓" else "전체 문제·실습 열기", color = BookAccent) }
 
-        Spacer(Modifier.height(9.dp))
+        Spacer(Modifier.height(8.dp))
         Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
             OutlinedButton(
                 onClick = { onPreviousLesson?.invoke() },
@@ -814,10 +831,8 @@ private fun V4LessonEndPage(
         }
 
         if (isLastLessonInTrack && onPreviousTrack != null) {
-            Spacer(Modifier.height(8.dp))
-            TextButton(onClick = onPreviousTrack) {
-                Text("이전 TRACK으로 돌아가기", color = BookMuted)
-            }
+            Spacer(Modifier.height(6.dp))
+            TextButton(onClick = onPreviousTrack) { Text("이전 TRACK으로 돌아가기", color = BookMuted) }
         }
     }
 }
