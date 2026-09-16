@@ -12,23 +12,154 @@ data class TextbookSection(
 )
 
 /**
- * Converts a long TRACK source into deterministic learner-facing LESSON pages without mutating
- * source markdown. The TRACK introduction stays attached to BLOCK 01 and its first H3 LESSON.
- * H2 is a BLOCK label and is attached to the first H3 LESSON inside that BLOCK. Every later H3
- * starts a new page. Support BLOCKs without H3 (for example glossary/completion) remain one page.
- * This preserves authored TRACK -> BLOCK -> LESSON hierarchy instead of merging unrelated lessons
- * merely because their text happens to be short.
+ * Builds learner-facing textbook pages.
  *
- * Internal chapter/section ids remain stable-shaped for navigation compatibility. V2 progress is
- * stored in its own preference namespace, so the rewritten course does not inherit V1 completion.
- * The source asset remains the single source of truth; this class controls presentation chunks only.
+ * Legacy/non-V3 callers keep the authored H2/H3 split so existing tools and synthetic tests can
+ * continue to exercise the parser deterministically. The V3 beginner rewrite intentionally does
+ * something different: closely related authored BLOCKs are grouped into one large learner-facing
+ * LESSON. Inside that page the BLOCK headings remain visible as subchapters and the old tiny H3
+ * LESSON headings are demoted to ordinary subheadings. This keeps TRACK -> LESSON -> BLOCK/subtopic
+ * navigation readable without regressing into hundreds of five-line vocabulary pages.
  */
 object TextbookSectioner {
     private const val WEIGHT_PER_MINUTE = 330
 
+    private data class LessonGrouping(
+        val sizes: List<Int>,
+        val titles: List<String>
+    )
+
+    /**
+     * V3 final learner-facing grouping: 67 authored BLOCK pages -> 26 deep LESSON pages.
+     * The grouping is intentionally conservative: every merged page contains only adjacent,
+     * prerequisite-related BLOCKs from the same TRACK.
+     */
+    private val v3Groupings: Map<String, LessonGrouping> = mapOf(
+        "V1-C01" to LessonGrouping(
+            sizes = listOf(3, 2),
+            titles = listOf(
+                "컴퓨터·파일·문자는 어떻게 데이터가 되는가",
+                "프로그램과 코드를 읽고 실행하는 첫걸음"
+            )
+        ),
+        "V1-C02" to LessonGrouping(
+            sizes = listOf(2, 2, 2, 2),
+            titles = listOf(
+                "문제를 나누고 값과 변수로 표현한다",
+                "입력·조건·반복으로 프로그램의 흐름을 만든다",
+                "여러 값과 함수를 이용해 프로그램을 구조화한다",
+                "파일·모듈·오류처리까지 작은 프로그램으로 연결한다"
+            )
+        ),
+        "V1-C03" to LessonGrouping(
+            sizes = listOf(3, 4),
+            titles = listOf(
+                "배열·연결구조·해시·트리로 데이터를 담는 방법",
+                "그래프·검색·정렬·복잡도로 문제를 푸는 방법"
+            )
+        ),
+        "V1-C04" to LessonGrouping(
+            sizes = listOf(2, 2, 2),
+            titles = listOf(
+                "브라우저와 HTML로 의미 있는 화면 구조를 만든다",
+                "CSS와 반응형으로 화면을 배치하고 꾸민다",
+                "DOM·이벤트·DevTools로 화면을 움직이고 고친다"
+            )
+        ),
+        "V1-C05" to LessonGrouping(
+            sizes = listOf(2, 2, 2, 2),
+            titles = listOf(
+                "JavaScript의 값·참조·함수가 움직이는 방식",
+                "데이터 가공과 비동기의 출발점",
+                "Promise·async/await·event loop를 시간 순서로 이해한다",
+                "여러 비동기 작업과 TypeScript로 실제 앱을 안전하게 만든다"
+            )
+        ),
+        "V1-C06" to LessonGrouping(
+            sizes = listOf(3, 4),
+            titles = listOf(
+                "내 기기에서 서버까지 IP·DNS·TCP·TLS의 길을 따라간다",
+                "HTTP·MIME·API·CORS까지 실제 통신 문제를 해결한다"
+            )
+        ),
+        "V1-C07" to LessonGrouping(
+            sizes = listOf(3, 3),
+            titles = listOf(
+                "서버가 요청을 받고 검증해 업무 로직으로 보내는 전체 흐름",
+                "인증·캐시·큐·동시성·관측성으로 운영 서버를 만든다"
+            )
+        ),
+        "V1-C08" to LessonGrouping(
+            sizes = listOf(4, 4),
+            titles = listOf(
+                "DB 구조·SQL·집계·무결성으로 데이터를 올바르게 저장한다",
+                "관계·JOIN·index·transaction으로 DB를 실제 서비스에 연결한다"
+            )
+        ),
+        "V1-C09" to LessonGrouping(
+            sizes = listOf(3),
+            titles = listOf(
+                "보안을 처음부터 끝까지: 신뢰·암호·웹 공격을 연결한다"
+            )
+        ),
+        "V1-C10" to LessonGrouping(
+            sizes = listOf(2, 2),
+            titles = listOf(
+                "버그 조사와 테스트로 수정의 증거를 만든다",
+                "Git에서 빌드·배포·rollback까지 변경을 추적한다"
+            )
+        ),
+        "V1-C11" to LessonGrouping(
+            sizes = listOf(2, 3),
+            titles = listOf(
+                "요구사항에서 모듈·아키텍처까지 시스템의 뼈대를 설계한다",
+                "상태·확장·장애대응을 종합 프로젝트로 연결한다"
+            )
+        )
+    )
+
     fun split(chapterId: String, blocks: List<TextbookBlock>): List<TextbookSection> {
         if (blocks.isEmpty()) return emptyList()
 
+        val atomic = splitAtomic(chapterId, blocks)
+        val grouping = v3Groupings[chapterId] ?: return atomic
+
+        // Safe fallback if an author later changes the BLOCK count without updating this contract.
+        if (grouping.sizes.sum() != atomic.size || grouping.titles.size != grouping.sizes.size) {
+            return atomic
+        }
+
+        val merged = mutableListOf<TextbookSection>()
+        var cursor = 0
+
+        grouping.sizes.forEachIndexed { lessonIndex, groupSize ->
+            val sourceSections = atomic.subList(cursor, cursor + groupSize)
+            cursor += groupSize
+
+            val mergedBlocks = sourceSections.flatMap { section ->
+                section.blocks.mapNotNull(::asInternalLessonBlock)
+            }
+            val weightedLength = mergedBlocks.sumOf(::weightOf)
+
+            merged += TextbookSection(
+                id = "$chapterId-S${(lessonIndex + 1).toString().padStart(2, '0')}",
+                index = lessonIndex,
+                title = grouping.titles[lessonIndex],
+                estimatedMinutes = ceil(weightedLength / WEIGHT_PER_MINUTE.toDouble())
+                    .toInt()
+                    .coerceIn(10, 60),
+                blocks = mergedBlocks,
+                weightedLength = weightedLength
+            )
+        }
+
+        return merged
+    }
+
+    /**
+     * Original deterministic authoring split. Unknown/synthetic chapter ids always use this path.
+     */
+    private fun splitAtomic(chapterId: String, blocks: List<TextbookBlock>): List<TextbookSection> {
         val raw = mutableListOf<MutableList<TextbookBlock>>()
         var current = mutableListOf<TextbookBlock>()
         var currentHasBlockHeading = false
@@ -47,15 +178,11 @@ object TextbookSectioner {
             when (block) {
                 is TextbookBlock.Heading -> when (block.level) {
                     2 -> {
-                        // Introductory H1/text before BLOCK 01 stays with the first BLOCK. A later
-                        // H2 closes the previous lesson/support block before starting the next BLOCK.
                         if (currentHasBlockHeading || currentHasLessonHeading) flush()
                         current += block
                         currentHasBlockHeading = true
                     }
                     3 -> {
-                        // First H3 after H2 belongs to that BLOCK page. A second H3 is an explicit
-                        // new LESSON and must never be merged with the previous LESSON.
                         if (currentHasLessonHeading) flush()
                         current += block
                         currentHasLessonHeading = true
@@ -76,15 +203,37 @@ object TextbookSectioner {
                 ?: "LESSON ${index + 1}"
 
             TextbookSection(
-                id = "$chapterId-S${(index + 1).toString().padStart(2, '0')}",
+                id = "$chapterId-A${(index + 1).toString().padStart(2, '0')}",
                 index = index,
                 title = title,
-                estimatedMinutes = ceil(weightedLength / WEIGHT_PER_MINUTE.toDouble()).toInt().coerceIn(4, 7),
+                estimatedMinutes = ceil(weightedLength / WEIGHT_PER_MINUTE.toDouble())
+                    .toInt()
+                    .coerceIn(4, 7),
                 blocks = sectionBlocks.toList(),
                 weightedLength = weightedLength
             )
         }
     }
+
+    /**
+     * A merged learner-facing LESSON already has its own title in the reader header.
+     * - TRACK H1 is removed to avoid duplicate chapter headings.
+     * - authored BLOCK H2 becomes an internal H3 subchapter but keeps the BLOCK label.
+     * - the old tiny H3 `LESSON 01 · ...` becomes an H4 subsection with the label removed.
+     */
+    private fun asInternalLessonBlock(block: TextbookBlock): TextbookBlock? = when (block) {
+        is TextbookBlock.Heading -> when (block.level) {
+            1 -> null
+            2 -> TextbookBlock.Heading(level = 3, text = block.text)
+            3 -> TextbookBlock.Heading(level = 4, text = stripLegacyLessonLabel(block.text))
+            else -> block
+        }
+        else -> block
+    }
+
+    private fun stripLegacyLessonLabel(value: String): String = value
+        .replace(Regex("^LESSON\\s+\\d+\\s*·\\s*", RegexOption.IGNORE_CASE), "")
+        .trim()
 
     internal fun weightOf(block: TextbookBlock): Int = when (block) {
         is TextbookBlock.Heading -> block.text.length.coerceAtLeast(30)
