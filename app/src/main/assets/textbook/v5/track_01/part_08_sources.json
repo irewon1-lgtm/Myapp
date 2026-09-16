@@ -1,0 +1,31 @@
+{
+  "partId": "T01-P08",
+  "sections": [
+    {"sectionId":"T01-P08-S01-apk","sourceIds":["AOSP-ART","ANDROID-FUNDAMENTALS"]},
+    {"sectionId":"T01-P08-S02-dex","sourceIds":["AOSP-ART"]},
+    {"sectionId":"T01-P08-S03-art-modes","sourceIds":["AOSP-ART","AOSP-ART-CONFIG"]},
+    {"sectionId":"T01-P08-S04-jit","sourceIds":["AOSP-ART-JIT","AOSP-ART-CONFIG"]},
+    {"sectionId":"T01-P08-S05-aot","sourceIds":["AOSP-ART-CONFIG","AOSP-ART"]},
+    {"sectionId":"T01-P08-S06-zygote","sourceIds":["AOSP-ZYGOTE","OSTEP"]},
+    {"sectionId":"T01-P08-S07-startup","sourceIds":["AOSP-ZYGOTE","ANDROID-FUNDAMENTALS"]},
+    {"sectionId":"T01-P08-S08-start-modes","sourceIds":["ANDROID-FUNDAMENTALS","AOSP-ART-CONFIG"]},
+    {"sectionId":"T01-P08-S09-lifecycle","sourceIds":["ANDROID-FUNDAMENTALS","ANDROID-PROCESSES"]},
+    {"sectionId":"T01-P08-S10-process-death","sourceIds":["ANDROID-FUNDAMENTALS","ANDROID-MEMORY"]},
+    {"sectionId":"T01-P08-S11-main-loop","sourceIds":["ANDROID-PROCESSES"]},
+    {"sectionId":"T01-P08-S12-coroutine","sourceIds":["ANDROID-PROCESSES","LEARNING-CLT-COMPUTING"]},
+    {"sectionId":"T01-P08-S13-binder","sourceIds":["ANDROID-PROCESSES","ANDROID-FUNDAMENTALS"]},
+    {"sectionId":"T01-P08-S14-binder-auth","sourceIds":["ANDROID-SECURITY","OWASP-ASVS"]},
+    {"sectionId":"T01-P08-S15-content-provider","sourceIds":["ANDROID-PROCESSES","ANDROID-FUNDAMENTALS"]},
+    {"sectionId":"T01-P08-S16-service","sourceIds":["ANDROID-FUNDAMENTALS","ANDROID-PROCESSES"]},
+    {"sectionId":"T01-P08-S17-background-work","sourceIds":["ANDROID-FUNDAMENTALS","SRE"]},
+    {"sectionId":"T01-P08-S18-class-loading","sourceIds":["AOSP-ART","AOSP-ART-JIT"]},
+    {"sectionId":"T01-P08-S19-gc","sourceIds":["AOSP-ART","ANDROID-MEMORY"]},
+    {"sectionId":"T01-P08-S20-native","sourceIds":["AOSP-ART","ANDROID-SECURITY"]},
+    {"sectionId":"T01-P08-S21-abi","sourceIds":["AOSP-ART","ANDROID-FUNDAMENTALS"]},
+    {"sectionId":"T01-P08-S22-resources","sourceIds":["ANDROID-FUNDAMENTALS"]},
+    {"sectionId":"T01-P08-S23-update","sourceIds":["ANDROID-FUNDAMENTALS","NIST-SSDF"]},
+    {"sectionId":"T01-P08-S24-startup-trace","sourceIds":["AOSP-ART-CONFIG","SRE"]},
+    {"sectionId":"T01-P08-S25-restore-test","sourceIds":["ANDROID-MEMORY","ANDROID-FUNDAMENTALS"]},
+    {"sectionId":"T01-P08-S26-diagnostics","sourceIds":["ANDROID-MEMORY","ANDROID-PROCESSES","SRE"]}
+  ]
+}
