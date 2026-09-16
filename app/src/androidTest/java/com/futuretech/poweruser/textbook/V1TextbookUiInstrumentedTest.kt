@@ -15,9 +15,9 @@ class V1TextbookUiInstrumentedTest {
     @get:Rule val compose = createAndroidComposeRule<MainActivity>()
 
     @Test
-    fun appLaunchesIntoCurriculumThenOpensSectionReaderWithoutMeaninglessProgressNoise() {
+    fun appLaunchesIntoElevenTrackCurriculumThenOpensLessonReader() {
         assertTagExists("curriculum_overview_root")
-        compose.onNodeWithTag("curriculum_chapter_count").assertTextContains("9권 · 134장")
+        compose.onNodeWithTag("curriculum_chapter_count").assertTextContains("TRACK 11개")
         assertTagExists("curriculum_chapter_V1-C01")
         compose.onNodeWithTag("curriculum_chapter_V1-C01").performClick()
 
@@ -26,6 +26,8 @@ class V1TextbookUiInstrumentedTest {
         assertTagExists("textbook_reader")
         assertTagExists("textbook_section_progress")
 
+        assertTextAbsent("9권 · 134장")
+        assertTextAbsent("권 → 장 → 단원")
         assertTextAbsent("개념 1/1")
         assertTextAbsent("AI CODING OS")
         assertTextAbsent("KNOWLEDGE GRAPH")
@@ -40,6 +42,6 @@ class V1TextbookUiInstrumentedTest {
 
     private fun assertTextAbsent(text: String) {
         val nodes = compose.onAllNodesWithText(text).fetchSemanticsNodes()
-        assertTrue("Internal label must not be learner-visible: $text", nodes.isEmpty())
+        assertTrue("Legacy/internal label must not be learner-visible: $text", nodes.isEmpty())
     }
 }
