@@ -55,6 +55,24 @@ class V3BeginnerGuidanceTest {
     }
 
     @Test
+    fun renderedGuidanceReadingTimeCannotHideAnOverlongLesson() {
+        allSections().forEach { section ->
+            val decorated = V3BeginnerGuidance.decorateBlocks(section.id, section.blocks)
+            val renderedWeight = decorated.sumOf(TextbookSectioner::weightOf)
+            val renderedMinutes = TextbookSectioner.estimatedMinutesFor(renderedWeight)
+
+            assertTrue(
+                "${section.id}: guidance must not make displayed content shorter than authored content",
+                renderedMinutes >= section.estimatedMinutes
+            )
+            assertTrue(
+                "${section.id}: rendered learner lesson is over 60 minutes after beginner guidance: $renderedMinutes",
+                renderedMinutes in TextbookSectioner.V3_MIN_LESSON_MINUTES..TextbookSectioner.V3_MAX_LESSON_MINUTES
+            )
+        }
+    }
+
+    @Test
     fun previouslyAbruptAdvancedTermsNowHavePlainLanguagePreviews() {
         val required = mapOf(
             "V1-C03-S01" to listOf("amortized cost", "BST", "heap", "trie"),
