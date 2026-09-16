@@ -1,18 +1,33 @@
 package com.futuretech.poweruser.textbook
 
+import android.content.Context
 import androidx.compose.ui.test.assertTextContains
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.test.onAllNodesWithTag
 import androidx.compose.ui.test.onAllNodesWithText
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.performClick
+import androidx.test.platform.app.InstrumentationRegistry
 import com.futuretech.poweruser.MainActivity
 import org.junit.Assert.assertTrue
+import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 
 class V1TextbookUiInstrumentedTest {
     @get:Rule val compose = createAndroidComposeRule<MainActivity>()
+
+    @Before
+    fun clearPersistedV3ReaderState() {
+        val context = InstrumentationRegistry.getInstrumentation().targetContext
+        val cleared = context
+            .getSharedPreferences("v3_deep_beginner_progress", Context.MODE_PRIVATE)
+            .edit()
+            .clear()
+            .commit()
+        assertTrue("V3 reader state must be isolated between instrumentation tests", cleared)
+        compose.waitForIdle()
+    }
 
     @Test
     fun appLaunchesIntoElevenTrackCurriculumThenOpensLessonReader() {
