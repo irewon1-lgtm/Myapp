@@ -35,7 +35,9 @@ class TextbookProgressStore(context: Context) {
         prefs.getInt("reader_page_$conceptId", 0).coerceAtLeast(0)
 
     fun saveSelectedPageIndex(conceptId: String, pageIndex: Int) {
-        prefs.edit().putInt("reader_page_$conceptId", pageIndex.coerceAtLeast(0)).apply()
+        // A page turn is infrequent and writes one Int. Commit synchronously so an immediate app
+        // close cannot leave the learner on the previous page when the book is reopened.
+        prefs.edit().putInt("reader_page_$conceptId", pageIndex.coerceAtLeast(0)).commit()
     }
 
     fun markReadComplete(id: String) {
