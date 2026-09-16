@@ -12,8 +12,10 @@ data class TextbookSection(
 )
 
 /**
- * Converts a long chapter into deterministic reading sections without mutating the source markdown.
- * The source asset remains the single source of truth; this class only controls presentation chunks.
+ * Converts a long TRACK source into deterministic BLOCK-sized reading sections without mutating
+ * the source markdown. Internal chapter/section ids are intentionally preserved so existing
+ * learner progress is not destroyed by the learner-facing TRACK -> BLOCK -> LESSON rename.
+ * The source asset remains the single source of truth; this class controls presentation chunks only.
  */
 object TextbookSectioner {
     private const val MIN_WEIGHT = 950
@@ -69,7 +71,7 @@ object TextbookSectioner {
             TextbookSection(
                 id = "$chapterId-S${(index + 1).toString().padStart(2, '0')}",
                 index = index,
-                title = heading ?: "단원 ${index + 1}",
+                title = heading ?: "BLOCK ${index + 1}",
                 estimatedMinutes = ceil(weightedLength / WEIGHT_PER_MINUTE.toDouble()).toInt().coerceIn(4, 7),
                 blocks = sectionBlocks.toList(),
                 weightedLength = weightedLength
