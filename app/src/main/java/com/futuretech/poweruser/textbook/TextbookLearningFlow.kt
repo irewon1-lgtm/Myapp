@@ -53,13 +53,23 @@ object TextbookLearningFlow {
     ): List<LearningConcept> {
         if (section.blocks.isEmpty()) return emptyList()
 
-        val guide = V3BeginnerGuidance.forSection(section.id)
-        val title = V3BeginnerGuidance.decoratedTitle(section.id, section.title)
+        val isV3LearnerSection = chapterId.matches(Regex("V1-C\\d{2}")) &&
+            section.id.startsWith("$chapterId-S")
+        val guide = if (isV3LearnerSection) V3BeginnerGuidance.forSection(section.id) else null
+        val title = if (guide != null) {
+            V3BeginnerGuidance.decoratedTitle(section.id, section.title)
+        } else {
+            section.title
+        }
         val recall = InlineLearningProblem(
             id = "$chapterId-${section.id}-P01",
             type = LearningProblemType.DIRECT_WRITE,
-            prompt = "방금 읽은 ‘${section.title}’의 본문과 정답·해설을 확인했습니다. 이제 화면을 위로 보지 말고 자기 말로 다시 설명하세요. ‘무엇인지 → 왜 필요한지 → 실제 코드·앱에서 어떻게 쓰이는지’ 중 최소 2가지를 포함하세요. 여기서는 점수를 깎지 않으며, 실행 채점은 TRACK 실전에서 합니다.",
-            referenceAnswer = guide.answerPoints.joinToString("\n")
+            prompt = if (guide != null) {
+                "방금 읽은 ‘${section.title}’의 본문과 정답·해설을 확인했습니다. 이제 화면을 위로 보지 말고 자기 말로 다시 설명하세요. ‘무엇인지 → 왜 필요한지 → 실제 코드·앱에서 어떻게 쓰이는지’ 중 최소 2가지를 포함하세요. 여기서는 점수를 깎지 않으며, 실행 채점은 TRACK 실전에서 합니다."
+            } else {
+                "방금 읽은 ‘${section.title}’을 책을 보지 않고 자기 말로 설명하세요. 무엇인지, 왜 필요한지, 실제 코드·앱에서 어디에 쓰이는지 중 최소 2가지를 포함하세요. 여기서는 점수를 깎지 않으며, 실행 채점은 TRACK 실전에서 합니다."
+            },
+            referenceAnswer = guide?.answerPoints?.joinToString("\n").orEmpty()
         )
 
         return listOf(
@@ -67,7 +77,11 @@ object TextbookLearningFlow {
                 id = "${section.id}-C01",
                 index = 0,
                 title = title,
-                blocks = V3BeginnerGuidance.decorateBlocks(section.id, section.blocks),
+                blocks = if (guide != null) {
+                    V3BeginnerGuidance.decorateBlocks(section.id, section.blocks)
+                } else {
+                    section.blocks
+                },
                 problem = recall
             )
         )
