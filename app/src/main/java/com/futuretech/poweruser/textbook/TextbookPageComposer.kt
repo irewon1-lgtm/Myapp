@@ -16,16 +16,11 @@ data class TextbookContentPage(
 )
 
 /**
- * Converts long textbook sections into deterministic, non-scrolling reader pages.
- *
- * Long paragraphs, lists, code blocks, and tables are split before packing so a single authored
- * block cannot silently recreate a giant vertical page.
+ * Deterministically converts authored textbook blocks into reader pages.
+ * Pagination may group/split containers, but it must never rewrite code or create fake list items.
  */
 object TextbookPageComposer {
-    fun paginate(
-        blocks: List<TextbookBlock>,
-        layout: TextbookPageLayout
-    ): List<TextbookContentPage> {
+    fun paginate(blocks: List<TextbookBlock>, layout: TextbookPageLayout): List<TextbookContentPage> {
         if (blocks.isEmpty()) return listOf(TextbookContentPage(emptyList(), 0))
 
         val pieces = blocks.flatMap { splitToFit(it, layout) }
@@ -35,20 +30,17 @@ object TextbookPageComposer {
 
         fun flush() {
             if (current.isEmpty()) return
-            pages += TextbookContentPage(current.toList(), usedLines)
+            pages += TextbookContentPage(current.toList(), usedLines.coerceAtMost(layout.maxLines))
             current = mutableListOf()
             usedLines = 0
         }
 
         pieces.forEach { piece ->
-            val lines = estimateLines(piece, layout.charsPerLine)
-                .coerceAtMost(layout.maxLines)
-                .coerceAtLeast(1)
-            if (current.isNotEmpty() && usedLines + lines > layout.maxLines) {
-                flush()
-            }
+            val lines = estimateLines(piece, layout.charsPerLine).coerceAtLeast(1)
+            if (current.isNotEmpty() && usedLines + lines > layout.maxLines) flush()
             current += piece
             usedLines += lines
+            if (usedLines >= layout.maxLines) flush()
         }
         flush()
 
@@ -64,41 +56,31 @@ object TextbookPageComposer {
             }.coerceAtLeast(8)
             wrappedLines(block.text, width) + if (block.level <= 2) 2 else 1
         }
-
         is TextbookBlock.Paragraph -> wrappedLines(block.text, charsPerLine) + 1
-
         is TextbookBlock.BulletList -> block.items.sumOf { item ->
             wrappedLines(item, (charsPerLine - 3).coerceAtLeast(10)) + 1
         } + 1
-
         is TextbookBlock.Code -> block.text.lines().sumOf { line ->
             wrappedLines(line.ifEmpty { " " }, (charsPerLine * 0.72f).toInt().coerceAtLeast(10))
         } + 2
-
         is TextbookBlock.Table -> {
             val cellWidth = (charsPerLine - 4).coerceAtLeast(10)
             block.rows.sumOf { row ->
                 row.sumOf { value -> wrappedLines(value, cellWidth) } + block.headers.size + 1
             } + 1
         }
-
         TextbookBlock.Divider -> 1
     }
 
-    private fun splitToFit(
-        block: TextbookBlock,
-        layout: TextbookPageLayout
-    ): List<TextbookBlock> {
+    private fun splitToFit(block: TextbookBlock, layout: TextbookPageLayout): List<TextbookBlock> {
         val maxBlockLines = (layout.maxLines - 2).coerceAtLeast(4)
         if (estimateLines(block, layout.charsPerLine) <= maxBlockLines) return listOf(block)
-
         return when (block) {
             is TextbookBlock.Paragraph -> splitParagraph(block, layout, maxBlockLines)
             is TextbookBlock.BulletList -> splitBulletList(block, layout, maxBlockLines)
             is TextbookBlock.Code -> splitCode(block, layout, maxBlockLines)
             is TextbookBlock.Table -> splitTable(block, layout, maxBlockLines)
-            is TextbookBlock.Heading,
-            TextbookBlock.Divider -> listOf(block)
+            is TextbookBlock.Heading, TextbookBlock.Divider -> listOf(block)
         }
     }
 
@@ -129,15 +111,12 @@ object TextbookPageComposer {
             }
         }
 
-        block.items.forEach { rawItem ->
-            val maxItemChars = (itemWidth * (maxBlockLines - 1)).coerceAtLeast(itemWidth)
-            val itemPieces = splitText(rawItem, maxItemChars)
-            itemPieces.forEach { item ->
-                val lines = wrappedLines(item, itemWidth) + 1
-                if (current.isNotEmpty() && used + lines > maxBlockLines) flush()
-                current += item
-                used += lines
-            }
+        block.items.forEach { item ->
+            val lines = wrappedLines(item, itemWidth) + 1
+            if (current.isNotEmpty() && used + lines > maxBlockLines) flush()
+            current += item
+            used += lines
+            if (used >= maxBlockLines) flush()
         }
         flush()
         return out.ifEmpty { listOf(block) }
@@ -163,17 +142,11 @@ object TextbookPageComposer {
         }
 
         block.text.lines().forEach { sourceLine ->
-            val visualChunks = if (sourceLine.length <= codeWidth * maxContentLines) {
-                listOf(sourceLine)
-            } else {
-                sourceLine.chunked(codeWidth * maxContentLines)
-            }
-            visualChunks.forEach { piece ->
-                val lines = wrappedLines(piece.ifEmpty { " " }, codeWidth)
-                if (current.isNotEmpty() && used + lines > maxContentLines) flush()
-                current += piece
-                used += lines
-            }
+            val lines = wrappedLines(sourceLine.ifEmpty { " " }, codeWidth)
+            if (current.isNotEmpty() && used + lines > maxContentLines) flush()
+            current += sourceLine
+            used += lines
+            if (used >= maxContentLines) flush()
         }
         flush()
         return out.ifEmpty { listOf(block) }
@@ -202,10 +175,11 @@ object TextbookPageComposer {
         }
 
         block.rows.forEach { row ->
-            val lines = rowLines(row).coerceAtMost(maxBlockLines)
+            val lines = rowLines(row)
             if (rows.isNotEmpty() && used + lines > maxBlockLines) flush()
             rows += row
             used += lines
+            if (used >= maxBlockLines) flush()
         }
         flush()
         return out.ifEmpty { listOf(block) }
@@ -214,7 +188,6 @@ object TextbookPageComposer {
     private fun splitText(text: String, maxChars: Int): List<String> {
         val normalized = text.trim()
         if (normalized.length <= maxChars) return listOf(normalized)
-
         val words = normalized.split(Regex("\\s+")).filter { it.isNotEmpty() }
         val out = mutableListOf<String>()
         val current = StringBuilder()
