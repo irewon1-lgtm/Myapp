@@ -11,7 +11,7 @@ home = read("app/src/main/java/com/futuretech/poweruser/ui/MainHomeScreen.kt")
 curriculum = read("app/src/main/java/com/futuretech/poweruser/ui/CurriculumOverviewScreen.kt")
 adaptive_practice = read("app/src/main/java/com/futuretech/poweruser/ui/AdaptiveFocusedPracticeScreen.kt")
 adaptive_reader = read("app/src/main/java/com/futuretech/poweruser/ui/AdaptiveTextbookScreen.kt")
-reader = read("app/src/main/java/com/futuretech/poweruser/ui/V1TextbookScreen.kt")
+reader = read("app/src/main/java/com/futuretech/poweruser/ui/V4PagedBookScreen.kt")
 progress_store = read("app/src/main/java/com/futuretech/poweruser/textbook/TextbookProgressStore.kt")
 focused = read("app/src/main/java/com/futuretech/poweruser/ui/FocusedPracticeScreen.kt")
 manifest = read("app/src/main/AndroidManifest.xml")
@@ -32,7 +32,7 @@ checks = [
     ("C08 rotation keeps activity/practice composition alive", 'orientation|screenSize|screenLayout|keyboardHidden' in manifest),
     ("C09 phone practice has no permanent split", 'if (split == null)' in adaptive_practice and 'practice_phone_vertical' in adaptive_practice),
     ("C10 tablet practice problem pane is 38-42 percent", 'TABLET_PROBLEM_WEIGHT = 0.40f' in ui_policy and 'TABLET_WORKSPACE_WEIGHT = 0.60f' in ui_policy),
-    ("C11 tablet reading stays single column", 'reader_single_column' in adaptive_reader and reader_width_ordered),
+    ("C11 tablet reading stays single column", 'reader_single_column' in adaptive_reader and reader_width_ordered and 'BoxWithConstraints' in reader),
     ("C12 table of contents uses temporary drawer", 'ModalNavigationDrawer' in adaptive_reader and 'reader_toc_button' in reader and 'drawerState.open()' in adaptive_reader),
     ("C13 no permanent chapter sidebar in adaptive reader", 'NavigationRail' not in adaptive_reader and 'PermanentNavigationDrawer' not in adaptive_reader),
     ("C14 answer state is not color-only", '"✓ 제출 통과"' in focused and '"! 제출 실패"' in focused),
@@ -51,8 +51,8 @@ checks = [
     ("C23 challenge locks hint AI and solution reveal", all(x in policy for x in ('hintsAllowed', 'aiAssistanceAllowed', 'solutionRevealAllowed')) and 'mode == LearningSessionMode.PRACTICE' in policy),
     (
         "C24 reading position persists locally",
-        'selectedPageIndex(currentConcept.id)' in reader
-        and 'saveSelectedPageIndex(currentConcept.id, it)' in reader
+        'selectedPageIndex(concept.id)' in reader
+        and 'saveSelectedPageIndex(concept.id, it)' in reader
         and 'reader_page_' in progress_store
         and '.commit()' in progress_store
     ),
