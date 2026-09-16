@@ -1,573 +1,243 @@
-# PART 13 · 파일은 이름 붙은 바이트 배열보다 훨씬 복잡하다 — filesystem 내부 구조
+# PART 13 · filesystem 내부 — namespace, cache, allocation, crash consistency
 
-애플리케이션은 `open("a.txt")`, `write`, `rename` 같은 API를 사용하지만 kernel은 path 문자열을 namespace object로 해석하고, metadata와 data block을 찾고, cache와 journal을 관리하고, crash 뒤 일관성을 복구해야 한다.
-
-이 PART의 목표는 filesystem command를 외우는 것이 아니라 **path → dentry/inode → page cache → block allocation → journal/writeback → persistent media**의 흐름을 이해하는 것이다.
+파일 API는 pathname을 persistent object로 바꾸는 여러 계층을 숨긴다. filesystem correctness는 **namespace lookup, object identity, cached page, block allocation, write ordering, metadata durability**가 서로 다른 상태라는 사실에서 시작한다.
 
 ---
 
-## CHAPTER 01 · path는 파일 object 자체가 아니다
+## CHAPTER 01 · path는 object identity가 아니라 namespace resolution recipe다
 
-`/home/app/data.db`라는 문자열은 filesystem namespace에서 object를 찾기 위한 경로다.
+pathname은 directory entry를 순서대로 lookup하는 문자열 표현이다. lookup 중 mount point, symlink, permission, current working directory, namespace가 결과를 바꿀 수 있다. 같은 문자열도 다른 mount namespace에서는 다른 object를 가리킬 수 있다.
 
-```text
-/
-↓ lookup home
-/home
-↓ lookup app
-/home/app
-↓ lookup data.db
-file object
-```
-
-각 component lookup에서 directory permission, mount point, symlink 등이 영향을 준다.
-
-### 같은 file에 여러 path가 있을 수 있다
-
-hard link를 허용하는 filesystem에서는 서로 다른 directory entry가 같은 underlying inode/object를 가리킬 수 있다.
-
-따라서:
-
-```text
-path identity
-≠ file object identity
-```
-
-이다.
+security check에서 path string을 canonicalize한 뒤 나중에 다시 open하면 check/use 사이 namespace가 변할 수 있다. 이미 검증된 directory/file descriptor를 기준으로 operation을 수행하는 방식이 object identity를 더 안정적으로 보존한다. 로그에는 path와 함께 inode/device 또는 stable file identity를 가능한 범위에서 기록한다.
 
 ---
 
-## CHAPTER 02 · inode는 파일 이름이 아니라 metadata object다
+## CHAPTER 02 · inode는 filename이 아니라 file metadata와 data mapping의 중심 object다
 
-전형적인 Unix filesystem에서 inode는 다음 종류의 정보를 가진다.
+전형적인 Unix filesystem에서 inode는 type, mode, owner, size, timestamp, link count와 data block mapping 정보를 가진다. filename은 directory entry가 inode를 참조하는 방식으로 관리될 수 있다. 따라서 rename은 file data를 복사하지 않고 namespace entry를 바꾸는 operation일 수 있다.
 
-```text
-file type
-permission/mode
-owner/group
-size
-timestamps
-link count
-data block mapping
-```
-
-파일 이름은 directory entry 쪽에 존재한다.
-
-### rename이 file data 전체를 복사할 필요가 없는 이유
-
-같은 filesystem 안에서 rename은 directory namespace entry를 바꾸는 작업으로 구현될 수 있다.
-
-수 GB file을 rename해도 data block 전체를 복사할 필요가 없기 때문에 매우 빠를 수 있다.
+inode number는 filesystem 범위에서 의미가 있고 reuse될 수 있으므로 영구 global ID로 취급하지 않는다. open handle이 있는 동안 object lifetime과 directory-name lifetime이 분리되는 이유도 inode/open-file reference counting과 연결된다.
 
 ---
 
-## CHAPTER 03 · directory는 `폴더 UI`가 아니라 name→inode mapping을 저장하는 filesystem object다
+## CHAPTER 03 · directory는 name→object mapping을 저장하는 특수 file structure다
 
-directory entry는 대략:
+directory lookup은 entry 수와 filesystem data structure에 따라 hash/tree/index를 사용할 수 있다. 한 directory에 수백만 entry를 두면 metadata cache miss와 lookup/update cost가 커질 수 있다.
 
-```text
-name → inode number/object
-```
-
-mapping을 가진다.
-
-directory가 크면 lookup 성능을 위해 hash/tree 구조를 사용할 수 있다.
-
-구체 구조는 ext4, XFS, F2FS 등 filesystem마다 다르다.
-
-### directory permission
-
-read와 execute/search permission의 의미가 일반 file과 다르다.
-
-path traversal에 search permission이 필요한 이유다.
+filename creation/deletion은 directory metadata update이므로 file contents durability와 별개다. crash-safe file replacement에서 새 file의 contents만 fsync하고 containing directory entry를 durable하게 만들지 않으면 rename/create 결과가 power loss 뒤 사라질 수 있다.
 
 ---
 
-## CHAPTER 04 · VFS는 filesystem별 구현 위에 공통 API를 제공한다
+## CHAPTER 04 · VFS는 서로 다른 filesystem implementation을 공통 object model로 연결한다
 
-Linux Virtual File System 계층은 ext4, tmpfs, procfs 등 서로 다른 filesystem을 `open/read/write/stat` 같은 공통 interface로 다룰 수 있게 한다.
+Virtual Filesystem layer는 inode/dentry/file/superblock 같은 generic abstraction을 통해 ext4, f2fs, tmpfs, procfs 등 서로 다른 filesystem에 공통 syscall interface를 제공한다. 같은 `read()`라도 backend semantics와 durability는 filesystem type에 따라 다를 수 있다.
 
-```text
-application syscall
-↓
-VFS
-├─ ext4 implementation
-├─ tmpfs implementation
-├─ procfs implementation
-└─ other filesystem
-```
-
-`/proc/cpuinfo`도 path로 읽을 수 있지만 SSD에 저장된 일반 file과 같은 backing을 가진다는 뜻은 아니다.
+application이 POSIX-like API만 보고 storage behavior를 완전히 추론하면 안 된다. network filesystem, FUSE, pseudo filesystem은 latency와 consistency 특성이 다르다. incident record에는 mount type과 option까지 포함한다.
 
 ---
 
-## CHAPTER 05 · mount는 filesystem tree를 하나의 namespace에 연결한다
+## CHAPTER 05 · mount는 filesystem tree의 namespace 연결점이다
 
-filesystem instance를 특정 directory path에 mount하면 그 위치 아래 namespace가 새 filesystem root로 연결된다.
+mount operation은 특정 filesystem root를 namespace의 directory 위치에 연결한다. bind mount, overlay, namespace별 mount view 때문에 host의 `/data/x`와 container/process가 보는 `/data/x`가 같은 backing object라는 보장은 없다.
 
-```text
-root fs /
-└─ /data  ← another filesystem mounted
-```
-
-### path는 mount namespace에 따라 다르게 보일 수 있다
-
-container/process가 다른 mount namespace에 있으면 같은 `/data` 문자열이 서로 다른 mount를 가리킬 수 있다.
-
-PART 07 namespace와 연결된다.
+storage bug를 재현할 때 path만 비교하지 말고 mount table과 device/filesystem ID를 확인한다. read-only/remount, noexec/nosuid 같은 option은 동일 file의 allowed operation을 바꿀 수 있다.
 
 ---
 
-## CHAPTER 06 · symlink는 path resolution에 추가 lookup을 만든다
+## CHAPTER 06 · symbolic link는 path resolution을 다른 path로 재귀시킨다
 
-symbolic link는 다른 path를 가리키는 filesystem object다.
+symlink는 target path text를 저장하고 lookup 과정에서 resolution을 이어 간다. attacker가 writable directory에서 symlink를 바꾸면 privileged process의 path-based check가 다른 object로 유도될 수 있다.
 
-```text
-/current → /versions/v5
-```
-
-path resolver는 symlink target을 다시 해석한다.
-
-### symlink loop
-
-```text
-a → b
-b → a
-```
-
-같은 loop를 막기 위해 resolver는 traversal limit을 둔다.
-
-### security
-
-privileged program이 attacker-controlled directory에서 symlink를 따라가면 TOCTOU/path traversal 문제가 생길 수 있다.
+safe temporary-file/update code는 symlink follow policy와 directory ownership을 명시한다. kernel의 `openat`/no-follow 계열 primitive처럼 lookup과 open을 가능한 한 하나의 trusted directory context 안에서 수행해 TOCTOU surface를 줄인다.
 
 ---
 
-## CHAPTER 07 · hard link와 unlink를 link count로 이해한다
+## CHAPTER 07 · hard link와 unlink는 name count와 open reference를 분리한다
 
-두 이름이 같은 inode를 가리킬 수 있다.
+hard link는 여러 directory entry가 같은 inode를 참조하게 한다. unlink는 name reference 하나를 제거하지만 open descriptor가 있으면 object가 즉시 제거되지 않을 수 있다. 따라서 `rm` 직후 disk usage가 줄지 않는 현상은 deleted-but-open file로 설명될 수 있다.
 
-```text
-name A ─┐
-        ├→ inode 42 → data blocks
-name B ─┘
-```
-
-`unlink(A)`는 이름 A의 directory entry와 link count를 줄일 뿐 B가 남아 있으면 file data는 계속 존재한다.
-
-### 열린 file을 unlink
-
-process가 file descriptor로 file을 열고 있는 동안 path를 unlink해도 open reference가 남아 있으면 data object가 즉시 사라지지 않을 수 있다.
-
-Unix log rotation에서 이 특성이 중요하다.
+log rotation이나 temporary-file pattern에서는 이 lifetime 차이가 중요하다. long-running process가 old log inode를 계속 열고 있으면 새 pathname과 다른 object에 쓰고 있을 수 있다. descriptor target을 확인한다.
 
 ---
 
-## CHAPTER 08 · file descriptor와 open file description
+## CHAPTER 08 · open file description은 descriptor와 underlying I/O state 사이에 있다
 
-`open()`이 반환하는 fd는 process-local 작은 정수다.
+process의 fd table entry는 kernel의 open file description을 참조할 수 있고 그 object가 file offset과 status flag를 보유한다. `dup`나 `fork`로 만들어진 descriptor가 같은 open description을 공유하면 offset 변화가 서로 영향을 줄 수 있다.
 
-kernel 내부에는 current offset, flags 등을 가진 open file state가 따로 있을 수 있다.
-
-```text
-fd 3 ─┐
-      ├→ open file description → inode
-fd 7 ─┘
-```
-
-`dup`이나 fork 뒤 descriptor가 같은 offset state를 공유할 수 있는 이유다.
+`두 fd니까 독립적`이라는 가정은 틀릴 수 있다. concurrent sequential read/write가 offset 공유에 의존하면 atomicity 규칙을 확인한다. independent offset이 필요하면 separate open 또는 positional I/O를 사용한다.
 
 ---
 
-## CHAPTER 09 · file offset과 append race
+## CHAPTER 09 · append는 application의 seek+write 조합보다 강한 atomicity를 요구한다
 
-두 writer가:
+여러 writer가 `seek(end)` 후 write하면 두 process가 같은 end offset을 보고 overwrite할 수 있다. append flag는 filesystem이 각 write의 position selection을 operation과 결합해 처리하도록 한다.
 
-```text
-seek end
-write
-```
-
-를 각각 수행하면 사이에서 다른 writer가 끼어들 수 있다.
-
-append mode가 제공하는 atomic append semantics를 사용하면 `현재 끝 찾기 + write`를 filesystem/kernel이 하나의 operation처럼 처리할 수 있다.
-
-정확한 atomicity 범위는 API/filesystem을 확인해야 한다.
+그러나 한 write call 내부 data가 다른 writer와 어느 크기까지 atomic하게 유지되는지는 filesystem/API contract를 확인해야 한다. log record framing을 append 하나에 의존할지, record checksum/sequence를 추가할지 workload 요구로 결정한다.
 
 ---
 
-## CHAPTER 10 · data block allocation은 logical file offset을 storage block으로 연결한다
+## CHAPTER 10 · block allocation은 logical file offset을 physical storage extent로 바꾼다
 
-파일 크기가 커질 때 filesystem은 free block을 할당하고 file metadata에 mapping을 기록한다.
+filesystem은 file offset range를 device block/extents에 mapping한다. extent 기반 allocation은 연속 block range를 압축해 metadata를 줄일 수 있지만 fragmentation과 free-space layout에 따라 file가 여러 extent로 나뉜다.
 
-단순 direct block list가 아니라 extent 같은 연속 범위 표현을 사용할 수 있다.
-
-```text
-file logical 0..1MB
-→ physical blocks X..Y
-```
-
-### fragmentation
-
-file의 logical sequential data가 physical storage에서 여러 조각으로 흩어질 수 있다.
-
-HDD에서 seek 비용, SSD에서도 mapping/metadata와 write pattern에 영향을 줄 수 있다.
+write performance는 logical sequential access만으로 결정되지 않는다. allocation locality, filesystem free-space state, device FTL이 영향을 준다. long-running system에서는 fresh filesystem benchmark와 aged/fragmented state를 구분한다.
 
 ---
 
-## CHAPTER 11 · sparse file은 logical size와 allocated bytes가 다르다
+## CHAPTER 11 · sparse file은 logical size와 allocated blocks를 다르게 만든다
 
-큰 offset으로 seek한 뒤 조금 write하면 중간 hole을 실제 zero block으로 모두 할당하지 않을 수 있다.
+seek로 멀리 이동한 뒤 일부 data만 쓰면 중간 hole을 physical block 없이 표현할 수 있는 filesystem이 있다. file size는 크지만 실제 allocated space는 작을 수 있다. hole read는 zero처럼 보일 수 있다.
 
-```text
-logical size: 10GB
-allocated:    4KB
-```
-
-hole을 read하면 zero처럼 보일 수 있다.
-
-따라서 `ls에서 보이는 size`와 실제 disk usage가 다를 수 있다.
+backup/copy tool이 sparse semantics를 보존하지 않으면 hole을 실제 zero block으로 materialize해 storage 사용량이 폭증한다. disk usage 분석에서 logical size와 allocated block count를 별도 확인한다.
 
 ---
 
-## CHAPTER 12 · delayed allocation은 더 좋은 block 배치를 위해 write를 늦출 수 있다
+## CHAPTER 12 · delayed allocation은 block 선택을 뒤로 미뤄 더 나은 layout을 만들 수 있다
 
-application write 시점에 physical block을 즉시 확정하지 않고 page cache에 dirty data를 모아 나중에 큰 extent로 allocation할 수 있다.
+write가 page cache에 들어온 즉시 physical block을 정하지 않고 writeback 시점까지 allocation을 미루면 여러 small write를 더 큰 extent로 결합할 수 있다. 반면 free-space exhaustion 같은 failure가 application write 반환 뒤 늦게 드러날 수 있다.
 
-장점:
-
-```text
-better contiguous allocation
-fewer metadata updates
-batching
-```
-
-하지만 crash consistency와 free-space pressure를 이해해야 한다.
+`write()`가 성공했으니 disk space 확보가 끝났다고 가정하지 않는다. fallocate/preallocation이 필요한 workload와 crash/disk-full behavior를 테스트한다.
 
 ---
 
-## CHAPTER 13 · page cache는 file I/O와 memory mapping을 연결한다
+## CHAPTER 13 · page cache는 file I/O와 virtual memory를 연결하는 shared cache다
 
-buffered read/write와 mmap은 종종 같은 page cache의 file-backed page를 공유한다.
+normal buffered read/write와 file-backed mmap은 kernel page cache의 같은 page를 공유할 수 있다. 따라서 두 path를 통해 data를 접근할 때 별도 cache가 있다고 가정하면 consistency를 오해한다.
 
-```text
-read() path ─┐
-             ├→ page cache → storage
-mmap path ───┘
-```
-
-이 때문에 한 path의 write가 다른 mapping에서 보이는 visibility 규칙이 중요하다.
-
-### direct I/O
-
-일부 workload는 page cache를 우회하거나 다르게 사용하는 direct I/O를 선택할 수 있다.
-
-alignment와 application-side caching 책임이 늘 수 있다.
+page cache hit는 storage I/O를 피하지만 memory pressure 시 reclaim될 수 있다. benchmark에서 반복 read가 빨라진 이유가 application optimization인지 cache warm state인지 분리한다. drop-cache 실험은 production behavior를 대표하지 않을 수 있으므로 workload-specific hit ratio를 측정한다.
 
 ---
 
-## CHAPTER 14 · writeback은 dirty page를 storage로 내린다
+## CHAPTER 14 · writeback은 dirty page를 storage로 내보내는 비동기 정책이다
 
-application write가 page cache에서 성공한 뒤 kernel writeback thread/policy가 storage I/O를 수행할 수 있다.
+buffered write 후 dirty page는 background writeback에 의해 storage로 내려갈 수 있다. dirty ratio, memory pressure, explicit sync가 writeback 시점을 바꾼다. 많은 dirty data가 한번에 flush되면 latency spike와 I/O queue saturation이 생길 수 있다.
 
-```text
-clean page
-↓ modification
-dirty page
-↓ writeback
-writeback/in-flight
-↓ completion
-clean page
-```
-
-### dirty throttling
-
-dirty data가 너무 많이 쌓이면 writer를 throttle해 memory를 무한히 dirty cache로 쓰지 못하게 할 수 있다.
-
-`갑자기 write latency가 튄다`는 현상이 writeback pressure와 연결될 수 있다.
+writeback pressure는 writer thread를 throttle할 수 있으므로 application stack에서 `write`가 느려져도 device operation 하나의 latency만이 원인은 아니다. dirty-page metric과 block I/O queue를 함께 본다.
 
 ---
 
-## CHAPTER 15 · metadata와 data ordering이 crash consistency를 결정한다
+## CHAPTER 15 · crash consistency는 data와 metadata write ordering을 함께 설계한다
 
-새 file을 만든다고 하자.
+file contents, inode size, block allocation bitmap, directory entry가 서로 다른 write로 storage에 반영될 수 있다. crash가 중간에 발생하면 일부만 persistent해져 filesystem invariant가 깨질 수 있다.
 
-필요한 변화:
-
-```text
-allocate inode
-allocate data block
-write file data
-add directory entry
-update allocation bitmap
-```
-
-crash가 중간에 나면 일부만 반영될 수 있다.
-
-filesystem은 update ordering, journal, copy-on-write tree 등으로 복구 가능한 상태를 만든다.
+filesystem은 journaling, copy-on-write, ordered write 같은 전략으로 metadata/data ordering을 제어한다. application transaction은 filesystem이 보장하는 atomicity 범위를 알아야 한다. `rename은 atomic` 같은 문장도 동일 filesystem namespace와 crash durability를 분리해 해석한다.
 
 ---
 
-## CHAPTER 16 · journaling은 `모든 데이터 두 번 쓰기` 하나로 설명할 수 없다
+## CHAPTER 16 · journaling은 recovery에 필요한 state transition을 log로 보호한다
 
-filesystem journal은 metadata update 또는 data까지 포함한 transaction record를 사용해 crash 뒤 consistency를 회복할 수 있다.
+metadata journaling에서는 metadata update intent를 journal에 기록하고 commit marker가 durable한 뒤 home location에 checkpoint할 수 있다. crash recovery는 incomplete transaction을 무시하고 committed transaction을 replay한다.
 
-mode에 따라:
-
-```text
-metadata journaled
-data ordered before metadata commit
-full data journaling
-```
-
-등 정책이 다를 수 있다.
-
-성능과 durability trade-off가 있다.
+journal이 application data 전체의 transaction을 보장하는 것은 아니다. data=ordered/writeback/journal mode처럼 policy에 따라 data ordering이 다를 수 있다. database WAL과 filesystem journal을 동일한 layer로 생각하지 않는다.
 
 ---
 
-## CHAPTER 17 · journal commit과 application durability boundary는 다를 수 있다
+## CHAPTER 17 · fsync는 file의 required dirty state를 durability boundary로 밀어낸다
 
-filesystem이 자체 consistency를 지킨다는 것과 application이 방금 쓴 특정 file의 최신 bytes가 crash 뒤 반드시 남는다는 것은 다른 계약이다.
+`fsync(fd)`의 정확한 보장은 OS/filesystem/device contract에 따르지만 일반적으로 file data와 필요한 metadata를 stable storage로 flush하기 위한 primitive다. user-space buffer flush나 close만으로 같은 보장을 얻는다고 가정하지 않는다.
 
-application은 필요하면 `fsync`/`fdatasync` 등으로 durability를 요청해야 한다.
-
-### fsync cost
-
-storage queue와 flush command가 완료될 때까지 기다리면 latency가 커질 수 있다.
-
-DB commit latency에서 sync가 큰 비중을 차지할 수 있다.
+fsync latency는 batching과 group commit 대상이 될 수 있다. transaction마다 개별 fsync를 하면 durability는 명확하지만 throughput이 제한될 수 있다. DB engine은 WAL/group commit으로 여러 transaction의 durability cost를 amortize한다.
 
 ---
 
-## CHAPTER 18 · directory fsync가 필요한 파일 교체 패턴
+## CHAPTER 18 · 새 pathname durability에는 containing directory sync가 필요할 수 있다
 
-새 config를 안전하게 교체한다고 하자.
+새 file을 만들고 contents를 fsync한 뒤 crash했을 때 directory entry 자체가 durable하지 않으면 pathname이 복구되지 않을 수 있다. crash-safe replace pattern은 temporary file과 containing directory metadata의 durability를 함께 고려한다.
 
-```text
-write temp
-fsync(temp)
-rename(temp, target)
-fsync(parent directory)
-```
-
-왜 directory까지 sync하는가?
-
-rename으로 바뀐 namespace metadata가 crash 뒤 durable해야 하기 때문이다.
-
-정확한 filesystem/API contract에 맞춰 패턴을 사용한다.
+platform/filesystem별 보장을 확인하고 실제 power-failure test 또는 fault-injection을 사용한다. unit test에서 process kill만 하는 것은 storage cache와 power-loss ordering을 충분히 재현하지 못한다.
 
 ---
 
-## CHAPTER 19 · rename atomicity와 durability는 별개다
+## CHAPTER 19 · rename은 namespace atomicity와 content durability가 다른 성질이다
 
-같은 filesystem 안에서 rename이 namespace 관점에서 atomic하더라도 crash 뒤 rename이 유지된다는 durability는 별도 sync ordering이 필요할 수 있다.
+동일 filesystem 내 rename이 observer에게 old/new name 중 하나로 보이는 atomic namespace update를 제공할 수 있어도 renamed file contents가 stable storage에 도달했다는 의미는 아니다. replace pattern에서 temp contents fsync→rename→directory fsync 순서가 중요한 이유다.
 
-```text
-atomic visibility
-≠ persistent durability
-```
-
-이 구분은 PART 03에서 배운 transaction 성질과 같다.
+rename 대상이 이미 존재할 때 overwrite semantics, exchange/no-replace option은 API마다 다르다. concurrent updater가 있으면 expected generation과 compare semantics를 추가해 last-writer-wins를 의도적으로 선택한다.
 
 ---
 
-## CHAPTER 20 · cross-filesystem rename은 복사+삭제가 될 수 있다
+## CHAPTER 20 · cross-filesystem move는 rename이 아니라 copy+delete가 될 수 있다
 
-source와 target이 다른 mount/filesystem이면 atomic rename을 제공하지 못하고 `EXDEV` 같은 오류가 날 수 있다.
+서로 다른 mount/filesystem 사이에서는 inode/object ownership이 다르므로 atomic rename이 불가능할 수 있다. high-level file move API가 copy→fsync?→delete로 fallback하면 중간 failure에서 source와 destination이 모두 존재하거나 partial destination이 남을 수 있다.
 
-상위 library가 이를 숨기고 copy+unlink를 수행하면:
-
-```text
-큰 파일 → 오래 걸림
-중간 failure → partial target 가능
-permission/metadata 달라짐
-```
-
-이 생길 수 있다.
-
-`move` UI 하나가 항상 O(1) metadata operation은 아니다.
+operation contract가 atomic move를 요구한다면 동일 filesystem staging area를 사용한다. cross-device backup/migration은 resumable copy와 checksum, commit marker를 별도로 설계한다.
 
 ---
 
-## CHAPTER 21 · file locking은 모든 process가 자동으로 지켜 주는 물리적 잠금이 아닐 수 있다
+## CHAPTER 21 · file lock은 advisory/mandatory와 process/thread semantics를 확인한다
 
-advisory lock model에서는 협력하는 process들이 lock 규칙을 따라야 한다.
+POSIX advisory lock은 cooperating process가 lock protocol을 따를 때만 보호된다. 다른 process가 lock 없이 write하면 kernel이 항상 막아 주는 것은 아니다. `flock`과 record lock의 ownership/dup/fork semantics도 다를 수 있다.
 
-lock을 무시하고 직접 write하는 process를 kernel이 반드시 막는 것은 아니다.
-
-### record locking
-
-file 전체가 아니라 byte range를 lock할 수 있는 API도 있다.
-
-하지만 network filesystem과 process/thread semantics가 복잡하므로 portable correctness가 필요하면 DB 같은 더 높은 수준 mechanism을 고려한다.
+DB/file-based coordination에서 lock file 존재 자체를 lock으로 사용하면 stale file problem이 생긴다. kernel-managed lock 또는 atomic create + owner identity/lease를 사용한다. network filesystem에서는 lock implementation과 failure semantics를 별도 검증한다.
 
 ---
 
-## CHAPTER 22 · mmap과 truncate의 조합은 위험할 수 있다
+## CHAPTER 22 · mmap된 file을 truncate하면 mapping과 file size의 관계가 깨질 수 있다
 
-process A가 file을 mmap 중인데 process B가 file을 더 작은 크기로 truncate하면 A가 기존 mapping의 잘려나간 영역을 접근할 때 fault가 발생할 수 있다.
+process가 file page를 mapping한 상태에서 다른 process가 file을 줄이면 기존 mapping의 일부 address가 더 이상 valid backing을 갖지 못할 수 있다. 이후 access가 signal/fault로 이어질 수 있다.
 
-mapping lifetime과 file size mutation을 coordination해야 한다.
-
----
-
-## CHAPTER 23 · filesystem cache를 benchmark에서 통제한다
-
-첫 read:
-
-```text
-storage I/O 20ms
-```
-
-두 번째 read:
-
-```text
-page cache hit 0.3ms
-```
-
-둘을 섞어 평균내면 무엇을 측정한지 불분명하다.
-
-### cold cache 강제의 위험
-
-production은 보통 완전 cold가 아닐 수 있다.
-
-benchmark 목적에 따라 cold/warm 두 조건을 따로 측정한다.
+shared mmap protocol은 file resize를 concurrent하게 허용할지 명시해야 한다. generation/version mapping을 사용하거나 writer가 새 file을 만들고 atomic rename으로 교체해 reader mapping lifetime을 분리하는 방법이 있다.
 
 ---
 
-## CHAPTER 24 · inode/dentry cache도 path lookup 성능을 바꾼다
+## CHAPTER 23 · filesystem benchmark는 page cache와 device cache를 구분해야 한다
 
-파일 내용만 cache되는 것이 아니다.
+첫 read와 두 번째 read latency 차이는 filesystem code보다 page cache warmup 때문일 수 있다. write benchmark도 buffered write 반환만 재면 device durability throughput을 측정하지 못한다.
 
-directory entry와 inode metadata도 memory cache에 남아 repeated stat/open path lookup을 빠르게 할 수 있다.
-
-따라서 metadata-heavy benchmark에서도 warm/cold 상태를 고려한다.
+benchmark 목표가 cached read인지 cold storage read인지, synchronous durability인지 async throughput인지 명시한다. dataset이 RAM보다 큰지, fsync를 포함하는지, device queue depth와 filesystem age를 기록한다.
 
 ---
 
-## CHAPTER 25 · filesystem free space가 적으면 성능 특성이 바뀔 수 있다
+## CHAPTER 24 · dentry/inode cache는 namespace lookup 자체를 cache한다
 
-free block이 적으면 allocator가 적합한 연속 extent를 찾기 어려워지고 fragmentation/GC가 증가할 수 있다.
+file data만 cache되는 것이 아니다. recently resolved pathname component와 inode metadata도 memory에 cache될 수 있다. 수백만 tiny file workload에서는 data보다 metadata lookup이 병목이 될 수 있다.
 
-flash filesystem/SSD까지 포함하면 lower-layer garbage collection과 겹칠 수 있다.
-
-`10GB free니까 충분`보다 percentage, allocation pattern, filesystem recommendation을 본다.
+negative dentry처럼 `이 이름이 없음` 결과도 cache될 수 있다. external filesystem change나 network-backed namespace에서는 cache invalidation semantics가 중요하다. lookup benchmark는 warm/cold metadata state를 구분한다.
 
 ---
 
-## CHAPTER 26 · inode exhaustion은 disk byte가 남아도 파일 생성을 막을 수 있다
+## CHAPTER 25 · free-space allocator는 fragmentation과 allocation latency를 결정한다
 
-inode 수가 고정/제한된 filesystem에서는 작은 file을 매우 많이 만들면 data block free space는 남아도 inode resource가 고갈될 수 있다.
+filesystem은 bitmap, tree, group/extent allocator를 사용해 free block을 추적한다. free space percentage가 충분해도 큰 contiguous extent가 부족하면 allocation이 fragmented되거나 metadata work가 증가할 수 있다.
 
-증상:
-
-```text
-No space left on device
-but df shows bytes free
-```
-
-inode usage를 별도로 확인한다.
+write-heavy long-lived volume은 delete/create history 때문에 free-space geometry가 달라진다. capacity alarm을 byte percentage 하나로 두지 않고 inode/metadata reserve와 allocation failure도 모니터링한다.
 
 ---
 
-## CHAPTER 27 · filesystem corruption과 application corruption을 구분한다
+## CHAPTER 26 · inode/resource exhaustion은 byte 공간이 남아도 file creation을 막을 수 있다
 
-application file 내용이 잘못됐다고 filesystem 자체가 corruption된 것은 아니다.
+일부 filesystem은 inode 수나 metadata capacity가 별도 제약이다. tiny file가 매우 많으면 data blocks는 남아 있어도 새 inode를 만들 수 없을 수 있다.
 
-```text
-application wrote invalid JSON
-→ app-level corruption
-
-filesystem metadata checksum/inode tree damage
-→ fs-level corruption
-```
-
-복구 도구와 원인이 다르다.
-
-### checksum
-
-일부 filesystem은 metadata/data checksum을 사용해 corruption을 검출할 수 있다.
-
-검출과 자동 복구는 같은 기능이 아니다.
+application cache가 object마다 파일 하나를 생성한다면 object count가 storage model의 주요 capacity metric이다. directory entry/inode overhead와 backup/scan cost까지 포함해 blob store/DB 사용 여부를 선택한다.
 
 ---
 
-## CHAPTER 28 · Android 앱 내부 storage도 filesystem 위에 있다
+## CHAPTER 27 · filesystem corruption은 recovery tool 실행 전에 failure evidence를 보존한다
 
-SQLite DB, SharedPreferences/Datastore file, image cache, APK code cache 모두 결국 filesystem/storage stack을 사용한다.
+metadata checksum/error, I/O error, journal recovery failure가 보이면 즉시 repair를 반복 실행하기보다 block-device health와 read-only snapshot/image를 가능한 범위에서 보존한다. repair tool이 corrupted metadata를 수정해 원본 증거를 잃게 할 수 있다.
 
-`Room transaction commit`도 더 아래에서는 page cache/filesystem/storage flush semantics와 연결된다.
-
-고수준 API가 low-level complexity를 숨기지만 물리 법칙을 없애지는 않는다.
+corruption 원인은 filesystem software bug뿐 아니라 storage media, controller, power-loss guarantee violation, memory corruption에서 올 수 있다. kernel log와 device SMART/health, power event를 함께 조사한다.
 
 ---
 
-## CHAPTER 29 · file corruption 사고 조사
+## CHAPTER 28 · Android storage는 app sandbox와 database durability 위에서 해석한다
 
-증상:
+internal app storage는 UID/SELinux boundary와 연결되고 shared/media storage는 다른 access model을 가진다. pathname permission만으로 Android storage access를 설명할 수 없다.
 
-> crash 후 settings.json이 0 byte.
-
-가설을 나눈다.
-
-```text
-old file truncate 후 write 전에 crash?
-temp+rename pattern 사용?
-write error 무시?
-fsync 없음?
-directory rename durability?
-disk full?
-concurrent writer?
-wrong path cleanup?
-```
-
-### evidence
-
-```text
-file size/timestamps
-filesystem free space
-application write logs
-crash timestamp
-strace/system call trace 재현
-fault injection
-```
-
-단순히 `저장 코드에 try-catch 추가`로 끝내지 않는다.
+SQLite database file은 filesystem 위에 존재하지만 transaction atomicity와 WAL/journal protocol을 DB engine이 추가한다. application이 DB file을 직접 copy/modify하면 engine lock/journal invariant를 깨뜨릴 수 있다. backup은 engine-supported snapshot/export semantics를 사용한다.
 
 ---
 
-## CHAPTER 30 · filesystem invariant를 문장으로 쓴다
+## CHAPTER 29 · storage incident는 namespace→cache→filesystem→block→device 순서로 좁힌다
 
-안전한 persistent file format 예:
+`파일이 사라졌다`는 증상에서 먼저 pathname/rename/unlink history와 open descriptor를 확인한다. `저장했는데 복구 후 없어졌다`면 fsync/directory durability와 crash timeline을 본다. `write가 느리다`면 dirty throttling과 block-device queue를 본다.
 
-```text
-1. target은 항상 old-valid 또는 new-valid 중 하나다.
-2. partial new content가 target name으로 노출되지 않는다.
-3. checksum/version이 맞지 않으면 읽지 않는다.
-4. crash 어느 지점에서도 다음 실행이 복구할 수 있다.
-5. writer는 동시에 하나만 commit한다.
-```
-
-이 invariant가 구현을 이끈다.
+각 layer의 metric과 log를 같은 timestamp로 연결한다. application error만 남기면 ENOSPC, EIO, permission, stale mount를 구분하기 어렵다. raw errno와 target filesystem/device identity를 보존한다.
 
 ---
 
-## PART 13 종료 점검
+## CHAPTER 30 · file update protocol은 object identity, atomicity, durability를 명시해야 한다
 
-1. path와 inode/file object가 왜 같은 것이 아닌가?
-2. hard link가 같은 file에 여러 이름을 만들 수 있는 이유는 무엇인가?
-3. VFS가 여러 filesystem을 어떤 방식으로 공통 API에 연결하는가?
-4. sparse file에서 logical size와 allocated size가 왜 다른가?
-5. delayed allocation이 성능과 crash semantics에 어떤 영향을 주는가?
-6. page cache와 mmap이 어떻게 연결될 수 있는가?
-7. dirty throttling이 write latency를 갑자기 높일 수 있는 이유는 무엇인가?
-8. journaling이 filesystem consistency와 application durability를 자동으로 동일하게 만들지 않는 이유는 무엇인가?
-9. rename atomicity와 durability는 무엇이 다른가?
-10. directory fsync가 필요한 교체 패턴이 있는 이유는 무엇인가?
-11. cross-filesystem move가 큰 copy operation이 될 수 있는 이유는 무엇인가?
-12. inode exhaustion이 free bytes와 별개인 이유는 무엇인가?
-13. application-level corruption과 filesystem corruption을 어떻게 구분하는가?
-14. persistent file update에 invariant를 먼저 써야 하는 이유는 무엇인가?
+중요 file을 안전하게 갱신하려면 최소한 **어떤 이름이 current version을 가리키는가, partial contents가 노출될 수 있는가, commit point가 어디인가, crash 후 어느 version으로 복구되는가**를 정의한다.
 
-이제 파일을 `이름+내용`으로만 보지 않는다. **namespace → inode → cache → allocation → journal/writeback → storage → crash recovery**를 한 경로로 추적할 수 있어야 한다.
+일반적인 temp-write→fsync→atomic rename→directory fsync 패턴도 모든 filesystem/network storage에서 동일하게 보장된다고 가정하지 않는다. target platform의 documented semantics와 fault-injection으로 검증한다. 파일 API의 목적은 bytes를 쓰는 것이 아니라 **crash를 포함한 모든 중간 상태에서 namespace와 data invariant를 유지하는 것**이다.
