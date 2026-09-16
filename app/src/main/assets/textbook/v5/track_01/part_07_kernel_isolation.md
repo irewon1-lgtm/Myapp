@@ -1,521 +1,174 @@
-# PART 07 · kernel boundary, 권한, 격리 — 프로그램이 시스템 전체를 마음대로 못 하는 이유
+# PART 07 · kernel boundary와 격리 — identity, policy, resource ownership
 
-프로그램은 CPU instruction을 실행하지만 아무 memory나 읽고 아무 device나 제어하고 아무 process나 죽일 수 있는 권한을 자동으로 얻지 않는다. 운영체제는 **process credentials, virtual memory protection, system call validation, file permission, capability, namespace, resource limit** 같은 여러 층을 이용해 실행을 통제한다.
-
-이 PART의 목표는 `관리자 권한`이라는 한 단어를 외우는 것이 아니다. **누가 어떤 resource에 어떤 operation을 요청했고, kernel이 어떤 identity와 policy를 근거로 허용/거부했는지** 추적하는 모델을 만드는 것이다.
+운영체제 보안은 `관리자/일반 사용자` 두 단계가 아니다. 실제 허용 여부는 **요청 주체의 identity, 대상 resource, operation, namespace, capability, mandatory policy, resource limit**의 조합으로 결정된다. 디버깅과 보안 검토는 이 조합을 분해해야 한다.
 
 ---
 
-## CHAPTER 01 · system call은 library function과 같은 층이 아니다
+## CHAPTER 01 · syscall boundary는 untrusted user state가 kernel로 들어오는 검증 지점이다
 
-### application API가 곧 kernel entry는 아니다
+application API와 system call은 동일한 층이 아니다. runtime/library는 user space에서 buffering·validation·state management를 수행한 뒤 하나 이상의 syscall을 호출할 수 있다. kernel entry에서는 user pointer, length, flag, descriptor가 모두 신뢰되지 않은 입력이다.
 
-고수준에서 파일을 연다고 하자.
+kernel은 user address가 접근 가능한지, length arithmetic이 overflow하지 않는지, descriptor가 현재 process에 유효한지, operation 권한이 있는지 확인해야 한다. syscall attack surface가 큰 이유는 잘못된 pointer 하나가 privileged memory에 직접 영향을 줄 수 있기 때문이다.
+
+---
+
+## CHAPTER 02 · syscall ABI는 register와 error convention까지 binary contract다
+
+syscall number, argument register, return convention은 architecture와 OS ABI가 정한다. 고수준 언어는 wrapper 뒤에 이를 숨기지만 debugger/trace에서는 raw syscall ABI가 드러난다.
+
+library wrapper가 retry, cancellation point, errno 변환을 추가할 수 있으므로 `library return`과 `kernel raw return`을 구분한다. interrupted syscall이 자동 재시작되는지, partial result가 반환되는지는 API별 계약을 확인한다.
+
+---
+
+## CHAPTER 03 · credentials는 process가 아니라 operation 시점의 security context로 본다
+
+Unix 계열에는 real/effective/saved user ID, group ID, supplementary group 같은 identity state가 존재할 수 있다. access check가 어느 credential을 사용하는지는 operation과 API에 따라 다를 수 있다.
+
+privilege drop를 수행할 때 일부 credential이나 supplementary group을 남기면 예상보다 큰 권한이 유지될 수 있다. child process spawn 시 credential·environment·descriptor 상속도 security boundary에 포함한다.
+
+---
+
+## CHAPTER 04 · capability는 root 권한을 세분화하지만 privilege 조합 위험은 남는다
+
+Linux capability 모델은 전통적인 all-powerful root privilege를 여러 권한 단위로 나눈다. network configuration, raw socket, process tracing 같은 operation을 별도 capability로 통제할 수 있다.
+
+세분화는 least privilege를 가능하게 하지만 capability 하나가 다른 resource와 결합되어 더 큰 권한을 얻을 수 있는지 검토해야 한다. executable file capability, inheritable/ambient set처럼 propagation rule도 존재한다. `root가 아니다`가 안전성의 충분조건은 아니다.
+
+---
+
+## CHAPTER 05 · filesystem permission은 path component 전체와 object metadata를 확인한다
+
+파일 접근은 마지막 파일의 mode bit만 보는 문제가 아니다. path traversal 과정에서 directory execute/search permission이 필요하고 ACL, mount option, MAC policy가 추가될 수 있다.
+
+symbolic link와 rename이 존재하므로 path 문자열을 validation한 뒤 다시 path로 open하는 패턴은 TOCTOU에 취약할 수 있다. 가능한 경우 이미 검증된 directory descriptor를 기준으로 relative open을 수행하고 no-follow 같은 kernel primitive를 활용한다.
+
+---
+
+## CHAPTER 06 · descriptor limit은 leak을 availability failure로 바꾼다
+
+file/socket descriptor는 kernel resource와 process table entry를 소비한다. close가 누락되면 처음에는 정상 동작하다 descriptor limit에 도달한 순간 unrelated file open과 network accept까지 실패할 수 있다.
+
+leak 진단에서는 단순 count뿐 아니라 descriptor type, 생성 stack, lifetime distribution을 본다. server는 process limit과 system-wide limit을 동시에 고려하고 admission control을 통해 overload 시 descriptor 폭증을 막는다.
+
+---
+
+## CHAPTER 07 · memory limit은 heap 크기와 다르다
+
+process/resource memory limit은 managed heap 하나가 아니라 anonymous memory, mmap, page cache accounting, shared/private page, native allocation과 연결될 수 있다. container/cgroup limit 아래에서는 host에 free RAM이 남아도 allocation이 실패하거나 OOM kill이 발생할 수 있다.
+
+memory policy를 설계할 때 working set, reclaimable cache, peak allocation, fragmentation을 구분한다. limit을 크게 올리는 것은 leak이나 unbounded queue를 가리는 해결책이 될 수 있다.
+
+---
+
+## CHAPTER 08 · cgroup은 resource accounting과 control boundary를 만든다
+
+cgroup v2는 process 집합에 CPU, memory, I/O 같은 resource policy를 적용할 수 있다. CPU quota/weight, memory limit, I/O controller는 application 내부 thread scheduler와 별도의 상위 제약이다.
+
+latency 문제에서 application CPU utilization이 낮아도 cgroup throttling 때문에 runnable task가 실행되지 못할 수 있다. container 환경에서는 host metric과 cgroup-local metric을 함께 본다.
+
+---
+
+## CHAPTER 09 · namespace는 global resource view를 분리한다
+
+mount, PID, network, IPC, UTS 같은 namespace는 process가 보는 system resource view를 격리한다. 격리는 resource 자체의 완전한 독립 복사라기보다 name lookup과 visibility boundary를 만드는 방식일 수 있다.
+
+container가 VM과 같은 isolation을 제공한다고 단정하지 않는다. 같은 kernel을 공유하는 구조에서는 kernel vulnerability가 isolation boundary를 넘을 수 있다. namespace와 cgroup, capability, seccomp, MAC를 조합한다.
+
+---
+
+## CHAPTER 10 · user namespace는 identity mapping을 분리한다
+
+user namespace는 namespace 내부 UID/GID와 외부 host identity를 mapping할 수 있다. 내부에서 UID 0처럼 보이는 process가 host 전체의 root 권한을 갖는 것은 아니다.
+
+그러나 user namespace가 허용하는 kernel attack surface와 capability semantics가 복잡하므로 배포 환경의 정책을 확인한다. identity를 로그로 남길 때 namespace-local ID만 기록하면 host 관점에서 주체를 식별하기 어려울 수 있다.
+
+---
+
+## CHAPTER 11 · sandbox는 하나의 기술이 아니라 허용 surface의 교집합이다
+
+실제 sandbox는 filesystem view, syscall filter, capability 제거, namespace, MAC policy, network restriction을 겹쳐 만든다. 한 층이 허용하더라도 다른 층이 거부할 수 있다.
+
+sandbox 설계는 `무엇을 막을지`보다 **정상 workload가 실제로 필요한 최소 operation 집합**을 먼저 정의한다. allowlist가 명확할수록 unexpected new dependency가 정책 위반으로 드러난다.
+
+---
+
+## CHAPTER 12 · MAC는 object owner보다 system policy를 우선할 수 있다
+
+DAC에서는 resource owner가 permission을 조정할 수 있지만 mandatory access control은 system-wide policy가 subject/object 관계를 추가 통제한다. SELinux 같은 체계에서는 label/domain과 policy rule이 access 결정에 관여한다.
+
+permission denied를 mode bit만 수정해 해결하려 하면 MAC denial 원인을 놓친다. audit log에서 source domain, target type, class, requested permission을 확인한다. policy를 넓게 허용하는 대신 필요한 transition과 operation만 추가한다.
+
+---
+
+## CHAPTER 13 · Android application sandbox는 UID와 platform policy를 함께 사용한다
+
+Android는 application을 distinct UID로 실행해 기본 filesystem/process boundary를 만든다. runtime permission, app component export rule, SELinux policy, Binder permission check가 추가된다.
+
+shared storage, exported component, ContentProvider URI permission처럼 의도적인 data-sharing path는 sandbox 예외 경로가 된다. 보안 검토에서는 application 내부 코드뿐 아니라 외부에서 들어올 수 있는 모든 component entry point를 inventory한다.
+
+---
+
+## CHAPTER 14 · Binder는 caller identity가 remote call과 함께 전달되는 IPC다
+
+Binder transaction에서는 callee가 caller UID/PID 같은 identity를 확인해 authorization을 수행할 수 있다. local method call처럼 보이는 framework API가 process boundary를 넘을 수 있으므로 identity와 failure semantics를 보존해야 한다.
+
+service가 privileged identity로 downstream operation을 대신 수행할 때 confused-deputy 문제가 생길 수 있다. caller가 요청할 권한과 service 자체가 가진 권한을 분리해 검증한다.
+
+---
+
+## CHAPTER 15 · request identity는 authentication 이후 authorization까지 유지되어야 한다
+
+사용자가 누구인지 확인한 뒤 내부 service call에서 identity가 사라지면 downstream은 모든 요청을 trusted service 자체의 권한으로 처리할 수 있다. correlation ID와 authentication identity는 목적이 다르며, authorization에 필요한 principal·scope·tenant context를 명시적으로 전달한다.
+
+identity forwarding은 원본 credential을 무조건 복사하는 것이 아니다. delegation token, capability-style scope, signed assertion처럼 필요한 권한만 제한해 전달하는 설계가 더 안전하다.
+
+---
+
+## CHAPTER 16 · TOCTOU는 check와 use 사이 state 변화가 가능한 모든 resource에 적용된다
+
+file existence/permission을 먼저 확인한 뒤 나중에 다시 path로 open하면 그 사이 다른 process가 symlink나 file을 바꿀 수 있다. check 결과가 use 대상과 동일 object라는 보장이 없기 때문이다.
+
+해결은 `더 빨리 open`이 아니라 operation을 atomic kernel primitive에 가깝게 만든다. descriptor 기반 operation, atomic create, rename, compare-and-swap semantics를 사용해 check/use gap을 제거한다.
+
+---
+
+## CHAPTER 17 · resource ownership은 생성자와 해제 책임을 연결한다
+
+fd, lock, mmap, temporary file, child process처럼 explicit cleanup이 필요한 resource는 ownership을 정해야 한다. error path와 cancellation path에서 해제가 누락되면 steady-state leak으로 축적된다.
+
+RAII/context manager/structured concurrency는 cleanup을 lexical lifetime에 연결한다. ownership transfer가 있으면 원래 owner가 더 이상 해제하지 않는다는 계약과 recipient의 종료 책임을 명시한다.
+
+---
+
+## CHAPTER 18 · signal handler는 일반 함수와 같은 안전한 실행 환경이 아니다
+
+POSIX signal은 asynchronous하게 thread execution을 끊고 handler를 실행할 수 있다. handler에서 lock을 잡거나 malloc처럼 async-signal-safe가 아닌 함수를 호출하면 interrupted code와 재진입 충돌이 생길 수 있다.
+
+복잡한 작업은 signal handler에서 직접 수행하지 않고 flag/self-pipe 같은 안전한 notification으로 main control loop에 넘긴다. crash signal 처리도 가능한 operation이 매우 제한적이므로 사후 진단용 raw state 보존을 우선한다.
+
+---
+
+## CHAPTER 19 · graceful shutdown은 새로운 work를 막고 기존 ownership을 drain한다
+
+server 종료는 process kill 한 번이 아니다. 신규 request admission 중단, in-flight deadline 설정, queue drain, transaction/offset checkpoint, resource close 순서를 설계해야 한다.
+
+shutdown deadline을 넘긴 작업을 무한히 기다리면 deploy가 멈추고, 즉시 강제 종료하면 data loss가 생길 수 있다. workload별 `grace period 이후 중단 가능 상태`를 정의하고 restart 후 중복 처리 가능성까지 포함한다.
+
+---
+
+## CHAPTER 20 · 권한 문제는 denial point와 effective identity를 증거로 찾는다
+
+보안/격리 오류를 조사할 때 다음을 함께 수집한다.
 
 ```text
-language API
-openFile(...)
-↓
-runtime/library
-↓
-system call wrapper
-↓
-kernel
-↓
-filesystem / driver
+effective credentials / capability
+namespace and cgroup membership
+resource identifier and owner
+DAC/ACL result
+MAC/SELinux audit event
+syscall + errno
+Binder/IPC caller identity
+resource limit counters
 ```
 
-어떤 API는 user space에서 전부 처리될 수 있고, 어떤 API는 여러 system call을 조합할 수 있다.
-
-따라서 profiler에서 function call 수와 system call 수를 동일하게 세면 안 된다.
-
-### system call boundary에서 validation이 필요하다
-
-user process가 kernel에 pointer와 length를 넘긴다고 하자.
-
-kernel은 user가 준 pointer를 그대로 신뢰하면 안 된다.
-
-```text
-address valid?
-user-accessible range?
-length overflow?
-permission okay?
-resource limit okay?
-operation allowed for credentials?
-```
-
-kernel bug가 위험한 이유는 이 검증 경계가 높은 privilege에서 동작하기 때문이다.
-
----
-
-## CHAPTER 02 · syscall ABI는 함수 이름보다 낮은 수준의 계약이다
-
-### user와 kernel은 register/number 규약으로 만난다
-
-실제 syscall entry에서는 architecture가 정한 방식으로 syscall number와 argument를 register 등에 배치하고 trap instruction을 사용한다.
-
-C library가 이를 감싸 평범한 함수처럼 보이게 한다.
-
-```text
-read(fd, buf, n)
-```
-
-source에서 함수 호출처럼 보이지만 내부에는 privilege transition이 있다.
-
-### syscall 번호를 hard-code하면 portability가 깨진다
-
-architecture/OS에 따라 syscall number와 ABI가 다를 수 있다.
-
-그래서 application은 보통 libc/runtime wrapper를 사용한다.
-
-low-level sandbox나 tracer를 만들 때만 ABI 세부를 직접 다루는 경우가 많다.
-
----
-
-## CHAPTER 03 · credentials는 process가 누구인지 kernel에 설명한다
-
-### UID/GID를 단순 login name으로만 보지 않는다
-
-Unix 계열에서 process는 user/group identity와 관련된 credential을 가진다.
-
-filesystem permission, signal, process control 등 여러 kernel operation에서 이 credential이 사용된다.
-
-실제 Linux에는 real/effective/saved ID 등 여러 종류가 있고 supplementary group도 있다.
-
-초보 단계에서 중요한 것은:
-
-> permission check는 화면에 표시된 사용자 이름이 아니라 kernel이 관리하는 process credential을 기준으로 수행된다.
-
-### effective identity
-
-set-user-ID 같은 mechanism을 사용하면 실행 파일 owner 권한과 process effective identity가 상호작용할 수 있다.
-
-이 기능은 필요한 privileged operation만 수행하고 권한을 줄이는 설계에 쓰일 수 있지만 잘못 사용하면 privilege escalation 위험이 커진다.
-
----
-
-## CHAPTER 04 · root 하나로 모든 권한을 설명하면 너무 거칠다
-
-전통적인 Unix 모델에서는 UID 0 process가 광범위한 privilege를 가진다.
-
-Linux는 root privilege를 여러 **capability**로 나누어 특정 권한만 부여할 수 있다.
-
-예를 들면 network raw operation, UID 변경, system administration 등 서로 다른 권한 단위가 있다.
-
-### least privilege
-
-프로세스가 필요한 operation보다 훨씬 큰 privilege를 가지면 bug가 침해로 이어졌을 때 피해 범위가 커진다.
-
-```text
-필요: 낮은 port bind만
-잘못된 설계: full root
-더 작은 권한: 필요한 capability만
-```
-
-실제 service 설계에서는 가능한 한 작은 privilege set을 사용한다.
-
-### capability가 있다고 모든 check를 bypass하는 것은 아니다
-
-각 capability가 허용하는 operation 범위가 정해져 있고 namespace와 다른 security mechanism의 영향을 받을 수 있다.
-
-`CAP 하나 = 관리자 전체 권한`으로 이해하면 안 된다.
-
----
-
-## CHAPTER 05 · filesystem permission은 path lookup 단계마다 관여한다
-
-### 파일 하나의 mode bit만 보는 것으로 부족하다
-
-```text
-/home/user/private/data.txt
-```
-
-파일을 열려면 path의 directory를 탐색해야 한다.
-
-상위 directory에 필요한 search/execute permission이 없으면 파일 자체가 readable이어도 접근이 막힐 수 있다.
-
-### read/write/execute 의미는 file type에 따라 다르게 해석될 수 있다
-
-regular file의 execute와 directory의 execute/search 의미는 다르다.
-
-따라서 `chmod 777이면 된다`는 식으로 문제를 해결하면 권한을 과도하게 넓히고 보안 원인을 숨긴다.
-
-### permission denied 디버깅
-
-```text
-어떤 process credential인가?
-어떤 exact path인가?
-각 directory permission은?
-ACL/SELinux 같은 추가 policy가 있는가?
-mount가 read-only인가?
-sandbox path인가?
-```
-
-error message 하나보다 실제 check chain을 따라간다.
-
----
-
-## CHAPTER 06 · file descriptor도 resource limit을 가진다
-
-### 무한히 open할 수 없다
-
-process가 open file/socket/pipe descriptor를 계속 만들고 닫지 않으면 limit에 도달할 수 있다.
-
-```text
-accept connection
-fd created
-handler error path
-close skipped
-```
-
-이런 leak은 memory leak과 비슷한 패턴을 가진다.
-
-### 증상
-
-```text
-too many open files
-새 connection 실패
-log file open 실패
-DNS/network library가 간접 실패
-```
-
-root cause가 file descriptor leak인데 상위에서는 `network 장애`처럼 보일 수 있다.
-
-### limit은 방어 장치이기도 하다
-
-resource limit은 한 process가 system-wide resource를 무한 소비하지 못하게 한다.
-
-limit을 무작정 높이면 leak 증상을 늦출 뿐 원인을 고치지 못한다.
-
----
-
-## CHAPTER 07 · memory limit과 OOM은 여러 층에서 발생할 수 있다
-
-`메모리 부족`도 하나의 limit이 아니다.
-
-```text
-language/runtime heap limit
-process virtual address constraints
-cgroup/container memory limit
-system-wide physical memory pressure
-Android process management
-```
-
-어느 층이 먼저 제한을 걸었는지 확인해야 한다.
-
-container memory limit 안에서 죽은 process를 host의 free RAM만 보고 이해할 수 없는 이유다.
-
----
-
-## CHAPTER 08 · cgroup은 process 묶음에 resource policy를 적용한다
-
-### process hierarchy와 resource controller
-
-Linux cgroup은 process를 group hierarchy에 배치하고 CPU, memory 등 resource 사용을 제한/계측하는 mechanism을 제공한다.
-
-개념:
-
-```text
-root cgroup
-├─ service A
-│  ├─ worker 1
-│  └─ worker 2
-└─ service B
-```
-
-service A 전체에 memory/CPU policy를 적용할 수 있다.
-
-### container가 자기 machine처럼 보여도 host resource를 공유한다
-
-container isolation은 VM과 같지 않다.
-
-process들은 host kernel을 공유할 수 있고 cgroup/resource policy와 namespace를 조합해 격리된 environment를 만든다.
-
-따라서 container에서 CPU 2개가 보이거나 memory limit 1GB가 설정돼 있어도 물리 host 구조와 동일하지 않을 수 있다.
-
----
-
-## CHAPTER 09 · namespace는 process가 보는 시스템 view를 격리한다
-
-Linux namespace는 process가 보는 특정 global resource view를 분리할 수 있다.
-
-종류 예:
-
-```text
-PID namespace
-mount namespace
-network namespace
-IPC namespace
-UTS namespace
-user namespace
-cgroup namespace
-```
-
-### PID namespace
-
-container 안에서 PID 1처럼 보이는 process가 host에서는 다른 PID를 가질 수 있다.
-
-그래서 container log의 PID와 host diagnostic tool의 PID를 연결할 때 namespace를 고려해야 한다.
-
-### network namespace
-
-interface, route, socket view를 분리할 수 있다.
-
-`localhost`는 항상 host 전체를 뜻하지 않는다.
-
-현재 process가 속한 network namespace 안의 loopback이다.
-
-이 사실을 모르면 container에서 `127.0.0.1` 연결 오류를 이해하기 어렵다.
-
----
-
-## CHAPTER 10 · user namespace의 root는 host root와 같지 않을 수 있다
-
-user namespace는 UID/GID mapping을 격리할 수 있다.
-
-process가 namespace 내부에서는 UID 0처럼 보여도 외부 host에서는 unprivileged UID에 mapping될 수 있다.
-
-```text
-inside container/user ns: uid 0
-outside host: uid 100000
-```
-
-이 구조는 `root`라는 숫자 하나보다 **어느 namespace에서 어떤 capability를 가지는가**가 중요하다는 것을 보여 준다.
-
----
-
-## CHAPTER 11 · chroot와 namespace와 sandbox를 같은 것으로 보지 않는다
-
-### chroot
-
-process가 보는 filesystem root를 바꾸는 mechanism이다.
-
-하지만 이것 하나만으로 완전한 security container가 되는 것은 아니다.
-
-### namespace
-
-여러 global resource view를 격리한다.
-
-### sandbox
-
-더 넓은 개념이다.
-
-permission, syscall filtering, namespace, UID isolation, MAC policy, broker process 등 다양한 mechanism을 결합할 수 있다.
-
-`chroot했으니 안전` 같은 단일 기능 신뢰는 위험하다.
-
----
-
-## CHAPTER 12 · mandatory access control은 owner permission 외의 policy를 추가한다
-
-Unix mode bit만으로 모든 access control을 설명하기 어려운 환경에서는 SELinux 같은 MAC system이 추가 policy를 적용할 수 있다.
-
-```text
-DAC permission allows
-BUT
-MAC policy denies
-```
-
-그래서 `chmod 777인데 왜 안 되지?`라는 상황이 생길 수 있다.
-
-권한 문제를 해결할 때 security framework를 끄는 것은 원인을 제거하는 게 아니라 보호 장치를 제거하는 것이다.
-
----
-
-## CHAPTER 13 · Android app sandbox는 Linux identity와 platform policy를 사용한다
-
-Android는 일반적으로 앱마다 고유한 Linux UID를 부여해 app data와 process를 격리한다.
-
-앱 A가 앱 B의 private data directory를 임의로 읽지 못하도록 filesystem permission과 platform security mechanism이 협력한다.
-
-### permission API는 sandbox 위에 추가 capability를 준다
-
-camera/location 같은 protected operation은 manifest/runtime permission과 system service policy를 통해 접근이 제어된다.
-
-permission 승인을 받았다고 다른 앱 private memory까지 접근할 수 있게 되는 것은 아니다.
-
-### app signing도 identity 일부다
-
-Android package signing key는 update trust와 package identity에 중요하다.
-
-같은 applicationId 문자열만 복사한다고 기존 app의 update가 될 수 있는 것이 아니다.
-
----
-
-## CHAPTER 14 · Binder는 Android process boundary를 넘는 RPC infrastructure다
-
-Android framework의 많은 service call은 다른 process로 넘어갈 수 있다.
-
-개념적으로:
-
-```text
-app process
-proxy call
-↓
-Binder driver/kernel mediation
-↓
-service process thread
-actual method execution
-↓
-reply
-```
-
-### local function처럼 보여도 remote failure가 있다
-
-다른 process가 죽거나 timeout/transaction size 문제가 생기면 평범한 in-process call과 다른 실패가 가능하다.
-
-그래서 IPC interface에는 serialization, version compatibility, identity, thread-safety를 고려해야 한다.
-
-### Binder thread pool
-
-service-side method가 main thread 하나에서만 호출된다고 가정하면 안 되는 API가 있다.
-
-여러 Binder thread에서 동시에 들어올 수 있으므로 shared state는 thread-safe해야 한다.
-
----
-
-## CHAPTER 15 · process identity와 request identity를 분리한다
-
-server가 privileged process라고 해서 caller도 privileged인 것은 아니다.
-
-IPC/RPC service는 **누가 요청했는지**를 확인하고 operation authorization을 수행해야 한다.
-
-```text
-service process privilege
-≠ caller permission
-```
-
-confused deputy 문제가 여기서 나온다.
-
-높은 권한을 가진 service가 낮은 권한 caller의 요청을 검증 없이 대신 실행하면 privilege가 우회된다.
-
----
-
-## CHAPTER 16 · TOCTOU는 check와 use 사이에 상태가 바뀌는 race다
-
-Time Of Check To Time Of Use.
-
-```text
-check: path is safe
---- attacker changes path/symlink ---
-use: open path
-```
-
-check 결과와 실제 use 대상이 달라질 수 있다.
-
-### name-based validation의 한계
-
-path 문자열을 먼저 검사하고 나중에 다시 open하면 두 시점 사이 filesystem namespace가 바뀔 수 있다.
-
-가능하면 file descriptor 기반 operation, atomic API, `openat` 계열 context 같은 mechanism으로 check/use gap을 줄이는 설계를 사용한다.
-
-정확한 API는 platform 문서를 확인한다.
-
----
-
-## CHAPTER 17 · resource ownership은 privilege와 lifetime을 동시에 관리한다
-
-file descriptor를 연 함수와 닫는 함수가 멀리 떨어져 있으면 leak 가능성이 커진다.
-
-권한도 마찬가지다.
-
-```text
-acquire privileged resource
-↓
-perform narrow operation
-↓
-release/drop privilege
-```
-
-오랫동안 privilege를 유지하면 attack surface가 커진다.
-
-RAII/context manager 같은 pattern은 resource lifetime을 lexical scope와 묶어 cleanup 누락을 줄인다.
-
----
-
-## CHAPTER 18 · signal은 process control channel이지만 평범한 callback이 아니다
-
-Unix signal handler는 임의 instruction 사이에 비동기적으로 실행될 수 있다.
-
-모든 library function이 signal handler 안에서 안전하지 않다.
-
-multithread process에서는 어떤 thread가 signal을 받는지도 규칙이 복잡하다.
-
-따라서 signal handler에서 많은 일을 하지 않고 flag/eventfd/pipe 등 안전한 mechanism으로 main loop에 전달하는 pattern이 사용된다.
-
-`Ctrl+C를 처리하는 함수` 정도로만 이해하면 production daemon의 shutdown bug를 만들 수 있다.
-
----
-
-## CHAPTER 19 · graceful shutdown은 resource contract의 마지막 단계다
-
-process 종료에도 순서가 있다.
-
-```text
-new request 수신 중단
-↓
-in-flight work 완료/취소 정책
-↓
-queue drain 또는 persist
-↓
-DB transaction 마무리
-↓
-network connection close
-↓
-file/log flush policy
-↓
-process exit
-```
-
-강제 kill과 graceful stop을 같은 것으로 보면 data loss와 duplicate job이 생길 수 있다.
-
-### shutdown deadline
-
-무한정 기다릴 수도 없다.
-
-orchestrator가 termination grace period를 주는 환경에서는 deadline 안에 cleanup이 끝나도록 설계해야 한다.
-
-못 끝낸 job을 durable queue에 되돌리는 정책이 필요할 수 있다.
-
----
-
-## CHAPTER 20 · 권한 오류를 구조적으로 디버깅한다
-
-상황: 앱이 특정 파일/서비스에 접근하지 못한다.
-
-확인 순서:
-
-```text
-1. 실제 실패 syscall/API는 무엇인가?
-2. errno/exception은 무엇인가?
-3. process UID/GID/capability는?
-4. namespace 내부/외부 중 어디인가?
-5. path 각 component permission은?
-6. mount flags/read-only 여부는?
-7. SELinux/MAC denial이 있는가?
-8. container/cgroup resource limit인가?
-9. Android permission/service policy인가?
-10. IPC caller identity check가 거절했는가?
-```
-
-`권한 줬는데 안 됨`이 아니라 어느 security gate가 거부했는지 찾는다.
-
----
-
-## PART 07 종료 점검
-
-1. library call과 system call이 왜 같은 개념이 아닌가?
-2. kernel이 user pointer를 검증해야 하는 이유는 무엇인가?
-3. process credential은 permission check에 어떻게 쓰이는가?
-4. Linux capability가 root privilege를 더 작은 단위로 나누는 이유는 무엇인가?
-5. file descriptor limit이 network error처럼 보일 수 있는 이유는 무엇인가?
-6. cgroup과 namespace는 각각 무엇을 격리/제어하는가?
-7. container의 PID 1과 host PID가 다를 수 있는 이유는 무엇인가?
-8. namespace 안의 root가 host root와 다를 수 있는 이유는 무엇인가?
-9. Android app sandbox가 앱 사이 private data를 어떻게 분리하는가?
-10. Binder call이 local function처럼 보여도 remote failure를 고려해야 하는 이유는 무엇인가?
-11. confused deputy는 어떤 authorization 실수인가?
-12. TOCTOU가 path validation에서 어떻게 발생하는가?
-13. graceful shutdown이 단순 process exit보다 복잡한 이유는 무엇인가?
-
-권한과 격리를 `관리자냐 아니냐`로 설명하지 말고 **identity, namespace, capability, policy, resource limit, lifetime**으로 나눠 설명할 수 있어야 한다.
+`permission denied`를 catch해 더 강한 권한으로 재시도하는 방식은 원인을 숨기고 privilege를 확대한다. 어떤 policy layer가 어떤 rule로 거부했는지 확인한 뒤 최소 권한 변경으로 수정한다.
