@@ -38,10 +38,8 @@ data class LearningConcept(
  * Textbook-first presentation layer.
  *
  * Each learner-facing LESSON keeps the complete authored explanation/examples/code together.
- * V3BeginnerGuidance adds a non-destructive beginner layer around that authored body: required
- * takeaways, plain-language previews for abrupt terms, defer-to-later markers, and a concise
- * answer/explanation summary. The low-stakes retrieval prompt comes after that summary so the
- * learner immediately closes the loop by recalling it again without looking upward.
+ * Beginner guidance is added around the authored body without replacing it. Synthetic/non-V3
+ * callers stay legacy-safe so parser and practice tests can still construct arbitrary sections.
  */
 object TextbookLearningFlow {
     const val MAX_BLOCKS_PER_CONCEPT = Int.MAX_VALUE
@@ -56,14 +54,13 @@ object TextbookLearningFlow {
         val isV3LearnerSection = chapterId.matches(Regex("V1-C\\d{2}")) &&
             section.id.startsWith("$chapterId-S")
         val guide = if (isV3LearnerSection) {
-            // Real V3 sections are required to have guides by V3BeginnerGuidanceTest.
-            // Synthetic tests may intentionally create extra V1-Cxx-Sxx ids, so those stay legacy-safe.
-            V3BeginnerGuidance.guides.firstOrNull { it.sectionId == section.id }
+            // Real V3 sections must resolve a guide. Synthetic tests can intentionally invent S99.
+            V3BeginnerGuidanceResolver.find(section.id)
         } else {
             null
         }
         val title = if (guide != null) {
-            V3BeginnerGuidance.decoratedTitle(section.id, section.title)
+            V3BeginnerGuidanceResolver.decoratedTitle(section.id, section.title)
         } else {
             section.title
         }
@@ -84,7 +81,7 @@ object TextbookLearningFlow {
                 index = 0,
                 title = title,
                 blocks = if (guide != null) {
-                    V3BeginnerGuidance.decorateBlocks(section.id, section.blocks)
+                    V3BeginnerGuidanceResolver.decorateBlocks(section.id, section.blocks)
                 } else {
                     section.blocks
                 },
