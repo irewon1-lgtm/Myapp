@@ -1,38 +1,32 @@
-# TEXTBOOK V3 · 완전초급 심화 교재 최종 계약
+# TEXTBOOK V3 · 완전초급 심화 교재 품질 계약
 
-## 1. 사용자 요구를 숫자로 고정
+## 1. 목적
 
-기존 V2 `### LESSON` 총수: **590개**
+기존 V2의 가장 큰 실패는 `TRACK → BLOCK → 짧은 LESSON 수백 개` 구조가 실제 학습에서는 단어장처럼 보였다는 점이다.
 
-최종 learner-facing V3 LESSON: **26개**
-
-감소율: **95.6%**
-
-사용자 최소 요구인 `1/3 이상 감소`보다 훨씬 크게 줄이되, 내용을 삭제해서 줄이는 것이 아니라 **직접 연결되는 짧은 주제를 한 개의 큰 책형 LESSON으로 합친다.**
-
-계층/사용 경험은 유지한다.
+V3의 목적은 LESSON 개수를 특정 숫자로 맞추는 것이 아니다.
 
 ```text
-TRACK
-↓
-LESSON 선택/좌우 이동
-↓
-LESSON 안에서 관련 BLOCK을 책의 소단원처럼 연속 학습
-↓
-BLOCK 내부 step-by-step 소제목
-↓
-짧은 회상
-↓
-다음 LESSON
+짧은 정의 조각 제거
++
+관련 내용을 책의 한 절처럼 연결
++
+완전 초보가 상황 → 원리 → 예제 → 코드 → 실수 → 연결 순서로 읽게 함
++
+긴 글이 과적재되지 않게 상한을 둠
++
+앱을 닫았다 다시 열어도 읽던 위치로 복귀
 ```
 
-V2 원본은 보존하고 V3 asset을 별도로 둔다.
+기존 V2 `### LESSON` 총수는 590개다.
 
-`main`, GitHub Actions, APK 배포, 운영환경은 사용자 검토/승인 전 실행하지 않는다.
+현재 V3 원고/묶음에서 learner-facing LESSON은 26개다. 이 숫자는 **현재 구현 결과**이지 품질을 위해 영구 고정하는 목표가 아니다.
 
-## 2. TRACK별 최종 learner-facing LESSON 수
+앞으로 교육적으로 필요하면 27개, 30개, 35개로 바뀔 수 있다. 대신 아래 품질 상·하한을 지켜야 한다.
 
-| TRACK | V2 authored LESSON | V3 source BLOCK | 최종 learner LESSON |
+## 2. 현재 TRACK 구조
+
+| TRACK | V2 authored LESSON | V3 source BLOCK | 현재 learner LESSON |
 |---|---:|---:|---:|
 | 01 컴퓨터와 프로그래밍의 언어 | 31 | 5 | 2 |
 | 02 프로그래밍 사고와 문법 | 70 | 8 | 4 |
@@ -45,127 +39,209 @@ V2 원본은 보존하고 V3 asset을 별도로 둔다.
 | 09 보안과 데이터 보호 | 39 | 3 | 1 |
 | 10 오류·테스트·Git·빌드·배포 | 53 | 4 | 2 |
 | 11 소프트웨어 설계와 종합 프로젝트 | 77 | 5 | 2 |
-| **합계** | **590** | **67** | **26** |
+| **합계** | **590** | **67** | **26 현재값** |
 
-## 3. 최종 LESSON 묶음
+현재 26개는 590개 대비 95.6% 감소다. 감소율 자체는 참고 지표다.
 
-### TRACK 01 · 2 LESSON
-1. 컴퓨터·파일·문자는 어떻게 데이터가 되는가
-2. 프로그램과 코드를 읽고 실행하는 첫걸음
-
-### TRACK 02 · 4 LESSON
-1. 문제를 나누고 값과 변수로 표현한다
-2. 입력·조건·반복으로 프로그램의 흐름을 만든다
-3. 여러 값과 함수를 이용해 프로그램을 구조화한다
-4. 파일·모듈·오류처리까지 작은 프로그램으로 연결한다
-
-### TRACK 03 · 2 LESSON
-1. 배열·연결구조·해시·트리로 데이터를 담는 방법
-2. 그래프·검색·정렬·복잡도로 문제를 푸는 방법
-
-### TRACK 04 · 3 LESSON
-1. 브라우저와 HTML로 의미 있는 화면 구조를 만든다
-2. CSS와 반응형으로 화면을 배치하고 꾸민다
-3. DOM·이벤트·DevTools로 화면을 움직이고 고친다
-
-### TRACK 05 · 4 LESSON
-1. JavaScript의 값·참조·함수가 움직이는 방식
-2. 데이터 가공과 비동기의 출발점
-3. Promise·async/await·event loop를 시간 순서로 이해한다
-4. 여러 비동기 작업과 TypeScript로 실제 앱을 안전하게 만든다
-
-### TRACK 06 · 2 LESSON
-1. 내 기기에서 서버까지 IP·DNS·TCP·TLS의 길을 따라간다
-2. HTTP·MIME·API·CORS까지 실제 통신 문제를 해결한다
-
-### TRACK 07 · 2 LESSON
-1. 서버가 요청을 받고 검증해 업무 로직으로 보내는 전체 흐름
-2. 인증·캐시·큐·동시성·관측성으로 운영 서버를 만든다
-
-### TRACK 08 · 2 LESSON
-1. DB 구조·SQL·집계·무결성으로 데이터를 올바르게 저장한다
-2. 관계·JOIN·index·transaction으로 DB를 실제 서비스에 연결한다
-
-### TRACK 09 · 1 LESSON
-1. 보안을 처음부터 끝까지: 신뢰·암호·웹 공격을 연결한다
-
-### TRACK 10 · 2 LESSON
-1. 버그 조사와 테스트로 수정의 증거를 만든다
-2. Git에서 빌드·배포·rollback까지 변경을 추적한다
-
-### TRACK 11 · 2 LESSON
-1. 요구사항에서 모듈·아키텍처까지 시스템의 뼈대를 설계한다
-2. 상태·확장·장애대응을 종합 프로젝트로 연결한다
-
-## 4. LESSON 편집 계약
-
-각 source BLOCK은 정의 카드가 아니라 최소한 다음 흐름으로 쓴다.
-
-1. **실제 상황부터** — 왜 필요한지 먼저 보여준다.
-2. **한국어로 먼저** — 영어 전문용어는 상황을 이해한 뒤 이름으로 붙인다.
-3. **비유와 그림** — 데이터/실행 상태가 어떻게 움직이는지 눈으로 보여준다.
-4. **한 단계씩** — 아직 배우지 않은 용어를 선행 사용하지 않는다.
-5. **작은 코드** — 실행 가능한 최소 예부터 보여준다.
-6. **한 줄씩 해석** — 문법을 건너뛰지 않는다.
-7. **조금씩 확장** — 새 기능을 단계별로 추가한다.
-8. **실수/실패 사례** — 틀린 코드와 왜 틀렸는지 함께 설명한다.
-9. **실제 앱 연결** — 화면·서버·DB·네트워크에서 어디에 쓰이는지 연결한다.
-10. **앞뒤 개념 연결** — 다음 전문용어가 왜 필요한지 자연스럽게 이어 준다.
-11. **책을 덮고 확인** — 자기 말로 설명하는 회상 질문을 둔다.
-
-## 5. 분량 계약
-
-정적 분량 지표:
+## 3. learner-facing 구조
 
 ```text
-새 TRACK bytes / 최종 visible lesson count
--------------------------------------------
-기존 V2 TRACK bytes / 기존 authored lesson count
+TRACK
+↓
+큰 LESSON 선택 / 좌우 스와이프
+↓
+LESSON 안에서 관련 BLOCK이 책의 소단원처럼 이어짐
+↓
+BLOCK 내부 H4 단계 소제목
+↓
+본문 / 그림 / 코드 / 실패 사례
+↓
+짧은 회상
+↓
+다음 LESSON
 ```
 
-TRACK별 결과는 현재 **25.12x ~ 43.99x**다.
+V3에서는 source의 `### LESSON 01 · ...`가 learner-facing 새 페이지가 되지 않는다.
 
-추가 JVM 품질 gate는 더 엄격하게:
+- H2 BLOCK → reader 내부 H3
+- H3 legacy LESSON → reader 내부 H4
+- TRACK H1 → 중복 제거
+
+## 4. 편집 계약
+
+각 BLOCK은 가능한 한 다음 흐름을 가진다.
+
+1. **실제 상황/문제** — 왜 필요한지 먼저 본다.
+2. **아주 쉬운 뜻** — 영어 전문용어를 먼저 던지지 않는다.
+3. **비유/그림** — 상태나 데이터 흐름을 눈으로 본다.
+4. **동작 순서** — 한 단계씩 따라간다.
+5. **작은 코드** — 최소 예제로 시작한다.
+6. **코드 해석** — 아직 배우지 않은 문법을 건너뛰지 않는다.
+7. **실패/오류 사례** — 틀린 결과가 왜 생기는지 본다.
+8. **언제 쓰는가** — 실제 앱 위치와 연결한다.
+9. **다른 개념과 연결** — 다음 개념이 왜 필요한지 이어 준다.
+10. **책을 덮고 확인** — 자기 말로 회상한다.
+
+금지:
+
+- 정의 한두 줄만 있는 용어 카드
+- 전문용어로 다른 전문용어를 설명하는 순환 설명
+- 실행됨 = 정답으로 가르치기
+- 반복 문장으로 길이만 늘리기
+- TODO/TBD/준비중
+
+## 5. 분량 품질 계약
+
+### 폐기한 기준
+
+아래는 참고 통계로만 남기고 PASS 근거로 쓰지 않는다.
 
 ```text
-각 실제 V3 learner-facing LESSON weightedLength
->=
-같은 TRACK V2 reader page 평균 weightedLength × 20
+V3 파일 byte / visible lesson count
+-----------------------------------
+V2 파일 byte / authored lesson count
 ```
 
-을 검사하도록 작성한다.
+한국어 UTF-8 byte 수와 LESSON 합치기 효과가 크게 섞이므로 `25x~44x` 같은 숫자를 실제 교육 깊이 증가로 해석하지 않는다.
 
-이 JVM gate는 전체 Gradle suite가 실제 실행되기 전까지 PASS라고 보고하지 않는다.
+### 실제 gate
 
-## 6. 회귀 방지 품질 gate
+실제 `TextbookMarkdownParser + TextbookSectioner` 결과를 기준으로 검사한다.
 
-- V3 asset 11개 존재.
-- source BLOCK 수 3~8 범위.
-- 최종 learner-facing LESSON 수 정확히 26.
-- 모든 authored BLOCK이 merged LESSON 내부에 남아 있어야 함.
-- source의 작은 `LESSON 01 ·` 라벨은 reader에서 별도 page가 되지 않아야 함.
-- source BLOCK은 충분한 설명량과 step subsection을 가져야 함.
-- 반복 문단 padding 금지.
-- TODO/TBD/준비중 금지.
-- async/MIME/integrity 같은 선행 개념 순서 회귀 금지.
-- synthetic/non-V3 split 동작은 기존 방식으로 보존.
+- 전체 learner-facing LESSON 수: 현재 구조에서 20~50 범위
+- TRACK별 learner-facing LESSON: 1~6
+- 한 learner-facing LESSON의 내부 major BLOCK: 1~4
+- 실제 추정 읽기시간: 10~60분
+- V2 reader page 평균 weightedLength 대비 각 V3 LESSON depth ratio: 12x~60x
+- estimatedMinutes는 60분에서 강제로 잘라 숨기지 않는다. 60분 초과면 실제 숫자가 노출되어 test가 실패해야 한다.
 
-## 7. 현재 승인 경계
+현재 26개를 유지하려고 70~100분짜리 LESSON을 만드는 것은 금지한다.
 
-허용된 작업:
+## 6. grouping 안전 계약
+
+V3 grouping table은 best-effort 힌트가 아니라 **강제 계약**이다.
+
+원고 BLOCK 수가 바뀌었는데 grouping table을 갱신하지 않으면:
 
 ```text
-별도 GitHub branch에서 V3 source/코드/test 수정
-무료·비파괴 로컬 정적 검증
+예전 atomic split으로 조용히 fallback
 ```
 
-아직 실행하지 않는 작업:
+하지 않는다.
+
+반드시 즉시 실패한다.
+
+```text
+authored BLOCK count mismatch
+→ IllegalArgumentException
+→ grouping 계약 수정 필요
+```
+
+이 규칙은 V3가 나중에 다시 수백 개의 짧은 페이지로 퇴행하는 것을 막는다.
+
+Legacy/non-V3 synthetic caller만 기존 atomic split을 유지한다.
+
+## 7. 내용 coverage 계약
+
+V3 통합 과정에서 핵심 개념이 사라지는 것을 막기 위해 `V3CriticalCoverageTest`를 둔다.
+
+대표 spine:
+
+- TRACK 03: array / node / stack / hash / tree / Big-O
+- TRACK 05: closure / Promise / async-await / event loop / TypeScript
+- TRACK 06: DNS / TCP / TLS / Content-Type / multipart / CORS
+- TRACK 08: PRIMARY KEY / FOREIGN KEY / JOIN / index / transaction / ACID
+- TRACK 09: threat / authentication / hash / encryption / SQL injection / XSS / CSRF / secret
+- TRACK 10: reproduction / unit-integration / Git / CI / artifact / rollback
+- TRACK 11: requirement / acceptance criteria / cohesion / coupling / DI / cache / circuit breaker / observability
+
+사용자가 직접 문제 삼았던 아래 4개는 별도 회귀 gate를 둔다.
+
+```text
+node + next + 중간 삽입
+callback + Promise + microtask
+MIME + Content-Type + boundary
+데이터 무결성 + CHECK + 참조 무결성
+```
+
+## 8. 긴 글 reader UX 계약
+
+V3는 LESSON이 길기 때문에 `어느 LESSON인가`만 기억해서는 부족하다.
+
+반드시 다음을 저장한다.
+
+```text
+TRACK
+LESSON index
+세로 firstVisibleItemIndex
+세로 firstVisibleItemScrollOffset
+```
+
+V3는 별도 preference namespace를 사용한다.
+
+```text
+v3_deep_beginner_progress
+```
+
+이전 V1/V2 읽기 완료/위치가 V3 완료로 잘못 이어지면 안 된다.
+
+세로 위치는 `snapshotFlow`로 기록하고 재진입 시 `rememberLazyListState` 초기 위치에 복원한다.
+
+## 9. reader 가독성 / swipe 계약
+
+- 검은 계열 배경 + 밝은 본문 유지
+- 본문 최대 폭 780dp
+- H3 major BLOCK은 본문보다 명확히 큼
+- H4 단계 제목도 본문 16sp보다 크게 표시
+- BLOCK/H4 위 여백을 늘려 긴 페이지에서 위치를 눈으로 찾을 수 있게 함
+- LESSON 좌우 swipe 유지
+- 코드 블록은 좁은 폰에서 `softWrap=true`
+- 코드 내부 horizontalScroll은 제거해 LESSON swipe와 gesture 경쟁하지 않게 함
+- swipe threshold는 110dp로 올려 작은 가로 움직임 오작동을 줄임
+
+## 10. 검증 단계
+
+### 무료·비파괴 로컬 검증
+
+핵심 `TextbookSectioner`는 외부 dependency 없이 Kotlin compiler로 실제 컴파일/실행한다.
+
+CLEAN 유형은 서로 달라야 한다.
+
+1. 정상 grouping 수
+2. legacy atomic content preservation
+3. old LESSON label 제거
+4. V3 BLOCK mismatch fail-fast
+5. 60분 초과 시간 은폐 금지
+6. block weight 양수
+7. minute estimator monotonic
+
+### 전체 저장소 검증
+
+아래는 실제 실행 전 PASS라고 하지 않는다.
+
+```text
+./gradlew test
+Android instrumented tests
+Galaxy Tab 실제/에뮬레이터 UI 검증
+APK build/install
+```
+
+## 11. 승인 경계
+
+허용된 범위:
+
+```text
+textbook-v3-deep-beginner 브랜치 수정
+무료·비파괴 정적검증
+로컬 Kotlin standalone compile/run
+```
+
+별도 승인 없이 실행하지 않음:
 
 ```text
 main merge
 GitHub Actions
-APK build/release 배포
+APK release/deploy
 운영환경 변경
+유료 실행
 ```
-
-사용자가 V3 원고/구조를 먼저 검토한 뒤 다음 실행 승인을 받는다.
