@@ -1,5 +1,6 @@
 package com.futuretech.poweruser.ui
 
+import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.TextLayoutResult
 import androidx.compose.ui.text.TextMeasurer
 import androidx.compose.ui.text.TextStyle
@@ -85,8 +86,6 @@ internal object MeasuredTextbookPageComposer {
             val remaining = contentHeightPx - used - gap
             val fullHeight = measureBlock(block, contentWidthPx, density, textMeasurer)
 
-            // Keep a heading with at least roughly two body lines below it. This is measured in the
-            // active font/density rather than guessed from character count.
             if (block is TextbookBlock.Heading && current.isNotEmpty() && remaining < fullHeight + twoBodyLines) {
                 flush()
                 queue.addFirst(block)
@@ -111,8 +110,6 @@ internal object MeasuredTextbookPageComposer {
                 flush()
                 queue.addFirst(block)
             } else {
-                // An authored atom which genuinely cannot be split is surfaced as over-budget rather
-                // than silently dropped or rewritten. CLEAN pagination tests treat this as a failure.
                 add(block, fullHeight)
                 flush()
             }
@@ -258,7 +255,6 @@ internal object MeasuredTextbookPageComposer {
         }
         if (lastFittingLine < 1 || lastFittingLine >= layout.lineCount - 1) return null
 
-        // Avoid a one-line widow in the tail when the head can give one line back.
         if (layout.lineCount - (lastFittingLine + 1) == 1 && lastFittingLine >= 2) {
             lastFittingLine--
         }
@@ -348,7 +344,7 @@ internal object MeasuredTextbookPageComposer {
         widthPx: Int,
         measurer: TextMeasurer
     ): TextLayoutResult = measurer.measure(
-        text = text,
+        text = AnnotatedString(text),
         style = style,
         constraints = Constraints(maxWidth = widthPx.coerceAtLeast(1))
     )
