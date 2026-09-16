@@ -1,8 +1,6 @@
 package com.futuretech.poweruser.textbook
 
-/**
- * Current living platform and standards sources audited independently from the stable book spine.
- */
+/** Current platform, standards and compiler sources audited independently from the stable book spine. */
 object V5BookSupplementalSources {
     private fun s(
         id: String,
@@ -34,7 +32,9 @@ object V5BookSupplementalSources {
         s("RFC8259", "The JavaScript Object Notation (JSON) Data Interchange Format", "IETF / RFC Editor", V5BookSource.SourceType.STANDARD, "RFC 8259 / STD 90", "https://www.rfc-editor.org/rfc/rfc8259"),
         s("RFC8949", "Concise Binary Object Representation (CBOR)", "IETF / RFC Editor", V5BookSource.SourceType.STANDARD, "RFC 8949 / STD 94", "https://www.rfc-editor.org/rfc/rfc8949"),
         s("PROTOBUF-WIRE", "Protocol Buffers Encoding", "Google", V5BookSource.SourceType.OFFICIAL_DOC, "current official encoding guide", "https://protobuf.dev/programming-guides/encoding/"),
-        s("UNICODE-UTS39", "Unicode Security Mechanisms", "Unicode Consortium", V5BookSource.SourceType.STANDARD, "UTS #39", "https://www.unicode.org/reports/tr39/")
+        s("UNICODE-UTS39", "Unicode Security Mechanisms", "Unicode Consortium", V5BookSource.SourceType.STANDARD, "UTS #39", "https://www.unicode.org/reports/tr39/"),
+        s("LLVM-LANGREF", "LLVM Language Reference Manual", "LLVM Project", V5BookSource.SourceType.OFFICIAL_DOC, "current LangRef", "https://llvm.org/docs/LangRef.html"),
+        s("ARM-ELF-ABI", "ELF for the Arm Architecture", "Arm ABI project", V5BookSource.SourceType.STANDARD, "current abi-aa", "https://github.com/ARM-software/abi-aa/blob/main/aaelf32/aaelf32.rst")
     )
 
     val byId: Map<String, V5BookSource> = sources.associateBy(V5BookSource::id)
