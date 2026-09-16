@@ -13,10 +13,11 @@ data class TextbookSection(
 
 /**
  * Converts a long TRACK source into deterministic learner-facing LESSON pages without mutating
- * source markdown. H2 is a BLOCK label and is attached to the first H3 LESSON inside that BLOCK.
- * Every later H3 starts a new page. Support BLOCKs without H3 (for example glossary/completion)
- * remain a single page. This preserves the authored TRACK -> BLOCK -> LESSON hierarchy rather than
- * merging unrelated lessons merely because their text happens to be short.
+ * source markdown. The TRACK introduction stays attached to BLOCK 01 and its first H3 LESSON.
+ * H2 is a BLOCK label and is attached to the first H3 LESSON inside that BLOCK. Every later H3
+ * starts a new page. Support BLOCKs without H3 (for example glossary/completion) remain one page.
+ * This preserves authored TRACK -> BLOCK -> LESSON hierarchy instead of merging unrelated lessons
+ * merely because their text happens to be short.
  *
  * Internal chapter/section ids remain stable-shaped for navigation compatibility. V2 progress is
  * stored in its own preference namespace, so the rewritten course does not inherit V1 completion.
@@ -30,12 +31,14 @@ object TextbookSectioner {
 
         val raw = mutableListOf<MutableList<TextbookBlock>>()
         var current = mutableListOf<TextbookBlock>()
+        var currentHasBlockHeading = false
         var currentHasLessonHeading = false
 
         fun flush() {
             if (current.isNotEmpty()) {
                 raw += current
                 current = mutableListOf()
+                currentHasBlockHeading = false
                 currentHasLessonHeading = false
             }
         }
@@ -44,14 +47,15 @@ object TextbookSectioner {
             when (block) {
                 is TextbookBlock.Heading -> when (block.level) {
                     2 -> {
-                        // A new BLOCK closes the previous LESSON/support page. The BLOCK heading then
-                        // travels with its first LESSON so the learner can see both hierarchy levels.
-                        if (current.isNotEmpty()) flush()
+                        // Introductory H1/text before BLOCK 01 stays with the first BLOCK. A later
+                        // H2 closes the previous lesson/support block before starting the next BLOCK.
+                        if (currentHasBlockHeading || currentHasLessonHeading) flush()
                         current += block
+                        currentHasBlockHeading = true
                     }
                     3 -> {
-                        // First H3 after an H2 belongs to that BLOCK page. Additional H3 headings are
-                        // explicit new LESSON boundaries and must never be merged by text length.
+                        // First H3 after H2 belongs to that BLOCK page. A second H3 is an explicit
+                        // new LESSON and must never be merged with the previous LESSON.
                         if (currentHasLessonHeading) flush()
                         current += block
                         currentHasLessonHeading = true
