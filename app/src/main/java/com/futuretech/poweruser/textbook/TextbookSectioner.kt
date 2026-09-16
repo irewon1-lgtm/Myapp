@@ -23,6 +23,8 @@ data class TextbookSection(
  */
 object TextbookSectioner {
     private const val WEIGHT_PER_MINUTE = 330
+    internal const val V3_MIN_LESSON_MINUTES = 10
+    internal const val V3_MAX_LESSON_MINUTES = 60
 
     private data class LessonGrouping(
         val sizes: List<Int>,
@@ -30,9 +32,11 @@ object TextbookSectioner {
     )
 
     /**
-     * V3 final learner-facing grouping: 67 authored BLOCK pages -> 26 deep LESSON pages.
-     * The grouping is intentionally conservative: every merged page contains only adjacent,
-     * prerequisite-related BLOCKs from the same TRACK.
+     * V3 learner-facing grouping contract.
+     *
+     * IMPORTANT: this is not a silent best-effort hint. If an authored BLOCK count changes without
+     * updating the grouping contract, V3 must fail fast instead of falling back to hundreds of
+     * atomic vocabulary-like pages.
      */
     private val v3Groupings: Map<String, LessonGrouping> = mapOf(
         "V1-C01" to LessonGrouping(
@@ -124,9 +128,14 @@ object TextbookSectioner {
         val atomic = splitAtomic(chapterId, blocks)
         val grouping = v3Groupings[chapterId] ?: return atomic
 
-        // Safe fallback if an author later changes the BLOCK count without updating this contract.
-        if (grouping.sizes.sum() != atomic.size || grouping.titles.size != grouping.sizes.size) {
-            return atomic
+        require(grouping.sizes.isNotEmpty()) { "$chapterId: V3 grouping must not be empty" }
+        require(grouping.sizes.all { it > 0 }) { "$chapterId: V3 grouping sizes must all be positive" }
+        require(grouping.titles.size == grouping.sizes.size) {
+            "$chapterId: V3 grouping title count ${grouping.titles.size} != group count ${grouping.sizes.size}"
+        }
+        require(grouping.sizes.sum() == atomic.size) {
+            "$chapterId: authored BLOCK/atomic count changed: expected ${grouping.sizes.sum()}, actual ${atomic.size}. " +
+                "Update the V3 grouping contract; atomic fallback is forbidden."
         }
 
         val merged = mutableListOf<TextbookSection>()
@@ -140,14 +149,13 @@ object TextbookSectioner {
                 section.blocks.mapNotNull(::asInternalLessonBlock)
             }
             val weightedLength = mergedBlocks.sumOf(::weightOf)
+            val rawEstimatedMinutes = estimatedMinutesFor(weightedLength)
 
             merged += TextbookSection(
                 id = "$chapterId-S${(lessonIndex + 1).toString().padStart(2, '0')}",
                 index = lessonIndex,
                 title = grouping.titles[lessonIndex],
-                estimatedMinutes = ceil(weightedLength / WEIGHT_PER_MINUTE.toDouble())
-                    .toInt()
-                    .coerceIn(10, 60),
+                estimatedMinutes = rawEstimatedMinutes.coerceAtLeast(V3_MIN_LESSON_MINUTES),
                 blocks = mergedBlocks,
                 weightedLength = weightedLength
             )
@@ -206,9 +214,7 @@ object TextbookSectioner {
                 id = "$chapterId-A${(index + 1).toString().padStart(2, '0')}",
                 index = index,
                 title = title,
-                estimatedMinutes = ceil(weightedLength / WEIGHT_PER_MINUTE.toDouble())
-                    .toInt()
-                    .coerceIn(4, 7),
+                estimatedMinutes = estimatedMinutesFor(weightedLength).coerceIn(4, 7),
                 blocks = sectionBlocks.toList(),
                 weightedLength = weightedLength
             )
@@ -234,6 +240,9 @@ object TextbookSectioner {
     private fun stripLegacyLessonLabel(value: String): String = value
         .replace(Regex("^LESSON\\s+\\d+\\s*·\\s*", RegexOption.IGNORE_CASE), "")
         .trim()
+
+    internal fun estimatedMinutesFor(weightedLength: Int): Int =
+        ceil(weightedLength / WEIGHT_PER_MINUTE.toDouble()).toInt().coerceAtLeast(1)
 
     internal fun weightOf(block: TextbookBlock): Int = when (block) {
         is TextbookBlock.Heading -> block.text.length.coerceAtLeast(30)
