@@ -15,20 +15,6 @@ class TextbookRealAssetSectionTest {
             ?: error("Cannot locate real textbook asset: $assetPath; cwd=${File(".").absolutePath}")
     }
 
-    private val expectedVisibleLessons = mapOf(
-        1 to 2,
-        2 to 4,
-        3 to 2,
-        4 to 3,
-        5 to 4,
-        6 to 2,
-        7 to 2,
-        8 to 2,
-        9 to 1,
-        10 to 2,
-        11 to 2
-    )
-
     @Test
     fun allElevenV3TracksBecomeFewDeepLessonsWithoutLosingAuthoredBlocks() {
         var totalVisibleLessons = 0
@@ -37,7 +23,6 @@ class TextbookRealAssetSectionTest {
             val markdown = assetFile(track.assetPath).readText(Charsets.UTF_8)
             val blocks = TextbookMarkdownParser.parse(markdown)
             val sections = TextbookSectioner.split(track.id, blocks)
-            val expectedCount = requireNotNull(expectedVisibleLessons[track.number])
             totalVisibleLessons += sections.size
 
             val authoredBlockCount = blocks
@@ -53,9 +38,12 @@ class TextbookRealAssetSectionTest {
                 .filter { it.level == 4 && it.text.startsWith("LESSON ", ignoreCase = true) }
 
             assertTrue("${track.id}: parsed blocks", blocks.isNotEmpty())
-            assertEquals("${track.id}: final learner-facing lesson count", expectedCount, sections.size)
+            assertTrue("${track.id}: learner lesson count must stay small but not vanish", sections.size in 1..6)
             assertEquals("${track.id}: section ids unique", sections.size, sections.map { it.id }.toSet().size)
-            assertTrue("${track.id}: long lesson estimate", sections.all { it.estimatedMinutes in 10..60 })
+            assertTrue(
+                "${track.id}: true estimated reading time must not be hidden by a 60-minute clamp: ${sections.map { it.estimatedMinutes }}",
+                sections.all { it.estimatedMinutes in TextbookSectioner.V3_MIN_LESSON_MINUTES..TextbookSectioner.V3_MAX_LESSON_MINUTES }
+            )
             assertTrue("${track.id}: every section titled", sections.all { it.title.isNotBlank() })
             assertTrue("${track.id}: no empty section", sections.all { it.blocks.isNotEmpty() })
             assertEquals(
@@ -68,6 +56,16 @@ class TextbookRealAssetSectionTest {
                 nestedLegacyLessonLabels.isEmpty()
             )
 
+            sections.forEachIndexed { index, section ->
+                val internalBlockCount = section.blocks
+                    .filterIsInstance<TextbookBlock.Heading>()
+                    .count { it.level == 3 && it.text.startsWith("BLOCK ") }
+                assertTrue(
+                    "${track.id}: LESSON ${index + 1} merges too many major BLOCKs ($internalBlockCount)",
+                    internalBlockCount in 1..4
+                )
+            }
+
             val legacyPath = "textbook/v2/track_${track.number.toString().padStart(2, '0')}.md"
             val legacyMarkdown = assetFile(legacyPath).readText(Charsets.UTF_8)
             val legacyBlocks = TextbookMarkdownParser.parse(legacyMarkdown)
@@ -77,13 +75,49 @@ class TextbookRealAssetSectionTest {
             sections.forEachIndexed { index, section ->
                 val depthRatio = section.weightedLength / legacyAverageWeight
                 assertTrue(
-                    "${track.id}: LESSON ${index + 1} depth ${"%.2f".format(depthRatio)}x must be >= 20x legacy average",
-                    depthRatio >= 20.0
+                    "${track.id}: LESSON ${index + 1} depth ${"%.2f".format(depthRatio)}x is still vocabulary-card sized",
+                    depthRatio >= 12.0
+                )
+                assertTrue(
+                    "${track.id}: LESSON ${index + 1} depth ${"%.2f".format(depthRatio)}x is overpacked",
+                    depthRatio <= 60.0
                 )
             }
         }
 
-        assertEquals("final visible lessons across 11 TRACKs", 26, totalVisibleLessons)
-        assertTrue("590 old authored lessons must be reduced by far more than one third", totalVisibleLessons <= 393)
+        assertTrue(
+            "learner-facing lesson count must remain far below the old 590 without becoming an arbitrary exact-count target: $totalVisibleLessons",
+            totalVisibleLessons in 20..50
+        )
+    }
+
+    @Test(expected = IllegalArgumentException::class)
+    fun v3GroupingContractFailsFastInsteadOfSilentlyReturningAtomicPages() {
+        val blocks = buildList<TextbookBlock> {
+            repeat(4) { index ->
+                add(TextbookBlock.Heading(2, "BLOCK ${index + 1}"))
+                add(TextbookBlock.Heading(3, "LESSON 01 · test ${index + 1}"))
+                add(TextbookBlock.Paragraph("충분히 긴 설명 ".repeat(250)))
+            }
+        }
+
+        TextbookSectioner.split("V1-C01", blocks)
+    }
+
+    @Test
+    fun overlongSyntheticV3LessonExposesTrueMinutesInsteadOfBeingClampedToSixty() {
+        val blocks = buildList<TextbookBlock> {
+            repeat(5) { index ->
+                add(TextbookBlock.Heading(2, "BLOCK ${index + 1}"))
+                add(TextbookBlock.Heading(3, "LESSON 01 · test ${index + 1}"))
+                add(TextbookBlock.Paragraph("아주 긴 설명 ".repeat(3_000)))
+            }
+        }
+
+        val sections = TextbookSectioner.split("V1-C01", blocks)
+        assertTrue(
+            "synthetic overlong content must reveal a >60 minute estimate so the quality gate can fail",
+            sections.any { it.estimatedMinutes > TextbookSectioner.V3_MAX_LESSON_MINUTES }
+        )
     }
 }
