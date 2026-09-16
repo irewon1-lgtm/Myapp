@@ -33,11 +33,16 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.futuretech.poweruser.textbook.TextbookProgressStore
 import com.futuretech.poweruser.textbook.V1TextbookCatalog
+import com.futuretech.poweruser.textbook.V5BookAssetRepository
 import kotlinx.coroutines.launch
 
 /**
- * Focused e-book shell. The reader consumes the whole screen and the TRACK table of contents is
- * opened only from the compact top-bar button, so it never competes with page-turn tap zones.
+ * Focused e-book shell.
+ *
+ * A TRACK with a validated V5 manifest is routed to the part-lazy, measured V5 reader. Tracks which
+ * have not yet been rewritten keep using the verified V4/V3 compatibility reader, so unfinished
+ * books never crash the shelf and V5 can be authored one TRACK at a time without loading an entire
+ * multi-megabyte book into memory.
  */
 @Composable
 fun AdaptiveTextbookScreen(
@@ -48,9 +53,22 @@ fun AdaptiveTextbookScreen(
 ) {
     val context = LocalContext.current
     val progressStore = remember { TextbookProgressStore(context) }
+    val v5Repository = remember { V5BookAssetRepository(context) }
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
     val scope = rememberCoroutineScope()
     var selectedChapterId by rememberSaveable(initialChapterId) { mutableStateOf(initialChapterId) }
+
+    val selectedChapter = V1TextbookCatalog.chapterById(selectedChapterId)
+        ?: V1TextbookCatalog.chapters.first()
+    val hasV5Book = remember(selectedChapter.id) {
+        runCatching { v5Repository.loadManifest(selectedChapter.number) }.isSuccess
+    }
+
+    fun selectTrack(id: String) {
+        val target = V1TextbookCatalog.chapterById(id) ?: return
+        progressStore.saveSelectedChapter(target.id)
+        selectedChapterId = target.id
+    }
 
     ModalNavigationDrawer(
         drawerState = drawerState,
@@ -96,8 +114,7 @@ fun AdaptiveTextbookScreen(
                             },
                             selected = track.id == selectedChapterId,
                             onClick = {
-                                progressStore.saveSelectedChapter(track.id)
-                                selectedChapterId = track.id
+                                selectTrack(track.id)
                                 scope.launch { drawerState.close() }
                             },
                             modifier = Modifier.padding(horizontal = 10.dp)
@@ -117,15 +134,30 @@ fun AdaptiveTextbookScreen(
                     .fillMaxWidth()
                     .testTag("reader_single_column")
             ) {
-                key(selectedChapterId) {
-                    V4PagedBookScreen(
-                        practiceCompletedIds = practiceCompletedIds,
-                        onNavigateBack = onNavigateBack,
-                        onStartPractice = onStartPractice,
-                        initialChapterId = selectedChapterId,
-                        onOpenToc = { scope.launch { drawerState.open() } },
-                        onChapterSelected = { selectedChapterId = it }
-                    )
+                key(selectedChapterId, hasV5Book) {
+                    if (hasV5Book) {
+                        V5TrackBookScreen(
+                            trackNumber = selectedChapter.number,
+                            onNavigateBack = onNavigateBack,
+                            onOpenToc = { scope.launch { drawerState.open() } },
+                            onStartPractice = onStartPractice,
+                            onPreviousTrack = V1TextbookCatalog.chapters
+                                .getOrNull(selectedChapter.number - 2)
+                                ?.let { previous -> { selectTrack(previous.id) } },
+                            onNextTrack = V1TextbookCatalog.chapters
+                                .getOrNull(selectedChapter.number)
+                                ?.let { next -> { selectTrack(next.id) } }
+                        )
+                    } else {
+                        V4PagedBookScreen(
+                            practiceCompletedIds = practiceCompletedIds,
+                            onNavigateBack = onNavigateBack,
+                            onStartPractice = onStartPractice,
+                            initialChapterId = selectedChapterId,
+                            onOpenToc = { scope.launch { drawerState.open() } },
+                            onChapterSelected = { selectedChapterId = it }
+                        )
+                    }
                 }
             }
         }
