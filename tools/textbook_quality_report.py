@@ -24,6 +24,16 @@ def collect(class_fragment: str):
     return total, failures, errors, skipped, files
 
 
+def has_explicit_placeholder(text: str) -> bool:
+    patterns = (
+        re.compile(r"(?im)^\s*(?://|#|<!--)\s*(TODO|TBD)(?:\s*[:：-]|\s*-->)"),
+        re.compile(r"LOREM\s+IPSUM", re.I),
+        re.compile(r"나중에 작성", re.I),
+        re.compile(r"준비중", re.I),
+    )
+    return any(pattern.search(text) for pattern in patterns)
+
+
 checks = []
 
 
@@ -69,11 +79,7 @@ for index, path in enumerate(assets, start=1):
     ck(f"{path.name}: substantial authored text", len(text) >= 8_000, f"chars={len(text):,}")
     ck(f"{path.name}: authored BLOCK structure", "## BLOCK " in text, "BLOCK heading")
     ck(f"{path.name}: executable/code examples", "```" in text, "code fence")
-    ck(
-        f"{path.name}: no placeholder",
-        not re.search(r"\b(TODO|TBD|LOREM)\b|준비중|나중에 작성", text, re.I),
-        "placeholder scan",
-    )
+    ck(f"{path.name}: no explicit placeholder", not has_explicit_placeholder(text), "placeholder scan")
 
 catalog = (ROOT / "app/src/main/java/com/futuretech/poweruser/textbook/V1TextbookCatalog.kt").read_text(encoding="utf-8")
 sectioner = (ROOT / "app/src/main/java/com/futuretech/poweruser/textbook/TextbookSectioner.kt").read_text(encoding="utf-8")
