@@ -57,22 +57,17 @@ private val V5Rule = Color(0xFF292D34)
 private val V5Accent = Color(0xFFA8C4E8)
 private val V5Code = Color(0xFF08090B)
 
-private val V5_TOP_HEIGHT = 32.dp
-private val V5_PART_HEIGHT = 22.dp
-private val V5_OUTER_X = 1.dp
-private val V5_OUTER_Y = 1.dp
-private val V5_PAGE_X = 14.dp
-private val V5_PAGE_Y = 6.dp
-private val V5_FOOTER_HEIGHT = 20.dp
+private val V5_TOP_HEIGHT = 26.dp
+private val V5_PART_HEIGHT = 18.dp
+private val V5_OUTER_X = 0.dp
+private val V5_OUTER_Y = 0.dp
+private val V5_PAGE_X = 12.dp
+private val V5_PAGE_Y = 3.dp
+private val V5_FOOTER_HEIGHT = 14.dp
 
 /**
- * V5 book-scale reader.
- *
- * Only the currently visible PART is loaded from assets. Multi-megabyte TRACKs therefore do not
- * become one giant String or one giant parsed block list. Normal pages have no artificial cover,
- * recall or end-card page: authored prose begins immediately and consumes the viewport like an
- * e-book. Page breaks are calculated with the same Compose TextMeasurer used by the V4 measured
- * engine, not characters-per-line guesses.
+ * Book-scale reader. Only the current PART is loaded. Normal pages begin immediately with authored
+ * content and use measured pagination; there are no artificial cover/recall/end-card pages.
  */
 @Composable
 fun V5TrackBookScreen(
@@ -90,25 +85,19 @@ fun V5TrackBookScreen(
     val legacyChapter = remember(trackNumber) {
         requireNotNull(V1TextbookCatalog.chapters.firstOrNull { it.number == trackNumber })
     }
-
     val restored = store.selectedSectionIndex(legacyChapter.id)
         .coerceIn(0, manifest.parts.lastIndex.coerceAtLeast(0))
     var partIndex by rememberSaveable(trackNumber) { mutableIntStateOf(restored) }
     val part = manifest.parts[partIndex]
 
     Column(
-        modifier = Modifier
+        Modifier
             .fillMaxSize()
             .background(V5Shell)
             .testTag("v5_book_root")
     ) {
-        V5TopBar(
-            manifest = manifest,
-            onNavigateBack = onNavigateBack,
-            onOpenToc = onOpenToc
-        )
+        V5TopBar(manifest, onNavigateBack, onOpenToc)
         V5PartStrip(part, partIndex, manifest.parts.size)
-
         V5MeasuredPartReader(
             modifier = Modifier.weight(1f),
             repo = repo,
@@ -155,23 +144,21 @@ private fun V5TopBar(
             .fillMaxWidth()
             .height(V5_TOP_HEIGHT)
             .background(V5Shell)
-            .padding(horizontal = 5.dp),
+            .padding(horizontal = 3.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
         Text(
             "‹ 서재",
-            modifier = Modifier
-                .clickable(onClick = onNavigateBack)
-                .padding(horizontal = 6.dp, vertical = 6.dp),
+            modifier = Modifier.clickable(onClick = onNavigateBack).padding(horizontal = 5.dp, vertical = 3.dp),
             color = V5Ink,
-            fontSize = 11.sp,
+            fontSize = 10.sp,
             fontWeight = FontWeight.SemiBold
         )
         Text(
-            text = "TRACK ${manifest.trackNumber.toString().padStart(2, '0')}  ·  ${manifest.title}",
+            "TRACK ${manifest.trackNumber.toString().padStart(2, '0')} · ${manifest.title}",
             modifier = Modifier.weight(1f),
             color = V5Ink,
-            fontSize = 10.5.sp,
+            fontSize = 10.sp,
             fontWeight = FontWeight.Bold,
             maxLines = 1
         )
@@ -179,10 +166,10 @@ private fun V5TopBar(
             "목차",
             modifier = Modifier
                 .clickable(enabled = onOpenToc != null) { onOpenToc?.invoke() }
-                .padding(horizontal = 7.dp, vertical = 6.dp)
+                .padding(horizontal = 5.dp, vertical = 3.dp)
                 .testTag("v5_reader_toc"),
             color = V5Accent,
-            fontSize = 10.5.sp,
+            fontSize = 10.sp,
             fontWeight = FontWeight.Bold
         )
     }
@@ -195,24 +182,13 @@ private fun V5PartStrip(part: V5BookPartRef, partIndex: Int, partCount: Int) {
             .fillMaxWidth()
             .height(V5_PART_HEIGHT)
             .background(V5Shell)
-            .padding(horizontal = 11.dp)
+            .padding(horizontal = 9.dp)
             .testTag("v5_part_strip"),
         verticalAlignment = Alignment.CenterVertically
     ) {
-        Text(
-            "${partIndex + 1}/$partCount",
-            color = V5Accent,
-            fontSize = 8.5.sp,
-            fontWeight = FontWeight.Bold
-        )
-        Spacer(Modifier.width(7.dp))
-        Text(
-            part.title,
-            modifier = Modifier.weight(1f),
-            color = V5Muted,
-            fontSize = 9.5.sp,
-            maxLines = 1
-        )
+        Text("${partIndex + 1}/$partCount", color = V5Accent, fontSize = 8.sp, fontWeight = FontWeight.Bold)
+        Spacer(Modifier.width(6.dp))
+        Text(part.title, modifier = Modifier.weight(1f), color = V5Muted, fontSize = 9.sp, maxLines = 1)
     }
     HorizontalDivider(color = V5Rule)
 }
@@ -231,8 +207,6 @@ private fun V5MeasuredPartReader(
     onPractice: () -> Unit
 ) {
     val blocks = remember(part.id) {
-        // Source map is loaded together with prose so missing/unknown evidence fails fast before a
-        // learner can read an untraceable PART.
         repo.loadSourceMap(part)
         repo.loadPart(part)
     }
@@ -240,7 +214,7 @@ private fun V5MeasuredPartReader(
     BoxWithConstraints(
         modifier = modifier
             .fillMaxSize()
-            .background(V5Shell)
+            .background(V5Paper)
             .testTag("v5_part_reader")
     ) {
         val density = LocalDensity.current
@@ -249,7 +223,6 @@ private fun V5MeasuredPartReader(
         val pageHeight = maxHeight - V5_OUTER_Y * 2 - V5_PAGE_Y * 2 - V5_FOOTER_HEIGHT
         val widthPx = with(density) { pageWidth.roundToPx().coerceAtLeast(1) }
         val heightPx = with(density) { pageHeight.roundToPx().coerceAtLeast(1) }
-
         val measured = remember(
             part.id,
             blocks,
@@ -277,12 +250,11 @@ private fun V5MeasuredPartReader(
             mutableIntStateOf(safeStart)
         }
         val page = measured[pageIndex]
-        val swipeThreshold = with(density) { 46.dp.toPx() }
+        val swipeThreshold = with(density) { 44.dp.toPx() }
 
         fun previousPage() {
             if (pageIndex > 0) pageIndex -= 1 else onPrevious()
         }
-
         fun nextPage() {
             if (pageIndex < measured.lastIndex) pageIndex += 1 else onNext()
         }
@@ -312,52 +284,33 @@ private fun V5MeasuredPartReader(
             Surface(
                 modifier = Modifier.fillMaxSize(),
                 color = V5Paper,
-                shape = RoundedCornerShape(4.dp),
-                border = BorderStroke(1.dp, V5Rule)
+                shape = RoundedCornerShape(0.dp),
+                border = BorderStroke(0.dp, V5Paper)
             ) {
                 Column(
-                    modifier = Modifier
+                    Modifier
                         .fillMaxSize()
                         .padding(horizontal = V5_PAGE_X, vertical = V5_PAGE_Y)
                 ) {
                     SelectionContainer {
                         Column(
-                            modifier = Modifier
-                                .weight(1f)
-                                .fillMaxWidth(),
+                            modifier = Modifier.weight(1f).fillMaxWidth(),
                             verticalArrangement = Arrangement.spacedBy(8.dp)
                         ) {
-                            page.content.blocks.forEach { block ->
-                                V5BookBlock(block, Modifier.fillMaxWidth())
-                            }
+                            page.content.blocks.forEach { block -> V5BookBlock(block, Modifier.fillMaxWidth()) }
                         }
                     }
-                    V5Footer(
-                        partIndex = partIndex,
-                        partCount = partCount,
-                        pageIndex = pageIndex,
-                        pageCount = measured.size,
-                        utilization = page.utilization,
-                        onPractice = onPractice
-                    )
+                    V5Footer(partIndex, partCount, pageIndex, measured.size, page.utilization, onPractice)
                 }
             }
 
             Box(
-                Modifier
-                    .align(Alignment.CenterStart)
-                    .fillMaxHeight()
-                    .width(44.dp)
-                    .clickable { previousPage() }
-                    .testTag("v5_left_tap_zone")
+                Modifier.align(Alignment.CenterStart).fillMaxHeight().width(44.dp)
+                    .clickable { previousPage() }.testTag("v5_left_tap_zone")
             )
             Box(
-                Modifier
-                    .align(Alignment.CenterEnd)
-                    .fillMaxHeight()
-                    .width(44.dp)
-                    .clickable { nextPage() }
-                    .testTag("v5_right_tap_zone")
+                Modifier.align(Alignment.CenterEnd).fillMaxHeight().width(44.dp)
+                    .clickable { nextPage() }.testTag("v5_right_tap_zone")
             )
         }
     }
@@ -374,35 +327,27 @@ private fun V5Footer(
 ) {
     HorizontalDivider(color = V5Rule)
     Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .height(V5_FOOTER_HEIGHT),
+        modifier = Modifier.fillMaxWidth().height(V5_FOOTER_HEIGHT),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
-        Text(
-            "PART ${partIndex + 1}/$partCount",
-            color = V5Faint,
-            fontSize = 8.sp
-        )
+        Text("P${partIndex + 1}/$partCount", color = V5Faint, fontSize = 7.sp)
         Text(
             "실습",
-            modifier = Modifier
-                .clickable(onClick = onPractice)
-                .padding(horizontal = 7.dp, vertical = 2.dp),
+            modifier = Modifier.clickable(onClick = onPractice).padding(horizontal = 6.dp),
             color = V5Accent,
-            fontSize = 8.5.sp,
+            fontSize = 7.5.sp,
             fontWeight = FontWeight.Bold
         )
         Text(
-            "${pageIndex + 1} / $pageCount",
+            "${pageIndex + 1}/$pageCount",
             modifier = Modifier.testTag("v5_page_indicator"),
             color = V5Muted,
-            fontSize = 8.5.sp,
+            fontSize = 7.5.sp,
             fontWeight = FontWeight.SemiBold
         )
         Text(
-            text = "${(utilization * 100).toInt().coerceAtMost(999)}%",
+            "${(utilization * 100).toInt().coerceAtMost(999)}%",
             modifier = Modifier.testTag("v5_page_utilization"),
             color = V5Faint.copy(alpha = 0f),
             fontSize = 1.sp
@@ -415,18 +360,18 @@ private fun V5BookBlock(block: TextbookBlock, modifier: Modifier) {
     when (block) {
         is TextbookBlock.Heading -> {
             val size = when (block.level) {
-                1 -> 24.sp
-                2 -> 21.sp
+                1 -> 23.sp
+                2 -> 20.sp
                 3 -> 18.sp
                 4 -> 16.sp
                 else -> 15.sp
             }
             Text(
                 block.text,
-                modifier = modifier.padding(top = if (block.level <= 3) 4.dp else 1.dp),
+                modifier = modifier.padding(top = if (block.level <= 3) 3.dp else 1.dp),
                 color = V5Ink,
                 fontSize = size,
-                lineHeight = (size.value + 7).sp,
+                lineHeight = (size.value + 6).sp,
                 fontWeight = if (block.level <= 3) FontWeight.Bold else FontWeight.SemiBold
             )
         }
@@ -438,32 +383,26 @@ private fun V5BookBlock(block: TextbookBlock, modifier: Modifier) {
             lineHeight = 27.sp
         )
         is TextbookBlock.BulletList -> Column(
-            modifier = modifier.padding(vertical = 2.dp),
-            verticalArrangement = Arrangement.spacedBy(5.dp)
+            modifier = modifier.padding(vertical = 1.dp),
+            verticalArrangement = Arrangement.spacedBy(4.dp)
         ) {
             block.items.forEachIndexed { index, item ->
                 Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.Top) {
                     Text(
                         if (block.ordered) "${index + 1}." else "•",
-                        modifier = Modifier.width(28.dp),
+                        modifier = Modifier.width(26.dp),
                         color = V5Accent,
-                        fontSize = 14.sp,
+                        fontSize = 13.5.sp,
                         fontWeight = FontWeight.Bold
                     )
-                    Text(
-                        item,
-                        modifier = Modifier.weight(1f),
-                        color = V5Ink,
-                        fontSize = 15.sp,
-                        lineHeight = 23.sp
-                    )
+                    Text(item, modifier = Modifier.weight(1f), color = V5Ink, fontSize = 15.sp, lineHeight = 23.sp)
                 }
             }
         }
         is TextbookBlock.Code -> Surface(
             modifier = modifier,
             color = V5Code,
-            shape = RoundedCornerShape(5.dp),
+            shape = RoundedCornerShape(4.dp),
             border = BorderStroke(1.dp, V5Rule)
         ) {
             Column(Modifier.fillMaxWidth()) {
@@ -471,9 +410,9 @@ private fun V5BookBlock(block: TextbookBlock, modifier: Modifier) {
                     Text(
                         block.language.uppercase(),
                         color = V5Accent,
-                        fontSize = 9.sp,
+                        fontSize = 8.5.sp,
                         fontWeight = FontWeight.Bold,
-                        modifier = Modifier.padding(horizontal = 12.dp, vertical = 7.dp)
+                        modifier = Modifier.padding(horizontal = 10.dp, vertical = 5.dp)
                     )
                     HorizontalDivider(color = V5Rule)
                 }
@@ -484,26 +423,26 @@ private fun V5BookBlock(block: TextbookBlock, modifier: Modifier) {
                     fontSize = 13.sp,
                     lineHeight = 20.sp,
                     softWrap = true,
-                    modifier = Modifier.fillMaxWidth().padding(12.dp)
+                    modifier = Modifier.fillMaxWidth().padding(10.dp)
                 )
             }
         }
         is TextbookBlock.Table -> Surface(
             modifier = modifier,
             color = V5Raised,
-            shape = RoundedCornerShape(5.dp),
+            shape = RoundedCornerShape(4.dp),
             border = BorderStroke(1.dp, V5Rule)
         ) {
-            Column(Modifier.fillMaxWidth().padding(12.dp)) {
+            Column(Modifier.fillMaxWidth().padding(10.dp)) {
                 block.rows.forEachIndexed { rowIndex, row ->
                     if (rowIndex > 0) HorizontalDivider(color = V5Rule)
                     Column(
-                        Modifier.fillMaxWidth().padding(vertical = 6.dp),
-                        verticalArrangement = Arrangement.spacedBy(2.dp)
+                        Modifier.fillMaxWidth().padding(vertical = 4.dp),
+                        verticalArrangement = Arrangement.spacedBy(1.dp)
                     ) {
                         block.headers.forEachIndexed { columnIndex, header ->
                             row.getOrNull(columnIndex)?.takeIf(String::isNotBlank)?.let { value ->
-                                Text(header, color = V5Accent, fontSize = 9.sp, fontWeight = FontWeight.Bold)
+                                Text(header, color = V5Accent, fontSize = 8.5.sp, fontWeight = FontWeight.Bold)
                                 Text(value, color = V5Ink, fontSize = 13.sp, lineHeight = 19.sp)
                             }
                         }
@@ -511,6 +450,6 @@ private fun V5BookBlock(block: TextbookBlock, modifier: Modifier) {
                 }
             }
         }
-        TextbookBlock.Divider -> HorizontalDivider(modifier = modifier.padding(vertical = 3.dp), color = V5Rule)
+        TextbookBlock.Divider -> HorizontalDivider(modifier = modifier.padding(vertical = 2.dp), color = V5Rule)
     }
 }
