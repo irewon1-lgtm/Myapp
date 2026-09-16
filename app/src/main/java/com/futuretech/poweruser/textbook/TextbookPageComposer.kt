@@ -1,5 +1,7 @@
 package com.futuretech.poweruser.textbook
 
+import java.util.ArrayDeque
+
 data class TextbookPageLayout(
     val charsPerLine: Int,
     val maxLines: Int
@@ -17,13 +19,22 @@ data class TextbookContentPage(
 
 /**
  * Deterministically converts authored textbook blocks into reader pages.
- * Pagination may group/split containers, but it must never rewrite code or create fake list items.
+ *
+ * The old paginator split a large block against a whole-page budget first and then moved that
+ * already-split block to the next page whenever it did not fit. That left large empty bottoms.
+ * This version always looks at the *remaining* capacity of the current page and slices paragraphs,
+ * lists, code and tables to use that space before turning the page. Source code lines and original
+ * list items are never rewritten.
  */
 object TextbookPageComposer {
+    private const val MIN_USEFUL_REMAINDER = 4
+
     fun paginate(blocks: List<TextbookBlock>, layout: TextbookPageLayout): List<TextbookContentPage> {
         if (blocks.isEmpty()) return listOf(TextbookContentPage(emptyList(), 0))
 
-        val pieces = blocks.flatMap { splitToFit(it, layout) }
+        val queue = ArrayDeque<TextbookBlock>()
+        blocks.forEach(queue::addLast)
+
         val pages = mutableListOf<TextbookContentPage>()
         var current = mutableListOf<TextbookBlock>()
         var usedLines = 0
@@ -35,12 +46,55 @@ object TextbookPageComposer {
             usedLines = 0
         }
 
-        pieces.forEach { piece ->
-            val lines = estimateLines(piece, layout.charsPerLine).coerceAtLeast(1)
-            if (current.isNotEmpty() && usedLines + lines > layout.maxLines) flush()
-            current += piece
-            usedLines += lines
-            if (usedLines >= layout.maxLines) flush()
+        fun add(block: TextbookBlock) {
+            current += block
+            usedLines += estimateLines(block, layout.charsPerLine).coerceAtLeast(1)
+        }
+
+        while (queue.isNotEmpty()) {
+            val block = queue.removeFirst()
+            var remaining = layout.maxLines - usedLines
+            val blockLines = estimateLines(block, layout.charsPerLine).coerceAtLeast(1)
+
+            // Avoid leaving a heading stranded at the very bottom with no room for explanation.
+            if (block is TextbookBlock.Heading && current.isNotEmpty() && remaining < blockLines + 2) {
+                flush()
+                remaining = layout.maxLines
+            }
+
+            if (blockLines <= remaining) {
+                add(block)
+                if (usedLines >= layout.maxLines) flush()
+                continue
+            }
+
+            // A small unusable tail is better turned into the next page than filled with one orphan
+            // source line or a single list marker.
+            if (current.isNotEmpty() && remaining < MIN_USEFUL_REMAINDER) {
+                flush()
+                queue.addFirst(block)
+                continue
+            }
+
+            val slice = sliceForCapacity(block, layout.charsPerLine, remaining)
+            if (slice != null) {
+                add(slice.first)
+                slice.second?.let(queue::addFirst)
+                // If a block had to be sliced, the current page is intentionally finished here.
+                // This makes the next block start cleanly while still using nearly all remaining room.
+                flush()
+                continue
+            }
+
+            if (current.isNotEmpty()) {
+                flush()
+                queue.addFirst(block)
+            } else {
+                // Unsplittable authored units (for example one extremely long bullet or source line)
+                // stay intact. Exposing a rare over-budget page is safer than rewriting author text.
+                add(block)
+                flush()
+            }
         }
         flush()
 
@@ -50,170 +104,147 @@ object TextbookPageComposer {
     fun estimateLines(block: TextbookBlock, charsPerLine: Int): Int = when (block) {
         is TextbookBlock.Heading -> {
             val width = when (block.level) {
-                1 -> (charsPerLine * 0.72f).toInt()
-                2 -> (charsPerLine * 0.78f).toInt()
-                else -> (charsPerLine * 0.84f).toInt()
+                1 -> (charsPerLine * 0.74f).toInt()
+                2 -> (charsPerLine * 0.80f).toInt()
+                else -> (charsPerLine * 0.88f).toInt()
             }.coerceAtLeast(8)
-            wrappedLines(block.text, width) + if (block.level <= 2) 2 else 1
+            wrappedLines(block.text, width) + 1
         }
         is TextbookBlock.Paragraph -> wrappedLines(block.text, charsPerLine) + 1
-        is TextbookBlock.BulletList -> block.items.sumOf { item ->
-            wrappedLines(item, (charsPerLine - 3).coerceAtLeast(10)) + 1
-        } + 1
+        is TextbookBlock.BulletList -> {
+            val contentLines = block.items.sumOf { item ->
+                wrappedLines(item, (charsPerLine - 4).coerceAtLeast(10))
+            }
+            contentLines + ((block.items.size + 2) / 3) + 1
+        }
         is TextbookBlock.Code -> block.text.lines().sumOf { line ->
-            wrappedLines(line.ifEmpty { " " }, (charsPerLine * 0.72f).toInt().coerceAtLeast(10))
-        } + 2
+            wrappedLines(line.ifEmpty { " " }, (charsPerLine * 0.76f).toInt().coerceAtLeast(10))
+        } + 3
         is TextbookBlock.Table -> {
-            val cellWidth = (charsPerLine - 4).coerceAtLeast(10)
-            block.rows.sumOf { row ->
-                row.sumOf { value -> wrappedLines(value, cellWidth) } + block.headers.size + 1
-            } + 1
+            val columns = block.headers.size.coerceAtLeast(1)
+            val cellWidth = (charsPerLine / columns).coerceAtLeast(8)
+            val rows = block.rows.sumOf { row -> row.maxOfOrNull { wrappedLines(it, cellWidth) } ?: 1 }
+            rows + 3
         }
         TextbookBlock.Divider -> 1
     }
 
-    private fun splitToFit(block: TextbookBlock, layout: TextbookPageLayout): List<TextbookBlock> {
-        val maxBlockLines = (layout.maxLines - 2).coerceAtLeast(4)
-        if (estimateLines(block, layout.charsPerLine) <= maxBlockLines) return listOf(block)
+    private fun sliceForCapacity(
+        block: TextbookBlock,
+        charsPerLine: Int,
+        availableLines: Int
+    ): Pair<TextbookBlock, TextbookBlock?>? {
+        if (availableLines < MIN_USEFUL_REMAINDER) return null
         return when (block) {
-            is TextbookBlock.Paragraph -> splitParagraph(block, layout, maxBlockLines)
-            is TextbookBlock.BulletList -> splitBulletList(block, layout, maxBlockLines)
-            is TextbookBlock.Code -> splitCode(block, layout, maxBlockLines)
-            is TextbookBlock.Table -> splitTable(block, layout, maxBlockLines)
-            is TextbookBlock.Heading, TextbookBlock.Divider -> listOf(block)
+            is TextbookBlock.Paragraph -> sliceParagraph(block, charsPerLine, availableLines)
+            is TextbookBlock.BulletList -> sliceBulletList(block, charsPerLine, availableLines)
+            is TextbookBlock.Code -> sliceCode(block, charsPerLine, availableLines)
+            is TextbookBlock.Table -> sliceTable(block, charsPerLine, availableLines)
+            is TextbookBlock.Heading, TextbookBlock.Divider -> null
         }
     }
 
-    private fun splitParagraph(
+    private fun sliceParagraph(
         block: TextbookBlock.Paragraph,
-        layout: TextbookPageLayout,
-        maxBlockLines: Int
-    ): List<TextbookBlock> {
-        val maxChars = (layout.charsPerLine * (maxBlockLines - 1)).coerceAtLeast(layout.charsPerLine)
-        return splitText(block.text, maxChars).map { TextbookBlock.Paragraph(it) }
+        charsPerLine: Int,
+        availableLines: Int
+    ): Pair<TextbookBlock, TextbookBlock?>? {
+        val textLines = (availableLines - 1).coerceAtLeast(1)
+        val maxChars = (charsPerLine * textLines).coerceAtLeast(charsPerLine)
+        val (head, tail) = splitTextOnce(block.text, maxChars) ?: return null
+        val first = TextbookBlock.Paragraph(head)
+        val rest = tail?.takeIf { it.isNotBlank() }?.let(TextbookBlock::Paragraph)
+        return first to rest
     }
 
-    private fun splitBulletList(
+    private fun sliceBulletList(
         block: TextbookBlock.BulletList,
-        layout: TextbookPageLayout,
-        maxBlockLines: Int
-    ): List<TextbookBlock> {
-        val out = mutableListOf<TextbookBlock>()
-        var current = mutableListOf<String>()
-        var used = 1
-        val itemWidth = (layout.charsPerLine - 3).coerceAtLeast(10)
-
-        fun flush() {
-            if (current.isNotEmpty()) {
-                out += TextbookBlock.BulletList(current.toList(), block.ordered)
-                current = mutableListOf()
-                used = 1
-            }
-        }
+        charsPerLine: Int,
+        availableLines: Int
+    ): Pair<TextbookBlock, TextbookBlock?>? {
+        val itemWidth = (charsPerLine - 4).coerceAtLeast(10)
+        val head = mutableListOf<String>()
+        var estimated = 1
 
         block.items.forEach { item ->
-            val lines = wrappedLines(item, itemWidth) + 1
-            if (current.isNotEmpty() && used + lines > maxBlockLines) flush()
-            current += item
-            used += lines
-            if (used >= maxBlockLines) flush()
+            val nextItems = head.size + 1
+            val nextEstimate = estimated + wrappedLines(item, itemWidth) + if (nextItems % 3 == 0) 1 else 0
+            if (head.isNotEmpty() && nextEstimate > availableLines) return@forEach
+            if (head.isEmpty() && nextEstimate > availableLines) return null
+            if (nextEstimate <= availableLines) {
+                head += item
+                estimated = nextEstimate
+            }
         }
-        flush()
-        return out.ifEmpty { listOf(block) }
+        if (head.isEmpty() || head.size == block.items.size) return null
+        return TextbookBlock.BulletList(head, block.ordered) to
+            TextbookBlock.BulletList(block.items.drop(head.size), block.ordered)
     }
 
-    private fun splitCode(
+    private fun sliceCode(
         block: TextbookBlock.Code,
-        layout: TextbookPageLayout,
-        maxBlockLines: Int
-    ): List<TextbookBlock> {
-        val codeWidth = (layout.charsPerLine * 0.72f).toInt().coerceAtLeast(10)
-        val maxContentLines = (maxBlockLines - 2).coerceAtLeast(2)
-        val out = mutableListOf<TextbookBlock>()
-        var current = mutableListOf<String>()
+        charsPerLine: Int,
+        availableLines: Int
+    ): Pair<TextbookBlock, TextbookBlock?>? {
+        val source = block.text.lines()
+        if (source.size <= 1) return null
+        val width = (charsPerLine * 0.76f).toInt().coerceAtLeast(10)
+        val maxContentLines = (availableLines - 3).coerceAtLeast(1)
+        val head = mutableListOf<String>()
         var used = 0
 
-        fun flush() {
-            if (current.isNotEmpty()) {
-                out += TextbookBlock.Code(block.language, current.joinToString("\n"))
-                current = mutableListOf()
-                used = 0
+        source.forEach { line ->
+            val need = wrappedLines(line.ifEmpty { " " }, width)
+            if (head.isNotEmpty() && used + need > maxContentLines) return@forEach
+            if (head.isEmpty() && need > maxContentLines) return null
+            if (used + need <= maxContentLines) {
+                head += line
+                used += need
             }
         }
-
-        block.text.lines().forEach { sourceLine ->
-            val lines = wrappedLines(sourceLine.ifEmpty { " " }, codeWidth)
-            if (current.isNotEmpty() && used + lines > maxContentLines) flush()
-            current += sourceLine
-            used += lines
-            if (used >= maxContentLines) flush()
-        }
-        flush()
-        return out.ifEmpty { listOf(block) }
+        if (head.isEmpty() || head.size == source.size) return null
+        return TextbookBlock.Code(block.language, head.joinToString("\n")) to
+            TextbookBlock.Code(block.language, source.drop(head.size).joinToString("\n"))
     }
 
-    private fun splitTable(
+    private fun sliceTable(
         block: TextbookBlock.Table,
-        layout: TextbookPageLayout,
-        maxBlockLines: Int
-    ): List<TextbookBlock> {
-        if (block.rows.isEmpty()) return listOf(block)
-        val out = mutableListOf<TextbookBlock>()
-        var rows = mutableListOf<List<String>>()
-        var used = 1
-        val cellWidth = (layout.charsPerLine - 4).coerceAtLeast(10)
-
-        fun rowLines(row: List<String>): Int =
-            row.sumOf { value -> wrappedLines(value, cellWidth) } + block.headers.size + 1
-
-        fun flush() {
-            if (rows.isNotEmpty()) {
-                out += TextbookBlock.Table(block.headers, rows.toList())
-                rows = mutableListOf()
-                used = 1
-            }
-        }
+        charsPerLine: Int,
+        availableLines: Int
+    ): Pair<TextbookBlock, TextbookBlock?>? {
+        if (block.rows.size <= 1) return null
+        val columns = block.headers.size.coerceAtLeast(1)
+        val width = (charsPerLine / columns).coerceAtLeast(8)
+        val maxRowLines = (availableLines - 3).coerceAtLeast(1)
+        val rows = mutableListOf<List<String>>()
+        var used = 0
 
         block.rows.forEach { row ->
-            val lines = rowLines(row)
-            if (rows.isNotEmpty() && used + lines > maxBlockLines) flush()
-            rows += row
-            used += lines
-            if (used >= maxBlockLines) flush()
+            val need = row.maxOfOrNull { wrappedLines(it, width) } ?: 1
+            if (rows.isNotEmpty() && used + need > maxRowLines) return@forEach
+            if (rows.isEmpty() && need > maxRowLines) return null
+            if (used + need <= maxRowLines) {
+                rows += row
+                used += need
+            }
         }
-        flush()
-        return out.ifEmpty { listOf(block) }
+        if (rows.isEmpty() || rows.size == block.rows.size) return null
+        return TextbookBlock.Table(block.headers, rows) to
+            TextbookBlock.Table(block.headers, block.rows.drop(rows.size))
     }
 
-    private fun splitText(text: String, maxChars: Int): List<String> {
-        val normalized = text.trim()
-        if (normalized.length <= maxChars) return listOf(normalized)
-        val words = normalized.split(Regex("\\s+")).filter { it.isNotEmpty() }
-        val out = mutableListOf<String>()
-        val current = StringBuilder()
+    private fun splitTextOnce(text: String, maxChars: Int): Pair<String, String?>? {
+        val normalized = text.trim().replace(Regex("\\s+"), " ")
+        if (normalized.length <= maxChars) return null
 
-        fun flush() {
-            if (current.isNotEmpty()) {
-                out += current.toString().trim()
-                current.clear()
-            }
-        }
+        var split = normalized.lastIndexOf(' ', startIndex = maxChars.coerceAtMost(normalized.lastIndex))
+        if (split <= 0) split = normalized.indexOf(' ', startIndex = maxChars.coerceAtMost(normalized.lastIndex))
+        if (split <= 0 || split >= normalized.lastIndex) return null
 
-        words.forEach { word ->
-            if (word.length > maxChars) {
-                flush()
-                out += word.chunked(maxChars)
-            } else if (current.isEmpty()) {
-                current.append(word)
-            } else if (current.length + 1 + word.length <= maxChars) {
-                current.append(' ').append(word)
-            } else {
-                flush()
-                current.append(word)
-            }
-        }
-        flush()
-        return out.ifEmpty { listOf(normalized) }
+        val head = normalized.substring(0, split).trim()
+        val tail = normalized.substring(split + 1).trim()
+        if (head.isBlank() || tail.isBlank()) return null
+        return head to tail
     }
 
     private fun wrappedLines(text: String, charsPerLine: Int): Int {
