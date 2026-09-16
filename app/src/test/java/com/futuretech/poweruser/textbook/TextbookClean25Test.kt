@@ -39,7 +39,7 @@ class TextbookClean25Test(private val gate: Int) {
             1 -> assertEquals(11, tracks.size)
             2 -> assertEquals((1..11).toList(), tracks.map { it.number })
             3 -> assertEquals(11, tracks.map { it.id }.toSet().size)
-            4 -> assertTrue(tracks.all { it.assetPath.startsWith("textbook/v2/track_") })
+            4 -> assertTrue(tracks.all { it.assetPath.startsWith("textbook/v3/track_") })
             5 -> assertEquals((1..11).map { "V2-T%02d".format(it) }, tracks.map { it.practiceLessonId })
             6 -> assertEquals(11, practices.size)
             7 -> assertTrue(practices.all { it.curriculumType == "TEXTBOOK_V2" })
