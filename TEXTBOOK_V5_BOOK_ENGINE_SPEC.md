@@ -52,10 +52,10 @@ Initial systems/reference spine:
 - CSAPP3: Bryant & O'Hallaron, Computer Systems: A Programmer's Perspective, 3e.
 - OSTEP: Arpaci-Dusseau & Arpaci-Dusseau, Operating Systems: Three Easy Pieces.
 - TLPI: Michael Kerrisk, The Linux Programming Interface.
-- ANDROID: Android Developers official platform/app documentation.
+- ANDROID-FUNDAMENTALS: Android Developers official application fundamentals documentation.
 - SRE: Google Site Reliability Engineering / SRE Workbook / incident and release-engineering guidance.
-- W3C-EPUB: EPUB / Reading Systems specifications for reader behavior.
-- READIUM-CSS: Readium pagination and reading-system behavior.
+
+Reader-engine design evidence is maintained separately from learner-fact source spines and includes W3C EPUB/Reading Systems guidance, Readium pagination guidance and Android Compose text-measurement documentation.
 
 Track-specific registries add language, database, network, security, testing and architecture primary sources.
 
@@ -98,11 +98,17 @@ Phone page chrome contract:
 - exact page/chapter/track resume survives recreation;
 - font-scale changes trigger repagination, never clipping.
 
-Normal prose pages target measured vertical utilization 0.88..0.98. A non-final page below 0.82 fails unless the remaining authored unit is intentionally atomic (for example a code/table unit that cannot be split safely). Cover/recall/end pages are excluded from density scoring.
+Density is a distribution gate rather than a rule that every adversarial page must hit an identical fill percentage. Standard reading sizes require at least 99.5% of non-final synthetic pages to use >=82% of measured content height; target tall-phone defaults require at least 99.9%. Real Compose/device layout has a separate instrumented gate. Cover/recall/end pages are excluded from density scoring.
 
-Heading orphan rule: a heading cannot be left at the bottom without at least two measured body lines following it.
+Adaptive heading orphan rule, derived from the executed extreme simulation:
+
+- a one-line heading at the bottom must keep at least one measured body line with it;
+- a heading already wrapping to two or more measured lines reserves no additional body-line quota, because unconditional extra reservation created large artificial holes on compact screens;
+- instrumented Compose tests remain the final authority for actual clipping and density.
 
 Paragraph widow/orphan rule: avoid one-line fragments at page boundaries when a measured split can move one additional line without violating utilization.
+
+Ordered-list rule: authored start numbering must survive parsing, pagination and rendering. A continuation page must never silently reset an ordered list to 1.
 
 ## 6. Extreme simulation matrix
 
@@ -112,7 +118,7 @@ The free test suite must cover at least:
 - representative short/tall viewports and portrait/landscape;
 - font scales: 0.85, 1.0, 1.15, 1.30, 1.60, 2.00;
 - Korean, Latin, long unbroken tokens, inline punctuation;
-- paragraphs, nested-length lists, code, tables and mixed pages;
+- paragraphs, ordered/unordered lists, code, tables and mixed pages;
 - first/last page, section/part/track boundaries;
 - invalid saved page index, process recreation, content revision;
 - missing asset, malformed manifest, duplicate IDs and broken source IDs;
@@ -139,7 +145,7 @@ CLEAN-12 Regression: legacy practice links, track IDs and unrelated app function
 
 - Static source inspection is not Android runtime proof.
 - A test written but not executed is `PREPARED`, never `PASS`.
-- A simulation using fake metrics is `SIMULATION`, never device proof.
+- A deterministic packing simulation validates packing logic only; it is not device rendering proof.
 - Full Gradle / Android runtime / instrumented verification remains `UNVERIFIED` until actually executed.
 - GitHub Actions and deployment require a separate explicit approval immediately before execution.
 
