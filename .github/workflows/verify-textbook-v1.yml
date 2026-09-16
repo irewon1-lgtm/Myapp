@@ -1,8 +1,9 @@
-name: Verify V1 university textbook, tablet UI and full app regression
+name: Verify V2 11-TRACK textbook, tablet UI and full app regression
 
 on:
   push:
     branches:
+      - rewrite/v2-track-bookscale-prep
       - feat/v1-tablet-textbook
       - rewrite/v1-book-beginner-depth
       - main
@@ -114,7 +115,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: v1-textbook-tablet-full-regression-evidence
+          name: v2-11-track-textbook-tablet-full-regression-evidence
           if-no-files-found: warn
           retention-days: 90
           path: |
