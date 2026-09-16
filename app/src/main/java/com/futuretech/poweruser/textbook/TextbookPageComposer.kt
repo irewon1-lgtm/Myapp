@@ -24,7 +24,7 @@ data class TextbookContentPage(
  * already-split block to the next page whenever it did not fit. That left large empty bottoms.
  * This version always looks at the *remaining* capacity of the current page and slices paragraphs,
  * lists, code and tables to use that space before turning the page. Source code lines and original
- * list items are never rewritten.
+ * list items are never rewritten or reordered.
  */
 object TextbookPageComposer {
     private const val MIN_USEFUL_REMAINDER = 4
@@ -56,7 +56,7 @@ object TextbookPageComposer {
             var remaining = layout.maxLines - usedLines
             val blockLines = estimateLines(block, layout.charsPerLine).coerceAtLeast(1)
 
-            // Avoid leaving a heading stranded at the very bottom with no room for explanation.
+            // Do not leave a heading stranded at the page bottom without explanation below it.
             if (block is TextbookBlock.Heading && current.isNotEmpty() && remaining < blockLines + 2) {
                 flush()
                 remaining = layout.maxLines
@@ -68,8 +68,6 @@ object TextbookPageComposer {
                 continue
             }
 
-            // A small unusable tail is better turned into the next page than filled with one orphan
-            // source line or a single list marker.
             if (current.isNotEmpty() && remaining < MIN_USEFUL_REMAINDER) {
                 flush()
                 queue.addFirst(block)
@@ -80,8 +78,7 @@ object TextbookPageComposer {
             if (slice != null) {
                 add(slice.first)
                 slice.second?.let(queue::addFirst)
-                // If a block had to be sliced, the current page is intentionally finished here.
-                // This makes the next block start cleanly while still using nearly all remaining room.
+                // A sliced block intentionally finishes this page after consuming the available tail.
                 flush()
                 continue
             }
@@ -90,8 +87,8 @@ object TextbookPageComposer {
                 flush()
                 queue.addFirst(block)
             } else {
-                // Unsplittable authored units (for example one extremely long bullet or source line)
-                // stay intact. Exposing a rare over-budget page is safer than rewriting author text.
+                // Unsplittable authored units stay intact. Exposing a rare over-budget page is safer
+                // than rewriting a source-code line or turning one authored bullet into fake items.
                 add(block)
                 flush()
             }
@@ -166,15 +163,12 @@ object TextbookPageComposer {
         val head = mutableListOf<String>()
         var estimated = 1
 
-        block.items.forEach { item ->
+        for (item in block.items) {
             val nextItems = head.size + 1
             val nextEstimate = estimated + wrappedLines(item, itemWidth) + if (nextItems % 3 == 0) 1 else 0
-            if (head.isNotEmpty() && nextEstimate > availableLines) return@forEach
-            if (head.isEmpty() && nextEstimate > availableLines) return null
-            if (nextEstimate <= availableLines) {
-                head += item
-                estimated = nextEstimate
-            }
+            if (nextEstimate > availableLines) break
+            head += item
+            estimated = nextEstimate
         }
         if (head.isEmpty() || head.size == block.items.size) return null
         return TextbookBlock.BulletList(head, block.ordered) to
@@ -193,14 +187,11 @@ object TextbookPageComposer {
         val head = mutableListOf<String>()
         var used = 0
 
-        source.forEach { line ->
+        for (line in source) {
             val need = wrappedLines(line.ifEmpty { " " }, width)
-            if (head.isNotEmpty() && used + need > maxContentLines) return@forEach
-            if (head.isEmpty() && need > maxContentLines) return null
-            if (used + need <= maxContentLines) {
-                head += line
-                used += need
-            }
+            if (used + need > maxContentLines) break
+            head += line
+            used += need
         }
         if (head.isEmpty() || head.size == source.size) return null
         return TextbookBlock.Code(block.language, head.joinToString("\n")) to
@@ -219,14 +210,11 @@ object TextbookPageComposer {
         val rows = mutableListOf<List<String>>()
         var used = 0
 
-        block.rows.forEach { row ->
+        for (row in block.rows) {
             val need = row.maxOfOrNull { wrappedLines(it, width) } ?: 1
-            if (rows.isNotEmpty() && used + need > maxRowLines) return@forEach
-            if (rows.isEmpty() && need > maxRowLines) return null
-            if (used + need <= maxRowLines) {
-                rows += row
-                used += need
-            }
+            if (used + need > maxRowLines) break
+            rows += row
+            used += need
         }
         if (rows.isEmpty() || rows.size == block.rows.size) return null
         return TextbookBlock.Table(block.headers, rows) to
