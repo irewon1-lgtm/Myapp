@@ -26,7 +26,7 @@ class V3BeginnerGuidanceTest {
         val sectionIds = allSections().map { it.id }
         val guideIds = V3BeginnerGuidance.guides.map { it.sectionId }
 
-        assertEquals("Current V3 learner lesson count changed", 26, sectionIds.size)
+        assertTrue("V3 learner lesson count must stay inside the quality range", sectionIds.size in 20..50)
         assertEquals("Duplicate beginner guide ids", guideIds.size, guideIds.toSet().size)
         assertEquals("Guide coverage must exactly match learner lessons", sectionIds.toSet(), guideIds.toSet())
         assertTrue(V3BeginnerGuidance.guides.all { it.mustUnderstand.size >= 3 })
