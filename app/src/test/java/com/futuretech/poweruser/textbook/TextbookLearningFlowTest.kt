@@ -36,7 +36,7 @@ class TextbookLearningFlowTest {
     }
 
     @Test
-    fun syntheticLessonStaysOneLearningPageAndPreservesAllContent() {
+    fun guidedV3LessonStaysOneLearningPageAndPreservesAllAuthoredContent() {
         val track = V1TextbookCatalog.chapters.first()
         val practice = requireNotNull(CurriculumDataRepository.lessonById(track.practiceLessonId))
         val blocks = buildList {
@@ -54,15 +54,43 @@ class TextbookLearningFlowTest {
             weightedLength = blocks.sumOf(TextbookSectioner::weightOf)
         )
 
-        val concepts = TextbookLearningFlow.buildConcepts(track.id, section, practice)
+        val page = TextbookLearningFlow.buildConcepts(track.id, section, practice).single()
+        val authoredStart = page.blocks.indexOf(blocks.first())
 
-        assertEquals(1, concepts.size)
-        assertEquals(blocks, concepts.single().blocks)
-        assertEquals(section.title, concepts.single().title)
-        assertEquals("${section.id}-C01", concepts.single().id)
-        assertEquals(LearningProblemType.DIRECT_WRITE, concepts.single().problem.type)
-        assertTrue(concepts.single().problem.prompt.contains(section.title))
-        assertTrue(concepts.single().problem.prompt.contains("점수를 깎지"))
+        assertTrue("guide must be before authored content", authoredStart > 0)
+        assertEquals(
+            "all authored content must remain contiguous and unchanged",
+            blocks,
+            page.blocks.subList(authoredStart, authoredStart + blocks.size)
+        )
+        assertTrue(page.title.startsWith("필수"))
+        assertTrue(page.title.contains(section.title))
+        assertEquals("${section.id}-C01", page.id)
+        assertEquals(LearningProblemType.DIRECT_WRITE, page.problem.type)
+        assertTrue(page.problem.prompt.contains(section.title))
+        assertTrue(page.problem.prompt.contains("점수를 깎지"))
+        assertTrue(page.problem.referenceAnswer.isNotBlank())
+    }
+
+    @Test
+    fun unregisteredSyntheticV3LikeSectionStaysLegacySafe() {
+        val track = V1TextbookCatalog.chapters.first()
+        val practice = requireNotNull(CurriculumDataRepository.lessonById(track.practiceLessonId))
+        val blocks = listOf(TextbookBlock.Paragraph("synthetic"))
+        val section = TextbookSection(
+            id = "${track.id}-S99",
+            index = 98,
+            title = "Synthetic",
+            estimatedMinutes = 5,
+            blocks = blocks,
+            weightedLength = blocks.sumOf(TextbookSectioner::weightOf)
+        )
+
+        val page = TextbookLearningFlow.buildConcepts(track.id, section, practice).single()
+
+        assertEquals(blocks, page.blocks)
+        assertEquals(section.title, page.title)
+        assertTrue(page.problem.referenceAnswer.isBlank())
     }
 
     @Test
@@ -87,12 +115,14 @@ class TextbookLearningFlowTest {
         }
 
         assertTrue(pages.all { it.problem.type == LearningProblemType.DIRECT_WRITE })
-        assertTrue(pages.all { page -> page.problem.prompt.contains(page.title) })
+        pages.forEachIndexed { index, page ->
+            assertTrue(page.problem.prompt.contains("LESSON ${index + 1}"))
+        }
         assertFalse(pages.any { it.problem.prompt == practice.aiHallucinationQuestion })
     }
 
     @Test
-    fun allRealV2LessonsPreserveContentAndUseOneGroundedRecall() {
+    fun allRealV3LessonsPreserveAuthoredContentAndUseOneGroundedRecall() {
         V1TextbookCatalog.chapters.forEach { track ->
             val practice = requireNotNull(CurriculumDataRepository.lessonById(track.practiceLessonId))
             val markdown = assetFile(track.assetPath).readText(Charsets.UTF_8)
@@ -103,10 +133,17 @@ class TextbookLearningFlowTest {
                 val concepts = TextbookLearningFlow.buildConcepts(track.id, section, practice)
                 assertEquals("${section.id}: exactly one learning page", 1, concepts.size)
                 val page = concepts.single()
-                assertEquals("${section.id}: all source blocks preserved", section.blocks, page.blocks)
-                assertTrue("${section.id}: page titled", page.title.isNotBlank())
+                val authoredStart = page.blocks.indexOf(section.blocks.first())
+                assertTrue("${section.id}: guide must precede authored content", authoredStart > 0)
+                assertEquals(
+                    "${section.id}: all source blocks preserved",
+                    section.blocks,
+                    page.blocks.subList(authoredStart, authoredStart + section.blocks.size)
+                )
+                assertTrue("${section.id}: guided page titled", page.title.contains(section.title))
                 assertEquals(LearningProblemType.DIRECT_WRITE, page.problem.type)
                 assertTrue("${section.id}: recall grounded in current title", page.problem.prompt.contains(section.title))
+                assertTrue("${section.id}: explanation summary attached", page.problem.referenceAnswer.isNotBlank())
             }
         }
     }
