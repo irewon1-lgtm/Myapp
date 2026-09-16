@@ -42,7 +42,7 @@ private val CurriculumSoft = Color(0xFF171C24)
 @Composable
 fun CurriculumOverviewScreen(
     onOpenChapter: (String) -> Unit,
-    onOpenLearningHome: () -> Unit
+    onOpenReview: () -> Unit
 ) {
     Surface(
         modifier = Modifier.fillMaxSize().testTag("curriculum_overview_root"),
@@ -78,7 +78,7 @@ fun CurriculumOverviewScreen(
                         lineHeight = 21.sp
                     )
                     OutlinedButton(
-                        onClick = onOpenLearningHome,
+                        onClick = onOpenReview,
                         modifier = Modifier.testTag("curriculum_review_button"),
                         border = BorderStroke(1.dp, CurriculumBorder)
                     ) {
