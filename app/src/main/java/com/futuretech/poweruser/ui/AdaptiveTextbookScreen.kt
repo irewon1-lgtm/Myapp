@@ -70,7 +70,7 @@ fun AdaptiveTextbookScreen(
                         fontWeight = FontWeight.Bold
                     )
                     Text(
-                        text = "TRACK을 고르면 해당 책의 첫 화면으로 이동합니다.",
+                        text = "TRACK을 고르면 해당 책의 읽던 위치로 이동합니다.",
                         modifier = Modifier.padding(horizontal = 20.dp),
                         fontSize = 12.sp,
                         color = MaterialTheme.colorScheme.onSurfaceVariant
@@ -118,12 +118,13 @@ fun AdaptiveTextbookScreen(
                     .testTag("reader_single_column")
             ) {
                 key(selectedChapterId) {
-                    V1TextbookScreen(
+                    V4PagedBookScreen(
                         practiceCompletedIds = practiceCompletedIds,
                         onNavigateBack = onNavigateBack,
                         onStartPractice = onStartPractice,
                         initialChapterId = selectedChapterId,
-                        onOpenToc = { scope.launch { drawerState.open() } }
+                        onOpenToc = { scope.launch { drawerState.open() } },
+                        onChapterSelected = { selectedChapterId = it }
                     )
                 }
             }
