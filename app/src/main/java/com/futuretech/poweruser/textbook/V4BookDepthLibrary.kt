@@ -37,8 +37,34 @@ internal data class ExpertDepthPack(
 internal fun expertPack(sectionId: String, vararg blocks: TextbookBlock) =
     ExpertDepthPack(sectionId, blocks.toList())
 
+/**
+ * Source files may contain transport escaping or internal authoring-version references. Neither is
+ * learner-facing content, so normalize them once at the rendering boundary instead of allowing
+ * implementation history such as "V3"/"V4" to leak into the book.
+ */
 private fun cleanEditorialText(text: String): String =
-    text.replace("\\\"", "\"")
+    text
+        .replace("\\\"", "\"")
+        .replace(
+            "이 LESSON은 기존 V4에서 방향이 좋았던 부분을 기준점으로 삼아 더 깊게 확장한다.",
+            "앞서 배운 queue의 성질에서 출발해 실제 운영 문제까지 더 깊게 확장한다."
+        )
+        .replace(
+            "이 LESSON은 기존 V4의 좋은 방향을 유지하되 더 깊게 간다.",
+            "앞서 배운 분산 시스템의 기본에서 한 단계 더 깊게 들어간다."
+        )
+        .replace("V3에서", "앞선 학습에서")
+        .replace("V3가", "앞선 학습이")
+        .replace("V3에", "앞선 학습에서")
+        .replace("V3를", "앞선 학습을")
+        .replace("V3의", "앞선 학습의")
+        .replace("V3", "앞선 학습")
+        .replace("V4에서", "앞선 학습에서")
+        .replace("V4가", "앞선 학습이")
+        .replace("V4에", "앞선 학습에서")
+        .replace("V4를", "앞선 학습을")
+        .replace("V4의", "앞선 학습의")
+        .replace("V4", "앞선 학습")
 
 internal fun depthTitle(text: String) = TextbookBlock.Heading(3, cleanEditorialText(text))
 internal fun depthHeading(text: String) = TextbookBlock.Heading(4, cleanEditorialText(text))
