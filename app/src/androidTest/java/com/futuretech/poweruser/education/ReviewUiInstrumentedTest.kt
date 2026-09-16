@@ -42,9 +42,8 @@ class ReviewUiInstrumentedTest {
 
     @Test
     fun answerIsHiddenUntilRevealAndRememberedCardLeavesDueQueue() {
-        composeRule.onNodeWithTag("learning_home_button").performClick()
+        composeRule.onNodeWithTag("curriculum_review_button").performClick()
         composeRule.waitForIdle()
-        composeRule.onNodeWithText("복습").performClick()
         composeRule.onNodeWithTag("review_screen").assertExists()
 
         composeRule.waitUntil(timeoutMillis = 5_000L) {
