@@ -1,6 +1,7 @@
 package com.futuretech.poweruser.textbook
 
 import com.futuretech.poweruser.data.CurriculumDataRepository
+import java.io.File
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNotNull
@@ -17,8 +18,17 @@ class TextbookExtreme60Test(private val caseId: Int) {
         fun cases(): Collection<Array<Any>> = (1..60).map { arrayOf<Any>(it) }
     }
 
+    private fun assetFile(assetPath: String): File {
+        val candidates = listOf(
+            File("src/main/assets/$assetPath"),
+            File("app/src/main/assets/$assetPath")
+        )
+        return candidates.firstOrNull { it.isFile }
+            ?: error("Cannot locate real textbook asset: $assetPath; cwd=${File(".").absolutePath}")
+    }
+
     @Test
-    fun curriculumAndSectionScenarioPasses() {
+    fun curriculumAndRealV3SectionScenarioPasses() {
         val legacyBooks = PowerUserCurriculumCatalog.books
         val legacyChapters = PowerUserCurriculumCatalog.chapters
         val tracks = V1TextbookCatalog.chapters
@@ -31,6 +41,7 @@ class TextbookExtreme60Test(private val caseId: Int) {
         assertEquals((1..11).toList(), tracks.map { it.number })
         assertEquals((1..11).map { "V2-T%02d".format(it) }, tracks.map { it.practiceLessonId })
 
+        // 60 cases rotate over all 11 real V3 tracks, so every real asset is exercised repeatedly.
         val track = tracks[(caseId - 1) % tracks.size]
         assertTrue(track.title.length >= 5)
         assertTrue(track.summary.length >= 30)
@@ -46,6 +57,50 @@ class TextbookExtreme60Test(private val caseId: Int) {
         assertTrue(legacyV1Ref!!.contentAvailable)
         assertEquals(track.number, legacyV1Ref.number)
 
+        // REAL V3 ASSET PATH: this is the part Extreme60 previously did not exercise.
+        val realMarkdown = assetFile(track.assetPath).readText(Charsets.UTF_8)
+        val realBlocks = TextbookMarkdownParser.parse(realMarkdown)
+        val realSections = TextbookSectioner.split(track.id, realBlocks)
+
+        assertTrue("${track.id}: real V3 parser output", realBlocks.isNotEmpty())
+        assertTrue("${track.id}: real learner lesson count", realSections.size in 1..6)
+        assertEquals("${track.id}: real section ids unique", realSections.size, realSections.map { it.id }.toSet().size)
+        assertTrue("${track.id}: real section title", realSections.all { it.title.isNotBlank() })
+        assertTrue("${track.id}: real weighted length", realSections.all { it.weightedLength > 0 })
+        assertTrue(
+            "${track.id}: real lesson must expose overload instead of hiding it",
+            realSections.all {
+                it.estimatedMinutes in TextbookSectioner.V3_MIN_LESSON_MINUTES..TextbookSectioner.V3_MAX_LESSON_MINUTES
+            }
+        )
+
+        val authoredBlockCount = realBlocks
+            .filterIsInstance<TextbookBlock.Heading>()
+            .count { it.level == 2 && it.text.startsWith("BLOCK ") }
+        val renderedBlockCount = realSections
+            .flatMap { it.blocks }
+            .filterIsInstance<TextbookBlock.Heading>()
+            .count { it.level == 3 && it.text.startsWith("BLOCK ") }
+        assertEquals("${track.id}: real authored BLOCK preservation", authoredBlockCount, renderedBlockCount)
+
+        realSections.forEachIndexed { index, section ->
+            val majorBlockCount = section.blocks
+                .filterIsInstance<TextbookBlock.Heading>()
+                .count { it.level == 3 && it.text.startsWith("BLOCK ") }
+            assertTrue(
+                "${track.id}: real LESSON ${index + 1} major BLOCK overload=$majorBlockCount",
+                majorBlockCount in 1..4
+            )
+            val leakedLegacyLabels = section.blocks
+                .filterIsInstance<TextbookBlock.Heading>()
+                .filter { it.level == 4 && it.text.startsWith("LESSON ", ignoreCase = true) }
+            assertTrue(
+                "${track.id}: real LESSON ${index + 1} leaked old tiny LESSON labels=$leakedLegacyLabels",
+                leakedLegacyLabels.isEmpty()
+            )
+        }
+
+        // LEGACY/SYNTHETIC PATH: preserve the old deterministic non-V3 behavior too.
         val repeatCount = 7 + (caseId % 7)
         val markdown = buildString {
             appendLine("# TRACK $caseId")
