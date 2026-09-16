@@ -56,12 +56,14 @@ class V4BookDepthLibraryTest {
     }
 
     @Test
-    fun oldBoilerplateQuestionOnlyArchitectureAndEscapeArtifactsAreGone() {
+    fun oldBoilerplateQuestionOnlyArchitectureAndEditorialArtifactsAreGone() {
         val corpus = expectedSectionIds.joinToString("\n", transform = ::searchableText)
         assertFalse(corpus.contains("앞의 본문은 첫 이해를 만드는 설명이다"))
         assertFalse(corpus.contains("같은 개념을 다른 각도에서 다시 보고"))
         assertFalse(corpus.contains("처음 읽을 때 전부 외우지 말고"))
         assertFalse("rendered V4 text must not expose transport escaping", corpus.contains("\\\""))
+        assertFalse("learner-facing book must not expose internal V3 authoring labels", corpus.contains("V3"))
+        assertFalse("learner-facing book must not expose internal V4 authoring labels", corpus.contains("V4"))
 
         // These concepts used to be easy-to-ignore follow-up questions. They must now be taught in
         // normal authored headings/paragraphs/code, not hidden behind a mandatory questions list.
