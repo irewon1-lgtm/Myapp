@@ -17,7 +17,8 @@ object LearningUi21To25Policy {
     const val TABLET_BREAKPOINT_DP = 600
     const val TABLET_PROBLEM_WEIGHT = 0.40f
     const val TABLET_WORKSPACE_WEIGHT = 0.60f
-    const val READER_MAX_WIDTH_DP = 780
+    // E-book reader remains a centered single column even on wide tablets.
+    const val READER_MAX_WIDTH_DP = 820
 
     val guidanceOrder: List<GuidancePhase> = GuidancePhase.entries
     val phonePracticeOrder: List<String> = listOf("문제", "코드", "결과")
