@@ -30,7 +30,7 @@ def ck(name, ok, detail):
 
 workbook_tests = collect("V1WorkbookQualityTest")
 ck(
-    "Workbook JVM integration tests",
+    "Legacy workbook JVM preservation tests",
     workbook_tests[0] >= 3 and workbook_tests[1:] == (0, 0, 0),
     str(workbook_tests),
 )
@@ -38,12 +38,12 @@ ck(
 asset_dir = ROOT / "app/src/main/assets/textbook/v1"
 workbooks = sorted(asset_dir.glob("workbook_*.md"))
 chapters = sorted(asset_dir.glob("chapter_*.md"))
-ck("Exactly 11 workbook assets", len(workbooks) == 11, f"count={len(workbooks)}")
-ck("Exactly 11 chapter assets", len(chapters) == 11, f"count={len(chapters)}")
+ck("Exactly 11 legacy workbook assets", len(workbooks) == 11, f"count={len(workbooks)}")
+ck("Exactly 11 legacy chapter assets", len(chapters) == 11, f"count={len(chapters)}")
 
 workbook_chars = 0
 training_counts = []
-for index, path in enumerate(workbooks, start=1):
+for path in workbooks:
     text = path.read_text(encoding="utf-8")
     workbook_chars += len(text)
     training_count = sum(
@@ -55,7 +55,6 @@ for index, path in enumerate(workbooks, start=1):
     )
     training_counts.append(training_count)
 
-    # Character counts are only guards against accidental truncation, never page targets.
     ck(f"{path.name}: truncation floor", len(text) >= 3_000, f"chars={len(text)}")
     ck(f"{path.name}: training density", training_count >= 8, f"tasks={training_count}")
     ck(f"{path.name}: code/data examples", "```" in text, "code fence")
@@ -75,37 +74,35 @@ for index, path in enumerate(workbooks, start=1):
         for p in re.split(r"\n\s*\n", text)
         if len(re.sub(r"\s+", " ", p).strip()) >= 100
     ]
-    duplicate_paragraphs = {
-        p for p in paragraphs if paragraphs.count(p) > 1
-    }
+    duplicate_paragraphs = {p for p in paragraphs if paragraphs.count(p) > 1}
     ck(
         f"{path.name}: no exact repeated long paragraph",
         not duplicate_paragraphs,
         f"duplicates={len(duplicate_paragraphs)}",
     )
 
-ck("Workbook total truncation floor", workbook_chars >= 40_000, f"chars={workbook_chars:,}")
-ck("Every workbook has substantial task count", min(training_counts or [0]) >= 8, f"min={min(training_counts or [0])}")
+ck("Legacy workbook total truncation floor", workbook_chars >= 40_000, f"chars={workbook_chars:,}")
+ck("Every legacy workbook has substantial task count", min(training_counts or [0]) >= 8, f"min={min(training_counts or [0])}")
 
 screen_path = ROOT / "app/src/main/java/com/futuretech/poweruser/ui/V1TextbookScreen.kt"
 if screen_path.is_file():
     source = screen_path.read_text(encoding="utf-8")
-    ck("Reader derives matching workbook path", "workbook_${selected.number.toString().padStart(2, '0')}.md" in source, "path")
-    ck("Reader loads chapter text", "val chapterText =" in source, "chapterText")
-    ck("Reader loads workbook text", "val workbookText =" in source, "workbookText")
-    ck("Reader appends workbook after chapter", '"$chapterText\\n\\n---\\n\\n$workbookText"' in source, "combined markdown")
+    ck("V2 reader loads selected TRACK asset directly", "context.assets.open(selected.assetPath)" in source, "selected.assetPath")
+    ck("V2 reader does not append legacy workbook path", "workbook_${selected.number.toString().padStart(2, '0')}.md" not in source, "standalone legacy workbook")
+    ck("V2 reader has no workbookText merge", "val workbookText =" not in source, "no workbook merge")
+    ck("V2 reader has no chapter+workbook concatenation", '"$chapterText\\n\\n---\\n\\n$workbookText"' not in source, "no combined markdown")
 else:
     ck("Reader source exists", False, str(screen_path))
 
 failed = [item for item in checks if not item[1]]
 report = [
-    "# V1 Workbook Depth Report",
+    "# Legacy Workbook Preservation Report",
     "",
-    "The workbook is evaluated as practice, not as padded prose.",
+    "Legacy V1 workbooks remain intact as standalone practice assets, while the learner-facing V2 TRACK reader stays clean and does not append them automatically.",
     "",
     f"- Workbook JVM tests: **{workbook_tests[0]}**, failures={workbook_tests[1]}, errors={workbook_tests[2]}, skipped={workbook_tests[3]}",
-    f"- Workbook assets: **{len(workbooks)}/11**",
-    f"- Workbook total characters: **{workbook_chars:,}** (truncation guard only)",
+    f"- Legacy workbook assets: **{len(workbooks)}/11**",
+    f"- Legacy workbook total characters: **{workbook_chars:,}** (truncation guard only)",
     f"- Training items per workbook: **{min(training_counts) if training_counts else 0}–{max(training_counts) if training_counts else 0}**",
     f"- Gates: **{len(checks)-len(failed)}/{len(checks)} PASS**",
     "",
@@ -115,7 +112,7 @@ for name, ok, detail in checks:
     report.append(f"- {'PASS' if ok else 'FAIL'} — {name}: {detail}")
 report += ["", "## Final", f"**{'PASS' if not failed else 'FAIL'}**"]
 
-out = EVIDENCE / "V1_WORKBOOK_DEPTH_REPORT.md"
+out = EVIDENCE / "LEGACY_WORKBOOK_PRESERVATION_REPORT.md"
 out.write_text("\n".join(report) + "\n", encoding="utf-8")
 print(out.read_text(encoding="utf-8"))
 if failed:
