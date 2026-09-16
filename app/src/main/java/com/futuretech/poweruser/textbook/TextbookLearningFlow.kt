@@ -8,7 +8,7 @@ enum class LearningProblemType(val displayName: String) {
     ORDERING("순서배치"),
     FILL_CODE("빈칸코드"),
     ONE_LINE_FIX("한 줄 수정"),
-    DIRECT_WRITE("직접작성"),
+    DIRECT_WRITE("직접 설명/작성"),
     DEBUGGING("디버깅"),
     AI_ANSWER_AUDIT("AI가 만든 답 검증")
 }
@@ -37,142 +37,37 @@ data class LearningConcept(
 /**
  * Textbook-first presentation layer.
  *
- * A 4-7 minute [TextbookSection] is the learner-facing page. The complete section content is kept
- * together so explanation, examples, code, and worked examples stay visible before assessment.
- * Exactly one low-stakes retrieval problem is attached at the end of the section. This avoids the
- * previous regression where every small concept chunk became a problem-heavy page.
+ * Each learner-facing LESSON keeps the complete explanation/examples/code together. The inline
+ * activity is deliberately one low-stakes retrieval prompt grounded in the LESSON just read.
+ * Full executable grading belongs to the TRACK practice screen, preventing the textbook from
+ * regressing into a problem-first UI or asking stale questions from an unrelated legacy lesson.
  */
 object TextbookLearningFlow {
-    /** Kept for source compatibility with older tests/tools; section pages are no longer chunked. */
-    const val MAX_BLOCKS_PER_CONCEPT = 2147483647
+    const val MAX_BLOCKS_PER_CONCEPT = Int.MAX_VALUE
 
     fun buildConcepts(
         chapterId: String,
         section: TextbookSection,
-        lesson: LessonContent
+        @Suppress("UNUSED_PARAMETER") practiceLesson: LessonContent
     ): List<LearningConcept> {
         if (section.blocks.isEmpty()) return emptyList()
 
-        val type = LearningProblemType.entries[section.index % LearningProblemType.entries.size]
+        val title = section.title
+        val recall = InlineLearningProblem(
+            id = "$chapterId-${section.id}-P01",
+            type = LearningProblemType.DIRECT_WRITE,
+            prompt = "방금 읽은 ‘$title’을 책을 보지 않고 자기 말로 설명하세요. 무엇인지, 왜 필요한지, 실제 코드·앱에서 어디에 쓰이는지 중 최소 2가지를 포함하세요. 여기서는 점수를 깎지 않으며, 실행 채점은 TRACK 실전에서 합니다."
+        )
+
         return listOf(
             LearningConcept(
                 id = "${section.id}-C01",
                 index = 0,
-                title = section.title,
+                title = title,
                 blocks = section.blocks,
-                problem = problemFor(
-                    problemId = "$chapterId-${section.id}-P01",
-                    lesson = lesson,
-                    type = type
-                )
+                problem = recall
             )
         )
-    }
-
-    private fun problemFor(
-        problemId: String,
-        lesson: LessonContent,
-        type: LearningProblemType
-    ): InlineLearningProblem = when (type) {
-        LearningProblemType.CONCEPT_CHOICE -> InlineLearningProblem(
-            id = problemId,
-            type = type,
-            prompt = lesson.aiHallucinationQuestion,
-            options = lesson.aiHallucinationOptions,
-            correctOptionIndex = lesson.correctOptionIndex
-        )
-
-        LearningProblemType.OUTPUT_PREDICTION -> InlineLearningProblem(
-            id = problemId,
-            type = type,
-            prompt = "실행하기 전에 이 코드가 무엇을 출력하거나 수행할지 예상해 보세요.",
-            code = lesson.codeSample,
-            referenceAnswer = lesson.expectedOutcome
-        )
-
-        LearningProblemType.ORDERING -> {
-            val correct = listOf(
-                "증상을 구체적으로 기록한다",
-                "관련 경계와 후보를 나눈다",
-                "가장 싼 증거부터 확인한다",
-                "가설 하나만 바꿔 다시 검증한다"
-            )
-            InlineLearningProblem(
-                id = problemId,
-                type = type,
-                prompt = "추측으로 고치지 않도록 진단 순서를 올바르게 배열하세요.",
-                correctOrder = correct,
-                shuffledOrder = listOf(correct[2], correct[0], correct[3], correct[1]),
-                referenceAnswer = correct.joinToString(" → ")
-            )
-        }
-
-        LearningProblemType.FILL_CODE -> {
-            val parsed = parseFillBlank(lesson.fillInBlankPrompt)
-            InlineLearningProblem(
-                id = problemId,
-                type = type,
-                prompt = parsed.first,
-                acceptedAnswers = parsed.second,
-                referenceAnswer = parsed.second.firstOrNull().orEmpty()
-            )
-        }
-
-        LearningProblemType.ONE_LINE_FIX -> {
-            val changedLine = firstChangedLine(lesson.brokenCode, lesson.brokenCodeFix)
-            InlineLearningProblem(
-                id = problemId,
-                type = type,
-                prompt = "고장난 코드에서 가장 먼저 고칠 한 줄을 작성하세요.",
-                code = lesson.brokenCode,
-                acceptedAnswers = changedLine.takeIf { it.isNotBlank() }?.let(::listOf).orEmpty(),
-                referenceAnswer = changedLine
-            )
-        }
-
-        LearningProblemType.DIRECT_WRITE -> InlineLearningProblem(
-            id = problemId,
-            type = type,
-            prompt = "예제를 보지 않고 이번 개념의 최소 동작 코드를 직접 작성해 보세요.",
-            referenceAnswer = lesson.initialPracticeCode
-        )
-
-        LearningProblemType.DEBUGGING -> InlineLearningProblem(
-            id = problemId,
-            type = type,
-            prompt = "고장난 코드를 직접 수정해 보세요. 최종 통과 판정은 전체 실습의 실제 실행으로 확인합니다.",
-            code = lesson.brokenCode,
-            referenceAnswer = lesson.brokenCodeFix
-        )
-
-        LearningProblemType.AI_ANSWER_AUDIT -> InlineLearningProblem(
-            id = problemId,
-            type = type,
-            prompt = "AI가 아래 답을 제시했다고 가정하고, 근거에 맞는 선택지를 고르세요.\n\n${lesson.aiHallucinationQuestion}",
-            options = lesson.aiHallucinationOptions,
-            correctOptionIndex = lesson.correctOptionIndex
-        )
-    }
-
-    private fun parseFillBlank(prompt: String): Pair<String, List<String>> {
-        val match = Regex("\\[([^]]+)]").find(prompt) ?: return prompt to emptyList()
-        val answers = match.groupValues[1]
-            .split("/", "|", ",")
-            .map(String::trim)
-            .filter(String::isNotBlank)
-        return prompt.replaceRange(match.range, "[          ]") to answers
-    }
-
-    private fun firstChangedLine(before: String, after: String): String {
-        val beforeLines = before.lines()
-        val afterLines = after.lines()
-        val count = maxOf(beforeLines.size, afterLines.size)
-        for (index in 0 until count) {
-            if (beforeLines.getOrNull(index)?.trim() != afterLines.getOrNull(index)?.trim()) {
-                return afterLines.getOrNull(index)?.trim().orEmpty()
-            }
-        }
-        return ""
     }
 
     fun normalizeAnswer(value: String): String = value
