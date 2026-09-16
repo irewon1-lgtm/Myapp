@@ -66,6 +66,11 @@ fun CurriculumOverviewScreen(
         ?: V1TextbookCatalog.chapters.first()
     val lastLessonIndex = progressStore.selectedSectionIndex(lastChapter.id)
 
+    fun openChapter(id: String) {
+        progressStore.saveSelectedChapter(id)
+        onOpenChapter(id)
+    }
+
     Surface(
         modifier = Modifier.fillMaxSize().testTag("curriculum_overview_root"),
         color = LibraryBg
@@ -80,7 +85,7 @@ fun CurriculumOverviewScreen(
                 ContinueReadingCard(
                     chapter = lastChapter,
                     lessonIndex = lastLessonIndex,
-                    onContinue = { onOpenChapter(lastChapter.id) },
+                    onContinue = { openChapter(lastChapter.id) },
                     onOpenReview = onOpenReview
                 )
             }
@@ -114,7 +119,7 @@ fun CurriculumOverviewScreen(
                         horizontalArrangement = Arrangement.spacedBy(14.dp)
                     ) {
                         items(V1TextbookCatalog.chapters, key = { it.id }) { track ->
-                            BookCoverCard(track = track, onOpenChapter = onOpenChapter)
+                            BookCoverCard(track = track, onOpenChapter = ::openChapter)
                         }
                     }
                 }
