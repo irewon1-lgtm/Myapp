@@ -33,9 +33,8 @@ data class V5SectionEvidence(
 /**
  * Loads exactly one V5 part at a time.
  *
- * The old V3 reader can safely remain active while V5 books are being authored. Once all book-scale
- * corpus gates pass, the reader can switch to this repository without ever `readText()`-ing a whole
- * multi-megabyte track.
+ * Large books never become one track-sized String. A source map is validated independently for the
+ * current part so learner-facing prose cannot silently reference an unknown evidence anchor.
  */
 class V5BookAssetRepository(
     private val context: Context,
@@ -75,7 +74,7 @@ class V5BookAssetRepository(
             require(evidence.sourceIds.isNotEmpty()) {
                 "Section ${evidence.sectionId} has no evidence source"
             }
-            val unknown = evidence.sourceIds.filterNot(V5BookSourceRegistry.byId::containsKey)
+            val unknown = evidence.sourceIds.filterNot(V5BookAllSources.byId::containsKey)
             require(unknown.isEmpty()) {
                 "Section ${evidence.sectionId} has unknown source ids: $unknown"
             }
