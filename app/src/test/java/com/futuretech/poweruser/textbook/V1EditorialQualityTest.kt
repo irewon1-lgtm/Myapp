@@ -18,7 +18,8 @@ class V1EditorialQualityTest {
     @Test
     fun v3TracksUseFewLargeBeginnerBlocksInsteadOfVocabularyPages() {
         V1TextbookCatalog.chapters.forEach { track ->
-            val text = assetFile(track.assetPath).readText(Charsets.UTF_8)
+            val file = assetFile(track.assetPath)
+            val text = file.readText(Charsets.UTF_8)
             val lines = text.lines()
             val blockRows = lines.mapIndexedNotNull { index, line ->
                 if (line.startsWith("## BLOCK ")) index to line else null
@@ -41,8 +42,8 @@ class V1EditorialQualityTest {
                 lessonRows.size
             )
             assertTrue(
-                "${track.id}: accidental-truncation floor chars=${text.length}",
-                text.length >= 25_000
+                "${track.id}: accidental-truncation floor bytes=${file.length()}",
+                file.length() >= 30_000L
             )
             assertTrue("${track.id}: executable/code or structured-data examples required", text.contains("```"))
 
