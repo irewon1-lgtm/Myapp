@@ -46,6 +46,37 @@ class TextbookPageComposerTest {
     }
 
     @Test
+    fun paginationNeverRewritesCodeOrCreatesFakeListItems() {
+        val code = (1..35).joinToString("\n") { index ->
+            "val original_${index} = ${index} // this exact source line must survive pagination"
+        }
+        val bullets = listOf(
+            "첫 번째 긴 항목 " + "설명 ".repeat(40),
+            "두 번째 항목",
+            "세 번째 긴 항목 " + "원문 ".repeat(35)
+        )
+        val pages = TextbookPageComposer.paginate(
+            blocks = listOf(
+                TextbookBlock.Code("kotlin", code),
+                TextbookBlock.BulletList(bullets, ordered = false)
+            ),
+            layout = TextbookPageLayout(charsPerLine = 22, maxLines = 14)
+        )
+
+        val restoredCode = pages
+            .flatMap { it.blocks }
+            .filterIsInstance<TextbookBlock.Code>()
+            .joinToString("\n") { it.text }
+        val restoredBullets = pages
+            .flatMap { it.blocks }
+            .filterIsInstance<TextbookBlock.BulletList>()
+            .flatMap { it.items }
+
+        assertEquals("Pagination must not change executable source text", code, restoredCode)
+        assertEquals("Pagination must not turn one long bullet into multiple fake bullets", bullets, restoredBullets)
+    }
+
+    @Test
     fun phoneAndTabletLayoutsBothProduceBoundedPages() {
         val blocks = listOf(
             TextbookBlock.Paragraph(("한 문단이 길어져도 화면 아래로 무한 스크롤하지 않습니다. ").repeat(55)),
