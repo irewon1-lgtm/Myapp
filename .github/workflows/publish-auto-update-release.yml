@@ -120,27 +120,27 @@ jobs:
           APK="final-dist/Myapp_AI_Coding_Textbook_latest.apk"
           NOTES_FILE="final-dist/release_notes.md"
           cat > "$NOTES_FILE" <<EOF
-          ## AI CODING OS v${VERSION}
+          ## 코딩 완전과정 v${VERSION}
 
           - Android versionCode: ${VERSION_CODE}
           - Source commit: ${{ steps.commit.outputs.sha }}
-          - Full textbook / feedback / review regression: PASS before release promotion
+          - 11 TRACK 교재 / 실습 / 피드백 / 복습 / Android 회귀검증 통과 후 승격
           - Release APK is signed with the same application key used by prior Myapp releases
           - In-app updater asset: Myapp_AI_Coding_Textbook_latest.apk
 
-          This release is consumed by the in-app updater. Android still requires final user confirmation before installing a sideloaded APK.
+          앱 내 자동업데이트가 이 release를 감지합니다. Android 정책상 sideload APK 설치 마지막 단계에서는 사용자 확인이 필요합니다.
           EOF
 
           if gh release view "$TAG" >/dev/null 2>&1; then
             gh release upload "$TAG" "$APK" --clobber
             gh release edit "$TAG" \
-              --title "AI CODING OS v${VERSION}" \
+              --title "코딩 완전과정 v${VERSION}" \
               --notes-file "$NOTES_FILE" \
               --latest
           else
             gh release create "$TAG" "$APK" \
               --target "${{ steps.commit.outputs.sha }}" \
-              --title "AI CODING OS v${VERSION}" \
+              --title "코딩 완전과정 v${VERSION}" \
               --notes-file "$NOTES_FILE" \
               --latest
           fi
