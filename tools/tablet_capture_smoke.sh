@@ -9,10 +9,10 @@ TEST_CLASS="com.futuretech.poweruser.textbook.V1TextbookTabletUiInstrumentedTest
 APP_APK="app/build/outputs/apk/debug/app-debug.apk"
 TEST_APK="app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk"
 INSTRUMENTATION_OUT="$EVIDENCE_DIR/tablet_instrumentation.txt"
-SCREENSHOT="$EVIDENCE_DIR/v2_track_tablet.png"
+SCREENSHOT="$EVIDENCE_DIR/v4_book_reader_tablet.png"
 LOGCAT_OUT="$EVIDENCE_DIR/tablet_capture_logcat.txt"
 DEVICE_META="$EVIDENCE_DIR/tablet_device_metrics.txt"
-EVIDENCE_TAG="V2TrackTabletEvidence"
+EVIDENCE_TAG="V4BookReaderEvidence"
 
 mkdir -p "$EVIDENCE_DIR"
 test -s "$APP_APK"
@@ -112,6 +112,6 @@ grep -q 'OK (1 test)' "$INSTRUMENTATION_OUT"
 grep -q 'INSTRUMENTATION_CODE: -1' "$INSTRUMENTATION_OUT"
 grep -q 'READY_FOR_SCREENSHOT' "$LOGCAT_OUT"
 
-echo "GALAXY_TAB_V2_TRACK_READER_SCREENSHOT_PASS"
+echo "GALAXY_TAB_V4_PAGED_BOOK_READER_SCREENSHOT_PASS"
 trap - EXIT
 cleanup
