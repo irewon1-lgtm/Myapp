@@ -82,7 +82,7 @@ object TextbookLearningFlow {
             section.blocks
         }
         val depthBlocks = if (isV3LearnerSection) V4BookDepthLibrary.blocksFor(section.id) else emptyList()
-        val learnerBlocks = authoredWithGuide + depthBlocks
+        val learnerBlocks = insertDepthBeforeSelfCheck(authoredWithGuide, depthBlocks)
 
         return listOf(
             LearningConcept(
@@ -93,6 +93,25 @@ object TextbookLearningFlow {
                 problem = recall
             )
         )
+    }
+
+    /**
+     * The depth layer belongs after the authored lesson body but before the provided self-check
+     * answers. That preserves the book rhythm: learn -> deepen -> attempt recall -> compare answer.
+     */
+    private fun insertDepthBeforeSelfCheck(
+        guidedBlocks: List<TextbookBlock>,
+        depthBlocks: List<TextbookBlock>
+    ): List<TextbookBlock> {
+        if (depthBlocks.isEmpty()) return guidedBlocks
+        val selfCheckIndex = guidedBlocks.indexOfFirst { block ->
+            block is TextbookBlock.Heading && block.text.startsWith("자가점검 정답·해설")
+        }
+        return if (selfCheckIndex >= 0) {
+            guidedBlocks.take(selfCheckIndex) + depthBlocks + guidedBlocks.drop(selfCheckIndex)
+        } else {
+            guidedBlocks + depthBlocks
+        }
     }
 
     fun normalizeAnswer(value: String): String = value
