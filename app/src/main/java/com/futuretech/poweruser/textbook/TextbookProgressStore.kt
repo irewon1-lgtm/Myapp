@@ -13,21 +13,21 @@ class TextbookProgressStore(context: Context) {
     fun selectedChapterId(): String? = prefs.getString("selected_track", null)
 
     fun saveSelectedChapter(id: String) {
-        prefs.edit().putString("selected_track", id).apply()
+        prefs.edit().putString("selected_track", id).commit()
     }
 
     fun selectedSectionIndex(chapterId: String): Int =
         prefs.getInt("selected_lesson_$chapterId", 0).coerceAtLeast(0)
 
     fun saveSelectedSectionIndex(chapterId: String, sectionIndex: Int) {
-        prefs.edit().putInt("selected_lesson_$chapterId", sectionIndex.coerceAtLeast(0)).apply()
+        prefs.edit().putInt("selected_lesson_$chapterId", sectionIndex.coerceAtLeast(0)).commit()
     }
 
     fun selectedConceptIndex(sectionId: String): Int =
         prefs.getInt("selected_recall_$sectionId", 0).coerceAtLeast(0)
 
     fun saveSelectedConceptIndex(sectionId: String, conceptIndex: Int) {
-        prefs.edit().putInt("selected_recall_$sectionId", conceptIndex.coerceAtLeast(0)).apply()
+        prefs.edit().putInt("selected_recall_$sectionId", conceptIndex.coerceAtLeast(0)).commit()
     }
 
     /** Exact e-book page restore point for the current concept/lesson. */
@@ -35,8 +35,8 @@ class TextbookProgressStore(context: Context) {
         prefs.getInt("reader_page_$conceptId", 0).coerceAtLeast(0)
 
     fun saveSelectedPageIndex(conceptId: String, pageIndex: Int) {
-        // A page turn is infrequent and writes one Int. Commit synchronously so an immediate app
-        // close cannot leave the learner on the previous page when the book is reopened.
+        // Reader position writes are tiny and infrequent. Commit synchronously so an immediate app
+        // close cannot reopen an older TRACK / LESSON / page than the one the learner just reached.
         prefs.edit().putInt("reader_page_$conceptId", pageIndex.coerceAtLeast(0)).commit()
     }
 
