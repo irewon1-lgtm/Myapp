@@ -6,6 +6,7 @@ import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.test.onAllNodesWithTag
 import androidx.compose.ui.test.onAllNodesWithText
 import androidx.compose.ui.test.onNodeWithTag
+import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import androidx.test.platform.app.InstrumentationRegistry
 import com.futuretech.poweruser.MainActivity
@@ -30,10 +31,12 @@ class V1TextbookUiInstrumentedTest {
     }
 
     @Test
-    fun appLaunchesIntoElevenTrackCurriculumThenOpensLessonReader() {
+    fun appLaunchesAsBookLibraryThenOpensPagedReaderAndRestoresPage() {
         assertTagExists("curriculum_overview_root")
         compose.onNodeWithTag("curriculum_chapter_count").assertTextContains("TRACK 11개", substring = true)
+        assertTagExists("curriculum_continue_button")
         assertTagExists("curriculum_review_button")
+        assertTagExists("curriculum_track_shelf")
         assertTagExists("curriculum_chapter_V1-C01")
         compose.onNodeWithTag("curriculum_chapter_V1-C01").performClick()
 
@@ -41,6 +44,20 @@ class V1TextbookUiInstrumentedTest {
         assertTagExists("textbook_section_strip")
         assertTagExists("textbook_reader")
         assertTagExists("textbook_section_progress")
+        assertTagExists("textbook_lesson_cover")
+        assertTagExists("textbook_page_indicator")
+        assertTagExists("textbook_left_tap_zone")
+        assertTagExists("textbook_right_tap_zone")
+        assertTagExists("reader_toc_button")
+
+        compose.onNodeWithTag("textbook_page_indicator").assertTextContains("1 /", substring = true)
+        compose.onNodeWithTag("textbook_right_tap_zone").performClick()
+        compose.onNodeWithTag("textbook_page_indicator").assertTextContains("2 /", substring = true)
+
+        compose.onNodeWithText("‹ 서재").performClick()
+        assertTagExists("curriculum_overview_root")
+        compose.onNodeWithTag("curriculum_chapter_V1-C01").performClick()
+        compose.onNodeWithTag("textbook_page_indicator").assertTextContains("2 /", substring = true)
 
         assertTextAbsent("9권 · 134장")
         assertTextAbsent("권 → 장 → 단원")
