@@ -195,7 +195,7 @@ fun AppNavigation() {
             )
         }
         composable("textbook_v1/practice/{lessonId}") { backStackEntry ->
-            val lessonId = backStackEntry.arguments?.getString("lessonId") ?: "TB1-C01"
+            val lessonId = backStackEntry.arguments?.getString("lessonId") ?: "V2-T01"
             FocusedPracticeScreen(
                 lessonId = lessonId,
                 mode = LearningSessionMode.PRACTICE,
@@ -209,7 +209,7 @@ fun AppNavigation() {
             )
         }
         composable("textbook_v1/challenge/{lessonId}") { backStackEntry ->
-            val lessonId = backStackEntry.arguments?.getString("lessonId") ?: "TB1-C01"
+            val lessonId = backStackEntry.arguments?.getString("lessonId") ?: "V2-T01"
             FocusedPracticeScreen(
                 lessonId = lessonId,
                 mode = LearningSessionMode.CHALLENGE,
