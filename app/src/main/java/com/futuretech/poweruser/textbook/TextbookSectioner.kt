@@ -119,9 +119,10 @@ object TextbookSectioner {
             )
         ),
         "V1-C10" to LessonGrouping(
-            sizes = listOf(2, 2),
+            sizes = listOf(1, 1, 2),
             titles = listOf(
-                "버그 조사와 테스트로 수정의 증거를 만든다",
+                "버그를 재현하고 원인을 좁혀 수정 근거를 만든다",
+                "테스트로 수정이 맞고 다시 깨지지 않는지 증명한다",
                 "Git에서 빌드·배포·rollback까지 변경을 추적한다"
             )
         ),
