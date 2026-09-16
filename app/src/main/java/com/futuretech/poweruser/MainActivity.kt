@@ -146,11 +146,11 @@ fun AppNavigation() {
         }
     }
 
-    NavHost(navController = navController, startDestination = "home") {
+    NavHost(navController = navController, startDestination = "curriculum") {
         composable("curriculum") {
             CurriculumOverviewScreen(
                 onOpenChapter = { chapterId -> navController.navigate("textbook_v1/$chapterId") },
-                onOpenLearningHome = { navController.navigate("home") }
+                onOpenReview = { navController.navigate("review") }
             )
         }
         composable("textbook_v1") {
@@ -207,7 +207,7 @@ fun AppNavigation() {
             )
         }
         composable("textbook_v1/practice/{lessonId}") { backStackEntry ->
-            val lessonId = backStackEntry.arguments?.getString("lessonId") ?: "TB1-C01"
+            val lessonId = backStackEntry.arguments?.getString("lessonId") ?: "V2-T01"
             AdaptiveFocusedPracticeScreen(
                 lessonId = lessonId,
                 mode = LearningSessionMode.PRACTICE,
@@ -221,7 +221,7 @@ fun AppNavigation() {
             )
         }
         composable("textbook_v1/challenge/{lessonId}") { backStackEntry ->
-            val lessonId = backStackEntry.arguments?.getString("lessonId") ?: "TB1-C01"
+            val lessonId = backStackEntry.arguments?.getString("lessonId") ?: "V2-T01"
             ChapterChallengeScreen(
                 lessonId = lessonId,
                 errorNotes = errorNotesList,
