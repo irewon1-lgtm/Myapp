@@ -60,7 +60,7 @@ all_text_parts = []
 for index, path in enumerate(assets, start=1):
     text = path.read_text(encoding="utf-8")
     all_text_parts.append(text)
-    lines = text.lines()
+    lines = text.splitlines()
     lengths.append(len(text))
 
     blocks = [(i, line) for i, line in enumerate(lines) if line.startswith("## BLOCK ")]
