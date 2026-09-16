@@ -38,8 +38,9 @@ data class LearningConcept(
  * Textbook-first presentation layer.
  *
  * Each learner-facing LESSON keeps the complete authored explanation/examples/code together.
- * Beginner guidance is added around the authored body without replacing it. Synthetic/non-V3
- * callers stay legacy-safe so parser and practice tests can still construct arbitrary sections.
+ * Beginner guidance and the V4 depth layer are additive; the authored markdown is never replaced.
+ * Synthetic/non-V3 callers stay legacy-safe so parser and practice tests can still construct
+ * arbitrary sections.
  */
 object TextbookLearningFlow {
     const val MAX_BLOCKS_PER_CONCEPT = Int.MAX_VALUE
@@ -68,23 +69,27 @@ object TextbookLearningFlow {
             id = "$chapterId-${section.id}-P01",
             type = LearningProblemType.DIRECT_WRITE,
             prompt = if (guide != null) {
-                "방금 읽은 ‘${section.title}’의 본문과 정답·해설을 확인했습니다. 이제 화면을 위로 보지 말고 자기 말로 다시 설명하세요. ‘무엇인지 → 왜 필요한지 → 실제 코드·앱에서 어떻게 쓰이는지’ 중 최소 2가지를 포함하세요. 여기서는 점수를 깎지 않으며, 실행 채점은 TRACK 실전에서 합니다."
+                "방금 읽은 ‘${section.title}’의 본문·심화 설명·정답 해설까지 확인했습니다. 이제 화면을 보지 말고 자기 말로 다시 설명하세요. ‘무엇인지 → 왜 필요한지 → 실제 코드·앱에서 어떻게 쓰이는지 → 어디서 실패하는지’ 중 최소 3가지를 포함하세요. 여기서는 점수를 깎지 않으며, 실행 채점은 TRACK 실전에서 합니다."
             } else {
                 "방금 읽은 ‘${section.title}’을 책을 보지 않고 자기 말로 설명하세요. 무엇인지, 왜 필요한지, 실제 코드·앱에서 어디에 쓰이는지 중 최소 2가지를 포함하세요. 여기서는 점수를 깎지 않으며, 실행 채점은 TRACK 실전에서 합니다."
             },
             referenceAnswer = guide?.answerPoints?.joinToString("\n").orEmpty()
         )
 
+        val authoredWithGuide = if (guide != null) {
+            V3BeginnerGuidanceResolver.decorateBlocks(section.id, section.blocks)
+        } else {
+            section.blocks
+        }
+        val depthBlocks = if (isV3LearnerSection) V4BookDepthLibrary.blocksFor(section.id) else emptyList()
+        val learnerBlocks = authoredWithGuide + depthBlocks
+
         return listOf(
             LearningConcept(
                 id = "${section.id}-C01",
                 index = 0,
                 title = title,
-                blocks = if (guide != null) {
-                    V3BeginnerGuidanceResolver.decorateBlocks(section.id, section.blocks)
-                } else {
-                    section.blocks
-                },
+                blocks = learnerBlocks,
                 problem = recall
             )
         )
