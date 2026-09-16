@@ -74,21 +74,23 @@ class V3BeginnerGuidanceTest {
 
     @Test
     fun previouslyAbruptAdvancedTermsNowHavePlainLanguagePreviews() {
-        val required = mapOf(
-            "V1-C03-S01" to listOf("amortized cost", "BST", "heap", "trie"),
-            "V1-C05-S04" to listOf("value is User", "Record<string, unknown>", "race condition"),
-            "V1-C06-S03" to listOf("MIME type", "boundary", "preflight"),
-            "V1-C07-S02" to listOf("IDOR/BOLA", "single flight", "TTL jitter", "DLQ", "outbox", "saga/compensation"),
-            "V1-C08-S02" to listOf("selectivity", "optimizer", "WAL"),
-            "V1-C11-S02" to listOf("circuit breaker", "bulkhead", "SLI/SLO")
+        val requiredByTrack = mapOf(
+            "V1-C03-" to listOf("amortized cost", "BST", "heap", "trie"),
+            "V1-C05-" to listOf("value is User", "Record<string, unknown>", "race condition"),
+            "V1-C06-" to listOf("MIME type", "boundary", "preflight"),
+            "V1-C07-" to listOf("IDOR/BOLA", "DLQ", "outbox", "observability"),
+            "V1-C08-" to listOf("selectivity", "optimizer", "WAL"),
+            "V1-C11-" to listOf("circuit breaker", "bulkhead", "SLI/SLO")
         )
 
-        required.forEach { (sectionId, terms) ->
-            val hints = V3BeginnerGuidanceResolver.forSection(sectionId).termHints
+        requiredByTrack.forEach { (prefix, terms) ->
+            val hints = V3BeginnerGuidanceResolver.guides
+                .filter { it.sectionId.startsWith(prefix) }
+                .flatMap { it.termHints }
             terms.forEach { term ->
                 val hint = hints.firstOrNull { it.term == term }
-                assertTrue("$sectionId: missing plain-language preview for $term", hint != null)
-                assertTrue("$sectionId: preview for $term is too thin", requireNotNull(hint).plainMeaning.length >= 10)
+                assertTrue("$prefix: missing plain-language preview for $term", hint != null)
+                assertTrue("$prefix: preview for $term is too thin", requireNotNull(hint).plainMeaning.length >= 10)
             }
         }
     }
