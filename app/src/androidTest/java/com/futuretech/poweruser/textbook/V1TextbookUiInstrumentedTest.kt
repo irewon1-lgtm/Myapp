@@ -17,7 +17,8 @@ class V1TextbookUiInstrumentedTest {
     @Test
     fun appLaunchesIntoElevenTrackCurriculumThenOpensLessonReader() {
         assertTagExists("curriculum_overview_root")
-        compose.onNodeWithTag("curriculum_chapter_count").assertTextContains("TRACK 11개")
+        compose.onNodeWithTag("curriculum_chapter_count").assertTextContains("TRACK 11개", substring = true)
+        assertTagExists("curriculum_review_button")
         assertTagExists("curriculum_chapter_V1-C01")
         compose.onNodeWithTag("curriculum_chapter_V1-C01").performClick()
 
