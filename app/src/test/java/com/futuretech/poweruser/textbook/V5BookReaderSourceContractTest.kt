@@ -28,24 +28,47 @@ class V5BookReaderSourceContractTest {
         assertTrue(reader.contains("val part = manifest.parts[partIndex]"))
         assertTrue(reader.contains("repo.loadSourceMap(part)"))
         assertTrue(reader.contains("repo.loadPart(part)"))
-        assertFalse("V5 must not join every part into one track-sized String", reader.contains("manifest.parts.flatMap"))
-        assertFalse("V5 must not eagerly load every part", reader.contains("manifest.parts.map { repo.loadPart"))
+        assertFalse(reader.contains("manifest.parts.flatMap"))
+        assertFalse(reader.contains("manifest.parts.map { repo.loadPart"))
     }
 
     @Test
-    fun V5ReaderUsesMeasuredPaginationAndFullPageNavigation() {
+    fun V5ReaderUsesMeasuredPaginationAndUltraThinBookChrome() {
         val reader = source("com/futuretech/poweruser/ui/V5TrackBookScreen.kt")
         assertTrue(reader.contains("MeasuredTextbookPageComposer.paginate("))
         assertTrue(reader.contains("rememberTextMeasurer"))
         assertTrue(reader.contains("detectHorizontalDragGestures"))
         assertTrue(reader.contains("v5_left_tap_zone"))
         assertTrue(reader.contains("v5_right_tap_zone"))
-        assertTrue(reader.contains("V5_PAGE_Y = 6.dp"))
-        assertTrue(reader.contains("V5_OUTER_Y = 1.dp"))
+        assertTrue(reader.contains("V5_TOP_HEIGHT = 26.dp"))
+        assertTrue(reader.contains("V5_PART_HEIGHT = 18.dp"))
+        assertTrue(reader.contains("V5_PAGE_Y = 3.dp"))
+        assertTrue(reader.contains("V5_OUTER_Y = 0.dp"))
+        assertTrue(reader.contains("V5_FOOTER_HEIGHT = 14.dp"))
+        assertTrue(reader.contains("RoundedCornerShape(0.dp)"))
         assertFalse(reader.contains("charsPerLine"))
         assertFalse(reader.contains("/ 27f"))
         assertFalse(reader.contains("LazyColumn"))
         assertFalse(reader.contains("verticalScroll"))
+    }
+
+    @Test
+    fun measuredComposerTypographyMatchesTheActualReader() {
+        val reader = source("com/futuretech/poweruser/ui/V5TrackBookScreen.kt")
+        val measured = source("com/futuretech/poweruser/ui/MeasuredTextbookPageComposer.kt")
+        listOf(
+            "fontSize = 16.5.sp, lineHeight = 27.sp",
+            "fontSize = 15.sp, lineHeight = 23.sp",
+            "fontSize = 13.sp, lineHeight = 20.sp"
+        ).forEach { metric ->
+            assertTrue("reader missing metric: $metric", reader.contains(metric))
+            assertTrue("measurer missing metric: $metric", measured.contains(metric))
+        }
+        assertTrue(measured.contains("1 -> 23.sp"))
+        assertTrue(measured.contains("2 -> 20.sp"))
+        assertTrue(measured.contains("3.dp"))
+        assertTrue(measured.contains("26.dp"))
+        assertTrue(measured.contains("20.dp"))
     }
 
     @Test
