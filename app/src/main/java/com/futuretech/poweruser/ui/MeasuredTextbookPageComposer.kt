@@ -18,10 +18,10 @@ import kotlin.math.max
 /**
  * Pagination driven by the same Compose text engine which renders the page.
  *
- * The previous reader guessed `charsPerLine` and divided the viewport by a fixed 27dp line height.
- * That cannot know the true width of Hangul/Latin glyphs, heading sizes, font scale, wrapping code,
- * list rows or table cells. This composer measures those units in pixels at the active density and
- * width, and then slices only splittable authored blocks to the remaining measured page height.
+ * The old reader guessed characters per line and divided the viewport by a fixed 27dp line height.
+ * That cannot know the real width of Hangul/Latin glyphs, heading wrapping, font scale, code, lists
+ * or tables. This composer measures those units in pixels at the active density and width, then
+ * slices only authored units that are safe to split.
  */
 internal object MeasuredTextbookPageComposer {
     private val paragraphStyle = TextStyle(fontSize = 16.5.sp, lineHeight = 27.sp)
@@ -55,7 +55,7 @@ internal object MeasuredTextbookPageComposer {
         }
 
         val blockGap = with(density) { 8.dp.roundToPx() }
-        val twoBodyLines = measureText("가\n가", paragraphStyle, contentWidthPx, textMeasurer).size.height
+        val oneBodyLine = measureText("가", paragraphStyle, contentWidthPx, textMeasurer).size.height
         val queue = ArrayDeque<TextbookBlock>()
         blocks.forEach(queue::addLast)
         val pages = mutableListOf<ResultPage>()
@@ -86,10 +86,18 @@ internal object MeasuredTextbookPageComposer {
             val remaining = contentHeightPx - used - gap
             val fullHeight = measureBlock(block, contentWidthPx, density, textMeasurer)
 
-            if (block is TextbookBlock.Heading && current.isNotEmpty() && remaining < fullHeight + twoBodyLines) {
-                flush()
-                queue.addFirst(block)
-                continue
+            if (block is TextbookBlock.Heading && current.isNotEmpty()) {
+                val headingLayout = measureText(block.text, headingStyle(block.level), contentWidthPx, textMeasurer)
+                // Extreme simulation showed that reserving two body lines after every heading creates
+                // large artificial holes on compact pages. Keep a short one-line heading with one
+                // real body line. A heading which already wraps to 2+ lines reserves no extra body
+                // height; the heading itself is already a substantial measured unit.
+                val bodyReserve = if (headingLayout.lineCount <= 1) oneBodyLine else 0
+                if (remaining < fullHeight + bodyReserve) {
+                    flush()
+                    queue.addFirst(block)
+                    continue
+                }
             }
 
             if (fullHeight <= remaining) {
@@ -110,6 +118,8 @@ internal object MeasuredTextbookPageComposer {
                 flush()
                 queue.addFirst(block)
             } else {
+                // An authored atom which genuinely cannot be split is surfaced as over-budget rather
+                // than silently dropped or rewritten. Runtime CLEAN must reject actual clipping.
                 add(block, fullHeight)
                 flush()
             }
@@ -255,6 +265,7 @@ internal object MeasuredTextbookPageComposer {
         }
         if (lastFittingLine < 1 || lastFittingLine >= layout.lineCount - 1) return null
 
+        // Do not leave a one-line widow in the paragraph tail when the head can give one line back.
         if (layout.lineCount - (lastFittingLine + 1) == 1 && lastFittingLine >= 2) {
             lastFittingLine--
         }
@@ -282,7 +293,9 @@ internal object MeasuredTextbookPageComposer {
             if (measureBulletList(candidate, widthPx, density, measurer) <= availablePx) {
                 best = mid
                 low = mid + 1
-            } else high = mid - 1
+            } else {
+                high = mid - 1
+            }
         }
         if (best <= 0 || best >= block.items.size) return null
         return TextbookBlock.BulletList(block.items.take(best), block.ordered) to
@@ -307,7 +320,9 @@ internal object MeasuredTextbookPageComposer {
             if (measureCode(candidate, widthPx, density, measurer) <= availablePx) {
                 best = mid
                 low = mid + 1
-            } else high = mid - 1
+            } else {
+                high = mid - 1
+            }
         }
         if (best <= 0 || best >= lines.size) return null
         return TextbookBlock.Code(block.language, lines.take(best).joinToString("\n")) to
@@ -331,7 +346,9 @@ internal object MeasuredTextbookPageComposer {
             if (measureTable(candidate, widthPx, density, measurer) <= availablePx) {
                 best = mid
                 low = mid + 1
-            } else high = mid - 1
+            } else {
+                high = mid - 1
+            }
         }
         if (best <= 0 || best >= block.rows.size) return null
         return TextbookBlock.Table(block.headers, block.rows.take(best)) to
