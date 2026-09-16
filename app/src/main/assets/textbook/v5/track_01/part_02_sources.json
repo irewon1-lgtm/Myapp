@@ -1,19 +1,19 @@
 {
-  "partId": "T01-P02",
-  "sections": [
-    {"sectionId": "T01-P02-S01-source-structure", "sourceIds": ["CSAPP3", "PYTHON-REF"]},
-    {"sectionId": "T01-P02-S02-compile-runtime", "sourceIds": ["CSAPP3", "ANDROID-FUNDAMENTALS"]},
-    {"sectionId": "T01-P02-S03-link-load", "sourceIds": ["CSAPP3", "TLPI"]},
-    {"sectionId": "T01-P02-S04-process-vm", "sourceIds": ["OSTEP", "TLPI", "CSAPP3"]},
-    {"sectionId": "T01-P02-S05-stack-heap", "sourceIds": ["CSAPP3", "OSTEP"]},
-    {"sectionId": "T01-P02-S06-cpu-state", "sourceIds": ["CSAPP3"]},
-    {"sectionId": "T01-P02-S07-memory-hierarchy", "sourceIds": ["CSAPP3"]},
-    {"sectionId": "T01-P02-S08-syscalls", "sourceIds": ["TLPI", "OSTEP"]},
-    {"sectionId": "T01-P02-S09-file-io", "sourceIds": ["TLPI", "OSTEP"]},
-    {"sectionId": "T01-P02-S10-process-thread", "sourceIds": ["OSTEP", "TLPI"]},
-    {"sectionId": "T01-P02-S11-android-process", "sourceIds": ["ANDROID-FUNDAMENTALS"]},
-    {"sectionId": "T01-P02-S12-evidence-trace", "sourceIds": ["CSAPP3", "TLPI", "ANDROID-FUNDAMENTALS"]},
-    {"sectionId": "T01-P02-S13-performance", "sourceIds": ["CSAPP3", "OSTEP", "SRE"]},
-    {"sectionId": "T01-P02-S14-model", "sourceIds": ["CSAPP3", "OSTEP", "TLPI"]}
+  "partId":"T01-P02",
+  "sections":[
+    {"sectionId":"T01-P02-S01-frontend-semantics","sourceIds":["CSAPP3","PYTHON-REF","LLVM-LANGREF"]},
+    {"sectionId":"T01-P02-S02-ir-verifier","sourceIds":["LLVM-LANGREF","CSAPP3"]},
+    {"sectionId":"T01-P02-S03-runtime-strategies","sourceIds":["CSAPP3","AOSP-ART","AOSP-ART-JIT"]},
+    {"sectionId":"T01-P02-S04-codegen-abi","sourceIds":["CSAPP3","ARM-ELF-ABI"]},
+    {"sectionId":"T01-P02-S05-object-link","sourceIds":["CSAPP3","TLPI","ARM-ELF-ABI"]},
+    {"sectionId":"T01-P02-S06-loader-process","sourceIds":["CSAPP3","TLPI","OSTEP"]},
+    {"sectionId":"T01-P02-S07-stack-lifetime","sourceIds":["CSAPP3","TLPI"]},
+    {"sectionId":"T01-P02-S08-cpu-state","sourceIds":["CSAPP3"]},
+    {"sectionId":"T01-P02-S09-syscalls-resources","sourceIds":["TLPI","OSTEP","LINUX-MAN"]},
+    {"sectionId":"T01-P02-S10-thread-scheduler","sourceIds":["OSTEP","TLPI","LINUX-SCHED"]},
+    {"sectionId":"T01-P02-S11-android-runtime","sourceIds":["AOSP-ART","AOSP-ZYGOTE","ANDROID-PROCESSES","ANDROID-FUNDAMENTALS"]},
+    {"sectionId":"T01-P02-S12-failure-evidence","sourceIds":["CSAPP3","TLPI","LLVM-LANGREF","AOSP-ART"]},
+    {"sectionId":"T01-P02-S13-performance-decomposition","sourceIds":["CSAPP3","OSTEP","SRE"]},
+    {"sectionId":"T01-P02-S14-execution-boundaries","sourceIds":["CSAPP3","OSTEP","TLPI"]}
   ]
 }
