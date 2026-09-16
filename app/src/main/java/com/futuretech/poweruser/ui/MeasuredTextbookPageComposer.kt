@@ -15,21 +15,14 @@ import com.futuretech.poweruser.textbook.TextbookContentPage
 import java.util.ArrayDeque
 import kotlin.math.max
 
-/**
- * Pagination driven by the same Compose text engine which renders the page.
- *
- * The old reader guessed characters per line and divided the viewport by a fixed 27dp line height.
- * That cannot know the real width of Hangul/Latin glyphs, heading wrapping, font scale, code, lists
- * or tables. This composer measures those units in pixels at the active density and width, then
- * slices only authored units that are safe to split.
- */
+/** Pixel-measured pagination using the same typography and spacing as the V5 reader. */
 internal object MeasuredTextbookPageComposer {
     private val paragraphStyle = TextStyle(fontSize = 16.5.sp, lineHeight = 27.sp)
     private val bulletBodyStyle = TextStyle(fontSize = 15.sp, lineHeight = 23.sp)
-    private val bulletMarkStyle = TextStyle(fontSize = 14.sp, fontWeight = FontWeight.Bold)
+    private val bulletMarkStyle = TextStyle(fontSize = 13.5.sp, fontWeight = FontWeight.Bold)
     private val codeStyle = TextStyle(fontFamily = FontFamily.Monospace, fontSize = 13.sp, lineHeight = 20.sp)
-    private val codeLabelStyle = TextStyle(fontSize = 9.sp, fontWeight = FontWeight.Bold)
-    private val tableHeaderStyle = TextStyle(fontSize = 9.sp, fontWeight = FontWeight.Bold)
+    private val codeLabelStyle = TextStyle(fontSize = 8.5.sp, fontWeight = FontWeight.Bold)
+    private val tableHeaderStyle = TextStyle(fontSize = 8.5.sp, fontWeight = FontWeight.Bold)
     private val tableValueStyle = TextStyle(fontSize = 13.sp, lineHeight = 19.sp)
 
     internal data class ResultPage(
@@ -50,9 +43,7 @@ internal object MeasuredTextbookPageComposer {
     ): List<ResultPage> {
         require(contentWidthPx > 0) { "contentWidthPx must be positive" }
         require(contentHeightPx > 0) { "contentHeightPx must be positive" }
-        if (blocks.isEmpty()) {
-            return listOf(ResultPage(TextbookContentPage(emptyList(), 0), 0, contentHeightPx))
-        }
+        if (blocks.isEmpty()) return listOf(ResultPage(TextbookContentPage(emptyList(), 0), 0, contentHeightPx))
 
         val blockGap = with(density) { 8.dp.roundToPx() }
         val oneBodyLine = measureText("가", paragraphStyle, contentWidthPx, textMeasurer).size.height
@@ -63,18 +54,12 @@ internal object MeasuredTextbookPageComposer {
         var used = 0
 
         fun gapBeforeNext(): Int = if (current.isEmpty()) 0 else blockGap
-
         fun flush() {
             if (current.isEmpty()) return
-            pages += ResultPage(
-                content = TextbookContentPage(current.toList(), estimatedLines = 0),
-                usedHeightPx = used,
-                availableHeightPx = contentHeightPx
-            )
+            pages += ResultPage(TextbookContentPage(current.toList(), 0), used, contentHeightPx)
             current = mutableListOf()
             used = 0
         }
-
         fun add(block: TextbookBlock, measuredHeight: Int) {
             used += gapBeforeNext() + measuredHeight
             current += block
@@ -88,10 +73,6 @@ internal object MeasuredTextbookPageComposer {
 
             if (block is TextbookBlock.Heading && current.isNotEmpty()) {
                 val headingLayout = measureText(block.text, headingStyle(block.level), contentWidthPx, textMeasurer)
-                // Extreme simulation showed that reserving two body lines after every heading creates
-                // large artificial holes on compact pages. Keep a short one-line heading with one
-                // real body line. A heading which already wraps to 2+ lines reserves no extra body
-                // height; the heading itself is already a substantial measured unit.
                 val bodyReserve = if (headingLayout.lineCount <= 1) oneBodyLine else 0
                 if (remaining < fullHeight + bodyReserve) {
                     flush()
@@ -107,8 +88,7 @@ internal object MeasuredTextbookPageComposer {
 
             val split = splitForHeight(block, contentWidthPx, remaining, density, textMeasurer)
             if (split != null) {
-                val headHeight = measureBlock(split.first, contentWidthPx, density, textMeasurer)
-                add(split.first, headHeight)
+                add(split.first, measureBlock(split.first, contentWidthPx, density, textMeasurer))
                 split.second?.let(queue::addFirst)
                 flush()
                 continue
@@ -118,30 +98,25 @@ internal object MeasuredTextbookPageComposer {
                 flush()
                 queue.addFirst(block)
             } else {
-                // An authored atom which genuinely cannot be split is surfaced as over-budget rather
-                // than silently dropped or rewritten. Runtime CLEAN must reject actual clipping.
                 add(block, fullHeight)
                 flush()
             }
         }
         flush()
-
-        return pages.ifEmpty {
-            listOf(ResultPage(TextbookContentPage(emptyList(), 0), 0, contentHeightPx))
-        }
+        return pages.ifEmpty { listOf(ResultPage(TextbookContentPage(emptyList(), 0), 0, contentHeightPx)) }
     }
 
     private fun headingStyle(level: Int): TextStyle {
         val size = when (level) {
-            1 -> 24.sp
-            2 -> 21.sp
+            1 -> 23.sp
+            2 -> 20.sp
             3 -> 18.sp
             4 -> 16.sp
             else -> 15.sp
         }
         return TextStyle(
             fontSize = size,
-            lineHeight = (size.value + 7).sp,
+            lineHeight = (size.value + 6).sp,
             fontWeight = if (level <= 3) FontWeight.Bold else FontWeight.SemiBold
         )
     }
@@ -153,14 +128,14 @@ internal object MeasuredTextbookPageComposer {
         measurer: TextMeasurer
     ): Int = when (block) {
         is TextbookBlock.Heading -> {
-            val topPad = with(density) { (if (block.level <= 3) 4.dp else 1.dp).roundToPx() }
+            val topPad = with(density) { (if (block.level <= 3) 3.dp else 1.dp).roundToPx() }
             topPad + measureText(block.text, headingStyle(block.level), widthPx, measurer).size.height
         }
         is TextbookBlock.Paragraph -> measureText(block.text, paragraphStyle, widthPx, measurer).size.height
         is TextbookBlock.BulletList -> measureBulletList(block, widthPx, density, measurer)
         is TextbookBlock.Code -> measureCode(block, widthPx, density, measurer)
         is TextbookBlock.Table -> measureTable(block, widthPx, density, measurer)
-        TextbookBlock.Divider -> with(density) { 7.dp.roundToPx() }
+        TextbookBlock.Divider -> with(density) { 5.dp.roundToPx() }
     }
 
     private fun measureBulletList(
@@ -169,17 +144,18 @@ internal object MeasuredTextbookPageComposer {
         density: Density,
         measurer: TextMeasurer
     ): Int {
-        val verticalPad = with(density) { 4.dp.roundToPx() }
-        val itemGap = with(density) { 5.dp.roundToPx() }
-        val markerWidth = with(density) { 28.dp.roundToPx() }
+        val verticalPad = with(density) { 2.dp.roundToPx() }
+        val itemGap = with(density) { 4.dp.roundToPx() }
+        val markerWidth = with(density) { 26.dp.roundToPx() }
         val bodyWidth = (widthPx - markerWidth).coerceAtLeast(1)
         var height = verticalPad
         block.items.forEachIndexed { index, item ->
             if (index > 0) height += itemGap
             val marker = if (block.ordered) "${block.startNumber + index}." else "•"
-            val markerHeight = measureText(marker, bulletMarkStyle, markerWidth, measurer).size.height
-            val bodyHeight = measureText(item, bulletBodyStyle, bodyWidth, measurer).size.height
-            height += max(markerHeight, bodyHeight)
+            height += max(
+                measureText(marker, bulletMarkStyle, markerWidth, measurer).size.height,
+                measureText(item, bulletBodyStyle, bodyWidth, measurer).size.height
+            )
         }
         return height
     }
@@ -190,14 +166,13 @@ internal object MeasuredTextbookPageComposer {
         density: Density,
         measurer: TextMeasurer
     ): Int {
-        val horizontalPad = with(density) { 24.dp.roundToPx() }
+        val horizontalPad = with(density) { 20.dp.roundToPx() }
         val bodyWidth = (widthPx - horizontalPad).coerceAtLeast(1)
-        val bodyPad = with(density) { 24.dp.roundToPx() }
+        val bodyPad = with(density) { 20.dp.roundToPx() }
         var height = bodyPad + measureText(block.text.ifBlank { " " }, codeStyle, bodyWidth, measurer).size.height
         if (block.language.isNotBlank()) {
-            val labelVerticalPad = with(density) { 14.dp.roundToPx() }
-            height += labelVerticalPad + measureText(block.language.uppercase(), codeLabelStyle, bodyWidth, measurer).size.height
-            height += 1
+            val labelVerticalPad = with(density) { 10.dp.roundToPx() }
+            height += labelVerticalPad + measureText(block.language.uppercase(), codeLabelStyle, bodyWidth, measurer).size.height + 1
         }
         return height
     }
@@ -208,10 +183,10 @@ internal object MeasuredTextbookPageComposer {
         density: Density,
         measurer: TextMeasurer
     ): Int {
-        val outerPad = with(density) { 24.dp.roundToPx() }
-        val rowVerticalPad = with(density) { 12.dp.roundToPx() }
-        val childGap = with(density) { 2.dp.roundToPx() }
-        val innerWidth = (widthPx - with(density) { 24.dp.roundToPx() }).coerceAtLeast(1)
+        val outerPad = with(density) { 20.dp.roundToPx() }
+        val rowVerticalPad = with(density) { 8.dp.roundToPx() }
+        val childGap = with(density) { 1.dp.roundToPx() }
+        val innerWidth = (widthPx - with(density) { 20.dp.roundToPx() }).coerceAtLeast(1)
         var total = outerPad
         block.rows.forEachIndexed { rowIndex, row ->
             if (rowIndex > 0) total += 1
@@ -258,17 +233,12 @@ internal object MeasuredTextbookPageComposer {
     ): Pair<TextbookBlock, TextbookBlock?>? {
         val layout = measureText(block.text, paragraphStyle, widthPx, measurer)
         if (layout.lineCount < 3) return null
-
         var lastFittingLine = -1
         for (line in 0 until layout.lineCount) {
             if (layout.getLineBottom(line) <= availablePx.toFloat()) lastFittingLine = line else break
         }
         if (lastFittingLine < 1 || lastFittingLine >= layout.lineCount - 1) return null
-
-        // Do not leave a one-line widow in the paragraph tail when the head can give one line back.
-        if (layout.lineCount - (lastFittingLine + 1) == 1 && lastFittingLine >= 2) {
-            lastFittingLine--
-        }
+        if (layout.lineCount - (lastFittingLine + 1) == 1 && lastFittingLine >= 2) lastFittingLine--
         val splitIndex = layout.getLineEnd(lastFittingLine, true).coerceIn(1, block.text.lastIndex)
         val head = block.text.substring(0, splitIndex).trimEnd()
         val tail = block.text.substring(splitIndex).trimStart()
@@ -289,30 +259,19 @@ internal object MeasuredTextbookPageComposer {
         var best = 0
         while (low <= high) {
             val mid = (low + high) ushr 1
-            val candidate = TextbookBlock.BulletList(
-                items = block.items.take(mid),
-                ordered = block.ordered,
-                startNumber = block.startNumber
-            )
+            val candidate = TextbookBlock.BulletList(block.items.take(mid), block.ordered, block.startNumber)
             if (measureBulletList(candidate, widthPx, density, measurer) <= availablePx) {
                 best = mid
                 low = mid + 1
-            } else {
-                high = mid - 1
-            }
+            } else high = mid - 1
         }
         if (best <= 0 || best >= block.items.size) return null
-        val head = TextbookBlock.BulletList(
-            items = block.items.take(best),
-            ordered = block.ordered,
-            startNumber = block.startNumber
-        )
-        val tail = TextbookBlock.BulletList(
-            items = block.items.drop(best),
-            ordered = block.ordered,
-            startNumber = if (block.ordered) block.startNumber + best else block.startNumber
-        )
-        return head to tail
+        return TextbookBlock.BulletList(block.items.take(best), block.ordered, block.startNumber) to
+            TextbookBlock.BulletList(
+                block.items.drop(best),
+                block.ordered,
+                if (block.ordered) block.startNumber + best else block.startNumber
+            )
     }
 
     private fun splitCode(
@@ -333,9 +292,7 @@ internal object MeasuredTextbookPageComposer {
             if (measureCode(candidate, widthPx, density, measurer) <= availablePx) {
                 best = mid
                 low = mid + 1
-            } else {
-                high = mid - 1
-            }
+            } else high = mid - 1
         }
         if (best <= 0 || best >= lines.size) return null
         return TextbookBlock.Code(block.language, lines.take(best).joinToString("\n")) to
@@ -359,9 +316,7 @@ internal object MeasuredTextbookPageComposer {
             if (measureTable(candidate, widthPx, density, measurer) <= availablePx) {
                 best = mid
                 low = mid + 1
-            } else {
-                high = mid - 1
-            }
+            } else high = mid - 1
         }
         if (best <= 0 || best >= block.rows.size) return null
         return TextbookBlock.Table(block.headers, block.rows.take(best)) to
