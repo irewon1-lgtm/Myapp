@@ -1,0 +1,25 @@
+{
+  "partId": "T01-P04",
+  "sections": [
+    {"sectionId": "T01-P04-S01-process", "sourceIds": ["OSTEP", "TLPI", "CSAPP3"]},
+    {"sectionId": "T01-P04-S02-fork-exec", "sourceIds": ["TLPI", "OSTEP"]},
+    {"sectionId": "T01-P04-S03-thread", "sourceIds": ["OSTEP", "TLPI"]},
+    {"sectionId": "T01-P04-S04-scheduler", "sourceIds": ["OSTEP", "TLPI"]},
+    {"sectionId": "T01-P04-S05-atomicity", "sourceIds": ["OSTEP", "CSAPP3"]},
+    {"sectionId": "T01-P04-S06-mutex", "sourceIds": ["OSTEP", "TLPI"]},
+    {"sectionId": "T01-P04-S07-condition", "sourceIds": ["OSTEP", "TLPI"]},
+    {"sectionId": "T01-P04-S08-race", "sourceIds": ["OSTEP", "SRE"]},
+    {"sectionId": "T01-P04-S09-deadlock", "sourceIds": ["OSTEP", "TLPI"]},
+    {"sectionId": "T01-P04-S10-memory-model", "sourceIds": ["CSAPP3", "OSTEP"]},
+    {"sectionId": "T01-P04-S11-visibility", "sourceIds": ["CSAPP3", "OSTEP"]},
+    {"sectionId": "T01-P04-S12-ipc", "sourceIds": ["TLPI", "OSTEP"]},
+    {"sectionId": "T01-P04-S13-nonblocking", "sourceIds": ["TLPI", "SRE"]},
+    {"sectionId": "T01-P04-S14-event-loop", "sourceIds": ["SRE", "OSTEP"]},
+    {"sectionId": "T01-P04-S15-cancellation", "sourceIds": ["SRE", "ANDROID-FUNDAMENTALS"]},
+    {"sectionId": "T01-P04-S16-android-main", "sourceIds": ["ANDROID-FUNDAMENTALS"]},
+    {"sectionId": "T01-P04-S17-pool", "sourceIds": ["SRE", "OSTEP"]},
+    {"sectionId": "T01-P04-S18-contention", "sourceIds": ["OSTEP", "SRE"]},
+    {"sectionId": "T01-P04-S19-evidence", "sourceIds": ["SRE", "TLPI"]},
+    {"sectionId": "T01-P04-S20-model", "sourceIds": ["OSTEP", "TLPI", "ANDROID-FUNDAMENTALS"]}
+  ]
+}
