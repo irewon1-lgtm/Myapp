@@ -24,19 +24,19 @@ class V3BeginnerGuidanceTest {
     @Test
     fun everyCurrentLearnerLessonHasExactlyOneBeginnerGuide() {
         val sectionIds = allSections().map { it.id }
-        val guideIds = V3BeginnerGuidance.guides.map { it.sectionId }
+        val guideIds = V3BeginnerGuidanceResolver.guides.map { it.sectionId }
 
         assertTrue("V3 learner lesson count must stay inside the quality range", sectionIds.size in 20..50)
         assertEquals("Duplicate beginner guide ids", guideIds.size, guideIds.toSet().size)
         assertEquals("Guide coverage must exactly match learner lessons", sectionIds.toSet(), guideIds.toSet())
-        assertTrue(V3BeginnerGuidance.guides.all { it.mustUnderstand.size >= 3 })
-        assertTrue(V3BeginnerGuidance.guides.all { it.answerPoints.size >= 4 })
+        assertTrue(V3BeginnerGuidanceResolver.guides.all { it.mustUnderstand.size >= 3 })
+        assertTrue(V3BeginnerGuidanceResolver.guides.all { it.answerPoints.size >= 4 })
     }
 
     @Test
     fun decorationNeverDeletesOrReordersAuthoredBlocks() {
         allSections().forEach { section ->
-            val decorated = V3BeginnerGuidance.decorateBlocks(section.id, section.blocks)
+            val decorated = V3BeginnerGuidanceResolver.decorateBlocks(section.id, section.blocks)
             val start = decorated.indexOf(section.blocks.first())
 
             assertTrue("${section.id}: guide must be prepended before authored content", start > 0)
@@ -57,7 +57,7 @@ class V3BeginnerGuidanceTest {
     @Test
     fun renderedGuidanceReadingTimeCannotHideAnOverlongLesson() {
         allSections().forEach { section ->
-            val decorated = V3BeginnerGuidance.decorateBlocks(section.id, section.blocks)
+            val decorated = V3BeginnerGuidanceResolver.decorateBlocks(section.id, section.blocks)
             val renderedWeight = decorated.sumOf(TextbookSectioner::weightOf)
             val renderedMinutes = TextbookSectioner.estimatedMinutesFor(renderedWeight)
 
@@ -77,14 +77,14 @@ class V3BeginnerGuidanceTest {
         val required = mapOf(
             "V1-C03-S01" to listOf("amortized cost", "BST", "heap", "trie"),
             "V1-C05-S04" to listOf("value is User", "Record<string, unknown>", "race condition"),
-            "V1-C06-S02" to listOf("MIME type", "boundary", "preflight"),
+            "V1-C06-S03" to listOf("MIME type", "boundary", "preflight"),
             "V1-C07-S02" to listOf("IDOR/BOLA", "single flight", "TTL jitter", "DLQ", "outbox", "saga/compensation"),
             "V1-C08-S02" to listOf("selectivity", "optimizer", "WAL"),
             "V1-C11-S02" to listOf("circuit breaker", "bulkhead", "SLI/SLO")
         )
 
         required.forEach { (sectionId, terms) ->
-            val hints = V3BeginnerGuidance.forSection(sectionId).termHints
+            val hints = V3BeginnerGuidanceResolver.forSection(sectionId).termHints
             terms.forEach { term ->
                 val hint = hints.firstOrNull { it.term == term }
                 assertTrue("$sectionId: missing plain-language preview for $term", hint != null)
@@ -95,7 +95,7 @@ class V3BeginnerGuidanceTest {
 
     @Test
     fun deepDiveLessonsTellBeginnerWhatCanWait() {
-        val deep = V3BeginnerGuidance.guides.filter { it.focus == BeginnerLessonFocus.CORE_WITH_DEEP_DIVE }
+        val deep = V3BeginnerGuidanceResolver.guides.filter { it.focus == BeginnerLessonFocus.CORE_WITH_DEEP_DIVE }
         assertTrue("Expected several intentionally dense lessons", deep.size >= 8)
         assertTrue("Every deep-dive lesson must explicitly mark deferrable detail", deep.all { it.canDefer.isNotEmpty() })
     }
