@@ -3,53 +3,12 @@
   "trackNumber": 1,
   "title": "컴퓨터와 프로그래밍의 언어 — 표현에서 실행까지",
   "parts": [
-    {
-      "id": "T01-P01",
-      "order": 1,
-      "title": "정보는 비트가 아니라 해석 규칙에서 시작된다",
-      "assetPath": "textbook/v5/track_01/part_01_representation.md",
-      "sourceMapPath": "textbook/v5/track_01/part_01_sources.json",
-      "prerequisiteConceptIds": []
-    },
-    {
-      "id": "T01-P02",
-      "order": 2,
-      "title": "소스 코드가 실행 중인 프로세스가 되기까지",
-      "assetPath": "textbook/v5/track_01/part_02_execution.md",
-      "sourceMapPath": "textbook/v5/track_01/part_02_sources.json",
-      "prerequisiteConceptIds": ["T01-P01-S01-bit-pattern", "T01-P01-S03-integer-representation", "T01-P01-S04-text-representation"]
-    },
-    {
-      "id": "T01-P03",
-      "order": 3,
-      "title": "메모리는 한 덩어리가 아니고, 저장은 한 번의 동작이 아니다",
-      "assetPath": "textbook/v5/track_01/part_03_memory_storage.md",
-      "sourceMapPath": "textbook/v5/track_01/part_03_sources.json",
-      "prerequisiteConceptIds": ["T01-P02-S04-process-vm", "T01-P02-S07-memory-hierarchy", "T01-P02-S09-file-io"]
-    },
-    {
-      "id": "T01-P04",
-      "order": 4,
-      "title": "프로세스, 스레드, 동시성 — 여러 일이 동시에 보이는 이유",
-      "assetPath": "textbook/v5/track_01/part_04_process_concurrency.md",
-      "sourceMapPath": "textbook/v5/track_01/part_04_sources.json",
-      "prerequisiteConceptIds": ["T01-P02-S04-process-vm", "T01-P03-S04-copy-on-write", "T01-P03-S08-memory-pressure"]
-    },
-    {
-      "id": "T01-P05",
-      "order": 5,
-      "title": "CPU 내부 실행 — pipeline, speculation, cache, coherence",
-      "assetPath": "textbook/v5/track_01/part_05_cpu_microarchitecture.md",
-      "sourceMapPath": "textbook/v5/track_01/part_05_sources.json",
-      "prerequisiteConceptIds": ["T01-P02-S06-cpu-state", "T01-P03-S01-memory-hierarchy", "T01-P04-S11-visibility"]
-    },
-    {
-      "id": "T01-P06",
-      "order": 6,
-      "title": "장치와 I/O — interrupt, DMA, driver, queue",
-      "assetPath": "textbook/v5/track_01/part_06_devices_io.md",
-      "sourceMapPath": "textbook/v5/track_01/part_06_sources.json",
-      "prerequisiteConceptIds": ["T01-P04-S04-scheduler", "T01-P05-S15-interrupt", "T01-P03-S10-write-path"]
-    }
+    {"id":"T01-P01","order":1,"title":"정보는 비트가 아니라 해석 규칙에서 시작된다","assetPath":"textbook/v5/track_01/part_01_representation.md","sourceMapPath":"textbook/v5/track_01/part_01_sources.json","prerequisiteConceptIds":[]},
+    {"id":"T01-P02","order":2,"title":"소스 코드가 실행 중인 프로세스가 되기까지","assetPath":"textbook/v5/track_01/part_02_execution.md","sourceMapPath":"textbook/v5/track_01/part_02_sources.json","prerequisiteConceptIds":["T01-P01-S01-bit-pattern","T01-P01-S03-integer-representation","T01-P01-S04-text-representation"]},
+    {"id":"T01-P03","order":3,"title":"메모리는 한 덩어리가 아니고, 저장은 한 번의 동작이 아니다","assetPath":"textbook/v5/track_01/part_03_memory_storage.md","sourceMapPath":"textbook/v5/track_01/part_03_sources.json","prerequisiteConceptIds":["T01-P02-S04-process-vm","T01-P02-S07-memory-hierarchy","T01-P02-S09-file-io"]},
+    {"id":"T01-P04","order":4,"title":"프로세스, 스레드, 동시성 — 여러 일이 동시에 보이는 이유","assetPath":"textbook/v5/track_01/part_04_process_concurrency.md","sourceMapPath":"textbook/v5/track_01/part_04_sources.json","prerequisiteConceptIds":["T01-P02-S04-process-vm","T01-P03-S04-copy-on-write","T01-P03-S08-memory-pressure"]},
+    {"id":"T01-P05","order":5,"title":"CPU 내부 실행 — pipeline, speculation, cache, coherence","assetPath":"textbook/v5/track_01/part_05_cpu_microarchitecture.md","sourceMapPath":"textbook/v5/track_01/part_05_sources.json","prerequisiteConceptIds":["T01-P02-S06-cpu-state","T01-P03-S01-memory-hierarchy","T01-P04-S11-visibility"]},
+    {"id":"T01-P06","order":6,"title":"장치와 I/O — interrupt, DMA, driver, queue","assetPath":"textbook/v5/track_01/part_06_devices_io.md","sourceMapPath":"textbook/v5/track_01/part_06_sources.json","prerequisiteConceptIds":["T01-P04-S04-scheduler","T01-P05-S15-interrupt","T01-P03-S10-write-path"]},
+    {"id":"T01-P07","order":7,"title":"kernel boundary, 권한, 격리 — 시스템 보호 모델","assetPath":"textbook/v5/track_01/part_07_kernel_isolation.md","sourceMapPath":"textbook/v5/track_01/part_07_sources.json","prerequisiteConceptIds":["T01-P02-S08-syscalls","T01-P04-S12-ipc","T01-P06-S16-driver"]}
   ]
 }
