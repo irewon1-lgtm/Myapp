@@ -42,18 +42,20 @@ def ck(name, ok, detail):
 
 
 # The report is executed only after the complete Gradle JVM suite. Re-check the textbook-specific
-# families explicitly so the evidence file proves that pagination, deep-content, parser and reader
-# contracts all ran rather than merely relying on a single build-success flag.
+# families explicitly so evidence proves both legacy safety and the currently active V4 book reader.
 required_test_families = [
     ("TextbookExtreme60Test", 60),
     ("TextbookClean25Test", 25),
     ("TextbookMarkdownParserTest", 3),
     ("V1TextbookCatalogTest", 4),
     ("V1EditorialQualityTest", 2),
-    ("TextbookLearningFlowTest", 5),
+    ("TextbookLearningFlowTest", 6),
     ("TextbookRealAssetSectionTest", 1),
-    ("TextbookPageComposerTest", 4),
+    ("TextbookPageComposerTest", 5),
     ("V3ReaderResilienceContractTest", 3),
+    ("V4BookDepthLibraryTest", 4),
+    ("V4DepthIntegrationTest", 2),
+    ("V4BookReaderSourceContractTest", 4),
 ]
 
 runtime_rows = []
@@ -66,8 +68,8 @@ for family, minimum in required_test_families:
         f"tests={result[0]} failures={result[1]} errors={result[2]} skipped={result[3]}",
     )
 
-# Current learner-facing source is V3. Guard the real authored assets against accidental deletion,
-# placeholder replacement, loss of code examples, or broken canonical TRACK ordering.
+# The original learner-facing source is still the 11 V3 authored assets. V4 must add depth without
+# deleting or replacing those files.
 asset_dir = ROOT / "app/src/main/assets/textbook/v3"
 assets = sorted(asset_dir.glob("track_*.md"))
 ck("Exactly 11 current V3 TRACK assets", len(assets) == 11, f"count={len(assets)}")
@@ -86,32 +88,45 @@ sectioner = (ROOT / "app/src/main/java/com/futuretech/poweruser/textbook/Textboo
 flow = (ROOT / "app/src/main/java/com/futuretech/poweruser/textbook/TextbookLearningFlow.kt").read_text(encoding="utf-8")
 composer = (ROOT / "app/src/main/java/com/futuretech/poweruser/textbook/TextbookPageComposer.kt").read_text(encoding="utf-8")
 progress = (ROOT / "app/src/main/java/com/futuretech/poweruser/textbook/TextbookProgressStore.kt").read_text(encoding="utf-8")
-reader = (ROOT / "app/src/main/java/com/futuretech/poweruser/ui/V1TextbookScreen.kt").read_text(encoding="utf-8")
+reader = (ROOT / "app/src/main/java/com/futuretech/poweruser/ui/V4PagedBookScreen.kt").read_text(encoding="utf-8")
 adaptive = (ROOT / "app/src/main/java/com/futuretech/poweruser/ui/AdaptiveTextbookScreen.kt").read_text(encoding="utf-8")
 overview = (ROOT / "app/src/main/java/com/futuretech/poweruser/ui/CurriculumOverviewScreen.kt").read_text(encoding="utf-8")
 main_activity = (ROOT / "app/src/main/java/com/futuretech/poweruser/MainActivity.kt").read_text(encoding="utf-8")
+depth_library = (ROOT / "app/src/main/java/com/futuretech/poweruser/textbook/V4BookDepthLibrary.kt").read_text(encoding="utf-8")
+depth_sources = "\n".join(
+    (ROOT / f"app/src/main/java/com/futuretech/poweruser/textbook/V4BookDepthTrack{suffix}.kt").read_text(encoding="utf-8")
+    for suffix in ("01To03", "04To07", "08To11")
+)
 
 # Curriculum/content contracts.
 ck("Catalog exposes TRACK count 11", 'const val TRACK_COUNT = 11' in catalog, "TRACK_COUNT")
 ck("Catalog points at V3 assets", '"textbook/v3/track_${number.toString().padStart(2, \'0\')}.md"' in catalog, "v3 path")
 ck("V3 grouping preserves authored order", "sourceSections.flatMap" in sectioner and "section.blocks.mapNotNull(::asInternalLessonBlock)" in sectioner, "grouping")
 ck("Inline recall stays low-stakes", "점수를 깎지 않으며" in flow and "방금 읽은 ‘${section.title}’" in flow, "recall")
+ck("V4 depth is additive", "authoredWithGuide" in flow and "V4BookDepthLibrary.blocksFor" in flow and "insertDepthBeforeSelfCheck" in flow, "authored + depth")
+ck("All 42 V4 learner lessons have dedicated depth packs", depth_sources.count("sectionId = \"") == 42, f"packs={depth_sources.count('sectionId = \\"')}")
+ck("Depth layer carries worked examples", "손으로 따라가는 실전 흐름" in depth_library and "TextbookBlock.Code" in depth_library, "worked example")
+ck("Depth layer carries mistakes and further questions", "초보자가 실제로 많이 틀리는 지점" in depth_library and "다음 질문도 생각" in depth_library, "mistakes + questions")
 
-# E-book pagination contracts. These specifically prevent regression to the old endless vertical
-# reader which was the user-visible defect this release fixes.
+# Active V4 e-book pagination contracts. These gates must inspect the file actually routed by the
+# adaptive shell, not the retained V1 implementation.
+ck("Adaptive shell routes to V4 reader", "V4PagedBookScreen(" in adaptive and "V1TextbookScreen(" not in adaptive, "active V4")
 ck("Paged composer is wired", "TextbookPageComposer.paginate" in reader and "object TextbookPageComposer" in composer, "composer")
-ck("Reader has no long LazyColumn", "rememberLazyListState" not in reader and "snapshotFlow" not in reader and "verticalScroll" not in reader, "no vertical position engine")
+ck("Reader derives page capacity from viewport", "BoxWithConstraints" in reader and "(heightDp - 102f) / 27f" in reader, "viewport budget")
+ck("Reader has no long LazyColumn", all(token not in reader for token in ("rememberLazyListState", "snapshotFlow", "verticalScroll", "LazyColumn")), "no vertical position engine")
 ck("Right edge advances page", "textbook_right_tap_zone" in reader and ".clickable { next() }" in reader, "right tap")
 ck("Left edge returns page", "textbook_left_tap_zone" in reader and ".clickable { previous() }" in reader, "left tap")
-ck("Horizontal swipe page turn", "detectHorizontalDragGestures" in reader and "72.dp.toPx()" in reader, "swipe")
-ck("Visible page number", "textbook_page_indicator" in reader and '"${pageIndex + 1} / ${pages.size}"' in reader, "page indicator")
-ck("Lesson cover exists", "textbook_lesson_cover" in reader and "LessonCoverPage" in reader, "cover")
+ck("Horizontal swipe page turn", "detectHorizontalDragGestures" in reader and "64.dp.toPx()" in reader, "swipe")
+ck("Visible page number", "textbook_page_indicator" in reader and '"${pageIndex + 1} / $pageCount"' in reader, "page indicator")
+ck("Lesson cover exists", "textbook_lesson_cover" in reader and "V4LessonCoverPage" in reader, "cover")
 ck("Effective reader width remains book-like", "widthIn(max = 780.dp)" in adaptive, "780dp outer cap")
-ck("Code stays wrapped, not horizontally scrolling", "softWrap = true" in reader and "horizontalScroll(rememberScrollState())" not in reader, "code wrapping")
+ck("Book flow does not wrap every bullet list in a card", "is TextbookBlock.BulletList -> Column(" in reader and "is TextbookBlock.BulletList -> Surface(" not in reader, "plain book bullets")
+ck("Code stays wrapped, not horizontally scrolling", "softWrap = true" in reader and "horizontalScroll" not in reader, "code wrapping")
+ck("Paginator uses remaining page capacity", "availableLines" in composer and "sliceForCapacity" in composer and "MIN_USEFUL_REMAINDER" in composer, "dense packing")
 
 # Exact resume contracts: TRACK, LESSON/concept and page all persist locally. Page writes use commit
 # because closing immediately after a page turn must not reopen the previous page.
-ck("Exact page restore is wired", "selectedPageIndex(currentConcept.id)" in reader and "saveSelectedPageIndex(currentConcept.id, it)" in reader, "reader page")
+ck("Exact page restore is wired", "selectedPageIndex(concept.id)" in reader and "saveSelectedPageIndex(concept.id, it)" in reader, "reader page")
 ck("Page key persists locally", '"reader_page_$conceptId"' in progress, "reader_page")
 ck("Reader position commits synchronously", progress.count(".commit()") >= 4, "chapter/lesson/concept/page commits")
 
@@ -135,12 +150,13 @@ for label in banned:
 
 failed = [item for item in checks if not item[1]]
 report = [
-    "# V3 Paged E-book Textbook Quality Report",
+    "# V4 Dense Book Reader + Deep Beginner Content Report",
     "",
-    "Scope: deep-beginner authored content, deterministic non-scrolling pagination, left/right page turns, exact resume, focused single-column reading, library home, and existing practice integration.",
+    "Scope: intact V3 authored content plus V4 depth for all 42 learner LESSONs, remaining-space page packing, viewport-derived book pages, exact resume, focused typography, and existing practice integration.",
     "",
-    f"- Current V3 assets: **{len(assets)}/11**",
-    f"- TRACK character range: **{min(asset_lengths) if asset_lengths else 0:,}–{max(asset_lengths) if asset_lengths else 0:,}**",
+    f"- Original V3 assets preserved: **{len(assets)}/11**",
+    f"- Original TRACK character range: **{min(asset_lengths) if asset_lengths else 0:,}–{max(asset_lengths) if asset_lengths else 0:,}**",
+    f"- V4 dedicated depth packs: **{depth_sources.count('sectionId = \\"')}/42**",
     f"- Runtime/source gates: **{len(checks) - len(failed)}/{len(checks)} PASS**",
     "",
     "## Runtime families",
@@ -152,7 +168,7 @@ for name, ok, detail in checks:
     report.append(f"- {'PASS' if ok else 'FAIL'} — {name}: {detail}")
 report += ["", "## Final", f"**{'PASS' if not failed else 'FAIL'}**"]
 
-out = EVIDENCE / "V3_PAGED_EBOOK_REPORT.md"
+out = EVIDENCE / "V4_DENSE_BOOK_DEEP_CONTENT_REPORT.md"
 out.write_text("\n".join(report) + "\n", encoding="utf-8")
 print(out.read_text(encoding="utf-8"))
 if failed:
