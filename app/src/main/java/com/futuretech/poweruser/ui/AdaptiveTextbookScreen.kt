@@ -103,14 +103,16 @@ fun AdaptiveTextbookScreen(
             }
         }
     ) {
-        key(selectedChapterId) {
-            V1TextbookScreen(
-                practiceCompletedIds = practiceCompletedIds,
-                onNavigateBack = onNavigateBack,
-                onStartPractice = onStartPractice,
-                initialChapterId = selectedChapterId,
-                onOpenToc = { scope.launch { drawerState.open() } }
-            )
+        Column(modifier = Modifier.testTag("reader_single_column")) {
+            key(selectedChapterId) {
+                V1TextbookScreen(
+                    practiceCompletedIds = practiceCompletedIds,
+                    onNavigateBack = onNavigateBack,
+                    onStartPractice = onStartPractice,
+                    initialChapterId = selectedChapterId,
+                    onOpenToc = { scope.launch { drawerState.open() } }
+                )
+            }
         }
     }
 }
