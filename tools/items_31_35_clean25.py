@@ -22,7 +22,7 @@ update_gateway = read("app/src/main/java/com/futuretech/poweruser/ai/OpenAiTutor
 
 checks = [
     ("C01 360dp horizontal overflow policy", 'testTag("practice_phone_vertical")' in adaptive_practice and 'TABLET_BREAKPOINT_DP = 600' in ui_policy),
-    ("C02 tablet reader width capped", 'widthIn(max = 820.dp)' in reader and 'READER_MAX_WIDTH_DP = 820' in ui_policy),
+    ("C02 tablet reader width capped", 'widthIn(max = 780.dp)' in adaptive_reader and 'READER_MAX_WIDTH_DP = 780' in ui_policy),
     ("C03 no fixed overlap offsets in focused practice", '.offset(' not in focused),
     ("C04 no fluorescent cyan/magenta/yellow hardcodes", all(x not in color.upper() for x in ("00FFFF", "FF00FF", "FFFF00"))),
     ("C05 long chapter is sectioned into focused concepts", 'TextbookSectioner.split' in reader and 'TextbookLearningFlow.buildConcepts' in reader),
@@ -31,7 +31,7 @@ checks = [
     ("C08 rotation keeps activity/practice composition alive", 'orientation|screenSize|screenLayout|keyboardHidden' in manifest),
     ("C09 phone practice has no permanent split", 'if (split == null)' in adaptive_practice and 'practice_phone_vertical' in adaptive_practice),
     ("C10 tablet practice problem pane is 38-42 percent", 'TABLET_PROBLEM_WEIGHT = 0.40f' in ui_policy and 'TABLET_WORKSPACE_WEIGHT = 0.60f' in ui_policy),
-    ("C11 tablet reading stays single column", 'reader_single_column' in adaptive_reader and 'widthIn(max = 820.dp)' in reader),
+    ("C11 tablet reading stays single column", 'reader_single_column' in adaptive_reader and 'widthIn(max = 780.dp)' in adaptive_reader),
     ("C12 table of contents uses temporary drawer", 'ModalNavigationDrawer' in adaptive_reader and 'reader_toc_button' in reader and 'drawerState.open()' in adaptive_reader),
     ("C13 no permanent chapter sidebar in adaptive reader", 'NavigationRail' not in adaptive_reader and 'PermanentNavigationDrawer' not in adaptive_reader),
     ("C14 answer state is not color-only", '"✓ 제출 통과"' in focused and '"! 제출 실패"' in focused),
