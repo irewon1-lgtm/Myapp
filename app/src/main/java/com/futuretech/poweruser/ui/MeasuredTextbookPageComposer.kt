@@ -176,7 +176,7 @@ internal object MeasuredTextbookPageComposer {
         var height = verticalPad
         block.items.forEachIndexed { index, item ->
             if (index > 0) height += itemGap
-            val marker = if (block.ordered) "${index + 1}." else "•"
+            val marker = if (block.ordered) "${block.startNumber + index}." else "•"
             val markerHeight = measureText(marker, bulletMarkStyle, markerWidth, measurer).size.height
             val bodyHeight = measureText(item, bulletBodyStyle, bodyWidth, measurer).size.height
             height += max(markerHeight, bodyHeight)
@@ -289,7 +289,11 @@ internal object MeasuredTextbookPageComposer {
         var best = 0
         while (low <= high) {
             val mid = (low + high) ushr 1
-            val candidate = TextbookBlock.BulletList(block.items.take(mid), block.ordered)
+            val candidate = TextbookBlock.BulletList(
+                items = block.items.take(mid),
+                ordered = block.ordered,
+                startNumber = block.startNumber
+            )
             if (measureBulletList(candidate, widthPx, density, measurer) <= availablePx) {
                 best = mid
                 low = mid + 1
@@ -298,8 +302,17 @@ internal object MeasuredTextbookPageComposer {
             }
         }
         if (best <= 0 || best >= block.items.size) return null
-        return TextbookBlock.BulletList(block.items.take(best), block.ordered) to
-            TextbookBlock.BulletList(block.items.drop(best), block.ordered)
+        val head = TextbookBlock.BulletList(
+            items = block.items.take(best),
+            ordered = block.ordered,
+            startNumber = block.startNumber
+        )
+        val tail = TextbookBlock.BulletList(
+            items = block.items.drop(best),
+            ordered = block.ordered,
+            startNumber = if (block.ordered) block.startNumber + best else block.startNumber
+        )
+        return head to tail
     }
 
     private fun splitCode(
