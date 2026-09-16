@@ -1,0 +1,31 @@
+{
+  "partId": "T01-P11",
+  "sections": [
+    {"sectionId":"T01-P11-S01-reset","sourceIds":["CSAPP3","LINUX-MAN"]},
+    {"sectionId":"T01-P11-S02-firmware","sourceIds":["LINUX-MAN","AOSP-BOOTLOADER"]},
+    {"sectionId":"T01-P11-S03-bootloader","sourceIds":["AOSP-BOOTLOADER"]},
+    {"sectionId":"T01-P11-S04-chain-of-trust","sourceIds":["AOSP-AVB","AOSP-BOOT-FLOW"]},
+    {"sectionId":"T01-P11-S05-signature","sourceIds":["AOSP-AVB","NIST-SSDF"]},
+    {"sectionId":"T01-P11-S06-rollback","sourceIds":["AOSP-AVB","AOSP-BOOT-FLOW"]},
+    {"sectionId":"T01-P11-S07-ab-slot","sourceIds":["AOSP-BOOTLOADER","AOSP-BOOT-FLOW"]},
+    {"sectionId":"T01-P11-S08-boot-image","sourceIds":["AOSP-BOOTLOADER"]},
+    {"sectionId":"T01-P11-S09-bootconfig","sourceIds":["AOSP-BOOTLOADER","LINUX-BOOTCONFIG"]},
+    {"sectionId":"T01-P11-S10-kernel-init","sourceIds":["LINUX-MAN","OSTEP"]},
+    {"sectionId":"T01-P11-S11-device-tree","sourceIds":["AOSP-BOOTLOADER"]},
+    {"sectionId":"T01-P11-S12-driver-probe","sourceIds":["LINUX-MAN","OSTEP"]},
+    {"sectionId":"T01-P11-S13-init","sourceIds":["LINUX-MAN","AOSP-ZYGOTE"]},
+    {"sectionId":"T01-P11-S14-android-init","sourceIds":["AOSP-BOOTLOADER","AOSP-ZYGOTE"]},
+    {"sectionId":"T01-P11-S15-selinux","sourceIds":["ANDROID-SECURITY","AOSP-AVB"]},
+    {"sectionId":"T01-P11-S16-system-server","sourceIds":["ANDROID-FUNDAMENTALS","ANDROID-PROCESSES"]},
+    {"sectionId":"T01-P11-S17-zygote","sourceIds":["AOSP-ZYGOTE","AOSP-ART"]},
+    {"sectionId":"T01-P11-S18-package-state","sourceIds":["ANDROID-FUNDAMENTALS","AOSP-ART-CONFIG"]},
+    {"sectionId":"T01-P11-S19-post-boot","sourceIds":["AOSP-ART-CONFIG","SRE"]},
+    {"sectionId":"T01-P11-S20-bootloop","sourceIds":["AOSP-BOOTLOADER","SRE-WORKBOOK"]},
+    {"sectionId":"T01-P11-S21-watchdog","sourceIds":["SRE","OSTEP"]},
+    {"sectionId":"T01-P11-S22-boot-reason","sourceIds":["AOSP-BOOTLOADER","SRE"]},
+    {"sectionId":"T01-P11-S23-update-rollback","sourceIds":["AOSP-BOOT-FLOW","NIST-SSDF"]},
+    {"sectionId":"T01-P11-S24-startup-timeline","sourceIds":["SRE","AOSP-ZYGOTE"]},
+    {"sectionId":"T01-P11-S25-invariants","sourceIds":["SRE-WORKBOOK","NIST-SSDF"]},
+    {"sectionId":"T01-P11-S26-ota-case","sourceIds":["AOSP-BOOT-FLOW","AOSP-AVB","SRE-WORKBOOK"]}
+  ]
+}
