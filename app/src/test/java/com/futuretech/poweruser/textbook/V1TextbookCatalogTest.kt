@@ -22,19 +22,19 @@ class V1TextbookCatalogTest {
         assertEquals("V1-28", ids.last())
     }
 
-    @Test fun everyTrackHasBookScaleLearningMetadataAndV2Asset() {
+    @Test fun everyTrackHasBookScaleLearningMetadataAndV3Asset() {
         V1TextbookCatalog.chapters.forEach { track ->
             assertTrue(track.summary.length >= 30)
             assertTrue(track.keyConcepts.size >= 5)
             assertTrue(track.humanMustKnow.length >= 30)
             assertTrue(track.aiCanHelp.length >= 30)
             assertTrue(track.estimatedReadMinutes >= 1200)
-            assertTrue(track.assetPath.startsWith("textbook/v2/track_"))
+            assertTrue(track.assetPath.startsWith("textbook/v3/track_"))
             assertTrue(track.assetPath.endsWith(".md"))
         }
     }
 
-    @Test fun everyTrackHasMatchingV2PracticeLesson() {
+    @Test fun everyTrackKeepsMatchingV2PracticeLesson() {
         val practices = CurriculumDataRepository.v2TrackPracticeLessons
         assertEquals(11, practices.size)
         V1TextbookCatalog.chapters.forEach { track ->
