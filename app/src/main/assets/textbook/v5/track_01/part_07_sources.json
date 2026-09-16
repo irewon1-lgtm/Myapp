@@ -1,0 +1,25 @@
+{
+  "partId": "T01-P07",
+  "sections": [
+    {"sectionId":"T01-P07-S01-syscall-boundary","sourceIds":["TLPI","OSTEP"]},
+    {"sectionId":"T01-P07-S02-syscall-abi","sourceIds":["TLPI","CSAPP3"]},
+    {"sectionId":"T01-P07-S03-credentials","sourceIds":["TLPI","OSTEP"]},
+    {"sectionId":"T01-P07-S04-capabilities","sourceIds":["TLPI","NIST-SSDF"]},
+    {"sectionId":"T01-P07-S05-filesystem-permission","sourceIds":["TLPI","OSTEP"]},
+    {"sectionId":"T01-P07-S06-fd-limit","sourceIds":["TLPI","SRE"]},
+    {"sectionId":"T01-P07-S07-memory-limit","sourceIds":["OSTEP","ANDROID-FUNDAMENTALS"]},
+    {"sectionId":"T01-P07-S08-cgroup","sourceIds":["OSTEP","SRE"]},
+    {"sectionId":"T01-P07-S09-namespace","sourceIds":["TLPI","OSTEP"]},
+    {"sectionId":"T01-P07-S10-user-namespace","sourceIds":["TLPI","OSTEP"]},
+    {"sectionId":"T01-P07-S11-sandbox","sourceIds":["TLPI","NIST-SSDF"]},
+    {"sectionId":"T01-P07-S12-mac","sourceIds":["NIST-SSDF","ANDROID-SECURITY"]},
+    {"sectionId":"T01-P07-S13-android-sandbox","sourceIds":["ANDROID-FUNDAMENTALS","ANDROID-SECURITY"]},
+    {"sectionId":"T01-P07-S14-binder","sourceIds":["ANDROID-FUNDAMENTALS"]},
+    {"sectionId":"T01-P07-S15-request-identity","sourceIds":["ANDROID-SECURITY","OWASP-ASVS"]},
+    {"sectionId":"T01-P07-S16-toctou","sourceIds":["TLPI","NIST-SSDF"]},
+    {"sectionId":"T01-P07-S17-resource-ownership","sourceIds":["TLPI","NIST-SSDF"]},
+    {"sectionId":"T01-P07-S18-signal","sourceIds":["TLPI"]},
+    {"sectionId":"T01-P07-S19-shutdown","sourceIds":["SRE","SRE-WORKBOOK"]},
+    {"sectionId":"T01-P07-S20-diagnostics","sourceIds":["TLPI","SRE","ANDROID-SECURITY"]}
+  ]
+}
