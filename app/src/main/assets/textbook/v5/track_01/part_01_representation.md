@@ -1,708 +1,234 @@
-# PART 01 · 정보는 비트가 아니라 해석 규칙에서 시작된다
+# PART 01 · 표현 계약 — 비트열에서 의미가 생기는 조건
 
-컴퓨터를 깊게 이해하려면 `0과 1로 되어 있다`는 문장에서 멈추면 안 된다. 중요한 것은 비트 자체보다 **같은 비트열을 어떤 규칙으로 해석하느냐**다. 메모리 안의 전기적 상태는 스스로 `숫자`, `문자`, `색`, `명령어`라고 말하지 않는다. 의미는 프로그램과 하드웨어가 공유하는 표현 규칙에서 생긴다.
-
-이 PART의 목표는 비트를 외우는 것이 아니다. 파일이 깨졌을 때, 숫자가 넘쳤을 때, 한글 길이가 예상과 다를 때, 네트워크에서 받은 바이트가 엉뚱한 값이 되었을 때 무엇을 의심해야 하는지 설명할 수 있는 수준까지 내려가는 것이다.
+메모리와 저장장치에는 값의 뜻이 저장되지 않는다. 저장되는 것은 비트 패턴이고, 뜻은 **폭(width), 부호성, 바이트 순서, 인코딩, 스키마, 단위, 버전, 허용 연산**이 결정한다. 따라서 표현 버그는 데이터가 훼손되지 않아도 발생한다. 송신자와 수신자가 같은 바이트에 다른 계약을 적용하면 서로 다른 값을 얻는다.
 
 ---
 
-## CHAPTER 01 · 같은 비트열이 전혀 다른 것이 될 수 있다
+## CHAPTER 01 · 표현은 `bytes + contract`다
 
-### 비트는 의미가 아니라 구분 가능한 상태다
-
-`bit`는 binary digit의 줄임말이다. 초보 단계에서는 0과 1이라고 부르면 충분하지만, 실제 장치 안에서 0과 1이라는 숫자가 돌아다니는 것은 아니다. 트랜지스터와 회로는 전압 범위처럼 **서로 구별할 수 있는 물리 상태**를 만들고, 디지털 회로가 그 두 상태를 논리적인 0과 1로 취급한다.
-
-여기서 첫 번째 중요한 구분이 나온다.
-
-- 물리 상태는 하드웨어가 유지하고 감지한다.
-- 0과 1은 그 상태를 디지털 논리로 추상화한 표현이다.
-- 여러 비트를 묶어 무엇으로 해석할지는 다시 별도의 규칙이 정한다.
-
-예를 들어 메모리에 다음 8비트가 있다고 하자.
+값을 외부 경계로 내보낼 때 최소 계약은 다음 요소를 가져야 한다.
 
 ```text
-01000001
+field width
+signedness / numeric model
+endianness
+encoding
+schema and field identity
+unit / scale
+null or absence semantics
+version / compatibility rule
+valid range and invariants
 ```
 
-이 비트열을 부호 없는 정수로 읽으면 65다. ASCII 호환 문자 코드의 한 바이트로 읽으면 대문자 `A`다. 어떤 그래픽 포맷의 필드 일부로 읽는다면 색이나 압축 플래그의 일부일 수도 있다. CPU가 특정 위치에서 명령어 바이트로 읽는다면 연산을 지시하는 코드가 될 수도 있다.
+`decode(bytes)`라는 함수는 실제로는 충분하지 않다. 더 정확한 모델은 `decode(bytes, schema, version, policy)`다. 여기서 `policy`에는 invalid input 처리, unknown field 처리, overflow 처리, normalization 규칙처럼 구현 선택이 들어간다.
 
-따라서 `메모리에 A가 저장되어 있다`는 말은 엄밀하게 줄이면 다음에 가깝다.
+같은 raw bytes를 서로 다른 타입으로 reinterpret할 수 있다는 사실은 type safety의 출발점이다. 타입은 메모리 위에 붙는 이름이 아니라 **허용되는 값 집합과 연산, 불변조건을 제한하는 계약**이다. 도메인 타입이 강할수록 `문법적으로 가능한 값`과 `업무적으로 가능한 값`의 간격이 줄어든다.
+
+외부 데이터는 세 단계를 통과해야 한다.
 
 ```text
-메모리에 특정 비트 패턴이 있다.
-현재 프로그램이 그 바이트를 특정 문자 인코딩 규칙에 따라 해석한다.
-그 해석 결과가 A다.
+bytes/text가 형식적으로 파싱 가능한가
+→ schema/type 제약을 만족하는가
+→ 도메인 불변조건을 만족하는가
 ```
 
-이 구분은 나중에 타입, 파일 포맷, 네트워크 프로토콜, 데이터베이스 스키마를 배울 때 반복해서 등장한다. **데이터와 데이터의 의미를 결정하는 계약은 같은 것이 아니다.**
-
-### 8비트를 묶어 바이트로 다루는 이유
-
-현대 범용 시스템에서는 보통 8비트를 1바이트로 다룬다. 8개의 비트는 각각 두 상태를 가질 수 있으므로 가능한 조합은 다음과 같다.
-
-```text
-2 × 2 × 2 × 2 × 2 × 2 × 2 × 2
-= 2^8
-= 256가지
-```
-
-그래서 부호 없는 한 바이트 정수라면 0부터 255까지 256개의 값을 나타낼 수 있다.
-
-이때 `8비트니까 8까지 저장한다`고 생각하면 안 된다. 비트 수는 **자리의 개수**이고, 표현 가능한 경우의 수는 2의 거듭제곱으로 늘어난다.
-
-```text
-1 bit  -> 2가지
-2 bits -> 4가지
-3 bits -> 8가지
-8 bits -> 256가지
-16 bits -> 65,536가지
-```
-
-이 원리는 주소 공간, 정수 범위, 색 깊이, 비트 마스크를 이해하는 바탕이 된다.
-
-### 2진수는 컴퓨터 전용 마법이 아니라 자리값 표기법이다
-
-10진수 `507`은 실제로 다음 뜻이다.
-
-```text
-5 × 10^2 + 0 × 10^1 + 7 × 10^0
-= 500 + 0 + 7
-```
-
-2진수도 밑이 2일 뿐 구조는 같다.
-
-```text
-101101₂
-= 1×2^5 + 0×2^4 + 1×2^3 + 1×2^2 + 0×2^1 + 1×2^0
-= 32 + 0 + 8 + 4 + 0 + 1
-= 45
-```
-
-중요한 것은 변환 시험을 빨리 푸는 것이 아니라, **자리마다 가중치가 있고 비트 패턴이 그 가중치의 합을 선택한다**는 사실이다. 비트 연산을 읽을 때 이 사고가 필요하다.
-
-### 16진수는 4비트씩 묶어 사람이 보기 쉽게 만든 표기다
-
-긴 2진수는 사람이 읽기 어렵다.
-
-```text
-11111110110111001011101010011000
-```
-
-4비트는 16가지 패턴을 만들 수 있으므로 16진수 한 자리와 정확히 대응한다.
-
-```text
-0000 = 0
-0001 = 1
-...
-1001 = 9
-1010 = A
-1011 = B
-1100 = C
-1101 = D
-1110 = E
-1111 = F
-```
-
-따라서 32비트 값은 16진수 8자리로 정리할 수 있다.
-
-```text
-1111 1110 1101 1100 1011 1010 1001 1000
-   F    E    D    C    B    A    9    8
-
-0xFEDCBA98
-```
-
-그래서 메모리 주소, 권한 비트, 색상 코드, 디버거 출력, 머신 코드에서 16진수를 자주 본다. 컴퓨터가 16진수를 더 좋아해서가 아니다. **사람이 비트 경계를 보존하면서 짧게 읽기 편하기 때문**이다.
-
-### 비트 연산은 숫자 계산보다 상태 묶음을 다루는 데 자주 쓰인다
-
-다음 8비트를 각각 기능의 켜짐/꺼짐으로 약속했다고 하자.
-
-```text
-bit 0 = 읽기 허용
-bit 1 = 쓰기 허용
-bit 2 = 실행 허용
-bit 3 = 관리자 기능
-```
-
-`00000101`이라면 bit 0과 bit 2가 켜져 있으므로 읽기와 실행을 허용한다고 해석할 수 있다.
-
-특정 비트가 켜져 있는지 확인할 때 AND를 쓸 수 있다.
-
-```text
-flags = 0101
-mask  = 0100
-
-flags AND mask
-= 0100
-```
-
-결과가 0이 아니므로 해당 비트가 켜져 있다. OR는 비트를 켜는 데, AND와 반전된 mask는 비트를 끄는 데 사용할 수 있다.
-
-이때 핵심은 `AND라는 문법`이 아니라 **하나의 정수 안에 독립적인 yes/no 상태를 여러 개 압축해 놓고 마스크로 원하는 위치만 골라낸다**는 모델이다.
+이 세 단계를 하나로 합치면 실패 위치가 흐려진다. parser가 성공했다는 사실은 데이터가 유효하다는 증거가 아니다.
 
 ---
 
-## CHAPTER 02 · 여러 바이트가 한 값을 만들 때 순서가 생긴다
+## CHAPTER 02 · 고정 폭 정수는 수학의 정수가 아니다
 
-### 32비트 정수 하나도 메모리에서는 여러 주소를 차지한다
+`n`비트 unsigned 정수는 `2^n`개의 패턴을 표현하고 산술은 고정 폭이라는 경계 안에서 일어난다. signed two's-complement 역시 같은 패턴 수를 사용하지만 해석 범위가 다르다. 비트 패턴 자체에는 signed/unsigned 정보가 없다.
 
-32비트 값은 4바이트다. 값 `0x12345678`을 네 바이트로 나누면 다음과 같다.
-
-```text
-12 34 56 78
-```
-
-그런데 메모리는 주소가 증가하는 일렬 공간처럼 다룰 수 있으므로, 어느 바이트를 낮은 주소에 둘지 정해야 한다. 여기서 endianness가 나온다.
-
-big-endian 표현에서는 가장 큰 자리 바이트가 낮은 주소에 온다.
+중요한 구분은 다음 네 가지다.
 
 ```text
-낮은 주소 -> 높은 주소
-12 34 56 78
+mathematical integer
+fixed-width machine integer
+language-level integer semantics
+serialized integer field
 ```
 
-little-endian 표현에서는 가장 작은 자리 바이트가 낮은 주소에 온다.
+이 네 층은 overflow에서 갈라진다. 어떤 언어는 wrapping을 정의하고, 어떤 연산은 checked exception을 발생시키며, 어떤 언어의 일반 정수는 필요한 만큼 확장된다. C/C++의 signed overflow처럼 최적화와 직접 연결되는 규칙도 있다. 따라서 overflow를 CPU 동작 하나로 일반화하지 않는다.
+
+자원 크기를 계산하는 산술은 반드시 overflow 검증 대상이다.
 
 ```text
-낮은 주소 -> 높은 주소
-78 56 34 12
+bytes = count * elementSize + headerSize
 ```
 
-`숫자 자체가 뒤집힌다`고 외우면 혼란스럽다. 정수 값은 여전히 `0x12345678`이다. 달라지는 것은 **그 값을 여러 바이트에 배치하는 순서**다.
+외부 입력이 `count`에 영향을 줄 수 있는데 곱셈·덧셈이 wrap되면 실제 필요량보다 작은 buffer가 할당될 수 있다. 이후 copy loop가 원래 논리적 개수대로 쓰면 memory boundary가 깨진다. 안전한 순서는 **범위 검증 → checked arithmetic → allocation → 실제 처리량 재검증**이다.
 
-### endianness 문제가 평소에는 안 보이는 이유
-
-고급 언어에서 정수를 저장하고 다시 정수로 읽으면 컴파일러와 CPU가 같은 규칙을 사용하므로 대개 문제를 느끼지 못한다.
-
-문제가 드러나는 순간은 보통 표현 경계를 직접 건드릴 때다.
-
-- 파일 포맷이 바이트 순서를 명시했는데 반대로 읽었을 때
-- 네트워크 프로토콜의 필드를 직접 파싱할 때
-- 바이너리 덤프나 메모리 덤프를 볼 때
-- 서로 다른 시스템 간에 구조체 메모리를 그대로 전송하려 할 때
-- 센서나 장치 레지스터 문서를 보고 바이트를 조합할 때
-
-예를 들어 두 바이트가 `01 02` 순서로 왔다고 하자. 이를 big-endian 16비트 정수로 보면 `0x0102`, 즉 258이다. little-endian으로 보면 `0x0201`, 즉 513이다.
+바이트 순서는 multi-byte field 계약의 일부다. 값 `V`가 같아도 memory 또는 wire에 놓이는 byte significance 순서는 달라질 수 있다. host-native struct를 wire format으로 사용하면 endianness뿐 아니라 alignment와 padding까지 ABI에 종속된다. 외부 포맷은 native layout과 분리한다.
 
 ```text
-같은 두 바이트: 01 02
-규칙 A -> 258
-규칙 B -> 513
+native representation  ≠  wire representation
 ```
 
-데이터가 깨진 것이 아니라 **송신자와 수신자가 다른 규칙으로 해석한 것**이다.
-
-### 바이너리 포맷에는 반드시 명시적인 계약이 필요하다
-
-`정수 1개를 파일에 쓴다`는 문장만으로는 포맷이 완성되지 않는다.
-
-최소한 다음이 정해져야 한다.
-
-- 몇 비트인지
-- 부호가 있는지
-- 바이트 순서는 무엇인지
-- 값의 단위가 무엇인지
-- 필드가 없을 때 어떻게 표시하는지
-- 버전이 바뀌면 어떻게 구별하는지
-
-예를 들어 온도를 저장한다고 하자.
-
-```text
-2 bytes
-signed integer
-big-endian
-단위: 0.01°C
-```
-
-원시값이 `2534`라면 25.34°C로 해석한다. 단위를 모르는 프로그램은 2534°C로 오해할 수 있다. 바이트 순서를 모르면 전혀 다른 숫자를 만들 수 있다.
-
-이것이 데이터 계약의 본질이다. **바이트만 전달해서는 의미까지 전달되지 않는다. 의미를 복원할 규칙도 함께 공유해야 한다.**
+외부 포맷에는 width, signedness, endian, alignment 여부, 단위, sentinel, versioning을 명시한다. “32-bit integer”만으로는 충분하지 않다.
 
 ---
 
-## CHAPTER 03 · 정수는 범위가 있고, 범위를 넘으면 수학과 다른 일이 생긴다
+## CHAPTER 03 · 부동소수점은 근사 표현이며 비교 규칙도 다르다
 
-### 고정 폭 정수는 무한히 커질 수 없다
+IEEE 754 계열 부동소수점은 부호·지수·유효숫자 구조를 사용해 매우 넓은 범위를 제한된 비트로 표현한다. 모든 실수를 정확히 나타낼 수 없으므로 많은 값은 가장 가까운 representable value로 반올림된다.
 
-수학의 정수는 크기에 제한이 없다고 생각할 수 있지만, CPU 레지스터와 메모리 필드는 고정된 비트 수를 사용한다.
+문제의 핵심은 `0.1` 같은 유명한 예제가 아니다. 다음 성질들이 시스템 계약에 영향을 준다.
 
-8비트 부호 없는 정수는 256가지 비트 패턴을 가지므로 범위는 0~255다.
+- 연산 순서를 바꾸면 rounding 결과가 달라질 수 있다.
+- `NaN`은 일반 값과 같은 equality 규칙을 따르지 않는다.
+- `+0`과 `-0`은 비교에서는 같게 보일 수 있지만 일부 연산 결과에서 차이가 드러난다.
+- infinity와 subnormal을 허용할지 validation 정책이 필요할 수 있다.
+- compiler/runtime의 optimization mode가 strict reproducibility와 충돌할 수 있다.
 
-```text
-00000000 = 0
-00000001 = 1
-...
-11111111 = 255
-```
+분산 계산이나 재현 가능한 테스트에서 `같은 수학식이면 같은 bit pattern`이라고 가정하면 안 된다. 재현성이 요구되면 precision, rounding mode, operation order, library/runtime 조건을 계약에 포함한다.
 
-여기서 255에 1을 더할 때 결과를 저장할 9번째 비트가 없다면 고정 폭 연산에서는 낮은 8비트만 남아 0으로 돌아갈 수 있다.
-
-```text
-  11111111
-+ 00000001
------------
-1 00000000
-  ^^^^^^^^ 저장되는 8비트
-```
-
-이것이 unsigned wraparound의 핵심이다. 언어마다 overflow 규칙은 다르므로 `모든 언어에서 무조건 이렇게 된다`고 일반화하면 안 된다. C의 unsigned 정수는 모듈러 산술로 정의되지만, signed overflow는 별도의 주의가 필요하고, Python의 일반 정수는 필요한 만큼 더 큰 객체로 확장된다. Java/Kotlin의 고정 폭 정수는 또 그 언어 규칙을 따라야 한다.
-
-### 부호 있는 정수는 비트 하나를 그냥 +/- 표시로만 쓰지 않는다
-
-현대 시스템에서 부호 있는 이진 정수는 일반적으로 two's complement 표현을 사용한다. 8비트라면 범위는 -128~127이다.
-
-양수 부분은 익숙한 이진수와 같다.
-
-```text
-00000001 = 1
-00000010 = 2
-01111111 = 127
-```
-
-음수의 중요한 성질은 덧셈 회로를 양수와 크게 다르게 만들지 않고도 같은 비트 폭에서 연산을 처리할 수 있다는 점이다.
-
-예를 들어 8비트에서 -1은 모든 비트가 1인 패턴이다.
-
-```text
-11111111 = -1   (8-bit signed two's complement interpretation)
-```
-
-여기에 1을 더하면 낮은 8비트는 0이 된다.
-
-```text
-11111111
-00000001
---------
-00000000
-```
-
-`11111111은 255라고 하지 않았나?`라는 질문이 여기서 중요하다. **같은 패턴**을 unsigned 8-bit로 읽으면 255이고 signed 8-bit two's complement로 읽으면 -1이다. 비트열은 같고 해석 규칙이 다르다.
-
-### 음수를 만드는 절차보다 표현의 불변조건을 이해한다
-
-어떤 값 `x`와 그 음수 `-x`의 two's complement 표현은 고정된 비트 폭에서 더했을 때 0이 되도록 동작한다. 흔히 비트를 뒤집고 1을 더하는 절차로 음수 표현을 구할 수 있다.
-
-8비트에서 5를 보자.
-
-```text
-5       = 00000101
-비트반전 = 11111010
-+1      = 11111011
-```
-
-`11111011`을 8비트 signed two's complement로 해석하면 -5다.
-
-검산하면:
-
-```text
-  00000101
-+ 11111011
------------
-1 00000000
-```
-
-고정 8비트에서는 바깥 carry를 버리고 0이 남는다.
-
-이 절차를 암기하는 것보다 더 중요한 것은 **비트 폭이 해석의 일부**라는 점이다. `11111011`만 떼어 놓고는 8비트 signed인지, 더 큰 값의 일부인지, 단순 byte sequence인지 알 수 없다.
-
-### overflow는 단순 계산 실수가 아니라 보안 경계가 되기도 한다
-
-길이가 `count * element_size` 바이트라고 계산해서 메모리를 할당한다고 하자.
-
-```text
-필요 크기 = 요소 개수 × 요소 하나의 크기
-```
-
-곱셈이 고정 폭 정수 범위를 넘어 작은 값으로 돌아가면 실제 필요한 것보다 작은 버퍼를 만들 수 있다. 그 뒤 코드는 원래 개수만큼 데이터를 쓰려고 하면서 메모리 경계를 넘어설 수 있다.
-
-현대 안전한 언어와 라이브러리는 여러 방어를 제공하지만, 핵심 사고는 변하지 않는다.
-
-```text
-외부 입력으로 크기를 계산한다
-→ 산술 자체가 범위를 넘을 수 있는가?
-→ 계산 결과와 실제 할당 크기가 일치하는가?
-→ 실패를 조용히 잘못된 값으로 바꾸지는 않는가?
-```
-
-`숫자 타입`은 단순 문법이 아니라 시스템의 자원 크기와 경계 검증에 직접 연결된다.
-
-### 실수형은 정수와 같은 방식으로 생각하면 안 된다
-
-`0.1 + 0.2`가 어떤 언어에서 정확히 0.3과 같지 않을 수 있다는 이야기는 유명하다. 이유를 `컴퓨터가 계산을 못해서`라고 설명하면 틀린 방향이다.
-
-많은 부동소수점 형식은 값을 대략 다음 요소로 나누어 표현한다.
-
-```text
-부호(sign)
-지수(exponent)
-유효숫자(significand)
-```
-
-10진수의 0.1처럼 2진수로 유한하게 끝나지 않는 값은 제한된 비트 안에서 가장 가까운 표현으로 반올림된다. 그래서 연산을 거치면서 작은 표현 오차가 드러날 수 있다.
-
-돈을 계산할 때 `float이면 안 된다`는 규칙만 외우기보다, **무엇을 정확히 보존해야 하는 데이터인지 먼저 정해야 한다.** 통화의 최소 단위를 정수로 저장하거나, 십진 고정소수점/decimal 타입을 사용하는 설계가 필요한 이유가 여기에 있다.
+금액·정산·세금처럼 십진 단위 정확성이 핵심인 데이터는 binary floating point를 그대로 업무 단위로 쓰는 설계가 부적절할 수 있다. 가능한 선택은 **최소 화폐 단위 정수**, decimal/fixed-point 타입, 명시적 rounding rule이다. 여기서 중요한 것은 타입 이름이 아니라 **어느 단계에서 어떤 반올림이 허용되는가**를 규칙으로 고정하는 것이다.
 
 ---
 
-## CHAPTER 04 · 문자는 글자 하나가 바이트 하나라는 가정에서 벗어나야 한다
+## CHAPTER 04 · Unicode에서 `문자열 길이`는 하나의 개념이 아니다
 
-### 문자 문제는 네 층을 분리하면 대부분 정리된다
-
-문자열 버그를 볼 때 다음 네 층을 섞지 않는다.
+문자열 시스템에는 적어도 다음 단위가 존재한다.
 
 ```text
-사람이 보는 글자 모양
-↓
-문자/문자열을 정의하는 추상적인 코드 포인트
-↓
-UTF-8 같은 인코딩이 만든 바이트열
-↓
-파일·메모리·네트워크에 실제 저장/전송되는 바이트
+encoded bytes
+code units
+Unicode code points / scalar values
+extended grapheme clusters
+rendered glyphs
 ```
 
-Unicode는 세계의 문자를 다루기 위한 공통 문자 체계를 제공하고, 각 코드 포인트에는 `U+...` 형태의 번호가 있다. UTF-8은 그런 코드 포인트를 1~4바이트의 바이트열로 인코딩하는 대표적인 방식이다.
+API의 `length`가 무엇을 세는지 확인하지 않으면 buffer size, cursor 이동, truncation, DB 제한, UI 입력 제한이 서로 다른 단위를 사용하게 된다. 특히 UTF-16 기반 API에서는 supplementary code point가 두 code unit을 사용할 수 있고, 사용자가 한 글자로 인식하는 grapheme cluster는 여러 code point로 구성될 수 있다.
 
-ASCII 영역의 문자는 UTF-8에서 1바이트로 표현된다. 한글 음절 같은 많은 문자는 여러 바이트를 사용한다.
+Unicode normalization은 화면상 동등한 텍스트가 서로 다른 code-point sequence로 표현될 수 있다는 문제를 다룬다. NFC/NFD 같은 normalization form은 **동등성 판단의 한 도구**이지 모든 도메인에 무조건 적용할 정답이 아니다. identifier, 파일명, 검색어, 비밀번호, cryptographic input은 서로 다른 정책을 요구할 수 있다.
 
-따라서 다음 등식은 일반적으로 성립하지 않는다.
+보안에서는 canonicalization 순서가 중요하다.
 
 ```text
-화면에서 보이는 글자 수
-= 코드 포인트 수
-= UTF-8 바이트 수
+raw input
+→ decoding
+→ normalization / canonicalization
+→ validation
+→ authorization / lookup
 ```
 
-### `A`와 `가`를 바이트 관점에서 비교한다
+서로 다른 계층이 다른 normalization을 적용하면 한 계층에서 허용한 식별자가 다음 계층에서 다른 값으로 해석될 수 있다. Unicode UTS #39가 다루는 confusable·mixed-script 문제도 같은 종류의 경계 위험이다. 식별자 정책은 단순 `Unicode 허용`이 아니라 허용 script, normalization, case policy, confusable 대응까지 설계해야 한다.
 
-UTF-8에서 `A`는 ASCII와 호환되는 1바이트다.
-
-```text
-A
-U+0041
-UTF-8: 41
-```
-
-한글 음절 `가`는 U+AC00이며 UTF-8에서는 세 바이트로 표현된다.
-
-```text
-가
-U+AC00
-UTF-8: EA B0 80
-```
-
-문자열 `A가`는 사람이 보기에는 두 글자지만 UTF-8 바이트 수는 4다.
-
-```text
-41 EA B0 80
-```
-
-그래서 `문자열 길이만큼 바이트 버퍼를 잡으면 된다`는 코드는 언어와 API에 따라 위험할 수 있다. 길이가 무엇을 세는지 확인해야 한다.
-
-### code point와 grapheme cluster도 같지 않다
-
-사람이 화면에서 한 글자로 느끼는 단위가 항상 코드 포인트 하나인 것도 아니다. 문자와 결합 문자가 합쳐져 하나의 시각적 글자처럼 보일 수 있고, 이모지 시퀀스는 여러 코드 포인트가 조합되어 하나의 사용자 인식 문자처럼 보일 수 있다.
-
-예를 들어 어떤 문자열 API는 UTF-16 code unit 개수를 길이로 반환할 수 있고, 다른 API는 Unicode scalar/code point를 순회하며, UI 커서는 grapheme cluster 경계에 맞춰 움직여야 할 수 있다.
-
-따라서 `length`라는 이름만 보고 의미를 추측하지 않는다.
-
-```text
-이 API의 length는 무엇을 세는가?
-byte인가?
-code unit인가?
-code point인가?
-사용자가 보는 grapheme cluster인가?
-```
-
-이 질문을 먼저 한다.
-
-### visually same이 byte-identical을 뜻하지 않는다
-
-Unicode에서는 화면상 같은 문자처럼 보이는 문자열이 서로 다른 코드 포인트 조합으로 표현될 수 있다. 대표적으로 미리 결합된 문자와 기본 문자+결합 문자의 차이가 있다.
-
-예를 들어 악센트가 있는 라틴 문자는 한 코드 포인트로 존재할 수도 있고, 기본 문자 뒤에 combining mark가 붙는 방식일 수도 있다. 사람이 보기에는 같아도 코드 포인트열과 UTF-8 바이트열은 다를 수 있다.
-
-그래서 다음 문제가 생길 수 있다.
-
-- 문자열 byte equality가 거짓인데 화면에서는 같아 보인다.
-- 파일명이 같은 것처럼 보이지만 내부 표현이 다르다.
-- 검색 인덱스가 한 형태만 저장해 다른 형태를 못 찾는다.
-- 사용자 이름 중복 검사에서 우회가 생긴다.
-
-Unicode normalization은 이런 표현을 정해진 정규형으로 다루기 위한 규칙이다. NFC, NFD 등의 이름을 단순 암기할 필요는 없지만, **문자열 동일성 문제를 바이트 비교 하나로 끝낼 수 없는 경우가 있다**는 사실은 반드시 알아야 한다.
-
-### 인코딩 오류는 대개 경계에서 발생한다
-
-파일을 UTF-8로 저장했는데 프로그램이 다른 인코딩으로 읽으면 바이트는 그대로인데 해석이 틀어진다. 흔히 보이는 깨진 글자는 `원래 문자가 망가졌다`기보다 `같은 바이트를 다른 문자 규칙으로 해석했다`는 신호일 수 있다.
-
-문자열 문제를 디버깅할 때는 추측 대신 경계를 적는다.
-
-```text
-1. 원래 문자열의 코드 포인트는 무엇인가?
-2. 어떤 인코딩으로 바이트를 만들었는가?
-3. 실제 바이트는 무엇인가?
-4. 수신 측은 어떤 인코딩으로 decode했는가?
-5. 정규화가 필요한 비교인가?
-```
-
-이렇게 보면 `DB가 한글을 싫어한다`, `서버가 이모지를 못 받는다` 같은 막연한 설명 대신 정확한 실패 지점을 찾을 수 있다.
-
-### 잘못된 UTF-8도 입력으로 들어올 수 있다
-
-외부에서 받은 byte sequence가 항상 유효한 UTF-8이라고 믿으면 안 된다. UTF-8에는 허용되는 바이트 패턴과 허용되지 않는 패턴이 있다. decoder는 잘못된 입력을 거부하거나 replacement character로 바꾸는 등 API가 정한 정책을 사용한다.
-
-보안이나 데이터 검증에서는 이 정책이 중요하다. 한 계층에서는 잘못된 바이트를 대체하고 다른 계층에서는 다른 방식으로 해석하면, 두 계층이 `같은 입력`을 서로 다르게 보는 canonicalization 문제가 생길 수 있기 때문이다.
+invalid UTF-8 처리도 계약이다. decoder가 reject하는지 replacement character로 치환하는지에 따라 후속 validation 결과가 달라질 수 있다. 보안 경계에서는 **같은 raw bytes가 모든 계층에서 같은 문자열로 해석되는지**를 검증해야 한다.
 
 ---
 
-## CHAPTER 05 · 타입은 메모리 속 값에 의미와 허용 연산을 붙이는 계약이다
+## CHAPTER 05 · serialization format과 schema evolution은 분리해서 설계한다
 
-### 타입을 변수 앞에 붙는 문법으로만 배우지 않는다
+JSON은 구조화 데이터를 표현하는 텍스트 형식이지만 schema 자체를 제공하지 않는다. JSON `number`를 각 언어의 `int64`, `double`, arbitrary precision decimal 중 무엇으로 받을지는 구현 계약이다. 특히 서로 다른 언어를 연결할 때 큰 정수·소수 정밀도·duplicate object member 처리처럼 구현 차이가 interoperability 문제를 만든다.
 
-초보자는 타입을 `int`, `String`, `Boolean` 같은 이름 목록으로 배우기 쉽다. 더 중요한 질문은 다음이다.
-
-```text
-이 비트/바이트를 어떤 종류의 값으로 해석하는가?
-그 값에 어떤 연산을 허용하는가?
-그 값이 가질 수 있는 범위와 불변조건은 무엇인가?
-```
-
-예를 들어 `20260917`이라는 숫자가 있다고 하자. 정수로만 보면 덧셈을 할 수 있다. 하지만 이것이 `YYYYMMDD` 형식의 날짜라면 `+1`이 항상 다음 날을 의미하지 않는다.
+Protocol Buffers 같은 schema 기반 binary format에서는 wire의 field number와 wire type이 호환성의 핵심이다. field name은 source-level 의미에 가깝고 wire identity는 number에 묶인다. 삭제한 field number를 다른 의미로 재사용하면 과거 데이터나 구버전 peer가 새 의미로 오해할 수 있다. schema evolution은 **추가 가능성**보다 더 엄격하게 다음을 관리해야 한다.
 
 ```text
-20260930 + 1 = 20260931
+field identity stability
+presence semantics
+required/optional/default semantics
+unknown-field behavior
+numeric range changes
+oneof/union evolution
+removed-field reservation
+old-reader / new-writer compatibility
+new-reader / old-writer compatibility
 ```
 
-정수 연산으로는 가능하지만 날짜로는 존재하지 않는 값이 된다.
+CBOR처럼 같은 의미 값을 둘 이상의 byte sequence로 표현할 수 있는 형식에서는 `semantic equality`와 `byte equality`를 구분해야 한다. cryptographic signing, hashing, cache key에 raw bytes를 사용한다면 deterministic/canonical encoding 규칙이 별도로 필요하다.
 
-즉 데이터 표현이 같아도 **도메인 의미와 허용 연산은 다르다.** 좋은 타입과 데이터 모델은 잘못된 상태를 만들기 어렵게 한다.
-
-### 같은 32비트라도 int, float, instruction은 다른 세계다
-
-32개의 비트가 있다고 하자. 그것을 signed integer로 해석할 수도 있고 IEEE 754 계열의 floating-point 값으로 해석할 수도 있고 CPU의 instruction encoding 일부로 해석할 수도 있다.
-
-따라서 디버거에서 메모리 덤프를 볼 때 `0x3F800000` 같은 값은 맥락 없이 `무슨 값`이라고 단정할 수 없다. 32-bit IEEE 754 single precision으로 보면 1.0을 나타내는 대표 패턴이지만, 정수로 보면 전혀 다른 큰 수다.
-
-이 사실은 unsafe cast, binary parsing, serialization 버그를 이해하는 바탕이 된다.
-
-### serialization은 객체를 바이트로 바꾸는 마법이 아니다
-
-프로그램 메모리 안의 객체를 네트워크나 파일로 보내려면 외부 표현을 정해야 한다. JSON은 사람이 읽기 쉬운 텍스트 표현 중 하나이고, Protocol Buffers 같은 형식은 다른 목표와 규칙을 가진다.
-
-어떤 형식을 쓰든 질문은 같다.
+JSON, CBOR, Protobuf 어느 형식을 선택하든 핵심 문제는 동일하다.
 
 ```text
-필드 이름/번호는 무엇인가?
-각 필드 타입은 무엇인가?
-없음과 null과 기본값을 어떻게 구분하는가?
-숫자 범위는 무엇인가?
-문자 인코딩은 무엇인가?
-새 버전이 필드를 추가했을 때 옛 프로그램은 어떻게 행동하는가?
+내부 객체 모델
+→ 외부 schema
+→ wire encoding
+→ version compatibility
+→ validation
 ```
 
-`객체를 JSON으로 바꿨으니 끝`이 아니다. 외부 시스템과 공유하는 순간부터 **호환성 계약**이 된다.
-
-### schema가 없다고 schema가 없는 것은 아니다
-
-JSON 문서는 형식상 매우 자유롭다.
-
-```json
-{
-  "price": 10000,
-  "currency": "KRW"
-}
-```
-
-그러나 실제 프로그램은 이미 암묵적인 규칙을 기대한다.
-
-```text
-price는 0 이상의 정수다.
-currency는 지원되는 통화 코드다.
-두 필드는 함께 있어야 한다.
-```
-
-문서에 schema 파일이 없더라도 코드 속 조건문과 가정이 사실상 schema 역할을 하고 있다. 이 규칙이 여러 서비스에 흩어져 서로 달라지면 같은 JSON을 두 프로그램이 다르게 해석한다.
-
-그래서 데이터 모델링에서는 `문법적으로 파싱 가능하다`와 `업무적으로 유효하다`를 구분한다.
+형식 자체가 호환성을 보장하지 않는다. 호환성은 **field semantics와 evolution discipline**이 보장한다.
 
 ---
 
-## CHAPTER 06 · 바이트를 직접 보면서 표현 문제를 추적한다
+## CHAPTER 06 · binary parser는 길이와 offset을 신뢰하지 않는다
 
-### 첫 번째 추적: 정수의 바이트를 출력한다
-
-Python의 정수는 일반적인 고정 폭 CPU 정수와 표현 방식이 다르지만, `to_bytes`를 이용해 명시적인 바이트 폭과 순서를 지정하면 바이트 계약을 직접 볼 수 있다.
-
-```python
-value = 0x12345678
-
-big = value.to_bytes(4, byteorder="big", signed=False)
-little = value.to_bytes(4, byteorder="little", signed=False)
-
-print(big.hex())
-print(little.hex())
-```
-
-기대 결과:
+untrusted binary input을 파싱할 때 가장 먼저 지켜야 할 불변조건은 `모든 read 범위가 실제 buffer 범위 안에 있다`는 것이다. length-prefixed structure를 읽는 전형적인 검증은 다음 순서를 갖는다.
 
 ```text
-12345678
-78563412
+header를 읽을 최소 byte가 존재하는가
+→ length field 자체를 안전하게 decode했는가
+→ length가 protocol 최대값 이하인가
+→ offset + length 계산이 overflow하지 않는가
+→ offset + length <= buffer.size 인가
+→ nested structure의 총 budget을 넘지 않는가
 ```
 
-여기서 바뀐 것은 value의 수학적 의미가 아니라 byte sequence의 배치 순서다.
+`if (offset + length <= size)`만 두면 `offset + length` 자체가 overflow하는 타입에서는 검사가 우회될 수 있다. 안전한 형태는 subtraction 기반 경계 검사 또는 checked addition을 사용한다.
 
-### 두 번째 추적: 문자열의 바이트 수를 직접 본다
-
-```python
-samples = ["A", "가", "A가", "🙂"]
-
-for text in samples:
-    encoded = text.encode("utf-8")
-    print(repr(text), len(text), len(encoded), encoded.hex())
-```
-
-이 코드를 볼 때 숫자를 외우지 않는다. `len(text)`가 Python 문자열의 문자 요소를 세는 방식과 `len(encoded)`가 실제 UTF-8 바이트 수를 세는 방식이 다르다는 것을 확인한다.
-
-이모지는 조합 방식에 따라 더 복잡해질 수 있으므로 `화면 글자 수 = len(text)`도 일반적인 UI 규칙으로 고정하면 안 된다.
-
-### 세 번째 추적: 같은 바이트를 다른 방식으로 읽는다
-
-```python
-raw = bytes.fromhex("ff")
-
-unsigned = int.from_bytes(raw, "big", signed=False)
-signed = int.from_bytes(raw, "big", signed=True)
-
-print(unsigned)
-print(signed)
-```
-
-기대 결과는 다음이다.
+stream parser는 message 전체가 한 번에 도착한다고 가정해서도 안 된다. 네트워크·file channel은 header의 일부만 반환할 수 있다. parser state는 최소한 다음을 명시적으로 표현한다.
 
 ```text
-255
--1
+need fixed header
+need variable header
+need payload N bytes
+complete
+invalid
 ```
 
-바이트는 정확히 하나 `FF`다. 값이 두 개인 것이 아니라 **동일 바이트에 서로 다른 해석 계약을 적용한 것**이다.
+부분 입력을 `invalid`로 오인하면 정상 stream을 끊고, 반대로 invalid 구조를 `need more bytes`로 계속 유지하면 resource exhaustion이 가능하다. 최대 frame 크기, nesting depth, element count, allocation budget을 protocol policy로 둔다.
 
-### 네 번째 추적: 파일 포맷 오류를 가정한다
-
-어떤 센서가 다음 규칙으로 온도를 보낸다고 하자.
-
-```text
-길이: 2 bytes
-순서: big-endian
-부호: signed
-단위: 0.01°C
-```
-
-수신한 바이트가:
-
-```text
-09 E6
-```
-
-라면 16진수 `0x09E6`은 2534이고, 단위를 적용하면 25.34°C다.
-
-잘못된 프로그램이 이를 little-endian으로 읽으면 `0xE609`를 해석하게 된다. signed까지 적용하면 전혀 다른 음수 값이 될 수 있다. 센서가 고장 난 것처럼 보이지만 실제 원인은 parser의 endianness일 수 있다.
-
-디버깅 순서를 정리하면:
-
-```text
-원본 byte dump 확보
-→ 문서의 field width 확인
-→ signed/unsigned 확인
-→ endian 확인
-→ 단위/scale 확인
-→ 값 범위 validation
-```
-
-이 순서가 `코드를 이것저것 바꿔 본다`보다 훨씬 빠르다.
+zero-copy parsing은 copy를 줄이는 대신 lifetime coupling을 만든다. parsed object가 원본 buffer slice를 참조한다면 buffer를 재사용하거나 해제하는 시점이 object lifetime보다 늦어야 한다. 성능 최적화가 memory safety·ownership 계약을 추가한다는 뜻이다.
 
 ---
 
-## CHAPTER 07 · 표현 계층을 섞으면 생기는 실제 버그
+## CHAPTER 07 · canonicalization 차이는 보안 취약점이 된다
 
-### 버그 1 · 바이트 길이 제한을 글자 수 제한으로 착각한다
+하나의 입력을 여러 계층이 서로 다르게 해석하면 validation과 실제 사용 사이에 틈이 생긴다. 대표적인 범주는 다음과 같다.
 
-DB나 외부 API가 UTF-8 바이트 기준 최대 20바이트를 허용한다고 하자. UI에서 단순히 `문자 20개`를 허용하면 ASCII 20자는 들어가지만 한글 20자는 더 많은 바이트가 될 수 있다.
+- Unicode normalization/case-folding 차이
+- path separator와 `.`/`..` 처리 차이
+- percent-decoding을 몇 번 수행하는지의 차이
+- duplicate JSON member를 first-wins/last-wins/error로 처리하는 차이
+- 숫자 문자열의 leading sign·exponent·overflow 처리 차이
+- hostname 또는 identifier의 canonical form 차이
 
-반대 방향도 문제다. 바이트 중간을 잘라 제한을 맞추면 UTF-8 multi-byte sequence를 중간에서 끊어 invalid encoding을 만들 수 있다.
+안전한 설계는 **parse once, canonicalize once, validate canonical representation, 이후 동일 representation을 사용**하는 방향을 선호한다. 같은 raw input을 각 계층에서 제각각 다시 parse하면 parser differential이 공격면이 된다.
 
-해결은 제한 단위를 명확하게 만드는 것이다.
+cryptographic signature는 특히 byte identity에 민감하다. 구조적으로 같은 JSON object라도 whitespace, member order, numeric spelling이 달라 raw bytes는 달라질 수 있다. semantic object를 서명하려면 canonical serialization 규칙을 정하거나 애초에 canonical encoding이 명확한 포맷/프로파일을 사용해야 한다. “JSON을 stringify해서 서명” 같은 규칙은 구현·버전 차이에 취약할 수 있다.
 
-```text
-제품 요구사항: 사용자가 보는 글자 수 제한인가?
-저장소 요구사항: byte 제한인가?
-프로토콜 요구사항: encoded payload 제한인가?
-```
-
-서로 다른 제한이라면 각각 검증해야 한다.
-
-### 버그 2 · 화면에서 같은 문자열을 무조건 동일하다고 가정한다
-
-사용자 ID가 visually identical한 Unicode sequence 두 종류로 들어오는데 저장 전에 정규화하지 않는다고 하자. 시스템 일부는 둘을 다른 값으로 저장하고, 검색이나 로그인 단계는 또 다른 정규화를 할 수 있다.
-
-그 결과:
-
-- 중복 계정 검사 우회
-- 검색 누락
-- 캐시 키 불일치
-- 파일명 매칭 실패
-
-같은 문제가 생길 수 있다.
-
-중요한 것은 `모든 문자열에 무조건 NFC를 적용하라`가 아니다. 도메인마다 비교 규칙이 다르므로 **어느 경계에서 어떤 canonical form과 equality를 사용할지 명시해야 한다.**
-
-### 버그 3 · 숫자 범위를 validation하지 않는다
-
-외부 JSON의 `quantity`를 정수로 파싱했다고 해서 유효한 수량이 된 것은 아니다.
-
-```json
-{ "quantity": -2147483648 }
-```
-
-문법적으로는 정수일 수 있지만 주문 수량으로는 말이 되지 않는다. 더 큰 타입으로 변환하는 과정이나 곱셈 과정에서 overflow 경계가 생길 수도 있다.
-
-따라서 파싱 뒤에는 도메인 검증이 이어져야 한다.
-
-```text
-문자열/바이트를 타입으로 파싱
-→ 타입 범위 확인
-→ 도메인 범위 확인
-→ 값들 사이의 관계 불변조건 확인
-```
-
-### 버그 4 · 구조체 메모리를 그대로 파일 포맷이라고 생각한다
-
-저수준 언어에서 구조체는 필드 사이에 alignment를 맞추기 위한 padding을 가질 수 있다. 컴파일러/ABI/아키텍처에 따라 layout 규칙이 달라질 수 있다.
-
-따라서 메모리 구조를 그대로 네트워크에 보내고 상대방도 같은 구조체로 읽게 만드는 것은 명시적인 wire format보다 취약하다.
-
-안전한 설계는 외부 표현을 따로 정의한다.
-
-```text
-메모리 내부 표현
-≠
-파일/네트워크 외부 표현
-```
-
-그리고 두 표현 사이를 encode/decode하는 경계에서 범위와 형식을 검증한다.
+identifier security에서는 normalization만으로 충분하지 않다. 서로 다른 code point가 시각적으로 매우 유사할 수 있고 script 혼합이 spoofing에 사용될 수 있다. 사용자에게 표시되는 identity와 내부 canonical key를 분리하고, 고위험 식별자에는 confusable·mixed-script 정책을 적용한다.
 
 ---
 
-## CHAPTER 08 · 이 PART에서 반드시 남겨야 할 모델
+## CHAPTER 08 · 표현 문제는 raw evidence에서 역추적한다
 
-이 PART에서 외울 단어 목록보다 중요한 것은 다음 여섯 문장이다.
+표현 버그를 조사할 때 UI에 보이는 최종 문자열이나 숫자부터 수정하지 않는다. 가장 이른 신뢰 가능한 경계의 raw representation을 확보한다.
 
-1. 메모리의 비트 패턴은 스스로 의미를 갖지 않는다. 의미는 타입·인코딩·프로토콜 같은 해석 규칙에서 생긴다.
-2. 고정 비트 폭에는 표현 가능한 값의 범위가 있고, 범위 밖 연산의 동작은 언어와 타입 규칙을 확인해야 한다.
-3. 여러 바이트로 값을 만들면 byte order가 계약의 일부가 된다.
-4. 사람이 보는 글자, Unicode code point, code unit, UTF-8 byte는 같은 단위가 아니다.
-5. 외부 데이터는 파싱되었다고 유효한 것이 아니다. 표현 검증 뒤에 도메인 불변조건 검증이 필요하다.
-6. 표현 버그를 잡을 때는 추측하지 말고 실제 byte dump와 해석 규칙을 나란히 놓는다.
+```text
+raw bytes / original payload
+schema + schema version
+parser/decoder version
+field offset and declared length
+decoded intermediate value
+normalization/canonicalization result
+validated domain value
+```
 
-다음 PART에서는 이 표현들이 정적인 파일에 머물지 않고 **소스 코드 → 컴파일/해석 → 실행 파일 → 로더 → 프로세스 → CPU와 메모리의 상태 변화**로 이어지는 과정을 추적한다.
+binary protocol이면 실패 field의 offset을 포함한 hexdump를 보존하고, 길이·endianness·signedness·scale을 문서와 대조한다. 문자열이면 raw bytes, decode charset, Unicode code-point sequence, normalization form을 비교한다. 숫자면 source lexical form과 target numeric type을 함께 기록한다.
+
+강한 회귀검증은 값 하나의 expected output보다 invariant를 검사한다.
+
+```text
+encode(decode(validBytes))가 허용된 canonical form을 만드는가
+round-trip 후 의미가 보존되는가
+unknown field가 호환성 정책대로 처리되는가
+invalid length/nesting/overflow가 allocation 전에 거부되는가
+서로 다른 parser 구현이 동일 payload를 동일 의미로 해석하는가
+```
+
+property-based test와 fuzzing은 representation layer에 특히 강하다. 경계값, malformed UTF-8, integer extrema, 중첩 깊이, duplicate key, truncated frame, oversized length를 자동 생성하면 사람이 만든 정상 예제로 찾기 어려운 parser 차이를 드러낼 수 있다.
+
+표현 계층의 최종 판단 기준은 간단하다. **의미를 주장하려면 그 의미를 만드는 계약과 raw evidence를 함께 제시할 수 있어야 한다.**
