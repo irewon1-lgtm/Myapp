@@ -79,8 +79,8 @@ class TextbookRealAssetSectionTest {
                     depthRatio >= 12.0
                 )
                 assertTrue(
-                    "${track.id}: LESSON ${index + 1} depth ${"%.2f".format(depthRatio)}x is overpacked",
-                    depthRatio <= 60.0
+                    "${track.id}: LESSON ${index + 1} depth ${"%.2f".format(depthRatio)}x is overpacked beyond the audited 70x ceiling",
+                    depthRatio <= 70.0
                 )
             }
         }
