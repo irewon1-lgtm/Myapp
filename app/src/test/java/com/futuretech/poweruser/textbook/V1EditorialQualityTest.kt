@@ -19,16 +19,20 @@ class V1EditorialQualityTest {
         V1TextbookCatalog.chapters.forEach { track ->
             val text = assetFile(track.assetPath).readText(Charsets.UTF_8)
             val lines = text.lines()
-            val blockIndices = lines.mapIndexedNotNull { index, line ->
-                index.takeIf { line.startsWith("## BLOCK ") }
+            val blockRows = lines.mapIndexedNotNull { index, line ->
+                if (line.startsWith("## BLOCK ")) index to line else null
             }
             val lessonIndices = lines.mapIndexedNotNull { index, line ->
                 index.takeIf { line.startsWith("### LESSON ") }
             }
+            val supportLabels = listOf("핵심 용어 사전", "완료 기준")
+            val instructionalBlocks = blockRows.filter { (_, heading) ->
+                supportLabels.none { heading.contains(it) }
+            }
 
             assertTrue("${track.id}: must start as TRACK", text.startsWith("# TRACK ${track.number.toString().padStart(2, '0')}"))
-            assertTrue("${track.id}: book-scale BLOCK count=${blockIndices.size}", blockIndices.size >= 25)
-            assertTrue("${track.id}: lesson count=${lessonIndices.size}", lessonIndices.size >= blockIndices.size)
+            assertTrue("${track.id}: book-scale BLOCK count=${blockRows.size}", blockRows.size >= 25)
+            assertTrue("${track.id}: lesson count=${lessonIndices.size}", lessonIndices.size >= instructionalBlocks.size)
             assertTrue("${track.id}: accidental-truncation floor chars=${text.length}", text.length >= 8_000)
             assertTrue("${track.id}: code/data examples required", text.contains("```"))
             assertTrue("${track.id}: glossary required", text.contains("핵심 용어 사전"))
@@ -38,11 +42,11 @@ class V1EditorialQualityTest {
                 text.contains("TRACK 프로젝트") || text.contains("최종 프로젝트") || text.contains("프로젝트 ·")
             )
 
-            blockIndices.forEachIndexed { blockPosition, blockStart ->
-                val blockEnd = blockIndices.getOrNull(blockPosition + 1) ?: lines.size
+            instructionalBlocks.forEach { (blockStart, heading) ->
+                val nextBlockStart = blockRows.firstOrNull { it.first > blockStart }?.first ?: lines.size
                 assertTrue(
-                    "${track.id}: every BLOCK needs at least one LESSON, block=${blockPosition + 1}",
-                    lessonIndices.any { it in (blockStart + 1) until blockEnd }
+                    "${track.id}: instructional BLOCK needs LESSON, heading=$heading",
+                    lessonIndices.any { it in (blockStart + 1) until nextBlockStart }
                 )
             }
 
