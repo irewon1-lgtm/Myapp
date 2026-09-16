@@ -53,7 +53,7 @@ required_test_families = [
     ("TextbookRealAssetSectionTest", 1),
     ("TextbookPageComposerTest", 5),
     ("V3ReaderResilienceContractTest", 3),
-    ("V4BookDepthLibraryTest", 4),
+    ("V4BookDepthLibraryTest", 5),
     ("V4DepthIntegrationTest", 2),
     ("V4BookReaderSourceContractTest", 4),
 ]
@@ -93,10 +93,16 @@ adaptive = (ROOT / "app/src/main/java/com/futuretech/poweruser/ui/AdaptiveTextbo
 overview = (ROOT / "app/src/main/java/com/futuretech/poweruser/ui/CurriculumOverviewScreen.kt").read_text(encoding="utf-8")
 main_activity = (ROOT / "app/src/main/java/com/futuretech/poweruser/MainActivity.kt").read_text(encoding="utf-8")
 depth_library = (ROOT / "app/src/main/java/com/futuretech/poweruser/textbook/V4BookDepthLibrary.kt").read_text(encoding="utf-8")
-depth_sources = "\n".join(
-    (ROOT / f"app/src/main/java/com/futuretech/poweruser/textbook/V4BookDepthTrack{suffix}.kt").read_text(encoding="utf-8")
-    for suffix in ("01To03", "04To07", "08To11")
-)
+depth_test = (ROOT / "app/src/test/java/com/futuretech/poweruser/textbook/V4BookDepthLibraryTest.kt").read_text(encoding="utf-8")
+expert_paths = [
+    ROOT / f"app/src/main/java/com/futuretech/poweruser/textbook/V4ExpertDepthTrack{index:02d}.kt"
+    for index in range(1, 12)
+]
+expert_texts = [path.read_text(encoding="utf-8") for path in expert_paths if path.is_file()]
+depth_sources = "\n".join(expert_texts)
+expert_pack_count = depth_sources.count('sectionId = "')
+expert_code_count = depth_sources.count("depthCode(")
+expert_source_chars = sum(len(text) for text in expert_texts)
 
 # Curriculum/content contracts.
 ck("Catalog exposes TRACK count 11", 'const val TRACK_COUNT = 11' in catalog, "TRACK_COUNT")
@@ -104,9 +110,56 @@ ck("Catalog points at V3 assets", '"textbook/v3/track_${number.toString().padSta
 ck("V3 grouping preserves authored order", "sourceSections.flatMap" in sectioner and "section.blocks.mapNotNull(::asInternalLessonBlock)" in sectioner, "grouping")
 ck("Inline recall stays low-stakes", "점수를 깎지 않으며" in flow and "방금 읽은 ‘${section.title}’" in flow, "recall")
 ck("V4 depth is additive", "authoredWithGuide" in flow and "V4BookDepthLibrary.blocksFor" in flow and "insertDepthBeforeSelfCheck" in flow, "authored + depth")
-ck("All 42 V4 learner lessons have dedicated depth packs", depth_sources.count("sectionId = \"") == 42, f"packs={depth_sources.count('sectionId = \\"')}")
-ck("Depth layer carries worked examples", "손으로 따라가는 실전 흐름" in depth_library and "TextbookBlock.Code" in depth_library, "worked example")
-ck("Depth layer carries mistakes and further questions", "초보자가 실제로 많이 틀리는 지점" in depth_library and "다음 질문도 생각" in depth_library, "mistakes + questions")
+
+# Active expert-depth architecture. The old generated BookDepthPack files are kept only for source
+# compatibility and must not be treated as the learner-facing quality contract.
+ck("Exactly 11 expert depth source files", len(expert_texts) == 11, f"files={len(expert_texts)}")
+ck("All 42 learner lessons have dedicated expert packs", expert_pack_count == 42, f"packs={expert_pack_count}")
+ck("Expert layer is book-scale rather than a thin recap", expert_source_chars >= 150_000, f"source_chars={expert_source_chars:,}")
+ck("Every expert lesson has a concrete trace/code block", expert_code_count >= 42, f"depthCode={expert_code_count}")
+ck(
+    "Active library routes all 11 expert tracks",
+    all(f"V4ExpertDepthTrack{index:02d}.packs" in depth_library for index in range(1, 12))
+    and "V4BookDepthTrack01To03.packs" not in depth_library
+    and "V4BookDepthTrack04To07.packs" not in depth_library
+    and "V4BookDepthTrack08To11.packs" not in depth_library,
+    "expert routing",
+)
+ck(
+    "Old forced topic/example/mistake/question template is not active",
+    all(token not in depth_sources for token in ("workedExample =", "mistakes =", "questions =", "손으로 따라가는 실전 흐름", "초보자가 실제로 많이 틀리는 지점", "다음 질문도 생각")),
+    "free-form expert blocks",
+)
+ck(
+    "Depth thresholds are enforced by JVM tests",
+    ">= 1_600" in depth_test and ">= 80_000" in depth_test and "needs several real mechanisms" in depth_test and "needs at least one concrete trace/code scenario" in depth_test,
+    "1600 chars/lesson + 80000 total + mechanism/code gates",
+)
+ck(
+    "Long boilerplate duplication is rejected",
+    "duplicates.isEmpty()" in depth_test and "noLongExplanatoryParagraphIsCopiedAcrossLessons" in depth_test,
+    "duplicate paragraph gate",
+)
+ck(
+    "Duplicate expert lesson ids fail fast before rendering",
+    "duplicateSectionIds" in depth_library and "require(duplicateSectionIds.isEmpty())" in depth_library,
+    "duplicate id guard",
+)
+ck(
+    "Learner-facing text strips authoring labels and transport escaping",
+    'replace("V3"' in depth_library and 'replace("V4"' in depth_library and "transport escaping" in depth_test and "internal V3 authoring labels" in depth_test and "internal V4 authoring labels" in depth_test,
+    "editorial sanitizer + tests",
+)
+advanced_terms = (
+    "grapheme", "NFC", "topological", "Dijkstra", "presigned", "idempotent",
+    "outbox", "saga", "covering", "WAL", "deadlock", "pepper", "KDF",
+    "property-based", "mutation", "contract test", "bulkhead", "error budget",
+)
+ck(
+    "Requested advanced concepts are promoted into expert body",
+    all(term.lower() in depth_sources.lower() for term in advanced_terms),
+    "advanced body coverage",
+)
 
 # Active V4 e-book pagination contracts. These gates must inspect the file actually routed by the
 # adaptive shell, not the retained V1 implementation.
@@ -150,13 +203,15 @@ for label in banned:
 
 failed = [item for item in checks if not item[1]]
 report = [
-    "# V4 Dense Book Reader + Deep Beginner Content Report",
+    "# V4 Expert Book Reader + Deep Beginner Content Report",
     "",
-    "Scope: intact V3 authored content plus V4 depth for all 42 learner LESSONs, remaining-space page packing, viewport-derived book pages, exact resume, focused typography, and existing practice integration.",
+    "Scope: intact V3 authored content plus free-form V4 expert depth for all 42 learner LESSONs, remaining-space page packing, viewport-derived book pages, exact resume, focused typography, and existing practice integration.",
     "",
     f"- Original V3 assets preserved: **{len(assets)}/11**",
     f"- Original TRACK character range: **{min(asset_lengths) if asset_lengths else 0:,}–{max(asset_lengths) if asset_lengths else 0:,}**",
-    f"- V4 dedicated depth packs: **{depth_sources.count('sectionId = \\"')}/42**",
+    f"- V4 expert depth source files: **{len(expert_texts)}/11**",
+    f"- V4 dedicated expert packs: **{expert_pack_count}/42**",
+    f"- Expert source characters: **{expert_source_chars:,}**",
     f"- Runtime/source gates: **{len(checks) - len(failed)}/{len(checks)} PASS**",
     "",
     "## Runtime families",
