@@ -2,37 +2,44 @@ package com.futuretech.poweruser.textbook
 
 import android.content.Context
 
+/**
+ * V2 uses a separate preference namespace because the 11 learner-facing TRACKS were completely
+ * rewritten. The old v1_textbook_progress data is intentionally left untouched on-device, while
+ * V2 read/lesson position starts clean so legacy chapter completion cannot falsely mark new TRACKS
+ * complete.
+ */
 class TextbookProgressStore(context: Context) {
-    private val prefs = context.getSharedPreferences("v1_textbook_progress", Context.MODE_PRIVATE)
+    private val prefs = context.getSharedPreferences("v2_track_progress", Context.MODE_PRIVATE)
 
-    fun selectedChapterId(): String? = prefs.getString("selected_chapter", null)
+    fun selectedChapterId(): String? = prefs.getString("selected_track", null)
 
     fun saveSelectedChapter(id: String) {
-        prefs.edit().putString("selected_chapter", id).apply()
+        prefs.edit().putString("selected_track", id).apply()
     }
 
     fun selectedSectionIndex(chapterId: String): Int =
-        prefs.getInt("selected_section_$chapterId", 0).coerceAtLeast(0)
+        prefs.getInt("selected_lesson_$chapterId", 0).coerceAtLeast(0)
 
     fun saveSelectedSectionIndex(chapterId: String, sectionIndex: Int) {
-        prefs.edit().putInt("selected_section_$chapterId", sectionIndex.coerceAtLeast(0)).apply()
+        prefs.edit().putInt("selected_lesson_$chapterId", sectionIndex.coerceAtLeast(0)).apply()
     }
 
     fun selectedConceptIndex(sectionId: String): Int =
-        prefs.getInt("selected_concept_$sectionId", 0).coerceAtLeast(0)
+        prefs.getInt("selected_recall_$sectionId", 0).coerceAtLeast(0)
 
     fun saveSelectedConceptIndex(sectionId: String, conceptIndex: Int) {
-        prefs.edit().putInt("selected_concept_$sectionId", conceptIndex.coerceAtLeast(0)).apply()
+        prefs.edit().putInt("selected_recall_$sectionId", conceptIndex.coerceAtLeast(0)).apply()
     }
 
     fun markReadComplete(id: String) {
         val updated = readCompletedIds().toMutableSet().apply { add(id) }
-        prefs.edit().putStringSet("read_completed", updated).apply()
+        prefs.edit().putStringSet("track_read_completed", updated).apply()
     }
 
     fun isReadComplete(id: String): Boolean = id in readCompletedIds()
 
-    fun readCompletedIds(): Set<String> = prefs.getStringSet("read_completed", emptySet())?.toSet().orEmpty()
+    fun readCompletedIds(): Set<String> =
+        prefs.getStringSet("track_read_completed", emptySet())?.toSet().orEmpty()
 
     fun saveScroll(id: String, index: Int, offset: Int) {
         prefs.edit()
