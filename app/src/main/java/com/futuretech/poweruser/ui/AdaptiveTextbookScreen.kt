@@ -113,8 +113,8 @@ fun AdaptiveTextbookScreen(
         ) {
             Column(
                 modifier = Modifier
-                    .fillMaxWidth()
                     .widthIn(max = 780.dp)
+                    .fillMaxWidth()
                     .testTag("reader_single_column")
             ) {
                 key(selectedChapterId) {
