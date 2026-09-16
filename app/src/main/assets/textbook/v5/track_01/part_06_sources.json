@@ -1,0 +1,25 @@
+{
+  "partId": "T01-P06",
+  "sections": [
+    {"sectionId": "T01-P06-S01-device-boundary", "sourceIds": ["CSAPP3", "OSTEP", "TLPI"]},
+    {"sectionId": "T01-P06-S02-mmio", "sourceIds": ["CSAPP3", "OSTEP"]},
+    {"sectionId": "T01-P06-S03-polling", "sourceIds": ["OSTEP"]},
+    {"sectionId": "T01-P06-S04-interrupt", "sourceIds": ["CSAPP3", "OSTEP"]},
+    {"sectionId": "T01-P06-S05-dma", "sourceIds": ["CSAPP3", "OSTEP"]},
+    {"sectionId": "T01-P06-S06-iommu", "sourceIds": ["OSTEP", "ANDROID-FUNDAMENTALS"]},
+    {"sectionId": "T01-P06-S07-buffer-ownership", "sourceIds": ["OSTEP", "TLPI"]},
+    {"sectionId": "T01-P06-S08-fd", "sourceIds": ["TLPI"]},
+    {"sectionId": "T01-P06-S09-buffering", "sourceIds": ["TLPI", "CSAPP3"]},
+    {"sectionId": "T01-P06-S10-storage", "sourceIds": ["OSTEP", "DDIA"]},
+    {"sectionId": "T01-P06-S11-queue-depth", "sourceIds": ["SRE", "OSTEP"]},
+    {"sectionId": "T01-P06-S12-sequential-random", "sourceIds": ["OSTEP", "CSAPP3"]},
+    {"sectionId": "T01-P06-S13-nic", "sourceIds": ["OSTEP", "TLPI"]},
+    {"sectionId": "T01-P06-S14-gpu", "sourceIds": ["ANDROID-FUNDAMENTALS", "CSAPP3"]},
+    {"sectionId": "T01-P06-S15-frame-pacing", "sourceIds": ["ANDROID-FUNDAMENTALS", "SRE"]},
+    {"sectionId": "T01-P06-S16-driver", "sourceIds": ["OSTEP", "ANDROID-FUNDAMENTALS"]},
+    {"sectionId": "T01-P06-S17-async-io", "sourceIds": ["TLPI", "OSTEP"]},
+    {"sectionId": "T01-P06-S18-timeout", "sourceIds": ["SRE", "TLPI"]},
+    {"sectionId": "T01-P06-S19-backpressure", "sourceIds": ["SRE", "DDIA"]},
+    {"sectionId": "T01-P06-S20-diagnostics", "sourceIds": ["SRE", "OSTEP", "TLPI"]}
+  ]
+}
