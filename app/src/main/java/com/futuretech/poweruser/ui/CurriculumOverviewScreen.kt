@@ -17,6 +17,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -41,7 +42,7 @@ private val CurriculumSoft = Color(0xFF171C24)
 @Composable
 fun CurriculumOverviewScreen(
     onOpenChapter: (String) -> Unit,
-    @Suppress("UNUSED_PARAMETER") onOpenLearningHome: () -> Unit
+    onOpenLearningHome: () -> Unit
 ) {
     Surface(
         modifier = Modifier.fillMaxSize().testTag("curriculum_overview_root"),
@@ -76,6 +77,17 @@ fun CurriculumOverviewScreen(
                         fontSize = 14.sp,
                         lineHeight = 21.sp
                     )
+                    OutlinedButton(
+                        onClick = onOpenLearningHome,
+                        modifier = Modifier.testTag("curriculum_review_button"),
+                        border = BorderStroke(1.dp, CurriculumBorder)
+                    ) {
+                        Text(
+                            text = "복습",
+                            color = CurriculumAccent,
+                            fontWeight = FontWeight.SemiBold
+                        )
+                    }
                     Surface(
                         color = CurriculumSoft,
                         shape = RoundedCornerShape(14.dp),
