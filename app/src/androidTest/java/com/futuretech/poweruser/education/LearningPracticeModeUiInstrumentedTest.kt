@@ -1,16 +1,16 @@
 package com.futuretech.poweruser.education
 
-import android.content.Context
 import androidx.compose.ui.test.hasSetTextAction
+import androidx.compose.ui.test.hasTestTag
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performScrollTo
+import androidx.compose.ui.test.performScrollToNode
 import androidx.compose.ui.test.performTextInput
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.futuretech.poweruser.MainActivity
-import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -20,29 +20,21 @@ class LearningPracticeModeUiInstrumentedTest {
     @get:Rule
     val composeRule = createAndroidComposeRule<MainActivity>()
 
-    @Before
-    fun markFirstLectureCompleted() {
-        composeRule.activity
-            .getSharedPreferences("lecture_progress_v1", Context.MODE_PRIVATE)
-            .edit()
-            .putBoolean("B01-01.completed", true)
-            .putInt("B01-01.section", 0)
-            .commit()
+    private fun openFirstV2TrackPractice() {
+        composeRule.onNodeWithTag("curriculum_chapter_V1-C01").performClick()
+        composeRule.waitForIdle()
+        composeRule.onNodeWithTag("textbook_reader")
+            .performScrollToNode(hasTestTag("textbook_practice_button"))
+        composeRule.onNodeWithTag("textbook_practice_button").performClick()
+        composeRule.waitForIdle()
     }
 
     @Test
-    fun completedLessonReopensLectureAndChallengeStillLocksHintsAndAi() {
-        composeRule.onNodeWithTag("learning_home_button").performClick()
-        composeRule.waitForIdle()
-        composeRule.onNodeWithText("이어서 학습 ▶").performClick()
+    fun v2TrackPracticeCanSwitchToChallengeAndChallengeStillLocksHintsAndAi() {
+        openFirstV2TrackPractice()
 
-        composeRule.onNodeWithTag("lecture_root").assertExists()
-        composeRule.onNodeWithTag("practice_unlocked_label").assertExists()
-        composeRule.onNodeWithTag("session_mode_practice").assertDoesNotExist()
-
-        composeRule.onNodeWithTag("lecture_start_practice").performClick()
-        composeRule.waitForIdle()
         composeRule.onNodeWithTag("session_mode_practice").assertExists()
+        composeRule.onNodeWithText("V2-T01 · 문제 1/6").assertExists()
 
         composeRule.onNodeWithText("Challenge").performClick()
         composeRule.waitForIdle()
