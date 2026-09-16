@@ -5,6 +5,7 @@ on:
     branches:
       - feat/v1-tablet-textbook
       - integrate/v1-depth-latest-main
+      - textbook-v3-deep-beginner
       - main
   workflow_dispatch:
 
