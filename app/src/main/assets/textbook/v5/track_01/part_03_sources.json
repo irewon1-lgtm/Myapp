@@ -1,0 +1,19 @@
+{
+  "partId": "T01-P03",
+  "sections": [
+    {"sectionId": "T01-P03-S01-memory-hierarchy", "sourceIds": ["CSAPP3"]},
+    {"sectionId": "T01-P03-S02-address-translation", "sourceIds": ["CSAPP3", "OSTEP"]},
+    {"sectionId": "T01-P03-S03-page-fault", "sourceIds": ["OSTEP", "TLPI"]},
+    {"sectionId": "T01-P03-S04-copy-on-write", "sourceIds": ["OSTEP", "TLPI"]},
+    {"sectionId": "T01-P03-S05-mmap", "sourceIds": ["TLPI", "OSTEP"]},
+    {"sectionId": "T01-P03-S06-allocator", "sourceIds": ["CSAPP3", "TLPI"]},
+    {"sectionId": "T01-P03-S07-garbage-collection", "sourceIds": ["CSAPP3", "ANDROID-FUNDAMENTALS"]},
+    {"sectionId": "T01-P03-S08-memory-pressure", "sourceIds": ["OSTEP", "ANDROID-FUNDAMENTALS"]},
+    {"sectionId": "T01-P03-S09-android-memory", "sourceIds": ["ANDROID-FUNDAMENTALS"]},
+    {"sectionId": "T01-P03-S10-write-path", "sourceIds": ["TLPI", "OSTEP"]},
+    {"sectionId": "T01-P03-S11-crash-consistency", "sourceIds": ["OSTEP", "TLPI"]},
+    {"sectionId": "T01-P03-S12-wal", "sourceIds": ["OSTEP", "DDIA"]},
+    {"sectionId": "T01-P03-S13-evidence", "sourceIds": ["CSAPP3", "OSTEP", "SRE"]},
+    {"sectionId": "T01-P03-S14-model", "sourceIds": ["CSAPP3", "OSTEP", "TLPI"]}
+  ]
+}
