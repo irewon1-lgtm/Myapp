@@ -2,13 +2,40 @@ package com.futuretech.poweruser.textbook
 
 import kotlin.math.ceil
 
+// Legacy V4 pack model is retained only so the old generated depth files still compile on this
+// branch. V4BookDepthLibrary no longer serves these recap-oriented packs to learners.
+internal data class BookDepthTopic(
+    val title: String,
+    val explanation: String
+)
+
 internal data class BookDepthPack(
+    val sectionId: String,
+    val topics: List<BookDepthTopic>,
+    val workedExample: String,
+    val mistakes: List<String>,
+    val questions: List<String>
+)
+
+internal fun depthTopic(title: String, explanation: String) = BookDepthTopic(title, explanation)
+
+internal fun depthPack(
+    sectionId: String,
+    topics: List<BookDepthTopic>,
+    workedExample: String,
+    mistakes: List<String>,
+    questions: List<String>
+) = BookDepthPack(sectionId, topics, workedExample, mistakes, questions)
+
+// New expert layer: every lesson owns an arbitrary block sequence. There is no mandatory
+// topic/example/mistake/question template and no repeated explanatory preamble.
+internal data class ExpertDepthPack(
     val sectionId: String,
     val blocks: List<TextbookBlock>
 )
 
-internal fun depthPack(sectionId: String, vararg blocks: TextbookBlock) =
-    BookDepthPack(sectionId, blocks.toList())
+internal fun expertPack(sectionId: String, vararg blocks: TextbookBlock) =
+    ExpertDepthPack(sectionId, blocks.toList())
 
 internal fun depthTitle(text: String) = TextbookBlock.Heading(3, text)
 internal fun depthHeading(text: String) = TextbookBlock.Heading(4, text)
@@ -19,19 +46,23 @@ internal fun depthBullets(vararg items: String) =
     TextbookBlock.BulletList(items.map(String::trim), ordered = false)
 
 /**
- * V4 is not a recap layer. It only adds knowledge that is materially deeper than the authored V3
- * lesson: underlying mechanisms, implementation choices, failure modes, production trade-offs,
- * diagnostic methods, or a neighboring concept that is required to reason about real systems.
- *
- * Packs own their complete block sequence. There is deliberately no mandatory global template and
- * no repeated explanatory preamble. Easy topics may receive a short technical bridge; difficult
- * topics may receive several mechanisms, traces, counterexamples, and operational checks.
+ * V4 is not a recap layer. It only adds knowledge materially deeper than the V3 authored lesson:
+ * mechanisms, implementation choices, failure modes, production trade-offs, diagnostic methods,
+ * and the neighboring concepts required to reason about real systems.
  */
 object V4BookDepthLibrary {
-    private val packs: Map<String, BookDepthPack> = (
-        V4BookDepthTrack01To03.packs +
-            V4BookDepthTrack04To07.packs +
-            V4BookDepthTrack08To11.packs
+    private val packs: Map<String, ExpertDepthPack> = (
+        V4ExpertDepthTrack01.packs +
+            V4ExpertDepthTrack02.packs +
+            V4ExpertDepthTrack03.packs +
+            V4ExpertDepthTrack04.packs +
+            V4ExpertDepthTrack05.packs +
+            V4ExpertDepthTrack06.packs +
+            V4ExpertDepthTrack07.packs +
+            V4ExpertDepthTrack08.packs +
+            V4ExpertDepthTrack09.packs +
+            V4ExpertDepthTrack10.packs +
+            V4ExpertDepthTrack11.packs
         ).associateBy { it.sectionId }
 
     fun blocksFor(sectionId: String): List<TextbookBlock> {
