@@ -106,7 +106,7 @@ ck("Left edge returns page", "textbook_left_tap_zone" in reader and ".clickable 
 ck("Horizontal swipe page turn", "detectHorizontalDragGestures" in reader and "72.dp.toPx()" in reader, "swipe")
 ck("Visible page number", "textbook_page_indicator" in reader and '"${pageIndex + 1} / ${pages.size}"' in reader, "page indicator")
 ck("Lesson cover exists", "textbook_lesson_cover" in reader and "LessonCoverPage" in reader, "cover")
-ck("Reader width remains book-like", "widthIn(max = 820.dp)" in reader, "820dp max")
+ck("Effective reader width remains book-like", "widthIn(max = 780.dp)" in adaptive, "780dp outer cap")
 ck("Code stays wrapped, not horizontally scrolling", "softWrap = true" in reader and "horizontalScroll(rememberScrollState())" not in reader, "code wrapping")
 
 # Exact resume contracts: TRACK, LESSON/concept and page all persist locally. Page writes use commit
