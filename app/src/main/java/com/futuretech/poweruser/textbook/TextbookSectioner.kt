@@ -12,9 +12,10 @@ data class TextbookSection(
 )
 
 /**
- * Converts a long TRACK source into deterministic BLOCK-sized reading sections without mutating
- * the source markdown. Internal chapter/section ids are intentionally preserved so existing
- * learner progress is not destroyed by the learner-facing TRACK -> BLOCK -> LESSON rename.
+ * Converts a long TRACK source into deterministic LESSON-sized reading pages without mutating
+ * the source markdown. Learner-visible H2 headings may group lessons as BLOCKs; H3 headings may
+ * name individual LESSONs. Internal chapter/section ids are intentionally preserved so existing
+ * learner progress is not destroyed by the TRACK -> BLOCK -> LESSON rename.
  * The source asset remains the single source of truth; this class controls presentation chunks only.
  */
 object TextbookSectioner {
@@ -71,7 +72,7 @@ object TextbookSectioner {
             TextbookSection(
                 id = "$chapterId-S${(index + 1).toString().padStart(2, '0')}",
                 index = index,
-                title = heading ?: "BLOCK ${index + 1}",
+                title = heading ?: "LESSON ${index + 1}",
                 estimatedMinutes = ceil(weightedLength / WEIGHT_PER_MINUTE.toDouble()).toInt().coerceIn(4, 7),
                 blocks = sectionBlocks.toList(),
                 weightedLength = weightedLength
