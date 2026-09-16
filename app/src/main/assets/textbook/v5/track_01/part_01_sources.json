@@ -1,37 +1,13 @@
 {
   "partId": "T01-P01",
   "sections": [
-    {
-      "sectionId": "T01-P01-S01-bit-pattern",
-      "sourceIds": ["CSAPP3"]
-    },
-    {
-      "sectionId": "T01-P01-S02-byte-order",
-      "sourceIds": ["CSAPP3", "TLPI"]
-    },
-    {
-      "sectionId": "T01-P01-S03-integer-representation",
-      "sourceIds": ["CSAPP3", "PYTHON-REF"]
-    },
-    {
-      "sectionId": "T01-P01-S04-text-representation",
-      "sourceIds": ["UNICODE", "PYTHON-REF"]
-    },
-    {
-      "sectionId": "T01-P01-S05-type-contract",
-      "sourceIds": ["CSAPP3", "PYTHON-REF"]
-    },
-    {
-      "sectionId": "T01-P01-S06-byte-traces",
-      "sourceIds": ["CSAPP3", "PYTHON-REF"]
-    },
-    {
-      "sectionId": "T01-P01-S07-representation-failures",
-      "sourceIds": ["UNICODE", "CSAPP3", "TLPI"]
-    },
-    {
-      "sectionId": "T01-P01-S08-model",
-      "sourceIds": ["CSAPP3", "UNICODE"]
-    }
+    {"sectionId":"T01-P01-S01-bit-pattern","sourceIds":["CSAPP3","TLPI"]},
+    {"sectionId":"T01-P01-S02-byte-order","sourceIds":["CSAPP3","TLPI"]},
+    {"sectionId":"T01-P01-S03-integer-representation","sourceIds":["CSAPP3","PYTHON-REF"]},
+    {"sectionId":"T01-P01-S04-text-representation","sourceIds":["UNICODE","UNICODE-UTS39"]},
+    {"sectionId":"T01-P01-S05-type-contract","sourceIds":["RFC8259","RFC8949","PROTOBUF-WIRE","CSAPP3"]},
+    {"sectionId":"T01-P01-S06-byte-traces","sourceIds":["CSAPP3","TLPI","RFC8949"]},
+    {"sectionId":"T01-P01-S07-representation-failures","sourceIds":["UNICODE-UTS39","RFC8259","RFC8949","PROTOBUF-WIRE"]},
+    {"sectionId":"T01-P01-S08-model","sourceIds":["CSAPP3","TLPI","UNICODE","RFC8259","PROTOBUF-WIRE"]}
   ]
 }
