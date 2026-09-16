@@ -1,215 +1,438 @@
-# TEXTBOOK V3 · Deep Beginner Rewrite Report
-
-기준 브랜치: `main`
+# TEXTBOOK V3 · Deep Beginner Extreme Fix Report
 
 작업 브랜치: `textbook-v3-deep-beginner`
 
-목표:
+기준 작업 시작점: `2f6375baec7b90c83e4a71b54b2affa7ca793482`
 
-- 기존 `TRACK → BLOCK → LESSON` 학습 구조와 reader UX는 유지한다.
-- 서로 직접 연결되는 짧은 LESSON을 하나의 큰 learner-facing LESSON으로 묶는다.
-- 정의 몇 줄짜리 단어집을 없애고 완전 초보 기준의 단계별 설명으로 바꾼다.
-- 새 learner-facing LESSON 평균 분량은 기존 authored LESSON 평균의 최소 20배를 정적 기준으로 삼는다.
-- main 병합, Actions, APK 배포는 사용자 검토/승인 전 실행하지 않는다.
+이 보고서는 `완료/PASS`를 실제 실행 여부에 따라 분리한다.
 
-## 1. 실제 원고 교체
+## 1. 이번 수정 목표
 
-V3 source assets 11개를 별도 경로에 추가했다.
+V3 원고 자체는 이전 단어장형 실패를 상당 부분 해결했지만, 극한 시뮬레이션에서 새 위험이 확인됐다.
 
 ```text
-app/src/main/assets/textbook/v3/track_01.md
-...
-app/src/main/assets/textbook/v3/track_11.md
+1. 정확히 26 LESSON이라는 숫자가 품질 목표로 굳어질 위험
+2. 60분을 넘는 LESSON도 UI에서 60분으로 잘려 과적재가 숨는 문제
+3. V3 BLOCK 수가 바뀌면 grouping mismatch가 atomic split으로 조용히 fallback하는 문제
+4. 긴 LESSON을 중간까지 읽고 앱을 닫으면 세로 위치가 복원되지 않는 문제
+5. H4 제목과 본문이 같은 16sp라 긴 페이지 스캔성이 약한 문제
+6. 코드 horizontalScroll과 LESSON horizontal swipe의 제스처 경쟁 가능성
+7. V2 → V3 통합 과정에서 핵심 개념 누락을 직접 막는 coverage gate 부족
+8. byte 기반 25x~44x 수치를 실제 교육 깊이 증가처럼 오해할 위험
 ```
 
-기존 V2 source는 삭제하거나 덮어쓰지 않았다.
+이번 작업은 위 8개를 수정했다.
 
-| TRACK | V2 bytes | V2 authored LESSON | V3 bytes | V3 authored BLOCK | 최종 learner LESSON | 평균 분량 배수(byte 기준) |
-|---:|---:|---:|---:|---:|---:|---:|
-| 01 | 19,903 | 31 | 43,404 | 5 | 2 | 33.80x |
-| 02 | 26,967 | 70 | 46,637 | 8 | 4 | 30.26x |
-| 03 | 29,161 | 51 | 42,231 | 7 | 2 | 36.93x |
-| 04 | 25,817 | 43 | 50,455 | 6 | 3 | 28.01x |
-| 05 | 33,848 | 66 | 59,042 | 8 | 4 | 28.78x |
-| 06 | 34,945 | 49 | 52,792 | 7 | 2 | 37.01x |
-| 07 | 30,999 | 48 | 40,571 | 6 | 2 | 31.41x |
-| 08 | 34,962 | 63 | 48,829 | 8 | 2 | 43.99x |
-| 09 | 35,853 | 39 | 34,484 | 3 | 1 | 37.51x |
-| 10 | 34,461 | 53 | 32,670 | 4 | 2 | 25.12x |
-| 11 | 46,537 | 77 | 40,611 | 5 | 2 | 33.60x |
+## 2. 실제 코드 변경
 
-합계:
+### 2.1 `TextbookSectioner` fail-fast
+
+기존:
 
 ```text
-기존 authored LESSON: 590
-V3 authored BLOCK: 67
-최종 learner-facing LESSON: 26
-감소율: 95.6%
-최저 TRACK 평균 분량 배수: 25.12x
-최고 TRACK 평균 분량 배수: 43.99x
+grouping.sizes.sum() != atomic.size
+→ atomic split 반환
 ```
 
-주의: 위 `분량 배수`는 파일 byte / visible lesson count를 이용한 정적 평균 지표다. 실제 parser weightedLength 기준으로 각 개별 learner LESSON이 20x 이상인지 확인하는 JVM test를 추가했지만 전체 Gradle suite는 아래 환경 제약 때문에 아직 실행하지 못했다. 따라서 이 보고서에서는 그 test를 PASS라고 표시하지 않는다.
-
-## 2. learner-facing LESSON grouping
-
-최종 reader page 수:
+문제:
 
 ```text
-TRACK 01: 2
-TRACK 02: 4
-TRACK 03: 2
-TRACK 04: 3
-TRACK 05: 4
-TRACK 06: 2
-TRACK 07: 2
-TRACK 08: 2
-TRACK 09: 1
-TRACK 10: 2
-TRACK 11: 2
-합계: 26
+원고 BLOCK 하나 추가
+↓ grouping table 갱신 누락
+↓ 테스트/화면이 조용히 수십 개 조각 LESSON으로 후퇴 가능
 ```
 
-`TextbookSectioner`는 V3에서 adjacent/prerequisite-related BLOCK만 묶는다.
-
-reader 동작:
+수정:
 
 ```text
-TRACK
-↓
-큰 LESSON 1개 선택
-↓
-LESSON 내부에서 BLOCK이 책의 소단원처럼 이어짐
-↓
-각 BLOCK 안에서 단계별 H4 소제목
-↓
-짧은 recall
-↓
-다음 큰 LESSON
+V3 grouping mismatch
+→ IllegalArgumentException
+→ 즉시 실패
 ```
 
-기존 source의 `### LESSON 01 · ...` 라벨은 learner reader에서 별도 페이지로 쓰지 않고 H4 subsection으로 내리며 `LESSON 01 ·` 문자열은 제거한다.
+Legacy/non-V3 synthetic caller는 기존 atomic split을 유지한다.
 
-## 3. 내용 편집 규칙
+### 2.2 읽기시간 upper clamp 제거
 
-각 BLOCK은 가능한 한 다음 흐름을 가진다.
+기존 V3:
+
+```kotlin
+estimatedMinutes = raw.coerceIn(10, 60)
+```
+
+문제:
 
 ```text
-실제 상황/문제
-→ 아주 쉬운 뜻
-→ 비유/그림
-→ 동작 순서
-→ 작은 코드
-→ 코드 해석
-→ 실패/오류 사례
-→ 언제 쓰는가
-→ 다른 개념과 연결
-→ 책을 덮고 확인하는 질문
+실제 83분
+→ UI 60분
+→ 품질 테스트도 60분으로 보아 과적재 은폐 가능
 ```
 
-초급 원칙:
-
-- 영어 용어를 먼저 던지지 않는다.
-- 아직 설명하지 않은 전문용어로 다른 전문용어를 설명하지 않는다.
-- 코드가 나오면 앞의 쉬운 개념과 연결한다.
-- `실행됨 = 정답`으로 가르치지 않는다.
-- 용어 사전은 본문 설명을 대체하지 않는다.
-
-대표 개선:
-
-- TRACK 03 node/linked list: 상자 연결 → node/value/next → 순회 → 삽입 → 연결 유실 → 배열 비교 → singly/doubly까지 연결.
-- TRACK 05 async: 기다림 → blocking/sync/async → callback → Promise → async/await → call stack/event loop/microtask → race/cancel/timeout으로 연결.
-- TRACK 06 MIME: 받은 byte의 종류 문제 → MIME → JSON → Content-Type/Accept → form → multipart → boundary → 실제 upload 문제로 연결.
-- TRACK 08 integrity: 말이 안 되는 age/order → PRIMARY KEY/UNIQUE/NULL/CHECK → FOREIGN KEY → 참조 무결성 → 관계/JOIN → transaction/ACID로 연결.
-
-## 4. 품질 테스트 교체
-
-옛 gate의 문제:
-
-- TRACK 전체 글자 수만 길면 PASS 가능.
-- BLOCK 수가 많아야 PASS.
-- H3 `LESSON` 하나를 reader page 하나로 강제.
-- 실제 LESSON 교육 밀도를 검사하지 않음.
-
-V3 gate:
-
-- V3 asset 경로 확인.
-- authored BLOCK 수를 작은 범위로 제한.
-- source truncation byte floor.
-- BLOCK별 최소 설명량/step subsection 확인.
-- 반복 padding/TODO 차단.
-- 최종 learner-facing lesson count = 26 고정.
-- authored BLOCK가 merged lesson 내부에 모두 남는지 확인.
-- nested old `LESSON 01` 라벨이 learner page에 재등장하지 않는지 확인.
-- V2 실제 section 평균 weightedLength 대비 **각 V3 learner-facing LESSON weightedLength ≥ 20x** gate 추가.
-
-수정한 test files:
+수정:
 
 ```text
-TextbookClean25Test.kt
-TextbookExtreme60Test.kt
-TextbookRealAssetSectionTest.kt
-V1EditorialQualityTest.kt
-V1TextbookCatalogTest.kt
+raw estimate를 그대로 유지
+최소 10분만 보정
+60분 초과면 실제 숫자가 드러남
+새 실제 asset test가 실패해야 함
 ```
+
+정식 V3 상한:
+
+```text
+10..60분
+```
+
+### 2.3 exact 26 gate 제거
+
+현재 실제 grouping 결과는 여전히 26 LESSON이다.
+
+하지만 테스트는 더 이상 `정확히 26`을 품질 기준으로 삼지 않는다.
+
+새 기준:
+
+```text
+전체 learner LESSON: 20..50
+TRACK별: 1..6
+한 LESSON 내부 major BLOCK: 1..4
+```
+
+교육적으로 더 좋은 구조가 27/30/35 LESSON이면 바꿀 수 있다.
+
+### 2.4 depth 양방향 gate
+
+기존:
+
+```text
+V2 평균보다 20x 이상
+```
+
+만 검사해서 너무 긴 LESSON은 통과할 수 있었다.
+
+새 실제 asset test:
+
+```text
+V2 reader page 평균 대비
+V3 LESSON depth ratio 12x..60x
+```
+
+즉 너무 짧은 단어장과 너무 긴 벽글을 모두 막는다.
+
+### 2.5 V3 critical coverage test
+
+새 파일:
+
+```text
+V3CriticalCoverageTest.kt
+```
+
+11 TRACK의 핵심 spine을 검사한다.
+
+대표:
+
+```text
+TRACK 03: array / node / stack / hash / tree / Big-O
+TRACK 05: const / closure / Promise / async-await / event loop / TypeScript
+TRACK 06: DNS / TCP / TLS / Content-Type / multipart / CORS
+TRACK 08: PRIMARY KEY / FOREIGN KEY / JOIN / index / transaction / ACID
+TRACK 09: threat / authentication / hash / encryption / SQL injection / XSS / CSRF / secret
+TRACK 10: reproduction / unit / integration / Git / CI / artifact / rollback
+TRACK 11: requirement / acceptance criteria / cohesion / coupling / DI / cache / circuit breaker / observability
+```
+
+사용자가 직접 문제 삼았던 4개는 별도 회귀 조건으로 추가했다.
+
+```text
+node + next + 중간 삽입
+callback + Promise + microtask
+MIME + Content-Type + boundary
+데이터 무결성 + CHECK + 참조 무결성
+```
+
+주의: 이 test file은 작성/커밋했지만 Full Gradle suite를 아직 실행하지 않았으므로 `PASS`라고 표시하지 않는다.
+
+## 3. reader UX 수정
+
+### 3.1 V3 전용 progress namespace
+
+기존 namespace:
+
+```text
+v2_track_progress
+```
+
+새 namespace:
+
+```text
+v3_deep_beginner_progress
+```
+
+이전 V1/V2 완료/위치가 V3 완료로 잘못 이어지지 않는다.
+
+### 3.2 LESSON 세로 위치 저장/복원
+
+기존 `TextbookProgressStore`에 함수는 있었지만 reader가 사용하지 않았다.
+
+이번에 실제 연결했다.
+
+저장:
+
+```text
+currentConcept.id
+firstVisibleItemIndex
+firstVisibleItemScrollOffset
+```
+
+reader에서는 `snapshotFlow`로 위치를 기록한다.
+
+재진입:
+
+```text
+rememberLazyListState(
+  initialFirstVisibleItemIndex = 저장 index,
+  initialFirstVisibleItemScrollOffset = 저장 offset
+)
+```
+
+offset은 48px bucket으로 기록해 스크롤 매 pixel마다 SharedPreferences write가 발생하는 것을 줄였다.
+
+### 3.3 긴 글 제목 계층 강화
+
+기존:
+
+```text
+H3 18sp
+H4 16sp
+본문 16sp
+```
+
+수정:
+
+```text
+H3 19sp / Bold / top 16dp
+H4 17sp / SemiBold / top 10dp
+본문 16sp
+```
+
+형광색을 추가하지 않고 크기·굵기·여백으로 계층을 만든다.
+
+### 3.4 코드 horizontalScroll 제거
+
+기존:
+
+```text
+코드 horizontalScroll
++
+페이지 horizontal swipe
+```
+
+이 둘이 좁은 폰에서 gesture 경쟁할 가능성이 있었다.
+
+수정:
+
+```text
+코드 softWrap = true
+horizontalScroll 제거
+LESSON swipe 유지
+swipe threshold 86dp → 110dp
+```
+
+### 3.5 reader regression contract
+
+새 파일:
+
+```text
+V3ReaderResilienceContractTest.kt
+```
+
+정적 계약:
+
+- saved scroll을 `rememberLazyListState`에 넣는지
+- `snapshotFlow`로 실제 저장하는지
+- V3 progress namespace인지
+- code horizontalScroll이 다시 들어오지 않는지
+- `softWrap=true`인지
+- H3/H4 시각 계층이 다시 무너지지 않는지
+
+이 test도 Full Gradle 미실행이므로 아직 PASS라고 부르지 않는다.
+
+## 4. byte 25x~44x 해석 수정
+
+기존 보고서의:
+
+```text
+TRACK별 25.12x ~ 43.99x
+```
+
+는 `파일 byte / visible lesson count`와 V2 authored lesson 평균의 비교였다.
+
+이 수치는:
+
+```text
+590 조각 → 26 큰 페이지로 합친 효과
+UTF-8 한국어 byte 크기
+실제 원고 증가
+```
+
+가 섞여 있다.
+
+따라서 이제 **품질 PASS 근거로 사용하지 않는다.**
+
+현재 파일 byte 통계는 참고 통계로만 유지한다.
+
+실제 품질 gate는 parser 결과의 `weightedLength`, raw `estimatedMinutes`, internal BLOCK count를 사용한다.
 
 ## 5. 실제 실행한 검증
 
-### PASS · core Kotlin compile/run
+### PASS 1 · standalone Kotlin resilience compile/run
 
-외부 dependency 없이 `TextbookBlock + TextbookSectioner + synthetic V3 blocks`를 Kotlin 1.9.0으로 실제 컴파일하고 실행했다.
-
-실제 결과:
+로컬 환경:
 
 ```text
-CORE_GROUPING_PASS total=26
+kotlinc available
+JDK 21
 ```
 
-검증 내용:
+`TextbookBlock stub + 실제 수정 TextbookSectioner + harness`를 실제 컴파일/실행했다.
 
-- 11 TRACK grouping table이 실제 Kotlin에서 26 learner lessons를 생성.
-- grouping count mismatch가 없을 때 planned group 수 사용.
-- merged lesson에서 TRACK H1 제거.
-- source H2 BLOCK heading을 내부 subchapter로 보존.
-- source `LESSON 01 ·` label을 H4 subsection으로 변환.
-- synthetic/non-V3 chapter id는 기존 atomic split/content preservation 유지.
+결과:
 
-## 6. 실행하지 못한 검증
+```text
+V3_SECTIONER_RESILIENCE_PASS sections=2 minutes=[83, 55]
+```
 
-### NOT RUN · full Gradle/JVM/Android suite
+검증:
 
-현재 작업 container에서 GitHub clone을 실제 시도했으나 DNS가 차단되어 실패했다.
+- V1-C01 grouping = 2
+- legacy `LESSON 01` label 제거
+- overlong synthetic content가 60으로 clamp되지 않고 83분으로 노출
+- BLOCK mismatch가 예외로 실패
 
-실제 오류:
+### PASS 2 · 서로 다른 실패 유형 CLEAN 7
+
+실제 Kotlin compile/run 결과:
+
+```text
+V3_EXTREME_CLEAN7_PASS
+sections=2
+overlong=[83, 55]
+estimator=[1, 1, 10, 100]
+```
+
+실제 검증한 7종:
+
+1. 정상 V3 grouping 수
+2. legacy/non-V3 atomic content preservation
+3. old tiny LESSON label 제거
+4. V3 authored BLOCK mismatch fail-fast
+5. overlong lesson raw minute 노출
+6. Heading/Paragraph/Bullet/Code/Table/Divider weight 양수
+7. minute estimator monotonic + upper clamp 없음
+
+### PASS 3 · 실제 `TextbookBlock` data shape 호환 compile/run
+
+stub의 Code constructor 순서와 실제 프로젝트 model 차이까지 제거하기 위해 실제 `TextbookBlock` shape로 다시 컴파일했다.
+
+결과:
+
+```text
+REAL_MODEL_SECTIONER_PASS [84, 56]
+```
+
+즉 수정한 `TextbookSectioner` 자체는 실제 model signature와 호환되는 상태로 standalone Kotlin compile/run PASS다.
+
+## 6. 실제 repository 반영 증거
+
+작업 시작점:
+
+```text
+2f6375baec7b90c83e4a71b54b2affa7ca793482
+```
+
+이후 별도 branch에 다음 변경을 실제 커밋했다.
+
+```text
+Harden V3 lesson grouping and expose true reading time
+Isolate V3 textbook progress namespace
+Replace fixed 26-page gate with depth and overload guards
+Add V3 critical concept coverage regression gate
+Restore V3 reading position and improve long-form reader hierarchy
+Add V3 long-reader resilience regression contract
+Replace exact-26 target with V3 quality bounds and resilience contract
+```
+
+`main`에는 병합하지 않았다.
+
+## 7. 아직 실행하지 못한 검증
+
+현재 실행 container에서 GitHub DNS 실패는 다시 재현됐다.
 
 ```text
 fatal: unable to access 'https://github.com/irewon1-lgtm/Myapp.git/':
 Could not resolve host: github.com
 ```
 
-따라서 아래 항목을 PASS라고 주장하지 않는다.
+따라서 아래는 아직 PASS가 아니다.
 
 ```text
+전체 repository clone
 ./gradlew test
+TextbookRealAssetSectionTest 실제 11 TRACK 전수 실행
+V3CriticalCoverageTest JVM 실행
+V3ReaderResilienceContractTest JVM 실행
 Android instrumented tests
-Galaxy Tab emulator/device UI test
+Galaxy Tab 실제/에뮬레이터 swipe/scroll-resume 확인
 APK build/install
-GitHub Actions
-main merge
-production deployment
 ```
 
-Actions/deploy는 사용자 승인 전 실행하지 않는다.
+특히 **새 10~60분 actual asset gate가 현재 26개 LESSON을 전부 통과하는지는 아직 실제 JVM 실행 증거가 없다.**
 
-## 7. branch isolation
+이 gate가 실패하면 `26 유지`를 위해 시간을 다시 clamp하지 않고, 해당 TRACK grouping을 더 교육적으로 나누는 것이 다음 수정 원칙이다.
 
-확인 시점:
+## 8. 승인 경계
+
+실행하지 않음:
 
 ```text
-main: cdab71485e48bb16f1e146a774156c5d74ae0077
-textbook-v3-deep-beginner: 별도 ahead branch
+main merge
+GitHub Actions
+APK release/deploy
+production 변경
+유료 실행
 ```
 
-V3 변경은 main에 병합하지 않았다.
+현재 작업은 `textbook-v3-deep-beginner` branch 안의 코드/test/document 수정과 무료 로컬 Kotlin standalone 검증까지만 수행했다.
 
-사용자가 원고/구조를 먼저 검토한 뒤 다음 단계로 갈 수 있다.
+## 9. 현재 판정
+
+### 실제 PASS라고 말할 수 있는 것
+
+```text
+TextbookSectioner 수정본 standalone Kotlin compile/run
+CLEAN 7 서로 다른 실패 유형
+실제 TextbookBlock model shape 호환 compile/run
+GitHub branch 코드 반영
+```
+
+### 코드상 수정 완료했지만 Full suite PASS는 아닌 것
+
+```text
+scroll resume wiring
+V3 progress isolation
+reader H3/H4 hierarchy
+code soft-wrap / horizontal-scroll 제거
+actual asset depth/time gate
+critical content coverage gate
+reader resilience source contract
+```
+
+### 아직 미검증
+
+```text
+Full Gradle/JVM
+Android UI
+Galaxy Tab 실화면
+APK
+```
+
+따라서 **전체 프로젝트 PASS라고 보고하지 않는다.**
