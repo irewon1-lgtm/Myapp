@@ -1,13 +1,13 @@
 package com.futuretech.poweruser.education
 
-import androidx.compose.ui.test.hasTestTag
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
+import androidx.compose.ui.test.onAllNodesWithTag
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
-import androidx.compose.ui.test.performScrollToNode
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.futuretech.poweruser.MainActivity
+import org.junit.Assert.assertTrue
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -17,11 +17,23 @@ class LearningPracticeModeUiInstrumentedTest {
     @get:Rule
     val composeRule = createAndroidComposeRule<MainActivity>()
 
+    private fun turnReaderUntilVisible(tag: String, maxTurns: Int = 250) {
+        repeat(maxTurns) {
+            composeRule.waitForIdle()
+            if (composeRule.onAllNodesWithTag(tag).fetchSemanticsNodes().isNotEmpty()) return
+            assertTrue(
+                "Paged reader next control disappeared before reaching $tag",
+                composeRule.onAllNodesWithTag("textbook_right_tap_zone").fetchSemanticsNodes().isNotEmpty()
+            )
+            composeRule.onNodeWithTag("textbook_right_tap_zone").performClick()
+        }
+        assertTrue("Paged reader did not reach $tag within $maxTurns page turns", false)
+    }
+
     private fun openFirstV2TrackPractice() {
         composeRule.onNodeWithTag("curriculum_chapter_V1-C01").performClick()
         composeRule.waitForIdle()
-        composeRule.onNodeWithTag("textbook_reader")
-            .performScrollToNode(hasTestTag("textbook_practice_button"))
+        turnReaderUntilVisible("textbook_practice_button")
         composeRule.onNodeWithTag("textbook_practice_button").performClick()
         composeRule.waitForIdle()
     }
