@@ -188,6 +188,22 @@ object V3BeginnerGuidanceResolver {
         ),
 
         g(
+            "V1-C10-S01",
+            terms = listOf(h("minimal reproduction", "큰 앱 문제를 가장 작은 코드·입력으로 줄여 같은 실패를 재현하는 것"), h("stack trace", "오류까지 어떤 함수 호출 경로를 거쳤는지 보여 주는 기록")),
+            answers = listOf("증상과 원인을 구분하고 expected와 actual을 먼저 적는다.", "같은 조건에서 재현할 수 있어야 원인 후보를 좁힐 수 있다.", "FACT와 HYPOTHESIS를 분리하고 한 가설에 한 실험을 한다.", "로그·debugger·stack trace는 실제 실행 경로와 상태를 확인하는 증거다.", "minimal reproduction은 큰 앱 문제를 작은 실험으로 줄여 원인을 찾기 쉽게 한다.")
+        ),
+        g(
+            "V1-C10-S02",
+            terms = listOf(h("regression test", "한번 고친 버그가 다시 생기지 않는지 같은 실패 조건을 반복 검사하는 테스트"), h("test double", "실제 DB·결제·네트워크 대신 테스트에서 역할을 대신하는 fake·stub·mock 같은 대체물"), h("flaky test", "같은 코드인데 timing·공유상태 때문에 PASS와 FAIL이 불안정하게 바뀌는 테스트")),
+            answers = listOf("unit·integration·E2E는 검증하는 범위와 비용이 다르다.", "boundary와 실패 입력까지 확인해야 정상 예제 한두 개보다 강한 증거가 된다.", "고친 버그는 같은 조건을 자동 재현하는 regression test로 남긴다.", "test double은 외부 의존성을 통제해 핵심 규칙을 안정적으로 검증하게 한다.", "flaky test는 무시할 대상이 아니라 원인을 찾아 안정화해야 할 신뢰성 문제다.", "테스트 PASS는 실행한 조건의 성공 증거이지 버그 0개의 증명이 아니다.")
+        ),
+        g(
+            "V1-C10-S03",
+            terms = listOf(h("artifact", "build가 만든 APK·AAB·bundle처럼 테스트·배포할 수 있는 결과물"), h("migration / rollback", "DB 구조 변경 절차 / 문제 배포를 이전 안정 상태로 되돌리는 절차"), h("CI", "정해 둔 build·test·검사를 자동으로 반복 실행해 변경을 검증하는 절차")),
+            answers = listOf("repository·working tree·commit·branch는 변경 상태와 역사를 서로 다른 역할로 관리한다.", "merge conflict는 자동 정답이 없어 사람이 최종 의도를 결정해야 하는 상황이다.", "main merge와 production 배포는 서로 다른 단계다.", "build 결과 artifact는 어떤 commit·설정·테스트에서 만들어졌는지 추적 가능해야 한다.", "CI PASS는 정의된 검사 범위가 성공했다는 뜻이지 미실행 검증까지 성공했다는 뜻이 아니다.", "문제 배포에는 migration 호환성과 rollback 경로를 함께 준비해야 한다.", "실제로 실행하지 않은 검증을 PASS라고 보고하지 않는다.")
+        ),
+
+        g(
             "V1-C11-S01",
             terms = listOf(h("cohesion", "한 모듈의 코드가 같은 목적과 책임에 얼마나 잘 모여 있는지 보는 관점"), h("coupling", "한 모듈 변경이 다른 모듈 변경까지 얼마나 강하게 요구하는지 보는 관점"), h("dependency inversion", "핵심 규칙이 구체 DB·SDK보다 추상 계약에 의존하도록 만드는 방향")),
             answers = listOf("functional requirement는 기능, non-functional requirement는 품질 조건이다.", "acceptance criteria는 완료를 실제 테스트 가능한 문장으로 만든다.", "responsibility와 module은 변경 이유를 기준으로 경계를 나눈다.", "interface는 사용할 수 있는 계약이고 implementation은 실제 동작 방식이다.", "높은 cohesion과 낮은 불필요한 coupling은 수정·테스트 범위를 줄인다.", "DI는 핵심 규칙을 구체 기술에서 분리하기 쉽게 한다."),
@@ -211,7 +227,7 @@ object V3BeginnerGuidanceResolver {
     )
 
     private val replacedTrackPrefixes = setOf(
-        "V1-C01-", "V1-C03-", "V1-C06-", "V1-C07-", "V1-C08-", "V1-C09-", "V1-C11-"
+        "V1-C01-", "V1-C03-", "V1-C06-", "V1-C07-", "V1-C08-", "V1-C09-", "V1-C10-", "V1-C11-"
     )
 
     val guides: List<BeginnerLessonGuide> = V3BeginnerGuidance.guides
