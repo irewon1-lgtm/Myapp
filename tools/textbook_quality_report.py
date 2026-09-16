@@ -205,7 +205,7 @@ for path in (
 if catalog_path.exists():
     source = catalog_path.read_text(encoding="utf-8")
     ck("Catalog exposes TRACK count 11", 'const val TRACK_COUNT = 11' in source, "TRACK_COUNT")
-    ck("Catalog points at V2 assets", '"textbook/v2/track_${number.toString().padStart(2, \'0\')}.md"' in source, "v2 asset path")
+    ck("Catalog points at V3 assets", '"textbook/v3/track_${number.toString().padStart(2, \'0\')}.md"' in source, "v3 asset path")
     practice_ids = re.findall(r'"V2-T\d{2}"', source)
     ck("Catalog has 11 V2 practice ids", len(practice_ids) == 11 and len(set(practice_ids)) == 11, f"ids={len(practice_ids)}")
     ck("Catalog no longer maps current TRACKs to TB1 practice", '"TB1-C' not in source, "no TB1 current mapping")
@@ -226,11 +226,15 @@ if sectioner_path.exists():
     ck("Section layer exists", "data class TextbookSection" in source and "object TextbookSectioner" in source, "section model + splitter")
     ck("LESSON estimates clamp 4-7", ".coerceIn(4, 7)" in source, "4..7")
     ck("Learner fallback says LESSON", '"LESSON ${index + 1}"' in source, "LESSON fallback")
-    ck("Source split remains non-destructive", "source asset remains the single source of truth" in source.lower(), "non-destructive")
+    ck(
+        "V3 grouping preserves authored BLOCK order",
+        "sourceSections.flatMap" in source and "section.blocks.mapNotNull(::asInternalLessonBlock)" in source,
+        "ordered authored BLOCK merge",
+    )
 
 if flow_path.exists():
     source = flow_path.read_text(encoding="utf-8")
-    ck("Inline problem is current-LESSON recall", "방금 읽은 ‘$title’" in source, "current title recall")
+    ck("Inline problem is current-LESSON recall", "방금 읽은 ‘${section.title}’" in source, "current section title recall")
     ck("Inline recall is low stakes", "점수를 깎지 않으며" in source, "low-stakes")
     ck("Inline flow does not reuse legacy AI question", "aiHallucinationQuestion" not in source, "no stale prompt")
 
