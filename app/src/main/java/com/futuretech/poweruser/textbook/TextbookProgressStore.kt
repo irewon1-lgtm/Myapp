@@ -30,6 +30,14 @@ class TextbookProgressStore(context: Context) {
         prefs.edit().putInt("selected_recall_$sectionId", conceptIndex.coerceAtLeast(0)).apply()
     }
 
+    /** Exact e-book page restore point for the current concept/lesson. */
+    fun selectedPageIndex(conceptId: String): Int =
+        prefs.getInt("reader_page_$conceptId", 0).coerceAtLeast(0)
+
+    fun saveSelectedPageIndex(conceptId: String, pageIndex: Int) {
+        prefs.edit().putInt("reader_page_$conceptId", pageIndex.coerceAtLeast(0)).apply()
+    }
+
     fun markReadComplete(id: String) {
         val updated = readCompletedIds().toMutableSet().apply { add(id) }
         prefs.edit().putStringSet("track_read_completed", updated).apply()
@@ -40,6 +48,10 @@ class TextbookProgressStore(context: Context) {
     fun readCompletedIds(): Set<String> =
         prefs.getStringSet("track_read_completed", emptySet())?.toSet().orEmpty()
 
+    /**
+     * Legacy scroll restore is kept for compatibility with older builds/tests. The paged reader no
+     * longer writes these keys, but preserving them avoids destructive migration behavior.
+     */
     fun saveScroll(id: String, index: Int, offset: Int) {
         prefs.edit()
             .putInt("scroll_index_$id", index.coerceAtLeast(0))
