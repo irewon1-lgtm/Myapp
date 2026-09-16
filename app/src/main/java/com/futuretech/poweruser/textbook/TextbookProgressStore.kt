@@ -2,11 +2,6 @@ package com.futuretech.poweruser.textbook
 
 import android.content.Context
 
-/**
- * V3 uses a separate preference namespace because the learner-facing textbook was rewritten and
- * regrouped again. Older v1/v2 progress is intentionally left untouched on-device so legacy
- * completion or lesson positions cannot falsely mark the deep-beginner V3 as completed.
- */
 class TextbookProgressStore(context: Context) {
     private val prefs = context.getSharedPreferences("v3_deep_beginner_progress", Context.MODE_PRIVATE)
 
@@ -29,6 +24,13 @@ class TextbookProgressStore(context: Context) {
     fun saveSelectedConceptIndex(sectionId: String, conceptIndex: Int) {
         prefs.edit().putInt("selected_recall_$sectionId", conceptIndex.coerceAtLeast(0)).apply()
     }
+
+    fun savePageIndex(conceptId: String, pageIndex: Int) {
+        prefs.edit().putInt("page_index_$conceptId", pageIndex.coerceAtLeast(0)).apply()
+    }
+
+    fun pageIndex(conceptId: String): Int =
+        prefs.getInt("page_index_$conceptId", 0).coerceAtLeast(0)
 
     fun markReadComplete(id: String) {
         val updated = readCompletedIds().toMutableSet().apply { add(id) }
