@@ -80,10 +80,11 @@ object TextbookSectioner {
             )
         ),
         "V1-C06" to LessonGrouping(
-            sizes = listOf(3, 4),
+            sizes = listOf(2, 2, 3),
             titles = listOf(
-                "내 기기에서 서버까지 IP·DNS·TCP·TLS의 길을 따라간다",
-                "HTTP·MIME·API·CORS까지 실제 통신 문제를 해결한다"
+                "내 기기에서 서버까지 IP·DNS·TCP의 길을 따라간다",
+                "TLS·URL·HTTP 요청과 응답을 실제 메시지로 읽는다",
+                "MIME·API·CORS까지 실제 통신 문제를 해결한다"
             )
         ),
         "V1-C07" to LessonGrouping(
@@ -166,12 +167,18 @@ object TextbookSectioner {
 
     /**
      * Original deterministic authoring split. Unknown/synthetic chapter ids always use this path.
+     *
+     * V3 authored files use H3 for more than learner LESSON headings (for example TRACK projects
+     * and completion criteria). Those H3 headings belong to the surrounding BLOCK and must not be
+     * mistaken for an extra atomic lesson. Only an authored `LESSON ...` H3 can start a new V3
+     * atomic lesson. Legacy/synthetic callers retain the historical "every H3 may split" behavior.
      */
     private fun splitAtomic(chapterId: String, blocks: List<TextbookBlock>): List<TextbookSection> {
         val raw = mutableListOf<MutableList<TextbookBlock>>()
         var current = mutableListOf<TextbookBlock>()
         var currentHasBlockHeading = false
         var currentHasLessonHeading = false
+        val isV3AuthoredTrack = chapterId in v3Groupings
 
         fun flush() {
             if (current.isNotEmpty()) {
@@ -191,9 +198,14 @@ object TextbookSectioner {
                         currentHasBlockHeading = true
                     }
                     3 -> {
-                        if (currentHasLessonHeading) flush()
-                        current += block
-                        currentHasLessonHeading = true
+                        val authoredLessonHeading = block.text.startsWith("LESSON ", ignoreCase = true)
+                        if (isV3AuthoredTrack && !authoredLessonHeading) {
+                            current += block
+                        } else {
+                            if (currentHasLessonHeading) flush()
+                            current += block
+                            currentHasLessonHeading = true
+                        }
                     }
                     else -> current += block
                 }
@@ -225,7 +237,7 @@ object TextbookSectioner {
      * A merged learner-facing LESSON already has its own title in the reader header.
      * - TRACK H1 is removed to avoid duplicate chapter headings.
      * - authored BLOCK H2 becomes an internal H3 subchapter but keeps the BLOCK label.
-     * - the old tiny H3 `LESSON 01 · ...` becomes an H4 subsection with the label removed.
+     * - authored H3 headings become H4 subsections; only legacy `LESSON 01 · ...` labels are stripped.
      */
     private fun asInternalLessonBlock(block: TextbookBlock): TextbookBlock? = when (block) {
         is TextbookBlock.Heading -> when (block.level) {
