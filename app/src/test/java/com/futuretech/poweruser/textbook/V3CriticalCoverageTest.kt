@@ -21,7 +21,7 @@ class V3CriticalCoverageTest {
         4 to listOf("HTML", "CSS", "DOM", "event", "반응형"),
         5 to listOf("const", "closure", "Promise", "async/await", "event loop", "TypeScript"),
         6 to listOf("DNS", "TCP", "TLS", "Content-Type", "multipart/form-data", "CORS"),
-        7 to listOf("route", "middleware", "validation", "authentication", "queue", "관측성"),
+        7 to listOf("route", "middleware", "validation", "authentication", "queue", "observability"),
         8 to listOf("PRIMARY KEY", "FOREIGN KEY", "JOIN", "index", "transaction", "ACID"),
         9 to listOf("threat", "authentication", "hash", "encryption", "SQL injection", "XSS", "CSRF", "secret"),
         10 to listOf("재현", "unit", "integration", "Git", "CI", "artifact", "rollback"),
