@@ -1,7 +1,10 @@
 package com.futuretech.poweruser.ui
 
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.widthIn
@@ -21,6 +24,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.testTag
@@ -103,15 +107,25 @@ fun AdaptiveTextbookScreen(
             }
         }
     ) {
-        Column(modifier = Modifier.testTag("reader_single_column")) {
-            key(selectedChapterId) {
-                V1TextbookScreen(
-                    practiceCompletedIds = practiceCompletedIds,
-                    onNavigateBack = onNavigateBack,
-                    onStartPractice = onStartPractice,
-                    initialChapterId = selectedChapterId,
-                    onOpenToc = { scope.launch { drawerState.open() } }
-                )
+        Box(
+            modifier = Modifier.fillMaxSize(),
+            contentAlignment = Alignment.TopCenter
+        ) {
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .widthIn(max = 780.dp)
+                    .testTag("reader_single_column")
+            ) {
+                key(selectedChapterId) {
+                    V1TextbookScreen(
+                        practiceCompletedIds = practiceCompletedIds,
+                        onNavigateBack = onNavigateBack,
+                        onStartPractice = onStartPractice,
+                        initialChapterId = selectedChapterId,
+                        onOpenToc = { scope.launch { drawerState.open() } }
+                    )
+                }
             }
         }
     }
