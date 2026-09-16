@@ -18,14 +18,26 @@ enum class TextbookLayoutMode {
 sealed interface TextbookBlock {
     data class Heading(val level: Int, val text: String) : TextbookBlock
     data class Paragraph(val text: String) : TextbookBlock
-    data class BulletList(val items: List<String>, val ordered: Boolean) : TextbookBlock
+    /**
+     * startNumber is meaningful only for ordered lists. It is explicit because a list may be split
+     * across book pages; resetting a continuation page to 1 changes learner-visible meaning.
+     */
+    data class BulletList(
+        val items: List<String>,
+        val ordered: Boolean,
+        val startNumber: Int = 1
+    ) : TextbookBlock {
+        init {
+            require(startNumber >= 1) { "startNumber must be positive: $startNumber" }
+        }
+    }
     data class Code(val language: String, val text: String) : TextbookBlock
     data class Table(val headers: List<String>, val rows: List<List<String>>) : TextbookBlock
     data object Divider : TextbookBlock
 }
 
 object TextbookMarkdownParser {
-    private val orderedItem = Regex("^\\d+[.)]\\s+(.+)$")
+    private val orderedItem = Regex("^(\\d+)[.)]\\s+(.+)$")
 
     fun parse(markdown: String): List<TextbookBlock> {
         val lines = markdown.replace("\r\n", "\n").lines()
@@ -61,8 +73,19 @@ object TextbookMarkdownParser {
                 }
                 orderedItem.matches(line.trimStart()) -> {
                     val items = mutableListOf<String>()
-                    while (i < lines.size) { val match = orderedItem.find(lines[i].trimStart()) ?: break; items += cleanInline(match.groupValues[1]); i++ }
-                    out += TextbookBlock.BulletList(items, ordered = true)
+                    val firstMatch = requireNotNull(orderedItem.find(line.trimStart()))
+                    val startNumber = firstMatch.groupValues[1].toInt()
+                    var expected = startNumber
+                    while (i < lines.size) {
+                        val match = orderedItem.find(lines[i].trimStart()) ?: break
+                        val actualNumber = match.groupValues[1].toInt()
+                        // A numbering jump starts a new authored list instead of silently changing it.
+                        if (actualNumber != expected) break
+                        items += cleanInline(match.groupValues[2])
+                        expected++
+                        i++
+                    }
+                    out += TextbookBlock.BulletList(items, ordered = true, startNumber = startNumber)
                 }
                 else -> {
                     val paragraph = mutableListOf<String>()
