@@ -2,7 +2,7 @@ package com.futuretech.poweruser.data
 
 data class LessonContent(
     val lessonId: String,
-    val curriculumType: String, // BEGINNER, INTERMEDIATE or TEXTBOOK_V1
+    val curriculumType: String, // BEGINNER, INTERMEDIATE, TEXTBOOK_V1 or TEXTBOOK_V2
     val unitNumber: Int,
     val moduleNumber: Int,
     val moduleTitle: String,
@@ -97,11 +97,16 @@ internal fun LessonSeed.toLesson(): LessonContent = LessonContent(
 object CurriculumDataRepository {
     val beginnerLessons: List<LessonContent> = BeginnerCurriculum.seeds.map { it.toLesson() }
     val intermediateLessons: List<LessonContent> = IntermediateCurriculum.seeds.map { it.toLesson() }
+
+    // Legacy V1 practice is preserved for old progress records and regression coverage only.
     val v1TextbookPracticeLessons: List<LessonContent> = V1TextbookPracticeData.lessons
+    val v2TrackPracticeLessons: List<LessonContent> = V2TrackPracticeData.lessons
 
     // Preserve the original 90-lesson contract for existing regression tests and legacy screens.
     val allLessons: List<LessonContent> = beginnerLessons + intermediateLessons
 
     fun lessonById(id: String): LessonContent? =
-        v1TextbookPracticeLessons.find { it.lessonId == id } ?: allLessons.find { it.lessonId == id }
+        v2TrackPracticeLessons.find { it.lessonId == id }
+            ?: v1TextbookPracticeLessons.find { it.lessonId == id }
+            ?: allLessons.find { it.lessonId == id }
 }

@@ -8,19 +8,22 @@ data class TextbookSection(
     val title: String,
     val estimatedMinutes: Int,
     val blocks: List<TextbookBlock>,
-    val weightedLength: Int,
-    val isWorkbook: Boolean = false
+    val weightedLength: Int
 )
 
 /**
- * Converts a long chapter into deterministic reading sections without mutating the source markdown.
- * The source asset remains the single source of truth; this class only controls presentation chunks.
+ * Converts a long TRACK source into deterministic learner-facing LESSON pages without mutating
+ * source markdown. The TRACK introduction stays attached to BLOCK 01 and its first H3 LESSON.
+ * H2 is a BLOCK label and is attached to the first H3 LESSON inside that BLOCK. Every later H3
+ * starts a new page. Support BLOCKs without H3 (for example glossary/completion) remain one page.
+ * This preserves authored TRACK -> BLOCK -> LESSON hierarchy instead of merging unrelated lessons
+ * merely because their text happens to be short.
+ *
+ * Internal chapter/section ids remain stable-shaped for navigation compatibility. V2 progress is
+ * stored in its own preference namespace, so the rewritten course does not inherit V1 completion.
+ * The source asset remains the single source of truth; this class controls presentation chunks only.
  */
 object TextbookSectioner {
-    private const val MIN_WEIGHT = 950
-    private const val TARGET_WEIGHT = 1500
-    private const val MAX_WEIGHT = 2100
-    private const val HARD_MERGE_LIMIT = 2500
     private const val WEIGHT_PER_MINUTE = 330
 
     fun split(chapterId: String, blocks: List<TextbookBlock>): List<TextbookSection> {
@@ -28,61 +31,57 @@ object TextbookSectioner {
 
         val raw = mutableListOf<MutableList<TextbookBlock>>()
         var current = mutableListOf<TextbookBlock>()
-        var currentWeight = 0
+        var currentHasBlockHeading = false
+        var currentHasLessonHeading = false
 
         fun flush() {
             if (current.isNotEmpty()) {
                 raw += current
                 current = mutableListOf()
-                currentWeight = 0
+                currentHasBlockHeading = false
+                currentHasLessonHeading = false
             }
         }
 
         blocks.forEach { block ->
-            val weight = weightOf(block)
-            val isMeaningfulHeading = block is TextbookBlock.Heading && block.level <= 3
-            val isWorkbookHeading = block is TextbookBlock.Heading &&
-                block.text.contains("실전 훈련편")
-            val headingBoundary = isMeaningfulHeading && current.isNotEmpty() && currentWeight >= MIN_WEIGHT
-            val sizeBoundary = current.isNotEmpty() && currentWeight >= TARGET_WEIGHT && currentWeight + weight > MAX_WEIGHT
-            val hardBoundary = current.isNotEmpty() && currentWeight + weight > HARD_MERGE_LIMIT
-
-            // The workbook must start on a clean reader page even when the chapter tail is short.
-            if ((isWorkbookHeading && current.isNotEmpty()) || headingBoundary || sizeBoundary || hardBoundary) flush()
-            current += block
-            currentWeight += weight
+            when (block) {
+                is TextbookBlock.Heading -> when (block.level) {
+                    2 -> {
+                        // Introductory H1/text before BLOCK 01 stays with the first BLOCK. A later
+                        // H2 closes the previous lesson/support block before starting the next BLOCK.
+                        if (currentHasBlockHeading || currentHasLessonHeading) flush()
+                        current += block
+                        currentHasBlockHeading = true
+                    }
+                    3 -> {
+                        // First H3 after H2 belongs to that BLOCK page. A second H3 is an explicit
+                        // new LESSON and must never be merged with the previous LESSON.
+                        if (currentHasLessonHeading) flush()
+                        current += block
+                        currentHasLessonHeading = true
+                    }
+                    else -> current += block
+                }
+                else -> current += block
+            }
         }
         flush()
 
-        if (raw.size > 1 && raw.last().sumOf(::weightOf) < MIN_WEIGHT) {
-            val tail = raw.removeAt(raw.lastIndex)
-            val previous = raw.last()
-            if (previous.sumOf(::weightOf) + tail.sumOf(::weightOf) <= HARD_MERGE_LIMIT) {
-                previous += tail
-            } else {
-                raw += tail
-            }
-        }
-
-        val workbookStartIndex = raw.indexOfFirst { sectionBlocks ->
-            sectionBlocks.filterIsInstance<TextbookBlock.Heading>()
-                .any { it.text.contains("실전 훈련편") }
-        }
-
         return raw.mapIndexed { index, sectionBlocks ->
             val weightedLength = sectionBlocks.sumOf(::weightOf)
-            val heading = sectionBlocks.filterIsInstance<TextbookBlock.Heading>()
-                .firstOrNull { it.level <= 3 }
-                ?.text
-                ?.takeIf { it.isNotBlank() }
+            val headings = sectionBlocks.filterIsInstance<TextbookBlock.Heading>()
+            val title = headings.firstOrNull { it.level == 3 }?.text
+                ?: headings.firstOrNull { it.level == 2 }?.text
+                ?: headings.firstOrNull { it.level == 1 }?.text
+                ?: "LESSON ${index + 1}"
+
             TextbookSection(
                 id = "$chapterId-S${(index + 1).toString().padStart(2, '0')}",
                 index = index,
-                title = heading ?: "단원 ${index + 1}",
+                title = title,
                 estimatedMinutes = ceil(weightedLength / WEIGHT_PER_MINUTE.toDouble()).toInt().coerceIn(4, 7),
                 blocks = sectionBlocks.toList(),
-                weightedLength = weightedLength,
-                isWorkbook = workbookStartIndex >= 0 && index >= workbookStartIndex
+                weightedLength = weightedLength
             )
         }
     }

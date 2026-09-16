@@ -9,9 +9,10 @@ TEST_CLASS="com.futuretech.poweruser.textbook.V1TextbookTabletUiInstrumentedTest
 APP_APK="app/build/outputs/apk/debug/app-debug.apk"
 TEST_APK="app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk"
 INSTRUMENTATION_OUT="$EVIDENCE_DIR/tablet_instrumentation.txt"
-SCREENSHOT="$EVIDENCE_DIR/v1_textbook_tablet.png"
+SCREENSHOT="$EVIDENCE_DIR/v2_track_tablet.png"
 LOGCAT_OUT="$EVIDENCE_DIR/tablet_capture_logcat.txt"
 DEVICE_META="$EVIDENCE_DIR/tablet_device_metrics.txt"
+EVIDENCE_TAG="V2TrackTabletEvidence"
 
 mkdir -p "$EVIDENCE_DIR"
 test -s "$APP_APK"
@@ -59,7 +60,7 @@ INSTR_PID=$!
 
 ready=0
 for _ in $(seq 1 30); do
-  if adb logcat -d -s V1TabletEvidence:I '*:S' | grep -q 'READY_FOR_SCREENSHOT'; then
+  if adb logcat -d -s "$EVIDENCE_TAG:I" '*:S' | grep -q 'READY_FOR_SCREENSHOT'; then
     ready=1
     break
   fi
@@ -69,7 +70,7 @@ for _ in $(seq 1 30); do
   sleep 1
 done
 
-adb logcat -d -s V1TabletEvidence:I '*:S' > "$LOGCAT_OUT" || true
+adb logcat -d -s "$EVIDENCE_TAG:I" '*:S' > "$LOGCAT_OUT" || true
 if [[ "$ready" -ne 1 ]]; then
   echo "TABLET_READY_MARKER_MISSING" >&2
   cat "$INSTRUMENTATION_OUT" >&2 || true
@@ -87,7 +88,6 @@ if [[ -z "$CONFIG_WIDTH" || "$CONFIG_WIDTH" -lt 1080 ]]; then
 fi
 printf 'TABLET_SCREEN_WIDTH_DP=%s\n' "$CONFIG_WIDTH" | tee "$EVIDENCE_DIR/tablet_width_dp.txt"
 
-# Capture from host adb while the verified focused reader Activity is deliberately held open.
 adb exec-out screencap -p > "$SCREENSHOT"
 test -s "$SCREENSHOT"
 SCREENSHOT_BYTES="$(wc -c < "$SCREENSHOT")"
@@ -112,6 +112,6 @@ grep -q 'OK (1 test)' "$INSTRUMENTATION_OUT"
 grep -q 'INSTRUMENTATION_CODE: -1' "$INSTRUMENTATION_OUT"
 grep -q 'READY_FOR_SCREENSHOT' "$LOGCAT_OUT"
 
-echo "GALAXY_TAB_FOCUSED_READER_SCREENSHOT_PASS"
+echo "GALAXY_TAB_V2_TRACK_READER_SCREENSHOT_PASS"
 trap - EXIT
 cleanup

@@ -15,27 +15,21 @@ class V1TextbookUiInstrumentedTest {
     @get:Rule val compose = createAndroidComposeRule<MainActivity>()
 
     @Test
-    fun appLaunchesIntoLearningHomeThenOpensCurriculumAndSectionReader() {
-        assertTagExists("learning_home")
-        assertTagExists("home_curriculum")
-        compose.onNodeWithTag("home_curriculum").performClick()
-        compose.waitForIdle()
-
+    fun appLaunchesIntoElevenTrackCurriculumThenOpensLessonReader() {
         assertTagExists("curriculum_overview_root")
-        compose.onNodeWithTag("curriculum_chapter_count").assertTextContains("9권 · 134장")
+        compose.onNodeWithTag("curriculum_chapter_count").assertTextContains("TRACK 11개", substring = true)
+        assertTagExists("curriculum_review_button")
         assertTagExists("curriculum_chapter_V1-C01")
         compose.onNodeWithTag("curriculum_chapter_V1-C01").performClick()
-        compose.waitForIdle()
 
         assertTagExists("v1_textbook_root")
-        assertTagExists("textbook_top_bar")
         assertTagExists("textbook_section_strip")
         assertTagExists("textbook_reader")
         assertTagExists("textbook_section_progress")
-        assertTagExists("textbook_section_title")
-        assertTagAbsent("textbook_concept_progress")
-        assertNodeWithinRoot("textbook_top_bar", "v1_textbook_root")
 
+        assertTextAbsent("9권 · 134장")
+        assertTextAbsent("권 → 장 → 단원")
+        assertTextAbsent("개념 1/1")
         assertTextAbsent("AI CODING OS")
         assertTextAbsent("KNOWLEDGE GRAPH")
         assertTextAbsent("LEARNING MATRIX")
@@ -47,20 +41,8 @@ class V1TextbookUiInstrumentedTest {
         assertTrue("Expected learner UI tag to exist: $tag", nodes.isNotEmpty())
     }
 
-    private fun assertTagAbsent(tag: String) {
-        val nodes = compose.onAllNodesWithTag(tag).fetchSemanticsNodes()
-        assertTrue("Learner UI tag must be absent: $tag", nodes.isEmpty())
-    }
-
-    private fun assertNodeWithinRoot(nodeTag: String, rootTag: String) {
-        val root = compose.onNodeWithTag(rootTag).fetchSemanticsNode().boundsInRoot
-        val node = compose.onNodeWithTag(nodeTag).fetchSemanticsNode().boundsInRoot
-        assertTrue("$nodeTag overflows left", node.left >= root.left - 0.5f)
-        assertTrue("$nodeTag overflows right", node.right <= root.right + 0.5f)
-    }
-
     private fun assertTextAbsent(text: String) {
         val nodes = compose.onAllNodesWithText(text).fetchSemanticsNodes()
-        assertTrue("Internal label must not be learner-visible: $text", nodes.isEmpty())
+        assertTrue("Legacy/internal label must not be learner-visible: $text", nodes.isEmpty())
     }
 }

@@ -18,7 +18,7 @@ class TextbookLearningFlowTest {
     }
 
     @Test
-    fun problemTypes_areExactlyTheRequiredEight() {
+    fun problemTypeVocabularyRemainsAvailableForFullPracticeSurfaces() {
         assertEquals(
             listOf(
                 "개념 선택",
@@ -26,7 +26,7 @@ class TextbookLearningFlowTest {
                 "순서배치",
                 "빈칸코드",
                 "한 줄 수정",
-                "직접작성",
+                "직접 설명/작성",
                 "디버깅",
                 "AI가 만든 답 검증"
             ),
@@ -36,9 +36,9 @@ class TextbookLearningFlowTest {
     }
 
     @Test
-    fun syntheticSection_staysOneLearningPageAndPreservesAllContent() {
-        val chapter = V1TextbookCatalog.chapters.first()
-        val lesson = requireNotNull(CurriculumDataRepository.lessonById(chapter.practiceLessonId))
+    fun syntheticLessonStaysOneLearningPageAndPreservesAllContent() {
+        val track = V1TextbookCatalog.chapters.first()
+        val practice = requireNotNull(CurriculumDataRepository.lessonById(track.practiceLessonId))
         val blocks = buildList {
             add(TextbookBlock.Heading(3, "개념 A"))
             repeat(7) { add(TextbookBlock.Paragraph("A-$it")) }
@@ -46,107 +46,73 @@ class TextbookLearningFlowTest {
             repeat(3) { add(TextbookBlock.Paragraph("B-$it")) }
         }
         val section = TextbookSection(
-            id = "${chapter.id}-S01",
+            id = "${track.id}-S01",
             index = 0,
-            title = "테스트 Section",
+            title = "테스트 LESSON",
             estimatedMinutes = 5,
             blocks = blocks,
             weightedLength = blocks.sumOf(TextbookSectioner::weightOf)
         )
 
-        val concepts = TextbookLearningFlow.buildConcepts(chapter.id, section, lesson)
+        val concepts = TextbookLearningFlow.buildConcepts(track.id, section, practice)
 
         assertEquals(1, concepts.size)
         assertEquals(blocks, concepts.single().blocks)
         assertEquals(section.title, concepts.single().title)
         assertEquals("${section.id}-C01", concepts.single().id)
-        assertTrue(requireNotNull(concepts.single().problem).prompt.isNotBlank())
+        assertEquals(LearningProblemType.DIRECT_WRITE, concepts.single().problem.type)
+        assertTrue(concepts.single().problem.prompt.contains(section.title))
+        assertTrue(concepts.single().problem.prompt.contains("점수를 깎지"))
     }
 
     @Test
-    fun eightSyntheticSections_cycleAcrossAllEightProblemTypes() {
-        val chapter = V1TextbookCatalog.chapters.first()
-        val lesson = requireNotNull(CurriculumDataRepository.lessonById(chapter.practiceLessonId))
+    fun inlineRecallDoesNotCycleUnrelatedLegacyQuestions() {
+        val track = V1TextbookCatalog.chapters.first()
+        val practice = requireNotNull(CurriculumDataRepository.lessonById(track.practiceLessonId))
 
-        val pages = (0 until 8).map { sectionIndex ->
+        val pages = (0 until 8).map { index ->
             val blocks = listOf(
-                TextbookBlock.Heading(3, "개념 ${sectionIndex + 1}"),
-                TextbookBlock.Paragraph("내용 ${sectionIndex + 1}")
+                TextbookBlock.Heading(3, "LESSON ${index + 1}"),
+                TextbookBlock.Paragraph("현재 LESSON의 실제 학습 내용 ${index + 1}")
             )
             val section = TextbookSection(
-                id = "${chapter.id}-S${(sectionIndex + 1).toString().padStart(2, '0')}",
-                index = sectionIndex,
-                title = "Section ${sectionIndex + 1}",
+                id = "${track.id}-S${(index + 1).toString().padStart(2, '0')}",
+                index = index,
+                title = "LESSON ${index + 1}",
                 estimatedMinutes = 5,
                 blocks = blocks,
                 weightedLength = blocks.sumOf(TextbookSectioner::weightOf)
             )
-            TextbookLearningFlow.buildConcepts(chapter.id, section, lesson).single()
+            TextbookLearningFlow.buildConcepts(track.id, section, practice).single()
         }
 
-        assertEquals(
-            LearningProblemType.entries.toSet(),
-            pages.map { requireNotNull(it.problem).type }.toSet()
-        )
-        assertFalse(pages.any {
-            val problem = it.problem
-            problem == null || problem.id.isBlank() || problem.prompt.isBlank()
-        })
+        assertTrue(pages.all { it.problem.type == LearningProblemType.DIRECT_WRITE })
+        assertTrue(pages.all { page -> page.problem.prompt.contains(page.title) })
+        assertFalse(pages.any { it.problem.prompt == practice.aiHallucinationQuestion })
     }
 
     @Test
-    fun allRealV1MainTextSections_preserveFullLearningContentAndUseOneProblemPerSection() {
-        val usedTypes = mutableSetOf<LearningProblemType>()
-
-        V1TextbookCatalog.chapters.forEach { chapter ->
-            val lesson = requireNotNull(CurriculumDataRepository.lessonById(chapter.practiceLessonId))
-            val markdown = assetFile(chapter.assetPath).readText(Charsets.UTF_8)
+    fun allRealV2LessonsPreserveContentAndUseOneGroundedRecall() {
+        V1TextbookCatalog.chapters.forEach { track ->
+            val practice = requireNotNull(CurriculumDataRepository.lessonById(track.practiceLessonId))
+            val markdown = assetFile(track.assetPath).readText(Charsets.UTF_8)
             val blocks = TextbookMarkdownParser.parse(markdown)
-            val sections = TextbookSectioner.split(chapter.id, blocks)
+            val sections = TextbookSectioner.split(track.id, blocks)
 
             sections.forEach { section ->
-                val concepts = TextbookLearningFlow.buildConcepts(chapter.id, section, lesson)
+                val concepts = TextbookLearningFlow.buildConcepts(track.id, section, practice)
                 assertEquals("${section.id}: exactly one learning page", 1, concepts.size)
                 val page = concepts.single()
                 assertEquals("${section.id}: all source blocks preserved", section.blocks, page.blocks)
                 assertTrue("${section.id}: page titled", page.title.isNotBlank())
-                val problem = requireNotNull(page.problem)
-                assertTrue("${section.id}: one end-of-section problem", problem.prompt.isNotBlank())
-                usedTypes += problem.type
-            }
-        }
-
-        assertEquals("real textbook flow exposes all eight problem types", LearningProblemType.entries.toSet(), usedTypes)
-    }
-
-    @Test
-    fun combinedWorkbookSections_areMarkedAndDoNotGetDuplicateAutoProblems() {
-        V1TextbookCatalog.chapters.forEach { chapter ->
-            val lesson = requireNotNull(CurriculumDataRepository.lessonById(chapter.practiceLessonId))
-            val chapterText = assetFile(chapter.assetPath).readText(Charsets.UTF_8)
-            val workbookPath = "textbook/v1/workbook_${chapter.number.toString().padStart(2, '0')}.md"
-            val workbookText = assetFile(workbookPath).readText(Charsets.UTF_8)
-            val blocks = TextbookMarkdownParser.parse("$chapterText\n\n---\n\n$workbookText")
-            val sections = TextbookSectioner.split(chapter.id, blocks)
-            val workbookStart = sections.indexOfFirst { it.isWorkbook }
-
-            assertTrue("${chapter.id}: workbook start missing", workbookStart > 0)
-            assertTrue("${chapter.id}: all sections after workbook start marked", sections.drop(workbookStart).all { it.isWorkbook })
-            assertTrue("${chapter.id}: main text remains non-workbook", sections.take(workbookStart).none { it.isWorkbook })
-
-            sections.forEach { section ->
-                val page = TextbookLearningFlow.buildConcepts(chapter.id, section, lesson).single()
-                if (section.isWorkbook) {
-                    assertTrue("${section.id}: workbook must not get duplicate auto problem", page.problem == null)
-                } else {
-                    assertTrue("${section.id}: main text keeps low-stakes check", page.problem != null)
-                }
+                assertEquals(LearningProblemType.DIRECT_WRITE, page.problem.type)
+                assertTrue("${section.id}: recall grounded in current title", page.problem.prompt.contains(section.title))
             }
         }
     }
 
     @Test
-    fun answerNormalization_isStableForLowStakesChecks() {
+    fun answerNormalizationIsStableForLowStakesChecks() {
         assertEquals(
             TextbookLearningFlow.normalizeAnswer("  SHA-256   "),
             TextbookLearningFlow.normalizeAnswer("sha-256")

@@ -19,15 +19,16 @@ class TextbookClean25Test(private val gate: Int) {
 
     @Test
     fun cleanGatePasses() {
-        val books = PowerUserCurriculumCatalog.books
-        val all = PowerUserCurriculumCatalog.chapters
-        val v1 = V1TextbookCatalog.chapters
-        val practices = CurriculumDataRepository.v1TextbookPracticeLessons
+        val legacyBooks = PowerUserCurriculumCatalog.books
+        val legacyChapters = PowerUserCurriculumCatalog.chapters
+        val tracks = V1TextbookCatalog.chapters
+        val practices = CurriculumDataRepository.v2TrackPracticeLessons
         val sampleBlocks = TextbookMarkdownParser.parse(
             buildString {
                 appendLine("# 샘플")
                 repeat(12) { index ->
-                    appendLine("## 단위 ${index + 1}")
+                    appendLine("## BLOCK ${index + 1}")
+                    appendLine("### LESSON ${index + 1}")
                     appendLine(("개념을 실제 상황에 연결해서 설명한다. ".repeat(40)).trim())
                 }
             }
@@ -35,31 +36,31 @@ class TextbookClean25Test(private val gate: Int) {
         val sections = TextbookSectioner.split("CLEAN", sampleBlocks)
 
         when (gate) {
-            1 -> assertEquals(9, books.size)
-            2 -> assertEquals(134, all.size)
-            3 -> assertEquals(listOf(11, 19, 14, 14, 14, 16, 15, 15, 16), books.map { it.chapters.size })
-            4 -> assertEquals(134, all.map { it.id }.toSet().size)
-            5 -> assertTrue(books.all { it.chapters.map { chapter -> chapter.title }.toSet().size == it.chapters.size })
-            6 -> assertEquals(11, all.count { it.contentAvailable })
-            7 -> assertEquals(123, all.count { !it.contentAvailable })
-            8 -> assertEquals(v1.map { it.id }, books.first().chapters.map { it.id })
-            9 -> assertEquals(v1.map { it.title }, books.first().chapters.map { it.title })
-            10 -> assertEquals((1..11).toList(), v1.map { it.number })
+            1 -> assertEquals(11, tracks.size)
+            2 -> assertEquals((1..11).toList(), tracks.map { it.number })
+            3 -> assertEquals(11, tracks.map { it.id }.toSet().size)
+            4 -> assertTrue(tracks.all { it.assetPath.startsWith("textbook/v2/track_") })
+            5 -> assertEquals((1..11).map { "V2-T%02d".format(it) }, tracks.map { it.practiceLessonId })
+            6 -> assertEquals(11, practices.size)
+            7 -> assertTrue(practices.all { it.curriculumType == "TEXTBOOK_V2" })
+            8 -> assertTrue(practices.all { it.stepTotal == 11 })
+            9 -> assertEquals(tracks.map { it.title }, practices.map { it.title })
+            10 -> assertTrue(tracks.all { it.estimatedReadMinutes >= 1200 })
             11 -> assertEquals(28, V1TextbookCatalog.allSourceLessonIds.size)
             12 -> assertEquals(28, V1TextbookCatalog.allSourceLessonIds.toSet().size)
             13 -> assertEquals(11, V1TextbookCatalog.practiceLessonIds.size)
-            14 -> assertEquals(11, practices.size)
-            15 -> assertTrue(practices.all { it.stepTotal == 11 })
-            16 -> assertTrue(sections.size >= 4)
-            17 -> assertEquals(sampleBlocks, sections.flatMap { it.blocks })
-            18 -> assertEquals(sections.size, sections.map { it.id }.toSet().size)
-            19 -> assertTrue(sections.all { it.estimatedMinutes in 4..7 })
-            20 -> assertTrue(sections.all { it.title.isNotBlank() })
-            21 -> assertTrue(sections.all { it.weightedLength > 0 })
-            22 -> assertTrue(all.none { it.title.contains("TODO", true) || it.title.contains("TBD", true) })
-            23 -> assertFalse(all.any { it.id.startsWith("V1-") && !it.contentAvailable })
+            14 -> assertTrue(sections.size >= 4)
+            15 -> assertEquals(sampleBlocks, sections.flatMap { it.blocks })
+            16 -> assertEquals(sections.size, sections.map { it.id }.toSet().size)
+            17 -> assertTrue(sections.all { it.estimatedMinutes in 4..7 })
+            18 -> assertTrue(sections.all { it.title.isNotBlank() })
+            19 -> assertTrue(sections.all { it.weightedLength > 0 })
+            20 -> assertTrue(tracks.none { it.title.contains("TODO", true) || it.title.contains("TBD", true) })
+            21 -> assertTrue(practices.all { CurriculumDataRepository.lessonById(it.lessonId) != null })
+            22 -> assertEquals(9, legacyBooks.size)
+            23 -> assertEquals(134, legacyChapters.size)
             24 -> assertNotNull(PowerUserCurriculumCatalog.chapterById("V9-C16"))
-            25 -> assertEquals("V9", PowerUserCurriculumCatalog.bookForChapter("V9-C16")?.id)
+            25 -> assertFalse(tracks.any { it.summary.isBlank() || it.keyConcepts.size < 5 })
         }
     }
 }
