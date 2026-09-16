@@ -240,7 +240,7 @@ private fun ReaderTopBar(
             }
             Column(Modifier.weight(1f)) {
                 Text(
-                    text = "1권 · ${chapter.number}장/11",
+                    text = "TRACK ${chapter.number.toString().padStart(2, '0')} / ${V1TextbookCatalog.TRACK_COUNT}",
                     color = ReaderMuted,
                     fontSize = 12.sp,
                     fontWeight = FontWeight.Medium
@@ -255,7 +255,7 @@ private fun ReaderTopBar(
                 )
             }
             Text(
-                text = "읽기 완료 $readCount/11",
+                text = "TRACK 완료 $readCount/${V1TextbookCatalog.TRACK_COUNT}",
                 color = ReaderMuted,
                 fontSize = 12.sp
             )
@@ -286,7 +286,7 @@ private fun SectionStrip(
                 ),
                 label = {
                     Text(
-                        text = "${index + 1}. ${section.title.take(18)} · ${section.estimatedMinutes}분",
+                        text = "LESSON ${index + 1} · ${section.title.take(22)} · ${section.estimatedMinutes}분",
                         color = if (index == selectedIndex) ReaderInk else ReaderMuted,
                         fontSize = 12.sp
                     )
@@ -350,7 +350,7 @@ private fun ConceptReader(
                 verticalArrangement = Arrangement.spacedBy(7.dp)
             ) {
                 Text(
-                    text = "단원 ${section.index + 1}/$sectionCount · 약 ${section.estimatedMinutes}분",
+                    text = "LESSON ${section.index + 1}/$sectionCount · 약 ${section.estimatedMinutes}분",
                     modifier = Modifier.testTag("textbook_section_progress"),
                     color = ReaderAccent,
                     fontSize = 13.sp,
@@ -478,7 +478,7 @@ private fun InlineProblemCard(
                             MiniResult(
                                 correct = correct,
                                 text = if (correct) {
-                                    "근거에 맞습니다. 다음 단원으로 넘어가도 됩니다."
+                                    "근거에 맞습니다. 다음 LESSON으로 넘어가도 됩니다."
                                 } else {
                                     "본문 근거를 다시 확인하세요. 이 미니문제는 숙련도 점수를 깎지 않습니다."
                                 }
@@ -676,9 +676,9 @@ private fun ConceptActions(
         Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(11.dp)) {
             Text(
                 text = if (isLastConceptInChapter) {
-                    "이 장의 읽기를 마쳤습니다. 전체 실습으로 확인하세요."
+                    "이 TRACK의 읽기를 마쳤습니다. 전체 실습으로 이해를 확인하세요."
                 } else {
-                    "짧은 확인을 마친 뒤 다음 단원으로 이어갑니다. 좌우로 밀어도 이동할 수 있습니다."
+                    "짧은 확인을 마친 뒤 다음 LESSON으로 이어갑니다. 좌우로 밀어도 이동할 수 있습니다."
                 },
                 color = ReaderInk,
                 fontSize = 15.sp,
@@ -691,7 +691,7 @@ private fun ConceptActions(
                     onClick = { onPreviousConcept?.invoke() },
                     enabled = onPreviousConcept != null,
                     modifier = Modifier.weight(1f)
-                ) { Text("← 이전 단원", color = ReaderInk) }
+                ) { Text("← 이전 LESSON", color = ReaderInk) }
 
                 if (!isLastConceptInChapter) {
                     val nextTag = if (isLastConceptInSection) "textbook_next_section" else "textbook_next_concept"
@@ -704,7 +704,7 @@ private fun ConceptActions(
                             contentColor = ReaderInk
                         )
                     ) {
-                        Text(if (isLastConceptInSection) "다음 단원 →" else "다음 내용 →")
+                        Text("다음 LESSON →")
                     }
                 } else {
                     Button(
@@ -716,7 +716,7 @@ private fun ConceptActions(
                             contentColor = ReaderInk
                         )
                     ) {
-                        Text(if (readComplete) "읽기 완료 ✓" else "이 장 읽기 완료")
+                        Text(if (readComplete) "TRACK 읽기 완료 ✓" else "이 TRACK 읽기 완료")
                     }
                 }
             }
@@ -735,12 +735,12 @@ private fun ConceptActions(
                         onClick = { onPreviousChapter?.invoke() },
                         enabled = onPreviousChapter != null && chapter.number > 1,
                         modifier = Modifier.weight(1f)
-                    ) { Text("이전 장", color = ReaderInk) }
+                    ) { Text("이전 TRACK", color = ReaderInk) }
                     OutlinedButton(
                         onClick = { onNextChapter?.invoke() },
                         enabled = onNextChapter != null,
                         modifier = Modifier.weight(1f).testTag("textbook_next_chapter")
-                    ) { Text("다음 장", color = ReaderInk) }
+                    ) { Text("다음 TRACK", color = ReaderInk) }
                 }
             }
         }
