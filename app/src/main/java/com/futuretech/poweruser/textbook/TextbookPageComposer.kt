@@ -30,7 +30,7 @@ object TextbookPageComposer {
 
         fun flush() {
             if (current.isEmpty()) return
-            pages += TextbookContentPage(current.toList(), usedLines.coerceAtMost(layout.maxLines))
+            pages += TextbookContentPage(current.toList(), usedLines)
             current = mutableListOf()
             usedLines = 0
         }
