@@ -3,13 +3,12 @@ package com.futuretech.poweruser.textbook
 import android.content.Context
 
 /**
- * V2 uses a separate preference namespace because the 11 learner-facing TRACKS were completely
- * rewritten. The old v1_textbook_progress data is intentionally left untouched on-device, while
- * V2 read/lesson position starts clean so legacy chapter completion cannot falsely mark new TRACKS
- * complete.
+ * V3 uses a separate preference namespace because the learner-facing textbook was rewritten and
+ * regrouped again. Older v1/v2 progress is intentionally left untouched on-device so legacy
+ * completion or lesson positions cannot falsely mark the deep-beginner V3 as completed.
  */
 class TextbookProgressStore(context: Context) {
-    private val prefs = context.getSharedPreferences("v2_track_progress", Context.MODE_PRIVATE)
+    private val prefs = context.getSharedPreferences("v3_deep_beginner_progress", Context.MODE_PRIVATE)
 
     fun selectedChapterId(): String? = prefs.getString("selected_track", null)
 
