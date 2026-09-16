@@ -14,17 +14,20 @@ import androidx.compose.material3.NavigationDrawerItem
 import androidx.compose.material3.Text
 import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.key
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.key
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.futuretech.poweruser.textbook.TextbookProgressStore
 import com.futuretech.poweruser.textbook.V1TextbookCatalog
 import kotlinx.coroutines.launch
 
@@ -39,6 +42,8 @@ fun AdaptiveTextbookScreen(
     onStartPractice: (String) -> Unit,
     initialChapterId: String = "V1-C01"
 ) {
+    val context = LocalContext.current
+    val progressStore = remember { TextbookProgressStore(context) }
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
     val scope = rememberCoroutineScope()
     var selectedChapterId by rememberSaveable(initialChapterId) { mutableStateOf(initialChapterId) }
@@ -87,6 +92,7 @@ fun AdaptiveTextbookScreen(
                             },
                             selected = track.id == selectedChapterId,
                             onClick = {
+                                progressStore.saveSelectedChapter(track.id)
                                 selectedChapterId = track.id
                                 scope.launch { drawerState.close() }
                             },
