@@ -170,7 +170,7 @@ fun SelfUpdateBanner(modifier: Modifier = Modifier) {
             Column(Modifier.weight(1f)) {
                 Text(
                     when (state) {
-                        UpdateUiState.AVAILABLE -> "새 AI CODING OS 버전이 준비됐습니다"
+                        UpdateUiState.AVAILABLE -> "코딩 완전과정 새 버전이 준비됐습니다"
                         UpdateUiState.DOWNLOADING -> "검증된 APK 다운로드 중"
                         UpdateUiState.NEEDS_PERMISSION -> "설치 권한을 한 번만 허용하세요"
                         UpdateUiState.INSTALL_READY -> "Android 설치 화면에서 업데이트를 확인하세요"
