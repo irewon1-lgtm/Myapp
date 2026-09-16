@@ -13,44 +13,45 @@ import org.junit.runners.Parameterized
 class TextbookExtreme60Test(private val caseId: Int) {
     companion object {
         @JvmStatic
-        @Parameterized.Parameters(name = "curriculum-section-extreme-{0}")
+        @Parameterized.Parameters(name = "v2-track-section-extreme-{0}")
         fun cases(): Collection<Array<Any>> = (1..60).map { arrayOf<Any>(it) }
     }
 
     @Test
     fun curriculumAndSectionScenarioPasses() {
-        val books = PowerUserCurriculumCatalog.books
-        val allChapters = PowerUserCurriculumCatalog.chapters
-        val expectedCounts = listOf(11, 19, 14, 14, 14, 16, 15, 15, 16)
+        val legacyBooks = PowerUserCurriculumCatalog.books
+        val legacyChapters = PowerUserCurriculumCatalog.chapters
+        val tracks = V1TextbookCatalog.chapters
+        val practices = CurriculumDataRepository.v2TrackPracticeLessons
 
-        assertEquals(9, books.size)
-        assertEquals(134, allChapters.size)
-        assertEquals(expectedCounts, books.map { it.chapters.size })
-        assertEquals(134, allChapters.map { it.id }.toSet().size)
+        assertEquals(9, legacyBooks.size)
+        assertEquals(134, legacyChapters.size)
+        assertEquals(11, tracks.size)
+        assertEquals(11, practices.size)
+        assertEquals((1..11).toList(), tracks.map { it.number })
+        assertEquals((1..11).map { "V2-T%02d".format(it) }, tracks.map { it.practiceLessonId })
 
-        val book = books[(caseId - 1) % books.size]
-        assertEquals("V${book.number}", book.id)
-        assertTrue(book.title.isNotBlank())
-        assertEquals((1..book.chapters.size).toList(), book.chapters.map { it.number })
+        val track = tracks[(caseId - 1) % tracks.size]
+        assertTrue(track.title.length >= 5)
+        assertTrue(track.summary.length >= 30)
+        assertTrue(track.assetPath.startsWith("textbook/v2/"))
+        val practice = CurriculumDataRepository.lessonById(track.practiceLessonId)
+        assertNotNull(practice)
+        assertEquals("TEXTBOOK_V2", practice!!.curriculumType)
+        assertEquals(track.number, practice.stepNumber)
+        assertEquals(track.title, practice.title)
 
-        val chapter = allChapters[((caseId - 1) * 17) % allChapters.size]
-        assertTrue(chapter.id.matches(Regex("V[1-9]-C\\d{2}")))
-        assertTrue(chapter.title.length >= 5)
-        if (chapter.id.startsWith("V1-")) {
-            assertTrue(chapter.contentAvailable)
-            val actual = V1TextbookCatalog.chapterById(chapter.id)
-            assertNotNull(actual)
-            assertEquals(chapter.title, actual!!.title)
-            assertNotNull(CurriculumDataRepository.lessonById(actual.practiceLessonId))
-        } else {
-            assertFalse(chapter.contentAvailable)
-        }
+        val legacyV1Ref = legacyChapters.firstOrNull { it.id == track.id }
+        assertNotNull(legacyV1Ref)
+        assertTrue(legacyV1Ref!!.contentAvailable)
+        assertEquals(track.number, legacyV1Ref.number)
 
         val repeatCount = 7 + (caseId % 7)
         val markdown = buildString {
-            appendLine("# Chapter $caseId")
+            appendLine("# TRACK $caseId")
             repeat(repeatCount) { index ->
-                appendLine("## 개념 ${index + 1}")
+                appendLine("## BLOCK ${index + 1}")
+                appendLine("### LESSON ${index + 1}")
                 appendLine(("설명${index + 1} ".repeat(90 + (caseId % 20))).trim())
                 if (index % 3 == 0) {
                     appendLine("```python")
@@ -71,10 +72,10 @@ class TextbookExtreme60Test(private val caseId: Int) {
         assertTrue(sections.all { it.weightedLength > 0 })
 
         if (caseId % 10 == 0) {
-            assertEquals(11, V1TextbookCatalog.chapters.size)
-            assertEquals(28, V1TextbookCatalog.allSourceLessonIds.toSet().size)
             assertEquals(11, V1TextbookCatalog.practiceLessonIds.size)
-            assertEquals(123, allChapters.count { !it.contentAvailable })
+            assertEquals(28, V1TextbookCatalog.allSourceLessonIds.toSet().size)
+            assertTrue(practices.all { it.curriculumType == "TEXTBOOK_V2" })
+            assertFalse(tracks.any { it.assetPath.contains("textbook/v1/") })
         }
     }
 }
