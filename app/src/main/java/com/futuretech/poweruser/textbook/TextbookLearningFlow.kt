@@ -55,7 +55,13 @@ object TextbookLearningFlow {
 
         val isV3LearnerSection = chapterId.matches(Regex("V1-C\\d{2}")) &&
             section.id.startsWith("$chapterId-S")
-        val guide = if (isV3LearnerSection) V3BeginnerGuidance.forSection(section.id) else null
+        val guide = if (isV3LearnerSection) {
+            // Real V3 sections are required to have guides by V3BeginnerGuidanceTest.
+            // Synthetic tests may intentionally create extra V1-Cxx-Sxx ids, so those stay legacy-safe.
+            V3BeginnerGuidance.guides.firstOrNull { it.sectionId == section.id }
+        } else {
+            null
+        }
         val title = if (guide != null) {
             V3BeginnerGuidance.decoratedTitle(section.id, section.title)
         } else {
