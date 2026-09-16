@@ -146,7 +146,7 @@ fun AppNavigation() {
         }
     }
 
-    NavHost(navController = navController, startDestination = "curriculum") {
+    NavHost(navController = navController, startDestination = "home") {
         composable("curriculum") {
             CurriculumOverviewScreen(
                 onOpenChapter = { chapterId -> navController.navigate("textbook_v1/$chapterId") },
@@ -156,7 +156,7 @@ fun AppNavigation() {
         composable("textbook_v1") {
             AdaptiveTextbookScreen(
                 practiceCompletedIds = completedLessonIds,
-                onNavigateBack = { navController.navigate("curriculum") },
+                onNavigateBack = { navController.popBackStack() },
                 onStartPractice = { lessonId -> navController.navigate("textbook_v1/practice/$lessonId") }
             )
         }
@@ -173,7 +173,7 @@ fun AppNavigation() {
             MainHomeScreen(
                 progressList = progressList,
                 dueReviewCount = dueReviewCount,
-                onNavigateToLesson = { lessonId -> navController.navigate("lesson/$lessonId") },
+                onOpenBook = { navController.navigate("textbook_v1") },
                 onNavigateToReview = { navController.navigate("review") },
                 onNavigateToProject = { navController.navigate("custom_project") },
                 onNavigateToCurriculum = { navController.navigate("curriculum") },
