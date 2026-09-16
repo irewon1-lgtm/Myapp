@@ -137,7 +137,7 @@ fun AppNavigation() {
         composable("curriculum") {
             CurriculumOverviewScreen(
                 onOpenChapter = { chapterId -> navController.navigate("textbook_v1/$chapterId") },
-                onOpenLearningHome = { navController.navigate("home") }
+                onOpenLearningHome = { navController.navigate("review") }
             )
         }
         composable("textbook_v1") {
