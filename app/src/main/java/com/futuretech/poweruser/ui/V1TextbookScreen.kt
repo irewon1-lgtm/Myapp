@@ -4,7 +4,6 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.gestures.detectHorizontalDragGestures
-import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -20,7 +19,6 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.lazy.rememberLazyListState
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.selection.SelectionContainer
 import androidx.compose.material3.Button
@@ -37,6 +35,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.key
 import androidx.compose.runtime.mutableIntStateOf
@@ -44,6 +43,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
+import androidx.compose.runtime.snapshotFlow
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -67,6 +67,8 @@ import com.futuretech.poweruser.textbook.TextbookProgressStore
 import com.futuretech.poweruser.textbook.TextbookSection
 import com.futuretech.poweruser.textbook.TextbookSectioner
 import com.futuretech.poweruser.textbook.V1TextbookCatalog
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.distinctUntilChanged
 
 private val ReaderShell = Color(0xFF090A0D)
 private val ReaderPaper = Color(0xFF111318)
@@ -158,6 +160,7 @@ fun V1TextbookScreen(
 
                 if (currentConcept != null) {
                     key(selected.id, currentSection.id, currentConcept.id) {
+                        val maxScrollIndex = currentConcept.blocks.size + 2
                         ConceptReader(
                             chapter = selected,
                             section = currentSection,
@@ -166,6 +169,11 @@ fun V1TextbookScreen(
                             conceptCount = concepts.size,
                             readComplete = selected.id in readCompleted,
                             practiceComplete = selected.practiceLessonId in practiceCompletedIds,
+                            initialScrollIndex = store.scrollIndex(currentConcept.id).coerceIn(0, maxScrollIndex),
+                            initialScrollOffset = store.scrollOffset(currentConcept.id),
+                            onScrollChanged = { index, offset ->
+                                store.saveScroll(currentConcept.id, index, offset)
+                            },
                             onPreviousConcept = when {
                                 conceptIndex > 0 -> {
                                     {
@@ -306,6 +314,9 @@ private fun ConceptReader(
     conceptCount: Int,
     readComplete: Boolean,
     practiceComplete: Boolean,
+    initialScrollIndex: Int,
+    initialScrollOffset: Int,
+    onScrollChanged: (Int, Int) -> Unit,
     onPreviousConcept: (() -> Unit)?,
     onNextConcept: (() -> Unit)?,
     onMarkRead: () -> Unit,
@@ -313,12 +324,23 @@ private fun ConceptReader(
     onPreviousChapter: (() -> Unit)?,
     onNextChapter: (() -> Unit)?
 ) {
-    val state = rememberLazyListState()
+    val state = rememberLazyListState(
+        initialFirstVisibleItemIndex = initialScrollIndex.coerceAtLeast(0),
+        initialFirstVisibleItemScrollOffset = initialScrollOffset.coerceAtLeast(0)
+    )
     val isLastConceptInSection = concept.index == conceptCount - 1
     val isLastConceptInChapter = section.index == sectionCount - 1 && isLastConceptInSection
-    val swipeThresholdPx = with(LocalDensity.current) { 86.dp.toPx() }
+    val swipeThresholdPx = with(LocalDensity.current) { 110.dp.toPx() }
     val swipePrevious = onPreviousConcept ?: onPreviousChapter
     val swipeNext = onNextConcept ?: onNextChapter
+
+    LaunchedEffect(concept.id, state) {
+        snapshotFlow {
+            state.firstVisibleItemIndex to ((state.firstVisibleItemScrollOffset / 48) * 48)
+        }
+            .distinctUntilChanged()
+            .collect { (index, offset) -> onScrollChanged(index, offset) }
+    }
 
     LazyColumn(
         modifier = Modifier
@@ -754,21 +776,33 @@ private fun BlockView(block: TextbookBlock, modifier: Modifier) {
             val size = when (block.level) {
                 1 -> 24.sp
                 2 -> 21.sp
-                3 -> 18.sp
+                3 -> 19.sp
+                4 -> 17.sp
                 else -> 16.sp
+            }
+            val topPadding = when (block.level) {
+                3 -> 16.dp
+                4 -> 10.dp
+                else -> 6.dp
+            }
+            val weight = when (block.level) {
+                1, 2, 3 -> FontWeight.Bold
+                4 -> FontWeight.SemiBold
+                else -> FontWeight.Medium
             }
             Text(
                 text = block.text,
-                modifier = modifier.padding(top = 6.dp),
+                modifier = modifier.padding(top = topPadding),
                 color = ReaderInk,
                 fontSize = size,
                 lineHeight = when (block.level) {
                     1 -> 31.sp
                     2 -> 28.sp
-                    3 -> 25.sp
+                    3 -> 27.sp
+                    4 -> 25.sp
                     else -> 23.sp
                 },
-                fontWeight = FontWeight.Bold
+                fontWeight = weight
             )
         }
 
@@ -857,12 +891,12 @@ private fun MiniCodeBlock(
             SelectionContainer {
                 Text(
                     text = text,
-                    modifier = Modifier.fillMaxWidth().padding(14.dp).horizontalScroll(rememberScrollState()),
+                    modifier = Modifier.fillMaxWidth().padding(14.dp),
                     color = ReaderCodeText,
                     fontFamily = FontFamily.Monospace,
                     fontSize = 13.sp,
                     lineHeight = 20.sp,
-                    softWrap = false
+                    softWrap = true
                 )
             }
         }
