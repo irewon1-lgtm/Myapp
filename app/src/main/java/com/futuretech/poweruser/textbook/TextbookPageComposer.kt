@@ -18,13 +18,8 @@ data class TextbookContentPage(
 )
 
 /**
- * Deterministically converts authored textbook blocks into reader pages.
- *
- * The old paginator split a large block against a whole-page budget first and then moved that
- * already-split block to the next page whenever it did not fit. That left large empty bottoms.
- * This version always looks at the *remaining* capacity of the current page and slices paragraphs,
- * lists, code and tables to use that space before turning the page. Source code lines and original
- * list items are never rewritten or reordered.
+ * Legacy deterministic paginator retained for old JVM contracts. V5 runtime uses the measured
+ * Compose paginator, but this implementation must still preserve authored semantics when split.
  */
 object TextbookPageComposer {
     private const val MIN_USEFUL_REMAINDER = 4
@@ -56,7 +51,6 @@ object TextbookPageComposer {
             var remaining = layout.maxLines - usedLines
             val blockLines = estimateLines(block, layout.charsPerLine).coerceAtLeast(1)
 
-            // Do not leave a heading stranded at the page bottom without explanation below it.
             if (block is TextbookBlock.Heading && current.isNotEmpty() && remaining < blockLines + 2) {
                 flush()
                 remaining = layout.maxLines
@@ -78,7 +72,6 @@ object TextbookPageComposer {
             if (slice != null) {
                 add(slice.first)
                 slice.second?.let { queue.addFirst(it) }
-                // A sliced block intentionally finishes this page after consuming the available tail.
                 flush()
                 continue
             }
@@ -87,8 +80,6 @@ object TextbookPageComposer {
                 flush()
                 queue.addFirst(block)
             } else {
-                // Unsplittable authored units stay intact. Exposing a rare over-budget page is safer
-                // than rewriting a source-code line or turning one authored bullet into fake items.
                 add(block)
                 flush()
             }
@@ -171,8 +162,17 @@ object TextbookPageComposer {
             estimated = nextEstimate
         }
         if (head.isEmpty() || head.size == block.items.size) return null
-        return TextbookBlock.BulletList(head, block.ordered) to
-            TextbookBlock.BulletList(block.items.drop(head.size), block.ordered)
+        val first = TextbookBlock.BulletList(
+            items = head,
+            ordered = block.ordered,
+            startNumber = block.startNumber
+        )
+        val rest = TextbookBlock.BulletList(
+            items = block.items.drop(head.size),
+            ordered = block.ordered,
+            startNumber = if (block.ordered) block.startNumber + head.size else block.startNumber
+        )
+        return first to rest
     }
 
     private fun sliceCode(
