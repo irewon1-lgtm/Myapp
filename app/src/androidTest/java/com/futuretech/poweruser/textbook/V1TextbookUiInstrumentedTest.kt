@@ -30,17 +30,21 @@ class V1TextbookUiInstrumentedTest {
     }
 
     @Test
-    fun appLaunchesIntoElevenTrackCurriculumThenOpensLessonReader() {
-        assertTagExists("curriculum_overview_root")
-        compose.onNodeWithTag("curriculum_chapter_count").assertTextContains("TRACK 11개", substring = true)
-        assertTagExists("curriculum_review_button")
-        assertTagExists("curriculum_chapter_V1-C01")
-        compose.onNodeWithTag("curriculum_chapter_V1-C01").performClick()
+    fun appLaunchesIntoBookShelfThenOpensFixedPageReader() {
+        assertTagExists("learning_home")
+        assertTagExists("home_book_cover")
+        assertTagExists("home_continue")
+        assertTagAbsent("curriculum_overview_root")
 
-        assertTagExists("v1_textbook_root")
-        assertTagExists("textbook_section_strip")
-        assertTagExists("textbook_reader")
-        assertTagExists("textbook_section_progress")
+        compose.onNodeWithTag("home_continue").performClick()
+
+        assertTagExists("ebook_textbook_root")
+        assertTagExists("ebook_reader")
+        assertTagExists("ebook_page_counter")
+        assertTagExists("ebook_track_cover")
+        assertTagExists("reader_toc_button")
+        assertTagExists("ebook_left_edge")
+        assertTagExists("ebook_right_edge")
 
         assertTextAbsent("9권 · 134장")
         assertTextAbsent("권 → 장 → 단원")
@@ -51,9 +55,22 @@ class V1TextbookUiInstrumentedTest {
         assertTextAbsent(">_ LAB")
     }
 
+    @Test
+    fun tableOfContentsStillOpensFromShelfWithoutBeingTheLaunchScreen() {
+        compose.onNodeWithTag("home_curriculum").performClick()
+        assertTagExists("curriculum_overview_root")
+        compose.onNodeWithTag("curriculum_chapter_count").assertTextContains("TRACK 11개", substring = true)
+        assertTagExists("curriculum_chapter_V1-C01")
+    }
+
     private fun assertTagExists(tag: String) {
         val nodes = compose.onAllNodesWithTag(tag).fetchSemanticsNodes()
         assertTrue("Expected learner UI tag to exist: $tag", nodes.isNotEmpty())
+    }
+
+    private fun assertTagAbsent(tag: String) {
+        val nodes = compose.onAllNodesWithTag(tag).fetchSemanticsNodes()
+        assertTrue("Expected learner UI tag to be absent: $tag", nodes.isEmpty())
     }
 
     private fun assertTextAbsent(text: String) {
