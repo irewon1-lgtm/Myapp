@@ -8,7 +8,6 @@ import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performScrollTo
-import androidx.compose.ui.test.performScrollToIndex
 import androidx.compose.ui.test.performScrollToNode
 import androidx.compose.ui.test.performTextInput
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -58,9 +57,10 @@ class FeedbackTeachingUiInstrumentedTest {
 
         composeRule.onNodeWithTag("v1_textbook_root").assertExists()
         composeRule.onNodeWithTag("textbook_reader").assertExists()
-        // Practice was opened from the bottom of a LazyColumn. Returning restores that scroll
-        // position, so scroll back to the first item before asserting a header-only semantics tag.
-        composeRule.onNodeWithTag("textbook_reader").performScrollToIndex(0)
+        // Practice is opened from the bottom of this LazyColumn. Back navigation restores that
+        // scroll position, so bring the header item back into composition before asserting it.
+        composeRule.onNodeWithTag("textbook_reader")
+            .performScrollToNode(hasTestTag("textbook_section_progress"))
         composeRule.waitForIdle()
         composeRule.onNodeWithTag("textbook_section_progress").assertExists()
         composeRule.onNodeWithTag("session_mode_practice").assertDoesNotExist()
