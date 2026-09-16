@@ -6,11 +6,12 @@ import org.junit.Assert.assertTrue
 import org.junit.Test
 
 /**
- * User contract gate for the V5 rewrite.
+ * Literal book-scale contract from the user.
  *
- * IMPORTANT: this test intentionally derives the baseline from the repository's current learner-facing
- * corpus. No hand-entered byte/character target is allowed. Repeated text does not make a book deep;
- * a second gate therefore checks exact paragraphs and token shingles for padding.
+ * The frozen baseline is the complete learner-facing V3/V4 corpus which existed when the 5x rule
+ * was fixed: authored V3 blocks + beginner guidance injected around every learner section + active
+ * expert depth. Every V5 TRACK must individually contain at least five times that semantic corpus.
+ * Average size, sum across tracks, or unreferenced padding files cannot satisfy this gate.
  */
 class V5BookScaleCorpusGateTest {
     private fun repoFile(relative: String): File {
@@ -31,66 +32,74 @@ class V5BookScaleCorpusGateTest {
         text.replace(Regex("\\s+"), "").length.toLong()
     }
 
-    private fun currentAllTracksBaselineSemanticChars(): Long {
-        val authored = V1TextbookCatalog.chapters.sumOf { track ->
+    private fun frozenLearnerFacingBaselineSemanticChars(): Long =
+        V1TextbookCatalog.chapters.sumOf { track ->
             val markdown = repoFile("src/main/assets/${track.assetPath}").readText(Charsets.UTF_8)
-            semanticChars(TextbookMarkdownParser.parse(markdown))
+            val authored = TextbookMarkdownParser.parse(markdown)
+            val sections = TextbookSectioner.split(track.id, authored)
+            sections.sumOf { section ->
+                val guided = V3BeginnerGuidanceResolver.decorateBlocks(section.id, section.blocks)
+                val expert = V4BookDepthLibrary.blocksFor(section.id)
+                semanticChars(guided) + semanticChars(expert)
+            }
         }
-        val injectedDepth = V4BookDepthLibrary.sectionIds().sumOf { sectionId ->
-            semanticChars(V4BookDepthLibrary.blocksFor(sectionId))
-        }
-        return authored + injectedDepth
-    }
 
-    private fun v5TrackFiles(trackNumber: Int): List<File> {
-        val dir = repoFile("src/main/assets/textbook/v5/track_${trackNumber.toString().padStart(2, '0')}")
-        assertTrue("V5 track directory must be a directory: $dir", dir.isDirectory)
-        val files = dir.walkTopDown()
-            .filter { it.isFile && it.extension.equals("md", ignoreCase = true) }
-            .sortedBy { it.relativeTo(dir).invariantSeparatorsPath }
+    private fun manifestReferencedTrackFiles(trackNumber: Int): List<File> {
+        val root = repoFile("src/main/assets")
+        val trackDir = repoFile("src/main/assets/textbook/v5/track_${trackNumber.toString().padStart(2, '0')}")
+        assertTrue("V5 track directory must be a directory: $trackDir", trackDir.isDirectory)
+        val manifest = File(trackDir, "manifest.json")
+        assertTrue("TRACK $trackNumber must have manifest.json", manifest.isFile)
+        val manifestText = manifest.readText(Charsets.UTF_8)
+        val paths = Regex("\\\"assetPath\\\"\\s*:\\s*\\\"([^\\\"]+\\.md)\\\"")
+            .findAll(manifestText)
+            .map { it.groupValues[1] }
             .toList()
-        assertTrue("TRACK $trackNumber must be split into multiple authored book parts", files.size >= 2)
-        return files
+        assertTrue("TRACK $trackNumber must contain multiple manifest-referenced book parts", paths.size >= 2)
+        assertEquals("TRACK $trackNumber manifest must not reference a part twice", paths.size, paths.distinct().size)
+        return paths.map { path ->
+            val file = File(root, path)
+            assertTrue("Manifest references missing part: $path", file.isFile)
+            file
+        }
     }
 
     private fun parsedTrackBlocks(trackNumber: Int): List<TextbookBlock> =
-        v5TrackFiles(trackNumber).flatMap { TextbookMarkdownParser.parse(it.readText(Charsets.UTF_8)) }
+        manifestReferencedTrackFiles(trackNumber)
+            .flatMap { TextbookMarkdownParser.parse(it.readText(Charsets.UTF_8)) }
 
     @Test
-    fun everyTrackIsAtLeastFiveTimesTheEntireCurrentElevenTrackCorpus() {
-        val baseline = currentAllTracksBaselineSemanticChars()
-        assertTrue("baseline must be non-trivial: $baseline", baseline > 100_000L)
+    fun everyTrackIndividuallyExceedsFiveTimesTheFrozenWholeBookBaseline() {
+        val baseline = frozenLearnerFacingBaselineSemanticChars()
+        assertTrue("frozen learner-facing baseline must be substantial: $baseline", baseline > 100_000L)
         val minimumPerTrack = baseline * 5L
 
         (1..11).forEach { trackNumber ->
             val actual = semanticChars(parsedTrackBlocks(trackNumber))
             assertTrue(
-                "TRACK ${trackNumber.toString().padStart(2, '0')} is below literal 5x contract: actual=$actual minimum=$minimumPerTrack baseline=$baseline",
+                "TRACK ${trackNumber.toString().padStart(2, '0')} violates literal 5x rule: actual=$actual minimum=$minimumPerTrack baseline=$baseline",
                 actual >= minimumPerTrack
             )
         }
     }
 
     @Test
-    fun noLongParagraphIsCopiedToPadMultipleLocations() {
+    fun noLongParagraphIsCopiedToPadTheCorpus() {
         val owners = linkedMapOf<String, MutableList<String>>()
         (1..11).forEach { trackNumber ->
-            v5TrackFiles(trackNumber).forEach { file ->
+            manifestReferencedTrackFiles(trackNumber).forEach { file ->
                 val location = "T${trackNumber.toString().padStart(2, '0')}/${file.name}"
                 TextbookMarkdownParser.parse(file.readText(Charsets.UTF_8))
                     .filterIsInstance<TextbookBlock.Paragraph>()
                     .forEach { paragraph ->
                         val normalized = paragraph.text.replace(Regex("\\s+"), " ").trim()
-                        if (normalized.length >= 100) {
-                            owners.getOrPut(normalized) { mutableListOf() }.add(location)
-                        }
+                        if (normalized.length >= 80) owners.getOrPut(normalized) { mutableListOf() }.add(location)
                     }
             }
         }
-
         val duplicates = owners.filterValues { it.size > 1 }
         assertTrue(
-            "Long paragraph duplication is padding, not depth. duplicateGroups=${duplicates.size} examples=${duplicates.values.take(5)}",
+            "Repeated long paragraphs are padding, not depth. groups=${duplicates.size} examples=${duplicates.values.take(5)}",
             duplicates.isEmpty()
         )
     }
@@ -99,9 +108,8 @@ class V5BookScaleCorpusGateTest {
     fun repeatedTwelveTokenShinglesStayBelowEightPercent() {
         val counts = hashMapOf<String, Int>()
         var total = 0L
-
         (1..11).forEach { trackNumber ->
-            val text = v5TrackFiles(trackNumber)
+            val text = manifestReferencedTrackFiles(trackNumber)
                 .joinToString("\n") { it.readText(Charsets.UTF_8) }
                 .replace(Regex("```[\\s\\S]*?```"), " ")
                 .replace(Regex("[#>*_`|\\-]+"), " ")
@@ -116,14 +124,13 @@ class V5BookScaleCorpusGateTest {
                 }
             }
         }
-
         val duplicateOccurrences = counts.values.sumOf { (it - 1).coerceAtLeast(0).toLong() }
         val ratio = if (total == 0L) 1.0 else duplicateOccurrences.toDouble() / total.toDouble()
-        assertTrue("12-token repeated-shingle ratio too high: $ratio (duplicates=$duplicateOccurrences total=$total)", ratio <= 0.08)
+        assertTrue("12-token repeated-shingle ratio too high: $ratio", ratio <= 0.08)
     }
 
     @Test
-    fun trackDirectoriesAreExactlyElevenAndUseStableNumbering() {
+    fun trackDirectoriesAreExactlyElevenAndStable() {
         val root = repoFile("src/main/assets/textbook/v5")
         val dirs = root.listFiles()?.filter { it.isDirectory && it.name.matches(Regex("track_\\d{2}")) }?.sortedBy { it.name }.orEmpty()
         assertEquals((1..11).map { "track_${it.toString().padStart(2, '0')}" }, dirs.map { it.name })
