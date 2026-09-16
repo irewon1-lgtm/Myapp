@@ -45,6 +45,30 @@ object V5BookSupplementalSources {
             url = "https://source.android.com/docs/core/runtime/zygote"
         ),
         s(
+            "AOSP-BOOTLOADER",
+            "Bootloader overview",
+            "Android Open Source Project",
+            V5BookSource.SourceType.OFFICIAL_DOC,
+            "audited 2026-09",
+            "https://source.android.com/docs/core/architecture/bootloader"
+        ),
+        s(
+            "AOSP-AVB",
+            "Android Verified Boot",
+            "Android Open Source Project",
+            V5BookSource.SourceType.OFFICIAL_DOC,
+            "AVB / Verified Boot 2.0",
+            "https://source.android.com/docs/security/features/verifiedboot/avb"
+        ),
+        s(
+            "AOSP-BOOT-FLOW",
+            "Verified Boot flow",
+            "Android Open Source Project",
+            V5BookSource.SourceType.OFFICIAL_DOC,
+            "audited 2026-09",
+            "https://source.android.com/docs/security/features/verifiedboot/boot-flow"
+        ),
+        s(
             "ANDROID-MEMORY",
             "Understanding and troubleshooting Android memory",
             "Android Developers",
@@ -57,6 +81,22 @@ object V5BookSupplementalSources {
             "Android Developers",
             V5BookSource.SourceType.OFFICIAL_DOC,
             url = "https://developer.android.com/guide/components/processes-and-threads"
+        ),
+        s(
+            "ANDROID-COMPOSE-PERF",
+            "Jetpack Compose performance",
+            "Android Developers",
+            V5BookSource.SourceType.OFFICIAL_DOC,
+            "audited 2026-09",
+            "https://developer.android.com/develop/ui/compose/performance"
+        ),
+        s(
+            "ANDROID-COMPOSE-PHASES",
+            "Jetpack Compose phases",
+            "Android Developers",
+            V5BookSource.SourceType.OFFICIAL_DOC,
+            "audited 2026-09",
+            "https://developer.android.com/develop/ui/compose/phases"
         ),
         s(
             "LINUX-MAN",
@@ -79,6 +119,14 @@ object V5BookSupplementalSources {
             "Linux kernel documentation",
             V5BookSource.SourceType.OFFICIAL_DOC,
             url = "https://www.kernel.org/doc/html/latest/scheduler/"
+        ),
+        s(
+            "LINUX-BOOTCONFIG",
+            "Boot Configuration",
+            "Linux kernel documentation",
+            V5BookSource.SourceType.OFFICIAL_DOC,
+            "audited 2026-09",
+            "https://www.kernel.org/doc/html/latest/admin-guide/bootconfig.html"
         ),
         s(
             "SQLITE-ATOMIC",
