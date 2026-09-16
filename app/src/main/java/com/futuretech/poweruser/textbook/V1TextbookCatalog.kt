@@ -8,7 +8,7 @@ data class TextbookChapter(
 
 object V1TextbookCatalog {
     const val BOOK_TITLE = "코딩 완전과정"
-    const val BOOK_SUBTITLE = "완전 초보 출발 · TRACK 하나가 독립 교재 한 권급 · BLOCK → LESSON → 직접 실습"
+    const val BOOK_SUBTITLE = "완전 초보 출발 · 관련 BLOCK을 큰 LESSON으로 묶어 책처럼 깊게 학습 · 직접 실습"
     const val TRACK_COUNT = 11
     const val TRACK_LABEL = "TRACK"
     const val BLOCK_LABEL = "BLOCK"
@@ -125,7 +125,7 @@ object V1TextbookCatalog {
         id,
         number,
         title,
-        "textbook/v2/track_${number.toString().padStart(2, '0')}.md",
+        "textbook/v3/track_${number.toString().padStart(2, '0')}.md",
         practice,
         source,
         summary,
