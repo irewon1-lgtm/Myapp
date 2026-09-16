@@ -13,7 +13,7 @@ import org.junit.runners.Parameterized
 class TextbookExtreme60Test(private val caseId: Int) {
     companion object {
         @JvmStatic
-        @Parameterized.Parameters(name = "v2-track-section-extreme-{0}")
+        @Parameterized.Parameters(name = "v3-track-section-extreme-{0}")
         fun cases(): Collection<Array<Any>> = (1..60).map { arrayOf<Any>(it) }
     }
 
@@ -34,7 +34,7 @@ class TextbookExtreme60Test(private val caseId: Int) {
         val track = tracks[(caseId - 1) % tracks.size]
         assertTrue(track.title.length >= 5)
         assertTrue(track.summary.length >= 30)
-        assertTrue(track.assetPath.startsWith("textbook/v2/"))
+        assertTrue(track.assetPath.startsWith("textbook/v3/"))
         val practice = CurriculumDataRepository.lessonById(track.practiceLessonId)
         assertNotNull(practice)
         assertEquals("TEXTBOOK_V2", practice!!.curriculumType)
@@ -75,7 +75,7 @@ class TextbookExtreme60Test(private val caseId: Int) {
             assertEquals(11, V1TextbookCatalog.practiceLessonIds.size)
             assertEquals(28, V1TextbookCatalog.allSourceLessonIds.toSet().size)
             assertTrue(practices.all { it.curriculumType == "TEXTBOOK_V2" })
-            assertFalse(tracks.any { it.assetPath.contains("textbook/v1/") })
+            assertFalse(tracks.any { it.assetPath.contains("textbook/v1/") || it.assetPath.contains("textbook/v2/") })
         }
     }
 }
