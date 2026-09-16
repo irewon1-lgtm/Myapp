@@ -1,17 +1,17 @@
 package com.futuretech.poweruser.education
 
 import androidx.compose.ui.test.hasSetTextAction
-import androidx.compose.ui.test.hasTestTag
 import androidx.compose.ui.test.hasText
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
+import androidx.compose.ui.test.onAllNodesWithTag
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performScrollTo
-import androidx.compose.ui.test.performScrollToNode
 import androidx.compose.ui.test.performTextInput
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.futuretech.poweruser.MainActivity
+import org.junit.Assert.assertTrue
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -27,11 +27,24 @@ class FeedbackTeachingUiInstrumentedTest {
         }
     }
 
+    private fun turnReaderUntilVisible(tag: String, forward: Boolean, maxTurns: Int = 250) {
+        repeat(maxTurns) {
+            composeRule.waitForIdle()
+            if (composeRule.onAllNodesWithTag(tag).fetchSemanticsNodes().isNotEmpty()) return
+            val turnTag = if (forward) "textbook_right_tap_zone" else "textbook_left_tap_zone"
+            assertTrue(
+                "Paged reader turn control disappeared before reaching $tag",
+                composeRule.onAllNodesWithTag(turnTag).fetchSemanticsNodes().isNotEmpty()
+            )
+            composeRule.onNodeWithTag(turnTag).performClick()
+        }
+        assertTrue("Paged reader did not reach $tag within $maxTurns page turns", false)
+    }
+
     private fun openFirstV2TrackPractice() {
         composeRule.onNodeWithTag("curriculum_chapter_V1-C01").performClick()
         composeRule.waitForIdle()
-        composeRule.onNodeWithTag("textbook_reader")
-            .performScrollToNode(hasTestTag("textbook_practice_button"))
+        turnReaderUntilVisible("textbook_practice_button", forward = true)
         composeRule.onNodeWithTag("textbook_practice_button").performClick()
         composeRule.waitForIdle()
     }
@@ -57,11 +70,9 @@ class FeedbackTeachingUiInstrumentedTest {
 
         composeRule.onNodeWithTag("v1_textbook_root").assertExists()
         composeRule.onNodeWithTag("textbook_reader").assertExists()
-        // Practice is opened from the bottom of this LazyColumn. Back navigation restores that
-        // scroll position, so bring the header item back into composition before asserting it.
-        composeRule.onNodeWithTag("textbook_reader")
-            .performScrollToNode(hasTestTag("textbook_section_progress"))
-        composeRule.waitForIdle()
+        // The paged reader restores the exact page where practice was opened. Move backward through
+        // real reader pages until the lesson cover is visible instead of using legacy scroll APIs.
+        turnReaderUntilVisible("textbook_section_progress", forward = false)
         composeRule.onNodeWithTag("textbook_section_progress").assertExists()
         composeRule.onNodeWithTag("session_mode_practice").assertDoesNotExist()
     }
