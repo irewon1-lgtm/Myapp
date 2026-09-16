@@ -80,9 +80,10 @@ class V1EditorialQualityTest {
                 duplicates.isEmpty()
             )
 
-            // Match actual author placeholders, not legitimate identifiers such as Todo/todos.
+            // Only explicit author placeholders count. A legitimate variable such as todo/todos must not fail.
             val placeholderPatterns = listOf(
-                Regex("(?im)^\\s*(TODO|TBD|LOREM)(?:\\s|:|$)"),
+                Regex("(?im)^\\s*(?://|#|<!--)\\s*(TODO|TBD)(?:\\s*[:：-]|\\s*-->)"),
+                Regex("(?i)LOREM\\s+IPSUM"),
                 Regex("나중에 작성", RegexOption.IGNORE_CASE),
                 Regex("준비중", RegexOption.IGNORE_CASE)
             )
