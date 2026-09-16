@@ -1,690 +1,243 @@
-# PART 12 · 실행 파일은 코드 덩어리가 아니다 — object, ELF, relocation, linker, ABI
+# PART 12 · binary linking과 ABI — object identity에서 loader state까지
 
-소스 코드를 compile했다고 바로 실행 가능한 process가 생기는 것은 아니다. 여러 translation unit에서 나온 machine code와 data를 object file에 담고, symbol reference를 해결하고, address를 배치하고, shared library와 runtime loader가 협력해 process address space를 구성해야 한다.
-
-이 PART의 목표는 linker 옵션을 외우는 것이 아니라 **`undefined symbol`, `cannot locate shared library`, ABI mismatch, duplicate symbol, relocation failure` 같은 오류를 binary 구조로 해석하는 것**이다.
+native binary correctness는 source code가 compile되는 순간 끝나지 않는다. object file의 symbol과 relocation, linker 배치, dynamic loader의 dependency resolution, ABI의 calling/layout 규칙이 모두 맞아야 process image가 성립한다. binary 문제는 source-level type만 보고 고칠 수 없다.
 
 ---
 
-## CHAPTER 01 · translation unit과 object file을 구분한다
+## CHAPTER 01 · relocatable object는 아직 완성되지 않은 machine-code graph다
 
-C/C++ 계열을 예로 들면 source file 하나가 preprocessing/compilation/assembly를 거쳐 relocatable object를 만들 수 있다.
+separate compilation에서는 translation unit마다 code/data가 relocatable object에 저장된다. object에는 instruction bytes뿐 아니라 section metadata, symbol table, relocation record, debug/unwind information이 들어갈 수 있다. 다른 object가 제공할 symbol의 최종 주소를 아직 모르기 때문에 일부 instruction/data field는 linker가 나중에 보정한다.
 
-```text
-foo.c
-↓ preprocess/compile/assemble
-foo.o
-```
-
-object file에는 완성된 machine code만 있는 것이 아니다.
-
-```text
-machine instructions
-data sections
-symbol table
-relocation records
-debug metadata
-section metadata
-```
-
-같은 정보가 담길 수 있다.
-
-### 아직 주소가 결정되지 않은 reference
-
-`foo.o`가 다른 object의 `bar()`를 호출할 수 있다.
-
-compile 시점에는 `bar`의 최종 virtual address를 모를 수 있다.
-
-그래서 symbol reference와 relocation 정보를 남겨 linker가 나중에 해결한다.
+object를 분석할 때 source file 이름보다 section, symbol definition/reference, relocation target을 본다. `컴파일 성공`은 frontend와 code generation이 해당 unit을 처리했다는 뜻일 뿐, program 전체의 모든 reference가 해결되었다는 뜻이 아니다. link failure를 source syntax problem으로 되돌려 조사하면 원인 공간이 불필요하게 넓어진다.
 
 ---
 
-## CHAPTER 02 · symbol은 이름과 storage/code 위치를 연결하는 linker 단위다
+## CHAPTER 02 · symbol은 이름·binding·visibility·section을 묶은 binary identity다
 
-예:
+linker symbol은 함수나 global object의 binary-level identity를 제공한다. defined/undefined 상태, local/global/weak binding, visibility, section index 같은 metadata가 resolution에 영향을 준다. 동일 source identifier라도 compiler-generated symbol이나 mangled name이 실제 linker identity가 될 수 있다.
 
-```c
-int global_count;
-void process(void) { ... }
-```
-
-compiler/linker 관점에서는 `global_count`, `process`가 symbol로 나타날 수 있다.
-
-### defined와 undefined
-
-object A:
-
-```text
-DEFINED: process
-UNDEFINED: log_error
-```
-
-object B가 `log_error`를 정의하면 linker가 연결할 수 있다.
-
-정의가 없으면:
-
-```text
-undefined reference / unresolved symbol
-```
-
-류의 link error가 난다.
-
-### compile success와 link success가 다른 이유
-
-source 문법과 type check가 맞아도 다른 module의 실제 symbol definition이 없으면 compile은 성공하고 link가 실패할 수 있다.
-
-build pipeline 단계를 분리해서 읽어야 한다.
+undefined symbol은 반드시 `함수가 없다`는 뜻이 아니다. library가 link input에 빠졌거나, symbol visibility가 hidden이거나, versioned symbol이 맞지 않거나, C++ name mangling/ABI가 달라 lookup이 실패할 수 있다. symbol table과 dynamic dependency를 직접 확인해 어느 object가 definition을 제공해야 하는지 증명한다.
 
 ---
 
-## CHAPTER 03 · strong/weak symbol과 duplicate definition
+## CHAPTER 03 · binding rule은 여러 definition이 있을 때 어느 것이 선택되는지 결정한다
 
-linker는 같은 이름의 여러 symbol definition이 나타났을 때 binding 규칙을 적용한다.
+strong/weak symbol 규칙과 dynamic symbol interposition은 동일 이름의 여러 definition이 존재할 때 결과를 바꿀 수 있다. weak default implementation을 application이 override하는 패턴은 편리하지만 dependency upgrade에서 우연히 다른 symbol이 선택되는 위험을 만든다.
 
-일부 object format/toolchain에서는 strong/weak binding을 지원한다.
-
-잘못된 상황:
-
-```text
-A.o: strong foo
-B.o: strong foo
-```
-
-→ multiple definition error가 날 수 있다.
-
-weak symbol은 default implementation/override pattern 등에 쓰일 수 있지만 toolchain 규칙을 정확히 알아야 한다.
-
-`같은 함수 이름이 두 파일에 있어도 namespace가 알아서 구분하겠지`라는 가정은 언어 linkage 규칙에 따라 틀릴 수 있다.
+link order가 결과에 영향을 줄 수 있는 archive/static-library resolution도 있다. `-lA -lB`를 뒤집어 해결되는 현상을 단순 linker 버그로 보지 않고 archive member extraction rule과 unresolved set의 변화를 본다. link line 자체를 reproducible artifact로 보존해야 하는 이유다.
 
 ---
 
-## CHAPTER 04 · section과 segment는 같은 단어가 아니다
+## CHAPTER 04 · section과 segment는 파일 조직과 runtime mapping이라는 다른 관점이다
 
-ELF 계열 object/executable은 **section**과 **program segment**라는 서로 다른 관점을 가진다.
+section은 linker/debugger가 code, data, relocation, symbol 정보를 조직하는 논리 단위이고 segment는 loader가 process memory에 mapping할 범위를 기술하는 runtime 단위다. 여러 section이 하나의 loadable segment에 포함될 수 있다.
 
-### section
-
-link/edit/debug 관점의 논리 구획:
-
-```text
-.text
-.rodata
-.data
-.bss
-.symtab
-.rela.*
-```
-
-### segment
-
-loader가 process memory mapping을 만들 때 사용하는 실행 관점의 범위다.
-
-여러 section이 하나의 loadable segment에 들어갈 수 있다.
-
-```text
-ELF sections
-↓ linker arrangement
-program headers
-↓ loader
-memory segments/pages
-```
-
-`ELF section = process memory page`로 1:1 대응시키면 안 된다.
+보안과 memory permission은 segment 관점이 중요하다. executable code가 writable segment에 섞이면 W^X 원칙을 약화시킬 수 있고, read-only relocation이 가능한 영역은 relocation 완료 후 protection을 강화할 수 있다. ELF를 볼 때 `.text` 이름만 확인하지 않고 program header와 page permission까지 본다.
 
 ---
 
-## CHAPTER 05 · .text, .rodata, .data, .bss의 역할
+## CHAPTER 05 · data section의 초기값과 zero-fill은 file size와 memory size를 다르게 만든다
 
-전형적인 개념:
+initialized writable data는 file image에 실제 bytes가 필요하지만 zero-initialized global storage는 file에 모든 zero를 저장하지 않고 memory size metadata로 표현할 수 있다. 따라서 executable file 크기와 runtime writable memory 크기는 직접 비례하지 않는다.
 
-```text
-.text    executable instructions
-.rodata  read-only constants
-.data    initialized writable globals/statics
-.bss     zero-initialized/uninitialized writable data
-```
-
-실제 compiler/linker는 더 많은 section을 만든다.
-
-### BSS가 file에서 크게 공간을 차지할 필요가 없는 이유
-
-```c
-static char buffer[100 * 1024 * 1024];
-```
-
-zero-initialized data라면 executable file에 100MB의 zero byte를 그대로 저장하는 대신 `memory size는 100MB지만 file-backed data는 없음`으로 기술할 수 있다.
-
-loader/kernel은 mapping 시 zero-filled memory를 제공한다.
-
-그래서:
-
-```text
-binary file size
-≠ process virtual memory size
-```
-
-이다.
+binary size optimization에서 `.bss`와 file-backed data를 구분하지 않으면 효과를 잘못 평가한다. large lookup table, embedded resource, relocation-heavy data가 어느 section에 들어가는지 map file로 확인한다. memory footprint는 mapping 이후 COW/private dirty page까지 포함해 별도로 측정한다.
 
 ---
 
-## CHAPTER 06 · relocation은 `이 reference가 실제로 어디를 가리켜야 하는가`를 고친다
+## CHAPTER 06 · relocation은 symbolic reference를 concrete address/offset 표현으로 고친다
 
-object code 안에 다른 symbol address가 필요한 instruction/data가 있으면 relocation record가 위치와 종류를 설명한다.
+compiler는 다른 symbol의 최종 위치를 모를 때 relocation entry를 남긴다. linker나 dynamic loader는 symbol value, relocation type, place address, addend를 이용해 instruction/data field를 수정한다. relocation type은 architecture마다 달라 instruction encoding과 직접 연결된다.
 
-linker는 final layout을 정한 뒤 값을 패치한다.
-
-```text
-call ???
-relocation: offset X refers symbol foo
-↓ linker decides foo address
-call resolved-target
-```
-
-### relocation type
-
-absolute address, PC-relative offset 등 architecture마다 여러 relocation type이 있다.
-
-잘못된 relocation type/범위를 만나면 `relocation truncated`, unsupported relocation 같은 error가 날 수 있다.
+`relocation truncated to fit` 같은 오류는 이름 해석 문제가 아니라 relocation field가 표현할 수 있는 displacement/range를 초과했음을 의미할 수 있다. code model, section placement, PIC strategy를 검토해야 한다. source call을 다른 함수로 바꾸는 임시 수정은 binary layout 문제를 숨길 뿐이다.
 
 ---
 
-## CHAPTER 07 · position-independent code는 load address에 덜 의존한다
+## CHAPTER 07 · position-independent code는 load address 변화와 code sharing을 가능하게 한다
 
-shared library와 ASLR에서는 code가 매번 같은 virtual address에 load된다고 가정하기 어렵다.
+PIC/PIE는 absolute address를 code 곳곳에 박는 대신 PC-relative addressing이나 indirection table을 이용해 다양한 load address에서 동작하게 한다. 이는 ASLR과 shared-library page sharing에 유리하다.
 
-Position Independent Code(PIC)는 instruction/data reference를 상대 addressing이나 indirection으로 구성해 arbitrary base address에서 동작하기 쉽게 한다.
-
-### 왜 모든 absolute address를 runtime에 다시 고치지 않는가
-
-text page를 process마다 수정하면 shared read-only code page를 공유하기 어렵고 startup relocation 비용도 커질 수 있다.
-
-PIC와 GOT/PLT 같은 mechanism은 code sharing과 dynamic linking을 지원한다.
+PIC에는 GOT/PLT indirection, register usage 같은 비용이 생길 수 있지만 modern architecture/compiler에서는 비용 구조가 단순하지 않다. `PIC는 느리다`라는 일반론 대신 generated instruction과 relocation 수를 확인한다. security hardening과 performance의 실제 차이를 benchmark한다.
 
 ---
 
-## CHAPTER 08 · static linking과 dynamic linking
+## CHAPTER 08 · static과 dynamic linking은 dependency resolution 시점과 update boundary가 다르다
 
-### static
+static linking은 필요한 object code를 final binary에 포함해 runtime external dependency를 줄일 수 있지만 binary size와 update duplication이 증가할 수 있다. dynamic linking은 shared library를 runtime에 mapping하고 symbol을 resolve하므로 common code sharing과 independent update가 가능하지만 loader compatibility가 필요하다.
 
-필요한 library code 일부/전체를 link time에 executable 안에 포함할 수 있다.
-
-장점 후보:
-
-```text
-runtime library dependency 감소
-배포 단순화 가능
-```
-
-대가:
-
-```text
-binary size 증가
-shared library security fix가 자동 반영되지 않을 수 있음
-```
-
-### dynamic
-
-shared object를 runtime loader가 process에 mapping하고 symbol을 연결한다.
-
-```text
-app executable
-+
-libA.so
-+
-libB.so
-↓ dynamic loader
-process image
-```
-
-배포/업데이트/ABI compatibility 문제가 추가된다.
+보안 업데이트 관점도 다르다. dynamic library 하나의 patch가 여러 binary에 적용될 수 있지만 ABI compatibility가 깨지면 전체 ecosystem이 영향을 받는다. static dependency는 application rebuild/redeploy가 필요하다. dependency policy는 size만이 아니라 patch distribution과 reproducibility까지 고려한다.
 
 ---
 
-## CHAPTER 09 · dynamic loader가 process 시작에서 하는 일
+## CHAPTER 09 · dynamic loader는 dependency graph를 process mapping으로 구체화한다
 
-Linux/ELF 환경을 단순화하면 kernel이 executable header를 보고 필요한 interpreter/dynamic loader를 사용하게 구성할 수 있다.
+process start에서 loader는 executable의 dynamic section을 읽고 필요한 shared object를 찾고 mapping하며 relocation과 initialization을 수행한다. dependency graph가 깊거나 relocation/symbol 수가 많으면 startup critical path가 길어질 수 있다.
 
-loader는:
-
-```text
-needed shared objects 찾기
-mapping
-relocation
-symbol resolution
-initialization routines
-control transfer
-```
-
-등을 수행한다.
-
-### main() 이전에도 code가 실행될 수 있다
-
-runtime startup code, dynamic initializer, constructor, language runtime initialization이 `main` 전에 실행될 수 있다.
-
-`main 첫 줄 이전 crash`가 가능한 이유다.
+loader failure는 file missing만이 아니다. incompatible ELF class/machine, missing symbol version, text relocation restriction, namespace policy, wrong architecture가 원인이 될 수 있다. loader diagnostic과 실제 mapped object list를 확인한다. 동일 library name의 다른 copy가 선택된 경우 path보다 inode/build ID로 식별한다.
 
 ---
 
-## CHAPTER 10 · shared library search path는 security와 correctness 문제다
+## CHAPTER 10 · library search path는 dependency confusion attack surface가 될 수 있다
 
-loader가 `libfoo.so`를 찾을 때 여러 search path/rpath/environment 설정이 관여할 수 있다.
+loader가 여러 directory에서 library를 검색할 때 untrusted writable directory가 우선순위에 들어가면 공격자가 같은 이름의 shared object를 주입할 수 있다. current-directory search, environment variable, rpath/runpath 정책을 production에서 엄격히 관리한다.
 
-의도하지 않은 directory가 앞에 오면 다른 version/library를 load할 수 있다.
-
-### dependency confusion at runtime
-
-library 이름만 맞으면 된다는 가정은 위험하다.
-
-```text
-expected libfoo v2
-actual libfoo v1 loaded
-```
-
-이면 symbol/version mismatch나 subtle behavior 차이가 생긴다.
-
-보안 환경에서는 untrusted path가 search에 들어가지 않도록 해야 한다.
+`LD_LIBRARY_PATH를 추가하면 해결`은 debugging 임시 수단일 수 있지만 production fix로 남기면 artifact identity가 environment에 의존하게 된다. absolute/controlled search root, signed package boundary, namespace restriction을 사용해 어떤 library가 선택되는지 결정적으로 만든다.
 
 ---
 
-## CHAPTER 11 · GOT와 PLT를 indirection으로 이해한다
+## CHAPTER 11 · GOT와 PLT는 dynamic symbol address를 code에서 분리한다
 
-정확한 ELF implementation 세부를 전부 외우지 않고 목적을 이해한다.
+Global Offset Table은 dynamic object/data address indirection에 사용되고 Procedure Linkage Table은 external function call을 dynamic resolver와 연결하는 architecture/ABI mechanism에 사용될 수 있다. 구체 instruction sequence는 architecture와 linker에 따라 다르다.
 
-### GOT
-
-Global Offset Table은 runtime address가 필요한 global/reference를 data table indirection으로 접근하게 할 수 있다.
-
-### PLT
-
-Procedure Linkage Table은 external function call을 dynamic symbol resolution path와 연결할 수 있다.
-
-```text
-caller
-↓ PLT entry
-↓ GOT/resolver
-actual shared-library function
-```
-
-lazy binding configuration에서는 first call 시 resolution이 일어날 수 있다.
+GOT/PLT를 이해하면 `함수 call instruction이 직접 final function address를 가리키지 않는다`는 점을 설명할 수 있다. dynamic interposition, lazy binding, RELRO hardening이 이 table과 연결된다. disassembly에서 PLT stub를 실제 application function body로 오해하지 않는다.
 
 ---
 
-## CHAPTER 12 · lazy binding은 startup과 first-call latency를 교환한다
+## CHAPTER 12 · lazy binding은 startup 비용을 첫 호출로 미룬다
 
-모든 function symbol을 startup에서 resolve하면 startup cost가 늘지만 이후 call은 바로 target을 알 수 있다.
+일부 dynamic linking mode는 external function address resolution을 처음 호출할 때 수행한다. startup relocation 비용을 줄일 수 있지만 first-call latency와 writable resolver state를 만든다. eager binding은 startup에서 모두 resolve해 이후 call path를 단순화할 수 있다.
 
-lazy binding은 실제 처음 호출될 때 resolve해 startup work를 줄일 수 있다.
-
-대가:
-
-```text
-first call latency
-runtime resolver complexity
-security hardening considerations
-```
-
-system/toolchain 설정에 따라 eager binding을 선택할 수 있다.
+보안 hardening에서는 full RELRO/now binding과 같은 조합이 writable relocation target을 줄일 수 있다. 성능 선택은 symbol 수, startup SLO, first-interaction latency를 모두 본다. loader option 이름만으로 정책을 선택하지 않는다.
 
 ---
 
-## CHAPTER 13 · symbol interposition은 예상한 함수가 아닌 함수를 호출하게 할 수 있다
+## CHAPTER 13 · symbol interposition은 debugging hook이면서 optimization barrier가 될 수 있다
 
-ELF dynamic linking 환경에서는 symbol resolution order와 preload mechanism 등을 이용해 symbol을 가로챌 수 있다.
+shared object의 external symbol이 runtime에 다른 definition으로 대체될 가능성이 있으면 compiler/linker가 call target을 고정하지 못할 수 있다. visibility를 hidden/local로 제한하면 interposition 가능성을 줄여 optimization과 startup resolution 비용을 개선할 수 있다.
 
-이는 debugging/instrumentation에 유용할 수 있지만 correctness/security complexity를 만든다.
-
-```text
-original malloc
-↓ interposed wrapper
-custom logging
-↓ real malloc
-```
-
-### optimizer와 interposition
-
-compiler가 symbol이 override될 수 있다고 가정하면 일부 optimization을 제한할 수 있다.
-
-linkage semantics가 performance에도 영향을 준다.
+LD_PRELOAD 같은 mechanism은 tracing/testing에 유용하지만 production behavior를 바꿀 수 있다. interposed allocator/network call이 recursion 또는 ABI mismatch를 만들 수 있으므로 debugging injection이 원래 failure를 재현하는지 확인한다.
 
 ---
 
-## CHAPTER 14 · ABI는 binary끼리 대화하는 계약이다
+## CHAPTER 14 · ABI는 source-compatible component가 binary-incompatible할 수 있게 만든다
 
-API가 source-level function 이름/parameter contract라면 ABI는 binary-level convention까지 포함한다.
+ABI는 calling convention, register preservation, stack alignment, primitive size/alignment, object layout, exception/unwind convention 등을 정한다. header/source가 동일해도 compiler option이나 ABI version이 다르면 binary가 호환되지 않을 수 있다.
 
-예:
-
-```text
-argument register/order
-return value location
-callee/caller-saved registers
-stack alignment
-object layout
-name mangling
-exception/unwind convention
-binary format
-```
-
-### source compatible인데 binary incompatible할 수 있다
-
-header는 같은데 struct layout이나 calling convention이 바뀌면 old binary와 new library가 깨질 수 있다.
-
-`컴파일만 다시 하면 됨`과 `기존 binary도 그대로 실행됨`은 다른 compatibility 목표다.
+public native library는 API와 ABI compatibility를 별도 관리한다. struct에 field를 중간 삽입하거나 enum underlying size를 바꾸면 source recompilation 없이 기존 caller가 잘못된 offset을 사용할 수 있다. binary compatibility checker와 symbol/version policy를 release gate에 둔다.
 
 ---
 
-## CHAPTER 15 · C++ name mangling과 symbol 이름
+## CHAPTER 15 · name mangling은 overload와 namespace 정보를 symbol identity에 인코딩한다
 
-C++는 function overload, namespace, class method 정보를 linker symbol에 encode하는 name mangling을 사용한다.
+C++ compiler는 함수 이름만으로 overload를 구분할 수 없으므로 parameter type, namespace 등의 정보를 encoded symbol name에 포함한다. ABI별 mangling rule이 다르면 서로 다른 toolchain component가 동일 source function을 같은 symbol로 보지 않을 수 있다.
 
-source:
-
-```cpp
-void foo(int);
-void foo(double);
-```
-
-binary symbol 이름은 서로 달라져야 한다.
-
-compiler/ABI version이 달라 mangling이나 object ABI가 호환되지 않으면 library가 있어도 symbol을 못 찾을 수 있다.
-
-`extern "C"`는 C linkage 이름 규칙을 요청할 때 사용한다.
+C interface를 외부 ABI 안정화 layer로 사용하는 이유 중 하나가 더 단순한 symbol/calling contract다. JNI/FFI boundary에서는 generated/native signature를 실제 symbol과 대조한다. manual spelling에 의존하면 package/class rename에서 runtime lookup이 깨질 수 있다.
 
 ---
 
-## CHAPTER 16 · structure padding과 alignment도 ABI다
+## CHAPTER 16 · struct layout은 field order, alignment, padding의 결과다
 
-```c
-struct Example {
-    char a;
-    int b;
-};
-```
+compiler는 각 field의 alignment를 만족시키기 위해 padding을 넣고 struct 전체 alignment에 맞춰 tail padding을 둘 수 있다. 따라서 source field size 합이 `sizeof(struct)`와 다를 수 있다.
 
-memory layout이 단순히 1+4=5 byte라고 가정하면 안 된다.
-
-alignment 요구 때문에 padding이 들어갈 수 있다.
-
-```text
-[a][padding...][b b b b]
-```
-
-### binary serialization에 struct memory를 그대로 쓰면 위험한 이유
-
-compiler/architecture/endianness/padding이 다르면 file/network format이 달라진다.
-
-portable serialization은 field encoding을 명시해야 한다.
-
-PART 01 representation과 ABI가 연결된다.
+wire format, disk format, shared-memory protocol에 native struct bytes를 그대로 사용하면 compiler/architecture가 바뀔 때 layout이 깨진다. external format은 explicit field encoding을 사용한다. unavoidable shared ABI라면 static assertion으로 size/offset을 검증하고 version을 관리한다.
 
 ---
 
-## CHAPTER 17 · stack alignment가 깨지면 instruction 수준에서 실패할 수 있다
+## CHAPTER 17 · stack alignment는 call boundary 전체가 지켜야 하는 invariant다
 
-ABI는 function entry에서 stack pointer alignment를 요구할 수 있다.
+ABI는 function entry에서 stack pointer alignment를 요구할 수 있다. assembly/JIT/FFI stub 하나가 이를 깨뜨리면 downstream compiler-generated code가 aligned SIMD access를 가정해 crash할 수 있다.
 
-hand-written assembly/JIT/FFI code가 이를 깨뜨리면 vector instruction이나 callee assumption에서 crash할 수 있다.
-
-고수준 언어 compiler가 자동으로 지켜 주던 규칙을 low-level boundary에서는 직접 책임져야 한다.
+crash가 library 내부 instruction에서 발생해도 실제 원인은 caller의 malformed frame일 수 있다. register/stack dump로 call boundary를 역추적한다. hand-written assembly와 signal trampoline은 unwind/alignment metadata까지 포함해 검증한다.
 
 ---
 
-## CHAPTER 18 · unwind metadata는 crash stack과 exception 처리에 중요하다
+## CHAPTER 18 · unwind metadata는 optimized native stack을 복원하는 계약이다
 
-optimized native code에서 frame pointer가 항상 존재한다고 가정할 수 없다.
+frame pointer가 생략되고 code가 inline/reorder될 수 있는 optimized binary에서는 단순 stack memory scan으로 call chain을 안정적으로 복원할 수 없다. DWARF CFI나 architecture-specific unwind table이 register 복원 규칙을 제공한다.
 
-unwind table/debug metadata를 이용해 caller frame을 복원할 수 있다.
-
-### symbol stripping
-
-release binary에서 debug symbol을 분리/strip하면 package는 작아질 수 있지만 crash 주소를 source로 해석하려면 별도 symbol artifact를 보존해야 한다.
-
-정확한 build symbol 보관이 observability pipeline의 일부다.
+release crash debugging을 위해 stripped runtime binary와 별도의 symbol/unwind artifact를 build ID로 연결해 보존한다. wrong-version symbol을 사용하면 그럴듯하지만 틀린 stack이 생성될 수 있다. symbol server는 content-addressed identity를 사용한다.
 
 ---
 
-## CHAPTER 19 · ASLR은 load address 예측을 어렵게 한다
+## CHAPTER 19 · ASLR은 address를 무작위화하지만 정보 leak과 code reuse 위험을 함께 본다
 
-Address Space Layout Randomization은 executable/library/stack/heap 등의 base address를 실행마다 변화시켜 공격자가 address를 예측하기 어렵게 만든다.
+PIE와 shared library를 다양한 virtual address에 배치하면 공격자가 absolute address를 미리 아는 것을 어렵게 만든다. 그러나 pointer leak이 있으면 randomization entropy가 무력화될 수 있다.
 
-### crash address 비교
-
-ASLR 때문에 두 process crash address가 절대주소로 다를 수 있다.
-
-module base와 offset, build ID를 사용해 symbolization해야 한다.
-
-```text
-PC absolute address
-- module load base
-= relative offset
-```
+ASLR은 memory safety bug를 제거하지 않는다. stack canary, CFI, DEP/W^X, hardened allocator와 함께 exploitation cost를 높이는 defense-in-depth layer다. crash reproduction에서는 address가 실행마다 바뀌므로 module-relative offset과 build ID를 사용한다.
 
 ---
 
-## CHAPTER 20 · RELRO와 read-only relocation 영역
+## CHAPTER 20 · RELRO는 relocation 이후 writable metadata를 read-only로 전환한다
 
-일부 dynamic relocation table은 startup에 loader가 수정해야 하지만 resolution 뒤 더 이상 writable일 필요가 없다.
+dynamic relocation을 위해 startup 중 writable해야 하는 table이 relocation 완료 뒤에도 writable하면 memory corruption이 control-flow target overwrite로 이어질 수 있다. RELRO는 가능한 영역을 read-only로 보호한다.
 
-RELRO 같은 hardening은 relocation-related data 영역을 read-only로 바꿔 공격자가 GOT 등을 덮어쓰기 어렵게 한다.
-
-security feature는 performance/startup trade-off와 함께 toolchain에 구성된다.
+partial/full RELRO의 protection 범위와 binding mode를 구분한다. hardening flag가 build command에 있다고 실제 final ELF에 적용됐다는 보장은 없으므로 program header/dynamic flag를 release artifact에서 검사한다.
 
 ---
 
-## CHAPTER 21 · PIE는 executable에도 position independence를 확장한다
+## CHAPTER 21 · PIE는 main executable에도 relocation-independent addressing을 적용한다
 
-Position Independent Executable은 main executable을 임의 base에 배치하기 쉽게 해 ASLR 효과를 높인다.
+traditional fixed-address executable은 main image ASLR을 제한할 수 있다. PIE는 executable을 shared-object와 유사하게 relocatable하게 만들어 random base address에 load할 수 있게 한다.
 
-shared library만 PIC이고 main executable이 fixed address라면 address randomization 범위가 줄 수 있다.
-
-현대 mobile/server toolchain은 PIE를 기본 요구/사용하는 경우가 많다.
+PIE 적용 여부는 source code만 보고 알 수 없다. compiler와 linker flag, final ELF type/relocation을 검사한다. JIT-generated code나 native plugin 같은 다른 executable region의 W^X policy도 별도 검토한다.
 
 ---
 
-## CHAPTER 22 · dynamic library update는 ABI contract를 지켜야 한다
+## CHAPTER 22 · shared-library compatibility는 symbol 존재보다 semantics까지 포함한다
 
-library v1:
+동일 symbol signature가 남아 있어도 ownership, error convention, thread-safety, struct meaning이 바뀌면 semantic ABI compatibility가 깨진다. binary는 load되지만 runtime corruption이 생겨 더 위험할 수 있다.
 
-```text
-foo(int) returns int
-```
-
-v2가 ABI를 깨뜨리면 old application binary가 재compile 없이 동작하지 않을 수 있다.
-
-versioned symbol, soname, compatibility policy를 사용해 breaking change를 관리한다.
-
-### semver와 ABI는 자동 연결되지 않는다
-
-version number를 올렸다고 loader가 binary compatibility를 자동 보장하는 것은 아니다.
-
-실제 exported symbol/layout contract를 검증해야 한다.
+library versioning은 exported symbol set과 behavior contract를 함께 테스트한다. old consumer binary를 new library에 실제로 연결·실행하는 compatibility test를 유지한다. only-recompile test는 배포된 과거 consumer를 대표하지 못한다.
 
 ---
 
-## CHAPTER 23 · Android native library loading
+## CHAPTER 23 · Android native loader는 namespace와 APK packaging policy의 영향을 받는다
 
-APK/AAB에 ABI별 `.so`가 포함될 수 있다.
+Android는 native library loading에 namespace와 public/private library policy를 적용한다. app이 platform private library에 우연히 의존하면 OS update에서 load failure가 생길 수 있다.
 
-runtime linker가 app namespace와 permitted search path에서 library를 load한다.
-
-`System.loadLibrary("foo")`가 성공하려면 target ABI에 맞는 library가 package/device 환경에서 발견되고 dependency도 해결돼야 한다.
-
-### UnsatisfiedLinkError를 분해한다
-
-가능한 원인:
-
-```text
-.so 없음
-ABI mismatch
-transitive dependency 없음
-symbol 없음
-namespace/search restriction
-library corrupted
-min API / symbol availability mismatch
-```
-
-error text와 ELF dependency를 확인한다.
+APK/AAB에 ABI별 library가 올바른 path로 포함되었는지, extract/load mode와 target SDK policy가 맞는지 확인한다. `System.loadLibrary` 실패 시 library name만 보지 않고 namespace, dependency chain, ABI, ELF class를 진단한다.
 
 ---
 
-## CHAPTER 24 · JNI signature도 binary boundary다
+## CHAPTER 24 · JNI signature는 managed type과 native entry point 사이의 ABI adapter다
 
-managed method와 native function의 type/signature가 맞아야 한다.
+JNI는 object reference, primitive representation, exception state, thread attachment 규칙을 정의한다. native function이 managed object pointer를 raw process-lifetime pointer처럼 보관하면 GC/lifetime 규칙을 위반한다.
 
-JNI가 primitive/object reference를 전달하는 규칙, local/global reference lifetime, thread attachment 규칙이 있다.
-
-### wrong ownership
-
-native code가 Java object reference를 call 이후 오래 보관하려면 local reference를 그대로 저장해서는 안 될 수 있다.
-
-GC와 lifetime contract를 따라 global reference 등을 사용해야 한다.
+local/global/weak reference를 구분하고 long-running native thread는 VM attach/detach를 관리한다. pending exception 상태에서 허용되지 않은 JNI operation을 이어가면 추가 failure를 만든다. boundary wrapper에서 exception/ownership을 명시적으로 처리한다.
 
 ---
 
-## CHAPTER 25 · reproducible build와 binary provenance
+## CHAPTER 25 · reproducible build는 source revision과 binary identity 사이의 증거를 강화한다
 
-같은 source commit에서 나온 binary인지 확인하려면 compiler version, dependency, build flag, timestamp/input 등 environment가 영향을 준다.
+동일 source와 declared build input에서 bit-identical output이 가능하면 artifact provenance를 검증하기 쉽다. timestamp, nondeterministic file order, absolute build path가 output에 섞이면 동일 source의 binary hash가 달라진다.
 
-reproducible build는 같은 input에서 byte-identical output을 목표로 해 공급망 검증과 debugging에 도움을 줄 수 있다.
-
-### build ID
-
-binary에 build identifier를 넣으면 crash artifact가 어느 exact build인지 symbol server와 연결하기 쉬워진다.
+reproducibility는 supply-chain compromise 탐지와 rollback audit에 유용하지만 compiler 자체 신뢰 문제를 완전히 해결하지 않는다. toolchain digest, dependency lock, environment를 SBOM/provenance와 함께 기록한다.
 
 ---
 
-## CHAPTER 26 · binary size를 section별로 본다
+## CHAPTER 26 · binary size는 code, data, symbol, relocation을 따로 최적화한다
 
-APK/native binary가 커졌을 때 전체 크기만 보지 않는다.
+APK/library 크기가 커진 원인을 `코드가 많다`로 끝내지 않는다. text/rodata/data, debug symbol, relocation, duplicate template instantiation, embedded resource 비중을 map/size tool로 분해한다.
 
-```text
-.text increase
-.rodata increase
-debug info accidentally packaged
-large resource
-duplicate native ABI
-static library duplication
-```
-
-section/resource contribution을 비교한다.
-
-### template/generic code bloat
-
-C++ template나 monomorphization 계열은 type별 code specialization이 많아지면 text size가 증가할 수 있다.
-
-성능 이점과 instruction-cache/binary-size 비용을 함께 본다.
+on-disk compressed size, installed size, mapped RSS는 서로 다르다. size optimization 목표를 download, storage, startup I/O, memory 중 무엇인지 먼저 정한다. aggressive compression이 startup CPU를 늘릴 수도 있다.
 
 ---
 
-## CHAPTER 27 · link-time optimization은 module 경계를 넘어 최적화한다
+## CHAPTER 27 · LTO는 translation-unit 경계를 넘어 optimization하지만 build contract를 넓힌다
 
-일반 compile에서는 각 translation unit을 독립적으로 최적화해 다른 object 내부 정보를 제한적으로 본다.
+Link-Time Optimization은 object 수준 IR을 linker 단계까지 유지해 cross-module inlining, dead-code elimination 같은 optimization을 가능하게 한다. 성능과 size가 좋아질 수 있지만 link memory/time과 debug complexity가 증가한다.
 
-LTO는 link 단계까지 intermediate representation을 유지해 cross-module inline/dead-code elimination 같은 optimization을 가능하게 한다.
-
-대가:
-
-```text
-build time/memory 증가
-linker/toolchain complexity
-profile/debug 변화
-```
-
-실제 성능/size를 측정한다.
+LTO가 ABI 문제를 고쳐 주지는 않는다. visibility와 undefined behavior가 더 공격적으로 최적화되어 latent bug가 드러날 수 있다. release build에서만 발생하는 failure는 LTO on/off differential을 evidence로 사용하되 원인은 source invariant까지 추적한다.
 
 ---
 
-## CHAPTER 28 · undefined symbol을 증거로 디버깅한다
+## CHAPTER 28 · symbol debugging은 build ID를 중심으로 artifact를 매칭한다
 
-상황:
+production crash address를 source line으로 변환하려면 exact executable/shared object와 debug symbol이 필요하다. filename/version string만으로는 동일 release name의 rebuild를 구분하기 어렵다.
 
-```text
-app: symbol lookup error: foo_v2
-```
-
-순서:
-
-```text
-1. 어느 binary가 foo_v2를 요구하는가?
-2. 그 binary의 DT_NEEDED/shared dependencies는?
-3. 실제 load된 library path는?
-4. library symbol table에 foo_v2가 exported됐는가?
-5. symbol version이 맞는가?
-6. architecture/ABI가 맞는가?
-7. runtime search path가 예상과 같은가?
-```
-
-source repository에서 함수가 `존재한다`는 사실만으로 runtime symbol이 존재한다고 결론 내리지 않는다.
+build ID 또는 content hash를 crash report에 포함하고 CI artifact store에서 정확한 symbol을 찾는다. stripped binary와 debug companion의 ID 일치를 자동 검사한다. symbol mismatch는 잘못된 원인 분석을 낳는 silent corruption이다.
 
 ---
 
-## CHAPTER 29 · startup slow를 dynamic linking으로 분해한다
+## CHAPTER 29 · linking과 loading도 startup critical path를 구성한다
 
-native library 수가 매우 많고 relocation/constructor가 무거우면 process startup 일부를 차지할 수 있다.
+shared object 수, relocation 수, symbol lookup, page fault가 application startup latency에 영향을 줄 수 있다. native-heavy application에서 code-level initialization을 줄였는데 startup이 개선되지 않으면 loader trace를 본다.
 
-trace에서:
-
-```text
-dlopen
-relocation
-JNI_OnLoad
-static constructors
-```
-
-시간을 본다.
-
-불필요한 library를 지연 load하거나 initialization을 줄일 수 있다.
+library consolidation은 relocation/search 비용을 줄일 수 있지만 incremental update와 component isolation을 약화할 수 있다. startup optimization은 binary layout, prefetch, relocation, class/runtime initialization을 하나의 timeline으로 측정한다.
 
 ---
 
-## CHAPTER 30 · binary 사고 모델
+## CHAPTER 30 · binary 문제는 source→object→link→load→call boundary를 순서대로 검증한다
 
-source function 하나가 실행되기까지:
+`undefined symbol`이나 native crash를 만났을 때 source를 임의 수정하지 않는다. 먼저 target architecture/ABI, object symbol/relocation, final dependency graph, loader-selected library, runtime call boundary를 확인한다.
 
-```text
-source declaration
-↓ compiler
-object symbol + relocation
-↓ linker
-executable/shared object
-↓ package/storage
-loader mapping
-↓ relocation/symbol resolution
-ABI call boundary
-↓
-CPU instructions
-```
-
-각 경계마다 다른 failure class가 있다.
-
-```text
-compile error
-link error
-load error
-symbol resolution error
-ABI mismatch
-runtime crash
-```
-
-이제 error가 나온 stage를 먼저 식별한다.
-
----
-
-## PART 12 종료 점검
-
-1. object file이 완성된 executable과 다른 이유는 무엇인가?
-2. undefined symbol이 compile이 아니라 link/runtime에서 나타날 수 있는 이유는 무엇인가?
-3. ELF section과 load segment는 무엇이 다른가?
-4. BSS가 process memory에는 크지만 file size에는 작을 수 있는 이유는 무엇인가?
-5. relocation이 해결하는 문제는 무엇인가?
-6. PIC와 ASLR/dynamic library는 어떻게 연결되는가?
-7. static linking과 dynamic linking의 trade-off는 무엇인가?
-8. GOT/PLT가 dynamic symbol resolution에서 어떤 indirection을 제공하는가?
-9. ABI가 API보다 낮은 층에서 어떤 것을 규정하는가?
-10. struct padding을 binary serialization로 그대로 쓰면 왜 위험한가?
-11. ASLR 환경에서 native crash address를 어떻게 symbolization하는가?
-12. Android UnsatisfiedLinkError를 어떤 원인 범주로 나눌 수 있는가?
-13. LTO가 최적화 범위와 build cost를 어떻게 바꾸는가?
-14. source에 함수가 존재해도 runtime symbol이 없을 수 있는 이유는 무엇인가?
-
-이제 `컴파일됐다`와 `실행할 수 있다` 사이를 비워 두지 않는다. **object → symbol → relocation → link → loader → ABI → instruction**을 연결해 설명할 수 있어야 한다.
+각 단계의 artifact가 다음 단계 input과 일치한다는 증거를 남기면 binary failure를 재현 가능하게 좁힐 수 있다. native system의 핵심은 기계어를 읽는 기술 자체가 아니라 **binary contract가 어느 경계에서 깨졌는지 식별하는 능력**이다.
