@@ -80,7 +80,7 @@ internal fun depthBullets(vararg items: String) =
  * and the neighboring concepts required to reason about real systems.
  */
 object V4BookDepthLibrary {
-    private val packs: Map<String, ExpertDepthPack> = (
+    private val allPacks: List<ExpertDepthPack> =
         V4ExpertDepthTrack01.packs +
             V4ExpertDepthTrack02.packs +
             V4ExpertDepthTrack03.packs +
@@ -92,7 +92,20 @@ object V4BookDepthLibrary {
             V4ExpertDepthTrack09.packs +
             V4ExpertDepthTrack10.packs +
             V4ExpertDepthTrack11.packs
-        ).associateBy { it.sectionId }
+
+    private val duplicateSectionIds: Set<String> = allPacks
+        .groupingBy { it.sectionId }
+        .eachCount()
+        .filterValues { it > 1 }
+        .keys
+
+    init {
+        require(duplicateSectionIds.isEmpty()) {
+            "Duplicate V4 expert depth section ids: ${duplicateSectionIds.sorted()}"
+        }
+    }
+
+    private val packs: Map<String, ExpertDepthPack> = allPacks.associateBy { it.sectionId }
 
     fun blocksFor(sectionId: String): List<TextbookBlock> {
         val pack = packs[sectionId] ?: return emptyList()
