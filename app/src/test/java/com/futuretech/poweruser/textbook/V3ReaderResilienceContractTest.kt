@@ -13,41 +13,47 @@ class V3ReaderResilienceContractTest {
     }
 
     @Test
-    fun longLessonReaderPersistsAndRestoresVerticalPosition() {
-        val screen = sourceFile("app/src/main/java/com/futuretech/poweruser/ui/V1TextbookScreen.kt")
+    fun activeReaderUsesFixedPagesAndPersistsExactPageInsteadOfVerticalScroll() {
+        val adaptive = sourceFile("app/src/main/java/com/futuretech/poweruser/ui/AdaptiveTextbookScreen.kt")
+            .readText(Charsets.UTF_8)
+        val screen = sourceFile("app/src/main/java/com/futuretech/poweruser/ui/EbookTextbookScreen.kt")
             .readText(Charsets.UTF_8)
         val store = sourceFile("app/src/main/java/com/futuretech/poweruser/textbook/TextbookProgressStore.kt")
             .readText(Charsets.UTF_8)
 
-        assertTrue(screen.contains("initialFirstVisibleItemIndex = initialScrollIndex"))
-        assertTrue(screen.contains("initialFirstVisibleItemScrollOffset = initialScrollOffset"))
-        assertTrue(screen.contains("snapshotFlow"))
-        assertTrue(screen.contains("store.saveScroll(currentConcept.id, index, offset)"))
-        assertTrue(store.contains("v3_deep_beginner_progress"))
-        assertTrue(store.contains("scroll_index_"))
-        assertTrue(store.contains("scroll_offset_"))
+        assertTrue(adaptive.contains("EbookTextbookScreen("))
+        assertFalse(adaptive.contains("V1TextbookScreen("))
+        assertTrue(screen.contains("TextbookPaginator.paginate"))
+        assertTrue(screen.contains("initialPageIndex = store.pageIndex(currentConcept.id)"))
+        assertTrue(screen.contains("store.savePageIndex(currentConcept.id, index)"))
+        assertTrue(store.contains("page_index_"))
+        assertFalse("active ebook reader must not use a vertical LazyColumn", screen.contains("LazyColumn"))
+        assertFalse("active ebook reader must not restore pixel scroll offsets", screen.contains("rememberLazyListState"))
+        assertFalse(screen.contains("snapshotFlow"))
     }
 
     @Test
-    fun codeBlocksDoNotStealHorizontalLessonSwipe() {
-        val screen = sourceFile("app/src/main/java/com/futuretech/poweruser/ui/V1TextbookScreen.kt")
+    fun pageTurnsSupportSwipeAndBothScreenEdges() {
+        val screen = sourceFile("app/src/main/java/com/futuretech/poweruser/ui/EbookTextbookScreen.kt")
             .readText(Charsets.UTF_8)
 
-        assertFalse("code block horizontal scrolling must stay removed", screen.contains("horizontalScroll(rememberScrollState())"))
-        assertTrue("beginner code must wrap on narrow phones", screen.contains("softWrap = true"))
-        assertTrue("lesson swipe remains available", screen.contains("detectHorizontalDragGestures"))
-        assertTrue("swipe requires a deliberate gesture", screen.contains("110.dp.toPx()"))
+        assertTrue(screen.contains("detectHorizontalDragGestures"))
+        assertTrue(screen.contains("56.dp.toPx()"))
+        assertTrue(screen.contains("ebook_left_edge"))
+        assertTrue(screen.contains("ebook_right_edge"))
+        assertTrue(screen.contains("ebook_page_counter"))
+        assertTrue("beginner code must wrap inside a book page", screen.contains("softWrap = true"))
     }
 
     @Test
-    fun deepHeadingsAreVisuallyDistinctFromBodyText() {
-        val screen = sourceFile("app/src/main/java/com/futuretech/poweruser/ui/V1TextbookScreen.kt")
+    fun readerHasBookStructureInsteadOfOneContinuousLessonSurface() {
+        val screen = sourceFile("app/src/main/java/com/futuretech/poweruser/ui/EbookTextbookScreen.kt")
             .readText(Charsets.UTF_8)
 
-        assertTrue(screen.contains("3 -> 19.sp"))
-        assertTrue(screen.contains("4 -> 17.sp"))
-        assertTrue(screen.contains("3 -> 16.dp"))
-        assertTrue(screen.contains("4 -> 10.dp"))
-        assertTrue(screen.contains("4 -> FontWeight.SemiBold"))
+        assertTrue(screen.contains("EbookPage.TrackCover"))
+        assertTrue(screen.contains("EbookPage.LessonOpening"))
+        assertTrue(screen.contains("EbookPage.Content"))
+        assertTrue(screen.contains("EbookPage.Recall"))
+        assertTrue(screen.contains("EbookPage.TrackEnd"))
     }
 }
