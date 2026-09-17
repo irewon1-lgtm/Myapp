@@ -1,0 +1,13 @@
+{
+  "partId":"T02-P74",
+  "sections":[
+    {"sectionId":"T02-P74-S01-exception-context","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P74-S02-explicit-cause","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P74-S03-suppress-context","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P74-S04-traceback-object","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P74-S05-reraise-preservation","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P74-S06-exception-notes","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P74-S07-boundary-translation","sourceIds":["DDD","SRE"]},
+    {"sectionId":"T02-P74-S08-traceback-contract","sourceIds":["REFACTORING2","SRE"]}
+  ]
+}
