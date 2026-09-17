@@ -1,0 +1,20 @@
+{
+  "partId":"T07-P02",
+  "sections":[
+    {"sectionId":"T07-P02-S01-request-runtime-object","sourceIds":["RFC9110","SRE"]},
+    {"sectionId":"T07-P02-S02-method-semantics","sourceIds":["RFC9110","OPENAPI31"]},
+    {"sectionId":"T07-P02-S03-target-query-parsing","sourceIds":["RFC9110","OWASP-API"]},
+    {"sectionId":"T07-P02-S04-header-trust","sourceIds":["RFC9110","OWASP-API"]},
+    {"sectionId":"T07-P02-S05-body-stream","sourceIds":["RFC9110","SRE"]},
+    {"sectionId":"T07-P02-S06-status-semantics","sourceIds":["RFC9110","OPENAPI31"]},
+    {"sectionId":"T07-P02-S07-response-headers","sourceIds":["RFC9110","OPENAPI31"]},
+    {"sectionId":"T07-P02-S08-serialization-boundary","sourceIds":["RFC9110","OWASP-API"]},
+    {"sectionId":"T07-P02-S09-single-completion","sourceIds":["SRE","RFC9110"]},
+    {"sectionId":"T07-P02-S10-client-abort","sourceIds":["SRE","DDIA"]},
+    {"sectionId":"T07-P02-S11-keepalive","sourceIds":["RFC9110","SRE"]},
+    {"sectionId":"T07-P02-S12-streaming-response","sourceIds":["RFC9110","SRE"]},
+    {"sectionId":"T07-P02-S13-backpressure","sourceIds":["SRE","DDIA"]},
+    {"sectionId":"T07-P02-S14-lifecycle-observation","sourceIds":["SRE","SRE-WORKBOOK"]},
+    {"sectionId":"T07-P02-S15-lifecycle-lab","sourceIds":["RFC9110","SRE","OWASP-API"]}
+  ]
+}
