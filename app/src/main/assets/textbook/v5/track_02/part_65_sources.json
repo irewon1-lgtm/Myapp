@@ -1,14 +1,13 @@
 {
-  "part": 65,
-  "title": "Rich comparison과 hash contract — equality·ordering·dict/set 불변식을 추적하기",
-  "sections": [
-    {"id":"T02-P65-S01-comparison-dispatch","sourceIds":["PYTHON-REF","SICP"]},
-    {"id":"T02-P65-S02-eq-ne-semantics","sourceIds":["PYTHON-REF","SICP"]},
-    {"id":"T02-P65-S03-ordering-partial","sourceIds":["PYTHON-REF","SICP"]},
-    {"id":"T02-P65-S04-notimplemented-comparison","sourceIds":["PYTHON-REF","SICP"]},
-    {"id":"T02-P65-S05-hash-equality","sourceIds":["PYTHON-REF","CSAPP3"]},
-    {"id":"T02-P65-S06-mutable-hash-trap","sourceIds":["PYTHON-REF","SRE"]},
-    {"id":"T02-P65-S07-dict-set-lookup","sourceIds":["PYTHON-REF","CSAPP3"]},
-    {"id":"T02-P65-S08-comparison-contract","sourceIds":["SRE","PYTHON-REF"]}
+  "partId":"T02-P65",
+  "sections":[
+    {"sectionId":"T02-P65-S01-comparison-dispatch","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P65-S02-eq-ne-semantics","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P65-S03-ordering-partial","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P65-S04-notimplemented-comparison","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P65-S05-hash-equality","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P65-S06-mutable-hash-trap","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P65-S07-dict-set-lookup","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P65-S08-comparison-contract","sourceIds":["SRE","PYTHON-REF"]}
   ]
 }
