@@ -1,0 +1,15 @@
+{
+  "partId": "T02-P10",
+  "sections": [
+    {"sectionId":"T02-P10-S01-iterable-iterator","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P10-S02-generator-suspend","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P10-S03-lazy-backpressure","sourceIds":["PYTHON-REF","SICP","SRE"]},
+    {"sectionId":"T02-P10-S04-generator-expression","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P10-S05-yield-from","sourceIds":["PYTHON-REF"]},
+    {"sectionId":"T02-P10-S06-shared-iterator-state","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P10-S07-resource-lifetime","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P10-S08-stream-error-boundary","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P10-S09-infinite-sequence-budget","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P10-S10-eager-lazy-contract","sourceIds":["PYTHON-REF","CSAPP3","SICP"]}
+  ]
+}
