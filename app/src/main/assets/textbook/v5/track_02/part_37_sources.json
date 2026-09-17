@@ -1,0 +1,15 @@
+{
+  "partId": "T02-P37",
+  "sections": [
+    {"sectionId":"T02-P37-S01-interleaving-contract","sourceIds":["OSTEP","SICP"]},
+    {"sectionId":"T02-P37-S02-deterministic-schedule","sourceIds":["OSTEP","PYTHON-REF"]},
+    {"sectionId":"T02-P37-S03-check-act-race","sourceIds":["OSTEP","DDIA"]},
+    {"sectionId":"T02-P37-S04-deadlock-schedule","sourceIds":["OSTEP","TLPI"]},
+    {"sectionId":"T02-P37-S05-cancellation-test","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P37-S06-compound-thread-safety","sourceIds":["OSTEP","DDIA"]},
+    {"sectionId":"T02-P37-S07-stress-reproduction","sourceIds":["SRE","NIST-SSDF"]},
+    {"sectionId":"T02-P37-S08-model-concurrency","sourceIds":["DDIA","CLRS4"]},
+    {"sectionId":"T02-P37-S09-concurrency-observability","sourceIds":["SRE","OSTEP"]},
+    {"sectionId":"T02-P37-S10-concurrency-clean-pass","sourceIds":["NIST-SSDF","SRE","OSTEP"]}
+  ]
+}
