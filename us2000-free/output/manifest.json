@@ -1,6 +1,6 @@
 {
   "schema": "US2000_FREE_NEW500_1",
-  "generatedAt": "2026-09-17T05:33:43.514963Z",
+  "generatedAt": "2026-09-17T05:35:21.549777Z",
   "asOf": "2026-09-17",
   "recordCount": 500,
   "metricCount": 10,
@@ -21,29 +21,29 @@
   },
   "summary": {
     "Revenue_TTM_YoY_Pct": {
-      "numeric": 491,
+      "numeric": 492,
       "naBasis": 8,
-      "hold": 1
+      "hold": 0
     },
     "Gross_Margin_TTM_Pct": {
-      "numeric": 408,
+      "numeric": 409,
       "naBasis": 91,
-      "hold": 1
+      "hold": 0
     },
     "Operating_Margin_TTM_Pct": {
-      "numeric": 491,
+      "numeric": 492,
       "naBasis": 8,
-      "hold": 1
+      "hold": 0
     },
     "Net_Margin_TTM_Pct": {
-      "numeric": 491,
+      "numeric": 492,
       "naBasis": 8,
-      "hold": 1
+      "hold": 0
     },
     "ROA_TTM_Pct": {
-      "numeric": 494,
+      "numeric": 495,
       "naBasis": 5,
-      "hold": 1
+      "hold": 0
     },
     "FCF_Yield_TTM_Pct": {
       "numeric": 498,
@@ -52,13 +52,13 @@
     },
     "TTM_PER": {
       "numeric": 354,
-      "naBasis": 145,
-      "hold": 1
+      "naBasis": 146,
+      "hold": 0
     },
     "Price_Sales_TTM": {
-      "numeric": 491,
+      "numeric": 492,
       "naBasis": 8,
-      "hold": 1
+      "hold": 0
     },
     "Shares_Change_YoY_Pct": {
       "numeric": 490,
@@ -66,15 +66,15 @@
       "hold": 0
     },
     "Drawdown_52W_Pct": {
-      "numeric": 499,
+      "numeric": 500,
       "naBasis": 0,
-      "hold": 1
+      "hold": 0
     }
   },
-  "totalResolved": 4992,
-  "totalHold": 8,
-  "resolvedRatio": 0.9984,
-  "recordsSha256": "c00e765e2a31cea890298a5d7922601f3dc99c38a1134061d7cb95e0335f05ae",
+  "totalResolved": 5000,
+  "totalHold": 0,
+  "resolvedRatio": 1.0,
+  "recordsSha256": "99c842c2fd434950640e9dc97ec9aaf532a7c93bb578bc1af1ce7ca1f34bd8b1",
   "chunks": [
     {
       "file": "chunk-00.json",
@@ -124,7 +124,7 @@
     {
       "file": "chunk-09.json",
       "count": 50,
-      "sha256": "56eb9cf7fb273235a27b3e8d3e9fc0b66e3114b2479a3655628a8d0b1ec3e0fe"
+      "sha256": "3c512050577f9d45876dda162071c492e07d7001c962d5523ef685c6a7070b62"
     }
   ],
   "sourcePolicy": {
@@ -139,75 +139,10 @@
     "captchaBypass": false,
     "workers": 4
   },
-  "holdDetails": [
-    {
-      "ticker": "WTI",
-      "metric": "Revenue_TTM_YoY_Pct",
-      "reason": "FINVIZ:HTTP_429",
-      "collectionErrors": [
-        "FINVIZ:HTTP_429"
-      ]
-    },
-    {
-      "ticker": "WTI",
-      "metric": "Gross_Margin_TTM_Pct",
-      "reason": "FINVIZ:HTTP_429",
-      "collectionErrors": [
-        "FINVIZ:HTTP_429"
-      ]
-    },
-    {
-      "ticker": "WTI",
-      "metric": "Operating_Margin_TTM_Pct",
-      "reason": "FINVIZ:HTTP_429",
-      "collectionErrors": [
-        "FINVIZ:HTTP_429"
-      ]
-    },
-    {
-      "ticker": "WTI",
-      "metric": "Net_Margin_TTM_Pct",
-      "reason": "FINVIZ:HTTP_429",
-      "collectionErrors": [
-        "FINVIZ:HTTP_429"
-      ]
-    },
-    {
-      "ticker": "WTI",
-      "metric": "ROA_TTM_Pct",
-      "reason": "FINVIZ:HTTP_429",
-      "collectionErrors": [
-        "FINVIZ:HTTP_429"
-      ]
-    },
-    {
-      "ticker": "WTI",
-      "metric": "TTM_PER",
-      "reason": "FINVIZ:HTTP_429",
-      "collectionErrors": [
-        "FINVIZ:HTTP_429"
-      ]
-    },
-    {
-      "ticker": "WTI",
-      "metric": "Price_Sales_TTM",
-      "reason": "FINVIZ:HTTP_429",
-      "collectionErrors": [
-        "FINVIZ:HTTP_429"
-      ]
-    },
-    {
-      "ticker": "WTI",
-      "metric": "Drawdown_52W_Pct",
-      "reason": "FINVIZ:HTTP_429",
-      "collectionErrors": [
-        "FINVIZ:HTTP_429"
-      ]
-    }
-  ],
+  "holdDetails": [],
   "parserAudit": {
     "drawdownCompositeRegression": 16.1,
-    "drawdownPositiveCount": 497,
+    "drawdownPositiveCount": 498,
     "drawdownSamples": [
       {
         "ticker": "AAT",
@@ -235,5 +170,12 @@
         "raw": "30.99 -32.27%"
       }
     ]
+  },
+  "targetedRecovery": {
+    "ticker": "WTI",
+    "at": "2026-09-17T05:35:21.549777Z",
+    "previousHoldCount": 8,
+    "remainingHoldCount": 0,
+    "collectionErrors": []
   }
 }
