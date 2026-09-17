@@ -10,6 +10,8 @@ application이 storage나 network를 사용할 때 device register를 직접 만
 
 장치 문제를 진단할 때 application API, kernel subsystem, driver, transport, physical device를 분리한다. 같은 `I/O error`도 permission, queue timeout, device reset, media failure, link error에서 올 수 있다. kernel log와 device-specific telemetry가 필요한 이유다.
 
+discovery 이후에도 device identity와 resource assignment는 고정값이라고 가정하지 않는다. PCIe BDF, BAR mapping, IRQ vector, IOMMU domain, driver bind state는 hotplug·reset·resume에서 다시 구성될 수 있다. 장애 로그에는 product name만이 아니라 bus identity, firmware/driver version, reset generation, queue ID를 남겨 같은 이름의 여러 장치를 구분한다. probe는 성공했지만 queue 생성이 실패했는지, MMIO는 보이지만 interrupt가 전달되지 않는지처럼 초기화 state machine을 단계별로 기록하면 “장치가 안 된다”를 실제 실패 경계로 좁힐 수 있다.
+
 ---
 
 ## CHAPTER 02 · MMIO register는 일반 RAM과 같은 memory가 아니다
@@ -102,6 +104,8 @@ file write는 filesystem/page cache에서 block request로 변환되고 storage 
 
 따라서 SSD latency spike는 application request size만으로 설명되지 않는다. write amplification, internal garbage collection, queue saturation, thermal condition, firmware behavior가 tail latency를 만들 수 있다. storage benchmark는 sustained state와 fresh-drive state를 구분한다.
 
+completion과 durability도 storage stack에서 별도 축이다. host controller가 command를 완료했다고 보고해도 volatile device cache에 남아 있는 data가 power loss를 견디는지는 flush/FUA와 device 보장에 달려 있다. NVMe namespace와 queue가 여러 workload에 공유되면 한 tenant의 long write나 background GC가 다른 request tail에 영향을 줄 수 있다. benchmark에서는 preconditioning으로 steady-state를 만든 뒤 read/write mix, queue depth, block size, flush frequency를 고정하고 SMART/health·thermal telemetry와 p99를 함께 기록해 media/firmware 내부 변동을 application 변화와 분리한다.
+
 ---
 
 ## CHAPTER 11 · queue depth는 throughput을 올리다가 saturation 이후 latency를 폭발시킨다
@@ -130,6 +134,8 @@ receive packet은 NIC RX ring, DMA buffer, driver/network stack을 거쳐 socket
 
 multi-queue NIC는 traffic을 여러 CPU queue에 분산할 수 있지만 affinity가 잘못되면 packet processing과 application thread 사이 cache locality가 나빠질 수 있다. packet loss를 network 자체 문제로 단정하지 않고 NIC ring drop, kernel backlog, socket queue overflow를 구분한다.
 
+RSS/RPS/XPS 같은 분산 정책은 packet flow가 어느 RX/TX queue와 CPU에서 처리되는지를 바꾸므로 throughput뿐 아니라 cache locality와 ordering 비용에 영향을 준다. GRO/GSO/TSO는 packet 수를 줄여 CPU 효율을 높이지만 capture 지점에 따라 wire packet과 다른 크기로 보일 수 있다. 진단에서는 NIC hardware counters, ring drop, softnet backlog, socket drop, application receive rate를 단계별로 비교한다. 특정 queue만 포화되는지, interrupt CPU와 consumer thread가 다른 NUMA node에 놓였는지까지 확인하면 네트워크 손실을 링크 문제와 host-side queue 문제로 분리할 수 있다.
+
 ---
 
 ## CHAPTER 14 · GPU 작업은 command submission과 fence synchronization으로 본다
@@ -148,6 +154,8 @@ resource lifetime은 frame 번호보다 fence value와 연결하는 편이 안�
 
 frame queue가 너무 길면 throughput은 유지되어도 input-to-display latency가 늘어난다. UI 성능에서는 average FPS 대신 frame-time distribution, missed deadline, main/render/GPU stage를 분리한다. Android trace에서 frame timeline과 CPU scheduling을 함께 본다.
 
+triple buffering이나 compositor queue가 deadline miss를 가릴 수 있어 “FPS는 60”인데 input latency가 늘어나는 상태가 가능하다. frame N의 input sample, CPU build, GPU submit, present fence, display scanout을 같은 ID로 연결해야 pipeline depth를 측정할 수 있다. 한 단계가 순간적으로 늦어졌을 때 다음 frame들이 따라잡는지 backlog가 누적되는지도 본다. pacing 정책을 바꾼 뒤에는 평균 render time보다 missed-vsync 수, queue depth, input-to-photon 분포를 비교해 throughput 개선이 latency 악화와 맞바뀌지 않았는지 검증한다.
+
 ---
 
 ## CHAPTER 16 · driver는 kernel privilege에서 untrusted device/input을 처리한다
@@ -155,6 +163,8 @@ frame queue가 너무 길면 throughput은 유지되어도 input-to-display late
 driver는 높은 privilege에서 device state와 memory mapping을 다루므로 length, descriptor, firmware response를 엄격하게 검증해야 한다. user input이 ioctl 같은 interface를 통해 driver까지 내려오면 validation bug가 kernel memory corruption으로 이어질 수 있다.
 
 reset/error recovery path는 정상 path만큼 중요하다. device timeout 후 outstanding DMA가 정말 중단되었는지 확인하지 않고 buffer를 free하면 late completion이 freed memory를 건드릴 수 있다. reset generation을 두어 stale completion을 거부하는 설계가 필요할 수 있다.
+
+driver lifecycle은 probe 성공 뒤에도 suspend/resume, reset, firmware reload, hot-unplug를 거친다. 각 transition에서 새 submission을 막는 시점과 in-flight reference를 drain하는 시점이 맞지 않으면 callback이 제거된 device state를 참조할 수 있다. error injection은 timeout, malformed completion, surprise removal, reset 중 interrupt를 각각 주입해 terminal state가 한 번만 처리되는지 확인한다. 로그에는 device generation과 request generation을 함께 남겨 reset 전 completion이 reset 후 queue에 섞여 들어오는 stale-event 문제를 식별한다.
 
 ---
 
@@ -164,6 +174,8 @@ asynchronous API는 caller가 operation을 submit한 뒤 다른 일을 수행하
 
 completion order가 submission order와 같다고 가정해서는 안 된다. 여러 request가 독립적으로 진행되면 result를 request ID에 연결해야 하고, stateful protocol이면 required ordering을 별도로 enforce한다. callback/future가 편리해도 underlying I/O semantics는 사라지지 않는다.
 
+cancel과 completion이 경쟁하면 request가 `CANCELLED`와 `COMPLETED` 두 terminal state로 동시에 처리되지 않도록 원자적 transition이 필요하다. timeout handler가 resource를 해제한 뒤 late completion callback이 실행되는 경로도 별도 검증한다. request state를 CREATED→SUBMITTED→IN_FLIGHT→COMPLETED/FAILED/CANCELLED처럼 명시하고 각 transition의 owner를 정하면 cleanup 책임이 분명해진다. stress test에서는 completion 직전 cancellation, partial completion 뒤 retry, callback executor shutdown을 반복해 terminal callback이 정확히 한 번 전달되는지 확인한다.
+
 ---
 
 ## CHAPTER 18 · timeout은 operation 결과를 모른다는 상태를 만들 수 있다
@@ -172,6 +184,8 @@ client timeout이 발생한 순간 remote/device operation이 실행되지 않�
 
 cancel API가 successful return을 해도 hardware/remote peer까지 cancellation이 전달되었는지 semantics를 확인한다. ambiguous completion을 다루려면 idempotency key, status query, generation/request ID가 필요하다.
 
+timeout budget은 queue wait와 service time을 합친 end-to-end deadline으로 관리해야 한다. 각 계층이 동일한 1초 timeout을 새로 시작하면 전체 요청은 여러 초 동안 살아남을 수 있다. retry는 남은 deadline, operation idempotency, peer status query 가능성을 고려해 결정한다. device/remote 쪽에 request ID를 남길 수 있다면 timeout 후 새 ID로 재실행하기보다 기존 ID의 완료 상태를 조회해 duplicate effect를 막을 수 있다. telemetry에는 deadline, queue enter, dispatch, cancel request, late completion 시각을 함께 기록해 timeout이 어느 단계에서 소비됐는지 확인한다.
+
 ---
 
 ## CHAPTER 19 · backpressure는 producer가 downstream capacity를 초과하지 못하게 한다
@@ -179,6 +193,8 @@ cancel API가 successful return을 해도 hardware/remote peer까지 cancellatio
 producer rate가 device/network/consumer service rate보다 크면 queue가 계속 증가한다. unbounded queue는 overload를 즉시 실패 대신 memory growth와 tail latency로 바꾼다.
 
 bounded buffer는 full일 때 block, reject, drop, shed, coalesce 중 하나의 정책이 필요하다. telemetry/logging처럼 newest/oldest drop이 허용되는 데이터와 transaction처럼 loss가 허용되지 않는 데이터는 정책이 다르다. backpressure는 성능 옵션이 아니라 overload correctness다.
+
+capacity는 byte와 request count 중 workload에 맞는 단위로 정하고 high/low watermark에 hysteresis를 두어 producer가 매 request마다 stop/start를 반복하지 않게 한다. priority traffic이 있다면 낮은 우선순위가 queue를 모두 점유해 control request까지 막지 않도록 별도 budget을 둔다. overload test에서 arrival rate를 단계적으로 올리며 enqueue wait, reject/drop 수, queue age, downstream utilization을 관찰하면 backpressure가 실제 saturation 전에 작동하는지 확인할 수 있다. recovery 구간에서는 backlog가 줄어드는 속도와 새 traffic admission이 균형을 이루는지도 측정한다.
 
 ---
 
@@ -197,3 +213,5 @@ application callback
 ```
 
 latency가 어느 구간에서 늘어나는지 확인하면 application queue, scheduler, driver, device를 분리할 수 있다. throughput, queue depth, error/reset count, CPU interrupt/softirq load를 함께 기록한다. I/O 최적화는 buffer 크기를 임의 조정하는 작업이 아니라 **병목 queue와 ownership transition을 증거로 찾는 작업**이다.
+
+서로 다른 clock domain을 쓰는 device timestamp와 host timestamp는 바로 빼지 말고 동기화 오차와 conversion을 확인한다. tracing 자체가 모든 event를 보존하지 못할 수 있으므로 dropped trace record와 sampling rate도 evidence에 포함한다. request ID가 kernel/hardware까지 직접 전달되지 않는 경로에서는 queue slot, LBA/flow, submit sequence를 사용해 확률적 매칭 대신 가능한 한 stable correlation을 만든다. 문제 요청의 p99 span 하나를 골라 각 stage의 residence time을 합산하고 aggregate counter 변화와 대조하면 평균 graph가 숨기는 단일 병목 queue를 재현 가능한 형태로 특정할 수 있다.
