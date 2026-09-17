@@ -1,0 +1,15 @@
+{
+  "partId": "T02-P31",
+  "sections": [
+    {"sectionId":"T02-P31-S01-source-grammar","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P31-S02-ast-structure","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P31-S03-code-object-scope","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P31-S04-frame-execution-state","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P31-S05-name-resolution","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P31-S06-bytecode-contract","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P31-S07-call-runtime-cost","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P31-S08-exception-unwinding","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P31-S09-dynamic-code-boundary","sourceIds":["PYTHON-REF","NIST-SSDF"]},
+    {"sectionId":"T02-P31-S10-execution-pipeline-model","sourceIds":["PYTHON-REF","SICP","CSAPP3"]}
+  ]
+}
