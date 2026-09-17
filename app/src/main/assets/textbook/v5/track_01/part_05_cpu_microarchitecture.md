@@ -10,6 +10,8 @@ ISA는 instruction encoding, visible register, address calculation, privilege tr
 
 따라서 `ARM이 빠르다`, `x86이 느리다` 같은 문장은 정보가 부족하다. 성능은 concrete microarchitecture와 compiler output, workload의 결합으로 결정된다. binary compatibility는 ISA만으로 끝나지 않고 ABI, OS syscall convention, object format이 함께 맞아야 한다.
 
+같은 ISA family 안에서도 optional extension과 feature level이 다를 수 있으므로 binary가 특정 vector/crypto instruction을 사용할 때는 deployment 대상의 feature contract가 필요하다. runtime dispatch를 쓰는 library라면 CPU identification 결과와 선택된 implementation을 함께 기록한다. 불법 instruction crash가 났을 때 source language나 architecture 이름만 확인하지 말고 실제 binary가 요구한 extension, compiler target flag, 실행 CPU의 feature set을 대조해야 compatibility 문제를 정확히 분리할 수 있다.
+
 ---
 
 ## CHAPTER 02 · pipeline은 instruction latency를 없애지 않고 overlap한다
@@ -17,6 +19,8 @@ ISA는 instruction encoding, visible register, address calculation, privilege tr
 pipeline은 instruction 처리 단계를 분할해 서로 다른 instruction이 동시에 다른 stage에 존재하도록 한다. fetch/decode/rename/issue/execute/retire 같은 구체 stage 수와 이름은 CPU마다 다르지만 핵심은 **throughput을 높이기 위해 여러 instruction의 작업을 겹친다**는 것이다.
 
 hazard가 생기면 pipeline의 일부가 기다리거나 잘못 가져온 instruction을 폐기해야 한다. data dependency, unavailable execution unit, instruction-cache miss, branch misprediction은 서로 다른 stall 원인이다. IPC가 낮다는 사실만으로 pipeline 깊이를 원인으로 단정하지 않고 stall breakdown과 cache/branch counter를 함께 본다.
+
+frontend가 uop을 충분히 공급하지 못하는 경우와 backend가 operand/resource를 기다리는 경우는 대응이 다르다. instruction-cache/ITLB miss, decode bandwidth, branch redirect가 frontend를 제한할 수 있고, cache miss·port pressure·dependency chain은 backend를 제한한다. PMU의 top-down 계열 분류나 유사한 event를 generated assembly와 함께 보면 “IPC가 낮다”를 어느 stage의 공급/소비 불균형인지 구체화할 수 있다.
 
 ---
 
@@ -26,6 +30,8 @@ RAW(read-after-write) dependency는 후속 instruction이 선행 결과를 필�
 
 critical dependency chain이 길면 execution unit이 많아도 latency를 병렬화할 수 없다. 반대로 independent instruction이 충분하면 out-of-order core가 여러 operation을 동시에 issue할 수 있다. optimization에서 instruction count만 줄이는 것보다 dependency chain을 끊거나 memory latency와 계산을 overlap하는 것이 더 중요할 수 있다.
 
+특히 pointer chasing처럼 다음 load address가 이전 load 결과에 의존하면 memory-level parallelism 자체가 제한된다. cache miss 하나의 latency가 길어도 독립 miss가 많으면 overlap할 수 있지만 serial load-use chain은 그렇지 않다. profile에서 load miss가 보이면 miss 수만 세지 말고 outstanding miss 수와 dependent consumer를 확인한다. data layout을 바꿔 next pointer 의존을 줄이거나 여러 independent item을 interleave하면 같은 instruction count에서도 latency를 숨길 수 있다.
+
 ---
 
 ## CHAPTER 04 · branch prediction은 control dependency를 speculation으로 숨긴다
@@ -34,6 +40,8 @@ conditional branch의 실제 방향을 알기 전까지 fetch를 멈추면 pipel
 
 prediction이 맞으면 숨긴 latency가 이득이 되고 틀리면 speculative work를 폐기하고 correct path를 다시 채워야 한다. branch misprediction cost는 pipeline structure와 workload에 따라 다르다. `if문을 없애면 빠르다`가 아니라 branch predictability, alternative instruction cost, vectorization 가능성을 측정한다.
 
+branchless 변환도 공짜가 아니다. 양쪽 경로의 계산을 모두 수행하거나 select/mask instruction과 추가 load를 만들 수 있어 예측이 잘 되는 branch보다 느릴 수 있다. data distribution이 production과 다르면 benchmark의 branch entropy도 달라진다. branch miss rate, instructions/cycles, vectorization 여부를 전후 비교하고 실제 input 분포에서 misprediction 감소가 wall-time 개선과 함께 나타나는지 확인한다.
+
 ---
 
 ## CHAPTER 05 · out-of-order execution은 실행 순서를 바꿔도 retirement semantics를 보존한다
@@ -41,6 +49,8 @@ prediction이 맞으면 숨긴 latency가 이득이 되고 틀리면 speculative
 out-of-order core는 operand가 준비된 instruction을 program order와 다른 순서로 실행할 수 있다. 그러나 exception과 architectural state는 software가 기대하는 precise order를 보존해야 한다. reorder buffer 같은 구조가 completed result를 추적하고 retirement 시점에 architectural state를 commit한다.
 
 speculative load나 execution이 architectural state에 commit되지 않아도 cache 같은 microarchitectural state를 바꿀 수 있다는 사실은 side-channel security와 연결된다. correctness 관점과 information-leak 관점의 observable state가 다를 수 있다는 점을 분리한다.
+
+reorder buffer와 load/store queue 같은 finite window가 가득 차면 뒤에 independent work가 있어도 더 이상 speculation을 확장하지 못한다. 오래 걸리는 cache miss나 serializing instruction이 retirement head를 막으면 completed younger instruction이 쌓여 window pressure를 만들 수 있다. backend stall을 볼 때 execution unit 사용률뿐 아니라 outstanding miss, ROB/queue pressure, retirement 제한 event를 함께 보면 “OOO가 알아서 숨긴다”는 가정이 깨지는 지점을 찾을 수 있다.
 
 ---
 
@@ -90,6 +100,8 @@ vector instruction은 여러 element를 한 register에서 병렬 처리한다. 
 
 vector width가 넓어졌다고 항상 linear speedup이 나오지 않는다. memory bandwidth, gather/scatter cost, tail handling, frequency throttling이 병목이 될 수 있다. vectorization report와 generated assembly, hardware counter로 실제 적용 여부를 확인한다.
 
+vectorized loop의 실제 비용에는 alignment fixup, scalar remainder/tail, mask 처리와 gather/scatter가 포함된다. 작은 배열은 setup 비용 때문에 scalar가 더 빠를 수 있고 일부 CPU에서는 매우 넓은 vector 사용이 frequency residency에 영향을 줄 수 있다. benchmark에서는 element count 분포를 실제 workload와 맞추고, scalar/vector path 선택률과 bandwidth를 함께 본다. 단순히 SIMD instruction이 생성됐다는 사실보다 end-to-end cycles per element가 줄었는지 검증한다.
+
 ---
 
 ## CHAPTER 11 · cache coherence는 core마다 가진 cache view를 일관되게 유지한다
@@ -97,6 +109,8 @@ vector width가 넓어졌다고 항상 linear speedup이 나오지 않는다. me
 multi-core system에서 같은 physical cache line이 여러 core cache에 존재할 수 있다. coherence protocol은 write ownership과 invalidation/update를 조정해 하나의 memory location에 대한 core 간 일관성을 유지한다. 구체 protocol state는 CPU family마다 다르지만 핵심 cost는 **shared writable line ownership이 core 사이를 이동할 때 traffic이 발생한다**는 점이다.
 
 coherence는 language memory model의 synchronization을 대체하지 않는다. hardware가 cache line 값을 일관되게 유지해도 compiler/CPU ordering 규칙 때문에 unsynchronized program이 올바른 happens-before를 얻는 것은 아니다.
+
+coherence 병목은 일반 cache miss와 분리해서 보는 것이 좋다. 한 core가 방금 수정한 line을 다른 core가 읽거나 다시 쓰면서 cache-to-cache transfer가 반복되면 memory bandwidth가 남아 있어도 scaling이 나빠질 수 있다. thread affinity를 고정하거나 per-core counter를 사용해 ownership migration이 어느 producer/consumer 사이에서 발생하는지 찾는다. shared writable state를 partition하거나 batching했을 때 c2c traffic과 throughput이 함께 개선되는지 확인한다.
 
 ---
 
@@ -136,6 +150,8 @@ interrupt는 device/timer 같은 asynchronous event와 연결되고 exception은
 
 interrupt rate가 매우 높으면 application instruction 실행 시간이 줄고 cache locality가 깨질 수 있다. 그러나 softirq/deferred work, driver polling, interrupt coalescing이 실제 비용을 분산할 수 있으므로 raw interrupt count만으로 원인을 결정하지 않는다.
 
+interrupt가 어느 CPU에 전달되는지와 후속 deferred work가 어디서 실행되는지도 성능 변수다. NIC queue와 application consumer가 다른 CPU/NUMA node에 있으면 completion 뒤 data와 ownership이 이동할 수 있다. per-CPU interrupt count, hardirq/softirq 시간, queue latency를 함께 보고 affinity나 coalescing을 바꾼 뒤 p99와 CPU locality가 예상대로 변하는지 확인한다. exception은 현재 instruction과 직접 연결되므로 faulting PC와 architecture state를 별도로 보존한다.
+
 ---
 
 ## CHAPTER 16 · privilege level은 instruction과 memory access 가능 범위를 제한한다
@@ -143,6 +159,8 @@ interrupt rate가 매우 높으면 application instruction 실행 시간이 줄�
 user mode code는 privileged instruction과 kernel address space에 직접 접근할 수 없다. syscall/exception transition이 통제된 entry point를 제공한다. privilege boundary는 성능 overhead가 아니라 isolation의 핵심이다.
 
 speculative execution vulnerability는 privilege check가 architectural commit을 막아도 microarchitectural trace가 남을 수 있다는 점을 악용했다. 방어는 software fence, predictor isolation, microcode/CPU design 등 여러 계층에 걸칠 수 있다. security mitigation의 성능 영향도 workload에 따라 측정해야 한다.
+
+architectural state와 speculative side effect를 구분하는 것이 중요하다. 권한 위반 load가 architectural register에 결과를 commit하지 못해도 cache/predictor 상태 변화가 timing channel로 관찰될 수 있다. 반대로 syscall/exception entry에서는 저장되는 register와 return semantics가 ISA/OS contract로 정의된다. mitigation을 평가할 때 correctness test만으로 충분하지 않고 threat model과 microarchitecture 세대, 실제 workload의 branch/syscall 패턴을 함께 확인한다.
 
 ---
 
@@ -161,6 +179,8 @@ counter가 정확한 원인 수를 직접 주는 것도 아니다. skid 때문�
 짧은 function을 반복 호출하면 JIT warmup, dead-code elimination, constant folding, CPU frequency scaling, cache warm state, timer resolution이 결과를 왜곡할 수 있다. compiler가 결과를 사용하지 않는 계산을 제거하면 benchmark는 실제 operation 비용을 측정하지 않는다.
 
 신뢰할 수 있는 microbenchmark는 warmup, blackhole/result consumption, iteration independence, statistical distribution, CPU environment를 통제한다. 최종 판단은 production trace와 연결한다. microbenchmark win이 end-to-end latency 개선을 보장하지 않는다.
+
+입력이 compile-time constant이면 benchmark body 전체가 fold되거나 loop가 제거될 수 있으므로 generated code를 한 번 확인하는 것이 안전하다. 측정 thread affinity, frequency/thermal state, background activity를 고정하고 timer 호출 자체의 overhead보다 충분히 긴 batch로 측정한다. 여러 iteration이 같은 cache state를 공유해 production보다 지나치게 hot해지지 않는지도 살핀다. 결과는 단일 최저값보다 분포와 환경 metadata를 함께 보존한다.
 
 ---
 
@@ -190,3 +210,5 @@ wall-time regression을 재현한다
 CPU optimization이 I/O wait나 lock contention 문제를 해결하지는 않는다. microarchitecture 지식의 목적은 모든 코드를 assembly로 바꾸는 것이 아니라 **측정 결과가 어느 자원 제약을 가리키는지 정확히 해석하는 것**이다.
 
 변경 전에는 재현 가능한 workload와 baseline distribution을 고정하고, 변경 후에는 wall time뿐 아니라 bottleneck으로 지목한 counter가 예상 방향으로 움직였는지 확인한다. 예를 들어 branch miss를 원인으로 주장했다면 miss 감소와 latency 개선이 동시에 나타나야 하고, memory-bound라면 bandwidth 또는 cache-miss behavior가 달라져야 한다. 그렇지 않다면 성능 향상이 noise·DVFS·다른 hotspot 이동 때문일 가능성을 남겨 두고 hypothesis를 다시 세운다.
+
+최적화 하나가 성공해도 동일 counter가 계속 최상위 병목인지 다시 측정한다. 병목은 단계적으로 이동하므로 이전 가설을 다음 변경에 자동 재사용하면 안 된다. 회귀 gate에는 wall time과 함께 핵심 PMU·frequency·thermal metadata를 남겨 환경 변화가 code 효과로 오인되지 않게 한다.
