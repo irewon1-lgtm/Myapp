@@ -49,6 +49,7 @@ object V5BookSupplementalSources {
         s("LINUX-DM-VERITY", "dm-verity", "Linux kernel documentation", V5BookSource.SourceType.OFFICIAL_DOC, "current documentation audited 2026-09", "https://docs.kernel.org/admin-guide/device-mapper/verity.html"),
         s("LINUX-NVME", "Linux NVMe feature and quirk policy", "Linux kernel documentation", V5BookSource.SourceType.OFFICIAL_DOC, "current documentation audited 2026-09", "https://docs.kernel.org/nvme/feature-and-quirk-policy.html"),
         s("LINUX-WRITECACHE", "Writecache target", "Linux kernel documentation", V5BookSource.SourceType.OFFICIAL_DOC, "current documentation audited 2026-09", "https://docs.kernel.org/admin-guide/device-mapper/writecache.html"),
+        s("LINUX-HWRNG", "Hardware random number generators", "Linux kernel documentation", V5BookSource.SourceType.OFFICIAL_DOC, "latest documentation audited 2026-09", "https://www.kernel.org/doc/html/latest/admin-guide/hw_random.html"),
         s("NVME24", "NVM Express Base Specification", "NVM Express", V5BookSource.SourceType.STANDARD, "Revision 2.4, ratified 2026-07-31", "https://nvmexpress.org/specification/nvm-express-base-specification/"),
         s("VIRTIO13", "Virtual I/O Device (VIRTIO) Version 1.3", "OASIS Open", V5BookSource.SourceType.STANDARD, "Version 1.3", "https://docs.oasis-open.org/virtio/virtio/v1.3/virtio-v1.3.html"),
         s("QEMU-MIGRATION", "QEMU Migration", "QEMU Project", V5BookSource.SourceType.OFFICIAL_DOC, "current master documentation audited 2026-09", "https://www.qemu.org/docs/master/devel/migration/main.html"),
@@ -65,7 +66,9 @@ object V5BookSupplementalSources {
         s("LLVM-AA", "LLVM Alias Analysis Infrastructure", "LLVM Project", V5BookSource.SourceType.OFFICIAL_DOC, "current documentation", "https://llvm.org/docs/AliasAnalysis.html"),
         s("LLVM-VECT", "Auto-Vectorization in LLVM", "LLVM Project", V5BookSource.SourceType.OFFICIAL_DOC, "current documentation", "https://llvm.org/docs/Vectorizers.html"),
         s("ARM-ELF-ABI", "ELF for the Arm Architecture", "Arm ABI project", V5BookSource.SourceType.STANDARD, "current abi-aa", "https://github.com/ARM-software/abi-aa/blob/main/aaelf32/aaelf32.rst"),
-        s("GC-HANDBOOK2", "The Garbage Collection Handbook: The Art of Automatic Memory Management", "Richard Jones; Antony Hosking; Eliot Moss", V5BookSource.SourceType.ENGINEERING_BOOK, "2nd edition, 2023", "https://gchandbook.org/")
+        s("GC-HANDBOOK2", "The Garbage Collection Handbook: The Art of Automatic Memory Management", "Richard Jones; Antony Hosking; Eliot Moss", V5BookSource.SourceType.ENGINEERING_BOOK, "2nd edition, 2023", "https://gchandbook.org/"),
+        s("NIST-90A1", "Recommendation for Random Number Generation Using Deterministic Random Bit Generators", "NIST", V5BookSource.SourceType.STANDARD, "SP 800-90A Rev. 1, 2015", "https://csrc.nist.gov/pubs/sp/800/90/a/r1/final"),
+        s("NIST-90B", "Recommendation for the Entropy Sources Used for Random Bit Generation", "NIST", V5BookSource.SourceType.STANDARD, "SP 800-90B, 2018; errata noted 2025-05", "https://csrc.nist.gov/pubs/sp/800/90/b/final")
     )
 
     val byId: Map<String, V5BookSource> = sources.associateBy(V5BookSource::id)
