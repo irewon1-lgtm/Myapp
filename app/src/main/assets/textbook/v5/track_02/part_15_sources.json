@@ -1,0 +1,15 @@
+{
+  "partId": "T02-P15",
+  "sections": [
+    {"sectionId":"T02-P15-S01-serialization-contract","sourceIds":["PYTHON-REF","DDIA","NIST-SSDF"]},
+    {"sectionId":"T02-P15-S02-syntax-schema-validation","sourceIds":["RFC8259","OPENAPI31","DDD"]},
+    {"sectionId":"T02-P15-S03-json-ambiguity","sourceIds":["RFC8259","NIST-SSDF"]},
+    {"sectionId":"T02-P15-S04-csv-parser-boundary","sourceIds":["PYTHON-REF","NIST-SSDF"]},
+    {"sectionId":"T02-P15-S05-schema-evolution","sourceIds":["PROTOBUF-WIRE","DDIA"]},
+    {"sectionId":"T02-P15-S06-domain-validation","sourceIds":["DDD","OPENAPI31"]},
+    {"sectionId":"T02-P15-S07-canonicalization","sourceIds":["UNICODE","RFC8949","NIST-SSDF"]},
+    {"sectionId":"T02-P15-S08-deserialization-resource-limit","sourceIds":["NIST-SSDF","OWASP-API"]},
+    {"sectionId":"T02-P15-S09-data-migration","sourceIds":["DDIA","POSTGRES"]},
+    {"sectionId":"T02-P15-S10-serialization-pipeline","sourceIds":["SICP","DDIA","NIST-SSDF"]}
+  ]
+}
