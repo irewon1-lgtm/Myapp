@@ -1,0 +1,20 @@
+{
+  "partId": "T07-P01",
+  "lessons": [
+    {"lessonId":"T07-B01-L01-backend-server-process","sourceIds":["NODE-HTTP","RFC9110"]},
+    {"lessonId":"T07-B01-L02-request-response","sourceIds":["NODE-HTTP","RFC9110"]},
+    {"lessonId":"T07-B01-L03-route-handler","sourceIds":["DWA2-2025","RFC9110"]},
+    {"lessonId":"T07-B01-L04-input-locations","sourceIds":["DWA2-2025","RFC9110"]},
+    {"lessonId":"T07-B01-L05-parsing-body-limits","sourceIds":["NODE-HTTP","OWASP-API-2023"]},
+    {"lessonId":"T07-B01-L06-middleware","sourceIds":["NODE-HTTP","FSA2-2025"]},
+    {"lessonId":"T07-B01-L07-validation","sourceIds":["TS-HANDBOOK","JSONSCHEMA-2020-12","DWA2-2025"]},
+    {"lessonId":"T07-B01-L08-normalization-defaults","sourceIds":["DWA2-2025","TS-HANDBOOK"]},
+    {"lessonId":"T07-B01-L09-errors","sourceIds":["RFC9457","DWA2-2025"]},
+    {"lessonId":"T07-B01-L10-response-contract","sourceIds":["DWA2-2025","OWASP-API-2023"]},
+    {"lessonId":"T07-B01-L11-async-handler","sourceIds":["NODE-HTTP","TS-HANDBOOK"]},
+    {"lessonId":"T07-B01-L12-request-context","sourceIds":["NODE-ASYNCCTX","OTEL-HTTP"]},
+    {"lessonId":"T07-B01-L13-config-secret","sourceIds":["NODE-PROCESS","OWASP-CHEATSHEETS"]},
+    {"lessonId":"T07-B01-L14-graceful-shutdown","sourceIds":["NODE-HTTP","NODE-PROCESS","GOOGLE-SRE"]},
+    {"lessonId":"T07-B01-L15-capstone","sourceIds":["NODE-HTTP","DWA2-2025","RFC9457","OWASP-API-2023"]}
+  ]
+}
