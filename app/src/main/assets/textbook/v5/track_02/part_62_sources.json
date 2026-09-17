@@ -1,0 +1,13 @@
+{
+  "partId":"T02-P62",
+  "sections":[
+    {"sectionId":"T02-P62-S01-closure-cell","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P62-S02-free-variable","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P62-S03-late-binding","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P62-S04-nonlocal-state","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P62-S05-closure-factory","sourceIds":["SICP","GOF"]},
+    {"sectionId":"T02-P62-S06-closure-lifetime","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P62-S07-callback-capture","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P62-S08-closure-contract","sourceIds":["SICP","REFACTORING2","PYTHON-REF"]}
+  ]
+}
