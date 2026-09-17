@@ -1,0 +1,15 @@
+{
+  "partId": "T02-P26",
+  "sections": [
+    {"sectionId":"T02-P26-S01-name-object-lifetime","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P26-S02-reference-counting-contract","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P26-S03-reference-cycle","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P26-S04-weak-reference-ownership","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P26-S05-finalizer-resource","sourceIds":["PYTHON-REF","TLPI"]},
+    {"sectionId":"T02-P26-S06-cache-retention","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P26-S07-object-layout","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P26-S08-retained-size","sourceIds":["CSAPP3","SRE"]},
+    {"sectionId":"T02-P26-S09-allocation-churn","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P26-S10-memory-ownership-budget","sourceIds":["SICP","SRE","CSAPP3"]}
+  ]
+}
