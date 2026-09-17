@@ -1,0 +1,35 @@
+{
+  "trackId": "T10",
+  "trackNumber": 10,
+  "title": "오류·테스트·Git·빌드·배포 — 변경을 안전하게 만드는 기술",
+  "parts": [
+    {
+      "id": "T10-P01",
+      "order": 1,
+      "title": "BLOCK 01–05",
+      "assetPath": "textbook/v5/track_10/part_01_blocks_01_05.md",
+      "sourceMapPath": "textbook/v5/track_10/part_01_sources_grouped.json",
+      "prerequisiteConceptIds": []
+    },
+    {
+      "id": "T10-P02",
+      "order": 2,
+      "title": "BLOCK 06–10",
+      "assetPath": "textbook/v5/track_10/part_02_blocks_06_10.md",
+      "sourceMapPath": "textbook/v5/track_10/part_02_sources_grouped.json",
+      "prerequisiteConceptIds": [
+        "T10-P01-S35-L07"
+      ]
+    },
+    {
+      "id": "T10-P03",
+      "order": 3,
+      "title": "BLOCK 11–15",
+      "assetPath": "textbook/v5/track_10/part_03_blocks_11_15.md",
+      "sourceMapPath": "textbook/v5/track_10/part_03_sources_grouped.json",
+      "prerequisiteConceptIds": [
+        "T10-P02-S35-L07"
+      ]
+    }
+  ]
+}
