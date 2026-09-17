@@ -1,0 +1,13 @@
+{
+  "partId":"T02-P61",
+  "sections":[
+    {"sectionId":"T02-P61-S01-assignment-target","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P61-S02-unpacking-assignment","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P61-S03-augmented-assignment","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P61-S04-walrus-expression","sourceIds":["PYTHON-REF","REFACTORING2"]},
+    {"sectionId":"T02-P61-S05-del-binding","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P61-S06-global-nonlocal","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P61-S07-comprehension-scope","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P61-S08-binding-contract","sourceIds":["PYTHON-REF","SICP","REFACTORING2"]}
+  ]
+}
