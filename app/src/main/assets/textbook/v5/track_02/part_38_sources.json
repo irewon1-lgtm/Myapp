@@ -1,0 +1,15 @@
+{
+  "partId": "T02-P38",
+  "sections": [
+    {"sectionId":"T02-P38-S01-ffi-abi-adapter","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P38-S02-fixed-width-native","sourceIds":["CSAPP3","PYTHON-REF"]},
+    {"sectionId":"T02-P38-S03-pointer-ownership","sourceIds":["CSAPP3","TLPI"]},
+    {"sectionId":"T02-P38-S04-native-string-boundary","sourceIds":["PYTHON-REF","UNICODE"]},
+    {"sectionId":"T02-P38-S05-struct-abi-layout","sourceIds":["CSAPP3","TLPI"]},
+    {"sectionId":"T02-P38-S06-native-error-channel","sourceIds":["TLPI","PYTHON-REF"]},
+    {"sectionId":"T02-P38-S07-gil-native-threads","sourceIds":["PYTHON-REF","OSTEP"]},
+    {"sectionId":"T02-P38-S08-native-crash-boundary","sourceIds":["NIST-SSDF","CSAPP3"]},
+    {"sectionId":"T02-P38-S09-native-boundary-cost","sourceIds":["CSAPP3","SRE"]},
+    {"sectionId":"T02-P38-S10-unsafe-boundary-isolation","sourceIds":["NIST-SSDF","SICP","CSAPP3"]}
+  ]
+}
