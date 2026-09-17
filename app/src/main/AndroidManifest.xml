@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
 
     <application
+        android:name=".PowerUserApplication"
         android:allowBackup="false"
         android:label="코딩 완전과정"
         android:supportsRtl="true"
