@@ -91,3 +91,61 @@ No recoverable V5 corpus artifact was found in the accessible Git branches/recen
 - main/canonical merge: NOT RUN
 
 Therefore this branch is a verified static recovery candidate, not a verified full-app release.
+
+
+## Approved Android validation — final result
+
+GitHub Actions was explicitly approved for Android build/runtime validation. A maximum of three executions was honored.
+
+### Attempt 1 — FAILED (validation harness, not app)
+- Run: `35285016158`
+- V5 content audit: PASS
+- targeted V5 JUnit: PASS
+- full `testDebugUnitTest`: PASS
+- `assembleDebug`: PASS
+- emulator boot: reached boot
+- failure: emulator action executed the multiline script with `/bin/sh`; `set -o pipefail` was unsupported, so install was never attempted.
+
+### Attempt 2 — FAILED (validation harness, not app)
+- Run: `35285454728`
+- V5 content audit: PASS
+- targeted V5 JUnit: PASS
+- full `testDebugUnitTest`: PASS
+- `assembleDebug`: PASS
+- emulator boot: PASS
+- failure: emulator action executed each script line in a separate shell, so the local `APK` variable did not survive to the next command. Install was never attempted.
+
+### Attempt 3 — PASS
+- Run: `35286019461`
+- Head: `a17c0a0e067a801412b33c0ffead1e0aaa33f140`
+- Workflow conclusion: SUCCESS
+- V5 content audit: PASS
+- targeted V5 reader/evidence JUnit: PASS
+- full debug unit tests: PASS
+- `assembleDebug`: PASS
+- API 34 emulator: PASS
+- debug APK install: PASS
+- MainActivity start: `Status: ok`
+- Activity observed: `com.futuretech.poweruser/.MainActivity`
+- app process remained alive after launch
+- activity stack contained MainActivity
+- UIAutomator window dump completed
+- app crash scan: no `FATAL EXCEPTION` / app-process crash pattern detected
+- runtime gate: `RECOVERY_INSTALL_LAUNCH_GATE=PASS`
+- diagnostic/APK artifact: `v5-recovery-android-validation`, artifact id `10524517017`
+- artifact SHA-256: `6d979daee23c357e7b271fbc6153d402fe75931a87fd0f11c47c2f78e8752d13`
+- retention: 1 day
+
+### Scope that is now actually verified
+For the recovery branch at the third validation commit:
+- V5 static audit execution: VERIFIED
+- targeted reader/evidence tests: VERIFIED
+- full debug unit tests: VERIFIED
+- Android debug APK build: VERIFIED
+- API 34 emulator APK install: VERIFIED
+- MainActivity launch/process survival/basic activity presence: VERIFIED
+- launch crash-log gate: VERIFIED
+
+This does **not** make unfinished/missing textbook tracks complete. TRACK 03/04/05/06/08/09/11 limitations recorded above remain unchanged. It also does not prove every learner interaction, page swipe, every PART rendering, production release, or real physical-device behavior.
+
+No deployment, release, production change, canonical/main merge, or Netlify operation was performed.
