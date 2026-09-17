@@ -26,6 +26,8 @@ polling은 device completion을 반복 확인하므로 interrupt delivery latenc
 
 adaptive polling은 처음 짧게 spin하고 완료되지 않으면 sleep하는 식으로 두 비용을 절충할 수 있다. 선택은 expected service time, core budget, power constraint, tail latency 목표에 근거한다.
 
+polling loop의 비용은 iteration 수만 재면 불완전하다. 전용 core를 고정했는지, SMT sibling에 어떤 workload가 있는지, status register 또는 shared completion memory가 어느 cache domain에 있는지에 따라 같은 poll rate라도 시스템 비용이 달라진다. 진단에서는 poll duration, successful-poll 비율, empty-poll cycle, CPU residency, wakeup latency를 같이 기록한다. 장치 서비스 시간이 길어졌는데 spin budget을 그대로 유지하면 CPU를 태우면서도 tail latency는 개선되지 않을 수 있으므로, adaptive threshold가 실제 service-time distribution을 따라가는지 확인해야 한다.
+
 ---
 
 ## CHAPTER 04 · interrupt는 장치 완료를 알리지만 처리량이 높으면 자체 병목이 된다
@@ -33,6 +35,8 @@ adaptive polling은 처음 짧게 spin하고 완료되지 않으면 sleep하는 
 장치는 completion/error event를 interrupt로 CPU에 알릴 수 있다. 높은 packet/I/O rate에서 event 하나마다 interrupt가 발생하면 interrupt handling과 context disruption 비용이 커진다. interrupt coalescing/moderation은 여러 completion을 묶어 처리량을 높이는 대신 개별 event latency를 늘릴 수 있다.
 
 modern network stack은 interrupt 후 deferred/budgeted polling을 조합하기도 한다. 따라서 `interrupt 수가 적다=좋다`도 아니다. event rate, batch size, CPU locality, queue latency를 같이 본다.
+
+interrupt affinity가 queue owner나 application consumer와 어긋나면 completion 처리 뒤 데이터가 다시 다른 CPU로 이동하면서 cache locality와 scheduler 비용이 악화될 수 있다. 반대로 한 CPU에 너무 많은 vector를 몰면 hardirq/deferred work가 그 core의 user task를 밀어낸다. `/proc/interrupts` 계열의 per-CPU 분포, softirq 시간, queue별 packet/request 수, coalescing 설정을 동일 시간축에서 비교하면 “장치가 느린지”와 “완료 전달 경로가 포화됐는지”를 나눌 수 있다. moderation 값을 조정할 때는 throughput뿐 아니라 p99 completion latency와 CPU steal-away 시간을 함께 검증한다.
 
 ---
 
@@ -42,6 +46,8 @@ Direct Memory Access를 사용하면 device가 CPU instruction마다 byte를 옮
 
 문제는 CPU와 device가 같은 buffer를 언제 읽고 써도 되는지다. descriptor publish 전에 content가 visible해야 하고 completion 전에 CPU가 buffer를 재사용하면 corruption이 생긴다. architecture/platform에 따라 cache coherency와 DMA mapping API가 이 visibility를 관리한다.
 
+DMA API에는 방향과 lifetime이 의미를 가진다. device가 읽는 buffer와 device가 쓰는 buffer는 필요한 synchronization이 다를 수 있고, non-coherent platform에서는 map/unmap 또는 sync operation이 cache maintenance와 결합된다. scatter-gather list를 만들었다면 descriptor가 참조하는 segment가 모두 completion까지 살아 있어야 한다. 장애 재현에서는 request ID, DMA address, mapping generation, CPU ownership 전환, device completion을 함께 남겨 stale mapping이나 early reuse를 식별한다. 단순히 memcpy가 없다는 이유만으로 zero-copy가 안전하거나 빠르다고 결론내리지 않는다.
+
 ---
 
 ## CHAPTER 06 · IOMMU는 device DMA address space에도 translation과 isolation을 제공한다
@@ -49,6 +55,8 @@ Direct Memory Access를 사용하면 device가 CPU instruction마다 byte를 옮
 IOMMU는 device가 사용하는 I/O virtual address를 physical memory로 translate하고 접근 범위를 제한할 수 있다. 잘못되거나 공격받은 device가 임의의 system RAM에 DMA하는 위험을 줄이고 scatter-gather buffer를 연속된 I/O address처럼 보이게 할 수 있다.
 
 DMA mapping lifetime은 CPU virtual mapping과 다르다. buffer를 free하기 전에 device operation이 끝났는지, IOMMU mapping을 해제했는지 확인해야 한다. use-after-free는 CPU thread 사이에서만 생기는 문제가 아니다.
+
+IOMMU fault는 단순 “장치 오류”가 아니라 device identity와 translation state를 연결하는 증거다. faulting requester ID/PASID, IOVA, access type, domain attachment, mapping generation을 기록하면 잘못된 descriptor와 잘못된 isolation configuration을 구분할 수 있다. teardown 시에는 새 submission 차단→in-flight drain/reset→DMA unmap→memory free 순서를 보장해야 한다. 순서를 뒤집으면 장치가 이미 다른 용도로 재사용된 physical page에 late DMA를 수행할 수 있다. hot-unplug·reset 같은 비정상 경로에서도 동일 lifetime 규칙이 유지되는지 별도로 검증한다.
 
 ---
 
@@ -64,6 +72,8 @@ FREE → CPU_PREPARED → DEVICE_OWNED → COMPLETED → FREE
 
 state 전이가 atomic하지 않거나 wrap-around 계산이 잘못되면 descriptor overwrite, duplicate completion, stale DMA가 발생한다. queue full/empty 판정과 generation counter를 명확히 한다.
 
+producer index가 먼저 보이고 descriptor payload가 늦게 보이면 device는 반쯤 준비된 command를 읽을 수 있으므로 doorbell/ownership publish 전 memory ordering이 필요하다. completion 쪽에서도 status를 관찰한 뒤 DMA-written payload를 읽는 순서가 맞아야 한다. wrap-around가 일어난 장시간 테스트에서는 index 값만으로 old/new slot을 구분하기 어려워 generation bit나 monotonic counter가 유용하다. 검증 시 submit sequence, ring slot, producer/consumer index, ownership generation, completion code를 로그에 남기면 duplicate·lost·stale completion을 같은 ledger에서 대조할 수 있다.
+
 ---
 
 ## CHAPTER 08 · file descriptor는 path가 아니라 open resource reference다
@@ -72,6 +82,8 @@ fd는 process-local handle이고 kernel의 open state를 참조한다. path look
 
 `dup`, `fork`, descriptor passing으로 여러 handle이 underlying open state를 공유할 수 있다. close lifetime을 단순 변수 scope와 일치시키지 않으면 descriptor leak과 unexpected shared offset이 생긴다. close-on-exec도 process spawn boundary에서 필수 검토 항목이다.
 
+동일한 정수 fd 번호는 close 뒤 다른 open에서 재사용될 수 있으므로 비동기 callback에 숫자만 저장하면 ABA 형태의 lifetime 버그가 생길 수 있다. 오래된 completion이 도착했을 때 같은 번호가 새 socket/file을 가리키면 잘못된 resource에 작업을 적용할 수 있다. ownership wrapper, generation token, request-local handle을 사용해 identity를 분리하고, `/proc/.../fd` snapshot이나 open/close trace로 leak과 reuse를 확인한다. 특히 multi-thread close와 I/O가 겹치는 API는 OS별 semantics를 확인해 “close했으니 즉시 모든 operation이 취소됐다”는 가정을 피해야 한다.
+
 ---
 
 ## CHAPTER 09 · buffering은 user, kernel, device 각 계층에 존재한다
@@ -79,6 +91,8 @@ fd는 process-local handle이고 kernel의 open state를 참조한다. path look
 language stream buffer, libc buffer, socket send buffer, page cache, device queue/cache는 서로 다른 목적을 가진다. 한 계층의 flush가 다음 모든 계층의 durability/completion을 의미하지 않는다.
 
 성능 문제에서는 batching 이득과 latency 비용을 함께 본다. 작은 write를 모으면 syscall/packet overhead가 줄 수 있지만 interactive latency가 증가한다. buffer가 가득 찼을 때 block할지 drop할지 reject할지 역시 backpressure 정책이다.
+
+각 buffer에는 capacity, admission rule, drain trigger가 따로 있다. user-space queue가 비어 있어도 kernel socket buffer가 포화될 수 있고, page cache write가 빨리 반환돼도 device queue에는 오래 남아 있을 수 있다. 그래서 queue length를 한 지점에서만 보면 병목이 다음 계층으로 이동한 것을 놓친다. 진단에서는 application pending bytes, socket/page-cache 상태, block/NIC queue depth, drain rate를 동시에 관찰한다. flush 주기를 줄였을 때 syscall 수와 write amplification이 증가하는지, 늘렸을 때 latency와 memory footprint가 증가하는지를 함께 측정해야 batching 정책의 실제 trade-off를 판단할 수 있다.
 
 ---
 
@@ -96,6 +110,8 @@ parallel device는 여러 outstanding request를 받아 내부적으로 병렬 �
 
 Little's Law 관점에서 in-flight request 수는 arrival rate와 residence time의 곱과 연결된다. 목표는 최대 queue depth가 아니라 workload의 latency SLO 안에서 device를 충분히 활용하는 operating point를 찾는 것이다. average보다 p95/p99를 본다.
 
+queue depth를 실험할 때 host submission queue의 길이와 device 내부 병렬성을 혼동하지 않는다. 여러 software queue가 하나의 hardware resource에 합쳐지거나, priority class별로 dispatch rule이 달라질 수 있다. depth를 단계적으로 늘리면서 throughput, queue wait, service time, timeout/retry, CPU submission cost를 동시에 기록하면 saturation knee를 찾을 수 있다. p99가 급증했는데 throughput이 거의 늘지 않는 구간은 추가 in-flight가 병렬성보다 대기만 늘리는 영역이다. admission control은 이 knee 이전에서 workload별 budget을 유지하도록 설계하는 편이 안정적이다.
+
 ---
 
 ## CHAPTER 12 · sequential/random이라는 분류보다 request locality와 merge 가능성이 중요하다
@@ -103,6 +119,8 @@ Little's Law 관점에서 in-flight request 수는 arrival rate와 residence tim
 rotational disk에서는 seek cost 때문에 sequential access 이점이 매우 컸다. SSD에서도 sequential request는 controller/FTL과 host stack에서 merge·prefetch·large transfer 이점을 가질 수 있지만 device 특성에 따라 차이가 달라진다.
 
 random access는 queue parallelism으로 일부 숨길 수 있고, 매우 작은 sequential request는 syscall/metadata overhead 때문에 비효율적일 수 있다. block size, alignment, concurrency, read-ahead, cache hit ratio를 함께 측정한다.
+
+관측 단위를 file-level pattern에만 두면 실제 block layout을 놓칠 수 있다. 논리적으로 연속된 file offset도 fragmentation이나 copy-on-write allocation 때문에 여러 extent로 흩어질 수 있고, 여러 thread의 순차 stream이 block layer에서 interleave되면 device에는 random-like workload로 보일 수 있다. 반대로 adjacent request는 merge되어 더 큰 transfer가 될 수 있다. trace에서 offset, size, issue order, merge 여부와 completion latency를 연결하고 cache를 cold/warm으로 분리하면 “sequential이라 빨라야 한다”는 추정을 실제 device-visible access pattern으로 바꿀 수 있다.
 
 ---
 
@@ -119,6 +137,8 @@ multi-queue NIC는 traffic을 여러 CPU queue에 분산할 수 있지만 affini
 GPU는 CPU와 별도 execution pipeline과 memory system을 가진다. CPU가 draw/compute command를 제출한 시점과 GPU가 실제 완료한 시점은 다르다. shared buffer를 재사용하려면 fence/semaphore 같은 synchronization이 필요하다.
 
 CPU가 GPU completion을 동기적으로 기다리면 pipeline parallelism이 사라지고, GPU가 CPU-produced resource를 기다리면 반대 방향 stall이 생긴다. frame performance는 CPU time과 GPU time을 분리해 측정하고 queue depth와 synchronization point를 trace한다.
+
+resource lifetime은 frame 번호보다 fence value와 연결하는 편이 안전하다. command buffer에 참조된 texture/buffer를 CPU가 다음 frame 준비 때문에 덮어쓰기 전에 해당 GPU work가 끝났는지 확인해야 하며, staging/upload memory도 같은 규칙을 따른다. 과도한 wait-idle은 correctness는 지키지만 CPU/GPU overlap을 제거하므로 per-resource 또는 timeline synchronization으로 필요한 dependency만 표현한다. GPU capture나 frame trace에서는 submit ID, queue, wait/signal fence, resource generation, GPU start/end timestamp를 연결해 CPU-bound와 GPU-bound, synchronization bubble을 구분한다.
 
 ---
 
