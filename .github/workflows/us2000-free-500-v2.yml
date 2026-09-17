@@ -1,0 +1,77 @@
+name: US2000 Free New500 Collector V2
+
+on:
+  push:
+    branches: [us2000-free-runner]
+    paths:
+      - 'us2000-free/collect_500_v2.py'
+      - '.github/workflows/us2000-free-500-v2.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: us2000-free-new500-v2
+  cancel-in-progress: false
+
+jobs:
+  collect-v2:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: us2000-free-runner
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Collect new 500 with drawdown regression fix
+        run: |
+          set -euo pipefail
+          python -m py_compile us2000-free/collect_500.py us2000-free/collect_500_v2.py
+          python us2000-free/collect_500_v2.py
+      - name: CLEAN PASS - identity, metrics, hashes, drawdown, holds
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          root=Path('us2000-free/output')
+          m=json.loads((root/'manifest.json').read_text())
+          assert m['schema']=='US2000_FREE_NEW500_1',m
+          assert m['recordCount']==500 and m['metricCount']==10 and m['totalMetricCells']==5000,m
+          a=m['identityAudit']
+          assert a['secMapped']==500 and a['uniqueTickers']==500 and a['uniqueCiks']==500,a
+          assert a['prctAbsent'] is True and a['envaPresent'] is True,a
+          assert len(m['chunks'])==10,m
+          records=[]
+          for c in m['chunks']:
+              raw=(root/c['file']).read_bytes()
+              assert hashlib.sha256(raw).hexdigest()==c['sha256'],c
+              part=json.loads(raw);assert len(part)==c['count'],c
+              records.extend(part)
+          assert len(records)==500 and len({r['ticker'] for r in records})==500
+          assert len({int(r['cik']) for r in records})==500
+          raw=json.dumps(records,separators=(',',':'),ensure_ascii=False).encode()
+          assert hashlib.sha256(raw).hexdigest()==m['recordsSha256']
+          assert len(m.get('holdDetails',[]))==m['totalHold'],m
+          p=m.get('parserAudit',{})
+          assert abs(float(p.get('drawdownCompositeRegression',-1))-16.10)<1e-9,p
+          assert int(p.get('drawdownPositiveCount',0))>0,p
+          for r in records:
+              assert len(r['metrics'])==10,r['ticker']
+          print('US2000_FREE_V2_CLEAN=PASS',m['resolvedRatio'],m['totalHold'],p['drawdownPositiveCount'])
+          print('HOLD_DETAILS',json.dumps(m.get('holdDetails',[]),ensure_ascii=False))
+          print('DRAWDOWN_SAMPLES',json.dumps(p.get('drawdownSamples',[]),ensure_ascii=False))
+          PY
+      - name: Store corrected public-market evidence
+        run: |
+          set -euo pipefail
+          git config user.name 'us2000-free-bot'
+          git config user.email 'us2000-free-bot@users.noreply.github.com'
+          git add us2000-free/output
+          if ! git diff --cached --quiet; then
+            git commit -m 'Store corrected US2000 free new500 metrics [skip ci]'
+            git push origin HEAD:us2000-free-runner
+          fi
