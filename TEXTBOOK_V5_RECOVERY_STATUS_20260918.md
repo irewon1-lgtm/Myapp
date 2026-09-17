@@ -93,59 +93,106 @@ No recoverable V5 corpus artifact was found in the accessible Git branches/recen
 Therefore this branch is a verified static recovery candidate, not a verified full-app release.
 
 
-## Approved Android validation — final result
+## Approved Android validation — corrected final result
 
-GitHub Actions was explicitly approved for Android build/runtime validation. A maximum of three executions was honored.
+GitHub Actions was explicitly approved for Android build/runtime validation. Exactly three executions occurred. The three-run ceiling has been reached; no fourth execution is permitted in this recovery cycle.
 
-### Attempt 1 — FAILED (validation harness, not app)
+### Attempt 1 — FAILED before APK install
 - Run: `35285016158`
-- V5 content audit: PASS
-- targeted V5 JUnit: PASS
-- full `testDebugUnitTest`: PASS
-- `assembleDebug`: PASS
-- emulator boot: reached boot
-- failure: emulator action executed the multiline script with `/bin/sh`; `set -o pipefail` was unsupported, so install was never attempted.
+- `assembleDebug`: completed successfully.
+- API 34 emulator booted.
+- Smoke harness failed because the emulator action invoked the script through `/bin/sh`, where `set -o pipefail` was unsupported.
+- APK install was never reached.
+- Diagnostic steps were configured with `continue-on-error: true`; their green step presentation is not accepted as proof of diagnostic PASS.
 
-### Attempt 2 — FAILED (validation harness, not app)
+### Attempt 2 — FAILED before APK install
 - Run: `35285454728`
-- V5 content audit: PASS
-- targeted V5 JUnit: PASS
-- full `testDebugUnitTest`: PASS
-- `assembleDebug`: PASS
-- emulator boot: PASS
-- failure: emulator action executed each script line in a separate shell, so the local `APK` variable did not survive to the next command. Install was never attempted.
+- `assembleDebug`: completed successfully.
+- API 34 emulator booted.
+- Smoke harness failed because the action executed script lines in separate shells; the local `APK` variable did not survive to the following command.
+- APK install was never reached.
+- Diagnostic steps were configured with `continue-on-error: true`; their green step presentation is not accepted as proof of diagnostic PASS.
 
-### Attempt 3 — PASS
+### Attempt 3 — workflow SUCCESS, Android runtime PASS, V5 quality gates FAIL
 - Run: `35286019461`
 - Head: `a17c0a0e067a801412b33c0ffead1e0aaa33f140`
-- Workflow conclusion: SUCCESS
-- V5 content audit: PASS
-- targeted V5 reader/evidence JUnit: PASS
-- full debug unit tests: PASS
-- `assembleDebug`: PASS
-- API 34 emulator: PASS
-- debug APK install: PASS
-- MainActivity start: `Status: ok`
-- Activity observed: `com.futuretech.poweruser/.MainActivity`
-- app process remained alive after launch
-- activity stack contained MainActivity
-- UIAutomator window dump completed
-- app crash scan: no `FATAL EXCEPTION` / app-process crash pattern detected
-- runtime gate: `RECOVERY_INSTALL_LAUNCH_GATE=PASS`
-- diagnostic/APK artifact: `v5-recovery-android-validation`, artifact id `10524517017`
-- artifact SHA-256: `6d979daee23c357e7b271fbc6153d402fe75931a87fd0f11c47c2f78e8752d13`
-- retention: 1 day
+- Workflow conclusion: SUCCESS.
+- Important: the workflow conclusion is not a full CLEAN PASS because diagnostic test steps intentionally used `continue-on-error: true`.
 
-### Scope that is now actually verified
-For the recovery branch at the third validation commit:
-- V5 static audit execution: VERIFIED
-- targeted reader/evidence tests: VERIFIED
-- full debug unit tests: VERIFIED
-- Android debug APK build: VERIFIED
-- API 34 emulator APK install: VERIFIED
-- MainActivity launch/process survival/basic activity presence: VERIFIED
-- launch crash-log gate: VERIFIED
+#### Android/build checks actually PASS
+- `assembleDebug`: PASS.
+- API 34 emulator boot: PASS.
+- APK install: PASS; log contains `Performing Streamed Install` then `Success`.
+- MainActivity cold launch: PASS; `Status: ok`.
+- Activity observed: `com.futuretech.poweruser/.MainActivity`.
+- app PID remained alive after launch.
+- activity stack contained MainActivity.
+- UIAutomator window dump completed and contained the coding-book shelf UI.
+- launch crash scan found no `FATAL EXCEPTION` or `Process: com.futuretech.poweruser` crash pattern.
+- runtime gate: `RECOVERY_INSTALL_LAUNCH_GATE=PASS`.
 
-This does **not** make unfinished/missing textbook tracks complete. TRACK 03/04/05/06/08/09/11 limitations recorded above remain unchanged. It also does not prove every learner interaction, page swipe, every PART rendering, production release, or real physical-device behavior.
+#### V5 content audit — FAIL
+Artifact `diagnostic_summary.txt` records:
+- `V5_AUDIT_OUTCOME=failure`
+- `V5_AUDIT_EXIT=1`
+
+Artifact `v5_content_audit.json` records:
+- active V5 directories: `track_01`, `track_02`, `track_07`, `track_10` only.
+- part counts: T01=105, T02=105, T07=15, T10=15.
+- semantic chars: T01=1,429,424; T02=521,621; T07=129,211; T10=120,770.
+- error_count=2,555.
+- long_duplicate_groups=0.
+- twelve_token_duplicate_ratio=0.00018204.
+
+The missing TRACK 03/04/05/06/08/09/11 directories are an explicit audit error.
+
+#### Targeted V5 tests — FAIL
+Artifact `diagnostic_summary.txt` records:
+- `V5_TARGETED_TEST_OUTCOME=failure`
+
+Observed targeted failures include:
+1. `V5BookReaderSourceContractTest.V5RepositoryMergesManifestShardsBeforeValidatingTheBook`
+   - the test expects the literal source string `context.assets.list(trackDir)`, while the current repository implementation reaches asset listing through the `listSnapshotFiles` helper and uses `context.assets.list(dir)`. This is a stale/string-contract test mismatch, but it remains a real failing test until corrected and rerun.
+2. `V5PrerequisiteConceptContractTest.everyPrerequisiteNamesARealEarlierSection`
+   - actual content defect: T01-P23 references nonexistent prerequisite `T01-P16-S17-deadline-time`.
+
+#### Full debug unit tests — FAIL
+Artifact `diagnostic_summary.txt` records:
+- `FULL_UNIT_TEST_OUTCOME=failure`
+
+Four failing JUnit suites / nine failures were found:
+- `V5BookReaderSourceContractTest`: 1 failure.
+- `V5PrerequisiteConceptContractTest`: 1 failure.
+- `V5BookScaleCorpusGateTest`: 4 failures.
+- `V5EditorialDensityGateTest`: 3 failures.
+
+Important scale failure:
+- TRACK 01 measured by the literal ×5 JUnit gate: actual 1,436,170; minimum 1,455,630; short by 19,460.
+- all eleven V5 track directories are required, but only 01/02/07/10 exist in this recovery branch.
+
+Editorial failures include:
+- banned filler/meta-teaching phrases still present in active V5 content.
+- excessive code/example ratio in T02 P64/P65.
+- shallow prose chapters below the 420-character chapter floor in multiple T01/T02 parts.
+
+### Artifact evidence
+- Actions artifact: `v5-recovery-android-validation`
+- Artifact id: `10524517017`
+- Artifact ZIP SHA-256 reported by GitHub: `6d979daee23c357e7b271fbc6153d402fe75931a87fd0f11c47c2f78e8752d13`
+- Extracted debug APK SHA-256: `1e3990abd6f65fe704536ff0447407f3851b87229722c098d2b85a58200fe10a`
+
+### Final verified status
+- Hybrid reader wiring: VERIFIED.
+- Existing recovery corpus reader connection for T01/T02/T07/T10: VERIFIED to the static/runtime scope described above.
+- Android debug APK build: PASS.
+- API 34 APK install + MainActivity launch + process survival + basic UI presence + launch crash gate: PASS.
+- V5 content audit: FAIL.
+- targeted V5 tests: FAIL.
+- full unit test suite: FAIL.
+- complete 11-TRACK corpus: FAIL / incomplete.
+- frozen-baseline ×5 requirement: FAIL.
+- full app CLEAN PASS: NOT ACHIEVED.
 
 No deployment, release, production change, canonical/main merge, or Netlify operation was performed.
+
+Per the three-execution ceiling, Actions validation stops here. Further fixes may be prepared without Actions, but another Actions execution requires a new explicit approval and a new validation cycle.
