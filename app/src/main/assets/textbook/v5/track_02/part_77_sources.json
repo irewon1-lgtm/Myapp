@@ -1,0 +1,13 @@
+{
+  "partId":"T02-P77",
+  "sections":[
+    {"sectionId":"T02-P77-S01-ast-parse","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P77-S02-node-location","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P77-S03-visitor-transformer","sourceIds":["PYTHON-REF","GOF"]},
+    {"sectionId":"T02-P77-S04-compile-ast","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P77-S05-semantic-preservation","sourceIds":["REFACTORING2","SICP"]},
+    {"sectionId":"T02-P77-S06-source-roundtrip-boundary","sourceIds":["PYTHON-REF","REFACTORING2"]},
+    {"sectionId":"T02-P77-S07-security-analysis-limits","sourceIds":["NIST-SSDF","PYTHON-REF"]},
+    {"sectionId":"T02-P77-S08-ast-contract","sourceIds":["REFACTORING2","NIST-SSDF"]}
+  ]
+}
