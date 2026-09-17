@@ -1,0 +1,142 @@
+{
+  "schema": "US2000_FREE_NEW500_1",
+  "generatedAt": "2026-09-17T05:26:04.599296Z",
+  "asOf": "2026-09-17",
+  "recordCount": 500,
+  "metricCount": 10,
+  "totalMetricCells": 5000,
+  "identityAudit": {
+    "secSource": "https://www.sec.gov/files/company_tickers_exchange.json",
+    "mappingSource": "https://raw.githubusercontent.com/supermodo/us-markets-timemachine/main/data/edgar/company_tickers_exchange/2026/2026-09-16.gz",
+    "mirrorSnapshotDate": "2026-09-16",
+    "secMapped": 500,
+    "uniqueTickers": 500,
+    "uniqueCiks": 500,
+    "exchangeCounts": {
+      "NYSE": 258,
+      "Nasdaq": 242
+    },
+    "prctAbsent": true,
+    "envaPresent": true
+  },
+  "summary": {
+    "Revenue_TTM_YoY_Pct": {
+      "numeric": 491,
+      "naBasis": 8,
+      "hold": 1
+    },
+    "Gross_Margin_TTM_Pct": {
+      "numeric": 408,
+      "naBasis": 91,
+      "hold": 1
+    },
+    "Operating_Margin_TTM_Pct": {
+      "numeric": 491,
+      "naBasis": 8,
+      "hold": 1
+    },
+    "Net_Margin_TTM_Pct": {
+      "numeric": 491,
+      "naBasis": 8,
+      "hold": 1
+    },
+    "ROA_TTM_Pct": {
+      "numeric": 494,
+      "naBasis": 5,
+      "hold": 1
+    },
+    "FCF_Yield_TTM_Pct": {
+      "numeric": 498,
+      "naBasis": 2,
+      "hold": 0
+    },
+    "TTM_PER": {
+      "numeric": 353,
+      "naBasis": 146,
+      "hold": 1
+    },
+    "Price_Sales_TTM": {
+      "numeric": 491,
+      "naBasis": 8,
+      "hold": 1
+    },
+    "Shares_Change_YoY_Pct": {
+      "numeric": 490,
+      "naBasis": 10,
+      "hold": 0
+    },
+    "Drawdown_52W_Pct": {
+      "numeric": 499,
+      "naBasis": 0,
+      "hold": 1
+    }
+  },
+  "totalResolved": 4992,
+  "totalHold": 8,
+  "resolvedRatio": 0.9984,
+  "recordsSha256": "970702ba11acf5b031f8f35f50cd1e8cb75f55f50a990b628b4ef4939daff735",
+  "chunks": [
+    {
+      "file": "chunk-00.json",
+      "count": 50,
+      "sha256": "bed480be66c9972e404d07ccd0c56c9842dd7689c414b4465a4203de8a3df796"
+    },
+    {
+      "file": "chunk-01.json",
+      "count": 50,
+      "sha256": "f4259abb875a01b479e4484ff32d5dff56b88fe0a8185723269aed90db8f924e"
+    },
+    {
+      "file": "chunk-02.json",
+      "count": 50,
+      "sha256": "51eae90392597d3f3907b18fc194effe1d003ec86acf215afacdbfb400824b86"
+    },
+    {
+      "file": "chunk-03.json",
+      "count": 50,
+      "sha256": "ec140094fc2757f5ae053529d013e6f879fb267b51989190eff2da8482374dfa"
+    },
+    {
+      "file": "chunk-04.json",
+      "count": 50,
+      "sha256": "4cab67bd55a7bd3ecbcf6dc7e7c95383a96942e69409b09eb0be14504bb896a1"
+    },
+    {
+      "file": "chunk-05.json",
+      "count": 50,
+      "sha256": "9863275a932737ca59e7be8703f1da7bd4f854ed99718e5668cd0f95d80b10e1"
+    },
+    {
+      "file": "chunk-06.json",
+      "count": 50,
+      "sha256": "828516d84699854f12b403a4b6d8308884657eaa41df64c00e5ba2ea03f7f529"
+    },
+    {
+      "file": "chunk-07.json",
+      "count": 50,
+      "sha256": "8b9267aa5c5db31dde653e536bf0590dd73db303313e29900bad475b3b434dbe"
+    },
+    {
+      "file": "chunk-08.json",
+      "count": 50,
+      "sha256": "378d8cf016b347e3172569449994af4a1911ceabe8adbea03788795311572590"
+    },
+    {
+      "file": "chunk-09.json",
+      "count": 50,
+      "sha256": "27f68dfc42cda35c5bfece29b15d39959db4d8ec6821ec818177be2133ee133b"
+    }
+  ],
+  "sourcePolicy": {
+    "identity": "SEC company_tickers_exchange.json",
+    "fundamentals": [
+      "Finviz public quote page",
+      "StockAnalysis public statistics page"
+    ],
+    "login": false,
+    "apiKey": false,
+    "proxy": false,
+    "captchaBypass": false,
+    "workers": 4
+  }
+}
