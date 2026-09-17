@@ -1,0 +1,15 @@
+{
+  "partId":"T02-P46",
+  "sections":[
+    {"sectionId":"T02-P46-S01-async-iteration-protocol","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P46-S02-async-generator-suspend","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P46-S03-async-for-backpressure","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P46-S04-resource-lifetime-stream","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P46-S05-cancellation-stream","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P46-S06-batching-windowing","sourceIds":["DDIA","SRE"]},
+    {"sectionId":"T02-P46-S07-merge-fan-in","sourceIds":["PYTHON-REF","DDIA"]},
+    {"sectionId":"T02-P46-S08-error-policy-stream","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P46-S09-testing-async-stream","sourceIds":["PYTHON-REF","NIST-SSDF"]},
+    {"sectionId":"T02-P46-S10-async-stream-contract","sourceIds":["PYTHON-REF","SRE","DDIA"]}
+  ]
+}
