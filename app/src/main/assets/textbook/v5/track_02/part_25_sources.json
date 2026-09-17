@@ -1,0 +1,15 @@
+{
+  "partId": "T02-P25",
+  "sections": [
+    {"sectionId":"T02-P25-S01-integer-range-boundary","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P25-S02-binary-float-representation","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P25-S03-float-tolerance","sourceIds":["PYTHON-REF","CLRS4"]},
+    {"sectionId":"T02-P25-S04-decimal-context","sourceIds":["PYTHON-REF"]},
+    {"sectionId":"T02-P25-S05-rounding-policy","sourceIds":["PYTHON-REF","DDD"]},
+    {"sectionId":"T02-P25-S06-money-value-object","sourceIds":["DDD","PYTHON-REF"]},
+    {"sectionId":"T02-P25-S07-bigint-resource-budget","sourceIds":["PYTHON-REF","NIST-SSDF"]},
+    {"sectionId":"T02-P25-S08-aggregate-error","sourceIds":["CSAPP3","CLRS4"]},
+    {"sectionId":"T02-P25-S09-special-float-values","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P25-S10-numeric-type-choice","sourceIds":["PYTHON-REF","CSAPP3","DDD"]}
+  ]
+}
