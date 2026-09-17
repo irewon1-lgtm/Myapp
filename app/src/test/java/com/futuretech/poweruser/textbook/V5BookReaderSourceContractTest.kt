@@ -12,6 +12,8 @@ class V5BookReaderSourceContractTest {
             ?: error("Cannot locate source: $relative")
     }
 
+    private fun compactWhitespace(text: String): String = text.replace(Regex("\\s+"), " ")
+
     @Test
     fun adaptiveShelfRoutesValidatedV5ManifestsToV5ReaderAndKeepsLegacyFallback() {
         val adaptive = source("com/futuretech/poweruser/ui/AdaptiveTextbookScreen.kt")
@@ -65,8 +67,8 @@ class V5BookReaderSourceContractTest {
 
     @Test
     fun measuredComposerTypographyMatchesTheActualReader() {
-        val reader = source("com/futuretech/poweruser/ui/V5TrackBookScreen.kt")
-        val measured = source("com/futuretech/poweruser/ui/MeasuredTextbookPageComposer.kt")
+        val reader = compactWhitespace(source("com/futuretech/poweruser/ui/V5TrackBookScreen.kt"))
+        val measured = compactWhitespace(source("com/futuretech/poweruser/ui/MeasuredTextbookPageComposer.kt"))
         listOf(
             "fontSize = 16.5.sp, lineHeight = 27.sp",
             "fontSize = 15.sp, lineHeight = 23.sp",
