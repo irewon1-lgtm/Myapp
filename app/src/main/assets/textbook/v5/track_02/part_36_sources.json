@@ -1,0 +1,15 @@
+{
+  "partId": "T02-P36",
+  "sections": [
+    {"sectionId":"T02-P36-S01-refactor-contract","sourceIds":["REFACTORING2","NIST-SSDF"]},
+    {"sectionId":"T02-P36-S02-rename-public-surface","sourceIds":["REFACTORING2","PYTHON-REF"]},
+    {"sectionId":"T02-P36-S03-extract-function","sourceIds":["REFACTORING2","SICP"]},
+    {"sectionId":"T02-P36-S04-polymorphism-change-axis","sourceIds":["REFACTORING2","GOF"]},
+    {"sectionId":"T02-P36-S05-data-structure-replacement","sourceIds":["REFACTORING2","CLRS4"]},
+    {"sectionId":"T02-P36-S06-dependency-inversion","sourceIds":["REFACTORING2","DDD"]},
+    {"sectionId":"T02-P36-S07-parallel-change","sourceIds":["DDIA","REFACTORING2"]},
+    {"sectionId":"T02-P36-S08-branch-by-abstraction","sourceIds":["REFACTORING2","GOF"]},
+    {"sectionId":"T02-P36-S09-small-commits","sourceIds":["PROGIT2","NIST-SSDF"]},
+    {"sectionId":"T02-P36-S10-refactor-investment","sourceIds":["REFACTORING2","SRE","DDD"]}
+  ]
+}
