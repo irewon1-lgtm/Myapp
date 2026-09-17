@@ -1,0 +1,15 @@
+{
+  "partId": "T02-P17",
+  "sections": [
+    {"sectionId":"T02-P17-S01-concurrency-parallelism","sourceIds":["OSTEP","CSAPP3"]},
+    {"sectionId":"T02-P17-S02-thread-shared-address","sourceIds":["OSTEP","TLPI"]},
+    {"sectionId":"T02-P17-S03-race-interleaving","sourceIds":["OSTEP","CSAPP3"]},
+    {"sectionId":"T02-P17-S04-lock-deadlock-contention","sourceIds":["OSTEP","TLPI"]},
+    {"sectionId":"T02-P17-S05-condition-queue","sourceIds":["OSTEP","PYTHON-REF"]},
+    {"sectionId":"T02-P17-S06-gil-workload","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P17-S07-process-isolation","sourceIds":["OSTEP","TLPI"]},
+    {"sectionId":"T02-P17-S08-executor-pool","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P17-S09-shared-memory-ipc","sourceIds":["OSTEP","TLPI"]},
+    {"sectionId":"T02-P17-S10-concurrency-model-choice","sourceIds":["OSTEP","SRE","DDIA"]}
+  ]
+}
