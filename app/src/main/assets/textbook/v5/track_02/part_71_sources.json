@@ -1,0 +1,13 @@
+{
+  "partId":"T02-P71",
+  "sections":[
+    {"sectionId":"T02-P71-S01-repr-contract","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P71-S02-str-user-view","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P71-S03-format-spec","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P71-S04-fstring-conversion","sourceIds":["PYTHON-REF"]},
+    {"sectionId":"T02-P71-S05-bytes-repr-boundary","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P71-S06-debug-representation","sourceIds":["SRE","PYTHON-REF"]},
+    {"sectionId":"T02-P71-S07-recursive-repr","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P71-S08-representation-contract","sourceIds":["REFACTORING2","PYTHON-REF"]}
+  ]
+}
