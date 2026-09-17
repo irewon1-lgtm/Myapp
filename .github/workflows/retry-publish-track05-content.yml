@@ -1,0 +1,93 @@
+name: Retry publish Track05 remote content
+
+on:
+  push:
+    branches:
+      - textbook-v5-track05-publish
+    paths:
+      - '.github/workflows/retry-publish-track05-content.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Publish only from exact verified payload
+        shell: bash
+        run: |
+          set -euo pipefail
+          ROOT=app/src/main/assets/textbook/v5/track_05
+          verify_track() {
+            python - <<'PY'
+          from pathlib import Path
+          import json, re
+          root=Path('app/src/main/assets/textbook/v5/track_05')
+          assert root.is_dir()
+          md=sorted(root.glob('part_*_*.md'))
+          sm=sorted(root.glob('part_*_sources.json'))
+          mf=[root/'manifest.json']+sorted(root.glob('manifest_[0-9][0-9].json'))
+          mf=[p for p in mf if p.exists()]
+          assert len(md)==105, len(md)
+          assert len(sm)==105, len(sm)
+          assert len(mf)==7, len(mf)
+          fr=[json.loads(p.read_text(encoding='utf-8')) for p in mf]
+          base=fr[0]; assert base['trackId']=='T05' and base['trackNumber']==5
+          title=base['title']; parts=[]
+          for f in fr:
+              assert f['trackId']=='T05' and f['trackNumber']==5 and f['title']==title
+              parts += f['parts']
+          parts.sort(key=lambda p:p['order'])
+          assert len(parts)==105
+          assert [p['order'] for p in parts]==list(range(1,106))
+          assert [p['id'] for p in parts]==[f'T05-P{i:02d}' for i in range(1,106)]
+          sec={}
+          for p in parts:
+              a=Path('app/src/main/assets')/p['assetPath']; s=Path('app/src/main/assets')/p['sourceMapPath']
+              assert a.is_file() and s.is_file()
+              ch=len(re.findall(r'(?m)^## CHAPTER ', a.read_text(encoding='utf-8')))
+              j=json.loads(s.read_text(encoding='utf-8')); assert j['partId']==p['id']; assert len(j['sections'])==ch
+              ids=set()
+              for i,x in enumerate(j['sections'],1):
+                  assert x['sectionId'].startswith(f"{p['id']}-S{i:02d}-") and x['sourceIds']
+                  assert len(x['sourceIds'])==len(set(x['sourceIds']))
+                  ids.add(x['sectionId'])
+              sec[p['id']]=ids
+          for p in parts:
+              for q in p.get('prerequisiteConceptIds',[]):
+                  m=re.match(r'^T05-P(\d+)-S\d+-.+$',q); assert m and int(m.group(1))<p['order']
+                  assert q in sec.get(q.split('-S',1)[0],set())
+          print('TRACK05_STRUCTURE_PASS')
+          PY
+          }
+
+          if [ -d "$ROOT" ]; then
+            if verify_track; then
+              echo 'TRACK05_ALREADY_PUBLISHED_AND_VALID'
+              exit 0
+            fi
+          fi
+
+          test -d .track05_payload_xz
+          count="$(find .track05_payload_xz -maxdepth 1 -type f -name 'part_*.b64' | wc -l | tr -d ' ')"
+          test "$count" = 20
+          cat .track05_payload_xz/part_*.b64 > /tmp/track05.b64
+          base64 -d /tmp/track05.b64 > /tmp/track05.tar.xz
+          echo 'a8beb02c29fb245572ad3733c96f27fdf49616bbde87a9a7a0f970c7b579a591  /tmp/track05.tar.xz' | sha256sum -c -
+          rm -rf "$ROOT"
+          tar -xJf /tmp/track05.tar.xz
+          verify_track
+
+          rm -rf .track05_payload_xz
+          rm -f .track05_publish_trigger
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'publish(v5): add track 05 remote content [skip ci]'
+          git push origin HEAD:textbook-v5-track05-publish
