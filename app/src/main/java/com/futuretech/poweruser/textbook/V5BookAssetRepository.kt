@@ -33,10 +33,14 @@ data class V5SectionEvidence(
 /**
  * Loads exactly one V5 part at a time.
  *
- * Large books never become one track-sized String. A source map is validated independently for the
- * current part and is bound one-to-one, in order, to every learner-facing H2 CHAPTER. This prevents
- * an author from dropping a token source-map file beside prose while leaving whole chapters without
- * evidence coverage.
+ * Large books never become one track-sized String. Manifest metadata itself is also shardable:
+ * manifest.json is the immutable spine and manifest_02.json, manifest_03.json, ... extend it.
+ * Every shard must describe the same track/title; all parts are merged and then validated as one
+ * contiguous P01..Pn sequence. This keeps book growth from repeatedly rewriting a giant manifest.
+ *
+ * A source map is validated independently for the current part and is bound one-to-one, in order,
+ * to every learner-facing H2 CHAPTER. This prevents an author from dropping a token source-map file
+ * beside prose while leaving whole chapters without evidence coverage.
  */
 class V5BookAssetRepository(
     private val context: Context,
@@ -44,12 +48,40 @@ class V5BookAssetRepository(
 ) {
     fun loadManifest(trackNumber: Int): V5BookManifest {
         require(trackNumber in 1..11) { "trackNumber out of range: $trackNumber" }
-        val path = "textbook/v5/track_${trackNumber.toString().padStart(2, '0')}/manifest.json"
-        val manifest = context.assets.open(path).bufferedReader().use { reader ->
-            gson.fromJson(reader, V5BookManifest::class.java)
+        val trackDir = "textbook/v5/track_${trackNumber.toString().padStart(2, '0')}"
+        val names = context.assets.list(trackDir).orEmpty()
+            .filter { it == "manifest.json" || it.matches(Regex("manifest_\\d{2}\\.json")) }
+            .sortedWith(compareBy<String> { if (it == "manifest.json") 0 else 1 }.thenBy { it })
+
+        require(names.firstOrNull() == "manifest.json") {
+            "Missing primary V5 manifest for track $trackNumber: found=$names"
         }
-        validateManifest(manifest, trackNumber)
-        return manifest
+
+        val fragments = names.map { name ->
+            val path = "$trackDir/$name"
+            context.assets.open(path).bufferedReader().use { reader ->
+                gson.fromJson(reader, V5BookManifest::class.java)
+            }
+        }
+        val base = fragments.first()
+        fragments.forEachIndexed { index, fragment ->
+            require(fragment.trackNumber == base.trackNumber) {
+                "Manifest shard track number mismatch at ${names[index]}: base=${base.trackNumber} actual=${fragment.trackNumber}"
+            }
+            require(fragment.trackId == base.trackId) {
+                "Manifest shard track id mismatch at ${names[index]}: base=${base.trackId} actual=${fragment.trackId}"
+            }
+            require(fragment.title == base.title) {
+                "Manifest shard title mismatch at ${names[index]}: base=${base.title} actual=${fragment.title}"
+            }
+            if (index > 0) require(fragment.parts.isNotEmpty()) {
+                "Manifest shard must not be empty: ${names[index]}"
+            }
+        }
+
+        val merged = base.copy(parts = fragments.flatMap { it.parts }.sortedBy { it.order })
+        validateManifest(merged, trackNumber)
+        return merged
     }
 
     fun loadPart(part: V5BookPartRef): List<TextbookBlock> {
@@ -112,6 +144,12 @@ class V5BookAssetRepository(
         require(manifest.parts.size >= 2) { "$expectedTrackId must be a multipart book" }
         require(manifest.parts.map { it.id }.distinct().size == manifest.parts.size) {
             "Duplicate part ids in $expectedTrackId"
+        }
+        require(manifest.parts.map { it.assetPath }.distinct().size == manifest.parts.size) {
+            "Duplicate part asset paths in $expectedTrackId"
+        }
+        require(manifest.parts.map { it.sourceMapPath }.distinct().size == manifest.parts.size) {
+            "Duplicate source-map paths in $expectedTrackId"
         }
         val orders = manifest.parts.map { it.order }.sorted()
         require(orders == (1..manifest.parts.size).toList()) {
