@@ -1,0 +1,15 @@
+{
+  "partId":"T02-P51",
+  "sections":[
+    {"sectionId":"T02-P51-S01-parameter-kinds","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P51-S02-positional-only","sourceIds":["PYTHON-REF"]},
+    {"sectionId":"T02-P51-S03-keyword-only","sourceIds":["PYTHON-REF","REFACTORING2"]},
+    {"sectionId":"T02-P51-S04-varargs-forwarding","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P51-S05-signature-binding","sourceIds":["PYTHON-REF"]},
+    {"sectionId":"T02-P51-S06-default-sentinel","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P51-S07-api-compatibility","sourceIds":["PYTHON-REF","REFACTORING2"]},
+    {"sectionId":"T02-P51-S08-decorator-signature","sourceIds":["PYTHON-REF","NIST-SSDF"]},
+    {"sectionId":"T02-P51-S09-signature-testing","sourceIds":["PYTHON-REF","NIST-SSDF"]},
+    {"sectionId":"T02-P51-S10-call-contract-design","sourceIds":["SICP","REFACTORING2","PYTHON-REF"]}
+  ]
+}
