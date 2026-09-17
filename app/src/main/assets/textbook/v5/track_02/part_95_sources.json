@@ -1,0 +1,13 @@
+{
+  "partId":"T02-P95",
+  "sections":[
+    {"sectionId":"T02-P95-S01-digest-model","sourceIds":["PYTHON-REF","NIST-SSDF"]},
+    {"sectionId":"T02-P95-S02-streaming-hash","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P95-S03-collision-boundary","sourceIds":["NIST-SSDF","SRE"]},
+    {"sectionId":"T02-P95-S04-integrity-not-authenticity","sourceIds":["NIST-SSDF","SRE"]},
+    {"sectionId":"T02-P95-S05-content-address","sourceIds":["DDIA","SRE"]},
+    {"sectionId":"T02-P95-S06-comparison-timing","sourceIds":["NIST-SSDF","PYTHON-REF"]},
+    {"sectionId":"T02-P95-S07-algorithm-version","sourceIds":["NIST-SSDF","SRE"]},
+    {"sectionId":"T02-P95-S08-digest-contract","sourceIds":["NIST-SSDF","DDIA"]}
+  ]
+}
