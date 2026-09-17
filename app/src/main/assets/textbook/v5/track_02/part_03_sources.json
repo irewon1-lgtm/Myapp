@@ -1,0 +1,15 @@
+{
+  "partId": "T02-P03",
+  "sections": [
+    {"sectionId":"T02-P03-S01-boolean-policy","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P03-S02-short-circuit","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P03-S03-truthiness-state","sourceIds":["PYTHON-REF"]},
+    {"sectionId":"T02-P03-S04-branch-state-space","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P03-S05-loop-invariant","sourceIds":["SICP","CLRS4"]},
+    {"sectionId":"T02-P03-S06-termination-measure","sourceIds":["SICP","CLRS4"]},
+    {"sectionId":"T02-P03-S07-half-open-range","sourceIds":["PYTHON-REF","CLRS4"]},
+    {"sectionId":"T02-P03-S08-iteration-protocol","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P03-S09-comprehension-evaluation","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P03-S10-control-flow-shape","sourceIds":["REFACTORING2","SICP","LEARNING-CLT-COMPUTING"]}
+  ]
+}
