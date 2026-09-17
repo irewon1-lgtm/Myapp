@@ -1,0 +1,68 @@
+name: V5 free diagnostic once
+
+on:
+  push:
+    branches:
+      - textbook-v5-deep-book-engine
+    paths:
+      - '.github/workflows/v5-free-diagnostic-once.yml'
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Python 3.13
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Set up Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Prepare runtime assets
+        run: |
+          npm install --ignore-scripts --no-audit --no-fund
+          npm run prepare:typescript
+          chmod +x ./gradlew
+
+      - name: Exact Python audit report
+        shell: bash
+        run: |
+          set +e
+          python tools/v5_content_audit.py
+          echo "V5_CONTENT_AUDIT_EXIT=$?"
+          exit 0
+
+      - name: Exact failing JUnit diagnostics
+        shell: bash
+        run: |
+          set +e
+          ./gradlew testDebugUnitTest \
+            --tests 'com.futuretech.poweruser.textbook.V5BookScaleCorpusGateTest' \
+            --tests 'com.futuretech.poweruser.textbook.V5EditorialDensityGateTest' \
+            --tests 'com.futuretech.poweruser.textbook.V5EvidenceCoverageAssetTest' \
+            --tests 'com.futuretech.poweruser.textbook.V5ExistingPartEvidenceContractTest' \
+            --tests 'com.futuretech.poweruser.textbook.V5PrerequisiteConceptContractTest' \
+            --tests 'com.futuretech.poweruser.textbook.V5BookReaderSourceContractTest' \
+            --stacktrace
+          test_status=$?
+          echo "V5_TARGETED_TEST_EXIT=$test_status"
+          echo '===== EXACT FAILURE XML ====='
+          for f in app/build/test-results/testDebugUnitTest/TEST-com.futuretech.poweruser.textbook.V5*.xml; do
+            [ -f "$f" ] || continue
+            echo "===== $f ====="
+            cat "$f"
+          done
+          exit 0
