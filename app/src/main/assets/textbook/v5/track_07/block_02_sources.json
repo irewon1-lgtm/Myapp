@@ -1,0 +1,20 @@
+{
+  "partId": "T07-P02",
+  "lessons": [
+    {"lessonId":"T07-B02-L16-business-rule","sourceIds":["FSA2-2025","DWA2-2025"]},
+    {"lessonId":"T07-B02-L17-layers","sourceIds":["FSA2-2025"]},
+    {"lessonId":"T07-B02-L18-domain-model","sourceIds":["FSA2-2025","DDIA2-2026"]},
+    {"lessonId":"T07-B02-L19-command-query","sourceIds":["FSA2-2025","DDIA2-2026"]},
+    {"lessonId":"T07-B02-L20-dependency-injection","sourceIds":["FSA2-2025","TS-HANDBOOK"]},
+    {"lessonId":"T07-B02-L21-side-effects","sourceIds":["FSA2-2025","GOOGLE-SRE"]},
+    {"lessonId":"T07-B02-L22-state-machine","sourceIds":["FSA2-2025","DDIA2-2026"]},
+    {"lessonId":"T07-B02-L23-invariant","sourceIds":["DDIA2-2026","FSA2-2025"]},
+    {"lessonId":"T07-B02-L24-idempotency","sourceIds":["RFC9110","DWA2-2025","DDIA2-2026"]},
+    {"lessonId":"T07-B02-L25-time-random","sourceIds":["GOOGLE-SRE","NODE-PROCESS"]},
+    {"lessonId":"T07-B02-L26-transaction-boundary","sourceIds":["DDIA2-2026","FSA2-2025"]},
+    {"lessonId":"T07-B02-L27-external-api-adapter","sourceIds":["DWA2-2025","GOOGLE-SRE"]},
+    {"lessonId":"T07-B02-L28-ports-adapters","sourceIds":["FSA2-2025"]},
+    {"lessonId":"T07-B02-L29-error-taxonomy","sourceIds":["RFC9457","GOOGLE-SRE"]},
+    {"lessonId":"T07-B02-L30-capstone","sourceIds":["FSA2-2025","DWA2-2025","DDIA2-2026"]}
+  ]
+}

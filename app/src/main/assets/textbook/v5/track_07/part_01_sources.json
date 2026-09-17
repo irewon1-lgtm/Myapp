@@ -1,0 +1,20 @@
+{
+  "partId":"T07-P01",
+  "sections":[
+    {"sectionId":"T07-P01-S01-backend-responsibility","sourceIds":["SRE","DDIA"]},
+    {"sectionId":"T07-P01-S02-process-runtime","sourceIds":["CSAPP3","SRE"]},
+    {"sectionId":"T07-P01-S03-server-ambiguity","sourceIds":["SRE","CSAPP3"]},
+    {"sectionId":"T07-P01-S04-host-address-binding","sourceIds":["RFC9110","SRE"]},
+    {"sectionId":"T07-P01-S05-port-endpoint","sourceIds":["RFC9110","CSAPP3"]},
+    {"sectionId":"T07-P01-S06-listen-lifecycle","sourceIds":["SRE","CSAPP3"]},
+    {"sectionId":"T07-P01-S07-connection-vs-http","sourceIds":["RFC9110","SRE"]},
+    {"sectionId":"T07-P01-S08-concurrent-requests","sourceIds":["SRE","DDIA"]},
+    {"sectionId":"T07-P01-S09-instance-memory","sourceIds":["DDIA","SRE"]},
+    {"sectionId":"T07-P01-S10-runtime-config","sourceIds":["SRE","NIST-SSDF"]},
+    {"sectionId":"T07-P01-S11-shutdown-lifecycle","sourceIds":["SRE","SRE-WORKBOOK"]},
+    {"sectionId":"T07-P01-S12-health-readiness","sourceIds":["SRE","SRE-WORKBOOK"]},
+    {"sectionId":"T07-P01-S13-observation-evidence","sourceIds":["SRE","SRE-WORKBOOK"]},
+    {"sectionId":"T07-P01-S14-boundary-debugging","sourceIds":["SRE-WORKBOOK","SRE"]},
+    {"sectionId":"T07-P01-S15-execution-lab","sourceIds":["RFC9110","SRE","CSAPP3"]}
+  ]
+}

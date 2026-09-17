@@ -1,0 +1,20 @@
+{
+  "partId":"T07-P08",
+  "sections":[
+    {"sectionId":"T07-P08-S01-normalization-contract","sourceIds":["DDIA","OPENAPI31"]},
+    {"sectionId":"T07-P08-S02-trim-order","sourceIds":["TS-HANDBOOK","OPENAPI31"]},
+    {"sectionId":"T07-P08-S03-case-key","sourceIds":["DDIA","OWASP-API"]},
+    {"sectionId":"T07-P08-S04-unicode-normalization","sourceIds":["OWASP-API","DDIA"]},
+    {"sectionId":"T07-P08-S05-phone-canonical","sourceIds":["OPENAPI31","DDIA"]},
+    {"sectionId":"T07-P08-S06-date-vs-instant","sourceIds":["DDIA","OPENAPI31"]},
+    {"sectionId":"T07-P08-S07-timezone-schedule","sourceIds":["DDIA","SRE"]},
+    {"sectionId":"T07-P08-S08-money-normalization","sourceIds":["DDIA","OPENAPI31"]},
+    {"sectionId":"T07-P08-S09-identifier-normalization","sourceIds":["OWASP-API","DDIA"]},
+    {"sectionId":"T07-P08-S10-default-semantics","sourceIds":["TS-HANDBOOK","OPENAPI31"]},
+    {"sectionId":"T07-P08-S11-derived-default","sourceIds":["DDIA","SRE"]},
+    {"sectionId":"T07-P08-S12-dedup-order","sourceIds":["DDIA","TS-HANDBOOK"]},
+    {"sectionId":"T07-P08-S13-canonical-signature","sourceIds":["OWASP-API","DDIA"]},
+    {"sectionId":"T07-P08-S14-raw-retention","sourceIds":["OWASP-API","NIST-SSDF"]},
+    {"sectionId":"T07-P08-S15-normalization-lab","sourceIds":["DDIA","OPENAPI31","OWASP-API"]}
+  ]
+}

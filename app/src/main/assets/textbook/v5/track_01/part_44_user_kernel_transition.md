@@ -1,123 +1,303 @@
 # PART 44 · User↔Kernel Transition — syscall entry, context state, vDSO, restart
 
-System call은 library function보다 `조금 더 느린 함수 호출`이 아니다. CPU privilege state가 바뀌고 architecture가 정한 entry point로 제어가 이동하며, kernel은 user pointer·length·credential을 검증하고 필요하면 scheduler·page fault·I/O subsystem과 상호작용한 뒤 user register state로 돌아간다. 이 경계의 비용은 instruction transition뿐 아니라 cache/TLB state, security mitigation, copy, blocking, wakeup까지 포함한다.
+user code와 kernel은 같은 CPU를 사용하지만 권한과 address space contract가 다르다. syscall, fault, interrupt는 통제된 entry path를 통해 privileged state로 전환하고, user pointer와 register를 검증하며, scheduler·signal과 상호작용한 뒤 다시 돌아온다. 이 PART는 **transition cost, copy boundary, context switch, mitigation, batching과 observability**를 연결한다.
 
-## CHAPTER 01 · syscall ABI는 user register를 kernel argument contract로 해석한다
+---
 
-Application의 high-level `read()` 호출은 libc/runtime wrapper를 거쳐 architecture가 정한 system-call number와 argument register 배치로 변환될 수 있다. Kernel entry code는 ordinary function ABI가 아니라 syscall ABI를 기준으로 user register를 해석한다. Pointer width, sign extension, return/error convention도 architecture와 compatibility mode에 따라 다를 수 있다. Raw syscall wrapper나 FFI를 작성할 때 C function calling convention과 syscall calling convention을 섞으면 register/stack 해석이 깨진다. Kernel API 안정성은 syscall semantic contract에 있고 internal kernel function signature는 public ABI가 아니다.
+## CHAPTER 01 · syscall ABI는 user register state를 kernel request로 해석하는 규칙이다
 
-## CHAPTER 02 · privilege transition은 현재 user execution context를 잃지 않고 kernel code로 이동해야 한다
+system call은 syscall number와 argument를 architecture ABI가 정한 register/stack 위치에 놓고 kernel entry instruction을 실행한다. kernel은 이를 신뢰 가능한 function call이 아니라 untrusted request로 받아 type·range·pointer를 검증해야 한다.
 
-CPU는 syscall/trap entry에서 현재 instruction location과 flags/state 일부를 보존하고 privileged mode의 entry address로 제어를 넘긴다. Kernel은 return할 때 원래 user state를 복원하거나 signal/deopt-like modification을 반영해야 한다. Architecture별로 dedicated syscall instruction, exception vector, return instruction이 다르다. `mode bit 하나를 바꾼다`는 설명만으로는 stack 전환, interrupt masking state, register save, speculation control을 설명할 수 없다.
+32/64-bit compatibility mode나 seccomp wrapper가 있으면 같은 logical API도 다른 syscall ABI를 사용할 수 있다. userspace library wrapper와 raw syscall semantics도 다를 수 있다.
 
-## CHAPTER 03 · kernel entry prologue는 user-controlled state를 trusted kernel state로 바꾼다
+trace에는 syscall number, raw errno, duration을 보존한다. high-level function 이름만으로 kernel path를 추정하지 않는다.
 
-Entry 직후 kernel은 user register를 정해진 frame에 저장하고 per-thread kernel stack/current-task metadata를 사용할 준비를 해야 한다. User가 제공한 stack pointer를 kernel local stack으로 그대로 사용할 수 없으므로 privilege별 stack 또는 architecture mechanism으로 안전한 stack을 확보한다. Trace/debugger가 보는 pt_regs류 구조는 이 경계 state의 snapshot 역할을 할 수 있다. Entry assembly는 compiler-generated ordinary prologue보다 architecture/security contract가 강하다.
+---
 
-## CHAPTER 04 · syscall은 ordinary call보다 branch prediction과 pipeline state에 더 큰 경계를 만든다
+## CHAPTER 02 · privilege transition은 CPU execution mode와 access 권한을 바꾼다
 
-User function call은 같은 privilege와 address-space context 안에서 return address를 관리하지만 syscall은 privilege boundary와 kernel entry path를 지난다. CPU는 pipeline serialization, predictor/security state 처리, return validation 같은 추가 work를 수행할 수 있다. Microarchitecture mitigation과 kernel version에 따라 transition cost는 달라진다. `syscall 몇 ns` 같은 숫자를 다른 CPU/OS에 상수처럼 적용하지 않고 현재 machine에서 empty/minimal syscall benchmark와 PMU로 측정한다.
+user mode에서 kernel mode로 들어갈 때 CPU는 privileged instruction과 kernel memory에 접근 가능한 context로 전환한다. transition은 isolation을 유지하기 위한 필수 경계이며 단순 function call보다 state save/validation이 많다.
 
-## CHAPTER 05 · user pointer는 kernel pointer가 아니며 access 전에 검증·fault handling이 필요하다
+speculative execution mitigation이나 address-space isolation이 추가되면 cost가 커질 수 있지만 security requirement와 함께 평가해야 한다. syscall cost를 줄이려고 boundary를 우회하는 것은 해결책이 아니다.
 
-System call이 user buffer pointer와 length를 받았다고 해서 kernel이 일반 kernel memory처럼 바로 dereference할 수 있는 것은 아니다. Address range가 user space인지, mapping/permission이 유효한지, copy 중 page fault가 발생할 수 있는지 고려해야 한다. Linux의 copy_to_user/copy_from_user류 helper는 architecture별 user-access mechanism과 fault recovery를 감싼다. Kernel이 user pointer를 long-lived raw pointer로 저장하면 mapping 변경과 process lifetime 때문에 위험하다. User/kernel copy boundary는 security validation과 memory-fault boundary다.
+microbenchmark에서는 empty syscall과 real workload를 분리한다. 실제 latency 대부분이 I/O wait일 수 있다.
 
-## CHAPTER 06 · TOCTOU는 user memory를 여러 번 읽을 때 kernel이 같은 값을 본다고 가정하면 생긴다
+---
 
-Kernel이 user structure의 length를 한 번 검사한 뒤 나중에 같은 user memory에서 다시 읽으면 다른 thread가 중간에 값을 바꿀 수 있다. 검증한 값과 사용하는 값이 달라지는 race가 된다. 중요한 control field는 kernel-owned copy로 snapshot한 뒤 validate/use하는 방식이 필요할 수 있다. Shared user memory는 syscall 실행 중에도 mutable하다는 사실을 API/parser 설계에 반영한다. 이는 filesystem path TOCTOU와 같은 check/use 분리 문제의 memory 형태다.
+## CHAPTER 03 · entry prologue는 user state를 저장하고 safe kernel state를 만든다
 
-## CHAPTER 07 · 작은 kernel 정보를 가져오는 모든 API가 syscall일 필요는 없다
+kernel entry code는 return에 필요한 register/flags를 보존하고 kernel stack, segment/address state를 준비한다. user-controlled register를 kernel pointer로 사용하기 전에 sanitization이 필요하다.
 
-현재 시각, CPU/process metadata처럼 kernel이 read-only page에 안전하게 노출할 수 있는 값은 vDSO 같은 user-mapped helper를 통해 privilege transition 없이 얻을 수 있다. Helper는 kernel과 ABI를 공유하지만 ordinary user code로 실행되며 필요하면 real syscall fallback을 사용할 수 있다. 따라서 `clock_gettime 호출 횟수 = syscall 횟수`로 profiler를 해석하면 틀릴 수 있다. Symbol resolution과 actual instruction path를 확인한다.
+entry code는 모든 process가 자주 통과해 작고 검증된 path여야 한다. 한 bug가 system-wide privilege boundary에 영향을 준다.
 
-## CHAPTER 08 · page fault는 user instruction에서 시작해 kernel fault handler를 거쳐 같은 instruction으로 돌아올 수 있다
+low-level crash에서는 saved frame과 entry path version을 확인한다. profiler가 frame transition을 올바르게 unwind하는지도 중요하다.
 
-User load/store가 mapping miss 또는 permission condition을 만나면 CPU exception으로 kernel에 들어간다. Kernel은 VMA/page-table state를 검사해 demand allocation, file page-in, COW를 처리한 뒤 faulting instruction을 재시작할 수 있다. Invalid access면 signal을 전달한다. Fault handler가 storage I/O를 기다리면 transition 자체보다 blocked duration이 훨씬 크다. Page-fault count는 minor/major와 fault reason을 나눠 분석한다.
+---
 
-## CHAPTER 09 · external interrupt는 현재 user/kernel code와 무관하게 비동기 entry를 만든다
+## CHAPTER 04 · transition cost는 fixed overhead와 handler work를 분리해야 한다
 
-Timer, NIC, storage completion interrupt는 현재 실행 중인 instruction stream과 독립적으로 발생할 수 있다. CPU가 interrupt를 수락하면 current context를 저장하고 interrupt handler로 이동한다. Handler는 가능한 짧게 critical work를 수행하고 deferred processing으로 넘길 수 있다. User request latency가 흔들릴 때 application code에 아무 변화가 없어도 interrupt load와 IRQ affinity가 원인일 수 있다. Per-CPU interrupt rate와 handler duration을 함께 본다.
+syscall entry/exit에는 일정한 overhead가 있지만 실제 call latency는 lock, page fault, scheduler, device I/O가 훨씬 크게 차지할 수 있다. “syscall이 느리다”는 말은 어느 구간이 느린지 분해해야 의미가 있다.
 
-## CHAPTER 10 · NMI류 event는 ordinary interrupt masking 규칙과 다른 emergency path다
+많은 tiny syscall을 batching하면 fixed overhead와 cache transition을 줄일 수 있다. 하지만 batch size가 커지면 latency와 cancellation granularity가 나빠진다.
 
-Non-maskable interrupt는 severe hardware event, watchdog, profiler 등에 사용될 수 있고 일반 lock/interrupt-disabled assumption이 통하지 않는 context에서 실행될 수 있다. NMI handler가 ordinary code와 같은 lock을 잡으면 deadlock 위험이 생길 수 있다. Logging/trace buffer도 NMI-safe operation을 별도로 요구할 수 있다. 특수 exception context의 programming rule은 normal kernel thread context와 구분한다.
+entry→handler→sleep→wakeup→exit를 trace한다. CPU cycles와 wall time을 따로 본다.
 
-## CHAPTER 11 · kernel stack은 thread의 privileged control flow를 저장하는 별도 resource다
+---
 
-각 task/thread가 kernel mode에서 syscall, fault, interrupt를 처리할 때 사용할 stack이 필요하다. Deep kernel call chain이나 large stack local을 남발하면 제한된 kernel stack을 소진할 수 있다. User stack 크기와 kernel stack 크기는 독립적이다. Stack trace에서 user→kernel boundary를 넘을 때 unwind mechanism도 달라질 수 있다. Kernel stack overflow는 ordinary user stack overflow보다 system stability 영향이 크다.
+## CHAPTER 05 · user copy는 untrusted pointer에서 kernel-owned buffer로 data를 이동한다
 
-## CHAPTER 12 · context switch는 register 저장만이 아니라 address-space와 scheduler accounting을 바꾼다
+kernel은 user pointer를 직접 신뢰할 수 없고 access 가능 범위를 검증하면서 copy해야 한다. copy 도중 page fault가 발생할 수 있고 user process가 concurrent하게 memory를 바꿀 가능성도 고려해야 한다.
 
-Scheduler가 task A에서 B로 전환하면 callee-saved register, stack pointer, architecture thread state를 저장/복원하고 current task metadata를 바꾼다. Process가 다르면 address-space root/page-table context도 전환될 수 있다. Same-process thread switch는 일부 memory context를 공유하므로 비용 구조가 다를 수 있다. Context-switch count만이 아니라 involuntary/voluntary reason, working-set migration, cache/TLB impact를 함께 본다.
+length overflow나 nested pointer를 검증하지 않으면 kernel memory corruption으로 이어진다. large copy는 cache와 memory bandwidth를 소비한다.
 
-## CHAPTER 13 · FPU/vector register state는 context switch 비용의 큰 상태가 될 수 있다
+syscall input size와 copy fault를 metric으로 둔다. zero-copy API로 바꿀 때 ownership과 pinning 비용까지 비교한다.
 
-Modern SIMD/vector extension은 수백~수천 byte의 register state를 가질 수 있다. OS는 task switch 시 이 state를 save/restore하거나 hardware/lazy mechanism을 사용할 수 있다. Wide-vector-heavy workload가 많은 thread를 자주 switch하면 register-state traffic이 증가할 수 있다. Security 문제 때문에 과거 lazy switching strategy가 바뀐 architecture도 있다. Scheduler benchmark는 integer-only task와 vector-heavy task의 switch 비용이 다를 수 있음을 고려한다.
+---
 
-## CHAPTER 14 · address-space identifier는 context switch 때 TLB 전체 flush를 피하는 데 사용될 수 있다
+## CHAPTER 06 · user-memory TOCTOU는 validation과 use 사이 mutation을 악용할 수 있다
 
-Page-table root가 바뀌어도 TLB entry에 ASID/PCID 같은 address-space tag를 붙이면 여러 process의 translation을 동시에 cache할 수 있다. Tag 재사용 시에는 stale translation을 안전하게 invalidate해야 한다. Address-space switch 비용은 CPU generation과 kernel configuration에 따라 크게 달라진다. Process-per-request와 thread-per-request의 비용을 비교할 때 TLB tagging behavior도 background factor다.
+kernel이 user struct를 한 번 검증한 뒤 나중에 같은 user address를 다시 읽으면 다른 thread가 그 사이 내용을 바꿀 수 있다. pointer, length, flag가 변하면 check한 object와 실제 사용 object가 달라진다.
 
-## CHAPTER 15 · kernel/user page-table isolation은 security와 transition cost를 교환할 수 있다
+필요한 metadata를 kernel buffer에 한 번 copy해 snapshot으로 사용하거나 atomic access protocol을 설계한다. path-based filesystem check도 유사한 identity race를 가진다.
 
-Speculative side-channel mitigation을 위해 user mode에서는 kernel mapping을 최소화하고 syscall/interrupt entry에서 별도 page-table context로 전환하는 정책을 사용할 수 있다. 이런 isolation은 transition마다 address-space switch와 TLB 관련 비용을 추가할 수 있다. 정확한 mitigation은 CPU vulnerability와 OS 설정에 따라 달라진다. Benchmark machine에서 mitigation을 끈 결과를 production 기본 설정 성능으로 보고하지 않는다.
+fuzzing에서 shared user memory를 concurrent mutation시킨다. validation 성공을 lifetime-long permission으로 해석하지 않는다.
 
-## CHAPTER 16 · speculation barrier와 predictor mitigation은 syscall/VM transition 비용을 바꾼다
+---
 
-Indirect branch predictor state, return stack, speculative data access에 대한 vulnerability 대응으로 barrier, predictor flush/control bit 같은 mitigation이 transition path에 추가될 수 있다. 모든 CPU가 동일 mitigation을 필요로 하지 않고 microcode/kernel update로 정책이 바뀔 수 있다. OS upgrade 후 syscall-heavy workload regression이 생기면 mitigation status와 CPU model을 함께 확인한다. Security control을 성능 때문에 임의 해제하지 않고 risk를 별도 평가한다.
+## CHAPTER 07 · vDSO는 일부 kernel 정보를 user mode에서 syscall 없이 읽게 한다
 
-## CHAPTER 17 · blocking syscall은 kernel 안에서 계속 CPU를 쓰는 상태와 다르다
+clock get 같은 operation은 kernel이 read-only/shared data와 user-space helper를 제공해 privilege transition을 피할 수 있다. vDSO fast path가 실패하거나 지원되지 않으면 syscall fallback을 사용할 수 있다.
 
-Read가 data를 기다리면 current task가 wait queue에 등록되고 scheduler가 다른 runnable task를 실행할 수 있다. Thread는 syscall frame을 유지하지만 CPU는 점유하지 않는다. Completion event가 task를 wake하면 run queue에서 다시 선택되어 syscall을 마치고 user로 돌아간다. 따라서 syscall wall time = kernel CPU time이 아니다. Off-CPU profile과 scheduler trace로 wait reason을 분리한다.
+user-space code가 kernel data update와 일관된 snapshot을 읽도록 sequence protocol이 필요하다. 단순 shared variable보다 정교한 consistency가 포함된다.
 
-## CHAPTER 18 · wakeup latency는 event completion과 user continuation 사이 시간이다
+benchmark에서 vDSO 사용 여부를 확인한다. container/architecture별 fallback 차이가 latency에 영향을 줄 수 있다.
 
-I/O가 완료되어 task가 runnable이 되어도 CPU가 즉시 배정된다는 보장은 없다. Run queue length, priority, affinity, CPU idle exit, preemption policy가 wakeup-to-run latency를 결정한다. Device latency가 일정한데 request p99가 늘면 scheduler wakeup delay를 조사한다. Completion timestamp, wakeup timestamp, scheduled-on timestamp를 같은 monotonic clock domain에서 수집한다.
+---
 
-## CHAPTER 19 · preemption은 kernel code가 언제 다른 task에 CPU를 넘길 수 있는지 정의한다
+## CHAPTER 08 · page fault는 user instruction에서 kernel memory-management path로 전환한다
 
-Kernel preemption configuration과 critical section은 scheduler latency에 영향을 준다. Spinlock/interrupt-disabled region에서는 즉시 task switch가 불가능할 수 있다. Low-latency workload는 긴 non-preemptible section을 찾는 trace가 중요하다. Throughput-oriented configuration은 더 큰 batching을 허용할 수 있다. `kernel time`을 하나로 뭉개지 말고 preempt-disabled duration과 scheduling delay를 구분한다.
+user load/store가 missing/protected page를 만나면 kernel fault handler가 mapping을 해결하거나 signal을 전달한다. application에는 ordinary memory access 한 줄로 보이지만 major fault면 storage I/O까지 포함될 수 있다.
 
-## CHAPTER 20 · signal delivery는 user return path에 새로운 frame/control flow를 삽입한다
+fault handling 중 scheduler가 다른 task를 실행할 수 있어 return latency가 길어진다. COW fault와 invalid pointer crash를 같은 category로 보지 않는다.
 
-Pending unblocked signal이 있으면 kernel은 user로 돌아가기 전에 signal handler가 실행되도록 user stack/register state를 구성할 수 있다. Handler가 끝나면 sigreturn류 mechanism으로 original context를 복원한다. Signal은 ordinary function call과 달리 비동기 지점에 들어오므로 async-signal-safe operation 제약이 있다. Handler에서 malloc/lock/stdio 같은 non-safe operation을 호출하면 deadlock이나 corruption 위험이 있다.
+fault address와 VMA, service time을 trace한다. startup에서 first-touch fault가 집중되는지 확인한다.
 
-## CHAPTER 21 · interrupted syscall은 EINTR, partial result, automatic restart 중 하나가 될 수 있다
+---
 
-Signal이 blocking syscall 중 도착하면 operation이 이미 일부 진행됐는지와 restart policy에 따라 결과가 달라진다. read/write가 일부 byte를 처리했다면 positive partial count를 반환할 수 있고, 아직 side effect가 없으면 EINTR 또는 automatic restart가 가능하다. Caller는 `실패면 처음부터 재시도`가 중복 side effect를 만드는지 확인해야 한다. API별 restart semantics를 문서로 확인한다.
+## CHAPTER 09 · interrupt entry는 현재 task와 무관한 external event를 kernel에 전달한다
 
-## CHAPTER 22 · restartable sequence는 짧은 per-CPU userspace operation의 preemption 문제를 줄인다
+device interrupt는 user process가 실행 중이어도 CPU를 kernel handler로 전환할 수 있다. interrupted task의 context는 나중에 이어서 실행할 수 있게 보존된다.
 
-일부 runtime은 per-CPU data update처럼 thread가 현재 CPU에 계속 있다는 가정이 필요한 매우 짧은 sequence를 수행한다. Kernel이 preempt/migrate하면 abort handler로 이동시켜 sequence를 재시작할 수 있는 mechanism이 restartable sequence다. 이를 통해 매 operation syscall/atomic cost를 줄일 수 있다. 하지만 signal, migration, registration ABI와 강하게 결합되므로 일반 application optimization으로 남용하지 않는다.
+high interrupt rate는 application instruction budget을 줄이고 cache locality를 깨뜨릴 수 있다. affinity가 한 CPU에 몰리면 특정 thread latency가 나빠진다.
 
-## CHAPTER 23 · seccomp filter는 syscall entry에서 추가 policy evaluation을 수행한다
+IRQ source, handler duration, interrupted workload를 연결한다. application regression이 code change 없이 device traffic 증가에서 올 수 있다.
 
-Sandbox가 syscall number/argument를 BPF-like filter로 검사하면 허용되지 않은 operation을 차단할 수 있다. Filter complexity와 logging/notification mode는 syscall-heavy workload에 overhead를 추가할 수 있다. Security policy를 단순화할 때는 performance보다 attack surface와 least privilege를 우선하고, 실제 overhead는 representative syscall mix로 측정한다. Allowlist 변경은 기능 regression test와 함께 관리한다.
+---
 
-## CHAPTER 24 · ptrace/debugging은 syscall·signal·exception 경계를 의도적으로 멈출 수 있다
+## CHAPTER 10 · NMI path는 일반 kernel lock assumption보다 강한 제약을 가진다
 
-Debugger/tracer는 syscall entry/exit, signal delivery, breakpoint에서 traced task를 stop하고 tracer process에 event를 전달할 수 있다. 이 과정은 context switch와 IPC를 추가해 timing-sensitive bug를 숨기거나 만들어 낼 수 있다. `strace를 붙이면 느려진다`는 단순 사실을 넘어 어떤 syscall이 얼마나 자주 stop되는지 이해해야 한다. Production profiling에는 더 낮은 overhead의 tracepoint/eBPF를 선택할 수 있다.
+NMI는 일반 interrupt mask 상태에서도 들어올 수 있어 이미 lock을 보유한 code를 interrupt할 수 있다. handler는 NMI-safe data structure와 logging만 사용해야 deadlock을 피한다.
 
-## CHAPTER 25 · probe/instrumentation은 entry path 자체의 비용을 변경한다
+watchdog NMI가 stack을 수집할 때 profiler/debugger와 경쟁할 수 있다. nested NMI 가능성도 platform-specific하게 관리한다.
 
-Kprobe/ftrace/eBPF가 syscall 또는 scheduler function에 attach되면 handler execution, ring-buffer write, stack collection이 추가된다. 고빈도 syscall에 heavy stack trace를 켜면 관측 비용이 workload보다 커질 수 있다. Lost event가 0인지, sampling/aggregation으로 줄일 수 있는지 확인한다. Instrumented 결과를 baseline과 비교해 probe overhead upper bound를 측정한다.
+NMI record는 root cause보다 관찰 mechanism일 수 있다. interrupted instruction과 prior stall을 분석한다.
 
-## CHAPTER 26 · copy 비용은 syscall count와 독립적인 성능 축이다
+---
 
-한 번의 write syscall로 1MB를 복사하는 것과 1,000번의 작은 write는 transition 수와 byte copy가 각각 다르다. Syscall batching은 entry overhead를 줄여도 memory copy bandwidth가 병목이면 speedup이 제한된다. Zero-copy/splice/mmap 같은 mechanism은 copy path를 줄일 수 있지만 lifetime, page pinning, ownership complexity를 추가한다. `syscall 줄임`과 `byte movement 줄임`을 별도 metric으로 본다.
+## CHAPTER 11 · kernel stack은 user stack과 분리된 privileged execution resource다
 
-## CHAPTER 27 · io_uring은 많은 I/O 제출·완료에서 transition을 batch하도록 설계될 수 있다
+syscall/interrupt handling은 trusted kernel stack에서 실행해 user가 stack content를 직접 조작하지 못하게 한다. per-task stack 크기는 제한되어 deep recursion과 large local buffer가 위험하다.
 
-Shared submission/completion ring을 사용하면 application이 여러 operation을 queue하고 kernel과 batch로 동기화할 수 있다. SQ polling 같은 mode는 syscall frequency를 더 줄이는 대신 dedicated CPU cost를 만들 수 있다. Registered buffer/file은 lookup/pinning 비용을 줄이지만 resource lifetime contract를 강화한다. P25 async engine과 user-kernel transition 비용을 연결해 실제 workload에 맞는 mode를 선택한다.
+context switch 시 kernel stack identity도 task와 함께 바뀐다. hardirq가 별도 stack을 사용할 수 있어 unwind가 이를 이해해야 한다.
 
-## CHAPTER 28 · shared memory는 data syscall을 줄이지만 synchronization syscall을 없애지는 않는다
+stack overflow guard와 usage high-water mark를 monitor한다. driver code의 large stack allocation을 review한다.
 
-두 process가 shared mapping에서 message를 주고받으면 payload copy/transition을 줄일 수 있다. 하지만 producer/consumer coordination에는 atomic, futex, eventfd 같은 mechanism이 필요하고 memory ordering을 직접 설계해야 한다. Large payload에는 유리할 수 있지만 crash isolation과 ownership recovery가 복잡해진다. Copy cost와 synchronization complexity를 함께 비교한다.
+---
 
-## CHAPTER 29 · transition benchmark는 empty syscall과 real workload를 분리한다
+## CHAPTER 12 · context switch는 scheduler decision을 register와 address-space state로 실현한다
 
-Minimal getpid-like path의 ns/op은 architecture transition lower bound에 가깝지만 real read/write/open에는 VFS, permission, copy, cache miss, device wait가 붙는다. Empty benchmark만 보고 storage/network application을 최적화하지 않는다. Perf/ftrace로 entry→handler→block/wakeup→exit 구간을 나누고 cycles, context switches, faults, copied bytes를 기록한다. Security mitigation 상태와 kernel version도 결과 metadata에 포함한다.
+현재 task의 register와 scheduling state를 저장하고 next task state를 복원한다. address space가 바뀌면 TLB/cache 영향이 추가될 수 있다. switch count가 많다는 사실보다 왜 task가 sleep/wakeup하는지가 중요하다.
 
-## CHAPTER 30 · user/kernel 경계의 최적화는 transition·copy·block·wakeup을 따로 측정한다
+oversubscription과 lock contention이 context switch를 늘리며, affinity migration은 cache locality를 악화시킨다.
 
-System-call-heavy path를 개선할 때 호출 횟수만 세지 말고 per-call byte, user-copy time, kernel CPU, off-CPU wait, wakeup latency, context switch, page fault를 분리한다. VDSO·batching·shared memory·async completion은 서로 다른 비용을 줄이는 도구다. Security policy와 correctness validation을 제거해 빠르게 만들지 않는다. 최종 검증은 실제 production syscall mix에서 latency distribution과 CPU/energy가 개선되는지로 판정한다.
+voluntary/involuntary switch와 runnable wait를 분리한다. CPU utilization만으로 scheduling health를 판단하지 않는다.
+
+---
+
+## CHAPTER 13 · vector/FPU state는 context switch에서 lazy/eager save 정책의 대상이 된다
+
+wide SIMD register는 많은 state를 가지므로 task 전환 때 저장·복원 비용이 존재한다. architecture/runtime은 사용 여부를 추적하거나 optimized mechanism을 적용할 수 있다.
+
+signal handler와 context API가 vector state를 제대로 보존하지 않으면 rare numerical corruption이 생길 수 있다. 새로운 ISA extension은 context structure 크기를 바꾼다.
+
+low-level coroutine/FFI가 custom context switch를 구현한다면 supported register set을 검증한다.
+
+---
+
+## CHAPTER 14 · address tag와 pointer metadata는 user/kernel boundary에서 해석 규칙이 필요하다
+
+일부 architecture는 pointer upper bit에 tag를 허용할 수 있다. kernel syscall이 user pointer tag를 그대로 허용하는지 제거하는지는 ABI에 따라 다르다. 잘못된 sanitization은 valid pointer를 거부하거나 security check를 우회할 수 있다.
+
+memory tagging과 debug allocator가 pointer representation을 바꿀 수 있어 integer cast와 FFI가 민감하다.
+
+syscall boundary test에서 tagged pointer behavior를 명시적으로 검증한다. architecture-specific assumption을 portable library에 숨기지 않는다.
+
+---
+
+## CHAPTER 15 · page-table isolation은 user와 kernel mapping visibility를 더 강하게 분리한다
+
+speculative side-channel mitigation을 위해 user mode에서 kernel mapping을 최소화하고 entry 시 page-table context를 전환하는 전략이 사용될 수 있다. 이는 TLB와 transition overhead를 늘릴 수 있다.
+
+security mitigation을 끄면 microbenchmark는 빨라질 수 있지만 threat model이 바뀐다. production config와 같은 조건에서 측정해야 한다.
+
+mitigation status와 syscall-heavy workload를 함께 benchmark한다. CPU generation별 비용 차이를 일반화하지 않는다.
+
+---
+
+## CHAPTER 16 · speculation mitigation은 privilege transition path에 additional serialization을 넣을 수 있다
+
+branch predictor state, return prediction, store bypass 같은 speculative mechanism이 privilege boundary 정보를 leak하지 않게 barrier·flush가 추가될 수 있다. mitigation 조합은 CPU와 vulnerability에 따라 다르다.
+
+모든 workload가 같은 overhead를 받는 것은 아니다. syscall/VM-exit 빈도가 높은 service가 더 민감할 수 있다.
+
+active mitigation과 microcode를 결과에 기록한다. security update 뒤 performance regression을 source code와 분리해 분석한다.
+
+---
+
+## CHAPTER 17 · blocking syscall은 kernel 안에서 task를 sleep state로 전환할 수 있다
+
+read, poll, futex 같은 syscall은 조건이 만족되지 않으면 current task를 wait queue에 등록하고 scheduler에 CPU를 양보한다. 함수가 kernel mode라고 계속 CPU를 사용하는 것은 아니다.
+
+wakeup condition과 timeout/cancel이 race할 수 있어 wait queue protocol이 정확해야 한다. signal이 interruption을 만들 수도 있다.
+
+syscall latency를 on-CPU와 off-CPU wait로 나눈다. longest wait의 wakeup source를 찾는다.
+
+---
+
+## CHAPTER 18 · wakeup latency는 event 발생부터 task가 실제 CPU를 얻기까지의 지연이다
+
+I/O가 완료되어 task가 runnable이 돼도 높은 priority work와 runqueue 때문에 바로 실행되지 않을 수 있다. latency-sensitive service는 device latency가 짧아도 scheduler delay로 p99가 나빠질 수 있다.
+
+CPU affinity와 cgroup quota가 runnable delay를 늘릴 수 있다. thread를 더 늘리면 오히려 queue가 커진다.
+
+wakeup timestamp와 scheduled-in timestamp를 trace한다. off-CPU profile에서 wait reason을 분리한다.
+
+---
+
+## CHAPTER 19 · kernel preemption model은 long kernel work가 task latency에 미치는 방식을 바꾼다
+
+kernel code가 어느 지점에서 higher-priority task에 CPU를 양보할 수 있는지 preemption configuration과 context가 결정한다. preempt-disabled critical section이 길면 wakeup된 task가 기다린다.
+
+throughput과 real-time latency가 서로 다른 trade-off를 가질 수 있다. driver가 불필요하게 preemption을 오래 막지 않게 한다.
+
+preempt-off latency tracer를 사용한다. configuration 차이를 benchmark 결과에 포함한다.
+
+---
+
+## CHAPTER 20 · signal delivery는 syscall return과 user context를 수정할 수 있다
+
+pending signal은 kernel이 user mode로 돌아가기 전에 handler frame을 준비하며 전달될 수 있다. blocking syscall 중 signal이 왔다면 interruption/restart semantics가 추가된다.
+
+handler가 runtime/library state를 건드리면 async-signal-safety 문제가 생긴다. multi-thread에서는 signal target selection도 중요하다.
+
+syscall, signal, handler entry를 같은 trace에 연결한다. random EINTR을 network bug로 오인하지 않는다.
+
+---
+
+## CHAPTER 21 · syscall restart는 interrupted operation의 partial progress를 고려해야 한다
+
+kernel/libc가 syscall을 자동 재시작할 수 있지만 모든 operation이 동일하지 않다. partial read/write가 이미 수행되면 전체 요청을 처음부터 반복해서는 안 된다.
+
+timeout은 restart 후 remaining time을 사용해야 end-to-end deadline을 지킬 수 있다. absolute deadline API가 유리한 이유다.
+
+fault test로 signal을 I/O 중간에 주입한다. byte count와 side effect를 검증한다.
+
+---
+
+## CHAPTER 22 · rseq는 짧은 per-CPU sequence를 migration 없이 실행하도록 돕는다
+
+restartable sequence 계열은 userspace가 current CPU와 per-CPU data를 빠르게 다루되 중간에 preemption/migration이 발생하면 sequence를 abort/restart하도록 지원한다. syscall 없이 fast path를 만들 수 있지만 exact ABI와 critical section 규칙이 필요하다.
+
+signal과 preemption이 sequence를 끊을 수 있어 state commit 위치를 명확히 해야 한다. misuse는 per-CPU data corruption을 만든다.
+
+runtime library 구현을 직접 복제하지 않는다. CPU migration stress로 semantics를 검증한다.
+
+---
+
+## CHAPTER 23 · seccomp는 syscall surface를 policy boundary로 제한한다
+
+seccomp filter는 process가 허용된 syscall과 argument pattern만 kernel에 요청하도록 제한해 sandbox attack surface를 줄인다. filter가 user input을 완전히 검증하는 것은 아니며 허용 syscall 내부 보안은 여전히 필요하다.
+
+필요한 syscall을 빠뜨리면 특정 rare feature에서만 process가 죽는다. broad allow를 추가해 문제를 덮으면 sandbox가 약해진다.
+
+violation syscall과 code path를 telemetry로 수집한다. policy 변경은 least-privilege 기준으로 review한다.
+
+---
+
+## CHAPTER 24 · ptrace는 다른 process state를 관찰·수정하는 강력한 debug boundary다
+
+ptrace 계열은 register, memory, syscall event를 관찰해 debugger와 tracer를 구현할 수 있다. 이 권한은 target process confidentiality와 integrity에 직접 영향을 줘 permission과 namespace policy가 중요하다.
+
+single-step/breakpoint가 target timing을 크게 바꾸고 signal delivery semantics에도 개입한다. ptrace로만 재현되는 race는 observer effect를 의심한다.
+
+production access를 제한하고 attachment audit를 남긴다. crash debugging용 권한을 상시 broad capability로 주지 않는다.
+
+---
+
+## CHAPTER 25 · probe overhead는 transition path를 측정하면서 그 path를 바꿀 수 있다
+
+syscall tracepoint, kprobe, eBPF를 모든 event에 걸면 high-frequency path에서 buffer와 execution overhead가 커진다. 문제를 보기 위해 켠 instrumentation이 latency를 악화시킬 수 있다.
+
+sampling, filtering, per-CPU buffer로 overhead를 제한한다. dropped event가 생기면 trace가 완전한 timeline이 아님을 표시해야 한다.
+
+instrumentation on/off performance를 비교한다. 관측 overhead budget을 SLO에 포함한다.
+
+---
+
+## CHAPTER 26 · copy cost는 syscall count보다 bytes와 memory hierarchy에 좌우된다
+
+user↔kernel data copy는 fixed transition 외에 실제 memory bandwidth와 cache pollution을 소비한다. large network/file I/O에서는 copy가 주요 CPU cost가 될 수 있다.
+
+batching, mmap, zero-copy는 copy를 줄이지만 pinning, lifetime, page fault 같은 다른 비용을 만든다. 작은 payload에서는 setup overhead가 더 크다.
+
+bytes copied per request와 cycles/byte를 측정한다. zero-copy를 이름만으로 선택하지 않는다.
+
+---
+
+## CHAPTER 27 · io_uring batching은 여러 I/O submission/completion의 transition 수를 줄인다
+
+shared ring과 batch submit을 사용하면 각 operation마다 syscall을 반복하는 fixed overhead를 줄일 수 있다. 그러나 queue depth와 completion handling이 새 backpressure point가 된다.
+
+ring에 너무 많은 request를 밀면 downstream device queue와 memory lifetime이 커진다. correctness는 descriptor/buffer ownership을 completion까지 유지해야 한다.
+
+syscall rate와 I/O latency를 함께 비교한다. batching으로 p99가 나빠지지 않는지 확인한다.
+
+---
+
+## CHAPTER 28 · shared memory는 user/kernel copy를 줄여도 synchronization 책임을 application에 넘긴다
+
+producer/consumer가 같은 page를 mapping하면 copy 없이 data를 교환할 수 있지만 ownership flag, memory ordering, lifetime을 직접 설계해야 한다. stale reader와 overwrite race가 생기기 쉽다.
+
+untrusted process 사이 shared memory는 data validation과 permission이 추가로 필요하다. huge shared region은 memory pressure를 만든다.
+
+sequence number와 generation으로 slot state를 검증한다. copy 절감과 synchronization CPU를 모두 측정한다.
+
+---
+
+## CHAPTER 29 · transition benchmark는 empty path와 realistic handler를 분리해야 한다
+
+empty syscall nanosecond 수치는 hardware/mitigation overhead를 보여 주지만 database·network request latency를 직접 예측하지 못한다. realistic benchmark는 pointer copy, scheduler wait, cache state를 포함한다.
+
+frequency scaling, ASLR, tracing 설정도 결과를 흔든다. 여러 반복과 CPU pinning을 사용한다.
+
+benchmark 목적을 fixed-overhead 측정인지 end-to-end 개선인지 명시한다. counter와 wall time을 함께 제시한다.
+
+---
+
+## CHAPTER 30 · user/kernel contract는 권한, memory, blocking, restart semantics를 명시한다
+
+system-call API는 argument ABI뿐 아니라 user pointer validation, partial result, signal interruption, blocking과 cancellation, security filter를 포함해야 한다. 호출자는 `return 0/-1`만 보고 side-effect boundary를 추측하면 안 된다.
+
+성능 최적화는 transition 자체, copy, queue wait 중 실제 병목을 측정한 뒤 batching·vDSO·shared-memory 같은 방법을 선택한다. security mitigation을 숨은 변수로 남기지 않는다.
+
+최종 검증은 signal, page fault, timeout, concurrent memory mutation을 주입해 **privilege boundary를 넘는 모든 state가 검증되고 복귀·실패 결과가 문서된 contract로 수렴하는지** 확인한다.

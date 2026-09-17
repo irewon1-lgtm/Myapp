@@ -1,0 +1,155 @@
+{
+  "trackId": "T07",
+  "title": "서버와 백엔드 — 요청 한 건에서 신뢰할 수 있는 서비스까지",
+  "evidencePolicy": {
+    "principle": "초보 설명은 쉬운 한국어로 다시 쓰되, 기술적 사실은 표준·공식 문서·최신 전문서에 연결한다.",
+    "cutoff": "2026-09-18",
+    "rules": [
+      "2025년 이후 출간된 전문서를 반드시 포함한다.",
+      "표준이나 공식 문서가 있는 주제는 블로그보다 원문을 우선한다.",
+      "보안 항목은 OWASP 공식 자료를 우선한다.",
+      "프레임워크 이름은 개념을 설명하기 위한 예시이지 암기 목표가 아니다.",
+      "DB 내부 구현은 TRACK 08, 보안 심화는 TRACK 09, 테스트·빌드·배포는 TRACK 10의 책임을 침범하지 않는다."
+    ]
+  },
+  "sources": [
+    {
+      "id": "FSA2-2025",
+      "title": "Fundamentals of Software Architecture, 2nd Edition",
+      "authors": "Mark Richards, Neal Ford",
+      "publisher": "O'Reilly Media",
+      "published": "2025-03",
+      "url": "https://www.oreilly.com/library/view/fundamentals-of-software/9781098175504/",
+      "use": ["modularity", "architecture trade-offs", "boundaries", "architecture decisions"]
+    },
+    {
+      "id": "DWA2-2025",
+      "title": "The Design of Web APIs, Second Edition",
+      "authors": "Arnaud Lauret",
+      "publisher": "Manning",
+      "published": "2025-06",
+      "url": "https://www.manning.com/books/the-design-of-web-apis-second-edition",
+      "use": ["API contract", "resource design", "compatibility", "OpenAPI", "versioning"]
+    },
+    {
+      "id": "SECAPI-2025",
+      "title": "Secure APIs",
+      "authors": "José Haro Peralta",
+      "publisher": "Manning",
+      "published": "2025-10",
+      "url": "https://www.manning.com/books/secure-apis",
+      "use": ["API security", "zero trust", "authorization", "monitoring", "threat boundaries"]
+    },
+    {
+      "id": "DDIA2-2026",
+      "title": "Designing Data-Intensive Applications, 2nd Edition",
+      "authors": "Martin Kleppmann, Chris Riccomini",
+      "publisher": "O'Reilly Media",
+      "published": "2026-02",
+      "url": "https://www.oreilly.com/library/view/designing-data-intensive-applications/9781098119058/",
+      "use": ["reliability", "distributed systems", "derived data", "streaming", "consistency trade-offs"]
+    },
+    {
+      "id": "RFC9110",
+      "title": "RFC 9110 — HTTP Semantics",
+      "publisher": "IETF",
+      "published": "2022-06",
+      "url": "https://www.rfc-editor.org/rfc/rfc9110.html",
+      "use": ["methods", "status codes", "semantics", "idempotency"]
+    },
+    {
+      "id": "RFC9457",
+      "title": "RFC 9457 — Problem Details for HTTP APIs",
+      "publisher": "IETF",
+      "published": "2023-07",
+      "url": "https://www.rfc-editor.org/rfc/rfc9457.html",
+      "use": ["machine-readable error responses", "problem details"]
+    },
+    {
+      "id": "NODE-HTTP",
+      "title": "Node.js HTTP API",
+      "publisher": "OpenJS Foundation",
+      "url": "https://nodejs.org/api/http.html",
+      "use": ["HTTP server", "request", "response", "timeouts", "connection lifecycle"]
+    },
+    {
+      "id": "NODE-ASYNCCTX",
+      "title": "Node.js Async Context / AsyncLocalStorage",
+      "publisher": "OpenJS Foundation",
+      "url": "https://nodejs.org/api/async_context.html",
+      "use": ["request context", "correlation data across async calls"]
+    },
+    {
+      "id": "NODE-PROCESS",
+      "title": "Node.js Process API",
+      "publisher": "OpenJS Foundation",
+      "url": "https://nodejs.org/api/process.html",
+      "use": ["signals", "environment", "graceful shutdown"]
+    },
+    {
+      "id": "TS-HANDBOOK",
+      "title": "TypeScript Handbook",
+      "publisher": "Microsoft",
+      "url": "https://www.typescriptlang.org/docs/handbook/intro.html",
+      "use": ["types", "narrowing", "interfaces", "unknown", "compile-time contracts"]
+    },
+    {
+      "id": "JSONSCHEMA-2020-12",
+      "title": "JSON Schema Draft 2020-12",
+      "publisher": "JSON Schema",
+      "published": "2022-06-16",
+      "url": "https://json-schema.org/draft/2020-12",
+      "use": ["runtime data shape", "validation schema", "API contracts"]
+    },
+    {
+      "id": "OPENAPI",
+      "title": "OpenAPI Specification",
+      "publisher": "OpenAPI Initiative",
+      "url": "https://spec.openapis.org/oas/latest.html",
+      "use": ["API description", "operations", "schemas", "documentation"]
+    },
+    {
+      "id": "OWASP-API-2023",
+      "title": "OWASP API Security Top 10 — 2023",
+      "publisher": "OWASP",
+      "published": "2023",
+      "url": "https://api-security.owasp.org/editions/2023/en/0x11-t10/",
+      "use": ["BOLA", "broken authentication", "property authorization", "resource consumption", "SSRF"]
+    },
+    {
+      "id": "OWASP-CHEATSHEETS",
+      "title": "OWASP Cheat Sheet Series",
+      "publisher": "OWASP",
+      "url": "https://cheatsheetseries.owasp.org/",
+      "use": ["authentication", "session management", "password storage", "secrets", "SSRF defenses"]
+    },
+    {
+      "id": "OTEL-HTTP",
+      "title": "OpenTelemetry Semantic Conventions for HTTP Spans",
+      "publisher": "OpenTelemetry",
+      "url": "https://opentelemetry.io/docs/specs/semconv/http/http-spans/",
+      "use": ["server spans", "routes", "HTTP attributes", "distributed tracing"]
+    },
+    {
+      "id": "OTEL-GEN",
+      "title": "OpenTelemetry Documentation",
+      "publisher": "OpenTelemetry",
+      "url": "https://opentelemetry.io/docs/",
+      "use": ["traces", "metrics", "logs", "context propagation"]
+    },
+    {
+      "id": "GOOGLE-SRE",
+      "title": "Site Reliability Engineering / The Site Reliability Workbook",
+      "publisher": "Google",
+      "url": "https://sre.google/books/",
+      "use": ["latency", "reliability", "SLO", "monitoring", "overload", "incident evidence"]
+    },
+    {
+      "id": "PATTERNS-RELIABILITY",
+      "title": "Azure Architecture Center — Reliability patterns",
+      "publisher": "Microsoft",
+      "url": "https://learn.microsoft.com/azure/architecture/patterns/",
+      "use": ["retry", "circuit breaker", "bulkhead", "queue", "compensation", "outbox-related patterns"]
+    }
+  ]
+}

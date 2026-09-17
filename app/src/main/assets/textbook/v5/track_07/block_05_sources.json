@@ -1,0 +1,20 @@
+{
+  "partId": "T07-P05",
+  "lessons": [
+    {"lessonId":"T07-B05-L61-sync-async","sourceIds":["DWA2-2025","FSA2-2025"]},
+    {"lessonId":"T07-B05-L62-queue-job-worker","sourceIds":["DDIA2-2026","FSA2-2025"]},
+    {"lessonId":"T07-B05-L63-at-least-once","sourceIds":["DDIA2-2026"]},
+    {"lessonId":"T07-B05-L64-retry","sourceIds":["GOOGLE-SRE","PATTERNS-RELIABILITY"]},
+    {"lessonId":"T07-B05-L65-dlq","sourceIds":["DDIA2-2026","GOOGLE-SRE"]},
+    {"lessonId":"T07-B05-L66-ordering","sourceIds":["DDIA2-2026"]},
+    {"lessonId":"T07-B05-L67-lease","sourceIds":["DDIA2-2026","GOOGLE-SRE"]},
+    {"lessonId":"T07-B05-L68-idempotent-consumer","sourceIds":["DDIA2-2026"]},
+    {"lessonId":"T07-B05-L69-saga-compensation","sourceIds":["DDIA2-2026","PATTERNS-RELIABILITY"]},
+    {"lessonId":"T07-B05-L70-webhook-receiver","sourceIds":["SECAPI-2025","OWASP-CHEATSHEETS"]},
+    {"lessonId":"T07-B05-L71-webhook-sender","sourceIds":["DWA2-2025","GOOGLE-SRE"]},
+    {"lessonId":"T07-B05-L72-cost-budget","sourceIds":["OWASP-API-2023","GOOGLE-SRE"]},
+    {"lessonId":"T07-B05-L73-scheduler","sourceIds":["DDIA2-2026","GOOGLE-SRE"]},
+    {"lessonId":"T07-B05-L74-batch","sourceIds":["DDIA2-2026","GOOGLE-SRE"]},
+    {"lessonId":"T07-B05-L75-capstone","sourceIds":["DDIA2-2026","GOOGLE-SRE","PATTERNS-RELIABILITY"]}
+  ]
+}

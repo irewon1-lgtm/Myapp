@@ -1,0 +1,20 @@
+{
+  "partId":"T07-P07",
+  "sections":[
+    {"sectionId":"T07-P07-S01-unknown-boundary","sourceIds":["TS-HANDBOOK","OWASP-API"]},
+    {"sectionId":"T07-P07-S02-schema-contract","sourceIds":["OPENAPI31","TS-HANDBOOK"]},
+    {"sectionId":"T07-P07-S03-required-nullable","sourceIds":["OPENAPI31","TS-HANDBOOK"]},
+    {"sectionId":"T07-P07-S04-number-rules","sourceIds":["TS-HANDBOOK","OWASP-API"]},
+    {"sectionId":"T07-P07-S05-string-rules","sourceIds":["TS-HANDBOOK","OWASP-API"]},
+    {"sectionId":"T07-P07-S06-format-separation","sourceIds":["OPENAPI31","OWASP-API"]},
+    {"sectionId":"T07-P07-S07-unknown-field","sourceIds":["OWASP-API","OPENAPI31"]},
+    {"sectionId":"T07-P07-S08-coercion","sourceIds":["TS-HANDBOOK","OPENAPI31"]},
+    {"sectionId":"T07-P07-S09-collection-bounds","sourceIds":["OWASP-API","SRE"]},
+    {"sectionId":"T07-P07-S10-discriminated-union","sourceIds":["TS-HANDBOOK","OPENAPI31"]},
+    {"sectionId":"T07-P07-S11-cross-field","sourceIds":["OPENAPI31","DDIA"]},
+    {"sectionId":"T07-P07-S12-shared-state-rules","sourceIds":["DDIA","OWASP-API"]},
+    {"sectionId":"T07-P07-S13-schema-evolution","sourceIds":["OPENAPI31","DDIA"]},
+    {"sectionId":"T07-P07-S14-error-path","sourceIds":["OPENAPI31","OWASP-API"]},
+    {"sectionId":"T07-P07-S15-validation-lab","sourceIds":["OPENAPI31","TS-HANDBOOK","OWASP-API"]}
+  ]
+}

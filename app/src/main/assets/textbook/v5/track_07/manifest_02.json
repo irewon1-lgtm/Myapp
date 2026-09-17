@@ -1,0 +1,13 @@
+{
+  "trackId": "T07",
+  "trackNumber": 7,
+  "title": "서버와 백엔드 — 요청 한 건에서 신뢰할 수 있는 서비스까지",
+  "parts": [
+    {"id":"T07-P10","order":10,"title":"BLOCK 01 · LESSON 10 · response DTO와 serialization으로 내부 상태와 외부 계약을 분리하기","assetPath":"textbook/v5/track_07/part_10_response_serialization.md","sourceMapPath":"textbook/v5/track_07/part_10_sources.json","prerequisiteConceptIds":[]},
+    {"id":"T07-P11","order":11,"title":"BLOCK 01 · LESSON 11 · async handler에서 대기·병렬성·실패·취소를 분리하기","assetPath":"textbook/v5/track_07/part_11_async_handlers.md","sourceMapPath":"textbook/v5/track_07/part_11_sources.json","prerequisiteConceptIds":[]},
+    {"id":"T07-P12","order":12,"title":"BLOCK 01 · LESSON 12 · request context와 correlation을 동시 요청 속에서 보존하기","assetPath":"textbook/v5/track_07/part_12_request_context.md","sourceMapPath":"textbook/v5/track_07/part_12_sources.json","prerequisiteConceptIds":[]},
+    {"id":"T07-P13","order":13,"title":"BLOCK 01 · LESSON 13 · config와 secret을 실행 계약으로 관리하기","assetPath":"textbook/v5/track_07/part_13_config_secrets.md","sourceMapPath":"textbook/v5/track_07/part_13_sources.json","prerequisiteConceptIds":[]},
+    {"id":"T07-P14","order":14,"title":"BLOCK 01 · LESSON 14 · graceful shutdown으로 새 요청과 진행 중 책임을 분리하기","assetPath":"textbook/v5/track_07/part_14_graceful_shutdown.md","sourceMapPath":"textbook/v5/track_07/part_14_sources.json","prerequisiteConceptIds":[]},
+    {"id":"T07-P15","order":15,"title":"BLOCK 01 · LESSON 15 · 요청 한 건을 입구부터 종료까지 직접 구현하는 첫 종합 실습","assetPath":"textbook/v5/track_07/part_15_request_pipeline_capstone.md","sourceMapPath":"textbook/v5/track_07/part_15_sources.json","prerequisiteConceptIds":[]}
+  ]
+}

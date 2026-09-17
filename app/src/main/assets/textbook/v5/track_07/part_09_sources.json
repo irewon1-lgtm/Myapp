@@ -1,0 +1,20 @@
+{
+  "partId":"T07-P09",
+  "sections":[
+    {"sectionId":"T07-P09-S01-failure-taxonomy","sourceIds":["SRE","OPENAPI31"]},
+    {"sectionId":"T07-P09-S02-parser-error","sourceIds":["RFC9110","OPENAPI31"]},
+    {"sectionId":"T07-P09-S03-validation-error","sourceIds":["OPENAPI31","OWASP-API"]},
+    {"sectionId":"T07-P09-S04-not-found-authorization","sourceIds":["OWASP-API","OPENAPI31"]},
+    {"sectionId":"T07-P09-S05-conflict","sourceIds":["RFC9110","DDIA"]},
+    {"sectionId":"T07-P09-S06-timeout-unknown","sourceIds":["SRE","DDIA"]},
+    {"sectionId":"T07-P09-S07-programmer-bug","sourceIds":["SRE","NIST-SSDF"]},
+    {"sectionId":"T07-P09-S08-cause-chain","sourceIds":["SRE","SRE-WORKBOOK"]},
+    {"sectionId":"T07-P09-S09-machine-readable-error","sourceIds":["OPENAPI31","RFC9110"]},
+    {"sectionId":"T07-P09-S10-status-semantics","sourceIds":["RFC9110","SRE"]},
+    {"sectionId":"T07-P09-S11-sensitive-error","sourceIds":["OWASP-API","NIST-SSDF"]},
+    {"sectionId":"T07-P09-S12-retry-policy","sourceIds":["SRE","DDIA"]},
+    {"sectionId":"T07-P09-S13-error-metrics","sourceIds":["SRE-WORKBOOK","SRE"]},
+    {"sectionId":"T07-P09-S14-incident-triage","sourceIds":["SRE-WORKBOOK","SRE"]},
+    {"sectionId":"T07-P09-S15-error-lab","sourceIds":["SRE","OPENAPI31","OWASP-API"]}
+  ]
+}

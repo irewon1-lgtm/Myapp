@@ -1,0 +1,20 @@
+{
+  "partId":"T07-P05",
+  "sections":[
+    {"sectionId":"T07-P05-S01-body-bytes","sourceIds":["RFC9110","SRE"]},
+    {"sectionId":"T07-P05-S02-content-type","sourceIds":["RFC9110","OPENAPI31"]},
+    {"sectionId":"T07-P05-S03-charset","sourceIds":["RFC9110","OWASP-API"]},
+    {"sectionId":"T07-P05-S04-parsing-validation","sourceIds":["OPENAPI31","OWASP-API"]},
+    {"sectionId":"T07-P05-S05-number-precision","sourceIds":["DDIA","TS-HANDBOOK"]},
+    {"sectionId":"T07-P05-S06-duplicate-member","sourceIds":["OWASP-API","DDIA"]},
+    {"sectionId":"T07-P05-S07-body-size-budget","sourceIds":["OWASP-API","SRE"]},
+    {"sectionId":"T07-P05-S08-compression-budget","sourceIds":["OWASP-API","SRE"]},
+    {"sectionId":"T07-P05-S09-form-multipart","sourceIds":["RFC9110","OWASP-API"]},
+    {"sectionId":"T07-P05-S10-file-upload","sourceIds":["OWASP-API","NIST-SSDF"]},
+    {"sectionId":"T07-P05-S11-streaming-parser","sourceIds":["SRE","DDIA"]},
+    {"sectionId":"T07-P05-S12-partial-upload","sourceIds":["SRE","DDIA"]},
+    {"sectionId":"T07-P05-S13-parser-errors","sourceIds":["OPENAPI31","SRE"]},
+    {"sectionId":"T07-P05-S14-parsing-observability","sourceIds":["SRE-WORKBOOK","SRE"]},
+    {"sectionId":"T07-P05-S15-parsing-lab","sourceIds":["RFC9110","OWASP-API","SRE"]}
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "partId": "T07-P07",
+  "lessons": [
+    {"lessonId":"T07-B07-L91-api-contract","sourceIds":["DWA2-2025","RFC9110"]},
+    {"lessonId":"T07-B07-L92-openapi-jsonschema","sourceIds":["OPENAPI","JSONSCHEMA-2020-12","DWA2-2025"]},
+    {"lessonId":"T07-B07-L93-backward-compatibility","sourceIds":["DWA2-2025","FSA2-2025"]},
+    {"lessonId":"T07-B07-L94-versioning-deprecation","sourceIds":["DWA2-2025"]},
+    {"lessonId":"T07-B07-L95-contract-test","sourceIds":["DWA2-2025","FSA2-2025"]},
+    {"lessonId":"T07-B07-L96-test-double","sourceIds":["FSA2-2025"]},
+    {"lessonId":"T07-B07-L97-edge-property-tests","sourceIds":["DWA2-2025","SECAPI-2025"]},
+    {"lessonId":"T07-B07-L98-load-test","sourceIds":["GOOGLE-SRE"]},
+    {"lessonId":"T07-B07-L99-modular-monolith","sourceIds":["FSA2-2025"]},
+    {"lessonId":"T07-B07-L100-worker-entrypoints","sourceIds":["FSA2-2025","DDIA2-2026"]},
+    {"lessonId":"T07-B07-L101-microservices-tradeoffs","sourceIds":["FSA2-2025","DDIA2-2026"]},
+    {"lessonId":"T07-B07-L102-distributed-consistency","sourceIds":["DDIA2-2026"]},
+    {"lessonId":"T07-B07-L103-ai-review","sourceIds":["FSA2-2025","SECAPI-2025"]},
+    {"lessonId":"T07-B07-L104-secure-capstone","sourceIds":["DWA2-2025","SECAPI-2025","OWASP-API-2023"]},
+    {"lessonId":"T07-B07-L105-clean-pass","sourceIds":["GOOGLE-SRE","DWA2-2025","SECAPI-2025","DDIA2-2026"]}
+  ]
+}

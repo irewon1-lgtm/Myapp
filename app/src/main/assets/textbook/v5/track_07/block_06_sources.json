@@ -1,0 +1,20 @@
+{
+  "partId": "T07-P06",
+  "lessons": [
+    {"lessonId":"T07-B06-L76-latency-throughput","sourceIds":["GOOGLE-SRE","DDIA2-2026"]},
+    {"lessonId":"T07-B06-L77-event-loop-blocking","sourceIds":["NODE-HTTP","GOOGLE-SRE"]},
+    {"lessonId":"T07-B06-L78-connection-pool","sourceIds":["GOOGLE-SRE","DDIA2-2026"]},
+    {"lessonId":"T07-B06-L79-timeout-deadline","sourceIds":["GOOGLE-SRE","PATTERNS-RELIABILITY"]},
+    {"lessonId":"T07-B06-L80-retry-amplification","sourceIds":["GOOGLE-SRE","PATTERNS-RELIABILITY"]},
+    {"lessonId":"T07-B06-L81-breaker-bulkhead","sourceIds":["PATTERNS-RELIABILITY","GOOGLE-SRE"]},
+    {"lessonId":"T07-B06-L82-backpressure-shedding","sourceIds":["GOOGLE-SRE","DDIA2-2026"]},
+    {"lessonId":"T07-B06-L83-health","sourceIds":["GOOGLE-SRE"]},
+    {"lessonId":"T07-B06-L84-structured-logs","sourceIds":["OTEL-GEN","GOOGLE-SRE"]},
+    {"lessonId":"T07-B06-L85-metrics","sourceIds":["OTEL-GEN","GOOGLE-SRE"]},
+    {"lessonId":"T07-B06-L86-tracing","sourceIds":["OTEL-HTTP","OTEL-GEN"]},
+    {"lessonId":"T07-B06-L87-correlation","sourceIds":["NODE-ASYNCCTX","OTEL-GEN"]},
+    {"lessonId":"T07-B06-L88-cardinality","sourceIds":["OTEL-HTTP","GOOGLE-SRE"]},
+    {"lessonId":"T07-B06-L89-slo","sourceIds":["GOOGLE-SRE"]},
+    {"lessonId":"T07-B06-L90-incident-debugging","sourceIds":["GOOGLE-SRE","OTEL-GEN","DDIA2-2026"]}
+  ]
+}

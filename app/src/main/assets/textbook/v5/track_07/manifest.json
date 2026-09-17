@@ -1,0 +1,16 @@
+{
+  "trackId": "T07",
+  "trackNumber": 7,
+  "title": "서버와 백엔드 — 요청 한 건에서 신뢰할 수 있는 서비스까지",
+  "parts": [
+    {"id":"T07-P01","order":1,"title":"BLOCK 01 · LESSON 01 · 서버·프로세스·포트를 첫 요청으로 연결하기","assetPath":"textbook/v5/track_07/part_01_server_process_port.md","sourceMapPath":"textbook/v5/track_07/part_01_sources.json","prerequisiteConceptIds":[]},
+    {"id":"T07-P02","order":2,"title":"BLOCK 01 · LESSON 02 · request와 response의 실제 수명주기 읽기","assetPath":"textbook/v5/track_07/part_02_request_response_lifecycle.md","sourceMapPath":"textbook/v5/track_07/part_02_sources.json","prerequisiteConceptIds":["T07-P01-S06-listen-lifecycle","T07-P01-S07-connection-vs-http"]},
+    {"id":"T07-P03","order":3,"title":"BLOCK 01 · LESSON 03 · route와 handler를 요청 분배 계약으로 설계하기","assetPath":"textbook/v5/track_07/part_03_routing_handlers.md","sourceMapPath":"textbook/v5/track_07/part_03_sources.json","prerequisiteConceptIds":["T07-P02-S01-request-runtime-object","T07-P02-S02-method-semantics","T07-P02-S03-target-query-parsing"]},
+    {"id":"T07-P04","order":4,"title":"BLOCK 01 · LESSON 04 · path·query·header·body를 역할별 입력 계약으로 나누기","assetPath":"textbook/v5/track_07/part_04_input_channels.md","sourceMapPath":"textbook/v5/track_07/part_04_sources.json","prerequisiteConceptIds":["T07-P03-S03-path-parameter","T07-P03-S06-query-contract","T07-P02-S04-header-trust"]},
+    {"id":"T07-P05","order":5,"title":"BLOCK 01 · LESSON 05 · body parsing과 크기 제한을 business logic보다 앞에서 다루기","assetPath":"textbook/v5/track_07/part_05_body_parsing_limits.md","sourceMapPath":"textbook/v5/track_07/part_05_sources.json","prerequisiteConceptIds":["T07-P02-S05-body-stream","T07-P04-S04-body-payload","T07-P04-S10-content-negotiation"]},
+    {"id":"T07-P06","order":6,"title":"BLOCK 01 · LESSON 06 · middleware를 순서가 있는 request pipeline으로 이해하기","assetPath":"textbook/v5/track_07/part_06_middleware_pipeline.md","sourceMapPath":"textbook/v5/track_07/part_06_sources.json","prerequisiteConceptIds":["T07-P05-S01-body-bytes","T07-P05-S13-parser-errors","T07-P02-S14-lifecycle-observation"]},
+    {"id":"T07-P07","order":7,"title":"BLOCK 01 · LESSON 07 · runtime validation으로 외부 값을 신뢰 가능한 application input으로 좁히기","assetPath":"textbook/v5/track_07/part_07_runtime_validation.md","sourceMapPath":"textbook/v5/track_07/part_07_sources.json","prerequisiteConceptIds":["T07-P06-S07-validation-middleware","T07-P05-S04-parsing-validation","T07-P04-S06-missing-null"]},
+    {"id":"T07-P08","order":8,"title":"BLOCK 01 · LESSON 08 · normalization과 default로 의미를 바꾸지 않고 표현을 정리하기","assetPath":"textbook/v5/track_07/part_08_normalization_defaults.md","sourceMapPath":"textbook/v5/track_07/part_08_sources.json","prerequisiteConceptIds":["T07-P07-S02-schema-contract","T07-P07-S03-required-nullable","T07-P07-S08-coercion"]},
+    {"id":"T07-P09","order":9,"title":"BLOCK 01 · LESSON 09 · 오류를 실패 원인·HTTP 표현·운영 증거로 분리하기","assetPath":"textbook/v5/track_07/part_09_error_contracts.md","sourceMapPath":"textbook/v5/track_07/part_09_sources.json","prerequisiteConceptIds":["T07-P06-S13-error-middleware","T07-P07-S14-error-path","T07-P02-S06-status-semantics"]}
+  ]
+}

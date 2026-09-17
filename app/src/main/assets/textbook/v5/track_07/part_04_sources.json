@@ -1,0 +1,20 @@
+{
+  "partId":"T07-P04",
+  "sections":[
+    {"sectionId":"T07-P04-S01-path-identity","sourceIds":["RFC9110","OPENAPI31"]},
+    {"sectionId":"T07-P04-S02-query-selection","sourceIds":["OPENAPI31","OWASP-API"]},
+    {"sectionId":"T07-P04-S03-header-metadata","sourceIds":["RFC9110","OPENAPI31"]},
+    {"sectionId":"T07-P04-S04-body-payload","sourceIds":["RFC9110","OPENAPI31"]},
+    {"sectionId":"T07-P04-S05-input-precedence","sourceIds":["OWASP-API","OPENAPI31"]},
+    {"sectionId":"T07-P04-S06-missing-null","sourceIds":["OPENAPI31","TS-HANDBOOK"]},
+    {"sectionId":"T07-P04-S07-repeated-query","sourceIds":["OPENAPI31","OWASP-API"]},
+    {"sectionId":"T07-P04-S08-sort-allowlist","sourceIds":["OWASP-API","DDIA"]},
+    {"sectionId":"T07-P04-S09-pagination-input","sourceIds":["OPENAPI31","DDIA"]},
+    {"sectionId":"T07-P04-S10-content-negotiation","sourceIds":["RFC9110","OPENAPI31"]},
+    {"sectionId":"T07-P04-S11-forwarded-trust","sourceIds":["RFC9110","OWASP-API"]},
+    {"sectionId":"T07-P04-S12-credential-location","sourceIds":["OWASP-API","RFC9110"]},
+    {"sectionId":"T07-P04-S13-tenant-actor","sourceIds":["OWASP-API","DDIA"]},
+    {"sectionId":"T07-P04-S14-input-infrastructure-effects","sourceIds":["RFC9110","SRE"]},
+    {"sectionId":"T07-P04-S15-input-lab","sourceIds":["OPENAPI31","OWASP-API","RFC9110"]}
+  ]
+}

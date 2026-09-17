@@ -1,0 +1,20 @@
+{
+  "partId":"T07-P15",
+  "sections":[
+    {"sectionId":"T07-P15-S01-capstone-contract","sourceIds":["OPENAPI31","NIST-SSDF"]},
+    {"sectionId":"T07-P15-S02-capstone-startup","sourceIds":["SRE","NIST-SSDF"]},
+    {"sectionId":"T07-P15-S03-capstone-pipeline","sourceIds":["SRE","OPENAPI31"]},
+    {"sectionId":"T07-P15-S04-capstone-parse","sourceIds":["OWASP-API","OPENAPI31"]},
+    {"sectionId":"T07-P15-S05-capstone-normalize","sourceIds":["DDIA","TS-HANDBOOK"]},
+    {"sectionId":"T07-P15-S06-capstone-handler","sourceIds":["OPENAPI31","NIST-SSDF"]},
+    {"sectionId":"T07-P15-S07-capstone-repository","sourceIds":["DDIA","SRE"]},
+    {"sectionId":"T07-P15-S08-capstone-response","sourceIds":["OPENAPI31","OWASP-API"]},
+    {"sectionId":"T07-P15-S09-capstone-errors","sourceIds":["RFC9110","SRE"]},
+    {"sectionId":"T07-P15-S10-capstone-async","sourceIds":["SRE","DDIA"]},
+    {"sectionId":"T07-P15-S11-capstone-context","sourceIds":["SRE-WORKBOOK","SRE"]},
+    {"sectionId":"T07-P15-S12-capstone-budget","sourceIds":["OWASP-API","SRE"]},
+    {"sectionId":"T07-P15-S13-capstone-shutdown","sourceIds":["SRE","SRE-WORKBOOK"]},
+    {"sectionId":"T07-P15-S14-human-ai","sourceIds":["NIST-SSDF","SRE"]},
+    {"sectionId":"T07-P15-S15-clean-check","sourceIds":["SRE-WORKBOOK","NIST-SSDF","OWASP-API"]}
+  ]
+}

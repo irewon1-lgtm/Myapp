@@ -1,123 +1,245 @@
 # PART 54 · Crash Atomicity and Recovery — WAL, shadow state, commit records, replay
 
-Persistent state를 바꾸는 operation은 정상 실행 중 invariant뿐 아니라 **임의 instruction·write·flush 사이에서 전원이 꺼졌을 때 남는 prefix state**까지 안전해야 한다. Crash consistency는 `파일이 안 깨짐`보다 강한 문제다. 여러 block/record가 하나의 logical transaction을 이룰 때 old state 또는 new state 중 허용된 결과로만 복구되도록 write ordering, commit marker, checksum, log replay, copy-on-write protocol을 설계해야 한다.
+Crash recovery의 목표는 “재시작하면 열린다”가 아니다. Operation 중간 어느 시점에 전원이 끊겨도 **committed state는 보존되고 uncommitted state는 노출되지 않으며, recovery를 반복해도 같은 결과**가 나와야 한다. 이를 위해 write ordering, log, commit record, generation, checksum, rename, checkpoint가 서로 맞물린다. 이 PART는 logical atomicity에서 시작해 WAL·shadow paging·backup·replica durability까지 복구 프로토콜의 경계를 추적한다.
 
-## CHAPTER 01 · atomicity는 logical operation과 physical write 개수가 다를 때 문제로 드러난다
+---
 
-`balance A 감소 + balance B 증가`처럼 한 operation이 여러 persistent location을 바꾸면 storage는 그 둘을 한 번에 원자적으로 쓰지 않을 수 있다. 첫 write 후 crash하면 money가 사라지고 두 번째만 남으면 생긴다. File metadata와 data, index와 row, manifest와 segment도 같은 구조다. Logical atomicity를 얻으려면 physical write sequence 중 어느 prefix가 남아도 recovery가 old/new invariant로 수렴하도록 protocol을 둔다. Application transaction과 device sector atomicity를 같은 것으로 취급하지 않는다.
+## CHAPTER 01 · logical atomicity는 여러 physical write를 하나의 관찰 가능한 변화로 묶는다
 
-## CHAPTER 02 · torn write는 한 logical block이 old/new byte가 섞인 상태로 남을 가능성이다
+Application operation 하나가 data page, index, metadata 여러 곳을 수정해도 외부 reader는 old state 또는 new state 중 하나만 보아야 할 수 있다. Storage는 이 여러 write를 자동으로 하나의 atomic unit으로 만들지 않으므로 log나 copy-on-write 같은 protocol이 필요하다.
 
-Storage가 특정 write unit의 atomicity를 보장하지 않거나 failure가 controller/media 중간에서 발생하면 page/block 일부만 새 data가 될 수 있다. Filesystem과 DB는 checksum, page LSN, double-write buffer 같은 기법으로 torn/corrupt page를 검출·복구할 수 있다. `write()가 한 번 호출됨`은 media write atomicity 크기를 보장하지 않는다. Hardware/filesystem guarantee를 문서로 확인하고 더 큰 application page를 한 write로 썼다는 사실을 원자성 근거로 쓰지 않는다.
+Atomicity는 durability와 다르다. Operation이 all-or-nothing으로 보이더라도 crash 후 사라질 수 있고, durable하더라도 partial state가 노출될 수 있다. 두 축을 분리해 설계한다.
 
-## CHAPTER 03 · write ordering은 crash 후 어떤 prefix 조합이 가능한지를 제한한다
+Recovery invariant는 구체적으로 적는다. 예를 들어 “commit record가 durable하지 않으면 old generation만 유효하다”처럼 crash 후 선택 규칙이 있어야 test oracle을 만들 수 있다.
 
-A를 persist한 뒤 B를 persist해야 한다는 protocol에서 CPU/kernel/device가 B를 먼저 media에 반영할 수 있으면 recovery assumption이 깨진다. Program order, kernel dirty-page order, device queue completion order, persistence order는 같은 개념이 아니다. Barrier/flush/FUA/fsync 같은 mechanism은 특정 계층의 ordering/durability를 강화한다. Protocol proof는 `A persist-before B` 같은 relation을 명시하고 각 relation을 어떤 primitive가 보장하는지 매핑해야 한다.
+## CHAPTER 02 · torn write는 하나의 논리 block이 부분적으로만 바뀌는 failure다
 
-## CHAPTER 04 · commit record는 `변경이 완전히 준비됨`을 작은 durable fact로 압축한다
+Storage sector나 filesystem block보다 큰 write는 crash 시 앞부분은 새 data, 뒷부분은 old data가 남는 torn state가 될 수 있다. Hardware atomic write unit을 가정하려면 실제 device guarantee를 확인해야 한다. 단순 `write(4096)` 호출 크기가 atomicity를 보장하지 않는다.
 
-Large transaction의 모든 data page를 먼저 준비·persist한 뒤 작은 commit marker를 마지막에 durable하게 만들면 recovery는 marker 존재 여부로 old/new 선택을 할 수 있다. Commit record 자체가 torn/corrupt되지 않는 보장 또는 checksum/duplicate strategy가 필요하다. Marker를 쓰기 전에 모든 dependency가 stable해야 하고 marker 이후 cleanup은 crash해도 semantic result를 바꾸지 않아야 한다. Commit point를 명확하게 정의하면 acknowledgement와 durability의 경계를 설명할 수 있다.
+Page header에 checksum과 generation을 두면 torn/corrupt page를 탐지할 수 있다. 하지만 탐지만으로 복구할 copy가 생기는 것은 아니므로 log, duplicate page, parity 같은 redundancy가 필요하다.
 
-## CHAPTER 05 · WAL은 data page보다 redo/undo information을 먼저 durable하게 만든다
+Fault injection은 record 중간을 잘라 읽는 case를 포함한다. Parser가 일부 field를 그럴듯하게 읽고 진행하지 않도록 integrity check를 먼저 적용한다.
 
-Write-Ahead Logging의 핵심은 modified data page가 persistent state에 나타나기 전에 그 변경을 복구할 충분한 log가 stable해야 한다는 순서다. Crash 후 log를 replay해 committed change를 redo하거나 uncommitted change를 undo할 수 있다. Log record에 transaction id, page/record identity, before/after info, sequence/LSN을 어떻게 담는지는 system마다 다르다. WAL file이 존재한다고 write-ahead rule이 지켜지는 것은 아니며 page flush와 log flush ordering이 실제 invariant다.
+## CHAPTER 03 · write ordering은 crash 후 먼저 보이면 안 되는 state를 제어한다
 
-## CHAPTER 06 · redo logging은 stable old page와 committed log에서 new state를 재구성한다
+Data를 쓰고 pointer를 갱신하는 protocol에서 pointer가 먼저 durable해지면 crash 후 미완성 data를 가리킬 수 있다. Source code의 syscall 순서가 device persistence 순서와 같다고 가정하지 않는다. Buffering, filesystem, storage cache가 reorder할 수 있다.
 
-Redo-oriented protocol은 data page가 아직 old여도 committed log record를 다시 적용해 new state로 만들 수 있다. Replay operation은 같은 record를 여러 번 적용해도 결과가 변하지 않도록 page LSN/version으로 중복 적용을 막거나 idempotent하게 설계한다. Recovery 중 다시 crash할 수 있으므로 recovery 자체도 restartable해야 한다. Log replay 성공 후 checkpoint/truncation을 언제 해도 안전한지 separate invariant가 필요하다.
+필요한 ordering point에서 fsync/flush를 사용하고 다음 단계로 넘어간다. Ordering barrier 수는 latency와 직접 연결되므로 batching과 group commit이 중요한 최적화가 된다.
 
-## CHAPTER 07 · undo logging은 uncommitted modification을 old state로 되돌릴 정보를 보존한다
+Crash matrix에서 각 persistence boundary 전후를 끊어 recovery 결과를 확인한다. 문서상 순서보다 실제 fault test가 최종 증거다.
 
-Data page를 commit 전에 persistent하게 쓸 수 있는 steal policy에서는 uncommitted value가 media에 남을 수 있어 before-image 또는 inverse operation이 필요하다. Crash recovery는 transaction commit status를 보고 uncommitted change를 undo한다. Undo record가 data write보다 먼저 durable하지 않으면 old value를 잃는다. Logical undo가 side-effect-free인지, index/secondary structure까지 되돌릴 수 있는지 확인한다. External side effect는 database undo만으로 되돌릴 수 없다.
+## CHAPTER 04 · commit record는 ‘이 transaction의 새 state가 완성됐다’를 표시하는 durable marker다
 
-## CHAPTER 08 · ARIES류 recovery는 analysis·redo·undo를 분리해 complex buffer policy를 다룬다
+여러 변경을 먼저 기록하고 마지막에 작은 commit marker를 durable하게 쓰면 recovery는 marker 존재 여부로 transaction을 redo하거나 무시할 수 있다. Commit record가 atomic하게 판별 가능하도록 checksum·length·transaction id를 포함할 수 있다.
 
-Buffer manager가 dirty page를 자유롭게 flush하고 committed page를 즉시 쓰지 않는 steal/no-force policy를 사용하면 recovery는 어떤 transaction/page가 어느 상태였는지 reconstruct해야 한다. Analysis phase로 dirty page/transaction table을 복원하고 redo로 history를 repeat한 뒤 loser transaction을 undo하는 구조가 가능하다. Compensation log record는 undo 자체가 crash 후 재개 가능하도록 progress를 기록한다. 이름 암기보다 buffer policy가 recovery algorithm을 왜 복잡하게 만드는지 연결한다.
+중요한 것은 commit marker가 data보다 먼저 durable해지지 않게 하는 것이다. Log flush ordering이 여기서 핵심이다.
 
-## CHAPTER 09 · checkpoint는 log 전체 replay 비용을 줄이되 recovery truth를 잃지 않아야 한다
+Application이 success를 반환하는 시점도 commit durability와 맞춰야 한다. Marker가 memory에만 있는 상태에서 success를 반환하면 process crash 후 acknowledged transaction이 사라질 수 있다.
 
-Checkpoint가 현재 dirty page와 transaction state를 기록하면 recovery가 log beginning부터 읽지 않고 더 최근 위치에서 시작할 수 있다. Checkpoint 생성 중에도 transaction과 page write가 계속될 수 있어 fuzzy checkpoint는 완전 stop-the-world snapshot이 아니다. Checkpoint record와 page LSN이 함께 recovery start point를 결정한다. Log truncation은 checkpoint가 필요한 history를 완전히 대체한 뒤에만 가능하다.
+## CHAPTER 05 · WAL은 data page보다 먼저 변경 의도를 durable log에 기록한다
 
-## CHAPTER 10 · log truncation은 disk-space cleanup이 아니라 recovery horizon 변경이다
+Write-Ahead Logging에서는 data page를 제자리에서 바꾸기 전에 해당 변경을 재현할 log record를 안정적으로 기록한다. Crash 후 data page가 old/new/partial 어느 상태든 log를 기준으로 일관된 state를 재구성할 수 있다.
 
-Old WAL segment를 삭제하면 그 시점 이전 state를 redo/replication/backup recovery에 사용할 수 없게 된다. Standby replica, incremental backup, snapshot이 old LSN을 요구하면 truncation을 늦춰야 한다. Retention leak은 disk full을 만들고 aggressive deletion은 recovery chain을 끊는다. Minimum required LSN을 여러 consumer 중 최솟값으로 계산하고 consumer progress를 observability에 노출한다.
+WAL은 append 성격 덕분에 sequential I/O와 group commit에 유리하지만 log space 관리와 checkpoint가 필요하다. Log 자체도 torn/corrupt record를 처리해야 한다.
 
-## CHAPTER 11 · shadow paging은 old page를 덮어쓰지 않고 새 page tree를 만든다
+LSN과 page generation 같은 ordering metadata를 사용하면 page가 어느 log 위치까지 반영했는지 판단할 수 있다. Recovery가 무작정 전체 log를 재적용하지 않게 한다.
 
-Copy-on-write persistent structure는 modification을 새 block/page에 기록하고 모든 child가 준비된 뒤 root pointer를 atomically 새 tree로 전환한다. Crash가 root switch 전에 나면 old tree, 이후면 new tree를 사용한다. In-place undo log 없이 atomicity를 얻을 수 있지만 unchanged page reference 관리, space reclamation, fragmentation이 비용이다. Root/metadata update의 atomicity와 durability가 전체 protocol의 commit point가 된다.
+## CHAPTER 06 · redo는 committed 변경을 다시 적용해 missing data page write를 보완한다
 
-## CHAPTER 12 · copy-on-write filesystem은 block graph versioning과 free-space accounting을 함께 해결해야 한다
+Commit된 transaction의 data page가 crash 전에 disk에 내려가지 않았더라도 redo log가 durable하면 recovery가 변경을 다시 적용할 수 있다. Redo operation은 가능하면 idempotent하거나 page LSN 비교로 중복 적용을 막는다.
 
-새 extent/tree node를 만들고 parent pointer를 새 version으로 연결하면 old block을 보존할 수 있다. 그러나 crash 후 어느 block이 reachable인지, allocation metadata가 double allocate되지 않는지, old snapshot이 reference하는 block을 언제 free할지가 복잡해진다. Reference count/space map도 자체 crash-consistency protocol이 필요하다. `데이터를 덮어쓰지 않는다`만으로 metadata corruption이 사라지는 것은 아니다.
+Redo가 logical operation인지 physical byte change인지에 따라 recovery가 필요한 context가 다르다. Logical redo는 schema/index state에 의존할 수 있고 physical redo는 format version과 page layout에 강하게 묶인다.
 
-## CHAPTER 13 · double-write는 torn page를 detection+replacement 가능한 duplicate로 바꾼다
+Recovery test는 일부 page만 write된 상태에서 redo가 최종 committed image를 만드는지 검증한다. Redo 중 다시 crash한 뒤 재시작하는 case도 포함한다.
 
-Main location에 large page를 쓰기 전에 별도 contiguous/stable area에 page copy를 먼저 durable하게 쓰고, main write가 crash로 torn되면 recovery가 double-write copy에서 복원할 수 있다. 추가 write bandwidth와 space를 비용으로 내고 hardware atomic-write unit보다 큰 page를 보호한다. Double-write area 자체의 record boundary, checksum, generation을 검증해야 wrong page를 복원하지 않는다.
+## CHAPTER 07 · undo는 아직 commit되지 않은 변경이 data page에 노출된 경우 되돌린다
 
-## CHAPTER 14 · checksum은 partial/corrupt state를 검출하지만 어느 copy가 최신인지 알려 주지 않는다
+Steal policy처럼 uncommitted dirty page가 disk에 기록될 수 있으면 crash recovery가 해당 변경을 취소할 정보가 필요하다. Undo log는 이전 값이나 inverse operation을 보존해 rollback을 가능하게 한다.
 
-두 page copy 모두 checksum이 valid해도 하나는 old generation이고 하나는 new generation일 수 있다. Version/LSN/generation counter를 함께 저장해 recency를 판단해야 한다. Checksum field 자체가 data와 같은 failure domain에 있어 attacker protection도 제공하지 않는다. Recovery는 checksum valid + identity/version valid를 모두 확인한다. Silent corruption과 crash partial write를 같은 detector로 잡을 수 있어도 repair policy는 다를 수 있다.
+Undo 자체가 crash 중 중단될 수 있으므로 recovery를 반복해도 안전해야 한다. Compensation record 같은 mechanism은 “이 undo가 이미 수행됐다”는 정보를 남길 수 있다.
 
-## CHAPTER 15 · generation counter는 ABA와 stale metadata를 persistent state에서도 구분한다
+Transaction abort path와 crash recovery path가 같은 undo logic을 공유하더라도 failure model은 다르다. Recovery에는 application object와 thread state가 없다는 점을 고려한다.
 
-Slot/page id가 재사용되면 old pointer가 같은 physical location을 다시 가리키며 stale reference가 새 object를 valid하게 보일 수 있다. Generation을 identity에 포함하면 recovery가 old reference를 거부할 수 있다. Counter wraparound 가능성과 serialized width를 고려한다. Free-list/allocator metadata에서도 page number만으로 ownership을 판단하지 않고 epoch/generation과 commit state를 함께 둔다.
+## CHAPTER 08 · ARIES류 recovery는 analysis·redo·undo를 분리해 복잡한 WAL 상태를 재구성한다
 
-## CHAPTER 16 · manifest/index 파일은 immutable segment 집합의 commit pointer 역할을 할 수 있다
+전형적인 recovery algorithm은 먼저 log를 분석해 dirty page와 active transaction을 찾고, 필요한 변경을 redo한 뒤 loser transaction을 undo한다. 핵심은 crash 당시 buffer pool의 정확한 memory state가 사라졌어도 log metadata만으로 안전한 시작점을 계산하는 것이다.
 
-LSM/archive/search index는 data segment를 immutable하게 생성한 뒤 작은 manifest에 현재 active segment list를 기록할 수 있다. 새 segment가 완전히 durable하기 전 manifest가 참조하면 crash 후 missing data가 되고, old segment를 manifest switch 전에 삭제하면 rollback이 불가능하다. Sequence는 create→sync segment→write/sync new manifest→atomic replace→sync directory→old cleanup처럼 구성될 수 있다. Cleanup은 commit 이후 crash해도 correctness가 유지되어야 한다.
+Checkpoint는 analysis 범위를 줄이지만 crash 순간 checkpoint 자체가 완성되지 않았을 수 있다. Recovery가 incomplete checkpoint를 구분해야 한다.
 
-## CHAPTER 17 · atomic rename은 namespace 전환에 유용하지만 content durability까지 포함하지 않는다
+알고리즘을 구현할 때 단계 이름을 복제하는 것보다 각 record type의 invariant와 LSN ordering을 정확히 지키는 것이 중요하다.
 
-동일 filesystem 안에서 rename이 atomic namespace switch를 제공해 reader가 old/new filename 중 하나만 보게 할 수 있다. 그러나 temp file content가 stable하지 않거나 directory update가 crash 후 사라질 수 있으면 persistent commit은 완성되지 않는다. Rename semantic과 fsync ordering을 filesystem contract로 확인한다. Cross-filesystem rename은 같은 guarantee를 갖지 않을 수 있어 staging path를 target filesystem 안에 둔다.
+## CHAPTER 09 · checkpoint는 log 전체를 매번 재생하지 않도록 recovery 시작점을 앞당긴다
 
-## CHAPTER 18 · directory durability는 file content durability와 별도 metadata commit이다
+System이 오래 실행되면 WAL이 계속 커져 startup recovery 시간이 늘 수 있다. Checkpoint는 어느 시점까지의 dirty state와 transaction 정보를 정리해 그 이전 log에 대한 의존성을 줄인다.
 
-새 file을 create하거나 rename으로 name→inode mapping을 바꾸면 directory metadata가 persistent해야 crash 후 name이 존재한다. File 자체를 fsync해도 containing directory entry가 durable하다는 보장이 별도일 수 있다. Atomic-replace protocol에서 directory fsync를 빠뜨리면 test machine에서 대부분 성공해도 sudden power loss에서 target name이 old/missing 상태가 될 수 있다. Platform guarantee와 required durability level을 명확히 한다.
+Checkpoint를 위해 모든 writer를 완전히 멈출 필요는 없다. Fuzzy checkpoint는 동시 변경을 허용하되 recovery가 필요한 metadata를 기록한다. 대신 reasoning이 더 복잡해진다.
 
-## CHAPTER 19 · append log도 sector boundary와 length prefix 때문에 torn tail을 처리해야 한다
+Checkpoint frequency는 normal I/O overhead, log space, recovery time objective의 trade-off다. 평균 throughput만 보고 너무 드물게 만들지 않는다.
 
-Log record를 sequential append하면 overwrite보다 단순하지만 crash가 record 중간에 나면 tail에 partial header/body가 남을 수 있다. Length + checksum + sequence를 사용해 recovery scanner가 마지막 완전 record까지만 인정하고 partial tail을 truncate할 수 있다. Length field가 corrupt해 huge allocation/seek를 유도하지 않도록 maximum을 검증한다. `EOF까지 읽다가 parse error면 끝` 같은 느슨한 rule은 중간 corruption을 tail로 오인할 수 있다.
+## CHAPTER 10 · log truncation은 더 이상 recovery에 필요하지 않은 prefix만 제거해야 한다
 
-## CHAPTER 20 · group commit은 여러 transaction의 durability flush를 하나로 batch한다
+Checkpoint가 있다고 바로 이전 WAL을 삭제할 수 있는 것은 아니다. Replica, backup, long transaction이 오래된 log를 아직 필요로 할 수 있다. 가장 느린 consumer와 recovery horizon을 기준으로 안전한 truncation point를 계산한다.
 
-각 transaction마다 storage flush를 기다리면 latency와 device command overhead가 크다. 여러 commit record를 log에 append하고 한 번의 fsync/flush로 모두 durable하게 만든 뒤 각 waiter를 깨우면 throughput을 높일 수 있다. Batch wait time이 latency를 추가하므로 workload arrival에 따라 adaptive policy가 필요하다. Acknowledgement는 shared flush가 실제 성공한 뒤에만 나가야 하며 flush failure는 batch의 모든 transaction에 전달된다.
+잘못된 truncation은 평상시에는 드러나지 않다가 특정 crash 또는 restore에서 치명적으로 나타난다. “디스크가 찼다”는 이유로 오래된 log를 임의 삭제하면 안 된다.
 
-## CHAPTER 21 · asynchronous commit은 acknowledged durability 수준을 명확히 낮춘다
+Retention metric에 oldest required LSN과 consumer별 lag을 포함한다. 누가 log reclamation을 막는지 알 수 있어야 한다.
 
-Client에게 commit 성공을 먼저 응답하고 WAL/data flush를 background로 미루면 latency를 줄일 수 있지만 crash 시 이미 성공 응답한 최근 transaction을 잃을 수 있다. 이는 bug가 아니라 선택된 durability contract일 수 있다. API/SLA가 `process crash`와 `power loss`에서 허용하는 data-loss window를 명시해야 한다. Sync/async commit mode를 혼용하면 transaction별 guarantee를 telemetry에 남긴다.
+## CHAPTER 11 · shadow paging은 기존 page를 덮지 않고 새 copy와 root 전환으로 commit한다
 
-## CHAPTER 22 · idempotent recovery는 같은 log/action을 여러 번 재생해도 안전해야 한다
+변경된 page를 새 위치에 쓰고 마지막에 root pointer를 새 tree/generation으로 원자적으로 전환하면 uncommitted state가 old root를 손상시키지 않는다. Commit 전 crash면 old root를, 이후 crash면 new root를 선택한다.
 
-Recovery 중 다시 crash하면 다음 boot에서 같은 record를 재처리할 수 있다. Page LSN이 already-applied record를 건너뛰거나 operation 자체를 idempotent하게 설계해야 한다. External effect replay는 duplicate email/payment처럼 되돌리기 어려우므로 durable outbox + consumer idempotency key가 필요하다. Recovery algorithm을 `한 번만 실행됨` 가정으로 설계하지 않는다.
+장점은 undo log가 필요 없을 수 있다는 점이지만 page copy와 fragmentation, garbage collection 비용이 생긴다. Root metadata 자체의 torn write도 보호해야 한다.
 
-## CHAPTER 23 · write-ahead outbox는 database commit과 message publish 사이 gap을 persistent하게 만든다
+Recovery는 여러 root copy의 generation과 checksum을 비교해 최신 valid one을 선택할 수 있다. 단순 timestamp보다 monotonic generation이 안전하다.
 
-DB row update와 queue publish를 두 독립 system에 수행하면 하나만 성공할 수 있다. 같은 DB transaction에 outbox record를 함께 commit하고 별도 publisher가 outbox를 읽어 message를 반복 publish하면 DB state와 publish intent의 atomicity를 얻을 수 있다. Consumer는 duplicate publish를 견뎌야 하고 outbox cleanup은 delivery checkpoint 뒤에 이루어진다. Exactly-once라는 표면 목표보다 at-least-once + idempotent processing의 실제 invariant를 정의한다.
+## CHAPTER 12 · copy-on-write filesystem도 old/new tree를 유지하지만 application transaction과 동일하지 않다
 
-## CHAPTER 24 · recovery는 schema/version evolution도 함께 처리해야 한다
+CoW filesystem은 metadata/data block을 새 위치에 쓰고 tree pointer를 갱신해 crash consistency를 제공할 수 있다. 하지만 application이 여러 file에 걸친 business transaction을 수행할 때 그 전체를 하나의 atomic commit으로 묶어준다고 가정하면 안 된다.
 
-Old log/page가 previous binary format인데 new recovery code가 current struct만 이해하면 upgrade 직후 crash에서 복구가 실패할 수 있다. Persistent log record에 version을 두고 support window 동안 old decoder를 유지하거나 upgrade 전에 checkpoint/format migration을 완료한다. Rollback 가능성을 요구하면 new writer가 old reader가 이해 가능한 log를 쓰는 기간이 필요하다. P52 compatibility가 recovery path에도 적용된다.
+Filesystem atomicity unit과 application invariant는 계층이 다르다. Database는 CoW filesystem 위에서도 자체 WAL을 사용할 수 있다.
 
-## CHAPTER 25 · backup은 crash recovery와 다른 failure domain을 보호한다
+Storage stack의 lower-layer guarantee를 활용하되 중복되지 않는 application-level requirement를 별도로 정의한다.
 
-WAL/replica가 같은 corruption/bug를 그대로 복제하면 application bug에 의한 data 삭제를 되돌릴 수 없다. Backup은 더 긴 retention과 independent storage/failure domain을 제공하며 restore 가능한 snapshot + required log chain을 관리한다. Backup 성공 log만으로 충분하지 않고 정기 restore test가 필요하다. Recovery point objective와 recovery time objective를 log retention/checkpoint 주기와 연결한다.
+## CHAPTER 13 · double-write는 torn page를 복구할 두 번째 copy를 먼저 확보한다
 
-## CHAPTER 26 · replica acknowledgement는 durability quorum의 의미를 명확히 해야 한다
+Data page를 final location에 덮기 전에 별도 double-write area에 완전한 copy를 durable하게 기록하면 crash 후 final page가 torn되었을 때 복구 source를 얻을 수 있다. 이는 checksum이 탐지만 제공하는 한계를 보완한다.
 
-Distributed store에서 leader local memory에만 쓴 상태, leader disk에 fsync한 상태, follower memory/disk까지 복제된 상태는 failure tolerance가 다르다. `replicated`라는 말이 어느 단계인지 protocol contract를 확인한다. Quorum acknowledgement는 node failure를 견딜 수 있지만 correlated power/storage/network failure와 stale replica selection 문제를 별도 다룬다. DDIA의 replication/consensus 관점과 local crash atomicity를 연결한다.
+추가 write 때문에 amplification이 생기므로 hardware atomic write나 filesystem feature와의 관계를 평가한다. 하지만 실제 failure model을 제거하지 않은 채 성능 이유로 생략하면 corruption risk가 돌아온다.
 
-## CHAPTER 27 · recovery correctness는 invariant와 allowed outcomes를 먼저 정의해야 한다
+Recovery는 어느 copy가 더 최신이며 valid한지 generation/LSN으로 판정해야 한다. 두 copy 모두 존재한다는 사실만으로 충분하지 않다.
 
-Crash 후 정확히 new state 하나만 요구할 수도 있고 old/new 둘 중 하나는 허용하지만 hybrid는 금지할 수도 있다. Counter가 중복 증가하지 않음, index와 row가 일치함, allocation block이 두 owner에게 속하지 않음 같은 invariant를 machine-checkable oracle로 만든다. `DB가 열림`이나 `파일 parse됨`은 충분한 recovery proof가 아니다. P49 crash matrix가 이 invariant를 각 prefix에서 검증한다.
+## CHAPTER 14 · checksum은 corruption 검출과 format version validation을 함께 돕는다
 
-## CHAPTER 28 · fault injection은 persistence layer 실제 ordering을 충분히 흉내 내지 못할 수 있다
+Page/record checksum은 torn write와 bit corruption을 찾는 데 유용하다. Version과 generation을 checksum 범위에 포함하면 header 일부가 잘못 해석되는 위험도 줄일 수 있다.
 
-Application function 사이에서 process를 kill하는 simulation은 kernel/device reorder와 volatile cache loss를 완전히 재현하지 않는다. Filesystem emulator, power-cut hardware, storage fault injection은 더 강한 evidence지만 비용과 운영 위험이 크다. Test 수준별 failure model을 명시하고 weaker simulation 결과를 physical power-loss PASS로 과장하지 않는다. 서로 다른 CLEAN은 실제로 다른 failure type을 실행해야 한다.
+Checksum algorithm을 바꾸는 format evolution에서는 reader가 어느 algorithm을 적용할지 version metadata가 필요하다. Unknown checksum type을 단순 skip하면 integrity guarantee가 약해진다.
 
-## CHAPTER 29 · recovery performance도 availability contract의 일부다
+Recovery 과정에서도 checksum failure를 무시하지 않는다. 가능한 replica/backup copy로 복구하거나 명시적 corruption error를 내야 한다.
 
-Log가 수 TB 쌓인 뒤 crash recovery가 수시간 걸리면 data는 안전해도 service RTO를 만족하지 못한다. Checkpoint frequency, parallel redo, index rebuild, lazy recovery가 startup time을 바꾼다. Normal operation에서 checkpoint 비용을 아끼면 recovery time이 커지는 trade-off가 있다. Production-size dataset으로 restart/recovery benchmark를 수행하고 progress metric을 제공한다.
+## CHAPTER 15 · generation number는 old valid copy와 new valid copy의 순서를 결정한다
 
-## CHAPTER 30 · crash-consistency 계약은 persist-before relation과 recovery algorithm을 함께 증명한다
+CoW root, manifest, snapshot이 여러 copy로 남아 있을 때 checksum만으로는 어느 것이 최신인지 알 수 없다. Monotonic generation을 함께 기록하면 crash 후 가장 높은 valid generation을 선택할 수 있다.
 
-Persistent update를 설계할 때 logical invariant, physical write set, required ordering, commit point, crash prefix별 allowed state, recovery procedure를 문서화한다. 각 `A persist-before B` relation이 fsync/flush/FUA/transaction 중 어떤 primitive로 보장되는지 연결한다. Recovery는 반복 실행 가능하고 corrupt/torn record를 fail-closed해야 한다. 정상-path test만으로 완료하지 않고 P49 deterministic crash matrix와 실제 storage guarantee 범위에서 검증한다.
+Generation wraparound와 duplicate write를 고려해 충분한 width와 비교 규칙을 정한다. Distributed writer가 여러 개라면 단순 local counter보다 stronger coordination이 필요할 수 있다.
+
+Recovery test는 new generation header만 write되고 payload가 invalid한 case에서 old valid generation으로 fallback하는지 확인한다.
+
+## CHAPTER 16 · manifest는 여러 data file의 현재 generation을 작은 metadata로 묶을 수 있다
+
+LSM, archive, dataset format은 data file을 immutable하게 만들고 작은 manifest가 현재 active set을 가리키도록 설계할 수 있다. 새 data를 모두 durable하게 만든 뒤 manifest를 원자적으로 교체하면 commit point가 작아진다.
+
+Manifest 자체가 손상될 수 있으므로 checksum, previous copy, generation을 둔다. Reference된 file이 실제 존재하고 hash가 맞는지 startup validation이 필요하다.
+
+Garbage collection은 old manifest가 더 이상 참조하지 않는 file만 제거해야 한다. Reader가 old generation을 사용 중인지 lifetime을 고려한다.
+
+## CHAPTER 17 · atomic rename은 namespace publish에는 강력하지만 file content durability 전체를 대신하지 않는다
+
+같은 filesystem 안에서 rename이 atomic하게 보일 수 있어 temp file을 final name으로 publish하는 데 유용하다. Reader는 old 또는 new path target 중 하나를 본다. 그러나 temp file content가 stable storage에 있는지와 directory entry가 power loss 후 남는지는 별도 sync가 필요할 수 있다.
+
+`write temp → fsync temp → rename → fsync directory` 같은 pattern은 이 계층 차이를 반영한다. 정확한 필요 단계는 filesystem semantics를 확인한다.
+
+Crash test에서 rename 직후 power loss를 넣어 이름과 내용이 함께 기대대로 복구되는지 검증한다.
+
+## CHAPTER 18 · directory durability는 file data durability와 다른 metadata 경계다
+
+새 file을 생성하거나 rename하면 directory entry가 바뀐다. File 자체를 fsync해도 directory metadata가 crash 후 보존된다는 보장이 자동으로 따라오지 않을 수 있다. Application이 파일 존재 자체를 commit indicator로 사용한다면 중요하다.
+
+Directory fsync 지원과 semantics는 filesystem/platform마다 차이가 있을 수 있다. Portable code는 지원 범위를 명시한다.
+
+Fault test는 “파일 내용은 device에 있지만 이름이 old state”인 case를 고려한다. Recovery가 orphan temp를 어떻게 처리할지도 정한다.
+
+## CHAPTER 19 · log tail은 crash로 잘린 마지막 record를 정상적으로 무시할 수 있어야 한다
+
+Append 중 crash하면 마지막 record의 header만 있거나 payload 일부만 있을 수 있다. Recovery scanner는 length, checksum, sequence를 이용해 마지막 완전한 record까지 읽고 이후 tail을 버릴 수 있어야 한다.
+
+Malformed length가 log file 밖을 가리키면 parser가 거대한 allocation을 하지 않게 range-check한다. Tail corruption과 중간 corruption은 의미가 다를 수 있다. 중간 record 손상은 이후 log 신뢰성을 더 크게 깨뜨린다.
+
+Replay 후 안전한 offset에서 log를 truncate/rollover할 수 있다. Partial record를 다음 append와 이어 붙이지 않는다.
+
+## CHAPTER 20 · group commit은 여러 transaction이 하나의 flush 비용을 공유한다
+
+Storage flush는 비쌀 수 있으므로 여러 transaction의 log record를 모아 한 번의 durable flush로 commit하면 throughput이 크게 늘 수 있다. 대신 첫 transaction이 batch가 채워질 때까지 기다려 latency가 증가할 수 있다.
+
+Batch size와 max wait time을 함께 설정해 throughput과 tail latency를 조절한다. Load가 낮을 때도 지나치게 기다리지 않게 한다.
+
+Commit acknowledgement는 해당 transaction record가 포함된 flush 완료 후에만 보낸다. Queue에 들어갔다는 사실과 durable group commit을 구분한다.
+
+## CHAPTER 21 · async commit은 latency를 줄이는 대신 최근 acknowledged data 손실 가능성을 받아들일 수 있다
+
+일부 system은 transaction을 logical commit으로 처리하고 WAL flush를 뒤로 미뤄 response를 빠르게 할 수 있다. Process crash는 견딜 수 있어도 host power loss에서는 최근 commit이 사라질 수 있다. 이 trade-off를 사용자가 이해할 수 있는 durability tier로 표현해야 한다.
+
+모든 data에 같은 policy를 적용할 필요는 없다. Telemetry와 financial transaction의 durability 요구가 다를 수 있다.
+
+Metric에는 durable LSN과 acknowledged LSN gap을 두어 risk window를 관측한다. Async라는 이름 뒤에 데이터 손실 범위를 숨기지 않는다.
+
+## CHAPTER 22 · idempotent recovery는 recovery 중 다시 crash해도 같은 절차를 반복할 수 있게 한다
+
+Recovery 자체도 완벽한 환경에서 실행되는 것이 아니다. Redo 중 host가 다시 꺼질 수 있으므로 다음 부팅에서 같은 log를 다시 적용해도 state가 더 망가지지 않아야 한다. Page LSN, operation id, compensation record가 이를 돕는다.
+
+Recovery가 side effect로 외부 message를 보내면 중복 발생 위험이 있다. Persistent state 복구와 external effect replay를 분리하거나 idempotency key를 사용한다.
+
+Test는 `crash → recovery 절반 → crash → recovery` sequence를 포함한다. 한 번의 clean restart만으로 idempotence를 증명하지 않는다.
+
+## CHAPTER 23 · transactional outbox는 local commit과 message publish 사이의 gap을 줄인다
+
+Database state를 commit한 뒤 message broker publish가 실패하면 두 system이 불일치한다. Outbox pattern은 business change와 “보낼 message” record를 같은 local transaction에 저장하고 별도 publisher가 idempotently 전달한다.
+
+Publisher crash로 같은 event를 다시 보낼 수 있으므로 consumer deduplication 또는 idempotent handling이 필요하다. Outbox는 exactly-once network를 만드는 것이 아니라 ambiguity를 durable queue로 바꾼다.
+
+Backlog age와 publish retry를 metric으로 둔다. Database commit은 성공했는데 외부 effect가 오래 지연되는 상태를 관측할 수 있어야 한다.
+
+## CHAPTER 24 · recovery format도 versioning이 필요하다
+
+새 software가 WAL record나 manifest format을 바꾸면 crash 직전 old version이 쓴 log를 new version이 읽어야 할 수 있다. Rolling upgrade 중에는 반대 방향 rollback도 고려해야 한다.
+
+Record에 version을 두고 old/new parser compatibility를 테스트한다. Recovery code는 평소 실행 빈도가 낮아 version regression이 숨어 있기 쉽다.
+
+Upgrade 전 checkpoint/log drain을 요구하는 전략도 가능하지만 operation cost와 failure mode를 명확히 한다.
+
+## CHAPTER 25 · backup은 live state copy가 아니라 recoverable point를 만들어야 한다
+
+Database file을 실행 중 단순 복사하면 여러 page가 서로 다른 시점의 state를 담을 수 있다. Snapshot, backup API, WAL position을 이용해 consistent point를 만든다. Backup 완료 후 restore test가 실제 품질을 결정한다.
+
+Backup artifact에는 schema/version, base snapshot, 필요한 log range를 함께 기록한다. Log retention이 backup보다 먼저 잘리면 복구가 불가능해질 수 있다.
+
+정기적으로 isolated environment에서 restore하고 application invariant를 검사한다. “백업 파일이 존재한다”는 사실을 recovery PASS로 보지 않는다.
+
+## CHAPTER 26 · replica durability는 commit acknowledgement가 몇 copy의 어떤 상태를 의미하는지 정의한다
+
+Leader local flush 후 응답하는지, replica memory에 도착해야 하는지, replica disk flush까지 기다리는지에 따라 failover 시 데이터 손실 가능성이 달라진다. Replica count만으로 durability를 말할 수 없다.
+
+Synchronous replication은 latency를 늘리고 availability와 trade-off가 있다. Network partition 시 commit을 멈출지 degraded mode를 허용할지 policy를 정한다.
+
+Metric에 quorum commit index와 replica durable index를 구분한다. Failover test로 acknowledged data가 실제 남는지 확인한다.
+
+## CHAPTER 27 · recovery invariant는 구조적 consistency와 business consistency를 모두 포함한다
+
+B-tree pointer가 모두 valid해도 account balance 총합 같은 business invariant가 깨질 수 있다. Storage recovery는 page-level integrity를 보장하고 application transaction은 domain invariant를 보장해야 한다.
+
+Automated checker를 startup 또는 offline tool로 제공하면 fault test oracle로 사용할 수 있다. Full scan이 비싸면 sampling과 background validation을 조합한다.
+
+Corruption을 발견했을 때 자동 repair가 더 위험할 수 있다. 증거를 보존하고 어떤 invariant를 복구할 수 있는지 구분한다.
+
+## CHAPTER 28 · recovery fault model은 어떤 계층까지 동시에 실패하는지 명시해야 한다
+
+Process crash, kernel crash, power loss, device write loss, bit corruption은 서로 다른 recovery path를 요구한다. “crash-safe”라는 표현만으로는 어떤 model인지 알 수 없다.
+
+Test environment가 실제로 제거하는 state 범위를 문서화한다. VM process kill은 physical power-loss cache를 재현하지 않을 수 있다.
+
+Guarantee 문서와 test model이 일치해야 한다. 검증하지 않은 더 강한 durability를 marketing 문구처럼 주장하지 않는다.
+
+## CHAPTER 29 · recovery performance는 장애 후 service availability를 결정한다
+
+정확한 recovery라도 WAL replay에 몇 시간이 걸리면 RTO를 만족하지 못할 수 있다. Checkpoint frequency, parallel redo, log volume이 restart 시간을 결정한다.
+
+Recovery benchmark는 clean startup과 분리해 측정한다. Dirty page 수, log size, number of files를 실제 worst-case에 가깝게 만든다.
+
+Progress metric을 제공해 watchdog가 “hang”으로 오인해 recovery process를 반복 재시작하지 않게 한다. Recovery loop가 스스로 availability를 악화시키는 경우를 막는다.
+
+## CHAPTER 30 · crash-recovery contract는 commit point와 replay rule을 한 세트로 정의한다
+
+안전한 persistent system은 `어느 순간부터 commit인가`, `그 이전 crash는 무엇을 버리는가`, `그 이후 crash는 무엇을 반드시 복원하는가`를 명확히 한다. WAL, CoW, rename은 이 계약을 구현하는 서로 다른 도구다.
+
+Ordering·checksum·generation·fsync가 맞물려야 하고 recovery 자체도 idempotent해야 한다. Backup과 replica도 같은 commit 의미를 다른 copy로 확장한 것이다.
+
+최종 검증은 단계별 crash matrix와 invariant checker로 수행한다. 정상 종료 후 file이 열리는지 확인하는 것만으로 crash atomicity나 durability를 PASS라고 부를 수 없다.

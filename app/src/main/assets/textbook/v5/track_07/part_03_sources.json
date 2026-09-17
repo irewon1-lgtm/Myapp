@@ -1,0 +1,20 @@
+{
+  "partId":"T07-P03",
+  "sections":[
+    {"sectionId":"T07-P03-S01-route-contract","sourceIds":["RFC9110","OPENAPI31"]},
+    {"sectionId":"T07-P03-S02-handler-edge","sourceIds":["OPENAPI31","SRE"]},
+    {"sectionId":"T07-P03-S03-path-parameter","sourceIds":["OPENAPI31","OWASP-API"]},
+    {"sectionId":"T07-P03-S04-route-ordering","sourceIds":["OWASP-API","SRE"]},
+    {"sectionId":"T07-P03-S05-404-405","sourceIds":["RFC9110","OPENAPI31"]},
+    {"sectionId":"T07-P03-S06-query-contract","sourceIds":["OPENAPI31","OWASP-API"]},
+    {"sectionId":"T07-P03-S07-url-canonicalization","sourceIds":["RFC9110","OWASP-API"]},
+    {"sectionId":"T07-P03-S08-path-policy","sourceIds":["RFC9110","OPENAPI31"]},
+    {"sectionId":"T07-P03-S09-nested-resources","sourceIds":["OPENAPI31","OWASP-API"]},
+    {"sectionId":"T07-P03-S10-route-metadata","sourceIds":["OPENAPI31","SRE"]},
+    {"sectionId":"T07-P03-S11-route-collision","sourceIds":["OWASP-API","SRE"]},
+    {"sectionId":"T07-P03-S12-runtime-validation","sourceIds":["TS-HANDBOOK","OPENAPI31"]},
+    {"sectionId":"T07-P03-S13-fallback","sourceIds":["RFC9110","OPENAPI31"]},
+    {"sectionId":"T07-P03-S14-route-inventory","sourceIds":["OWASP-API","OPENAPI31"]},
+    {"sectionId":"T07-P03-S15-routing-lab","sourceIds":["RFC9110","OPENAPI31","OWASP-API"]}
+  ]
+}

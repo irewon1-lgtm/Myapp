@@ -1,0 +1,20 @@
+{
+  "partId":"T07-P14",
+  "sections":[
+    {"sectionId":"T07-P14-S01-signal-lifecycle","sourceIds":["SRE","NIST-SSDF"]},
+    {"sectionId":"T07-P14-S02-readiness-drain","sourceIds":["SRE","SRE-WORKBOOK"]},
+    {"sectionId":"T07-P14-S03-server-close","sourceIds":["SRE","RFC9110"]},
+    {"sectionId":"T07-P14-S04-inflight-counter","sourceIds":["SRE-WORKBOOK","SRE"]},
+    {"sectionId":"T07-P14-S05-long-connections","sourceIds":["RFC9110","SRE"]},
+    {"sectionId":"T07-P14-S06-db-pool-close","sourceIds":["DDIA","SRE"]},
+    {"sectionId":"T07-P14-S07-background-timer","sourceIds":["SRE","DDIA"]},
+    {"sectionId":"T07-P14-S08-worker-drain","sourceIds":["DDIA","SRE"]},
+    {"sectionId":"T07-P14-S09-shutdown-deadline","sourceIds":["SRE","SRE-WORKBOOK"]},
+    {"sectionId":"T07-P14-S10-shutdown-metrics","sourceIds":["SRE-WORKBOOK","SRE"]},
+    {"sectionId":"T07-P14-S11-version-overlap","sourceIds":["DDIA","SRE"]},
+    {"sectionId":"T07-P14-S12-crash-recovery","sourceIds":["DDIA","SRE"]},
+    {"sectionId":"T07-P14-S13-telemetry-flush","sourceIds":["SRE","SRE-WORKBOOK"]},
+    {"sectionId":"T07-P14-S14-idempotent-shutdown","sourceIds":["SRE","NIST-SSDF"]},
+    {"sectionId":"T07-P14-S15-shutdown-lab","sourceIds":["SRE","DDIA","NIST-SSDF"]}
+  ]
+}
