@@ -1,0 +1,13 @@
+{
+  "partId":"T02-P58",
+  "sections":[
+    {"sectionId":"T02-P58-S01-warning-vs-error","sourceIds":["PYTHON-REF","REFACTORING2"]},
+    {"sectionId":"T02-P58-S02-warning-categories","sourceIds":["PYTHON-REF"]},
+    {"sectionId":"T02-P58-S03-warning-filter","sourceIds":["PYTHON-REF","NIST-SSDF"]},
+    {"sectionId":"T02-P58-S04-stacklevel-caller","sourceIds":["PYTHON-REF"]},
+    {"sectionId":"T02-P58-S05-deprecation-window","sourceIds":["REFACTORING2","NIST-SSDF"]},
+    {"sectionId":"T02-P58-S06-adapter-migration","sourceIds":["REFACTORING2","DDD"]},
+    {"sectionId":"T02-P58-S07-warning-test","sourceIds":["PYTHON-REF","NIST-SSDF"]},
+    {"sectionId":"T02-P58-S08-api-removal-contract","sourceIds":["REFACTORING2","PROGIT2","NIST-SSDF"]}
+  ]
+}
