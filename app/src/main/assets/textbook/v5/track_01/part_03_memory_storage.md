@@ -122,6 +122,8 @@ power loss 후 복구 가능한 상태가 됨
 
 `flush()`라는 함수명만 보고 durability를 추정하지 않는다. language buffer flush, OS fsync 계열, database transaction commit은 서로 다른 경계를 가진다.
 
+운영 장애를 분석할 때는 호출 성공 시각만 보존하지 말고 file descriptor의 open flags, write offset과 길이, `fsync` 또는 `fdatasync` 완료 시각, filesystem mount option, block layer completion을 같은 timeline에 놓는다. 특히 append와 overwrite는 torn-write 위험과 metadata 의존성이 다를 수 있고, directory entry 생성·rename은 file data와 별도의 durability ordering을 요구한다. 저장장치가 volatile write cache를 사용하면 host가 command completion을 관찰한 시점과 실제 non-volatile media가 보장되는 시점도 동일하다고 가정할 수 없다. 이 경계들을 구체적으로 기록해야 “write가 성공했는데 왜 사라졌는가”를 재현 가능한 질문으로 바꿀 수 있다.
+
 ---
 
 ## CHAPTER 11 · crash consistency는 정상 실행 결과가 아니라 중간 실패 상태를 설계한다
@@ -147,6 +149,8 @@ checkpoint는 log와 data page의 복구 경계를 이동시킨다
 ```
 
 SQLite와 PostgreSQL 같은 DB engine은 세부 구현과 isolation model이 다르므로 WAL이라는 이름만으로 동일한 semantics를 가정하지 않는다. transaction durability는 DB engine의 공식 문서를 기준으로 판단한다.
+
+복구 가능성을 증명하려면 log sequence와 page 상태의 관계를 관찰해야 한다. 예를 들어 page가 특정 변경을 포함한다면 그 변경을 설명하는 WAL record가 이미 durable해야 하고, checkpoint가 오래된 log를 제거하기 전에는 해당 변경이 data file의 안전한 지점까지 반영됐다는 조건이 필요하다. group commit은 여러 transaction의 flush 비용을 합칠 수 있지만 각 transaction의 commit visibility와 durable frontier를 혼동하면 안 된다. crash injection은 log append 직후, flush 전후, checkpoint 중간처럼 ordering 경계를 잘라 실행하고 recovery가 같은 committed set으로 수렴하는지 확인해야 한다.
 
 ---
 
@@ -177,6 +181,8 @@ crash-recovery result
 
 latency가 application에서 보인다고 application code가 원인이라고 단정하지 않는다. trace에서 wait chain을 따라 kernel reclaim, storage queue, GC, lock contention까지 연결해야 한다.
 
+증거를 연결할 때 가장 중요한 것은 동일한 사건 축을 유지하는 것이다. process-level timestamp, thread ID, file/inode 또는 allocation callsite, block request와 device completion이 서로 매칭되지 않으면 각각의 그래프가 정상이어도 원인 관계를 증명할 수 없다. 예를 들어 `fsync` tail latency가 길어진 구간에 dirty-page writeback과 device queue depth가 동시에 상승했는지, allocation stall 직전에 direct reclaim과 major fault가 증가했는지를 비교한다. 평균값 대신 문제 요청의 구체적인 trace span과 system counter를 겹치면 application wait가 어느 계층에서 생성됐는지 좁힐 수 있다.
+
 ---
 
 ## CHAPTER 14 · lifetime과 durability는 서로 다른 축이다
@@ -192,3 +198,5 @@ durability: crash/power loss 이후에도 복구되어야 하는가
 cache는 lifetime이 짧아도 재생성 가능하면 충분할 수 있고, 금융 transaction은 process lifetime과 무관하게 durable해야 한다. immutable artifact는 memory에 resident하지 않아도 storage에서 다시 mapping할 수 있다.
 
 설계 시 각 상태에 대해 **source of truth, rebuild 가능성, 최대 허용 손실 범위, commit point, 복구 절차**를 명시한다. 이 다섯 항목이 없으면 `저장했다`는 말은 운영 보장으로 사용할 수 없다.
+
+여기에 ownership과 generation을 더하면 stale state 문제를 분리할 수 있다. process memory의 cache entry가 살아 있어도 source of truth가 새 generation으로 교체됐다면 논리적으로 만료된 값이고, 반대로 process가 죽어 object lifetime이 끝나도 durable record는 새 process가 다시 소유할 수 있다. 따라서 resource release, cache invalidation, transaction commit, backup retention을 하나의 `삭제/저장` 플래그로 모델링하지 않는다. 각 상태가 어느 failure domain을 넘어 살아남아야 하는지와 누가 다음 generation을 만들 권한을 갖는지를 명시하면 복구와 정리 정책이 충돌하는 문제를 줄일 수 있다.
