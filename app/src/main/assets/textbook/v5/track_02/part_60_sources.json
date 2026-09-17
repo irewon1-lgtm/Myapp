@@ -1,0 +1,13 @@
+{
+  "partId":"T02-P60",
+  "sections":[
+    {"sectionId":"T02-P60-S01-library-contract","sourceIds":["SICP","REFACTORING2"]},
+    {"sectionId":"T02-P60-S02-public-surface","sourceIds":["PYTHON-REF","REFACTORING2"]},
+    {"sectionId":"T02-P60-S03-domain-types","sourceIds":["DDD","PYTHON-REF"]},
+    {"sectionId":"T02-P60-S04-effect-adapters","sourceIds":["DDD","GOF"]},
+    {"sectionId":"T02-P60-S05-config-errors","sourceIds":["NIST-SSDF","SRE"]},
+    {"sectionId":"T02-P60-S06-package-resources","sourceIds":["PYTHON-REF","NIST-SSDF"]},
+    {"sectionId":"T02-P60-S07-compatibility-gates","sourceIds":["REFACTORING2","NIST-SSDF"]},
+    {"sectionId":"T02-P60-S08-library-architecture","sourceIds":["DDD","REFACTORING2","SICP"]}
+  ]
+}
