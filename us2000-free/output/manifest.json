@@ -1,6 +1,6 @@
 {
-  "schema": "US2000_FREE_NEW500_1",
-  "generatedAt": "2026-09-17T05:35:21.549777Z",
+  "schema": "US2000_FREE_NEW500_2",
+  "generatedAt": "2026-09-17T06:29:29.408782Z",
   "asOf": "2026-09-17",
   "recordCount": 500,
   "metricCount": 10,
@@ -17,7 +17,24 @@
       "Nasdaq": 242
     },
     "prctAbsent": true,
-    "envaPresent": true
+    "envaPresent": false,
+    "collisionReplacementAudit": {
+      "removedFromExpansion": [
+        "ENVA",
+        "TRUP",
+        "YELP"
+      ],
+      "addedToExpansion": [
+        "ICFI",
+        "OMF",
+        "EE"
+      ],
+      "replacementCiks": {
+        "ICFI": 1362004,
+        "OMF": 1584207,
+        "EE": 1888447
+      }
+    }
   },
   "summary": {
     "Revenue_TTM_YoY_Pct": {
@@ -26,8 +43,8 @@
       "hold": 0
     },
     "Gross_Margin_TTM_Pct": {
-      "numeric": 409,
-      "naBasis": 91,
+      "numeric": 411,
+      "naBasis": 89,
       "hold": 0
     },
     "Operating_Margin_TTM_Pct": {
@@ -45,9 +62,14 @@
       "naBasis": 5,
       "hold": 0
     },
-    "FCF_Yield_TTM_Pct": {
-      "numeric": 498,
-      "naBasis": 2,
+    "Price_Sales_TTM": {
+      "numeric": 492,
+      "naBasis": 8,
+      "hold": 0
+    },
+    "Drawdown_52W_Pct": {
+      "numeric": 500,
+      "naBasis": 0,
       "hold": 0
     },
     "TTM_PER": {
@@ -55,26 +77,21 @@
       "naBasis": 146,
       "hold": 0
     },
-    "Price_Sales_TTM": {
-      "numeric": 492,
-      "naBasis": 8,
+    "FCF_Yield_TTM_Pct": {
+      "numeric": 498,
+      "naBasis": 2,
       "hold": 0
     },
     "Shares_Change_YoY_Pct": {
       "numeric": 490,
       "naBasis": 10,
       "hold": 0
-    },
-    "Drawdown_52W_Pct": {
-      "numeric": 500,
-      "naBasis": 0,
-      "hold": 0
     }
   },
   "totalResolved": 5000,
   "totalHold": 0,
   "resolvedRatio": 1.0,
-  "recordsSha256": "99c842c2fd434950640e9dc97ec9aaf532a7c93bb578bc1af1ce7ca1f34bd8b1",
+  "recordsSha256": "6bd85f5e60831a87768fa80ddec085d24e018adb07ffdb0b27010c3c48fec147",
   "chunks": [
     {
       "file": "chunk-00.json",
@@ -124,7 +141,7 @@
     {
       "file": "chunk-09.json",
       "count": 50,
-      "sha256": "3c512050577f9d45876dda162071c492e07d7001c962d5523ef685c6a7070b62"
+      "sha256": "7f71767e059285398ff4c99e0ed9296735dec6896984714acacd047d8877545d"
     }
   ],
   "sourcePolicy": {
@@ -177,5 +194,11 @@
     "previousHoldCount": 8,
     "remainingHoldCount": 0,
     "collectionErrors": []
+  },
+  "replacementEvidence": {
+    "schema": "US2000_COLLISION_REPLACEMENTS_1",
+    "generatedAt": "2026-09-17T06:29:29.408782Z",
+    "totalMetricCells": 30,
+    "totalHold": 0
   }
 }
