@@ -24,6 +24,24 @@ class V5EvidenceCoverageAssetTest {
             ?: error("Missing V5 asset root; cwd=${File(".").absolutePath}")
     }
 
+    private fun manifestFiles(trackDir: File): List<File> = trackDir.listFiles().orEmpty()
+        .filter { it.isFile && (it.name == "manifest.json" || it.name.matches(Regex("manifest_\\d{2}\\.json"))) }
+        .sortedWith(compareBy<File> { if (it.name == "manifest.json") 0 else 1 }.thenBy { it.name })
+
+    private fun mergedManifest(trackDir: File): V5BookManifest {
+        val files = manifestFiles(trackDir)
+        assertTrue("${trackDir.name} must contain primary manifest.json", files.firstOrNull()?.name == "manifest.json")
+        val fragments = files.map { gson.fromJson(it.readText(Charsets.UTF_8), V5BookManifest::class.java) }
+        val base = fragments.first()
+        fragments.forEachIndexed { index, fragment ->
+            assertEquals("${files[index].name}: track id mismatch", base.trackId, fragment.trackId)
+            assertEquals("${files[index].name}: track number mismatch", base.trackNumber, fragment.trackNumber)
+            assertEquals("${files[index].name}: title mismatch", base.title, fragment.title)
+            if (index > 0) assertTrue("${files[index].name}: shard cannot be empty", fragment.parts.isNotEmpty())
+        }
+        return base.copy(parts = fragments.flatMap { it.parts }.sortedBy { it.order })
+    }
+
     @Test
     fun everyAuthoredPartHasOneOrderedEvidenceEntryPerH2Chapter() {
         val trackDirs = v5Root().listFiles()
@@ -33,13 +51,13 @@ class V5EvidenceCoverageAssetTest {
         assertTrue("At least one V5 track must be authored", trackDirs.isNotEmpty())
 
         trackDirs.forEach { trackDir ->
-            val manifest = gson.fromJson(
-                File(trackDir, "manifest.json").readText(Charsets.UTF_8),
-                V5BookManifest::class.java
-            )
+            val manifest = mergedManifest(trackDir)
             val expectedTrackId = "T${manifest.trackNumber.toString().padStart(2, '0')}"
             assertEquals(expectedTrackId, manifest.trackId)
             assertEquals((1..manifest.parts.size).toList(), manifest.parts.map { it.order })
+            assertEquals(manifest.parts.size, manifest.parts.map { it.id }.distinct().size)
+            assertEquals(manifest.parts.size, manifest.parts.map { it.assetPath }.distinct().size)
+            assertEquals(manifest.parts.size, manifest.parts.map { it.sourceMapPath }.distinct().size)
 
             manifest.parts.forEachIndexed { partIndex, part ->
                 assertEquals(
@@ -82,14 +100,11 @@ class V5EvidenceCoverageAssetTest {
     }
 
     @Test
-    fun manifestCannotMentionMissingPartOrSourceFiles() {
+    fun manifestsCannotMentionMissingPartOrSourceFiles() {
         v5Root().listFiles()
             ?.filter { it.isDirectory && it.name.matches(Regex("track_\\d{2}")) }
             ?.forEach { trackDir ->
-                val manifest = gson.fromJson(
-                    File(trackDir, "manifest.json").readText(Charsets.UTF_8),
-                    V5BookManifest::class.java
-                )
+                val manifest = mergedManifest(trackDir)
                 manifest.parts.forEach { part ->
                     assertTrue("Missing prose asset for ${part.id}: ${part.assetPath}", asset(part.assetPath).isFile)
                     assertTrue("Missing source map for ${part.id}: ${part.sourceMapPath}", asset(part.sourceMapPath).isFile)
