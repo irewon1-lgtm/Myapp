@@ -1,0 +1,15 @@
+{
+  "partId": "T02-P16",
+  "sections": [
+    {"sectionId":"T02-P16-S01-coroutine-object","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P16-S02-await-yield-control","sourceIds":["PYTHON-REF","OSTEP"]},
+    {"sectionId":"T02-P16-S03-task-scheduling","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P16-S04-structured-concurrency","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P16-S05-cancellation-cleanup","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P16-S06-timeout-remote-state","sourceIds":["SRE","DDIA"]},
+    {"sectionId":"T02-P16-S07-backpressure-limits","sourceIds":["PYTHON-REF","SRE","DDIA"]},
+    {"sectionId":"T02-P16-S08-async-race","sourceIds":["PYTHON-REF","OSTEP","DDIA"]},
+    {"sectionId":"T02-P16-S09-blocking-event-loop","sourceIds":["PYTHON-REF","OSTEP"]},
+    {"sectionId":"T02-P16-S10-async-system-contract","sourceIds":["SRE","DDIA","SICP"]}
+  ]
+}
