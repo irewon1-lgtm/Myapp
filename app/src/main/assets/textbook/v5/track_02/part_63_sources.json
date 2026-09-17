@@ -1,0 +1,13 @@
+{
+  "partId":"T02-P63",
+  "sections":[
+    {"sectionId":"T02-P63-S01-generator-control-model","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P63-S02-send-value","sourceIds":["PYTHON-REF"]},
+    {"sectionId":"T02-P63-S03-throw-exception","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P63-S04-close-finalization","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P63-S05-yield-from-delegation","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P63-S06-return-stopiteration","sourceIds":["PYTHON-REF"]},
+    {"sectionId":"T02-P63-S07-coroutine-history-boundary","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P63-S08-generator-control-contract","sourceIds":["PYTHON-REF","SICP","SRE"]}
+  ]
+}
