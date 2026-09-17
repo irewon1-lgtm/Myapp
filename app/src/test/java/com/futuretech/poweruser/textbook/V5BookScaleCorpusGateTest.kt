@@ -44,19 +44,24 @@ class V5BookScaleCorpusGateTest {
             }
         }
 
+    private fun manifestFiles(trackDir: File): List<File> = trackDir.listFiles().orEmpty()
+        .filter { it.isFile && (it.name == "manifest.json" || it.name.matches(Regex("manifest_\\d{2}\\.json"))) }
+        .sortedWith(compareBy<File> { if (it.name == "manifest.json") 0 else 1 }.thenBy { it.name })
+
     private fun manifestReferencedTrackFiles(trackNumber: Int): List<File> {
         val root = repoFile("src/main/assets")
         val trackDir = repoFile("src/main/assets/textbook/v5/track_${trackNumber.toString().padStart(2, '0')}")
         assertTrue("V5 track directory must be a directory: $trackDir", trackDir.isDirectory)
-        val manifest = File(trackDir, "manifest.json")
-        assertTrue("TRACK $trackNumber must have manifest.json", manifest.isFile)
-        val manifestText = manifest.readText(Charsets.UTF_8)
-        val paths = Regex("\\\"assetPath\\\"\\s*:\\s*\\\"([^\\\"]+\\.md)\\\"")
-            .findAll(manifestText)
-            .map { it.groupValues[1] }
-            .toList()
+        val manifests = manifestFiles(trackDir)
+        assertTrue("TRACK $trackNumber must have manifest.json", manifests.firstOrNull()?.name == "manifest.json")
+        val paths = manifests.flatMap { manifest ->
+            Regex("\\\"assetPath\\\"\\s*:\\s*\\\"([^\\\"]+\\.md)\\\"")
+                .findAll(manifest.readText(Charsets.UTF_8))
+                .map { it.groupValues[1] }
+                .toList()
+        }
         assertTrue("TRACK $trackNumber must contain multiple manifest-referenced book parts", paths.size >= 2)
-        assertEquals("TRACK $trackNumber manifest must not reference a part twice", paths.size, paths.distinct().size)
+        assertEquals("TRACK $trackNumber manifests must not reference a part twice", paths.size, paths.distinct().size)
         return paths.map { path ->
             val file = File(root, path)
             assertTrue("Manifest references missing part: $path", file.isFile)
