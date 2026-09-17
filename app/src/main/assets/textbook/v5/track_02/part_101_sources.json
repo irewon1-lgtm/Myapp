@@ -1,0 +1,13 @@
+{
+  "partId":"T02-P101",
+  "sections":[
+    {"sectionId":"T02-P101-S01-failure-window","sourceIds":["SRE","SRE-WORKBOOK"]},
+    {"sectionId":"T02-P101-S02-closed-open-halfopen","sourceIds":["SRE","SICP"]},
+    {"sectionId":"T02-P101-S03-trip-threshold","sourceIds":["SRE","SRE-WORKBOOK"]},
+    {"sectionId":"T02-P101-S04-timeout-retry-interaction","sourceIds":["SRE","SRE-WORKBOOK"]},
+    {"sectionId":"T02-P101-S05-dependency-isolation","sourceIds":["SRE","DDIA"]},
+    {"sectionId":"T02-P101-S06-probe-recovery","sourceIds":["SRE","SRE-WORKBOOK"]},
+    {"sectionId":"T02-P101-S07-breaker-observability","sourceIds":["SRE","SRE-WORKBOOK"]},
+    {"sectionId":"T02-P101-S08-breaker-contract","sourceIds":["SRE","DDIA"]}
+  ]
+}
