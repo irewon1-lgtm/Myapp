@@ -1,0 +1,20 @@
+{
+  "partId":"T07-P13",
+  "sections":[
+    {"sectionId":"T07-P13-S01-config-runtime","sourceIds":["SRE","NIST-SSDF"]},
+    {"sectionId":"T07-P13-S02-typed-config","sourceIds":["TS-HANDBOOK","NIST-SSDF"]},
+    {"sectionId":"T07-P13-S03-startup-validation","sourceIds":["SRE","SRE-WORKBOOK"]},
+    {"sectionId":"T07-P13-S04-precedence","sourceIds":["SRE","NIST-SSDF"]},
+    {"sectionId":"T07-P13-S05-secret-boundary","sourceIds":["OWASP-API","NIST-SSDF"]},
+    {"sectionId":"T07-P13-S06-source-control-secret","sourceIds":["NIST-SSDF","OWASP-API"]},
+    {"sectionId":"T07-P13-S07-rotation","sourceIds":["NIST-SSDF","SRE"]},
+    {"sectionId":"T07-P13-S08-dynamic-config","sourceIds":["DDIA","SRE"]},
+    {"sectionId":"T07-P13-S09-feature-flag","sourceIds":["SRE-WORKBOOK","SRE"]},
+    {"sectionId":"T07-P13-S10-capability-config","sourceIds":["NIST-SSDF","SRE"]},
+    {"sectionId":"T07-P13-S11-config-observation","sourceIds":["SRE-WORKBOOK","SRE"]},
+    {"sectionId":"T07-P13-S12-config-exposure","sourceIds":["OWASP-API","NIST-SSDF"]},
+    {"sectionId":"T07-P13-S13-reproducibility","sourceIds":["SRE","NIST-SSDF"]},
+    {"sectionId":"T07-P13-S14-config-failure","sourceIds":["SRE","DDIA"]},
+    {"sectionId":"T07-P13-S15-config-lab","sourceIds":["SRE","NIST-SSDF","OWASP-API"]}
+  ]
+}
