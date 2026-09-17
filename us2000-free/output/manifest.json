@@ -1,6 +1,6 @@
 {
   "schema": "US2000_FREE_NEW500_1",
-  "generatedAt": "2026-09-17T05:26:04.599296Z",
+  "generatedAt": "2026-09-17T05:33:43.514963Z",
   "asOf": "2026-09-17",
   "recordCount": 500,
   "metricCount": 10,
@@ -51,8 +51,8 @@
       "hold": 0
     },
     "TTM_PER": {
-      "numeric": 353,
-      "naBasis": 146,
+      "numeric": 354,
+      "naBasis": 145,
       "hold": 1
     },
     "Price_Sales_TTM": {
@@ -74,57 +74,57 @@
   "totalResolved": 4992,
   "totalHold": 8,
   "resolvedRatio": 0.9984,
-  "recordsSha256": "970702ba11acf5b031f8f35f50cd1e8cb75f55f50a990b628b4ef4939daff735",
+  "recordsSha256": "c00e765e2a31cea890298a5d7922601f3dc99c38a1134061d7cb95e0335f05ae",
   "chunks": [
     {
       "file": "chunk-00.json",
       "count": 50,
-      "sha256": "bed480be66c9972e404d07ccd0c56c9842dd7689c414b4465a4203de8a3df796"
+      "sha256": "d27ccdd1894c41ca1709cde839c227a8cc33a7b19c04ac9445a7ae1968af9f06"
     },
     {
       "file": "chunk-01.json",
       "count": 50,
-      "sha256": "f4259abb875a01b479e4484ff32d5dff56b88fe0a8185723269aed90db8f924e"
+      "sha256": "6b4e988cb0303472fc70d61ffbbdb060505484eb01036c1a9922b224ad91af99"
     },
     {
       "file": "chunk-02.json",
       "count": 50,
-      "sha256": "51eae90392597d3f3907b18fc194effe1d003ec86acf215afacdbfb400824b86"
+      "sha256": "30d712262c68eefa7ae60af0bbfd396092b92e5a1183c6cc11abced27724e40e"
     },
     {
       "file": "chunk-03.json",
       "count": 50,
-      "sha256": "ec140094fc2757f5ae053529d013e6f879fb267b51989190eff2da8482374dfa"
+      "sha256": "8b783226f62894539fc66b4829742ef3326aab60ed583cee04abb024fa455b02"
     },
     {
       "file": "chunk-04.json",
       "count": 50,
-      "sha256": "4cab67bd55a7bd3ecbcf6dc7e7c95383a96942e69409b09eb0be14504bb896a1"
+      "sha256": "5a0611059838c13719b55b6bff3cf338a3507957a424e122d8ff5f719cad0c08"
     },
     {
       "file": "chunk-05.json",
       "count": 50,
-      "sha256": "9863275a932737ca59e7be8703f1da7bd4f854ed99718e5668cd0f95d80b10e1"
+      "sha256": "f9e904c3b71ac5eccdd0f148303c1c24da407039a58165d9cf37862eab8e6783"
     },
     {
       "file": "chunk-06.json",
       "count": 50,
-      "sha256": "828516d84699854f12b403a4b6d8308884657eaa41df64c00e5ba2ea03f7f529"
+      "sha256": "51e15041206e0a77cfd3df1275671b999c10442afde1eedab3bbb1bf57b98861"
     },
     {
       "file": "chunk-07.json",
       "count": 50,
-      "sha256": "8b9267aa5c5db31dde653e536bf0590dd73db303313e29900bad475b3b434dbe"
+      "sha256": "1af660df71ceca970fe5627804582075943e76fa57df5beeb407c1cad88ea04d"
     },
     {
       "file": "chunk-08.json",
       "count": 50,
-      "sha256": "378d8cf016b347e3172569449994af4a1911ceabe8adbea03788795311572590"
+      "sha256": "8c288a5b11a22d198f3cd47a059424a014d70bb2b233233ac491addcef9d8e82"
     },
     {
       "file": "chunk-09.json",
       "count": 50,
-      "sha256": "27f68dfc42cda35c5bfece29b15d39959db4d8ec6821ec818177be2133ee133b"
+      "sha256": "56eb9cf7fb273235a27b3e8d3e9fc0b66e3114b2479a3655628a8d0b1ec3e0fe"
     }
   ],
   "sourcePolicy": {
@@ -138,5 +138,102 @@
     "proxy": false,
     "captchaBypass": false,
     "workers": 4
+  },
+  "holdDetails": [
+    {
+      "ticker": "WTI",
+      "metric": "Revenue_TTM_YoY_Pct",
+      "reason": "FINVIZ:HTTP_429",
+      "collectionErrors": [
+        "FINVIZ:HTTP_429"
+      ]
+    },
+    {
+      "ticker": "WTI",
+      "metric": "Gross_Margin_TTM_Pct",
+      "reason": "FINVIZ:HTTP_429",
+      "collectionErrors": [
+        "FINVIZ:HTTP_429"
+      ]
+    },
+    {
+      "ticker": "WTI",
+      "metric": "Operating_Margin_TTM_Pct",
+      "reason": "FINVIZ:HTTP_429",
+      "collectionErrors": [
+        "FINVIZ:HTTP_429"
+      ]
+    },
+    {
+      "ticker": "WTI",
+      "metric": "Net_Margin_TTM_Pct",
+      "reason": "FINVIZ:HTTP_429",
+      "collectionErrors": [
+        "FINVIZ:HTTP_429"
+      ]
+    },
+    {
+      "ticker": "WTI",
+      "metric": "ROA_TTM_Pct",
+      "reason": "FINVIZ:HTTP_429",
+      "collectionErrors": [
+        "FINVIZ:HTTP_429"
+      ]
+    },
+    {
+      "ticker": "WTI",
+      "metric": "TTM_PER",
+      "reason": "FINVIZ:HTTP_429",
+      "collectionErrors": [
+        "FINVIZ:HTTP_429"
+      ]
+    },
+    {
+      "ticker": "WTI",
+      "metric": "Price_Sales_TTM",
+      "reason": "FINVIZ:HTTP_429",
+      "collectionErrors": [
+        "FINVIZ:HTTP_429"
+      ]
+    },
+    {
+      "ticker": "WTI",
+      "metric": "Drawdown_52W_Pct",
+      "reason": "FINVIZ:HTTP_429",
+      "collectionErrors": [
+        "FINVIZ:HTTP_429"
+      ]
+    }
+  ],
+  "parserAudit": {
+    "drawdownCompositeRegression": 16.1,
+    "drawdownPositiveCount": 497,
+    "drawdownSamples": [
+      {
+        "ticker": "AAT",
+        "value": 16.1,
+        "raw": "25.97 -16.10%"
+      },
+      {
+        "ticker": "ABR",
+        "value": 64.06,
+        "raw": "12.57 -64.06%"
+      },
+      {
+        "ticker": "ACT",
+        "value": 3.22,
+        "raw": "50.56 -3.22%"
+      },
+      {
+        "ticker": "ADAM",
+        "value": 13.42,
+        "raw": "10.36 -13.42%"
+      },
+      {
+        "ticker": "ADIG",
+        "value": 32.27,
+        "raw": "30.99 -32.27%"
+      }
+    ]
   }
 }
