@@ -1,0 +1,13 @@
+{
+  "partId":"T02-P97",
+  "sections":[
+    {"sectionId":"T02-P97-S01-timeout-vs-deadline","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P97-S02-monotonic-clock","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P97-S03-budget-propagation","sourceIds":["SRE","SRE-WORKBOOK"]},
+    {"sectionId":"T02-P97-S04-nested-timeout","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P97-S05-cancellation-boundary","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P97-S06-connect-read-write","sourceIds":["SRE","RFC9110"]},
+    {"sectionId":"T02-P97-S07-timeout-observability","sourceIds":["SRE","SRE-WORKBOOK"]},
+    {"sectionId":"T02-P97-S08-deadline-contract","sourceIds":["SRE","PYTHON-REF"]}
+  ]
+}
