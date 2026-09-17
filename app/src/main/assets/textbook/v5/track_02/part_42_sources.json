@@ -1,0 +1,15 @@
+{
+  "partId":"T02-P42",
+  "sections":[
+    {"sectionId":"T02-P42-S01-class-body-execution","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P42-S02-construction-protocol","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P42-S03-inheritance-lookup","sourceIds":["PYTHON-REF","GOF"]},
+    {"sectionId":"T02-P42-S04-method-resolution-order","sourceIds":["PYTHON-REF"]},
+    {"sectionId":"T02-P42-S05-cooperative-super","sourceIds":["PYTHON-REF","GOF"]},
+    {"sectionId":"T02-P42-S06-mixin-capability","sourceIds":["GOF","REFACTORING2"]},
+    {"sectionId":"T02-P42-S07-abc-protocol","sourceIds":["PYTHON-REF","REFACTORING2"]},
+    {"sectionId":"T02-P42-S08-init-subclass","sourceIds":["PYTHON-REF","GOF"]},
+    {"sectionId":"T02-P42-S09-metaclass-boundary","sourceIds":["PYTHON-REF","GOF"]},
+    {"sectionId":"T02-P42-S10-hierarchy-state-ownership","sourceIds":["DDD","GOF","REFACTORING2"]}
+  ]
+}
