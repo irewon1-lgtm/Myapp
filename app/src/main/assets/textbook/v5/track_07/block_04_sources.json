@@ -1,0 +1,20 @@
+{
+  "partId": "T07-P04",
+  "lessons": [
+    {"lessonId":"T07-B04-L46-repository-contract","sourceIds":["FSA2-2025","DDIA2-2026"]},
+    {"lessonId":"T07-B04-L47-n-plus-one","sourceIds":["DDIA2-2026","GOOGLE-SRE"]},
+    {"lessonId":"T07-B04-L48-pagination","sourceIds":["DWA2-2025","DDIA2-2026"]},
+    {"lessonId":"T07-B04-L49-transaction-boundary","sourceIds":["DDIA2-2026","FSA2-2025"]},
+    {"lessonId":"T07-B04-L50-optimistic-lock","sourceIds":["DDIA2-2026","RFC9110"]},
+    {"lessonId":"T07-B04-L51-uniqueness-race","sourceIds":["DDIA2-2026"]},
+    {"lessonId":"T07-B04-L52-deadlock-retry","sourceIds":["DDIA2-2026","GOOGLE-SRE"]},
+    {"lessonId":"T07-B04-L53-idempotency-store","sourceIds":["DWA2-2025","DDIA2-2026"]},
+    {"lessonId":"T07-B04-L54-outbox","sourceIds":["DDIA2-2026","PATTERNS-RELIABILITY"]},
+    {"lessonId":"T07-B04-L55-cache-aside","sourceIds":["DDIA2-2026","PATTERNS-RELIABILITY"]},
+    {"lessonId":"T07-B04-L56-ttl-jitter","sourceIds":["GOOGLE-SRE","DDIA2-2026"]},
+    {"lessonId":"T07-B04-L57-cache-stampede","sourceIds":["GOOGLE-SRE","DDIA2-2026"]},
+    {"lessonId":"T07-B04-L58-cache-invalidation","sourceIds":["DDIA2-2026"]},
+    {"lessonId":"T07-B04-L59-object-storage","sourceIds":["FSA2-2025","DDIA2-2026"]},
+    {"lessonId":"T07-B04-L60-capstone","sourceIds":["DDIA2-2026","DWA2-2025","GOOGLE-SRE"]}
+  ]
+}
