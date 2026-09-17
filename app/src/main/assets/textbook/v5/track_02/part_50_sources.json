@@ -1,0 +1,15 @@
+{
+  "partId":"T02-P50",
+  "sections":[
+    {"sectionId":"T02-P50-S01-runner-contract","sourceIds":["SRE","DDD"]},
+    {"sectionId":"T02-P50-S02-job-state-machine","sourceIds":["SICP","DDIA"]},
+    {"sectionId":"T02-P50-S03-durable-queue-schema","sourceIds":["DDIA","DBSC7"]},
+    {"sectionId":"T02-P50-S04-claim-lease-protocol","sourceIds":["DDIA","SRE"]},
+    {"sectionId":"T02-P50-S05-attempt-timeout-cancel","sourceIds":["SRE","PYTHON-REF"]},
+    {"sectionId":"T02-P50-S06-idempotent-execution","sourceIds":["DDIA","SRE"]},
+    {"sectionId":"T02-P50-S07-checkpoint-resume","sourceIds":["DDIA","SRE"]},
+    {"sectionId":"T02-P50-S08-worker-shutdown","sourceIds":["SRE","OSTEP"]},
+    {"sectionId":"T02-P50-S09-runner-clean-pass","sourceIds":["NIST-SSDF","SRE"]},
+    {"sectionId":"T02-P50-S10-durable-runner-architecture","sourceIds":["DDIA","SRE","DDD"]}
+  ]
+}
