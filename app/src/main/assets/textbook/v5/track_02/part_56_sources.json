@@ -1,0 +1,13 @@
+{
+  "partId":"T02-P56",
+  "sections":[
+    {"sectionId":"T02-P56-S01-object-serialization-model","sourceIds":["PYTHON-REF","DDIA"]},
+    {"sectionId":"T02-P56-S02-pickle-reconstruction","sourceIds":["PYTHON-REF","NIST-SSDF"]},
+    {"sectionId":"T02-P56-S03-untrusted-pickle","sourceIds":["PYTHON-REF","NIST-SSDF"]},
+    {"sectionId":"T02-P56-S04-protocol-version","sourceIds":["PYTHON-REF","DDIA"]},
+    {"sectionId":"T02-P56-S05-custom-reduction","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P56-S06-state-migration","sourceIds":["PYTHON-REF","DDIA"]},
+    {"sectionId":"T02-P56-S07-persistent-id-boundary","sourceIds":["PYTHON-REF","DDD"]},
+    {"sectionId":"T02-P56-S08-safe-format-choice","sourceIds":["NIST-SSDF","DDIA","PYTHON-REF"]}
+  ]
+}
