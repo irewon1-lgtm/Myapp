@@ -219,6 +219,30 @@ object V5BookSourceRegistry {
             url = "https://developer.android.com/privacy-and-security/security-best-practices"
         ),
         s(
+            "CUDA-GUIDE",
+            "CUDA Programming Guide",
+            "NVIDIA",
+            V5BookSource.SourceType.OFFICIAL_DOC,
+            "current documentation audited 2026-09",
+            "https://docs.nvidia.com/cuda/cuda-programming-guide/"
+        ),
+        s(
+            "VULKAN14",
+            "Vulkan Specification",
+            "Khronos Group",
+            V5BookSource.SourceType.STANDARD,
+            "Vulkan 1.4 current specification audited 2026-09",
+            "https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html"
+        ),
+        s(
+            "VULKAN-GUIDE",
+            "Khronos Vulkan Guide",
+            "Khronos Group",
+            V5BookSource.SourceType.OFFICIAL_DOC,
+            "current documentation audited 2026-09",
+            "https://docs.vulkan.org/guide/latest/"
+        ),
+        s(
             "PROGIT2",
             "Pro Git",
             "Scott Chacon; Ben Straub",
