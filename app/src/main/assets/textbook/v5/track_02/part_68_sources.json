@@ -1,14 +1,13 @@
 {
-  "part": 68,
-  "title": "Callable object protocol — __call__·method binding·argument routing을 추적하기",
-  "sections": [
-    {"id":"T02-P68-S01-callable-object","sourceIds":["PYTHON-REF","SICP"]},
-    {"id":"T02-P68-S02-function-binding","sourceIds":["PYTHON-REF","SICP"]},
-    {"id":"T02-P68-S03-bound-method-self","sourceIds":["PYTHON-REF","SICP"]},
-    {"id":"T02-P68-S04-argument-binding","sourceIds":["PYTHON-REF","SICP"]},
-    {"id":"T02-P68-S05-positional-keyword-boundary","sourceIds":["PYTHON-REF","SRE"]},
-    {"id":"T02-P68-S06-signature-introspection","sourceIds":["PYTHON-REF","SRE"]},
-    {"id":"T02-P68-S07-callable-state","sourceIds":["GOF","SICP","PYTHON-REF"]},
-    {"id":"T02-P68-S08-call-contract","sourceIds":["SRE","PYTHON-REF"]}
+  "partId":"T02-P68",
+  "sections":[
+    {"sectionId":"T02-P68-S01-callable-object","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P68-S02-function-binding","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P68-S03-bound-method-self","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P68-S04-argument-binding","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P68-S05-positional-keyword-boundary","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P68-S06-signature-introspection","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P68-S07-callable-state","sourceIds":["GOF","SICP","PYTHON-REF"]},
+    {"sectionId":"T02-P68-S08-call-contract","sourceIds":["SRE","PYTHON-REF"]}
   ]
 }
