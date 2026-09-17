@@ -1,0 +1,13 @@
+{
+  "partId":"T02-P78",
+  "sections":[
+    {"sectionId":"T02-P78-S01-pathlike-protocol","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P78-S02-fspath-boundary","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P78-S03-path-vs-string","sourceIds":["PYTHON-REF","DDD"]},
+    {"sectionId":"T02-P78-S04-bytes-path-boundary","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P78-S05-normalization-identity","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P78-S06-symlink-resolution","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P78-S07-boundary-validation","sourceIds":["NIST-SSDF","SRE"]},
+    {"sectionId":"T02-P78-S08-path-contract","sourceIds":["DDD","NIST-SSDF"]}
+  ]
+}
