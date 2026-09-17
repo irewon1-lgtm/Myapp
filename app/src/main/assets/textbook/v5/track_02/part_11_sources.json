@@ -1,0 +1,15 @@
+{
+  "partId": "T02-P11",
+  "sections": [
+    {"sectionId":"T02-P11-S01-decorator-rebinding","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P11-S02-parameterized-decorator","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P11-S03-method-binding","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P11-S04-descriptor-lookup","sourceIds":["PYTHON-REF"]},
+    {"sectionId":"T02-P11-S05-dynamic-attribute","sourceIds":["PYTHON-REF","REFACTORING2"]},
+    {"sectionId":"T02-P11-S06-callable-object","sourceIds":["PYTHON-REF","GOF"]},
+    {"sectionId":"T02-P11-S07-lifetime-composition","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P11-S08-metaprogramming-definition","sourceIds":["PYTHON-REF","REFACTORING2"]},
+    {"sectionId":"T02-P11-S09-introspection-contract","sourceIds":["PYTHON-REF","NIST-SSDF"]},
+    {"sectionId":"T02-P11-S10-protocol-execution-model","sourceIds":["PYTHON-REF","SICP"]}
+  ]
+}
