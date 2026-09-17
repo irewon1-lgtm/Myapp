@@ -84,6 +84,8 @@ reference retention
 
 이 지표를 함께 봐야 allocation churn, genuine leak, heap sizing 문제를 구분할 수 있다.
 
+retention 원인을 볼 때 strong root, reference queue/finalizer, JNI/native global reference처럼 object가 살아남는 경로를 구분한다. 같은 heap growth라도 allocation rate가 정상인데 live-after-GC가 계속 증가하면 ownership 누수를 의심하고, live set은 안정적이지만 collection 빈도만 높다면 churn이 더 유력하다. collection cause와 reclaimed bytes, pause/concurrent phase를 request timeline에 연결해야 GC가 실제 latency 원인인지, 단지 같은 시각에 발생한 배경 작업인지 분리할 수 있다.
+
 ---
 
 ## CHAPTER 08 · memory pressure는 application heap 밖에서도 발생한다
@@ -133,6 +135,8 @@ power loss 후 복구 가능한 상태가 됨
 atomic rename, temporary file + fsync + rename, journal, copy-on-write filesystem, database transaction은 서로 다른 계층에서 partial update를 다룬다. 중요한 것은 API 이름보다 보장 범위를 확인하는 것이다.
 
 metadata durability와 file-content durability도 분리될 수 있다. 파일 내용이 기록됐지만 directory entry가 durable하지 않거나 그 반대의 조합을 고려해야 한다. crash test는 kill signal만으로 power-loss semantics 전체를 재현하지 못할 수 있다.
+
+새 파일을 temporary path에 기록한 뒤 `fsync(file)`과 rename을 했더라도, directory entry 자체가 power loss 뒤 남는지는 directory sync와 filesystem 보장까지 확인해야 한다. 안전한 sequence는 filesystem별 공식 계약을 기준으로 정하고, 각 write·file sync·rename·directory sync 직후에 crash를 주입하는 matrix로 검증한다. recovery는 단순히 파일이 존재하는지만 보는 것이 아니라 이전 완전본 또는 새 완전본 중 하나인지, partial bytes와 dangling metadata가 없는지 확인해야 한다.
 
 ---
 
