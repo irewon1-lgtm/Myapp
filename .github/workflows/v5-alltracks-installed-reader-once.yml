@@ -47,10 +47,13 @@ jobs:
         continue-on-error: true
         run: python tools/v5_content_audit.py > alltracks_v5_audit.json
 
-      - name: Unit and Android-test build verification
-        run: |
-          ./gradlew testDebugUnitTest --stacktrace
-          ./gradlew assembleDebug assembleDebugAndroidTest --stacktrace
+      - name: Full unit suite diagnostic
+        id: fulltests
+        continue-on-error: true
+        run: ./gradlew testDebugUnitTest --stacktrace
+
+      - name: Android app and instrumentation APK compile gate
+        run: ./gradlew assembleDebug assembleDebugAndroidTest --stacktrace
 
       - name: Enable KVM
         run: |
@@ -79,5 +82,7 @@ jobs:
             final-dist/Coding_Textbook_Recovery_11TRACKS_20260918.sha256
             alltracks-validation/
             alltracks_v5_audit.json
+            app/build/test-results/testDebugUnitTest/
+            app/build/reports/tests/testDebugUnitTest/
             app/build/outputs/androidTest-results/
             app/build/reports/androidTests/
