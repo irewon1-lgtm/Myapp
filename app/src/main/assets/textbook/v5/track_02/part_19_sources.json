@@ -3,13 +3,13 @@
   "sections": [
     {"sectionId":"T02-P19-S01-distribution-import-package","sourceIds":["PYTHON-REF","NIST-SSDF"]},
     {"sectionId":"T02-P19-S02-build-metadata","sourceIds":["PYTHON-REF","NIST-SSDF"]},
-    {"sectionId":"T02-P19-S03-version-compatibility","sourceIds":["SEMVER","NIST-SSDF"]},
+    {"sectionId":"T02-P19-S03-version-compatibility","sourceIds":["NIST-SSDF","PROGIT2"]},
     {"sectionId":"T02-P19-S04-dependency-constraints","sourceIds":["NIST-SSDF","SRE"]},
     {"sectionId":"T02-P19-S05-build-artifacts","sourceIds":["PYTHON-REF","NIST-SSDF"]},
     {"sectionId":"T02-P19-S06-editable-vs-installed","sourceIds":["PYTHON-REF","NIST-SSDF"]},
     {"sectionId":"T02-P19-S07-plugin-discovery","sourceIds":["PYTHON-REF","GOF"]},
-    {"sectionId":"T02-P19-S08-supply-chain","sourceIds":["NIST-SSDF","SLSA"]},
+    {"sectionId":"T02-P19-S08-supply-chain","sourceIds":["NIST-SSDF","SRE"]},
     {"sectionId":"T02-P19-S09-public-import-api","sourceIds":["PYTHON-REF","REFACTORING2"]},
-    {"sectionId":"T02-P19-S10-artifact-provenance","sourceIds":["SLSA","NIST-SSDF","PROGIT2"]}
+    {"sectionId":"T02-P19-S10-artifact-provenance","sourceIds":["NIST-SSDF","PROGIT2","GIT-DOCS"]}
   ]
 }
