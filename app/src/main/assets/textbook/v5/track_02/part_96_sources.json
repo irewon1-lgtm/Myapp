@@ -1,0 +1,13 @@
+{
+  "partId":"T02-P96",
+  "sections":[
+    {"sectionId":"T02-P96-S01-identifier-purpose","sourceIds":["PYTHON-REF","DDIA"]},
+    {"sectionId":"T02-P96-S02-random-identifier","sourceIds":["PYTHON-REF","NIST-SSDF"]},
+    {"sectionId":"T02-P96-S03-name-derived-id","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P96-S04-text-binary-form","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P96-S05-db-index-locality","sourceIds":["DDIA","DBSC7"]},
+    {"sectionId":"T02-P96-S06-id-not-secret","sourceIds":["NIST-SSDF","SRE"]},
+    {"sectionId":"T02-P96-S07-idempotency-key","sourceIds":["SRE","DDIA"]},
+    {"sectionId":"T02-P96-S08-identifier-contract","sourceIds":["DDIA","NIST-SSDF"]}
+  ]
+}
