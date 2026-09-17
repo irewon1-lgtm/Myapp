@@ -1,268 +1,131 @@
-# TRACK 02 · P70 — Async iteration과 async context: __aiter__·__anext__·async with의 suspension 경계를 추적하기
+# PART 70 · Async iteration과 async context protocol — suspension·종료·cancellation cleanup을 연결하기
 
-비동기 프로토콜은 동기 프로토콜에 `async`라는 글자를 붙인 버전이 아니다. 각 단계 사이에 `await` suspension이 들어갈 수 있고, 그 사이에 다른 task가 실행되거나 cancellation이 전달될 수 있다. 그래서 iteration 종료, 자원 획득, cleanup을 모두 **시간적으로 분리된 상태 전이**로 이해해야 한다.
-
-P55에서는 task orchestration과 cancellation을 넓게 다뤘다. 이번 PART에서는 그 내용을 반복하지 않고, `async for`와 `async with`가 요구하는 **객체 프로토콜 경계**에 집중한다.
+`async for`와 `async with`는 동기 protocol에 `await`를 붙인 단순 변형이 아니다. 각 iteration step이나 resource acquisition/release가 suspension point가 될 수 있고, 그 사이 다른 task가 실행되며 cancellation이 들어올 수 있다. 따라서 비동기 protocol에서는 **데이터 순서뿐 아니라 await 경계와 cleanup 보장**을 함께 설계해야 한다.
 
 ---
 
-## 1. Async iteration protocol — 다음 값이 즉시 준비되지 않아도 된다
+## CHAPTER 01 · async iteration은 `__aiter__`와 `__anext__`로 다음 값을 awaitable하게 만든다
 
-비동기 반복 가능한 객체는 `__aiter__`를 통해 async iterator를 제공하고, iterator는 `__anext__`로 다음 값을 awaitable 형태로 만든다.
+Async iterable은 `async for`에 참여하며 각 다음 값 요청이 대기할 수 있다.
 
 ```python
-class Ticker:
-    def __init__(self, values):
-        self.values = list(values)
-        self.index = 0
+class AsyncCounter:
+    def __init__(self, limit):
+        self.limit = limit
+        self.current = 0
 
     def __aiter__(self):
         return self
 
     async def __anext__(self):
-        if self.index >= len(self.values):
+        if self.current >= self.limit:
             raise StopAsyncIteration
-        value = self.values[self.index]
-        self.index += 1
+        value = self.current
+        self.current += 1
         return value
 ```
 
-사용자는 다음처럼 읽는다.
+Network stream, queue, paginated API처럼 다음 값이 즉시 준비되지 않는 source에 적합하다. 일반 iterator와 달리 각 step 사이에 scheduler에게 control이 넘어갈 수 있으므로 shared state가 바뀔 수 있다.
 
-```python
-async for value in Ticker([10, 20, 30]):
-    print(value)
-```
-
-동기 iterator와 차이는 “다음 값 요청이 I/O나 대기를 포함할 수 있다”는 점이다. 예를 들어 database cursor, websocket message stream, paginated API stream은 다음 항목이 즉시 메모리에 없을 수 있다.
-
-그렇다고 모든 collection을 async iterator로 만들 필요는 없다. 메모리 안의 list를 단순히 순회하는데 async protocol을 쓰면 suspension 의미가 없는 복잡성만 추가된다.
+Async iterator가 self를 반환하는 single-pass cursor인지, 매번 새 iterator를 만드는 reusable source인지 구분한다. 두 semantics를 섞으면 두 consumer가 같은 cursor를 경쟁할 수 있다.
 
 ---
 
-## 2. `StopAsyncIteration` — 비동기 반복의 정상 종료 신호다
+## CHAPTER 02 · `StopAsyncIteration`은 async stream의 정상 종료 신호다
 
-동기 iterator가 `StopIteration`으로 종료를 알리듯 async iterator는 `StopAsyncIteration`을 사용한다.
+동기 iterator의 `StopIteration`과 마찬가지로 async iterator는 더 이상 값이 없을 때 `StopAsyncIteration`을 사용한다. 이것은 일반 business failure와 구분되는 protocol 종료 신호다.
 
 ```python
 async def __anext__(self):
-    item = await read_next()
+    item = await self.queue.get()
     if item is END:
         raise StopAsyncIteration
     return item
 ```
 
-이 예외는 “실패”와 다르다. stream이 정상적으로 끝났다는 프로토콜 제어 신호다.
+종료 sentinel을 외부 data와 충돌하지 않게 설계하고, 실제 I/O error를 정상 종료로 바꾸지 않는다. Connection reset, authentication failure, parser error까지 `StopAsyncIteration`으로 숨기면 consumer는 stream이 정상 완료됐다고 오해한다.
 
-다음은 구분해야 한다.
-
-```text
-StopAsyncIteration  → 정상 iteration 종료
-TimeoutError        → 다음 값을 기다리다 시간 초과
-ConnectionError     → stream transport 실패
-CancelledError      → 소비 task 취소 경로
-```
-
-종료와 실패를 같은 sentinel `None`으로 합치면 실제 `None` 데이터와 구분이 안 될 수 있고, 실패 원인도 사라진다.
-
-프로토콜이 이미 종료 신호를 제공한다면 그 신호를 정확히 사용해야 소비 측 `async for`가 정상적으로 멈춘다.
+종료 시 내부 resource 정리가 필요하다면 async context manager와 결합하거나 explicit close protocol을 제공한다.
 
 ---
 
-## 3. `async for` desugaring — 매 항목마다 suspension 지점이 생긴다
+## CHAPTER 03 · `async for`를 desugar하면 매 반복에 await 경계가 있음을 볼 수 있다
 
-개념적으로 다음 코드를 보자.
+개념적으로 `async for item in source`는 async iterator를 얻고 반복적으로 `__anext__` 결과를 await하는 구조다. 실제 language semantics에는 세부 규칙이 있지만 이 모델만으로도 중요한 사실이 드러난다. **반복문 한 바퀴마다 다른 task가 끼어들 수 있다.**
+
+그래서 다음과 같은 코드는 동기 loop보다 더 많은 interleaving 가능성을 가진다.
 
 ```python
-async for item in stream:
-    process(item)
+async for item in source:
+    await store(item)
 ```
 
-대략적인 사고 모델은 다음과 같다.
+`source.__anext__()` 대기와 `store()` 대기 사이에 shared configuration이나 cancellation state가 바뀔 수 있다. Loop 시작 때 읽은 값을 계속 동일하다고 가정하지 않는다.
 
-```text
-iterator = stream.__aiter__()
-loop:
-    item = await iterator.__anext__()
-    body(item)
-```
-
-실제 언어 semantics의 세부를 이 의사 코드 하나로 완전히 대체할 수는 없지만, 성능과 cancellation을 이해하기에는 중요한 모델이다.
-
-매 `__anext__` 호출 사이에 event loop가 다른 task를 실행할 수 있다. 따라서 iterator 내부 mutable state는 “한 줄 다음에 바로 이어서 실행된다”는 동기적 직관으로 설계하면 안 된다.
-
-또 body가 느리면 producer가 자연스럽게 다음 값을 요청받지 못하는 pull-based backpressure가 생길 수 있다. 반대로 내부 producer가 background task로 계속 데이터를 쌓는 구조라면 별도의 queue capacity와 overflow 정책이 필요하다.
-
-`async for` 문법만 보고 전체 backpressure 모델을 단정하면 안 된다.
+Batching으로 await 횟수를 줄일 수 있지만 latency와 memory가 달라진다. Protocol을 이해한 뒤 performance trade-off를 조정한다.
 
 ---
 
-## 4. Async context protocol — 진입과 종료 자체가 awaitable일 수 있다
+## CHAPTER 04 · async context protocol은 acquisition과 release 자체가 await될 수 있게 한다
 
-원격 connection pool에서 connection을 얻거나 transaction 종료 시 network round-trip이 필요한 경우, 동기 `__enter__`/`__exit__`로는 자연스럽게 표현하기 어렵다.
-
-비동기 context manager는 `__aenter__`와 `__aexit__`을 제공한다.
+`async with`는 `__aenter__`와 `__aexit__`를 사용한다. Connection pool에서 lease를 얻거나 remote lock을 해제하는 것처럼 진입·종료 자체가 비동기 작업인 resource에 적합하다.
 
 ```python
-class AsyncConnection:
+class ConnectionLease:
     async def __aenter__(self):
-        self.conn = await acquire_connection()
+        self.conn = await self.pool.acquire()
         return self.conn
 
     async def __aexit__(self, exc_type, exc, tb):
-        await release_connection(self.conn)
+        await self.pool.release(self.conn)
         return False
 ```
 
-사용:
+동기 context manager 안에서 blocking I/O를 수행하면 event loop 전체를 막을 수 있다. 반대로 실제 await가 필요 없는 작은 local lock까지 무조건 async context로 만들 필요는 없다.
 
-```python
-async with AsyncConnection() as conn:
-    await conn.execute("SELECT 1")
-```
-
-여기서는 **진입 전에도 suspension, body 안에도 suspension, 종료 중에도 suspension**이 가능하다. 즉 resource lifetime 사이사이에 scheduler 개입 지점이 존재한다.
-
-그래서 공유 state나 timeout을 설계할 때 “with 블록은 하나의 연속된 atomic 구간”처럼 생각하면 안 된다.
+Acquisition이 절반만 성공한 경우의 rollback도 동기 context와 마찬가지로 `__aenter__` 안에서 처리해야 한다.
 
 ---
 
-## 5. `__aenter__` / `__aexit__` — ownership은 await 경계를 넘어 유지된다
+## CHAPTER 05 · `__aenter__`와 `__aexit__` 사이에는 task suspension과 외부 변화가 존재한다
 
-Async resource 획득이 여러 단계라면 P69의 부분 획득 문제에 suspension이 추가된다.
+Async context는 lexical scope가 명확하지만 그 scope 안의 execution이 연속적이라는 뜻은 아니다. Body가 await할 때마다 다른 task가 동일 service나 shared state를 변경할 수 있다.
 
-```python
-class RemoteSession:
-    async def __aenter__(self):
-        self.transport = await open_transport()
-        try:
-            self.auth = await authenticate(self.transport)
-        except BaseException:
-            await close_transport(self.transport)
-            raise
-        return self
-```
+예를 들어 transaction context 안에서 await를 여러 번 하면 database transaction 자체는 유지돼도 application-level cache나 in-memory state는 다른 task에 의해 바뀔 수 있다. “context 안이므로 모든 상태가 고정된다”는 가정을 하지 않는다.
 
-인증 단계에서 실패하거나 취소되어도 이미 연 transport는 정리돼야 한다.
-
-여기서 `except Exception`과 `except BaseException` 범위를 무심코 선택하면 cancellation 처리와도 연결될 수 있으므로 현재 Python 버전의 cancellation 예외 계층과 framework contract를 확인해야 한다. 더 중요한 일반 원칙은 **취소도 enter 실패 경로의 하나로 포함해 ownership 누수를 막는 것**이다.
-
-`__aexit__`에서도 정상 종료와 body 실패를 구분해 commit/rollback 같은 작업을 await할 수 있다.
-
-```text
-body 성공 → await commit()
-body 실패 → await rollback()
-always      → await release()
-```
-
-하지만 commit 자체가 실패했을 때 connection을 어떤 상태로 pool에 돌려보낼지도 별도 정책이다.
+Resource가 concurrency isolation까지 제공하는지 단순 lifetime 관리만 제공하는지 분리한다. Async lock context는 mutual exclusion을 줄 수 있지만 transaction context와 같은 rollback 의미는 자동으로 생기지 않는다.
 
 ---
 
-## 6. Cancellation cleanup — 취소는 cleanup을 생략하라는 뜻이 아니다
+## CHAPTER 06 · cancellation은 cleanup 경로를 실제 실패 유형으로 만든다
 
-비동기 코드에서 cancellation은 정상적인 제어 흐름의 일부다. 문제는 task가 취소될 때 resource cleanup도 await를 필요로 할 수 있다는 점이다.
+Async code에서 task cancellation은 특별히 자주 만나는 종료 경로다. Cancellation이 await 지점에서 전달되면 resource release가 누락되지 않도록 `async with`와 `finally`를 사용해야 한다.
 
 ```python
-async with lease() as resource:
-    await use(resource)
+async with lease() as conn:
+    await do_work(conn)
 ```
 
-`use()` 도중 cancellation이 들어오면 `__aexit__`가 resource를 반납할 기회를 가져야 한다. 그러나 cleanup 안의 await도 취소와 상호작용할 수 있다.
+`do_work` 중 cancellation이 들어와도 context exit가 실행되어 lease를 반환해야 한다. 다만 cleanup 자체가 await를 포함하면 그 cleanup이 다시 cancellation의 영향을 받을 수 있으므로 library contract와 runtime semantics를 이해해야 한다.
 
-무조건 cancellation을 삼키면 상위 orchestration이 task 종료를 알 수 없고, 반대로 cleanup을 전혀 보호하지 않으면 lock/connection이 누수될 수 있다.
-
-따라서 cancellation-safe resource manager는 다음을 구분한다.
-
-1. 취소 요청을 관찰한다.
-2. 반드시 필요한 최소 cleanup을 수행한다.
-3. 원래 cancellation 의미를 가능한 한 보존한다.
-4. cleanup 실패가 추가되면 원인 관계를 추적 가능하게 만든다.
-
-`asyncio.shield` 같은 도구가 존재하지만 “cleanup이면 전부 shield”가 정답은 아니다. shield는 cancellation propagation과 lifetime을 바꾸므로 제한적으로 사용해야 한다.
+Cancellation을 일반 exception처럼 무조건 catch하고 계속 실행하면 상위 orchestration이 task를 멈추지 못할 수 있다. 필요한 cleanup을 수행한 뒤 취소 의도를 보존하는 것이 기본이다.
 
 ---
 
-## 7. Sync/async boundary — 같은 기능이라도 프로토콜을 섞어 쓰지 않는다
+## CHAPTER 07 · sync/async boundary를 섞으면 blocking과 hidden scheduler dependency가 생긴다
 
-동기 iterator에서 비동기 I/O를 몰래 실행하려 하거나, async context를 동기 `with`에 끼워 넣으면 경계가 불명확해진다.
+동기 함수에서 async iterator를 억지로 소비하거나 async code에서 blocking file/network API를 직접 호출하면 실행 모델이 충돌한다. Event loop thread에서 긴 blocking call을 수행하면 다른 task가 진행하지 못한다.
 
-나쁜 방향의 예:
+반대로 작은 CPU 연산을 무조건 thread executor로 보내면 context switching과 error propagation 복잡도가 커질 수 있다. Boundary를 정할 때 operation이 실제로 blocking I/O인지, CPU-bound인지, 짧은 local operation인지 구분한다.
 
-```python
-class RemoteRows:
-    def __iter__(self):
-        # 내부에서 event loop를 새로 돌려 remote I/O를 숨김
-        ...
-```
-
-호출자는 평범한 `for`라고 생각하지만 실제로 blocking I/O와 event loop 문제가 숨는다.
-
-더 명확한 API는 실행 모델을 문법에 드러낸다.
-
-```python
-async for row in remote_rows:
-    ...
-```
-
-반대로 이미 메모리에 모두 있는 결과는 동기 collection으로 materialize해서 반환할 수 있다.
-
-Library boundary에서는 다음을 명시한다.
-
-```text
-returns: list / Iterator / AsyncIterator
-acquire: with / async with
-callback: sync callable / async callable
-blocking I/O: yes/no
-```
-
-동기와 비동기의 차이는 속도 차이가 아니라 **scheduler와 suspension이 contract에 노출되는가**의 차이다.
+Library API도 한 계층에서 sync와 async 버전을 무질서하게 섞기보다 명확한 adapter boundary를 둔다. 같은 resource에 두 API가 동시에 접근할 때 thread safety와 event-loop affinity도 검토한다.
 
 ---
 
-## 8. Async protocol contract — 종료·실패·취소·backpressure를 따로 적는다
+## CHAPTER 08 · async protocol contract는 backpressure·ownership·cancellation을 함께 정의한다
 
-비동기 stream/context를 설계할 때는 다음 표가 유용하다.
+Async iterable을 public API로 제공할 때 consumer가 천천히 읽으면 producer가 얼마나 buffer하는지, iterator를 중간에 포기하면 어떤 cleanup이 필요한지, 같은 source를 두 consumer가 동시에 읽을 수 있는지 정해야 한다.
 
-```text
-producer model: pull on __anext__
-end signal: StopAsyncIteration
-transient failure: ConnectionError
-idle timeout: TimeoutError
-consumer cancellation: propagate after cleanup
-buffering: max 100 items
-resource acquire: async with
-release: await pool.release
-reusable iterator: no
-multiple consumers: no
-```
+Async context manager는 어떤 task가 resource를 소유하는지, 중첩 사용이 가능한지, cancellation 중 release를 어떻게 보장하는지 문서화한다. Test에서는 정상 종료, source exhaustion, producer error, consumer cancellation, `__aenter__` 실패, `__aexit__` 실패를 서로 다른 case로 확인한다.
 
-테스트 역시 서로 다른 실패 유형을 분리해야 한다.
-
-```text
-A. 정상 항목 N개 후 정상 종료
-B. 중간 transport 실패
-C. 다음 항목 대기 중 cancellation
-D. __aenter__ 부분 획득 뒤 실패
-E. body 실패 후 __aexit__ cleanup
-F. cleanup 자체 실패
-```
-
-이 구분 없이는 happy path 테스트만 통과한 async abstraction이 운영에서 connection leak이나 hanging task를 만들 수 있다.
-
-Async protocol의 핵심은 “await를 어디에 붙이나?”가 아니다. **suspension 사이에도 resource ownership과 종료 의미가 보존되는가?**다.
-
----
-
-## 직관 봉인
-
-- async iteration은 단순 반복이 아니라 매 항목 획득이 await될 수 있는 프로토콜이다.
-- `StopAsyncIteration`은 정상 종료 신호이며 transport 실패와 다르다.
-- `async for`의 각 next 사이에는 다른 task가 실행될 수 있다.
-- `async with`는 enter와 exit 자체도 suspension될 수 있다.
-- cancellation은 cleanup 면제 사유가 아니지만 무조건 suppress해서도 안 된다.
-- sync/async 경계는 기능 차이가 아니라 scheduler contract 차이다.
-
-## 다음 연결
-
-다음 구간에서는 이 비동기 프로토콜을 더 낮은 실행 모델로 내려가 **coroutine object, awaitable, async generator, context propagation, synchronization primitive**를 추적한다. P55의 orchestration을 반복하지 않고 “task 안에서 실제로 무엇이 suspend되고 다시 이어지는가”를 중심으로 확장한다.
+이 PART의 핵심은 **async iteration과 async context를 단순히 await가 붙은 문법으로 보지 않고, suspension point 사이의 interleaving과 cancellation까지 포함한 resource·stream protocol로 설계하는 것**이다.
