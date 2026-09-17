@@ -17,6 +17,7 @@ import androidx.compose.material3.NavigationDrawerItem
 import androidx.compose.material3.Text
 import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.key
 import androidx.compose.runtime.mutableStateOf
@@ -40,9 +41,9 @@ import kotlinx.coroutines.launch
  * Focused e-book shell.
  *
  * A TRACK with a validated V5 manifest is routed to the part-lazy, measured V5 reader. Tracks which
- * have not yet been rewritten keep using the verified V4/V3 compatibility reader, so unfinished
- * books never crash the shelf and V5 can be authored one TRACK at a time without loading an entire
- * multi-megabyte book into memory.
+ * have not yet been rewritten keep using the verified V4/V3 compatibility reader. Remote V5 content
+ * is refreshed when this screen opens so a newly published TRACK can appear without rebuilding the
+ * APK again after the hybrid reader itself has been installed once.
  */
 @Composable
 fun AdaptiveTextbookScreen(
@@ -57,10 +58,16 @@ fun AdaptiveTextbookScreen(
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
     val scope = rememberCoroutineScope()
     var selectedChapterId by rememberSaveable(initialChapterId) { mutableStateOf(initialChapterId) }
+    var remoteGeneration by rememberSaveable { mutableStateOf(0) }
+
+    LaunchedEffect(v5Repository) {
+        runCatching { v5Repository.refreshRemoteContent() }
+        remoteGeneration += 1
+    }
 
     val selectedChapter = V1TextbookCatalog.chapterById(selectedChapterId)
         ?: V1TextbookCatalog.chapters.first()
-    val hasV5Book = remember(selectedChapter.id) {
+    val hasV5Book = remember(selectedChapter.id, remoteGeneration) {
         runCatching { v5Repository.loadManifest(selectedChapter.number) }.isSuccess
     }
 
@@ -134,7 +141,7 @@ fun AdaptiveTextbookScreen(
                     .fillMaxWidth()
                     .testTag("reader_single_column")
             ) {
-                key(selectedChapterId, hasV5Book) {
+                key(selectedChapterId, hasV5Book, remoteGeneration) {
                     if (hasV5Book) {
                         V5TrackBookScreen(
                             trackNumber = selectedChapter.number,
