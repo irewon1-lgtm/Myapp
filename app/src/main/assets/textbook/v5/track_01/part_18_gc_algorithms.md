@@ -4,240 +4,300 @@
 
 ---
 
-## CHAPTER 01 · reachability는 language-level liveness를 근사하는 안전 기준이다
+## CHAPTER 01 · reachability는 future use를 직접 예측하지 않고 안전한 liveness 근사를 만든다
 
-collector는 프로그램이 미래에 객체를 다시 사용할지를 일반적으로 완벽히 예측할 수 없다. 대신 stack/register/global/JNI handle 같은 root에서 reference graph를 따라 도달 가능한 객체를 live로 간주한다. 도달 불가능한 객체는 프로그램이 합법적인 reference를 통해 다시 접근할 수 없다는 전제에서 reclaim한다.
+collector는 프로그램이 미래에 어떤 객체를 다시 사용할지 일반적으로 알 수 없으므로 stack, register, global, runtime handle 같은 root에서 reference graph를 따라 도달 가능한 객체를 live로 간주한다. 도달 가능하다는 사실은 업무적으로 필요하다는 뜻이 아니라 **합법적인 reference를 통해 다시 접근할 가능성이 남아 있다**는 뜻이다. 따라서 cache가 실질적으로 쓸모없어도 global map이 reference를 유지하면 GC는 회수할 수 없다.
 
-reachability는 business usefulness와 다르다. cache가 더 이상 필요 없어도 global map이 reference를 유지하면 collector는 살아 있다고 판단한다. GC leak는 collector failure가 아니라 ownership graph가 객체를 계속 reachable하게 만드는 경우가 많다.
+이 모델은 memory leak의 정의를 바꾼다. native allocator leak처럼 release를 잊은 경우도 있지만 managed heap에서는 ownership graph가 객체를 reachable 상태로 유지하는 경우가 흔하다. listener, static registry, long-lived coroutine scope가 short-lived 화면이나 request 객체를 붙잡으면 collector는 정상 동작하면서도 heap이 증가한다.
 
----
-
-## CHAPTER 02 · precise root enumeration은 pointer와 non-pointer 값을 구분해야 한다
-
-moving collector는 객체를 이동한 뒤 모든 live reference를 새 주소로 갱신해야 하므로 어느 register/stack slot이 object reference인지 정확히 알아야 한다. compiler/runtime는 stack map, metadata, safepoint를 이용해 precise roots를 제공할 수 있다.
-
-conservative collector는 bit pattern이 pointer처럼 보이면 object를 보존할 수 있어 false retention과 이동 제약이 생긴다. managed runtime의 type metadata와 compiler cooperation이 더 강한 collector 알고리즘을 가능하게 한다.
+조사에서는 큰 객체 자체보다 GC root로 이어지는 retained path를 본다. dominator와 retained size, root category, object age를 연결해야 `왜 아직 reachable한가`를 설명할 수 있다. 단순 heap size 증가는 reachability 원인을 말해 주지 않는다.
 
 ---
 
-## CHAPTER 03 · tri-color abstraction은 tracing collector의 핵심 invariant를 표현한다
+## CHAPTER 02 · root enumeration은 collection 시점에 runtime이 반드시 놓치지 말아야 할 reference 집합을 찾는다
 
-white는 아직 발견되지 않은 객체, gray는 발견됐지만 outgoing edge scan이 끝나지 않은 객체, black은 scan이 끝난 객체로 모델링할 수 있다. tracing은 root를 gray로 만들고 gray object의 child를 발견하며 black으로 전환한다.
+stack slot과 register의 모든 bit pattern을 pointer로 볼 수는 없다. precise GC는 stack map, type metadata, runtime frame 정보를 사용해 어느 위치가 reference인지 식별한다. native frame, JIT frame, interpreter frame, JNI handle이 함께 존재하면 root enumeration은 runtime 전체의 calling convention과 safepoint metadata에 의존한다.
 
-정확성의 핵심은 collection 종료 시 live white object가 남지 않는 것이다. concurrent mutator가 black→white edge를 새로 만들면 collector가 그 white object를 놓칠 수 있으므로 write/read barrier가 tri-color invariant를 보존하도록 설계된다.
+root 하나를 놓치면 실제 live object가 unreachable하다고 오판되어 use-after-free에 해당하는 심각한 corruption이 생길 수 있다. 반대로 integer를 pointer로 잘못 해석하는 conservative scheme은 garbage를 live로 남겨 memory retention을 만든다. correctness와 precision은 서로 다른 문제다.
 
----
-
-## CHAPTER 04 · mark-sweep은 object 위치를 유지하고 free-space 관리 비용을 낸다
-
-mark phase가 live graph를 표시한 뒤 sweep가 unmarked object 영역을 free list로 반환한다. object를 이동하지 않으므로 raw pointer/pinning과 호환이 쉽지만 heap이 시간이 지나면서 fragmented될 수 있다.
-
-sweep를 heap 전체 선형 scan으로 수행하면 pause와 memory bandwidth 비용이 크다. bitmap marking, segregated region, lazy sweeping으로 비용을 줄일 수 있다. allocator와 collector의 free-list 정책이 함께 fragmentation을 결정한다.
+GC pause가 길 때 heap scan만 원인으로 보지 않는다. thread가 safepoint에 도달하고 stack을 안정화하는 시간, native transition, root 수가 비용에 포함된다. root enumeration latency를 독립적으로 측정해야 한다.
 
 ---
 
-## CHAPTER 05 · mark bitmap은 object header와 marking metadata를 분리한다
+## CHAPTER 03 · tri-color abstraction은 concurrent marking에서 놓치면 안 되는 invariant를 표현한다
 
-mark bit를 object header 대신 별도 bitmap에 저장하면 compact metadata access와 page-level locality를 얻을 수 있다. bit address는 object address에서 계산할 수 있어 mark state lookup이 빠르다.
+tri-color marking은 object를 아직 보지 않은 white, 발견했지만 outgoing edge를 모두 처리하지 않은 gray, 처리 완료한 black으로 설명한다. 핵심 안전 조건은 collector가 종료할 때 **black object에서 white live object로 가는 edge가 몰래 생겨 있지 않아야 한다**는 것이다. mutator가 reference graph를 바꾸면 이 조건이 깨질 수 있다.
 
-bitmap 자체도 memory와 cache bandwidth를 소비한다. sparse large heap에서는 bitmap scan 전략이 중요하고, concurrent marker가 여러 thread에서 bit를 업데이트하면 atomic word contention을 고려해야 한다.
+그래서 concurrent collector는 write barrier, SATB, incremental-update 같은 mechanism으로 mutator modification을 기록한다. 알고리즘 이름보다 어떤 invariant를 유지하는지 이해하면 barrier 동작을 해석하기 쉽다. barrier가 모든 store를 느리게 만드는 이유가 아니라 특정 marking 정보를 보존하기 위한 비용이라는 뜻이다.
 
----
-
-## CHAPTER 06 · lazy sweeping은 reclaim cost를 allocation path로 분산한다
-
-mark가 끝난 뒤 heap 전체를 즉시 sweep하지 않고 allocation이 필요한 region부터 sweep하면 stop-the-world pause를 줄일 수 있다. 대신 future allocation latency가 sweep work에 영향을 받고 free-space accounting이 복잡해진다.
-
-real-time sensitive runtime은 large one-shot pause 대신 bounded incremental work를 선호할 수 있다. GC phase time을 평균 하나로 보지 않고 mark/sweep/assist/allocation stall 분포를 분리한다.
+디버깅에서는 marking bug를 random GC crash로만 보지 않는다. barrier가 빠지는 write path, native field update, JIT optimization이 invariant를 위반하는지 확인한다. collector correctness는 graph invariant와 implementation path가 1:1로 대응해야 한다.
 
 ---
 
-## CHAPTER 07 · copying collector는 live object만 복사해 allocation과 compaction을 결합한다
+## CHAPTER 04 · mark-sweep는 object 이동 없이 live를 표시하고 unreachable block을 free로 돌린다
 
-semispace copying은 from-space에서 reachable object를 to-space로 복사하고 forwarding pointer로 중복 copy를 방지한다. collection이 끝나면 to-space가 compact live heap이고 나머지 space를 한 번에 free로 사용할 수 있다.
+mark phase가 root에서 reachable object를 표시한 뒤 sweep phase가 heap을 순회하며 표시되지 않은 block을 free list로 반환한다. object 주소가 유지되므로 native pointer나 pinning과 호환하기 쉽지만, 살아 있는 object 사이에 hole이 남아 external fragmentation이 커질 수 있다. allocation은 충분한 총 free bytes가 있어도 요청 크기에 맞는 block을 못 찾을 수 있다.
 
-cost는 heap 전체가 아니라 live bytes에 더 비례하지만 두 semispace 때문에 peak memory overhead가 크다. object 이동 때문에 raw pointer/reference update가 필요하다. young generation처럼 live ratio가 낮은 영역에 특히 적합하다.
+sweep cost는 heap size와 metadata organization에 영향을 받는다. 모든 block을 매 collection마다 훑으면 large heap에서 시간이 커지므로 lazy sweep이나 region-based sweep을 사용할 수 있다. mark와 sweep을 병렬화해도 memory bandwidth와 cache pollution이 병목이 될 수 있다.
 
----
-
-## CHAPTER 08 · forwarding pointer는 이동 중 identity를 보존한다
-
-object를 처음 복사할 때 old location에 forwarding information을 남기면 다른 reference가 같은 old object를 만났을 때 이미 생성한 new copy를 찾을 수 있다. 이 mechanism이 object identity와 cycle graph를 안전하게 처리한다.
-
-header를 forwarding state에 사용하는 runtime은 hash/lock/header metadata와 충돌을 해결해야 한다. side table이나 tagged header state가 필요할 수 있다. moving GC 설계는 object model과 독립적이지 않다.
+운영 metric은 pause 하나가 아니라 mark duration, sweep rate, free-block distribution, allocation failure를 함께 본다. fragmentation 때문에 compaction이 별도로 필요한지 판단해야 한다.
 
 ---
 
-## CHAPTER 09 · mark-compact는 fragmentation을 제거하면서 live object 이동 cost를 낸다
+## CHAPTER 05 · mark bitmap은 object header 변경 없이 liveness 상태를 별도 metadata에 저장한다
 
-mark 후 live object를 한쪽으로 밀어 contiguous free region을 만들 수 있다. compaction algorithm은 destination 계산, reference update, object move 순서를 조정해야 한다.
+collector는 object마다 mark bit를 header에 넣거나 별도 bitmap을 둘 수 있다. bitmap은 heap address range를 작은 metadata로 압축해 표시하고 parallel marker가 atomic bit update를 수행할 수 있게 한다. object header를 건드리지 않아 runtime layout을 단순하게 유지할 수 있지만 bitmap 자체도 cache와 memory bandwidth를 사용한다.
 
-large heap에서 모든 live byte를 이동하면 memory bandwidth와 pause가 커진다. region-selective compaction이나 mostly-concurrent approach는 fragmentation이 심한 영역만 이동해 비용을 제한할 수 있다.
+large sparse heap에서는 bitmap scanning이 실제 live object보다 넓은 address range를 만질 수 있다. region summary나 card metadata를 추가해 비어 있는 범위를 건너뛸 수 있다. marking throughput이 느릴 때 object graph뿐 아니라 metadata access locality를 확인해야 한다.
 
----
-
-## CHAPTER 10 · generational hypothesis는 대부분의 객체가 짧게 산다는 workload 관찰이다
-
-많은 managed workload에서 새 object 상당수가 짧은 시간 안에 unreachable된다. heap을 young/old generation으로 나누고 young을 자주 collect하면 전체 old heap scan을 피할 수 있다.
-
-가설이 workload에 맞지 않으면 promotion과 repeated scan 비용이 커진다. large long-lived graph를 빠르게 만드는 workload, cache warmup은 generational collector의 예상과 다를 수 있다. survivor age distribution을 측정한다.
+corruption 조사에서는 mark bit가 틀렸다는 증상만 보지 않는다. object allocation/free와 bitmap initialization 순서, region reuse generation이 일치하는지 확인한다. stale mark state가 새 object에 남으면 collector 판단이 깨질 수 있다.
 
 ---
 
-## CHAPTER 11 · minor collection은 old→young reference를 별도 추적해야 한다
+## CHAPTER 06 · lazy sweep은 free memory 발견을 allocation 시점으로 미루어 pause를 줄인다
 
-young generation만 tracing할 때 old object가 young object를 가리키는 edge를 무시하면 live young object를 잘못 reclaim할 수 있다. remembered set은 이러한 cross-generation reference source를 추적한다.
+mark가 끝난 뒤 heap 전체를 즉시 sweep하면 collection pause가 길어질 수 있다. lazy sweep은 region이나 page를 `unswept` 상태로 남기고 allocator가 새 memory를 필요로 할 때 해당 범위를 sweep한다. pause를 줄이는 대신 이후 allocation path가 sweep 비용을 갑자기 떠안을 수 있다.
 
-전체 old heap을 매 minor GC마다 scan하지 않기 위해 write barrier가 old object field에 young reference가 저장될 때 card/remembered metadata를 갱신한다. allocation fast path의 이득은 mutator write barrier cost와 교환된다.
+latency-sensitive request가 처음 unswept region을 만나면 allocation p99가 튈 수 있다. background sweeper를 두면 이 비용을 분산할 수 있지만 CPU와 memory bandwidth를 지속적으로 소비한다. collector는 pause와 mutator allocation latency 사이에서 비용을 옮긴다.
 
----
-
-## CHAPTER 12 · card table은 address range를 coarse dirty unit으로 추적한다
-
-heap을 고정 크기 card로 나누고 reference write가 발생한 card를 dirty 표시하면 GC는 dirty card만 scan해 old→young edge를 찾을 수 있다. card가 너무 크면 불필요한 scan이 늘고 너무 작으면 metadata와 barrier traffic이 증가한다.
-
-false sharing과 유사하게 unrelated object write가 동일 card를 계속 dirty하게 만들 수 있다. object layout과 mutation pattern이 remembered-set 비용에 영향을 준다.
+운영에서는 GC pause만 보고 성공이라고 결론내리지 않는다. post-GC allocation latency, background sweep CPU, unswept backlog를 같이 봐야 한다. pause 감소가 user-visible tail 감소로 이어졌는지 확인해야 한다.
 
 ---
 
-## CHAPTER 13 · write barrier는 collector invariant를 mutator operation에 삽입한다
+## CHAPTER 07 · copying collector는 live object를 새 공간으로 옮기며 fragmentation을 제거한다
 
-compiler/runtime는 reference field store 주변에 작은 barrier code를 추가할 수 있다. barrier는 generational remembered set, concurrent marking color invariant, snapshot consistency를 유지한다.
+copying scheme은 from-space에서 reachable object만 to-space로 복사하고 나머지 전체 영역을 한 번에 free로 간주할 수 있다. live object가 compact하게 모이므로 allocation은 bump pointer로 매우 빨라지고 fragmentation이 작다. 대신 collection 동안 live bytes를 copy해야 하고 동시에 두 공간에 대한 capacity가 필요할 수 있다.
 
-barrier는 모든 pointer write hot path에 들어갈 수 있어 instruction count와 cache cost가 중요하다. collector의 pause를 줄였지만 application throughput이 barrier 때문에 낮아질 수 있다. GC 비교는 pause만이 아니라 mutator tax를 포함한다.
+copy cost는 heap size가 아니라 live set size에 더 가깝다. short-lived object가 많고 survival rate가 낮은 young generation에서 copying이 잘 맞는 이유다. 반대로 대부분 객체가 오래 살아남으면 매 collection마다 많은 bytes를 옮겨 throughput이 나빠진다.
 
----
-
-## CHAPTER 14 · SATB는 marking 시작 시점의 graph snapshot을 보존한다
-
-Snapshot-At-The-Beginning 계열 concurrent marking은 marking 시작 순간 live였던 object가 collection 중 edge 삭제로 사라지지 않게 old reference를 barrier를 통해 기록할 수 있다. mutator가 field를 overwrite할 때 previous value를 marking worklist에 보존한다.
-
-SATB는 collection 동안 새로 allocation된 object 처리와 remark phase가 필요하다. snapshot semantics 덕분에 floating garbage, 즉 collection 중 죽었지만 이번 cycle에는 살아남는 객체가 있을 수 있다. correctness와 prompt reclamation은 다른 목표다.
+성능 분석에서는 allocation rate와 survival rate, copied bytes, promotion bytes를 본다. `GC 횟수` 하나로 copying cost를 판단하면 안 된다. 같은 횟수라도 survival ratio가 다르면 비용이 크게 달라진다.
 
 ---
 
-## CHAPTER 15 · incremental-update barrier는 black→white edge 생성 자체를 추적한다
+## CHAPTER 08 · forwarding pointer는 이동 전 주소를 새 주소로 연결해 reference graph를 복구한다
 
-다른 concurrent marking strategy는 black object가 white object를 새로 가리킬 때 target을 gray로 만드는 방식으로 tri-color invariant를 유지한다. insertion barrier 중심의 접근이다.
+object를 이동시키면 기존 reference가 old address를 가리키므로 collector는 새 위치를 기록하고 모든 reference를 업데이트해야 한다. forwarding pointer는 old object 위치나 side metadata에 new address를 남겨 중복 copy를 막고 pointer rewrite를 가능하게 한다. graph traversal 중 같은 object를 여러 경로에서 만나도 하나의 identity를 유지하는 핵심 장치다.
 
-SATB와 incremental-update는 barrier timing과 floating garbage 특성이 다르다. runtime이 어떤 barrier를 사용하는지 알아야 profiling에서 reference-update cost를 해석할 수 있다. collector 명칭만으로 내부 barrier를 추정하지 않는다.
+concurrent compaction에서는 mutator가 old pointer를 읽을 수 있어 read barrier나 indirection이 필요할 수 있다. forwarding state publication과 object copy 완료 순서가 잘못되면 reader가 partially copied object를 볼 수 있다. 단순 memcpy보다 memory-ordering proof가 중요하다.
+
+버그 분석에서는 stale reference가 어느 generation 주소를 가리키는지 확인한다. forwarding metadata가 언제 제거되고 old region이 언제 재사용되는지도 lifetime contract에 포함된다.
 
 ---
 
-## CHAPTER 16 · concurrent marking은 pause를 줄이지만 CPU와 memory-bandwidth 경쟁을 만든다
+## CHAPTER 09 · mark-compact는 live object를 한쪽으로 모아 free space를 연속화한다
 
-collector thread가 application과 동시에 heap graph를 scan하면 stop-the-world 시간을 줄일 수 있지만 동일 CPU core/cache/memory bandwidth를 경쟁한다. CPU가 이미 포화된 server에서는 concurrent GC가 request throughput과 tail latency를 악화시킬 수 있다.
+mark-compact collector는 먼저 live object를 식별한 뒤 relocation plan을 만들고 object를 이동하며 reference를 갱신한다. external fragmentation을 크게 줄일 수 있어 long-lived heap에 유용하지만 relocation 계산과 pointer update 비용이 크다. pinning이 많은 heap에서는 이동 가능한 공간이 제한되어 compaction 효과가 떨어진다.
 
-collector thread priority와 CPU quota, cgroup limit을 포함해 측정한다. `pause가 짧다`와 `user request가 빠르다`는 동일 지표가 아니다. concurrent phase duration과 mutator utilization을 함께 본다.
+compaction은 pause를 길게 만들 수 있어 region 단위나 incremental 방식으로 나누기도 한다. 하지만 일부 region만 정리하면 global fragmentation이 완전히 사라지지 않는다. 어떤 region을 compact할지 live density와 evacuation cost로 선택해야 한다.
+
+운영 metric은 compaction pause, moved bytes, reclaimed contiguous space, pinned bytes를 본다. `compaction 발생`을 무조건 문제로 보지 않고 이후 allocation 성공과 footprint 개선까지 평가한다.
+
+---
+
+## CHAPTER 10 · generational GC는 object lifetime 분포의 편향을 이용한다
+
+많은 managed workload에서 대부분 객체는 매우 짧게 살고 일부만 오래 살아남는다. generational collector는 young 영역을 자주 수집하고 survivor를 old generation으로 promotion해 전체 heap scanning 빈도를 줄인다. 이 가정이 맞을수록 allocation throughput과 pause에 유리하다.
+
+promotion threshold와 young size가 너무 작으면 살아남는 object가 일찍 old로 이동해 promotion traffic과 old pressure가 커질 수 있다. 너무 크면 young collection pause와 footprint가 증가한다. workload의 survival curve가 tuning의 근거다.
+
+진단에서는 allocation rate, age histogram, promotion rate, old occupancy를 함께 본다. 특정 feature가 medium-lived object를 대량 생성하면 generational 가정의 효율이 떨어질 수 있다. GC 설정만이 아니라 object lifetime 구조를 바꾸는 것이 더 큰 개선이 될 수 있다.
+
+---
+
+## CHAPTER 11 · remembered set은 old→young reference를 기록해 young collection 범위를 제한한다
+
+young generation만 수집할 때 root와 young object만 보면 old object가 young object를 가리키는 edge를 놓칠 수 있다. remembered set은 이런 cross-generation reference를 추적해 old heap 전체를 scan하지 않고도 young liveness를 정확히 찾게 한다. write barrier가 이 정보를 유지한다.
+
+remembered set이 너무 coarse하면 실제 edge보다 넓은 영역을 scan해 collection cost가 커지고, 너무 fine하면 update metadata가 무거워진다. card table, object set 등 구현마다 trade-off가 다르다. mutation-heavy workload는 remembered-set maintenance CPU가 커질 수 있다.
+
+GC log에서 young pause가 증가할 때 survival만 보지 않고 scanned cards와 remembered-set size를 본다. old object가 young pointer를 많이 갱신하는 data structure가 원인일 수 있다.
+
+---
+
+## CHAPTER 12 · card table은 heap을 coarse region으로 나눠 dirty reference 영역을 표시한다
+
+card table은 heap을 수백 byte 또는 그 이상의 card로 나누고 reference write가 발생한 card를 dirty로 표시한다. young collection에서는 dirty card만 다시 scan해 old→young edge를 찾는다. write barrier가 매우 가볍게 동작할 수 있지만 card 하나에 실제 relevant pointer가 하나뿐이어도 전체 card를 검사해야 한다.
+
+false sharing처럼 여러 thread가 인접 object를 수정하면 card metadata의 동일 cache line을 경쟁할 수 있다. card 크기와 table layout이 mutator overhead에 영향을 준다. collector는 clearing과 scanning 순서도 정확히 관리해야 한다.
+
+성능 증거에는 dirty-card rate, scanned bytes, useful discovered edge ratio를 포함한다. card table은 metadata optimization이지만 application write pattern과 직접 연결된다.
+
+---
+
+## CHAPTER 13 · write barrier는 pointer store에 GC bookkeeping을 삽입하는 mutator-side 계약이다
+
+collector가 concurrent 또는 generational 상태를 유지하려면 object reference write를 관찰해야 할 수 있다. compiler와 runtime은 pointer store 주변에 barrier를 삽입해 card를 dirty로 만들거나 old value/new value를 queue에 기록한다. 이 비용은 allocation이 아니라 평상시 application mutation path에 분산된다.
+
+barrier omission은 성능 문제가 아니라 correctness bug다. JIT optimization이 store를 제거·합칠 때도 GC semantics를 보존해야 하고 JNI/native write가 barrier를 우회하면 live object를 놓칠 수 있다. runtime 전체의 write path가 barrier contract를 공유해야 한다.
+
+최적화는 barrier 자체를 무조건 제거하는 것이 아니라 redundant barrier를 proven-safe하게 elide하는 방식이어야 한다. workload별 barrier frequency와 cache effect를 측정해 cost를 이해한다.
+
+---
+
+## CHAPTER 14 · SATB는 marking 시작 시점의 reachable graph를 보존하는 방식으로 concurrent mutation을 추적한다
+
+Snapshot-At-The-Beginning 계열은 collection 시작 시점에 reachable했던 object가 marking 중에 reference overwrite로 사라지더라도 놓치지 않게 old reference를 기록한다. mutator가 pointer를 바꾸기 전에 이전 값을 barrier buffer에 넣으면 collector가 나중에 그 object를 방문할 수 있다.
+
+이 방식은 collection 중 새로 생성된 garbage를 일부 다음 cycle까지 남길 수 있다. safety를 위해 더 많이 live로 보는 것은 허용되지만 실제 live를 놓치는 것은 허용되지 않는다. barrier buffer overflow와 drain scheduling도 throughput과 pause에 영향을 준다.
+
+진단에서는 SATB queue 크기와 mutator assist, remark pause를 본다. write-heavy workload에서 buffer production이 collector 처리보다 빠르면 final remark가 길어질 수 있다. mutation pattern이 concurrent marking cost를 좌우한다.
+
+---
+
+## CHAPTER 15 · incremental-update barrier는 black→white edge가 생기지 않도록 새 reference를 추적한다
+
+incremental-update 방식은 이미 scan한 black object가 아직 scan하지 않은 white object를 새로 가리키는 경우 그 edge를 기록하거나 target을 gray로 만들어 tri-color invariant를 유지한다. SATB가 old reference에 관심을 두는 것과 달리 new reference mutation을 중심으로 생각할 수 있다.
+
+어떤 barrier가 적합한지는 collector의 marking semantics와 runtime workload에 달려 있다. write frequency, allocation during marking, remark strategy가 비용을 바꾼다. 두 방식의 이름만 외우기보다 어떤 graph snapshot을 보존하는지 이해해야 한다.
+
+compiler optimization은 barrier reordering에도 주의해야 한다. object publication과 barrier가 다른 thread/collector에게 어떤 순서로 보이는지 memory model과 함께 증명해야 한다.
+
+---
+
+## CHAPTER 16 · concurrent marking은 mutator와 collector가 같은 heap graph를 동시에 다루는 protocol이다
+
+stop-the-world mark는 reasoning이 단순하지만 heap과 root가 크면 pause가 길어진다. concurrent mark는 application thread가 계속 실행되는 동안 collector thread가 graph를 탐색해 pause를 줄이지만 write barrier와 synchronization, final remark가 필요하다. 총 CPU work가 늘어날 수 있다는 점도 중요하다.
+
+collector thread를 많이 늘리면 marking은 빨라질 수 있지만 application과 memory bandwidth를 경쟁한다. CPU-limited service에서는 concurrent GC가 throughput을 떨어뜨려 request latency를 오히려 높일 수 있다. pause와 application capacity를 함께 평가해야 한다.
+
+GC log에는 concurrent phase duration, CPU time, mutator assist, remark pause를 분리한다. `STW가 짧다`만으로 성공을 판단하면 background CPU cost를 놓친다.
 
 ---
 
 ## CHAPTER 17 · safepoint는 runtime이 thread state를 정확히 관찰할 수 있는 협력 지점이다
 
-moving/root-scanning GC는 thread register/stack reference 위치를 정확히 알아야 한다. compiler가 stack map을 제공하는 safepoint에서 thread를 정지시키면 precise root scan과 object move가 가능하다.
+collector가 root를 enumerate하거나 object를 이동하려면 각 thread의 register와 stack이 runtime metadata와 일치하는 안정된 상태가 필요하다. compiler는 특정 instruction 위치를 safepoint로 만들고 stack map을 제공한다. GC 요청 뒤 모든 thread가 safepoint에 도달할 때까지 기다리는 시간이 pause에 포함될 수 있다.
 
-thread가 safepoint에 도달하기 어려운 long native loop나 uninterruptible region은 time-to-safepoint를 늘려 GC pause보다 더 큰 stop latency를 만들 수 있다. pause metric을 `request stop → all threads stopped → GC work → resume`로 분해한다.
+long-running native call, tight loop, non-interruptible runtime section은 safepoint latency를 늘릴 수 있다. GC 자체는 짧아도 한 thread가 늦게 멈춰 전체 pause가 길어지는 현상이 생긴다. `time to safepoint`를 별도 metric으로 보는 이유다.
 
----
-
-## CHAPTER 18 · read barrier는 object load 시 forwarding/mark state를 확인하게 할 수 있다
-
-concurrent moving collector는 mutator가 old location reference를 읽을 수 있으므로 read barrier가 forwarding pointer를 따라가거나 object color/state를 조정할 수 있다. read barrier는 pointer read hot path에 들어가므로 매우 낮은 overhead가 요구된다.
-
-hardware feature나 pointer coloring/tagging을 활용해 barrier를 최적화할 수 있다. collector의 낮은 pause가 runtime 전체 load 비용으로 전가되는지 benchmark한다.
+성능 regression에서는 GC phase 시작 시각과 last-thread-arrival을 비교한다. compiler가 polling point를 어디에 두는지와 native transition rule이 tail pause를 결정할 수 있다.
 
 ---
 
-## CHAPTER 19 · parallel GC는 collection phase 자체를 여러 worker로 나눈다
+## CHAPTER 18 · read barrier는 reference를 읽는 순간 relocation·marking 상태를 해석한다
 
-stop-the-world 상태에서도 mark/copy/sweep work를 여러 GC worker가 병렬 수행하면 pause duration을 줄일 수 있다. work queue와 stealing이 object graph imbalance를 분산한다.
+일부 concurrent moving collector는 mutator가 pointer를 load할 때 barrier를 실행해 old location의 reference를 forwarding address로 바꾸거나 marking metadata를 갱신한다. write-heavy workload 대신 read path에 비용을 분산하는 설계가 될 수 있다. barrier가 fast path에서 거의 no-op이 되도록 최적화하는 것이 중요하다.
 
-worker 수를 core 수까지 늘린다고 선형 speedup이 나오지 않는다. shared mark bitmap, memory bandwidth, worklist contention이 limit가 된다. foreground application이 멈춘 STW phase와 concurrent parallel phase의 CPU policy를 구분한다.
+read barrier correctness는 object movement와 밀접하다. mutator가 이동 중인 object를 읽을 때 완성된 새 object를 보거나 안전한 old copy를 보도록 해야 한다. forwarding state와 memory ordering이 어긋나면 partially initialized view가 생긴다.
 
----
-
-## CHAPTER 20 · weak reference는 ordinary reachability 외의 liveness policy를 추가한다
-
-weak reference는 object가 strong root graph에서 더 이상 도달되지 않을 때 collector가 reference를 clear하고 object를 reclaim할 수 있게 한다. cache와 metadata에 유용하지만 semantics가 collector cycle timing에 의존할 수 있다.
-
-weak reference를 critical resource lifecycle로 사용하지 않는다. object가 언제 collect될지 예측할 수 없으므로 file/socket close는 explicit ownership으로 처리한다. weak map도 key/value reference 관계를 정확히 이해해야 leak를 피할 수 있다.
+profile에서 load-heavy code가 barrier stub에 시간을 쓰는지 확인할 수 있다. 하지만 barrier를 우회하는 unsafe/native access는 collector invariant를 깨뜨릴 수 있으므로 성능을 이유로 제거하면 안 된다.
 
 ---
 
-## CHAPTER 21 · finalizer는 reclamation을 비결정적으로 지연시키고 resurrection을 허용할 수 있다
+## CHAPTER 19 · parallel GC는 stop-the-world work를 여러 CPU에 나눠 pause를 줄인다
 
-finalization queue가 object를 추가 cycle 동안 reachable하게 만들거나 finalizer가 object를 다시 global reference에 저장해 resurrection을 만들 수 있다. collector와 object lifecycle reasoning이 복잡해진다.
+mark, copy, compact 같은 phase를 여러 worker가 병렬 수행하면 wall pause를 줄일 수 있다. 하지만 work partition이 불균형하거나 shared queue contention이 크면 worker 수를 늘려도 scaling이 제한된다. memory bandwidth와 cache coherence도 공통 병목이 된다.
 
-modern runtime은 finalizer 사용을 제한/비추천하는 방향이 많다. external resource는 explicit close와 structured ownership을 사용하고 cleanup fallback은 leak safety net 정도로만 본다. finalizer backlog를 monitoring한다.
+small heap이나 작은 live set에서는 thread startup과 synchronization overhead가 실제 GC work보다 커질 수 있다. collector는 heap size와 CPU availability에 따라 worker 수를 조정할 수 있다. application이 CPU를 강하게 요구하는 순간에는 GC worker 경쟁도 고려해야 한다.
 
----
-
-## CHAPTER 22 · ephemeron은 key reachability가 value의 liveness를 조건부로 결정한다
-
-weak-key map에서 value가 key를 강하게 가리키면 단순 weak reference 규칙으로는 key가 영원히 살아남을 수 있다. ephemeron semantics는 key가 다른 경로로 live일 때만 value edge를 tracing에 반영한다.
-
-collector는 ephemeron을 fixpoint까지 반복 처리해야 할 수 있다. 언어 runtime의 weak map semantics를 모르면 cache leak를 잘못 해석할 수 있다.
+GC trace에서 worker별 active time과 idle/barrier wait를 보면 imbalance를 찾을 수 있다. 평균 pause만 줄이는 것보다 CPU cost와 thermal 영향까지 포함한 end-to-end 평가가 필요하다.
 
 ---
 
-## CHAPTER 23 · object pinning은 moving collector의 compaction 자유를 제한한다
+## CHAPTER 20 · weak reference는 reachability 강도를 낮춰 cache와 lifecycle policy를 표현한다
 
-native code/DMA가 object address를 일정 기간 고정해야 하면 collector가 해당 object를 이동하지 못한다. pinned object가 많으면 compaction이 불완전해지고 fragmentation이 남을 수 있다.
+weak reference는 대상이 다른 strong path로 reachable하지 않다면 collector가 회수할 수 있게 한다. 이것은 `언젠가 지워지는 cache`를 만들 수 있지만 collection timing은 memory pressure와 GC policy에 따라 달라지므로 expiry나 resource close 같은 정확한 lifecycle을 맡길 수 없다.
 
-JNI critical section과 pinning API의 lifetime을 짧게 유지한다. long pin이 GC pause와 heap growth에 미치는 영향을 profile한다. native interaction이 managed heap layout까지 영향을 준다.
+weak map을 사용해도 value가 key를 다시 strong하게 참조하면 cycle 때문에 기대한 회수가 안 될 수 있다. runtime별 reference processing order와 semantics를 확인해야 한다. cache correctness를 GC timing에 의존시키면 재현성이 낮아진다.
 
----
-
-## CHAPTER 24 · large object space는 큰 객체의 이동 비용을 별도 처리한다
-
-수 MB array/image를 young copying collector에서 매번 옮기면 bandwidth와 pause가 크다. runtime은 일정 threshold 이상 object를 별도 large-object space에 allocate해 non-moving 또는 region 단위로 관리할 수 있다.
-
-large object churn은 일반 allocation count가 적어도 heap fragmentation과 GC pressure를 만들 수 있다. object size histogram과 lifetime을 함께 본다. buffer pooling은 peak memory와 stale retention trade-off가 있다.
+진단에서는 weak reference count보다 target의 다른 root path를 찾는다. 회수되지 않는 이유가 collector가 아니라 hidden strong owner일 수 있다. explicit bounded cache와 TTL이 더 적합한 경우도 많다.
 
 ---
 
-## CHAPTER 25 · region-based collector는 heap을 독립 회수 단위로 나눈다
+## CHAPTER 21 · finalizer는 reclamation 시점과 외부 resource release를 불확실하게 만든다
 
-heap을 fixed-size region으로 나누고 live density, remembered set, age 같은 정보를 region별로 관리하면 garbage 비율이 높은 region부터 evacuation할 수 있다. 전체 heap compaction보다 pause budget을 제어하기 쉽다.
+finalizer는 object가 unreachable해진 뒤 runtime이 별도 queue와 thread에서 cleanup callback을 실행하는 방식이지만 실행 시점이 deterministic하지 않다. finalizer가 느리거나 blocked되면 finalized 대기 객체가 쌓여 heap과 file descriptor 같은 외부 resource가 동시에 고갈될 수 있다.
 
-region selection은 copy cost와 reclaimed bytes를 최적화한다. remembered-set metadata가 커지거나 cross-region pointer가 많으면 overhead가 증가한다. object graph topology가 collector efficiency에 직접 영향을 준다.
+object가 finalizer에서 자기 자신을 다시 reachable하게 만드는 resurrection도 reasoning을 복잡하게 한다. modern design은 explicit close, RAII/context manager를 사용해 resource lifetime을 lexical 또는 request lifetime에 연결하는 편이 안전하다.
 
----
-
-## CHAPTER 26 · fragmentation은 collector와 allocator의 공동 결과다
-
-non-moving old generation은 free hole을 남기고 moving collector는 compaction으로 이를 줄일 수 있다. 하지만 pinned/large object와 region constraint가 있으면 완전 compaction이 불가능하다.
-
-heap free bytes만 보지 않고 largest contiguous free region과 region live density를 본다. allocation failure 때문에 heap을 확장하기 전에 compaction 가능성과 pinned object를 진단한다.
+운영에서 finalizer queue length, processing latency를 관찰한다. GC가 자주 돌아도 finalizer thread backlog 때문에 native resource가 남을 수 있다. heap 문제와 cleanup queue 문제를 구분해야 한다.
 
 ---
 
-## CHAPTER 27 · GC scheduling은 heap occupancy와 allocation rate를 기반으로 앞당겨져야 한다
+## CHAPTER 22 · ephemeron은 key reachability에 따라 value가 key를 살리는 cycle을 안전하게 다룬다
 
-heap이 거의 가득 찬 뒤 collection을 시작하면 concurrent marker가 끝나기 전에 allocation headroom이 사라져 emergency STW collection이 필요할 수 있다. runtime은 allocation rate와 estimated GC throughput을 이용해 cycle 시작 시점을 조절할 수 있다.
+일반 weak-key map에서 value가 key를 참조하면 단순 weak semantics로는 원하는 collection behavior를 표현하기 어렵다. ephemeron은 key가 다른 경로에서 reachable할 때만 value를 live로 간주하는 고정점 계산을 통해 이 문제를 해결한다. runtime metadata table이나 weak map 구현에서 중요하다.
 
-burst allocation은 predictor를 깨뜨릴 수 있다. GC start threshold, growth limit, concurrent worker를 tuning할 때 tail allocation pattern을 포함한다. 단순 heap size 증가는 collection 빈도를 줄이지만 scan/live-set 비용과 RSS를 늘린다.
+collector는 한 번의 mark pass로 끝나지 않고 새로 reachable해진 ephemeron value가 또 다른 key를 살릴 수 있으므로 반복 처리가 필요할 수 있다. ephemeron 수가 많으면 remark와 reference-processing 비용이 커질 수 있다.
 
----
-
-## CHAPTER 28 · GC log는 pause reason, freed bytes, live set, phase time을 연결해야 한다
-
-`GC 50ms` 하나로는 원인이 부족하다. young/full/concurrent/compaction 여부, before/after heap, freed bytes, allocated since previous cycle, time-to-safepoint를 기록한다.
-
-request latency spike와 GC event를 시간축에 겹쳐 correlation을 확인하되 동시 발생을 인과로 단정하지 않는다. GC가 CPU pressure의 결과인지 원인인지 allocation profile과 collector CPU를 함께 본다.
+진단에서 weak structure가 예상보다 memory를 오래 잡고 있다면 key-value graph와 ephemeron processing을 본다. 일반 strong/weak edge만으로 retained path를 해석하면 원인을 놓칠 수 있다.
 
 ---
 
-## CHAPTER 29 · GC leak 진단은 root path와 dominator를 찾는 작업이다
+## CHAPTER 23 · pinning은 object 이동을 금지해 native interoperability를 얻는 대신 compaction 자유도를 줄인다
 
-heap이 cycle마다 감소하지 않는다면 live object가 누적되는지 확인한다. dominator tree와 retained size를 사용해 큰 subgraph를 붙잡는 root를 찾고 reference chain이 business ownership과 일치하는지 검토한다.
+native code나 device가 object address를 일정 시간 직접 사용해야 하면 collector가 그 object를 이동시키지 못하도록 pin할 수 있다. 짧은 pin은 필요하지만 long-term pin이 많아지면 moving collector가 region을 비우지 못하고 fragmentation과 evacuation failure가 늘 수 있다.
 
-cache capacity 없음, listener unregister 누락, coroutine/task reference, classloader static이 흔한 retention source다. object가 GC 알고리즘 때문에 못 지워진다고 가정하기 전에 reachability path를 증명한다.
+pinning API는 scope와 duration을 엄격히 제한해야 한다. JNI critical section 안에서 blocking I/O를 수행하면 GC가 필요한 relocation을 오래 기다릴 수 있다. pointer를 native global에 저장하는 패턴은 explicit handle이나 copied buffer로 바꾸는 것이 안전할 수 있다.
+
+GC log에서 pinned bytes, failed evacuation, compacted region density를 확인한다. memory pressure 때만 pause가 길어진다면 pinning과 fragmentation의 결합을 의심한다.
 
 ---
 
-## CHAPTER 30 · collector 선택은 pause, throughput, footprint, barrier cost의 다목적 최적화다
+## CHAPTER 24 · large object는 일반 young-copy path와 다른 allocation·collection 정책이 필요할 수 있다
 
-batch workload는 throughput을 위해 longer pause를 허용할 수 있고 interactive mobile app은 frame deadline 때문에 짧은 pause를 우선할 수 있다. large heap server는 concurrent CPU tax를 감수해 tail latency를 낮출 수 있다.
+수 MB 크기의 object를 young space에서 반복 copy하면 memory bandwidth와 pause 비용이 매우 크다. runtime은 large-object space나 humongous region에 직접 배치해 이동을 줄일 수 있다. 대신 큰 연속 영역을 요구해 fragmentation과 region waste가 문제가 될 수 있다.
 
-collector tuning은 benchmark 한 개로 끝내지 않는다. production allocation/lifetime graph, CPU quota, heap headroom을 재현하고 **mutator throughput, p99 pause, RSS, CPU/energy**를 동시에 측정한다. GC engineering의 목표는 memory를 많이 회수하는 것이 아니라 application의 lifetime·latency contract를 예측 가능하게 유지하는 것이다.
+large object threshold 근처의 size distribution이 중요하다. 몇 byte 차이로 일반 path와 large path가 갈리면 latency와 lifetime이 크게 바뀔 수 있다. image, byte buffer, temporary serialization 결과처럼 큰 ephemeral object가 반복되면 pooling이나 streaming 구조를 검토해야 한다.
+
+profile은 large allocation count, lifetime, region occupancy를 분리한다. 객체 수가 적어도 총 bytes와 GC pressure를 지배할 수 있다. count 기반 top list만 보면 놓치기 쉽다.
+
+---
+
+## CHAPTER 25 · region-based collector는 heap을 독립 관리 단위로 나눠 선택적 collection을 가능하게 한다
+
+heap을 고정 크기 region으로 나누면 collector는 live density, age, remembered-set cost를 기준으로 어떤 region을 수집할지 선택할 수 있다. 전체 heap을 매번 compact하지 않고 garbage가 많은 region을 우선 evacuation해 pause 목표를 맞추는 전략이 가능하다.
+
+region 크기가 너무 작으면 metadata와 remembered-set overhead가 커지고, 너무 크면 large object waste와 selection granularity가 나빠진다. evacuation에는 destination free region이 필요하므로 heap occupancy가 너무 높으면 collector가 움직일 여유가 없어 failure mode가 바뀐다.
+
+운영에서는 region occupancy distribution, evacuation failure, reserve percentage를 본다. 평균 heap 사용률이 같아도 garbage가 어떻게 분포하는지에 따라 collection 비용이 달라진다.
+
+---
+
+## CHAPTER 26 · fragmentation은 free bytes 총량보다 allocator와 collector가 실제로 사용할 수 있는 형태가 중요하다
+
+moving collector는 compaction으로 fragmentation을 줄일 수 있지만 pinning, large-object region, native allocation은 그대로 남을 수 있다. non-moving space에서는 free block이 많아도 large request를 만족할 contiguous range가 부족할 수 있다. `free heap` 한 숫자로 allocation 가능성을 판단하면 안 된다.
+
+fragmentation은 internal waste, sparse region, unmovable hole을 나눠 본다. heap dump의 logical live bytes가 낮은데 committed heap이 높은 경우 region occupancy와 allocator metadata를 확인한다. GC frequency를 늘려도 movable garbage가 없으면 개선되지 않는다.
+
+장기 soak test에서 peak 후 footprint 회복 속도를 측정하면 fragmentation과 cache retention을 구분하는 데 도움이 된다. restart만으로 해결되는 증상은 allocator geometry가 누적되는지 확인해야 한다.
+
+---
+
+## CHAPTER 27 · GC scheduling은 언제 collection을 시작할지 결정하는 control problem이다
+
+heap이 완전히 찬 뒤 collection을 시작하면 concurrent collector도 finish 전에 allocation이 공간을 소진할 수 있다. 너무 일찍 시작하면 background GC가 불필요하게 자주 돌아 CPU와 battery를 낭비한다. allocation rate, expected marking speed, free headroom을 이용해 시작 시점을 예측해야 한다.
+
+mutator utilization 목표와 pause target이 scheduling에 영향을 준다. sudden burst에서 collector가 뒤처지면 application thread가 marking이나 allocation slow path를 도와야 할 수 있다. 이런 mutator assist는 user latency로 직접 나타난다.
+
+운영에서는 trigger occupancy, allocation rate, concurrent-cycle duration, assist time을 같은 그래프에 놓는다. tuning은 heap size 하나가 아니라 feedback loop의 안정성을 조정하는 일이다.
+
+---
+
+## CHAPTER 28 · GC log는 phase 이름보다 allocation·survival·pause·CPU의 관계를 읽어야 한다
+
+좋은 GC log에는 collection reason, heap before/after, young/old occupancy, promoted bytes, pause duration, concurrent phase, worker CPU가 포함된다. pause 한 줄만 보면 allocation burst, promotion pressure, safepoint delay를 구분할 수 없다. runtime version에 따라 field 의미가 달라질 수 있어 parser도 version-aware해야 한다.
+
+incident timeline에 request latency와 GC event를 겹친다고 곧바로 causality가 증명되는 것은 아니다. 같은 memory pressure가 GC와 latency를 동시에 유발했을 수 있다. pause interval 동안 thread가 실제 멈췄는지, CPU contention이 증가했는지 trace로 교차검증한다.
+
+baseline workload의 allocation rate와 GC distribution을 저장해 regression을 비교한다. `GC가 있었다`가 아니라 이전보다 어떤 phase가 왜 커졌는지를 설명해야 한다.
+
+---
+
+## CHAPTER 29 · managed-memory leak는 retained root path를 ownership bug로 해석해야 한다
+
+collector가 unreachable object를 정상적으로 회수해도 application root가 계속 reference를 잡으면 heap은 증가한다. Activity context를 static singleton이 보유하거나 callback registry에서 unregister하지 않는 패턴이 대표적이다. object가 크지 않아도 dominator가 거대한 graph를 붙잡을 수 있다.
+
+heap snapshot 비교는 class count 증가만 보지 않는다. retained size, dominator tree, GC root path, object age를 연결해 누가 lifetime을 연장하는지 찾는다. cache처럼 의도적 retention인지 leak인지 제품 contract와 대조해야 한다.
+
+수정 후에는 root edge가 사라졌는지와 반복 scenario에서 retained graph가 안정화되는지 확인한다. 한 번 GC 후 heap이 내려갔다는 사실만으로 lifecycle leak가 해결됐다고 결론내리지 않는다.
+
+---
+
+## CHAPTER 30 · collector 선택은 pause·throughput·footprint·barrier cost의 우선순위를 명시하는 일이다
+
+어떤 collector도 모든 workload에서 동시에 최소 pause, 최대 throughput, 최소 memory를 제공하지 않는다. server batch는 throughput을 우선할 수 있고 interactive mobile app은 frame deadline과 battery를 더 중요하게 볼 수 있다. heap size, core 수, allocation rate, object lifetime이 선택 결과를 바꾼다.
+
+collector 이름을 바꾸기 전에 현재 병목을 증명한다. safepoint가 문제인지, concurrent CPU가 문제인지, fragmentation인지, promotion pressure인지에 따라 필요한 mechanism이 다르다. collector 변경은 object layout과 timing을 바꿔 latent race나 JNI bug를 드러낼 수도 있다.
+
+평가는 동일 workload에서 p50/p99 pause, mutator utilization, total CPU, peak RSS, missed deadline을 함께 비교한다. 운영 evidence와 crash diagnostics가 충분한지도 선택 기준에 포함한다. GC tuning의 목적은 숫자 하나를 줄이는 것이 아니라 application의 latency와 capacity invariant를 안정적으로 유지하는 것이다.
