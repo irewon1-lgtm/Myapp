@@ -1,0 +1,15 @@
+{
+  "partId": "T02-P14",
+  "sections": [
+    {"sectionId":"T02-P14-S01-bytes-text-file","sourceIds":["PYTHON-REF","UNICODE","TLPI"]},
+    {"sectionId":"T02-P14-S02-newline-text","sourceIds":["PYTHON-REF","TLPI"]},
+    {"sectionId":"T02-P14-S03-buffering-io","sourceIds":["PYTHON-REF","TLPI","CSAPP3"]},
+    {"sectionId":"T02-P14-S04-partial-stream","sourceIds":["PYTHON-REF","TLPI"]},
+    {"sectionId":"T02-P14-S05-path-namespace","sourceIds":["PYTHON-REF","TLPI","NIST-SSDF"]},
+    {"sectionId":"T02-P14-S06-atomic-replacement","sourceIds":["TLPI","SRE"]},
+    {"sectionId":"T02-P14-S07-file-lock-concurrency","sourceIds":["TLPI","OSTEP"]},
+    {"sectionId":"T02-P14-S08-directory-traversal","sourceIds":["PYTHON-REF","TLPI"]},
+    {"sectionId":"T02-P14-S09-file-schema-version","sourceIds":["DDIA","PYTHON-REF"]},
+    {"sectionId":"T02-P14-S10-io-boundary","sourceIds":["SICP","REFACTORING2","TLPI"]}
+  ]
+}
