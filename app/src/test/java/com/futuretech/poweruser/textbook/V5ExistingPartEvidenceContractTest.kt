@@ -23,17 +23,38 @@ class V5ExistingPartEvidenceContractTest {
             ?: error("Cannot find V5 asset root; cwd=${File(".").absolutePath}")
     }
 
+    private fun manifestFiles(trackDir: File): List<File> = trackDir.listFiles().orEmpty()
+        .filter { it.isFile && (it.name == "manifest.json" || it.name.matches(Regex("manifest_\\d{2}\\.json"))) }
+        .sortedWith(compareBy<File> { if (it.name == "manifest.json") 0 else 1 }.thenBy { it.name })
+
+    private fun mergedManifest(trackDir: File): V5BookManifest {
+        val files = manifestFiles(trackDir)
+        assertTrue("${trackDir.name} must contain primary manifest.json", files.firstOrNull()?.name == "manifest.json")
+        val fragments = files.map { gson.fromJson(it.readText(Charsets.UTF_8), V5BookManifest::class.java) }
+        val base = fragments.first()
+        fragments.forEachIndexed { index, fragment ->
+            assertEquals("${files[index].name}: track id mismatch", base.trackId, fragment.trackId)
+            assertEquals("${files[index].name}: track number mismatch", base.trackNumber, fragment.trackNumber)
+            assertEquals("${files[index].name}: title mismatch", base.title, fragment.title)
+        }
+        return base.copy(parts = fragments.flatMap { it.parts }.sortedBy { it.order })
+    }
+
     @Test
     fun everyAuthoredPartHasOrderedEvidenceForEveryChapter() {
         val root = assetsRoot()
-        val manifests = root.walkTopDown().filter { it.isFile && it.name == "manifest.json" }.toList()
-        assertTrue("At least one V5 manifest must exist", manifests.isNotEmpty())
+        val trackDirs = root.listFiles().orEmpty()
+            .filter { it.isDirectory && it.name.matches(Regex("track_\\d{2}")) }
+            .sortedBy { it.name }
+        assertTrue("At least one V5 track must exist", trackDirs.isNotEmpty())
 
-        manifests.forEach { manifestFile ->
-            val manifest = gson.fromJson(manifestFile.readText(Charsets.UTF_8), V5BookManifest::class.java)
+        trackDirs.forEach { trackDir ->
+            val manifest = mergedManifest(trackDir)
             assertTrue(manifest.parts.size >= 2)
+            assertEquals((1..manifest.parts.size).toList(), manifest.parts.map { it.order })
+            assertEquals(manifest.parts.size, manifest.parts.map { it.id }.distinct().size)
 
-            manifest.parts.sortedBy { it.order }.forEach { part ->
+            manifest.parts.forEach { part ->
                 val markdownFile = File(root.parentFile!!.parentFile!!, part.assetPath)
                 val sourceMapFile = File(root.parentFile!!.parentFile!!, part.sourceMapPath)
                 assertTrue("Missing authored part ${part.assetPath}", markdownFile.isFile)
@@ -61,7 +82,7 @@ class V5ExistingPartEvidenceContractTest {
                         section.sectionId.startsWith(expectedPrefix)
                     )
                     assertTrue("No chapter may be source-less: ${section.sectionId}", section.sourceIds.isNotEmpty())
-                    val unknown = section.sourceIds.filterNot(V5BookSourceRegistry.byId::containsKey)
+                    val unknown = section.sourceIds.filterNot(V5BookAllSources.byId::containsKey)
                     assertTrue("Unknown sources in ${section.sectionId}: $unknown", unknown.isEmpty())
                 }
             }
