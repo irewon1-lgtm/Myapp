@@ -1,0 +1,15 @@
+{
+  "partId": "T02-P30",
+  "sections": [
+    {"sectionId":"T02-P30-S01-language-capability","sourceIds":["SICP","NIST-SSDF"]},
+    {"sectionId":"T02-P30-S02-token-source-location","sourceIds":["SICP","PYTHON-REF"]},
+    {"sectionId":"T02-P30-S03-parser-precedence-ast","sourceIds":["SICP","CLRS4"]},
+    {"sectionId":"T02-P30-S04-ast-variant-model","sourceIds":["SICP","PYTHON-REF"]},
+    {"sectionId":"T02-P30-S05-semantic-type-validation","sourceIds":["SICP","PYTHON-REF"]},
+    {"sectionId":"T02-P30-S06-pure-evaluator","sourceIds":["SICP","PYTHON-REF"]},
+    {"sectionId":"T02-P30-S07-error-surface","sourceIds":["NIST-SSDF","SRE"]},
+    {"sectionId":"T02-P30-S08-layered-testing","sourceIds":["NIST-SSDF","LEARNING-CLT-COMPUTING"]},
+    {"sectionId":"T02-P30-S09-language-versioning","sourceIds":["DDIA","SICP"]},
+    {"sectionId":"T02-P30-S10-contract-pipeline-capstone","sourceIds":["SICP","DDD","REFACTORING2"]}
+  ]
+}
