@@ -1,0 +1,15 @@
+{
+  "partId": "T02-P20",
+  "sections": [
+    {"sectionId":"T02-P20-S01-use-case-invariant","sourceIds":["SICP","DDD","REFACTORING2"]},
+    {"sectionId":"T02-P20-S02-domain-model-boundary","sourceIds":["DDD","REFACTORING2"]},
+    {"sectionId":"T02-P20-S03-repository-capability","sourceIds":["DDD","GOF"]},
+    {"sectionId":"T02-P20-S04-file-adapter","sourceIds":["PYTHON-REF","TLPI","NIST-SSDF"]},
+    {"sectionId":"T02-P20-S05-service-orchestration","sourceIds":["DDD","SICP"]},
+    {"sectionId":"T02-P20-S06-cli-adapter","sourceIds":["PYTHON-REF","TLPI"]},
+    {"sectionId":"T02-P20-S07-composition-root","sourceIds":["REFACTORING2","GOF"]},
+    {"sectionId":"T02-P20-S08-failure-class-matrix","sourceIds":["NIST-SSDF","SRE"]},
+    {"sectionId":"T02-P20-S09-architecture-scale-change","sourceIds":["REFACTORING2","DDIA"]},
+    {"sectionId":"T02-P20-S10-contract-graph","sourceIds":["SICP","DDD","REFACTORING2"]}
+  ]
+}
