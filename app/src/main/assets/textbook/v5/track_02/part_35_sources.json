@@ -1,0 +1,15 @@
+{
+  "partId": "T02-P35",
+  "sections": [
+    {"sectionId":"T02-P35-S01-config-schema","sourceIds":["NIST-SSDF","SRE"]},
+    {"sectionId":"T02-P35-S02-config-precedence","sourceIds":["SRE","REFACTORING2"]},
+    {"sectionId":"T02-P35-S03-default-semantics","sourceIds":["SRE","NIST-SSDF"]},
+    {"sectionId":"T02-P35-S04-environment-parsing","sourceIds":["PYTHON-REF","NIST-SSDF"]},
+    {"sectionId":"T02-P35-S05-secret-config-lifetime","sourceIds":["NIST-SSDF","OWASP-ASVS"]},
+    {"sectionId":"T02-P35-S06-feature-flag-state","sourceIds":["SRE","SRE-WORKBOOK"]},
+    {"sectionId":"T02-P35-S07-startup-validation","sourceIds":["SRE","NIST-SSDF"]},
+    {"sectionId":"T02-P35-S08-hot-reload-snapshot","sourceIds":["SRE","DDIA"]},
+    {"sectionId":"T02-P35-S09-config-versioning","sourceIds":["PROGIT2","SRE"]},
+    {"sectionId":"T02-P35-S10-config-adapter","sourceIds":["REFACTORING2","DDD","SRE"]}
+  ]
+}
