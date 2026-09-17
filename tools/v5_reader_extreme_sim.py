@@ -8,7 +8,8 @@ rng = random.Random(SEED)
 
 VIEWPORT_HEIGHTS = [568, 640, 780, 915, 960, 1280]
 FONT_SCALES = [0.85, 1.0, 1.15, 1.30, 1.60, 2.00]
-NEW_FIXED_OVERHEAD_DP = 98
+# Current V5 fixed vertical chrome: 26 top + 18 part strip + 14 footer + 3+3 page padding.
+NEW_FIXED_OVERHEAD_DP = 64
 
 
 @dataclass(frozen=True)
@@ -46,14 +47,15 @@ def make_document(n: int) -> list[Block]:
 
 
 def unit_px(kind: str, font_scale: float) -> float:
-    # Deliberately varies by block family. This is a packing-contract simulation, not Compose text measurement.
+    # Mirrors current dense V5 typography closely enough for packing-contract stress simulation.
+    # It still does NOT replace Compose TextMeasurer/device instrumentation.
     base = {
-        "heading": 29.0,
-        "paragraph": 27.0,
-        "list": 23.0,
-        "code": 20.0,
-        "table": 19.0,
-        "divider": 7.0,
+        "heading": 27.0,
+        "paragraph": 25.0,
+        "list": 21.5,
+        "code": 18.5,
+        "table": 18.0,
+        "divider": 5.0,
     }[kind]
     return max(1.0, base * font_scale)
 
@@ -67,7 +69,7 @@ def paginate(blocks: list[Block], page_height: int, font_scale: float):
     pages: list[list[Piece]] = []
     current: list[Piece] = []
     used = 0
-    gap = max(1, round(8 * font_scale))
+    gap = max(1, round(5 * font_scale))
 
     def flush():
         nonlocal current, used
@@ -82,11 +84,9 @@ def paginate(blocks: list[Block], page_height: int, font_scale: float):
         extra = 0 if not current else gap
         remaining = page_height - used - extra
 
-        # A short one-line heading stays with at least one body line. If a heading already wraps
-        # over multiple lines, reserving still more body height creates large artificial holes on
-        # compact screens, so it does not receive an additional reserve.
+        # Keep a short one-line heading with one body line. Wrapped headings reserve no extra body.
         if p.kind == "heading" and current:
-            reserve = round(27 * font_scale) if p.units <= 1 else 0
+            reserve = round(25 * font_scale) if p.units <= 1 else 0
             if remaining < h + reserve:
                 flush()
                 queue.insert(0, p)
@@ -102,8 +102,6 @@ def paginate(blocks: list[Block], page_height: int, font_scale: float):
         if p.splittable and remaining > 0:
             per_unit = unit_px(p.kind, font_scale)
             fit = int(remaining // per_unit)
-            # The head must contain at least two measurable units; the tail may be one unit because
-            # forcing an extra tail unit increased empty-space fragmentation in the extreme matrix.
             if fit >= 2 and p.units - fit >= 1:
                 head = Piece(p.uid, p.kind, p.start, fit, True)
                 tail = Piece(p.uid, p.kind, p.start + fit, p.units - fit, True)
@@ -119,7 +117,7 @@ def paginate(blocks: list[Block], page_height: int, font_scale: float):
             flush()
             queue.insert(0, p)
         else:
-            # Unsplittable atom larger than a page is intentionally surfaced, not dropped.
+            # Unsplittable atom larger than a page is exposed rather than dropped.
             current.append(p)
             used = h
             flush()
@@ -149,7 +147,7 @@ def check_preservation(blocks, pages):
 
 
 def page_util(page, page_height, font_scale):
-    gap = max(1, round(8 * font_scale))
+    gap = max(1, round(5 * font_scale))
     used = sum(piece_height(p, font_scale) for p in page) + gap * max(0, len(page) - 1)
     return used / page_height
 
@@ -168,7 +166,7 @@ target_nonfinal = 0
 
 for vh in VIEWPORT_HEIGHTS:
     for fs in FONT_SCALES:
-        page_height = max(80, round((vh - NEW_FIXED_OVERHEAD_DP) * 1.0))
+        page_height = max(80, round(vh - NEW_FIXED_OVERHEAD_DP))
         scenario_under = 0
         scenario_nonfinal = 0
         for _ in range(400):
@@ -207,9 +205,6 @@ assert target_nonfinal > 0
 standard_under_ratio = standard_under / standard_nonfinal
 target_under_ratio = target_under / target_nonfinal
 
-# Density is a distribution gate, not a claim that every adversarial synthetic combination can
-# always hit exactly the same fill ratio. Standard reading sizes require at least 99.5% of
-# non-final pages to use >=82% of content height. Tall-phone defaults are held to >=99.9%.
 assert standard_under_ratio <= 0.005, standard_under_ratio
 assert target_under_ratio <= 0.001, target_under_ratio
 
@@ -229,4 +224,4 @@ print("TARGET_PHONE_UNDER_82_RATIO", round(target_under_ratio, 6))
 print("STANDARD_DENSITY_GATE", "PASS")
 print("TARGET_PHONE_DENSITY_GATE", "PASS")
 print("ACCESSIBILITY_DENSITY", "AUDIT_ONLY")
-print("NOTE", "This is a deterministic packing simulation; it does not certify Compose/device rendering.")
+print("NOTE", "Deterministic packing simulation only; Compose/device rendering remains separately unverified.")
