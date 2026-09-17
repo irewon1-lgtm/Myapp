@@ -1,6 +1,9 @@
 name: Build textbook preview APK
 
 on:
+  push:
+    branches:
+      - textbook-v5-app-preview-20260918
   workflow_dispatch:
 
 permissions:
