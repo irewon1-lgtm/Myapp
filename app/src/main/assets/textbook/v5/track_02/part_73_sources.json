@@ -1,0 +1,13 @@
+{
+  "partId":"T02-P73",
+  "sections":[
+    {"sectionId":"T02-P73-S01-object-lifetime","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P73-S02-del-finalizer","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P73-S03-cycle-finalization","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P73-S04-resurrection","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P73-S05-weakref-finalize","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P73-S06-resource-not-finalizer","sourceIds":["SRE","PYTHON-REF"]},
+    {"sectionId":"T02-P73-S07-shutdown-order","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P73-S08-finalization-contract","sourceIds":["SRE","REFACTORING2"]}
+  ]
+}
