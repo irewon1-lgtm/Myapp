@@ -78,9 +78,11 @@ class V5BookScaleCorpusGateTest {
         val baseline = frozenLearnerFacingBaselineSemanticChars()
         assertTrue("frozen learner-facing baseline must be substantial: $baseline", baseline > 100_000L)
         val minimumPerTrack = baseline * 5L
+        println("V5_SCALE baseline=$baseline minimumPerTrack=$minimumPerTrack")
 
         (1..11).forEach { trackNumber ->
             val actual = semanticChars(parsedTrackBlocks(trackNumber))
+            println("V5_SCALE track=T${trackNumber.toString().padStart(2, '0')} actual=$actual minimum=$minimumPerTrack delta=${actual - minimumPerTrack}")
             assertTrue(
                 "TRACK ${trackNumber.toString().padStart(2, '0')} violates literal 5x rule: actual=$actual minimum=$minimumPerTrack baseline=$baseline",
                 actual >= minimumPerTrack
@@ -131,6 +133,7 @@ class V5BookScaleCorpusGateTest {
         }
         val duplicateOccurrences = counts.values.sumOf { (it - 1).coerceAtLeast(0).toLong() }
         val ratio = if (total == 0L) 1.0 else duplicateOccurrences.toDouble() / total.toDouble()
+        println("V5_SCALE shingles duplicateOccurrences=$duplicateOccurrences total=$total ratio=$ratio")
         assertTrue("12-token repeated-shingle ratio too high: $ratio", ratio <= 0.08)
     }
 
@@ -138,6 +141,7 @@ class V5BookScaleCorpusGateTest {
     fun trackDirectoriesAreExactlyElevenAndStable() {
         val root = repoFile("src/main/assets/textbook/v5")
         val dirs = root.listFiles()?.filter { it.isDirectory && it.name.matches(Regex("track_\\d{2}")) }?.sortedBy { it.name }.orEmpty()
+        println("V5_SCALE trackDirs=${dirs.map { it.name }}")
         assertEquals((1..11).map { "track_${it.toString().padStart(2, '0')}" }, dirs.map { it.name })
     }
 }
