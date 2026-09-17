@@ -1,0 +1,15 @@
+{
+  "partId": "T02-P08",
+  "sections": [
+    {"sectionId":"T02-P08-S01-object-invariant","sourceIds":["SICP","DDD","REFACTORING2"]},
+    {"sectionId":"T02-P08-S02-class-instance-namespace","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P08-S03-initialization-contract","sourceIds":["PYTHON-REF","DDD"]},
+    {"sectionId":"T02-P08-S04-dataclass-value-object","sourceIds":["PYTHON-REF","DDD"]},
+    {"sectionId":"T02-P08-S05-property-interface","sourceIds":["PYTHON-REF","REFACTORING2"]},
+    {"sectionId":"T02-P08-S06-inheritance-substitution","sourceIds":["PYTHON-REF","GOF","REFACTORING2"]},
+    {"sectionId":"T02-P08-S07-composition-dependency","sourceIds":["GOF","DDD","REFACTORING2"]},
+    {"sectionId":"T02-P08-S08-duck-protocol","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P08-S09-special-method-protocol","sourceIds":["PYTHON-REF"]},
+    {"sectionId":"T02-P08-S10-object-boundary","sourceIds":["DDD","DDIA","SICP"]}
+  ]
+}
