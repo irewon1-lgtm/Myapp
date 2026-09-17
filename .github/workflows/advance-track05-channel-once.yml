@@ -1,0 +1,200 @@
+name: Advance Track05 remote channel once
+
+on:
+  push:
+    branches:
+      - textbook-v5-track05-channel-control
+    paths:
+      - '.track05_channel_trigger'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  verify-and-advance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Checkout control branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Fetch content and live branches
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin textbook-v5-track05-publish:textbook-v5-track05-publish
+          git fetch origin textbook-v5-deep-book-engine:textbook-v5-deep-book-engine
+
+      - name: Verify published Track05 snapshot
+        id: content
+        shell: bash
+        run: |
+          set -euo pipefail
+          CONTENT_BRANCH=textbook-v5-track05-publish
+          LIVE_BRANCH=textbook-v5-deep-book-engine
+          git checkout --detach "$CONTENT_BRANCH"
+
+          test ! -e .track05_publish_trigger
+          test ! -d .track05_payload_xz
+          test -f app/src/main/assets/textbook/v5/track_05/manifest.json
+
+          python - <<'PY'
+          from pathlib import Path
+          import json, re
+
+          root = Path('app/src/main/assets/textbook/v5/track_05')
+          assert root.is_dir(), 'missing track_05 directory'
+          md = sorted(root.glob('part_*_*.md'))
+          sm = sorted(root.glob('part_*_sources.json'))
+          manifests = [root/'manifest.json'] + sorted(root.glob('manifest_[0-9][0-9].json'))
+          manifests = [p for p in manifests if p.exists()]
+          assert len(md) == 105, f'markdown_count={len(md)}'
+          assert len(sm) == 105, f'source_map_count={len(sm)}'
+          assert len(manifests) == 7, f'manifest_count={len(manifests)}'
+
+          fragments = [json.loads(p.read_text(encoding='utf-8')) for p in manifests]
+          base = fragments[0]
+          assert base['trackId'] == 'T05'
+          assert base['trackNumber'] == 5
+          title = base['title']
+          parts = []
+          for f in fragments:
+              assert f['trackId'] == 'T05'
+              assert f['trackNumber'] == 5
+              assert f['title'] == title
+              parts.extend(f['parts'])
+          parts.sort(key=lambda p: p['order'])
+          assert len(parts) == 105
+          assert [p['order'] for p in parts] == list(range(1,106))
+          assert [p['id'] for p in parts] == [f'T05-P{i:02d}' for i in range(1,106)]
+          assert len({p['assetPath'] for p in parts}) == 105
+          assert len({p['sourceMapPath'] for p in parts}) == 105
+
+          source_sections = {}
+          for p in parts:
+              prefix = 'textbook/v5/track_05/'
+              assert p['assetPath'].startswith(prefix)
+              assert p['sourceMapPath'].startswith(prefix)
+              mdp = Path('app/src/main/assets') / p['assetPath']
+              smp = Path('app/src/main/assets') / p['sourceMapPath']
+              assert mdp.is_file(), mdp
+              assert smp.is_file(), smp
+              text = mdp.read_text(encoding='utf-8')
+              chapters = len(re.findall(r'(?m)^## CHAPTER ', text))
+              source = json.loads(smp.read_text(encoding='utf-8'))
+              assert source['partId'] == p['id']
+              assert len(source['sections']) == chapters
+              ids = set()
+              for i, sec in enumerate(source['sections'], 1):
+                  assert sec['sectionId'].startswith(f"{p['id']}-S{i:02d}-")
+                  assert sec['sourceIds']
+                  assert len(sec['sourceIds']) == len(set(sec['sourceIds']))
+                  ids.add(sec['sectionId'])
+              source_sections[p['id']] = ids
+
+          for p in parts:
+              for prereq in p.get('prerequisiteConceptIds', []):
+                  m = re.match(r'^T05-P(\d+)-S\d+-.+$', prereq)
+                  assert m, prereq
+                  assert int(m.group(1)) < p['order'], prereq
+                  pid = prereq.split('-S', 1)[0]
+                  assert prereq in source_sections.get(pid, set()), prereq
+
+          print('TRACK05_STRUCTURE_PASS parts=105 source_maps=105 manifests=7')
+          PY
+
+          CONTENT_SHA="$(git rev-parse HEAD)"
+          LIVE_SHA="$(git rev-parse "$LIVE_BRANCH")"
+          if ! git merge-base --is-ancestor "$LIVE_SHA" "$CONTENT_SHA"; then
+            echo "Live branch moved after Track05 publication base; refusing to publish stale snapshot."
+            exit 21
+          fi
+          echo "content_sha=$CONTENT_SHA" >> "$GITHUB_OUTPUT"
+
+      - name: Verify hybrid compare safety cap
+        id: compare
+        env:
+          GH_TOKEN: ${{ github.token }}
+          CONTENT_SHA: ${{ steps.content.outputs.content_sha }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          git checkout textbook-v5-deep-book-engine
+          CHANNEL=app/src/main/assets/textbook/v5/channel.json
+          test -f "$CHANNEL"
+          CURRENT_REVISION="$(python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('app/src/main/assets/textbook/v5/channel.json')
+          print(json.loads(p.read_text(encoding='utf-8'))['revision'])
+          PY
+          )"
+          [[ "$CURRENT_REVISION" =~ ^[0-9a-f]{40}$ ]]
+
+          curl --fail --silent --show-error \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            "https://api.github.com/repos/${GITHUB_REPOSITORY}/compare/${CURRENT_REVISION}...${CONTENT_SHA}" \
+            -o /tmp/compare.json
+
+          python - <<'PY'
+          import json, os
+          d=json.load(open('/tmp/compare.json', encoding='utf-8'))
+          status=d.get('status')
+          files=d.get('files') or []
+          assert status in {'ahead','identical'}, f'compare_status={status}'
+          assert len(files) < 300, f'compare_files={len(files)} exceeds hybrid cap'
+          print(f'HYBRID_COMPARE_PASS status={status} files={len(files)}')
+          PY
+          echo "current_revision=$CURRENT_REVISION" >> "$GITHUB_OUTPUT"
+
+      - name: Advance only the remote textbook channel
+        env:
+          CONTENT_SHA: ${{ steps.content.outputs.content_sha }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          git checkout textbook-v5-deep-book-engine
+          git reset --hard origin/textbook-v5-deep-book-engine
+
+          python - <<'PY'
+          import json, os
+          from datetime import datetime, timezone
+          from pathlib import Path
+          sha=os.environ['CONTENT_SHA'].strip()
+          assert len(sha)==40 and all(c in '0123456789abcdef' for c in sha)
+          p=Path('app/src/main/assets/textbook/v5/channel.json')
+          payload={
+              'schemaVersion': 1,
+              'revision': sha,
+              'publishedAt': datetime.now(timezone.utc).isoformat(timespec='seconds').replace('+00:00','Z'),
+          }
+          p.parent.mkdir(parents=True, exist_ok=True)
+          p.write_text(json.dumps(payload, indent=2) + '\n', encoding='utf-8')
+          print(json.dumps(payload))
+          PY
+
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add app/src/main/assets/textbook/v5/channel.json
+          if git diff --cached --quiet; then
+            echo 'CHANNEL_ALREADY_CURRENT'
+            exit 0
+          fi
+          git commit -m 'publish(v5): point remote channel to Track05 content [skip ci]'
+          git push origin HEAD:textbook-v5-deep-book-engine
+
+      - name: Verify remote channel commit
+        env:
+          CONTENT_SHA: ${{ steps.content.outputs.content_sha }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin textbook-v5-deep-book-engine
+          ACTUAL="$(git show origin/textbook-v5-deep-book-engine:app/src/main/assets/textbook/v5/channel.json | python -c 'import json,sys; print(json.load(sys.stdin)["revision"])')"
+          test "$ACTUAL" = "$CONTENT_SHA"
+          echo "TRACK05_REMOTE_CHANNEL_PASS revision=$ACTUAL"
