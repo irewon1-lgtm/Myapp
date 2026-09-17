@@ -1,675 +1,283 @@
-# PART 15 · 동시성 심화 — atomic primitive에서 lock-free reclamation까지
+# PART 15 · 동시성 심화 — progress, ordering, reclamation, proof
 
-mutex를 쓰면 많은 문제를 안전하게 풀 수 있지만 고성능 runtime, scheduler, database, network stack에는 더 정교한 synchronization이 필요하다. 여기서는 `lock-free가 더 고급이니까 무조건 좋다`는 식으로 가지 않는다. **정확성 모델을 먼저 세우고 progress guarantee, memory ordering, reclamation, fairness, cancellation 비용까지 비교**한다.
-
----
-
-## CHAPTER 01 · read-modify-write가 atomic primitive의 핵심이다
-
-단순 load와 store만으로 shared counter를 안전하게 증가시키기 어렵다.
-
-CPU는 다음과 같은 atomic read-modify-write primitive를 제공할 수 있다.
-
-```text
-compare-and-swap / compare_exchange
-test-and-set
-fetch-add
-exchange
-load-linked / store-conditional 계열
-```
-
-언어/runtime는 이를 더 높은 수준 atomic API로 노출한다.
-
-### atomic은 operation 범위에만 적용된다
-
-`AtomicInteger` 두 개의 각각의 update가 atomic해도 둘 사이 invariant가 자동으로 atomic해지는 것은 아니다.
+advanced concurrency의 난점은 atomic primitive 사용법이 아니라 **operation이 어느 순간 발생한 것으로 간주되는가, 다른 observer가 어떤 순서를 볼 수 있는가, 제거된 memory를 언제 안전하게 회수할 수 있는가, 경쟁 속에서도 누가 진행을 보장받는가**를 동시에 증명하는 데 있다.
 
 ---
 
-## CHAPTER 02 · CAS를 조건부 상태 전이로 이해한다
+## CHAPTER 01 · read-modify-write는 경쟁 상태를 하나의 hardware-visible transition으로 묶는다
 
-Compare-And-Swap 개념:
+shared state를 `load → 계산 → store`로 갱신하면 두 thread가 동일 old value를 읽어 update를 잃을 수 있다. atomic RMW는 read와 conditional/update를 하나의 indivisible synchronization event로 제공해 특정 state transition을 경쟁자와 직렬화할 수 있게 한다.
 
-```text
-현재값 == expected ?
-    yes → newValue로 바꾸고 성공
-    no  → 바꾸지 않고 실패
-```
-
-이를 loop와 결합하면 다른 thread가 값을 바꿨을 때 다시 읽고 계산할 수 있다.
-
-```text
-loop:
-  old = load
-  new = f(old)
-  if CAS(old, new): success
-  else retry
-```
-
-### retry가 공짜가 아니다
-
-경쟁이 심하면 여러 thread가 동시에 CAS 실패를 반복해 CPU/cache coherence traffic을 만들 수 있다.
-
-low contention에서 빠른 구조가 high contention에서 나빠질 수 있다.
+그러나 RMW 하나가 복합 invariant 전체를 보호하지는 않는다. 두 atomic variable의 개별 update가 모두 원자적이어도 둘 사이 consistency가 필요하면 더 큰 state representation 또는 transaction/lock이 필요하다. atomic primitive 선택 전에 **linearization point와 invariant 범위**를 먼저 정의한다.
 
 ---
 
-## CHAPTER 03 · LL/SC는 `중간에 누가 바꿨는가`를 감지하는 다른 모델이다
+## CHAPTER 02 · CAS loop는 optimistic state transition이며 retry policy가 algorithm의 일부다
 
-Load-Linked/Store-Conditional 계열에서는 linked load 뒤 관련 memory가 변경되지 않았을 때만 conditional store가 성공한다.
+Compare-And-Swap는 현재 값이 expected와 같을 때만 새 값으로 바꾼다. algorithm은 old state를 읽고 candidate를 계산한 뒤 CAS에 실패하면 최신 state에서 다시 계산한다. correctness는 CAS 성공 순간을 operation의 linearization point로 잡아 증명하는 경우가 많다.
 
-개념:
-
-```text
-old = LL(addr)
-new = f(old)
-if SC(addr, new): success
-else retry
-```
-
-CAS와 비슷한 high-level algorithm을 구현할 수 있지만 architecture semantics가 다르다.
-
-언어 atomic library를 사용할 때는 architecture 차이를 runtime/compiler가 감싸도록 두는 것이 일반적으로 안전하다.
+contention이 높으면 여러 thread가 동일 cache line을 읽고 CAS 실패를 반복하며 coherence traffic을 폭증시킬 수 있다. backoff, combining, sharding이 필요할 수 있다. CAS retry가 finite progress를 보장하는지, starvation 가능한지까지 progress property에 포함한다.
 
 ---
 
-## CHAPTER 04 · lock-free, wait-free, obstruction-free를 같은 말로 쓰지 않는다
+## CHAPTER 03 · LL/SC는 value equality보다 reservation continuity를 이용한다
 
-### lock-free
+Load-Linked/Store-Conditional 계열은 linked load 이후 관련 memory state가 변경되지 않았을 때 conditional store가 성공하는 모델을 제공한다. 이는 중간에 값이 A→B→A로 돌아오는 ABA 상황을 CAS와 다르게 감지할 수 있는 architecture semantics를 제공할 수 있다.
 
-전체 system 관점에서 어떤 operation은 계속 progress한다는 guarantee와 관련된다. 특정 thread가 starvation될 수는 있다.
-
-### wait-free
-
-각 operation이 bounded number of own steps 안에 완료되는 더 강한 guarantee를 목표로 한다.
-
-### obstruction-free
-
-혼자 실행되는 충분한 구간이 주어지면 progress할 수 있는 더 약한 성질이다.
-
-구체 정의는 concurrency literature를 따른다.
-
-`mutex 없음 = wait-free`가 아니다.
+실제 LL/SC는 reservation granule, interrupt/context switch, unrelated store에 의해 spurious failure가 발생할 수 있다. algorithm은 conditional store 실패를 정상 retry로 처리해야 하며 forward-progress guarantee는 architecture specification을 확인한다. high-level atomic library가 architecture 차이를 감싸는 이유다.
 
 ---
 
-## CHAPTER 05 · lock-free가 자동으로 빠르거나 단순하지 않다
+## CHAPTER 04 · lock-free, wait-free, obstruction-free는 서로 다른 progress guarantee다
 
-lock-free queue는 blocking lock convoy를 피할 수 있지만:
+lock-free는 system 전체가 계속 progress한다는 성질에 가깝고 특정 thread starvation을 허용할 수 있다. wait-free는 각 operation이 자신의 bounded step 안에 완료되는 더 강한 guarantee를 요구한다. obstruction-free는 경쟁 없이 충분히 실행되면 완료될 수 있는 더 약한 성질이다.
 
-```text
-atomic retry
-cache-line bouncing
-complex memory reclamation
-harder proof/debugging
-platform memory-order bugs
-```
-
-비용이 있다.
-
-critical section이 짧고 contention이 낮으면 잘 구현된 mutex가 더 빠르고 훨씬 안전할 수 있다.
+progress guarantee는 throughput benchmark 결과가 아니다. scheduler가 adversarial하게 thread를 배치해도 어떤 completion이 보장되는지에 대한 algorithm property다. real-time requirement가 있으면 average throughput보다 per-operation bound와 priority interaction이 중요하다.
 
 ---
 
-## CHAPTER 06 · ABA 문제는 값이 같아 보여도 history가 달라진 상황이다
+## CHAPTER 05 · lock-free structure는 blocking을 줄이는 대신 coherence와 proof 비용을 늘릴 수 있다
 
-CAS algorithm에서:
+mutex가 없으면 lock owner preemption에 의한 convoy를 피할 수 있지만 CAS retry, cache-line bouncing, complex reclamation, weak-memory ordering proof가 추가된다. low-contention critical section에서는 optimized mutex가 더 빠르고 훨씬 검증하기 쉬울 수 있다.
 
-```text
-Thread 1 reads A
-Thread 2 changes A → B → A
-Thread 1 CAS expects A, sees A, succeeds
-```
-
-값만 비교하면 중간 변화가 없었던 것처럼 보인다.
-
-linked structure에서 node가 제거됐다 재사용되면 심각한 corruption을 만들 수 있다.
-
-### mitigation
-
-```text
-version/tagged pointer
-memory reclamation strategy
-LL/SC semantics
-algorithm-specific design
-```
-
-등을 사용한다.
+선택 기준은 label이 아니라 workload와 failure requirement다. preemption tolerance, contention distribution, operation mix, reader/writer ratio, memory footprint, debugging capability를 비교한다. algorithm complexity가 운영팀의 incident-resolution 능력을 초과하면 theoretical progress가 실제 reliability를 해칠 수 있다.
 
 ---
 
-## CHAPTER 07 · node를 list에서 제거했다고 바로 free하면 안 될 수 있다
+## CHAPTER 06 · ABA는 동일 value가 동일 history를 의미하지 않는 문제다
 
-lock-free list에서 Thread A가 node X pointer를 읽은 직후 Thread B가 X를 unlink하고 free했다고 하자.
+Thread A가 pointer A를 읽은 뒤 Thread B가 node를 제거하고 다른 node를 같은 address에 재사용하면 value가 다시 A처럼 보일 수 있다. CAS는 expected pointer equality만 확인하므로 중간 topology 변화가 없었다고 오판할 수 있다.
 
-A가 pointer를 dereference하면 use-after-free가 된다.
-
-```text
-A: p = node X
-B: unlink X; free X
-A: read p->next  // invalid
-```
-
-lock-free algorithm에서는 **logical removal**과 **physical memory reclamation**을 분리해야 한다.
+version/tagged pointer는 identity에 generation을 추가하고, reclamation scheme은 old node address가 너무 빨리 재사용되지 않게 한다. ABA mitigation은 pointer bit trick 하나가 아니라 **object lifetime과 identity reuse policy**를 함께 설계하는 문제다.
 
 ---
 
-## CHAPTER 08 · hazard pointer는 `내가 곧 사용할 node`를 공개한다
+## CHAPTER 07 · logical removal과 physical reclamation은 분리해야 한다
 
-thread가 dereference할 pointer를 hazard slot에 등록한다.
+lock-free list에서 node를 unlink했다고 다른 reader가 그 node pointer를 더 이상 갖지 않는다는 뜻은 아니다. reader가 earlier traversal에서 pointer를 보유할 수 있으므로 즉시 free하면 use-after-free가 된다.
 
-reclaimer는 retired node가 어떤 thread hazard set에도 없을 때만 free한다.
-
-```text
-reader publishes X as hazard
-↓
-reclaimer sees X protected
-↓
-free delayed
-```
-
-대가:
-
-```text
-hazard publication atomic operations
-scan cost
-per-thread metadata
-```
-
-가 있다.
+algorithm은 node가 abstract data structure에서 제거된 시점과 memory를 재사용할 수 있는 시점을 별도로 정의해야 한다. reclamation proof가 없는 lock-free structure는 memory safety proof가 완료되지 않은 것이다. GC language에서도 native/off-heap node는 같은 문제가 생길 수 있다.
 
 ---
 
-## CHAPTER 09 · epoch-based reclamation은 reader 세대가 지나갈 때까지 기다린다
+## CHAPTER 08 · hazard pointer는 dereference 예정 pointer를 명시적으로 publish한다
 
-reader가 active epoch를 표시하고 retired node를 바로 free하지 않는다.
+reader는 candidate pointer를 hazard slot에 저장하고 pointer가 여전히 structure에 유효한지 재검증한 뒤 dereference한다. reclaimer는 retired node가 어떤 active hazard에도 없을 때만 free한다.
 
-모든 relevant reader가 old epoch를 떠난 뒤 그 epoch의 node를 reclaim한다.
-
-장점은 reader hot path가 단순해질 수 있다는 점이다.
-
-하지만 오래 멈춘 reader가 reclamation을 오래 막을 수 있다.
+hazard publication은 atomic ordering과 per-thread slot 관리 비용을 가진다. retire list scan이 커지면 reclamation latency가 늘 수 있다. thread exit 시 hazard cleanup과 dynamic thread count를 관리해야 한다. correctness는 `publish→validate→dereference` 순서를 memory model 위에서 증명한다.
 
 ---
 
-## CHAPTER 10 · RCU는 read-mostly structure의 update/read를 분리한다
+## CHAPTER 09 · epoch-based reclamation은 active reader generation을 이용한다
 
-Read-Copy-Update 계열 pattern은 reader가 매우 싼 방식으로 old version을 읽게 하고 writer가 새 version을 만든 뒤 publish하고 grace period 뒤 old version을 reclaim한다.
+reader가 현재 epoch participation을 표시하고 writer가 removed node를 retire list에 넣은 뒤, 모든 relevant reader가 이전 epoch를 벗어나면 해당 node를 reclaim한다. reader hot path가 단순해질 수 있지만 stalled reader 하나가 대량 reclamation을 막을 수 있다.
 
-```text
-readers → current version
-writer creates new
-↓ atomic publish
-new readers → new version
-old readers finish
-↓ grace period
-old version reclaim
-```
-
-Linux kernel의 read-mostly data structure에서 중요한 technique이다.
-
-### RCU가 universal collection이 아니다
-
-update가 매우 빈번하거나 reader semantics가 맞지 않으면 적합하지 않다.
+latency-sensitive system에서는 reclamation backlog와 stalled participant를 모니터링한다. thread pool 재사용이나 coroutine migration과 epoch participation을 혼동하지 않는다. logical task lifetime과 physical thread lifetime 중 어느 것이 safety boundary인지 algorithm에 맞춰 결정한다.
 
 ---
 
-## CHAPTER 11 · seqlock은 reader가 retry할 수 있을 때 유리하다
+## CHAPTER 10 · RCU는 read-side cost를 최소화하고 update/reclaim에 복잡성을 집중한다
 
-writer는 sequence counter를 update 전/후 바꾸고 reader는 시작/끝 sequence가 일관적인지 확인한다.
+Read-Copy-Update는 reader가 old version을 lock 없이 읽는 동안 writer가 new version을 만들고 pointer를 publish한 뒤 grace period 이후 old version을 reclaim하는 계열의 technique다. read-mostly kernel data structure에서 유용하다.
 
-```text
-reader seq1
-copy data
-reader seq2
-if seq1 != seq2 or writer-active:
-    retry
-```
-
-reader가 writer를 block하지 않는 대신 write가 자주 발생하면 reader가 반복 retry할 수 있다.
-
-pointer lifetime이 바뀌는 data에는 추가 reclamation 문제가 있다.
+RCU correctness는 publication ordering과 grace-period definition에 달려 있다. `reader가 끝났다`는 의미가 scheduler/context rule과 연결될 수 있다. RCU를 general-purpose mutable container로 쓰지 않는다. update frequency, memory duplication, grace-period latency를 workload와 비교한다.
 
 ---
 
-## CHAPTER 12 · read-write lock은 reader가 많다고 무조건 이득이 아니다
+## CHAPTER 11 · seqlock은 reader retry를 허용해 writer serialization을 단순화한다
 
-RWLock은 여러 reader 동시 진입을 허용하고 writer는 exclusive access를 얻는다.
+writer는 sequence counter를 odd/even transition으로 변경하고 data를 갱신한다. reader는 시작/종료 sequence가 동일한 stable value인지 확인해 writer와 겹쳤다면 전체 read를 재시도한다.
 
-하지만:
-
-```text
-lock metadata 복잡
-reader count atomic contention
-writer starvation/fairness
-short critical section에서 overhead
-```
-
-가 있다.
-
-mutex와 workload를 benchmark한다.
+reader가 retry 가능하고 data copy가 side effect가 없을 때 적합하다. writer가 빈번하면 reader starvation이 생길 수 있고 pointer lifetime이 바뀌는 structure는 seqlock만으로 memory safety가 해결되지 않는다. snapshot consistency와 reclamation을 별도 증명한다.
 
 ---
 
-## CHAPTER 13 · priority inversion은 낮은 priority task가 높은 priority task를 막는 문제다
+## CHAPTER 12 · read-write lock은 reader concurrency와 metadata contention을 교환한다
 
-```text
-Low priority L owns mutex M
-High priority H waits M
-Medium priority M2 keeps running CPU
-```
+RWLock은 동시에 여러 reader를 허용하고 writer에 exclusive access를 준다. read-heavy workload에서 이득일 수 있지만 reader count 업데이트와 fairness policy 자체가 shared hot state가 된다.
 
-L이 CPU를 못 얻어 lock을 못 풀면 H가 간접적으로 medium task 때문에 오래 기다린다.
-
-### priority inheritance
-
-lock owner L의 effective priority를 H 수준으로 잠시 올려 빨리 critical section을 끝내게 하는 protocol이 있다.
-
-real-time system에서 중요하다.
+critical section이 매우 짧으면 mutex보다 overhead가 클 수 있고 writer-preference/read-preference에 따라 starvation 특성이 달라진다. benchmark는 평균 reader 비율만이 아니라 burst writer와 tail wait를 포함한다. immutable snapshot/RCU가 더 적합한지 비교한다.
 
 ---
 
-## CHAPTER 14 · lock convoy는 하나의 느린 owner 뒤에 모두 줄서는 현상이다
+## CHAPTER 13 · priority inversion은 lock ownership과 scheduler priority가 충돌할 때 발생한다
 
-많은 thread가 같은 mutex를 경쟁하고 lock owner가 preempt되거나 I/O를 하면 queue 전체가 멈춘다.
+low-priority task가 lock을 보유한 상태에서 high-priority task가 기다리고, medium-priority task가 CPU를 계속 사용하면 high-priority task는 간접적으로 medium task보다 뒤로 밀린다. 단순 priority boost만으로 모든 nested-lock case가 해결되지는 않는다.
 
-```text
-T1 owns lock, descheduled
-T2 wait
-T3 wait
-T4 wait
-```
-
-critical section을 줄이고 sharding/partitioning을 고려한다.
+priority inheritance/ceiling protocol은 real-time system에서 이 문제를 완화한다. 일반 server에서도 critical control thread가 background owner를 기다리는 구조가 latency spike를 만들 수 있다. lock wait와 owner scheduling state를 같은 trace에서 본다.
 
 ---
 
-## CHAPTER 15 · sharded lock은 contention domain을 나눈다
+## CHAPTER 14 · lock convoy는 한 owner 지연이 waiter 전체의 throughput을 끌어내린다
 
-하나의 global map lock 대신 key hash로 N개의 shard lock을 둔다.
+high-contention mutex에서 lock owner가 preempt되거나 page fault/I/O에 걸리면 많은 waiter가 줄지어 대기한다. owner가 깨어난 뒤에도 cache line ownership과 scheduler wakeup이 연쇄 비용을 만든다.
 
-```text
-key → hash % 16 → lock shard
-```
-
-서로 다른 shard의 operation은 병렬 진행할 수 있다.
-
-대가:
-
-```text
-multiple-key operation에서 여러 lock 필요
-deadlock order 관리
-hot-key shard imbalance
-```
-
-이다.
+critical section 내부 blocking operation을 제거하고 state를 partition한다. fair lock은 starvation을 줄이지만 convoy를 더 강하게 유지할 수 있다. unfair lock이 항상 빠른 것도 아니므로 workload의 fairness SLO와 throughput을 함께 평가한다.
 
 ---
 
-## CHAPTER 16 · optimistic concurrency는 충돌이 드물다는 가정을 이용한다
+## CHAPTER 15 · sharding은 하나의 synchronization domain을 여러 독립 domain으로 분할한다
 
-공유 state를 lock 없이 읽고 version을 확인한 뒤 commit 시 version이 그대로인지 검사한다.
+global map lock 대신 key hash에 따라 shard lock을 사용하면 unrelated key operation이 병렬 진행할 수 있다. 그러나 multi-key operation은 여러 shard를 동시에 잠가야 해 deadlock ordering과 atomicity가 복잡해진다.
 
-```text
-read value + version 7
-compute
-CAS/version check
-if still 7 → commit version 8
-else retry
-```
-
-충돌이 적으면 lock hold time을 줄일 수 있다.
-
-충돌이 많으면 retry waste가 커진다.
-
-DB optimistic locking과 같은 사고 모델이다.
+shard count가 너무 많으면 metadata와 cache footprint가 커지고 skewed hot key는 여전히 한 shard를 포화시킨다. contention metric을 shard별로 측정하고 dynamic rebalance가 필요한지 판단한다.
 
 ---
 
-## CHAPTER 17 · linearizability는 concurrent operation이 한 순간에 일어난 것처럼 설명 가능한가를 묻는다
+## CHAPTER 16 · optimistic concurrency는 conflict가 드물다는 가정에 의존한다
 
-thread-safe collection을 검증할 때 단순히 crash가 없는 것으로 부족하다.
+reader는 version을 읽고 lock 없이 work를 수행한 뒤 commit 시 version이 바뀌지 않았는지 검증한다. conflict가 있으면 retry/abort한다. MVCC와 compare-version update도 이 사고의 변형이다.
 
-각 operation이 call과 return 사이 어떤 **linearization point**에서 atomic하게 발생한 것처럼 전체 history를 설명할 수 있는지 본다.
-
-```text
-A enqueue(1) start
-B dequeue start
-A enqueue return
-B dequeue return 1
-```
-
-가능한 sequential history와 real-time order를 만족해야 한다.
+conflict rate가 높으면 wasted work와 retry load가 증가한다. long transaction은 conflict window를 넓힌다. optimistic scheme의 성능은 성공 path cost뿐 아니라 abort probability×retry cost까지 포함해 계산한다.
 
 ---
 
-## CHAPTER 18 · sequential consistency와 linearizability는 같은 말이 아니다
+## CHAPTER 17 · linearizability는 operation을 호출-응답 사이 한 순간에 일어난 것처럼 설명할 수 있는가를 묻는다
 
-둘 다 concurrent history의 ordering을 다루지만 real-time order requirement가 다르다.
+concurrent history가 sequential specification과 일치하도록 각 operation에 linearization point를 배치할 수 있다면 linearizable하다고 본다. real-time order도 보존해야 하므로 먼저 완료된 operation이 이후 시작된 operation 뒤로 이동할 수 없다.
 
-linearizability는 operation이 완료된 뒤 시작한 operation이 그 이전 효과를 보도록 real-time ordering을 포함한다.
-
-정확한 consistency model을 문서화하지 않으면 test가 무엇을 검증해야 하는지 알 수 없다.
+linearization point는 구현에서 실제 atomic instruction 하나일 수도 있고 복잡한 help mechanism에 의해 다른 thread가 operation을 완료하는 순간일 수도 있다. code review에서 `lock-free니까 linearizable`이라고 가정하지 않고 history를 specification에 mapping해 증명한다.
 
 ---
 
-## CHAPTER 19 · double-checked locking은 memory visibility가 핵심이다
+## CHAPTER 18 · consistency model은 observer가 허용받는 history 집합을 정의한다
 
-잘못된 lazy singleton:
+sequential consistency, causal consistency, eventual consistency는 서로 다른 guarantee를 제공한다. concurrent memory algorithm과 distributed storage 모두 `어떤 관찰 순서가 허용되는가`라는 질문으로 연결된다.
 
-```text
-if instance == null:
-  lock
-  if instance == null:
-     instance = new Object()
-```
-
-language memory model에 맞는 volatile/atomic publication 없이 구현하면 다른 thread가 fully initialized object를 보지 못할 수 있다.
-
-현대 언어가 제공하는 lazy initialization primitive를 선호한다.
+더 약한 consistency는 performance/availability 선택지를 늘릴 수 있지만 application invariant가 견딜 수 있어야 한다. user-facing balance, inventory, feed ordering은 필요한 consistency가 다르다. model 이름보다 실제 anomaly를 example history로 정의한다.
 
 ---
 
-## CHAPTER 20 · safe publication은 object construction과 visibility를 연결한다
+## CHAPTER 19 · double-checked locking은 publication ordering이 없으면 incomplete object를 노출할 수 있다
 
-object를 생성한 thread의 field write가 다른 thread에 보이려면 synchronization relation이 필요하다.
+`if null → lock → if null → create` 패턴은 object construction write와 reference publication 사이 ordering이 보장되어야 한다. 언어 memory model이 요구하는 volatile/atomic semantics 없이 구현하면 reader가 non-null reference와 partially initialized fields를 볼 가능성이 있다.
 
-가능한 방식:
-
-```text
-publish under mutex
-volatile/atomic reference
-thread-safe queue/channel
-immutable object + safe publication
-```
-
-plain global variable assignment만으로 모든 언어에서 충분하다고 가정하지 않는다.
+modern language/runtime가 제공하는 lazy initialization primitive를 우선 사용한다. 직접 구현한다면 happens-before를 specification으로 증명한다. timing test 수천 번이 memory-model proof를 대신하지 않는다.
 
 ---
 
-## CHAPTER 21 · work stealing은 불균형한 task를 worker 사이에서 나눈다
+## CHAPTER 20 · safe publication은 object lifetime의 시작점을 synchronization event에 연결한다
 
-각 worker가 local deque를 가지고 자기 task를 처리하다 비면 다른 worker의 task를 steal할 수 있다.
+immutable object도 construction 완료가 reader에게 visible하다는 보장이 필요하다. lock release/acquire, atomic store/load, thread start/join 같은 synchronization edge가 initialized state를 전달한다.
 
-```text
-worker A queue: many tasks
-worker B queue: empty
-↓
-B steals from A
-```
-
-recursive fork-join workload에서 load balancing에 유리하다.
-
-### 너무 작은 task
-
-task scheduling overhead가 실제 computation보다 커질 수 있다.
-
-grain size가 중요하다.
+publication 이후 object가 mutate되지 않는다면 reasoning이 크게 단순해진다. mutable shared object는 매 mutation path에 synchronization을 요구한다. architecture는 object ownership transfer를 명시해 accidental shared mutation을 줄인다.
 
 ---
 
-## CHAPTER 22 · structured concurrency는 child task lifetime을 scope에 묶는다
+## CHAPTER 21 · work stealing은 idle worker가 다른 worker의 deque에서 task를 가져간다
 
-fire-and-forget task를 계속 만들면 caller가 끝난 뒤에도 work가 남고 cancellation/error가 유실될 수 있다.
+fork-join style workload에서 worker는 local deque를 주로 사용해 locality를 유지하고 idle worker가 다른 deque의 반대쪽에서 steal할 수 있다. task granularity가 너무 작으면 scheduling overhead와 contention이 커지고 너무 크면 load balance가 나빠진다.
 
-structured concurrency는 parent scope가 child lifecycle을 소유하게 한다.
-
-```text
-scope start
-├─ child A
-├─ child B
-└─ wait/cancel policy
-scope ends only when children settled
-```
-
-Kotlin coroutine scope도 이 철학을 반영한다.
+blocking task가 compute pool worker를 점유하면 steal로 해결되지 않는 starvation이 발생할 수 있다. CPU-bound와 blocking workload를 분리하거나 managed blocking mechanism을 사용한다. queue depth만이 아니라 runnable task age를 측정한다.
 
 ---
 
-## CHAPTER 23 · cancellation은 synchronization과 race를 만든다
+## CHAPTER 22 · structured concurrency는 child task lifetime을 lexical/request lifetime에 묶는다
 
-child가 lock 획득 직후 cancel되면 cleanup이 lock을 release해야 한다.
+parent scope가 끝날 때 child task의 completion/cancellation이 정리되도록 구조화하면 orphan work와 leaked callback을 줄일 수 있다. error propagation과 cancellation tree가 명시적이 된다.
 
-```text
-acquire resource
-try
-  suspend/work
-finally
-  release resource
-```
-
-cancellation-safe API는 partial state를 남기지 않는 protocol이 필요하다.
-
-### cancellation mask/non-cancellable cleanup
-
-일부 runtime은 critical cleanup 동안 cancellation을 잠시 지연하는 mechanism을 제공한다.
-
-과도하게 사용하면 cancellation latency가 길어진다.
+동시에 실행한다고 모두 같은 cancellation semantics를 가져야 하는 것은 아니다. critical child failure가 sibling 전체를 취소할지 supervisor-style로 격리할지 요구사항에 따라 선택한다. request deadline을 child operation까지 전달한다.
 
 ---
 
-## CHAPTER 24 · channel은 shared memory 대신 message ownership을 전달한다
+## CHAPTER 23 · cancellation은 partially completed side effect를 처리하는 protocol이다
 
-actor/channel model에서는 state owner 하나가 message를 순서대로 처리하게 할 수 있다.
+cooperative task가 cancellation을 관찰하는 시점에 file write, DB transaction, remote request가 이미 일부 수행됐을 수 있다. 단순 exception throw로 atomic rollback이 되지 않는다.
 
-```text
-producer threads
-↓ messages
-channel
-↓
-single state owner
-```
-
-mutex를 줄일 수 있지만 queueing/backpressure 문제가 생긴다.
-
-### bounded channel
-
-producer rate가 consumer보다 빠를 때 capacity limit과 suspend/drop/reject policy를 정한다.
+operation을 cancellable phase와 non-cancellable commit phase로 나누거나 idempotent compensation을 설계한다. resource cleanup은 cancellation exception에도 실행되어야 하고 cleanup 자체가 cancellation되어 lock/descriptor가 남지 않게 보호한다.
 
 ---
 
-## CHAPTER 25 · actor도 deadlock과 logical race가 사라지는 것은 아니다
+## CHAPTER 24 · channel은 memory queue와 backpressure policy를 함께 가진다
 
-actor A가 B의 reply를 기다리며 자신이 처리해야 하는 message를 막고, B가 A의 message를 기다리면 protocol deadlock이 생길 수 있다.
+message channel은 shared mutable state를 direct access 대신 message ownership으로 바꾸지만 capacity와 ordering semantics가 필요하다. rendezvous, bounded buffer, unbounded buffer는 producer/consumer coupling이 다르다.
 
-message ordering도 network/retry와 결합되면 stale update가 가능하다.
-
-shared memory race는 줄지만 distributed state machine correctness가 새 문제다.
+channel full 시 suspend/drop/fail 정책이 application correctness를 결정한다. actor mailbox가 무한이면 lock contention 대신 queue latency/memory explosion으로 overload 형태만 바뀐다. message age와 backlog를 운영 metric으로 둔다.
 
 ---
 
-## CHAPTER 26 · fairness는 throughput과 trade-off가 있다
+## CHAPTER 25 · actor도 cyclic request/reply dependency를 만들면 deadlock할 수 있다
 
-lock scheduler가 완전 FIFO fairness를 강제하면 starvation은 줄지만 cache-hot owner가 다시 잡는 optimization이 제한될 수 있다.
+actor가 내부 state를 한 mailbox에서 serialize해 data race를 줄여도, Actor A가 B의 reply를 기다리고 B가 A의 reply를 기다리면 logical deadlock이 생긴다. mailbox processing thread를 synchronous call로 block하면 progress가 멈춘다.
 
-unfair lock은 throughput이 높을 수 있지만 특정 waiter가 오래 기다릴 위험이 있다.
-
-SLO가 tail latency인지 total throughput인지에 따라 선택이 달라진다.
+request/reply graph에 deadline과 failure handling을 넣고 cyclic dependency를 피한다. long computation은 actor mailbox를 점유하지 않게 offload하고 result correlation을 사용한다. actor model도 progress proof가 필요하다.
 
 ---
 
-## CHAPTER 27 · spinlock과 mutex의 선택은 wait duration과 execution context에 달려 있다
+## CHAPTER 26 · fairness는 throughput과 tail starvation 사이의 정책 선택이다
 
-spinlock:
+strict FIFO lock/scheduler는 기다린 순서를 보장하지만 cache-local owner 재획득 기회를 막아 throughput을 낮출 수 있다. unfair policy는 throughput을 높일 수 있지만 일부 waiter가 매우 오래 기다릴 수 있다.
 
-```text
-while locked:
-  CPU spins
-```
-
-짧고 sleep할 수 없는 kernel context에서는 유용할 수 있다.
-
-user-space에서 lock hold가 길면 CPU 낭비가 크다.
-
-adaptive mutex는 짧은 spin 후 block하는 식의 hybrid strategy를 사용할 수 있다.
+fairness requirement는 workload class마다 다르다. user request는 bounded latency가 중요하고 background compaction은 더 느슨할 수 있다. 평균 wait만 보지 않고 max/p99 wait와 starvation count를 측정한다.
 
 ---
 
-## CHAPTER 28 · false sharing을 lock-free code에서도 본다
+## CHAPTER 27 · spinlock과 mutex 선택은 expected wait와 preemption 가능성에 달려 있다
 
-atomic counter를 lock-free로 만들었어도 여러 counter가 같은 cache line에 있으면 coherence traffic이 커질 수 있다.
+spinlock은 lock이 곧 풀릴 것으로 기대하고 CPU를 소비하며 기다린다. sleep mutex는 scheduler 전환 비용을 내고 CPU를 양보한다. critical section이 매우 짧고 owner가 현재 다른 core에서 실행 중이면 spin이 유리할 수 있다.
 
-```text
-CPU0 atomic counter0
-CPU1 atomic counter1
-same cache line
-```
-
-algorithmic lock-free와 hardware-level contention은 별개다.
+single core나 oversubscribed system에서 owner가 preempt된 상태로 spin하면 CPU를 낭비한다. adaptive mutex는 일정 시간 spin 후 sleep할 수 있다. 선택은 lock hold distribution과 scheduler topology를 기반으로 한다.
 
 ---
 
-## CHAPTER 29 · contention collapse는 retry가 work보다 많아지는 상태다
+## CHAPTER 28 · false sharing은 synchronization primitive 밖의 coherence contention이다
 
-CAS loop에 100 thread가 동시에 몰리면 한 번 성공할 때 99번 실패가 나고 다시 경쟁할 수 있다.
+각 thread가 별도 counter를 수정해 logical data race가 없어도 같은 cache line에 배치되면 line ownership이 core 사이를 이동한다. lock profiler에는 병목이 보이지 않을 수 있다.
 
-throughput이 thread 수 증가와 함께 오히려 떨어질 수 있다.
-
-해결 후보:
-
-```text
-backoff
-combining
-sharding
-queue lock
-reduce concurrency
-batching
-```
+PMU/coherence counter와 scaling curve로 진단하고 per-thread counter, padding/alignment, batch aggregation으로 shared write 빈도를 줄인다. cache line size를 hard-code한 padding은 platform portability를 고려해야 한다.
 
 ---
 
-## CHAPTER 30 · race detector는 happens-before violation을 찾는다
+## CHAPTER 29 · contention collapse는 concurrency 증가가 useful throughput을 감소시키는 구간이다
 
-ThreadSanitizer 같은 도구는 instrumentation으로 shared memory access와 synchronization을 추적해 data race를 보고한다.
+lock retry, context switch, cache bouncing, queue management가 useful work보다 커지면 worker를 더 추가할수록 throughput이 떨어질 수 있다. 이 지점 이후 latency는 급격히 증가한다.
 
-하지만:
-
-```text
-logical stale response
-incorrect lock ordering but no race yet
-deadlock depending on timing
-atomicity violation across multiple atomic fields
-```
-
-를 모두 자동 해결하지 않는다.
+adaptive concurrency limit과 admission control로 operating point를 collapse 이전에 유지한다. `CPU가 100%가 아니니 worker를 더 늘린다`는 결정은 잘못될 수 있다. off-CPU contention과 coherence cost를 함께 본다.
 
 ---
 
-## CHAPTER 31 · model checking과 deterministic scheduler
+## CHAPTER 30 · race detector는 runtime access history로 happens-before 위반 후보를 찾는다
 
-동시성 bug는 가능한 interleaving 수가 폭발한다.
+dynamic race detector는 memory access instrumentation과 synchronization event를 추적해 conflicting access 사이 happens-before가 없는 경우를 보고할 수 있다. 실제 실행된 interleaving만 관찰하므로 report 없음이 race 부재 증명은 아니다.
 
-작은 state machine에 대해 가능한 schedule을 체계적으로 탐색하거나 deterministic scheduler로 yield point를 통제하면 rare interleaving을 재현할 수 있다.
-
-```text
-T1 step1
-T2 step1
-T2 step2
-T1 step2
-```
-
-random stress보다 더 강한 coverage를 만들 수 있다.
+instrumentation overhead가 timing을 바꾸고 supported primitive 밖 custom synchronization은 false positive/negative를 만들 수 있다. report를 source-level ownership model과 대조한다. discovered race는 deterministic regression test로 보강한다.
 
 ---
 
-## CHAPTER 32 · linearizability test는 operation history를 기록한다
+## CHAPTER 31 · model checking은 작은 state space의 모든 interleaving을 탐색해 reasoning을 검증한다
 
-concurrent queue를 테스트할 때 각 operation의:
+concurrency algorithm을 작은 thread 수와 state로 축소하면 가능한 scheduling/interleaving을 체계적으로 탐색할 수 있다. assertion/invariant violation, deadlock, livelock을 random stress보다 결정적으로 찾을 수 있다.
 
-```text
-start time
-end time
-input
-output
-```
-
-을 history로 기록하고 valid sequential ordering이 존재하는지 검사할 수 있다.
-
-복잡하지만 concurrent data structure correctness를 훨씬 직접 검증한다.
+state explosion을 줄이기 위해 abstraction, symmetry, partial-order reduction을 사용한다. model이 implementation의 memory-order semantics를 충분히 반영하는지 확인한다. model proof와 actual code mapping이 끊기면 false confidence가 생긴다.
 
 ---
 
-## CHAPTER 33 · concurrency limit도 correctness boundary가 된다
+## CHAPTER 32 · history-based test는 concurrent operation의 invocation/response를 specification과 비교한다
 
-외부 API가 동시에 최대 10 connection만 허용한다면 semaphore limit은 단순 성능 tuning이 아니라 provider contract를 지키는 correctness rule이다.
+실제 concurrent run에서 operation 시작·종료·argument·result를 기록하고 가능한 sequential history 중 specification을 만족하는 배치가 있는지 검사할 수 있다. linearizability checker가 이 접근을 사용한다.
 
-limit을 runtime config로 바꿀 때:
-
-```text
-current inflight
-new lower limit
-waiting queue
-cancellation
-```
-
-transition semantics도 정의해야 한다.
+history logging 자체가 timing을 바꿀 수 있으므로 여러 workload와 fault injection을 사용한다. timeout/indeterminate operation은 history에서 별도로 모델링한다. test는 implementation state가 아니라 externally observable contract를 검증한다.
 
 ---
 
-## CHAPTER 34 · Android coroutine race를 실제 사례로 본다
+## CHAPTER 33 · concurrency limit은 synchronization contention을 upstream에서 제한한다
 
-검색창:
+DB pool, lock, CPU가 처리할 수 있는 in-flight 수보다 많은 request를 내부에 들이면 queue와 context switching만 증가한다. semaphore/admission controller로 critical section에 도달하는 concurrency 자체를 제한할 수 있다.
 
-```text
-query A launch
-query AB launch
-AB returns first → UI=AB
-A returns later  → UI=A (stale)
-```
-
-data race detector에는 문제가 없을 수 있다.
-
-해결:
-
-```text
-previous job cancel
-or
-request sequence/token compare
-or
-latest-only stream operator
-```
-
-여기서 invariant는 `UI는 가장 최신 query 결과만 표시한다`다.
+limit은 static magic number가 아니라 measured service capacity와 latency target에서 정한다. load class별 separate limit를 두면 low-priority bulk가 interactive path를 포화시키는 것을 막는다. rejection도 overload protocol의 일부다.
 
 ---
 
-## CHAPTER 35 · 고급 동시성 선택표
+## CHAPTER 34 · Android race는 lifecycle과 async completion 순서가 뒤집히며 자주 발생한다
 
-```text
-문제                         먼저 검토할 도구
-single owner mutable state    confinement / actor
-short low-contention critical mutex
-many readers few writers      RWLock / immutable snapshot / RCU candidate
-counter                       atomic fetch-add / sharded counter
-lock-free container 필요      proven library first
-high contention counter       sharding/combining before CAS storm
-async child lifecycle         structured concurrency
-external capacity             semaphore/bounded queue
-```
+Activity/Composable이 사라진 뒤 background result가 돌아와 old UI state를 수정하거나, configuration change 뒤 두 request가 서로 다른 generation에 속하면서 stale result가 최신 state를 덮을 수 있다.
 
-직접 lock-free algorithm을 작성하는 것은 마지막 수단에 가깝다.
-
-이미 검증된 standard library/concurrent collection을 우선한다.
+request generation/version을 state에 포함하고 lifecycle scope cancellation과 result freshness를 검증한다. main thread에서 실행된다는 사실만으로 logical race가 사라지지 않는다. event ordering과 user navigation을 deterministic test로 재현한다.
 
 ---
 
-## PART 15 종료 점검
+## CHAPTER 35 · synchronization 선택은 invariant, contention, progress, lifetime 네 축으로 결정한다
 
-1. CAS loop가 high contention에서 왜 느려질 수 있는가?
-2. lock-free와 wait-free의 progress guarantee가 어떻게 다른가?
-3. ABA 문제는 값이 같아도 왜 발생하는가?
-4. lock-free structure에서 unlink와 free를 분리해야 하는 이유는 무엇인가?
-5. hazard pointer와 epoch reclamation의 trade-off는 무엇인가?
-6. RCU가 read-mostly workload에 유리한 이유는 무엇인가?
-7. seqlock reader가 retry해야 하는 이유는 무엇인가?
-8. priority inversion은 어떤 execution sequence에서 생기는가?
-9. linearizability가 단순 thread safety보다 강한 무엇을 요구하는가?
-10. safe publication이 memory visibility와 어떻게 연결되는가?
-11. work stealing에서 task grain size가 중요한 이유는 무엇인가?
-12. structured concurrency가 orphan task를 줄이는 이유는 무엇인가?
-13. actor/channel도 protocol deadlock이 생길 수 있는 이유는 무엇인가?
-14. lock-free라도 false sharing이 성능을 망칠 수 있는 이유는 무엇인가?
-15. deterministic scheduler/model checking이 random stress보다 어떤 종류의 bug를 잘 찾는가?
-16. Android 최신 검색 결과 race가 data race가 아닌 logical race인 이유는 무엇인가?
+mutex, RWLock, atomic CAS, channel, actor, RCU, lock-free queue를 기술 선호로 고르지 않는다. 먼저 **보호할 invariant, 경쟁 빈도, 필요한 progress guarantee, object reclamation/lifetime**을 적는다.
 
-동시성을 `thread를 여러 개 쓴다`로 설명하지 않는다. **progress guarantee, atomic state transition, memory reclamation, ordering, ownership, scheduling, cancellation, history correctness**까지 연결해야 한다.
+가장 단순하게 증명 가능한 mechanism이 요구 성능을 만족하면 그것을 선택한다. 부족할 때만 더 약한 ordering이나 non-blocking structure로 내려간다. advanced concurrency의 목표는 primitive를 많이 아는 것이 아니라 **허용 가능한 history와 progress를 코드·테스트·운영 evidence로 증명하는 것**이다.
