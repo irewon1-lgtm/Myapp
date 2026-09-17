@@ -3,33 +3,20 @@
   "trackNumber": 10,
   "title": "오류·테스트·Git·빌드·배포 — 변경을 안전하게 만드는 기술",
   "parts": [
-    {
-      "id": "T10-P01",
-      "order": 1,
-      "title": "BLOCK 01–05",
-      "assetPath": "textbook/v5/track_10/part_01_blocks_01_05.md",
-      "sourceMapPath": "textbook/v5/track_10/part_01_sources_grouped.json",
-      "prerequisiteConceptIds": []
-    },
-    {
-      "id": "T10-P02",
-      "order": 2,
-      "title": "BLOCK 06–10",
-      "assetPath": "textbook/v5/track_10/part_02_blocks_06_10.md",
-      "sourceMapPath": "textbook/v5/track_10/part_02_sources_grouped.json",
-      "prerequisiteConceptIds": [
-        "T10-P01-S35-L07"
-      ]
-    },
-    {
-      "id": "T10-P03",
-      "order": 3,
-      "title": "BLOCK 11–15",
-      "assetPath": "textbook/v5/track_10/part_03_blocks_11_15.md",
-      "sourceMapPath": "textbook/v5/track_10/part_03_sources_grouped.json",
-      "prerequisiteConceptIds": [
-        "T10-P02-S35-L07"
-      ]
-    }
+    {"id":"T10-P01","order":1,"title":"BLOCK 01 · 실패를 사실로 바꾸는 법","assetPath":"textbook/v5/track_10/block_01_failure_facts.md","sourceMapPath":"textbook/v5/track_10/part_01_sources.json","prerequisiteConceptIds":[]},
+    {"id":"T10-P02","order":2,"title":"BLOCK 02 · 재현과 최소 사례","assetPath":"textbook/v5/track_10/block_02_reproduction_minimal_case.md","sourceMapPath":"textbook/v5/track_10/part_02_sources.json","prerequisiteConceptIds":[]},
+    {"id":"T10-P03","order":3,"title":"BLOCK 03 · 로그·stack trace·debugger로 실행을 관찰한다","assetPath":"textbook/v5/track_10/block_03_logs_stack_debugger.md","sourceMapPath":"textbook/v5/track_10/part_03_sources.json","prerequisiteConceptIds":[]},
+    {"id":"T10-P04","order":4,"title":"BLOCK 04 · 가설 기반 디버깅과 변화점 추적","assetPath":"textbook/v5/track_10/block_04_hypothesis_bisect.md","sourceMapPath":"textbook/v5/track_10/part_04_sources.json","prerequisiteConceptIds":[]},
+    {"id":"T10-P05","order":5,"title":"BLOCK 05 · 성능·메모리·동시성 문제를 증거로 좁힌다","assetPath":"textbook/v5/track_10/block_05_performance_memory_concurrency.md","sourceMapPath":"textbook/v5/track_10/part_05_sources.json","prerequisiteConceptIds":[]},
+    {"id":"T10-P06","order":6,"title":"BLOCK 06 · 테스트의 기본기와 검증 범위","assetPath":"textbook/v5/track_10/block_06_testing_fundamentals.md","sourceMapPath":"textbook/v5/track_10/part_06_sources.json","prerequisiteConceptIds":[]},
+    {"id":"T10-P07","order":7,"title":"BLOCK 07 · 결정적 테스트·대역·flaky 제어","assetPath":"textbook/v5/track_10/block_07_test_doubles_flaky.md","sourceMapPath":"textbook/v5/track_10/part_07_sources.json","prerequisiteConceptIds":[]},
+    {"id":"T10-P08","order":8,"title":"BLOCK 08 · 강한 테스트 도구와 검출력","assetPath":"textbook/v5/track_10/block_08_advanced_testing.md","sourceMapPath":"textbook/v5/track_10/part_08_sources.json","prerequisiteConceptIds":[]},
+    {"id":"T10-P09","order":9,"title":"BLOCK 09 · 명세·불변식·리팩터링·legacy 안전망","assetPath":"textbook/v5/track_10/block_09_spec_refactor_legacy.md","sourceMapPath":"textbook/v5/track_10/part_09_sources.json","prerequisiteConceptIds":[]},
+    {"id":"T10-P10","order":10,"title":"BLOCK 10 · Git의 상태 모델과 변경 기록","assetPath":"textbook/v5/track_10/block_10_git_state_history.md","sourceMapPath":"textbook/v5/track_10/part_10_sources.json","prerequisiteConceptIds":[]},
+    {"id":"T10-P11","order":11,"title":"BLOCK 11 · branch·merge·rebase·conflict","assetPath":"textbook/v5/track_10/block_11_git_branch_merge_rebase.md","sourceMapPath":"textbook/v5/track_10/part_11_sources.json","prerequisiteConceptIds":[]},
+    {"id":"T10-P12","order":12,"title":"BLOCK 12 · Git 복구·remote 협업·review 안전장치","assetPath":"textbook/v5/track_10/block_12_git_recovery_collaboration.md","sourceMapPath":"textbook/v5/track_10/part_12_sources.json","prerequisiteConceptIds":[]},
+    {"id":"T10-P13","order":13,"title":"BLOCK 13 · 빌드·dependency·artifact·공급망","assetPath":"textbook/v5/track_10/block_13_build_artifact_supply_chain.md","sourceMapPath":"textbook/v5/track_10/part_13_sources.json","prerequisiteConceptIds":[]},
+    {"id":"T10-P14","order":14,"title":"BLOCK 14 · CI 파이프라인과 품질 게이트","assetPath":"textbook/v5/track_10/block_14_ci_quality_gates.md","sourceMapPath":"textbook/v5/track_10/part_14_sources.json","prerequisiteConceptIds":[]},
+    {"id":"T10-P15","order":15,"title":"BLOCK 15 · 배포·rollback·운영 검증·AI 변경 통제","assetPath":"textbook/v5/track_10/block_15_deploy_operations_ai_control.md","sourceMapPath":"textbook/v5/track_10/part_15_sources.json","prerequisiteConceptIds":[]}
   ]
 }
