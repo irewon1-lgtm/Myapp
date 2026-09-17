@@ -2,63 +2,30 @@
   "trackId": "T07",
   "trackNumber": 7,
   "title": "서버와 백엔드 — 요청 한 건에서 신뢰할 수 있는 서비스까지",
-  "learnerStructure": "TRACK → BLOCK → LESSON",
   "parts": [
     {
       "id": "T07-P01",
       "order": 1,
-      "title": "BLOCK 01 · 요청 한 건이 서버 안에서 지나가는 길",
-      "assetPath": "textbook/v5/track_07/block_01_request_lifecycle.md",
-      "sourceMapPath": "textbook/v5/track_07/block_01_sources.json",
+      "title": "BLOCK 01 · LESSON 01 · 서버·프로세스·포트를 첫 요청으로 연결하기",
+      "assetPath": "textbook/v5/track_07/part_01_server_process_port.md",
+      "sourceMapPath": "textbook/v5/track_07/part_01_sources.json",
       "prerequisiteConceptIds": []
     },
     {
       "id": "T07-P02",
       "order": 2,
-      "title": "BLOCK 02 · 비즈니스 규칙과 코드의 책임을 분리하기",
-      "assetPath": "textbook/v5/track_07/block_02_application_boundaries.md",
-      "sourceMapPath": "textbook/v5/track_07/block_02_sources.json",
-      "prerequisiteConceptIds": ["T07-B01-L03-route-handler", "T07-B01-L07-validation", "T07-B01-L09-errors"]
+      "title": "BLOCK 01 · LESSON 02 · request와 response의 실제 수명주기 읽기",
+      "assetPath": "textbook/v5/track_07/part_02_request_response_lifecycle.md",
+      "sourceMapPath": "textbook/v5/track_07/part_02_sources.json",
+      "prerequisiteConceptIds": ["T07-P01-S06-listen-lifecycle", "T07-P01-S07-connection-vs-http"]
     },
     {
       "id": "T07-P03",
       "order": 3,
-      "title": "BLOCK 03 · 인증·권한·신뢰 경계를 서버에서 지키기",
-      "assetPath": "textbook/v5/track_07/block_03_identity_authorization.md",
-      "sourceMapPath": "textbook/v5/track_07/block_03_sources.json",
-      "prerequisiteConceptIds": ["T07-B01-L06-middleware", "T07-B02-L18-domain-model", "T07-B02-L23-invariant"]
-    },
-    {
-      "id": "T07-P04",
-      "order": 4,
-      "title": "BLOCK 04 · 데이터 접근·일관성·캐시를 서비스 흐름에 연결하기",
-      "assetPath": "textbook/v5/track_07/block_04_data_consistency_cache.md",
-      "sourceMapPath": "textbook/v5/track_07/block_04_sources.json",
-      "prerequisiteConceptIds": ["T07-B02-L17-layers", "T07-B02-L24-idempotency", "T07-B03-L37-tenant-boundary"]
-    },
-    {
-      "id": "T07-P05",
-      "order": 5,
-      "title": "BLOCK 05 · 큐·작업·웹훅으로 오래 걸리는 일을 안전하게 처리하기",
-      "assetPath": "textbook/v5/track_07/block_05_async_jobs_messaging.md",
-      "sourceMapPath": "textbook/v5/track_07/block_05_sources.json",
-      "prerequisiteConceptIds": ["T07-B02-L24-idempotency", "T07-B04-L49-transaction-boundary", "T07-B04-L54-outbox"]
-    },
-    {
-      "id": "T07-P06",
-      "order": 6,
-      "title": "BLOCK 06 · 느림·과부하·장애를 숫자와 증거로 다루기",
-      "assetPath": "textbook/v5/track_07/block_06_reliability_observability.md",
-      "sourceMapPath": "textbook/v5/track_07/block_06_sources.json",
-      "prerequisiteConceptIds": ["T07-B01-L12-request-context", "T07-B05-L64-retry", "T07-B05-L67-lease"]
-    },
-    {
-      "id": "T07-P07",
-      "order": 7,
-      "title": "BLOCK 07 · API를 오래 바꾸고 AI와 함께 검증 가능한 백엔드를 만들기",
-      "assetPath": "textbook/v5/track_07/block_07_api_evolution_capstone.md",
-      "sourceMapPath": "textbook/v5/track_07/block_07_sources.json",
-      "prerequisiteConceptIds": ["T07-B01-L10-response-contract", "T07-B02-L28-ports-adapters", "T07-B06-L90-incident-debugging"]
+      "title": "BLOCK 01 · LESSON 03 · route와 handler를 요청 분배 계약으로 설계하기",
+      "assetPath": "textbook/v5/track_07/part_03_routing_handlers.md",
+      "sourceMapPath": "textbook/v5/track_07/part_03_sources.json",
+      "prerequisiteConceptIds": ["T07-P02-S01-request-runtime-object", "T07-P02-S02-method-semantics", "T07-P02-S03-target-query-parsing"]
     }
   ]
 }
