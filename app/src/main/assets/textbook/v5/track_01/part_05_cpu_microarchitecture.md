@@ -50,6 +50,8 @@ speculative load나 execution이 architectural state에 commit되지 않아도 c
 
 instruction 하나가 싸더라도 같은 port에 집중되면 backend bound가 될 수 있고, instruction 수가 많아도 여러 unit에 분산되어 병렬 실행되면 wall time 영향이 작을 수 있다. assembly를 볼 때 opcode 개수보다 dependency, port pressure, load/store bandwidth를 함께 해석한다.
 
+측정에서는 같은 opcode라도 operand 형태와 microarchitecture에 따라 latency·throughput이 달라질 수 있음을 전제로 한다. 특히 load-op fusion, vector width, divider처럼 resource occupancy가 긴 연산은 독립 instruction이 충분해도 특정 unit을 포화시킬 수 있다. PMU의 backend stall과 uop 분포를 generated assembly와 맞춰야 “연산이 많아서 느리다”를 실제 execution-resource 제약으로 구체화할 수 있다.
+
 ---
 
 ## CHAPTER 07 · register pressure는 spill을 통해 memory traffic으로 변환된다
@@ -57,6 +59,8 @@ instruction 하나가 싸더라도 같은 port에 집중되면 backend bound가 
 compiler는 virtual value를 제한된 physical register에 배치한다. 동시에 live한 값이 많으면 일부를 stack slot로 spill하고 나중에 reload해야 한다. source에서 local variable이 하나 늘어난 변화가 register allocation 임계점을 넘으면 unexpected memory traffic을 만들 수 있다.
 
 inline expansion과 loop unrolling은 branch/call overhead를 줄일 수 있지만 code size와 register pressure를 늘린다. optimization은 한 지표를 최대화하는 작업이 아니라 instruction cache, register file, execution resource 간 trade-off다.
+
+spill은 단순 store/load 두 개가 추가되는 문제로 끝나지 않는다. stack access가 cache line을 더 차지하고 address-generation unit과 load/store queue를 사용하며, dependent reload가 critical path에 들어가면 latency가 증폭된다. compiler의 register-allocation report나 before/after assembly를 비교해 spill slot 수와 live range 변화를 확인하면 “inlining 후 느려짐” 같은 역설적인 regression을 설명할 수 있다.
 
 ---
 
@@ -66,6 +70,8 @@ calling convention은 argument/return register, caller-saved/callee-saved regist
 
 stack alignment가 깨지면 특정 SIMD instruction이나 library code에서 crash할 수 있다. FFI/JNI 경계에서 function signature만 맞추고 struct layout·calling convention·ownership을 무시하면 silent corruption이 생길 수 있다. binary boundary는 source type보다 ABI document가 최종 기준이다.
 
+ABI mismatch는 즉시 crash하지 않고 일부 call에서만 잘못된 register나 padding을 해석하는 형태로 나타날 수 있다. 따라서 FFI 문제를 조사할 때는 symbol 이름뿐 아니라 target triple, calling convention, aggregate return rule, stack alignment, compiler option을 함께 기록한다. 같은 함수 prototype처럼 보여도 packed struct나 variadic argument 규칙이 다르면 caller와 callee가 서로 다른 byte layout을 소비할 수 있다.
+
 ---
 
 ## CHAPTER 09 · recursion cost는 call depth와 frame state에 비례한다
@@ -73,6 +79,8 @@ stack alignment가 깨지면 특정 SIMD instruction이나 library code에서 cr
 재귀 함수는 각 active invocation에 필요한 state를 유지해야 한다. compiler가 tail-call optimization을 적용하지 않는다면 깊은 recursion은 stack consumption을 증가시키고 stack overflow 위험을 만든다. frame size가 큰 함수는 같은 call depth에서도 더 많은 stack을 사용한다.
 
 recursion과 iteration의 성능 비교는 문법 형태로 결정되지 않는다. compiler optimization, branch behavior, locality, algorithmic structure를 본다. stack trace depth가 실제 source call count와 다를 수 있는 이유도 inlining·tail call·optimized unwind와 연결된다.
+
+stack guard와 page growth 정책 때문에 overflow 직전의 비용이 선형적이지 않을 수도 있다. large frame이나 alloca 계열 동적 크기는 한 번의 call에서 여러 page를 건드려 fault를 유발할 수 있고, signal/exception handler가 별도 stack 여유를 요구하는 환경도 있다. worst-case depth를 정할 때 평균 frame size가 아니라 실제 build의 stack-usage report와 입력에 따른 recursion bound를 함께 검증해야 한다.
 
 ---
 
@@ -98,6 +106,8 @@ coherence는 language memory model의 synchronization을 대체하지 않는다.
 
 진단은 lock contention이 없는데도 coherence-related counter와 CPU 사용량이 높고 scaling이 나빠지는 패턴에서 시작할 수 있다. 해결은 무조건 padding을 넣는 것이 아니다. data layout, per-thread aggregation, update frequency를 바꿔 shared write traffic 자체를 줄이는 것이 우선이다.
 
+false sharing 여부는 source field 이름이 아니라 실제 binary layout으로 확인해야 한다. allocator alignment, object header, array stride가 바뀌면 기대한 padding이 사라지거나 다른 hot field가 같은 line에 들어갈 수 있다. thread affinity를 바꿨을 때 ownership migration과 throughput이 함께 변하는지 보고, layout 변경 전후의 cache-to-cache transfer를 비교하면 논리적 공유와 물리적 line 경쟁을 구분할 수 있다.
+
 ---
 
 ## CHAPTER 13 · memory ordering은 coherence와 별도의 관찰 순서 규칙이다
@@ -106,6 +116,8 @@ CPU는 store buffer, speculative load, out-of-order execution을 사용하면서
 
 atomic acquire/release와 fence는 필요한 ordering edge를 만든다. sequential consistency를 무조건 사용하면 reasoning은 단순해지지만 비용이 커질 수 있고, 지나치게 weak ordering은 correctness proof를 어렵게 만든다. lock-free algorithm의 memory order는 benchmark가 아니라 happens-before proof에서 선택한다.
 
+litmus test는 희귀한 ordering 결과를 의도적으로 드러내는 도구다. 같은 source를 다른 ISA에서 실행하거나 compiler optimization을 바꾸면 허용 결과 집합이 달라질 수 있으므로, “내 CPU에서 한 번 안 나왔다”는 관찰은 proof가 아니다. 필요한 ordering edge를 최소화한 뒤 model checker·stress harness·architecture 문서와 대조하면 fence를 과하게 넣지 않으면서도 portability를 유지할 수 있다.
+
 ---
 
 ## CHAPTER 14 · aliasing 정보는 compiler optimization 가능성을 결정한다
@@ -113,6 +125,8 @@ atomic acquire/release와 fence는 필요한 ordering edge를 만든다. sequent
 두 pointer가 같은 memory를 가리킬 가능성이 있으면 compiler는 한 store가 다른 load 결과를 바꿀 수 있다고 보수적으로 가정해야 한다. alias analysis가 independent memory임을 증명하면 load hoisting, vectorization, reordering 같은 최적화가 가능해진다.
 
 반대로 programmer가 non-aliasing 계약을 잘못 주장하면 compiler는 실제 overlap을 고려하지 않고 최적화해 undefined behavior나 corruption을 만들 수 있다. performance hint는 correctness contract가 먼저 참일 때만 안전하다.
+
+진단할 때는 optimized IR에서 alias set과 memory dependency가 어떻게 바뀌었는지 본다. source에서 서로 다른 변수 이름을 썼다는 사실은 충분하지 않고, pointer arithmetic·slice·FFI를 거치며 같은 backing storage를 공유할 수 있다. restrict 계열 계약이나 immutable view를 도입했다면 overlap하는 adversarial input을 별도 test로 넣어 optimization 전제 자체가 실제 API 사용에서 유지되는지 검증해야 한다.
 
 ---
 
@@ -138,6 +152,8 @@ performance monitoring unit은 cycle, instruction, branch miss, cache/TLB event 
 
 counter는 sampling multiplexing, privilege filter, event definition 차이의 영향을 받는다. 서로 다른 CPU model의 event 이름을 직접 비교하거나 derived metric 하나로 결론내리지 않는다. wall-clock, profile, trace와 counter를 상호 검증한다.
 
+counter가 정확한 원인 수를 직접 주는 것도 아니다. skid 때문에 sample IP가 실제 event instruction과 약간 어긋날 수 있고, multiplexing은 active time을 기준으로 scale된 추정치를 만든다. 동일 event 이름도 model별 umask와 semantics가 다를 수 있으므로 raw event definition과 CPU model을 결과에 같이 저장한다. 반복 측정에서 variance와 counter ratio가 함께 움직일 때만 optimization hypothesis와 연결하는 편이 안전하다.
+
 ---
 
 ## CHAPTER 18 · microbenchmark는 측정 대상보다 benchmark harness를 재기 쉽다
@@ -153,6 +169,8 @@ counter는 sampling multiplexing, privilege filter, event definition 차이의 �
 Android device는 workload, battery, thermal state에 따라 CPU frequency와 core selection을 바꿀 수 있다. big/LITTLE 계열 heterogeneous topology에서는 같은 thread도 시간에 따라 다른 performance class core에서 실행될 수 있다.
 
 장시간 benchmark에서 처음 몇 초는 빠르고 이후 느려지는 현상은 algorithm 변화가 아니라 thermal throttling일 수 있다. device performance를 비교할 때 temperature, power mode, background activity, charging state를 기록한다. frame jank는 평균 CPU time보다 deadline miss distribution을 본다.
+
+재현 가능한 비교를 위해 frequency residency, core migration, thermal throttling state를 benchmark 구간과 함께 캡처한다. 동일 APK라도 governor나 battery saver가 다르면 available capacity가 달라지고, foreground/background scheduling class도 core placement에 영향을 줄 수 있다. 따라서 전후 측정에서 device state가 달라졌다면 code change 효과와 platform control-loop 효과를 분리해 해석해야 한다.
 
 ---
 
@@ -170,3 +188,5 @@ wall-time regression을 재현한다
 ```
 
 CPU optimization이 I/O wait나 lock contention 문제를 해결하지는 않는다. microarchitecture 지식의 목적은 모든 코드를 assembly로 바꾸는 것이 아니라 **측정 결과가 어느 자원 제약을 가리키는지 정확히 해석하는 것**이다.
+
+변경 전에는 재현 가능한 workload와 baseline distribution을 고정하고, 변경 후에는 wall time뿐 아니라 bottleneck으로 지목한 counter가 예상 방향으로 움직였는지 확인한다. 예를 들어 branch miss를 원인으로 주장했다면 miss 감소와 latency 개선이 동시에 나타나야 하고, memory-bound라면 bandwidth 또는 cache-miss behavior가 달라져야 한다. 그렇지 않다면 성능 향상이 noise·DVFS·다른 hotspot 이동 때문일 가능성을 남겨 두고 hypothesis를 다시 세운다.
