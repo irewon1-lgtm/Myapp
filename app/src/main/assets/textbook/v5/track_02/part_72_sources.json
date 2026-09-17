@@ -1,0 +1,13 @@
+{
+  "partId":"T02-P72",
+  "sections":[
+    {"sectionId":"T02-P72-S01-new-allocation","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P72-S02-init-initialization","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P72-S03-immutable-subclass","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P72-S04-constructor-return","sourceIds":["PYTHON-REF"]},
+    {"sectionId":"T02-P72-S05-class-call-path","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P72-S06-init-exception-state","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P72-S07-constructor-invariant","sourceIds":["DDD","REFACTORING2"]},
+    {"sectionId":"T02-P72-S08-construction-contract","sourceIds":["DDD","PYTHON-REF"]}
+  ]
+}
