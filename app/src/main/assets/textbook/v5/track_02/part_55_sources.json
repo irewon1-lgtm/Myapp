@@ -1,0 +1,13 @@
+{
+  "partId":"T02-P55",
+  "sections":[
+    {"sectionId":"T02-P55-S01-random-access-file","sourceIds":["PYTHON-REF","TLPI"]},
+    {"sectionId":"T02-P55-S02-mmap-address-space","sourceIds":["PYTHON-REF","OSTEP","TLPI"]},
+    {"sectionId":"T02-P55-S03-page-fault-io","sourceIds":["OSTEP","CSAPP3"]},
+    {"sectionId":"T02-P55-S04-slice-copy-view","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P55-S05-file-growth-truncation","sourceIds":["TLPI","PYTHON-REF"]},
+    {"sectionId":"T02-P55-S06-shared-private-mapping","sourceIds":["OSTEP","TLPI"]},
+    {"sectionId":"T02-P55-S07-mmap-lifetime","sourceIds":["PYTHON-REF","TLPI"]},
+    {"sectionId":"T02-P55-S08-mmap-workload-choice","sourceIds":["CSAPP3","TLPI","PYTHON-REF"]}
+  ]
+}
