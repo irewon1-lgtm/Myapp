@@ -1,0 +1,15 @@
+{
+  "partId": "T02-P13",
+  "sections": [
+    {"sectionId":"T02-P13-S01-reproduction-condition","sourceIds":["SRE","NIST-SSDF","PROGIT2"]},
+    {"sectionId":"T02-P13-S02-traceback-call-path","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P13-S03-structured-log-timeline","sourceIds":["SRE","SRE-WORKBOOK"]},
+    {"sectionId":"T02-P13-S04-debugger-hypothesis","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P13-S05-binary-search-debugging","sourceIds":["PROGIT2","CLRS4"]},
+    {"sectionId":"T02-P13-S06-profiler-evidence","sourceIds":["CSAPP3","SRE"]},
+    {"sectionId":"T02-P13-S07-memory-retention","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P13-S08-metric-distribution","sourceIds":["SRE","SRE-WORKBOOK"]},
+    {"sectionId":"T02-P13-S09-distributed-trace","sourceIds":["SRE","DDIA"]},
+    {"sectionId":"T02-P13-S10-root-cause-verification","sourceIds":["SRE","NIST-SSDF"]}
+  ]
+}
