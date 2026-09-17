@@ -4,240 +4,300 @@
 
 ---
 
-## CHAPTER 01 · wall clock과 elapsed-time clock은 요구사항이 다르다
+## CHAPTER 01 · clock domain은 같은 숫자여도 의미가 다른 시간 축을 구분한다
 
-wall clock은 달력 날짜와 시각을 표현하고 외부 표준시와 동기화되어야 한다. 운영 중 NTP correction이나 관리자 조정으로 앞으로 또는 뒤로 움직일 수 있다. 반면 duration과 deadline 계산에는 시간이 역행하지 않는 monotonic clock이 필요하다.
+wall clock, monotonic clock, boot-time clock, process CPU clock처럼 운영체제가 노출하는 시간 축은 서로 다른 질문에 답한다. wall clock은 현실 세계의 시각에 맞아야 하지만 조정될 수 있고, monotonic clock은 경과시간 측정에서 역행하면 안 된다. suspend 중에도 흐르는 clock과 멈추는 clock도 구분해야 한다. 같은 `timestamp` 타입에 이 값을 섞으면 비교가 가능해 보여도 의미는 깨진다.
 
-`endWall - startWall`로 latency를 측정하면 wall-clock correction 때문에 음수 또는 비정상 duration이 나올 수 있다. duration은 monotonic source를 사용하고 사용자에게 표시할 event time은 wall clock을 사용한다. timestamp와 duration을 같은 primitive로 취급하지 않는다.
+API 설계에서는 값과 함께 **어느 clock domain에서 왔는지**가 계약에 포함되어야 한다. timeout deadline을 wall clock으로 만들면 NTP step이나 관리자 조정 때문에 갑자기 만료하거나 반대로 오래 남을 수 있다. 반면 사용자에게 영수증 발행시각을 보여 줄 때 monotonic tick은 재부팅 뒤 의미가 없다. duration, civil timestamp, scheduler accounting을 별도 type으로 나누면 이런 혼합을 컴파일 단계에서 줄일 수 있다.
 
----
-
-## CHAPTER 02 · hardware counter는 time unit이 아니라 증가하는 cycle domain이다
-
-clocksource의 기반 hardware counter는 일정 frequency로 증가하는 정수일 수 있다. raw counter 값을 nanosecond로 바꾸려면 frequency와 scaling rule이 필요하다. CPU frequency가 동적으로 바뀌는 counter를 안정 clock으로 사용하면 elapsed time이 왜곡될 수 있다.
-
-좋은 clocksource는 monotonicity, sufficient resolution, stability, cross-CPU consistency를 가져야 한다. Linux는 architecture별 candidate 중 rating/availability에 따라 clocksource를 선택할 수 있다. performance issue에서 timestamp 이상이 보이면 active clocksource와 suspend/frequency behavior를 확인한다.
+장애 분석에서는 start/end 값만 보지 말고 clock ID, boot ID, timezone, synchronization 상태를 함께 남긴다. 두 host의 wall timestamp가 가까워도 인과 순서를 증명하지 못하고, 한 process의 monotonic value를 다른 machine과 직접 비교할 수도 없다. 시간 버그는 숫자 오차보다 domain 혼동에서 더 자주 생긴다.
 
 ---
 
-## CHAPTER 03 · counter wraparound는 modular arithmetic으로 보정한다
+## CHAPTER 02 · hardware counter는 시간 그 자체가 아니라 증가하는 측정 기반이다
 
-finite-width hardware counter는 최대값 뒤 0으로 wrap한다. 32-bit 100MHz counter처럼 wrap interval이 짧으면 raw value 비교만으로 시간 순서를 결정할 수 없다.
+CPU나 SoC의 counter는 일정 주파수로 증가하는 숫자를 제공하고 kernel은 이를 실제 time unit으로 변환한다. counter frequency가 고정인지, power state에 따라 달라지는지, 모든 CPU에서 동기화되어 있는지에 따라 안정성이 달라진다. 하드웨어가 제공하는 raw cycle 수와 운영체제가 보정한 monotonic time을 동일시하면 안 된다.
 
-kernel timekeeping은 valid-bit mask와 previous sample 차이를 modular arithmetic으로 처리해 continuous timeline을 만든다. custom firmware/driver가 raw counter를 직접 사용할 때 wrap-safe subtraction을 구현해야 한다. uptime이 특정 기간을 넘을 때만 발생하는 bug는 wrap interval과 연결해 본다.
+시간계층은 counter read cost, resolution, stability를 함께 고려해 clocksource를 선택한다. 매우 빠른 counter라도 core마다 offset이 다르면 thread migration 뒤 시간이 뒤로 간 것처럼 보일 수 있고, 안정적이지만 읽기 비용이 큰 source는 hot path에 부담이 된다. kernel이 conversion multiplier와 offset을 유지하는 이유는 raw tick을 application에 그대로 노출하지 않기 위해서다.
 
----
-
-## CHAPTER 04 · clocksource와 clock-event device는 반대 방향의 abstraction이다
-
-clocksource는 `지금 timeline의 어디인가`를 읽는 장치이고 clock-event device는 `미래의 특정 시점에 interrupt를 발생시켜라`를 programming하는 장치다. 같은 hardware timer block을 사용할 수 있어도 API 역할은 다르다.
-
-clocksource 정확도가 좋아도 event timer resolution/interrupt latency가 나쁘면 timer callback이 늦을 수 있다. `clock_gettime이 정확하다`와 `sleep이 정확히 원하는 시점에 깨어난다`는 별개의 성질이다. deadline miss를 time-read error로 오진하지 않는다.
+성능 측정에서는 counter가 실제 elapsed time과 어떤 관계인지 확인한다. CPU frequency counter를 시간으로 착각하면 DVFS에서 잘못된 duration이 나오며 virtual machine에서는 hypervisor가 synthetic clock을 제공할 수 있다. microbenchmark는 timer overhead와 measurement granularity를 baseline으로 측정해 실제 코드 비용보다 clock read 비용이 커지는 구간을 피해야 한다.
 
 ---
 
-## CHAPTER 05 · timer expiration과 task execution 시점은 같지 않다
+## CHAPTER 03 · counter wraparound는 unsigned arithmetic과 비교 규칙을 요구한다
 
-timer hardware가 deadline에 interrupt를 발생시켜도 target thread가 즉시 CPU를 얻는 것은 아니다. interrupt handling, timer queue processing, scheduler run queue, higher-priority task 때문에 callback execution은 뒤로 밀릴 수 있다.
+유한 비트 counter는 충분히 오래 실행되면 최대값을 넘어 0으로 돌아간다. 이 사건은 장치 오류가 아니라 표현 범위의 정상 동작이며, timer subsystem은 wraparound를 고려한 비교를 사용해야 한다. 단순히 `now > deadline`으로 비교하면 wrap 경계 근처에서 아직 미래인 deadline을 과거로 판단하거나 반대 상황이 생길 수 있다.
 
-따라서 timeout 정확성은 timer resolution과 scheduler latency를 함께 본다. real-time workload는 wakeup latency distribution과 worst case를 측정한다. application sleep을 microsecond 단위로 요청한다고 동일 precision으로 execution이 재개된다는 보장은 없다.
+안전한 설계는 허용 가능한 최대 interval을 counter range의 일부로 제한하고 modulo arithmetic을 이용한다. 예를 들어 signed difference가 의미 있게 유지되는 범위 안에서 상대 순서를 판정하면 wrap을 자연스럽게 처리할 수 있다. 장기간 uptime에서만 나타나는 timer bug는 이런 전제가 깨졌을 가능성이 높다.
 
----
-
-## CHAPTER 06 · periodic tick과 tickless scheduling은 wakeup 비용 구조를 바꾼다
-
-고정 주기 timer tick은 scheduler accounting과 timer processing을 단순화하지만 idle CPU도 주기적으로 깨워 energy를 소비한다. tickless/nohz 방식은 다음 필요한 event까지 timer를 program해 불필요한 wakeup을 줄인다.
-
-mobile/server power optimization에서 timer coalescing과 tick suppression이 중요하다. application이 짧은 periodic timer를 수백 개 만들면 kernel이 tickless여도 wakeup을 계속 발생시킨다. timer frequency를 energy budget과 함께 본다.
+테스트에서는 정상 범위 값만 쓰지 않고 counter를 최대값 직전으로 이동시킨 fake clock을 사용한다. schedule, cancel, retry, cache expiry를 wrap 전후에 실행해 ordering이 유지되는지 확인한다. 32-bit millisecond tick처럼 wrap 주기가 현실적으로 짧은 환경은 특히 실제 uptime과 무관하게 경계 테스트가 release gate에 포함되어야 한다.
 
 ---
 
-## CHAPTER 07 · high-resolution timer는 더 작은 단위를 제공하지만 scheduling guarantee는 아니다
+## CHAPTER 04 · clockevent는 시간을 읽는 장치가 아니라 미래 interrupt를 예약하는 장치다
 
-고해상도 timer infrastructure는 jiffy보다 미세한 expiration을 지원할 수 있다. 그러나 callback latency는 interrupt masking, scheduler, CPU sleep state의 영향을 받는다.
+clocksource가 `지금 몇 시인가`를 제공한다면 clockevent device는 `얼마 뒤 interrupt를 발생시킬 것인가`를 담당한다. kernel은 다음 timer deadline을 계산하고 hardware comparator나 timer register를 programming해 CPU가 그 시점에 깨어나도록 한다. 이 둘을 분리하면 시간 측정 정확도와 event delivery 정책을 독립적으로 선택할 수 있다.
 
-benchmark에서 nanosecond API를 사용했다는 이유로 nanosecond 정확도라고 주장하지 않는다. clock resolution, measurement overhead, minimum timer granularity를 calibration한다. very-short duration은 measurement tool 자체 비용이 signal보다 커질 수 있다.
+periodic tick 방식은 일정 간격마다 interrupt를 발생시키지만 idle 구간에도 wakeup 비용을 낸다. one-shot clockevent는 가장 가까운 deadline에만 interrupt를 예약해 불필요한 tick을 줄일 수 있다. 다만 interrupt latency, minimum programmable delta, device resolution 때문에 요청한 시각과 실제 callback 시각 사이 오차가 생길 수 있다.
 
----
-
-## CHAPTER 08 · sched_clock은 정확한 wall time보다 빠른 scheduler timestamp를 우선한다
-
-kernel scheduler/tracing에는 매우 자주 호출되는 fast timestamp source가 필요하다. architecture-specific `sched_clock`은 speed와 monotonicity를 중시하며 civil time 정확성과 목적이 다르다.
-
-CPU 간 counter skew가 존재하면 cross-CPU trace timestamp ordering이 이상하게 보일 수 있다. trace tool이 어떤 clock domain을 사용하는지 확인하고 migration 전후 event를 절대적인 nanosecond order로 과신하지 않는다.
+진단에서는 timer 설정 시각, requested deadline, hardware interrupt 도착, callback 실행 시각을 나눈다. deadline이 늦었다고 hardware timer가 느린 것은 아니다. interrupt가 제때 와도 scheduler가 task를 늦게 실행할 수 있고 CPU idle exit가 추가 latency를 만들 수 있다. event delivery chain 전체를 trace해야 한다.
 
 ---
 
-## CHAPTER 09 · CPU time과 wall time은 resource consumption과 latency를 분리한다
+## CHAPTER 05 · timer expiration scheduling은 정확도와 batch 효율을 동시에 다룬다
 
-wall time은 request가 시작해 끝날 때까지의 전체 시간이고 CPU time은 task가 실제 CPU에서 실행한 시간이다. wall 1초, CPU 20ms인 operation은 대부분 wait 상태일 가능성이 높다.
+timer가 만료됐다는 사실과 callback이 즉시 실행된다는 사실은 다르다. kernel은 여러 timer를 자료구조에 넣고 가장 이른 expiration을 찾으며, 만료된 callback을 어떤 context에서 어떤 순서로 실행할지 결정한다. 높은 timer rate에서 작은 bookkeeping 비용도 CPU와 lock contention을 크게 만들 수 있다.
 
-performance diagnosis에서 user CPU, system CPU, runnable wait, I/O wait를 분리하면 optimization 방향이 달라진다. algorithm 최적화는 on-CPU가 병목일 때 의미가 있다. off-CPU request에 assembly optimization을 적용해도 latency는 거의 변하지 않는다.
+정확한 deadline이 필요 없는 작업은 비슷한 expiration을 묶어 wakeup을 줄일 수 있다. background telemetry나 maintenance timer를 모두 서로 다른 millisecond에 예약하면 CPU가 깊은 idle에 들어가지 못한다. 반면 network retransmission, audio deadline처럼 지연 허용치가 좁은 작업을 과도하게 coalesce하면 latency와 protocol behavior가 나빠진다.
 
----
-
-## CHAPTER 10 · process/thread CPU clock은 scheduler accounting semantics를 가진다
-
-process CPU time은 여러 thread가 소비한 CPU를 합산할 수 있고 thread CPU clock은 해당 execution context만 측정한다. multicore에서 두 thread가 동시에 1초 실행하면 process CPU time이 wall 1초보다 크게 증가할 수 있다.
-
-CPU budget/quota를 평가할 때 wall duration과 혼동하지 않는다. profiler sample 비율을 wall percentage로 바로 해석하기 전 sampling target이 process 전체인지 thread인지 확인한다.
+운영 metric은 등록 timer 수, expiration batch 크기, callback 지연, wakeup 횟수를 같이 본다. timer 자체가 병목인지 callback이 길어서 backlog가 생기는지 분리해야 한다. callback 내부에서 blocking work를 수행하면 다음 timer까지 밀릴 수 있으므로 실제 heavy work는 별도 execution context로 넘기는 설계가 안전하다.
 
 ---
 
-## CHAPTER 11 · realtime clock adjustment는 step과 slew를 구분한다
+## CHAPTER 06 · tickless mode는 idle과 low-activity 구간의 불필요한 periodic interrupt를 줄인다
 
-clock offset이 클 때 system은 wall clock을 즉시 점프(step)시키거나 frequency를 조금 조정해 서서히 맞출(slew) 수 있다. step은 calendar timestamp를 급격히 바꾸고 slew는 일정 기간 clock rate를 변경한다.
+고정 periodic tick은 scheduler accounting과 timer 처리에 단순하지만 CPU가 할 일이 없는 동안에도 계속 깨어나게 한다. tickless 설계는 다음 의미 있는 event까지 periodic interrupt를 생략하거나 주기를 늘려 power와 virtualization overhead를 줄인다. mobile과 large server 모두 idle residency 개선 효과가 크다.
 
-wall-clock 기반 expiry/order logic은 두 방식 모두 영향받는다. database record ordering과 timeout은 monotonic sequence/clock을 별도로 사용한다. audit log의 civil timestamp가 역순처럼 보이면 NTP correction history를 확인한다.
+하지만 tick 제거는 timekeeping과 scheduler accounting을 없애는 것이 아니다. elapsed time은 stable clocksource로 계산하고, 다음 event는 one-shot timer에 다시 programming한다. long idle 뒤 깨어날 때 누적 accounting과 만료 timer를 올바르게 처리해야 하며, CPU마다 독립적으로 tick 상태가 달라질 수 있다.
 
----
-
-## CHAPTER 12 · oscillator drift는 동기화가 없어도 시간이 서서히 어긋나게 한다
-
-physical oscillator frequency는 온도, 제조 편차, aging의 영향을 받아 nominal frequency와 차이가 난다. clock synchronization은 offset뿐 아니라 frequency error를 추정해 discipline한다.
-
-서버가 network에서 단절되면 마지막 frequency estimate로 holdover할 수 있지만 오차는 시간에 따라 누적된다. timestamp correctness requirement가 엄격하면 external reference loss 시 허용 drift와 fail-safe policy를 정의한다.
+성능 분석에서 tickless가 켜졌다는 설정값만 믿지 않는다. 실제 wakeup source, interrupt rate, deepest idle-state residency를 관찰한다. stray timer, polling thread, 높은-frequency daemon이 있으면 tickless kernel에서도 CPU가 계속 깨어난다. power 문제는 scheduler와 application timer 사용까지 함께 추적해야 한다.
 
 ---
 
-## CHAPTER 13 · NTP offset 계산은 network delay의 대칭성 가정에 영향을 받는다
+## CHAPTER 07 · high-resolution timer는 정밀한 요청을 가능하게 하지만 실행 deadline을 보장하지 않는다
 
-NTP는 client/server의 transmit/receive timestamp를 이용해 round-trip delay와 clock offset을 추정한다. forward/reverse network path delay가 비대칭이면 offset estimate에 bias가 생길 수 있다.
+high-resolution timer는 coarse tick보다 세밀한 expiration을 표현하고 hardware one-shot timer를 이용해 가까운 deadline을 예약할 수 있다. 이는 microsecond 수준의 timeout이나 media scheduling에 유리하지만 요청한 시각에 application code가 즉시 실행된다는 real-time guarantee는 아니다.
 
-따라서 RTT가 짧다고 time offset이 정확하다는 보장은 없다. timestamp capture 위치가 user space, kernel, NIC hardware 중 어디인지도 error budget을 바꾼다. high-accuracy system은 hardware timestamp와 network topology를 함께 관리한다. RFC 9769의 interleaved mode도 transmit timestamp accuracy 개선을 다룬다.
+expiration interrupt 뒤에는 interrupt handling, softirq 또는 callback dispatch, runnable queue, scheduler 선택이 이어진다. CPU가 non-preemptible 구간에 있거나 higher-priority task가 실행 중이면 callback은 늦어질 수 있다. 따라서 timer resolution과 scheduling latency를 같은 의미로 말하면 안 된다.
 
----
-
-## CHAPTER 14 · NTP는 한 sample을 믿지 않고 peer/filter/discipline 상태를 관리한다
-
-network jitter와 outlier 때문에 하나의 response로 clock을 즉시 맞추지 않는다. time synchronization implementation은 여러 sample과 peer quality를 평가하고 clock discipline algorithm으로 correction을 적용한다.
-
-monitoring에는 offset 하나뿐 아니라 frequency error, selected source, stratum/reference, reachability, delay/jitter를 포함한다. NTP daemon이 실행 중이라는 사실과 system time이 healthy하다는 사실을 동일시하지 않는다.
+검증은 requested deadline과 actual callback timestamp의 distribution을 측정한다. 평균 오차가 작아도 p99가 deadline을 넘으면 latency-sensitive workload에는 실패다. CPU isolation, priority policy, power-state exit, interrupt affinity를 바꿨을 때 tail이 어떻게 달라지는지 비교해야 원인을 특정할 수 있다.
 
 ---
 
-## CHAPTER 15 · leap second와 civil-time rule은 monotonic timeline과 분리해야 한다
+## CHAPTER 08 · scheduler clock은 공정성과 runtime accounting을 위한 시간 축이다
 
-UTC civil time은 leap-second policy 같은 calendar rule의 영향을 받을 수 있다. system/library가 leap second를 step, smear, explicit second로 처리하는 방식도 다를 수 있다.
+scheduler는 task가 얼마나 실행됐는지, 언제 runnable이 되었는지, deadline이나 virtual runtime이 어떻게 변하는지를 계산하기 위해 빠르고 일관된 clock이 필요하다. 이 clock은 사람이 보는 시각을 맞출 필요가 없고 scheduling decision에 충분한 monotonic성과 해상도가 중요하다.
 
-business timestamp가 global ordering을 요구하면 civil time alone에 의존하지 않는다. monotonic local sequence, database commit order, logical clock을 함께 사용한다. external timestamp interchange에는 timezone와 UTC normalization policy를 명시한다.
+CPU migration이 잦은 system에서는 서로 다른 core에서 읽은 scheduler clock이 일관되어야 한다. 하드웨어 counter가 core별 offset을 가지면 kernel이 보정하거나 더 안정적인 source를 선택해야 한다. accounting 오차는 단순 통계 문제를 넘어 fairness와 deadline 계산을 왜곡할 수 있다.
 
----
-
-## CHAPTER 16 · timezone은 offset 숫자가 아니라 변경 가능한 지역 규칙 database다
-
-`Asia/Seoul` 같은 zone ID는 역사/정책 rule을 통해 특정 instant의 UTC offset을 결정한다. `+09:00`은 한 시점의 offset만 표현하며 지역 규칙 자체를 담지 않는다.
-
-future appointment를 저장할 때 `instant`인지 `local date/time + zone`인지 business 의미를 결정한다. 정부가 timezone/DST rule을 변경하면 future instant 변환 결과가 달라질 수 있다. tz database version도 reproducibility 조건이 될 수 있다.
+scheduler latency 분석에서는 task의 enqueue, runnable, actual on-CPU 구간을 같은 scheduling clock으로 연결한다. wall-clock 로그와 섞으면 NTP correction이나 cross-host skew 때문에 queueing time이 잘못 계산될 수 있다. runqueue wait를 증명하려면 scheduler trace의 native timestamp를 우선한다.
 
 ---
 
-## CHAPTER 17 · DST가 있는 지역에서는 local time이 존재하지 않거나 두 번 존재할 수 있다
+## CHAPTER 09 · CPU time과 wall time은 계산과 기다림을 분리하는 기본 증거다
 
-spring-forward 전환에서 특정 local time interval이 건너뛰어지고 fall-back에서는 동일 local clock time이 두 UTC instant에 대응할 수 있다. local datetime만 저장하면 ambiguity가 생긴다.
+wall duration은 operation 시작부터 종료까지 사용자가 기다린 전체 시간이고 CPU time은 process나 thread가 실제 CPU에서 실행한 시간을 근사한다. wall 5초에 CPU 100ms라면 병목은 계산량보다 I/O, lock, scheduler wait, sleep 같은 off-CPU 구간에 있을 가능성이 높다.
 
-scheduler는 nonexistent/ambiguous time 처리 rule을 정의한다. `매일 02:30` job이 DST 전환 날 어떻게 동작할지 명시해야 한다. offset/zone/occurrence policy를 함께 보존한다.
+반대로 wall과 CPU가 거의 같고 한 core가 지속적으로 바쁘다면 CPU-bound path를 의심할 수 있다. multi-thread workload에서는 process CPU time이 wall보다 훨씬 클 수 있으므로 단순 비율을 100% utilization처럼 해석하면 안 된다. thread별 CPU와 system-wide core capacity를 함께 본다.
 
----
-
-## CHAPTER 18 · deadline은 absolute wall timestamp보다 monotonic remaining budget으로 전달한다
-
-분산 request가 `현재시각+5초` wall timestamp를 각 host에서 재계산하면 clock skew가 timeout budget을 왜곡할 수 있다. 가능한 범위에서는 monotonic local deadline을 사용하고 process/service boundary를 넘을 때 remaining duration을 전달하는 방식이 더 안전할 수 있다.
-
-protocol이 absolute deadline timestamp를 요구하면 clock synchronization error budget을 포함한다. downstream은 이미 만료된 work를 즉시 reject해 resource를 회수하고, timeout 후 결과가 도착하는 ambiguous completion을 처리한다.
+프로파일링에서는 wall-clock trace와 CPU sample을 연결한다. CPU profiler가 hotspot을 보여도 전체 latency에서 차지하는 비율이 작으면 최적화 효과가 제한된다. performance regression을 고칠 때 먼저 wall/CPU 차이를 계산하면 조사 계층을 빠르게 좁힐 수 있다.
 
 ---
 
-## CHAPTER 19 · timer wheel과 heap은 대량 timer 관리의 다른 cost profile을 가진다
+## CHAPTER 10 · process와 thread CPU clock은 execution accounting을 wall time과 분리한다
 
-priority heap은 다음 expiry를 빠르게 찾고 insert/remove에 logarithmic cost를 갖는 전형적 구조다. hierarchical timer wheel은 time bucket으로 많은 timer를 거의 O(1)에 가까운 방식으로 관리할 수 있지만 resolution과 cascade가 설계 변수다.
+운영체제는 process 전체 또는 특정 thread가 실제로 소비한 CPU 시간을 별도 clock으로 제공할 수 있다. sleep 중에는 증가하지 않으므로 algorithmic cost와 scheduler delay를 구분하는 데 유용하다. 동일 request의 elapsed 2초 중 CPU가 1.8초라면 I/O wait보다 계산 또는 spin 가능성이 높다.
 
-runtime/kernel은 workload에 맞는 timer data structure를 선택한다. application이 수백만 per-item timer를 만들기 전에 coarse deadline grouping이나 shared expiry queue로 timer cardinality를 줄일 수 있는지 검토한다.
+thread CPU clock은 multi-thread application에서 특히 중요하다. 한 worker가 spin하면서 다른 worker를 기다리면 process CPU는 크게 증가하지만 productive throughput은 늘지 않을 수 있다. request latency만 보면 external dependency 문제처럼 보일 수 있어 per-thread accounting이 필요하다.
 
----
-
-## CHAPTER 20 · timer cancellation에는 이미 firing 중인 callback과의 race가 있다
-
-cancel이 성공했다고 callback body가 절대 실행되지 않는지, queue에서만 제거되는지 API semantics를 확인한다. callback이 이미 CPU에서 실행 중이면 cancellation과 resource cleanup이 race할 수 있다.
-
-timer target object lifetime은 callback completion까지 보존하거나 generation/token으로 stale callback을 무시한다. UI/navigation에서 이전 screen timer가 새 state를 수정하는 logical race도 같은 구조다.
+테스트에서는 CPU-time threshold와 elapsed-time threshold를 별도로 둔다. 기능이 동일해도 busy-wait로 변경되면 latency는 비슷하면서 battery와 server capacity가 악화될 수 있다. CPU budget regression을 독립 gate로 관리하면 이런 변화가 사용자 지연으로 나타나기 전에 탐지할 수 있다.
 
 ---
 
-## CHAPTER 21 · timeout과 deadline을 여러 layer에서 중복 적용하면 실제 budget이 왜곡된다
+## CHAPTER 11 · wall-clock step과 slew는 시각 보정 방식이 서로 다르다
 
-client 2초, proxy 3초, service 5초, DB 10초처럼 downstream timeout이 더 길면 caller가 포기한 뒤에도 expensive work가 계속된다. 반대로 각 layer가 독립적으로 짧은 timeout을 빼면 정상 request가 불필요하게 실패한다.
+외부 기준과 local wall clock 사이 차이가 발견되면 시스템은 시간을 즉시 뛰어넘는 step이나 clock rate를 조금 조정하는 slew를 사용할 수 있다. 큰 초기 오차는 step이 필요할 수 있지만 running application 입장에서는 시각이 갑자기 앞으로 또는 뒤로 이동한 것처럼 보인다.
 
-end-to-end budget을 critical path stage에 배분하고 retry cost를 포함한다. timeout metric은 어느 layer가 먼저 만료되었는지 tag해 cascade failure를 분석한다.
+slew는 continuity를 유지하는 대신 correction이 끝날 때까지 clock rate가 미세하게 달라진다. calendar event에는 자연스럽지만 elapsed-time 계산에 wall clock을 쓰면 두 방식 모두 오류를 만든다. timeout은 monotonic deadline으로 두고 wall-clock correction과 분리해야 한다.
 
----
-
-## CHAPTER 22 · cache TTL은 correctness guarantee가 아니라 stale-data policy다
-
-TTL은 entry를 일정 시간 뒤 만료시키지만 source data가 TTL 동안 변하지 않는다는 뜻은 아니다. TTL 선택은 허용 stale window와 cache churn의 trade-off다.
-
-wall-clock correction이 TTL 계산에 영향을 주지 않도록 runtime cache는 monotonic elapsed time을 사용할 수 있다. persistent cache expiry는 process restart를 넘으므로 wall/absolute instant와 schema version을 사용하되 clock-skew policy를 둔다.
+운영 로그에서 timestamp discontinuity가 보이면 application bug로 단정하지 않는다. NTP daemon 상태, offset, step event, boot 직후 synchronization 여부를 확인한다. audit trail처럼 wall time이 중요한 데이터는 monotonic sequence나 event ID를 함께 저장해 동일 시각 반복과 역행에서도 순서를 복원할 수 있게 한다.
 
 ---
 
-## CHAPTER 23 · distributed log timestamp는 causal order를 보장하지 않는다
+## CHAPTER 12 · clock drift는 완전히 정상인 oscillator 오차가 시간이 지나며 누적되는 현상이다
 
-서로 다른 host의 clock이 수 ms만 어긋나도 request A가 B를 발생시켰는데 B log timestamp가 더 이르게 보일 수 있다. NTP가 healthy해도 network/clock error 범위 내에서 이런 inversion은 가능하다.
+물리 oscillator는 온도, 전압, 제조 편차 때문에 nominal frequency와 정확히 같지 않다. 작은 ppm 차이도 긴 시간에는 눈에 띄는 offset으로 누적된다. 그래서 네트워크가 끊긴 장치라도 local clock이 완벽히 유지될 것이라고 가정하면 안 된다.
 
-trace parent-child, sequence number, message offset이 causal evidence다. cross-host timestamp는 approximate alignment에 사용하고 ordering proof에는 protocol relation을 사용한다.
+시간 동기화 시스템은 순간 offset뿐 아니라 frequency error를 추정해 local clock의 rate를 조정한다. 불안정한 hardware clock이나 급격한 thermal 변화가 있으면 correction이 자주 필요해질 수 있다. mobile device와 VM은 suspend, migration 같은 추가 변수를 가진다.
 
----
-
-## CHAPTER 24 · Lamport clock은 causality를 scalar counter에 반영한다
-
-각 process가 local event마다 counter를 증가시키고 message에 값을 싣고, 수신 시 `max(local, received)+1`로 갱신하면 happens-before인 event는 증가하는 logical timestamp를 갖는다.
-
-반대는 성립하지 않는다. Lamport timestamp가 작다고 반드시 causal predecessor인 것은 아니다. total-order tie-break에는 process ID 등을 추가할 수 있지만 real elapsed time 의미는 없다. logical clock과 physical clock의 목적을 분리한다.
+진단에서는 offset time-series와 drift rate를 함께 본다. 특정 host만 꾸준히 한 방향으로 벗어나면 network delay보다 oscillator 또는 virtualization source를 의심할 수 있다. certificate, token expiry, distributed lease가 wall clock에 의존한다면 허용 skew와 monitoring threshold를 명시해야 한다.
 
 ---
 
-## CHAPTER 25 · vector clock은 concurrency와 causality를 더 직접 표현하지만 metadata가 커진다
+## CHAPTER 13 · NTP offset은 한 번의 timestamp 차이가 아니라 왕복 지연을 고려한 추정치다
 
-participant별 counter vector를 비교하면 한 event가 다른 event를 causally precede하는지, 서로 concurrent한지 구분할 수 있다. participant 수가 커지고 membership이 변하면 vector size 관리가 복잡해진다.
+서버와 클라이언트 clock 차이를 알아내려면 메시지가 네트워크를 오가는 동안 소비한 시간을 고려해야 한다. NTP 계열 프로토콜은 여러 timestamp를 이용해 round-trip delay와 offset을 추정한다. 경로가 비대칭이면 추정 오차가 커질 수 있으므로 단일 sample을 절대적인 truth로 보지 않는다.
 
-version vector, dotted version vector 같은 변형은 distributed datastore conflict detection에 쓰인다. 모든 system에 vector clock을 넣기보다 conflict semantics가 필요한 state에서 선택한다.
+여러 server와 여러 sample을 사용하면 outlier와 falseticker를 줄일 수 있다. packet loss, queueing spike, VM pause는 순간 offset 관측을 오염시킨다. synchronization 품질은 현재 offset뿐 아니라 dispersion, jitter, selected source 상태까지 봐야 한다.
+
+분산 로그의 시각 정렬에서는 NTP가 켜져 있다는 사실만으로 microsecond-level ordering을 주장하지 않는다. host별 observed offset bound를 저장하고 인과성은 trace parent, sequence, message relation으로 확인한다. wall timestamp는 편리한 근사 축이지 distributed total order가 아니다.
+
+---
+
+## CHAPTER 14 · clock discipline은 noisy measurement를 즉시 적용하지 않고 안정적으로 추종한다
+
+외부 시간 source에서 매 sample마다 다른 offset이 들어오므로 local clock은 측정값을 그대로 따라가면 흔들린다. discipline algorithm은 offset과 frequency estimate를 filtering하고 안정적으로 correction한다. 너무 빠른 반응은 network jitter를 clock jitter로 만들고 너무 느린 반응은 실제 drift를 오래 남긴다.
+
+source selection도 discipline의 일부다. 여러 upstream이 서로 다른 값을 줄 때 신뢰 가능한 집합을 찾고, 큰 deviation을 보이는 source를 제외해야 한다. 단일 서버 의존은 장애나 잘못된 시각이 전체 fleet으로 전파될 위험을 키운다.
+
+운영에서는 synchronization state change 자체를 event로 남긴다. source switch, unsynchronized transition, large correction이 발생한 구간의 authentication failure나 cache expiry 이상을 같이 보면 시간 원인을 찾기 쉽다. clock service는 인프라 dependency로 취급하고 SLO와 alarm을 갖는 편이 안전하다.
+
+---
+
+## CHAPTER 15 · civil time은 날짜·달력 규칙과 결합된 사람이 이해하는 시간이다
+
+Unix timestamp 같은 instant와 `2026-09-17 09:00` 같은 civil representation은 다르다. civil time은 calendar system, timezone, daylight-saving 규칙을 적용해 사람이 보는 날짜와 시각으로 변환된다. 저장할 때 timezone 정보가 빠지면 같은 문자열이 여러 instant를 의미할 수 있다.
+
+예약 시스템은 사용자가 입력한 지역 시각과 실제 실행 instant를 분리해서 보관하는 것이 안전하다. 장기간 반복 일정은 timezone rule이 미래에 바뀔 수 있어 생성 시점의 offset만 저장하면 후속 occurrence가 틀릴 수 있다. 지역 ID와 원래 의도를 함께 보존해야 한다.
+
+버그 재현에는 입력 문자열, timezone database version, locale, parsing policy를 기록한다. `2026-11-01 01:30`처럼 어떤 지역에서는 두 번 존재하거나 아예 존재하지 않는 local time이 있을 수 있다. civil time은 단순 정수 arithmetic으로 다루기 어려운 domain이다.
+
+---
+
+## CHAPTER 16 · timezone은 고정 offset이 아니라 지역별 역사와 정책을 포함한다
+
+`UTC+9` 같은 offset은 특정 instant의 차이만 표현하지만 timezone은 과거와 미래의 offset 규칙을 포함한다. 국가가 정책을 바꾸면 같은 지역도 날짜에 따라 offset이 달라질 수 있다. 장기간 보관되는 일정은 numeric offset만으로 사용자의 지역 의도를 복원할 수 없다.
+
+서버와 클라이언트가 서로 다른 timezone database version을 사용하면 미래 일정 계산이 달라질 수 있다. 모바일 앱이 offline에서 occurrence를 생성하고 backend가 재계산할 때 이런 차이가 나타난다. protocol은 instant 전송과 local scheduling 의미를 분리해야 한다.
+
+운영 장애에서는 OS timezone 설정만 보지 말고 application runtime이 실제 어떤 tzdb를 사용하는지 확인한다. container image가 오래되었거나 library가 별도 database를 포함할 수도 있다. timezone update는 데이터 migration 없이도 결과를 바꾸는 dependency update다.
+
+---
+
+## CHAPTER 17 · daylight-saving 전환은 local time에 gap과 overlap을 만든다
+
+DST 시작 시 clock이 앞으로 뛰면 특정 local time range가 존재하지 않을 수 있고, 종료 시 뒤로 돌아가면 같은 local time이 두 번 나타날 수 있다. 단순히 `하루=24시간`으로 계산하면 이 경계에서 일정이 한 시간 밀리거나 중복될 수 있다.
+
+`매일 오전 8시`와 `24시간마다`는 서로 다른 요구다. 전자는 civil schedule이고 후자는 elapsed interval이다. 사용자가 기대하는 의미를 API에서 구분해야 한다. calendar arithmetic은 timezone-aware library를 사용하고 ambiguous/nonexistent time 처리 정책을 명시한다.
+
+테스트는 평범한 날짜뿐 아니라 DST 직전·직후, overlap 구간, leap-year와 함께 수행한다. 운영 데이터에 원본 timezone과 resolved instant를 둘 다 남기면 예상 시각과 실제 실행 시각 차이를 분석할 수 있다. 시간 버그는 대부분 정상일 때가 아니라 경계에서 드러난다.
+
+---
+
+## CHAPTER 18 · deadline은 duration보다 강한 의미를 가진 절대 종료 경계다
+
+`5초 timeout`은 operation을 시작할 때 남은 예산을 의미하지만 nested call마다 새 5초를 부여하면 전체 request는 훨씬 오래 걸릴 수 있다. end-to-end deadline을 monotonic time으로 계산하고 downstream에 남은 budget을 전달해야 chain 전체의 latency bound가 유지된다.
+
+queue에 오래 머문 request는 실행을 시작하기 전에 이미 deadline을 넘었을 수 있다. 이런 work를 그대로 DB나 external API에 보내면 사용자에게는 실패했는데 resource는 계속 소비한다. admission과 dequeue 시점에서 deadline을 검사해 expired work를 제거하는 정책이 필요하다.
+
+trace에는 original deadline, 각 span 시작 시 remaining budget, timeout 원인을 기록한다. `timeout`이라는 한 error code만으로는 어느 계층이 예산을 소진했는지 알 수 없다. deadline propagation은 latency뿐 아니라 overload protection에도 직접 연결된다.
+
+---
+
+## CHAPTER 19 · timer data structure는 expiration 탐색 비용과 insertion 비용을 교환한다
+
+수많은 timer를 관리할 때 매 tick마다 전체 목록을 스캔할 수 없다. heap, balanced tree, timer wheel 같은 자료구조는 expiration 순서, range, resolution에 따라 서로 다른 비용을 가진다. workload의 timer 분포가 선택을 좌우한다.
+
+priority heap은 가장 가까운 deadline을 빠르게 찾지만 insert/remove가 log N이고 arbitrary cancellation에 index 관리가 필요하다. timer wheel은 넓은 범위를 bucket으로 나눠 대량 timer를 효율적으로 처리할 수 있지만 resolution과 cascade 정책을 신중히 정해야 한다. 한 구조가 모든 환경에서 우월하지 않다.
+
+진단에서는 등록 timer 수뿐 아니라 insert/cancel rate, expiration distance distribution, batch size를 본다. request마다 짧은 timer를 생성했다가 대부분 cancel하는 서비스는 expiration보다 cancellation cost가 병목일 수 있다. data structure를 바꾸기 전 실제 operation mix를 측정한다.
+
+---
+
+## CHAPTER 20 · timer cancellation은 callback과 경쟁하는 state transition이다
+
+cancel 호출이 성공했다는 말이 callback이 절대 실행되지 않는다는 뜻인지, 아직 시작되지 않은 callback만 막는다는 뜻인지 API마다 다르다. expiration 직전에 cancel하면 callback dispatch와 cancellation이 race할 수 있다. cleanup code는 이런 동시성을 명시적으로 처리해야 한다.
+
+안전한 설계는 timer state를 scheduled, firing, completed, cancelled처럼 구분하고 callback이 stale generation인지 검사하게 만든다. object를 destroy한 뒤 늦은 callback이 접근하면 use-after-free나 오래된 UI update가 생길 수 있다. callback lifetime은 owner lifetime과 연결되어야 한다.
+
+테스트에서는 cancel 직전·직후, callback 시작과 cancel 동시 실행, reschedule generation 변경을 반복한다. 단순히 sleep 후 cancel하는 deterministic하지 않은 test로는 race를 안정적으로 재현하기 어렵다. fake scheduler와 barrier를 사용해 interleaving을 강제해야 한다.
+
+---
+
+## CHAPTER 21 · timeout budget은 여러 dependency에 배분되는 제한 자원이다
+
+request 전체 deadline이 1초라면 DNS, connection, authentication, DB, rendering이 각각 독립적으로 1초를 사용해서는 안 된다. critical path와 병렬 가능성을 고려해 budget을 나누고 각 dependency가 남은 시간을 초과하지 않게 해야 한다.
+
+budget을 너무 촘촘히 고정하면 정상 variance에도 실패가 증가하고, 너무 느슨하면 한 dependency가 전체 SLO를 소모한다. historical latency distribution과 retry 정책을 같이 보며 threshold를 정한다. retry attempt는 새로운 full timeout이 아니라 남은 budget 안에서만 실행하는 것이 안전하다.
+
+운영에서는 timeout rate와 함께 `remaining budget at call`을 수집한다. dependency가 빠른데 항상 적은 budget만 받는다면 upstream queue가 문제일 수 있다. timeout을 service별 숫자 조정으로만 다루지 말고 request lifetime 전체의 자원 배분 문제로 본다.
+
+---
+
+## CHAPTER 22 · cache TTL은 freshness policy이며 clock semantics에 의존한다
+
+TTL은 entry가 생성된 뒤 얼마 동안 유효한지를 표현하는 duration이다. local in-memory cache는 monotonic elapsed time으로 만료를 계산하는 편이 안전하고, distributed cache의 absolute expiry는 server clock synchronization 상태를 고려해야 한다. wall-clock jump가 대량 simultaneous expiry를 만들 수 있다.
+
+TTL이 짧으면 freshness는 좋아지지만 backend load가 늘고, 길면 stale data window가 커진다. 모든 entry에 같은 TTL을 주면 특정 시각에 cache miss가 집중되는 herd가 생길 수 있어 jittered expiry가 유용하다. 그러나 보안 credential처럼 정확한 만료가 필요한 데이터에는 임의 jitter를 적용하면 안 된다.
+
+진단에는 cache hit/miss뿐 아니라 age distribution, expiry reason, refresh latency를 포함한다. clock correction 뒤 miss rate가 급증했다면 application load 변화가 아니라 expiry semantics가 원인일 수 있다. cache policy는 timekeeping dependency를 명시적으로 가져야 한다.
+
+---
+
+## CHAPTER 23 · distributed timestamp는 서로 다른 host의 사건 순서를 완전히 결정하지 못한다
+
+각 machine이 NTP로 동기화되어도 clock skew와 network delay는 0이 아니다. 두 로그의 wall timestamp가 2ms 차이라는 사실만으로 어느 사건이 원인인지 단정하면 안 된다. 특히 VM pause나 synchronization loss가 있으면 순서가 뒤집혀 보일 수 있다.
+
+분산 tracing은 parent-child span relation, message ID, sequence number 같은 논리적 관계를 사용해 causality를 보존한다. timestamp는 latency를 근사하고 시각화하는 축으로 쓰되 causal proof는 protocol metadata에서 얻는 것이 안전하다.
+
+incident 분석 시 host별 synchronization 상태와 uncertainty bound를 함께 본다. 장애 구간에 한 node만 offset이 커졌다면 apparent negative latency가 생길 수 있다. 단순 로그 정렬 대신 request lineage를 구축하면 clock quality가 나빠도 사건 순서를 복원할 수 있다.
+
+---
+
+## CHAPTER 24 · Lamport clock은 인과 관계를 보존하는 scalar logical clock이다
+
+Lamport clock은 local event마다 counter를 증가시키고 message에 값을 실어 보내며 수신 시 더 큰 값 다음으로 진행한다. `a happens-before b`라면 Lamport(a) < Lamport(b)를 보장할 수 있어 wall clock 없이 causality-compatible ordering을 만든다.
+
+반대는 성립하지 않는다. counter가 작다고 반드시 causal predecessor는 아니며 concurrent event도 임의 순서가 붙을 수 있다. 따라서 Lamport timestamp만으로 concurrency 여부를 판정할 수 없다. total-order tie-breaker와 결합할 수 있지만 그것은 실제 시간 순서가 아니라 deterministic order다.
+
+분산 시스템에서 필요한 질문이 `누가 먼저 일어났는가`인지 `서로 인과적으로 연결됐는가`인지 구분해야 한다. audit ordering이나 replicated command serialization에는 Lamport-style sequence가 유용하지만 사용자에게 표시하는 실제 시각은 별도 wall timestamp가 필요하다.
+
+---
+
+## CHAPTER 25 · vector clock은 동시성과 인과성을 더 정확히 표현하는 대신 metadata가 커진다
+
+vector clock은 participant별 logical counter를 유지해 한 event가 다른 event를 causally precede하는지, 서로 concurrent인지 비교할 수 있다. 두 vector가 component-wise로 한쪽이 작거나 같으면 causal order를 얻고, 서로 일부 component가 앞서면 concurrent 관계를 알 수 있다.
+
+이 정보는 conflict detection에 유용하지만 participant 수가 늘면 metadata가 커진다. dynamic membership과 garbage collection도 복잡해져 대규모 시스템에서는 다른 compact causal metadata를 선택할 수 있다. 정확한 causality와 storage overhead 사이 trade-off가 있다.
+
+운영에서 vector clock을 단순 version number처럼 표시하면 의미를 잃는다. sibling state가 왜 생겼는지, merge가 어떤 causal frontier를 포함하는지 설명할 수 있어야 한다. conflict resolution policy는 logical clock이 아니라 application semantics가 최종 결정을 내린다.
 
 ---
 
 ## CHAPTER 26 · hybrid logical clock은 physical time과 logical ordering을 결합한다
 
-HLC 계열은 physical clock estimate를 사용하면서 동일/역행 timestamp 상황을 logical component로 보정해 causality-friendly timestamp를 만든다. 순수 logical clock보다 wall time에 가까운 값을 유지할 수 있다.
+physical clock은 사람이 해석하기 쉽고 범위 query에 편리하지만 skew가 있고, logical clock은 causality를 표현하지만 현실 시간과 거리가 있다. hybrid logical clock 계열은 physical component를 중심으로 하되 clock이 뒤로 가거나 같은 시각에 causal event가 연속될 때 logical counter를 사용해 단조 증가를 유지한다.
 
-clock skew bound와 persistence semantics를 이해해야 한다. timestamp를 primary key/TTL로 사용할 때 node restart와 clock jump가 invariant를 깨뜨리지 않는지 검증한다.
+이 구조도 clock synchronization 요구를 완전히 없애지 않는다. physical component skew가 너무 크면 retention, snapshot, conflict window 같은 정책이 잘못될 수 있다. HLC가 제공하는 ordering guarantee와 실제 wall-time accuracy를 별도 문서화해야 한다.
 
----
-
-## CHAPTER 27 · scheduler timer와 real-time guarantee는 worst-case interference까지 포함한다
-
-periodic real-time task가 deadline을 지키려면 execution time뿐 아니라 higher-priority interference, interrupt, lock blocking을 포함한 response-time bound가 필요하다. 평균 execution이 deadline보다 짧다는 사실은 충분하지 않다.
-
-priority inversion protocol과 CPU reservation을 함께 설계한다. hard real-time과 soft real-time을 구분하고 missed deadline이 safety failure인지 quality degradation인지 정의한다.
+분산 저장소에서 HLC를 사용한다면 serialization format, overflow, restart persistence, node ID tie-break를 함께 설계한다. timestamp 하나를 보고 external consistency를 자동으로 가정하면 안 된다. transaction protocol이 어떤 ordering guarantee를 추가하는지 확인해야 한다.
 
 ---
 
-## CHAPTER 28 · mobile timer는 power-management wakeup contract와 연결된다
+## CHAPTER 27 · real-time workload는 평균 latency보다 bounded worst-case behavior가 중요하다
 
-Android/mobile platform은 device sleep 상태에서 timer를 정확히 깨울지 batching할지 API별 policy를 가진다. exact wakeup은 battery 비용이 크므로 platform restriction과 permission이 있을 수 있다.
+real-time scheduling은 단순히 빠른 CPU를 쓰는 문제가 아니다. task period, execution budget, deadline, priority inversion, interrupt latency 같은 상한을 관리해야 한다. 평균 1ms라도 가끔 100ms stall이 나면 10ms deadline system에는 실패다.
 
-사용자 알람처럼 exact timing이 필요한 작업과 analytics sync처럼 batching 가능한 작업을 구분한다. background timer loop로 platform scheduler를 우회하면 energy와 reliability 모두 악화될 수 있다.
+memory allocation, page fault, lock contention, frequency scaling은 tail unpredictability를 키울 수 있다. critical path에서 dynamic allocation을 제한하거나 page를 prefault하고 priority inheritance를 사용하는 이유가 여기 있다. hard/soft real-time 요구를 구분해 필요한 보장 수준을 정해야 한다.
 
----
-
-## CHAPTER 29 · time bug는 boundary condition을 simulation해야 재현된다
-
-일반 현재시각으로만 테스트하면 midnight, month/year rollover, leap day, DST transition, clock rollback, suspend/resume를 놓친다. clock interface를 dependency로 주입해 deterministic fake time으로 boundary를 이동한다.
-
-monotonic과 wall clock을 각각 fake할 수 있어야 한다. production code가 global time API를 직접 호출하면 test가 어려워지고 hidden clock dependency가 많아진다. time source를 abstraction으로 명시한다.
+검증은 p99만으로 끝내지 않고 worst observed latency와 missed-deadline count를 workload envelope 안에서 측정한다. CPU isolation, IRQ affinity, thermal state, overload scenario를 포함해야 production 조건의 bound를 추정할 수 있다. real-time property는 source code만으로 증명되지 않는다.
 
 ---
 
-## CHAPTER 30 · 시간 설계는 각 값의 clock domain을 타입 수준에서 드러낸다
+## CHAPTER 28 · mobile timer는 wakeup, battery, background policy와 함께 설계해야 한다
 
-`Long timestamp` 하나로 wall epoch millis, monotonic nanos, timeout duration을 모두 표현하면 단위와 domain을 쉽게 섞는다. `Instant`, `Duration`, `MonotonicDeadline`, `LocalDateTime+Zone`처럼 의미가 다른 타입을 분리한다.
+모바일 장치에서 timer 하나는 callback뿐 아니라 CPU wakeup과 radio activity를 유발할 수 있다. 수많은 앱이 정확한 시각에 반복 alarm을 걸면 deep sleep이 깨지고 battery drain이 커진다. platform이 inexact alarm이나 batching을 제공하는 이유는 전체 시스템의 wakeup을 줄이기 위해서다.
 
-로그/DB/protocol에는 unit과 epoch를 명시한다. duration 계산은 같은 clock domain 안에서만 수행한다. timekeeping의 최종 불변조건은 **표시 시간, 경과 시간, 실행 deadline, causal order를 서로 다른 문제로 유지하는 것**이다.
+사용자-visible exact reminder와 background refresh는 요구가 다르다. 전자는 정확도가 중요하고 후자는 수분 지연되어도 괜찮을 수 있다. exact alarm 권한이나 foreground execution을 단순 우회 수단으로 쓰면 정책 위반과 battery regression을 만든다.
+
+운영에서는 timer 수보다 actual wakeup count, wake lock duration, background execution time을 본다. 앱이 callback에서 network를 시작하면 radio tail energy까지 연결될 수 있다. mobile scheduling은 latency, reliability, energy를 하나의 contract로 다뤄야 한다.
+
+---
+
+## CHAPTER 29 · time-dependent test는 실제 sleep 대신 controllable clock을 사용한다
+
+테스트에서 `sleep(1000)`을 사용하면 실행 환경의 scheduler와 load에 따라 flaky해지고 suite도 느려진다. business logic이 clock interface를 주입받게 만들면 fake clock을 원하는 시각으로 이동시켜 expiry, retry, daily schedule을 deterministic하게 검증할 수 있다.
+
+fake clock은 단순 now 값만 바꾸는 데 그치지 않는다. monotonic advance와 wall-clock step을 독립적으로 표현해야 clock-domain 혼동을 찾을 수 있다. DST overlap, NTP backward step, timer cancellation race 같은 경계도 별도 scenario로 만든다.
+
+실제 integration test에서는 kernel timer와 scheduler behavior를 검증하되 logic test와 분리한다. unit layer는 시간이 빨리 지나도록 시뮬레이션하고 platform layer는 실제 callback jitter를 측정하면 속도와 현실성을 모두 얻을 수 있다. flaky time test를 재시도로 숨기지 않는다.
+
+---
+
+## CHAPTER 30 · time type은 instant, duration, deadline, civil time을 코드 수준에서 분리해야 한다
+
+시간 버그를 줄이는 가장 강한 방법 중 하나는 서로 다른 의미를 같은 integer나 string으로 표현하지 않는 것이다. instant는 특정 timeline의 점, duration은 두 점 사이 길이, deadline은 미래 완료 경계, civil time은 timezone 규칙이 적용된 인간 친화 표현이다. 서로 허용되는 연산이 다르다.
+
+예를 들어 instant + duration은 의미가 있지만 wall timestamp 두 개의 차이를 latency로 쓰는 것은 clock adjustment 때문에 위험할 수 있다. local date-time을 UTC instant로 바꾸려면 timezone과 ambiguity policy가 필요하다. type system이 이런 전제를 드러내면 리뷰와 테스트가 쉬워진다.
+
+serialization에서도 domain을 보존한다. `expiresAt`이 UTC instant인지 monotonic deadline인지 명시하고 unit, epoch, timezone을 schema에 포함한다. 여러 서비스가 같은 필드를 다르게 해석하는 순간 timeout과 만료 문제는 재현하기 어려운 분산 버그가 된다.
