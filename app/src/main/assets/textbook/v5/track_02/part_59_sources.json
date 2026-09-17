@@ -1,0 +1,13 @@
+{
+  "partId":"T02-P59",
+  "sections":[
+    {"sectionId":"T02-P59-S01-enum-state-space","sourceIds":["PYTHON-REF","DDD"]},
+    {"sectionId":"T02-P59-S02-enum-value-identity","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P59-S03-flag-bitset","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P59-S04-sentinel-absence","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P59-S05-result-variant","sourceIds":["DDD","SICP"]},
+    {"sectionId":"T02-P59-S06-error-code-boundary","sourceIds":["DDD","REFACTORING2"]},
+    {"sectionId":"T02-P59-S07-serialization-enum","sourceIds":["PYTHON-REF","DDIA"]},
+    {"sectionId":"T02-P59-S08-state-model-contract","sourceIds":["DDD","SICP","PYTHON-REF"]}
+  ]
+}
