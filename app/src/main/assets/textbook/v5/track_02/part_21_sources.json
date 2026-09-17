@@ -1,0 +1,15 @@
+{
+  "partId": "T02-P21",
+  "sections": [
+    {"sectionId":"T02-P21-S01-expression-evaluation","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P21-S02-operator-protocol","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P21-S03-conditional-value","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P21-S04-unpacking-shape","sourceIds":["PYTHON-REF"]},
+    {"sectionId":"T02-P21-S05-higher-order-policy","sourceIds":["SICP","PYTHON-REF"]},
+    {"sectionId":"T02-P21-S06-map-filter-reduce","sourceIds":["SICP","PYTHON-REF"]},
+    {"sectionId":"T02-P21-S07-immutability-reasoning","sourceIds":["SICP","DDIA"]},
+    {"sectionId":"T02-P21-S08-partial-closure-config","sourceIds":["SICP","PYTHON-REF"]},
+    {"sectionId":"T02-P21-S09-pipeline-failure","sourceIds":["SICP","SRE"]},
+    {"sectionId":"T02-P21-S10-functional-contract-flow","sourceIds":["SICP","REFACTORING2"]}
+  ]
+}
