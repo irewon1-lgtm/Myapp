@@ -34,6 +34,8 @@ runnable thread가 CPU core보다 많으면 scheduler가 실행 시간을 분할
 
 priority, affinity, cgroup/resource policy, CPU topology가 scheduling 결과에 영향을 줄 수 있다. context switch 자체의 비용보다 더 큰 문제는 cache/TLB working set이 바뀌는 간접 비용일 수 있다. thread 수를 늘려 throughput이 떨어질 때 scheduler queue, cache locality, lock contention을 함께 측정한다.
 
+scheduler 문제를 증명하려면 request가 느렸다는 사실과 runnable delay를 연결해야 한다. wakeup 시각, runqueue 진입, 실제 on-CPU 시작, migration된 CPU, cgroup throttling을 같은 trace에서 보면 “CPU가 바빠서”와 “우선순위·affinity 때문에 못 돌았다”를 구분할 수 있다. 특정 core의 runqueue만 길거나 SMT sibling에 heavy task가 몰렸다면 host 전체 utilization은 낮아도 tail이 커질 수 있다. thread affinity 변경 전후에는 latency뿐 아니라 migration, cache miss, runnable wait가 예상 방향으로 바뀌는지 확인한다.
+
 ---
 
 ## CHAPTER 05 · atomicity는 operation 경계를 정의한다
@@ -41,6 +43,8 @@ priority, affinity, cgroup/resource policy, CPU topology가 scheduling 결과에
 `x++`처럼 source에서 한 줄인 표현이 read-modify-write 여러 단계로 실행될 수 있다. 두 thread가 같은 old value를 읽고 각각 새 값을 쓰면 update 하나가 사라질 수 있다. atomicity는 source line의 모양이 아니라 **관찰자에게 하나의 indivisible state transition처럼 보이는 범위**를 뜻한다.
 
 atomic variable 하나를 사용한다고 여러 field의 invariant가 자동으로 원자적이 되지 않는다. `balance`와 `version` 두 atomic 값을 별도 갱신하면 reader가 서로 다른 transaction의 조합을 볼 수 있다. invariant가 여러 값에 걸치면 lock, immutable snapshot, combined atomic state, transaction 같은 더 큰 synchronization boundary가 필요하다.
+
+lock-free update에서 compare-and-set이 실패하는 것은 예외가 아니라 다른 writer가 먼저 linearization point를 통과했다는 정상 경쟁 결과다. retry loop는 현재 state를 다시 읽어 invariant를 재계산해야 하며 stale expected value에 단순 재시도하면 논리 오류를 만들 수 있다. multi-word state가 필요하다면 versioned immutable snapshot이나 tagged pointer처럼 하나의 원자적 identity로 묶을 수 있는지 검토한다. 테스트에서는 최종 합계뿐 아니라 중간에 금지된 조합이 observer에게 노출되지 않았는지도 검사한다.
 
 ---
 
@@ -78,6 +82,8 @@ data race는 memory model이 정의하는 unsynchronized conflicting access 문�
 
 check-then-act, read-modify-write, reserve-then-commit은 하나의 atomic operation이 필요한 대표 구조다. API가 제공하는 `putIfAbsent`, transaction, compare-and-set 같은 compound primitive를 사용하거나 lock으로 전체 invariant를 묶는다. “collection이 concurrent니까 로직도 안전하다”는 결론은 성립하지 않는다.
 
+logical race를 찾을 때는 어떤 operation이 성공으로 간주되는 **linearization point**를 먼저 정한다. 예를 들어 좌석 예약은 `available`을 읽은 시점이 아니라 한 사용자의 ownership이 원자적으로 commit된 시점이어야 한다. 두 요청이 각각 thread-safe read와 write를 해도 linearization point가 없다면 둘 다 성공했다고 응답할 수 있다. concurrency test는 barrier로 두 request를 동일 precondition에서 출발시킨 뒤 성공 수, 최종 owner, version을 검증해 이러한 race를 deterministic하게 드러낸다.
+
 ---
 
 ## CHAPTER 09 · deadlock은 wait-for graph의 cycle이다
@@ -85,6 +91,8 @@ check-then-act, read-modify-write, reserve-then-commit은 하나의 atomic opera
 두 execution context가 서로 상대가 가진 resource를 기다리면 progress가 멈춘다. lock A→B와 B→A처럼 acquisition order가 뒤집히는 패턴이 대표적이지만 thread join, bounded queue, transaction lock, IPC response wait도 wait graph edge가 될 수 있다.
 
 예방은 global lock order, lock hierarchy, try-lock+rollback, timeout, ownership redesign으로 접근한다. timeout은 deadlock을 제거하는 것이 아니라 무한 wait를 bounded failure로 바꾸는 경우가 많다. livelock은 서로 양보하면서 state가 변하지만 완료하지 못하는 문제이고 starvation은 일부 participant가 계속 기회를 얻지 못하는 문제다. 세 문제의 progress property가 다르다.
+
+wait-for graph에는 mutex만 넣지 않는다. worker가 future를 기다리고 그 future를 실행할 task가 같은 bounded pool queue에 갇힌 경우나, thread가 DB connection을 보유한 채 다른 connection을 기다리는 경우도 resource cycle이다. 진단에서는 thread→resource→owner edge를 수집하고 여러 dump/trace에서 cycle이 지속되는지 본다. 개발 환경에서는 lock rank assertion이나 acquisition-order checker를 사용해 역순 획득을 즉시 실패시키면 드문 production deadlock을 더 앞에서 발견할 수 있다.
 
 ---
 
@@ -130,6 +138,8 @@ single event-loop thread는 shared mutable state를 한 thread에서 serialize�
 
 offload한 worker 결과가 돌아올 때 original request가 이미 timeout/cancel되었을 수 있다. event-loop architecture도 cancellation token, request generation, stale result suppression이 필요하다. queue depth와 loop lag를 측정하면 CPU utilization만으로 보이지 않는 event saturation을 찾을 수 있다.
 
+운영에서는 handler 실행시간과 **enqueue→dispatch loop lag**를 따로 측정한다. handler 자체는 짧은데 loop lag가 커지면 앞선 callback burst나 GC/scheduler stall을 의심하고, 특정 handler duration이 길다면 그 안의 blocking/CPU work를 offload한다. offload queue도 bounded되어야 하며 event loop가 worker 결과를 기다리는 synchronous join을 만들면 구조적 이점이 사라진다. stale result를 막기 위해 request generation과 current owner를 확인한 뒤 state mutation을 commit하도록 설계한다.
+
 ---
 
 ## CHAPTER 15 · cancellation은 control signal이지 강제 중단 명령이 아니다
@@ -147,6 +157,8 @@ timeout은 caller의 기다림 종료와 underlying work 종료가 다를 수 �
 Android UI process의 main thread는 framework callback과 message processing을 수행한다. main thread에서 network/file I/O나 긴 계산을 실행하면 event queue가 정체되고 input/render deadline을 놓친다. 문제는 “thread를 하나 더 만들면 된다”가 아니라 work의 ownership과 lifecycle을 맞추는 것이다.
 
 background work가 Activity/Composable보다 오래 살아남으면 stale reference와 lifecycle bug가 생길 수 있다. UI state update는 main-safe boundary로 돌아와야 하고, screen이 사라졌을 때 결과를 적용할지 취소할지 정책이 필요하다. process death까지 고려하면 중요한 작업 상태는 memory callback chain에만 존재해서는 안 된다.
+
+jank를 조사할 때는 main-thread CPU span만 보지 않고 Choreographer frame deadline, input dispatch, synchronous Binder call, monitor wait를 한 trace에 놓는다. background result가 main queue로 돌아왔을 때 화면 generation이 이미 바뀌었다면 stale callback을 버려야 한다. lifecycle owner와 coroutine/task scope를 연결하면 화면 종료 뒤 callback이 view를 붙잡거나 새 화면 state를 덮는 문제를 줄일 수 있다. process recreation test까지 포함해 memory-only callback이 없어도 UI가 복구되는지 확인한다.
 
 ---
 
