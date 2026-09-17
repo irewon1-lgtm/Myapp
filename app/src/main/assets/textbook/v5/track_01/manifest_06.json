@@ -1,0 +1,8 @@
+{
+  "trackId":"T01",
+  "trackNumber":1,
+  "title":"컴퓨터와 프로그래밍의 언어 — 표현에서 실행까지",
+  "parts":[
+    {"id":"T01-P87","order":87,"title":"CPU Hotplug Lifecycle — cpuhp states, scheduler evacuation, IRQ/timer migration, RCU quiescence","assetPath":"textbook/v5/track_01/part_87_cpu_hotplug_lifecycle.md","sourceMapPath":"textbook/v5/track_01/part_87_sources.json","prerequisiteConceptIds":["T01-P48-S01-topology","T01-P61-S23-cpu-hotplug","T01-P77-S16-migration-disable"]}
+  ]
+}
