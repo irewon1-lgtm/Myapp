@@ -1,0 +1,13 @@
+{
+  "partId":"T02-P57",
+  "sections":[
+    {"sectionId":"T02-P57-S01-package-resource-model","sourceIds":["PYTHON-REF","NIST-SSDF"]},
+    {"sectionId":"T02-P57-S02-resource-vs-path","sourceIds":["PYTHON-REF","TLPI"]},
+    {"sectionId":"T02-P57-S03-installed-artifact-data","sourceIds":["PYTHON-REF","NIST-SSDF"]},
+    {"sectionId":"T02-P57-S04-resource-lifetime","sourceIds":["PYTHON-REF","TLPI"]},
+    {"sectionId":"T02-P57-S05-package-metadata","sourceIds":["PYTHON-REF","NIST-SSDF"]},
+    {"sectionId":"T02-P57-S06-plugin-metadata","sourceIds":["PYTHON-REF","GOF"]},
+    {"sectionId":"T02-P57-S07-resource-testing","sourceIds":["NIST-SSDF","PYTHON-REF"]},
+    {"sectionId":"T02-P57-S08-resource-contract","sourceIds":["PYTHON-REF","NIST-SSDF","REFACTORING2"]}
+  ]
+}
