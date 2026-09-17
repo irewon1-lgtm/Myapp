@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 import concurrent.futures as cf
-import hashlib, json, random, re, time, urllib.error, urllib.parse, urllib.request
+import gzip, hashlib, json, random, re, time, urllib.error, urllib.parse, urllib.request
 from collections import Counter
 from datetime import datetime, timezone
 from html.parser import HTMLParser
@@ -17,6 +17,7 @@ KEYS = [
 ]
 UA = "irewon1-lgtm US2000 public-data audit https://github.com/irewon1-lgtm/Myapp"
 SEC = "https://www.sec.gov/files/company_tickers_exchange.json"
+SEC_MIRROR = "https://raw.githubusercontent.com/supermodo/us-markets-timemachine/main/data/edgar/company_tickers_exchange/2026/2026-09-16.gz"
 FINVIZ = "https://finviz.com/quote.ashx?t={ticker}&p=d"
 STOCKANALYSIS = "https://stockanalysis.com/stocks/{slug}/statistics/"
 MISSING = {"-","—","N/A","n/a","NA",""}
@@ -85,6 +86,21 @@ def fetch(url, *, timeout=25, attempts=2, json_mode=False):
                 continue
             raise PublicSourceError(type(e).__name__)
     raise PublicSourceError(type(last).__name__ if last else "FETCH_FAILED")
+
+def fetch_bytes(url, *, timeout=30, attempts=2):
+    last = None
+    for n in range(attempts):
+        req = urllib.request.Request(url, headers={"User-Agent":UA,"Accept":"application/octet-stream"})
+        try:
+            with urllib.request.urlopen(req, timeout=timeout) as r:
+                return r.read(5_000_001)
+        except (urllib.error.HTTPError, TimeoutError, urllib.error.URLError) as e:
+            last = e
+            if n + 1 < attempts:
+                time.sleep(1.0 + n)
+                continue
+            raise PublicSourceError(f"MIRROR_FETCH:{type(e).__name__}:{getattr(e,'code','')}")
+    raise PublicSourceError(type(last).__name__ if last else "MIRROR_FETCH_FAILED")
 
 def number(s):
     if s is None:
@@ -241,11 +257,22 @@ def main():
         raise SystemExit(f"US2000_TICKER_CARDINALITY:{len(TICKERS)}:{len(set(TICKERS))}")
     if "PRCT" in TICKERS or "ENVA" not in TICKERS:
         raise SystemExit("US2000_REPLACEMENT_CONTRACT")
-    sec = json.loads(fetch(SEC, timeout=30, attempts=3, json_mode=True))
-    if sec.get("fields") != ["name","cik","ticker","exchange"]:
-        raise SystemExit("SEC_MAPPING_SCHEMA")
+    mapping_source = SEC
+    try:
+        sec = json.loads(fetch(SEC, timeout=30, attempts=2, json_mode=True))
+    except PublicSourceError as e:
+        print("SEC_DIRECT_UNAVAILABLE_USING_PINNED_MIRROR", str(e), flush=True)
+        raw = gzip.decompress(fetch_bytes(SEC_MIRROR, timeout=30, attempts=3))
+        sec = json.loads(raw.decode("utf-8"))
+        mapping_source = SEC_MIRROR
+    fields = sec.get("fields") or []
+    required = {"name","cik","ticker","exchange"}
+    if set(fields) != required:
+        raise SystemExit("SEC_MAPPING_SCHEMA:"+json.dumps(fields))
+    ix = {name:fields.index(name) for name in required}
     by_ticker = {}
-    for name, cik, ticker, exchange in sec.get("data",[]):
+    for row in sec.get("data",[]):
+        name, cik, ticker, exchange = row[ix["name"]], row[ix["cik"]], row[ix["ticker"]], row[ix["exchange"]]
         key = norm(ticker)
         if key in by_ticker and int(by_ticker[key]["cik"]) != int(cik):
             raise SystemExit("SEC_DUPLICATE_TICKER:"+key)
@@ -266,7 +293,7 @@ def main():
         identities.append({
             "ticker":t,"company":row["company"],"cik":cik,"exchange":row["exchange"],
             "ordinal":1501+i,"selectionLayer":"US2000_FREE_PUBLIC_RUNNER",
-            "identitySource":SEC,
+            "identitySource":mapping_source,
         })
     asof = datetime.now(timezone.utc).date().isoformat()
     records = [None]*500
@@ -314,7 +341,7 @@ def main():
         "metricCount":10,
         "totalMetricCells":5000,
         "identityAudit":{
-            "secSource":SEC,"secMapped":500,"uniqueTickers":len(set(TICKERS)),
+            "secSource":SEC,"mappingSource":mapping_source,"mirrorSnapshotDate":"2026-09-16" if mapping_source==SEC_MIRROR else None,"secMapped":500,"uniqueTickers":len(set(TICKERS)),
             "uniqueCiks":len(ciks),"exchangeCounts":dict(sorted(Counter(x["exchange"] for x in identities).items())),
             "prctAbsent":True,"envaPresent":True,
         },
