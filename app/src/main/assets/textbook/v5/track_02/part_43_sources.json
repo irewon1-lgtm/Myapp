@@ -1,0 +1,15 @@
+{
+  "partId":"T02-P43",
+  "sections":[
+    {"sectionId":"T02-P43-S01-multiple-failure-model","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P43-S02-exception-group","sourceIds":["PYTHON-REF"]},
+    {"sectionId":"T02-P43-S03-except-star","sourceIds":["PYTHON-REF"]},
+    {"sectionId":"T02-P43-S04-task-group-failure","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P43-S05-validation-vs-concurrent-error","sourceIds":["SICP","NIST-SSDF"]},
+    {"sectionId":"T02-P43-S06-cleanup-secondary-failure","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P43-S07-partial-retry","sourceIds":["SRE","DDIA"]},
+    {"sectionId":"T02-P43-S08-error-cardinality","sourceIds":["SRE","NIST-SSDF"]},
+    {"sectionId":"T02-P43-S09-multifailure-testing","sourceIds":["PYTHON-REF","NIST-SSDF"]},
+    {"sectionId":"T02-P43-S10-structured-failure-contract","sourceIds":["PYTHON-REF","SRE","DDIA"]}
+  ]
+}
