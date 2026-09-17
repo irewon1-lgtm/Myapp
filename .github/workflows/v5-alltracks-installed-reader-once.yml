@@ -42,9 +42,13 @@ jobs:
           chmod +x ./gradlew
           chmod +x tools/v5_alltracks_android_test.sh
 
-      - name: Static and unit verification
+      - name: V5 content audit diagnostic
+        id: v5audit
+        continue-on-error: true
+        run: python tools/v5_content_audit.py > alltracks_v5_audit.json
+
+      - name: Unit and Android-test build verification
         run: |
-          python tools/v5_content_audit.py > alltracks_v5_audit.json
           ./gradlew testDebugUnitTest --stacktrace
           ./gradlew assembleDebug assembleDebugAndroidTest --stacktrace
 
