@@ -196,3 +196,54 @@ Editorial failures include:
 No deployment, release, production change, canonical/main merge, or Netlify operation was performed.
 
 Per the three-execution ceiling, Actions validation stops here. Further fixes may be prepared without Actions, but another Actions execution requires a new explicit approval and a new validation cycle.
+
+
+## 11-TRACK fresh-install reader verification — 2026-09-18
+
+Goal: verify that a freshly installed recovery APK exposes and opens all 11 TRACKs using current V5 books where available and the existing V4/V3 compatibility reader elsewhere. This is a reader-availability verification, not a claim that every TRACK has finished V5 corpus.
+
+### Exact routing verified
+- TRACK 01: V5 reader
+- TRACK 02: V5 reader
+- TRACK 03: V4/V3 compatibility reader
+- TRACK 04: V4/V3 compatibility reader
+- TRACK 05: V4/V3 compatibility reader
+- TRACK 06: V4/V3 compatibility reader
+- TRACK 07: V5 reader
+- TRACK 08: V4/V3 compatibility reader
+- TRACK 09: V4/V3 compatibility reader
+- TRACK 10: V5 reader
+- TRACK 11: V4/V3 compatibility reader
+
+The installed APK contains V1/V2/V3 textbook assets for TRACK 01 through TRACK 11. Bundled V5 asset directories are exactly track_01, track_02, track_07, and track_10.
+
+### Actions attempts
+1. Run 35288203016 — FAIL before runtime because the global V5 audit correctly rejected the incomplete 11-track V5 corpus. Emulator test was not run.
+2. Run 35288267014 — FAIL before runtime because the full unit suite contains final-V5 completeness/quality gates that currently fail. Emulator test was not run.
+3. Run 35288590440 — SUCCESS for the fresh-install 11-track reader gate after preserving those final-V5 failures as diagnostics rather than misclassifying them as an app-launch blocker.
+
+### Run 35288590440 actual runtime evidence
+- workflow conclusion: SUCCESS
+- app + instrumentation APK compile gate: PASS
+- API 34 emulator: PASS
+- instrumentation test suite: com.futuretech.poweruser.textbook.AllTracksReaderRoutingInstrumentedTest
+- test: allElevenTracksOpenInTheInstalledReader
+- tests=1, failures=0, errors=0, skipped=0
+- exact APK reinstall: PASS (adb install: Success)
+- MainActivity cold launch: Status: ok
+- observed activity: com.futuretech.poweruser/.MainActivity
+- runtime gate: ALLTRACKS_RUNTIME_GATE=PASS
+- APK signature verification: APK Signature Scheme v2 = true
+
+### Exact tested APK
+- file: Coding_Textbook_Recovery_11TRACKS_20260918.apk
+- versionName: 1.2.16
+- versionCode: 19
+- size: 56,879,921 bytes
+- SHA-256: 74da4cc496807741961f60fad93b32dfa39c533374a4ab954f2ecefc731ad7d6
+- Actions artifact id: 10525501914
+
+### Final-V5 completeness remains FAIL
+The same run deliberately retained the full unit-suite diagnostics. 622 tests ran and 9 failed, including final V5 scale/density/prerequisite/source-contract gates. The V5 content audit reports only track_01, track_02, track_07, track_10 as current V5 directories and error_count=2555. Therefore this result must not be described as all 11 TRACKs being complete V5 books or meeting the frozen-baseline ×5 target.
+
+No deployment, release, production change, or main/canonical merge was performed.
