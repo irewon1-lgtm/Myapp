@@ -1,0 +1,15 @@
+{
+  "partId": "T02-P02",
+  "sections": [
+    {"sectionId":"T02-P02-S01-name-binding","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P02-S02-identity-type-value","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P02-S03-mutability-aliasing","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P02-S04-numeric-semantics","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P02-S05-unicode-text","sourceIds":["PYTHON-REF","UNICODE"]},
+    {"sectionId":"T02-P02-S06-none-absence","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P02-S07-conversion-loss","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P02-S08-copy-object-graph","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P02-S09-hashability","sourceIds":["PYTHON-REF","ODS"]},
+    {"sectionId":"T02-P02-S10-type-contract","sourceIds":["PYTHON-REF","SICP","DDD"]}
+  ]
+}
