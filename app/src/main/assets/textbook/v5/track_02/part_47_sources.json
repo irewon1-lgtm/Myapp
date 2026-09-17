@@ -1,0 +1,15 @@
+{
+  "partId":"T02-P47",
+  "sections":[
+    {"sectionId":"T02-P47-S01-copy-semantics","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P47-S02-shallow-copy-graph","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P47-S03-deepcopy-policy","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P47-S04-custom-copy-protocol","sourceIds":["PYTHON-REF","REFACTORING2"]},
+    {"sectionId":"T02-P47-S05-snapshot-state","sourceIds":["SICP","DDIA"]},
+    {"sectionId":"T02-P47-S06-copy-on-write-model","sourceIds":["CSAPP3","OSTEP"]},
+    {"sectionId":"T02-P47-S07-versioned-state","sourceIds":["DDIA","DDD"]},
+    {"sectionId":"T02-P47-S08-serialization-copy-boundary","sourceIds":["PYTHON-REF","DDIA"]},
+    {"sectionId":"T02-P47-S09-copy-testing","sourceIds":["NIST-SSDF","PYTHON-REF"]},
+    {"sectionId":"T02-P47-S10-state-transfer-contract","sourceIds":["SICP","DDD","DDIA"]}
+  ]
+}
