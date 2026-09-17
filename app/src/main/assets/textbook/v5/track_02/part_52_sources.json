@@ -1,0 +1,13 @@
+{
+  "partId":"T02-P52",
+  "sections":[
+    {"sectionId":"T02-P52-S01-iterator-algebra","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P52-S02-chain-streams","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P52-S03-islice-consumption","sourceIds":["PYTHON-REF"]},
+    {"sectionId":"T02-P52-S04-tee-buffering","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P52-S05-groupby-adjacency","sourceIds":["PYTHON-REF","CLRS4"]},
+    {"sectionId":"T02-P52-S06-combinatoric-iterators","sourceIds":["PYTHON-REF","CLRS4"]},
+    {"sectionId":"T02-P52-S07-infinite-iterators","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P52-S08-lazy-pipeline-design","sourceIds":["PYTHON-REF","SICP","SRE"]}
+  ]
+}
