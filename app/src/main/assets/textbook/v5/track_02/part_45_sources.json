@@ -1,0 +1,15 @@
+{
+  "partId":"T02-P45",
+  "sections":[
+    {"sectionId":"T02-P45-S01-resource-stack-problem","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P45-S02-exitstack-dynamic-scope","sourceIds":["PYTHON-REF"]},
+    {"sectionId":"T02-P45-S03-callback-cleanup","sourceIds":["PYTHON-REF","REFACTORING2"]},
+    {"sectionId":"T02-P45-S04-enter-context-failure","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P45-S05-pop-all-ownership","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P45-S06-contextmanager-generator","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P45-S07-async-exit-stack","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P45-S08-partial-construction","sourceIds":["REFACTORING2","SRE"]},
+    {"sectionId":"T02-P45-S09-resource-stack-testing","sourceIds":["NIST-SSDF","PYTHON-REF"]},
+    {"sectionId":"T02-P45-S10-lifetime-composition-contract","sourceIds":["PYTHON-REF","SICP","SRE"]}
+  ]
+}
