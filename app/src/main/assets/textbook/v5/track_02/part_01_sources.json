@@ -1,0 +1,17 @@
+{
+  "partId": "T02-P01",
+  "sections": [
+    {"sectionId":"T02-P01-S01-io-state-output","sourceIds":["SICP","PYTHON-REF"]},
+    {"sectionId":"T02-P01-S02-data-contract","sourceIds":["SICP","PYTHON-REF","DDD"]},
+    {"sectionId":"T02-P01-S03-decomposition-boundary","sourceIds":["SICP","REFACTORING2"]},
+    {"sectionId":"T02-P01-S04-state-transition","sourceIds":["SICP","DDD"]},
+    {"sectionId":"T02-P01-S05-pre-post-condition","sourceIds":["SICP","PYTHON-REF"]},
+    {"sectionId":"T02-P01-S06-counterexample-boundary","sourceIds":["SICP","CLRS4","LEARNING-CLT-COMPUTING"]},
+    {"sectionId":"T02-P01-S07-pseudocode-flow","sourceIds":["SICP","CLRS4"]},
+    {"sectionId":"T02-P01-S08-failure-model","sourceIds":["SICP","PYTHON-REF"]},
+    {"sectionId":"T02-P01-S09-side-effect-boundary","sourceIds":["SICP","REFACTORING2"]},
+    {"sectionId":"T02-P01-S10-resource-budget","sourceIds":["CSAPP3","CLRS4"]},
+    {"sectionId":"T02-P01-S11-traceable-rule","sourceIds":["REFACTORING2","DDD"]},
+    {"sectionId":"T02-P01-S12-checkout-model","sourceIds":["SICP","PYTHON-REF","LEARNING-CLT-COMPUTING"]}
+  ]
+}
