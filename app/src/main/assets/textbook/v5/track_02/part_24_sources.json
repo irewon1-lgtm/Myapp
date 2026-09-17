@@ -1,0 +1,15 @@
+{
+  "partId": "T02-P24",
+  "sections": [
+    {"sectionId":"T02-P24-S01-instant-local-time","sourceIds":["PYTHON-REF","DDIA"]},
+    {"sectionId":"T02-P24-S02-timezone-rule","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P24-S03-dst-ambiguity","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P24-S04-monotonic-clock","sourceIds":["PYTHON-REF","OSTEP"]},
+    {"sectionId":"T02-P24-S05-duration-calendar-period","sourceIds":["PYTHON-REF","DDIA"]},
+    {"sectionId":"T02-P24-S06-timestamp-serialization","sourceIds":["PYTHON-REF","OPENAPI31"]},
+    {"sectionId":"T02-P24-S07-time-range-boundary","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P24-S08-scheduling-semantics","sourceIds":["SRE","DDIA"]},
+    {"sectionId":"T02-P24-S09-cache-expiration-clock","sourceIds":["SRE","PYTHON-REF"]},
+    {"sectionId":"T02-P24-S10-time-dependency","sourceIds":["SICP","REFACTORING2","PYTHON-REF"]}
+  ]
+}
