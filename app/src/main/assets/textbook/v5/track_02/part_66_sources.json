@@ -1,14 +1,13 @@
 {
-  "part": 66,
-  "title": "Container protocol — len·truth·getitem·contains·iteration fallback을 추적하기",
-  "sections": [
-    {"id":"T02-P66-S01-length-contract","sourceIds":["PYTHON-REF","CSAPP3"]},
-    {"id":"T02-P66-S02-truth-fallback","sourceIds":["PYTHON-REF","SICP"]},
-    {"id":"T02-P66-S03-getitem-index","sourceIds":["PYTHON-REF","SICP"]},
-    {"id":"T02-P66-S04-slicing-protocol","sourceIds":["PYTHON-REF","SICP"]},
-    {"id":"T02-P66-S05-iteration-fallback","sourceIds":["PYTHON-REF","SICP"]},
-    {"id":"T02-P66-S06-contains-membership","sourceIds":["PYTHON-REF","CSAPP3"]},
-    {"id":"T02-P66-S07-mutation-iteration","sourceIds":["PYTHON-REF","SRE"]},
-    {"id":"T02-P66-S08-container-contract","sourceIds":["SRE","PYTHON-REF"]}
+  "partId":"T02-P66",
+  "sections":[
+    {"sectionId":"T02-P66-S01-length-contract","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P66-S02-truth-fallback","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P66-S03-getitem-index","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P66-S04-slicing-protocol","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P66-S05-iteration-fallback","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P66-S06-contains-membership","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P66-S07-mutation-iteration","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P66-S08-container-contract","sourceIds":["SRE","PYTHON-REF"]}
   ]
 }
