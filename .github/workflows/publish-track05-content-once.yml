@@ -1,0 +1,74 @@
+name: Publish Track05 content once
+
+on:
+  push:
+    branches:
+      - textbook-v5-track05-publish
+    paths:
+      - '.track05_publish_trigger'
+
+permissions:
+  contents: write
+
+jobs:
+  publish-track05:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Rebuild and verify Track05 payload
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat .track05_payload_xz/part_*.b64 > /tmp/track05.b64
+          base64 -d /tmp/track05.b64 > /tmp/track05.tar.xz
+          echo 'a8beb02c29fb245572ad3733c96f27fdf49616bbde87a9a7a0f970c7b579a591  /tmp/track05.tar.xz' | sha256sum -c -
+          rm -rf app/src/main/assets/textbook/v5/track_05
+          tar -xJf /tmp/track05.tar.xz
+          python - <<'PY'
+          from pathlib import Path
+          import json, re
+          d=Path('app/src/main/assets/textbook/v5/track_05')
+          mds=sorted(d.glob('part_*_*.md'))
+          sms=sorted(d.glob('part_*_sources.json'))
+          manifests=[d/'manifest.json']+sorted(d.glob('manifest_[0-9][0-9].json'))
+          manifests=[p for p in manifests if p.exists()]
+          assert len(mds)==105, len(mds)
+          assert len(sms)==105, len(sms)
+          assert len(manifests)==7, len(manifests)
+          parts=[]
+          title=None
+          for p in manifests:
+              x=json.loads(p.read_text(encoding='utf-8'))
+              assert x['trackId']=='T05' and x['trackNumber']==5
+              title=title or x['title']; assert x['title']==title
+              parts.extend(x['parts'])
+          parts=sorted(parts,key=lambda x:x['order'])
+          assert [x['id'] for x in parts]==[f'T05-P{i:02d}' for i in range(1,106)]
+          assert [x['order'] for x in parts]==list(range(1,106))
+          for x in parts:
+              md=Path('app/src/main/assets')/x['assetPath']
+              sm=Path('app/src/main/assets')/x['sourceMapPath']
+              assert md.is_file(), md
+              assert sm.is_file(), sm
+              chapters=len(re.findall(r'(?m)^## CHAPTER ',md.read_text(encoding='utf-8')))
+              ev=json.loads(sm.read_text(encoding='utf-8'))
+              assert ev['partId']==x['id']
+              assert len(ev['sections'])==chapters
+          print('TRACK05_REMOTE_STRUCTURE_PASS parts=105 manifests=7 files=',len(list(d.glob('*'))))
+          PY
+
+      - name: Commit published content
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf .track05_payload_xz .track05_publish_trigger
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A app/src/main/assets/textbook/v5/track_05 .track05_payload_xz .track05_publish_trigger
+          git commit -m 'publish(v5): add track 05 remote content [skip ci]'
+          git push origin HEAD:textbook-v5-track05-publish
