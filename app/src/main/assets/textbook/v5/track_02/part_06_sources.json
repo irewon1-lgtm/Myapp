@@ -1,0 +1,15 @@
+{
+  "partId": "T02-P06",
+  "sections": [
+    {"sectionId":"T02-P06-S01-error-classification","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P06-S02-exception-unwind","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P06-S03-narrow-handler","sourceIds":["PYTHON-REF","REFACTORING2"]},
+    {"sectionId":"T02-P06-S04-finally-cleanup","sourceIds":["PYTHON-REF"]},
+    {"sectionId":"T02-P06-S05-context-manager","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P06-S06-eafp-race","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P06-S07-retry-state-machine","sourceIds":["SRE","SRE-WORKBOOK"]},
+    {"sectionId":"T02-P06-S08-error-observability","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P06-S09-failure-atomicity","sourceIds":["SICP","DDIA"]},
+    {"sectionId":"T02-P06-S10-error-boundary","sourceIds":["REFACTORING2","DDD","SRE"]}
+  ]
+}
