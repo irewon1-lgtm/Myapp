@@ -1,0 +1,66 @@
+name: US2000 Free WTI Recovery
+
+on:
+  push:
+    branches: [us2000-free-runner]
+    paths:
+      - 'us2000-free/recover_wti.py'
+      - '.github/workflows/us2000-free-wti-recovery.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: us2000-free-wti-recovery
+  cancel-in-progress: false
+
+jobs:
+  recover-wti:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: us2000-free-runner
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Recover only WTI public metrics
+        run: |
+          set -euo pipefail
+          python -m py_compile us2000-free/collect_500.py us2000-free/recover_wti.py
+          python us2000-free/recover_wti.py
+      - name: CLEAN PASS - zero HOLD and hashes
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          root=Path('us2000-free/output');m=json.loads((root/'manifest.json').read_text())
+          assert m['recordCount']==500 and m['totalMetricCells']==5000,m
+          assert m['totalResolved']==5000 and m['totalHold']==0 and m['resolvedRatio']==1.0,m
+          assert m.get('holdDetails')==[],m.get('holdDetails')
+          assert m.get('targetedRecovery',{}).get('ticker')=='WTI',m
+          records=[]
+          for c in m['chunks']:
+              raw=(root/c['file']).read_bytes();assert hashlib.sha256(raw).hexdigest()==c['sha256'],c
+              records.extend(json.loads(raw))
+          assert len(records)==500 and len({r['ticker'] for r in records})==500
+          raw=json.dumps(records,separators=(',',':'),ensure_ascii=False).encode()
+          assert hashlib.sha256(raw).hexdigest()==m['recordsSha256']
+          wti=next(r for r in records if r['ticker']=='WTI')
+          assert all(x['status']!='HOLD' for x in wti['metrics'].values()),wti
+          print('US2000_NEW500_ZERO_HOLD_CLEAN=PASS',m['recordsSha256'])
+          print('WTI_METRICS',json.dumps(wti['metrics'],ensure_ascii=False))
+          PY
+      - name: Store WTI recovery evidence
+        run: |
+          set -euo pipefail
+          git config user.name 'us2000-free-bot'
+          git config user.email 'us2000-free-bot@users.noreply.github.com'
+          git add us2000-free/output
+          if ! git diff --cached --quiet; then
+            git commit -m 'Store WTI targeted recovery [skip ci]'
+            git push origin HEAD:us2000-free-runner
+          fi
