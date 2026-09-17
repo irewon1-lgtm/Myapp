@@ -1,0 +1,20 @@
+{
+  "partId":"T07-P06",
+  "sections":[
+    {"sectionId":"T07-P06-S01-middleware-pipeline","sourceIds":["SRE","OPENAPI31"]},
+    {"sectionId":"T07-P06-S02-order-dependency","sourceIds":["SRE","OWASP-API"]},
+    {"sectionId":"T07-P06-S03-next-control","sourceIds":["SRE","NIST-SSDF"]},
+    {"sectionId":"T07-P06-S04-early-response","sourceIds":["SRE","NIST-SSDF"]},
+    {"sectionId":"T07-P06-S05-async-errors","sourceIds":["SRE","TS-HANDBOOK"]},
+    {"sectionId":"T07-P06-S06-auth-principal","sourceIds":["OWASP-API","NIST-SSDF"]},
+    {"sectionId":"T07-P06-S07-validation-middleware","sourceIds":["OPENAPI31","OWASP-API"]},
+    {"sectionId":"T07-P06-S08-request-context","sourceIds":["SRE","SRE-WORKBOOK"]},
+    {"sectionId":"T07-P06-S09-timing","sourceIds":["SRE","SRE-WORKBOOK"]},
+    {"sectionId":"T07-P06-S10-timeout","sourceIds":["SRE","DDIA"]},
+    {"sectionId":"T07-P06-S11-rate-limit","sourceIds":["OWASP-API","SRE"]},
+    {"sectionId":"T07-P06-S12-cors-boundary","sourceIds":["RFC9110","OWASP-API"]},
+    {"sectionId":"T07-P06-S13-error-middleware","sourceIds":["OPENAPI31","SRE"]},
+    {"sectionId":"T07-P06-S14-business-boundary","sourceIds":["DDIA","SRE"]},
+    {"sectionId":"T07-P06-S15-middleware-lab","sourceIds":["SRE","OWASP-API","OPENAPI31"]}
+  ]
+}
