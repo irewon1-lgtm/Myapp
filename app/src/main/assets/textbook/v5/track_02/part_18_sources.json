@@ -1,0 +1,15 @@
+{
+  "partId": "T02-P18",
+  "sections": [
+    {"sectionId":"T02-P18-S01-cli-argument-contract","sourceIds":["PYTHON-REF","TLPI"]},
+    {"sectionId":"T02-P18-S02-exit-status","sourceIds":["TLPI","SRE"]},
+    {"sectionId":"T02-P18-S03-stdout-stderr","sourceIds":["TLPI","PYTHON-REF"]},
+    {"sectionId":"T02-P18-S04-stdin-interactive-pipeline","sourceIds":["TLPI","NIST-SSDF"]},
+    {"sectionId":"T02-P18-S05-subprocess-shell-boundary","sourceIds":["PYTHON-REF","TLPI","NIST-SSDF"]},
+    {"sectionId":"T02-P18-S06-child-result-lifetime","sourceIds":["PYTHON-REF","TLPI"]},
+    {"sectionId":"T02-P18-S07-signal-control-event","sourceIds":["TLPI","OSTEP"]},
+    {"sectionId":"T02-P18-S08-graceful-shutdown","sourceIds":["SRE","TLPI"]},
+    {"sectionId":"T02-P18-S09-environment-config","sourceIds":["PYTHON-REF","NIST-SSDF"]},
+    {"sectionId":"T02-P18-S10-cli-architecture","sourceIds":["REFACTORING2","SRE","SICP"]}
+  ]
+}
