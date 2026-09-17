@@ -1,15 +1,15 @@
 {
   "partId":"T02-P44",
   "sections":[
-    {"sectionId":"T02-P44-S01-randomness-model","sourceIds":["PYTHON-REF","SICP"]},
-    {"sectionId":"T02-P44-S02-prng-state","sourceIds":["PYTHON-REF","CLRS4"]},
-    {"sectionId":"T02-P44-S03-seed-reproduction","sourceIds":["PYTHON-REF","NIST-SSDF"]},
-    {"sectionId":"T02-P44-S04-random-security-boundary","sourceIds":["PYTHON-REF","NIST-SSDF"]},
-    {"sectionId":"T02-P44-S05-sampling-bias","sourceIds":["PYTHON-REF","CLRS4"]},
-    {"sectionId":"T02-P44-S06-shuffle-order","sourceIds":["PYTHON-REF","CLRS4"]},
-    {"sectionId":"T02-P44-S07-property-test-generation","sourceIds":["PYTHON-REF","NIST-SSDF"]},
-    {"sectionId":"T02-P44-S08-concurrent-random-streams","sourceIds":["PYTHON-REF","SRE"]},
-    {"sectionId":"T02-P44-S09-simulation-reproducibility","sourceIds":["PYTHON-REF","SRE"]},
-    {"sectionId":"T02-P44-S10-randomness-contract","sourceIds":["PYTHON-REF","SICP","NIST-SSDF"]}
+    {"sectionId":"T02-P44-S01-iterator-algebra","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P44-S02-chain-stream","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P44-S03-islice-consumption","sourceIds":["PYTHON-REF","CLRS4"]},
+    {"sectionId":"T02-P44-S04-while-prefix","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P44-S05-groupby-adjacency","sourceIds":["PYTHON-REF","CLRS4"]},
+    {"sectionId":"T02-P44-S06-tee-buffer","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P44-S07-combinatorial-cardinality","sourceIds":["PYTHON-REF","CLRS4"]},
+    {"sectionId":"T02-P44-S08-accumulate-state","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P44-S09-lazy-pipeline-debugging","sourceIds":["SRE","PYTHON-REF"]},
+    {"sectionId":"T02-P44-S10-iterator-operator-choice","sourceIds":["PYTHON-REF","CLRS4","SICP"]}
   ]
 }
