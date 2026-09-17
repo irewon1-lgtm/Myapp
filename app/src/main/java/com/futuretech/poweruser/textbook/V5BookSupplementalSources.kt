@@ -1,6 +1,6 @@
 package com.futuretech.poweruser.textbook
 
-/** Current platform, standards and compiler sources audited independently from the stable book spine. */
+/** Current platform, standards and specialist sources audited independently from the stable book spine. */
 object V5BookSupplementalSources {
     private fun s(
         id: String,
@@ -27,14 +27,21 @@ object V5BookSupplementalSources {
         s("LINUX-CGROUP2", "Control Group v2", "Linux kernel documentation", V5BookSource.SourceType.OFFICIAL_DOC, url = "https://www.kernel.org/doc/html/latest/admin-guide/cgroup-v2.html"),
         s("LINUX-SCHED", "Linux scheduler documentation", "Linux kernel documentation", V5BookSource.SourceType.OFFICIAL_DOC, url = "https://www.kernel.org/doc/html/latest/scheduler/"),
         s("LINUX-BOOTCONFIG", "Boot Configuration", "Linux kernel documentation", V5BookSource.SourceType.OFFICIAL_DOC, "audited 2026-09", "https://www.kernel.org/doc/html/latest/admin-guide/bootconfig.html"),
+        s("LINUX-TIMEKEEPING", "Clock sources, clock events, sched_clock and delay timers", "Linux kernel documentation", V5BookSource.SourceType.OFFICIAL_DOC, "Linux 7.2-rc2 docs audited 2026-09", "https://www.kernel.org/doc/html/latest/timers/timekeeping.html"),
+        s("LINUX-MM", "Memory Management Documentation", "Linux kernel documentation", V5BookSource.SourceType.OFFICIAL_DOC, "latest audited 2026-09", "https://www.kernel.org/doc/html/latest/mm/"),
+        s("LINUX-SLAB", "Slab Allocation", "Linux kernel documentation", V5BookSource.SourceType.OFFICIAL_DOC, "latest audited 2026-09", "https://www.kernel.org/doc/html/latest/mm/slab.html"),
+        s("LINUX-KVM", "KVM documentation", "Linux kernel documentation", V5BookSource.SourceType.OFFICIAL_DOC, "latest audited 2026-09", "https://docs.kernel.org/virt/kvm/index.html"),
         s("SQLITE-ATOMIC", "Atomic Commit In SQLite", "SQLite project", V5BookSource.SourceType.OFFICIAL_DOC, url = "https://sqlite.org/atomiccommit.html"),
         s("SQLITE-ISOLATION", "Isolation In SQLite", "SQLite project", V5BookSource.SourceType.OFFICIAL_DOC, url = "https://sqlite.org/isolation.html"),
         s("RFC8259", "The JavaScript Object Notation (JSON) Data Interchange Format", "IETF / RFC Editor", V5BookSource.SourceType.STANDARD, "RFC 8259 / STD 90", "https://www.rfc-editor.org/rfc/rfc8259"),
         s("RFC8949", "Concise Binary Object Representation (CBOR)", "IETF / RFC Editor", V5BookSource.SourceType.STANDARD, "RFC 8949 / STD 94", "https://www.rfc-editor.org/rfc/rfc8949"),
+        s("RFC5905", "Network Time Protocol Version 4", "IETF / RFC Editor", V5BookSource.SourceType.STANDARD, "RFC 5905 with current updates audited 2026-09", "https://www.rfc-editor.org/rfc/rfc5905"),
+        s("RFC9769", "NTP Interleaved Modes", "IETF / RFC Editor", V5BookSource.SourceType.STANDARD, "RFC 9769 (updates RFC 5905)", "https://www.rfc-editor.org/rfc/rfc9769"),
         s("PROTOBUF-WIRE", "Protocol Buffers Encoding", "Google", V5BookSource.SourceType.OFFICIAL_DOC, "current official encoding guide", "https://protobuf.dev/programming-guides/encoding/"),
         s("UNICODE-UTS39", "Unicode Security Mechanisms", "Unicode Consortium", V5BookSource.SourceType.STANDARD, "UTS #39", "https://www.unicode.org/reports/tr39/"),
         s("LLVM-LANGREF", "LLVM Language Reference Manual", "LLVM Project", V5BookSource.SourceType.OFFICIAL_DOC, "current LangRef", "https://llvm.org/docs/LangRef.html"),
-        s("ARM-ELF-ABI", "ELF for the Arm Architecture", "Arm ABI project", V5BookSource.SourceType.STANDARD, "current abi-aa", "https://github.com/ARM-software/abi-aa/blob/main/aaelf32/aaelf32.rst")
+        s("ARM-ELF-ABI", "ELF for the Arm Architecture", "Arm ABI project", V5BookSource.SourceType.STANDARD, "current abi-aa", "https://github.com/ARM-software/abi-aa/blob/main/aaelf32/aaelf32.rst"),
+        s("GC-HANDBOOK2", "The Garbage Collection Handbook: The Art of Automatic Memory Management", "Richard Jones; Antony Hosking; Eliot Moss", V5BookSource.SourceType.ENGINEERING_BOOK, "2nd edition, 2023", "https://gchandbook.org/")
     )
 
     val byId: Map<String, V5BookSource> = sources.associateBy(V5BookSource::id)
