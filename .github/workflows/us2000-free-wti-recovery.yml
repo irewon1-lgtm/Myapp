@@ -1,22 +1,22 @@
-name: US2000 Free WTI Recovery
+name: US2000 Free Collision Replacements
 
 on:
   push:
     branches: [us2000-free-runner]
     paths:
-      - 'us2000-free/recover_wti.py'
+      - 'us2000-free/collect_replacements.py'
       - '.github/workflows/us2000-free-wti-recovery.yml'
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
-  group: us2000-free-wti-recovery
+  group: us2000-free-collision-replacements
   cancel-in-progress: false
 
 jobs:
-  recover-wti:
+  collect-replacements:
     runs-on: ubuntu-22.04
     timeout-minutes: 10
     steps:
@@ -26,41 +26,33 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Recover only WTI public metrics
+      - name: Collect three replacement stocks
+        shell: bash
         run: |
           set -euo pipefail
-          python -m py_compile us2000-free/collect_500.py us2000-free/recover_wti.py
-          python us2000-free/recover_wti.py
-      - name: CLEAN PASS - zero HOLD and hashes
+          python -m py_compile us2000-free/collect_500.py us2000-free/collect_replacements.py
+          python us2000-free/collect_replacements.py
+      - name: CLEAN PASS - replacement contract
+        shell: bash
         run: |
           set -euo pipefail
-          python - <<'PY'
-          import hashlib,json
+          python3 - <<'PY'
+          import json
           from pathlib import Path
-          root=Path('us2000-free/output');m=json.loads((root/'manifest.json').read_text())
-          assert m['recordCount']==500 and m['totalMetricCells']==5000,m
-          assert m['totalResolved']==5000 and m['totalHold']==0 and m['resolvedRatio']==1.0,m
-          assert m.get('holdDetails')==[],m.get('holdDetails')
-          assert m.get('targetedRecovery',{}).get('ticker')=='WTI',m
-          records=[]
-          for c in m['chunks']:
-              raw=(root/c['file']).read_bytes();assert hashlib.sha256(raw).hexdigest()==c['sha256'],c
-              records.extend(json.loads(raw))
-          assert len(records)==500 and len({r['ticker'] for r in records})==500
-          raw=json.dumps(records,separators=(',',':'),ensure_ascii=False).encode()
-          assert hashlib.sha256(raw).hexdigest()==m['recordsSha256']
-          wti=next(r for r in records if r['ticker']=='WTI')
-          assert all(x['status']!='HOLD' for x in wti['metrics'].values()),wti
-          print('US2000_NEW500_ZERO_HOLD_CLEAN=PASS',m['recordsSha256'])
-          print('WTI_METRICS',json.dumps(wti['metrics'],ensure_ascii=False))
+          p=Path('us2000-free/replacements.json'); d=json.loads(p.read_text())
+          assert d['schema']=='US2000_COLLISION_REPLACEMENTS_1'
+          assert d['replaces']==['ENVA','TRUP','YELP']
+          assert [r['ticker'] for r in d['records']]==['ICFI','OMF','EE']
+          assert [int(r['cik']) for r in d['records']]==[1362004,1584207,1888447]
+          assert d['metricCount']==10 and d['totalMetricCells']==30 and d['totalHold']==0
+          assert all(len(r['metrics'])==10 for r in d['records'])
+          assert all(all(m['status']!='HOLD' for m in r['metrics'].values()) for r in d['records'])
+          print('US2000_COLLISION_REPLACEMENTS_CLEAN=PASS')
           PY
-      - name: Store WTI recovery evidence
-        run: |
-          set -euo pipefail
-          git config user.name 'us2000-free-bot'
-          git config user.email 'us2000-free-bot@users.noreply.github.com'
-          git add us2000-free/output
-          if ! git diff --cached --quiet; then
-            git commit -m 'Store WTI targeted recovery [skip ci]'
-            git push origin HEAD:us2000-free-runner
-          fi
+      - name: Upload replacement evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: us2000-collision-replacements
+          path: us2000-free/replacements.json
+          if-no-files-found: error
+          retention-days: 1
