@@ -1,0 +1,15 @@
+{
+  "partId": "T02-P09",
+  "sections": [
+    {"sectionId":"T02-P09-S01-runtime-static-layer","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P09-S02-optional-absence","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P09-S03-union-narrowing","sourceIds":["PYTHON-REF"]},
+    {"sectionId":"T02-P09-S04-collection-element-contract","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P09-S05-generic-relation","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P09-S06-structural-protocol","sourceIds":["PYTHON-REF","REFACTORING2"]},
+    {"sectionId":"T02-P09-S07-any-escape-hatch","sourceIds":["PYTHON-REF","NIST-SSDF"]},
+    {"sectionId":"T02-P09-S08-callable-contract","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P09-S09-domain-types","sourceIds":["DDD","PYTHON-REF"]},
+    {"sectionId":"T02-P09-S10-types-and-tests","sourceIds":["PYTHON-REF","NIST-SSDF","LEARNING-CLT-COMPUTING"]}
+  ]
+}
