@@ -1,0 +1,143 @@
+# PART 71 · Representation과 formatting protocol — `repr`·`str`·`format`을 목적별로 분리하기
+
+객체를 문자열로 보이는 일은 단순 출력 문제가 아니다. 로그·디버거·에러 메시지·사용자 화면은 서로 다른 독자를 가지며, Python은 이를 `__repr__`, `__str__`, `__format__` 같은 protocol로 나눈다. 표현을 잘못 설계하면 비밀값이 로그에 노출되거나, 디버깅에 필요한 identity가 사라지거나, f-string 포맷 규칙이 다른 숫자 타입과 어긋날 수 있다. 이 PART에서는 **누가 읽는 표현인지, 어떤 정보가 안정적으로 포함되어야 하는지**를 기준으로 본다.
+
+---
+
+## CHAPTER 01 · `repr`은 개발자가 객체 상태를 식별할 수 있는 표현을 제공한다
+
+`repr(obj)`는 일반적으로 개발자와 디버거를 위한 표현이다. 가능한 경우 객체를 명확히 식별하고 중요한 constructor-like state를 보여주는 편이 좋다.
+
+```python
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __repr__(self):
+        return f"Point(x={self.x!r}, y={self.y!r})"
+```
+
+여기서 내부 값에 `!r`을 사용하면 문자열 안의 escape나 빈 문자열 같은 경계가 더 분명하게 보인다. `repr`을 반드시 `eval()` 가능한 문자열로 만들 필요는 없지만, 최소한 어떤 타입의 어떤 상태인지 식별 가능해야 한다.
+
+반대로 access token, password, 주민번호 같은 민감값을 그대로 포함하면 로그·traceback·REPL에서 노출될 수 있다. 디버깅 유용성과 정보 노출을 함께 검토한다.
+
+---
+
+## CHAPTER 02 · `str`은 사용자가 읽을 목적의 표현으로 좁힐 수 있다
+
+`str(obj)`는 최종 사용자나 일반 메시지에 더 적합한 표현을 제공할 수 있다. 타입이 별도 `__str__`을 정의하지 않으면 `__repr__`과 연결되는 fallback이 사용될 수 있다.
+
+```python
+class Money:
+    def __init__(self, won):
+        self.won = won
+
+    def __repr__(self):
+        return f"Money(won={self.won!r})"
+
+    def __str__(self):
+        return f"₩{self.won:,}"
+```
+
+로그에서는 `Money(won=12000)`이 상태 파악에 유용하고, 화면에서는 `₩12,000`이 더 적절할 수 있다. 두 목적을 하나의 문자열에 억지로 맞추지 않는다.
+
+`__str__`에 locale, 번역, timezone 정책을 숨기면 같은 객체가 실행 환경에 따라 다르게 보일 수 있다. 도메인 object 자체와 presentation layer의 책임을 어디까지 나눌지 결정한다.
+
+---
+
+## CHAPTER 03 · `__format__`은 format spec을 타입의 표현 정책으로 해석한다
+
+`format(value, spec)`과 f-string의 `f"{value:spec}"`는 타입의 formatting protocol과 연결된다. 숫자나 날짜 타입은 width, precision, alignment 같은 spec을 해석할 수 있다.
+
+```python
+class Percent:
+    def __init__(self, ratio):
+        self.ratio = ratio
+
+    def __format__(self, spec):
+        return format(self.ratio * 100, spec) + "%"
+```
+
+이제 `f"{Percent(0.1234):.1f}"` 같은 문법으로 표현 정책을 재사용할 수 있다. 중요한 것은 임의 문자열 spec을 무질서하게 늘리지 않는 것이다. 표준 format mini-language와 최대한 일관되게 맞추면 caller의 학습 비용이 줄어든다.
+
+지원하지 않는 spec은 조용히 무시하기보다 명확히 실패시키는 편이 오타를 잡기 쉽다.
+
+---
+
+## CHAPTER 04 · f-string conversion은 `!r`·`!s`·format spec의 적용 순서를 구분한다
+
+F-string은 expression을 평가한 뒤 conversion과 formatting을 적용한다. `!r`은 `repr`, `!s`는 `str` 경로를 강제할 수 있고, 그 뒤 format spec이 적용되는 형태를 이해해야 한다.
+
+```python
+name = "a\nb"
+print(f"{name}")
+print(f"{name!r}")
+```
+
+첫 번째는 실제 줄바꿈이 보일 수 있지만 두 번째는 escape가 포함된 개발자 표현으로 경계를 확인하기 쉽다.
+
+디버깅 로그에서 `!r`은 empty string, whitespace, control character를 찾는 데 유용하다. 반면 사용자 메시지에서 무조건 `!r`을 쓰면 따옴표와 escape가 노출되어 읽기 어려워진다.
+
+표현 문법의 선택도 대상 독자와 목적에 맞춘다.
+
+---
+
+## CHAPTER 05 · bytes와 text representation은 encoding 경계를 대신 해결해 주지 않는다
+
+`bytes`의 `repr`이 사람이 읽을 수 있는 ASCII 일부를 보여준다고 해서 그것이 올바르게 decode된 text라는 뜻은 아니다.
+
+```python
+raw = b"hello\xff"
+print(repr(raw))
+```
+
+표현은 byte sequence를 진단하기 위한 것이고, 실제 text 의미를 얻으려면 올바른 encoding과 error policy로 decode해야 한다. 로그에서 `repr(bytes)`를 본 뒤 문자열이라고 착각해 다시 encode/decode를 반복하면 경계가 더 혼란스러워진다.
+
+Binary protocol payload는 길이·hex prefix·checksum처럼 진단에 필요한 제한된 정보를 표현하고 전체 secret payload를 출력하지 않는 정책도 고려한다.
+
+Representation은 데이터 변환이 아니라 관찰 창이다.
+
+---
+
+## CHAPTER 06 · debug representation은 운영 로그의 크기와 민감정보 정책을 고려해야 한다
+
+거대한 collection 전체를 `repr`에 포함하면 한 번의 예외가 수 MB 로그를 만들 수 있다. 반대로 핵심 ID 없이 `<Order object at ...>`만 남기면 운영 장애에서 어떤 객체였는지 알기 어렵다.
+
+실무 표현은 보통 안정적인 식별자, 중요한 상태 몇 개, 크기 요약을 사용한다.
+
+```text
+Batch(id='B-42', items=1842, state='retrying')
+```
+
+민감 필드는 redaction하고, 대형 payload는 길이와 digest만 남길 수 있다. Representation이 호출되는 위치도 고려한다. 에러 처리 중 `repr` 자체가 예외를 던지면 원래 오류를 가릴 수 있으므로 가능하면 단순하고 안정적으로 만든다.
+
+운영 로그에서 representation은 관찰 가능성 계약의 일부다.
+
+---
+
+## CHAPTER 07 · recursive object graph의 `repr`은 무한 재귀와 폭발적 출력을 피해야 한다
+
+Container가 자기 자신을 참조하거나 graph에 cycle이 있으면 순진한 recursive `__repr__`은 끝나지 않을 수 있다.
+
+```python
+items = []
+items.append(items)
+print(items)
+```
+
+내장 container는 이런 cycle을 감지해 제한된 표현을 사용한다. Custom graph type도 child 전체를 무조건 재귀 출력하기보다 ID, depth limit, visited set을 사용할 수 있다.
+
+Tree라고 믿었던 구조가 실제로 DAG나 cycle을 가질 수 있는지 domain invariant를 확인한다. Debug 표현이 graph traversal algorithm이 되어 버리면 성능과 안전성 문제가 생긴다.
+
+Representation은 객체의 모든 정보를 직렬화하는 기능이 아니다.
+
+---
+
+## CHAPTER 08 · representation contract는 독자·안정성·정보 노출 범위를 명시한다
+
+좋은 표현 정책은 `repr`, `str`, formatting의 책임을 나눈다. 개발자용 `repr`에는 타입과 핵심 상태를, 사용자용 `str`에는 이해하기 쉬운 의미를, formatting에는 명시적 spec에 따른 변형을 둔다.
+
+테스트에서는 escape가 필요한 문자열, 민감값, 매우 큰 collection, recursive graph, unsupported format spec을 확인한다. Snapshot test만 믿으면 필드 추가가 로그 계약을 조용히 바꿀 수 있으므로 어떤 정보가 반드시 포함/제외되어야 하는지 invariant로 본다.
+
+이 PART의 핵심은 **객체를 문자열로 바꾸는 일을 하나의 출력 함수로 보지 않고, 디버깅·사용자 표시·포맷 지정이라는 서로 다른 목적을 가진 protocol로 분리하는 것**이다.
