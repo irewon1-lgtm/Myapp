@@ -1,0 +1,15 @@
+{
+  "partId": "T02-P32",
+  "sections": [
+    {"sectionId":"T02-P32-S01-typed-dict-shape","sourceIds":["PYTHON-REF","OPENAPI31"]},
+    {"sectionId":"T02-P32-S02-literal-values","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P32-S03-overload-contract","sourceIds":["PYTHON-REF"]},
+    {"sectionId":"T02-P32-S04-typevar-relation","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P32-S05-variance-mutation","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P32-S06-generic-protocol","sourceIds":["PYTHON-REF","REFACTORING2"]},
+    {"sectionId":"T02-P32-S07-paramspec-decorator","sourceIds":["PYTHON-REF"]},
+    {"sectionId":"T02-P32-S08-typeguard-narrowing","sourceIds":["PYTHON-REF","NIST-SSDF"]},
+    {"sectionId":"T02-P32-S09-never-exhaustiveness","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P32-S10-typing-risk-boundary","sourceIds":["PYTHON-REF","NIST-SSDF","REFACTORING2"]}
+  ]
+}
