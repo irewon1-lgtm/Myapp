@@ -1,0 +1,13 @@
+{
+  "partId":"T02-P54",
+  "sections":[
+    {"sectionId":"T02-P54-S01-cache-key","sourceIds":["SICP","DDIA"]},
+    {"sectionId":"T02-P54-S02-memoization-purity","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P54-S03-ttl-freshness","sourceIds":["SRE","DDIA"]},
+    {"sectionId":"T02-P54-S04-lru-memory-budget","sourceIds":["PYTHON-REF","CLRS4"]},
+    {"sectionId":"T02-P54-S05-invalidation-order","sourceIds":["DDIA","SRE"]},
+    {"sectionId":"T02-P54-S06-stampede-singleflight","sourceIds":["SRE","SRE-WORKBOOK"]},
+    {"sectionId":"T02-P54-S07-negative-cache","sourceIds":["SRE","DDIA"]},
+    {"sectionId":"T02-P54-S08-cache-contract","sourceIds":["DDIA","SRE","SICP"]}
+  ]
+}
