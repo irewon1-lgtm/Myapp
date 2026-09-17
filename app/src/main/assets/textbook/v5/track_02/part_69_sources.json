@@ -1,14 +1,13 @@
 {
-  "part": 69,
-  "title": "Context manager state machine — enter·exit·exception suppression·cleanup을 추적하기",
-  "sections": [
-    {"id":"T02-P69-S01-context-protocol","sourceIds":["PYTHON-REF","SICP"]},
-    {"id":"T02-P69-S02-enter-resource","sourceIds":["PYTHON-REF","SRE"]},
-    {"id":"T02-P69-S03-exit-exception-triple","sourceIds":["PYTHON-REF","SRE"]},
-    {"id":"T02-P69-S04-suppression-return","sourceIds":["PYTHON-REF","SICP"]},
-    {"id":"T02-P69-S05-cleanup-order","sourceIds":["PYTHON-REF","SRE"]},
-    {"id":"T02-P69-S06-generator-contextmanager","sourceIds":["PYTHON-REF","SICP"]},
-    {"id":"T02-P69-S07-exception-safety","sourceIds":["SRE","PYTHON-REF"]},
-    {"id":"T02-P69-S08-context-contract","sourceIds":["SRE","PYTHON-REF"]}
+  "partId":"T02-P69",
+  "sections":[
+    {"sectionId":"T02-P69-S01-context-protocol","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P69-S02-enter-resource","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P69-S03-exit-exception-triple","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P69-S04-suppression-return","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P69-S05-cleanup-order","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P69-S06-generator-contextmanager","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P69-S07-exception-safety","sourceIds":["SRE","PYTHON-REF"]},
+    {"sectionId":"T02-P69-S08-context-contract","sourceIds":["SRE","PYTHON-REF"]}
   ]
 }
