@@ -1,14 +1,13 @@
 {
-  "part": 70,
-  "title": "Async iteration과 async context — __aiter__·__anext__·async with의 suspension 경계를 추적하기",
-  "sections": [
-    {"id":"T02-P70-S01-async-iteration-protocol","sourceIds":["PYTHON-REF","SICP"]},
-    {"id":"T02-P70-S02-stopasynciteration","sourceIds":["PYTHON-REF","SICP"]},
-    {"id":"T02-P70-S03-async-for-desugar","sourceIds":["PYTHON-REF","CSAPP3"]},
-    {"id":"T02-P70-S04-async-context-protocol","sourceIds":["PYTHON-REF","SRE"]},
-    {"id":"T02-P70-S05-aenter-aexit","sourceIds":["PYTHON-REF","SRE"]},
-    {"id":"T02-P70-S06-cancellation-cleanup","sourceIds":["PYTHON-REF","SRE"]},
-    {"id":"T02-P70-S07-sync-async-boundary","sourceIds":["PYTHON-REF","CSAPP3"]},
-    {"id":"T02-P70-S08-async-protocol-contract","sourceIds":["SRE","PYTHON-REF"]}
+  "partId":"T02-P70",
+  "sections":[
+    {"sectionId":"T02-P70-S01-async-iteration-protocol","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P70-S02-stopasynciteration","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P70-S03-async-for-desugar","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P70-S04-async-context-protocol","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P70-S05-aenter-aexit","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P70-S06-cancellation-cleanup","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P70-S07-sync-async-boundary","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P70-S08-async-protocol-contract","sourceIds":["SRE","PYTHON-REF"]}
   ]
 }
