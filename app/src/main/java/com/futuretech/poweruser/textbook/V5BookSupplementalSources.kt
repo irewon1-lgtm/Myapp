@@ -40,6 +40,9 @@ object V5BookSupplementalSources {
         s("PROTOBUF-WIRE", "Protocol Buffers Encoding", "Google", V5BookSource.SourceType.OFFICIAL_DOC, "current official encoding guide", "https://protobuf.dev/programming-guides/encoding/"),
         s("UNICODE-UTS39", "Unicode Security Mechanisms", "Unicode Consortium", V5BookSource.SourceType.STANDARD, "UTS #39", "https://www.unicode.org/reports/tr39/"),
         s("LLVM-LANGREF", "LLVM Language Reference Manual", "LLVM Project", V5BookSource.SourceType.OFFICIAL_DOC, "current LangRef", "https://llvm.org/docs/LangRef.html"),
+        s("LLVM-NEWPM", "Using the New Pass Manager", "LLVM Project", V5BookSource.SourceType.OFFICIAL_DOC, "current documentation", "https://llvm.org/docs/NewPassManager.html"),
+        s("LLVM-AA", "LLVM Alias Analysis Infrastructure", "LLVM Project", V5BookSource.SourceType.OFFICIAL_DOC, "current documentation", "https://llvm.org/docs/AliasAnalysis.html"),
+        s("LLVM-VECT", "Auto-Vectorization in LLVM", "LLVM Project", V5BookSource.SourceType.OFFICIAL_DOC, "current documentation", "https://llvm.org/docs/Vectorizers.html"),
         s("ARM-ELF-ABI", "ELF for the Arm Architecture", "Arm ABI project", V5BookSource.SourceType.STANDARD, "current abi-aa", "https://github.com/ARM-software/abi-aa/blob/main/aaelf32/aaelf32.rst"),
         s("GC-HANDBOOK2", "The Garbage Collection Handbook: The Art of Automatic Memory Management", "Richard Jones; Antony Hosking; Eliot Moss", V5BookSource.SourceType.ENGINEERING_BOOK, "2nd edition, 2023", "https://gchandbook.org/")
     )
