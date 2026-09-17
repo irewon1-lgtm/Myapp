@@ -11,18 +11,22 @@ class V5EditorialDensityGateTest {
         return candidates.firstOrNull { it.exists() } ?: error("Missing path: $path")
     }
 
+    private fun manifestFiles(track: File): List<File> = track.listFiles().orEmpty()
+        .filter { it.isFile && (it.name == "manifest.json" || it.name.matches(Regex("manifest_\\d{2}\\.json"))) }
+        .sortedWith(compareBy<File> { if (it.name == "manifest.json") 0 else 1 }.thenBy { it.name })
+
     private fun activeParts(): List<File> {
         val root = repoFile("src/main/assets/textbook/v5")
         return root.listFiles().orEmpty()
             .filter { it.isDirectory && it.name.matches(Regex("track_\\d{2}")) }
             .sortedBy { it.name }
             .flatMap { track ->
-                val manifest = File(track, "manifest.json")
-                if (!manifest.isFile) return@flatMap emptyList()
-                Regex("\\\"assetPath\\\"\\s*:\\s*\\\"([^\\\"]+\\.md)\\\"")
-                    .findAll(manifest.readText(Charsets.UTF_8))
-                    .map { File(root.parentFile.parentFile, it.groupValues[1]) }
-                    .toList()
+                manifestFiles(track).flatMap { manifest ->
+                    Regex("\\\"assetPath\\\"\\s*:\\s*\\\"([^\\\"]+\\.md)\\\"")
+                        .findAll(manifest.readText(Charsets.UTF_8))
+                        .map { File(root.parentFile.parentFile, it.groupValues[1]) }
+                        .toList()
+                }
             }
     }
 
