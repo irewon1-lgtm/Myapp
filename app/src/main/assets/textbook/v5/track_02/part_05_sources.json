@@ -1,0 +1,15 @@
+{
+  "partId": "T02-P05",
+  "sections": [
+    {"sectionId":"T02-P05-S01-structure-by-operation","sourceIds":["ODS","CLRS4","SICP"]},
+    {"sectionId":"T02-P05-S02-list-dynamic-array","sourceIds":["PYTHON-REF","ODS","CLRS4"]},
+    {"sectionId":"T02-P05-S03-tuple-fixed-relation","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P05-S04-dict-mapping","sourceIds":["PYTHON-REF","ODS"]},
+    {"sectionId":"T02-P05-S05-set-membership","sourceIds":["PYTHON-REF","ODS"]},
+    {"sectionId":"T02-P05-S06-hash-contract","sourceIds":["PYTHON-REF","CLRS4","ODS"]},
+    {"sectionId":"T02-P05-S07-nested-aliasing","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P05-S08-iterator-generator","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P05-S09-sort-contract","sourceIds":["PYTHON-REF","CLRS4"]},
+    {"sectionId":"T02-P05-S10-data-structure-api","sourceIds":["SICP","REFACTORING2","DDD"]}
+  ]
+}
