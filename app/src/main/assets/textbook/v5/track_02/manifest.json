@@ -1,0 +1,17 @@
+{
+  "trackId":"T02",
+  "trackNumber":2,
+  "title":"프로그래밍 사고와 문법 — 문제 계약에서 Python 실행 모델까지",
+  "parts":[
+    {"id":"T02-P01","order":1,"title":"문제 분해와 실행 계약 — 요구사항을 상태·불변식·절차로 바꾸기","assetPath":"textbook/v5/track_02/part_01_problem_contracts.md","sourceMapPath":"textbook/v5/track_02/part_01_sources.json","prerequisiteConceptIds":[]},
+    {"id":"T02-P02","order":2,"title":"값·타입·객체 — Python에서 이름과 데이터가 실제로 연결되는 방식","assetPath":"textbook/v5/track_02/part_02_values_types_objects.md","sourceMapPath":"textbook/v5/track_02/part_02_sources.json","prerequisiteConceptIds":["T02-P01-S01-io-state-output","T02-P01-S02-data-contract","T02-P01-S09-side-effect-boundary"]},
+    {"id":"T02-P03","order":3,"title":"조건·반복·논리 — 제어 흐름을 증명 가능한 상태 변화로 읽기","assetPath":"textbook/v5/track_02/part_03_control_flow_logic.md","sourceMapPath":"textbook/v5/track_02/part_03_sources.json","prerequisiteConceptIds":["T02-P01-S06-counterexample-boundary","T02-P02-S03-mutability-aliasing","T02-P02-S06-none-absence"]},
+    {"id":"T02-P04","order":4,"title":"함수와 추상화 — 호출 계약, scope, closure, 재귀, 부작용을 한 모델로 연결하기","assetPath":"textbook/v5/track_02/part_04_functions_abstraction.md","sourceMapPath":"textbook/v5/track_02/part_04_sources.json","prerequisiteConceptIds":["T02-P02-S01-name-binding","T02-P03-S02-short-circuit","T02-P03-S05-loop-invariant"]},
+    {"id":"T02-P05","order":5,"title":"Collection과 자료구조 — 저장 모양이 연산 비용과 불변조건을 결정한다","assetPath":"textbook/v5/track_02/part_05_collections_data_structures.md","sourceMapPath":"textbook/v5/track_02/part_05_sources.json","prerequisiteConceptIds":["T02-P02-S03-mutability-aliasing","T02-P03-S08-iteration-protocol","T02-P04-S02-parameter-binding"]},
+    {"id":"T02-P06","order":6,"title":"오류와 resource lifetime — 실패를 숨기지 않고 상태를 안전하게 정리하기","assetPath":"textbook/v5/track_02/part_06_errors_resources.md","sourceMapPath":"textbook/v5/track_02/part_06_sources.json","prerequisiteConceptIds":["T02-P01-S08-failure-model","T02-P04-S08-pure-effect","T02-P05-S08-iterator-generator"]},
+    {"id":"T02-P07","order":7,"title":"Module·import·실행 환경 — 코드 경계와 의존성을 재현 가능하게 만들기","assetPath":"textbook/v5/track_02/part_07_modules_imports_environment.md","sourceMapPath":"textbook/v5/track_02/part_07_sources.json","prerequisiteConceptIds":["T02-P04-S04-scope-lifetime","T02-P06-S05-context-manager","T02-P06-S10-error-boundary"]},
+    {"id":"T02-P08","order":8,"title":"Class와 데이터 모델 — 상태·행동·불변조건을 하나의 경계로 묶기","assetPath":"textbook/v5/track_02/part_08_classes_data_model.md","sourceMapPath":"textbook/v5/track_02/part_08_sources.json","prerequisiteConceptIds":["T02-P02-S02-identity-type-value","T02-P04-S01-function-contract","T02-P07-S04-package-dependency-direction"]},
+    {"id":"T02-P09","order":9,"title":"Type hint와 interface contract — 동적 실행 위에 정적 검증층을 세우기","assetPath":"textbook/v5/track_02/part_09_typing_interfaces.md","sourceMapPath":"textbook/v5/track_02/part_09_sources.json","prerequisiteConceptIds":["T02-P02-S10-type-contract","T02-P04-S01-function-contract","T02-P08-S08-duck-protocol"]},
+    {"id":"T02-P10","order":10,"title":"Iterator·Generator·지연 평가 — 데이터를 저장하지 않고 흐르게 하는 실행 모델","assetPath":"textbook/v5/track_02/part_10_iterators_generators_lazy.md","sourceMapPath":"textbook/v5/track_02/part_10_sources.json","prerequisiteConceptIds":["T02-P03-S08-iteration-protocol","T02-P05-S08-iterator-generator","T02-P09-S04-collection-element-contract"]}
+  ]
+}
