@@ -1,0 +1,15 @@
+{
+  "partId": "T02-P12",
+  "sections": [
+    {"sectionId":"T02-P12-S01-test-contract-claim","sourceIds":["SICP","NIST-SSDF"]},
+    {"sectionId":"T02-P12-S02-boundary-partition","sourceIds":["CLRS4","NIST-SSDF","LEARNING-CLT-COMPUTING"]},
+    {"sectionId":"T02-P12-S03-arrange-act-assert","sourceIds":["REFACTORING2","NIST-SSDF"]},
+    {"sectionId":"T02-P12-S04-unit-boundary","sourceIds":["REFACTORING2","SICP"]},
+    {"sectionId":"T02-P12-S05-test-doubles","sourceIds":["GOF","REFACTORING2"]},
+    {"sectionId":"T02-P12-S06-integration-contract","sourceIds":["NIST-SSDF","SRE"]},
+    {"sectionId":"T02-P12-S07-property-invariant","sourceIds":["SICP","CLRS4"]},
+    {"sectionId":"T02-P12-S08-stateful-sequence","sourceIds":["SICP","CLRS4","DDIA"]},
+    {"sectionId":"T02-P12-S09-flaky-determinism","sourceIds":["SRE","SRE-WORKBOOK"]},
+    {"sectionId":"T02-P12-S10-coverage-signal","sourceIds":["NIST-SSDF","SRE"]}
+  ]
+}
