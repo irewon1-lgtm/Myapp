@@ -1,0 +1,13 @@
+{
+  "partId":"T02-P75",
+  "sections":[
+    {"sectionId":"T02-P75-S01-code-object","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P75-S02-frame-object","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P75-S03-locals-globals-builtins","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P75-S04-instruction-position","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P75-S05-bytecode-view","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P75-S06-frame-retention","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P75-S07-introspection-cost","sourceIds":["SRE","PYTHON-REF"]},
+    {"sectionId":"T02-P75-S08-frame-code-contract","sourceIds":["SRE","PYTHON-REF"]}
+  ]
+}
