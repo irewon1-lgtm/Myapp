@@ -23,6 +23,17 @@ class V5BookReaderSourceContractTest {
     }
 
     @Test
+    fun V5RepositoryMergesManifestShardsBeforeValidatingTheBook() {
+        val repository = source("com/futuretech/poweruser/textbook/V5BookAssetRepository.kt")
+        assertTrue(repository.contains("context.assets.list(trackDir)"))
+        assertTrue(repository.contains("manifest_\\\\d{2}\\\\.json"))
+        assertTrue(repository.contains("fragments.flatMap { it.parts }.sortedBy { it.order }"))
+        assertTrue(repository.contains("validateManifest(merged, trackNumber)"))
+        assertTrue(repository.contains("Duplicate part asset paths"))
+        assertTrue(repository.contains("Duplicate source-map paths"))
+    }
+
+    @Test
     fun V5ReaderLoadsOnlyCurrentPartAndEvidenceBeforeProse() {
         val reader = source("com/futuretech/poweruser/ui/V5TrackBookScreen.kt")
         assertTrue(reader.contains("val part = manifest.parts[partIndex]"))
