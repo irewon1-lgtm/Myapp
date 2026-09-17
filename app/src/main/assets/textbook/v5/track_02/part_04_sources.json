@@ -1,0 +1,15 @@
+{
+  "partId": "T02-P04",
+  "sections": [
+    {"sectionId":"T02-P04-S01-function-contract","sourceIds":["SICP","PYTHON-REF","REFACTORING2"]},
+    {"sectionId":"T02-P04-S02-parameter-binding","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P04-S03-default-evaluation","sourceIds":["PYTHON-REF"]},
+    {"sectionId":"T02-P04-S04-scope-lifetime","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P04-S05-first-class-function","sourceIds":["SICP","PYTHON-REF"]},
+    {"sectionId":"T02-P04-S06-closure-environment","sourceIds":["SICP","PYTHON-REF"]},
+    {"sectionId":"T02-P04-S07-recursion-structure","sourceIds":["SICP","PYTHON-REF","CLRS4"]},
+    {"sectionId":"T02-P04-S08-pure-effect","sourceIds":["SICP","REFACTORING2"]},
+    {"sectionId":"T02-P04-S09-function-cohesion","sourceIds":["REFACTORING2","SICP"]},
+    {"sectionId":"T02-P04-S10-ai-contract-unit","sourceIds":["SICP","NIST-SSDF","LEARNING-CLT-COMPUTING"]}
+  ]
+}
