@@ -1,0 +1,13 @@
+{
+  "partId":"T02-P53",
+  "sections":[
+    {"sectionId":"T02-P53-S01-deque-workload","sourceIds":["PYTHON-REF","ODS"]},
+    {"sectionId":"T02-P53-S02-counter-multiset","sourceIds":["PYTHON-REF","CLRS4"]},
+    {"sectionId":"T02-P53-S03-defaultdict-factory","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P53-S04-chainmap-layering","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P53-S05-namedtuple-record","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P53-S06-ordering-mapping","sourceIds":["PYTHON-REF","DDD"]},
+    {"sectionId":"T02-P53-S07-bounded-history","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P53-S08-collection-choice","sourceIds":["PYTHON-REF","ODS","CLRS4"]}
+  ]
+}
