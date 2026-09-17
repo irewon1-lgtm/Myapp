@@ -1,0 +1,13 @@
+{
+  "partId":"T02-P79",
+  "sections":[
+    {"sectionId":"T02-P79-S01-text-byte-boundary","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P79-S02-codec-lookup","sourceIds":["PYTHON-REF"]},
+    {"sectionId":"T02-P79-S03-incremental-decoder","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P79-S04-error-handler","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P79-S05-stream-boundary","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P79-S06-bom-state","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P79-S07-lossy-recovery","sourceIds":["SRE","NIST-SSDF"]},
+    {"sectionId":"T02-P79-S08-codec-contract","sourceIds":["SRE","PYTHON-REF"]}
+  ]
+}
