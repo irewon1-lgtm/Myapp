@@ -1,0 +1,13 @@
+{
+  "partId":"T02-P76",
+  "sections":[
+    {"sectionId":"T02-P76-S01-compile-modes","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P76-S02-eval-expression","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P76-S03-exec-namespace","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P76-S04-builtins-injection","sourceIds":["PYTHON-REF","NIST-SSDF"]},
+    {"sectionId":"T02-P76-S05-closure-namespace-boundary","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P76-S06-untrusted-code-boundary","sourceIds":["NIST-SSDF","PYTHON-REF"]},
+    {"sectionId":"T02-P76-S07-audit-observability","sourceIds":["SRE","NIST-SSDF"]},
+    {"sectionId":"T02-P76-S08-dynamic-execution-contract","sourceIds":["NIST-SSDF","SRE"]}
+  ]
+}
