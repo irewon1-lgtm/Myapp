@@ -39,8 +39,9 @@ data class V5SectionEvidence(
  * contiguous P01..Pn sequence. This keeps book growth from repeatedly rewriting a giant manifest.
  *
  * A source map is validated independently for the current part and is bound one-to-one, in order,
- * to every learner-facing H2 CHAPTER. This prevents an author from dropping a token source-map file
- * beside prose while leaving whole chapters without evidence coverage.
+ * to every learner-facing H2 chapter. Authored V5 content may use either the original `CHAPTER nn`
+ * label or a numbered `nn.` H2 label. Both forms keep evidence coverage fail-closed while allowing
+ * the newer textbook heading style to render through the same reader.
  */
 class V5BookAssetRepository(
     private val context: Context,
@@ -106,9 +107,9 @@ class V5BookAssetRepository(
         val markdown = context.assets.open(part.assetPath).bufferedReader().use { it.readText() }
         val chapterHeadings = TextbookMarkdownParser.parse(markdown)
             .filterIsInstance<TextbookBlock.Heading>()
-            .filter { it.level == 2 && it.text.startsWith("CHAPTER ") }
+            .filter { it.level == 2 && isLearnerChapterHeading(it.text) }
 
-        require(chapterHeadings.isNotEmpty()) { "${part.id} has no learner-facing H2 CHAPTER headings" }
+        require(chapterHeadings.isNotEmpty()) { "${part.id} has no learner-facing H2 chapter headings" }
         require(map.sections.size == chapterHeadings.size) {
             "${part.id} evidence coverage mismatch: chapters=${chapterHeadings.size} evidence=${map.sections.size}"
         }
@@ -131,6 +132,9 @@ class V5BookAssetRepository(
         }
         return map
     }
+
+    private fun isLearnerChapterHeading(text: String): Boolean =
+        text.startsWith("CHAPTER ") || text.matches(Regex("^\\d+\\.\\s+.+"))
 
     private fun validateManifest(manifest: V5BookManifest, expectedTrackNumber: Int) {
         require(manifest.trackNumber == expectedTrackNumber) {

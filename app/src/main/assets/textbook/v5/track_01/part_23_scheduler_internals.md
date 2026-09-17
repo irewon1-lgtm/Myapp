@@ -1,248 +1,303 @@
-# PART 23 · Scheduler Internals — EEVDF, runqueue, utilization, RT, deadline
+# PART 23 · Scheduler Internals — EEVDF, runqueue, RT, deadline
 
-Scheduler는 `여러 thread를 번갈아 실행한다`는 설명으로는 부족하다. 실제 kernel은 runnable task의 fairness, latency, deadline, affinity, CPU capacity, thermal·power state, cgroup budget을 동시에 고려해 **누가 언제 어느 CPU에서 얼마나 실행될지** 결정한다. Scheduling bug는 CPU가 100%일 때만 나타나는 것이 아니라 wakeup delay, priority inversion, migration churn, bandwidth throttling, heterogeneous placement처럼 latency tail을 통해 드러난다.
-
----
-
-## CHAPTER 01 · Runnable과 running은 다른 상태다
-
-Task가 runnable이라는 것은 CPU만 받으면 실행할 준비가 됐다는 뜻이고, running은 실제 CPU에서 instruction을 수행 중이라는 뜻이다. Runnable task가 많아지면 runqueue에서 대기하는 시간이 생긴다. CPU utilization이 높다는 사실만으로 queue delay를 알 수 없다. 한 CPU에서 10개의 짧은 runnable task가 경쟁하는 상태와 1개의 compute-bound task가 혼자 100%를 사용하는 상태는 latency 특성이 다르다.
-
-Scheduler 분석의 기본 단위는 `실행시간`뿐 아니라 **runnable wait time**이다. 응답 지연을 CPU service time과 scheduler wait time으로 분리해야 한다.
+스케줄러는 CPU 시간을 단순히 나누는 코드가 아니다. runnable state, priority, deadline, locality, thermal capacity, cgroup policy가 동시에 적용되어 어떤 task가 언제 어느 CPU에서 실행될지 결정한다. latency를 설명하려면 on-CPU time과 runnable-but-not-running 시간을 분리해야 한다.
 
 ---
 
-## CHAPTER 02 · Scheduling class는 서로 다른 policy를 한 queue에 섞지 않기 위한 구조다
+## CHAPTER 01 · runnable과 running
 
-Linux는 normal/fair task, real-time task, deadline task처럼 서로 다른 scheduling class를 가진다. 각 class는 자신의 ordering과 preemption rule을 사용하고 class 사이에도 priority relationship이 존재한다. SCHED_NORMAL workload를 분석한 결론을 SCHED_FIFO task에 그대로 적용하면 틀린다.
+runnable task는 실행할 준비가 되었지만 아직 CPU를 받지 못한 상태이고 running task는 실제 core에서 instruction을 실행 중이다. 두 상태 사이의 queue delay가 user-visible latency의 큰 부분이 될 수 있다.
 
-Scheduler policy 변경은 단순 tuning knob가 아니라 starvation·system liveness에 영향을 줄 수 있다. RT priority를 잘못 사용하면 일반 task가 CPU를 거의 못 받을 수 있으므로 privilege와 runtime limit이 중요하다.
+CPU utilization이 낮아 보여도 특정 CPU runqueue가 길거나 affinity가 좁으면 task가 오래 runnable 상태로 남을 수 있다. blocked와 runnable wait를 같은 '대기'로 합치면 scheduler 문제와 I/O 문제를 구분할 수 없다.
 
----
-
-## CHAPTER 03 · EEVDF는 fairness를 lag와 virtual deadline으로 표현한다
-
-EEVDF는 task가 공정한 몫보다 덜 실행됐는지 더 실행됐는지를 lag로 추적한다. Positive lag는 task가 CPU time을 받을 채무가 남아 있음을, negative lag는 이미 상대적으로 많이 실행됐음을 나타낸다. Eligible task 중 virtual deadline이 가장 이른 task를 우선 선택하는 방식으로 fairness와 latency를 결합한다.
-
-이 모델은 `round-robin으로 같은 시간씩`이라는 설명보다 강하다. Task weight와 requested slice가 다르면 virtual time 진행과 deadline이 달라진다. Scheduler trace에서 단순 switch 순서만 보지 말고 task weight·lag·slice 정책을 이해해야 한다.
+wakeup, enqueue, switch timestamp를 연결해 runnable delay를 측정한다. optimization은 total runtime만 줄이는 것이 아니라 deadline 전에 CPU를 얻는 probability를 높이는지 확인한다.
 
 ---
 
-## CHAPTER 04 · Virtual runtime은 physical elapsed time과 같은 단위가 아니다
+## CHAPTER 02 · scheduling class
 
-Fair scheduler는 task weight를 반영해 execution을 virtual-time domain에 투영한다. 높은 weight task는 같은 physical CPU time을 사용해도 virtual runtime이 다르게 증가할 수 있다. 이 때문에 wall-clock 5ms를 실행했다는 사실만으로 scheduler fairness를 판단할 수 없다.
+scheduling class는 normal, real-time, deadline처럼 서로 다른 policy와 priority relation을 정의한다. 같은 numeric priority처럼 보여도 class가 다르면 선점 규칙과 starvation 가능성이 달라진다.
 
-Virtual runtime은 idealized fair CPU model을 근사하기 위한 accounting state다. Profiling에서 application elapsed time, on-CPU time, scheduler virtual accounting을 같은 값으로 섞지 않는다.
+높은 class를 사용하면 latency가 자동 개선되는 것이 아니다. 잘못된 RT task는 normal workload 전체를 굶길 수 있고 deadline reservation이 과도하면 admission이 실패할 수 있다.
 
----
-
-## CHAPTER 05 · Wakeup preemption은 interactive latency를 크게 좌우한다
-
-잠들어 있던 task가 event를 받고 runnable이 됐을 때 현재 실행 중인 task를 즉시 preempt할지, 기존 slice가 더 진행되도록 둘지는 responsiveness와 context-switch overhead를 바꾼다. Latency-sensitive task가 짧은 slice/early virtual deadline을 가지면 빠른 service를 받을 수 있다.
-
-Wakeup-heavy workload에서는 CPU utilization보다 **wakeup-to-run latency**가 핵심 metric이다. UI main thread, audio thread, request worker가 event 이후 언제 실제 CPU를 받았는지 측정해야 한다.
+incident에는 class, priority, policy, runtime limit을 함께 기록한다. application 요구와 맞지 않는 class를 성능 문제의 임시 우회로로 사용하지 않는다.
 
 ---
 
-## CHAPTER 06 · Context switch는 register 저장 이상의 비용을 가진다
+## CHAPTER 03 · EEVDF
 
-Task 전환에는 architectural state save/restore 외에도 cache/TLB locality 상실, branch predictor state interference, kernel bookkeeping이 따른다. Context-switch count가 늘었다고 무조건 문제가 되는 것은 아니지만 work quantum이 너무 짧으면 useful computation 대비 overhead 비율이 커질 수 있다.
+EEVDF는 eligible task와 virtual deadline을 사용해 공정성과 latency를 조절하는 scheduler model이다. 모든 runnable task를 단순 round-robin으로 순환하는 구조가 아니며 weight와 service history가 selection에 영향을 준다.
 
-Thread 수를 늘려 throughput이 떨어질 때 lock contention뿐 아니라 scheduler churn과 cache footprint를 같이 봐야 한다.
+virtual deadline이 빠른 task라도 eligibility 조건을 만족해야 한다. 따라서 한 시점의 priority만 보고 다음 task를 예측하기 어렵다. workload의 wakeup pattern과 weight가 함께 중요하다.
 
----
-
-## CHAPTER 07 · Per-CPU runqueue는 scalability를 높이는 대신 load balancing을 필요로 한다
-
-모든 CPU가 하나의 global queue를 강하게 lock하면 multi-core scalability가 나빠진다. Per-CPU runqueue 구조는 local scheduling을 빠르게 만들지만 CPU별 load가 불균형해질 수 있다. Scheduler는 idle CPU pull, periodic balancing, wakeup placement 같은 mechanism으로 work를 이동시킨다.
-
-Migration은 idle core를 활용하게 하지만 cache/NUMA locality를 잃을 수 있다. `항상 가장 빈 CPU로 이동`이 최적이 아닌 이유다.
+scheduler trace에서 enqueue, virtual service progression, actual switch를 비교한다. tuning은 특정 task를 항상 먼저 실행시키는 것이 아니라 fairness contract 안에서 latency 목표를 만족시키는 방향이어야 한다.
 
 ---
 
-## CHAPTER 08 · Load balance의 입력은 task count보다 utilization과 capacity다
+## CHAPTER 04 · virtual runtime
 
-Task 두 개가 있다고 해서 load가 두 배라는 뜻은 아니다. 하나는 1% CPU를 쓰고 하나는 90%를 쓸 수 있다. Heterogeneous CPU에서는 동일 utilization도 CPU capacity에 따라 의미가 달라진다. Scheduler는 runnable demand와 CPU capacity를 normalization해 placement 판단에 사용한다.
+virtual runtime은 실제 실행 시간을 weight와 capacity 관점에서 정규화한 논리적 progress 값이다. 서로 다른 weight의 task가 CPU share를 공정하게 비교할 수 있게 한다.
 
-Load balancing bug를 찾을 때 runqueue length, util_avg, CPU capacity, affinity를 같이 봐야 한다.
+wall-clock runtime과 virtual runtime을 혼동하면 scheduler behavior를 잘못 해석한다. CPU frequency나 task weight가 달라도 service accounting 목적은 동일하지 않을 수 있다.
 
----
-
-## CHAPTER 09 · PELT는 utilization history를 지수적으로 누적하는 signal이다
-
-Per-Entity Load Tracking은 task와 runqueue의 utilization/load history를 시간에 따라 decay시키며 추적한다. 최근 activity가 더 큰 영향을 갖고 오래된 activity는 점차 줄어든다. 이 signal은 scheduler placement와 schedutil frequency selection에 연결된다.
-
-짧은 burst task는 실제로 즉시 높은 CPU demand가 생겨도 utilization signal이 ramp-up되는 데 시간이 걸릴 수 있다. 그래서 latency-critical burst에 uclamp 같은 hint가 필요한 경우가 있다.
+trace에서 actual runtime, weight, virtual progress를 분리해 본다. fairness regression은 단일 task throughput보다 competing workload의 service ratio로 검증한다.
 
 ---
 
-## CHAPTER 10 · Utilization clamp는 실제 사용량을 바꾸지 않고 decision input을 제한한다
+## CHAPTER 05 · wakeup preemption
 
-UCLAMP_MIN과 UCLAMP_MAX는 task의 measured utilization 자체를 조작하는 것이 아니라 scheduler가 placement/frequency 결정을 할 때 사용할 effective bound를 제공한다. UCLAMP_MIN은 최소 performance expectation을, UCLAMP_MAX는 energy/thermal reason으로 최대 performance requirement를 제한하는 데 사용할 수 있다.
+wakeup preemption은 새로 runnable이 된 task가 현재 running task를 선점할 가치가 있는지 판단한다. interactive workload의 response time을 줄일 수 있지만 과도한 선점은 context switch와 cache disruption을 늘린다.
 
-Static clamp는 device별 capacity가 달라 portable하지 않을 수 있다. Feedback loop와 workload SLO를 기준으로 조절해야 한다.
+짧은 sleeper가 반복 wakeup하면 CPU-bound task의 progress가 불안정해질 수 있다. 반대로 wakeup task를 너무 늦게 실행하면 input latency가 커진다.
 
----
-
-## CHAPTER 11 · schedutil은 scheduler utilization과 CPUFreq를 연결한다
-
-Schedutil governor는 scheduler가 계산한 utilization signal을 바탕으로 CPU performance request를 만든다. Scheduler placement와 frequency scaling이 독립 subsystem처럼 보여도 실제로는 같은 utilization signal을 공유한다. Task migration이나 uclamp 변경이 frequency behavior까지 바꿀 수 있다.
-
-Frequency transition latency와 rate limit 때문에 task가 깨어난 즉시 원하는 performance state에 도달하지 못할 수 있다. Scheduler trace와 cpufreq trace를 함께 봐야 한다.
+wakeup-to-run latency와 context switch rate를 함께 측정한다. latency만 줄이고 throughput이 크게 손상되지 않는지 workload mix로 확인한다.
 
 ---
 
-## CHAPTER 12 · CPU affinity는 scheduling search space를 줄인다
+## CHAPTER 06 · context switch
 
-Affinity mask는 task가 실행될 수 있는 CPU set을 제한한다. 이는 cache locality와 isolation에 도움이 될 수 있지만 load balancer가 선택할 수 있는 CPU를 줄인다. 한 core에 여러 latency-sensitive task를 pinning하면 다른 CPU가 idle이어도 queue delay가 생긴다.
+context switch는 register와 stack pointer를 바꾸는 것뿐 아니라 cache, TLB, branch predictor locality에 영향을 줄 수 있다. oversubscription에서 switch frequency가 높아지면 간접 비용이 커진다.
 
-Affinity는 topology-aware하게 설정해야 한다. SMT sibling, NUMA node, big/little capacity를 무시하면 성능이 악화된다.
+thread 수를 늘렸는데 CPU 사용률은 높고 throughput이 떨어지는 경우 useful work보다 scheduling overhead가 늘었을 수 있다. NUMA migration과 결합되면 memory locality도 깨진다.
 
----
-
-## CHAPTER 13 · SMT sibling은 logical CPU 두 개가 완전한 core 두 개라는 뜻이 아니다
-
-Simultaneous Multithreading은 일부 execution resource를 공유하면서 여러 hardware thread의 instruction을 같은 physical core에서 실행한다. 두 runnable task가 SMT sibling에 배치되면 execution unit, cache, frontend resource를 경쟁할 수 있다.
-
-CPU count만 보고 capacity를 계산하면 oversubscription을 과소평가할 수 있다. Workload가 서로 보완적인 resource를 사용할 때는 이득이 있지만 같은 execution unit을 강하게 쓰면 interference가 커진다.
+switch rate, migration, cache miss, runnable delay를 함께 본다. 단순 ns 단위 switch cost 하나로 application impact를 설명하지 않는다.
 
 ---
 
-## CHAPTER 14 · NUMA-aware scheduling은 CPU와 memory locality를 함께 본다
+## CHAPTER 07 · per-CPU runqueue
 
-Task가 다른 NUMA node의 memory를 지속적으로 읽으면 scheduler가 CPU를 memory 쪽으로 옮기거나 memory migration을 고려할 수 있다. 하지만 task migration 자체가 cache locality를 깨뜨린다. Scheduler는 runnable load만이 아니라 memory placement와 locality trade-off를 고려한다.
+per-CPU runqueue는 global scheduling lock을 줄이고 cache locality를 높이는 구조다. 하지만 CPU별 load가 달라지면 idle CPU가 있는데 다른 CPU queue는 길어지는 imbalance가 생길 수 있다.
 
-NUMA incident는 CPU placement trace와 page migration/NUMA fault metric을 함께 봐야 한다.
+affinity와 cgroup cpuset가 balancing 범위를 제한할 수 있다. task migration은 imbalance를 줄이지만 locality를 희생한다.
 
----
-
-## CHAPTER 15 · Real-time FIFO는 fairness보다 priority를 우선한다
-
-SCHED_FIFO class에서 높은-priority runnable task는 낮은 priority task보다 우선하며 같은 priority의 task는 특정 event까지 계속 실행할 수 있다. 일반 fair scheduler의 virtual deadline 개념으로 동작하지 않는다. 잘못된 RT loop는 CPU를 장시간 점유해 system responsiveness를 무너뜨릴 수 있다.
-
-RT policy는 worst-case execution time과 blocking section을 분석하고 runtime limit을 두어야 한다.
+CPU별 runnable count와 idle time을 동시에 본다. load balancing이 자주 일어나는지, 특정 CPU에 hot task가 고정되는지 trace로 확인한다.
 
 ---
 
-## CHAPTER 16 · Round-robin RT는 동일 priority task 사이 quantum을 도입한다
+## CHAPTER 08 · load balance
 
-SCHED_RR은 FIFO 계열 priority ordering을 유지하면서 동일 priority runnable task 사이에 time quantum을 사용한다. Quantum이 너무 작으면 context-switch overhead가 늘고 너무 크면 peer latency가 커진다.
+load balance는 overloaded CPU에서 idle 또는 less-loaded CPU로 task를 옮겨 capacity를 활용한다. migration이 항상 좋은 것은 아니며 cache warmth와 NUMA placement 비용을 함께 고려해야 한다.
 
-RT scheduling parameter는 평균 workload가 아니라 worst-case timing requirement와 interference를 기준으로 선택한다.
+짧은 task를 계속 옮기면 migration cost가 execution time보다 커질 수 있다. heterogeneous CPU에서는 단순 runnable count보다 capacity 차이가 중요하다.
 
----
-
-## CHAPTER 17 · Priority inversion은 scheduler priority만으로 해결되지 않는다
-
-High-priority task가 mutex를 기다리고 mutex owner가 low-priority인데 medium-priority task들이 CPU를 계속 사용하면 high-priority task가 간접적으로 오래 막힐 수 있다. Priority inheritance는 lock owner의 effective priority를 일시적으로 올려 inversion을 줄이는 mechanism이다.
-
-RT correctness는 scheduler class와 synchronization primitive를 함께 봐야 한다. Lock chain이 여러 단계면 blocking bound 계산도 복잡해진다.
+migration reason, source/destination CPU, task age를 기록한다. throughput과 tail latency가 모두 개선되는지 확인해 balancing aggressiveness를 조정한다.
 
 ---
 
-## CHAPTER 18 · SCHED_DEADLINE은 runtime·period·deadline을 계약으로 사용한다
+## CHAPTER 09 · PELT
 
-Deadline scheduler는 task가 period마다 runtime budget을 deadline 안에 받도록 EDF와 Constant Bandwidth Server 원리를 사용한다. `priority 숫자가 높다`가 아니라 temporal reservation을 명시한다.
+PELT는 최근 utilization/load를 지수적으로 누적해 short burst와 sustained demand를 구분한다. scheduler와 DVFS가 task의 순간 사용량보다 시간에 따른 demand를 볼 수 있게 한다.
 
-예를 들어 runtime 2ms, period 10ms, deadline 10ms는 CPU utilization reservation 20%와 연결된다. 여러 task의 admission 가능성은 total utilization과 multiprocessor constraints에 영향을 받는다.
+새 task나 burst workload는 historical signal이 충분하지 않아 실제 demand와 estimate가 어긋날 수 있다. decay와 update timing이 policy response에 영향을 준다.
 
----
-
-## CHAPTER 19 · CBS는 deadline task가 budget을 초과해 다른 task를 파괴하지 않도록 한다
-
-Constant Bandwidth Server는 task가 runtime budget을 소진하면 replenishment/deadline rule을 적용해 bandwidth를 제한한다. Without enforcement, 한 deadline task의 overrun이 다른 reservation을 침범할 수 있다.
-
-Deadline miss 분석에서는 task own execution overrun, blocking, migration, interrupt interference를 구분해야 한다.
+PELT signal과 actual runtime, frequency를 함께 추적한다. utilization estimator가 workload phase 변화에 얼마나 빨리 적응하는지 확인한다.
 
 ---
 
-## CHAPTER 20 · Admission control은 impossible guarantee를 미리 거부한다
+## CHAPTER 10 · uclamp
 
-모든 real-time reservation을 받아들이면 total requested CPU가 physical capacity를 초과할 수 있다. Scheduler는 일부 policy에서 admission control을 통해 feasibility를 검사한다. Guarantee를 제공하려면 resource budget을 먼저 예약해야 한다.
+uclamp는 task나 cgroup의 utilization expectation에 최소·최대 범위를 적용해 placement와 frequency policy에 영향을 준다. latency-sensitive task에 minimum capacity를 요구하거나 background task의 maximum을 제한할 수 있다.
 
-`실행해보고 늦으면 scale up`은 hard timing requirement에 충분하지 않다. Worst-case demand와 available capacity의 관계를 사전에 검증해야 한다.
+clamp를 너무 높게 잡으면 energy와 thermal cost가 커지고, 너무 낮으면 deadline을 놓칠 수 있다. nested cgroup과 task-level setting이 함께 적용되는 effective value를 봐야 한다.
 
----
-
-## CHAPTER 21 · cgroup CPU bandwidth는 group 단위로 CPU time을 제한한다
-
-Container/service group이 일정 period 동안 사용할 수 있는 CPU quota를 제한하면 process 내부 task가 runnable이어도 quota를 소진한 뒤 throttled될 수 있다. Application profiler는 thread가 runnable인 것을 보지만 실제로는 cgroup bandwidth가 CPU 공급을 막는 상황이다.
-
-Kubernetes/container latency 문제에서 host CPU utilization이 낮아도 cgroup throttle counter가 높으면 quota가 원인일 수 있다. Scheduler wait와 policy throttle을 분리한다.
+effective clamp, CPU placement, frequency, task latency를 함께 기록한다. magic value보다 workload requirement에서 clamp를 도출한다.
 
 ---
 
-## CHAPTER 22 · CPU weight는 quota와 다른 control이다
+## CHAPTER 11 · schedutil
 
-Weight/share는 CPU가 경쟁할 때 상대적인 몫을 정하지만 idle CPU가 있을 때 hard cap처럼 막지 않을 수 있다. Quota는 absolute bandwidth ceiling을 만든다. 둘을 같은 `CPU limit`으로 부르면 behavior를 잘못 예측한다.
+schedutil은 scheduler utilization signal을 사용해 CPU frequency를 선택한다. task placement와 DVFS를 같은 demand estimate에 연결해 response를 빠르게 만들 수 있다.
 
-Multi-tenant service는 weight로 fairness를 조절하고 quota로 runaway usage를 containment할 수 있다. Latency SLO와 background throughput에 서로 다른 policy가 필요하다.
+utilization signal이 burst를 늦게 반영하거나 thermal limit가 걸리면 requested frequency와 actual frequency가 달라진다. scheduler tuning과 power tuning을 분리해서 보면 feedback 문제를 놓칠 수 있다.
 
----
-
-## CHAPTER 23 · IRQ와 softirq도 CPU time을 소비한다
-
-Application task가 실행하지 않는 동안 network/storage interrupt handling과 softirq가 CPU를 사용할 수 있다. Host CPU 100%에서 process CPU만 60%라면 나머지가 kernel/IRQ work일 수 있다. Scheduler 관점에서 application에 사용할 수 있는 effective capacity가 줄어든다.
-
-Packet storm에서 user thread를 더 늘려도 IRQ load가 bottleneck이면 throughput이 늘지 않는다. IRQ affinity와 RPS/RFS 같은 network placement까지 같이 볼 수 있다.
+request/actual frequency, PELT, runqueue delay를 같은 timeline에 둔다. code regression과 frequency policy 변화를 구분한다.
 
 ---
 
-## CHAPTER 24 · Preemption model은 kernel code가 얼마나 빨리 task 전환을 허용하는지 바꾼다
+## CHAPTER 12 · affinity
 
-Kernel preemption configuration과 critical section은 high-priority task가 ready가 되어도 실제 전환 가능한 시점을 제한할 수 있다. Long non-preemptible section은 scheduler policy와 무관하게 latency floor를 만든다.
+affinity는 task가 실행 가능한 CPU 집합을 제한한다. cache locality와 jitter를 줄일 수 있지만 너무 좁은 mask는 idle CPU가 있어도 task를 한 CPU에 가둔다.
 
-Realtime latency 분석은 scheduler decision 이후 `왜 즉시 실행되지 않았는가`를 kernel preemption-disabled interval, IRQ-off section, lock contention까지 내려가야 한다.
+CPU hotplug, heterogeneous topology, SMT sibling을 고려해야 한다. hard pinning이 scheduler의 load balancing과 thermal avoidance를 막을 수 있다.
 
----
-
-## CHAPTER 25 · Migration cost는 task마다 다르다
-
-작은 stateless worker는 CPU migration 비용이 낮을 수 있지만 large cache footprint나 NUMA-local memory를 가진 task는 migration 후 cold-cache penalty가 크다. Scheduler가 load balance를 위해 자주 migration하면 fairness는 좋아져도 throughput이 떨어질 수 있다.
-
-Migration rate와 LLC miss/NUMA remote access 증가를 correlation하면 placement churn을 찾을 수 있다.
+mask와 actual migration history를 함께 기록한다. affinity 적용 전후 latency뿐 아니라 runqueue pressure와 thermal state도 비교한다.
 
 ---
 
-## CHAPTER 26 · Wakeup affinity는 producer-consumer locality를 활용할 수 있다
+## CHAPTER 13 · SMT
 
-한 task가 다른 task를 깨울 때 같은 CPU나 가까운 CPU에 배치하면 shared data cache locality가 좋아질 수 있다. 반대로 해당 CPU가 이미 과부하라면 locality보다 queue delay가 더 큰 문제가 된다. Scheduler는 wakeup placement에서 locality와 load를 함께 고려한다.
+SMT는 한 physical core가 여러 hardware thread를 실행해 execution resource 활용도를 높인다. logical CPU 두 개가 independent physical core 두 개와 같은 capacity를 제공하는 것은 아니다.
 
-Lock handoff와 network packet processing처럼 producer-consumer chain이 긴 workload는 wakeup topology가 tail latency에 큰 영향을 줄 수 있다.
+두 sibling이 같은 execution port, cache, bandwidth를 경쟁하면 workload pairing에 따라 성능이 크게 달라진다. security threat model에서도 shared microarchitecture가 문제가 될 수 있다.
 
----
-
-## CHAPTER 27 · Scheduler trace는 switch와 wakeup을 같이 봐야 한다
-
-`sched_switch`만 보면 누가 실행됐는지는 알 수 있지만 언제 runnable이 됐는지 모른다. `sched_wakeup`, migrate event, throttling, CPU frequency/idle event를 함께 보면 ready→run delay와 실행 후 sleep reason을 복원할 수 있다.
-
-Latency incident에서 최소 timeline은 `event arrival → wakeup → runnable queue → switch-in → execution → blocking`이다. Application log timestamp만으로는 queue 구간을 볼 수 없다.
+sibling topology와 co-running workload를 기록한다. benchmark는 SMT on/off 또는 sibling placement를 분리해 비교한다.
 
 ---
 
-## CHAPTER 28 · Scheduler benchmark는 steady load와 burst load를 분리해야 한다
+## CHAPTER 14 · NUMA scheduling
 
-Fair throughput benchmark는 장시간 CPU-bound task에 적합하지만 interactive latency는 short burst, wakeup, idle transition에서 결정된다. 동일 scheduler change가 throughput은 개선하고 wake latency는 악화시킬 수 있다.
+NUMA scheduling은 task가 실행되는 CPU와 memory page가 위치한 node를 가깝게 유지하려 한다. remote memory access가 많으면 CPU가 idle하지 않아도 latency가 증가한다.
 
-Benchmark suite는 CPU-bound fairness, wakeup latency, migration cost, RT deadline, cgroup throttle scenario를 분리해야 한다. 하나의 score로 scheduler quality를 요약하면 trade-off를 숨긴다.
+thread migration과 page migration이 서로 따라다니면 locality가 안정되지 않을 수 있다. first-touch placement와 application sharding도 scheduler 결과에 영향을 준다.
 
----
-
-## CHAPTER 29 · Scheduling bug를 application code만 수정해 해결하려 하지 않는다
-
-Thread pool size를 바꿔 latency가 좋아졌다면 원인이 `thread가 너무 많았다`에서 끝나지 않는다. Runqueue delay, lock contention, cache migration, quota throttle 중 어떤 mechanism이 줄었는지 증명해야 다른 machine/workload에서도 적용할 수 있다.
-
-Scheduler evidence 없이 concurrency setting을 바꾸면 accidental tuning이 된다. 변경 전후 task-state distribution과 scheduler event를 기록한다.
+CPU/node migration, remote access, memory bandwidth를 같이 본다. placement 변경 후 실제 remote traffic이 줄었는지 확인한다.
 
 ---
 
-## CHAPTER 30 · Scheduler 설계의 최종 계약은 fairness·latency·isolation·capacity-awareness다
+## CHAPTER 15 · RT FIFO
 
-Scheduler는 서로 충돌할 수 있는 네 목표를 조정한다.
+RT FIFO는 같은 priority에서 time slice 없이 실행될 수 있으며 높은 priority task가 block 또는 yield할 때까지 CPU를 점유할 수 있다. 잘못 사용하면 normal task starvation을 만들 수 있다.
 
-1. **Fairness** — 장기적으로 task가 weight에 맞는 CPU share를 받는가.
-2. **Latency** — event 뒤 필요한 task가 충분히 빨리 실행되는가.
-3. **Isolation** — 한 workload가 다른 workload의 CPU budget을 무제한 침범하지 않는가.
-4. **Capacity-awareness** — heterogeneous/thermal/frequency 상태를 고려해 실제 처리능력에 맞게 배치하는가.
+long critical section이나 unexpected loop가 RT priority에서 실행되면 system responsiveness가 급격히 나빠진다. watchdog과 runtime limit가 필요할 수 있다.
 
-EEVDF, RT/deadline class, uclamp, cgroup bandwidth, affinity는 이 목표의 서로 다른 부분을 제어한다. 수석 개발자는 `thread priority를 올린다`가 아니라 **어떤 scheduler contract를 바꾸며 그 결과 어떤 workload가 이득·손해를 보는지**까지 설명해야 한다.
+RT task의 run duration과 preemption history를 기록한다. latency requirement가 실제 RT class를 필요로 하는지 먼저 검토한다.
+
+---
+
+## CHAPTER 16 · RT RR
+
+RT round-robin은 같은 priority task 사이에 time slice를 적용한다. 낮은 priority class에 대한 선점 관계는 유지되므로 normal workload 보호가 자동으로 되지는 않는다.
+
+slice가 너무 길면 peer RT task latency가 커지고 너무 짧으면 switch overhead가 늘어난다. workload 수와 criticality에 따라 설정해야 한다.
+
+slice, runnable RT count, deadline miss를 함께 측정한다. average response보다 worst-case wait를 본다.
+
+---
+
+## CHAPTER 17 · priority inversion
+
+priority inversion은 high-priority task가 low-priority lock owner를 기다리고 medium-priority task가 owner 실행을 방해할 때 발생한다. 결과적으로 high-priority task가 medium task보다 늦게 progress한다.
+
+priority inheritance는 owner를 임시 boost해 문제를 완화할 수 있지만 nested lock과 chain blocking은 복잡하다. lock order와 hold time도 함께 관리해야 한다.
+
+waiter priority, owner state, lock hold duration을 scheduler trace와 연결한다. timeout을 늘려 증상을 숨기지 않는다.
+
+---
+
+## CHAPTER 18 · deadline contract
+
+deadline scheduling은 runtime, period, relative deadline 같은 reservation으로 task의 CPU 요구를 표현한다. priority 숫자보다 시간 제약 자체를 scheduler contract에 넣는다.
+
+실제 workload가 선언 runtime을 초과하면 다른 deadline task 보장을 침범할 수 있다. execution variance와 overrun 정책을 이해해야 한다.
+
+runtime consumption과 deadline miss를 기록한다. reservation 값은 worst-case 또는 measured distribution과 연결한다.
+
+---
+
+## CHAPTER 19 · CBS
+
+Constant Bandwidth Server는 deadline task가 reservation을 넘게 CPU를 쓰지 못하도록 runtime budget과 deadline을 조절한다. 한 task의 burst가 전체 real-time capacity를 무너뜨리는 것을 제한한다.
+
+budget exhaustion 뒤 replenishment behavior를 모르면 periodic latency spike를 application bug로 오해할 수 있다. task execution pattern과 reservation period가 맞아야 한다.
+
+budget remaining, throttling, deadline shift를 trace한다. workload 변화 뒤 reservation을 재평가한다.
+
+---
+
+## CHAPTER 20 · admission control
+
+admission control은 deadline workload의 declared utilization이 available CPU capacity 안에 들어오는지 확인해 과도한 reservation을 사전에 거부한다. 이미 overload된 system에 task를 더 넣고 runtime에서 해결하려는 방식보다 안전하다.
+
+CPU affinity나 cpuset가 capacity를 줄이면 global CPU 수로 admission을 계산하면 틀릴 수 있다. migration 가능한 domain도 고려한다.
+
+reservation 합계와 effective capacity를 비교한다. configuration change 후 admission invariant가 유지되는지 자동 검증한다.
+
+---
+
+## CHAPTER 21 · cgroup bandwidth
+
+cgroup CPU bandwidth는 quota와 period로 group이 일정 시간 동안 사용할 CPU 양을 제한한다. host에 idle CPU가 있어도 quota를 다 쓰면 group은 throttled될 수 있다.
+
+application CPU utilization만 보면 throttling을 CPU shortage와 구분하기 어렵다. 짧은 burst가 period 경계에 걸리면 latency distribution이 계단형으로 나타날 수 있다.
+
+throttled time, quota usage, request latency를 correlation한다. quota 조정은 downstream capacity와 multi-tenant fairness를 함께 본다.
+
+---
+
+## CHAPTER 22 · CPU weight
+
+CPU weight는 competing cgroup 사이 relative share를 조정한다. absolute core 보장을 뜻하지 않고 competition이 없으면 더 많은 CPU를 사용할 수도 있다.
+
+weight ratio를 throughput ratio와 단순 동일시하면 안 된다. task 수, affinity, capacity, scheduler class가 결과에 영향을 준다.
+
+competition workload에서 actual CPU share와 latency를 측정한다. service tier 정책이 intended fairness로 나타나는지 검증한다.
+
+---
+
+## CHAPTER 23 · IRQ and softirq
+
+IRQ와 softirq는 application thread 밖에서 CPU를 소비한다. network나 storage interrupt가 특정 CPU에 몰리면 process CPU metric은 낮은데 task runqueue가 길어질 수 있다.
+
+softirq backlog가 커지면 packet drop이나 latency가 application layer에서만 보일 수 있다. interrupt affinity와 NAPI polling도 scheduler pressure를 바꾼다.
+
+per-CPU IRQ/softirq time과 runqueue delay를 함께 본다. application thread만 profile해서는 원인을 놓칠 수 있다.
+
+---
+
+## CHAPTER 24 · preemption model
+
+kernel preemption model은 kernel execution 중 더 높은 priority work로 전환할 수 있는 지점을 바꾼다. throughput과 worst-case scheduling latency 사이 trade-off가 달라진다.
+
+non-preemptible section이 길면 user task가 runnable이어도 CPU를 늦게 받을 수 있다. 반대로 preemption point가 많으면 overhead와 locking requirement가 달라진다.
+
+latency trace에서 kernel section과 wakeup delay를 연결한다. model 변경은 average throughput뿐 아니라 max latency로 검증한다.
+
+---
+
+## CHAPTER 25 · migration cost
+
+task migration은 다른 CPU capacity를 활용하게 하지만 cache, TLB, NUMA locality를 잃을 수 있다. migration cost는 task working set과 topology에 따라 크게 달라진다.
+
+짧은 task가 자주 이동하면 useful work보다 cache warmup 비용이 커질 수 있다. load balance가 완벽해 보여도 throughput이 떨어지는 이유가 된다.
+
+migration count, cache miss, remote memory를 함께 측정한다. affinity를 강제하기 전에 실제 migration cost를 증명한다.
+
+---
+
+## CHAPTER 26 · wakeup affinity
+
+wakeup affinity는 새로 깨어난 task를 producer와 가까운 CPU나 cache-friendly CPU에 두어 handoff latency를 줄이려는 policy다. 항상 same CPU가 최적은 아니며 load imbalance와 trade-off가 있다.
+
+producer가 overloaded CPU에 있으면 locality를 지키려다 queue delay가 더 커질 수 있다. workload graph와 topology를 함께 봐야 한다.
+
+waker/wakee CPU, migration, wakeup latency를 trace한다. policy 변경 전후의 cache miss와 runqueue wait를 함께 비교한다.
+
+---
+
+## CHAPTER 27 · scheduler trace
+
+scheduler trace는 wakeup, enqueue, switch, migration, throttle event를 시간축으로 보여 준다. stack snapshot 한 장보다 task가 왜 늦게 실행됐는지 설명하기 좋다.
+
+trace clock과 event loss를 확인해야 한다. 높은 event rate에서 buffer가 넘치면 가장 바쁜 구간의 evidence가 사라질 수 있다.
+
+request ID를 task timeline과 연결해 user symptom과 scheduler state를 매칭한다. trace overhead가 workload를 바꾸지 않는지도 확인한다.
+
+---
+
+## CHAPTER 28 · scheduler benchmark
+
+scheduler benchmark는 CPU-bound, sleep/wakeup, mixed I/O, oversubscribed workload를 분리해야 한다. 단일 microbenchmark는 실제 service mix를 대표하지 못한다.
+
+core count, SMT, affinity, governor, background load를 고정한다. warm cache와 thermal state도 결과를 바꿀 수 있다.
+
+throughput, runnable latency, switch, migration distribution을 함께 저장한다. score 하나보다 workload별 trade-off curve로 판단한다.
+
+---
+
+## CHAPTER 29 · application tuning
+
+application thread 수를 늘리면 parallelism이 증가할 수 있지만 CPU capacity, lock, DB pool 같은 downstream bottleneck이 그대로면 queue만 늘어난다. scheduler는 없는 capacity를 만들 수 없다.
+
+CPU-bound와 blocking task를 같은 pool에 섞으면 runnable pressure와 starvation이 생길 수 있다. task class별 concurrency limit가 필요하다.
+
+thread count 변화 전후 runqueue와 service time을 비교한다. CPU가 100%가 아니라는 이유만으로 worker를 추가하지 않는다.
+
+---
+
+## CHAPTER 30 · scheduler contract
+
+scheduler contract는 progress, fairness, priority, deadline, placement, throttling의 의미를 workload와 연결해야 한다. application은 자신이 어떤 scheduling guarantee를 기대하는지 명시해야 한다.
+
+RT, affinity, quota 같은 강한 제약은 다른 workload와 system recovery 능력을 줄일 수 있다. performance win과 operational risk를 함께 평가한다.
+
+release gate는 representative contention과 failure scenario를 포함한다. 최종 목표는 benchmark score가 아니라 overload 속에서도 critical work가 예측 가능한 시간 안에 progress하는 것이다.

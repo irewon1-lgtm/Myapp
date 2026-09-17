@@ -1,246 +1,303 @@
-# PART 32 · Cache Coherence and Interconnect — ownership, invalidation, directory, cache-to-cache traffic
+# PART 32 · Cache Coherence and Interconnect — ownership, invalidation, topology
 
-멀티코어 cache는 각 core를 빠르게 하지만 동일 physical cache line이 여러 private cache에 존재할 수 있다는 새 문제를 만든다. Coherence protocol은 **한 memory location에 대한 write ownership과 read visibility를 cache line 단위로 조정**한다. Lock contention, atomic counter, false sharing이 느린 이유는 source code의 lock 문법보다 cache line ownership이 core 사이를 왕복하기 때문이다.
-
----
-
-## CHAPTER 01 · Coherence와 consistency는 다른 질문이다
-
-Cache coherence는 같은 memory location에 대한 write/read가 core 사이에서 일관된 value history를 갖도록 하는 문제다. Memory consistency는 서로 다른 location의 operation 순서를 program이 어떻게 관찰할 수 있는지 정의한다. PART 27의 weak-memory model은 consistency, 이 PART는 cache line ownership/propagation mechanism에 집중한다.
-
-Coherent cache가 있다고 sequentially consistent execution이 자동 보장되는 것은 아니다.
+멀티코어 성능은 cache miss 수만으로 설명되지 않는다. 여러 core가 같은 cache line을 읽고 쓸 때 coherence protocol이 ownership을 이동시키고 invalidation을 전파하며 interconnect bandwidth를 소비한다. **logical sharing과 physical cache-line sharing을 분리하고, line ownership의 이동 자체를 비용으로 관찰**해야 scalability collapse를 이해할 수 있다.
 
 ---
 
-## CHAPTER 02 · Cache line이 coherence의 기본 관리 단위다
+## CHAPTER 01 · coherence와 consistency는 서로 다른 보장이다
 
-CPU가 4-byte integer 하나를 수정해도 coherence protocol은 그 integer가 속한 전체 cache line의 state를 관리할 수 있다. 그래서 서로 다른 variable이 같은 line에 있으면 논리적으로 독립해도 write ownership을 경쟁한다.
+cache coherence는 같은 physical memory location에 대한 core별 cached copy가 모순된 값으로 영구 분기하지 않게 write ownership과 invalidation을 조정한다. memory consistency model은 서로 다른 location의 operation을 observer가 어떤 순서로 볼 수 있는지 정의한다. coherence가 있다고 happens-before가 자동 생기지는 않는다.
 
-Data layout은 semantic field boundary가 아니라 cache-line physical boundary까지 성능에 영향을 준다.
+lock 없는 shared state가 'cache는 일관되니까 안전하다'는 주장은 틀릴 수 있다. compiler와 CPU ordering을 language memory model로 별도 증명해야 한다.
 
----
-
-## CHAPTER 03 · Shared state는 여러 cache가 read-only copy를 가질 수 있게 한다
-
-Line이 여러 core cache에 read-only 상태로 존재하면 load는 local cache에서 처리될 수 있다. Write가 없을 때 replication은 memory bandwidth와 latency를 줄인다. Problem은 한 core가 write하려 할 때 시작된다.
-
-Writer는 다른 shared copy를 invalidate하거나 protocol이 요구하는 exclusive ownership을 얻어야 한다.
+incident에서는 coherence traffic과 synchronization correctness를 다른 축으로 본다. value corruption은 memory-order proof로, scalability 문제는 line ownership과 interconnect counter로 분석한다.
 
 ---
 
-## CHAPTER 04 · Modified state는 memory보다 cache가 더 최신 value를 가질 수 있음을 뜻한다
+## CHAPTER 02 · cache line이 coherence의 실제 전송 단위가 된다
 
-Write-back cache에서 core가 line을 수정하면 backing memory는 아직 old data를 가질 수 있다. Protocol state는 어느 cache가 dirty 최신 copy를 소유하는지 추적해 다른 core request에 올바른 data를 제공해야 한다.
+CPU cache는 개별 변수보다 더 큰 cache line 단위로 data를 저장하고 coherence protocol도 보통 line 단위 ownership을 다룬다. 서로 다른 field가 같은 line에 있으면 한 field write가 다른 field reader의 cache state까지 invalidation시킬 수 있다.
 
-Memory dump/physical DRAM value를 `항상 가장 최신 값`으로 단정하지 않는 이유다.
+source object가 작다고 traffic도 작다는 뜻은 아니다. array stride와 allocator placement가 line sharing을 결정한다.
 
----
-
-## CHAPTER 05 · Exclusive state는 write 전 upgrade traffic을 피할 수 있다
-
-어떤 line을 한 core만 clean copy로 가지고 있고 다른 sharer가 없다면 protocol은 exclusive state로 표시해 이후 write가 별도 invalidation 없이 modified로 전환되게 할 수 있다. Read-mostly private data는 이 path에서 유리하다.
-
-Allocation first-touch와 ownership history가 write latency를 바꿀 수 있다.
+binary/object layout과 cache-line 크기를 확인한다. address sampling과 cache-to-cache counter를 이용해 hot line을 찾고 source field와 매핑한다.
 
 ---
 
-## CHAPTER 06 · Invalidation protocol은 write 권한을 하나의 owner로 모은다
+## CHAPTER 03 · shared state는 read-only 공유와 writable 공유를 구분해야 한다
 
-Shared line을 수정하려는 core는 다른 cache copy를 invalid state로 만들고 write ownership을 확보한다. 다른 core가 이후 read하면 다시 owner/memory에서 line을 가져와야 한다. Repeated multi-writer pattern은 invalidation traffic을 계속 만든다.
+여러 core가 같은 line을 읽기만 하면 cached copy를 동시에 유지할 수 있어 비교적 싸다. 누군가 write를 시작하면 exclusive/modified ownership을 얻기 위해 다른 copy를 invalidate해야 하며 traffic이 급증할 수 있다.
 
-Lock variable와 shared counter가 hot line이 되는 근본 비용이다.
+configuration snapshot과 global counter는 둘 다 shared지만 비용 구조가 완전히 다르다. read-mostly data를 불필요하게 갱신하는 timestamp/counter가 scalability를 망칠 수 있다.
 
----
-
-## CHAPTER 07 · Upgrade request와 read-for-ownership은 data transfer requirement가 다르다
-
-Writer가 이미 clean shared copy를 갖고 있다면 data를 다시 받을 필요 없이 ownership upgrade만 필요할 수 있다. Line이 cache에 없으면 read-for-ownership처럼 data fetch와 invalidation을 함께 수행할 수 있다.
-
-PMU/interconnect counter가 ownership request 종류를 구분한다면 contention diagnosis에 활용할 수 있다.
+shared field별 read/write frequency를 조사한다. mutable metadata를 별도 line이나 per-CPU state로 분리해 ownership movement를 줄일 수 있는지 본다.
 
 ---
 
-## CHAPTER 08 · Cache-to-cache transfer는 DRAM을 거치지 않고 최신 line을 전달할 수 있다
+## CHAPTER 04 · modified state는 dirty data의 최신 copy ownership을 의미한다
 
-한 core가 modified line을 보유할 때 다른 core가 read를 요청하면 owner cache가 data를 직접 전달하거나 shared cache/interconnect를 통해 공급할 수 있다. 이 path는 DRAM access보다 빠를 수 있지만 interconnect bandwidth를 사용한다.
+coherence protocol의 modified-like state에서는 해당 cache가 memory보다 최신 값을 가진 유일한 owner일 수 있다. 다른 core가 같은 line을 요청하면 owner가 data를 공급하거나 writeback/transfer가 필요하다.
 
-Remote-cache hit latency도 local cache hit보다 훨씬 클 수 있다.
+hot write line이 core 사이를 왕복하면 memory DRAM까지 가지 않아도 interconnect와 cache controller가 병목이 될 수 있다. CPU utilization은 높지만 useful work가 낮아지는 패턴이다.
 
----
-
-## CHAPTER 09 · Snooping은 request를 broadcast하고 sharer가 반응하게 한다
-
-작은 shared bus/limited core system에서는 coherence request를 여러 cache에 broadcast해 해당 line 보유 여부를 확인하는 snoop 방식이 가능하다. Core 수가 커지면 broadcast traffic이 scalability bottleneck이 될 수 있다.
-
-Interconnect design은 core count와 topology에 따라 snoop filter/directory를 사용해 traffic을 줄인다.
+cache-to-cache transfer와 HITM류 event를 platform에 맞게 측정한다. ownership이 어느 CPU pair 사이를 이동하는지 topology와 함께 본다.
 
 ---
 
-## CHAPTER 10 · Directory protocol은 sharer 정보를 metadata로 추적한다
+## CHAPTER 05 · exclusive state는 private line의 future write를 싸게 만든다
 
-Directory는 cache line을 어떤 node/core가 보유하는지 기록해 invalidation/request를 필요한 sharer에게만 보낼 수 있다. Broadcast를 줄이는 대신 directory storage와 lookup/consistency 관리가 필요하다.
+한 core만 clean copy를 가진 exclusive-like state에서는 다른 core invalidation 없이 local write로 modified 상태로 전환할 수 있다. data가 thread-local하게 유지될 때 write cost가 낮은 이유다.
 
-NUMA/many-core system에서는 directory location과 home node가 remote access latency에 영향을 준다.
+thread migration이 일어나면 이전 CPU의 private line이 새 CPU로 이동해 locality 이점을 잃을 수 있다. per-thread data를 여러 worker가 번갈아 처리하면 사실상 shared traffic이 된다.
 
----
-
-## CHAPTER 11 · Inclusive/exclusive/non-inclusive LLC policy가 snoop behavior를 바꾼다
-
-Last-level cache가 private cache line을 반드시 포함하는 inclusive policy라면 LLC tag를 snoop filter처럼 사용할 수 있지만 LLC eviction이 private cache invalidation을 유발할 수 있다. Exclusive/non-inclusive policy는 capacity와 coherence metadata trade-off가 다르다.
-
-`LLC miss = DRAM access` 같은 단순 해석은 architecture policy를 확인해야 한다.
+CPU affinity와 line transfer를 함께 추적한다. ownership을 한 execution context에 유지하는 설계가 lock 최적화보다 효과적인 경우가 많다.
 
 ---
 
-## CHAPTER 12 · False sharing은 data race 없이도 line ownership ping-pong을 만든다
+## CHAPTER 06 · invalidation은 writer가 다른 cached copy를 무효화하는 과정이다
 
-Thread A와 B가 서로 다른 atomic/counter를 수정하지만 두 variable이 같은 cache line에 있으면 각각 write할 때 line ownership이 core 사이를 왕복한다. Logical synchronization은 독립적이어도 physical coherence는 공유된다.
+shared line을 write하려면 다른 core의 read copy를 invalidate해 exclusive ownership을 확보해야 한다. reader 수가 많을수록 write 하나가 더 넓은 interconnect traffic을 만들 수 있다. write-heavy global counter가 core 수 증가에 따라 나빠지는 이유다.
 
-Padding/alignment로 hot writer field를 다른 line에 분리하면 성능이 크게 개선될 수 있다. 그러나 memory footprint와 prefetch locality 비용이 생긴다.
+polling reader가 같은 line을 계속 읽으면 writer와 reader가 ownership/validation traffic을 반복할 수 있다.
 
----
-
-## CHAPTER 13 · True sharing과 false sharing은 해결책이 다르다
-
-Same variable을 여러 core가 write하는 true sharing은 data layout으로 없앨 수 없다. Algorithm을 sharding/per-core aggregation으로 바꿔 write frequency를 줄여야 한다. False sharing은 unrelated variables placement를 바꿔 해결 가능하다.
-
-Cache-line bounce counter만 보고 padding부터 넣지 말고 access semantic을 확인한다.
+invalidation-related event와 write frequency를 측정한다. read-mostly snapshot, batching, per-CPU aggregation으로 write 횟수를 줄이는 실험을 한다.
 
 ---
 
-## CHAPTER 14 · Atomic RMW는 exclusive ownership과 serialization point를 요구한다
+## CHAPTER 07 · ownership request는 write permission을 얻기 위한 coherence transaction이다
 
-Fetch-add/CAS 같은 RMW는 read와 write를 indivisible하게 수행해야 해 해당 line에 exclusive ownership을 필요로 한다. 여러 core가 같은 atomic에 RMW하면 coherence ownership이 연속 이동하며 throughput이 core 수에 비례하지 않는다.
+core가 shared line을 수정하려면 request-for-ownership 류 transaction을 보내 다른 copy를 invalidate하고 write 권한을 얻는다. 실제 protocol 이름은 CPU마다 달라도 핵심은 exclusive write authority의 이동이다.
 
-Global reference counter·metrics counter는 per-core local counter 후 aggregation으로 contention을 줄일 수 있다.
+여러 core가 같은 line에 atomic increment를 반복하면 매 operation마다 ownership이 ping-pong할 수 있다. atomic instruction 자체 latency보다 line migration이 지배적이 된다.
 
----
-
-## CHAPTER 15 · Spinlock은 wait time을 coherence traffic으로 바꿀 수 있다
-
-여러 waiter가 같은 lock word를 반복 load/CAS하면 lock holder가 release할 때 많은 cache request가 동시에 발생할 수 있다. Test-and-test-and-set, queue lock은 shared polling/ownership handoff pattern을 바꿔 traffic을 줄인다.
-
-Short critical section이어도 core 수가 많으면 coherence cost가 lock body보다 클 수 있다.
+atomic throughput을 core 수별로 측정한다. line ownership counter와 scaling curve가 함께 악화되는지 확인해 contention 원인을 증명한다.
 
 ---
 
-## CHAPTER 16 · Ticket lock은 fairness를 얻지만 shared counters에 pressure를 만든다
+## CHAPTER 08 · cache-to-cache transfer는 DRAM을 거치지 않는 data 이동도 비용이 있음을 보여 준다
 
-Ticket lock은 next ticket과 owner ticket을 사용해 FIFO fairness를 제공할 수 있다. 모든 waiter가 owner field를 polling하면 read sharing은 가능하지만 release 때 invalidation/update가 전체 waiter cache에 전달된다.
+한 core가 가진 최신 cache line을 다른 core가 요구하면 cache-to-cache transfer로 data가 전달될 수 있다. DRAM miss보다 빠를 수 있지만 socket/NUMA topology를 넘으면 상당한 latency와 interconnect bandwidth를 소비한다.
 
-MCS류 queue lock은 각 waiter가 local node를 polling하도록 만들어 large-core scalability를 높일 수 있다.
+'LLC hit'처럼 보이는 event라도 어느 cache가 data를 공급했는지에 따라 비용이 다를 수 있다.
 
----
-
-## CHAPTER 17 · Producer-consumer queue도 head/tail placement에 따라 coherence 비용이 달라진다
-
-Single producer가 tail을 쓰고 single consumer가 head를 쓰는 ring buffer에서 head/tail이 같은 cache line에 있으면 불필요한 ownership bounce가 발생할 수 있다. Data slot과 index publication의 memory-ordering edge도 필요하다.
-
-Queue algorithm 검토는 correctness proof와 cache-line topology를 함께 본다.
+source/destination CPU와 remote/local transfer를 구분한다. lock owner migration이나 work stealing이 cache-to-cache traffic을 늘리는지 trace와 연결한다.
 
 ---
 
-## CHAPTER 18 · Lock-free algorithm은 lock을 없애도 coherence를 없애지 않는다
+## CHAPTER 09 · snooping은 participant가 coherence request를 관찰하는 방식이다
 
-CAS loop가 반복 실패하면 lock convoy 대신 RMW retry traffic이 interconnect를 포화시킬 수 있다. Lock-free progress guarantee와 scalability는 별개다. Contention이 높은 shared stack/queue는 elimination/sharding 같은 algorithmic change가 필요할 수 있다.
+snoop 기반 protocol은 coherence request를 relevant cache에 전달해 해당 line state를 확인·변경한다. core 수가 커질수록 broadcast-like 방식의 비용이 커질 수 있어 hierarchy와 filtering이 중요하다.
 
-Atomic retry count와 cache-to-cache transfer를 함께 측정한다.
+snoop traffic이 많아지면 interconnect가 application data보다 coherence message로 포화될 수 있다. 정확한 구현은 architecture별로 다르므로 generic MESI 그림만으로 실제 topology를 단정하지 않는다.
 
----
-
-## CHAPTER 19 · Read-mostly data는 immutable snapshot과 RCU가 coherence에 유리할 수 있다
-
-Reader가 shared line을 write하지 않으면 여러 core가 local shared copy를 유지할 수 있다. Writer가 copy-on-update 후 pointer 하나를 publish하면 large data structure의 write invalidation을 줄일 수 있다.
-
-RCU가 read-heavy workload에서 빠른 이유는 lock absence뿐 아니라 read-side shared state를 거의 수정하지 않는 access pattern에도 있다.
+uncore/interconnect counter와 CPU topology를 함께 본다. scaling regression이 core 수 특정 임계점에서 발생하는지 확인한다.
 
 ---
 
-## CHAPTER 20 · NUMA coherence는 socket 간 interconnect hop을 추가한다
+## CHAPTER 10 · directory protocol은 sharer 정보를 추적해 coherence traffic을 좁힌다
 
-다른 socket의 cache/memory node에 있는 line을 request하면 socket interconnect를 통과해야 한다. Remote modified line transfer는 local LLC miss보다 더 긴 latency와 inter-socket bandwidth를 소비할 수 있다.
+directory-based coherence는 특정 line을 어느 node/cache가 보유하는지 metadata로 추적해 필요한 participant에 request를 보낼 수 있다. large multi-socket system에서 무조건 전체 broadcast하는 비용을 줄이는 데 유리하다.
 
-Thread migration이 data home/owner와 어긋나면 coherence traffic이 socket을 왕복한다. NUMA placement와 lock owner locality를 같이 본다.
+하지만 directory lookup과 home location이 새로운 latency와 hotspot이 될 수 있다. sharer set가 커지면 metadata와 invalidation fan-out도 증가한다.
 
----
-
-## CHAPTER 21 · Home agent/directory placement가 line path를 결정할 수 있다
-
-Many-core/NUMA coherence는 physical address의 home node/directory가 request routing과 sharer tracking을 담당할 수 있다. Requester와 current owner가 가까워도 home lookup이 다른 hop을 요구할 수 있다.
-
-Interconnect topology를 모르면 remote-cache event를 단순 DRAM latency로 해석하게 된다.
+NUMA socket별 access와 directory/home traffic을 관찰한다. data placement와 thread placement가 coherence home까지 일관되는지 평가한다.
 
 ---
 
-## CHAPTER 22 · Interconnect bandwidth도 saturation과 queueing을 가진다
+## CHAPTER 11 · LLC policy는 sharing과 eviction behavior에 영향을 준다
 
-Cache-coherence request, DRAM traffic, DMA가 shared fabric bandwidth를 사용하면 core utilization이 낮아도 interconnect가 병목이 될 수 있다. More cores가 shared line을 ping-pong하면 useful application traffic보다 coherence metadata/data transfer가 fabric을 채울 수 있다.
+last-level cache가 inclusive, exclusive, non-inclusive 성격을 어떻게 갖는지에 따라 lower-level cache tracking과 eviction effect가 달라질 수 있다. 한 core의 LLC pressure가 다른 core private cache에 간접 영향을 줄 수도 있다.
 
-Socket/link bandwidth counter와 queue delay를 performance incident에 포함한다.
+CPU 세대별 policy가 다르므로 오래된 architecture 설명을 그대로 적용하면 counter 해석이 틀릴 수 있다.
 
----
-
-## CHAPTER 23 · Coherence state transition은 performance counter로 간접 관찰할 수 있다
-
-일부 PMU는 HITM(cache-to-cache modified line hit), snoop response, remote/local cache hit 같은 event를 제공한다. Event semantics는 microarchitecture-specific이므로 exact CPU documentation을 확인해야 한다.
-
-False sharing diagnosis에서는 source-level memory access와 HITM address sampling을 연결하는 tool이 유용하다.
+실제 CPU documentation과 cache topology를 기록한다. co-tenant workload로 LLC capacity pressure와 coherence traffic을 분리해 측정한다.
 
 ---
 
-## CHAPTER 24 · Address sampling은 hot cache line을 source object로 연결한다
+## CHAPTER 12 · false sharing은 서로 다른 변수의 write도 같은 line이면 경쟁하게 만든다
 
-Hardware load/store sampling이 memory address와 latency를 기록하면 어떤 cache line에서 remote/hit-modified latency가 높은지 찾을 수 있다. Symbol/type information을 이용해 line이 어느 struct field에 해당하는지 mapping한다.
+thread A와 B가 서로 다른 counter만 수정해 logical data sharing이 없어도 두 counter가 같은 cache line에 있으면 write ownership이 core 사이를 이동한다. data race detector는 문제를 찾지 못할 수 있지만 throughput은 급격히 떨어진다.
 
-Allocator reuse 때문에 같은 address가 시간에 따라 다른 object일 수 있으므로 capture window와 allocation lifetime을 맞춘다.
+allocator alignment와 array layout 때문에 source에서 떨어진 field도 runtime에 같은 line에 배치될 수 있다.
 
----
-
-## CHAPTER 25 · Padding은 false sharing을 고치지만 cache footprint를 키운다
-
-Each counter를 cache-line aligned로 만들면 bounce를 줄이지만 thousands of counters가 있을 때 memory footprint와 cache capacity miss가 증가한다. Read-side scanning도 더 많은 line을 가져와야 한다.
-
-Padding은 measurement로 hot writer field에만 적용하고 cold data는 packed layout을 유지할 수 있다.
+actual address와 line boundary를 확인한다. padding/per-thread aggregation 전후 cache-to-cache transfer와 scaling을 비교한다.
 
 ---
 
-## CHAPTER 26 · Per-core sharding은 write contention을 aggregation cost로 교환한다
+## CHAPTER 13 · true sharing은 동일 mutable state에 대한 실제 coordination 비용이다
 
-Global counter 대신 CPU별 local counter를 update하면 hot-line ownership을 제거할 수 있다. Total을 읽을 때 모든 shard를 aggregate해야 하므로 read cost와 exactness delay가 증가한다.
+여러 thread가 같은 queue head, lock word, reference count를 수정해야 한다면 coherence traffic은 logical synchronization requirement의 물리적 비용이다. padding만으로 없앨 수 없고 algorithm의 sharing 구조를 바꿔야 한다.
 
-Metrics counter처럼 frequent write/rare read에는 적합하고 exact transaction balance처럼 immediate global invariant가 필요한 state에는 부적합할 수 있다.
+global state가 workload에 꼭 필요한지, sharding·batching·ownership transfer로 mutation 빈도를 줄일 수 있는지 먼저 검토한다.
 
----
-
-## CHAPTER 27 · Core migration은 private-cache locality뿐 아니라 ownership history를 바꾼다
-
-Writer thread가 CPU를 자주 옮기면 자신이 최근 수정한 line ownership도 새 core로 이동해야 할 수 있다. Scheduler load balancing이 CPU fairness를 높이면서 coherence traffic을 늘릴 수 있다.
-
-Hot lock owner/allocator arena thread는 affinity experiment로 migration cost를 검증할 수 있지만 hard pinning의 imbalance 위험도 본다.
+hot line의 operation semantics를 분류한다. throughput과 fairness를 유지하며 shared mutation 횟수를 줄이는 redesign을 benchmark한다.
 
 ---
 
-## CHAPTER 28 · Coherence benchmark는 logical operation당 line transfer를 측정해야 한다
+## CHAPTER 14 · atomic RMW는 cache-line ownership과 serialization을 동시에 요구한다
 
-Raw operations/sec만 비교하면 faster algorithm이 더 많은 interconnect traffic을 생성해 다른 tenant를 방해하는 효과를 놓친다. Atomic increment 1회당 HITM/remote transfer, queue operation당 cache-line invalidation을 측정하면 scalability ceiling을 예측할 수 있다.
+atomic fetch-add/CAS는 해당 memory location을 원자적으로 갱신하기 위해 line의 exclusive ownership과 hardware serialization을 필요로 한다. core가 늘어날수록 하나의 global atomic counter는 single service center처럼 동작할 수 있다.
 
-Single-thread benchmark는 coherence protocol의 핵심 cost를 거의 드러내지 않는다.
+relaxed memory order로 바꿔도 ownership ping-pong 자체는 사라지지 않는다. ordering 최적화와 coherence 최적화를 분리해야 한다.
 
----
-
-## CHAPTER 29 · Coherence incident는 state ownership path로 복원한다
-
-Shared data가 느릴 때 `(누가 읽음 → 누가 write ownership 획득 → 어떤 sharer가 invalidated → 다음 requester가 어디서 data를 받음)`을 line 단위 timeline으로 생각한다. Lock profile, scheduler CPU, address sample, PMU event를 결합한다.
-
-`cache miss 많음`보다 **왜 line이 local cache에 머물지 못했는가**가 root cause 질문이다.
+CAS failure, atomic throughput, cache-line transfer를 같이 본다. per-CPU counter 후 aggregation이 더 적합한지 비교한다.
 
 ---
 
-## CHAPTER 30 · Coherence 설계의 최종 계약은 sharing pattern·ownership transfer·topology·fairness다
+## CHAPTER 15 · spinlock은 wait 자체가 coherence traffic을 만들 수 있다
 
-1. **Sharing pattern** — read-only, single-writer, multi-writer 중 무엇인가.
-2. **Ownership transfer** — logical operation마다 cache line이 몇 core를 이동하는가.
-3. **Topology** — same core/cluster/socket/NUMA node 중 어느 interconnect를 건너는가.
-4. **Fairness** — hot sharer가 fabric/lock을 독점해 다른 workload를 굶기지 않는가.
+여러 waiter가 같은 lock word를 반복 read하거나 RMW하면 owner가 unlock할 때 line이 여러 cache 사이를 이동한다. test-and-set loop는 특히 write-like traffic을 반복해 contention을 악화시킬 수 있다.
 
-멀티코어 scalability는 thread 수를 늘리는 문제가 아니라 **shared-state ownership 이동을 줄이는 data/algorithm design 문제**다.
+test-and-test-and-set처럼 local cached read로 대기하다 변화 시 RMW를 시도하는 구조는 traffic을 줄일 수 있지만 owner preemption 문제는 남는다.
+
+lock wait, RMW count, line transfer를 측정한다. high contention에서는 parking mutex나 queue lock과 비교한다.
+
+---
+
+## CHAPTER 16 · ticket lock은 fairness를 얻지만 shared counter hotspot을 만들 수 있다
+
+ticket lock은 각 waiter가 순번을 받고 현재 serving 값을 기다려 FIFO fairness를 제공한다. 하지만 모든 waiter가 같은 serving line을 관찰하므로 unlock 때 invalidation fan-out이 커질 수 있다.
+
+많은 core에서 fairness는 좋지만 coherence scalability가 나빠질 수 있다. NUMA socket을 넘는 waiter가 많으면 비용이 더 커진다.
+
+waiter 수별 throughput과 remote cache transfer를 측정한다. fairness SLO가 실제로 필요한지, queue-based lock이 더 적합한지 비교한다.
+
+---
+
+## CHAPTER 17 · queue lock은 waiter별 local state로 공유 line 경쟁을 분산한다
+
+MCS류 queue lock은 각 waiter가 자신의 node/flag를 주로 spin하도록 만들어 global lock line에 대한 반복 traffic을 줄인다. predecessor→successor handoff로 ownership transfer를 구조화한다.
+
+wait node lifetime과 cancellation, thread preemption을 올바르게 처리해야 한다. 짧은 low-contention lock에서는 metadata 비용이 더 클 수 있다.
+
+core 수와 contention sweep을 수행한다. global line transfer 감소와 p99 acquisition latency를 함께 본다.
+
+---
+
+## CHAPTER 18 · lock-free algorithm도 coherence-free는 아니다
+
+lock을 제거하고 CAS loop를 사용해도 hot pointer나 queue head를 여러 core가 갱신하면 동일 cache line ownership 경쟁이 남는다. CAS failure와 retry가 오히려 coherence traffic을 늘릴 수 있다.
+
+lock-free label만 보고 scalability를 기대하면 안 된다. reclamation metadata와 hazard pointer update도 추가 shared write가 될 수 있다.
+
+operation별 shared line을 inventory한다. lock-based reference 구현과 throughput·tail·CPU cost를 비교해 실제 workload에서 선택한다.
+
+---
+
+## CHAPTER 19 · read-mostly 구조는 mutation을 드물게 만들어 coherence 비용을 줄인다
+
+immutable snapshot, RCU, copy-on-write config는 reader가 shared clean line을 읽고 writer가 새 version을 만들어 한 번 publish하게 해 continuous write sharing을 줄일 수 있다. read-heavy workload에서 특히 유리하다.
+
+update마다 큰 object를 copy하면 memory와 publication cost가 늘어나므로 write frequency와 object size를 함께 본다.
+
+reader cache miss, writer publication, old-version reclamation을 측정한다. synchronization correctness와 coherence scalability를 동시에 검증한다.
+
+---
+
+## CHAPTER 20 · NUMA를 넘는 coherence는 remote interconnect 비용을 추가한다
+
+multi-socket system에서 한 socket의 cache line을 다른 socket core가 write하면 coherence message와 data가 socket interconnect를 지나야 한다. 같은 socket 내부 ping-pong보다 latency와 bandwidth 비용이 커질 수 있다.
+
+thread migration이나 cross-socket work stealing이 global lock의 cost를 갑자기 키울 수 있다.
+
+socket별 thread placement와 remote HITM/cache-to-cache event를 본다. state sharding을 NUMA domain과 맞추는 실험을 수행한다.
+
+---
+
+## CHAPTER 21 · home agent는 address의 coherence coordination 지점을 제공한다
+
+많은 architecture에서 physical address는 특정 home agent/directory slice와 연결되어 coherence request routing과 ownership tracking에 사용된다. data가 어느 core에서 사용되는지뿐 아니라 어느 home path를 거치는지도 traffic 분포에 영향을 줄 수 있다.
+
+address hashing과 topology 때문에 특정 allocation pattern이 일부 slice에 hot spot을 만들 수 있다.
+
+uncore slice/home traffic을 가능한 범위에서 측정한다. allocator/address pattern 변경이 imbalance를 줄이는지 확인한다.
+
+---
+
+## CHAPTER 22 · interconnect saturation은 cache-coherent system의 숨은 shared bottleneck이다
+
+core, LLC slice, memory controller를 연결하는 interconnect는 data와 coherence message를 운반한다. DRAM bandwidth가 남아 있어도 cache-to-cache와 invalidation traffic이 많으면 interconnect가 먼저 포화될 수 있다.
+
+CPU를 더 추가했는데 throughput이 떨어지고 remote/coherence event가 증가하면 이 병목을 의심한다.
+
+uncore bandwidth와 core scaling curve를 함께 본다. local sharding과 batching이 실제 interconnect traffic을 줄이는지 검증한다.
+
+---
+
+## CHAPTER 23 · coherence counter는 logical event와 CPU model을 함께 해석해야 한다
+
+PMU는 snoop, HITM, cache-to-cache transfer 같은 coherence-related event를 제공할 수 있지만 event 이름과 정확한 의미는 microarchitecture마다 다르다. 단일 generic counter를 모든 machine에 그대로 적용하면 오진할 수 있다.
+
+multiplexing과 speculative counting도 고려해야 한다.
+
+CPU model, raw event, sampling period를 artifact에 저장한다. counter가 latency regression과 같은 workload phase에서 변화하는지 교차검증한다.
+
+---
+
+## CHAPTER 24 · address sampling은 hot coherence line을 source object에 연결한다
+
+메모리 access sampling이나 load/store address sampling을 사용하면 어느 address/line에서 remote access와 cache-to-cache transfer가 반복되는지 찾을 수 있다. line address를 allocation/object layout과 연결해야 source-level 원인이 드러난다.
+
+ASLR과 allocator reuse 때문에 raw address는 run마다 바뀐다. symbol과 object generation이 필요하다.
+
+sampled address를 cache-line 단위로 aggregate한다. top line의 writer/reader CPU와 field를 확인해 false/true sharing을 구분한다.
+
+---
+
+## CHAPTER 25 · padding은 line 분리를 만들지만 무조건 정답은 아니다
+
+hot writable field 사이에 padding/alignment를 넣으면 false sharing을 줄일 수 있다. 그러나 object size와 cache footprint를 늘리고 array density를 낮춰 다른 cache miss를 증가시킬 수 있다.
+
+platform cache-line size와 allocator alignment를 고려해야 한다. compile-time padding이 actual runtime placement를 보장하는지 확인한다.
+
+layout 전후 object size, cache miss, cache-to-cache traffic을 모두 측정한다. logical sharing이 있다면 padding으로 해결하려 하지 않는다.
+
+---
+
+## CHAPTER 26 · per-CPU sharding은 global write를 local write와 느린 aggregation으로 바꾼다
+
+counter, statistics, freelist를 CPU별로 나누면 hot path에서 local cache line만 수정하고 필요할 때 aggregate할 수 있어 coherence traffic을 크게 줄인다. 대신 migration과 aggregation consistency가 새로운 문제다.
+
+정확한 global instant value가 필요하면 per-CPU 구조의 eventual aggregate가 요구사항을 만족하지 못할 수 있다.
+
+local update latency와 aggregation cost를 분리해 측정한다. CPU hotplug/migration에서 shard ownership이 안전한지 테스트한다.
+
+---
+
+## CHAPTER 27 · task migration은 private cache line의 ownership locality를 바꾼다
+
+thread가 CPU를 옮기면 그 thread의 hot stack/heap line이 이전 cache에 남아 새 CPU가 다시 가져와야 한다. mutable thread-local data도 physical 관점에서는 cache-to-cache transfer가 된다.
+
+work stealing이 load balance를 개선하면서 cache locality를 해칠 수 있다. 특히 large working set thread의 migration cost가 크다.
+
+migration event와 cache miss/transfer burst를 연결한다. scheduler affinity 변경 전후 end-to-end throughput을 본다.
+
+---
+
+## CHAPTER 28 · coherence benchmark는 read-sharing과 write-sharing을 분리해야 한다
+
+shared read benchmark, ping-pong write, atomic counter, false-sharing array는 서로 다른 protocol path를 측정한다. 하나의 `cache latency` benchmark로 coherence 전체를 설명할 수 없다.
+
+core distance, socket, SMT sibling을 바꾸면 결과가 달라진다. compiler가 loop를 제거하지 않게 benchmark harness도 통제해야 한다.
+
+participant 수와 topology sweep을 수행한다. line ownership traffic과 operation latency를 함께 저장한다.
+
+---
+
+## CHAPTER 29 · coherence incident는 lock profile 밖의 traffic까지 본다
+
+production scalability regression에서 lock wait가 낮아도 global counter, allocator metadata, queue index가 false/true sharing을 일으킬 수 있다. CPU usage가 늘지만 throughput이 줄어드는 현상은 coherence collapse의 신호일 수 있다.
+
+software deploy로 field layout이나 thread placement가 바뀌었는지 확인한다.
+
+PMU, address sampling, scheduler migration을 같은 incident timeline에 연결한다. hot line을 찾은 뒤 source invariant와 ownership 구조를 재설계한다.
+
+---
+
+## CHAPTER 30 · coherence contract는 mutable ownership과 topology를 명시한다
+
+scalable shared-memory design은 어떤 data가 read-only인지, 어떤 core/thread가 mutate하는지, synchronization point가 어디인지, line sharing이 unavoidable한지 설명할 수 있어야 한다. correctness memory model과 physical coherence cost를 동시에 고려한다.
+
+lock을 제거하거나 padding을 넣는 단편 최적화보다 ownership domain을 줄이는 구조가 강하다. NUMA와 scheduler placement도 contract에 들어간다.
+
+CLEAN 검증은 false sharing, atomic hotspot, cross-socket transfer, migration을 서로 다른 failure mode로 benchmark한다. core 수가 늘어도 throughput과 tail latency가 요구 범위에서 유지되는지 최종 확인한다.

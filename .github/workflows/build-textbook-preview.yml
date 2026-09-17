@@ -1,0 +1,101 @@
+name: Build textbook preview APK
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  textbook-preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: gradle
+
+      - name: Set up Python 3.13
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Set up Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Prepare TypeScript compiler assets
+        run: |
+          npm install --ignore-scripts --no-audit --no-fund
+          npm run prepare:typescript
+          test -s app/src/main/assets/typescript.js
+          test -s app/src/main/assets/ts_libs.js
+
+      - name: Make Gradle wrapper executable
+        run: chmod +x ./gradlew
+
+      - name: Validate V5 reader graph and evidence contracts
+        run: |
+          ./gradlew testDebugUnitTest \
+            --tests "com.futuretech.poweruser.textbook.V5EvidenceCoverageAssetTest" \
+            --tests "com.futuretech.poweruser.textbook.V5PrerequisiteConceptContractTest" \
+            --tests "com.futuretech.poweruser.textbook.V5BookReaderSourceContractTest" \
+            --stacktrace
+
+      - name: Build unsigned preview APK
+        run: ./gradlew assembleRelease --stacktrace
+
+      - name: Sign and verify preview APK
+        run: |
+          BUILD_TOOLS="$(ls -1 "$ANDROID_HOME/build-tools" | sort -V | tail -n 1)"
+          ZIPALIGN="$ANDROID_HOME/build-tools/$BUILD_TOOLS/zipalign"
+          APKSIGNER="$ANDROID_HOME/build-tools/$BUILD_TOOLS/apksigner"
+          mkdir -p final-dist
+          "$ZIPALIGN" -p -f 4 app/build/outputs/apk/release/app-release-unsigned.apk final-dist/FutureTechPowerUser_TEXTBOOK_PREVIEW_aligned.apk
+          "$APKSIGNER" sign \
+            --ks test.keystore \
+            --ks-key-alias testkey \
+            --ks-pass pass:password \
+            --key-pass pass:password \
+            --out final-dist/FutureTechPowerUser_TEXTBOOK_PREVIEW.apk \
+            final-dist/FutureTechPowerUser_TEXTBOOK_PREVIEW_aligned.apk
+          "$APKSIGNER" verify --verbose --print-certs final-dist/FutureTechPowerUser_TEXTBOOK_PREVIEW.apk | tee final-dist/apksigner_verify.txt
+          sha256sum final-dist/FutureTechPowerUser_TEXTBOOK_PREVIEW.apk | tee final-dist/FutureTechPowerUser_TEXTBOOK_PREVIEW.sha256
+          rm final-dist/FutureTechPowerUser_TEXTBOOK_PREVIEW_aligned.apk
+
+      - name: Enable KVM
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+
+      - name: Android API 34 install and launch smoke test
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 34
+          arch: x86_64
+          profile: pixel_6
+          disable-animations: true
+          script: bash tools/final_release_smoke.sh
+
+      - name: Upload preview APK and diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: FutureTechPowerUser-textbook-preview
+          if-no-files-found: error
+          retention-days: 1
+          path: |
+            final-dist/FutureTechPowerUser_TEXTBOOK_PREVIEW.apk
+            final-dist/FutureTechPowerUser_TEXTBOOK_PREVIEW.sha256
+            final-dist/apksigner_verify.txt
+            final-dist/launch_smoke.txt
+            final-dist/logcat_full.txt
+            final-dist/logcat_crash_excerpt.txt

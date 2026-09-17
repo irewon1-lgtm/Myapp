@@ -42,6 +42,9 @@ class V5EvidenceCoverageAssetTest {
         return base.copy(parts = fragments.flatMap { it.parts }.sortedBy { it.order })
     }
 
+    private fun isLearnerChapterHeading(text: String): Boolean =
+        text.startsWith("CHAPTER ") || text.matches(Regex("^\\d+\\.\\s+.+"))
+
     @Test
     fun everyAuthoredPartHasOneOrderedEvidenceEntryPerH2Chapter() {
         val trackDirs = v5Root().listFiles()
@@ -67,7 +70,7 @@ class V5EvidenceCoverageAssetTest {
                 val markdown = asset(part.assetPath).readText(Charsets.UTF_8)
                 val chapters = TextbookMarkdownParser.parse(markdown)
                     .filterIsInstance<TextbookBlock.Heading>()
-                    .filter { it.level == 2 && it.text.startsWith("CHAPTER ") }
+                    .filter { it.level == 2 && isLearnerChapterHeading(it.text) }
                 assertTrue("${part.id} needs real H2 chapters", chapters.isNotEmpty())
 
                 val sourceMap = gson.fromJson(

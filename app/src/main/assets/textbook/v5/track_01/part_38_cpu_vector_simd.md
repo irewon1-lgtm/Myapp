@@ -1,123 +1,303 @@
-# PART 38 · CPU Vector/SIMD — lane, predicate, reduction, vector ABI
+# PART 38 · CPU Vector/SIMD — lanes, predicates, reductions, vector ABI
 
-CPU vector execution은 같은 연산을 여러 데이터 요소에 적용해 instruction-level data parallelism을 얻는 방식이다. 실제 성능은 vector width 하나로 결정되지 않는다. 메모리 배치, alias 가능성, loop-carried dependency, mask 비용, register pressure, tail 처리, reduction 순서, 수치 의미 보존 조건이 함께 맞아야 scalar work가 효율적인 vector instruction으로 변환된다.
+SIMD 최적화는 “한 instruction으로 여러 값을 계산한다”보다 더 복잡하다. data layout, alignment, alias, dependency, tail 처리와 reduction order가 맞아야 vector width를 실제 throughput으로 바꿀 수 있다. 이 PART는 **lane utilization, memory access, compiler cost model, ABI와 수치 semantics**를 연결한다.
 
-## CHAPTER 01 · vector instruction은 여러 lane에 하나의 operation semantics를 적용한다
+---
 
-Vector register는 여러 scalar element를 담는 register class로 볼 수 있고, instruction은 element lane에 동일하거나 정의된 형태의 연산을 수행한다. 그러나 vectorization은 단순히 `N개 값을 한 번에 계산한다`가 아니다. Lane 사이 data dependency가 없거나 vector form으로 표현 가능해야 하고, load/store가 요구하는 주소 패턴도 vector hardware가 효율적으로 처리할 수 있어야 한다. 같은 256-bit register라도 8개의 32-bit lane, 4개의 64-bit lane처럼 element type에 따라 병렬 element 수가 달라진다. 따라서 성능 모델은 register bit width보다 element width, instruction throughput, dependency latency, memory traffic을 함께 봐야 한다.
+## CHAPTER 01 · vector lane은 한 instruction 안의 독립 element operation을 표현한다
 
-## CHAPTER 02 · fixed-width와 scalable vector는 code-generation 계약이 다르다
+SIMD register는 여러 scalar element를 lane으로 담아 동일 계열 operation을 병렬 적용한다. lane 수는 element width와 ISA에 따라 달라지므로 `vector = 4개` 같은 가정을 algorithm에 박아 두면 portability가 깨진다. compiler는 scalar loop를 vector lane에 mapping할 때 dependency와 memory safety를 먼저 증명한다.
 
-일부 ISA는 compile-time에 정해진 vector width를 중심으로 instruction을 제공하고, 다른 설계는 실제 hardware vector length를 runtime에 반영하는 scalable vector model을 지원한다. Fixed-width code는 특정 vector width에 맞춘 unroll과 tail 처리가 명확하지만 여러 microarchitecture에서 width 차이를 흡수하려면 binary multiversioning이나 compiler 선택이 필요할 수 있다. Scalable model은 `한 vector에 정확히 몇 element`라는 가정을 code에서 제거하는 대신 predicate와 vector-length-aware loop 구조를 요구한다. Library API가 vector width를 public data layout에 박아 넣으면 ISA 세대 교체와 portability 비용이 커진다.
+모든 lane이 useful work를 하지 않으면 theoretical width만큼 speedup이 나오지 않는다. branch mask, tail element, sparse access가 inactive lane을 늘릴 수 있다.
 
-## CHAPTER 03 · contiguous memory layout이 vector load/store의 기본 우호 조건이다
+profile에서는 vector instruction count와 active element 비율을 같이 본다. source loop가 vectorized됐다는 report만으로 end-to-end throughput 향상을 결론내리지 않는다.
 
-연속된 element를 순서대로 처리하면 vector load 한 번으로 여러 lane을 채울 수 있다. 반대로 각 element가 pointer를 따라 흩어져 있거나 구조체 내부 field 간격이 크면 gather가 필요하거나 scalar load 여러 개로 떨어질 수 있다. 따라서 vectorization은 arithmetic optimization이면서 동시에 data-layout optimization이다. Hot loop를 최적화할 때 source expression만 보지 말고 실제 address sequence를 그려야 한다. `연산 횟수가 같다`는 사실은 memory transaction 수, cache-line utilization, TLB pressure가 같다는 뜻이 아니다.
+---
 
-## CHAPTER 04 · alignment는 correctness requirement와 performance hint를 구분해야 한다
+## CHAPTER 02 · fixed-width와 scalable vector는 code generation 전략이 다르다
 
-ISA와 instruction 종류에 따라 unaligned vector access가 지원될 수 있지만, alignment가 cache-line/page boundary와 겹치면 한 vector load가 여러 memory transaction으로 분리될 수 있다. 어떤 instruction은 stricter alignment contract를 가질 수 있고 compiler intrinsic도 aligned pointer assumption을 요구할 수 있다. 존재하지 않는 alignment를 compiler에 약속하면 optimization hint가 아니라 undefined behavior나 fault의 원인이 될 수 있다. Alignment를 개선할 때는 allocator 반환 alignment, array base, field offset, loop induction offset을 모두 확인해야 한다.
+일부 ISA는 고정 lane 수의 vector를 제공하고, scalable vector architecture는 runtime hardware width에 맞춰 predicate와 loop를 구성하도록 설계된다. scalable model에서 lane count를 compile-time 상수로 가정하면 코드는 특정 implementation에 묶인다.
 
-## CHAPTER 05 · gather/scatter는 불규칙 주소를 vector form으로 표현하지만 공짜가 아니다
+vector-length agnostic loop는 현재 active predicate를 기반으로 chunk를 처리하고 remaining element를 반복한다. 이는 tail을 자연스럽게 처리할 수 있지만 control 구조가 scalar intuition과 달라진다.
 
-Gather는 lane별 index를 사용해 여러 주소에서 element를 읽고 scatter는 여러 주소에 쓴다. 이는 pointer/index-heavy workload를 vector instruction으로 표현할 수 있게 하지만 contiguous load/store와 동일한 bandwidth 효율을 보장하지 않는다. Cache miss가 lane별로 분산되면 하나의 instruction이 여러 memory dependency를 기다릴 수 있고, address generation과 fault semantics도 복잡해진다. Gather가 존재한다는 사실만으로 array-of-pointers 구조가 vector-friendly가 되는 것은 아니다. Data layout을 바꿀 수 있다면 contiguous access와 gather 비용을 실제 benchmark로 비교해야 한다.
+테스트는 여러 가상 vector length를 사용해 width assumption을 찾는다. ABI boundary에서 scalable vector type을 어떻게 전달하는지도 platform 문서를 기준으로 한다.
 
-## CHAPTER 06 · predicate/mask는 branch를 없애지만 inactive lane 비용을 남길 수 있다
+---
 
-조건식이 lane마다 다르면 mask를 계산하고 active lane만 결과를 commit하는 predicated execution을 사용할 수 있다. Branch divergence를 scalar branch 없이 표현할 수 있지만 mask 생성, blend/select, inactive-lane execution, masked memory access 비용이 존재한다. 조건이 거의 항상 한쪽으로 치우치면 scalar branch predictor가 더 유리할 수도 있고, mask density가 낮으면 vector lane 대부분이 유효한 일을 하지 않을 수 있다. 따라서 `branch 제거 = vector 이득`이 아니라 branch predictability와 active-lane ratio를 같이 측정한다.
+## CHAPTER 03 · contiguous layout은 vector load/store가 bandwidth를 효율적으로 쓰게 한다
 
-## CHAPTER 07 · tail 처리는 vector width로 나누어떨어지지 않는 반복의 correctness 문제다
+인접 element를 연속 memory에 배치하면 한 vector load가 여러 useful 값을 가져올 수 있고 hardware prefetch와 cache line 활용도 좋아진다. pointer chain이나 object별 heap allocation은 lane마다 다른 address를 만들며 vectorization 이점을 줄인다.
 
-Loop trip count가 vector lane 수의 배수가 아니면 마지막 일부 element를 안전하게 처리해야 한다. 전통적인 방식은 main vector loop 뒤 scalar epilogue를 두고, predicate-capable ISA는 tail mask로 마지막 vector를 처리할 수 있다. 잘못된 tail 구현은 배열 경계를 넘어 read/write하거나 padding byte를 실제 데이터로 오인할 수 있다. Compiler가 자동 vectorization을 적용할 때 생성되는 remainder loop나 masked tail을 assembly/IR에서 확인하면 performance anomaly를 설명하는 데 도움이 된다.
+data structure를 SoA로 바꾸면 한 field를 대량 처리하는 kernel에 유리하지만 객체 단위 접근에는 cache locality가 나빠질 수 있다. layout은 workload operation mix와 함께 선택해야 한다.
 
-## CHAPTER 08 · reduction은 lane-independent loop보다 dependency가 강하다
+requested element 수와 실제 cache-line traffic을 비교한다. vector width를 늘렸는데 bandwidth가 더 빨리 포화되면 layout과 reuse를 다시 본다.
 
-합계, 최댓값, dot product 같은 reduction은 여러 iteration의 값을 하나의 accumulator에 결합한다. Scalar loop에서는 accumulator dependency chain이 존재하고, vectorized reduction은 lane별 partial accumulator를 만든 뒤 horizontal combine을 수행한다. 이 구조는 throughput을 높일 수 있지만 floating-point addition처럼 결합 순서가 결과 bit pattern에 영향을 주는 연산에서는 numerical semantics가 달라질 수 있다. Compiler가 reassociation을 허용하는 조건과 application tolerance를 구분해야 한다.
+---
 
-## CHAPTER 09 · horizontal operation은 lane 방향 data movement를 요구한다
+## CHAPTER 04 · alignment는 vector access의 transaction 수와 legality에 영향을 준다
 
-Element-wise add/multiply는 lane 사이 교환이 거의 없지만 horizontal sum, min/max, prefix-like operation은 lane 값을 서로 결합해야 한다. Shuffle, permute, pairwise reduction instruction이 사용되며 이들은 execution port와 latency 특성이 일반 arithmetic과 다를 수 있다. `vector ALU throughput`만 보고 reduction 성능을 예측하면 틀릴 수 있다. Dependency depth와 shuffle network 비용을 포함한 critical path를 본다.
+vector load의 base address가 자연 alignment를 만족하면 hardware가 적은 memory operation으로 처리하기 쉽다. unaligned access를 지원하더라도 cache-line/page 경계를 가로지르면 추가 transaction이나 penalty가 생길 수 있다. 일부 intrinsic은 stricter alignment를 contract로 요구한다.
 
-## CHAPTER 10 · widening과 narrowing은 overflow와 precision contract를 바꾼다
+allocator가 aligned pointer를 줘도 slice offset이 alignment를 깨뜨릴 수 있다. struct field와 interleaved array에서도 stride가 vector boundary와 어긋날 수 있다.
 
-작은 integer lane을 더 큰 lane으로 확장해 계산하면 intermediate overflow를 줄일 수 있고, 반대로 결과를 좁은 타입으로 줄일 때 truncation·rounding·saturation 규칙이 필요하다. Image/audio/DSP workload는 8/16-bit 입력을 넓혀 누적한 뒤 다시 narrowing하는 패턴을 자주 사용한다. Widening은 lane 수를 줄여 vector parallelism을 낮추므로 precision과 throughput을 교환한다. Narrowing 단계에서 signedness와 rounding mode가 데이터 품질을 결정한다.
+critical path에서는 address alignment를 runtime assertion과 benchmark로 검증한다. platform별 penalty가 다르므로 문법 규칙처럼 일반화하지 않는다.
 
-## CHAPTER 11 · saturating arithmetic은 wraparound와 다른 도메인 계약이다
+---
 
-일반 fixed-width integer overflow는 modular wraparound 또는 언어별 규칙을 따를 수 있지만 media processing에서는 최솟값/최댓값에 clamp하는 saturating arithmetic이 더 적절한 경우가 있다. 예를 들어 pixel channel에서 250+20을 14로 wrap시키는 것보다 255로 clamp하는 의미가 필요할 수 있다. SIMD ISA는 saturating add/subtract 같은 instruction을 제공할 수 있다. 중요한 것은 instruction 존재가 아니라 application의 수학적 domain이 wrap, checked overflow, saturation 중 무엇을 요구하는지 명시하는 것이다.
+## CHAPTER 05 · gather와 scatter는 비연속 access를 vector form으로 표현하지만 비용이 크다
 
-## CHAPTER 12 · shuffle/permute는 data layout mismatch를 register 내부에서 보정한다
+gather는 lane별 index에서 값을 모으고 scatter는 lane별 address에 쓴다. 이는 scalar loop를 vectorize할 수 있게 하지만 contiguous load보다 address generation과 cache transaction이 훨씬 비쌀 수 있다. index collision이 있으면 scatter ordering semantics도 주의해야 한다.
 
-Vector lane 순서를 바꾸거나 여러 vector에서 lane을 교차 조합하면 AoS 데이터를 SoA-like 계산 형태로 재배열할 수 있다. 그러나 shuffle은 공짜가 아니며 complex permute network는 arithmetic보다 높은 latency나 낮은 throughput을 가질 수 있다. Hot loop에서 load→shuffle 다수→arithmetic→shuffle→store 구조가 보인다면 source data layout이 vector engine과 맞지 않는 신호일 수 있다. Persistent data layout 변경 비용과 per-iteration shuffle 비용을 비교한다.
+random index가 넓은 working set을 건드리면 vector width가 늘수록 동시에 더 많은 cache miss를 만들 뿐 useful bandwidth가 증가하지 않을 수 있다.
 
-## CHAPTER 13 · register pressure는 vector width 확대의 숨은 한계다
+benchmark에서는 contiguous, strided, random access를 분리한다. gather 사용 자체를 성공으로 보지 않고 scalar 대비 실제 latency·bandwidth를 측정한다.
 
-더 넓은 vector와 aggressive unrolling은 동시에 살아 있는 temporary register 수를 늘린다. Physical/vector register resource를 초과하면 compiler가 값을 stack에 spill하고 reload해야 하며, 이 memory traffic이 vectorization 이득을 상쇄할 수 있다. Register pressure는 source variable 개수만으로 결정되지 않고 live range, inlining, unrolling, instruction scheduling과 연결된다. Optimization report와 assembly에서 spill load/store를 확인하고 vector width를 무조건 최대화하지 않는다.
+---
 
-## CHAPTER 14 · instruction latency와 reciprocal throughput은 다른 성능 값이다
+## CHAPTER 06 · predication은 lane별 조건을 mask로 바꿔 control-flow를 단순화한다
 
-Instruction 하나가 결과를 만들기까지 걸리는 latency와, pipeline이 충분히 채워졌을 때 cycle당 몇 instruction을 시작할 수 있는 throughput은 다르다. Independent vector operations가 많으면 latency를 겹쳐 throughput에 가까운 성능을 얻을 수 있지만, accumulator처럼 dependency chain이 있으면 latency가 critical path를 지배한다. Microbenchmark는 dependency 형태를 실제 workload와 맞춰야 한다. Independent operands만 반복한 benchmark로 dependent loop 성능을 예측하면 잘못된 결론을 낸다.
+predicate mask는 각 lane의 operation 적용 여부를 제어해 branch가 있는 loop를 vectorized form으로 바꿀 수 있다. 하지만 masked-off lane도 일부 instruction issue 자원을 소비할 수 있고, memory operation의 fault-suppression semantics는 ISA마다 확인해야 한다.
 
-## CHAPTER 15 · execution port와 functional unit 경쟁이 vector throughput을 제한할 수 있다
+조건이 거의 모두 true인 경우 predication이 효율적일 수 있지만 절반 이하 lane만 active라면 wasted work가 커질 수 있다. branch partitioning이 더 나은 경우도 있다.
 
-Modern superscalar CPU는 여러 execution resource를 가지며 vector add, multiply, load/store, shuffle가 특정 port/resource를 공유할 수 있다. Source code에서 operation count가 적어 보여도 같은 execution port에 몰리면 dispatch/issue bottleneck이 생긴다. 반대로 서로 다른 resource를 사용하는 instruction을 적절히 섞으면 overlap이 가능하다. PMU counter와 static scheduling analysis를 조합해 frontend stall, execution-port pressure, memory stall을 분리한다.
+mask density와 instruction count를 profile한다. input distribution이 달라질 때 vector efficiency가 급변하는지 production workload로 확인한다.
 
-## CHAPTER 16 · vector load가 cache line을 잘 쓰는지 확인해야 한다
+---
 
-Vector width가 커질수록 한 instruction이 더 많은 byte를 요구한다. Access가 cache-line boundary를 반복해서 가로지르거나 working set이 cache capacity를 넘으면 arithmetic throughput보다 memory hierarchy가 병목이 된다. Prefetcher가 sequential stream을 잘 따라오는지, read-for-ownership가 필요한 store인지, write-allocate traffic이 얼마나 생기는지도 영향을 준다. Vectorization으로 instruction 수가 줄어도 memory byte 수가 그대로면 bandwidth-bound workload의 speedup은 제한된다.
+## CHAPTER 07 · tail 처리는 vector width에 맞지 않는 남은 element의 correctness 문제다
 
-## CHAPTER 17 · AoS와 SoA는 vector lane에 들어가는 field 구성을 바꾼다
+array length가 vector width의 배수가 아니면 마지막 partial chunk를 처리해야 한다. scalar epilogue, masked vector, padded storage 등 여러 방법이 있다. boundary check를 빼고 full-width load를 하면 object 끝을 넘어 접근할 수 있어 보안 문제로 이어진다.
 
-Array of Structures는 한 객체의 여러 field를 인접하게 두고, Structure of Arrays는 같은 field를 여러 객체에 걸쳐 연속 배치한다. 특정 field 하나만 대량 계산하는 loop에서는 SoA가 contiguous vector load에 유리할 수 있다. 반대로 객체 단위로 모든 field를 함께 사용하는 workload에서는 AoS가 cache locality에 더 적합할 수 있다. Data-oriented design은 vectorization 하나만 위한 규칙이 아니라 access pattern별 byte utilization을 최적화하는 문제다.
+padding을 사용하면 allocator와 serialization이 실제 extra bytes를 보장해야 한다. masked load도 ISA가 inactive lane의 memory fault를 어떻게 다루는지 확인한다.
 
-## CHAPTER 18 · alias 가능성은 compiler가 memory operation을 재배열할 수 있는지 결정한다
+length 0, width-1, width, width+1 같은 boundary case를 테스트한다. 성능 benchmark에는 tiny array도 포함해 tail overhead를 본다.
 
-두 pointer가 같은 memory를 가리킬 가능성이 있으면 compiler는 load/store 순서를 자유롭게 바꾸기 어렵다. Alias analysis가 `겹치지 않는다`고 증명하면 vector loop를 더 공격적으로 만들 수 있다. Programmer annotation이나 restrict-like contract를 사용할 때는 실제 non-alias invariant가 반드시 참이어야 한다. 틀린 alias promise는 단순 성능 저하가 아니라 잘못된 code generation을 허용할 수 있다. Optimization remark에서 alias check와 runtime versioning 여부를 확인한다.
+---
 
-## CHAPTER 19 · loop-carried dependency는 iteration을 동시에 실행할 수 있는지 결정한다
+## CHAPTER 08 · reduction은 lane 값을 하나로 합치며 dependency tree를 만든다
 
-현재 iteration의 결과가 다음 iteration 입력이 되면 단순 lane 병렬화가 불가능할 수 있다. Prefix sum, recurrence, state machine 형태가 대표적이다. 일부 dependency는 algorithm transformation으로 병렬 prefix/reduction 형태로 바꿀 수 있지만 수학적 의미와 overhead가 달라진다. Compiler가 vectorization을 포기한 이유가 `unknown dependency`인지 `proven recurrence`인지 구분한다. Source를 미세하게 바꾸기 전에 dependency graph를 그린다.
+sum, min, max 같은 reduction은 vector lane을 마지막에 하나의 scalar로 합쳐야 한다. tree reduction은 serial chain보다 dependency depth를 줄일 수 있지만 floating-point에서는 합산 순서를 바꿔 결과가 달라질 수 있다.
 
-## CHAPTER 20 · auto-vectorizer는 legality와 profitability를 따로 판단한다
+parallel reduction을 여러 thread까지 확장하면 partial result merge order가 추가된다. deterministic result가 요구되면 fixed tree나 compensated scheme을 선택해야 할 수 있다.
 
-Compiler는 먼저 vector transformation이 program semantics를 보존하는지 판단하고, 그 다음 target cost model에서 이득이 있을지 평가한다. Legality가 통과해도 gather 비용, runtime alias check, small trip count, register pressure 때문에 profitability에서 거부할 수 있다. LLVM vectorizer는 target instruction cost와 loop structure를 이용해 width/interleave를 선택한다. Optimization remark를 읽으면 `왜 vectorize되지 않았는가`를 추측 대신 근거로 좁힐 수 있다.
+throughput과 numerical error를 같이 측정한다. integer overflow semantics도 reduction contract에 포함한다.
 
-## CHAPTER 21 · runtime versioning은 fast vector path와 safe scalar path를 함께 만들 수 있다
+---
 
-Compile time에 alias/alignment를 완전히 증명하지 못해도 runtime check를 삽입해 조건이 맞을 때 vector path, 아니면 scalar path를 선택할 수 있다. 이 전략은 applicability를 넓히지만 branch/check overhead와 code size를 늘린다. Hot loop trip count가 짧으면 check 비용이 vector body 이득보다 클 수 있다. Benchmark는 vector path가 실제 입력에서 얼마나 자주 선택되는지까지 측정해야 한다.
+## CHAPTER 09 · horizontal operation은 vector 내부 lane 사이 data 이동을 요구한다
 
-## CHAPTER 22 · branch-heavy loop는 if-conversion과 predication 가능성을 본다
+horizontal add/max는 각 lane 독립 operation과 달리 lane 간 shuffle과 combine을 필요로 한다. ISA에 따라 dedicated instruction이 있어도 latency와 throughput이 일반 arithmetic보다 다를 수 있다.
 
-작은 조건문은 mask/select로 바꾸어 vector lane을 유지할 수 있지만 branch body가 크거나 side effect가 많으면 predication이 비싸진다. Masked store/load가 fault suppression을 보장하는지, inactive lane에서도 computation이 발생하는지 ISA semantics를 확인해야 한다. Compiler는 branch probability와 cost model을 이용해 if-conversion을 결정한다. Data를 조건별로 partition해 branch 자체를 제거하는 algorithm redesign이 더 나을 수도 있다.
+매 iteration마다 horizontal reduction을 하면 vector parallelism을 자주 깨뜨린다. 여러 vector accumulator를 유지한 뒤 loop 끝에서 한 번 합치는 구조가 더 나을 수 있다.
 
-## CHAPTER 23 · scalar epilogue가 전체 성능을 지배하는 작은 배열도 있다
+assembly에서 shuffle/horizontal instruction 비중을 확인한다. reduction frequency를 줄였을 때 register pressure가 과도하게 증가하지 않는지도 본다.
 
-Vector loop startup, alignment/alias check, tail 처리는 고정 비용을 만든다. 배열 길이가 작으면 main vector body보다 prologue/epilogue가 상대적으로 커져 scalar implementation이 더 빠를 수 있다. Library가 다양한 input size를 받는다면 하나의 benchmark 크기로 결론내리지 않는다. Distribution별 latency를 측정하고 threshold 기반 dispatch를 고려한다.
+---
 
-## CHAPTER 24 · vector ABI는 함수 경계에서 register와 data layout을 규정한다
+## CHAPTER 10 · widen과 narrow는 overflow·precision boundary를 명시한다
 
-Vector type을 함수 parameter/return으로 노출하면 어떤 register class를 사용하는지, stack alignment가 무엇인지, caller/callee-saved rule이 어떤지 ABI와 연결된다. ISA extension이 다른 binary 사이에서 unsupported instruction이나 calling convention mismatch가 생기지 않도록 build target과 runtime dispatch를 관리해야 한다. Public ABI에 architecture-specific vector type을 박아 넣으면 portability와 binary compatibility 비용이 커질 수 있다.
+작은 integer element를 넓은 type으로 확장해 계산하면 intermediate overflow를 피할 수 있고, 결과를 다시 좁힐 때 truncate 또는 saturation semantics를 선택해야 한다. signed/unsigned extension을 잘못 고르면 bit pattern은 같아도 numerical meaning이 바뀐다.
 
-## CHAPTER 25 · intrinsic은 compiler를 우회하는 assembly가 아니라 typed instruction interface다
+image/audio kernel에서 8-bit input을 16/32-bit accumulator로 처리하는 이유가 여기에 있다. narrow 전에 range proof가 없으면 silent wrap이 발생할 수 있다.
 
-Intrinsic은 특정 vector operation을 source에서 직접 표현하지만 register allocation, instruction scheduling, constant folding 같은 많은 일은 여전히 compiler가 수행한다. Intrinsic을 사용한다고 최적 code가 자동 보장되지 않는다. Target-specific code가 늘어나면 portability, testing matrix, future compiler improvement 활용이 어려워질 수 있다. Auto-vectorization이 실패하는 원인을 확인한 뒤 필요한 hotspot에 제한적으로 사용한다.
+worst-case input으로 accumulator bound를 검증한다. intrinsic 이름보다 실제 signedness와 rounding behavior를 확인한다.
 
-## CHAPTER 26 · runtime CPU feature dispatch는 binary 하나로 여러 ISA generation을 지원한다
+---
 
-배포 binary가 baseline ISA만 요구하면서도 newer CPU에서 확장 vector instruction을 사용하려면 function multiversioning이나 runtime feature detection을 사용할 수 있다. Dispatch result를 cache하고 hot path에서 feature check를 반복하지 않도록 설계할 수 있다. 그러나 build artifact마다 실제 target feature set과 fallback path가 존재하는지 검증해야 한다. 특정 lab machine에서만 실행되는 binary를 production 호환이라고 착각하면 안 된다.
+## CHAPTER 11 · saturation arithmetic은 overflow를 endpoint에 고정한다
 
-## CHAPTER 27 · vectorization은 floating-point operation order를 바꿀 수 있다
+saturating add/sub는 range를 넘는 결과를 wrap시키지 않고 minimum/maximum value에 clamp한다. media signal에는 유용하지만 일반 integer arithmetic과 결과가 달라 algorithm이 이를 전제로 해야 한다.
 
-Reduction tree, FMA 사용, reassociation은 scalar source와 다른 rounding sequence를 만들 수 있다. Strict IEEE semantics가 필요하면 compiler option과 transformation이 제한될 수 있고, fast-math 계열 contract를 허용하면 더 공격적인 vectorization이 가능해진다. 성능 요구와 numerical error budget을 문서화하지 않은 채 compiler flag만 바꾸면 regression 판정 기준이 사라진다. P35의 floating-point error analysis와 연결해 tolerance를 정의한다.
+중간 계산을 너무 일찍 saturate하면 final result가 high-precision computation과 다를 수 있다. 어느 stage에서 clamp할지 numerical contract를 정한다.
 
-## CHAPTER 28 · bandwidth-bound workload에는 Roofline 관점이 유용하다
+boundary ±1 around min/max를 테스트한다. scalar fallback과 SIMD path가 동일 saturation rule을 사용하는지 비교한다.
 
-Operation 대비 memory byte 비율이 낮으면 vector ALU를 더 넓혀도 memory bandwidth ceiling 때문에 성능이 오르지 않는다. Arithmetic intensity를 계산하고 achieved bandwidth·compute throughput을 측정하면 compute-bound와 bandwidth-bound를 구분할 수 있다. Cache reuse를 늘려 effective byte traffic을 줄이거나 data representation을 압축하는 최적화가 vector width 확대보다 큰 효과를 낼 수 있다.
+---
 
-## CHAPTER 29 · SIMD benchmark는 thermal, frequency, alignment, dispatch를 통제해야 한다
+## CHAPTER 12 · shuffle은 lane rearrangement를 통해 data layout을 runtime에 바꾼다
 
-짧은 benchmark는 turbo frequency에서 끝나고 장시간 workload는 thermal/power limit에 걸릴 수 있다. Input alignment, size, cache warmness, branch/mask distribution, CPU affinity, compiler flags, ISA dispatch path가 다르면 비교가 무의미하다. Wall-clock 하나만 기록하지 말고 cycles, instructions, vector instruction mix, cache misses, bandwidth, frequency 상태를 함께 본다. P21의 thermal state와 P26의 PMU/tracing evidence를 연결한다.
+shuffle/permutation instruction은 vector 내부 또는 여러 vector 사이 element 순서를 바꿔 transpose, interleave, reduction을 구현한다. 그러나 복잡한 shuffle network는 arithmetic보다 더 큰 latency와 port pressure를 만들 수 있다.
 
-## CHAPTER 30 · vector optimization의 계약은 semantics·layout·hardware·compiler 네 층을 동시에 고정한다
+source layout이 계속 shuffle을 요구한다면 upstream data representation을 바꾸는 편이 더 효율적일 수 있다. compiler가 constant permutation을 최적 instruction으로 낮추는지도 target별로 다르다.
 
-검증 가능한 vector 최적화는 먼저 scalar reference semantics와 numerical tolerance를 고정한다. 이어서 non-alias·alignment·bounds 같은 memory invariant, target ISA와 runtime dispatch, compiler version/flags를 기록한다. 마지막으로 representative data distribution에서 correctness differential test와 performance counter를 함께 비교한다. `vector instruction이 생성됐다`는 사실은 성공 조건이 아니다. 결과 정확성, tail safety, portability, sustained throughput이 모두 만족될 때만 최적화가 성립한다.
+shuffle instruction 수와 dependency를 profile한다. data layout 변경 전후 total memory traffic까지 비교한다.
+
+---
+
+## CHAPTER 13 · vectorization은 register pressure를 늘려 spill을 유발할 수 있다
+
+wide vector register는 한 번에 많은 값을 보관하지만 여러 accumulator와 mask를 동시에 유지하면 physical register가 부족해질 수 있다. spill은 vector register 전체를 memory에 저장해 큰 traffic을 만든다.
+
+unrolling과 vectorization을 함께 강하게 적용하면 throughput이 좋아지기보다 stack/local traffic이 늘 수 있다. compiler cost model이 vector factor를 제한하는 이유다.
+
+register allocation report와 spill load/store를 확인한다. vector width를 줄였을 때 오히려 성능이 좋아지는 경우 pressure가 원인일 수 있다.
+
+---
+
+## CHAPTER 14 · vector instruction도 latency와 throughput을 분리해 봐야 한다
+
+한 vector instruction의 결과가 dependent consumer에 준비되기까지 latency가 있고 independent instruction을 얼마나 자주 issue할 수 있는지 throughput이 따로 존재한다. width가 두 배라고 latency가 절반이 되는 것은 아니다.
+
+critical dependency chain에서는 더 넓은 vector가 clock/frequency나 execution unit occupancy 때문에 이득이 제한될 수 있다. independent work가 많으면 throughput 측면에서 유리하다.
+
+microbenchmark는 dependency chain과 independent stream을 분리해 측정한다. production hotspot의 dependency graph와 연결한다.
+
+---
+
+## CHAPTER 15 · port pressure는 특정 vector operation이 execution resource를 독점할 때 생긴다
+
+CPU backend에는 load/store, integer, FP, shuffle 같은 operation을 처리하는 execution port·unit이 제한되어 있다. 모든 instruction이 서로 다른 자원을 사용하는 것은 아니므로 같은 종류 vector op가 몰리면 해당 port가 bottleneck이 된다.
+
+gather, divide, shuffle처럼 비싼 operation은 instruction count가 적어도 resource occupancy가 길 수 있다. 단순 opcode 수 최적화는 원인을 놓친다.
+
+PMU backend stall과 generated instruction을 함께 본다. 계산과 load를 다른 port에 분산할 여지가 있는지 cost model로 검토한다.
+
+---
+
+## CHAPTER 16 · cache line은 vector width보다 큰 memory transfer 단위일 수 있다
+
+CPU cache는 vector register 크기와 무관하게 cache-line 단위로 memory를 가져온다. vector가 line 경계를 자주 가로지르면 두 line을 접근하고, false sharing이 있으면 다른 core write 때문에 line이 invalidated된다.
+
+vectorizing store가 한 번에 더 넓은 range를 건드려 unrelated field까지 같은 line에서 공유될 수 있다. alignment와 data partition을 동시에 설계해야 한다.
+
+line utilization과 cache miss, cache-to-cache transfer를 본다. vector speedup이 multi-thread에서만 사라지면 coherence 문제를 의심한다.
+
+---
+
+## CHAPTER 17 · AoS와 SoA는 access axis에 따라 vector friendliness가 달라진다
+
+Array of Structures는 object별 field가 가까워 객체 하나를 모두 읽을 때 유리하고, Structure of Arrays는 동일 field가 연속되어 많은 object의 한 속성을 vector 처리하기 좋다. 어느 layout이 좋은지는 operation이 object 중심인지 field 중심인지에 달려 있다.
+
+SoA 변환은 API와 serialization 비용을 바꾸고 여러 field를 동시에 쓰는 code에서는 오히려 cache line 수를 늘릴 수 있다. hybrid AoSoA가 절충안이 되기도 한다.
+
+production access pattern으로 cache miss와 vectorization report를 측정한다. benchmark용 artificial scan만으로 전체 layout을 결정하지 않는다.
+
+---
+
+## CHAPTER 18 · alias uncertainty는 compiler가 vector memory reordering을 막게 한다
+
+두 pointer가 overlap할 수 있으면 compiler는 vector load/store를 재배치했을 때 semantics가 깨질 가능성을 고려해야 한다. NoAlias proof, restrict-like contract, runtime overlap check가 있으면 더 공격적인 vectorization이 가능하다.
+
+잘못된 non-alias assertion은 optimizer에게 실제 dependency를 무시할 권한을 줘 corruption을 만든다. performance hint가 곧 correctness claim이다.
+
+vectorization remark에서 alias 때문에 거부됐는지 확인한다. adversarial overlapping input을 test해 annotation이 진짜 API contract인지 검증한다.
+
+---
+
+## CHAPTER 19 · loop-carried dependency는 iteration 사이 병렬화를 제한한다
+
+현재 iteration 결과를 다음 iteration이 필요로 하면 여러 iteration을 동시에 vector lane에 배치하기 어렵다. prefix sum, recurrence가 대표적이다. dependency distance와 associativity에 따라 scan algorithm이나 block transform으로 구조를 바꿀 수 있다.
+
+floating-point reduction처럼 수학적으로 associative해 보여도 finite precision에서는 operation reorder가 result를 바꾼다. compiler가 어떤 freedom을 갖는지 language semantics와 fast-math flag를 본다.
+
+loop dependence report와 actual output drift를 함께 확인한다. dependency를 무시한 forced vectorization은 금지한다.
+
+---
+
+## CHAPTER 20 · cost model은 vectorization legality와 profitability를 구분한다
+
+compiler는 vectorization이 semantics를 보존해도 실제 target에서 이득이 적으면 scalar path를 선택할 수 있다. gather cost, trip count, runtime check, epilogue, register pressure가 모두 profitability에 들어간다.
+
+“vectorized되지 않았다”가 compiler bug라는 뜻은 아니다. small loop나 cold path에서는 setup overhead가 더 크다. 반대로 profile 정보가 잘못되면 hot loop가 낮은 우선순위를 받을 수 있다.
+
+optimization remark에서 legality failure와 cost rejection을 분리한다. target CPU와 profile을 정확히 설정한 뒤 다시 평가한다.
+
+---
+
+## CHAPTER 21 · runtime versioning은 fast vector path와 safe fallback을 동시에 제공한다
+
+alias나 alignment를 compile time에 확정하지 못해도 runtime check로 조건을 검사한 뒤 vector fast path와 scalar fallback 중 하나를 선택할 수 있다. 이는 API를 넓게 유지하면서 common case를 최적화하는 방법이다.
+
+check 자체와 code duplication이 overhead·I-cache footprint를 늘린다. 조건이 거의 항상 실패하면 vector path가 존재해도 이득이 없다.
+
+production에서 fast-path hit ratio를 측정한다. test는 두 path가 동일 semantics를 갖는지 각각 실행한다.
+
+---
+
+## CHAPTER 22 · if-conversion은 branch를 predicate로 바꿔 vector lane을 유지한다
+
+loop 내부 짧은 branch는 mask select와 conditional operation으로 변환해 lane divergence 없이 실행할 수 있다. 하지만 양쪽 path computation이 비싸거나 fault 가능 memory access가 있으면 predication이 안전하거나 수익성 있는 선택이 아닐 수 있다.
+
+조건 density가 extreme하면 scalar branch가 더 빠를 수도 있다. compiler가 profile을 활용해 선택할 수 있다.
+
+branch miss와 masked instruction 수를 동시에 본다. source에서 `if`를 수동으로 없애는 것보다 generated code를 확인한다.
+
+---
+
+## CHAPTER 23 · scalar epilogue는 tail element를 처리하는 일반적인 fallback이다
+
+vector loop가 full-width chunk를 처리한 뒤 남은 element를 scalar loop가 처리할 수 있다. trip count가 작으면 epilogue 비중이 커져 vectorization setup 이득이 사라진다.
+
+multiple vector width version이 있으면 각 path마다 epilogue가 생겨 code size가 증가한다. masked tail이 가능한 ISA에서는 scalar epilogue를 줄일 수 있다.
+
+length distribution을 benchmark input에 반영한다. 항상 큰 array만 측정하지 않는다.
+
+---
+
+## CHAPTER 24 · vector ABI는 function boundary에서 register와 type 전달 규칙을 정한다
+
+vector type을 함수 argument·return으로 전달할 때 어떤 register를 사용하고 stack alignment가 무엇인지 ABI가 정의한다. compiler·FFI가 다른 convention을 사용하면 lane data가 깨진다.
+
+ISA extension별 vector width가 다르면 public ABI에 concrete vector type을 노출하는 것이 compatibility 문제를 만들 수 있다. scalable vector는 별도 calling rule이 필요할 수 있다.
+
+cross-language boundary에서는 header source보다 actual ABI와 target feature를 검증한다. symbol만 link된다고 correctness가 보장되지 않는다.
+
+---
+
+## CHAPTER 25 · intrinsic은 compiler에게 target operation 의도를 명시하지만 portability를 줄인다
+
+intrinsic은 특정 vector instruction이나 semantic primitive를 source에서 직접 표현할 수 있게 한다. auto-vectorizer가 못 찾는 pattern을 최적화할 수 있지만 ISA별 code path와 feature detection을 관리해야 한다.
+
+intrinsic을 assembly opcode로 단정하면 compiler가 다른 instruction sequence로 lower할 수 있는 가능성을 놓친다. alignment와 lane semantics도 intrinsic contract를 따라야 한다.
+
+scalar reference implementation을 유지하고 differential test를 한다. performance gain이 없는 intrinsic은 유지보수 비용만 늘릴 수 있다.
+
+---
+
+## CHAPTER 26 · runtime dispatch는 CPU feature에 맞는 implementation을 선택한다
+
+한 binary가 여러 CPU 세대를 지원하면 startup 또는 call site에서 available SIMD extension을 탐지해 최적 구현을 선택할 수 있다. dispatch가 없으면 newest ISA를 사용한 binary가 old CPU에서 invalid instruction으로 실패한다.
+
+feature bit만 보고 OS save/restore support나 deployment policy를 무시하면 안 된다. container/VM에서 exposed feature가 host migration compatibility와 연결되기도 한다.
+
+선택된 implementation을 telemetry에 남긴다. CI에서 scalar·각 ISA path를 강제로 실행해 dead code가 되지 않게 한다.
+
+---
+
+## CHAPTER 27 · FP vectorization은 operation reorder로 numerical result를 바꿀 수 있다
+
+vector reduction과 FMA contraction은 scalar source와 다른 floating-point evaluation order를 만들 수 있다. strict semantics에서는 compiler freedom이 제한되고 fast-math에서는 더 넓은 reorder가 허용된다.
+
+performance를 위해 fast mode를 켤 때 bitwise reproducibility와 NaN/signed-zero handling이 어떻게 바뀌는지 명시해야 한다.
+
+vector/scalar output을 domain tolerance로 비교한다. last-bit 차이와 실제 business error를 구분한다.
+
+---
+
+## CHAPTER 28 · roofline 관점은 compute와 memory 중 어느 자원이 상한인지 구분한다
+
+arithmetic intensity가 낮은 loop는 SIMD width를 늘려도 memory bandwidth가 먼저 포화될 수 있다. intensity가 높고 data가 cache에 맞으면 execution throughput이 병목이 된다. vectorization은 machine balance 안에서만 speedup을 낸다.
+
+bytes moved를 계산하지 않고 FLOPS만 최적화하면 memory-bound kernel에서 효과가 작다. data compression이나 blocking이 더 큰 이득을 줄 수 있다.
+
+achieved bandwidth와 vector operation rate를 함께 측정한다. theoretical peak 대비 어느 roof에 가까운지 본다.
+
+---
+
+## CHAPTER 29 · SIMD benchmark는 frequency, alignment, input size를 통제해야 한다
+
+wide vector instruction은 CPU 종류에 따라 frequency/power behavior에 영향을 줄 수 있고 thermal state가 장시간 성능을 바꾼다. small hot-cache benchmark와 large streaming benchmark는 전혀 다른 bottleneck을 측정한다.
+
+compiler가 benchmark 계산을 제거하지 않게 result를 소비하고 warmup·pinning을 관리한다. alignment가 우연히 좋은 한 run만 비교하지 않는다.
+
+latency distribution, cycles/element, bandwidth를 함께 기록한다. target CPU model과 active implementation을 결과에 포함한다.
+
+---
+
+## CHAPTER 30 · vector contract는 layout, alias, numerical semantics, fallback을 명시한다
+
+SIMD path를 안전하게 운영하려면 buffer alignment와 element type, overlap 가능성, tail 처리, supported ISA, floating-point reorder 허용 범위를 문서화해야 한다. fast path가 조건을 만족하지 못하면 정확한 scalar 또는 다른 vector fallback이 있어야 한다.
+
+최적화는 widest instruction을 고르는 작업이 아니다. cache, port, register pressure, memory bandwidth 중 실제 병목을 evidence로 확인한 뒤 vector factor와 layout을 선택한다.
+
+release gate에서는 여러 길이·alignment·CPU feature·alias case를 실행해 **scalar reference와 같은 observable contract를 유지하면서 실제 throughput이 개선되는지** 검증한다.
