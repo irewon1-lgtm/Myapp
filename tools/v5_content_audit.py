@@ -30,6 +30,7 @@ MAX_CODE_RATIO = 0.28
 MAX_SHINGLE_REPEAT_RATIO = 0.08
 SHINGLE_WIDTH = 12
 LONG_PARAGRAPH_MIN = 100
+MANIFEST_SHARD_RE = re.compile(r"manifest_\d{2}\.json")
 
 
 def repo_root() -> Path:
@@ -70,7 +71,7 @@ def h2_chapters(text: str) -> list[str]:
     matches = list(re.finditer(r"(?m)^## CHAPTER\s+", text))
     if not matches:
         return []
-    chunks = []
+    chunks: list[str] = []
     for i, match in enumerate(matches):
         start = match.start()
         end = matches[i + 1].start() if i + 1 < len(matches) else len(text)
@@ -79,14 +80,18 @@ def h2_chapters(text: str) -> list[str]:
 
 
 def paragraph_blocks(text: str) -> list[str]:
-    # Remove code, headings, list/table lines, then split on blank lines.
     text = strip_code(text)
-    blocks = []
+    blocks: list[str] = []
     for raw in re.split(r"\n\s*\n", text):
         lines = [line.strip() for line in raw.splitlines()]
         if not lines or any(line.startswith("#") for line in lines):
             continue
-        if all((not line) or line.startswith(("- ", "* ", ">", "|")) or re.match(r"^\d+[.)]\s", line) for line in lines):
+        if all(
+            (not line)
+            or line.startswith(("- ", "* ", ">", "|"))
+            or re.match(r"^\d+[.)]\s", line)
+            for line in lines
+        ):
             continue
         paragraph = normalize_space(" ".join(line for line in lines if line))
         if paragraph:
@@ -114,13 +119,59 @@ def registry_ids(root: Path) -> set[str]:
     return ids
 
 
+def manifest_files(track_dir: Path) -> list[Path]:
+    files = [
+        p
+        for p in track_dir.iterdir()
+        if p.is_file() and (p.name == "manifest.json" or MANIFEST_SHARD_RE.fullmatch(p.name))
+    ]
+    return sorted(files, key=lambda p: (0 if p.name == "manifest.json" else 1, p.name))
+
+
+def load_merged_manifest(track_dir: Path, errors: list[str]) -> dict | None:
+    files = manifest_files(track_dir)
+    if not files or files[0].name != "manifest.json":
+        errors.append(f"{track_dir.name}: missing primary manifest.json")
+        return None
+
+    fragments: list[dict] = []
+    for file in files:
+        try:
+            fragment = json.loads(file.read_text(encoding="utf-8"))
+        except Exception as exc:
+            errors.append(f"{track_dir.name}/{file.name}: invalid manifest JSON: {exc}")
+            return None
+        fragments.append(fragment)
+
+    base = fragments[0]
+    for file, fragment in zip(files, fragments):
+        for field in ("trackId", "trackNumber", "title"):
+            if fragment.get(field) != base.get(field):
+                errors.append(
+                    f"{track_dir.name}/{file.name}: {field} mismatch "
+                    f"base={base.get(field)!r} actual={fragment.get(field)!r}"
+                )
+        if file.name != "manifest.json" and not (fragment.get("parts") or []):
+            errors.append(f"{track_dir.name}/{file.name}: shard cannot be empty")
+
+    parts = [part for fragment in fragments for part in (fragment.get("parts") or [])]
+    parts.sort(key=lambda part: part.get("order", 0))
+    merged = dict(base)
+    merged["parts"] = parts
+    merged["manifestFiles"] = [p.name for p in files]
+    return merged
+
+
 def main() -> int:
     root = repo_root()
-    v5 = root / "app/src/main/assets/textbook/v5"
+    assets_root = root / "app/src/main/assets"
+    v5 = assets_root / "textbook/v5"
     known_sources = registry_ids(root)
     errors: list[str] = []
     active_texts: list[tuple[str, str]] = []
     track_semantic: dict[str, int] = {}
+    track_part_counts: dict[str, int] = {}
+    manifest_shards: dict[str, list[str]] = {}
     long_paragraph_owners: dict[str, list[str]] = defaultdict(list)
 
     track_dirs = sorted(p for p in v5.iterdir() if p.is_dir() and re.fullmatch(r"track_\d{2}", p.name))
@@ -130,26 +181,32 @@ def main() -> int:
         errors.append(f"TRACK_DIRS expected={expected_tracks} actual={actual_tracks}")
 
     for track_dir in track_dirs:
-        manifest_file = track_dir / "manifest.json"
-        if not manifest_file.is_file():
-            errors.append(f"{track_dir.name}: missing manifest.json")
-            continue
-        try:
-            manifest = json.loads(manifest_file.read_text(encoding="utf-8"))
-        except Exception as exc:
-            errors.append(f"{track_dir.name}: invalid manifest JSON: {exc}")
+        manifest = load_merged_manifest(track_dir, errors)
+        if manifest is None:
             continue
 
         track_num = int(track_dir.name[-2:])
         expected_track_id = f"T{track_num:02d}"
         if manifest.get("trackId") != expected_track_id:
             errors.append(f"{track_dir.name}: trackId={manifest.get('trackId')} expected={expected_track_id}")
+        if manifest.get("trackNumber") != track_num:
+            errors.append(f"{track_dir.name}: trackNumber={manifest.get('trackNumber')} expected={track_num}")
+
         parts = manifest.get("parts") or []
+        track_part_counts[expected_track_id] = len(parts)
+        manifest_shards[expected_track_id] = manifest.get("manifestFiles") or []
         orders = [p.get("order") for p in parts]
         if orders != list(range(1, len(parts) + 1)):
             errors.append(f"{expected_track_id}: non-contiguous part orders {orders}")
-        if len({p.get('id') for p in parts}) != len(parts):
+        ids = [p.get("id") for p in parts]
+        if len(ids) != len(set(ids)):
             errors.append(f"{expected_track_id}: duplicate part ids")
+        asset_paths = [p.get("assetPath") for p in parts]
+        if len(asset_paths) != len(set(asset_paths)):
+            errors.append(f"{expected_track_id}: duplicate asset paths")
+        source_paths = [p.get("sourceMapPath") for p in parts]
+        if len(source_paths) != len(set(source_paths)):
+            errors.append(f"{expected_track_id}: duplicate source-map paths")
 
         semantic_total = 0
         for idx, part in enumerate(parts, 1):
@@ -160,8 +217,8 @@ def main() -> int:
 
             asset_rel = part.get("assetPath", "")
             source_rel = part.get("sourceMapPath", "")
-            asset = root / "app/src/main/assets" / asset_rel
-            source_map_file = root / "app/src/main/assets" / source_rel
+            asset = assets_root / asset_rel
+            source_map_file = assets_root / source_rel
             if not asset.is_file():
                 errors.append(f"{part_id}: missing asset {asset_rel}")
                 continue
@@ -204,6 +261,9 @@ def main() -> int:
             sections = source_map.get("sections") or []
             if len(sections) != len(chapters):
                 errors.append(f"{part_id}: chapters={len(chapters)} evidence={len(sections)}")
+            section_ids = [section.get("sectionId", "") for section in sections]
+            if len(section_ids) != len(set(section_ids)):
+                errors.append(f"{part_id}: duplicate evidence section ids")
             for chapter_index, evidence in enumerate(sections, 1):
                 prefix = f"{part_id}-S{chapter_index:02d}-"
                 sid = evidence.get("sectionId", "")
@@ -214,7 +274,7 @@ def main() -> int:
                     errors.append(f"{sid}: empty sourceIds")
                 if len(source_ids) != len(set(source_ids)):
                     errors.append(f"{sid}: duplicate sourceIds")
-                unknown = [s for s in source_ids if s not in known_sources]
+                unknown = [source_id for source_id in source_ids if source_id not in known_sources]
                 if unknown:
                     errors.append(f"{sid}: unknown source ids {unknown}")
 
@@ -240,15 +300,19 @@ def main() -> int:
             f"duplicates={duplicate_occurrences} total={shingle_total}"
         )
 
+    error_categories = Counter(error.split(":", 1)[0] for error in errors)
     report = {
         "track_dirs": actual_tracks,
+        "track_part_counts": track_part_counts,
+        "manifest_shards": manifest_shards,
         "active_part_count": len(active_texts),
         "track_semantic_chars": track_semantic,
         "long_duplicate_groups": len(duplicate_paras),
         "twelve_token_duplicate_ratio": round(shingle_ratio, 8),
         "error_count": len(errors),
-        "errors": errors[:500],
-        "note": "Literal 5x corpus target remains enforced by V5BookScaleCorpusGateTest; this Python audit covers manifest/evidence/editorial/duplication contracts.",
+        "error_categories": dict(error_categories.most_common()),
+        "errors": errors[:1000],
+        "note": "Literal 5x corpus target remains enforced by V5BookScaleCorpusGateTest; this audit now merges the same manifest shards as the runtime reader and JUnit contracts.",
     }
     print(json.dumps(report, ensure_ascii=False, indent=2))
     return 1 if errors else 0
