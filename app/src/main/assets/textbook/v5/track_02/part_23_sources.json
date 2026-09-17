@@ -1,0 +1,15 @@
+{
+  "partId": "T02-P23",
+  "sections": [
+    {"sectionId":"T02-P23-S01-search-fullmatch","sourceIds":["PYTHON-REF","NIST-SSDF"]},
+    {"sectionId":"T02-P23-S02-regex-escape-layers","sourceIds":["PYTHON-REF"]},
+    {"sectionId":"T02-P23-S03-quantifier-backtracking","sourceIds":["PYTHON-REF","NIST-SSDF"]},
+    {"sectionId":"T02-P23-S04-group-capture-contract","sourceIds":["PYTHON-REF"]},
+    {"sectionId":"T02-P23-S05-unicode-regex","sourceIds":["PYTHON-REF","UNICODE"]},
+    {"sectionId":"T02-P23-S06-lookaround-context","sourceIds":["PYTHON-REF","NIST-SSDF"]},
+    {"sectionId":"T02-P23-S07-tokenization-boundary","sourceIds":["SICP","PYTHON-REF"]},
+    {"sectionId":"T02-P23-S08-parser-precedence","sourceIds":["SICP","CLRS4"]},
+    {"sectionId":"T02-P23-S09-regex-purpose-boundary","sourceIds":["PYTHON-REF","REFACTORING2"]},
+    {"sectionId":"T02-P23-S10-grammar-tool-choice","sourceIds":["SICP","REFACTORING2"]}
+  ]
+}
