@@ -1,75 +1,44 @@
-# TRACK 02 · P66 — Container protocol: len·truth·getitem·contains·iteration fallback을 추적하기
+# PART 66 · Container protocol — length·truth·index·slice·membership을 하나의 계약으로 읽기
 
-Python의 container는 특정 base class를 상속해야만 되는 개념이 아니다. `len(x)`, `x[i]`, `value in x`, `for value in x` 같은 문법이 서로 다른 특수 메서드와 fallback 규칙을 통해 객체에 능력을 부여한다. 그래서 `__getitem__` 하나를 구현했을 뿐인데 iteration까지 되는 것처럼 보이거나, `__len__` 때문에 객체의 bool 값이 결정되는 일이 생긴다.
-
-이 PART의 목표는 list처럼 보이는 클래스를 만드는 것이 아니다. **각 문법이 어느 프로토콜을 먼저 보고, 어떤 fallback이 열리며, 종료 신호가 무엇인지**를 분리해서 추적하는 것이다.
+Python container는 `list`나 `dict` 같은 내장 타입만 뜻하지 않는다. 사용자 정의 객체도 `len(x)`, `x[i]`, `x[a:b]`, `item in x`, 반복문 같은 문법에 참여할 수 있다. 이때 편의 메서드를 여러 개 붙이는 것이 아니라 **각 문법이 어떤 프로토콜을 호출하고 서로 어떤 의미를 공유해야 하는지**를 설계해야 한다.
 
 ---
 
-## 1. Length contract — `len()`은 음수가 아닌 정수라는 강한 계약이다
+## CHAPTER 01 · `__len__`은 단순 숫자 반환이 아니라 container size 계약이다
 
-`len(obj)`는 `obj.__len__()`의 의미와 연결된다. 하지만 아무 숫자나 반환하면 되는 것이 아니다. 길이는 음수가 될 수 없고 Python이 요구하는 정수 범위와 계약을 따라야 한다.
+`len(obj)`는 객체가 보고하는 논리적 원소 수를 사용한다. 반환값은 음수가 될 수 없고, 호출자가 이 값으로 반복 범위·버퍼 크기·빈 상태를 판단할 수 있으므로 순간적인 내부 구현값과 다르면 안 된다.
+
+Lazy container라면 길이를 계산하기 위해 전체 stream을 소비해야 할 수도 있다. 그런 타입에 억지로 `__len__`을 제공하면 `len()`이 예상보다 비싸거나 state를 바꾸는 이상한 API가 된다. 길이를 O(1)에 제공할 수 있는지보다 **길이라는 개념이 안정적으로 존재하는지**를 먼저 판단한다.
+
+Cache를 사용하는 container라면 cached length와 실제 storage가 일치하는지 mutation path마다 검증한다. 길이 정보가 틀리면 truth test와 slicing 최적화까지 연쇄적으로 오염될 수 있다.
+
+---
+
+## CHAPTER 02 · truth test는 `__bool__`이 없을 때 length로 fallback할 수 있다
+
+`if obj:`는 반드시 `obj.__bool__()`만 호출하는 것이 아니다. 타입이 명시적 truth protocol을 제공하지 않으면 길이를 기반으로 빈/비어 있지 않음을 판단하는 fallback이 사용될 수 있다.
 
 ```python
-class Batch:
-    def __init__(self, rows):
-        self.rows = list(rows)
+class QueueView:
+    def __init__(self, items):
+        self.items = items
 
     def __len__(self):
-        return len(self.rows)
-
-batch = Batch([10, 20, 30])
-print(len(batch))  # 3
+        return len(self.items)
 ```
 
-길이를 “추정치”나 “전체 서버 레코드 수일 수도 있음” 같은 모호한 값으로 사용하면 호출자가 잘못된 가정을 하게 된다. `len()`은 보통 **현재 객체가 표현하는 collection의 cardinality**로 읽힌다.
+이 객체는 별도 `__bool__` 없이도 비어 있으면 false-like, 원소가 있으면 true-like로 동작할 수 있다. 그러나 “연결됨”, “유효함”, “성공함” 같은 상태를 size와 섞으면 의미가 불분명해진다.
 
-또 `__len__` 계산이 매우 비싸다면 API 의미와 비용 모델도 어긋날 수 있다. 호출자는 `len(x)`를 비교적 기본적인 조회로 생각하는 경우가 많다.
-
-따라서 lazy remote collection에서 매번 네트워크 count 쿼리를 실행하도록 `__len__`를 구현하는 대신 명시적 `count_remote()` 같은 API가 더 나을 수 있다.
-
-Container 프로토콜은 단순히 “가능한가?”가 아니라 **문법이 암시하는 비용과 의미까지 맞는가?**를 봐야 한다.
+Truth test를 제공할 때는 호출자가 `if obj:`를 보고 어떤 질문에 대한 답이라고 이해할지 정한다. Container에서는 emptiness가 자연스럽지만 resource handle이나 query result에서는 명시적 property가 더 안전할 수 있다.
 
 ---
 
-## 2. Truth fallback — `__bool__`이 없으면 길이가 진실값에 참여할 수 있다
+## CHAPTER 03 · `__getitem__`은 integer index와 key access를 같은 문법에 연결한다
 
-`if obj:`는 반드시 `obj.__bool__()`만 보는 것이 아니다. 타입이 `__bool__`을 제공하지 않으면 `__len__` 결과가 truthiness 결정에 사용될 수 있다.
-
-```python
-class Inbox:
-    def __init__(self, messages):
-        self.messages = list(messages)
-
-    def __len__(self):
-        return len(self.messages)
-
-empty = Inbox([])
-full = Inbox(["hello"])
-
-print(bool(empty))  # False
-print(bool(full))   # True
-```
-
-이 fallback은 편리하지만 의미를 의식해야 한다. “연결 객체가 살아 있는가?”와 “현재 읽을 메시지가 있는가?”는 다른 질문이다.
+`obj[key]`는 sequence index일 수도 있고 mapping key lookup일 수도 있다. 사용자 타입이 `__getitem__`을 구현하면 어떤 key 타입을 허용하고, 범위를 벗어난 경우 어떤 예외를 사용할지 계약해야 한다.
 
 ```python
-if connection:
-    ...
-```
-
-이 표현이 연결 생존 여부를 뜻한다고 기대했는데 `__len__`가 큐 길이를 반환하면 빈 큐 상태에서 `False`가 된다. 그래서 객체 truthiness가 모호하면 `is_connected`, `has_items` 같은 명시적 상태가 더 안전하다.
-
-`__bool__`을 직접 제공할 때도 반환 의미를 하나로 고정해야 한다. 사용 시점마다 “유효함”, “비어 있지 않음”, “성공함”을 섞으면 읽는 사람이 조건문의 의미를 추적할 수 없다.
-
----
-
-## 3. `__getitem__` — index 접근은 key 해석 규칙을 공개한다
-
-`obj[key]`는 `__getitem__` 프로토콜과 연결된다.
-
-```python
-class Ledger:
+class RecordList:
     def __init__(self, rows):
         self._rows = list(rows)
 
@@ -77,30 +46,20 @@ class Ledger:
         return self._rows[index]
 ```
 
-이 짧은 구현은 정수 index뿐 아니라 내부 list가 지원하는 slice까지 우연히 전달한다. 하지만 사용자 타입이 어떤 key 종류를 지원하는지는 의도적으로 정해야 한다.
+Sequence-like 타입이라면 음수 index, `IndexError`, slice 처리와의 일관성을 고려한다. Mapping-like 타입이라면 존재하지 않는 key에 `KeyError`가 자연스럽다. 잘못된 key type과 없는 key를 같은 예외로 뭉개면 caller가 실패 원인을 구분하기 어려워진다.
 
-```python
-ledger[0]
-ledger[-1]
-ledger[1:4]
-```
-
-각 표현이 모두 의미 있는지 검토한다. 예를 들어 시간순 로그에서 음수 index가 “뒤에서부터”라는 관례와 잘 맞을 수 있지만, pagination cursor 객체에 음수 index를 허용하는 것은 이상할 수 있다.
-
-또 sequence 스타일의 `__getitem__`에서 범위를 벗어난 정수 index는 `IndexError`로 끝나는 것이 중요하다. 이 종료 신호는 뒤의 iteration fallback과도 연결된다.
-
-key가 문자열인 mapping형 객체라면 `KeyError`가 더 자연스럽다. 즉 예외 타입도 container 종류의 의미를 전달한다.
+Custom key normalization을 한다면 lookup 전에 어느 변환이 일어나는지 명확히 한다. 예를 들어 문자열 key를 자동 lower-case하는 것은 편리하지만 원본 key identity를 잃을 수 있다.
 
 ---
 
-## 4. Slicing protocol — slice 객체의 start·stop·step을 해석한다
+## CHAPTER 04 · slicing은 하나의 index가 아니라 범위 표현 객체를 전달한다
 
-`obj[2:10:2]`가 호출되면 key는 마법의 세 인수가 아니라 `slice` 객체다.
+`obj[1:5:2]`는 특수한 문법이지만 사용자 객체에는 slice 객체로 전달될 수 있다. 따라서 `__getitem__` 안에서 integer와 slice를 구분해 처리한다.
 
 ```python
 class Window:
     def __init__(self, values):
-        self.values = list(values)
+        self.values = tuple(values)
 
     def __getitem__(self, key):
         if isinstance(key, slice):
@@ -108,168 +67,67 @@ class Window:
         return self.values[key]
 ```
 
-사용자 타입은 slice 결과 타입도 결정해야 한다. 원래 타입을 유지할지, 내장 list를 반환할지, view를 반환할지에 따라 identity와 비용이 달라진다.
+Slice 결과를 원본과 같은 타입으로 돌려줄지, 표준 list/tuple을 돌려줄지는 API 의미다. View를 반환한다면 원본 mutation이 결과에 반영되는지, snapshot을 반환한다면 비용이 얼마인지도 드러내야 한다.
 
-큰 배열이나 파일-backed 데이터에서는 slice가 복사인지 view인지가 특히 중요하다.
-
-```text
-copy slice:
-- 독립된 새 데이터
-- 메모리 비용 증가
-- 원본 변경 영향 없음
-
-view slice:
-- 원본 저장소 공유
-- 낮은 복사 비용
-- 원본 lifetime/mutation과 결합
-```
-
-`slice.indices(length)`를 이용하면 `None`, 음수, 범위를 벗어난 값을 구체적 인덱스로 정규화할 수 있다. 하지만 정규화 전에 자신의 컨테이너가 Python sequence와 같은 음수/step semantics를 정말 제공할 것인지 먼저 결정해야 한다.
-
-문법을 지원하는 순간 사용자는 내장 sequence와 비슷한 기대를 갖기 때문이다.
+`start`, `stop`, `step`의 `None`과 음수 처리는 내장 sequence 기대와 어긋나지 않게 설계한다. 직접 산술로 index를 정규화하기보다 표준 slice semantics를 재사용하면 경계 오류를 줄일 수 있다.
 
 ---
 
-## 5. Iteration fallback — `__iter__`가 없어도 sequence 방식으로 반복될 수 있다
+## CHAPTER 05 · iteration은 `__iter__`가 우선이지만 sequence fallback을 이해해야 한다
 
-가장 자주 놓치는 부분 중 하나다. 객체가 명시적 `__iter__`를 제공하지 않아도 오래된 sequence protocol을 만족하면 iteration이 가능할 수 있다. 개념적으로 Python은 `__getitem__(0)`, `__getitem__(1)`처럼 증가시키다가 `IndexError`를 만나 종료하는 경로를 사용할 수 있다.
+일반적인 iterable은 `__iter__`를 제공하고 iterator object를 반환한다. 일부 sequence-style 객체는 정수 index를 0부터 증가시키는 방식으로 반복 가능한 fallback에 참여할 수 있다. 그러나 새로운 타입에서는 의도를 명시적으로 드러내는 `__iter__` 구현이 더 읽기 쉽다.
 
 ```python
-class LegacySequence:
+class Names:
     def __init__(self, values):
-        self.values = list(values)
+        self._values = tuple(values)
 
-    def __getitem__(self, index):
-        if index >= len(self.values):
-            raise IndexError
-        return self.values[index]
-
-for item in LegacySequence(["a", "b", "c"]):
-    print(item)
-```
-
-여기서 종료 시 `None`을 반환하거나 `KeyError`를 던지면 기대한 sequence iteration 계약과 맞지 않는다.
-
-현대 코드에서는 반복 의미가 있다면 대개 `__iter__`를 명시적으로 구현하는 편이 읽기 쉽다.
-
-```python
     def __iter__(self):
-        return iter(self.values)
+        return iter(self._values)
 ```
 
-중요한 교훈은 **특수 메서드 하나가 다른 문법에 간접 참여할 수 있다**는 점이다. 그래서 프로토콜 구현 전에는 그 메서드의 fallback 경로까지 확인해야 한다.
+Iterator 자신이 iterable이면 `__iter__`가 보통 `self`를 반환한다. Container와 iterator를 같은 객체로 만들면 한 번 소비한 뒤 재반복이 예상과 다를 수 있으므로 reusable collection인지 single-pass cursor인지 구분한다.
+
+`for`, `list()`, unpacking, comprehension이 같은 iteration contract를 사용하므로 한 곳의 state bug가 여러 문법에서 반복된다.
 
 ---
 
-## 6. Membership — `in`은 전용 프로토콜과 fallback을 가진다
+## CHAPTER 06 · membership은 `__contains__`가 있으면 의미와 성능을 직접 제어한다
 
-`x in container`는 가능하면 `__contains__`를 이용한다.
+`item in container`는 membership protocol을 사용한다. 타입이 `__contains__`를 제공하면 hash index, database index, interval test처럼 반복보다 더 적합한 알고리즘을 사용할 수 있다.
 
 ```python
-class RoleSet:
-    def __init__(self, roles):
-        self.roles = set(roles)
+class RangeSet:
+    def __init__(self, low, high):
+        self.low = low
+        self.high = high
 
-    def __contains__(self, role):
-        return role in self.roles
+    def __contains__(self, value):
+        return self.low <= value <= self.high
 ```
 
-전용 membership 구현이 없으면 iteration이나 sequence 접근을 통해 확인될 수 있다. 기능상 같은 결과가 나와도 비용은 크게 달라질 수 있다.
+Membership이 없을 때 iteration을 통한 fallback이 가능할 수 있지만, 무한 iterator나 expensive remote sequence에서는 위험하다. “포함 여부 확인”이 종료 가능하고 비용 예측 가능한 operation인지 먼저 판단한다.
 
-예를 들어 내부에 set index가 있는데도 `__contains__` 없이 모든 요소를 순회한다면 membership이 O(n)으로 동작할 수 있다.
-
-반대로 membership이 원격 API 조회를 의미한다면 `if user in directory:`라는 문법이 네트워크 호출을 숨길 수 있다. 이는 기능적으로 가능하지만 비용과 실패 경계를 숨긴다는 문제가 있다.
-
-프로토콜 문법을 채택할 때는 다음을 확인한다.
-
-- lookup이 local인지 remote인지
-- 평균 비용이 호출자 기대와 맞는지
-- 실패가 단순 False인지 예외인지
-- equality 기준이 container의 의미와 맞는지
-
-“Python답다”는 이유만으로 모든 기능을 연산자 문법에 숨기는 것은 좋은 API가 아니다.
+Equality 기준도 container 의미와 맞아야 한다. Case-insensitive collection처럼 정규화된 membership을 제공한다면 iteration 결과와 `in`의 의미 차이를 문서화한다.
 
 ---
 
-## 7. Mutation during iteration — 반복 중 구조 변경의 의미를 정한다
+## CHAPTER 07 · mutation 중 iteration은 fail-fast·snapshot·live-view 중 하나를 선택해야 한다
 
-Container가 mutable이면 iteration 중 변경이 새로운 문제를 만든다.
+Container를 순회하는 동안 같은 container가 수정되면 무엇이 일어나는지 타입마다 다르다. 일부는 오류를 내고, 일부는 snapshot을 순회하며, 일부는 변화가 보이는 live view를 제공한다.
 
-```python
-values = [1, 2, 3, 4]
-for value in values:
-    if value % 2 == 0:
-        values.remove(value)
-```
+Custom container에서는 이 동작을 우연에 맡기지 않는다. Iterator가 내부 배열 index를 직접 들고 있는데 중간 삽입/삭제가 일어나면 원소를 건너뛰거나 중복 방문할 수 있다.
 
-이런 코드는 index 이동 때문에 요소를 건너뛰는 등 예상하기 어려운 결과를 만들 수 있다. 어떤 내장 컨테이너는 구조 변경을 감지해 오류를 내고, 어떤 경우에는 변경된 상태를 그대로 관찰한다.
+안전한 선택지는 version counter로 mutation을 감지해 실패시키거나, iterator 생성 시 snapshot을 만들거나, immutable container로 제한하는 것이다. 각 선택은 memory, latency, freshness 비용이 다르다.
 
-사용자 정의 container/iterator에서도 정책이 필요하다.
-
-1. **live iterator** — 원본 변경을 이후 반복에서 관찰
-2. **snapshot iterator** — 시작 시점 데이터를 복사해 안정적 반복
-3. **fail-fast** — structural version을 기록하고 변경 시 예외
-
-```python
-class SnapshotBag:
-    def __iter__(self):
-        return iter(tuple(self._items))
-```
-
-snapshot은 semantics가 명확하지만 복사 비용이 있다. live는 비용이 낮아도 mutation 의미를 문서화해야 한다.
-
-동시성까지 들어오면 thread/task synchronization 문제가 추가된다. 따라서 반복 안정성을 “iterator 메서드 한 줄”의 문제로 보지 말고 **container state lifetime**의 문제로 봐야 한다.
+Concurrency가 들어오면 문제는 더 커진다. Thread-safe container라고 해도 한 번의 iteration 전체가 atomic하다는 뜻은 아니다. 필요한 consistency 수준을 명시한다.
 
 ---
 
-## 8. Container contract — 문법 묶음이 서로 모순되지 않아야 한다
+## CHAPTER 08 · container contract는 문법별 메서드가 아니라 관찰 가능한 의미를 통합한다
 
-Container를 설계할 때는 지원할 프로토콜을 표로 먼저 고정하는 것이 좋다.
+좋은 container는 `len`, truth, index, slice, iteration, membership이 서로 모순되지 않는다. 길이가 0인데 iteration에서 원소가 나오거나, `x in c`는 True인데 순회 결과에서는 절대 같은 equality 의미로 찾을 수 없다면 caller의 기본 가정이 깨진다.
 
-```text
-len(x)            지원 / 현재 로컬 요소 수
-bool(x)           len 기반 / 비어 있으면 False
-x[i]              정수 index + slice
-negative index    지원
-iteration         명시적 __iter__
-value in x        __contains__ / 내부 set index 사용
-mutation          append/remove 허용
-iteration policy  snapshot
-remote I/O        없음
-```
+테스트는 각 메서드를 따로 호출하는 수준을 넘는다. 빈/비어 있지 않은 상태, 음수 index, slice 경계, membership, 반복 재사용, mutation 중 반복을 한 시나리오로 연결해 본다.
 
-이 표를 만들면 `__getitem__`를 추가하면서 뜻하지 않게 iteration까지 열거나, `len`이 remote I/O를 숨기는 문제를 미리 발견할 수 있다.
-
-테스트도 문법별 예시가 아니라 프로토콜 사이의 관계를 본다.
-
-```python
-assert len(box) == sum(1 for _ in box)
-assert bool(box) == (len(box) != 0)
-for value in box:
-    assert value in box
-```
-
-물론 모든 타입이 이 성질을 반드시 만족해야 하는 것은 아니다. 핵심은 자신의 타입이 어떤 관계를 약속하는지 의도적으로 결정하는 것이다.
-
-Container 프로토콜의 리뷰 질문은 다음으로 압축된다.
-
-- length와 truthiness의 의미가 일관적인가?
-- index/slice 예외가 sequence 또는 mapping 의미와 맞는가?
-- `__getitem__` fallback으로 원치 않는 iteration을 열지 않았는가?
-- membership 비용과 실패가 문법에 숨겨져 있지 않은가?
-- mutation과 iterator lifetime 정책이 명확한가?
-
----
-
-## 직관 봉인
-
-- `len()`은 단순 숫자 반환이 아니라 cardinality 계약이다.
-- `__bool__`이 없으면 `__len__`가 truthiness를 결정할 수 있다.
-- `__getitem__`는 index뿐 아니라 slice와 과거 sequence iteration 경로에도 영향을 줄 수 있다.
-- `in`은 `__contains__`만의 문법이 아니며 fallback 경로가 있다.
-- 반복 중 mutation은 iterator 구현이 아니라 state lifetime 정책 문제다.
-- 프로토콜 문법은 기능뿐 아니라 비용과 실패를 숨길 수 있으므로 의미가 맞을 때만 열어야 한다.
-
-## 다음 연결
-
-다음 PART에서는 `obj.name`이라는 짧은 표현 뒤의 **attribute lookup routing**을 추적한다. `__getattribute__`와 `__getattr__`의 역할 차이, 재귀 함정, 쓰기·삭제 경로, 그리고 P58에서 배운 descriptor precedence가 전체 lookup pipeline 안에서 어디에 놓이는지 연결한다.
+이 PART의 핵심은 **container protocol을 여러 magic method의 모음으로 보지 않고, 객체가 크기·접근·반복·포함·변경을 어떤 일관된 의미로 제공하는지 검증하는 통합 계약으로 보는 것**이다.
