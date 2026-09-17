@@ -1,0 +1,13 @@
+{
+  "partId":"T02-P100",
+  "sections":[
+    {"sectionId":"T02-P100-S01-stop-admission","sourceIds":["SRE","SRE-WORKBOOK"]},
+    {"sectionId":"T02-P100-S02-shutdown-signal","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P100-S03-drain-inflight","sourceIds":["SRE","SRE-WORKBOOK"]},
+    {"sectionId":"T02-P100-S04-shutdown-deadline","sourceIds":["SRE","SRE-WORKBOOK"]},
+    {"sectionId":"T02-P100-S05-resource-close-order","sourceIds":["SRE","CSAPP3"]},
+    {"sectionId":"T02-P100-S06-queue-drain-policy","sourceIds":["SRE","DDIA"]},
+    {"sectionId":"T02-P100-S07-force-stop-boundary","sourceIds":["SRE","CSAPP3"]},
+    {"sectionId":"T02-P100-S08-shutdown-contract","sourceIds":["SRE","SRE-WORKBOOK"]}
+  ]
+}
