@@ -1,0 +1,20 @@
+{
+  "partId":"T07-P10",
+  "sections":[
+    {"sectionId":"T07-P10-S01-internal-public","sourceIds":["OPENAPI31","OWASP-API"]},
+    {"sectionId":"T07-P10-S02-allowlist-mapping","sourceIds":["OWASP-API","NIST-SSDF"]},
+    {"sectionId":"T07-P10-S03-time-serialization","sourceIds":["OPENAPI31","DDIA"]},
+    {"sectionId":"T07-P10-S04-bigint-decimal","sourceIds":["TS-HANDBOOK","DDIA"]},
+    {"sectionId":"T07-P10-S05-null-omission","sourceIds":["OPENAPI31","TS-HANDBOOK"]},
+    {"sectionId":"T07-P10-S06-nested-projection","sourceIds":["OWASP-API","DDIA"]},
+    {"sectionId":"T07-P10-S07-authorization-projection","sourceIds":["OWASP-API","OPENAPI31"]},
+    {"sectionId":"T07-P10-S08-collection-envelope","sourceIds":["OPENAPI31","DDIA"]},
+    {"sectionId":"T07-P10-S09-field-naming","sourceIds":["OPENAPI31","NIST-SSDF"]},
+    {"sectionId":"T07-P10-S10-content-negotiation","sourceIds":["RFC9110","OPENAPI31"]},
+    {"sectionId":"T07-P10-S11-compression","sourceIds":["RFC9110","SRE"]},
+    {"sectionId":"T07-P10-S12-response-schema","sourceIds":["OPENAPI31","NIST-SSDF"]},
+    {"sectionId":"T07-P10-S13-serialization-cost","sourceIds":["SRE","DDIA"]},
+    {"sectionId":"T07-P10-S14-response-logging","sourceIds":["OWASP-API","SRE"]},
+    {"sectionId":"T07-P10-S15-response-lab","sourceIds":["OPENAPI31","OWASP-API","SRE"]}
+  ]
+}

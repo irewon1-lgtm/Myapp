@@ -1,0 +1,20 @@
+{
+  "partId":"T07-P11",
+  "sections":[
+    {"sectionId":"T07-P11-S01-await-semantics","sourceIds":["TS-HANDBOOK","SRE"]},
+    {"sectionId":"T07-P11-S02-sequential-parallel","sourceIds":["SRE","DDIA"]},
+    {"sectionId":"T07-P11-S03-promise-all-effects","sourceIds":["DDIA","TS-HANDBOOK"]},
+    {"sectionId":"T07-P11-S04-all-settled","sourceIds":["TS-HANDBOOK","SRE"]},
+    {"sectionId":"T07-P11-S05-async-rejection","sourceIds":["SRE","NIST-SSDF"]},
+    {"sectionId":"T07-P11-S06-fire-forget","sourceIds":["SRE","DDIA"]},
+    {"sectionId":"T07-P11-S07-deadline-propagation","sourceIds":["SRE","SRE-WORKBOOK"]},
+    {"sectionId":"T07-P11-S08-cancellation","sourceIds":["SRE","DDIA"]},
+    {"sectionId":"T07-P11-S09-concurrency-limit","sourceIds":["SRE","DDIA"]},
+    {"sectionId":"T07-P11-S10-async-iterator","sourceIds":["DDIA","TS-HANDBOOK"]},
+    {"sectionId":"T07-P11-S11-await-race","sourceIds":["DDIA","SRE"]},
+    {"sectionId":"T07-P11-S12-transaction-await","sourceIds":["DDIA","SRE"]},
+    {"sectionId":"T07-P11-S13-async-context","sourceIds":["SRE","SRE-WORKBOOK"]},
+    {"sectionId":"T07-P11-S14-async-debugging","sourceIds":["SRE-WORKBOOK","SRE"]},
+    {"sectionId":"T07-P11-S15-async-lab","sourceIds":["SRE","DDIA","TS-HANDBOOK"]}
+  ]
+}

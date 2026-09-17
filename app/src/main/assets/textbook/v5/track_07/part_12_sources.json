@@ -1,0 +1,20 @@
+{
+  "partId":"T07-P12",
+  "sections":[
+    {"sectionId":"T07-P12-S01-request-id","sourceIds":["SRE","SRE-WORKBOOK"]},
+    {"sectionId":"T07-P12-S02-global-context-race","sourceIds":["DDIA","SRE"]},
+    {"sectionId":"T07-P12-S03-explicit-context","sourceIds":["SRE","NIST-SSDF"]},
+    {"sectionId":"T07-P12-S04-async-local","sourceIds":["SRE","SRE-WORKBOOK"]},
+    {"sectionId":"T07-P12-S05-context-size","sourceIds":["SRE","OWASP-API"]},
+    {"sectionId":"T07-P12-S06-trace-context","sourceIds":["SRE-WORKBOOK","SRE"]},
+    {"sectionId":"T07-P12-S07-propagation-trust","sourceIds":["OWASP-API","SRE"]},
+    {"sectionId":"T07-P12-S08-baggage","sourceIds":["SRE","OWASP-API"]},
+    {"sectionId":"T07-P12-S09-principal-context","sourceIds":["OWASP-API","NIST-SSDF"]},
+    {"sectionId":"T07-P12-S10-deadline-context","sourceIds":["SRE","DDIA"]},
+    {"sectionId":"T07-P12-S11-queue-context","sourceIds":["DDIA","SRE"]},
+    {"sectionId":"T07-P12-S12-context-privacy","sourceIds":["OWASP-API","NIST-SSDF"]},
+    {"sectionId":"T07-P12-S13-nested-correlation","sourceIds":["SRE-WORKBOOK","SRE"]},
+    {"sectionId":"T07-P12-S14-context-tests","sourceIds":["SRE","NIST-SSDF"]},
+    {"sectionId":"T07-P12-S15-context-lab","sourceIds":["SRE","OWASP-API","DDIA"]}
+  ]
+}
