@@ -1,0 +1,20 @@
+{
+  "partId": "T07-P03",
+  "lessons": [
+    {"lessonId":"T07-B03-L31-authn-authz","sourceIds":["SECAPI-2025","OWASP-API-2023"]},
+    {"lessonId":"T07-B03-L32-session-token","sourceIds":["SECAPI-2025","OWASP-CHEATSHEETS"]},
+    {"lessonId":"T07-B03-L33-auth-middleware","sourceIds":["SECAPI-2025","FSA2-2025"]},
+    {"lessonId":"T07-B03-L34-bola","sourceIds":["OWASP-API-2023","SECAPI-2025"]},
+    {"lessonId":"T07-B03-L35-function-authorization","sourceIds":["OWASP-API-2023","SECAPI-2025"]},
+    {"lessonId":"T07-B03-L36-property-authorization","sourceIds":["OWASP-API-2023","JSONSCHEMA-2020-12"]},
+    {"lessonId":"T07-B03-L37-tenant-boundary","sourceIds":["SECAPI-2025","FSA2-2025"]},
+    {"lessonId":"T07-B03-L38-trust-boundary","sourceIds":["SECAPI-2025","OWASP-CHEATSHEETS"]},
+    {"lessonId":"T07-B03-L39-output-minimization","sourceIds":["OWASP-API-2023","DWA2-2025"]},
+    {"lessonId":"T07-B03-L40-resource-budget","sourceIds":["OWASP-API-2023","GOOGLE-SRE"]},
+    {"lessonId":"T07-B03-L41-ssrf","sourceIds":["OWASP-API-2023","OWASP-CHEATSHEETS"]},
+    {"lessonId":"T07-B03-L42-cors-csrf","sourceIds":["OWASP-CHEATSHEETS","SECAPI-2025"]},
+    {"lessonId":"T07-B03-L43-password-storage","sourceIds":["OWASP-CHEATSHEETS","SECAPI-2025"]},
+    {"lessonId":"T07-B03-L44-secret-lifecycle","sourceIds":["OWASP-CHEATSHEETS","SECAPI-2025"]},
+    {"lessonId":"T07-B03-L45-capstone","sourceIds":["OWASP-API-2023","SECAPI-2025","DWA2-2025"]}
+  ]
+}
