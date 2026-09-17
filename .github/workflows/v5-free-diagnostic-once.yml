@@ -37,15 +37,45 @@ jobs:
           npm run prepare:typescript
           chmod +x ./gradlew
 
-      - name: Exact Python audit report
+      - name: Compact Python audit report
         shell: bash
         run: |
           set +e
-          python tools/v5_content_audit.py
-          echo "V5_CONTENT_AUDIT_EXIT=$?"
+          python tools/v5_content_audit.py > /tmp/v5_audit.json
+          audit_status=$?
+          python - <<'PY'
+          import json, re
+          from collections import Counter
+          from pathlib import Path
+
+          data = json.loads(Path('/tmp/v5_audit.json').read_text())
+          print('V5_AUDIT track_dirs=', data.get('track_dirs'))
+          print('V5_AUDIT track_part_counts=', data.get('track_part_counts'))
+          print('V5_AUDIT semantic_chars=', data.get('track_semantic_chars'))
+          print('V5_AUDIT long_duplicate_groups=', data.get('long_duplicate_groups'))
+          print('V5_AUDIT twelve_token_duplicate_ratio=', data.get('twelve_token_duplicate_ratio'))
+          print('V5_AUDIT error_count=', data.get('error_count'))
+
+          counts = Counter()
+          for error in data.get('errors', []):
+              match = re.search(r'(T\d+-P\d+)', error)
+              counts[match.group(1) if match else 'GLOBAL'] += 1
+          def key(item):
+              name, _ = item
+              match = re.match(r'T(\d+)-P(\d+)', name)
+              return (int(match.group(1)), int(match.group(2))) if match else (-1, -1)
+          print('V5_AUDIT errors_by_part:')
+          for name, count in sorted(counts.items(), key=key):
+              print(f'  {name}={count}')
+
+          print('V5_AUDIT first_60_errors:')
+          for error in data.get('errors', [])[:60]:
+              print('  ', error)
+          PY
+          echo "V5_CONTENT_AUDIT_EXIT=$audit_status"
           exit 0
 
-      - name: Exact failing JUnit diagnostics
+      - name: Compact targeted JUnit diagnostics
         shell: bash
         run: |
           set +e
@@ -55,16 +85,27 @@ jobs:
             --tests 'com.futuretech.poweruser.textbook.V5EvidenceCoverageAssetTest' \
             --tests 'com.futuretech.poweruser.textbook.V5ExistingPartEvidenceContractTest' \
             --tests 'com.futuretech.poweruser.textbook.V5PrerequisiteConceptContractTest' \
-            --tests 'com.futuretech.poweruser.textbook.V5BookReaderSourceContractTest' \
-            --stacktrace
+            --tests 'com.futuretech.poweruser.textbook.V5BookReaderSourceContractTest'
           test_status=$?
           echo "V5_TARGETED_TEST_EXIT=$test_status"
-          echo '===== EXACT FAILURE XML ====='
-          for f in app/build/test-results/testDebugUnitTest/TEST-com.futuretech.poweruser.textbook.V5*.xml; do
-            [ -f "$f" ] || continue
-            echo "===== $f ====="
-            cat "$f"
-          done
+          python - <<'PY'
+          from pathlib import Path
+          import xml.etree.ElementTree as ET
+
+          files = sorted(Path('app/build/test-results/testDebugUnitTest').glob('TEST-com.futuretech.poweruser.textbook.V5*.xml'))
+          for path in files:
+              root = ET.parse(path).getroot()
+              print(f"V5_JUNIT suite={root.attrib.get('name')} tests={root.attrib.get('tests')} failures={root.attrib.get('failures')} errors={root.attrib.get('errors')}")
+              for testcase in root.findall('testcase'):
+                  failure = testcase.find('failure')
+                  if failure is not None:
+                      message = failure.attrib.get('message', '').replace('\n', ' ')
+                      print(f"  FAIL {testcase.attrib.get('name')}: {message[:6000]}")
+              system_out = root.findtext('system-out') or ''
+              for line in system_out.splitlines():
+                  if line.startswith('V5_SCALE'):
+                      print('  ' + line)
+          PY
           exit 0
 
-# diagnostic batch 3: prerequisite and P02-P04 density fixes
+# diagnostic batch 4: compact output after P05-P08 density edits
