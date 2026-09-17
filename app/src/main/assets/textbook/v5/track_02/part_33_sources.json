@@ -1,0 +1,15 @@
+{
+  "partId": "T02-P33",
+  "sections": [
+    {"sectionId":"T02-P33-S01-bytes-sequence","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P33-S02-bytearray-mutation","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P33-S03-memoryview-lifetime","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P33-S04-binary-field-contract","sourceIds":["CSAPP3","TLPI"]},
+    {"sectionId":"T02-P33-S05-struct-packing","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P33-S06-incremental-binary-parser","sourceIds":["PYTHON-REF","TLPI"]},
+    {"sectionId":"T02-P33-S07-buffer-protocol","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P33-S08-binary-security-comparison","sourceIds":["PYTHON-REF","NIST-SSDF"]},
+    {"sectionId":"T02-P33-S09-compression-budget","sourceIds":["NIST-SSDF","SRE"]},
+    {"sectionId":"T02-P33-S10-binary-boundary-model","sourceIds":["CSAPP3","NIST-SSDF","SICP"]}
+  ]
+}
