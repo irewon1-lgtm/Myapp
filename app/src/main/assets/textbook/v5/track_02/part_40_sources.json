@@ -1,0 +1,15 @@
+{
+  "partId":"T02-P40",
+  "sections":[
+    {"sectionId":"T02-P40-S01-pipeline-stage-contract","sourceIds":["SICP","DDIA"]},
+    {"sectionId":"T02-P40-S02-streaming-ingest","sourceIds":["PYTHON-REF","DDIA"]},
+    {"sectionId":"T02-P40-S03-parser-validation-boundary","sourceIds":["NIST-SSDF","OPENAPI31"]},
+    {"sectionId":"T02-P40-S04-pure-transform-stage","sourceIds":["SICP","REFACTORING2"]},
+    {"sectionId":"T02-P40-S05-batching-failure-granularity","sourceIds":["DDIA","SRE"]},
+    {"sectionId":"T02-P40-S06-backpressure-capacity","sourceIds":["SRE","DDIA"]},
+    {"sectionId":"T02-P40-S07-quarantine-replay","sourceIds":["NIST-SSDF","SRE"]},
+    {"sectionId":"T02-P40-S08-checkpoint-idempotency","sourceIds":["DDIA","SRE"]},
+    {"sectionId":"T02-P40-S09-reconciliation-lineage","sourceIds":["SRE-WORKBOOK","DDIA"]},
+    {"sectionId":"T02-P40-S10-restartable-state-machine","sourceIds":["SICP","DDIA","SRE"]}
+  ]
+}
