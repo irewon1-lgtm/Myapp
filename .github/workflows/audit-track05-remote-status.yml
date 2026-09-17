@@ -1,0 +1,87 @@
+name: Audit Track05 remote status
+
+on:
+  push:
+    branches:
+      - textbook-v5-track05-channel-control-r2
+    paths:
+      - '.github/workflows/audit-track05-remote-status.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Audit remote Track05 state
+        shell: bash
+        run: |
+          set -u
+          git fetch origin textbook-v5-track05-publish:textbook-v5-track05-publish || true
+          git fetch origin textbook-v5-deep-book-engine:textbook-v5-deep-book-engine || true
+          python - <<'PY'
+          import json, subprocess, re
+          from datetime import datetime, timezone
+
+          def git(*args):
+              return subprocess.check_output(['git', *args], text=True, stderr=subprocess.DEVNULL).strip()
+          def show(ref,path):
+              try: return git('show', f'{ref}:{path}')
+              except Exception: return None
+          def ls_tree(ref,prefix):
+              try: return git('ls-tree','-r','--name-only',ref,'--',prefix).splitlines()
+              except Exception: return []
+
+          pub='textbook-v5-track05-publish'; live='textbook-v5-deep-book-engine'
+          try: pub_sha=git('rev-parse',pub)
+          except Exception: pub_sha=None
+          try: live_sha=git('rev-parse',live)
+          except Exception: live_sha=None
+          prefix='app/src/main/assets/textbook/v5/track_05/'
+          files=ls_tree(pub,prefix) if pub_sha else []
+          md=[x for x in files if re.search(r'/part_\d+_.+\.md$',x)]
+          sm=[x for x in files if re.search(r'/part_\d+_sources\.json$',x)]
+          mf=[x for x in files if re.search(r'/manifest(?:_\d{2})?\.json$',x)]
+          manifest_text=show(pub,prefix+'manifest.json') if pub_sha else None
+          manifest_ok=False
+          if manifest_text:
+              try:
+                  m=json.loads(manifest_text); manifest_ok=(m.get('trackId')=='T05' and m.get('trackNumber')==5)
+              except Exception: pass
+          channel_text=show(live,'app/src/main/assets/textbook/v5/channel.json') if live_sha else None
+          channel_revision=None
+          if channel_text:
+              try: channel_revision=json.loads(channel_text).get('revision')
+              except Exception: pass
+          payload_left=bool(ls_tree(pub,'.track05_payload_xz')) if pub_sha else True
+          trigger_left=show(pub,'.track05_publish_trigger') is not None if pub_sha else True
+          structure=(len(md)==105 and len(sm)==105 and len(mf)==7 and manifest_ok and not payload_left and not trigger_left)
+          ready=bool(structure and pub_sha and channel_revision==pub_sha)
+          result={
+              'checkedAt': datetime.now(timezone.utc).isoformat(timespec='seconds').replace('+00:00','Z'),
+              'publishBranchSha': pub_sha,
+              'liveBranchSha': live_sha,
+              'track05MarkdownCount': len(md),
+              'track05SourceMapCount': len(sm),
+              'track05ManifestCount': len(mf),
+              'manifestIdentityValid': manifest_ok,
+              'stagingPayloadRemoved': not payload_left,
+              'publishTriggerRemoved': not trigger_left,
+              'channelRevision': channel_revision,
+              'channelPointsToPublishedTrack05': bool(pub_sha and channel_revision==pub_sha),
+              'remote_ready': ready,
+          }
+          open('TRACK05_REMOTE_STATUS.json','w',encoding='utf-8').write(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
+          print(json.dumps(result,ensure_ascii=False))
+          PY
+          git checkout textbook-v5-track05-channel-control-r2
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add TRACK05_REMOTE_STATUS.json
+          git commit -m 'audit(v5): record Track05 remote status [skip ci]' || true
+          git push origin HEAD:textbook-v5-track05-channel-control-r2
