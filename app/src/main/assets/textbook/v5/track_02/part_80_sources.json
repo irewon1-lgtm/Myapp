@@ -1,0 +1,13 @@
+{
+  "partId":"T02-P80",
+  "sections":[
+    {"sectionId":"T02-P80-S01-field-model","sourceIds":["PYTHON-REF","DDD"]},
+    {"sectionId":"T02-P80-S02-default-factory","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P80-S03-eq-order-generation","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P80-S04-frozen-mutation","sourceIds":["PYTHON-REF","DDD"]},
+    {"sectionId":"T02-P80-S05-hash-policy","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P80-S06-post-init","sourceIds":["PYTHON-REF","DDD"]},
+    {"sectionId":"T02-P80-S07-slots-matchargs","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P80-S08-dataclass-contract","sourceIds":["REFACTORING2","DDD"]}
+  ]
+}
