@@ -1,0 +1,15 @@
+{
+  "partId":"T02-P48",
+  "sections":[
+    {"sectionId":"T02-P48-S01-dispatch-model","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P48-S02-single-dispatch","sourceIds":["PYTHON-REF","GOF"]},
+    {"sectionId":"T02-P48-S03-dispatch-specificity","sourceIds":["PYTHON-REF","GOF"]},
+    {"sectionId":"T02-P48-S04-method-dispatch","sourceIds":["PYTHON-REF","DDD"]},
+    {"sectionId":"T02-P48-S05-registry-extension","sourceIds":["PYTHON-REF","GOF"]},
+    {"sectionId":"T02-P48-S06-visitor-alternative","sourceIds":["GOF","REFACTORING2"]},
+    {"sectionId":"T02-P48-S07-pattern-vs-dispatch","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P48-S08-dispatch-failure","sourceIds":["PYTHON-REF","NIST-SSDF"]},
+    {"sectionId":"T02-P48-S09-dispatch-testing","sourceIds":["PYTHON-REF","NIST-SSDF"]},
+    {"sectionId":"T02-P48-S10-extension-contract","sourceIds":["DDD","GOF","REFACTORING2"]}
+  ]
+}
