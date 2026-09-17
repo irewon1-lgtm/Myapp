@@ -1,0 +1,15 @@
+{
+  "partId":"T02-P41",
+  "sections":[
+    {"sectionId":"T02-P41-S01-module-name-identity","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P41-S02-module-cache","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P41-S03-partial-initialization","sourceIds":["PYTHON-REF","REFACTORING2"]},
+    {"sectionId":"T02-P41-S04-package-initialization","sourceIds":["PYTHON-REF","NIST-SSDF"]},
+    {"sectionId":"T02-P41-S05-import-path-policy","sourceIds":["PYTHON-REF","PROGIT2"]},
+    {"sectionId":"T02-P41-S06-finder-loader","sourceIds":["PYTHON-REF","NIST-SSDF"]},
+    {"sectionId":"T02-P41-S07-bytecode-cache","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P41-S08-dynamic-import","sourceIds":["PYTHON-REF","NIST-SSDF"]},
+    {"sectionId":"T02-P41-S09-import-side-effect","sourceIds":["REFACTORING2","SRE"]},
+    {"sectionId":"T02-P41-S10-import-diagnosis","sourceIds":["PYTHON-REF","SRE","REFACTORING2"]}
+  ]
+}
