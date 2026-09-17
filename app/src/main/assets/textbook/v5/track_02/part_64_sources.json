@@ -1,0 +1,13 @@
+{
+  "partId":"T02-P64",
+  "sections":[
+    {"sectionId":"T02-P64-S01-numeric-protocol","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P64-S02-index-integer","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P64-S03-forward-reverse-op","sourceIds":["PYTHON-REF"]},
+    {"sectionId":"T02-P64-S04-notimplemented-dispatch","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P64-S05-inplace-operator","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P64-S06-conversion-protocol","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P64-S07-floor-mod-semantics","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P64-S08-numeric-type-contract","sourceIds":["PYTHON-REF","SICP","DDD"]}
+  ]
+}
