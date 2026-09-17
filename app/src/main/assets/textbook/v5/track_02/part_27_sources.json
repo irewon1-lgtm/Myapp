@@ -1,0 +1,15 @@
+{
+  "partId": "T02-P27",
+  "sections": [
+    {"sectionId":"T02-P27-S01-growth-rate","sourceIds":["CLRS4","CSAPP3"]},
+    {"sectionId":"T02-P27-S02-python-native-loop","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P27-S03-call-lookup-cost","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P27-S04-allocation-cost","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P27-S05-cache-tradeoff","sourceIds":["SRE","PYTHON-REF"]},
+    {"sectionId":"T02-P27-S06-batching-overhead","sourceIds":["SRE","DDIA"]},
+    {"sectionId":"T02-P27-S07-benchmark-method","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P27-S08-profiler-benchmark","sourceIds":["CSAPP3","SRE"]},
+    {"sectionId":"T02-P27-S09-latency-throughput","sourceIds":["SRE","SRE-WORKBOOK"]},
+    {"sectionId":"T02-P27-S10-optimization-order","sourceIds":["CLRS4","CSAPP3","REFACTORING2"]}
+  ]
+}
