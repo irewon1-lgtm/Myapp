@@ -1,0 +1,15 @@
+{
+  "partId": "T02-P07",
+  "sections": [
+    {"sectionId":"T02-P07-S01-module-namespace","sourceIds":["PYTHON-REF","SICP","REFACTORING2"]},
+    {"sectionId":"T02-P07-S02-import-initialization","sourceIds":["PYTHON-REF"]},
+    {"sectionId":"T02-P07-S03-main-entry-point","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P07-S04-package-dependency-direction","sourceIds":["REFACTORING2","DDD"]},
+    {"sectionId":"T02-P07-S05-circular-import","sourceIds":["PYTHON-REF","REFACTORING2"]},
+    {"sectionId":"T02-P07-S06-environment-input","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P07-S07-virtual-environment","sourceIds":["PYTHON-REF","NIST-SSDF"]},
+    {"sectionId":"T02-P07-S08-dependency-contract","sourceIds":["NIST-SSDF","SRE"]},
+    {"sectionId":"T02-P07-S09-config-secret","sourceIds":["NIST-SSDF","SRE"]},
+    {"sectionId":"T02-P07-S10-reproducible-execution","sourceIds":["PYTHON-REF","PROGIT2","NIST-SSDF"]}
+  ]
+}
