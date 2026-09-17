@@ -1,0 +1,15 @@
+{
+  "partId":"T02-P49",
+  "sections":[
+    {"sectionId":"T02-P49-S01-work-queue-model","sourceIds":["CLRS4","SRE"]},
+    {"sectionId":"T02-P49-S02-fifo-fairness","sourceIds":["CLRS4","OSTEP"]},
+    {"sectionId":"T02-P49-S03-priority-heap","sourceIds":["CLRS4","PYTHON-REF"]},
+    {"sectionId":"T02-P49-S04-delayed-scheduling","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P49-S05-worker-pool-capacity","sourceIds":["OSTEP","SRE"]},
+    {"sectionId":"T02-P49-S06-retry-dead-letter","sourceIds":["SRE","DDIA"]},
+    {"sectionId":"T02-P49-S07-idempotent-job","sourceIds":["DDIA","SRE"]},
+    {"sectionId":"T02-P49-S08-starvation-aging","sourceIds":["OSTEP","CLRS4"]},
+    {"sectionId":"T02-P49-S09-scheduler-observability","sourceIds":["SRE","SRE-WORKBOOK"]},
+    {"sectionId":"T02-P49-S10-scheduling-contract","sourceIds":["SRE","DDIA","CLRS4"]}
+  ]
+}
