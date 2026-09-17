@@ -1,0 +1,15 @@
+{
+  "partId": "T02-P34",
+  "sections": [
+    {"sectionId":"T02-P34-S01-global-state-scope","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P34-S02-thread-local-task","sourceIds":["PYTHON-REF","OSTEP"]},
+    {"sectionId":"T02-P34-S03-contextvar-binding","sourceIds":["PYTHON-REF"]},
+    {"sectionId":"T02-P34-S04-context-propagation","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P34-S05-hidden-dependency","sourceIds":["SICP","REFACTORING2"]},
+    {"sectionId":"T02-P34-S06-logging-context","sourceIds":["SRE","PYTHON-REF"]},
+    {"sectionId":"T02-P34-S07-tracing-context","sourceIds":["SRE","DDIA"]},
+    {"sectionId":"T02-P34-S08-executor-context","sourceIds":["PYTHON-REF","OSTEP"]},
+    {"sectionId":"T02-P34-S09-context-isolation","sourceIds":["NIST-SSDF","OWASP-ASVS"]},
+    {"sectionId":"T02-P34-S10-dynamic-scope-contract","sourceIds":["SICP","PYTHON-REF","REFACTORING2"]}
+  ]
+}
