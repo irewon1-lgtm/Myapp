@@ -1,0 +1,15 @@
+{
+  "partId": "T02-P22",
+  "sections": [
+    {"sectionId":"T02-P22-S01-variant-state-model","sourceIds":["SICP","DDD","PYTHON-REF"]},
+    {"sectionId":"T02-P22-S02-structural-pattern","sourceIds":["PYTHON-REF"]},
+    {"sectionId":"T02-P22-S03-capture-vs-value","sourceIds":["PYTHON-REF"]},
+    {"sectionId":"T02-P22-S04-sequence-pattern","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P22-S05-mapping-pattern","sourceIds":["PYTHON-REF","OPENAPI31"]},
+    {"sectionId":"T02-P22-S06-class-pattern","sourceIds":["PYTHON-REF","DDD"]},
+    {"sectionId":"T02-P22-S07-pattern-guard","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P22-S08-exhaustive-variant","sourceIds":["PYTHON-REF","DDD"]},
+    {"sectionId":"T02-P22-S09-pattern-parser-layer","sourceIds":["SICP","PYTHON-REF"]},
+    {"sectionId":"T02-P22-S10-state-space-model","sourceIds":["SICP","DDD","REFACTORING2"]}
+  ]
+}
