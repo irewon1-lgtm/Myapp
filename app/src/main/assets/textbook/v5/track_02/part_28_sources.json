@@ -1,0 +1,15 @@
+{
+  "partId": "T02-P28",
+  "sections": [
+    {"sectionId":"T02-P28-S01-trust-boundary","sourceIds":["OWASP-ASVS","NIST-SSDF"]},
+    {"sectionId":"T02-P28-S02-dynamic-code-execution","sourceIds":["PYTHON-REF","OWASP-ASVS"]},
+    {"sectionId":"T02-P28-S03-shell-injection","sourceIds":["PYTHON-REF","NIST-SSDF"]},
+    {"sectionId":"T02-P28-S04-path-traversal","sourceIds":["OWASP-ASVS","TLPI"]},
+    {"sectionId":"T02-P28-S05-unsafe-deserialization","sourceIds":["PYTHON-REF","OWASP-ASVS"]},
+    {"sectionId":"T02-P28-S06-secret-lifecycle","sourceIds":["NIST-SSDF","OWASP-ASVS"]},
+    {"sectionId":"T02-P28-S07-security-random","sourceIds":["PYTHON-REF","NIST-SSDF"]},
+    {"sectionId":"T02-P28-S08-object-authorization","sourceIds":["OWASP-API","OWASP-ASVS"]},
+    {"sectionId":"T02-P28-S09-build-supply-chain","sourceIds":["NIST-SSDF"]},
+    {"sectionId":"T02-P28-S10-security-interpretation-boundary","sourceIds":["OWASP-ASVS","NIST-SSDF","SICP"]}
+  ]
+}
