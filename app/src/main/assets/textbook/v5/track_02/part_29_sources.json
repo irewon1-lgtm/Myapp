@@ -1,0 +1,15 @@
+{
+  "partId": "T02-P29",
+  "sections": [
+    {"sectionId":"T02-P29-S01-http-domain-result","sourceIds":["RFC9110","OPENAPI31"]},
+    {"sectionId":"T02-P29-S02-timeout-budget","sourceIds":["SRE","RFC9110"]},
+    {"sectionId":"T02-P29-S03-retry-idempotency","sourceIds":["SRE","RFC9110","DDIA"]},
+    {"sectionId":"T02-P29-S04-response-schema","sourceIds":["OPENAPI31","NIST-SSDF"]},
+    {"sectionId":"T02-P29-S05-token-refresh-concurrency","sourceIds":["SRE","OWASP-ASVS"]},
+    {"sectionId":"T02-P29-S06-connection-pool","sourceIds":["SRE","TLPI"]},
+    {"sectionId":"T02-P29-S07-pagination-state-machine","sourceIds":["OPENAPI31","DDIA"]},
+    {"sectionId":"T02-P29-S08-rate-limit-budget","sourceIds":["SRE","SRE-WORKBOOK"]},
+    {"sectionId":"T02-P29-S09-fallback-quality","sourceIds":["SRE","SRE-WORKBOOK"]},
+    {"sectionId":"T02-P29-S10-api-client-boundary","sourceIds":["DDD","REFACTORING2","OPENAPI31"]}
+  ]
+}
