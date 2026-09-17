@@ -1,0 +1,138 @@
+# PART 72 · Instance construction lifecycle — `__new__`·`__init__`·immutable subclass를 분리해서 이해하기
+
+Python에서 `ClassName(...)`을 호출하면 단순히 `__init__` 함수가 실행되는 것으로 끝나지 않는다. 새 객체를 실제로 만들고 반환하는 단계와 이미 만들어진 객체의 상태를 초기화하는 단계가 분리되어 있다. 대부분의 클래스에서는 이 차이를 의식하지 않아도 되지만 immutable built-in을 상속하거나 instance caching, validation, factory-like construction을 구현할 때는 `__new__`와 `__init__`의 역할을 정확히 알아야 한다.
+
+---
+
+## CHAPTER 01 · `__new__`는 instance를 만들고 반환하는 allocation 단계다
+
+`__new__`는 class를 첫 인수로 받고 실제 instance를 생성해 반환하는 단계다. 일반 mutable user class에서는 `object.__new__(cls)`가 충분하고 직접 override할 일이 많지 않다.
+
+```python
+class Token:
+    def __new__(cls, value):
+        obj = super().__new__(cls)
+        return obj
+
+    def __init__(self, value):
+        self.value = value
+```
+
+여기서 `__new__`가 객체 identity를 결정하고 `__init__`은 그 객체 상태를 채운다. 이 둘을 “constructor 한 함수”로 합쳐 생각하면 immutable subclass와 instance reuse 패턴을 이해하기 어렵다.
+
+`__new__`에서 다른 타입의 object를 반환할 수 있다는 점도 중요하다. 이 경우 일반적인 `__init__` 흐름이 달라질 수 있으므로 factory semantics를 숨길 때는 매우 신중해야 한다.
+
+---
+
+## CHAPTER 02 · `__init__`은 이미 존재하는 instance를 초기화하며 새 값을 반환하지 않는다
+
+`__init__`의 역할은 생성된 instance가 유효한 상태가 되도록 초기화하는 것이다. 일반 함수처럼 의미 있는 값을 반환하는 곳이 아니다.
+
+```python
+class Range:
+    def __init__(self, start, end):
+        if start > end:
+            raise ValueError("start must be <= end")
+        self.start = start
+        self.end = end
+```
+
+Validation이 실패하면 partially initialized object가 외부로 노출되지 않도록 해야 한다. 외부 resource를 획득한 뒤 뒤쪽 validation이 실패하는 구조라면 cleanup도 고려한다.
+
+`__init__`이 여러 번 호출될 가능성이 있는 unusual code나 framework가 있다면 idempotency를 가정하지 않는다. 일반적으로 새 instance마다 한 번 초기화되는 계약을 명확히 유지하는 편이 좋다.
+
+---
+
+## CHAPTER 03 · immutable built-in subclass는 값 자체를 `__new__` 단계에서 결정해야 한다
+
+`int`, `str`, `tuple` 같은 immutable 타입의 핵심 값은 instance가 생성된 뒤 `__init__`에서 바꾸기 어렵다. 따라서 subtype의 실제 값을 결정하려면 `__new__`가 필요할 수 있다.
+
+```python
+class UserId(str):
+    def __new__(cls, value):
+        normalized = value.strip().lower()
+        if not normalized:
+            raise ValueError("empty user id")
+        return super().__new__(cls, normalized)
+```
+
+이 객체의 문자열 값은 만들어지는 순간 확정된다. 이후 `__init__`에서 원본 문자열 내용을 다시 쓸 수 없다.
+
+Immutable subclass에 별도 metadata attribute를 추가할 수 있는 경우도 있지만 핵심 값과 부가 상태를 구분한다. Equality/hash가 base immutable value를 따르는지, metadata까지 포함해야 하는지 별도로 결정한다.
+
+---
+
+## CHAPTER 04 · `__new__`가 반환한 객체 타입은 이후 initialization 경로를 바꾼다
+
+`__new__`가 요청한 class의 instance가 아닌 다른 object를 반환하면 일반적인 initialization assumptions가 깨질 수 있다.
+
+```python
+class MaybeNumber:
+    def __new__(cls, value):
+        if isinstance(value, int):
+            return value
+        return super().__new__(cls)
+```
+
+이런 패턴은 기술적으로 가능하지만 caller는 `MaybeNumber(...)`가 항상 `MaybeNumber`를 반환한다고 예상하기 쉽다. 타입 identity가 달라지면 isinstance, method availability, serialization, static typing이 모두 복잡해진다.
+
+Factory가 필요하면 classmethod나 별도 named constructor가 더 명확한 경우가 많다. `__new__`를 override하는 이유가 object creation semantics 자체와 직접 연결되는지 확인한다.
+
+---
+
+## CHAPTER 05 · class call path는 metaclass의 `__call__`을 거쳐 instance construction으로 내려간다
+
+Class도 callable object다. 일반적으로 class를 호출하면 metaclass 수준의 call machinery가 `__new__`와 `__init__`을 조정한다. 따라서 instance construction을 정확히 보려면 “class object를 호출한다”는 한 단계 위 모델이 필요하다.
+
+이 사실은 singleton cache나 dependency injection을 metaclass `__call__`에서 가로채는 패턴을 설명하지만, 너무 강한 hook은 모든 subclass construction을 숨은 방식으로 바꿀 수 있다.
+
+대부분의 application code에서는 metaclass를 건드리지 않고 explicit factory를 사용해도 충분하다. 실행 경로를 이해하는 것과 모든 확장점을 사용하는 것은 다른 문제다.
+
+---
+
+## CHAPTER 06 · initialization 중 exception은 부분 상태와 외부 side effect를 남길 수 있다
+
+`__init__`에서 field를 몇 개 설정한 뒤 exception이 발생하면 정상적으로 사용할 수 없는 instance가 생겼다가 곧 참조를 잃을 수 있다. Python memory는 회수되더라도 외부 file, socket, registration 같은 side effect는 자동 rollback되지 않는다.
+
+```python
+class Client:
+    def __init__(self, config):
+        self.handle = open_handle(config)
+        try:
+            self.validate(config)
+        except Exception:
+            self.handle.close()
+            raise
+```
+
+가능하면 validation을 먼저 하고 resource acquisition을 뒤로 미룬다. 여러 단계가 필요하면 classmethod factory와 context manager를 조합해 성공한 object만 반환하는 구조가 더 안전하다.
+
+Constructor는 실패가 드문 곳이 아니라 실패 시 누가 cleanup을 책임지는지 명확해야 하는 곳이다.
+
+---
+
+## CHAPTER 07 · constructor invariant는 invalid object가 살아남지 않게 만드는 경계다
+
+Domain object가 생성되었다면 최소 불변식이 이미 만족된 상태가 이상적이다. 예를 들어 음수 금액이 절대 허용되지 않는 Money 타입이라면 생성 뒤 별도 `validate()`를 호출해야만 유효해지는 구조보다 constructor 단계에서 거부하는 편이 안전하다.
+
+```python
+class Money:
+    def __init__(self, won):
+        if won < 0:
+            raise ValueError("won must be non-negative")
+        self.won = won
+```
+
+하지만 expensive remote validation까지 constructor에 넣으면 객체 생성이 숨은 I/O가 될 수 있다. Local structural invariant와 external policy validation을 분리한다.
+
+Valid-by-construction은 객체 내부 consistency를 보호하는 원칙이지 모든 business workflow를 constructor로 몰아넣으라는 뜻이 아니다.
+
+---
+
+## CHAPTER 08 · construction contract는 identity·initialization·failure를 하나로 설명해야 한다
+
+객체 생성 API를 리뷰할 때는 세 질문을 한다. 실제 instance identity는 어디서 결정되는가, 언제부터 object invariant가 만족되는가, 중간 실패 시 어떤 side effect가 남는가.
+
+Test에서는 invalid argument, immutable subclass normalization, `__new__`가 다른 object를 반환하는 unusual path, resource acquisition 실패를 확인한다. Named constructor를 제공한다면 기본 constructor와 invariant 차이도 명확히 한다.
+
+이 PART의 핵심은 **class 호출을 `__init__` 하나로 축소하지 않고, instance를 만드는 `__new__`, 상태를 유효하게 만드는 `__init__`, 그 둘을 조정하는 call path와 실패 cleanup까지 하나의 lifecycle로 보는 것**이다.
