@@ -1,14 +1,13 @@
 {
-  "part": 67,
-  "title": "Attribute lookup routing — __getattribute__·__getattr__·setattr·delattr 경계를 추적하기",
-  "sections": [
-    {"id":"T02-P67-S01-attribute-read-pipeline","sourceIds":["PYTHON-REF","SICP"]},
-    {"id":"T02-P67-S02-getattribute-always","sourceIds":["PYTHON-REF","SICP"]},
-    {"id":"T02-P67-S03-getattr-fallback","sourceIds":["PYTHON-REF","SICP"]},
-    {"id":"T02-P67-S04-recursion-trap","sourceIds":["PYTHON-REF","SRE"]},
-    {"id":"T02-P67-S05-setattr-routing","sourceIds":["PYTHON-REF","SICP"]},
-    {"id":"T02-P67-S06-delattr-routing","sourceIds":["PYTHON-REF","SRE"]},
-    {"id":"T02-P67-S07-descriptor-precedence-bridge","sourceIds":["PYTHON-REF","SICP"]},
-    {"id":"T02-P67-S08-attribute-contract","sourceIds":["SRE","PYTHON-REF"]}
+  "partId":"T02-P67",
+  "sections":[
+    {"sectionId":"T02-P67-S01-attribute-read-pipeline","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P67-S02-getattribute-always","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P67-S03-getattr-fallback","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P67-S04-recursion-trap","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P67-S05-setattr-routing","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P67-S06-delattr-routing","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P67-S07-descriptor-precedence-bridge","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P67-S08-attribute-contract","sourceIds":["SRE","PYTHON-REF"]}
   ]
 }
