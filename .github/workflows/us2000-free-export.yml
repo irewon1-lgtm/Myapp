@@ -1,0 +1,53 @@
+name: US2000 Free Evidence Export
+
+on:
+  push:
+    branches: [us2000-free-runner]
+    paths:
+      - '.github/workflows/us2000-free-export.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify stored 500-stock evidence before export
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          root=Path('us2000-free/output')
+          m=json.loads((root/'manifest.json').read_text())
+          assert m['schema']=='US2000_FREE_NEW500_1'
+          assert m['recordCount']==500 and m['metricCount']==10 and m['totalMetricCells']==5000
+          assert m['totalHold']==0 and m['totalResolved']==5000
+          records=[]
+          for c in m['chunks']:
+              p=root/c['file']
+              raw=p.read_bytes()
+              assert hashlib.sha256(raw).hexdigest()==c['sha256'],c['file']
+              rows=json.loads(raw)
+              assert len(rows)==c['count']==50,c['file']
+              records.extend(rows)
+          assert len(records)==500
+          assert len({r['ticker'] for r in records})==500
+          assert len({int(r['cik']) for r in records})==500
+          assert all(len(r.get('metrics',{}))==10 for r in records)
+          assert sum(v.get('status')=='HOLD' for r in records for v in r['metrics'].values())==0
+          assert records[0]['ordinal']==1501 and records[-1]['ordinal']==2000
+          print('US2000_FREE_EXPORT_CLEAN=PASS records=500 cells=5000 hold=0')
+          PY
+      - name: Upload verified free evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: us2000-free-new500-final
+          path: us2000-free/output/
+          if-no-files-found: error
+          retention-days: 1
