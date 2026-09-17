@@ -31,6 +31,8 @@ object V5BookSupplementalSources {
         s("LINUX-MM", "Memory Management Documentation", "Linux kernel documentation", V5BookSource.SourceType.OFFICIAL_DOC, "latest audited 2026-09", "https://www.kernel.org/doc/html/latest/mm/"),
         s("LINUX-SLAB", "Slab Allocation", "Linux kernel documentation", V5BookSource.SourceType.OFFICIAL_DOC, "latest audited 2026-09", "https://www.kernel.org/doc/html/latest/mm/slab.html"),
         s("LINUX-KVM", "KVM documentation", "Linux kernel documentation", V5BookSource.SourceType.OFFICIAL_DOC, "latest audited 2026-09", "https://docs.kernel.org/virt/kvm/index.html"),
+        s("VIRTIO13", "Virtual I/O Device (VIRTIO) Version 1.3", "OASIS Open", V5BookSource.SourceType.STANDARD, "Version 1.3", "https://docs.oasis-open.org/virtio/virtio/v1.3/virtio-v1.3.html"),
+        s("QEMU-MIGRATION", "QEMU Migration", "QEMU Project", V5BookSource.SourceType.OFFICIAL_DOC, "current master documentation audited 2026-09", "https://www.qemu.org/docs/master/devel/migration/main.html"),
         s("SQLITE-ATOMIC", "Atomic Commit In SQLite", "SQLite project", V5BookSource.SourceType.OFFICIAL_DOC, url = "https://sqlite.org/atomiccommit.html"),
         s("SQLITE-ISOLATION", "Isolation In SQLite", "SQLite project", V5BookSource.SourceType.OFFICIAL_DOC, url = "https://sqlite.org/isolation.html"),
         s("RFC8259", "The JavaScript Object Notation (JSON) Data Interchange Format", "IETF / RFC Editor", V5BookSource.SourceType.STANDARD, "RFC 8259 / STD 90", "https://www.rfc-editor.org/rfc/rfc8259"),
