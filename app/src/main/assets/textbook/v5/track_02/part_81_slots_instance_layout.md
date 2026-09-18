@@ -40,8 +40,8 @@ class Point:
 
 ---
 
-**실행 점검 81-1 — CHAPTER 01 · slot storage는 instance dictionary 대신 고정된 attribute 위치를 만든다**
-CHAPTER 01 · slot storage는 instance dictionary 대신 고정된 attribute 위치를 만든다의 규칙은 작은 예제로 값을 움직여 보면 분명해진다. PART 81 CHAPTER 1에서는 로그에 남길 관찰값을 고르고 실행 전 예상값을 적고, 값이나 호출 순서 하나만 바꿔 실제 결과를 비교한다. 복구 지점과 실제 데이터 위치가 맞는지 비교한다. 예상과 다르면 타입·객체 정체성·수명·예외 경계를 한 항목씩 좁혀 원인을 찾는다. 수정한 뒤에는 원래 사례와 반대 조건 사례를 모두 실행하고, CHAPTER 01 · slot storage는 instance dictionary 대신 고정된 attribute 위치를 만든다이 어떤 상태 변화를 만들었는지 한 문장으로 설명한다. 다른 코드에서도 같은 규칙을 알아볼 수 있으면 이해가 실제로 연결된 것이다.
+**검증 시나리오 P81-C1 — CHAPTER 01 · slot storage는 instance dictionary 대신 고정된 attribute 위치를 만든다**
+`CHAPTER 01 · slot storage는 instance dictionary 대신 고정된 attribute 위치를 만든다` 검증은 경계값을 먼저 지정하는 데서 시작한다. P81-C1에서는 `CHAPTER 01 · slot storage는 instance dictionary 대신 고정된 attribute 위치를 만든다` 실행 직전 상태를 먼저 적고 실행 뒤 값과 비교해 실제 규칙을 확인한다. 두 번째 단계에서는 `CHAPTER 01 · slot storage는 instance dictionary 대신 고정된 attribute 위치를 만든다`에 대해 정상값과 경계값을 연속 실행고 다른 코드는 그대로 두어 원인 후보를 하나로 제한한다. 이때 `CHAPTER 01 · slot storage는 instance dictionary 대신 고정된 attribute 위치를 만든다`의 타입·정체성·수명 변화를 분리 기록하여 우연한 통과를 배제한다. 예상과 다르면 `CHAPTER 01 · slot storage는 instance dictionary 대신 고정된 attribute 위치를 만든다`의 타입, 값, 호출 순서, 예외 경계 가운데 최초로 달라진 항목부터 확인하고 최소 수정 뒤 다시 실행한다. P81-C1의 마무리는 결과를 설명할 수 있을 때 종료하는 것이다. 통과 기준은 `CHAPTER 01 · slot storage는 instance dictionary 대신 고정된 attribute 위치를 만든다`의 정상 사례와 변형 사례가 모두 설명 가능한 결과를 내고 같은 절차를 반복해도 동일한 상태 계약을 유지하는 것이다.
 ## CHAPTER 02 · `__dict__` 부재는 임의 attribute 추가를 제한하지만 완전한 immutable을 만들지는 않는다
 
 ### 시작 전 용어집
@@ -74,8 +74,8 @@ p = Point(1, 2)
 
 ---
 
-**실행 점검 81-2 — CHAPTER 02 · `__dict__` 부재는 임의 attribute 추가를 제한하지만 완전한 immutable을 만들지는 않는다**
-CHAPTER 02 · `__dict__` 부재는 임의 attribute 추가를 제한하지만 완전한 immutable을 만들지는 않는다의 규칙은 작은 예제로 값을 움직여 보면 분명해진다. PART 81 CHAPTER 2에서는 복구 전후 상태를 비교할 항목을 정하고 실행 전 예상값을 적고, 값이나 호출 순서 하나만 바꿔 실제 결과를 비교한다. 성공 건수와 실패 건수를 분리해 센다. 예상과 다르면 타입·객체 정체성·수명·예외 경계를 한 항목씩 좁혀 원인을 찾는다. 수정한 뒤에는 원래 사례와 반대 조건 사례를 모두 실행하고, CHAPTER 02 · `__dict__` 부재는 임의 attribute 추가를 제한하지만 완전한 immutable을 만들지는 않는다이 어떤 상태 변화를 만들었는지 한 문장으로 설명한다. 다른 코드에서도 같은 규칙을 알아볼 수 있으면 이해가 실제로 연결된 것이다.
+**검증 시나리오 P81-C2 — CHAPTER 02 · `__dict__` 부재는 임의 attribute 추가를 제한하지만 완전한 immutable을 만들지는 않는다**
+`CHAPTER 02 · `__dict__` 부재는 임의 attribute 추가를 제한하지만 완전한 immutable을 만들지는 않는다` 검증은 정상 경로를 먼저 재현하는 데서 시작한다. P81-C2에서는 `CHAPTER 02 · `__dict__` 부재는 임의 attribute 추가를 제한하지만 완전한 immutable을 만들지는 않는다` 실행 직전 상태를 먼저 적고 실행 뒤 값과 비교해 실제 규칙을 확인한다. 두 번째 단계에서는 `CHAPTER 02 · `__dict__` 부재는 임의 attribute 추가를 제한하지만 완전한 immutable을 만들지는 않는다`에 대해 오류 경로 하나를 의도적으로 만든다고 다른 코드는 그대로 두어 원인 후보를 하나로 제한한다. 이때 `CHAPTER 02 · `__dict__` 부재는 임의 attribute 추가를 제한하지만 완전한 immutable을 만들지는 않는다`의 예외 종류와 직전 상태를 함께 남긴다하여 우연한 통과를 배제한다. 예상과 다르면 `CHAPTER 02 · `__dict__` 부재는 임의 attribute 추가를 제한하지만 완전한 immutable을 만들지는 않는다`의 타입, 값, 호출 순서, 예외 경계 가운데 최초로 달라진 항목부터 확인하고 최소 수정 뒤 다시 실행한다. P81-C2의 마무리는 복구 후 같은 오류가 다시 재현되지 않는지 검사하는 것이다. 통과 기준은 `CHAPTER 02 · `__dict__` 부재는 임의 attribute 추가를 제한하지만 완전한 immutable을 만들지는 않는다`의 정상 사례와 변형 사례가 모두 설명 가능한 결과를 내고 같은 절차를 반복해도 동일한 상태 계약을 유지하는 것이다.
 ## CHAPTER 03 · inheritance에서는 base와 subclass의 slot 구성을 함께 봐야 한다
 
 ### 시작 전 용어집
