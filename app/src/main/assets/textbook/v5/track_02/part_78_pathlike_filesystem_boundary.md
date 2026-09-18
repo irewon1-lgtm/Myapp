@@ -39,7 +39,7 @@ print(os.fspath(AppPath("data/input.txt")))
 ---
 
 **실행 점검 78-1 — CHAPTER 01 · `os.PathLike`는 경로를 문자열 자체가 아니라 filesystem 표현 가능 객체로 만든다**
-CHAPTER 01 · `os.PathLike`는 경로를 문자열 자체가 아니라 filesystem 표현 가능 객체로 만든다을 이해할 때는 정상 사례 하나를 정한 뒤 같은 입력을 두 번 실행해 결과가 안정적인지 확인한다. 그다음 값 하나, 호출 순서 하나, 경계 조건 하나만 바꿔 CHAPTER 01 · `os.PathLike`는 경로를 문자열 자체가 아니라 filesystem 표현 가능 객체로 만든다의 규칙이 실제 상태에 어떤 변화를 만드는지 확인한다. PART 78 CHAPTER 1에서는 결과를 맞히는 것보다 예상과 실제의 차이를 설명하는 과정이 중요하다. 다른 입력에서도 같은 계약이 유지되는지 확인해야 검증이 끝난다. 마지막에는 타입·정체성·수명·예외 경계 중 어느 요소가 결과를 결정했는지 자기 문장으로 정리해, 같은 규칙을 다른 코드에서도 알아볼 수 있는지 확인한다.
+CHAPTER 01 · `os.PathLike`는 경로를 문자열 자체가 아니라 filesystem 표현 가능 객체로 만든다을 이해할 때는 정상 사례 하나를 정한 뒤 같은 입력을 두 번 실행해 결과가 안정적인지 확인한다. 그다음 값 하나, 호출 순서 하나, 경계 조건 하나만 바꿔 CHAPTER 01 · `os.PathLike`는 경로를 문자열 자체가 아니라 filesystem 표현 가능 객체로 만든다의 규칙이 실제 상태에 어떤 변화를 만드는지 확인한다. PART 78 CHAPTER 1에서는 결과를 맞히는 것보다 예상과 실제의 차이를 설명하는 과정이 중요하다. 다른 입력에서도 같은 계약이 유지되는지 확인해야 검증이 끝난다. P78-C01은 마지막에 설명 가능성을 검사한다. P78-C01의 결과를 만든 타입·정체성·수명·예외 조건을 명시하고, 다른 코드 조각에서도 같은 조건을 스스로 찾아 적용한다.
 ## CHAPTER 02 · `os.fspath`는 path-like input을 실제 OS path representation으로 좁히는 경계다
 
 ### 시작 전 용어집
@@ -187,7 +187,7 @@ check path -> filesystem changes -> open path
 ---
 
 **실행 점검 78-6 — CHAPTER 06 · symlink resolution은 time-of-check와 time-of-use 문제를 만들 수 있다**
-CHAPTER 06 · symlink resolution은 time-of-check와 time-of-use 문제를 만들 수 있다을 이해할 때는 호출 순서를 단순화하고 예외가 생긴 지점과 그 직전 상태를 함께 적는다. 그다음 값 하나, 호출 순서 하나, 경계 조건 하나만 바꿔 CHAPTER 06 · symlink resolution은 time-of-check와 time-of-use 문제를 만들 수 있다의 규칙이 실제 상태에 어떤 변화를 만드는지 확인한다. PART 78 CHAPTER 6에서는 결과를 맞히는 것보다 예상과 실제의 차이를 설명하는 과정이 중요하다. 예상이 틀리면 규칙을 다시 읽고 최소 수정으로 재실행한다. 마지막에는 타입·정체성·수명·예외 경계 중 어느 요소가 결과를 결정했는지 자기 문장으로 정리해, 같은 규칙을 다른 코드에서도 알아볼 수 있는지 확인한다.
+CHAPTER 06 · symlink resolution은 time-of-check와 time-of-use 문제를 만들 수 있다을 이해할 때는 호출 순서를 단순화하고 예외가 생긴 지점과 그 직전 상태를 함께 적는다. 그다음 값 하나, 호출 순서 하나, 경계 조건 하나만 바꿔 CHAPTER 06 · symlink resolution은 time-of-check와 time-of-use 문제를 만들 수 있다의 규칙이 실제 상태에 어떤 변화를 만드는지 확인한다. PART 78 CHAPTER 6에서는 결과를 맞히는 것보다 예상과 실제의 차이를 설명하는 과정이 중요하다. 예상이 틀리면 규칙을 다시 읽고 최소 수정으로 재실행한다. P78-C06의 통과 기준은 결과를 외우는 것이 아니다. P78-C06의 동작을 타입, 정체성, 수명, 오류 경계로 나눠 설명하고 비슷한 코드에서도 동일한 규칙을 찾아낼 수 있어야 한다.
 ## CHAPTER 07 · boundary validation은 path syntax보다 capability를 제한하는 쪽이 강하다
 
 ### 시작 전 용어집
