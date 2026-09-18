@@ -24,15 +24,15 @@ import java.util.Arrays;
 import java.util.List;
 
 public class MainActivity extends Activity {
-    private final int BG = Color.rgb(247, 248, 250);
-    private final int SURFACE = Color.WHITE;
-    private final int BORDER = Color.rgb(226, 230, 236);
-    private final int TEXT = Color.rgb(27, 31, 36);
-    private final int MUTED = Color.rgb(95, 104, 115);
-    private final int ACCENT = Color.rgb(44, 93, 160);
-    private final int ACCENT_SOFT = Color.rgb(235, 242, 251);
-    private final int CODE_BG = Color.rgb(24, 28, 34);
-    private final int CODE_TEXT = Color.rgb(239, 242, 246);
+    private final int BG = Color.rgb(11, 12, 15);
+    private final int SURFACE = Color.rgb(17, 19, 24);
+    private final int BORDER = Color.rgb(48, 52, 60);
+    private final int TEXT = Color.rgb(243, 241, 234);
+    private final int MUTED = Color.rgb(173, 178, 188);
+    private final int ACCENT = Color.rgb(138, 180, 248);
+    private final int ACCENT_SOFT = Color.rgb(30, 53, 83);
+    private final int CODE_BG = Color.rgb(7, 9, 12);
+    private final int CODE_TEXT = Color.rgb(233, 237, 243);
 
     private SharedPreferences prefs;
     private List<Track1Content.Page> track1Pages;
@@ -70,7 +70,7 @@ public class MainActivity extends Activity {
     private void applyWindowColors() {
         getWindow().setStatusBarColor(BG);
         getWindow().setNavigationBarColor(BG);
-        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+        getWindow().getDecorView().setSystemUiVisibility(0);
     }
 
     private void showRoadmap() {
@@ -178,7 +178,7 @@ public class MainActivity extends Activity {
 
         TextView milestone = text(track.milestone, 13, TEXT, Typeface.BOLD);
         milestone.setPadding(dp(12), dp(10), dp(12), dp(10));
-        milestone.setBackground(roundRect(Color.rgb(245, 247, 250), Color.rgb(245, 247, 250), 12));
+        milestone.setBackground(roundRect(Color.rgb(29, 32, 38), Color.rgb(29, 32, 38), 12));
         chapters.addView(milestone, topMargin(matchWrap(), dp(7)));
 
         if (track.number == 1) {
@@ -311,7 +311,7 @@ public class MainActivity extends Activity {
     }
 
     private TextView edgeZone(String arrow) {
-        TextView zone = text(arrow, 28, Color.argb(95, 44, 93, 160), Typeface.BOLD);
+        TextView zone = text(arrow, 28, Color.argb(150, 138, 180, 248), Typeface.BOLD);
         zone.setGravity(Gravity.CENTER);
         return zone;
     }
@@ -399,9 +399,9 @@ public class MainActivity extends Activity {
     private View buildEasyExplanationBox(String explanation) {
         LinearLayout box = vertical();
         box.setPadding(dp(14), dp(13), dp(14), dp(14));
-        box.setBackground(roundRect(Color.rgb(255, 249, 232), Color.rgb(239, 221, 172), 14));
+        box.setBackground(roundRect(Color.rgb(42, 36, 24), Color.rgb(95, 76, 39), 14));
 
-        box.addView(text("이게 무슨 뜻이야? — 더 쉽게 설명", 12, Color.rgb(126, 83, 0), Typeface.BOLD));
+        box.addView(text("이게 무슨 뜻이야? — 더 쉽게 설명", 12, Color.rgb(236, 199, 118), Typeface.BOLD));
 
         TextView body = text(explanation, isTablet() ? 17 : 15, TEXT, Typeface.NORMAL);
         body.setLineSpacing(0f, isTablet() ? 1.30f : 1.25f);
@@ -442,7 +442,7 @@ public class MainActivity extends Activity {
     private View buildPracticeBox(String practice) {
         LinearLayout box = vertical();
         box.setPadding(dp(14), dp(13), dp(14), dp(14));
-        box.setBackground(roundRect(Color.rgb(246, 248, 251), BORDER, 14));
+        box.setBackground(roundRect(Color.rgb(23, 26, 32), BORDER, 14));
         box.addView(text("직접 해보기", 12, ACCENT, Typeface.BOLD));
 
         TextView body = text(practice, isTablet() ? 17 : 15, TEXT, Typeface.NORMAL);
