@@ -1,0 +1,194 @@
+name: CodingCoding LIVE verify build release
+
+on:
+  push:
+    branches:
+      - codingcoding-textbook-live
+    paths:
+      - '.github/codingcoding-release-trigger'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: codingcoding-live-release
+  cancel-in-progress: false
+
+jobs:
+  verify-build-release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    env:
+      GH_TOKEN: ${{ github.token }}
+
+    steps:
+      - name: Checkout approved LIVE source
+        uses: actions/checkout@v4
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: gradle
+
+      - name: Set up Python 3.13
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Set up Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Verify CodingCoding source identity and TRACK 01-02 corpus
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          import re
+          from pathlib import Path
+
+          repo = Path(".")
+          root = repo / "app/src/main/assets/textbook/v5"
+          lock = json.loads((root / "project_lock.json").read_text(encoding="utf-8"))
+          expected_lock = {
+              "projectId": "codingcoding",
+              "contentId": "codingcoding-textbook-v5",
+              "schemaVersion": 1,
+              "repository": "irewon1-lgtm/Myapp",
+              "branch": "codingcoding-textbook-live",
+              "contentRoot": "app/src/main/assets/textbook/v5",
+              "trackNumbers": [1, 2],
+          }
+          assert lock == expected_lock, (lock, expected_lock)
+
+          source = (repo / "app/src/main/java/com/futuretech/poweruser/textbook/V5BookAssetRepository.kt").read_text(encoding="utf-8")
+          required_source_tokens = [
+              'LIVE_BRANCH = "codingcoding-textbook-live"',
+              'EXPECTED_PROJECT_ID = "codingcoding"',
+              'CACHE_ROOT = "codingcoding_textbook_v5_live_v1"',
+              'seedBundledTrackIfMissing',
+              '.__next',
+          ]
+          for token in required_source_tokens:
+              assert token in source, token
+
+          adaptive = (repo / "app/src/main/java/com/futuretech/poweruser/ui/AdaptiveTextbookScreen.kt").read_text(encoding="utf-8")
+          assert "V5TrackBookScreen(" in adaptive
+          assert "V4PagedBookScreen(" in adaptive
+          assert 'track_not_live:' in adaptive
+
+          for track in (1, 2):
+              track_dir = root / f"track_{track:02d}"
+              manifest_paths = sorted(
+                  [p for p in track_dir.glob("manifest*.json") if re.fullmatch(r"manifest(?:_\d{2})?\.json", p.name)],
+                  key=lambda p: (p.name != "manifest.json", p.name),
+              )
+              assert manifest_paths and manifest_paths[0].name == "manifest.json"
+              parts = []
+              base = None
+              for path in manifest_paths:
+                  obj = json.loads(path.read_text(encoding="utf-8"))
+                  if base is None:
+                      base = obj
+                  else:
+                      assert obj["trackId"] == base["trackId"]
+                      assert obj["trackNumber"] == base["trackNumber"]
+                      assert obj["title"] == base["title"]
+                  parts.extend(obj.get("parts", []))
+
+              parts.sort(key=lambda p: p["order"])
+              assert len(parts) == 105, (track, len(parts))
+              assert [p["order"] for p in parts] == list(range(1, 106))
+              assert len({p["id"] for p in parts}) == 105
+              assert len(list(track_dir.glob("*.md"))) == 105
+              assert len(list(track_dir.glob("part_*_sources.json"))) == 105
+
+              for index, part in enumerate(parts, 1):
+                  assert part["id"] == f"T{track:02d}-P{index:02d}"
+                  asset = repo / "app/src/main/assets" / part["assetPath"]
+                  source_map = repo / "app/src/main/assets" / part["sourceMapPath"]
+                  assert asset.is_file(), asset
+                  assert source_map.is_file(), source_map
+                  assert asset.stat().st_size > 1000, asset
+                  source_obj = json.loads(source_map.read_text(encoding="utf-8"))
+                  assert source_obj["partId"] == part["id"], source_map
+
+          gradle = (repo / "app/build.gradle.kts").read_text(encoding="utf-8")
+          assert 'versionCode = 23' in gradle
+          assert 'versionName = "1.2.20"' in gradle
+          print("CodingCoding source/corpus verification PASS")
+          PY
+
+      - name: Prepare TypeScript runtime assets
+        run: |
+          npm install --ignore-scripts --no-audit --no-fund
+          npm run prepare:typescript
+          test -s app/src/main/assets/typescript.js
+          test -s app/src/main/assets/ts_libs.js
+
+      - name: Unit tests
+        run: |
+          chmod +x ./gradlew
+          ./gradlew testDebugUnitTest --stacktrace
+
+      - name: Build release APK
+        run: ./gradlew assembleRelease --stacktrace
+
+      - name: Sign and verify release APK
+        shell: bash
+        run: |
+          BUILD_TOOLS="$(ls -1 "$ANDROID_HOME/build-tools" | sort -V | tail -n 1)"
+          ZIPALIGN="$ANDROID_HOME/build-tools/$BUILD_TOOLS/zipalign"
+          APKSIGNER="$ANDROID_HOME/build-tools/$BUILD_TOOLS/apksigner"
+          AAPT="$ANDROID_HOME/build-tools/$BUILD_TOOLS/aapt"
+          mkdir -p final-dist
+          "$ZIPALIGN" -p -f 4             app/build/outputs/apk/release/app-release-unsigned.apk             final-dist/Myapp_AI_Coding_Textbook_aligned.apk
+          "$APKSIGNER" sign             --ks test.keystore             --ks-key-alias testkey             --ks-pass pass:password             --key-pass pass:password             --out final-dist/Myapp_AI_Coding_Textbook_latest.apk             final-dist/Myapp_AI_Coding_Textbook_aligned.apk
+          "$APKSIGNER" verify --verbose --print-certs             final-dist/Myapp_AI_Coding_Textbook_latest.apk             | tee final-dist/apksigner_verify.txt
+          "$AAPT" dump badging final-dist/Myapp_AI_Coding_Textbook_latest.apk             | head -n 5 | tee final-dist/aapt_badging.txt
+          grep -Fq "versionCode='23'" final-dist/aapt_badging.txt
+          grep -Fq "versionName='1.2.20'" final-dist/aapt_badging.txt
+          sha256sum final-dist/Myapp_AI_Coding_Textbook_latest.apk             | tee final-dist/Myapp_AI_Coding_Textbook_latest.sha256
+          rm final-dist/Myapp_AI_Coding_Textbook_aligned.apk
+
+      - name: Publish v1.2.20 GitHub Release
+        shell: bash
+        run: |
+          TAG="v1.2.20"
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            echo "Release $TAG already exists; refusing to overwrite." >&2
+            exit 1
+          fi
+
+          cat > final-dist/release_notes.md <<EOF
+          ## 코딩 완전과정 v1.2.20
+
+          - Android versionCode: 23
+          - Source commit: ${{ github.sha }}
+          - Canonical textbook source: codingcoding-textbook-live
+          - TRACK 01: 105 PART
+          - TRACK 02: 105 PART
+          - TRACK 03-11: 기존 검증된 reader 유지
+          - 교재 파일 수정은 앱 구조 재작성 없이 LIVE 경로에서 자동 반영
+          - CodingCoding project lock / 전용 cache namespace 적용
+          - LIVE 다운로드 실패 시 마지막 정상 교재 또는 동일 APK 내장 교재 보존
+          - Signed updater asset: Myapp_AI_Coding_Textbook_latest.apk
+          EOF
+
+          gh release create "$TAG"             final-dist/Myapp_AI_Coding_Textbook_latest.apk             final-dist/Myapp_AI_Coding_Textbook_latest.sha256             final-dist/apksigner_verify.txt             final-dist/aapt_badging.txt             --target "${{ github.sha }}"             --title "코딩 완전과정 v1.2.20"             --notes-file final-dist/release_notes.md             --latest
+
+      - name: Upload release evidence
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: codingcoding-live-v1.2.20
+          retention-days: 90
+          path: |
+            final-dist/Myapp_AI_Coding_Textbook_latest.apk
+            final-dist/Myapp_AI_Coding_Textbook_latest.sha256
+            final-dist/apksigner_verify.txt
+            final-dist/aapt_badging.txt
+            final-dist/release_notes.md
