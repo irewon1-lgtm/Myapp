@@ -70,6 +70,8 @@ jobs:
               'EXPECTED_PROJECT_ID = "codingcoding"',
               'CACHE_ROOT = "codingcoding_textbook_v5_live_v1"',
               'seedBundledTrackIfMissing',
+              'prepareBundledContent',
+              'isConfiguredLiveTrack',
               '.__next',
           ]
           for token in required_source_tokens:
@@ -78,7 +80,11 @@ jobs:
           adaptive = (repo / "app/src/main/java/com/futuretech/poweruser/ui/AdaptiveTextbookScreen.kt").read_text(encoding="utf-8")
           assert "V5TrackBookScreen(" in adaptive
           assert "V4PagedBookScreen(" in adaptive
-          assert 'track_not_live:' in adaptive
+          prepare_index = adaptive.index("prepareBundledContent(selectedChapter.number)")
+          refresh_index = adaptive.index("refreshRemoteContent(selectedChapter.number)")
+          assert prepare_index >= 0
+          assert refresh_index > prepare_index
+          assert "liveReady = bundledReady" in adaptive
 
           for track in (1, 2):
               track_dir = root / f"track_{track:02d}"
@@ -117,8 +123,8 @@ jobs:
                   assert source_obj["partId"] == part["id"], source_map
 
           gradle = (repo / "app/build.gradle.kts").read_text(encoding="utf-8")
-          assert 'versionCode = 23' in gradle
-          assert 'versionName = "1.2.20"' in gradle
+          assert 'versionCode = 24' in gradle
+          assert 'versionName = "1.2.21"' in gradle
           print("CodingCoding source/corpus verification PASS")
           PY
 
@@ -156,24 +162,24 @@ jobs:
           "$APKSIGNER" sign             --ks test.keystore             --ks-key-alias testkey             --ks-pass pass:password             --key-pass pass:password             --out final-dist/Myapp_AI_Coding_Textbook_latest.apk             final-dist/Myapp_AI_Coding_Textbook_aligned.apk
           "$APKSIGNER" verify --verbose --print-certs             final-dist/Myapp_AI_Coding_Textbook_latest.apk             | tee final-dist/apksigner_verify.txt
           "$AAPT" dump badging final-dist/Myapp_AI_Coding_Textbook_latest.apk             | head -n 5 | tee final-dist/aapt_badging.txt
-          grep -Fq "versionCode='23'" final-dist/aapt_badging.txt
-          grep -Fq "versionName='1.2.20'" final-dist/aapt_badging.txt
+          grep -Fq "versionCode='24'" final-dist/aapt_badging.txt
+          grep -Fq "versionName='1.2.21'" final-dist/aapt_badging.txt
           sha256sum final-dist/Myapp_AI_Coding_Textbook_latest.apk             | tee final-dist/Myapp_AI_Coding_Textbook_latest.sha256
           rm final-dist/Myapp_AI_Coding_Textbook_aligned.apk
 
-      - name: Publish v1.2.20 GitHub Release
+      - name: Publish v1.2.21 GitHub Release
         shell: bash
         run: |
-          TAG="v1.2.20"
+          TAG="v1.2.21"
           if gh release view "$TAG" >/dev/null 2>&1; then
             echo "Release $TAG already exists; refusing to overwrite." >&2
             exit 1
           fi
 
           cat > final-dist/release_notes.md <<EOF
-          ## 코딩 완전과정 v1.2.20
+          ## 코딩 완전과정 v1.2.21
 
-          - Android versionCode: 23
+          - Android versionCode: 24
           - Source commit: ${{ github.sha }}
           - Canonical textbook source: codingcoding-textbook-live
           - TRACK 01: 105 PART
@@ -185,13 +191,13 @@ jobs:
           - Signed updater asset: Myapp_AI_Coding_Textbook_latest.apk
           EOF
 
-          gh release create "$TAG"             final-dist/Myapp_AI_Coding_Textbook_latest.apk             final-dist/Myapp_AI_Coding_Textbook_latest.sha256             final-dist/apksigner_verify.txt             final-dist/aapt_badging.txt             --target "${{ github.sha }}"             --title "코딩 완전과정 v1.2.20"             --notes-file final-dist/release_notes.md             --latest
+          gh release create "$TAG"             final-dist/Myapp_AI_Coding_Textbook_latest.apk             final-dist/Myapp_AI_Coding_Textbook_latest.sha256             final-dist/apksigner_verify.txt             final-dist/aapt_badging.txt             --target "${{ github.sha }}"             --title "코딩 완전과정 v1.2.21"             --notes-file final-dist/release_notes.md             --latest
 
       - name: Upload release evidence
         if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: codingcoding-live-v1.2.20
+          name: codingcoding-live-v1.2.21
           retention-days: 90
           path: |
             final-dist/Myapp_AI_Coding_Textbook_latest.apk
