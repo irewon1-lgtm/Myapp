@@ -286,3 +286,21 @@ dataclass면 자동으로 immutable하고 hashable할까?
 
 이 PART를 마칠 때는 해당 문법 이름을 외우는 데서 멈추지 말고 **언제 호출되는가 / 무엇을 읽거나 바꾸는가 / 실패하면 어디로 가는가** 세 문장으로 설명한다.
 
+## 현장 디버깅 체크 · dataclass generated semantics
+
+### 증상에서 시작한다
+
+field 하나를 추가한 뒤 equality·ordering·hash 결과가 달라져 dict/set key 동작이 깨진다. 이때 문법을 먼저 고치면 원인이 가려질 수 있다. 재현 입력과 실제 상태를 보존한 뒤 **어느 경계에서 처음 기대와 달라졌는지**를 찾는다.
+
+### 먼저 볼 증거
+
+dataclass 옵션과 각 field의 compare/hash/init 설정, 생성된 special method를 확인한다. 최종 출력 하나만 보지 말고 호출 전 값, 호출 뒤 값, 예외 또는 resource 상태를 나란히 두면 원인 후보가 급격히 줄어든다.
+
+### 일부러 실패시켜 보기
+
+mutable field를 equality/hash에 포함하거나 제외한 두 버전을 만들어 container 동작을 비교한다. 정상 예제만 통과시키는 것은 검증이 아니다. 경계 조건을 강제로 만들고 같은 증상이 반복되는지 확인해야 수정 전후를 비교할 수 있다.
+
+### 통과 기준
+
+도메인에서 같은 객체라고 보는 기준과 dataclass가 생성한 equality/hash 계약이 정확히 일치해야 한다. 이 기준을 테스트 이름과 assertion으로 옮기면 이후 refactoring에서도 같은 오류가 돌아오는지 자동으로 잡을 수 있다.
+
