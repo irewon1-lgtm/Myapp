@@ -39,8 +39,8 @@ print(code.co_varnames)
 
 ---
 
-**실행 점검 75-1 — CHAPTER 01 · code object는 실행 가능한 구조와 이름·상수·위치 정보를 담는다**
-CHAPTER 01 · code object는 실행 가능한 구조와 이름·상수·위치 정보를 담는다을 이해할 때는 호출 순서를 단순화하고 예외가 생긴 지점과 그 직전 상태를 함께 적는다. 그다음 값 하나, 호출 순서 하나, 경계 조건 하나만 바꿔 CHAPTER 01 · code object는 실행 가능한 구조와 이름·상수·위치 정보를 담는다의 규칙이 실제 상태에 어떤 변화를 만드는지 확인한다. PART 75 CHAPTER 1에서는 결과를 맞히는 것보다 예상과 실제의 차이를 설명하는 과정이 중요하다. 예상이 틀리면 규칙을 다시 읽고 최소 수정으로 재실행한다. P75-C01 학습을 끝내기 전에 결정 요인을 분리한다. P75-C01의 타입·객체 정체성·수명·예외 처리 중 실제 원인을 지목하고, 새 예제에서도 같은 근거로 결과를 예측한다.
+**검증 시나리오 P75-C1 — CHAPTER 01 · code object는 실행 가능한 구조와 이름·상수·위치 정보를 담는다**
+`CHAPTER 01 · code object는 실행 가능한 구조와 이름·상수·위치 정보를 담는다` 검증은 호출 순서를 단순화하는 데서 시작한다. P75-C1에서는 `CHAPTER 01 · code object는 실행 가능한 구조와 이름·상수·위치 정보를 담는다` 실행 직전 상태를 먼저 적고 실행 뒤 값과 비교해 실제 규칙을 확인한다. 두 번째 단계에서는 `CHAPTER 01 · code object는 실행 가능한 구조와 이름·상수·위치 정보를 담는다`에 대해 순서 하나만 뒤집어 차이를 본다고 다른 코드는 그대로 두어 원인 후보를 하나로 제한한다. 이때 `CHAPTER 01 · code object는 실행 가능한 구조와 이름·상수·위치 정보를 담는다`의 호출 전후의 상태 전이를 번호로 남긴다하여 우연한 통과를 배제한다. 예상과 다르면 `CHAPTER 01 · code object는 실행 가능한 구조와 이름·상수·위치 정보를 담는다`의 타입, 값, 호출 순서, 예외 경계 가운데 최초로 달라진 항목부터 확인하고 최소 수정 뒤 다시 실행한다. P75-C1의 마무리는 다른 순서에서도 계약이 유지되는지 확인하는 것이다. 통과 기준은 `CHAPTER 01 · code object는 실행 가능한 구조와 이름·상수·위치 정보를 담는다`의 정상 사례와 변형 사례가 모두 설명 가능한 결과를 내고 같은 절차를 반복해도 동일한 상태 계약을 유지하는 것이다.
 ## CHAPTER 02 · frame object는 특정 호출의 instruction position과 namespace를 가진다
 
 ### 시작 전 용어집
@@ -154,8 +154,8 @@ dis.dis(choose)
 
 ---
 
-**실행 점검 75-5 — CHAPTER 05 · bytecode view는 source와 interpreter execution 사이의 중간 관찰 창이다**
-CHAPTER 05 · bytecode view는 source와 interpreter execution 사이의 중간 관찰 창이다을 이해할 때는 입력 하나를 고정하고 타입과 값, 상태 전이를 분리해서 본다. 그다음 값 하나, 호출 순서 하나, 경계 조건 하나만 바꿔 CHAPTER 05 · bytecode view는 source와 interpreter execution 사이의 중간 관찰 창이다의 규칙이 실제 상태에 어떤 변화를 만드는지 확인한다. PART 75 CHAPTER 5에서는 결과를 맞히는 것보다 예상과 실제의 차이를 설명하는 과정이 중요하다. 코드 모양보다 값의 변화와 객체의 수명을 중심으로 원인을 좁힌다. P75-C05을 마칠 때는 어떤 요소가 동작을 결정했는지 한 문장으로 요약한다. 이어서 P75-C05의 객체 수명과 예외 경계를 다른 예제에 적용해 설명이 그대로 성립하는지 확인한다.
+**검증 시나리오 P75-C5 — CHAPTER 05 · bytecode view는 source와 interpreter execution 사이의 중간 관찰 창이다**
+`CHAPTER 05 · bytecode view는 source와 interpreter execution 사이의 중간 관찰 창이다` 검증은 기준 입력을 한 개 고정하는 데서 시작한다. P75-C5에서는 `CHAPTER 05 · bytecode view는 source와 interpreter execution 사이의 중간 관찰 창이다` 실행 직전 상태를 먼저 적고 실행 뒤 값과 비교해 실제 규칙을 확인한다. 두 번째 단계에서는 `CHAPTER 05 · bytecode view는 source와 interpreter execution 사이의 중간 관찰 창이다`에 대해 반대 조건 입력을 한 개 추가고 다른 코드는 그대로 두어 원인 후보를 하나로 제한한다. 이때 `CHAPTER 05 · bytecode view는 source와 interpreter execution 사이의 중간 관찰 창이다`의 실행 전후 값을 표로 대조하여 우연한 통과를 배제한다. 예상과 다르면 `CHAPTER 05 · bytecode view는 source와 interpreter execution 사이의 중간 관찰 창이다`의 타입, 값, 호출 순서, 예외 경계 가운데 최초로 달라진 항목부터 확인하고 최소 수정 뒤 다시 실행한다. P75-C5의 마무리는 예상과 다르면 최초 차이 지점을 추적하는 것이다. 통과 기준은 `CHAPTER 05 · bytecode view는 source와 interpreter execution 사이의 중간 관찰 창이다`의 정상 사례와 변형 사례가 모두 설명 가능한 결과를 내고 같은 절차를 반복해도 동일한 상태 계약을 유지하는 것이다.
 ## CHAPTER 06 · frame retention은 traceback·debugger가 예상보다 많은 memory를 붙잡게 할 수 있다
 
 ### 시작 전 용어집
