@@ -1,6 +1,6 @@
 # PART 86 · Multiprocessing boundaries — process memory·start method·pickle·shared memory를 분리하기
 
-`multiprocessing`은 thread와 달리 별도 process와 address space를 사용한다. 함수 하나를 worker로 보냈다고 해서 parent의 모든 object가 같은 방식으로 공유되는 것은 아니며, start method에 따라 초기 상태와 import behavior도 달라질 수 있다. 이 PART에서는 **process isolation → 데이터 전달 → 공유 상태 → lifecycle** 순서로 본다.
+`multiprocessing`은 thread와 달리 별도 process와 address space를 사용한다. 함수 하나를 worker로 보냈다고 해서 parent의 모든 object가 같은 방식으로 공유되는 것은 아니며, start method에 따라 초기 상태와 import behavior도 달라질 수 있다. 이 절에서는 **process isolation → 데이터 전달 → 공유 상태 → lifecycle** 순서로 본다.
 
 ---
 
@@ -173,6 +173,8 @@
 
 ---
 
+**현장 디버깅 점검 — CHAPTER 07 · process lifecycle은 start·health·shutdown·crash를 모두 관리해야 한다**
+CHAPTER 07 · process lifecycle은 start·health·shutdown·crash를 모두 관리해야 한다 문제는 정상 경로만 성공하는지 보는 것으로 끝내면 안 된다. 먼저 재현 절차를 고정하고 입력값·현재 상태·반환값·로그 시각을 같은 순서로 기록한다. 그다음 타임아웃, 취소, 부분 실패, 늦은 응답처럼 실제 운영에서 생길 수 있는 조건을 한 번에 하나씩 주입한다. 관찰할 값은 성공 여부뿐 아니라 중복 처리, 누락, 정리되지 않은 자원, 대기 중인 작업이 남는지까지 포함한다. 수정 뒤에는 정상 입력과 실패 입력을 모두 다시 실행한다. 통과 기준은 실패가 사라졌다는 느낌이 아니라 기대 상태와 실제 상태가 일치하고, 실패 시에도 손실·중복·교착 없이 정해진 복구 경로로 종료되는 것이다.
 ## CHAPTER 08 · multiprocessing contract는 isolation 이득과 IPC 비용을 함께 계산한다
 
 ### 시작 전 용어집
