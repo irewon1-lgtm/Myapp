@@ -1,19 +1,149 @@
 {
-  "trackId":"T01",
-  "trackNumber":1,
-  "title":"컴퓨터와 프로그래밍의 언어 — 표현에서 실행까지",
-  "parts":[
-    {"id":"T01-P75","order":75,"title":"Credentials, Capabilities and LSM Authorization — identity, privilege sets, exec transitions, policy hooks","assetPath":"textbook/v5/track_01/part_75_credentials_capabilities_lsm.md","sourceMapPath":"textbook/v5/track_01/part_75_sources.json","prerequisiteConceptIds":["T01-P07-S03-credentials","T01-P07-S04-capabilities","T01-P29-S03-exec"]},
-    {"id":"T01-P76","order":76,"title":"Kernel Failure Capture — watchdogs, panic, kdump, vmcore, pstore, evidence survival","assetPath":"textbook/v5/track_01/part_76_kernel_failure_capture_watchdog_kdump.md","sourceMapPath":"textbook/v5/track_01/part_76_sources.json","prerequisiteConceptIds":["T01-P61-S05-irq-off","T01-P49-S27-injection-evidence","T01-P56-S21-symbolization"]},
-    {"id":"T01-P77","order":77,"title":"Execution Context and Preemption Legality — process, IRQ, NMI, atomic regions, PREEMPT_RT","assetPath":"textbook/v5/track_01/part_77_execution_context_preemption_legality.md","sourceMapPath":"textbook/v5/track_01/part_77_sources.json","prerequisiteConceptIds":["T01-P61-S07-softirq-context","T01-P61-S09-threaded-irq","T01-P07-S03-credentials"]},
-    {"id":"T01-P78","order":78,"title":"Page Pinning and DMA Lifetime — FOLL_PIN, long-term pins, COW, migration, device ownership","assetPath":"textbook/v5/track_01/part_78_page_pinning_dma_lifetime.md","sourceMapPath":"textbook/v5/track_01/part_78_sources.json","prerequisiteConceptIds":["T01-P14-S24-tlb-shootdown","T01-P64-S03-range-lifetime","T01-P64-S27-unregister-drain"]},
-    {"id":"T01-P79","order":79,"title":"Shared DMA Buffers and Fences — dma-buf, reservation objects, device ordering, CPU coherency","assetPath":"textbook/v5/track_01/part_79_dmabuf_fence_shared_buffer.md","sourceMapPath":"textbook/v5/track_01/part_79_sources.json","prerequisiteConceptIds":["T01-P78-S22-iommu-pin-order","T01-P78-S24-device-reset","T01-P78-S30-pin-proof"]},
-    {"id":"T01-P80","order":80,"title":"MMIO and DMA Ordering — device registers, posted writes, coherent memory, visibility barriers","assetPath":"textbook/v5/track_01/part_80_mmio_dma_ordering.md","sourceMapPath":"textbook/v5/track_01/part_80_sources.json","prerequisiteConceptIds":["T01-P79-S14-fence-vs-coherency","T01-P79-S16-cache-direction","T01-P78-S22-iommu-pin-order"]},
-    {"id":"T01-P81","order":81,"title":"Page Cache Writeback Engine — dirty state, throttling, flusher policy, error delivery, durability","assetPath":"textbook/v5/track_01/part_81_page_cache_writeback_engine.md","sourceMapPath":"textbook/v5/track_01/part_81_sources.json","prerequisiteConceptIds":["T01-P13-S13-page-cache","T01-P53-S02-buffered-write","T01-P59-S04-direct-reclaim"]},
-    {"id":"T01-P82","order":82,"title":"Kernel Module and Livepatch Lifecycle — load, relocation, references, transition consistency, safe removal","assetPath":"textbook/v5/track_01/part_82_kernel_module_livepatch_lifecycle.md","sourceMapPath":"textbook/v5/track_01/part_82_sources.json","prerequisiteConceptIds":["T01-P12-S09-loader","T01-P56-S09-virtual-unwind","T01-P68-S23-publication-order"]},
-    {"id":"T01-P83","order":83,"title":"System Suspend and Resume State Machine — device phases, wakeup races, runtime-PM reconciliation","assetPath":"textbook/v5/track_01/part_83_system_suspend_resume_state_machine.md","sourceMapPath":"textbook/v5/track_01/part_83_sources.json","prerequisiteConceptIds":["T01-P21-S30-closed-loop","T01-P61-S24-suspend-resume","T01-P77-S28-teardown-synchronization"]},
-    {"id":"T01-P84","order":84,"title":"Kernel Virtual Address Space — direct map, vmalloc, vmap, ioremap, page-table lifetime","assetPath":"textbook/v5/track_01/part_84_kernel_virtual_address_space_vmalloc.md","sourceMapPath":"textbook/v5/track_01/part_84_sources.json","prerequisiteConceptIds":["T01-P14-S24-tlb-shootdown","T01-P77-S20-allocation-context","T01-P80-S02-iomem-capability"]},
-    {"id":"T01-P85","order":85,"title":"PCIe Error Recovery — AER, DPC, isolation, reset, driver state reconstruction","assetPath":"textbook/v5/track_01/part_85_pcie_error_recovery_aer.md","sourceMapPath":"textbook/v5/track_01/part_85_sources.json","prerequisiteConceptIds":["T01-P33-S01-pcie-enumeration","T01-P78-S24-device-reset","T01-P80-S27-mmio-teardown"]},
-    {"id":"T01-P86","order":86,"title":"Memory Failure Recovery — hwpoison, page isolation, SIGBUS, soft-offline, unrecoverable kernel state","assetPath":"textbook/v5/track_01/part_86_memory_failure_hwpoison_recovery.md","sourceMapPath":"textbook/v5/track_01/part_86_sources.json","prerequisiteConceptIds":["T01-P22-S03-secded","T01-P78-S26-pinning-security","T01-P81-S18-writeback-failure-state"]}
+  "trackId": "T01",
+  "trackNumber": 1,
+  "title": "컴퓨터와 프로그래밍의 언어 — 표현에서 실행까지",
+  "parts": [
+    {
+      "id": "T01-P75",
+      "order": 75,
+      "title": "Credentials, Capabilities and LSM Authorization — identity, privilege sets, exec transitions, policy hooks",
+      "assetPath": "textbook/v5/track_01/part_75_credentials_capabilities_lsm.md",
+      "sourceMapPath": "textbook/v5/track_01/part_75_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P07-S03-credentials",
+        "T01-P07-S04-capabilities",
+        "T01-P29-S03-exec"
+      ]
+    },
+    {
+      "id": "T01-P76",
+      "order": 76,
+      "title": "Kernel Failure Capture — watchdogs, panic, kdump, vmcore, pstore, evidence survival",
+      "assetPath": "textbook/v5/track_01/part_76_kernel_failure_capture_watchdog_kdump.md",
+      "sourceMapPath": "textbook/v5/track_01/part_76_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P61-S05-irq-off",
+        "T01-P49-S27-injection-evidence",
+        "T01-P56-S21-symbolization"
+      ]
+    },
+    {
+      "id": "T01-P77",
+      "order": 77,
+      "title": "Execution Context and Preemption Legality — process, IRQ, NMI, atomic regions, PREEMPT_RT",
+      "assetPath": "textbook/v5/track_01/part_77_execution_context_preemption_legality.md",
+      "sourceMapPath": "textbook/v5/track_01/part_77_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P61-S07-softirq-context",
+        "T01-P61-S09-threaded-irq",
+        "T01-P07-S03-credentials"
+      ]
+    },
+    {
+      "id": "T01-P78",
+      "order": 78,
+      "title": "Page Pinning and DMA Lifetime — FOLL_PIN, long-term pins, COW, migration, device ownership",
+      "assetPath": "textbook/v5/track_01/part_78_page_pinning_dma_lifetime.md",
+      "sourceMapPath": "textbook/v5/track_01/part_78_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P14-S24-tlb-shootdown",
+        "T01-P64-S03-range-lifetime",
+        "T01-P64-S27-unregister-drain"
+      ]
+    },
+    {
+      "id": "T01-P79",
+      "order": 79,
+      "title": "Shared DMA Buffers and Fences — dma-buf, reservation objects, device ordering, CPU coherency",
+      "assetPath": "textbook/v5/track_01/part_79_dmabuf_fence_shared_buffer.md",
+      "sourceMapPath": "textbook/v5/track_01/part_79_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P78-S22-iommu-pin-order",
+        "T01-P78-S24-device-reset",
+        "T01-P78-S30-pin-proof"
+      ]
+    },
+    {
+      "id": "T01-P80",
+      "order": 80,
+      "title": "MMIO and DMA Ordering — device registers, posted writes, coherent memory, visibility barriers",
+      "assetPath": "textbook/v5/track_01/part_80_mmio_dma_ordering.md",
+      "sourceMapPath": "textbook/v5/track_01/part_80_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P79-S14-fence-vs-coherency",
+        "T01-P79-S16-cache-direction",
+        "T01-P78-S22-iommu-pin-order"
+      ]
+    },
+    {
+      "id": "T01-P81",
+      "order": 81,
+      "title": "Page Cache Writeback Engine — dirty state, throttling, flusher policy, error delivery, durability",
+      "assetPath": "textbook/v5/track_01/part_81_page_cache_writeback_engine.md",
+      "sourceMapPath": "textbook/v5/track_01/part_81_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P13-S13-page-cache",
+        "T01-P59-S04-direct-reclaim"
+      ]
+    },
+    {
+      "id": "T01-P82",
+      "order": 82,
+      "title": "Kernel Module and Livepatch Lifecycle — load, relocation, references, transition consistency, safe removal",
+      "assetPath": "textbook/v5/track_01/part_82_kernel_module_livepatch_lifecycle.md",
+      "sourceMapPath": "textbook/v5/track_01/part_82_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P12-S09-loader",
+        "T01-P56-S09-virtual-unwind",
+        "T01-P68-S23-publication-order"
+      ]
+    },
+    {
+      "id": "T01-P83",
+      "order": 83,
+      "title": "System Suspend and Resume State Machine — device phases, wakeup races, runtime-PM reconciliation",
+      "assetPath": "textbook/v5/track_01/part_83_system_suspend_resume_state_machine.md",
+      "sourceMapPath": "textbook/v5/track_01/part_83_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P21-S30-closed-loop",
+        "T01-P61-S24-suspend-resume",
+        "T01-P77-S28-teardown-synchronization"
+      ]
+    },
+    {
+      "id": "T01-P84",
+      "order": 84,
+      "title": "Kernel Virtual Address Space — direct map, vmalloc, vmap, ioremap, page-table lifetime",
+      "assetPath": "textbook/v5/track_01/part_84_kernel_virtual_address_space_vmalloc.md",
+      "sourceMapPath": "textbook/v5/track_01/part_84_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P14-S24-tlb-shootdown",
+        "T01-P77-S20-allocation-context",
+        "T01-P80-S02-iomem-capability"
+      ]
+    },
+    {
+      "id": "T01-P85",
+      "order": 85,
+      "title": "PCIe Error Recovery — AER, DPC, isolation, reset, driver state reconstruction",
+      "assetPath": "textbook/v5/track_01/part_85_pcie_error_recovery_aer.md",
+      "sourceMapPath": "textbook/v5/track_01/part_85_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P78-S24-device-reset",
+        "T01-P80-S27-mmio-teardown"
+      ]
+    },
+    {
+      "id": "T01-P86",
+      "order": 86,
+      "title": "Memory Failure Recovery — hwpoison, page isolation, SIGBUS, soft-offline, unrecoverable kernel state",
+      "assetPath": "textbook/v5/track_01/part_86_memory_failure_hwpoison_recovery.md",
+      "sourceMapPath": "textbook/v5/track_01/part_86_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P22-S03-secded",
+        "T01-P78-S26-pinning-security",
+        "T01-P81-S18-writeback-failure-state"
+      ]
+    }
   ]
 }
