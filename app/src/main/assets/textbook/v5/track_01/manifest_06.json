@@ -1,19 +1,149 @@
 {
-  "trackId":"T01",
-  "trackNumber":1,
-  "title":"컴퓨터와 프로그래밍의 언어 — 표현에서 실행까지",
-  "parts":[
-    {"id":"T01-P87","order":87,"title":"CPU Hotplug Lifecycle — cpuhp states, scheduler evacuation, IRQ/timer migration, RCU quiescence","assetPath":"textbook/v5/track_01/part_87_cpu_hotplug_lifecycle.md","sourceMapPath":"textbook/v5/track_01/part_87_sources.json","prerequisiteConceptIds":["T01-P48-S01-logical-physical","T01-P61-S23-cpu-hotplug","T01-P77-S16-migration-disable"]},
-    {"id":"T01-P88","order":88,"title":"NO_HZ and Tickless Execution — scheduler tick suppression, dynticks, housekeeping, isolation","assetPath":"textbook/v5/track_01/part_88_nohz_tickless_housekeeping.md","sourceMapPath":"textbook/v5/track_01/part_88_sources.json","prerequisiteConceptIds":["T01-P16-S11-step-slew","T01-P48-S28-benchmark-pinning","T01-P87-S17-timer-migration"]},
-    {"id":"T01-P89","order":89,"title":"Memory Compaction and CMA — fragmentation, migration scanners, high-order allocation, contiguous DMA","assetPath":"textbook/v5/track_01/part_89_memory_compaction_cma.md","sourceMapPath":"textbook/v5/track_01/part_89_sources.json","prerequisiteConceptIds":["T01-P59-S04-direct-reclaim","T01-P78-S07-partial-pin-cleanup","T01-P87-S26-numa-after-hotplug"]},
-    {"id":"T01-P90","order":90,"title":"Userspace Core Dump Pipeline — fatal signal, thread-group stop, ELF notes, mapping policy, collector lifetime","assetPath":"textbook/v5/track_01/part_90_userspace_core_dump_pipeline.md","sourceMapPath":"textbook/v5/track_01/part_90_sources.json","prerequisiteConceptIds":["T01-P56-S21-symbolization","T01-P76-S27-vmcore-secrets","T01-P45-S23-nonce"]},
-    {"id":"T01-P91","order":91,"title":"Zero-Copy Data Movement — page ownership, partial progress, backpressure, truncation races, socket queue lifetime","assetPath":"textbook/v5/track_01/part_91_zero_copy_data_movement.md","sourceMapPath":"textbook/v5/track_01/part_91_sources.json","prerequisiteConceptIds":["T01-P81-S24-truncate-invalidate","T01-P71-S19-close-inflight","T01-P70-S03-send-state"]},
-    {"id":"T01-P92","order":92,"title":"Process Exit and Reaping Internals — exit_group, resource teardown, zombies, subreapers, pidfd lifetime","assetPath":"textbook/v5/track_01/part_92_process_exit_reaping.md","sourceMapPath":"textbook/v5/track_01/part_92_sources.json","prerequisiteConceptIds":["T01-P29-S25-wait-status","T01-P29-S26-pidfd","T01-P71-S19-close-inflight"]},
-    {"id":"T01-P93","order":93,"title":"File Locking and Lease Semantics — POSIX ranges, OFD locks, flock, lease breaks, pathname races, remote loss","assetPath":"textbook/v5/track_01/part_93_file_locking_leases.md","sourceMapPath":"textbook/v5/track_01/part_93_sources.json","prerequisiteConceptIds":["T01-P71-S16-ofd-locks","T01-P71-S19-close-inflight","T01-P13-S04-vfs"]},
-    {"id":"T01-P94","order":94,"title":"Filesystem Event Observation — inotify, fanotify, rename races, overflow recovery, permission mediation","assetPath":"textbook/v5/track_01/part_94_filesystem_event_observation.md","sourceMapPath":"textbook/v5/track_01/part_94_sources.json","prerequisiteConceptIds":["T01-P13-S19-rename","T01-P25-S02-readiness","T01-P93-S22-rename-file-identity"]},
-    {"id":"T01-P95","order":95,"title":"Memory Mapping Mutation and Sealing — mmap lifetime, mprotect, mremap, MAP_FIXED, memfd seals, SIGBUS races","assetPath":"textbook/v5/track_01/part_95_memory_mapping_mutation_sealing.md","sourceMapPath":"textbook/v5/track_01/part_95_sources.json","prerequisiteConceptIds":["T01-P14-S11-mmap","T01-P53-S14-mmap-truncate","T01-P30-S08-wx"]},
-    {"id":"T01-P96","order":96,"title":"Transient Execution and Speculation Security — Spectre, branch predictors, RSB/BHI/ITS, buffer sampling, VM boundaries","assetPath":"textbook/v5/track_01/part_96_transient_execution_speculation_security.md","sourceMapPath":"textbook/v5/track_01/part_96_sources.json","prerequisiteConceptIds":["T01-P05-S04-branch","T01-P05-S05-ooo","T01-P30-S01-prevention-mitigation"]},
-    {"id":"T01-P97","order":97,"title":"UNIX Domain Socket Capability Transport — message boundaries, SCM_RIGHTS, credentials, ancillary framing, reference lifetime","assetPath":"textbook/v5/track_01/part_97_unix_domain_socket_capability_transport.md","sourceMapPath":"textbook/v5/track_01/part_97_sources.json","prerequisiteConceptIds":["T01-P29-S11-unix-socket","T01-P29-S12-scm-rights","T01-P29-S28-peer-credential"]},
-    {"id":"T01-P98","order":98,"title":"Terminal, PTY and Job Control — sessions, foreground groups, termios, hangup, remote shell lifetime","assetPath":"textbook/v5/track_01/part_98_terminal_pty_job_control.md","sourceMapPath":"textbook/v5/track_01/part_98_sources.json","prerequisiteConceptIds":["T01-P29-S27-process-group-session","T01-P36-S20-user-signal-mapping","T01-P71-S19-close-inflight"]}
+  "trackId": "T01",
+  "trackNumber": 1,
+  "title": "컴퓨터와 프로그래밍의 언어 — 표현에서 실행까지",
+  "parts": [
+    {
+      "id": "T01-P87",
+      "order": 87,
+      "title": "CPU Hotplug Lifecycle — cpuhp states, scheduler evacuation, IRQ/timer migration, RCU quiescence",
+      "assetPath": "textbook/v5/track_01/part_87_cpu_hotplug_lifecycle.md",
+      "sourceMapPath": "textbook/v5/track_01/part_87_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P61-S23-cpu-hotplug",
+        "T01-P77-S16-migration-disable"
+      ]
+    },
+    {
+      "id": "T01-P88",
+      "order": 88,
+      "title": "NO_HZ and Tickless Execution — scheduler tick suppression, dynticks, housekeeping, isolation",
+      "assetPath": "textbook/v5/track_01/part_88_nohz_tickless_housekeeping.md",
+      "sourceMapPath": "textbook/v5/track_01/part_88_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P48-S28-benchmark-pinning",
+        "T01-P87-S17-timer-migration"
+      ]
+    },
+    {
+      "id": "T01-P89",
+      "order": 89,
+      "title": "Memory Compaction and CMA — fragmentation, migration scanners, high-order allocation, contiguous DMA",
+      "assetPath": "textbook/v5/track_01/part_89_memory_compaction_cma.md",
+      "sourceMapPath": "textbook/v5/track_01/part_89_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P59-S04-direct-reclaim",
+        "T01-P78-S07-partial-pin-cleanup",
+        "T01-P87-S26-numa-after-hotplug"
+      ]
+    },
+    {
+      "id": "T01-P90",
+      "order": 90,
+      "title": "Userspace Core Dump Pipeline — fatal signal, thread-group stop, ELF notes, mapping policy, collector lifetime",
+      "assetPath": "textbook/v5/track_01/part_90_userspace_core_dump_pipeline.md",
+      "sourceMapPath": "textbook/v5/track_01/part_90_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P56-S21-symbolization",
+        "T01-P76-S27-vmcore-secrets",
+        "T01-P45-S23-nonce"
+      ]
+    },
+    {
+      "id": "T01-P91",
+      "order": 91,
+      "title": "Zero-Copy Data Movement — page ownership, partial progress, backpressure, truncation races, socket queue lifetime",
+      "assetPath": "textbook/v5/track_01/part_91_zero_copy_data_movement.md",
+      "sourceMapPath": "textbook/v5/track_01/part_91_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P81-S24-truncate-invalidate",
+        "T01-P71-S19-close-inflight",
+        "T01-P70-S03-send-state"
+      ]
+    },
+    {
+      "id": "T01-P92",
+      "order": 92,
+      "title": "Process Exit and Reaping Internals — exit_group, resource teardown, zombies, subreapers, pidfd lifetime",
+      "assetPath": "textbook/v5/track_01/part_92_process_exit_reaping.md",
+      "sourceMapPath": "textbook/v5/track_01/part_92_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P29-S25-wait-status",
+        "T01-P29-S26-pidfd",
+        "T01-P71-S19-close-inflight"
+      ]
+    },
+    {
+      "id": "T01-P93",
+      "order": 93,
+      "title": "File Locking and Lease Semantics — POSIX ranges, OFD locks, flock, lease breaks, pathname races, remote loss",
+      "assetPath": "textbook/v5/track_01/part_93_file_locking_leases.md",
+      "sourceMapPath": "textbook/v5/track_01/part_93_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P71-S16-ofd-locks",
+        "T01-P71-S19-close-inflight",
+        "T01-P13-S04-vfs"
+      ]
+    },
+    {
+      "id": "T01-P94",
+      "order": 94,
+      "title": "Filesystem Event Observation — inotify, fanotify, rename races, overflow recovery, permission mediation",
+      "assetPath": "textbook/v5/track_01/part_94_filesystem_event_observation.md",
+      "sourceMapPath": "textbook/v5/track_01/part_94_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P13-S19-rename",
+        "T01-P25-S02-readiness",
+        "T01-P93-S22-rename-file-identity"
+      ]
+    },
+    {
+      "id": "T01-P95",
+      "order": 95,
+      "title": "Memory Mapping Mutation and Sealing — mmap lifetime, mprotect, mremap, MAP_FIXED, memfd seals, SIGBUS races",
+      "assetPath": "textbook/v5/track_01/part_95_memory_mapping_mutation_sealing.md",
+      "sourceMapPath": "textbook/v5/track_01/part_95_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P14-S11-mmap",
+        "T01-P53-S14-mmap-truncate",
+        "T01-P30-S08-wx"
+      ]
+    },
+    {
+      "id": "T01-P96",
+      "order": 96,
+      "title": "Transient Execution and Speculation Security — Spectre, branch predictors, RSB/BHI/ITS, buffer sampling, VM boundaries",
+      "assetPath": "textbook/v5/track_01/part_96_transient_execution_speculation_security.md",
+      "sourceMapPath": "textbook/v5/track_01/part_96_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P05-S04-branch",
+        "T01-P05-S05-ooo",
+        "T01-P30-S01-prevention-mitigation"
+      ]
+    },
+    {
+      "id": "T01-P97",
+      "order": 97,
+      "title": "UNIX Domain Socket Capability Transport — message boundaries, SCM_RIGHTS, credentials, ancillary framing, reference lifetime",
+      "assetPath": "textbook/v5/track_01/part_97_unix_domain_socket_capability_transport.md",
+      "sourceMapPath": "textbook/v5/track_01/part_97_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P29-S11-unix-socket",
+        "T01-P29-S12-scm-rights",
+        "T01-P29-S28-peer-credential"
+      ]
+    },
+    {
+      "id": "T01-P98",
+      "order": 98,
+      "title": "Terminal, PTY and Job Control — sessions, foreground groups, termios, hangup, remote shell lifetime",
+      "assetPath": "textbook/v5/track_01/part_98_terminal_pty_job_control.md",
+      "sourceMapPath": "textbook/v5/track_01/part_98_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P29-S27-process-group-session",
+        "T01-P36-S20-user-signal-mapping",
+        "T01-P71-S19-close-inflight"
+      ]
+    }
   ]
 }
