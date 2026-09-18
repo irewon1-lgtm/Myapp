@@ -36,6 +36,9 @@ public class MainActivity extends Activity {
 
     private SharedPreferences prefs;
     private List<Track1Content.Page> track1Pages;
+    private List<Track1Content.Page> track2Pages;
+    private List<Track1Content.Page> activePages;
+    private int activeTrackNumber = 1;
     private boolean inReader = false;
 
     private int readerPageIndex = 0;
@@ -54,6 +57,8 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         prefs = getSharedPreferences("fresh_coding_roadmap", MODE_PRIVATE);
         track1Pages = Track1Content.pages();
+        track2Pages = Track2Content.pages();
+        activePages = track1Pages;
         applyWindowColors();
         showRoadmap();
     }
@@ -96,19 +101,23 @@ public class MainActivity extends Activity {
         root.addView(text("완전 초보 → 직접 앱 제작 → AI 활용 → 시스템 심화", 15, MUTED, Typeface.NORMAL),
                 topMargin(wrapWrap(), dp(10)));
 
-        TextView state = text("TRACK 01  ·  " + track1Pages.size() + "장 학습 콘텐츠 완료", 13, ACCENT, Typeface.BOLD);
+        TextView state = text(
+                "TRACK 01  ·  " + track1Pages.size() + "장 완료\n"
+                        + "TRACK 02  ·  " + track2Pages.size() + "장 완료",
+                13, ACCENT, Typeface.BOLD);
+        state.setLineSpacing(0f, 1.25f);
         state.setPadding(dp(12), dp(9), dp(12), dp(9));
         state.setBackground(roundRect(ACCENT_SOFT, ACCENT_SOFT, 12));
         root.addView(state, topMargin(wrapWrap(), dp(14)));
 
-        root.addView(text("TRACK 01은 한 번 들어가면 좌우로 계속 넘기며 읽을 수 있습니다.", 13, MUTED, Typeface.NORMAL),
+        root.addView(text("TRACK 01~02는 각 트랙 안에서 좌우로 계속 넘기며 읽을 수 있습니다.", 13, MUTED, Typeface.NORMAL),
                 topMargin(wrapWrap(), dp(16)));
 
         for (Track track : buildTracks()) {
             root.addView(buildTrackCard(track), topMargin(matchWrap(), dp(12)));
         }
 
-        TextView footer = text("TRACK 02~11은 아직 목차만 있습니다.", 12, MUTED, Typeface.NORMAL);
+        TextView footer = text("TRACK 03~11은 아직 목차만 있습니다.", 12, MUTED, Typeface.NORMAL);
         footer.setGravity(Gravity.CENTER_HORIZONTAL);
         root.addView(footer, topMargin(matchWrap(), dp(22)));
         return scroll;
@@ -129,7 +138,7 @@ public class MainActivity extends Activity {
         head.addView(titles, new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f));
 
         String labelText = String.format("TRACK %02d  ·  %s", track.number, track.level);
-        if (track.number == 1) labelText += "  ·  내용 완료";
+        if (track.number <= 2) labelText += "  ·  내용 완료";
         titles.addView(text(labelText, 12, ACCENT, Typeface.BOLD));
 
         TextView title = text(track.title, 19, TEXT, Typeface.BOLD);
@@ -164,12 +173,18 @@ public class MainActivity extends Activity {
             chapter.setLineSpacing(0f, 1.15f);
             row.addView(chapter, new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f));
 
-            if (track.number == 1) {
+            if (track.number <= 2) {
                 TextView open = text("바로가기 ›", 11, ACCENT, Typeface.BOLD);
                 row.addView(open);
                 final int lessonNumber = i + 1;
-                row.setOnClickListener(v ->
-                        openTrack1Reader(Track1Content.firstPageIndexOfLesson(track1Pages, lessonNumber)));
+                final int trackNumber = track.number;
+                row.setOnClickListener(v -> {
+                    List<Track1Content.Page> pages = pagesForTrack(trackNumber);
+                    int firstPage = trackNumber == 1
+                            ? Track1Content.firstPageIndexOfLesson(pages, lessonNumber)
+                            : Track2Content.firstPageIndexOfLesson(pages, lessonNumber);
+                    openTrackReader(trackNumber, firstPage);
+                });
             } else {
                 row.addView(text("목차", 11, MUTED, Typeface.NORMAL));
             }
@@ -181,13 +196,14 @@ public class MainActivity extends Activity {
         milestone.setBackground(roundRect(Color.rgb(29, 32, 38), Color.rgb(29, 32, 38), 12));
         chapters.addView(milestone, topMargin(matchWrap(), dp(7)));
 
-        if (track.number == 1) {
+        if (track.number <= 2) {
             LinearLayout actions = new LinearLayout(this);
             actions.setOrientation(LinearLayout.HORIZONTAL);
             actions.setGravity(Gravity.CENTER_VERTICAL);
+            final int trackNumber = track.number;
 
             TextView start = actionButton("처음부터");
-            start.setOnClickListener(v -> openTrack1Reader(0));
+            start.setOnClickListener(v -> openTrackReader(trackNumber, 0));
             actions.addView(start, new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f));
 
             LinearLayout.LayoutParams gap = new LinearLayout.LayoutParams(dp(10), 1);
@@ -195,8 +211,8 @@ public class MainActivity extends Activity {
 
             TextView resume = actionButton("이어보기");
             resume.setOnClickListener(v -> {
-                int saved = prefs.getInt("track1_reader_page", 0);
-                openTrack1Reader(saved);
+                int saved = prefs.getInt(readerPreferenceKey(trackNumber), 0);
+                openTrackReader(trackNumber, saved);
             });
             actions.addView(resume, new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f));
 
@@ -221,10 +237,21 @@ public class MainActivity extends Activity {
         return button;
     }
 
-    private void openTrack1Reader(int requestedPage) {
+    private List<Track1Content.Page> pagesForTrack(int trackNumber) {
+        if (trackNumber == 2) return track2Pages;
+        return track1Pages;
+    }
+
+    private String readerPreferenceKey(int trackNumber) {
+        return "track" + trackNumber + "_reader_page";
+    }
+
+    private void openTrackReader(int trackNumber, int requestedPage) {
         inReader = true;
-        readerPageIndex = Math.max(0, Math.min(requestedPage, track1Pages.size() - 1));
-        prefs.edit().putInt("track1_reader_page", readerPageIndex).apply();
+        activeTrackNumber = trackNumber;
+        activePages = pagesForTrack(trackNumber);
+        readerPageIndex = Math.max(0, Math.min(requestedPage, activePages.size() - 1));
+        prefs.edit().putInt(readerPreferenceKey(trackNumber), readerPageIndex).apply();
         setContentView(buildReaderShell());
     }
 
@@ -270,7 +297,7 @@ public class MainActivity extends Activity {
 
         readerPageHolder = new FrameLayout(this);
         readerArea.addView(readerPageHolder, matchMatch());
-        readerPageHolder.addView(buildReaderPageView(track1Pages.get(readerPageIndex)), matchMatch());
+        readerPageHolder.addView(buildReaderPageView(activePages.get(readerPageIndex)), matchMatch());
 
         TextView leftZone = edgeZone("‹");
         FrameLayout.LayoutParams leftParams = new FrameLayout.LayoutParams(dp(48), FrameLayout.LayoutParams.MATCH_PARENT);
@@ -497,7 +524,7 @@ public class MainActivity extends Activity {
     }
 
     private void nextReaderPage() {
-        if (readerPageIndex < track1Pages.size() - 1) {
+        if (readerPageIndex < activePages.size() - 1) {
             changeReaderPage(readerPageIndex + 1, 1);
         }
     }
@@ -510,14 +537,14 @@ public class MainActivity extends Activity {
 
     private void changeReaderPage(int targetIndex, int direction) {
         if (readerAnimating || readerPageHolder == null) return;
-        targetIndex = Math.max(0, Math.min(targetIndex, track1Pages.size() - 1));
+        targetIndex = Math.max(0, Math.min(targetIndex, activePages.size() - 1));
         if (targetIndex == readerPageIndex) return;
 
         readerAnimating = true;
         View oldPage = readerPageHolder.getChildCount() > 0
                 ? readerPageHolder.getChildAt(readerPageHolder.getChildCount() - 1)
                 : null;
-        View newPage = buildReaderPageView(track1Pages.get(targetIndex));
+        View newPage = buildReaderPageView(activePages.get(targetIndex));
 
         int width = readerPageHolder.getWidth();
         if (width <= 0 || oldPage == null) {
@@ -564,30 +591,30 @@ public class MainActivity extends Activity {
     }
 
     private void saveReaderPosition() {
-        prefs.edit().putInt("track1_reader_page", readerPageIndex).apply();
+        prefs.edit().putInt(readerPreferenceKey(activeTrackNumber), readerPageIndex).apply();
     }
 
     private void updateReaderChrome() {
-        if (track1Pages == null || track1Pages.isEmpty()) return;
-        Track1Content.Page page = track1Pages.get(readerPageIndex);
+        if (activePages == null || activePages.isEmpty()) return;
+        Track1Content.Page page = activePages.get(readerPageIndex);
 
         if (readerChapterText != null) {
-            readerChapterText.setText(String.format("TRACK 01  ·  CHAPTER %02d", page.lessonNumber));
+            readerChapterText.setText(String.format("TRACK %02d  ·  CHAPTER %02d", activeTrackNumber, page.lessonNumber));
         }
         if (readerLessonText != null) {
             readerLessonText.setText(page.lessonTitle);
         }
         if (readerPageText != null) {
-            readerPageText.setText((readerPageIndex + 1) + " / " + track1Pages.size());
+            readerPageText.setText((readerPageIndex + 1) + " / " + activePages.size());
         }
         if (readerPrevText != null) {
             boolean enabled = readerPageIndex > 0;
             readerPrevText.setAlpha(enabled ? 1f : 0.28f);
         }
         if (readerNextText != null) {
-            boolean enabled = readerPageIndex < track1Pages.size() - 1;
+            boolean enabled = readerPageIndex < activePages.size() - 1;
             readerNextText.setAlpha(enabled ? 1f : 0.28f);
-            readerNextText.setText(enabled ? "다음 ›" : "TRACK 01 완료");
+            readerNextText.setText(enabled ? "다음 ›" : String.format("TRACK %02d 완료", activeTrackNumber));
         }
     }
 
