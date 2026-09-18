@@ -6,6 +6,7 @@ on:
       - feat/v1-tablet-textbook
       - integrate/v1-depth-latest-main
       - textbook-v3-deep-beginner
+      - textbook-v5-deep-book-engine
       - main
   workflow_dispatch:
 
