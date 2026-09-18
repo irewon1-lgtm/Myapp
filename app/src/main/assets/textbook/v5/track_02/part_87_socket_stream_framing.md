@@ -22,8 +22,8 @@ TCP socket을 처음 쓰면 `send(message)` 한 번과 `recv()` 한 번이 메�
 
 ---
 
-**현장 점검 87-1 — CHAPTER 01 · stream transport는 message가 아니라 순서 있는 byte sequence를 제공한다**
-CHAPTER 01 · stream transport는 message가 아니라 순서 있는 byte sequence를 제공한다을 점검할 때는 입력과 초기 상태를 기록하고 권한 또는 형식 오류를 한 번 만든다. PART 87 CHAPTER 1에서는 체크포인트와 실제 처리 위치를 맞춰 본다. 기준 실행을 두 번 반복해 같은 상태 전이를 재현한 뒤, 수정 후에는 정상 입력과 부분 전송·중단 사례를 각각 다시 실행한다. 통과 기준은 byte 경계가 보존되고 재시도 뒤에도 누락이나 중복이 생기지 않으며 종료 시 열린 자원이 남지 않는 것이다.
+**검증 시나리오 P87-C1 — CHAPTER 01 · stream transport는 message가 아니라 순서 있는 byte sequence를 제공한다**
+`CHAPTER 01 · stream transport는 message가 아니라 순서 있는 byte sequence를 제공한다` 검증은 기준 입력을 한 개 고정하는 데서 시작한다. P87-C1에서는 `CHAPTER 01 · stream transport는 message가 아니라 순서 있는 byte sequence를 제공한다` 실행 직전 상태를 먼저 적고 실행 뒤 값과 비교해 실제 규칙을 확인한다. 두 번째 단계에서는 `CHAPTER 01 · stream transport는 message가 아니라 순서 있는 byte sequence를 제공한다`에 대해 반대 조건 입력을 한 개 추가고 다른 코드는 그대로 두어 원인 후보를 하나로 제한한다. 이때 `CHAPTER 01 · stream transport는 message가 아니라 순서 있는 byte sequence를 제공한다`의 실행 전후 값을 표로 대조하여 우연한 통과를 배제한다. 예상과 다르면 `CHAPTER 01 · stream transport는 message가 아니라 순서 있는 byte sequence를 제공한다`의 타입, 값, 호출 순서, 예외 경계 가운데 최초로 달라진 항목부터 확인하고 최소 수정 뒤 다시 실행한다. P87-C1의 마무리는 예상과 다르면 최초 차이 지점을 추적하는 것이다. 통과 기준은 `CHAPTER 01 · stream transport는 message가 아니라 순서 있는 byte sequence를 제공한다`의 정상 사례와 변형 사례가 모두 설명 가능한 결과를 내고 같은 절차를 반복해도 동일한 상태 계약을 유지하는 것이다.
 ## CHAPTER 02 · `send`는 요청한 모든 bytes를 한 번에 전송했다고 보장하지 않을 수 있다
 
 ### 시작 전 용어집
@@ -57,8 +57,8 @@ while view:
 
 ---
 
-**현장 점검 87-2 — CHAPTER 02 · `send`는 요청한 모든 bytes를 한 번에 전송했다고 보장하지 않을 수 있다**
-CHAPTER 02 · `send`는 요청한 모든 bytes를 한 번에 전송했다고 보장하지 않을 수 있다을 점검할 때는 완료 조건을 코드 실행 전에 적고 부분 데이터만 전달한다. PART 87 CHAPTER 2에서는 열린 자원과 닫힌 자원을 비교한다. 같은 요청을 재실행해 readiness 신호와 실제 I/O 완료를 구분해 기록한다. 수정 후에는 즉시 완료, EAGAIN 계열 대기, 연결 종료 상황을 나눠 확인하고 event loop가 바쁜 반복이나 영구 대기에 빠지지 않아야 통과다.
+**검증 시나리오 P87-C2 — CHAPTER 02 · `send`는 요청한 모든 bytes를 한 번에 전송했다고 보장하지 않을 수 있다**
+`CHAPTER 02 · `send`는 요청한 모든 bytes를 한 번에 전송했다고 보장하지 않을 수 있다` 검증은 가장 작은 객체 상태로 시작하는 데서 시작한다. P87-C2에서는 `CHAPTER 02 · `send`는 요청한 모든 bytes를 한 번에 전송했다고 보장하지 않을 수 있다` 실행 직전 상태를 먼저 적고 실행 뒤 값과 비교해 실제 규칙을 확인한다. 두 번째 단계에서는 `CHAPTER 02 · `send`는 요청한 모든 bytes를 한 번에 전송했다고 보장하지 않을 수 있다`에 대해 속성 하나만 바꿔 재실행고 다른 코드는 그대로 두어 원인 후보를 하나로 제한한다. 이때 `CHAPTER 02 · `send`는 요청한 모든 bytes를 한 번에 전송했다고 보장하지 않을 수 있다`의 반환값과 부수효과를 따로 기록하여 우연한 통과를 배제한다. 예상과 다르면 `CHAPTER 02 · `send`는 요청한 모든 bytes를 한 번에 전송했다고 보장하지 않을 수 있다`의 타입, 값, 호출 순서, 예외 경계 가운데 최초로 달라진 항목부터 확인하고 최소 수정 뒤 다시 실행한다. P87-C2의 마무리는 수정 뒤 원래 조건을 다시 회귀 확인하는 것이다. 통과 기준은 `CHAPTER 02 · `send`는 요청한 모든 bytes를 한 번에 전송했다고 보장하지 않을 수 있다`의 정상 사례와 변형 사례가 모두 설명 가능한 결과를 내고 같은 절차를 반복해도 동일한 상태 계약을 유지하는 것이다.
 ## CHAPTER 03 · `recv`는 원하는 message 길이보다 적게 반환하는 것이 정상이다
 
 ### 시작 전 용어집
@@ -119,8 +119,8 @@ async def read_exactly(reader, n):
 
 ---
 
-**현장 점검 87-4 — CHAPTER 04 · framing은 길이 prefix·delimiter·fixed record 중 protocol 의미에 맞게 선택한다**
-CHAPTER 04 · framing은 길이 prefix·delimiter·fixed record 중 protocol 의미에 맞게 선택한다을 점검할 때는 재현 절차를 세 단계로 고정하고 취소를 처리 중간에 발생시킨다. PART 87 CHAPTER 4에서는 요청 식별자와 최종 상태를 연결한다. 검증은 동일한 LogRecord 흐름을 재현한 뒤 handler 수와 출력 건수를 함께 세는 방식으로 진행한다. 수정 후에는 정상 로그·필터링 로그·예외 로그를 비교하고 한 이벤트가 의도한 횟수만 기록되며 context가 다른 요청으로 새지 않아야 한다.
+**검증 시나리오 P87-C4 — CHAPTER 04 · framing은 길이 prefix·delimiter·fixed record 중 protocol 의미에 맞게 선택한다**
+`CHAPTER 04 · framing은 길이 prefix·delimiter·fixed record 중 protocol 의미에 맞게 선택한다` 검증은 정상 경로를 먼저 재현하는 데서 시작한다. P87-C4에서는 `CHAPTER 04 · framing은 길이 prefix·delimiter·fixed record 중 protocol 의미에 맞게 선택한다` 실행 직전 상태를 먼저 적고 실행 뒤 값과 비교해 실제 규칙을 확인한다. 두 번째 단계에서는 `CHAPTER 04 · framing은 길이 prefix·delimiter·fixed record 중 protocol 의미에 맞게 선택한다`에 대해 오류 경로 하나를 의도적으로 만든다고 다른 코드는 그대로 두어 원인 후보를 하나로 제한한다. 이때 `CHAPTER 04 · framing은 길이 prefix·delimiter·fixed record 중 protocol 의미에 맞게 선택한다`의 예외 종류와 직전 상태를 함께 남긴다하여 우연한 통과를 배제한다. 예상과 다르면 `CHAPTER 04 · framing은 길이 prefix·delimiter·fixed record 중 protocol 의미에 맞게 선택한다`의 타입, 값, 호출 순서, 예외 경계 가운데 최초로 달라진 항목부터 확인하고 최소 수정 뒤 다시 실행한다. P87-C4의 마무리는 복구 후 같은 오류가 다시 재현되지 않는지 검사하는 것이다. 통과 기준은 `CHAPTER 04 · framing은 길이 prefix·delimiter·fixed record 중 protocol 의미에 맞게 선택한다`의 정상 사례와 변형 사례가 모두 설명 가능한 결과를 내고 같은 절차를 반복해도 동일한 상태 계약을 유지하는 것이다.
 ## CHAPTER 05 · timeout과 half-close는 연결 상태를 단순 open/closed 두 값으로 만들지 않는다
 
 ### 시작 전 용어집
