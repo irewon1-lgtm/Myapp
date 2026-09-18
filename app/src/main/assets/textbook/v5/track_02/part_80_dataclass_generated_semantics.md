@@ -239,3 +239,50 @@ class Range:
 - **뜻:** 테스트에서는 mutable default isolation, equality/hash 불변식, post-init failure, inheritance field 구성, slots에서 예상하지 못한 attribute assignment를 확인한다.
 - **왜 중요한가:** 이 PART의 핵심은 **dataclass를 단순 코드 생성기로 보지 않고, field schema에서 constructor·representation·comparison·hash·layout 의미를 자동 파생하는 계약 생성 도구로 이해하는 것**이다.
 - **예시:** 테스트에서는 mutable default isolation, equality/hash 불변식, post-init failure, …
+
+---
+
+## 실전 학습 루프 · dataclass generated semantics
+
+### 1. 쉬운 예
+
+`@dataclass`는 단순히 타이핑을 줄이는 장식이 아니다. field 정의를 바탕으로 init, repr, equality, ordering, hash 같은 동작을 생성하며 옵션 조합에 따라 객체 의미가 달라진다.
+
+### 2. 한 줄 해석
+
+dataclass를 쓸 때는 생성되는 메서드 목록보다 equality·mutability·hash 계약을 먼저 결정한다.
+
+### 3. 직접 실행
+
+실행 전에 결과를 먼저 예상한다. 그 다음 아래 최소 예제를 실행하고, 예상이 틀렸다면 **호출 순서와 상태 변화**를 표시한다.
+
+```python
+from dataclasses import dataclass
+
+@dataclass(frozen=True)
+class Point:
+    x: int
+    y: int
+
+print(Point(1, 2) == Point(1, 2))
+```
+
+### 4. 수정 실습
+
+1. `frozen=True`를 제거하고 hash 가능성 변화를 확인한다.
+2. `compare=False` field를 추가해 equality 의미가 어떻게 달라지는지 본다.
+
+수정 후에는 정상 예제만 다시 보지 말고 실패·경계·반복 호출 중 하나를 추가해 계약이 유지되는지 확인한다.
+
+### 5. 확인 문제
+
+dataclass면 자동으로 immutable하고 hashable할까?
+
+### 6. 정답과 오답 설명
+
+**정답:** 아니다. frozen, eq, unsafe_hash 등 옵션과 field 타입에 따라 계약이 달라진다.
+
+**자주 나오는 오답:** “boilerplate를 줄인다”만 기억하면 생성된 equality/hash가 도메인 의미와 맞는지 놓치게 된다.
+
+이 PART를 마칠 때는 해당 문법 이름을 외우는 데서 멈추지 말고 **언제 호출되는가 / 무엇을 읽거나 바꾸는가 / 실패하면 어디로 가는가** 세 문장으로 설명한다.
+

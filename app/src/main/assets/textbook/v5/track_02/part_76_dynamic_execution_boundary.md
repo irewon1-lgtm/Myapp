@@ -203,3 +203,45 @@ print(ns["y"])
 - **뜻:** 안전한 설계는 어떤 syntax를 허용하는지, 어떤 object/capability를 namespace에 노출하는지, 실행 시간·memory를 어떻게 제한하는지, 오류와 audit 정보를 어떻게 남기는지 정한다.
 - **왜 중요한가:** 테스트에서는 정상 expression뿐 아니라 forbidden name, huge expression, syntax error, runtime exception, namespace mutation, 재현 가능한 rule version을 확인한다.
 - **예시:** 안전한 설계는 어떤 syntax를 허용하는지, 어떤 object/capability를 namespace에 …
+
+---
+
+## 실전 학습 루프 · dynamic execution boundary
+
+### 1. 쉬운 예
+
+문자열로 받은 식을 `eval`하거나 코드를 `exec`하면 데이터였던 입력이 실행 권한을 갖게 된다. 외부 입력이 섞이면 단순 parser 문제가 아니라 코드 실행 경계가 된다.
+
+### 2. 한 줄 해석
+
+dynamic execution은 문자열을 편하게 처리하는 기능이 아니라 신뢰 수준을 바꾸는 보안 경계다.
+
+### 3. 직접 실행
+
+실행 전에 결과를 먼저 예상한다. 그 다음 아래 최소 예제를 실행하고, 예상이 틀렸다면 **호출 순서와 상태 변화**를 표시한다.
+
+```python
+user_text = '2 + 3'
+# 신뢰되지 않은 입력에는 eval 대신 제한된 parser를 설계한다.
+print(user_text)
+```
+
+### 4. 수정 실습
+
+1. 허용 연산이 덧셈뿐이라면 AST를 검사하는 작은 evaluator로 바꾼다.
+2. globals/locals를 비웠다고 임의 코드 실행이 완전히 안전해지는지 반례를 찾는다.
+
+수정 후에는 정상 예제만 다시 보지 말고 실패·경계·반복 호출 중 하나를 추가해 계약이 유지되는지 확인한다.
+
+### 5. 확인 문제
+
+입력 형식을 제한할 수 있는데도 `eval`을 쓰는 것이 좋은 기본값일까?
+
+### 6. 정답과 오답 설명
+
+**정답:** 아니다. 필요한 문법만 parser로 허용하는 설계가 공격면과 해석 차이를 줄인다.
+
+**자주 나오는 오답:** “builtins만 지우면 sandbox다”는 답은 위험하다. 동적 실행을 안전한 격리로 만드는 것은 훨씬 더 큰 문제다.
+
+이 PART를 마칠 때는 해당 문법 이름을 외우는 데서 멈추지 말고 **언제 호출되는가 / 무엇을 읽거나 바꾸는가 / 실패하면 어디로 가는가** 세 문장으로 설명한다.
+

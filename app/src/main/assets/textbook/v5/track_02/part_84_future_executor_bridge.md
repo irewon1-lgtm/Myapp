@@ -208,3 +208,54 @@ async caller timeout -> future cancelled 표시 -> worker thread의 blocking I/O
 - **뜻:** 성능 test는 단일 task가 아니라 realistic concurrency에서 queue delay까지 측정한다.
 - **왜 중요한가:** 이 PART의 핵심은 **executor를 async 변환 도구로 보지 않고, 실행 위치를 다른 thread/process로 옮기면서 Future state와 새로운 concurrency·serialization·lifecycle 계약을 만드는 bridge로 이해하는 것**이다.
 - **예시:** 성능 test는 단일 task가 아니라 realistic concurrency에서 queue …
+
+---
+
+## 실전 학습 루프 · Future·executor bridge
+
+### 1. 쉬운 예
+
+blocking 함수나 CPU 작업을 event loop thread에서 직접 실행하면 다른 coroutine 진행까지 막을 수 있다. executor bridge는 해당 작업을 다른 실행 자원에 넘기고 Future로 결과를 다시 연결한다.
+
+### 2. 한 줄 해석
+
+executor 사용은 blocking을 없애는 것이 아니라 blocking이 일어나는 위치와 자원 pool을 분리하는 것이다.
+
+### 3. 직접 실행
+
+실행 전에 결과를 먼저 예상한다. 그 다음 아래 최소 예제를 실행하고, 예상이 틀렸다면 **호출 순서와 상태 변화**를 표시한다.
+
+```python
+import asyncio, time
+
+def blocking():
+    time.sleep(0.05)
+    return 7
+
+async def main():
+    loop = asyncio.get_running_loop()
+    result = await loop.run_in_executor(None, blocking)
+    print(result)
+
+asyncio.run(main())
+```
+
+### 4. 수정 실습
+
+1. executor worker 수보다 많은 blocking 작업을 넣고 queueing을 생각한다.
+2. 취소된 Future가 이미 실행 중인 thread 작업을 즉시 중단시키는지 확인한다.
+
+수정 후에는 정상 예제만 다시 보지 말고 실패·경계·반복 호출 중 하나를 추가해 계약이 유지되는지 확인한다.
+
+### 5. 확인 문제
+
+executor로 넘기면 blocking 작업 자체가 non-blocking 코드로 바뀌는가?
+
+### 6. 정답과 오답 설명
+
+**정답:** 아니다. blocking은 worker에서 계속 일어나며 event loop가 직접 기다리지 않을 뿐이다.
+
+**자주 나오는 오답:** thread pool을 무한 자원처럼 보면 latency와 memory가 오히려 악화될 수 있다.
+
+이 PART를 마칠 때는 해당 문법 이름을 외우는 데서 멈추지 말고 **언제 호출되는가 / 무엇을 읽거나 바꾸는가 / 실패하면 어디로 가는가** 세 문장으로 설명한다.
+

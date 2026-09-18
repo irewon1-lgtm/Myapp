@@ -215,3 +215,49 @@ Refactoring 내성을 유지해야 한다.
 - **뜻:** 테스트에서는 introspection tool이 Python minor version 변화에 얼마나 민감한지, frame을 저장했을 때 reference가 남지 않는지, redaction 정책이 local capture에도 적용되는지 확인한다.
 - **왜 중요한가:** 이 PART의 핵심은 **함수 실행을 source line 하나로 보지 않고, 재사용되는 code object와 호출마다 만들어지는 frame의 결합으로 이해하면서 introspection의 lifetime·비용·version coupling까지 관리하는 것**이다.
 - **예시:** 테스트에서는 introspection tool이 Python minor version 변화에 얼마나 …
+
+---
+
+## 실전 학습 루프 · frame·code introspection
+
+### 1. 쉬운 예
+
+함수 안에서 현재 실행 프레임을 들여다보면 local 변수, 호출 위치, code object 같은 실행 증거를 확인할 수 있다. 하지만 introspection은 구현 세부와 결합되기 쉬우므로 일반 업무 로직이 아니라 디버깅·도구 계층에 제한하는 편이 낫다.
+
+### 2. 한 줄 해석
+
+frame은 “지금 실행 중인 한 함수 호출의 상태”, code object는 “그 호출이 따르는 실행 코드의 메타데이터”다.
+
+### 3. 직접 실행
+
+실행 전에 결과를 먼저 예상한다. 그 다음 아래 최소 예제를 실행하고, 예상이 틀렸다면 **호출 순서와 상태 변화**를 표시한다.
+
+```python
+import inspect
+
+def demo(x):
+    f = inspect.currentframe()
+    print(f.f_code.co_name, f.f_locals['x'])
+
+demo(7)
+```
+
+### 4. 수정 실습
+
+1. `inspect.stack()`을 무분별하게 반복했을 때 비용을 생각한다.
+2. 민감한 local 값이 로그에 노출되지 않도록 수집 범위를 줄인다.
+
+수정 후에는 정상 예제만 다시 보지 말고 실패·경계·반복 호출 중 하나를 추가해 계약이 유지되는지 확인한다.
+
+### 5. 확인 문제
+
+frame을 읽을 수 있다는 이유로 production 로직이 frame 구조에 의존해도 될까?
+
+### 6. 정답과 오답 설명
+
+**정답:** 권장하지 않는다. 진단 도구에는 유용하지만 정상 기능의 계약을 실행 프레임 내부 구조에 묶으면 유지보수성이 떨어진다.
+
+**자주 나오는 오답:** “볼 수 있는 정보는 모두 써도 된다”는 생각이 오답이다. introspection은 강력할수록 경계를 좁혀야 한다.
+
+이 PART를 마칠 때는 해당 문법 이름을 외우는 데서 멈추지 말고 **언제 호출되는가 / 무엇을 읽거나 바꾸는가 / 실패하면 어디로 가는가** 세 문장으로 설명한다.
+

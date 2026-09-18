@@ -222,3 +222,53 @@ async def worker():
 - **뜻:** 이 PART의 핵심은 **Task를 coroutine을 빨리 실행하는 편의 함수로 보지 않고, 실행·결과·실패·cancellation·lifetime을 보존하는 독립 runtime object로 관리하는 것**이다.
 - **왜 중요한가:** 단순히 `create_task`가 호출됐는지만 검사하지 않는다.
 - **예시:** 이 PART의 핵심은 **Task를 coroutine을 빨리 실행하는 편의 …
+
+---
+
+## 실전 학습 루프 · asyncio Task lifecycle
+
+### 1. 쉬운 예
+
+coroutine을 Task로 만들면 event loop가 독립적으로 진행 상태를 관리한다. 생성만 하고 reference·await·cancel 정책을 잃어버리면 실패가 관찰되지 않거나 shutdown 시 작업이 남을 수 있다.
+
+### 2. 한 줄 해석
+
+Task는 “백그라운드 함수”가 아니라 완료·실패·취소 상태를 가진 비동기 작업 객체다.
+
+### 3. 직접 실행
+
+실행 전에 결과를 먼저 예상한다. 그 다음 아래 최소 예제를 실행하고, 예상이 틀렸다면 **호출 순서와 상태 변화**를 표시한다.
+
+```python
+import asyncio
+
+async def work():
+    await asyncio.sleep(0.01)
+    return 3
+
+async def main():
+    task = asyncio.create_task(work())
+    print(await task)
+
+asyncio.run(main())
+```
+
+### 4. 수정 실습
+
+1. Task를 cancel하고 `CancelledError` 전파를 관찰한다.
+2. 여러 Task를 만들 때 하나가 실패하면 나머지를 어떻게 정리할지 정책을 적는다.
+
+수정 후에는 정상 예제만 다시 보지 말고 실패·경계·반복 호출 중 하나를 추가해 계약이 유지되는지 확인한다.
+
+### 5. 확인 문제
+
+`create_task()`를 호출한 뒤 reference를 버려도 실패 처리를 신경 쓰지 않아도 될까?
+
+### 6. 정답과 오답 설명
+
+**정답:** 아니다. 작업의 소유자, await 지점, 취소·실패 관찰 정책을 명확히 해야 한다.
+
+**자주 나오는 오답:** “비동기니까 알아서 끝난다”는 생각은 resource leak과 조용한 실패를 만든다.
+
+이 PART를 마칠 때는 해당 문법 이름을 외우는 데서 멈추지 말고 **언제 호출되는가 / 무엇을 읽거나 바꾸는가 / 실패하면 어디로 가는가** 세 문장으로 설명한다.
+

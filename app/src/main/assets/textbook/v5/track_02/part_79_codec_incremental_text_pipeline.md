@@ -209,3 +209,48 @@ last = decoder.decode(b"", final=True)
 
 - **뜻:** Stream decoder는 정상 문장 하나보다 boundary fuzz test가 더 강하다.
 - **예시:** Stream decoder는 정상 문장 하나보다 boundary fuzz test가 …
+
+---
+
+## 실전 학습 루프 · incremental codec pipeline
+
+### 1. 쉬운 예
+
+네트워크에서 UTF-8 문자가 byte 경계 중간에서 끊겨 도착할 수 있다. chunk마다 독립적으로 decode하면 멀쩡한 문자가 오류가 될 수 있으므로 incremental decoder는 미완성 byte를 다음 chunk까지 보존한다.
+
+### 2. 한 줄 해석
+
+stream text 처리는 “각 chunk decode”가 아니라 decoder state를 포함한 연속 변환이다.
+
+### 3. 직접 실행
+
+실행 전에 결과를 먼저 예상한다. 그 다음 아래 최소 예제를 실행하고, 예상이 틀렸다면 **호출 순서와 상태 변화**를 표시한다.
+
+```python
+import codecs
+
+d = codecs.getincrementaldecoder('utf-8')()
+raw = '한'.encode('utf-8')
+print(d.decode(raw[:1]))
+print(d.decode(raw[1:], final=True))
+```
+
+### 4. 수정 실습
+
+1. `final=True`를 빼면 stream 종료 시 남은 불완전 byte가 어떻게 처리되는지 확인한다.
+2. errors='replace'와 strict 정책이 데이터 품질에 미치는 차이를 비교한다.
+
+수정 후에는 정상 예제만 다시 보지 말고 실패·경계·반복 호출 중 하나를 추가해 계약이 유지되는지 확인한다.
+
+### 5. 확인 문제
+
+UTF-8 byte를 임의 위치에서 자른 뒤 각 조각을 따로 decode해도 항상 안전할까?
+
+### 6. 정답과 오답 설명
+
+**정답:** 아니다. multi-byte sequence가 chunk 사이에 걸칠 수 있어 decoder state가 필요하다.
+
+**자주 나오는 오답:** chunk 경계와 문자 경계를 동일시하면 정상 입력을 invalid로 오판할 수 있다.
+
+이 PART를 마칠 때는 해당 문법 이름을 외우는 데서 멈추지 말고 **언제 호출되는가 / 무엇을 읽거나 바꾸는가 / 실패하면 어디로 가는가** 세 문장으로 설명한다.
+

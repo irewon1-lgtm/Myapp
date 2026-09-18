@@ -200,3 +200,51 @@ Sequence.register(MyForeignSequence)
 - **뜻:** 등록 relation만 테스트하고 semantics를 생략하지 않는다.
 - **왜 중요한가:** 이 PART의 핵심은 **ABC를 상속 체계 장식으로 보지 않고, runtime에서 operation capability를 이름 붙이되 실제 semantic contract는 별도 검증해야 하는 interface 도구로 이해하는 것**이다.
 - **예시:** 등록 relation만 테스트하고 semantics를 생략하지 않는다.
+
+---
+
+## 실전 학습 루프 · ABC와 runtime contract
+
+### 1. 쉬운 예
+
+공통 인터페이스를 문서로만 약속하면 누락 구현을 늦게 발견할 수 있다. ABC는 abstract method를 통해 특정 subclass가 제공해야 할 동작을 instance 생성 시점 가까이에서 검증할 수 있다.
+
+### 2. 한 줄 해석
+
+ABC는 “어떤 이름이 존재해야 한다”는 runtime 계약을 표현하지만 모든 의미적 올바름까지 보장하지는 않는다.
+
+### 3. 직접 실행
+
+실행 전에 결과를 먼저 예상한다. 그 다음 아래 최소 예제를 실행하고, 예상이 틀렸다면 **호출 순서와 상태 변화**를 표시한다.
+
+```python
+from abc import ABC, abstractmethod
+
+class Store(ABC):
+    @abstractmethod
+    def save(self, value): ...
+
+class MemoryStore(Store):
+    def save(self, value):
+        return value
+```
+
+### 4. 수정 실습
+
+1. `save`를 제거한 subclass의 instance 생성을 시도한다.
+2. ABC와 typing.Protocol이 각각 runtime/정적 검증에서 맡는 역할을 비교한다.
+
+수정 후에는 정상 예제만 다시 보지 말고 실패·경계·반복 호출 중 하나를 추가해 계약이 유지되는지 확인한다.
+
+### 5. 확인 문제
+
+abstract method를 구현하면 그 메서드의 의미까지 자동으로 올바르다고 보장될까?
+
+### 6. 정답과 오답 설명
+
+**정답:** 아니다. 존재와 호출 형태 일부는 강제할 수 있지만 도메인 의미와 불변식은 테스트·문서·타입 규칙이 더 필요하다.
+
+**자주 나오는 오답:** ABC를 완전한 formal specification처럼 보는 것이 오답이다.
+
+이 PART를 마칠 때는 해당 문법 이름을 외우는 데서 멈추지 말고 **언제 호출되는가 / 무엇을 읽거나 바꾸는가 / 실패하면 어디로 가는가** 세 문장으로 설명한다.
+
