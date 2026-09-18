@@ -122,6 +122,22 @@ class V5BookAssetRepository(
         }
     }
 
+    /**
+     * Makes the APK-bundled CodingCoding textbook readable immediately.
+     *
+     * This never waits for GitHub/network. Only TRACKs explicitly allowed by the bundled project
+     * lock are seeded. The reader calls this first, renders the local book, then refreshes LIVE in
+     * the background.
+     */
+    suspend fun prepareBundledContent(trackNumber: Int): Boolean =
+        withContext(Dispatchers.IO) {
+            val projectLock = loadBundledProjectLock() ?: return@withContext false
+            if (validateProjectLock(projectLock) != null) return@withContext false
+            if (trackNumber !in projectLock.trackNumbers) return@withContext false
+            if (!seedBundledTrackIfMissing(trackNumber)) return@withContext false
+            runCatching { loadManifest(trackNumber) }.isSuccess
+        }
+
     suspend fun refreshRemoteContent(trackNumber: Int): V5RemoteRefreshResult =
         withContext(Dispatchers.IO) {
             synchronized(REFRESH_LOCK) {
