@@ -1,68 +1,724 @@
 {
-  "trackId":"T01","trackNumber":1,"title":"컴퓨터와 프로그래밍의 언어 — 표현에서 실행까지",
-  "parts":[
-    {"id":"T01-P01","order":1,"title":"표현 계약 — 비트열에서 의미가 생기는 조건","assetPath":"textbook/v5/track_01/part_01_representation.md","sourceMapPath":"textbook/v5/track_01/part_01_sources.json","prerequisiteConceptIds":[]},
-    {"id":"T01-P02","order":2,"title":"실행 경로 — source에서 process state까지","assetPath":"textbook/v5/track_01/part_02_execution.md","sourceMapPath":"textbook/v5/track_01/part_02_sources.json","prerequisiteConceptIds":["T01-P01-S01-bit-pattern","T01-P01-S03-integer-representation","T01-P01-S04-text-representation"]},
-    {"id":"T01-P03","order":3,"title":"메모리 계층과 저장 지속성 — translation, allocation, durability","assetPath":"textbook/v5/track_01/part_03_memory_storage.md","sourceMapPath":"textbook/v5/track_01/part_03_sources.json","prerequisiteConceptIds":["T01-P02-S06-loader-process","T01-P02-S08-cpu-state","T01-P02-S09-syscalls-resources"]},
-    {"id":"T01-P04","order":4,"title":"Process and Concurrency — scheduling, synchronization, races","assetPath":"textbook/v5/track_01/part_04_process_concurrency.md","sourceMapPath":"textbook/v5/track_01/part_04_sources.json","prerequisiteConceptIds":["T01-P02-S10-thread-scheduler","T01-P03-S04-copy-on-write","T01-P03-S08-memory-pressure"]},
-    {"id":"T01-P05","order":5,"title":"CPU Microarchitecture — pipeline, speculation, cache, coherence","assetPath":"textbook/v5/track_01/part_05_cpu_microarchitecture.md","sourceMapPath":"textbook/v5/track_01/part_05_sources.json","prerequisiteConceptIds":["T01-P02-S08-cpu-state","T01-P03-S01-memory-hierarchy","T01-P04-S11-visibility"]},
-    {"id":"T01-P06","order":6,"title":"Device and I/O — interrupt, DMA, driver, queue","assetPath":"textbook/v5/track_01/part_06_devices_io.md","sourceMapPath":"textbook/v5/track_01/part_06_sources.json","prerequisiteConceptIds":["T01-P04-S04-scheduler","T01-P05-S15-interrupt","T01-P03-S10-write-path"]},
-    {"id":"T01-P07","order":7,"title":"Kernel Boundary and Isolation — privilege, policy, ownership","assetPath":"textbook/v5/track_01/part_07_kernel_isolation.md","sourceMapPath":"textbook/v5/track_01/part_07_sources.json","prerequisiteConceptIds":["T01-P02-S09-syscalls-resources","T01-P04-S12-ipc","T01-P06-S16-driver"]},
-    {"id":"T01-P08","order":8,"title":"Android Runtime — APK, ART, Zygote, Binder","assetPath":"textbook/v5/track_01/part_08_android_runtime.md","sourceMapPath":"textbook/v5/track_01/part_08_sources.json","prerequisiteConceptIds":["T01-P02-S03-runtime-strategies","T01-P04-S16-android-main","T01-P07-S14-binder"]},
-    {"id":"T01-P09","order":9,"title":"Evidence-Based Debugging — logs, stacks, profiles, traces","assetPath":"textbook/v5/track_01/part_09_observability_debugging.md","sourceMapPath":"textbook/v5/track_01/part_09_sources.json","prerequisiteConceptIds":["T01-P04-S19-evidence","T01-P05-S17-counters","T01-P08-S26-diagnostics"]},
-    {"id":"T01-P10","order":10,"title":"Performance Mathematics — latency, throughput, queueing, saturation","assetPath":"textbook/v5/track_01/part_10_performance_queueing.md","sourceMapPath":"textbook/v5/track_01/part_10_sources.json","prerequisiteConceptIds":["T01-P05-S17-counters","T01-P09-S10-metrics","T01-P09-S11-percentiles"]},
-    {"id":"T01-P11","order":11,"title":"Boot Chain — reset에서 앱 첫 화면까지","assetPath":"textbook/v5/track_01/part_11_boot_chain.md","sourceMapPath":"textbook/v5/track_01/part_11_sources.json","prerequisiteConceptIds":["T01-P07-S13-android-sandbox","T01-P08-S06-zygote","T01-P09-S29-incident-timeline"]},
-    {"id":"T01-P12","order":12,"title":"Binary Linking and ABI — object, relocation, loader, calling convention","assetPath":"textbook/v5/track_01/part_12_binary_linking_abi.md","sourceMapPath":"textbook/v5/track_01/part_12_sources.json","prerequisiteConceptIds":["T01-P02-S05-object-link","T01-P05-S08-abi","T01-P08-S20-native"]},
-    {"id":"T01-P13","order":13,"title":"Filesystem Internals — namespace, inode, cache, journal, fsync","assetPath":"textbook/v5/track_01/part_13_filesystem_internals.md","sourceMapPath":"textbook/v5/track_01/part_13_sources.json","prerequisiteConceptIds":["T01-P03-S10-write-path","T01-P06-S10-storage","T01-P12-S09-loader"]},
-    {"id":"T01-P14","order":14,"title":"Virtual Memory Advanced — page table, TLB, reclaim, NUMA","assetPath":"textbook/v5/track_01/part_14_virtual_memory_advanced.md","sourceMapPath":"textbook/v5/track_01/part_14_sources.json","prerequisiteConceptIds":["T01-P03-S02-address-translation","T01-P05-S11-coherence","T01-P13-S13-page-cache"]},
-    {"id":"T01-P15","order":15,"title":"Concurrency Advanced — lock-free, reclamation, linearizability","assetPath":"textbook/v5/track_01/part_15_concurrency_advanced.md","sourceMapPath":"textbook/v5/track_01/part_15_sources.json","prerequisiteConceptIds":["T01-P04-S05-atomicity","T01-P05-S13-ordering","T01-P14-S24-tlb-shootdown"]},
-    {"id":"T01-P16","order":16,"title":"Timekeeping — clocksource, timer, deadline, synchronization","assetPath":"textbook/v5/track_01/part_16_timekeeping_timers.md","sourceMapPath":"textbook/v5/track_01/part_16_sources.json","prerequisiteConceptIds":["T01-P05-S15-interrupt","T01-P09-S22-clocks","T01-P10-S08-deadline"]},
-    {"id":"T01-P17","order":17,"title":"Allocator Internals — page allocator, bins, arenas, fragmentation","assetPath":"textbook/v5/track_01/part_17_allocator_internals.md","sourceMapPath":"textbook/v5/track_01/part_17_sources.json","prerequisiteConceptIds":["T01-P03-S06-allocator","T01-P14-S19-fragmentation","T01-P15-S28-false-sharing"]},
-    {"id":"T01-P18","order":18,"title":"Garbage Collection — reachability, barriers, concurrent reclamation","assetPath":"textbook/v5/track_01/part_18_gc_algorithms.md","sourceMapPath":"textbook/v5/track_01/part_18_sources.json","prerequisiteConceptIds":["T01-P03-S07-garbage-collection","T01-P17-S25-fragmentation-metrics","T01-P15-S20-publication"]},
-    {"id":"T01-P19","order":19,"title":"Compiler Optimization — SSA, dataflow, alias, vectorization","assetPath":"textbook/v5/track_01/part_19_compiler_optimization.md","sourceMapPath":"textbook/v5/track_01/part_19_sources.json","prerequisiteConceptIds":["T01-P02-S02-ir-verifier","T01-P05-S03-dependency","T01-P12-S27-lto"]},
-    {"id":"T01-P20","order":20,"title":"Virtualization — KVM, nested translation, virtio, migration","assetPath":"textbook/v5/track_01/part_20_virtualization_kvm.md","sourceMapPath":"textbook/v5/track_01/part_20_sources.json","prerequisiteConceptIds":["T01-P07-S09-namespace","T01-P14-S21-numa","T01-P06-S05-dma"]},
-    {"id":"T01-P21","order":21,"title":"Power and Thermal — DVFS, idle state, throttling, energy","assetPath":"textbook/v5/track_01/part_21_power_thermal_dvfs.md","sourceMapPath":"textbook/v5/track_01/part_21_sources.json","prerequisiteConceptIds":["T01-P05-S20-optimization","T01-P10-S26-steady-state","T01-P16-S28-mobile-timer"]},
-    {"id":"T01-P22","order":22,"title":"Hardware Reliability — ECC, scrubbing, silent corruption, integrity","assetPath":"textbook/v5/track_01/part_22_hardware_reliability_integrity.md","sourceMapPath":"textbook/v5/track_01/part_22_sources.json","prerequisiteConceptIds":["T01-P13-S15-crash-ordering","T01-P17-S22-metadata-corruption","T01-P21-S30-closed-loop"]},
-    {"id":"T01-P23","order":23,"title":"Scheduler Internals — EEVDF, runqueue, RT, deadline","assetPath":"textbook/v5/track_01/part_23_scheduler_internals.md","sourceMapPath":"textbook/v5/track_01/part_23_sources.json","prerequisiteConceptIds":["T01-P04-S04-scheduler","T01-P21-S14-energy-aware-scheduling","T01-P16-S17-dst"]},
-    {"id":"T01-P24","order":24,"title":"Storage Media and NVMe — queue, FTL, persistence","assetPath":"textbook/v5/track_01/part_24_storage_media_nvme.md","sourceMapPath":"textbook/v5/track_01/part_24_sources.json","prerequisiteConceptIds":["T01-P06-S10-storage","T01-P13-S17-fsync","T01-P22-S15-block-integrity-metadata"]},
-    {"id":"T01-P25","order":25,"title":"Async I/O Engines — readiness, completion, io_uring, zero-copy","assetPath":"textbook/v5/track_01/part_25_async_io_event_engines.md","sourceMapPath":"textbook/v5/track_01/part_25_sources.json","prerequisiteConceptIds":["T01-P06-S17-async-io","T01-P16-S17-dst","T01-P24-S05-queue-depth"]},
-    {"id":"T01-P26","order":26,"title":"Tracing Internals — perf, ftrace, probes, eBPF, ring buffers","assetPath":"textbook/v5/track_01/part_26_tracing_instrumentation.md","sourceMapPath":"textbook/v5/track_01/part_26_sources.json","prerequisiteConceptIds":["T01-P09-S14-profilers","T01-P23-S27-scheduler-trace","T01-P16-S13-ntp-offset"]},
-    {"id":"T01-P27","order":27,"title":"Weak Memory Models — happens-before, litmus tests, fences","assetPath":"textbook/v5/track_01/part_27_weak_memory_models.md","sourceMapPath":"textbook/v5/track_01/part_27_sources.json","prerequisiteConceptIds":["T01-P15-S20-publication","T01-P05-S13-ordering","T01-P06-S07-buffer-ownership"]},
-    {"id":"T01-P28","order":28,"title":"Container Internals — namespaces, cgroups, seccomp, OCI lifecycle","assetPath":"textbook/v5/track_01/part_28_container_internals.md","sourceMapPath":"textbook/v5/track_01/part_28_sources.json","prerequisiteConceptIds":["T01-P07-S09-namespace","T01-P23-S21-cgroup-bandwidth","T01-P13-S05-mount"]},
-    {"id":"T01-P29","order":29,"title":"Process and IPC Internals — clone, exec, fd inheritance, futex","assetPath":"textbook/v5/track_01/part_29_process_ipc_internals.md","sourceMapPath":"textbook/v5/track_01/part_29_sources.json","prerequisiteConceptIds":["T01-P02-S06-loader-process","T01-P04-S12-ipc","T01-P28-S04-pid-namespace"]},
-    {"id":"T01-P30","order":30,"title":"Memory Safety and Hardening — canary, CFI, tagging, sanitizers","assetPath":"textbook/v5/track_01/part_30_memory_safety_hardening.md","sourceMapPath":"textbook/v5/track_01/part_30_sources.json","prerequisiteConceptIds":["T01-P17-S22-metadata-corruption","T01-P27-S30-memory-proof","T01-P12-S19-aslr"]},
-    {"id":"T01-P31","order":31,"title":"DRAM Internals — channels, banks, row buffers, refresh, controllers","assetPath":"textbook/v5/track_01/part_31_dram_memory_controller.md","sourceMapPath":"textbook/v5/track_01/part_31_sources.json","prerequisiteConceptIds":["T01-P03-S01-memory-hierarchy","T01-P14-S21-numa","T01-P22-S03-secded"]},
-    {"id":"T01-P32","order":32,"title":"Cache Coherence and Interconnect — ownership, invalidation, topology","assetPath":"textbook/v5/track_01/part_32_cache_coherence_interconnect.md","sourceMapPath":"textbook/v5/track_01/part_32_sources.json","prerequisiteConceptIds":["T01-P05-S11-coherence","T01-P15-S28-false-sharing","T01-P31-S03-channel"]},
-    {"id":"T01-P33","order":33,"title":"PCIe, DMA and IOMMU — BAR, MSI-X, IOVA, PASID, SR-IOV","assetPath":"textbook/v5/track_01/part_33_pcie_dma_iommu.md","sourceMapPath":"textbook/v5/track_01/part_33_sources.json","prerequisiteConceptIds":["T01-P06-S05-dma","T01-P20-S14-block-virtualization","T01-P32-S22-interconnect-saturation"]},
-    {"id":"T01-P34","order":34,"title":"GPU SIMT Execution — workgroups, divergence, occupancy, memory","assetPath":"textbook/v5/track_01/part_34_gpu_simt_execution.md","sourceMapPath":"textbook/v5/track_01/part_34_sources.json","prerequisiteConceptIds":["T01-P06-S14-gpu","T01-P05-S10-simd","T01-P33-S17-vfio"]},
-    {"id":"T01-P35","order":35,"title":"Floating-Point Numerics — IEEE 754, rounding, stability, reproducibility","assetPath":"textbook/v5/track_01/part_35_floating_point_numerics.md","sourceMapPath":"textbook/v5/track_01/part_35_sources.json","prerequisiteConceptIds":["T01-P01-S03-integer-representation","T01-P19-S20-licm","T01-P34-S30-gpu-contract"]},
-    {"id":"T01-P36","order":36,"title":"Exceptions, Interrupts and Signals — fault delivery across privilege boundaries","assetPath":"textbook/v5/track_01/part_36_exceptions_interrupts_signals.md","sourceMapPath":"textbook/v5/track_01/part_36_sources.json","prerequisiteConceptIds":["T01-P05-S15-interrupt","T01-P07-S18-signal","T01-P14-S08-fault-types"]},
-    {"id":"T01-P37","order":37,"title":"Firmware and Hardware Description — ACPI, Device Tree, UEFI handoff","assetPath":"textbook/v5/track_01/part_37_firmware_hardware_description.md","sourceMapPath":"textbook/v5/track_01/part_37_sources.json","prerequisiteConceptIds":["T01-P11-S11-device-tree","T01-P11-S12-driver-probe","T01-P33-S01-pcie-enumeration"]},
-    {"id":"T01-P38","order":38,"title":"CPU Vector/SIMD — lanes, predicates, reductions, vector ABI","assetPath":"textbook/v5/track_01/part_38_cpu_vector_simd.md","sourceMapPath":"textbook/v5/track_01/part_38_sources.json","prerequisiteConceptIds":["T01-P05-S10-simd","T01-P19-S20-licm","T01-P35-S27-cross-platform"]},
-    {"id":"T01-P39","order":39,"title":"Instruction Frontend and Code Layout — fetch, decode, I-cache, BTB","assetPath":"textbook/v5/track_01/part_39_instruction_frontend_code_layout.md","sourceMapPath":"textbook/v5/track_01/part_39_sources.json","prerequisiteConceptIds":["T01-P05-S02-pipeline","T01-P12-S27-lto","T01-P26-S14-hardware-counter"]},
-    {"id":"T01-P40","order":40,"title":"Ownership and Resource Lifetime — RAII, borrowing, refcount, pinning","assetPath":"textbook/v5/track_01/part_40_ownership_resource_lifetime.md","sourceMapPath":"textbook/v5/track_01/part_40_sources.json","prerequisiteConceptIds":["T01-P03-S06-allocator","T01-P15-S20-publication","T01-P17-S22-metadata-corruption"]},
-    {"id":"T01-P41","order":41,"title":"Async Runtime and Coroutines — suspension, executors, wakeups, cancellation","assetPath":"textbook/v5/track_01/part_41_async_runtime_coroutines.md","sourceMapPath":"textbook/v5/track_01/part_41_sources.json","prerequisiteConceptIds":["T01-P25-S01-blocking-async","T01-P40-S24-async-lifetime","T01-P16-S17-dst"]},
-    {"id":"T01-P42","order":42,"title":"Managed Object Layout and Dispatch — headers, fields, vtables, barriers","assetPath":"textbook/v5/track_01/part_42_managed_object_layout_dispatch.md","sourceMapPath":"textbook/v5/track_01/part_42_sources.json","prerequisiteConceptIds":["T01-P18-S01-reachability","T01-P19-S17-ipa","T01-P40-S11-refcount"]},
-    {"id":"T01-P43","order":43,"title":"JIT and Deoptimization Runtime — tiering, profiling, OSR, code cache","assetPath":"textbook/v5/track_01/part_43_jit_deoptimization_runtime.md","sourceMapPath":"textbook/v5/track_01/part_43_sources.json","prerequisiteConceptIds":["T01-P39-S22-jit-icache","T01-P42-S15-inline-cache","T01-P42-S25-gc-barrier"]},
-    {"id":"T01-P44","order":44,"title":"User↔Kernel Transition — syscall entry, context state, vDSO, restart","assetPath":"textbook/v5/track_01/part_44_user_kernel_transition.md","sourceMapPath":"textbook/v5/track_01/part_44_sources.json","prerequisiteConceptIds":["T01-P07-S01-syscall-boundary","T01-P25-S01-blocking-async","T01-P16-S13-ntp-offset"]},
-    {"id":"T01-P45","order":45,"title":"Entropy and CSPRNG — noise, seeding, reseeding, fork safety, bias","assetPath":"textbook/v5/track_01/part_45_entropy_randomness_csprng.md","sourceMapPath":"textbook/v5/track_01/part_45_sources.json","prerequisiteConceptIds":["T01-P01-S01-bit-pattern","T01-P11-S01-reset","T01-P20-S19-snapshot-consistency"]},
-    {"id":"T01-P46","order":46,"title":"Compression and Framing — redundancy, dictionary, entropy code, resource bounds","assetPath":"textbook/v5/track_01/part_46_compression_framing_information.md","sourceMapPath":"textbook/v5/track_01/part_46_sources.json","prerequisiteConceptIds":["T01-P01-S06-byte-traces","T01-P10-S19-compression","T01-P22-S14-collision-probability"]},
-    {"id":"T01-P47","order":47,"title":"Thread-Local Storage — TLS models, loader, thread pools, context leakage","assetPath":"textbook/v5/track_01/part_47_thread_local_storage.md","sourceMapPath":"textbook/v5/track_01/part_47_sources.json","prerequisiteConceptIds":["T01-P12-S14-abi","T01-P41-S20-context-propagation","T01-P40-S06-scope-lifetime"]},
-    {"id":"T01-P48","order":48,"title":"CPU Topology and SMT — sockets, cores, siblings, heterogeneous capacity","assetPath":"textbook/v5/track_01/part_48_cpu_topology_smt_heterogeneous.md","sourceMapPath":"textbook/v5/track_01/part_48_sources.json","prerequisiteConceptIds":["T01-P23-S01-runnable-running","T01-P31-S03-channel","T01-P21-S14-energy-aware-scheduling"]},
-    {"id":"T01-P49","order":49,"title":"Fault Injection and Failure Testing — errors, crashes, resource exhaustion, invariants","assetPath":"textbook/v5/track_01/part_49_fault_injection_failure_testing.md","sourceMapPath":"textbook/v5/track_01/part_49_sources.json","prerequisiteConceptIds":["T01-P13-S17-fsync","T01-P44-S21-syscall-restart","T01-P40-S25-cancellation-cleanup"]},
-    {"id":"T01-P50","order":50,"title":"Benchmark and Measurement Science — clocks, warmup, distributions, counter bias","assetPath":"textbook/v5/track_01/part_50_benchmark_measurement_science.md","sourceMapPath":"textbook/v5/track_01/part_50_sources.json","prerequisiteConceptIds":["T01-P43-S25-warmup","T01-P48-S28-benchmark-pinning","T01-P10-S24-coordinated-omission"]},
-    {"id":"T01-P51","order":51,"title":"Resource Limits and Accounting — rlimit, cgroups, quotas, pressure, admission","assetPath":"textbook/v5/track_01/part_51_resource_limits_accounting.md","sourceMapPath":"textbook/v5/track_01/part_51_sources.json","prerequisiteConceptIds":["T01-P07-S06-fd-limit","T01-P48-S22-cpuset-quota","T01-P49-S17-oom-kill"]},
-    {"id":"T01-P52","order":52,"title":"Compatibility and Versioning — ABI, API, schema, rolling upgrades","assetPath":"textbook/v5/track_01/part_52_compatibility_versioning.md","sourceMapPath":"textbook/v5/track_01/part_52_sources.json","prerequisiteConceptIds":["T01-P12-S22-library-compat","T01-P01-S06-byte-traces","T01-P49-S24-upgrade-crash"]},
-    {"id":"T01-P53","order":53,"title":"Buffered, Direct and Memory-Mapped I/O — page cache, alignment, coherence","assetPath":"textbook/v5/track_01/part_53_buffered_direct_io_coherence.md","sourceMapPath":"textbook/v5/track_01/part_53_sources.json","prerequisiteConceptIds":["T01-P13-S13-page-cache","T01-P25-S01-blocking-async","T01-P24-S05-queue-depth"]},
-    {"id":"T01-P54","order":54,"title":"Crash Atomicity and Recovery — WAL, shadow state, commit records, replay","assetPath":"textbook/v5/track_01/part_54_crash_atomicity_recovery.md","sourceMapPath":"textbook/v5/track_01/part_54_sources.json","prerequisiteConceptIds":["T01-P13-S15-crash-ordering","T01-P49-S12-crash-matrix","T01-P53-S06-fsync"]},
-    {"id":"T01-P55","order":55,"title":"Lock Implementation Internals — spin, park, futex, handoff, priority","assetPath":"textbook/v5/track_01/part_55_lock_implementation_internals.md","sourceMapPath":"textbook/v5/track_01/part_55_sources.json","prerequisiteConceptIds":["T01-P15-S01-rmw","T01-P23-S11-schedutil","T01-P29-S15-memfd"]},
-    {"id":"T01-P56","order":56,"title":"Stack Unwinding and Exception Metadata — frames, CFI, signals, optimized code","assetPath":"textbook/v5/track_01/part_56_stack_unwinding_exception_metadata.md","sourceMapPath":"textbook/v5/track_01/part_56_sources.json","prerequisiteConceptIds":["T01-P12-S18-unwind","T01-P36-S13-interrupt-masking","T01-P43-S13-code-cache"]},
-    {"id":"T01-P57","order":57,"title":"Dynamic Linker Runtime Startup — dependencies, symbols, relocations, TLS","assetPath":"textbook/v5/track_01/part_57_dynamic_linker_runtime_startup.md","sourceMapPath":"textbook/v5/track_01/part_57_sources.json","prerequisiteConceptIds":["T01-P12-S09-loader","T01-P47-S02-tls-codegen","T01-P52-S09-default-semantics"]},
-    {"id":"T01-P58","order":58,"title":"Kernel Network Data Path — socket, skb, NAPI, queues, offload, CPU placement","assetPath":"textbook/v5/track_01/part_58_kernel_network_data_path.md","sourceMapPath":"textbook/v5/track_01/part_58_sources.json","prerequisiteConceptIds":["T01-P06-S05-dma","T01-P33-S06-doorbell-publication","T01-P48-S11-heterogeneous"]},
-    {"id":"T01-P59","order":59,"title":"Memory Reclaim Policy — working set, MGLRU, direct reclaim, memcg, PSI","assetPath":"textbook/v5/track_01/part_59_memory_reclaim_policy.md","sourceMapPath":"textbook/v5/track_01/part_59_sources.json","prerequisiteConceptIds":["T01-P14-S13-reclaim","T01-P51-S12-memory-high","T01-P53-S03-page-cache-coherence"]},
-    {"id":"T01-P60","order":60,"title":"Block I/O Internals — bio, blk-mq, merging, scheduling, tags, completion","assetPath":"textbook/v5/track_01/part_60_block_io_scheduler_blkmq.md","sourceMapPath":"textbook/v5/track_01/part_60_sources.json","prerequisiteConceptIds":["T01-P24-S05-queue-depth","T01-P53-S02-buffered-write","T01-P54-S03-write-order"]},
-    {"id":"T01-P61","order":61,"title":"Interrupt and Deferred Work Pipeline — hard IRQ, softirq, threaded IRQ, workqueue","assetPath":"textbook/v5/track_01/part_61_interrupt_deferred_work_pipeline.md","sourceMapPath":"textbook/v5/track_01/part_61_sources.json","prerequisiteConceptIds":["T01-P05-S15-interrupt","T01-P58-S15-napi","T01-P23-S01-runnable-running"]},
-    {"id":"T01-P62","order":62,"title":"Memory Tiering and Heterogeneous Memory — placement, promotion, demotion, CXL-class capacity","assetPath":"textbook/v5/track_01/part_62_memory_tiering_heterogeneous.md","sourceMapPath":"textbook/v5/track_01/part_62_sources.json","prerequisiteConceptIds":["T01-P14-S21-numa","T01-P59-S12-mglru","T01-P51-S12-memory-high"]},
-    {"id":"T01-P63","order":63,"title":"Device Driver Lifecycle — match, probe, dependencies, PM, reset, hot-unplug","assetPath":"textbook/v5/track_01/part_63_device_driver_lifecycle.md","sourceMapPath":"textbook/v5/track_01/part_63_sources.json","prerequisiteConceptIds":["T01-P11-S12-driver-probe","T01-P61-S14-workqueue","T01-P33-S01-pcie-enumeration"]}
+  "trackId": "T01",
+  "trackNumber": 1,
+  "title": "컴퓨터와 프로그래밍의 언어 — 표현에서 실행까지",
+  "parts": [
+    {
+      "id": "T01-P01",
+      "order": 1,
+      "title": "표현 계약 — 비트열에서 의미가 생기는 조건",
+      "assetPath": "textbook/v5/track_01/part_01_representation.md",
+      "sourceMapPath": "textbook/v5/track_01/part_01_sources.json",
+      "prerequisiteConceptIds": []
+    },
+    {
+      "id": "T01-P02",
+      "order": 2,
+      "title": "실행 경로 — source에서 process state까지",
+      "assetPath": "textbook/v5/track_01/part_02_execution.md",
+      "sourceMapPath": "textbook/v5/track_01/part_02_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P01-S01-bit-pattern",
+        "T01-P01-S03-integer-representation",
+        "T01-P01-S04-text-representation"
+      ]
+    },
+    {
+      "id": "T01-P03",
+      "order": 3,
+      "title": "메모리 계층과 저장 지속성 — translation, allocation, durability",
+      "assetPath": "textbook/v5/track_01/part_03_memory_storage.md",
+      "sourceMapPath": "textbook/v5/track_01/part_03_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P02-S06-loader-process",
+        "T01-P02-S08-cpu-state",
+        "T01-P02-S09-syscalls-resources"
+      ]
+    },
+    {
+      "id": "T01-P04",
+      "order": 4,
+      "title": "Process and Concurrency — scheduling, synchronization, races",
+      "assetPath": "textbook/v5/track_01/part_04_process_concurrency.md",
+      "sourceMapPath": "textbook/v5/track_01/part_04_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P02-S10-thread-scheduler",
+        "T01-P03-S04-copy-on-write",
+        "T01-P03-S08-memory-pressure"
+      ]
+    },
+    {
+      "id": "T01-P05",
+      "order": 5,
+      "title": "CPU Microarchitecture — pipeline, speculation, cache, coherence",
+      "assetPath": "textbook/v5/track_01/part_05_cpu_microarchitecture.md",
+      "sourceMapPath": "textbook/v5/track_01/part_05_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P02-S08-cpu-state",
+        "T01-P03-S01-memory-hierarchy",
+        "T01-P04-S11-visibility"
+      ]
+    },
+    {
+      "id": "T01-P06",
+      "order": 6,
+      "title": "Device and I/O — interrupt, DMA, driver, queue",
+      "assetPath": "textbook/v5/track_01/part_06_devices_io.md",
+      "sourceMapPath": "textbook/v5/track_01/part_06_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P04-S04-scheduler",
+        "T01-P05-S15-interrupt",
+        "T01-P03-S10-write-path"
+      ]
+    },
+    {
+      "id": "T01-P07",
+      "order": 7,
+      "title": "Kernel Boundary and Isolation — privilege, policy, ownership",
+      "assetPath": "textbook/v5/track_01/part_07_kernel_isolation.md",
+      "sourceMapPath": "textbook/v5/track_01/part_07_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P02-S09-syscalls-resources",
+        "T01-P04-S12-ipc",
+        "T01-P06-S16-driver"
+      ]
+    },
+    {
+      "id": "T01-P08",
+      "order": 8,
+      "title": "Android Runtime — APK, ART, Zygote, Binder",
+      "assetPath": "textbook/v5/track_01/part_08_android_runtime.md",
+      "sourceMapPath": "textbook/v5/track_01/part_08_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P02-S03-runtime-strategies",
+        "T01-P04-S16-android-main",
+        "T01-P07-S14-binder"
+      ]
+    },
+    {
+      "id": "T01-P09",
+      "order": 9,
+      "title": "Evidence-Based Debugging — logs, stacks, profiles, traces",
+      "assetPath": "textbook/v5/track_01/part_09_observability_debugging.md",
+      "sourceMapPath": "textbook/v5/track_01/part_09_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P04-S19-evidence",
+        "T01-P05-S17-counters",
+        "T01-P08-S26-diagnostics"
+      ]
+    },
+    {
+      "id": "T01-P10",
+      "order": 10,
+      "title": "Performance Mathematics — latency, throughput, queueing, saturation",
+      "assetPath": "textbook/v5/track_01/part_10_performance_queueing.md",
+      "sourceMapPath": "textbook/v5/track_01/part_10_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P05-S17-counters",
+        "T01-P09-S10-metrics",
+        "T01-P09-S11-percentiles"
+      ]
+    },
+    {
+      "id": "T01-P11",
+      "order": 11,
+      "title": "Boot Chain — reset에서 앱 첫 화면까지",
+      "assetPath": "textbook/v5/track_01/part_11_boot_chain.md",
+      "sourceMapPath": "textbook/v5/track_01/part_11_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P07-S13-android-sandbox",
+        "T01-P08-S06-zygote",
+        "T01-P09-S29-incident-timeline"
+      ]
+    },
+    {
+      "id": "T01-P12",
+      "order": 12,
+      "title": "Binary Linking and ABI — object, relocation, loader, calling convention",
+      "assetPath": "textbook/v5/track_01/part_12_binary_linking_abi.md",
+      "sourceMapPath": "textbook/v5/track_01/part_12_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P02-S05-object-link",
+        "T01-P05-S08-abi",
+        "T01-P08-S20-native"
+      ]
+    },
+    {
+      "id": "T01-P13",
+      "order": 13,
+      "title": "Filesystem Internals — namespace, inode, cache, journal, fsync",
+      "assetPath": "textbook/v5/track_01/part_13_filesystem_internals.md",
+      "sourceMapPath": "textbook/v5/track_01/part_13_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P03-S10-write-path",
+        "T01-P06-S10-storage",
+        "T01-P12-S09-loader"
+      ]
+    },
+    {
+      "id": "T01-P14",
+      "order": 14,
+      "title": "Virtual Memory Advanced — page table, TLB, reclaim, NUMA",
+      "assetPath": "textbook/v5/track_01/part_14_virtual_memory_advanced.md",
+      "sourceMapPath": "textbook/v5/track_01/part_14_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P03-S02-address-translation",
+        "T01-P05-S11-coherence",
+        "T01-P13-S13-page-cache"
+      ]
+    },
+    {
+      "id": "T01-P15",
+      "order": 15,
+      "title": "Concurrency Advanced — lock-free, reclamation, linearizability",
+      "assetPath": "textbook/v5/track_01/part_15_concurrency_advanced.md",
+      "sourceMapPath": "textbook/v5/track_01/part_15_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P04-S05-atomicity",
+        "T01-P05-S13-ordering",
+        "T01-P14-S24-tlb-shootdown"
+      ]
+    },
+    {
+      "id": "T01-P16",
+      "order": 16,
+      "title": "Timekeeping — clocksource, timer, deadline, synchronization",
+      "assetPath": "textbook/v5/track_01/part_16_timekeeping_timers.md",
+      "sourceMapPath": "textbook/v5/track_01/part_16_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P05-S15-interrupt",
+        "T01-P09-S22-clocks",
+        "T01-P10-S08-deadline"
+      ]
+    },
+    {
+      "id": "T01-P17",
+      "order": 17,
+      "title": "Allocator Internals — page allocator, bins, arenas, fragmentation",
+      "assetPath": "textbook/v5/track_01/part_17_allocator_internals.md",
+      "sourceMapPath": "textbook/v5/track_01/part_17_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P03-S06-allocator",
+        "T01-P14-S19-fragmentation",
+        "T01-P15-S28-false-sharing"
+      ]
+    },
+    {
+      "id": "T01-P18",
+      "order": 18,
+      "title": "Garbage Collection — reachability, barriers, concurrent reclamation",
+      "assetPath": "textbook/v5/track_01/part_18_gc_algorithms.md",
+      "sourceMapPath": "textbook/v5/track_01/part_18_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P03-S07-garbage-collection",
+        "T01-P17-S25-fragmentation-metrics",
+        "T01-P15-S20-publication"
+      ]
+    },
+    {
+      "id": "T01-P19",
+      "order": 19,
+      "title": "Compiler Optimization — SSA, dataflow, alias, vectorization",
+      "assetPath": "textbook/v5/track_01/part_19_compiler_optimization.md",
+      "sourceMapPath": "textbook/v5/track_01/part_19_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P02-S02-ir-verifier",
+        "T01-P05-S03-dependency",
+        "T01-P12-S27-lto"
+      ]
+    },
+    {
+      "id": "T01-P20",
+      "order": 20,
+      "title": "Virtualization — KVM, nested translation, virtio, migration",
+      "assetPath": "textbook/v5/track_01/part_20_virtualization_kvm.md",
+      "sourceMapPath": "textbook/v5/track_01/part_20_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P07-S09-namespace",
+        "T01-P14-S21-numa",
+        "T01-P06-S05-dma"
+      ]
+    },
+    {
+      "id": "T01-P21",
+      "order": 21,
+      "title": "Power and Thermal — DVFS, idle state, throttling, energy",
+      "assetPath": "textbook/v5/track_01/part_21_power_thermal_dvfs.md",
+      "sourceMapPath": "textbook/v5/track_01/part_21_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P05-S20-optimization",
+        "T01-P10-S26-steady-state",
+        "T01-P16-S28-mobile-timer"
+      ]
+    },
+    {
+      "id": "T01-P22",
+      "order": 22,
+      "title": "Hardware Reliability — ECC, scrubbing, silent corruption, integrity",
+      "assetPath": "textbook/v5/track_01/part_22_hardware_reliability_integrity.md",
+      "sourceMapPath": "textbook/v5/track_01/part_22_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P13-S15-crash-ordering",
+        "T01-P17-S22-metadata-corruption",
+        "T01-P21-S30-closed-loop"
+      ]
+    },
+    {
+      "id": "T01-P23",
+      "order": 23,
+      "title": "Scheduler Internals — EEVDF, runqueue, RT, deadline",
+      "assetPath": "textbook/v5/track_01/part_23_scheduler_internals.md",
+      "sourceMapPath": "textbook/v5/track_01/part_23_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P04-S04-scheduler",
+        "T01-P21-S14-energy-aware-scheduling"
+      ]
+    },
+    {
+      "id": "T01-P24",
+      "order": 24,
+      "title": "Storage Media and NVMe — queue, FTL, persistence",
+      "assetPath": "textbook/v5/track_01/part_24_storage_media_nvme.md",
+      "sourceMapPath": "textbook/v5/track_01/part_24_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P06-S10-storage",
+        "T01-P13-S17-fsync",
+        "T01-P22-S15-block-integrity-metadata"
+      ]
+    },
+    {
+      "id": "T01-P25",
+      "order": 25,
+      "title": "Async I/O Engines — readiness, completion, io_uring, zero-copy",
+      "assetPath": "textbook/v5/track_01/part_25_async_io_event_engines.md",
+      "sourceMapPath": "textbook/v5/track_01/part_25_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P06-S17-async-io",
+        "T01-P24-S05-queue-depth"
+      ]
+    },
+    {
+      "id": "T01-P26",
+      "order": 26,
+      "title": "Tracing Internals — perf, ftrace, probes, eBPF, ring buffers",
+      "assetPath": "textbook/v5/track_01/part_26_tracing_instrumentation.md",
+      "sourceMapPath": "textbook/v5/track_01/part_26_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P09-S14-profilers",
+        "T01-P23-S27-scheduler-trace"
+      ]
+    },
+    {
+      "id": "T01-P27",
+      "order": 27,
+      "title": "Weak Memory Models — happens-before, litmus tests, fences",
+      "assetPath": "textbook/v5/track_01/part_27_weak_memory_models.md",
+      "sourceMapPath": "textbook/v5/track_01/part_27_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P15-S20-publication",
+        "T01-P05-S13-ordering",
+        "T01-P06-S07-buffer-ownership"
+      ]
+    },
+    {
+      "id": "T01-P28",
+      "order": 28,
+      "title": "Container Internals — namespaces, cgroups, seccomp, OCI lifecycle",
+      "assetPath": "textbook/v5/track_01/part_28_container_internals.md",
+      "sourceMapPath": "textbook/v5/track_01/part_28_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P07-S09-namespace",
+        "T01-P23-S21-cgroup-bandwidth",
+        "T01-P13-S05-mount"
+      ]
+    },
+    {
+      "id": "T01-P29",
+      "order": 29,
+      "title": "Process and IPC Internals — clone, exec, fd inheritance, futex",
+      "assetPath": "textbook/v5/track_01/part_29_process_ipc_internals.md",
+      "sourceMapPath": "textbook/v5/track_01/part_29_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P02-S06-loader-process",
+        "T01-P04-S12-ipc",
+        "T01-P28-S04-pid-namespace"
+      ]
+    },
+    {
+      "id": "T01-P30",
+      "order": 30,
+      "title": "Memory Safety and Hardening — canary, CFI, tagging, sanitizers",
+      "assetPath": "textbook/v5/track_01/part_30_memory_safety_hardening.md",
+      "sourceMapPath": "textbook/v5/track_01/part_30_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P17-S22-metadata-corruption",
+        "T01-P27-S30-memory-proof",
+        "T01-P12-S19-aslr"
+      ]
+    },
+    {
+      "id": "T01-P31",
+      "order": 31,
+      "title": "DRAM Internals — channels, banks, row buffers, refresh, controllers",
+      "assetPath": "textbook/v5/track_01/part_31_dram_memory_controller.md",
+      "sourceMapPath": "textbook/v5/track_01/part_31_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P03-S01-memory-hierarchy",
+        "T01-P14-S21-numa",
+        "T01-P22-S03-secded"
+      ]
+    },
+    {
+      "id": "T01-P32",
+      "order": 32,
+      "title": "Cache Coherence and Interconnect — ownership, invalidation, topology",
+      "assetPath": "textbook/v5/track_01/part_32_cache_coherence_interconnect.md",
+      "sourceMapPath": "textbook/v5/track_01/part_32_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P05-S11-coherence",
+        "T01-P15-S28-false-sharing",
+        "T01-P31-S03-channel"
+      ]
+    },
+    {
+      "id": "T01-P33",
+      "order": 33,
+      "title": "PCIe, DMA and IOMMU — BAR, MSI-X, IOVA, PASID, SR-IOV",
+      "assetPath": "textbook/v5/track_01/part_33_pcie_dma_iommu.md",
+      "sourceMapPath": "textbook/v5/track_01/part_33_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P06-S05-dma",
+        "T01-P32-S22-interconnect-saturation"
+      ]
+    },
+    {
+      "id": "T01-P34",
+      "order": 34,
+      "title": "GPU SIMT Execution — workgroups, divergence, occupancy, memory",
+      "assetPath": "textbook/v5/track_01/part_34_gpu_simt_execution.md",
+      "sourceMapPath": "textbook/v5/track_01/part_34_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P06-S14-gpu",
+        "T01-P05-S10-simd"
+      ]
+    },
+    {
+      "id": "T01-P35",
+      "order": 35,
+      "title": "Floating-Point Numerics — IEEE 754, rounding, stability, reproducibility",
+      "assetPath": "textbook/v5/track_01/part_35_floating_point_numerics.md",
+      "sourceMapPath": "textbook/v5/track_01/part_35_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P01-S03-integer-representation",
+        "T01-P34-S30-gpu-contract"
+      ]
+    },
+    {
+      "id": "T01-P36",
+      "order": 36,
+      "title": "Exceptions, Interrupts and Signals — fault delivery across privilege boundaries",
+      "assetPath": "textbook/v5/track_01/part_36_exceptions_interrupts_signals.md",
+      "sourceMapPath": "textbook/v5/track_01/part_36_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P05-S15-interrupt",
+        "T01-P07-S18-signal",
+        "T01-P14-S08-fault-types"
+      ]
+    },
+    {
+      "id": "T01-P37",
+      "order": 37,
+      "title": "Firmware and Hardware Description — ACPI, Device Tree, UEFI handoff",
+      "assetPath": "textbook/v5/track_01/part_37_firmware_hardware_description.md",
+      "sourceMapPath": "textbook/v5/track_01/part_37_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P11-S11-device-tree",
+        "T01-P11-S12-driver-probe"
+      ]
+    },
+    {
+      "id": "T01-P38",
+      "order": 38,
+      "title": "CPU Vector/SIMD — lanes, predicates, reductions, vector ABI",
+      "assetPath": "textbook/v5/track_01/part_38_cpu_vector_simd.md",
+      "sourceMapPath": "textbook/v5/track_01/part_38_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P05-S10-simd"
+      ]
+    },
+    {
+      "id": "T01-P39",
+      "order": 39,
+      "title": "Instruction Frontend and Code Layout — fetch, decode, I-cache, BTB",
+      "assetPath": "textbook/v5/track_01/part_39_instruction_frontend_code_layout.md",
+      "sourceMapPath": "textbook/v5/track_01/part_39_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P05-S02-pipeline",
+        "T01-P12-S27-lto"
+      ]
+    },
+    {
+      "id": "T01-P40",
+      "order": 40,
+      "title": "Ownership and Resource Lifetime — RAII, borrowing, refcount, pinning",
+      "assetPath": "textbook/v5/track_01/part_40_ownership_resource_lifetime.md",
+      "sourceMapPath": "textbook/v5/track_01/part_40_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P03-S06-allocator",
+        "T01-P15-S20-publication",
+        "T01-P17-S22-metadata-corruption"
+      ]
+    },
+    {
+      "id": "T01-P41",
+      "order": 41,
+      "title": "Async Runtime and Coroutines — suspension, executors, wakeups, cancellation",
+      "assetPath": "textbook/v5/track_01/part_41_async_runtime_coroutines.md",
+      "sourceMapPath": "textbook/v5/track_01/part_41_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P40-S24-async-lifetime"
+      ]
+    },
+    {
+      "id": "T01-P42",
+      "order": 42,
+      "title": "Managed Object Layout and Dispatch — headers, fields, vtables, barriers",
+      "assetPath": "textbook/v5/track_01/part_42_managed_object_layout_dispatch.md",
+      "sourceMapPath": "textbook/v5/track_01/part_42_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P40-S11-refcount"
+      ]
+    },
+    {
+      "id": "T01-P43",
+      "order": 43,
+      "title": "JIT and Deoptimization Runtime — tiering, profiling, OSR, code cache",
+      "assetPath": "textbook/v5/track_01/part_43_jit_deoptimization_runtime.md",
+      "sourceMapPath": "textbook/v5/track_01/part_43_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P39-S22-jit-icache",
+        "T01-P42-S15-inline-cache",
+        "T01-P42-S25-gc-barrier"
+      ]
+    },
+    {
+      "id": "T01-P44",
+      "order": 44,
+      "title": "User↔Kernel Transition — syscall entry, context state, vDSO, restart",
+      "assetPath": "textbook/v5/track_01/part_44_user_kernel_transition.md",
+      "sourceMapPath": "textbook/v5/track_01/part_44_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P07-S01-syscall-boundary"
+      ]
+    },
+    {
+      "id": "T01-P45",
+      "order": 45,
+      "title": "Entropy and CSPRNG — noise, seeding, reseeding, fork safety, bias",
+      "assetPath": "textbook/v5/track_01/part_45_entropy_randomness_csprng.md",
+      "sourceMapPath": "textbook/v5/track_01/part_45_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P01-S01-bit-pattern",
+        "T01-P11-S01-reset",
+        "T01-P20-S19-snapshot-consistency"
+      ]
+    },
+    {
+      "id": "T01-P46",
+      "order": 46,
+      "title": "Compression and Framing — redundancy, dictionary, entropy code, resource bounds",
+      "assetPath": "textbook/v5/track_01/part_46_compression_framing_information.md",
+      "sourceMapPath": "textbook/v5/track_01/part_46_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P10-S19-compression"
+      ]
+    },
+    {
+      "id": "T01-P47",
+      "order": 47,
+      "title": "Thread-Local Storage — TLS models, loader, thread pools, context leakage",
+      "assetPath": "textbook/v5/track_01/part_47_thread_local_storage.md",
+      "sourceMapPath": "textbook/v5/track_01/part_47_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P12-S14-abi",
+        "T01-P41-S20-context-propagation",
+        "T01-P40-S06-scope-lifetime"
+      ]
+    },
+    {
+      "id": "T01-P48",
+      "order": 48,
+      "title": "CPU Topology and SMT — sockets, cores, siblings, heterogeneous capacity",
+      "assetPath": "textbook/v5/track_01/part_48_cpu_topology_smt_heterogeneous.md",
+      "sourceMapPath": "textbook/v5/track_01/part_48_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P31-S03-channel",
+        "T01-P21-S14-energy-aware-scheduling"
+      ]
+    },
+    {
+      "id": "T01-P49",
+      "order": 49,
+      "title": "Fault Injection and Failure Testing — errors, crashes, resource exhaustion, invariants",
+      "assetPath": "textbook/v5/track_01/part_49_fault_injection_failure_testing.md",
+      "sourceMapPath": "textbook/v5/track_01/part_49_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P13-S17-fsync",
+        "T01-P44-S21-syscall-restart",
+        "T01-P40-S25-cancellation-cleanup"
+      ]
+    },
+    {
+      "id": "T01-P50",
+      "order": 50,
+      "title": "Benchmark and Measurement Science — clocks, warmup, distributions, counter bias",
+      "assetPath": "textbook/v5/track_01/part_50_benchmark_measurement_science.md",
+      "sourceMapPath": "textbook/v5/track_01/part_50_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P43-S25-warmup",
+        "T01-P48-S28-benchmark-pinning",
+        "T01-P10-S24-coordinated-omission"
+      ]
+    },
+    {
+      "id": "T01-P51",
+      "order": 51,
+      "title": "Resource Limits and Accounting — rlimit, cgroups, quotas, pressure, admission",
+      "assetPath": "textbook/v5/track_01/part_51_resource_limits_accounting.md",
+      "sourceMapPath": "textbook/v5/track_01/part_51_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P07-S06-fd-limit",
+        "T01-P48-S22-cpuset-quota",
+        "T01-P49-S17-oom-kill"
+      ]
+    },
+    {
+      "id": "T01-P52",
+      "order": 52,
+      "title": "Compatibility and Versioning — ABI, API, schema, rolling upgrades",
+      "assetPath": "textbook/v5/track_01/part_52_compatibility_versioning.md",
+      "sourceMapPath": "textbook/v5/track_01/part_52_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P12-S22-library-compat",
+        "T01-P49-S24-upgrade-crash"
+      ]
+    },
+    {
+      "id": "T01-P53",
+      "order": 53,
+      "title": "Buffered, Direct and Memory-Mapped I/O — page cache, alignment, coherence",
+      "assetPath": "textbook/v5/track_01/part_53_buffered_direct_io_coherence.md",
+      "sourceMapPath": "textbook/v5/track_01/part_53_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P13-S13-page-cache",
+        "T01-P24-S05-queue-depth"
+      ]
+    },
+    {
+      "id": "T01-P54",
+      "order": 54,
+      "title": "Crash Atomicity and Recovery — WAL, shadow state, commit records, replay",
+      "assetPath": "textbook/v5/track_01/part_54_crash_atomicity_recovery.md",
+      "sourceMapPath": "textbook/v5/track_01/part_54_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P13-S15-crash-ordering",
+        "T01-P49-S12-crash-matrix",
+        "T01-P53-S06-fsync"
+      ]
+    },
+    {
+      "id": "T01-P55",
+      "order": 55,
+      "title": "Lock Implementation Internals — spin, park, futex, handoff, priority",
+      "assetPath": "textbook/v5/track_01/part_55_lock_implementation_internals.md",
+      "sourceMapPath": "textbook/v5/track_01/part_55_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P15-S01-rmw"
+      ]
+    },
+    {
+      "id": "T01-P56",
+      "order": 56,
+      "title": "Stack Unwinding and Exception Metadata — frames, CFI, signals, optimized code",
+      "assetPath": "textbook/v5/track_01/part_56_stack_unwinding_exception_metadata.md",
+      "sourceMapPath": "textbook/v5/track_01/part_56_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P12-S18-unwind"
+      ]
+    },
+    {
+      "id": "T01-P57",
+      "order": 57,
+      "title": "Dynamic Linker Runtime Startup — dependencies, symbols, relocations, TLS",
+      "assetPath": "textbook/v5/track_01/part_57_dynamic_linker_runtime_startup.md",
+      "sourceMapPath": "textbook/v5/track_01/part_57_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P12-S09-loader"
+      ]
+    },
+    {
+      "id": "T01-P58",
+      "order": 58,
+      "title": "Kernel Network Data Path — socket, skb, NAPI, queues, offload, CPU placement",
+      "assetPath": "textbook/v5/track_01/part_58_kernel_network_data_path.md",
+      "sourceMapPath": "textbook/v5/track_01/part_58_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P06-S05-dma"
+      ]
+    },
+    {
+      "id": "T01-P59",
+      "order": 59,
+      "title": "Memory Reclaim Policy — working set, MGLRU, direct reclaim, memcg, PSI",
+      "assetPath": "textbook/v5/track_01/part_59_memory_reclaim_policy.md",
+      "sourceMapPath": "textbook/v5/track_01/part_59_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P14-S13-reclaim"
+      ]
+    },
+    {
+      "id": "T01-P60",
+      "order": 60,
+      "title": "Block I/O Internals — bio, blk-mq, merging, scheduling, tags, completion",
+      "assetPath": "textbook/v5/track_01/part_60_block_io_scheduler_blkmq.md",
+      "sourceMapPath": "textbook/v5/track_01/part_60_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P24-S05-queue-depth",
+        "T01-P54-S03-write-order"
+      ]
+    },
+    {
+      "id": "T01-P61",
+      "order": 61,
+      "title": "Interrupt and Deferred Work Pipeline — hard IRQ, softirq, threaded IRQ, workqueue",
+      "assetPath": "textbook/v5/track_01/part_61_interrupt_deferred_work_pipeline.md",
+      "sourceMapPath": "textbook/v5/track_01/part_61_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P05-S15-interrupt",
+        "T01-P58-S15-napi"
+      ]
+    },
+    {
+      "id": "T01-P62",
+      "order": 62,
+      "title": "Memory Tiering and Heterogeneous Memory — placement, promotion, demotion, CXL-class capacity",
+      "assetPath": "textbook/v5/track_01/part_62_memory_tiering_heterogeneous.md",
+      "sourceMapPath": "textbook/v5/track_01/part_62_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P14-S21-numa",
+        "T01-P59-S12-mglru"
+      ]
+    },
+    {
+      "id": "T01-P63",
+      "order": 63,
+      "title": "Device Driver Lifecycle — match, probe, dependencies, PM, reset, hot-unplug",
+      "assetPath": "textbook/v5/track_01/part_63_device_driver_lifecycle.md",
+      "sourceMapPath": "textbook/v5/track_01/part_63_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P11-S12-driver-probe",
+        "T01-P61-S14-workqueue"
+      ]
+    }
   ]
 }
