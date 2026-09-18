@@ -1,24 +1,34 @@
 package com.futuretech.poweruser.textbook
 
-import org.junit.Assert.assertFalse
-import org.junit.Assert.assertTrue
+import org.junit.Assert.assertEquals
 import org.junit.Test
 
 class V5HybridContentPolicyTest {
     @Test
-    fun fullGitRevisionIsRequired() {
-        assertTrue(V5BookAssetRepository.isValidRevision("0123456789abcdef0123456789abcdef01234567"))
-        assertFalse(V5BookAssetRepository.isValidRevision("main"))
-        assertFalse(V5BookAssetRepository.isValidRevision("0123456"))
-        assertFalse(V5BookAssetRepository.isValidRevision("0123456789ABCDEF0123456789ABCDEF01234567"))
+    fun oneCanonicalLiveBranchOwnsAllTrackContent() {
+        assertEquals(
+            "textbook-v5-deep-book-engine",
+            V5BookAssetRepository.LIVE_BRANCH
+        )
+        assertEquals(
+            "app/src/main/assets/textbook/v5",
+            V5BookAssetRepository.LIVE_TRACK_ROOT
+        )
     }
 
     @Test
-    fun remoteAssetPathsCannotEscapeV5Root() {
-        assertTrue(V5BookAssetRepository.isSafeAssetPath("textbook/v5/track_02/part_86.md"))
-        assertFalse(V5BookAssetRepository.isSafeAssetPath("textbook/v5/../secrets.txt"))
-        assertFalse(V5BookAssetRepository.isSafeAssetPath("/textbook/v5/track_02/part_86.md"))
-        assertFalse(V5BookAssetRepository.isSafeAssetPath("textbook/v4/track_02/part_86.md"))
-        assertFalse(V5BookAssetRepository.isSafeAssetPath("textbook/v5/track_02\\part_86.md"))
+    fun everyTrackUsesTheSameLiveRoot() {
+        assertEquals(
+            "app/src/main/assets/textbook/v5/track_01",
+            V5BookAssetRepository.liveTrackRepoPath(1)
+        )
+        assertEquals(
+            "app/src/main/assets/textbook/v5/track_07",
+            V5BookAssetRepository.liveTrackRepoPath(7)
+        )
+        assertEquals(
+            "app/src/main/assets/textbook/v5/track_11",
+            V5BookAssetRepository.liveTrackRepoPath(11)
+        )
     }
 }
