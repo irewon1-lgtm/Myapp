@@ -35,6 +35,8 @@ remaining = T - now
 
 ---
 
+**현장 디버깅 점검 — CHAPTER 01 · timeout은 한 operation의 최대 대기이고 deadline은 전체 작업의 종료 시점이다**
+CHAPTER 01 · timeout은 한 operation의 최대 대기이고 deadline은 전체 작업의 종료 시점이다을 운영 환경에서 다룰 때는 정상 경로뿐 아니라 중단·재시도·부분 성공을 함께 검증해야 한다. 먼저 동일한 입력과 초기 상태로 재현 절차를 고정하고 기대 상태를 기록한다. 그다음 지연, 중복 요청, 잘못된 식별자, 만료된 제한시간, 부분 실패 중 한 조건만 주입한다. 로그에는 요청 식별자와 상태 전이, 재시도 횟수, 최종 반환값을 남겨 원인을 추적할 수 있게 한다. 수정 후에는 정상 입력과 실패 입력을 같은 순서로 다시 실행한다. 통과 기준은 결과가 한 번 맞는 것이 아니라 손실·중복·무한 재시도 없이 종료되고, 다시 실행해도 같은 계약을 지키는 것이다.
 ## CHAPTER 02 · elapsed-time 계산에는 wall clock보다 monotonic clock이 적합하다
 
 ### 시작 전 용어집
@@ -67,6 +69,8 @@ elapsed = time.monotonic() - start
 
 ---
 
+**현장 디버깅 점검 — CHAPTER 02 · elapsed-time 계산에는 wall clock보다 monotonic clock이 적합하다**
+CHAPTER 02 · elapsed-time 계산에는 wall clock보다 monotonic clock이 적합하다을 운영 환경에서 다룰 때는 정상 경로뿐 아니라 중단·재시도·부분 성공을 함께 검증해야 한다. 먼저 동일한 입력과 초기 상태로 재현 절차를 고정하고 기대 상태를 기록한다. 그다음 지연, 중복 요청, 잘못된 식별자, 만료된 제한시간, 부분 실패 중 한 조건만 주입한다. 로그에는 요청 식별자와 상태 전이, 재시도 횟수, 최종 반환값을 남겨 원인을 추적할 수 있게 한다. 수정 후에는 정상 입력과 실패 입력을 같은 순서로 다시 실행한다. 통과 기준은 결과가 한 번 맞는 것이 아니라 손실·중복·무한 재시도 없이 종료되고, 다시 실행해도 같은 계약을 지키는 것이다.
 ## CHAPTER 03 · budget propagation은 하위 호출이 상위 SLA를 초과하지 않게 한다
 
 ### 시작 전 용어집
@@ -139,6 +143,8 @@ await db.query(sql, timeout=min(remaining, DB_MAX_TIMEOUT))
 
 ---
 
+**현장 디버깅 점검 — CHAPTER 05 · async timeout은 underlying work의 cancellation semantics와 연결된다**
+CHAPTER 05 · async timeout은 underlying work의 cancellation semantics와 연결된다을 운영 환경에서 다룰 때는 정상 경로뿐 아니라 중단·재시도·부분 성공을 함께 검증해야 한다. 먼저 동일한 입력과 초기 상태로 재현 절차를 고정하고 기대 상태를 기록한다. 그다음 지연, 중복 요청, 잘못된 식별자, 만료된 제한시간, 부분 실패 중 한 조건만 주입한다. 로그에는 요청 식별자와 상태 전이, 재시도 횟수, 최종 반환값을 남겨 원인을 추적할 수 있게 한다. 수정 후에는 정상 입력과 실패 입력을 같은 순서로 다시 실행한다. 통과 기준은 결과가 한 번 맞는 것이 아니라 손실·중복·무한 재시도 없이 종료되고, 다시 실행해도 같은 계약을 지키는 것이다.
 ## CHAPTER 06 · connect·read·write timeout은 서로 다른 failure stage를 의미한다
 
 ### 시작 전 용어집
