@@ -1,0 +1,204 @@
+name: Release live textbook bridge v1.2.20 once
+
+on:
+  push:
+    branches:
+      - fix/recovery-live-content-bridge-20260918
+    paths:
+      - '.release/GO_V1_2_20'
+
+permissions:
+  contents: write
+
+jobs:
+  verify-build-release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      GH_TOKEN: ${{ github.token }}
+
+    steps:
+      - name: Checkout exact source
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Verify UI preserved and live content bridge enabled
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -Fq 'versionCode = 23' app/build.gradle.kts
+          grep -Fq 'versionName = "1.2.20"' app/build.gradle.kts
+          grep -Fq 'if (hasV5Book)' app/src/main/java/com/futuretech/poweruser/ui/AdaptiveTextbookScreen.kt
+          grep -Fq 'V5TrackBookScreen(' app/src/main/java/com/futuretech/poweruser/ui/AdaptiveTextbookScreen.kt
+          grep -Fq 'V4PagedBookScreen(' app/src/main/java/com/futuretech/poweruser/ui/AdaptiveTextbookScreen.kt
+          grep -Fq 'refreshRemoteContent(selectedChapter.number)' app/src/main/java/com/futuretech/poweruser/ui/AdaptiveTextbookScreen.kt
+          grep -Fq 'internal const val LIVE_BRANCH = "textbook-v5-live"' app/src/main/java/com/futuretech/poweruser/textbook/V5BookAssetRepository.kt
+          grep -Fq 'private const val BUNDLED_SEED_ID = "1.2.20"' app/src/main/java/com/futuretech/poweruser/textbook/V5BookAssetRepository.kt
+          test "$(find app/src/main/assets/textbook/v5/track_01 -maxdepth 1 -type f -name 'part_*.md' | wc -l)" -eq 105
+          test "$(find app/src/main/assets/textbook/v5/track_02 -maxdepth 1 -type f -name 'part_*.md' | wc -l)" -eq 105
+          test -f app/src/main/assets/textbook/v5/track_01/manifest.json
+          test -f app/src/main/assets/textbook/v5/track_02/manifest.json
+
+      - name: Verify Track 02 authored chain
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json, re
+          from pathlib import Path
+
+          root = Path("app/src/main/assets/textbook/v5/track_02")
+          manifests = sorted(
+              [p for p in root.glob("manifest*.json")],
+              key=lambda p: (0 if p.name == "manifest.json" else 1, p.name)
+          )
+          parts = []
+          for path in manifests:
+              data = json.loads(path.read_text(encoding="utf-8"))
+              parts.extend(data["parts"])
+          parts.sort(key=lambda x: x["order"])
+          assert [p["order"] for p in parts] == list(range(1, 106))
+
+          sections_by_part = {}
+          for part in parts:
+              sm = Path("app/src/main/assets") / part["sourceMapPath"]
+              source = json.loads(sm.read_text(encoding="utf-8"))
+              sections_by_part[part["id"]] = {s["sectionId"] for s in source["sections"]}
+
+          for part in parts:
+              for prereq in part.get("prerequisiteConceptIds", []):
+                  m = re.match(r"^(T\d{2}-P(\d{2,})-S\d{2,}-.+)$", prereq)
+                  assert m, f"malformed prerequisite: {part['id']} -> {prereq}"
+                  assert int(m.group(2)) < part["order"], f"not earlier: {part['id']} -> {prereq}"
+                  prior = prereq.split("-S", 1)[0]
+                  assert prior in sections_by_part, f"missing part: {part['id']} -> {prereq}"
+                  assert prereq in sections_by_part[prior], f"missing section: {part['id']} -> {prereq}"
+
+          print("Track 02 chain: PASS")
+          PY
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: gradle
+
+      - name: Set up Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Prepare TypeScript runtime assets
+        run: |
+          set -euo pipefail
+          npm install --ignore-scripts --no-audit --no-fund
+          npm run prepare:typescript
+          test -s app/src/main/assets/typescript.js
+          test -s app/src/main/assets/ts_libs.js
+
+      - name: Verify textbook reader and build Android release
+        run: |
+          set -euo pipefail
+          chmod +x ./gradlew
+          ./gradlew \
+            testDebugUnitTest \
+            --tests "com.futuretech.poweruser.textbook.V5EvidenceCoverageAssetTest" \
+            --tests "com.futuretech.poweruser.textbook.V5BookReaderSourceContractTest" \
+            --tests "com.futuretech.poweruser.textbook.TextbookMarkdownParserTest" \
+            --tests "com.futuretech.poweruser.update.AppUpdateManagerTest" \
+            assembleRelease \
+            --stacktrace
+
+      - name: Sign and verify APK
+        shell: bash
+        run: |
+          set -euo pipefail
+          BUILD_TOOLS="$(ls -1 "$ANDROID_HOME/build-tools" | sort -V | tail -n 1)"
+          ZIPALIGN="$ANDROID_HOME/build-tools/$BUILD_TOOLS/zipalign"
+          APKSIGNER="$ANDROID_HOME/build-tools/$BUILD_TOOLS/apksigner"
+          AAPT="$ANDROID_HOME/build-tools/$BUILD_TOOLS/aapt"
+          mkdir -p final-dist
+          "$ZIPALIGN" -p -f 4 \
+            app/build/outputs/apk/release/app-release-unsigned.apk \
+            final-dist/Myapp_AI_Coding_Textbook_aligned.apk
+          "$APKSIGNER" sign \
+            --ks test.keystore \
+            --ks-key-alias testkey \
+            --ks-pass pass:password \
+            --key-pass pass:password \
+            --out final-dist/Myapp_AI_Coding_Textbook_latest.apk \
+            final-dist/Myapp_AI_Coding_Textbook_aligned.apk
+          "$APKSIGNER" verify --verbose --print-certs \
+            final-dist/Myapp_AI_Coding_Textbook_latest.apk \
+            | tee final-dist/apksigner_verify.txt
+          "$AAPT" dump badging final-dist/Myapp_AI_Coding_Textbook_latest.apk \
+            | tee final-dist/aapt_badging.txt
+          grep -Fq "versionCode='23'" final-dist/aapt_badging.txt
+          grep -Fq "versionName='1.2.20'" final-dist/aapt_badging.txt
+          sha256sum final-dist/Myapp_AI_Coding_Textbook_latest.apk \
+            | tee final-dist/Myapp_AI_Coding_Textbook_latest.sha256
+          rm final-dist/Myapp_AI_Coding_Textbook_aligned.apk
+
+      - name: Guard v1.2.20 identity
+        shell: bash
+        run: |
+          set -euo pipefail
+          TAG="v1.2.20"
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            BODY="$(gh release view "$TAG" --json body --jq '.body')"
+            grep -Fq -- "- Source commit: ${GITHUB_SHA}" <<<"$BODY" || {
+              echo "Existing v1.2.20 belongs to a different commit; refusing overwrite." >&2
+              exit 1
+            }
+          fi
+
+      - name: Publish v1.2.20 release
+        shell: bash
+        run: |
+          set -euo pipefail
+          TAG="v1.2.20"
+          APK="final-dist/Myapp_AI_Coding_Textbook_latest.apk"
+          NOTES="final-dist/release_notes.md"
+          cat > "$NOTES" <<EOF
+          ## 코딩 완전과정 v1.2.20
+
+          - Android versionCode: 23
+          - Source commit: ${GITHUB_SHA}
+          - v1.2.19 복구 UI/reader 유지
+          - TRACK 01/02 V5 reader 유지
+          - 미완성 TRACK은 기존 V4PagedBookScreen 유지
+          - 교재 원고는 textbook-v5-live 단일 경로에서 즉시 갱신
+          - TRACK 파일 Git blob SHA가 바뀌면 해당 TRACK cache만 교체
+          - 앱 전체 single-live 강제 전환은 하지 않음
+          - Signed updater asset: Myapp_AI_Coding_Textbook_latest.apk
+          EOF
+
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release upload "$TAG" "$APK" --clobber
+            gh release edit "$TAG" \
+              --target "${GITHUB_SHA}" \
+              --title "코딩 완전과정 v1.2.20 LIVE 원고 연결 복구" \
+              --notes-file "$NOTES" \
+              --latest
+          else
+            gh release create "$TAG" "$APK" \
+              --target "${GITHUB_SHA}" \
+              --title "코딩 완전과정 v1.2.20 LIVE 원고 연결 복구" \
+              --notes-file "$NOTES" \
+              --latest
+          fi
+
+      - name: Upload release evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: live-textbook-bridge-v1.2.20-evidence
+          retention-days: 7
+          if-no-files-found: error
+          path: |
+            final-dist/Myapp_AI_Coding_Textbook_latest.apk
+            final-dist/Myapp_AI_Coding_Textbook_latest.sha256
+            final-dist/apksigner_verify.txt
+            final-dist/aapt_badging.txt
+            final-dist/release_notes.md
