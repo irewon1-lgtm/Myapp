@@ -656,6 +656,17 @@ final class Track1Content {
                                 + "프로그램이 처리한 뒤 밖으로 내보내는 결과입니다. 화면의 글자, 계산 결과, 파일 저장, 서버 응답 등 여러 형태가 output이 될 수 있습니다. 이 트랙에서는 주로 print로 화면에 보이는 결과를 output이라고 부릅니다.\n\n"
                                 + "문자열(string / str)\n"
                                 + "글자들의 묶음을 나타내는 데이터입니다. Python에서는 보통 \"안녕\"처럼 따옴표로 감쌉니다. 숫자처럼 보이는 \"123\"도 따옴표 안에 있으면 문자열입니다. 이름, 주소, 메시지처럼 글자로 다뤄야 하는 정보를 저장할 때 사용합니다."));
+                pages.add(vocab(lesson, lessonTitle, "용어집 4/4 — edit·result·prediction·quote·expression",
+                        "수정(edit)\n"
+                                + "이미 작성한 코드를 바꾸는 작업입니다. 글자 하나, 숫자 하나를 바꾸는 것도 edit입니다. 실제 개발에서는 수정한 뒤 반드시 다시 실행하거나 테스트해 영향이 원하는 대로인지 확인합니다.\n\n"
+                                + "결과(result)\n"
+                                + "어떤 실행이나 계산이 끝난 뒤 얻은 값이나 상태입니다. print로 보이는 출력도 result일 수 있고, 함수가 계산해서 돌려주는 값도 result라고 부를 수 있습니다. ‘expected result’는 미리 예상한 결과라는 뜻입니다.\n\n"
+                                + "예측(prediction)\n"
+                                + "실행하기 전에 어떤 결과가 나올지 미리 생각해 보는 것입니다. 코드를 읽는 실력을 키우려면 prediction을 한 뒤 실제 result와 비교하는 연습이 매우 효과적입니다.\n\n"
+                                + "따옴표(quote)\n"
+                                + "문자열의 시작과 끝을 표시하는 기호입니다. Python에서는 보통 \" \" 또는 ' '를 사용합니다. 따옴표가 있으면 2 + 3도 계산식이 아니라 글자로 취급될 수 있습니다.\n\n"
+                                + "표현식(expression)\n"
+                                + "계산되어 하나의 값이 되는 코드 조각입니다. 2 + 3, age + 1 등이 expression입니다. print 안에 expression을 넣으면 먼저 계산된 결과가 출력됩니다."));
                 break;
             case 2:
                 pages.add(vocab(lesson, lessonTitle, "용어집 1/3 — 실행 순서·흐름·순차 실행",
@@ -681,6 +692,13 @@ final class Track1Content {
                                 + "Python에서 한 줄 주석을 시작할 때 쓰는 기호입니다. # 뒤의 내용은 그 줄에서 실행되지 않습니다. 예: # 가격은 원 단위. 코드를 잠시 실행하지 않게 실험할 때도 사용할 수 있지만, 오래된 코드를 무작정 주석으로 남겨 두는 것은 좋지 않을 수 있습니다.\n\n"
                                 + "줄(line) / 줄 번호(line number)\n"
                                 + "소스 코드에서 한 줄의 위치를 말합니다. 오류 메시지에서 ‘line 5’라고 나오면 다섯 번째 줄 근처를 먼저 확인합니다. 개발 도구에는 보통 줄 번호가 표시되어 있어 오류 위치를 찾는 데 사용됩니다."));
+                pages.add(vocab(lesson, lessonTitle, "용어집 4/4 — control flow·skip·order",
+                        "제어 흐름(control flow)\n"
+                                + "프로그램의 실행 순서를 결정하는 전체 흐름입니다. 지금은 위에서 아래로 순차 실행하지만, 다음 트랙의 if·반복문을 배우면 조건에 따라 다른 길로 가거나 같은 부분을 반복합니다. 인터넷 글에서 control flow를 보면 ‘코드가 어느 길로 실행되는가’라고 생각하면 됩니다.\n\n"
+                                + "건너뛰기(skip)\n"
+                                + "특정 코드가 실행되지 않고 넘어가는 상황을 설명할 때 자주 쓰는 일반 표현입니다. 주석은 항상 실행에서 skip되고, 나중에는 조건이 맞지 않을 때 코드 블록이 skip될 수도 있습니다.\n\n"
+                                + "순서(order)\n"
+                                + "코드나 작업이 배치된 앞뒤 관계입니다. execution order는 실제 실행 순서라는 뜻입니다. 값을 만든 뒤 사용하는 것처럼 코드에서는 order가 결과에 직접 영향을 줍니다."));
                 break;
             case 3:
                 pages.add(vocab(lesson, lessonTitle, "용어집 1/3 — variable·value·assignment",
@@ -706,6 +724,13 @@ final class Track1Content {
                                 + "여러 단어를 소문자와 밑줄로 연결하는 이름 표기법입니다. total_price, user_name처럼 씁니다. Python에서는 변수와 함수 이름에 snake_case를 사용하는 관례가 널리 쓰입니다.\n\n"
                                 + "naming\n"
                                 + "변수나 함수에 이름을 정하는 작업입니다. 좋은 naming은 짧기만 한 이름보다 역할을 정확히 드러냅니다. 예를 들어 a보다 item_count가 실제 프로그램에서는 이해하기 쉽습니다."));
+                pages.add(vocab(lesson, lessonTitle, "용어집 4/4 — state·current value·refactor",
+                        "상태(state)\n"
+                                + "프로그램이 현재 기억하고 있는 값들의 상황을 뜻합니다. score가 10에서 15로 바뀌면 프로그램의 상태도 바뀐 것입니다. 앱의 로그인 여부, 현재 화면, 장바구니 수량도 모두 state의 예가 될 수 있습니다.\n\n"
+                                + "현재 값(current value)\n"
+                                + "변수에 지금 연결되어 있는 최신 값을 뜻합니다. 재대입이 여러 번 있었으면 가장 최근 대입 이후의 값이 current value입니다. 디버깅할 때 print(variable)로 현재 값을 확인하는 경우가 많습니다.\n\n"
+                                + "리팩터링(refactor)\n"
+                                + "동작 결과는 유지하면서 코드 구조나 이름을 더 이해하기 좋게 고치는 작업입니다. city를 home_city로 더 명확하게 바꾸는 것처럼 이름 개선도 작은 refactor로 볼 수 있습니다."));
                 break;
             case 4:
                 pages.add(vocab(lesson, lessonTitle, "용어집 1/3 — data·type·int·float",
@@ -731,6 +756,13 @@ final class Track1Content {
                                 + "서로 맞지 않는 타입을 함께 사용한 상황입니다. 예를 들어 숫자 10과 문자열 \"5\"를 +로 바로 더하려 하면 의도가 분명하지 않아 문제가 됩니다. 외부 입력을 받을 때 자주 만나는 개념입니다.\n\n"
                                 + "TypeError\n"
                                 + "현재 타입으로는 요청한 연산을 할 수 없을 때 흔히 발생하는 오류입니다. print(10 + \"5\")처럼 숫자와 문자열을 바로 더하려 할 때 볼 수 있습니다. 오류가 나오면 각 값의 type()을 확인해 보는 것이 좋은 첫 단계입니다."));
+                pages.add(vocab(lesson, lessonTitle, "용어집 4/4 — literal·concatenation·conversion",
+                        "리터럴(literal)\n"
+                                + "코드에 값을 직접 적어 놓은 표현입니다. 10, 3.14, \"안녕\", True가 각각 정수·실수·문자열·불리언 literal입니다. 변수와 달리 이름을 통해 가져오는 것이 아니라 코드에 값 자체가 적혀 있습니다.\n\n"
+                                + "문자열 연결(concatenation)\n"
+                                + "문자열 두 개를 이어 하나의 문자열로 만드는 작업입니다. \"안녕\" + \"하세요\"는 \"안녕하세요\"가 됩니다. 숫자 덧셈과 같은 + 기호를 쓰지만 타입이 문자열이면 의미가 달라집니다.\n\n"
+                                + "변환(conversion)\n"
+                                + "값을 다른 형태나 타입으로 바꾸는 작업을 넓게 부르는 말입니다. 다음 챕터에서 int(), float(), str()를 이용한 type conversion을 자세히 배웁니다."));
                 break;
             case 5:
                 pages.add(vocab(lesson, lessonTitle, "용어집 1/3 — input·process·output·I/O",
@@ -756,6 +788,13 @@ final class Track1Content {
                                 + "문자열 안에 변수나 계산 결과를 쉽게 넣는 Python 문법입니다. f\"총액은 {total}원\"처럼 사용합니다. 화면 메시지를 만들 때 매우 자주 쓰입니다.\n\n"
                                 + "ValueError\n"
                                 + "타입 자체는 변환 대상이 될 수 있지만 실제 값의 형식이 맞지 않을 때 발생하는 오류입니다. int(\"사과\")가 대표적인 예입니다. 사용자가 잘못된 값을 입력했을 때 자주 만나므로 나중에는 예외 처리로 다루게 됩니다."));
+                pages.add(vocab(lesson, lessonTitle, "용어집 4/4 — prompt·user input·validation",
+                        "프롬프트(prompt)\n"
+                                + "input()에서 사용자에게 무엇을 입력해야 하는지 보여 주는 안내 문구를 뜻하기도 합니다. input(\"나이: \")에서 \"나이: \"가 prompt입니다. AI에서 말하는 prompt와 문맥은 다르지만 ‘사용자에게 입력을 요청하는 문구’라는 공통점이 있습니다.\n\n"
+                                + "사용자 입력(user input)\n"
+                                + "사람이 프로그램에 직접 넣는 데이터입니다. 개발자는 user input이 항상 올바르다고 가정하면 안 됩니다. 숫자 칸에 글자를 넣거나 빈 값을 넣을 수 있기 때문입니다.\n\n"
+                                + "입력 검증(validation)\n"
+                                + "들어온 값이 허용된 형식과 범위인지 확인하는 과정입니다. 아직 본격적인 코드는 다음 단계에서 배우지만, int 변환이 실패하는 상황을 보면서 validation이 왜 필요한지 미리 이해할 수 있습니다."));
                 break;
             case 6:
                 pages.add(vocab(lesson, lessonTitle, "용어집 1/3 — error·exception·debugging",
@@ -778,6 +817,15 @@ final class Track1Content {
                                 + "TypeError\n현재 값의 타입으로는 해당 연산을 할 수 없을 때 발생합니다. type()으로 실제 타입을 확인하는 것이 좋습니다.\n\n"
                                 + "ValueError\n타입 변환 같은 작업에서 값의 형식이 적절하지 않을 때 발생합니다. int(\"천원\")이 예입니다.\n\n"
                                 + "재현(reproduce) / 검증(verify)\n문제를 같은 조건에서 다시 발생시키는 것이 reproduce, 수정 후 실제로 해결됐는지 다시 실행해 확인하는 것이 verify입니다. 디버깅은 이 두 과정을 반복하면서 원인을 좁혀 갑니다."));
+                pages.add(vocab(lesson, lessonTitle, "용어집 4/4 — inspect·fix·debugging loop·hypothesis",
+                        "검사(inspect)\n"
+                                + "문제 원인을 찾기 위해 값, 타입, 실행 위치 등을 자세히 확인하는 작업입니다. print(type(value))처럼 프로그램 내부 상태를 확인하는 것도 inspect의 한 방법입니다.\n\n"
+                                + "수정(fix)\n"
+                                + "찾아낸 원인을 해결하도록 코드를 고치는 작업입니다. fix 뒤에는 반드시 verify가 필요합니다. 수정했다고 생각했지만 실제 문제는 남아 있을 수 있기 때문입니다.\n\n"
+                                + "디버깅 반복(debugging loop)\n"
+                                + "문제를 재현하고, 정보를 확인하고, 원인을 추측하고, 한 부분을 수정하고, 다시 검증하는 반복 과정을 말합니다. 한 번에 끝나지 않아도 정상입니다.\n\n"
+                                + "가설(hypothesis)\n"
+                                + "‘아마 price가 문자열이라 문제가 생겼을 것이다’처럼 원인에 대해 세우는 추측입니다. 좋은 디버깅은 가설을 작은 실험으로 확인하면서 진행합니다."));
                 break;
             case 7:
                 pages.add(vocab(lesson, lessonTitle, "용어집 1/3 — operator·arithmetic operator·expression",
@@ -801,6 +849,17 @@ final class Track1Content {
                                 + "한 번 만든 코드나 계산 규칙을 값만 바꿔 여러 상황에 활용하는 것입니다. 가격과 개수를 input으로 받으면 같은 계산기 코드를 여러 상품에 사용할 수 있습니다. 나중에는 함수를 통해 재사용을 더 체계적으로 만듭니다.\n\n"
                                 + "계산(calculation)\n"
                                 + "값과 연산자를 이용해 새로운 결과를 만드는 작업입니다. 실제 프로그램에서는 계산식이 길어질 수 있으므로 중간 결과를 의미 있는 변수에 저장하면 이해와 디버깅이 쉬워집니다."));
+                pages.add(vocab(lesson, lessonTitle, "용어집 4/4 — //·%·**·rate·shipping",
+                        "// 정수 나눗셈\n"
+                                + "나눗셈 결과에서 소수 부분을 버린 몫을 구할 때 사용하는 연산자입니다. 7 // 2는 3입니다. 페이지 수 묶기나 개수 계산 등에서 사용할 수 있습니다.\n\n"
+                                + "% 나머지 연산자\n"
+                                + "나눗셈의 나머지를 구합니다. 7 % 2는 1입니다. 짝수·홀수 판단이나 주기적인 패턴을 만들 때 자주 사용합니다.\n\n"
+                                + "** 거듭제곱 연산자\n"
+                                + "2 ** 3은 2를 세 번 곱한 8입니다. 제곱 계산이나 수학식에서 사용합니다.\n\n"
+                                + "비율(rate)\n"
+                                + "할인율처럼 전체 중 어느 정도인지를 나타내는 값입니다. 10%는 계산할 때 0.10으로 표현할 수 있습니다. discount_rate 같은 변수 이름으로 자주 사용합니다.\n\n"
+                                + "배송비(shipping)\n"
+                                + "특별한 Python 용어는 아니지만 실제 쇼핑 계산 프로그램에서 자주 등장하는 데이터 이름입니다. shipping_fee처럼 의미가 분명한 변수명을 사용할 수 있습니다."));
                 break;
             case 8:
                 pages.add(vocab(lesson, lessonTitle, "용어집 1/3 — project·requirement·specification",
@@ -826,6 +885,15 @@ final class Track1Content {
                                 + "0, 아주 큰 값, 빈 문자열, 잘못된 형식처럼 보통 상황의 가장자리나 특이한 입력입니다. 정상 입력만 테스트하면 놓칠 수 있는 문제를 찾기 위해 사용합니다.\n\n"
                                 + "검증(verify) / 검산(check)\n"
                                 + "수정한 코드나 계산 결과가 실제로 맞는지 다시 확인하는 과정입니다. 손계산, expected result, 반복 실행 등을 이용할 수 있습니다."));
+                pages.add(vocab(lesson, lessonTitle, "용어집 4/4 — actual result·modify·regression·acceptance",
+                        "실제 결과(actual result)\n"
+                                + "프로그램을 실행했을 때 실제로 나온 값입니다. 테스트에서는 expected result와 actual result를 비교합니다. 둘이 다르면 코드 또는 기대값 중 무엇이 잘못됐는지 조사합니다.\n\n"
+                                + "변형·수정(modify)\n"
+                                + "기존 프로그램의 값이나 기능을 바꾸는 작업입니다. 학습에서는 예제에 snack 항목을 추가하는 것이 modify의 예입니다. 수정 후에는 기존 기능도 계속 정상인지 확인해야 합니다.\n\n"
+                                + "회귀(regression)\n"
+                                + "새로운 수정 때문에 예전에 잘 되던 기능이 다시 망가지는 문제를 뜻합니다. 지금 단계에서는 어려운 용어지만 ‘고친 뒤 다른 기능도 다시 확인하는 이유’와 연결해서 기억하면 됩니다.\n\n"
+                                + "완료 기준(acceptance criteria)\n"
+                                + "어떤 조건을 만족하면 기능이 완성됐다고 판단할지 정한 기준입니다. 예: ‘세 금액을 입력하면 정확한 총액이 나온다’. 요구사항을 테스트 가능한 형태로 바꾼 것이라고 이해하면 됩니다."));
                 break;
             default:
                 break;
