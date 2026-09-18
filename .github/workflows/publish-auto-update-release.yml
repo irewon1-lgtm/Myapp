@@ -91,6 +91,7 @@ jobs:
       - name: Build release APK
         run: |
           chmod +x ./gradlew
+          ./gradlew testDebugUnitTest --tests "com.futuretech.poweruser.textbook.V5BookReaderSourceContractTest" --stacktrace
           ./gradlew assembleRelease --stacktrace
 
       - name: Sign verified updater APK
