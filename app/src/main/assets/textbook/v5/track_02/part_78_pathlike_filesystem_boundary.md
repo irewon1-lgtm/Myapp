@@ -38,6 +38,8 @@ print(os.fspath(AppPath("data/input.txt")))
 
 ---
 
+**직접 확인하기 — CHAPTER 01 · `os.PathLike`는 경로를 문자열 자체가 아니라 filesystem 표현 가능 객체로 만든다**
+CHAPTER 01 · `os.PathLike`는 경로를 문자열 자체가 아니라 filesystem 표현 가능 객체로 만든다은 설명만 읽고 넘기기보다 가장 작은 실행 예제로 규칙을 확인해야 오래 남는다. 먼저 입력이나 객체 하나만 두고 기대 결과를 적은 뒤 실행한다. 다음에는 값 하나, 호출 순서 하나, 경계 조건 하나만 바꿔 실제 결과가 어떻게 달라지는지 비교한다. 한 줄 해석은 “CHAPTER 01 · `os.PathLike`는 경로를 문자열 자체가 아니라 filesystem 표현 가능 객체로 만든다의 규칙이 값의 의미와 프로그램 상태 변화에 어떤 제약을 주는지 확인한다”이다. 예상과 다르면 타입·정체성·호출 순서·예외 경계를 차례로 좁히고, 수정 뒤 원래 예제와 반대 조건 예제를 모두 다시 실행한다. 마지막에는 왜 그런 결과가 나왔는지 자기 문장으로 설명해 본다.
 ## CHAPTER 02 · `os.fspath`는 path-like input을 실제 OS path representation으로 좁히는 경계다
 
 ### 시작 전 용어집
@@ -184,6 +186,8 @@ check path -> filesystem changes -> open path
 
 ---
 
+**직접 확인하기 — CHAPTER 06 · symlink resolution은 time-of-check와 time-of-use 문제를 만들 수 있다**
+CHAPTER 06 · symlink resolution은 time-of-check와 time-of-use 문제를 만들 수 있다은 설명만 읽고 넘기기보다 가장 작은 실행 예제로 규칙을 확인해야 오래 남는다. 먼저 입력이나 객체 하나만 두고 기대 결과를 적은 뒤 실행한다. 다음에는 값 하나, 호출 순서 하나, 경계 조건 하나만 바꿔 실제 결과가 어떻게 달라지는지 비교한다. 한 줄 해석은 “CHAPTER 06 · symlink resolution은 time-of-check와 time-of-use 문제를 만들 수 있다의 규칙이 값의 의미와 프로그램 상태 변화에 어떤 제약을 주는지 확인한다”이다. 예상과 다르면 타입·정체성·호출 순서·예외 경계를 차례로 좁히고, 수정 뒤 원래 예제와 반대 조건 예제를 모두 다시 실행한다. 마지막에는 왜 그런 결과가 나왔는지 자기 문장으로 설명해 본다.
 ## CHAPTER 07 · boundary validation은 path syntax보다 capability를 제한하는 쪽이 강하다
 
 ### 시작 전 용어집
