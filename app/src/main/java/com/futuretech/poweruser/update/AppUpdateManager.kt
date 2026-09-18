@@ -29,6 +29,8 @@ import java.net.URL
  * Android intentionally requires a final user confirmation for APK installation.
  */
 object AppUpdateManager {
+    private const val UPDATE_METADATA_URL =
+        "https://raw.githubusercontent.com/irewon1-lgtm/Myapp/textbook-v5-live/app/src/main/assets/update/latest.json"
     private const val LATEST_RELEASE_API =
         "https://api.github.com/repos/irewon1-lgtm/Myapp/releases/latest"
     private const val PREFERRED_ASSET = "Myapp_AI_Coding_Textbook_latest.apk"
@@ -49,60 +51,70 @@ object AppUpdateManager {
     }
 
     suspend fun checkForUpdate(): CheckResult = withContext(Dispatchers.IO) {
-        var connection: HttpURLConnection? = null
-        try {
-            connection = (URL(LATEST_RELEASE_API).openConnection() as HttpURLConnection).apply {
-                requestMethod = "GET"
-                connectTimeout = 8_000
-                readTimeout = 8_000
-                setRequestProperty("Accept", "application/vnd.github+json")
-                setRequestProperty("User-Agent", USER_AGENT)
-                setRequestProperty("X-GitHub-Api-Version", "2022-11-28")
-            }
+        checkStaticMetadata() ?: checkReleaseApi()
+    }
 
-            val code = connection.responseCode
-            if (code != HttpURLConnection.HTTP_OK) {
-                return@withContext CheckResult.Unavailable("release_http_$code")
-            }
+    private fun checkStaticMetadata(): CheckResult? {
+        val cacheBust = System.currentTimeMillis()
+        val body = fetchText("$UPDATE_METADATA_URL?ts=$cacheBust") ?: return null
+        val info = parseStaticUpdateJson(body) ?: return null
+        return if (isNewerVersion(info.versionName, BuildConfig.VERSION_NAME)) {
+            CheckResult.Available(info)
+        } else {
+            CheckResult.UpToDate
+        }
+    }
 
-            val body = connection.inputStream.bufferedReader().use { it.readText() }
-            val release = parseReleaseJson(body)
-                ?: return@withContext CheckResult.Unavailable("release_json_invalid")
-            val tag = release.tagName
-            val latestVersion = tag.removePrefix("v").trim()
-            if (latestVersion.isBlank()) {
-                return@withContext CheckResult.Unavailable("release_version_missing")
-            }
+    private fun checkReleaseApi(): CheckResult {
+        val body = fetchText(LATEST_RELEASE_API)
+            ?: return CheckResult.Unavailable("release_api_unavailable")
+        val release = parseReleaseJson(body)
+            ?: return CheckResult.Unavailable("release_json_invalid")
+        val latestVersion = release.tagName.removePrefix("v").trim()
+        if (latestVersion.isBlank()) return CheckResult.Unavailable("release_version_missing")
 
-            var fallbackApkUrl: String? = null
-            var preferredApkUrl: String? = null
-            release.assets.forEach { asset ->
-                val name = asset.name
-                val url = asset.browserDownloadUrl
-                if (!url.startsWith("https://", ignoreCase = true)) return@forEach
-                if (name == PREFERRED_ASSET) preferredApkUrl = url
-                if (fallbackApkUrl == null && name.endsWith(".apk", ignoreCase = true)) {
-                    fallbackApkUrl = url
-                }
-            }
+        val preferred = release.assets.firstOrNull {
+            it.name == PREFERRED_ASSET && it.browserDownloadUrl.startsWith("https://", ignoreCase = true)
+        }
+        val fallback = release.assets.firstOrNull {
+            it.name.endsWith(".apk", ignoreCase = true) &&
+                it.browserDownloadUrl.startsWith("https://", ignoreCase = true)
+        }
+        val apkUrl = (preferred ?: fallback)?.browserDownloadUrl
+            ?: return CheckResult.Unavailable("release_apk_missing")
 
-            val apkUrl = preferredApkUrl ?: fallbackApkUrl
-                ?: return@withContext CheckResult.Unavailable("release_apk_missing")
-
-            if (!isNewerVersion(latestVersion, BuildConfig.VERSION_NAME)) {
-                return@withContext CheckResult.UpToDate
-            }
-
+        return if (!isNewerVersion(latestVersion, BuildConfig.VERSION_NAME)) {
+            CheckResult.UpToDate
+        } else {
             CheckResult.Available(
                 UpdateInfo(
                     versionName = latestVersion,
-                    tagName = tag,
+                    tagName = release.tagName,
                     apkUrl = apkUrl,
                     releaseNotes = release.releaseNotes
                 )
             )
-        } catch (t: Throwable) {
-            CheckResult.Unavailable(t.javaClass.simpleName.ifBlank { "update_check_failed" })
+        }
+    }
+
+    private fun fetchText(url: String): String? {
+        var connection: HttpURLConnection? = null
+        return try {
+            connection = (URL(url).openConnection() as HttpURLConnection).apply {
+                requestMethod = "GET"
+                connectTimeout = 8_000
+                readTimeout = 8_000
+                useCaches = false
+                setRequestProperty("Accept", "application/json,application/vnd.github+json")
+                setRequestProperty("User-Agent", USER_AGENT)
+                setRequestProperty("Cache-Control", "no-cache, no-store, max-age=0")
+                setRequestProperty("Pragma", "no-cache")
+                setRequestProperty("X-GitHub-Api-Version", "2022-11-28")
+            }
+            if (connection.responseCode != HttpURLConnection.HTTP_OK) return null
+            connection.inputStream.bufferedReader().use { it.readText() }
+        } catch (_: Throwable) {
+            null
         } finally {
             connection?.disconnect()
         }
@@ -184,6 +196,25 @@ object AppUpdateManager {
         } catch (_: Throwable) {
             false
         }
+    }
+}
+
+internal fun parseStaticUpdateJson(body: String): AppUpdateManager.UpdateInfo? {
+    if (body.isBlank() || body.length > 64 * 1024) return null
+    return try {
+        val json = JSONObject(body)
+        val versionName = json.optString("versionName").trim()
+        val tagName = json.optString("tagName").trim()
+        val apkUrl = json.optString("apkUrl").trim()
+        if (versionName.isBlank() || tagName.isBlank() || !apkUrl.startsWith("https://")) return null
+        AppUpdateManager.UpdateInfo(
+            versionName = versionName,
+            tagName = tagName,
+            apkUrl = apkUrl,
+            releaseNotes = json.optString("releaseNotes").take(20_000)
+        )
+    } catch (_: Throwable) {
+        null
     }
 }
 

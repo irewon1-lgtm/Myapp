@@ -13,8 +13,8 @@ android {
         applicationId = "com.futuretech.poweruser"
         minSdk = 26
         targetSdk = 34
-        versionCode = 20
-        versionName = "1.2.17"
+        versionCode = 21
+        versionName = "1.2.18"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables { useSupportLibrary = true }

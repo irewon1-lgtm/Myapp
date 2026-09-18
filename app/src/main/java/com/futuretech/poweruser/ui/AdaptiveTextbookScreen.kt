@@ -69,7 +69,9 @@ fun AdaptiveTextbookScreen(
         ?: V1TextbookCatalog.chapters.first()
 
     LaunchedEffect(v5Repository, selectedChapter.number) {
-        liveReady = false
+        liveReady = runCatching {
+            v5Repository.loadManifest(selectedChapter.number)
+        }.isSuccess
         liveError = null
 
         while (true) {
@@ -101,8 +103,11 @@ fun AdaptiveTextbookScreen(
                 }
 
                 is V5RemoteRefreshResult.Skipped -> {
-                    liveReady = false
-                    liveError = result.reason
+                    val cachedReady = runCatching {
+                        v5Repository.loadManifest(selectedChapter.number)
+                    }.isSuccess
+                    liveReady = cachedReady
+                    liveError = if (cachedReady) null else result.reason
                 }
             }
 
@@ -245,4 +250,4 @@ private fun LiveTextbookStatus(
     }
 }
 
-private const val LIVE_REFRESH_INTERVAL_MS = 60_000L
+private const val LIVE_REFRESH_INTERVAL_MS = 15 * 60_000L

@@ -70,6 +70,7 @@ class V5BookAssetRepository(
     )
 
     fun loadManifest(trackNumber: Int): V5BookManifest {
+        ensureBundledTrackCached(trackNumber)
         val dir = trackCacheDir(trackNumber)
         val names = dir.list().orEmpty()
             .filter { it == "manifest.json" || it.matches(MANIFEST_SHARD_REGEX) }
@@ -117,6 +118,7 @@ class V5BookAssetRepository(
 
     private fun refreshRemoteContentBlocking(trackNumber: Int): V5RemoteRefreshResult {
         require(trackNumber in 1..11) { "trackNumber out of range: $trackNumber" }
+        ensureBundledTrackCached(trackNumber)
 
         val listing = fetchText(liveDirectoryUrl(trackNumber))
             ?: return V5RemoteRefreshResult.Skipped("live_directory_unavailable")
@@ -132,23 +134,83 @@ class V5BookAssetRepository(
             return V5RemoteRefreshResult.UpToDate
         }
 
-        // Deliberately destructive: the live TRACK is the only version.
-        dir.deleteRecursively()
-        dir.mkdirs()
+        // Download into a sibling staging directory first. A network failure must never destroy
+        // the textbook which is already visible on the device.
+        val staging = File(cacheRoot(), "${liveTrackAssetPath(trackNumber)}.next")
+        staging.deleteRecursively()
+        staging.mkdirs()
 
         var downloaded = 0
         for (remote in remoteFiles) {
             val body = fetchText(rawUrl(remote.path))
-                ?: return V5RemoteRefreshResult.Skipped("live_file_unavailable:${remote.name}")
-            val relative = remote.path.removePrefix(REPO_ASSET_PREFIX)
-            val target = File(cacheRoot(), relative)
-            target.parentFile?.mkdirs()
-            target.writeText(body, Charsets.UTF_8)
+            if (body == null) {
+                staging.deleteRecursively()
+                return V5RemoteRefreshResult.Skipped("live_file_unavailable:${remote.name}")
+            }
+            File(staging, remote.name).writeText(body, Charsets.UTF_8)
             downloaded += 1
+        }
+
+        if (!File(staging, "manifest.json").isFile) {
+            staging.deleteRecursively()
+            return V5RemoteRefreshResult.Skipped("live_manifest_unreadable")
+        }
+
+        dir.deleteRecursively()
+        if (!staging.renameTo(dir)) {
+            dir.mkdirs()
+            staging.copyRecursively(dir, overwrite = true)
+            staging.deleteRecursively()
         }
 
         prefs().edit().putString(signatureKey(trackNumber), signature).apply()
         return V5RemoteRefreshResult.Updated(signature, downloaded)
+    }
+
+    /**
+     * The APK contains the same live textbook snapshot used to build the release. Seed that snapshot
+     * once per app release so a GitHub/API outage can never make a TRACK disappear.
+     */
+    private fun ensureBundledTrackCached(trackNumber: Int) {
+        val dir = trackCacheDir(trackNumber)
+        val seedKey = "bundled_seed_${BUNDLED_SEED_ID}_track_${trackNumber.toString().padStart(2, '0')}"
+        if (prefs().getBoolean(seedKey, false) && File(dir, "manifest.json").isFile) return
+
+        val assetDir = liveTrackAssetPath(trackNumber)
+        val names = runCatching { context.assets.list(assetDir).orEmpty().toList() }
+            .getOrDefault(emptyList())
+            .filter { it.endsWith(".md") || it.endsWith(".json") }
+        if ("manifest.json" !in names) return
+
+        val staging = File(cacheRoot(), "${assetDir}.bundled")
+        staging.deleteRecursively()
+        staging.mkdirs()
+
+        val copied = runCatching {
+            names.forEach { name ->
+                context.assets.open("$assetDir/$name").use { input ->
+                    File(staging, name).outputStream().use { output -> input.copyTo(output) }
+                }
+            }
+            true
+        }.getOrDefault(false)
+
+        if (!copied || !File(staging, "manifest.json").isFile) {
+            staging.deleteRecursively()
+            return
+        }
+
+        dir.deleteRecursively()
+        if (!staging.renameTo(dir)) {
+            dir.mkdirs()
+            staging.copyRecursively(dir, overwrite = true)
+            staging.deleteRecursively()
+        }
+
+        prefs().edit()
+            .putBoolean(seedKey, true)
+            .remove(signatureKey(trackNumber))
+            .apply()
     }
 
     private fun parseDirectoryListing(body: String, trackNumber: Int): List<RemoteFile> {
@@ -210,6 +272,14 @@ class V5BookAssetRepository(
     private fun liveFile(assetPath: String): File {
         require(assetPath.startsWith("textbook/v5/track_")) { "Not a live TRACK path: $assetPath" }
         val file = File(cacheRoot(), assetPath)
+        if (!file.isFile) {
+            runCatching {
+                file.parentFile?.mkdirs()
+                context.assets.open(assetPath).use { input ->
+                    file.outputStream().use { output -> input.copyTo(output) }
+                }
+            }
+        }
         require(file.isFile) { "Live textbook file is not cached: $assetPath" }
         return file
     }
@@ -237,6 +307,7 @@ class V5BookAssetRepository(
             "https://api.github.com/repos/irewon1-lgtm/Myapp/contents"
         private const val CACHE_ROOT = "textbook_v5_live"
         private const val PREFS_NAME = "v5_live_content"
+        private const val BUNDLED_SEED_ID = "1.2.18"
         private val REFRESH_LOCK = Any()
         private val MANIFEST_SHARD_REGEX = Regex("manifest_\\d{2}\\.json")
 

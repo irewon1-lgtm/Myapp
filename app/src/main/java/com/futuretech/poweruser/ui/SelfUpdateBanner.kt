@@ -67,7 +67,7 @@ fun SelfUpdateBanner(modifier: Modifier = Modifier) {
                 }
                 is AppUpdateManager.CheckResult.Unavailable -> {
                     detail = result.reason
-                    state = UpdateUiState.HIDDEN
+                    state = UpdateUiState.FAILED
                 }
             }
         }

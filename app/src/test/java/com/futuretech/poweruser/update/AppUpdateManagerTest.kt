@@ -43,6 +43,21 @@ class AppUpdateManagerTest {
         assertFalse(isNewerVersion("v1.2.1", "1.2.1-beta1"))
     }
     @Test
+    fun staticUpdateMetadataParsesDirectApkFallback() {
+        val parsed = parseStaticUpdateJson(
+            """{
+                "versionName":"1.2.18",
+                "tagName":"v1.2.18",
+                "apkUrl":"https://github.com/irewon1-lgtm/Myapp/releases/download/v1.2.18/Myapp_AI_Coding_Textbook_latest.apk",
+                "releaseNotes":"Track 02"
+            }""".trimIndent()
+        )
+        assertEquals("1.2.18", parsed?.versionName)
+        assertEquals("v1.2.18", parsed?.tagName)
+        assertTrue(parsed?.apkUrl?.startsWith("https://") == true)
+    }
+
+    @Test
     fun malformedExternalReleaseJsonIsRejectedWithoutCrash() {
         assertNull(parseReleaseJson("{not-json"))
         assertNull(parseReleaseJson("[]"))

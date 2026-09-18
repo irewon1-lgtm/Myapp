@@ -34,6 +34,15 @@ class V5BookReaderSourceContractTest {
     }
 
     @Test
+    fun V5RepositorySeedsBundledTextbookAndStagesRemoteReplacement() {
+        val repository = source("com/futuretech/poweruser/textbook/V5BookAssetRepository.kt")
+        assertTrue(repository.contains("ensureBundledTrackCached(trackNumber)"))
+        assertTrue(repository.contains("BUNDLED_SEED_ID = \"1.2.18\""))
+        assertTrue(repository.contains("liveTrackAssetPath(trackNumber)}.next"))
+        assertTrue(repository.contains("network failure must never destroy"))
+    }
+
+    @Test
     fun V5ReaderLoadsOnlyCurrentLivePartWithoutEvidenceGate() {
         val reader = source("com/futuretech/poweruser/ui/V5TrackBookScreen.kt")
         assertTrue(reader.contains("val part = manifest.parts[partIndex]"))
