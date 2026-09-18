@@ -1,11 +1,6 @@
 name: Build fresh coding roadmap APK
 
 on:
-  push:
-    branches: ['fresh/track02-parity-v070']
-    paths:
-      - 'fresh-coding-roadmap/**'
-      - '.github/workflows/build-fresh-coding-roadmap.yml'
   pull_request:
     branches: [main]
     paths:
