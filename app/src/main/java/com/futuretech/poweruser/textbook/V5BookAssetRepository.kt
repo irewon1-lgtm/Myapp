@@ -47,7 +47,7 @@ sealed interface V5RemoteRefreshResult {
  * Single-live-path V5 textbook repository.
  *
  * There is exactly one learner-content source:
- *   irewon1-lgtm/Myapp / textbook-v5-deep-book-engine / app/src/main/assets/textbook/v5/
+ *   irewon1-lgtm/Myapp / textbook-v5-live / app/src/main/assets/textbook/v5/
  *
  * No channel revision, compare window, previous snapshot, rollback snapshot, staging promotion,
  * bundled-content fallback, file-count gate, evidence gate, or source-registry gate is involved in
