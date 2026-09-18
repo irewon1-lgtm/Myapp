@@ -58,7 +58,7 @@ sealed interface V5RemoteRefreshResult {
  * CodingCoding single-source textbook repository.
  *
  * Runtime learner content is isolated to:
- *   irewon1-lgtm/Myapp / codingcoding-track12-corrected-ready / app/src/main/assets/textbook/v5/
+ *   irewon1-lgtm/Myapp / codingcoding-project-textbook-live / app/src/main/assets/textbook/v5/
  *
  * A project_lock.json identity check is mandatory before a TRACK is accepted. This prevents
  * another chat, recovery branch, preview branch, experiment, or legacy cache from being displayed.
@@ -358,7 +358,7 @@ class V5BookAssetRepository(
         "track_${trackNumber.toString().padStart(2, '0')}_signature"
 
     companion object {
-        internal const val LIVE_BRANCH = "codingcoding-track12-corrected-ready"
+        internal const val LIVE_BRANCH = "codingcoding-project-textbook-live"
         internal const val LIVE_TRACK_ROOT = "app/src/main/assets/textbook/v5"
         internal const val EXPECTED_PROJECT_ID = "codingcoding"
         internal const val EXPECTED_CONTENT_ID = "codingcoding-textbook-v5"
@@ -372,8 +372,8 @@ class V5BookAssetRepository(
         private const val RAW_BASE = "https://raw.githubusercontent.com/irewon1-lgtm/Myapp"
         private const val CONTENTS_API =
             "https://api.github.com/repos/irewon1-lgtm/Myapp/contents"
-        private const val CACHE_ROOT = "codingcoding_correct_track12_live_v1"
-        private const val PREFS_NAME = "codingcoding_correct_track12_live_content_v1"
+        private const val CACHE_ROOT = "codingcoding_project_textbook_live_v1"
+        private const val PREFS_NAME = "codingcoding_project_textbook_live_content_v1"
         private val REFRESH_LOCK = Any()
         private val MANIFEST_SHARD_REGEX = Regex("manifest_\\d{2}\\.json")
 
