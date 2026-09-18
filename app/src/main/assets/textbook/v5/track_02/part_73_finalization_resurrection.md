@@ -69,8 +69,8 @@ class Temp:
 
 ---
 
-**직접 확인하기 — CHAPTER 02 · `__del__`은 편리해 보여도 필수 resource cleanup의 주 경로가 되면 위험하다**
-CHAPTER 02 · `__del__`은 편리해 보여도 필수 resource cleanup의 주 경로가 되면 위험하다은 설명만 읽고 넘기기보다 가장 작은 실행 예제로 규칙을 확인해야 오래 남는다. 먼저 입력이나 객체 하나만 두고 기대 결과를 적은 뒤 실행한다. 다음에는 값 하나, 호출 순서 하나, 경계 조건 하나만 바꿔 실제 결과가 어떻게 달라지는지 비교한다. 한 줄 해석은 “CHAPTER 02 · `__del__`은 편리해 보여도 필수 resource cleanup의 주 경로가 되면 위험하다의 규칙이 값의 의미와 프로그램 상태 변화에 어떤 제약을 주는지 확인한다”이다. 예상과 다르면 타입·정체성·호출 순서·예외 경계를 차례로 좁히고, 수정 뒤 원래 예제와 반대 조건 예제를 모두 다시 실행한다. 마지막에는 왜 그런 결과가 나왔는지 자기 문장으로 설명해 본다.
+**실행 점검 73-2 — CHAPTER 02 · `__del__`은 편리해 보여도 필수 resource cleanup의 주 경로가 되면 위험하다**
+CHAPTER 02 · `__del__`은 편리해 보여도 필수 resource cleanup의 주 경로가 되면 위험하다을 이해할 때는 관찰할 변수를 두세 개로 줄이고 한 번에 한 조건만 바꾸며 결과 차이를 비교한다. 그다음 값 하나, 호출 순서 하나, 경계 조건 하나만 바꿔 CHAPTER 02 · `__del__`은 편리해 보여도 필수 resource cleanup의 주 경로가 되면 위험하다의 규칙이 실제 상태에 어떤 변화를 만드는지 확인한다. PART 73 CHAPTER 2에서는 결과를 맞히는 것보다 예상과 실제의 차이를 설명하는 과정이 중요하다. 결과만 맞추지 말고 왜 그 결과가 나왔는지 한 문장으로 설명한다. 마지막에는 타입·정체성·수명·예외 경계 중 어느 요소가 결과를 결정했는지 자기 문장으로 정리해, 같은 규칙을 다른 코드에서도 알아볼 수 있는지 확인한다.
 ## CHAPTER 03 · reference cycle은 단순 reference count만으로 회수되지 않는 구조를 만든다
 
 ### 시작 전 용어집
@@ -108,8 +108,8 @@ b.peer = a
 
 ---
 
-**직접 확인하기 — CHAPTER 03 · reference cycle은 단순 reference count만으로 회수되지 않는 구조를 만든다**
-CHAPTER 03 · reference cycle은 단순 reference count만으로 회수되지 않는 구조를 만든다은 설명만 읽고 넘기기보다 가장 작은 실행 예제로 규칙을 확인해야 오래 남는다. 먼저 입력이나 객체 하나만 두고 기대 결과를 적은 뒤 실행한다. 다음에는 값 하나, 호출 순서 하나, 경계 조건 하나만 바꿔 실제 결과가 어떻게 달라지는지 비교한다. 한 줄 해석은 “CHAPTER 03 · reference cycle은 단순 reference count만으로 회수되지 않는 구조를 만든다의 규칙이 값의 의미와 프로그램 상태 변화에 어떤 제약을 주는지 확인한다”이다. 예상과 다르면 타입·정체성·호출 순서·예외 경계를 차례로 좁히고, 수정 뒤 원래 예제와 반대 조건 예제를 모두 다시 실행한다. 마지막에는 왜 그런 결과가 나왔는지 자기 문장으로 설명해 본다.
+**실행 점검 73-3 — CHAPTER 03 · reference cycle은 단순 reference count만으로 회수되지 않는 구조를 만든다**
+CHAPTER 03 · reference cycle은 단순 reference count만으로 회수되지 않는 구조를 만든다을 이해할 때는 호출 순서를 단순화하고 예외가 생긴 지점과 그 직전 상태를 함께 적는다. 그다음 값 하나, 호출 순서 하나, 경계 조건 하나만 바꿔 CHAPTER 03 · reference cycle은 단순 reference count만으로 회수되지 않는 구조를 만든다의 규칙이 실제 상태에 어떤 변화를 만드는지 확인한다. PART 73 CHAPTER 3에서는 결과를 맞히는 것보다 예상과 실제의 차이를 설명하는 과정이 중요하다. 예상이 틀리면 규칙을 다시 읽고 최소 수정으로 재실행한다. 마지막에는 타입·정체성·수명·예외 경계 중 어느 요소가 결과를 결정했는지 자기 문장으로 정리해, 같은 규칙을 다른 코드에서도 알아볼 수 있는지 확인한다.
 ## CHAPTER 04 · resurrection은 finalizer가 object를 다시 reachable하게 만드는 특수한 경로다
 
 ### 시작 전 용어집
@@ -144,8 +144,8 @@ class Strange:
 
 ---
 
-**직접 확인하기 — CHAPTER 04 · resurrection은 finalizer가 object를 다시 reachable하게 만드는 특수한 경로다**
-CHAPTER 04 · resurrection은 finalizer가 object를 다시 reachable하게 만드는 특수한 경로다은 설명만 읽고 넘기기보다 가장 작은 실행 예제로 규칙을 확인해야 오래 남는다. 먼저 입력이나 객체 하나만 두고 기대 결과를 적은 뒤 실행한다. 다음에는 값 하나, 호출 순서 하나, 경계 조건 하나만 바꿔 실제 결과가 어떻게 달라지는지 비교한다. 한 줄 해석은 “CHAPTER 04 · resurrection은 finalizer가 object를 다시 reachable하게 만드는 특수한 경로다의 규칙이 값의 의미와 프로그램 상태 변화에 어떤 제약을 주는지 확인한다”이다. 예상과 다르면 타입·정체성·호출 순서·예외 경계를 차례로 좁히고, 수정 뒤 원래 예제와 반대 조건 예제를 모두 다시 실행한다. 마지막에는 왜 그런 결과가 나왔는지 자기 문장으로 설명해 본다.
+**실행 점검 73-4 — CHAPTER 04 · resurrection은 finalizer가 object를 다시 reachable하게 만드는 특수한 경로다**
+CHAPTER 04 · resurrection은 finalizer가 object를 다시 reachable하게 만드는 특수한 경로다을 이해할 때는 가장 작은 객체를 만들고 성공 경로와 오류 경로의 차이를 줄 단위로 추적한다. 그다음 값 하나, 호출 순서 하나, 경계 조건 하나만 바꿔 CHAPTER 04 · resurrection은 finalizer가 object를 다시 reachable하게 만드는 특수한 경로다의 규칙이 실제 상태에 어떤 변화를 만드는지 확인한다. PART 73 CHAPTER 4에서는 결과를 맞히는 것보다 예상과 실제의 차이를 설명하는 과정이 중요하다. 같은 증상이 다시 나오도록 재현 절차를 남긴 뒤 원인을 수정한다. 마지막에는 타입·정체성·수명·예외 경계 중 어느 요소가 결과를 결정했는지 자기 문장으로 정리해, 같은 규칙을 다른 코드에서도 알아볼 수 있는지 확인한다.
 ## CHAPTER 05 · `weakref.finalize`는 cleanup callback을 object method와 분리할 수 있다
 
 ### 시작 전 용어집
@@ -183,8 +183,8 @@ class Handle:
 
 ---
 
-**직접 확인하기 — CHAPTER 05 · `weakref.finalize`는 cleanup callback을 object method와 분리할 수 있다**
-CHAPTER 05 · `weakref.finalize`는 cleanup callback을 object method와 분리할 수 있다은 설명만 읽고 넘기기보다 가장 작은 실행 예제로 규칙을 확인해야 오래 남는다. 먼저 입력이나 객체 하나만 두고 기대 결과를 적은 뒤 실행한다. 다음에는 값 하나, 호출 순서 하나, 경계 조건 하나만 바꿔 실제 결과가 어떻게 달라지는지 비교한다. 한 줄 해석은 “CHAPTER 05 · `weakref.finalize`는 cleanup callback을 object method와 분리할 수 있다의 규칙이 값의 의미와 프로그램 상태 변화에 어떤 제약을 주는지 확인한다”이다. 예상과 다르면 타입·정체성·호출 순서·예외 경계를 차례로 좁히고, 수정 뒤 원래 예제와 반대 조건 예제를 모두 다시 실행한다. 마지막에는 왜 그런 결과가 나왔는지 자기 문장으로 설명해 본다.
+**실행 점검 73-5 — CHAPTER 05 · `weakref.finalize`는 cleanup callback을 object method와 분리할 수 있다**
+CHAPTER 05 · `weakref.finalize`는 cleanup callback을 object method와 분리할 수 있다을 이해할 때는 기대 결과를 숫자나 상태로 적고 실행 전 예상값과 실행 후 실제값을 나란히 기록한다. 그다음 값 하나, 호출 순서 하나, 경계 조건 하나만 바꿔 CHAPTER 05 · `weakref.finalize`는 cleanup callback을 object method와 분리할 수 있다의 규칙이 실제 상태에 어떤 변화를 만드는지 확인한다. PART 73 CHAPTER 5에서는 결과를 맞히는 것보다 예상과 실제의 차이를 설명하는 과정이 중요하다. 수정 후에는 원래 사례와 실패 사례를 모두 재검증한다. 마지막에는 타입·정체성·수명·예외 경계 중 어느 요소가 결과를 결정했는지 자기 문장으로 정리해, 같은 규칙을 다른 코드에서도 알아볼 수 있는지 확인한다.
 ## CHAPTER 06 · scarce resource는 finalizer가 아니라 명시적 lifetime protocol로 관리한다
 
 ### 시작 전 용어집
