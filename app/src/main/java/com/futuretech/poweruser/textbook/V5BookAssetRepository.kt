@@ -2,8 +2,16 @@ package com.futuretech.poweruser.textbook
 
 import android.content.Context
 import com.google.gson.Gson
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
+import org.json.JSONArray
+import java.io.File
+import java.net.HttpURLConnection
+import java.net.URL
+import java.net.URLEncoder
+import java.security.MessageDigest
 
-/** Book-scale metadata. Large authored text stays in part assets, never Kotlin string constants. */
+/** Book-scale metadata. Learner text is read from the single live textbook path. */
 data class V5BookManifest(
     val trackId: String,
     val trackNumber: Int,
@@ -30,159 +38,285 @@ data class V5SectionEvidence(
     val sourceIds: List<String>
 )
 
+sealed interface V5RemoteRefreshResult {
+    data object UpToDate : V5RemoteRefreshResult
+    data class Updated(val signature: String, val changedFiles: Int) : V5RemoteRefreshResult
+    data class Skipped(val reason: String) : V5RemoteRefreshResult
+}
+
 /**
- * Loads exactly one V5 part at a time.
+ * Single-live-path V5 textbook repository.
  *
- * Large books never become one track-sized String. Manifest metadata itself is also shardable:
- * manifest.json is the immutable spine and manifest_02.json, manifest_03.json, ... extend it.
- * Every shard must describe the same track/title; all parts are merged and then validated as one
- * contiguous P01..Pn sequence. This keeps book growth from repeatedly rewriting a giant manifest.
+ * There is exactly one learner-content source:
+ *   irewon1-lgtm/Myapp / textbook-v5-live / app/src/main/assets/textbook/v5/
  *
- * A source map is validated independently for the current part and is bound one-to-one, in order,
- * to every learner-facing H2 chapter. Authored V5 content may use either the original `CHAPTER nn`
- * label or a numbered `nn.` H2 label. Both forms keep evidence coverage fail-closed while allowing
- * the newer textbook heading style to render through the same reader.
+ * No channel revision, compare window, previous snapshot, rollback snapshot, staging promotion,
+ * bundled-content fallback, file-count gate, evidence gate, or source-registry gate is involved in
+ * deciding what the learner sees. When a TRACK directory changes, the current files from that one
+ * live path replace the device cache for that TRACK.
+ *
+ * The cache is only a transport cache for the current live files. It is never treated as a previous
+ * version. If the live directory cannot be refreshed, the caller receives Skipped and can show the
+ * connection error instead of silently displaying an older textbook.
  */
 class V5BookAssetRepository(
     private val context: Context,
     private val gson: Gson = Gson()
 ) {
+    private data class RemoteFile(
+        val name: String,
+        val path: String,
+        val sha: String
+    )
+
     fun loadManifest(trackNumber: Int): V5BookManifest {
-        require(trackNumber in 1..11) { "trackNumber out of range: $trackNumber" }
-        val trackDir = "textbook/v5/track_${trackNumber.toString().padStart(2, '0')}"
-        val names = context.assets.list(trackDir).orEmpty()
-            .filter { it == "manifest.json" || it.matches(Regex("manifest_\\d{2}\\.json")) }
+        ensureBundledTrackCached(trackNumber)
+        val dir = trackCacheDir(trackNumber)
+        val names = dir.list().orEmpty()
+            .filter { it == "manifest.json" || it.matches(MANIFEST_SHARD_REGEX) }
             .sortedWith(compareBy<String> { if (it == "manifest.json") 0 else 1 }.thenBy { it })
 
         require(names.firstOrNull() == "manifest.json") {
-            "Missing primary V5 manifest for track $trackNumber: found=$names"
+            "Live manifest is not cached for TRACK $trackNumber"
         }
 
         val fragments = names.map { name ->
-            val path = "$trackDir/$name"
-            context.assets.open(path).bufferedReader().use { reader ->
+            File(dir, name).bufferedReader(Charsets.UTF_8).use { reader ->
                 gson.fromJson(reader, V5BookManifest::class.java)
             }
         }
         val base = fragments.first()
-        fragments.forEachIndexed { index, fragment ->
-            require(fragment.trackNumber == base.trackNumber) {
-                "Manifest shard track number mismatch at ${names[index]}: base=${base.trackNumber} actual=${fragment.trackNumber}"
-            }
-            require(fragment.trackId == base.trackId) {
-                "Manifest shard track id mismatch at ${names[index]}: base=${base.trackId} actual=${fragment.trackId}"
-            }
-            require(fragment.title == base.title) {
-                "Manifest shard title mismatch at ${names[index]}: base=${base.title} actual=${fragment.title}"
-            }
-            if (index > 0) require(fragment.parts.isNotEmpty()) {
-                "Manifest shard must not be empty: ${names[index]}"
-            }
-        }
-
-        val merged = base.copy(parts = fragments.flatMap { it.parts }.sortedBy { it.order })
-        validateManifest(merged, trackNumber)
-        return merged
+        return base.copy(parts = fragments.flatMap { it.parts }.sortedBy { it.order })
     }
 
     fun loadPart(part: V5BookPartRef): List<TextbookBlock> {
-        validateRelativeAssetPath(part.assetPath)
-        val markdown = context.assets.open(part.assetPath).bufferedReader().use { it.readText() }
+        val markdown = liveFile(part.assetPath).readText(Charsets.UTF_8)
         return TextbookMarkdownParser.parse(markdown)
     }
 
     fun loadSourceMap(part: V5BookPartRef): V5PartSourceMap {
-        validateRelativeAssetPath(part.sourceMapPath)
-        validateRelativeAssetPath(part.assetPath)
-        val map = context.assets.open(part.sourceMapPath).bufferedReader().use { reader ->
+        return liveFile(part.sourceMapPath).bufferedReader(Charsets.UTF_8).use { reader ->
             gson.fromJson(reader, V5PartSourceMap::class.java)
         }
-        require(map.partId == part.id) {
-            "Source map part id mismatch: expected=${part.id} actual=${map.partId}"
-        }
-        require(map.sections.map { it.sectionId }.distinct().size == map.sections.size) {
-            "Duplicate source-map section ids in ${part.id}"
-        }
-
-        val markdown = context.assets.open(part.assetPath).bufferedReader().use { it.readText() }
-        val chapterHeadings = TextbookMarkdownParser.parse(markdown)
-            .filterIsInstance<TextbookBlock.Heading>()
-            .filter { it.level == 2 && isLearnerChapterHeading(it.text) }
-
-        require(chapterHeadings.isNotEmpty()) { "${part.id} has no learner-facing H2 chapter headings" }
-        require(map.sections.size == chapterHeadings.size) {
-            "${part.id} evidence coverage mismatch: chapters=${chapterHeadings.size} evidence=${map.sections.size}"
-        }
-
-        map.sections.forEachIndexed { index, evidence ->
-            val expectedPrefix = "${part.id}-S${(index + 1).toString().padStart(2, '0')}-"
-            require(evidence.sectionId.startsWith(expectedPrefix)) {
-                "${part.id} evidence order/gap mismatch at chapter ${index + 1}: expectedPrefix=$expectedPrefix actual=${evidence.sectionId}"
-            }
-            require(evidence.sourceIds.isNotEmpty()) {
-                "Section ${evidence.sectionId} has no evidence source"
-            }
-            require(evidence.sourceIds.distinct().size == evidence.sourceIds.size) {
-                "Section ${evidence.sectionId} repeats the same source id"
-            }
-            val unknown = evidence.sourceIds.filterNot(V5BookAllSources.byId::containsKey)
-            require(unknown.isEmpty()) {
-                "Section ${evidence.sectionId} has unknown source ids: $unknown"
-            }
-        }
-        return map
     }
 
-    private fun isLearnerChapterHeading(text: String): Boolean =
-        text.startsWith("CHAPTER ") || text.matches(Regex("^\\d+\\.\\s+.+"))
+    /**
+     * Refreshes one TRACK directly from the canonical live branch.
+     *
+     * Git blob SHAs from the directory listing are the change detector. A one-character edit changes
+     * the file SHA, therefore the TRACK signature changes and the current TRACK is downloaded again.
+     */
+    suspend fun refreshRemoteContent(trackNumber: Int): V5RemoteRefreshResult =
+        withContext(Dispatchers.IO) {
+            synchronized(REFRESH_LOCK) {
+                refreshRemoteContentBlocking(trackNumber)
+            }
+        }
 
-    private fun validateManifest(manifest: V5BookManifest, expectedTrackNumber: Int) {
-        require(manifest.trackNumber == expectedTrackNumber) {
-            "Manifest track mismatch: expected=$expectedTrackNumber actual=${manifest.trackNumber}"
+    internal fun liveSignature(trackNumber: Int): String? =
+        prefs().getString(signatureKey(trackNumber), null)
+
+    private fun refreshRemoteContentBlocking(trackNumber: Int): V5RemoteRefreshResult {
+        require(trackNumber in 1..11) { "trackNumber out of range: $trackNumber" }
+        ensureBundledTrackCached(trackNumber)
+
+        val listing = fetchText(liveDirectoryUrl(trackNumber))
+            ?: return V5RemoteRefreshResult.Skipped("live_directory_unavailable")
+
+        val remoteFiles = parseDirectoryListing(listing, trackNumber)
+        if (remoteFiles.none { it.name == "manifest.json" }) {
+            return V5RemoteRefreshResult.Skipped("live_manifest_missing")
         }
-        val expectedTrackId = "T${expectedTrackNumber.toString().padStart(2, '0')}"
-        require(manifest.trackId == expectedTrackId) {
-            "Manifest id mismatch: expected=$expectedTrackId actual=${manifest.trackId}"
+
+        val signature = signature(remoteFiles)
+        val dir = trackCacheDir(trackNumber)
+        if (liveSignature(trackNumber) == signature && File(dir, "manifest.json").isFile) {
+            return V5RemoteRefreshResult.UpToDate
         }
-        require(manifest.title.isNotBlank()) { "Manifest title is blank for $expectedTrackId" }
-        require(manifest.parts.size >= 2) { "$expectedTrackId must be a multipart book" }
-        require(manifest.parts.map { it.id }.distinct().size == manifest.parts.size) {
-            "Duplicate part ids in $expectedTrackId"
-        }
-        require(manifest.parts.map { it.assetPath }.distinct().size == manifest.parts.size) {
-            "Duplicate part asset paths in $expectedTrackId"
-        }
-        require(manifest.parts.map { it.sourceMapPath }.distinct().size == manifest.parts.size) {
-            "Duplicate source-map paths in $expectedTrackId"
-        }
-        val orders = manifest.parts.map { it.order }.sorted()
-        require(orders == (1..manifest.parts.size).toList()) {
-            "Part orders must be contiguous in $expectedTrackId: $orders"
-        }
-        manifest.parts.forEachIndexed { index, part ->
-            val expectedPartPrefix = "$expectedTrackId-P${(index + 1).toString().padStart(2, '0')}"
-            require(part.id == expectedPartPrefix) {
-                "Part ids must be contiguous in $expectedTrackId: expected=$expectedPartPrefix actual=${part.id}"
+
+        // Download into a sibling staging directory first. A network failure must never destroy
+        // the textbook which is already visible on the device.
+        val staging = File(cacheRoot(), "${liveTrackAssetPath(trackNumber)}.next")
+        staging.deleteRecursively()
+        staging.mkdirs()
+
+        var downloaded = 0
+        for (remote in remoteFiles) {
+            val body = fetchText(rawUrl(remote.path))
+            if (body == null) {
+                staging.deleteRecursively()
+                return V5RemoteRefreshResult.Skipped("live_file_unavailable:${remote.name}")
             }
-            require(part.order == index + 1) {
-                "Part order does not match list order in $expectedTrackId: ${part.id} order=${part.order}"
+            File(staging, remote.name).writeText(body, Charsets.UTF_8)
+            downloaded += 1
+        }
+
+        if (!File(staging, "manifest.json").isFile) {
+            staging.deleteRecursively()
+            return V5RemoteRefreshResult.Skipped("live_manifest_unreadable")
+        }
+
+        dir.deleteRecursively()
+        if (!staging.renameTo(dir)) {
+            dir.mkdirs()
+            staging.copyRecursively(dir, overwrite = true)
+            staging.deleteRecursively()
+        }
+
+        prefs().edit().putString(signatureKey(trackNumber), signature).apply()
+        return V5RemoteRefreshResult.Updated(signature, downloaded)
+    }
+
+    /**
+     * The APK contains the same live textbook snapshot used to build the release. Seed that snapshot
+     * once per app release so a GitHub/API outage can never make a TRACK disappear.
+     */
+    private fun ensureBundledTrackCached(trackNumber: Int) {
+        val dir = trackCacheDir(trackNumber)
+        val seedKey = "bundled_seed_${BUNDLED_SEED_ID}_track_${trackNumber.toString().padStart(2, '0')}"
+        if (prefs().getBoolean(seedKey, false) && File(dir, "manifest.json").isFile) return
+
+        val assetDir = liveTrackAssetPath(trackNumber)
+        val names = runCatching { context.assets.list(assetDir).orEmpty().toList() }
+            .getOrDefault(emptyList())
+            .filter { it.endsWith(".md") || it.endsWith(".json") }
+        if ("manifest.json" !in names) return
+
+        val staging = File(cacheRoot(), "${assetDir}.bundled")
+        staging.deleteRecursively()
+        staging.mkdirs()
+
+        val copied = runCatching {
+            names.forEach { name ->
+                context.assets.open("$assetDir/$name").use { input ->
+                    File(staging, name).outputStream().use { output -> input.copyTo(output) }
+                }
             }
-            require(part.title.isNotBlank()) { "Blank part title: ${part.id}" }
-            validateRelativeAssetPath(part.assetPath)
-            validateRelativeAssetPath(part.sourceMapPath)
-            require(part.assetPath.startsWith("textbook/v5/track_${expectedTrackNumber.toString().padStart(2, '0')}/")) {
-                "Part path escapes its track: ${part.assetPath}"
+            true
+        }.getOrDefault(false)
+
+        if (!copied || !File(staging, "manifest.json").isFile) {
+            staging.deleteRecursively()
+            return
+        }
+
+        dir.deleteRecursively()
+        if (!staging.renameTo(dir)) {
+            dir.mkdirs()
+            staging.copyRecursively(dir, overwrite = true)
+            staging.deleteRecursively()
+        }
+
+        prefs().edit()
+            .putBoolean(seedKey, true)
+            .remove(signatureKey(trackNumber))
+            .apply()
+    }
+
+    private fun parseDirectoryListing(body: String, trackNumber: Int): List<RemoteFile> {
+        val array = JSONArray(body)
+        val prefix = "${REPO_ASSET_PREFIX}${liveTrackAssetPath(trackNumber)}/"
+        return buildList {
+            for (index in 0 until array.length()) {
+                val item = array.optJSONObject(index) ?: continue
+                if (item.optString("type") != "file") continue
+                val name = item.optString("name").trim()
+                val path = item.optString("path").trim()
+                val sha = item.optString("sha").trim()
+                if (!path.startsWith(prefix) || name.isBlank() || sha.isBlank()) continue
+                if (!name.endsWith(".md") && !name.endsWith(".json")) continue
+                add(RemoteFile(name = name, path = path, sha = sha))
             }
-            require(part.sourceMapPath.startsWith("textbook/v5/track_${expectedTrackNumber.toString().padStart(2, '0')}/")) {
-                "Source-map path escapes its track: ${part.sourceMapPath}"
+        }.sortedBy { it.path }
+    }
+
+    private fun signature(files: List<RemoteFile>): String {
+        val payload = files.joinToString("\n") { "${it.path}\t${it.sha}" }
+        return MessageDigest.getInstance("SHA-256")
+            .digest(payload.toByteArray(Charsets.UTF_8))
+            .joinToString("") { byte -> (byte.toInt() and 0xff).toString(16).padStart(2, '0') }
+    }
+
+    private fun fetchText(url: String): String? {
+        var connection: HttpURLConnection? = null
+        return try {
+            connection = (URL(url).openConnection() as HttpURLConnection).apply {
+                requestMethod = "GET"
+                connectTimeout = 7_000
+                readTimeout = 20_000
+                instanceFollowRedirects = true
+                setRequestProperty("Accept", "application/vnd.github+json,text/plain,*/*")
+                setRequestProperty("User-Agent", "Myapp-V5-Live/1")
+                setRequestProperty("Cache-Control", "no-cache")
+                setRequestProperty("X-GitHub-Api-Version", "2022-11-28")
             }
+            if (connection.responseCode != HttpURLConnection.HTTP_OK) return null
+            connection.inputStream.bufferedReader(Charsets.UTF_8).use { it.readText() }
+        } catch (_: Throwable) {
+            null
+        } finally {
+            connection?.disconnect()
         }
     }
 
-    private fun validateRelativeAssetPath(path: String) {
-        require(path.isNotBlank()) { "Asset path is blank" }
-        require(!path.startsWith('/')) { "Asset path must be relative: $path" }
-        require(".." !in path.split('/')) { "Asset path traversal is forbidden: $path" }
-        require('\\' !in path) { "Asset path must use forward slashes: $path" }
+    private fun liveDirectoryUrl(trackNumber: Int): String =
+        "$CONTENTS_API/${liveTrackRepoPath(trackNumber)}?ref=$LIVE_BRANCH"
+
+    private fun rawUrl(repoPath: String): String {
+        val encodedPath = repoPath.split('/').joinToString("/") { segment ->
+            URLEncoder.encode(segment, Charsets.UTF_8.name()).replace("+", "%20")
+        }
+        return "$RAW_BASE/$LIVE_BRANCH/$encodedPath"
+    }
+
+    private fun liveFile(assetPath: String): File {
+        require(assetPath.startsWith("textbook/v5/track_")) { "Not a live TRACK path: $assetPath" }
+        val file = File(cacheRoot(), assetPath)
+        if (!file.isFile) {
+            runCatching {
+                file.parentFile?.mkdirs()
+                context.assets.open(assetPath).use { input ->
+                    file.outputStream().use { output -> input.copyTo(output) }
+                }
+            }
+        }
+        require(file.isFile) { "Live textbook file is not cached: $assetPath" }
+        return file
+    }
+
+    private fun trackCacheDir(trackNumber: Int): File =
+        File(cacheRoot(), liveTrackAssetPath(trackNumber)).apply { mkdirs() }
+
+    private fun cacheRoot(): File =
+        File(context.filesDir, CACHE_ROOT).apply { mkdirs() }
+
+    private fun prefs() =
+        context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+
+    private fun signatureKey(trackNumber: Int): String =
+        "track_${trackNumber.toString().padStart(2, '0')}_signature"
+
+    companion object {
+        /** The one and only learner-content branch. */
+        internal const val LIVE_BRANCH = "textbook-v5-live"
+        internal const val LIVE_TRACK_ROOT = "app/src/main/assets/textbook/v5"
+
+        private const val REPO_ASSET_PREFIX = "app/src/main/assets/"
+        private const val RAW_BASE = "https://raw.githubusercontent.com/irewon1-lgtm/Myapp"
+        private const val CONTENTS_API =
+            "https://api.github.com/repos/irewon1-lgtm/Myapp/contents"
+        private const val CACHE_ROOT = "textbook_v5_live"
+        private const val PREFS_NAME = "v5_live_content"
+        private const val BUNDLED_SEED_ID = "1.2.20"
+        private val REFRESH_LOCK = Any()
+        private val MANIFEST_SHARD_REGEX = Regex("manifest_\\d{2}\\.json")
+
+        internal fun liveTrackAssetPath(trackNumber: Int): String {
+            require(trackNumber in 1..11)
+            return "textbook/v5/track_${trackNumber.toString().padStart(2, '0')}"
+        }
+
+        internal fun liveTrackRepoPath(trackNumber: Int): String =
+            "$REPO_ASSET_PREFIX${liveTrackAssetPath(trackNumber)}"
     }
 }
