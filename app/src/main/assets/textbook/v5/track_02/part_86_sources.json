@@ -1,0 +1,13 @@
+{
+  "partId":"T02-P86",
+  "sections":[
+    {"sectionId":"T02-P86-S01-process-memory","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P86-S02-start-method","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P86-S03-pickle-boundary","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P86-S04-queue-pipe","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P86-S05-shared-memory","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P86-S06-manager-proxy","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P86-S07-process-lifecycle","sourceIds":["SRE","PYTHON-REF"]},
+    {"sectionId":"T02-P86-S08-multiprocessing-contract","sourceIds":["SRE","CSAPP3"]}
+  ]
+}

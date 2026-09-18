@@ -1,0 +1,13 @@
+{
+  "partId":"T02-P104",
+  "sections":[
+    {"sectionId":"T02-P104-S01-progress-model","sourceIds":["DDIA","SRE"]},
+    {"sectionId":"T02-P104-S02-offset-vs-id","sourceIds":["DDIA","SICP"]},
+    {"sectionId":"T02-P104-S03-output-checkpoint-atomicity","sourceIds":["DDIA","SRE"]},
+    {"sectionId":"T02-P104-S04-replay-window","sourceIds":["DDIA","SRE-WORKBOOK"]},
+    {"sectionId":"T02-P104-S05-schema-version","sourceIds":["DDIA","REFACTORING2"]},
+    {"sectionId":"T02-P104-S06-single-owner","sourceIds":["SRE","DDIA"]},
+    {"sectionId":"T02-P104-S07-corrupt-checkpoint","sourceIds":["SRE","NIST-SSDF"]},
+    {"sectionId":"T02-P104-S08-checkpoint-contract","sourceIds":["DDIA","SRE"]}
+  ]
+}

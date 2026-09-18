@@ -1,0 +1,13 @@
+{
+  "partId":"T02-P83",
+  "sections":[
+    {"sectionId":"T02-P83-S01-coroutine-task","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P83-S02-task-scheduling","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P83-S03-task-result-exception","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P83-S04-cancel-request","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P83-S05-cancellederror-cleanup","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P83-S06-shield-timeout","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P83-S07-task-lifetime","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P83-S08-task-contract","sourceIds":["SRE","PYTHON-REF"]}
+  ]
+}

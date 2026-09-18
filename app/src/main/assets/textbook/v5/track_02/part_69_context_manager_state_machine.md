@@ -6,7 +6,24 @@
 
 ## CHAPTER 01 · context protocol은 scope 진입과 종료를 두 개의 명시적 훅으로 분리한다
 
-동기 context manager는 `__enter__`와 `__exit__`를 통해 `with` 문에 참여한다.
+### 시작 전 용어집
+
+#### 1. context protocol
+
+- **뜻:** 동기 context manager는 `__enter__`와 `__exit__`를 통해 `with` 문에 참여한다.
+- **왜 중요한가:** `__enter__`가 반환한 값이 `as` target에 binding되고, body가 정상 종료되거나 exception으로 빠져나갈 때 `__exit__`가 호출된다.
+- **예시:** class Session: / def __enter__(self):
+
+#### 2. scope
+
+- **뜻:** 이 구조는 acquisition과 release를 가까이 배치해 누락 가능성을 줄인다.
+- **왜 중요한가:** Context manager가 무엇을 소유하는지 명확해야 한다.
+- **예시:** class Session: / def __enter__(self):
+
+#### 3. context manager
+
+- **뜻:** 외부에서 전달받은 resource를 빌려 쓰는 것인지, 직접 만들고 닫는 것인지가 cleanup 책임을 결정한다.
+- **예시:** class Session: / def __enter__(self):
 
 ```python
 class Session:
@@ -19,15 +36,35 @@ class Session:
         return False
 ```
 
-`__enter__`가 반환한 값이 `as` target에 binding되고, body가 정상 종료되거나 exception으로 빠져나갈 때 `__exit__`가 호출된다. 이 구조는 acquisition과 release를 가까이 배치해 누락 가능성을 줄인다.
+ 
 
-Context manager가 무엇을 소유하는지 명확해야 한다. 외부에서 전달받은 resource를 빌려 쓰는 것인지, 직접 만들고 닫는 것인지가 cleanup 책임을 결정한다.
+ 
 
 ---
 
+**검증 시나리오 P69-C01 — CHAPTER 01 · context protocol은 scope 진입과 종료를 두 개의 명시적 훅으로 분리한다**
+`CHAPTER 01 · context protocol은 scope 진입과 종료를 두 개의 명시적 훅으로 분리한다` 검증은 성공 사례를 기준선으로 저장하는 데서 시작한다. P69-C1에서는 `CHAPTER 01 · context protocol은 scope 진입과 종료를 두 개의 명시적 훅으로 분리한다` 실행 직전 상태를 먼저 적고, 실행 뒤 얻은 값과 비교해 어떤 규칙이 실제로 적용됐는지 확인한다. 두 번째 단계에서는 `CHAPTER 01 · context protocol은 scope 진입과 종료를 두 개의 명시적 훅으로 분리한다`에 대해 실패 조건은 하나만 주입고, 다른 코드는 그대로 두어 원인 후보를 하나로 제한한다. 이때 `CHAPTER 01 · context protocol은 scope 진입과 종료를 두 개의 명시적 훅으로 분리한다`의 로그 시각과 상태 식별자를 맞춰 본다하여 결과만 맞는 우연한 통과를 배제한다. 예상이 빗나가면 `CHAPTER 01 · context protocol은 scope 진입과 종료를 두 개의 명시적 훅으로 분리한다`의 타입, 값, 호출 순서, 예외 경계 가운데 최초로 달라진 항목부터 확인하고 최소 수정 뒤 다시 실행한다. P69-C1의 마무리는 성공·실패 모두 결정적으로 끝나는지 확인하는 것이다. 통과 기준은 `CHAPTER 01 · context protocol은 scope 진입과 종료를 두 개의 명시적 훅으로 분리한다`의 정상 사례와 변형 사례가 모두 설명 가능한 결과를 내고, 같은 절차를 반복했을 때 동일한 상태 계약을 유지하는 것이다.
 ## CHAPTER 02 · `__enter__`는 resource acquisition 성공 이후에만 사용 가능한 값을 반환해야 한다
 
-`__enter__` 내부에서 여러 resource를 순차적으로 얻다가 중간에 실패하면 아직 context body가 시작되지 않았으므로 `__exit__`가 일반적인 성공 진입 경로처럼 호출된다고 가정하면 안 된다. 이미 획득한 부분 resource는 `__enter__` 자체가 정리하거나 더 작은 context manager를 조합해야 한다.
+### 시작 전 용어집
+
+#### 1. __enter__
+
+- **뜻:** `__enter__` 내부에서 여러 resource를 순차적으로 얻다가 중간에 실패하면 아직 context body가 시작되지 않았으므로 `__exit__`가 일반적인 성공 진입 경로처럼 호출된다고 가정하면 안 된다.
+- **왜 중요한가:** 이미 획득한 부분 resource는 `__enter__` 자체가 정리하거나 더 작은 context manager를 조합해야 한다.
+- **예시:** class LockedFile: / def __enter__(self):
+
+#### 2. resource
+
+- **뜻:** `__enter__`가 `self`를 반환할지 내부 resource를 반환할지도 API 선택이다.
+- **왜 중요한가:** Caller가 어떤 surface를 사용해야 하는지 기준으로 결정한다.
+- **예시:** class LockedFile: / def __enter__(self):
+
+#### 3. 실패
+
+- **뜻:** 진입이 절반만 성공하는 실패 path를 반드시 생각한다.
+- **왜 중요한가:** 복잡한 acquisition chain에서는 `ExitStack` 같은 도구가 rollback registration을 순차적으로 관리하는 데 유용하다.
+- **예시:** class LockedFile: / def __enter__(self):
 
 ```python
 class LockedFile:
@@ -41,15 +78,32 @@ class LockedFile:
         return self.file
 ```
 
-복잡한 acquisition chain에서는 `ExitStack` 같은 도구가 rollback registration을 순차적으로 관리하는 데 유용하다. 진입이 절반만 성공하는 실패 path를 반드시 생각한다.
+ 
 
-`__enter__`가 `self`를 반환할지 내부 resource를 반환할지도 API 선택이다. Caller가 어떤 surface를 사용해야 하는지 기준으로 결정한다.
+ 
 
 ---
 
 ## CHAPTER 03 · `__exit__`는 exception type·instance·traceback을 함께 받는다
 
-Context body에서 exception이 발생하면 `__exit__`는 관련 정보를 받아 cleanup과 정책 판단을 할 수 있다. 정상 종료에서는 이 값들이 exception이 없음을 나타내는 형태로 전달된다.
+### 시작 전 용어집
+
+#### 1. __exit__
+
+- **뜻:** Context body에서 exception이 발생하면 `__exit__`는 관련 정보를 받아 cleanup과 정책 판단을 할 수 있다.
+- **왜 중요한가:** 정상 종료에서는 이 값들이 exception이 없음을 나타내는 형태로 전달된다.
+- **예시:** def __exit__(self, exc_type, exc, tb): / self.release()
+
+#### 2. exception
+
+- **뜻:** Cleanup은 exception 종류와 무관하게 필요한 경우가 많으므로 `release()`를 특정 branch 안에만 넣지 않는다.
+- **왜 중요한가:** Logging이나 metric 기록이 원래 exception을 가리는 두 번째 failure를 만들지 않도록 주의한다.
+- **예시:** def __exit__(self, exc_type, exc, tb): / self.release()
+
+#### 3. instance
+
+- **뜻:** Traceback 정보를 사용해 관찰 가능성을 높일 수 있지만 context manager가 모든 exception을 domain error로 다시 포장하면 원인 추적이 어려워질 수 있다.
+- **예시:** def __exit__(self, exc_type, exc, tb): / self.release()
 
 ```python
 def __exit__(self, exc_type, exc, tb):
@@ -59,15 +113,32 @@ def __exit__(self, exc_type, exc, tb):
     return False
 ```
 
-Cleanup은 exception 종류와 무관하게 필요한 경우가 많으므로 `release()`를 특정 branch 안에만 넣지 않는다. Logging이나 metric 기록이 원래 exception을 가리는 두 번째 failure를 만들지 않도록 주의한다.
+ 
 
-Traceback 정보를 사용해 관찰 가능성을 높일 수 있지만 context manager가 모든 exception을 domain error로 다시 포장하면 원인 추적이 어려워질 수 있다.
 
 ---
 
 ## CHAPTER 04 · `__exit__`의 truthy 반환은 exception suppression이라는 강한 의미를 가진다
 
-`__exit__`가 truthy 값을 반환하면 body의 exception이 suppress될 수 있다. 이는 cleanup 성공 여부를 반환하는 것이 아니다.
+### 시작 전 용어집
+
+#### 1. __exit__
+
+- **뜻:** `__exit__`가 truthy 값을 반환하면 body의 exception이 suppress될 수 있다.
+- **왜 중요한가:** 이는 cleanup 성공 여부를 반환하는 것이 아니다.
+- **예시:** class IgnoreMissing: / def __exit__(self, exc_type, exc, tb):
+
+#### 2. truthy
+
+- **뜻:** 예상한 좁은 exception만 의도적으로 suppress해야 한다.
+- **왜 중요한가:** 무조건 `return True`를 하면 programming error, cancellation, resource corruption까지 조용히 사라질 수 있다.
+- **예시:** class IgnoreMissing: / def __exit__(self, exc_type, exc, tb):
+
+#### 3. exception
+
+- **뜻:** Suppress한 뒤 caller가 정상 완료로 해석해도 되는지 도메인 의미를 확인한다.
+- **왜 중요한가:** “오류를 로그하고 계속”이 필요한 경우에도 어떤 상태가 보장되는지 명확하지 않으면 suppression보다 explicit result가 낫다.
+- **예시:** class IgnoreMissing: / def __exit__(self, exc_type, exc, tb):
 
 ```python
 class IgnoreMissing:
@@ -75,15 +146,32 @@ class IgnoreMissing:
         return exc_type is FileNotFoundError
 ```
 
-예상한 좁은 exception만 의도적으로 suppress해야 한다. 무조건 `return True`를 하면 programming error, cancellation, resource corruption까지 조용히 사라질 수 있다.
+ 
 
-Suppress한 뒤 caller가 정상 완료로 해석해도 되는지 도메인 의미를 확인한다. “오류를 로그하고 계속”이 필요한 경우에도 어떤 상태가 보장되는지 명확하지 않으면 suppression보다 explicit result가 낫다.
+ 
 
 ---
 
 ## CHAPTER 05 · 여러 context manager의 cleanup은 acquisition의 역순으로 생각한다
 
-여러 resource가 중첩되면 나중에 얻은 resource를 먼저 정리하는 LIFO 구조가 일반적이다.
+### 시작 전 용어집
+
+#### 1. context manager
+
+- **뜻:** 동적 개수의 context manager를 다룰 때 수동 `try/finally`를 여러 겹 쌓기보다 `ExitStack`으로 cleanup callback을 등록할 수 있다.
+- **왜 중요한가:** 핵심은 “얻은 순서”와 “되돌리는 순서”를 짝지어 보는 것이다.
+- **예시:** with open_db() as db: / with db.transaction() as …
+
+#### 2. cleanup
+
+- **뜻:** 안쪽 resource가 바깥 resource를 cleanup 중 필요로 한다면 역순 정리가 자연스럽다.
+- **왜 중요한가:** 여러 resource가 중첩되면 나중에 얻은 resource를 먼저 정리하는 LIFO 구조가 일반적이다.
+- **예시:** with open_db() as db: / with db.transaction() as …
+
+#### 3. acquisition
+
+- **뜻:** Body를 빠져나올 때 lock, transaction, database scope 순으로 정리된다.
+- **예시:** with open_db() as db: / with db.transaction() as …
 
 ```python
 with open_db() as db:
@@ -92,15 +180,34 @@ with open_db() as db:
             run(tx)
 ```
 
-Body를 빠져나올 때 lock, transaction, database scope 순으로 정리된다. 이 순서는 dependency와 맞아야 한다. 안쪽 resource가 바깥 resource를 cleanup 중 필요로 한다면 역순 정리가 자연스럽다.
+ 이 순서는 dependency와 맞아야 한다. 
 
-동적 개수의 context manager를 다룰 때 수동 `try/finally`를 여러 겹 쌓기보다 `ExitStack`으로 cleanup callback을 등록할 수 있다. 핵심은 “얻은 순서”와 “되돌리는 순서”를 짝지어 보는 것이다.
+ 
 
 ---
 
 ## CHAPTER 06 · generator-based context manager는 하나의 `yield`를 진입/종료 경계로 바꾼다
 
-`contextlib.contextmanager`를 사용하면 generator 형태로 context manager를 작성할 수 있다.
+### 시작 전 용어집
+
+#### 1. generator
+
+- **뜻:** contextmanager`를 사용하면 generator 형태로 context manager를 작성할 수 있다.
+- **왜 중요한가:** `yield` 전은 진입, `yield`된 값은 `as` target, 이후 코드는 종료 path가 된다.
+- **예시:** from contextlib import contextmanager / @contextmanager
+
+#### 2. context manager
+
+- **뜻:** 하지만 generator control과 exception 전달을 decorator가 context protocol로 변환하므로 `try/finally` 배치를 정확히 해야 한다.
+- **왜 중요한가:** 여러 번 yield하거나 cleanup을 yield 이전에 잘못 배치하면 contract가 깨진다.
+- **예시:** from contextlib import contextmanager / @contextmanager
+
+#### 3. yield
+
+- **뜻:** 간단한 scope 변환에는 유용하지만 복잡한 state machine은 class 기반 implementation이 더 명시적일 수 있다.
+- **예시:** from contextlib import contextmanager / @contextmanager
+
+`contextlib.
 
 ```python
 from contextlib import contextmanager
@@ -115,15 +222,33 @@ def temporary_mode(settings, value):
         settings.mode = old
 ```
 
-`yield` 전은 진입, `yield`된 값은 `as` target, 이후 코드는 종료 path가 된다. 하지만 generator control과 exception 전달을 decorator가 context protocol로 변환하므로 `try/finally` 배치를 정확히 해야 한다.
+ 
 
-여러 번 yield하거나 cleanup을 yield 이전에 잘못 배치하면 contract가 깨진다. 간단한 scope 변환에는 유용하지만 복잡한 state machine은 class 기반 implementation이 더 명시적일 수 있다.
+ 
 
 ---
 
 ## CHAPTER 07 · exception safety는 cleanup이 실행됐다는 사실보다 최종 상태 보장이 중요하다
 
-Resource를 닫았더라도 중간 mutation이 절반만 적용됐다면 프로그램 상태는 깨질 수 있다. Transaction context는 실패 시 rollback, 성공 시 commit 같은 더 강한 invariant를 제공해야 한다.
+### 시작 전 용어집
+
+#### 1. exception
+
+- **뜻:** 따라서 exception safety 수준을 정의한다.
+- **왜 중요한가:** Resource leak만 막는 basic guarantee인지, 실패 후 object invariant를 유지하는 strong guarantee인지, transaction atomicity까지 제공하는지 구분한다.
+- **예시:** with transaction() as tx: / tx.update_a()
+
+#### 2. cleanup
+
+- **뜻:** Resource를 닫았더라도 중간 mutation이 절반만 적용됐다면 프로그램 상태는 깨질 수 있다.
+- **왜 중요한가:** Transaction context는 실패 시 rollback, 성공 시 commit 같은 더 강한 invariant를 제공해야 한다.
+- **예시:** with transaction() as tx: / tx.update_a()
+
+#### 3. 상태
+
+- **뜻:** `update_b`가 실패하면 `update_a`의 효과를 어떻게 되돌릴지 context manager가 책임질 수 있다.
+- **왜 중요한가:** 하지만 외부 API 호출처럼 rollback 불가능한 side effect가 섞이면 단순 context manager만으로 atomicity를 보장할 수 없다.
+- **예시:** with transaction() as tx: / tx.update_a()
 
 ```python
 with transaction() as tx:
@@ -131,16 +256,75 @@ with transaction() as tx:
     tx.update_b()
 ```
 
-`update_b`가 실패하면 `update_a`의 효과를 어떻게 되돌릴지 context manager가 책임질 수 있다. 하지만 외부 API 호출처럼 rollback 불가능한 side effect가 섞이면 단순 context manager만으로 atomicity를 보장할 수 없다.
+ 
 
-따라서 exception safety 수준을 정의한다. Resource leak만 막는 basic guarantee인지, 실패 후 object invariant를 유지하는 strong guarantee인지, transaction atomicity까지 제공하는지 구분한다.
+ 
 
 ---
 
 ## CHAPTER 08 · context contract는 ownership·suppression·reentrancy를 외부에 드러낸다
 
-Context manager를 API로 제공할 때는 한 번만 사용할 수 있는지 재진입 가능한지, 동일 object를 여러 번 중첩해도 되는지, 어떤 exception을 suppress하는지, 종료 후 object를 다시 사용할 수 있는지 명확해야 한다.
+### 시작 전 용어집
 
-Test에서는 정상 종료, body exception, `__enter__` 중간 실패, cleanup 자체 실패, nested cleanup order를 별도 case로 만든다. Resource counter나 fake handle을 사용하면 누락된 close를 검증하기 쉽다.
+#### 1. context contract
 
-이 PART의 핵심은 **`with`를 자동 close 문법으로 축소하지 않고, acquisition·body·failure·suppression·reverse cleanup을 명시적으로 가진 resource state machine으로 설계하는 것**이다.
+- **뜻:** Context manager를 API로 제공할 때는 한 번만 사용할 수 있는지 재진입 가능한지, 동일 object를 여러 번 중첩해도 되는지, 어떤 exception을 suppress하는지, 종료 후 object를 다시 사용할 수 있는지 명확해야 한다.
+- **왜 중요한가:** Test에서는 정상 종료, body exception, `__enter__` 중간 실패, cleanup 자체 실패, nested cleanup order를 별도 case로 만든다.
+- **예시:** Context manager를 API로 제공할 때는 한 번만 사용할 …
+
+#### 2. ownership
+
+- **뜻:** Resource counter나 fake handle을 사용하면 누락된 close를 검증하기 쉽다.
+- **왜 중요한가:** 이 PART의 핵심은 **`with`를 자동 close 문법으로 축소하지 않고, acquisition·body·failure·suppression·reverse cleanup을 명시적으로 가진 resource state machine으로 설계하는 것**이다.
+- **예시:** Resource counter나 fake handle을 사용하면 누락된 close를 검증하기 …
+
+---
+
+## 실전 학습 루프 · context manager state machine
+
+### 1. 쉬운 예
+
+파일이나 lock은 “열기 성공 → 사용 → 정리”라는 수명을 가진다. 중간에서 예외가 나도 정리가 실행돼야 하므로 `with`는 단순 문법 축약이 아니라 enter/exit 상태 전이를 코드 구조로 고정한다.
+
+### 2. 한 줄 해석
+
+context manager는 자원 획득과 해제를 한 lexical scope에 묶어 정상·예외 경로에서 같은 cleanup 계약을 지키게 한다.
+
+### 3. 직접 실행
+
+아래 코드는 개념을 작게 격리한 예다. 실행 전에 출력이나 상태 변화를 먼저 예상한 뒤 실제 결과와 비교한다.
+
+```python
+class Guard:
+    def __enter__(self):
+        print('enter')
+        return self
+    def __exit__(self, exc_type, exc, tb):
+        print('exit', exc_type)
+        return False
+
+with Guard():
+    print('work')
+```
+
+PART 69의 **PART 69 · Context manager state machine — enter·exit·exception suppression·cleanup order를 설계하기**에서 결과가 예상과 다르면 문법을 먼저 바꾸지 않는다. PART 69 · Context manager state machine — enter·exit·exception suppression·cleanup order를 설계하기의 protocol 호출 순서, 현재 상태, 지켜야 할 계약을 차례로 기록한 뒤 최초로 예상과 달라진 지점을 찾는다. 이 절차를 거치면 PART 69의 동작이 우연히 맞은 것인지, 규칙을 설명할 수 있어 재현 가능한 것인지 구분할 수 있다.
+
+### 4. 수정 실습
+
+1. 본문에서 예외를 발생시켜 `__exit__`가 받는 값을 관찰한다.
+2. `__exit__`가 True를 반환하게 바꾸고 예외 전파가 어떻게 달라지는지 확인한다.
+
+수정 후에는 정상 입력 하나만 보지 말고 빈 값, 경계값, 반복 호출, 예외 경로 중 해당되는 반례를 최소 하나 추가한다.
+
+### 5. 확인 문제
+
+`with` 블록 안에서 예외가 나면 cleanup이 생략될까?
+
+### 6. 정답과 오답 설명
+
+**정답:** 정상적인 context manager라면 `__exit__`가 호출된다. 예외를 삼킬지는 반환값과 구현 정책이 결정한다.
+
+**자주 나오는 오답:** `with`를 단순한 `try` 축약이라고만 외우면 자원 수명과 예외 억제 계약을 놓친다.
+
+PART 69의 **PART 69 · Context manager state machine — enter·exit·exception suppression·cleanup order를 설계하기**를 마무리할 때는 입력값, 실제로 선택된 규칙, 그 규칙이 만든 상태 변화, 마지막 결과나 예외를 연결해서 요약한다. 특히 PART 69 · Context manager state machine — enter·exit·exception suppression·cleanup order를 설계하기에서 관찰한 상태 전이를 자기 말로 설명하고 같은 입력을 다시 넣었을 때 같은 결과가 나오는지 확인하면, PART 69의 실행 모델을 암기가 아니라 검증 가능한 형태로 이해한 것이다.
+

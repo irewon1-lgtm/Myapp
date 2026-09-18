@@ -6,7 +6,24 @@
 
 ## CHAPTER 01 · async iteration은 `__aiter__`와 `__anext__`로 다음 값을 awaitable하게 만든다
 
-Async iterable은 `async for`에 참여하며 각 다음 값 요청이 대기할 수 있다.
+### 시작 전 용어집
+
+#### 1. async iteration
+
+- **뜻:** Async iterable은 `async for`에 참여하며 각 다음 값 요청이 대기할 수 있다.
+- **왜 중요한가:** Network stream, queue, paginated API처럼 다음 값이 즉시 준비되지 않는 source에 적합하다.
+- **예시:** class AsyncCounter: / def __init__(self, limit):
+
+#### 2. __aiter__
+
+- **뜻:** 일반 iterator와 달리 각 step 사이에 scheduler에게 control이 넘어갈 수 있으므로 shared state가 바뀔 수 있다.
+- **왜 중요한가:** Async iterator가 self를 반환하는 single-pass cursor인지, 매번 새 iterator를 만드는 reusable source인지 구분한다.
+- **예시:** class AsyncCounter: / def __init__(self, limit):
+
+#### 3. __anext__
+
+- **뜻:** 두 semantics를 섞으면 두 consumer가 같은 cursor를 경쟁할 수 있다.
+- **예시:** class AsyncCounter: / def __init__(self, limit):
 
 ```python
 class AsyncCounter:
@@ -25,15 +42,32 @@ class AsyncCounter:
         return value
 ```
 
-Network stream, queue, paginated API처럼 다음 값이 즉시 준비되지 않는 source에 적합하다. 일반 iterator와 달리 각 step 사이에 scheduler에게 control이 넘어갈 수 있으므로 shared state가 바뀔 수 있다.
+ 
 
-Async iterator가 self를 반환하는 single-pass cursor인지, 매번 새 iterator를 만드는 reusable source인지 구분한다. 두 semantics를 섞으면 두 consumer가 같은 cursor를 경쟁할 수 있다.
+ 
 
 ---
 
 ## CHAPTER 02 · `StopAsyncIteration`은 async stream의 정상 종료 신호다
 
-동기 iterator의 `StopIteration`과 마찬가지로 async iterator는 더 이상 값이 없을 때 `StopAsyncIteration`을 사용한다. 이것은 일반 business failure와 구분되는 protocol 종료 신호다.
+### 시작 전 용어집
+
+#### 1. StopAsyncIteration
+
+- **뜻:** 동기 iterator의 `StopIteration`과 마찬가지로 async iterator는 더 이상 값이 없을 때 `StopAsyncIteration`을 사용한다.
+- **왜 중요한가:** 이것은 일반 business failure와 구분되는 protocol 종료 신호다.
+- **예시:** async def __anext__(self): / item = await self.queue.get()
+
+#### 2. async stream
+
+- **뜻:** 종료 sentinel을 외부 data와 충돌하지 않게 설계하고, 실제 I/O error를 정상 종료로 바꾸지 않는다.
+- **왜 중요한가:** Connection reset, authentication failure, parser error까지 `StopAsyncIteration`으로 숨기면 consumer는 stream이 정상 완료됐다고 오해한다.
+- **예시:** async def __anext__(self): / item = await self.queue.get()
+
+#### 3. iterator
+
+- **뜻:** 종료 시 내부 resource 정리가 필요하다면 async context manager와 결합하거나 explicit close protocol을 제공한다.
+- **예시:** async def __anext__(self): / item = await self.queue.get()
 
 ```python
 async def __anext__(self):
@@ -43,32 +77,72 @@ async def __anext__(self):
     return item
 ```
 
-종료 sentinel을 외부 data와 충돌하지 않게 설계하고, 실제 I/O error를 정상 종료로 바꾸지 않는다. Connection reset, authentication failure, parser error까지 `StopAsyncIteration`으로 숨기면 consumer는 stream이 정상 완료됐다고 오해한다.
+ 
 
-종료 시 내부 resource 정리가 필요하다면 async context manager와 결합하거나 explicit close protocol을 제공한다.
 
 ---
 
 ## CHAPTER 03 · `async for`를 desugar하면 매 반복에 await 경계가 있음을 볼 수 있다
 
-개념적으로 `async for item in source`는 async iterator를 얻고 반복적으로 `__anext__` 결과를 await하는 구조다. 실제 language semantics에는 세부 규칙이 있지만 이 모델만으로도 중요한 사실이 드러난다. **반복문 한 바퀴마다 다른 task가 끼어들 수 있다.**
+### 시작 전 용어집
 
-그래서 다음과 같은 코드는 동기 loop보다 더 많은 interleaving 가능성을 가진다.
+#### 1. async for
+
+- **뜻:** 개념적으로 `async for item in source`는 async iterator를 얻고 반복적으로 `__anext__` 결과를 await하는 구조다.
+- **왜 중요한가:** 실제 language semantics에는 세부 규칙이 있지만 이 모델만으로도 중요한 사실이 드러난다.
+- **예시:** async for item in source: / await store(item)
+
+#### 2. desugar
+
+- **뜻:** 그래서 다음과 같은 코드는 동기 loop보다 더 많은 interleaving 가능성을 가진다.
+- **왜 중요한가:** __anext__()` 대기와 `store()` 대기 사이에 shared configuration이나 cancellation state가 바뀔 수 있다.
+- **예시:** async for item in source: / await store(item)
+
+#### 3. 반복
+
+- **뜻:** Loop 시작 때 읽은 값을 계속 동일하다고 가정하지 않는다.
+- **왜 중요한가:** Batching으로 await 횟수를 줄일 수 있지만 latency와 memory가 달라진다.
+- **예시:** async for item in source: / await store(item)
+
+#### 4. await
+
+- **뜻:** Protocol을 이해한 뒤 performance trade-off를 조정한다.
+- **예시:** async for item in source: / await store(item)
+
+**반복문 한 바퀴마다 다른 task가 끼어들 수 있다.**
+
 
 ```python
 async for item in source:
     await store(item)
 ```
 
-`source.__anext__()` 대기와 `store()` 대기 사이에 shared configuration이나 cancellation state가 바뀔 수 있다. Loop 시작 때 읽은 값을 계속 동일하다고 가정하지 않는다.
+`source. 
 
-Batching으로 await 횟수를 줄일 수 있지만 latency와 memory가 달라진다. Protocol을 이해한 뒤 performance trade-off를 조정한다.
+ 
 
 ---
 
 ## CHAPTER 04 · async context protocol은 acquisition과 release 자체가 await될 수 있게 한다
 
-`async with`는 `__aenter__`와 `__aexit__`를 사용한다. Connection pool에서 lease를 얻거나 remote lock을 해제하는 것처럼 진입·종료 자체가 비동기 작업인 resource에 적합하다.
+### 시작 전 용어집
+
+#### 1. async context
+
+- **뜻:** 반대로 실제 await가 필요 없는 작은 local lock까지 무조건 async context로 만들 필요는 없다.
+- **왜 중요한가:** Acquisition이 절반만 성공한 경우의 rollback도 동기 context와 마찬가지로 `__aenter__` 안에서 처리해야 한다.
+- **예시:** class ConnectionLease: / async def __aenter__(self):
+
+#### 2. protocol
+
+- **뜻:** `async with`는 `__aenter__`와 `__aexit__`를 사용한다.
+- **왜 중요한가:** Connection pool에서 lease를 얻거나 remote lock을 해제하는 것처럼 진입·종료 자체가 비동기 작업인 resource에 적합하다.
+- **예시:** class ConnectionLease: / async def __aenter__(self):
+
+#### 3. acquisition
+
+- **뜻:** 동기 context manager 안에서 blocking I/O를 수행하면 event loop 전체를 막을 수 있다.
+- **예시:** class ConnectionLease: / async def __aenter__(self):
 
 ```python
 class ConnectionLease:
@@ -81,51 +155,155 @@ class ConnectionLease:
         return False
 ```
 
-동기 context manager 안에서 blocking I/O를 수행하면 event loop 전체를 막을 수 있다. 반대로 실제 await가 필요 없는 작은 local lock까지 무조건 async context로 만들 필요는 없다.
+ 
 
-Acquisition이 절반만 성공한 경우의 rollback도 동기 context와 마찬가지로 `__aenter__` 안에서 처리해야 한다.
 
 ---
 
 ## CHAPTER 05 · `__aenter__`와 `__aexit__` 사이에는 task suspension과 외부 변화가 존재한다
 
-Async context는 lexical scope가 명확하지만 그 scope 안의 execution이 연속적이라는 뜻은 아니다. Body가 await할 때마다 다른 task가 동일 service나 shared state를 변경할 수 있다.
+### 시작 전 용어집
 
-예를 들어 transaction context 안에서 await를 여러 번 하면 database transaction 자체는 유지돼도 application-level cache나 in-memory state는 다른 task에 의해 바뀔 수 있다. “context 안이므로 모든 상태가 고정된다”는 가정을 하지 않는다.
+#### 1. __aenter__
 
-Resource가 concurrency isolation까지 제공하는지 단순 lifetime 관리만 제공하는지 분리한다. Async lock context는 mutual exclusion을 줄 수 있지만 transaction context와 같은 rollback 의미는 자동으로 생기지 않는다.
+- **뜻:** Async context는 lexical scope가 명확하지만 그 scope 안의 execution이 연속적이라는 뜻은 아니다.
+- **왜 중요한가:** Body가 await할 때마다 다른 task가 동일 service나 shared state를 변경할 수 있다.
+- **예시:** 예를 들어 transaction context 안에서 await를 여러 번 …
+
+#### 2. __aexit__
+
+- **뜻:** 예를 들어 transaction context 안에서 await를 여러 번 하면 database transaction 자체는 유지돼도 application-level cache나 in-memory state는 다른 task에 의해 바뀔 수 있다.
+- **왜 중요한가:** “context 안이므로 모든 상태가 고정된다”는 가정을 하지 않는다.
+- **예시:** 예를 들어 transaction context 안에서 await를 여러 번 …
+
+#### 3. task suspension
+
+- **뜻:** Resource가 concurrency isolation까지 제공하는지 단순 lifetime 관리만 제공하는지 분리한다.
+- **왜 중요한가:** Async lock context는 mutual exclusion을 줄 수 있지만 transaction context와 같은 rollback 의미는 자동으로 생기지 않는다.
+- **예시:** Resource가 concurrency isolation까지 제공하는지 단순 lifetime 관리만 제공하는지 …
 
 ---
 
 ## CHAPTER 06 · cancellation은 cleanup 경로를 실제 실패 유형으로 만든다
 
-Async code에서 task cancellation은 특별히 자주 만나는 종료 경로다. Cancellation이 await 지점에서 전달되면 resource release가 누락되지 않도록 `async with`와 `finally`를 사용해야 한다.
+### 시작 전 용어집
+
+#### 1. cancellation
+
+- **뜻:** Async code에서 task cancellation은 특별히 자주 만나는 종료 경로다.
+- **왜 중요한가:** Cancellation이 await 지점에서 전달되면 resource release가 누락되지 않도록 `async with`와 `finally`를 사용해야 한다.
+- **예시:** async with lease() as conn: / await do_work(conn)
+
+#### 2. cleanup
+
+- **뜻:** 다만 cleanup 자체가 await를 포함하면 그 cleanup이 다시 cancellation의 영향을 받을 수 있으므로 library contract와 runtime semantics를 이해해야 한다.
+- **왜 중요한가:** Cancellation을 일반 exception처럼 무조건 catch하고 계속 실행하면 상위 orchestration이 task를 멈추지 못할 수 있다.
+- **예시:** async with lease() as conn: / await do_work(conn)
+
+#### 3. 실패
+
+- **뜻:** `do_work` 중 cancellation이 들어와도 context exit가 실행되어 lease를 반환해야 한다.
+- **왜 중요한가:** 필요한 cleanup을 수행한 뒤 취소 의도를 보존하는 것이 기본이다.
+- **예시:** async with lease() as conn: / await do_work(conn)
 
 ```python
 async with lease() as conn:
     await do_work(conn)
 ```
 
-`do_work` 중 cancellation이 들어와도 context exit가 실행되어 lease를 반환해야 한다. 다만 cleanup 자체가 await를 포함하면 그 cleanup이 다시 cancellation의 영향을 받을 수 있으므로 library contract와 runtime semantics를 이해해야 한다.
+ 
 
-Cancellation을 일반 exception처럼 무조건 catch하고 계속 실행하면 상위 orchestration이 task를 멈추지 못할 수 있다. 필요한 cleanup을 수행한 뒤 취소 의도를 보존하는 것이 기본이다.
+ 
 
 ---
 
 ## CHAPTER 07 · sync/async boundary를 섞으면 blocking과 hidden scheduler dependency가 생긴다
 
-동기 함수에서 async iterator를 억지로 소비하거나 async code에서 blocking file/network API를 직접 호출하면 실행 모델이 충돌한다. Event loop thread에서 긴 blocking call을 수행하면 다른 task가 진행하지 못한다.
+### 시작 전 용어집
 
-반대로 작은 CPU 연산을 무조건 thread executor로 보내면 context switching과 error propagation 복잡도가 커질 수 있다. Boundary를 정할 때 operation이 실제로 blocking I/O인지, CPU-bound인지, 짧은 local operation인지 구분한다.
+#### 1. sync
 
-Library API도 한 계층에서 sync와 async 버전을 무질서하게 섞기보다 명확한 adapter boundary를 둔다. 같은 resource에 두 API가 동시에 접근할 때 thread safety와 event-loop affinity도 검토한다.
+- **뜻:** 동기 함수에서 async iterator를 억지로 소비하거나 async code에서 blocking file/network API를 직접 호출하면 실행 모델이 충돌한다.
+- **왜 중요한가:** Event loop thread에서 긴 blocking call을 수행하면 다른 task가 진행하지 못한다.
+- **예시:** 동기 함수에서 async iterator를 억지로 소비하거나 async code에서 …
+
+#### 2. blocking
+
+- **뜻:** Boundary를 정할 때 operation이 실제로 blocking I/O인지, CPU-bound인지, 짧은 local operation인지 구분한다.
+- **왜 중요한가:** Library API도 한 계층에서 sync와 async 버전을 무질서하게 섞기보다 명확한 adapter boundary를 둔다.
+- **예시:** Boundary를 정할 때 operation이 실제로 blocking I/O인지, CPU-bound인지, …
+
+#### 3. hidden scheduler
+
+- **뜻:** 반대로 작은 CPU 연산을 무조건 thread executor로 보내면 context switching과 error propagation 복잡도가 커질 수 있다.
+- **왜 중요한가:** 같은 resource에 두 API가 동시에 접근할 때 thread safety와 event-loop affinity도 검토한다.
+- **예시:** 반대로 작은 CPU 연산을 무조건 thread executor로 보내면 …
 
 ---
 
 ## CHAPTER 08 · async protocol contract는 backpressure·ownership·cancellation을 함께 정의한다
 
-Async iterable을 public API로 제공할 때 consumer가 천천히 읽으면 producer가 얼마나 buffer하는지, iterator를 중간에 포기하면 어떤 cleanup이 필요한지, 같은 source를 두 consumer가 동시에 읽을 수 있는지 정해야 한다.
+### 시작 전 용어집
 
-Async context manager는 어떤 task가 resource를 소유하는지, 중첩 사용이 가능한지, cancellation 중 release를 어떻게 보장하는지 문서화한다. Test에서는 정상 종료, source exhaustion, producer error, consumer cancellation, `__aenter__` 실패, `__aexit__` 실패를 서로 다른 case로 확인한다.
+#### 1. async protocol
 
-이 PART의 핵심은 **async iteration과 async context를 단순히 await가 붙은 문법으로 보지 않고, suspension point 사이의 interleaving과 cancellation까지 포함한 resource·stream protocol로 설계하는 것**이다.
+- **뜻:** Async iterable을 public API로 제공할 때 consumer가 천천히 읽으면 producer가 얼마나 buffer하는지, iterator를 중간에 포기하면 어떤 cleanup이 필요한지, 같은 source를 두 consumer가 동시에 읽을 수 있는지 정해야 한다.
+- **왜 중요한가:** Async context manager는 어떤 task가 resource를 소유하는지, 중첩 사용이 가능한지, cancellation 중 release를 어떻게 보장하는지 문서화한다.
+- **예시:** Async iterable을 public API로 제공할 때 consumer가 천천히 …
+
+#### 2. contract
+
+- **뜻:** Test에서는 정상 종료, source exhaustion, producer error, consumer cancellation, `__aenter__` 실패, `__aexit__` 실패를 서로 다른 case로 확인한다.
+- **왜 중요한가:** 이 PART의 핵심은 **async iteration과 async context를 단순히 await가 붙은 문법으로 보지 않고, suspension point 사이의 interleaving과 cancellation까지 포함한 resource·stream protocol로 설계하는 것**이다.
+- **예시:** Test에서는 정상 종료, source exhaustion, producer error, consumer …
+
+---
+
+## 실전 학습 루프 · async iteration/context protocol
+
+### 1. 쉬운 예
+
+네트워크 stream처럼 다음 데이터가 언제 올지 모르는 대상은 동기 iterator만으로 표현하기 어렵다. `async for`는 다음 값을 기다릴 수 있고 `async with`는 비동기 획득·정리가 필요한 자원 수명을 표현한다.
+
+### 2. 한 줄 해석
+
+async protocol은 iteration과 resource lifetime에 `await` 가능한 대기 지점을 추가한다.
+
+### 3. 직접 실행
+
+아래 코드는 개념을 작게 격리한 예다. 실행 전에 출력이나 상태 변화를 먼저 예상한 뒤 실제 결과와 비교한다.
+
+```python
+class Counter:
+    def __init__(self, end):
+        self.i, self.end = 0, end
+    def __aiter__(self):
+        return self
+    async def __anext__(self):
+        if self.i >= self.end:
+            raise StopAsyncIteration
+        self.i += 1
+        return self.i
+```
+
+결과가 예상과 다르면 문법부터 고치지 말고, **어떤 protocol·상태·계약이 호출됐는지**를 한 단계씩 확인한다. 이렇게 해야 “우연히 동작하는 코드”와 “이유를 설명할 수 있는 코드”를 구분할 수 있다.
+
+### 4. 수정 실습
+
+1. `StopAsyncIteration`을 제거했을 때 종료 계약이 어떻게 깨지는지 확인한다.
+2. 두 소비자가 같은 async iterator를 공유하면 상태가 어떻게 섞일지 예측한다.
+
+수정 후에는 정상 입력 하나만 보지 말고 빈 값, 경계값, 반복 호출, 예외 경로 중 해당되는 반례를 최소 하나 추가한다.
+
+### 5. 확인 문제
+
+일반 `for`가 async iterator를 자동으로 기다려 줄까?
+
+### 6. 정답과 오답 설명
+
+**정답:** 아니다. async iterator는 `async for`와 event loop 문맥이 필요하다.
+
+**자주 나오는 오답:** `yield`와 `await`가 모두 멈춤처럼 보인다는 이유로 동기·비동기 protocol을 같은 것으로 보면 안 된다.
+
+마지막으로 코드를 다시 읽으면서 **입력 → 호출되는 규칙 → 상태 변화 → 결과/예외** 네 칸으로 요약한다. 이 네 칸을 설명할 수 있으면 단순 암기가 아니라 실행 모델을 이해한 것이다.
+

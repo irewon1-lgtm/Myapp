@@ -1,123 +1,245 @@
 # PART 51 · Resource Limits and Accounting — rlimit, cgroups, quotas, pressure, admission
 
-운영체제 자원은 CPU와 RAM 두 개가 아니다. File descriptor, process/thread slot, virtual address space, stack, locked memory, cgroup memory, CPU time budget, I/O bandwidth, PID count가 각각 다른 exhaustion path를 가진다. Limit은 단순 안전장치가 아니라 overload 시 **누가 먼저 실패하고 어떤 error/kill/throttle로 나타나는지**를 결정한다. Capacity planning과 failure handling은 자원별 accounting 단위와 enforcement semantics를 알아야 한다.
+리소스 제한은 “얼마나 많이 쓸 수 있는가”를 정하는 숫자 모음이 아니다. Process rlimit, system-wide table, cgroup memory·CPU·I/O·PID controller, kernel memory, socket buffer, application queue가 서로 다른 계층에서 같은 workload를 제약한다. 한 계층의 limit만 올리면 병목이 다른 곳으로 이동할 수 있다. 이 PART는 **resource budget → accounting → pressure signal → admission/degradation**을 하나의 control loop로 다룬다.
 
-## CHAPTER 01 · resource budget은 평균 사용량이 아니라 허용 가능한 최대 동시 점유를 정의한다
+---
 
-평균 메모리 2GB인 service도 burst에서 8GB를 쓰면 4GB limit 환경에서 죽는다. 평균 fd 100개라도 connection storm에서 50,000개가 필요할 수 있다. Capacity는 arrival burst, request lifetime, concurrency와 연결해 peak/percentile을 본다. Limit은 정상 peak보다 충분한 headroom을 주되 unbounded leak/overload가 host 전체를 망가뜨리지 않도록 설정한다. Budget을 정하지 않은 resource는 incident 때 default/system-wide limit이 임의 정책이 된다.
+## CHAPTER 01 · resource budget은 최대값이 아니라 정상 운영 범위를 먼저 정의한다
 
-## CHAPTER 02 · RLIMIT은 process 또는 credential 범위의 전통적 resource ceiling을 제공한다
+시스템이 사용할 수 있는 memory, CPU, file descriptor, thread, I/O bandwidth에는 모두 상한이 있다. 하지만 설계에서 중요한 것은 limit 직전까지 쓰는 것이 아니라 burst와 장애 복구를 위한 headroom을 남기는 것이다. 정상 steady state, 예상 peak, hard limit을 세 구간으로 나누면 alert와 admission policy를 설계하기 쉽다.
 
-Unix-like system의 rlimit은 open file, address space, stack, core dump 등 여러 resource에 soft/hard limit을 둘 수 있다. Soft limit은 process가 일정 범위에서 조정 가능하고 hard limit은 더 강한 ceiling 역할을 할 수 있다. Container cgroup limit과 rlimit은 서로 대체가 아니라 다른 계층이다. Effective limit을 확인할 때 shell ulimit 설정, service manager, container runtime, application 자체 setrlimit을 모두 추적한다.
+Budget은 resource별로 독립적이지 않다. Connection 하나가 fd, socket memory, thread/task, application buffer를 동시에 소비할 수 있다. 따라서 “최대 10만 connection”은 각 resource의 per-connection cost를 곱해 전체 budget과 맞는지 확인해야 한다.
 
-## CHAPTER 03 · RLIMIT_NOFILE은 integer fd 번호가 아니라 process fd table capacity와 연결된다
+Capacity 문서에는 단순 maximum보다 unit cost를 적는다. `bytes/request`, `fds/connection`, `cpu-ms/job`처럼 소비 모델이 있어야 workload 증가를 다른 machine size에 적용할 수 있다.
 
-File/socket/pipe/eventfd/inotify 등 많은 kernel object가 file descriptor를 사용한다. Limit에 도달하면 open/socket/accept가 EMFILE로 실패할 수 있다. Listener가 accept하지 못하면 connection backlog가 차고 monitoring/log file open도 실패할 수 있다. Per-request fd 사용량×concurrency와 background fd를 합산해 budget을 정한다. Leak test는 request 종료 후 fd count가 baseline으로 돌아오는지 확인한다.
+## CHAPTER 02 · rlimit은 process와 credential context에 적용되는 전통적인 userspace 경계다
 
-## CHAPTER 04 · system-wide file table exhaustion과 per-process fd exhaustion은 다른 failure다
+Resource limit은 process가 열 수 있는 fd, 생성할 core dump, 사용할 stack 등 여러 항목의 soft/hard ceiling을 제공한다. Soft limit은 process가 낮추거나 허용 범위에서 조정할 수 있지만 hard limit 변경에는 더 높은 권한이 필요할 수 있다. Inheritance 때문에 parent launcher의 설정이 child service에 그대로 전달되기도 한다.
 
-Process limit에 여유가 있어도 kernel 전체 open-file resource가 부족하면 ENFILE류 system-level failure가 발생할 수 있다. Shared host에서 한 tenant leak이 다른 process에 영향을 줄 수 있다. Container isolation이 모든 global kernel table을 자동 partition하지 않는 경우가 있다. Host metric과 process metric을 둘 다 수집하고 global exhaustion에 대한 admission/tenant limit을 둔다.
+문제는 application config와 실제 kernel limit이 다를 수 있다는 점이다. 서비스가 “max_connections=50000”이어도 nofile soft limit이 1024면 먼저 실패한다. Startup에서 effective limit을 읽어 configuration과 모순을 검증하는 것이 좋다.
 
-## CHAPTER 05 · process/thread count limit은 fork/clone 실패와 service capacity를 연결한다
+Container 환경에서는 rlimit과 cgroup limit이 동시에 존재한다. 하나가 넉넉하다고 다른 제약이 사라지는 것은 아니다.
 
-Thread-per-request architecture는 thread stack/memory뿐 아니라 task/PID resource를 소비한다. RLIMIT_NPROC, cgroup pids.max, system PID space 같은 limit에 도달하면 새 thread/process 생성이 실패할 수 있다. Error path가 worker를 더 생성하려고 반복하면 busy failure loop가 된다. Thread pool은 bounded size와 queue/rejection policy를 가져야 하며 child-process supervisor도 fork failure를 처리해야 한다.
+## CHAPTER 03 · RLIMIT_NOFILE은 fd 숫자 범위와 동시에 open resource 수를 제한한다
 
-## CHAPTER 06 · virtual address space limit과 resident memory limit은 같은 것이 아니다
+Socket, regular file, pipe, eventfd 등은 모두 file descriptor table을 사용한다. fd limit에 도달하면 신규 connection accept나 log file open이 실패해 unrelated 기능이 동시에 영향을 받을 수 있다. Leak이 있으면 평균 traffic이 같아도 시간이 지날수록 limit에 접근한다.
 
-Large mmap reservation은 virtual address를 많이 차지하지만 실제 page를 touch하기 전 RSS는 작을 수 있다. 반대로 shared page는 여러 process RSS에 보이지만 physical memory는 공유될 수 있다. RLIMIT_AS류 virtual ceiling과 cgroup physical/accounted memory limit을 구분한다. 32-bit process는 address space fragmentation 자체가 allocation failure를 만들 수 있다. Memory dashboard에서 VIRT/RSS/PSS/commit을 같은 `메모리 사용량`으로 합치지 않는다.
+단순 limit 상향은 임시 완화일 뿐이다. `open fd count / request rate`와 lifetime 분포를 관찰해 leak인지 정상 concurrency 증가인지 구분한다. Keep-alive와 connection pool 설정도 fd budget에 직접 영향을 준다.
 
-## CHAPTER 07 · stack limit은 recursion과 thread count 두 방향으로 작동한다
+운영에서는 현재 사용량과 hard limit의 비율을 alert로 두되, failure path가 로그 fd를 새로 요구하지 않게 한다. Emergency diagnostic에 사용할 reserved descriptor 전략도 고려할 수 있다.
 
-Main/process stack rlimit과 pthread stack size는 플랫폼 API가 다를 수 있다. 한 thread에 큰 stack reserve를 주면 deep recursion 여유는 늘지만 수천 thread에서 virtual/committed memory 비용이 커진다. Guard page와 actual committed growth를 구분한다. Stack overflow test는 production stack size와 같은 조건에서 수행하며, recursive algorithm을 heap-based explicit stack으로 바꿀지 complexity와 input depth를 기준으로 판단한다.
+## CHAPTER 04 · process fd table과 system-wide file table은 다른 병목이다
 
-## CHAPTER 08 · locked/pinned memory limit은 DMA·real-time·crypto workload에 별도 ceiling을 만든다
+각 process가 nofile limit 아래여도 kernel 전체의 open file structure나 inode/dentry cache가 압박받을 수 있다. 여러 container가 같은 host에서 각각 합리적인 수의 fd를 열면 system-wide limit에 도달할 수 있다. Tenant 단위 제한과 host capacity를 같이 봐야 한다.
 
-Page를 mlock/pin하면 reclaim/swap할 수 없어 system flexibility가 줄어든다. RDMA/DMA registered buffer, realtime application, secret page가 pinned memory를 사용할 수 있다. RLIMIT_MEMLOCK 또는 device/kernel policy가 실패를 만들 수 있다. `RAM이 충분한데 registration 실패`는 ordinary heap 부족과 다른 원인이다. Long-lived pinning을 최소화하고 cleanup 누락을 별도 leak으로 감시한다.
+Host-wide exhaustion은 한 service의 문제처럼 보이지 않을 수 있다. 여러 process에서 동시에 `EMFILE` 또는 `ENFILE` 계열 오류가 나타나는지 구분하고 system metric을 수집한다.
 
-## CHAPTER 09 · core dump limit은 debugging evidence와 sensitive-data exposure를 동시에 제어한다
+Capacity 계획에서는 process당 최대 fd를 모두 더한 값이 host가 실제 감당 가능한지 계산한다. 모든 tenant가 동시에 hard max까지 쓰는 worst case를 허용할 것인지 admission 정책으로 제한할 것인지 결정한다.
 
-Crash core는 register, stack, heap 일부를 포함해 원인 분석에 유용하지만 secret/token/user data를 담을 수 있다. RLIMIT_CORE와 dump policy가 0이면 production crash에서 core가 생성되지 않을 수 있다. 무작정 unlimited로 켜는 것도 위험하다. Encrypted/restricted crash storage, size limit, symbol server를 설계하고 incident requirement와 privacy/security를 함께 맞춘다.
+## CHAPTER 05 · process와 thread 수 제한은 scheduler와 memory budget을 동시에 보호한다
 
-## CHAPTER 10 · cgroup v2는 resource controller를 hierarchy에 적용한다
+새 process/thread는 task structure, stack, TLS, scheduler queue를 소비한다. PID/task limit이 없으면 fork bomb이나 runaway thread creation이 host 전체 availability를 해칠 수 있다. Per-user limit과 cgroup pids controller는 서로 다른 범위에서 이 폭발을 막는다.
 
-Cgroup tree에서 parent가 가진 resource capacity 안에서 child group을 제한·가중할 수 있다. Process는 membership을 통해 CPU/memory/pids/io controller 영향을 받는다. Container memory limit은 VM처럼 별도 physical RAM을 할당하는 것이 아니라 host kernel accounting/enforcement policy다. Parent limit이 더 작으면 child가 큰 limit을 요청해도 실제 usable resource는 상위 ceiling을 넘지 못한다.
+Thread pool을 자동 확장할 때 task limit에 가까워지면 단순 create retry를 반복하지 않는다. Queueing과 backpressure로 전환하거나 work를 reject해야 한다. 실패 후 half-created runtime state가 남지 않는지도 확인한다.
 
-## CHAPTER 11 · memory.current와 memory.max는 사용량과 hard ceiling을 분리한다
+Thread count alert는 absolute 값뿐 아니라 증가 slope를 본다. Slow leak은 hard limit까지 시간이 오래 걸려 순간 threshold만으로 놓치기 쉽다.
 
-Cgroup memory.current는 현재 accounted usage를 보여 주고 memory.max는 hard limit 역할을 한다. Limit 근처에서 reclaim이 발생해 latency가 먼저 악화될 수 있으며, max를 넘는 allocation이 항상 application malloc error로 돌아오는 것은 아니다. OOM selection/kill이 발생할 수 있다. Headroom alert는 kill event만 기다리지 않고 memory pressure와 reclaim stall을 함께 본다.
+## CHAPTER 06 · virtual address limit과 RSS는 같은 memory 사용을 설명하지 않는다
 
-## CHAPTER 12 · memory.high는 즉시 kill보다 reclaim/throttle pressure를 유도하는 control이 될 수 있다
+큰 address space를 reserve해도 실제 physical page가 모두 resident한 것은 아니다. Memory-mapped file, sparse arena, guard region 때문에 virtual size는 클 수 있지만 RSS는 작을 수 있다. 반대로 shared page와 reclaimable cache 때문에 RSS만으로 실제 pressure를 완전히 설명하지 못한다.
 
-Hard max에 닿기 전 high boundary를 사용하면 workload가 과도한 memory를 쓰는 동안 allocation/reclaim path에서 pressure를 받게 할 수 있다. 이는 graceful backpressure를 유도하지만 latency가 증가한다. Service가 memory.high에서 이미 SLO를 잃는다면 max 숫자만 capacity로 보고 worker를 채우면 안 된다. Memory pressure point를 load test에서 찾는다.
+Resource limit이 address space에 적용되는지 resident memory에 적용되는지 확인해야 한다. 64-bit process의 큰 reservation을 무조건 leak으로 판단하면 allocator 설계를 오해할 수 있다.
 
-## CHAPTER 13 · cgroup OOM event는 process-local OutOfMemory exception과 다른 failure다
+Incident에서는 VSS/RSS/PSS, anonymous/file-backed 분류를 함께 본다. “memory 10GB”라는 한 숫자 대신 어떤 종류의 page가 실제로 reclaim 가능한지까지 추적한다.
 
-Cgroup memory limit에서 kernel이 victim process를 kill하면 managed runtime catch block이 실행될 기회가 없을 수 있다. Multi-process service에서 어떤 process가 죽는지, oom.group 정책으로 group을 함께 kill할지 운영 contract가 필요하다. Supervisor restart와 persistent state recovery를 abrupt-crash 기준으로 검증한다. OOM event counter와 exit reason을 alert에 포함한다.
+## CHAPTER 07 · stack limit은 recursion depth와 per-thread reservation에 영향을 준다
 
-## CHAPTER 14 · cpu.max는 CPU time을 period budget으로 제한해 throttling을 만든다
+각 thread stack은 finite resource다. Recursive algorithm, 큰 local array, deep callback chain은 stack overflow를 만들 수 있다. Stack limit을 무작정 키우면 thread 수가 많은 서비스에서 address-space와 committed memory 부담이 늘 수 있다.
 
-Container가 4 logical CPU를 볼 수 있어도 cpu.max가 1 CPU equivalent budget이면 worker 4개가 동시에 돌다 period budget을 빨리 소진하고 remainder 동안 throttled될 수 있다. CPU utilization만 보면 각 worker가 바쁘지만 wall latency는 quota stall 때문에 커진다. nr_throttled/throttled time을 측정하고 worker concurrency를 effective quota에 맞춘다.
+Worker thread는 main thread와 다른 default stack size를 가질 수 있으므로 platform/runtime 설정을 확인한다. Guard page가 overflow를 조기에 잡는지도 중요하다.
 
-## CHAPTER 15 · cpu.weight는 hard quota가 아니라 competing groups 사이 relative share다
+테스트는 정상 깊이뿐 아니라 adversarial nesting을 포함한다. Parser의 input nesting depth를 제한하면 stack limit에 의존한 crash를 application-level error로 바꿀 수 있다.
 
-Host가 idle하면 낮은 weight group도 충분한 CPU를 사용할 수 있지만 contention이 생기면 relative weight가 distribution에 영향을 준다. 따라서 staging idle host에서 성능이 좋다가 production contention에서 느려질 수 있다. Weight를 absolute core guarantee로 설명하지 않는다. Critical service에는 reservation/quota/placement policy를 함께 고려한다.
+## CHAPTER 08 · locked memory는 reclaim되지 않는다는 점 때문에 강한 budget이 필요하다
 
-## CHAPTER 16 · pids.max는 fork bomb뿐 아니라 thread explosion을 격리한다
+`mlock` 계열로 page를 memory에 고정하면 swap/reclaim에서 제외되어 latency와 secret handling에는 유리할 수 있지만 system memory flexibility를 줄인다. 많은 process가 무제한으로 lock하면 reclaim 가능한 page가 부족해진다.
 
-Linux task 단위 accounting 때문에 thread도 pids controller에 포함될 수 있다. Application bug가 unbounded thread를 만들 때 group pids.max가 host 전체를 보호하지만 service는 thread creation failure를 경험한다. Rejection/health check가 이를 정확히 보고해야 한다. Limit hit 후 recovery를 위해 runaway producer를 멈추고 existing task가 drain될 수 있어야 한다.
+그래서 locked-memory limit은 privilege와 함께 관리된다. Crypto key처럼 작은 민감 데이터와 대규모 cache를 같은 정책으로 다루지 않는다.
 
-## CHAPTER 17 · I/O controller는 bandwidth/IOPS/weight를 device 단위로 제한할 수 있다
+Lock 실패 시 application이 insecure fallback을 할지, 기능을 중단할지 목적에 따라 정한다. Security-sensitive buffer라면 “잠금 실패했지만 계속 실행”이 threat model에 맞는지 명시한다.
 
-CPU와 memory가 여유 있어도 cgroup io.max/io.weight 또는 storage QoS 때문에 read/write latency가 늘 수 있다. Logical filesystem 아래 실제 block device mapping을 알아야 controller가 어디에 적용되는지 이해할 수 있다. Buffered write는 page cache에 빨리 끝난 뒤 writeback에서 throttling될 수 있어 application write latency만 보면 놓칠 수 있다. Device queue와 cgroup stats를 함께 본다.
+## CHAPTER 09 · core dump limit은 진단 가능성과 secret 노출 위험을 동시에 조절한다
 
-## CHAPTER 18 · cpuset은 허용 CPU와 NUMA memory node를 동시에 제한할 수 있다
+Crash dump는 stack과 heap을 포함해 강력한 debugging 자료를 제공하지만 credential, key, personal data도 포함할 수 있다. Core size limit과 dumpable policy는 단순 disk 절약 설정이 아니라 security control이다.
 
-Cpuset controller로 workload가 실행 가능한 CPU와 allocation 가능한 memory node를 지정할 수 있다. CPU affinity와 cpuset effective mask의 교집합이 실제 placement를 결정한다. Memory node 제한과 first-touch가 결합돼 remote/locality behavior가 달라진다. Container 내부 `/proc/cpuinfo` 숫자보다 effective cpuset을 worker sizing에 사용한다.
+Production에서는 dump 저장 위치, 접근 권한, retention을 제한하고 필요하면 sensitive process의 dump를 비활성화한다. 반대로 아무 dump도 없으면 rare crash 원인 분석이 불가능해질 수 있으므로 redaction 가능한 crash reporter를 고려한다.
 
-## CHAPTER 19 · Pressure Stall Information류 metric은 `자원이 부족해 얼마나 기다렸는가`를 본다
+설정 검증은 실제 crash를 일으켜 dump 생성 여부와 permission을 확인한다. Config file 값만 보고 PASS라고 하지 않는다.
 
-Usage 90%라는 숫자보다 task가 CPU/memory/I/O resource 때문에 실행 progress를 못 한 시간 비율이 SLO와 더 직접 연결될 수 있다. Memory reclaim로 task가 stall되면 RSS가 limit 아래여도 pressure가 높다. CPU runqueue contention, I/O wait도 동일한 관점으로 볼 수 있다. Resource dashboard에 usage와 stall을 함께 배치한다.
+## CHAPTER 10 · cgroup hierarchy는 resource control을 tree 형태의 ownership으로 만든다
 
-## CHAPTER 20 · quota와 reservation은 `최대 사용량`과 `보장 용량`을 분리한다
+Cgroup v2에서는 process를 hierarchy에 배치하고 memory, CPU, I/O 같은 controller를 subtree 단위로 적용한다. Parent의 제약은 child가 더 넓은 resource를 얻지 못하게 하므로 effective capacity는 여러 ancestor 설정의 결과다.
 
-Hard max만 설정하면 여러 tenant가 동시에 peak에 도달했을 때 host capacity를 초과할 수 있다. Reservation/request는 scheduler placement와 capacity planning에 최소 필요 자원을 전달하고 limit은 폭주 upper bound를 정한다. Overcommit을 허용하면 statistical multiplexing 이득과 simultaneous-peak risk를 교환한다. SLO-critical service는 reservation을 명시하고 burst service는 overcommit policy를 별도로 둔다.
+Service가 자기 cgroup 파일만 읽고 parent limit을 무시하면 실제 usable budget을 과대평가할 수 있다. Container runtime, orchestrator, system manager가 어느 level에 값을 쓰는지 확인한다.
 
-## CHAPTER 21 · container에서 host-visible resource와 container-effective resource가 다를 수 있다
+Hierarchy 설계는 조직 구조와도 연결된다. Host→tenant→service처럼 책임 범위를 나누면 usage accounting과 admission이 명확해진다.
 
-Host에는 64 CPU/256GB가 있어도 container는 cpuset 4 CPU, cpu quota 2 core, memory.max 8GB일 수 있다. Runtime/library가 host total을 읽어 cache size와 worker count를 잡으면 limit을 초과한다. Container-aware API와 cgroup filesystem을 사용한다. Kubernetes/other orchestrator request/limit도 실제 kernel controller로 어떻게 반영되는지 확인한다.
+## CHAPTER 11 · memory.max는 cgroup이 넘어설 수 없는 hard ceiling이다
 
-## CHAPTER 22 · kernel memory와 page cache도 cgroup memory accounting에 포함될 수 있다
+Memory hard limit에 도달하면 reclaim을 시도하고 progress가 없으면 cgroup 내부에서 OOM 처리가 발생할 수 있다. Host 전체에 여유 memory가 있어도 해당 cgroup은 더 사용할 수 없다. 그래서 container 안의 OOM을 host free memory만 보고 설명할 수 없다.
 
-Application heap만 줄였는데 memory.current가 높다면 page cache, socket buffer, kernel object가 accounted될 수 있다. Workload 특성에 따라 file cache가 large memory를 사용하지만 reclaimable할 수 있다. `heap 2GB인데 container 4GB OOM`을 GC tuning만으로 해결하지 않는다. Memory stat breakdown과 fd/socket/page-cache를 조사한다.
+Limit은 workload의 peak live set과 kernel/socket overhead까지 고려해야 한다. 평균 RSS만 기준으로 잡으면 burst에서 반복 OOM이 발생한다.
 
-## CHAPTER 23 · socket buffer와 connection count도 memory budget을 소비한다
+OOM event와 limit hit를 metric으로 수집하고 restart loop를 감시한다. Cache warmup이 매 restart마다 같은 peak를 만들어 영구 장애로 이어질 수 있다.
 
-각 TCP/socket는 kernel send/receive buffer와 protocol state를 갖는다. Connection 수가 수십만이면 heap보다 kernel network memory가 커질 수 있다. Backpressure 없이 receive buffer가 쌓이면 cgroup memory pressure에도 영향을 준다. Network Track에서 protocol을 배우더라도 system resource 관점에서는 connection=fd+kernel memory+timer state라는 budget을 계산해야 한다.
+## CHAPTER 12 · memory.high는 hard kill 전에 pressure와 throttling을 주는 control point다
 
-## CHAPTER 24 · timer/watch registration도 kernel object와 queue entry를 소비한다
+Memory high boundary는 넘어갈 수 있지만 reclaim과 allocation slowdown을 유발해 cgroup이 스스로 사용량을 낮추도록 pressure를 건다. Hard max보다 먼저 반응하므로 graceful degradation과 load shedding의 신호로 활용할 수 있다.
 
-수백만 timer, epoll watch, inotify watch를 만들면 user object뿐 아니라 kernel data structure가 증가한다. Limit이 sysctl/namespace 단위일 수 있고 error가 memory 부족처럼 나타나지 않을 수 있다. Long-lived watch를 unregister하지 않는 leak은 fd count가 일정해도 발생할 수 있다. Resource inventory에 invisible registration count를 포함한다.
+하지만 high를 너무 낮게 잡으면 정상 workload가 계속 direct reclaim에 들어가 latency가 악화된다. 너무 높으면 OOM 직전까지 아무 신호가 없다. Working set과 reclaimability를 측정해 설정한다.
 
-## CHAPTER 25 · per-thread allocator/cache가 resource accounting을 분산시킨다
+Memory usage만 보지 말고 PSI와 reclaim stall을 함께 본다. 같은 90% usage라도 cache가 쉽게 회수되는 경우와 anonymous working set이 꽉 찬 경우의 위험이 다르다.
 
-Global free memory가 있어도 thread-local allocator cache가 idle thread에 memory를 보유해 RSS가 높게 유지될 수 있다. Cgroup max에서는 이 retained cache도 capacity를 소비한다. Thread count 감소, cache scavenging, arena tuning을 heap object leak과 구분한다. P17 allocator와 P47 TLS를 resource budget 관점에서 다시 연결한다.
+## CHAPTER 13 · cgroup OOM은 host OOM과 다른 failure scope를 만든다
 
-## CHAPTER 26 · resource leak은 slope로 보는 것이 단일 snapshot보다 강하다
+Container가 memory.max를 넘으면 해당 cgroup 안의 task가 OOM victim이 될 수 있다. 다른 tenant는 정상일 수 있어 isolation에는 도움이 되지만, service 내부에서는 일부 worker만 죽어 partial failure가 될 수 있다.
 
-Fd 5,000개가 많아 보여도 stable pool일 수 있고 100개가 매 request 1개씩 증가하면 leak이다. Load 단계별로 request count 대비 resource slope를 측정하고 idle drain 후 baseline으로 돌아오는지 본다. Heap, fd, threads, timers, native memory를 같은 soak test에서 수집한다. Leak detector는 warmup cache growth를 stable plateau와 구분한다.
+Supervisor가 child process만 재시작할지 전체 unit을 재시작할지 정책을 정한다. Shared memory와 lock owner가 죽었을 때 consistency도 고려한다.
 
-## CHAPTER 27 · admission control은 limit hit 전에 new work를 거절하는 정책이다
+OOM score와 victim selection에 의존해 중요한 process가 항상 살아남을 것이라 가정하지 않는다. Essential component는 별도 cgroup으로 분리하거나 resource reservation을 둘 수 있다.
 
-Memory/connection/thread pool이 hard ceiling에 닿은 뒤 실패하면 이미 in-flight work가 함께 위험해진다. Queue length, active connection, memory headroom을 기준으로 새 request를 429/busy/retry-later류로 거절하면 기존 request의 성공률을 지킬 수 있다. Admission threshold는 capacity test와 SLO에서 정하고 hysteresis로 oscillation을 줄인다.
+## CHAPTER 14 · cpu.max는 일정 기간 동안 사용할 수 있는 CPU time을 quota로 제한한다
 
-## CHAPTER 28 · graceful degradation은 scarce resource에서 기능 priority를 명시한다
+Cgroup CPU quota는 여러 CPU에 동시에 실행될 수 있어도 period당 총 CPU time이 quota에 도달하면 throttling한다. 네 개 CPU가 보이는 container가 실제로는 한 CPU 분량만 사용할 수도 있다. Thread pool을 logical CPU count만으로 만들면 과도한 runnable task가 생긴다.
 
-Memory pressure에서 thumbnail/cache를 버리고 core transaction을 유지하거나 CPU overload에서 optional analytics를 중단하는 식으로 기능 tier를 정할 수 있다. Degradation path 자체가 allocation/logging을 많이 하면 위기에서 실패한다. Fault injection P49로 hard limit 직전 behavior를 검증한다. `일단 모든 요청 받기`보다 business priority를 resource policy에 반영한다.
+Throttling은 application 내부에서는 scheduler stall처럼 보인다. CPU utilization이 quota 대비 100%인데 host는 idle할 수도 있다.
 
-## CHAPTER 29 · resource alert는 limit 값이 아니라 time-to-exhaust와 stall을 본다
+Metrics에 throttled periods와 throttled time을 포함한다. Latency spike와 quota event가 맞물리면 code optimization보다 resource allocation이 해결책일 수 있다.
 
-Memory 80%가 stable하면 안전할 수 있고 fd가 분당 100개씩 증가하면 50%에서도 incident가 예측된다. Current usage, configured limit, derivative/slope, pressure stall, rejection/throttle event를 조합한다. Alert가 너무 늦어 hard kill 후 울리지 않게 headroom burn rate를 계산한다. Autoscaling이 해결 가능한 resource와 node-local hard limit을 구분한다.
+## CHAPTER 15 · cpu.weight는 hard quota가 아니라 contention 시 상대적 share를 조절한다
 
-## CHAPTER 30 · resource contract는 단위·accounting scope·enforcement 결과를 명시한다
+CPU weight는 host에 여유가 있을 때 사용을 제한하지 않고, 여러 cgroup이 경쟁할 때 scheduler가 상대적 비중을 나누는 데 사용된다. 따라서 “weight 50이면 CPU 50%”처럼 절대 quota로 해석하면 안 된다.
 
-각 자원마다 무엇을 세는지(RSS, tasks, fds, IOPS), 어느 scope(process/cgroup/host)인지, soft/high/max에서 어떤 behavior(throttle, error, kill)가 발생하는지 기록한다. Capacity test는 limit에 접근하며 latency와 pressure를 측정하고 P49 fault injection으로 실제 enforcement path를 실행한다. Dashboard와 application error는 같은 resource identity를 공유한다. `자원 부족`이라는 하나의 상태 대신 exhaustion domain별 recovery를 설계한다.
+Burst가 드문 background job에는 quota보다 weight가 throughput을 덜 제한하면서 foreground를 보호할 수 있다. 반대로 strict tenant billing에는 quota가 필요할 수 있다.
+
+실험은 idle host와 saturated host 두 조건에서 한다. Weight 효과는 경쟁이 있을 때 나타나므로 단독 benchmark만 보면 차이가 없을 수 있다.
+
+## CHAPTER 16 · pids.max는 fork/thread 폭발의 blast radius를 cgroup 안에 가둔다
+
+PID controller는 cgroup 안의 task 수를 제한해 fork bomb이나 runaway thread creation이 host 전체 task table을 소모하지 않게 한다. Limit에 도달하면 새 task 생성이 실패하므로 application은 이 경로를 처리해야 한다.
+
+Service가 worker를 동적으로 늘리는 구조라면 peak task 수에 helper process와 runtime thread까지 포함한다. 예상 worker 수와 pids.max를 같은 숫자로 두면 headroom이 없다.
+
+Limit hit metric과 task count slope를 관찰한다. Thread leak을 limit 상향으로 숨기지 않는다.
+
+## CHAPTER 17 · I/O controller는 storage bandwidth와 latency contention을 조절한다
+
+여러 service가 같은 block device를 공유하면 한 tenant의 sequential write가 다른 tenant의 latency를 악화시킬 수 있다. Cgroup I/O controller는 weight나 rate limit을 통해 device별 resource share를 조정할 수 있다.
+
+하지만 filesystem cache 때문에 userspace write 순간과 실제 block I/O 시점이 다를 수 있다. Buffered I/O workload는 limit 효과가 writeback 시점에 나타날 수 있다.
+
+Device별 metric과 cgroup별 bytes/latency를 함께 본다. Logical file throughput만으로는 shared storage contention을 정확히 설명하기 어렵다.
+
+## CHAPTER 18 · cpuset은 CPU와 memory node의 사용 가능한 위치를 제한한다
+
+Cpuset은 task가 실행 가능한 CPU와 memory allocation node를 지정해 isolation과 NUMA locality를 만든다. CPU quota와 달리 “어디에서” 실행할지 통제한다. 잘못된 cpuset은 충분한 quota가 있어도 parallelism을 막을 수 있다.
+
+Parent/child hierarchy의 effective mask가 intersection으로 줄어드는지 확인한다. 설정 파일에 CPU 0-7이 적혀 있어도 ancestor가 0-3만 허용하면 실제 usable set은 더 작다.
+
+Topology change와 hotplug 후 effective cpuset을 다시 확인한다. Offline CPU를 포함한 stale mask는 예상과 다른 scheduler behavior를 만들 수 있다.
+
+## CHAPTER 19 · PSI는 resource가 부족해 task가 실제로 멈춘 시간을 pressure로 표현한다
+
+Pressure Stall Information은 CPU, memory, I/O 때문에 runnable 또는 작업 가능한 task가 얼마나 stall됐는지를 보여준다. 단순 usage percentage보다 사용자 영향에 가까운 신호가 될 수 있다. Memory 95%라도 reclaim stall이 없으면 안정적일 수 있고, 70%에서도 thrashing이 심하면 PSI가 높을 수 있다.
+
+PSI의 `some`과 `full` 의미를 구분해 읽는다. 일부 task만 막힌 상태와 모든 non-idle task가 동시에 progress하지 못한 상태는 severity가 다르다.
+
+Admission control은 PSI의 짧은 spike에 과민 반응하지 않도록 window와 hysteresis를 둔다. Usage와 pressure를 함께 봐야 한다.
+
+## CHAPTER 20 · quota와 reservation은 최대 사용량과 최소 보장을 각각 표현한다
+
+Quota만 있으면 tenant가 너무 많이 쓰는 것을 막을 수 있지만, host가 과도하게 overcommit되면 모든 tenant가 동시에 필요한 최소 resource를 받지 못할 수 있다. Reservation은 중요 workload에 최소 capacity를 확보하는 다른 방향의 control이다.
+
+Memory와 CPU는 reservation semantics가 다를 수 있다. Scheduler weight, guaranteed QoS, memory.low 같은 mechanism을 platform에 맞게 이해한다.
+
+Capacity planning에서는 hard max 합계뿐 아니라 guaranteed reservation 합계가 physical capacity를 넘지 않는지 확인한다. Overcommit 비율은 의도적으로 결정한다.
+
+## CHAPTER 21 · container 내부에서 보이는 resource는 host 전체가 아니라 effective limit이어야 한다
+
+Runtime API가 host CPU count와 memory total을 그대로 반환하면 containerized application이 너무 큰 thread pool과 cache를 만들 수 있다. Modern runtime이 cgroup 정보를 읽어 usable capacity를 계산하는 이유다.
+
+하지만 nested container나 오래된 runtime에서는 인식이 불완전할 수 있다. Startup에서 runtime-reported 값과 cgroup effective 값이 일치하는지 확인한다.
+
+Auto-sizing formula에는 hard limit만 쓰지 말고 다른 process의 reserve와 headroom을 제외한다. “메모리의 80% cache” 같은 설정이 container 전체를 압박하지 않게 한다.
+
+## CHAPTER 22 · kernel memory도 container workload의 실제 memory cost에 포함된다
+
+Page table, socket buffer, slab object, filesystem metadata 같은 kernel memory는 application heap 밖에서 증가한다. High-connection service는 user heap이 안정적이어도 socket과 network metadata로 memory pressure를 만들 수 있다.
+
+Memory accounting이 어떤 kernel component를 cgroup에 포함하는지는 kernel version과 controller semantics를 확인한다. RSS 하나로 container memory를 설명하지 않는다.
+
+Incident에서 anonymous/file/slab/socket 분류를 본다. Heap dump가 작다는 이유로 memory leak이 없다고 결론내리지 않는다.
+
+## CHAPTER 23 · socket memory는 connection 수와 traffic burst에 따라 크게 증폭될 수 있다
+
+각 socket에는 send/receive buffer와 protocol state가 필요하다. Auto-tuning이 buffer를 키우면 고대역폭 connection에서는 효율적이지만 수만 connection이 동시에 큰 buffer를 가지면 memory가 크게 늘 수 있다.
+
+Application-level queue가 socket buffer 뒤에 또 있으면 같은 data를 여러 번 buffer할 수 있다. Backpressure를 위 계층으로 전달하지 않으면 memory budget이 쉽게 무너진다.
+
+Per-socket 평균과 tail buffer 크기를 connection 수와 곱해 capacity를 추정한다. Idle connection과 active connection을 분리한다.
+
+## CHAPTER 24 · 등록된 kernel resource는 fd가 없어도 별도 lifetime과 limit을 가질 수 있다
+
+Pinned buffer, io_uring registration, shared memory, device context처럼 kernel에 등록한 resource는 application object와 다른 lifetime을 가질 수 있다. File descriptor를 닫았다고 모든 관련 resource가 즉시 해제된다고 가정하면 안 된다.
+
+Registration API는 실패 시 partial success를 남길 수 있는지, unregister가 blocking인지 확인한다. Limit hit가 발생하면 어떤 errno와 metric으로 보이는지도 문서화한다.
+
+Long-running service에서는 registered count와 bytes를 별도 계측한다. Heap leak detector로는 보이지 않는 resource leak을 찾는 데 필요하다.
+
+## CHAPTER 25 · per-thread cache는 contention을 줄이는 대신 memory budget을 thread 수에 곱한다
+
+Allocator와 library가 thread-local cache를 쓰면 global lock을 줄여 성능이 좋아질 수 있다. 하지만 worker가 많을수록 idle cache가 누적되고 cgroup memory limit에 더 빨리 접근한다. Burst 후 cache가 오래 남으면 RSS가 내려오지 않을 수 있다.
+
+Cache 크기와 thread pool 크기를 함께 튜닝한다. 둘을 독립 설정으로 보면 `cache_per_thread × max_threads` worst case를 놓친다.
+
+Metrics에 active thread와 cached bytes를 같이 두면 leak과 정상 cache retention을 구분할 수 있다. Memory pressure 시 cache trim hook이 실제 동작하는지도 테스트한다.
+
+## CHAPTER 26 · leak은 절대 사용량보다 시간에 따른 증가 slope로 더 잘 보일 수 있다
+
+Traffic과 cache warmup 때문에 memory가 올라가는 것은 정상일 수 있다. 문제는 workload가 안정된 뒤에도 fd, thread, heap, registered buffer가 계속 증가하는 경우다. 그래서 leak detection은 usage level과 함께 `resource/time` slope를 본다.
+
+Long soak test에서 request count로 normalize하면 workload 변화의 영향을 줄일 수 있다. 예를 들어 `fds per million requests`가 계속 증가하는지 본다.
+
+Restart가 leak을 숨길 수 있으므로 uptime이 긴 canary의 trend를 보존한다. Hard limit 직전 alert만으로는 원인을 분석할 시간이 부족하다.
+
+## CHAPTER 27 · admission control은 resource가 고갈되기 전에 새 work를 거절하는 정책이다
+
+Queue가 이미 memory와 CPU를 모두 소모한 뒤 OOM으로 죽는 것보다, 안전한 threshold에서 신규 request를 빠르게 reject하는 편이 전체 system availability를 지킬 수 있다. Admission 신호는 queue depth, memory pressure, CPU saturation, downstream health를 조합할 수 있다.
+
+단순 usage 90% 같은 한 조건은 burst에 과민할 수 있다. Hysteresis와 최소 지속 시간을 두어 flap을 줄인다. Priority가 있다면 중요 request에 reserve capacity를 남긴다.
+
+Reject response는 caller가 retry storm을 만들지 않도록 backoff 정보를 줄 수 있다. Admission은 local resource control과 distributed retry policy가 만나는 지점이다.
+
+## CHAPTER 28 · graceful degradation은 hard failure 전에 기능 비용을 낮춘다
+
+Resource pressure가 높을 때 optional cache, expensive analysis, large image quality를 낮추면 핵심 기능을 유지할 수 있다. 하지만 degradation path가 평소 실행되지 않으면 오히려 장애 시 bug를 드러낼 수 있다.
+
+각 기능의 resource cost와 사용자 영향을 분류해 단계별 degradation ladder를 만든다. Memory pressure인데 CPU-heavy 기능만 끄는 등 신호와 조치가 어긋나지 않게 한다.
+
+Fault test로 단계 전환과 복귀를 검증한다. Pressure가 사라졌을 때 feature가 정상 상태로 돌아오는지, oscillation이 없는지도 본다.
+
+## CHAPTER 29 · headroom alert는 limit hit보다 앞선 위험 구간을 알려야 한다
+
+Hard limit 도달 이벤트는 이미 incident일 수 있다. 예상 growth rate와 peak burst를 고려해 충분히 앞에서 경고해야 한다. `remaining = limit - usage`를 절대값과 시간-to-exhaustion 관점으로 본다.
+
+Memory와 fd처럼 leak 가능 resource는 slope 기반 ETA가 유용하고, CPU처럼 순간 변동이 큰 resource는 saturation window와 queue delay가 더 적합하다.
+
+Alert threshold는 service마다 다르게 정한다. 동일 80%라도 reclaimable cache가 많은 system과 PID limit이 80%인 system의 위험이 다르다.
+
+## CHAPTER 30 · resource control의 최종 contract는 limit·pressure·admission이 연결된 폐루프다
+
+좋은 resource policy는 hard ceiling만 두지 않는다. 실제 usage를 정확히 accounting하고, pressure가 사용자 latency에 영향을 주기 시작하는 지점을 감지하며, limit 전에 admission 또는 degradation을 수행한다. 이후 pressure가 낮아지면 안전하게 정상 상태로 복귀한다.
+
+Rlimit, cgroup, kernel table, application queue는 서로 다른 계층이므로 effective limit을 계산해야 한다. 한 숫자만 올려 문제를 해결하려 하면 다음 병목으로 이동한다.
+
+운영에서는 usage, pressure, rejection, OOM/throttle event를 같은 timeline에 둔다. 이 evidence가 있어야 resource exhaustion을 단순 capacity 부족과 leak, 잘못된 autosizing, noisy neighbor로 구분할 수 있다.

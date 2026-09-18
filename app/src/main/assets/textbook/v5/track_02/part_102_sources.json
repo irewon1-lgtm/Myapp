@@ -1,0 +1,13 @@
+{
+  "partId":"T02-P102",
+  "sections":[
+    {"sectionId":"T02-P102-S01-delivery-semantics","sourceIds":["DDIA","SRE"]},
+    {"sectionId":"T02-P102-S02-at-most-once","sourceIds":["DDIA","SRE"]},
+    {"sectionId":"T02-P102-S03-at-least-once","sourceIds":["DDIA","SRE"]},
+    {"sectionId":"T02-P102-S04-exactly-once-boundary","sourceIds":["DDIA","SRE-WORKBOOK"]},
+    {"sectionId":"T02-P102-S05-dedup-store","sourceIds":["DDIA","DBSC7"]},
+    {"sectionId":"T02-P102-S06-inbox-outbox","sourceIds":["DDIA","SRE"]},
+    {"sectionId":"T02-P102-S07-retention-ordering","sourceIds":["DDIA","SRE"]},
+    {"sectionId":"T02-P102-S08-delivery-contract","sourceIds":["DDIA","SRE"]}
+  ]
+}

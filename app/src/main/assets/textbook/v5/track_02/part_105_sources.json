@@ -1,0 +1,13 @@
+{
+  "partId":"T02-P105",
+  "sections":[
+    {"sectionId":"T02-P105-S01-untrusted-ingest-gate","sourceIds":["NIST-SSDF","SRE"]},
+    {"sectionId":"T02-P105-S02-parse-schema-stage","sourceIds":["PYTHON-REF","DDD"]},
+    {"sectionId":"T02-P105-S03-content-id-dedup","sourceIds":["DDIA","NIST-SSDF"]},
+    {"sectionId":"T02-P105-S04-bounded-concurrency","sourceIds":["SRE","SRE-WORKBOOK"]},
+    {"sectionId":"T02-P105-S05-deadline-retry-breaker","sourceIds":["SRE","SRE-WORKBOOK"]},
+    {"sectionId":"T02-P105-S06-checkpoint-atomic-publish","sourceIds":["DDIA","TLPI"]},
+    {"sectionId":"T02-P105-S07-shutdown-recovery-drill","sourceIds":["SRE","SRE-WORKBOOK"]},
+    {"sectionId":"T02-P105-S08-reliable-ingestion-contract","sourceIds":["SRE","DDIA","NIST-SSDF"]}
+  ]
+}

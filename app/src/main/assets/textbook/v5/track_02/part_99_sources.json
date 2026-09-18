@@ -1,0 +1,13 @@
+{
+  "partId":"T02-P99",
+  "sections":[
+    {"sectionId":"T02-P99-S01-rate-vs-concurrency","sourceIds":["SRE","SRE-WORKBOOK"]},
+    {"sectionId":"T02-P99-S02-token-bucket","sourceIds":["SRE","SICP"]},
+    {"sectionId":"T02-P99-S03-burst-capacity","sourceIds":["SRE","SRE-WORKBOOK"]},
+    {"sectionId":"T02-P99-S04-retry-after","sourceIds":["RFC9110","SRE"]},
+    {"sectionId":"T02-P99-S05-client-limiter","sourceIds":["SRE","SRE-WORKBOOK"]},
+    {"sectionId":"T02-P99-S06-distributed-limit","sourceIds":["DDIA","SRE"]},
+    {"sectionId":"T02-P99-S07-queue-or-reject","sourceIds":["SRE","SRE-WORKBOOK"]},
+    {"sectionId":"T02-P99-S08-rate-contract","sourceIds":["SRE","DDIA"]}
+  ]
+}

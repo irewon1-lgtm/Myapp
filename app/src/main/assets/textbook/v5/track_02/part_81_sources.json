@@ -1,0 +1,13 @@
+{
+  "partId":"T02-P81",
+  "sections":[
+    {"sectionId":"T02-P81-S01-slot-storage","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P81-S02-dict-absence","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P81-S03-inheritance-slots","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P81-S04-weakref-slot","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P81-S05-descriptor-layout","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P81-S06-memory-tradeoff","sourceIds":["CSAPP3","SRE"]},
+    {"sectionId":"T02-P81-S07-dynamic-attribute-boundary","sourceIds":["PYTHON-REF","REFACTORING2"]},
+    {"sectionId":"T02-P81-S08-slots-contract","sourceIds":["REFACTORING2","PYTHON-REF"]}
+  ]
+}

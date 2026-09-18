@@ -1,0 +1,13 @@
+{
+  "partId":"T02-P89",
+  "sections":[
+    {"sectionId":"T02-P89-S01-logrecord","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P89-S02-logger-hierarchy","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P89-S03-handler-format","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P89-S04-filter-context","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P89-S05-propagation-duplicate","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P89-S06-structured-fields","sourceIds":["SRE","DDIA"]},
+    {"sectionId":"T02-P89-S07-sensitive-redaction","sourceIds":["NIST-SSDF","SRE"]},
+    {"sectionId":"T02-P89-S08-logging-contract","sourceIds":["SRE","NIST-SSDF"]}
+  ]
+}

@@ -1,0 +1,272 @@
+# PART 88 · Readiness와 selector loop — nonblocking I/O를 event source로 바꾸기
+
+Blocking socket은 한 operation이 끝날 때까지 현재 thread를 멈춘다. Nonblocking mode와 readiness selector를 사용하면 하나의 thread가 여러 file descriptor의 “지금 진행 가능한 상태”를 관찰하고 준비된 대상만 처리할 수 있다. Event loop의 밑바닥을 이해하려면 **readiness notification이 data 자체가 아니라 다시 시도할 기회라는 점**을 명확히 해야 한다.
+
+---
+
+## CHAPTER 01 · blocking과 nonblocking은 같은 I/O operation의 대기 방식을 바꾼다
+
+### 시작 전 용어집
+
+#### 1. lock
+
+- **뜻:** Blocking `recv`는 data가 준비될 때까지 기다릴 수 있다.
+- **왜 중요한가:** Nonblocking socket은 즉시 진행할 수 없으면 caller에게 지금은 불가능하다는 상태를 돌려주고 control을 반환한다.
+- **예시:** Blocking `recv`는 data가 준비될 때까지 기다릴 수 있다.
+
+#### 2. operation
+
+- **뜻:** Nonblocking은 operation을 더 빠르게 만드는 기술이 아니라 **대기를 중앙 scheduler로 이동시키는 구조**다.
+- **왜 중요한가:** 이 모델에서는 application이 busy loop로 계속 재시도하면 CPU를 낭비한다.
+- **예시:** Nonblocking은 operation을 더 빠르게 만드는 기술이 아니라 **대기를 …
+
+#### 3. socket
+
+- **뜻:** Selector는 여러 descriptor 중 어떤 것이 준비되었는지 효율적으로 기다리는 계층을 제공한다.
+- **예시:** Selector는 여러 descriptor 중 어떤 것이 준비되었는지 효율적으로 …
+
+---
+
+**검증 시나리오 P88-C1 — CHAPTER 01 · blocking과 nonblocking은 같은 I/O operation의 대기 방식을 바꾼다**
+`CHAPTER 01 · blocking과 nonblocking은 같은 I/O operation의 대기 방식을 바꾼다` 검증은 가장 작은 객체 상태로 시작하는 데서 시작한다. P88-C1에서는 `CHAPTER 01 · blocking과 nonblocking은 같은 I/O operation의 대기 방식을 바꾼다` 실행 직전 상태를 먼저 적고 실행 뒤 값과 비교해 실제 규칙을 확인한다. 두 번째 단계에서는 `CHAPTER 01 · blocking과 nonblocking은 같은 I/O operation의 대기 방식을 바꾼다`에 대해 속성 하나만 바꿔 재실행고 다른 코드는 그대로 두어 원인 후보를 하나로 제한한다. 이때 `CHAPTER 01 · blocking과 nonblocking은 같은 I/O operation의 대기 방식을 바꾼다`의 반환값과 부수효과를 따로 기록하여 우연한 통과를 배제한다. 예상과 다르면 `CHAPTER 01 · blocking과 nonblocking은 같은 I/O operation의 대기 방식을 바꾼다`의 타입, 값, 호출 순서, 예외 경계 가운데 최초로 달라진 항목부터 확인하고 최소 수정 뒤 다시 실행한다. P88-C1의 마무리는 수정 뒤 원래 조건을 다시 회귀 확인하는 것이다. 통과 기준은 `CHAPTER 01 · blocking과 nonblocking은 같은 I/O operation의 대기 방식을 바꾼다`의 정상 사례와 변형 사례가 모두 설명 가능한 결과를 내고 같은 절차를 반복해도 동일한 상태 계약을 유지하는 것이다.
+## CHAPTER 02 · readiness는 read/write가 반드시 끝까지 성공한다는 보장이 아니다
+
+### 시작 전 용어집
+
+#### 1. readiness
+
+- **뜻:** 따라서 selector event를 받으면 가능한 만큼 진행하고, 남은 state를 connection object에 보관한 뒤 다음 readiness를 기다린다.
+- **왜 중요한가:** P87의 partial I/O model이 여기서 그대로 이어진다.
+- **예시:** 따라서 selector event를 받으면 가능한 만큼 진행하고, 남은 …
+
+#### 2. write
+
+- **뜻:** 일부 write 후 다시 would-block 상태가 될 수 있다.
+- **왜 중요한가:** Readable notification은 보통 read를 시도할 이유가 생겼다는 뜻이지 원하는 application frame 전체가 도착했다는 뜻이 아니다.
+- **예시:** 일부 write 후 다시 would-block 상태가 될 수 …
+
+#### 3. frame
+
+- **뜻:** 한 번 읽고도 partial payload일 수 있다.
+- **왜 중요한가:** Writable notification도 application buffer 전체를 무제한 전송할 수 있다는 의미가 아니다.
+- **예시:** 한 번 읽고도 partial payload일 수 있다.
+
+---
+
+**검증 시나리오 P88-C2 — CHAPTER 02 · readiness는 read/write가 반드시 끝까지 성공한다는 보장이 아니다**
+`CHAPTER 02 · readiness는 read/write가 반드시 끝까지 성공한다는 보장이 아니다` 검증은 경계값을 먼저 지정하는 데서 시작한다. P88-C2에서는 `CHAPTER 02 · readiness는 read/write가 반드시 끝까지 성공한다는 보장이 아니다` 실행 직전 상태를 먼저 적고 실행 뒤 값과 비교해 실제 규칙을 확인한다. 두 번째 단계에서는 `CHAPTER 02 · readiness는 read/write가 반드시 끝까지 성공한다는 보장이 아니다`에 대해 정상값과 경계값을 연속 실행고 다른 코드는 그대로 두어 원인 후보를 하나로 제한한다. 이때 `CHAPTER 02 · readiness는 read/write가 반드시 끝까지 성공한다는 보장이 아니다`의 타입·정체성·수명 변화를 분리 기록하여 우연한 통과를 배제한다. 예상과 다르면 `CHAPTER 02 · readiness는 read/write가 반드시 끝까지 성공한다는 보장이 아니다`의 타입, 값, 호출 순서, 예외 경계 가운데 최초로 달라진 항목부터 확인하고 최소 수정 뒤 다시 실행한다. P88-C2의 마무리는 결과를 설명할 수 있을 때 종료하는 것이다. 통과 기준은 `CHAPTER 02 · readiness는 read/write가 반드시 끝까지 성공한다는 보장이 아니다`의 정상 사례와 변형 사례가 모두 설명 가능한 결과를 내고 같은 절차를 반복해도 동일한 상태 계약을 유지하는 것이다.
+## CHAPTER 03 · selector registration은 file descriptor와 관심 event를 event loop에 등록한다
+
+### 시작 전 용어집
+
+#### 1. selector
+
+- **뜻:** 한 connection의 state를 global dict와 selector data에 중복 저장하면 lifecycle mismatch가 생기기 쉽다.
+- **왜 중요한가:** 닫힌 fd 번호가 나중에 다른 socket에 재사용될 수 있으므로 stale registration을 남기지 않는다.
+- **예시:** import selectors / sel = selectors.DefaultSelector()
+
+#### 2. file descriptor
+
+- **뜻:** Registration에는 대상 descriptor, read/write interest, application state를 연결할 수 있다.
+- **왜 중요한가:** Event가 오면 key를 통해 해당 connection의 parser/buffer를 찾는다.
+- **예시:** import selectors / sel = selectors.DefaultSelector()
+
+```python
+import selectors
+
+sel = selectors.DefaultSelector()
+sel.register(sock, selectors.EVENT_READ, data=connection_state)
+```
+
+ 
+
+ Owner와 close path를 하나로 정한다.
+
+Descriptor reuse도 주의한다. 
+
+---
+
+**검증 시나리오 P88-C3 — CHAPTER 03 · selector registration은 file descriptor와 관심 event를 event loop에 등록한다**
+`CHAPTER 03 · selector registration은 file descriptor와 관심 event를 event loop에 등록한다` 검증은 정상 경로를 먼저 재현하는 데서 시작한다. P88-C3에서는 `CHAPTER 03 · selector registration은 file descriptor와 관심 event를 event loop에 등록한다` 실행 직전 상태를 먼저 적고 실행 뒤 값과 비교해 실제 규칙을 확인한다. 두 번째 단계에서는 `CHAPTER 03 · selector registration은 file descriptor와 관심 event를 event loop에 등록한다`에 대해 오류 경로 하나를 의도적으로 만든다고 다른 코드는 그대로 두어 원인 후보를 하나로 제한한다. 이때 `CHAPTER 03 · selector registration은 file descriptor와 관심 event를 event loop에 등록한다`의 예외 종류와 직전 상태를 함께 남긴다하여 우연한 통과를 배제한다. 예상과 다르면 `CHAPTER 03 · selector registration은 file descriptor와 관심 event를 event loop에 등록한다`의 타입, 값, 호출 순서, 예외 경계 가운데 최초로 달라진 항목부터 확인하고 최소 수정 뒤 다시 실행한다. P88-C3의 마무리는 복구 후 같은 오류가 다시 재현되지 않는지 검사하는 것이다. 통과 기준은 `CHAPTER 03 · selector registration은 file descriptor와 관심 event를 event loop에 등록한다`의 정상 사례와 변형 사례가 모두 설명 가능한 결과를 내고 같은 절차를 반복해도 동일한 상태 계약을 유지하는 것이다.
+## CHAPTER 04 · interest set은 현재 필요한 event만 구독하도록 동적으로 바뀔 수 있다
+
+### 시작 전 용어집
+
+#### 1. interest set
+
+- **뜻:** Interest set 자체가 connection state machine의 일부다.
+- **왜 중요한가:** Buffer를 다 비웠는데 write interest를 제거하지 않으면 busy loop와 CPU 사용량 증가가 생길 수 있다.
+- **예시:** outgoing empty -> READ / outgoing queued -> …
+
+#### 2. event
+
+- **뜻:** 항상 write-ready event를 구독하면 대부분의 socket이 계속 writable이라 event loop가 불필요하게 깨어날 수 있다.
+- **왜 중요한가:** Outgoing buffer가 비어 있을 때는 read만 보고, data가 생기면 write interest를 추가하는 방식이 일반적이다.
+- **예시:** outgoing empty -> READ / outgoing queued -> …
+
+#### 3. socket
+
+- **뜻:** Event subscription을 현재 필요한 작업과 동기화한다.
+- **예시:** outgoing empty -> READ / outgoing queued -> …
+
+```text
+outgoing empty  -> READ
+outgoing queued -> READ | WRITE
+flushed         -> READ
+```
+
+ 
+
+
+---
+
+**검증 시나리오 P88-C4 — CHAPTER 04 · interest set은 현재 필요한 event만 구독하도록 동적으로 바뀔 수 있다**
+`CHAPTER 04 · interest set은 현재 필요한 event만 구독하도록 동적으로 바뀔 수 있다` 검증은 호출 순서를 단순화하는 데서 시작한다. P88-C4에서는 `CHAPTER 04 · interest set은 현재 필요한 event만 구독하도록 동적으로 바뀔 수 있다` 실행 직전 상태를 먼저 적고 실행 뒤 값과 비교해 실제 규칙을 확인한다. 두 번째 단계에서는 `CHAPTER 04 · interest set은 현재 필요한 event만 구독하도록 동적으로 바뀔 수 있다`에 대해 순서 하나만 뒤집어 차이를 본다고 다른 코드는 그대로 두어 원인 후보를 하나로 제한한다. 이때 `CHAPTER 04 · interest set은 현재 필요한 event만 구독하도록 동적으로 바뀔 수 있다`의 호출 전후의 상태 전이를 번호로 남긴다하여 우연한 통과를 배제한다. 예상과 다르면 `CHAPTER 04 · interest set은 현재 필요한 event만 구독하도록 동적으로 바뀔 수 있다`의 타입, 값, 호출 순서, 예외 경계 가운데 최초로 달라진 항목부터 확인하고 최소 수정 뒤 다시 실행한다. P88-C4의 마무리는 다른 순서에서도 계약이 유지되는지 확인하는 것이다. 통과 기준은 `CHAPTER 04 · interest set은 현재 필요한 event만 구독하도록 동적으로 바뀔 수 있다`의 정상 사례와 변형 사례가 모두 설명 가능한 결과를 내고 같은 절차를 반복해도 동일한 상태 계약을 유지하는 것이다.
+## CHAPTER 05 · wakeup mechanism은 다른 thread나 signal이 event loop를 깨우게 한다
+
+### 시작 전 용어집
+
+#### 1. wakeup mechanism
+
+- **뜻:** Self-pipe, socketpair 같은 wakeup mechanism을 사용해 selector가 관찰하는 fd에 event를 만들 수 있다.
+- **왜 중요한가:** Wakeup byte 자체는 application data가 아니라 “queue를 다시 확인하라”는 scheduler signal이다.
+- **예시:** Self-pipe, socketpair 같은 wakeup mechanism을 사용해 selector가 관찰하는 …
+
+#### 2. thread
+
+- **뜻:** Selector가 긴 timeout으로 잠들어 있을 때 다른 thread가 새 작업을 enqueue하면 loop를 즉시 깨울 방법이 필요할 수 있다.
+- **왜 중요한가:** 여러 signal을 하나로 coalesce할 수 있는지, wakeup buffer가 가득 찰 가능성이 있는지 고려한다.
+- **예시:** Selector가 긴 timeout으로 잠들어 있을 때 다른 thread가 …
+
+#### 3. signal
+
+- **뜻:** 이 구조를 이해하면 high-level event loop의 `call_soon_threadsafe` 같은 API가 왜 별도 wakeup path를 필요로 하는지 설명할 수 있다.
+- **예시:** 이 구조를 이해하면 high-level event loop의 `call_soon_threadsafe` 같은 …
+
+---
+
+## CHAPTER 06 · 한 connection을 너무 오래 처리하면 ready한 다른 connection이 starvation될 수 있다
+
+### 시작 전 용어집
+
+#### 1. connection
+
+- **뜻:** Selector가 100개 ready event를 반환했는데 첫 connection의 parser가 CPU를 오래 쓰면 나머지 99개는 기다린다.
+- **왜 중요한가:** Single-thread event loop에서는 handler가 짧게 끝나야 fairness가 유지된다.
+- **예시:** Selector가 100개 ready event를 반환했는데 첫 connection의 parser가 …
+
+#### 2. ready
+
+- **뜻:** 한 event에서 처리할 byte/message budget을 제한하거나 CPU-heavy 작업을 executor로 넘길 수 있다.
+- **왜 중요한가:** Throughput만 보지 말고 per-connection tail latency를 측정한다.
+- **예시:** 한 event에서 처리할 byte/message budget을 제한하거나 CPU-heavy 작업을 …
+
+#### 3. starvation
+
+- **뜻:** 악의적인 peer가 매우 많은 parse work를 유발할 수 있으므로 request/frame당 CPU budget도 resource safety의 일부다.
+- **예시:** 악의적인 peer가 매우 많은 parse work를 유발할 수 …
+
+---
+
+## CHAPTER 07 · close와 unregister 순서가 어긋나면 stale event와 descriptor reuse 문제가 생긴다
+
+### 시작 전 용어집
+
+#### 1. close
+
+- **뜻:** Connection을 닫을 때 selector registration을 제거하고 socket을 close하며 application state를 폐기하는 순서를 일관되게 관리한다.
+- **왜 중요한가:** Event batch를 이미 가져온 뒤 handler 실행 전에 다른 path가 socket을 닫는 race도 고려한다.
+- **예시:** Connection을 닫을 때 selector registration을 제거하고 socket을 close하며 …
+
+#### 2. unregister
+
+- **뜻:** Exception path에서도 unregister를 빼먹지 않도록 connection close를 한 함수에 모은다.
+- **왜 중요한가:** Event handler는 connection state가 이미 closing/closed인지 확인할 수 있어야 한다.
+- **예시:** Exception path에서도 unregister를 빼먹지 않도록 connection close를 한 …
+
+#### 3. stale event
+
+- **뜻:** 같은 connection에 두 번 close가 들어와도 안전한 idempotent cleanup이 유용하다.
+- **예시:** 같은 connection에 두 번 close가 들어와도 안전한 idempotent …
+
+---
+
+## CHAPTER 08 · readiness contract는 I/O 진행 가능성과 application completion을 구분한다
+
+### 시작 전 용어집
+
+#### 1. readiness
+
+- **뜻:** Readiness를 받은 뒤 얼마나 처리할지, would-block에서 어떻게 state를 보존할지, close를 누가 책임질지 정해야 한다.
+- **왜 중요한가:** 테스트에서는 partial read/write, 항상 writable idle socket, peer EOF, handler exception, close 후 stale event, 많은 ready connection에서 fairness를 확인한다.
+- **예시:** Readiness를 받은 뒤 얼마나 처리할지, would-block에서 어떻게 state를 …
+
+#### 2. application completion
+
+- **뜻:** Selector 기반 loop는 준비된 fd를 알려줄 뿐 message framing, timeout, backpressure, connection state를 대신 설계하지 않는다.
+- **왜 중요한가:** 이 PART의 핵심은 **readiness를 data arrival 완료 신호로 오해하지 않고, nonblocking operation을 다시 시도할 수 있는 scheduler event로 해석해 connection state machine과 결합하는 것**이다.
+- **예시:** Selector 기반 loop는 준비된 fd를 알려줄 뿐 message …
+
+---
+
+## 실전 학습 루프 · readiness selector loop
+
+### 1. 쉬운 예
+
+수천 socket을 다룰 때 각 socket마다 blocking read를 하면 thread가 과도하게 늘 수 있다. selector는 어떤 file descriptor가 읽기·쓰기 가능한 상태인지 알려 주고 application이 준비된 대상만 처리하게 한다.
+
+### 2. 한 줄 해석
+
+readiness는 “작업이 끝났다”가 아니라 “지금 시도하면 진행할 가능성이 있다”는 신호다.
+
+### 3. 직접 실행
+
+실행 전에 결과를 먼저 예상하고, 실행 후에는 **어느 경계에서 상태나 의미가 바뀌었는지** 표시한다.
+
+```python
+import selectors
+
+sel = selectors.DefaultSelector()
+# sock.setblocking(False)
+# sel.register(sock, selectors.EVENT_READ)
+for key, mask in sel.select(timeout=0):
+    print(key.fd, mask)
+```
+
+### 4. 수정 실습
+
+1. readiness 이벤트를 받은 뒤 read가 일부 데이터만 반환하는 경우를 처리한다.
+2. 한 connection이 계속 ready일 때 다른 connection이 굶지 않도록 처리 budget을 둔다.
+
+수정 전후를 비교할 때는 정상 경로만 보지 않고 실패 입력과 자원 한도도 함께 확인한다.
+
+### 5. 확인 문제
+
+read-ready 이벤트가 오면 전체 message가 이미 메모리에 있다는 뜻일까?
+
+### 6. 정답과 오답 설명
+
+**정답:** 아니다. 읽을 데이터가 있다는 뜻이지 application frame 전체가 도착했다는 뜻은 아니다.
+
+**자주 나오는 오답:** readiness와 completion을 같은 의미로 보는 것이 대표적인 오답이다.
+
+마지막에는 이 주제를 **입력/신뢰 수준 → 변환 또는 대기 → 검증 → 결과/실패** 순서로 다시 설명한다. 이 순서가 보이면 실제 장애에서도 원인 경계를 빠르게 좁힐 수 있다.
+
+## 현장 디버깅 체크 · readiness selector loop
+
+### 증상에서 시작한다
+
+CPU 사용률은 높지 않은데 일부 connection만 계속 처리되고 다른 connection의 latency가 치솟는다. 재현 시점의 입력과 작업 식별자를 먼저 고정하고, 결과를 보고 추측하기보다 상태 전이를 시간순으로 적는다.
+
+### 먼저 볼 증거
+
+ready fd 수, loop 한 번당 처리 개수, fd별 bytes processed, callback 시간과 queue depth를 측정한다. 한 숫자만 보지 말고 **대기/실행/완료/실패**를 분리하면 병목과 논리 오류를 구분하기 쉽다.
+
+### 일부러 실패시켜 보기
+
+한 socket을 항상 readable하게 만들어 다른 fd가 starvation되는지 보고 per-iteration budget을 적용한다. 정상 경로는 원래 잘 되는 경우가 많다. 강제 실패에서 cleanup·retry·재시작 의미가 유지되는지가 운영 품질을 결정한다.
+
+### 통과 기준
+
+ready한 하나의 fd가 event loop를 독점하지 않고 모든 connection에 bounded한 처리 기회가 돌아가야 한다. 이 기준을 regression test와 운영 metric 두 곳에 동시에 연결하면 배포 뒤 같은 문제가 돌아왔을 때 빠르게 탐지할 수 있다.
+

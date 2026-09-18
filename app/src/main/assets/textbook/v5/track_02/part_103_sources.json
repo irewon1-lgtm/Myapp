@@ -1,0 +1,13 @@
+{
+  "partId":"T02-P103",
+  "sections":[
+    {"sectionId":"T02-P103-S01-batch-unit","sourceIds":["DDIA","SRE"]},
+    {"sectionId":"T02-P103-S02-validate-before-effect","sourceIds":["NIST-SSDF","DDD"]},
+    {"sectionId":"T02-P103-S03-transactional-batch","sourceIds":["DDIA","DBSC7"]},
+    {"sectionId":"T02-P103-S04-chunk-commit","sourceIds":["DDIA","SRE"]},
+    {"sectionId":"T02-P103-S05-partial-result","sourceIds":["DDD","SRE"]},
+    {"sectionId":"T02-P103-S06-poison-record","sourceIds":["SRE","SRE-WORKBOOK"]},
+    {"sectionId":"T02-P103-S07-replay-boundary","sourceIds":["DDIA","SRE"]},
+    {"sectionId":"T02-P103-S08-batch-contract","sourceIds":["DDIA","SRE"]}
+  ]
+}

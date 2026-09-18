@@ -1,0 +1,13 @@
+{
+  "partId":"T02-P91",
+  "sections":[
+    {"sectionId":"T02-P91-S01-write-replace-model","sourceIds":["PYTHON-REF","TLPI"]},
+    {"sectionId":"T02-P91-S02-temp-same-filesystem","sourceIds":["PYTHON-REF","TLPI"]},
+    {"sectionId":"T02-P91-S03-flush-fsync","sourceIds":["TLPI","CSAPP3"]},
+    {"sectionId":"T02-P91-S04-rename-atomicity","sourceIds":["TLPI","SRE"]},
+    {"sectionId":"T02-P91-S05-directory-durability","sourceIds":["TLPI","CSAPP3"]},
+    {"sectionId":"T02-P91-S06-concurrent-writers","sourceIds":["SRE","DDIA"]},
+    {"sectionId":"T02-P91-S07-crash-recovery","sourceIds":["SRE","DDIA"]},
+    {"sectionId":"T02-P91-S08-atomic-file-contract","sourceIds":["SRE","TLPI"]}
+  ]
+}

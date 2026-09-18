@@ -1,0 +1,13 @@
+{
+  "partId":"T02-P82",
+  "sections":[
+    {"sectionId":"T02-P82-S01-abc-interface","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P82-S02-abstractmethod","sourceIds":["PYTHON-REF","GOF"]},
+    {"sectionId":"T02-P82-S03-virtual-subclass","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P82-S04-register-boundary","sourceIds":["PYTHON-REF","REFACTORING2"]},
+    {"sectionId":"T02-P82-S05-collections-abc","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P82-S06-subclasshook","sourceIds":["PYTHON-REF","GOF"]},
+    {"sectionId":"T02-P82-S07-nominal-structural","sourceIds":["SICP","REFACTORING2"]},
+    {"sectionId":"T02-P82-S08-abc-contract","sourceIds":["REFACTORING2","PYTHON-REF"]}
+  ]
+}

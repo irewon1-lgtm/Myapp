@@ -1,0 +1,13 @@
+{
+  "partId":"T02-P84",
+  "sections":[
+    {"sectionId":"T02-P84-S01-future-state","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P84-S02-thread-executor","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P84-S03-process-executor","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P84-S04-run-in-executor","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P84-S05-context-propagation","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P84-S06-cancellation-limit","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P84-S07-shutdown-lifecycle","sourceIds":["SRE","PYTHON-REF"]},
+    {"sectionId":"T02-P84-S08-executor-contract","sourceIds":["SRE","CSAPP3"]}
+  ]
+}
