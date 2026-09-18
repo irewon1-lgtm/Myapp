@@ -1,6 +1,11 @@
 name: Publish verified auto-update release
 
 on:
+  push:
+    branches:
+      - codingcoding-project-textbook-live
+    paths:
+      - '.github/codingcoding-project-release-trigger'
   workflow_run:
     workflows:
       - Verify V1 university textbook, tablet UI and full app regression
@@ -14,6 +19,7 @@ permissions:
 jobs:
   publish-release:
     if: >-
+      (github.event_name == 'push') ||
       (github.event_name == 'workflow_dispatch') ||
       (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main')
     runs-on: ubuntu-latest
