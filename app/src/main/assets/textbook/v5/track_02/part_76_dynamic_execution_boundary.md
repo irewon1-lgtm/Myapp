@@ -91,8 +91,8 @@ print(ns["y"])
 
 ---
 
-**실행 점검 76-3 — CHAPTER 03 · `exec`는 statement block을 지정한 namespace에서 실행한다**
-CHAPTER 03 · `exec`는 statement block을 지정한 namespace에서 실행한다을 이해할 때는 정상 사례 하나를 정한 뒤 같은 입력을 두 번 실행해 결과가 안정적인지 확인한다. 그다음 값 하나, 호출 순서 하나, 경계 조건 하나만 바꿔 CHAPTER 03 · `exec`는 statement block을 지정한 namespace에서 실행한다의 규칙이 실제 상태에 어떤 변화를 만드는지 확인한다. PART 76 CHAPTER 3에서는 결과를 맞히는 것보다 예상과 실제의 차이를 설명하는 과정이 중요하다. 다른 입력에서도 같은 계약이 유지되는지 확인해야 검증이 끝난다. P76-C03은 마지막에 설명 가능성을 검사한다. P76-C03의 결과를 만든 타입·정체성·수명·예외 조건을 명시하고, 다른 코드 조각에서도 같은 조건을 스스로 찾아 적용한다.
+**검증 시나리오 P76-C3 — CHAPTER 03 · `exec`는 statement block을 지정한 namespace에서 실행한다**
+`CHAPTER 03 · `exec`는 statement block을 지정한 namespace에서 실행한다` 검증은 반례부터 하나 만든다하는 데서 시작한다. P76-C3에서는 `CHAPTER 03 · `exec`는 statement block을 지정한 namespace에서 실행한다` 실행 직전 상태를 먼저 적고 실행 뒤 값과 비교해 실제 규칙을 확인한다. 두 번째 단계에서는 `CHAPTER 03 · `exec`는 statement block을 지정한 namespace에서 실행한다`에 대해 반례와 정상례의 차이만 좁힌다고 다른 코드는 그대로 두어 원인 후보를 하나로 제한한다. 이때 `CHAPTER 03 · `exec`는 statement block을 지정한 namespace에서 실행한다`의 중간 값을 직접 출력해 추측을 줄인다하여 우연한 통과를 배제한다. 예상과 다르면 `CHAPTER 03 · `exec`는 statement block을 지정한 namespace에서 실행한다`의 타입, 값, 호출 순서, 예외 경계 가운데 최초로 달라진 항목부터 확인하고 최소 수정 뒤 다시 실행한다. P76-C3의 마무리는 수정 후 두 사례를 같은 순서로 재검증하는 것이다. 통과 기준은 `CHAPTER 03 · `exec`는 statement block을 지정한 namespace에서 실행한다`의 정상 사례와 변형 사례가 모두 설명 가능한 결과를 내고 같은 절차를 반복해도 동일한 상태 계약을 유지하는 것이다.
 ## CHAPTER 04 · builtins를 제한하는 것은 공격 표면 축소일 뿐 완전한 격리가 아니다
 
 ### 시작 전 용어집
