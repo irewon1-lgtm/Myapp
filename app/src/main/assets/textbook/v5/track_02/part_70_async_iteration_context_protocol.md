@@ -256,3 +256,54 @@ async with lease() as conn:
 - **뜻:** Test에서는 정상 종료, source exhaustion, producer error, consumer cancellation, `__aenter__` 실패, `__aexit__` 실패를 서로 다른 case로 확인한다.
 - **왜 중요한가:** 이 PART의 핵심은 **async iteration과 async context를 단순히 await가 붙은 문법으로 보지 않고, suspension point 사이의 interleaving과 cancellation까지 포함한 resource·stream protocol로 설계하는 것**이다.
 - **예시:** Test에서는 정상 종료, source exhaustion, producer error, consumer …
+
+---
+
+## 실전 학습 루프 · async iteration/context protocol
+
+### 1. 쉬운 예
+
+네트워크 stream처럼 다음 데이터가 언제 올지 모르는 대상은 동기 iterator만으로 표현하기 어렵다. `async for`는 다음 값을 기다릴 수 있고 `async with`는 비동기 획득·정리가 필요한 자원 수명을 표현한다.
+
+### 2. 한 줄 해석
+
+async protocol은 iteration과 resource lifetime에 `await` 가능한 대기 지점을 추가한다.
+
+### 3. 직접 실행
+
+아래 코드는 개념을 작게 격리한 예다. 실행 전에 출력이나 상태 변화를 먼저 예상한 뒤 실제 결과와 비교한다.
+
+```python
+class Counter:
+    def __init__(self, end):
+        self.i, self.end = 0, end
+    def __aiter__(self):
+        return self
+    async def __anext__(self):
+        if self.i >= self.end:
+            raise StopAsyncIteration
+        self.i += 1
+        return self.i
+```
+
+결과가 예상과 다르면 문법부터 고치지 말고, **어떤 protocol·상태·계약이 호출됐는지**를 한 단계씩 확인한다. 이렇게 해야 “우연히 동작하는 코드”와 “이유를 설명할 수 있는 코드”를 구분할 수 있다.
+
+### 4. 수정 실습
+
+1. `StopAsyncIteration`을 제거했을 때 종료 계약이 어떻게 깨지는지 확인한다.
+2. 두 소비자가 같은 async iterator를 공유하면 상태가 어떻게 섞일지 예측한다.
+
+수정 후에는 정상 입력 하나만 보지 말고 빈 값, 경계값, 반복 호출, 예외 경로 중 해당되는 반례를 최소 하나 추가한다.
+
+### 5. 확인 문제
+
+일반 `for`가 async iterator를 자동으로 기다려 줄까?
+
+### 6. 정답과 오답 설명
+
+**정답:** 아니다. async iterator는 `async for`와 event loop 문맥이 필요하다.
+
+**자주 나오는 오답:** `yield`와 `await`가 모두 멈춤처럼 보인다는 이유로 동기·비동기 protocol을 같은 것으로 보면 안 된다.
+
+마지막으로 코드를 다시 읽으면서 **입력 → 호출되는 규칙 → 상태 변화 → 결과/예외** 네 칸으로 요약한다. 이 네 칸을 설명할 수 있으면 단순 암기가 아니라 실행 모델을 이해한 것이다.
+

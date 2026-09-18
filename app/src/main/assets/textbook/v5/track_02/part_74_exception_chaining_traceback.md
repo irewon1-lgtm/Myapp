@@ -241,3 +241,54 @@ except StorageTimeout as exc:
 
 - **뜻:** 테스트에서는 cause 연결, context suppression, bare re-raise, boundary translation을 각각 확인한다.
 - **예시:** 테스트에서는 cause 연결, context suppression, bare re-raise, boundary …
+
+---
+
+## 실전 학습 루프 · exception chaining과 traceback
+
+### 1. 쉬운 예
+
+낮은 계층의 JSON decode 오류를 상위에서 `ConfigError`로 바꾸더라도 원래 원인을 잃으면 진단이 어려워진다. exception chaining은 사용자에게는 도메인 의미를 주면서 개발자에게는 원인 경로를 보존한다.
+
+### 2. 한 줄 해석
+
+좋은 예외 변환은 오류의 의미를 높이되 원래 cause와 traceback evidence를 버리지 않는다.
+
+### 3. 직접 실행
+
+아래 코드는 개념을 작게 격리한 예다. 실행 전에 출력이나 상태 변화를 먼저 예상한 뒤 실제 결과와 비교한다.
+
+```python
+class ConfigError(Exception): pass
+
+def load_config(text):
+    try:
+        import json
+        return json.loads(text)
+    except ValueError as exc:
+        raise ConfigError('설정 형식 오류') from exc
+
+load_config('{bad')
+```
+
+결과가 예상과 다르면 문법부터 고치지 말고, **어떤 protocol·상태·계약이 호출됐는지**를 한 단계씩 확인한다. 이렇게 해야 “우연히 동작하는 코드”와 “이유를 설명할 수 있는 코드”를 구분할 수 있다.
+
+### 4. 수정 실습
+
+1. `from None`을 사용해 context 표시가 어떻게 달라지는지 확인한다.
+2. catch-all로 예외를 빈 dict로 바꿨을 때 어떤 증거가 사라지는지 비교한다.
+
+수정 후에는 정상 입력 하나만 보지 말고 빈 값, 경계값, 반복 호출, 예외 경로 중 해당되는 반례를 최소 하나 추가한다.
+
+### 5. 확인 문제
+
+상위 계층의 새 예외만 기록하고 원래 예외는 버리는 것이 더 깔끔할까?
+
+### 6. 정답과 오답 설명
+
+**정답:** 대개 아니다. 복구·사용자 메시지용 의미와 root-cause 진단용 cause는 함께 보존하는 편이 낫다.
+
+**자주 나오는 오답:** stack trace가 길다는 이유만으로 원인을 삭제하면 운영 장애에서 가장 중요한 증거를 없앨 수 있다.
+
+마지막으로 코드를 다시 읽으면서 **입력 → 호출되는 규칙 → 상태 변화 → 결과/예외** 네 칸으로 요약한다. 이 네 칸을 설명할 수 있으면 단순 암기가 아니라 실행 모델을 이해한 것이다.
+

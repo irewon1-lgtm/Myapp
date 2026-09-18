@@ -262,3 +262,52 @@ class RetryCounter:
 - **뜻:** 이 PART의 핵심은 **`()`를 함수 호출 기호로만 보지 않고, function·bound method·callable object가 argument binding과 hidden state를 통해 참여하는 하나의 호출 프로토콜로 읽는 것**이다.
 - **왜 중요한가:** Callback이 later execution되는 경우에는 capture된 receiver가 유효한지도 본다.
 - **예시:** 이 PART의 핵심은 **`()`를 함수 호출 기호로만 보지 …
+
+---
+
+## 실전 학습 루프 · callable object protocol
+
+### 1. 쉬운 예
+
+설정과 실행 로직을 함께 가진 객체를 함수처럼 호출하고 싶을 때 `__call__`을 사용할 수 있다. 예를 들어 임계값을 기억하는 검증기를 만든 뒤 `validator(value)`로 호출하면 상태와 행동을 하나의 객체로 묶을 수 있다.
+
+### 2. 한 줄 해석
+
+callable object는 함수 호출 문법을 쓰지만 내부에 상태를 보존할 수 있는 객체다.
+
+### 3. 직접 실행
+
+아래 코드는 개념을 작게 격리한 예다. 실행 전에 출력이나 상태 변화를 먼저 예상한 뒤 실제 결과와 비교한다.
+
+```python
+class AtLeast:
+    def __init__(self, minimum):
+        self.minimum = minimum
+    def __call__(self, value):
+        return value >= self.minimum
+
+adult = AtLeast(18)
+print(adult(20), adult(15))
+```
+
+결과가 예상과 다르면 문법부터 고치지 말고, **어떤 protocol·상태·계약이 호출됐는지**를 한 단계씩 확인한다. 이렇게 해야 “우연히 동작하는 코드”와 “이유를 설명할 수 있는 코드”를 구분할 수 있다.
+
+### 4. 수정 실습
+
+1. 호출 횟수를 상태로 기록하도록 바꾸고 thread-safe하지 않은 이유를 생각한다.
+2. `callable(adult)` 결과와 일반 함수의 `callable()` 결과를 비교한다.
+
+수정 후에는 정상 입력 하나만 보지 말고 빈 값, 경계값, 반복 호출, 예외 경로 중 해당되는 반례를 최소 하나 추가한다.
+
+### 5. 확인 문제
+
+`obj()`가 가능하면 obj는 반드시 function 객체일까?
+
+### 6. 정답과 오답 설명
+
+**정답:** 아니다. `__call__` protocol을 제공하는 임의의 객체도 callable이 될 수 있다.
+
+**자주 나오는 오답:** 호출 문법과 객체의 실제 타입을 같은 것으로 보는 것이 흔한 오답이다.
+
+마지막으로 코드를 다시 읽으면서 **입력 → 호출되는 규칙 → 상태 변화 → 결과/예외** 네 칸으로 요약한다. 이 네 칸을 설명할 수 있으면 단순 암기가 아니라 실행 모델을 이해한 것이다.
+

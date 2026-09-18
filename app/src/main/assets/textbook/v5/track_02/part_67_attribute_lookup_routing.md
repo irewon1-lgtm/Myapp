@@ -277,3 +277,53 @@ class Account:
 - **뜻:** 테스트에서는 실제 field, class attribute, descriptor, missing name, shadowing, deletion을 각각 확인한다.
 - **왜 중요한가:** 특히 `hasattr`, `getattr(default)`, introspection 도구와 custom hook이 함께 동작하는지 본다.
 - **예시:** 테스트에서는 실제 field, class attribute, descriptor, missing name, …
+
+---
+
+## 실전 학습 루프 · attribute lookup routing
+
+### 1. 쉬운 예
+
+`obj.name` 한 줄은 단순 dict 조회가 아니다. instance, class, descriptor, `__getattribute__`, 필요하면 `__getattr__`까지 정해진 탐색 규칙이 개입한다. 그래서 같은 이름이 여러 위치에 있을 때 우선순위를 모르면 예상과 다른 값이 나온다.
+
+### 2. 한 줄 해석
+
+속성 접근 버그는 값을 어디에 저장했는지보다 “어떤 lookup 경로가 먼저 선택됐는지”를 추적해야 해결된다.
+
+### 3. 직접 실행
+
+아래 코드는 개념을 작게 격리한 예다. 실행 전에 출력이나 상태 변화를 먼저 예상한 뒤 실제 결과와 비교한다.
+
+```python
+class Demo:
+    kind = 'class'
+    def __init__(self):
+        self.name = 'instance'
+    def __getattr__(self, key):
+        return f'missing:{key}'
+
+x = Demo()
+print(x.name, x.kind, x.unknown)
+```
+
+결과가 예상과 다르면 문법부터 고치지 말고, **어떤 protocol·상태·계약이 호출됐는지**를 한 단계씩 확인한다. 이렇게 해야 “우연히 동작하는 코드”와 “이유를 설명할 수 있는 코드”를 구분할 수 있다.
+
+### 4. 수정 실습
+
+1. instance의 `kind`를 추가해 class attribute와의 우선순위를 확인한다.
+2. `__getattribute__`를 무심코 재귀 호출하도록 작성했을 때 왜 무한 재귀가 생기는지 살펴본다.
+
+수정 후에는 정상 입력 하나만 보지 말고 빈 값, 경계값, 반복 호출, 예외 경로 중 해당되는 반례를 최소 하나 추가한다.
+
+### 5. 확인 문제
+
+`__getattr__`은 모든 속성 접근 때 항상 호출될까?
+
+### 6. 정답과 오답 설명
+
+**정답:** 아니다. 일반 lookup이 속성을 찾지 못했을 때 fallback으로 호출된다.
+
+**자주 나오는 오답:** `__getattr__`과 `__getattribute__`를 같은 hook이라고 보면 호출 시점과 위험도가 섞인다.
+
+마지막으로 코드를 다시 읽으면서 **입력 → 호출되는 규칙 → 상태 변화 → 결과/예외** 네 칸으로 요약한다. 이 네 칸을 설명할 수 있으면 단순 암기가 아니라 실행 모델을 이해한 것이다.
+

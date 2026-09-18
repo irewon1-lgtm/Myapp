@@ -275,3 +275,54 @@ with transaction() as tx:
 - **뜻:** Resource counter나 fake handle을 사용하면 누락된 close를 검증하기 쉽다.
 - **왜 중요한가:** 이 PART의 핵심은 **`with`를 자동 close 문법으로 축소하지 않고, acquisition·body·failure·suppression·reverse cleanup을 명시적으로 가진 resource state machine으로 설계하는 것**이다.
 - **예시:** Resource counter나 fake handle을 사용하면 누락된 close를 검증하기 …
+
+---
+
+## 실전 학습 루프 · context manager state machine
+
+### 1. 쉬운 예
+
+파일이나 lock은 “열기 성공 → 사용 → 정리”라는 수명을 가진다. 중간에서 예외가 나도 정리가 실행돼야 하므로 `with`는 단순 문법 축약이 아니라 enter/exit 상태 전이를 코드 구조로 고정한다.
+
+### 2. 한 줄 해석
+
+context manager는 자원 획득과 해제를 한 lexical scope에 묶어 정상·예외 경로에서 같은 cleanup 계약을 지키게 한다.
+
+### 3. 직접 실행
+
+아래 코드는 개념을 작게 격리한 예다. 실행 전에 출력이나 상태 변화를 먼저 예상한 뒤 실제 결과와 비교한다.
+
+```python
+class Guard:
+    def __enter__(self):
+        print('enter')
+        return self
+    def __exit__(self, exc_type, exc, tb):
+        print('exit', exc_type)
+        return False
+
+with Guard():
+    print('work')
+```
+
+결과가 예상과 다르면 문법부터 고치지 말고, **어떤 protocol·상태·계약이 호출됐는지**를 한 단계씩 확인한다. 이렇게 해야 “우연히 동작하는 코드”와 “이유를 설명할 수 있는 코드”를 구분할 수 있다.
+
+### 4. 수정 실습
+
+1. 본문에서 예외를 발생시켜 `__exit__`가 받는 값을 관찰한다.
+2. `__exit__`가 True를 반환하게 바꾸고 예외 전파가 어떻게 달라지는지 확인한다.
+
+수정 후에는 정상 입력 하나만 보지 말고 빈 값, 경계값, 반복 호출, 예외 경로 중 해당되는 반례를 최소 하나 추가한다.
+
+### 5. 확인 문제
+
+`with` 블록 안에서 예외가 나면 cleanup이 생략될까?
+
+### 6. 정답과 오답 설명
+
+**정답:** 정상적인 context manager라면 `__exit__`가 호출된다. 예외를 삼킬지는 반환값과 구현 정책이 결정한다.
+
+**자주 나오는 오답:** `with`를 단순한 `try` 축약이라고만 외우면 자원 수명과 예외 억제 계약을 놓친다.
+
+마지막으로 코드를 다시 읽으면서 **입력 → 호출되는 규칙 → 상태 변화 → 결과/예외** 네 칸으로 요약한다. 이 네 칸을 설명할 수 있으면 단순 암기가 아니라 실행 모델을 이해한 것이다.
+
