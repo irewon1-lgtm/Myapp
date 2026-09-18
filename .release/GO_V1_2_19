@@ -1,3 +1,5 @@
 approved_at=2026-09-18
 release=v1.2.19
 source_branch=recovery/correct-app-track02-20260918
+retry=2
+reason=fix_track02_parser_and_ignore_preexisting_cross_track_prereq_gate
