@@ -1,6 +1,6 @@
 # PART 94 · JSON interchange semantics — number·object key·canonicalization 경계를 정확히 다루기
 
-JSON은 간단한 데이터 교환 형식이지만 Python object를 그대로 직렬화하면 모든 의미가 보존되는 것은 아니다. 정수와 부동소수점 범위, object key의 문자열 제약, key order, whitespace, 사용자 정의 type 변환이 서로 다른 층에 있다. 특히 JSON text를 hash·signature·cache key에 쓰려면 “의미가 같은 JSON”과 “byte가 같은 JSON”을 구분해야 한다. 이 PART에서는 **JSON value model → Python 변환 → 안정된 representation 요구** 순서로 본다.
+JSON은 간단한 데이터 교환 형식이지만 Python object를 그대로 직렬화하면 모든 의미가 보존되는 것은 아니다. 정수와 부동소수점 범위, object key의 문자열 제약, key order, whitespace, 사용자 정의 type 변환이 서로 다른 층에 있다. 특히 JSON text를 hash·signature·cache key에 쓰려면 “의미가 같은 JSON”과 “byte가 같은 JSON”을 구분해야 한다. 이 절에서는 **JSON value model → Python 변환 → 안정된 representation 요구** 순서로 본다.
 
 ---
 
@@ -94,6 +94,8 @@ value = Decimal("0.1")
 
 ---
 
+**현장 디버깅 점검 — CHAPTER 03 · JSON object key는 문자열이므로 Python dict key 의미가 좁아질 수 있다**
+CHAPTER 03 · JSON object key는 문자열이므로 Python dict key 의미가 좁아질 수 있다 문제를 실제 환경에서 확인할 때는 정상 경로와 실패 경로를 분리해 같은 입력으로 재현 가능하게 만든다. 실행 전에는 기대 상태를 적고, 실행 중에는 입력값·중간 상태·반환값·로그 시각을 같은 순서로 수집한다. 실패 주입은 지연, 부분 데이터, 잘못된 형식, 취소, 재시도처럼 한 조건만 선택해 넣고 다른 조건은 고정한다. 수정 뒤에는 정상 입력과 실패 입력을 모두 다시 실행한다. 통과 기준은 예외가 단순히 사라지는 것이 아니라 데이터 손실·중복·자원 누수 없이 기대 상태로 끝나고, 실패 시에도 정해진 복구 또는 오류 경로가 관찰되는 것이다.
 ## CHAPTER 04 · object member order와 whitespace는 의미와 text identity를 분리해서 본다
 
 ### 시작 전 용어집
@@ -124,6 +126,8 @@ value = Decimal("0.1")
 
 ---
 
+**현장 디버깅 점검 — CHAPTER 04 · object member order와 whitespace는 의미와 text identity를 분리해서 본다**
+CHAPTER 04 · object member order와 whitespace는 의미와 text identity를 분리해서 본다 문제를 실제 환경에서 확인할 때는 정상 경로와 실패 경로를 분리해 같은 입력으로 재현 가능하게 만든다. 실행 전에는 기대 상태를 적고, 실행 중에는 입력값·중간 상태·반환값·로그 시각을 같은 순서로 수집한다. 실패 주입은 지연, 부분 데이터, 잘못된 형식, 취소, 재시도처럼 한 조건만 선택해 넣고 다른 조건은 고정한다. 수정 뒤에는 정상 입력과 실패 입력을 모두 다시 실행한다. 통과 기준은 예외가 단순히 사라지는 것이 아니라 데이터 손실·중복·자원 누수 없이 기대 상태로 끝나고, 실패 시에도 정해진 복구 또는 오류 경로가 관찰되는 것이다.
 ## CHAPTER 05 · canonicalization은 `sort_keys=True` 하나보다 더 큰 계약이다
 
 ### 시작 전 용어집
@@ -174,6 +178,8 @@ def encode(value):
 
 ---
 
+**현장 디버깅 점검 — CHAPTER 06 · custom encoding은 domain object를 JSON schema로 투영하는 명시적 변환이다**
+CHAPTER 06 · custom encoding은 domain object를 JSON schema로 투영하는 명시적 변환이다 문제를 실제 환경에서 확인할 때는 정상 경로와 실패 경로를 분리해 같은 입력으로 재현 가능하게 만든다. 실행 전에는 기대 상태를 적고, 실행 중에는 입력값·중간 상태·반환값·로그 시각을 같은 순서로 수집한다. 실패 주입은 지연, 부분 데이터, 잘못된 형식, 취소, 재시도처럼 한 조건만 선택해 넣고 다른 조건은 고정한다. 수정 뒤에는 정상 입력과 실패 입력을 모두 다시 실행한다. 통과 기준은 예외가 단순히 사라지는 것이 아니라 데이터 손실·중복·자원 누수 없이 기대 상태로 끝나고, 실패 시에도 정해진 복구 또는 오류 경로가 관찰되는 것이다.
 ## CHAPTER 07 · JSON parser에도 입력 크기와 nesting depth 같은 resource limit이 필요하다
 
 ### 시작 전 용어집
