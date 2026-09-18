@@ -64,6 +64,7 @@ fun AdaptiveTextbookScreen(
     var remoteGeneration by rememberSaveable { mutableIntStateOf(0) }
     var liveReady by rememberSaveable { mutableStateOf(false) }
     var liveError by rememberSaveable { mutableStateOf<String?>(null) }
+    var legacyFallback by rememberSaveable { mutableStateOf(false) }
 
     val selectedChapter = V1TextbookCatalog.chapterById(selectedChapterId)
         ?: V1TextbookCatalog.chapters.first()
@@ -71,6 +72,7 @@ fun AdaptiveTextbookScreen(
     LaunchedEffect(v5Repository, selectedChapter.number) {
         liveReady = false
         liveError = null
+        legacyFallback = false
 
         while (true) {
             val result = runCatching {
@@ -86,6 +88,7 @@ fun AdaptiveTextbookScreen(
                     val ready = runCatching {
                         v5Repository.loadManifest(selectedChapter.number)
                     }.isSuccess
+                    legacyFallback = false
                     liveReady = ready
                     liveError = if (ready) null else "live_manifest_unreadable"
                     if (ready) remoteGeneration += 1
@@ -95,14 +98,26 @@ fun AdaptiveTextbookScreen(
                     val ready = runCatching {
                         v5Repository.loadManifest(selectedChapter.number)
                     }.isSuccess
+                    legacyFallback = false
                     if (ready && !liveReady) remoteGeneration += 1
                     liveReady = ready
                     liveError = if (ready) null else "live_manifest_unreadable"
                 }
 
                 is V5RemoteRefreshResult.Skipped -> {
-                    liveReady = false
-                    liveError = result.reason
+                    if (result.reason.startsWith("track_not_live:")) {
+                        legacyFallback = true
+                        liveReady = false
+                        liveError = null
+                    } else {
+                        val cachedReady = runCatching {
+                            v5Repository.loadManifest(selectedChapter.number)
+                        }.isSuccess
+                        legacyFallback = false
+                        if (cachedReady && !liveReady) remoteGeneration += 1
+                        liveReady = cachedReady
+                        liveError = if (cachedReady) null else result.reason
+                    }
                 }
             }
 
@@ -184,8 +199,19 @@ fun AdaptiveTextbookScreen(
                     .fillMaxWidth()
                     .testTag("reader_single_column")
             ) {
-                key(selectedChapterId, liveReady, remoteGeneration) {
+                key(selectedChapterId, legacyFallback, liveReady, remoteGeneration) {
                     when {
+                        legacyFallback -> {
+                            V4PagedBookScreen(
+                                practiceCompletedIds = practiceCompletedIds,
+                                onNavigateBack = onNavigateBack,
+                                onStartPractice = onStartPractice,
+                                initialChapterId = selectedChapterId,
+                                onOpenToc = { scope.launch { drawerState.open() } },
+                                onChapterSelected = { selectedChapterId = it }
+                            )
+                        }
+
                         liveReady -> {
                             V5TrackBookScreen(
                                 trackNumber = selectedChapter.number,
