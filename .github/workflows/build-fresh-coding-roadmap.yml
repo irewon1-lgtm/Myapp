@@ -37,10 +37,10 @@ jobs:
       - name: Rename APK
         run: |
           mkdir -p fresh-apk
-          cp fresh-coding-roadmap/app/build/outputs/apk/debug/app-debug.apk fresh-apk/CodingRoadmapFresh_Track1_v0.6.0.apk
+          cp fresh-coding-roadmap/app/build/outputs/apk/debug/app-debug.apk fresh-apk/CodingRoadmapFresh_Track1-2_v0.7.0.apk
 
       - uses: actions/upload-artifact@v4
         with:
-          name: CodingRoadmapFresh-Track1-v0.6.0
-          path: fresh-apk/CodingRoadmapFresh_Track1_v0.6.0.apk
+          name: CodingRoadmapFresh-Track1-2-v0.7.0
+          path: fresh-apk/CodingRoadmapFresh_Track1-2_v0.7.0.apk
           retention-days: 30
