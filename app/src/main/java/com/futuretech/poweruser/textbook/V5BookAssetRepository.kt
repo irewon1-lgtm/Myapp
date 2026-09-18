@@ -129,11 +129,15 @@ class V5BookAssetRepository(
      * lock are seeded. The reader calls this first, renders the local book, then refreshes LIVE in
      * the background.
      */
+    fun isConfiguredLiveTrack(trackNumber: Int): Boolean {
+        val projectLock = loadBundledProjectLock() ?: return false
+        if (validateProjectLock(projectLock) != null) return false
+        return trackNumber in projectLock.trackNumbers
+    }
+
     suspend fun prepareBundledContent(trackNumber: Int): Boolean =
         withContext(Dispatchers.IO) {
-            val projectLock = loadBundledProjectLock() ?: return@withContext false
-            if (validateProjectLock(projectLock) != null) return@withContext false
-            if (trackNumber !in projectLock.trackNumbers) return@withContext false
+            if (!isConfiguredLiveTrack(trackNumber)) return@withContext false
             if (!seedBundledTrackIfMissing(trackNumber)) return@withContext false
             runCatching { loadManifest(trackNumber) }.isSuccess
         }
