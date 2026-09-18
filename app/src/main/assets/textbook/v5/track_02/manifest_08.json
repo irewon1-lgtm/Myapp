@@ -1,0 +1,17 @@
+{
+  "trackId":"T02",
+  "trackNumber":2,
+  "title":"프로그래밍 사고와 문법 — 문제 계약에서 Python 실행 모델까지",
+  "parts":[
+    {"id":"T02-P71","order":71,"title":"Representation과 formatting protocol — repr·str·format을 목적별로 분리하기","assetPath":"textbook/v5/track_02/part_71_representation_formatting_protocol.md","sourceMapPath":"textbook/v5/track_02/part_71_sources.json","prerequisiteConceptIds":["T02-P70-S08-async-protocol-contract"]},
+    {"id":"T02-P72","order":72,"title":"Instance construction lifecycle — __new__·__init__·immutable subclass를 분리해서 이해하기","assetPath":"textbook/v5/track_02/part_72_instance_construction_lifecycle.md","sourceMapPath":"textbook/v5/track_02/part_72_sources.json","prerequisiteConceptIds":["T02-P71-S08-representation-contract"]},
+    {"id":"T02-P73","order":73,"title":"Finalization과 resurrection — __del__·cycle·weakref cleanup의 한계를 이해하기","assetPath":"textbook/v5/track_02/part_73_finalization_resurrection.md","sourceMapPath":"textbook/v5/track_02/part_73_sources.json","prerequisiteConceptIds":["T02-P72-S08-construction-contract"]},
+    {"id":"T02-P74","order":74,"title":"Exception chaining과 traceback — 원인 보존·경계 번역·재발생을 구분하기","assetPath":"textbook/v5/track_02/part_74_exception_chaining_traceback.md","sourceMapPath":"textbook/v5/track_02/part_74_sources.json","prerequisiteConceptIds":["T02-P73-S08-finalization-contract"]},
+    {"id":"T02-P75","order":75,"title":"Frame·code object introspection — 실행 중인 Python을 구조적으로 관찰하기","assetPath":"textbook/v5/track_02/part_75_frame_code_introspection.md","sourceMapPath":"textbook/v5/track_02/part_75_sources.json","prerequisiteConceptIds":["T02-P74-S08-traceback-contract"]},
+    {"id":"T02-P76","order":76,"title":"Dynamic execution boundary — compile·eval·exec와 namespace·보안 경계를 분리하기","assetPath":"textbook/v5/track_02/part_76_dynamic_execution_boundary.md","sourceMapPath":"textbook/v5/track_02/part_76_sources.json","prerequisiteConceptIds":["T02-P75-S08-frame-code-contract"]},
+    {"id":"T02-P77","order":77,"title":"AST transformation — source를 구조로 읽고 의미 보존 변환을 검증하기","assetPath":"textbook/v5/track_02/part_77_ast_transformation.md","sourceMapPath":"textbook/v5/track_02/part_77_sources.json","prerequisiteConceptIds":["T02-P76-S08-dynamic-execution-contract"]},
+    {"id":"T02-P78","order":78,"title":"PathLike와 filesystem boundary — 문자열·경로 identity·symlink를 분리하기","assetPath":"textbook/v5/track_02/part_78_pathlike_filesystem_boundary.md","sourceMapPath":"textbook/v5/track_02/part_78_sources.json","prerequisiteConceptIds":["T02-P77-S08-ast-contract"]},
+    {"id":"T02-P79","order":79,"title":"Codec와 incremental text pipeline — bytes/text 경계를 stream 상태와 함께 다루기","assetPath":"textbook/v5/track_02/part_79_codec_incremental_text_pipeline.md","sourceMapPath":"textbook/v5/track_02/part_79_sources.json","prerequisiteConceptIds":["T02-P78-S08-path-contract"]},
+    {"id":"T02-P80","order":80,"title":"Dataclass generated semantics — field·default·equality·frozen·slots 계약을 읽기","assetPath":"textbook/v5/track_02/part_80_dataclass_generated_semantics.md","sourceMapPath":"textbook/v5/track_02/part_80_sources.json","prerequisiteConceptIds":["T02-P79-S08-codec-contract"]}
+  ]
+}

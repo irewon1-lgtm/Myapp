@@ -1,0 +1,13 @@
+{
+  "partId":"T02-P85",
+  "sections":[
+    {"sectionId":"T02-P85-S01-async-lock","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P85-S02-event-signal","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P85-S03-condition-predicate","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P85-S04-semaphore-capacity","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P85-S05-fairness-boundary","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P85-S06-cancellation-waiter","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P85-S07-deadlock-ordering","sourceIds":["CSAPP3","SRE"]},
+    {"sectionId":"T02-P85-S08-sync-contract","sourceIds":["SRE","PYTHON-REF"]}
+  ]
+}

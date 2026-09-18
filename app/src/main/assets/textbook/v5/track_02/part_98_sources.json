@@ -1,0 +1,13 @@
+{
+  "partId":"T02-P98",
+  "sections":[
+    {"sectionId":"T02-P98-S01-retry-classification","sourceIds":["SRE","SRE-WORKBOOK"]},
+    {"sectionId":"T02-P98-S02-idempotent-operation","sourceIds":["RFC9110","DDIA"]},
+    {"sectionId":"T02-P98-S03-backoff-jitter","sourceIds":["SRE","SRE-WORKBOOK"]},
+    {"sectionId":"T02-P98-S04-retry-budget","sourceIds":["SRE","SRE-WORKBOOK"]},
+    {"sectionId":"T02-P98-S05-partial-success","sourceIds":["DDIA","SRE"]},
+    {"sectionId":"T02-P98-S06-duplicate-sideeffect","sourceIds":["DDIA","RFC9110"]},
+    {"sectionId":"T02-P98-S07-retry-observability","sourceIds":["SRE","SRE-WORKBOOK"]},
+    {"sectionId":"T02-P98-S08-retry-contract","sourceIds":["SRE","DDIA"]}
+  ]
+}

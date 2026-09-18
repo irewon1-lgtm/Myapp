@@ -1,0 +1,17 @@
+{
+  "trackId":"T02",
+  "trackNumber":2,
+  "title":"프로그래밍 사고와 문법 — 문제 계약에서 Python 실행 모델까지",
+  "parts":[
+    {"id":"T02-P81","order":81,"title":"__slots__와 instance layout — attribute storage·weakref·상속 비용을 구조적으로 이해하기","assetPath":"textbook/v5/track_02/part_81_slots_instance_layout.md","sourceMapPath":"textbook/v5/track_02/part_81_sources.json","prerequisiteConceptIds":["T02-P80-S08-dataclass-contract"]},
+    {"id":"T02-P82","order":82,"title":"ABC runtime contracts — abstract method·virtual subclass·collections ABC를 구분하기","assetPath":"textbook/v5/track_02/part_82_abc_runtime_contracts.md","sourceMapPath":"textbook/v5/track_02/part_82_sources.json","prerequisiteConceptIds":["T02-P81-S08-slots-contract"]},
+    {"id":"T02-P83","order":83,"title":"Asyncio Task lifecycle — coroutine을 schedule하고 cancellation까지 책임지기","assetPath":"textbook/v5/track_02/part_83_asyncio_task_lifecycle.md","sourceMapPath":"textbook/v5/track_02/part_83_sources.json","prerequisiteConceptIds":["T02-P82-S08-abc-contract"]},
+    {"id":"T02-P84","order":84,"title":"Future와 executor bridge — thread/process 작업을 async 결과 계약으로 연결하기","assetPath":"textbook/v5/track_02/part_84_future_executor_bridge.md","sourceMapPath":"textbook/v5/track_02/part_84_sources.json","prerequisiteConceptIds":["T02-P83-S08-task-contract"]},
+    {"id":"T02-P85","order":85,"title":"Async synchronization — Lock·Event·Condition·Semaphore를 상태 의미로 구분하기","assetPath":"textbook/v5/track_02/part_85_async_synchronization.md","sourceMapPath":"textbook/v5/track_02/part_85_sources.json","prerequisiteConceptIds":["T02-P84-S08-executor-contract"]},
+    {"id":"T02-P86","order":86,"title":"Multiprocessing boundaries — process memory·start method·pickle·shared memory를 분리하기","assetPath":"textbook/v5/track_02/part_86_multiprocessing_boundaries.md","sourceMapPath":"textbook/v5/track_02/part_86_sources.json","prerequisiteConceptIds":["T02-P85-S08-sync-contract"]},
+    {"id":"T02-P87","order":87,"title":"Socket stream framing — partial send/recv·message boundary·backpressure를 직접 다루기","assetPath":"textbook/v5/track_02/part_87_socket_stream_framing.md","sourceMapPath":"textbook/v5/track_02/part_87_sources.json","prerequisiteConceptIds":["T02-P86-S08-multiprocessing-contract"]},
+    {"id":"T02-P88","order":88,"title":"Readiness와 selector loop — nonblocking I/O를 event source로 바꾸기","assetPath":"textbook/v5/track_02/part_88_readiness_selector_loop.md","sourceMapPath":"textbook/v5/track_02/part_88_sources.json","prerequisiteConceptIds":["T02-P87-S08-socket-contract"]},
+    {"id":"T02-P89","order":89,"title":"Logging pipeline — LogRecord·hierarchy·handler·structured field를 운영 계약으로 설계하기","assetPath":"textbook/v5/track_02/part_89_logging_pipeline.md","sourceMapPath":"textbook/v5/track_02/part_89_sources.json","prerequisiteConceptIds":["T02-P88-S08-readiness-contract"]},
+    {"id":"T02-P90","order":90,"title":"Memory diagnostics — tracemalloc·GC·retention graph으로 leak와 정상 cache를 구분하기","assetPath":"textbook/v5/track_02/part_90_memory_diagnostics.md","sourceMapPath":"textbook/v5/track_02/part_90_sources.json","prerequisiteConceptIds":["T02-P89-S08-logging-contract"]}
+  ]
+}
