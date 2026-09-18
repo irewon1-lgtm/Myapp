@@ -35,8 +35,8 @@ class User:
 
 ---
 
-**실행 점검 80-1 — CHAPTER 01 · field model은 annotation과 default를 instance state schema로 해석한다**
-CHAPTER 01 · field model은 annotation과 default를 instance state schema로 해석한다의 규칙은 작은 예제로 값을 움직여 보면 분명해진다. PART 80 CHAPTER 1에서는 작업 하나만 남겨 단순화한 뒤 실행 전 예상값을 적고, 값이나 호출 순서 하나만 바꿔 실제 결과를 비교한다. 중복 처리 여부와 누락 여부를 동시에 점검한다. 예상과 다르면 타입·객체 정체성·수명·예외 경계를 한 항목씩 좁혀 원인을 찾는다. 수정한 뒤에는 원래 사례와 반대 조건 사례를 모두 실행하고, CHAPTER 01 · field model은 annotation과 default를 instance state schema로 해석한다이 어떤 상태 변화를 만들었는지 한 문장으로 설명한다. 다른 코드에서도 같은 규칙을 알아볼 수 있으면 이해가 실제로 연결된 것이다.
+**검증 시나리오 P80-C1 — CHAPTER 01 · field model은 annotation과 default를 instance state schema로 해석한다**
+`CHAPTER 01 · field model은 annotation과 default를 instance state schema로 해석한다` 검증은 가장 작은 객체 상태로 시작하는 데서 시작한다. P80-C1에서는 `CHAPTER 01 · field model은 annotation과 default를 instance state schema로 해석한다` 실행 직전 상태를 먼저 적고 실행 뒤 값과 비교해 실제 규칙을 확인한다. 두 번째 단계에서는 `CHAPTER 01 · field model은 annotation과 default를 instance state schema로 해석한다`에 대해 속성 하나만 바꿔 재실행고 다른 코드는 그대로 두어 원인 후보를 하나로 제한한다. 이때 `CHAPTER 01 · field model은 annotation과 default를 instance state schema로 해석한다`의 반환값과 부수효과를 따로 기록하여 우연한 통과를 배제한다. 예상과 다르면 `CHAPTER 01 · field model은 annotation과 default를 instance state schema로 해석한다`의 타입, 값, 호출 순서, 예외 경계 가운데 최초로 달라진 항목부터 확인하고 최소 수정 뒤 다시 실행한다. P80-C1의 마무리는 수정 뒤 원래 조건을 다시 회귀 확인하는 것이다. 통과 기준은 `CHAPTER 01 · field model은 annotation과 default를 instance state schema로 해석한다`의 정상 사례와 변형 사례가 모두 설명 가능한 결과를 내고 같은 절차를 반복해도 동일한 상태 계약을 유지하는 것이다.
 ## CHAPTER 02 · mutable default는 `default_factory`로 instance별 새 객체를 만든다
 
 ### 시작 전 용어집
@@ -140,8 +140,8 @@ class Config:
 
 ---
 
-**실행 점검 80-4 — CHAPTER 04 · `frozen=True`는 assignment를 막지만 깊은 immutable을 자동 보장하지 않는다**
-CHAPTER 04 · `frozen=True`는 assignment를 막지만 깊은 immutable을 자동 보장하지 않는다의 규칙은 작은 예제로 값을 움직여 보면 분명해진다. PART 80 CHAPTER 4에서는 로그에 남길 관찰값을 고르고 실행 전 예상값을 적고, 값이나 호출 순서 하나만 바꿔 실제 결과를 비교한다. 복구 지점과 실제 데이터 위치가 맞는지 비교한다. 예상과 다르면 타입·객체 정체성·수명·예외 경계를 한 항목씩 좁혀 원인을 찾는다. 수정한 뒤에는 원래 사례와 반대 조건 사례를 모두 실행하고, CHAPTER 04 · `frozen=True`는 assignment를 막지만 깊은 immutable을 자동 보장하지 않는다이 어떤 상태 변화를 만들었는지 한 문장으로 설명한다. 다른 코드에서도 같은 규칙을 알아볼 수 있으면 이해가 실제로 연결된 것이다.
+**검증 시나리오 P80-C4 — CHAPTER 04 · `frozen=True`는 assignment를 막지만 깊은 immutable을 자동 보장하지 않는다**
+`CHAPTER 04 · `frozen=True`는 assignment를 막지만 깊은 immutable을 자동 보장하지 않는다` 검증은 호출 순서를 단순화하는 데서 시작한다. P80-C4에서는 `CHAPTER 04 · `frozen=True`는 assignment를 막지만 깊은 immutable을 자동 보장하지 않는다` 실행 직전 상태를 먼저 적고 실행 뒤 값과 비교해 실제 규칙을 확인한다. 두 번째 단계에서는 `CHAPTER 04 · `frozen=True`는 assignment를 막지만 깊은 immutable을 자동 보장하지 않는다`에 대해 순서 하나만 뒤집어 차이를 본다고 다른 코드는 그대로 두어 원인 후보를 하나로 제한한다. 이때 `CHAPTER 04 · `frozen=True`는 assignment를 막지만 깊은 immutable을 자동 보장하지 않는다`의 호출 전후의 상태 전이를 번호로 남긴다하여 우연한 통과를 배제한다. 예상과 다르면 `CHAPTER 04 · `frozen=True`는 assignment를 막지만 깊은 immutable을 자동 보장하지 않는다`의 타입, 값, 호출 순서, 예외 경계 가운데 최초로 달라진 항목부터 확인하고 최소 수정 뒤 다시 실행한다. P80-C4의 마무리는 다른 순서에서도 계약이 유지되는지 확인하는 것이다. 통과 기준은 `CHAPTER 04 · `frozen=True`는 assignment를 막지만 깊은 immutable을 자동 보장하지 않는다`의 정상 사례와 변형 사례가 모두 설명 가능한 결과를 내고 같은 절차를 반복해도 동일한 상태 계약을 유지하는 것이다.
 ## CHAPTER 05 · hash policy는 equality와 frozen 상태의 조합을 반영한다
 
 ### 시작 전 용어집
@@ -204,8 +204,8 @@ class Range:
 
 ---
 
-**실행 점검 80-6 — CHAPTER 06 · `__post_init__`은 생성된 initializer 뒤에서 invariant를 완성한다**
-CHAPTER 06 · `__post_init__`은 생성된 initializer 뒤에서 invariant를 완성한다의 규칙은 작은 예제로 값을 움직여 보면 분명해진다. PART 80 CHAPTER 6에서는 재현 가능한 최소 사례를 만들고 실행 전 예상값을 적고, 값이나 호출 순서 하나만 바꿔 실제 결과를 비교한다. 처리 시작 시각과 종료 시각을 같이 남긴다. 예상과 다르면 타입·객체 정체성·수명·예외 경계를 한 항목씩 좁혀 원인을 찾는다. 수정한 뒤에는 원래 사례와 반대 조건 사례를 모두 실행하고, CHAPTER 06 · `__post_init__`은 생성된 initializer 뒤에서 invariant를 완성한다이 어떤 상태 변화를 만들었는지 한 문장으로 설명한다. 다른 코드에서도 같은 규칙을 알아볼 수 있으면 이해가 실제로 연결된 것이다.
+**검증 시나리오 P80-C6 — CHAPTER 06 · `__post_init__`은 생성된 initializer 뒤에서 invariant를 완성한다**
+`CHAPTER 06 · `__post_init__`은 생성된 initializer 뒤에서 invariant를 완성한다` 검증은 성공 사례를 기준선으로 저장하는 데서 시작한다. P80-C6에서는 `CHAPTER 06 · `__post_init__`은 생성된 initializer 뒤에서 invariant를 완성한다` 실행 직전 상태를 먼저 적고 실행 뒤 값과 비교해 실제 규칙을 확인한다. 두 번째 단계에서는 `CHAPTER 06 · `__post_init__`은 생성된 initializer 뒤에서 invariant를 완성한다`에 대해 실패 조건은 하나만 주입고 다른 코드는 그대로 두어 원인 후보를 하나로 제한한다. 이때 `CHAPTER 06 · `__post_init__`은 생성된 initializer 뒤에서 invariant를 완성한다`의 로그 시각과 상태 식별자를 맞춰 본다하여 우연한 통과를 배제한다. 예상과 다르면 `CHAPTER 06 · `__post_init__`은 생성된 initializer 뒤에서 invariant를 완성한다`의 타입, 값, 호출 순서, 예외 경계 가운데 최초로 달라진 항목부터 확인하고 최소 수정 뒤 다시 실행한다. P80-C6의 마무리는 성공·실패 모두 결정적으로 끝나는지 확인하는 것이다. 통과 기준은 `CHAPTER 06 · `__post_init__`은 생성된 initializer 뒤에서 invariant를 완성한다`의 정상 사례와 변형 사례가 모두 설명 가능한 결과를 내고 같은 절차를 반복해도 동일한 상태 계약을 유지하는 것이다.
 ## CHAPTER 07 · slots와 match args 옵션은 memory layout과 pattern surface를 바꿀 수 있다
 
 ### 시작 전 용어집
