@@ -10,7 +10,7 @@ import java.net.HttpURLConnection
 import java.net.URL
 import java.security.MessageDigest
 
-/** Book-scale metadata. Learner text is read from the single live textbook path. */
+/** Book-scale metadata. Learner text is read from the CodingCoding LIVE textbook path. */
 data class V5BookManifest(
     val trackId: String,
     val trackNumber: Int,
@@ -55,22 +55,17 @@ sealed interface V5RemoteRefreshResult {
 }
 
 /**
- * Single-live-path V5 textbook repository.
+ * CodingCoding single-source textbook repository.
  *
- * There is exactly one learner-content source:
+ * Runtime learner content is isolated to:
  *   irewon1-lgtm/Myapp / codingcoding-textbook-live / app/src/main/assets/textbook/v5/
  *
- * A project_lock.json identity check is mandatory before any TRACK is accepted. This prevents
- * content from another chat, branch, project, or legacy cache from being displayed by mistake.
+ * A project_lock.json identity check is mandatory before a TRACK is accepted. This prevents
+ * another chat, recovery branch, preview branch, experiment, or legacy cache from being displayed.
  *
- * No channel revision, compare window, previous snapshot, rollback snapshot, staging promotion,
- * bundled-content fallback, file-count gate, evidence gate, or source-registry gate is involved in
- * deciding what the learner sees. When a TRACK directory changes, the current files from that one
- * live path replace the device cache for that TRACK.
- *
- * The cache is only a transport cache for the current live files. It is never treated as a previous
- * version. If the live directory cannot be refreshed, the caller receives Skipped and can show the
- * connection error instead of silently displaying an older textbook.
+ * The APK carries a same-project bundled copy so the book can open offline on first launch.
+ * Network refreshes are staged in a temporary directory and replace the cache only after every
+ * file has downloaded successfully. A failed refresh therefore never destroys the last good book.
  */
 class V5BookAssetRepository(
     private val context: Context,
@@ -89,7 +84,7 @@ class V5BookAssetRepository(
             .sortedWith(compareBy<String> { if (it == "manifest.json") 0 else 1 }.thenBy { it })
 
         require(names.firstOrNull() == "manifest.json") {
-            "Live manifest is not cached for TRACK $trackNumber"
+            "CodingCoding LIVE manifest is not cached for TRACK $trackNumber"
         }
 
         val fragments = names.map { name ->
@@ -98,7 +93,22 @@ class V5BookAssetRepository(
             }
         }
         val base = fragments.first()
-        return base.copy(parts = fragments.flatMap { it.parts }.sortedBy { it.order })
+        require(base.trackNumber == trackNumber) {
+            "Manifest track mismatch: expected=$trackNumber actual=${base.trackNumber}"
+        }
+        fragments.forEach { fragment ->
+            require(fragment.trackNumber == base.trackNumber)
+            require(fragment.trackId == base.trackId)
+            require(fragment.title == base.title)
+        }
+        val merged = base.copy(parts = fragments.flatMap { it.parts }.sortedBy { it.order })
+        require(merged.parts.map { it.order } == (1..merged.parts.size).toList()) {
+            "Part order is not contiguous for TRACK $trackNumber"
+        }
+        require(merged.parts.map { it.id }.distinct().size == merged.parts.size) {
+            "Duplicate part ids for TRACK $trackNumber"
+        }
+        return merged
     }
 
     fun loadPart(part: V5BookPartRef): List<TextbookBlock> {
@@ -112,12 +122,6 @@ class V5BookAssetRepository(
         }
     }
 
-    /**
-     * Refreshes one TRACK directly from the canonical live branch.
-     *
-     * Git blob SHAs from the directory listing are the change detector. A one-character edit changes
-     * the file SHA, therefore the TRACK signature changes and the current TRACK is downloaded again.
-     */
     suspend fun refreshRemoteContent(trackNumber: Int): V5RemoteRefreshResult =
         withContext(Dispatchers.IO) {
             synchronized(REFRESH_LOCK) {
@@ -131,14 +135,16 @@ class V5BookAssetRepository(
     private fun refreshRemoteContentBlocking(trackNumber: Int): V5RemoteRefreshResult {
         require(trackNumber in 1..11) { "trackNumber out of range: $trackNumber" }
 
-        val projectLock = fetchProjectLock()
+        val projectLock = fetchProjectLock() ?: loadBundledProjectLock()
             ?: return V5RemoteRefreshResult.Skipped("project_lock_unavailable")
         validateProjectLock(projectLock)?.let { reason ->
             return V5RemoteRefreshResult.Skipped(reason)
         }
         if (trackNumber !in projectLock.trackNumbers) {
-            return V5RemoteRefreshResult.Skipped("track_not_allowed_by_project_lock:$trackNumber")
+            return V5RemoteRefreshResult.Skipped("track_not_live:$trackNumber")
         }
+
+        seedBundledTrackIfMissing(trackNumber)
 
         val listing = fetchText(liveDirectoryUrl(trackNumber))
             ?: return V5RemoteRefreshResult.Skipped("live_directory_unavailable")
@@ -154,23 +160,106 @@ class V5BookAssetRepository(
             return V5RemoteRefreshResult.UpToDate
         }
 
-        // Deliberately destructive: the live TRACK is the only version.
-        dir.deleteRecursively()
-        dir.mkdirs()
+        val staging = File(
+            cacheRoot(),
+            liveTrackAssetPath(trackNumber) + ".__next"
+        )
+        staging.deleteRecursively()
+        staging.mkdirs()
 
         var downloaded = 0
         for (remote in remoteFiles) {
             val body = fetchText(rawUrl(remote.path))
-                ?: return V5RemoteRefreshResult.Skipped("live_file_unavailable:${remote.name}")
-            val relative = remote.path.removePrefix(REPO_ASSET_PREFIX)
-            val target = File(cacheRoot(), relative)
-            target.parentFile?.mkdirs()
-            target.writeText(body, Charsets.UTF_8)
+                ?: run {
+                    staging.deleteRecursively()
+                    return V5RemoteRefreshResult.Skipped("live_file_unavailable:${remote.name}")
+                }
+            File(staging, remote.name).writeText(body, Charsets.UTF_8)
             downloaded += 1
+        }
+
+        val stagedManifest = File(staging, "manifest.json")
+        if (!stagedManifest.isFile) {
+            staging.deleteRecursively()
+            return V5RemoteRefreshResult.Skipped("staged_manifest_missing")
+        }
+
+        dir.deleteRecursively()
+        dir.parentFile?.mkdirs()
+        if (!staging.renameTo(dir)) {
+            dir.mkdirs()
+            staging.copyRecursively(dir, overwrite = true)
+            staging.deleteRecursively()
         }
 
         prefs().edit().putString(signatureKey(trackNumber), signature).apply()
         return V5RemoteRefreshResult.Updated(signature, downloaded)
+    }
+
+    private fun seedBundledTrackIfMissing(trackNumber: Int): Boolean {
+        val dir = trackCacheDir(trackNumber)
+        if (File(dir, "manifest.json").isFile) return true
+
+        val assetDir = liveTrackAssetPath(trackNumber)
+        val names = context.assets.list(assetDir).orEmpty()
+            .filter { it.endsWith(".md") || it.endsWith(".json") }
+        if ("manifest.json" !in names) return false
+
+        val staging = File(cacheRoot(), assetDir + ".__bundle")
+        staging.deleteRecursively()
+        staging.mkdirs()
+
+        return runCatching {
+            names.forEach { name ->
+                context.assets.open("$assetDir/$name").use { input ->
+                    File(staging, name).outputStream().use { output ->
+                        input.copyTo(output)
+                    }
+                }
+            }
+            dir.deleteRecursively()
+            dir.parentFile?.mkdirs()
+            if (!staging.renameTo(dir)) {
+                dir.mkdirs()
+                staging.copyRecursively(dir, overwrite = true)
+                staging.deleteRecursively()
+            }
+            File(dir, "manifest.json").isFile
+        }.getOrElse {
+            staging.deleteRecursively()
+            false
+        }
+    }
+
+    private fun fetchProjectLock(): V5ProjectLock? {
+        val body = fetchText(rawUrl(PROJECT_LOCK_REPO_PATH)) ?: return null
+        return runCatching {
+            gson.fromJson(body, V5ProjectLock::class.java)
+        }.getOrNull()
+    }
+
+    private fun loadBundledProjectLock(): V5ProjectLock? =
+        runCatching {
+            context.assets.open(PROJECT_LOCK_ASSET_PATH).bufferedReader(Charsets.UTF_8).use { reader ->
+                gson.fromJson(reader, V5ProjectLock::class.java)
+            }
+        }.getOrNull()
+
+    private fun validateProjectLock(lock: V5ProjectLock): String? {
+        val allowedTracks = runCatching { lock.trackNumbers.toSet() }.getOrNull()
+            ?: return "project_lock_invalid_tracks"
+        return when {
+            lock.projectId != EXPECTED_PROJECT_ID -> "project_lock_project_mismatch"
+            lock.contentId != EXPECTED_CONTENT_ID -> "project_lock_content_mismatch"
+            lock.schemaVersion != EXPECTED_SCHEMA_VERSION -> "project_lock_schema_mismatch"
+            lock.repository != EXPECTED_REPOSITORY -> "project_lock_repository_mismatch"
+            lock.branch != LIVE_BRANCH -> "project_lock_branch_mismatch"
+            lock.contentRoot != LIVE_TRACK_ROOT -> "project_lock_root_mismatch"
+            allowedTracks.isEmpty() -> "project_lock_track_set_empty"
+            allowedTracks.any { it !in 1..11 } -> "project_lock_track_out_of_range"
+            allowedTracks.size != lock.trackNumbers.size -> "project_lock_duplicate_track"
+            else -> null
+        }
     }
 
     private fun parseDirectoryListing(body: String, trackNumber: Int): List<RemoteFile> {
@@ -195,28 +284,6 @@ class V5BookAssetRepository(
         return MessageDigest.getInstance("SHA-256")
             .digest(payload.toByteArray(Charsets.UTF_8))
             .joinToString("") { byte -> (byte.toInt() and 0xff).toString(16).padStart(2, '0') }
-    }
-
-    private fun fetchProjectLock(): V5ProjectLock? {
-        val body = fetchText(rawUrl(PROJECT_LOCK_REPO_PATH)) ?: return null
-        return runCatching {
-            gson.fromJson(body, V5ProjectLock::class.java)
-        }.getOrNull()
-    }
-
-    private fun validateProjectLock(lock: V5ProjectLock): String? {
-        val allowedTracks = runCatching { lock.trackNumbers.toSet() }.getOrNull()
-            ?: return "project_lock_invalid_tracks"
-        return when {
-            lock.projectId != EXPECTED_PROJECT_ID -> "project_lock_project_mismatch"
-            lock.contentId != EXPECTED_CONTENT_ID -> "project_lock_content_mismatch"
-            lock.schemaVersion != EXPECTED_SCHEMA_VERSION -> "project_lock_schema_mismatch"
-            lock.repository != EXPECTED_REPOSITORY -> "project_lock_repository_mismatch"
-            lock.branch != LIVE_BRANCH -> "project_lock_branch_mismatch"
-            lock.contentRoot != LIVE_TRACK_ROOT -> "project_lock_root_mismatch"
-            allowedTracks != (1..11).toSet() -> "project_lock_track_set_mismatch"
-            else -> null
-        }
     }
 
     private fun fetchText(url: String): String? {
@@ -248,9 +315,9 @@ class V5BookAssetRepository(
         "$RAW_BASE/$LIVE_BRANCH/$repoPath"
 
     private fun liveFile(assetPath: String): File {
-        require(assetPath.startsWith("textbook/v5/track_")) { "Not a live TRACK path: $assetPath" }
+        require(assetPath.startsWith("textbook/v5/track_")) { "Not a CodingCoding LIVE path: $assetPath" }
         val file = File(cacheRoot(), assetPath)
-        require(file.isFile) { "Live textbook file is not cached: $assetPath" }
+        require(file.isFile) { "CodingCoding LIVE textbook file is not cached: $assetPath" }
         return file
     }
 
@@ -267,7 +334,6 @@ class V5BookAssetRepository(
         "track_${trackNumber.toString().padStart(2, '0')}_signature"
 
     companion object {
-        /** The one and only CodingCoding learner-content branch. */
         internal const val LIVE_BRANCH = "codingcoding-textbook-live"
         internal const val LIVE_TRACK_ROOT = "app/src/main/assets/textbook/v5"
         internal const val EXPECTED_PROJECT_ID = "codingcoding"
@@ -277,6 +343,7 @@ class V5BookAssetRepository(
         internal const val PROJECT_LOCK_REPO_PATH =
             "app/src/main/assets/textbook/v5/project_lock.json"
 
+        private const val PROJECT_LOCK_ASSET_PATH = "textbook/v5/project_lock.json"
         private const val REPO_ASSET_PREFIX = "app/src/main/assets/"
         private const val RAW_BASE = "https://raw.githubusercontent.com/irewon1-lgtm/Myapp"
         private const val CONTENTS_API =
