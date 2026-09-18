@@ -629,7 +629,7 @@ final class Track1Content {
         List<Page> pages = new ArrayList<>();
         switch (lesson) {
             case 1:
-                pages.add(vocab(lesson, lessonTitle, "용어집 1/3 — 프로그램·코드·언어",
+                pages.add(vocab(lesson, lessonTitle, "용어집 1/4 — 프로그램·코드·언어",
                         "프로그램(program)\n"
                                 + "컴퓨터가 어떤 목적을 수행하도록 만든 명령들의 묶음입니다. 계산기처럼 숫자를 계산하는 작은 것도 프로그램이고, 카카오톡이나 게임처럼 수많은 기능이 있는 앱도 프로그램입니다. 실제로는 입력을 받고, 정해진 규칙으로 처리하고, 결과를 보여 주는 구조를 가집니다. 우리가 앞으로 만드는 Python 파일도 아주 작은 프로그램입니다.\n\n"
                                 + "프로그래밍(programming) / 코딩(coding)\n"
@@ -638,7 +638,7 @@ final class Track1Content {
                                 + "컴퓨터에게 시킬 일을 프로그래밍 언어 규칙에 맞춰 적은 글입니다. 예를 들어 print(\"안녕\")도 한 줄의 코드입니다. 코드는 사람이 읽을 수 있도록 작성하지만, 실행 환경이 그 의미를 해석해 실제 동작으로 연결합니다.\n\n"
                                 + "소스 코드(source code)\n"
                                 + "사람이 직접 읽고 수정하는 프로그램 원본입니다. GitHub에서 ‘source’를 본다는 것은 보통 이 원본 코드를 본다는 뜻입니다. 버그를 고치거나 기능을 추가할 때 개발자는 소스 코드를 수정한 뒤 다시 실행하거나 빌드합니다."));
-                pages.add(vocab(lesson, lessonTitle, "용어집 2/3 — Python·인터프리터·실행 환경",
+                pages.add(vocab(lesson, lessonTitle, "용어집 2/4 — Python·인터프리터·실행 환경",
                         "프로그래밍 언어(programming language)\n"
                                 + "코드를 적기 위한 문법과 규칙의 체계입니다. Python, JavaScript, Java, Kotlin 등이 각각 다른 프로그래밍 언어입니다. 언어마다 쓰는 기호와 문법은 다르지만 ‘값을 저장하고, 조건을 판단하고, 반복하고, 함수를 만든다’ 같은 기본 생각은 많이 공유합니다.\n\n"
                                 + "Python\n"
@@ -647,7 +647,7 @@ final class Track1Content {
                                 + "Python 소스 코드를 읽고 실행해 주는 프로그램입니다. 우리가 python hello.py처럼 실행하면 Python 인터프리터가 파일을 읽고 각 명령을 처리합니다. ‘코드는 있는데 실행이 안 된다’는 상황에서 Python 인터프리터가 설치되어 있는지 확인하는 이유가 여기에 있습니다.\n\n"
                                 + "실행 환경(runtime)\n"
                                 + "코드가 실제로 동작할 수 있게 필요한 기능을 제공하는 환경을 넓게 부르는 말입니다. Python 프로그램이라면 Python 실행기와 관련 라이브러리 등이 포함될 수 있습니다. 인터넷에서 ‘runtime error’라는 말을 보면 프로그램을 실행하는 동안 문제가 생겼다는 뜻으로 이해하면 됩니다."));
-                pages.add(vocab(lesson, lessonTitle, "용어집 3/3 — run·execute·print·output·string",
+                pages.add(vocab(lesson, lessonTitle, "용어집 3/4 — run·execute·print·output·string",
                         "실행(run / execute)\n"
                                 + "작성한 코드를 실제로 동작시키는 것입니다. 편집기에서 Run 버튼을 누르거나 터미널에서 python 파일이름.py를 입력하는 것이 실행의 예입니다. 코드를 수정한 뒤에는 다시 실행해 결과가 달라졌는지 확인합니다.\n\n"
                                 + "print\n"
@@ -669,14 +669,14 @@ final class Track1Content {
                                 + "계산되어 하나의 값이 되는 코드 조각입니다. 2 + 3, age + 1 등이 expression입니다. print 안에 expression을 넣으면 먼저 계산된 결과가 출력됩니다."));
                 break;
             case 2:
-                pages.add(vocab(lesson, lessonTitle, "용어집 1/3 — 실행 순서·흐름·순차 실행",
+                pages.add(vocab(lesson, lessonTitle, "용어집 1/4 — 실행 순서·흐름·순차 실행",
                         "실행 순서(execution order)\n"
                                 + "코드가 실제로 어느 순서로 실행되는지를 뜻합니다. Python은 기본적으로 위에서 아래로 한 줄씩 진행합니다. 값을 만들기 전에 사용하면 문제가 생길 수 있으므로 ‘어느 줄이 먼저 실행되는가’를 보는 습관이 중요합니다.\n\n"
                                 + "흐름(flow / control flow)\n"
                                 + "프로그램의 실행이 어느 경로로 이동하는지 나타내는 말입니다. 지금은 위에서 아래로 단순하게 흐르지만, 나중에 if와 반복문을 배우면 흐름이 갈라지거나 되돌아옵니다. ‘control flow’라는 표현을 보면 실행 경로를 제어하는 구조라고 생각하면 됩니다.\n\n"
                                 + "순차 실행(sequential execution)\n"
                                 + "명령을 적힌 순서대로 하나씩 실행하는 방식입니다. print(\"A\"), print(\"B\") 순서라면 A가 먼저 나오고 B가 다음에 나옵니다. 가장 기본적인 실행 방식이며 이후 모든 제어 흐름의 기준점이 됩니다."));
-                pages.add(vocab(lesson, lessonTitle, "용어집 2/3 — statement·expression·value·evaluate",
+                pages.add(vocab(lesson, lessonTitle, "용어집 2/4 — statement·expression·value·evaluate",
                         "문장(statement)\n"
                                 + "컴퓨터에게 한 가지 동작을 시키는 코드 단위입니다. 예를 들어 print(\"안녕\")은 화면에 값을 보여 주라는 statement입니다. assignment도 statement의 한 종류로 볼 수 있습니다. 긴 코드를 읽을 때 ‘이 줄은 어떤 일을 시키는 statement인가?’라고 물으면 구조가 보입니다.\n\n"
                                 + "표현식(expression)\n"
@@ -685,7 +685,7 @@ final class Track1Content {
                                 + "프로그램이 실제로 다루는 데이터입니다. 10, 3.14, \"안녕\", True 등이 모두 값입니다. expression은 결국 이런 값을 만들어 내고, 변수는 값을 다시 사용할 수 있도록 이름을 붙여 줍니다.\n\n"
                                 + "평가(evaluate / evaluation)\n"
                                 + "expression을 계산해서 실제 값을 얻는 과정입니다. 2 + 3을 evaluate하면 5가 됩니다. ‘expression is evaluated first’라는 설명은 ‘이 식을 먼저 계산해 값으로 만든다’는 뜻입니다."));
-                pages.add(vocab(lesson, lessonTitle, "용어집 3/3 — comment·#·line",
+                pages.add(vocab(lesson, lessonTitle, "용어집 3/4 — comment·#·line",
                         "주석(comment)\n"
                                 + "컴퓨터가 실행하지 않고 사람이 읽기 위해 남기는 메모입니다. 코드가 왜 필요한지, 어떤 주의점이 있는지 설명할 때 사용합니다. 실제 프로젝트에서는 팀원이 코드를 이해하거나 나중에 자신이 다시 볼 때 도움을 줍니다.\n\n"
                                 + "# 기호\n"
@@ -701,7 +701,7 @@ final class Track1Content {
                                 + "코드나 작업이 배치된 앞뒤 관계입니다. execution order는 실제 실행 순서라는 뜻입니다. 값을 만든 뒤 사용하는 것처럼 코드에서는 order가 결과에 직접 영향을 줍니다."));
                 break;
             case 3:
-                pages.add(vocab(lesson, lessonTitle, "용어집 1/3 — variable·value·assignment",
+                pages.add(vocab(lesson, lessonTitle, "용어집 1/4 — variable·value·assignment",
                         "변수(variable)\n"
                                 + "값을 다시 사용하기 위해 붙이는 이름입니다. price = 1200이라면 price라는 이름으로 1200을 다시 사용할 수 있습니다. 실제 프로그램에서는 사용자 이름, 점수, 총액처럼 계속 변할 수 있는 정보를 변수로 표현합니다.\n\n"
                                 + "값(value)\n"
@@ -710,14 +710,14 @@ final class Track1Content {
                                 + "오른쪽에서 계산된 값을 왼쪽 변수 이름에 연결하는 동작입니다. age = 10을 실행하면 10이라는 값이 age에 대입됩니다. 이후 print(age)를 쓰면 10을 얻을 수 있습니다.\n\n"
                                 + "대입 연산자(=)\n"
                                 + "Python에서 assignment에 사용하는 기호입니다. 수학의 ‘양쪽이 같다’와 달리 오른쪽 결과를 왼쪽 이름에 넣는 방향성이 있습니다. total = price * count처럼 오른쪽 계산이 먼저 끝난 뒤 결과가 total에 대입됩니다."));
-                pages.add(vocab(lesson, lessonTitle, "용어집 2/3 — binding·reassignment·identifier",
+                pages.add(vocab(lesson, lessonTitle, "용어집 2/4 — binding·reassignment·identifier",
                         "연결(binding)\n"
                                 + "변수 이름이 어떤 값과 연결되어 있는지를 설명할 때 쓰는 말입니다. Python 설명서나 심화 글에서 ‘name is bound to a value’라는 문장을 만나면 ‘이 이름이 그 값을 가리킨다’고 이해하면 됩니다.\n\n"
                                 + "재대입(reassignment)\n"
                                 + "이미 사용 중인 변수에 새로운 값을 다시 대입하는 것입니다. age = 10 다음에 age = 11을 실행하면 이후 age는 11을 사용합니다. 프로그램의 상태가 바뀌는 가장 기본적인 모습입니다.\n\n"
                                 + "식별자(identifier)\n"
                                 + "변수, 함수 등 코드의 여러 대상을 구별하기 위해 붙이는 이름입니다. user_name, total_price 같은 이름이 identifier입니다. Python에는 숫자로 시작할 수 없다는 등 식별자 작성 규칙이 있습니다."));
-                pages.add(vocab(lesson, lessonTitle, "용어집 3/3 — variable name·snake_case·naming",
+                pages.add(vocab(lesson, lessonTitle, "용어집 3/4 — variable name·snake_case·naming",
                         "변수명(variable name)\n"
                                 + "변수에 붙인 실제 이름입니다. 같은 기능을 만들어도 변수명은 개발자가 정합니다. 의미가 분명한 이름을 사용하면 코드를 다시 읽을 때 ‘이 값이 무엇이었지?’를 추측할 필요가 줄어듭니다.\n\n"
                                 + "snake_case\n"
@@ -733,7 +733,7 @@ final class Track1Content {
                                 + "동작 결과는 유지하면서 코드 구조나 이름을 더 이해하기 좋게 고치는 작업입니다. city를 home_city로 더 명확하게 바꾸는 것처럼 이름 개선도 작은 refactor로 볼 수 있습니다."));
                 break;
             case 4:
-                pages.add(vocab(lesson, lessonTitle, "용어집 1/3 — data·type·int·float",
+                pages.add(vocab(lesson, lessonTitle, "용어집 1/4 — data·type·int·float",
                         "데이터(data)\n"
                                 + "프로그램이 저장하고 처리하는 정보입니다. 숫자, 글자, 사진, 날짜 등 모두 데이터가 될 수 있습니다. Python에서는 각각의 데이터가 어떤 종류인지 나타내는 타입을 가집니다.\n\n"
                                 + "데이터 타입(data type) / 타입(type)\n"
@@ -742,14 +742,14 @@ final class Track1Content {
                                 + "소수점이 없는 정수 타입입니다. 0, 10, -3 등이 int입니다. 개수, 나이, 점수처럼 소수점이 필요 없는 값을 표현할 때 자주 사용합니다.\n\n"
                                 + "float\n"
                                 + "소수점을 표현할 수 있는 숫자 타입입니다. 3.14, 0.5 등이 float입니다. 비율이나 평균처럼 소수 계산이 필요한 값에 사용합니다."));
-                pages.add(vocab(lesson, lessonTitle, "용어집 2/3 — str·bool·operator",
+                pages.add(vocab(lesson, lessonTitle, "용어집 2/4 — str·bool·operator",
                         "str(string)\n"
                                 + "문자열 타입입니다. \"안녕하세요\"처럼 글자 묶음을 저장합니다. \"10\"처럼 숫자 모양이어도 따옴표 안에 있으면 str이므로 숫자 계산에 바로 사용할 수 없습니다. 이름, 주소, 메시지 등에 사용합니다.\n\n"
                                 + "bool(boolean)\n"
                                 + "참과 거짓을 나타내는 타입입니다. Python에서는 True와 False 두 값을 사용합니다. 지금은 단순한 값으로만 보지만, 다음 트랙에서 if 조건을 판단할 때 핵심적으로 사용합니다.\n\n"
                                 + "연산자(operator)\n"
                                 + "값에 계산이나 비교 같은 동작을 적용하는 기호입니다. +, -, *, / 등이 대표적입니다. 연산자는 값의 타입에 따라 가능한 동작이나 결과가 달라질 수 있습니다."));
-                pages.add(vocab(lesson, lessonTitle, "용어집 3/3 — type()·type mismatch·TypeError",
+                pages.add(vocab(lesson, lessonTitle, "용어집 3/4 — type()·type mismatch·TypeError",
                         "type()\n"
                                 + "Python에게 ‘이 값의 타입이 무엇이야?’라고 물어보는 함수입니다. type(10)은 int, type(\"10\")은 str을 알려 줍니다. 값이 예상과 다르게 움직일 때 디버깅용으로 자주 사용합니다.\n\n"
                                 + "타입 불일치(type mismatch)\n"
@@ -765,7 +765,7 @@ final class Track1Content {
                                 + "값을 다른 형태나 타입으로 바꾸는 작업을 넓게 부르는 말입니다. 다음 챕터에서 int(), float(), str()를 이용한 type conversion을 자세히 배웁니다."));
                 break;
             case 5:
-                pages.add(vocab(lesson, lessonTitle, "용어집 1/3 — input·process·output·I/O",
+                pages.add(vocab(lesson, lessonTitle, "용어집 1/4 — input·process·output·I/O",
                         "입력(input)\n"
                                 + "사용자, 파일, 센서, 인터넷 등 외부에서 프로그램 안으로 들어오는 값입니다. 키보드로 이름을 입력하는 것도 input입니다. 프로그램은 입력을 받아야 사용자마다 다른 결과를 만들 수 있습니다.\n\n"
                                 + "처리(process)\n"
@@ -774,14 +774,14 @@ final class Track1Content {
                                 + "처리가 끝난 뒤 프로그램이 밖으로 내놓는 결과입니다. 화면 글자, 파일, 소리, 네트워크 응답 등이 모두 출력이 될 수 있습니다.\n\n"
                                 + "I/O(Input/Output)\n"
                                 + "입력과 출력을 묶어 부르는 말입니다. ‘I/O 처리’라는 표현은 프로그램과 외부 세계 사이에서 데이터를 주고받는 작업을 뜻합니다."));
-                pages.add(vocab(lesson, lessonTitle, "용어집 2/3 — input()·return value·conversion",
+                pages.add(vocab(lesson, lessonTitle, "용어집 2/4 — input()·return value·conversion",
                         "input()\n"
                                 + "키보드 입력을 받아 문자열로 돌려주는 Python 함수입니다. name = input(\"이름: \")처럼 사용합니다. 사용자가 10을 입력해도 처음 결과는 문자열 \"10\"이라는 점이 중요합니다.\n\n"
                                 + "반환값(return value)\n"
                                 + "함수가 일을 한 뒤 호출한 곳으로 돌려주는 결과입니다. input()의 반환값은 사용자가 입력한 문자열입니다. 나중에 함수를 직접 만들 때도 ‘이 함수가 무엇을 return하는가?’가 중요한 질문이 됩니다.\n\n"
                                 + "형 변환(type conversion)\n"
                                 + "값을 한 타입에서 다른 타입으로 바꾸는 작업입니다. \"10\"을 숫자 10으로 바꾸면 계산할 수 있습니다. 외부 입력은 원하는 타입이 아닐 수 있어서 conversion이 자주 필요합니다."));
-                pages.add(vocab(lesson, lessonTitle, "용어집 3/3 — int()·float()·str()·f-string·ValueError",
+                pages.add(vocab(lesson, lessonTitle, "용어집 3/4 — int()·float()·str()·f-string·ValueError",
                         "int() / float() / str()\n"
                                 + "각각 값을 정수, 실수, 문자열로 변환할 때 사용하는 함수입니다. int(\"10\")은 10, float(\"3.5\")는 3.5, str(10)은 \"10\"을 만듭니다. 변환할 수 없는 형식이면 오류가 날 수 있습니다.\n\n"
                                 + "f-string\n"
@@ -797,21 +797,21 @@ final class Track1Content {
                                 + "들어온 값이 허용된 형식과 범위인지 확인하는 과정입니다. 아직 본격적인 코드는 다음 단계에서 배우지만, int 변환이 실패하는 상황을 보면서 validation이 왜 필요한지 미리 이해할 수 있습니다."));
                 break;
             case 6:
-                pages.add(vocab(lesson, lessonTitle, "용어집 1/3 — error·exception·debugging",
+                pages.add(vocab(lesson, lessonTitle, "용어집 1/4 — error·exception·debugging",
                         "오류(error)\n"
                                 + "프로그램이 의도대로 동작하지 않는 문제를 넓게 부르는 말입니다. 문법 오류, 잘못된 계산 결과, 실행 중 예외 등 여러 문제가 모두 error라고 불릴 수 있습니다. 중요한 것은 오류를 숨기는 것이 아니라 원인을 찾는 것입니다.\n\n"
                                 + "예외(exception)\n"
                                 + "프로그램 실행 중 정상적인 흐름을 깨뜨리는 문제를 나타내는 객체나 상황입니다. Python의 TypeError, ValueError 등이 exception 종류입니다. 나중에는 try/except를 사용해 일부 예외를 직접 처리할 수 있습니다.\n\n"
                                 + "디버깅(debugging)\n"
                                 + "문제의 원인을 찾고 수정한 뒤 다시 확인하는 과정입니다. 오류 메시지를 읽고, 값을 출력하고, 최근 변경을 확인하는 작업이 모두 debugging입니다. 실제 개발 시간의 큰 부분을 차지하는 중요한 기술입니다."));
-                pages.add(vocab(lesson, lessonTitle, "용어집 2/3 — traceback·line number·error message",
+                pages.add(vocab(lesson, lessonTitle, "용어집 2/4 — traceback·line number·error message",
                         "traceback\n"
                                 + "Python에서 예외가 발생했을 때 어떤 실행 경로를 거쳐 문제 지점에 도달했는지 보여 주는 정보입니다. 초보자는 마지막 오류 이름과 자기 코드의 줄 번호부터 보면 됩니다. 프로그램이 커지면 위쪽 호출 경로도 원인을 찾는 데 사용합니다.\n\n"
                                 + "줄 번호(line number)\n"
                                 + "소스 코드에서 문제와 관련된 위치를 알려 주는 번호입니다. traceback에 line 12라고 나오면 12번째 줄 주변을 먼저 확인합니다. 다만 실제 원인이 바로 이전 줄에 있을 수도 있으므로 주변도 함께 봅니다.\n\n"
                                 + "오류 메시지(error / exception message)\n"
                                 + "오류 종류 뒤에 붙어 구체적인 원인을 설명하는 문장입니다. 검색할 때 오류 이름과 메시지의 핵심 부분을 함께 넣으면 비슷한 사례를 찾기 쉽습니다."));
-                pages.add(vocab(lesson, lessonTitle, "용어집 3/3 — SyntaxError·NameError·TypeError·ValueError·reproduce·verify",
+                pages.add(vocab(lesson, lessonTitle, "용어집 3/4 — SyntaxError·NameError·TypeError·ValueError·reproduce·verify",
                         "SyntaxError\n문법 규칙이 깨졌을 때 발생합니다. 따옴표나 괄호가 닫히지 않은 경우가 대표적입니다. 코드 자체를 실행하기 전에 발견되기도 합니다.\n\n"
                                 + "NameError\n정의하지 않은 변수나 이름을 사용했을 때 발생합니다. 철자가 틀렸거나 변수 생성 전 사용했는지 확인합니다.\n\n"
                                 + "TypeError\n현재 값의 타입으로는 해당 연산을 할 수 없을 때 발생합니다. type()으로 실제 타입을 확인하는 것이 좋습니다.\n\n"
@@ -828,21 +828,21 @@ final class Track1Content {
                                 + "‘아마 price가 문자열이라 문제가 생겼을 것이다’처럼 원인에 대해 세우는 추측입니다. 좋은 디버깅은 가설을 작은 실험으로 확인하면서 진행합니다."));
                 break;
             case 7:
-                pages.add(vocab(lesson, lessonTitle, "용어집 1/3 — operator·arithmetic operator·expression",
+                pages.add(vocab(lesson, lessonTitle, "용어집 1/4 — operator·arithmetic operator·expression",
                         "연산자(operator)\n"
                                 + "값에 어떤 연산을 수행할지 나타내는 기호입니다. 산술, 비교, 논리 등 여러 종류가 있습니다. 이번 챕터에서는 숫자를 계산하는 산술 연산자를 중심으로 봅니다.\n\n"
                                 + "산술 연산자(arithmetic operator)\n"
                                 + "+ 더하기, - 빼기, * 곱하기, / 나누기처럼 숫자 계산에 사용하는 연산자입니다. Python에는 // 몫, % 나머지, ** 거듭제곱도 있습니다. 실제 계산기, 가격 계산, 점수 계산 등에 사용됩니다.\n\n"
                                 + "표현식(expression)\n"
                                 + "연산자와 값을 조합해 새로운 값을 만들어 내는 코드입니다. price * count는 두 변수 값을 곱해 하나의 숫자 값을 만듭니다. 그 결과를 total 같은 변수에 저장할 수 있습니다."));
-                pages.add(vocab(lesson, lessonTitle, "용어집 2/3 — precedence·parentheses·total",
+                pages.add(vocab(lesson, lessonTitle, "용어집 2/4 — precedence·parentheses·total",
                         "연산 우선순위(operator precedence)\n"
                                 + "한 식에 여러 연산자가 있을 때 무엇을 먼저 계산할지 정하는 규칙입니다. 일반 수학처럼 곱셈·나눗셈이 덧셈·뺄셈보다 먼저입니다. 헷갈리는 식은 괄호로 의도를 명확히 표현하는 편이 안전합니다.\n\n"
                                 + "괄호(parentheses)\n"
                                 + "( ) 기호입니다. 계산 순서를 바꾸거나 함수 호출에 사용합니다. (2 + 3) * 4처럼 쓰면 괄호 안을 먼저 계산합니다. 코드를 읽는 사람에게 우선 계산 부분을 보여 주는 역할도 합니다.\n\n"
                                 + "total\n"
                                 + "‘전체 합계’를 뜻하는 영어 단어로 변수 이름에 자주 사용됩니다. total_price, total_count처럼 더 구체적인 이름으로 확장하기도 합니다. 특별한 Python 예약어가 아니라 개발자가 의미를 전달하려고 선택하는 이름입니다."));
-                pages.add(vocab(lesson, lessonTitle, "용어집 3/3 — discount·reuse·calculation",
+                pages.add(vocab(lesson, lessonTitle, "용어집 3/4 — discount·reuse·calculation",
                         "discount\n"
                                 + "할인을 뜻하는 일반 영어 단어이며 예제 변수명에 자주 사용됩니다. discount_rate라면 할인 비율, discounted_price라면 할인된 가격처럼 이름을 만들 수 있습니다. 변수명을 통해 비즈니스 의미를 코드에 표현하는 예입니다.\n\n"
                                 + "재사용(reuse)\n"
@@ -862,21 +862,21 @@ final class Track1Content {
                                 + "특별한 Python 용어는 아니지만 실제 쇼핑 계산 프로그램에서 자주 등장하는 데이터 이름입니다. shipping_fee처럼 의미가 분명한 변수명을 사용할 수 있습니다."));
                 break;
             case 8:
-                pages.add(vocab(lesson, lessonTitle, "용어집 1/3 — project·requirement·specification",
+                pages.add(vocab(lesson, lessonTitle, "용어집 1/4 — project·requirement·specification",
                         "프로젝트(project)\n"
                                 + "하나의 목표를 가진 프로그램이나 기능을 실제로 완성하는 작업입니다. 학습 프로젝트는 배운 개념을 연결해 보는 연습이고, 실제 업무 프로젝트는 사용자 요구와 일정, 테스트까지 더 많은 요소를 포함합니다.\n\n"
                                 + "요구사항(requirement)\n"
                                 + "프로그램이 반드시 해야 하는 일을 적은 조건입니다. ‘이름과 지출 금액을 입력받아 총액을 보여 준다’가 요구사항의 예입니다. 코드를 쓰기 전에 요구사항을 정하면 무엇을 만들어야 완성인지 판단할 수 있습니다.\n\n"
                                 + "명세(specification / spec)\n"
                                 + "요구사항을 더 구체적으로 설명한 문서나 규칙입니다. 어떤 입력을 허용하는지, 결과 형식은 어떤지까지 적을 수 있습니다. 실제 개발에서는 사람마다 다르게 이해하지 않도록 기준을 맞추는 데 사용합니다."));
-                pages.add(vocab(lesson, lessonTitle, "용어집 2/3 — algorithm·input-process-output·test",
+                pages.add(vocab(lesson, lessonTitle, "용어집 2/4 — algorithm·input-process-output·test",
                         "알고리즘(algorithm)\n"
                                 + "문제를 해결하기 위한 단계적인 방법입니다. 꼭 어려운 수학일 필요는 없습니다. ‘세 금액을 입력받는다 → 더한다 → 총액을 출력한다’도 하나의 간단한 알고리즘입니다. 코드를 쓰기 전에 순서를 말로 적어 보는 것이 도움이 됩니다.\n\n"
                                 + "입력-처리-출력(input-process-output)\n"
                                 + "프로그램을 세 부분으로 나눠 생각하는 기본 모델입니다. 입력은 들어오는 데이터, 처리는 내부 계산, 출력은 결과입니다. 큰 문제를 이 세 칸으로 나누면 필요한 코드가 보이기 쉬워집니다.\n\n"
                                 + "테스트(test)\n"
                                 + "프로그램이 예상한 대로 동작하는지 확인하는 활동입니다. 단순히 한 번 실행해 보는 것보다 여러 입력과 예상 결과를 정해 확인하는 것이 더 좋은 테스트입니다."));
-                pages.add(vocab(lesson, lessonTitle, "용어집 3/3 — test case·expected result·edge case·verify",
+                pages.add(vocab(lesson, lessonTitle, "용어집 3/4 — test case·expected result·edge case·verify",
                         "테스트 케이스(test case)\n"
                                 + "특정 입력과 그때 기대하는 결과를 한 묶음으로 정한 것입니다. coffee=0, lunch=9000, transport=1500이면 expected result=10500처럼 적을 수 있습니다. 오류를 고친 뒤 같은 테스트를 다시 실행해 확인하기도 합니다.\n\n"
                                 + "기대 결과(expected result)\n"
@@ -1374,6 +1374,45 @@ final class Track1Content {
         }
     }
 
+    private static String questionMistakeGuideFor(Page source) {
+        switch (source.lessonNumber) {
+            case 1:
+                return "자주 틀리는 생각\n"
+                        + "‘print 안에 있으면 모두 글자다’라고 생각하기 쉽지만 틀립니다. print(2 + 3)의 2 + 3은 계산식이고, print(\"2 + 3\")처럼 따옴표가 있어야 문자열입니다.\n\n"
+                        + "스스로 확인하기\nprint(10)과 print(\"10\")은 화면에 비슷하게 보일 수 있습니다. 하지만 다음 챕터에서 타입을 배우면 두 값이 완전히 다르다는 것을 확인하게 됩니다. 지금은 ‘보이는 결과가 같아도 내부 값의 종류는 다를 수 있다’는 점만 기억하세요.";
+            case 2:
+                return "자주 틀리는 생각\n"
+                        + "‘코드는 전부 위에서 아래로만 실행된다’고 영원히 생각하면 안 됩니다. 지금 챕터에서는 기본 순차 실행을 배우는 중입니다. 다음 트랙에서 if와 반복문을 배우면 실행 흐름이 갈라지거나 이전 줄로 돌아갈 수 있습니다.\n\n"
+                        + "스스로 확인하기\n세 개의 print 줄 순서를 바꿔 결과가 바뀌는지 다시 확인하세요. 그리고 가운데 줄을 주석 처리해 ‘코드에 적혀 있어도 실행되지 않는 줄’이 있다는 것도 함께 확인하면 좋습니다.";
+            case 3:
+                return "자주 틀리는 생각\n"
+                        + "x = 10을 수학식처럼 ‘x와 10은 같다’고만 읽으면 재대입에서 헷갈립니다. 프로그래밍에서는 ‘10을 x에 대입한다’고 읽는 것이 좋습니다.\n\n"
+                        + "스스로 확인하기\nx = 10, x = x + 1, x = x + 1을 차례로 실행한 뒤 x가 12가 되는 과정을 한 줄씩 설명해 보세요. 오른쪽 x는 현재 값을 읽고, 계산한 새 값을 왼쪽 x에 다시 넣습니다.";
+            case 4:
+                return "자주 틀리는 생각\n"
+                        + "값의 생김새만 보고 타입을 판단하면 실수합니다. \"100\"은 숫자처럼 보여도 문자열이고, \"True\"는 bool이 아니라 문자열입니다. 따옴표와 type() 결과를 함께 봐야 합니다.\n\n"
+                        + "스스로 확인하기\n10, 10.0, \"10\", True 네 값을 각각 type()에 넣어 결과를 적어 보세요. 같은 화면 표시라도 타입이 다르면 가능한 연산이 달라진다는 점을 확인합니다.";
+            case 5:
+                return "자주 틀리는 생각\n"
+                        + "input()에 숫자를 쳤으니 자동으로 숫자가 되겠지라고 생각하기 쉽습니다. 하지만 input()은 기본적으로 문자열을 반환합니다. 계산이 필요할 때 개발자가 int()나 float()를 선택합니다.\n\n"
+                        + "스스로 확인하기\nx = input(\"숫자: \") 뒤에 print(type(x))를 추가하고 7을 입력해 보세요. 화면에는 7이 보이지만 타입은 str이라는 사실을 직접 확인할 수 있습니다.";
+            case 6:
+                return "자주 틀리는 생각\n"
+                        + "오류 이름만 보고 바로 코드를 고치려는 것도 실수입니다. 같은 TypeError라도 원인은 여러 가지일 수 있습니다. 실제 값과 문제 줄을 확인한 뒤 가장 작은 수정부터 해야 합니다.\n\n"
+                        + "스스로 확인하기\n오류 메시지를 복사해 검색할 때는 오류 이름만 넣기보다 ‘TypeError int str Python’처럼 관련 타입과 상황을 함께 넣으면 더 정확한 설명을 찾기 쉽습니다.";
+            case 7:
+                return "자주 틀리는 생각\n"
+                        + "연산 순서를 머릿속으로만 복잡하게 외우려고 하면 실수하기 쉽습니다. 의도가 중요한 계산은 괄호로 직접 표시하는 편이 더 읽기 좋습니다.\n\n"
+                        + "스스로 확인하기\n2 + 3 * 4, (2 + 3) * 4, 2 + (3 * 4)를 각각 실행하세요. 첫 번째와 세 번째가 같은 이유, 두 번째만 다른 이유를 설명하면 우선순위를 제대로 이해한 것입니다.";
+            case 8:
+                return "자주 틀리는 생각\n"
+                        + "코딩을 시작해야 설계가 시작된다고 생각하기 쉽지만 반대입니다. 좋은 프로그램은 코드를 쓰기 전에 입력·처리·출력과 완료 기준을 먼저 정합니다.\n\n"
+                        + "스스로 확인하기\n‘병원 방문 횟수를 입력받아 이번 달 총 방문 횟수를 보여 주는 프로그램’을 코드 없이 말로만 설계해 보세요. 어떤 입력이 필요하고, 무엇을 더하며, 어떤 결과를 보여 줄지 설명할 수 있다면 알고리즘의 시작을 이해한 것입니다.";
+            default:
+                return "";
+        }
+    }
+
     private static Page questionAnswerPage(Page source) {
         String extra;
         switch (source.lessonNumber) {
@@ -1407,13 +1446,14 @@ final class Track1Content {
 
         String body = "정답\n" + (source.answer == null ? "" : source.answer)
                 + "\n\n왜 이 답이 되는지 한 단계씩\n" + extra
-                + "\n\n" + questionApplicationFor(source);
+                + "\n\n" + questionApplicationFor(source)
+                + "\n\n" + questionMistakeGuideFor(source);
 
         return new Page(
                 source.lessonNumber,
                 source.lessonTitle,
                 "문제 정답·해설",
-                source.title + " — 정답과 아주 쉬운 해설",
+                source.title + " — 정답 + 단계별 해설 + 응용",
                 body,
                 "",
                 null,
