@@ -323,30 +323,43 @@ public class MainActivity extends Activity {
         installSwipeNavigation(scroll);
 
         LinearLayout outer = vertical();
-        outer.setPadding(dp(18), dp(14), dp(18), dp(22));
-        scroll.addView(outer, matchWrap());
+        outer.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL);
+        outer.setPadding(dp(isTablet() ? 28 : 18), dp(14), dp(isTablet() ? 28 : 18), dp(22));
+        scroll.addView(outer, new ScrollView.LayoutParams(
+                ScrollView.LayoutParams.MATCH_PARENT,
+                ScrollView.LayoutParams.MATCH_PARENT));
 
         LinearLayout paper = vertical();
-        paper.setPadding(dp(22), dp(20), dp(22), dp(24));
+        paper.setPadding(dp(isTablet() ? 30 : 22), dp(isTablet() ? 26 : 20),
+                dp(isTablet() ? 30 : 22), dp(isTablet() ? 30 : 24));
         paper.setBackground(roundRect(SURFACE, BORDER, 18));
         paper.setElevation(dp(1));
-        outer.addView(paper, matchWrap());
+        paper.setMinimumHeight(Math.max(dp(520),
+                getResources().getDisplayMetrics().heightPixels - dp(isTablet() ? 190 : 165)));
+
+        LinearLayout.LayoutParams paperParams = matchWrap();
+        if (isTablet()) {
+            int available = getResources().getDisplayMetrics().widthPixels - dp(56);
+            paperParams.width = Math.min(available, dp(860));
+            paperParams.gravity = Gravity.CENTER_HORIZONTAL;
+        }
+        outer.addView(paper, paperParams);
 
         TextView kicker = text(
                 String.format("CHAPTER %02d  ·  %s", page.lessonNumber, page.kind),
                 12, ACCENT, Typeface.BOLD);
         paper.addView(kicker);
 
-        TextView title = text(page.title, 26, TEXT, Typeface.BOLD);
+        TextView title = text(page.title, isTablet() ? 30 : 26, TEXT, Typeface.BOLD);
         title.setLineSpacing(0f, 1.1f);
         paper.addView(title, topMargin(matchWrap(), dp(8)));
 
-        TextView lessonTitle = text(page.lessonTitle, 13, MUTED, Typeface.NORMAL);
+        TextView lessonTitle = text(page.lessonTitle, isTablet() ? 15 : 13, MUTED, Typeface.NORMAL);
         lessonTitle.setLineSpacing(0f, 1.15f);
         paper.addView(lessonTitle, topMargin(matchWrap(), dp(7)));
 
-        TextView body = text(page.body, 16, TEXT, Typeface.NORMAL);
-        body.setLineSpacing(0f, 1.25f);
+        TextView body = text(page.body, isTablet() ? 18 : 16, TEXT, Typeface.NORMAL);
+        body.setLineSpacing(0f, isTablet() ? 1.32f : 1.25f);
         paper.addView(body, topMargin(matchWrap(), dp(18)));
 
         if (page.hasEasyExplanation()) {
@@ -390,8 +403,8 @@ public class MainActivity extends Activity {
 
         box.addView(text("이게 무슨 뜻이야? — 더 쉽게 설명", 12, Color.rgb(126, 83, 0), Typeface.BOLD));
 
-        TextView body = text(explanation, 15, TEXT, Typeface.NORMAL);
-        body.setLineSpacing(0f, 1.25f);
+        TextView body = text(explanation, isTablet() ? 17 : 15, TEXT, Typeface.NORMAL);
+        body.setLineSpacing(0f, isTablet() ? 1.30f : 1.25f);
         box.addView(body, topMargin(matchWrap(), dp(8)));
         return box;
     }
@@ -418,7 +431,7 @@ public class MainActivity extends Activity {
         });
         head.addView(copy, wrapWrap());
 
-        TextView codeText = text(code, 15, CODE_TEXT, Typeface.NORMAL);
+        TextView codeText = text(code, isTablet() ? 17 : 15, CODE_TEXT, Typeface.NORMAL);
         codeText.setTypeface(Typeface.MONOSPACE);
         codeText.setTextIsSelectable(true);
         codeText.setLineSpacing(0f, 1.18f);
@@ -432,8 +445,8 @@ public class MainActivity extends Activity {
         box.setBackground(roundRect(Color.rgb(246, 248, 251), BORDER, 14));
         box.addView(text("직접 해보기", 12, ACCENT, Typeface.BOLD));
 
-        TextView body = text(practice, 15, TEXT, Typeface.NORMAL);
-        body.setLineSpacing(0f, 1.22f);
+        TextView body = text(practice, isTablet() ? 17 : 15, TEXT, Typeface.NORMAL);
+        body.setLineSpacing(0f, isTablet() ? 1.28f : 1.22f);
         box.addView(body, topMargin(matchWrap(), dp(7)));
 
         TextView answerNotice = text("→ 다음 장: 예시 정답 + 한 단계씩 풀이", 12, ACCENT, Typeface.BOLD);
@@ -448,8 +461,8 @@ public class MainActivity extends Activity {
         box.setBackground(roundRect(SURFACE, BORDER, 14));
         box.addView(text("확인 문제", 12, ACCENT, Typeface.BOLD));
 
-        TextView q = text(question, 15, TEXT, Typeface.BOLD);
-        q.setLineSpacing(0f, 1.22f);
+        TextView q = text(question, isTablet() ? 17 : 15, TEXT, Typeface.BOLD);
+        q.setLineSpacing(0f, isTablet() ? 1.28f : 1.22f);
         box.addView(q, topMargin(matchWrap(), dp(7)));
 
         TextView answerNotice = text("정답은 바로 다음 장에서 아주 쉽게 풀이합니다.", 12, ACCENT, Typeface.BOLD);
@@ -662,6 +675,10 @@ public class MainActivity extends Activity {
     private LinearLayout.LayoutParams topMargin(LinearLayout.LayoutParams p, int top) {
         p.topMargin = top;
         return p;
+    }
+
+    private boolean isTablet() {
+        return getResources().getConfiguration().smallestScreenWidthDp >= 600;
     }
 
     private int dp(int v) {
