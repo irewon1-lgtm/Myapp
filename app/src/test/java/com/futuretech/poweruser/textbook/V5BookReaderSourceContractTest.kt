@@ -15,24 +15,28 @@ class V5BookReaderSourceContractTest {
     private fun compactWhitespace(text: String): String = text.replace(Regex("\\s+"), " ")
 
     @Test
-    fun adaptiveShelfRoutesValidatedV5ManifestsToV5ReaderAndKeepsLegacyFallback() {
+    fun adaptiveShelfKeepsOriginalReaderUiAndRefreshesOnlyTextbookData() {
         val adaptive = source("com/futuretech/poweruser/ui/AdaptiveTextbookScreen.kt")
         assertTrue(adaptive.contains("V5BookAssetRepository(context)"))
         assertTrue(adaptive.contains("loadManifest(selectedChapter.number)"))
         assertTrue(adaptive.contains("if (hasV5Book)"))
         assertTrue(adaptive.contains("V5TrackBookScreen("))
         assertTrue(adaptive.contains("V4PagedBookScreen("))
+        assertTrue(adaptive.contains("refreshRemoteContent(selectedChapter.number)"))
+        assertTrue(adaptive.contains("remoteGeneration"))
     }
 
     @Test
-    fun V5RepositoryMergesManifestShardsBeforeValidatingTheBook() {
+    fun V5RepositoryUsesOnlyCodingCodingProjectLiveAndSeedsBundledBookFirst() {
         val repository = source("com/futuretech/poweruser/textbook/V5BookAssetRepository.kt")
-        assertTrue(repository.contains("context.assets.list(trackDir)"))
+        assertTrue(repository.contains("LIVE_BRANCH = \"codingcoding-project-textbook-live\""))
+        assertTrue(repository.contains("EXPECTED_PROJECT_ID = \"codingcoding\""))
+        assertTrue(repository.contains("seedBundledTrackIfMissing(trackNumber)"))
         assertTrue(repository.contains("manifest_\\\\d{2}\\\\.json"))
         assertTrue(repository.contains("fragments.flatMap { it.parts }.sortedBy { it.order }"))
-        assertTrue(repository.contains("validateManifest(merged, trackNumber)"))
-        assertTrue(repository.contains("Duplicate part asset paths"))
-        assertTrue(repository.contains("Duplicate source-map paths"))
+        assertTrue(repository.contains(".__next"))
+        assertFalse(repository.contains("LIVE_BRANCH = \"codingcoding-textbook-live\""))
+        assertFalse(repository.contains("textbook-v5-deep-book-engine"))
     }
 
     @Test
