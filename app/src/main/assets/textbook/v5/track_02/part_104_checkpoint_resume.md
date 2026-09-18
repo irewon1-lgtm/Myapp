@@ -89,8 +89,8 @@ checkpoint says item 42 done -> crash -> item 42 output never committed
 
 ---
 
-**현장 디버깅 점검 — CHAPTER 03 · output commit과 checkpoint update 사이의 atomicity gap을 줄여야 한다**
-CHAPTER 03 · output commit과 checkpoint update 사이의 atomicity gap을 줄여야 한다을 운영에서 검증할 때는 재시작 뒤에도 상태가 이어지는지까지 확인해야 한다. 먼저 처리 전 상태와 완료 조건을 기록하고, 정상 입력으로 기준 결과를 만든다. 그다음 처리 중간에 강제 중단, 일부 레코드 실패, 중복 전달, 재시작을 각각 따로 주입한다. 재실행 후에는 완료된 항목이 다시 처리되지 않는지, 실패 항목만 안전하게 재시도되는지, 체크포인트와 실제 데이터 상태가 일치하는지 비교한다. 통과 기준은 모든 성공 항목이 정확히 한 번 반영되고 실패 항목은 추적 가능한 상태로 남으며, 같은 시나리오를 반복해도 결과가 변하지 않는 것이다.
+**현장 점검 104-3 — CHAPTER 03 · output commit과 checkpoint update 사이의 atomicity gap을 줄여야 한다**
+재시작 전후에 비교할 상태 필드를 명확히 정한다. CHAPTER 03 · output commit과 checkpoint update 사이의 atomicity gap을 줄여야 한다 검증에서는 관찰값은 성공 여부뿐 아니라 중복 반영, 누락, 열린 자원, 대기 작업까지 포함한다. PART 104의 CHAPTER 3은 중간 중단이나 재전달이 발생해도 상태가 뒤섞이지 않는지 확인하는 것이 핵심이므로, 실패 조건은 한 번에 하나만 주입하고 나머지 조건은 고정한다. 수정 뒤에는 원래 정상 사례, 방금 만든 실패 사례, 같은 요청을 다시 보내는 재실행 사례를 순서대로 반복한다. 통과 기준은 체크포인트와 실제 데이터 상태가 일치하고 재실행 결과가 변하지 않는 것이다.
 ## CHAPTER 04 · replay window는 마지막 checkpoint 이후 얼마만큼 다시 처리할지 결정한다
 
 ### 시작 전 용어집
@@ -168,8 +168,8 @@ job_id, input_digest, schema_version, processor_version, progress
 
 ---
 
-**현장 디버깅 점검 — CHAPTER 06 · 하나의 partition progress에는 single owner 또는 coordination이 필요하다**
-CHAPTER 06 · 하나의 partition progress에는 single owner 또는 coordination이 필요하다을 운영에서 검증할 때는 재시작 뒤에도 상태가 이어지는지까지 확인해야 한다. 먼저 처리 전 상태와 완료 조건을 기록하고, 정상 입력으로 기준 결과를 만든다. 그다음 처리 중간에 강제 중단, 일부 레코드 실패, 중복 전달, 재시작을 각각 따로 주입한다. 재실행 후에는 완료된 항목이 다시 처리되지 않는지, 실패 항목만 안전하게 재시도되는지, 체크포인트와 실제 데이터 상태가 일치하는지 비교한다. 통과 기준은 모든 성공 항목이 정확히 한 번 반영되고 실패 항목은 추적 가능한 상태로 남으며, 같은 시나리오를 반복해도 결과가 변하지 않는 것이다.
+**현장 점검 104-6 — CHAPTER 06 · 하나의 partition progress에는 single owner 또는 coordination이 필요하다**
+완료된 작업과 미완료 작업의 경계를 먼저 숫자로 표시한다. CHAPTER 06 · 하나의 partition progress에는 single owner 또는 coordination이 필요하다 검증에서는 실행 중에는 상태 전이, 재시도 횟수, 최종 반환값을 같은 타임라인에 놓는다. PART 104의 CHAPTER 6은 중간 중단이나 재전달이 발생해도 상태가 뒤섞이지 않는지 확인하는 것이 핵심이므로, 실패 조건은 한 번에 하나만 주입하고 나머지 조건은 고정한다. 수정 뒤에는 원래 정상 사례, 방금 만든 실패 사례, 같은 요청을 다시 보내는 재실행 사례를 순서대로 반복한다. 통과 기준은 지연이나 중단이 있어도 무한 재시도·교착·자원 누수가 생기지 않는 것이다.
 ## CHAPTER 07 · corrupt checkpoint는 입력 손실로 이어지지 않게 검증 후 fallback한다
 
 ### 시작 전 용어집
