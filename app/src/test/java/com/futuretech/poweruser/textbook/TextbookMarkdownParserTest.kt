@@ -40,6 +40,22 @@ class TextbookMarkdownParserTest {
         assertEquals("중요 문장과 코드 용어", paragraph.text)
     }
 
+    @Test fun malformedOrderedListNumbersDoNotCrashReader() {
+        val markdown = """
+            0. zero-based marker
+            999999999999999999999999. huge marker
+            1. valid item
+        """.trimIndent()
+
+        val blocks = TextbookMarkdownParser.parse(markdown)
+
+        assertTrue(blocks.isNotEmpty())
+        assertTrue(blocks.any { it is TextbookBlock.Paragraph })
+        val validList = blocks.filterIsInstance<TextbookBlock.BulletList>().single()
+        assertEquals(1, validList.startNumber)
+        assertEquals(listOf("valid item"), validList.items)
+    }
+
     @Test fun incompleteCodeFenceStillReturnsCodeBlockWithoutCrash() {
         val blocks = TextbookMarkdownParser.parse("```text\nhello")
         val code = blocks.single() as TextbookBlock.Code

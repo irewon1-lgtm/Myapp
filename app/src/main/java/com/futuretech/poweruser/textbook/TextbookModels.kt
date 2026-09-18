@@ -74,18 +74,25 @@ object TextbookMarkdownParser {
                 orderedItem.matches(line.trimStart()) -> {
                     val items = mutableListOf<String>()
                     val firstMatch = requireNotNull(orderedItem.find(line.trimStart()))
-                    val startNumber = firstMatch.groupValues[1].toInt()
-                    var expected = startNumber
-                    while (i < lines.size) {
-                        val match = orderedItem.find(lines[i].trimStart()) ?: break
-                        val actualNumber = match.groupValues[1].toInt()
-                        // A numbering jump starts a new authored list instead of silently changing it.
-                        if (actualNumber != expected) break
-                        items += cleanInline(match.groupValues[2])
-                        expected++
+                    val startNumber = firstMatch.groupValues[1].toIntOrNull()
+                    if (startNumber == null || startNumber < 1) {
+                        // Authored prose can accidentally look like an ordered-list marker.
+                        // Never crash the reader because an external Markdown number is malformed.
+                        out += TextbookBlock.Paragraph(cleanInline(line.trim()))
                         i++
+                    } else {
+                        var expected = startNumber
+                        while (i < lines.size) {
+                            val match = orderedItem.find(lines[i].trimStart()) ?: break
+                            val actualNumber = match.groupValues[1].toIntOrNull() ?: break
+                            // A numbering jump starts a new authored list instead of silently changing it.
+                            if (actualNumber != expected) break
+                            items += cleanInline(match.groupValues[2])
+                            expected++
+                            i++
+                        }
+                        out += TextbookBlock.BulletList(items, ordered = true, startNumber = startNumber)
                     }
-                    out += TextbookBlock.BulletList(items, ordered = true, startNumber = startNumber)
                 }
                 else -> {
                     val paragraph = mutableListOf<String>()

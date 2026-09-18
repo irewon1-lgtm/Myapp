@@ -3,3 +3,5 @@ release=v1.2.19
 source_branch=recovery/correct-app-track02-20260918
 attempt=2
 previous_trigger_sha=f085d3bd0a8881e0663cad9c9c359a0e73241c9c
+retry=2
+reason=parser-safe-ordered-list
