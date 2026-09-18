@@ -1,6 +1,6 @@
 # PART 83 · Asyncio Task lifecycle — coroutine을 schedule하고 cancellation까지 책임지기
 
-`async def`를 호출해 얻은 coroutine object와 event loop에 schedule된 Task는 같은 것이 아니다. Task는 coroutine 실행을 runtime에 등록하고, 결과·exception·cancellation 상태를 보존한다. Background task를 만들기만 하고 reference를 잃거나 exception을 회수하지 않으면 운영 중 누락된 실패와 lifetime 문제가 생길 수 있다. 이 PART에서는 **coroutine → Task → result/exception → cancellation → cleanup**의 전체 lifecycle을 본다.
+`async def`를 호출해 얻은 coroutine object와 event loop에 schedule된 Task는 같은 것이 아니다. Task는 coroutine 실행을 runtime에 등록하고, 결과·exception·cancellation 상태를 보존한다. Background task를 만들기만 하고 reference를 잃거나 exception을 회수하지 않으면 운영 중 누락된 실패와 lifetime 문제가 생길 수 있다. 이 절에서는 **coroutine → Task → result/exception → cancellation → cleanup**의 전체 lifecycle을 본다.
 
 ---
 
@@ -38,6 +38,8 @@ coro = fetch()
 
 ---
 
+**현장 디버깅 점검 — CHAPTER 01 · coroutine object와 Task는 실행 상태의 소유권이 다르다**
+CHAPTER 01 · coroutine object와 Task는 실행 상태의 소유권이 다르다 문제는 정상 경로만 성공하는지 보는 것으로 끝내면 안 된다. 먼저 재현 절차를 고정하고 입력값·현재 상태·반환값·로그 시각을 같은 순서로 기록한다. 그다음 타임아웃, 취소, 부분 실패, 늦은 응답처럼 실제 운영에서 생길 수 있는 조건을 한 번에 하나씩 주입한다. 관찰할 값은 성공 여부뿐 아니라 중복 처리, 누락, 정리되지 않은 자원, 대기 중인 작업이 남는지까지 포함한다. 수정 뒤에는 정상 입력과 실패 입력을 모두 다시 실행한다. 통과 기준은 실패가 사라졌다는 느낌이 아니라 기대 상태와 실제 상태가 일치하고, 실패 시에도 손실·중복·교착 없이 정해진 복구 경로로 종료되는 것이다.
 ## CHAPTER 02 · task scheduling은 즉시 완료가 아니라 event loop에 실행 기회를 등록하는 일이다
 
 ### 시작 전 용어집
@@ -69,6 +71,8 @@ task = asyncio.create_task(fetch())
 
 ---
 
+**현장 디버깅 점검 — CHAPTER 02 · task scheduling은 즉시 완료가 아니라 event loop에 실행 기회를 등록하는 일이다**
+CHAPTER 02 · task scheduling은 즉시 완료가 아니라 event loop에 실행 기회를 등록하는 일이다 문제는 정상 경로만 성공하는지 보는 것으로 끝내면 안 된다. 먼저 재현 절차를 고정하고 입력값·현재 상태·반환값·로그 시각을 같은 순서로 기록한다. 그다음 타임아웃, 취소, 부분 실패, 늦은 응답처럼 실제 운영에서 생길 수 있는 조건을 한 번에 하나씩 주입한다. 관찰할 값은 성공 여부뿐 아니라 중복 처리, 누락, 정리되지 않은 자원, 대기 중인 작업이 남는지까지 포함한다. 수정 뒤에는 정상 입력과 실패 입력을 모두 다시 실행한다. 통과 기준은 실패가 사라졌다는 느낌이 아니라 기대 상태와 실제 상태가 일치하고, 실패 시에도 손실·중복·교착 없이 정해진 복구 경로로 종료되는 것이다.
 ## CHAPTER 03 · Task는 result와 exception을 완료 상태와 함께 보존한다
 
 ### 시작 전 용어집
@@ -161,6 +165,8 @@ async def worker():
 
 ---
 
+**현장 디버깅 점검 — CHAPTER 05 · cancellation 처리 중에도 cleanup을 수행하고 취소 의미는 보존해야 한다**
+CHAPTER 05 · cancellation 처리 중에도 cleanup을 수행하고 취소 의미는 보존해야 한다 문제는 정상 경로만 성공하는지 보는 것으로 끝내면 안 된다. 먼저 재현 절차를 고정하고 입력값·현재 상태·반환값·로그 시각을 같은 순서로 기록한다. 그다음 타임아웃, 취소, 부분 실패, 늦은 응답처럼 실제 운영에서 생길 수 있는 조건을 한 번에 하나씩 주입한다. 관찰할 값은 성공 여부뿐 아니라 중복 처리, 누락, 정리되지 않은 자원, 대기 중인 작업이 남는지까지 포함한다. 수정 뒤에는 정상 입력과 실패 입력을 모두 다시 실행한다. 통과 기준은 실패가 사라졌다는 느낌이 아니라 기대 상태와 실제 상태가 일치하고, 실패 시에도 손실·중복·교착 없이 정해진 복구 경로로 종료되는 것이다.
 ## CHAPTER 06 · shield와 timeout은 cancellation ownership을 바꾸므로 좁게 사용한다
 
 ### 시작 전 용어집
