@@ -1,0 +1,204 @@
+{
+  "partId": "T07-P29",
+  "sections": [
+    {
+      "sectionId": "T07-P29-S01-webhook을-받는-쪽의-상태-변화-설계",
+      "sourceIds": [
+        "DDIA",
+        "FOSA2",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P29-S02-webhook을-받는-쪽의-상태-변화-설계",
+      "sourceIds": [
+        "FOSA2",
+        "OPENAPI31",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P29-S03-webhook을-받는-쪽의-상태-변화-설계",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P29-S04-webhook을-받는-쪽의-상태-변화-설계",
+      "sourceIds": [
+        "SRE",
+        "WEBAPI2",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P29-S05-webhook을-받는-쪽의-상태-변화-설계",
+      "sourceIds": [
+        "WEBAPI2",
+        "DDIA",
+        "FOSA2"
+      ]
+    },
+    {
+      "sectionId": "T07-P29-S06-webhook을-받는-쪽의-상태-변화-설계",
+      "sourceIds": [
+        "DDIA",
+        "FOSA2",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P29-S07-webhook을-받는-쪽의-상태-변화-설계",
+      "sourceIds": [
+        "FOSA2",
+        "OPENAPI31",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P29-S08-webhook을-받는-쪽의-상태-변화-설계",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P29-S09-webhook을-받는-쪽의-상태-변화-설계",
+      "sourceIds": [
+        "SRE",
+        "WEBAPI2",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P29-S10-webhook을-받는-쪽의-상태-변화-설계",
+      "sourceIds": [
+        "WEBAPI2",
+        "DDIA",
+        "FOSA2"
+      ]
+    },
+    {
+      "sectionId": "T07-P29-S11-webhook을-받는-쪽의-상태-변화-설계",
+      "sourceIds": [
+        "DDIA",
+        "FOSA2",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P29-S12-webhook을-받는-쪽의-상태-변화-설계",
+      "sourceIds": [
+        "FOSA2",
+        "LEARNING-CLT-COMPUTING"
+      ]
+    },
+    {
+      "sectionId": "T07-P29-S13-webhook을-받는-쪽의-상태-변화-설계",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P29-S14-webhook을-받는-쪽의-상태-변화-설계",
+      "sourceIds": [
+        "SRE",
+        "WEBAPI2",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P29-S15-webhook을-받는-쪽의-상태-변화-설계",
+      "sourceIds": [
+        "WEBAPI2",
+        "DDIA",
+        "FOSA2"
+      ]
+    },
+    {
+      "sectionId": "T07-P29-S16-webhook을-받는-쪽의-상태-변화-설계",
+      "sourceIds": [
+        "DDIA",
+        "FOSA2",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P29-S17-webhook을-받는-쪽의-상태-변화-설계",
+      "sourceIds": [
+        "FOSA2",
+        "LEARNING-SPACING-RETRIEVAL",
+        "LEARNING-CLT-COMPUTING"
+      ]
+    },
+    {
+      "sectionId": "T07-P29-S18-webhook을-받는-쪽의-상태-변화-설계",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P29-S19-webhook을-받는-쪽의-상태-변화-설계",
+      "sourceIds": [
+        "SRE",
+        "WEBAPI2",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P29-S20-webhook을-받는-쪽의-상태-변화-설계",
+      "sourceIds": [
+        "WEBAPI2",
+        "DDIA",
+        "FOSA2"
+      ]
+    },
+    {
+      "sectionId": "T07-P29-S21-webhook을-받는-쪽의-상태-변화-설계",
+      "sourceIds": [
+        "DDIA",
+        "LEARNING-CLT-COMPUTING",
+        "LEARNING-SPACING-RETRIEVAL"
+      ]
+    },
+    {
+      "sectionId": "T07-P29-S22-webhook을-받는-쪽의-상태-변화-설계",
+      "sourceIds": [
+        "FOSA2",
+        "OPENAPI31",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P29-S23-webhook을-받는-쪽의-상태-변화-설계",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P29-S24-webhook을-받는-쪽의-상태-변화-설계",
+      "sourceIds": [
+        "SRE",
+        "WEBAPI2",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P29-S25-webhook을-받는-쪽의-상태-변화-설계",
+      "sourceIds": [
+        "WEBAPI2",
+        "DDIA",
+        "FOSA2"
+      ]
+    }
+  ]
+}

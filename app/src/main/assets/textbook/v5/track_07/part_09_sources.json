@@ -1,0 +1,204 @@
+{
+  "partId": "T07-P09",
+  "sections": [
+    {
+      "sectionId": "T07-P09-S01-오류를-종류별로-나누고-응답-계약으로-바꾸기",
+      "sourceIds": [
+        "NODE-DOCS",
+        "EXPRESS5",
+        "RFC9110"
+      ]
+    },
+    {
+      "sectionId": "T07-P09-S02-오류를-종류별로-나누고-응답-계약으로-바꾸기",
+      "sourceIds": [
+        "EXPRESS5",
+        "RFC9110",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P09-S03-오류를-종류별로-나누고-응답-계약으로-바꾸기",
+      "sourceIds": [
+        "RFC9110",
+        "OPENAPI31",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P09-S04-오류를-종류별로-나누고-응답-계약으로-바꾸기",
+      "sourceIds": [
+        "OPENAPI31",
+        "WEBAPI2",
+        "RFC9457"
+      ]
+    },
+    {
+      "sectionId": "T07-P09-S05-오류를-종류별로-나누고-응답-계약으로-바꾸기",
+      "sourceIds": [
+        "WEBAPI2",
+        "RFC9457",
+        "NODE-DOCS"
+      ]
+    },
+    {
+      "sectionId": "T07-P09-S06-오류를-종류별로-나누고-응답-계약으로-바꾸기",
+      "sourceIds": [
+        "RFC9457",
+        "NODE-DOCS",
+        "EXPRESS5"
+      ]
+    },
+    {
+      "sectionId": "T07-P09-S07-오류를-종류별로-나누고-응답-계약으로-바꾸기",
+      "sourceIds": [
+        "NODE-DOCS",
+        "EXPRESS5",
+        "RFC9110"
+      ]
+    },
+    {
+      "sectionId": "T07-P09-S08-오류를-종류별로-나누고-응답-계약으로-바꾸기",
+      "sourceIds": [
+        "EXPRESS5",
+        "RFC9110",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P09-S09-오류를-종류별로-나누고-응답-계약으로-바꾸기",
+      "sourceIds": [
+        "RFC9110",
+        "OPENAPI31",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P09-S10-오류를-종류별로-나누고-응답-계약으로-바꾸기",
+      "sourceIds": [
+        "OPENAPI31",
+        "WEBAPI2",
+        "RFC9457"
+      ]
+    },
+    {
+      "sectionId": "T07-P09-S11-오류를-종류별로-나누고-응답-계약으로-바꾸기",
+      "sourceIds": [
+        "WEBAPI2",
+        "RFC9457",
+        "NODE-DOCS"
+      ]
+    },
+    {
+      "sectionId": "T07-P09-S12-오류를-종류별로-나누고-응답-계약으로-바꾸기",
+      "sourceIds": [
+        "RFC9457",
+        "LEARNING-CLT-COMPUTING"
+      ]
+    },
+    {
+      "sectionId": "T07-P09-S13-오류를-종류별로-나누고-응답-계약으로-바꾸기",
+      "sourceIds": [
+        "NODE-DOCS",
+        "EXPRESS5",
+        "RFC9110"
+      ]
+    },
+    {
+      "sectionId": "T07-P09-S14-오류를-종류별로-나누고-응답-계약으로-바꾸기",
+      "sourceIds": [
+        "EXPRESS5",
+        "RFC9110",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P09-S15-오류를-종류별로-나누고-응답-계약으로-바꾸기",
+      "sourceIds": [
+        "RFC9110",
+        "OPENAPI31",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P09-S16-오류를-종류별로-나누고-응답-계약으로-바꾸기",
+      "sourceIds": [
+        "OPENAPI31",
+        "WEBAPI2",
+        "RFC9457"
+      ]
+    },
+    {
+      "sectionId": "T07-P09-S17-오류를-종류별로-나누고-응답-계약으로-바꾸기",
+      "sourceIds": [
+        "WEBAPI2",
+        "LEARNING-SPACING-RETRIEVAL",
+        "LEARNING-CLT-COMPUTING"
+      ]
+    },
+    {
+      "sectionId": "T07-P09-S18-오류를-종류별로-나누고-응답-계약으로-바꾸기",
+      "sourceIds": [
+        "RFC9457",
+        "NODE-DOCS",
+        "EXPRESS5"
+      ]
+    },
+    {
+      "sectionId": "T07-P09-S19-오류를-종류별로-나누고-응답-계약으로-바꾸기",
+      "sourceIds": [
+        "NODE-DOCS",
+        "EXPRESS5",
+        "RFC9110"
+      ]
+    },
+    {
+      "sectionId": "T07-P09-S20-오류를-종류별로-나누고-응답-계약으로-바꾸기",
+      "sourceIds": [
+        "EXPRESS5",
+        "RFC9110",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P09-S21-오류를-종류별로-나누고-응답-계약으로-바꾸기",
+      "sourceIds": [
+        "RFC9110",
+        "LEARNING-CLT-COMPUTING",
+        "LEARNING-SPACING-RETRIEVAL"
+      ]
+    },
+    {
+      "sectionId": "T07-P09-S22-오류를-종류별로-나누고-응답-계약으로-바꾸기",
+      "sourceIds": [
+        "OPENAPI31",
+        "WEBAPI2",
+        "RFC9457"
+      ]
+    },
+    {
+      "sectionId": "T07-P09-S23-오류를-종류별로-나누고-응답-계약으로-바꾸기",
+      "sourceIds": [
+        "WEBAPI2",
+        "RFC9457",
+        "NODE-DOCS"
+      ]
+    },
+    {
+      "sectionId": "T07-P09-S24-오류를-종류별로-나누고-응답-계약으로-바꾸기",
+      "sourceIds": [
+        "RFC9457",
+        "NODE-DOCS",
+        "EXPRESS5"
+      ]
+    },
+    {
+      "sectionId": "T07-P09-S25-오류를-종류별로-나누고-응답-계약으로-바꾸기",
+      "sourceIds": [
+        "NODE-DOCS",
+        "EXPRESS5",
+        "RFC9110"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,204 @@
+{
+  "partId": "T07-P39",
+  "sections": [
+    {
+      "sectionId": "T07-P39-S01-민감정보를-로그와-오류에서-제거하기",
+      "sourceIds": [
+        "OWASP-API",
+        "OWASP-ASVS",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P39-S02-민감정보를-로그와-오류에서-제거하기",
+      "sourceIds": [
+        "OWASP-ASVS",
+        "OPENAPI31",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P39-S03-민감정보를-로그와-오류에서-제거하기",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "NIST-SSDF"
+      ]
+    },
+    {
+      "sectionId": "T07-P39-S04-민감정보를-로그와-오류에서-제거하기",
+      "sourceIds": [
+        "SRE",
+        "NIST-SSDF",
+        "OWASP-API"
+      ]
+    },
+    {
+      "sectionId": "T07-P39-S05-민감정보를-로그와-오류에서-제거하기",
+      "sourceIds": [
+        "NIST-SSDF",
+        "OWASP-API",
+        "OWASP-ASVS"
+      ]
+    },
+    {
+      "sectionId": "T07-P39-S06-민감정보를-로그와-오류에서-제거하기",
+      "sourceIds": [
+        "OWASP-API",
+        "OWASP-ASVS",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P39-S07-민감정보를-로그와-오류에서-제거하기",
+      "sourceIds": [
+        "OWASP-ASVS",
+        "OPENAPI31",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P39-S08-민감정보를-로그와-오류에서-제거하기",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "NIST-SSDF"
+      ]
+    },
+    {
+      "sectionId": "T07-P39-S09-민감정보를-로그와-오류에서-제거하기",
+      "sourceIds": [
+        "SRE",
+        "NIST-SSDF",
+        "OWASP-API"
+      ]
+    },
+    {
+      "sectionId": "T07-P39-S10-민감정보를-로그와-오류에서-제거하기",
+      "sourceIds": [
+        "NIST-SSDF",
+        "OWASP-API",
+        "OWASP-ASVS"
+      ]
+    },
+    {
+      "sectionId": "T07-P39-S11-민감정보를-로그와-오류에서-제거하기",
+      "sourceIds": [
+        "OWASP-API",
+        "OWASP-ASVS",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P39-S12-민감정보를-로그와-오류에서-제거하기",
+      "sourceIds": [
+        "OWASP-ASVS",
+        "LEARNING-CLT-COMPUTING"
+      ]
+    },
+    {
+      "sectionId": "T07-P39-S13-민감정보를-로그와-오류에서-제거하기",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "NIST-SSDF"
+      ]
+    },
+    {
+      "sectionId": "T07-P39-S14-민감정보를-로그와-오류에서-제거하기",
+      "sourceIds": [
+        "SRE",
+        "NIST-SSDF",
+        "OWASP-API"
+      ]
+    },
+    {
+      "sectionId": "T07-P39-S15-민감정보를-로그와-오류에서-제거하기",
+      "sourceIds": [
+        "NIST-SSDF",
+        "OWASP-API",
+        "OWASP-ASVS"
+      ]
+    },
+    {
+      "sectionId": "T07-P39-S16-민감정보를-로그와-오류에서-제거하기",
+      "sourceIds": [
+        "OWASP-API",
+        "OWASP-ASVS",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P39-S17-민감정보를-로그와-오류에서-제거하기",
+      "sourceIds": [
+        "OWASP-ASVS",
+        "LEARNING-SPACING-RETRIEVAL",
+        "LEARNING-CLT-COMPUTING"
+      ]
+    },
+    {
+      "sectionId": "T07-P39-S18-민감정보를-로그와-오류에서-제거하기",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "NIST-SSDF"
+      ]
+    },
+    {
+      "sectionId": "T07-P39-S19-민감정보를-로그와-오류에서-제거하기",
+      "sourceIds": [
+        "SRE",
+        "NIST-SSDF",
+        "OWASP-API"
+      ]
+    },
+    {
+      "sectionId": "T07-P39-S20-민감정보를-로그와-오류에서-제거하기",
+      "sourceIds": [
+        "NIST-SSDF",
+        "OWASP-API",
+        "OWASP-ASVS"
+      ]
+    },
+    {
+      "sectionId": "T07-P39-S21-민감정보를-로그와-오류에서-제거하기",
+      "sourceIds": [
+        "OWASP-API",
+        "LEARNING-CLT-COMPUTING",
+        "LEARNING-SPACING-RETRIEVAL"
+      ]
+    },
+    {
+      "sectionId": "T07-P39-S22-민감정보를-로그와-오류에서-제거하기",
+      "sourceIds": [
+        "OWASP-ASVS",
+        "OPENAPI31",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P39-S23-민감정보를-로그와-오류에서-제거하기",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "NIST-SSDF"
+      ]
+    },
+    {
+      "sectionId": "T07-P39-S24-민감정보를-로그와-오류에서-제거하기",
+      "sourceIds": [
+        "SRE",
+        "NIST-SSDF",
+        "OWASP-API"
+      ]
+    },
+    {
+      "sectionId": "T07-P39-S25-민감정보를-로그와-오류에서-제거하기",
+      "sourceIds": [
+        "NIST-SSDF",
+        "OWASP-API",
+        "OWASP-ASVS"
+      ]
+    }
+  ]
+}

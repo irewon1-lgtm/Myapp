@@ -1,0 +1,204 @@
+{
+  "partId": "T07-P23",
+  "sections": [
+    {
+      "sectionId": "T07-P23-S01-transaction-boundary를-use-ca",
+      "sourceIds": [
+        "DDIA",
+        "FOSA2",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P23-S02-transaction-boundary를-use-ca",
+      "sourceIds": [
+        "FOSA2",
+        "OPENAPI31",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P23-S03-transaction-boundary를-use-ca",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P23-S04-transaction-boundary를-use-ca",
+      "sourceIds": [
+        "SRE",
+        "WEBAPI2",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P23-S05-transaction-boundary를-use-ca",
+      "sourceIds": [
+        "WEBAPI2",
+        "DDIA",
+        "FOSA2"
+      ]
+    },
+    {
+      "sectionId": "T07-P23-S06-transaction-boundary를-use-ca",
+      "sourceIds": [
+        "DDIA",
+        "FOSA2",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P23-S07-transaction-boundary를-use-ca",
+      "sourceIds": [
+        "FOSA2",
+        "OPENAPI31",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P23-S08-transaction-boundary를-use-ca",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P23-S09-transaction-boundary를-use-ca",
+      "sourceIds": [
+        "SRE",
+        "WEBAPI2",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P23-S10-transaction-boundary를-use-ca",
+      "sourceIds": [
+        "WEBAPI2",
+        "DDIA",
+        "FOSA2"
+      ]
+    },
+    {
+      "sectionId": "T07-P23-S11-transaction-boundary를-use-ca",
+      "sourceIds": [
+        "DDIA",
+        "FOSA2",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P23-S12-transaction-boundary를-use-ca",
+      "sourceIds": [
+        "FOSA2",
+        "LEARNING-CLT-COMPUTING"
+      ]
+    },
+    {
+      "sectionId": "T07-P23-S13-transaction-boundary를-use-ca",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P23-S14-transaction-boundary를-use-ca",
+      "sourceIds": [
+        "SRE",
+        "WEBAPI2",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P23-S15-transaction-boundary를-use-ca",
+      "sourceIds": [
+        "WEBAPI2",
+        "DDIA",
+        "FOSA2"
+      ]
+    },
+    {
+      "sectionId": "T07-P23-S16-transaction-boundary를-use-ca",
+      "sourceIds": [
+        "DDIA",
+        "FOSA2",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P23-S17-transaction-boundary를-use-ca",
+      "sourceIds": [
+        "FOSA2",
+        "LEARNING-SPACING-RETRIEVAL",
+        "LEARNING-CLT-COMPUTING"
+      ]
+    },
+    {
+      "sectionId": "T07-P23-S18-transaction-boundary를-use-ca",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P23-S19-transaction-boundary를-use-ca",
+      "sourceIds": [
+        "SRE",
+        "WEBAPI2",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P23-S20-transaction-boundary를-use-ca",
+      "sourceIds": [
+        "WEBAPI2",
+        "DDIA",
+        "FOSA2"
+      ]
+    },
+    {
+      "sectionId": "T07-P23-S21-transaction-boundary를-use-ca",
+      "sourceIds": [
+        "DDIA",
+        "LEARNING-CLT-COMPUTING",
+        "LEARNING-SPACING-RETRIEVAL"
+      ]
+    },
+    {
+      "sectionId": "T07-P23-S22-transaction-boundary를-use-ca",
+      "sourceIds": [
+        "FOSA2",
+        "OPENAPI31",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P23-S23-transaction-boundary를-use-ca",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P23-S24-transaction-boundary를-use-ca",
+      "sourceIds": [
+        "SRE",
+        "WEBAPI2",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P23-S25-transaction-boundary를-use-ca",
+      "sourceIds": [
+        "WEBAPI2",
+        "DDIA",
+        "FOSA2"
+      ]
+    }
+  ]
+}

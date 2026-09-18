@@ -1,0 +1,204 @@
+{
+  "partId": "T07-P42",
+  "sections": [
+    {
+      "sectionId": "T07-P42-S01-file-upload를-데이터와-실행물-사이-경계로",
+      "sourceIds": [
+        "OWASP-API",
+        "OWASP-ASVS",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P42-S02-file-upload를-데이터와-실행물-사이-경계로",
+      "sourceIds": [
+        "OWASP-ASVS",
+        "OPENAPI31",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P42-S03-file-upload를-데이터와-실행물-사이-경계로",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "NIST-SSDF"
+      ]
+    },
+    {
+      "sectionId": "T07-P42-S04-file-upload를-데이터와-실행물-사이-경계로",
+      "sourceIds": [
+        "SRE",
+        "NIST-SSDF",
+        "OWASP-API"
+      ]
+    },
+    {
+      "sectionId": "T07-P42-S05-file-upload를-데이터와-실행물-사이-경계로",
+      "sourceIds": [
+        "NIST-SSDF",
+        "OWASP-API",
+        "OWASP-ASVS"
+      ]
+    },
+    {
+      "sectionId": "T07-P42-S06-file-upload를-데이터와-실행물-사이-경계로",
+      "sourceIds": [
+        "OWASP-API",
+        "OWASP-ASVS",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P42-S07-file-upload를-데이터와-실행물-사이-경계로",
+      "sourceIds": [
+        "OWASP-ASVS",
+        "OPENAPI31",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P42-S08-file-upload를-데이터와-실행물-사이-경계로",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "NIST-SSDF"
+      ]
+    },
+    {
+      "sectionId": "T07-P42-S09-file-upload를-데이터와-실행물-사이-경계로",
+      "sourceIds": [
+        "SRE",
+        "NIST-SSDF",
+        "OWASP-API"
+      ]
+    },
+    {
+      "sectionId": "T07-P42-S10-file-upload를-데이터와-실행물-사이-경계로",
+      "sourceIds": [
+        "NIST-SSDF",
+        "OWASP-API",
+        "OWASP-ASVS"
+      ]
+    },
+    {
+      "sectionId": "T07-P42-S11-file-upload를-데이터와-실행물-사이-경계로",
+      "sourceIds": [
+        "OWASP-API",
+        "OWASP-ASVS",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P42-S12-file-upload를-데이터와-실행물-사이-경계로",
+      "sourceIds": [
+        "OWASP-ASVS",
+        "LEARNING-CLT-COMPUTING"
+      ]
+    },
+    {
+      "sectionId": "T07-P42-S13-file-upload를-데이터와-실행물-사이-경계로",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "NIST-SSDF"
+      ]
+    },
+    {
+      "sectionId": "T07-P42-S14-file-upload를-데이터와-실행물-사이-경계로",
+      "sourceIds": [
+        "SRE",
+        "NIST-SSDF",
+        "OWASP-API"
+      ]
+    },
+    {
+      "sectionId": "T07-P42-S15-file-upload를-데이터와-실행물-사이-경계로",
+      "sourceIds": [
+        "NIST-SSDF",
+        "OWASP-API",
+        "OWASP-ASVS"
+      ]
+    },
+    {
+      "sectionId": "T07-P42-S16-file-upload를-데이터와-실행물-사이-경계로",
+      "sourceIds": [
+        "OWASP-API",
+        "OWASP-ASVS",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P42-S17-file-upload를-데이터와-실행물-사이-경계로",
+      "sourceIds": [
+        "OWASP-ASVS",
+        "LEARNING-SPACING-RETRIEVAL",
+        "LEARNING-CLT-COMPUTING"
+      ]
+    },
+    {
+      "sectionId": "T07-P42-S18-file-upload를-데이터와-실행물-사이-경계로",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "NIST-SSDF"
+      ]
+    },
+    {
+      "sectionId": "T07-P42-S19-file-upload를-데이터와-실행물-사이-경계로",
+      "sourceIds": [
+        "SRE",
+        "NIST-SSDF",
+        "OWASP-API"
+      ]
+    },
+    {
+      "sectionId": "T07-P42-S20-file-upload를-데이터와-실행물-사이-경계로",
+      "sourceIds": [
+        "NIST-SSDF",
+        "OWASP-API",
+        "OWASP-ASVS"
+      ]
+    },
+    {
+      "sectionId": "T07-P42-S21-file-upload를-데이터와-실행물-사이-경계로",
+      "sourceIds": [
+        "OWASP-API",
+        "LEARNING-CLT-COMPUTING",
+        "LEARNING-SPACING-RETRIEVAL"
+      ]
+    },
+    {
+      "sectionId": "T07-P42-S22-file-upload를-데이터와-실행물-사이-경계로",
+      "sourceIds": [
+        "OWASP-ASVS",
+        "OPENAPI31",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P42-S23-file-upload를-데이터와-실행물-사이-경계로",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "NIST-SSDF"
+      ]
+    },
+    {
+      "sectionId": "T07-P42-S24-file-upload를-데이터와-실행물-사이-경계로",
+      "sourceIds": [
+        "SRE",
+        "NIST-SSDF",
+        "OWASP-API"
+      ]
+    },
+    {
+      "sectionId": "T07-P42-S25-file-upload를-데이터와-실행물-사이-경계로",
+      "sourceIds": [
+        "NIST-SSDF",
+        "OWASP-API",
+        "OWASP-ASVS"
+      ]
+    }
+  ]
+}

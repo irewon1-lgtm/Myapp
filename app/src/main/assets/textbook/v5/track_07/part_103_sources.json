@@ -1,0 +1,204 @@
+{
+  "partId": "T07-P103",
+  "sections": [
+    {
+      "sectionId": "T07-P103-S01-legacy-backend를-안전하게-refacto",
+      "sourceIds": [
+        "FOSA2",
+        "OPENAPI31",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P103-S02-legacy-backend를-안전하게-refacto",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "OWASP-API"
+      ]
+    },
+    {
+      "sectionId": "T07-P103-S03-legacy-backend를-안전하게-refacto",
+      "sourceIds": [
+        "SRE",
+        "OWASP-API",
+        "NIST-SSDF"
+      ]
+    },
+    {
+      "sectionId": "T07-P103-S04-legacy-backend를-안전하게-refacto",
+      "sourceIds": [
+        "OWASP-API",
+        "NIST-SSDF",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P103-S05-legacy-backend를-안전하게-refacto",
+      "sourceIds": [
+        "NIST-SSDF",
+        "WEBAPI2",
+        "FOSA2"
+      ]
+    },
+    {
+      "sectionId": "T07-P103-S06-legacy-backend를-안전하게-refacto",
+      "sourceIds": [
+        "WEBAPI2",
+        "FOSA2",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P103-S07-legacy-backend를-안전하게-refacto",
+      "sourceIds": [
+        "FOSA2",
+        "OPENAPI31",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P103-S08-legacy-backend를-안전하게-refacto",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "OWASP-API"
+      ]
+    },
+    {
+      "sectionId": "T07-P103-S09-legacy-backend를-안전하게-refacto",
+      "sourceIds": [
+        "SRE",
+        "OWASP-API",
+        "NIST-SSDF"
+      ]
+    },
+    {
+      "sectionId": "T07-P103-S10-legacy-backend를-안전하게-refacto",
+      "sourceIds": [
+        "OWASP-API",
+        "NIST-SSDF",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P103-S11-legacy-backend를-안전하게-refacto",
+      "sourceIds": [
+        "NIST-SSDF",
+        "WEBAPI2",
+        "FOSA2"
+      ]
+    },
+    {
+      "sectionId": "T07-P103-S12-legacy-backend를-안전하게-refacto",
+      "sourceIds": [
+        "WEBAPI2",
+        "LEARNING-CLT-COMPUTING"
+      ]
+    },
+    {
+      "sectionId": "T07-P103-S13-legacy-backend를-안전하게-refacto",
+      "sourceIds": [
+        "FOSA2",
+        "OPENAPI31",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P103-S14-legacy-backend를-안전하게-refacto",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "OWASP-API"
+      ]
+    },
+    {
+      "sectionId": "T07-P103-S15-legacy-backend를-안전하게-refacto",
+      "sourceIds": [
+        "SRE",
+        "OWASP-API",
+        "NIST-SSDF"
+      ]
+    },
+    {
+      "sectionId": "T07-P103-S16-legacy-backend를-안전하게-refacto",
+      "sourceIds": [
+        "OWASP-API",
+        "NIST-SSDF",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P103-S17-legacy-backend를-안전하게-refacto",
+      "sourceIds": [
+        "NIST-SSDF",
+        "LEARNING-SPACING-RETRIEVAL",
+        "LEARNING-CLT-COMPUTING"
+      ]
+    },
+    {
+      "sectionId": "T07-P103-S18-legacy-backend를-안전하게-refacto",
+      "sourceIds": [
+        "WEBAPI2",
+        "FOSA2",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P103-S19-legacy-backend를-안전하게-refacto",
+      "sourceIds": [
+        "FOSA2",
+        "OPENAPI31",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P103-S20-legacy-backend를-안전하게-refacto",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "OWASP-API"
+      ]
+    },
+    {
+      "sectionId": "T07-P103-S21-legacy-backend를-안전하게-refacto",
+      "sourceIds": [
+        "SRE",
+        "LEARNING-CLT-COMPUTING",
+        "LEARNING-SPACING-RETRIEVAL"
+      ]
+    },
+    {
+      "sectionId": "T07-P103-S22-legacy-backend를-안전하게-refacto",
+      "sourceIds": [
+        "OWASP-API",
+        "NIST-SSDF",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P103-S23-legacy-backend를-안전하게-refacto",
+      "sourceIds": [
+        "NIST-SSDF",
+        "WEBAPI2",
+        "FOSA2"
+      ]
+    },
+    {
+      "sectionId": "T07-P103-S24-legacy-backend를-안전하게-refacto",
+      "sourceIds": [
+        "WEBAPI2",
+        "FOSA2",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P103-S25-legacy-backend를-안전하게-refacto",
+      "sourceIds": [
+        "FOSA2",
+        "OPENAPI31",
+        "SRE"
+      ]
+    }
+  ]
+}

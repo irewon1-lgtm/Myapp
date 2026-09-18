@@ -1,0 +1,204 @@
+{
+  "partId": "T07-P77",
+  "sections": [
+    {
+      "sectionId": "T07-P77-S01-service-boundary와-coupling",
+      "sourceIds": [
+        "DDIA",
+        "FOSA2",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P77-S02-service-boundary와-coupling",
+      "sourceIds": [
+        "FOSA2",
+        "SRE",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P77-S03-service-boundary와-coupling",
+      "sourceIds": [
+        "SRE",
+        "OPENAPI31",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P77-S04-service-boundary와-coupling",
+      "sourceIds": [
+        "OPENAPI31",
+        "DDIA",
+        "FOSA2"
+      ]
+    },
+    {
+      "sectionId": "T07-P77-S05-service-boundary와-coupling",
+      "sourceIds": [
+        "DDIA",
+        "FOSA2",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P77-S06-service-boundary와-coupling",
+      "sourceIds": [
+        "FOSA2",
+        "SRE",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P77-S07-service-boundary와-coupling",
+      "sourceIds": [
+        "SRE",
+        "OPENAPI31",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P77-S08-service-boundary와-coupling",
+      "sourceIds": [
+        "OPENAPI31",
+        "DDIA",
+        "FOSA2"
+      ]
+    },
+    {
+      "sectionId": "T07-P77-S09-service-boundary와-coupling",
+      "sourceIds": [
+        "DDIA",
+        "FOSA2",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P77-S10-service-boundary와-coupling",
+      "sourceIds": [
+        "FOSA2",
+        "SRE",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P77-S11-service-boundary와-coupling",
+      "sourceIds": [
+        "SRE",
+        "OPENAPI31",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P77-S12-service-boundary와-coupling",
+      "sourceIds": [
+        "OPENAPI31",
+        "LEARNING-CLT-COMPUTING"
+      ]
+    },
+    {
+      "sectionId": "T07-P77-S13-service-boundary와-coupling",
+      "sourceIds": [
+        "DDIA",
+        "FOSA2",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P77-S14-service-boundary와-coupling",
+      "sourceIds": [
+        "FOSA2",
+        "SRE",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P77-S15-service-boundary와-coupling",
+      "sourceIds": [
+        "SRE",
+        "OPENAPI31",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P77-S16-service-boundary와-coupling",
+      "sourceIds": [
+        "OPENAPI31",
+        "DDIA",
+        "FOSA2"
+      ]
+    },
+    {
+      "sectionId": "T07-P77-S17-service-boundary와-coupling",
+      "sourceIds": [
+        "DDIA",
+        "LEARNING-SPACING-RETRIEVAL",
+        "LEARNING-CLT-COMPUTING"
+      ]
+    },
+    {
+      "sectionId": "T07-P77-S18-service-boundary와-coupling",
+      "sourceIds": [
+        "FOSA2",
+        "SRE",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P77-S19-service-boundary와-coupling",
+      "sourceIds": [
+        "SRE",
+        "OPENAPI31",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P77-S20-service-boundary와-coupling",
+      "sourceIds": [
+        "OPENAPI31",
+        "DDIA",
+        "FOSA2"
+      ]
+    },
+    {
+      "sectionId": "T07-P77-S21-service-boundary와-coupling",
+      "sourceIds": [
+        "DDIA",
+        "LEARNING-CLT-COMPUTING",
+        "LEARNING-SPACING-RETRIEVAL"
+      ]
+    },
+    {
+      "sectionId": "T07-P77-S22-service-boundary와-coupling",
+      "sourceIds": [
+        "FOSA2",
+        "SRE",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P77-S23-service-boundary와-coupling",
+      "sourceIds": [
+        "SRE",
+        "OPENAPI31",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P77-S24-service-boundary와-coupling",
+      "sourceIds": [
+        "OPENAPI31",
+        "DDIA",
+        "FOSA2"
+      ]
+    },
+    {
+      "sectionId": "T07-P77-S25-service-boundary와-coupling",
+      "sourceIds": [
+        "DDIA",
+        "FOSA2",
+        "SRE"
+      ]
+    }
+  ]
+}

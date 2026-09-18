@@ -1,0 +1,204 @@
+{
+  "partId": "T07-P40",
+  "sections": [
+    {
+      "sectionId": "T07-P40-S01-login-abuse와-rate-limit",
+      "sourceIds": [
+        "OWASP-API",
+        "OWASP-ASVS",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P40-S02-login-abuse와-rate-limit",
+      "sourceIds": [
+        "OWASP-ASVS",
+        "OPENAPI31",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P40-S03-login-abuse와-rate-limit",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "NIST-SSDF"
+      ]
+    },
+    {
+      "sectionId": "T07-P40-S04-login-abuse와-rate-limit",
+      "sourceIds": [
+        "SRE",
+        "NIST-SSDF",
+        "OWASP-API"
+      ]
+    },
+    {
+      "sectionId": "T07-P40-S05-login-abuse와-rate-limit",
+      "sourceIds": [
+        "NIST-SSDF",
+        "OWASP-API",
+        "OWASP-ASVS"
+      ]
+    },
+    {
+      "sectionId": "T07-P40-S06-login-abuse와-rate-limit",
+      "sourceIds": [
+        "OWASP-API",
+        "OWASP-ASVS",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P40-S07-login-abuse와-rate-limit",
+      "sourceIds": [
+        "OWASP-ASVS",
+        "OPENAPI31",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P40-S08-login-abuse와-rate-limit",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "NIST-SSDF"
+      ]
+    },
+    {
+      "sectionId": "T07-P40-S09-login-abuse와-rate-limit",
+      "sourceIds": [
+        "SRE",
+        "NIST-SSDF",
+        "OWASP-API"
+      ]
+    },
+    {
+      "sectionId": "T07-P40-S10-login-abuse와-rate-limit",
+      "sourceIds": [
+        "NIST-SSDF",
+        "OWASP-API",
+        "OWASP-ASVS"
+      ]
+    },
+    {
+      "sectionId": "T07-P40-S11-login-abuse와-rate-limit",
+      "sourceIds": [
+        "OWASP-API",
+        "OWASP-ASVS",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P40-S12-login-abuse와-rate-limit",
+      "sourceIds": [
+        "OWASP-ASVS",
+        "LEARNING-CLT-COMPUTING"
+      ]
+    },
+    {
+      "sectionId": "T07-P40-S13-login-abuse와-rate-limit",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "NIST-SSDF"
+      ]
+    },
+    {
+      "sectionId": "T07-P40-S14-login-abuse와-rate-limit",
+      "sourceIds": [
+        "SRE",
+        "NIST-SSDF",
+        "OWASP-API"
+      ]
+    },
+    {
+      "sectionId": "T07-P40-S15-login-abuse와-rate-limit",
+      "sourceIds": [
+        "NIST-SSDF",
+        "OWASP-API",
+        "OWASP-ASVS"
+      ]
+    },
+    {
+      "sectionId": "T07-P40-S16-login-abuse와-rate-limit",
+      "sourceIds": [
+        "OWASP-API",
+        "OWASP-ASVS",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P40-S17-login-abuse와-rate-limit",
+      "sourceIds": [
+        "OWASP-ASVS",
+        "LEARNING-SPACING-RETRIEVAL",
+        "LEARNING-CLT-COMPUTING"
+      ]
+    },
+    {
+      "sectionId": "T07-P40-S18-login-abuse와-rate-limit",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "NIST-SSDF"
+      ]
+    },
+    {
+      "sectionId": "T07-P40-S19-login-abuse와-rate-limit",
+      "sourceIds": [
+        "SRE",
+        "NIST-SSDF",
+        "OWASP-API"
+      ]
+    },
+    {
+      "sectionId": "T07-P40-S20-login-abuse와-rate-limit",
+      "sourceIds": [
+        "NIST-SSDF",
+        "OWASP-API",
+        "OWASP-ASVS"
+      ]
+    },
+    {
+      "sectionId": "T07-P40-S21-login-abuse와-rate-limit",
+      "sourceIds": [
+        "OWASP-API",
+        "LEARNING-CLT-COMPUTING",
+        "LEARNING-SPACING-RETRIEVAL"
+      ]
+    },
+    {
+      "sectionId": "T07-P40-S22-login-abuse와-rate-limit",
+      "sourceIds": [
+        "OWASP-ASVS",
+        "OPENAPI31",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P40-S23-login-abuse와-rate-limit",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "NIST-SSDF"
+      ]
+    },
+    {
+      "sectionId": "T07-P40-S24-login-abuse와-rate-limit",
+      "sourceIds": [
+        "SRE",
+        "NIST-SSDF",
+        "OWASP-API"
+      ]
+    },
+    {
+      "sectionId": "T07-P40-S25-login-abuse와-rate-limit",
+      "sourceIds": [
+        "NIST-SSDF",
+        "OWASP-API",
+        "OWASP-ASVS"
+      ]
+    }
+  ]
+}

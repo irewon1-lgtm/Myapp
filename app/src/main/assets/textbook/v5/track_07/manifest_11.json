@@ -1,0 +1,57 @@
+{
+  "trackId": "T07",
+  "trackNumber": 7,
+  "title": "서버와 백엔드 — 요청에서 운영까지",
+  "parts": [
+    {
+      "id": "T07-P101",
+      "order": 101,
+      "title": "cost와 resource budget을 backend 설계에 포함하기",
+      "assetPath": "textbook/v5/track_07/part_101_cost와-resource-budget을-backend-설계에-포함하기.md",
+      "sourceMapPath": "textbook/v5/track_07/part_101_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P100-S25-observability-readiness를-코드-"
+      ]
+    },
+    {
+      "id": "T07-P102",
+      "order": 102,
+      "title": "dependency와 supply-chain 경계 검토",
+      "assetPath": "textbook/v5/track_07/part_102_dependency와-supply-chain-경계-검토.md",
+      "sourceMapPath": "textbook/v5/track_07/part_102_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P101-S25-cost와-resource-budget을-backe"
+      ]
+    },
+    {
+      "id": "T07-P103",
+      "order": 103,
+      "title": "legacy backend를 안전하게 refactor하기",
+      "assetPath": "textbook/v5/track_07/part_103_legacy-backend를-안전하게-refactor하기.md",
+      "sourceMapPath": "textbook/v5/track_07/part_103_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P102-S25-dependency와-supply-chain-경계-"
+      ]
+    },
+    {
+      "id": "T07-P104",
+      "order": 104,
+      "title": "capstone: 명세에서 실제 backend 설계까지",
+      "assetPath": "textbook/v5/track_07/part_104_capstone-명세에서-실제-backend-설계까지.md",
+      "sourceMapPath": "textbook/v5/track_07/part_104_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P103-S25-legacy-backend를-안전하게-refacto"
+      ]
+    },
+    {
+      "id": "T07-P105",
+      "order": 105,
+      "title": "TRACK 07 최종: 요청 하나를 설계·실행·고장내고 설명하기",
+      "assetPath": "textbook/v5/track_07/part_105_track-07-최종-요청-하나를-설계-실행-고장내고-설명하기.md",
+      "sourceMapPath": "textbook/v5/track_07/part_105_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P104-S25-capstone-명세에서-실제-backend-설계까"
+      ]
+    }
+  ]
+}

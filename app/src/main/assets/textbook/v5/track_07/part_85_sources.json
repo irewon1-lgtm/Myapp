@@ -1,0 +1,204 @@
+{
+  "partId": "T07-P85",
+  "sections": [
+    {
+      "sectionId": "T07-P85-S01-distributed-lock-lease-fenci",
+      "sourceIds": [
+        "DDIA",
+        "FOSA2",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P85-S02-distributed-lock-lease-fenci",
+      "sourceIds": [
+        "FOSA2",
+        "SRE",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P85-S03-distributed-lock-lease-fenci",
+      "sourceIds": [
+        "SRE",
+        "OPENAPI31",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P85-S04-distributed-lock-lease-fenci",
+      "sourceIds": [
+        "OPENAPI31",
+        "DDIA",
+        "FOSA2"
+      ]
+    },
+    {
+      "sectionId": "T07-P85-S05-distributed-lock-lease-fenci",
+      "sourceIds": [
+        "DDIA",
+        "FOSA2",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P85-S06-distributed-lock-lease-fenci",
+      "sourceIds": [
+        "FOSA2",
+        "SRE",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P85-S07-distributed-lock-lease-fenci",
+      "sourceIds": [
+        "SRE",
+        "OPENAPI31",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P85-S08-distributed-lock-lease-fenci",
+      "sourceIds": [
+        "OPENAPI31",
+        "DDIA",
+        "FOSA2"
+      ]
+    },
+    {
+      "sectionId": "T07-P85-S09-distributed-lock-lease-fenci",
+      "sourceIds": [
+        "DDIA",
+        "FOSA2",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P85-S10-distributed-lock-lease-fenci",
+      "sourceIds": [
+        "FOSA2",
+        "SRE",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P85-S11-distributed-lock-lease-fenci",
+      "sourceIds": [
+        "SRE",
+        "OPENAPI31",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P85-S12-distributed-lock-lease-fenci",
+      "sourceIds": [
+        "OPENAPI31",
+        "LEARNING-CLT-COMPUTING"
+      ]
+    },
+    {
+      "sectionId": "T07-P85-S13-distributed-lock-lease-fenci",
+      "sourceIds": [
+        "DDIA",
+        "FOSA2",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P85-S14-distributed-lock-lease-fenci",
+      "sourceIds": [
+        "FOSA2",
+        "SRE",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P85-S15-distributed-lock-lease-fenci",
+      "sourceIds": [
+        "SRE",
+        "OPENAPI31",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P85-S16-distributed-lock-lease-fenci",
+      "sourceIds": [
+        "OPENAPI31",
+        "DDIA",
+        "FOSA2"
+      ]
+    },
+    {
+      "sectionId": "T07-P85-S17-distributed-lock-lease-fenci",
+      "sourceIds": [
+        "DDIA",
+        "LEARNING-SPACING-RETRIEVAL",
+        "LEARNING-CLT-COMPUTING"
+      ]
+    },
+    {
+      "sectionId": "T07-P85-S18-distributed-lock-lease-fenci",
+      "sourceIds": [
+        "FOSA2",
+        "SRE",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P85-S19-distributed-lock-lease-fenci",
+      "sourceIds": [
+        "SRE",
+        "OPENAPI31",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P85-S20-distributed-lock-lease-fenci",
+      "sourceIds": [
+        "OPENAPI31",
+        "DDIA",
+        "FOSA2"
+      ]
+    },
+    {
+      "sectionId": "T07-P85-S21-distributed-lock-lease-fenci",
+      "sourceIds": [
+        "DDIA",
+        "LEARNING-CLT-COMPUTING",
+        "LEARNING-SPACING-RETRIEVAL"
+      ]
+    },
+    {
+      "sectionId": "T07-P85-S22-distributed-lock-lease-fenci",
+      "sourceIds": [
+        "FOSA2",
+        "SRE",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P85-S23-distributed-lock-lease-fenci",
+      "sourceIds": [
+        "SRE",
+        "OPENAPI31",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P85-S24-distributed-lock-lease-fenci",
+      "sourceIds": [
+        "OPENAPI31",
+        "DDIA",
+        "FOSA2"
+      ]
+    },
+    {
+      "sectionId": "T07-P85-S25-distributed-lock-lease-fenci",
+      "sourceIds": [
+        "DDIA",
+        "FOSA2",
+        "SRE"
+      ]
+    }
+  ]
+}

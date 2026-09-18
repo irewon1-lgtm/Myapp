@@ -1,0 +1,107 @@
+{
+  "trackId": "T07",
+  "trackNumber": 7,
+  "title": "서버와 백엔드 — 요청에서 운영까지",
+  "parts": [
+    {
+      "id": "T07-P41",
+      "order": 41,
+      "title": "URL fetch와 SSRF trust boundary",
+      "assetPath": "textbook/v5/track_07/part_41_url-fetch와-ssrf-trust-boundary.md",
+      "sourceMapPath": "textbook/v5/track_07/part_41_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P40-S25-login-abuse와-rate-limit"
+      ]
+    },
+    {
+      "id": "T07-P42",
+      "order": 42,
+      "title": "file upload를 데이터와 실행물 사이 경계로 보기",
+      "assetPath": "textbook/v5/track_07/part_42_file-upload를-데이터와-실행물-사이-경계로-보기.md",
+      "sourceMapPath": "textbook/v5/track_07/part_42_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P41-S25-url-fetch와-ssrf-trust-bounda"
+      ]
+    },
+    {
+      "id": "T07-P43",
+      "order": 43,
+      "title": "외부 응답도 신뢰하지 않고 validation하기",
+      "assetPath": "textbook/v5/track_07/part_43_외부-응답도-신뢰하지-않고-validation하기.md",
+      "sourceMapPath": "textbook/v5/track_07/part_43_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P42-S25-file-upload를-데이터와-실행물-사이-경계로"
+      ]
+    },
+    {
+      "id": "T07-P44",
+      "order": 44,
+      "title": "backend threat modeling을 요청 흐름에 붙이기",
+      "assetPath": "textbook/v5/track_07/part_44_backend-threat-modeling을-요청-흐름에-붙이기.md",
+      "sourceMapPath": "textbook/v5/track_07/part_44_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P43-S25-외부-응답도-신뢰하지-않고-validation하기"
+      ]
+    },
+    {
+      "id": "T07-P45",
+      "order": 45,
+      "title": "BLOCK 03 종합: 계정 API의 신뢰 경계 감사",
+      "assetPath": "textbook/v5/track_07/part_45_block-03-종합-계정-api의-신뢰-경계-감사.md",
+      "sourceMapPath": "textbook/v5/track_07/part_45_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P44-S25-backend-threat-modeling을-요청-"
+      ]
+    },
+    {
+      "id": "T07-P46",
+      "order": 46,
+      "title": "cache는 빠른 복사본이며 원본이 아니다",
+      "assetPath": "textbook/v5/track_07/part_46_cache는-빠른-복사본이며-원본이-아니다.md",
+      "sourceMapPath": "textbook/v5/track_07/part_46_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P45-S25-block-03-종합-계정-api의-신뢰-경계-감사"
+      ]
+    },
+    {
+      "id": "T07-P47",
+      "order": 47,
+      "title": "cache key는 값의 의미를 완전히 식별해야 한다",
+      "assetPath": "textbook/v5/track_07/part_47_cache-key는-값의-의미를-완전히-식별해야-한다.md",
+      "sourceMapPath": "textbook/v5/track_07/part_47_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P46-S25-cache는-빠른-복사본이며-원본이-아니다"
+      ]
+    },
+    {
+      "id": "T07-P48",
+      "order": 48,
+      "title": "TTL과 invalidation으로 stale 범위를 정하기",
+      "assetPath": "textbook/v5/track_07/part_48_ttl과-invalidation으로-stale-범위를-정하기.md",
+      "sourceMapPath": "textbook/v5/track_07/part_48_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P47-S25-cache-key는-값의-의미를-완전히-식별해야-한"
+      ]
+    },
+    {
+      "id": "T07-P49",
+      "order": 49,
+      "title": "cache stampede와 single-flight",
+      "assetPath": "textbook/v5/track_07/part_49_cache-stampede와-single-flight.md",
+      "sourceMapPath": "textbook/v5/track_07/part_49_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P48-S25-ttl과-invalidation으로-stale-범위"
+      ]
+    },
+    {
+      "id": "T07-P50",
+      "order": 50,
+      "title": "HTTP cache와 ETag·conditional request",
+      "assetPath": "textbook/v5/track_07/part_50_http-cache와-etag-conditional-request.md",
+      "sourceMapPath": "textbook/v5/track_07/part_50_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P49-S25-cache-stampede와-single-fligh"
+      ]
+    }
+  ]
+}

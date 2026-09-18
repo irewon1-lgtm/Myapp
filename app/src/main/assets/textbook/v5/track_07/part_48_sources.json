@@ -1,0 +1,204 @@
+{
+  "partId": "T07-P48",
+  "sections": [
+    {
+      "sectionId": "T07-P48-S01-ttl과-invalidation으로-stale-범위",
+      "sourceIds": [
+        "DDIA",
+        "RFC9111",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P48-S02-ttl과-invalidation으로-stale-범위",
+      "sourceIds": [
+        "RFC9111",
+        "SRE",
+        "SRE-WORKBOOK"
+      ]
+    },
+    {
+      "sectionId": "T07-P48-S03-ttl과-invalidation으로-stale-범위",
+      "sourceIds": [
+        "SRE",
+        "SRE-WORKBOOK",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P48-S04-ttl과-invalidation으로-stale-범위",
+      "sourceIds": [
+        "SRE-WORKBOOK",
+        "WEBAPI2",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P48-S05-ttl과-invalidation으로-stale-범위",
+      "sourceIds": [
+        "WEBAPI2",
+        "DDIA",
+        "RFC9111"
+      ]
+    },
+    {
+      "sectionId": "T07-P48-S06-ttl과-invalidation으로-stale-범위",
+      "sourceIds": [
+        "DDIA",
+        "RFC9111",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P48-S07-ttl과-invalidation으로-stale-범위",
+      "sourceIds": [
+        "RFC9111",
+        "SRE",
+        "SRE-WORKBOOK"
+      ]
+    },
+    {
+      "sectionId": "T07-P48-S08-ttl과-invalidation으로-stale-범위",
+      "sourceIds": [
+        "SRE",
+        "SRE-WORKBOOK",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P48-S09-ttl과-invalidation으로-stale-범위",
+      "sourceIds": [
+        "SRE-WORKBOOK",
+        "WEBAPI2",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P48-S10-ttl과-invalidation으로-stale-범위",
+      "sourceIds": [
+        "WEBAPI2",
+        "DDIA",
+        "RFC9111"
+      ]
+    },
+    {
+      "sectionId": "T07-P48-S11-ttl과-invalidation으로-stale-범위",
+      "sourceIds": [
+        "DDIA",
+        "RFC9111",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P48-S12-ttl과-invalidation으로-stale-범위",
+      "sourceIds": [
+        "RFC9111",
+        "LEARNING-CLT-COMPUTING"
+      ]
+    },
+    {
+      "sectionId": "T07-P48-S13-ttl과-invalidation으로-stale-범위",
+      "sourceIds": [
+        "SRE",
+        "SRE-WORKBOOK",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P48-S14-ttl과-invalidation으로-stale-범위",
+      "sourceIds": [
+        "SRE-WORKBOOK",
+        "WEBAPI2",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P48-S15-ttl과-invalidation으로-stale-범위",
+      "sourceIds": [
+        "WEBAPI2",
+        "DDIA",
+        "RFC9111"
+      ]
+    },
+    {
+      "sectionId": "T07-P48-S16-ttl과-invalidation으로-stale-범위",
+      "sourceIds": [
+        "DDIA",
+        "RFC9111",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P48-S17-ttl과-invalidation으로-stale-범위",
+      "sourceIds": [
+        "RFC9111",
+        "LEARNING-SPACING-RETRIEVAL",
+        "LEARNING-CLT-COMPUTING"
+      ]
+    },
+    {
+      "sectionId": "T07-P48-S18-ttl과-invalidation으로-stale-범위",
+      "sourceIds": [
+        "SRE",
+        "SRE-WORKBOOK",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P48-S19-ttl과-invalidation으로-stale-범위",
+      "sourceIds": [
+        "SRE-WORKBOOK",
+        "WEBAPI2",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P48-S20-ttl과-invalidation으로-stale-범위",
+      "sourceIds": [
+        "WEBAPI2",
+        "DDIA",
+        "RFC9111"
+      ]
+    },
+    {
+      "sectionId": "T07-P48-S21-ttl과-invalidation으로-stale-범위",
+      "sourceIds": [
+        "DDIA",
+        "LEARNING-CLT-COMPUTING",
+        "LEARNING-SPACING-RETRIEVAL"
+      ]
+    },
+    {
+      "sectionId": "T07-P48-S22-ttl과-invalidation으로-stale-범위",
+      "sourceIds": [
+        "RFC9111",
+        "SRE",
+        "SRE-WORKBOOK"
+      ]
+    },
+    {
+      "sectionId": "T07-P48-S23-ttl과-invalidation으로-stale-범위",
+      "sourceIds": [
+        "SRE",
+        "SRE-WORKBOOK",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P48-S24-ttl과-invalidation으로-stale-범위",
+      "sourceIds": [
+        "SRE-WORKBOOK",
+        "WEBAPI2",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P48-S25-ttl과-invalidation으로-stale-범위",
+      "sourceIds": [
+        "WEBAPI2",
+        "DDIA",
+        "RFC9111"
+      ]
+    }
+  ]
+}

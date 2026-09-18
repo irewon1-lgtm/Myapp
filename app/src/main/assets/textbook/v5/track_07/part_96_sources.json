@@ -1,0 +1,204 @@
+{
+  "partId": "T07-P96",
+  "sections": [
+    {
+      "sectionId": "T07-P96-S01-생성된-retry-async-코드를-검토",
+      "sourceIds": [
+        "FOSA2",
+        "OPENAPI31",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P96-S02-생성된-retry-async-코드를-검토",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "OWASP-API"
+      ]
+    },
+    {
+      "sectionId": "T07-P96-S03-생성된-retry-async-코드를-검토",
+      "sourceIds": [
+        "SRE",
+        "OWASP-API",
+        "NIST-SSDF"
+      ]
+    },
+    {
+      "sectionId": "T07-P96-S04-생성된-retry-async-코드를-검토",
+      "sourceIds": [
+        "OWASP-API",
+        "NIST-SSDF",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P96-S05-생성된-retry-async-코드를-검토",
+      "sourceIds": [
+        "NIST-SSDF",
+        "WEBAPI2",
+        "FOSA2"
+      ]
+    },
+    {
+      "sectionId": "T07-P96-S06-생성된-retry-async-코드를-검토",
+      "sourceIds": [
+        "WEBAPI2",
+        "FOSA2",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P96-S07-생성된-retry-async-코드를-검토",
+      "sourceIds": [
+        "FOSA2",
+        "OPENAPI31",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P96-S08-생성된-retry-async-코드를-검토",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "OWASP-API"
+      ]
+    },
+    {
+      "sectionId": "T07-P96-S09-생성된-retry-async-코드를-검토",
+      "sourceIds": [
+        "SRE",
+        "OWASP-API",
+        "NIST-SSDF"
+      ]
+    },
+    {
+      "sectionId": "T07-P96-S10-생성된-retry-async-코드를-검토",
+      "sourceIds": [
+        "OWASP-API",
+        "NIST-SSDF",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P96-S11-생성된-retry-async-코드를-검토",
+      "sourceIds": [
+        "NIST-SSDF",
+        "WEBAPI2",
+        "FOSA2"
+      ]
+    },
+    {
+      "sectionId": "T07-P96-S12-생성된-retry-async-코드를-검토",
+      "sourceIds": [
+        "WEBAPI2",
+        "LEARNING-CLT-COMPUTING"
+      ]
+    },
+    {
+      "sectionId": "T07-P96-S13-생성된-retry-async-코드를-검토",
+      "sourceIds": [
+        "FOSA2",
+        "OPENAPI31",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P96-S14-생성된-retry-async-코드를-검토",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "OWASP-API"
+      ]
+    },
+    {
+      "sectionId": "T07-P96-S15-생성된-retry-async-코드를-검토",
+      "sourceIds": [
+        "SRE",
+        "OWASP-API",
+        "NIST-SSDF"
+      ]
+    },
+    {
+      "sectionId": "T07-P96-S16-생성된-retry-async-코드를-검토",
+      "sourceIds": [
+        "OWASP-API",
+        "NIST-SSDF",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P96-S17-생성된-retry-async-코드를-검토",
+      "sourceIds": [
+        "NIST-SSDF",
+        "LEARNING-SPACING-RETRIEVAL",
+        "LEARNING-CLT-COMPUTING"
+      ]
+    },
+    {
+      "sectionId": "T07-P96-S18-생성된-retry-async-코드를-검토",
+      "sourceIds": [
+        "WEBAPI2",
+        "FOSA2",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P96-S19-생성된-retry-async-코드를-검토",
+      "sourceIds": [
+        "FOSA2",
+        "OPENAPI31",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P96-S20-생성된-retry-async-코드를-검토",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "OWASP-API"
+      ]
+    },
+    {
+      "sectionId": "T07-P96-S21-생성된-retry-async-코드를-검토",
+      "sourceIds": [
+        "SRE",
+        "LEARNING-CLT-COMPUTING",
+        "LEARNING-SPACING-RETRIEVAL"
+      ]
+    },
+    {
+      "sectionId": "T07-P96-S22-생성된-retry-async-코드를-검토",
+      "sourceIds": [
+        "OWASP-API",
+        "NIST-SSDF",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P96-S23-생성된-retry-async-코드를-검토",
+      "sourceIds": [
+        "NIST-SSDF",
+        "WEBAPI2",
+        "FOSA2"
+      ]
+    },
+    {
+      "sectionId": "T07-P96-S24-생성된-retry-async-코드를-검토",
+      "sourceIds": [
+        "WEBAPI2",
+        "FOSA2",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P96-S25-생성된-retry-async-코드를-검토",
+      "sourceIds": [
+        "FOSA2",
+        "OPENAPI31",
+        "SRE"
+      ]
+    }
+  ]
+}

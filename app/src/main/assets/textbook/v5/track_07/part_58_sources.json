@@ -1,0 +1,204 @@
+{
+  "partId": "T07-P58",
+  "sections": [
+    {
+      "sectionId": "T07-P58-S01-비동기-작업-상태-api-설계",
+      "sourceIds": [
+        "DDIA",
+        "RFC9111",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P58-S02-비동기-작업-상태-api-설계",
+      "sourceIds": [
+        "RFC9111",
+        "SRE",
+        "SRE-WORKBOOK"
+      ]
+    },
+    {
+      "sectionId": "T07-P58-S03-비동기-작업-상태-api-설계",
+      "sourceIds": [
+        "SRE",
+        "SRE-WORKBOOK",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P58-S04-비동기-작업-상태-api-설계",
+      "sourceIds": [
+        "SRE-WORKBOOK",
+        "WEBAPI2",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P58-S05-비동기-작업-상태-api-설계",
+      "sourceIds": [
+        "WEBAPI2",
+        "DDIA",
+        "RFC9111"
+      ]
+    },
+    {
+      "sectionId": "T07-P58-S06-비동기-작업-상태-api-설계",
+      "sourceIds": [
+        "DDIA",
+        "RFC9111",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P58-S07-비동기-작업-상태-api-설계",
+      "sourceIds": [
+        "RFC9111",
+        "SRE",
+        "SRE-WORKBOOK"
+      ]
+    },
+    {
+      "sectionId": "T07-P58-S08-비동기-작업-상태-api-설계",
+      "sourceIds": [
+        "SRE",
+        "SRE-WORKBOOK",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P58-S09-비동기-작업-상태-api-설계",
+      "sourceIds": [
+        "SRE-WORKBOOK",
+        "WEBAPI2",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P58-S10-비동기-작업-상태-api-설계",
+      "sourceIds": [
+        "WEBAPI2",
+        "DDIA",
+        "RFC9111"
+      ]
+    },
+    {
+      "sectionId": "T07-P58-S11-비동기-작업-상태-api-설계",
+      "sourceIds": [
+        "DDIA",
+        "RFC9111",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P58-S12-비동기-작업-상태-api-설계",
+      "sourceIds": [
+        "RFC9111",
+        "LEARNING-CLT-COMPUTING"
+      ]
+    },
+    {
+      "sectionId": "T07-P58-S13-비동기-작업-상태-api-설계",
+      "sourceIds": [
+        "SRE",
+        "SRE-WORKBOOK",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P58-S14-비동기-작업-상태-api-설계",
+      "sourceIds": [
+        "SRE-WORKBOOK",
+        "WEBAPI2",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P58-S15-비동기-작업-상태-api-설계",
+      "sourceIds": [
+        "WEBAPI2",
+        "DDIA",
+        "RFC9111"
+      ]
+    },
+    {
+      "sectionId": "T07-P58-S16-비동기-작업-상태-api-설계",
+      "sourceIds": [
+        "DDIA",
+        "RFC9111",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P58-S17-비동기-작업-상태-api-설계",
+      "sourceIds": [
+        "RFC9111",
+        "LEARNING-SPACING-RETRIEVAL",
+        "LEARNING-CLT-COMPUTING"
+      ]
+    },
+    {
+      "sectionId": "T07-P58-S18-비동기-작업-상태-api-설계",
+      "sourceIds": [
+        "SRE",
+        "SRE-WORKBOOK",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P58-S19-비동기-작업-상태-api-설계",
+      "sourceIds": [
+        "SRE-WORKBOOK",
+        "WEBAPI2",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P58-S20-비동기-작업-상태-api-설계",
+      "sourceIds": [
+        "WEBAPI2",
+        "DDIA",
+        "RFC9111"
+      ]
+    },
+    {
+      "sectionId": "T07-P58-S21-비동기-작업-상태-api-설계",
+      "sourceIds": [
+        "DDIA",
+        "LEARNING-CLT-COMPUTING",
+        "LEARNING-SPACING-RETRIEVAL"
+      ]
+    },
+    {
+      "sectionId": "T07-P58-S22-비동기-작업-상태-api-설계",
+      "sourceIds": [
+        "RFC9111",
+        "SRE",
+        "SRE-WORKBOOK"
+      ]
+    },
+    {
+      "sectionId": "T07-P58-S23-비동기-작업-상태-api-설계",
+      "sourceIds": [
+        "SRE",
+        "SRE-WORKBOOK",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P58-S24-비동기-작업-상태-api-설계",
+      "sourceIds": [
+        "SRE-WORKBOOK",
+        "WEBAPI2",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P58-S25-비동기-작업-상태-api-설계",
+      "sourceIds": [
+        "WEBAPI2",
+        "DDIA",
+        "RFC9111"
+      ]
+    }
+  ]
+}

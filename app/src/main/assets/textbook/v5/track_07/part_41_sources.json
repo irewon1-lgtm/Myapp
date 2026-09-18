@@ -1,0 +1,204 @@
+{
+  "partId": "T07-P41",
+  "sections": [
+    {
+      "sectionId": "T07-P41-S01-url-fetch와-ssrf-trust-bounda",
+      "sourceIds": [
+        "OWASP-API",
+        "OWASP-ASVS",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P41-S02-url-fetch와-ssrf-trust-bounda",
+      "sourceIds": [
+        "OWASP-ASVS",
+        "OPENAPI31",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P41-S03-url-fetch와-ssrf-trust-bounda",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "NIST-SSDF"
+      ]
+    },
+    {
+      "sectionId": "T07-P41-S04-url-fetch와-ssrf-trust-bounda",
+      "sourceIds": [
+        "SRE",
+        "NIST-SSDF",
+        "OWASP-API"
+      ]
+    },
+    {
+      "sectionId": "T07-P41-S05-url-fetch와-ssrf-trust-bounda",
+      "sourceIds": [
+        "NIST-SSDF",
+        "OWASP-API",
+        "OWASP-ASVS"
+      ]
+    },
+    {
+      "sectionId": "T07-P41-S06-url-fetch와-ssrf-trust-bounda",
+      "sourceIds": [
+        "OWASP-API",
+        "OWASP-ASVS",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P41-S07-url-fetch와-ssrf-trust-bounda",
+      "sourceIds": [
+        "OWASP-ASVS",
+        "OPENAPI31",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P41-S08-url-fetch와-ssrf-trust-bounda",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "NIST-SSDF"
+      ]
+    },
+    {
+      "sectionId": "T07-P41-S09-url-fetch와-ssrf-trust-bounda",
+      "sourceIds": [
+        "SRE",
+        "NIST-SSDF",
+        "OWASP-API"
+      ]
+    },
+    {
+      "sectionId": "T07-P41-S10-url-fetch와-ssrf-trust-bounda",
+      "sourceIds": [
+        "NIST-SSDF",
+        "OWASP-API",
+        "OWASP-ASVS"
+      ]
+    },
+    {
+      "sectionId": "T07-P41-S11-url-fetch와-ssrf-trust-bounda",
+      "sourceIds": [
+        "OWASP-API",
+        "OWASP-ASVS",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P41-S12-url-fetch와-ssrf-trust-bounda",
+      "sourceIds": [
+        "OWASP-ASVS",
+        "LEARNING-CLT-COMPUTING"
+      ]
+    },
+    {
+      "sectionId": "T07-P41-S13-url-fetch와-ssrf-trust-bounda",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "NIST-SSDF"
+      ]
+    },
+    {
+      "sectionId": "T07-P41-S14-url-fetch와-ssrf-trust-bounda",
+      "sourceIds": [
+        "SRE",
+        "NIST-SSDF",
+        "OWASP-API"
+      ]
+    },
+    {
+      "sectionId": "T07-P41-S15-url-fetch와-ssrf-trust-bounda",
+      "sourceIds": [
+        "NIST-SSDF",
+        "OWASP-API",
+        "OWASP-ASVS"
+      ]
+    },
+    {
+      "sectionId": "T07-P41-S16-url-fetch와-ssrf-trust-bounda",
+      "sourceIds": [
+        "OWASP-API",
+        "OWASP-ASVS",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P41-S17-url-fetch와-ssrf-trust-bounda",
+      "sourceIds": [
+        "OWASP-ASVS",
+        "LEARNING-SPACING-RETRIEVAL",
+        "LEARNING-CLT-COMPUTING"
+      ]
+    },
+    {
+      "sectionId": "T07-P41-S18-url-fetch와-ssrf-trust-bounda",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "NIST-SSDF"
+      ]
+    },
+    {
+      "sectionId": "T07-P41-S19-url-fetch와-ssrf-trust-bounda",
+      "sourceIds": [
+        "SRE",
+        "NIST-SSDF",
+        "OWASP-API"
+      ]
+    },
+    {
+      "sectionId": "T07-P41-S20-url-fetch와-ssrf-trust-bounda",
+      "sourceIds": [
+        "NIST-SSDF",
+        "OWASP-API",
+        "OWASP-ASVS"
+      ]
+    },
+    {
+      "sectionId": "T07-P41-S21-url-fetch와-ssrf-trust-bounda",
+      "sourceIds": [
+        "OWASP-API",
+        "LEARNING-CLT-COMPUTING",
+        "LEARNING-SPACING-RETRIEVAL"
+      ]
+    },
+    {
+      "sectionId": "T07-P41-S22-url-fetch와-ssrf-trust-bounda",
+      "sourceIds": [
+        "OWASP-ASVS",
+        "OPENAPI31",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P41-S23-url-fetch와-ssrf-trust-bounda",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "NIST-SSDF"
+      ]
+    },
+    {
+      "sectionId": "T07-P41-S24-url-fetch와-ssrf-trust-bounda",
+      "sourceIds": [
+        "SRE",
+        "NIST-SSDF",
+        "OWASP-API"
+      ]
+    },
+    {
+      "sectionId": "T07-P41-S25-url-fetch와-ssrf-trust-bounda",
+      "sourceIds": [
+        "NIST-SSDF",
+        "OWASP-API",
+        "OWASP-ASVS"
+      ]
+    }
+  ]
+}

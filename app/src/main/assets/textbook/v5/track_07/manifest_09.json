@@ -1,0 +1,107 @@
+{
+  "trackId": "T07",
+  "trackNumber": 7,
+  "title": "서버와 백엔드 — 요청에서 운영까지",
+  "parts": [
+    {
+      "id": "T07-P81",
+      "order": 81,
+      "title": "분산 transaction과 saga·compensation",
+      "assetPath": "textbook/v5/track_07/part_81_분산-transaction과-saga-compensation.md",
+      "sourceMapPath": "textbook/v5/track_07/part_81_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P80-S25-load-balancing과-service-disc"
+      ]
+    },
+    {
+      "id": "T07-P82",
+      "order": 82,
+      "title": "eventual consistency와 read-your-writes",
+      "assetPath": "textbook/v5/track_07/part_82_eventual-consistency와-read-your-writes.md",
+      "sourceMapPath": "textbook/v5/track_07/part_82_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P81-S25-분산-transaction과-saga-compens"
+      ]
+    },
+    {
+      "id": "T07-P83",
+      "order": 83,
+      "title": "event schema와 evolution",
+      "assetPath": "textbook/v5/track_07/part_83_event-schema와-evolution.md",
+      "sourceMapPath": "textbook/v5/track_07/part_83_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P82-S25-eventual-consistency와-read-y"
+      ]
+    },
+    {
+      "id": "T07-P84",
+      "order": 84,
+      "title": "CQRS를 읽기/쓰기 요구 차이에서 이해하기",
+      "assetPath": "textbook/v5/track_07/part_84_cqrs를-읽기-쓰기-요구-차이에서-이해하기.md",
+      "sourceMapPath": "textbook/v5/track_07/part_84_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P83-S25-event-schema와-evolution"
+      ]
+    },
+    {
+      "id": "T07-P85",
+      "order": 85,
+      "title": "distributed lock·lease·fencing token",
+      "assetPath": "textbook/v5/track_07/part_85_distributed-lock-lease-fencing-token.md",
+      "sourceMapPath": "textbook/v5/track_07/part_85_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P84-S25-cqrs를-읽기-쓰기-요구-차이에서-이해하기"
+      ]
+    },
+    {
+      "id": "T07-P86",
+      "order": 86,
+      "title": "leader election과 singleton work",
+      "assetPath": "textbook/v5/track_07/part_86_leader-election과-singleton-work.md",
+      "sourceMapPath": "textbook/v5/track_07/part_86_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P85-S25-distributed-lock-lease-fenci"
+      ]
+    },
+    {
+      "id": "T07-P87",
+      "order": 87,
+      "title": "replication·failover를 backend 관점에서 다루기",
+      "assetPath": "textbook/v5/track_07/part_87_replication-failover를-backend-관점에서-다루기.md",
+      "sourceMapPath": "textbook/v5/track_07/part_87_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P86-S25-leader-election과-singleton-w"
+      ]
+    },
+    {
+      "id": "T07-P88",
+      "order": 88,
+      "title": "multi-tenant isolation",
+      "assetPath": "textbook/v5/track_07/part_88_multi-tenant-isolation.md",
+      "sourceMapPath": "textbook/v5/track_07/part_88_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P87-S25-replication-failover를-backen"
+      ]
+    },
+    {
+      "id": "T07-P89",
+      "order": 89,
+      "title": "serverless와 long-running backend 실행 모델 비교",
+      "assetPath": "textbook/v5/track_07/part_89_serverless와-long-running-backend-실행-모델-비교.md",
+      "sourceMapPath": "textbook/v5/track_07/part_89_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P88-S25-multi-tenant-isolation"
+      ]
+    },
+    {
+      "id": "T07-P90",
+      "order": 90,
+      "title": "BLOCK 06 종합: 분산 주문 시스템의 실패 경계",
+      "assetPath": "textbook/v5/track_07/part_90_block-06-종합-분산-주문-시스템의-실패-경계.md",
+      "sourceMapPath": "textbook/v5/track_07/part_90_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P89-S25-serverless와-long-running-bac"
+      ]
+    }
+  ]
+}

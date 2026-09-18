@@ -1,0 +1,204 @@
+{
+  "partId": "T07-P102",
+  "sections": [
+    {
+      "sectionId": "T07-P102-S01-dependency와-supply-chain-경계-",
+      "sourceIds": [
+        "FOSA2",
+        "OPENAPI31",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P102-S02-dependency와-supply-chain-경계-",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "OWASP-API"
+      ]
+    },
+    {
+      "sectionId": "T07-P102-S03-dependency와-supply-chain-경계-",
+      "sourceIds": [
+        "SRE",
+        "OWASP-API",
+        "NIST-SSDF"
+      ]
+    },
+    {
+      "sectionId": "T07-P102-S04-dependency와-supply-chain-경계-",
+      "sourceIds": [
+        "OWASP-API",
+        "NIST-SSDF",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P102-S05-dependency와-supply-chain-경계-",
+      "sourceIds": [
+        "NIST-SSDF",
+        "WEBAPI2",
+        "FOSA2"
+      ]
+    },
+    {
+      "sectionId": "T07-P102-S06-dependency와-supply-chain-경계-",
+      "sourceIds": [
+        "WEBAPI2",
+        "FOSA2",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P102-S07-dependency와-supply-chain-경계-",
+      "sourceIds": [
+        "FOSA2",
+        "OPENAPI31",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P102-S08-dependency와-supply-chain-경계-",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "OWASP-API"
+      ]
+    },
+    {
+      "sectionId": "T07-P102-S09-dependency와-supply-chain-경계-",
+      "sourceIds": [
+        "SRE",
+        "OWASP-API",
+        "NIST-SSDF"
+      ]
+    },
+    {
+      "sectionId": "T07-P102-S10-dependency와-supply-chain-경계-",
+      "sourceIds": [
+        "OWASP-API",
+        "NIST-SSDF",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P102-S11-dependency와-supply-chain-경계-",
+      "sourceIds": [
+        "NIST-SSDF",
+        "WEBAPI2",
+        "FOSA2"
+      ]
+    },
+    {
+      "sectionId": "T07-P102-S12-dependency와-supply-chain-경계-",
+      "sourceIds": [
+        "WEBAPI2",
+        "LEARNING-CLT-COMPUTING"
+      ]
+    },
+    {
+      "sectionId": "T07-P102-S13-dependency와-supply-chain-경계-",
+      "sourceIds": [
+        "FOSA2",
+        "OPENAPI31",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P102-S14-dependency와-supply-chain-경계-",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "OWASP-API"
+      ]
+    },
+    {
+      "sectionId": "T07-P102-S15-dependency와-supply-chain-경계-",
+      "sourceIds": [
+        "SRE",
+        "OWASP-API",
+        "NIST-SSDF"
+      ]
+    },
+    {
+      "sectionId": "T07-P102-S16-dependency와-supply-chain-경계-",
+      "sourceIds": [
+        "OWASP-API",
+        "NIST-SSDF",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P102-S17-dependency와-supply-chain-경계-",
+      "sourceIds": [
+        "NIST-SSDF",
+        "LEARNING-SPACING-RETRIEVAL",
+        "LEARNING-CLT-COMPUTING"
+      ]
+    },
+    {
+      "sectionId": "T07-P102-S18-dependency와-supply-chain-경계-",
+      "sourceIds": [
+        "WEBAPI2",
+        "FOSA2",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P102-S19-dependency와-supply-chain-경계-",
+      "sourceIds": [
+        "FOSA2",
+        "OPENAPI31",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P102-S20-dependency와-supply-chain-경계-",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "OWASP-API"
+      ]
+    },
+    {
+      "sectionId": "T07-P102-S21-dependency와-supply-chain-경계-",
+      "sourceIds": [
+        "SRE",
+        "LEARNING-CLT-COMPUTING",
+        "LEARNING-SPACING-RETRIEVAL"
+      ]
+    },
+    {
+      "sectionId": "T07-P102-S22-dependency와-supply-chain-경계-",
+      "sourceIds": [
+        "OWASP-API",
+        "NIST-SSDF",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P102-S23-dependency와-supply-chain-경계-",
+      "sourceIds": [
+        "NIST-SSDF",
+        "WEBAPI2",
+        "FOSA2"
+      ]
+    },
+    {
+      "sectionId": "T07-P102-S24-dependency와-supply-chain-경계-",
+      "sourceIds": [
+        "WEBAPI2",
+        "FOSA2",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P102-S25-dependency와-supply-chain-경계-",
+      "sourceIds": [
+        "FOSA2",
+        "OPENAPI31",
+        "SRE"
+      ]
+    }
+  ]
+}

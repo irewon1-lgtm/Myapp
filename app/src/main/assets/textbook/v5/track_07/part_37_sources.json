@@ -1,0 +1,204 @@
+{
+  "partId": "T07-P37",
+  "sections": [
+    {
+      "sectionId": "T07-P37-S01-secret와-configuration을-코드에서-",
+      "sourceIds": [
+        "OWASP-API",
+        "OWASP-ASVS",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P37-S02-secret와-configuration을-코드에서-",
+      "sourceIds": [
+        "OWASP-ASVS",
+        "OPENAPI31",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P37-S03-secret와-configuration을-코드에서-",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "NIST-SSDF"
+      ]
+    },
+    {
+      "sectionId": "T07-P37-S04-secret와-configuration을-코드에서-",
+      "sourceIds": [
+        "SRE",
+        "NIST-SSDF",
+        "OWASP-API"
+      ]
+    },
+    {
+      "sectionId": "T07-P37-S05-secret와-configuration을-코드에서-",
+      "sourceIds": [
+        "NIST-SSDF",
+        "OWASP-API",
+        "OWASP-ASVS"
+      ]
+    },
+    {
+      "sectionId": "T07-P37-S06-secret와-configuration을-코드에서-",
+      "sourceIds": [
+        "OWASP-API",
+        "OWASP-ASVS",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P37-S07-secret와-configuration을-코드에서-",
+      "sourceIds": [
+        "OWASP-ASVS",
+        "OPENAPI31",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P37-S08-secret와-configuration을-코드에서-",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "NIST-SSDF"
+      ]
+    },
+    {
+      "sectionId": "T07-P37-S09-secret와-configuration을-코드에서-",
+      "sourceIds": [
+        "SRE",
+        "NIST-SSDF",
+        "OWASP-API"
+      ]
+    },
+    {
+      "sectionId": "T07-P37-S10-secret와-configuration을-코드에서-",
+      "sourceIds": [
+        "NIST-SSDF",
+        "OWASP-API",
+        "OWASP-ASVS"
+      ]
+    },
+    {
+      "sectionId": "T07-P37-S11-secret와-configuration을-코드에서-",
+      "sourceIds": [
+        "OWASP-API",
+        "OWASP-ASVS",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P37-S12-secret와-configuration을-코드에서-",
+      "sourceIds": [
+        "OWASP-ASVS",
+        "LEARNING-CLT-COMPUTING"
+      ]
+    },
+    {
+      "sectionId": "T07-P37-S13-secret와-configuration을-코드에서-",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "NIST-SSDF"
+      ]
+    },
+    {
+      "sectionId": "T07-P37-S14-secret와-configuration을-코드에서-",
+      "sourceIds": [
+        "SRE",
+        "NIST-SSDF",
+        "OWASP-API"
+      ]
+    },
+    {
+      "sectionId": "T07-P37-S15-secret와-configuration을-코드에서-",
+      "sourceIds": [
+        "NIST-SSDF",
+        "OWASP-API",
+        "OWASP-ASVS"
+      ]
+    },
+    {
+      "sectionId": "T07-P37-S16-secret와-configuration을-코드에서-",
+      "sourceIds": [
+        "OWASP-API",
+        "OWASP-ASVS",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P37-S17-secret와-configuration을-코드에서-",
+      "sourceIds": [
+        "OWASP-ASVS",
+        "LEARNING-SPACING-RETRIEVAL",
+        "LEARNING-CLT-COMPUTING"
+      ]
+    },
+    {
+      "sectionId": "T07-P37-S18-secret와-configuration을-코드에서-",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "NIST-SSDF"
+      ]
+    },
+    {
+      "sectionId": "T07-P37-S19-secret와-configuration을-코드에서-",
+      "sourceIds": [
+        "SRE",
+        "NIST-SSDF",
+        "OWASP-API"
+      ]
+    },
+    {
+      "sectionId": "T07-P37-S20-secret와-configuration을-코드에서-",
+      "sourceIds": [
+        "NIST-SSDF",
+        "OWASP-API",
+        "OWASP-ASVS"
+      ]
+    },
+    {
+      "sectionId": "T07-P37-S21-secret와-configuration을-코드에서-",
+      "sourceIds": [
+        "OWASP-API",
+        "LEARNING-CLT-COMPUTING",
+        "LEARNING-SPACING-RETRIEVAL"
+      ]
+    },
+    {
+      "sectionId": "T07-P37-S22-secret와-configuration을-코드에서-",
+      "sourceIds": [
+        "OWASP-ASVS",
+        "OPENAPI31",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P37-S23-secret와-configuration을-코드에서-",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "NIST-SSDF"
+      ]
+    },
+    {
+      "sectionId": "T07-P37-S24-secret와-configuration을-코드에서-",
+      "sourceIds": [
+        "SRE",
+        "NIST-SSDF",
+        "OWASP-API"
+      ]
+    },
+    {
+      "sectionId": "T07-P37-S25-secret와-configuration을-코드에서-",
+      "sourceIds": [
+        "NIST-SSDF",
+        "OWASP-API",
+        "OWASP-ASVS"
+      ]
+    }
+  ]
+}

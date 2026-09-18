@@ -1,0 +1,204 @@
+{
+  "partId": "T07-P01",
+  "sections": [
+    {
+      "sectionId": "T07-P01-S01-서버-프로그램과-요청의-첫-진입점",
+      "sourceIds": [
+        "NODE-DOCS",
+        "EXPRESS5",
+        "RFC9110"
+      ]
+    },
+    {
+      "sectionId": "T07-P01-S02-서버-프로그램과-요청의-첫-진입점",
+      "sourceIds": [
+        "EXPRESS5",
+        "RFC9110",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P01-S03-서버-프로그램과-요청의-첫-진입점",
+      "sourceIds": [
+        "RFC9110",
+        "OPENAPI31",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P01-S04-서버-프로그램과-요청의-첫-진입점",
+      "sourceIds": [
+        "OPENAPI31",
+        "WEBAPI2",
+        "RFC9457"
+      ]
+    },
+    {
+      "sectionId": "T07-P01-S05-서버-프로그램과-요청의-첫-진입점",
+      "sourceIds": [
+        "WEBAPI2",
+        "RFC9457",
+        "NODE-DOCS"
+      ]
+    },
+    {
+      "sectionId": "T07-P01-S06-서버-프로그램과-요청의-첫-진입점",
+      "sourceIds": [
+        "RFC9457",
+        "NODE-DOCS",
+        "EXPRESS5"
+      ]
+    },
+    {
+      "sectionId": "T07-P01-S07-서버-프로그램과-요청의-첫-진입점",
+      "sourceIds": [
+        "NODE-DOCS",
+        "EXPRESS5",
+        "RFC9110"
+      ]
+    },
+    {
+      "sectionId": "T07-P01-S08-서버-프로그램과-요청의-첫-진입점",
+      "sourceIds": [
+        "EXPRESS5",
+        "RFC9110",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P01-S09-서버-프로그램과-요청의-첫-진입점",
+      "sourceIds": [
+        "RFC9110",
+        "OPENAPI31",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P01-S10-서버-프로그램과-요청의-첫-진입점",
+      "sourceIds": [
+        "OPENAPI31",
+        "WEBAPI2",
+        "RFC9457"
+      ]
+    },
+    {
+      "sectionId": "T07-P01-S11-서버-프로그램과-요청의-첫-진입점",
+      "sourceIds": [
+        "WEBAPI2",
+        "RFC9457",
+        "NODE-DOCS"
+      ]
+    },
+    {
+      "sectionId": "T07-P01-S12-서버-프로그램과-요청의-첫-진입점",
+      "sourceIds": [
+        "RFC9457",
+        "LEARNING-CLT-COMPUTING"
+      ]
+    },
+    {
+      "sectionId": "T07-P01-S13-서버-프로그램과-요청의-첫-진입점",
+      "sourceIds": [
+        "NODE-DOCS",
+        "EXPRESS5",
+        "RFC9110"
+      ]
+    },
+    {
+      "sectionId": "T07-P01-S14-서버-프로그램과-요청의-첫-진입점",
+      "sourceIds": [
+        "EXPRESS5",
+        "RFC9110",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P01-S15-서버-프로그램과-요청의-첫-진입점",
+      "sourceIds": [
+        "RFC9110",
+        "OPENAPI31",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P01-S16-서버-프로그램과-요청의-첫-진입점",
+      "sourceIds": [
+        "OPENAPI31",
+        "WEBAPI2",
+        "RFC9457"
+      ]
+    },
+    {
+      "sectionId": "T07-P01-S17-서버-프로그램과-요청의-첫-진입점",
+      "sourceIds": [
+        "WEBAPI2",
+        "LEARNING-SPACING-RETRIEVAL",
+        "LEARNING-CLT-COMPUTING"
+      ]
+    },
+    {
+      "sectionId": "T07-P01-S18-서버-프로그램과-요청의-첫-진입점",
+      "sourceIds": [
+        "RFC9457",
+        "NODE-DOCS",
+        "EXPRESS5"
+      ]
+    },
+    {
+      "sectionId": "T07-P01-S19-서버-프로그램과-요청의-첫-진입점",
+      "sourceIds": [
+        "NODE-DOCS",
+        "EXPRESS5",
+        "RFC9110"
+      ]
+    },
+    {
+      "sectionId": "T07-P01-S20-서버-프로그램과-요청의-첫-진입점",
+      "sourceIds": [
+        "EXPRESS5",
+        "RFC9110",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P01-S21-서버-프로그램과-요청의-첫-진입점",
+      "sourceIds": [
+        "RFC9110",
+        "LEARNING-CLT-COMPUTING",
+        "LEARNING-SPACING-RETRIEVAL"
+      ]
+    },
+    {
+      "sectionId": "T07-P01-S22-서버-프로그램과-요청의-첫-진입점",
+      "sourceIds": [
+        "OPENAPI31",
+        "WEBAPI2",
+        "RFC9457"
+      ]
+    },
+    {
+      "sectionId": "T07-P01-S23-서버-프로그램과-요청의-첫-진입점",
+      "sourceIds": [
+        "WEBAPI2",
+        "RFC9457",
+        "NODE-DOCS"
+      ]
+    },
+    {
+      "sectionId": "T07-P01-S24-서버-프로그램과-요청의-첫-진입점",
+      "sourceIds": [
+        "RFC9457",
+        "NODE-DOCS",
+        "EXPRESS5"
+      ]
+    },
+    {
+      "sectionId": "T07-P01-S25-서버-프로그램과-요청의-첫-진입점",
+      "sourceIds": [
+        "NODE-DOCS",
+        "EXPRESS5",
+        "RFC9110"
+      ]
+    }
+  ]
+}

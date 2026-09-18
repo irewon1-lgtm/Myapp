@@ -1,0 +1,204 @@
+{
+  "partId": "T07-P19",
+  "sections": [
+    {
+      "sectionId": "T07-P19-S01-state-machine으로-가능한-상태-전이를-제",
+      "sourceIds": [
+        "DDIA",
+        "FOSA2",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P19-S02-state-machine으로-가능한-상태-전이를-제",
+      "sourceIds": [
+        "FOSA2",
+        "OPENAPI31",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P19-S03-state-machine으로-가능한-상태-전이를-제",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P19-S04-state-machine으로-가능한-상태-전이를-제",
+      "sourceIds": [
+        "SRE",
+        "WEBAPI2",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P19-S05-state-machine으로-가능한-상태-전이를-제",
+      "sourceIds": [
+        "WEBAPI2",
+        "DDIA",
+        "FOSA2"
+      ]
+    },
+    {
+      "sectionId": "T07-P19-S06-state-machine으로-가능한-상태-전이를-제",
+      "sourceIds": [
+        "DDIA",
+        "FOSA2",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P19-S07-state-machine으로-가능한-상태-전이를-제",
+      "sourceIds": [
+        "FOSA2",
+        "OPENAPI31",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P19-S08-state-machine으로-가능한-상태-전이를-제",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P19-S09-state-machine으로-가능한-상태-전이를-제",
+      "sourceIds": [
+        "SRE",
+        "WEBAPI2",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P19-S10-state-machine으로-가능한-상태-전이를-제",
+      "sourceIds": [
+        "WEBAPI2",
+        "DDIA",
+        "FOSA2"
+      ]
+    },
+    {
+      "sectionId": "T07-P19-S11-state-machine으로-가능한-상태-전이를-제",
+      "sourceIds": [
+        "DDIA",
+        "FOSA2",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P19-S12-state-machine으로-가능한-상태-전이를-제",
+      "sourceIds": [
+        "FOSA2",
+        "LEARNING-CLT-COMPUTING"
+      ]
+    },
+    {
+      "sectionId": "T07-P19-S13-state-machine으로-가능한-상태-전이를-제",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P19-S14-state-machine으로-가능한-상태-전이를-제",
+      "sourceIds": [
+        "SRE",
+        "WEBAPI2",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P19-S15-state-machine으로-가능한-상태-전이를-제",
+      "sourceIds": [
+        "WEBAPI2",
+        "DDIA",
+        "FOSA2"
+      ]
+    },
+    {
+      "sectionId": "T07-P19-S16-state-machine으로-가능한-상태-전이를-제",
+      "sourceIds": [
+        "DDIA",
+        "FOSA2",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P19-S17-state-machine으로-가능한-상태-전이를-제",
+      "sourceIds": [
+        "FOSA2",
+        "LEARNING-SPACING-RETRIEVAL",
+        "LEARNING-CLT-COMPUTING"
+      ]
+    },
+    {
+      "sectionId": "T07-P19-S18-state-machine으로-가능한-상태-전이를-제",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P19-S19-state-machine으로-가능한-상태-전이를-제",
+      "sourceIds": [
+        "SRE",
+        "WEBAPI2",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P19-S20-state-machine으로-가능한-상태-전이를-제",
+      "sourceIds": [
+        "WEBAPI2",
+        "DDIA",
+        "FOSA2"
+      ]
+    },
+    {
+      "sectionId": "T07-P19-S21-state-machine으로-가능한-상태-전이를-제",
+      "sourceIds": [
+        "DDIA",
+        "LEARNING-CLT-COMPUTING",
+        "LEARNING-SPACING-RETRIEVAL"
+      ]
+    },
+    {
+      "sectionId": "T07-P19-S22-state-machine으로-가능한-상태-전이를-제",
+      "sourceIds": [
+        "FOSA2",
+        "OPENAPI31",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P19-S23-state-machine으로-가능한-상태-전이를-제",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P19-S24-state-machine으로-가능한-상태-전이를-제",
+      "sourceIds": [
+        "SRE",
+        "WEBAPI2",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P19-S25-state-machine으로-가능한-상태-전이를-제",
+      "sourceIds": [
+        "WEBAPI2",
+        "DDIA",
+        "FOSA2"
+      ]
+    }
+  ]
+}

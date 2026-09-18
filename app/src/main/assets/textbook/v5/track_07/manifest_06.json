@@ -1,0 +1,107 @@
+{
+  "trackId": "T07",
+  "trackNumber": 7,
+  "title": "서버와 백엔드 — 요청에서 운영까지",
+  "parts": [
+    {
+      "id": "T07-P51",
+      "order": 51,
+      "title": "in-process cache와 distributed cache 선택",
+      "assetPath": "textbook/v5/track_07/part_51_in-process-cache와-distributed-cache-선택.md",
+      "sourceMapPath": "textbook/v5/track_07/part_51_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P50-S25-http-cache와-etag-conditional"
+      ]
+    },
+    {
+      "id": "T07-P52",
+      "order": 52,
+      "title": "queue는 일을 나중에 처리하도록 경계를 만든다",
+      "assetPath": "textbook/v5/track_07/part_52_queue는-일을-나중에-처리하도록-경계를-만든다.md",
+      "sourceMapPath": "textbook/v5/track_07/part_52_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P51-S25-in-process-cache와-distribute"
+      ]
+    },
+    {
+      "id": "T07-P53",
+      "order": 53,
+      "title": "at-least-once와 중복 처리",
+      "assetPath": "textbook/v5/track_07/part_53_at-least-once와-중복-처리.md",
+      "sourceMapPath": "textbook/v5/track_07/part_53_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P52-S25-queue는-일을-나중에-처리하도록-경계를-만든다"
+      ]
+    },
+    {
+      "id": "T07-P54",
+      "order": 54,
+      "title": "retry·backoff·jitter·DLQ",
+      "assetPath": "textbook/v5/track_07/part_54_retry-backoff-jitter-dlq.md",
+      "sourceMapPath": "textbook/v5/track_07/part_54_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P53-S25-at-least-once와-중복-처리"
+      ]
+    },
+    {
+      "id": "T07-P55",
+      "order": 55,
+      "title": "ordering과 partition key",
+      "assetPath": "textbook/v5/track_07/part_55_ordering과-partition-key.md",
+      "sourceMapPath": "textbook/v5/track_07/part_55_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P54-S25-retry-backoff-jitter-dlq"
+      ]
+    },
+    {
+      "id": "T07-P56",
+      "order": 56,
+      "title": "delayed job과 예약 실행",
+      "assetPath": "textbook/v5/track_07/part_56_delayed-job과-예약-실행.md",
+      "sourceMapPath": "textbook/v5/track_07/part_56_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P55-S25-ordering과-partition-key"
+      ]
+    },
+    {
+      "id": "T07-P57",
+      "order": 57,
+      "title": "backpressure와 load shedding",
+      "assetPath": "textbook/v5/track_07/part_57_backpressure와-load-shedding.md",
+      "sourceMapPath": "textbook/v5/track_07/part_57_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P56-S25-delayed-job과-예약-실행"
+      ]
+    },
+    {
+      "id": "T07-P58",
+      "order": 58,
+      "title": "비동기 작업 상태 API 설계",
+      "assetPath": "textbook/v5/track_07/part_58_비동기-작업-상태-api-설계.md",
+      "sourceMapPath": "textbook/v5/track_07/part_58_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P57-S25-backpressure와-load-shedding"
+      ]
+    },
+    {
+      "id": "T07-P59",
+      "order": 59,
+      "title": "batch와 chunking으로 큰 일을 재시작 가능하게 만들기",
+      "assetPath": "textbook/v5/track_07/part_59_batch와-chunking으로-큰-일을-재시작-가능하게-만들기.md",
+      "sourceMapPath": "textbook/v5/track_07/part_59_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P58-S25-비동기-작업-상태-api-설계"
+      ]
+    },
+    {
+      "id": "T07-P60",
+      "order": 60,
+      "title": "BLOCK 04 종합: 이미지·보고서 처리 pipeline",
+      "assetPath": "textbook/v5/track_07/part_60_block-04-종합-이미지-보고서-처리-pipeline.md",
+      "sourceMapPath": "textbook/v5/track_07/part_60_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P59-S25-batch와-chunking으로-큰-일을-재시작-가"
+      ]
+    }
+  ]
+}

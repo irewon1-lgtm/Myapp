@@ -1,0 +1,204 @@
+{
+  "partId": "T07-P02",
+  "sections": [
+    {
+      "sectionId": "T07-P02-S01-route는-요청을-처리할-코드로-연결하는-규칙",
+      "sourceIds": [
+        "NODE-DOCS",
+        "EXPRESS5",
+        "RFC9110"
+      ]
+    },
+    {
+      "sectionId": "T07-P02-S02-route는-요청을-처리할-코드로-연결하는-규칙",
+      "sourceIds": [
+        "EXPRESS5",
+        "RFC9110",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P02-S03-route는-요청을-처리할-코드로-연결하는-규칙",
+      "sourceIds": [
+        "RFC9110",
+        "OPENAPI31",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P02-S04-route는-요청을-처리할-코드로-연결하는-규칙",
+      "sourceIds": [
+        "OPENAPI31",
+        "WEBAPI2",
+        "RFC9457"
+      ]
+    },
+    {
+      "sectionId": "T07-P02-S05-route는-요청을-처리할-코드로-연결하는-규칙",
+      "sourceIds": [
+        "WEBAPI2",
+        "RFC9457",
+        "NODE-DOCS"
+      ]
+    },
+    {
+      "sectionId": "T07-P02-S06-route는-요청을-처리할-코드로-연결하는-규칙",
+      "sourceIds": [
+        "RFC9457",
+        "NODE-DOCS",
+        "EXPRESS5"
+      ]
+    },
+    {
+      "sectionId": "T07-P02-S07-route는-요청을-처리할-코드로-연결하는-규칙",
+      "sourceIds": [
+        "NODE-DOCS",
+        "EXPRESS5",
+        "RFC9110"
+      ]
+    },
+    {
+      "sectionId": "T07-P02-S08-route는-요청을-처리할-코드로-연결하는-규칙",
+      "sourceIds": [
+        "EXPRESS5",
+        "RFC9110",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P02-S09-route는-요청을-처리할-코드로-연결하는-규칙",
+      "sourceIds": [
+        "RFC9110",
+        "OPENAPI31",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P02-S10-route는-요청을-처리할-코드로-연결하는-규칙",
+      "sourceIds": [
+        "OPENAPI31",
+        "WEBAPI2",
+        "RFC9457"
+      ]
+    },
+    {
+      "sectionId": "T07-P02-S11-route는-요청을-처리할-코드로-연결하는-규칙",
+      "sourceIds": [
+        "WEBAPI2",
+        "RFC9457",
+        "NODE-DOCS"
+      ]
+    },
+    {
+      "sectionId": "T07-P02-S12-route는-요청을-처리할-코드로-연결하는-규칙",
+      "sourceIds": [
+        "RFC9457",
+        "LEARNING-CLT-COMPUTING"
+      ]
+    },
+    {
+      "sectionId": "T07-P02-S13-route는-요청을-처리할-코드로-연결하는-규칙",
+      "sourceIds": [
+        "NODE-DOCS",
+        "EXPRESS5",
+        "RFC9110"
+      ]
+    },
+    {
+      "sectionId": "T07-P02-S14-route는-요청을-처리할-코드로-연결하는-규칙",
+      "sourceIds": [
+        "EXPRESS5",
+        "RFC9110",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P02-S15-route는-요청을-처리할-코드로-연결하는-규칙",
+      "sourceIds": [
+        "RFC9110",
+        "OPENAPI31",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P02-S16-route는-요청을-처리할-코드로-연결하는-규칙",
+      "sourceIds": [
+        "OPENAPI31",
+        "WEBAPI2",
+        "RFC9457"
+      ]
+    },
+    {
+      "sectionId": "T07-P02-S17-route는-요청을-처리할-코드로-연결하는-규칙",
+      "sourceIds": [
+        "WEBAPI2",
+        "LEARNING-SPACING-RETRIEVAL",
+        "LEARNING-CLT-COMPUTING"
+      ]
+    },
+    {
+      "sectionId": "T07-P02-S18-route는-요청을-처리할-코드로-연결하는-규칙",
+      "sourceIds": [
+        "RFC9457",
+        "NODE-DOCS",
+        "EXPRESS5"
+      ]
+    },
+    {
+      "sectionId": "T07-P02-S19-route는-요청을-처리할-코드로-연결하는-규칙",
+      "sourceIds": [
+        "NODE-DOCS",
+        "EXPRESS5",
+        "RFC9110"
+      ]
+    },
+    {
+      "sectionId": "T07-P02-S20-route는-요청을-처리할-코드로-연결하는-규칙",
+      "sourceIds": [
+        "EXPRESS5",
+        "RFC9110",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P02-S21-route는-요청을-처리할-코드로-연결하는-규칙",
+      "sourceIds": [
+        "RFC9110",
+        "LEARNING-CLT-COMPUTING",
+        "LEARNING-SPACING-RETRIEVAL"
+      ]
+    },
+    {
+      "sectionId": "T07-P02-S22-route는-요청을-처리할-코드로-연결하는-규칙",
+      "sourceIds": [
+        "OPENAPI31",
+        "WEBAPI2",
+        "RFC9457"
+      ]
+    },
+    {
+      "sectionId": "T07-P02-S23-route는-요청을-처리할-코드로-연결하는-규칙",
+      "sourceIds": [
+        "WEBAPI2",
+        "RFC9457",
+        "NODE-DOCS"
+      ]
+    },
+    {
+      "sectionId": "T07-P02-S24-route는-요청을-처리할-코드로-연결하는-규칙",
+      "sourceIds": [
+        "RFC9457",
+        "NODE-DOCS",
+        "EXPRESS5"
+      ]
+    },
+    {
+      "sectionId": "T07-P02-S25-route는-요청을-처리할-코드로-연결하는-규칙",
+      "sourceIds": [
+        "NODE-DOCS",
+        "EXPRESS5",
+        "RFC9110"
+      ]
+    }
+  ]
+}

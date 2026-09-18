@@ -1,0 +1,107 @@
+{
+  "trackId": "T07",
+  "trackNumber": 7,
+  "title": "서버와 백엔드 — 요청에서 운영까지",
+  "parts": [
+    {
+      "id": "T07-P91",
+      "order": 91,
+      "title": "AI가 만든 backend 코드를 읽는 순서",
+      "assetPath": "textbook/v5/track_07/part_91_ai가-만든-backend-코드를-읽는-순서.md",
+      "sourceMapPath": "textbook/v5/track_07/part_91_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P90-S25-block-06-종합-분산-주문-시스템의-실패-경계"
+      ]
+    },
+    {
+      "id": "T07-P92",
+      "order": 92,
+      "title": "AI에게 구현을 맡기기 전 spec 쓰기",
+      "assetPath": "textbook/v5/track_07/part_92_ai에게-구현을-맡기기-전-spec-쓰기.md",
+      "sourceMapPath": "textbook/v5/track_07/part_92_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P91-S25-ai가-만든-backend-코드를-읽는-순서"
+      ]
+    },
+    {
+      "id": "T07-P93",
+      "order": 93,
+      "title": "생성된 endpoint의 계약 검토",
+      "assetPath": "textbook/v5/track_07/part_93_생성된-endpoint의-계약-검토.md",
+      "sourceMapPath": "textbook/v5/track_07/part_93_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P92-S25-ai에게-구현을-맡기기-전-spec-쓰기"
+      ]
+    },
+    {
+      "id": "T07-P94",
+      "order": 94,
+      "title": "생성된 persistence 코드와 migration 경계 검토",
+      "assetPath": "textbook/v5/track_07/part_94_생성된-persistence-코드와-migration-경계-검토.md",
+      "sourceMapPath": "textbook/v5/track_07/part_94_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P93-S25-생성된-endpoint의-계약-검토"
+      ]
+    },
+    {
+      "id": "T07-P95",
+      "order": 95,
+      "title": "생성된 인증·권한 코드 검토",
+      "assetPath": "textbook/v5/track_07/part_95_생성된-인증-권한-코드-검토.md",
+      "sourceMapPath": "textbook/v5/track_07/part_95_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P94-S25-생성된-persistence-코드와-migratio"
+      ]
+    },
+    {
+      "id": "T07-P96",
+      "order": 96,
+      "title": "생성된 retry·async 코드를 검토",
+      "assetPath": "textbook/v5/track_07/part_96_생성된-retry-async-코드를-검토.md",
+      "sourceMapPath": "textbook/v5/track_07/part_96_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P95-S25-생성된-인증-권한-코드-검토"
+      ]
+    },
+    {
+      "id": "T07-P97",
+      "order": 97,
+      "title": "eval과 test contract로 AI 변경을 반복 검증하기",
+      "assetPath": "textbook/v5/track_07/part_97_eval과-test-contract로-ai-변경을-반복-검증하기.md",
+      "sourceMapPath": "textbook/v5/track_07/part_97_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P96-S25-생성된-retry-async-코드를-검토"
+      ]
+    },
+    {
+      "id": "T07-P98",
+      "order": 98,
+      "title": "OpenAPI를 실행 가능한 API 계약으로 쓰기",
+      "assetPath": "textbook/v5/track_07/part_98_openapi를-실행-가능한-api-계약으로-쓰기.md",
+      "sourceMapPath": "textbook/v5/track_07/part_98_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P97-S25-eval과-test-contract로-ai-변경을-"
+      ]
+    },
+    {
+      "id": "T07-P99",
+      "order": 99,
+      "title": "backend load test를 숫자 하나가 아닌 곡선으로 보기",
+      "assetPath": "textbook/v5/track_07/part_99_backend-load-test를-숫자-하나가-아닌-곡선으로-보기.md",
+      "sourceMapPath": "textbook/v5/track_07/part_99_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P98-S25-openapi를-실행-가능한-api-계약으로-쓰기"
+      ]
+    },
+    {
+      "id": "T07-P100",
+      "order": 100,
+      "title": "observability readiness를 코드 리뷰에 포함하기",
+      "assetPath": "textbook/v5/track_07/part_100_observability-readiness를-코드-리뷰에-포함하기.md",
+      "sourceMapPath": "textbook/v5/track_07/part_100_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P99-S25-backend-load-test를-숫자-하나가-아닌"
+      ]
+    }
+  ]
+}

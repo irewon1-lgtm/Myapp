@@ -1,0 +1,107 @@
+{
+  "trackId": "T07",
+  "trackNumber": 7,
+  "title": "서버와 백엔드 — 요청에서 운영까지",
+  "parts": [
+    {
+      "id": "T07-P61",
+      "order": 61,
+      "title": "structured log와 request correlation",
+      "assetPath": "textbook/v5/track_07/part_61_structured-log와-request-correlation.md",
+      "sourceMapPath": "textbook/v5/track_07/part_61_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P60-S25-block-04-종합-이미지-보고서-처리-pipel"
+      ]
+    },
+    {
+      "id": "T07-P62",
+      "order": 62,
+      "title": "server metric을 rate·error·duration으로 보기",
+      "assetPath": "textbook/v5/track_07/part_62_server-metric을-rate-error-duration으로-보기.md",
+      "sourceMapPath": "textbook/v5/track_07/part_62_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P61-S25-structured-log와-request-corr"
+      ]
+    },
+    {
+      "id": "T07-P63",
+      "order": 63,
+      "title": "trace와 span으로 분산 요청 경로 보기",
+      "assetPath": "textbook/v5/track_07/part_63_trace와-span으로-분산-요청-경로-보기.md",
+      "sourceMapPath": "textbook/v5/track_07/part_63_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P62-S25-server-metric을-rate-error-du"
+      ]
+    },
+    {
+      "id": "T07-P64",
+      "order": 64,
+      "title": "SLI·SLO를 backend 계약으로 정하기",
+      "assetPath": "textbook/v5/track_07/part_64_sli-slo를-backend-계약으로-정하기.md",
+      "sourceMapPath": "textbook/v5/track_07/part_64_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P63-S25-trace와-span으로-분산-요청-경로-보기"
+      ]
+    },
+    {
+      "id": "T07-P65",
+      "order": 65,
+      "title": "health·readiness·liveness를 분리하기",
+      "assetPath": "textbook/v5/track_07/part_65_health-readiness-liveness를-분리하기.md",
+      "sourceMapPath": "textbook/v5/track_07/part_65_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P64-S25-sli-slo를-backend-계약으로-정하기"
+      ]
+    },
+    {
+      "id": "T07-P66",
+      "order": 66,
+      "title": "graceful shutdown과 draining",
+      "assetPath": "textbook/v5/track_07/part_66_graceful-shutdown과-draining.md",
+      "sourceMapPath": "textbook/v5/track_07/part_66_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P65-S25-health-readiness-liveness를-분"
+      ]
+    },
+    {
+      "id": "T07-P67",
+      "order": 67,
+      "title": "timeout·retry·circuit breaker·bulkhead 조합",
+      "assetPath": "textbook/v5/track_07/part_67_timeout-retry-circuit-breaker-bulkhead-조합.md",
+      "sourceMapPath": "textbook/v5/track_07/part_67_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P66-S25-graceful-shutdown과-draining"
+      ]
+    },
+    {
+      "id": "T07-P68",
+      "order": 68,
+      "title": "overload와 queueing을 latency에서 읽기",
+      "assetPath": "textbook/v5/track_07/part_68_overload와-queueing을-latency에서-읽기.md",
+      "sourceMapPath": "textbook/v5/track_07/part_68_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P67-S25-timeout-retry-circuit-breake"
+      ]
+    },
+    {
+      "id": "T07-P69",
+      "order": 69,
+      "title": "memory leak과 resource leak",
+      "assetPath": "textbook/v5/track_07/part_69_memory-leak과-resource-leak.md",
+      "sourceMapPath": "textbook/v5/track_07/part_69_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P68-S25-overload와-queueing을-latency에"
+      ]
+    },
+    {
+      "id": "T07-P70",
+      "order": 70,
+      "title": "event-loop stall과 CPU-bound work",
+      "assetPath": "textbook/v5/track_07/part_70_event-loop-stall과-cpu-bound-work.md",
+      "sourceMapPath": "textbook/v5/track_07/part_70_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P69-S25-memory-leak과-resource-leak"
+      ]
+    }
+  ]
+}

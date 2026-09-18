@@ -1,0 +1,204 @@
+{
+  "partId": "T07-P05",
+  "sections": [
+    {
+      "sectionId": "T07-P05-S01-middleware는-공통-단계를-순서대로-연결한다",
+      "sourceIds": [
+        "NODE-DOCS",
+        "EXPRESS5",
+        "RFC9110"
+      ]
+    },
+    {
+      "sectionId": "T07-P05-S02-middleware는-공통-단계를-순서대로-연결한다",
+      "sourceIds": [
+        "EXPRESS5",
+        "RFC9110",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P05-S03-middleware는-공통-단계를-순서대로-연결한다",
+      "sourceIds": [
+        "RFC9110",
+        "OPENAPI31",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P05-S04-middleware는-공통-단계를-순서대로-연결한다",
+      "sourceIds": [
+        "OPENAPI31",
+        "WEBAPI2",
+        "RFC9457"
+      ]
+    },
+    {
+      "sectionId": "T07-P05-S05-middleware는-공통-단계를-순서대로-연결한다",
+      "sourceIds": [
+        "WEBAPI2",
+        "RFC9457",
+        "NODE-DOCS"
+      ]
+    },
+    {
+      "sectionId": "T07-P05-S06-middleware는-공통-단계를-순서대로-연결한다",
+      "sourceIds": [
+        "RFC9457",
+        "NODE-DOCS",
+        "EXPRESS5"
+      ]
+    },
+    {
+      "sectionId": "T07-P05-S07-middleware는-공통-단계를-순서대로-연결한다",
+      "sourceIds": [
+        "NODE-DOCS",
+        "EXPRESS5",
+        "RFC9110"
+      ]
+    },
+    {
+      "sectionId": "T07-P05-S08-middleware는-공통-단계를-순서대로-연결한다",
+      "sourceIds": [
+        "EXPRESS5",
+        "RFC9110",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P05-S09-middleware는-공통-단계를-순서대로-연결한다",
+      "sourceIds": [
+        "RFC9110",
+        "OPENAPI31",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P05-S10-middleware는-공통-단계를-순서대로-연결한다",
+      "sourceIds": [
+        "OPENAPI31",
+        "WEBAPI2",
+        "RFC9457"
+      ]
+    },
+    {
+      "sectionId": "T07-P05-S11-middleware는-공통-단계를-순서대로-연결한다",
+      "sourceIds": [
+        "WEBAPI2",
+        "RFC9457",
+        "NODE-DOCS"
+      ]
+    },
+    {
+      "sectionId": "T07-P05-S12-middleware는-공통-단계를-순서대로-연결한다",
+      "sourceIds": [
+        "RFC9457",
+        "LEARNING-CLT-COMPUTING"
+      ]
+    },
+    {
+      "sectionId": "T07-P05-S13-middleware는-공통-단계를-순서대로-연결한다",
+      "sourceIds": [
+        "NODE-DOCS",
+        "EXPRESS5",
+        "RFC9110"
+      ]
+    },
+    {
+      "sectionId": "T07-P05-S14-middleware는-공통-단계를-순서대로-연결한다",
+      "sourceIds": [
+        "EXPRESS5",
+        "RFC9110",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P05-S15-middleware는-공통-단계를-순서대로-연결한다",
+      "sourceIds": [
+        "RFC9110",
+        "OPENAPI31",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P05-S16-middleware는-공통-단계를-순서대로-연결한다",
+      "sourceIds": [
+        "OPENAPI31",
+        "WEBAPI2",
+        "RFC9457"
+      ]
+    },
+    {
+      "sectionId": "T07-P05-S17-middleware는-공통-단계를-순서대로-연결한다",
+      "sourceIds": [
+        "WEBAPI2",
+        "LEARNING-SPACING-RETRIEVAL",
+        "LEARNING-CLT-COMPUTING"
+      ]
+    },
+    {
+      "sectionId": "T07-P05-S18-middleware는-공통-단계를-순서대로-연결한다",
+      "sourceIds": [
+        "RFC9457",
+        "NODE-DOCS",
+        "EXPRESS5"
+      ]
+    },
+    {
+      "sectionId": "T07-P05-S19-middleware는-공통-단계를-순서대로-연결한다",
+      "sourceIds": [
+        "NODE-DOCS",
+        "EXPRESS5",
+        "RFC9110"
+      ]
+    },
+    {
+      "sectionId": "T07-P05-S20-middleware는-공통-단계를-순서대로-연결한다",
+      "sourceIds": [
+        "EXPRESS5",
+        "RFC9110",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P05-S21-middleware는-공통-단계를-순서대로-연결한다",
+      "sourceIds": [
+        "RFC9110",
+        "LEARNING-CLT-COMPUTING",
+        "LEARNING-SPACING-RETRIEVAL"
+      ]
+    },
+    {
+      "sectionId": "T07-P05-S22-middleware는-공통-단계를-순서대로-연결한다",
+      "sourceIds": [
+        "OPENAPI31",
+        "WEBAPI2",
+        "RFC9457"
+      ]
+    },
+    {
+      "sectionId": "T07-P05-S23-middleware는-공통-단계를-순서대로-연결한다",
+      "sourceIds": [
+        "WEBAPI2",
+        "RFC9457",
+        "NODE-DOCS"
+      ]
+    },
+    {
+      "sectionId": "T07-P05-S24-middleware는-공통-단계를-순서대로-연결한다",
+      "sourceIds": [
+        "RFC9457",
+        "NODE-DOCS",
+        "EXPRESS5"
+      ]
+    },
+    {
+      "sectionId": "T07-P05-S25-middleware는-공통-단계를-순서대로-연결한다",
+      "sourceIds": [
+        "NODE-DOCS",
+        "EXPRESS5",
+        "RFC9110"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,204 @@
+{
+  "partId": "T07-P18",
+  "sections": [
+    {
+      "sectionId": "T07-P18-S01-idempotency로-같은-요청이-다시-와도-결과",
+      "sourceIds": [
+        "DDIA",
+        "FOSA2",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P18-S02-idempotency로-같은-요청이-다시-와도-결과",
+      "sourceIds": [
+        "FOSA2",
+        "OPENAPI31",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P18-S03-idempotency로-같은-요청이-다시-와도-결과",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P18-S04-idempotency로-같은-요청이-다시-와도-결과",
+      "sourceIds": [
+        "SRE",
+        "WEBAPI2",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P18-S05-idempotency로-같은-요청이-다시-와도-결과",
+      "sourceIds": [
+        "WEBAPI2",
+        "DDIA",
+        "FOSA2"
+      ]
+    },
+    {
+      "sectionId": "T07-P18-S06-idempotency로-같은-요청이-다시-와도-결과",
+      "sourceIds": [
+        "DDIA",
+        "FOSA2",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P18-S07-idempotency로-같은-요청이-다시-와도-결과",
+      "sourceIds": [
+        "FOSA2",
+        "OPENAPI31",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P18-S08-idempotency로-같은-요청이-다시-와도-결과",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P18-S09-idempotency로-같은-요청이-다시-와도-결과",
+      "sourceIds": [
+        "SRE",
+        "WEBAPI2",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P18-S10-idempotency로-같은-요청이-다시-와도-결과",
+      "sourceIds": [
+        "WEBAPI2",
+        "DDIA",
+        "FOSA2"
+      ]
+    },
+    {
+      "sectionId": "T07-P18-S11-idempotency로-같은-요청이-다시-와도-결과",
+      "sourceIds": [
+        "DDIA",
+        "FOSA2",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P18-S12-idempotency로-같은-요청이-다시-와도-결과",
+      "sourceIds": [
+        "FOSA2",
+        "LEARNING-CLT-COMPUTING"
+      ]
+    },
+    {
+      "sectionId": "T07-P18-S13-idempotency로-같은-요청이-다시-와도-결과",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P18-S14-idempotency로-같은-요청이-다시-와도-결과",
+      "sourceIds": [
+        "SRE",
+        "WEBAPI2",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P18-S15-idempotency로-같은-요청이-다시-와도-결과",
+      "sourceIds": [
+        "WEBAPI2",
+        "DDIA",
+        "FOSA2"
+      ]
+    },
+    {
+      "sectionId": "T07-P18-S16-idempotency로-같은-요청이-다시-와도-결과",
+      "sourceIds": [
+        "DDIA",
+        "FOSA2",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P18-S17-idempotency로-같은-요청이-다시-와도-결과",
+      "sourceIds": [
+        "FOSA2",
+        "LEARNING-SPACING-RETRIEVAL",
+        "LEARNING-CLT-COMPUTING"
+      ]
+    },
+    {
+      "sectionId": "T07-P18-S18-idempotency로-같은-요청이-다시-와도-결과",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P18-S19-idempotency로-같은-요청이-다시-와도-결과",
+      "sourceIds": [
+        "SRE",
+        "WEBAPI2",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P18-S20-idempotency로-같은-요청이-다시-와도-결과",
+      "sourceIds": [
+        "WEBAPI2",
+        "DDIA",
+        "FOSA2"
+      ]
+    },
+    {
+      "sectionId": "T07-P18-S21-idempotency로-같은-요청이-다시-와도-결과",
+      "sourceIds": [
+        "DDIA",
+        "LEARNING-CLT-COMPUTING",
+        "LEARNING-SPACING-RETRIEVAL"
+      ]
+    },
+    {
+      "sectionId": "T07-P18-S22-idempotency로-같은-요청이-다시-와도-결과",
+      "sourceIds": [
+        "FOSA2",
+        "OPENAPI31",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P18-S23-idempotency로-같은-요청이-다시-와도-결과",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P18-S24-idempotency로-같은-요청이-다시-와도-결과",
+      "sourceIds": [
+        "SRE",
+        "WEBAPI2",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P18-S25-idempotency로-같은-요청이-다시-와도-결과",
+      "sourceIds": [
+        "WEBAPI2",
+        "DDIA",
+        "FOSA2"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,204 @@
+{
+  "partId": "T07-P15",
+  "sections": [
+    {
+      "sectionId": "T07-P15-S01-block-01-종합-하나의-요청-수명주기를-끝까지",
+      "sourceIds": [
+        "NODE-DOCS",
+        "EXPRESS5",
+        "RFC9110"
+      ]
+    },
+    {
+      "sectionId": "T07-P15-S02-block-01-종합-하나의-요청-수명주기를-끝까지",
+      "sourceIds": [
+        "EXPRESS5",
+        "RFC9110",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P15-S03-block-01-종합-하나의-요청-수명주기를-끝까지",
+      "sourceIds": [
+        "RFC9110",
+        "OPENAPI31",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P15-S04-block-01-종합-하나의-요청-수명주기를-끝까지",
+      "sourceIds": [
+        "OPENAPI31",
+        "WEBAPI2",
+        "RFC9457"
+      ]
+    },
+    {
+      "sectionId": "T07-P15-S05-block-01-종합-하나의-요청-수명주기를-끝까지",
+      "sourceIds": [
+        "WEBAPI2",
+        "RFC9457",
+        "NODE-DOCS"
+      ]
+    },
+    {
+      "sectionId": "T07-P15-S06-block-01-종합-하나의-요청-수명주기를-끝까지",
+      "sourceIds": [
+        "RFC9457",
+        "NODE-DOCS",
+        "EXPRESS5"
+      ]
+    },
+    {
+      "sectionId": "T07-P15-S07-block-01-종합-하나의-요청-수명주기를-끝까지",
+      "sourceIds": [
+        "NODE-DOCS",
+        "EXPRESS5",
+        "RFC9110"
+      ]
+    },
+    {
+      "sectionId": "T07-P15-S08-block-01-종합-하나의-요청-수명주기를-끝까지",
+      "sourceIds": [
+        "EXPRESS5",
+        "RFC9110",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P15-S09-block-01-종합-하나의-요청-수명주기를-끝까지",
+      "sourceIds": [
+        "RFC9110",
+        "OPENAPI31",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P15-S10-block-01-종합-하나의-요청-수명주기를-끝까지",
+      "sourceIds": [
+        "OPENAPI31",
+        "WEBAPI2",
+        "RFC9457"
+      ]
+    },
+    {
+      "sectionId": "T07-P15-S11-block-01-종합-하나의-요청-수명주기를-끝까지",
+      "sourceIds": [
+        "WEBAPI2",
+        "RFC9457",
+        "NODE-DOCS"
+      ]
+    },
+    {
+      "sectionId": "T07-P15-S12-block-01-종합-하나의-요청-수명주기를-끝까지",
+      "sourceIds": [
+        "RFC9457",
+        "LEARNING-CLT-COMPUTING"
+      ]
+    },
+    {
+      "sectionId": "T07-P15-S13-block-01-종합-하나의-요청-수명주기를-끝까지",
+      "sourceIds": [
+        "NODE-DOCS",
+        "EXPRESS5",
+        "RFC9110"
+      ]
+    },
+    {
+      "sectionId": "T07-P15-S14-block-01-종합-하나의-요청-수명주기를-끝까지",
+      "sourceIds": [
+        "EXPRESS5",
+        "RFC9110",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P15-S15-block-01-종합-하나의-요청-수명주기를-끝까지",
+      "sourceIds": [
+        "RFC9110",
+        "OPENAPI31",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P15-S16-block-01-종합-하나의-요청-수명주기를-끝까지",
+      "sourceIds": [
+        "OPENAPI31",
+        "WEBAPI2",
+        "RFC9457"
+      ]
+    },
+    {
+      "sectionId": "T07-P15-S17-block-01-종합-하나의-요청-수명주기를-끝까지",
+      "sourceIds": [
+        "WEBAPI2",
+        "LEARNING-SPACING-RETRIEVAL",
+        "LEARNING-CLT-COMPUTING"
+      ]
+    },
+    {
+      "sectionId": "T07-P15-S18-block-01-종합-하나의-요청-수명주기를-끝까지",
+      "sourceIds": [
+        "RFC9457",
+        "NODE-DOCS",
+        "EXPRESS5"
+      ]
+    },
+    {
+      "sectionId": "T07-P15-S19-block-01-종합-하나의-요청-수명주기를-끝까지",
+      "sourceIds": [
+        "NODE-DOCS",
+        "EXPRESS5",
+        "RFC9110"
+      ]
+    },
+    {
+      "sectionId": "T07-P15-S20-block-01-종합-하나의-요청-수명주기를-끝까지",
+      "sourceIds": [
+        "EXPRESS5",
+        "RFC9110",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P15-S21-block-01-종합-하나의-요청-수명주기를-끝까지",
+      "sourceIds": [
+        "RFC9110",
+        "LEARNING-CLT-COMPUTING",
+        "LEARNING-SPACING-RETRIEVAL"
+      ]
+    },
+    {
+      "sectionId": "T07-P15-S22-block-01-종합-하나의-요청-수명주기를-끝까지",
+      "sourceIds": [
+        "OPENAPI31",
+        "WEBAPI2",
+        "RFC9457"
+      ]
+    },
+    {
+      "sectionId": "T07-P15-S23-block-01-종합-하나의-요청-수명주기를-끝까지",
+      "sourceIds": [
+        "WEBAPI2",
+        "RFC9457",
+        "NODE-DOCS"
+      ]
+    },
+    {
+      "sectionId": "T07-P15-S24-block-01-종합-하나의-요청-수명주기를-끝까지",
+      "sourceIds": [
+        "RFC9457",
+        "NODE-DOCS",
+        "EXPRESS5"
+      ]
+    },
+    {
+      "sectionId": "T07-P15-S25-block-01-종합-하나의-요청-수명주기를-끝까지",
+      "sourceIds": [
+        "NODE-DOCS",
+        "EXPRESS5",
+        "RFC9110"
+      ]
+    }
+  ]
+}

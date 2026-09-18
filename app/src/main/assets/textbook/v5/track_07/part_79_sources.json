@@ -1,0 +1,204 @@
+{
+  "partId": "T07-P79",
+  "sections": [
+    {
+      "sectionId": "T07-P79-S01-reverse-proxy-api-gateway-bf",
+      "sourceIds": [
+        "DDIA",
+        "FOSA2",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P79-S02-reverse-proxy-api-gateway-bf",
+      "sourceIds": [
+        "FOSA2",
+        "SRE",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P79-S03-reverse-proxy-api-gateway-bf",
+      "sourceIds": [
+        "SRE",
+        "OPENAPI31",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P79-S04-reverse-proxy-api-gateway-bf",
+      "sourceIds": [
+        "OPENAPI31",
+        "DDIA",
+        "FOSA2"
+      ]
+    },
+    {
+      "sectionId": "T07-P79-S05-reverse-proxy-api-gateway-bf",
+      "sourceIds": [
+        "DDIA",
+        "FOSA2",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P79-S06-reverse-proxy-api-gateway-bf",
+      "sourceIds": [
+        "FOSA2",
+        "SRE",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P79-S07-reverse-proxy-api-gateway-bf",
+      "sourceIds": [
+        "SRE",
+        "OPENAPI31",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P79-S08-reverse-proxy-api-gateway-bf",
+      "sourceIds": [
+        "OPENAPI31",
+        "DDIA",
+        "FOSA2"
+      ]
+    },
+    {
+      "sectionId": "T07-P79-S09-reverse-proxy-api-gateway-bf",
+      "sourceIds": [
+        "DDIA",
+        "FOSA2",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P79-S10-reverse-proxy-api-gateway-bf",
+      "sourceIds": [
+        "FOSA2",
+        "SRE",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P79-S11-reverse-proxy-api-gateway-bf",
+      "sourceIds": [
+        "SRE",
+        "OPENAPI31",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P79-S12-reverse-proxy-api-gateway-bf",
+      "sourceIds": [
+        "OPENAPI31",
+        "LEARNING-CLT-COMPUTING"
+      ]
+    },
+    {
+      "sectionId": "T07-P79-S13-reverse-proxy-api-gateway-bf",
+      "sourceIds": [
+        "DDIA",
+        "FOSA2",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P79-S14-reverse-proxy-api-gateway-bf",
+      "sourceIds": [
+        "FOSA2",
+        "SRE",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P79-S15-reverse-proxy-api-gateway-bf",
+      "sourceIds": [
+        "SRE",
+        "OPENAPI31",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P79-S16-reverse-proxy-api-gateway-bf",
+      "sourceIds": [
+        "OPENAPI31",
+        "DDIA",
+        "FOSA2"
+      ]
+    },
+    {
+      "sectionId": "T07-P79-S17-reverse-proxy-api-gateway-bf",
+      "sourceIds": [
+        "DDIA",
+        "LEARNING-SPACING-RETRIEVAL",
+        "LEARNING-CLT-COMPUTING"
+      ]
+    },
+    {
+      "sectionId": "T07-P79-S18-reverse-proxy-api-gateway-bf",
+      "sourceIds": [
+        "FOSA2",
+        "SRE",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P79-S19-reverse-proxy-api-gateway-bf",
+      "sourceIds": [
+        "SRE",
+        "OPENAPI31",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P79-S20-reverse-proxy-api-gateway-bf",
+      "sourceIds": [
+        "OPENAPI31",
+        "DDIA",
+        "FOSA2"
+      ]
+    },
+    {
+      "sectionId": "T07-P79-S21-reverse-proxy-api-gateway-bf",
+      "sourceIds": [
+        "DDIA",
+        "LEARNING-CLT-COMPUTING",
+        "LEARNING-SPACING-RETRIEVAL"
+      ]
+    },
+    {
+      "sectionId": "T07-P79-S22-reverse-proxy-api-gateway-bf",
+      "sourceIds": [
+        "FOSA2",
+        "SRE",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P79-S23-reverse-proxy-api-gateway-bf",
+      "sourceIds": [
+        "SRE",
+        "OPENAPI31",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P79-S24-reverse-proxy-api-gateway-bf",
+      "sourceIds": [
+        "OPENAPI31",
+        "DDIA",
+        "FOSA2"
+      ]
+    },
+    {
+      "sectionId": "T07-P79-S25-reverse-proxy-api-gateway-bf",
+      "sourceIds": [
+        "DDIA",
+        "FOSA2",
+        "SRE"
+      ]
+    }
+  ]
+}

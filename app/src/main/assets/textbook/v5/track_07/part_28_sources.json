@@ -1,0 +1,204 @@
+{
+  "partId": "T07-P28",
+  "sections": [
+    {
+      "sectionId": "T07-P28-S01-scheduled-job과-cron을-안전한-업무로",
+      "sourceIds": [
+        "DDIA",
+        "FOSA2",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P28-S02-scheduled-job과-cron을-안전한-업무로",
+      "sourceIds": [
+        "FOSA2",
+        "OPENAPI31",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P28-S03-scheduled-job과-cron을-안전한-업무로",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P28-S04-scheduled-job과-cron을-안전한-업무로",
+      "sourceIds": [
+        "SRE",
+        "WEBAPI2",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P28-S05-scheduled-job과-cron을-안전한-업무로",
+      "sourceIds": [
+        "WEBAPI2",
+        "DDIA",
+        "FOSA2"
+      ]
+    },
+    {
+      "sectionId": "T07-P28-S06-scheduled-job과-cron을-안전한-업무로",
+      "sourceIds": [
+        "DDIA",
+        "FOSA2",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P28-S07-scheduled-job과-cron을-안전한-업무로",
+      "sourceIds": [
+        "FOSA2",
+        "OPENAPI31",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P28-S08-scheduled-job과-cron을-안전한-업무로",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P28-S09-scheduled-job과-cron을-안전한-업무로",
+      "sourceIds": [
+        "SRE",
+        "WEBAPI2",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P28-S10-scheduled-job과-cron을-안전한-업무로",
+      "sourceIds": [
+        "WEBAPI2",
+        "DDIA",
+        "FOSA2"
+      ]
+    },
+    {
+      "sectionId": "T07-P28-S11-scheduled-job과-cron을-안전한-업무로",
+      "sourceIds": [
+        "DDIA",
+        "FOSA2",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P28-S12-scheduled-job과-cron을-안전한-업무로",
+      "sourceIds": [
+        "FOSA2",
+        "LEARNING-CLT-COMPUTING"
+      ]
+    },
+    {
+      "sectionId": "T07-P28-S13-scheduled-job과-cron을-안전한-업무로",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P28-S14-scheduled-job과-cron을-안전한-업무로",
+      "sourceIds": [
+        "SRE",
+        "WEBAPI2",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P28-S15-scheduled-job과-cron을-안전한-업무로",
+      "sourceIds": [
+        "WEBAPI2",
+        "DDIA",
+        "FOSA2"
+      ]
+    },
+    {
+      "sectionId": "T07-P28-S16-scheduled-job과-cron을-안전한-업무로",
+      "sourceIds": [
+        "DDIA",
+        "FOSA2",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P28-S17-scheduled-job과-cron을-안전한-업무로",
+      "sourceIds": [
+        "FOSA2",
+        "LEARNING-SPACING-RETRIEVAL",
+        "LEARNING-CLT-COMPUTING"
+      ]
+    },
+    {
+      "sectionId": "T07-P28-S18-scheduled-job과-cron을-안전한-업무로",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P28-S19-scheduled-job과-cron을-안전한-업무로",
+      "sourceIds": [
+        "SRE",
+        "WEBAPI2",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P28-S20-scheduled-job과-cron을-안전한-업무로",
+      "sourceIds": [
+        "WEBAPI2",
+        "DDIA",
+        "FOSA2"
+      ]
+    },
+    {
+      "sectionId": "T07-P28-S21-scheduled-job과-cron을-안전한-업무로",
+      "sourceIds": [
+        "DDIA",
+        "LEARNING-CLT-COMPUTING",
+        "LEARNING-SPACING-RETRIEVAL"
+      ]
+    },
+    {
+      "sectionId": "T07-P28-S22-scheduled-job과-cron을-안전한-업무로",
+      "sourceIds": [
+        "FOSA2",
+        "OPENAPI31",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P28-S23-scheduled-job과-cron을-안전한-업무로",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P28-S24-scheduled-job과-cron을-안전한-업무로",
+      "sourceIds": [
+        "SRE",
+        "WEBAPI2",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P28-S25-scheduled-job과-cron을-안전한-업무로",
+      "sourceIds": [
+        "WEBAPI2",
+        "DDIA",
+        "FOSA2"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,204 @@
+{
+  "partId": "T07-P99",
+  "sections": [
+    {
+      "sectionId": "T07-P99-S01-backend-load-test를-숫자-하나가-아닌",
+      "sourceIds": [
+        "FOSA2",
+        "OPENAPI31",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P99-S02-backend-load-test를-숫자-하나가-아닌",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "OWASP-API"
+      ]
+    },
+    {
+      "sectionId": "T07-P99-S03-backend-load-test를-숫자-하나가-아닌",
+      "sourceIds": [
+        "SRE",
+        "OWASP-API",
+        "NIST-SSDF"
+      ]
+    },
+    {
+      "sectionId": "T07-P99-S04-backend-load-test를-숫자-하나가-아닌",
+      "sourceIds": [
+        "OWASP-API",
+        "NIST-SSDF",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P99-S05-backend-load-test를-숫자-하나가-아닌",
+      "sourceIds": [
+        "NIST-SSDF",
+        "WEBAPI2",
+        "FOSA2"
+      ]
+    },
+    {
+      "sectionId": "T07-P99-S06-backend-load-test를-숫자-하나가-아닌",
+      "sourceIds": [
+        "WEBAPI2",
+        "FOSA2",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P99-S07-backend-load-test를-숫자-하나가-아닌",
+      "sourceIds": [
+        "FOSA2",
+        "OPENAPI31",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P99-S08-backend-load-test를-숫자-하나가-아닌",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "OWASP-API"
+      ]
+    },
+    {
+      "sectionId": "T07-P99-S09-backend-load-test를-숫자-하나가-아닌",
+      "sourceIds": [
+        "SRE",
+        "OWASP-API",
+        "NIST-SSDF"
+      ]
+    },
+    {
+      "sectionId": "T07-P99-S10-backend-load-test를-숫자-하나가-아닌",
+      "sourceIds": [
+        "OWASP-API",
+        "NIST-SSDF",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P99-S11-backend-load-test를-숫자-하나가-아닌",
+      "sourceIds": [
+        "NIST-SSDF",
+        "WEBAPI2",
+        "FOSA2"
+      ]
+    },
+    {
+      "sectionId": "T07-P99-S12-backend-load-test를-숫자-하나가-아닌",
+      "sourceIds": [
+        "WEBAPI2",
+        "LEARNING-CLT-COMPUTING"
+      ]
+    },
+    {
+      "sectionId": "T07-P99-S13-backend-load-test를-숫자-하나가-아닌",
+      "sourceIds": [
+        "FOSA2",
+        "OPENAPI31",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P99-S14-backend-load-test를-숫자-하나가-아닌",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "OWASP-API"
+      ]
+    },
+    {
+      "sectionId": "T07-P99-S15-backend-load-test를-숫자-하나가-아닌",
+      "sourceIds": [
+        "SRE",
+        "OWASP-API",
+        "NIST-SSDF"
+      ]
+    },
+    {
+      "sectionId": "T07-P99-S16-backend-load-test를-숫자-하나가-아닌",
+      "sourceIds": [
+        "OWASP-API",
+        "NIST-SSDF",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P99-S17-backend-load-test를-숫자-하나가-아닌",
+      "sourceIds": [
+        "NIST-SSDF",
+        "LEARNING-SPACING-RETRIEVAL",
+        "LEARNING-CLT-COMPUTING"
+      ]
+    },
+    {
+      "sectionId": "T07-P99-S18-backend-load-test를-숫자-하나가-아닌",
+      "sourceIds": [
+        "WEBAPI2",
+        "FOSA2",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P99-S19-backend-load-test를-숫자-하나가-아닌",
+      "sourceIds": [
+        "FOSA2",
+        "OPENAPI31",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P99-S20-backend-load-test를-숫자-하나가-아닌",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "OWASP-API"
+      ]
+    },
+    {
+      "sectionId": "T07-P99-S21-backend-load-test를-숫자-하나가-아닌",
+      "sourceIds": [
+        "SRE",
+        "LEARNING-CLT-COMPUTING",
+        "LEARNING-SPACING-RETRIEVAL"
+      ]
+    },
+    {
+      "sectionId": "T07-P99-S22-backend-load-test를-숫자-하나가-아닌",
+      "sourceIds": [
+        "OWASP-API",
+        "NIST-SSDF",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P99-S23-backend-load-test를-숫자-하나가-아닌",
+      "sourceIds": [
+        "NIST-SSDF",
+        "WEBAPI2",
+        "FOSA2"
+      ]
+    },
+    {
+      "sectionId": "T07-P99-S24-backend-load-test를-숫자-하나가-아닌",
+      "sourceIds": [
+        "WEBAPI2",
+        "FOSA2",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P99-S25-backend-load-test를-숫자-하나가-아닌",
+      "sourceIds": [
+        "FOSA2",
+        "OPENAPI31",
+        "SRE"
+      ]
+    }
+  ]
+}

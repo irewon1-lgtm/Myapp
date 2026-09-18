@@ -1,0 +1,204 @@
+{
+  "partId": "T07-P65",
+  "sections": [
+    {
+      "sectionId": "T07-P65-S01-health-readiness-liveness를-분",
+      "sourceIds": [
+        "SRE",
+        "SRE-WORKBOOK",
+        "OTEL-SEMCONV"
+      ]
+    },
+    {
+      "sectionId": "T07-P65-S02-health-readiness-liveness를-분",
+      "sourceIds": [
+        "SRE-WORKBOOK",
+        "OTEL-SEMCONV",
+        "NODE-DOCS"
+      ]
+    },
+    {
+      "sectionId": "T07-P65-S03-health-readiness-liveness를-분",
+      "sourceIds": [
+        "OTEL-SEMCONV",
+        "NODE-DOCS",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P65-S04-health-readiness-liveness를-분",
+      "sourceIds": [
+        "NODE-DOCS",
+        "SRE",
+        "SRE-WORKBOOK"
+      ]
+    },
+    {
+      "sectionId": "T07-P65-S05-health-readiness-liveness를-분",
+      "sourceIds": [
+        "SRE",
+        "SRE-WORKBOOK",
+        "OTEL-SEMCONV"
+      ]
+    },
+    {
+      "sectionId": "T07-P65-S06-health-readiness-liveness를-분",
+      "sourceIds": [
+        "SRE-WORKBOOK",
+        "OTEL-SEMCONV",
+        "NODE-DOCS"
+      ]
+    },
+    {
+      "sectionId": "T07-P65-S07-health-readiness-liveness를-분",
+      "sourceIds": [
+        "OTEL-SEMCONV",
+        "NODE-DOCS",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P65-S08-health-readiness-liveness를-분",
+      "sourceIds": [
+        "NODE-DOCS",
+        "SRE",
+        "SRE-WORKBOOK"
+      ]
+    },
+    {
+      "sectionId": "T07-P65-S09-health-readiness-liveness를-분",
+      "sourceIds": [
+        "SRE",
+        "SRE-WORKBOOK",
+        "OTEL-SEMCONV"
+      ]
+    },
+    {
+      "sectionId": "T07-P65-S10-health-readiness-liveness를-분",
+      "sourceIds": [
+        "SRE-WORKBOOK",
+        "OTEL-SEMCONV",
+        "NODE-DOCS"
+      ]
+    },
+    {
+      "sectionId": "T07-P65-S11-health-readiness-liveness를-분",
+      "sourceIds": [
+        "OTEL-SEMCONV",
+        "NODE-DOCS",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P65-S12-health-readiness-liveness를-분",
+      "sourceIds": [
+        "NODE-DOCS",
+        "LEARNING-CLT-COMPUTING"
+      ]
+    },
+    {
+      "sectionId": "T07-P65-S13-health-readiness-liveness를-분",
+      "sourceIds": [
+        "SRE",
+        "SRE-WORKBOOK",
+        "OTEL-SEMCONV"
+      ]
+    },
+    {
+      "sectionId": "T07-P65-S14-health-readiness-liveness를-분",
+      "sourceIds": [
+        "SRE-WORKBOOK",
+        "OTEL-SEMCONV",
+        "NODE-DOCS"
+      ]
+    },
+    {
+      "sectionId": "T07-P65-S15-health-readiness-liveness를-분",
+      "sourceIds": [
+        "OTEL-SEMCONV",
+        "NODE-DOCS",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P65-S16-health-readiness-liveness를-분",
+      "sourceIds": [
+        "NODE-DOCS",
+        "SRE",
+        "SRE-WORKBOOK"
+      ]
+    },
+    {
+      "sectionId": "T07-P65-S17-health-readiness-liveness를-분",
+      "sourceIds": [
+        "SRE",
+        "LEARNING-SPACING-RETRIEVAL",
+        "LEARNING-CLT-COMPUTING"
+      ]
+    },
+    {
+      "sectionId": "T07-P65-S18-health-readiness-liveness를-분",
+      "sourceIds": [
+        "SRE-WORKBOOK",
+        "OTEL-SEMCONV",
+        "NODE-DOCS"
+      ]
+    },
+    {
+      "sectionId": "T07-P65-S19-health-readiness-liveness를-분",
+      "sourceIds": [
+        "OTEL-SEMCONV",
+        "NODE-DOCS",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P65-S20-health-readiness-liveness를-분",
+      "sourceIds": [
+        "NODE-DOCS",
+        "SRE",
+        "SRE-WORKBOOK"
+      ]
+    },
+    {
+      "sectionId": "T07-P65-S21-health-readiness-liveness를-분",
+      "sourceIds": [
+        "SRE",
+        "LEARNING-CLT-COMPUTING",
+        "LEARNING-SPACING-RETRIEVAL"
+      ]
+    },
+    {
+      "sectionId": "T07-P65-S22-health-readiness-liveness를-분",
+      "sourceIds": [
+        "SRE-WORKBOOK",
+        "OTEL-SEMCONV",
+        "NODE-DOCS"
+      ]
+    },
+    {
+      "sectionId": "T07-P65-S23-health-readiness-liveness를-분",
+      "sourceIds": [
+        "OTEL-SEMCONV",
+        "NODE-DOCS",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P65-S24-health-readiness-liveness를-분",
+      "sourceIds": [
+        "NODE-DOCS",
+        "SRE",
+        "SRE-WORKBOOK"
+      ]
+    },
+    {
+      "sectionId": "T07-P65-S25-health-readiness-liveness를-분",
+      "sourceIds": [
+        "SRE",
+        "SRE-WORKBOOK",
+        "OTEL-SEMCONV"
+      ]
+    }
+  ]
+}

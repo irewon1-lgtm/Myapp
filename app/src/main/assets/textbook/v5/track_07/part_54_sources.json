@@ -1,0 +1,204 @@
+{
+  "partId": "T07-P54",
+  "sections": [
+    {
+      "sectionId": "T07-P54-S01-retry-backoff-jitter-dlq",
+      "sourceIds": [
+        "DDIA",
+        "RFC9111",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P54-S02-retry-backoff-jitter-dlq",
+      "sourceIds": [
+        "RFC9111",
+        "SRE",
+        "SRE-WORKBOOK"
+      ]
+    },
+    {
+      "sectionId": "T07-P54-S03-retry-backoff-jitter-dlq",
+      "sourceIds": [
+        "SRE",
+        "SRE-WORKBOOK",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P54-S04-retry-backoff-jitter-dlq",
+      "sourceIds": [
+        "SRE-WORKBOOK",
+        "WEBAPI2",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P54-S05-retry-backoff-jitter-dlq",
+      "sourceIds": [
+        "WEBAPI2",
+        "DDIA",
+        "RFC9111"
+      ]
+    },
+    {
+      "sectionId": "T07-P54-S06-retry-backoff-jitter-dlq",
+      "sourceIds": [
+        "DDIA",
+        "RFC9111",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P54-S07-retry-backoff-jitter-dlq",
+      "sourceIds": [
+        "RFC9111",
+        "SRE",
+        "SRE-WORKBOOK"
+      ]
+    },
+    {
+      "sectionId": "T07-P54-S08-retry-backoff-jitter-dlq",
+      "sourceIds": [
+        "SRE",
+        "SRE-WORKBOOK",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P54-S09-retry-backoff-jitter-dlq",
+      "sourceIds": [
+        "SRE-WORKBOOK",
+        "WEBAPI2",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P54-S10-retry-backoff-jitter-dlq",
+      "sourceIds": [
+        "WEBAPI2",
+        "DDIA",
+        "RFC9111"
+      ]
+    },
+    {
+      "sectionId": "T07-P54-S11-retry-backoff-jitter-dlq",
+      "sourceIds": [
+        "DDIA",
+        "RFC9111",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P54-S12-retry-backoff-jitter-dlq",
+      "sourceIds": [
+        "RFC9111",
+        "LEARNING-CLT-COMPUTING"
+      ]
+    },
+    {
+      "sectionId": "T07-P54-S13-retry-backoff-jitter-dlq",
+      "sourceIds": [
+        "SRE",
+        "SRE-WORKBOOK",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P54-S14-retry-backoff-jitter-dlq",
+      "sourceIds": [
+        "SRE-WORKBOOK",
+        "WEBAPI2",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P54-S15-retry-backoff-jitter-dlq",
+      "sourceIds": [
+        "WEBAPI2",
+        "DDIA",
+        "RFC9111"
+      ]
+    },
+    {
+      "sectionId": "T07-P54-S16-retry-backoff-jitter-dlq",
+      "sourceIds": [
+        "DDIA",
+        "RFC9111",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P54-S17-retry-backoff-jitter-dlq",
+      "sourceIds": [
+        "RFC9111",
+        "LEARNING-SPACING-RETRIEVAL",
+        "LEARNING-CLT-COMPUTING"
+      ]
+    },
+    {
+      "sectionId": "T07-P54-S18-retry-backoff-jitter-dlq",
+      "sourceIds": [
+        "SRE",
+        "SRE-WORKBOOK",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P54-S19-retry-backoff-jitter-dlq",
+      "sourceIds": [
+        "SRE-WORKBOOK",
+        "WEBAPI2",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P54-S20-retry-backoff-jitter-dlq",
+      "sourceIds": [
+        "WEBAPI2",
+        "DDIA",
+        "RFC9111"
+      ]
+    },
+    {
+      "sectionId": "T07-P54-S21-retry-backoff-jitter-dlq",
+      "sourceIds": [
+        "DDIA",
+        "LEARNING-CLT-COMPUTING",
+        "LEARNING-SPACING-RETRIEVAL"
+      ]
+    },
+    {
+      "sectionId": "T07-P54-S22-retry-backoff-jitter-dlq",
+      "sourceIds": [
+        "RFC9111",
+        "SRE",
+        "SRE-WORKBOOK"
+      ]
+    },
+    {
+      "sectionId": "T07-P54-S23-retry-backoff-jitter-dlq",
+      "sourceIds": [
+        "SRE",
+        "SRE-WORKBOOK",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P54-S24-retry-backoff-jitter-dlq",
+      "sourceIds": [
+        "SRE-WORKBOOK",
+        "WEBAPI2",
+        "DDIA"
+      ]
+    },
+    {
+      "sectionId": "T07-P54-S25-retry-backoff-jitter-dlq",
+      "sourceIds": [
+        "WEBAPI2",
+        "DDIA",
+        "RFC9111"
+      ]
+    }
+  ]
+}

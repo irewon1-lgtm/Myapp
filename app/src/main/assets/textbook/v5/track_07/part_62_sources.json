@@ -1,0 +1,204 @@
+{
+  "partId": "T07-P62",
+  "sections": [
+    {
+      "sectionId": "T07-P62-S01-server-metric을-rate-error-du",
+      "sourceIds": [
+        "SRE",
+        "SRE-WORKBOOK",
+        "OTEL-SEMCONV"
+      ]
+    },
+    {
+      "sectionId": "T07-P62-S02-server-metric을-rate-error-du",
+      "sourceIds": [
+        "SRE-WORKBOOK",
+        "OTEL-SEMCONV",
+        "NODE-DOCS"
+      ]
+    },
+    {
+      "sectionId": "T07-P62-S03-server-metric을-rate-error-du",
+      "sourceIds": [
+        "OTEL-SEMCONV",
+        "NODE-DOCS",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P62-S04-server-metric을-rate-error-du",
+      "sourceIds": [
+        "NODE-DOCS",
+        "SRE",
+        "SRE-WORKBOOK"
+      ]
+    },
+    {
+      "sectionId": "T07-P62-S05-server-metric을-rate-error-du",
+      "sourceIds": [
+        "SRE",
+        "SRE-WORKBOOK",
+        "OTEL-SEMCONV"
+      ]
+    },
+    {
+      "sectionId": "T07-P62-S06-server-metric을-rate-error-du",
+      "sourceIds": [
+        "SRE-WORKBOOK",
+        "OTEL-SEMCONV",
+        "NODE-DOCS"
+      ]
+    },
+    {
+      "sectionId": "T07-P62-S07-server-metric을-rate-error-du",
+      "sourceIds": [
+        "OTEL-SEMCONV",
+        "NODE-DOCS",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P62-S08-server-metric을-rate-error-du",
+      "sourceIds": [
+        "NODE-DOCS",
+        "SRE",
+        "SRE-WORKBOOK"
+      ]
+    },
+    {
+      "sectionId": "T07-P62-S09-server-metric을-rate-error-du",
+      "sourceIds": [
+        "SRE",
+        "SRE-WORKBOOK",
+        "OTEL-SEMCONV"
+      ]
+    },
+    {
+      "sectionId": "T07-P62-S10-server-metric을-rate-error-du",
+      "sourceIds": [
+        "SRE-WORKBOOK",
+        "OTEL-SEMCONV",
+        "NODE-DOCS"
+      ]
+    },
+    {
+      "sectionId": "T07-P62-S11-server-metric을-rate-error-du",
+      "sourceIds": [
+        "OTEL-SEMCONV",
+        "NODE-DOCS",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P62-S12-server-metric을-rate-error-du",
+      "sourceIds": [
+        "NODE-DOCS",
+        "LEARNING-CLT-COMPUTING"
+      ]
+    },
+    {
+      "sectionId": "T07-P62-S13-server-metric을-rate-error-du",
+      "sourceIds": [
+        "SRE",
+        "SRE-WORKBOOK",
+        "OTEL-SEMCONV"
+      ]
+    },
+    {
+      "sectionId": "T07-P62-S14-server-metric을-rate-error-du",
+      "sourceIds": [
+        "SRE-WORKBOOK",
+        "OTEL-SEMCONV",
+        "NODE-DOCS"
+      ]
+    },
+    {
+      "sectionId": "T07-P62-S15-server-metric을-rate-error-du",
+      "sourceIds": [
+        "OTEL-SEMCONV",
+        "NODE-DOCS",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P62-S16-server-metric을-rate-error-du",
+      "sourceIds": [
+        "NODE-DOCS",
+        "SRE",
+        "SRE-WORKBOOK"
+      ]
+    },
+    {
+      "sectionId": "T07-P62-S17-server-metric을-rate-error-du",
+      "sourceIds": [
+        "SRE",
+        "LEARNING-SPACING-RETRIEVAL",
+        "LEARNING-CLT-COMPUTING"
+      ]
+    },
+    {
+      "sectionId": "T07-P62-S18-server-metric을-rate-error-du",
+      "sourceIds": [
+        "SRE-WORKBOOK",
+        "OTEL-SEMCONV",
+        "NODE-DOCS"
+      ]
+    },
+    {
+      "sectionId": "T07-P62-S19-server-metric을-rate-error-du",
+      "sourceIds": [
+        "OTEL-SEMCONV",
+        "NODE-DOCS",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P62-S20-server-metric을-rate-error-du",
+      "sourceIds": [
+        "NODE-DOCS",
+        "SRE",
+        "SRE-WORKBOOK"
+      ]
+    },
+    {
+      "sectionId": "T07-P62-S21-server-metric을-rate-error-du",
+      "sourceIds": [
+        "SRE",
+        "LEARNING-CLT-COMPUTING",
+        "LEARNING-SPACING-RETRIEVAL"
+      ]
+    },
+    {
+      "sectionId": "T07-P62-S22-server-metric을-rate-error-du",
+      "sourceIds": [
+        "SRE-WORKBOOK",
+        "OTEL-SEMCONV",
+        "NODE-DOCS"
+      ]
+    },
+    {
+      "sectionId": "T07-P62-S23-server-metric을-rate-error-du",
+      "sourceIds": [
+        "OTEL-SEMCONV",
+        "NODE-DOCS",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P62-S24-server-metric을-rate-error-du",
+      "sourceIds": [
+        "NODE-DOCS",
+        "SRE",
+        "SRE-WORKBOOK"
+      ]
+    },
+    {
+      "sectionId": "T07-P62-S25-server-metric을-rate-error-du",
+      "sourceIds": [
+        "SRE",
+        "SRE-WORKBOOK",
+        "OTEL-SEMCONV"
+      ]
+    }
+  ]
+}

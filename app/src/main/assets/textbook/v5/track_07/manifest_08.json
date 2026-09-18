@@ -1,0 +1,107 @@
+{
+  "trackId": "T07",
+  "trackNumber": 7,
+  "title": "서버와 백엔드 — 요청에서 운영까지",
+  "parts": [
+    {
+      "id": "T07-P71",
+      "order": 71,
+      "title": "incident를 증거로 좁히는 요청 경로 디버깅",
+      "assetPath": "textbook/v5/track_07/part_71_incident를-증거로-좁히는-요청-경로-디버깅.md",
+      "sourceMapPath": "textbook/v5/track_07/part_71_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P70-S25-event-loop-stall과-cpu-bound-"
+      ]
+    },
+    {
+      "id": "T07-P72",
+      "order": 72,
+      "title": "feature flag와 runtime configuration",
+      "assetPath": "textbook/v5/track_07/part_72_feature-flag와-runtime-configuration.md",
+      "sourceMapPath": "textbook/v5/track_07/part_72_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P71-S25-incident를-증거로-좁히는-요청-경로-디버깅"
+      ]
+    },
+    {
+      "id": "T07-P73",
+      "order": 73,
+      "title": "dependency outage와 fallback·stale data",
+      "assetPath": "textbook/v5/track_07/part_73_dependency-outage와-fallback-stale-data.md",
+      "sourceMapPath": "textbook/v5/track_07/part_73_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P72-S25-feature-flag와-runtime-config"
+      ]
+    },
+    {
+      "id": "T07-P74",
+      "order": 74,
+      "title": "데이터 무결성 이상을 runtime에서 감지하기",
+      "assetPath": "textbook/v5/track_07/part_74_데이터-무결성-이상을-runtime에서-감지하기.md",
+      "sourceMapPath": "textbook/v5/track_07/part_74_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P73-S25-dependency-outage와-fallback-"
+      ]
+    },
+    {
+      "id": "T07-P75",
+      "order": 75,
+      "title": "BLOCK 05 종합: 장애 타임라인을 재구성하고 복구하기",
+      "assetPath": "textbook/v5/track_07/part_75_block-05-종합-장애-타임라인을-재구성하고-복구하기.md",
+      "sourceMapPath": "textbook/v5/track_07/part_75_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P74-S25-데이터-무결성-이상을-runtime에서-감지하기"
+      ]
+    },
+    {
+      "id": "T07-P76",
+      "order": 76,
+      "title": "monolith·modular monolith·microservice의 경계",
+      "assetPath": "textbook/v5/track_07/part_76_monolith-modular-monolith-microservice의-경계.md",
+      "sourceMapPath": "textbook/v5/track_07/part_76_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P75-S25-block-05-종합-장애-타임라인을-재구성하고-복"
+      ]
+    },
+    {
+      "id": "T07-P77",
+      "order": 77,
+      "title": "service boundary와 coupling",
+      "assetPath": "textbook/v5/track_07/part_77_service-boundary와-coupling.md",
+      "sourceMapPath": "textbook/v5/track_07/part_77_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P76-S25-monolith-modular-monolith-mi"
+      ]
+    },
+    {
+      "id": "T07-P78",
+      "order": 78,
+      "title": "동기 호출과 비동기 메시지 선택",
+      "assetPath": "textbook/v5/track_07/part_78_동기-호출과-비동기-메시지-선택.md",
+      "sourceMapPath": "textbook/v5/track_07/part_78_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P77-S25-service-boundary와-coupling"
+      ]
+    },
+    {
+      "id": "T07-P79",
+      "order": 79,
+      "title": "reverse proxy·API gateway·BFF의 역할",
+      "assetPath": "textbook/v5/track_07/part_79_reverse-proxy-api-gateway-bff의-역할.md",
+      "sourceMapPath": "textbook/v5/track_07/part_79_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P78-S25-동기-호출과-비동기-메시지-선택"
+      ]
+    },
+    {
+      "id": "T07-P80",
+      "order": 80,
+      "title": "load balancing과 service discovery",
+      "assetPath": "textbook/v5/track_07/part_80_load-balancing과-service-discovery.md",
+      "sourceMapPath": "textbook/v5/track_07/part_80_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P79-S25-reverse-proxy-api-gateway-bf"
+      ]
+    }
+  ]
+}

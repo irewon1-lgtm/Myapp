@@ -83,6 +83,13 @@ object V5BookSupplementalSources {
         s("ARM-ELF-ABI", "ELF for the Arm Architecture", "Arm ABI project", V5BookSource.SourceType.STANDARD, "current abi-aa", "https://github.com/ARM-software/abi-aa/blob/main/aaelf32/aaelf32.rst"),
         s("GC-HANDBOOK2", "The Garbage Collection Handbook: The Art of Automatic Memory Management", "Richard Jones; Antony Hosking; Eliot Moss", V5BookSource.SourceType.ENGINEERING_BOOK, "2nd edition, 2023", "https://gchandbook.org/"),
         s("NIST-90A1", "Recommendation for Random Number Generation Using Deterministic Random Bit Generators", "NIST", V5BookSource.SourceType.STANDARD, "SP 800-90A Rev. 1, 2015", "https://csrc.nist.gov/pubs/sp/800/90/a/r1/final"),
+        s("FOSA2", "Fundamentals of Software Architecture, 2nd Edition", "Mark Richards; Neal Ford", V5BookSource.SourceType.ENGINEERING_BOOK, "2nd edition, March 2025", "https://www.oreilly.com/library/view/fundamentals-of-software/9781098175504/"),
+        s("WEBAPI2", "The Design of Web APIs, Second Edition", "Arnaud Lauret", V5BookSource.SourceType.ENGINEERING_BOOK, "2nd edition, June 2025", "https://www.manning.com/books/the-design-of-web-apis-second-edition"),
+        s("NODE-DOCS", "Node.js Documentation", "OpenJS Foundation / Node.js project", V5BookSource.SourceType.OFFICIAL_DOC, "current API docs audited 2026-09-18", "https://nodejs.org/docs/latest/api/"),
+        s("EXPRESS5", "Express 5 Documentation", "OpenJS Foundation / Express project", V5BookSource.SourceType.OFFICIAL_DOC, "Express 5.x current API docs audited 2026-09-18", "https://expressjs.com/en/api/"),
+        s("OTEL-SEMCONV", "OpenTelemetry Semantic Conventions", "Cloud Native Computing Foundation / OpenTelemetry", V5BookSource.SourceType.STANDARD, "Semantic Conventions 1.44.0, audited 2026-09-18", "https://opentelemetry.io/docs/specs/semconv/"),
+        s("RFC9457", "Problem Details for HTTP APIs", "IETF", V5BookSource.SourceType.STANDARD, "RFC 9457", "https://www.rfc-editor.org/rfc/rfc9457"),
+        s("RFC9111", "HTTP Caching", "IETF", V5BookSource.SourceType.STANDARD, "RFC 9111 / STD 98", "https://www.rfc-editor.org/rfc/rfc9111"),
         s("NIST-90B", "Recommendation for the Entropy Sources Used for Random Bit Generation", "NIST", V5BookSource.SourceType.STANDARD, "SP 800-90B, 2018; errata noted 2025-05", "https://csrc.nist.gov/pubs/sp/800/90/b/final")
     )
 

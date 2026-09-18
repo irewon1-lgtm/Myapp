@@ -1,0 +1,204 @@
+{
+  "partId": "T07-P98",
+  "sections": [
+    {
+      "sectionId": "T07-P98-S01-openapi를-실행-가능한-api-계약으로-쓰기",
+      "sourceIds": [
+        "FOSA2",
+        "OPENAPI31",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P98-S02-openapi를-실행-가능한-api-계약으로-쓰기",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "OWASP-API"
+      ]
+    },
+    {
+      "sectionId": "T07-P98-S03-openapi를-실행-가능한-api-계약으로-쓰기",
+      "sourceIds": [
+        "SRE",
+        "OWASP-API",
+        "NIST-SSDF"
+      ]
+    },
+    {
+      "sectionId": "T07-P98-S04-openapi를-실행-가능한-api-계약으로-쓰기",
+      "sourceIds": [
+        "OWASP-API",
+        "NIST-SSDF",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P98-S05-openapi를-실행-가능한-api-계약으로-쓰기",
+      "sourceIds": [
+        "NIST-SSDF",
+        "WEBAPI2",
+        "FOSA2"
+      ]
+    },
+    {
+      "sectionId": "T07-P98-S06-openapi를-실행-가능한-api-계약으로-쓰기",
+      "sourceIds": [
+        "WEBAPI2",
+        "FOSA2",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P98-S07-openapi를-실행-가능한-api-계약으로-쓰기",
+      "sourceIds": [
+        "FOSA2",
+        "OPENAPI31",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P98-S08-openapi를-실행-가능한-api-계약으로-쓰기",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "OWASP-API"
+      ]
+    },
+    {
+      "sectionId": "T07-P98-S09-openapi를-실행-가능한-api-계약으로-쓰기",
+      "sourceIds": [
+        "SRE",
+        "OWASP-API",
+        "NIST-SSDF"
+      ]
+    },
+    {
+      "sectionId": "T07-P98-S10-openapi를-실행-가능한-api-계약으로-쓰기",
+      "sourceIds": [
+        "OWASP-API",
+        "NIST-SSDF",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P98-S11-openapi를-실행-가능한-api-계약으로-쓰기",
+      "sourceIds": [
+        "NIST-SSDF",
+        "WEBAPI2",
+        "FOSA2"
+      ]
+    },
+    {
+      "sectionId": "T07-P98-S12-openapi를-실행-가능한-api-계약으로-쓰기",
+      "sourceIds": [
+        "WEBAPI2",
+        "LEARNING-CLT-COMPUTING"
+      ]
+    },
+    {
+      "sectionId": "T07-P98-S13-openapi를-실행-가능한-api-계약으로-쓰기",
+      "sourceIds": [
+        "FOSA2",
+        "OPENAPI31",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P98-S14-openapi를-실행-가능한-api-계약으로-쓰기",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "OWASP-API"
+      ]
+    },
+    {
+      "sectionId": "T07-P98-S15-openapi를-실행-가능한-api-계약으로-쓰기",
+      "sourceIds": [
+        "SRE",
+        "OWASP-API",
+        "NIST-SSDF"
+      ]
+    },
+    {
+      "sectionId": "T07-P98-S16-openapi를-실행-가능한-api-계약으로-쓰기",
+      "sourceIds": [
+        "OWASP-API",
+        "NIST-SSDF",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P98-S17-openapi를-실행-가능한-api-계약으로-쓰기",
+      "sourceIds": [
+        "NIST-SSDF",
+        "LEARNING-SPACING-RETRIEVAL",
+        "LEARNING-CLT-COMPUTING"
+      ]
+    },
+    {
+      "sectionId": "T07-P98-S18-openapi를-실행-가능한-api-계약으로-쓰기",
+      "sourceIds": [
+        "WEBAPI2",
+        "FOSA2",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P98-S19-openapi를-실행-가능한-api-계약으로-쓰기",
+      "sourceIds": [
+        "FOSA2",
+        "OPENAPI31",
+        "SRE"
+      ]
+    },
+    {
+      "sectionId": "T07-P98-S20-openapi를-실행-가능한-api-계약으로-쓰기",
+      "sourceIds": [
+        "OPENAPI31",
+        "SRE",
+        "OWASP-API"
+      ]
+    },
+    {
+      "sectionId": "T07-P98-S21-openapi를-실행-가능한-api-계약으로-쓰기",
+      "sourceIds": [
+        "SRE",
+        "LEARNING-CLT-COMPUTING",
+        "LEARNING-SPACING-RETRIEVAL"
+      ]
+    },
+    {
+      "sectionId": "T07-P98-S22-openapi를-실행-가능한-api-계약으로-쓰기",
+      "sourceIds": [
+        "OWASP-API",
+        "NIST-SSDF",
+        "WEBAPI2"
+      ]
+    },
+    {
+      "sectionId": "T07-P98-S23-openapi를-실행-가능한-api-계약으로-쓰기",
+      "sourceIds": [
+        "NIST-SSDF",
+        "WEBAPI2",
+        "FOSA2"
+      ]
+    },
+    {
+      "sectionId": "T07-P98-S24-openapi를-실행-가능한-api-계약으로-쓰기",
+      "sourceIds": [
+        "WEBAPI2",
+        "FOSA2",
+        "OPENAPI31"
+      ]
+    },
+    {
+      "sectionId": "T07-P98-S25-openapi를-실행-가능한-api-계약으로-쓰기",
+      "sourceIds": [
+        "FOSA2",
+        "OPENAPI31",
+        "SRE"
+      ]
+    }
+  ]
+}

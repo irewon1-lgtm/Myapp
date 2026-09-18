@@ -1,0 +1,107 @@
+{
+  "trackId": "T07",
+  "trackNumber": 7,
+  "title": "서버와 백엔드 — 요청에서 운영까지",
+  "parts": [
+    {
+      "id": "T07-P11",
+      "order": 11,
+      "title": "timeout·deadline·cancellation으로 기다림에 끝을 만들기",
+      "assetPath": "textbook/v5/track_07/part_11_timeout-deadline-cancellation으로-기다림에-끝을-만들기.md",
+      "sourceMapPath": "textbook/v5/track_07/part_11_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P10-S25-async-i-o와-event-loop를-요청-처리"
+      ]
+    },
+    {
+      "id": "T07-P12",
+      "order": 12,
+      "title": "connection·keep-alive·pool을 자원 관점으로 보기",
+      "assetPath": "textbook/v5/track_07/part_12_connection-keep-alive-pool을-자원-관점으로-보기.md",
+      "sourceMapPath": "textbook/v5/track_07/part_12_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P11-S25-timeout-deadline-cancellatio"
+      ]
+    },
+    {
+      "id": "T07-P13",
+      "order": 13,
+      "title": "streaming과 backpressure로 큰 데이터를 다루기",
+      "assetPath": "textbook/v5/track_07/part_13_streaming과-backpressure로-큰-데이터를-다루기.md",
+      "sourceMapPath": "textbook/v5/track_07/part_13_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P12-S25-connection-keep-alive-pool을-"
+      ]
+    },
+    {
+      "id": "T07-P14",
+      "order": 14,
+      "title": "API version과 호환성은 기존 client를 깨지 않는 약속",
+      "assetPath": "textbook/v5/track_07/part_14_api-version과-호환성은-기존-client를-깨지-않는-약속.md",
+      "sourceMapPath": "textbook/v5/track_07/part_14_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P13-S25-streaming과-backpressure로-큰-데"
+      ]
+    },
+    {
+      "id": "T07-P15",
+      "order": 15,
+      "title": "BLOCK 01 종합: 하나의 요청 수명주기를 끝까지 추적하기",
+      "assetPath": "textbook/v5/track_07/part_15_block-01-종합-하나의-요청-수명주기를-끝까지-추적하기.md",
+      "sourceMapPath": "textbook/v5/track_07/part_15_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P14-S25-api-version과-호환성은-기존-client를"
+      ]
+    },
+    {
+      "id": "T07-P16",
+      "order": 16,
+      "title": "domain model과 invariant",
+      "assetPath": "textbook/v5/track_07/part_16_domain-model과-invariant.md",
+      "sourceMapPath": "textbook/v5/track_07/part_16_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P15-S25-block-01-종합-하나의-요청-수명주기를-끝까지"
+      ]
+    },
+    {
+      "id": "T07-P17",
+      "order": 17,
+      "title": "command와 query를 구분해 use case를 선명하게 만들기",
+      "assetPath": "textbook/v5/track_07/part_17_command와-query를-구분해-use-case를-선명하게-만들기.md",
+      "sourceMapPath": "textbook/v5/track_07/part_17_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P16-S25-domain-model과-invariant"
+      ]
+    },
+    {
+      "id": "T07-P18",
+      "order": 18,
+      "title": "idempotency로 같은 요청이 다시 와도 결과를 통제하기",
+      "assetPath": "textbook/v5/track_07/part_18_idempotency로-같은-요청이-다시-와도-결과를-통제하기.md",
+      "sourceMapPath": "textbook/v5/track_07/part_18_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P17-S25-command와-query를-구분해-use-case"
+      ]
+    },
+    {
+      "id": "T07-P19",
+      "order": 19,
+      "title": "state machine으로 가능한 상태 전이를 제한하기",
+      "assetPath": "textbook/v5/track_07/part_19_state-machine으로-가능한-상태-전이를-제한하기.md",
+      "sourceMapPath": "textbook/v5/track_07/part_19_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P18-S25-idempotency로-같은-요청이-다시-와도-결과"
+      ]
+    },
+    {
+      "id": "T07-P20",
+      "order": 20,
+      "title": "돈·수량·비율에서 정밀도 규칙 정하기",
+      "assetPath": "textbook/v5/track_07/part_20_돈-수량-비율에서-정밀도-규칙-정하기.md",
+      "sourceMapPath": "textbook/v5/track_07/part_20_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P19-S25-state-machine으로-가능한-상태-전이를-제"
+      ]
+    }
+  ]
+}

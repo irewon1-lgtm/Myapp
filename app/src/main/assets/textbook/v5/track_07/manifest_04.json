@@ -1,0 +1,107 @@
+{
+  "trackId": "T07",
+  "trackNumber": 7,
+  "title": "서버와 백엔드 — 요청에서 운영까지",
+  "parts": [
+    {
+      "id": "T07-P31",
+      "order": 31,
+      "title": "identity와 authentication 흐름",
+      "assetPath": "textbook/v5/track_07/part_31_identity와-authentication-흐름.md",
+      "sourceMapPath": "textbook/v5/track_07/part_31_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P30-S25-block-02-종합-주문-상태와-side-effe"
+      ]
+    },
+    {
+      "id": "T07-P32",
+      "order": 32,
+      "title": "session·cookie·token의 역할 비교",
+      "assetPath": "textbook/v5/track_07/part_32_session-cookie-token의-역할-비교.md",
+      "sourceMapPath": "textbook/v5/track_07/part_32_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P31-S25-identity와-authentication-흐름"
+      ]
+    },
+    {
+      "id": "T07-P33",
+      "order": 33,
+      "title": "authorization을 actor·action·resource로 생각하기",
+      "assetPath": "textbook/v5/track_07/part_33_authorization을-actor-action-resource로-생각하기.md",
+      "sourceMapPath": "textbook/v5/track_07/part_33_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P32-S25-session-cookie-token의-역할-비교"
+      ]
+    },
+    {
+      "id": "T07-P34",
+      "order": 34,
+      "title": "object-level authorization과 BOLA/IDOR",
+      "assetPath": "textbook/v5/track_07/part_34_object-level-authorization과-bola-idor.md",
+      "sourceMapPath": "textbook/v5/track_07/part_34_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P33-S25-authorization을-actor-action-"
+      ]
+    },
+    {
+      "id": "T07-P35",
+      "order": 35,
+      "title": "API key와 service identity",
+      "assetPath": "textbook/v5/track_07/part_35_api-key와-service-identity.md",
+      "sourceMapPath": "textbook/v5/track_07/part_35_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P34-S25-object-level-authorization과-"
+      ]
+    },
+    {
+      "id": "T07-P36",
+      "order": 36,
+      "title": "CORS와 CSRF를 백엔드 경계에서 구분하기",
+      "assetPath": "textbook/v5/track_07/part_36_cors와-csrf를-백엔드-경계에서-구분하기.md",
+      "sourceMapPath": "textbook/v5/track_07/part_36_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P35-S25-api-key와-service-identity"
+      ]
+    },
+    {
+      "id": "T07-P37",
+      "order": 37,
+      "title": "secret와 configuration을 코드에서 분리하기",
+      "assetPath": "textbook/v5/track_07/part_37_secret와-configuration을-코드에서-분리하기.md",
+      "sourceMapPath": "textbook/v5/track_07/part_37_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P36-S25-cors와-csrf를-백엔드-경계에서-구분하기"
+      ]
+    },
+    {
+      "id": "T07-P38",
+      "order": 38,
+      "title": "allowlist로 입력·출력 필드를 좁히기",
+      "assetPath": "textbook/v5/track_07/part_38_allowlist로-입력-출력-필드를-좁히기.md",
+      "sourceMapPath": "textbook/v5/track_07/part_38_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P37-S25-secret와-configuration을-코드에서-"
+      ]
+    },
+    {
+      "id": "T07-P39",
+      "order": 39,
+      "title": "민감정보를 로그와 오류에서 제거하기",
+      "assetPath": "textbook/v5/track_07/part_39_민감정보를-로그와-오류에서-제거하기.md",
+      "sourceMapPath": "textbook/v5/track_07/part_39_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P38-S25-allowlist로-입력-출력-필드를-좁히기"
+      ]
+    },
+    {
+      "id": "T07-P40",
+      "order": 40,
+      "title": "login abuse와 rate limit",
+      "assetPath": "textbook/v5/track_07/part_40_login-abuse와-rate-limit.md",
+      "sourceMapPath": "textbook/v5/track_07/part_40_sources.json",
+      "prerequisiteConceptIds": [
+        "T07-P39-S25-민감정보를-로그와-오류에서-제거하기"
+      ]
+    }
+  ]
+}
