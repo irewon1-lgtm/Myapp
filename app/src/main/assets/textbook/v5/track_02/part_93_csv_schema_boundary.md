@@ -37,8 +37,8 @@ second line"
 
 ---
 
-**현장 점검 93-1 — CHAPTER 01 · CSV record boundary는 `line.split(',')`로 보존되지 않는다**
-CHAPTER 01 · CSV record boundary는 `line.split(',')`로 보존되지 않는다을 점검할 때는 관찰해야 할 로그 필드를 먼저 고르고 자원 정리를 늦춰 본다. PART 93 CHAPTER 1에서는 상태 전이와 반환값을 같은 시각축으로 본다. 재실행 때마다 생성되는 파일·객체·로그 항목을 목록으로 비교한다. 수정 후 결과 목록이 안정적이고 실패 중간에 만들어진 임시 상태가 다음 실행으로 넘어가지 않아야 한다.
+**검증 시나리오 P93-C1 — CHAPTER 01 · CSV record boundary는 `line.split(',')`로 보존되지 않는다**
+`CHAPTER 01 · CSV record boundary는 `line.split(',')`로 보존되지 않는다` 검증은 성공 사례를 기준선으로 저장하는 데서 시작한다. P93-C1에서는 `CHAPTER 01 · CSV record boundary는 `line.split(',')`로 보존되지 않는다` 실행 직전 상태를 먼저 적고 실행 뒤 값과 비교해 실제 규칙을 확인한다. 두 번째 단계에서는 `CHAPTER 01 · CSV record boundary는 `line.split(',')`로 보존되지 않는다`에 대해 실패 조건은 하나만 주입고 다른 코드는 그대로 두어 원인 후보를 하나로 제한한다. 이때 `CHAPTER 01 · CSV record boundary는 `line.split(',')`로 보존되지 않는다`의 로그 시각과 상태 식별자를 맞춰 본다하여 우연한 통과를 배제한다. 예상과 다르면 `CHAPTER 01 · CSV record boundary는 `line.split(',')`로 보존되지 않는다`의 타입, 값, 호출 순서, 예외 경계 가운데 최초로 달라진 항목부터 확인하고 최소 수정 뒤 다시 실행한다. P93-C1의 마무리는 성공·실패 모두 결정적으로 끝나는지 확인하는 것이다. 통과 기준은 `CHAPTER 01 · CSV record boundary는 `line.split(',')`로 보존되지 않는다`의 정상 사례와 변형 사례가 모두 설명 가능한 결과를 내고 같은 절차를 반복해도 동일한 상태 계약을 유지하는 것이다.
 ## CHAPTER 02 · dialect는 delimiter 하나가 아니라 quoting과 escaping 규칙의 묶음이다
 
 ### 시작 전 용어집
@@ -62,8 +62,8 @@ CHAPTER 01 · CSV record boundary는 `line.split(',')`로 보존되지 않는다
 
 ---
 
-**현장 점검 93-2 — CHAPTER 02 · dialect는 delimiter 하나가 아니라 quoting과 escaping 규칙의 묶음이다**
-CHAPTER 02 · dialect는 delimiter 하나가 아니라 quoting과 escaping 규칙의 묶음이다을 점검할 때는 재현 절차를 세 단계로 고정하고 취소를 처리 중간에 발생시킨다. PART 93 CHAPTER 2에서는 요청 식별자와 최종 상태를 연결한다. 같은 작업을 반복 처리해 입력 수와 출력 수의 보존 관계를 확인한다. 수정 후 정상 사례는 정확히 대응하고 실패 사례는 누락 위치가 식별 가능하며 복구 뒤 최종 건수가 기준 실행과 같아야 한다.
+**검증 시나리오 P93-C2 — CHAPTER 02 · dialect는 delimiter 하나가 아니라 quoting과 escaping 규칙의 묶음이다**
+`CHAPTER 02 · dialect는 delimiter 하나가 아니라 quoting과 escaping 규칙의 묶음이다` 검증은 반례부터 하나 만든다하는 데서 시작한다. P93-C2에서는 `CHAPTER 02 · dialect는 delimiter 하나가 아니라 quoting과 escaping 규칙의 묶음이다` 실행 직전 상태를 먼저 적고 실행 뒤 값과 비교해 실제 규칙을 확인한다. 두 번째 단계에서는 `CHAPTER 02 · dialect는 delimiter 하나가 아니라 quoting과 escaping 규칙의 묶음이다`에 대해 반례와 정상례의 차이만 좁힌다고 다른 코드는 그대로 두어 원인 후보를 하나로 제한한다. 이때 `CHAPTER 02 · dialect는 delimiter 하나가 아니라 quoting과 escaping 규칙의 묶음이다`의 중간 값을 직접 출력해 추측을 줄인다하여 우연한 통과를 배제한다. 예상과 다르면 `CHAPTER 02 · dialect는 delimiter 하나가 아니라 quoting과 escaping 규칙의 묶음이다`의 타입, 값, 호출 순서, 예외 경계 가운데 최초로 달라진 항목부터 확인하고 최소 수정 뒤 다시 실행한다. P93-C2의 마무리는 수정 후 두 사례를 같은 순서로 재검증하는 것이다. 통과 기준은 `CHAPTER 02 · dialect는 delimiter 하나가 아니라 quoting과 escaping 규칙의 묶음이다`의 정상 사례와 변형 사례가 모두 설명 가능한 결과를 내고 같은 절차를 반복해도 동일한 상태 계약을 유지하는 것이다.
 ## CHAPTER 03 · file newline layer와 CSV parser의 newline 처리를 겹치지 않게 한다
 
 ### 시작 전 용어집
@@ -116,8 +116,8 @@ if missing:
 
 ---
 
-**현장 점검 93-4 — CHAPTER 04 · header는 이름 목록이 아니라 input schema의 첫 계약이다**
-CHAPTER 04 · header는 이름 목록이 아니라 input schema의 첫 계약이다을 점검할 때는 실패 전 상태를 표처럼 적고 재시도를 강제로 한 번 일으킨다. PART 93 CHAPTER 4에서는 오류 코드와 복구 동작이 계약대로 이어지는지 본다. 경계값을 포함한 입력 세트를 고정해 수정 전후 결과를 표로 비교한다. 수정 후 각 입력이 같은 분류로 처리되고 실패한 입력의 영향이 다른 정상 입력으로 전파되지 않아야 한다.
+**검증 시나리오 P93-C4 — CHAPTER 04 · header는 이름 목록이 아니라 input schema의 첫 계약이다**
+`CHAPTER 04 · header는 이름 목록이 아니라 input schema의 첫 계약이다` 검증은 가장 작은 객체 상태로 시작하는 데서 시작한다. P93-C4에서는 `CHAPTER 04 · header는 이름 목록이 아니라 input schema의 첫 계약이다` 실행 직전 상태를 먼저 적고 실행 뒤 값과 비교해 실제 규칙을 확인한다. 두 번째 단계에서는 `CHAPTER 04 · header는 이름 목록이 아니라 input schema의 첫 계약이다`에 대해 속성 하나만 바꿔 재실행고 다른 코드는 그대로 두어 원인 후보를 하나로 제한한다. 이때 `CHAPTER 04 · header는 이름 목록이 아니라 input schema의 첫 계약이다`의 반환값과 부수효과를 따로 기록하여 우연한 통과를 배제한다. 예상과 다르면 `CHAPTER 04 · header는 이름 목록이 아니라 input schema의 첫 계약이다`의 타입, 값, 호출 순서, 예외 경계 가운데 최초로 달라진 항목부터 확인하고 최소 수정 뒤 다시 실행한다. P93-C4의 마무리는 수정 뒤 원래 조건을 다시 회귀 확인하는 것이다. 통과 기준은 `CHAPTER 04 · header는 이름 목록이 아니라 input schema의 첫 계약이다`의 정상 사례와 변형 사례가 모두 설명 가능한 결과를 내고 같은 절차를 반복해도 동일한 상태 계약을 유지하는 것이다.
 ## CHAPTER 05 · CSV field는 text이므로 domain type conversion과 validation을 별도 단계에서 수행한다
 
 ### 시작 전 용어집
@@ -146,8 +146,8 @@ amount = Decimal(row["amount"])  # 금액 정책에 맞는 변환
 
 ---
 
-**현장 점검 93-5 — CHAPTER 05 · CSV field는 text이므로 domain type conversion과 validation을 별도 단계에서 수행한다**
-CHAPTER 05 · CSV field는 text이므로 domain type conversion과 validation을 별도 단계에서 수행한다을 점검할 때는 정상 동작을 기준선으로 남기고 중복 입력을 한 번 보낸다. PART 93 CHAPTER 5에서는 중복 반영과 누락 여부를 동시에 확인한다. 중간 중단 지점을 바꾸어 여러 번 실행하고 매번 복구 시작 위치를 기록한다. 수정 후 복구 위치가 마지막 안전 지점을 넘지 않으며 완료 데이터가 다시 쓰이지 않아야 한다.
+**검증 시나리오 P93-C5 — CHAPTER 05 · CSV field는 text이므로 domain type conversion과 validation을 별도 단계에서 수행한다**
+`CHAPTER 05 · CSV field는 text이므로 domain type conversion과 validation을 별도 단계에서 수행한다` 검증은 경계값을 먼저 지정하는 데서 시작한다. P93-C5에서는 `CHAPTER 05 · CSV field는 text이므로 domain type conversion과 validation을 별도 단계에서 수행한다` 실행 직전 상태를 먼저 적고 실행 뒤 값과 비교해 실제 규칙을 확인한다. 두 번째 단계에서는 `CHAPTER 05 · CSV field는 text이므로 domain type conversion과 validation을 별도 단계에서 수행한다`에 대해 정상값과 경계값을 연속 실행고 다른 코드는 그대로 두어 원인 후보를 하나로 제한한다. 이때 `CHAPTER 05 · CSV field는 text이므로 domain type conversion과 validation을 별도 단계에서 수행한다`의 타입·정체성·수명 변화를 분리 기록하여 우연한 통과를 배제한다. 예상과 다르면 `CHAPTER 05 · CSV field는 text이므로 domain type conversion과 validation을 별도 단계에서 수행한다`의 타입, 값, 호출 순서, 예외 경계 가운데 최초로 달라진 항목부터 확인하고 최소 수정 뒤 다시 실행한다. P93-C5의 마무리는 결과를 설명할 수 있을 때 종료하는 것이다. 통과 기준은 `CHAPTER 05 · CSV field는 text이므로 domain type conversion과 validation을 별도 단계에서 수행한다`의 정상 사례와 변형 사례가 모두 설명 가능한 결과를 내고 같은 절차를 반복해도 동일한 상태 계약을 유지하는 것이다.
 ## CHAPTER 06 · spreadsheet export에서는 formula injection을 별도 trust boundary로 본다
 
 ### 시작 전 용어집
