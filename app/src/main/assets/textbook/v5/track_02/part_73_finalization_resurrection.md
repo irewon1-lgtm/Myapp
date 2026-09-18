@@ -69,8 +69,8 @@ class Temp:
 
 ---
 
-**실행 점검 73-2 — CHAPTER 02 · `__del__`은 편리해 보여도 필수 resource cleanup의 주 경로가 되면 위험하다**
-CHAPTER 02 · `__del__`은 편리해 보여도 필수 resource cleanup의 주 경로가 되면 위험하다을 이해할 때는 관찰할 변수를 두세 개로 줄이고 한 번에 한 조건만 바꾸며 결과 차이를 비교한다. 그다음 값 하나, 호출 순서 하나, 경계 조건 하나만 바꿔 CHAPTER 02 · `__del__`은 편리해 보여도 필수 resource cleanup의 주 경로가 되면 위험하다의 규칙이 실제 상태에 어떤 변화를 만드는지 확인한다. PART 73 CHAPTER 2에서는 결과를 맞히는 것보다 예상과 실제의 차이를 설명하는 과정이 중요하다. 결과만 맞추지 말고 왜 그 결과가 나왔는지 한 문장으로 설명한다. P73-C02 최종 확인은 규칙을 자기 말로 다시 설명하는 것이다. P73-C02의 값 종류와 객체 동일성, 수명 변화, 예외 발생 지점을 다른 입력에 적용해 같은 결론이 나오는지 본다.
+**검증 시나리오 P73-C2 — CHAPTER 02 · `__del__`은 편리해 보여도 필수 resource cleanup의 주 경로가 되면 위험하다**
+`CHAPTER 02 · `__del__`은 편리해 보여도 필수 resource cleanup의 주 경로가 되면 위험하다` 검증은 정상 경로를 먼저 재현하는 데서 시작한다. P73-C2에서는 `CHAPTER 02 · `__del__`은 편리해 보여도 필수 resource cleanup의 주 경로가 되면 위험하다` 실행 직전 상태를 먼저 적고 실행 뒤 값과 비교해 실제 규칙을 확인한다. 두 번째 단계에서는 `CHAPTER 02 · `__del__`은 편리해 보여도 필수 resource cleanup의 주 경로가 되면 위험하다`에 대해 오류 경로 하나를 의도적으로 만든다고 다른 코드는 그대로 두어 원인 후보를 하나로 제한한다. 이때 `CHAPTER 02 · `__del__`은 편리해 보여도 필수 resource cleanup의 주 경로가 되면 위험하다`의 예외 종류와 직전 상태를 함께 남긴다하여 우연한 통과를 배제한다. 예상과 다르면 `CHAPTER 02 · `__del__`은 편리해 보여도 필수 resource cleanup의 주 경로가 되면 위험하다`의 타입, 값, 호출 순서, 예외 경계 가운데 최초로 달라진 항목부터 확인하고 최소 수정 뒤 다시 실행한다. P73-C2의 마무리는 복구 후 같은 오류가 다시 재현되지 않는지 검사하는 것이다. 통과 기준은 `CHAPTER 02 · `__del__`은 편리해 보여도 필수 resource cleanup의 주 경로가 되면 위험하다`의 정상 사례와 변형 사례가 모두 설명 가능한 결과를 내고 같은 절차를 반복해도 동일한 상태 계약을 유지하는 것이다.
 ## CHAPTER 03 · reference cycle은 단순 reference count만으로 회수되지 않는 구조를 만든다
 
 ### 시작 전 용어집
@@ -108,8 +108,8 @@ b.peer = a
 
 ---
 
-**실행 점검 73-3 — CHAPTER 03 · reference cycle은 단순 reference count만으로 회수되지 않는 구조를 만든다**
-CHAPTER 03 · reference cycle은 단순 reference count만으로 회수되지 않는 구조를 만든다을 이해할 때는 호출 순서를 단순화하고 예외가 생긴 지점과 그 직전 상태를 함께 적는다. 그다음 값 하나, 호출 순서 하나, 경계 조건 하나만 바꿔 CHAPTER 03 · reference cycle은 단순 reference count만으로 회수되지 않는 구조를 만든다의 규칙이 실제 상태에 어떤 변화를 만드는지 확인한다. PART 73 CHAPTER 3에서는 결과를 맞히는 것보다 예상과 실제의 차이를 설명하는 과정이 중요하다. 예상이 틀리면 규칙을 다시 읽고 최소 수정으로 재실행한다. P73-C03의 통과 기준은 결과를 외우는 것이 아니다. P73-C03의 동작을 타입, 정체성, 수명, 오류 경계로 나눠 설명하고 비슷한 코드에서도 동일한 규칙을 찾아낼 수 있어야 한다.
+**검증 시나리오 P73-C3 — CHAPTER 03 · reference cycle은 단순 reference count만으로 회수되지 않는 구조를 만든다**
+`CHAPTER 03 · reference cycle은 단순 reference count만으로 회수되지 않는 구조를 만든다` 검증은 호출 순서를 단순화하는 데서 시작한다. P73-C3에서는 `CHAPTER 03 · reference cycle은 단순 reference count만으로 회수되지 않는 구조를 만든다` 실행 직전 상태를 먼저 적고 실행 뒤 값과 비교해 실제 규칙을 확인한다. 두 번째 단계에서는 `CHAPTER 03 · reference cycle은 단순 reference count만으로 회수되지 않는 구조를 만든다`에 대해 순서 하나만 뒤집어 차이를 본다고 다른 코드는 그대로 두어 원인 후보를 하나로 제한한다. 이때 `CHAPTER 03 · reference cycle은 단순 reference count만으로 회수되지 않는 구조를 만든다`의 호출 전후의 상태 전이를 번호로 남긴다하여 우연한 통과를 배제한다. 예상과 다르면 `CHAPTER 03 · reference cycle은 단순 reference count만으로 회수되지 않는 구조를 만든다`의 타입, 값, 호출 순서, 예외 경계 가운데 최초로 달라진 항목부터 확인하고 최소 수정 뒤 다시 실행한다. P73-C3의 마무리는 다른 순서에서도 계약이 유지되는지 확인하는 것이다. 통과 기준은 `CHAPTER 03 · reference cycle은 단순 reference count만으로 회수되지 않는 구조를 만든다`의 정상 사례와 변형 사례가 모두 설명 가능한 결과를 내고 같은 절차를 반복해도 동일한 상태 계약을 유지하는 것이다.
 ## CHAPTER 04 · resurrection은 finalizer가 object를 다시 reachable하게 만드는 특수한 경로다
 
 ### 시작 전 용어집
@@ -144,8 +144,8 @@ class Strange:
 
 ---
 
-**실행 점검 73-4 — CHAPTER 04 · resurrection은 finalizer가 object를 다시 reachable하게 만드는 특수한 경로다**
-CHAPTER 04 · resurrection은 finalizer가 object를 다시 reachable하게 만드는 특수한 경로다을 이해할 때는 가장 작은 객체를 만들고 성공 경로와 오류 경로의 차이를 줄 단위로 추적한다. 그다음 값 하나, 호출 순서 하나, 경계 조건 하나만 바꿔 CHAPTER 04 · resurrection은 finalizer가 object를 다시 reachable하게 만드는 특수한 경로다의 규칙이 실제 상태에 어떤 변화를 만드는지 확인한다. PART 73 CHAPTER 4에서는 결과를 맞히는 것보다 예상과 실제의 차이를 설명하는 과정이 중요하다. 같은 증상이 다시 나오도록 재현 절차를 남긴 뒤 원인을 수정한다. P73-C04은 마지막에 설명 가능성을 검사한다. P73-C04의 결과를 만든 타입·정체성·수명·예외 조건을 명시하고, 다른 코드 조각에서도 같은 조건을 스스로 찾아 적용한다.
+**검증 시나리오 P73-C4 — CHAPTER 04 · resurrection은 finalizer가 object를 다시 reachable하게 만드는 특수한 경로다**
+`CHAPTER 04 · resurrection은 finalizer가 object를 다시 reachable하게 만드는 특수한 경로다` 검증은 입력 크기를 고정하는 데서 시작한다. P73-C4에서는 `CHAPTER 04 · resurrection은 finalizer가 object를 다시 reachable하게 만드는 특수한 경로다` 실행 직전 상태를 먼저 적고 실행 뒤 값과 비교해 실제 규칙을 확인한다. 두 번째 단계에서는 `CHAPTER 04 · resurrection은 finalizer가 object를 다시 reachable하게 만드는 특수한 경로다`에 대해 변형은 한 요소만 허용고 다른 코드는 그대로 두어 원인 후보를 하나로 제한한다. 이때 `CHAPTER 04 · resurrection은 finalizer가 object를 다시 reachable하게 만드는 특수한 경로다`의 측정값을 여러 번 모아 분포를 비교하여 우연한 통과를 배제한다. 예상과 다르면 `CHAPTER 04 · resurrection은 finalizer가 object를 다시 reachable하게 만드는 특수한 경로다`의 타입, 값, 호출 순서, 예외 경계 가운데 최초로 달라진 항목부터 확인하고 최소 수정 뒤 다시 실행한다. P73-C4의 마무리는 워밍업과 측정 자체의 비용을 분리하는 것이다. 통과 기준은 `CHAPTER 04 · resurrection은 finalizer가 object를 다시 reachable하게 만드는 특수한 경로다`의 정상 사례와 변형 사례가 모두 설명 가능한 결과를 내고 같은 절차를 반복해도 동일한 상태 계약을 유지하는 것이다.
 ## CHAPTER 05 · `weakref.finalize`는 cleanup callback을 object method와 분리할 수 있다
 
 ### 시작 전 용어집
@@ -183,8 +183,8 @@ class Handle:
 
 ---
 
-**실행 점검 73-5 — CHAPTER 05 · `weakref.finalize`는 cleanup callback을 object method와 분리할 수 있다**
-CHAPTER 05 · `weakref.finalize`는 cleanup callback을 object method와 분리할 수 있다을 이해할 때는 기대 결과를 숫자나 상태로 적고 실행 전 예상값과 실행 후 실제값을 나란히 기록한다. 그다음 값 하나, 호출 순서 하나, 경계 조건 하나만 바꿔 CHAPTER 05 · `weakref.finalize`는 cleanup callback을 object method와 분리할 수 있다의 규칙이 실제 상태에 어떤 변화를 만드는지 확인한다. PART 73 CHAPTER 5에서는 결과를 맞히는 것보다 예상과 실제의 차이를 설명하는 과정이 중요하다. 수정 후에는 원래 사례와 실패 사례를 모두 재검증한다. P73-C05을 마칠 때는 어떤 요소가 동작을 결정했는지 한 문장으로 요약한다. 이어서 P73-C05의 객체 수명과 예외 경계를 다른 예제에 적용해 설명이 그대로 성립하는지 확인한다.
+**검증 시나리오 P73-C5 — CHAPTER 05 · `weakref.finalize`는 cleanup callback을 object method와 분리할 수 있다**
+`CHAPTER 05 · `weakref.finalize`는 cleanup callback을 object method와 분리할 수 있다` 검증은 성공 사례를 기준선으로 저장하는 데서 시작한다. P73-C5에서는 `CHAPTER 05 · `weakref.finalize`는 cleanup callback을 object method와 분리할 수 있다` 실행 직전 상태를 먼저 적고 실행 뒤 값과 비교해 실제 규칙을 확인한다. 두 번째 단계에서는 `CHAPTER 05 · `weakref.finalize`는 cleanup callback을 object method와 분리할 수 있다`에 대해 실패 조건은 하나만 주입고 다른 코드는 그대로 두어 원인 후보를 하나로 제한한다. 이때 `CHAPTER 05 · `weakref.finalize`는 cleanup callback을 object method와 분리할 수 있다`의 로그 시각과 상태 식별자를 맞춰 본다하여 우연한 통과를 배제한다. 예상과 다르면 `CHAPTER 05 · `weakref.finalize`는 cleanup callback을 object method와 분리할 수 있다`의 타입, 값, 호출 순서, 예외 경계 가운데 최초로 달라진 항목부터 확인하고 최소 수정 뒤 다시 실행한다. P73-C5의 마무리는 성공·실패 모두 결정적으로 끝나는지 확인하는 것이다. 통과 기준은 `CHAPTER 05 · `weakref.finalize`는 cleanup callback을 object method와 분리할 수 있다`의 정상 사례와 변형 사례가 모두 설명 가능한 결과를 내고 같은 절차를 반복해도 동일한 상태 계약을 유지하는 것이다.
 ## CHAPTER 06 · scarce resource는 finalizer가 아니라 명시적 lifetime protocol로 관리한다
 
 ### 시작 전 용어집
