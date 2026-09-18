@@ -1,6 +1,6 @@
 # PART 76 · Dynamic execution boundary — `compile`·`eval`·`exec`와 namespace·보안 경계를 분리하기
 
-Python은 source text를 runtime에 compile하고 실행할 수 있다. 이 기능은 REPL, template engine, rule system, debugger를 만들 때 강력하지만 “문자열을 코드로 바꾼다”는 순간 데이터와 프로그램의 경계가 사라질 수 있다. 특히 입력이 신뢰되지 않으면 namespace를 제한하는 정도로 안전한 sandbox가 된다고 생각해서는 안 된다. 이 PART에서는 **compile 단계, 실행 namespace, trust boundary**를 분리한다.
+Python은 source text를 runtime에 compile하고 실행할 수 있다. 이 기능은 REPL, template engine, rule system, debugger를 만들 때 강력하지만 “문자열을 코드로 바꾼다”는 순간 데이터와 프로그램의 경계가 사라질 수 있다. 특히 입력이 신뢰되지 않으면 namespace를 제한하는 정도로 안전한 sandbox가 된다고 생각해서는 안 된다. 이 절에서는 **compile 단계, 실행 namespace, trust boundary**를 분리한다.
 
 ---
 
@@ -91,6 +91,8 @@ print(ns["y"])
 
 ---
 
+**직접 확인하기 — CHAPTER 03 · `exec`는 statement block을 지정한 namespace에서 실행한다**
+CHAPTER 03 · `exec`는 statement block을 지정한 namespace에서 실행한다은 설명만 읽고 넘기기보다 가장 작은 실행 예제로 규칙을 확인해야 오래 남는다. 먼저 입력이나 객체 하나만 두고 기대 결과를 적은 뒤 실행한다. 다음에는 값 하나, 호출 순서 하나, 경계 조건 하나만 바꿔 실제 결과가 어떻게 달라지는지 비교한다. 한 줄 해석은 “CHAPTER 03 · `exec`는 statement block을 지정한 namespace에서 실행한다의 규칙이 값의 의미와 프로그램 상태 변화에 어떤 제약을 주는지 확인한다”이다. 예상과 다르면 타입·정체성·호출 순서·예외 경계를 차례로 좁히고, 수정 뒤 원래 예제와 반대 조건 예제를 모두 다시 실행한다. 마지막에는 왜 그런 결과가 나왔는지 자기 문장으로 설명해 본다.
 ## CHAPTER 04 · builtins를 제한하는 것은 공격 표면 축소일 뿐 완전한 격리가 아니다
 
 ### 시작 전 용어집
