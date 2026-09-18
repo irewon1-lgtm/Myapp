@@ -89,6 +89,8 @@ checkpoint says item 42 done -> crash -> item 42 output never committed
 
 ---
 
+**현장 디버깅 점검 — CHAPTER 03 · output commit과 checkpoint update 사이의 atomicity gap을 줄여야 한다**
+CHAPTER 03 · output commit과 checkpoint update 사이의 atomicity gap을 줄여야 한다을 운영에서 검증할 때는 재시작 뒤에도 상태가 이어지는지까지 확인해야 한다. 먼저 처리 전 상태와 완료 조건을 기록하고, 정상 입력으로 기준 결과를 만든다. 그다음 처리 중간에 강제 중단, 일부 레코드 실패, 중복 전달, 재시작을 각각 따로 주입한다. 재실행 후에는 완료된 항목이 다시 처리되지 않는지, 실패 항목만 안전하게 재시도되는지, 체크포인트와 실제 데이터 상태가 일치하는지 비교한다. 통과 기준은 모든 성공 항목이 정확히 한 번 반영되고 실패 항목은 추적 가능한 상태로 남으며, 같은 시나리오를 반복해도 결과가 변하지 않는 것이다.
 ## CHAPTER 04 · replay window는 마지막 checkpoint 이후 얼마만큼 다시 처리할지 결정한다
 
 ### 시작 전 용어집
@@ -166,6 +168,8 @@ job_id, input_digest, schema_version, processor_version, progress
 
 ---
 
+**현장 디버깅 점검 — CHAPTER 06 · 하나의 partition progress에는 single owner 또는 coordination이 필요하다**
+CHAPTER 06 · 하나의 partition progress에는 single owner 또는 coordination이 필요하다을 운영에서 검증할 때는 재시작 뒤에도 상태가 이어지는지까지 확인해야 한다. 먼저 처리 전 상태와 완료 조건을 기록하고, 정상 입력으로 기준 결과를 만든다. 그다음 처리 중간에 강제 중단, 일부 레코드 실패, 중복 전달, 재시작을 각각 따로 주입한다. 재실행 후에는 완료된 항목이 다시 처리되지 않는지, 실패 항목만 안전하게 재시도되는지, 체크포인트와 실제 데이터 상태가 일치하는지 비교한다. 통과 기준은 모든 성공 항목이 정확히 한 번 반영되고 실패 항목은 추적 가능한 상태로 남으며, 같은 시나리오를 반복해도 결과가 변하지 않는 것이다.
 ## CHAPTER 07 · corrupt checkpoint는 입력 손실로 이어지지 않게 검증 후 fallback한다
 
 ### 시작 전 용어집
