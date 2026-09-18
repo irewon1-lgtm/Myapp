@@ -1,0 +1,154 @@
+name: Release project-authored Track 01-02 v1.2.20 once
+
+on:
+  push:
+    branches:
+      - integration/project-app-track01-track02-20260918
+    paths:
+      - '.release/GO_PROJECT_TRACK12_V1_2_20'
+
+permissions:
+  contents: write
+
+jobs:
+  build-verify-release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    env:
+      GH_TOKEN: ${{ github.token }}
+
+    steps:
+      - name: Checkout exact project app integration
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Verify exact project-authored app and Track 01-02
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -Fq 'versionCode = 23' app/build.gradle.kts
+          grep -Fq 'versionName = "1.2.20"' app/build.gradle.kts
+          test "$(git rev-parse HEAD:app/src/main/assets/textbook/v5/track_01)" = "bbe0f0b5b5a8c56f2032658a1fbdb8427dc195aa"
+          test "$(git rev-parse HEAD:app/src/main/assets/textbook/v5/track_02)" = "5745a79cfc46739119948233764bd77114337f02"
+          test "$(find app/src/main/assets/textbook/v5/track_01 -maxdepth 1 -type f -name 'part_*.md' | wc -l)" -eq 105
+          test "$(find app/src/main/assets/textbook/v5/track_02 -maxdepth 1 -type f -name 'part_*.md' | wc -l)" -eq 105
+          grep -Fq 'V5TrackBookScreen(' app/src/main/java/com/futuretech/poweruser/ui/AdaptiveTextbookScreen.kt
+          grep -Fq 'V4PagedBookScreen(' app/src/main/java/com/futuretech/poweruser/ui/AdaptiveTextbookScreen.kt
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: gradle
+
+      - name: Set up Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Prepare TypeScript compiler assets
+        run: |
+          set -euo pipefail
+          npm install --ignore-scripts --no-audit --no-fund
+          npm run prepare:typescript
+          test -s app/src/main/assets/typescript.js
+          test -s app/src/main/assets/ts_libs.js
+
+      - name: Verify project textbook reader
+        run: |
+          set -euo pipefail
+          chmod +x ./gradlew
+          ./gradlew \
+            testDebugUnitTest \
+            --tests "com.futuretech.poweruser.textbook.V5EvidenceCoverageAssetTest" \
+            --tests "com.futuretech.poweruser.textbook.V5BookReaderSourceContractTest" \
+            --tests "com.futuretech.poweruser.textbook.TextbookMarkdownParserTest" \
+            --tests "com.futuretech.poweruser.update.AppUpdateManagerTest" \
+            assembleRelease \
+            --stacktrace
+
+      - name: Sign and verify APK
+        shell: bash
+        run: |
+          set -euo pipefail
+          BUILD_TOOLS="$(ls -1 "$ANDROID_HOME/build-tools" | sort -V | tail -n 1)"
+          ZIPALIGN="$ANDROID_HOME/build-tools/$BUILD_TOOLS/zipalign"
+          APKSIGNER="$ANDROID_HOME/build-tools/$BUILD_TOOLS/apksigner"
+          AAPT="$ANDROID_HOME/build-tools/$BUILD_TOOLS/aapt"
+          mkdir -p final-dist
+          "$ZIPALIGN" -p -f 4 \
+            app/build/outputs/apk/release/app-release-unsigned.apk \
+            final-dist/Myapp_AI_Coding_Textbook_aligned.apk
+          "$APKSIGNER" sign \
+            --ks test.keystore \
+            --ks-key-alias testkey \
+            --ks-pass pass:password \
+            --key-pass pass:password \
+            --out final-dist/Myapp_AI_Coding_Textbook_latest.apk \
+            final-dist/Myapp_AI_Coding_Textbook_aligned.apk
+          "$APKSIGNER" verify --verbose --print-certs \
+            final-dist/Myapp_AI_Coding_Textbook_latest.apk \
+            | tee final-dist/apksigner_verify.txt
+          "$AAPT" dump badging final-dist/Myapp_AI_Coding_Textbook_latest.apk \
+            | tee final-dist/aapt_badging.txt
+          grep -Fq "versionCode='23'" final-dist/aapt_badging.txt
+          grep -Fq "versionName='1.2.20'" final-dist/aapt_badging.txt
+          sha256sum final-dist/Myapp_AI_Coding_Textbook_latest.apk \
+            | tee final-dist/Myapp_AI_Coding_Textbook_latest.sha256
+          rm final-dist/Myapp_AI_Coding_Textbook_aligned.apk
+
+      - name: Android launch smoke test
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 34
+          arch: x86_64
+          profile: pixel_6
+          disable-animations: true
+          script: bash tools/final_release_smoke.sh
+
+      - name: Publish v1.2.20
+        shell: bash
+        run: |
+          set -euo pipefail
+          TAG="v1.2.20"
+          APK="final-dist/Myapp_AI_Coding_Textbook_latest.apk"
+          NOTES="final-dist/release_notes.md"
+          cat > "$NOTES" <<EOF
+          ## 코딩 완전과정 v1.2.20
+
+          - Source commit: ${GITHUB_SHA}
+          - 앱: 코딩코딩 프로젝트에서 만든 textbook-v5-app-preview-20260918 기준 앱
+          - TRACK 01: 코딩코딩 프로젝트 정본 105 PART
+          - TRACK 02: 코딩코딩 프로젝트 정본 105 PART
+          - 다른 LIVE/복구 원고 혼합 없음
+          - Signed updater asset: Myapp_AI_Coding_Textbook_latest.apk
+          EOF
+
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            echo "v1.2.20 already exists; refusing overwrite." >&2
+            exit 1
+          fi
+          gh release create "$TAG" "$APK" \
+            --target "${GITHUB_SHA}" \
+            --title "코딩 완전과정 v1.2.20 프로젝트 TRACK 01·02" \
+            --notes-file "$NOTES" \
+            --latest
+
+      - name: Upload evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: project-track01-track02-v1.2.20-evidence
+          retention-days: 7
+          if-no-files-found: warn
+          path: |
+            final-dist/Myapp_AI_Coding_Textbook_latest.apk
+            final-dist/Myapp_AI_Coding_Textbook_latest.sha256
+            final-dist/apksigner_verify.txt
+            final-dist/aapt_badging.txt
+            final-dist/release_notes.md
+            final-dist/launch_smoke.txt
+            final-dist/logcat_full.txt
+            final-dist/logcat_crash_excerpt.txt
