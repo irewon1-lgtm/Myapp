@@ -1,6 +1,6 @@
 # PART 90 · Memory diagnostics — tracemalloc·GC·retention graph으로 leak와 정상 cache를 구분하기
 
-Python memory 문제를 보면 먼저 “GC가 안 돈다”거나 “메모리 leak이다”라고 단정하기 쉽다. 실제로는 live cache가 커지는 경우, traceback/frame이 객체를 붙잡는 경우, cycle이 늦게 정리되는 경우, native allocation이 Python-level 추적에 안 잡히는 경우가 서로 다르다. 이 PART에서는 **증가를 측정하고, allocation과 retention을 분리하고, 재현 가능한 window에서 비교하는 방법**을 다룬다.
+Python memory 문제를 보면 먼저 “GC가 안 돈다”거나 “메모리 leak이다”라고 단정하기 쉽다. 실제로는 live cache가 커지는 경우, traceback/frame이 객체를 붙잡는 경우, cycle이 늦게 정리되는 경우, native allocation이 Python-level 추적에 안 잡히는 경우가 서로 다르다. 이 절에서는 **증가를 측정하고, allocation과 retention을 분리하고, 재현 가능한 window에서 비교하는 방법**을 다룬다.
 
 ---
 
@@ -40,6 +40,8 @@ after = tracemalloc.take_snapshot()
 
 ---
 
+**현장 디버깅 점검 — CHAPTER 01 · tracemalloc snapshot은 Python allocation이 어디서 늘었는지 비교할 출발점을 만든다**
+CHAPTER 01 · tracemalloc snapshot은 Python allocation이 어디서 늘었는지 비교할 출발점을 만든다 문제를 실제 환경에서 확인할 때는 정상 경로와 실패 경로를 분리해 같은 입력으로 재현 가능하게 만든다. 실행 전에는 기대 상태를 적고, 실행 중에는 입력값·중간 상태·반환값·로그 시각을 같은 순서로 수집한다. 실패 주입은 지연, 부분 데이터, 잘못된 형식, 취소, 재시도처럼 한 조건만 선택해 넣고 다른 조건은 고정한다. 수정 뒤에는 정상 입력과 실패 입력을 모두 다시 실행한다. 통과 기준은 예외가 단순히 사라지는 것이 아니라 데이터 손실·중복·자원 누수 없이 기대 상태로 끝나고, 실패 시에도 정해진 복구 또는 오류 경로가 관찰되는 것이다.
 ## CHAPTER 02 · snapshot diff는 allocation 증가 위치를 보여주지만 retention 원인을 자동 설명하지 않는다
 
 ### 시작 전 용어집
@@ -68,6 +70,8 @@ for stat in stats[:10]:
 
 ---
 
+**현장 디버깅 점검 — CHAPTER 02 · snapshot diff는 allocation 증가 위치를 보여주지만 retention 원인을 자동 설명하지 않는다**
+CHAPTER 02 · snapshot diff는 allocation 증가 위치를 보여주지만 retention 원인을 자동 설명하지 않는다 문제를 실제 환경에서 확인할 때는 정상 경로와 실패 경로를 분리해 같은 입력으로 재현 가능하게 만든다. 실행 전에는 기대 상태를 적고, 실행 중에는 입력값·중간 상태·반환값·로그 시각을 같은 순서로 수집한다. 실패 주입은 지연, 부분 데이터, 잘못된 형식, 취소, 재시도처럼 한 조건만 선택해 넣고 다른 조건은 고정한다. 수정 뒤에는 정상 입력과 실패 입력을 모두 다시 실행한다. 통과 기준은 예외가 단순히 사라지는 것이 아니라 데이터 손실·중복·자원 누수 없이 기대 상태로 끝나고, 실패 시에도 정해진 복구 또는 오류 경로가 관찰되는 것이다.
 ## CHAPTER 03 · GC debug는 cycle과 unreachable object를 조사하는 도구다
 
 ### 시작 전 용어집
@@ -153,6 +157,8 @@ working set 증가 -> cache 증가 -> 일정 크기에서 plateau
 
 ---
 
+**현장 디버깅 점검 — CHAPTER 05 · cache growth와 leak은 둘 다 memory 증가지만 정상성 판단 기준이 다르다**
+CHAPTER 05 · cache growth와 leak은 둘 다 memory 증가지만 정상성 판단 기준이 다르다 문제를 실제 환경에서 확인할 때는 정상 경로와 실패 경로를 분리해 같은 입력으로 재현 가능하게 만든다. 실행 전에는 기대 상태를 적고, 실행 중에는 입력값·중간 상태·반환값·로그 시각을 같은 순서로 수집한다. 실패 주입은 지연, 부분 데이터, 잘못된 형식, 취소, 재시도처럼 한 조건만 선택해 넣고 다른 조건은 고정한다. 수정 뒤에는 정상 입력과 실패 입력을 모두 다시 실행한다. 통과 기준은 예외가 단순히 사라지는 것이 아니라 데이터 손실·중복·자원 누수 없이 기대 상태로 끝나고, 실패 시에도 정해진 복구 또는 오류 경로가 관찰되는 것이다.
 ## CHAPTER 06 · memory measurement 자체도 overhead와 noise를 만든다
 
 ### 시작 전 용어집
@@ -207,6 +213,8 @@ warm-up -> snapshot A -> workload 1000회 -> snapshot B -> workload 1000회 -> s
 
 ---
 
+**현장 디버깅 점검 — CHAPTER 07 · reproduction window는 동일 workload와 warm-up을 맞춰야 비교가 의미 있다**
+CHAPTER 07 · reproduction window는 동일 workload와 warm-up을 맞춰야 비교가 의미 있다 문제를 실제 환경에서 확인할 때는 정상 경로와 실패 경로를 분리해 같은 입력으로 재현 가능하게 만든다. 실행 전에는 기대 상태를 적고, 실행 중에는 입력값·중간 상태·반환값·로그 시각을 같은 순서로 수집한다. 실패 주입은 지연, 부분 데이터, 잘못된 형식, 취소, 재시도처럼 한 조건만 선택해 넣고 다른 조건은 고정한다. 수정 뒤에는 정상 입력과 실패 입력을 모두 다시 실행한다. 통과 기준은 예외가 단순히 사라지는 것이 아니라 데이터 손실·중복·자원 누수 없이 기대 상태로 끝나고, 실패 시에도 정해진 복구 또는 오류 경로가 관찰되는 것이다.
 ## CHAPTER 08 · memory diagnostic contract는 측정 결과와 해석을 분리한다
 
 ### 시작 전 용어집
