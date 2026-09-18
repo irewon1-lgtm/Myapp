@@ -227,8 +227,8 @@ class Account:
 
 ---
 
-**실행 점검 67-6 — CHAPTER 06 · `__delattr__`는 이름 삭제를 domain transition으로 바꿀 수 있다**
-CHAPTER 06 · `__delattr__`는 이름 삭제를 domain transition으로 바꿀 수 있다을 이해할 때는 정상 사례 하나를 정한 뒤 변경 전후의 반환값과 부수효과를 따로 확인한다. 이어서 값 하나나 호출 순서 하나만 바꿔 결과 차이를 확인하면 CHAPTER 06 · `__delattr__`는 이름 삭제를 domain transition으로 바꿀 수 있다이 실제 프로그램 상태에 어떤 제약을 주는지 보인다. PART 67 CHAPTER 6의 한 줄 해석은 “규칙을 값과 상태 변화로 확인한다”이다. 우연히 통과한 한 번의 실행보다 반복 가능한 관찰을 통과 기준으로 삼는다. 마지막에는 타입·정체성·수명·예외 경계 중 실제 원인이 어디였는지 자기 문장으로 설명해, 단순한 문법 복사가 아니라 동작 원리까지 이해했는지 확인한다.
+**검증 시나리오 P67-C06 — CHAPTER 06 · `__delattr__`는 이름 삭제를 domain transition으로 바꿀 수 있다**
+`CHAPTER 06 · `__delattr__`는 이름 삭제를 domain transition으로 바꿀 수 있다` 검증은 가장 작은 객체 상태로 시작하는 데서 시작한다. P67-C6에서는 `CHAPTER 06 · `__delattr__`는 이름 삭제를 domain transition으로 바꿀 수 있다` 실행 직전 상태를 먼저 적고, 실행 뒤 얻은 값과 비교해 어떤 규칙이 실제로 적용됐는지 확인한다. 두 번째 단계에서는 `CHAPTER 06 · `__delattr__`는 이름 삭제를 domain transition으로 바꿀 수 있다`에 대해 속성 하나만 바꿔 재실행고, 다른 코드는 그대로 두어 원인 후보를 하나로 제한한다. 이때 `CHAPTER 06 · `__delattr__`는 이름 삭제를 domain transition으로 바꿀 수 있다`의 반환값과 부수효과를 따로 기록하여 결과만 맞는 우연한 통과를 배제한다. 예상이 빗나가면 `CHAPTER 06 · `__delattr__`는 이름 삭제를 domain transition으로 바꿀 수 있다`의 타입, 값, 호출 순서, 예외 경계 가운데 최초로 달라진 항목부터 확인하고 최소 수정 뒤 다시 실행한다. P67-C6의 마무리는 수정 뒤 원래 조건을 다시 회귀 확인하는 것이다. 통과 기준은 `CHAPTER 06 · `__delattr__`는 이름 삭제를 domain transition으로 바꿀 수 있다`의 정상 사례와 변형 사례가 모두 설명 가능한 결과를 내고, 같은 절차를 반복했을 때 동일한 상태 계약을 유지하는 것이다.
 ## CHAPTER 07 · descriptor precedence는 attribute lookup 전체 pipeline 안에서 이해해야 한다
 
 ### 시작 전 용어집
