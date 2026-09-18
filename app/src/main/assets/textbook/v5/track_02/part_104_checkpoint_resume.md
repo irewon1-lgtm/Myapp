@@ -89,8 +89,8 @@ checkpoint says item 42 done -> crash -> item 42 output never committed
 
 ---
 
-**현장 점검 104-3 — CHAPTER 03 · output commit과 checkpoint update 사이의 atomicity gap을 줄여야 한다**
-재시작 전후에 비교할 상태 필드를 명확히 정한다. CHAPTER 03 · output commit과 checkpoint update 사이의 atomicity gap을 줄여야 한다 검증에서는 관찰값은 성공 여부뿐 아니라 중복 반영, 누락, 열린 자원, 대기 작업까지 포함한다. PART 104의 CHAPTER 3은 중간 중단이나 재전달이 발생해도 상태가 뒤섞이지 않는지 확인하는 것이 핵심이므로, 실패 조건은 한 번에 하나만 주입하고 나머지 조건은 고정한다. 수정 뒤에는 원래 정상 사례, 방금 만든 실패 사례, 같은 요청을 다시 보내는 재실행 사례를 순서대로 반복한다. 통과 기준은 체크포인트와 실제 데이터 상태가 일치하고 재실행 결과가 변하지 않는 것이다.
+**검증 시나리오 P104-C3 — CHAPTER 03 · output commit과 checkpoint update 사이의 atomicity gap을 줄여야 한다**
+`CHAPTER 03 · output commit과 checkpoint update 사이의 atomicity gap을 줄여야 한다` 검증은 정상 경로를 먼저 재현하는 데서 시작한다. P104-C3에서는 `CHAPTER 03 · output commit과 checkpoint update 사이의 atomicity gap을 줄여야 한다` 실행 직전 상태를 먼저 적고 실행 뒤 값과 비교해 실제 규칙을 확인한다. 두 번째 단계에서는 `CHAPTER 03 · output commit과 checkpoint update 사이의 atomicity gap을 줄여야 한다`에 대해 오류 경로 하나를 의도적으로 만든다고 다른 코드는 그대로 두어 원인 후보를 하나로 제한한다. 이때 `CHAPTER 03 · output commit과 checkpoint update 사이의 atomicity gap을 줄여야 한다`의 예외 종류와 직전 상태를 함께 남긴다하여 우연한 통과를 배제한다. 예상과 다르면 `CHAPTER 03 · output commit과 checkpoint update 사이의 atomicity gap을 줄여야 한다`의 타입, 값, 호출 순서, 예외 경계 가운데 최초로 달라진 항목부터 확인하고 최소 수정 뒤 다시 실행한다. P104-C3의 마무리는 복구 후 같은 오류가 다시 재현되지 않는지 검사하는 것이다. 통과 기준은 `CHAPTER 03 · output commit과 checkpoint update 사이의 atomicity gap을 줄여야 한다`의 정상 사례와 변형 사례가 모두 설명 가능한 결과를 내고 같은 절차를 반복해도 동일한 상태 계약을 유지하는 것이다.
 ## CHAPTER 04 · replay window는 마지막 checkpoint 이후 얼마만큼 다시 처리할지 결정한다
 
 ### 시작 전 용어집
@@ -168,8 +168,8 @@ job_id, input_digest, schema_version, processor_version, progress
 
 ---
 
-**현장 점검 104-6 — CHAPTER 06 · 하나의 partition progress에는 single owner 또는 coordination이 필요하다**
-완료된 작업과 미완료 작업의 경계를 먼저 숫자로 표시한다. CHAPTER 06 · 하나의 partition progress에는 single owner 또는 coordination이 필요하다 검증에서는 실행 중에는 상태 전이, 재시도 횟수, 최종 반환값을 같은 타임라인에 놓는다. PART 104의 CHAPTER 6은 중간 중단이나 재전달이 발생해도 상태가 뒤섞이지 않는지 확인하는 것이 핵심이므로, 실패 조건은 한 번에 하나만 주입하고 나머지 조건은 고정한다. 수정 뒤에는 원래 정상 사례, 방금 만든 실패 사례, 같은 요청을 다시 보내는 재실행 사례를 순서대로 반복한다. 통과 기준은 지연이나 중단이 있어도 무한 재시도·교착·자원 누수가 생기지 않는 것이다.
+**검증 시나리오 P104-C6 — CHAPTER 06 · 하나의 partition progress에는 single owner 또는 coordination이 필요하다**
+`CHAPTER 06 · 하나의 partition progress에는 single owner 또는 coordination이 필요하다` 검증은 성공 사례를 기준선으로 저장하는 데서 시작한다. P104-C6에서는 `CHAPTER 06 · 하나의 partition progress에는 single owner 또는 coordination이 필요하다` 실행 직전 상태를 먼저 적고 실행 뒤 값과 비교해 실제 규칙을 확인한다. 두 번째 단계에서는 `CHAPTER 06 · 하나의 partition progress에는 single owner 또는 coordination이 필요하다`에 대해 실패 조건은 하나만 주입고 다른 코드는 그대로 두어 원인 후보를 하나로 제한한다. 이때 `CHAPTER 06 · 하나의 partition progress에는 single owner 또는 coordination이 필요하다`의 로그 시각과 상태 식별자를 맞춰 본다하여 우연한 통과를 배제한다. 예상과 다르면 `CHAPTER 06 · 하나의 partition progress에는 single owner 또는 coordination이 필요하다`의 타입, 값, 호출 순서, 예외 경계 가운데 최초로 달라진 항목부터 확인하고 최소 수정 뒤 다시 실행한다. P104-C6의 마무리는 성공·실패 모두 결정적으로 끝나는지 확인하는 것이다. 통과 기준은 `CHAPTER 06 · 하나의 partition progress에는 single owner 또는 coordination이 필요하다`의 정상 사례와 변형 사례가 모두 설명 가능한 결과를 내고 같은 절차를 반복해도 동일한 상태 계약을 유지하는 것이다.
 ## CHAPTER 07 · corrupt checkpoint는 입력 손실로 이어지지 않게 검증 후 fallback한다
 
 ### 시작 전 용어집
