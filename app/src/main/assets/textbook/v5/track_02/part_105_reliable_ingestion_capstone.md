@@ -241,3 +241,95 @@ working generation -> validate -> fsync/commit -> atomic publish pointer
 - **뜻:** 최종 검증 matrix에는 malformed input, archive traversal, duplicate upload, downstream timeout, retry 후 성공, breaker open, worker crash, checkpoint corruption, shutdown 중 in-flight work, publish 직전 crash가 포함된다.
 - **왜 중요한가:** 이 PART의 핵심은 **신뢰성 기능을 개별 유틸리티로 나열하지 않고, 입력이 시스템에 들어와 durable 결과로 공개될 때까지 각 failure boundary의 ownership·budget·replay semantics를 연결해 전체 프로그램 계약으로 만드는 것**이다.
 - **예시:** 최종 검증 matrix에는 malformed input, archive traversal, duplicate …
+
+---
+
+## 실전 학습 루프 · reliable ingestion 전체 연결
+
+### 1. 쉬운 예
+
+사용자가 ZIP 파일 하나를 업로드한다고 하자. 서비스는 파일을 받자마자 DB에 넣지 않는다. 먼저 요청 크기와 파일 수를 제한하고 private staging에 저장한 뒤 archive 경로·압축 해제 크기를 검사한다. 그 다음 CSV/JSON을 parse하고 schema와 domain rule을 검증하며, content identity와 operation identity로 중복을 구분한다. 외부 API 호출에는 deadline·retry·circuit breaker를 적용하고, 처리 위치는 durable checkpoint로 남긴다. 마지막 결과는 임시 위치에서 완성한 뒤 atomic publish한다.
+
+이 흐름에서 중요한 것은 “정상적으로 한 번 실행됐는가”가 아니다. **어느 단계에서 process가 죽어도 이미 확정된 결과가 무엇인지, 재시작 뒤 어디서 이어야 하는지, 무엇을 다시 실행해도 안전한지**가 설명돼야 한다.
+
+### 2. 한 줄 해석
+
+reliable ingestion은 parser 하나가 아니라 **신뢰 경계 → 자원 한도 → 검증 → 중복 제어 → 외부 의존성 → checkpoint → atomic publish**를 하나의 failure model로 묶는 작업이다.
+
+### 3. 직접 실행
+
+아래 예제는 실제 서비스 전체를 구현한 것이 아니라 “검증된 입력만 publish한다”는 핵심 상태 전이를 작게 만든 것이다.
+
+```python
+from dataclasses import dataclass
+
+@dataclass(frozen=True)
+class Record:
+    record_id: str
+    amount: int
+
+published = {}
+processed_operations = set()
+
+def validate(raw):
+    record_id = str(raw['id']).strip()
+    amount = int(raw['amount'])
+    if not record_id:
+        raise ValueError('empty id')
+    if amount < 0:
+        raise ValueError('negative amount')
+    return Record(record_id, amount)
+
+def ingest(operation_id, raw):
+    if operation_id in processed_operations:
+        return 'duplicate'
+    record = validate(raw)
+    published[record.record_id] = record
+    processed_operations.add(operation_id)
+    return 'published'
+
+print(ingest('op-1', {'id': 'A1', 'amount': 1200}))
+print(ingest('op-1', {'id': 'A1', 'amount': 1200}))
+```
+
+이 예제도 아직 완전하지 않다. `published` 변경과 `processed_operations` 기록 사이에 process가 죽으면 재실행 시 중복 부작용이 생길 수 있다. 실제 시스템에서는 두 상태의 원자성, transaction/outbox 같은 저장 전략, 또는 재실행 가능한 idempotent write를 설계해야 한다.
+
+### 4. 수정 실습
+
+1. `validate()`에 허용 가능한 최대 금액과 허용 필드 집합을 추가한다. unknown field를 무시할지 거부할지도 정책으로 적는다.
+2. `operation_id`는 같은데 payload가 다른 경우를 거부하도록 request fingerprint를 추가한다.
+3. 외부 API를 호출하는 단계가 있다고 가정하고 전체 deadline 2초 안에서 attempt timeout과 최대 retry 횟수를 계산한다.
+4. 1,000개 record를 처리하다 600번째에서 crash했다고 가정한다. checkpoint를 저장하는 시점과 record publish 순서를 바꿔 보며 중복·누락 가능성을 표로 만든다.
+5. 최종 결과 디렉터리를 직접 덮어쓰지 않고 staging 디렉터리 완성 후 rename/replace로 공개하도록 바꾼다.
+
+### 5. 실패 주입 문제
+
+다음 다섯 지점에서 process가 즉시 종료된다고 가정한다.
+
+```text
+A. archive extraction 중간
+B. schema validation 완료 직후
+C. 외부 API 성공 직후 응답 수신 전
+D. record 저장 후 checkpoint 저장 전
+E. final staging 완성 후 publish rename 전
+```
+
+각 지점마다 다음 네 질문에 답한다.
+
+- 재시작 뒤 다시 실행해도 안전한 단계는 어디인가?
+- durable하게 남아 있는 증거는 무엇인가?
+- 중복 부작용이 생길 수 있는가?
+- 사용자에게 “성공”을 반환해도 되는 시점은 언제인가?
+
+### 6. 정답과 오답 설명
+
+**핵심 정답:** A와 B는 아직 publish 전이라 staging을 버리고 다시 시작하기 쉽게 설계할 수 있다. C는 remote side effect 성공 여부가 모호하므로 idempotency key나 operation lookup이 필요하다. D는 record write와 checkpoint가 분리돼 있으면 같은 record를 다시 처리할 수 있으므로 write 자체가 idempotent하거나 둘을 하나의 transaction 경계로 묶어야 한다. E는 final artifact가 완성됐어도 아직 공개 전이므로 atomic publish를 다시 시도할 수 있게 상태를 구분해야 한다.
+
+**자주 나오는 오답 1:** “에러가 나면 전체를 처음부터 다시 돌리면 된다.” 처리에 외부 부작용이 있으면 중복 실행 위험이 생긴다.
+
+**자주 나오는 오답 2:** “checkpoint 숫자가 있으면 정확히 이어진다.” checkpoint와 실제 side effect commit 순서가 어긋나면 누락 또는 중복이 생길 수 있다.
+
+**자주 나오는 오답 3:** “atomic rename을 쓰면 전체 ingestion이 atomic하다.” rename은 최종 공개 한 단계의 atomic visibility를 도울 뿐 외부 API·DB write·checkpoint까지 하나의 원자 연산으로 만들지 않는다.
+
+마지막에는 전체 시스템을 **상태 머신**으로 그린다. 각 화살표에 “전제조건 / durable write / 실패 시 재실행 가능 여부 / 사용자 성공 응답 가능 여부”를 적는다. 이 네 항목을 설명할 수 있으면 TRACK 02의 문법 지식이 실제 프로그램 설계 능력으로 연결된 것이다.
+
