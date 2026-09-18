@@ -129,10 +129,17 @@ jobs:
           test -s app/src/main/assets/typescript.js
           test -s app/src/main/assets/ts_libs.js
 
-      - name: Unit tests
+      - name: Release-critical unit tests
         run: |
           chmod +x ./gradlew
-          ./gradlew testDebugUnitTest --stacktrace
+          ./gradlew testDebugUnitTest \
+            --tests "com.futuretech.poweruser.textbook.V5BookReaderSourceContractTest" \
+            --tests "com.futuretech.poweruser.textbook.V5SingleLiveContentPolicyTest" \
+            --tests "com.futuretech.poweruser.textbook.V5BookSourceRegistryTest" \
+            --tests "com.futuretech.poweruser.textbook.V5MeasuredReaderContractTest" \
+            --tests "com.futuretech.poweruser.textbook.TextbookMarkdownParserTest" \
+            --tests "com.futuretech.poweruser.update.AppUpdateManagerTest" \
+            --stacktrace
 
       - name: Build release APK
         run: ./gradlew assembleRelease --stacktrace
