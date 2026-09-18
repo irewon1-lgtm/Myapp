@@ -96,7 +96,7 @@ public class MainActivity extends Activity {
         root.addView(text("완전 초보 → 직접 앱 제작 → AI 활용 → 시스템 심화", 15, MUTED, Typeface.NORMAL),
                 topMargin(wrapWrap(), dp(10)));
 
-        TextView state = text("TRACK 01  ·  64장 학습 콘텐츠 완료", 13, ACCENT, Typeface.BOLD);
+        TextView state = text("TRACK 01  ·  " + track1Pages.size() + "장 학습 콘텐츠 완료", 13, ACCENT, Typeface.BOLD);
         state.setPadding(dp(12), dp(9), dp(12), dp(9));
         state.setBackground(roundRect(ACCENT_SOFT, ACCENT_SOFT, 12));
         root.addView(state, topMargin(wrapWrap(), dp(14)));
@@ -349,6 +349,10 @@ public class MainActivity extends Activity {
         body.setLineSpacing(0f, 1.25f);
         paper.addView(body, topMargin(matchWrap(), dp(18)));
 
+        if (page.hasEasyExplanation()) {
+            paper.addView(buildEasyExplanationBox(page.easyExplanation), topMargin(matchWrap(), dp(16)));
+        }
+
         if (page.hasCode()) {
             paper.addView(buildCodeBox(page.code), topMargin(matchWrap(), dp(16)));
         }
@@ -358,7 +362,7 @@ public class MainActivity extends Activity {
         }
 
         if (page.hasQuestion()) {
-            paper.addView(buildQuestionBox(page.question, page.answer), topMargin(matchWrap(), dp(16)));
+            paper.addView(buildQuestionBox(page.question), topMargin(matchWrap(), dp(16)));
         }
 
         if (page.hasKeywords()) {
@@ -377,6 +381,19 @@ public class MainActivity extends Activity {
         paper.addView(hint, topMargin(matchWrap(), dp(18)));
 
         return scroll;
+    }
+
+    private View buildEasyExplanationBox(String explanation) {
+        LinearLayout box = vertical();
+        box.setPadding(dp(14), dp(13), dp(14), dp(14));
+        box.setBackground(roundRect(Color.rgb(255, 249, 232), Color.rgb(239, 221, 172), 14));
+
+        box.addView(text("이게 무슨 뜻이야? — 더 쉽게 설명", 12, Color.rgb(126, 83, 0), Typeface.BOLD));
+
+        TextView body = text(explanation, 15, TEXT, Typeface.NORMAL);
+        body.setLineSpacing(0f, 1.25f);
+        box.addView(body, topMargin(matchWrap(), dp(8)));
+        return box;
     }
 
     private View buildCodeBox(String code) {
@@ -418,10 +435,14 @@ public class MainActivity extends Activity {
         TextView body = text(practice, 15, TEXT, Typeface.NORMAL);
         body.setLineSpacing(0f, 1.22f);
         box.addView(body, topMargin(matchWrap(), dp(7)));
+
+        TextView answerNotice = text("→ 다음 장: 예시 정답 + 한 단계씩 풀이", 12, ACCENT, Typeface.BOLD);
+        answerNotice.setPadding(0, dp(10), 0, 0);
+        box.addView(answerNotice);
         return box;
     }
 
-    private View buildQuestionBox(String question, String answerText) {
+    private View buildQuestionBox(String question) {
         LinearLayout box = vertical();
         box.setPadding(dp(14), dp(13), dp(14), dp(14));
         box.setBackground(roundRect(SURFACE, BORDER, 14));
@@ -431,19 +452,9 @@ public class MainActivity extends Activity {
         q.setLineSpacing(0f, 1.22f);
         box.addView(q, topMargin(matchWrap(), dp(7)));
 
-        TextView reveal = actionButton("정답 보기");
-        box.addView(reveal, topMargin(wrapWrap(), dp(10)));
-
-        TextView answer = text(answerText, 14, TEXT, Typeface.NORMAL);
-        answer.setLineSpacing(0f, 1.2f);
-        answer.setVisibility(View.GONE);
-        box.addView(answer, topMargin(matchWrap(), dp(10)));
-
-        reveal.setOnClickListener(v -> {
-            boolean hidden = answer.getVisibility() != View.VISIBLE;
-            answer.setVisibility(hidden ? View.VISIBLE : View.GONE);
-            reveal.setText(hidden ? "정답 닫기" : "정답 보기");
-        });
+        TextView answerNotice = text("정답은 바로 다음 장에서 아주 쉽게 풀이합니다.", 12, ACCENT, Typeface.BOLD);
+        answerNotice.setPadding(0, dp(10), 0, 0);
+        box.addView(answerNotice);
         return box;
     }
 
