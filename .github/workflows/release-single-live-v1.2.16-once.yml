@@ -1,11 +1,11 @@
-name: Release single-live textbook v1.2.16 once
+name: Release single-live textbook v1.2.17 once
 
 on:
   push:
     branches:
       - textbook-v5-live
     paths:
-      - '.github/workflows/release-single-live-v1.2.16-once.yml'
+      - '.github/workflows/release-single-live-v1.2.17-once.yml'
 
 permissions:
   contents: write
@@ -27,7 +27,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          grep -Fq 'versionCode = 19' app/build.gradle.kts
+          grep -Fq 'versionCode = 20' app/build.gradle.kts
           grep -Fq 'versionName = "1.2.16"' app/build.gradle.kts
           grep -Fq 'LIVE_BRANCH = "textbook-v5-live"' app/src/main/java/com/futuretech/poweruser/textbook/V5BookAssetRepository.kt
           test ! -e app/src/main/assets/textbook/v5/channel.json
@@ -86,8 +86,8 @@ jobs:
           "$APKSIGNER" sign             --ks test.keystore             --ks-key-alias testkey             --ks-pass pass:password             --key-pass pass:password             --out final-dist/Myapp_AI_Coding_Textbook_latest.apk             final-dist/Myapp_AI_Coding_Textbook_aligned.apk
           "$APKSIGNER" verify --verbose --print-certs             final-dist/Myapp_AI_Coding_Textbook_latest.apk             | tee final-dist/apksigner_verify.txt
           "$AAPT" dump badging final-dist/Myapp_AI_Coding_Textbook_latest.apk             | tee final-dist/aapt_badging.txt
-          grep -Fq "versionCode='19'" final-dist/aapt_badging.txt
-          grep -Fq "versionName='1.2.16'" final-dist/aapt_badging.txt
+          grep -Fq "versionCode='20'" final-dist/aapt_badging.txt
+          grep -Fq "versionName='1.2.17'" final-dist/aapt_badging.txt
           sha256sum final-dist/Myapp_AI_Coding_Textbook_latest.apk             | tee final-dist/Myapp_AI_Coding_Textbook_latest.sha256
           rm final-dist/Myapp_AI_Coding_Textbook_aligned.apk
 
@@ -95,31 +95,31 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          TAG="v1.2.16"
+          TAG="v1.2.17"
           if gh release view "$TAG" >/dev/null 2>&1; then
             BODY="$(gh release view "$TAG" --json body --jq '.body')"
             grep -Fq -- "- Source commit: ${GITHUB_SHA}" <<<"$BODY" || {
-              echo "Existing v1.2.16 belongs to a different commit; refusing overwrite." >&2
+              echo "Existing v1.2.17 belongs to a different commit; refusing overwrite." >&2
               exit 1
             }
           fi
 
-      - name: Publish v1.2.16 updater release
+      - name: Publish v1.2.17 updater release
         shell: bash
         run: |
           set -euo pipefail
-          TAG="v1.2.16"
+          TAG="v1.2.17"
           APK="final-dist/Myapp_AI_Coding_Textbook_latest.apk"
           NOTES="final-dist/release_notes.md"
           cat > "$NOTES" <<EOF
-          ## 코딩 완전과정 v1.2.16
+          ## 코딩 완전과정 v1.2.17
 
-          - Android versionCode: 19
+          - Android versionCode: 20
           - Source commit: ${GITHUB_SHA}
           - 교재 원격 경로: textbook-v5-live/app/src/main/assets/textbook/v5/
           - channel/revision/rollback/compare-file-limit/V4 fallback 제거
           - TRACK 파일의 Git blob SHA가 바뀌면 앱이 해당 TRACK 최신 원고를 다시 읽는 단일 LIVE 방식
-          - 현재 LIVE 원고 확인 TRACK: 01, 02, 07, 10
+          - 현재 LIVE 원고 확인 TRACK: 01, 02, 07, 10\n          - TRACK 02: 105 PART 최신 원고 반영
           - TRACK 07 P105 포함
           - 단일 LIVE 엔진 관련 unit regression + Android release build 검증
           - 전체 11 TRACK corpus 품질 게이트는 아직 별도 미완료이며 이 Release의 PASS 주장에 포함하지 않음
@@ -131,15 +131,15 @@ jobs:
 
           if gh release view "$TAG" >/dev/null 2>&1; then
             gh release upload "$TAG" "$APK" --clobber
-            gh release edit "$TAG"               --target "${GITHUB_SHA}"               --title "코딩 완전과정 v1.2.16"               --notes-file "$NOTES"               --latest
+            gh release edit "$TAG"               --target "${GITHUB_SHA}"               --title "코딩 완전과정 v1.2.17"               --notes-file "$NOTES"               --latest
           else
-            gh release create "$TAG" "$APK"               --target "${GITHUB_SHA}"               --title "코딩 완전과정 v1.2.16"               --notes-file "$NOTES"               --latest
+            gh release create "$TAG" "$APK"               --target "${GITHUB_SHA}"               --title "코딩 완전과정 v1.2.17"               --notes-file "$NOTES"               --latest
           fi
 
       - name: Upload verification evidence
         uses: actions/upload-artifact@v4
         with:
-          name: single-live-v1.2.16-release-evidence
+          name: single-live-v1.2.17-release-evidence
           retention-days: 7
           if-no-files-found: error
           path: |
