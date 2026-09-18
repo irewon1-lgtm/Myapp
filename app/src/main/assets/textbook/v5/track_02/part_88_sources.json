@@ -1,0 +1,13 @@
+{
+  "partId":"T02-P88",
+  "sections":[
+    {"sectionId":"T02-P88-S01-blocking-nonblocking","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P88-S02-readiness-not-data","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P88-S03-selector-registration","sourceIds":["PYTHON-REF","SICP"]},
+    {"sectionId":"T02-P88-S04-interest-set","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P88-S05-wakeup-loop","sourceIds":["CSAPP3","SRE"]},
+    {"sectionId":"T02-P88-S06-fairness-starvation","sourceIds":["SRE","CSAPP3"]},
+    {"sectionId":"T02-P88-S07-close-race","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P88-S08-readiness-contract","sourceIds":["SRE","PYTHON-REF"]}
+  ]
+}

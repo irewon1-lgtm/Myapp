@@ -1,123 +1,245 @@
 # PART 53 · Buffered, Direct and Memory-Mapped I/O — page cache, alignment, coherence
 
-파일 I/O API는 같은 bytes를 읽고 쓰더라도 **page cache를 경유하는가, application buffer와 device 사이를 직접 연결하는가, file page를 process address space에 mapping하는가**에 따라 ownership·copy·alignment·durability·coherence가 달라진다. 성능 차이는 syscall 횟수보다 cache hit, readahead, writeback, DMA alignment, invalidation, fault path에 의해 결정된다. 동일 file에 여러 I/O path를 섞을 때 stale-data와 ordering을 명시적으로 관리해야 한다.
+파일 I/O API는 같은 storage를 서로 다른 경로로 본다. Buffered read/write는 page cache를 거치고, direct I/O는 cache를 우회하려 하며, `mmap`은 file page를 virtual memory처럼 접근하게 한다. 이 경로들을 섞으면 alignment, coherency, persistence ordering, buffer lifetime이 복잡해진다. 이 PART는 syscall 이름보다 **data가 application buffer에서 page cache와 block device를 거쳐 durable state가 되는 경로**를 추적한다.
 
-## CHAPTER 01 · buffered read는 file data를 page cache와 application buffer라는 두 계층으로 본다
+---
 
-일반 read path에서 kernel은 file offset에 해당하는 page가 page cache에 있는지 확인하고, miss면 storage I/O를 통해 page를 채운 뒤 user buffer로 copy할 수 있다. 이후 같은 data를 다른 process가 읽으면 cache hit로 device 접근을 피할 수 있다. Application이 read한 byte를 수정해도 page cache 원본이 바뀌는 것은 아니다. 따라서 buffered read 비용은 storage latency + page-cache lookup + user copy의 조합이며, warm-cache benchmark와 cold-cache benchmark를 분리해야 실제 workload를 설명할 수 있다.
+## CHAPTER 01 · buffered read는 file data를 page cache와 사용자 buffer 사이로 전달한다
 
-## CHAPTER 02 · buffered write는 write() return과 persistent media commit 사이를 분리한다
+일반 `read()`는 요청한 file offset의 page가 cache에 있으면 그 data를 사용자 buffer로 복사하고, 없으면 storage I/O를 발생시켜 page cache를 채운 뒤 반환한다. 따라서 두 번째 read가 빠른 것은 device가 빨라진 것이 아니라 cache hit일 수 있다. File benchmark에서 cold/warm 상태를 분리해야 하는 이유다.
 
-Application이 write를 호출하면 kernel이 user buffer를 page cache에 복사하고 page를 dirty로 표시한 뒤 빠르게 return할 수 있다. Dirty page는 writeback thread·memory pressure·fsync 등에 의해 나중에 storage로 내려간다. 따라서 write latency가 짧다고 device가 빠른 것이 아니며, crash durability도 보장되지 않는다. Dirty-page accumulation은 burst를 흡수하지만 writeback 시점에 latency cliff를 만들 수 있다. Application이 durability를 요구하면 sync contract를 별도로 호출하고 결과를 확인해야 한다.
+Sequential access에서는 kernel readahead가 뒤 page를 미리 가져와 syscall이 직접 요청하지 않은 I/O도 발생시킬 수 있다. Random workload에서는 같은 정책이 낭비가 될 수 있다.
 
-## CHAPTER 03 · page cache는 file content와 virtual memory mapping을 연결하는 공통 object가 될 수 있다
+Read latency를 분석할 때 syscall 시간만 보지 말고 major page miss, cache hit ratio, underlying device latency를 함께 본다. Page cache가 storage behavior를 가리는 중간 계층이다.
 
-Buffered read와 mmap file mapping은 같은 page-cache page를 바라볼 수 있어 한 path의 write가 다른 path에 어떻게 보이는지 filesystem/OS coherence rule이 중요하다. Mapped page가 dirty되면 writeback 대상이 되고 buffered read는 갱신된 cache page를 볼 수 있다. 그러나 direct I/O가 page cache를 우회하면 invalidation/synchronization이 필요해진다. `같은 file`이라는 논리 identity가 여러 caching path에서 자동으로 완벽한 instantaneous coherence를 보장한다고 가정하지 않는다.
+## CHAPTER 02 · buffered write는 먼저 dirty page를 만들고 실제 device write를 뒤로 미룰 수 있다
 
-## CHAPTER 04 · readahead는 sequential pattern을 예측해 요청 전에 page를 가져온다
+`write()`가 성공하면 보통 data가 kernel page cache에 복사되었다는 뜻이지 stable media에 기록됐다는 뜻은 아니다. Dirty page는 background writeback이나 explicit sync에 의해 나중에 device로 내려간다. 그래서 write syscall latency가 낮아도 storage backlog가 쌓일 수 있다.
 
-Kernel은 file offset이 연속적으로 증가하는 access를 관찰해 다음 page를 미리 읽을 수 있다. Readahead가 맞으면 application read가 storage completion을 기다리지 않고 cache hit로 진행한다. Random seek workload에서는 불필요한 page를 읽어 bandwidth와 cache를 낭비할 수 있다. Benchmark에서 한 번 sequential scan한 뒤 두 번째 run을 측정하면 readahead와 page cache가 모든 storage 비용을 숨길 수 있다. Access pattern과 readahead state를 결과 metadata로 기록한다.
+Dirty data가 너무 많아지면 writer가 writeback을 기다리며 throttling될 수 있다. Burst 초반은 빠르고 뒤쪽에서 latency가 급증하는 패턴이 나타난다.
 
-## CHAPTER 05 · writeback은 dirty page 수·age·memory pressure와 storage queue를 조정한다
+Application이 durability를 요구하면 `fsync`/`fdatasync` 같은 별도 경계를 사용해야 한다. “write success”와 “commit success”를 API에서 혼동하지 않는다.
 
-Dirty data를 너무 오래 memory에 쌓으면 crash-loss window와 memory pressure가 커지고, 너무 자주 작은 write로 flush하면 storage efficiency가 나빠진다. Kernel은 dirty threshold와 background writeback policy로 batching을 조절한다. Device가 느리거나 write amplification이 높아 dirty production rate를 못 따라가면 application writer가 throttling될 수 있다. `write가 갑자기 느려짐`은 application lock이 아니라 dirty limit에 걸린 writeback backpressure일 수 있다.
+## CHAPTER 03 · page cache coherence는 여러 access path가 같은 file page를 본다는 규칙이다
 
-## CHAPTER 06 · fsync는 application→filesystem→device persistence chain의 요청이다
+Buffered I/O와 `mmap`이 같은 file을 접근하면 kernel은 가능한 한 동일 page cache page를 통해 data를 일관되게 보이게 한다. 하지만 direct I/O나 device DMA가 섞이면 coherency 조건이 더 복잡해진다. Filesystem과 kernel 버전에 따라 synchronization requirement를 확인해야 한다.
 
-Fsync는 dirty file data와 필요한 metadata를 stable storage contract까지 밀어내도록 요청하지만 정확한 보장은 filesystem, device cache, hardware power-loss property에 의존한다. Application은 return error를 확인해야 하며 successful fsync와 directory-entry durability를 구분해야 한다. Target file을 rename해 atomic replace한 경우 directory fsync가 필요한 protocol도 있다. P13/P24의 crash ordering과 연결해 write→fsync→rename→dir fsync 순서를 실제 fault test로 검증한다.
+같은 process 안에서도 stdio user buffer, application cache, page cache가 겹칠 수 있다. 한 layer를 flush했다고 다른 layer까지 자동 commit되는 것은 아니다.
 
-## CHAPTER 07 · direct I/O는 `cache 없음`보다 page-cache data path를 우회하는 계약이다
+Coherence bug는 stale read처럼 보이기 쉽다. 어느 cache에 최신 copy가 있는지 경로를 그려서 조사한다.
 
-O_DIRECT류 interface는 application buffer와 storage I/O를 더 직접 연결해 page cache copy와 pollution을 줄이려는 목적이 있지만 exact semantics와 alignment requirement는 filesystem/device/kernel에 따라 다를 수 있다. Direct I/O도 device controller cache, DMA mapping, CPU cache와 무관한 것은 아니다. `zero-copy`라고 일반화하지 않고 실제 copy path와 registered/pinned page를 확인한다. Database처럼 자체 buffer cache를 가진 application이 double caching을 줄이는 데 사용할 수 있다.
+## CHAPTER 04 · readahead는 sequential access를 예측해 future I/O를 선행한다
 
-## CHAPTER 08 · direct I/O alignment는 buffer address·length·file offset 모두에 적용될 수 있다
+Kernel은 연속된 page를 읽는 pattern을 감지하면 뒤쪽 page를 미리 요청해 application이 기다리는 시간을 줄인다. Device queue를 활용해 throughput을 높일 수 있지만 실제로 읽지 않을 page까지 가져오면 bandwidth와 cache를 낭비한다.
 
-Storage logical/physical block과 DMA constraint 때문에 O_DIRECT는 memory buffer alignment, request length, file offset을 특정 단위에 맞출 것을 요구할 수 있다. Misalignment가 EINVAL로 실패하거나 buffered fallback되는지는 platform/filesystem contract를 확인해야 한다. Aligned allocator와 block-size query를 사용하며 hard-coded 4096을 universal rule로 쓰지 않는다. Tail bytes가 block boundary에 맞지 않는 variable-length record는 bounce buffer나 buffered path가 필요할 수 있다.
+Database처럼 자체 buffer manager가 access pattern을 알고 있다면 readahead가 중복되거나 eviction을 유발할 수 있다. 반대로 large sequential scan에는 큰 이득이 있다.
 
-## CHAPTER 09 · direct I/O buffer는 I/O completion 전까지 lifetime과 mutability가 제한된다
+Benchmark에서 readahead를 끄고 켠 결과를 비교하면 device raw latency와 kernel prediction 효과를 분리할 수 있다. Production tuning은 실제 scan 길이 분포를 기반으로 한다.
 
-Async direct I/O가 application page를 DMA/source로 사용하는 동안 buffer를 free/reuse/modify하면 device가 잘못된 data를 읽거나 destination을 덮어쓸 수 있다. Submission 이후 completion까지 buffer ownership을 I/O operation이 가진다는 contract가 필요하다. Garbage-collected/moving runtime에서는 pinning 또는 native stable buffer가 필요할 수 있다. P25 async I/O와 P40 ownership을 storage buffer lifetime에 연결한다.
+## CHAPTER 05 · writeback은 dirty page를 device request로 변환하는 비동기 단계다
 
-## CHAPTER 10 · direct I/O와 buffered I/O를 같은 file region에 섞으면 coherence 작업이 생긴다
+Dirty page는 일정 threshold, age, memory pressure에 따라 writeback된다. Background worker가 처리하는 동안 application은 계속 write할 수 있지만 dirty budget을 넘으면 foreground thread가 직접 기다릴 수 있다. 이 지점에서 tail latency가 급증한다.
 
-Page cache에 old data가 남아 있는데 direct write가 device를 갱신하면 buffered reader가 stale page를 보는 문제가 생길 수 있다. Kernel/filesystem은 direct I/O 전후 page invalidation/flush를 수행할 수 있지만 race와 concurrent mmap access는 복잡하다. Application이 path를 섞어야 한다면 exclusive range ownership, fsync/invalidate, documented filesystem semantics를 사용한다. 하나의 file descriptor flag만 바꾸면 consistency가 자동 해결된다고 가정하지 않는다.
+Filesystem은 여러 page를 모아 큰 I/O로 만들고 metadata ordering을 관리할 수 있다. 따라서 application write 순서와 block device에 도달하는 순서는 동일하지 않을 수 있다.
 
-## CHAPTER 11 · mmap read는 file byte를 user address-space page로 demand-map한다
+Writeback queue, dirty bytes, device utilization을 같은 timeline에 보면 “write syscall이 갑자기 느려졌다”는 현상을 설명할 수 있다.
 
-Mmap은 read syscall마다 user buffer copy를 요청하는 대신 file page를 virtual address range에 mapping한다. 첫 access에서 page fault가 나면 page cache/storage에서 page를 채우고 이후 load instruction으로 접근한다. Small random access에서 syscall overhead를 줄일 수 있지만 page fault와 TLB behavior가 performance를 지배할 수 있다. Mapping 전체가 즉시 RAM을 차지한다는 뜻이 아니며 resident page는 working set과 pressure에 따라 달라진다.
+## CHAPTER 06 · fsync는 file의 durability 경계를 요청하지만 storage stack 전체 보장을 확인해야 한다
 
-## CHAPTER 12 · mmap write는 ordinary store를 filesystem dirty page로 바꾼다
+`fsync`는 해당 file의 변경을 stable storage에 반영하도록 요구하는 핵심 API다. 하지만 정확히 어떤 metadata가 포함되는지, directory entry의 durability는 별도 directory fsync가 필요한지 filesystem semantics를 확인해야 한다.
 
-Writable shared mapping에 store하면 CPU가 memory page를 수정하고 kernel은 이를 dirty file page로 추적해 나중에 writeback할 수 있다. Application이 durable commit을 요구하면 msync/fsync 등 platform contract가 필요하다. Pointer store가 return했다고 persistent storage에 반영된 것은 아니다. Structured persistent data를 mmap으로 수정하면 field update ordering과 crash-consistency protocol을 application이 직접 설계해야 한다.
+Device write cache가 volatile하다면 filesystem은 flush/FUA 같은 command를 사용해 ordering과 persistence를 보장해야 한다. Hardware가 명령을 거짓으로 보고하면 software만으로 해결할 수 없다.
 
-## CHAPTER 13 · MAP_PRIVATE는 file-backed initial data와 process-private modification을 분리한다
+Crash test는 fsync return 이후 power-loss model에서 data가 남는지 확인해야 한다. 호출했다는 사실만으로 durability gate를 PASS라고 말하지 않는다.
 
-Private mapping은 file page를 읽을 수 있지만 write 시 COW private page를 만들어 underlying file에 변경을 반영하지 않는다. 따라서 `mmap했으니 파일 수정`이라는 가정은 mapping flag에 따라 틀린다. Large file parser가 private mapping을 사용하면 pointer-like access를 얻으면서 accidental write가 file corruption으로 이어지지 않을 수 있다. 그러나 COW write가 많으면 resident anonymous memory가 증가한다.
+## CHAPTER 07 · direct I/O는 page cache 우회를 목표로 하지만 ‘device에 즉시 durable’과 같은 뜻이 아니다
 
-## CHAPTER 14 · mapped file truncation은 address가 남아 있어도 backing range를 없앨 수 있다
+Direct I/O는 application buffer와 storage 사이의 data copy/cache pollution을 줄이기 위해 page cache를 우회하는 경로를 제공할 수 있다. Database buffer manager처럼 자체 cache를 가진 system에 유용하다. 하지만 device controller cache와 filesystem metadata는 여전히 존재할 수 있다.
 
-한 process가 file을 mmap한 동안 다른 process가 file을 shrink하면 mapping의 일부 virtual address가 더 이상 valid backing을 갖지 않을 수 있다. 이후 access가 SIGBUS류 fault로 이어질 수 있다. Mapping lifetime과 file-size lifetime을 별도 invariant로 관리해야 한다. Append/grow도 reader가 새 length를 어떻게 발견하는지 protocol이 필요하다. Mutable shared file을 raw mmap으로 협업할 때 size/epoch를 synchronization한다.
+Direct라는 이름 때문에 sync write와 혼동하면 안 된다. Completion은 I/O transfer 완료를 의미할 수 있어도 persistence는 flush policy에 달려 있다.
 
-## CHAPTER 15 · mmap은 pointer lifetime 때문에 file replacement와 충돌한다
+효과는 workload와 device에 따라 다르므로 buffered I/O보다 항상 빠르다는 가정은 피한다. Small unaligned request에서는 오히려 비효율적일 수 있다.
 
-Atomic rename으로 file path가 새 inode를 가리키게 해도 이미 mmap된 process는 old file object mapping을 계속 사용할 수 있다. Path identity와 mapping identity가 분리된다. Configuration/index file을 replace한 뒤 모든 reader가 즉시 새 bytes를 본다고 가정하면 안 된다. Reader는 versioned file open+map lifecycle을 관리하고 old mapping release 후 new mapping으로 전환해야 한다.
+## CHAPTER 08 · direct I/O alignment는 buffer·offset·length에 제약을 줄 수 있다
 
-## CHAPTER 16 · page fault batching과 sequential fault-around가 mmap scan 성능을 바꾼다
+Block/page boundary에 맞지 않는 direct I/O는 error가 나거나 내부 fallback/추가 처리가 필요할 수 있다. 요구 alignment는 filesystem, kernel, device에 따라 달라질 수 있다. Hard-coded 4096만 믿지 말고 실제 interface에서 확인한다.
 
-Sequential mmap access에서 매 page마다 독립 storage request를 내면 비효율적이므로 kernel은 fault-around/readahead로 주변 page를 미리 준비할 수 있다. Random sparse access는 이 예측이 맞지 않아 major fault가 많아질 수 있다. Read() sequential scan과 mmap scan의 성능 비교는 page-cache warmness와 fault count를 함께 봐야 한다. `mmap이 copy가 적으니 항상 빠름`이라는 결론은 틀리다.
+Allocator는 aligned buffer를 제공해야 하고 slice offset을 만들 때 alignment가 깨지지 않게 한다. Async I/O에서는 buffer lifetime까지 completion 후까지 유지해야 한다.
 
-## CHAPTER 17 · madvise/fadvise는 access-pattern hint이며 correctness를 바꾸면 안 된다
+Test는 aligned success path뿐 아니라 offset+1, length 비배수 같은 boundary를 넣어 error handling을 검증한다. Silent buffered fallback이 성능 측정을 왜곡하지 않는지도 확인한다.
 
-Application은 sequential/random/willneed/dontneed 같은 hint를 kernel에 제공해 readahead/reclaim policy를 돕는다. Hint가 무시되어도 program 결과는 같아야 한다. 잘못된 hint가 correctness 전제가 되면 portability가 깨진다. Large one-pass scan 후 cache pollution을 줄이기 위해 dontneed류 hint를 사용할 수 있지만 concurrent reader의 shared page-cache effect를 고려한다. 효과는 target kernel/filesystem에서 측정한다.
+## CHAPTER 09 · async/direct I/O의 buffer lifetime은 syscall return보다 길 수 있다
 
-## CHAPTER 18 · direct I/O는 application-side buffer cache를 직접 설계하게 만든다
+Kernel이나 device가 application buffer를 직접 참조하는 동안 그 memory를 free하거나 reuse하면 data corruption이 생긴다. Submission과 completion이 분리된 API에서는 buffer ownership이 completion까지 kernel/operation에 묶인다.
 
-Database가 page cache를 우회하면 어떤 page를 memory에 유지·evict할지 자체 buffer manager가 책임진다. DB page size, dirty eviction, prefetch, checkpoint가 storage I/O pattern을 결정한다. 이중 cache를 줄이는 대신 OS의 일반 readahead/reclaim 기능을 직접 대체해야 한다. Memory budget을 DB cache와 process heap 사이에 명시적으로 배분한다. Direct I/O 선택은 syscall micro-optimization이 아니라 cache ownership 이전이다.
+Registered buffer는 lifetime을 더 길게 만들어 mapping 비용을 줄일 수 있지만 해제 순서가 복잡해진다. Cancellation이 곧 DMA 중단 완료를 의미하는지 API semantics를 확인한다.
 
-## CHAPTER 19 · buffered I/O의 page cache는 여러 process 사이 data를 공유하는 이점이 있다
+Ownership을 type/state로 표현하고 completion 전 reuse를 막는다. Load test에서 rare corruption이 보이면 buffer pool의 generation과 in-flight count를 확인한다.
 
-같은 shared library/data file을 여러 process가 읽으면 page cache page를 공동 재사용해 physical memory와 disk I/O를 줄일 수 있다. 각 process가 private user-space cache를 만들면 동일 data가 중복된다. Direct I/O가 항상 memory-efficient한 것이 아니다. Workload가 cross-process sharing을 가지는지와 application cache hit ratio를 함께 평가한다.
+## CHAPTER 10 · buffered I/O와 direct I/O를 같은 file에 섞으면 coherency를 명시적으로 다뤄야 한다
 
-## CHAPTER 20 · double buffering은 page cache와 application cache가 동일 bytes를 중복 보관하는 현상이다
+한 path가 page cache를 수정하고 다른 path가 cache를 우회하면 어느 data가 최신인지 동기화가 필요하다. Kernel이 필요한 invalidation을 제공하더라도 alignment와 overlap 조건에 따라 비용과 semantics가 복잡하다.
 
-Database/cache server가 자체 buffer pool에 100GB data를 두면서 OS page cache에도 같은 100GB가 남으면 host memory 효율이 나빠질 수 있다. 하지만 OS cache가 metadata/executable/other file과 함께 adaptive하게 memory를 사용하고 application cache가 fixed budget이라 trade-off가 복잡하다. RSS만으로 page-cache duplication을 계산하지 않고 cgroup/file cache stat과 application buffer metric을 비교한다.
+Database가 direct data file과 buffered metadata file을 분리하는 식으로 access mode를 명확히 나누면 reasoning이 쉬워진다. 같은 byte range를 여러 mode로 자주 교차 접근하지 않는 것이 좋다.
 
-## CHAPTER 21 · DAX는 block/page-cache 경로를 줄여 persistent byte-addressable memory를 mapping할 수 있다
+Mixed-path test에서는 write→read 순서를 양방향으로 실행해 stale data가 없는지 확인한다. Performance만 보고 correctness를 가정하지 않는다.
 
-Direct Access 계열은 filesystem page cache를 우회하고 storage/persistent-memory mapping을 CPU address space에 더 직접 연결할 수 있다. 그러나 ordinary DRAM mmap과 동일한 durability가 아니다. CPU cache에 있는 store가 persistence domain까지 도달하려면 architecture-specific flush/order가 필요할 수 있다. DAX availability와 guarantee는 filesystem/device/platform에 의존한다. Persistent-memory semantics를 일반 SSD mmap에 대입하지 않는다.
+## CHAPTER 11 · mmap read는 page fault를 통해 file page를 address space에 가져온다
 
-## CHAPTER 22 · direct access는 CPU cache coherence와 persistence ordering을 분리한다
+`mmap`은 read syscall을 반복하는 대신 file offset을 virtual address로 매핑한다. 처음 접근한 page가 resident하지 않으면 page fault가 발생해 storage I/O를 기다릴 수 있다. Source code에 syscall이 없어도 latency가 memory load instruction에서 발생할 수 있다.
 
-다른 CPU가 같은 cache-coherent memory를 최신 값으로 볼 수 있다는 사실과 power failure 후 media에 남는다는 사실은 다른 ordering domain이다. Persistent memory는 cache line writeback, fence, platform persistence domain을 고려해야 한다. `memory barrier`와 `durability barrier`를 같은 것으로 취급하지 않는다. Log/transaction protocol은 visibility order와 persist order를 각각 증명해야 한다.
+Sequential access에서는 fault readahead가 작동할 수 있고, random access에서는 많은 minor/major fault가 발생할 수 있다. `mmap이 zero-copy라 항상 빠르다`는 단순 결론은 위험하다.
 
-## CHAPTER 23 · FUA와 flush는 storage write-cache ordering을 표현하는 도구다
+Profile에서 page fault와 blocked time을 함께 본다. CPU stack만 보면 load instruction이 느린 이유를 알기 어렵다.
 
-Device가 volatile write cache를 사용하면 command completion이 NAND/media persistence보다 앞설 수 있다. Flush command는 이전 write를 stable storage로 내리도록 요청하고 FUA는 특정 write의 persistence semantics를 강화할 수 있다. Filesystem/block layer가 이를 적절히 변환해 fsync contract를 구현한다. Application이 raw block/NVMe를 다루는 경우 command ordering과 power-loss protection을 직접 이해해야 한다.
+## CHAPTER 12 · mmap write는 memory store를 dirty file page로 바꾸지만 persistence는 별도다
 
-## CHAPTER 24 · read-modify-write amplification은 unaligned/small direct write에서 커질 수 있다
+Shared mapping에 write하면 page가 dirty해지고 나중에 writeback된다. Store instruction 완료가 file durability를 뜻하지 않는다. `msync`, `fsync`, filesystem semantics를 통해 persistence 경계를 설계해야 한다.
 
-Application write가 device physical block/page보다 작거나 alignment가 맞지 않으면 lower layer가 기존 block을 읽어 merge한 뒤 다시 쓰는 작업이 필요할 수 있다. Filesystem/journal/FTL까지 겹치면 write amplification이 더 커진다. Logical bytes written만 보고 storage wear와 bandwidth를 판단하지 않는다. Record/page size를 storage geometry와 workload update pattern에 맞춰 benchmark한다.
+Crash-consistent data structure를 mmap 위에 직접 만들면 CPU memory ordering과 storage persistence ordering을 동시에 고려해야 할 수 있다. 단순 pointer update를 transaction처럼 사용하면 torn state가 생길 수 있다.
 
-## CHAPTER 25 · scatter-gather I/O는 여러 user buffer를 하나의 logical operation으로 묶는다
+Persistent format은 checksum/generation/log 같은 복구 구조를 둔다. Memory mapping은 I/O API를 바꿀 뿐 atomicity를 자동 제공하지 않는다.
 
-readv/writev류 vectored I/O는 header와 body처럼 non-contiguous memory를 별도 memcpy로 합치지 않고 하나의 syscall로 제출할 수 있다. Syscall count와 temporary buffer allocation을 줄이지만 iovec count/total length validation이 필요하다. Async/DMA backend가 scatter-gather list를 얼마나 효율적으로 처리하는지 target별로 다르다. Very many tiny segments는 descriptor processing overhead를 키울 수 있다.
+## CHAPTER 13 · MAP_PRIVATE는 copy-on-write view이지 file update channel이 아니다
 
-## CHAPTER 26 · sendfile/splice류 zero-copy path는 page ownership을 subsystem 사이 전달한다
+Private mapping에서 write하면 process가 private COW page를 가지며 원본 file에는 반영되지 않는다. 다른 process와 공유하려는 목적에 쓰면 기대와 다른 결과가 나온다.
 
-File→socket transfer에서 user-space read buffer를 거치지 않고 page/cache reference를 network stack에 전달하면 copy와 context transition을 줄일 수 있다. 하지만 TLS encryption, content transform, checksumming이 user-space bytes를 필요로 하면 path가 달라질 수 있다. `zero copy`는 bytes가 절대 복사되지 않는다는 보장보다 특정 user copy를 제거하는 목표로 이해한다. Buffer lifetime과 backpressure는 여전히 존재한다.
+Fork 후 private mapping은 parent/child가 초기 page를 공유하다 write 시 분리될 수 있다. Memory usage는 mapping size보다 실제 dirty private page 수에 따라 증가한다.
 
-## CHAPTER 27 · io_uring registered buffers는 direct/async path의 반복 pin·lookup 비용을 줄인다
+API 선택 시 `read-only view`, `shared modification`, `private workspace`를 구분한다. Flag 이름보다 원하는 visibility semantics를 먼저 적는다.
 
-Buffer를 미리 registration하면 submission마다 user page lookup/pin을 반복하지 않고 kernel이 stable mapping을 재사용할 수 있다. 대신 registered memory가 long-lived pinned/resource budget을 차지하고 buffer pool ownership이 복잡해진다. Fixed buffer index reuse는 completion 전 금지해야 한다. P25 async engine과 P51 memlock/resource limit을 함께 검토한다.
+## CHAPTER 14 · mmap된 file을 truncate하면 기존 virtual address의 유효성이 깨질 수 있다
 
-## CHAPTER 28 · I/O path benchmark는 cache 상태·dataset size·sync policy를 고정해야 한다
+다른 thread/process가 file을 줄이면 mapping의 일부 page가 더 이상 backing storage를 갖지 않을 수 있고 접근 시 signal/fault가 발생할 수 있다. Mapping pointer가 non-null이라는 이유로 계속 안전한 것이 아니다.
 
-Buffered read benchmark가 RAM보다 작은 file을 반복 읽으면 storage가 아니라 memcpy/page-cache bandwidth를 측정한다. Direct I/O benchmark는 alignment와 queue depth가 다르면 비교가 불공정하다. Write benchmark가 fsync를 제외하면 durability workload를 대변하지 않는다. Cold buffered, warm buffered, direct sequential/random, mmap fault, durable write를 별도 scenario로 나누고 actual device bytes/latency를 수집한다.
+Concurrent truncate가 가능한 file format은 lock/version protocol을 두거나 immutable generation을 사용한다. Reader가 mapping lifetime 동안 file size가 안정적이라는 보장을 필요로 하는지 문서화한다.
 
-## CHAPTER 29 · path 선택은 latency 하나가 아니라 memory ownership과 failure semantics를 바꾼다
+Fault test에서 truncate와 reader access를 겹쳐 rare crash를 재현한다. Filesystem API error만 처리하고 memory fault를 놓치지 않는다.
 
-Buffered I/O는 OS cache/readahead/writeback을 활용하고 direct I/O는 application이 cache/buffer ownership을 더 많이 가진다. Mmap은 pointer access와 VM fault semantics를, DAX는 persistence-order 문제를 추가한다. 같은 API workload를 네 방식으로 바꾸는 것은 implementation detail 변경이 아니라 resource/recovery model 변경이다. Code review에서 buffer lifetime, crash durability, cache coherence, memory budget을 함께 재검토한다.
+## CHAPTER 15 · mapping identity는 file descriptor가 닫혀도 mapping lifetime과 별개일 수 있다
 
-## CHAPTER 30 · I/O contract는 cache domain·completion·durability·coherence를 따로 정의한다
+`mmap`이 성공한 뒤 원래 fd를 닫아도 mapping은 유지되는 platform semantics가 일반적이다. 반대로 file name이 rename/unlink되어도 mapping이 참조하는 underlying object는 계속 존재할 수 있다. Path identity와 inode/object identity를 분리해야 한다.
 
-각 path에서 operation completion이 `user buffer 복사 완료`, `page cache dirty`, `device command 완료`, `persistent media 도달` 중 어디까지 의미하는지 문서화한다. 동일 file에 buffered/direct/mmap path를 섞을 때 invalidate/flush/exclusive-range rule을 정한다. Async buffer는 completion까지 lifetime을 보장하고 storage error는 sync 단계까지 확인한다. 성능 최적화는 representative cache state와 durability requirement를 유지한 end-to-end 측정으로만 승격한다.
+Hot reload에서 file path를 새 generation으로 교체해도 기존 reader의 mapping은 old object를 볼 수 있다. 이는 안전한 immutable generation 전략으로 활용할 수 있다.
+
+Diagnostic에서는 path 문자열보다 device/inode 또는 generation id를 기록해 실제 object를 구분한다.
+
+## CHAPTER 16 · fault readahead는 mmap access pattern을 추측해 page를 미리 가져온다
+
+Page fault handler는 한 page만 읽는 대신 주변 page를 함께 가져와 sequential access latency를 줄일 수 있다. 그래서 첫 fault는 비싸고 이어지는 access는 빠른 pattern이 나타난다.
+
+Random index lookup에서는 prefetched page가 사용되지 않아 cache pollution이 생길 수 있다. `madvise` 같은 hint가 kernel policy에 도움을 줄 수 있지만 hint는 correctness 보장이 아니다.
+
+Benchmark는 access stride와 dataset size를 바꿔 readahead 영향 범위를 확인한다. 한 scan pattern으로 모든 mmap workload를 대표하지 않는다.
+
+## CHAPTER 17 · I/O hint는 kernel에 의도를 전달하지만 application correctness를 맡기지 않는다
+
+Sequential/random, will-need/don’t-need 같은 hint는 cache와 readahead 정책을 조절하는 데 도움을 줄 수 있다. Kernel은 hint를 무시하거나 상황에 맞게 해석할 수 있으므로 기능의 correctness가 hint 적용 여부에 의존하면 안 된다.
+
+Long scan 후 cache pollution을 줄이기 위해 page를 버리도록 hint할 수 있지만 다른 process와 공유하는 page cache 영향도 고려한다.
+
+Tuning은 실제 cache miss와 I/O량을 측정해 효과를 확인한다. Hint를 넣었다는 사실만으로 최적화가 됐다고 말하지 않는다.
+
+## CHAPTER 18 · application cache와 page cache가 겹치면 double caching이 될 수 있다
+
+Database나 media server가 자체 buffer cache를 유지하면서 buffered I/O를 사용하면 같은 data가 application memory와 kernel page cache에 두 번 존재할 수 있다. 이중 cache는 memory pressure를 높이지만 kernel readahead와 sharing 이득도 제공한다.
+
+Direct I/O로 page cache를 우회하면 application이 replacement와 prefetch 책임을 더 많이 가져간다. 어느 쪽이 낫다는 보편 규칙은 없다.
+
+RSS와 page cache를 합친 system memory 관점에서 cache 효율을 본다. Process heap만 최적화해 host가 reclaim pressure에 빠지는 상황을 피한다.
+
+## CHAPTER 19 · page cache는 process 간에 file data를 공유하는 암묵적 공동 cache다
+
+여러 process가 같은 file을 읽으면 physical page가 page cache에서 공유될 수 있어 전체 memory와 I/O를 줄인다. 각 process RSS 합을 단순 더하면 실제 physical 사용량을 과대평가할 수 있다.
+
+반대로 한 process의 large scan이 shared cache를 밀어 다른 process의 hit rate를 낮출 수 있다. Multi-tenant host에서 cache는 공유 자원이 된다.
+
+Performance incident에서 process 단위만 보지 말고 host page cache와 workload interaction을 본다. Restart 후 느려지는 cold-cache effect도 여기서 나온다.
+
+## CHAPTER 20 · double buffering은 copy 횟수뿐 아니라 backpressure 위치를 바꾼다
+
+Application buffer→page cache→device처럼 여러 buffer가 있으면 producer가 downstream보다 빨라도 잠시 흡수할 수 있다. 하지만 각 buffer가 꽉 차는 시점이 다르고 총 memory가 커진다. Queue가 많을수록 latency가 숨겨진 채 backlog가 누적될 수 있다.
+
+Zero-copy 최적화는 copy cost를 줄이지만 buffer ownership과 lifetime 제약을 강화한다. Copy 제거 자체가 목표가 아니라 CPU·memory·latency의 전체 비용을 본다.
+
+Metrics에는 각 queue/buffer occupancy를 둔다. 가장 앞단 queue만 보면 downstream congestion을 늦게 발견할 수 있다.
+
+## CHAPTER 21 · DAX는 page cache를 우회해 persistent memory를 직접 매핑하는 다른 persistence model을 만든다
+
+Direct Access 계열은 storage를 memory-like address로 접근해 page cache와 block I/O 경로를 줄일 수 있다. 그러나 CPU cache가 volatile할 수 있어 store 완료와 persistence가 동일하지 않을 수 있다. Platform이 제공하는 flush와 ordering primitive를 따라야 한다.
+
+Crash consistency를 pointer update만으로 해결할 수 없다는 점은 동일하다. Cache line tear, ordering, metadata atomicity를 고려한 format이 필요하다.
+
+DAX 여부에 따라 기존 buffered I/O assumption이 깨질 수 있으므로 deployment 환경을 명시적으로 탐지한다.
+
+## CHAPTER 22 · persistence ordering은 여러 write 중 crash 후 어떤 순서가 보장되는지를 정의한다
+
+Application이 data block을 쓰고 metadata pointer를 갱신할 때 pointer가 먼저 durable해지면 crash 후 미완성 data를 가리킬 수 있다. `write()` 호출 순서만으로 device persistence 순서를 보장할 수 없으므로 sync/flush protocol이 필요하다.
+
+Filesystem journaling이 모든 application-level dependency를 알아서 해결해 주는 것은 아니다. Application format의 commit point를 설계해야 한다.
+
+Crash injection으로 각 ordering boundary를 검증한다. Recovery가 old 또는 new state 중 하나만 보게 하는 것이 목표다.
+
+## CHAPTER 23 · FUA와 flush는 volatile device cache와 ordering을 제어하는 block-layer primitive다
+
+Storage device는 성능을 위해 write를 volatile cache에 받아 completion을 줄 수 있다. Flush는 앞선 write를 stable media로 밀어내고, FUA 계열은 특정 write의 persistence 성질을 강화한다. Filesystem이 이를 조합해 fsync semantics를 구현한다.
+
+Application은 일반적으로 raw command보다 filesystem API를 사용하지만, durability 문제를 이해하려면 아래 계층의 의미를 알아야 한다. Device가 cache policy를 잘못 보고하면 예상이 깨질 수 있다.
+
+Power-loss validation은 실제 hardware/virtualization stack이 flush를 올바르게 전달하는지 확인하는 최종 증거다.
+
+## CHAPTER 24 · write amplification은 application byte보다 더 많은 physical write를 만들 수 있다
+
+작은 random update가 filesystem metadata, journal, storage FTL garbage collection과 결합하면 physical media에 훨씬 많은 bytes가 기록될 수 있다. Application throughput만 보면 endurance와 device bandwidth 비용을 놓친다.
+
+Batching, append-only layout, larger sequential write가 amplification을 줄일 수 있지만 recovery와 latency trade-off가 있다.
+
+Device telemetry가 가능하면 host writes와 media writes를 비교한다. Database compaction과 filesystem writeback이 겹치는 시간대도 관찰한다.
+
+## CHAPTER 25 · vectored I/O는 여러 buffer를 한 syscall의 logical operation으로 묶는다
+
+`readv/writev` 계열은 흩어진 buffer를 하나의 I/O vector로 전달해 syscall 수와 intermediate copy를 줄일 수 있다. Protocol header와 payload가 별도 buffer에 있을 때 유용하다.
+
+하지만 partial write가 vector 중간에서 끝날 수 있어 남은 iovec를 정확히 조정해야 한다. 단순히 처음부터 다시 보내면 이미 기록한 data를 중복할 수 있다.
+
+Async API와 결합하면 각 vector element의 lifetime도 completion까지 유지해야 한다. Scatter/gather는 성능 최적화와 ownership 복잡성을 함께 가져온다.
+
+## CHAPTER 26 · zero-copy는 data 이동을 줄이는 대신 page lifetime과 mutation 규칙을 강화한다
+
+`sendfile`, splice, memory sharing 같은 경로는 userspace copy를 줄여 CPU와 memory bandwidth를 절약할 수 있다. 대신 kernel이 source page를 사용하는 동안 application이 content를 변경하거나 해제하면 안 되는 제약이 생길 수 있다.
+
+Small payload에서는 setup overhead가 copy cost보다 클 수 있다. Large sequential transfer에서 이득이 더 잘 나타날 수 있다.
+
+Benchmark는 CPU cycles, throughput, latency를 함께 본다. “copy 횟수 0” 자체를 사용자 가치와 동일시하지 않는다.
+
+## CHAPTER 27 · registered buffer는 반복 I/O의 mapping 비용을 줄이지만 장기 pinned resource가 된다
+
+Async engine이 buffer를 미리 등록하면 매 operation마다 address validation/pinning 비용을 줄일 수 있다. 하지만 등록된 memory는 일반 allocation보다 이동/reclaim이 어렵고 별도 limit을 소비할 수 있다.
+
+Buffer pool 크기를 queue depth와 맞추고 unused registration을 해제한다. Registration failure에서 일반 buffer path로 fallback할지 명확히 정한다.
+
+Metrics에 registered bytes와 in-flight usage를 둔다. Memory leak처럼 보이는 pinned region을 설명하는 데 필요하다.
+
+## CHAPTER 28 · I/O benchmark는 cache state·queue depth·alignment를 고정해야 비교 가능하다
+
+Sequential 1 MiB buffered read와 4 KiB random direct read는 전혀 다른 workload다. Block size, access pattern, read/write ratio, sync policy, queue depth를 명시한다. Cold device 성능을 재려면 page cache와 device cache의 상태도 고려한다.
+
+Filesystem과 raw device benchmark를 같은 것으로 비교하지 않는다. Metadata, journaling, readahead가 추가된다.
+
+Latency distribution과 throughput을 동시에 보고 saturation 지점을 찾는다. 단일 최고 MB/s만으로 application 성능을 예측하지 않는다.
+
+## CHAPTER 29 · path semantics는 file 이름보다 open된 object와 generation을 구분해야 한다
+
+Rename/unlink는 directory namespace를 바꾸지만 이미 open된 fd와 mapping은 underlying file object를 계속 참조할 수 있다. Hot-swap에서 writer가 새 file을 rename해도 old reader는 old generation을 안전하게 볼 수 있다.
+
+반대로 path를 매번 reopen하는 reader는 어느 순간 새 generation으로 전환된다. 같은 application 안에서도 object identity가 달라질 수 있다.
+
+로그에 path만 남기지 말고 generation/hash를 기록하면 “같은 파일 이름인데 내용이 다르다”는 사건을 설명하기 쉽다.
+
+## CHAPTER 30 · I/O contract는 visibility와 durability를 분리해 access path마다 정의한다
+
+Buffered I/O, direct I/O, mmap은 data를 보는 방식과 cache interaction이 다르다. 하지만 모두에서 핵심 질문은 같다. 다른 reader에게 언제 보이는가, crash 후 언제 남는가, in-flight buffer는 누가 소유하는가, resource 상한은 무엇인가.
+
+Performance 최적화로 path를 바꾸기 전에 이 correctness contract를 먼저 맞춘다. Page cache를 우회해 latency가 줄어도 durability가 깨지면 성공이 아니다.
+
+최종 검증은 representative I/O benchmark와 crash/coherency test를 조합한다. Cache hit 숫자와 MB/s만으로는 storage path가 안전하다는 것을 증명할 수 없다.

@@ -1,0 +1,13 @@
+{
+  "partId":"T02-P92",
+  "sections":[
+    {"sectionId":"T02-P92-S01-archive-entry-model","sourceIds":["PYTHON-REF","NIST-SSDF"]},
+    {"sectionId":"T02-P92-S02-path-traversal","sourceIds":["PYTHON-REF","NIST-SSDF"]},
+    {"sectionId":"T02-P92-S03-symlink-entry","sourceIds":["PYTHON-REF","NIST-SSDF"]},
+    {"sectionId":"T02-P92-S04-size-expansion","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P92-S05-entry-count-budget","sourceIds":["SRE","NIST-SSDF"]},
+    {"sectionId":"T02-P92-S06-metadata-policy","sourceIds":["PYTHON-REF","NIST-SSDF"]},
+    {"sectionId":"T02-P92-S07-staged-extraction","sourceIds":["SRE","NIST-SSDF"]},
+    {"sectionId":"T02-P92-S08-archive-contract","sourceIds":["NIST-SSDF","SRE"]}
+  ]
+}

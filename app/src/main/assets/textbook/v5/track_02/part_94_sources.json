@@ -1,0 +1,13 @@
+{
+  "partId":"T02-P94",
+  "sections":[
+    {"sectionId":"T02-P94-S01-json-value-model","sourceIds":["RFC8259","PYTHON-REF"]},
+    {"sectionId":"T02-P94-S02-number-boundary","sourceIds":["RFC8259","PYTHON-REF"]},
+    {"sectionId":"T02-P94-S03-object-key-policy","sourceIds":["RFC8259","DDIA"]},
+    {"sectionId":"T02-P94-S04-order-whitespace","sourceIds":["RFC8259","PYTHON-REF"]},
+    {"sectionId":"T02-P94-S05-canonicalization-boundary","sourceIds":["RFC8259","NIST-SSDF"]},
+    {"sectionId":"T02-P94-S06-custom-encoding","sourceIds":["PYTHON-REF","DDD"]},
+    {"sectionId":"T02-P94-S07-resource-limits","sourceIds":["NIST-SSDF","SRE"]},
+    {"sectionId":"T02-P94-S08-json-contract","sourceIds":["RFC8259","SRE"]}
+  ]
+}

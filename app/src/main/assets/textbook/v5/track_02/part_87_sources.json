@@ -1,0 +1,13 @@
+{
+  "partId":"T02-P87",
+  "sections":[
+    {"sectionId":"T02-P87-S01-stream-not-message","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P87-S02-partial-send","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P87-S03-partial-recv","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P87-S04-framing-length","sourceIds":["SICP","CSAPP3"]},
+    {"sectionId":"T02-P87-S05-timeout-halfclose","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P87-S06-backpressure-buffer","sourceIds":["SRE","CSAPP3"]},
+    {"sectionId":"T02-P87-S07-protocol-error","sourceIds":["SRE","NIST-SSDF"]},
+    {"sectionId":"T02-P87-S08-socket-contract","sourceIds":["SRE","CSAPP3"]}
+  ]
+}

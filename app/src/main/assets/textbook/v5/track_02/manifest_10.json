@@ -1,0 +1,17 @@
+{
+  "trackId":"T02",
+  "trackNumber":2,
+  "title":"프로그래밍 사고와 문법 — 문제 계약에서 Python 실행 모델까지",
+  "parts":[
+    {"id":"T02-P91","order":91,"title":"Atomic file update — 임시 파일·flush·rename·crash recovery를 한 흐름으로 설계하기","assetPath":"textbook/v5/track_02/part_91_atomic_file_update.md","sourceMapPath":"textbook/v5/track_02/part_91_sources.json","prerequisiteConceptIds":["T02-P90-S08-memory-diagnostic-contract"]},
+    {"id":"T02-P92","order":92,"title":"Safe archive extraction — entry path·symlink·압축 팽창을 trust boundary로 다루기","assetPath":"textbook/v5/track_02/part_92_safe_archive_extraction.md","sourceMapPath":"textbook/v5/track_02/part_92_sources.json","prerequisiteConceptIds":["T02-P91-S08-atomic-file-contract"]},
+    {"id":"T02-P93","order":93,"title":"CSV schema boundary — dialect·newline·header·type conversion을 분리하기","assetPath":"textbook/v5/track_02/part_93_csv_schema_boundary.md","sourceMapPath":"textbook/v5/track_02/part_93_sources.json","prerequisiteConceptIds":["T02-P92-S08-archive-contract"]},
+    {"id":"T02-P94","order":94,"title":"JSON interchange semantics — number·object key·canonicalization 경계를 정확히 다루기","assetPath":"textbook/v5/track_02/part_94_json_interchange_semantics.md","sourceMapPath":"textbook/v5/track_02/part_94_sources.json","prerequisiteConceptIds":["T02-P93-S08-csv-contract"]},
+    {"id":"T02-P95","order":95,"title":"Digest와 content identity — hash·integrity·authenticity를 서로 다른 보장으로 구분하기","assetPath":"textbook/v5/track_02/part_95_digest_integrity_identity.md","sourceMapPath":"textbook/v5/track_02/part_95_sources.json","prerequisiteConceptIds":["T02-P94-S08-json-contract"]},
+    {"id":"T02-P96","order":96,"title":"Identifier design — random ID·name-derived ID·database locality·idempotency key를 분리하기","assetPath":"textbook/v5/track_02/part_96_identifier_design.md","sourceMapPath":"textbook/v5/track_02/part_96_sources.json","prerequisiteConceptIds":["T02-P95-S08-digest-contract"]},
+    {"id":"T02-P97","order":97,"title":"Deadline budgeting — timeout을 계층마다 새로 시작하지 않고 남은 시간으로 전달하기","assetPath":"textbook/v5/track_02/part_97_deadline_budgeting.md","sourceMapPath":"textbook/v5/track_02/part_97_sources.json","prerequisiteConceptIds":["T02-P96-S08-identifier-contract"]},
+    {"id":"T02-P98","order":98,"title":"Retry와 idempotency — transient failure·backoff·중복 side effect를 함께 설계하기","assetPath":"textbook/v5/track_02/part_98_retry_idempotency.md","sourceMapPath":"textbook/v5/track_02/part_98_sources.json","prerequisiteConceptIds":["T02-P97-S08-deadline-contract"]},
+    {"id":"T02-P99","order":99,"title":"Rate limiting과 admission control — 요청 속도·동시성·burst를 서로 다른 budget으로 관리하기","assetPath":"textbook/v5/track_02/part_99_rate_limit_backpressure.md","sourceMapPath":"textbook/v5/track_02/part_99_sources.json","prerequisiteConceptIds":["T02-P98-S08-retry-contract"]},
+    {"id":"T02-P100","order":100,"title":"Graceful shutdown — admission 중단·in-flight drain·resource close를 순서화하기","assetPath":"textbook/v5/track_02/part_100_graceful_shutdown.md","sourceMapPath":"textbook/v5/track_02/part_100_sources.json","prerequisiteConceptIds":["T02-P99-S08-rate-contract"]}
+  ]
+}

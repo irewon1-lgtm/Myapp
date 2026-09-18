@@ -1,0 +1,12 @@
+{
+  "trackId":"T02",
+  "trackNumber":2,
+  "title":"프로그래밍 사고와 문법 — 문제 계약에서 Python 실행 모델까지",
+  "parts":[
+    {"id":"T02-P101","order":101,"title":"Circuit breaker state machine — 실패를 계속 재시도하지 않고 dependency를 격리하기","assetPath":"textbook/v5/track_02/part_101_circuit_breaker_state_machine.md","sourceMapPath":"textbook/v5/track_02/part_101_sources.json","prerequisiteConceptIds":["T02-P100-S08-shutdown-contract"]},
+    {"id":"T02-P102","order":102,"title":"Delivery와 dedup semantics — at-most-once·at-least-once·exactly-once 주장을 검증하기","assetPath":"textbook/v5/track_02/part_102_delivery_dedup_semantics.md","sourceMapPath":"textbook/v5/track_02/part_102_sources.json","prerequisiteConceptIds":["T02-P101-S08-breaker-contract"]},
+    {"id":"T02-P103","order":103,"title":"Batch partial failure — 검증·commit·오류 격리를 batch 단위와 item 단위로 나누기","assetPath":"textbook/v5/track_02/part_103_batch_partial_failure.md","sourceMapPath":"textbook/v5/track_02/part_103_sources.json","prerequisiteConceptIds":["T02-P102-S08-delivery-contract"]},
+    {"id":"T02-P104","order":104,"title":"Checkpoint와 resume — progress를 durable state로 만들고 crash 뒤 안전하게 이어가기","assetPath":"textbook/v5/track_02/part_104_checkpoint_resume.md","sourceMapPath":"textbook/v5/track_02/part_104_sources.json","prerequisiteConceptIds":["T02-P103-S08-batch-contract"]},
+    {"id":"T02-P105","order":105,"title":"Reliable ingestion capstone — untrusted input에서 atomic publish까지 전체 failure path를 연결하기","assetPath":"textbook/v5/track_02/part_105_reliable_ingestion_capstone.md","sourceMapPath":"textbook/v5/track_02/part_105_sources.json","prerequisiteConceptIds":["T02-P104-S08-checkpoint-contract"]}
+  ]
+}

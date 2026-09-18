@@ -1,0 +1,13 @@
+{
+  "partId":"T02-P90",
+  "sections":[
+    {"sectionId":"T02-P90-S01-tracemalloc-snapshot","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P90-S02-diff-allocation","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P90-S03-gc-debug","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P90-S04-object-retention","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P90-S05-cache-vs-leak","sourceIds":["SRE","DDIA"]},
+    {"sectionId":"T02-P90-S06-measurement-overhead","sourceIds":["SRE","CSAPP3"]},
+    {"sectionId":"T02-P90-S07-reproduction-window","sourceIds":["SRE","REFACTORING2"]},
+    {"sectionId":"T02-P90-S08-memory-diagnostic-contract","sourceIds":["SRE","PYTHON-REF"]}
+  ]
+}

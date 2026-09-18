@@ -1,0 +1,13 @@
+{
+  "partId":"T02-P93",
+  "sections":[
+    {"sectionId":"T02-P93-S01-csv-record-boundary","sourceIds":["PYTHON-REF","DDIA"]},
+    {"sectionId":"T02-P93-S02-dialect-contract","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P93-S03-newline-layer","sourceIds":["PYTHON-REF","CSAPP3"]},
+    {"sectionId":"T02-P93-S04-header-schema","sourceIds":["PYTHON-REF","DDD"]},
+    {"sectionId":"T02-P93-S05-type-conversion","sourceIds":["DDD","PYTHON-REF"]},
+    {"sectionId":"T02-P93-S06-formula-injection","sourceIds":["NIST-SSDF","SRE"]},
+    {"sectionId":"T02-P93-S07-streaming-large-file","sourceIds":["PYTHON-REF","SRE"]},
+    {"sectionId":"T02-P93-S08-csv-contract","sourceIds":["SRE","DDD"]}
+  ]
+}
