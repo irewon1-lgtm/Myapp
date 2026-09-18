@@ -1,6 +1,6 @@
 # PART 67 · Attribute lookup routing — `__getattribute__`·`__getattr__`·descriptor 우선순위를 추적하기
 
-`obj.name`은 단순히 instance dictionary에서 `name`을 찾는 문법이 아니다. Python object model에서는 `__getattribute__`, descriptor, instance state, class attribute, `__getattr__` fallback이 서로 다른 시점에 개입한다. Attribute access를 확장할 때 이 순서를 잘못 이해하면 무한 recursion, cache 우회, 보안 경계 누락이 생길 수 있다. 이 PART에서는 **읽기 요청이 어떤 경로를 따라 해결되는지, 쓰기·삭제가 어떤 hook을 거치는지**를 중심으로 본다.
+`obj.name`은 단순히 instance dictionary에서 `name`을 찾는 문법이 아니다. Python object model에서는 `__getattribute__`, descriptor, instance state, class attribute, `__getattr__` fallback이 서로 다른 시점에 개입한다. Attribute access를 확장할 때 이 순서를 잘못 이해하면 무한 recursion, cache 우회, 보안 경계 누락이 생길 수 있다. 이 절에서는 **읽기 요청이 어떤 경로를 따라 해결되는지, 쓰기·삭제가 어떤 hook을 거치는지**를 중심으로 본다.
 
 ---
 
@@ -227,6 +227,8 @@ class Account:
 
 ---
 
+**직접 확인하기 — CHAPTER 06 · `__delattr__`는 이름 삭제를 domain transition으로 바꿀 수 있다**
+CHAPTER 06 · `__delattr__`는 이름 삭제를 domain transition으로 바꿀 수 있다의 규칙은 설명만 읽고 넘기기보다 가장 작은 실행 예제로 확인하는 편이 정확하다. 먼저 입력이나 객체 하나만 두고 결과를 기록한 뒤, 값 하나 또는 호출 순서 하나만 바꿔 결과가 어떻게 달라지는지 비교한다. 한 줄 해석은 “CHAPTER 06 · `__delattr__`는 이름 삭제를 domain transition으로 바꿀 수 있다이 값의 의미와 프로그램 상태 변화에 어떤 제약을 주는지 확인한다”이다. 결과가 예상과 다르면 타입·정체성·호출 순서·예외 경계를 차례로 확인하고, 수정 뒤 같은 예제와 반대 조건 예제를 다시 실행한다. 이 과정을 설명할 수 있어야 문법을 외운 것이 아니라 동작 원리를 이해한 것이다.
 ## CHAPTER 07 · descriptor precedence는 attribute lookup 전체 pipeline 안에서 이해해야 한다
 
 ### 시작 전 용어집
