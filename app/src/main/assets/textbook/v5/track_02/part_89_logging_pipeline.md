@@ -29,6 +29,8 @@ logger.info("order processed", extra={"order_id": order_id})
 
 ---
 
+**현장 디버깅 점검 — CHAPTER 01 · LogRecord는 한 번의 로그 event와 실행 context를 담는다**
+CHAPTER 01 · LogRecord는 한 번의 로그 event와 실행 context를 담는다 문제를 실제 환경에서 확인할 때는 정상 경로와 실패 경로를 분리해 같은 입력으로 재현 가능하게 만든다. 실행 전에는 기대 상태를 적고, 실행 중에는 입력값·중간 상태·반환값·로그 시각을 같은 순서로 수집한다. 실패 주입은 지연, 부분 데이터, 잘못된 형식, 취소, 재시도처럼 한 조건만 선택해 넣고 다른 조건은 고정한다. 수정 뒤에는 정상 입력과 실패 입력을 모두 다시 실행한다. 통과 기준은 예외가 단순히 사라지는 것이 아니라 데이터 손실·중복·자원 누수 없이 기대 상태로 끝나고, 실패 시에도 정해진 복구 또는 오류 경로가 관찰되는 것이다.
 ## CHAPTER 02 · logger hierarchy는 점으로 구분된 이름을 tree처럼 연결한다
 
 ### 시작 전 용어집
@@ -105,6 +107,8 @@ db`, `app.http`처럼 hierarchy를 만들 수 있다.
 
 ---
 
+**현장 디버깅 점검 — CHAPTER 04 · filter와 context injection은 request-scoped metadata를 record에 추가할 수 있다**
+CHAPTER 04 · filter와 context injection은 request-scoped metadata를 record에 추가할 수 있다 문제를 실제 환경에서 확인할 때는 정상 경로와 실패 경로를 분리해 같은 입력으로 재현 가능하게 만든다. 실행 전에는 기대 상태를 적고, 실행 중에는 입력값·중간 상태·반환값·로그 시각을 같은 순서로 수집한다. 실패 주입은 지연, 부분 데이터, 잘못된 형식, 취소, 재시도처럼 한 조건만 선택해 넣고 다른 조건은 고정한다. 수정 뒤에는 정상 입력과 실패 입력을 모두 다시 실행한다. 통과 기준은 예외가 단순히 사라지는 것이 아니라 데이터 손실·중복·자원 누수 없이 기대 상태로 끝나고, 실패 시에도 정해진 복구 또는 오류 경로가 관찰되는 것이다.
 ## CHAPTER 05 · propagation과 중복 handler는 같은 LogRecord를 여러 번 출력하게 만들 수 있다
 
 ### 시작 전 용어집
@@ -128,6 +132,8 @@ db`, `app.http`처럼 hierarchy를 만들 수 있다.
 
 ---
 
+**현장 디버깅 점검 — CHAPTER 05 · propagation과 중복 handler는 같은 LogRecord를 여러 번 출력하게 만들 수 있다**
+CHAPTER 05 · propagation과 중복 handler는 같은 LogRecord를 여러 번 출력하게 만들 수 있다 문제를 실제 환경에서 확인할 때는 정상 경로와 실패 경로를 분리해 같은 입력으로 재현 가능하게 만든다. 실행 전에는 기대 상태를 적고, 실행 중에는 입력값·중간 상태·반환값·로그 시각을 같은 순서로 수집한다. 실패 주입은 지연, 부분 데이터, 잘못된 형식, 취소, 재시도처럼 한 조건만 선택해 넣고 다른 조건은 고정한다. 수정 뒤에는 정상 입력과 실패 입력을 모두 다시 실행한다. 통과 기준은 예외가 단순히 사라지는 것이 아니라 데이터 손실·중복·자원 누수 없이 기대 상태로 끝나고, 실패 시에도 정해진 복구 또는 오류 경로가 관찰되는 것이다.
 ## CHAPTER 06 · structured field는 message parsing 대신 query 가능한 event schema를 만든다
 
 ### 시작 전 용어집
@@ -160,6 +166,8 @@ Field type을 안정적으로 유지한다.
 
 ---
 
+**현장 디버깅 점검 — CHAPTER 06 · structured field는 message parsing 대신 query 가능한 event schema를 만든다**
+CHAPTER 06 · structured field는 message parsing 대신 query 가능한 event schema를 만든다 문제를 실제 환경에서 확인할 때는 정상 경로와 실패 경로를 분리해 같은 입력으로 재현 가능하게 만든다. 실행 전에는 기대 상태를 적고, 실행 중에는 입력값·중간 상태·반환값·로그 시각을 같은 순서로 수집한다. 실패 주입은 지연, 부분 데이터, 잘못된 형식, 취소, 재시도처럼 한 조건만 선택해 넣고 다른 조건은 고정한다. 수정 뒤에는 정상 입력과 실패 입력을 모두 다시 실행한다. 통과 기준은 예외가 단순히 사라지는 것이 아니라 데이터 손실·중복·자원 누수 없이 기대 상태로 끝나고, 실패 시에도 정해진 복구 또는 오류 경로가 관찰되는 것이다.
 ## CHAPTER 07 · sensitive data redaction은 formatter 마지막 단계만 믿지 않는다
 
 ### 시작 전 용어집
