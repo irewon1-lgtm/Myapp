@@ -1,6 +1,6 @@
 # PART 81 · `__slots__`와 instance layout — attribute storage·weakref·상속 비용을 구조적으로 이해하기
 
-일반 Python instance는 흔히 per-instance dictionary를 통해 동적 attribute를 저장한다. `__slots__`는 이 기본 모델을 바꾸어 특정 attribute storage를 class layout에 고정할 수 있다. 메모리를 줄이는 용도로 유명하지만 실제 의미는 더 넓다. 동적 attribute 허용 범위, weak reference 가능성, inheritance layout, descriptor behavior가 함께 바뀔 수 있다. 이 PART에서는 **메모리 절약 팁이 아니라 object layout 계약**으로 `__slots__`를 읽는다.
+일반 Python instance는 흔히 per-instance dictionary를 통해 동적 attribute를 저장한다. `__slots__`는 이 기본 모델을 바꾸어 특정 attribute storage를 class layout에 고정할 수 있다. 메모리를 줄이는 용도로 유명하지만 실제 의미는 더 넓다. 동적 attribute 허용 범위, weak reference 가능성, inheritance layout, descriptor behavior가 함께 바뀔 수 있다. 이 절에서는 **메모리 절약 팁이 아니라 object layout 계약**으로 `__slots__`를 읽는다.
 
 ---
 
@@ -40,6 +40,8 @@ class Point:
 
 ---
 
+**직접 확인하기 — CHAPTER 01 · slot storage는 instance dictionary 대신 고정된 attribute 위치를 만든다**
+CHAPTER 01 · slot storage는 instance dictionary 대신 고정된 attribute 위치를 만든다의 동작은 가장 작은 실행 예제로 규칙을 확인하면 훨씬 명확해진다. 먼저 입력이나 객체 하나만 두고 기대 결과를 적은 다음 실행한다. 그다음 값 하나 또는 호출 순서 하나만 바꿔 결과가 어떻게 달라지는지 비교한다. 한 줄 해석은 “CHAPTER 01 · slot storage는 instance dictionary 대신 고정된 attribute 위치를 만든다의 규칙이 값의 의미와 프로그램 상태 변화에 어떤 제약을 주는지 확인한다”이다. 예상과 다르면 타입·정체성·호출 순서·예외 경계를 차례로 좁히고, 수정 뒤 원래 예제와 반대 조건 예제를 모두 다시 실행한다. 결과를 자기 문장으로 설명할 수 있어야 문법을 복사한 것이 아니라 동작 원리를 이해한 것이다.
 ## CHAPTER 02 · `__dict__` 부재는 임의 attribute 추가를 제한하지만 완전한 immutable을 만들지는 않는다
 
 ### 시작 전 용어집
@@ -72,6 +74,8 @@ p = Point(1, 2)
 
 ---
 
+**직접 확인하기 — CHAPTER 02 · `__dict__` 부재는 임의 attribute 추가를 제한하지만 완전한 immutable을 만들지는 않는다**
+CHAPTER 02 · `__dict__` 부재는 임의 attribute 추가를 제한하지만 완전한 immutable을 만들지는 않는다의 동작은 가장 작은 실행 예제로 규칙을 확인하면 훨씬 명확해진다. 먼저 입력이나 객체 하나만 두고 기대 결과를 적은 다음 실행한다. 그다음 값 하나 또는 호출 순서 하나만 바꿔 결과가 어떻게 달라지는지 비교한다. 한 줄 해석은 “CHAPTER 02 · `__dict__` 부재는 임의 attribute 추가를 제한하지만 완전한 immutable을 만들지는 않는다의 규칙이 값의 의미와 프로그램 상태 변화에 어떤 제약을 주는지 확인한다”이다. 예상과 다르면 타입·정체성·호출 순서·예외 경계를 차례로 좁히고, 수정 뒤 원래 예제와 반대 조건 예제를 모두 다시 실행한다. 결과를 자기 문장으로 설명할 수 있어야 문법을 복사한 것이 아니라 동작 원리를 이해한 것이다.
 ## CHAPTER 03 · inheritance에서는 base와 subclass의 slot 구성을 함께 봐야 한다
 
 ### 시작 전 용어집
