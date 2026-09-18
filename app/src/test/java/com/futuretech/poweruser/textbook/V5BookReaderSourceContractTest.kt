@@ -15,15 +15,22 @@ class V5BookReaderSourceContractTest {
     private fun compactWhitespace(text: String): String = text.replace(Regex("\\s+"), " ")
 
     @Test
-    fun adaptiveShelfUsesLiveV5AndLegacyFallbackSafely() {
+    fun adaptiveShelfOpensBundledBookBeforeAnyNetworkRefresh() {
         val adaptive = source("com/futuretech/poweruser/ui/AdaptiveTextbookScreen.kt")
         assertTrue(adaptive.contains("V5BookAssetRepository(context)"))
+        assertTrue(adaptive.contains("isConfiguredLiveTrack(selectedChapter.number)"))
+        assertTrue(adaptive.contains("prepareBundledContent(selectedChapter.number)"))
+        assertTrue(adaptive.contains("liveReady = bundledReady"))
         assertTrue(adaptive.contains("refreshRemoteContent(selectedChapter.number)"))
         assertTrue(adaptive.contains("loadManifest(selectedChapter.number)"))
         assertTrue(adaptive.contains("V5TrackBookScreen("))
         assertTrue(adaptive.contains("V4PagedBookScreen("))
         assertTrue(adaptive.contains("legacyFallback"))
-        assertTrue(adaptive.contains("track_not_live:"))
+
+        val prepareIndex = adaptive.indexOf("prepareBundledContent(selectedChapter.number)")
+        val refreshIndex = adaptive.indexOf("refreshRemoteContent(selectedChapter.number)")
+        assertTrue("Bundled textbook must be prepared before GitHub refresh", prepareIndex >= 0)
+        assertTrue("Network refresh must happen only after bundled textbook is ready", refreshIndex > prepareIndex)
     }
 
     @Test
@@ -37,6 +44,8 @@ class V5BookReaderSourceContractTest {
         assertTrue(repository.contains("codingcoding_textbook_v5_live_v1"))
         assertTrue(repository.contains("fragments.flatMap { it.parts }.sortedBy { it.order }"))
         assertTrue(repository.contains("seedBundledTrackIfMissing"))
+        assertTrue(repository.contains("prepareBundledContent"))
+        assertTrue(repository.contains("isConfiguredLiveTrack"))
         assertTrue(repository.contains(".__next"))
         assertTrue(repository.contains("project_lock_duplicate_track"))
         assertFalse(repository.contains("CHANNEL_URL"))
