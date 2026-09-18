@@ -1,6 +1,6 @@
 # PART 75 · Frame·code object introspection — 실행 중인 Python을 구조적으로 관찰하기
 
-Python function은 단순한 source text가 아니다. Compile된 code object와 runtime frame이 분리되어 있고, traceback·debugger·profiler는 이 구조를 이용한다. Introspection은 강력하지만 frame이 local object graph를 붙잡거나 implementation detail에 의존하게 만들 수 있다. 이 PART에서는 **code는 실행 설계도, frame은 특정 호출의 실행 상태**라는 모델로 접근한다.
+Python function은 단순한 source text가 아니다. Compile된 code object와 runtime frame이 분리되어 있고, traceback·debugger·profiler는 이 구조를 이용한다. Introspection은 강력하지만 frame이 local object graph를 붙잡거나 implementation detail에 의존하게 만들 수 있다. 이 절에서는 **code는 실행 설계도, frame은 특정 호출의 실행 상태**라는 모델로 접근한다.
 
 ---
 
@@ -39,6 +39,8 @@ print(code.co_varnames)
 
 ---
 
+**직접 확인하기 — CHAPTER 01 · code object는 실행 가능한 구조와 이름·상수·위치 정보를 담는다**
+CHAPTER 01 · code object는 실행 가능한 구조와 이름·상수·위치 정보를 담는다은 설명만 읽고 넘기기보다 가장 작은 실행 예제로 규칙을 확인해야 오래 남는다. 먼저 입력이나 객체 하나만 두고 기대 결과를 적은 뒤 실행한다. 다음에는 값 하나, 호출 순서 하나, 경계 조건 하나만 바꿔 실제 결과가 어떻게 달라지는지 비교한다. 한 줄 해석은 “CHAPTER 01 · code object는 실행 가능한 구조와 이름·상수·위치 정보를 담는다의 규칙이 값의 의미와 프로그램 상태 변화에 어떤 제약을 주는지 확인한다”이다. 예상과 다르면 타입·정체성·호출 순서·예외 경계를 차례로 좁히고, 수정 뒤 원래 예제와 반대 조건 예제를 모두 다시 실행한다. 마지막에는 왜 그런 결과가 나왔는지 자기 문장으로 설명해 본다.
 ## CHAPTER 02 · frame object는 특정 호출의 instruction position과 namespace를 가진다
 
 ### 시작 전 용어집
@@ -152,6 +154,8 @@ dis.dis(choose)
 
 ---
 
+**직접 확인하기 — CHAPTER 05 · bytecode view는 source와 interpreter execution 사이의 중간 관찰 창이다**
+CHAPTER 05 · bytecode view는 source와 interpreter execution 사이의 중간 관찰 창이다은 설명만 읽고 넘기기보다 가장 작은 실행 예제로 규칙을 확인해야 오래 남는다. 먼저 입력이나 객체 하나만 두고 기대 결과를 적은 뒤 실행한다. 다음에는 값 하나, 호출 순서 하나, 경계 조건 하나만 바꿔 실제 결과가 어떻게 달라지는지 비교한다. 한 줄 해석은 “CHAPTER 05 · bytecode view는 source와 interpreter execution 사이의 중간 관찰 창이다의 규칙이 값의 의미와 프로그램 상태 변화에 어떤 제약을 주는지 확인한다”이다. 예상과 다르면 타입·정체성·호출 순서·예외 경계를 차례로 좁히고, 수정 뒤 원래 예제와 반대 조건 예제를 모두 다시 실행한다. 마지막에는 왜 그런 결과가 나왔는지 자기 문장으로 설명해 본다.
 ## CHAPTER 06 · frame retention은 traceback·debugger가 예상보다 많은 memory를 붙잡게 할 수 있다
 
 ### 시작 전 용어집
