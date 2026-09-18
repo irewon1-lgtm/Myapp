@@ -205,3 +205,48 @@ job_id, input_digest, schema_version, processor_version, progress
 - **뜻:** 정상 resume 한 번 성공은 충분한 검증이 아니다.
 - **왜 중요한가:** 이 PART의 핵심은 **checkpoint를 진행률 숫자 저장으로 보지 않고, output commit과의 순서를 통해 손실을 막고 허용 가능한 replay 범위를 정의하는 durable recovery protocol로 설계하는 것**이다.
 - **예시:** 정상 resume 한 번 성공은 충분한 검증이 아니다.
+
+---
+
+## 실전 학습 루프 · checkpoint와 resume
+
+### 1. 쉬운 예
+
+백만 행을 처리하다 90만 행에서 process가 죽었는데 처음부터 다시 시작할 필요는 없다. 다만 checkpoint를 “90만”이라는 숫자 하나로 저장하면 입력 파일이 바뀌었거나 직전 side effect가 commit되지 않은 경우 잘못 재개할 수 있다.
+
+### 2. 한 줄 해석
+
+checkpoint는 위치뿐 아니라 입력 identity·처리 버전·commit 경계를 함께 묶어야 안전한 resume 지점이 된다.
+
+### 3. 직접 실행
+
+아래 최소 예제를 실행하기 전에 **성공 경로와 실패 경로를 각각 한 줄로 예측**한다.
+
+```python
+checkpoint = {
+    'source_digest': 'abc123',
+    'offset': 900000,
+    'version': 2,
+}
+print(checkpoint)
+```
+
+### 4. 수정 실습
+
+1. checkpoint 저장 직전/직후 crash를 나눠 마지막 항목이 중복·누락되는지 분석한다.
+2. 입력 파일 digest가 달라지면 기존 checkpoint를 거부하도록 만든다.
+
+수정 뒤에는 같은 입력을 여러 번 실행하거나 중간 crash를 가정해 결과가 중복·누락·무한 대기로 바뀌지 않는지 확인한다.
+
+### 5. 확인 문제
+
+마지막으로 읽은 row 번호만 저장하면 정확히 이어서 처리할 수 있을까?
+
+### 6. 정답과 오답 설명
+
+**정답:** 항상 아니다. side effect commit과 checkpoint 저장 순서, 입력 동일성까지 일치해야 한다.
+
+**자주 나오는 오답:** progress 표시 숫자와 복구 가능한 durable checkpoint를 같은 것으로 보면 안 된다.
+
+운영형 문제에서는 함수 한 번의 정상 출력보다 **재시도, 중복, timeout, crash, 재시작** 뒤의 상태가 더 중요하다. 마지막으로 이 기능이 어떤 상태를 영구 저장하고 어떤 상태를 다시 계산할 수 있는지 구분해 적는다.
+

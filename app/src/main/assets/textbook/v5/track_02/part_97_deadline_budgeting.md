@@ -206,3 +206,50 @@ await db.query(sql, timeout=min(remaining, DB_MAX_TIMEOUT))
 
 - **뜻:** 이 PART의 핵심은 **timeout을 함수마다 붙이는 숫자로 보지 않고, request 전체가 공유하고 소비하는 유한한 deadline budget으로 관리하는 것**이다.
 - **예시:** 이 PART의 핵심은 **timeout을 함수마다 붙이는 숫자로 보지 …
+
+---
+
+## 실전 학습 루프 · deadline budgeting
+
+### 1. 쉬운 예
+
+사용자 요청에 1초 제한이 있는데 내부 서비스 A에 1초, B에 1초씩 timeout을 주면 전체 요청은 이미 예산을 넘을 수 있다. 호출 체인은 남은 시간을 전달하고 각 단계가 그 범위 안에서 종료해야 한다.
+
+### 2. 한 줄 해석
+
+timeout은 각 호출의 독립 숫자가 아니라 전체 deadline에서 배분되는 시간 예산이다.
+
+### 3. 직접 실행
+
+아래 최소 예제를 실행하기 전에 **성공 경로와 실패 경로를 각각 한 줄로 예측**한다.
+
+```python
+import time
+
+deadline = time.monotonic() + 1.0
+
+def remaining():
+    return max(0.0, deadline - time.monotonic())
+
+print(remaining())
+```
+
+### 4. 수정 실습
+
+1. 두 번의 retry를 허용할 때 각 attempt timeout과 backoff가 전체 deadline을 넘지 않게 계산한다.
+2. wall clock 대신 monotonic clock이 elapsed-time 측정에 적합한 이유를 확인한다.
+
+수정 뒤에는 같은 입력을 여러 번 실행하거나 중간 crash를 가정해 결과가 중복·누락·무한 대기로 바뀌지 않는지 확인한다.
+
+### 5. 확인 문제
+
+하위 API timeout을 모두 사용자 deadline과 같은 값으로 설정하면 충분할까?
+
+### 6. 정답과 오답 설명
+
+**정답:** 아니다. queueing, 여러 순차 호출, retry·serialization 비용까지 포함해 남은 budget을 나눠야 한다.
+
+**자주 나오는 오답:** timeout을 길게 주면 안정적이라는 생각은 overload 시 자원을 더 오래 붙잡아 tail latency를 악화시킬 수 있다.
+
+운영형 문제에서는 함수 한 번의 정상 출력보다 **재시도, 중복, timeout, crash, 재시작** 뒤의 상태가 더 중요하다. 마지막으로 이 기능이 어떤 상태를 영구 저장하고 어떤 상태를 다시 계산할 수 있는지 구분해 적는다.
+

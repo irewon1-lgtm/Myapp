@@ -204,3 +204,46 @@ sha256:v1:<hex>
 
 - **뜻:** 이 PART의 핵심은 **digest를 만능 보안 도장으로 보지 않고, 정확히 정의된 byte sequence의 compact identity로 사용하면서 integrity·authenticity·uniqueness 요구를 별도 계층으로 설계하는 것**이다.
 - **예시:** 이 PART의 핵심은 **digest를 만능 보안 도장으로 보지 …
+
+---
+
+## 실전 학습 루프 · digest·integrity·identity
+
+### 1. 쉬운 예
+
+파일을 SHA-256으로 hash해 같으면 동일한 byte sequence라고 강하게 추정할 수 있지만, digest는 “누가 만들었는가”를 인증하지 않는다. 무결성 식별자와 authentication/signature 역할을 분리해야 한다.
+
+### 2. 한 줄 해석
+
+digest는 내용의 byte identity를 요약하는 값이고, 신뢰 주체의 identity는 별도의 key·signature·access-control 계약이 필요하다.
+
+### 3. 직접 실행
+
+아래 최소 예제를 실행하기 전에 **성공 경로와 실패 경로를 각각 한 줄로 예측**한다.
+
+```python
+import hashlib
+
+data = b'payload-v1'
+print(hashlib.sha256(data).hexdigest())
+```
+
+### 4. 수정 실습
+
+1. 파일 이름 대신 content digest를 cache key로 사용할 때 collision·algorithm migration 정책을 적는다.
+2. 공격자가 파일과 digest를 함께 바꿀 수 있는 상황에서 단순 checksum이 왜 신뢰 근거가 아닌지 설명한다.
+
+수정 뒤에는 같은 입력을 여러 번 실행하거나 중간 crash를 가정해 결과가 중복·누락·무한 대기로 바뀌지 않는지 확인한다.
+
+### 5. 확인 문제
+
+SHA-256 digest가 일치하면 그 파일이 신뢰할 수 있는 제작자에게서 왔다고 증명할까?
+
+### 6. 정답과 오답 설명
+
+**정답:** 아니다. digest는 내용 동일성/무결성 확인에 쓰일 수 있지만 발신자 인증은 signature나 신뢰된 전달 경로가 필요하다.
+
+**자주 나오는 오답:** hash, MAC, digital signature를 모두 “암호화”라고 부르면 보장하는 성질이 섞인다.
+
+운영형 문제에서는 함수 한 번의 정상 출력보다 **재시도, 중복, timeout, crash, 재시작** 뒤의 상태가 더 중요하다. 마지막으로 이 기능이 어떤 상태를 영구 저장하고 어떤 상태를 다시 계산할 수 있는지 구분해 적는다.
+

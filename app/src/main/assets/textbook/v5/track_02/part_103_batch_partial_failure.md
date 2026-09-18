@@ -197,3 +197,50 @@ row 4 -> duplicate
 
 - **뜻:** 이 PART의 핵심은 **batch를 단순 반복문 최적화로 보지 않고, 어떤 단위로 검증·commit·실패·재시작할지를 결정하는 독립된 consistency protocol로 설계하는 것**이다.
 - **예시:** 이 PART의 핵심은 **batch를 단순 반복문 최적화로 보지 …
+
+---
+
+## 실전 학습 루프 · batch partial failure
+
+### 1. 쉬운 예
+
+100개 항목을 묶어 처리할 때 57번째가 실패했다고 전체 성공 또는 전체 실패 두 값만 반환하면 이미 처리된 56개의 상태가 불명확해질 수 있다. batch는 항목별 결과와 commit 단위를 명시해야 한다.
+
+### 2. 한 줄 해석
+
+batch API는 입력 묶음보다 실패 단위·재시도 단위·원자성 범위를 먼저 정해야 한다.
+
+### 3. 직접 실행
+
+아래 최소 예제를 실행하기 전에 **성공 경로와 실패 경로를 각각 한 줄로 예측**한다.
+
+```python
+def process_batch(items):
+    results = []
+    for item in items:
+        try:
+            results.append(('ok', item * 2))
+        except Exception as exc:
+            results.append(('error', str(exc)))
+    return results
+```
+
+### 4. 수정 실습
+
+1. all-or-nothing transaction과 per-item commit의 복구 전략을 비교한다.
+2. 재시도할 항목만 추출할 수 있도록 stable item id를 결과에 포함한다.
+
+수정 뒤에는 같은 입력을 여러 번 실행하거나 중간 crash를 가정해 결과가 중복·누락·무한 대기로 바뀌지 않는지 확인한다.
+
+### 5. 확인 문제
+
+batch 안에서 하나가 실패하면 나머지도 무조건 같은 상태로 처리해야 할까?
+
+### 6. 정답과 오답 설명
+
+**정답:** 요구사항에 따라 다르다. 원자적 batch인지 부분 성공 허용인지 계약으로 먼저 정해야 한다.
+
+**자주 나오는 오답:** HTTP status 하나만으로 각 item 결과를 표현하려는 설계는 복구 정보를 잃기 쉽다.
+
+운영형 문제에서는 함수 한 번의 정상 출력보다 **재시도, 중복, timeout, crash, 재시작** 뒤의 상태가 더 중요하다. 마지막으로 이 기능이 어떤 상태를 영구 저장하고 어떤 상태를 다시 계산할 수 있는지 구분해 적는다.
+

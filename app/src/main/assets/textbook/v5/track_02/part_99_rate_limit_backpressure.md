@@ -213,3 +213,50 @@ P97의 budget과 연결한다.
 
 - **뜻:** Load test에서 p95/p99 queue delay와 rejection ratio를 함께 본다.
 - **예시:** Load test에서 p95/p99 queue delay와 rejection ratio를 함께 …
+
+---
+
+## 실전 학습 루프 · rate limit과 backpressure
+
+### 1. 쉬운 예
+
+생산자가 초당 1,000건을 보내는데 소비자가 100건만 처리할 수 있으면 queue는 계속 커진다. rate limit은 입구를 제한하고 backpressure는 downstream 처리 능력에 맞춰 upstream 속도를 줄이거나 거부하게 한다.
+
+### 2. 한 줄 해석
+
+처리량 제어의 목표는 모든 요청을 무조건 받는 것이 아니라 bounded resource 안에서 안정적으로 서비스를 유지하는 것이다.
+
+### 3. 직접 실행
+
+아래 최소 예제를 실행하기 전에 **성공 경로와 실패 경로를 각각 한 줄로 예측**한다.
+
+```python
+from collections import deque
+
+queue = deque(maxlen=3)
+for x in range(5):
+    if len(queue) == queue.maxlen:
+        print('reject/backpressure', x)
+    else:
+        queue.append(x)
+```
+
+### 4. 수정 실습
+
+1. 고정 queue 크기에서 reject 대신 오래 대기시키면 latency가 어떻게 변하는지 생각한다.
+2. client별 rate limit과 전체 시스템 concurrency limit을 분리한다.
+
+수정 뒤에는 같은 입력을 여러 번 실행하거나 중간 crash를 가정해 결과가 중복·누락·무한 대기로 바뀌지 않는지 확인한다.
+
+### 5. 확인 문제
+
+queue를 아주 크게 만들면 backpressure 문제가 해결될까?
+
+### 6. 정답과 오답 설명
+
+**정답:** 아니다. 메모리와 지연에 문제를 옮길 뿐이며 지속적인 입력 초과는 결국 제어해야 한다.
+
+**자주 나오는 오답:** buffer 크기 증가를 capacity 증가와 동일시하면 overload가 늦게 드러날 뿐이다.
+
+운영형 문제에서는 함수 한 번의 정상 출력보다 **재시도, 중복, timeout, crash, 재시작** 뒤의 상태가 더 중요하다. 마지막으로 이 기능이 어떤 상태를 영구 저장하고 어떤 상태를 다시 계산할 수 있는지 구분해 적는다.
+

@@ -206,3 +206,52 @@ HTTP listener -> request tasks -> job workers -> DB/client pools -> logging expo
 - **뜻:** Service는 RUNNING, DRAINING, STOPPING, STOPPED 같은 상태를 가질 수 있고 각 상태에서 admission, task 생성, resource access 허용 범위를 정의한다.
 - **왜 중요한가:** 이 PART의 핵심은 **shutdown을 프로그램 마지막 한 줄로 보지 않고, 새 작업 차단부터 기존 작업 정리와 강제 종료까지 순서를 가진 bounded lifecycle protocol로 설계하는 것**이다.
 - **예시:** Service는 RUNNING, DRAINING, STOPPING, STOPPED 같은 상태를 가질 …
+
+---
+
+## 실전 학습 루프 · graceful shutdown
+
+### 1. 쉬운 예
+
+서버가 종료 신호를 받자마자 process를 끝내면 처리 중 요청과 buffer 데이터가 사라질 수 있다. 새 작업 수락을 중단하고, 진행 중 작업에 deadline을 주고, flush·checkpoint·자원 close를 순서대로 수행해야 한다.
+
+### 2. 한 줄 해석
+
+graceful shutdown은 “기다린다”가 아니라 admission stop → drain → persist/cleanup → exit의 상태 머신이다.
+
+### 3. 직접 실행
+
+아래 최소 예제를 실행하기 전에 **성공 경로와 실패 경로를 각각 한 줄로 예측**한다.
+
+```python
+import asyncio
+
+accepting = True
+inflight = set()
+
+async def shutdown():
+    global accepting
+    accepting = False
+    if inflight:
+        await asyncio.wait(inflight, timeout=5)
+```
+
+### 4. 수정 실습
+
+1. drain이 영원히 끝나지 않도록 shutdown deadline을 둔다.
+2. 재시작 후 미완료 작업을 복구할 수 있게 checkpoint/queue semantics를 연결한다.
+
+수정 뒤에는 같은 입력을 여러 번 실행하거나 중간 crash를 가정해 결과가 중복·누락·무한 대기로 바뀌지 않는지 확인한다.
+
+### 5. 확인 문제
+
+graceful shutdown이면 모든 작업이 끝날 때까지 무한히 기다려야 할까?
+
+### 6. 정답과 오답 설명
+
+**정답:** 아니다. 운영 환경에는 종료 deadline이 필요하며 이후 강제 종료·재처리 정책을 정의해야 한다.
+
+**자주 나오는 오답:** “SIGTERM을 catch했다”만으로 graceful shutdown이 완성됐다고 보면 안 된다.
+
+운영형 문제에서는 함수 한 번의 정상 출력보다 **재시도, 중복, timeout, crash, 재시작** 뒤의 상태가 더 중요하다. 마지막으로 이 기능이 어떤 상태를 영구 저장하고 어떤 상태를 다시 계산할 수 있는지 구분해 적는다.
+

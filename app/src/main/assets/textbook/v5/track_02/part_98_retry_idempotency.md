@@ -210,3 +210,53 @@ client sends -> server commits -> response lost -> client sees timeout
 
 - **뜻:** 이 PART의 핵심은 **retry를 성공률을 높이는 반복문으로 보지 않고, 불확실한 distributed outcome을 다시 실행하면서도 부하와 side effect 중복을 통제하는 복구 protocol로 설계하는 것**이다.
 - **예시:** 이 PART의 핵심은 **retry를 성공률을 높이는 반복문으로 보지 …
+
+---
+
+## 실전 학습 루프 · retry와 idempotency
+
+### 1. 쉬운 예
+
+네트워크 timeout 뒤 서버가 실제로 결제를 성공시켰는지 모르는 상태에서 같은 요청을 재전송하면 중복 결제가 생길 수 있다. retry 전에 operation이 반복 실행되어도 안전한지 또는 idempotency key로 한 번의 논리 연산으로 묶을지 정해야 한다.
+
+### 2. 한 줄 해석
+
+retry는 오류 복구 기술이지만 idempotency가 없으면 실패를 중복 부작용으로 바꿀 수 있다.
+
+### 3. 직접 실행
+
+아래 최소 예제를 실행하기 전에 **성공 경로와 실패 경로를 각각 한 줄로 예측**한다.
+
+```python
+seen = {}
+
+def charge(key, amount):
+    if key in seen:
+        return seen[key]
+    result = {'charged': amount}
+    seen[key] = result
+    return result
+
+print(charge('req-1', 1000))
+print(charge('req-1', 1000))
+```
+
+### 4. 수정 실습
+
+1. 같은 key에 다른 amount가 들어오면 reject하도록 request fingerprint를 추가한다.
+2. 영구 validation error에는 retry하지 않고 transient error만 분류한다.
+
+수정 뒤에는 같은 입력을 여러 번 실행하거나 중간 crash를 가정해 결과가 중복·누락·무한 대기로 바뀌지 않는지 확인한다.
+
+### 5. 확인 문제
+
+모든 예외에 3회 retry를 붙이면 성공률이 높아질까?
+
+### 6. 정답과 오답 설명
+
+**정답:** 아니다. 영구 오류에는 효과가 없고, 비멱등 부작용·과부하를 악화시킬 수 있다.
+
+**자주 나오는 오답:** retry 횟수만 정하고 중복 실행 의미와 backoff·deadline을 정의하지 않는 것이 흔한 실수다.
+
+운영형 문제에서는 함수 한 번의 정상 출력보다 **재시도, 중복, timeout, crash, 재시작** 뒤의 상태가 더 중요하다. 마지막으로 이 기능이 어떤 상태를 영구 저장하고 어떤 상태를 다시 계산할 수 있는지 구분해 적는다.
+
