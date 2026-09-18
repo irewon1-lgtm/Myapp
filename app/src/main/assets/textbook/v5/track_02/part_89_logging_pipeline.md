@@ -198,3 +198,47 @@ Field type을 안정적으로 유지한다.
 - **뜻:** 이 PART의 핵심은 **logging을 문자열 출력이 아니라 event 생성→routing→format→export로 이어지는 관찰 가능성 pipeline으로 보고, field schema와 privacy를 application contract로 관리하는 것**이다.
 - **왜 중요한가:** Load test에서는 logging I/O가 tail latency를 얼마나 늘리는지도 본다.
 - **예시:** 이 PART의 핵심은 **logging을 문자열 출력이 아니라 event …
+
+---
+
+## 실전 학습 루프 · logging pipeline
+
+### 1. 쉬운 예
+
+`print()` 몇 줄은 작은 프로그램에선 충분하지만 운영 환경에서는 level, logger, handler, formatter, context, destination이 분리된 pipeline이 필요하다. 특히 request_id 같은 correlation 정보와 secret redaction 정책이 중요하다.
+
+### 2. 한 줄 해석
+
+로그는 문자열 출력이 아니라 사건을 나중에 재구성할 수 있게 만드는 구조화된 evidence pipeline이다.
+
+### 3. 직접 실행
+
+실행 전에 결과를 먼저 예상하고, 실행 후에는 **어느 경계에서 상태나 의미가 바뀌었는지** 표시한다.
+
+```python
+import logging
+
+logging.basicConfig(level=logging.INFO)
+log = logging.getLogger('app')
+log.info('saved order_id=%s elapsed_ms=%d', 'A12', 18)
+```
+
+### 4. 수정 실습
+
+1. password/token이 담긴 dict 전체를 로그하는 코드를 redaction하도록 바꾼다.
+2. 같은 exception이 여러 계층에서 중복 기록되지 않도록 책임 위치를 정한다.
+
+수정 전후를 비교할 때는 정상 경로만 보지 않고 실패 입력과 자원 한도도 함께 확인한다.
+
+### 5. 확인 문제
+
+로그를 많이 남길수록 observability가 항상 좋아질까?
+
+### 6. 정답과 오답 설명
+
+**정답:** 아니다. 의미 있는 필드, 상관관계, sampling·보존 정책이 없으면 비용과 노이즈만 늘 수 있다.
+
+**자주 나오는 오답:** 모든 입력과 예외를 원문 그대로 저장하는 것은 개인정보·secret 유출 위험까지 만든다.
+
+마지막에는 이 주제를 **입력/신뢰 수준 → 변환 또는 대기 → 검증 → 결과/실패** 순서로 다시 설명한다. 이 순서가 보이면 실제 장애에서도 원인 경계를 빠르게 좁힐 수 있다.
+

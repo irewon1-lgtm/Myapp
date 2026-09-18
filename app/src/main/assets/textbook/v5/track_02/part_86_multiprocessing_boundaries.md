@@ -188,3 +188,51 @@
 - **뜻:** 테스트에서는 spawn-like fresh start, worker crash, unpicklable input, queue full, shared memory cleanup을 분리한다.
 - **왜 중요한가:** Single-process unit test만으로 process lifecycle을 대체하지 않는다.
 - **예시:** 테스트에서는 spawn-like fresh start, worker crash, unpicklable input, …
+
+---
+
+## 실전 학습 루프 · multiprocessing boundary
+
+### 1. 쉬운 예
+
+process는 메모리 공간이 분리되므로 일반 Python 객체를 그냥 공유하는 것이 아니다. 인자·결과는 직렬화되거나 shared memory 같은 별도 메커니즘을 거치며 startup 비용과 종료 정책도 thread와 다르다.
+
+### 2. 한 줄 해석
+
+multiprocessing은 GIL 회피 도구 하나가 아니라 process isolation·IPC·serialization 비용을 함께 가진 실행 모델이다.
+
+### 3. 직접 실행
+
+실행 전에 결과를 먼저 예상하고, 실행 후에는 **어느 경계에서 상태나 의미가 바뀌었는지** 표시한다.
+
+```python
+from multiprocessing import Process
+
+def work(x):
+    print(x * x)
+
+if __name__ == '__main__':
+    p = Process(target=work, args=(4,))
+    p.start()
+    p.join()
+```
+
+### 4. 수정 실습
+
+1. 큰 객체를 자주 넘길 때 serialization 비용이 계산 이득을 넘지 않는지 측정한다.
+2. child process가 비정상 종료했을 때 parent가 exit code를 어떻게 처리할지 추가한다.
+
+수정 전후를 비교할 때는 정상 경로만 보지 않고 실패 입력과 자원 한도도 함께 확인한다.
+
+### 5. 확인 문제
+
+process에 list를 넘기면 parent와 child가 같은 list 객체를 수정하는가?
+
+### 6. 정답과 오답 설명
+
+**정답:** 일반적으로 아니다. 주소 공간이 분리되며 전달 방식과 공유 메모리 사용 여부를 별도로 설계해야 한다.
+
+**자주 나오는 오답:** thread의 공유 메모리 모델을 process에 그대로 적용하는 것이 흔한 오답이다.
+
+마지막에는 이 주제를 **입력/신뢰 수준 → 변환 또는 대기 → 검증 → 결과/실패** 순서로 다시 설명한다. 이 순서가 보이면 실제 장애에서도 원인 경계를 빠르게 좁힐 수 있다.
+

@@ -206,3 +206,48 @@ async def read_exactly(reader, n):
 - **뜻:** 이 PART의 핵심은 **socket을 메시지 API로 오해하지 않고, 순서 있는 byte stream 위에 framing과 flow control을 application이 직접 구성해야 한다는 사실을 실행 경로로 이해하는 것**이다.
 - **왜 중요한가:** 테스트에서는 한 frame을 1-byte 단위로 쪼개기, 여러 frame을 한 번에 합치기, partial send, oversized length, mid-frame EOF, slow receiver를 재현한다.
 - **예시:** 이 PART의 핵심은 **socket을 메시지 API로 오해하지 않고, …
+
+---
+
+## 실전 학습 루프 · socket stream framing
+
+### 1. 쉬운 예
+
+TCP는 message 경계를 보존하지 않는 byte stream이다. 한 번 `send()`한 데이터가 한 번 `recv()`에 그대로 대응한다고 가정하면 packet 분할·병합에서 parser가 깨진다.
+
+### 2. 한 줄 해석
+
+stream protocol에는 길이 prefix, delimiter, fixed header 같은 명시적 framing 규칙이 필요하다.
+
+### 3. 직접 실행
+
+실행 전에 결과를 먼저 예상하고, 실행 후에는 **어느 경계에서 상태나 의미가 바뀌었는지** 표시한다.
+
+```python
+import struct
+
+payload = b'hello'
+frame = struct.pack('!I', len(payload)) + payload
+size = struct.unpack('!I', frame[:4])[0]
+print(frame[4:4+size])
+```
+
+### 4. 수정 실습
+
+1. header가 2byte만 도착한 상황을 상태 머신으로 처리한다.
+2. declared length가 최대 허용치를 넘으면 payload allocation 전에 거부한다.
+
+수정 전후를 비교할 때는 정상 경로만 보지 않고 실패 입력과 자원 한도도 함께 확인한다.
+
+### 5. 확인 문제
+
+`sendall(b'abc')`를 호출했으면 peer의 첫 `recv()`가 반드시 `b'abc'`일까?
+
+### 6. 정답과 오답 설명
+
+**정답:** 아니다. TCP는 byte 순서를 보장하지만 application message 경계는 보장하지 않는다.
+
+**자주 나오는 오답:** socket 호출 횟수를 message 횟수와 동일시하면 framing 버그가 생긴다.
+
+마지막에는 이 주제를 **입력/신뢰 수준 → 변환 또는 대기 → 검증 → 결과/실패** 순서로 다시 설명한다. 이 순서가 보이면 실제 장애에서도 원인 경계를 빠르게 좁힐 수 있다.
+

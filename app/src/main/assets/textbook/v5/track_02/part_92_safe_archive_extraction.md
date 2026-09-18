@@ -212,3 +212,48 @@ archive -> isolated staging -> validate tree -> publish
 - **예시:** 이 PART의 핵심은 **archive를 파일 묶음으로만 보지 않고 …
 
 테스트 corpus에는 `..
+
+---
+
+## 실전 학습 루프 · safe archive extraction
+
+### 1. 쉬운 예
+
+ZIP/TAR entry 이름을 그대로 destination에 붙이면 `../` 경로 탈출, absolute path, symlink를 통한 외부 쓰기가 가능할 수 있다. 압축 해제 전 inventory와 총 확장 크기, entry 수, 허용 경로를 검증해야 한다.
+
+### 2. 한 줄 해석
+
+archive extraction은 파일 복사가 아니라 공격자가 제어할 수 있는 경로·용량·링크를 해석하는 보안 경계다.
+
+### 3. 직접 실행
+
+실행 전에 결과를 먼저 예상하고, 실행 후에는 **어느 경계에서 상태나 의미가 바뀌었는지** 표시한다.
+
+```python
+from pathlib import Path
+
+root = Path('/safe/root').resolve()
+name = '../outside.txt'
+candidate = (root / name).resolve()
+print(candidate.is_relative_to(root))
+```
+
+### 4. 수정 실습
+
+1. entry 수와 압축 해제 총 byte budget을 추가한다.
+2. symlink entry를 허용할지 거부할지 정책을 명시하고 우회 사례를 생각한다.
+
+수정 전후를 비교할 때는 정상 경로만 보지 않고 실패 입력과 자원 한도도 함께 확인한다.
+
+### 5. 확인 문제
+
+파일명에서 문자열 `..`만 제거하면 안전한 archive extraction이 될까?
+
+### 6. 정답과 오답 설명
+
+**정답:** 아니다. absolute path, separator 변형, symlink, canonicalization, resource exhaustion까지 함께 다뤄야 한다.
+
+**자주 나오는 오답:** 문자열 필터 하나로 실제 filesystem 경계를 대신하려는 접근이 위험하다.
+
+마지막에는 이 주제를 **입력/신뢰 수준 → 변환 또는 대기 → 검증 → 결과/실패** 순서로 다시 설명한다. 이 순서가 보이면 실제 장애에서도 원인 경계를 빠르게 좁힐 수 있다.
+

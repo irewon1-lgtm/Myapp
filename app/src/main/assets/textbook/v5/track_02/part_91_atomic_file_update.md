@@ -210,3 +210,48 @@ with open(tmp, "w", encoding="utf-8") as f:
 
 - **뜻:** 이 PART의 핵심은 **파일 저장을 `open-write-close`로 축소하지 않고, 이전 정상본을 보존하며 새 generation을 검증·지속·교체하는 crash-aware commit protocol로 이해하는 것**이다.
 - **예시:** 이 PART의 핵심은 **파일 저장을 `open-write-close`로 축소하지 않고, …
+
+---
+
+## 실전 학습 루프 · atomic file update
+
+### 1. 쉬운 예
+
+설정 파일을 직접 덮어쓰다가 process가 죽으면 반만 쓴 파일이 남을 수 있다. 새 내용을 같은 filesystem의 임시 파일에 완전히 쓰고 필요한 durability 조치를 한 뒤 rename으로 교체하면 독자에게 이전 또는 새 버전 중 하나를 보여 주기 쉽다.
+
+### 2. 한 줄 해석
+
+atomic update는 write 한 번이 아니라 임시 작성·검증·동기화·원자적 교체의 순서를 설계하는 문제다.
+
+### 3. 직접 실행
+
+실행 전에 결과를 먼저 예상하고, 실행 후에는 **어느 경계에서 상태나 의미가 바뀌었는지** 표시한다.
+
+```python
+from pathlib import Path
+
+target = Path('settings.txt')
+tmp = target.with_suffix('.tmp')
+tmp.write_text('version=2', encoding='utf-8')
+tmp.replace(target)
+```
+
+### 4. 수정 실습
+
+1. rename 전에 validation 실패를 만들고 기존 target이 보존되는지 확인한다.
+2. 중요 데이터라면 file fsync와 directory fsync가 각각 왜 필요한지 조사한다.
+
+수정 전후를 비교할 때는 정상 경로만 보지 않고 실패 입력과 자원 한도도 함께 확인한다.
+
+### 5. 확인 문제
+
+임시 파일을 만들었다는 사실만으로 crash-safe 저장이 완성될까?
+
+### 6. 정답과 오답 설명
+
+**정답:** 아니다. 같은 filesystem 여부, flush/fsync, rename semantics, directory metadata durability까지 요구 수준에 따라 확인한다.
+
+**자주 나오는 오답:** atomic visibility와 power-loss durability를 같은 개념으로 보는 것이 오답이다.
+
+마지막에는 이 주제를 **입력/신뢰 수준 → 변환 또는 대기 → 검증 → 결과/실패** 순서로 다시 설명한다. 이 순서가 보이면 실제 장애에서도 원인 경계를 빠르게 좁힐 수 있다.
+

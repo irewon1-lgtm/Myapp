@@ -243,3 +243,53 @@ async with semaphore:
 
 - **뜻:** Deterministic test에서는 fake clock이나 controlled scheduling으로 rare ordering을 재현한다.
 - **예시:** Deterministic test에서는 fake clock이나 controlled scheduling으로 rare ordering을 …
+
+---
+
+## 실전 학습 루프 · async synchronization
+
+### 1. 쉬운 예
+
+여러 coroutine이 같은 상태를 바꾸면 thread가 하나인 event loop에서도 interleaving 때문에 race가 생길 수 있다. `await` 지점 사이에서 다른 Task가 실행되므로 읽기→대기→쓰기 순서가 원자적이라고 가정하면 안 된다.
+
+### 2. 한 줄 해석
+
+async Lock·Semaphore·Condition은 coroutine 사이의 접근 순서와 동시성 한도를 명시하는 도구다.
+
+### 3. 직접 실행
+
+실행 전에 결과를 먼저 예상하고, 실행 후에는 **어느 경계에서 상태나 의미가 바뀌었는지** 표시한다.
+
+```python
+import asyncio
+
+lock = asyncio.Lock()
+count = 0
+
+async def inc():
+    global count
+    async with lock:
+        old = count
+        await asyncio.sleep(0)
+        count = old + 1
+```
+
+### 4. 수정 실습
+
+1. Lock을 제거하고 여러 `inc()`를 동시에 실행해 결과가 항상 같은지 확인한다.
+2. Semaphore 값 1과 3을 비교해 동시성 한도와 latency 차이를 관찰한다.
+
+수정 전후를 비교할 때는 정상 경로만 보지 않고 실패 입력과 자원 한도도 함께 확인한다.
+
+### 5. 확인 문제
+
+event loop가 한 thread에서 돈다면 async race condition은 절대 생기지 않을까?
+
+### 6. 정답과 오답 설명
+
+**정답:** 아니다. coroutine이 await 지점에서 양보하면 여러 Task의 논리적 연산이 섞일 수 있다.
+
+**자주 나오는 오답:** “thread가 하나니까 synchronization이 필요 없다”는 결론은 복합 상태 갱신에서 깨진다.
+
+마지막에는 이 주제를 **입력/신뢰 수준 → 변환 또는 대기 → 검증 → 결과/실패** 순서로 다시 설명한다. 이 순서가 보이면 실제 장애에서도 원인 경계를 빠르게 좁힐 수 있다.
+

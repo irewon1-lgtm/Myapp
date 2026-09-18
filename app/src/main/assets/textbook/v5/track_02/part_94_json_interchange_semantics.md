@@ -213,3 +213,47 @@ def encode(value):
 - **뜻:** 테스트에는 매우 큰 integer, Decimal-like precision, non-string Python key, reordered object, duplicate key, deep nesting, custom type을 포함한다.
 - **왜 중요한가:** 이 PART의 핵심은 **JSON을 Python object를 자동 저장하는 형식으로 보지 않고, 더 좁은 interchange value model로 투영하면서 의미 identity와 byte representation을 분리하는 것**이다.
 - **예시:** 테스트에는 매우 큰 integer, Decimal-like precision, non-string Python …
+
+---
+
+## 실전 학습 루프 · JSON interchange semantics
+
+### 1. 쉬운 예
+
+JSON은 object·array·string·number 등의 문법을 정의하지만 큰 정수 정밀도, duplicate member 처리, schema, version compatibility는 각 시스템 계약에 남는다. 언어가 다르면 같은 JSON number를 다르게 표현할 수 있다.
+
+### 2. 한 줄 해석
+
+JSON은 wire syntax이지 도메인 schema와 숫자 정책까지 자동으로 보장하는 형식은 아니다.
+
+### 3. 직접 실행
+
+실행 전에 결과를 먼저 예상하고, 실행 후에는 **어느 경계에서 상태나 의미가 바뀌었는지** 표시한다.
+
+```python
+import json
+
+payload = '{"id":"A1","amount":12.50}'
+data = json.loads(payload)
+print(type(data['amount']), data['amount'])
+```
+
+### 4. 수정 실습
+
+1. 큰 integer를 JavaScript client와 Python server 사이에서 안전하게 전달하는 방법을 설계한다.
+2. unknown field와 missing field를 각각 어떻게 처리할지 version 정책을 적는다.
+
+수정 전후를 비교할 때는 정상 경로만 보지 않고 실패 입력과 자원 한도도 함께 확인한다.
+
+### 5. 확인 문제
+
+JSON parser가 성공하면 서로 다른 언어에서도 모든 값의 의미가 동일할까?
+
+### 6. 정답과 오답 설명
+
+**정답:** 아니다. numeric model, duplicate key, schema/default/unknown-field 정책을 별도 계약으로 맞춰야 한다.
+
+**자주 나오는 오답:** 텍스트 형식이라는 이유로 interoperability가 자동 보장된다고 보면 안 된다.
+
+마지막에는 이 주제를 **입력/신뢰 수준 → 변환 또는 대기 → 검증 → 결과/실패** 순서로 다시 설명한다. 이 순서가 보이면 실제 장애에서도 원인 경계를 빠르게 좁힐 수 있다.
+

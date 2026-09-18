@@ -202,3 +202,48 @@ amount = Decimal(row["amount"])  # 금액 정책에 맞는 변환
 - **뜻:** `split(',')` 기반 happy path test로는 CSV boundary를 검증할 수 없다.
 - **왜 중요한가:** 이 PART의 핵심은 **CSV를 쉼표 문자열이 아니라 stateful record format으로 다루고, parser가 만든 text record 위에 별도의 domain schema와 export security 정책을 적용하는 것**이다.
 - **예시:** `split(',')` 기반 happy path test로는 CSV boundary를 검증할 …
+
+---
+
+## 실전 학습 루프 · CSV schema boundary
+
+### 1. 쉬운 예
+
+CSV는 표처럼 보여도 field type, header 의미, quoting, newline, encoding, null 표현을 자동으로 정의하지 않는다. parser 성공 뒤에 header schema와 column validation, row-level domain 검증이 필요하다.
+
+### 2. 한 줄 해석
+
+CSV parsing과 schema validation은 분리한다. 행을 읽었다는 사실은 그 행이 업무 데이터로 유효하다는 뜻이 아니다.
+
+### 3. 직접 실행
+
+실행 전에 결과를 먼저 예상하고, 실행 후에는 **어느 경계에서 상태나 의미가 바뀌었는지** 표시한다.
+
+```python
+import csv, io
+
+text = 'id,amount\nA1,1200\n'
+for row in csv.DictReader(io.StringIO(text)):
+    amount = int(row['amount'])
+    print(row['id'], amount)
+```
+
+### 4. 수정 실습
+
+1. amount가 빈 문자열·음수·너무 큰 값인 row를 각각 처리한다.
+2. 예상하지 못한 extra column을 허용할지 오류로 볼지 schema 정책을 정한다.
+
+수정 전후를 비교할 때는 정상 경로만 보지 않고 실패 입력과 자원 한도도 함께 확인한다.
+
+### 5. 확인 문제
+
+`csv.DictReader`가 dict를 만들면 데이터 타입까지 검증된 것일까?
+
+### 6. 정답과 오답 설명
+
+**정답:** 아니다. 기본적으로 문자열 field를 구조화했을 뿐이며 타입·범위·cross-field 규칙은 별도 검증해야 한다.
+
+**자주 나오는 오답:** parser success를 domain validity로 착각하는 것이 대표적인 오답이다.
+
+마지막에는 이 주제를 **입력/신뢰 수준 → 변환 또는 대기 → 검증 → 결과/실패** 순서로 다시 설명한다. 이 순서가 보이면 실제 장애에서도 원인 경계를 빠르게 좁힐 수 있다.
+

@@ -227,3 +227,48 @@ warm-up -> snapshot A -> workload 1000회 -> snapshot B -> workload 1000회 -> s
 
 - **뜻:** 이 PART의 핵심은 **메모리 증가를 곧바로 GC 실패로 해석하지 않고, allocation site·strong reference retention·cache policy·allocator behavior를 서로 다른 실패 유형으로 분리해 실제 측정으로 좁히는 것**이다.
 - **예시:** 이 PART의 핵심은 **메모리 증가를 곧바로 GC 실패로 …
+
+---
+
+## 실전 학습 루프 · memory diagnostics
+
+### 1. 쉬운 예
+
+메모리가 계속 증가한다고 곧바로 leak이라고 단정할 수 없다. allocator cache, object retention, 큰 temporary, fragmentation, native memory 등 원인이 다르다. 먼저 object 수와 allocation trace, RSS 같은 서로 다른 지표를 구분한다.
+
+### 2. 한 줄 해석
+
+메모리 진단은 “크다”가 아니라 어떤 메모리 층에서 무엇이 계속 남는지 증거를 모으는 과정이다.
+
+### 3. 직접 실행
+
+실행 전에 결과를 먼저 예상하고, 실행 후에는 **어느 경계에서 상태나 의미가 바뀌었는지** 표시한다.
+
+```python
+import tracemalloc
+tracemalloc.start()
+items = [bytearray(1024) for _ in range(100)]
+snap = tracemalloc.take_snapshot()
+for stat in snap.statistics('lineno')[:3]:
+    print(stat)
+```
+
+### 4. 수정 실습
+
+1. 동일 동작 전후 snapshot을 비교해 증가 위치를 찾는다.
+2. Python object trace에 보이지 않는 native allocation 가능성도 분리한다.
+
+수정 전후를 비교할 때는 정상 경로만 보지 않고 실패 입력과 자원 한도도 함께 확인한다.
+
+### 5. 확인 문제
+
+RSS가 줄지 않으면 Python 객체가 반드시 leak된 것일까?
+
+### 6. 정답과 오답 설명
+
+**정답:** 아니다. allocator와 OS 반환 정책 때문에 객체 해제와 RSS 감소가 즉시 일치하지 않을 수 있다.
+
+**자주 나오는 오답:** 하나의 숫자만 보고 leak 결론을 내리는 것이 가장 흔한 진단 오류다.
+
+마지막에는 이 주제를 **입력/신뢰 수준 → 변환 또는 대기 → 검증 → 결과/실패** 순서로 다시 설명한다. 이 순서가 보이면 실제 장애에서도 원인 경계를 빠르게 좁힐 수 있다.
+

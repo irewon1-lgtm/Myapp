@@ -198,3 +198,49 @@ flushed         -> READ
 - **뜻:** Selector 기반 loop는 준비된 fd를 알려줄 뿐 message framing, timeout, backpressure, connection state를 대신 설계하지 않는다.
 - **왜 중요한가:** 이 PART의 핵심은 **readiness를 data arrival 완료 신호로 오해하지 않고, nonblocking operation을 다시 시도할 수 있는 scheduler event로 해석해 connection state machine과 결합하는 것**이다.
 - **예시:** Selector 기반 loop는 준비된 fd를 알려줄 뿐 message …
+
+---
+
+## 실전 학습 루프 · readiness selector loop
+
+### 1. 쉬운 예
+
+수천 socket을 다룰 때 각 socket마다 blocking read를 하면 thread가 과도하게 늘 수 있다. selector는 어떤 file descriptor가 읽기·쓰기 가능한 상태인지 알려 주고 application이 준비된 대상만 처리하게 한다.
+
+### 2. 한 줄 해석
+
+readiness는 “작업이 끝났다”가 아니라 “지금 시도하면 진행할 가능성이 있다”는 신호다.
+
+### 3. 직접 실행
+
+실행 전에 결과를 먼저 예상하고, 실행 후에는 **어느 경계에서 상태나 의미가 바뀌었는지** 표시한다.
+
+```python
+import selectors
+
+sel = selectors.DefaultSelector()
+# sock.setblocking(False)
+# sel.register(sock, selectors.EVENT_READ)
+for key, mask in sel.select(timeout=0):
+    print(key.fd, mask)
+```
+
+### 4. 수정 실습
+
+1. readiness 이벤트를 받은 뒤 read가 일부 데이터만 반환하는 경우를 처리한다.
+2. 한 connection이 계속 ready일 때 다른 connection이 굶지 않도록 처리 budget을 둔다.
+
+수정 전후를 비교할 때는 정상 경로만 보지 않고 실패 입력과 자원 한도도 함께 확인한다.
+
+### 5. 확인 문제
+
+read-ready 이벤트가 오면 전체 message가 이미 메모리에 있다는 뜻일까?
+
+### 6. 정답과 오답 설명
+
+**정답:** 아니다. 읽을 데이터가 있다는 뜻이지 application frame 전체가 도착했다는 뜻은 아니다.
+
+**자주 나오는 오답:** readiness와 completion을 같은 의미로 보는 것이 대표적인 오답이다.
+
+마지막에는 이 주제를 **입력/신뢰 수준 → 변환 또는 대기 → 검증 → 결과/실패** 순서로 다시 설명한다. 이 순서가 보이면 실제 장애에서도 원인 경계를 빠르게 좁힐 수 있다.
+
