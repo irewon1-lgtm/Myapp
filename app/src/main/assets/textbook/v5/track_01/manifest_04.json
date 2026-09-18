@@ -1,11 +1,52 @@
 {
-  "trackId":"T01",
-  "trackNumber":1,
-  "title":"컴퓨터와 프로그래밍의 언어 — 표현에서 실행까지",
-  "parts":[
-    {"id":"T01-P71","order":71,"title":"File Descriptor and Open-File-Description Internals — tables, sharing, inheritance, lifetime","assetPath":"textbook/v5/track_01/part_71_file_descriptor_open_file_description.md","sourceMapPath":"textbook/v5/track_01/part_71_sources.json","prerequisiteConceptIds":["T01-P29-S06-pid-task-id","T01-P57-S20-dlopen","T01-P65-S24-backing-reference"]},
-    {"id":"T01-P72","order":72,"title":"Pathname Resolution Internals — dentries, RCU-walk, mounts, rename races, openat2","assetPath":"textbook/v5/track_01/part_72_pathname_resolution_namei.md","sourceMapPath":"textbook/v5/track_01/part_72_sources.json","prerequisiteConceptIds":["T01-P13-S01-path","T01-P68-S23-publication-order","T01-P71-S14-openat-dirfd"]},
-    {"id":"T01-P73","order":73,"title":"PMU and perf_event Measurement — counters, sampling, multiplexing, skid, attribution","assetPath":"textbook/v5/track_01/part_73_pmu_perf_event_measurement.md","sourceMapPath":"textbook/v5/track_01/part_73_sources.json","prerequisiteConceptIds":["T01-P26-S14-hardware-counter","T01-P50-S01-question","T01-P56-S21-symbolization"]},
-    {"id":"T01-P74","order":74,"title":"Memory-Level Parallelism and Prefetch — load/store queues, outstanding misses, forwarding","assetPath":"textbook/v5/track_01/part_74_memory_level_parallelism_prefetch.md","sourceMapPath":"textbook/v5/track_01/part_74_sources.json","prerequisiteConceptIds":["T01-P05-S02-pipeline","T01-P31-S03-channel","T01-P73-S21-data-source"]}
+  "trackId": "T01",
+  "trackNumber": 1,
+  "title": "컴퓨터와 프로그래밍의 언어 — 표현에서 실행까지",
+  "parts": [
+    {
+      "id": "T01-P71",
+      "order": 71,
+      "title": "File Descriptor and Open-File-Description Internals — tables, sharing, inheritance, lifetime",
+      "assetPath": "textbook/v5/track_01/part_71_file_descriptor_open_file_description.md",
+      "sourceMapPath": "textbook/v5/track_01/part_71_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P57-S20-dlopen",
+        "T01-P65-S24-backing-reference"
+      ]
+    },
+    {
+      "id": "T01-P72",
+      "order": 72,
+      "title": "Pathname Resolution Internals — dentries, RCU-walk, mounts, rename races, openat2",
+      "assetPath": "textbook/v5/track_01/part_72_pathname_resolution_namei.md",
+      "sourceMapPath": "textbook/v5/track_01/part_72_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P13-S01-path",
+        "T01-P68-S23-publication-order",
+        "T01-P71-S14-openat-dirfd"
+      ]
+    },
+    {
+      "id": "T01-P73",
+      "order": 73,
+      "title": "PMU and perf_event Measurement — counters, sampling, multiplexing, skid, attribution",
+      "assetPath": "textbook/v5/track_01/part_73_pmu_perf_event_measurement.md",
+      "sourceMapPath": "textbook/v5/track_01/part_73_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P56-S21-symbolization"
+      ]
+    },
+    {
+      "id": "T01-P74",
+      "order": 74,
+      "title": "Memory-Level Parallelism and Prefetch — load/store queues, outstanding misses, forwarding",
+      "assetPath": "textbook/v5/track_01/part_74_memory_level_parallelism_prefetch.md",
+      "sourceMapPath": "textbook/v5/track_01/part_74_sources.json",
+      "prerequisiteConceptIds": [
+        "T01-P05-S02-pipeline",
+        "T01-P31-S03-channel",
+        "T01-P73-S21-data-source"
+      ]
+    }
   ]
 }
