@@ -1,6 +1,6 @@
 # PART 80 · Dataclass generated semantics — field·default·equality·frozen·slots 계약을 읽기
 
-`@dataclass`는 boilerplate를 줄여 주지만 단순 코드 생성 장식자가 아니다. Field 정의를 바탕으로 `__init__`, `__repr__`, equality, ordering, hash, pattern matching 관련 동작을 만들 수 있다. 옵션 조합을 이해하지 못하면 mutable default 공유, frozen 객체의 잘못된 hash 기대, inheritance field order 문제를 만들 수 있다. 이 PART에서는 **무엇이 자동 생성되고 그 생성이 어떤 의미를 약속하는지**를 본다.
+`@dataclass`는 boilerplate를 줄여 주지만 단순 코드 생성 장식자가 아니다. Field 정의를 바탕으로 `__init__`, `__repr__`, equality, ordering, hash, pattern matching 관련 동작을 만들 수 있다. 옵션 조합을 이해하지 못하면 mutable default 공유, frozen 객체의 잘못된 hash 기대, inheritance field order 문제를 만들 수 있다. 이 절에서는 **무엇이 자동 생성되고 그 생성이 어떤 의미를 약속하는지**를 본다.
 
 ---
 
@@ -35,6 +35,8 @@ class User:
 
 ---
 
+**직접 확인하기 — CHAPTER 01 · field model은 annotation과 default를 instance state schema로 해석한다**
+CHAPTER 01 · field model은 annotation과 default를 instance state schema로 해석한다의 동작은 가장 작은 실행 예제로 규칙을 확인하면 훨씬 명확해진다. 먼저 입력이나 객체 하나만 두고 기대 결과를 적은 다음 실행한다. 그다음 값 하나 또는 호출 순서 하나만 바꿔 결과가 어떻게 달라지는지 비교한다. 한 줄 해석은 “CHAPTER 01 · field model은 annotation과 default를 instance state schema로 해석한다의 규칙이 값의 의미와 프로그램 상태 변화에 어떤 제약을 주는지 확인한다”이다. 예상과 다르면 타입·정체성·호출 순서·예외 경계를 차례로 좁히고, 수정 뒤 원래 예제와 반대 조건 예제를 모두 다시 실행한다. 결과를 자기 문장으로 설명할 수 있어야 문법을 복사한 것이 아니라 동작 원리를 이해한 것이다.
 ## CHAPTER 02 · mutable default는 `default_factory`로 instance별 새 객체를 만든다
 
 ### 시작 전 용어집
@@ -138,6 +140,8 @@ class Config:
 
 ---
 
+**직접 확인하기 — CHAPTER 04 · `frozen=True`는 assignment를 막지만 깊은 immutable을 자동 보장하지 않는다**
+CHAPTER 04 · `frozen=True`는 assignment를 막지만 깊은 immutable을 자동 보장하지 않는다의 동작은 가장 작은 실행 예제로 규칙을 확인하면 훨씬 명확해진다. 먼저 입력이나 객체 하나만 두고 기대 결과를 적은 다음 실행한다. 그다음 값 하나 또는 호출 순서 하나만 바꿔 결과가 어떻게 달라지는지 비교한다. 한 줄 해석은 “CHAPTER 04 · `frozen=True`는 assignment를 막지만 깊은 immutable을 자동 보장하지 않는다의 규칙이 값의 의미와 프로그램 상태 변화에 어떤 제약을 주는지 확인한다”이다. 예상과 다르면 타입·정체성·호출 순서·예외 경계를 차례로 좁히고, 수정 뒤 원래 예제와 반대 조건 예제를 모두 다시 실행한다. 결과를 자기 문장으로 설명할 수 있어야 문법을 복사한 것이 아니라 동작 원리를 이해한 것이다.
 ## CHAPTER 05 · hash policy는 equality와 frozen 상태의 조합을 반영한다
 
 ### 시작 전 용어집
@@ -200,6 +204,8 @@ class Range:
 
 ---
 
+**직접 확인하기 — CHAPTER 06 · `__post_init__`은 생성된 initializer 뒤에서 invariant를 완성한다**
+CHAPTER 06 · `__post_init__`은 생성된 initializer 뒤에서 invariant를 완성한다의 동작은 가장 작은 실행 예제로 규칙을 확인하면 훨씬 명확해진다. 먼저 입력이나 객체 하나만 두고 기대 결과를 적은 다음 실행한다. 그다음 값 하나 또는 호출 순서 하나만 바꿔 결과가 어떻게 달라지는지 비교한다. 한 줄 해석은 “CHAPTER 06 · `__post_init__`은 생성된 initializer 뒤에서 invariant를 완성한다의 규칙이 값의 의미와 프로그램 상태 변화에 어떤 제약을 주는지 확인한다”이다. 예상과 다르면 타입·정체성·호출 순서·예외 경계를 차례로 좁히고, 수정 뒤 원래 예제와 반대 조건 예제를 모두 다시 실행한다. 결과를 자기 문장으로 설명할 수 있어야 문법을 복사한 것이 아니라 동작 원리를 이해한 것이다.
 ## CHAPTER 07 · slots와 match args 옵션은 memory layout과 pattern surface를 바꿀 수 있다
 
 ### 시작 전 용어집
