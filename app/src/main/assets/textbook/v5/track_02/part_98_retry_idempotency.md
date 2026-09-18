@@ -1,6 +1,6 @@
 # PART 98 · Retry와 idempotency — transient failure·backoff·중복 side effect를 함께 설계하기
 
-Retry는 실패한 함수를 다시 호출하는 단순 loop가 아니다. 일시적 장애인지 영구 오류인지 분류해야 하고, 같은 operation을 다시 수행해도 side effect가 중복되지 않는지 확인해야 하며, 여러 client가 동시에 retry해 장애를 더 키우지 않도록 backoff와 budget을 둬야 한다. 이 PART에서는 **실패 분류 → 재시도 가능성 → idempotency → 시간·횟수 budget → 관찰 가능성**의 순서로 본다.
+Retry는 실패한 함수를 다시 호출하는 단순 loop가 아니다. 일시적 장애인지 영구 오류인지 분류해야 하고, 같은 operation을 다시 수행해도 side effect가 중복되지 않는지 확인해야 하며, 여러 client가 동시에 retry해 장애를 더 키우지 않도록 backoff와 budget을 둬야 한다. 이 절에서는 **실패 분류 → 재시도 가능성 → idempotency → 시간·횟수 budget → 관찰 가능성**의 순서로 본다.
 
 ---
 
@@ -99,6 +99,8 @@ base * 2^attempt + randomized jitter
 
 ---
 
+**현장 디버깅 점검 — CHAPTER 03 · exponential backoff와 jitter는 동시 retry 폭주를 줄인다**
+CHAPTER 03 · exponential backoff와 jitter는 동시 retry 폭주를 줄인다을 운영 환경에서 다룰 때는 정상 경로뿐 아니라 중단·재시도·부분 성공을 함께 검증해야 한다. 먼저 동일한 입력과 초기 상태로 재현 절차를 고정하고 기대 상태를 기록한다. 그다음 지연, 중복 요청, 잘못된 식별자, 만료된 제한시간, 부분 실패 중 한 조건만 주입한다. 로그에는 요청 식별자와 상태 전이, 재시도 횟수, 최종 반환값을 남겨 원인을 추적할 수 있게 한다. 수정 후에는 정상 입력과 실패 입력을 같은 순서로 다시 실행한다. 통과 기준은 결과가 한 번 맞는 것이 아니라 손실·중복·무한 재시도 없이 종료되고, 다시 실행해도 같은 계약을 지키는 것이다.
 ## CHAPTER 04 · retry budget은 attempt 수뿐 아니라 전체 시간과 시스템 부하를 제한한다
 
 ### 시작 전 용어집
@@ -123,6 +125,8 @@ base * 2^attempt + randomized jitter
 
 ---
 
+**현장 디버깅 점검 — CHAPTER 04 · retry budget은 attempt 수뿐 아니라 전체 시간과 시스템 부하를 제한한다**
+CHAPTER 04 · retry budget은 attempt 수뿐 아니라 전체 시간과 시스템 부하를 제한한다을 운영 환경에서 다룰 때는 정상 경로뿐 아니라 중단·재시도·부분 성공을 함께 검증해야 한다. 먼저 동일한 입력과 초기 상태로 재현 절차를 고정하고 기대 상태를 기록한다. 그다음 지연, 중복 요청, 잘못된 식별자, 만료된 제한시간, 부분 실패 중 한 조건만 주입한다. 로그에는 요청 식별자와 상태 전이, 재시도 횟수, 최종 반환값을 남겨 원인을 추적할 수 있게 한다. 수정 후에는 정상 입력과 실패 입력을 같은 순서로 다시 실행한다. 통과 기준은 결과가 한 번 맞는 것이 아니라 손실·중복·무한 재시도 없이 종료되고, 다시 실행해도 같은 계약을 지키는 것이다.
 ## CHAPTER 05 · partial success는 “실패했으니 아무 일도 안 일어났다”는 가정을 깨뜨린다
 
 ### 시작 전 용어집
@@ -149,6 +153,8 @@ client sends -> server commits -> response lost -> client sees timeout
 
 ---
 
+**현장 디버깅 점검 — CHAPTER 05 · partial success는 “실패했으니 아무 일도 안 일어났다”는 가정을 깨뜨린다**
+CHAPTER 05 · partial success는 “실패했으니 아무 일도 안 일어났다”는 가정을 깨뜨린다을 운영 환경에서 다룰 때는 정상 경로뿐 아니라 중단·재시도·부분 성공을 함께 검증해야 한다. 먼저 동일한 입력과 초기 상태로 재현 절차를 고정하고 기대 상태를 기록한다. 그다음 지연, 중복 요청, 잘못된 식별자, 만료된 제한시간, 부분 실패 중 한 조건만 주입한다. 로그에는 요청 식별자와 상태 전이, 재시도 횟수, 최종 반환값을 남겨 원인을 추적할 수 있게 한다. 수정 후에는 정상 입력과 실패 입력을 같은 순서로 다시 실행한다. 통과 기준은 결과가 한 번 맞는 것이 아니라 손실·중복·무한 재시도 없이 종료되고, 다시 실행해도 같은 계약을 지키는 것이다.
 ## CHAPTER 06 · duplicate side effect는 request identity와 result persistence로 막는다
 
 ### 시작 전 용어집
