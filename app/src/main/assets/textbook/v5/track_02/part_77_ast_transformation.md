@@ -33,8 +33,8 @@ AST는 runtime value를 알지 못한다.
 
 ---
 
-**실행 점검 77-1 — CHAPTER 01 · `ast.parse`는 source text를 문법 구조로 바꾼다**
-CHAPTER 01 · `ast.parse`는 source text를 문법 구조로 바꾼다을 이해할 때는 기대 결과를 숫자나 상태로 적고 실행 전 예상값과 실행 후 실제값을 나란히 기록한다. 그다음 값 하나, 호출 순서 하나, 경계 조건 하나만 바꿔 CHAPTER 01 · `ast.parse`는 source text를 문법 구조로 바꾼다의 규칙이 실제 상태에 어떤 변화를 만드는지 확인한다. PART 77 CHAPTER 1에서는 결과를 맞히는 것보다 예상과 실제의 차이를 설명하는 과정이 중요하다. 수정 후에는 원래 사례와 실패 사례를 모두 재검증한다. P77-C01 마무리에서는 동작을 만든 핵심 조건을 기록한다. P77-C01의 값 타입과 객체 관계, 생명주기, 예외 위치를 다시 비교한 뒤 변형 예제에서도 판단이 흔들리지 않는지 확인한다.
+**검증 시나리오 P77-C1 — CHAPTER 01 · `ast.parse`는 source text를 문법 구조로 바꾼다**
+`CHAPTER 01 · `ast.parse`는 source text를 문법 구조로 바꾼다` 검증은 성공 사례를 기준선으로 저장하는 데서 시작한다. P77-C1에서는 `CHAPTER 01 · `ast.parse`는 source text를 문법 구조로 바꾼다` 실행 직전 상태를 먼저 적고 실행 뒤 값과 비교해 실제 규칙을 확인한다. 두 번째 단계에서는 `CHAPTER 01 · `ast.parse`는 source text를 문법 구조로 바꾼다`에 대해 실패 조건은 하나만 주입고 다른 코드는 그대로 두어 원인 후보를 하나로 제한한다. 이때 `CHAPTER 01 · `ast.parse`는 source text를 문법 구조로 바꾼다`의 로그 시각과 상태 식별자를 맞춰 본다하여 우연한 통과를 배제한다. 예상과 다르면 `CHAPTER 01 · `ast.parse`는 source text를 문법 구조로 바꾼다`의 타입, 값, 호출 순서, 예외 경계 가운데 최초로 달라진 항목부터 확인하고 최소 수정 뒤 다시 실행한다. P77-C1의 마무리는 성공·실패 모두 결정적으로 끝나는지 확인하는 것이다. 통과 기준은 `CHAPTER 01 · `ast.parse`는 source text를 문법 구조로 바꾼다`의 정상 사례와 변형 사례가 모두 설명 가능한 결과를 내고 같은 절차를 반복해도 동일한 상태 계약을 유지하는 것이다.
 ## CHAPTER 02 · node location은 분석 결과를 다시 source 위치와 연결한다
 
 ### 시작 전 용어집
@@ -90,8 +90,8 @@ class CallCounter(ast.NodeVisitor):
 
 ---
 
-**실행 점검 77-3 — CHAPTER 03 · NodeVisitor와 NodeTransformer는 읽기와 변경의 책임을 분리한다**
-CHAPTER 03 · NodeVisitor와 NodeTransformer는 읽기와 변경의 책임을 분리한다을 이해할 때는 입력 하나를 고정하고 타입과 값, 상태 전이를 분리해서 본다. 그다음 값 하나, 호출 순서 하나, 경계 조건 하나만 바꿔 CHAPTER 03 · NodeVisitor와 NodeTransformer는 읽기와 변경의 책임을 분리한다의 규칙이 실제 상태에 어떤 변화를 만드는지 확인한다. PART 77 CHAPTER 3에서는 결과를 맞히는 것보다 예상과 실제의 차이를 설명하는 과정이 중요하다. 코드 모양보다 값의 변화와 객체의 수명을 중심으로 원인을 좁힌다. P77-C03을 마칠 때는 어떤 요소가 동작을 결정했는지 한 문장으로 요약한다. 이어서 P77-C03의 객체 수명과 예외 경계를 다른 예제에 적용해 설명이 그대로 성립하는지 확인한다.
+**검증 시나리오 P77-C3 — CHAPTER 03 · NodeVisitor와 NodeTransformer는 읽기와 변경의 책임을 분리한다**
+`CHAPTER 03 · NodeVisitor와 NodeTransformer는 읽기와 변경의 책임을 분리한다` 검증은 기준 입력을 한 개 고정하는 데서 시작한다. P77-C3에서는 `CHAPTER 03 · NodeVisitor와 NodeTransformer는 읽기와 변경의 책임을 분리한다` 실행 직전 상태를 먼저 적고 실행 뒤 값과 비교해 실제 규칙을 확인한다. 두 번째 단계에서는 `CHAPTER 03 · NodeVisitor와 NodeTransformer는 읽기와 변경의 책임을 분리한다`에 대해 반대 조건 입력을 한 개 추가고 다른 코드는 그대로 두어 원인 후보를 하나로 제한한다. 이때 `CHAPTER 03 · NodeVisitor와 NodeTransformer는 읽기와 변경의 책임을 분리한다`의 실행 전후 값을 표로 대조하여 우연한 통과를 배제한다. 예상과 다르면 `CHAPTER 03 · NodeVisitor와 NodeTransformer는 읽기와 변경의 책임을 분리한다`의 타입, 값, 호출 순서, 예외 경계 가운데 최초로 달라진 항목부터 확인하고 최소 수정 뒤 다시 실행한다. P77-C3의 마무리는 예상과 다르면 최초 차이 지점을 추적하는 것이다. 통과 기준은 `CHAPTER 03 · NodeVisitor와 NodeTransformer는 읽기와 변경의 책임을 분리한다`의 정상 사례와 변형 사례가 모두 설명 가능한 결과를 내고 같은 절차를 반복해도 동일한 상태 계약을 유지하는 것이다.
 ## CHAPTER 04 · 수정한 AST도 다시 compile 가능한 구조와 metadata를 만족해야 한다
 
 ### 시작 전 용어집
@@ -130,8 +130,8 @@ code = compile(expr, "<generated>", "eval")
 
 ---
 
-**실행 점검 77-4 — CHAPTER 04 · 수정한 AST도 다시 compile 가능한 구조와 metadata를 만족해야 한다**
-CHAPTER 04 · 수정한 AST도 다시 compile 가능한 구조와 metadata를 만족해야 한다을 이해할 때는 반례 하나를 먼저 적고 중간 결과를 출력하거나 로그로 남겨 추측을 줄인다. 그다음 값 하나, 호출 순서 하나, 경계 조건 하나만 바꿔 CHAPTER 04 · 수정한 AST도 다시 compile 가능한 구조와 metadata를 만족해야 한다의 규칙이 실제 상태에 어떤 변화를 만드는지 확인한다. PART 77 CHAPTER 4에서는 결과를 맞히는 것보다 예상과 실제의 차이를 설명하는 과정이 중요하다. 설명이 맞더라도 반대 조건을 넣어 경계가 어디인지 다시 확인한다. P77-C04 최종 확인은 규칙을 자기 말로 다시 설명하는 것이다. P77-C04의 값 종류와 객체 동일성, 수명 변화, 예외 발생 지점을 다른 입력에 적용해 같은 결론이 나오는지 본다.
+**검증 시나리오 P77-C4 — CHAPTER 04 · 수정한 AST도 다시 compile 가능한 구조와 metadata를 만족해야 한다**
+`CHAPTER 04 · 수정한 AST도 다시 compile 가능한 구조와 metadata를 만족해야 한다` 검증은 가장 작은 객체 상태로 시작하는 데서 시작한다. P77-C4에서는 `CHAPTER 04 · 수정한 AST도 다시 compile 가능한 구조와 metadata를 만족해야 한다` 실행 직전 상태를 먼저 적고 실행 뒤 값과 비교해 실제 규칙을 확인한다. 두 번째 단계에서는 `CHAPTER 04 · 수정한 AST도 다시 compile 가능한 구조와 metadata를 만족해야 한다`에 대해 속성 하나만 바꿔 재실행고 다른 코드는 그대로 두어 원인 후보를 하나로 제한한다. 이때 `CHAPTER 04 · 수정한 AST도 다시 compile 가능한 구조와 metadata를 만족해야 한다`의 반환값과 부수효과를 따로 기록하여 우연한 통과를 배제한다. 예상과 다르면 `CHAPTER 04 · 수정한 AST도 다시 compile 가능한 구조와 metadata를 만족해야 한다`의 타입, 값, 호출 순서, 예외 경계 가운데 최초로 달라진 항목부터 확인하고 최소 수정 뒤 다시 실행한다. P77-C4의 마무리는 수정 뒤 원래 조건을 다시 회귀 확인하는 것이다. 통과 기준은 `CHAPTER 04 · 수정한 AST도 다시 compile 가능한 구조와 metadata를 만족해야 한다`의 정상 사례와 변형 사례가 모두 설명 가능한 결과를 내고 같은 절차를 반복해도 동일한 상태 계약을 유지하는 것이다.
 ## CHAPTER 05 · semantic preservation은 모양이 비슷한 AST보다 관찰 가능한 behavior로 검증한다
 
 ### 시작 전 용어집
