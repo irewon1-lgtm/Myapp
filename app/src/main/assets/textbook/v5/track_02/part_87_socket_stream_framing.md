@@ -251,3 +251,21 @@ print(frame[4:4+size])
 
 마지막에는 이 주제를 **입력/신뢰 수준 → 변환 또는 대기 → 검증 → 결과/실패** 순서로 다시 설명한다. 이 순서가 보이면 실제 장애에서도 원인 경계를 빠르게 좁힐 수 있다.
 
+## 현장 디버깅 체크 · socket stream framing
+
+### 증상에서 시작한다
+
+트래픽이 적을 때는 되지만 실제 네트워크에서는 두 message가 붙거나 하나가 잘려 parser가 깨진다. 재현 시점의 입력과 작업 식별자를 먼저 고정하고, 결과를 보고 추측하기보다 상태 전이를 시간순으로 적는다.
+
+### 먼저 볼 증거
+
+recv byte 수, buffer 누적 길이, 현재 parser state, declared frame length, 최대 frame budget을 기록한다. 한 숫자만 보지 말고 **대기/실행/완료/실패**를 분리하면 병목과 논리 오류를 구분하기 쉽다.
+
+### 일부러 실패시켜 보기
+
+header와 payload를 1byte 단위로 쪼개 전달하고 여러 frame을 한 번에 붙여도 동일한 message sequence가 복원되는지 본다. 정상 경로는 원래 잘 되는 경우가 많다. 강제 실패에서 cleanup·retry·재시작 의미가 유지되는지가 운영 품질을 결정한다.
+
+### 통과 기준
+
+임의 chunking에서도 frame 경계가 정확히 복원되고 oversized/truncated frame은 allocation 전에 거부돼야 한다. 이 기준을 regression test와 운영 metric 두 곳에 동시에 연결하면 배포 뒤 같은 문제가 돌아왔을 때 빠르게 탐지할 수 있다.
+

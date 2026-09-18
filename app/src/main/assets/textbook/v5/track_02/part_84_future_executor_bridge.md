@@ -259,3 +259,21 @@ executor로 넘기면 blocking 작업 자체가 non-blocking 코드로 바뀌는
 
 이 PART를 마칠 때는 해당 문법 이름을 외우는 데서 멈추지 말고 **언제 호출되는가 / 무엇을 읽거나 바꾸는가 / 실패하면 어디로 가는가** 세 문장으로 설명한다.
 
+## 현장 디버깅 체크 · Future·executor bridge
+
+### 증상에서 시작한다
+
+event loop는 멈추지 않지만 executor queue가 길어져 응답 시간이 계속 늘거나 shutdown이 늦어진다. 재현 시점의 입력과 작업 식별자를 먼저 고정하고, 결과를 보고 추측하기보다 상태 전이를 시간순으로 적는다.
+
+### 먼저 볼 증거
+
+worker 수, queue 대기 시간, 실행 시간, Future 상태, cancellation 시 실제 worker 동작을 따로 본다. 한 숫자만 보지 말고 **대기/실행/완료/실패**를 분리하면 병목과 논리 오류를 구분하기 쉽다.
+
+### 일부러 실패시켜 보기
+
+worker 수보다 많은 blocking 작업을 넣고 일부 Future를 cancel해 queue와 이미 실행 중 작업이 어떻게 달라지는지 측정한다. 정상 경로는 원래 잘 되는 경우가 많다. 강제 실패에서 cleanup·retry·재시작 의미가 유지되는지가 운영 품질을 결정한다.
+
+### 통과 기준
+
+executor로 넘긴 작업도 bounded concurrency와 deadline 안에서 관리되고, cancellation 의미가 코드와 운영 지표에 일치해야 한다. 이 기준을 regression test와 운영 metric 두 곳에 동시에 연결하면 배포 뒤 같은 문제가 돌아왔을 때 빠르게 탐지할 수 있다.
+

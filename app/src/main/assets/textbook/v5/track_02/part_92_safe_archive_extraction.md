@@ -257,3 +257,21 @@ print(candidate.is_relative_to(root))
 
 마지막에는 이 주제를 **입력/신뢰 수준 → 변환 또는 대기 → 검증 → 결과/실패** 순서로 다시 설명한다. 이 순서가 보이면 실제 장애에서도 원인 경계를 빠르게 좁힐 수 있다.
 
+## 현장 디버깅 체크 · safe archive extraction
+
+### 증상에서 시작한다
+
+테스트 ZIP은 잘 풀리지만 악성 entry에서 허용 루트 밖 파일이 생기거나 disk가 예상보다 크게 소모된다. 재현 시점의 입력과 작업 식별자를 먼저 고정하고, 결과를 보고 추측하기보다 상태 전이를 시간순으로 적는다.
+
+### 먼저 볼 증거
+
+entry raw name, normalized/resolved path, type, compressed/uncompressed size, 누적 budget과 symlink 정보를 본다. 한 숫자만 보지 말고 **대기/실행/완료/실패**를 분리하면 병목과 논리 오류를 구분하기 쉽다.
+
+### 일부러 실패시켜 보기
+
+`../`, absolute path, nested symlink, 많은 작은 파일, 높은 compression ratio archive를 각각 주입한다. 정상 경로는 원래 잘 되는 경우가 많다. 강제 실패에서 cleanup·retry·재시작 의미가 유지되는지가 운영 품질을 결정한다.
+
+### 통과 기준
+
+모든 entry가 허용 루트와 resource budget 안에 있고 실제 write 전에 위험 entry가 거부돼야 한다. 이 기준을 regression test와 운영 metric 두 곳에 동시에 연결하면 배포 뒤 같은 문제가 돌아왔을 때 빠르게 탐지할 수 있다.
+
