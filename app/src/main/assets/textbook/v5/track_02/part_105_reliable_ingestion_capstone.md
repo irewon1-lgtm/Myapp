@@ -109,8 +109,8 @@ idempotency_key-> 동일 요청 retry 묶기
 
 ---
 
-**현장 점검 105-3 — CHAPTER 03 · content identity와 operation identity를 분리해 duplicate를 안전하게 처리한다**
-외부 의존성을 한 개씩 격리한 뒤 기준 실행을 만든다. CHAPTER 03 · content identity와 operation identity를 분리해 duplicate를 안전하게 처리한다 검증에서는 부분 성공 시 성공 목록과 실패 목록이 정확히 분리되는지 개수까지 확인한다. PART 105의 CHAPTER 3은 중간 중단이나 재전달이 발생해도 상태가 뒤섞이지 않는지 확인하는 것이 핵심이므로, 실패 조건은 한 번에 하나만 주입하고 나머지 조건은 고정한다. 수정 뒤에는 원래 정상 사례, 방금 만든 실패 사례, 같은 요청을 다시 보내는 재실행 사례를 순서대로 반복한다. 통과 기준은 실패가 발생해도 추적 가능한 상태가 남고 재시작 후 안전하게 이어지는 것이다.
+**검증 시나리오 P105-C3 — CHAPTER 03 · content identity와 operation identity를 분리해 duplicate를 안전하게 처리한다**
+`CHAPTER 03 · content identity와 operation identity를 분리해 duplicate를 안전하게 처리한다` 검증은 호출 순서를 단순화하는 데서 시작한다. P105-C3에서는 `CHAPTER 03 · content identity와 operation identity를 분리해 duplicate를 안전하게 처리한다` 실행 직전 상태를 먼저 적고 실행 뒤 값과 비교해 실제 규칙을 확인한다. 두 번째 단계에서는 `CHAPTER 03 · content identity와 operation identity를 분리해 duplicate를 안전하게 처리한다`에 대해 순서 하나만 뒤집어 차이를 본다고 다른 코드는 그대로 두어 원인 후보를 하나로 제한한다. 이때 `CHAPTER 03 · content identity와 operation identity를 분리해 duplicate를 안전하게 처리한다`의 호출 전후의 상태 전이를 번호로 남긴다하여 우연한 통과를 배제한다. 예상과 다르면 `CHAPTER 03 · content identity와 operation identity를 분리해 duplicate를 안전하게 처리한다`의 타입, 값, 호출 순서, 예외 경계 가운데 최초로 달라진 항목부터 확인하고 최소 수정 뒤 다시 실행한다. P105-C3의 마무리는 다른 순서에서도 계약이 유지되는지 확인하는 것이다. 통과 기준은 `CHAPTER 03 · content identity와 operation identity를 분리해 duplicate를 안전하게 처리한다`의 정상 사례와 변형 사례가 모두 설명 가능한 결과를 내고 같은 절차를 반복해도 동일한 상태 계약을 유지하는 것이다.
 ## CHAPTER 04 · bounded concurrency는 CPU·memory·downstream capacity를 동시에 넘지 않게 한다
 
 ### 시작 전 용어집
@@ -143,8 +143,8 @@ parser -> bounded queue -> N workers -> bounded downstream client
 
 ---
 
-**현장 점검 105-4 — CHAPTER 04 · bounded concurrency는 CPU·memory·downstream capacity를 동시에 넘지 않게 한다**
-처리 직전의 상태 스냅샷과 기대 결과를 먼저 적는다. CHAPTER 04 · bounded concurrency는 CPU·memory·downstream capacity를 동시에 넘지 않게 한다 검증에서는 정상 로그와 실패 로그를 나란히 비교해 최초로 달라지는 지점을 찾는다. PART 105의 CHAPTER 4은 중간 중단이나 재전달이 발생해도 상태가 뒤섞이지 않는지 확인하는 것이 핵심이므로, 실패 조건은 한 번에 하나만 주입하고 나머지 조건은 고정한다. 수정 뒤에는 원래 정상 사례, 방금 만든 실패 사례, 같은 요청을 다시 보내는 재실행 사례를 순서대로 반복한다. 통과 기준은 최종 결과뿐 아니라 중간 상태와 복구 경로까지 기대 계약과 일치하는 것이다.
+**검증 시나리오 P105-C4 — CHAPTER 04 · bounded concurrency는 CPU·memory·downstream capacity를 동시에 넘지 않게 한다**
+`CHAPTER 04 · bounded concurrency는 CPU·memory·downstream capacity를 동시에 넘지 않게 한다` 검증은 입력 크기를 고정하는 데서 시작한다. P105-C4에서는 `CHAPTER 04 · bounded concurrency는 CPU·memory·downstream capacity를 동시에 넘지 않게 한다` 실행 직전 상태를 먼저 적고 실행 뒤 값과 비교해 실제 규칙을 확인한다. 두 번째 단계에서는 `CHAPTER 04 · bounded concurrency는 CPU·memory·downstream capacity를 동시에 넘지 않게 한다`에 대해 변형은 한 요소만 허용고 다른 코드는 그대로 두어 원인 후보를 하나로 제한한다. 이때 `CHAPTER 04 · bounded concurrency는 CPU·memory·downstream capacity를 동시에 넘지 않게 한다`의 측정값을 여러 번 모아 분포를 비교하여 우연한 통과를 배제한다. 예상과 다르면 `CHAPTER 04 · bounded concurrency는 CPU·memory·downstream capacity를 동시에 넘지 않게 한다`의 타입, 값, 호출 순서, 예외 경계 가운데 최초로 달라진 항목부터 확인하고 최소 수정 뒤 다시 실행한다. P105-C4의 마무리는 워밍업과 측정 자체의 비용을 분리하는 것이다. 통과 기준은 `CHAPTER 04 · bounded concurrency는 CPU·memory·downstream capacity를 동시에 넘지 않게 한다`의 정상 사례와 변형 사례가 모두 설명 가능한 결과를 내고 같은 절차를 반복해도 동일한 상태 계약을 유지하는 것이다.
 ## CHAPTER 05 · external dependency에는 하나의 deadline 안에서 retry와 circuit breaker를 조합한다
 
 ### 시작 전 용어집
