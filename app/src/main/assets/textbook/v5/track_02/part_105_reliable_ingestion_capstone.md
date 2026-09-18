@@ -109,6 +109,8 @@ idempotency_key-> 동일 요청 retry 묶기
 
 ---
 
+**현장 디버깅 점검 — CHAPTER 03 · content identity와 operation identity를 분리해 duplicate를 안전하게 처리한다**
+CHAPTER 03 · content identity와 operation identity를 분리해 duplicate를 안전하게 처리한다을 운영에서 검증할 때는 재시작 뒤에도 상태가 이어지는지까지 확인해야 한다. 먼저 처리 전 상태와 완료 조건을 기록하고, 정상 입력으로 기준 결과를 만든다. 그다음 처리 중간에 강제 중단, 일부 레코드 실패, 중복 전달, 재시작을 각각 따로 주입한다. 재실행 후에는 완료된 항목이 다시 처리되지 않는지, 실패 항목만 안전하게 재시도되는지, 체크포인트와 실제 데이터 상태가 일치하는지 비교한다. 통과 기준은 모든 성공 항목이 정확히 한 번 반영되고 실패 항목은 추적 가능한 상태로 남으며, 같은 시나리오를 반복해도 결과가 변하지 않는 것이다.
 ## CHAPTER 04 · bounded concurrency는 CPU·memory·downstream capacity를 동시에 넘지 않게 한다
 
 ### 시작 전 용어집
@@ -141,6 +143,8 @@ parser -> bounded queue -> N workers -> bounded downstream client
 
 ---
 
+**현장 디버깅 점검 — CHAPTER 04 · bounded concurrency는 CPU·memory·downstream capacity를 동시에 넘지 않게 한다**
+CHAPTER 04 · bounded concurrency는 CPU·memory·downstream capacity를 동시에 넘지 않게 한다을 운영에서 검증할 때는 재시작 뒤에도 상태가 이어지는지까지 확인해야 한다. 먼저 처리 전 상태와 완료 조건을 기록하고, 정상 입력으로 기준 결과를 만든다. 그다음 처리 중간에 강제 중단, 일부 레코드 실패, 중복 전달, 재시작을 각각 따로 주입한다. 재실행 후에는 완료된 항목이 다시 처리되지 않는지, 실패 항목만 안전하게 재시도되는지, 체크포인트와 실제 데이터 상태가 일치하는지 비교한다. 통과 기준은 모든 성공 항목이 정확히 한 번 반영되고 실패 항목은 추적 가능한 상태로 남으며, 같은 시나리오를 반복해도 결과가 변하지 않는 것이다.
 ## CHAPTER 05 · external dependency에는 하나의 deadline 안에서 retry와 circuit breaker를 조합한다
 
 ### 시작 전 용어집
