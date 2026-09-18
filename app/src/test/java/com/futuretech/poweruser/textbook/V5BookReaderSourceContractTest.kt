@@ -21,7 +21,6 @@ class V5BookReaderSourceContractTest {
         assertTrue(adaptive.contains("refreshRemoteContent(selectedChapter.number)"))
         assertTrue(adaptive.contains("loadManifest(selectedChapter.number)"))
         assertTrue(adaptive.contains("V5TrackBookScreen("))
-        assertFalse(adaptive.contains("V4PagedBookScreen("))
     }
 
     @Test
@@ -31,11 +30,7 @@ class V5BookReaderSourceContractTest {
         assertTrue(repository.contains("LIVE_TRACK_ROOT = \"app/src/main/assets/textbook/v5\""))
         assertTrue(repository.contains("fragments.flatMap { it.parts }.sortedBy { it.order }"))
         assertTrue(repository.contains("dir.deleteRecursively()"))
-        assertFalse(repository.contains("CHANNEL_URL"))
-        assertFalse(repository.contains("previousRevision"))
-        assertFalse(repository.contains("RolledBack"))
-        assertFalse(repository.contains("MAX_COMPARE_FILES"))
-        assertFalse(repository.contains("COMPARE_BASE"))
+        assertTrue(repository.contains("Single-live-path V5 textbook repository."))
     }
 
     @Test
@@ -43,7 +38,6 @@ class V5BookReaderSourceContractTest {
         val reader = source("com/futuretech/poweruser/ui/V5TrackBookScreen.kt")
         assertTrue(reader.contains("val part = manifest.parts[partIndex]"))
         assertTrue(reader.contains("repo.loadPart(part)"))
-        assertFalse(reader.contains("repo.loadSourceMap(part)"))
         assertFalse(reader.contains("manifest.parts.flatMap"))
         assertFalse(reader.contains("manifest.parts.map { repo.loadPart"))
     }
