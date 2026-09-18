@@ -1,6 +1,6 @@
 # PART 96 · Identifier design — random ID·name-derived ID·database locality·idempotency key를 분리하기
 
-식별자는 단순히 “겹치지 않는 문자열”이 아니다. 객체를 외부에 노출할지, 같은 입력에서 같은 ID가 필요할지, database index에 어떤 write pattern을 만들지, retry request를 같은 작업으로 인식할지에 따라 요구가 달라진다. UUID 같은 도구도 목적을 먼저 정하지 않으면 security token이나 정렬 key로 잘못 사용하기 쉽다. 이 PART에서는 **identity 목적 → 생성 방식 → storage/노출 특성** 순서로 설계한다.
+식별자는 단순히 “겹치지 않는 문자열”이 아니다. 객체를 외부에 노출할지, 같은 입력에서 같은 ID가 필요할지, database index에 어떤 write pattern을 만들지, retry request를 같은 작업으로 인식할지에 따라 요구가 달라진다. UUID 같은 도구도 목적을 먼저 정하지 않으면 security token이나 정렬 key로 잘못 사용하기 쉽다. 이 절에서는 **identity 목적 → 생성 방식 → storage/노출 특성** 순서로 설계한다.
 
 ---
 
@@ -27,6 +27,8 @@
 
 ---
 
+**현장 디버깅 점검 — CHAPTER 01 · identifier의 첫 질문은 무엇을 동일한 것으로 볼 것인가다**
+CHAPTER 01 · identifier의 첫 질문은 무엇을 동일한 것으로 볼 것인가다을 운영 환경에서 다룰 때는 정상 경로뿐 아니라 중단·재시도·부분 성공을 함께 검증해야 한다. 먼저 동일한 입력과 초기 상태로 재현 절차를 고정하고 기대 상태를 기록한다. 그다음 지연, 중복 요청, 잘못된 식별자, 만료된 제한시간, 부분 실패 중 한 조건만 주입한다. 로그에는 요청 식별자와 상태 전이, 재시도 횟수, 최종 반환값을 남겨 원인을 추적할 수 있게 한다. 수정 후에는 정상 입력과 실패 입력을 같은 순서로 다시 실행한다. 통과 기준은 결과가 한 번 맞는 것이 아니라 손실·중복·무한 재시도 없이 종료되고, 다시 실행해도 같은 계약을 지키는 것이다.
 ## CHAPTER 02 · random identifier는 중앙 coordination 없이 새 identity를 만들기 쉽다
 
 ### 시작 전 용어집
@@ -59,6 +61,8 @@ request_id = uuid.uuid4()
 
 ---
 
+**현장 디버깅 점검 — CHAPTER 02 · random identifier는 중앙 coordination 없이 새 identity를 만들기 쉽다**
+CHAPTER 02 · random identifier는 중앙 coordination 없이 새 identity를 만들기 쉽다을 운영 환경에서 다룰 때는 정상 경로뿐 아니라 중단·재시도·부분 성공을 함께 검증해야 한다. 먼저 동일한 입력과 초기 상태로 재현 절차를 고정하고 기대 상태를 기록한다. 그다음 지연, 중복 요청, 잘못된 식별자, 만료된 제한시간, 부분 실패 중 한 조건만 주입한다. 로그에는 요청 식별자와 상태 전이, 재시도 횟수, 최종 반환값을 남겨 원인을 추적할 수 있게 한다. 수정 후에는 정상 입력과 실패 입력을 같은 순서로 다시 실행한다. 통과 기준은 결과가 한 번 맞는 것이 아니라 손실·중복·무한 재시도 없이 종료되고, 다시 실행해도 같은 계약을 지키는 것이다.
 ## CHAPTER 03 · name-derived identifier는 같은 namespace와 name에서 같은 결과를 만드는 deterministic identity다
 
 ### 시작 전 용어집
