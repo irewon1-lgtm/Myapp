@@ -279,7 +279,7 @@ Function, closure, callable object 중 선택은 문법 취향이 아니라 필�
 
 #### 1. metaprogramming
 
-- **뜻:** Framework를 사용할 때는 metaprogramming의 내부 구현을 모두 외울 필요는 없지만 언제 선언이 평가되고 어떤 object가 registry에 들어가는지 추적할 수 있어야 한다.
+- **뜻:** Framework를 사용할 때는 metaprogramming의 내부 구현을 모두 암기할 필요는 없지만 언제 선언이 평가되고 어떤 object가 registry에 들어가는지 추적할 수 있어야 한다.
 - **왜 중요한가:** 그러면 annotation 하나가 왜 startup error를 만들거나 import되지 않은 module의 handler가 등록되지 않는지 설명할 수 있다.
 - **예시:** Framework를 사용할 때는 metaprogramming의 내부 구현을 모두 외울 …
 
