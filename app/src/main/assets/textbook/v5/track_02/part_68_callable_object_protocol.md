@@ -43,8 +43,8 @@ print(triple(10))
 
 ---
 
-**실행 점검 68-1 — CHAPTER 01 · callable object는 함수가 아니어도 호출 문법에 참여할 수 있다**
-CHAPTER 01 · callable object는 함수가 아니어도 호출 문법에 참여할 수 있다을 이해할 때는 정상 사례 하나를 정한 뒤 변경 전후의 반환값과 부수효과를 따로 확인한다. 이어서 값 하나나 호출 순서 하나만 바꿔 결과 차이를 확인하면 CHAPTER 01 · callable object는 함수가 아니어도 호출 문법에 참여할 수 있다이 실제 프로그램 상태에 어떤 제약을 주는지 보인다. PART 68 CHAPTER 1의 한 줄 해석은 “규칙을 값과 상태 변화로 확인한다”이다. 우연히 통과한 한 번의 실행보다 반복 가능한 관찰을 통과 기준으로 삼는다. 마지막에는 타입·정체성·수명·예외 경계 중 실제 원인이 어디였는지 자기 문장으로 설명해, 단순한 문법 복사가 아니라 동작 원리까지 이해했는지 확인한다.
+**검증 시나리오 P68-C01 — CHAPTER 01 · callable object는 함수가 아니어도 호출 문법에 참여할 수 있다**
+`CHAPTER 01 · callable object는 함수가 아니어도 호출 문법에 참여할 수 있다` 검증은 입력 크기를 고정하는 데서 시작한다. P68-C1에서는 `CHAPTER 01 · callable object는 함수가 아니어도 호출 문법에 참여할 수 있다` 실행 직전 상태를 먼저 적고, 실행 뒤 얻은 값과 비교해 어떤 규칙이 실제로 적용됐는지 확인한다. 두 번째 단계에서는 `CHAPTER 01 · callable object는 함수가 아니어도 호출 문법에 참여할 수 있다`에 대해 변형은 한 요소만 허용고, 다른 코드는 그대로 두어 원인 후보를 하나로 제한한다. 이때 `CHAPTER 01 · callable object는 함수가 아니어도 호출 문법에 참여할 수 있다`의 측정값을 여러 번 모아 분포를 비교하여 결과만 맞는 우연한 통과를 배제한다. 예상이 빗나가면 `CHAPTER 01 · callable object는 함수가 아니어도 호출 문법에 참여할 수 있다`의 타입, 값, 호출 순서, 예외 경계 가운데 최초로 달라진 항목부터 확인하고 최소 수정 뒤 다시 실행한다. P68-C1의 마무리는 워밍업과 측정 자체의 비용을 분리하는 것이다. 통과 기준은 `CHAPTER 01 · callable object는 함수가 아니어도 호출 문법에 참여할 수 있다`의 정상 사례와 변형 사례가 모두 설명 가능한 결과를 내고, 같은 절차를 반복했을 때 동일한 상태 계약을 유지하는 것이다.
 ## CHAPTER 02 · function binding은 class attribute의 function을 method access로 바꾼다
 
 ### 시작 전 용어집
@@ -249,8 +249,8 @@ class RetryCounter:
 
 ---
 
-**실행 점검 68-7 — CHAPTER 07 · callable state는 closure와 object field 중 어떤 표현이 더 명확한지 선택한다**
-CHAPTER 07 · callable state는 closure와 object field 중 어떤 표현이 더 명확한지 선택한다을 이해할 때는 반례 하나를 먼저 적고 예외가 생긴 지점과 그 직전 상태를 함께 적는다. 이어서 값 하나나 호출 순서 하나만 바꿔 결과 차이를 확인하면 CHAPTER 07 · callable state는 closure와 object field 중 어떤 표현이 더 명확한지 선택한다이 실제 프로그램 상태에 어떤 제약을 주는지 보인다. PART 68 CHAPTER 7의 한 줄 해석은 “규칙을 값과 상태 변화로 확인한다”이다. 예상이 틀리면 규칙을 다시 읽고 최소 수정으로 재실행한다. 마지막에는 타입·정체성·수명·예외 경계 중 실제 원인이 어디였는지 자기 문장으로 설명해, 단순한 문법 복사가 아니라 동작 원리까지 이해했는지 확인한다.
+**검증 시나리오 P68-C07 — CHAPTER 07 · callable state는 closure와 object field 중 어떤 표현이 더 명확한지 선택한다**
+`CHAPTER 07 · callable state는 closure와 object field 중 어떤 표현이 더 명확한지 선택한다` 검증은 정상 경로를 먼저 재현하는 데서 시작한다. P68-C7에서는 `CHAPTER 07 · callable state는 closure와 object field 중 어떤 표현이 더 명확한지 선택한다` 실행 직전 상태를 먼저 적고, 실행 뒤 얻은 값과 비교해 어떤 규칙이 실제로 적용됐는지 확인한다. 두 번째 단계에서는 `CHAPTER 07 · callable state는 closure와 object field 중 어떤 표현이 더 명확한지 선택한다`에 대해 오류 경로 하나를 의도적으로 만든다고, 다른 코드는 그대로 두어 원인 후보를 하나로 제한한다. 이때 `CHAPTER 07 · callable state는 closure와 object field 중 어떤 표현이 더 명확한지 선택한다`의 예외 종류와 직전 상태를 함께 남긴다하여 결과만 맞는 우연한 통과를 배제한다. 예상이 빗나가면 `CHAPTER 07 · callable state는 closure와 object field 중 어떤 표현이 더 명확한지 선택한다`의 타입, 값, 호출 순서, 예외 경계 가운데 최초로 달라진 항목부터 확인하고 최소 수정 뒤 다시 실행한다. P68-C7의 마무리는 복구 후 같은 오류가 다시 재현되지 않는지 검사하는 것이다. 통과 기준은 `CHAPTER 07 · callable state는 closure와 object field 중 어떤 표현이 더 명확한지 선택한다`의 정상 사례와 변형 사례가 모두 설명 가능한 결과를 내고, 같은 절차를 반복했을 때 동일한 상태 계약을 유지하는 것이다.
 ## CHAPTER 08 · call contract는 callable 여부보다 binding·state·lifetime을 함께 정의한다
 
 ### 시작 전 용어집
