@@ -310,7 +310,7 @@ bag = Bag([1, 2, 3])
 print(len(bag), 2 in bag)
 ```
 
-결과가 예상과 다르면 문법부터 고치지 말고, **어떤 protocol·상태·계약이 호출됐는지**를 한 단계씩 확인한다. 이렇게 해야 “우연히 동작하는 코드”와 “이유를 설명할 수 있는 코드”를 구분할 수 있다.
+PART 66의 **PART 66 · Container protocol — length·truth·index·slice·membership을 하나의 계약으로 읽기**에서 결과가 예상과 다르면 문법을 먼저 바꾸지 않는다. PART 66 · Container protocol — length·truth·index·slice·membership을 하나의 계약으로 읽기의 protocol 호출 순서, 현재 상태, 지켜야 할 계약을 차례로 기록한 뒤 최초로 예상과 달라진 지점을 찾는다. 이 절차를 거치면 PART 66의 동작이 우연히 맞은 것인지, 규칙을 설명할 수 있어 재현 가능한 것인지 구분할 수 있다.
 
 ### 4. 수정 실습
 
@@ -329,5 +329,5 @@ print(len(bag), 2 in bag)
 
 **자주 나오는 오답:** “컨테이너면 전부 같은 메서드를 가진다”는 생각이 오답의 출발점이다. 문법마다 필요한 protocol을 따로 본다.
 
-마지막으로 코드를 다시 읽으면서 **입력 → 호출되는 규칙 → 상태 변화 → 결과/예외** 네 칸으로 요약한다. 이 네 칸을 설명할 수 있으면 단순 암기가 아니라 실행 모델을 이해한 것이다.
+PART 66의 **PART 66 · Container protocol — length·truth·index·slice·membership을 하나의 계약으로 읽기**를 마무리할 때는 입력값, 실제로 선택된 규칙, 그 규칙이 만든 상태 변화, 마지막 결과나 예외를 연결해서 요약한다. 특히 PART 66 · Container protocol — length·truth·index·slice·membership을 하나의 계약으로 읽기에서 관찰한 상태 전이를 자기 말로 설명하고 같은 입력을 다시 넣었을 때 같은 결과가 나오는지 확인하면, PART 66의 실행 모델을 암기가 아니라 검증 가능한 형태로 이해한 것이다.
 
