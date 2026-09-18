@@ -276,3 +276,6 @@
 그 뒤 memory representation과 batching, native library 활용을 본다. 마지막에야 call overhead나 작은 expression 차이를 고려한다.
 
 Optimization은 behavior change 위험을 가진다. Before/after benchmark와 correctness regression test를 함께 유지한다. 숫자로 이득을 설명할 수 없는 복잡한 최적화는 되돌릴 준비를 한다.
+
+**검증 메모 — CHAPTER 10 · 최적화 우선순위는 `알고리즘 → I/O → 표현 → 미세 비용` 순으로 좁힌다**
+CHAPTER 10 · 최적화 우선순위는 `알고리즘 → I/O → 표현 → 미세 비용` 순으로 좁힌다을 성능 관점에서 확인할 때는 실행 시간을 한 번 재는 것으로 결론 내리지 않는다. 입력 크기와 반복 횟수를 고정하고, 준비 단계와 실제 측정 구간을 분리한 뒤 여러 번 실행해 분포를 본다. 같은 기능을 하는 대안 코드가 있다면 한 요소만 바꿔 비교하고, 속도 차이가 자료구조·할당·호출 횟수 중 어디에서 생기는지 설명한다. 결과가 예상과 다르면 측정 코드 자체의 비용과 캐시·워밍업 영향을 먼저 의심하고 다시 측정한다.
