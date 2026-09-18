@@ -7,12 +7,20 @@ class V5SingleLiveContentPolicyTest {
     @Test
     fun oneCanonicalLiveBranchOwnsAllTrackContent() {
         assertEquals(
-            "textbook-v5-deep-book-engine",
+            "codingcoding-textbook-live",
             V5BookAssetRepository.LIVE_BRANCH
         )
         assertEquals(
             "app/src/main/assets/textbook/v5",
             V5BookAssetRepository.LIVE_TRACK_ROOT
+        )
+        assertEquals("codingcoding", V5BookAssetRepository.EXPECTED_PROJECT_ID)
+        assertEquals("codingcoding-textbook-v5", V5BookAssetRepository.EXPECTED_CONTENT_ID)
+        assertEquals(1, V5BookAssetRepository.EXPECTED_SCHEMA_VERSION)
+        assertEquals("irewon1-lgtm/Myapp", V5BookAssetRepository.EXPECTED_REPOSITORY)
+        assertEquals(
+            "app/src/main/assets/textbook/v5/project_lock.json",
+            V5BookAssetRepository.PROJECT_LOCK_REPO_PATH
         )
     }
 
