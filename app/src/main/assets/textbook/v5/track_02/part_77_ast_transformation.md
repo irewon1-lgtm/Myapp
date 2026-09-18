@@ -1,6 +1,6 @@
 # PART 77 · AST transformation — source를 구조로 읽고 의미 보존 변환을 검증하기
 
-Python source를 문자열 검색과 치환으로 다루면 주석·문자열 literal·중첩 scope를 쉽게 오해한다. AST(Abstract Syntax Tree)는 parser가 source의 문법 구조를 node tree로 표현한 결과라서 static analysis, code generation, refactoring tool에 더 적합하다. 하지만 AST를 바꿨다는 사실만으로 의미가 보존되지는 않는다. 이 PART에서는 **parse → inspect → transform → compile → semantic verification** 순서를 잡는다.
+Python source를 문자열 검색과 치환으로 다루면 주석·문자열 literal·중첩 scope를 쉽게 오해한다. AST(Abstract Syntax Tree)는 parser가 source의 문법 구조를 node tree로 표현한 결과라서 static analysis, code generation, refactoring tool에 더 적합하다. 하지만 AST를 바꿨다는 사실만으로 의미가 보존되지는 않는다. 이 절에서는 **parse → inspect → transform → compile → semantic verification** 순서를 잡는다.
 
 ---
 
@@ -33,6 +33,8 @@ AST는 runtime value를 알지 못한다.
 
 ---
 
+**직접 확인하기 — CHAPTER 01 · `ast.parse`는 source text를 문법 구조로 바꾼다**
+CHAPTER 01 · `ast.parse`는 source text를 문법 구조로 바꾼다은 설명만 읽고 넘기기보다 가장 작은 실행 예제로 규칙을 확인해야 오래 남는다. 먼저 입력이나 객체 하나만 두고 기대 결과를 적은 뒤 실행한다. 다음에는 값 하나, 호출 순서 하나, 경계 조건 하나만 바꿔 실제 결과가 어떻게 달라지는지 비교한다. 한 줄 해석은 “CHAPTER 01 · `ast.parse`는 source text를 문법 구조로 바꾼다의 규칙이 값의 의미와 프로그램 상태 변화에 어떤 제약을 주는지 확인한다”이다. 예상과 다르면 타입·정체성·호출 순서·예외 경계를 차례로 좁히고, 수정 뒤 원래 예제와 반대 조건 예제를 모두 다시 실행한다. 마지막에는 왜 그런 결과가 나왔는지 자기 문장으로 설명해 본다.
 ## CHAPTER 02 · node location은 분석 결과를 다시 source 위치와 연결한다
 
 ### 시작 전 용어집
@@ -88,6 +90,8 @@ class CallCounter(ast.NodeVisitor):
 
 ---
 
+**직접 확인하기 — CHAPTER 03 · NodeVisitor와 NodeTransformer는 읽기와 변경의 책임을 분리한다**
+CHAPTER 03 · NodeVisitor와 NodeTransformer는 읽기와 변경의 책임을 분리한다은 설명만 읽고 넘기기보다 가장 작은 실행 예제로 규칙을 확인해야 오래 남는다. 먼저 입력이나 객체 하나만 두고 기대 결과를 적은 뒤 실행한다. 다음에는 값 하나, 호출 순서 하나, 경계 조건 하나만 바꿔 실제 결과가 어떻게 달라지는지 비교한다. 한 줄 해석은 “CHAPTER 03 · NodeVisitor와 NodeTransformer는 읽기와 변경의 책임을 분리한다의 규칙이 값의 의미와 프로그램 상태 변화에 어떤 제약을 주는지 확인한다”이다. 예상과 다르면 타입·정체성·호출 순서·예외 경계를 차례로 좁히고, 수정 뒤 원래 예제와 반대 조건 예제를 모두 다시 실행한다. 마지막에는 왜 그런 결과가 나왔는지 자기 문장으로 설명해 본다.
 ## CHAPTER 04 · 수정한 AST도 다시 compile 가능한 구조와 metadata를 만족해야 한다
 
 ### 시작 전 용어집
@@ -126,6 +130,8 @@ code = compile(expr, "<generated>", "eval")
 
 ---
 
+**직접 확인하기 — CHAPTER 04 · 수정한 AST도 다시 compile 가능한 구조와 metadata를 만족해야 한다**
+CHAPTER 04 · 수정한 AST도 다시 compile 가능한 구조와 metadata를 만족해야 한다은 설명만 읽고 넘기기보다 가장 작은 실행 예제로 규칙을 확인해야 오래 남는다. 먼저 입력이나 객체 하나만 두고 기대 결과를 적은 뒤 실행한다. 다음에는 값 하나, 호출 순서 하나, 경계 조건 하나만 바꿔 실제 결과가 어떻게 달라지는지 비교한다. 한 줄 해석은 “CHAPTER 04 · 수정한 AST도 다시 compile 가능한 구조와 metadata를 만족해야 한다의 규칙이 값의 의미와 프로그램 상태 변화에 어떤 제약을 주는지 확인한다”이다. 예상과 다르면 타입·정체성·호출 순서·예외 경계를 차례로 좁히고, 수정 뒤 원래 예제와 반대 조건 예제를 모두 다시 실행한다. 마지막에는 왜 그런 결과가 나왔는지 자기 문장으로 설명해 본다.
 ## CHAPTER 05 · semantic preservation은 모양이 비슷한 AST보다 관찰 가능한 behavior로 검증한다
 
 ### 시작 전 용어집
