@@ -35,8 +35,8 @@ class User:
 
 ---
 
-**직접 확인하기 — CHAPTER 01 · field model은 annotation과 default를 instance state schema로 해석한다**
-CHAPTER 01 · field model은 annotation과 default를 instance state schema로 해석한다의 동작은 가장 작은 실행 예제로 규칙을 확인하면 훨씬 명확해진다. 먼저 입력이나 객체 하나만 두고 기대 결과를 적은 다음 실행한다. 그다음 값 하나 또는 호출 순서 하나만 바꿔 결과가 어떻게 달라지는지 비교한다. 한 줄 해석은 “CHAPTER 01 · field model은 annotation과 default를 instance state schema로 해석한다의 규칙이 값의 의미와 프로그램 상태 변화에 어떤 제약을 주는지 확인한다”이다. 예상과 다르면 타입·정체성·호출 순서·예외 경계를 차례로 좁히고, 수정 뒤 원래 예제와 반대 조건 예제를 모두 다시 실행한다. 결과를 자기 문장으로 설명할 수 있어야 문법을 복사한 것이 아니라 동작 원리를 이해한 것이다.
+**실행 점검 80-1 — CHAPTER 01 · field model은 annotation과 default를 instance state schema로 해석한다**
+CHAPTER 01 · field model은 annotation과 default를 instance state schema로 해석한다의 규칙은 작은 예제로 값을 움직여 보면 분명해진다. PART 80 CHAPTER 1에서는 작업 하나만 남겨 단순화한 뒤 실행 전 예상값을 적고, 값이나 호출 순서 하나만 바꿔 실제 결과를 비교한다. 중복 처리 여부와 누락 여부를 동시에 점검한다. 예상과 다르면 타입·객체 정체성·수명·예외 경계를 한 항목씩 좁혀 원인을 찾는다. 수정한 뒤에는 원래 사례와 반대 조건 사례를 모두 실행하고, CHAPTER 01 · field model은 annotation과 default를 instance state schema로 해석한다이 어떤 상태 변화를 만들었는지 한 문장으로 설명한다. 다른 코드에서도 같은 규칙을 알아볼 수 있으면 이해가 실제로 연결된 것이다.
 ## CHAPTER 02 · mutable default는 `default_factory`로 instance별 새 객체를 만든다
 
 ### 시작 전 용어집
@@ -140,8 +140,8 @@ class Config:
 
 ---
 
-**직접 확인하기 — CHAPTER 04 · `frozen=True`는 assignment를 막지만 깊은 immutable을 자동 보장하지 않는다**
-CHAPTER 04 · `frozen=True`는 assignment를 막지만 깊은 immutable을 자동 보장하지 않는다의 동작은 가장 작은 실행 예제로 규칙을 확인하면 훨씬 명확해진다. 먼저 입력이나 객체 하나만 두고 기대 결과를 적은 다음 실행한다. 그다음 값 하나 또는 호출 순서 하나만 바꿔 결과가 어떻게 달라지는지 비교한다. 한 줄 해석은 “CHAPTER 04 · `frozen=True`는 assignment를 막지만 깊은 immutable을 자동 보장하지 않는다의 규칙이 값의 의미와 프로그램 상태 변화에 어떤 제약을 주는지 확인한다”이다. 예상과 다르면 타입·정체성·호출 순서·예외 경계를 차례로 좁히고, 수정 뒤 원래 예제와 반대 조건 예제를 모두 다시 실행한다. 결과를 자기 문장으로 설명할 수 있어야 문법을 복사한 것이 아니라 동작 원리를 이해한 것이다.
+**실행 점검 80-4 — CHAPTER 04 · `frozen=True`는 assignment를 막지만 깊은 immutable을 자동 보장하지 않는다**
+CHAPTER 04 · `frozen=True`는 assignment를 막지만 깊은 immutable을 자동 보장하지 않는다의 규칙은 작은 예제로 값을 움직여 보면 분명해진다. PART 80 CHAPTER 4에서는 로그에 남길 관찰값을 고르고 실행 전 예상값을 적고, 값이나 호출 순서 하나만 바꿔 실제 결과를 비교한다. 복구 지점과 실제 데이터 위치가 맞는지 비교한다. 예상과 다르면 타입·객체 정체성·수명·예외 경계를 한 항목씩 좁혀 원인을 찾는다. 수정한 뒤에는 원래 사례와 반대 조건 사례를 모두 실행하고, CHAPTER 04 · `frozen=True`는 assignment를 막지만 깊은 immutable을 자동 보장하지 않는다이 어떤 상태 변화를 만들었는지 한 문장으로 설명한다. 다른 코드에서도 같은 규칙을 알아볼 수 있으면 이해가 실제로 연결된 것이다.
 ## CHAPTER 05 · hash policy는 equality와 frozen 상태의 조합을 반영한다
 
 ### 시작 전 용어집
@@ -204,8 +204,8 @@ class Range:
 
 ---
 
-**직접 확인하기 — CHAPTER 06 · `__post_init__`은 생성된 initializer 뒤에서 invariant를 완성한다**
-CHAPTER 06 · `__post_init__`은 생성된 initializer 뒤에서 invariant를 완성한다의 동작은 가장 작은 실행 예제로 규칙을 확인하면 훨씬 명확해진다. 먼저 입력이나 객체 하나만 두고 기대 결과를 적은 다음 실행한다. 그다음 값 하나 또는 호출 순서 하나만 바꿔 결과가 어떻게 달라지는지 비교한다. 한 줄 해석은 “CHAPTER 06 · `__post_init__`은 생성된 initializer 뒤에서 invariant를 완성한다의 규칙이 값의 의미와 프로그램 상태 변화에 어떤 제약을 주는지 확인한다”이다. 예상과 다르면 타입·정체성·호출 순서·예외 경계를 차례로 좁히고, 수정 뒤 원래 예제와 반대 조건 예제를 모두 다시 실행한다. 결과를 자기 문장으로 설명할 수 있어야 문법을 복사한 것이 아니라 동작 원리를 이해한 것이다.
+**실행 점검 80-6 — CHAPTER 06 · `__post_init__`은 생성된 initializer 뒤에서 invariant를 완성한다**
+CHAPTER 06 · `__post_init__`은 생성된 initializer 뒤에서 invariant를 완성한다의 규칙은 작은 예제로 값을 움직여 보면 분명해진다. PART 80 CHAPTER 6에서는 재현 가능한 최소 사례를 만들고 실행 전 예상값을 적고, 값이나 호출 순서 하나만 바꿔 실제 결과를 비교한다. 처리 시작 시각과 종료 시각을 같이 남긴다. 예상과 다르면 타입·객체 정체성·수명·예외 경계를 한 항목씩 좁혀 원인을 찾는다. 수정한 뒤에는 원래 사례와 반대 조건 사례를 모두 실행하고, CHAPTER 06 · `__post_init__`은 생성된 initializer 뒤에서 invariant를 완성한다이 어떤 상태 변화를 만들었는지 한 문장으로 설명한다. 다른 코드에서도 같은 규칙을 알아볼 수 있으면 이해가 실제로 연결된 것이다.
 ## CHAPTER 07 · slots와 match args 옵션은 memory layout과 pattern surface를 바꿀 수 있다
 
 ### 시작 전 용어집
