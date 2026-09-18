@@ -40,8 +40,8 @@ after = tracemalloc.take_snapshot()
 
 ---
 
-**현장 점검 90-1 — CHAPTER 01 · tracemalloc snapshot은 Python allocation이 어디서 늘었는지 비교할 출발점을 만든다**
-CHAPTER 01 · tracemalloc snapshot은 Python allocation이 어디서 늘었는지 비교할 출발점을 만든다을 점검할 때는 실패 전 상태를 표처럼 적고 재시도를 강제로 한 번 일으킨다. PART 90 CHAPTER 1에서는 오류 코드와 복구 동작이 계약대로 이어지는지 본다. 한 번의 결과가 아니라 연속 세 번의 실행 기록을 비교해 우연한 성공을 배제한다. 수정 후에는 정상 실행과 실패 주입 실행의 차이를 단계별로 설명할 수 있어야 하며 중단 이후에도 손실·중복·무한 대기가 없어야 한다.
+**검증 시나리오 P90-C1 — CHAPTER 01 · tracemalloc snapshot은 Python allocation이 어디서 늘었는지 비교할 출발점을 만든다**
+`CHAPTER 01 · tracemalloc snapshot은 Python allocation이 어디서 늘었는지 비교할 출발점을 만든다` 검증은 정상 경로를 먼저 재현하는 데서 시작한다. P90-C1에서는 `CHAPTER 01 · tracemalloc snapshot은 Python allocation이 어디서 늘었는지 비교할 출발점을 만든다` 실행 직전 상태를 먼저 적고 실행 뒤 값과 비교해 실제 규칙을 확인한다. 두 번째 단계에서는 `CHAPTER 01 · tracemalloc snapshot은 Python allocation이 어디서 늘었는지 비교할 출발점을 만든다`에 대해 오류 경로 하나를 의도적으로 만든다고 다른 코드는 그대로 두어 원인 후보를 하나로 제한한다. 이때 `CHAPTER 01 · tracemalloc snapshot은 Python allocation이 어디서 늘었는지 비교할 출발점을 만든다`의 예외 종류와 직전 상태를 함께 남긴다하여 우연한 통과를 배제한다. 예상과 다르면 `CHAPTER 01 · tracemalloc snapshot은 Python allocation이 어디서 늘었는지 비교할 출발점을 만든다`의 타입, 값, 호출 순서, 예외 경계 가운데 최초로 달라진 항목부터 확인하고 최소 수정 뒤 다시 실행한다. P90-C1의 마무리는 복구 후 같은 오류가 다시 재현되지 않는지 검사하는 것이다. 통과 기준은 `CHAPTER 01 · tracemalloc snapshot은 Python allocation이 어디서 늘었는지 비교할 출발점을 만든다`의 정상 사례와 변형 사례가 모두 설명 가능한 결과를 내고 같은 절차를 반복해도 동일한 상태 계약을 유지하는 것이다.
 ## CHAPTER 02 · snapshot diff는 allocation 증가 위치를 보여주지만 retention 원인을 자동 설명하지 않는다
 
 ### 시작 전 용어집
@@ -70,8 +70,8 @@ for stat in stats[:10]:
 
 ---
 
-**현장 점검 90-2 — CHAPTER 02 · snapshot diff는 allocation 증가 위치를 보여주지만 retention 원인을 자동 설명하지 않는다**
-CHAPTER 02 · snapshot diff는 allocation 증가 위치를 보여주지만 retention 원인을 자동 설명하지 않는다을 점검할 때는 정상 동작을 기준선으로 남기고 중복 입력을 한 번 보낸다. PART 90 CHAPTER 2에서는 중복 반영과 누락 여부를 동시에 확인한다. 재현 절차를 번호로 고정하고 각 단계의 입력·출력을 기록한 뒤 같은 절차를 다시 수행한다. 수정 후 기대 상태와 실제 상태가 단계별로 일치하고 실패 시에도 명시한 종료 조건으로 수렴해야 통과로 본다.
+**검증 시나리오 P90-C2 — CHAPTER 02 · snapshot diff는 allocation 증가 위치를 보여주지만 retention 원인을 자동 설명하지 않는다**
+`CHAPTER 02 · snapshot diff는 allocation 증가 위치를 보여주지만 retention 원인을 자동 설명하지 않는다` 검증은 호출 순서를 단순화하는 데서 시작한다. P90-C2에서는 `CHAPTER 02 · snapshot diff는 allocation 증가 위치를 보여주지만 retention 원인을 자동 설명하지 않는다` 실행 직전 상태를 먼저 적고 실행 뒤 값과 비교해 실제 규칙을 확인한다. 두 번째 단계에서는 `CHAPTER 02 · snapshot diff는 allocation 증가 위치를 보여주지만 retention 원인을 자동 설명하지 않는다`에 대해 순서 하나만 뒤집어 차이를 본다고 다른 코드는 그대로 두어 원인 후보를 하나로 제한한다. 이때 `CHAPTER 02 · snapshot diff는 allocation 증가 위치를 보여주지만 retention 원인을 자동 설명하지 않는다`의 호출 전후의 상태 전이를 번호로 남긴다하여 우연한 통과를 배제한다. 예상과 다르면 `CHAPTER 02 · snapshot diff는 allocation 증가 위치를 보여주지만 retention 원인을 자동 설명하지 않는다`의 타입, 값, 호출 순서, 예외 경계 가운데 최초로 달라진 항목부터 확인하고 최소 수정 뒤 다시 실행한다. P90-C2의 마무리는 다른 순서에서도 계약이 유지되는지 확인하는 것이다. 통과 기준은 `CHAPTER 02 · snapshot diff는 allocation 증가 위치를 보여주지만 retention 원인을 자동 설명하지 않는다`의 정상 사례와 변형 사례가 모두 설명 가능한 결과를 내고 같은 절차를 반복해도 동일한 상태 계약을 유지하는 것이다.
 ## CHAPTER 03 · GC debug는 cycle과 unreachable object를 조사하는 도구다
 
 ### 시작 전 용어집
@@ -157,8 +157,8 @@ working set 증가 -> cache 증가 -> 일정 크기에서 plateau
 
 ---
 
-**현장 점검 90-5 — CHAPTER 05 · cache growth와 leak은 둘 다 memory 증가지만 정상성 판단 기준이 다르다**
-CHAPTER 05 · cache growth와 leak은 둘 다 memory 증가지만 정상성 판단 기준이 다르다을 점검할 때는 완료 조건을 코드 실행 전에 적고 부분 데이터만 전달한다. PART 90 CHAPTER 5에서는 열린 자원과 닫힌 자원을 비교한다. 요청 식별자를 유지한 채 재시도 전후의 로그를 한 묶음으로 비교한다. 수정 후에는 재시도 횟수와 최종 상태가 정책 범위 안에 있고 같은 작업이 두 번 반영되거나 영구 대기 상태로 남지 않아야 한다.
+**검증 시나리오 P90-C5 — CHAPTER 05 · cache growth와 leak은 둘 다 memory 증가지만 정상성 판단 기준이 다르다**
+`CHAPTER 05 · cache growth와 leak은 둘 다 memory 증가지만 정상성 판단 기준이 다르다` 검증은 반례부터 하나 만든다하는 데서 시작한다. P90-C5에서는 `CHAPTER 05 · cache growth와 leak은 둘 다 memory 증가지만 정상성 판단 기준이 다르다` 실행 직전 상태를 먼저 적고 실행 뒤 값과 비교해 실제 규칙을 확인한다. 두 번째 단계에서는 `CHAPTER 05 · cache growth와 leak은 둘 다 memory 증가지만 정상성 판단 기준이 다르다`에 대해 반례와 정상례의 차이만 좁힌다고 다른 코드는 그대로 두어 원인 후보를 하나로 제한한다. 이때 `CHAPTER 05 · cache growth와 leak은 둘 다 memory 증가지만 정상성 판단 기준이 다르다`의 중간 값을 직접 출력해 추측을 줄인다하여 우연한 통과를 배제한다. 예상과 다르면 `CHAPTER 05 · cache growth와 leak은 둘 다 memory 증가지만 정상성 판단 기준이 다르다`의 타입, 값, 호출 순서, 예외 경계 가운데 최초로 달라진 항목부터 확인하고 최소 수정 뒤 다시 실행한다. P90-C5의 마무리는 수정 후 두 사례를 같은 순서로 재검증하는 것이다. 통과 기준은 `CHAPTER 05 · cache growth와 leak은 둘 다 memory 증가지만 정상성 판단 기준이 다르다`의 정상 사례와 변형 사례가 모두 설명 가능한 결과를 내고 같은 절차를 반복해도 동일한 상태 계약을 유지하는 것이다.
 ## CHAPTER 06 · memory measurement 자체도 overhead와 noise를 만든다
 
 ### 시작 전 용어집
@@ -213,8 +213,8 @@ warm-up -> snapshot A -> workload 1000회 -> snapshot B -> workload 1000회 -> s
 
 ---
 
-**현장 점검 90-7 — CHAPTER 07 · reproduction window는 동일 workload와 warm-up을 맞춰야 비교가 의미 있다**
-CHAPTER 07 · reproduction window는 동일 workload와 warm-up을 맞춰야 비교가 의미 있다을 점검할 때는 재현 절차를 세 단계로 고정하고 취소를 처리 중간에 발생시킨다. PART 90 CHAPTER 7에서는 요청 식별자와 최종 상태를 연결한다. 기준 사례를 먼저 저장한 뒤 경계 입력과 실패 입력을 하나씩 추가해 차이를 관찰한다. 수정 후 세 사례의 결과가 각자 정의한 계약과 일치하고 실패 사례가 정상 사례의 데이터나 자원을 오염시키지 않아야 한다.
+**검증 시나리오 P90-C7 — CHAPTER 07 · reproduction window는 동일 workload와 warm-up을 맞춰야 비교가 의미 있다**
+`CHAPTER 07 · reproduction window는 동일 workload와 warm-up을 맞춰야 비교가 의미 있다` 검증은 가장 작은 객체 상태로 시작하는 데서 시작한다. P90-C7에서는 `CHAPTER 07 · reproduction window는 동일 workload와 warm-up을 맞춰야 비교가 의미 있다` 실행 직전 상태를 먼저 적고 실행 뒤 값과 비교해 실제 규칙을 확인한다. 두 번째 단계에서는 `CHAPTER 07 · reproduction window는 동일 workload와 warm-up을 맞춰야 비교가 의미 있다`에 대해 속성 하나만 바꿔 재실행고 다른 코드는 그대로 두어 원인 후보를 하나로 제한한다. 이때 `CHAPTER 07 · reproduction window는 동일 workload와 warm-up을 맞춰야 비교가 의미 있다`의 반환값과 부수효과를 따로 기록하여 우연한 통과를 배제한다. 예상과 다르면 `CHAPTER 07 · reproduction window는 동일 workload와 warm-up을 맞춰야 비교가 의미 있다`의 타입, 값, 호출 순서, 예외 경계 가운데 최초로 달라진 항목부터 확인하고 최소 수정 뒤 다시 실행한다. P90-C7의 마무리는 수정 뒤 원래 조건을 다시 회귀 확인하는 것이다. 통과 기준은 `CHAPTER 07 · reproduction window는 동일 workload와 warm-up을 맞춰야 비교가 의미 있다`의 정상 사례와 변형 사례가 모두 설명 가능한 결과를 내고 같은 절차를 반복해도 동일한 상태 계약을 유지하는 것이다.
 ## CHAPTER 08 · memory diagnostic contract는 측정 결과와 해석을 분리한다
 
 ### 시작 전 용어집
