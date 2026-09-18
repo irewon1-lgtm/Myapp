@@ -27,8 +27,8 @@ Blocking socket은 한 operation이 끝날 때까지 현재 thread를 멈춘다.
 
 ---
 
-**현장 점검 88-1 — CHAPTER 01 · blocking과 nonblocking은 같은 I/O operation의 대기 방식을 바꾼다**
-CHAPTER 01 · blocking과 nonblocking은 같은 I/O operation의 대기 방식을 바꾼다을 점검할 때는 한 요청만 남겨 실행 경로를 단순화하고 중단 뒤 즉시 재시작해 본다. PART 88 CHAPTER 1에서는 성공·실패·재시도 건수를 따로 센다. 측정 전후 snapshot을 같은 기준점에서 다시 만들고 증가량의 상위 위치가 반복 실행에서도 같은지 비교한다. 수정 뒤에는 캐시를 비운 경우와 유지한 경우를 나눠 보며, 해제 가능한 객체가 계속 누적되지 않고 증가 원인을 코드 위치까지 설명할 수 있어야 통과다.
+**검증 시나리오 P88-C1 — CHAPTER 01 · blocking과 nonblocking은 같은 I/O operation의 대기 방식을 바꾼다**
+`CHAPTER 01 · blocking과 nonblocking은 같은 I/O operation의 대기 방식을 바꾼다` 검증은 가장 작은 객체 상태로 시작하는 데서 시작한다. P88-C1에서는 `CHAPTER 01 · blocking과 nonblocking은 같은 I/O operation의 대기 방식을 바꾼다` 실행 직전 상태를 먼저 적고 실행 뒤 값과 비교해 실제 규칙을 확인한다. 두 번째 단계에서는 `CHAPTER 01 · blocking과 nonblocking은 같은 I/O operation의 대기 방식을 바꾼다`에 대해 속성 하나만 바꿔 재실행고 다른 코드는 그대로 두어 원인 후보를 하나로 제한한다. 이때 `CHAPTER 01 · blocking과 nonblocking은 같은 I/O operation의 대기 방식을 바꾼다`의 반환값과 부수효과를 따로 기록하여 우연한 통과를 배제한다. 예상과 다르면 `CHAPTER 01 · blocking과 nonblocking은 같은 I/O operation의 대기 방식을 바꾼다`의 타입, 값, 호출 순서, 예외 경계 가운데 최초로 달라진 항목부터 확인하고 최소 수정 뒤 다시 실행한다. P88-C1의 마무리는 수정 뒤 원래 조건을 다시 회귀 확인하는 것이다. 통과 기준은 `CHAPTER 01 · blocking과 nonblocking은 같은 I/O operation의 대기 방식을 바꾼다`의 정상 사례와 변형 사례가 모두 설명 가능한 결과를 내고 같은 절차를 반복해도 동일한 상태 계약을 유지하는 것이다.
 ## CHAPTER 02 · readiness는 read/write가 반드시 끝까지 성공한다는 보장이 아니다
 
 ### 시작 전 용어집
@@ -53,8 +53,8 @@ CHAPTER 01 · blocking과 nonblocking은 같은 I/O operation의 대기 방식�
 
 ---
 
-**현장 점검 88-2 — CHAPTER 02 · readiness는 read/write가 반드시 끝까지 성공한다는 보장이 아니다**
-CHAPTER 02 · readiness는 read/write가 반드시 끝까지 성공한다는 보장이 아니다을 점검할 때는 입력과 초기 상태를 기록하고 권한 또는 형식 오류를 한 번 만든다. PART 88 CHAPTER 2에서는 체크포인트와 실제 처리 위치를 맞춰 본다. 파일 갱신은 동일 입력으로 두 번 수행해 최종 파일과 임시 파일 상태를 함께 비교한다. 수정 후에는 쓰기 중단·rename 직전 중단·재실행을 각각 시험하고 기존 정상본이 손상되지 않으며 최종본이 부분 상태로 노출되지 않아야 한다.
+**검증 시나리오 P88-C2 — CHAPTER 02 · readiness는 read/write가 반드시 끝까지 성공한다는 보장이 아니다**
+`CHAPTER 02 · readiness는 read/write가 반드시 끝까지 성공한다는 보장이 아니다` 검증은 경계값을 먼저 지정하는 데서 시작한다. P88-C2에서는 `CHAPTER 02 · readiness는 read/write가 반드시 끝까지 성공한다는 보장이 아니다` 실행 직전 상태를 먼저 적고 실행 뒤 값과 비교해 실제 규칙을 확인한다. 두 번째 단계에서는 `CHAPTER 02 · readiness는 read/write가 반드시 끝까지 성공한다는 보장이 아니다`에 대해 정상값과 경계값을 연속 실행고 다른 코드는 그대로 두어 원인 후보를 하나로 제한한다. 이때 `CHAPTER 02 · readiness는 read/write가 반드시 끝까지 성공한다는 보장이 아니다`의 타입·정체성·수명 변화를 분리 기록하여 우연한 통과를 배제한다. 예상과 다르면 `CHAPTER 02 · readiness는 read/write가 반드시 끝까지 성공한다는 보장이 아니다`의 타입, 값, 호출 순서, 예외 경계 가운데 최초로 달라진 항목부터 확인하고 최소 수정 뒤 다시 실행한다. P88-C2의 마무리는 결과를 설명할 수 있을 때 종료하는 것이다. 통과 기준은 `CHAPTER 02 · readiness는 read/write가 반드시 끝까지 성공한다는 보장이 아니다`의 정상 사례와 변형 사례가 모두 설명 가능한 결과를 내고 같은 절차를 반복해도 동일한 상태 계약을 유지하는 것이다.
 ## CHAPTER 03 · selector registration은 file descriptor와 관심 event를 event loop에 등록한다
 
 ### 시작 전 용어집
@@ -86,8 +86,8 @@ Descriptor reuse도 주의한다.
 
 ---
 
-**현장 점검 88-3 — CHAPTER 03 · selector registration은 file descriptor와 관심 event를 event loop에 등록한다**
-CHAPTER 03 · selector registration은 file descriptor와 관심 event를 event loop에 등록한다을 점검할 때는 완료 조건을 코드 실행 전에 적고 부분 데이터만 전달한다. PART 88 CHAPTER 3에서는 열린 자원과 닫힌 자원을 비교한다. 압축 해제는 같은 archive를 반복 처리하면서 추출 대상 목록과 실제 생성 파일 목록을 대조한다. 수정 뒤에는 경로 탈출·과다 entry·중간 실패를 따로 주입하고 최종 경로 밖 생성물이 없으며 실패 시 staging 찌꺼기가 안전하게 정리돼야 한다.
+**검증 시나리오 P88-C3 — CHAPTER 03 · selector registration은 file descriptor와 관심 event를 event loop에 등록한다**
+`CHAPTER 03 · selector registration은 file descriptor와 관심 event를 event loop에 등록한다` 검증은 정상 경로를 먼저 재현하는 데서 시작한다. P88-C3에서는 `CHAPTER 03 · selector registration은 file descriptor와 관심 event를 event loop에 등록한다` 실행 직전 상태를 먼저 적고 실행 뒤 값과 비교해 실제 규칙을 확인한다. 두 번째 단계에서는 `CHAPTER 03 · selector registration은 file descriptor와 관심 event를 event loop에 등록한다`에 대해 오류 경로 하나를 의도적으로 만든다고 다른 코드는 그대로 두어 원인 후보를 하나로 제한한다. 이때 `CHAPTER 03 · selector registration은 file descriptor와 관심 event를 event loop에 등록한다`의 예외 종류와 직전 상태를 함께 남긴다하여 우연한 통과를 배제한다. 예상과 다르면 `CHAPTER 03 · selector registration은 file descriptor와 관심 event를 event loop에 등록한다`의 타입, 값, 호출 순서, 예외 경계 가운데 최초로 달라진 항목부터 확인하고 최소 수정 뒤 다시 실행한다. P88-C3의 마무리는 복구 후 같은 오류가 다시 재현되지 않는지 검사하는 것이다. 통과 기준은 `CHAPTER 03 · selector registration은 file descriptor와 관심 event를 event loop에 등록한다`의 정상 사례와 변형 사례가 모두 설명 가능한 결과를 내고 같은 절차를 반복해도 동일한 상태 계약을 유지하는 것이다.
 ## CHAPTER 04 · interest set은 현재 필요한 event만 구독하도록 동적으로 바뀔 수 있다
 
 ### 시작 전 용어집
@@ -120,8 +120,8 @@ flushed         -> READ
 
 ---
 
-**현장 점검 88-4 — CHAPTER 04 · interest set은 현재 필요한 event만 구독하도록 동적으로 바뀔 수 있다**
-CHAPTER 04 · interest set은 현재 필요한 event만 구독하도록 동적으로 바뀔 수 있다을 점검할 때는 관찰해야 할 로그 필드를 먼저 고르고 자원 정리를 늦춰 본다. PART 88 CHAPTER 4에서는 상태 전이와 반환값을 같은 시각축으로 본다. CSV 검증은 동일 입력을 여러 번 파싱해 row 수와 field 수, 오류 위치가 안정적으로 재현되는지 확인한다. 수정 뒤에는 quoting·빈 필드·잘못된 header 사례를 분리해 실행하고 잘못된 record만 명확히 거부되며 정상 record의 열 의미가 바뀌지 않아야 한다.
+**검증 시나리오 P88-C4 — CHAPTER 04 · interest set은 현재 필요한 event만 구독하도록 동적으로 바뀔 수 있다**
+`CHAPTER 04 · interest set은 현재 필요한 event만 구독하도록 동적으로 바뀔 수 있다` 검증은 호출 순서를 단순화하는 데서 시작한다. P88-C4에서는 `CHAPTER 04 · interest set은 현재 필요한 event만 구독하도록 동적으로 바뀔 수 있다` 실행 직전 상태를 먼저 적고 실행 뒤 값과 비교해 실제 규칙을 확인한다. 두 번째 단계에서는 `CHAPTER 04 · interest set은 현재 필요한 event만 구독하도록 동적으로 바뀔 수 있다`에 대해 순서 하나만 뒤집어 차이를 본다고 다른 코드는 그대로 두어 원인 후보를 하나로 제한한다. 이때 `CHAPTER 04 · interest set은 현재 필요한 event만 구독하도록 동적으로 바뀔 수 있다`의 호출 전후의 상태 전이를 번호로 남긴다하여 우연한 통과를 배제한다. 예상과 다르면 `CHAPTER 04 · interest set은 현재 필요한 event만 구독하도록 동적으로 바뀔 수 있다`의 타입, 값, 호출 순서, 예외 경계 가운데 최초로 달라진 항목부터 확인하고 최소 수정 뒤 다시 실행한다. P88-C4의 마무리는 다른 순서에서도 계약이 유지되는지 확인하는 것이다. 통과 기준은 `CHAPTER 04 · interest set은 현재 필요한 event만 구독하도록 동적으로 바뀔 수 있다`의 정상 사례와 변형 사례가 모두 설명 가능한 결과를 내고 같은 절차를 반복해도 동일한 상태 계약을 유지하는 것이다.
 ## CHAPTER 05 · wakeup mechanism은 다른 thread나 signal이 event loop를 깨우게 한다
 
 ### 시작 전 용어집
