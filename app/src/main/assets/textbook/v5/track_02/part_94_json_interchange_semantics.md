@@ -94,8 +94,8 @@ value = Decimal("0.1")
 
 ---
 
-**현장 점검 94-3 — CHAPTER 03 · JSON object key는 문자열이므로 Python dict key 의미가 좁아질 수 있다**
-CHAPTER 03 · JSON object key는 문자열이므로 Python dict key 의미가 좁아질 수 있다을 점검할 때는 재현 절차를 세 단계로 고정하고 취소를 처리 중간에 발생시킨다. PART 94 CHAPTER 3에서는 요청 식별자와 최종 상태를 연결한다. 정상·느린 응답·오류 응답 세 조건을 같은 순서로 반복해 상태 머신이 되돌아오는지 확인한다. 수정 후 어느 조건에서도 영구 열린 상태나 무한 재시도가 없고 다음 정상 요청을 받을 수 있어야 한다.
+**검증 시나리오 P94-C3 — CHAPTER 03 · JSON object key는 문자열이므로 Python dict key 의미가 좁아질 수 있다**
+`CHAPTER 03 · JSON object key는 문자열이므로 Python dict key 의미가 좁아질 수 있다` 검증은 가장 작은 객체 상태로 시작하는 데서 시작한다. P94-C3에서는 `CHAPTER 03 · JSON object key는 문자열이므로 Python dict key 의미가 좁아질 수 있다` 실행 직전 상태를 먼저 적고 실행 뒤 값과 비교해 실제 규칙을 확인한다. 두 번째 단계에서는 `CHAPTER 03 · JSON object key는 문자열이므로 Python dict key 의미가 좁아질 수 있다`에 대해 속성 하나만 바꿔 재실행고 다른 코드는 그대로 두어 원인 후보를 하나로 제한한다. 이때 `CHAPTER 03 · JSON object key는 문자열이므로 Python dict key 의미가 좁아질 수 있다`의 반환값과 부수효과를 따로 기록하여 우연한 통과를 배제한다. 예상과 다르면 `CHAPTER 03 · JSON object key는 문자열이므로 Python dict key 의미가 좁아질 수 있다`의 타입, 값, 호출 순서, 예외 경계 가운데 최초로 달라진 항목부터 확인하고 최소 수정 뒤 다시 실행한다. P94-C3의 마무리는 수정 뒤 원래 조건을 다시 회귀 확인하는 것이다. 통과 기준은 `CHAPTER 03 · JSON object key는 문자열이므로 Python dict key 의미가 좁아질 수 있다`의 정상 사례와 변형 사례가 모두 설명 가능한 결과를 내고 같은 절차를 반복해도 동일한 상태 계약을 유지하는 것이다.
 ## CHAPTER 04 · object member order와 whitespace는 의미와 text identity를 분리해서 본다
 
 ### 시작 전 용어집
@@ -126,8 +126,8 @@ CHAPTER 03 · JSON object key는 문자열이므로 Python dict key 의미가 �
 
 ---
 
-**현장 점검 94-4 — CHAPTER 04 · object member order와 whitespace는 의미와 text identity를 분리해서 본다**
-CHAPTER 04 · object member order와 whitespace는 의미와 text identity를 분리해서 본다을 점검할 때는 복구 전후를 비교할 지표를 정하고 지연을 한 지점에 넣는다. PART 94 CHAPTER 4에서는 처리된 항목과 남은 항목을 구분한다. 동일 입력을 직렬로 처리한 결과와 실패 후 재개한 결과를 비교한다. 수정 후 두 결과 집합이 같고 처리 순서 차이가 데이터 의미나 최종 개수에 영향을 주지 않아야 한다.
+**검증 시나리오 P94-C4 — CHAPTER 04 · object member order와 whitespace는 의미와 text identity를 분리해서 본다**
+`CHAPTER 04 · object member order와 whitespace는 의미와 text identity를 분리해서 본다` 검증은 경계값을 먼저 지정하는 데서 시작한다. P94-C4에서는 `CHAPTER 04 · object member order와 whitespace는 의미와 text identity를 분리해서 본다` 실행 직전 상태를 먼저 적고 실행 뒤 값과 비교해 실제 규칙을 확인한다. 두 번째 단계에서는 `CHAPTER 04 · object member order와 whitespace는 의미와 text identity를 분리해서 본다`에 대해 정상값과 경계값을 연속 실행고 다른 코드는 그대로 두어 원인 후보를 하나로 제한한다. 이때 `CHAPTER 04 · object member order와 whitespace는 의미와 text identity를 분리해서 본다`의 타입·정체성·수명 변화를 분리 기록하여 우연한 통과를 배제한다. 예상과 다르면 `CHAPTER 04 · object member order와 whitespace는 의미와 text identity를 분리해서 본다`의 타입, 값, 호출 순서, 예외 경계 가운데 최초로 달라진 항목부터 확인하고 최소 수정 뒤 다시 실행한다. P94-C4의 마무리는 결과를 설명할 수 있을 때 종료하는 것이다. 통과 기준은 `CHAPTER 04 · object member order와 whitespace는 의미와 text identity를 분리해서 본다`의 정상 사례와 변형 사례가 모두 설명 가능한 결과를 내고 같은 절차를 반복해도 동일한 상태 계약을 유지하는 것이다.
 ## CHAPTER 05 · canonicalization은 `sort_keys=True` 하나보다 더 큰 계약이다
 
 ### 시작 전 용어집
@@ -178,8 +178,8 @@ def encode(value):
 
 ---
 
-**현장 점검 94-6 — CHAPTER 06 · custom encoding은 domain object를 JSON schema로 투영하는 명시적 변환이다**
-CHAPTER 06 · custom encoding은 domain object를 JSON schema로 투영하는 명시적 변환이다을 점검할 때는 정상 동작을 기준선으로 남기고 중복 입력을 한 번 보낸다. PART 94 CHAPTER 6에서는 중복 반영과 누락 여부를 동시에 확인한다. 관찰 로그를 요청 단위로 묶어 첫 실행과 재실행을 비교한다. 수정 후 같은 요청이 여러 번 전달돼도 최종 반영은 정책대로 한 번만 이루어지고 거부된 요청은 추적 가능한 이유를 남겨야 한다.
+**검증 시나리오 P94-C6 — CHAPTER 06 · custom encoding은 domain object를 JSON schema로 투영하는 명시적 변환이다**
+`CHAPTER 06 · custom encoding은 domain object를 JSON schema로 투영하는 명시적 변환이다` 검증은 호출 순서를 단순화하는 데서 시작한다. P94-C6에서는 `CHAPTER 06 · custom encoding은 domain object를 JSON schema로 투영하는 명시적 변환이다` 실행 직전 상태를 먼저 적고 실행 뒤 값과 비교해 실제 규칙을 확인한다. 두 번째 단계에서는 `CHAPTER 06 · custom encoding은 domain object를 JSON schema로 투영하는 명시적 변환이다`에 대해 순서 하나만 뒤집어 차이를 본다고 다른 코드는 그대로 두어 원인 후보를 하나로 제한한다. 이때 `CHAPTER 06 · custom encoding은 domain object를 JSON schema로 투영하는 명시적 변환이다`의 호출 전후의 상태 전이를 번호로 남긴다하여 우연한 통과를 배제한다. 예상과 다르면 `CHAPTER 06 · custom encoding은 domain object를 JSON schema로 투영하는 명시적 변환이다`의 타입, 값, 호출 순서, 예외 경계 가운데 최초로 달라진 항목부터 확인하고 최소 수정 뒤 다시 실행한다. P94-C6의 마무리는 다른 순서에서도 계약이 유지되는지 확인하는 것이다. 통과 기준은 `CHAPTER 06 · custom encoding은 domain object를 JSON schema로 투영하는 명시적 변환이다`의 정상 사례와 변형 사례가 모두 설명 가능한 결과를 내고 같은 절차를 반복해도 동일한 상태 계약을 유지하는 것이다.
 ## CHAPTER 07 · JSON parser에도 입력 크기와 nesting depth 같은 resource limit이 필요하다
 
 ### 시작 전 용어집
