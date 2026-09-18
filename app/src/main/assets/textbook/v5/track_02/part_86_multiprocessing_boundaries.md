@@ -173,8 +173,8 @@
 
 ---
 
-**현장 점검 86-7 — CHAPTER 07 · process lifecycle은 start·health·shutdown·crash를 모두 관리해야 한다**
-CHAPTER 07 · process lifecycle은 start·health·shutdown·crash를 모두 관리해야 한다을 운영에서 검증할 때는 작업 하나만 남겨 단순화한 뒤 지연 응답을 한 번 발생시킨다. PART 86 CHAPTER 7의 관찰 항목으로 처리 시작 시각과 종료 시각을 같이 남긴다. 실패 주입 뒤에는 같은 입력으로 다시 실행해 CHAPTER 07 · process lifecycle은 start·health·shutdown·crash를 모두 관리해야 한다의 복구 경로가 반복 가능한지 확인한다. 수정 전과 수정 후의 상태를 비교할 때는 성공 여부뿐 아니라 중복, 누락, 대기 중인 작업, 닫히지 않은 자원까지 함께 본다. 통과 기준은 정상 경로가 성공하고 실패 경로도 정해진 오류 또는 복구 상태로 끝나며, 같은 시나리오를 반복해도 데이터 손실이나 무한 재시도가 생기지 않는 것이다.
+**검증 시나리오 P86-C7 — CHAPTER 07 · process lifecycle은 start·health·shutdown·crash를 모두 관리해야 한다**
+`CHAPTER 07 · process lifecycle은 start·health·shutdown·crash를 모두 관리해야 한다` 검증은 입력 크기를 고정하는 데서 시작한다. P86-C7에서는 `CHAPTER 07 · process lifecycle은 start·health·shutdown·crash를 모두 관리해야 한다` 실행 직전 상태를 먼저 적고 실행 뒤 값과 비교해 실제 규칙을 확인한다. 두 번째 단계에서는 `CHAPTER 07 · process lifecycle은 start·health·shutdown·crash를 모두 관리해야 한다`에 대해 변형은 한 요소만 허용고 다른 코드는 그대로 두어 원인 후보를 하나로 제한한다. 이때 `CHAPTER 07 · process lifecycle은 start·health·shutdown·crash를 모두 관리해야 한다`의 측정값을 여러 번 모아 분포를 비교하여 우연한 통과를 배제한다. 예상과 다르면 `CHAPTER 07 · process lifecycle은 start·health·shutdown·crash를 모두 관리해야 한다`의 타입, 값, 호출 순서, 예외 경계 가운데 최초로 달라진 항목부터 확인하고 최소 수정 뒤 다시 실행한다. P86-C7의 마무리는 워밍업과 측정 자체의 비용을 분리하는 것이다. 통과 기준은 `CHAPTER 07 · process lifecycle은 start·health·shutdown·crash를 모두 관리해야 한다`의 정상 사례와 변형 사례가 모두 설명 가능한 결과를 내고 같은 절차를 반복해도 동일한 상태 계약을 유지하는 것이다.
 ## CHAPTER 08 · multiprocessing contract는 isolation 이득과 IPC 비용을 함께 계산한다
 
 ### 시작 전 용어집
