@@ -335,12 +335,12 @@ public class MainActivity extends Activity {
         paper.setBackground(roundRect(SURFACE, BORDER, 18));
         paper.setElevation(dp(1));
         paper.setMinimumHeight(Math.max(dp(520),
-                getResources().getDisplayMetrics().heightPixels - dp(isTablet() ? 190 : 165)));
+                getResources().getDisplayMetrics().heightPixels - dp(isTablet() ? 175 : 165)));
 
         LinearLayout.LayoutParams paperParams = matchWrap();
         if (isTablet()) {
             int available = getResources().getDisplayMetrics().widthPixels - dp(56);
-            paperParams.width = Math.min(available, dp(860));
+            paperParams.width = Math.min(available, dp(780));
             paperParams.gravity = Gravity.CENTER_HORIZONTAL;
         }
         outer.addView(paper, paperParams);
