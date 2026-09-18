@@ -1,6 +1,6 @@
 # PART 103 · Batch partial failure — 검증·commit·오류 격리를 batch 단위와 item 단위로 나누기
 
-Batch 처리에서는 1000개 중 999개가 정상이고 1개가 잘못됐을 때 전체를 실패시킬지, 999개만 반영할지 결정해야 한다. 이 선택은 단순 UX가 아니라 transaction boundary, replay 비용, downstream consistency를 바꾼다. 또한 batch가 커질수록 한 transaction의 lock·memory·rollback 비용도 커진다. 이 PART에서는 **batch 전체 의미와 item별 실패 의미를 분리하고 commit 단위를 명시적으로 선택**한다.
+Batch 처리에서는 1000개 중 999개가 정상이고 1개가 잘못됐을 때 전체를 실패시킬지, 999개만 반영할지 결정해야 한다. 이 선택은 단순 UX가 아니라 transaction boundary, replay 비용, downstream consistency를 바꾼다. 또한 batch가 커질수록 한 transaction의 lock·memory·rollback 비용도 커진다. 이 절에서는 **batch 전체 의미와 item별 실패 의미를 분리하고 commit 단위를 명시적으로 선택**한다.
 
 ---
 
@@ -113,6 +113,8 @@ chunk 3 fails
 
 ---
 
+**현장 디버깅 점검 — CHAPTER 04 · chunk commit은 장애 반경을 줄이는 대신 checkpoint와 replay semantics를 요구한다**
+CHAPTER 04 · chunk commit은 장애 반경을 줄이는 대신 checkpoint와 replay semantics를 요구한다을 운영에서 검증할 때는 재시작 뒤에도 상태가 이어지는지까지 확인해야 한다. 먼저 처리 전 상태와 완료 조건을 기록하고, 정상 입력으로 기준 결과를 만든다. 그다음 처리 중간에 강제 중단, 일부 레코드 실패, 중복 전달, 재시작을 각각 따로 주입한다. 재실행 후에는 완료된 항목이 다시 처리되지 않는지, 실패 항목만 안전하게 재시도되는지, 체크포인트와 실제 데이터 상태가 일치하는지 비교한다. 통과 기준은 모든 성공 항목이 정확히 한 번 반영되고 실패 항목은 추적 가능한 상태로 남으며, 같은 시나리오를 반복해도 결과가 변하지 않는 것이다.
 ## CHAPTER 05 · partial result는 성공 count 하나보다 item별 outcome을 구조화한다
 
 ### 시작 전 용어집
@@ -141,6 +143,8 @@ row 4 -> duplicate
 
 ---
 
+**현장 디버깅 점검 — CHAPTER 05 · partial result는 성공 count 하나보다 item별 outcome을 구조화한다**
+CHAPTER 05 · partial result는 성공 count 하나보다 item별 outcome을 구조화한다을 운영에서 검증할 때는 재시작 뒤에도 상태가 이어지는지까지 확인해야 한다. 먼저 처리 전 상태와 완료 조건을 기록하고, 정상 입력으로 기준 결과를 만든다. 그다음 처리 중간에 강제 중단, 일부 레코드 실패, 중복 전달, 재시작을 각각 따로 주입한다. 재실행 후에는 완료된 항목이 다시 처리되지 않는지, 실패 항목만 안전하게 재시도되는지, 체크포인트와 실제 데이터 상태가 일치하는지 비교한다. 통과 기준은 모든 성공 항목이 정확히 한 번 반영되고 실패 항목은 추적 가능한 상태로 남으며, 같은 시나리오를 반복해도 결과가 변하지 않는 것이다.
 ## CHAPTER 06 · poison record는 무한 retry를 막기 위해 격리한다
 
 ### 시작 전 용어집
@@ -159,6 +163,8 @@ row 4 -> duplicate
 
 ---
 
+**현장 디버깅 점검 — CHAPTER 06 · poison record는 무한 retry를 막기 위해 격리한다**
+CHAPTER 06 · poison record는 무한 retry를 막기 위해 격리한다을 운영에서 검증할 때는 재시작 뒤에도 상태가 이어지는지까지 확인해야 한다. 먼저 처리 전 상태와 완료 조건을 기록하고, 정상 입력으로 기준 결과를 만든다. 그다음 처리 중간에 강제 중단, 일부 레코드 실패, 중복 전달, 재시작을 각각 따로 주입한다. 재실행 후에는 완료된 항목이 다시 처리되지 않는지, 실패 항목만 안전하게 재시도되는지, 체크포인트와 실제 데이터 상태가 일치하는지 비교한다. 통과 기준은 모든 성공 항목이 정확히 한 번 반영되고 실패 항목은 추적 가능한 상태로 남으며, 같은 시나리오를 반복해도 결과가 변하지 않는 것이다.
 ## CHAPTER 07 · replay는 이미 성공한 effect를 중복시키지 않는 경계가 필요하다
 
 ### 시작 전 용어집
