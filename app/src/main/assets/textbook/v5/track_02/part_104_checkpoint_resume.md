@@ -249,4 +249,25 @@ print(checkpoint)
 **자주 나오는 오답:** progress 표시 숫자와 복구 가능한 durable checkpoint를 같은 것으로 보면 안 된다.
 
 운영형 문제에서는 함수 한 번의 정상 출력보다 **재시도, 중복, timeout, crash, 재시작** 뒤의 상태가 더 중요하다. 마지막으로 이 기능이 어떤 상태를 영구 저장하고 어떤 상태를 다시 계산할 수 있는지 구분해 적는다.
+## 현장 디버깅 체크 · checkpoint와 resume
+
+### 증상에서 시작한다
+
+재시작 후 데이터 한 건이 빠지거나 두 번 처리된다면 checkpoint 숫자 자체보다 side effect와 checkpoint가 어떤 순서로 durable해졌는지 먼저 본다. offset=500이라고 저장돼 있어도 500번째 결과가 실제 DB에 commit됐다는 보장은 별개의 문제다.
+
+### 먼저 볼 증거
+
+checkpoint에는 source identity 또는 digest, schema나 processor version, cursor 또는 offset, last committed item identity, checkpoint generation, written_at을 함께 둔다. 입력 파일이 바뀌었는데 오래된 offset만 재사용하는 상황을 막으려면 source identity가 특히 중요하다.
+
+### 일부러 실패시켜 보기
+
+한 item 처리에 input read, side effect write, side effect commit, checkpoint persist 네 지점을 두고 각 지점 직후 process kill을 넣어 재시작 결과를 본다. commit과 checkpoint 사이에서 죽으면 같은 item을 다시 읽을 수 있으므로 side effect가 idempotent하거나 두 기록을 같은 transaction 경계에 둬야 한다.
+
+### 통과 기준
+
+resume 후 누락 0, 허용되지 않은 중복 효과 0이어야 한다. 단순히 처리 개수만 보면 같은 item이 두 번 적용되고 다른 item이 빠져도 총개수는 같을 수 있다.
+
+### 설계 문제
+
+processor version이 바뀐 새 배포에서 과거 checkpoint를 사용할지 결정한다. 변환 규칙이 달라졌다면 checkpoint invalidation 또는 migration이 필요하다. offset만 맞으니 이어 간다는 방식은 같은 입력을 서로 다른 의미로 처리하게 만들 수 있다.
 

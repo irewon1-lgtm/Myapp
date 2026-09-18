@@ -268,4 +268,9 @@ header와 payload를 1byte 단위로 쪼개 전달하고 여러 frame을 한 번
 ### 통과 기준
 
 임의 chunking에서도 frame 경계가 정확히 복원되고 oversized/truncated frame은 allocation 전에 거부돼야 한다. 이 기준을 regression test와 운영 metric 두 곳에 동시에 연결하면 배포 뒤 같은 문제가 돌아왔을 때 빠르게 탐지할 수 있다.
+## 판단 규칙 · stream에서 message를 복원할 때
+
+socket 코드를 읽을 때는 recv 호출 횟수가 아니라 application buffer의 현재 길이와 parser state를 기준으로 판단한다. header가 4byte인데 지금 2byte만 들어왔다면 오류가 아니라 더 필요함 상태다. 반대로 header가 선언한 payload 길이가 protocol 최대치를 넘으면 더 기다리지 말고 즉시 invalid로 종료한다.
+
+실전에서는 NEED_HEADER, NEED_PAYLOAD(n), COMPLETE 같은 상태를 명시적으로 기록한다. connection 종료가 끼었을 때 NEED_PAYLOAD(20) 상태에서 EOF가 오면 정상 완료가 아니라 truncated frame이다. 즉 부분 입력과 잘못된 입력을 구분하는 것이 framing의 핵심이다.
 

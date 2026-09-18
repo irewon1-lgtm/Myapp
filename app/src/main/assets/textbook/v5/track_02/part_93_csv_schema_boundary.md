@@ -264,4 +264,9 @@ quoted comma·embedded newline·빈 field·extra column·잘못된 숫자를 한
 ### 통과 기준
 
 문법적으로 읽힌 row와 업무적으로 유효한 row가 분리되고, 오류 위치와 원인이 사용자에게 수정 가능한 형태로 반환돼야 한다. 통과 기준은 “에러가 안 난다”가 아니라 **어떤 입력과 실패 순서에서도 허용된 상태 집합을 벗어나지 않는다**로 적는다.
+## 판단 규칙 · CSV를 받을 때 최소 검증 순서
+
+CSV ingest는 raw bytes → encoding decode → CSV syntax parse → header/schema match → field type conversion → row invariant → cross-row/domain rule 순서로 나누면 오류 위치가 선명해진다.
+
+예를 들어 amount=-1은 CSV parser 오류가 아니다. parser는 문자열 -1을 정상적으로 읽었고, 금액이 음수라는 것은 domain validation 실패다. 반대로 따옴표가 닫히지 않은 행은 schema 단계에 도달하기 전에 syntax parsing에서 실패한다. 이 둘을 같은 CSV 오류로 합치지 않는다.
 

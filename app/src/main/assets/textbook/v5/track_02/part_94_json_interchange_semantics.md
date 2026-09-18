@@ -274,4 +274,9 @@ Python에서는 정상인데 다른 언어 client에서 큰 정수·소수·dupl
 ### 통과 기준
 
 지원하는 모든 reader/writer가 허용 payload의 의미를 동일하게 해석하고 비호환 입력은 명시적으로 거부돼야 한다. 통과 기준은 “에러가 안 난다”가 아니라 **어떤 입력과 실패 순서에서도 허용된 상태 집합을 벗어나지 않는다**로 적는다.
+## 판단 규칙 · JSON의 세 층을 분리한다
+
+JSON을 다룰 때는 문법, schema, domain 의미를 분리한다. {"amount": -1}은 JSON 문법상 유효할 수 있지만 업무 규칙에는 위배될 수 있다. {"amount": "100"}도 parser는 성공하지만 schema가 숫자를 요구한다면 거부해야 한다.
+
+또한 null, missing field, unknown field는 서로 다른 상태다. version upgrade를 안전하게 하려면 old reader/new writer와 new reader/old writer 조합에서 이 세 상태를 어떻게 해석하는지 테스트로 고정한다.
 

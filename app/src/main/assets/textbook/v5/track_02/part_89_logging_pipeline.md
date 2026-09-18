@@ -259,4 +259,9 @@ request/trace id, event name, level, error type, elapsed_ms, redaction 결과와
 ### 통과 기준
 
 한 사건은 구조화된 필드로 검색 가능하고 민감정보는 제거되며 중복 로그 없이 원인 경로를 복원할 수 있어야 한다. 이 기준을 regression test와 운영 metric 두 곳에 동시에 연결하면 배포 뒤 같은 문제가 돌아왔을 때 빠르게 탐지할 수 있다.
+## 판단 규칙 · 로그는 많이보다 연결 가능하게
+
+운영 로그는 한 줄의 문장보다 사건을 다시 연결할 수 있는 필드가 중요하다. 최소한 request_id, operation, result, elapsed_ms, error_type처럼 검색 가능한 구조를 유지한다. 같은 요청이 여러 함수와 외부 API를 지나가도 동일한 correlation id를 전달하면 한 장애의 전체 경로를 재구성할 수 있다.
+
+반대로 password, token, 전체 HTTP body를 무조건 남기는 방식은 진단 편의보다 더 큰 보안 위험을 만든다. 관측 가능성은 최대 수집이 아니라 필요한 증거를 안전하게 보존하는 설계다.
 

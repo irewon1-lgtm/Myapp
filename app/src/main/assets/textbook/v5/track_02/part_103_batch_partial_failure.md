@@ -243,4 +243,25 @@ batch 안에서 하나가 실패하면 나머지도 무조건 같은 상태로 �
 **자주 나오는 오답:** HTTP status 하나만으로 각 item 결과를 표현하려는 설계는 복구 정보를 잃기 쉽다.
 
 운영형 문제에서는 함수 한 번의 정상 출력보다 **재시도, 중복, timeout, crash, 재시작** 뒤의 상태가 더 중요하다. 마지막으로 이 기능이 어떤 상태를 영구 저장하고 어떤 상태를 다시 계산할 수 있는지 구분해 적는다.
+## 현장 디버깅 체크 · batch partial failure
+
+### 증상에서 시작한다
+
+대량 batch 1건은 성공으로 끝났는데 실제로는 일부 항목만 저장됐거나, 재시도 후 이미 성공한 항목이 다시 적용된다. 이런 문제는 batch 성공/실패 두 상태만 기록해서는 원인을 찾기 어렵다.
+
+### 먼저 볼 증거
+
+각 item에 stable id를 붙이고 batch_id, item_id, attempt, validation_result, side_effect_result, commit_result, retryable, error_type을 남긴다. batch 전체 status는 이 item 결과의 요약이어야 하며 원본 item 결과를 대신해서는 안 된다.
+
+### 일부러 실패시켜 보기
+
+100개 항목 중 1, 50, 100번째에서 각각 validation error와 transient DB error를 강제로 만든다. batch 전체를 다시 보내는 방식과 실패 item만 재전송하는 방식을 비교하고 이미 성공한 item에 부작용이 두 번 적용되지 않는지 확인한다.
+
+### 통과 기준
+
+부분 성공을 허용한다면 성공한 항목은 보존되고 실패 항목만 정확히 식별·재시도할 수 있어야 한다. all-or-nothing이 요구사항이면 commit 경계가 batch 전체를 포함해야 한다. 두 모델을 섞으면 복구 규칙이 모호해진다.
+
+### 설계 문제
+
+A1 성공, A2 validation error, A3 timeout 후 결과 불명, A4 성공, A5 downstream 503 상황에서 단일 boolean 대신 item별 status, retryable, operation_id, error_code를 포함한다. A3처럼 결과가 불명한 상태를 단순 실패와 구분해야 client가 안전한 다음 행동을 선택할 수 있다.
 
