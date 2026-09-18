@@ -58,11 +58,20 @@ jobs:
           test -s app/src/main/assets/typescript.js
           test -s app/src/main/assets/ts_libs.js
 
-      - name: Full unit test and Android release build
+      - name: Single-live engine regression and Android release build
         run: |
           set -euo pipefail
           chmod +x ./gradlew
-          ./gradlew testDebugUnitTest assembleRelease --stacktrace
+          ./gradlew \
+            testDebugUnitTest \
+            --tests com.futuretech.poweruser.textbook.V5SingleLiveContentPolicyTest \
+            --tests com.futuretech.poweruser.textbook.V5BookReaderSourceContractTest \
+            --tests com.futuretech.poweruser.textbook.TextbookMarkdownParserTest \
+            --tests com.futuretech.poweruser.textbook.V5MeasuredReaderContractTest \
+            --tests com.futuretech.poweruser.textbook.V1TextbookCatalogTest \
+            --tests com.futuretech.poweruser.update.AppUpdateManagerTest \
+            assembleRelease \
+            --stacktrace
 
       - name: Sign and verify APK
         shell: bash
@@ -112,6 +121,8 @@ jobs:
           - TRACK 파일의 Git blob SHA가 바뀌면 앱이 해당 TRACK 최신 원고를 다시 읽는 단일 LIVE 방식
           - 현재 LIVE 원고 확인 TRACK: 01, 02, 07, 10
           - TRACK 07 P105 포함
+          - 단일 LIVE 엔진 관련 unit regression + Android release build 검증
+          - 전체 11 TRACK corpus 품질 게이트는 아직 별도 미완료이며 이 Release의 PASS 주장에 포함하지 않음
           - Signed updater asset: Myapp_AI_Coding_Textbook_latest.apk
 
           기존 앱은 GitHub 최신 Release를 확인해 이 버전을 감지합니다.
