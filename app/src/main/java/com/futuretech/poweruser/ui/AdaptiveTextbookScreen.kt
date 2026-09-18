@@ -43,10 +43,10 @@ import kotlinx.coroutines.launch
 /**
  * Single-live-path textbook shell.
  *
- * TRACK 01..11 are read only from the canonical V5 live path. There is no V4/V3 fallback and no
- * previous textbook snapshot. Opening a TRACK refreshes it immediately, and while the reader stays
- * open the current TRACK is checked again every minute. A one-character file edit changes its Git
- * blob SHA, which causes that TRACK cache to be replaced and the reader to recompose.
+ * Completed CodingCoding TRACKs open from the APK-bundled, project-locked textbook immediately.
+ * GitHub LIVE refresh happens after the book is already readable, so slow/offline/private-network
+ * access can never trap the user on a loading screen. TRACKs not enabled by project_lock.json keep
+ * the verified legacy reader until they are explicitly promoted to LIVE.
  */
 @Composable
 fun AdaptiveTextbookScreen(
@@ -70,9 +70,28 @@ fun AdaptiveTextbookScreen(
         ?: V1TextbookCatalog.chapters.first()
 
     LaunchedEffect(v5Repository, selectedChapter.number) {
-        liveReady = false
         liveError = null
+
+        val configuredLive = runCatching {
+            v5Repository.isConfiguredLiveTrack(selectedChapter.number)
+        }.getOrDefault(false)
+
+        if (!configuredLive) {
+            legacyFallback = true
+            liveReady = false
+            return@LaunchedEffect
+        }
+
         legacyFallback = false
+
+        // Open the APK-bundled CodingCoding textbook first. Do not block the reader on GitHub.
+        val bundledReady = runCatching {
+            v5Repository.prepareBundledContent(selectedChapter.number)
+        }.getOrDefault(false)
+
+        liveReady = bundledReady
+        liveError = if (bundledReady) null else "bundled_track_unavailable"
+        if (bundledReady) remoteGeneration += 1
 
         while (true) {
             val result = runCatching {
@@ -88,35 +107,38 @@ fun AdaptiveTextbookScreen(
                     val ready = runCatching {
                         v5Repository.loadManifest(selectedChapter.number)
                     }.isSuccess
-                    legacyFallback = false
-                    liveReady = ready
-                    liveError = if (ready) null else "live_manifest_unreadable"
-                    if (ready) remoteGeneration += 1
+                    if (ready) {
+                        liveReady = true
+                        liveError = null
+                        remoteGeneration += 1
+                    } else if (!liveReady) {
+                        liveError = "live_manifest_unreadable"
+                    }
                 }
 
                 V5RemoteRefreshResult.UpToDate -> {
                     val ready = runCatching {
                         v5Repository.loadManifest(selectedChapter.number)
                     }.isSuccess
-                    legacyFallback = false
-                    if (ready && !liveReady) remoteGeneration += 1
-                    liveReady = ready
-                    liveError = if (ready) null else "live_manifest_unreadable"
+                    if (ready) {
+                        if (!liveReady) remoteGeneration += 1
+                        liveReady = true
+                        liveError = null
+                    } else if (!liveReady) {
+                        liveError = "live_manifest_unreadable"
+                    }
                 }
 
                 is V5RemoteRefreshResult.Skipped -> {
-                    if (result.reason.startsWith("track_not_live:")) {
-                        legacyFallback = true
-                        liveReady = false
+                    val cachedReady = runCatching {
+                        v5Repository.loadManifest(selectedChapter.number)
+                    }.isSuccess
+                    if (cachedReady) {
+                        if (!liveReady) remoteGeneration += 1
+                        liveReady = true
                         liveError = null
-                    } else {
-                        val cachedReady = runCatching {
-                            v5Repository.loadManifest(selectedChapter.number)
-                        }.isSuccess
-                        legacyFallback = false
-                        if (cachedReady && !liveReady) remoteGeneration += 1
-                        liveReady = cachedReady
-                        liveError = if (cachedReady) null else result.reason
+                    } else if (!liveReady) {
+                        liveError = result.reason
                     }
                 }
             }
