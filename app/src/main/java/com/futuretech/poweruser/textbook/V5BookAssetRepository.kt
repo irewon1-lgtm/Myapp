@@ -8,6 +8,7 @@ import org.json.JSONArray
 import java.io.File
 import java.net.HttpURLConnection
 import java.net.URL
+import java.net.URLEncoder
 import java.security.MessageDigest
 
 /** Book-scale metadata. Learner text is read from the single live textbook path. */
@@ -199,8 +200,12 @@ class V5BookAssetRepository(
     private fun liveDirectoryUrl(trackNumber: Int): String =
         "$CONTENTS_API/${liveTrackRepoPath(trackNumber)}?ref=$LIVE_BRANCH"
 
-    private fun rawUrl(repoPath: String): String =
-        "$RAW_BASE/$LIVE_BRANCH/$repoPath"
+    private fun rawUrl(repoPath: String): String {
+        val encodedPath = repoPath.split('/').joinToString("/") { segment ->
+            URLEncoder.encode(segment, Charsets.UTF_8.name()).replace("+", "%20")
+        }
+        return "$RAW_BASE/$LIVE_BRANCH/$encodedPath"
+    }
 
     private fun liveFile(assetPath: String): File {
         require(assetPath.startsWith("textbook/v5/track_")) { "Not a live TRACK path: $assetPath" }
