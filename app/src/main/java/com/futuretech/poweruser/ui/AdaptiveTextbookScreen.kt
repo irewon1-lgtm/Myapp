@@ -17,8 +17,10 @@ import androidx.compose.material3.NavigationDrawerItem
 import androidx.compose.material3.Text
 import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.key
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
@@ -34,15 +36,17 @@ import androidx.compose.ui.unit.sp
 import com.futuretech.poweruser.textbook.TextbookProgressStore
 import com.futuretech.poweruser.textbook.V1TextbookCatalog
 import com.futuretech.poweruser.textbook.V5BookAssetRepository
+import com.futuretech.poweruser.textbook.V5RemoteRefreshResult
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 /**
- * Focused e-book shell.
+ * Single-live-path textbook shell.
  *
- * A TRACK with a validated V5 manifest is routed to the part-lazy, measured V5 reader. Tracks which
- * have not yet been rewritten keep using the verified V4/V3 compatibility reader, so unfinished
- * books never crash the shelf and V5 can be authored one TRACK at a time without loading an entire
- * multi-megabyte book into memory.
+ * TRACK 01..11 are read only from the canonical V5 live path. There is no V4/V3 fallback and no
+ * previous textbook snapshot. Opening a TRACK refreshes it immediately, and while the reader stays
+ * open the current TRACK is checked again every minute. A one-character file edit changes its Git
+ * blob SHA, which causes that TRACK cache to be replaced and the reader to recompose.
  */
 @Composable
 fun AdaptiveTextbookScreen(
@@ -57,11 +61,53 @@ fun AdaptiveTextbookScreen(
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
     val scope = rememberCoroutineScope()
     var selectedChapterId by rememberSaveable(initialChapterId) { mutableStateOf(initialChapterId) }
+    var remoteGeneration by rememberSaveable { mutableIntStateOf(0) }
+    var liveReady by rememberSaveable { mutableStateOf(false) }
+    var liveError by rememberSaveable { mutableStateOf<String?>(null) }
 
     val selectedChapter = V1TextbookCatalog.chapterById(selectedChapterId)
         ?: V1TextbookCatalog.chapters.first()
-    val hasV5Book = remember(selectedChapter.id) {
-        runCatching { v5Repository.loadManifest(selectedChapter.number) }.isSuccess
+
+    LaunchedEffect(v5Repository, selectedChapter.number) {
+        liveReady = false
+        liveError = null
+
+        while (true) {
+            val result = runCatching {
+                v5Repository.refreshRemoteContent(selectedChapter.number)
+            }.getOrElse { error ->
+                V5RemoteRefreshResult.Skipped(
+                    error.javaClass.simpleName.ifBlank { "live_refresh_failed" }
+                )
+            }
+
+            when (result) {
+                is V5RemoteRefreshResult.Updated -> {
+                    val ready = runCatching {
+                        v5Repository.loadManifest(selectedChapter.number)
+                    }.isSuccess
+                    liveReady = ready
+                    liveError = if (ready) null else "live_manifest_unreadable"
+                    if (ready) remoteGeneration += 1
+                }
+
+                V5RemoteRefreshResult.UpToDate -> {
+                    val ready = runCatching {
+                        v5Repository.loadManifest(selectedChapter.number)
+                    }.isSuccess
+                    if (ready && !liveReady) remoteGeneration += 1
+                    liveReady = ready
+                    liveError = if (ready) null else "live_manifest_unreadable"
+                }
+
+                is V5RemoteRefreshResult.Skipped -> {
+                    liveReady = false
+                    liveError = result.reason
+                }
+            }
+
+            delay(LIVE_REFRESH_INTERVAL_MS)
+        }
     }
 
     fun selectTrack(id: String) {
@@ -88,7 +134,7 @@ fun AdaptiveTextbookScreen(
                         fontWeight = FontWeight.Bold
                     )
                     Text(
-                        text = "TRACK을 고르면 해당 책의 읽던 위치로 이동합니다.",
+                        text = "TRACK을 고르면 단일 LIVE 교재 경로의 최신 원고를 읽습니다.",
                         modifier = Modifier.padding(horizontal = 20.dp),
                         fontSize = 12.sp,
                         color = MaterialTheme.colorScheme.onSurfaceVariant
@@ -108,7 +154,11 @@ fun AdaptiveTextbookScreen(
                                     Text(
                                         text = track.title,
                                         maxLines = 2,
-                                        fontWeight = if (track.id == selectedChapterId) FontWeight.Bold else FontWeight.Medium
+                                        fontWeight = if (track.id == selectedChapterId) {
+                                            FontWeight.Bold
+                                        } else {
+                                            FontWeight.Medium
+                                        }
                                     )
                                 }
                             },
@@ -134,32 +184,65 @@ fun AdaptiveTextbookScreen(
                     .fillMaxWidth()
                     .testTag("reader_single_column")
             ) {
-                key(selectedChapterId, hasV5Book) {
-                    if (hasV5Book) {
-                        V5TrackBookScreen(
-                            trackNumber = selectedChapter.number,
-                            onNavigateBack = onNavigateBack,
-                            onOpenToc = { scope.launch { drawerState.open() } },
-                            onStartPractice = onStartPractice,
-                            onPreviousTrack = V1TextbookCatalog.chapters
-                                .getOrNull(selectedChapter.number - 2)
-                                ?.let { previous -> { selectTrack(previous.id) } },
-                            onNextTrack = V1TextbookCatalog.chapters
-                                .getOrNull(selectedChapter.number)
-                                ?.let { next -> { selectTrack(next.id) } }
-                        )
-                    } else {
-                        V4PagedBookScreen(
-                            practiceCompletedIds = practiceCompletedIds,
-                            onNavigateBack = onNavigateBack,
-                            onStartPractice = onStartPractice,
-                            initialChapterId = selectedChapterId,
-                            onOpenToc = { scope.launch { drawerState.open() } },
-                            onChapterSelected = { selectedChapterId = it }
-                        )
+                key(selectedChapterId, liveReady, remoteGeneration) {
+                    when {
+                        liveReady -> {
+                            V5TrackBookScreen(
+                                trackNumber = selectedChapter.number,
+                                onNavigateBack = onNavigateBack,
+                                onOpenToc = { scope.launch { drawerState.open() } },
+                                onStartPractice = onStartPractice,
+                                onPreviousTrack = V1TextbookCatalog.chapters
+                                    .getOrNull(selectedChapter.number - 2)
+                                    ?.let { previous -> { selectTrack(previous.id) } },
+                                onNextTrack = V1TextbookCatalog.chapters
+                                    .getOrNull(selectedChapter.number)
+                                    ?.let { next -> { selectTrack(next.id) } }
+                            )
+                        }
+
+                        liveError != null -> {
+                            LiveTextbookStatus(
+                                title = "LIVE TRACK을 불러오지 못했습니다",
+                                detail = liveError.orEmpty(),
+                                modifier = Modifier.fillMaxSize()
+                            )
+                        }
+
+                        else -> {
+                            LiveTextbookStatus(
+                                title = "최신 TRACK 확인 중",
+                                detail = "단일 LIVE 경로에서 최신 원고를 읽는 중입니다.",
+                                modifier = Modifier.fillMaxSize()
+                            )
+                        }
                     }
                 }
             }
         }
     }
 }
+
+@Composable
+private fun LiveTextbookStatus(
+    title: String,
+    detail: String,
+    modifier: Modifier = Modifier
+) {
+    Box(
+        modifier = modifier.padding(24.dp),
+        contentAlignment = Alignment.Center
+    ) {
+        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+            Text(title, fontSize = 18.sp, fontWeight = FontWeight.Bold)
+            Spacer(Modifier.height(8.dp))
+            Text(
+                detail,
+                fontSize = 12.sp,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+            )
+        }
+    }
+}
+
+private const val LIVE_REFRESH_INTERVAL_MS = 60_000L
