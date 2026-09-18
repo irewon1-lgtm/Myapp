@@ -27,7 +27,7 @@ class V5BookReaderSourceContractTest {
     @Test
     fun V5RepositoryReadsOneCanonicalBranchWithoutRevisionChannelOrRollback() {
         val repository = source("com/futuretech/poweruser/textbook/V5BookAssetRepository.kt")
-        assertTrue(repository.contains("LIVE_BRANCH = \"textbook-v5-deep-book-engine\""))
+        assertTrue(repository.contains("LIVE_BRANCH = \"textbook-v5-live\""))
         assertTrue(repository.contains("LIVE_TRACK_ROOT = \"app/src/main/assets/textbook/v5\""))
         assertTrue(repository.contains("fragments.flatMap { it.parts }.sortedBy { it.order }"))
         assertTrue(repository.contains("dir.deleteRecursively()"))
