@@ -31,8 +31,8 @@ with zipfile.ZipFile(path) as zf:
 
 ---
 
-**현장 점검 92-1 — CHAPTER 01 · archive entry는 파일 하나가 아니라 path와 metadata를 가진 입력 record다**
-CHAPTER 01 · archive entry는 파일 하나가 아니라 path와 metadata를 가진 입력 record다을 점검할 때는 재현 절차를 세 단계로 고정하고 취소를 처리 중간에 발생시킨다. PART 92 CHAPTER 1에서는 요청 식별자와 최종 상태를 연결한다. 실패 조건을 제거한 뒤 같은 입력으로 기준 결과를 다시 만들어 수정 전후 차이를 확인한다. 최종 상태뿐 아니라 중간 로그와 자원 정리 상태도 기대값과 일치하고 이후 요청이 정상적으로 처리돼야 한다.
+**검증 시나리오 P92-C1 — CHAPTER 01 · archive entry는 파일 하나가 아니라 path와 metadata를 가진 입력 record다**
+`CHAPTER 01 · archive entry는 파일 하나가 아니라 path와 metadata를 가진 입력 record다` 검증은 입력 크기를 고정하는 데서 시작한다. P92-C1에서는 `CHAPTER 01 · archive entry는 파일 하나가 아니라 path와 metadata를 가진 입력 record다` 실행 직전 상태를 먼저 적고 실행 뒤 값과 비교해 실제 규칙을 확인한다. 두 번째 단계에서는 `CHAPTER 01 · archive entry는 파일 하나가 아니라 path와 metadata를 가진 입력 record다`에 대해 변형은 한 요소만 허용고 다른 코드는 그대로 두어 원인 후보를 하나로 제한한다. 이때 `CHAPTER 01 · archive entry는 파일 하나가 아니라 path와 metadata를 가진 입력 record다`의 측정값을 여러 번 모아 분포를 비교하여 우연한 통과를 배제한다. 예상과 다르면 `CHAPTER 01 · archive entry는 파일 하나가 아니라 path와 metadata를 가진 입력 record다`의 타입, 값, 호출 순서, 예외 경계 가운데 최초로 달라진 항목부터 확인하고 최소 수정 뒤 다시 실행한다. P92-C1의 마무리는 워밍업과 측정 자체의 비용을 분리하는 것이다. 통과 기준은 `CHAPTER 01 · archive entry는 파일 하나가 아니라 path와 metadata를 가진 입력 record다`의 정상 사례와 변형 사례가 모두 설명 가능한 결과를 내고 같은 절차를 반복해도 동일한 상태 계약을 유지하는 것이다.
 ## CHAPTER 02 · path traversal은 destination 문자열을 붙이는 방식만으로 막을 수 없다
 
 ### 시작 전 용어집
@@ -143,8 +143,8 @@ entry = ../../etc/example
 
 ---
 
-**현장 점검 92-5 — CHAPTER 05 · entry count도 별도 resource budget이다**
-CHAPTER 05 · entry count도 별도 resource budget이다을 점검할 때는 한 요청만 남겨 실행 경로를 단순화하고 중단 뒤 즉시 재시작해 본다. PART 92 CHAPTER 5에서는 성공·실패·재시도 건수를 따로 센다. 동일 입력을 반복하면서 누적 카운터와 상태 객체 크기가 증가하는지 함께 본다. 수정 후 반복 횟수와 무관하게 불필요한 상태가 남지 않고 실패 후 다음 실행이 깨끗한 초기 조건에서 시작해야 한다.
+**검증 시나리오 P92-C5 — CHAPTER 05 · entry count도 별도 resource budget이다**
+`CHAPTER 05 · entry count도 별도 resource budget이다` 검증은 가장 작은 객체 상태로 시작하는 데서 시작한다. P92-C5에서는 `CHAPTER 05 · entry count도 별도 resource budget이다` 실행 직전 상태를 먼저 적고 실행 뒤 값과 비교해 실제 규칙을 확인한다. 두 번째 단계에서는 `CHAPTER 05 · entry count도 별도 resource budget이다`에 대해 속성 하나만 바꿔 재실행고 다른 코드는 그대로 두어 원인 후보를 하나로 제한한다. 이때 `CHAPTER 05 · entry count도 별도 resource budget이다`의 반환값과 부수효과를 따로 기록하여 우연한 통과를 배제한다. 예상과 다르면 `CHAPTER 05 · entry count도 별도 resource budget이다`의 타입, 값, 호출 순서, 예외 경계 가운데 최초로 달라진 항목부터 확인하고 최소 수정 뒤 다시 실행한다. P92-C5의 마무리는 수정 뒤 원래 조건을 다시 회귀 확인하는 것이다. 통과 기준은 `CHAPTER 05 · entry count도 별도 resource budget이다`의 정상 사례와 변형 사례가 모두 설명 가능한 결과를 내고 같은 절차를 반복해도 동일한 상태 계약을 유지하는 것이다.
 ## CHAPTER 06 · permission과 timestamp metadata를 그대로 복원할지 정책을 정한다
 
 ### 시작 전 용어집
@@ -199,8 +199,8 @@ archive -> isolated staging -> validate tree -> publish
 
 ---
 
-**현장 점검 92-7 — CHAPTER 07 · staged extraction은 검증되지 않은 파일을 최종 경로에 바로 노출하지 않는다**
-CHAPTER 07 · staged extraction은 검증되지 않은 파일을 최종 경로에 바로 노출하지 않는다을 점검할 때는 완료 조건을 코드 실행 전에 적고 부분 데이터만 전달한다. PART 92 CHAPTER 7에서는 열린 자원과 닫힌 자원을 비교한다. 정상 경로를 기준선으로 저장하고 실패 주입 시 최초로 달라지는 관찰값을 찾는다. 수정 후 그 차이가 의도한 오류 처리 지점에만 남고 데이터 결과와 자원 수명은 계약 범위 안에 있어야 한다.
+**검증 시나리오 P92-C7 — CHAPTER 07 · staged extraction은 검증되지 않은 파일을 최종 경로에 바로 노출하지 않는다**
+`CHAPTER 07 · staged extraction은 검증되지 않은 파일을 최종 경로에 바로 노출하지 않는다` 검증은 정상 경로를 먼저 재현하는 데서 시작한다. P92-C7에서는 `CHAPTER 07 · staged extraction은 검증되지 않은 파일을 최종 경로에 바로 노출하지 않는다` 실행 직전 상태를 먼저 적고 실행 뒤 값과 비교해 실제 규칙을 확인한다. 두 번째 단계에서는 `CHAPTER 07 · staged extraction은 검증되지 않은 파일을 최종 경로에 바로 노출하지 않는다`에 대해 오류 경로 하나를 의도적으로 만든다고 다른 코드는 그대로 두어 원인 후보를 하나로 제한한다. 이때 `CHAPTER 07 · staged extraction은 검증되지 않은 파일을 최종 경로에 바로 노출하지 않는다`의 예외 종류와 직전 상태를 함께 남긴다하여 우연한 통과를 배제한다. 예상과 다르면 `CHAPTER 07 · staged extraction은 검증되지 않은 파일을 최종 경로에 바로 노출하지 않는다`의 타입, 값, 호출 순서, 예외 경계 가운데 최초로 달라진 항목부터 확인하고 최소 수정 뒤 다시 실행한다. P92-C7의 마무리는 복구 후 같은 오류가 다시 재현되지 않는지 검사하는 것이다. 통과 기준은 `CHAPTER 07 · staged extraction은 검증되지 않은 파일을 최종 경로에 바로 노출하지 않는다`의 정상 사례와 변형 사례가 모두 설명 가능한 결과를 내고 같은 절차를 반복해도 동일한 상태 계약을 유지하는 것이다.
 ## CHAPTER 08 · archive contract는 path와 resource limit을 extraction 전에 결정한다
 
 ### 시작 전 용어집
