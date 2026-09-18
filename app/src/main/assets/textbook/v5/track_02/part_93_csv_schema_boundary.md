@@ -270,3 +270,8 @@ CSV ingest는 raw bytes → encoding decode → CSV syntax parse → header/sche
 
 예를 들어 amount=-1은 CSV parser 오류가 아니다. parser는 문자열 -1을 정상적으로 읽었고, 금액이 음수라는 것은 domain validation 실패다. 반대로 따옴표가 닫히지 않은 행은 schema 단계에 도달하기 전에 syntax parsing에서 실패한다. 이 둘을 같은 CSV 오류로 합치지 않는다.
 
+## 개념 연결 · CSV는 표가 아니라 직렬화된 record stream이다
+
+스프레드시트에서 열어 보인다고 해서 CSV 의미가 명확한 것은 아니다. quoting, delimiter, newline, encoding, header 정책이 parser 계약을 만들고, 그 뒤의 타입·범위·필수값 규칙이 schema 계약을 만든다.
+
+그래서 오류 보고도 “3번째 줄 실패”에서 끝내지 말고 **원본 line/record 번호, column 이름, raw value, 기대 타입, 실패 규칙**을 함께 남겨야 사용자가 데이터를 고칠 수 있다.

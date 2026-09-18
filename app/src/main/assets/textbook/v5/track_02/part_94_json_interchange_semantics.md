@@ -280,3 +280,8 @@ JSON을 다룰 때는 문법, schema, domain 의미를 분리한다. {"amount": 
 
 또한 null, missing field, unknown field는 서로 다른 상태다. version upgrade를 안전하게 하려면 old reader/new writer와 new reader/old writer 조합에서 이 세 상태를 어떻게 해석하는지 테스트로 고정한다.
 
+## 개념 연결 · JSON 문법과 업무 의미를 분리한다
+
+json.loads()가 성공한 뒤에도 데이터 계약은 끝나지 않는다. null과 field 누락의 차이, integer 범위, decimal 정밀도, unknown field 허용 여부, schema version은 application이 정의해야 한다.
+
+특히 여러 언어가 같은 API를 쓸 때는 **source lexical value → parser 결과 → domain type** 세 단계를 비교해야 숫자 정밀도나 기본값 차이를 놓치지 않는다.

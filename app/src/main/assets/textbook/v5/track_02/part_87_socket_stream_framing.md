@@ -274,3 +274,8 @@ socket 코드를 읽을 때는 recv 호출 횟수가 아니라 application buffe
 
 실전에서는 NEED_HEADER, NEED_PAYLOAD(n), COMPLETE 같은 상태를 명시적으로 기록한다. connection 종료가 끼었을 때 NEED_PAYLOAD(20) 상태에서 EOF가 오면 정상 완료가 아니라 truncated frame이다. 즉 부분 입력과 잘못된 입력을 구분하는 것이 framing의 핵심이다.
 
+## 개념 연결 · framing에서 parser 상태 머신으로
+
+framing 문제를 제대로 이해하려면 “socket에서 몇 번 읽었는가” 대신 **현재까지 몇 byte를 확보했고 다음 상태로 가려면 몇 byte가 더 필요한가**를 기록해야 한다. 예를 들어 NEED_HEADER(4) → NEED_PAYLOAD(n) → COMPLETE처럼 상태를 나누면 1byte씩 도착하든 여러 frame이 한 번에 도착하든 같은 parser가 동작한다.
+
+이 구조는 뒤의 readiness loop와 직접 연결된다. readiness는 “읽을 수 있음”만 알려 주고, message가 완성됐는지는 framing state가 판단한다.

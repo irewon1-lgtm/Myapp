@@ -265,3 +265,8 @@ request/trace id, event name, level, error type, elapsed_ms, redaction 결과와
 
 반대로 password, token, 전체 HTTP body를 무조건 남기는 방식은 진단 편의보다 더 큰 보안 위험을 만든다. 관측 가능성은 최대 수집이 아니라 필요한 증거를 안전하게 보존하는 설계다.
 
+## 개념 연결 · 로그 한 줄보다 사건의 연결이 중요하다
+
+운영 로그의 핵심 질문은 “무슨 문장을 남겼나?”가 아니라 **한 요청의 시작·외부 호출·재시도·실패·종료를 같은 식별자로 다시 연결할 수 있는가**다. 따라서 request_id, operation, attempt, elapsed_ms, error_type처럼 검색 가능한 구조가 필요하다.
+
+반대로 password·token·전체 request body는 디버깅에 편해 보여도 장기적으로는 보안 사고의 원인이 될 수 있으므로 수집 단계에서 제거해야 한다.
