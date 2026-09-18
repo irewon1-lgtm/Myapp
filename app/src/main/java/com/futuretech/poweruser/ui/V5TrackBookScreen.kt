@@ -207,7 +207,6 @@ private fun V5MeasuredPartReader(
     onPractice: () -> Unit
 ) {
     val blocks = remember(part.id) {
-        repo.loadSourceMap(part)
         repo.loadPart(part)
     }
 
