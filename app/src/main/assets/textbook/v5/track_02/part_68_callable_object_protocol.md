@@ -43,6 +43,8 @@ print(triple(10))
 
 ---
 
+**직접 확인하기 — CHAPTER 01 · callable object는 함수가 아니어도 호출 문법에 참여할 수 있다**
+CHAPTER 01 · callable object는 함수가 아니어도 호출 문법에 참여할 수 있다의 규칙은 설명만 읽고 넘기기보다 가장 작은 실행 예제로 확인하는 편이 정확하다. 먼저 입력이나 객체 하나만 두고 결과를 기록한 뒤, 값 하나 또는 호출 순서 하나만 바꿔 결과가 어떻게 달라지는지 비교한다. 한 줄 해석은 “CHAPTER 01 · callable object는 함수가 아니어도 호출 문법에 참여할 수 있다이 값의 의미와 프로그램 상태 변화에 어떤 제약을 주는지 확인한다”이다. 결과가 예상과 다르면 타입·정체성·호출 순서·예외 경계를 차례로 확인하고, 수정 뒤 같은 예제와 반대 조건 예제를 다시 실행한다. 이 과정을 설명할 수 있어야 문법을 외운 것이 아니라 동작 원리를 이해한 것이다.
 ## CHAPTER 02 · function binding은 class attribute의 function을 method access로 바꾼다
 
 ### 시작 전 용어집
@@ -247,6 +249,8 @@ class RetryCounter:
 
 ---
 
+**직접 확인하기 — CHAPTER 07 · callable state는 closure와 object field 중 어떤 표현이 더 명확한지 선택한다**
+CHAPTER 07 · callable state는 closure와 object field 중 어떤 표현이 더 명확한지 선택한다의 규칙은 설명만 읽고 넘기기보다 가장 작은 실행 예제로 확인하는 편이 정확하다. 먼저 입력이나 객체 하나만 두고 결과를 기록한 뒤, 값 하나 또는 호출 순서 하나만 바꿔 결과가 어떻게 달라지는지 비교한다. 한 줄 해석은 “CHAPTER 07 · callable state는 closure와 object field 중 어떤 표현이 더 명확한지 선택한다이 값의 의미와 프로그램 상태 변화에 어떤 제약을 주는지 확인한다”이다. 결과가 예상과 다르면 타입·정체성·호출 순서·예외 경계를 차례로 확인하고, 수정 뒤 같은 예제와 반대 조건 예제를 다시 실행한다. 이 과정을 설명할 수 있어야 문법을 외운 것이 아니라 동작 원리를 이해한 것이다.
 ## CHAPTER 08 · call contract는 callable 여부보다 binding·state·lifetime을 함께 정의한다
 
 ### 시작 전 용어집
