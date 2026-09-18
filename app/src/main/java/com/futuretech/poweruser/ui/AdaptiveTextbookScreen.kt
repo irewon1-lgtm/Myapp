@@ -17,8 +17,10 @@ import androidx.compose.material3.NavigationDrawerItem
 import androidx.compose.material3.Text
 import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.key
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
@@ -34,6 +36,7 @@ import androidx.compose.ui.unit.sp
 import com.futuretech.poweruser.textbook.TextbookProgressStore
 import com.futuretech.poweruser.textbook.V1TextbookCatalog
 import com.futuretech.poweruser.textbook.V5BookAssetRepository
+import com.futuretech.poweruser.textbook.V5RemoteRefreshResult
 import kotlinx.coroutines.launch
 
 /**
@@ -57,11 +60,22 @@ fun AdaptiveTextbookScreen(
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
     val scope = rememberCoroutineScope()
     var selectedChapterId by rememberSaveable(initialChapterId) { mutableStateOf(initialChapterId) }
+    var remoteGeneration by rememberSaveable { mutableIntStateOf(0) }
 
     val selectedChapter = V1TextbookCatalog.chapterById(selectedChapterId)
         ?: V1TextbookCatalog.chapters.first()
-    val hasV5Book = remember(selectedChapter.id) {
+    val hasV5Book = remember(selectedChapter.id, remoteGeneration) {
         runCatching { v5Repository.loadManifest(selectedChapter.number) }.isSuccess
+    }
+
+    // Preserve the original app UI. Only the textbook data refreshes in the background.
+    LaunchedEffect(v5Repository, selectedChapter.number) {
+        if (!v5Repository.isConfiguredLiveTrack(selectedChapter.number)) return@LaunchedEffect
+        when (v5Repository.refreshRemoteContent(selectedChapter.number)) {
+            is V5RemoteRefreshResult.Updated -> remoteGeneration += 1
+            V5RemoteRefreshResult.UpToDate -> Unit
+            is V5RemoteRefreshResult.Skipped -> Unit
+        }
     }
 
     fun selectTrack(id: String) {
@@ -134,7 +148,7 @@ fun AdaptiveTextbookScreen(
                     .fillMaxWidth()
                     .testTag("reader_single_column")
             ) {
-                key(selectedChapterId, hasV5Book) {
+                key(selectedChapterId, hasV5Book, remoteGeneration) {
                     if (hasV5Book) {
                         V5TrackBookScreen(
                             trackNumber = selectedChapter.number,
