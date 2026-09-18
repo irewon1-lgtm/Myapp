@@ -1,6 +1,6 @@
 # PART 93 · CSV schema boundary — dialect·newline·header·type conversion을 분리하기
 
-CSV는 단순히 쉼표로 문자열을 나누는 형식이 아니다. Quoting, embedded newline, delimiter, header, encoding이 실제 record boundary를 결정하고 모든 field는 기본적으로 text로 들어온다. Spreadsheet로 다시 내보낼 때는 formula-like value가 실행 의미를 얻을 수도 있다. 이 PART에서는 **parse 규칙과 domain schema를 분리하고 large file을 streaming으로 검증하는 방법**을 다룬다.
+CSV는 단순히 쉼표로 문자열을 나누는 형식이 아니다. Quoting, embedded newline, delimiter, header, encoding이 실제 record boundary를 결정하고 모든 field는 기본적으로 text로 들어온다. Spreadsheet로 다시 내보낼 때는 formula-like value가 실행 의미를 얻을 수도 있다. 이 절에서는 **parse 규칙과 domain schema를 분리하고 large file을 streaming으로 검증하는 방법**을 다룬다.
 
 ---
 
@@ -37,6 +37,8 @@ second line"
 
 ---
 
+**현장 디버깅 점검 — CHAPTER 01 · CSV record boundary는 `line.split(',')`로 보존되지 않는다**
+CHAPTER 01 · CSV record boundary는 `line.split(',')`로 보존되지 않는다 문제를 실제 환경에서 확인할 때는 정상 경로와 실패 경로를 분리해 같은 입력으로 재현 가능하게 만든다. 실행 전에는 기대 상태를 적고, 실행 중에는 입력값·중간 상태·반환값·로그 시각을 같은 순서로 수집한다. 실패 주입은 지연, 부분 데이터, 잘못된 형식, 취소, 재시도처럼 한 조건만 선택해 넣고 다른 조건은 고정한다. 수정 뒤에는 정상 입력과 실패 입력을 모두 다시 실행한다. 통과 기준은 예외가 단순히 사라지는 것이 아니라 데이터 손실·중복·자원 누수 없이 기대 상태로 끝나고, 실패 시에도 정해진 복구 또는 오류 경로가 관찰되는 것이다.
 ## CHAPTER 02 · dialect는 delimiter 하나가 아니라 quoting과 escaping 규칙의 묶음이다
 
 ### 시작 전 용어집
@@ -60,6 +62,8 @@ second line"
 
 ---
 
+**현장 디버깅 점검 — CHAPTER 02 · dialect는 delimiter 하나가 아니라 quoting과 escaping 규칙의 묶음이다**
+CHAPTER 02 · dialect는 delimiter 하나가 아니라 quoting과 escaping 규칙의 묶음이다 문제를 실제 환경에서 확인할 때는 정상 경로와 실패 경로를 분리해 같은 입력으로 재현 가능하게 만든다. 실행 전에는 기대 상태를 적고, 실행 중에는 입력값·중간 상태·반환값·로그 시각을 같은 순서로 수집한다. 실패 주입은 지연, 부분 데이터, 잘못된 형식, 취소, 재시도처럼 한 조건만 선택해 넣고 다른 조건은 고정한다. 수정 뒤에는 정상 입력과 실패 입력을 모두 다시 실행한다. 통과 기준은 예외가 단순히 사라지는 것이 아니라 데이터 손실·중복·자원 누수 없이 기대 상태로 끝나고, 실패 시에도 정해진 복구 또는 오류 경로가 관찰되는 것이다.
 ## CHAPTER 03 · file newline layer와 CSV parser의 newline 처리를 겹치지 않게 한다
 
 ### 시작 전 용어집
@@ -112,6 +116,8 @@ if missing:
 
 ---
 
+**현장 디버깅 점검 — CHAPTER 04 · header는 이름 목록이 아니라 input schema의 첫 계약이다**
+CHAPTER 04 · header는 이름 목록이 아니라 input schema의 첫 계약이다 문제를 실제 환경에서 확인할 때는 정상 경로와 실패 경로를 분리해 같은 입력으로 재현 가능하게 만든다. 실행 전에는 기대 상태를 적고, 실행 중에는 입력값·중간 상태·반환값·로그 시각을 같은 순서로 수집한다. 실패 주입은 지연, 부분 데이터, 잘못된 형식, 취소, 재시도처럼 한 조건만 선택해 넣고 다른 조건은 고정한다. 수정 뒤에는 정상 입력과 실패 입력을 모두 다시 실행한다. 통과 기준은 예외가 단순히 사라지는 것이 아니라 데이터 손실·중복·자원 누수 없이 기대 상태로 끝나고, 실패 시에도 정해진 복구 또는 오류 경로가 관찰되는 것이다.
 ## CHAPTER 05 · CSV field는 text이므로 domain type conversion과 validation을 별도 단계에서 수행한다
 
 ### 시작 전 용어집
@@ -140,6 +146,8 @@ amount = Decimal(row["amount"])  # 금액 정책에 맞는 변환
 
 ---
 
+**현장 디버깅 점검 — CHAPTER 05 · CSV field는 text이므로 domain type conversion과 validation을 별도 단계에서 수행한다**
+CHAPTER 05 · CSV field는 text이므로 domain type conversion과 validation을 별도 단계에서 수행한다 문제를 실제 환경에서 확인할 때는 정상 경로와 실패 경로를 분리해 같은 입력으로 재현 가능하게 만든다. 실행 전에는 기대 상태를 적고, 실행 중에는 입력값·중간 상태·반환값·로그 시각을 같은 순서로 수집한다. 실패 주입은 지연, 부분 데이터, 잘못된 형식, 취소, 재시도처럼 한 조건만 선택해 넣고 다른 조건은 고정한다. 수정 뒤에는 정상 입력과 실패 입력을 모두 다시 실행한다. 통과 기준은 예외가 단순히 사라지는 것이 아니라 데이터 손실·중복·자원 누수 없이 기대 상태로 끝나고, 실패 시에도 정해진 복구 또는 오류 경로가 관찰되는 것이다.
 ## CHAPTER 06 · spreadsheet export에서는 formula injection을 별도 trust boundary로 본다
 
 ### 시작 전 용어집
