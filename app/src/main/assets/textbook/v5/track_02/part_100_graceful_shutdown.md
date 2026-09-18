@@ -255,3 +255,21 @@ graceful shutdown이면 모든 작업이 끝날 때까지 무한히 기다려야
 
 운영형 문제에서는 함수 한 번의 정상 출력보다 **재시도, 중복, timeout, crash, 재시작** 뒤의 상태가 더 중요하다. 마지막으로 이 기능이 어떤 상태를 영구 저장하고 어떤 상태를 다시 계산할 수 있는지 구분해 적는다.
 
+## 현장 디버깅 체크 · graceful shutdown
+
+### 증상에서 시작한다
+
+배포 때 일부 요청이 끊기거나 worker가 종료되지 않아 orchestrator가 강제 kill하고 재시작 후 중복 작업이 생긴다. 먼저 재현 가능한 최소 payload와 operation id를 고정한다. 최종 상태만 고치면 중복·정밀도·복구 문제의 실제 발생 지점을 숨길 수 있다.
+
+### 먼저 볼 증거
+
+signal 수신 시각, admission stop, inflight count, drain deadline, checkpoint/flush/close 완료 시각을 기록한다. 가능하면 이 값을 하나의 trace 또는 audit record로 묶어 시간 순서를 복원한다.
+
+### 일부러 실패시켜 보기
+
+처리 중 요청·긴 작업·멈춘 dependency가 각각 있을 때 SIGTERM을 보내 deadline 내 종료와 재처리를 확인한다. 이런 반례가 자동 테스트에 들어가야 정상 예제만 통과하는 구현을 걸러낼 수 있다.
+
+### 통과 기준
+
+새 작업 수락이 먼저 멈추고 기존 작업은 정책대로 drain/cancel되며 durable state가 남은 뒤 정해진 시간 안에 process가 끝나야 한다. 통과 기준은 “에러가 안 난다”가 아니라 **어떤 입력과 실패 순서에서도 허용된 상태 집합을 벗어나지 않는다**로 적는다.
+

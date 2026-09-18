@@ -260,3 +260,21 @@ queue를 아주 크게 만들면 backpressure 문제가 해결될까?
 
 운영형 문제에서는 함수 한 번의 정상 출력보다 **재시도, 중복, timeout, crash, 재시작** 뒤의 상태가 더 중요하다. 마지막으로 이 기능이 어떤 상태를 영구 저장하고 어떤 상태를 다시 계산할 수 있는지 구분해 적는다.
 
+## 현장 디버깅 체크 · rate limit·backpressure
+
+### 증상에서 시작한다
+
+평균 트래픽은 정상인데 burst 순간 queue가 커지고 수십 초 뒤까지 오래된 요청이 처리된다. 먼저 재현 가능한 최소 payload와 operation id를 고정한다. 최종 상태만 고치면 중복·정밀도·복구 문제의 실제 발생 지점을 숨길 수 있다.
+
+### 먼저 볼 증거
+
+arrival rate, service rate, queue depth/age, reject count, concurrency, p95/p99 latency를 함께 본다. 가능하면 이 값을 하나의 trace 또는 audit record로 묶어 시간 순서를 복원한다.
+
+### 일부러 실패시켜 보기
+
+consumer 처리량보다 높은 producer를 일정 시간 유지하고 bounded queue·reject·blocking 정책을 각각 비교한다. 이런 반례가 자동 테스트에 들어가야 정상 예제만 통과하는 구현을 걸러낼 수 있다.
+
+### 통과 기준
+
+입력 초과 시 자원 사용과 queue age가 상한 안에 머물며 client가 재시도 가능한 명시적 신호를 받아야 한다. 통과 기준은 “에러가 안 난다”가 아니라 **어떤 입력과 실패 순서에서도 허용된 상태 집합을 벗어나지 않는다**로 적는다.
+

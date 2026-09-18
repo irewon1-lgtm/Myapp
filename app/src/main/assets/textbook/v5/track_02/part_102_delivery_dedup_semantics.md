@@ -239,3 +239,21 @@ broker가 at-least-once라면 consumer에서 exactly-once 효과가 자동으로
 
 운영형 문제에서는 함수 한 번의 정상 출력보다 **재시도, 중복, timeout, crash, 재시작** 뒤의 상태가 더 중요하다. 마지막으로 이 기능이 어떤 상태를 영구 저장하고 어떤 상태를 다시 계산할 수 있는지 구분해 적는다.
 
+## 현장 디버깅 체크 · delivery dedup
+
+### 증상에서 시작한다
+
+같은 event가 재전달될 때 일부는 중복 적용되고, dedup table에는 처리 완료로 남았는데 실제 side effect는 빠진다. 먼저 재현 가능한 최소 payload와 operation id를 고정한다. 최종 상태만 고치면 중복·정밀도·복구 문제의 실제 발생 지점을 숨길 수 있다.
+
+### 먼저 볼 증거
+
+event/operation id, payload fingerprint, side-effect transaction id, dedup record commit 순서와 broker ack 시각을 연결한다. 가능하면 이 값을 하나의 trace 또는 audit record로 묶어 시간 순서를 복원한다.
+
+### 일부러 실패시켜 보기
+
+side effect 전·후, dedup write 전·후, ack 전·후에 crash를 각각 주입해 재전달 결과를 비교한다. 이런 반례가 자동 테스트에 들어가야 정상 예제만 통과하는 구현을 걸러낼 수 있다.
+
+### 통과 기준
+
+모든 crash point에서 결과가 누락되지 않고 중복 효과도 생기지 않으며 재전달 판단 근거가 durable하게 남아야 한다. 통과 기준은 “에러가 안 난다”가 아니라 **어떤 입력과 실패 순서에서도 허용된 상태 집합을 벗어나지 않는다**로 적는다.
+

@@ -247,3 +247,21 @@ SHA-256 digest가 일치하면 그 파일이 신뢰할 수 있는 제작자에�
 
 운영형 문제에서는 함수 한 번의 정상 출력보다 **재시도, 중복, timeout, crash, 재시작** 뒤의 상태가 더 중요하다. 마지막으로 이 기능이 어떤 상태를 영구 저장하고 어떤 상태를 다시 계산할 수 있는지 구분해 적는다.
 
+## 현장 디버깅 체크 · digest·integrity identity
+
+### 증상에서 시작한다
+
+download 검증은 통과했는데 공격자가 바꾼 파일도 정상으로 인정되거나, algorithm 변경 뒤 cache key가 충돌한다. 먼저 재현 가능한 최소 payload와 operation id를 고정한다. 최종 상태만 고치면 중복·정밀도·복구 문제의 실제 발생 지점을 숨길 수 있다.
+
+### 먼저 볼 증거
+
+digest algorithm, raw byte length, expected digest의 신뢰 출처, signature/MAC 여부와 content provenance를 확인한다. 가능하면 이 값을 하나의 trace 또는 audit record로 묶어 시간 순서를 복원한다.
+
+### 일부러 실패시켜 보기
+
+파일과 checksum을 함께 변조하는 경우와 trusted manifest의 checksum만 고정한 경우를 비교한다. 이런 반례가 자동 테스트에 들어가야 정상 예제만 통과하는 구현을 걸러낼 수 있다.
+
+### 통과 기준
+
+내용 동일성 검증과 제작자/배포자 인증이 각각 독립된 신뢰 근거로 설명 가능해야 한다. 통과 기준은 “에러가 안 난다”가 아니라 **어떤 입력과 실패 순서에서도 허용된 상태 집합을 벗어나지 않는다**로 적는다.
+

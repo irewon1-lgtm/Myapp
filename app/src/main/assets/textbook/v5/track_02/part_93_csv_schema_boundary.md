@@ -247,3 +247,21 @@ for row in csv.DictReader(io.StringIO(text)):
 
 마지막에는 이 주제를 **입력/신뢰 수준 → 변환 또는 대기 → 검증 → 결과/실패** 순서로 다시 설명한다. 이 순서가 보이면 실제 장애에서도 원인 경계를 빠르게 좁힐 수 있다.
 
+## 현장 디버깅 체크 · CSV schema boundary
+
+### 증상에서 시작한다
+
+파일은 열리지만 특정 행에서 column이 밀리거나 숫자 변환이 깨지고, 일부 row만 조용히 잘못 들어간다. 먼저 재현 가능한 최소 payload와 operation id를 고정한다. 최종 상태만 고치면 중복·정밀도·복구 문제의 실제 발생 지점을 숨길 수 있다.
+
+### 먼저 볼 증거
+
+raw row, parsed field count, header mapping, line number, encoding/newline, schema version과 validation error를 함께 남긴다. 가능하면 이 값을 하나의 trace 또는 audit record로 묶어 시간 순서를 복원한다.
+
+### 일부러 실패시켜 보기
+
+quoted comma·embedded newline·빈 field·extra column·잘못된 숫자를 한 파일에 넣어 parser와 schema error를 분리한다. 이런 반례가 자동 테스트에 들어가야 정상 예제만 통과하는 구현을 걸러낼 수 있다.
+
+### 통과 기준
+
+문법적으로 읽힌 row와 업무적으로 유효한 row가 분리되고, 오류 위치와 원인이 사용자에게 수정 가능한 형태로 반환돼야 한다. 통과 기준은 “에러가 안 난다”가 아니라 **어떤 입력과 실패 순서에서도 허용된 상태 집합을 벗어나지 않는다**로 적는다.
+

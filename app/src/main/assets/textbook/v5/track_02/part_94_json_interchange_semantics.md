@@ -257,3 +257,21 @@ JSON parser가 성공하면 서로 다른 언어에서도 모든 값의 의미�
 
 마지막에는 이 주제를 **입력/신뢰 수준 → 변환 또는 대기 → 검증 → 결과/실패** 순서로 다시 설명한다. 이 순서가 보이면 실제 장애에서도 원인 경계를 빠르게 좁힐 수 있다.
 
+## 현장 디버깅 체크 · JSON interchange semantics
+
+### 증상에서 시작한다
+
+Python에서는 정상인데 다른 언어 client에서 큰 정수·소수·duplicate key가 다른 값으로 해석된다. 먼저 재현 가능한 최소 payload와 operation id를 고정한다. 최종 상태만 고치면 중복·정밀도·복구 문제의 실제 발생 지점을 숨길 수 있다.
+
+### 먼저 볼 증거
+
+원본 JSON text, parser/library 버전, target numeric type, duplicate-member/unknown-field 정책과 schema version을 기록한다. 가능하면 이 값을 하나의 trace 또는 audit record로 묶어 시간 순서를 복원한다.
+
+### 일부러 실패시켜 보기
+
+2^53보다 큰 integer, 0.1 계열 소수, 같은 key 두 번, missing/null/unknown field payload를 교차 언어로 비교한다. 이런 반례가 자동 테스트에 들어가야 정상 예제만 통과하는 구현을 걸러낼 수 있다.
+
+### 통과 기준
+
+지원하는 모든 reader/writer가 허용 payload의 의미를 동일하게 해석하고 비호환 입력은 명시적으로 거부돼야 한다. 통과 기준은 “에러가 안 난다”가 아니라 **어떤 입력과 실패 순서에서도 허용된 상태 집합을 벗어나지 않는다**로 적는다.
+
