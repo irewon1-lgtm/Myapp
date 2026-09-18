@@ -15,32 +15,35 @@ class V5BookReaderSourceContractTest {
     private fun compactWhitespace(text: String): String = text.replace(Regex("\\s+"), " ")
 
     @Test
-    fun adaptiveShelfRoutesValidatedV5ManifestsToV5ReaderAndKeepsLegacyFallback() {
+    fun adaptiveShelfUsesOnlyTheSingleLiveV5Path() {
         val adaptive = source("com/futuretech/poweruser/ui/AdaptiveTextbookScreen.kt")
         assertTrue(adaptive.contains("V5BookAssetRepository(context)"))
+        assertTrue(adaptive.contains("refreshRemoteContent(selectedChapter.number)"))
         assertTrue(adaptive.contains("loadManifest(selectedChapter.number)"))
-        assertTrue(adaptive.contains("if (hasV5Book)"))
         assertTrue(adaptive.contains("V5TrackBookScreen("))
-        assertTrue(adaptive.contains("V4PagedBookScreen("))
+        assertFalse(adaptive.contains("V4PagedBookScreen("))
     }
 
     @Test
-    fun V5RepositoryMergesManifestShardsBeforeValidatingTheBook() {
+    fun V5RepositoryReadsOneCanonicalBranchWithoutRevisionChannelOrRollback() {
         val repository = source("com/futuretech/poweruser/textbook/V5BookAssetRepository.kt")
-        assertTrue(repository.contains("context.assets.list(trackDir)"))
-        assertTrue(repository.contains("manifest_\\\\d{2}\\\\.json"))
+        assertTrue(repository.contains("LIVE_BRANCH = \"textbook-v5-deep-book-engine\""))
+        assertTrue(repository.contains("LIVE_TRACK_ROOT = \"app/src/main/assets/textbook/v5\""))
         assertTrue(repository.contains("fragments.flatMap { it.parts }.sortedBy { it.order }"))
-        assertTrue(repository.contains("validateManifest(merged, trackNumber)"))
-        assertTrue(repository.contains("Duplicate part asset paths"))
-        assertTrue(repository.contains("Duplicate source-map paths"))
+        assertTrue(repository.contains("dir.deleteRecursively()"))
+        assertFalse(repository.contains("CHANNEL_URL"))
+        assertFalse(repository.contains("previousRevision"))
+        assertFalse(repository.contains("RolledBack"))
+        assertFalse(repository.contains("MAX_COMPARE_FILES"))
+        assertFalse(repository.contains("COMPARE_BASE"))
     }
 
     @Test
-    fun V5ReaderLoadsOnlyCurrentPartAndEvidenceBeforeProse() {
+    fun V5ReaderLoadsOnlyCurrentLivePartWithoutEvidenceGate() {
         val reader = source("com/futuretech/poweruser/ui/V5TrackBookScreen.kt")
         assertTrue(reader.contains("val part = manifest.parts[partIndex]"))
-        assertTrue(reader.contains("repo.loadSourceMap(part)"))
         assertTrue(reader.contains("repo.loadPart(part)"))
+        assertFalse(reader.contains("repo.loadSourceMap(part)"))
         assertFalse(reader.contains("manifest.parts.flatMap"))
         assertFalse(reader.contains("manifest.parts.map { repo.loadPart"))
     }
