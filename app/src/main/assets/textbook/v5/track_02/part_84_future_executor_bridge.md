@@ -1,6 +1,6 @@
 # PART 84 · Future와 executor bridge — thread/process 작업을 async 결과 계약으로 연결하기
 
-동기 함수를 비동기 application에 연결할 때 executor를 사용하면 event loop를 막지 않고 별도 thread나 process에서 작업할 수 있다. 하지만 executor는 “아무 함수를 async로 바꾸는 버튼”이 아니다. Future state, thread-safe 여부, process serialization, cancellation 한계를 이해해야 한다. 이 PART에서는 **작업 제출 → Future 상태 → 결과 회수 → 취소 가능성 → executor shutdown**의 lifecycle을 본다.
+동기 함수를 비동기 application에 연결할 때 executor를 사용하면 event loop를 막지 않고 별도 thread나 process에서 작업할 수 있다. 하지만 executor는 “아무 함수를 async로 바꾸는 버튼”이 아니다. Future state, thread-safe 여부, process serialization, cancellation 한계를 이해해야 한다. 이 절에서는 **작업 제출 → Future 상태 → 결과 회수 → 취소 가능성 → executor shutdown**의 lifecycle을 본다.
 
 ---
 
@@ -168,6 +168,8 @@ async caller timeout -> future cancelled 표시 -> worker thread의 blocking I/O
 
 ---
 
+**현장 디버깅 점검 — CHAPTER 06 · Future cancellation은 이미 실행 중인 외부 작업을 강제로 중단하지 못할 수 있다**
+CHAPTER 06 · Future cancellation은 이미 실행 중인 외부 작업을 강제로 중단하지 못할 수 있다 문제는 정상 경로만 성공하는지 보는 것으로 끝내면 안 된다. 먼저 재현 절차를 고정하고 입력값·현재 상태·반환값·로그 시각을 같은 순서로 기록한다. 그다음 타임아웃, 취소, 부분 실패, 늦은 응답처럼 실제 운영에서 생길 수 있는 조건을 한 번에 하나씩 주입한다. 관찰할 값은 성공 여부뿐 아니라 중복 처리, 누락, 정리되지 않은 자원, 대기 중인 작업이 남는지까지 포함한다. 수정 뒤에는 정상 입력과 실패 입력을 모두 다시 실행한다. 통과 기준은 실패가 사라졌다는 느낌이 아니라 기대 상태와 실제 상태가 일치하고, 실패 시에도 손실·중복·교착 없이 정해진 복구 경로로 종료되는 것이다.
 ## CHAPTER 07 · executor shutdown은 새 작업 접수와 기존 작업 종료 정책을 결정한다
 
 ### 시작 전 용어집
