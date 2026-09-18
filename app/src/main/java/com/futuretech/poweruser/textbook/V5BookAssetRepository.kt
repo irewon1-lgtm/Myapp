@@ -78,6 +78,10 @@ class V5BookAssetRepository(
     )
 
     fun loadManifest(trackNumber: Int): V5BookManifest {
+        // Never wait for network to open the book. The exact project-bundled TRACK is seeded first.
+        if (isConfiguredLiveTrack(trackNumber)) {
+            seedBundledTrackIfMissing(trackNumber)
+        }
         val dir = trackCacheDir(trackNumber)
         val names = dir.list().orEmpty()
             .filter { it == "manifest.json" || it.matches(MANIFEST_SHARD_REGEX) }
