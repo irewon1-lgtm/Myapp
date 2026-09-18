@@ -109,8 +109,8 @@ idempotency_key-> 동일 요청 retry 묶기
 
 ---
 
-**현장 디버깅 점검 — CHAPTER 03 · content identity와 operation identity를 분리해 duplicate를 안전하게 처리한다**
-CHAPTER 03 · content identity와 operation identity를 분리해 duplicate를 안전하게 처리한다을 운영에서 검증할 때는 재시작 뒤에도 상태가 이어지는지까지 확인해야 한다. 먼저 처리 전 상태와 완료 조건을 기록하고, 정상 입력으로 기준 결과를 만든다. 그다음 처리 중간에 강제 중단, 일부 레코드 실패, 중복 전달, 재시작을 각각 따로 주입한다. 재실행 후에는 완료된 항목이 다시 처리되지 않는지, 실패 항목만 안전하게 재시도되는지, 체크포인트와 실제 데이터 상태가 일치하는지 비교한다. 통과 기준은 모든 성공 항목이 정확히 한 번 반영되고 실패 항목은 추적 가능한 상태로 남으며, 같은 시나리오를 반복해도 결과가 변하지 않는 것이다.
+**현장 점검 105-3 — CHAPTER 03 · content identity와 operation identity를 분리해 duplicate를 안전하게 처리한다**
+외부 의존성을 한 개씩 격리한 뒤 기준 실행을 만든다. CHAPTER 03 · content identity와 operation identity를 분리해 duplicate를 안전하게 처리한다 검증에서는 부분 성공 시 성공 목록과 실패 목록이 정확히 분리되는지 개수까지 확인한다. PART 105의 CHAPTER 3은 중간 중단이나 재전달이 발생해도 상태가 뒤섞이지 않는지 확인하는 것이 핵심이므로, 실패 조건은 한 번에 하나만 주입하고 나머지 조건은 고정한다. 수정 뒤에는 원래 정상 사례, 방금 만든 실패 사례, 같은 요청을 다시 보내는 재실행 사례를 순서대로 반복한다. 통과 기준은 실패가 발생해도 추적 가능한 상태가 남고 재시작 후 안전하게 이어지는 것이다.
 ## CHAPTER 04 · bounded concurrency는 CPU·memory·downstream capacity를 동시에 넘지 않게 한다
 
 ### 시작 전 용어집
@@ -143,8 +143,8 @@ parser -> bounded queue -> N workers -> bounded downstream client
 
 ---
 
-**현장 디버깅 점검 — CHAPTER 04 · bounded concurrency는 CPU·memory·downstream capacity를 동시에 넘지 않게 한다**
-CHAPTER 04 · bounded concurrency는 CPU·memory·downstream capacity를 동시에 넘지 않게 한다을 운영에서 검증할 때는 재시작 뒤에도 상태가 이어지는지까지 확인해야 한다. 먼저 처리 전 상태와 완료 조건을 기록하고, 정상 입력으로 기준 결과를 만든다. 그다음 처리 중간에 강제 중단, 일부 레코드 실패, 중복 전달, 재시작을 각각 따로 주입한다. 재실행 후에는 완료된 항목이 다시 처리되지 않는지, 실패 항목만 안전하게 재시도되는지, 체크포인트와 실제 데이터 상태가 일치하는지 비교한다. 통과 기준은 모든 성공 항목이 정확히 한 번 반영되고 실패 항목은 추적 가능한 상태로 남으며, 같은 시나리오를 반복해도 결과가 변하지 않는 것이다.
+**현장 점검 105-4 — CHAPTER 04 · bounded concurrency는 CPU·memory·downstream capacity를 동시에 넘지 않게 한다**
+처리 직전의 상태 스냅샷과 기대 결과를 먼저 적는다. CHAPTER 04 · bounded concurrency는 CPU·memory·downstream capacity를 동시에 넘지 않게 한다 검증에서는 정상 로그와 실패 로그를 나란히 비교해 최초로 달라지는 지점을 찾는다. PART 105의 CHAPTER 4은 중간 중단이나 재전달이 발생해도 상태가 뒤섞이지 않는지 확인하는 것이 핵심이므로, 실패 조건은 한 번에 하나만 주입하고 나머지 조건은 고정한다. 수정 뒤에는 원래 정상 사례, 방금 만든 실패 사례, 같은 요청을 다시 보내는 재실행 사례를 순서대로 반복한다. 통과 기준은 최종 결과뿐 아니라 중간 상태와 복구 경로까지 기대 계약과 일치하는 것이다.
 ## CHAPTER 05 · external dependency에는 하나의 deadline 안에서 retry와 circuit breaker를 조합한다
 
 ### 시작 전 용어집
