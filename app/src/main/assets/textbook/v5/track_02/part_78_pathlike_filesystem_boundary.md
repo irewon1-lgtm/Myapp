@@ -38,8 +38,8 @@ print(os.fspath(AppPath("data/input.txt")))
 
 ---
 
-**실행 점검 78-1 — CHAPTER 01 · `os.PathLike`는 경로를 문자열 자체가 아니라 filesystem 표현 가능 객체로 만든다**
-CHAPTER 01 · `os.PathLike`는 경로를 문자열 자체가 아니라 filesystem 표현 가능 객체로 만든다을 이해할 때는 정상 사례 하나를 정한 뒤 같은 입력을 두 번 실행해 결과가 안정적인지 확인한다. 그다음 값 하나, 호출 순서 하나, 경계 조건 하나만 바꿔 CHAPTER 01 · `os.PathLike`는 경로를 문자열 자체가 아니라 filesystem 표현 가능 객체로 만든다의 규칙이 실제 상태에 어떤 변화를 만드는지 확인한다. PART 78 CHAPTER 1에서는 결과를 맞히는 것보다 예상과 실제의 차이를 설명하는 과정이 중요하다. 다른 입력에서도 같은 계약이 유지되는지 확인해야 검증이 끝난다. P78-C01은 마지막에 설명 가능성을 검사한다. P78-C01의 결과를 만든 타입·정체성·수명·예외 조건을 명시하고, 다른 코드 조각에서도 같은 조건을 스스로 찾아 적용한다.
+**검증 시나리오 P78-C1 — CHAPTER 01 · `os.PathLike`는 경로를 문자열 자체가 아니라 filesystem 표현 가능 객체로 만든다**
+`CHAPTER 01 · `os.PathLike`는 경로를 문자열 자체가 아니라 filesystem 표현 가능 객체로 만든다` 검증은 반례부터 하나 만든다하는 데서 시작한다. P78-C1에서는 `CHAPTER 01 · `os.PathLike`는 경로를 문자열 자체가 아니라 filesystem 표현 가능 객체로 만든다` 실행 직전 상태를 먼저 적고 실행 뒤 값과 비교해 실제 규칙을 확인한다. 두 번째 단계에서는 `CHAPTER 01 · `os.PathLike`는 경로를 문자열 자체가 아니라 filesystem 표현 가능 객체로 만든다`에 대해 반례와 정상례의 차이만 좁힌다고 다른 코드는 그대로 두어 원인 후보를 하나로 제한한다. 이때 `CHAPTER 01 · `os.PathLike`는 경로를 문자열 자체가 아니라 filesystem 표현 가능 객체로 만든다`의 중간 값을 직접 출력해 추측을 줄인다하여 우연한 통과를 배제한다. 예상과 다르면 `CHAPTER 01 · `os.PathLike`는 경로를 문자열 자체가 아니라 filesystem 표현 가능 객체로 만든다`의 타입, 값, 호출 순서, 예외 경계 가운데 최초로 달라진 항목부터 확인하고 최소 수정 뒤 다시 실행한다. P78-C1의 마무리는 수정 후 두 사례를 같은 순서로 재검증하는 것이다. 통과 기준은 `CHAPTER 01 · `os.PathLike`는 경로를 문자열 자체가 아니라 filesystem 표현 가능 객체로 만든다`의 정상 사례와 변형 사례가 모두 설명 가능한 결과를 내고 같은 절차를 반복해도 동일한 상태 계약을 유지하는 것이다.
 ## CHAPTER 02 · `os.fspath`는 path-like input을 실제 OS path representation으로 좁히는 경계다
 
 ### 시작 전 용어집
@@ -186,8 +186,8 @@ check path -> filesystem changes -> open path
 
 ---
 
-**실행 점검 78-6 — CHAPTER 06 · symlink resolution은 time-of-check와 time-of-use 문제를 만들 수 있다**
-CHAPTER 06 · symlink resolution은 time-of-check와 time-of-use 문제를 만들 수 있다을 이해할 때는 호출 순서를 단순화하고 예외가 생긴 지점과 그 직전 상태를 함께 적는다. 그다음 값 하나, 호출 순서 하나, 경계 조건 하나만 바꿔 CHAPTER 06 · symlink resolution은 time-of-check와 time-of-use 문제를 만들 수 있다의 규칙이 실제 상태에 어떤 변화를 만드는지 확인한다. PART 78 CHAPTER 6에서는 결과를 맞히는 것보다 예상과 실제의 차이를 설명하는 과정이 중요하다. 예상이 틀리면 규칙을 다시 읽고 최소 수정으로 재실행한다. P78-C06의 통과 기준은 결과를 외우는 것이 아니다. P78-C06의 동작을 타입, 정체성, 수명, 오류 경계로 나눠 설명하고 비슷한 코드에서도 동일한 규칙을 찾아낼 수 있어야 한다.
+**검증 시나리오 P78-C6 — CHAPTER 06 · symlink resolution은 time-of-check와 time-of-use 문제를 만들 수 있다**
+`CHAPTER 06 · symlink resolution은 time-of-check와 time-of-use 문제를 만들 수 있다` 검증은 호출 순서를 단순화하는 데서 시작한다. P78-C6에서는 `CHAPTER 06 · symlink resolution은 time-of-check와 time-of-use 문제를 만들 수 있다` 실행 직전 상태를 먼저 적고 실행 뒤 값과 비교해 실제 규칙을 확인한다. 두 번째 단계에서는 `CHAPTER 06 · symlink resolution은 time-of-check와 time-of-use 문제를 만들 수 있다`에 대해 순서 하나만 뒤집어 차이를 본다고 다른 코드는 그대로 두어 원인 후보를 하나로 제한한다. 이때 `CHAPTER 06 · symlink resolution은 time-of-check와 time-of-use 문제를 만들 수 있다`의 호출 전후의 상태 전이를 번호로 남긴다하여 우연한 통과를 배제한다. 예상과 다르면 `CHAPTER 06 · symlink resolution은 time-of-check와 time-of-use 문제를 만들 수 있다`의 타입, 값, 호출 순서, 예외 경계 가운데 최초로 달라진 항목부터 확인하고 최소 수정 뒤 다시 실행한다. P78-C6의 마무리는 다른 순서에서도 계약이 유지되는지 확인하는 것이다. 통과 기준은 `CHAPTER 06 · symlink resolution은 time-of-check와 time-of-use 문제를 만들 수 있다`의 정상 사례와 변형 사례가 모두 설명 가능한 결과를 내고 같은 절차를 반복해도 동일한 상태 계약을 유지하는 것이다.
 ## CHAPTER 07 · boundary validation은 path syntax보다 capability를 제한하는 쪽이 강하다
 
 ### 시작 전 용어집
