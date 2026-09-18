@@ -30,7 +30,7 @@ logger.info("order processed", extra={"order_id": order_id})
 ---
 
 **현장 점검 89-1 — CHAPTER 01 · LogRecord는 한 번의 로그 event와 실행 context를 담는다**
-CHAPTER 01 · LogRecord는 한 번의 로그 event와 실행 context를 담는다을 점검할 때는 정상 동작을 기준선으로 남기고 중복 입력을 한 번 보낸다. PART 89 CHAPTER 1에서는 중복 반영과 누락 여부를 동시에 확인한다. 한 번의 성공만 확인하지 말고 같은 조건을 다시 실행해 재현성과 복구 가능성을 확인한다. 수정 뒤에는 정상 입력, 경계 입력, 의도적으로 실패시키는 입력을 순서대로 실행하고 결과를 비교한다. 통과 기준은 정상 경로가 기대 결과로 끝나고 실패 경로도 데이터 손실·중복·무한 대기 없이 정해진 오류 또는 복구 상태로 종료되며, 로그만으로 원인과 처리 결과를 추적할 수 있는 것이다.
+CHAPTER 01 · LogRecord는 한 번의 로그 event와 실행 context를 담는다을 점검할 때는 정상 동작을 기준선으로 남기고 중복 입력을 한 번 보낸다. PART 89 CHAPTER 1에서는 중복 반영과 누락 여부를 동시에 확인한다. JSON 검증은 직렬화→역직렬화 왕복 후 의미 값과 타입 경계를 다시 비교한다. 수정 뒤에는 누락 필드·추가 필드·잘못된 숫자 표현을 따로 넣고 허용 규칙과 거부 규칙이 일관되며 원문 순서나 whitespace 차이에 의미 판정이 흔들리지 않아야 한다.
 ## CHAPTER 02 · logger hierarchy는 점으로 구분된 이름을 tree처럼 연결한다
 
 ### 시작 전 용어집
@@ -108,7 +108,7 @@ db`, `app.http`처럼 hierarchy를 만들 수 있다.
 ---
 
 **현장 점검 89-4 — CHAPTER 04 · filter와 context injection은 request-scoped metadata를 record에 추가할 수 있다**
-CHAPTER 04 · filter와 context injection은 request-scoped metadata를 record에 추가할 수 있다을 점검할 때는 완료 조건을 코드 실행 전에 적고 부분 데이터만 전달한다. PART 89 CHAPTER 4에서는 열린 자원과 닫힌 자원을 비교한다. 한 번의 성공만 확인하지 말고 같은 조건을 다시 실행해 재현성과 복구 가능성을 확인한다. 수정 뒤에는 정상 입력, 경계 입력, 의도적으로 실패시키는 입력을 순서대로 실행하고 결과를 비교한다. 통과 기준은 정상 경로가 기대 결과로 끝나고 실패 경로도 데이터 손실·중복·무한 대기 없이 정해진 오류 또는 복구 상태로 종료되며, 로그만으로 원인과 처리 결과를 추적할 수 있는 것이다.
+CHAPTER 04 · filter와 context injection은 request-scoped metadata를 record에 추가할 수 있다을 점검할 때는 완료 조건을 코드 실행 전에 적고 부분 데이터만 전달한다. PART 89 CHAPTER 4에서는 열린 자원과 닫힌 자원을 비교한다. 동일한 실패를 두 차례 재현해 첫 번째와 두 번째 실행의 상태 차이를 비교한다. 수정 후에는 실패 직전 상태와 복구 직후 상태를 나란히 기록하고 재시작이 이전 작업을 중복 반영하지 않으면서 남은 작업만 이어가야 한다.
 ## CHAPTER 05 · propagation과 중복 handler는 같은 LogRecord를 여러 번 출력하게 만들 수 있다
 
 ### 시작 전 용어집
@@ -133,7 +133,7 @@ CHAPTER 04 · filter와 context injection은 request-scoped metadata를 record�
 ---
 
 **현장 점검 89-5 — CHAPTER 05 · propagation과 중복 handler는 같은 LogRecord를 여러 번 출력하게 만들 수 있다**
-CHAPTER 05 · propagation과 중복 handler는 같은 LogRecord를 여러 번 출력하게 만들 수 있다을 점검할 때는 관찰해야 할 로그 필드를 먼저 고르고 자원 정리를 늦춰 본다. PART 89 CHAPTER 5에서는 상태 전이와 반환값을 같은 시각축으로 본다. 한 번의 성공만 확인하지 말고 같은 조건을 다시 실행해 재현성과 복구 가능성을 확인한다. 수정 뒤에는 정상 입력, 경계 입력, 의도적으로 실패시키는 입력을 순서대로 실행하고 결과를 비교한다. 통과 기준은 정상 경로가 기대 결과로 끝나고 실패 경로도 데이터 손실·중복·무한 대기 없이 정해진 오류 또는 복구 상태로 종료되며, 로그만으로 원인과 처리 결과를 추적할 수 있는 것이다.
+CHAPTER 05 · propagation과 중복 handler는 같은 LogRecord를 여러 번 출력하게 만들 수 있다을 점검할 때는 관찰해야 할 로그 필드를 먼저 고르고 자원 정리를 늦춰 본다. PART 89 CHAPTER 5에서는 상태 전이와 반환값을 같은 시각축으로 본다. 성공 여부 대신 상태 전이 횟수와 자원 수를 기준으로 재실행 결과를 비교한다. 정상·경계·실패 사례를 각각 반복했을 때 결과가 결정적이고, 실패가 발생해도 다음 요청에 영향을 주는 잔여 상태가 남지 않아야 통과다.
 ## CHAPTER 06 · structured field는 message parsing 대신 query 가능한 event schema를 만든다
 
 ### 시작 전 용어집
@@ -167,7 +167,7 @@ Field type을 안정적으로 유지한다.
 ---
 
 **현장 점검 89-6 — CHAPTER 06 · structured field는 message parsing 대신 query 가능한 event schema를 만든다**
-CHAPTER 06 · structured field는 message parsing 대신 query 가능한 event schema를 만든다을 점검할 때는 재현 절차를 세 단계로 고정하고 취소를 처리 중간에 발생시킨다. PART 89 CHAPTER 6에서는 요청 식별자와 최종 상태를 연결한다. 한 번의 성공만 확인하지 말고 같은 조건을 다시 실행해 재현성과 복구 가능성을 확인한다. 수정 뒤에는 정상 입력, 경계 입력, 의도적으로 실패시키는 입력을 순서대로 실행하고 결과를 비교한다. 통과 기준은 정상 경로가 기대 결과로 끝나고 실패 경로도 데이터 손실·중복·무한 대기 없이 정해진 오류 또는 복구 상태로 종료되며, 로그만으로 원인과 처리 결과를 추적할 수 있는 것이다.
+CHAPTER 06 · structured field는 message parsing 대신 query 가능한 event schema를 만든다을 점검할 때는 재현 절차를 세 단계로 고정하고 취소를 처리 중간에 발생시킨다. PART 89 CHAPTER 6에서는 요청 식별자와 최종 상태를 연결한다. 같은 입력과 같은 초기 상태를 고정한 채 장애 조건만 바꿔 재현한다. 수정 뒤에는 장애를 제거한 기준 실행과 다시 비교해 데이터 개수·반환값·로그 식별자가 일치하고 복구 경로가 매번 같은 지점에서 끝나는지 확인한다.
 ## CHAPTER 07 · sensitive data redaction은 formatter 마지막 단계만 믿지 않는다
 
 ### 시작 전 용어집
