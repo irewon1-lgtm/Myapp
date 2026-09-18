@@ -29,8 +29,8 @@ jobs:
           set -euo pipefail
           grep -Fq 'versionCode = 23' app/build.gradle.kts
           grep -Fq 'versionName = "1.2.20"' app/build.gradle.kts
-          test "$(git rev-parse HEAD:app/src/main/assets/textbook/v5/track_01)" = "bbe0f0b5b5a8c56f2032658a1fbdb8427dc195aa"
-          test "$(git rev-parse HEAD:app/src/main/assets/textbook/v5/track_02)" = "5745a79cfc46739119948233764bd77114337f02"
+          test "$(git rev-parse HEAD:app/src/main/assets/textbook/v5/track_01)" = "558b001ee827abd83428158fd3a001a06f5d2333"
+          test "$(git rev-parse HEAD:app/src/main/assets/textbook/v5/track_02)" = "eb2fba4e9269184e9011ac06eea8885fd08426c0"
           test "$(find app/src/main/assets/textbook/v5/track_01 -maxdepth 1 -type f -name 'part_*.md' | wc -l)" -eq 105
           test "$(find app/src/main/assets/textbook/v5/track_02 -maxdepth 1 -type f -name 'part_*.md' | wc -l)" -eq 105
           grep -Fq 'V5TrackBookScreen(' app/src/main/java/com/futuretech/poweruser/ui/AdaptiveTextbookScreen.kt
@@ -120,8 +120,8 @@ jobs:
 
           - Source commit: ${GITHUB_SHA}
           - 앱: 코딩코딩 프로젝트에서 만든 textbook-v5-app-preview-20260918 기준 앱
-          - TRACK 01: 코딩코딩 프로젝트 정본 105 PART
-          - TRACK 02: 코딩코딩 프로젝트 정본 105 PART
+          - TRACK 01: 코딩코딩 프로젝트 정본 105 PART + stale prerequisite 49건 제거
+          - TRACK 02: 코딩코딩 프로젝트 정본 105 PART + 검증된 P25 parser 수정
           - 다른 LIVE/복구 원고 혼합 없음
           - Signed updater asset: Myapp_AI_Coding_Textbook_latest.apk
           EOF
