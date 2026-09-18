@@ -1,6 +1,6 @@
 # PART 100 · Graceful shutdown — admission 중단·in-flight drain·resource close를 순서화하기
 
-서비스 종료는 `sys.exit()` 한 줄이나 signal handler 하나로 끝나지 않는다. 종료 요청이 들어온 순간부터 새 작업을 받지 않고, 이미 시작된 작업을 제한 시간 안에 마무리하며, queue와 connection을 올바른 순서로 닫고, 마지막에는 강제 종료로 넘어갈 수 있어야 한다. 이 PART에서는 **종료 신호 → admission stop → drain → resource close → force-stop**을 하나의 state machine으로 설계한다.
+서비스 종료는 `sys.exit()` 한 줄이나 signal handler 하나로 끝나지 않는다. 종료 요청이 들어온 순간부터 새 작업을 받지 않고, 이미 시작된 작업을 제한 시간 안에 마무리하며, queue와 connection을 올바른 순서로 닫고, 마지막에는 강제 종료로 넘어갈 수 있어야 한다. 이 절에서는 **종료 신호 → admission stop → drain → resource close → force-stop**을 하나의 state machine으로 설계한다.
 
 ---
 
@@ -61,6 +61,8 @@ stop_event.set()
 
 ---
 
+**현장 디버깅 점검 — CHAPTER 02 · signal handler는 복잡한 cleanup을 직접 수행하기보다 종료 state를 시작한다**
+CHAPTER 02 · signal handler는 복잡한 cleanup을 직접 수행하기보다 종료 state를 시작한다을 운영 환경에서 다룰 때는 정상 경로뿐 아니라 중단·재시도·부분 성공을 함께 검증해야 한다. 먼저 동일한 입력과 초기 상태로 재현 절차를 고정하고 기대 상태를 기록한다. 그다음 지연, 중복 요청, 잘못된 식별자, 만료된 제한시간, 부분 실패 중 한 조건만 주입한다. 로그에는 요청 식별자와 상태 전이, 재시도 횟수, 최종 반환값을 남겨 원인을 추적할 수 있게 한다. 수정 후에는 정상 입력과 실패 입력을 같은 순서로 다시 실행한다. 통과 기준은 결과가 한 번 맞는 것이 아니라 손실·중복·무한 재시도 없이 종료되고, 다시 실행해도 같은 계약을 지키는 것이다.
 ## CHAPTER 03 · in-flight 작업은 끝낼 것과 취소할 것을 분류해 drain한다
 
 ### 시작 전 용어집
@@ -143,6 +145,8 @@ HTTP listener -> request tasks -> job workers -> DB/client pools -> logging expo
 
 ---
 
+**현장 디버깅 점검 — CHAPTER 05 · resource close order는 dependency graph의 역순으로 정한다**
+CHAPTER 05 · resource close order는 dependency graph의 역순으로 정한다을 운영 환경에서 다룰 때는 정상 경로뿐 아니라 중단·재시도·부분 성공을 함께 검증해야 한다. 먼저 동일한 입력과 초기 상태로 재현 절차를 고정하고 기대 상태를 기록한다. 그다음 지연, 중복 요청, 잘못된 식별자, 만료된 제한시간, 부분 실패 중 한 조건만 주입한다. 로그에는 요청 식별자와 상태 전이, 재시도 횟수, 최종 반환값을 남겨 원인을 추적할 수 있게 한다. 수정 후에는 정상 입력과 실패 입력을 같은 순서로 다시 실행한다. 통과 기준은 결과가 한 번 맞는 것이 아니라 손실·중복·무한 재시도 없이 종료되고, 다시 실행해도 같은 계약을 지키는 것이다.
 ## CHAPTER 06 · queue는 drain·requeue·discard 중 어떤 정책을 쓸지 명시한다
 
 ### 시작 전 용어집
@@ -167,6 +171,8 @@ HTTP listener -> request tasks -> job workers -> DB/client pools -> logging expo
 
 ---
 
+**현장 디버깅 점검 — CHAPTER 06 · queue는 drain·requeue·discard 중 어떤 정책을 쓸지 명시한다**
+CHAPTER 06 · queue는 drain·requeue·discard 중 어떤 정책을 쓸지 명시한다을 운영 환경에서 다룰 때는 정상 경로뿐 아니라 중단·재시도·부분 성공을 함께 검증해야 한다. 먼저 동일한 입력과 초기 상태로 재현 절차를 고정하고 기대 상태를 기록한다. 그다음 지연, 중복 요청, 잘못된 식별자, 만료된 제한시간, 부분 실패 중 한 조건만 주입한다. 로그에는 요청 식별자와 상태 전이, 재시도 횟수, 최종 반환값을 남겨 원인을 추적할 수 있게 한다. 수정 후에는 정상 입력과 실패 입력을 같은 순서로 다시 실행한다. 통과 기준은 결과가 한 번 맞는 것이 아니라 손실·중복·무한 재시도 없이 종료되고, 다시 실행해도 같은 계약을 지키는 것이다.
 ## CHAPTER 07 · force stop은 실패가 아니라 bounded shutdown protocol의 마지막 단계다
 
 ### 시작 전 용어집
