@@ -28,7 +28,7 @@ jobs:
         run: |
           set -euo pipefail
           grep -Fq 'versionCode = 20' app/build.gradle.kts
-          grep -Fq 'versionName = "1.2.16"' app/build.gradle.kts
+          grep -Fq 'versionName = "1.2.17"' app/build.gradle.kts
           grep -Fq 'LIVE_BRANCH = "textbook-v5-live"' app/src/main/java/com/futuretech/poweruser/textbook/V5BookAssetRepository.kt
           test ! -e app/src/main/assets/textbook/v5/channel.json
           ! grep -R -n -E 'CHANNEL_URL|MAX_COMPARE_FILES|COMPARE_BASE|previousRevision|RolledBack|V4PagedBookScreen\(|repo\.loadSourceMap\(part\)|textbook-v5-deep-book-engine|hybrid'             app/src/main/java/com/futuretech/poweruser/textbook             app/src/main/java/com/futuretech/poweruser/ui/AdaptiveTextbookScreen.kt             app/src/main/java/com/futuretech/poweruser/ui/V5TrackBookScreen.kt
