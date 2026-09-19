@@ -6,11 +6,15 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.NotificationsNone
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.derivedStateOf
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -51,6 +55,19 @@ fun HomeScreen(
     val activeProgress = progressFor(activeIndex)
     val activeChapter = if (active.chapters.isEmpty()) 0
         else prefs.currentChapter.coerceIn(0, active.chapters.lastIndex)
+
+    val trackState = rememberLazyListState()
+    val lastVisibleTrack by remember {
+        derivedStateOf {
+            trackState.layoutInfo.visibleItemsInfo.lastOrNull()?.index ?: 0
+        }
+    }
+    val trackSliderProgress by remember {
+        derivedStateOf {
+            if (catalog.tracks.size <= 1) 1f
+            else (lastVisibleTrack.toFloat() / catalog.tracks.lastIndex.toFloat()).coerceIn(0f, 1f)
+        }
+    }
 
     Scaffold(
         containerColor = Ivory,
@@ -107,7 +124,7 @@ fun HomeScreen(
                             color = Ink
                         )
                         Text(
-                            "지금은 TRACK 01을 먼저 완성합니다.",
+                            "좌우로 밀어서 TRACK 11까지 전체 로드맵을 볼 수 있어요.",
                             fontFamily = EditorialSerif,
                             fontSize = 13.sp,
                             color = Muted,
@@ -125,15 +142,44 @@ fun HomeScreen(
             }
 
             item {
-                LazyRow(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.spacedBy(16.dp),
-                    contentPadding = PaddingValues(end = 48.dp)
-                ) {
-                    itemsIndexed(catalog.tracks) { index, track ->
-                        BookCard(track, progressFor(index)) {
-                            if (track.available) onTrack(index)
+                Column {
+                    LazyRow(
+                        state = trackState,
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.spacedBy(16.dp),
+                        contentPadding = PaddingValues(start = 2.dp, end = 128.dp),
+                        userScrollEnabled = true
+                    ) {
+                        itemsIndexed(
+                            items = catalog.tracks,
+                            key = { _, track -> track.id }
+                        ) { index, track ->
+                            BookCard(track, progressFor(index)) {
+                                if (track.available) onTrack(index)
+                            }
                         }
+                    }
+
+                    Row(
+                        Modifier.fillMaxWidth().padding(top = 12.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Text(
+                            "TRACK 01",
+                            fontFamily = EditorialSerif,
+                            fontSize = 10.sp,
+                            color = Muted
+                        )
+                        ProgressBar(
+                            progress = trackSliderProgress,
+                            modifier = Modifier.weight(1f).padding(horizontal = 12.dp)
+                        )
+                        Text(
+                            "TRACK 11",
+                            fontFamily = EditorialSerif,
+                            fontSize = 10.sp,
+                            color = Muted
+                        )
                     }
                 }
             }
