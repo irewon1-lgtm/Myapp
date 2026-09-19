@@ -62,6 +62,11 @@ jobs:
           p.write_text(s, encoding='utf-8')
           print(p.read_text())
           PY
+          cat > source/gradle.properties <<'EOF'
+          android.useAndroidX=true
+          android.enableJetifier=false
+          org.gradle.jvmargs=-Xmx3g -Dfile.encoding=UTF-8
+          EOF
 
       - uses: actions/setup-java@v4
         with:
