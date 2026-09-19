@@ -18,5 +18,6 @@ data class ReaderPrefs(
     val visitedRefs: Set<String> = emptySet(),
     val bookmarks: Set<Int> = emptySet(),
     val notes: Map<Int, String> = emptyMap(),
-    val textScale: Float = 1f
+    val textScale: Float = 1f,
+    val pageModelVersion: Int = 1
 )
