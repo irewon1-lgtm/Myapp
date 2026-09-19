@@ -44,7 +44,7 @@ fun CodingRoadmapShell() {
     ) { current ->
         when (current) {
             "home" -> HomeScreen(
-                catalog, prefs, { openReader(prefs.currentChapter) },
+                catalog, prefs, { openReader(if (prefs.visitedChapters.isEmpty()) 3 else prefs.currentChapter) },
                 { screen = "library" }, { screen = "saved" },
                 { screen = "search" }, { screen = "settings" }
             )
