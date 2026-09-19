@@ -41,8 +41,8 @@ fun HomeScreen(
         val seen=prefs.visitedRefs.count{it.startsWith("$trackIndex:")}
         return seen/track.chapters.size.toFloat()
     }
-    val activeProgress=if(prefs.visitedRefs.isEmpty() && activeIndex==0) .34f else progressFor(activeIndex)
-    val activeChapter=if(prefs.visitedRefs.isEmpty() && activeIndex==0) 3 else prefs.currentChapter.coerceIn(0,active.chapters.lastIndex)
+    val activeProgress=progressFor(activeIndex)
+    val activeChapter=if(active.chapters.isEmpty()) 0 else prefs.currentChapter.coerceIn(0,active.chapters.lastIndex)
 
     Scaffold(containerColor=Ivory,bottomBar={BottomNav("home",{},onLibrary,onSaved,onSettings)}){pad->
         LazyColumn(
@@ -79,7 +79,7 @@ fun HomeScreen(
                     contentPadding=PaddingValues(end=48.dp)
                 ){
                     itemsIndexed(catalog.tracks){index,track->
-                        val p=if(prefs.visitedRefs.isEmpty() && index==0) .34f else progressFor(index)
+                        val p=progressFor(index)
                         BookCard(track,p){onTrack(index)}
                     }
                 }
