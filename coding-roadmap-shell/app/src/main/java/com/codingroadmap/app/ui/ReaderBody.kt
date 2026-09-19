@@ -1,5 +1,6 @@
 package com.codingroadmap.app.ui
 
+import android.content.res.Configuration
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.horizontalScroll
@@ -19,6 +20,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalClipboardManager
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
@@ -46,34 +48,96 @@ fun ReaderBody(
     var showAnswer by remember(chapter, page) { mutableStateOf(false) }
     var showMoreExtras by remember(chapter, page) { mutableStateOf(false) }
 
+    val configuration = LocalConfiguration.current
+    val tabS10FePortraitProfile =
+        configuration.smallestScreenWidthDp >= 600 &&
+        configuration.screenHeightDp >= 900 &&
+        configuration.orientation == Configuration.ORIENTATION_PORTRAIT
+
+    // Galaxy Tab S10 FE 10.9" portrait: keep the same readable size,
+    // but tighten line/section rhythm enough that a normal page fits without scrolling.
+    val readerScale = scale * if (tabS10FePortraitProfile) 0.94f else 1f
+    val horizontalPadding = if (tabS10FePortraitProfile) 22.dp else 27.dp
+    val verticalPadding = if (tabS10FePortraitProfile) 10.dp else 18.dp
+    val firstParagraphGap = if (tabS10FePortraitProfile) 12.dp else 16.dp
+    val paragraphGap = if (tabS10FePortraitProfile) 12.dp else 18.dp
+    val sectionGap = if (tabS10FePortraitProfile) 14.dp else 20.dp
+    val bottomGap = if (tabS10FePortraitProfile) 18.dp else 28.dp
+
+    val scrollState = rememberScrollState()
+    val extrasTotal = pageData.extras.size
+
+    var visibleExtras by remember(chapter, page, extrasTotal, scale, tabS10FePortraitProfile) {
+        mutableIntStateOf(
+            if (tabS10FePortraitProfile) extrasTotal
+            else pageData.visibleExtras.coerceIn(0, extrasTotal)
+        )
+    }
+    var overflowCeiling by remember(chapter, page, extrasTotal, scale, tabS10FePortraitProfile) {
+        mutableIntStateOf(extrasTotal + 1)
+    }
+
+    LaunchedEffect(chapter, page) {
+        scrollState.scrollTo(0)
+    }
+
+    // Actual-device auto-fit.
+    // On the Tab S10 FE we first try to show every optional explanation.
+    // If the real measured layout overflows, only optional extras are folded away,
+    // one by one, until the page fits. If there is room, they stay visible.
+    LaunchedEffect(
+        scrollState.maxValue,
+        visibleExtras,
+        showAnswer,
+        extrasTotal,
+        tabS10FePortraitProfile,
+        scale
+    ) {
+        if (!showAnswer) {
+            val overflowing = scrollState.maxValue > 8
+            when {
+                overflowing && visibleExtras > 0 -> {
+                    overflowCeiling = minOf(overflowCeiling, visibleExtras)
+                    visibleExtras -= 1
+                    scrollState.scrollTo(0)
+                }
+                !overflowing &&
+                    visibleExtras < extrasTotal &&
+                    visibleExtras + 1 < overflowCeiling -> {
+                    visibleExtras += 1
+                }
+            }
+        }
+    }
+
     Column(modifier) {
         Column(
             Modifier
                 .weight(1f)
                 .fillMaxWidth()
-                .verticalScroll(rememberScrollState())
-                .padding(horizontal = 27.dp, vertical = 18.dp)
+                .verticalScroll(scrollState)
+                .padding(horizontal = horizontalPadding, vertical = verticalPadding)
         ) {
             Text(
                 pageData.eyebrow,
                 fontFamily = EditorialSerif,
                 color = ReaderGold,
-                fontSize = (13 * scale).sp
+                fontSize = (13 * readerScale).sp
             )
             Text(
                 pageData.title,
                 fontFamily = EditorialSerif,
                 color = ReaderText,
-                fontSize = (31 * scale).sp,
+                fontSize = (31 * readerScale).sp,
                 fontWeight = FontWeight.SemiBold,
-                lineHeight = (40 * scale).sp,
-                modifier = Modifier.padding(top = 10.dp)
+                lineHeight = (40 * readerScale).sp,
+                modifier = Modifier.padding(top = if (tabS10FePortraitProfile) 7.dp else 10.dp)
             )
             Text(
                 "—",
                 fontFamily = EditorialSerif,
                 color = ReaderGold,
-                fontSize = (21 * scale).sp,
+                fontSize = (21 * readerScale).sp,
                 modifier = Modifier.padding(top = 2.dp)
             )
 
@@ -81,7 +145,7 @@ fun ReaderBody(
                 Row(
                     Modifier
                         .fillMaxWidth()
-                        .padding(top = 6.dp)
+                        .padding(top = if (tabS10FePortraitProfile) 4.dp else 6.dp)
                         .horizontalScroll(rememberScrollState()),
                     horizontalArrangement = Arrangement.spacedBy(7.dp)
                 ) {
@@ -89,11 +153,14 @@ fun ReaderBody(
                         Text(
                             keyword,
                             color = ReaderText,
-                            fontSize = (11 * scale).sp,
+                            fontSize = (11 * readerScale).sp,
                             modifier = Modifier
                                 .clip(RoundedCornerShape(50))
                                 .background(Color(0xFF2A2722))
-                                .padding(horizontal = 10.dp, vertical = 6.dp)
+                                .padding(
+                                    horizontal = 10.dp,
+                                    vertical = if (tabS10FePortraitProfile) 5.dp else 6.dp
+                                )
                         )
                     }
                 }
@@ -104,16 +171,20 @@ fun ReaderBody(
                     paragraph,
                     fontFamily = EditorialSerif,
                     color = ReaderText,
-                    fontSize = (16 * scale).sp,
-                    lineHeight = (28 * scale).sp,
-                    modifier = Modifier.padding(top = if (index == 0) 16.dp else 18.dp)
+                    fontSize = (16 * readerScale).sp,
+                    lineHeight = (28 * readerScale).sp,
+                    modifier = Modifier.padding(
+                        top = if (index == 0) firstParagraphGap else paragraphGap
+                    )
                 )
             }
 
             if (pageData.glossary.isNotEmpty()) {
                 Column(
-                    Modifier.fillMaxWidth().padding(top = 18.dp),
-                    verticalArrangement = Arrangement.spacedBy(12.dp)
+                    Modifier.fillMaxWidth().padding(top = sectionGap),
+                    verticalArrangement = Arrangement.spacedBy(
+                        if (tabS10FePortraitProfile) 9.dp else 12.dp
+                    )
                 ) {
                     pageData.glossary.forEach { entry ->
                         GlossaryCard(
@@ -121,35 +192,46 @@ fun ReaderBody(
                             description = entry.description,
                             usage = entry.usage,
                             example = entry.example,
-                            scale = scale
+                            scale = readerScale
                         )
                     }
                 }
             }
 
             pageData.visual?.let {
-                ConceptDiagram(it, scale, Modifier.padding(top = 22.dp))
+                ConceptDiagram(
+                    it,
+                    readerScale,
+                    Modifier.padding(top = sectionGap)
+                )
             }
 
             if (pageData.bullets.isNotEmpty()) {
                 Column(
                     Modifier
                         .fillMaxWidth()
-                        .padding(top = 20.dp)
+                        .padding(top = sectionGap)
                         .clip(RoundedCornerShape(18.dp))
                         .background(ReaderSurface)
-                        .padding(16.dp),
-                    verticalArrangement = Arrangement.spacedBy(10.dp)
+                        .padding(if (tabS10FePortraitProfile) 14.dp else 16.dp),
+                    verticalArrangement = Arrangement.spacedBy(
+                        if (tabS10FePortraitProfile) 7.dp else 10.dp
+                    )
                 ) {
                     pageData.bullets.forEach { item ->
                         Row(verticalAlignment = Alignment.Top) {
-                            Text("•", color = ReaderGold, fontSize = (17 * scale).sp, modifier = Modifier.width(20.dp))
+                            Text(
+                                "•",
+                                color = ReaderGold,
+                                fontSize = (17 * readerScale).sp,
+                                modifier = Modifier.width(20.dp)
+                            )
                             Text(
                                 item,
                                 fontFamily = EditorialSerif,
                                 color = ReaderText,
-                                fontSize = (14 * scale).sp,
-                                lineHeight = (22 * scale).sp,
+                                fontSize = (14 * readerScale).sp,
+                                lineHeight = (22 * readerScale).sp,
                                 modifier = Modifier.weight(1f)
                             )
                         }
@@ -161,8 +243,8 @@ fun ReaderBody(
                 CalloutCard(
                     title = title,
                     body = pageData.calloutBody.orEmpty(),
-                    scale = scale,
-                    modifier = Modifier.padding(top = 20.dp)
+                    scale = readerScale,
+                    modifier = Modifier.padding(top = sectionGap)
                 )
             }
 
@@ -170,8 +252,8 @@ fun ReaderBody(
                 CodeCard(
                     code = code,
                     note = pageData.codeNote,
-                    scale = scale,
-                    modifier = Modifier.padding(top = 20.dp)
+                    scale = readerScale,
+                    modifier = Modifier.padding(top = sectionGap)
                 )
             }
 
@@ -180,8 +262,8 @@ fun ReaderBody(
                     label = "직접 해보기",
                     text = prompt,
                     accent = ReaderGold,
-                    scale = scale,
-                    modifier = Modifier.padding(top = 20.dp)
+                    scale = readerScale,
+                    modifier = Modifier.padding(top = sectionGap)
                 )
             }
 
@@ -190,21 +272,21 @@ fun ReaderBody(
                     label = "문제",
                     text = question,
                     accent = Color(0xFF93B7D7),
-                    scale = scale,
-                    modifier = Modifier.padding(top = 20.dp)
+                    scale = readerScale,
+                    modifier = Modifier.padding(top = sectionGap)
                 )
             }
 
             if (pageData.answer != null) {
                 TextButton(
                     onClick = { showAnswer = !showAnswer },
-                    modifier = Modifier.padding(top = 10.dp)
+                    modifier = Modifier.padding(top = if (tabS10FePortraitProfile) 6.dp else 10.dp)
                 ) {
                     Text(
                         if (showAnswer) "정답·해설 접기  ▲" else "정답·해설 보기  ▼",
                         color = ReaderGold,
                         fontFamily = EditorialSerif,
-                        fontSize = (14 * scale).sp
+                        fontSize = (14 * readerScale).sp
                     )
                 }
 
@@ -213,7 +295,7 @@ fun ReaderBody(
                         label = "정답·해설",
                         text = pageData.answer,
                         accent = Color(0xFF9BB58B),
-                        scale = scale,
+                        scale = readerScale,
                         modifier = Modifier.padding(top = 4.dp)
                     )
 
@@ -222,46 +304,46 @@ fun ReaderBody(
                             label = "자주 틀리는 이유",
                             text = mistake,
                             accent = Color(0xFFD19B76),
-                            scale = scale,
-                            modifier = Modifier.padding(top = 12.dp)
+                            scale = readerScale,
+                            modifier = Modifier.padding(top = 10.dp)
                         )
                     }
                 }
             }
 
             if (pageData.extras.isNotEmpty()) {
-                val visibleCount = pageData.visibleExtras
-                    .coerceAtLeast(0)
-                    .coerceAtMost(pageData.extras.size)
-                val visibleExtras = pageData.extras.take(visibleCount)
-                val hiddenExtras = pageData.extras.drop(visibleCount)
+                val visibleCount = visibleExtras.coerceIn(0, pageData.extras.size)
+                val visibleSections = pageData.extras.take(visibleCount)
+                val hiddenSections = pageData.extras.drop(visibleCount)
 
-                if (visibleExtras.isNotEmpty()) {
+                if (visibleSections.isNotEmpty()) {
                     Column(
-                        Modifier.fillMaxWidth().padding(top = 18.dp),
-                        verticalArrangement = Arrangement.spacedBy(12.dp)
+                        Modifier.fillMaxWidth().padding(top = sectionGap),
+                        verticalArrangement = Arrangement.spacedBy(
+                            if (tabS10FePortraitProfile) 9.dp else 12.dp
+                        )
                     ) {
-                        visibleExtras.forEach { section ->
+                        visibleSections.forEach { section ->
                             InfoCard(
                                 label = section.title,
                                 text = section.body,
                                 accent = ReaderGold,
-                                scale = scale
+                                scale = readerScale
                             )
                         }
                     }
                 }
 
-                if (hiddenExtras.isNotEmpty()) {
+                if (hiddenSections.isNotEmpty()) {
                     TextButton(
                         onClick = { showMoreExtras = true },
-                        modifier = Modifier.padding(top = 8.dp)
+                        modifier = Modifier.padding(top = if (tabS10FePortraitProfile) 5.dp else 8.dp)
                     ) {
                         Text(
-                            "추가 설명 ${hiddenExtras.size}개 보기  ›",
+                            "추가 설명 ${hiddenSections.size}개 보기  ›",
                             color = ReaderGold,
                             fontFamily = EditorialSerif,
-                            fontSize = (13 * scale).sp
+                            fontSize = (13 * readerScale).sp
                         )
                     }
                 }
@@ -271,35 +353,41 @@ fun ReaderBody(
                 Row(
                     Modifier
                         .fillMaxWidth()
-                        .padding(top = 12.dp)
+                        .padding(top = if (tabS10FePortraitProfile) 8.dp else 12.dp)
                         .clip(RoundedCornerShape(15.dp))
                         .background(Color(0xFF1B1814))
-                        .padding(horizontal = 14.dp, vertical = 11.dp),
+                        .padding(
+                            horizontal = 14.dp,
+                            vertical = if (tabS10FePortraitProfile) 9.dp else 11.dp
+                        ),
                     verticalAlignment = Alignment.Top
                 ) {
                     Text(
                         "✓",
                         color = ReaderGold,
-                        fontSize = (13 * scale).sp,
+                        fontSize = (13 * readerScale).sp,
                         modifier = Modifier.padding(end = 8.dp)
                     )
                     Text(
                         prompt,
                         fontFamily = EditorialSerif,
                         color = ReaderMuted,
-                        fontSize = (12 * scale).sp,
-                        lineHeight = (18 * scale).sp
+                        fontSize = (12 * readerScale).sp,
+                        lineHeight = (18 * readerScale).sp
                     )
                 }
             }
 
-            Spacer(Modifier.height(28.dp))
+            Spacer(Modifier.height(bottomGap))
         }
 
         if (!focusMode) {
             Box(Modifier.fillMaxWidth().height(1.dp).background(Color.White.copy(.08f)))
             Row(
-                Modifier.fillMaxWidth().padding(horizontal = 14.dp, vertical = 10.dp),
+                Modifier.fillMaxWidth().padding(
+                    horizontal = 14.dp,
+                    vertical = if (tabS10FePortraitProfile) 7.dp else 10.dp
+                ),
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
@@ -361,12 +449,10 @@ fun ReaderBody(
     }
 
     if (showMoreExtras) {
-        val visibleCount = pageData.visibleExtras
-            .coerceAtLeast(0)
-            .coerceAtMost(pageData.extras.size)
+        val visibleCount = visibleExtras.coerceIn(0, pageData.extras.size)
         MoreExtrasDialog(
             sections = pageData.extras.drop(visibleCount),
-            scale = scale,
+            scale = readerScale,
             onDismiss = { showMoreExtras = false }
         )
     }
