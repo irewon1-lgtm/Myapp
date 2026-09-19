@@ -28,8 +28,8 @@ fun LibraryScreen(
     val trackIndex=(track.id-1).coerceAtLeast(0)
     val visitedForTrack=prefs.visitedRefs.count{it.startsWith("$trackIndex:")}
     val demo=prefs.visitedRefs.isEmpty() && track.id==1
-    val current=if(demo)3 else if(prefs.currentTrack==trackIndex) prefs.currentChapter.coerceIn(0,track.chapters.lastIndex) else 0
-    val progress=if(demo).34f else if(track.chapters.isEmpty())0f else visitedForTrack/track.chapters.size.toFloat()
+    val current=if(prefs.currentTrack==trackIndex) prefs.currentChapter.coerceIn(0,track.chapters.lastIndex) else 0
+    val progress=if(track.chapters.isEmpty())0f else visitedForTrack/track.chapters.size.toFloat()
 
     Scaffold(containerColor=Ivory,bottomBar={BottomNav("library",onHome,{},onSaved,onSettings)}){pad->
         LazyColumn(
@@ -59,7 +59,7 @@ fun LibraryScreen(
                 }
             }
             items(track.chapters.size){index->
-                val visited=if(demo) index<3 else "${trackIndex}:$index" in prefs.visitedRefs
+                val visited="${trackIndex}:$index" in prefs.visitedRefs
                 ChapterRow(index,track.chapters[index],visited=visited,current=index==current,onClick={onOpen(index)})
             }
         }
