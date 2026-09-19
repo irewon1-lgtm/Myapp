@@ -17,6 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.codingroadmap.app.data.ContentPage
 import com.codingroadmap.app.data.ReaderPrefs
 import com.codingroadmap.app.data.TrackMeta
 
@@ -27,6 +28,7 @@ fun ReaderShellScreen(
     chapter: Int,
     page: Int,
     pageCount: Int,
+    pageData: ContentPage,
     prefs: ReaderPrefs,
     onBack: () -> Unit,
     canPrev: Boolean,
@@ -99,12 +101,11 @@ fun ReaderShellScreen(
         }
 
         ReaderBody(
-            trackId = track.id,
-            title = title,
             chapter = chapter,
             chapterCount = track.chapters.size,
             page = page,
             pageCount = pageCount,
+            pageData = pageData,
             scale = prefs.textScale,
             canPrev = canPrev,
             canNext = canNext,
@@ -117,7 +118,7 @@ fun ReaderShellScreen(
                         when {
                             offset.x <= size.width * 0.18f && canPrev -> onPrev()
                             offset.x >= size.width * 0.82f && canNext -> onNext()
-                            else -> focusMode = !focusMode
+                            focusMode -> focusMode = false
                         }
                     }
                 }
