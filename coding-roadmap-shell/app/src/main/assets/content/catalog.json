@@ -17,15 +17,64 @@
     },
     {
       "id":3,
-      "title":"SQL 기초",
-      "subtitle":"TRACK 02 이후 이어집니다",
+      "title":"문제 해결",
+      "subtitle":"코드를 짜기 전에 생각하는 법",
       "available":false,
       "chapters":[]
     },
     {
       "id":4,
-      "title":"AI와 협업",
-      "subtitle":"TRACK 02 이후 이어집니다",
+      "title":"웹의 기본",
+      "subtitle":"화면과 인터넷이 연결되는 구조",
+      "available":false,
+      "chapters":[]
+    },
+    {
+      "id":5,
+      "title":"TypeScript",
+      "subtitle":"움직이는 웹앱 만들기",
+      "available":false,
+      "chapters":[]
+    },
+    {
+      "id":6,
+      "title":"SQL과 데이터",
+      "subtitle":"저장하고 다시 찾는 법",
+      "available":false,
+      "chapters":[]
+    },
+    {
+      "id":7,
+      "title":"API와 백엔드",
+      "subtitle":"앱 뒤쪽 만들기",
+      "available":false,
+      "chapters":[]
+    },
+    {
+      "id":8,
+      "title":"Android 앱",
+      "subtitle":"Galaxy에서 직접 실행하기",
+      "available":false,
+      "chapters":[]
+    },
+    {
+      "id":9,
+      "title":"Git·테스트·디버깅",
+      "subtitle":"망가뜨리지 않고 고치기",
+      "available":false,
+      "chapters":[]
+    },
+    {
+      "id":10,
+      "title":"AI 활용 개발",
+      "subtitle":"LLM을 앱 기능으로 넣기",
+      "available":false,
+      "chapters":[]
+    },
+    {
+      "id":11,
+      "title":"시스템 심화",
+      "subtitle":"운영·보안·성능까지",
       "available":false,
       "chapters":[]
     }
