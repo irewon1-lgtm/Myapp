@@ -11,8 +11,8 @@ android {
         applicationId = "com.codingroadmap.app"
         minSdk = 26
         targetSdk = 36
-        versionCode = 8
-        versionName = "0.7.1"
+        versionCode = 9
+        versionName = "0.7.2"
     }
 
     buildTypes {
@@ -35,8 +35,6 @@ android {
 }
 
 dependencies {
-    // These versions are deliberately pinned to the set already verified by this project
-    // while the app itself targets API 36. Newer releases require AGP 9.1+ and a broader migration.
     implementation("androidx.core:core-ktx:1.15.0")
     implementation("androidx.activity:activity-compose:1.10.1")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.7")
