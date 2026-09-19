@@ -49,7 +49,7 @@ object Track1ContentLoader {
         (1..8).map { chapter ->
             val path = "content/track01/ch%02d.json".format(chapter)
             val raw = context.assets.open(path).bufferedReader().use { it.readText() }
-            parseChapter(JSONObject(raw))
+            TwoPageContentExpander.expand(parseChapter(JSONObject(raw)))
         }
 
     private fun parseChapter(o: JSONObject): ChapterContent {
