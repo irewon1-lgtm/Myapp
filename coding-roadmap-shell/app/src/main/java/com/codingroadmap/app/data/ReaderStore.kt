@@ -52,6 +52,13 @@ class ReaderStore(private val context: Context) {
         }
     }
 
+    suspend fun setPosition(track: Int, chapter: Int, page: Int) =
+        context.roadmapDataStore.edit { p ->
+            p[Keys.currentTrack] = track
+            p[Keys.current] = chapter
+            p[Keys.currentPage] = page
+        }
+
     suspend fun toggleBookmark(chapter: Int) = context.roadmapDataStore.edit { p ->
         val s = (p[Keys.bookmarks] ?: emptySet()).toMutableSet()
         if (!s.add(chapter.toString())) s.remove(chapter.toString())
