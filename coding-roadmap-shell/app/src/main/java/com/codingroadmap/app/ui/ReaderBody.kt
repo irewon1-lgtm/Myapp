@@ -27,7 +27,9 @@ fun ReaderBody(
     trackId: Int,
     title: String,
     chapter: Int,
-    count: Int,
+    chapterCount: Int,
+    page: Int,
+    pageCount: Int,
     scale: Float,
     canPrev: Boolean,
     canNext: Boolean,
@@ -58,91 +60,14 @@ fun ReaderBody(
                 modifier = Modifier.padding(top = 10.dp)
             )
             Text("—", fontFamily = EditorialSerif, color = ReaderGold, fontSize = (22 * scale).sp, modifier = Modifier.padding(top = 4.dp))
-            Text(
-                "데이터에는 저마다의 형태가 있고,\n파이썬은 그 형태를 ‘타입’으로 구분합니다.",
-                fontFamily = EditorialSerif,
-                color = ReaderText,
-                fontSize = (17 * scale).sp,
-                lineHeight = (28 * scale).sp,
-                modifier = Modifier.padding(top = 12.dp)
-            )
-            Text(
-                "우리가 사용하는 모든 값은 타입을 가집니다.\n타입은 값이 어떤 종류의 데이터인지 알려주는 이름표와 같습니다. 같은 37이라도, 숫자 37과 문자열 “37”은 전혀 다른 타입입니다.",
-                fontFamily = EditorialSerif,
-                color = ReaderText,
-                fontSize = (16 * scale).sp,
-                lineHeight = (28 * scale).sp,
-                modifier = Modifier.padding(top = 22.dp)
-            )
-            Text(
-                "파이썬에서 자주 사용하는 기본 타입은 다음과 같습니다.",
-                fontFamily = EditorialSerif,
-                color = ReaderText,
-                fontSize = (16 * scale).sp,
-                lineHeight = (27 * scale).sp,
-                modifier = Modifier.padding(top = 20.dp)
-            )
-            Column(Modifier.padding(top = 8.dp), verticalArrangement = Arrangement.spacedBy(7.dp)) {
-                TypeRow("int", "정수 (예: 1, 0, -5)", scale)
-                TypeRow("float", "실수 (예: 3.14, -0.5)", scale)
-                TypeRow("str", "문자열 (예: “안녕하세요”)", scale)
-                TypeRow("bool", "참과 거짓 (예: True, False)", scale)
+
+            when (page) {
+                0 -> ReaderPageIntro(scale)
+                1 -> ReaderPageExplain(scale)
+                else -> ReaderPageCode(scale)
             }
-            Row(
-                Modifier.fillMaxWidth().padding(top = 22.dp)
-                    .clip(RoundedCornerShape(20.dp))
-                    .background(Color(0xFF30291F))
-                    .padding(18.dp),
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                LeafMark(Modifier.size(50.dp), ReaderGold)
-                Box(Modifier.padding(horizontal = 16.dp).width(1.dp).height(72.dp).background(Color(0xFF6D5B40)))
-                Column(Modifier.weight(1f)) {
-                    Text("아주 쉽게", fontFamily = EditorialSerif, fontSize = (16 * scale).sp, color = ReaderGold, fontWeight = FontWeight.SemiBold)
-                    Text(
-                        "타입은 값의 ‘종류’를 말합니다.\n숫자, 문자, 참/거짓처럼 데이터가 어떤 형태인지 구분하는 기준이에요.",
-                        fontFamily = EditorialSerif,
-                        fontSize = (14 * scale).sp,
-                        lineHeight = (22 * scale).sp,
-                        color = ReaderText,
-                        modifier = Modifier.padding(top = 6.dp)
-                    )
-                }
-            }
-            Text(
-                "아래 예제를 실행해 보면, 서로 다른 타입의 값을 변수에 저장하는 것을 확인할 수 있습니다.",
-                fontFamily = EditorialSerif,
-                color = ReaderText,
-                fontSize = (15 * scale).sp,
-                lineHeight = (25 * scale).sp,
-                modifier = Modifier.padding(top = 20.dp)
-            )
-            Column(
-                Modifier.fillMaxWidth().padding(top = 12.dp)
-                    .clip(RoundedCornerShape(18.dp))
-                    .background(Color(0xFF191817))
-            ) {
-                Row(
-                    Modifier.fillMaxWidth().background(Color(0xFF24211D)).padding(horizontal = 15.dp, vertical = 10.dp),
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Text("Python", fontFamily = EditorialSerif, color = ReaderMuted, fontSize = 12.sp, modifier = Modifier.weight(1f))
-                    Icon(Icons.Rounded.ContentCopy, null, tint = ReaderText, modifier = Modifier.size(17.dp))
-                    Text("  복사하기", color = ReaderText, fontSize = 11.sp)
-                }
-                Column(Modifier.padding(15.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                    CodeLine("1", "age = ", "37", Color(0xFF76A9E7))
-                    CodeLine("2", "name = ", "“승원”", Color(0xFFE4B94C))
-                    CodeLine("3", "is_ready = ", "True", Color(0xFFC58AEF))
-                }
-            }
-            Text(
-                "각각의 변수는 서로 다른 타입의 값을 가지고 있습니다.",
-                fontFamily = EditorialSerif,
-                color = ReaderText,
-                fontSize = (14 * scale).sp,
-                modifier = Modifier.padding(top = 15.dp, bottom = 25.dp)
-            )
+
+            Spacer(Modifier.height(28.dp))
         }
 
         if (!focusMode) {
@@ -162,9 +87,14 @@ fun ReaderBody(
                     Text("이전", fontFamily = EditorialSerif, color = ReaderMuted, fontSize = 11.sp)
                 }
 
-                Column(Modifier.weight(1f).padding(horizontal = 18.dp), horizontalAlignment = Alignment.CenterHorizontally) {
-                    Text("${chapter + 1} / $count", fontFamily = EditorialSerif, color = ReaderMuted, fontSize = 12.sp)
-                    ProgressBar((chapter + 1) / count.toFloat(), Modifier.padding(top = 8.dp), dark = true)
+                Column(Modifier.weight(1f).padding(horizontal = 14.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+                    Text(
+                        "Chapter ${chapter + 1}/$chapterCount · Page ${page + 1}/$pageCount",
+                        fontFamily = EditorialSerif,
+                        color = ReaderMuted,
+                        fontSize = 11.sp
+                    )
+                    ProgressBar((page + 1) / pageCount.toFloat(), Modifier.padding(top = 8.dp), dark = true)
                 }
 
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
@@ -191,10 +121,136 @@ fun ReaderBody(
 }
 
 @Composable
+private fun ReaderPageIntro(scale: Float) {
+    Text(
+        "데이터에는 저마다의 형태가 있고,\n파이썬은 그 형태를 ‘타입’으로 구분합니다.",
+        fontFamily = EditorialSerif,
+        color = ReaderText,
+        fontSize = (17 * scale).sp,
+        lineHeight = (28 * scale).sp,
+        modifier = Modifier.padding(top = 12.dp)
+    )
+    Text(
+        "우리가 사용하는 모든 값은 타입을 가집니다. 타입은 값이 어떤 종류의 데이터인지 알려주는 이름표와 같습니다.",
+        fontFamily = EditorialSerif,
+        color = ReaderText,
+        fontSize = (16 * scale).sp,
+        lineHeight = (28 * scale).sp,
+        modifier = Modifier.padding(top = 22.dp)
+    )
+    Text(
+        "파이썬에서 자주 사용하는 기본 타입은 다음과 같습니다.",
+        fontFamily = EditorialSerif,
+        color = ReaderText,
+        fontSize = (16 * scale).sp,
+        lineHeight = (27 * scale).sp,
+        modifier = Modifier.padding(top = 20.dp)
+    )
+    Column(Modifier.padding(top = 10.dp), verticalArrangement = Arrangement.spacedBy(9.dp)) {
+        TypeRow("int", "정수 (예: 1, 0, -5)", scale)
+        TypeRow("float", "실수 (예: 3.14, -0.5)", scale)
+        TypeRow("str", "문자열 (예: “안녕하세요”)", scale)
+        TypeRow("bool", "참과 거짓 (예: True, False)", scale)
+    }
+}
+
+@Composable
+private fun ReaderPageExplain(scale: Float) {
+    Text(
+        "같은 37이라도 숫자 37과 문자열 “37”은 전혀 다른 타입입니다. 어떤 타입인지에 따라 가능한 연산과 처리 방법이 달라집니다.",
+        fontFamily = EditorialSerif,
+        color = ReaderText,
+        fontSize = (16 * scale).sp,
+        lineHeight = (28 * scale).sp,
+        modifier = Modifier.padding(top = 12.dp)
+    )
+    Row(
+        Modifier.fillMaxWidth().padding(top = 24.dp)
+            .clip(RoundedCornerShape(20.dp))
+            .background(Color(0xFF30291F))
+            .padding(18.dp),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        LeafMark(Modifier.size(50.dp), ReaderGold)
+        Box(Modifier.padding(horizontal = 16.dp).width(1.dp).height(72.dp).background(Color(0xFF6D5B40)))
+        Column(Modifier.weight(1f)) {
+            Text(
+                "아주 쉽게",
+                fontFamily = EditorialSerif,
+                fontSize = (16 * scale).sp,
+                color = ReaderGold,
+                fontWeight = FontWeight.SemiBold
+            )
+            Text(
+                "타입은 값의 ‘종류’를 말합니다. 숫자, 문자, 참/거짓처럼 데이터가 어떤 형태인지 구분하는 기준이에요.",
+                fontFamily = EditorialSerif,
+                fontSize = (14 * scale).sp,
+                lineHeight = (22 * scale).sp,
+                color = ReaderText,
+                modifier = Modifier.padding(top = 6.dp)
+            )
+        }
+    }
+    Text(
+        "한 장씩 넘기면서 개념 → 쉬운 설명 → 코드 예제 순서로 이어집니다.",
+        fontFamily = EditorialSerif,
+        color = ReaderMuted,
+        fontSize = (14 * scale).sp,
+        lineHeight = (23 * scale).sp,
+        modifier = Modifier.padding(top = 22.dp)
+    )
+}
+
+@Composable
+private fun ReaderPageCode(scale: Float) {
+    Text(
+        "아래 예제를 실행해 보면, 서로 다른 타입의 값을 변수에 저장하는 것을 확인할 수 있습니다.",
+        fontFamily = EditorialSerif,
+        color = ReaderText,
+        fontSize = (15 * scale).sp,
+        lineHeight = (25 * scale).sp,
+        modifier = Modifier.padding(top = 12.dp)
+    )
+    Column(
+        Modifier.fillMaxWidth().padding(top = 16.dp)
+            .clip(RoundedCornerShape(18.dp))
+            .background(Color(0xFF191817))
+    ) {
+        Row(
+            Modifier.fillMaxWidth().background(Color(0xFF24211D)).padding(horizontal = 15.dp, vertical = 10.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text("Python", fontFamily = EditorialSerif, color = ReaderMuted, fontSize = 12.sp, modifier = Modifier.weight(1f))
+            Icon(Icons.Rounded.ContentCopy, null, tint = ReaderText, modifier = Modifier.size(17.dp))
+            Text("  복사하기", color = ReaderText, fontSize = 11.sp)
+        }
+        Column(Modifier.padding(15.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+            CodeLine("1", "age = ", "37", Color(0xFF76A9E7))
+            CodeLine("2", "name = ", "“승원”", Color(0xFFE4B94C))
+            CodeLine("3", "is_ready = ", "True", Color(0xFFC58AEF))
+        }
+    }
+    Text(
+        "각각의 변수는 서로 다른 타입의 값을 가지고 있습니다. 오른쪽 끝을 누르거나 왼쪽으로 밀면 다음 장으로 넘어갑니다.",
+        fontFamily = EditorialSerif,
+        color = ReaderText,
+        fontSize = (14 * scale).sp,
+        lineHeight = (24 * scale).sp,
+        modifier = Modifier.padding(top = 18.dp)
+    )
+}
+
+@Composable
 private fun TypeRow(type:String,desc:String,scale:Float){
     Row(verticalAlignment=Alignment.CenterVertically){
         Text("•",color=ReaderGold,fontSize=(17*scale).sp,modifier=Modifier.width(22.dp))
-        Text(type,fontFamily=FontFamily.Monospace,color=ReaderText,fontSize=(14*scale).sp,modifier=Modifier.clip(RoundedCornerShape(7.dp)).background(Color(0xFF292724)).padding(horizontal=9.dp,vertical=4.dp))
+        Text(
+            type,
+            fontFamily=FontFamily.Monospace,
+            color=ReaderText,
+            fontSize=(14*scale).sp,
+            modifier=Modifier.clip(RoundedCornerShape(7.dp)).background(Color(0xFF292724)).padding(horizontal=9.dp,vertical=4.dp)
+        )
         Text(desc,fontFamily=EditorialSerif,color=ReaderText,fontSize=(14*scale).sp,modifier=Modifier.padding(start=12.dp))
     }
 }
