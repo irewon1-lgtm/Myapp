@@ -46,7 +46,14 @@ fun CodingRoadmapShell() {
 
         val safeChapter = targetChapter.coerceIn(0, target.chapters.lastIndex)
         val count = pageCountFor(safeTrack, safeChapter)
-        if (count <= 0) return
+        if (count <= 0) {
+            trackIndex = safeTrack
+            chapter = safeChapter
+            page = 0
+            screen = "library"
+            scope.launch { store.setPosition(safeTrack, safeChapter, 0) }
+            return
+        }
 
         trackIndex = safeTrack
         chapter = safeChapter
@@ -69,11 +76,16 @@ fun CodingRoadmapShell() {
                 }
                 else -> {
                     val nextTrack = (trackIndex + 1 until catalog.tracks.size)
-                        .firstOrNull { catalog.tracks[it].chapters.isNotEmpty() }
+                        .firstOrNull {
+                            catalog.tracks[it].available &&
+                                catalog.tracks[it].chapters.isNotEmpty()
+                        }
                     if (nextTrack != null) {
                         trackIndex = nextTrack
                         chapter = 0
                         page = 0
+                        screen = "library"
+                        scope.launch { store.setPosition(nextTrack, 0, 0) }
                     }
                 }
             }
@@ -84,15 +96,7 @@ fun CodingRoadmapShell() {
                     chapter -= 1
                     page = pageCountFor(trackIndex, chapter).coerceAtLeast(1) - 1
                 }
-                else -> {
-                    val prevTrack = (trackIndex - 1 downTo 0)
-                        .firstOrNull { catalog.tracks[it].chapters.isNotEmpty() }
-                    if (prevTrack != null) {
-                        trackIndex = prevTrack
-                        chapter = catalog.tracks[prevTrack].chapters.lastIndex
-                        page = pageCountFor(prevTrack, chapter).coerceAtLeast(1) - 1
-                    }
-                }
+                else -> Unit
             }
         }
     }
@@ -102,14 +106,15 @@ fun CodingRoadmapShell() {
         return count > 0 && (
             page < count - 1 ||
                 chapter < track.chapters.lastIndex ||
-                (trackIndex + 1 until catalog.tracks.size).any { catalog.tracks[it].chapters.isNotEmpty() }
+                (trackIndex + 1 until catalog.tracks.size).any {
+                    catalog.tracks[it].available &&
+                        catalog.tracks[it].chapters.isNotEmpty()
+                }
             )
     }
 
     fun canMovePrev(): Boolean =
-        page > 0 ||
-            chapter > 0 ||
-            (trackIndex - 1 downTo 0).any { catalog.tracks[it].chapters.isNotEmpty() }
+        page > 0 || chapter > 0
 
     BackHandler(enabled = screen != "home") {
         screen = when (screen) {
@@ -129,25 +134,29 @@ fun CodingRoadmapShell() {
                 prefs = prefs,
                 onContinue = {
                     val ti = prefs.currentTrack.coerceIn(0, catalog.tracks.lastIndex)
-                    val target = catalog.tracks[ti]
-                    if (target.chapters.isNotEmpty()) {
+                    if (ti == 0) {
+                        val target = catalog.tracks[0]
                         openReader(
-                            ti,
+                            0,
                             prefs.currentChapter.coerceIn(0, target.chapters.lastIndex),
                             prefs.currentPage
                         )
                     } else {
-                        openReader(0, 0, 0)
+                        trackIndex = ti
+                        chapter = 0
+                        page = 0
+                        screen = "library"
                     }
                 },
                 onLibrary = {
-                    trackIndex = 0
+                    trackIndex = prefs.currentTrack.coerceIn(0, catalog.tracks.lastIndex)
                     screen = "library"
                 },
                 onTrack = { ti ->
-                    val target = catalog.tracks[ti.coerceIn(0, catalog.tracks.lastIndex)]
+                    val safe = ti.coerceIn(0, catalog.tracks.lastIndex)
+                    val target = catalog.tracks[safe]
                     if (target.available && target.chapters.isNotEmpty()) {
-                        trackIndex = ti
+                        trackIndex = safe
                         chapter = 0
                         page = 0
                         screen = "library"
@@ -161,8 +170,11 @@ fun CodingRoadmapShell() {
             "library" -> LibraryScreen(
                 track = track,
                 prefs = prefs,
+                contentReady = trackIndex == 0,
                 onBack = { screen = "home" },
-                onOpen = { openReader(trackIndex, it, 0) },
+                onOpen = { ci ->
+                    if (trackIndex == 0) openReader(0, ci, 0)
+                },
                 onHome = { screen = "home" },
                 onSaved = { screen = "saved" },
                 onSettings = { screen = "settings" }
@@ -214,7 +226,7 @@ fun CodingRoadmapShell() {
                 prefs,
                 { screen = "home" },
                 {
-                    trackIndex = 0
+                    trackIndex = prefs.currentTrack.coerceIn(0, catalog.tracks.lastIndex)
                     screen = "library"
                 },
                 { screen = "saved" },
