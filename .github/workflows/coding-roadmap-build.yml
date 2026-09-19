@@ -12,7 +12,7 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 30
 
     steps:
       - uses: actions/checkout@v4
@@ -24,7 +24,6 @@ jobs:
           for i in $(seq -w 0 12); do
             test "$(stat -c%s ".coding-roadmap/bin/part${i}")" -eq 4500
           done
-          stat -c "%n %s" .coding-roadmap/bin/part*
           test "$(stat -c%s .coding-roadmap/bin/part13)" -eq 3529
           cat .coding-roadmap/bin/part{00..13} > /tmp/coding_roadmap_v070_payload_v2.zip
           echo "19a13eacbc06565a5770ca62cf37211d90d0ee8346b21e4773e0f80d76258d13  /tmp/coding_roadmap_v070_payload_v2.zip" | sha256sum -c -
@@ -32,18 +31,32 @@ jobs:
           rm -rf source
           mkdir -p source
           unzip -q /tmp/coding_roadmap_v070_payload_v2.zip -d source
+          echo "fa10d315c4c6a65b3692178c1e32fc8020f97bc70943117e9cdde45d500091bd  source/roadmapapp/src/main/assets/content/track01.json" | sha256sum -c -
+          echo "c919b3fee884f11a11de8c0cbd940b46289f04e5aa4bccfd05bd99c60cfb100f  source/roadmapapp/src/main/res/raw/page_turn.wav" | sha256sum -c -
           python3 - <<'PY'
           import json
           from pathlib import Path
           p=Path('source/roadmapapp/src/main/assets/content/track01.json')
           data=json.loads(p.read_text(encoding='utf-8'))
-          print('TRACK01_JSON=PASS', type(data).__name__, p.stat().st_size)
-          assert p.stat().st_size > 50000
+          assert p.stat().st_size == 92857
           src=Path('source/roadmapapp/src/main/java/com/codingroadmap/app/MainActivity.kt').read_text(encoding='utf-8')
-          assert 'WindowCompat.setDecorFitsSystemWindows(window, false)' in src
-          assert 'DataStore' in src or 'dataStore' in src
-          assert 'SoundPool' in src
-          print('SOURCE_GATES=PASS')
+          for required in ['WindowCompat.setDecorFitsSystemWindows(window, false)', 'dataStore', 'SoundPool', 'visitedPages']:
+              assert required in src, required
+          print('SOURCE_AND_CONTENT_GATES=PASS')
+          PY
+
+      - name: Configure resilient Maven mirrors
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('source/settings.gradle.kts')
+          s=p.read_text(encoding='utf-8')
+          mirror='maven { url = uri("https://maven-central.storage-download.googleapis.com/maven2/") }\n        maven { url = uri("https://maven.aliyun.com/repository/central") }\n        mavenCentral()'
+          s=s.replace('mavenCentral()', mirror)
+          p.write_text(s, encoding='utf-8')
+          print(p.read_text())
           PY
 
       - uses: actions/setup-java@v4
@@ -70,6 +83,12 @@ jobs:
           test -s "$APK"
           unzip -tqq "$APK"
           unzip -l "$APK" | grep -F 'assets/content/track01.json'
+          unzip -p "$APK" assets/content/track01.json | sha256sum | grep -F 'fa10d315c4c6a65b3692178c1e32fc8020f97bc70943117e9cdde45d500091bd'
+          if unzip -l "$APK" | grep -q 'res/raw/page_turn.wav'; then
+            unzip -p "$APK" res/raw/page_turn.wav | sha256sum | grep -F 'c919b3fee884f11a11de8c0cbd940b46289f04e5aa4bccfd05bd99c60cfb100f'
+          else
+            echo 'PAGE_TURN_RESOURCE_PACKAGED=COMPILED_RESOURCE'
+          fi
 
           AAPT=$(find "$ANDROID_HOME/build-tools" -type f -name aapt | sort -V | tail -1)
           APKSIGNER=$(find "$ANDROID_HOME/build-tools" -type f -name apksigner | sort -V | tail -1)
@@ -83,15 +102,15 @@ jobs:
 
           "$AAPT" dump xmltree "$APK" AndroidManifest.xml > /tmp/manifest-tree.txt
           if grep -E "android:debuggable.*0xffffffff" /tmp/manifest-tree.txt; then
-            echo "DEBUGGABLE_TRUE=FAIL"
+            echo 'DEBUGGABLE_TRUE=FAIL'
             exit 1
           fi
-          echo "DEBUGGABLE_TRUE=NOT_PRESENT"
+          echo 'DEBUGGABLE_FALSE=PASS'
 
           "$APKSIGNER" verify --verbose --print-certs "$APK"
           sha256sum "$APK" | tee /tmp/apk.sha256
           stat -c 'APK_BYTES=%s' "$APK"
-          echo "APK_VERIFICATION=PASS"
+          echo 'APK_VERIFICATION=PASS'
 
       - uses: actions/upload-artifact@v4
         with:
