@@ -24,7 +24,7 @@ jobs:
           for i in $(seq -w 0 12); do
             test "$(stat -c%s ".coding-roadmap/bin/part${i}")" -eq 4500
           done
-          test "$(stat -c%s .coding-roadmap/bin/part13)" -eq 3531
+          stat -c "%n %s" .coding-roadmap/bin/part*\n          test "$(stat -c%s .coding-roadmap/bin/part13)" -eq 3529
           cat .coding-roadmap/bin/part{00..13} > /tmp/coding_roadmap_v070_payload_v2.zip
           echo "19a13eacbc06565a5770ca62cf37211d90d0ee8346b21e4773e0f80d76258d13  /tmp/coding_roadmap_v070_payload_v2.zip" | sha256sum -c -
           unzip -tqq /tmp/coding_roadmap_v070_payload_v2.zip
