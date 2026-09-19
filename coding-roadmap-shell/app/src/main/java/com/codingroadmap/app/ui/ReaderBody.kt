@@ -478,12 +478,13 @@ private fun FlowNodes(nodes: List<String>, scale: Float) {
             )
         }
         if (index != nodes.lastIndex) {
-            Text(
-                "↓",
-                color = ReaderGold,
-                fontSize = (17 * scale).sp,
-                modifier = Modifier.align(Alignment.CenterHorizontally)
-            )
+            Box(Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
+                Text(
+                    "↓",
+                    color = ReaderGold,
+                    fontSize = (17 * scale).sp
+                )
+            }
         }
     }
 }
