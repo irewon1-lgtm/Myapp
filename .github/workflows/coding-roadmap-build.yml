@@ -40,7 +40,7 @@ jobs:
           data=json.loads(p.read_text(encoding='utf-8'))
           assert p.stat().st_size == 92857
           src=Path('source/roadmapapp/src/main/java/com/codingroadmap/app/MainActivity.kt').read_text(encoding='utf-8')
-          for required in ['WindowCompat.setDecorFitsSystemWindows(window, false)', 'dataStore', 'SoundPool', 'visitedPages']:
+          assert len(data.get('pages', [])) == 64\n          assert len(data.get('glossary', [])) == 32\n          assert sum(bool(x.get('practiceAnswer')) for x in data['pages']) == 16\n          assert sum(bool(x.get('diagram')) for x in data['pages']) >= 8\n          for required in ['WindowCompat.setDecorFitsSystemWindows(window, false)', 'readerDataStore', 'SoundPool', 'visitedPages']:
               assert required in src, required
           print('SOURCE_AND_CONTENT_GATES=PASS')
           PY
