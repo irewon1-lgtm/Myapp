@@ -108,6 +108,23 @@ fun ReaderBody(
                 )
             }
 
+            if (pageData.glossary.isNotEmpty()) {
+                Column(
+                    Modifier.fillMaxWidth().padding(top = 18.dp),
+                    verticalArrangement = Arrangement.spacedBy(12.dp)
+                ) {
+                    pageData.glossary.forEach { entry ->
+                        GlossaryCard(
+                            term = entry.term,
+                            description = entry.description,
+                            usage = entry.usage,
+                            example = entry.example,
+                            scale = scale
+                        )
+                    }
+                }
+            }
+
             pageData.visual?.let {
                 ConceptDiagram(it, scale, Modifier.padding(top = 22.dp))
             }
@@ -210,6 +227,22 @@ fun ReaderBody(
                 }
             }
 
+            if (pageData.extras.isNotEmpty()) {
+                Column(
+                    Modifier.fillMaxWidth().padding(top = 18.dp),
+                    verticalArrangement = Arrangement.spacedBy(12.dp)
+                ) {
+                    pageData.extras.forEach { section ->
+                        InfoCard(
+                            label = section.title,
+                            text = section.body,
+                            accent = ReaderGold,
+                            scale = scale
+                        )
+                    }
+                }
+            }
+
             Spacer(Modifier.height(28.dp))
         }
 
@@ -275,6 +308,68 @@ fun ReaderBody(
                 }
             }
         }
+    }
+}
+
+@Composable
+private fun GlossaryCard(
+    term: String,
+    description: String,
+    usage: String,
+    example: String,
+    scale: Float
+) {
+    Column(
+        Modifier.fillMaxWidth()
+            .clip(RoundedCornerShape(18.dp))
+            .background(Color(0xFF211D17))
+            .padding(16.dp)
+    ) {
+        Text(
+            term,
+            fontFamily = EditorialSerif,
+            color = ReaderGold,
+            fontWeight = FontWeight.SemiBold,
+            fontSize = (17 * scale).sp
+        )
+        Text(
+            description,
+            fontFamily = EditorialSerif,
+            color = ReaderText,
+            fontSize = (14 * scale).sp,
+            lineHeight = (22 * scale).sp,
+            modifier = Modifier.padding(top = 8.dp)
+        )
+        Text(
+            "어디서 쓰나요",
+            color = Color(0xFF9BB58B),
+            fontSize = (11 * scale).sp,
+            fontWeight = FontWeight.Bold,
+            modifier = Modifier.padding(top = 10.dp)
+        )
+        Text(
+            usage,
+            fontFamily = EditorialSerif,
+            color = ReaderText,
+            fontSize = (13 * scale).sp,
+            lineHeight = (20 * scale).sp,
+            modifier = Modifier.padding(top = 4.dp)
+        )
+        Text(
+            "간단한 예시",
+            color = Color(0xFF93B7D7),
+            fontSize = (11 * scale).sp,
+            fontWeight = FontWeight.Bold,
+            modifier = Modifier.padding(top = 9.dp)
+        )
+        Text(
+            example,
+            fontFamily = FontFamily.Monospace,
+            color = ReaderText,
+            fontSize = (12 * scale).sp,
+            lineHeight = (19 * scale).sp,
+            modifier = Modifier.padding(top = 4.dp)
+        )
     }
 }
 
