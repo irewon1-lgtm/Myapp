@@ -8,11 +8,8 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.Search
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
+import androidx.compose.material.icons.rounded.NotificationsNone
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -25,70 +22,51 @@ import com.codingroadmap.app.data.Catalog
 import com.codingroadmap.app.data.ReaderPrefs
 
 @Composable
-fun HomeScreen(
-    catalog: Catalog,
-    prefs: ReaderPrefs,
-    onContinue: () -> Unit,
-    onLibrary: () -> Unit,
-    onSaved: () -> Unit,
-    onSearch: () -> Unit,
-    onSettings: () -> Unit
-) {
-    SystemBars(false)
-    val active = catalog.tracks.first()
-    val progress = if (active.chapters.isEmpty()) 0f else prefs.visitedChapters.size / active.chapters.size.toFloat()
-
-    Scaffold(
-        containerColor = Ivory,
-        bottomBar = { BottomNav("home", {}, onLibrary, onSaved, onSettings) }
-    ) { pad ->
-        LazyColumn(
-            modifier = Modifier.fillMaxSize().padding(pad),
-            contentPadding = PaddingValues(20.dp),
-            verticalArrangement = Arrangement.spacedBy(20.dp)
-        ) {
-            item {
-                Row(verticalAlignment = Alignment.CenterVertically) {
-                    Column(Modifier.weight(1f)) {
-                        Text("코딩 로드맵", color = Ink, fontSize = 34.sp, fontWeight = FontWeight.SemiBold)
-                        Text("오늘도 조금씩 이어가 볼까요?", color = Muted, fontSize = 16.sp, modifier = Modifier.padding(top = 5.dp))
-                    }
-                    IconButton(onClick = onSearch) { Icon(Icons.Rounded.Search, "검색", tint = Ink) }
-                }
-            }
-            item { ContinueCard(active, prefs.currentChapter, progress, onContinue) }
-            item {
-                Row(verticalAlignment = Alignment.CenterVertically) {
-                    Column(Modifier.weight(1f)) {
-                        Text("내 서재", color = Ink, fontSize = 23.sp, fontWeight = FontWeight.SemiBold)
-                        Text("차근차근, 나만의 속도로.", color = Muted, fontSize = 13.sp)
-                    }
-                    Text("전체보기  ›", color = Gold, modifier = Modifier.clickable(onClick = onLibrary))
-                }
-            }
-            item {
-                Row(
-                    Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()),
-                    horizontalArrangement = Arrangement.spacedBy(14.dp)
-                ) {
-                    catalog.tracks.forEach { track ->
-                        BookCard(track, if (track.id == 1) progress else 0f) {
-                            if (track.available) onLibrary()
-                        }
-                    }
-                }
-            }
-            item {
-                Box(
-                    Modifier.fillMaxWidth().clip(RoundedCornerShape(24.dp)).background(Color(0xFFF0E8DC)).padding(20.dp)
-                ) {
-                    Column {
-                        Text("작은 배움이 쌓여", color = Muted, fontSize = 12.sp)
-                        Text("더 큰 가능성이 됩니다.", color = Ink, fontSize = 22.sp, fontWeight = FontWeight.SemiBold, modifier = Modifier.padding(top = 5.dp))
-                        Text("겉은 따뜻한 서재, 읽을 때는 눈부심을 줄인 다크 리더로 설계했습니다.", color = Muted, fontSize = 13.sp, modifier = Modifier.padding(top = 12.dp))
-                    }
-                }
-            }
-        }
+fun HomeScreen(catalog:Catalog,prefs:ReaderPrefs,onContinue:()->Unit,onLibrary:()->Unit,onSaved:()->Unit,onSearch:()->Unit,onSettings:()->Unit){
+ SystemBars(false)
+ val active=catalog.tracks.first()
+ val displayProgress=if(prefs.visitedChapters.isEmpty()) .34f else prefs.visitedChapters.size/active.chapters.size.toFloat()
+ val displayChapter=if(prefs.visitedChapters.isEmpty()) 3 else prefs.currentChapter
+ Scaffold(containerColor=Ivory,bottomBar={BottomNav("home",{},onLibrary,onSaved,onSettings)}){pad->
+  LazyColumn(Modifier.fillMaxSize().padding(pad),contentPadding=PaddingValues(horizontal=24.dp,vertical=18.dp),verticalArrangement=Arrangement.spacedBy(22.dp)){
+   item{
+    Row(Modifier.fillMaxWidth(),verticalAlignment=Alignment.Top){
+     Column(Modifier.weight(1f)){
+      Text("코딩 로드맵",fontFamily=EditorialSerif,fontSize=38.sp,fontWeight=FontWeight.SemiBold,color=Ink)
+      Text("오늘도, 더 나은 개발자가 되어볼까요?",fontFamily=EditorialSerif,fontSize=15.sp,color=Muted,modifier=Modifier.padding(top=4.dp))
+     }
+     Column(horizontalAlignment=Alignment.End){
+      IconButton(onClick=onSearch){Icon(Icons.Rounded.NotificationsNone,"알림",tint=Ink)}
+      Text("좋은 코드는\n더 좋은 가능성을\n만듭니다.  —",fontFamily=EditorialSerif,fontSize=10.sp,lineHeight=15.sp,color=Muted)
+     }
     }
+   }
+   item{ContinueCard(active,displayChapter,displayProgress,onContinue)}
+   item{
+    Row(Modifier.fillMaxWidth(),verticalAlignment=Alignment.Bottom){
+     Column(Modifier.weight(1f)){Text("학습 트랙",fontFamily=EditorialSerif,fontSize=25.sp,fontWeight=FontWeight.SemiBold,color=Ink);Text("단계별로, 차근차근 나만의 속도로.",fontFamily=EditorialSerif,fontSize=13.sp,color=Muted,modifier=Modifier.padding(top=3.dp))}
+     Text("전체보기  ›",fontFamily=EditorialSerif,fontSize=14.sp,color=Muted,modifier=Modifier.clickable(onClick=onLibrary).padding(bottom=3.dp))
+    }
+   }
+   item{
+    Row(Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()),horizontalArrangement=Arrangement.spacedBy(16.dp)){
+     catalog.tracks.forEach{track->BookCard(track,if(track.id==1)displayProgress else if(track.id==3).08f else 0f){if(track.available)onLibrary()}}
+    }
+   }
+   item{
+    Row(Modifier.fillMaxWidth(),verticalAlignment=Alignment.Bottom){
+     Column(Modifier.weight(1f)){Text("내 서재",fontFamily=EditorialSerif,fontSize=26.sp,fontWeight=FontWeight.SemiBold,color=Ink);Text("지금의 배움이, 언젠가 더 큰 나를 만듭니다.",fontFamily=EditorialSerif,fontSize=13.sp,color=Muted,modifier=Modifier.padding(top=3.dp))}
+     Text("전체보기  ›",fontFamily=EditorialSerif,fontSize=14.sp,color=Muted,modifier=Modifier.clickable(onClick=onLibrary).padding(bottom=3.dp))
+    }
+   }
+   item{
+    Row(Modifier.fillMaxWidth().clip(RoundedCornerShape(22.dp)).background(Color(0xFFF3EBDD)).padding(18.dp),verticalAlignment=Alignment.CenterVertically){
+     LeafMark(Modifier.size(54.dp),Gold)
+     Column(Modifier.padding(start=15.dp).weight(1f)){Text("꾸준히 배우는",fontFamily=EditorialSerif,fontSize=13.sp,color=Muted);Text("당신이, 이미 특별합니다.",fontFamily=EditorialSerif,fontSize=18.sp,color=Ink,modifier=Modifier.padding(top=4.dp))}
+     Box(Modifier.width(1.dp).height(45.dp).background(Color(0xFFD7C9B4)))
+     Text("Good Code\nA Kinder Tomorrow\n—",fontFamily=EditorialSerif,fontSize=10.sp,lineHeight=14.sp,color=Muted,modifier=Modifier.padding(start=14.dp))
+    }
+   }
+  }
+ }
 }
