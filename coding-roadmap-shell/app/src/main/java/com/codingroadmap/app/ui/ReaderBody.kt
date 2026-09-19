@@ -52,15 +52,31 @@ fun ReaderBody(
         configuration.screenHeightDp >= 900 &&
         configuration.orientation == Configuration.ORIENTATION_PORTRAIT
 
-    // Galaxy Tab S10 FE 10.9" portrait: keep the same readable size,
-    // but tighten line/section rhythm enough that a normal page fits without scrolling.
-    val readerScale = scale * if (tabS10FePortraitProfile) 0.94f else 1f
+    // Galaxy Tab S10 FE 10.9" portrait: every authored heading is now a two-page pair.
+    // The second/depth page is slightly denser so all inline explanations remain on-page
+    // instead of being folded into a popup.
+    val depthPage = pageData.kind == "depth"
+    val readerScale = scale * when {
+        tabS10FePortraitProfile && depthPage -> 0.92f
+        tabS10FePortraitProfile -> 0.94f
+        else -> 1f
+    }
     val horizontalPadding = if (tabS10FePortraitProfile) 22.dp else 27.dp
-    val verticalPadding = if (tabS10FePortraitProfile) 10.dp else 18.dp
-    val firstParagraphGap = if (tabS10FePortraitProfile) 12.dp else 16.dp
-    val paragraphGap = if (tabS10FePortraitProfile) 12.dp else 18.dp
-    val sectionGap = if (tabS10FePortraitProfile) 14.dp else 20.dp
-    val bottomGap = if (tabS10FePortraitProfile) 18.dp else 28.dp
+    val verticalPadding = if (tabS10FePortraitProfile) {
+        if (depthPage) 8.dp else 10.dp
+    } else 18.dp
+    val firstParagraphGap = if (tabS10FePortraitProfile) {
+        if (depthPage) 9.dp else 12.dp
+    } else 16.dp
+    val paragraphGap = if (tabS10FePortraitProfile) {
+        if (depthPage) 9.dp else 12.dp
+    } else 18.dp
+    val sectionGap = if (tabS10FePortraitProfile) {
+        if (depthPage) 10.dp else 14.dp
+    } else 20.dp
+    val bottomGap = if (tabS10FePortraitProfile) {
+        if (depthPage) 12.dp else 18.dp
+    } else 28.dp
 
     val scrollState = rememberScrollState()
 
