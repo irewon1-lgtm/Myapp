@@ -23,6 +23,10 @@ fun CodingRoadmapShell() {
     val prefs by store.state.collectAsState(initial = ReaderPrefs())
     val scope = rememberCoroutineScope()
 
+    LaunchedEffect(Unit) {
+        store.migrateToTwoPageModel()
+    }
+
     var screen by rememberSaveable { mutableStateOf("home") }
     var trackIndex by rememberSaveable { mutableIntStateOf(0) }
     var chapter by rememberSaveable { mutableIntStateOf(0) }
