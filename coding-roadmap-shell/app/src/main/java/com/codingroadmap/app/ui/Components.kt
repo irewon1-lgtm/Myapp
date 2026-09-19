@@ -20,9 +20,9 @@ import androidx.core.view.WindowInsetsControllerCompat
 @Composable fun BottomNav(selected:String,onHome:()->Unit,onLibrary:()->Unit,onSaved:()->Unit,onSettings:()->Unit){
  NavigationBar(containerColor=IvoryCard, tonalElevation=0.dp, windowInsets=WindowInsets(0,0,0,0), modifier=Modifier.height(72.dp)){
   val c=NavigationBarItemDefaults.colors(selectedIconColor=Gold,selectedTextColor=Gold,indicatorColor=Color.Transparent,unselectedIconColor=Muted,unselectedTextColor=Muted)
-  NavigationBarItem(selected=="home",onHome,{Icon(Icons.Rounded.Home,null)},{Text("홈",fontSize=11.sp)},colors=c)
-  NavigationBarItem(selected=="library",onLibrary,{Icon(Icons.Rounded.LibraryBooks,null)},{Text("서재",fontSize=11.sp)},colors=c)
-  NavigationBarItem(selected=="saved",onSaved,{Icon(Icons.Rounded.BookmarkBorder,null)},{Text("북마크",fontSize=11.sp)},colors=c)
-  NavigationBarItem(selected=="settings",onSettings,{Icon(Icons.Rounded.Settings,null)},{Text("설정",fontSize=11.sp)},colors=c)
+  NavigationBarItem(selected=selected=="home",onClick=onHome,icon={Icon(Icons.Rounded.Home,null)},label={Text("홈",fontSize=11.sp)},colors=c)
+  NavigationBarItem(selected=selected=="library",onClick=onLibrary,icon={Icon(Icons.Rounded.LibraryBooks,null)},label={Text("서재",fontSize=11.sp)},colors=c)
+  NavigationBarItem(selected=selected=="saved",onClick=onSaved,icon={Icon(Icons.Rounded.BookmarkBorder,null)},label={Text("북마크",fontSize=11.sp)},colors=c)
+  NavigationBarItem(selected=selected=="settings",onClick=onSettings,icon={Icon(Icons.Rounded.Settings,null)},label={Text("설정",fontSize=11.sp)},colors=c)
  }
 }
