@@ -1,0 +1,10 @@
+{
+  "schema":"coding-roadmap-catalog-v1",
+  "tracks":[
+    {"id":1,"title":"코딩의 시작","subtitle":"기초 개념을 읽고 익히는 첫 트랙","available":true,
+     "chapters":["코딩이란?","실행 흐름","변수","타입","입력과 형변환","오류와 디버깅","연산","미니 프로젝트"]},
+    {"id":2,"title":"Python 기초","subtitle":"다음 콘텐츠 슬롯","available":false,"chapters":[]},
+    {"id":3,"title":"SQL 기초","subtitle":"다음 콘텐츠 슬롯","available":false,"chapters":[]},
+    {"id":4,"title":"AI와 협업","subtitle":"다음 콘텐츠 슬롯","available":false,"chapters":[]}
+  ]
+}
