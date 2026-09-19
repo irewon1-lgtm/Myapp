@@ -1,0 +1,135 @@
+name: Coding Roadmap Track 1 Height Balance
+
+on:
+  push:
+    branches: [coding-roadmap-track1-height-v0.8.3]
+    paths:
+      - 'coding-roadmap-shell/**'
+      - '.github/workflows/coding-roadmap-track1-height.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.11.1'
+
+      - name: Verify page height against reference
+        working-directory: coding-roadmap-shell
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json, math
+          from pathlib import Path
+
+          root = Path('app/src/main/assets/content/track01')
+
+          def tlines(s, w=34):
+              return math.ceil(len(s or '') / w)
+
+          def visual_units(p):
+              u = 6
+              for s in p.get('paragraphs', []):
+                  u += tlines(s) + 1
+              if p.get('keywords'):
+                  u += 2
+              for g in p.get('glossary', []):
+                  u += tlines(g['term'],28)+tlines(g['description'])+tlines(g['usage'])+tlines(g['example'])+5
+              if p.get('visual'):
+                  u += 10
+              if p.get('bullets'):
+                  u += tlines(' '.join(p['bullets'])) + 3
+              if p.get('calloutTitle'):
+                  u += tlines((p.get('calloutTitle') or '')+' '+(p.get('calloutBody') or '')) + 3
+              if p.get('code'):
+                  u += len(p['code'].splitlines()) + tlines(p.get('codeNote') or '') + 5
+              if p.get('practicePrompt'):
+                  u += tlines(p['practicePrompt']) + 3
+              if p.get('question'):
+                  u += tlines(p['question']) + 3
+              if p.get('answer'):
+                  u += 2
+              for e in p.get('extras', []):
+                  u += tlines((e.get('title') or '')+' '+(e.get('body') or '')) + 3
+              return u
+
+          pages=[]
+          ref=None
+          for ch in range(1,9):
+              data=json.loads((root/f'ch{ch:02d}.json').read_text())
+              assert len(data['pages']) == 8
+              for i,p in enumerate(data['pages'],1):
+                  u=visual_units(p)
+                  pages.append((ch,i,p['kind'],p['title'],u))
+                  if ch==2 and p['kind']=='summary':
+                      ref=u
+
+          assert ref is not None
+          vals=[p[4] for p in pages]
+          assert max(vals) <= ref, (max(vals), ref)
+          assert max(vals)-min(vals) <= 3, (min(vals), max(vals))
+          assert min(vals) >= ref-3
+          print(f'PAGE_HEIGHT_GATE=PASS reference={ref} range={min(vals)}..{max(vals)} spread={max(vals)-min(vals)}')
+          PY
+
+          grep -R -n 'GlossaryEntry' app/src/main/java/com/codingroadmap/app
+          grep -R -n '어디서 쓰나요' app/src/main/java/com/codingroadmap/app/ui
+          grep -R -n 'TrackDescriptionPanel' app/src/main/java/com/codingroadmap/app/ui
+          grep -R -n 'store.setPosition(nextTrack' app/src/main/java/com/codingroadmap/app/ui
+          grep -R -n 'navigationBarsPadding' app/src/main/java/com/codingroadmap/app/ui
+          grep -n 'targetSdk = 36' app/build.gradle.kts
+          grep -n 'versionName = "0.8.3"' app/build.gradle.kts
+          grep -n 'isDebuggable = false' app/build.gradle.kts
+
+      - name: Build release APK
+        working-directory: coding-roadmap-shell
+        run: gradle --no-daemon :app:assembleRelease --stacktrace
+
+      - name: Android lint
+        working-directory: coding-roadmap-shell
+        run: gradle --no-daemon :app:lintRelease --stacktrace
+
+      - name: Verify APK
+        working-directory: coding-roadmap-shell
+        shell: bash
+        run: |
+          set -euo pipefail
+          APK=app/build/outputs/apk/release/app-release.apk
+          test -s "$APK"
+          unzip -t "$APK" >/dev/null
+          for i in 01 02 03 04 05 06 07 08; do
+            unzip -l "$APK" | grep "assets/content/track01/ch$i.json"
+          done
+          APKSIGNER=$(find "$ANDROID_HOME/build-tools" -name apksigner -type f | sort -V | tail -1)
+          "$APKSIGNER" verify --verbose "$APK"
+          AAPT=$(find "$ANDROID_HOME/build-tools" -name aapt -type f | sort -V | tail -1)
+          "$AAPT" dump badging "$APK" | tee /tmp/badging.txt
+          grep "targetSdkVersion:'36'" /tmp/badging.txt
+          grep "versionName='0.8.3'" /tmp/badging.txt
+          mkdir -p dist
+          cp "$APK" dist/CodingRoadmapFresh_v0.8.3_TRACK1_HEIGHT_BALANCED.apk
+          sha256sum dist/CodingRoadmapFresh_v0.8.3_TRACK1_HEIGHT_BALANCED.apk | tee dist/SHA256.txt
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: CodingRoadmapFresh_v0.8.3_TRACK1_HEIGHT_BALANCED
+          path: |
+            coding-roadmap-shell/dist/CodingRoadmapFresh_v0.8.3_TRACK1_HEIGHT_BALANCED.apk
+            coding-roadmap-shell/dist/SHA256.txt
+            coding-roadmap-shell/app/build/reports/lint-results-release.html
+          if-no-files-found: error
+          retention-days: 7
