@@ -23,6 +23,7 @@ class ReaderStore(private val context: Context) {
         val bookmarks = stringSetPreferencesKey("bookmarks")
         val notes = stringPreferencesKey("notes_json")
         val textScale = floatPreferencesKey("text_scale")
+        val pageModelVersion = intPreferencesKey("page_model_version")
     }
 
     val state: Flow<ReaderPrefs> = context.roadmapDataStore.data.map { p ->
@@ -34,8 +35,18 @@ class ReaderStore(private val context: Context) {
             visitedRefs = p[Keys.visitedRefs] ?: emptySet(),
             bookmarks = (p[Keys.bookmarks] ?: emptySet()).mapNotNull { it.toIntOrNull() }.toSet(),
             notes = decodeNotes(p[Keys.notes]),
-            textScale = (p[Keys.textScale] ?: 1f).coerceIn(.9f, 1.35f)
+            textScale = (p[Keys.textScale] ?: 1f).coerceIn(.9f, 1.35f),
+            pageModelVersion = p[Keys.pageModelVersion] ?: 1
         )
+    }
+
+    suspend fun migrateToTwoPageModel() = context.roadmapDataStore.edit { p ->
+        val version = p[Keys.pageModelVersion] ?: 1
+        if (version < 2) {
+            val oldPage = (p[Keys.currentPage] ?: 0).coerceAtLeast(0)
+            p[Keys.currentPage] = oldPage * 2
+            p[Keys.pageModelVersion] = 2
+        }
     }
 
     suspend fun visit(track: Int, chapter: Int, page: Int) = context.roadmapDataStore.edit { p ->
