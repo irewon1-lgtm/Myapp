@@ -27,7 +27,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.codingroadmap.app.data.ContentPage
-import com.codingroadmap.app.data.ExtraSection
 
 @Composable
 fun ReaderBody(
@@ -46,7 +45,6 @@ fun ReaderBody(
     onNext: () -> Unit
 ) {
     var showAnswer by remember(chapter, page) { mutableStateOf(false) }
-    var showMoreExtras by remember(chapter, page) { mutableStateOf(false) }
 
     val configuration = LocalConfiguration.current
     val tabS10FePortraitProfile =
@@ -65,49 +63,9 @@ fun ReaderBody(
     val bottomGap = if (tabS10FePortraitProfile) 18.dp else 28.dp
 
     val scrollState = rememberScrollState()
-    val extrasTotal = pageData.extras.size
-
-    var visibleExtras by remember(chapter, page, extrasTotal, scale, tabS10FePortraitProfile) {
-        mutableIntStateOf(
-            if (tabS10FePortraitProfile) extrasTotal
-            else pageData.visibleExtras.coerceIn(0, extrasTotal)
-        )
-    }
-    var overflowCeiling by remember(chapter, page, extrasTotal, scale, tabS10FePortraitProfile) {
-        mutableIntStateOf(extrasTotal + 1)
-    }
 
     LaunchedEffect(chapter, page) {
         scrollState.scrollTo(0)
-    }
-
-    // Actual-device auto-fit.
-    // On the Tab S10 FE we first try to show every optional explanation.
-    // If the real measured layout overflows, only optional extras are folded away,
-    // one by one, until the page fits. If there is room, they stay visible.
-    LaunchedEffect(
-        scrollState.maxValue,
-        visibleExtras,
-        showAnswer,
-        extrasTotal,
-        tabS10FePortraitProfile,
-        scale
-    ) {
-        if (!showAnswer) {
-            val overflowing = scrollState.maxValue > 8
-            when {
-                overflowing && visibleExtras > 0 -> {
-                    overflowCeiling = minOf(overflowCeiling, visibleExtras)
-                    visibleExtras -= 1
-                    scrollState.scrollTo(0)
-                }
-                !overflowing &&
-                    visibleExtras < extrasTotal &&
-                    visibleExtras + 1 < overflowCeiling -> {
-                    visibleExtras += 1
-                }
-            }
-        }
     }
 
     Column(modifier) {
@@ -312,38 +270,18 @@ fun ReaderBody(
             }
 
             if (pageData.extras.isNotEmpty()) {
-                val visibleCount = visibleExtras.coerceIn(0, pageData.extras.size)
-                val visibleSections = pageData.extras.take(visibleCount)
-                val hiddenSections = pageData.extras.drop(visibleCount)
-
-                if (visibleSections.isNotEmpty()) {
-                    Column(
-                        Modifier.fillMaxWidth().padding(top = sectionGap),
-                        verticalArrangement = Arrangement.spacedBy(
-                            if (tabS10FePortraitProfile) 9.dp else 12.dp
-                        )
-                    ) {
-                        visibleSections.forEach { section ->
-                            InfoCard(
-                                label = section.title,
-                                text = section.body,
-                                accent = ReaderGold,
-                                scale = readerScale
-                            )
-                        }
-                    }
-                }
-
-                if (hiddenSections.isNotEmpty()) {
-                    TextButton(
-                        onClick = { showMoreExtras = true },
-                        modifier = Modifier.padding(top = if (tabS10FePortraitProfile) 5.dp else 8.dp)
-                    ) {
-                        Text(
-                            "추가 설명 ${hiddenSections.size}개 보기  ›",
-                            color = ReaderGold,
-                            fontFamily = EditorialSerif,
-                            fontSize = (13 * readerScale).sp
+                Column(
+                    Modifier.fillMaxWidth().padding(top = sectionGap),
+                    verticalArrangement = Arrangement.spacedBy(
+                        if (tabS10FePortraitProfile) 9.dp else 12.dp
+                    )
+                ) {
+                    pageData.extras.forEach { section ->
+                        InfoCard(
+                            label = section.title,
+                            text = section.body,
+                            accent = ReaderGold,
+                            scale = readerScale
                         )
                     }
                 }
@@ -448,71 +386,6 @@ fun ReaderBody(
         }
     }
 
-    if (showMoreExtras) {
-        val visibleCount = visibleExtras.coerceIn(0, pageData.extras.size)
-        MoreExtrasDialog(
-            sections = pageData.extras.drop(visibleCount),
-            scale = readerScale,
-            onDismiss = { showMoreExtras = false }
-        )
-    }
-}
-
-@Composable
-private fun MoreExtrasDialog(
-    sections: List<ExtraSection>,
-    scale: Float,
-    onDismiss: () -> Unit
-) {
-    AlertDialog(
-        onDismissRequest = onDismiss,
-        title = {
-            Text(
-                "추가 설명",
-                fontFamily = EditorialSerif,
-                color = Ink
-            )
-        },
-        text = {
-            Column(
-                Modifier
-                    .fillMaxWidth()
-                    .heightIn(max = 520.dp)
-                    .verticalScroll(rememberScrollState()),
-                verticalArrangement = Arrangement.spacedBy(12.dp)
-            ) {
-                sections.forEach { section ->
-                    Column(
-                        Modifier
-                            .fillMaxWidth()
-                            .clip(RoundedCornerShape(16.dp))
-                            .background(Color(0xFFF3ECE2))
-                            .padding(14.dp)
-                    ) {
-                        Text(
-                            section.title,
-                            color = Gold,
-                            fontWeight = FontWeight.Bold,
-                            fontSize = (12 * scale).sp
-                        )
-                        Text(
-                            section.body,
-                            fontFamily = EditorialSerif,
-                            color = Ink,
-                            fontSize = (13 * scale).sp,
-                            lineHeight = (20 * scale).sp,
-                            modifier = Modifier.padding(top = 6.dp)
-                        )
-                    }
-                }
-            }
-        },
-        confirmButton = {
-            TextButton(onClick = onDismiss) {
-                Text("닫기", color = Gold)
-            }
-        }
-    )
 }
 
 @Composable
