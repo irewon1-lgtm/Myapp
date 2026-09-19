@@ -16,51 +16,81 @@ import com.codingroadmap.app.data.TrackMeta
 
 @Composable
 fun LibraryScreen(
-    track:TrackMeta,
-    prefs:ReaderPrefs,
-    onBack:()->Unit,
-    onOpen:(Int)->Unit,
-    onHome:()->Unit,
-    onSaved:()->Unit,
-    onSettings:()->Unit
-){
+    track: TrackMeta,
+    prefs: ReaderPrefs,
+    onBack: () -> Unit,
+    onOpen: (Int) -> Unit,
+    onHome: () -> Unit,
+    onSaved: () -> Unit,
+    onSettings: () -> Unit
+) {
     SystemBars(false)
-    val trackIndex=(track.id-1).coerceAtLeast(0)
-    val visitedForTrack=prefs.visitedRefs.count{it.startsWith("$trackIndex:")}
-    val demo=prefs.visitedRefs.isEmpty() && track.id==1
-    val current=if(prefs.currentTrack==trackIndex) prefs.currentChapter.coerceIn(0,track.chapters.lastIndex) else 0
-    val progress=if(track.chapters.isEmpty())0f else visitedForTrack/track.chapters.size.toFloat()
+    val trackIndex = (track.id - 1).coerceAtLeast(0)
+    val visitedForTrack = prefs.visitedRefs.count { it.startsWith("$trackIndex:") }
+    val current = if (prefs.currentTrack == trackIndex && track.chapters.isNotEmpty()) {
+        prefs.currentChapter.coerceIn(0, track.chapters.lastIndex)
+    } else 0
+    val progress = if (track.chapters.isEmpty()) 0f
+        else visitedForTrack / track.chapters.size.toFloat()
 
-    Scaffold(containerColor=Ivory,bottomBar={BottomNav("library",onHome,{},onSaved,onSettings)}){pad->
+    Scaffold(
+        containerColor = Ivory,
+        bottomBar = { BottomNav("library", onHome, {}, onSaved, onSettings) }
+    ) { pad ->
         LazyColumn(
             Modifier.fillMaxSize().padding(pad),
-            contentPadding=PaddingValues(horizontal=22.dp,vertical=14.dp),
-            verticalArrangement=Arrangement.spacedBy(10.dp)
-        ){
-            item{
-                Row(verticalAlignment=Alignment.CenterVertically){
-                    IconButton(onClick=onBack){
-                        Icon(Icons.AutoMirrored.Rounded.ArrowBack,"뒤로",tint=Ink)
+            contentPadding = PaddingValues(horizontal = 22.dp, vertical = 14.dp),
+            verticalArrangement = Arrangement.spacedBy(10.dp)
+        ) {
+            item {
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    IconButton(onClick = onBack) {
+                        Icon(Icons.AutoMirrored.Rounded.ArrowBack, "뒤로", tint = Ink)
                     }
                     Text(
-                        "TRACK ${track.id.toString().padStart(2,'0')} · ${track.title}",
-                        fontFamily=EditorialSerif,
-                        fontSize=25.sp,
-                        fontWeight=FontWeight.SemiBold,
-                        color=Ink
+                        "TRACK ${track.id.toString().padStart(2, '0')} · ${track.title}",
+                        fontFamily = EditorialSerif,
+                        fontSize = 25.sp,
+                        fontWeight = FontWeight.SemiBold,
+                        color = Ink
                     )
                 }
             }
-            item{TrackSummary(track,progress){onOpen(current)}}
-            item{
-                Row(Modifier.fillMaxWidth().padding(top=10.dp,bottom=4.dp),verticalAlignment=Alignment.Bottom){
-                    Text("목차",fontFamily=EditorialSerif,fontSize=27.sp,fontWeight=FontWeight.SemiBold,color=Ink,modifier=Modifier.weight(1f))
-                    Text("작은 배움이 모여,\n큰 변화를 만듭니다.",fontFamily=EditorialSerif,fontSize=11.sp,lineHeight=15.sp,color=Muted)
+
+            item { TrackSummary(track, progress) { onOpen(current) } }
+
+            item {
+                Row(
+                    Modifier.fillMaxWidth().padding(top = 10.dp, bottom = 4.dp),
+                    verticalAlignment = Alignment.Bottom
+                ) {
+                    Text(
+                        "목차",
+                        fontFamily = EditorialSerif,
+                        fontSize = 27.sp,
+                        fontWeight = FontWeight.SemiBold,
+                        color = Ink,
+                        modifier = Modifier.weight(1f)
+                    )
+                    Text(
+                        "8개 챕터 · 48페이지\n개념부터 실습까지",
+                        fontFamily = EditorialSerif,
+                        fontSize = 11.sp,
+                        lineHeight = 15.sp,
+                        color = Muted
+                    )
                 }
             }
-            items(track.chapters.size){index->
-                val visited="${trackIndex}:$index" in prefs.visitedRefs
-                ChapterRow(index,track.chapters[index],visited=visited,current=index==current,onClick={onOpen(index)})
+
+            items(track.chapters.size) { index ->
+                val visited = "${trackIndex}:$index" in prefs.visitedRefs
+                ChapterRow(
+                    index,
+                    track.chapters[index],
+                    visited = visited,
+                    current = index == current && visited,
+                    onClick = { onOpen(index) }
+                )
             }
         }
     }
