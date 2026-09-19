@@ -11,8 +11,10 @@ data class TrackMeta(
 data class Catalog(val tracks: List<TrackMeta>)
 
 data class ReaderPrefs(
+    val currentTrack: Int = 0,
     val currentChapter: Int = 0,
     val visitedChapters: Set<Int> = emptySet(),
+    val visitedRefs: Set<String> = emptySet(),
     val bookmarks: Set<Int> = emptySet(),
     val notes: Map<Int, String> = emptyMap(),
     val textScale: Float = 1f
