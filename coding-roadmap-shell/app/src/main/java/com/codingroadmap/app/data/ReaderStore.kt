@@ -17,6 +17,7 @@ class ReaderStore(private val context: Context) {
     private object Keys {
         val currentTrack = intPreferencesKey("current_track")
         val current = intPreferencesKey("current_chapter")
+        val currentPage = intPreferencesKey("current_page")
         val visited = stringSetPreferencesKey("visited_chapters")
         val visitedRefs = stringSetPreferencesKey("visited_refs")
         val bookmarks = stringSetPreferencesKey("bookmarks")
@@ -28,6 +29,7 @@ class ReaderStore(private val context: Context) {
         ReaderPrefs(
             currentTrack = p[Keys.currentTrack] ?: 0,
             currentChapter = p[Keys.current] ?: 0,
+            currentPage = p[Keys.currentPage] ?: 0,
             visitedChapters = (p[Keys.visited] ?: emptySet()).mapNotNull { it.toIntOrNull() }.toSet(),
             visitedRefs = p[Keys.visitedRefs] ?: emptySet(),
             bookmarks = (p[Keys.bookmarks] ?: emptySet()).mapNotNull { it.toIntOrNull() }.toSet(),
@@ -36,9 +38,10 @@ class ReaderStore(private val context: Context) {
         )
     }
 
-    suspend fun visit(track: Int, chapter: Int) = context.roadmapDataStore.edit { p ->
+    suspend fun visit(track: Int, chapter: Int, page: Int) = context.roadmapDataStore.edit { p ->
         p[Keys.currentTrack] = track
         p[Keys.current] = chapter
+        p[Keys.currentPage] = page
         val refs = (p[Keys.visitedRefs] ?: emptySet()).toMutableSet()
         refs += "$track:$chapter"
         p[Keys.visitedRefs] = refs
@@ -69,7 +72,9 @@ class ReaderStore(private val context: Context) {
         if (raw.isNullOrBlank()) return emptyMap()
         return runCatching {
             val o = JSONObject(raw)
-            o.keys().asSequence().mapNotNull { key -> key.toIntOrNull()?.let { it to o.getString(key) } }.toMap()
+            o.keys().asSequence().mapNotNull { key ->
+                key.toIntOrNull()?.let { it to o.getString(key) }
+            }.toMap()
         }.getOrDefault(emptyMap())
     }
 
