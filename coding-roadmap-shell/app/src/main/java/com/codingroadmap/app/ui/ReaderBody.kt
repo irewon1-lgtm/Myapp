@@ -25,6 +25,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.codingroadmap.app.data.ContentPage
+import com.codingroadmap.app.data.ExtraSection
 
 @Composable
 fun ReaderBody(
@@ -43,6 +44,7 @@ fun ReaderBody(
     onNext: () -> Unit
 ) {
     var showAnswer by remember(chapter, page) { mutableStateOf(false) }
+    var showMoreExtras by remember(chapter, page) { mutableStateOf(false) }
 
     Column(modifier) {
         Column(
@@ -228,18 +230,66 @@ fun ReaderBody(
             }
 
             if (pageData.extras.isNotEmpty()) {
-                Column(
-                    Modifier.fillMaxWidth().padding(top = 18.dp),
-                    verticalArrangement = Arrangement.spacedBy(12.dp)
-                ) {
-                    pageData.extras.forEach { section ->
-                        InfoCard(
-                            label = section.title,
-                            text = section.body,
-                            accent = ReaderGold,
-                            scale = scale
+                val visibleCount = pageData.visibleExtras
+                    .coerceAtLeast(0)
+                    .coerceAtMost(pageData.extras.size)
+                val visibleExtras = pageData.extras.take(visibleCount)
+                val hiddenExtras = pageData.extras.drop(visibleCount)
+
+                if (visibleExtras.isNotEmpty()) {
+                    Column(
+                        Modifier.fillMaxWidth().padding(top = 18.dp),
+                        verticalArrangement = Arrangement.spacedBy(12.dp)
+                    ) {
+                        visibleExtras.forEach { section ->
+                            InfoCard(
+                                label = section.title,
+                                text = section.body,
+                                accent = ReaderGold,
+                                scale = scale
+                            )
+                        }
+                    }
+                }
+
+                if (hiddenExtras.isNotEmpty()) {
+                    TextButton(
+                        onClick = { showMoreExtras = true },
+                        modifier = Modifier.padding(top = 8.dp)
+                    ) {
+                        Text(
+                            "추가 설명 ${hiddenExtras.size}개 보기  ›",
+                            color = ReaderGold,
+                            fontFamily = EditorialSerif,
+                            fontSize = (13 * scale).sp
                         )
                     }
+                }
+            }
+
+            pageData.closingPrompt?.let { prompt ->
+                Row(
+                    Modifier
+                        .fillMaxWidth()
+                        .padding(top = 12.dp)
+                        .clip(RoundedCornerShape(15.dp))
+                        .background(Color(0xFF1B1814))
+                        .padding(horizontal = 14.dp, vertical = 11.dp),
+                    verticalAlignment = Alignment.Top
+                ) {
+                    Text(
+                        "✓",
+                        color = ReaderGold,
+                        fontSize = (13 * scale).sp,
+                        modifier = Modifier.padding(end = 8.dp)
+                    )
+                    Text(
+                        prompt,
+                        fontFamily = EditorialSerif,
+                        color = ReaderMuted,
+                        fontSize = (12 * scale).sp,
+                        lineHeight = (18 * scale).sp
+                    )
                 }
             }
 
@@ -309,6 +359,74 @@ fun ReaderBody(
             }
         }
     }
+
+    if (showMoreExtras) {
+        val visibleCount = pageData.visibleExtras
+            .coerceAtLeast(0)
+            .coerceAtMost(pageData.extras.size)
+        MoreExtrasDialog(
+            sections = pageData.extras.drop(visibleCount),
+            scale = scale,
+            onDismiss = { showMoreExtras = false }
+        )
+    }
+}
+
+@Composable
+private fun MoreExtrasDialog(
+    sections: List<ExtraSection>,
+    scale: Float,
+    onDismiss: () -> Unit
+) {
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        title = {
+            Text(
+                "추가 설명",
+                fontFamily = EditorialSerif,
+                color = Ink
+            )
+        },
+        text = {
+            Column(
+                Modifier
+                    .fillMaxWidth()
+                    .heightIn(max = 520.dp)
+                    .verticalScroll(rememberScrollState()),
+                verticalArrangement = Arrangement.spacedBy(12.dp)
+            ) {
+                sections.forEach { section ->
+                    Column(
+                        Modifier
+                            .fillMaxWidth()
+                            .clip(RoundedCornerShape(16.dp))
+                            .background(Color(0xFFF3ECE2))
+                            .padding(14.dp)
+                    ) {
+                        Text(
+                            section.title,
+                            color = Gold,
+                            fontWeight = FontWeight.Bold,
+                            fontSize = (12 * scale).sp
+                        )
+                        Text(
+                            section.body,
+                            fontFamily = EditorialSerif,
+                            color = Ink,
+                            fontSize = (13 * scale).sp,
+                            lineHeight = (20 * scale).sp,
+                            modifier = Modifier.padding(top = 6.dp)
+                        )
+                    }
+                }
+            }
+        },
+        confirmButton = {
+            TextButton(onClick = onDismiss) {
+                Text("닫기", color = Gold)
+            }
+        }
+    )
 }
 
 @Composable
