@@ -25,6 +25,8 @@ data class ContentPage(
     val bullets: List<String> = emptyList(),
     val glossary: List<GlossaryEntry> = emptyList(),
     val extras: List<ExtraSection> = emptyList(),
+    val visibleExtras: Int = Int.MAX_VALUE,
+    val closingPrompt: String? = null,
     val code: String? = null,
     val codeNote: String? = null,
     val calloutTitle: String? = null,
@@ -85,6 +87,8 @@ object Track1ContentLoader {
                 body = e.getString("body")
             )
         },
+        visibleExtras = o.optInt("visibleExtras", Int.MAX_VALUE),
+        closingPrompt = o.optNullableString("closingPrompt"),
         code = o.optNullableString("code"),
         codeNote = o.optNullableString("codeNote"),
         calloutTitle = o.optNullableString("calloutTitle"),
