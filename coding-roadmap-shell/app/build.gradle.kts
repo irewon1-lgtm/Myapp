@@ -35,10 +35,12 @@ android {
 }
 
 dependencies {
-    implementation("androidx.core:core-ktx:1.19.0")
-    implementation("androidx.activity:activity-compose:1.13.0")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.11.0")
-    implementation("androidx.datastore:datastore-preferences:1.2.1")
+    // These versions are deliberately pinned to the set already verified by this project
+    // while the app itself targets API 36. Newer releases require AGP 9.1+ and a broader migration.
+    implementation("androidx.core:core-ktx:1.15.0")
+    implementation("androidx.activity:activity-compose:1.10.1")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.7")
+    implementation("androidx.datastore:datastore-preferences:1.1.2")
 
     val composeBom = platform("androidx.compose:compose-bom:2025.02.00")
     implementation(composeBom)
