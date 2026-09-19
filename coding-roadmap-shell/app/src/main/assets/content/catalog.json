@@ -3,8 +3,11 @@
   "tracks":[
     {"id":1,"title":"코딩의 시작","subtitle":"기초 개념을 읽고 익히는 첫 트랙","available":true,
      "chapters":["코딩이란?","실행 흐름","변수","타입","입력과 형변환","오류와 디버깅","연산","미니 프로젝트"]},
-    {"id":2,"title":"Python 기초","subtitle":"다음 콘텐츠 슬롯","available":false,"chapters":[]},
-    {"id":3,"title":"SQL 기초","subtitle":"다음 콘텐츠 슬롯","available":false,"chapters":[]},
-    {"id":4,"title":"AI와 협업","subtitle":"다음 콘텐츠 슬롯","available":false,"chapters":[]}
+    {"id":2,"title":"Python 기초","subtitle":"생각을 코드로, 가능성을 현실로","available":true,
+     "chapters":["Python 시작","변수와 값","조건문","반복문","함수","리스트와 딕셔너리","파일과 오류","미니 프로젝트"]},
+    {"id":3,"title":"SQL 기초","subtitle":"데이터로 세상을 이해하는 힘","available":true,
+     "chapters":["SQL 시작","테이블과 행","SELECT","WHERE","정렬과 집계","JOIN","서브쿼리","미니 프로젝트"]},
+    {"id":4,"title":"AI와 협업","subtitle":"AI와 함께 읽고 판단하고 검증하기","available":true,
+     "chapters":["AI 협업 시작","프롬프트","문제 분해","코드 읽기","검증","디버깅","테스트","미니 프로젝트"]}
   ]
 }
