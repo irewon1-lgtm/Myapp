@@ -65,6 +65,10 @@ jobs:
           grep -n 'ExtraSection("정답·해설"' app/src/main/java/com/codingroadmap/app/data/TwoPageContentExpander.kt
           grep -n 'kind = "depth"' app/src/main/java/com/codingroadmap/app/data/TwoPageContentExpander.kt
           grep -n 'TwoPageContentExpander.expand' app/src/main/java/com/codingroadmap/app/data/TrackContent.kt
+          grep -n 'migrateToTwoPageModel' app/src/main/java/com/codingroadmap/app/data/ReaderStore.kt
+          grep -n 'oldPage \* 2' app/src/main/java/com/codingroadmap/app/data/ReaderStore.kt
+          grep -n 'pageModelVersion' app/src/main/java/com/codingroadmap/app/data/Models.kt
+          grep -n 'store.migrateToTwoPageModel()' app/src/main/java/com/codingroadmap/app/ui/AppRoot.kt
 
           ! grep -q 'MoreExtrasDialog' app/src/main/java/com/codingroadmap/app/ui/ReaderBody.kt
           ! grep -q 'showMoreExtras' app/src/main/java/com/codingroadmap/app/ui/ReaderBody.kt
