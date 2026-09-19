@@ -27,7 +27,7 @@ jobs:
         with:
           gradle-version: '8.11.1'
 
-      - name: Verify interaction source
+      - name: Verify page chapter track navigation
         working-directory: coding-roadmap-shell
         shell: bash
         run: |
@@ -37,9 +37,11 @@ jobs:
           grep -R -n 'detectTapGestures' app/src/main/java/com/codingroadmap/app/ui
           grep -R -n 'detectHorizontalDragGestures' app/src/main/java/com/codingroadmap/app/ui
           grep -R -n 'focusMode' app/src/main/java/com/codingroadmap/app/ui
-          grep -R -n 'moveReader' app/src/main/java/com/codingroadmap/app/ui
+          grep -R -n 'READER_PAGES_PER_CHAPTER' app/src/main/java/com/codingroadmap/app/ui
+          grep -R -n 'currentPage' app/src/main/java/com/codingroadmap/app
+          grep -R -n 'page < READER_PAGES_PER_CHAPTER' app/src/main/java/com/codingroadmap/app/ui
           grep -n 'targetSdk = 36' app/build.gradle.kts
-          grep -n 'versionName = "0.7.2"' app/build.gradle.kts
+          grep -n 'versionName = "0.7.3"' app/build.gradle.kts
           grep -n 'isDebuggable = false' app/build.gradle.kts
 
       - name: Build release APK
@@ -64,16 +66,16 @@ jobs:
           AAPT=$(find "$ANDROID_HOME/build-tools" -name aapt -type f | sort -V | tail -1)
           "$AAPT" dump badging "$APK" | tee /tmp/badging.txt
           grep "targetSdkVersion:'36'" /tmp/badging.txt
-          grep "versionName='0.7.2'" /tmp/badging.txt
+          grep "versionName='0.7.3'" /tmp/badging.txt
           mkdir -p dist
-          cp "$APK" dist/CodingRoadmapFresh_v0.7.2_NAV_SWIPE_FIX.apk
-          sha256sum dist/CodingRoadmapFresh_v0.7.2_NAV_SWIPE_FIX.apk | tee dist/SHA256.txt
+          cp "$APK" dist/CodingRoadmapFresh_v0.7.3_PAGE_CHAPTER_TRACK.apk
+          sha256sum dist/CodingRoadmapFresh_v0.7.3_PAGE_CHAPTER_TRACK.apk | tee dist/SHA256.txt
 
       - uses: actions/upload-artifact@v4
         with:
-          name: CodingRoadmapFresh_v0.7.2_NAV_SWIPE_FIX
+          name: CodingRoadmapFresh_v0.7.3_PAGE_CHAPTER_TRACK
           path: |
-            coding-roadmap-shell/dist/CodingRoadmapFresh_v0.7.2_NAV_SWIPE_FIX.apk
+            coding-roadmap-shell/dist/CodingRoadmapFresh_v0.7.3_PAGE_CHAPTER_TRACK.apk
             coding-roadmap-shell/dist/SHA256.txt
             coding-roadmap-shell/app/build/reports/lint-results-release.html
           if-no-files-found: error
