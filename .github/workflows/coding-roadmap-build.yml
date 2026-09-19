@@ -1,0 +1,74 @@
+name: Coding Roadmap Millie Build
+
+on:
+  push:
+    branches:
+      - coding-roadmap-millie-v0.7.0
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Reconstruct source payload
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat .coding-roadmap/payload.part0.b64 .coding-roadmap/payload.part1.b64 .coding-roadmap/payload.part2.b64 > /tmp/payload.b64
+          base64 -d /tmp/payload.b64 > /tmp/coding_roadmap_v070_payload_v2.zip
+          echo "19a13eacbc06565a5770ca62cf37211d90d0ee8346b21e4773e0f80d76258d13  /tmp/coding_roadmap_v070_payload_v2.zip" | sha256sum -c -
+          mkdir -p source
+          unzip -q /tmp/coding_roadmap_v070_payload_v2.zip -d source
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.8'
+
+      - name: Build signed non-debuggable release
+        working-directory: source
+        shell: bash
+        run: |
+          set -euo pipefail
+          gradle --no-daemon :roadmapapp:assembleRelease --stacktrace
+
+      - name: Verify APK artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          APK=source/roadmapapp/build/outputs/apk/release/roadmapapp-release.apk
+          test -s "$APK"
+          python3 - <<'PY'
+          import zipfile, os, hashlib
+          apk='source/roadmapapp/build/outputs/apk/release/roadmapapp-release.apk'
+          with zipfile.ZipFile(apk) as z:
+              names=set(z.namelist())
+              assert 'AndroidManifest.xml' in names
+              assert any(n.startswith('classes') and n.endswith('.dex') for n in names)
+              assert 'assets/content/track01.json' in names
+              assert 'res/raw/page_turn.wav' in names or any(n.endswith('/page_turn.wav') for n in names)
+          print('APK_ZIP_STRUCTURE=PASS')
+          print('APK_BYTES=', os.path.getsize(apk))
+          print('APK_SHA256=', hashlib.sha256(open(apk,'rb').read()).hexdigest())
+          PY
+          if command -v apksigner >/dev/null 2>&1; then
+            apksigner verify --verbose "$APK"
+          fi
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: CodingRoadmapFresh_v0.7.0_Millie_UI
+          path: source/roadmapapp/build/outputs/apk/release/roadmapapp-release.apk
+          if-no-files-found: error
+          retention-days: 7
