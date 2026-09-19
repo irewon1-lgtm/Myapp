@@ -1,6 +1,5 @@
 package com.codingroadmap.app.ui
 
-import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -10,8 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.geometry.Offset
-import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -19,56 +17,51 @@ import androidx.compose.ui.unit.sp
 import com.codingroadmap.app.data.TrackMeta
 
 @Composable
-fun ContinueCard(track: TrackMeta, chapter: Int, progress: Float, onClick: () -> Unit) {
-    val title = track.chapters.getOrNull(chapter) ?: "학습 시작"
-    Box(
-        Modifier.fillMaxWidth().clip(RoundedCornerShape(30.dp))
-            .background(Brush.linearGradient(listOf(Color(0xFFF5E8D0), Color(0xFFE2CDA7))))
-            .clickable(onClick = onClick).padding(22.dp)
-    ) {
-        Canvas(Modifier.fillMaxSize()) {
-            drawCircle(Color.White.copy(alpha = .22f), size.minDimension * .42f, Offset(size.width * .9f, size.height * .15f))
-        }
-        Column(Modifier.fillMaxWidth()) {
-            Text("이어 학습하기", color = Ink, fontSize = 25.sp, fontWeight = FontWeight.SemiBold)
-            Text("TRACK 01 · ${track.title}", color = Muted, fontSize = 12.sp, modifier = Modifier.padding(top = 20.dp))
-            Text("Chapter ${chapter + 1} · $title", color = Ink, fontSize = 18.sp, fontWeight = FontWeight.Medium, modifier = Modifier.padding(top = 5.dp))
-            Spacer(Modifier.height(18.dp))
-            Row(verticalAlignment = Alignment.CenterVertically) {
-                ProgressBar(progress, Modifier.weight(1f))
-                Text("${(progress * 100).toInt()}%", color = Ink, fontSize = 12.sp, modifier = Modifier.padding(start = 9.dp))
-            }
-            Box(
-                Modifier.padding(top = 18.dp).clip(RoundedCornerShape(50)).background(Gold).padding(horizontal = 18.dp, vertical = 10.dp)
-            ) { Text("이어보기  →", color = Color.White, fontWeight = FontWeight.SemiBold) }
-        }
+fun ContinueCard(track:TrackMeta, chapter:Int, progress:Float, onClick:()->Unit){
+ val title=track.chapters.getOrNull(chapter)?:"타입"
+ Box(Modifier.fillMaxWidth().height(286.dp).shadow(3.dp,RoundedCornerShape(28.dp)).clip(RoundedCornerShape(28.dp)).clickable(onClick=onClick)){
+  Row(Modifier.fillMaxSize().background(Color(0xFFF7EEDF))){
+   Column(Modifier.weight(1.06f).fillMaxHeight().padding(22.dp), verticalArrangement=Arrangement.Center){
+    Text("이어 학습하기",fontFamily=EditorialSerif,fontSize=29.sp,fontWeight=FontWeight.SemiBold,color=Ink)
+    Text("지금의 한 걸음이,\n더 넓은 세상을 만듭니다.",fontFamily=EditorialSerif,fontSize=15.sp,lineHeight=22.sp,color=Muted,modifier=Modifier.padding(top=10.dp))
+    Spacer(Modifier.height(12.dp))
+    Box(Modifier.fillMaxWidth().height(1.dp).background(Color(0xFFD9CCB8)))
+    Text("TRACK 01 · 코딩의 시작",fontSize=11.sp,color=Muted,modifier=Modifier.padding(top=12.dp))
+    Text("Chapter ${chapter+1} · $title",fontFamily=EditorialSerif,fontSize=21.sp,color=Ink,modifier=Modifier.padding(top=3.dp))
+    Row(Modifier.padding(top=14.dp),verticalAlignment=Alignment.CenterVertically){
+      ProgressBar(progress,Modifier.weight(1f))
+      Text("${(progress*100).toInt()}%",fontSize=13.sp,color=Ink,modifier=Modifier.padding(start=10.dp))
     }
+    Box(Modifier.padding(top=15.dp).clip(RoundedCornerShape(50)).background(Gold).padding(horizontal=22.dp,vertical=11.dp)){
+      Text("이어보기  →",color=Color.White,fontSize=16.sp)
+    }
+   }
+   HeroStillLife(Modifier.weight(.94f).fillMaxHeight())
+  }
+ }
 }
 
 @Composable
-fun BookCard(track: TrackMeta, progress: Float, onClick: () -> Unit) {
-    val bg = when (track.id) {
-        1 -> Color(0xFFF1E6D4)
-        2 -> Forest
-        3 -> Color(0xFFE4D7C5)
-        else -> Color(0xFFD9D4CC)
-    }
-    val fg = if (track.id == 2) Color(0xFFF1EEE8) else Ink
-    Column(Modifier.width(150.dp).clickable(enabled = track.available, onClick = onClick)) {
-        Box(Modifier.fillMaxWidth().height(205.dp).clip(RoundedCornerShape(10.dp)).background(bg).padding(16.dp)) {
-            Column {
-                Text("TRACK ${track.id.toString().padStart(2, '0')}", color = fg.copy(alpha = .7f), fontSize = 10.sp, fontWeight = FontWeight.Bold)
-                Text(track.title, color = fg, fontSize = 19.sp, fontWeight = FontWeight.SemiBold, modifier = Modifier.padding(top = 12.dp))
-                Text(track.subtitle, color = fg.copy(alpha = .72f), fontSize = 11.sp, modifier = Modifier.padding(top = 10.dp))
-                Spacer(Modifier.weight(1f))
-                Text(if (track.available) "LEARNING\nEDITION" else "COMING\nNEXT", color = fg.copy(alpha = .55f), fontSize = 9.sp)
-            }
-        }
-        Text(track.title, color = Ink, fontSize = 14.sp, fontWeight = FontWeight.Medium, modifier = Modifier.padding(top = 9.dp))
-        if (track.available) {
-            ProgressBar(progress, Modifier.padding(top = 7.dp))
-        } else {
-            Text("준비 중", color = Muted, fontSize = 11.sp, modifier = Modifier.padding(top = 7.dp))
-        }
-    }
+fun BookCard(track:TrackMeta, progress:Float, onClick:()->Unit){
+ val bg=when(track.id){1->Color(0xFFF3EADF);2->Forest;3->Color(0xFFDCCDBA);else->Color(0xFFD7DCE0)}
+ val fg=if(track.id==2) Color(0xFFF3EEE7) else Ink
+ Column(Modifier.width(152.dp).clickable(enabled=track.available,onClick=onClick)){
+  Box(Modifier.fillMaxWidth().height(214.dp).shadow(5.dp,RoundedCornerShape(8.dp)).clip(RoundedCornerShape(8.dp)).background(bg).padding(14.dp)){
+   Column{
+    Text("TRACK ${track.id.toString().padStart(2,'0')}",fontSize=9.sp,color=fg.copy(.75f))
+    Text(track.title,fontFamily=EditorialSerif,fontSize=18.sp,fontWeight=FontWeight.SemiBold,color=fg,modifier=Modifier.padding(top=8.dp))
+    Text(track.subtitle,fontSize=10.sp,lineHeight=15.sp,color=fg.copy(.72f),modifier=Modifier.padding(top=7.dp))
+    Spacer(Modifier.height(10.dp))
+    TrackCoverArt(track.id,Modifier.fillMaxWidth().height(66.dp))
+    Spacer(Modifier.weight(1f))
+    Text(when(track.id){1->"A NEW\nJOURNEY BEGINS";2->"SIMPLE\nPOWERFUL\nTOGETHER";3->"DATA\nOPENS\nA WIDER WORLD";else->"NEXT\nEDITION"},fontFamily=EditorialSerif,fontSize=8.sp,lineHeight=10.sp,color=fg.copy(.65f))
+   }
+  }
+  Text("TRACK ${track.id.toString().padStart(2,'0')}",fontSize=10.sp,color=Muted,modifier=Modifier.padding(top=9.dp))
+  Text(track.title,fontFamily=EditorialSerif,fontSize=16.sp,color=Ink)
+  Row(Modifier.padding(top=7.dp),verticalAlignment=Alignment.CenterVertically){
+    ProgressBar(progress,Modifier.weight(1f))
+    Text(if(track.available)"${(progress*100).toInt()}%" else "시작 전",fontSize=11.sp,color=Muted,modifier=Modifier.padding(start=8.dp))
+  }
+ }
 }
