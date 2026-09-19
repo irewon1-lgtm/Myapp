@@ -1,10 +1,33 @@
 {
   "schema":"coding-roadmap-catalog-v1",
   "tracks":[
-    {"id":1,"title":"코딩의 시작","subtitle":"기초 개념을 읽고 익히는 첫 트랙","available":true,
-     "chapters":["코딩이란?","실행 흐름","변수","타입","입력과 형변환","오류와 디버깅","연산","미니 프로젝트"]},
-    {"id":2,"title":"Python 기초","subtitle":"TRACK 01 완료 후 이어집니다","available":false,"chapters":[]},
-    {"id":3,"title":"SQL 기초","subtitle":"TRACK 01 완료 후 이어집니다","available":false,"chapters":[]},
-    {"id":4,"title":"AI와 협업","subtitle":"TRACK 01 완료 후 이어집니다","available":false,"chapters":[]}
+    {
+      "id":1,
+      "title":"코딩의 시작",
+      "subtitle":"코딩을 처음 시작하는 사람을 위한 읽기·실행·수정·디버깅 기초",
+      "available":true,
+      "chapters":["코딩이란?","실행 흐름","변수","타입","입력과 형변환","오류와 디버깅","연산","미니 프로젝트"]
+    },
+    {
+      "id":2,
+      "title":"Python 기초",
+      "subtitle":"조건문부터 함수까지 · 반복 작업을 자동화하는 작은 Python 프로그램 만들기",
+      "available":true,
+      "chapters":["조건문 if","반복문 for·while","함수 만들기","리스트와 딕셔너리","문자열 다루기","파일 읽기와 쓰기","예외 처리","Python 자동화 미니 프로젝트"]
+    },
+    {
+      "id":3,
+      "title":"SQL 기초",
+      "subtitle":"TRACK 02 이후 이어집니다",
+      "available":false,
+      "chapters":[]
+    },
+    {
+      "id":4,
+      "title":"AI와 협업",
+      "subtitle":"TRACK 02 이후 이어집니다",
+      "available":false,
+      "chapters":[]
+    }
   ]
 }
