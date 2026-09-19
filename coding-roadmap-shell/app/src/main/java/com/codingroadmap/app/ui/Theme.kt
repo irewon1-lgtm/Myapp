@@ -1,24 +1,36 @@
 package com.codingroadmap.app.ui
 
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Typography
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.unit.sp
 
-val Ivory = Color(0xFFF7F3EA)
-val IvoryCard = Color(0xFFFFFCF6)
-val Ink = Color(0xFF2B2924)
-val Muted = Color(0xFF7B7469)
-val Gold = Color(0xFFB38A49)
-val GoldSoft = Color(0xFFE8D7B7)
+val Ivory = Color(0xFFFBF8F0)
+val IvoryCard = Color(0xFFFFFDF8)
+val Ink = Color(0xFF251F19)
+val Muted = Color(0xFF8A7E70)
+val Gold = Color(0xFFB88E4B)
+val GoldSoft = Color(0xFFE8D4AE)
 val Forest = Color(0xFF29483B)
 val ForestSoft = Color(0xFFE2E9E2)
-val ReaderBg = Color(0xFF121311)
-val ReaderSurface = Color(0xFF1A1B18)
-val ReaderSurface2 = Color(0xFF23231F)
-val ReaderText = Color(0xFFEAE5DC)
-val ReaderMuted = Color(0xFFA9A39A)
-val ReaderGold = Color(0xFFD0AD70)
+val ReaderBg = Color(0xFF17130E)
+val ReaderSurface = Color(0xFF211D17)
+val ReaderSurface2 = Color(0xFF1B1916)
+val ReaderText = Color(0xFFF0E8DC)
+val ReaderMuted = Color(0xFFB7ADA0)
+val ReaderGold = Color(0xFFD7B26D)
+
+private val AppTypography = Typography(
+    displayLarge = TextStyle(fontFamily = EditorialSerif, fontSize = 38.sp),
+    headlineLarge = TextStyle(fontFamily = EditorialSerif, fontSize = 30.sp),
+    headlineMedium = TextStyle(fontFamily = EditorialSerif, fontSize = 24.sp),
+    titleLarge = TextStyle(fontFamily = EditorialSerif, fontSize = 20.sp),
+    bodyLarge = TextStyle(fontFamily = CleanSans, fontSize = 16.sp),
+    bodyMedium = TextStyle(fontFamily = CleanSans, fontSize = 14.sp)
+)
 
 @Composable
 fun RoadmapTheme(content: @Composable () -> Unit) {
@@ -29,6 +41,7 @@ fun RoadmapTheme(content: @Composable () -> Unit) {
             surface = IvoryCard,
             onSurface = Ink
         ),
+        typography = AppTypography,
         content = content
     )
 }
