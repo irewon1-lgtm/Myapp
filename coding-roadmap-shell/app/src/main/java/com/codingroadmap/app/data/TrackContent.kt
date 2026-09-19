@@ -4,6 +4,18 @@ import android.content.Context
 import org.json.JSONArray
 import org.json.JSONObject
 
+data class GlossaryEntry(
+    val term: String,
+    val description: String,
+    val usage: String,
+    val example: String
+)
+
+data class ExtraSection(
+    val title: String,
+    val body: String
+)
+
 data class ContentPage(
     val kind: String,
     val eyebrow: String,
@@ -11,6 +23,8 @@ data class ContentPage(
     val paragraphs: List<String> = emptyList(),
     val keywords: List<String> = emptyList(),
     val bullets: List<String> = emptyList(),
+    val glossary: List<GlossaryEntry> = emptyList(),
+    val extras: List<ExtraSection> = emptyList(),
     val code: String? = null,
     val codeNote: String? = null,
     val calloutTitle: String? = null,
@@ -57,6 +71,20 @@ object Track1ContentLoader {
         paragraphs = o.optStringList("paragraphs"),
         keywords = o.optStringList("keywords"),
         bullets = o.optStringList("bullets"),
+        glossary = o.optObjectList("glossary") { g ->
+            GlossaryEntry(
+                term = g.getString("term"),
+                description = g.getString("description"),
+                usage = g.getString("usage"),
+                example = g.getString("example")
+            )
+        },
+        extras = o.optObjectList("extras") { e ->
+            ExtraSection(
+                title = e.getString("title"),
+                body = e.getString("body")
+            )
+        },
         code = o.optNullableString("code"),
         codeNote = o.optNullableString("codeNote"),
         calloutTitle = o.optNullableString("calloutTitle"),
@@ -72,6 +100,16 @@ object Track1ContentLoader {
         val arr: JSONArray = optJSONArray(key) ?: return emptyList()
         return buildList {
             for (i in 0 until arr.length()) add(arr.getString(i))
+        }
+    }
+
+    private fun <T> JSONObject.optObjectList(
+        key: String,
+        map: (JSONObject) -> T
+    ): List<T> {
+        val arr: JSONArray = optJSONArray(key) ?: return emptyList()
+        return buildList {
+            for (i in 0 until arr.length()) add(map(arr.getJSONObject(i)))
         }
     }
 
