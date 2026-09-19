@@ -25,13 +25,15 @@ fun ReaderShellScreen(
     track: TrackMeta,
     trackIndex: Int,
     chapter: Int,
+    page: Int,
+    pageCount: Int,
     prefs: ReaderPrefs,
     onBack: () -> Unit,
     canPrev: Boolean,
     canNext: Boolean,
     onPrev: () -> Unit,
     onNext: () -> Unit,
-    onVisit: (Int) -> Unit,
+    onVisit: (Int, Int) -> Unit,
     onBookmark: (Int) -> Unit,
     onSaveNote: (Int, String) -> Unit,
     onTextScale: (Float) -> Unit
@@ -42,9 +44,9 @@ fun ReaderShellScreen(
     var showNote by remember { mutableStateOf(false) }
     var focusMode by rememberSaveable { mutableStateOf(false) }
     var note by remember(chapter, prefs.notes[chapter]) { mutableStateOf(prefs.notes[chapter].orEmpty()) }
-    var drag by remember(trackIndex, chapter) { mutableFloatStateOf(0f) }
+    var drag by remember(trackIndex, chapter, page) { mutableFloatStateOf(0f) }
 
-    LaunchedEffect(trackIndex, chapter) { onVisit(chapter) }
+    LaunchedEffect(trackIndex, chapter, page) { onVisit(chapter, page) }
 
     Column(
         Modifier
@@ -100,7 +102,9 @@ fun ReaderShellScreen(
             trackId = track.id,
             title = title,
             chapter = chapter,
-            count = track.chapters.size,
+            chapterCount = track.chapters.size,
+            page = page,
+            pageCount = pageCount,
             scale = prefs.textScale,
             canPrev = canPrev,
             canNext = canNext,
@@ -108,7 +112,7 @@ fun ReaderShellScreen(
             onToggleFocus = { focusMode = !focusMode },
             modifier = Modifier
                 .weight(1f)
-                .pointerInput(trackIndex, chapter, canPrev, canNext, focusMode) {
+                .pointerInput(trackIndex, chapter, page, canPrev, canNext, focusMode) {
                     detectTapGestures { offset ->
                         when {
                             offset.x <= size.width * 0.18f && canPrev -> onPrev()
@@ -117,7 +121,7 @@ fun ReaderShellScreen(
                         }
                     }
                 }
-                .pointerInput(trackIndex, chapter, canPrev, canNext) {
+                .pointerInput(trackIndex, chapter, page, canPrev, canNext) {
                     detectHorizontalDragGestures(
                         onDragStart = { drag = 0f },
                         onDragEnd = {
