@@ -61,8 +61,8 @@ fun ChapterRow(index:Int,title:String,visited:Boolean,current:Boolean,onClick:()
   Column(Modifier.padding(start=12.dp).weight(1f)){
    Text("Chapter ${index+1} · $title",fontFamily=EditorialSerif,fontSize=16.sp,color=Ink,maxLines=1)
    Row(Modifier.padding(top=4.dp),verticalAlignment=Alignment.CenterVertically){
-    Icon(Icons.Rounded.MenuBook,null,tint=Muted,modifier=Modifier.size(14.dp));Text(" $minutes분  |  ",fontSize=10.sp,color=Muted)
-    Icon(Icons.Rounded.Schedule,null,tint=Muted,modifier=Modifier.size(14.dp));Text(" $videos개 영상",fontSize=10.sp,color=Muted)
+    Icon(Icons.Rounded.MenuBook,null,tint=Muted,modifier=Modifier.size(14.dp));Text(" ${minutes}분  |  ",fontSize=10.sp,color=Muted)
+    Icon(Icons.Rounded.Schedule,null,tint=Muted,modifier=Modifier.size(14.dp));Text(" ${videos}개 영상",fontSize=10.sp,color=Muted)
    }
   }
   if(index<3){
