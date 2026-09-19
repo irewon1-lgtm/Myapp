@@ -15,8 +15,10 @@ private val Context.roadmapDataStore by preferencesDataStore("roadmap_reader")
 
 class ReaderStore(private val context: Context) {
     private object Keys {
+        val currentTrack = intPreferencesKey("current_track")
         val current = intPreferencesKey("current_chapter")
         val visited = stringSetPreferencesKey("visited_chapters")
+        val visitedRefs = stringSetPreferencesKey("visited_refs")
         val bookmarks = stringSetPreferencesKey("bookmarks")
         val notes = stringPreferencesKey("notes_json")
         val textScale = floatPreferencesKey("text_scale")
@@ -24,19 +26,27 @@ class ReaderStore(private val context: Context) {
 
     val state: Flow<ReaderPrefs> = context.roadmapDataStore.data.map { p ->
         ReaderPrefs(
+            currentTrack = p[Keys.currentTrack] ?: 0,
             currentChapter = p[Keys.current] ?: 0,
             visitedChapters = (p[Keys.visited] ?: emptySet()).mapNotNull { it.toIntOrNull() }.toSet(),
+            visitedRefs = p[Keys.visitedRefs] ?: emptySet(),
             bookmarks = (p[Keys.bookmarks] ?: emptySet()).mapNotNull { it.toIntOrNull() }.toSet(),
             notes = decodeNotes(p[Keys.notes]),
             textScale = (p[Keys.textScale] ?: 1f).coerceIn(.9f, 1.35f)
         )
     }
 
-    suspend fun visit(chapter: Int) = context.roadmapDataStore.edit { p ->
+    suspend fun visit(track: Int, chapter: Int) = context.roadmapDataStore.edit { p ->
+        p[Keys.currentTrack] = track
         p[Keys.current] = chapter
-        val s = (p[Keys.visited] ?: emptySet()).toMutableSet()
-        s += chapter.toString()
-        p[Keys.visited] = s
+        val refs = (p[Keys.visitedRefs] ?: emptySet()).toMutableSet()
+        refs += "$track:$chapter"
+        p[Keys.visitedRefs] = refs
+        if (track == 0) {
+            val s = (p[Keys.visited] ?: emptySet()).toMutableSet()
+            s += chapter.toString()
+            p[Keys.visited] = s
+        }
     }
 
     suspend fun toggleBookmark(chapter: Int) = context.roadmapDataStore.edit { p ->
