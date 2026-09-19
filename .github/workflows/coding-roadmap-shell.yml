@@ -1,0 +1,82 @@
+name: Coding Roadmap Shell
+
+on:
+  push:
+    branches: [coding-roadmap-shell-v0.7.0]
+    paths:
+      - 'coding-roadmap-shell/**'
+      - '.github/workflows/coding-roadmap-shell.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.9'
+
+      - name: Verify source architecture
+        working-directory: coding-roadmap-shell
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f app/src/main/assets/content/catalog.json
+          ! grep -R -n '코딩이란?' app/src/main/java
+          grep -R -n 'WindowCompat.setDecorFitsSystemWindows' app/src/main/java
+          grep -R -n 'WindowInsets.safeDrawing' app/src/main/java
+          grep -n 'targetSdk = 35' app/build.gradle.kts
+          grep -n 'isDebuggable = false' app/build.gradle.kts
+
+      - name: Build release APK
+        working-directory: coding-roadmap-shell
+        shell: bash
+        run: |
+          set -euo pipefail
+          gradle --no-daemon :app:assembleRelease --stacktrace
+
+      - name: Android lint
+        working-directory: coding-roadmap-shell
+        shell: bash
+        run: |
+          set -euo pipefail
+          gradle --no-daemon :app:lintRelease --stacktrace
+
+      - name: Verify release artifact
+        working-directory: coding-roadmap-shell
+        shell: bash
+        run: |
+          set -euo pipefail
+          APK=app/build/outputs/apk/release/app-release.apk
+          test -s "$APK"
+          unzip -t "$APK" >/dev/null
+          unzip -l "$APK" | grep 'assets/content/catalog.json'
+          APKSIGNER=$(find "$ANDROID_HOME/build-tools" -name apksigner -type f | sort -V | tail -1)
+          "$APKSIGNER" verify --verbose "$APK"
+          AAPT=$(find "$ANDROID_HOME/build-tools" -name aapt -type f | sort -V | tail -1)
+          "$AAPT" dump badging "$APK" | tee /tmp/badging.txt
+          grep "targetSdkVersion:'35'" /tmp/badging.txt
+          mkdir -p dist
+          cp "$APK" dist/CodingRoadmapFresh_v0.7.0_MillieShell.apk
+          sha256sum dist/CodingRoadmapFresh_v0.7.0_MillieShell.apk | tee dist/SHA256.txt
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: CodingRoadmapFresh_v0.7.0_MillieShell
+          path: |
+            coding-roadmap-shell/dist/CodingRoadmapFresh_v0.7.0_MillieShell.apk
+            coding-roadmap-shell/dist/SHA256.txt
+            coding-roadmap-shell/app/build/reports/lint-results-release.html
+          if-no-files-found: error
+          retention-days: 7
