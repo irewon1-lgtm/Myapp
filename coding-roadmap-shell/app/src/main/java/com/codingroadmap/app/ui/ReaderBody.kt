@@ -2,6 +2,7 @@ package com.codingroadmap.app.ui
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -12,24 +13,26 @@ import androidx.compose.material.icons.automirrored.rounded.KeyboardArrowRight
 import androidx.compose.material.icons.rounded.ContentCopy
 import androidx.compose.material.icons.rounded.MenuBook
 import androidx.compose.material3.*
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalClipboardManager
+import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.codingroadmap.app.data.ContentPage
 
 @Composable
 fun ReaderBody(
-    trackId: Int,
-    title: String,
     chapter: Int,
     chapterCount: Int,
     page: Int,
     pageCount: Int,
+    pageData: ContentPage,
     scale: Float,
     canPrev: Boolean,
     canNext: Boolean,
@@ -39,7 +42,7 @@ fun ReaderBody(
     onPrev: () -> Unit,
     onNext: () -> Unit
 ) {
-    val mainTitle = if (trackId == 1 && chapter == 3) "타입은 값의 종류입니다" else title
+    var showAnswer by remember(chapter, page) { mutableStateOf(false) }
 
     Column(modifier) {
         Column(
@@ -49,22 +52,162 @@ fun ReaderBody(
                 .verticalScroll(rememberScrollState())
                 .padding(horizontal = 27.dp, vertical = 18.dp)
         ) {
-            Text("코딩의 기초", fontFamily = EditorialSerif, color = ReaderGold, fontSize = (13 * scale).sp)
             Text(
-                mainTitle,
+                pageData.eyebrow,
+                fontFamily = EditorialSerif,
+                color = ReaderGold,
+                fontSize = (13 * scale).sp
+            )
+            Text(
+                pageData.title,
                 fontFamily = EditorialSerif,
                 color = ReaderText,
-                fontSize = (34 * scale).sp,
+                fontSize = (31 * scale).sp,
                 fontWeight = FontWeight.SemiBold,
-                lineHeight = (43 * scale).sp,
+                lineHeight = (40 * scale).sp,
                 modifier = Modifier.padding(top = 10.dp)
             )
-            Text("—", fontFamily = EditorialSerif, color = ReaderGold, fontSize = (22 * scale).sp, modifier = Modifier.padding(top = 4.dp))
+            Text(
+                "—",
+                fontFamily = EditorialSerif,
+                color = ReaderGold,
+                fontSize = (21 * scale).sp,
+                modifier = Modifier.padding(top = 2.dp)
+            )
 
-            when (page) {
-                0 -> ReaderPageIntro(scale)
-                1 -> ReaderPageExplain(scale)
-                else -> ReaderPageCode(scale)
+            if (pageData.keywords.isNotEmpty()) {
+                Row(
+                    Modifier
+                        .fillMaxWidth()
+                        .padding(top = 6.dp)
+                        .horizontalScroll(rememberScrollState()),
+                    horizontalArrangement = Arrangement.spacedBy(7.dp)
+                ) {
+                    pageData.keywords.forEach { keyword ->
+                        Text(
+                            keyword,
+                            color = ReaderText,
+                            fontSize = (11 * scale).sp,
+                            modifier = Modifier
+                                .clip(RoundedCornerShape(50))
+                                .background(Color(0xFF2A2722))
+                                .padding(horizontal = 10.dp, vertical = 6.dp)
+                        )
+                    }
+                }
+            }
+
+            pageData.paragraphs.forEachIndexed { index, paragraph ->
+                Text(
+                    paragraph,
+                    fontFamily = EditorialSerif,
+                    color = ReaderText,
+                    fontSize = (16 * scale).sp,
+                    lineHeight = (28 * scale).sp,
+                    modifier = Modifier.padding(top = if (index == 0) 16.dp else 18.dp)
+                )
+            }
+
+            pageData.visual?.let {
+                ConceptDiagram(it, scale, Modifier.padding(top = 22.dp))
+            }
+
+            if (pageData.bullets.isNotEmpty()) {
+                Column(
+                    Modifier
+                        .fillMaxWidth()
+                        .padding(top = 20.dp)
+                        .clip(RoundedCornerShape(18.dp))
+                        .background(ReaderSurface)
+                        .padding(16.dp),
+                    verticalArrangement = Arrangement.spacedBy(10.dp)
+                ) {
+                    pageData.bullets.forEach { item ->
+                        Row(verticalAlignment = Alignment.Top) {
+                            Text("•", color = ReaderGold, fontSize = (17 * scale).sp, modifier = Modifier.width(20.dp))
+                            Text(
+                                item,
+                                fontFamily = EditorialSerif,
+                                color = ReaderText,
+                                fontSize = (14 * scale).sp,
+                                lineHeight = (22 * scale).sp,
+                                modifier = Modifier.weight(1f)
+                            )
+                        }
+                    }
+                }
+            }
+
+            pageData.calloutTitle?.let { title ->
+                CalloutCard(
+                    title = title,
+                    body = pageData.calloutBody.orEmpty(),
+                    scale = scale,
+                    modifier = Modifier.padding(top = 20.dp)
+                )
+            }
+
+            pageData.code?.let { code ->
+                CodeCard(
+                    code = code,
+                    note = pageData.codeNote,
+                    scale = scale,
+                    modifier = Modifier.padding(top = 20.dp)
+                )
+            }
+
+            pageData.practicePrompt?.let { prompt ->
+                InfoCard(
+                    label = "직접 해보기",
+                    text = prompt,
+                    accent = ReaderGold,
+                    scale = scale,
+                    modifier = Modifier.padding(top = 20.dp)
+                )
+            }
+
+            pageData.question?.let { question ->
+                InfoCard(
+                    label = "문제",
+                    text = question,
+                    accent = Color(0xFF93B7D7),
+                    scale = scale,
+                    modifier = Modifier.padding(top = 20.dp)
+                )
+            }
+
+            if (pageData.answer != null) {
+                TextButton(
+                    onClick = { showAnswer = !showAnswer },
+                    modifier = Modifier.padding(top = 10.dp)
+                ) {
+                    Text(
+                        if (showAnswer) "정답·해설 접기  ▲" else "정답·해설 보기  ▼",
+                        color = ReaderGold,
+                        fontFamily = EditorialSerif,
+                        fontSize = (14 * scale).sp
+                    )
+                }
+
+                if (showAnswer) {
+                    InfoCard(
+                        label = "정답·해설",
+                        text = pageData.answer,
+                        accent = Color(0xFF9BB58B),
+                        scale = scale,
+                        modifier = Modifier.padding(top = 4.dp)
+                    )
+
+                    pageData.mistake?.let { mistake ->
+                        InfoCard(
+                            label = "자주 틀리는 이유",
+                            text = mistake,
+                            accent = Color(0xFFD19B76),
+                            scale = scale,
+                            modifier = Modifier.padding(top = 12.dp)
+                        )
+                    }
+                }
             }
 
             Spacer(Modifier.height(28.dp))
@@ -87,14 +230,21 @@ fun ReaderBody(
                     Text("이전", fontFamily = EditorialSerif, color = ReaderMuted, fontSize = 11.sp)
                 }
 
-                Column(Modifier.weight(1f).padding(horizontal = 14.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+                Column(
+                    Modifier.weight(1f).padding(horizontal = 14.dp),
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
                     Text(
                         "Chapter ${chapter + 1}/$chapterCount · Page ${page + 1}/$pageCount",
                         fontFamily = EditorialSerif,
                         color = ReaderMuted,
                         fontSize = 11.sp
                     )
-                    ProgressBar((page + 1) / pageCount.toFloat(), Modifier.padding(top = 8.dp), dark = true)
+                    ProgressBar(
+                        (page + 1) / pageCount.toFloat(),
+                        Modifier.padding(top = 8.dp),
+                        dark = true
+                    )
                 }
 
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
@@ -110,10 +260,18 @@ fun ReaderBody(
 
                 Column(
                     horizontalAlignment = Alignment.CenterHorizontally,
-                    modifier = Modifier.padding(start = 7.dp).clickable(onClick = onToggleFocus)
+                    modifier = Modifier
+                        .padding(start = 7.dp)
+                        .clickable(onClick = onToggleFocus)
                 ) {
                     Icon(Icons.Rounded.MenuBook, null, tint = ReaderGold, modifier = Modifier.size(25.dp))
-                    Text("집중모드", fontFamily = EditorialSerif, color = ReaderMuted, fontSize = 10.sp, modifier = Modifier.padding(top = 5.dp))
+                    Text(
+                        "집중모드",
+                        fontFamily = EditorialSerif,
+                        color = ReaderMuted,
+                        fontSize = 10.sp,
+                        modifier = Modifier.padding(top = 5.dp)
+                    )
                 }
             }
         }
@@ -121,68 +279,104 @@ fun ReaderBody(
 }
 
 @Composable
-private fun ReaderPageIntro(scale: Float) {
-    Text(
-        "데이터에는 저마다의 형태가 있고,\n파이썬은 그 형태를 ‘타입’으로 구분합니다.",
-        fontFamily = EditorialSerif,
-        color = ReaderText,
-        fontSize = (17 * scale).sp,
-        lineHeight = (28 * scale).sp,
-        modifier = Modifier.padding(top = 12.dp)
-    )
-    Text(
-        "우리가 사용하는 모든 값은 타입을 가집니다. 타입은 값이 어떤 종류의 데이터인지 알려주는 이름표와 같습니다.",
-        fontFamily = EditorialSerif,
-        color = ReaderText,
-        fontSize = (16 * scale).sp,
-        lineHeight = (28 * scale).sp,
-        modifier = Modifier.padding(top = 22.dp)
-    )
-    Text(
-        "파이썬에서 자주 사용하는 기본 타입은 다음과 같습니다.",
-        fontFamily = EditorialSerif,
-        color = ReaderText,
-        fontSize = (16 * scale).sp,
-        lineHeight = (27 * scale).sp,
-        modifier = Modifier.padding(top = 20.dp)
-    )
-    Column(Modifier.padding(top = 10.dp), verticalArrangement = Arrangement.spacedBy(9.dp)) {
-        TypeRow("int", "정수 (예: 1, 0, -5)", scale)
-        TypeRow("float", "실수 (예: 3.14, -0.5)", scale)
-        TypeRow("str", "문자열 (예: “안녕하세요”)", scale)
-        TypeRow("bool", "참과 거짓 (예: True, False)", scale)
+private fun CodeCard(
+    code: String,
+    note: String?,
+    scale: Float,
+    modifier: Modifier = Modifier
+) {
+    val clipboard = LocalClipboardManager.current
+    Column(
+        modifier
+            .fillMaxWidth()
+            .clip(RoundedCornerShape(18.dp))
+            .background(Color(0xFF191817))
+    ) {
+        Row(
+            Modifier
+                .fillMaxWidth()
+                .background(Color(0xFF24211D))
+                .padding(horizontal = 15.dp, vertical = 10.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(
+                "Python",
+                fontFamily = EditorialSerif,
+                color = ReaderMuted,
+                fontSize = 12.sp,
+                modifier = Modifier.weight(1f)
+            )
+            IconButton(
+                onClick = { clipboard.setText(AnnotatedString(code)) },
+                modifier = Modifier.size(30.dp)
+            ) {
+                Icon(Icons.Rounded.ContentCopy, "코드 복사", tint = ReaderText, modifier = Modifier.size(17.dp))
+            }
+            Text("복사", color = ReaderText, fontSize = 11.sp)
+        }
+
+        Box(
+            Modifier
+                .fillMaxWidth()
+                .horizontalScroll(rememberScrollState())
+                .padding(15.dp)
+        ) {
+            Text(
+                code,
+                fontFamily = FontFamily.Monospace,
+                color = ReaderText,
+                fontSize = (14 * scale).sp,
+                lineHeight = (22 * scale).sp
+            )
+        }
+
+        note?.let {
+            Box(Modifier.fillMaxWidth().height(1.dp).background(Color.White.copy(.07f)))
+            Text(
+                it,
+                fontFamily = EditorialSerif,
+                color = ReaderMuted,
+                fontSize = (12 * scale).sp,
+                lineHeight = (19 * scale).sp,
+                modifier = Modifier.padding(14.dp)
+            )
+        }
     }
 }
 
 @Composable
-private fun ReaderPageExplain(scale: Float) {
-    Text(
-        "같은 37이라도 숫자 37과 문자열 “37”은 전혀 다른 타입입니다. 어떤 타입인지에 따라 가능한 연산과 처리 방법이 달라집니다.",
-        fontFamily = EditorialSerif,
-        color = ReaderText,
-        fontSize = (16 * scale).sp,
-        lineHeight = (28 * scale).sp,
-        modifier = Modifier.padding(top = 12.dp)
-    )
+private fun CalloutCard(
+    title: String,
+    body: String,
+    scale: Float,
+    modifier: Modifier = Modifier
+) {
     Row(
-        Modifier.fillMaxWidth().padding(top = 24.dp)
+        modifier
+            .fillMaxWidth()
             .clip(RoundedCornerShape(20.dp))
             .background(Color(0xFF30291F))
             .padding(18.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
-        LeafMark(Modifier.size(50.dp), ReaderGold)
-        Box(Modifier.padding(horizontal = 16.dp).width(1.dp).height(72.dp).background(Color(0xFF6D5B40)))
+        LeafMark(Modifier.size(48.dp), ReaderGold)
+        Box(
+            Modifier
+                .padding(horizontal = 15.dp)
+                .width(1.dp)
+                .height(68.dp)
+                .background(Color(0xFF6D5B40))
+        )
         Column(Modifier.weight(1f)) {
             Text(
-                "아주 쉽게",
+                title,
                 fontFamily = EditorialSerif,
-                fontSize = (16 * scale).sp,
+                fontSize = (15 * scale).sp,
                 color = ReaderGold,
                 fontWeight = FontWeight.SemiBold
             )
             Text(
-                "타입은 값의 ‘종류’를 말합니다. 숫자, 문자, 참/거짓처럼 데이터가 어떤 형태인지 구분하는 기준이에요.",
+                body,
                 fontFamily = EditorialSerif,
                 fontSize = (14 * scale).sp,
                 lineHeight = (22 * scale).sp,
@@ -191,75 +385,133 @@ private fun ReaderPageExplain(scale: Float) {
             )
         }
     }
-    Text(
-        "한 장씩 넘기면서 개념 → 쉬운 설명 → 코드 예제 순서로 이어집니다.",
-        fontFamily = EditorialSerif,
-        color = ReaderMuted,
-        fontSize = (14 * scale).sp,
-        lineHeight = (23 * scale).sp,
-        modifier = Modifier.padding(top = 22.dp)
-    )
 }
 
 @Composable
-private fun ReaderPageCode(scale: Float) {
-    Text(
-        "아래 예제를 실행해 보면, 서로 다른 타입의 값을 변수에 저장하는 것을 확인할 수 있습니다.",
-        fontFamily = EditorialSerif,
-        color = ReaderText,
-        fontSize = (15 * scale).sp,
-        lineHeight = (25 * scale).sp,
-        modifier = Modifier.padding(top = 12.dp)
-    )
+private fun InfoCard(
+    label: String,
+    text: String,
+    accent: Color,
+    scale: Float,
+    modifier: Modifier = Modifier
+) {
     Column(
-        Modifier.fillMaxWidth().padding(top = 16.dp)
+        modifier
+            .fillMaxWidth()
             .clip(RoundedCornerShape(18.dp))
-            .background(Color(0xFF191817))
+            .background(ReaderSurface2)
+            .padding(16.dp)
     ) {
-        Row(
-            Modifier.fillMaxWidth().background(Color(0xFF24211D)).padding(horizontal = 15.dp, vertical = 10.dp),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Text("Python", fontFamily = EditorialSerif, color = ReaderMuted, fontSize = 12.sp, modifier = Modifier.weight(1f))
-            Icon(Icons.Rounded.ContentCopy, null, tint = ReaderText, modifier = Modifier.size(17.dp))
-            Text("  복사하기", color = ReaderText, fontSize = 11.sp)
-        }
-        Column(Modifier.padding(15.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-            CodeLine("1", "age = ", "37", Color(0xFF76A9E7))
-            CodeLine("2", "name = ", "“승원”", Color(0xFFE4B94C))
-            CodeLine("3", "is_ready = ", "True", Color(0xFFC58AEF))
-        }
-    }
-    Text(
-        "각각의 변수는 서로 다른 타입의 값을 가지고 있습니다. 오른쪽 끝을 누르거나 왼쪽으로 밀면 다음 장으로 넘어갑니다.",
-        fontFamily = EditorialSerif,
-        color = ReaderText,
-        fontSize = (14 * scale).sp,
-        lineHeight = (24 * scale).sp,
-        modifier = Modifier.padding(top = 18.dp)
-    )
-}
-
-@Composable
-private fun TypeRow(type:String,desc:String,scale:Float){
-    Row(verticalAlignment=Alignment.CenterVertically){
-        Text("•",color=ReaderGold,fontSize=(17*scale).sp,modifier=Modifier.width(22.dp))
         Text(
-            type,
-            fontFamily=FontFamily.Monospace,
-            color=ReaderText,
-            fontSize=(14*scale).sp,
-            modifier=Modifier.clip(RoundedCornerShape(7.dp)).background(Color(0xFF292724)).padding(horizontal=9.dp,vertical=4.dp)
+            label,
+            color = accent,
+            fontSize = (12 * scale).sp,
+            fontWeight = FontWeight.Bold
         )
-        Text(desc,fontFamily=EditorialSerif,color=ReaderText,fontSize=(14*scale).sp,modifier=Modifier.padding(start=12.dp))
+        Text(
+            text,
+            fontFamily = EditorialSerif,
+            color = ReaderText,
+            fontSize = (14 * scale).sp,
+            lineHeight = (23 * scale).sp,
+            modifier = Modifier.padding(top = 8.dp)
+        )
     }
 }
 
 @Composable
-private fun CodeLine(no:String,prefix:String,value:String,valueColor:Color){
-    Row{
-        Text(no,fontFamily=FontFamily.Monospace,color=ReaderMuted,fontSize=13.sp,modifier=Modifier.width(30.dp))
-        Text(prefix,fontFamily=FontFamily.Monospace,color=ReaderText,fontSize=14.sp)
-        Text(value,fontFamily=FontFamily.Monospace,color=valueColor,fontSize=14.sp)
+private fun ConceptDiagram(
+    visual: String,
+    scale: Float,
+    modifier: Modifier = Modifier
+) {
+    Column(
+        modifier
+            .fillMaxWidth()
+            .clip(RoundedCornerShape(20.dp))
+            .background(Color(0xFF211D17))
+            .padding(16.dp),
+        verticalArrangement = Arrangement.spacedBy(9.dp)
+    ) {
+        when (visual) {
+            "CODE_TO_OUTPUT" -> FlowNodes(listOf("사람이 코드 작성", "Python 실행", "결과 출력"), scale)
+            "TOP_TO_BOTTOM" -> FlowNodes(listOf("1번 줄", "2번 줄", "3번 줄", "결과"), scale)
+            "VARIABLE_BINDING" -> {
+                PairNode("name", "민수", scale)
+                PairNode("age", "37", scale)
+                PairNode("age 재대입", "38", scale)
+            }
+            "TYPE_TABLE" -> {
+                PairNode("10", "int · 정수", scale)
+                PairNode("10.0", "float · 실수", scale)
+                PairNode("\"10\"", "str · 문자열", scale)
+                PairNode("True", "bool · 참/거짓", scale)
+            }
+            "INPUT_CONVERSION" -> FlowNodes(listOf("input()", "str", "int / float", "계산", "출력"), scale)
+            "ERROR_MAP" -> {
+                PairNode("SyntaxError", "문법", scale)
+                PairNode("NameError", "이름·순서", scale)
+                PairNode("TypeError", "타입", scale)
+                PairNode("ValueError", "값 형식", scale)
+            }
+            "CALC_STEPS" -> FlowNodes(listOf("price × count", "subtotal", "+ shipping", "total"), scale)
+            "IPO_PROJECT" -> FlowNodes(listOf("INPUT", "PROCESS", "OUTPUT", "VERIFY"), scale)
+        }
+    }
+}
+
+@Composable
+private fun FlowNodes(nodes: List<String>, scale: Float) {
+    nodes.forEachIndexed { index, node ->
+        Box(
+            Modifier
+                .fillMaxWidth()
+                .clip(RoundedCornerShape(13.dp))
+                .background(Color(0xFF2B2720))
+                .padding(horizontal = 14.dp, vertical = 10.dp)
+        ) {
+            Text(
+                node,
+                fontFamily = EditorialSerif,
+                color = ReaderText,
+                fontSize = (13 * scale).sp
+            )
+        }
+        if (index != nodes.lastIndex) {
+            Text(
+                "↓",
+                color = ReaderGold,
+                fontSize = (17 * scale).sp,
+                modifier = Modifier.align(Alignment.CenterHorizontally)
+            )
+        }
+    }
+}
+
+@Composable
+private fun PairNode(left: String, right: String, scale: Float) {
+    Row(
+        Modifier
+            .fillMaxWidth()
+            .clip(RoundedCornerShape(13.dp))
+            .background(Color(0xFF2B2720))
+            .padding(horizontal = 14.dp, vertical = 10.dp),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Text(
+            left,
+            fontFamily = FontFamily.Monospace,
+            color = ReaderGold,
+            fontSize = (13 * scale).sp,
+            modifier = Modifier.weight(.8f)
+        )
+        Text("→", color = ReaderMuted)
+        Text(
+            right,
+            fontFamily = EditorialSerif,
+            color = ReaderText,
+            fontSize = (13 * scale).sp,
+            modifier = Modifier.weight(1.2f).padding(start = 10.dp)
+        )
     }
 }
