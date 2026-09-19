@@ -8,7 +8,7 @@ package com.codingroadmap.app.data
  * compact contextual deepening prompts. No authored extra is discarded.
  */
 object TwoPageContentExpander {
-    private val trailingHalfMarker = Regex("""\\s+[12]/2$""")
+    private val trailingHalfMarker = Regex("""\s+[12]/2$""")
 
     fun expand(chapter: ChapterContent): ChapterContent =
         chapter.copy(pages = chapter.pages.flatMap(::expandPage))
