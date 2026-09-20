@@ -161,7 +161,7 @@ function fitPage(){
   let cs=getComputedStyle(paper),avail=paper.clientHeight-(parseFloat(cs.paddingTop)||0)-(parseFloat(cs.paddingBottom)||0)-2;
   let need=fit.scrollHeight;
   if(need>avail*1.02){paper.classList.add('fit-dense');fit.style.transform='none';need=fit.scrollHeight;cs=getComputedStyle(paper);avail=paper.clientHeight-(parseFloat(cs.paddingTop)||0)-(parseFloat(cs.paddingBottom)||0)-2}
-  const scale=Math.min(1,Math.max(.52,avail/Math.max(need,1)));
+  const scale=Math.min(1,avail/Math.max(need,1));
   fit.style.transform=scale<.999?`scale(${scale})`:'none';
   fit.dataset.fitScale=scale.toFixed(3);
   paper.dataset.fitscreen=need*scale<=avail+2?'yes':'no'
