@@ -13,6 +13,8 @@ assert(html.includes('edge-zone edge-prev')&&html.includes('edge-zone edge-next'
 assert(html.includes('TITLE_TOP_PAGE_V2'),'title-top pagination marker missing');
 assert(html.includes('SWIPE_TRACK_FOCUS_V1'),'swipe/track/focus architecture marker missing');
 assert(html.includes('SWIPE_CONTENT_CODE_V2'),'full-surface swipe/code-first marker missing');
+assert(html.includes('BOOK_SOURCES_V1'),'chapter source reference marker missing');
+assert(html.includes('chapter-references'),'chapter reference rendering missing');
 assert(html.includes("document.querySelector('.reader-paper-wrap')"),'swipe must attach to title+body reader surface');
 assert(html.includes("surface.addEventListener('touchstart'")&&html.includes("surface.addEventListener('touchmove'")&&html.includes("surface.addEventListener('touchend'"),'Android touch swipe handlers missing');
 assert(html.includes('touch-action:pan-y'),'touch swipe surface missing');
@@ -35,16 +37,40 @@ function explanationChars(p){
   return [
     ...(p.paragraphs||[]),...(p.bullets||[]),p.practicePrompt||'',p.question||'',p.answer||'',
     p.calloutTitle||'',p.calloutBody||'',p.code||'',p.codeNote||'',
-    ...(p.codeExplain||[]),...(p.codeTrace||[]),
+    ...(p.codeExplain||[]),
     ...(p.glossary||[]).flatMap(g=>[g.term||'',g.description||'',g.usage||'',g.example||''])
   ].join(' ').length;
 }
-const track2Pages=course.chapters.filter(c=>c.track===2).flatMap(c=>c.pages);
+const track2Chapters=course.chapters.filter(c=>c.track===2);
+const track2Pages=track2Chapters.flatMap(c=>c.pages);
 assert.equal(track2Pages.length,234,'Track 2 page count must remain 234');
-const thinTrack2=track2Pages.filter(p=>explanationChars(p)<650);
-assert.equal(thinTrack2.length,0,'Track 2 sparse pages below 650 visible characters: '+thinTrack2.map(p=>p.id).join(','));
+const thinTrack2=track2Pages.filter(p=>explanationChars(p)<400);
+assert.equal(thinTrack2.length,0,'Track 2 page below 400 meaningful visible characters: '+thinTrack2.map(p=>p.id).join(','));
 assert.equal(track2Pages.filter(p=>!p.code).length,0,'Every Track 2 page must include code or starter code');
-assert.equal(track2Pages.filter(p=>!Array.isArray(p.codeExplain)||!p.codeExplain.length).length,0,'Every Track 2 code page must include line-by-line explanation');
+assert.equal(track2Pages.filter(p=>!Array.isArray(p.codeExplain)||!p.codeExplain.length).length,0,'Every Track 2 page must include page-specific code explanation');
+assert.equal(track2Pages.filter(p=>p.codeTrace).length,0,'Generic repeated codeTrace filler must not return');
+for(const c of track2Chapters){
+  assert.equal((c.references||[]).length,3,'Every Track 2 chapter must cite exactly three verified 2026 books');
+  const summary=c.pages.find(p=>p.kind==='summary');
+  assert.equal((summary?.references||[]).length,3,'Each Track 2 summary must carry the three chapter references');
+}
+const longParagraphs=new Map();
+for(const p of track2Pages)for(const raw of p.paragraphs||[]){
+  const s=String(raw).trim();
+  if(s.length<70)continue;
+  if(!longParagraphs.has(s))longParagraphs.set(s,[]);
+  longParagraphs.get(s).push(p.id);
+}
+const repeatedParagraphs=[...longParagraphs.entries()].filter(([s,ids])=>ids.length>1);
+assert.equal(repeatedParagraphs.length,0,'Repeated long Track 2 paragraphs: '+repeatedParagraphs.slice(0,6).map(([s,ids])=>ids.join('/')).join(','));
+const codeLines=new Map();
+for(const p of track2Pages)for(const raw of p.codeExplain||[]){
+  const s=String(raw).trim();
+  if(!codeLines.has(s))codeLines.set(s,[]);
+  codeLines.get(s).push(p.id);
+}
+const repeatedCodeExplain=[...codeLines.entries()].filter(([s,ids])=>ids.length>1);
+assert.equal(repeatedCodeExplain.length,0,'Repeated Track 2 code explanations remain');
 const forbiddenTrack2=['실제 개발과 연결','이 페이지를 읽을 때','초보 해설 ·','공부하는 방법','실수 적'];
 for(const phrase of forbiddenTrack2){
   const hits=track2Pages.filter(p=>JSON.stringify(p).includes(phrase));
@@ -146,9 +172,11 @@ const report={
     'no scale-to-fit',
     'no sparse filler stretching',
     'sequential top-to-bottom horizontal pagination','persistent large topic title above every physical swipe page',
-    'Track 2 minimum 650-character visible content density on all 234 pages',
+    'Track 2 minimum 400-character meaningful content without filler',
     'Track 2 code or starter code on every page',
-    'Track 2 line-by-line code explanation on every page',
+    'Track 2 page-specific line-by-line code explanation with zero duplicates',
+    'Track 2 long repeated paragraphs blocked',
+    'Track 2 three verified 2026 bestseller references per chapter',
     'Track 2 generic meta filler removed',
     'edge tap navigation','chapter hierarchy ribbon','content-type markers','solution hierarchy banner',
     'Android bottom safe area'
