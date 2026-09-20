@@ -420,6 +420,7 @@ body.reader-mode{
   --reader-paragraph-gap:14px;
   --reader-block-gap:16px;
   --reader-title-gap:20px;
+  --reader-line-tolerance:3;
 }
 .reader-mode .paper{
   padding:0!important;
@@ -641,6 +642,7 @@ function fitPage(){
   fit.style.columnFill='balance';
   fit.dataset.pageMode='balanced-chapter';
   fit.dataset.screenPages=String(pageColumns);
+  fit.dataset.lineTolerance='3';
   requestAnimationFrame(()=>{const target=pendingSubPage==='last'?pageColumns-1:(pendingLogicalId?pageForLogicalId(pendingLogicalId):Math.min(subPage,pageColumns-1));pendingLogicalId='';pendingSubPage=0;subPage=Math.max(0,Math.min(pageColumns-1,target));paper.scrollLeft=subPage*paper.clientWidth;syncLogicalToVisual();updatePagePosition();paper.dataset.fitscreen='balanced'})
 }
 function modal(title,body){const el=document.getElementById('modal');el.innerHTML=`<div class="top"><h2>${esc(title)}</h2>${btn('닫기','close','flat')}</div>${body}`;el.showModal()}
