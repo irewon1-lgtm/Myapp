@@ -8,7 +8,7 @@ assert(html.includes('--readerLine:1.68'),'reader line-height contract missing')
 assert(html.includes('.logical-anchor{display:block;width:0;height:0;overflow:hidden'),'transparent logical-anchor contract missing');
 assert(!html.includes('<section class="lesson-section"'),'logical page wrappers must not block physical pagination');
 assert(html.includes('overflow-y:hidden'),'reader vertical scroll must be disabled');
-assert(html.includes("flow.style.columnFill='balance'"),'balanced reader pagination missing');
+assert(html.includes("flow.style.columnFill='auto'"),'sequential full-page pagination missing');
 assert(html.includes('edge-zone edge-prev')&&html.includes('edge-zone edge-next'),'edge tap navigation missing');
 assert(html.includes('--navSafe:calc(28px + env(safe-area-inset-bottom))'),'Android bottom safe area missing');
 assert(!html.includes('scale=Math.min(1,avail/'),'scale-to-fit must not return');
@@ -107,7 +107,7 @@ const report={
     'fixed 1.68 line-height',
     'no scale-to-fit',
     'no sparse filler stretching',
-    'balanced horizontal pagination','transparent page-id anchors for continuous text flow',
+    'sequential top-to-bottom horizontal pagination','transparent page-id anchors for continuous text flow',
     'edge tap navigation',
     'Android bottom safe area'
   ],
