@@ -33,11 +33,13 @@ public final class LiveActivity extends Activity {
     private boolean displayed = false;
     private String pendingExport;
     private String activeHtml;
-    private String previousHtml;
+    private String visibleHtml;
+    
     private boolean healthy = false;
 
     @Override public void onCreate(Bundle state) {
         super.onCreate(state);
+        if (android.os.Build.VERSION.SDK_INT >= 33) getOnBackInvokedDispatcher().registerOnBackInvokedCallback(0, () -> onBackPressed());
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         getWindow().setStatusBarColor(Color.rgb(19,21,24));
         getWindow().setNavigationBarColor(Color.rgb(19,21,24));
@@ -94,6 +96,7 @@ public final class LiveActivity extends Activity {
                 checking = false;
                 final String result = updated;
                 main.post(() -> {
+                    if (isFinishing() || isDestroyed()) return;
                     if (result != null) activeHtml = result;
                     if (launch && !displayed) showReader(activeHtml);
                     else if (web != null) web.evaluateJavascript("window.onUpdateStatus && window.onUpdateStatus(" + JSONObject.quote(status) + ")", null);
@@ -104,11 +107,16 @@ public final class LiveActivity extends Activity {
 
     @SuppressWarnings("SetJavaScriptEnabled")
     private void showReader(String html) {
-        if (isFinishing()) return;
+        if (isFinishing() || isDestroyed()) return;
+        visibleHtml = html;
         displayed = true;
         if (web != null) web.destroy();
         web = new WebView(this);
         web.setBackgroundColor(Color.rgb(19,21,24));
+        web.setOnApplyWindowInsetsListener((view, insets) -> {
+            view.setPadding(insets.getSystemWindowInsetLeft(), insets.getSystemWindowInsetTop(), insets.getSystemWindowInsetRight(), insets.getSystemWindowInsetBottom());
+            return insets.consumeSystemWindowInsets();
+        });
         web.getSettings().setJavaScriptEnabled(true);
         web.getSettings().setDomStorageEnabled(true);
         web.getSettings().setAllowFileAccess(false);
@@ -185,7 +193,15 @@ public final class LiveActivity extends Activity {
         web.evaluateJavascript("window.goBack ? window.goBack() : false", result -> { if (!"true".equals(result)) finish(); });
     }
     @Override protected void onPause() { if (web != null) web.onPause(); super.onPause(); }
-    @Override protected void onResume() { super.onResume(); if (web != null) web.onResume(); }
+    @Override protected void onResume() {
+        super.onResume();
+        if (web != null) {
+            web.onResume();
+            String cached = readCached();
+            if (!cached.equals(visibleHtml)) showReader(cached);
+            checkUpdate(false);
+        }
+    }
     @Override protected void onDestroy() { main.removeCallbacksAndMessages(null); if (web != null) { web.removeJavascriptInterface("RoadmapNative"); web.destroy(); } super.onDestroy(); }
 
     static byte[] download(String address, int limit) throws Exception {
