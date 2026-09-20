@@ -417,9 +417,9 @@ body.reader-mode{
 .reader-mode{
   --reader-body-size:18px;
   --reader-body-line:1.68;
-  --reader-paragraph-gap:14px;
-  --reader-block-gap:16px;
-  --reader-title-gap:20px;
+  --reader-paragraph-gap:0px;
+  --reader-block-gap:0px;
+  --reader-title-gap:8px;
   --reader-line-tolerance:3;
 }
 .reader-mode .paper{
@@ -541,6 +541,91 @@ body.reader-mode{
 .reader-mode .paper-fit.multi-page{
   display:block!important;
   justify-content:initial!important;
+}
+
+
+/* NO_GAP_FULL_PAGE_V7
+   No paragraph spacing, no decorative vertical gaps, no sparse filler.
+   Fixed typography flows continuously to fill every screen. */
+.reader-mode{
+  --reader-paragraph-gap:0px!important;
+  --reader-block-gap:0px!important;
+  --reader-title-gap:8px!important;
+}
+.reader-mode .paper-fit{
+  padding-top:4px!important;
+  padding-bottom:4px!important;
+}
+.reader-mode .paper-fit .lesson-section,
+.reader-mode .paper-fit .lesson-section+.lesson-section{
+  margin-top:0!important;
+  margin-bottom:0!important;
+  padding-top:0!important;
+  padding-bottom:0!important;
+}
+.reader-mode .paper-fit p,
+.reader-mode .paper-fit .paragraph,
+.reader-mode .paper-fit p+p,
+.reader-mode .paper-fit .paragraph+.paragraph{
+  margin-top:0!important;
+  margin-bottom:0!important;
+  padding-top:0!important;
+  padding-bottom:0!important;
+}
+.reader-mode .paper-fit .eyebrow{
+  margin:0 0 4px!important;
+}
+.reader-mode .paper-fit h1{
+  margin:0 0 8px!important;
+}
+.reader-mode .paper-fit h2,
+.reader-mode .paper-fit h3{
+  margin-top:0!important;
+  margin-bottom:4px!important;
+}
+.reader-mode .paper-fit .card,
+.reader-mode .paper-fit .code,
+.reader-mode .paper-fit .diagram,
+.reader-mode .paper-fit .goal,
+.reader-mode .paper-fit .summary-grid,
+.reader-mode .paper-fit .actions,
+.reader-mode .paper-fit .footnote{
+  margin-top:0!important;
+  margin-bottom:0!important;
+}
+.reader-mode .paper-fit .card{
+  padding-top:8px!important;
+  padding-bottom:8px!important;
+}
+.reader-mode .paper-fit .card .label{
+  margin-top:4px!important;
+  margin-bottom:2px!important;
+}
+.reader-mode .paper-fit ul{
+  margin-top:0!important;
+  margin-bottom:0!important;
+}
+.reader-mode .paper-fit li+li{
+  margin-top:0!important;
+}
+.reader-mode .paper-fit .code .bar{
+  padding-top:4px!important;
+  padding-bottom:4px!important;
+}
+.reader-mode .paper-fit .code pre{
+  padding-top:8px!important;
+  padding-bottom:8px!important;
+}
+.reader-mode .paper-fit .code .output{
+  padding-top:6px!important;
+  padding-bottom:6px!important;
+}
+.reader-mode .paper-fit .diagram{
+  margin-top:0!important;
+}
+.reader-mode .paper-fit .diagram .row{
+  padding-top:6px!important;
+  padding-bottom:6px!important;
 }
 
 </style></head><body><div id="app"></div><dialog id="modal"></dialog><div id="toast" class="toast" hidden></div>
