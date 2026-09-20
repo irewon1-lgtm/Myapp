@@ -27,6 +27,19 @@ assert(!html.includes('space-evenly'),'sparse filler stretching must not return'
 assert(!html.includes('PREMIUM_MINIMAL_V3')&&!html.includes('UNIFORM_READER_GRID_V6')&&!html.includes('NO_GAP_FULL_PAGE_V7'),'legacy CSS layers must not return');
 const ids=[...course.chapters.flatMap(c=>c.pages.map(p=>p.id))];
 assert.equal(ids.length,new Set(ids).size,'duplicate page ids');
+
+function explanationChars(p){
+  return [
+    ...(p.paragraphs||[]),...(p.bullets||[]),p.practicePrompt||'',p.question||'',p.answer||'',
+    p.calloutTitle||'',p.calloutBody||'',p.codeNote||'',
+    ...(p.extras||[]).flatMap(e=>[e.title||'',e.body||'']),
+    ...(p.glossary||[]).flatMap(g=>[g.term||'',g.description||'',g.usage||'',g.example||''])
+  ].join(' ').length;
+}
+const track2Pages=course.chapters.filter(c=>c.track===2).flatMap(c=>c.pages);
+assert.equal(track2Pages.length,234,'Track 2 page count must remain 234');
+const thinTrack2=track2Pages.filter(p=>explanationChars(p)<650);
+assert.equal(thinTrack2.length,0,'Track 2 sparse pages below 650 explanation characters: '+thinTrack2.map(p=>p.id).join(','));
 for(const c of course.chapters)for(let i=0;i<c.pages.length;i++)if(c.pages[i].answerOnNext)assert.equal(c.pages[i+1]?.kind,'solution','solution must immediately follow answerOnNext');
 
 const script=html.match(/<script>([\s\S]*?)<\/script>/)[1];
@@ -123,6 +136,7 @@ const report={
     'no scale-to-fit',
     'no sparse filler stretching',
     'sequential top-to-bottom horizontal pagination','persistent large topic title above every physical swipe page',
+    'Track 2 minimum 650-character beginner explanation density on all 234 pages',
     'edge tap navigation','chapter hierarchy ribbon','content-type markers','solution hierarchy banner',
     'Android bottom safe area'
   ],
