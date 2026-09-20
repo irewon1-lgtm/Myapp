@@ -350,6 +350,68 @@ body.reader-mode{
   .edge-nav{width:42px!important}
 }
 
+
+/* FIXED_TYPE_PAGINATION_V5
+   Fixed typography. Never scale lesson text to fit.
+   Overflow flows to another horizontal screen page. */
+.reader-mode .paper{
+  --reader-gutter:clamp(18px,4.2vw,46px);
+  padding:0!important;
+  overflow-x:hidden!important;
+  overflow-y:hidden!important;
+  scroll-behavior:smooth;
+  overscroll-behavior:none!important;
+}
+.reader-mode .paper-fit{
+  box-sizing:border-box;
+  width:100%;
+  min-width:100%;
+  padding-block:18px;
+  transform:none!important;
+  transform-origin:initial!important;
+}
+.reader-mode .paper-fit>*{margin-inline:var(--reader-gutter)}
+.reader-mode .paper-fit.single-fill{
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+}
+.reader-mode .paper-fit.single-fill.sparse-fill{
+  justify-content:space-evenly;
+}
+.reader-mode .paper-fit.multi-page{
+  height:100%;
+  display:block;
+  column-fill:auto;
+  column-gap:0;
+}
+.reader-mode .paper-fit.multi-page>.card,
+.reader-mode .paper-fit.multi-page>.code,
+.reader-mode .paper-fit.multi-page>.diagram,
+.reader-mode .paper-fit.multi-page>.goal,
+.reader-mode .paper-fit.multi-page>.summary-grid,
+.reader-mode .paper-fit.multi-page>.actions{
+  break-inside:avoid;
+}
+.reader-mode .paper.fit-dense .paper-fit{
+  line-height:inherit!important;
+}
+.reader-mode .paper.fit-dense .paper-fit h1,
+.reader-mode .paper.fit-dense .paper-fit .paragraph,
+.reader-mode .paper.fit-dense .paper-fit .card,
+.reader-mode .paper.fit-dense .paper-fit .code,
+.reader-mode .paper.fit-dense .paper-fit .diagram,
+.reader-mode .paper.fit-dense .paper-fit .goal,
+.reader-mode .paper.fit-dense .paper-fit .footnote{
+  margin-top:revert!important;
+  margin-bottom:revert!important;
+  padding-top:revert-layer!important;
+  padding-bottom:revert-layer!important;
+}
+.reader-mode .paper-fit[data-page-mode="multi"]{font-size:inherit!important}
+.reader-mode .paper-fit[data-page-mode="single"]{font-size:inherit!important}
+
 </style></head><body><div id="app"></div><dialog id="modal"></dialog><div id="toast" class="toast" hidden></div>
 <script id="course" type="application/json">__COURSE_JSON__</script>
 <script>
@@ -364,7 +426,7 @@ try{state=JSON.parse(native?native.getState():localStorage.getItem('codingroadma
 state=Object.assign({},defaults,state);
 for(const k of ['bookmarks','complete','visited'])if(!Array.isArray(state[k]))state[k]=[];
 if(!state.notes||typeof state.notes!=='object'||Array.isArray(state.notes))state.notes={};
-let route='home', current=locate(state.location)||{c:0,p:0}, focus=false, searchQuery='', updateStatus=native?native.getStatus():'저장된 교재',toastTimer;
+let route='home', current=locate(state.location)||{c:0,p:0}, focus=false, searchQuery='', updateStatus=native?native.getStatus():'저장된 교재',toastTimer, subPage=0, pageColumns=1, pendingSubPage=0;
 function locate(id){for(let c=0;c<chapters.length;c++){const p=chapters[c].pages.findIndex(x=>x.id===id);if(p>=0)return {c,p}}return null}
 function persist(){try{const raw=JSON.stringify(state);if(native)native.saveState(raw);else localStorage.setItem('codingroadmap-live-state',raw)}catch{toast('학습 기록을 저장하지 못했습니다')}}
 function migrate(){if(state.migrated)return;try{const old=native?JSON.parse(native.getLegacy()||'{}'):{};state.legacy=old;if(Object.keys(old).length){const c=(Number(old.current_track)||0)*8+(Number(old.current_chapter)||0);const chapter=chapters[c];if(chapter){const oldId=`${chapter.id}-p${(Number(old.current_page)||0)+1}`;state.location=locate(oldId)?oldId:chapter.pages[0].id;current=locate(state.location)}if(old.text_scale)state.font=Math.round(18*old.text_scale)}}catch{}state.migrated=true;persist()}
@@ -396,7 +458,7 @@ const track2Diagrams=[ [['조건','score >= 90?'],['참','A 선택 → 분기 �
 function diagram(p,c){let rows=c.track===2?track2Diagrams[c.chapter-1]:diagramData[p.visual];if(!rows)return '';return `<div class="diagram" role="table" aria-label="실행 흐름">${rows.map(([a,b])=>`<div class="row" role="row"><span class="key">${esc(a)}</span><span>${esc(b)}</span></div>`).join('')}</div>`}
 function codeCard(code,note){return `<div class="code"><div class="bar"><span>Python · 예제 코드</span>${btn('복사','copy-code','flat')}</div><pre><code>${esc(code)}</code></pre>${note?`<div class="output">${esc(note)}</div>`:''}</div>`}
 function pageBody(p,c){return `<div class="eyebrow">${esc(p.eyebrow||p.kind)}</div><h1>${esc(p.title)}</h1>${p.paragraphs?.map(s=>`<p class="paragraph">${text(s)}</p>`).join('')||''}${p.glossary?.map(g=>`<section class="card"><h3>${esc(g.term)}</h3><p>${text(g.description)}</p><div class="label">어디에 쓰나요?</div><p>${text(g.usage)}</p><div class="label">예시</div><p>${text(g.example)}</p></section>`).join('')||''}${p.visual?diagram(p,c):''}${p.bullets?.length?`<div class="card"><ul>${p.bullets.map(x=>`<li>${text(x)}</li>`).join('')}</ul></div>`:''}${p.calloutTitle?`<div class="card"><h3>${esc(p.calloutTitle)}</h3><p>${text(p.calloutBody)}</p></div>`:''}${p.code?codeCard(p.code,p.codeNote):''}${p.practicePrompt?`<section class="card"><h3>직접 해보기</h3><p>${text(p.practicePrompt)}</p></section>`:''}${p.question?`<section class="card"><h3>먼저 생각해 보세요</h3><p>${text(p.question)}</p></section>`:''}${p.answerOnNext?`<div class="goal">예상 결과와 이유를 먼저 적어 보세요.<br><strong>다음 장에 정답과 단계별 풀이가 있습니다.</strong></div><div class="actions">${btn('내 생각 적기','note')}${btn('풀이로 이동','next','primary')}</div>`:''}${p.answer?`<details class="card"><summary>정답·해설</summary><p>${text(p.answer)}</p></details>`:''}${p.extras?.map(e=>`<section class="card"><h3>${esc(e.title)}</h3><p>${text(e.body)}</p></section>`).join('')||''}${p.closingPrompt?`<p class="goal">${text(p.closingPrompt)}</p>`:''}${p.kind==='summary'?`<div class="summary-grid"><div class="card"><h3>기억할 것</h3><p>${esc(c.remember)}</p></div><div class="card"><h3>직접 해볼 것</h3><p>${esc(c.practiceGoal)}</p></div></div>`:''}${current.p===c.pages.length-1?`<div class="card"><h3>이 챕터를 설명할 수 있나요?</h3><p>${esc(c.practiceGoal)}를 직접 해보고 표시하세요.</p><div class="actions" style="margin-top:15px">${btn(state.complete.includes(c.id)?'이해 완료 취소':'이해 완료로 표시','complete','primary')}${btn('목차로','track-current')}</div><p class="footnote">기준 문서: <a href="https://docs.python.org/3.14/tutorial/" target="_blank" rel="noopener">Python 3.14 공식 튜토리얼</a> · 보완 검토 2026-09-20</p></div>`:''}`}
-function reader(){const c=chapters[current.c],p=c.pages[current.p],atStart=current.c===0&&current.p===0,atEnd=current.c===chapters.length-1&&current.p===c.pages.length-1;return `<div class="reader ${focus?'focus':''}"><header class="reader-head">${btn('←','track-current','flat')}<div class="titles"><span class="breadcrumb">TRACK ${c.track} · CHAPTER ${c.chapter}</span><strong>Chapter ${c.chapter} · ${esc(c.title)}</strong></div>${btn(state.bookmarks.includes(p.id)?'★':'☆','bookmark','flat','aria-label="북마크"')}${btn('메모','note','flat optional')}${btn('Aa','display','flat')}<button class="edge-nav edge-prev" data-action="prev" aria-label="이전 페이지" ${atStart?'disabled':''}></button><button class="edge-nav edge-next" data-action="next" aria-label="다음 페이지" ${atEnd?'disabled':''}></button></header><article class="paper" id="paper"><div class="paper-fit" id="paper-fit">${pageBody(p,c)}</div></article><footer class="footer">${btn('이전','prev','',atStart?'disabled':'')}<div class="position">${current.p+1} / ${c.pages.length}<div class="progress"><i style="width:${100*(current.p+1)/c.pages.length}%"></i></div></div>${btn(focus?'집중해제':'집중모드','focus','flat')}${btn('다음','next','',atEnd?'disabled':'')}</footer></div>`}
+function reader(){const c=chapters[current.c],p=c.pages[current.p],atStart=current.c===0&&current.p===0,atEnd=current.c===chapters.length-1&&current.p===c.pages.length-1;return `<div class="reader ${focus?'focus':''}"><header class="reader-head">${btn('←','track-current','flat')}<div class="titles"><span class="breadcrumb">TRACK ${c.track} · CHAPTER ${c.chapter}</span><strong>Chapter ${c.chapter} · ${esc(c.title)}</strong></div>${btn(state.bookmarks.includes(p.id)?'★':'☆','bookmark','flat','aria-label="북마크"')}${btn('메모','note','flat optional')}${btn('Aa','display','flat')}<button class="edge-nav edge-prev" data-action="prev" aria-label="이전 페이지" ${atStart?'disabled':''}></button><button class="edge-nav edge-next" data-action="next" aria-label="다음 페이지" ${atEnd?'disabled':''}></button></header><article class="paper" id="paper"><div class="paper-fit" id="paper-fit">${pageBody(p,c)}</div></article><footer class="footer">${btn('이전','prev','',atStart?'disabled':'')}<div class="position"><span id="page-pos">${current.p+1} / ${c.pages.length}</span><div class="progress"><i style="width:${100*(current.p+1)/c.pages.length}%"></i></div></div>${btn(focus?'집중해제':'집중모드','focus','flat')}${btn('다음','next','',atEnd?'disabled':'')}</footer></div>`}
 
 function excerpt(p){return [p.title,...(p.paragraphs||[]),p.code||'',p.question||'',...(p.glossary||[]).flatMap(g=>[g.term,g.description,g.example])].join(' ')}
 function results(q){if(!q.trim())return '<p class="muted">변수, NameError, return처럼 모르는 말을 찾아보세요.</p>';const hits=[];chapters.forEach((c,ci)=>c.pages.forEach((p,pi)=>{const s=excerpt(p);const pos=s.toLowerCase().indexOf(q.toLowerCase());if(pos>=0)hits.push({c,ci,p,pi,s:s.slice(Math.max(0,pos-30),pos+120)})}));return `<p class="info" style="margin-bottom:16px">${hits.length}장 검색됨</p>`+hits.slice(0,100).map(h=>`<button class="result" data-action="open" data-id="${h.p.id}"><small>트랙 ${h.c.track} · ${esc(h.c.title)}</small><strong>${esc(h.p.title)}</strong><p>${esc(h.s)}…</p></button>`).join('')}
@@ -405,33 +467,66 @@ function saved(){const marks=state.bookmarks.map(id=>{const pos=locate(id);if(!p
 
 function settings(){return header('설정')+`<main class="shell"><h1>편하게 읽기</h1><section class="card"><h3>글자와 화면</h3><div class="actions">${btn('작게','font-down')}${btn(state.font+'px','noop','flat')}${btn('크게','font-up')}${btn(state.theme==='dark'?'밝은 화면':'어두운 화면','theme')}</div></section><section class="card"><h3>자동 업데이트</h3><p>${esc(updateStatus)}</p><p class="info">앱을 새로 실행할 때 최신 교재와 화면을 확인합니다. 연결이 안 되면 저장된 교재가 열립니다. 읽는 도중에는 페이지를 강제로 바꾸지 않습니다.</p><div class="actions" style="margin-top:16px">${btn('지금 확인','refresh')}${btn('받은 변경 적용','apply')}</div><p class="footnote">${esc(COURSE.label)} · 콘텐츠 ${COURSE.version}</p></section><section class="card"><h3>학습 기록 보관</h3><p class="info">읽던 위치, 북마크, 메모, 이해 완료 표시를 파일로 저장하거나 복원합니다. 복원 시 기존 기록은 유지하면서 합칩니다.</p><div class="actions" style="margin-top:16px">${btn('기록 내보내기','export')}${btn('기록 가져오기','import')}</div><input id="import-file" type="file" accept="application/json" hidden></section><section class="card"><h3>기존 화면</h3><p class="info">이전 책장과 기록은 삭제하지 않았습니다. 아래 버튼은 APK에 들어 있는 이전 화면을 엽니다. 이전 화면에는 새 교재가 자동 반영되지 않습니다.</p>${btn('이전 앱 화면 열기','legacy')}</section>${nav()}</main>`}
 function render(){applyDisplay();document.body.classList.toggle('reader-mode',route==='reader');document.body.classList.toggle('library-mode',route!=='reader');document.getElementById('app').innerHTML=({home,books,track:trackPage,reader,search,saved,settings}[route]||home)();document.title='코딩 로드맵 · '+(route==='reader'?chapters[current.c].title:'서재');if(route==='reader'){installGestures();if(typeof requestAnimationFrame==='function')requestAnimationFrame(fitPage);else fitPage()}if(native)native.ready()}
-function openPage(id){const pos=locate(id);if(!pos){toast('현재 교재에서 이 페이지를 찾지 못했습니다');return}current=pos;selectedTrack=chapters[pos.c].track;state.location=id;if(!state.visited.includes(id))state.visited.push(id);persist();route='reader';render()}
-function canMove(delta){let {c,p}=current;p+=delta;if(p<0)return c>0;if(p>=chapters[c].pages.length)return c<chapters.length-1;return true}
-function moveNow(delta){let {c,p}=current;p+=delta;if(p<0){if(c===0)return;c--;p=chapters[c].pages.length-1}else if(p>=chapters[c].pages.length){if(c===chapters.length-1)return;c++;p=0}openPage(chapters[c].pages[p].id)}
+function openPage(id,fragment=0){const pos=locate(id);if(!pos){toast('현재 교재에서 이 페이지를 찾지 못했습니다');return}current=pos;selectedTrack=chapters[pos.c].track;state.location=id;if(!state.visited.includes(id))state.visited.push(id);persist();subPage=fragment==='last'?0:Math.max(0,Number(fragment)||0);pendingSubPage=fragment;pageColumns=1;route='reader';render()}
+function logicalCanMove(delta){let {c,p}=current;p+=delta;if(p<0)return c>0;if(p>=chapters[c].pages.length)return c<chapters.length-1;return true}
+function canMove(delta){if(delta>0&&subPage<pageColumns-1)return true;if(delta<0&&subPage>0)return true;return logicalCanMove(delta)}
+function updatePagePosition(){const el=document.getElementById('page-pos');if(!el)return;const c=chapters[current.c];el.textContent=(current.p+1)+' / '+c.pages.length+(pageColumns>1?' · '+(subPage+1)+'/'+pageColumns:'')}
+function moveSubPage(delta){const paper=document.getElementById('paper');if(!paper)return;subPage=Math.max(0,Math.min(pageColumns-1,subPage+delta));paper.classList.remove('dragging');paper.style.transition='';paper.style.transform='';paper.style.opacity='';if(typeof paper.scrollTo==='function')paper.scrollTo({left:subPage*paper.clientWidth,top:0,behavior:'smooth'});else paper.scrollLeft=subPage*paper.clientWidth;updatePagePosition()}
+function moveNow(delta){let {c,p}=current;p+=delta;if(p<0){if(c===0)return;c--;p=chapters[c].pages.length-1}else if(p>=chapters[c].pages.length){if(c===chapters.length-1)return;c++;p=0}openPage(chapters[c].pages[p].id,delta<0?'last':0)}
 let pagerBusy=false;
 function slideMove(delta){
-  if(pagerBusy)return;
-  if(!canMove(delta)){const el=document.getElementById('paper');if(el){el.classList.remove('dragging');el.style.transition='transform .16s ease,opacity .16s ease';el.style.transform='translate3d(0,0,0)';el.style.opacity='1'}return}
+  if(pagerBusy||!logicalCanMove(delta))return;
   const el=document.getElementById('paper');
   if(!el||typeof requestAnimationFrame!=='function'){moveNow(delta);return}
   pagerBusy=true;el.classList.remove('dragging');
   const w=Math.max(innerWidth||0,el.clientWidth||0,320);
   el.style.transition='transform .18s cubic-bezier(.4,0,.2,1),opacity .18s ease';
-  el.style.transform=`translate3d(${delta>0?-w:w}px,0,0)`;el.style.opacity='.25';
-  setTimeout(()=>{moveNow(delta);const next=document.getElementById('paper');if(!next){pagerBusy=false;return}const enter=delta>0?w:-w;next.style.transition='none';next.style.transform=`translate3d(${enter}px,0,0)`;next.style.opacity='.25';requestAnimationFrame(()=>requestAnimationFrame(()=>{next.style.transition='transform .20s cubic-bezier(.22,.72,.28,1),opacity .20s ease';next.style.transform='translate3d(0,0,0)';next.style.opacity='1';setTimeout(()=>{next.style.transition='';next.style.transform='';next.style.opacity='';pagerBusy=false},210)}))},185)
+  el.style.transform=\`translate3d(\${delta>0?-w:w}px,0,0)\`;el.style.opacity='.25';
+  setTimeout(()=>{moveNow(delta);const next=document.getElementById('paper');if(!next){pagerBusy=false;return}const enter=delta>0?w:-w;next.style.transition='none';next.style.transform=\`translate3d(\${enter}px,0,0)\`;next.style.opacity='.25';requestAnimationFrame(()=>requestAnimationFrame(()=>{next.style.transition='transform .20s cubic-bezier(.22,.72,.28,1),opacity .20s ease';next.style.transform='translate3d(0,0,0)';next.style.opacity='1';setTimeout(()=>{next.style.transition='';next.style.transform='';next.style.opacity='';pagerBusy=false},210)}))},185)
 }
-function move(delta){if(typeof requestAnimationFrame==='function'&&route==='reader')slideMove(delta);else moveNow(delta)}
+function move(delta){
+  if(route!=='reader'){moveNow(delta);return}
+  if(delta>0&&subPage<pageColumns-1){moveSubPage(1);return}
+  if(delta<0&&subPage>0){moveSubPage(-1);return}
+  if(typeof requestAnimationFrame==='function')slideMove(delta);else moveNow(delta)
+}
 function fitPage(){
   const paper=document.getElementById('paper'),fit=document.getElementById('paper-fit');
-  if(!paper||!fit||!paper.clientHeight||!fit.scrollHeight||typeof getComputedStyle!=='function')return;
-  fit.style.transform='none';paper.classList.remove('fit-dense');
-  let cs=getComputedStyle(paper),avail=paper.clientHeight-(parseFloat(cs.paddingTop)||0)-(parseFloat(cs.paddingBottom)||0)-2;
-  let need=fit.scrollHeight;
-  if(need>avail*1.02){paper.classList.add('fit-dense');fit.style.transform='none';need=fit.scrollHeight;cs=getComputedStyle(paper);avail=paper.clientHeight-(parseFloat(cs.paddingTop)||0)-(parseFloat(cs.paddingBottom)||0)-2}
-  const scale=Math.min(1,avail/Math.max(need,1));
-  fit.style.transform=scale<.999?`scale(${scale})`:'none';
-  fit.dataset.fitScale=scale.toFixed(3);
-  paper.dataset.fitscreen=need*scale<=avail+2?'yes':'no'
+  if(!paper||!fit||!paper.clientHeight||!paper.clientWidth||typeof getComputedStyle!=='function')return;
+  paper.classList.remove('fit-dense');
+  fit.classList.remove('single-fill','sparse-fill','multi-page');
+  fit.style.transform='none';
+  fit.style.height='auto';
+  fit.style.columnWidth='auto';
+  fit.style.columnGap='0px';
+  fit.style.columnFill='auto';
+  paper.scrollLeft=0;
+  const natural=fit.scrollHeight;
+  const avail=paper.clientHeight;
+  if(natural<=avail-2){
+    pageColumns=1;subPage=0;pendingSubPage=0;
+    fit.classList.add('single-fill');
+    fit.dataset.pageMode='single';
+    fit.style.height='100%';
+    if(natural<avail*.86)fit.classList.add('sparse-fill');
+    paper.dataset.fitscreen='yes';
+    updatePagePosition();
+    return
+  }
+  fit.classList.add('multi-page');
+  fit.dataset.pageMode='multi';
+  fit.style.height='100%';
+  fit.style.columnWidth=paper.clientWidth+'px';
+  fit.style.columnGap='0px';
+  fit.style.columnFill='auto';
+  const totalWidth=Math.max(paper.scrollWidth,fit.scrollWidth,paper.clientWidth);
+  pageColumns=Math.max(2,Math.ceil(totalWidth/paper.clientWidth-.001));
+  subPage=pendingSubPage==='last'?pageColumns-1:Math.max(0,Math.min(pageColumns-1,Number(pendingSubPage)||subPage||0));
+  pendingSubPage=0;
+  paper.scrollLeft=subPage*paper.clientWidth;
+  fit.dataset.screenPages=String(pageColumns);
+  paper.dataset.fitscreen='split';
+  updatePagePosition()
 }
 function modal(title,body){const el=document.getElementById('modal');el.innerHTML=`<div class="top"><h2>${esc(title)}</h2>${btn('닫기','close','flat')}</div>${body}`;el.showModal()}
 function goBack(){const d=document.getElementById('modal');if(d.open){d.close();return true}if(route==='home')return false;route=route==='reader'?'track':'home';selectedTrack=chapters[current.c].track;render();return true}window.goBack=goBack;
@@ -445,10 +540,10 @@ window.onUpdateStatus=s=>{updateStatus=s;if(route==='settings')render()};
 function installGestures(){
   const el=document.getElementById('paper');if(!el||!el.addEventListener)return;
   let start=null,dragging=false,lastDx=0;
-  const snap=()=>{el.classList.remove('dragging');el.style.transition='transform .16s ease,opacity .16s ease';el.style.transform='translate3d(0,0,0)';el.style.opacity='1';setTimeout(()=>{el.style.transition='';el.style.transform='';el.style.opacity=''},170)};
+  const snap=()=>{el.classList.remove('dragging');el.style.transition='transform .16s ease,opacity .16s ease';el.style.transform='translate3d(0,0,0)';el.style.opacity='1';if(pageColumns>1)el.scrollLeft=subPage*el.clientWidth;setTimeout(()=>{el.style.transition='';el.style.transform='';el.style.opacity=''},170)};
   el.addEventListener('pointerdown',e=>{if(pagerBusy||e.target.closest('pre,button,a,input,textarea,summary,details'))return;start={x:e.clientX,y:e.clientY,t:Date.now()};dragging=false;lastDx=0;try{el.setPointerCapture&&el.setPointerCapture(e.pointerId)}catch{}});
-  el.addEventListener('pointermove',e=>{if(!start||pagerBusy)return;const dx=e.clientX-start.x,dy=e.clientY-start.y;if(!dragging){if(Math.abs(dx)<10)return;if(Math.abs(dx)<=Math.abs(dy)*1.15)return;dragging=true;el.classList.add('dragging')}if(!dragging)return;let shown=dx;const delta=dx<0?1:-1;if(!canMove(delta))shown*=.22;lastDx=shown;el.style.transform=`translate3d(${shown}px,0,0)`;el.style.opacity=String(Math.max(.56,1-Math.abs(shown)/Math.max(innerWidth||360,360)*.42));if(e.cancelable)e.preventDefault()});
-  el.addEventListener('pointerup',e=>{if(!start)return;const dx=e.clientX-start.x,dy=e.clientY-start.y,ms=Date.now()-start.t;start=null;if(window.getSelection&&window.getSelection()?.toString()){snap();return}const threshold=Math.min(110,Math.max(64,(innerWidth||360)*.11));if(dragging&&Math.abs(dx)>threshold&&Math.abs(dx)>Math.abs(dy)*1.15&&ms<1400){const delta=dx>0?-1:1;if(canMove(delta)){el.style.transform=`translate3d(${lastDx}px,0,0)`;slideMove(delta)}else snap()}else snap();dragging=false});
+  el.addEventListener('pointermove',e=>{if(!start||pagerBusy)return;const dx=e.clientX-start.x,dy=e.clientY-start.y;if(!dragging){if(Math.abs(dx)<10)return;if(Math.abs(dx)<=Math.abs(dy)*1.15)return;dragging=true;el.classList.add('dragging')}if(!dragging)return;lastDx=dx;const delta=dx<0?1:-1;const within=(delta>0&&subPage<pageColumns-1)||(delta<0&&subPage>0);if(within){el.style.transform='none';el.style.opacity='1';el.scrollLeft=subPage*el.clientWidth-dx}else{let shown=dx;if(!logicalCanMove(delta))shown*=.22;el.style.transform=\`translate3d(\${shown}px,0,0)\`;el.style.opacity=String(Math.max(.56,1-Math.abs(shown)/Math.max(innerWidth||360,360)*.42))}if(e.cancelable)e.preventDefault()});
+  el.addEventListener('pointerup',e=>{if(!start)return;const dx=e.clientX-start.x,dy=e.clientY-start.y,ms=Date.now()-start.t;start=null;if(window.getSelection&&window.getSelection()?.toString()){snap();return}const threshold=Math.min(110,Math.max(64,(innerWidth||360)*.11));if(dragging&&Math.abs(dx)>threshold&&Math.abs(dx)>Math.abs(dy)*1.15&&ms<1400){const delta=dx>0?-1:1;if(canMove(delta))move(delta);else snap()}else snap();dragging=false});
   el.addEventListener('pointercancel',()=>{start=null;dragging=false;snap()})
 }
 if(typeof addEventListener==='function'){addEventListener('resize',()=>{if(route==='reader')fitPage()});addEventListener('orientationchange',()=>{if(route==='reader')setTimeout(fitPage,80)})}
