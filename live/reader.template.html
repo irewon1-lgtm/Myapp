@@ -158,8 +158,10 @@ dialog::backdrop{background:#0009}
 .reader-paper-wrap{position:relative;min-height:0;display:flex;justify-content:center;overflow:hidden;background:var(--reader)}
 .reader-paper{position:relative;width:min(880px,calc(100% - 88px));height:100%;overflow-x:hidden;overflow-y:hidden;background:var(--reader);scroll-behavior:smooth;overscroll-behavior:none}
 .reader-flow{height:auto;width:100%;column-count:1;column-gap:0;column-fill:auto;font-size:var(--readerBody);line-height:var(--readerLine);font-family:Georgia,"Noto Serif KR","NanumMyeongjo",serif;color:var(--readerInk);-webkit-text-size-adjust:none;text-size-adjust:none}
-.lesson-section{-webkit-box-decoration-break:clone;box-decoration-break:clone;padding:4px var(--pagePad);margin:0}
-.lesson-section+.lesson-section{margin:0}
+.lesson-section{display:contents}
+.logical-anchor{display:block;width:0;height:0;overflow:hidden;break-after:avoid;page-break-after:avoid}
+.reader-flow>*:not(.logical-anchor){margin-left:var(--pagePad);margin-right:var(--pagePad)}
+.reader-flow>.code,.reader-flow>.diagram,.reader-flow>.callout,.reader-flow>.practice-box,.reader-flow>.question-box,.reader-flow>.summary-card,.reader-flow>details{width:auto}
 .reader-flow .eyebrow{margin:0 0 4px;color:var(--readerGold);font-size:12px;line-height:1.4;font-family:system-ui,-apple-system,"Noto Sans KR",sans-serif}
 .reader-flow h1{margin:0 0 8px;font-size:34px;line-height:1.18;letter-spacing:-.045em;font-weight:600;break-after:avoid}
 .reader-flow h2{margin:0 0 5px;font-size:24px;line-height:1.28;break-after:avoid}
@@ -426,7 +428,7 @@ function codeBlock(code,note){
   return '<div class="code"><div class="code-bar"><span>Python · 예제 코드</span><button class="copy-btn" data-action="copy-code">복사하기</button></div><pre><code>'+esc(code)+'</code></pre>'+(note?'<div class="code-output">'+esc(note)+'</div>':'')+'</div>';
 }
 function lessonSection(page,c,index){
-  let out='<section class="lesson-section" data-page-id="'+esc(page.id)+'" data-page-index="'+index+'"><div class="eyebrow">'+esc(page.eyebrow||page.kind)+'</div><h1>'+esc(page.title)+'</h1>';
+  let out='<span class="logical-anchor" data-page-id="'+esc(page.id)+'" data-page-index="'+index+'" aria-hidden="true"></span><div class="eyebrow">'+esc(page.eyebrow||page.kind)+'</div><h1>'+esc(page.title)+'</h1>';
   (page.paragraphs||[]).forEach(s=>out+='<p class="paragraph">'+txt(s)+'</p>');
   (page.glossary||[]).forEach(g=>{
     out+='<h3 class="glossary-term">'+esc(g.term)+'</h3><p>'+txt(g.description)+'</p><div class="label glossary-label">어디에 쓰나요?</div><p>'+txt(g.usage)+'</p><div class="label glossary-label">예시</div><p>'+txt(g.example)+'</p>';
@@ -443,7 +445,7 @@ function lessonSection(page,c,index){
   if(page.closingPrompt)out+='<div class="goal">'+txt(page.closingPrompt)+'</div>';
   if(page.kind==='summary')out+='<div class="summary-card"><h3>기억할 것</h3><p>'+esc(c.remember||'')+'</p><h3>직접 해볼 것</h3><p>'+esc(c.practiceGoal||'')+'</p></div>';
   if(index===c.pages.length-1)out+='<div class="chapter-end"><h3>이 챕터를 설명할 수 있나요?</h3><p>'+esc(c.practiceGoal||'직접 설명해 보세요.')+'</p><div class="actions"><button class="reader-action" data-action="complete">'+(state.complete.includes(c.id)?'완료 표시 취소':'이해 완료로 표시')+'</button><button class="reader-action" data-action="track-current">목차로</button></div></div>';
-  return out+'</section>';
+  return out;
 }
 function chapterFlow(c){return c.pages.map((p,i)=>lessonSection(p,c,i)).join('')}
 function reader(){
@@ -488,7 +490,7 @@ function logicalFallback(delta){
 function physicalForId(id){
   const paper=document.getElementById('paper'),flow=document.getElementById('flow');
   if(!paper||!flow||!flow.querySelector||!paper.getBoundingClientRect)return 0;
-  const sec=flow.querySelector('.lesson-section[data-page-id="'+String(id).replace(/"/g,'\\"')+'"]');
+  const sec=flow.querySelector('.logical-anchor[data-page-id="'+String(id).replace(/"/g,'\\"')+'"]');
   if(!sec||!sec.getClientRects)return 0;
   const pr=paper.getBoundingClientRect();
   let left=Infinity;
@@ -497,18 +499,23 @@ function physicalForId(id){
 }
 function syncLogical(){
   const paper=document.getElementById('paper'),flow=document.getElementById('flow');
-  if(!paper||!flow||!flow.querySelectorAll||!paper.getBoundingClientRect)return;
-  const pr=paper.getBoundingClientRect(),cx=pr.left+paper.clientWidth*.5;
-  let found=null;
-  for(const sec of flow.querySelectorAll('.lesson-section')){
-    if(!sec.getClientRects)continue;
-    for(const rect of sec.getClientRects()){
-      if(rect.left<=cx&&rect.right>=cx){found=sec;break}
+  if(!paper||!flow||!flow.querySelectorAll||!paper.getBoundingClientRect||!paper.clientWidth)return;
+  const pr=paper.getBoundingClientRect();
+  let best=null,bestPage=-1,bestIndex=-1;
+  for(const anchor of flow.querySelectorAll('.logical-anchor')){
+    if(!anchor.getClientRects)continue;
+    const rects=anchor.getClientRects();
+    if(!rects||!rects.length)continue;
+    const rect=rects[0];
+    const left=rect.left-pr.left+paper.scrollLeft;
+    const page=Math.max(0,Math.floor(left/Math.max(paper.clientWidth,1)+.001));
+    const idx=Number(anchor.dataset.pageIndex);
+    if(page<=physicalPage&&(page>bestPage||(page===bestPage&&idx>=bestIndex))){
+      best=anchor;bestPage=page;bestIndex=idx;
     }
-    if(found)break;
   }
-  if(!found)return;
-  const idx=Number(found.dataset.pageIndex);
+  if(!best)return;
+  const idx=Number(best.dataset.pageIndex);
   if(Number.isFinite(idx)&&idx>=0&&idx<chapters[current.c].pages.length){
     current.p=idx;
     state.location=chapters[current.c].pages[idx].id;
