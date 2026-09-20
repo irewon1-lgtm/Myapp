@@ -331,6 +331,12 @@ dialog::backdrop{background:#0009}
 .code-explain ol{margin:0;padding-left:23px}
 .code-explain li{margin:0;color:#d9cdbf;font-size:15px;line-height:1.58}
 .code-explain li+li{margin-top:6px}
+.code-trace{
+  margin:0 0 16px;padding:10px 0 0;border-top:1px solid #3b3027
+}
+.code-trace h3{margin:0 0 7px!important;color:#d8c7b3;font-size:16px!important}
+.code-trace p{margin:0!important;color:#d2c5b7}
+.code-trace p+p{margin-top:7px!important}
 
 .reader-flow .diagram{
   margin-top:12px;margin-bottom:14px;border:1px solid #49392c;border-radius:11px;
@@ -641,6 +647,9 @@ function lessonSection(page,c,index){
     out+=codeBlock(page.code,page.codeNote);
     if(page.codeExplain&&page.codeExplain.length){
       out+='<section class="code-explain"><h3>코드 한 줄씩 설명</h3><ol>'+page.codeExplain.map(x=>'<li>'+txt(x)+'</li>').join('')+'</ol></section>';
+    }
+    if(page.codeTrace&&page.codeTrace.length){
+      out+='<section class="code-trace"><h3>실행 흐름</h3>'+page.codeTrace.map(x=>'<p>'+txt(x)+'</p>').join('')+'</section>';
     }
   }
   if(page.practicePrompt)out+='<div class="practice-box"><div class="block-kicker">직접 실습</div><h3>직접 해보기</h3><p>'+txt(page.practicePrompt)+'</p></div>';
