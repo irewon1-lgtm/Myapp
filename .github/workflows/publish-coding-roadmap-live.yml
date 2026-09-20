@@ -1,0 +1,53 @@
+name: Publish CodingRoadmap lessons and screen
+on:
+  push:
+    branches: [coding-roadmap-live]
+    paths: ['live/content.json', 'live/reader.template.html', 'tools/build_content.py', 'tools/verify_reader.cjs', '.github/workflows/publish-coding-roadmap-live.yml']
+permissions:
+  contents: write
+concurrency:
+  group: coding-roadmap-live-publication
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: coding-roadmap-live
+          fetch-depth: 0
+      - name: Build and check self-contained reader
+        run: |
+          python3 - <<'PY'
+          import json,time,pathlib
+          p=pathlib.Path('live/content.json'); d=json.loads(p.read_text()); d['version']=int(time.time()*1000);p.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n')
+          PY
+          python3 tools/build_content.py
+          node tools/verify_reader.cjs
+      - name: Publish immutable content then move channel atomically
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add live/content.json live/reader.html
+          git commit -m 'Build verified live reader snapshot'
+          CONTENT_COMMIT="$(git rev-parse HEAD)"
+          export CONTENT_COMMIT
+          python3 - <<'PY'
+          import os,json,pathlib,hashlib
+          p=pathlib.Path('live/reader.html');b=p.read_bytes();d=json.loads(pathlib.Path('live/content.json').read_text())
+          m={'schema':'codingroadmap-live-v1','minShell':1,'version':d['version'],'label':d['label'],'commit':os.environ['CONTENT_COMMIT'],'sha256':hashlib.sha256(b).hexdigest(),'size':len(b)}
+          pathlib.Path('live/channel.json').write_text(json.dumps(m,ensure_ascii=False,indent=2)+'\n')
+          PY
+          git add live/channel.json
+          git commit -m 'Publish CodingRoadmap live channel'
+          git push origin HEAD:coding-roadmap-live
+      - uses: actions/upload-artifact@v4
+        with:
+          name: coding-roadmap-live-publication
+          path: |
+            live/channel.json
+            review/reader-test-results.json
+          retention-days: 7
