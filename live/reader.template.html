@@ -167,7 +167,7 @@ dialog::backdrop{background:#0009}
 .reader-flow h2{margin:0 0 5px;font-size:24px;line-height:1.28;break-after:avoid}
 .reader-flow h3{margin:0 0 4px;font-size:19px;line-height:1.3;break-after:auto}
 .reader-flow .glossary-term,.reader-flow .extra-title{margin:0;padding-top:6px;border-top:1px solid #3a2d23;break-after:auto;page-break-after:auto}
-.reader-flow .glossary-label{margin:2px 0 0!important;break-after:auto;page-break-after:auto}
+.reader-flow .glossary-label{display:inline;color:#c69a58;font-family:system-ui,-apple-system,"Noto Sans KR",sans-serif;font-size:10px;font-weight:700;margin:0 5px 0 0!important}
 .reader-flow p,.reader-flow .paragraph{font-size:var(--readerBody);line-height:var(--readerLine);margin:0;padding:0;orphans:1;widows:1}
 .reader-flow p+p,.reader-flow .paragraph+.paragraph{margin-top:0}
 .reader-flow ul{margin:0;padding-left:23px}
@@ -431,7 +431,7 @@ function lessonSection(page,c,index){
   let out='<span class="logical-anchor" data-page-id="'+esc(page.id)+'" data-page-index="'+index+'" aria-hidden="true"></span><div class="eyebrow">'+esc(page.eyebrow||page.kind)+'</div><h1>'+esc(page.title)+'</h1>';
   (page.paragraphs||[]).forEach(s=>out+='<p class="paragraph">'+txt(s)+'</p>');
   (page.glossary||[]).forEach(g=>{
-    out+='<h3 class="glossary-term">'+esc(g.term)+'</h3><p>'+txt(g.description)+'</p><div class="label glossary-label">어디에 쓰나요?</div><p>'+txt(g.usage)+'</p><div class="label glossary-label">예시</div><p>'+txt(g.example)+'</p>';
+    out+='<h3 class="glossary-term">'+esc(g.term)+'</h3><p>'+txt(g.description)+'</p><p><strong class="glossary-label">어디에 쓰나요?</strong> '+txt(g.usage)+'</p><p><strong class="glossary-label">예시</strong> '+txt(g.example)+'</p>';
   });
   if(page.visual)out+=diagram(page,c);
   if(page.bullets&&page.bullets.length)out+='<ul>'+page.bullets.map(x=>'<li>'+txt(x)+'</li>').join('')+'</ul>';
