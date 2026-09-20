@@ -165,13 +165,13 @@ dialog::backdrop{background:#0009}
 .reader-flow .eyebrow{margin:0 0 4px;color:var(--readerGold);font-size:12px;line-height:1.4;font-family:system-ui,-apple-system,"Noto Sans KR",sans-serif}
 .reader-flow h1{margin:0 0 8px;font-size:34px;line-height:1.18;letter-spacing:-.045em;font-weight:600;break-after:avoid}
 .reader-flow h2{margin:0 0 5px;font-size:24px;line-height:1.28;break-after:avoid}
-.reader-flow h3{margin:0 0 4px;font-size:19px;line-height:1.3;break-after:avoid}
-.reader-flow .glossary-term,.reader-flow .extra-title{margin:0;padding-top:6px;border-top:1px solid #3a2d23;break-after:avoid;page-break-after:avoid}
-.reader-flow .glossary-label{margin:2px 0 0!important;break-after:avoid;page-break-after:avoid}
-.reader-flow p,.reader-flow .paragraph{font-size:var(--readerBody);line-height:var(--readerLine);margin:0;padding:0;orphans:3;widows:3}
+.reader-flow h3{margin:0 0 4px;font-size:19px;line-height:1.3;break-after:auto}
+.reader-flow .glossary-term,.reader-flow .extra-title{margin:0;padding-top:6px;border-top:1px solid #3a2d23;break-after:auto;page-break-after:auto}
+.reader-flow .glossary-label{margin:2px 0 0!important;break-after:auto;page-break-after:auto}
+.reader-flow p,.reader-flow .paragraph{font-size:var(--readerBody);line-height:var(--readerLine);margin:0;padding:0;orphans:1;widows:1}
 .reader-flow p+p,.reader-flow .paragraph+.paragraph{margin-top:0}
 .reader-flow ul{margin:0;padding-left:23px}
-.reader-flow li{margin:0;line-height:var(--readerLine);orphans:3;widows:3}
+.reader-flow li{margin:0;line-height:var(--readerLine);orphans:1;widows:1}
 .reader-flow li+li{margin-top:0}
 .reader-flow .card,.reader-flow .callout,.reader-flow .practice-box,.reader-flow .question-box,.reader-flow .summary-card{margin:0;-webkit-box-decoration-break:clone;box-decoration-break:clone;break-inside:auto;-webkit-column-break-inside:auto}
 .reader-flow .card{border:0;border-top:1px solid #3a2d23;border-radius:0;background:transparent;padding:6px 0}
@@ -184,7 +184,7 @@ dialog::backdrop{background:#0009}
 .reader-flow .code{margin:0;border:1px solid #4a392d;border-radius:10px;overflow:visible;background:#100d0b;-webkit-box-decoration-break:clone;box-decoration-break:clone;break-inside:auto;-webkit-column-break-inside:auto}
 .reader-flow .code-bar{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:5px 10px;background:#1e1712;color:#bfae99;font-family:system-ui,-apple-system,"Noto Sans KR",sans-serif;font-size:11px}
 .reader-flow .copy-btn{border:0;background:transparent;color:#d7c4aa;padding:3px 5px}
-.reader-flow pre{margin:0;padding:8px 12px;white-space:pre-wrap;word-break:normal;overflow-wrap:anywhere;font:15px/1.58 ui-monospace,SFMono-Regular,Consolas,monospace;color:#ece4d8;orphans:3;widows:3}
+.reader-flow pre{margin:0;padding:8px 12px;white-space:pre-wrap;word-break:normal;overflow-wrap:anywhere;font:15px/1.58 ui-monospace,SFMono-Regular,Consolas,monospace;color:#ece4d8;orphans:1;widows:1}
 .reader-flow .code-output{border-top:1px solid #382c22;padding:6px 12px;white-space:pre-wrap;font:15px/1.58 ui-monospace,SFMono-Regular,Consolas,monospace;color:#bcae9b}
 .reader-flow .diagram{margin:0;border:1px solid #49392c;border-radius:10px;overflow:visible;break-inside:auto;-webkit-column-break-inside:auto}
 .reader-flow .diagram-row{display:grid;grid-template-columns:100px 1fr;gap:10px;padding:6px 11px;border-bottom:1px solid #34291f}
