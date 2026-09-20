@@ -12,6 +12,9 @@ assert(html.includes("flow.style.columnFill='auto'"),'sequential full-page pagin
 assert(html.includes('edge-zone edge-prev')&&html.includes('edge-zone edge-next'),'edge tap navigation missing');
 assert(html.includes('TITLE_TOP_PAGE_V2'),'title-top pagination marker missing');
 assert(html.includes('SWIPE_TRACK_FOCUS_V1'),'swipe/track/focus architecture marker missing');
+assert(html.includes('SWIPE_CONTENT_CODE_V2'),'full-surface swipe/code-first marker missing');
+assert(html.includes("document.querySelector('.reader-paper-wrap')"),'swipe must attach to title+body reader surface');
+assert(html.includes("surface.addEventListener('touchstart'")&&html.includes("surface.addEventListener('touchmove'")&&html.includes("surface.addEventListener('touchend'"),'Android touch swipe handlers missing');
 assert(html.includes('touch-action:pan-y'),'touch swipe surface missing');
 assert(html.includes('function trackStats(id)'),'track page-count statistics missing');
 assert(html.includes('track-remain'),'reader remaining-page HUD missing');
@@ -31,15 +34,22 @@ assert.equal(ids.length,new Set(ids).size,'duplicate page ids');
 function explanationChars(p){
   return [
     ...(p.paragraphs||[]),...(p.bullets||[]),p.practicePrompt||'',p.question||'',p.answer||'',
-    p.calloutTitle||'',p.calloutBody||'',p.codeNote||'',
-    ...(p.extras||[]).flatMap(e=>[e.title||'',e.body||'']),
+    p.calloutTitle||'',p.calloutBody||'',p.code||'',p.codeNote||'',
+    ...(p.codeExplain||[]),...(p.codeTrace||[]),
     ...(p.glossary||[]).flatMap(g=>[g.term||'',g.description||'',g.usage||'',g.example||''])
   ].join(' ').length;
 }
 const track2Pages=course.chapters.filter(c=>c.track===2).flatMap(c=>c.pages);
 assert.equal(track2Pages.length,234,'Track 2 page count must remain 234');
 const thinTrack2=track2Pages.filter(p=>explanationChars(p)<650);
-assert.equal(thinTrack2.length,0,'Track 2 sparse pages below 650 explanation characters: '+thinTrack2.map(p=>p.id).join(','));
+assert.equal(thinTrack2.length,0,'Track 2 sparse pages below 650 visible characters: '+thinTrack2.map(p=>p.id).join(','));
+assert.equal(track2Pages.filter(p=>!p.code).length,0,'Every Track 2 page must include code or starter code');
+assert.equal(track2Pages.filter(p=>!Array.isArray(p.codeExplain)||!p.codeExplain.length).length,0,'Every Track 2 code page must include line-by-line explanation');
+const forbiddenTrack2=['실제 개발과 연결','이 페이지를 읽을 때','초보 해설 ·','공부하는 방법','실수 적'];
+for(const phrase of forbiddenTrack2){
+  const hits=track2Pages.filter(p=>JSON.stringify(p).includes(phrase));
+  assert.equal(hits.length,0,'Forbidden Track 2 meta filler "'+phrase+'" remains on: '+hits.map(p=>p.id).join(','));
+}
 for(const c of course.chapters)for(let i=0;i<c.pages.length;i++)if(c.pages[i].answerOnNext)assert.equal(c.pages[i+1]?.kind,'solution','solution must immediately follow answerOnNext');
 
 const script=html.match(/<script>([\s\S]*?)<\/script>/)[1];
@@ -136,7 +146,10 @@ const report={
     'no scale-to-fit',
     'no sparse filler stretching',
     'sequential top-to-bottom horizontal pagination','persistent large topic title above every physical swipe page',
-    'Track 2 minimum 650-character beginner explanation density on all 234 pages',
+    'Track 2 minimum 650-character visible content density on all 234 pages',
+    'Track 2 code or starter code on every page',
+    'Track 2 line-by-line code explanation on every page',
+    'Track 2 generic meta filler removed',
     'edge tap navigation','chapter hierarchy ribbon','content-type markers','solution hierarchy banner',
     'Android bottom safe area'
   ],
