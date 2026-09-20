@@ -503,7 +503,8 @@ function syncLogical(){
   const paper=document.getElementById('paper'),flow=document.getElementById('flow');
   if(!paper||!flow||!flow.querySelectorAll||!paper.getBoundingClientRect||!paper.clientWidth)return;
   const pr=paper.getBoundingClientRect();
-  let best=null,bestPage=-1,bestIndex=-1;
+  const topBand=Math.min(150,Math.max(86,paper.clientHeight*.16));
+  let previous=null,nearTop=null,nearTopY=-Infinity;
   for(const anchor of flow.querySelectorAll('.logical-anchor')){
     if(!anchor.getClientRects)continue;
     const rects=anchor.getClientRects();
@@ -511,14 +512,20 @@ function syncLogical(){
     const rect=rects[0];
     const left=rect.left-pr.left+paper.scrollLeft;
     const page=Math.max(0,Math.floor(left/Math.max(paper.clientWidth,1)+.001));
+    const y=rect.top-pr.top;
     const idx=Number(anchor.dataset.pageIndex);
-    if(page<=physicalPage&&(page>bestPage||(page===bestPage&&idx>=bestIndex))){
-      best=anchor;bestPage=page;bestIndex=idx;
+    if(!Number.isFinite(idx))continue;
+    if(page<physicalPage||(page===physicalPage&&y<=0)){
+      previous={anchor,idx,page,y};
+    }else if(page===physicalPage&&y<=topBand&&y>=nearTopY){
+      nearTop={anchor,idx,page,y};
+      nearTopY=y;
     }
   }
+  const best=nearTop||previous;
   if(!best)return;
-  const idx=Number(best.dataset.pageIndex);
-  if(Number.isFinite(idx)&&idx>=0&&idx<chapters[current.c].pages.length){
+  const idx=best.idx;
+  if(idx>=0&&idx<chapters[current.c].pages.length){
     current.p=idx;
     state.location=chapters[current.c].pages[idx].id;
     if(!state.visited.includes(state.location))state.visited.push(state.location);
