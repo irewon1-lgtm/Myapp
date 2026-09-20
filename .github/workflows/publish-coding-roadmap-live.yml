@@ -7,7 +7,7 @@ permissions:
   contents: write
 concurrency:
   group: coding-roadmap-live-publication
-  cancel-in-progress: false
+  cancel-in-progress: true
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -63,6 +63,13 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          git fetch origin coding-roadmap-live
+          REMOTE_SOURCE="$(git rev-parse origin/coding-roadmap-live)"
+          LOCAL_SOURCE="$(git rev-parse HEAD)"
+          if [ "$REMOTE_SOURCE" != "$LOCAL_SOURCE" ]; then
+            echo "A newer source commit exists; this run is superseded."
+            exit 0
+          fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add live/content.json live/reader.html
