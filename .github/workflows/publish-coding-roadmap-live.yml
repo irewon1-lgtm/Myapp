@@ -31,23 +31,27 @@ jobs:
           set -euo pipefail
           CHROME="$(command -v google-chrome || command -v google-chrome-stable || command -v chromium || true)"
           test -n "$CHROME"
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq fonts-noto-cjk >/dev/null
+          fc-cache -f
+          fc-list :lang=ko | head -1 | grep -q .
           mkdir -p review
           ROOT="file://$PWD/live/reader.html"
-          "$CHROME" --headless=new --no-sandbox --disable-gpu --hide-scrollbars --window-size=2304,1440 --virtual-time-budget=3500 --dump-dom "$ROOT?preview=reader" > review/reader-landscape-dom.html
+          "$CHROME" --headless=new --no-sandbox --disable-gpu --hide-scrollbars --window-size=2304,1440 --force-device-scale-factor=2 --virtual-time-budget=3500 --dump-dom "$ROOT?preview=reader" > review/reader-landscape-dom.html
           grep -q 'data-qa-ready="1"' review/reader-landscape-dom.html
           grep -q 'data-qa-font="18px"' review/reader-landscape-dom.html
           grep -q 'data-qa-overflow-y="hidden"' review/reader-landscape-dom.html
           grep -q 'data-qa-fit="1"' review/reader-landscape-dom.html
           grep -q 'data-qa-footer-visible="1"' review/reader-landscape-dom.html
-          "$CHROME" --headless=new --no-sandbox --disable-gpu --hide-scrollbars --window-size=2304,1440 --virtual-time-budget=3500 --screenshot=review/reader-landscape.png "$ROOT?preview=reader"
-          "$CHROME" --headless=new --no-sandbox --disable-gpu --hide-scrollbars --window-size=1440,2304 --virtual-time-budget=3500 --dump-dom "$ROOT?preview=reader" > review/reader-portrait-dom.html
+          "$CHROME" --headless=new --no-sandbox --disable-gpu --hide-scrollbars --window-size=2304,1440 --force-device-scale-factor=2 --virtual-time-budget=3500 --screenshot=review/reader-landscape.png "$ROOT?preview=reader"
+          "$CHROME" --headless=new --no-sandbox --disable-gpu --hide-scrollbars --window-size=1440,2304 --force-device-scale-factor=2 --virtual-time-budget=3500 --dump-dom "$ROOT?preview=reader" > review/reader-portrait-dom.html
           grep -q 'data-qa-ready="1"' review/reader-portrait-dom.html
           grep -q 'data-qa-font="18px"' review/reader-portrait-dom.html
           grep -q 'data-qa-overflow-y="hidden"' review/reader-portrait-dom.html
           grep -q 'data-qa-fit="1"' review/reader-portrait-dom.html
           grep -q 'data-qa-footer-visible="1"' review/reader-portrait-dom.html
-          "$CHROME" --headless=new --no-sandbox --disable-gpu --hide-scrollbars --window-size=1440,2304 --virtual-time-budget=3500 --screenshot=review/reader-portrait.png "$ROOT?preview=reader"
-          "$CHROME" --headless=new --no-sandbox --disable-gpu --hide-scrollbars --window-size=2304,1440 --virtual-time-budget=2500 --screenshot=review/home-landscape.png "$ROOT"
+          "$CHROME" --headless=new --no-sandbox --disable-gpu --hide-scrollbars --window-size=1440,2304 --force-device-scale-factor=2 --virtual-time-budget=3500 --screenshot=review/reader-portrait.png "$ROOT?preview=reader"
+          "$CHROME" --headless=new --no-sandbox --disable-gpu --hide-scrollbars --window-size=2304,1440 --force-device-scale-factor=2 --virtual-time-budget=2500 --screenshot=review/home-landscape.png "$ROOT"
           test -s review/reader-landscape.png
           test -s review/reader-portrait.png
           test -s review/home-landscape.png
