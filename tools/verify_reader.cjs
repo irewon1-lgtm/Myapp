@@ -20,9 +20,15 @@ assert(html.includes("surface.addEventListener('touchstart'")&&html.includes("su
 assert(html.includes('touch-action:pan-y'),'touch swipe surface missing');
 assert(html.includes('function trackStats(id)'),'track page-count statistics missing');
 assert(html.includes('TRACK_GLOBAL_SLIDES_V1'),'whole-track slide-numbering marker missing');
+assert(html.includes('UNIFIED_PAGE_TURN_V1'),'unified page-turn marker missing');
+assert(html.includes('function beginPageTurn()')&&html.includes('function finishPageTurn()'),'unified page-turn helpers missing');
+assert(html.includes('.page-turning .reader-paper-wrap{opacity:.08}'),'whole-page transition style missing');
+assert(html.includes('scroll-behavior:auto'),'reader must not mix smooth scrolling with page transitions');
+assert(!html.includes("behavior:'smooth'"),'smooth per-page scrolling must not return');
 assert(html.includes('function rebuildTrackSlideMap('),'whole-track physical slide map missing');
 assert(html.includes('function currentTrackSlidePosition('),'whole-track slide position function missing');
-assert(html.includes("slide.current+' 슬라이드 / '+slide.total"),'whole-track slide label missing');
+assert(html.includes("slide.current+' / '+slide.total"),'numeric-only whole-track page label missing');
+assert(!html.includes("슬라이드 /"),'visible Korean slide label must not return');
 assert(!html.includes('id="track-remain"'),'read/remaining HUD must be removed');
 assert(!html.includes('track-page-count'),'track total/read/remaining text must be removed');
 assert(html.includes('focus-exit')&&html.includes('focus-hud'),'rebuilt focus mode controls missing');
@@ -150,7 +156,7 @@ f.run('route="reader";render();doAction("focus",{})');
 assert(f.elements.app.innerHTML.includes('reader-shell focus'),'focus mode class missing');
 assert(f.elements.app.innerHTML.includes('집중모드 종료'),'focus exit control missing');
 assert(!f.elements.app.innerHTML.includes('track-remain'),'read/remaining HUD must stay removed');
-assert(f.elements.app.innerHTML.includes('1 슬라이드 / 1'),'global slide counter placeholder missing');
+assert(f.elements.app.innerHTML.includes('1 / 1'),'numeric-only global page counter placeholder missing');
 const t3=course.tracks.find(t=>t.id===3);
 if(t3){
   const t3c=course.chapters.filter(c=>c.track===3);
@@ -185,7 +191,9 @@ const report={
     'Track 2 three verified 2026 bestseller references per chapter',
     'Track 2 generic meta filler removed',
     'edge tap navigation','chapter hierarchy ribbon','content-type markers','solution hierarchy banner',
-    'whole-track physical slide numbering without per-topic reset',
+    'whole-track physical page numbering without per-topic reset',
+    'numeric-only page counter',
+    'single whole-page transition for forward/back/swipe/buttons',
     'read/remaining counters removed',
     'Android bottom safe area'
   ],
