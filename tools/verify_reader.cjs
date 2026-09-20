@@ -19,7 +19,12 @@ assert(html.includes("document.querySelector('.reader-paper-wrap')"),'swipe must
 assert(html.includes("surface.addEventListener('touchstart'")&&html.includes("surface.addEventListener('touchmove'")&&html.includes("surface.addEventListener('touchend'"),'Android touch swipe handlers missing');
 assert(html.includes('touch-action:pan-y'),'touch swipe surface missing');
 assert(html.includes('function trackStats(id)'),'track page-count statistics missing');
-assert(html.includes('track-remain'),'reader remaining-page HUD missing');
+assert(html.includes('TRACK_GLOBAL_SLIDES_V1'),'whole-track slide-numbering marker missing');
+assert(html.includes('function rebuildTrackSlideMap('),'whole-track physical slide map missing');
+assert(html.includes('function currentTrackSlidePosition('),'whole-track slide position function missing');
+assert(html.includes("slide.current+' 슬라이드 / '+slide.total"),'whole-track slide label missing');
+assert(!html.includes('id="track-remain"'),'read/remaining HUD must be removed');
+assert(!html.includes('track-page-count'),'track total/read/remaining text must be removed');
 assert(html.includes('focus-exit')&&html.includes('focus-hud'),'rebuilt focus mode controls missing');
 assert(html.includes("pendingPhysicalRatio=physicalPages>1?physicalPage/(physicalPages-1):0"),'focus mode must preserve reading position');
 assert(html.includes('return lessonSection(c.pages[current.p],c,current.p);'),'reader must render only the current logical page');
@@ -179,6 +184,8 @@ const report={
     'Track 2 three verified 2026 bestseller references per chapter',
     'Track 2 generic meta filler removed',
     'edge tap navigation','chapter hierarchy ribbon','content-type markers','solution hierarchy banner',
+    'whole-track physical slide numbering without per-topic reset',
+    'read/remaining counters removed',
     'Android bottom safe area'
   ],
   status:'PASS'
