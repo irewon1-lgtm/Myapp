@@ -470,12 +470,12 @@ function locate(id){
 }
 function beginPageTurn(){
   pageTurnActive=true;
-  if(document.body&&document.body.classList)document.body.classList.add('page-turning');
+  if(document.body&&document.body.classList&&typeof document.body.classList.add==='function')document.body.classList.add('page-turning');
 }
 function finishPageTurn(){
   if(!pageTurnActive)return;
   const done=()=>{
-    if(document.body&&document.body.classList)document.body.classList.remove('page-turning');
+    if(document.body&&document.body.classList&&typeof document.body.classList.remove==='function')document.body.classList.remove('page-turning');
     pageTurnActive=false;
   };
   if(typeof requestAnimationFrame==='function')requestAnimationFrame(done);
