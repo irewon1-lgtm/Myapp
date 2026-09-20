@@ -25,7 +25,7 @@ jobs:
           PY
           python3 tools/build_content.py
           node tools/verify_reader.cjs
-      - name: Render smoke test on Galaxy Tab S10 FE geometry
+      - name: Render smoke test on Galaxy Tab S10 FE CSS viewport
         shell: bash
         run: |
           set -euo pipefail
@@ -37,23 +37,23 @@ jobs:
           fc-list :lang=ko | head -1 | grep -q .
           mkdir -p review
           ROOT="file://$PWD/live/reader.html"
-          "$CHROME" --headless=new --no-sandbox --disable-gpu --hide-scrollbars --window-size=2304,1440 --force-device-scale-factor=2 --virtual-time-budget=3500 --dump-dom "$ROOT?preview=reader" > review/reader-landscape-dom.html
+          "$CHROME" --headless=new --no-sandbox --disable-gpu --hide-scrollbars --window-size=1280,800 --virtual-time-budget=3500 --dump-dom "$ROOT?preview=reader" > review/reader-landscape-dom.html
           grep -q 'data-qa-ready="1"' review/reader-landscape-dom.html
           grep -q 'data-qa-font="18px"' review/reader-landscape-dom.html
           grep -q 'data-qa-overflow-y="hidden"' review/reader-landscape-dom.html
           grep -q 'data-qa-fit="1"' review/reader-landscape-dom.html
           grep -q 'data-qa-footer-visible="1"' review/reader-landscape-dom.html
-          "$CHROME" --headless=new --no-sandbox --disable-gpu --hide-scrollbars --window-size=2304,1440 --force-device-scale-factor=2 --virtual-time-budget=3500 --screenshot=review/reader-landscape.png "$ROOT?preview=reader"
-          "$CHROME" --headless=new --no-sandbox --disable-gpu --hide-scrollbars --window-size=1440,2304 --force-device-scale-factor=2 --virtual-time-budget=3500 --dump-dom "$ROOT?preview=reader" > review/reader-portrait-dom.html
+          "$CHROME" --headless=new --no-sandbox --disable-gpu --hide-scrollbars --window-size=1280,800 --virtual-time-budget=3500 --screenshot=review/reader-landscape.png "$ROOT?preview=reader"
+          "$CHROME" --headless=new --no-sandbox --disable-gpu --hide-scrollbars --window-size=800,1280 --virtual-time-budget=3500 --dump-dom "$ROOT?preview=reader" > review/reader-portrait-dom.html
           grep -q 'data-qa-ready="1"' review/reader-portrait-dom.html
           grep -q 'data-qa-font="18px"' review/reader-portrait-dom.html
           grep -q 'data-qa-overflow-y="hidden"' review/reader-portrait-dom.html
           grep -q 'data-qa-fit="1"' review/reader-portrait-dom.html
           grep -q 'data-qa-footer-visible="1"' review/reader-portrait-dom.html
-          "$CHROME" --headless=new --no-sandbox --disable-gpu --hide-scrollbars --window-size=1440,2304 --force-device-scale-factor=2 --virtual-time-budget=3500 --screenshot=review/reader-portrait.png "$ROOT?preview=reader"
-          "$CHROME" --headless=new --no-sandbox --disable-gpu --hide-scrollbars --window-size=2304,1440 --force-device-scale-factor=2 --virtual-time-budget=2500 --screenshot=review/home-landscape.png "$ROOT"
-          "$CHROME" --headless=new --no-sandbox --disable-gpu --hide-scrollbars --window-size=2304,1440 --force-device-scale-factor=2 --virtual-time-budget=2500 --screenshot=review/track-landscape.png "$ROOT?preview=track"
-          "$CHROME" --headless=new --no-sandbox --disable-gpu --hide-scrollbars --window-size=2304,1440 --force-device-scale-factor=2 --virtual-time-budget=2500 --screenshot=review/saved-landscape.png "$ROOT?preview=saved"
+          "$CHROME" --headless=new --no-sandbox --disable-gpu --hide-scrollbars --window-size=800,1280 --virtual-time-budget=3500 --screenshot=review/reader-portrait.png "$ROOT?preview=reader"
+          "$CHROME" --headless=new --no-sandbox --disable-gpu --hide-scrollbars --window-size=1280,800 --virtual-time-budget=2500 --screenshot=review/home-landscape.png "$ROOT"
+          "$CHROME" --headless=new --no-sandbox --disable-gpu --hide-scrollbars --window-size=1280,800 --virtual-time-budget=2500 --screenshot=review/track-landscape.png "$ROOT?preview=track"
+          "$CHROME" --headless=new --no-sandbox --disable-gpu --hide-scrollbars --window-size=1280,800 --virtual-time-budget=2500 --screenshot=review/saved-landscape.png "$ROOT?preview=saved"
           test -s review/reader-landscape.png
           test -s review/reader-portrait.png
           test -s review/home-landscape.png
