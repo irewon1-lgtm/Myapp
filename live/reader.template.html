@@ -195,50 +195,147 @@ dialog::backdrop{background:#0009}
 .section-marker.type-example:before{background:#c68a4e}
 .section-marker.type-example .kind{background:#5a3d20;color:#f0c189}
 .reader-flow .eyebrow{display:none}
-.reader-flow .page-title{margin:0 0 5px;font-size:30px;line-height:1.18;letter-spacing:-.04em;font-weight:650;break-after:auto}
+.reader-flow .page-title{margin:8px 0 14px;font-size:30px;line-height:1.2;letter-spacing:-.04em;font-weight:650;break-after:auto}
 .reader-flow .practice-box,.reader-flow .question-box{border-color:#6a5031;background:#241a10}
 .reader-flow .summary-card{border-color:#5f523d;background:#211b14}
 .solution-banner{
-  margin:0 var(--pagePad);padding:5px 9px;border-left:3px solid #93a982;
-  background:#1d2119;color:#cbd8c2;font-family:system-ui,-apple-system,"Noto Sans KR",sans-serif;
-  font-size:11px;font-weight:800;
+  margin:4px var(--pagePad) 12px;padding:7px 10px;border-left:3px solid #93a982;
+  background:linear-gradient(90deg,#1d2119,#171a15);color:#cbd8c2;
+  font-family:system-ui,-apple-system,"Noto Sans KR",sans-serif;
+  font-size:11px;font-weight:850;letter-spacing:.04em;
 }
 
-.reader-flow .eyebrow{margin:0 0 4px;color:var(--readerGold);font-size:12px;line-height:1.4;font-family:system-ui,-apple-system,"Noto Sans KR",sans-serif}
 .reader-flow h1{margin:0 0 8px;font-size:34px;line-height:1.18;letter-spacing:-.045em;font-weight:600;break-after:auto}
-.reader-flow h2{margin:0 0 5px;font-size:24px;line-height:1.28;break-after:auto}
-.reader-flow h3{margin:0 0 4px;font-size:19px;line-height:1.3;break-after:auto}
-.reader-flow .glossary-entry{border:0;padding:0}
-.reader-flow .glossary-term{display:inline;font-size:19px;line-height:1.3;margin-right:5px}
-.reader-flow .extra-title{margin:0;padding-top:6px;border-top:1px solid #3a2d23;break-after:auto;page-break-after:auto}
-.reader-flow .glossary-label{display:inline;color:#c69a58;font-family:system-ui,-apple-system,"Noto Sans KR",sans-serif;font-size:10px;font-weight:700;margin:0 5px 0 0!important}
-.reader-flow p,.reader-flow .paragraph{font-size:var(--readerBody);line-height:var(--readerLine);margin:0;padding:0;orphans:1;widows:1}
-.reader-flow p+p,.reader-flow .paragraph+.paragraph{margin-top:0}
-.reader-flow ul{margin:0;padding-left:23px}
-.reader-flow li{margin:0;line-height:var(--readerLine);orphans:1;widows:1}
-.reader-flow li+li{margin-top:0}
-.reader-flow .card,.reader-flow .callout,.reader-flow .practice-box,.reader-flow .question-box,.reader-flow .summary-card{margin:0;-webkit-box-decoration-break:clone;box-decoration-break:clone;break-inside:auto;-webkit-column-break-inside:auto}
-.reader-flow .card{border:0;border-top:1px solid #3a2d23;border-radius:0;background:transparent;padding:6px 0}
-.reader-flow .card+.card{margin-top:0}
-.reader-flow .practice-box,.reader-flow .question-box,.reader-flow .summary-card{border:1px solid #49392c;border-radius:11px;background:#1e1712;padding:8px 11px}
+.reader-flow h2{margin:0 0 7px;font-size:24px;line-height:1.28;break-after:auto}
+.reader-flow h3{margin:0 0 5px;font-size:19px;line-height:1.35;break-after:auto}
+.reader-flow p,.reader-flow .paragraph{font-size:var(--readerBody);line-height:var(--readerLine);padding:0;orphans:2;widows:2}
+.reader-flow p{margin:0}
+.reader-flow ul{margin:0;padding-left:24px}
+.reader-flow li{margin:0;line-height:var(--readerLine);orphans:2;widows:2}
+.reader-flow li+li{margin-top:5px}
+
+.prose-stack{margin-top:0;margin-bottom:15px;break-inside:auto;-webkit-column-break-inside:auto}
+.prose-stack .paragraph{color:#dfd5c8}
+.prose-stack .lead-paragraph{
+  margin:0 0 10px;padding:11px 14px 11px 15px;border-left:3px solid #9c7849;
+  border-radius:0 10px 10px 0;background:linear-gradient(90deg,#241b14,#1b1511 74%);
+  color:#f2e9dc;font-weight:520
+}
+.prose-stack .body-paragraph{margin:10px 0 0}
+.prose-stack.type-practice .lead-paragraph,.prose-stack.type-check .lead-paragraph{border-left-color:#e0b263;background:linear-gradient(90deg,#2a2014,#1b1510)}
+.prose-stack.type-example .lead-paragraph{border-left-color:#c68a4e;background:linear-gradient(90deg,#281c12,#1b1510)}
+.prose-stack.type-summary .lead-paragraph{border-left-color:#b89a6c}
+.prose-stack.type-visual .lead-paragraph{border-left-color:#8d9a76}
+
+.block-kicker{
+  margin:0 0 6px;color:#b99a70;font:850 10px/1.3 system-ui,-apple-system,"Noto Sans KR",sans-serif;
+  letter-spacing:.09em
+}
+.keyword-row{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-top:2px;margin-bottom:14px}
+.keyword-row .block-kicker{margin:0 2px 0 0}
+.keyword-chip{
+  display:inline-flex;align-items:center;min-height:28px;padding:3px 9px;border:1px solid #4a392c;
+  border-radius:999px;background:#1f1813;color:#d8c9b7;
+  font:700 11px/1.25 system-ui,-apple-system,"Noto Sans KR",sans-serif
+}
+
+.glossary-card{
+  margin-top:10px;margin-bottom:12px;padding:12px 14px;border:1px solid #49382a;border-radius:12px;
+  background:linear-gradient(145deg,#201812,#18130f);break-inside:auto;-webkit-column-break-inside:auto
+}
+.reader-flow .glossary-term{display:block;margin:0 0 6px;font-size:20px;line-height:1.3;color:#f2e5d2}
+.glossary-definition{margin:0 0 10px!important;color:#e1d6c8}
+.glossary-meta{padding-top:9px;border-top:1px solid #3a2d23}
+.glossary-meta p+p{margin-top:6px!important}
+.reader-flow .glossary-label{
+  display:inline;color:#c69a58;font-family:system-ui,-apple-system,"Noto Sans KR",sans-serif;
+  font-size:10px;font-weight:850;margin:0 6px 0 0!important;letter-spacing:.04em
+}
+
+.keypoints-card{
+  margin-top:12px;margin-bottom:14px;padding:11px 14px 12px;border:1px solid #4b3b2f;border-radius:12px;
+  background:#1c1612;break-inside:auto;-webkit-column-break-inside:auto
+}
+.keypoints-card ul{margin-top:2px}
+.keypoints-card li{color:#e4d9cc}
+
+.solution-prose{margin-top:0;margin-bottom:14px}
+.solution-step{
+  display:grid;grid-template-columns:48px minmax(0,1fr);gap:10px;align-items:start;
+  padding:10px 12px;border:1px solid #35422f;border-radius:11px;background:#181d16;
+  break-inside:auto;-webkit-column-break-inside:auto
+}
+.solution-step+.solution-step{margin-top:9px}
+.solution-step p{color:#dfE7d9}
+.micro-label{
+  display:inline-flex;justify-content:center;padding:3px 5px;border-radius:999px;background:#31412d;
+  color:#bfd1b4;font:850 10px/1.25 system-ui,-apple-system,"Noto Sans KR",sans-serif;letter-spacing:.04em
+}
+
+.reader-flow .card,.reader-flow .callout,.reader-flow .practice-box,.reader-flow .question-box,.reader-flow .summary-card{
+  -webkit-box-decoration-break:clone;box-decoration-break:clone;break-inside:auto;-webkit-column-break-inside:auto
+}
+.reader-flow .card{border:0;border-top:1px solid #3a2d23;border-radius:0;background:transparent;padding:8px 0}
+.reader-flow .practice-box,.reader-flow .question-box,.reader-flow .summary-card{
+  margin-top:12px;margin-bottom:14px;border:1px solid #49392c;border-radius:12px;background:#1e1712;padding:11px 14px
+}
+.reader-flow .practice-box h3,.reader-flow .question-box h3,.reader-flow .summary-card h3{color:#efd3a0}
 .reader-flow .label{font-family:system-ui,-apple-system,"Noto Sans KR",sans-serif;color:#c69a58;font-size:10px;font-weight:700;margin:3px 0 1px}
-.reader-flow .callout{border:1px solid #5a472f;border-radius:11px;background:linear-gradient(135deg,#2b2117,#211912);padding:8px 11px;break-inside:auto}
-.reader-flow .callout-title{font-weight:700;color:#e2bd7b;margin-bottom:2px}
-.reader-flow .goal{margin:0;border-left:2px solid var(--readerGold);padding:0 0 0 10px;color:#c9baa6}
-.reader-flow .code{margin:0;border:1px solid #4a392d;border-radius:10px;overflow:visible;background:#100d0b;-webkit-box-decoration-break:clone;box-decoration-break:clone;break-inside:auto;-webkit-column-break-inside:auto}
-.reader-flow .code-bar{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:5px 10px;background:#1e1712;color:#bfae99;font-family:system-ui,-apple-system,"Noto Sans KR",sans-serif;font-size:11px}
+.reader-flow .callout{
+  margin-top:12px;margin-bottom:14px;border:1px solid #5a472f;border-radius:12px;
+  background:linear-gradient(135deg,#2b2117,#211912);padding:11px 14px;break-inside:auto
+}
+.reader-flow .callout-title{font-weight:800;color:#e2bd7b;margin-bottom:4px}
+.reader-flow .goal{
+  margin-top:12px;margin-bottom:14px;border-left:3px solid var(--readerGold);
+  padding:8px 0 8px 12px;color:#d6c7b3;background:linear-gradient(90deg,#241b13aa,transparent)
+}
+
+.reader-flow .code{
+  margin-top:12px;margin-bottom:14px;border:1px solid #4a392d;border-radius:11px;overflow:visible;
+  background:#100d0b;-webkit-box-decoration-break:clone;box-decoration-break:clone;break-inside:auto;-webkit-column-break-inside:auto
+}
+.reader-flow .code-bar{
+  display:flex;align-items:center;justify-content:space-between;gap:10px;padding:6px 10px;
+  background:#1e1712;color:#bfae99;font-family:system-ui,-apple-system,"Noto Sans KR",sans-serif;font-size:11px
+}
 .reader-flow .copy-btn{border:0;background:transparent;color:#d7c4aa;padding:3px 5px}
-.reader-flow pre{margin:0;padding:8px 12px;white-space:pre-wrap;word-break:normal;overflow-wrap:anywhere;font:15px/1.58 ui-monospace,SFMono-Regular,Consolas,monospace;color:#ece4d8;orphans:1;widows:1}
-.reader-flow .code-output{border-top:1px solid #382c22;padding:6px 12px;white-space:pre-wrap;font:15px/1.58 ui-monospace,SFMono-Regular,Consolas,monospace;color:#bcae9b}
-.reader-flow .diagram{margin:0;border:1px solid #49392c;border-radius:10px;overflow:visible;break-inside:auto;-webkit-column-break-inside:auto}
-.reader-flow .diagram-row{display:grid;grid-template-columns:100px 1fr;gap:10px;padding:6px 11px;border-bottom:1px solid #34291f}
+.reader-flow pre{
+  margin:0;padding:10px 12px;white-space:pre-wrap;word-break:normal;overflow-wrap:anywhere;
+  font:15px/1.62 ui-monospace,SFMono-Regular,Consolas,monospace;color:#ece4d8;orphans:2;widows:2
+}
+.reader-flow .code-output{
+  border-top:1px solid #382c22;padding:8px 12px;white-space:pre-wrap;
+  font:15px/1.58 ui-monospace,SFMono-Regular,Consolas,monospace;color:#bcae9b
+}
+.reader-flow .diagram{
+  margin-top:12px;margin-bottom:14px;border:1px solid #49392c;border-radius:11px;
+  overflow:visible;break-inside:auto;-webkit-column-break-inside:auto
+}
+.reader-flow .diagram-row{display:grid;grid-template-columns:100px 1fr;gap:10px;padding:8px 11px;border-bottom:1px solid #34291f}
 .reader-flow .diagram-row:last-child{border-bottom:0}
-.reader-flow .diagram-key{color:#d3a45b;font-weight:700}
-.reader-flow details{margin:0;border:1px solid #49392c;border-radius:10px;padding:8px 11px;break-inside:auto;-webkit-column-break-inside:auto}
-.reader-flow summary{cursor:pointer;color:#d8b272}
-.reader-flow .chapter-end{border-top:1px solid #49382b;padding-top:7px}
-.reader-flow .chapter-end .actions{display:flex;gap:7px;flex-wrap:wrap}
+.reader-flow .diagram-key{color:#d3a45b;font-weight:800}
+
+.extra-card{
+  margin-top:11px;margin-bottom:13px;padding:10px 13px 11px;border-top:1px solid #49382b;border-bottom:1px solid #2d241d;
+  background:linear-gradient(90deg,#1c1612,#18130f);break-inside:auto;-webkit-column-break-inside:auto
+}
+.extra-card h3{margin:0 0 5px!important;color:#e8dccd}
+.extra-card p{color:#d4c7b7}
+
+.reader-flow details{
+  margin-top:12px;margin-bottom:14px;border:1px solid #49392c;border-radius:11px;padding:10px 13px;
+  break-inside:auto;-webkit-column-break-inside:auto
+}
+.reader-flow summary{cursor:pointer;color:#d8b272;font-weight:700}
+.reader-flow .chapter-end{margin-top:16px;border-top:1px solid #49382b;padding-top:12px}
+.reader-flow .chapter-end .actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:8px}
 .reader-flow .reader-action{border:1px solid #5b4632;border-radius:10px;background:#231a13;color:#eadfce;padding:7px 10px}
+@media(max-width:520px){
+  .solution-step{grid-template-columns:42px minmax(0,1fr);gap:8px;padding:9px 10px}
+  .prose-stack .lead-paragraph{padding:10px 11px 10px 12px}
+  .glossary-card,.keypoints-card,.reader-flow .practice-box,.reader-flow .question-box,.reader-flow .callout{padding-left:11px;padding-right:11px}
+}
 .edge-zone{position:absolute;top:0;bottom:0;z-index:15;width:clamp(44px,7vw,86px);border:0;background:transparent}
 .edge-prev{left:0}.edge-next{right:0}
 .reader-bottom{display:grid;grid-template-columns:auto minmax(120px,1fr) auto auto;align-items:center;gap:10px;min-height:84px;padding:8px 18px var(--navSafe);background:#17120ef5;border-top:1px solid #33281f}
@@ -478,24 +575,38 @@ function kindLabel(kind){
 function sectionHint(page){
   return String(page.eyebrow||'').replace(/^CHAPTER\s*\d+\s*·\s*/i,'').trim();
 }
+function proseForPage(page){
+  const paras=page.paragraphs||[];
+  if(!paras.length)return '';
+  if(page.kind==='solution'){
+    const labels=['정답','이유','풀이'];
+    return '<div class="solution-prose">'+paras.map((s,i)=>'<div class="solution-step"><span class="micro-label">'+esc(labels[i]||('해설 '+(i+1)))+'</span><p>'+txt(s)+'</p></div>').join('')+'</div>';
+  }
+  const kicker={glossary:'먼저 읽기',visual:'흐름 읽기',example:'예제 읽기',practice:'문제 상황',check:'확인할 내용',summary:'핵심 정리'}[page.kind]||'';
+  let out='<div class="prose-stack type-'+esc(page.kind)+'">';
+  if(kicker)out+='<div class="block-kicker">'+esc(kicker)+'</div>';
+  paras.forEach((s,i)=>out+='<p class="paragraph '+(i===0?'lead-paragraph':'body-paragraph')+'">'+txt(s)+'</p>');
+  return out+'</div>';
+}
 function lessonSection(page,c,index){
   let out='<span class="logical-anchor" data-page-id="'+esc(page.id)+'" data-page-index="'+index+'" aria-hidden="true"></span><div class="section-marker type-'+esc(page.kind)+'"><span class="kind">'+esc(kindLabel(page.kind))+'</span><span class="hint">'+esc(sectionHint(page))+'</span></div><h1 class="page-title">'+esc(page.title)+'</h1>';
   if(page.kind==='solution')out+='<div class="solution-banner">정답 · 이유 · 풀이</div>';
-  (page.paragraphs||[]).forEach(s=>out+='<p class="paragraph">'+txt(s)+'</p>');
+  out+=proseForPage(page);
   (page.glossary||[]).forEach(g=>{
-    out+='<p class="glossary-entry"><strong class="glossary-term">'+esc(g.term)+'</strong> '+txt(g.description)+'</p><p><strong class="glossary-label">어디에 쓰나요?</strong> '+txt(g.usage)+'</p><p><strong class="glossary-label">예시</strong> '+txt(g.example)+'</p>';
+    out+='<section class="glossary-card"><h3 class="glossary-term">'+esc(g.term)+'</h3><p class="glossary-definition">'+txt(g.description)+'</p><div class="glossary-meta"><p><strong class="glossary-label">어디에 쓰나요?</strong>'+txt(g.usage)+'</p><p><strong class="glossary-label">예시</strong>'+txt(g.example)+'</p></div></section>';
   });
+  if(page.keywords&&page.keywords.length)out+='<div class="keyword-row"><span class="block-kicker">핵심 용어</span>'+page.keywords.map(x=>'<span class="keyword-chip">'+esc(x)+'</span>').join('')+'</div>';
   if(page.visual)out+=diagram(page,c);
-  if(page.bullets&&page.bullets.length)out+='<ul>'+page.bullets.map(x=>'<li>'+txt(x)+'</li>').join('')+'</ul>';
+  if(page.bullets&&page.bullets.length)out+='<section class="keypoints-card"><div class="block-kicker">핵심 포인트</div><ul>'+page.bullets.map(x=>'<li>'+txt(x)+'</li>').join('')+'</ul></section>';
   if(page.calloutTitle)out+='<div class="callout"><div class="callout-title">'+esc(page.calloutTitle)+'</div><p>'+txt(page.calloutBody||'')+'</p></div>';
   if(page.code)out+=codeBlock(page.code,page.codeNote);
-  if(page.practicePrompt)out+='<div class="practice-box"><h3>직접 해보기</h3><p>'+txt(page.practicePrompt)+'</p></div>';
-  if(page.question)out+='<div class="question-box"><h3>먼저 생각해 보세요</h3><p>'+txt(page.question)+'</p></div>';
+  if(page.practicePrompt)out+='<div class="practice-box"><div class="block-kicker">직접 실습</div><h3>직접 해보기</h3><p>'+txt(page.practicePrompt)+'</p></div>';
+  if(page.question)out+='<div class="question-box"><div class="block-kicker">확인 질문</div><h3>먼저 생각해 보세요</h3><p>'+txt(page.question)+'</p></div>';
   if(page.answerOnNext)out+='<div class="goal">먼저 예상 결과와 이유를 적어 보세요. 다음 내용에 정답과 풀이가 이어집니다.</div>';
   if(page.answer)out+='<details><summary>정답·해설</summary><p>'+txt(page.answer)+'</p></details>';
-  (page.extras||[]).forEach(e=>out+='<h3 class="extra-title">'+esc(e.title)+'</h3><p>'+txt(e.body)+'</p>');
+  (page.extras||[]).forEach(e=>out+='<section class="extra-card"><h3>'+esc(e.title)+'</h3><p>'+txt(e.body)+'</p></section>');
   if(page.closingPrompt)out+='<div class="goal">'+txt(page.closingPrompt)+'</div>';
-  if(page.kind==='summary')out+='<div class="summary-card"><h3>기억할 것</h3><p>'+esc(c.remember||'')+'</p><h3>직접 해볼 것</h3><p>'+esc(c.practiceGoal||'')+'</p></div>';
+  if(page.kind==='summary')out+='<div class="summary-card"><div class="block-kicker">챕터 마무리</div><h3>기억할 것</h3><p>'+esc(c.remember||'')+'</p><h3>직접 해볼 것</h3><p>'+esc(c.practiceGoal||'')+'</p></div>';
   if(index===c.pages.length-1)out+='<div class="chapter-end"><h3>이 챕터를 설명할 수 있나요?</h3><p>'+esc(c.practiceGoal||'직접 설명해 보세요.')+'</p><div class="actions"><button class="reader-action" data-action="complete">'+(state.complete.includes(c.id)?'완료 표시 취소':'이해 완료로 표시')+'</button><button class="reader-action" data-action="track-current">목차로</button></div></div>';
   return out;
 }
