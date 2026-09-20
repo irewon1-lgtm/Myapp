@@ -154,7 +154,7 @@ dialog::backdrop{background:#0009}
 .reader-top button{border:0;background:transparent;color:var(--readerInk);min-width:42px;height:42px;border-radius:10px}
 .reader-heading{text-align:center;min-width:0}
 .reader-heading strong{display:block;font:500 17px/1.2 Georgia,"Noto Serif KR",serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.reader-heading small{display:none}
+.reader-heading small{display:block;color:#9a8872;font:700 9px/1.2 system-ui,-apple-system,"Noto Sans KR",sans-serif;letter-spacing:.08em;margin-top:2px}
 .reader-paper-wrap{position:relative;min-height:0;display:flex;justify-content:center;overflow:hidden;background:var(--reader)}
 .reader-paper{position:relative;width:min(880px,calc(100% - 88px));height:100%;overflow-x:hidden;overflow-y:hidden;background:var(--reader);scroll-behavior:smooth;overscroll-behavior:none}
 .reader-flow{height:auto;width:100%;column-count:1;column-gap:0;column-fill:auto;font-size:var(--readerBody);line-height:var(--readerLine);font-family:Georgia,"Noto Serif KR","NanumMyeongjo",serif;color:var(--readerInk);-webkit-text-size-adjust:none;text-size-adjust:none}
@@ -162,6 +162,42 @@ dialog::backdrop{background:#0009}
 .logical-anchor{display:block;width:0;height:0;overflow:hidden;break-after:auto;page-break-after:auto}
 .reader-flow>*:not(.logical-anchor){margin-left:var(--pagePad);margin-right:var(--pagePad)}
 .reader-flow>.code,.reader-flow>.diagram,.reader-flow>.callout,.reader-flow>.practice-box,.reader-flow>.question-box,.reader-flow>.summary-card,.reader-flow>details{width:auto}
+.chapter-ribbon{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  min-height:42px;margin:0 var(--pagePad);padding:7px 12px;
+  border-top:1px solid #6a5137;border-bottom:1px solid #6a5137;
+  background:linear-gradient(90deg,#2c2117,#201812);
+  font-family:system-ui,-apple-system,"Noto Sans KR",sans-serif;
+}
+.chapter-ribbon small{color:#c69a58;font-size:10px;font-weight:800;letter-spacing:.09em;white-space:nowrap}
+.chapter-ribbon strong{font-family:Georgia,"Noto Serif KR","NanumMyeongjo",serif;color:#f1e6d6;font-size:18px;line-height:1.25;text-align:right}
+.section-marker{
+  display:flex;align-items:center;gap:8px;min-height:27px;
+  margin:0 var(--pagePad);padding:3px 8px 3px 0;
+  border-top:1px solid #3d3025;
+  font-family:system-ui,-apple-system,"Noto Sans KR",sans-serif;
+  break-after:auto;page-break-after:auto;
+}
+.section-marker:before{content:"";width:3px;height:17px;border-radius:2px;background:#a47b45;flex:0 0 auto}
+.section-marker .kind{font-size:10px;font-weight:900;letter-spacing:.08em;color:#d1a459;white-space:nowrap}
+.section-marker .hint{font-size:10px;color:#8f806f;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.section-marker.type-practice:before,.section-marker.type-check:before{background:#d8ab61}
+.section-marker.type-practice,.section-marker.type-check{background:#201810}
+.section-marker.type-solution:before{background:#93a982}
+.section-marker.type-solution .kind{color:#aabe9a}
+.section-marker.type-summary:before{background:#b89a6c}
+.section-marker.type-glossary:before{background:#c69a58}
+.section-marker.type-example:before{background:#b9844b}
+.reader-flow .eyebrow{display:none}
+.reader-flow .page-title{margin:0 0 6px;font-size:30px;line-height:1.2;letter-spacing:-.04em;font-weight:600;break-after:auto}
+.reader-flow .practice-box,.reader-flow .question-box{border-color:#6a5031;background:#241a10}
+.reader-flow .summary-card{border-color:#5f523d;background:#211b14}
+.solution-banner{
+  margin:0 var(--pagePad);padding:5px 9px;border-left:3px solid #93a982;
+  background:#1d2119;color:#cbd8c2;font-family:system-ui,-apple-system,"Noto Sans KR",sans-serif;
+  font-size:11px;font-weight:800;
+}
+
 .reader-flow .eyebrow{margin:0 0 4px;color:var(--readerGold);font-size:12px;line-height:1.4;font-family:system-ui,-apple-system,"Noto Sans KR",sans-serif}
 .reader-flow h1{margin:0 0 8px;font-size:34px;line-height:1.18;letter-spacing:-.045em;font-weight:600;break-after:auto}
 .reader-flow h2{margin:0 0 5px;font-size:24px;line-height:1.28;break-after:auto}
@@ -429,8 +465,16 @@ function diagram(page,c){
 function codeBlock(code,note){
   return '<div class="code"><div class="code-bar"><span>Python · 예제 코드</span><button class="copy-btn" data-action="copy-code">복사하기</button></div><pre><code>'+esc(code)+'</code></pre>'+(note?'<div class="code-output">'+esc(note)+'</div>':'')+'</div>';
 }
+function kindLabel(kind){
+  const map={glossary:'용어',concept:'개념',visual:'흐름',example:'예제',practice:'실습',solution:'풀이',check:'확인',summary:'정리'};
+  return map[kind]||String(kind||'내용');
+}
+function sectionHint(page){
+  return String(page.eyebrow||'').replace(/^CHAPTER\s*\d+\s*·\s*/i,'').trim();
+}
 function lessonSection(page,c,index){
-  let out='<span class="logical-anchor" data-page-id="'+esc(page.id)+'" data-page-index="'+index+'" aria-hidden="true"></span><div class="eyebrow">'+esc(page.eyebrow||page.kind)+'</div><h1>'+esc(page.title)+'</h1>';
+  let out='<span class="logical-anchor" data-page-id="'+esc(page.id)+'" data-page-index="'+index+'" aria-hidden="true"></span><div class="section-marker type-'+esc(page.kind)+'"><span class="kind">'+esc(kindLabel(page.kind))+'</span><span class="hint">'+esc(sectionHint(page))+'</span></div><h1 class="page-title">'+esc(page.title)+'</h1>';
+  if(page.kind==='solution')out+='<div class="solution-banner">정답 · 이유 · 풀이</div>';
   (page.paragraphs||[]).forEach(s=>out+='<p class="paragraph">'+txt(s)+'</p>');
   (page.glossary||[]).forEach(g=>{
     out+='<p class="glossary-entry"><strong class="glossary-term">'+esc(g.term)+'</strong> '+txt(g.description)+'</p><p><strong class="glossary-label">어디에 쓰나요?</strong> '+txt(g.usage)+'</p><p><strong class="glossary-label">예시</strong> '+txt(g.example)+'</p>';
@@ -449,11 +493,14 @@ function lessonSection(page,c,index){
   if(index===c.pages.length-1)out+='<div class="chapter-end"><h3>이 챕터를 설명할 수 있나요?</h3><p>'+esc(c.practiceGoal||'직접 설명해 보세요.')+'</p><div class="actions"><button class="reader-action" data-action="complete">'+(state.complete.includes(c.id)?'완료 표시 취소':'이해 완료로 표시')+'</button><button class="reader-action" data-action="track-current">목차로</button></div></div>';
   return out;
 }
-function chapterFlow(c){return c.pages.map((p,i)=>lessonSection(p,c,i)).join('')}
+function chapterFlow(c){
+  const ribbon='<div class="chapter-ribbon"><small>TRACK '+String(c.track).padStart(2,'0')+' · CHAPTER '+String(c.chapter).padStart(2,'0')+'</small><strong>'+esc(c.title)+'</strong></div>';
+  return ribbon+c.pages.map((p,i)=>lessonSection(p,c,i)).join('');
+}
 function reader(){
   const c=chapters[current.c],p=c.pages[current.p];
   return '<div class="reader-shell '+(focus?'focus':'')+'">'+
-    '<header class="reader-top"><button data-action="track-current" aria-label="목차">←</button><div class="reader-heading"><strong>Chapter '+c.chapter+' · '+esc(c.title)+'</strong><small>TRACK '+c.track+'</small></div><button data-action="bookmark" aria-label="북마크">'+(state.bookmarks.includes(p.id)?'★':'☆')+'</button><button class="note-top" data-action="note" aria-label="메모">▤</button><button data-action="display" aria-label="읽기 설정">Aa</button></header>'+
+    '<header class="reader-top"><button data-action="track-current" aria-label="목차">←</button><div class="reader-heading"><strong>CHAPTER '+String(c.chapter).padStart(2,'0')+' · '+esc(c.title)+'</strong><small>TRACK '+String(c.track).padStart(2,'0')+'</small></div><button data-action="bookmark" aria-label="북마크">'+(state.bookmarks.includes(p.id)?'★':'☆')+'</button><button class="note-top" data-action="note" aria-label="메모">▤</button><button data-action="display" aria-label="읽기 설정">Aa</button></header>'+
     '<div class="reader-paper-wrap"><button class="edge-zone edge-prev" data-action="prev" aria-label="이전 페이지"></button><article id="paper" class="reader-paper"><div id="flow" class="reader-flow">'+chapterFlow(c)+'</div></article><button class="edge-zone edge-next" data-action="next" aria-label="다음 페이지"></button></div>'+
     '<footer class="reader-bottom"><button class="circle-btn" data-action="prev" aria-label="이전">‹</button><div class="reader-page-info"><span id="page-pos">1 / 1</span><div class="reader-progress"><i id="page-progress" style="width:0%"></i></div></div><button class="circle-btn" data-action="next" aria-label="다음">›</button><button class="focus-btn" data-action="focus">▣ 집중</button></footer>'+
     '</div>';
