@@ -11,6 +11,12 @@ assert(html.includes('overflow-y:hidden'),'reader vertical scroll must be disabl
 assert(html.includes("flow.style.columnFill='auto'"),'sequential full-page pagination missing');
 assert(html.includes('edge-zone edge-prev')&&html.includes('edge-zone edge-next'),'edge tap navigation missing');
 assert(html.includes('TITLE_TOP_PAGE_V2'),'title-top pagination marker missing');
+assert(html.includes('SWIPE_TRACK_FOCUS_V1'),'swipe/track/focus architecture marker missing');
+assert(html.includes('touch-action:pan-y'),'touch swipe surface missing');
+assert(html.includes('function trackStats(id)'),'track page-count statistics missing');
+assert(html.includes('track-remain'),'reader remaining-page HUD missing');
+assert(html.includes('focus-exit')&&html.includes('focus-hud'),'rebuilt focus mode controls missing');
+assert(html.includes("pendingPhysicalRatio=physicalPages>1?physicalPage/(physicalPages-1):0"),'focus mode must preserve reading position');
 assert(html.includes('return lessonSection(c.pages[current.p],c,current.p);'),'reader must render only the current logical page');
 assert(html.includes('section-marker type-'),'content-type section marker missing');
 assert(html.includes("glossary:'용어'")&&html.includes("practice:'실습'")&&html.includes("solution:'풀이'")&&html.includes("summary:'정리'"),'content-type label mapping missing');
@@ -86,6 +92,10 @@ for(const r of ['home','books','track','reader','search','saved','settings']){
   f.run('route='+JSON.stringify(r)+';render()');
   assert(f.elements.app.innerHTML.length>100,'route '+r+' did not render');
 }
+f.run('route="reader";render();doAction("focus",{})');
+assert(f.elements.app.innerHTML.includes('reader-shell focus'),'focus mode class missing');
+assert(f.elements.app.innerHTML.includes('집중모드 종료'),'focus exit control missing');
+assert(f.elements.app.innerHTML.includes('track-remain'),'track remaining HUD missing');
 const t3=course.tracks.find(t=>t.id===3);
 if(t3){
   const t3c=course.chapters.filter(c=>c.track===3);
