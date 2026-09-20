@@ -149,23 +149,24 @@ dialog::backdrop{background:#0009}
 .toast{position:fixed;z-index:200;left:50%;bottom:110px;transform:translateX(-50%);max-width:90vw;background:#2a2119;color:#f4ecdf;border:1px solid #584633;border-radius:10px;padding:10px 15px;font-size:13px;box-shadow:0 10px 35px #0006}
 
 /* Reader — single visual language, no legacy overrides */
-/* TITLE_TOP_PAGE_V1 — every logical lesson begins at a fresh physical page */
+/* TITLE_TOP_PAGE_V2 — persistent large topic title above every physical swipe page */
 .reader-shell{height:100dvh;background:var(--reader);color:var(--readerInk);display:grid;grid-template-rows:58px minmax(0,1fr) auto;overflow:hidden}
 .reader-top{display:grid;grid-template-columns:auto minmax(0,1fr) auto auto auto;align-items:center;gap:7px;padding:6px 15px;background:#17120ef5;border-bottom:1px solid #2d241c}
 .reader-top button{border:0;background:transparent;color:var(--readerInk);min-width:42px;height:42px;border-radius:10px}
 .reader-heading{text-align:center;min-width:0}
 .reader-heading strong{display:block;font:500 17px/1.2 Georgia,"Noto Serif KR",serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .reader-heading small{display:block;color:#9a8872;font:700 9px/1.2 system-ui,-apple-system,"Noto Sans KR",sans-serif;letter-spacing:.08em;margin-top:2px}
-.reader-paper-wrap{position:relative;min-height:0;display:flex;justify-content:center;overflow:hidden;background:var(--reader)}
+.reader-paper-wrap{position:relative;min-height:0;display:grid;grid-template-rows:auto minmax(0,1fr);overflow:hidden;background:var(--reader)}
+.topic-header{width:min(880px,calc(100% - 88px));margin:0 auto;padding:8px 0 6px;background:var(--reader);z-index:3}
+.topic-title{margin:0 var(--pagePad) 8px;font:700 32px/1.18 Georgia,"Noto Serif KR","NanumMyeongjo",serif;letter-spacing:-.045em;color:var(--readerInk)}
+.topic-header .section-marker{margin-bottom:0}
+.reader-stage{position:relative;min-height:0;display:flex;justify-content:center;overflow:hidden;background:var(--reader)}
 .reader-paper{position:relative;width:min(880px,calc(100% - 88px));height:100%;overflow-x:hidden;overflow-y:hidden;background:var(--reader);scroll-behavior:smooth;overscroll-behavior:none}
 .reader-flow{height:auto;width:100%;column-count:1;column-gap:0;column-fill:auto;font-size:var(--readerBody);line-height:var(--readerLine);font-family:Georgia,"Noto Serif KR","NanumMyeongjo",serif;color:var(--readerInk);-webkit-text-size-adjust:none;text-size-adjust:none}
 .lesson-section{
   --pagePad:0;
   display:block;
-  padding:0 clamp(22px,5vw,52px);
-  break-before:column;
-  -webkit-column-break-before:always;
-  page-break-before:always;
+  padding:6px clamp(22px,5vw,52px) 0;
   break-inside:auto;
   -webkit-column-break-inside:auto;
   -webkit-box-decoration-break:clone;
@@ -359,12 +360,12 @@ dialog::backdrop{background:#0009}
 .reader-progress i{display:block;height:100%;background:var(--readerGold);border-radius:99px}
 .reader-shell.focus .reader-top{display:none}
 .reader-shell.focus{grid-template-rows:minmax(0,1fr) auto}
-.reader-shell.focus .reader-paper{width:min(920px,calc(100% - 70px))}
+.reader-shell.focus .reader-paper,.reader-shell.focus .topic-header{width:min(920px,calc(100% - 70px))}
 .reader-shell.focus .reader-bottom{min-height:72px}
 .reader-shell.focus .focus-btn:after{content:" 해제"}
 @media(min-width:900px){
   .book-rail{grid-auto-columns:minmax(185px,230px)}
-  .reader-paper{width:min(800px,calc(100% - 180px))}
+  .reader-paper,.topic-header{width:min(800px,calc(100% - 180px))}
   .reader-flow h1{font-size:36px}
 }
 @media(max-width:720px){
@@ -387,7 +388,7 @@ dialog::backdrop{background:#0009}
   .saved-card{grid-template-columns:32px minmax(0,1fr) 108px;gap:10px}
   .saved-thumb{height:90px}
   .saved-copy strong{font-size:16px}
-  .reader-paper{width:calc(100% - 54px)}
+  .reader-paper,.topic-header{width:calc(100% - 54px)}
   .reader-top{grid-template-columns:auto minmax(0,1fr) auto auto}
   .reader-top .note-top{display:none}
   .reader-flow h1{font-size:32px}
@@ -601,7 +602,7 @@ function proseForPage(page){
   return out+'</div>';
 }
 function lessonSection(page,c,index){
-  let out='<section class="lesson-section" data-logical-page-id="'+esc(page.id)+'"><span class="logical-anchor" data-page-id="'+esc(page.id)+'" data-page-index="'+index+'" aria-hidden="true"></span><h1 class="page-title">'+esc(page.title)+'</h1><div class="section-marker type-'+esc(page.kind)+'"><span class="kind">'+esc(kindLabel(page.kind))+'</span><span class="hint">'+esc(sectionHint(page))+'</span></div>';
+  let out='<section class="lesson-section" data-logical-page-id="'+esc(page.id)+'"><span class="logical-anchor" data-page-id="'+esc(page.id)+'" data-page-index="'+index+'" aria-hidden="true"></span>';
   if(page.kind==='solution')out+='<div class="solution-banner">정답 · 이유 · 풀이</div>';
   out+=proseForPage(page);
   (page.glossary||[]).forEach(g=>{
@@ -623,13 +624,13 @@ function lessonSection(page,c,index){
   return out+'</section>';
 }
 function chapterFlow(c){
-  return c.pages.map((p,i)=>lessonSection(p,c,i)).join('');
+  return lessonSection(c.pages[current.p],c,current.p);
 }
 function reader(){
   const c=chapters[current.c],p=c.pages[current.p];
   return '<div class="reader-shell '+(focus?'focus':'')+'">'+
     '<header class="reader-top"><button data-action="track-current" aria-label="목차">←</button><div class="reader-heading"><strong>CHAPTER '+String(c.chapter).padStart(2,'0')+' · '+esc(c.title)+'</strong><small>TRACK '+String(c.track).padStart(2,'0')+'</small></div><button data-action="bookmark" aria-label="북마크">'+(state.bookmarks.includes(p.id)?'★':'☆')+'</button><button class="note-top" data-action="note" aria-label="메모">▤</button><button data-action="display" aria-label="읽기 설정">Aa</button></header>'+
-    '<div class="reader-paper-wrap"><button class="edge-zone edge-prev" data-action="prev" aria-label="이전 페이지"></button><article id="paper" class="reader-paper"><div id="flow" class="reader-flow">'+chapterFlow(c)+'</div></article><button class="edge-zone edge-next" data-action="next" aria-label="다음 페이지"></button></div>'+
+    '<div class="reader-paper-wrap"><div class="topic-header"><h1 class="topic-title">'+esc(p.title)+'</h1><div class="section-marker type-'+esc(p.kind)+'"><span class="kind">'+esc(kindLabel(p.kind))+'</span><span class="hint">'+esc(sectionHint(p))+'</span></div></div><div class="reader-stage"><button class="edge-zone edge-prev" data-action="prev" aria-label="이전 페이지"></button><article id="paper" class="reader-paper"><div id="flow" class="reader-flow">'+chapterFlow(c)+'</div></article><button class="edge-zone edge-next" data-action="next" aria-label="다음 페이지"></button></div></div>'+
     '<footer class="reader-bottom"><button class="circle-btn" data-action="prev" aria-label="이전">‹</button><div class="reader-page-info"><span id="page-pos">1 / 1</span><div class="reader-progress"><i id="page-progress" style="width:0%"></i></div></div><button class="circle-btn" data-action="next" aria-label="다음">›</button><button class="focus-btn" data-action="focus">▣ 집중</button></footer>'+
     '</div>';
 }
@@ -745,12 +746,13 @@ function layoutReader(){
       document.body.dataset.qaFooterVisible=(!fr||fr.bottom<=innerHeight+1?'1':'0');
       document.body.dataset.qaViewport=String(innerWidth)+'x'+String(innerHeight);
       document.body.dataset.qaColumnFill='auto';
-      const paperRect=paper.getBoundingClientRect();
-      const titleRects=[...flow.querySelectorAll('.page-title')].map(el=>el.getBoundingClientRect());
-      const titleOffsets=titleRects.map(r=>Math.round(r.top-paperRect.top));
-      document.body.dataset.qaTitleOffsets=titleOffsets.slice(0,24).join(',');
-      document.body.dataset.qaTitleMax=String(titleOffsets.reduce((m,v)=>Math.max(m,Math.abs(v)),0));
-      document.body.dataset.qaTitleTop=(titleOffsets.length>0&&titleOffsets.every(v=>Math.abs(v)<=24)?'1':'0');
+      const wrap=document.querySelector('.reader-paper-wrap'),topic=document.querySelector('.topic-title');
+      const wrapRect=wrap&&wrap.getBoundingClientRect?wrap.getBoundingClientRect():null;
+      const topicRect=topic&&topic.getBoundingClientRect?topic.getBoundingClientRect():null;
+      const titleOffset=(wrapRect&&topicRect)?Math.round(topicRect.top-wrapRect.top):9999;
+      document.body.dataset.qaTitleOffsets=String(titleOffset);
+      document.body.dataset.qaTitleMax=String(Math.abs(titleOffset));
+      document.body.dataset.qaTitleTop=(Math.abs(titleOffset)<=24?'1':'0');
     }catch(e){}
   });
 }
@@ -766,10 +768,7 @@ function changePhysical(delta){
     updateHud();
     return;
   }
-  const nc=current.c+(delta>0?1:-1);
-  if(nc<0||nc>=chapters.length)return;
-  const target=chapters[nc];
-  openPage(target.pages[delta>0?0:target.pages.length-1].id,delta<0);
+  logicalFallback(delta);
 }
 function installReaderGestures(){
   const paper=document.getElementById('paper');
