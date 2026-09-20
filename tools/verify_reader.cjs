@@ -5,12 +5,13 @@ const html=fs.readFileSync(path.join(root,'live/reader.html'),'utf8');
 assert(html.includes('LIBRARY_REBUILD_V8'),'clean rebuild marker missing');
 assert(html.includes('--readerBody:18px'),'reader font contract missing');
 assert(html.includes('--readerLine:1.68'),'reader line-height contract missing');
-assert(html.includes('.logical-anchor{display:block;width:0;height:0;overflow:hidden'),'transparent logical-anchor contract missing');
+assert(html.includes('.logical-anchor{display:block;width:0;height:0;overflow:hidden;break-before:column;-webkit-column-break-before:always;page-break-before:always}'),'forced title-top page break contract missing');
 assert(!html.includes('<section class="lesson-section"'),'logical page wrappers must not block physical pagination');
 assert(html.includes('overflow-y:hidden'),'reader vertical scroll must be disabled');
 assert(html.includes("flow.style.columnFill='auto'"),'sequential full-page pagination missing');
 assert(html.includes('edge-zone edge-prev')&&html.includes('edge-zone edge-next'),'edge tap navigation missing');
-assert(html.includes('chapter-ribbon'),'chapter hierarchy ribbon missing');
+assert(html.includes('TITLE_TOP_PAGE_V1'),'title-top pagination marker missing');
+assert(!html.includes("return ribbon+c.pages.map((p,i)=>lessonSection(p,c,i)).join('')"),'chapter ribbon must not sit above page titles');
 assert(html.includes('section-marker type-'),'content-type section marker missing');
 assert(html.includes("glossary:'용어'")&&html.includes("practice:'실습'")&&html.includes("solution:'풀이'")&&html.includes("summary:'정리'"),'content-type label mapping missing');
 assert(html.includes('solution-banner'),'solution visual hierarchy missing');
@@ -111,7 +112,7 @@ const report={
     'fixed 1.68 line-height',
     'no scale-to-fit',
     'no sparse filler stretching',
-    'sequential top-to-bottom horizontal pagination','transparent page-id anchors for continuous text flow',
+    'sequential top-to-bottom horizontal pagination','forced new physical page for every logical lesson title',
     'edge tap navigation','chapter hierarchy ribbon','content-type markers','solution hierarchy banner',
     'Android bottom safe area'
   ],
