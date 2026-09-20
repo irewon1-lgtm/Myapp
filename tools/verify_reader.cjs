@@ -10,6 +10,10 @@ assert(!html.includes('<section class="lesson-section"'),'logical page wrappers 
 assert(html.includes('overflow-y:hidden'),'reader vertical scroll must be disabled');
 assert(html.includes("flow.style.columnFill='auto'"),'sequential full-page pagination missing');
 assert(html.includes('edge-zone edge-prev')&&html.includes('edge-zone edge-next'),'edge tap navigation missing');
+assert(html.includes('chapter-ribbon'),'chapter hierarchy ribbon missing');
+assert(html.includes('section-marker type-'),'content-type section marker missing');
+assert(html.includes("glossary:'용어'")&&html.includes("practice:'실습'")&&html.includes("solution:'풀이'")&&html.includes("summary:'정리'"),'content-type label mapping missing');
+assert(html.includes('solution-banner'),'solution visual hierarchy missing');
 assert(html.includes('--navSafe:calc(28px + env(safe-area-inset-bottom))'),'Android bottom safe area missing');
 assert(!html.includes('scale=Math.min(1,avail/'),'scale-to-fit must not return');
 assert(!html.includes('space-evenly'),'sparse filler stretching must not return');
@@ -108,7 +112,7 @@ const report={
     'no scale-to-fit',
     'no sparse filler stretching',
     'sequential top-to-bottom horizontal pagination','transparent page-id anchors for continuous text flow',
-    'edge tap navigation',
+    'edge tap navigation','chapter hierarchy ribbon','content-type markers','solution hierarchy banner',
     'Android bottom safe area'
   ],
   status:'PASS'
