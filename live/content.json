@@ -1,6 +1,6 @@
 {
   "schema": "codingroadmap-live-v1",
-  "version": 1789922732903,
+  "version": 1789923600000,
   "label": "0.9.0 · 자동 갱신",
   "tracks": [
     {
@@ -4051,6 +4051,199 @@
           ]
         },
         {
+          "id": "t2-c1-x01",
+          "kind": "concept",
+          "title": "if는 “맞으면 이쪽, 아니면 저쪽”을 고르는 표지판입니다",
+          "eyebrow": "초보 확장 · 개념",
+          "paragraphs": [
+            "조건문은 횡단보도와 비슷합니다. 초록불이면 건너고, 빨간불이면 기다립니다. 코드에서는 “이 조건이 맞나?”처럼 True 또는 False로 답할 수 있는 질문을 만듭니다.",
+            "if 뒤에는 질문이 옵니다. 질문이 True이면 들여쓰기된 코드를 실행하고, False이면 그 부분을 건너뜁니다.",
+            "age >= 13을 보면 기호부터 겁먹지 말고 “age가 13 이상인가?”라고 한국어로 읽으세요."
+          ],
+          "keywords": [
+            "if",
+            "조건",
+            "True",
+            "False"
+          ],
+          "calloutTitle": "초보 규칙",
+          "calloutBody": "조건식을 보면 먼저 한국어 질문으로 바꿔 읽습니다."
+        },
+        {
+          "id": "t2-c1-x02",
+          "kind": "example",
+          "title": "코드를 한 줄씩 따라가면 if가 훨씬 쉬워집니다",
+          "eyebrow": "초보 확장 · 예제",
+          "paragraphs": [
+            "age에 15를 넣고 13 이상인지 확인합니다. 15는 13 이상이므로 조건은 True입니다.",
+            "콜론(:) 뒤에서 들여쓰기된 print는 “조건이 맞을 때만 실행되는 줄”입니다.",
+            "실행 전에 먼저 True일지 False일지 말한 뒤 결과를 확인해 보세요."
+          ],
+          "code": "age = 15\n\nif age >= 13:\n    print(\"청소년 이상입니다\")\n\nprint(\"검사가 끝났습니다\")",
+          "codeNote": "예상 출력\n청소년 이상입니다\n검사가 끝났습니다",
+          "bullets": [
+            "age = 15 → age에 15 저장",
+            "age >= 13 → True",
+            "들여쓰기된 print 실행",
+            "마지막 print는 if 밖이라 항상 실행"
+          ]
+        },
+        {
+          "id": "t2-c1-x03",
+          "kind": "concept",
+          "title": ">, >=, ==, !=는 비슷해 보여도 뜻이 다릅니다",
+          "eyebrow": "초보 확장 · 개념",
+          "paragraphs": [
+            ">는 “더 크다”, >=는 “크거나 같다”입니다. 그래서 18 > 18은 False지만 18 >= 18은 True입니다.",
+            "==는 “같은가?”를 묻는 비교입니다. = 하나는 값을 저장하고, == 두 개는 같은지 묻습니다.",
+            "!=는 “같지 않은가?”입니다. password != \"1234\"는 비밀번호가 1234가 아닌지를 묻습니다."
+          ],
+          "bullets": [
+            "= : 값을 저장",
+            "== : 같은지 비교",
+            "!= : 다른지 비교",
+            "> / < : 더 큰지·작은지",
+            ">= / <= : 같은 경우까지 포함"
+          ]
+        },
+        {
+          "id": "t2-c1-x04",
+          "kind": "example",
+          "title": "18세 경계값으로 >와 >= 차이를 확인합니다",
+          "eyebrow": "초보 확장 · 예제",
+          "paragraphs": [
+            "나이 제한이 “18세 이상”이면 18도 포함해야 하므로 age >= 18이 맞습니다.",
+            "age > 18이라고 쓰면 18세는 탈락합니다. 문법 오류는 아니지만 규칙을 잘못 구현한 것입니다.",
+            "기준 숫자 바로 아래·같음·바로 위 값을 넣어 확인하는 습관을 들이세요."
+          ],
+          "code": "for age in [17, 18, 19]:\n    if age >= 18:\n        print(age, \"입장 가능\")\n    else:\n        print(age, \"입장 불가\")",
+          "codeNote": "17 입장 불가\n18 입장 가능\n19 입장 가능"
+        },
+        {
+          "id": "t2-c1-x05",
+          "kind": "concept",
+          "title": "if · elif · else는 여러 길 중 딱 한 길을 고릅니다",
+          "eyebrow": "초보 확장 · 개념",
+          "paragraphs": [
+            "if는 첫 번째 질문입니다. 틀리면 elif로 넘어가 다음 질문을 합니다. 앞 조건이 이미 맞았다면 뒤의 elif는 보지 않습니다.",
+            "else는 “앞의 모든 조건이 아니면”이라는 마지막 길입니다. else 뒤에는 조건을 쓰지 않습니다.",
+            "등급처럼 여러 범위를 나눌 때는 높은 기준부터 아래로 내려오면 읽기 쉽습니다."
+          ]
+        },
+        {
+          "id": "t2-c1-x06",
+          "kind": "example",
+          "title": "점수 등급을 위에서 아래로 읽어 봅니다",
+          "eyebrow": "초보 확장 · 예제",
+          "paragraphs": [
+            "score가 85이면 90 이상은 False라서 다음 elif로 갑니다. 80 이상은 True라서 B를 고르고 끝납니다.",
+            "그 뒤 70 이상 조건은 이미 한 길을 골랐으므로 보지 않습니다.",
+            "조건 순서는 결과를 바꿀 수 있습니다. 낮은 기준을 먼저 두지 않도록 주의하세요."
+          ],
+          "code": "score = 85\n\nif score >= 90:\n    grade = \"A\"\nelif score >= 80:\n    grade = \"B\"\nelif score >= 70:\n    grade = \"C\"\nelse:\n    grade = \"D\"\n\nprint(grade)",
+          "codeNote": "예상 출력: B"
+        },
+        {
+          "id": "t2-c1-x07",
+          "kind": "practice",
+          "title": "온도에 따라 옷차림을 정해 보세요",
+          "eyebrow": "초보 확장 · 실습",
+          "paragraphs": [
+            "25도 이상이면 “반팔”, 15도 이상 25도 미만이면 “얇은 겉옷”, 그보다 낮으면 “두꺼운 겉옷”을 출력합니다.",
+            "코드부터 쓰지 말고 가장 높은 기준부터 검사하는 순서를 먼저 말로 정하세요."
+          ],
+          "practicePrompt": "temperature에 28, 20, 10을 각각 넣어 세 길이 모두 제대로 나오는 if/elif/else 코드를 작성하세요.",
+          "answerOnNext": true
+        },
+        {
+          "id": "t2-c1-x08",
+          "kind": "solution",
+          "title": "온도에 따라 옷차림을 정해 보세요 · 아주 쉬운 풀이",
+          "eyebrow": "초보 확장 · 풀이",
+          "paragraphs": [
+            "25 이상을 먼저 확인합니다. 맞으면 반팔을 출력하고 끝납니다.",
+            "25 이상이 아니었던 값만 두 번째 줄로 오므로 여기서는 15 이상인지 확인하면 됩니다.",
+            "앞 두 조건이 모두 아니면 15보다 낮으므로 else에서 두꺼운 겉옷을 출력합니다."
+          ],
+          "code": "temperature = 20\n\nif temperature >= 25:\n    print(\"반팔\")\nelif temperature >= 15:\n    print(\"얇은 겉옷\")\nelse:\n    print(\"두꺼운 겉옷\")",
+          "codeNote": "28 → 반팔\n20 → 얇은 겉옷\n10 → 두꺼운 겉옷"
+        },
+        {
+          "id": "t2-c1-x09",
+          "kind": "practice",
+          "title": "영화 관람 나이 제한을 경계값까지 맞춰 보세요",
+          "eyebrow": "초보 확장 · 실습",
+          "paragraphs": [
+            "12세 미만은 관람 불가, 12세 이상은 관람 가능입니다. 11, 12, 13을 테스트합니다.",
+            "“12세 이상”이라는 말을 비교 연산자로 정확하게 옮기는 것이 목표입니다."
+          ],
+          "practicePrompt": "age가 12 이상이면 “관람 가능”, 아니면 “관람 불가”를 출력하고 11, 12, 13을 모두 테스트하세요.",
+          "answerOnNext": true
+        },
+        {
+          "id": "t2-c1-x10",
+          "kind": "solution",
+          "title": "영화 관람 나이 제한을 경계값까지 맞춰 보세요 · 아주 쉬운 풀이",
+          "eyebrow": "초보 확장 · 풀이",
+          "paragraphs": [
+            "“이상”에는 같은 값도 포함되므로 >=를 사용합니다.",
+            "12 > 12는 False이므로 >를 쓰면 12세가 잘못 탈락합니다.",
+            "기준보다 1 작은 값, 기준값, 1 큰 값을 넣으면 경계 실수를 쉽게 찾을 수 있습니다."
+          ],
+          "code": "for age in [11, 12, 13]:\n    if age >= 12:\n        print(age, \"관람 가능\")\n    else:\n        print(age, \"관람 불가\")",
+          "codeNote": "11 관람 불가\n12 관람 가능\n13 관람 가능"
+        },
+        {
+          "id": "t2-c1-x11",
+          "kind": "check",
+          "title": "and · or · not을 말로 읽어 보세요",
+          "eyebrow": "초보 확장 · 확인",
+          "paragraphs": [
+            "and는 “둘 다”, or는 “둘 중 하나라도”, not은 “반대로”입니다.",
+            "age >= 18 and has_ticket은 “18세 이상이고 티켓도 있는가?”입니다.",
+            "비교식이 길면 기호만 보지 말고 한국어 한 문장으로 읽어 보세요."
+          ],
+          "question": "age=20, has_ticket=False일 때 age >= 18 and has_ticket의 결과는 True일까요 False일까요? 이유도 말해 보세요.",
+          "answerOnNext": true
+        },
+        {
+          "id": "t2-c1-x12",
+          "kind": "solution",
+          "title": "and · or · not을 말로 읽어 보세요 · 아주 쉬운 풀이",
+          "eyebrow": "초보 확장 · 풀이",
+          "paragraphs": [
+            "age >= 18은 True입니다. 20은 18 이상이기 때문입니다.",
+            "has_ticket은 False입니다. and는 양쪽이 모두 True여야 True입니다.",
+            "따라서 True and False는 False입니다."
+          ],
+          "code": "age = 20\nhas_ticket = False\nprint(age >= 18 and has_ticket)",
+          "codeNote": "예상 출력: False"
+        },
+        {
+          "id": "t2-c1-x13",
+          "kind": "concept",
+          "title": "조건을 너무 깊게 겹치지 말고 한 문장으로 읽히게 만드세요",
+          "eyebrow": "초보 확장 · 개념",
+          "paragraphs": [
+            "if 안에 또 if를 넣을 수 있지만 들여쓰기가 깊어지면 초보자는 흐름을 놓치기 쉽습니다.",
+            "두 조건을 동시에 만족하면 되는 단순한 상황은 and가 더 읽기 쉬울 수 있습니다.",
+            "조건별로 서로 다른 실패 이유를 보여 줘야 하면 if/elif가 더 자연스럽습니다."
+          ]
+        },
+        {
+          "id": "t2-c1-x14",
+          "kind": "example",
+          "title": "구매 가능 여부를 조건 세 개로 확인합니다",
+          "eyebrow": "초보 확장 · 예제",
+          "paragraphs": [
+            "상품을 사려면 재고가 있고 돈도 충분해야 합니다.",
+            "품절인지 먼저 확인하고, 그다음 돈이 부족한지 확인하면 실패 이유가 분명합니다.",
+            "성공이 확정된 else에서만 재고를 줄이는 것이 중요합니다."
+          ],
+          "code": "stock = 2\ncash = 5000\nprice = 3000\n\nif stock == 0:\n    print(\"품절\")\nelif cash < price:\n    print(\"금액 부족\")\nelse:\n    stock -= 1\n    print(\"구매 성공\")\n    print(\"남은 재고:\", stock)",
+          "codeNote": "구매 성공\n남은 재고: 1"
+        },
+        {
           "kind": "summary",
           "eyebrow": "Chapter 1 정리",
           "title": "지금 알아야 할 것",
@@ -4507,6 +4700,186 @@
               "body": "for와 while을 고를 때 문법 길이보다 “반복 대상이 명확한가, 종료 조건이 핵심인가”를 기준으로 판단하세요."
             }
           ]
+        },
+        {
+          "id": "t2-c2-x01",
+          "kind": "concept",
+          "title": "반복문은 같은 일을 대신 해주는 로봇입니다",
+          "eyebrow": "초보 확장 · 개념",
+          "paragraphs": [
+            "“안녕”을 다섯 번 출력하려고 print를 다섯 줄 쓰는 대신 반복문에게 “이 일을 다섯 번 해”라고 시킬 수 있습니다.",
+            "for는 횟수나 대상이 어느 정도 정해져 있을 때 좋고, while은 어떤 조건이 참인 동안 계속해야 할 때 좋습니다.",
+            "반복문을 보면 무엇을 반복하는지, 언제 끝나는지, 반복할 때 값이 어떻게 바뀌는지 찾으세요."
+          ],
+          "keywords": [
+            "for",
+            "while",
+            "반복",
+            "loop"
+          ]
+        },
+        {
+          "id": "t2-c2-x02",
+          "kind": "example",
+          "title": "range(5)는 0, 1, 2, 3, 4를 차례로 꺼냅니다",
+          "eyebrow": "초보 확장 · 예제",
+          "paragraphs": [
+            "range(5)는 다섯 개 숫자를 만들지만 1부터 5가 아니라 0부터 4입니다.",
+            "for i in range(5)는 숫자를 하나씩 i에 넣고 들여쓰기된 코드를 매번 실행합니다.",
+            "i는 “지금 처리 중인 값”을 잠깐 담는 상자라고 생각하면 됩니다."
+          ],
+          "code": "for i in range(5):\n    print(\"i =\", i)",
+          "codeNote": "i = 0\ni = 1\ni = 2\ni = 3\ni = 4"
+        },
+        {
+          "id": "t2-c2-x03",
+          "kind": "concept",
+          "title": "카운터와 누적값은 반복문에서 가장 자주 쓰는 두 상자입니다",
+          "eyebrow": "초보 확장 · 개념",
+          "paragraphs": [
+            "카운터는 몇 번 했는지 셉니다. count += 1처럼 매번 1씩 늘립니다.",
+            "누적값은 여러 값을 계속 더해 모읍니다. total += price처럼 지금까지 합계를 저장합니다.",
+            "반복문 밖에서 시작값을 만들고 안에서 조금씩 바꾸는 모양을 익히면 합계와 평균 문제가 쉬워집니다."
+          ]
+        },
+        {
+          "id": "t2-c2-x04",
+          "kind": "example",
+          "title": "1부터 5까지 더하면서 total이 어떻게 바뀌는지 봅니다",
+          "eyebrow": "초보 확장 · 예제",
+          "paragraphs": [
+            "total은 처음 0이고, 1을 더해 1, 2를 더해 3, 3을 더해 6이 됩니다.",
+            "마지막 15만 보지 말고 0→1→3→6→10→15로 변하는 흐름을 보세요.",
+            "값 변화를 종이에 적어 따라가는 것을 추적이라고 합니다."
+          ],
+          "code": "total = 0\nfor number in range(1, 6):\n    total += number\n    print(\"지금 total:\", total)\nprint(\"최종:\", total)",
+          "codeNote": "최종: 15"
+        },
+        {
+          "id": "t2-c2-x05",
+          "kind": "concept",
+          "title": "while은 조건이 True인 동안 계속 돕니다",
+          "eyebrow": "초보 확장 · 개념",
+          "paragraphs": [
+            "while은 “몇 번”보다 “언제까지”가 중요한 반복에 잘 맞습니다.",
+            "while 뒤 조건이 계속 True라면 끝나지 않는 무한 반복이 생깁니다.",
+            "조건을 언젠가 False로 만드는 값 변화가 반복문 안에 있는지 꼭 확인하세요."
+          ],
+          "calloutTitle": "while 안전 질문",
+          "calloutBody": "반복할 때마다 조건에 쓰인 값이 실제로 바뀌는가?"
+        },
+        {
+          "id": "t2-c2-x06",
+          "kind": "example",
+          "title": "카운트다운으로 while의 종료 조건을 봅니다",
+          "eyebrow": "초보 확장 · 예제",
+          "paragraphs": [
+            "count가 3에서 시작하고 count > 0인 동안 반복합니다.",
+            "반복 안에서 count -= 1을 하므로 3→2→1→0으로 줄어듭니다.",
+            "0이 되면 조건이 False가 되어 반복이 끝납니다."
+          ],
+          "code": "count = 3\nwhile count > 0:\n    print(count)\n    count -= 1\nprint(\"출발!\")",
+          "codeNote": "3\n2\n1\n출발!"
+        },
+        {
+          "id": "t2-c2-x07",
+          "kind": "practice",
+          "title": "1부터 5까지 한 줄씩 출력해 보세요",
+          "eyebrow": "초보 확장 · 실습",
+          "paragraphs": [
+            "for와 range를 이용해 1, 2, 3, 4, 5를 순서대로 출력합니다.",
+            "range의 끝 숫자는 포함되지 않는다는 점을 떠올리세요."
+          ],
+          "practicePrompt": "range(...)에 어떤 시작값과 끝값을 넣어야 1부터 5가 나오는지 생각한 뒤 코드를 작성하세요.",
+          "answerOnNext": true
+        },
+        {
+          "id": "t2-c2-x08",
+          "kind": "solution",
+          "title": "1부터 5까지 한 줄씩 출력해 보세요 · 아주 쉬운 풀이",
+          "eyebrow": "초보 확장 · 풀이",
+          "paragraphs": [
+            "range(1, 6)은 1에서 시작해 6 직전에서 멈춥니다.",
+            "for는 값을 하나씩 number에 넣습니다.",
+            "print(number)는 매 반복의 현재 값을 보여 줍니다."
+          ],
+          "code": "for number in range(1, 6):\n    print(number)",
+          "codeNote": "1\n2\n3\n4\n5"
+        },
+        {
+          "id": "t2-c2-x09",
+          "kind": "practice",
+          "title": "짝수만 더해서 합계를 구해 보세요",
+          "eyebrow": "초보 확장 · 실습",
+          "paragraphs": [
+            "2, 4, 6, 8, 10의 합을 구합니다. total은 0에서 시작합니다.",
+            "range(2, 11, 2)의 세 번째 값 2는 “2씩 증가”라는 뜻입니다."
+          ],
+          "practicePrompt": "for와 total을 사용해 2부터 10까지 짝수의 합을 구하세요.",
+          "answerOnNext": true
+        },
+        {
+          "id": "t2-c2-x10",
+          "kind": "solution",
+          "title": "짝수만 더해서 합계를 구해 보세요 · 아주 쉬운 풀이",
+          "eyebrow": "초보 확장 · 풀이",
+          "paragraphs": [
+            "range(2, 11, 2)는 2, 4, 6, 8, 10을 만듭니다.",
+            "total += number는 total = total + number와 같은 뜻입니다.",
+            "반복이 끝나면 total은 30입니다."
+          ],
+          "code": "total = 0\nfor number in range(2, 11, 2):\n    total += number\nprint(total)",
+          "codeNote": "예상 출력: 30"
+        },
+        {
+          "id": "t2-c2-x11",
+          "kind": "check",
+          "title": "break와 continue의 차이를 구분해 보세요",
+          "eyebrow": "초보 확장 · 확인",
+          "paragraphs": [
+            "break는 반복문 전체를 즉시 끝냅니다.",
+            "continue는 이번 한 번만 건너뛰고 다음 반복으로 갑니다.",
+            "둘 다 흐름을 바꾸므로 왜 필요한지 설명할 수 있을 때 쓰는 것이 좋습니다."
+          ],
+          "question": "1부터 5를 도는 중 number가 3일 때 continue를 실행하면 어떤 숫자들이 출력될까요?",
+          "answerOnNext": true
+        },
+        {
+          "id": "t2-c2-x12",
+          "kind": "solution",
+          "title": "break와 continue의 차이를 구분해 보세요 · 아주 쉬운 풀이",
+          "eyebrow": "초보 확장 · 풀이",
+          "paragraphs": [
+            "1과 2는 정상 출력합니다.",
+            "3에서는 continue로 print를 건너뜁니다.",
+            "반복은 끝나지 않아서 4와 5가 다시 출력됩니다."
+          ],
+          "code": "for number in range(1, 6):\n    if number == 3:\n        continue\n    print(number)",
+          "codeNote": "1\n2\n4\n5"
+        },
+        {
+          "id": "t2-c2-x13",
+          "kind": "concept",
+          "title": "for와 while 중 무엇을 쓸지 이렇게 고릅니다",
+          "eyebrow": "초보 확장 · 개념",
+          "paragraphs": [
+            "목록을 하나씩 처리하거나 정해진 횟수만큼 반복하면 for가 보통 쉽습니다.",
+            "맞는 입력이 나올 때까지처럼 종료가 조건에 달려 있으면 while이 자연스럽습니다.",
+            "초보 단계에서는 “횟수·목록 = for, 조건이 끝날 때까지 = while”로 시작하면 충분합니다."
+          ]
+        },
+        {
+          "id": "t2-c2-x14",
+          "kind": "example",
+          "title": "비밀번호 시도 횟수를 while로 제한합니다",
+          "eyebrow": "초보 확장 · 예제",
+          "paragraphs": [
+            "attempts가 0에서 시작하고 3보다 작은 동안 입력을 받을 수 있습니다.",
+            "틀릴 때마다 attempts를 1 늘리므로 최대 세 번 뒤에는 종료됩니다.",
+            "성공하면 break로 바로 끝냅니다."
+          ],
+          "code": "password = \"1234\"\nattempts = 0\nwhile attempts < 3:\n    typed = input(\"비밀번호: \")\n    if typed == password:\n        print(\"로그인 성공\")\n        break\n    attempts += 1\nelse:\n    print(\"시도 횟수 초과\")",
+          "codeNote": "1234를 입력하면 성공하고 반복이 끝납니다."
         },
         {
           "kind": "summary",
@@ -4967,6 +5340,186 @@
           ]
         },
         {
+          "id": "t2-c3-x01",
+          "kind": "concept",
+          "title": "함수는 자주 하는 일을 이름 붙여 둔 작은 기계입니다",
+          "eyebrow": "초보 확장 · 개념",
+          "paragraphs": [
+            "같은 코드를 반복해서 쓰기보다 코드 묶음에 이름을 붙이면 필요할 때 이름만 불러 쓸 수 있습니다.",
+            "def는 함수를 만드는 표시입니다. 만들기만 해서는 실행되지 않고 함수 이름 뒤에 ()를 붙여 호출해야 합니다.",
+            "함수의 핵심은 코드를 짧게 만드는 것보다 “이 부분이 무슨 일을 하는지 이름으로 설명”하는 것입니다."
+          ],
+          "keywords": [
+            "def",
+            "함수",
+            "호출",
+            "return"
+          ]
+        },
+        {
+          "id": "t2-c3-x02",
+          "kind": "example",
+          "title": "함수를 만드는 것과 실행하는 것은 다른 일입니다",
+          "eyebrow": "초보 확장 · 예제",
+          "paragraphs": [
+            "greet 함수를 정의하면 Python은 그 기능을 기억합니다.",
+            "greet()를 만났을 때 비로소 함수 안 print가 실행됩니다.",
+            "두 번 호출하면 두 번 실행됩니다."
+          ],
+          "code": "def greet():\n    print(\"안녕하세요\")\n\ngreet()\ngreet()",
+          "codeNote": "안녕하세요\n안녕하세요"
+        },
+        {
+          "id": "t2-c3-x03",
+          "kind": "concept",
+          "title": "매개변수는 함수가 받을 값을 위한 빈 상자입니다",
+          "eyebrow": "초보 확장 · 개념",
+          "paragraphs": [
+            "def greet(name):의 name은 나중에 들어올 값을 받을 자리입니다. 이것을 매개변수라고 합니다.",
+            "greet(\"민수\")에서 \"민수\"는 실제로 전달하는 값입니다.",
+            "매개변수를 쓰면 같은 함수를 여러 값에 재사용할 수 있습니다."
+          ]
+        },
+        {
+          "id": "t2-c3-x04",
+          "kind": "example",
+          "title": "두 숫자를 받아 더하는 함수로 입력과 결과를 봅니다",
+          "eyebrow": "초보 확장 · 예제",
+          "paragraphs": [
+            "add(3, 5)를 호출하면 a에는 3, b에는 5가 들어갑니다.",
+            "함수 안에서 a + b를 계산합니다.",
+            "return으로 결과를 함수 밖으로 돌려보냅니다."
+          ],
+          "code": "def add(a, b):\n    result = a + b\n    return result\n\nanswer = add(3, 5)\nprint(answer)",
+          "codeNote": "예상 출력: 8"
+        },
+        {
+          "id": "t2-c3-x05",
+          "kind": "concept",
+          "title": "print와 return은 역할이 완전히 다릅니다",
+          "eyebrow": "초보 확장 · 개념",
+          "paragraphs": [
+            "print는 사람에게 화면으로 보여 줍니다. return은 함수가 계산한 값을 다른 코드가 다시 쓰게 돌려줍니다.",
+            "함수 안에서 print(5)를 했다고 해서 함수 결과값이 5가 되는 것은 아닙니다.",
+            "“print = 보여주기, return = 건네주기”라고 기억하세요."
+          ],
+          "calloutTitle": "한 줄 기억",
+          "calloutBody": "print는 사람에게, return은 코드에게 값을 전달합니다."
+        },
+        {
+          "id": "t2-c3-x06",
+          "kind": "example",
+          "title": "return 값은 다른 계산에 다시 사용할 수 있습니다",
+          "eyebrow": "초보 확장 · 예제",
+          "paragraphs": [
+            "double(4)는 8을 return합니다.",
+            "그 8을 value에 저장한 뒤 value + 10처럼 다시 계산할 수 있습니다.",
+            "이런 재사용 때문에 계산 함수에서는 return이 중요합니다."
+          ],
+          "code": "def double(number):\n    return number * 2\n\nvalue = double(4)\nprint(value)\nprint(value + 10)",
+          "codeNote": "8\n18"
+        },
+        {
+          "id": "t2-c3-x07",
+          "kind": "practice",
+          "title": "가로와 세로를 받아 직사각형 넓이를 구하세요",
+          "eyebrow": "초보 확장 · 실습",
+          "paragraphs": [
+            "rectangle_area라는 함수를 만들고 width와 height를 받습니다.",
+            "두 값을 곱한 결과를 print하지 말고 return하세요."
+          ],
+          "practicePrompt": "rectangle_area(4, 3)이 12를 돌려주도록 만들고 바깥에서 출력하세요.",
+          "answerOnNext": true
+        },
+        {
+          "id": "t2-c3-x08",
+          "kind": "solution",
+          "title": "가로와 세로를 받아 직사각형 넓이를 구하세요 · 아주 쉬운 풀이",
+          "eyebrow": "초보 확장 · 풀이",
+          "paragraphs": [
+            "width와 height는 입력입니다.",
+            "넓이는 width * height입니다.",
+            "그 값을 return하고 호출 결과를 area에 저장해 출력합니다."
+          ],
+          "code": "def rectangle_area(width, height):\n    return width * height\n\narea = rectangle_area(4, 3)\nprint(area)",
+          "codeNote": "예상 출력: 12"
+        },
+        {
+          "id": "t2-c3-x09",
+          "kind": "practice",
+          "title": "가격과 할인율로 할인된 가격을 계산하세요",
+          "eyebrow": "초보 확장 · 실습",
+          "paragraphs": [
+            "price와 discount_percent를 받습니다.",
+            "할인 금액은 price * discount_percent / 100입니다."
+          ],
+          "practicePrompt": "10000원에 20% 할인을 적용하면 8000이 return되도록 discounted_price 함수를 만드세요.",
+          "answerOnNext": true
+        },
+        {
+          "id": "t2-c3-x10",
+          "kind": "solution",
+          "title": "가격과 할인율로 할인된 가격을 계산하세요 · 아주 쉬운 풀이",
+          "eyebrow": "초보 확장 · 풀이",
+          "paragraphs": [
+            "20%는 20/100 = 0.2입니다.",
+            "10000 * 0.2는 2000원 할인입니다.",
+            "10000 - 2000을 return하면 8000이 됩니다."
+          ],
+          "code": "def discounted_price(price, discount_percent):\n    discount = price * discount_percent / 100\n    return price - discount\n\nprint(discounted_price(10000, 20))",
+          "codeNote": "예상 출력: 8000.0"
+        },
+        {
+          "id": "t2-c3-x11",
+          "kind": "check",
+          "title": "함수 안에서 만든 변수는 어디까지 보일까요?",
+          "eyebrow": "초보 확장 · 확인",
+          "paragraphs": [
+            "함수 안에서 만든 변수는 보통 그 함수 안에서만 쓰는 지역 변수입니다.",
+            "함수 안을 작은 작업방이라고 생각하면 쉽습니다.",
+            "바깥에서 값을 쓰고 싶으면 return으로 돌려받는 방식이 명확합니다."
+          ],
+          "question": "함수 안에서만 만든 message를 함수 밖에서 바로 print(message)하면 정상적으로 출력될까요?",
+          "answerOnNext": true
+        },
+        {
+          "id": "t2-c3-x12",
+          "kind": "solution",
+          "title": "함수 안에서 만든 변수는 어디까지 보일까요? · 아주 쉬운 풀이",
+          "eyebrow": "초보 확장 · 풀이",
+          "paragraphs": [
+            "message는 greet 함수 안에서 만든 지역 변수입니다.",
+            "바깥에서는 그 이름을 바로 찾을 수 없습니다.",
+            "필요한 값은 return으로 돌려받아 바깥 변수에 저장하세요."
+          ],
+          "code": "def greet():\n    message = \"안녕\"\n    return message\n\noutside = greet()\nprint(outside)",
+          "codeNote": "예상 출력: 안녕"
+        },
+        {
+          "id": "t2-c3-x13",
+          "kind": "concept",
+          "title": "좋은 함수는 한 가지 일을 짧고 분명하게 합니다",
+          "eyebrow": "초보 확장 · 개념",
+          "paragraphs": [
+            "한 함수가 입력, 파일 읽기, 계산, 출력까지 전부 하면 고치기 어렵습니다.",
+            "함수 이름을 읽었을 때 무슨 일을 하는지 바로 알 수 있게 만드세요.",
+            "calculate_total, is_adult처럼 동작이 보이는 이름이 좋습니다."
+          ]
+        },
+        {
+          "id": "t2-c3-x14",
+          "kind": "example",
+          "title": "작은 함수 두 개를 연결하면 긴 문제도 단순해집니다",
+          "eyebrow": "초보 확장 · 예제",
+          "paragraphs": [
+            "subtotal은 수량과 단가를 곱하는 일만 합니다.",
+            "add_tax는 금액에 세금을 더하는 일만 합니다.",
+            "작은 함수 결과를 연결하면 전체 계산이 완성됩니다."
+          ],
+          "code": "def subtotal(quantity, price):\n    return quantity * price\n\ndef add_tax(amount, rate):\n    return amount * (1 + rate)\n\nbase = subtotal(3, 2000)\nfinal = add_tax(base, 0.1)\nprint(final)",
+          "codeNote": "6000 → 세금 10% 포함 6600.0"
+        },
+        {
           "kind": "summary",
           "eyebrow": "Chapter 3 정리",
           "title": "지금 알아야 할 것",
@@ -5422,6 +5975,189 @@
               "body": "자료구조를 외워서 고르기보다 데이터의 모양과 조회 방식에 맞춰 선택하세요."
             }
           ]
+        },
+        {
+          "id": "t2-c4-x01",
+          "kind": "concept",
+          "title": "리스트는 여러 값을 순서대로 넣는 가방입니다",
+          "eyebrow": "초보 확장 · 개념",
+          "paragraphs": [
+            "변수 하나에 값 하나가 아니라 장보기 목록처럼 여러 값을 모으고 싶을 때 리스트가 편합니다.",
+            "대괄호 [ ] 안에 값을 쉼표로 나눠 적고 순서대로 저장합니다.",
+            "Python의 위치 번호는 0부터 시작합니다. 첫 번째 값의 인덱스가 0입니다."
+          ],
+          "keywords": [
+            "list",
+            "리스트",
+            "index",
+            "인덱스"
+          ]
+        },
+        {
+          "id": "t2-c4-x02",
+          "kind": "example",
+          "title": "리스트의 첫 번째 값은 [0]으로 꺼냅니다",
+          "eyebrow": "초보 확장 · 예제",
+          "paragraphs": [
+            "fruits[0]은 첫 번째 사과, fruits[1]은 두 번째 바나나입니다.",
+            "fruits[-1]은 뒤에서 첫 번째, 즉 마지막 포도입니다.",
+            "0부터 시작한다는 규칙만 익히면 리스트 읽기가 쉬워집니다."
+          ],
+          "code": "fruits = [\"사과\", \"바나나\", \"포도\"]\nprint(fruits[0])\nprint(fruits[1])\nprint(fruits[-1])",
+          "codeNote": "사과\n바나나\n포도"
+        },
+        {
+          "id": "t2-c4-x03",
+          "kind": "concept",
+          "title": "append · remove · len으로 리스트를 바꿔 봅니다",
+          "eyebrow": "초보 확장 · 개념",
+          "paragraphs": [
+            "append는 맨 뒤에 새 값을 하나 추가합니다.",
+            "remove는 같은 값을 찾아 첫 번째 항목을 삭제합니다.",
+            "len은 리스트 안에 값이 몇 개인지 알려 줍니다."
+          ]
+        },
+        {
+          "id": "t2-c4-x04",
+          "kind": "example",
+          "title": "장보기 목록에 추가하고 삭제해 봅니다",
+          "eyebrow": "초보 확장 · 예제",
+          "paragraphs": [
+            "처음에는 우유와 달걀 두 개가 있습니다.",
+            "append로 빵을 추가하고 remove로 우유를 지웁니다.",
+            "마지막 len은 남은 항목 수 2를 알려 줍니다."
+          ],
+          "code": "shopping = [\"우유\", \"달걀\"]\nshopping.append(\"빵\")\nshopping.remove(\"우유\")\nprint(shopping)\nprint(len(shopping))",
+          "codeNote": "['달걀', '빵']\n2"
+        },
+        {
+          "id": "t2-c4-x05",
+          "kind": "concept",
+          "title": "딕셔너리는 이름표가 붙은 서랍장입니다",
+          "eyebrow": "초보 확장 · 개념",
+          "paragraphs": [
+            "리스트가 위치 번호로 찾는다면 딕셔너리는 key라는 이름표로 찾습니다.",
+            "{\"name\": \"민수\", \"age\": 10}에서 name과 age가 key입니다.",
+            "사람이나 상품처럼 각 값의 뜻이 다를 때 딕셔너리가 읽기 쉽습니다."
+          ],
+          "keywords": [
+            "dict",
+            "key",
+            "value"
+          ]
+        },
+        {
+          "id": "t2-c4-x06",
+          "kind": "example",
+          "title": "key를 사용하면 값의 뜻이 코드에 그대로 보입니다",
+          "eyebrow": "초보 확장 · 예제",
+          "paragraphs": [
+            "student[\"name\"]은 이름, student[\"score\"]는 점수라는 뜻이 바로 보입니다.",
+            "같은 key에 새 값을 넣으면 그 값이 바뀝니다.",
+            "없는 key를 []로 꺼내면 KeyError가 날 수 있습니다."
+          ],
+          "code": "student = {\"name\": \"민수\", \"score\": 80}\nprint(student[\"name\"])\nstudent[\"score\"] = 90\nprint(student[\"score\"])",
+          "codeNote": "민수\n90"
+        },
+        {
+          "id": "t2-c4-x07",
+          "kind": "practice",
+          "title": "점수 리스트의 합계와 평균을 구해 보세요",
+          "eyebrow": "초보 확장 · 실습",
+          "paragraphs": [
+            "scores = [80, 90, 70]이 있습니다.",
+            "for로 하나씩 total에 더한 뒤 total / len(scores)로 평균을 구합니다."
+          ],
+          "practicePrompt": "sum()을 쓰지 말고 반복문으로 직접 합계와 평균을 출력하세요.",
+          "answerOnNext": true
+        },
+        {
+          "id": "t2-c4-x08",
+          "kind": "solution",
+          "title": "점수 리스트의 합계와 평균을 구해 보세요 · 아주 쉬운 풀이",
+          "eyebrow": "초보 확장 · 풀이",
+          "paragraphs": [
+            "total을 0으로 만들고 점수를 하나씩 더합니다.",
+            "합계는 240이 됩니다.",
+            "항목 세 개이므로 평균은 240 / 3 = 80입니다."
+          ],
+          "code": "scores = [80, 90, 70]\ntotal = 0\nfor score in scores:\n    total += score\naverage = total / len(scores)\nprint(\"합계:\", total)\nprint(\"평균:\", average)",
+          "codeNote": "합계: 240\n평균: 80.0"
+        },
+        {
+          "id": "t2-c4-x09",
+          "kind": "practice",
+          "title": "상품 재고 딕셔너리에서 값을 바꿔 보세요",
+          "eyebrow": "초보 확장 · 실습",
+          "paragraphs": [
+            "stock = {\"사과\": 3, \"바나나\": 5}가 있습니다.",
+            "사과 한 개가 팔렸다면 사과 key의 값만 1 줄입니다."
+          ],
+          "practicePrompt": "사과 재고를 1 줄이고 사과와 바나나 재고를 모두 출력하세요.",
+          "answerOnNext": true
+        },
+        {
+          "id": "t2-c4-x10",
+          "kind": "solution",
+          "title": "상품 재고 딕셔너리에서 값을 바꿔 보세요 · 아주 쉬운 풀이",
+          "eyebrow": "초보 확장 · 풀이",
+          "paragraphs": [
+            "stock[\"사과\"]는 현재 3입니다.",
+            "stock[\"사과\"] -= 1을 실행하면 2가 됩니다.",
+            "바나나는 건드리지 않았으므로 5입니다."
+          ],
+          "code": "stock = {\"사과\": 3, \"바나나\": 5}\nstock[\"사과\"] -= 1\nprint(stock[\"사과\"])\nprint(stock[\"바나나\"])",
+          "codeNote": "2\n5"
+        },
+        {
+          "id": "t2-c4-x11",
+          "kind": "check",
+          "title": "없는 인덱스와 없는 key는 어떤 문제가 생길까요?",
+          "eyebrow": "초보 확장 · 확인",
+          "paragraphs": [
+            "길이가 3인 리스트의 양수 인덱스는 0, 1, 2입니다. [3]을 꺼내면 IndexError가 납니다.",
+            "없는 key를 dict[\"없는키\"]로 꺼내면 KeyError가 납니다.",
+            "dict.get(\"없는키\", 기본값)은 key가 없을 때 기본값을 돌려줄 수 있습니다."
+          ],
+          "question": "prices={\"사과\":1000}일 때 prices.get(\"바나나\", 0)의 결과는 무엇인가요?",
+          "answerOnNext": true
+        },
+        {
+          "id": "t2-c4-x12",
+          "kind": "solution",
+          "title": "없는 인덱스와 없는 key는 어떤 문제가 생길까요? · 아주 쉬운 풀이",
+          "eyebrow": "초보 확장 · 풀이",
+          "paragraphs": [
+            "바나나 key는 없습니다.",
+            "하지만 get은 key가 없을 때 두 번째 인수로 준 기본값을 돌려줍니다.",
+            "따라서 오류 대신 0을 얻습니다."
+          ],
+          "code": "prices = {\"사과\": 1000}\nprint(prices.get(\"바나나\", 0))",
+          "codeNote": "예상 출력: 0"
+        },
+        {
+          "id": "t2-c4-x13",
+          "kind": "concept",
+          "title": "리스트 안에 딕셔너리를 넣으면 여러 사람·상품을 표현할 수 있습니다",
+          "eyebrow": "초보 확장 · 개념",
+          "paragraphs": [
+            "사람 한 명 정보는 딕셔너리 하나로 표현하기 좋습니다.",
+            "여러 사람을 모으려면 그 딕셔너리들을 리스트 안에 넣을 수 있습니다.",
+            "“리스트 = 여러 명, 딕셔너리 = 한 명의 정보”라고 나눠 생각하세요."
+          ]
+        },
+        {
+          "id": "t2-c4-x14",
+          "kind": "example",
+          "title": "할 일 목록을 리스트와 딕셔너리로 표현합니다",
+          "eyebrow": "초보 확장 · 예제",
+          "paragraphs": [
+            "tasks는 여러 할 일을 담는 리스트입니다.",
+            "각 할 일은 title과 done 정보를 가진 딕셔너리입니다.",
+            "for로 하나씩 꺼낸 뒤 done 값에 따라 완료 여부를 표시합니다."
+          ],
+          "code": "tasks = [\n    {\"title\": \"숙제\", \"done\": True},\n    {\"title\": \"방 청소\", \"done\": False}\n]\nfor task in tasks:\n    mark = \"완료\" if task[\"done\"] else \"미완료\"\n    print(task[\"title\"], \"-\", mark)",
+          "codeNote": "숙제 - 완료\n방 청소 - 미완료"
         },
         {
           "kind": "summary",
