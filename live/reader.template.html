@@ -153,6 +153,7 @@ dialog::backdrop{background:#0009}
 /* SWIPE_TRACK_FOCUS_V1 — robust swipe, track remaining pages, rebuilt focus mode */
 /* SWIPE_CONTENT_CODE_V2 — full-surface touch swipe and concrete code-first Track 2 explanations */
 /* BOOK_SOURCES_V1 — chapter-end verified 2026 bestseller references */
+/* TRACK_GLOBAL_SLIDES_V1 — footer numbering spans every physical slide in the current track */
 .reader-shell{height:100dvh;background:var(--reader);color:var(--readerInk);display:grid;grid-template-rows:58px minmax(0,1fr) auto;overflow:hidden}
 .reader-top{display:grid;grid-template-columns:auto minmax(0,1fr) auto auto auto;align-items:center;gap:7px;padding:6px 15px;background:#17120ef5;border-bottom:1px solid #2d241c}
 .reader-top button{border:0;background:transparent;color:var(--readerInk);min-width:42px;height:42px;border-radius:10px}
@@ -380,10 +381,8 @@ dialog::backdrop{background:#0009}
 .circle-btn{width:48px;height:48px;border-radius:50%;font-size:29px;line-height:1;padding:0}
 .focus-btn{min-height:42px;border-radius:13px!important;padding:0 12px;font-size:11px}
 .reader-page-info{text-align:center;color:#c9baa7;font:500 12px Georgia,"Noto Serif KR",serif}
-.track-remain{margin-top:4px;color:#b19d84;font:750 10px/1.35 system-ui,-apple-system,"Noto Sans KR",sans-serif;letter-spacing:.01em}
 .reader-progress{height:5px;max-width:240px;margin:6px auto 0;background:#3b3027;border-radius:99px;overflow:hidden}
 .reader-progress i{display:block;height:100%;background:var(--readerGold);border-radius:99px}
-.track-page-count{margin-top:7px;color:#766a5d;font-size:12px;font-weight:750}
 .focus-exit,.focus-hud{display:none}
 .reader-shell.focus{grid-template-rows:minmax(0,1fr)}
 .reader-shell.focus .reader-top,.reader-shell.focus .reader-bottom{display:none}
@@ -455,6 +454,7 @@ let physicalPages=1;
 let pendingTargetId=state.location;
 let pendingLast=false;
 let pendingPhysicalRatio=null;
+let trackSlideMap={track:null,key:'',entries:[],byId:{},total:1,ready:false};
 let previewRoute='';
 try{if(typeof location!=='undefined')previewRoute=new URLSearchParams(location.search).get('preview')||''}catch(e){}
 
@@ -523,6 +523,89 @@ function progressForTrack(id){
   if(!stats.total)return 0;
   return Math.round(100*stats.read/stats.total);
 }
+function trackLogicalPages(trackId){
+  const out=[];
+  chapters.forEach((c,ci)=>{
+    if(c.track!==trackId)return;
+    c.pages.forEach((p,pi)=>out.push({c,ci,p,pi}));
+  });
+  return out;
+}
+function rebuildTrackSlideMap(trackId,paperWidth,wrapHeight){
+  const key=[COURSE.version,trackId,Math.round(paperWidth),Math.round(wrapHeight),focus?'focus':'normal'].join(':');
+  if(trackSlideMap.ready&&trackSlideMap.key===key)return;
+
+  const items=trackLogicalPages(trackId);
+  const host=document.createElement('div');
+  host.setAttribute('aria-hidden','true');
+  host.style.position='fixed';
+  host.style.left='-20000px';
+  host.style.top='0';
+  host.style.width=paperWidth+'px';
+  host.style.height=wrapHeight+'px';
+  host.style.visibility='hidden';
+  host.style.pointerEvents='none';
+  host.style.overflow='hidden';
+  host.style.zIndex='-1';
+  document.body.appendChild(host);
+
+  const entries=[],byId={};
+  let start=0;
+  for(const item of items){
+    const p=item.p,c=item.c;
+    host.innerHTML='<div class="topic-header"><h1 class="topic-title">'+esc(p.title)+'</h1><div class="section-marker type-'+esc(p.kind)+'"><span class="kind">'+esc(kindLabel(p.kind))+'</span><span class="hint">'+esc(sectionHint(p))+'</span></div></div><article class="reader-paper"><div class="reader-flow">'+lessonSection(p,c,item.pi)+'</div></article>';
+    const topic=host.querySelector('.topic-header');
+    const measurePaper=host.querySelector('.reader-paper');
+    const measureFlow=host.querySelector('.reader-flow');
+    topic.style.width=paperWidth+'px';
+    topic.style.margin='0';
+    const topicHeight=Math.ceil(topic.getBoundingClientRect().height);
+    const bodyHeight=Math.max(120,wrapHeight-topicHeight);
+    measurePaper.style.width=paperWidth+'px';
+    measurePaper.style.height=bodyHeight+'px';
+    measurePaper.style.overflow='hidden';
+    measureFlow.style.width=paperWidth+'px';
+    measureFlow.style.height=bodyHeight+'px';
+    measureFlow.style.columnCount='auto';
+    measureFlow.style.columnWidth=paperWidth+'px';
+    measureFlow.style.columnGap='0px';
+    measureFlow.style.columnFill='auto';
+    const count=Math.max(1,Math.ceil(Math.max(measureFlow.scrollWidth,paperWidth)/paperWidth-.001));
+    const entry={id:p.id,count,start};
+    entries.push(entry);
+    byId[p.id]=entry;
+    start+=count;
+  }
+  host.remove();
+  trackSlideMap={track:trackId,key,entries,byId,total:Math.max(1,start),ready:true};
+}
+function reconcileCurrentTrackSlideCount(){
+  if(!trackSlideMap.ready)return;
+  const id=chapters[current.c]?.pages[current.p]?.id;
+  const entry=trackSlideMap.byId[id];
+  if(!entry||entry.count===physicalPages)return;
+  const diff=physicalPages-entry.count;
+  entry.count=physicalPages;
+  let passed=false;
+  for(const x of trackSlideMap.entries){
+    if(x.id===id){passed=true;continue}
+    if(passed)x.start+=diff;
+  }
+  trackSlideMap.total=Math.max(1,trackSlideMap.total+diff);
+}
+function currentTrackSlidePosition(){
+  const id=chapters[current.c]?.pages[current.p]?.id;
+  const entry=trackSlideMap.ready?trackSlideMap.byId[id]:null;
+  if(!entry){
+    const ids=trackPageIds(chapters[current.c].track);
+    const logical=Math.max(0,ids.indexOf(id));
+    return {current:logical+1,total:Math.max(1,ids.length)};
+  }
+  return {
+    current:Math.max(1,Math.min(trackSlideMap.total,entry.start+physicalPage+1)),
+    total:trackSlideMap.total
+  };
+}
 function coverTone(id){return 'tone'+(((Number(id)||1)-1)%4+1)}
 function bookCard(track){
   const p=progressForTrack(track.id);
@@ -555,9 +638,8 @@ function trackPage(){
   const first=chapters.findIndex(c=>c.track===selectedTrack);
   const target=chapters[current.c]&&chapters[current.c].track===selectedTrack?current.c:first;
   const prog=progressForTrack(selectedTrack);
-  const stats=trackStats(selectedTrack);
   return '<div class="screen"><main class="shell"><div class="top-row"><button class="back-btn" data-action="home">←</button><div class="track-name">TRACK '+String(t.id).padStart(2,'0')+' · '+esc(t.title)+'</div></div>'+
-    '<section class="track-hero"><div class="track-mini"><small>TRACK '+String(t.id).padStart(2,'0')+'</small><strong>'+esc(t.title)+'</strong><div class="photo"></div></div><div class="track-copy"><div class="track-headline serif">지금의 한 걸음이,<br>더 넓은 세상을 만듭니다.</div><p class="track-desc">'+esc(t.subtitle||'차근차근, 어렵지 않게 배웁니다.')+'</p><div class="progress-row" style="margin-top:14px"><div class="progress-track"><i style="width:'+prog+'%"></i></div><b>'+prog+'%</b></div><div class="track-page-count">총 '+stats.total+'장 · 읽음 '+stats.read+'장 · 남음 '+stats.remaining+'장</div><button class="pill-primary" data-action="chapter" data-c="'+target+'">이어보기 →</button></div></section>'+
+    '<section class="track-hero"><div class="track-mini"><small>TRACK '+String(t.id).padStart(2,'0')+'</small><strong>'+esc(t.title)+'</strong><div class="photo"></div></div><div class="track-copy"><div class="track-headline serif">지금의 한 걸음이,<br>더 넓은 세상을 만듭니다.</div><p class="track-desc">'+esc(t.subtitle||'차근차근, 어렵지 않게 배웁니다.')+'</p><div class="progress-row" style="margin-top:14px"><div class="progress-track"><i style="width:'+prog+'%"></i></div><b>'+prog+'%</b></div><button class="pill-primary" data-action="chapter" data-c="'+target+'">이어보기 →</button></div></section>'+
     '<div class="section-head"><div><h2 class="section-title">목차</h2><p class="section-caption">작은 배움이 모여, 큰 변화를 만듭니다.</p></div></div><div class="chapter-list">'+list+'</div></main>'+bottomNav()+'</div>';
 }
 function pageText(page){
@@ -682,7 +764,7 @@ function reader(){
   return '<div class="reader-shell '+(focus?'focus':'')+'">'+
     '<header class="reader-top"><button data-action="track-current" aria-label="목차">←</button><div class="reader-heading"><strong>CHAPTER '+String(c.chapter).padStart(2,'0')+' · '+esc(c.title)+'</strong><small>TRACK '+String(c.track).padStart(2,'0')+'</small></div><button data-action="bookmark" aria-label="북마크">'+(state.bookmarks.includes(p.id)?'★':'☆')+'</button><button class="note-top" data-action="note" aria-label="메모">▤</button><button data-action="display" aria-label="읽기 설정">Aa</button></header>'+
     '<div class="reader-paper-wrap"><div class="topic-header"><h1 class="topic-title">'+esc(p.title)+'</h1><div class="section-marker type-'+esc(p.kind)+'"><span class="kind">'+esc(kindLabel(p.kind))+'</span><span class="hint">'+esc(sectionHint(p))+'</span></div></div><div class="reader-stage"><button class="edge-zone edge-prev" data-action="prev" aria-label="이전 페이지"></button><article id="paper" class="reader-paper"><div id="flow" class="reader-flow">'+chapterFlow(c)+'</div></article><button class="edge-zone edge-next" data-action="next" aria-label="다음 페이지"></button></div></div>'+
-    '<footer class="reader-bottom"><button class="circle-btn" data-action="prev" aria-label="이전">‹</button><div class="reader-page-info"><span id="page-pos">1 / 1</span><div id="track-remain" class="track-remain"></div><div class="reader-progress"><i id="page-progress" style="width:0%"></i></div></div><button class="circle-btn" data-action="next" aria-label="다음">›</button><button class="focus-btn" data-action="focus">▣ 집중</button></footer>'+
+    '<footer class="reader-bottom"><button class="circle-btn" data-action="prev" aria-label="이전">‹</button><div class="reader-page-info"><span id="page-pos">1 슬라이드 / 1</span><div class="reader-progress"><i id="page-progress" style="width:0%"></i></div></div><button class="circle-btn" data-action="next" aria-label="다음">›</button><button class="focus-btn" data-action="focus">▣ 집중</button></footer>'+
     '<button class="focus-exit" data-action="focus">집중모드 종료</button><div id="focus-hud" class="focus-hud"></div>'+
     '</div>';
 }
@@ -765,15 +847,12 @@ function syncLogical(){
 function updateHud(){
   const pos=document.getElementById('page-pos');
   const bar=document.getElementById('page-progress');
-  const remain=document.getElementById('track-remain');
   const focusHud=document.getElementById('focus-hud');
-  const c=chapters[current.c];
-  const stats=trackStats(c.track);
-  const line='TRACK '+String(c.track).padStart(2,'0')+' · 총 '+stats.total+'장 · 읽음 '+stats.read+'장 · 남음 '+stats.remaining+'장';
-  if(pos)pos.textContent=(physicalPage+1)+' / '+physicalPages;
-  if(remain)remain.textContent=line;
-  if(focusHud)focusHud.textContent=line+' · 화면 '+(physicalPage+1)+'/'+physicalPages;
-  if(bar)bar.style.width=(100*(physicalPage+1)/Math.max(physicalPages,1))+'%';
+  const slide=currentTrackSlidePosition();
+  const label=slide.current+' 슬라이드 / '+slide.total;
+  if(pos)pos.textContent=label;
+  if(focusHud)focusHud.textContent=label;
+  if(bar)bar.style.width=(100*slide.current/Math.max(slide.total,1))+'%';
 }
 function layoutReader(){
   const paper=document.getElementById('paper'),flow=document.getElementById('flow');
@@ -797,6 +876,11 @@ function layoutReader(){
     pendingLast=false;
     pendingTargetId='';
     paper.scrollLeft=physicalPage*w;
+    const wrap=document.querySelector('.reader-paper-wrap');
+    if(wrap){
+      rebuildTrackSlideMap(chapters[current.c].track,w,wrap.clientHeight);
+      reconcileCurrentTrackSlideCount();
+    }
     syncLogical();
     updateHud();
     try{
@@ -810,13 +894,17 @@ function layoutReader(){
       document.body.dataset.qaFooterVisible=(!fr||fr.bottom<=innerHeight+1?'1':'0');
       document.body.dataset.qaViewport=String(innerWidth)+'x'+String(innerHeight);
       document.body.dataset.qaColumnFill='auto';
-      const wrap=document.querySelector('.reader-paper-wrap'),topic=document.querySelector('.topic-title');
-      const wrapRect=wrap&&wrap.getBoundingClientRect?wrap.getBoundingClientRect():null;
+      const qaWrap=document.querySelector('.reader-paper-wrap'),topic=document.querySelector('.topic-title');
+      const wrapRect=qaWrap&&qaWrap.getBoundingClientRect?qaWrap.getBoundingClientRect():null;
       const topicRect=topic&&topic.getBoundingClientRect?topic.getBoundingClientRect():null;
       const titleOffset=(wrapRect&&topicRect)?Math.round(topicRect.top-wrapRect.top):9999;
       document.body.dataset.qaTitleOffsets=String(titleOffset);
       document.body.dataset.qaTitleMax=String(Math.abs(titleOffset));
       document.body.dataset.qaTitleTop=(Math.abs(titleOffset)<=2?'1':'0');
+      const trackSlide=currentTrackSlidePosition();
+      document.body.dataset.qaTrackSlideCurrent=String(trackSlide.current);
+      document.body.dataset.qaTrackSlideTotal=String(trackSlide.total);
+      document.body.dataset.qaTrackSlideGlobal=(trackSlide.total>=trackPageIds(chapters[current.c].track).length?'1':'0');
     }catch(e){}
   });
 }
