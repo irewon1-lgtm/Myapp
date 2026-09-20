@@ -253,7 +253,7 @@ body.reader-mode{
   background:#17120d!important;
 }
 .library-mode header{display:none!important}
-.library-mode .shell{max-width:1100px!important;padding:30px 34px 150px!important}
+.library-mode .shell{max-width:1100px!important;padding:30px 34px 188px!important}
 .library-mode h1,.library-mode h2,.library-mode .book-cover strong,.library-mode .track-title,.library-mode .bookmark-card strong,.library-mode .track-headline{
   font-family:"Noto Serif KR","Nanum Myeongjo",serif!important;
 }
@@ -317,7 +317,7 @@ body.reader-mode{
 .library-mode .nav{
   bottom:0!important;left:0!important;right:0!important;transform:none!important;width:100%!important;max-width:none!important;
   border:0!important;border-top:1px solid #e6ddd0!important;border-radius:0!important;background:#fffdf8f7!important;
-  padding:8px max(18px,env(safe-area-inset-left)) max(30px,env(safe-area-inset-bottom))!important;
+  padding:8px max(18px,env(safe-area-inset-left)) calc(44px + env(safe-area-inset-bottom))!important;
   min-height:92px!important;box-shadow:0 -8px 30px #7c624010!important
 }
 .nav button{display:flex!important;flex-direction:column;align-items:center;justify-content:center;gap:3px!important;min-height:48px!important;font-size:11px!important;color:#756a5f!important}
@@ -333,16 +333,16 @@ body.reader-mode{
 .reader-mode .code{border-color:#4b3a2c!important;background:#13100d!important}.reader-mode .code .bar{background:#1d1712!important}.reader-mode .code pre{background:#13100d!important}
 .reader-mode .footer{
   background:#17120d!important;border-top:1px solid #35291f!important;
-  padding:7px 18px max(28px,env(safe-area-inset-bottom))!important;min-height:82px!important
+  padding:7px 18px calc(44px + env(safe-area-inset-bottom))!important;min-height:98px!important
 }
 .reader-mode .footer button{border:1px solid #51402f!important;color:#e6d7c4!important;border-radius:50%!important;min-width:48px!important;width:48px!important;height:48px!important;padding:0!important;font-size:0!important}
 .reader-mode .footer button[data-action="prev"]::before{content:"‹";font-size:34px;line-height:1}.reader-mode .footer button[data-action="next"]::before{content:"›";font-size:34px;line-height:1}
 .reader-mode .footer button[data-action="focus"]{border-radius:14px!important;width:auto!important;min-width:64px!important;font-size:11px!important}.reader-mode .footer button[data-action="focus"]::before{content:"▣ ";font-size:15px}
 .reader-mode .footer .position{font:500 12px "Noto Serif KR",serif!important;color:#d5c7b5!important}.reader-mode .progress{max-width:240px;margin:7px auto 0!important;height:5px!important}.reader-mode .progress i{background:#d3a557!important}
-.edge-nav{position:fixed!important;top:58px!important;bottom:82px!important;width:clamp(44px,8vw,86px)!important;z-index:11!important;border:0!important;background:transparent!important;opacity:0!important;padding:0!important;min-height:0!important}
+.edge-nav{position:fixed!important;top:58px!important;bottom:98px!important;width:clamp(44px,8vw,86px)!important;z-index:11!important;border:0!important;background:transparent!important;opacity:0!important;padding:0!important;min-height:0!important}
 .edge-prev{left:0!important}.edge-next{right:0!important}.edge-nav:focus{opacity:.08!important;background:#c7985522!important}
 @media(max-width:700px){
-  .library-mode .shell{padding:24px 18px 145px!important}.home-mast{margin-bottom:24px}.home-mast h1{font-size:42px!important}.home-quote{max-width:128px;font-size:12px}
+  .library-mode .shell{padding:24px 18px 182px!important}.home-mast{margin-bottom:24px}.home-mast h1{font-size:42px!important}.home-quote{max-width:128px;font-size:12px}
   .continue-card{grid-template-columns:1fr;min-height:0}.study-still{height:150px;order:-1}.continue-copy{padding:22px 24px}.continue-copy .kicker{font-size:27px}
   .book-rail{grid-auto-columns:minmax(155px,185px)}.book-cover{height:220px}.track-hero{grid-template-columns:112px 1fr;gap:18px}.track-mini-cover{height:190px;padding:16px 12px}.track-mini-cover strong{font-size:17px}.track-mini-cover .fake-photo{height:58px}
   .track-detail .track-headline{font-size:21px}.track-detail p{font-size:13px}.bookmark-card{grid-template-columns:32px 1fr 112px;gap:10px}.bookmark-thumb{height:92px}.bookmark-copy strong{font-size:17px}
