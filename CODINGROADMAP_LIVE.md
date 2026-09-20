@@ -15,28 +15,37 @@
 
 다른 채팅방에서도 위 정본을 최신으로 읽고 수정한다. 채팅 답변·다른 브랜치·로컬 파일만 고쳐서는 사용자 앱에 반영되지 않는다.
 
-## UI 기준 — 2026-09-20 reference screens
+## UI / 리더 기준 — CLEAN REBUILD 2026-09-20
 
-- 홈/서재/북마크/트랙 목록은 사용자가 제공한 reference screen처럼 따뜻한 아이보리·베이지 계열의 서재형 UI를 사용한다.
-- 읽기 화면은 별도 다크 리더 UI를 사용하며, 큰 명조계열 제목 + 차분한 본문 + 금빛 포인트를 유지한다.
-- 홈에는 이어 학습 카드, 학습 트랙 책표지형 카드, 하단 4개 탭(홈/서재/북마크/설정)을 유지한다.
-- 트랙 화면은 책 표지형 소개 + 진행률 + 목차 리스트 구조를 사용한다.
-- 북마크 화면은 큰 제목 + 필터 칩 + 카드형 저장 항목 구조를 사용한다.
-- Android 제스처/홈 내비게이션 바에 하단 글자가 가리지 않도록 fixed bottom navigation과 reader footer에 최소 28~30dp 상당의 bottom safe padding을 둔다.
-- 읽기 화면 좌/우 끝에는 투명 hit zone을 두어 탭만으로도 이전/다음 페이지 이동이 가능해야 한다.
-- 기존 좌우 swipe, 한 화면 1페이지, 자동 fit, page.id, 메모·북마크·읽던 위치, 자동 업데이트 계약은 유지한다.
+- UI는 사용자가 제공한 reference screens의 구조를 기준으로 한다: 아이보리 서재형 홈/트랙/북마크 + 짙은 브라운 계열 독서 뷰어.
+- 밀리의서재의 서재 중심 정보구조와 독서 뷰어 사용감을 참고하되, 외부 브랜드 로고·전용 이미지·저작물을 복제하지 않고 코딩 로드맵 고유 텍스트·CSS 자산을 사용한다.
+- `live/reader.template.html`은 CLEAN REBUILD 단일 스타일 레이어를 유지한다. 과거 `PREMIUM_MINIMAL_V3`, `UNIFORM_READER_GRID_V6`, `NO_GAP_FULL_PAGE_V7` 등 누적 override 레이어를 되살리지 않는다.
+- 홈: 이어 학습 카드, 학습 트랙 책표지 카드, 하단 4탭(홈/서재/북마크/설정).
+- 트랙: 책 표지형 소개 + 실제 진행률 + 실제 챕터 목록. 존재하지 않는 영상 수/학습시간 같은 가짜 메타데이터를 만들지 않는다.
+- 북마크: 북마크/메모를 실제 state에서만 렌더한다.
+- 읽기: dark reader, serif 중심 제목/본문, gold accent, 상단 목차·북마크·메모·Aa, 하단 이전/다음·진도·집중모드.
+- Android 홈/제스처 바에 UI가 가리지 않도록 native WebView inset과 CSS `--navSafe`를 함께 사용한다.
+- 읽기 화면 양끝 투명 hit zone과 좌우 swipe로 이전/다음 화면을 이동한다.
 
-## 읽기 화면 고정 계약 — Galaxy Tab S10 FE
+## 읽기 페이지 계약 — 고정 typography + 자연 분할
 
-- 읽기 본문은 모든 페이지에서 동일한 typography grid를 사용한다. 본문 기본 크기 18px, line-height 1.68, 문단 간격 0px을 페이지별로 바꾸지 않는다.
-- 제목·본문·코드·카드의 각 계층은 고정 규격을 사용하며, 특정 페이지의 내용량 때문에 글자 크기·줄간격·문단 여백을 줄이거나 늘리지 않는다.
-- 페이지별 scale-to-fit, transform scale, compact 모드, sparse-page space-evenly 확장을 금지한다.
-- 한 논리 페이지를 억지로 한 화면에 끼워 넣지 않는다. 챕터 내용을 연속 흐름으로 배치하고 고정 높이 화면 페이지로 자동 분할한다.
-- 화면 페이지들은 CSS balanced multi-column 방식으로 균등 분배한다. 목표 편차는 최대 줄 수 대비 3줄 이내이며, 문단 사이 빈 줄이나 인위적 여백을 만들지 않는다. orphans/widows 3 규칙으로 문단 끝·시작이 과도하게 짧아지지 않게 한다.
-- 내용이 많은 경우 자동으로 다음 화면 페이지로 이어지고, 내용 자체를 삭제·요약·늘리거나 페이지별로 글자를 축소하지 않는다.
-- 읽기 본문에는 세로 스크롤을 만들지 않는다. 좌우 스와이프 및 화면 양끝 탭으로 페이지를 이동한다.
-- 세로/가로 회전 모두 같은 typography/spacing 계약을 유지한다. Galaxy Tab S10 FE 태블릿 프로필을 우선 검증한다.
-- 기존 page.id, 교재 본문, 메모·북마크·읽던 위치·자동 업데이트 계약은 보존한다.
+- 본문 기본 크기는 18px, line-height는 1.68로 고정한다. 특정 페이지 때문에 글자 크기나 line-height를 확대/축소하지 않는다.
+- page별 `transform:scale`, scale-to-fit, compact mode, sparse-page stretching을 금지한다.
+- 교재의 논리 page.id는 메모/북마크/검색/복원 identity로 보존하되, 화면에서는 현재 챕터 내용을 연속 흐름으로 합쳐 실제 viewport 높이에 맞는 horizontal physical pages로 다시 분할한다.
+- physical pages는 동일 폭·동일 높이를 사용하고 CSS multi-column `column-fill: balance`로 분량을 배분한다. 문단에는 `orphans:3 / widows:3`을 적용한다.
+- 사용자가 요구한 연속 읽기 밀도를 위해 paragraph-to-paragraph 추가 빈 줄을 만들지 않는다. 다만 제목·코드·설명 박스 자체의 최소 내부 padding은 가독성을 위해 고정값으로 유지하며 page별로 달라지지 않는다.
+- 내용이 많으면 다음 physical page로 자연스럽게 이어진다. 내용 자체를 삭제·요약·복제하거나 글자를 작게 만들어 끼워 넣지 않는다.
+- 세로 스크롤은 reader에서 사용하지 않는다. physical page 이동은 좌우 swipe 또는 양끝 tap으로 수행한다.
+- 화면 회전 후 같은 typography contract로 다시 pagination한다.
+- `page.id`, 교재 본문, 메모·북마크·완료·읽던 위치, 자동 업데이트 계약은 보존한다.
+
+## 렌더 QA 계약
+
+- 정적/DOM stub 검증만으로 완료를 주장하지 않는다.
+- publish workflow에서 self-contained reader 생성 후 실제 Chromium으로 Galaxy Tab S10 FE에 가까운 16:10 landscape/portrait 렌더 smoke test를 수행한다.
+- 렌더 QA는 Korean font가 있는 환경에서 reader의 18px typography, vertical overflow hidden, physical pagination 완료, footer visible 여부를 확인한다.
+- landscape/portrait reader screenshot과 landscape home screenshot을 workflow artifact로 남긴다.
+- 실제 Galaxy Tab S10 FE 물리기기에서의 터치감·One UI 조합은 별도 실기기 검증 전까지 PARTIAL이다.
 
 ## 보통의 교재·화면 수정
 
@@ -72,4 +81,4 @@
 
 기준 APK 정적 분석, Java 빌드, APK 서명·버전, 교재 구조, Python 풀이 실행, JavaScript 상태 로직을 검증한다. 실제 Galaxy 기기 설치/업데이트, 이전 기록 마이그레이션, 화면 크기별 렌더링, 네트워크에서 실제 채널 갱신은 실기기 검증 전까지 미검증으로 남긴다.
 
-트랙 1·2 전체와 트랙 3 Chapter 1만 제공한다. 트랙 3의 나머지 챕터 및 4~11은 준비 중이다. Python 실행기는 없으며 출력 설명을 실제 실행 결과처럼 표시하지 않는다. 추가 보완 우선순위는 Android 실행환경 안내, 개념별 작은 예제·줄별 추적, 미정의 용어, 반복 문장 정리, 틀린 이유를 파악하는 연습이다. 전체 커리큘럼 완성을 주장하지 않는다.
+트랙 1·2 전체와 트랙 3 Chapter 1을 제공한다. 트랙 3의 나머지 챕터 및 4~11은 준비 중이다. Python 실행기는 없으며 출력 설명을 실제 실행 결과처럼 표시하지 않는다. 전체 커리큘럼 완성을 주장하지 않는다.
