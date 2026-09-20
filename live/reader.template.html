@@ -159,14 +159,14 @@ dialog::backdrop{background:#0009}
 .reader-paper{position:relative;width:min(880px,calc(100% - 88px));height:100%;overflow-x:hidden;overflow-y:hidden;background:var(--reader);scroll-behavior:smooth;overscroll-behavior:none}
 .reader-flow{height:auto;width:100%;column-count:1;column-gap:0;column-fill:auto;font-size:var(--readerBody);line-height:var(--readerLine);font-family:Georgia,"Noto Serif KR","NanumMyeongjo",serif;color:var(--readerInk);-webkit-text-size-adjust:none;text-size-adjust:none}
 .lesson-section{display:contents}
-.logical-anchor{display:block;width:0;height:0;overflow:hidden;break-after:avoid;page-break-after:avoid}
+.logical-anchor{display:block;width:0;height:0;overflow:hidden;break-after:auto;page-break-after:auto}
 .reader-flow>*:not(.logical-anchor){margin-left:var(--pagePad);margin-right:var(--pagePad)}
 .reader-flow>.code,.reader-flow>.diagram,.reader-flow>.callout,.reader-flow>.practice-box,.reader-flow>.question-box,.reader-flow>.summary-card,.reader-flow>details{width:auto}
 .reader-flow .eyebrow{margin:0 0 4px;color:var(--readerGold);font-size:12px;line-height:1.4;font-family:system-ui,-apple-system,"Noto Sans KR",sans-serif}
-.reader-flow h1{margin:0 0 8px;font-size:34px;line-height:1.18;letter-spacing:-.045em;font-weight:600;break-after:avoid}
-.reader-flow h2{margin:0 0 5px;font-size:24px;line-height:1.28;break-after:avoid}
+.reader-flow h1{margin:0 0 8px;font-size:34px;line-height:1.18;letter-spacing:-.045em;font-weight:600;break-after:auto}
+.reader-flow h2{margin:0 0 5px;font-size:24px;line-height:1.28;break-after:auto}
 .reader-flow h3{margin:0 0 4px;font-size:19px;line-height:1.3;break-after:auto}
-.reader-flow .glossary-entry{border-top:1px solid #3a2d23;padding-top:5px}
+.reader-flow .glossary-entry{border:0;padding:0}
 .reader-flow .glossary-term{display:inline;font-size:19px;line-height:1.3;margin-right:5px}
 .reader-flow .extra-title{margin:0;padding-top:6px;border-top:1px solid #3a2d23;break-after:auto;page-break-after:auto}
 .reader-flow .glossary-label{display:inline;color:#c69a58;font-family:system-ui,-apple-system,"Noto Sans KR",sans-serif;font-size:10px;font-weight:700;margin:0 5px 0 0!important}
