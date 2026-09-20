@@ -1,0 +1,55 @@
+name: Export APK patch tools
+
+on:
+  push:
+    branches:
+      - tmp/apk-patch-tools-20260920
+    paths:
+      - '.github/workflows/export-apk-patch-tools.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch DEX tools
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p out
+          curl -fL --retry 3 --retry-delay 2 \
+            -o out/baksmali.jar \
+            https://github.com/baksmali/smali/releases/download/3.0.9/baksmali-3.0.9-fat.jar
+          curl -fL --retry 3 --retry-delay 2 \
+            -o out/smali.jar \
+            https://github.com/baksmali/smali/releases/download/3.0.9/smali-3.0.9-fat.jar
+          java -jar out/baksmali.jar --version
+          java -jar out/smali.jar --version
+
+      - name: Export Android build tools
+        shell: bash
+        run: |
+          set -euo pipefail
+          BT="$(ls -1 "$ANDROID_HOME/build-tools" | sort -V | tail -n 1)"
+          DIR="$ANDROID_HOME/build-tools/$BT"
+          test -x "$DIR/zipalign"
+          test -f "$DIR/lib/apksigner.jar"
+          cp "$DIR/zipalign" out/zipalign
+          cp "$DIR/lib/apksigner.jar" out/apksigner.jar
+          if [ -x "$DIR/aapt2" ]; then cp "$DIR/aapt2" out/aapt2; fi
+          if [ -x "$DIR/aapt" ]; then cp "$DIR/aapt" out/aapt; fi
+          printf '%s\n' "$BT" > out/build_tools_version.txt
+          chmod +x out/zipalign out/aapt* 2>/dev/null || true
+          sha256sum out/* > out/SHA256SUMS.txt
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: apk-patch-tools
+          path: out/*
+          if-no-files-found: error
+          retention-days: 1
