@@ -159,7 +159,18 @@ dialog::backdrop{background:#0009}
 .reader-paper-wrap{position:relative;min-height:0;display:flex;justify-content:center;overflow:hidden;background:var(--reader)}
 .reader-paper{position:relative;width:min(880px,calc(100% - 88px));height:100%;overflow-x:hidden;overflow-y:hidden;background:var(--reader);scroll-behavior:smooth;overscroll-behavior:none}
 .reader-flow{height:auto;width:100%;column-count:1;column-gap:0;column-fill:auto;font-size:var(--readerBody);line-height:var(--readerLine);font-family:Georgia,"Noto Serif KR","NanumMyeongjo",serif;color:var(--readerInk);-webkit-text-size-adjust:none;text-size-adjust:none}
-.lesson-section{display:contents}
+.lesson-section{
+  --pagePad:0;
+  display:block;
+  padding:0 clamp(22px,5vw,52px);
+  break-before:column;
+  -webkit-column-break-before:always;
+  page-break-before:always;
+  break-inside:auto;
+  -webkit-column-break-inside:auto;
+  -webkit-box-decoration-break:clone;
+  box-decoration-break:clone
+}
 .logical-anchor{display:block;width:0;height:0;overflow:hidden}
 .reader-flow>*:not(.logical-anchor){margin-left:var(--pagePad);margin-right:var(--pagePad)}
 .reader-flow>.code,.reader-flow>.diagram,.reader-flow>.callout,.reader-flow>.practice-box,.reader-flow>.question-box,.reader-flow>.summary-card,.reader-flow>details{width:auto}
@@ -196,7 +207,7 @@ dialog::backdrop{background:#0009}
 .section-marker.type-example:before{background:#c68a4e}
 .section-marker.type-example .kind{background:#5a3d20;color:#f0c189}
 .reader-flow .eyebrow{display:none}
-.reader-flow .page-title{margin:4px 0 10px;font-size:32px;line-height:1.18;letter-spacing:-.045em;font-weight:700;break-before:column;-webkit-column-break-before:always;page-break-before:always;break-after:auto}
+.reader-flow .page-title{margin:0 0 10px;font-size:32px;line-height:1.18;letter-spacing:-.045em;font-weight:700;break-after:auto}
 .reader-flow .practice-box,.reader-flow .question-box{border-color:#6a5031;background:#241a10}
 .reader-flow .summary-card{border-color:#5f523d;background:#211b14}
 .solution-banner{
@@ -590,7 +601,7 @@ function proseForPage(page){
   return out+'</div>';
 }
 function lessonSection(page,c,index){
-  let out='<span class="logical-anchor" data-page-id="'+esc(page.id)+'" data-page-index="'+index+'" aria-hidden="true"></span><h1 class="page-title">'+esc(page.title)+'</h1><div class="section-marker type-'+esc(page.kind)+'"><span class="kind">'+esc(kindLabel(page.kind))+'</span><span class="hint">'+esc(sectionHint(page))+'</span></div>';
+  let out='<section class="lesson-section" data-logical-page-id="'+esc(page.id)+'"><span class="logical-anchor" data-page-id="'+esc(page.id)+'" data-page-index="'+index+'" aria-hidden="true"></span><h1 class="page-title">'+esc(page.title)+'</h1><div class="section-marker type-'+esc(page.kind)+'"><span class="kind">'+esc(kindLabel(page.kind))+'</span><span class="hint">'+esc(sectionHint(page))+'</span></div>';
   if(page.kind==='solution')out+='<div class="solution-banner">정답 · 이유 · 풀이</div>';
   out+=proseForPage(page);
   (page.glossary||[]).forEach(g=>{
@@ -609,7 +620,7 @@ function lessonSection(page,c,index){
   if(page.closingPrompt)out+='<div class="goal">'+txt(page.closingPrompt)+'</div>';
   if(page.kind==='summary')out+='<div class="summary-card"><div class="block-kicker">챕터 마무리</div><h3>기억할 것</h3><p>'+esc(c.remember||'')+'</p><h3>직접 해볼 것</h3><p>'+esc(c.practiceGoal||'')+'</p></div>';
   if(index===c.pages.length-1)out+='<div class="chapter-end"><h3>이 챕터를 설명할 수 있나요?</h3><p>'+esc(c.practiceGoal||'직접 설명해 보세요.')+'</p><div class="actions"><button class="reader-action" data-action="complete">'+(state.complete.includes(c.id)?'완료 표시 취소':'이해 완료로 표시')+'</button><button class="reader-action" data-action="track-current">목차로</button></div></div>';
-  return out;
+  return out+'</section>';
 }
 function chapterFlow(c){
   return c.pages.map((p,i)=>lessonSection(p,c,i)).join('');
