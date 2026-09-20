@@ -149,7 +149,8 @@ for(const r of ['home','books','track','reader','search','saved','settings']){
 f.run('route="reader";render();doAction("focus",{})');
 assert(f.elements.app.innerHTML.includes('reader-shell focus'),'focus mode class missing');
 assert(f.elements.app.innerHTML.includes('집중모드 종료'),'focus exit control missing');
-assert(f.elements.app.innerHTML.includes('track-remain'),'track remaining HUD missing');
+assert(!f.elements.app.innerHTML.includes('track-remain'),'read/remaining HUD must stay removed');
+assert(f.elements.app.innerHTML.includes('1 슬라이드 / 1'),'global slide counter placeholder missing');
 const t3=course.tracks.find(t=>t.id===3);
 if(t3){
   const t3c=course.chapters.filter(c=>c.track===3);
