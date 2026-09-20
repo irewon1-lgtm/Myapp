@@ -267,6 +267,8 @@ let physicalPage=0;
 let physicalPages=1;
 let pendingTargetId=state.location;
 let pendingLast=false;
+let previewRoute='';
+try{if(typeof location!=='undefined')previewRoute=new URLSearchParams(location.search).get('preview')||''}catch(e){}
 
 function locate(id){
   for(let c=0;c<chapters.length;c++){
@@ -449,6 +451,7 @@ function reader(){
     '</div>';
 }
 function render(){
+  if(previewRoute==='reader'){route='reader';previewRoute=''}else if(previewRoute==='books'){route='books';previewRoute=''}
   const map={home,books,track:trackPage,reader,search,saved,settings};
   document.getElementById('app').innerHTML=(map[route]||home)();
   document.title='코딩 로드맵 · '+(route==='reader'?chapters[current.c].title:'서재');
@@ -541,6 +544,17 @@ function layoutReader(){
     paper.scrollLeft=physicalPage*w;
     syncLogical();
     updateHud();
+    try{
+      const cs=getComputedStyle(flow),ps=getComputedStyle(paper),footer=document.querySelector('.reader-bottom'),fr=footer&&footer.getBoundingClientRect?footer.getBoundingClientRect():null;
+      document.body.dataset.qaReady='1';
+      document.body.dataset.qaPages=String(physicalPages);
+      document.body.dataset.qaFont=cs.fontSize;
+      document.body.dataset.qaLineHeight=cs.lineHeight;
+      document.body.dataset.qaOverflowY=ps.overflowY;
+      document.body.dataset.qaFit=(flow.scrollHeight<=paper.clientHeight+2?'1':'0');
+      document.body.dataset.qaFooterVisible=(!fr||fr.bottom<=innerHeight+1?'1':'0');
+      document.body.dataset.qaViewport=String(innerWidth)+'x'+String(innerHeight);
+    }catch(e){}
   });
 }
 function changePhysical(delta){
