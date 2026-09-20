@@ -734,6 +734,9 @@ function layoutReader(){
       document.body.dataset.qaFooterVisible=(!fr||fr.bottom<=innerHeight+1?'1':'0');
       document.body.dataset.qaViewport=String(innerWidth)+'x'+String(innerHeight);
       document.body.dataset.qaColumnFill='auto';
+      const paperRect=paper.getBoundingClientRect();
+      const titleRects=[...flow.querySelectorAll('.page-title')].map(el=>el.getBoundingClientRect());
+      document.body.dataset.qaTitleTop=(titleRects.length>0&&titleRects.every(r=>Math.abs(r.top-paperRect.top)<=24)?'1':'0');
     }catch(e){}
   });
 }
