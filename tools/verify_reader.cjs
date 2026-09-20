@@ -4,9 +4,10 @@ const course=JSON.parse(fs.readFileSync(path.join(root,'live/content.json'),'utf
 const html=fs.readFileSync(path.join(root,'live/reader.html'),'utf8');
 const script=html.match(/<script>([\s\S]*?)<\/script>/)[1];
 assert(html.includes('UNIFORM_READER_GRID_V6'),'uniform reader grid marker missing');
+assert(html.includes('NO_GAP_FULL_PAGE_V7'),'no-gap full-page reader marker missing');
 assert(html.includes('--reader-body-size:18px'),'reader body font must stay fixed at 18px');
 assert(html.includes('--reader-body-line:1.68'),'reader line-height contract missing');
-assert(html.includes('--reader-paragraph-gap:14px'),'reader paragraph gap contract missing');
+assert(html.includes('--reader-paragraph-gap:0px'),'reader paragraph gap must be zero');
 assert(html.includes('--reader-line-tolerance:3'),'three-line balance tolerance contract missing');
 assert(html.includes("fit.dataset.lineTolerance='3'"),'runtime line tolerance marker missing');
 assert(html.includes("fit.style.columnFill='balance'"),'balanced chapter pagination missing');
@@ -27,6 +28,6 @@ assert(f.run('results("NameError")').includes('NameError'));assert(f.run('result
 const before=f.run('JSON.stringify(state)');f.run('window.importProgress("bad json")');assert.equal(f.run('JSON.stringify(state)'),before);
 for(const route of ['home','books','track','reader','search','saved','settings']){f.run(`route=${JSON.stringify(route)};render()`);assert(f.elements.app.innerHTML.length>100)}
 const m=fixture({current_track:1,current_chapter:2,current_page:4,text_scale:1.2,notes_json:'{"0":"예전 메모"}',bookmarks:['0']});assert.equal(m.run('state.location'),'t2-c3-p5');assert.equal(m.run('state.font'),22);assert.equal(m.run('state.legacy.notes_json'),' {"0":"예전 메모"}'.trim());
-const report={kind:'JavaScript unit tests with DOM stubs, NOT a rendered browser or Android device test',pages:course.chapters.reduce((n,c)=>n+c.pages.length,0),checks:['all pages generate markup','cross-track bookmark isolation','cross-track note isolation','track boundary navigation','solutions immediately follow exercises','full-text search','invalid import preserves state','all routes render markup','legacy position and notes read-only migration','uniform 18px reader body type contract','uniform 1.68 line-height contract','uniform 14px paragraph gap contract','balanced chapter pagination contract','three-line balance tolerance marker','no scale-to-fit','no sparse-page stretching'],status:'PASS'};
+const report={kind:'JavaScript unit tests with DOM stubs, NOT a rendered browser or Android device test',pages:course.chapters.reduce((n,c)=>n+c.pages.length,0),checks:['all pages generate markup','cross-track bookmark isolation','cross-track note isolation','track boundary navigation','solutions immediately follow exercises','full-text search','invalid import preserves state','all routes render markup','legacy position and notes read-only migration','uniform 18px reader body type contract','uniform 1.68 line-height contract','zero paragraph gap contract','balanced chapter pagination contract','three-line balance tolerance marker','no scale-to-fit','no sparse-page stretching'],status:'PASS'};
 fs.mkdirSync(path.join(root,'review'),{recursive:true});
 fs.writeFileSync(path.join(root,'review/reader-test-results.json'),JSON.stringify(report,null,2));console.log(report);
