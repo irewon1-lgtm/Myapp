@@ -1,6 +1,6 @@
 {
   "schema": "codingroadmap-live-v1",
-  "version": 1789924200000,
+  "version": 1789924500000,
   "label": "0.9.0 · 자동 갱신",
   "tracks": [
     {
@@ -4875,11 +4875,11 @@
           "eyebrow": "초보 확장 · 예제",
           "paragraphs": [
             "attempts가 0에서 시작하고 3보다 작은 동안 입력을 받을 수 있습니다.",
-            "틀릴 때마다 attempts를 1 늘리므로 최대 세 번 뒤에는 종료됩니다.",
-            "성공하면 break로 바로 끝냅니다."
+            "틀릴 때마다 attempts를 1 늘립니다. 세 번째로 틀렸을 때 “시도 횟수 초과”를 출력합니다.",
+            "정답을 입력하면 break로 반복을 즉시 끝냅니다. 초보 단계에서는 while 뒤의 별도 else 문법 없이 이 흐름부터 익히면 충분합니다."
           ],
-          "code": "password = \"1234\"\nattempts = 0\nwhile attempts < 3:\n    typed = input(\"비밀번호: \")\n    if typed == password:\n        print(\"로그인 성공\")\n        break\n    attempts += 1\nelse:\n    print(\"시도 횟수 초과\")",
-          "codeNote": "1234를 입력하면 성공하고 반복이 끝납니다."
+          "code": "password = \"1234\"\nattempts = 0\n\nwhile attempts < 3:\n    typed = input(\"비밀번호: \")\n\n    if typed == password:\n        print(\"로그인 성공\")\n        break\n\n    attempts += 1\n\n    if attempts == 3:\n        print(\"시도 횟수 초과\")",
+          "codeNote": "정답 1234를 입력하면 바로 성공하고 반복이 끝납니다."
         },
         {
           "kind": "summary",
@@ -6152,11 +6152,11 @@
           "title": "할 일 목록을 리스트와 딕셔너리로 표현합니다",
           "eyebrow": "초보 확장 · 예제",
           "paragraphs": [
-            "tasks는 여러 할 일을 담는 리스트입니다.",
-            "각 할 일은 title과 done 정보를 가진 딕셔너리입니다.",
-            "for로 하나씩 꺼낸 뒤 done 값에 따라 완료 여부를 표시합니다."
+            "tasks는 여러 할 일을 담는 리스트이고, 각 할 일은 title과 done을 가진 딕셔너리입니다.",
+            "for로 task 하나를 꺼낸 뒤 task[\"done\"]이 True인지 if로 확인합니다.",
+            "축약 문법을 쓰지 않고 if/else를 그대로 적으면 초보자가 흐름을 따라가기 더 쉽습니다."
           ],
-          "code": "tasks = [\n    {\"title\": \"숙제\", \"done\": True},\n    {\"title\": \"방 청소\", \"done\": False}\n]\nfor task in tasks:\n    mark = \"완료\" if task[\"done\"] else \"미완료\"\n    print(task[\"title\"], \"-\", mark)",
+          "code": "tasks = [\n    {\"title\": \"숙제\", \"done\": True},\n    {\"title\": \"방 청소\", \"done\": False}\n]\n\nfor task in tasks:\n    if task[\"done\"] == True:\n        mark = \"완료\"\n    else:\n        mark = \"미완료\"\n\n    print(task[\"title\"], \"-\", mark)",
           "codeNote": "숙제 - 완료\n방 청소 - 미완료"
         },
         {
@@ -6787,11 +6787,11 @@
           "title": "이메일 모양을 아주 단순하게 나눠 봅니다",
           "eyebrow": "초보 확장 · 예제",
           "paragraphs": [
-            "email에 @가 하나 있다고 가정하면 split(\"@\")으로 앞뒤를 나눌 수 있습니다.",
-            "이 예제는 실제 이메일 검증기가 아니라 문자열 나누기를 이해하는 연습입니다.",
-            "f-string으로 나눈 결과를 보기 좋게 출력합니다."
+            "email에 @가 하나 있다고 가정하고 split(\"@\")으로 두 조각을 만듭니다.",
+            "parts[0]은 @ 앞쪽, parts[1]은 @ 뒤쪽입니다. 한 번에 변수 두 개를 받는 축약 표현 대신 리스트 인덱스로 하나씩 꺼냅니다.",
+            "이 예제는 실제 이메일 검증기가 아니라 문자열 나누기를 이해하는 연습입니다."
           ],
-          "code": "email = \"kid@example.com\"\nuser, domain = email.split(\"@\")\nprint(f\"아이디: {user}\")\nprint(f\"도메인: {domain}\")",
+          "code": "email = \"kid@example.com\"\nparts = email.split(\"@\")\nuser = parts[0]\ndomain = parts[1]\n\nprint(\"아이디:\", user)\nprint(\"도메인:\", domain)",
           "codeNote": "아이디: kid\n도메인: example.com"
         },
         {
@@ -7425,11 +7425,11 @@
           "title": "이름과 점수가 적힌 파일을 읽어 평균을 구합니다",
           "eyebrow": "초보 확장 · 예제",
           "paragraphs": [
-            "각 줄을 쉼표로 나누면 name과 score_text를 얻습니다.",
-            "score_text는 문자열이므로 int로 바꿉니다.",
-            "점수를 total에 더하고 count를 늘린 뒤 평균을 계산합니다."
+            "각 줄을 쉼표로 나누면 parts라는 리스트가 됩니다.",
+            "parts[0]은 이름이고 parts[1]은 점수 글자입니다. 점수 글자는 int로 숫자로 바꿉니다.",
+            "점수를 total에 더하고 count를 늘린 뒤 평균을 계산합니다. 한 줄씩 값이 어떻게 변하는지 따라가 보세요."
           ],
-          "code": "total = 0\ncount = 0\nwith open(\"scores.txt\", \"r\", encoding=\"utf-8\") as f:\n    for line in f:\n        name, score_text = line.strip().split(\",\")\n        score = int(score_text)\n        total += score\n        count += 1\nprint(total / count)",
+          "code": "total = 0\ncount = 0\n\nwith open(\"scores.txt\", \"r\", encoding=\"utf-8\") as f:\n    for line in f:\n        parts = line.strip().split(\",\")\n        name = parts[0]\n        score_text = parts[1]\n        score = int(score_text)\n\n        total += score\n        count += 1\n\nprint(total / count)",
           "codeNote": "scores.txt 예시\n민수,80\n영희,100\n→ 평균 90.0"
         },
         {
@@ -8716,9 +8716,9 @@
           "paragraphs": [
             "한 줄에 하나씩 금액이 적힌 expenses.txt를 읽습니다. 빈 줄은 건너뜁니다.",
             "숫자가 아닌 줄은 ValueError를 잡아 “건너뜀”이라고 알려 주고 계속 진행합니다.",
-            "정상 숫자만 합계에 넣습니다. 반복문·함수·문자열·파일·예외 처리가 한 프로젝트에 연결됩니다."
+            "정상 숫자만 리스트에 넣은 뒤 별도의 calculate_total 함수가 하나씩 더합니다. 반복문·함수·문자열·파일·예외 처리가 모두 눈에 보이게 연결됩니다."
           ],
-          "code": "def read_expenses(filename):\n    values = []\n    with open(filename, \"r\", encoding=\"utf-8\") as f:\n        for line in f:\n            text = line.strip()\n            if not text:\n                continue\n            try:\n                values.append(int(text))\n            except ValueError:\n                print(\"건너뜀:\", text)\n    return values\n\nexpenses = read_expenses(\"expenses.txt\")\nprint(\"정상 처리:\", len(expenses))\nprint(\"총액:\", sum(expenses))",
+          "code": "def read_expenses(filename):\n    values = []\n\n    with open(filename, \"r\", encoding=\"utf-8\") as f:\n        for line in f:\n            text = line.strip()\n\n            if not text:\n                continue\n\n            try:\n                number = int(text)\n                values.append(number)\n            except ValueError:\n                print(\"건너뜀:\", text)\n\n    return values\n\n\ndef calculate_total(values):\n    total = 0\n\n    for value in values:\n        total += value\n\n    return total\n\n\nexpenses = read_expenses(\"expenses.txt\")\ntotal = calculate_total(expenses)\n\nprint(\"정상 처리:\", len(expenses))\nprint(\"총액:\", total)",
           "codeNote": "expenses.txt 예시\n1000\n2500\n오류\n3000\n→ 건너뜀: 오류 / 정상 처리: 3 / 총액: 6500"
         },
         {
