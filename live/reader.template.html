@@ -151,13 +151,14 @@ dialog::backdrop{background:#0009}
 /* Reader — single visual language, no legacy overrides */
 /* TITLE_TOP_PAGE_V2 — persistent large topic title above every physical swipe page */
 /* SWIPE_TRACK_FOCUS_V1 — robust swipe, track remaining pages, rebuilt focus mode */
+/* SWIPE_CONTENT_CODE_V2 — full-surface touch swipe and concrete code-first Track 2 explanations */
 .reader-shell{height:100dvh;background:var(--reader);color:var(--readerInk);display:grid;grid-template-rows:58px minmax(0,1fr) auto;overflow:hidden}
 .reader-top{display:grid;grid-template-columns:auto minmax(0,1fr) auto auto auto;align-items:center;gap:7px;padding:6px 15px;background:#17120ef5;border-bottom:1px solid #2d241c}
 .reader-top button{border:0;background:transparent;color:var(--readerInk);min-width:42px;height:42px;border-radius:10px}
 .reader-heading{text-align:center;min-width:0}
 .reader-heading strong{display:block;font:500 17px/1.2 Georgia,"Noto Serif KR",serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .reader-heading small{display:block;color:#9a8872;font:700 9px/1.2 system-ui,-apple-system,"Noto Sans KR",sans-serif;letter-spacing:.08em;margin-top:2px}
-.reader-paper-wrap{position:relative;min-height:0;display:grid;grid-template-rows:auto minmax(0,1fr);overflow:hidden;background:var(--reader)}
+.reader-paper-wrap{position:relative;min-height:0;display:grid;grid-template-rows:auto minmax(0,1fr);overflow:hidden;background:var(--reader);touch-action:pan-y;overscroll-behavior-x:contain}
 .topic-header{width:min(880px,calc(100% - 88px));margin:0 auto;padding:0 0 6px;background:var(--reader);z-index:3}
 .topic-title{margin:0 var(--pagePad) 8px;font:700 32px/1.18 Georgia,"Noto Serif KR","NanumMyeongjo",serif;letter-spacing:-.045em;color:var(--readerInk)}
 .topic-header .section-marker{margin-bottom:0}
@@ -322,6 +323,15 @@ dialog::backdrop{background:#0009}
   border-top:1px solid #382c22;padding:8px 12px;white-space:pre-wrap;
   font:15px/1.58 ui-monospace,SFMono-Regular,Consolas,monospace;color:#bcae9b
 }
+.code-explain{
+  margin:-4px 0 14px;padding:11px 13px;border:1px solid #3f352b;border-radius:11px;background:#181511;
+  break-inside:auto;-webkit-column-break-inside:auto
+}
+.code-explain h3{margin:0 0 8px!important;color:#e7d7c3;font-size:16px!important}
+.code-explain ol{margin:0;padding-left:23px}
+.code-explain li{margin:0;color:#d9cdbf;font-size:15px;line-height:1.58}
+.code-explain li+li{margin-top:6px}
+
 .reader-flow .diagram{
   margin-top:12px;margin-bottom:14px;border:1px solid #49392c;border-radius:11px;
   overflow:visible;break-inside:auto;-webkit-column-break-inside:auto
@@ -612,7 +622,7 @@ function proseForPage(page){
   }
   const kicker={glossary:'먼저 읽기',visual:'흐름 읽기',example:'예제 읽기',practice:'문제 상황',check:'확인할 내용',summary:'핵심 정리'}[page.kind]||'';
   let out='<div class="prose-stack type-'+esc(page.kind)+'">';
-  if(kicker)out+='<div class="block-kicker">'+esc(kicker)+'</div>';
+  if(kicker&&!String(page.id||'').startsWith('t2-'))out+='<div class="block-kicker">'+esc(kicker)+'</div>';
   paras.forEach((s,i)=>out+='<p class="paragraph '+(i===0?'lead-paragraph':'body-paragraph')+'">'+txt(s)+'</p>');
   return out+'</div>';
 }
@@ -627,7 +637,12 @@ function lessonSection(page,c,index){
   if(page.visual)out+=diagram(page,c);
   if(page.bullets&&page.bullets.length)out+='<section class="keypoints-card"><div class="block-kicker">핵심 포인트</div><ul>'+page.bullets.map(x=>'<li>'+txt(x)+'</li>').join('')+'</ul></section>';
   if(page.calloutTitle)out+='<div class="callout"><div class="callout-title">'+esc(page.calloutTitle)+'</div><p>'+txt(page.calloutBody||'')+'</p></div>';
-  if(page.code)out+=codeBlock(page.code,page.codeNote);
+  if(page.code){
+    out+=codeBlock(page.code,page.codeNote);
+    if(page.codeExplain&&page.codeExplain.length){
+      out+='<section class="code-explain"><h3>코드 한 줄씩 설명</h3><ol>'+page.codeExplain.map(x=>'<li>'+txt(x)+'</li>').join('')+'</ol></section>';
+    }
+  }
   if(page.practicePrompt)out+='<div class="practice-box"><div class="block-kicker">직접 실습</div><h3>직접 해보기</h3><p>'+txt(page.practicePrompt)+'</p></div>';
   if(page.question)out+='<div class="question-box"><div class="block-kicker">확인 질문</div><h3>먼저 생각해 보세요</h3><p>'+txt(page.question)+'</p></div>';
   if(page.answerOnNext)out+='<div class="goal">먼저 예상 결과와 이유를 적어 보세요. 다음 내용에 정답과 풀이가 이어집니다.</div>';
@@ -799,74 +814,90 @@ function changePhysical(delta){
   logicalFallback(delta);
 }
 function installReaderGestures(){
+  const surface=document.querySelector('.reader-paper-wrap');
   const paper=document.getElementById('paper');
-  if(!paper||!paper.addEventListener)return;
-  let start=null,drag=false,startScroll=0,lastSwipeAt=0;
-  const interactive=el=>el&&el.closest&&el.closest('pre,a,input,textarea,summary,details,.copy-btn,.reader-action');
-  const begin=(x,y,target,token)=>{
-    if(interactive(target))return false;
-    start={x,y,t:Date.now(),token};
+  if(!surface||!paper||!surface.addEventListener)return;
+
+  let start=null,drag=false,startScroll=0,touchRunning=false,lastFinish=0;
+  const blocked=el=>el&&el.closest&&el.closest('input,textarea,select,a,summary,details,.copy-btn,.reader-action,.focus-exit,.circle-btn,.focus-btn');
+
+  function begin(x,y,target,source){
+    if(blocked(target))return false;
+    start={x,y,t:Date.now(),source};
     startScroll=paper.scrollLeft;
     drag=false;
     return true;
-  };
-  const move=(x,y,event)=>{
+  }
+  function move(x,y,event){
     if(!start)return;
     const dx=x-start.x,dy=y-start.y;
     if(!drag){
-      if(Math.abs(dx)<8)return;
-      if(Math.abs(dx)<=Math.abs(dy)*1.05)return;
+      if(Math.abs(dx)<6)return;
+      if(Math.abs(dx)<=Math.abs(dy)*1.02)return;
       drag=true;
     }
-    paper.scrollLeft=startScroll-dx;
+    const max=Math.max(0,(physicalPages-1)*paper.clientWidth);
+    paper.scrollLeft=Math.max(0,Math.min(max,startScroll-dx));
     if(event&&event.cancelable)event.preventDefault();
-  };
-  const finish=(x,y,event)=>{
+  }
+  function finish(x,y,event){
     if(!start)return;
     const dx=x-start.x,dy=y-start.y,ms=Math.max(1,Date.now()-start.t);
     const wasDrag=drag;
-    start=null;drag=false;
+    start=null;drag=false;lastFinish=Date.now();
     const distance=Math.abs(dx);
-    const horizontal=distance>Math.abs(dy)*1.05;
-    const threshold=Math.min(96,Math.max(44,(innerWidth||360)*.075));
-    const fastSwipe=ms<360&&distance>=30;
-    if(wasDrag&&horizontal&&(distance>=threshold||fastSwipe)){
-      lastSwipeAt=Date.now();
+    const horizontal=distance>Math.abs(dy)*1.02;
+    const normalThreshold=Math.min(80,Math.max(34,(innerWidth||360)*.06));
+    const quickFlick=ms<=420&&distance>=24;
+    if(wasDrag&&horizontal&&(distance>=normalThreshold||quickFlick)){
       changePhysical(dx<0?1:-1);
     }else{
       if(typeof paper.scrollTo==='function')paper.scrollTo({left:physicalPage*paper.clientWidth,top:0,behavior:'smooth'});
       else paper.scrollLeft=physicalPage*paper.clientWidth;
     }
     if(event&&event.cancelable&&wasDrag)event.preventDefault();
-  };
+  }
 
-  paper.addEventListener('pointerdown',e=>{
-    if(Date.now()-lastSwipeAt<80)return;
-    if(begin(e.clientX,e.clientY,e.target,e.pointerId)){
-      try{paper.setPointerCapture&&paper.setPointerCapture(e.pointerId)}catch(err){}
-    }
-  });
-  paper.addEventListener('pointermove',e=>move(e.clientX,e.clientY,e));
-  paper.addEventListener('pointerup',e=>finish(e.clientX,e.clientY,e));
-  paper.addEventListener('pointercancel',()=>{
-    start=null;drag=false;paper.scrollLeft=physicalPage*paper.clientWidth;
-  });
-
-  paper.addEventListener('touchstart',e=>{
-    if(start||!e.touches||e.touches.length!==1)return;
+  // Android/WebView: use native touch events across title + body.
+  surface.addEventListener('touchstart',e=>{
+    if(!e.touches||e.touches.length!==1)return;
+    touchRunning=true;
     const q=e.touches[0];
     begin(q.clientX,q.clientY,e.target,'touch');
   },{passive:true});
-  paper.addEventListener('touchmove',e=>{
-    if(!start||start.token!=='touch'||!e.touches||e.touches.length!==1)return;
+  surface.addEventListener('touchmove',e=>{
+    if(!touchRunning||!start||start.source!=='touch'||!e.touches||e.touches.length!==1)return;
     const q=e.touches[0];
     move(q.clientX,q.clientY,e);
   },{passive:false});
-  paper.addEventListener('touchend',e=>{
-    if(!start||start.token!=='touch')return;
-    const q=(e.changedTouches&&e.changedTouches[0])||{clientX:start.x,clientY:start.y};
+  surface.addEventListener('touchend',e=>{
+    if(!touchRunning)return;
+    const q=(e.changedTouches&&e.changedTouches[0])||(start?{clientX:start.x,clientY:start.y}:{clientX:0,clientY:0});
     finish(q.clientX,q.clientY,e);
+    touchRunning=false;
   },{passive:false});
+  surface.addEventListener('touchcancel',()=>{
+    touchRunning=false;start=null;drag=false;paper.scrollLeft=physicalPage*paper.clientWidth;
+  },{passive:true});
+
+  // Mouse / stylus fallback. Touch pointers are ignored to prevent double firing.
+  surface.addEventListener('pointerdown',e=>{
+    if(e.pointerType==='touch'||touchRunning||Date.now()-lastFinish<120)return;
+    if(begin(e.clientX,e.clientY,e.target,'pointer')){
+      try{surface.setPointerCapture&&surface.setPointerCapture(e.pointerId)}catch(err){}
+    }
+  });
+  surface.addEventListener('pointermove',e=>{
+    if(!start||start.source!=='pointer')return;
+    move(e.clientX,e.clientY,e);
+  });
+  surface.addEventListener('pointerup',e=>{
+    if(!start||start.source!=='pointer')return;
+    finish(e.clientX,e.clientY,e);
+  });
+  surface.addEventListener('pointercancel',()=>{
+    if(start&&start.source==='pointer'){start=null;drag=false;paper.scrollLeft=physicalPage*paper.clientWidth;}
+  });
 }
 function modal(title,body){
   const el=document.getElementById('modal');
