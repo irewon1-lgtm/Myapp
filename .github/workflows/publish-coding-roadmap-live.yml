@@ -43,6 +43,7 @@ jobs:
           grep -q 'data-qa-overflow-y="hidden"' review/reader-landscape-dom.html
           grep -q 'data-qa-fit="1"' review/reader-landscape-dom.html
           grep -q 'data-qa-footer-visible="1"' review/reader-landscape-dom.html
+          grep -q 'data-qa-title-top="1"' review/reader-landscape-dom.html
           "$CHROME" --headless=new --no-sandbox --disable-gpu --hide-scrollbars --window-size=1280,800 --virtual-time-budget=3500 --screenshot=review/reader-landscape.png "$ROOT?preview=reader"
           "$CHROME" --headless=new --no-sandbox --disable-gpu --hide-scrollbars --window-size=800,1280 --virtual-time-budget=3500 --dump-dom "$ROOT?preview=reader" > review/reader-portrait-dom.html
           grep -q 'data-qa-ready="1"' review/reader-portrait-dom.html
@@ -50,6 +51,7 @@ jobs:
           grep -q 'data-qa-overflow-y="hidden"' review/reader-portrait-dom.html
           grep -q 'data-qa-fit="1"' review/reader-portrait-dom.html
           grep -q 'data-qa-footer-visible="1"' review/reader-portrait-dom.html
+          grep -q 'data-qa-title-top="1"' review/reader-portrait-dom.html
           "$CHROME" --headless=new --no-sandbox --disable-gpu --hide-scrollbars --window-size=800,1280 --virtual-time-budget=3500 --screenshot=review/reader-portrait.png "$ROOT?preview=reader"
           "$CHROME" --headless=new --no-sandbox --disable-gpu --hide-scrollbars --window-size=1280,800 --virtual-time-budget=2500 --screenshot=review/home-landscape.png "$ROOT"
           "$CHROME" --headless=new --no-sandbox --disable-gpu --hide-scrollbars --window-size=1280,800 --virtual-time-budget=2500 --screenshot=review/track-landscape.png "$ROOT?preview=track"
