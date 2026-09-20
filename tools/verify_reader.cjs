@@ -5,7 +5,7 @@ const html=fs.readFileSync(path.join(root,'live/reader.html'),'utf8');
 assert(html.includes('LIBRARY_REBUILD_V8'),'clean rebuild marker missing');
 assert(html.includes('--readerBody:18px'),'reader font contract missing');
 assert(html.includes('--readerLine:1.68'),'reader line-height contract missing');
-assert(html.includes('.logical-anchor{display:block;width:0;height:0;overflow:hidden;break-before:column;-webkit-column-break-before:always;page-break-before:always}'),'forced title-top page break contract missing');
+assert(html.includes('.reader-flow .page-title{margin:4px 0 10px;font-size:32px;line-height:1.18;letter-spacing:-.045em;font-weight:700;break-before:column;-webkit-column-break-before:always;page-break-before:always;break-after:auto}'),'forced title-top page break contract missing');
 assert(!html.includes('<section class="lesson-section"'),'logical page wrappers must not block physical pagination');
 assert(html.includes('overflow-y:hidden'),'reader vertical scroll must be disabled');
 assert(html.includes("flow.style.columnFill='auto'"),'sequential full-page pagination missing');
