@@ -5,7 +5,8 @@ const html=fs.readFileSync(path.join(root,'live/reader.html'),'utf8');
 assert(html.includes('LIBRARY_REBUILD_V8'),'clean rebuild marker missing');
 assert(html.includes('--readerBody:18px'),'reader font contract missing');
 assert(html.includes('--readerLine:1.68'),'reader line-height contract missing');
-assert(html.includes('.lesson-section+.lesson-section{margin:0}'),'continuous content contract missing');
+assert(html.includes('.logical-anchor{display:block;width:0;height:0;overflow:hidden'),'transparent logical-anchor contract missing');
+assert(!html.includes('<section class="lesson-section"'),'logical page wrappers must not block physical pagination');
 assert(html.includes('overflow-y:hidden'),'reader vertical scroll must be disabled');
 assert(html.includes("flow.style.columnFill='balance'"),'balanced reader pagination missing');
 assert(html.includes('edge-zone edge-prev')&&html.includes('edge-zone edge-next'),'edge tap navigation missing');
@@ -106,7 +107,7 @@ const report={
     'fixed 1.68 line-height',
     'no scale-to-fit',
     'no sparse filler stretching',
-    'balanced horizontal pagination',
+    'balanced horizontal pagination','transparent page-id anchors for continuous text flow',
     'edge tap navigation',
     'Android bottom safe area'
   ],
