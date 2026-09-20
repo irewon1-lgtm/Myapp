@@ -150,6 +150,7 @@ dialog::backdrop{background:#0009}
 
 /* Reader — single visual language, no legacy overrides */
 /* TITLE_TOP_PAGE_V2 — persistent large topic title above every physical swipe page */
+/* SWIPE_TRACK_FOCUS_V1 — robust swipe, track remaining pages, rebuilt focus mode */
 .reader-shell{height:100dvh;background:var(--reader);color:var(--readerInk);display:grid;grid-template-rows:58px minmax(0,1fr) auto;overflow:hidden}
 .reader-top{display:grid;grid-template-columns:auto minmax(0,1fr) auto auto auto;align-items:center;gap:7px;padding:6px 15px;background:#17120ef5;border-bottom:1px solid #2d241c}
 .reader-top button{border:0;background:transparent;color:var(--readerInk);min-width:42px;height:42px;border-radius:10px}
@@ -160,8 +161,8 @@ dialog::backdrop{background:#0009}
 .topic-header{width:min(880px,calc(100% - 88px));margin:0 auto;padding:0 0 6px;background:var(--reader);z-index:3}
 .topic-title{margin:0 var(--pagePad) 8px;font:700 32px/1.18 Georgia,"Noto Serif KR","NanumMyeongjo",serif;letter-spacing:-.045em;color:var(--readerInk)}
 .topic-header .section-marker{margin-bottom:0}
-.reader-stage{position:relative;min-height:0;display:flex;justify-content:center;overflow:hidden;background:var(--reader)}
-.reader-paper{position:relative;width:min(880px,calc(100% - 88px));height:100%;overflow-x:hidden;overflow-y:hidden;background:var(--reader);scroll-behavior:smooth;overscroll-behavior:none}
+.reader-stage{position:relative;min-height:0;display:flex;justify-content:center;overflow:hidden;background:var(--reader);touch-action:pan-y;overscroll-behavior-x:contain}
+.reader-paper{position:relative;width:min(880px,calc(100% - 88px));height:100%;overflow-x:hidden;overflow-y:hidden;background:var(--reader);scroll-behavior:smooth;overscroll-behavior:none;touch-action:pan-y}
 .reader-flow{height:auto;width:100%;column-count:1;column-gap:0;column-fill:auto;font-size:var(--readerBody);line-height:var(--readerLine);font-family:Georgia,"Noto Serif KR","NanumMyeongjo",serif;color:var(--readerInk);-webkit-text-size-adjust:none;text-size-adjust:none}
 .lesson-section{
   --pagePad:0;
@@ -351,18 +352,22 @@ dialog::backdrop{background:#0009}
 }
 .edge-zone{position:absolute;top:0;bottom:0;z-index:15;width:clamp(44px,7vw,86px);border:0;background:transparent}
 .edge-prev{left:0}.edge-next{right:0}
-.reader-bottom{display:grid;grid-template-columns:auto minmax(120px,1fr) auto auto;align-items:center;gap:10px;min-height:84px;padding:8px 18px var(--navSafe);background:#17120ef5;border-top:1px solid #33281f}
+.reader-bottom{display:grid;grid-template-columns:auto minmax(150px,1fr) auto auto;align-items:center;gap:10px;min-height:92px;padding:7px 18px var(--navSafe);background:#17120ef5;border-top:1px solid #33281f}
 .reader-bottom button{border:1px solid #51402f;background:#1a140f;color:#eadfce}
 .circle-btn{width:48px;height:48px;border-radius:50%;font-size:29px;line-height:1;padding:0}
 .focus-btn{min-height:42px;border-radius:13px!important;padding:0 12px;font-size:11px}
 .reader-page-info{text-align:center;color:#c9baa7;font:500 12px Georgia,"Noto Serif KR",serif}
-.reader-progress{height:5px;max-width:240px;margin:7px auto 0;background:#3b3027;border-radius:99px;overflow:hidden}
+.track-remain{margin-top:4px;color:#b19d84;font:750 10px/1.35 system-ui,-apple-system,"Noto Sans KR",sans-serif;letter-spacing:.01em}
+.reader-progress{height:5px;max-width:240px;margin:6px auto 0;background:#3b3027;border-radius:99px;overflow:hidden}
 .reader-progress i{display:block;height:100%;background:var(--readerGold);border-radius:99px}
-.reader-shell.focus .reader-top{display:none}
-.reader-shell.focus{grid-template-rows:minmax(0,1fr) auto}
-.reader-shell.focus .reader-paper,.reader-shell.focus .topic-header{width:min(920px,calc(100% - 70px))}
-.reader-shell.focus .reader-bottom{min-height:72px}
-.reader-shell.focus .focus-btn:after{content:" 해제"}
+.track-page-count{margin-top:7px;color:#766a5d;font-size:12px;font-weight:750}
+.focus-exit,.focus-hud{display:none}
+.reader-shell.focus{grid-template-rows:minmax(0,1fr)}
+.reader-shell.focus .reader-top,.reader-shell.focus .reader-bottom{display:none}
+.reader-shell.focus .reader-paper,.reader-shell.focus .topic-header{width:min(960px,calc(100% - 44px))}
+.reader-shell.focus .topic-title{padding-right:0}
+.reader-shell.focus .focus-exit{display:block;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:50;border:1px solid #574634;border-radius:999px;background:#19130ed9;color:#e7dccd;padding:9px 13px;font-size:11px;backdrop-filter:blur(8px)}
+.reader-shell.focus .focus-hud{display:block;position:fixed;left:50%;bottom:calc(18px + env(safe-area-inset-bottom));transform:translateX(-50%);z-index:45;max-width:calc(100vw - 180px);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;border:1px solid #423427;border-radius:999px;background:#17120ecb;color:#b9a995;padding:7px 12px;font:700 10px/1 system-ui,-apple-system,"Noto Sans KR",sans-serif;backdrop-filter:blur(8px)}
 @media(min-width:900px){
   .book-rail{grid-auto-columns:minmax(185px,230px)}
   .reader-paper,.topic-header{width:min(800px,calc(100% - 180px))}
@@ -393,7 +398,6 @@ dialog::backdrop{background:#0009}
   .reader-top .note-top{display:none}
   .reader-flow h1{font-size:32px}
   .reader-bottom{grid-template-columns:auto minmax(100px,1fr) auto}
-  .reader-bottom .focus-btn{display:none}
 }
 </style>
 </head>
@@ -427,6 +431,7 @@ let physicalPage=0;
 let physicalPages=1;
 let pendingTargetId=state.location;
 let pendingLast=false;
+let pendingPhysicalRatio=null;
 let previewRoute='';
 try{if(typeof location!=='undefined')previewRoute=new URLSearchParams(location.search).get('preview')||''}catch(e){}
 
@@ -481,10 +486,19 @@ function bottomNav(){
   const item=(id,label)=>'<button class="'+(route===id||(id==='books'&&route==='track')?'active':'')+'" data-action="'+id+'">'+navSvg(id)+'<span>'+label+'</span></button>';
   return '<nav class="bottom-nav">'+item('home','홈')+item('books','서재')+item('saved','북마크')+item('settings','설정')+'</nav>';
 }
+function trackPageIds(id){
+  return chapters.filter(c=>c.track===id).flatMap(c=>c.pages.map(p=>p.id));
+}
+function trackStats(id){
+  const ids=trackPageIds(id);
+  const visited=new Set(state.visited);
+  const read=ids.filter(pageId=>visited.has(pageId)).length;
+  return {total:ids.length,read,remaining:Math.max(0,ids.length-read)};
+}
 function progressForTrack(id){
-  const ids=chapters.filter(c=>c.track===id).flatMap(c=>c.pages.map(p=>p.id));
-  if(!ids.length)return 0;
-  return Math.round(100*ids.filter(id=>state.visited.includes(id)).length/ids.length);
+  const stats=trackStats(id);
+  if(!stats.total)return 0;
+  return Math.round(100*stats.read/stats.total);
 }
 function coverTone(id){return 'tone'+(((Number(id)||1)-1)%4+1)}
 function bookCard(track){
@@ -518,8 +532,9 @@ function trackPage(){
   const first=chapters.findIndex(c=>c.track===selectedTrack);
   const target=chapters[current.c]&&chapters[current.c].track===selectedTrack?current.c:first;
   const prog=progressForTrack(selectedTrack);
+  const stats=trackStats(selectedTrack);
   return '<div class="screen"><main class="shell"><div class="top-row"><button class="back-btn" data-action="home">←</button><div class="track-name">TRACK '+String(t.id).padStart(2,'0')+' · '+esc(t.title)+'</div></div>'+
-    '<section class="track-hero"><div class="track-mini"><small>TRACK '+String(t.id).padStart(2,'0')+'</small><strong>'+esc(t.title)+'</strong><div class="photo"></div></div><div class="track-copy"><div class="track-headline serif">지금의 한 걸음이,<br>더 넓은 세상을 만듭니다.</div><p class="track-desc">'+esc(t.subtitle||'차근차근, 어렵지 않게 배웁니다.')+'</p><div class="progress-row" style="margin-top:14px"><div class="progress-track"><i style="width:'+prog+'%"></i></div><b>'+prog+'%</b></div><button class="pill-primary" data-action="chapter" data-c="'+target+'">이어보기 →</button></div></section>'+
+    '<section class="track-hero"><div class="track-mini"><small>TRACK '+String(t.id).padStart(2,'0')+'</small><strong>'+esc(t.title)+'</strong><div class="photo"></div></div><div class="track-copy"><div class="track-headline serif">지금의 한 걸음이,<br>더 넓은 세상을 만듭니다.</div><p class="track-desc">'+esc(t.subtitle||'차근차근, 어렵지 않게 배웁니다.')+'</p><div class="progress-row" style="margin-top:14px"><div class="progress-track"><i style="width:'+prog+'%"></i></div><b>'+prog+'%</b></div><div class="track-page-count">총 '+stats.total+'장 · 읽음 '+stats.read+'장 · 남음 '+stats.remaining+'장</div><button class="pill-primary" data-action="chapter" data-c="'+target+'">이어보기 →</button></div></section>'+
     '<div class="section-head"><div><h2 class="section-title">목차</h2><p class="section-caption">작은 배움이 모여, 큰 변화를 만듭니다.</p></div></div><div class="chapter-list">'+list+'</div></main>'+bottomNav()+'</div>';
 }
 function pageText(page){
@@ -631,7 +646,8 @@ function reader(){
   return '<div class="reader-shell '+(focus?'focus':'')+'">'+
     '<header class="reader-top"><button data-action="track-current" aria-label="목차">←</button><div class="reader-heading"><strong>CHAPTER '+String(c.chapter).padStart(2,'0')+' · '+esc(c.title)+'</strong><small>TRACK '+String(c.track).padStart(2,'0')+'</small></div><button data-action="bookmark" aria-label="북마크">'+(state.bookmarks.includes(p.id)?'★':'☆')+'</button><button class="note-top" data-action="note" aria-label="메모">▤</button><button data-action="display" aria-label="읽기 설정">Aa</button></header>'+
     '<div class="reader-paper-wrap"><div class="topic-header"><h1 class="topic-title">'+esc(p.title)+'</h1><div class="section-marker type-'+esc(p.kind)+'"><span class="kind">'+esc(kindLabel(p.kind))+'</span><span class="hint">'+esc(sectionHint(p))+'</span></div></div><div class="reader-stage"><button class="edge-zone edge-prev" data-action="prev" aria-label="이전 페이지"></button><article id="paper" class="reader-paper"><div id="flow" class="reader-flow">'+chapterFlow(c)+'</div></article><button class="edge-zone edge-next" data-action="next" aria-label="다음 페이지"></button></div></div>'+
-    '<footer class="reader-bottom"><button class="circle-btn" data-action="prev" aria-label="이전">‹</button><div class="reader-page-info"><span id="page-pos">1 / 1</span><div class="reader-progress"><i id="page-progress" style="width:0%"></i></div></div><button class="circle-btn" data-action="next" aria-label="다음">›</button><button class="focus-btn" data-action="focus">▣ 집중</button></footer>'+
+    '<footer class="reader-bottom"><button class="circle-btn" data-action="prev" aria-label="이전">‹</button><div class="reader-page-info"><span id="page-pos">1 / 1</span><div id="track-remain" class="track-remain"></div><div class="reader-progress"><i id="page-progress" style="width:0%"></i></div></div><button class="circle-btn" data-action="next" aria-label="다음">›</button><button class="focus-btn" data-action="focus">▣ 집중</button></footer>'+
+    '<button class="focus-exit" data-action="focus">집중모드 종료</button><div id="focus-hud" class="focus-hud"></div>'+
     '</div>';
 }
 function render(){
@@ -713,7 +729,14 @@ function syncLogical(){
 function updateHud(){
   const pos=document.getElementById('page-pos');
   const bar=document.getElementById('page-progress');
+  const remain=document.getElementById('track-remain');
+  const focusHud=document.getElementById('focus-hud');
+  const c=chapters[current.c];
+  const stats=trackStats(c.track);
+  const line='TRACK '+String(c.track).padStart(2,'0')+' · 총 '+stats.total+'장 · 읽음 '+stats.read+'장 · 남음 '+stats.remaining+'장';
   if(pos)pos.textContent=(physicalPage+1)+' / '+physicalPages;
+  if(remain)remain.textContent=line;
+  if(focusHud)focusHud.textContent=line+' · 화면 '+(physicalPage+1)+'/'+physicalPages;
   if(bar)bar.style.width=(100*(physicalPage+1)/Math.max(physicalPages,1))+'%';
 }
 function layoutReader(){
@@ -729,7 +752,12 @@ function layoutReader(){
   paper.scrollLeft=0;
   if(typeof requestAnimationFrame==='function')requestAnimationFrame(()=>{
     physicalPages=Math.max(1,Math.ceil(Math.max(flow.scrollWidth,w)/w-.001));
-    physicalPage=pendingLast?physicalPages-1:physicalForId(pendingTargetId||state.location);
+    if(pendingPhysicalRatio!==null){
+      physicalPage=Math.max(0,Math.min(physicalPages-1,Math.round(pendingPhysicalRatio*Math.max(physicalPages-1,0))));
+      pendingPhysicalRatio=null;
+    }else{
+      physicalPage=pendingLast?physicalPages-1:physicalForId(pendingTargetId||state.location);
+    }
     pendingLast=false;
     pendingTargetId='';
     paper.scrollLeft=physicalPage*w;
@@ -773,40 +801,72 @@ function changePhysical(delta){
 function installReaderGestures(){
   const paper=document.getElementById('paper');
   if(!paper||!paper.addEventListener)return;
-  let start=null,drag=false,startScroll=0;
-  paper.addEventListener('pointerdown',e=>{
-    if(e.target.closest('pre,button,a,input,textarea,summary,details'))return;
-    start={x:e.clientX,y:e.clientY,t:Date.now()};
+  let start=null,drag=false,startScroll=0,lastSwipeAt=0;
+  const interactive=el=>el&&el.closest&&el.closest('pre,a,input,textarea,summary,details,.copy-btn,.reader-action');
+  const begin=(x,y,target,token)=>{
+    if(interactive(target))return false;
+    start={x,y,t:Date.now(),token};
     startScroll=paper.scrollLeft;
     drag=false;
-    try{paper.setPointerCapture&&paper.setPointerCapture(e.pointerId)}catch(err){}
-  });
-  paper.addEventListener('pointermove',e=>{
+    return true;
+  };
+  const move=(x,y,event)=>{
     if(!start)return;
-    const dx=e.clientX-start.x,dy=e.clientY-start.y;
+    const dx=x-start.x,dy=y-start.y;
     if(!drag){
-      if(Math.abs(dx)<10)return;
-      if(Math.abs(dx)<=Math.abs(dy)*1.2)return;
+      if(Math.abs(dx)<8)return;
+      if(Math.abs(dx)<=Math.abs(dy)*1.05)return;
       drag=true;
     }
     paper.scrollLeft=startScroll-dx;
-    if(e.cancelable)e.preventDefault();
-  });
-  paper.addEventListener('pointerup',e=>{
+    if(event&&event.cancelable)event.preventDefault();
+  };
+  const finish=(x,y,event)=>{
     if(!start)return;
-    const dx=e.clientX-start.x,dy=e.clientY-start.y,ms=Date.now()-start.t;
-    start=null;
-    const threshold=Math.min(110,Math.max(58,(innerWidth||360)*.1));
-    if(drag&&Math.abs(dx)>threshold&&Math.abs(dx)>Math.abs(dy)*1.2&&ms<1400)changePhysical(dx<0?1:-1);
-    else{
+    const dx=x-start.x,dy=y-start.y,ms=Math.max(1,Date.now()-start.t);
+    const wasDrag=drag;
+    start=null;drag=false;
+    const distance=Math.abs(dx);
+    const horizontal=distance>Math.abs(dy)*1.05;
+    const threshold=Math.min(96,Math.max(44,(innerWidth||360)*.075));
+    const fastSwipe=ms<360&&distance>=30;
+    if(wasDrag&&horizontal&&(distance>=threshold||fastSwipe)){
+      lastSwipeAt=Date.now();
+      changePhysical(dx<0?1:-1);
+    }else{
       if(typeof paper.scrollTo==='function')paper.scrollTo({left:physicalPage*paper.clientWidth,top:0,behavior:'smooth'});
       else paper.scrollLeft=physicalPage*paper.clientWidth;
     }
-    drag=false;
+    if(event&&event.cancelable&&wasDrag)event.preventDefault();
+  };
+
+  paper.addEventListener('pointerdown',e=>{
+    if(Date.now()-lastSwipeAt<80)return;
+    if(begin(e.clientX,e.clientY,e.target,e.pointerId)){
+      try{paper.setPointerCapture&&paper.setPointerCapture(e.pointerId)}catch(err){}
+    }
   });
+  paper.addEventListener('pointermove',e=>move(e.clientX,e.clientY,e));
+  paper.addEventListener('pointerup',e=>finish(e.clientX,e.clientY,e));
   paper.addEventListener('pointercancel',()=>{
     start=null;drag=false;paper.scrollLeft=physicalPage*paper.clientWidth;
   });
+
+  paper.addEventListener('touchstart',e=>{
+    if(start||!e.touches||e.touches.length!==1)return;
+    const q=e.touches[0];
+    begin(q.clientX,q.clientY,e.target,'touch');
+  },{passive:true});
+  paper.addEventListener('touchmove',e=>{
+    if(!start||start.token!=='touch'||!e.touches||e.touches.length!==1)return;
+    const q=e.touches[0];
+    move(q.clientX,q.clientY,e);
+  },{passive:false});
+  paper.addEventListener('touchend',e=>{
+    if(!start||start.token!=='touch')return;
+    const q=(e.changedTouches&&e.changedTouches[0])||{clientX:start.x,clientY:start.y};
+    finish(q.clientX,q.clientY,e);
+  },{passive:false});
 }
 function modal(title,body){
   const el=document.getElementById('modal');
@@ -833,7 +893,12 @@ function doAction(action,el){
   if(action==='open'){openPage(el.dataset.id);return}
   if(action==='prev'){changePhysical(-1);return}
   if(action==='next'){changePhysical(1);return}
-  if(action==='focus'){focus=!focus;render();return}
+  if(action==='focus'){
+    pendingPhysicalRatio=physicalPages>1?physicalPage/(physicalPages-1):0;
+    focus=!focus;
+    render();
+    return;
+  }
   if(action==='bookmark'){
     state.bookmarks=state.bookmarks.includes(p.id)?state.bookmarks.filter(x=>x!==p.id):state.bookmarks.concat(p.id);
     persist();render();toast(state.bookmarks.includes(p.id)?'북마크에 저장했습니다':'북마크를 해제했습니다');return;
