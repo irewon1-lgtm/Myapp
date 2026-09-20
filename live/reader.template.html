@@ -535,27 +535,15 @@ function layoutReader(){
   const paper=document.getElementById('paper'),flow=document.getElementById('flow');
   if(!paper||!flow||!paper.clientWidth||!paper.clientHeight)return;
   const w=paper.clientWidth,h=paper.clientHeight;
-  flow.style.width='100%';
-  flow.style.height='auto';
-  flow.style.columnCount='1';
+  flow.style.width=w+'px';
+  flow.style.height=h+'px';
+  flow.style.columnCount='auto';
+  flow.style.columnWidth=w+'px';
   flow.style.columnGap='0px';
   flow.style.columnFill='auto';
   paper.scrollLeft=0;
-  const natural=Math.max(flow.scrollHeight,1);
-  let guess=Math.max(1,Math.floor(natural/h+.001));
-  const applyColumns=count=>{
-    flow.style.width=(count*w)+'px';
-    flow.style.height=h+'px';
-    flow.style.columnCount=String(count);
-    flow.style.columnGap='0px';
-    flow.style.columnFill='balance';
-  };
-  applyColumns(guess);
-  let actual=Math.max(1,Math.ceil(Math.max(flow.scrollWidth,w)/w-.001));
-  if(actual>guess){guess=actual;applyColumns(guess);actual=Math.max(guess,Math.ceil(Math.max(flow.scrollWidth,w)/w-.001))}
-  physicalPages=actual;
-  if(physicalPages!==guess)applyColumns(physicalPages);
   if(typeof requestAnimationFrame==='function')requestAnimationFrame(()=>{
+    physicalPages=Math.max(1,Math.ceil(Math.max(flow.scrollWidth,w)/w-.001));
     physicalPage=pendingLast?physicalPages-1:physicalForId(pendingTargetId||state.location);
     pendingLast=false;
     pendingTargetId='';
@@ -572,6 +560,7 @@ function layoutReader(){
       document.body.dataset.qaFit=(flow.scrollHeight<=paper.clientHeight+2?'1':'0');
       document.body.dataset.qaFooterVisible=(!fr||fr.bottom<=innerHeight+1?'1':'0');
       document.body.dataset.qaViewport=String(innerWidth)+'x'+String(innerHeight);
+      document.body.dataset.qaColumnFill='auto';
     }catch(e){}
   });
 }
