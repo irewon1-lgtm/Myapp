@@ -149,6 +149,7 @@ dialog::backdrop{background:#0009}
 .toast{position:fixed;z-index:200;left:50%;bottom:110px;transform:translateX(-50%);max-width:90vw;background:#2a2119;color:#f4ecdf;border:1px solid #584633;border-radius:10px;padding:10px 15px;font-size:13px;box-shadow:0 10px 35px #0006}
 
 /* Reader — single visual language, no legacy overrides */
+/* TITLE_TOP_PAGE_V1 — every logical lesson begins at a fresh physical page */
 .reader-shell{height:100dvh;background:var(--reader);color:var(--readerInk);display:grid;grid-template-rows:58px minmax(0,1fr) auto;overflow:hidden}
 .reader-top{display:grid;grid-template-columns:auto minmax(0,1fr) auto auto auto;align-items:center;gap:7px;padding:6px 15px;background:#17120ef5;border-bottom:1px solid #2d241c}
 .reader-top button{border:0;background:transparent;color:var(--readerInk);min-width:42px;height:42px;border-radius:10px}
@@ -159,7 +160,7 @@ dialog::backdrop{background:#0009}
 .reader-paper{position:relative;width:min(880px,calc(100% - 88px));height:100%;overflow-x:hidden;overflow-y:hidden;background:var(--reader);scroll-behavior:smooth;overscroll-behavior:none}
 .reader-flow{height:auto;width:100%;column-count:1;column-gap:0;column-fill:auto;font-size:var(--readerBody);line-height:var(--readerLine);font-family:Georgia,"Noto Serif KR","NanumMyeongjo",serif;color:var(--readerInk);-webkit-text-size-adjust:none;text-size-adjust:none}
 .lesson-section{display:contents}
-.logical-anchor{display:block;width:0;height:0;overflow:hidden;break-after:auto;page-break-after:auto}
+.logical-anchor{display:block;width:0;height:0;overflow:hidden;break-before:column;-webkit-column-break-before:always;page-break-before:always}
 .reader-flow>*:not(.logical-anchor){margin-left:var(--pagePad);margin-right:var(--pagePad)}
 .reader-flow>.code,.reader-flow>.diagram,.reader-flow>.callout,.reader-flow>.practice-box,.reader-flow>.question-box,.reader-flow>.summary-card,.reader-flow>details{width:auto}
 .chapter-ribbon{
@@ -195,7 +196,7 @@ dialog::backdrop{background:#0009}
 .section-marker.type-example:before{background:#c68a4e}
 .section-marker.type-example .kind{background:#5a3d20;color:#f0c189}
 .reader-flow .eyebrow{display:none}
-.reader-flow .page-title{margin:16px 0 10px;font-size:32px;line-height:1.18;letter-spacing:-.045em;font-weight:700;break-after:auto}
+.reader-flow .page-title{margin:4px 0 10px;font-size:32px;line-height:1.18;letter-spacing:-.045em;font-weight:700;break-after:auto}
 .reader-flow .practice-box,.reader-flow .question-box{border-color:#6a5031;background:#241a10}
 .reader-flow .summary-card{border-color:#5f523d;background:#211b14}
 .solution-banner{
@@ -611,8 +612,7 @@ function lessonSection(page,c,index){
   return out;
 }
 function chapterFlow(c){
-  const ribbon='<div class="chapter-ribbon"><small>TRACK '+String(c.track).padStart(2,'0')+' · CHAPTER '+String(c.chapter).padStart(2,'0')+'</small><strong>'+esc(c.title)+'</strong></div>';
-  return ribbon+c.pages.map((p,i)=>lessonSection(p,c,i)).join('');
+  return c.pages.map((p,i)=>lessonSection(p,c,i)).join('');
 }
 function reader(){
   const c=chapters[current.c],p=c.pages[current.p];
