@@ -157,7 +157,7 @@ dialog::backdrop{background:#0009}
 .reader-heading strong{display:block;font:500 17px/1.2 Georgia,"Noto Serif KR",serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .reader-heading small{display:block;color:#9a8872;font:700 9px/1.2 system-ui,-apple-system,"Noto Sans KR",sans-serif;letter-spacing:.08em;margin-top:2px}
 .reader-paper-wrap{position:relative;min-height:0;display:grid;grid-template-rows:auto minmax(0,1fr);overflow:hidden;background:var(--reader)}
-.topic-header{width:min(880px,calc(100% - 88px));margin:0 auto;padding:8px 0 6px;background:var(--reader);z-index:3}
+.topic-header{width:min(880px,calc(100% - 88px));margin:0 auto;padding:0 0 6px;background:var(--reader);z-index:3}
 .topic-title{margin:0 var(--pagePad) 8px;font:700 32px/1.18 Georgia,"Noto Serif KR","NanumMyeongjo",serif;letter-spacing:-.045em;color:var(--readerInk)}
 .topic-header .section-marker{margin-bottom:0}
 .reader-stage{position:relative;min-height:0;display:flex;justify-content:center;overflow:hidden;background:var(--reader)}
@@ -752,7 +752,7 @@ function layoutReader(){
       const titleOffset=(wrapRect&&topicRect)?Math.round(topicRect.top-wrapRect.top):9999;
       document.body.dataset.qaTitleOffsets=String(titleOffset);
       document.body.dataset.qaTitleMax=String(Math.abs(titleOffset));
-      document.body.dataset.qaTitleTop=(Math.abs(titleOffset)<=24?'1':'0');
+      document.body.dataset.qaTitleTop=(Math.abs(titleOffset)<=2?'1':'0');
     }catch(e){}
   });
 }
