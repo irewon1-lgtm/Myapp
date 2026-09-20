@@ -160,7 +160,7 @@ dialog::backdrop{background:#0009}
 .reader-paper{position:relative;width:min(880px,calc(100% - 88px));height:100%;overflow-x:hidden;overflow-y:hidden;background:var(--reader);scroll-behavior:smooth;overscroll-behavior:none}
 .reader-flow{height:auto;width:100%;column-count:1;column-gap:0;column-fill:auto;font-size:var(--readerBody);line-height:var(--readerLine);font-family:Georgia,"Noto Serif KR","NanumMyeongjo",serif;color:var(--readerInk);-webkit-text-size-adjust:none;text-size-adjust:none}
 .lesson-section{display:contents}
-.logical-anchor{display:block;width:0;height:0;overflow:hidden;break-before:column;-webkit-column-break-before:always;page-break-before:always}
+.logical-anchor{display:block;width:0;height:0;overflow:hidden}
 .reader-flow>*:not(.logical-anchor){margin-left:var(--pagePad);margin-right:var(--pagePad)}
 .reader-flow>.code,.reader-flow>.diagram,.reader-flow>.callout,.reader-flow>.practice-box,.reader-flow>.question-box,.reader-flow>.summary-card,.reader-flow>details{width:auto}
 .chapter-ribbon{
@@ -196,7 +196,7 @@ dialog::backdrop{background:#0009}
 .section-marker.type-example:before{background:#c68a4e}
 .section-marker.type-example .kind{background:#5a3d20;color:#f0c189}
 .reader-flow .eyebrow{display:none}
-.reader-flow .page-title{margin:4px 0 10px;font-size:32px;line-height:1.18;letter-spacing:-.045em;font-weight:700;break-after:auto}
+.reader-flow .page-title{margin:4px 0 10px;font-size:32px;line-height:1.18;letter-spacing:-.045em;font-weight:700;break-before:column;-webkit-column-break-before:always;page-break-before:always;break-after:auto}
 .reader-flow .practice-box,.reader-flow .question-box{border-color:#6a5031;background:#241a10}
 .reader-flow .summary-card{border-color:#5f523d;background:#211b14}
 .solution-banner{
