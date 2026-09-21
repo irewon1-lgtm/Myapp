@@ -1,6 +1,6 @@
 {
   "schema": "codingroadmap-live-v1",
-  "version": 1789960000000,
+  "version": 1789960800000,
   "label": "0.9.0 · 자동 갱신",
   "tracks": [
     {
@@ -256,8 +256,6 @@
             "상태 변화",
             "읽기 쉬운 코드"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "코드를 한 줄 바꾼 뒤 실행하기 전에 어떤 출력이 나올지 먼저 적고, 실행 후 예상과 다른 지점이 있는지 확인해 보세요.",
           "extras": [],
           "visibleExtras": 0,
           "id": "t1-c1-p5"
@@ -323,8 +321,6 @@
             "상태 변화",
             "읽기 쉬운 코드"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "문자, 숫자, 변수 이름 중 하나만 바꾼 뒤 결과가 어디에서 어떻게 달라질지 먼저 예측하세요.",
           "extras": [],
           "visibleExtras": 0,
           "id": "t1-c1-p8"
@@ -388,8 +384,6 @@
             "상태 변화",
             "읽기 쉬운 코드"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "코딩을 모르는 사람에게 30초 안에 설명한다고 생각하고 프로그램·코드·실행·출력을 모두 넣어 말해 보세요.",
           "extras": [],
           "visibleExtras": 0,
           "id": "t1-c1-p11"
@@ -509,8 +503,6 @@
             "표현식 평가",
             "상태 추적"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "세 줄짜리 코드를 종이에 적고 각 줄 오른쪽에 실행 직후 변수 값을 적어 보세요.",
           "extras": [],
           "visibleExtras": 0,
           "id": "t1-c2-p4"
@@ -552,8 +544,6 @@
             "표현식 평가",
             "상태 추적"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "코드 세 줄을 읽으며 매 줄마다 현재 줄 번호와 현재 변수 값을 소리 내어 말해 보세요.",
           "extras": [],
           "visibleExtras": 0,
           "id": "t1-c2-p6"
@@ -617,8 +607,6 @@
             "표현식 평가",
             "상태 추적"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "두 줄의 print 순서를 바꾼 뒤 실행 전 예상 출력과 실제 출력을 나란히 적어 차이를 확인하세요.",
           "extras": [],
           "visibleExtras": 0,
           "id": "t1-c2-p9"
@@ -660,8 +648,6 @@
             "표현식 평가",
             "상태 추적"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "대입문 하나를 골라 오른쪽 표현식과 왼쪽 대입 대상을 각각 표시해 보세요.",
           "extras": [],
           "visibleExtras": 0,
           "id": "t1-c2-p11"
@@ -702,8 +688,6 @@
             "표현식 평가",
             "상태 추적"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "네 단계 읽기 순서를 보지 않고 말한 뒤, 짧은 예제 하나에 그대로 적용해 보세요.",
           "extras": [],
           "visibleExtras": 0,
           "id": "t1-c2-p13"
@@ -772,8 +756,6 @@
             "재대입",
             "현재 값"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "score = 10 다음에 score = 20이 있을 때 각 줄 직후 score가 가리키는 값을 적어 보세요.",
           "extras": [],
           "visibleExtras": 0,
           "id": "t1-c3-p2"
@@ -844,8 +826,6 @@
             "재대입",
             "현재 값"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "변수가 세 번 바뀌는 코드를 만들고 마지막 출력이 무엇인지 실행 전에 예측하세요.",
           "extras": [],
           "visibleExtras": 0,
           "id": "t1-c3-p5"
@@ -886,8 +866,6 @@
             "재대입",
             "현재 값"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "age와 next_age 두 변수를 사용한 예제를 만든 뒤 줄마다 이름→값 표를 갱신하세요.",
           "extras": [],
           "visibleExtras": 0,
           "id": "t1-c3-p7"
@@ -949,8 +927,6 @@
             "재대입",
             "현재 값"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "예제의 변수 이름 두 개를 더 구체적인 이름으로 바꾸고 결과가 그대로인지 확인하세요.",
           "extras": [],
           "visibleExtras": 0,
           "id": "t1-c3-p10"
@@ -1017,8 +993,6 @@
             "재대입",
             "현재 값"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "변수 두 개가 있는 코드에서 실행 전·중간·마지막 상태를 각각 한 줄로 적어 보세요.",
           "extras": [],
           "visibleExtras": 0,
           "id": "t1-c3-p13"
@@ -1087,8 +1061,6 @@
             "연산 규칙",
             "형 변환"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "네 가지 타입의 값을 하나씩 직접 적고 type()으로 확인해 보세요.",
           "extras": [],
           "visibleExtras": 0,
           "id": "t1-c4-p2"
@@ -1160,8 +1132,6 @@
             "연산 규칙",
             "형 변환"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "숫자 더하기와 문자열 이어붙이기를 각각 실행해 결과와 타입을 비교하세요.",
           "extras": [],
           "visibleExtras": 0,
           "id": "t1-c4-p5"
@@ -1218,8 +1188,6 @@
             "연산 규칙",
             "형 변환"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "변환 전 값과 변환 후 값에 각각 type()을 적용해 차이를 확인하세요.",
           "extras": [],
           "visibleExtras": 0,
           "id": "t1-c4-p8"
@@ -1289,8 +1257,6 @@
             "연산 규칙",
             "형 변환"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "값 세 개의 타입을 보고 실행 가능한 연산과 오류가 날 가능성이 있는 연산을 하나씩 적어 보세요.",
           "extras": [],
           "visibleExtras": 0,
           "id": "t1-c4-p11"
@@ -1331,8 +1297,6 @@
             "연산 규칙",
             "형 변환"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "오류가 나는 짧은 예제를 하나 만들고 type() 확인 → 변환 → 재실행 순서로 고쳐 보세요.",
           "extras": [],
           "visibleExtras": 0,
           "id": "t1-c4-p13"
@@ -1401,8 +1365,6 @@
             "형 변환",
             "입력 검증"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "나이를 입력받아 int로 바꾸고 1을 더한 값을 출력하는 흐름을 말로 먼저 설명하세요.",
           "extras": [],
           "visibleExtras": 0,
           "id": "t1-c5-p2"
@@ -1475,8 +1437,6 @@
             "형 변환",
             "입력 검증"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "숫자를 기대하는 입력에 글자가 들어오면 어느 단계에서 문제가 생길지 흐름을 따라 설명하세요.",
           "extras": [],
           "visibleExtras": 0,
           "id": "t1-c5-p5"
@@ -1517,8 +1477,6 @@
             "형 변환",
             "입력 검증"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "입력값, 변환값, 계산결과를 각각 다른 변수에 담고 세 값을 모두 출력해 보세요.",
           "extras": [],
           "visibleExtras": 0,
           "id": "t1-c5-p7"
@@ -1551,8 +1509,6 @@
             "형 변환",
             "입력 검증"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "입력받은 age의 type을 출력한 뒤 int(age) 결과의 type도 출력해 비교하세요.",
           "extras": [],
           "visibleExtras": 0,
           "id": "t1-c5-p9"
@@ -1621,8 +1577,6 @@
             "형 변환",
             "입력 검증"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "성공하는 입력과 실패하는 입력을 하나씩 정하고 왜 차이가 나는지 설명해 보세요.",
           "extras": [],
           "visibleExtras": 0,
           "id": "t1-c5-p12"
@@ -1664,8 +1618,6 @@
             "형 변환",
             "입력 검증"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "입력 → 검증 → 변환 → 계산 → 출력 다섯 단계를 자기 예제로 한 줄씩 적어 보세요.",
           "extras": [],
           "visibleExtras": 0,
           "id": "t1-c5-p14"
@@ -1787,8 +1739,6 @@
             "최소 재현",
             "가설 검증"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "오류 화면에서 오류 이름, 줄 번호, 관련 코드 한 줄을 각각 찾아 적는 연습을 해 보세요.",
           "extras": [],
           "visibleExtras": 0,
           "id": "t1-c6-p4"
@@ -1829,8 +1779,6 @@
             "최소 재현",
             "가설 검증"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "NameError와 TypeError가 각각 났다고 가정하고 첫 번째로 확인할 항목을 한 줄씩 적어 보세요.",
           "extras": [],
           "visibleExtras": 0,
           "id": "t1-c6-p6"
@@ -1875,8 +1823,6 @@
             "최소 재현",
             "가설 검증"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "오류가 나는 최소 입력 하나를 정하고 같은 방식으로 두 번 연속 재현되는지 확인해 보세요.",
           "extras": [],
           "visibleExtras": 0,
           "id": "t1-c6-p8"
@@ -1923,8 +1869,6 @@
             "최소 재현",
             "가설 검증"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "오류 하나를 보고 원인을 한 문장 가설로 적은 뒤, 그 가설만 확인할 최소 수정 하나를 정하세요.",
           "extras": [],
           "visibleExtras": 0,
           "id": "t1-c6-p10"
@@ -1966,8 +1910,6 @@
             "최소 재현",
             "가설 검증"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "오류 메시지를 읽고 “확인할 것 3개”만 적는 연습을 해 보세요.",
           "extras": [],
           "visibleExtras": 0,
           "id": "t1-c6-p12"
@@ -2009,8 +1951,6 @@
             "최소 재현",
             "가설 검증"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "여섯 단계 순서를 보지 않고 적은 뒤, 최근 본 오류 예제에 그대로 적용해 보세요.",
           "extras": [],
           "visibleExtras": 0,
           "id": "t1-c6-p14"
@@ -2132,8 +2072,6 @@
             "중간값",
             "단위 확인"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "두 개의 연산을 연결한 식을 만들고 중간 결과를 별도 변수로 나눠 출력해 보세요.",
           "extras": [],
           "visibleExtras": 0,
           "id": "t1-c7-p4"
@@ -2190,8 +2128,6 @@
             "중간값",
             "단위 확인"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "장보기 계산에 소계와 최종합계 두 단계를 만들고 각각 출력해 보세요.",
           "extras": [],
           "visibleExtras": 0,
           "id": "t1-c7-p7"
@@ -2237,8 +2173,6 @@
             "중간값",
             "단위 확인"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "가격과 수량을 입력받아 각각 변환한 뒤 total을 계산하는 순서를 먼저 말로 적어 보세요.",
           "extras": [],
           "visibleExtras": 0,
           "id": "t1-c7-p9"
@@ -2280,8 +2214,6 @@
             "중간값",
             "단위 확인"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "같은 숫자로 괄호 위치를 바꾼 두 식을 실행해 결과가 어떻게 달라지는지 확인하세요.",
           "extras": [],
           "visibleExtras": 0,
           "id": "t1-c7-p11"
@@ -2323,8 +2255,6 @@
             "중간값",
             "단위 확인"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "긴 계산식 하나를 두세 개의 중간 변수로 나눈 버전을 만들어 결과가 같은지 확인하세요.",
           "extras": [],
           "visibleExtras": 0,
           "id": "t1-c7-p13"
@@ -2447,8 +2377,6 @@
             "기대 결과",
             "작은 기능 단위"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "미니 프로젝트의 성공 조건을 입력·처리·출력을 포함한 한 문장으로 다시 써 보세요.",
           "extras": [],
           "visibleExtras": 0,
           "id": "t1-c8-p4"
@@ -2489,8 +2417,6 @@
             "기대 결과",
             "작은 기능 단위"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "새 기능 하나를 고른 뒤 입력·처리·출력 세 칸을 코드보다 먼저 채워 보세요.",
           "extras": [],
           "visibleExtras": 0,
           "id": "t1-c8-p6"
@@ -2551,8 +2477,6 @@
             "기대 결과",
             "작은 기능 단위"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "기존 기능 1개와 새 기능 1개에 대해 각각 기대 결과를 적고, 기능 추가 후 둘 다 다시 확인하세요.",
           "extras": [],
           "visibleExtras": 0,
           "id": "t1-c8-p9"
@@ -2605,8 +2529,6 @@
             "기대 결과",
             "작은 기능 단위"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "정상 입력, 0이 포함된 입력, 큰 값 입력 세 가지 테스트 사례를 만들어 기대 결과를 적어 보세요.",
           "extras": [],
           "visibleExtras": 0,
           "id": "t1-c8-p11"
@@ -2648,8 +2570,6 @@
             "기대 결과",
             "작은 기능 단위"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "지금까지 배운 내용 중 가장 자신 있는 것 2개와 다시 복습할 것 1개를 적고 다음 트랙 시작 기준으로 삼으세요.",
           "extras": [],
           "visibleExtras": 0,
           "id": "t1-c8-p13"
@@ -2780,8 +2700,6 @@
             "comparison 비교 연산",
             "elif"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "“조건문은 프로그램의 길을 갈라놓습니다”를 자기 말로 설명한 뒤, 관련된 짧은 코드 예시 하나를 직접 만들고 실행 전 결과를 먼저 예상해 보세요.",
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c1-p3",
@@ -2810,8 +2728,6 @@
             "comparison 비교 연산",
             "elif"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "“비교식은 판단 결과를 값으로 만듭니다”를 자기 말로 설명한 뒤, 관련된 짧은 코드 예시 하나를 직접 만들고 실행 전 결과를 먼저 예상해 보세요.",
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c1-p4",
@@ -2837,8 +2753,6 @@
             "comparison 비교 연산",
             "elif"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "“elif는 위에서부터 처음 맞는 길 하나를 고릅니다”를 자기 말로 설명한 뒤, 관련된 짧은 코드 예시 하나를 직접 만들고 실행 전 결과를 먼저 예상해 보세요.",
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c1-p5",
@@ -2871,8 +2785,6 @@
             "comparison 비교 연산",
             "elif"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "“and·or·not으로 현실의 규칙을 조합합니다”를 자기 말로 설명한 뒤, 관련된 짧은 코드 예시 하나를 직접 만들고 실행 전 결과를 먼저 예상해 보세요.",
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c1-p6",
@@ -2900,8 +2812,6 @@
             "comparison 비교 연산",
             "elif"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "“중첩 if보다 조건을 단순하게 만드는 습관이 중요합니다”를 자기 말로 설명한 뒤, 관련된 짧은 코드 예시 하나를 직접 만들고 실행 전 결과를 먼저 예상해 보세요.",
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c1-p7",
@@ -2931,8 +2841,6 @@
             "comparison 비교 연산",
             "elif"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "“경계값을 테스트해야 조건문이 믿을 만해집니다”를 자기 말로 설명한 뒤, 관련된 짧은 코드 예시 하나를 직접 만들고 실행 전 결과를 먼저 예상해 보세요.",
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c1-p8",
@@ -2979,8 +2887,6 @@
           "paragraphs": [],
           "code": "age = 15\n\nif age >= 13:\n    print(\"청소년 이상\")\nelse:\n    print(\"어린이\")",
           "codeNote": "15 >= 13은 True이므로 “청소년 이상”이 출력됩니다.",
-          "calloutTitle": "코드를 읽는 고정 순서",
-          "calloutBody": "① 입력/초기값 확인 → ② 조건·반복·함수 진입 여부 확인 → ③ 중간값 갱신 → ④ 출력/반환값 확인 순서로 읽습니다.",
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c1-p10",
@@ -3588,8 +3494,6 @@
             "while",
             "iteration 반복 1회"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "“for는 “각 항목에 같은 규칙 적용”에 강합니다”를 자기 말로 설명한 뒤, 관련된 짧은 코드 예시 하나를 직접 만들고 실행 전 결과를 먼저 예상해 보세요.",
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c2-p3",
@@ -3616,8 +3520,6 @@
             "while",
             "iteration 반복 1회"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "“range의 끝 값은 포함되지 않습니다”를 자기 말로 설명한 뒤, 관련된 짧은 코드 예시 하나를 직접 만들고 실행 전 결과를 먼저 예상해 보세요.",
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c2-p4",
@@ -3643,8 +3545,6 @@
             "while",
             "iteration 반복 1회"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "“while은 종료 조건을 먼저 설계해야 합니다”를 자기 말로 설명한 뒤, 관련된 짧은 코드 예시 하나를 직접 만들고 실행 전 결과를 먼저 예상해 보세요.",
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c2-p5",
@@ -3673,8 +3573,6 @@
             "while",
             "iteration 반복 1회"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "“누적 변수는 반복 전 초기값이 중요합니다”를 자기 말로 설명한 뒤, 관련된 짧은 코드 예시 하나를 직접 만들고 실행 전 결과를 먼저 예상해 보세요.",
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c2-p6",
@@ -3703,8 +3601,6 @@
             "while",
             "iteration 반복 1회"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "“break와 continue는 흐름을 바꾸므로 이유가 보여야 합니다”를 자기 말로 설명한 뒤, 관련된 짧은 코드 예시 하나를 직접 만들고 실행 전 결과를 먼저 예상해 보세요.",
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c2-p7",
@@ -3732,8 +3628,6 @@
             "while",
             "iteration 반복 1회"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "“반복문은 작은 입력으로 손으로 먼저 돌려보면 쉽습니다”를 자기 말로 설명한 뒤, 관련된 짧은 코드 예시 하나를 직접 만들고 실행 전 결과를 먼저 예상해 보세요.",
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c2-p8",
@@ -3781,8 +3675,6 @@
           "paragraphs": [],
           "code": "count = 3\n\nwhile count > 0:\n    print(count)\n    count -= 1\n\nprint(\"끝\")",
           "codeNote": "count가 3→2→1→0으로 바뀌고 0에서 조건이 False가 되어 반복이 끝납니다.",
-          "calloutTitle": "코드를 읽는 고정 순서",
-          "calloutBody": "① 입력/초기값 확인 → ② 조건·반복·함수 진입 여부 확인 → ③ 중간값 갱신 → ④ 출력/반환값 확인 순서로 읽습니다.",
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c2-p10",
@@ -4352,8 +4244,6 @@
             "parameter 매개변수",
             "argument 인자"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "“함수는 코드에 이름을 붙이는 방법입니다”를 자기 말로 설명한 뒤, 관련된 짧은 코드 예시 하나를 직접 만들고 실행 전 결과를 먼저 예상해 보세요.",
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c3-p3",
@@ -4381,8 +4271,6 @@
             "parameter 매개변수",
             "argument 인자"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "“정의와 호출은 서로 다른 시점입니다”를 자기 말로 설명한 뒤, 관련된 짧은 코드 예시 하나를 직접 만들고 실행 전 결과를 먼저 예상해 보세요.",
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c3-p4",
@@ -4411,8 +4299,6 @@
             "parameter 매개변수",
             "argument 인자"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "“return과 print는 역할이 다릅니다”를 자기 말로 설명한 뒤, 관련된 짧은 코드 예시 하나를 직접 만들고 실행 전 결과를 먼저 예상해 보세요.",
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c3-p5",
@@ -4440,8 +4326,6 @@
             "parameter 매개변수",
             "argument 인자"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "“매개변수는 함수를 특정 값에서 독립시킵니다”를 자기 말로 설명한 뒤, 관련된 짧은 코드 예시 하나를 직접 만들고 실행 전 결과를 먼저 예상해 보세요.",
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c3-p6",
@@ -4469,8 +4353,6 @@
             "parameter 매개변수",
             "argument 인자"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "“지역 변수는 함수 내부의 작업 공간입니다”를 자기 말로 설명한 뒤, 관련된 짧은 코드 예시 하나를 직접 만들고 실행 전 결과를 먼저 예상해 보세요.",
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c3-p7",
@@ -4498,8 +4380,6 @@
             "parameter 매개변수",
             "argument 인자"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "“함수는 작게 만들고 예제로 테스트합니다”를 자기 말로 설명한 뒤, 관련된 짧은 코드 예시 하나를 직접 만들고 실행 전 결과를 먼저 예상해 보세요.",
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c3-p8",
@@ -4549,8 +4429,6 @@
           "paragraphs": [],
           "code": "def double(number):\n    return number * 2\n\nanswer = double(4)\nprint(answer)",
           "codeNote": "4가 number에 들어가 8이 계산되고, return된 8이 answer에 저장됩니다.",
-          "calloutTitle": "코드를 읽는 고정 순서",
-          "calloutBody": "① 입력/초기값 확인 → ② 조건·반복·함수 진입 여부 확인 → ③ 중간값 갱신 → ④ 출력/반환값 확인 순서로 읽습니다.",
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c3-p10",
@@ -5116,8 +4994,6 @@
             "append",
             "dictionary 딕셔너리"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "“리스트는 같은 종류의 여러 값을 순서대로 다룹니다”를 자기 말로 설명한 뒤, 관련된 짧은 코드 예시 하나를 직접 만들고 실행 전 결과를 먼저 예상해 보세요.",
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c4-p3",
@@ -5144,8 +5020,6 @@
             "append",
             "dictionary 딕셔너리"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "“리스트는 읽기뿐 아니라 수정도 가능합니다”를 자기 말로 설명한 뒤, 관련된 짧은 코드 예시 하나를 직접 만들고 실행 전 결과를 먼저 예상해 보세요.",
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c4-p4",
@@ -5173,8 +5047,6 @@
             "append",
             "dictionary 딕셔너리"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "“딕셔너리는 “몇 번째”보다 “무슨 항목”이 중요한 데이터에 적합합니다”를 자기 말로 설명한 뒤, 관련된 짧은 코드 예시 하나를 직접 만들고 실행 전 결과를 먼저 예상해 보세요.",
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c4-p5",
@@ -5202,8 +5074,6 @@
             "append",
             "dictionary 딕셔너리"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "“존재하지 않는 key와 범위를 벗어난 index를 구분합니다”를 자기 말로 설명한 뒤, 관련된 짧은 코드 예시 하나를 직접 만들고 실행 전 결과를 먼저 예상해 보세요.",
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c4-p6",
@@ -5231,8 +5101,6 @@
             "append",
             "dictionary 딕셔너리"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "“리스트 안의 딕셔너리는 실제 데이터 표와 비슷합니다”를 자기 말로 설명한 뒤, 관련된 짧은 코드 예시 하나를 직접 만들고 실행 전 결과를 먼저 예상해 보세요.",
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c4-p7",
@@ -5260,8 +5128,6 @@
             "append",
             "dictionary 딕셔너리"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "“자료구조는 데이터 모양을 먼저 보고 선택합니다”를 자기 말로 설명한 뒤, 관련된 짧은 코드 예시 하나를 직접 만들고 실행 전 결과를 먼저 예상해 보세요.",
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c4-p8",
@@ -5309,8 +5175,6 @@
           "paragraphs": [],
           "code": "student = {\"name\": \"민수\", \"score\": 80}\n\nprint(student[\"name\"])\nstudent[\"score\"] = 90\nprint(student[\"score\"])",
           "codeNote": "name key로 이름을 읽고 score key의 값만 80에서 90으로 바꿉니다.",
-          "calloutTitle": "코드를 읽는 고정 순서",
-          "calloutBody": "① 입력/초기값 확인 → ② 조건·반복·함수 진입 여부 확인 → ③ 중간값 갱신 → ④ 출력/반환값 확인 순서로 읽습니다.",
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c4-p10",
@@ -5878,8 +5742,6 @@
             "slice 슬라이싱",
             "split"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "“문자열도 순서가 있는 데이터입니다”를 자기 말로 설명한 뒤, 관련된 짧은 코드 예시 하나를 직접 만들고 실행 전 결과를 먼저 예상해 보세요.",
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c5-p3",
@@ -5907,8 +5769,6 @@
             "slice 슬라이싱",
             "split"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "“문자열은 직접 수정하기보다 새 문자열을 만듭니다”를 자기 말로 설명한 뒤, 관련된 짧은 코드 예시 하나를 직접 만들고 실행 전 결과를 먼저 예상해 보세요.",
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c5-p4",
@@ -5936,8 +5796,6 @@
             "slice 슬라이싱",
             "split"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "“strip과 split은 입력 정리의 기본 조합입니다”를 자기 말로 설명한 뒤, 관련된 짧은 코드 예시 하나를 직접 만들고 실행 전 결과를 먼저 예상해 보세요.",
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c5-p5",
@@ -5965,8 +5823,6 @@
             "slice 슬라이싱",
             "split"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "“문자열 검색과 비교는 대소문자와 공백을 고려합니다”를 자기 말로 설명한 뒤, 관련된 짧은 코드 예시 하나를 직접 만들고 실행 전 결과를 먼저 예상해 보세요.",
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c5-p6",
@@ -5994,8 +5850,6 @@
             "slice 슬라이싱",
             "split"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "“f-string은 값과 설명을 함께 보여 주기 좋습니다”를 자기 말로 설명한 뒤, 관련된 짧은 코드 예시 하나를 직접 만들고 실행 전 결과를 먼저 예상해 보세요.",
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c5-p7",
@@ -6022,8 +5876,6 @@
             "slice 슬라이싱",
             "split"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "“문자열 처리는 작은 단계로 나누면 오류가 줄어듭니다”를 자기 말로 설명한 뒤, 관련된 짧은 코드 예시 하나를 직접 만들고 실행 전 결과를 먼저 예상해 보세요.",
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c5-p8",
@@ -6071,8 +5923,6 @@
           "paragraphs": [],
           "code": "text = \"Python\"\nprint(text[0])\nprint(text[0:3])\nprint(text[-1])",
           "codeNote": "첫 글자는 P, 0:3은 Pyt, 마지막 글자는 n입니다.",
-          "calloutTitle": "코드를 읽는 고정 순서",
-          "calloutBody": "① 입력/초기값 확인 → ② 조건·반복·함수 진입 여부 확인 → ③ 중간값 갱신 → ④ 출력/반환값 확인 순서로 읽습니다.",
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c5-p10",
@@ -6624,8 +6474,6 @@
             "open",
             "read / write mode"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "“파일은 프로그램 밖에 남는 상태입니다”를 자기 말로 설명한 뒤, 관련된 짧은 코드 예시 하나를 직접 만들고 실행 전 결과를 먼저 예상해 보세요.",
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c6-p3",
@@ -6652,8 +6500,6 @@
             "open",
             "read / write mode"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "“with open은 열기와 닫기를 한 구조로 묶습니다”를 자기 말로 설명한 뒤, 관련된 짧은 코드 예시 하나를 직접 만들고 실행 전 결과를 먼저 예상해 보세요.",
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c6-p4",
@@ -6679,8 +6525,6 @@
             "open",
             "read / write mode"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "“쓰기 모드는 기존 데이터를 지울 수 있습니다”를 자기 말로 설명한 뒤, 관련된 짧은 코드 예시 하나를 직접 만들고 실행 전 결과를 먼저 예상해 보세요.",
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c6-p5",
@@ -6706,8 +6550,6 @@
             "open",
             "read / write mode"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "“한 줄씩 읽으면 큰 파일도 다루기 쉽습니다”를 자기 말로 설명한 뒤, 관련된 짧은 코드 예시 하나를 직접 만들고 실행 전 결과를 먼저 예상해 보세요.",
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c6-p6",
@@ -6736,8 +6578,6 @@
             "open",
             "read / write mode"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "“경로 문제는 코드가 맞아도 파일을 못 찾게 만듭니다”를 자기 말로 설명한 뒤, 관련된 짧은 코드 예시 하나를 직접 만들고 실행 전 결과를 먼저 예상해 보세요.",
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c6-p7",
@@ -6765,8 +6605,6 @@
             "open",
             "read / write mode"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "“읽기와 쓰기는 데이터 검증과 함께 사용합니다”를 자기 말로 설명한 뒤, 관련된 짧은 코드 예시 하나를 직접 만들고 실행 전 결과를 먼저 예상해 보세요.",
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c6-p8",
@@ -6812,8 +6650,6 @@
           "paragraphs": [],
           "code": "with open(\"memo.txt\", \"r\", encoding=\"utf-8\") as f:\n    text = f.read()\n\nprint(text)",
           "codeNote": "파일 전체 내용을 문자열로 읽어 text에 저장한 뒤 화면에 출력합니다.",
-          "calloutTitle": "코드를 읽는 고정 순서",
-          "calloutBody": "① 입력/초기값 확인 → ② 조건·반복·함수 진입 여부 확인 → ③ 중간값 갱신 → ④ 출력/반환값 확인 순서로 읽습니다.",
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c6-p10",
@@ -7369,8 +7205,6 @@
             "except",
             "finally"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "“예외 처리는 오류를 없애는 것이 아니라 다루는 방법입니다”를 자기 말로 설명한 뒤, 관련된 짧은 코드 예시 하나를 직접 만들고 실행 전 결과를 먼저 예상해 보세요.",
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c7-p3",
@@ -7399,8 +7233,6 @@
             "except",
             "finally"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "“try 범위는 가능한 한 작게 잡습니다”를 자기 말로 설명한 뒤, 관련된 짧은 코드 예시 하나를 직접 만들고 실행 전 결과를 먼저 예상해 보세요.",
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c7-p4",
@@ -7429,8 +7261,6 @@
             "except",
             "finally"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "“예외 종류는 문제의 범주를 알려 주는 신호입니다”를 자기 말로 설명한 뒤, 관련된 짧은 코드 예시 하나를 직접 만들고 실행 전 결과를 먼저 예상해 보세요.",
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c7-p5",
@@ -7459,8 +7289,6 @@
             "except",
             "finally"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "“재시도는 종료 조건과 함께 설계합니다”를 자기 말로 설명한 뒤, 관련된 짧은 코드 예시 하나를 직접 만들고 실행 전 결과를 먼저 예상해 보세요.",
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c7-p6",
@@ -7489,8 +7317,6 @@
             "except",
             "finally"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "“fallback은 데이터 의미를 망치지 않아야 합니다”를 자기 말로 설명한 뒤, 관련된 짧은 코드 예시 하나를 직접 만들고 실행 전 결과를 먼저 예상해 보세요.",
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c7-p7",
@@ -7519,8 +7345,6 @@
             "except",
             "finally"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "“예외 처리 후에도 정상 흐름을 검증합니다”를 자기 말로 설명한 뒤, 관련된 짧은 코드 예시 하나를 직접 만들고 실행 전 결과를 먼저 예상해 보세요.",
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c7-p8",
@@ -7570,8 +7394,6 @@
           "paragraphs": [],
           "code": "try:\n    age = int(\"10\")\n    print(age)\nexcept ValueError:\n    print(\"숫자로 입력하세요\")",
           "codeNote": "\"10\"은 정수 10으로 변환되므로 except 없이 10이 출력됩니다.",
-          "calloutTitle": "코드를 읽는 고정 순서",
-          "calloutBody": "① 입력/초기값 확인 → ② 조건·반복·함수 진입 여부 확인 → ③ 중간값 갱신 → ④ 출력/반환값 확인 순서로 읽습니다.",
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c7-p10",
@@ -8162,8 +7984,6 @@
             "validation 검증",
             "logging 기록"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "“자동화는 반복 작업을 작은 단계로 분해하는 것에서 시작합니다”를 자기 말로 설명한 뒤, 관련된 짧은 코드 예시 하나를 직접 만들고 실행 전 결과를 먼저 예상해 보세요.",
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c8-p3",
@@ -8192,8 +8012,6 @@
             "validation 검증",
             "logging 기록"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "“먼저 입력 형식을 고정하면 뒤 코드가 단순해집니다”를 자기 말로 설명한 뒤, 관련된 짧은 코드 예시 하나를 직접 만들고 실행 전 결과를 먼저 예상해 보세요.",
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c8-p4",
@@ -8222,8 +8040,6 @@
             "validation 검증",
             "logging 기록"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "“함수로 단계를 나누면 실패 위치가 보입니다”를 자기 말로 설명한 뒤, 관련된 짧은 코드 예시 하나를 직접 만들고 실행 전 결과를 먼저 예상해 보세요.",
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c8-p5",
@@ -8252,8 +8068,6 @@
             "validation 검증",
             "logging 기록"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "“잘못된 한 행 때문에 전체 작업을 망칠지 결정해야 합니다”를 자기 말로 설명한 뒤, 관련된 짧은 코드 예시 하나를 직접 만들고 실행 전 결과를 먼저 예상해 보세요.",
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c8-p6",
@@ -8286,8 +8100,6 @@
             "validation 검증",
             "logging 기록"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "“재실행했을 때 중복이 생기지 않는지 확인합니다”를 자기 말로 설명한 뒤, 관련된 짧은 코드 예시 하나를 직접 만들고 실행 전 결과를 먼저 예상해 보세요.",
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c8-p7",
@@ -8317,8 +8129,6 @@
             "validation 검증",
             "logging 기록"
           ],
-          "calloutTitle": "직접 확인해 보기",
-          "calloutBody": "“완성 기준은 테스트 케이스로 결정합니다”를 자기 말로 설명한 뒤, 관련된 짧은 코드 예시 하나를 직접 만들고 실행 전 결과를 먼저 예상해 보세요.",
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c8-p8",
@@ -8398,8 +8208,6 @@
           "paragraphs": [],
           "code": "raw = [\"1000\", \"2500\", \"3000\"]\nvalues = []\n\nfor text in raw:\n    values.append(int(text))\n\nprint(values)",
           "codeNote": "문자열 금액을 정수로 변환해 다음 계산에 사용할 숫자 리스트를 만듭니다.",
-          "calloutTitle": "코드를 읽는 고정 순서",
-          "calloutBody": "① 입력/초기값 확인 → ② 조건·반복·함수 진입 여부 확인 → ③ 중간값 갱신 → ④ 출력/반환값 확인 순서로 읽습니다.",
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c8-p10",
