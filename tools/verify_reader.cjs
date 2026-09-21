@@ -54,6 +54,7 @@ assert.equal(allPages.filter(p=>p.closingPrompt).length,0,'Generic closingPrompt
 const forbiddenStudyPhrases=[
   '직접 확인해 보기','핵심 문장','자주 할 것 같은 실수','실수 하나',
   '이 페이지를 읽을 때','페이지 마무리 체크','20초 안에','60초 복습',
+  '코드를 읽는 고정 순서',
   '먼저 예상 결과와 이유를 적어 보세요','이 챕터를 설명할 수 있나요?'
 ];
 for(const phrase of forbiddenStudyPhrases){
