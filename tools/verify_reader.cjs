@@ -21,6 +21,11 @@ assert(html.includes('touch-action:pan-y'),'touch swipe surface missing');
 assert(html.includes('function trackStats(id)'),'track page-count statistics missing');
 assert(html.includes('TRACK_GLOBAL_SLIDES_V1'),'whole-track slide-numbering marker missing');
 assert(html.includes('UNIFIED_PAGE_TURN_V1'),'unified page-turn marker missing');
+assert(html.includes('ESSENTIAL_CONTENT_V1'),'essential-content cleanup marker missing');
+assert(!html.includes('직접 해보기'),'repeated practice label must not return');
+assert(!html.includes('먼저 생각해 보세요'),'repeated question label must not return');
+assert(!html.includes('먼저 예상 결과와 이유를 적어 보세요'),'repeated prediction prompt must not return');
+assert(!html.includes('이 챕터를 설명할 수 있나요?'),'repeated chapter-end prompt must not return');
 assert(html.includes('function beginPageTurn()')&&html.includes('function finishPageTurn()'),'unified page-turn helpers missing');
 assert(html.includes('.page-turning .reader-paper-wrap{opacity:.08}'),'whole-page transition style missing');
 assert(html.includes('scroll-behavior:auto'),'reader must not mix smooth scrolling with page transitions');
@@ -43,6 +48,27 @@ assert(!html.includes('space-evenly'),'sparse filler stretching must not return'
 assert(!html.includes('PREMIUM_MINIMAL_V3')&&!html.includes('UNIFORM_READER_GRID_V6')&&!html.includes('NO_GAP_FULL_PAGE_V7'),'legacy CSS layers must not return');
 const ids=[...course.chapters.flatMap(c=>c.pages.map(p=>p.id))];
 assert.equal(ids.length,new Set(ids).size,'duplicate page ids');
+
+const allPages=course.chapters.flatMap(c=>c.pages);
+assert.equal(allPages.filter(p=>p.closingPrompt).length,0,'Generic closingPrompt must not return');
+const forbiddenStudyPhrases=[
+  '직접 확인해 보기','핵심 문장','자주 할 것 같은 실수','실수 하나',
+  '이 페이지를 읽을 때','페이지 마무리 체크','20초 안에','60초 복습',
+  '먼저 예상 결과와 이유를 적어 보세요','이 챕터를 설명할 수 있나요?'
+];
+for(const phrase of forbiddenStudyPhrases){
+  const hits=allPages.filter(p=>JSON.stringify(p).includes(phrase));
+  assert.equal(hits.length,0,'Repeated study filler returned: '+phrase+' on '+hits.map(p=>p.id).join(','));
+}
+const genericExtraTitles=new Set([
+  '실제로 연결해서 이해하기','이 페이지를 읽을 때','조금 더 깊게 이해하기',
+  '내가 확인할 기준','페이지 마무리 체크','실습 기록 방법','60초 복습',
+  '다음 챕터로 가기 전 60초 점검'
+]);
+for(const p of allPages){
+  const bad=(p.extras||[]).filter(e=>genericExtraTitles.has(String(e.title||'').trim()));
+  assert.equal(bad.length,0,'Generic extra cards must not return on '+p.id);
+}
 
 function explanationChars(p){
   return [
@@ -190,6 +216,9 @@ const report={
     'Track 2 long repeated paragraphs blocked',
     'Track 2 three verified 2026 bestseller references per chapter',
     'Track 2 generic meta filler removed',
+    'app-wide closing prompts removed',
+    'repeated practice/question labels removed',
+    'generic study-instruction cards blocked',
     'edge tap navigation','chapter hierarchy ribbon','content-type markers','solution hierarchy banner',
     'whole-track physical page numbering without per-topic reset',
     'numeric-only page counter',
