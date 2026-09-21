@@ -155,6 +155,7 @@ dialog::backdrop{background:#0009}
 /* BOOK_SOURCES_V1 — chapter-end verified 2026 bestseller references */
 /* TRACK_GLOBAL_SLIDES_V1 — footer numbering spans every physical slide in the current track */
 /* UNIFIED_PAGE_TURN_V1 — forward/back/swipe/buttons all use the same whole-page transition */
+/* ESSENTIAL_CONTENT_V1 — repeated study prompts removed; only subject content remains */
 .reader-shell{height:100dvh;background:var(--reader);color:var(--readerInk);display:grid;grid-template-rows:58px minmax(0,1fr) auto;overflow:hidden}
 .reader-top{display:grid;grid-template-columns:auto minmax(0,1fr) auto auto auto;align-items:center;gap:7px;padding:6px 15px;background:#17120ef5;border-bottom:1px solid #2d241c}
 .reader-top button{border:0;background:transparent;color:var(--readerInk);min-width:42px;height:42px;border-radius:10px}
@@ -757,19 +758,19 @@ function lessonSection(page,c,index){
       out+='<section class="code-trace"><h3>실행 흐름</h3>'+page.codeTrace.map(x=>'<p>'+txt(x)+'</p>').join('')+'</section>';
     }
   }
-  if(page.practicePrompt)out+='<div class="practice-box"><div class="block-kicker">직접 실습</div><h3>직접 해보기</h3><p>'+txt(page.practicePrompt)+'</p></div>';
-  if(page.question)out+='<div class="question-box"><div class="block-kicker">확인 질문</div><h3>먼저 생각해 보세요</h3><p>'+txt(page.question)+'</p></div>';
-  if(page.answerOnNext)out+='<div class="goal">먼저 예상 결과와 이유를 적어 보세요. 다음 내용에 정답과 풀이가 이어집니다.</div>';
+  if(page.practicePrompt)out+='<div class="practice-box"><p>'+txt(page.practicePrompt)+'</p></div>';
+  if(page.question)out+='<div class="question-box"><p>'+txt(page.question)+'</p></div>';
+
   if(page.answer)out+='<details><summary>정답·해설</summary><p>'+txt(page.answer)+'</p></details>';
   (page.extras||[]).forEach(e=>out+='<section class="extra-card"><h3>'+esc(e.title)+'</h3><p>'+txt(e.body)+'</p></section>');
   if(page.closingPrompt)out+='<div class="goal">'+txt(page.closingPrompt)+'</div>';
   if(page.kind==='summary'){
-    out+='<div class="summary-card"><div class="block-kicker">챕터 마무리</div><h3>기억할 것</h3><p>'+esc(c.remember||'')+'</p><h3>직접 해볼 것</h3><p>'+esc(c.practiceGoal||'')+'</p></div>';
+    if(c.remember)out+='<div class="summary-card"><p>'+esc(c.remember)+'</p></div>';
     if(page.references&&page.references.length){
       out+='<section class="chapter-references"><h3>참고한 2026 베스트셀러</h3><ol>'+page.references.map(r=>'<li><strong>'+esc(r.book)+'</strong> · '+esc(r.author)+' ('+esc(r.year)+')<br>'+esc(r.note)+'</li>').join('')+'</ol></section>';
     }
   }
-  if(index===c.pages.length-1)out+='<div class="chapter-end"><h3>이 챕터를 설명할 수 있나요?</h3><p>'+esc(c.practiceGoal||'직접 설명해 보세요.')+'</p><div class="actions"><button class="reader-action" data-action="complete">'+(state.complete.includes(c.id)?'완료 표시 취소':'이해 완료로 표시')+'</button><button class="reader-action" data-action="track-current">목차로</button></div></div>';
+  if(index===c.pages.length-1)out+='<div class="chapter-end"><div class="actions"><button class="reader-action" data-action="complete">'+(state.complete.includes(c.id)?'완료 표시 취소':'완료로 표시')+'</button><button class="reader-action" data-action="track-current">목차로</button></div></div>';
   return out+'</section>';
 }
 function chapterFlow(c){
