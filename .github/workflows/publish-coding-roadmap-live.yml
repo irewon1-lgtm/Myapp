@@ -21,7 +21,7 @@ jobs:
         run: |
           python3 - <<'PY'
           import json,time,pathlib
-          p=pathlib.Path('live/content.json'); d=json.loads(p.read_text()); d['version']=int(time.time()*1000);p.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n')
+          p=pathlib.Path('live/content.json'); d=json.loads(p.read_text()); d['version']=max(int(time.time()*1000), int(d.get('version',0))+1);p.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n')
           PY
           python3 tools/build_content.py
           node tools/verify_reader.cjs
