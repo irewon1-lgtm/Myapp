@@ -703,7 +703,8 @@ function settings(){
 }
 function diagram(page,c){
   let rows=null;
-  if(page.visual==='PROBLEM_SOLVING_FLOW')rows=[['목표','무엇이 되면 해결인가?'],['입력·출력','무엇을 받고 무엇을 만들까?'],['제약조건','어떤 규칙과 경계가 있나?'],['분해','작은 동사 단계로 나누기'],['흐름','순서·조건·반복 표시'],['의사코드','문법 없이 실행 순서 점검'],['코드·테스트','작게 구현하고 경계값 확인']];
+  if(page.visual==='VIBE_WORKFLOW')rows=[['1. 리서치','관련 코드·패턴·제약 파악'],['2. 계획','변경 파일·방법·트레이드오프 문서화'],['3. 검토','사람이 주석으로 수정·승인'],['4. 구현','승인된 계획만 코드로 실행'],['5. 검증','타입·테스트·화면으로 결과 확인']];
+  else if(page.visual==='PROBLEM_SOLVING_FLOW')rows=[['목표','무엇이 되면 해결인가?'],['입력·출력','무엇을 받고 무엇을 만들까?'],['제약조건','어떤 규칙과 경계가 있나?'],['분해','작은 동사 단계로 나누기'],['흐름','순서·조건·반복 표시'],['의사코드','문법 없이 실행 순서 점검'],['코드·테스트','작게 구현하고 경계값 확인']];
   else if(page.visual==='CODE_TO_OUTPUT')rows=[['작성','print("안녕")'],['실행','Python이 코드 처리'],['출력','안녕']];
   else if(page.visual==='TOP_TO_BOTTOM')rows=[['1번 줄','위에서 시작'],['중간','값과 조건 확인'],['마지막','결과 출력']];
   else if(page.visual==='VARIABLE_BINDING')rows=[['name','"민수"'],['age','37 → 38']];
@@ -715,8 +716,9 @@ function diagram(page,c){
   if(!rows)return '';
   return '<div class="diagram">'+rows.map(r=>'<div class="diagram-row"><span class="diagram-key">'+esc(r[0])+'</span><span>'+esc(r[1])+'</span></div>').join('')+'</div>';
 }
-function codeBlock(code,note){
-  return '<div class="code"><div class="code-bar"><span>Python · 예제 코드</span><button class="copy-btn" data-action="copy-code">복사하기</button></div><pre><code>'+esc(code)+'</code></pre>'+(note?'<div class="code-output">'+esc(note)+'</div>':'')+'</div>';
+function codeBlock(code,note,label){
+  const head=label||'Python · 예제 코드';
+  return '<div class="code"><div class="code-bar"><span>'+esc(head)+'</span><button class="copy-btn" data-action="copy-code">복사하기</button></div><pre><code>'+esc(code)+'</code></pre>'+(note?'<div class="code-output">'+esc(note)+'</div>':'')+'</div>';
 }
 function kindLabel(kind){
   const map={glossary:'용어',concept:'개념',visual:'흐름',example:'예제',practice:'실습',solution:'풀이',check:'확인',summary:'정리'};
@@ -750,7 +752,7 @@ function lessonSection(page,c,index){
   if(page.bullets&&page.bullets.length)out+='<section class="keypoints-card"><div class="block-kicker">핵심 포인트</div><ul>'+page.bullets.map(x=>'<li>'+txt(x)+'</li>').join('')+'</ul></section>';
   if(page.calloutTitle)out+='<div class="callout"><div class="callout-title">'+esc(page.calloutTitle)+'</div><p>'+txt(page.calloutBody||'')+'</p></div>';
   if(page.code){
-    out+=codeBlock(page.code,page.codeNote);
+    out+=codeBlock(page.code,page.codeNote,page.codeLabel);
     if(page.codeExplain&&page.codeExplain.length){
       out+='<section class="code-explain"><h3>코드 한 줄씩 설명</h3><ol>'+page.codeExplain.map(x=>'<li>'+txt(x)+'</li>').join('')+'</ol></section>';
     }
@@ -768,6 +770,9 @@ function lessonSection(page,c,index){
     if(c.remember)out+='<div class="summary-card"><p>'+esc(c.remember)+'</p></div>';
     if(page.references&&page.references.length){
       out+='<section class="chapter-references"><h3>참고한 2026 베스트셀러</h3><ol>'+page.references.map(r=>'<li><strong>'+esc(r.book)+'</strong> · '+esc(r.author)+' ('+esc(r.year)+')<br>'+esc(r.note)+'</li>').join('')+'</ol></section>';
+    }
+    if(page.sources&&page.sources.length){
+      out+='<section class="chapter-references"><h3>영상 출처</h3><ol>'+page.sources.map(r=>'<li><strong>'+esc(r.title)+'</strong>'+(r.url?' · <a href="'+esc(r.url)+'" target="_blank" rel="noopener">원본 영상</a>':'')+(r.note?'<br>'+esc(r.note):'')+'</li>').join('')+'</ol></section>';
     }
   }
   if(index===c.pages.length-1)out+='<div class="chapter-end"><div class="actions"><button class="reader-action" data-action="complete">'+(state.complete.includes(c.id)?'완료 표시 취소':'완료로 표시')+'</button><button class="reader-action" data-action="track-current">목차로</button></div></div>';
