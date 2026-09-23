@@ -97,17 +97,32 @@ function explanationChars(p){
 }
 const track2Chapters=course.chapters.filter(c=>c.track===2);
 const track2Pages=track2Chapters.flatMap(c=>c.pages);
-assert.equal(track2Pages.length,234,'Track 2 page count must remain 234');
-const thinTrack2=track2Pages.filter(p=>explanationChars(p)<400);
-assert.equal(thinTrack2.length,0,'Track 2 page below 400 meaningful visible characters: '+thinTrack2.map(p=>p.id).join(','));
-assert.equal(track2Pages.filter(p=>!p.code).length,0,'Every Track 2 page must include code or starter code');
-assert.equal(track2Pages.filter(p=>!Array.isArray(p.codeExplain)||!p.codeExplain.length).length,0,'Every Track 2 page must include page-specific code explanation');
+
+// ChatBook 1.2 authoring contract: do not force a fixed page count, code block on every page,
+// or quantity-based expansion. Code is required only when the concept actually needs executable
+// material. When code exists, the explanation must be page-specific.
+const codeWithoutExplanation=track2Pages.filter(p=>p.code&&(!Array.isArray(p.codeExplain)||!p.codeExplain.length));
+assert.equal(codeWithoutExplanation.length,0,'Track 2 code page missing page-specific explanation: '+codeWithoutExplanation.map(p=>p.id).join(','));
 assert.equal(track2Pages.filter(p=>p.codeTrace).length,0,'Generic repeated codeTrace filler must not return');
-for(const c of track2Chapters){
-  assert.equal((c.references||[]).length,3,'Every Track 2 chapter must cite exactly three verified 2026 books');
+
+const rewrittenTrack2=track2Chapters.filter(c=>c.chapter>=4&&c.chapter<=8);
+for(const c of rewrittenTrack2){
+  assert.equal((c.references||[]).length,3,'Track 2 chapters 4-8 must cite exactly three verified 2025+ books');
+  assert.equal((c.references||[]).filter(r=>Number(r.year)>=2025).length,3,'Track 2 chapters 4-8 references must be published in 2025 or later');
   const summary=c.pages.find(p=>p.kind==='summary');
-  assert.equal((summary?.references||[]).length,3,'Each Track 2 summary must carry the three chapter references');
+  assert.equal((summary?.references||[]).length,3,'Each rewritten Track 2 summary must carry the three chapter references');
 }
+
+const targetCodePages=rewrittenTrack2.flatMap(c=>c.pages).filter(p=>p.code);
+const codeBodies=new Map();
+for(const p of targetCodePages){
+  const s=String(p.code||'').trim();
+  if(!codeBodies.has(s))codeBodies.set(s,[]);
+  codeBodies.get(s).push(p.id);
+}
+const repeatedCodeBodies=[...codeBodies.entries()].filter(([s,ids])=>s.length>20&&ids.length>1);
+assert.equal(repeatedCodeBodies.length,0,'Repeated code blocks remain in rewritten Track 2 chapters: '+repeatedCodeBodies.slice(0,8).map(([s,ids])=>ids.join('/')).join(','));
+
 const longParagraphs=new Map();
 for(const p of track2Pages)for(const raw of p.paragraphs||[]){
   const s=String(raw).trim();
@@ -242,11 +257,11 @@ const report={
     'no scale-to-fit',
     'no sparse filler stretching',
     'sequential top-to-bottom horizontal pagination','persistent large topic title above every physical swipe page',
-    'Track 2 minimum 400-character meaningful content without filler',
-    'Track 2 code or starter code on every page',
-    'Track 2 page-specific line-by-line code explanation with zero duplicates',
+    'Track 2 ChatBook 1.2 connected-narrative content contract',
+    'Track 2 code only where the lesson actually needs executable material',
+    'Track 2 page-specific code explanation with zero duplicate code blocks',
     'Track 2 long repeated paragraphs blocked',
-    'Track 2 three verified 2026 bestseller references per chapter',
+    'Track 2 chapters 4-8 three verified 2025+ bestseller/higher-education references',
     'Track 2 generic meta filler removed',
     'app-wide closing prompts removed',
     'repeated practice/question labels removed',
