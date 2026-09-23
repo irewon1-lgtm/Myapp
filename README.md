@@ -4,7 +4,7 @@
 
 Netlify project: chatbook-library-20260923
 Site ID: 2c37965b-f193-4d0f-b371-652fdf1989c0
-버전: 1.0.0 (2026-09-23)
+버전: 1.0.1 (2026-09-23)
 
 ## 다음 대화에서 이어서 수정할 때
 
@@ -29,10 +29,19 @@ Site ID: 2c37965b-f193-4d0f-b371-652fdf1989c0
 
 프런트: public/
 도서 정본: public/library.js + public/content/catalog.json (scripts/content.py로 함께 생성)
-동기화: netlify/functions/sync.mts
+동기화 API: netlify/functions/sync-pull.mts / sync-push.mts / sync-reset.mts\n호환 라우트: netlify/functions/sync.mts\n공통 저장 로직: netlify/lib/sync-core.mts\n상태 확인: /api/health
 빌드: npm install && npm test && npm run build (Node 22, dist 출력)
 파일 실행판: scripts/pack.py
 온라인 검사: tests/browser-ci.mjs 및 tests/ci-report.json
+
+## 소스-배포 추적
+
+- 챗북의 정본은 이 브랜치 `chatbook-app-20260923`입니다.
+- 소스 변경은 `Chatbook source verification` 워크플로에서 자동으로 테스트·빌드됩니다.
+- 모든 배포 빌드는 `/version.json`에 앱 버전, Git branch, 정확한 source SHA, build 시각을 기록합니다.
+- 앱의 ‘챗북에 대하여’ 화면에도 배포된 source SHA 앞 7자리를 표시합니다.
+- 빠른 배포는 배포 후 운영 주소의 `/version.json`이 트리거한 Git SHA와 일치하지 않으면 실패 처리합니다.
+- 기존 `/api/sync`는 구버전 앱 호환용으로 유지하고, 새 앱은 pull/push/reset 전용 엔드포인트를 사용합니다.
 
 ## 실제 검증
 
