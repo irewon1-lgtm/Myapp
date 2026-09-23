@@ -1,7 +1,7 @@
 {
-  "version": "1.1.0",
+  "version": "1.2.0",
   "entrypoint": "learning.mjs",
-  "profile": "faithful-ko-selective-beginner-v1",
+  "profile": "faithful-ko-narrative-v1",
   "sourceLanguages": [
     "ko",
     "en"
@@ -30,8 +30,15 @@
     "number-and-unit",
     "code"
   ],
-  "newFacts": "forbidden",
+  "newFacts": "verified-and-labelled-supplement-only",
   "sourceCorrection": "flag-not-silent-correction",
+  "writingUnit": "conceptual-chapter",
+  "analysisUnit": "bounded-source-chunk",
+  "prose": "connected-paragraphs",
+  "fixedConceptTemplate": false,
+  "additionalModelPasses": 0,
+  "fullBookRewrite": false,
+  "narrativeContextMaxBytes": 4000,
   "minPages": null,
   "maxPages": null,
   "forcedExpansionRatio": null,
@@ -40,5 +47,5 @@
   "compressionAlarmRatio": 0.9,
   "inventedImagesAsScreenshots": false,
   "reviewIsProof": false,
-  "validationScope": "Reference coverage and declared semantic review contracts; not proof of translation correctness."
+  "validationScope": "Structure and declared review only; no guarantee of semantic truth or complete video access."
 }

@@ -245,7 +245,7 @@ export async function exportBook(job,{id=`yt-${job.source.videoId}`,author='원�
     const d=job.checkpoints[`${ch.id}:beginner`].artifact;
     const chapter={id:`${id}-${ch.id}`,title:d.title,subtitle:d.subtitle||'',summary:d.summary||[],blocks:[],glossary:d.glossary};
     for(const p of d.paragraphs) {
-      chapter.blocks.push({id:`${id}-${ch.id}-${p.id}`,type:'p',text:p.text,sourceRefs:p.sourceRefs,_origin:p.kind});
+      chapter.blocks.push({id:`${id}-${ch.id}-${p.id}`,type:'p',text:p.text,sourceRefs:p.sourceRefs,_origin:p.kind,...(p.format?{_format:p.format}:{}),...(p.support?{_support:clone(p.support)}:{})});
       for(const f of d.figures||[])if(f.afterParagraphId===p.id)chapter.blocks.push({id:`${id}-${ch.id}-${f.id}`,type:'image',src:'./'+f.path,caption:f.kind==='diagram'?`개념도 · ${f.caption||''}`:f.caption||'',_provenance:f});
     }
     for(const f of d.figures||[])need(d.paragraphs.some(p=>p.id===f.afterParagraphId),'ORPHAN_FIGURE','그림이 연결된 문단이 없습니다.');

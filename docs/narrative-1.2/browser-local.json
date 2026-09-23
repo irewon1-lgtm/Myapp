@@ -1,0 +1,246 @@
+{
+  "scope": "Local Chromium on actual built app; not physical Galaxy or live deployment",
+  "checks": [
+    {
+      "name": "13 books retained",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Python edition v3",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "home 360px no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "library 360px no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "settings 360px no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "exports 360px no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "quiz 360px no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "reader 360px pagination",
+      "pass": true,
+      "detail": 97
+    },
+    {
+      "name": "code 360px indentation",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "code 360px wraps",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "reader 360px viewport contained",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "home 412px no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "library 412px no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "settings 412px no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "exports 412px no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "quiz 412px no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "reader 412px pagination",
+      "pass": true,
+      "detail": 73
+    },
+    {
+      "name": "code 412px indentation",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "code 412px wraps",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "reader 412px viewport contained",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "home 768px no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "library 768px no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "settings 768px no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "exports 768px no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "quiz 768px no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "reader 768px pagination",
+      "pass": true,
+      "detail": 52
+    },
+    {
+      "name": "code 768px indentation",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "code 768px wraps",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "reader 768px viewport contained",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "home 1366px no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "library 1366px no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "settings 1366px no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "exports 1366px no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "quiz 1366px no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "reader 1366px pagination",
+      "pass": true,
+      "detail": 59
+    },
+    {
+      "name": "code 1366px indentation",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "code 1366px wraps",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "reader 1366px viewport contained",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "bookmark persists reader reopen",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "progress anchor persists reader reopen",
+      "pass": true,
+      "detail": [
+        "yt-python-1h-8KCuHHeC_M0-c6-deep-3",
+        "yt-python-1h-8KCuHHeC_M0-c6-deep-3"
+      ]
+    },
+    {
+      "name": "large text repagination finite",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "scroll mode active",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "all code blocks rendered",
+      "pass": true,
+      "detail": 39
+    },
+    {
+      "name": "import retains code formatting",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "print contains 39 code blocks plus outputs",
+      "pass": true,
+      "detail": 78
+    },
+    {
+      "name": "actual app PDF generated",
+      "pass": true,
+      "detail": 46
+    },
+    {
+      "name": "runtime exceptions zero",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": [],
+  "passes": 47,
+  "total": 47
+}

@@ -1,4 +1,8 @@
-# 챗북 기본 교재 엔진 1.0
+# 챗북 기본 교재 엔진 1.2
+
+현재 제작 진입점은 `public/engine/learning.mjs`입니다. 연결형 집필·장 구성·보강 설명 규칙은 `docs/narrative-1.2/UPGRADE.md`를 우선 적용합니다. 아래 1.0 보존·검수·비용 통제는 유지하되, 외부 보강은 1.2의 출처 표시와 별도 검수를 거친 explanation만 허용합니다. 모든 개념에 같은 해설 순서를 강제하지 않습니다.
+
+# 기존 기반 동작과 보호 규칙
 
 대상: `irewon1-lgtm/Myapp`, **chatbook-app-20260923만 사용**. main 및 다른 앱을 변경하지 않는다.
 운영 사이트: https://chatbook-library-20260923.netlify.app

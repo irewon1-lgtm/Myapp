@@ -78,3 +78,8 @@ body[data-theme=dark] .reader-flow figure,body[data-theme=dark] .reader-figure-o
     flex-basis:46vw;
   }
 }
+
+/* Narrative 1.2: readable code, not a separate teaching card for every sentence. */
+.reader-flow pre.reader-code,.reader-flow pre.reader-output{font:0.88em/1.65 ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",monospace;white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word;margin:1.1em 0;padding:0 0 0 .8em;border-left:2px solid var(--line,#d4c9b9);background:transparent;max-width:100%;box-sizing:border-box;break-inside:auto;color:inherit;}
+.reader-flow pre.reader-output{font-size:.84em;border-left-style:dotted;}
+.print-content pre{font:12px/1.6 monospace;white-space:pre-wrap;overflow-wrap:anywhere;break-inside:auto;}
