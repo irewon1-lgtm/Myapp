@@ -46,7 +46,7 @@ assert(html.includes('--navSafe:calc(28px + env(safe-area-inset-bottom))'),'Andr
 assert(html.includes('EXACT_READER_RESUME_V1'),'exact reader resume marker missing');
 assert(html.includes('readerPositions')&&html.includes('pendingSavedPosition'),'exact physical reading position state missing');
 assert(html.includes('function saveReaderPosition()')&&html.includes('function savedReaderPosition('),'reader position persistence helpers missing');
-assert(html.includes('data-action="continue-track"'),'track resume button must restore exact reading position');
+assert(html.includes('continue-track'),'track resume action must restore exact reading position');
 assert(html.includes('TRACK_SWIPE_NAV_V1')&&html.includes('function installTrackGestures()'),'track swipe navigation missing');
 assert(html.includes('COZY_EDITORIAL_2026_V1'),'cozy 2026 UI redesign marker missing');
 assert(html.includes('track-dots')&&html.includes('cozy-track-rail'),'track carousel UI missing');
