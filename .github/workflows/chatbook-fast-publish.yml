@@ -1,4 +1,4 @@
-# publish Python 1-hour textbook v2 deepened explanations
+# Publish approved narrative 1.2, Python textbook v3, app 1.0.3.
 name: Chatbook fast publish
 on:
   workflow_dispatch:
@@ -13,7 +13,7 @@ concurrency:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
         with:
@@ -25,3 +25,17 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: node scripts/fast-publish.mjs
+      - name: Install isolated browser test runtime
+        run: |
+          npm install --no-save --package-lock=false playwright
+          npx playwright install --with-deps chromium
+      - name: Verify live HTTPS content, layout and persistence
+        run: node tests/narrative-live.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: chatbook-narrative-production-evidence
+          path: |
+            tests/narrative-live-results/
+            dist/version.json
+          retention-days: 3
