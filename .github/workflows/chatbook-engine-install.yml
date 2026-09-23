@@ -1,0 +1,71 @@
+name: Chatbook engine install and verification
+on:
+  push:
+    branches: [chatbook-app-20260923]
+    paths: [.github/workflows/chatbook-engine-install.yml]
+permissions:
+  contents: write
+concurrency:
+  group: chatbook-engine-install
+  cancel-in-progress: false
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: chatbook-app-20260923
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install, test, and publish the bounded engine
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import {generateKeyPairSync,privateDecrypt,createDecipheriv,createHash,constants} from 'node:crypto';
+          import {spawnSync,spawn} from 'node:child_process';
+          const repo=process.env.GITHUB_REPOSITORY,branch=process.env.GITHUB_REF_NAME,run=process.env.GITHUB_RUN_ID;
+          if(repo!=='irewon1-lgtm/Myapp'||branch!=='chatbook-app-20260923')throw Error('Wrong application or branch');
+          const root=`https://api.github.com/repos/${repo}`,headers={Authorization:`Bearer ${process.env.GITHUB_TOKEN}`,Accept:'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'};
+          const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+          async function read(path){const r=await fetch(`${root}/contents/${path}?ref=${encodeURIComponent(branch)}`,{headers});if(r.status===404)return null;if(!r.ok)throw Error('read '+r.status);const j=await r.json();return {...j,text:Buffer.from(j.content,'base64').toString()};}
+          async function put(path,value,message){const old=await read(path);const r=await fetch(`${root}/contents/${path}`,{method:'PUT',headers:{...headers,'Content-Type':'application/json'},body:JSON.stringify({branch,message,content:Buffer.from(JSON.stringify(value,null,2)).toString('base64'),...(old?{sha:old.sha}:{})})});if(!r.ok)throw Error('write '+r.status);}
+          function cmd(name,args,timeout=240000){const p=spawnSync(name,args,{stdio:'inherit',timeout,env:{...process.env,CI:'true'}});if(p.status!==0)throw Error(name+' failed '+p.status);}
+          const sha=file=>createHash('sha256').update(fs.readFileSync(file)).digest('hex');
+          const {publicKey,privateKey}=generateKeyPairSync('rsa',{modulusLength:3072,publicKeyEncoding:{type:'spki',format:'pem'},privateKeyEncoding:{type:'pkcs8',format:'pem'}});
+          await put(`.deployment/engine-request-${run}.json`,{run,branch,publicKey,createdAt:new Date().toISOString()},'One-use engine installer public key [skip ci]');
+          let payload,proxy='';
+          try{
+            for(let i=0;i<60;i++){const sealed=await read(`.deployment/engine-sealed-${run}.json`);if(sealed){const j=JSON.parse(sealed.text);if(j.run!==run)throw Error('Wrong handoff');const key=privateDecrypt({key:privateKey,padding:constants.RSA_PKCS1_OAEP_PADDING,oaepHash:'sha256'},Buffer.from(j.key,'base64'));const data=Buffer.from(j.data,'base64'),dec=createDecipheriv('aes-256-gcm',key,Buffer.from(j.iv,'base64'));dec.setAuthTag(data.subarray(-16));payload=JSON.parse(Buffer.concat([dec.update(data.subarray(0,-16)),dec.final()]).toString());break;}await sleep(5000);}
+            if(!payload)throw Error('Handoff expired');proxy=payload.proxy;if(!proxy?.startsWith('https://netlify-mcp.netlify.app/proxy/'))throw Error('Unexpected deployment endpoint');
+            console.log('::add-mask::'+proxy);console.log('::add-mask::'+payload.sourceUrl);
+            const response=await fetch(payload.sourceUrl);if(!response.ok)throw Error('Source archive '+response.status);const data=Buffer.from(await response.arrayBuffer());if(createHash('sha256').update(data).digest('hex')!==payload.sha256)throw Error('Archive hash mismatch');
+            const zip=process.env.RUNNER_TEMP+'/chatbook-engine.zip';fs.writeFileSync(zip,data);
+            cmd('git',['pull','--ff-only','origin',branch]);const booksBefore=sha('public/content/catalog.json'),readerBefore=sha('public/reader.js');
+            cmd('python3',['-c',"import zipfile,pathlib,sys; z=zipfile.ZipFile(sys.argv[1]); root=pathlib.Path('.').resolve(); allowed=('public/engine/','engine/','tests/engine/','docs/'); assert all((i.filename.startswith(allowed) or i.filename=='CHATBOOK_ENGINE.md') and (root/i.filename).resolve().is_relative_to(root) and not i.is_dir() and ((i.external_attr>>16)&0o170000)!=0o120000 for i in z.infolist()); z.extractall('.')",zip]);
+            cmd('npm',['ci','--no-audit','--no-fund']);cmd('node',['engine/install.mjs']);cmd('npm',['test']);cmd('node',['engine/benchmark.mjs']);
+            cmd('python3',['-m','pip','install','--quiet','pillow','playwright']);cmd('python3',['tests/engine/frames_test.py']);
+            process.env.ENGINE_BROWSER_REPORT=process.env.RUNNER_TEMP+'/engine-browser-before.json';
+            const server=spawn('python3',['-m','http.server','8768','--directory','public'],{stdio:'ignore'});await sleep(800);
+            try{cmd('python3',['tests/engine/browser_check.py','http://127.0.0.1:8768/engine/']);}finally{server.kill();}
+            const browserBefore=JSON.parse(fs.readFileSync(process.env.ENGINE_BROWSER_REPORT));
+            const benchmark=JSON.parse(fs.readFileSync('public/engine/benchmark.json'));
+            if(benchmark.realSources.length!==3||benchmark.realSources.some(x=>x.error||!x.allCueIdsPreserved))throw Error('Existing transcript replay incomplete');
+            const verification=JSON.parse(fs.readFileSync('public/engine/verification.json'));verification.runnerBrowser={passed:true,results:browserBefore};verification.existingTranscriptReplay={passed:true,sources:benchmark.realSources};verification.existingBookDataUnchanged=sha('public/content/catalog.json')===booksBefore;verification.readerCodeUnchanged=sha('public/reader.js')===readerBefore;
+            if(!verification.existingBookDataUnchanged||!verification.readerCodeUnchanged)throw Error('Out-of-scope changes');
+            fs.writeFileSync('public/engine/verification.json',JSON.stringify(verification,null,2));fs.rmSync('engine/__pycache__',{recursive:true,force:true});
+            cmd('npm',['run','build']);
+            cmd('git',['config','user.name','Chatbook Engine Builder']);cmd('git',['config','user.email','chatbook-engine@users.noreply.github.com']);
+            cmd('git',['add','public/engine','engine','tests/engine','docs/ENGINE_RESEARCH.md','CHATBOOK_ENGINE.md','public/views.js','public/app.js','public/index.html','public/sw.js','scripts/build.mjs','package.json']);
+            cmd('git',['commit','-m','Install tested Chatbook source-locked engine 1.0 [skip ci]']);cmd('git',['push','origin',branch]);
+            const sourceSha=spawnSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).stdout.trim();process.env.GITHUB_SHA=sourceSha;process.env.CHATBOOK_SOURCE_SHA=sourceSha;
+            cmd('npx',['-y','@netlify/mcp@latest','--site-id','2c37965b-f193-4d0f-b371-652fdf1989c0','--proxy-path',proxy],360000);
+            const url='https://chatbook-library-20260923.netlify.app/engine/';const live=await fetch(url+'defaults.json');const defaults=await live.json();if(!live.ok||defaults.version!=='1.0.0'||defaults.externalCallsEnabled!==false)throw Error('Live engine not verified');
+            process.env.ENGINE_BROWSER_REPORT=process.env.RUNNER_TEMP+'/engine-browser-live.json';cmd('python3',['tests/engine/browser_check.py',url]);const browserLive=JSON.parse(fs.readFileSync(process.env.ENGINE_BROWSER_REPORT));
+            await put(`.deployment/engine-result-${run}.json`,{run,status:'success',sourceSha,url,sourceArchiveSha256:payload.sha256,verification,liveBrowser:browserLive,benchmarkSummary:benchmark.summary,completedAt:new Date().toISOString()},'Record actual engine tests and live verification [skip ci]');
+          }catch(e){await put(`.deployment/engine-result-${run}.json`,{run,status:'error',error:String(e.message).replaceAll(proxy||'__EMPTY__','[redacted]'),completedAt:new Date().toISOString()},'Record engine install failure [skip ci]');throw e;}
+          NODE
