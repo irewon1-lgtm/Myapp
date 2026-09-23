@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import fs from 'node:fs';
 import path from 'node:path';
-import { prepareSource,newJob,task,submit,approve,exportBook,publicationGate } from '../public/engine/core.mjs';
+import { prepareSource,newJob,task,submit,approve,exportBook,publicationGate } from '../public/engine/learning.mjs';
 import { FileStore } from './runner.mjs';
 const [action,dir,...args]=process.argv.slice(2);
 const fail=()=>{console.error('Usage: node engine/cli.mjs prepare JOB_DIR TRANSCRIPT VIDEO_ID [SECONDS]\n       node engine/cli.mjs task JOB_DIR CHUNK_ID source|beginner|review\n       node engine/cli.mjs submit JOB_DIR CHUNK_ID STAGE ARTIFACT_JSON ACTOR\n       node engine/cli.mjs status JOB_DIR\n       node engine/cli.mjs approve JOB_DIR OWNER\n       node engine/cli.mjs export JOB_DIR OUTPUT_JSON');process.exitCode=2;};

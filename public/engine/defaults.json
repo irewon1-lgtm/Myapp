@@ -1,6 +1,6 @@
 {
-  "version": "1.0.0",
-  "profile": "absolute-beginner-two-pass",
+  "version": "1.1.0",
+  "profile": "faithful-ko-selective-beginner-v1",
   "targetSeconds": 240,
   "maxSeconds": 360,
   "maxSourceBytes": 16000,
@@ -24,5 +24,6 @@
   "missingVisual": "hold-if-required",
   "termFirstUseExplanation": true,
   "semanticReviewRequired": true,
-  "requireOwnerApproval": true
+  "requireOwnerApproval": true,
+  "targetLanguage": "ko"
 }

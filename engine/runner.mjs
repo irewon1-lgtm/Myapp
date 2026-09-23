@@ -5,7 +5,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { randomUUID } from 'node:crypto';
-import { canonical,digest,EngineError,task,submit,failurePolicy,reserveCall,publicationGate } from '../public/engine/core.mjs';
+import { canonical,digest,EngineError,task,submit,failurePolicy,reserveCall,publicationGate } from '../public/engine/learning.mjs';
 export class FileStore {
   constructor(dir) { this.dir=path.resolve(dir);fs.mkdirSync(this.dir,{recursive:true,mode:0o700});this.lock=null; }
   acquire() { try{this.lock=fs.openSync(path.join(this.dir,'writer.lock'),'wx',0o600);fs.writeFileSync(this.lock,canonical({pid:process.pid,createdAt:new Date().toISOString()}));}catch{throw new EngineError('WRITER_LOCKED','다른 작업이 이 상태 파일을 사용 중입니다. 비정상 종료 후에는 실행 중인 작업이 없는지 확인해야 합니다.');} }

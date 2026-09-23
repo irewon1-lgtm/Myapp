@@ -1,4 +1,4 @@
-import {VERSION,DEFAULTS,prepareSource,newJob,task,digest,bytes,publicationGate} from './core.mjs';
+import {VERSION,DEFAULTS,prepareSource,newJob,task,digest,bytes,publicationGate} from './learning.mjs?v=1.1.0';
 const $=id=>document.getElementById(id);let job=null;
 $('version').textContent=VERSION;document.body.dataset.engineReady='true';
 try{const r=JSON.parse(localStorage.getItem('chatbook.records.v1')||'{}');if(r['pref:theme']?.v!=='dark'&&r['pref:theme']?.v!=='system')document.body.classList.add('light');}catch{}
@@ -13,6 +13,7 @@ function display(){
  r.append(text('p','집필 대기 · 원본이 보존된 준비 상태입니다. 완성된 전자책이 아닙니다.','muted'));
  for(const c of job.source.chunks){const d=text('div',`${c.id} · ${fmt(c.start)}–${fmt(c.end)}`,'chunk');d.append(text('span',`${c.sourceIds.length}개 원문 구간 · ${(c.textBytes/1024).toFixed(1)} KB`));r.append(d);}
  r.append(text('p',`원문 지문: ${job.source.rawHash.slice(0,18)}…`,'muted'));
+ if(job.plan?.warnings?.length)r.append(text('p','긴 원문은 호출·재시도 한도를 먼저 점검합니다. 한도에 맞추려고 내용을 줄이지 않습니다.','muted'));
  if(job.source.warnings.length)r.append(text('p','자동자막과 시간대는 실제 음성·화면 대조가 필요합니다. 원문 ID 보존은 의미 검증을 대신하지 않습니다.','muted'));
  $('save').disabled=false;$('task').disabled=false;
  window.chatbookEngineJob=job;

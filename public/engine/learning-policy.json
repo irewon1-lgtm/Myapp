@@ -1,0 +1,44 @@
+{
+  "version": "1.1.0",
+  "entrypoint": "learning.mjs",
+  "profile": "faithful-ko-selective-beginner-v1",
+  "sourceLanguages": [
+    "ko",
+    "en"
+  ],
+  "targetLanguage": "ko",
+  "stages": [
+    "source-freeze",
+    "aligned-korean-basis",
+    "selective-beginner-explanation",
+    "direct-source-review",
+    "assemble-publish"
+  ],
+  "preserve": [
+    "claim",
+    "definition",
+    "example",
+    "analogy",
+    "transition",
+    "caveat"
+  ],
+  "preserveQualifiers": [
+    "negation",
+    "condition",
+    "modality",
+    "attribution",
+    "number-and-unit",
+    "code"
+  ],
+  "newFacts": "forbidden",
+  "sourceCorrection": "flag-not-silent-correction",
+  "minPages": null,
+  "maxPages": null,
+  "forcedExpansionRatio": null,
+  "unchangedText": "copy-without-regeneration",
+  "difficultText": "patch-or-local-rewrite",
+  "compressionAlarmRatio": 0.9,
+  "inventedImagesAsScreenshots": false,
+  "reviewIsProof": false,
+  "validationScope": "Reference coverage and declared semantic review contracts; not proof of translation correctness."
+}
