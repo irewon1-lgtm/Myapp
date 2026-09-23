@@ -1,0 +1,26 @@
+name: Chatbook narrative upgrade audit
+on:
+  push:
+    branches: [chatbook-app-20260923]
+    paths: [.github/workflows/chatbook-upgrade-audit.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+      - name: Snapshot tracked application and teaching sources
+        run: |
+          mkdir -p /tmp/chatbook-audit
+          git archive --format=zip HEAD -o /tmp/chatbook-audit/chatbook-source.zip
+          git rev-parse HEAD > /tmp/chatbook-audit/source-sha.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: chatbook-narrative-source
+          path: /tmp/chatbook-audit/
+          retention-days: 1
