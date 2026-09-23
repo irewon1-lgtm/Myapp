@@ -1,0 +1,55 @@
+name: Import 8KCuHHeC_M0 source once
+on:
+  push:
+    branches: [chatbook-app-20260923]
+    paths: [.github/workflows/import-8KCuHHeC_M0-once.yml]
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: chatbook-app-20260923
+      - name: Fetch English transcript and metadata
+        shell: bash
+        run: |
+          set -euo pipefail
+          ID='8KCuHHeC_M0'
+          OUT="exact_source/$ID"
+          mkdir -p "$OUT"
+          (
+            curl -fL --retry 1 --max-time 60 "https://youtube-transcript.ai/transcript/$ID.txt?lang=en" -o "$OUT/transcript.md"
+          ) || (
+            curl -fL --retry 1 --max-time 60 "https://youtube-transcript.ai/transcript/$ID.txt" -o "$OUT/transcript.md"
+          )
+          test $(wc -c < "$OUT/transcript.md") -gt 1000
+          curl -fL --max-time 30 "https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=$ID&format=json" -o "$OUT/oembed.json"
+          python -m pip install -q -U yt-dlp
+          yt-dlp --no-warnings --skip-download --write-info-json "https://www.youtube.com/watch?v=$ID" -o "$OUT/video" || true
+          python - <<'PY'
+          from pathlib import Path
+          import json,re
+          root=Path("exact_source/8KCuHHeC_M0")
+          tr=root/"transcript.md"
+          text=tr.read_text(errors="ignore")
+          meta={"bytes":len(text.encode()),"hasTimestamps":bool(re.search(r"\[\d+:\d+\]",text))}
+          infos=list(root.glob("video*.info.json"))
+          if infos:
+              try:
+                  j=json.loads(infos[0].read_text())
+                  meta.update({"title":j.get("title"),"duration":j.get("duration"),"uploader":j.get("uploader"),"language":j.get("language")})
+              except Exception: pass
+          (root/"source-meta.json").write_text(json.dumps(meta,ensure_ascii=False,indent=2))
+          print(json.dumps(meta,ensure_ascii=False))
+          PY
+      - name: Commit source
+        shell: bash
+        run: |
+          git config user.name 'Chatbook Source Import'
+          git config user.email 'chatbook-source@users.noreply.github.com'
+          git add exact_source/8KCuHHeC_M0
+          git commit -m 'Import exact source for 8KCuHHeC_M0'
+          git push origin chatbook-app-20260923
