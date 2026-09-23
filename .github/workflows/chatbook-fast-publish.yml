@@ -1,4 +1,4 @@
-# publish reader pagination swipe and image readability fix
+# publish dark mode toggle and reader-only wake lock
 name: Chatbook fast publish
 on:
   workflow_dispatch:
