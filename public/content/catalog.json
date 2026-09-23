@@ -1,8 +1,8 @@
 {
   "schema": 1,
-  "version": "2026-09-23.10",
-  "updatedAt": "2026-09-23T07:43:52.995Z",
-  "notice": "프론트엔드 기본 지식 완전교재를 엔진 1.0의 원본 잠금 → 초보자 해설 → 대조 검수 방식으로 개정했습니다.",
+  "version": "2026-09-23.11",
+  "updatedAt": "2026-09-23T07:47:09.596Z",
+  "notice": "프론트엔드 기본 지식 완전교재를 엔진 1.0 원본잠금·초보자해설 기준으로 최종 정리했습니다.",
   "books": [
     {
       "id": "yt-backend-roots-0SGfDKMLdaI",
@@ -1422,7 +1422,7 @@
       "cover": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22900%22%20height%3D%221200%22%20viewBox%3D%220%200%20900%201200%22%3E%0A%3Crect%20width%3D%22900%22%20height%3D%221200%22%20fill%3D%22%23f0eee8%22%2F%3E%0A%3Crect%20x%3D%2255%22%20y%3D%2255%22%20width%3D%22790%22%20height%3D%221090%22%20rx%3D%2244%22%20fill%3D%22%23ffffff%22%20stroke%3D%22%2365725f%22%20stroke-width%3D%225%22%2F%3E%0A%3Ctext%20x%3D%22110%22%20y%3D%22175%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2234%22%20font-weight%3D%22800%22%20fill%3D%22%2365725f%22%3EFRONTEND%20ROOT%20MAP%3C%2Ftext%3E%0A%3Ctext%20x%3D%22110%22%20y%3D%22290%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2266%22%20font-weight%3D%22900%22%20fill%3D%22%2320241f%22%3E%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C%3C%2Ftext%3E%0A%3Ctext%20x%3D%22110%22%20y%3D%22365%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2266%22%20font-weight%3D%22900%22%20fill%3D%22%2320241f%22%3E%EA%B8%B0%EB%B3%B8%20%EC%A7%80%EC%8B%9D%3C%2Ftext%3E%0A%3Ctext%20x%3D%22110%22%20y%3D%22430%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2231%22%20font-weight%3D%22600%22%20fill%3D%22%234a5048%22%3E%EC%99%9C%20%EC%83%9D%EA%B2%BC%EB%8A%94%EC%A7%80%EB%A1%9C%20%EC%9D%B4%ED%95%B4%ED%95%98%EB%8A%94%20%EC%99%84%EC%A0%84%EA%B5%90%EC%9E%AC%3C%2Ftext%3E%0A%3Cg%20transform%3D%22translate(110%20535)%22%3E%0A%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%22195%22%20height%3D%22120%22%20rx%3D%2222%22%20fill%3D%22%23e9efe5%22%20stroke%3D%22%236c7d64%22%20stroke-width%3D%223%22%2F%3E%0A%3Ctext%20x%3D%2297%22%20y%3D%2252%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23263026%22%3EHTML%3C%2Ftext%3E%0A%3Ctext%20x%3D%2297%22%20y%3D%2288%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23394238%22%3E%EA%B5%AC%EC%A1%B0%3C%2Ftext%3E%0A%3Cpath%20d%3D%22M210%2060%20H285%22%20stroke%3D%22%235f695c%22%20stroke-width%3D%227%22%2F%3E%3Cpath%20d%3D%22M285%2060%20l-20%20-12%20v24%20z%22%20fill%3D%22%235f695c%22%2F%3E%0A%3Crect%20x%3D%22300%22%20y%3D%220%22%20width%3D%22195%22%20height%3D%22120%22%20rx%3D%2222%22%20fill%3D%22%23f2e9d9%22%20stroke%3D%22%238d7850%22%20stroke-width%3D%223%22%2F%3E%0A%3Ctext%20x%3D%22397%22%20y%3D%2252%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23392f22%22%3ECSS%3C%2Ftext%3E%0A%3Ctext%20x%3D%22397%22%20y%3D%2288%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23534738%22%3E%ED%91%9C%ED%98%84%3C%2Ftext%3E%0A%3Cpath%20d%3D%22M510%2060%20H585%22%20stroke%3D%22%235f695c%22%20stroke-width%3D%227%22%2F%3E%3Cpath%20d%3D%22M585%2060%20l-20%20-12%20v24%20z%22%20fill%3D%22%235f695c%22%2F%3E%0A%3Crect%20x%3D%22600%22%20y%3D%220%22%20width%3D%22195%22%20height%3D%22120%22%20rx%3D%2222%22%20fill%3D%22%23e6ecf0%22%20stroke%3D%22%23667d8c%22%20stroke-width%3D%223%22%2F%3E%0A%3Ctext%20x%3D%22697%22%20y%3D%2252%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23263743%22%3EJS%3C%2Ftext%3E%0A%3Ctext%20x%3D%22697%22%20y%3D%2288%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23394e5a%22%3E%EB%8F%99%EC%9E%91%3C%2Ftext%3E%0A%3C%2Fg%3E%0A%3Ctext%20x%3D%22110%22%20y%3D%22800%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%232d332d%22%3E%EB%AC%B8%EC%84%9C%20%E2%86%92%20%EC%83%81%ED%98%B8%EC%9E%91%EC%9A%A9%20%E2%86%92%20React%20%E2%86%92%20npm%20%E2%86%92%20Build%3C%2Ftext%3E%0A%3Ctext%20x%3D%22110%22%20y%3D%22855%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%232d332d%22%3E%E2%86%92%20SPA%20%E2%86%92%20API%20%E2%86%92%20SSR%20%C2%B7%20CSR%20%C2%B7%20Hydration%3C%2Ftext%3E%0A%3Cline%20x1%3D%22110%22%20y1%3D%22925%22%20x2%3D%22790%22%20y2%3D%22925%22%20stroke%3D%22%23b8b8b1%22%20stroke-width%3D%223%22%2F%3E%0A%3Ctext%20x%3D%22110%22%20y%3D%221000%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2225%22%20fill%3D%22%234c514b%22%3E29%EB%B6%84%2010%EC%B4%88%20%EA%B0%95%EC%9D%98%20%EC%A0%84%EC%B2%B4%20%ED%9D%90%EB%A6%84%EC%9D%84%20%EC%B4%88%EB%B3%B4%EC%9E%90%EC%9A%A9%EC%9C%BC%EB%A1%9C%20%EC%9E%AC%EA%B5%AC%EC%84%B1%3C%2Ftext%3E%0A%3Ctext%20x%3D%22110%22%20y%3D%221050%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2225%22%20fill%3D%22%234c514b%22%3E%EC%96%91%EC%8B%A4%EC%9E%A5%EC%9D%98%20%EB%B0%94%EC%9D%B4%EB%B8%8C%EC%BD%94%EB%94%A9%EB%8C%80%ED%95%99%3C%2Ftext%3E%0A%3C%2Fsvg%3E",
       "portrait": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22900%22%20height%3D%221200%22%20viewBox%3D%220%200%20900%201200%22%3E%0A%3Crect%20width%3D%22900%22%20height%3D%221200%22%20fill%3D%22%23f0eee8%22%2F%3E%0A%3Crect%20x%3D%2255%22%20y%3D%2255%22%20width%3D%22790%22%20height%3D%221090%22%20rx%3D%2244%22%20fill%3D%22%23ffffff%22%20stroke%3D%22%2365725f%22%20stroke-width%3D%225%22%2F%3E%0A%3Ctext%20x%3D%22110%22%20y%3D%22175%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2234%22%20font-weight%3D%22800%22%20fill%3D%22%2365725f%22%3EFRONTEND%20ROOT%20MAP%3C%2Ftext%3E%0A%3Ctext%20x%3D%22110%22%20y%3D%22290%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2266%22%20font-weight%3D%22900%22%20fill%3D%22%2320241f%22%3E%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C%3C%2Ftext%3E%0A%3Ctext%20x%3D%22110%22%20y%3D%22365%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2266%22%20font-weight%3D%22900%22%20fill%3D%22%2320241f%22%3E%EA%B8%B0%EB%B3%B8%20%EC%A7%80%EC%8B%9D%3C%2Ftext%3E%0A%3Ctext%20x%3D%22110%22%20y%3D%22430%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2231%22%20font-weight%3D%22600%22%20fill%3D%22%234a5048%22%3E%EC%99%9C%20%EC%83%9D%EA%B2%BC%EB%8A%94%EC%A7%80%EB%A1%9C%20%EC%9D%B4%ED%95%B4%ED%95%98%EB%8A%94%20%EC%99%84%EC%A0%84%EA%B5%90%EC%9E%AC%3C%2Ftext%3E%0A%3Cg%20transform%3D%22translate(110%20535)%22%3E%0A%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%22195%22%20height%3D%22120%22%20rx%3D%2222%22%20fill%3D%22%23e9efe5%22%20stroke%3D%22%236c7d64%22%20stroke-width%3D%223%22%2F%3E%0A%3Ctext%20x%3D%2297%22%20y%3D%2252%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23263026%22%3EHTML%3C%2Ftext%3E%0A%3Ctext%20x%3D%2297%22%20y%3D%2288%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23394238%22%3E%EA%B5%AC%EC%A1%B0%3C%2Ftext%3E%0A%3Cpath%20d%3D%22M210%2060%20H285%22%20stroke%3D%22%235f695c%22%20stroke-width%3D%227%22%2F%3E%3Cpath%20d%3D%22M285%2060%20l-20%20-12%20v24%20z%22%20fill%3D%22%235f695c%22%2F%3E%0A%3Crect%20x%3D%22300%22%20y%3D%220%22%20width%3D%22195%22%20height%3D%22120%22%20rx%3D%2222%22%20fill%3D%22%23f2e9d9%22%20stroke%3D%22%238d7850%22%20stroke-width%3D%223%22%2F%3E%0A%3Ctext%20x%3D%22397%22%20y%3D%2252%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23392f22%22%3ECSS%3C%2Ftext%3E%0A%3Ctext%20x%3D%22397%22%20y%3D%2288%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23534738%22%3E%ED%91%9C%ED%98%84%3C%2Ftext%3E%0A%3Cpath%20d%3D%22M510%2060%20H585%22%20stroke%3D%22%235f695c%22%20stroke-width%3D%227%22%2F%3E%3Cpath%20d%3D%22M585%2060%20l-20%20-12%20v24%20z%22%20fill%3D%22%235f695c%22%2F%3E%0A%3Crect%20x%3D%22600%22%20y%3D%220%22%20width%3D%22195%22%20height%3D%22120%22%20rx%3D%2222%22%20fill%3D%22%23e6ecf0%22%20stroke%3D%22%23667d8c%22%20stroke-width%3D%223%22%2F%3E%0A%3Ctext%20x%3D%22697%22%20y%3D%2252%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23263743%22%3EJS%3C%2Ftext%3E%0A%3Ctext%20x%3D%22697%22%20y%3D%2288%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23394e5a%22%3E%EB%8F%99%EC%9E%91%3C%2Ftext%3E%0A%3C%2Fg%3E%0A%3Ctext%20x%3D%22110%22%20y%3D%22800%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%232d332d%22%3E%EB%AC%B8%EC%84%9C%20%E2%86%92%20%EC%83%81%ED%98%B8%EC%9E%91%EC%9A%A9%20%E2%86%92%20React%20%E2%86%92%20npm%20%E2%86%92%20Build%3C%2Ftext%3E%0A%3Ctext%20x%3D%22110%22%20y%3D%22855%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%232d332d%22%3E%E2%86%92%20SPA%20%E2%86%92%20API%20%E2%86%92%20SSR%20%C2%B7%20CSR%20%C2%B7%20Hydration%3C%2Ftext%3E%0A%3Cline%20x1%3D%22110%22%20y1%3D%22925%22%20x2%3D%22790%22%20y2%3D%22925%22%20stroke%3D%22%23b8b8b1%22%20stroke-width%3D%223%22%2F%3E%0A%3Ctext%20x%3D%22110%22%20y%3D%221000%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2225%22%20fill%3D%22%234c514b%22%3E29%EB%B6%84%2010%EC%B4%88%20%EA%B0%95%EC%9D%98%20%EC%A0%84%EC%B2%B4%20%ED%9D%90%EB%A6%84%EC%9D%84%20%EC%B4%88%EB%B3%B4%EC%9E%90%EC%9A%A9%EC%9C%BC%EB%A1%9C%20%EC%9E%AC%EA%B5%AC%EC%84%B1%3C%2Ftext%3E%0A%3Ctext%20x%3D%22110%22%20y%3D%221050%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2225%22%20fill%3D%22%234c514b%22%3E%EC%96%91%EC%8B%A4%EC%9E%A5%EC%9D%98%20%EB%B0%94%EC%9D%B4%EB%B8%8C%EC%BD%94%EB%94%A9%EB%8C%80%ED%95%99%3C%2Ftext%3E%0A%3C%2Fsvg%3E",
       "published": "2026-09-23",
-      "version": 3,
+      "version": 4,
       "imported": false,
       "sourceUrl": "https://youtu.be/Kl5EcYd3G2E",
       "sourceDuration": "29:10",
@@ -1745,7 +1745,7 @@
             },
             {
               "type": "p",
-              "text": "강의는 문서 공유 시스템을 만들려면 세 가지가 필요하다고 설명합니다. 첫째는 문서의 구조를 쓰는 규칙인 HTML입니다.",
+              "text": "강의는 1991년 무렵 웹의 기본 기술로 HTML·URL·HTTP가 자리 잡는 흐름을 설명합니다. 문서 공유 시스템을 만들려면 세 가지가 필요하며, 첫째는 문서의 구조를 쓰는 규칙인 HTML입니다.",
               "sourceRefs": [
                 {
                   "range": "01:33-02:34",
@@ -2014,7 +2014,7 @@
             },
             {
               "type": "p",
-              "text": "이 문제를 해결하기 위해 CSS가 등장합니다. 핵심 철학은 ‘구조와 표현을 분리하자’입니다. HTML은 내용의 의미를 맡고, CSS는 색상·폰트·크기·배치 같은 모양을 맡습니다.",
+              "text": "이 문제를 해결하기 위해 1996년 CSS가 등장합니다. 핵심 철학은 ‘구조와 표현을 분리하자’입니다. HTML은 내용의 의미를 맡고, CSS는 색상·폰트·크기·배치 같은 모양을 맡습니다.",
               "sourceRefs": [
                 {
                   "range": "04:39-05:09",
@@ -2171,7 +2171,7 @@
           "blocks": [
             {
               "type": "p",
-              "text": "강의는 JavaScript를 소개하면서 먼저 Java와 JavaScript가 완전히 다른 언어라고 강조합니다. 이름이 비슷해 혼동하기 쉽지만 설계와 용도가 다릅니다.",
+              "text": "강의는 1995년에 등장한 JavaScript를 소개하면서 먼저 Java와 JavaScript가 완전히 다른 언어라고 강조합니다. 이름이 비슷해 혼동하기 쉽지만 설계와 용도가 다릅니다.",
               "sourceRefs": [
                 {
                   "range": "05:41-06:10",
@@ -2841,7 +2841,7 @@
             },
             {
               "type": "p",
-              "text": "브라우저마다 DOM 조작 방법의 차이가 있고 코드도 길어지자 jQuery가 등장했습니다. 강의는 jQuery가 크로스 브라우저 문제를 상당 부분 줄이고 DOM 조작 코드를 짧게 만들어 당시 큰 도움이 됐다고 설명합니다.",
+              "text": "브라우저마다 DOM 조작 방법의 차이가 있고 코드도 길어지자 2006년 jQuery가 등장했습니다. 강의는 jQuery가 크로스 브라우저 문제를 상당 부분 줄이고 DOM 조작 코드를 짧게 만들어 당시 큰 도움이 됐다고 설명합니다.",
               "sourceRefs": [
                 {
                   "range": "12:17-12:46",
@@ -2910,7 +2910,7 @@
             },
             {
               "type": "p",
-              "text": "이 흐름에서 React가 등장합니다. 강의는 ‘데이터가 바뀌면 화면은 그 상태에 맞게 바뀐다’는 방향으로 설명합니다.",
+              "text": "이 흐름에서 2013년 React가 등장합니다. 강의는 ‘데이터가 바뀌면 화면은 그 상태에 맞게 바뀐다’는 방향으로 설명합니다.",
               "sourceRefs": [
                 {
                   "range": "12:47-13:17",
@@ -3287,7 +3287,7 @@
             },
             {
               "type": "p",
-              "text": "강의는 이 흐름에서 Node.js를 설명합니다. Node.js는 JavaScript를 브라우저 밖에서도 실행할 수 있게 해 주는 런타임입니다.",
+              "text": "강의는 2009년 등장한 Node.js를 설명합니다. Node.js는 JavaScript를 브라우저 밖에서도 실행할 수 있게 해 주는 런타임입니다.",
               "sourceRefs": [
                 {
                   "range": "15:22-15:52",
@@ -3359,7 +3359,7 @@
             },
             {
               "type": "p",
-              "text": "그리고 npm이 등장합니다. 강의는 npm을 프로그래밍 세계의 앱스토어라고 설명합니다. 다른 개발자가 만든 패키지를 명령어 한 줄로 설치할 수 있습니다.",
+              "text": "그리고 2010년 npm이 등장합니다. 강의는 npm을 프로그래밍 세계의 앱스토어라고 설명합니다. 다른 개발자가 만든 패키지를 명령어 한 줄로 설치할 수 있습니다.",
               "sourceRefs": [
                 {
                   "range": "15:53-16:22",
@@ -3894,7 +3894,7 @@
             },
             {
               "type": "p",
-              "text": "쉽게 말하면 ‘새 페이지로 완전히 이사 간다’기보다 ‘같은 집 안에서 보여 주는 방을 바꾼다’는 느낌에 가깝습니다. 다만 이 비유는 이해를 돕기 위한 설명이고, 강의의 핵심은 JavaScript가 화면 전환을 맡는다는 점입니다.",
+              "text": "강의는 스마트폰 앱처럼 화면이 부드럽게 전환되는 경험을 예로 듭니다. SPA에서는 새 HTML 문서를 계속 받아오는 대신 JavaScript가 현재 앱 안에서 보여 줄 화면을 바꾸는 쪽으로 동작합니다.",
               "sourceRefs": [
                 {
                   "range": "20:59-21:28",
@@ -4544,6 +4544,19 @@
               ],
               "_origin": "explanation",
               "id": "yt-frontend-roots-Kl5EcYd3G2E-c15-v3-11"
+            },
+            {
+              "id": "yt-frontend-roots-Kl5EcYd3G2E-c15-v4-speaker-opinion",
+              "type": "p",
+              "text": "강의자는 정답은 상황에 따라 달라진다고 정리하면서도, 자신의 실무적 의견으로는 요즘 환경에서는 SSR을 사용하는 편이 괜찮다고 덧붙입니다. 이 부분은 보편적인 규칙이 아니라 영상 속 발표자의 선택 의견으로 구분해서 이해하면 됩니다.",
+              "sourceRefs": [
+                {
+                  "range": "26:36-27:05",
+                  "chunk": "c007",
+                  "videoId": "Kl5EcYd3G2E"
+                }
+              ],
+              "_origin": "source"
             },
             {
               "type": "quote",
@@ -5713,7 +5726,7 @@
           "sourceAmbiguities": "documented",
           "visualCompleteness": "diagrams-only-no-verified-video-screenshots",
           "reviewer": "assistant-second-pass",
-          "note": "원문 전사·기존 교재·초보자 해설을 다시 대조한 동일 어시스턴트의 2차 검수. 독립 인간 검수로 주장하지 않음."
+          "note": "원문 전사→원본 잠금 기준본→완전초보자 해설 순으로 재대조. 원문의 연도와 발표자 개인 의견을 복원하고, 원문에 없는 신규 비유는 제거함. 독립 인간 검수로 주장하지 않음."
         }
       },
       "generated": true,
