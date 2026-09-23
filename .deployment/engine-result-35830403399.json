@@ -1,0 +1,200 @@
+{
+  "run": "35830403399",
+  "status": "success",
+  "sourceSha": "1d13396237c0975c179700d9bd6fa00312fa6e8f",
+  "url": "https://chatbook-library-20260923.netlify.app/engine/",
+  "sourceArchiveSha256": "c8dd8b0375c63b14dab4602bd8595df85af75c5e91d2ff671c7876bb306a1a10",
+  "verification": {
+    "engineVersion": "1.0.0",
+    "nodeUnitTests": {
+      "passed": 56,
+      "failed": 0,
+      "actualExecution": true
+    },
+    "localControlledVideoTests": {
+      "passed": 3,
+      "failed": 0,
+      "actualDecoding": true,
+      "actualYouTubeCapture": false
+    },
+    "localBrowserTest": {
+      "status": "BLOCKED_BY_RUNTIME_BROWSER_POLICY",
+      "passed": false
+    },
+    "actualNewModelApiCalls": 0,
+    "actualNewYouTubeEndToEndTests": 0,
+    "semanticFidelityGuaranteed": false,
+    "runnerBrowser": {
+      "passed": true,
+      "results": [
+        {
+          "viewport": [
+            360,
+            800
+          ],
+          "horizontalOverflow": false,
+          "themeToggle": true,
+          "sourcePrepare": true,
+          "jobDownload": true,
+          "jsErrors": [],
+          "scope": "Chromium emulation; not a physical Galaxy"
+        },
+        {
+          "viewport": [
+            412,
+            915
+          ],
+          "horizontalOverflow": false,
+          "themeToggle": true,
+          "sourcePrepare": true,
+          "jobDownload": true,
+          "jsErrors": [],
+          "scope": "Chromium emulation; not a physical Galaxy"
+        },
+        {
+          "viewport": [
+            800,
+            1280
+          ],
+          "horizontalOverflow": false,
+          "themeToggle": true,
+          "sourcePrepare": true,
+          "jobDownload": true,
+          "jsErrors": [],
+          "scope": "Chromium emulation; not a physical Galaxy"
+        }
+      ]
+    },
+    "existingTranscriptReplay": {
+      "passed": true,
+      "sources": [
+        {
+          "videoId": "q-j2scvSwdA",
+          "title": "(26년 7월 업데이트) 최신 바이브코딩 13분만에 전부 알려드립니다 l 개념, 툴, 하네스, 스킬",
+          "durationSeconds": 757,
+          "rawBytes": 48389,
+          "rawChars": 20497,
+          "sha256": "534d7f937912434ce2165a69b57a797e9bd7510e8a208c20b05a58c1b92be517",
+          "cueCount": 25,
+          "chunks": 4,
+          "largestChunkBytes": 15684,
+          "elapsedMs": 5.108927000000001,
+          "allCueIdsPreserved": true,
+          "warnings": [
+            "BLOCK_TIMECODES_NOT_EXACT_AUDIO_ALIGNMENT",
+            "TRANSCRIPT_NOT_VERIFIED_AGAINST_AUDIO_AND_SCREEN"
+          ]
+        },
+        {
+          "videoId": "Kl5EcYd3G2E",
+          "title": "비개발자 바이브코더를 위해 만든, 가볍게 들어도 깊게 남는 프론트엔드 기본 지식",
+          "durationSeconds": 1750,
+          "rawBytes": 113012,
+          "rawChars": 47766,
+          "sha256": "164db92fd0a7a4acdc1e052003b57a326958c3b2a30f34cbfef548f2aaea4aaa",
+          "cueCount": 58,
+          "chunks": 8,
+          "largestChunkBytes": 15900,
+          "elapsedMs": 4.571867000000001,
+          "allCueIdsPreserved": true,
+          "warnings": [
+            "BLOCK_TIMECODES_NOT_EXACT_AUDIO_ALIGNMENT",
+            "TRANSCRIPT_NOT_VERIFIED_AGAINST_AUDIO_AND_SCREEN"
+          ]
+        },
+        {
+          "videoId": "0SGfDKMLdaI",
+          "title": "비개발자 바이브코더가 가장 두려워하는 단어 '백엔드' 딱 이 내용만 알면 됩니다",
+          "durationSeconds": 1637,
+          "rawBytes": 104452,
+          "rawChars": 44160,
+          "sha256": "8e697dd236b616eaa36ed3564c1daec3c43e25fd27bf33a495c38c241c9bb1dd",
+          "cueCount": 54,
+          "chunks": 7,
+          "largestChunkBytes": 15961,
+          "elapsedMs": 4.251394000000001,
+          "allCueIdsPreserved": true,
+          "warnings": [
+            "BLOCK_TIMECODES_NOT_EXACT_AUDIO_ALIGNMENT",
+            "TRANSCRIPT_NOT_VERIFIED_AGAINST_AUDIO_AND_SCREEN"
+          ]
+        }
+      ]
+    },
+    "existingBookDataUnchanged": true,
+    "readerCodeUnchanged": true
+  },
+  "liveBrowser": [
+    {
+      "viewport": [
+        360,
+        800
+      ],
+      "horizontalOverflow": false,
+      "themeToggle": true,
+      "sourcePrepare": true,
+      "jobDownload": true,
+      "jsErrors": [],
+      "scope": "Chromium emulation; not a physical Galaxy"
+    },
+    {
+      "viewport": [
+        412,
+        915
+      ],
+      "horizontalOverflow": false,
+      "themeToggle": true,
+      "sourcePrepare": true,
+      "jobDownload": true,
+      "jsErrors": [],
+      "scope": "Chromium emulation; not a physical Galaxy"
+    },
+    {
+      "viewport": [
+        800,
+        1280
+      ],
+      "horizontalOverflow": false,
+      "themeToggle": true,
+      "sourcePrepare": true,
+      "jobDownload": true,
+      "jsErrors": [],
+      "scope": "Chromium emulation; not a physical Galaxy"
+    }
+  ],
+  "benchmarkSummary": [
+    {
+      "minutes": 13,
+      "selectedCalls": 12,
+      "selectedLargestOutput": 3369,
+      "simulatedMedianRatioVsSerial": 0.5831157084533136,
+      "simulatedMedianRatioVsFourLanes": 0.9399946248408128,
+      "choiceReason": "Two lanes use the assumed shared bandwidth without excess in-flight requests. Four-minute chunks limit retry/expansion size. This is a conservative default, not a global optimum."
+    },
+    {
+      "minutes": 30,
+      "selectedCalls": 24,
+      "selectedLargestOutput": 3369,
+      "simulatedMedianRatioVsSerial": 0.5147695083517985,
+      "simulatedMedianRatioVsFourLanes": 0.987982807265558,
+      "choiceReason": "Two lanes use the assumed shared bandwidth without excess in-flight requests. Four-minute chunks limit retry/expansion size. This is a conservative default, not a global optimum."
+    },
+    {
+      "minutes": 60,
+      "selectedCalls": 45,
+      "selectedLargestOutput": 3369,
+      "simulatedMedianRatioVsSerial": 0.5250263542212921,
+      "simulatedMedianRatioVsFourLanes": 1.0098385131800809,
+      "choiceReason": "Two lanes use the assumed shared bandwidth without excess in-flight requests. Four-minute chunks limit retry/expansion size. This is a conservative default, not a global optimum."
+    },
+    {
+      "minutes": 120,
+      "selectedCalls": 90,
+      "selectedLargestOutput": 3369,
+      "simulatedMedianRatioVsSerial": 0.5090120266251476,
+      "simulatedMedianRatioVsFourLanes": 1.0073495186572299,
+      "choiceReason": "Two lanes use the assumed shared bandwidth without excess in-flight requests. Four-minute chunks limit retry/expansion size. This is a conservative default, not a global optimum."
+    }
+  ],
+  "completedAt": "2026-09-23T07:14:04.554Z"
+}
