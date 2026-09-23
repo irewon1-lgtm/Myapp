@@ -50,6 +50,15 @@ assert(html.includes('data-action="continue-track"'),'track resume button must r
 assert(html.includes('TRACK_SWIPE_NAV_V1')&&html.includes('function installTrackGestures()'),'track swipe navigation missing');
 assert(html.includes('COZY_EDITORIAL_2026_V1'),'cozy 2026 UI redesign marker missing');
 assert(html.includes('track-dots')&&html.includes('cozy-track-rail'),'track carousel UI missing');
+assert(html.includes('EDITORIAL_REFERENCE_2026_V2'),'selected editorial reference UI marker missing');
+assert(html.includes('PRACTICE_PYTHON_ENGINE_V1'),'real Python practice engine marker missing');
+assert(html.includes('reader-font-range')&&html.includes('type="range"'),'reader font-size slider missing');
+assert(html.includes('다크 모드')&&html.includes('toggle-dark'),'reader dark-mode control missing');
+assert(html.includes('theme-switch')&&html.includes('reader-menu'),'reader two-control settings menu missing');
+assert(html.includes('highlightedPython(')&&html.includes('code-line'),'Python syntax presentation missing');
+assert(html.includes('runPythonPractice')&&html.includes('loadPyodide'),'real Python execution hook missing');
+assert(html.includes('data-action="summary"')&&html.includes('data-action="practice"'),'reader summary/practice actions missing');
+
 assert(!html.includes('scale=Math.min(1,avail/'),'scale-to-fit must not return');
 assert(!html.includes('space-evenly'),'sparse filler stretching must not return');
 assert(!html.includes('PREMIUM_MINIMAL_V3')&&!html.includes('UNIFORM_READER_GRID_V6')&&!html.includes('NO_GAP_FULL_PAGE_V7'),'legacy CSS layers must not return');
@@ -177,6 +186,9 @@ assert.equal(f.run('state.readerPositions[chapters[current.c].id].physical'),3,'
 assert.equal(f.run('state.readerPositions[chapters[current.c].id].total'),6,'reader layout size must be saved with exact slide');
 f.run('openPage('+JSON.stringify(p1)+',false,true)');
 assert.equal(f.run('pendingSavedPosition.physical'),3,'continue must request saved physical slide');
+f.run('state.readerDark=false;doAction("toggle-dark",{})');
+assert.equal(f.run('state.readerDark'),true,'dark mode toggle must persist state');
+
 f.run('openPage('+JSON.stringify(p1)+');doAction("bookmark",{})');
 f.run('openPage('+JSON.stringify(p2)+');doAction("bookmark",{})');
 assert.equal(f.run('state.bookmarks.length'),2);
@@ -189,7 +201,12 @@ f.run('window.importProgress("bad json")');
 assert.equal(f.run('JSON.stringify(state)'),before);
 assert.equal(typeof f.run('switchTrack'),'function','track swipe switch helper missing');
 assert.equal(typeof f.run('installTrackGestures'),'function','track swipe gesture helper missing');
-for(const r of ['home','books','track','reader','search','saved','settings']){
+assert.equal(typeof f.run('practice'),'function','practice route missing');
+assert.equal(typeof f.run('runPythonPractice'),'function','Python practice runner missing');
+assert(f.run('readerMenu()').includes('다크 모드'),'reader menu dark mode missing');
+assert(f.run('readerMenu()').includes('reader-font-range'),'reader menu font slider missing');
+
+for(const r of ['home','books','track','reader','practice','search','saved','settings']){
   f.run('route='+JSON.stringify(r)+';render()');
   assert(f.elements.app.innerHTML.length>100,'route '+r+' did not render');
 }
@@ -242,7 +259,13 @@ const report={
     'Android bottom safe area',
     'exact logical + physical slide resume after back/navigation',
     'track detail swipe navigation and horizontal track carousel',
-    'cozy 2030-oriented dimensional UI redesign'
+    'cozy 2030-oriented dimensional UI redesign',
+    'selected premium editorial reference UI',
+    'reader dark mode toggle',
+    'direct draggable reader font-size slider',
+    'real Python practice route and execution engine',
+    'Python syntax-colored examples with real output panel',
+    'working reader summary, bookmark and practice controls'
   ],
   status:'PASS'
 };
