@@ -1,4 +1,4 @@
-# Supported production route: exact current content plus actual browser navigation; tolerate canonical URL spelling, not content drift.
+# Publish trigger: Python v4 beginner code readability refresh.
 name: Chatbook fast publish
 on:
   workflow_dispatch:
