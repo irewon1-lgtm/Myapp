@@ -1,0 +1,37 @@
+name: Import Kl5EcYd3G2E source once
+on:
+  push:
+    branches: [chatbook-app-20260923]
+    paths: [.github/workflows/import-Kl5EcYd3G2E-once.yml]
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: chatbook-app-20260923
+      - name: Fetch transcript metadata and learning frames
+        shell: bash
+        run: |
+          set -euo pipefail
+          ID='Kl5EcYd3G2E'
+          mkdir -p "exact_source/$ID/frames"
+          curl -fL --retry 1 --max-time 60 "https://youtube-transcript.ai/transcript/$ID.txt?lang=ko" -o "exact_source/$ID/transcript.md"
+          test $(wc -c < "exact_source/$ID/transcript.md") -gt 1000
+          curl -fL --max-time 30 "https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=$ID&format=json" -o "exact_source/$ID/oembed.json"
+          for name in hqdefault hq1 hq2 hq3; do
+            curl -fsSL --max-time 20 "https://i.ytimg.com/vi/$ID/${name}.jpg" -o "exact_source/$ID/frames/${name}.jpg" || true
+          done
+          echo "transcript bytes: $(wc -c < exact_source/$ID/transcript.md)"
+          head -n 8 "exact_source/$ID/transcript.md"
+      - name: Commit source
+        shell: bash
+        run: |
+          git config user.name 'Chatbook Source Import'
+          git config user.email 'chatbook-source@users.noreply.github.com'
+          git add exact_source/Kl5EcYd3G2E
+          git commit -m 'Import exact source for Kl5EcYd3G2E'
+          git push origin chatbook-app-20260923
