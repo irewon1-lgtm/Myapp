@@ -4,7 +4,7 @@ import path from 'node:path';
 import {createHash} from 'node:crypto';
 import {pathToFileURL} from 'node:url';
 
-export const INFO_PATHS = ['/engine-info.json','/engine-info.html','/llms.txt','/version.json'];
+export const INFO_PATHS = ['/engine-info.json','/engine-info.html','/engine-info','/engine-info/','/llms.txt','/version.json'];
 const canonical = value => JSON.stringify(value, (_, x) => x && !Array.isArray(x) && typeof x === 'object' ? Object.fromEntries(Object.entries(x).sort(([a],[b])=>a.localeCompare(b))) : x);
 const read = file => JSON.parse(fs.readFileSync(file,'utf8'));
 export const sha256 = value => createHash('sha256').update(value).digest('hex');
