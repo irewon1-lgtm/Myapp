@@ -1,0 +1,76 @@
+name: Chatbook learning engine 1.1
+on:
+  push:
+    branches: [chatbook-app-20260923]
+    paths: [.github/workflows/chatbook-learning-1.1.yml]
+permissions:
+  contents: write
+concurrency:
+  group: chatbook-fast-publish
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: chatbook-app-20260923
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Wire and test bounded learning engine
+        shell: bash
+        run: |
+          set -euo pipefail
+          sha256sum public/content/catalog.json public/library.js public/reader.js public/app.js public/core.js public/views.js public/style.css > /tmp/protected.sha256
+          node engine/install-learning.mjs
+          node --test tests/engine/*.test.mjs | tee /tmp/learning-tests.log
+          sha256sum --check /tmp/protected.sha256
+      - name: Check mobile engine screen
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install -q playwright
+          if ! command -v google-chrome >/dev/null && ! command -v chromium >/dev/null && ! command -v chromium-browser >/dev/null; then
+            python -m playwright install --with-deps chromium
+          fi
+          python -m http.server 8768 --bind 127.0.0.1 --directory public > /tmp/learning-http.log 2>&1 &
+          HTTP_PID=$!
+          trap 'kill "$HTTP_PID" 2>/dev/null || true' EXIT
+          sleep 1
+          ENGINE_BROWSER_REPORT=/tmp/learning-browser.json python tests/engine/browser_check.py http://127.0.0.1:8768/engine/
+      - name: Save verified engine wiring without changing books
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json,re,datetime
+          log=open('/tmp/learning-tests.log').read()
+          def count(label):
+              return int(re.findall(r'^# '+label+r' (\d+)$',log,re.M)[-1])
+          result={'version':'1.1.0','tests':count('tests'),'passed':count('pass'),'failed':count('fail'),'browser':json.load(open('/tmp/learning-browser.json')),'existingBooksUnchanged':True,'externalModelCalls':0,'scope':'Code tests and Chromium emulation. Not measured English translation accuracy or physical Galaxy QA.','checkedAt':datetime.datetime.now(datetime.timezone.utc).isoformat()}
+          assert result['failed']==0 and result['passed']==result['tests']
+          open('public/engine/learning-validation.json','w').write(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
+          PY
+          git config user.name 'Chatbook Engine Maintainer'
+          git config user.email 'chatbook-engine@users.noreply.github.com'
+          git add public/engine/index.html public/engine/workbench.mjs public/engine/defaults.json public/engine/learning-policy.json public/engine/learning-validation.json engine/cli.mjs engine/runner.mjs
+          git commit -m 'Activate verified reader-first learning defaults [skip ci]'
+          git push origin chatbook-app-20260923
+      - name: Publish once using existing sealed deployment
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: GITHUB_SHA=$(git rev-parse HEAD) node scripts/fast-publish.mjs
+      - name: Verify published engine bytes
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --input-type=module - <<'JS'
+          import fs from 'node:fs';
+          for(const path of ['engine/learning.mjs','engine/workbench.mjs','engine/defaults.json','engine/learning-validation.json']){
+            const r=await fetch('https://chatbook-library-20260923.netlify.app/'+path+'?check='+Date.now());
+            if(!r.ok||(await r.text())!==fs.readFileSync('public/'+path,'utf8'))throw Error('Live mismatch: '+path);
+          }
+          console.log('Published learning engine files match tested files exactly.');
+          JS
