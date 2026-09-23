@@ -34,3 +34,47 @@ body[data-theme=dark] .reader-flow figure,body[data-theme=dark] .reader-figure-o
  .reader-flow figure{margin:12px 0 18px;padding:5px}
  .reader-image-modal{padding:5px}
 }
+
+/* Home recent-books horizontal carousel */
+.recent-book-carousel{
+  display:flex;
+  gap:16px;
+  overflow-x:auto;
+  overflow-y:hidden;
+  padding:2px 2px 10px;
+  margin:0 -2px;
+  scroll-snap-type:x mandatory;
+  scroll-padding-inline:2px;
+  overscroll-behavior-inline:contain;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+  touch-action:pan-x pan-y;
+}
+.recent-book-carousel::-webkit-scrollbar{display:none}
+.recent-book-carousel .book-card{
+  flex:0 0 clamp(165px,30vw,240px);
+  scroll-snap-align:start;
+  scroll-snap-stop:normal;
+}
+.recent-book-carousel .book-card:last-child{margin-right:12px}
+@media(max-width:650px){
+  .recent-book-carousel{
+    gap:12px;
+    margin-right:-20px;
+    padding-right:20px;
+    scroll-padding-right:20px;
+  }
+  .recent-book-carousel .book-card{
+    flex-basis:clamp(150px,43vw,205px);
+  }
+}
+@media(max-width:390px){
+  .recent-book-carousel{
+    gap:10px;
+    margin-right:-17px;
+    padding-right:17px;
+  }
+  .recent-book-carousel .book-card{
+    flex-basis:46vw;
+  }
+}
