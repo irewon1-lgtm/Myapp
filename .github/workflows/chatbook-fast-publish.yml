@@ -1,4 +1,4 @@
-# publish Chatbook 1.0.2 split-sync + deterministic source provenance
+# publish catalog visibility and CSP fix
 name: Chatbook fast publish
 on:
   workflow_dispatch:
