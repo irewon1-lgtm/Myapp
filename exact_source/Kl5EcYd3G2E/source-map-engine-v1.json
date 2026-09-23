@@ -1,0 +1,201 @@
+{
+  "videoId": "Kl5EcYd3G2E",
+  "title": "비개발자 바이브코더를 위해 만든, 가볍게 들어도 깊게 남는 프론트엔드 기본 지식",
+  "duration": "29:10",
+  "engine": "chatbook-source-locked-beginner-1.0",
+  "chapters": [
+    {
+      "chapter": 1,
+      "title": "왜 프론트엔드 기술은 이렇게 많아졌을까",
+      "sourceRange": "00:01-00:32",
+      "requiredKinds": [
+        "핵심개념",
+        "쉬운설명",
+        "비유/예시",
+        "연결설명"
+      ]
+    },
+    {
+      "chapter": 2,
+      "title": "인터넷과 웹은 같은 것이 아니다",
+      "sourceRange": "00:32-01:33",
+      "requiredKinds": [
+        "핵심개념",
+        "쉬운설명",
+        "비유/예시",
+        "연결설명"
+      ]
+    },
+    {
+      "chapter": 3,
+      "title": "웹의 시작: 문서와 링크",
+      "sourceRange": "01:02-04:07",
+      "requiredKinds": [
+        "핵심개념",
+        "쉬운설명",
+        "비유/예시",
+        "연결설명"
+      ]
+    },
+    {
+      "chapter": 4,
+      "title": "CSS: 구조와 표현을 분리하다",
+      "sourceRange": "04:07-05:41",
+      "requiredKinds": [
+        "핵심개념",
+        "쉬운설명",
+        "비유/예시",
+        "연결설명"
+      ]
+    },
+    {
+      "chapter": 5,
+      "title": "JavaScript: 웹이 사용자의 행동에 반응하기 시작하다",
+      "sourceRange": "05:41-07:43",
+      "requiredKinds": [
+        "핵심개념",
+        "쉬운설명",
+        "비유/예시",
+        "연결설명"
+      ]
+    },
+    {
+      "chapter": 6,
+      "title": "브라우저 전쟁과 크로스 브라우저 문제",
+      "sourceRange": "07:43-10:15",
+      "requiredKinds": [
+        "핵심개념",
+        "쉬운설명",
+        "비유/예시",
+        "연결설명"
+      ]
+    },
+    {
+      "chapter": 7,
+      "title": "브라우저 렌더링: 코드가 실제 화면이 되는 과정",
+      "sourceRange": "10:15-12:17",
+      "requiredKinds": [
+        "핵심개념",
+        "쉬운설명",
+        "비유/예시",
+        "연결설명"
+      ]
+    },
+    {
+      "chapter": 8,
+      "title": "jQuery: 브라우저 차이를 줄여 준 도구",
+      "sourceRange": "12:17-12:47",
+      "requiredKinds": [
+        "핵심개념",
+        "쉬운설명",
+        "비유/예시",
+        "연결설명"
+      ]
+    },
+    {
+      "chapter": 9,
+      "title": "React의 핵심 감각: 추상화 · 컴포넌트 · 상태",
+      "sourceRange": "12:47-14:51",
+      "requiredKinds": [
+        "핵심개념",
+        "쉬운설명",
+        "비유/예시",
+        "연결설명"
+      ]
+    },
+    {
+      "chapter": 10,
+      "title": "Node.js와 npm: 프론트엔드가 조립식 산업이 되다",
+      "sourceRange": "14:51-17:24",
+      "requiredKinds": [
+        "핵심개념",
+        "쉬운설명",
+        "비유/예시",
+        "연결설명"
+      ]
+    },
+    {
+      "chapter": 11,
+      "title": "빌드: 내가 작성한 코드와 배포되는 코드는 다르다",
+      "sourceRange": "17:24-20:28",
+      "requiredKinds": [
+        "핵심개념",
+        "쉬운설명",
+        "비유/예시",
+        "연결설명"
+      ]
+    },
+    {
+      "chapter": 12,
+      "title": "MPA에서 SPA로: 웹이 앱처럼 움직이기 시작하다",
+      "sourceRange": "20:28-21:59",
+      "requiredKinds": [
+        "핵심개념",
+        "쉬운설명",
+        "비유/예시",
+        "연결설명"
+      ]
+    },
+    {
+      "chapter": 13,
+      "title": "프론트엔드와 백엔드가 분리되다",
+      "sourceRange": "21:59-24:04",
+      "requiredKinds": [
+        "핵심개념",
+        "쉬운설명",
+        "비유/예시",
+        "연결설명"
+      ]
+    },
+    {
+      "chapter": 14,
+      "title": "SPA의 대가: 초기 로딩과 SEO",
+      "sourceRange": "24:04-25:36",
+      "requiredKinds": [
+        "핵심개념",
+        "쉬운설명",
+        "비유/예시",
+        "연결설명"
+      ]
+    },
+    {
+      "chapter": 15,
+      "title": "CSR · SSR · 하이드레이션",
+      "sourceRange": "25:36-27:06",
+      "requiredKinds": [
+        "핵심개념",
+        "쉬운설명",
+        "비유/예시",
+        "연결설명"
+      ]
+    },
+    {
+      "chapter": 16,
+      "title": "전체 지도를 다시 연결하기",
+      "sourceRange": "27:06-29:10",
+      "requiredKinds": [
+        "핵심개념",
+        "쉬운설명",
+        "비유/예시",
+        "연결설명"
+      ]
+    }
+  ],
+  "rules": {
+    "preserve": [
+      "핵심 주장",
+      "정의",
+      "예시",
+      "비유",
+      "연결 설명",
+      "주의점"
+    ],
+    "remove": [
+      "자동자막 반복",
+      "인사·홍보",
+      "의미 없는 반복"
+    ],
+    "beginnerRewrite": "같은 뜻을 더 쉬운 말로 풀되 정보 범위를 넓히지 않는다",
+    "fidelity": "각 챕터는 sourceRange 안의 내용과만 연결한다"
+  }
+}
