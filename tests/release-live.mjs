@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {chromium} from 'playwright';
+import {INFO_PATHS} from '../scripts/engine-info.mjs';
 const url='https://chatbook-library-20260923.netlify.app',dir='tests/release-live-results';
 fs.mkdirSync(dir,{recursive:true});
 const localVersion=JSON.parse(fs.readFileSync('dist/version.json','utf8'));
@@ -22,19 +23,24 @@ try{
  assert.deepEqual(info.engine,localInfo.engine);check('deployed engine policy equals tested executable policy',true);
  assert.deepEqual(info.assetSha256,localInfo.assetSha256);check('deployed metadata contains tested asset hashes',true);
  check('fresh source-bound build tests are reported',info.verification.buildTests.status==='passed'&&info.verification.buildTests.sourceDigest===version.sourceDigest&&info.verification.buildTests.nodeFailed===0);
- for(const p of ['/engine-info.json','/engine-info.html','/llms.txt','/version.json']){const r=await get(p);check('no-store header '+p,/no-store/i.test(r.headers.get('cache-control')||''),r.headers.get('cache-control'));}
+ for(const p of INFO_PATHS){const r=await get(p);check('no-store header '+p,/no-store/i.test(r.headers.get('cache-control')||''),{header:r.headers.get('cache-control'),resolvedPath:new URL(r.url).pathname});}
  for(const [p,digest] of Object.entries(info.assetSha256)){const bytes=Buffer.from(await (await get(p)).arrayBuffer());check('live asset SHA256 '+p,createHash('sha256').update(bytes).digest('hex')===digest);}
- const home=await (await get('/')).text();check('home exposes engine discovery link',home.includes('href="/engine-info.json"')&&home.includes('href="/engine-info.html"'));
+ const home=await (await get('/')).text();fs.writeFileSync(dir+'/public-home.html',home);
  const text=await (await get('/llms.txt')).text();check('AI discovery names this release',text.includes(version.releaseId)&&text.includes('/engine-info.json'));
  const catalog=await (await get('/content/catalog.json')).json();assert.deepEqual(catalog,expectedCatalog);check('all current book content is preserved',true,{books:catalog.books.length});
  browser=await chromium.launch({headless:true});
- const staticContext=await browser.newContext({javaScriptEnabled:false,viewport:{width:360,height:800}});const s=await staticContext.newPage();
- await s.goto(url+'/engine-info.html',{waitUntil:'domcontentloaded'});
- check('engine information readable without JavaScript',await s.locator('h1').innerText()==='챗북 엔진 정보');
+ const staticContext=await browser.newContext({javaScriptEnabled:false,viewport:{width:360,height:800}});const s=await staticContext.newPage();s.setDefaultTimeout(20000);
+ await s.goto(url,{waitUntil:'domcontentloaded'});
+ const alternate=s.locator('link[rel="alternate"][type="application/json"]');
+ check('home exposes machine-readable engine information',await alternate.count()>0&&(await alternate.first().getAttribute('href'))==='/engine-info.json');
+ const link=s.locator('a[href*="engine-info"]').first();const linkCount=await s.locator('a[href*="engine-info"]').count();
+ check('home exposes readable engine information without JavaScript',linkCount>0,linkCount?await link.getAttribute('href'):null);
+ await link.click();await s.waitForLoadState('domcontentloaded');
+ check('engine information reachable from home without JavaScript',await s.locator('h1').innerText()==='챗북 엔진 정보');
  check('static engine page contains current release',await s.locator('body').getAttribute('data-release-id')===version.releaseId);
  await s.screenshot({path:dir+'/engine-info-mobile.png'});await staticContext.close();
  const context=await browser.newContext({viewport:{width:412,height:915},serviceWorkers:'block'});
- await context.route('**/*',async route=>{const p=new URL(route.request().url()).pathname;if(['/engine-info.json','/engine-info.html','/llms.txt','/version.json'].includes(p))return route.abort('failed');return route.continue();});
+ await context.route('**/*',async route=>{const p=new URL(route.request().url()).pathname;if(INFO_PATHS.includes(p))return route.abort('failed');return route.continue();});
  const p=await context.newPage();p.on('pageerror',e=>report.errors.push(e.message));p.setDefaultTimeout(20000);
  await p.goto(url,{waitUntil:'domcontentloaded'});await p.waitForFunction(()=>window.CB&&CB.catalog?.books?.length>0);
  check('library opens when metadata endpoints fail',await p.evaluate(n=>CB.catalog.books.length===n,catalog.books.length));
