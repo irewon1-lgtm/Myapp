@@ -1,9 +1,1182 @@
 {
   "schema": 1,
-  "version": "2026-09-23.5",
-  "updatedAt": "2026-09-23T02:21:58.768Z",
-  "notice": "새 YouTube 완전교재가 추가되었습니다: 프론트엔드 기본 지식 완전교재",
+  "version": "2026-09-23.6",
+  "updatedAt": "2026-09-23T04:11:12.244Z",
+  "notice": "새 완전교재가 추가되었습니다: 백엔드 기본 지식 완전교재",
   "books": [
+    {
+      "id": "yt-backend-roots-0SGfDKMLdaI",
+      "title": "백엔드 기본 지식 완전교재",
+      "subtitle": "동적 서버 · DB · API · 인증 · 성능 · 확장 · 마이크로서비스 · DevOps를 한 흐름으로",
+      "author": "양실장의 바이브코딩대학",
+      "edition": "YouTube 강의 완전교재 · 27분 17초",
+      "category": "코딩·백엔드",
+      "cover": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22900%22%20height%3D%221200%22%20viewBox%3D%220%200%20900%201200%22%3E%0A%3Crect%20width%3D%22900%22%20height%3D%221200%22%20fill%3D%22%23f4eee2%22%2F%3E%3Crect%20x%3D%2258%22%20y%3D%2258%22%20width%3D%22784%22%20height%3D%221084%22%20rx%3D%2246%22%20fill%3D%22%23fffdf8%22%20stroke%3D%22%2387907a%22%20stroke-width%3D%225%22%2F%3E%0A%3Ctext%20x%3D%22110%22%20y%3D%22190%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2234%22%20font-weight%3D%22700%22%20fill%3D%22%2368715f%22%3EBACKEND%20ROOT%20MAP%3C%2Ftext%3E%0A%3Ctext%20x%3D%22110%22%20y%3D%22295%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2266%22%20font-weight%3D%22800%22%20fill%3D%22%2320251f%22%3E%EB%B0%B1%EC%97%94%EB%93%9C%20%EA%B8%B0%EB%B3%B8%20%EC%A7%80%EC%8B%9D%3C%2Ftext%3E%0A%3Ctext%20x%3D%22110%22%20y%3D%22365%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2234%22%20font-weight%3D%22600%22%20fill%3D%22%23656b60%22%3E%EB%B9%84%EA%B0%9C%EB%B0%9C%EC%9E%90%20%EB%B0%94%EC%9D%B4%EB%B8%8C%EC%BD%94%EB%8D%94%EB%A5%BC%20%EC%9C%84%ED%95%9C%20%EC%99%84%EC%A0%84%EA%B5%90%EC%9E%AC%3C%2Ftext%3E%0A%3Cg%20transform%3D%22translate(110%20480)%22%3E%0A%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%22220%22%20height%3D%22120%22%20rx%3D%2224%22%20fill%3D%22%23e8eee3%22%2F%3E%3Ctext%20x%3D%22110%22%20y%3D%2252%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2229%22%20font-weight%3D%22800%22%20fill%3D%22%23344132%22%3E%EC%9A%94%EC%B2%AD%3C%2Ftext%3E%3Ctext%20x%3D%22110%22%20y%3D%2290%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2221%22%20fill%3D%22%23667060%22%3EHTTP%3C%2Ftext%3E%0A%3Cpath%20d%3D%22M235%2060%20H315%22%20stroke%3D%22%2367725f%22%20stroke-width%3D%227%22%2F%3E%3Cpath%20d%3D%22M315%2060%20l-20%20-12%20v24%20z%22%20fill%3D%22%2367725f%22%2F%3E%0A%3Crect%20x%3D%22330%22%20y%3D%220%22%20width%3D%22220%22%20height%3D%22120%22%20rx%3D%2224%22%20fill%3D%22%23f3e7d1%22%2F%3E%3Ctext%20x%3D%22440%22%20y%3D%2252%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2229%22%20font-weight%3D%22800%22%20fill%3D%22%234b3d2b%22%3E%EB%B0%B1%EC%97%94%EB%93%9C%3C%2Ftext%3E%3Ctext%20x%3D%22440%22%20y%3D%2290%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2221%22%20fill%3D%22%237a674b%22%3E%EB%A1%9C%EC%A7%81%20%C2%B7%20API%3C%2Ftext%3E%0A%3Cpath%20d%3D%22M565%2060%20H645%22%20stroke%3D%22%2367725f%22%20stroke-width%3D%227%22%2F%3E%3Cpath%20d%3D%22M645%2060%20l-20%20-12%20v24%20z%22%20fill%3D%22%2367725f%22%2F%3E%0A%3Crect%20x%3D%22660%22%20y%3D%220%22%20width%3D%22220%22%20height%3D%22120%22%20rx%3D%2224%22%20fill%3D%22%23e6ebef%22%2F%3E%3Ctext%20x%3D%22770%22%20y%3D%2252%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2229%22%20font-weight%3D%22800%22%20fill%3D%22%23334451%22%3E%EB%8D%B0%EC%9D%B4%ED%84%B0%3C%2Ftext%3E%3Ctext%20x%3D%22770%22%20y%3D%2290%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2221%22%20fill%3D%22%2361717c%22%3EDB%20%C2%B7%20Cache%3C%2Ftext%3E%0A%3C%2Fg%3E%0A%3Ctext%20x%3D%22110%22%20y%3D%22760%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22700%22%20fill%3D%22%233b4037%22%3E%EB%8F%99%EC%A0%81%20%ED%8E%98%EC%9D%B4%EC%A7%80%20%E2%86%92%20DB%20%E2%86%92%20API%20%E2%86%92%20%EC%9D%B8%EC%A6%9D%20%E2%86%92%20%EC%84%B1%EB%8A%A5%3C%2Ftext%3E%0A%3Ctext%20x%3D%22110%22%20y%3D%22815%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22700%22%20fill%3D%22%233b4037%22%3E%E2%86%92%20%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98%20%E2%86%92%20%ED%99%95%EC%9E%A5%20%E2%86%92%20%EB%A7%88%EC%9D%B4%ED%81%AC%EB%A1%9C%EC%84%9C%EB%B9%84%EC%8A%A4%20%E2%86%92%20DevOps%3C%2Ftext%3E%0A%3Cline%20x1%3D%22110%22%20y1%3D%22880%22%20x2%3D%22790%22%20y2%3D%22880%22%20stroke%3D%22%23d8cdb9%22%20stroke-width%3D%223%22%2F%3E%0A%3Ctext%20x%3D%22110%22%20y%3D%22955%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2225%22%20fill%3D%22%23756d61%22%3E%EC%98%81%EC%83%81%2027%3A17%20%EC%A0%84%EC%B2%B4%20%ED%9D%90%EB%A6%84%EC%9D%84%20%ED%95%99%EC%8A%B5%EC%9A%A9%EC%9C%BC%EB%A1%9C%20%EC%9E%AC%EA%B5%AC%EC%84%B1%3C%2Ftext%3E%0A%3Ctext%20x%3D%22110%22%20y%3D%221005%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2225%22%20fill%3D%22%23756d61%22%3E%EC%96%91%EC%8B%A4%EC%9E%A5%EC%9D%98%20%EB%B0%94%EC%9D%B4%EB%B8%8C%EC%BD%94%EB%94%A9%EB%8C%80%ED%95%99%3C%2Ftext%3E%0A%3C%2Fsvg%3E",
+      "portrait": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22900%22%20height%3D%221200%22%20viewBox%3D%220%200%20900%201200%22%3E%0A%3Crect%20width%3D%22900%22%20height%3D%221200%22%20fill%3D%22%23f4eee2%22%2F%3E%3Crect%20x%3D%2258%22%20y%3D%2258%22%20width%3D%22784%22%20height%3D%221084%22%20rx%3D%2246%22%20fill%3D%22%23fffdf8%22%20stroke%3D%22%2387907a%22%20stroke-width%3D%225%22%2F%3E%0A%3Ctext%20x%3D%22110%22%20y%3D%22190%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2234%22%20font-weight%3D%22700%22%20fill%3D%22%2368715f%22%3EBACKEND%20ROOT%20MAP%3C%2Ftext%3E%0A%3Ctext%20x%3D%22110%22%20y%3D%22295%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2266%22%20font-weight%3D%22800%22%20fill%3D%22%2320251f%22%3E%EB%B0%B1%EC%97%94%EB%93%9C%20%EA%B8%B0%EB%B3%B8%20%EC%A7%80%EC%8B%9D%3C%2Ftext%3E%0A%3Ctext%20x%3D%22110%22%20y%3D%22365%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2234%22%20font-weight%3D%22600%22%20fill%3D%22%23656b60%22%3E%EB%B9%84%EA%B0%9C%EB%B0%9C%EC%9E%90%20%EB%B0%94%EC%9D%B4%EB%B8%8C%EC%BD%94%EB%8D%94%EB%A5%BC%20%EC%9C%84%ED%95%9C%20%EC%99%84%EC%A0%84%EA%B5%90%EC%9E%AC%3C%2Ftext%3E%0A%3Cg%20transform%3D%22translate(110%20480)%22%3E%0A%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%22220%22%20height%3D%22120%22%20rx%3D%2224%22%20fill%3D%22%23e8eee3%22%2F%3E%3Ctext%20x%3D%22110%22%20y%3D%2252%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2229%22%20font-weight%3D%22800%22%20fill%3D%22%23344132%22%3E%EC%9A%94%EC%B2%AD%3C%2Ftext%3E%3Ctext%20x%3D%22110%22%20y%3D%2290%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2221%22%20fill%3D%22%23667060%22%3EHTTP%3C%2Ftext%3E%0A%3Cpath%20d%3D%22M235%2060%20H315%22%20stroke%3D%22%2367725f%22%20stroke-width%3D%227%22%2F%3E%3Cpath%20d%3D%22M315%2060%20l-20%20-12%20v24%20z%22%20fill%3D%22%2367725f%22%2F%3E%0A%3Crect%20x%3D%22330%22%20y%3D%220%22%20width%3D%22220%22%20height%3D%22120%22%20rx%3D%2224%22%20fill%3D%22%23f3e7d1%22%2F%3E%3Ctext%20x%3D%22440%22%20y%3D%2252%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2229%22%20font-weight%3D%22800%22%20fill%3D%22%234b3d2b%22%3E%EB%B0%B1%EC%97%94%EB%93%9C%3C%2Ftext%3E%3Ctext%20x%3D%22440%22%20y%3D%2290%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2221%22%20fill%3D%22%237a674b%22%3E%EB%A1%9C%EC%A7%81%20%C2%B7%20API%3C%2Ftext%3E%0A%3Cpath%20d%3D%22M565%2060%20H645%22%20stroke%3D%22%2367725f%22%20stroke-width%3D%227%22%2F%3E%3Cpath%20d%3D%22M645%2060%20l-20%20-12%20v24%20z%22%20fill%3D%22%2367725f%22%2F%3E%0A%3Crect%20x%3D%22660%22%20y%3D%220%22%20width%3D%22220%22%20height%3D%22120%22%20rx%3D%2224%22%20fill%3D%22%23e6ebef%22%2F%3E%3Ctext%20x%3D%22770%22%20y%3D%2252%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2229%22%20font-weight%3D%22800%22%20fill%3D%22%23334451%22%3E%EB%8D%B0%EC%9D%B4%ED%84%B0%3C%2Ftext%3E%3Ctext%20x%3D%22770%22%20y%3D%2290%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2221%22%20fill%3D%22%2361717c%22%3EDB%20%C2%B7%20Cache%3C%2Ftext%3E%0A%3C%2Fg%3E%0A%3Ctext%20x%3D%22110%22%20y%3D%22760%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22700%22%20fill%3D%22%233b4037%22%3E%EB%8F%99%EC%A0%81%20%ED%8E%98%EC%9D%B4%EC%A7%80%20%E2%86%92%20DB%20%E2%86%92%20API%20%E2%86%92%20%EC%9D%B8%EC%A6%9D%20%E2%86%92%20%EC%84%B1%EB%8A%A5%3C%2Ftext%3E%0A%3Ctext%20x%3D%22110%22%20y%3D%22815%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22700%22%20fill%3D%22%233b4037%22%3E%E2%86%92%20%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98%20%E2%86%92%20%ED%99%95%EC%9E%A5%20%E2%86%92%20%EB%A7%88%EC%9D%B4%ED%81%AC%EB%A1%9C%EC%84%9C%EB%B9%84%EC%8A%A4%20%E2%86%92%20DevOps%3C%2Ftext%3E%0A%3Cline%20x1%3D%22110%22%20y1%3D%22880%22%20x2%3D%22790%22%20y2%3D%22880%22%20stroke%3D%22%23d8cdb9%22%20stroke-width%3D%223%22%2F%3E%0A%3Ctext%20x%3D%22110%22%20y%3D%22955%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2225%22%20fill%3D%22%23756d61%22%3E%EC%98%81%EC%83%81%2027%3A17%20%EC%A0%84%EC%B2%B4%20%ED%9D%90%EB%A6%84%EC%9D%84%20%ED%95%99%EC%8A%B5%EC%9A%A9%EC%9C%BC%EB%A1%9C%20%EC%9E%AC%EA%B5%AC%EC%84%B1%3C%2Ftext%3E%0A%3Ctext%20x%3D%22110%22%20y%3D%221005%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2225%22%20fill%3D%22%23756d61%22%3E%EC%96%91%EC%8B%A4%EC%9E%A5%EC%9D%98%20%EB%B0%94%EC%9D%B4%EB%B8%8C%EC%BD%94%EB%94%A9%EB%8C%80%ED%95%99%3C%2Ftext%3E%0A%3C%2Fsvg%3E",
+      "published": "2026-09-23",
+      "version": 1,
+      "imported": true,
+      "sourceUrl": "https://youtu.be/0SGfDKMLdaI",
+      "sourceDuration": "27:17",
+      "quote": "모든 발전은 문제 해결의 결과다.",
+      "description": "비개발자 바이브코더가 백엔드를 ‘기술 이름 목록’이 아니라 문제 해결의 역사로 이해하도록 구성한 학습용 전자책입니다. 정적 웹의 한계에서 시작해 동적 서버, 데이터베이스, MVC, API, 언어와 프레임워크, 세션·쿠키, 인증·인가·JWT, 비동기·캐시, 트랜잭션, 서버 확장, 마이크로서비스, CI/CD·Docker·운영까지 강의 전체 흐름을 따라갑니다.",
+      "chapters": [
+        {
+          "id": "yt-backend-roots-0SGfDKMLdaI-c1",
+          "title": "백엔드는 왜 생겼을까",
+          "subtitle": "정적인 문서로는 ‘사람마다 다른 결과’를 만들 수 없었다",
+          "summary": [
+            "초기 서버는 HTML 파일을 저장했다가 요청이 오면 그대로 전달했다.",
+            "방명록·검색처럼 입력에 따라 결과가 달라지는 기능은 미리 만든 파일만으로 처리하기 어렵다.",
+            "서버가 요청을 받아 그때그때 결과를 계산하고 화면을 만들면서 백엔드가 시작된다."
+          ],
+          "blocks": [
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c1-p1",
+              "type": "p",
+              "text": "프론트엔드와 백엔드의 출발점은 같습니다. 초기 웹은 지금처럼 복잡한 서비스가 아니라 글과 이미지가 담긴 문서를 서버에 저장해 두고, 사용자가 주소를 입력하면 그 HTML 파일을 그대로 보내 주는 구조였습니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c1-p2",
+              "type": "p",
+              "text": "이 방식은 모든 사람이 같은 문서를 읽는 동안에는 충분했습니다. 하지만 방명록이 등장하면서 문제가 드러납니다. 방문자 A가 글을 남기면 다음 방문자 B에게는 A의 글까지 포함된 새로운 화면을 보여 줘야 합니다. 누가 언제 어떤 글을 남길지 미리 알 수 없으므로 모든 결과를 HTML 파일로 미리 만들어 둘 수 없습니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c1-p3",
+              "type": "p",
+              "text": "검색도 똑같습니다. 사용자가 ‘치킨’을 검색할지 ‘피자’를 검색할지 미리 알 수 없기 때문에 모든 검색 결과 페이지를 미리 저장해 둘 수 없습니다. 서버가 입력을 받고, 그 순간 필요한 데이터를 계산해, 요청에 맞는 결과를 만들어야 합니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c1-p4",
+              "type": "p",
+              "text": "여기서 서버의 역할이 바뀝니다. 단순히 파일을 보관하는 컴퓨터가 아니라 요청을 처리하고 결과를 제조하는 컴퓨터가 됩니다. CGI 같은 초기 기술은 입력을 받아 데이터를 저장하고, 현재 데이터로 HTML을 새로 조립해 응답하는 흐름을 가능하게 했습니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c1-img1",
+              "type": "image",
+              "src": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221200%22%20height%3D%22675%22%20viewBox%3D%220%200%201200%20675%22%3E%0A%3Crect%20width%3D%221200%22%20height%3D%22675%22%20fill%3D%22%23f7f1e6%22%2F%3E%0A%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221200%22%20height%3D%2213%22%20fill%3D%22%2366735b%22%2F%3E%0A%3Ctext%20x%3D%2260%22%20y%3D%2272%22%20text-anchor%3D%22start%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2238%22%20font-weight%3D%22800%22%20fill%3D%22%23252a22%22%3E%3Ctspan%20x%3D%2260%22%20dy%3D%220%22%3E%EC%A0%95%EC%A0%81%20%EC%9B%B9%EC%97%90%EC%84%9C%20%EB%B0%B1%EC%97%94%EB%93%9C%EB%A1%9C%3C%2Ftspan%3E%3C%2Ftext%3E%0A%3Ctext%20x%3D%2260%22%20y%3D%22116%22%20text-anchor%3D%22start%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2222%22%20font-weight%3D%22500%22%20fill%3D%22%236d6a60%22%3E%3Ctspan%20x%3D%2260%22%20dy%3D%220%22%3E%ED%8C%8C%EC%9D%BC%EC%9D%84%20%EA%BA%BC%EB%82%B4%20%EC%A3%BC%EB%8D%98%20%EC%84%9C%EB%B2%84%EA%B0%80%20%EC%9A%94%EC%B2%AD%EB%A7%88%EB%8B%A4%20%EA%B2%B0%EA%B3%BC%EB%A5%BC%20%E2%80%98%EC%A0%9C%EC%A1%B0%E2%80%99%ED%95%98%EA%B8%B0%20%EC%8B%9C%EC%9E%91%ED%96%88%EB%8B%A4%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%0A%20%20%3Crect%20x%3D%2270%22%20y%3D%22190%22%20width%3D%22270%22%20height%3D%22170%22%20rx%3D%2224%22%20fill%3D%22%23fffdf8%22%20stroke%3D%22%23c9c1b4%22%20stroke-width%3D%223%22%2F%3E%0A%20%20%3Ctext%20x%3D%22205%22%20y%3D%22242%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23283126%22%3E%3Ctspan%20x%3D%22205%22%20dy%3D%220%22%3E%EC%A0%95%EC%A0%81%20%EC%9B%B9%3C%2Ftspan%3E%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22205%22%20y%3D%22284%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2221%22%20font-weight%3D%22500%22%20fill%3D%22%235e6258%22%3E%3Ctspan%20x%3D%22205%22%20dy%3D%220%22%3E%EB%AF%B8%EB%A6%AC%20%EB%A7%8C%EB%93%A0%20HTML%3C%2Ftspan%3E%3Ctspan%20x%3D%22205%22%20dy%3D%2226.25%22%3E%EA%B7%B8%EB%8C%80%EB%A1%9C%20%EC%A0%84%EB%8B%AC%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%0A%20%20%3Cdefs%3E%3Cmarker%20id%3D%22arr%22%20markerWidth%3D%2210%22%20markerHeight%3D%2210%22%20refX%3D%227%22%20refY%3D%223%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M0%2C0%20L0%2C6%20L8%2C3%20z%22%20fill%3D%22%2365705c%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%0A%20%20%3Cline%20x1%3D%22350%22%20y1%3D%22275%22%20x2%3D%22475%22%20y2%3D%22275%22%20stroke%3D%22%2365705c%22%20stroke-width%3D%225%22%20marker-end%3D%22url(%23arr)%22%2F%3E%0A%20%20%3Ctext%20x%3D%22412.5%22%20y%3D%22263%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2220%22%20font-weight%3D%22700%22%20fill%3D%22%2365705c%22%3E%3Ctspan%20x%3D%22412.5%22%20dy%3D%220%22%3E%EC%9A%94%EC%B2%AD%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%0A%20%20%3Crect%20x%3D%22485%22%20y%3D%22190%22%20width%3D%22270%22%20height%3D%22170%22%20rx%3D%2224%22%20fill%3D%22%23f0e8d7%22%20stroke%3D%22%23bfae8f%22%20stroke-width%3D%223%22%2F%3E%0A%20%20%3Ctext%20x%3D%22620%22%20y%3D%22242%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23283126%22%3E%3Ctspan%20x%3D%22620%22%20dy%3D%220%22%3E%EB%8F%99%EC%A0%81%20%EC%84%9C%EB%B2%84%3C%2Ftspan%3E%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22620%22%20y%3D%22284%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2221%22%20font-weight%3D%22500%22%20fill%3D%22%235e6258%22%3E%3Ctspan%20x%3D%22620%22%20dy%3D%220%22%3E%EC%9E%85%EB%A0%A5%20%EB%B0%9B%EA%B3%A0%20%EA%B3%84%EC%82%B0%3C%2Ftspan%3E%3Ctspan%20x%3D%22620%22%20dy%3D%2226.25%22%3EHTML%20%EC%83%88%EB%A1%9C%20%EC%83%9D%EC%84%B1%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%0A%20%20%3Cdefs%3E%3Cmarker%20id%3D%22arr%22%20markerWidth%3D%2210%22%20markerHeight%3D%2210%22%20refX%3D%227%22%20refY%3D%223%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M0%2C0%20L0%2C6%20L8%2C3%20z%22%20fill%3D%22%2365705c%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%0A%20%20%3Cline%20x1%3D%22765%22%20y1%3D%22275%22%20x2%3D%22890%22%20y2%3D%22275%22%20stroke%3D%22%2365705c%22%20stroke-width%3D%225%22%20marker-end%3D%22url(%23arr)%22%2F%3E%0A%20%20%3Ctext%20x%3D%22827.5%22%20y%3D%22263%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2220%22%20font-weight%3D%22700%22%20fill%3D%22%2365705c%22%3E%3Ctspan%20x%3D%22827.5%22%20dy%3D%220%22%3E%EC%9D%91%EB%8B%B5%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%0A%20%20%3Crect%20x%3D%22900%22%20y%3D%22190%22%20width%3D%22230%22%20height%3D%22170%22%20rx%3D%2224%22%20fill%3D%22%23e6eee2%22%20stroke%3D%22%23aaba9f%22%20stroke-width%3D%223%22%2F%3E%0A%20%20%3Ctext%20x%3D%221015%22%20y%3D%22242%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23283126%22%3E%3Ctspan%20x%3D%221015%22%20dy%3D%220%22%3E%EC%82%AC%EC%9A%A9%EC%9E%90%EB%A7%88%EB%8B%A4%3C%2Ftspan%3E%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%221015%22%20y%3D%22284%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2221%22%20font-weight%3D%22500%22%20fill%3D%22%235e6258%22%3E%3Ctspan%20x%3D%221015%22%20dy%3D%220%22%3E%EB%8B%A4%EB%A5%B8%20%EA%B2%B0%EA%B3%BC%3C%2Ftspan%3E%3Ctspan%20x%3D%221015%22%20dy%3D%2226.25%22%3E%EB%B0%A9%EB%AA%85%EB%A1%9D%20%C2%B7%20%EA%B2%80%EC%83%89%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%3Ctext%20x%3D%22600%22%20y%3D%22455%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%2343513e%22%3E%3Ctspan%20x%3D%22600%22%20dy%3D%220%22%3ECGI%20%E2%86%92%20PHP%20%2F%20JSP%20%E2%86%92%20%EC%84%9C%EB%B2%84%20%EC%82%AC%EC%9D%B4%EB%93%9C%20%EB%A0%8C%EB%8D%94%EB%A7%81%3C%2Ftspan%3E%3C%2Ftext%3E%0A%3Ctext%20x%3D%22600%22%20y%3D%22520%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2234%22%20font-weight%3D%22800%22%20fill%3D%22%23283126%22%3E%3Ctspan%20x%3D%22600%22%20dy%3D%220%22%3E%ED%95%B5%EC%8B%AC%20%EB%B3%80%ED%99%94%3A%20%EC%84%9C%EB%B2%84%20%3D%20%EB%B3%B4%EA%B4%80%ED%95%A8%20%20%E2%86%92%20%20%EC%A0%9C%EC%A1%B0%EA%B8%B0%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%3Ctext%20x%3D%221140%22%20y%3D%22642%22%20text-anchor%3D%22end%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2217%22%20fill%3D%22%238c8578%22%3ECHATBOOK%20%C2%B7%20BACKEND%20ROOT%20MAP%3C%2Ftext%3E%0A%3C%2Fsvg%3E",
+              "caption": "정적 파일 전달에서 동적 서버 처리로 바뀌는 흐름. 얼굴 사진 대신 강의 개념을 바로 이해할 수 있는 구조도로 구성했습니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c1-p5",
+              "type": "p",
+              "text": "이후 PHP, JSP 같은 서버 기술이 등장하면서 서버에서 화면을 만들어 보내는 방식이 널리 쓰입니다. 강의에서 말하는 핵심 변화는 간단합니다. ‘서버가 파일을 보관하는 역할에서, 요청마다 결과를 만들어 내는 역할로 바뀌었다.’ 이 변화가 백엔드의 시작입니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c1-q1",
+              "type": "quote",
+              "text": "사용자마다 다른 결과를 줘야 한다. 이 문제가 백엔드를 만들었다."
+            }
+          ]
+        },
+        {
+          "id": "yt-backend-roots-0SGfDKMLdaI-c2",
+          "title": "백엔드 언어가 달라도 뼈대는 비슷하다",
+          "subtitle": "변수 · 조건문 · 반복문 · 함수 · 데이터 타입",
+          "summary": [
+            "백엔드 언어는 문법이 다르지만 공통적인 프로그램 구조를 공유한다.",
+            "다섯 가지 기초는 변수·조건문·반복문·함수·데이터 타입이다.",
+            "클래스·예외 처리·모듈·라이브러리는 이 기본 위에 쌓인다."
+          ],
+          "blocks": [
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c2-p1",
+              "type": "p",
+              "text": "백엔드에 사용되는 언어는 PHP, Python, Java, JavaScript/Node.js, Go 등 여러 가지입니다. 처음 보면 각각 전혀 다른 세계처럼 보이지만 강의는 언어보다 먼저 공통 구조를 보라고 설명합니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c2-p2",
+              "type": "p",
+              "text": "첫째는 변수입니다. 이름이라는 칸에 ‘홍길동’이라는 값을 넣어 두듯 데이터를 이름 붙여 저장합니다. 둘째는 조건문입니다. ‘만약 아이디가 존재하고 비밀번호가 맞으면 로그인 성공, 아니면 실패’처럼 조건에 따라 다른 행동을 선택합니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c2-p3",
+              "type": "p",
+              "text": "셋째는 반복문입니다. 같은 작업을 여러 번 수행해야 할 때 사용합니다. 넷째는 함수입니다. 자주 쓰는 동작을 하나로 묶고 이름을 붙여 다시 사용합니다. 다섯째는 데이터 타입입니다. 값이 숫자인지 글자인지 목록인지처럼 데이터의 성격을 구분합니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c2-img1",
+              "type": "image",
+              "src": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221200%22%20height%3D%22675%22%20viewBox%3D%220%200%201200%20675%22%3E%0A%3Crect%20width%3D%221200%22%20height%3D%22675%22%20fill%3D%22%23f7f1e6%22%2F%3E%0A%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221200%22%20height%3D%2213%22%20fill%3D%22%2366735b%22%2F%3E%0A%3Ctext%20x%3D%2260%22%20y%3D%2272%22%20text-anchor%3D%22start%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2238%22%20font-weight%3D%22800%22%20fill%3D%22%23252a22%22%3E%3Ctspan%20x%3D%2260%22%20dy%3D%220%22%3E%EB%B0%B1%EC%97%94%EB%93%9C%20%EC%96%B8%EC%96%B4%EC%9D%98%20%EA%B3%B5%ED%86%B5%20%EB%BC%88%EB%8C%80%3C%2Ftspan%3E%3C%2Ftext%3E%0A%3Ctext%20x%3D%2260%22%20y%3D%22116%22%20text-anchor%3D%22start%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2222%22%20font-weight%3D%22500%22%20fill%3D%22%236d6a60%22%3E%3Ctspan%20x%3D%2260%22%20dy%3D%220%22%3E%EC%96%B8%EC%96%B4%EA%B0%80%20%EB%8B%AC%EB%9D%BC%EB%8F%84%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8%EC%9D%98%20%EA%B8%B0%EB%B3%B8%20%EC%82%AC%EA%B3%A0%EB%8A%94%20%EB%B0%98%EB%B3%B5%EB%90%9C%EB%8B%A4%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%0A%20%20%3Crect%20x%3D%2260%22%20y%3D%22180%22%20width%3D%22200%22%20height%3D%22145%22%20rx%3D%2224%22%20fill%3D%22%23e9eee3%22%20stroke%3D%22%23aeb99e%22%20stroke-width%3D%223%22%2F%3E%0A%20%20%3Ctext%20x%3D%22160%22%20y%3D%22232%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23283126%22%3E%3Ctspan%20x%3D%22160%22%20dy%3D%220%22%3E%EB%B3%80%EC%88%98%3C%2Ftspan%3E%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22160%22%20y%3D%22274%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2221%22%20font-weight%3D%22500%22%20fill%3D%22%235e6258%22%3E%3Ctspan%20x%3D%22160%22%20dy%3D%220%22%3E%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%A5%BC%20%EB%8B%B4%EB%8A%94%EB%8B%A4%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%0A%20%20%3Crect%20x%3D%22280%22%20y%3D%22180%22%20width%3D%22200%22%20height%3D%22145%22%20rx%3D%2224%22%20fill%3D%22%23f3ead7%22%20stroke%3D%22%23c9b68e%22%20stroke-width%3D%223%22%2F%3E%0A%20%20%3Ctext%20x%3D%22380%22%20y%3D%22232%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23283126%22%3E%3Ctspan%20x%3D%22380%22%20dy%3D%220%22%3E%EC%A1%B0%EA%B1%B4%EB%AC%B8%3C%2Ftspan%3E%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22380%22%20y%3D%22274%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2221%22%20font-weight%3D%22500%22%20fill%3D%22%235e6258%22%3E%3Ctspan%20x%3D%22380%22%20dy%3D%220%22%3E%EB%A7%8C%EC%95%BD%20~%EB%A9%B4%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%0A%20%20%3Crect%20x%3D%22500%22%20y%3D%22180%22%20width%3D%22200%22%20height%3D%22145%22%20rx%3D%2224%22%20fill%3D%22%23e7edf1%22%20stroke%3D%22%239fb1bd%22%20stroke-width%3D%223%22%2F%3E%0A%20%20%3Ctext%20x%3D%22600%22%20y%3D%22232%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23283126%22%3E%3Ctspan%20x%3D%22600%22%20dy%3D%220%22%3E%EB%B0%98%EB%B3%B5%EB%AC%B8%3C%2Ftspan%3E%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22600%22%20y%3D%22274%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2221%22%20font-weight%3D%22500%22%20fill%3D%22%235e6258%22%3E%3Ctspan%20x%3D%22600%22%20dy%3D%220%22%3E%EC%97%AC%EB%9F%AC%20%EB%B2%88%20%EC%8B%A4%ED%96%89%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%0A%20%20%3Crect%20x%3D%22720%22%20y%3D%22180%22%20width%3D%22200%22%20height%3D%22145%22%20rx%3D%2224%22%20fill%3D%22%23eee4ea%22%20stroke%3D%22%23bea8b4%22%20stroke-width%3D%223%22%2F%3E%0A%20%20%3Ctext%20x%3D%22820%22%20y%3D%22232%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23283126%22%3E%3Ctspan%20x%3D%22820%22%20dy%3D%220%22%3E%ED%95%A8%EC%88%98%3C%2Ftspan%3E%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22820%22%20y%3D%22274%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2221%22%20font-weight%3D%22500%22%20fill%3D%22%235e6258%22%3E%3Ctspan%20x%3D%22820%22%20dy%3D%220%22%3E%EB%8F%99%EC%9E%91%EC%9D%84%20%EB%AC%B6%EB%8A%94%EB%8B%A4%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%0A%20%20%3Crect%20x%3D%22940%22%20y%3D%22180%22%20width%3D%22200%22%20height%3D%22145%22%20rx%3D%2224%22%20fill%3D%22%23ece9df%22%20stroke%3D%22%23b8b09b%22%20stroke-width%3D%223%22%2F%3E%0A%20%20%3Ctext%20x%3D%221040%22%20y%3D%22232%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23283126%22%3E%3Ctspan%20x%3D%221040%22%20dy%3D%220%22%3E%EB%8D%B0%EC%9D%B4%ED%84%B0%20%ED%83%80%EC%9E%85%3C%2Ftspan%3E%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%221040%22%20y%3D%22274%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2221%22%20font-weight%3D%22500%22%20fill%3D%22%235e6258%22%3E%3Ctspan%20x%3D%221040%22%20dy%3D%220%22%3E%EC%88%AB%EC%9E%90%20%C2%B7%20%EA%B8%80%20%C2%B7%20%EB%AA%A9%EB%A1%9D%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%3Ctext%20x%3D%22600%22%20y%3D%22430%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22700%22%20fill%3D%22%234e5549%22%3E%3Ctspan%20x%3D%22600%22%20dy%3D%220%22%3E%EA%B7%B8%20%EC%9C%84%EC%97%90%20%ED%81%B4%EB%9E%98%EC%8A%A4%20%C2%B7%20%EC%98%88%EC%99%B8%20%EC%B2%98%EB%A6%AC%20%C2%B7%20%EB%AA%A8%EB%93%88%20%C2%B7%20%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC%EA%B0%80%20%EC%8C%93%EC%9D%B8%EB%8B%A4%3C%2Ftspan%3E%3C%2Ftext%3E%0A%3Ctext%20x%3D%22600%22%20y%3D%22505%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2234%22%20font-weight%3D%22800%22%20fill%3D%22%23283126%22%3E%3Ctspan%20x%3D%22600%22%20dy%3D%220%22%3E%EB%AC%B8%EB%B2%95%EC%9D%80%20%EB%8B%AC%EB%9D%BC%EB%8F%84%20%EB%A1%9C%EC%A7%81%EC%9D%98%20%EA%B5%AC%EC%A1%B0%EB%8A%94%20%EB%B9%84%EC%8A%B7%ED%95%98%EB%8B%A4%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%3Ctext%20x%3D%221140%22%20y%3D%22642%22%20text-anchor%3D%22end%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2217%22%20fill%3D%22%238c8578%22%3ECHATBOOK%20%C2%B7%20BACKEND%20ROOT%20MAP%3C%2Ftext%3E%0A%3C%2Fsvg%3E",
+              "caption": "백엔드 언어가 달라도 공통으로 반복되는 다섯 가지 프로그램 기본 개념."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c2-p4",
+              "type": "p",
+              "text": "실제 프로젝트에서는 클래스, 예외 처리, 모듈, 라이브러리 같은 개념이 더 붙습니다. 클래스는 관련 데이터와 동작을 묶어 구조화하고, 예외 처리는 오류가 발생했을 때 서버가 그대로 죽지 않고 어떻게 대응할지를 정합니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c2-p5",
+              "type": "p",
+              "text": "로그인 기능을 언어별로 적으면 문법 표시는 달라질 수 있지만 ‘아이디와 비밀번호가 조건을 만족하면 성공, 그렇지 않으면 실패’라는 로직은 같습니다. 그래서 한 언어의 구조를 이해하면 다른 언어를 볼 때도 완전히 처음부터 시작하는 느낌이 줄어듭니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c2-p6",
+              "type": "p",
+              "text": "바이브코딩에서도 이 관점이 중요합니다. AI에게 특정 언어 이름만 말하는 것보다 어떤 입력을 받고, 어떤 조건을 검사하고, 어떤 결과를 돌려줘야 하는지 로직을 설명할 수 있으면 언어 선택이 달라져도 요구사항은 유지됩니다."
+            }
+          ]
+        },
+        {
+          "id": "yt-backend-roots-0SGfDKMLdaI-c3",
+          "title": "데이터베이스: 서버가 기억해야 할 것을 저장한다",
+          "subtitle": "텍스트 파일에서 관계형 데이터베이스로",
+          "summary": [
+            "방명록 글처럼 서버가 꺼져도 남아야 하는 데이터는 지속적으로 저장되어야 한다.",
+            "텍스트 파일은 데이터가 많아질수록 검색과 관리가 비효율적이다.",
+            "관계형 데이터베이스는 행·열 구조와 스키마·쿼리로 데이터를 체계적으로 다룬다."
+          ],
+          "blocks": [
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c3-p1",
+              "type": "p",
+              "text": "동적으로 HTML을 만들려면 서버가 이전에 저장된 데이터를 다시 꺼낼 수 있어야 합니다. 방명록의 이름과 메시지가 서버가 꺼질 때마다 사라진다면 서비스가 될 수 없습니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c3-p2",
+              "type": "p",
+              "text": "처음에는 텍스트 파일에 한 줄씩 데이터를 쌓는 방식도 가능했습니다. 하지만 수천 개, 수만 개가 되면 특정 사용자가 특정 날짜에 남긴 글을 찾기 위해 파일 전체를 읽어야 할 수 있습니다. 데이터가 커질수록 검색과 수정이 어려워집니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c3-p3",
+              "type": "p",
+              "text": "그래서 관계형 데이터베이스가 중요해집니다. 표를 생각하면 이해하기 쉽습니다. 열에는 이름, 작성일, 메시지 같은 항목이 있고 행에는 실제 데이터가 쌓입니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c3-p4",
+              "type": "p",
+              "text": "이 구조에서 원하는 데이터를 꺼내거나 바꾸는 요청을 쿼리라고 설명합니다. ‘홍길동이 남긴 방명록 글을 모두 줘’처럼 원하는 조건으로 데이터를 찾습니다. 어떤 열이 있고 어떤 데이터 타입을 사용하는지 정의한 구조는 스키마입니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c3-img1",
+              "type": "image",
+              "src": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221200%22%20height%3D%22675%22%20viewBox%3D%220%200%201200%20675%22%3E%0A%3Crect%20width%3D%221200%22%20height%3D%22675%22%20fill%3D%22%23f7f1e6%22%2F%3E%0A%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221200%22%20height%3D%2213%22%20fill%3D%22%2366735b%22%2F%3E%0A%3Ctext%20x%3D%2260%22%20y%3D%2272%22%20text-anchor%3D%22start%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2238%22%20font-weight%3D%22800%22%20fill%3D%22%23252a22%22%3E%3Ctspan%20x%3D%2260%22%20dy%3D%220%22%3E%EB%B0%B1%EC%97%94%EB%93%9C%EC%9D%98%20%EC%A4%91%EC%8B%AC%3A%20%EB%8D%B0%EC%9D%B4%ED%84%B0%3C%2Ftspan%3E%3C%2Ftext%3E%0A%3Ctext%20x%3D%2260%22%20y%3D%22116%22%20text-anchor%3D%22start%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2222%22%20font-weight%3D%22500%22%20fill%3D%22%236d6a60%22%3E%3Ctspan%20x%3D%2260%22%20dy%3D%220%22%3E%EC%9A%94%EC%B2%AD%EC%9D%84%20%EB%B0%9B%EA%B3%A0%20%E2%86%92%20%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%A5%BC%20%EC%9D%BD%EA%B1%B0%EB%82%98%20%EC%A0%80%EC%9E%A5%ED%95%98%EA%B3%A0%20%E2%86%92%20%EA%B2%B0%EA%B3%BC%EB%A5%BC%20%EB%8F%8C%EB%A0%A4%EC%A4%80%EB%8B%A4%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%0A%20%20%3Crect%20x%3D%2260%22%20y%3D%22210%22%20width%3D%22220%22%20height%3D%22150%22%20rx%3D%2224%22%20fill%3D%22%23e7edf1%22%20stroke%3D%22%239fb1bd%22%20stroke-width%3D%223%22%2F%3E%0A%20%20%3Ctext%20x%3D%22170%22%20y%3D%22262%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23283126%22%3E%3Ctspan%20x%3D%22170%22%20dy%3D%220%22%3E%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8%3C%2Ftspan%3E%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22170%22%20y%3D%22304%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2221%22%20font-weight%3D%22500%22%20fill%3D%22%235e6258%22%3E%3Ctspan%20x%3D%22170%22%20dy%3D%220%22%3E%EB%B0%A9%EB%AA%85%EB%A1%9D%20%EA%B8%80%20%EC%9E%91%EC%84%B1%3C%2Ftspan%3E%3Ctspan%20x%3D%22170%22%20dy%3D%2226.25%22%3E%EA%B2%80%EC%83%89%EC%96%B4%20%EC%9E%85%EB%A0%A5%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%0A%20%20%3Cdefs%3E%3Cmarker%20id%3D%22arr%22%20markerWidth%3D%2210%22%20markerHeight%3D%2210%22%20refX%3D%227%22%20refY%3D%223%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M0%2C0%20L0%2C6%20L8%2C3%20z%22%20fill%3D%22%2365705c%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%0A%20%20%3Cline%20x1%3D%22290%22%20y1%3D%22285%22%20x2%3D%22415%22%20y2%3D%22285%22%20stroke%3D%22%2365705c%22%20stroke-width%3D%225%22%20marker-end%3D%22url(%23arr)%22%2F%3E%0A%20%20%3Ctext%20x%3D%22352.5%22%20y%3D%22273%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2220%22%20font-weight%3D%22700%22%20fill%3D%22%2365705c%22%3E%3Ctspan%20x%3D%22352.5%22%20dy%3D%220%22%3E%EC%9A%94%EC%B2%AD%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%0A%20%20%3Crect%20x%3D%22425%22%20y%3D%22210%22%20width%3D%22260%22%20height%3D%22150%22%20rx%3D%2224%22%20fill%3D%22%23f3ead7%22%20stroke%3D%22%23c9b68e%22%20stroke-width%3D%223%22%2F%3E%0A%20%20%3Ctext%20x%3D%22555%22%20y%3D%22262%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23283126%22%3E%3Ctspan%20x%3D%22555%22%20dy%3D%220%22%3E%EB%B0%B1%EC%97%94%EB%93%9C%3C%2Ftspan%3E%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22555%22%20y%3D%22304%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2221%22%20font-weight%3D%22500%22%20fill%3D%22%235e6258%22%3E%3Ctspan%20x%3D%22555%22%20dy%3D%220%22%3E%EA%B2%80%EC%A6%9D%20%C2%B7%20%EA%B3%84%EC%82%B0%3C%2Ftspan%3E%3Ctspan%20x%3D%22555%22%20dy%3D%2226.25%22%3E%EB%B9%84%EC%A6%88%EB%8B%88%EC%8A%A4%20%EB%A1%9C%EC%A7%81%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%0A%20%20%3Cdefs%3E%3Cmarker%20id%3D%22arr%22%20markerWidth%3D%2210%22%20markerHeight%3D%2210%22%20refX%3D%227%22%20refY%3D%223%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M0%2C0%20L0%2C6%20L8%2C3%20z%22%20fill%3D%22%2365705c%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%0A%20%20%3Cline%20x1%3D%22695%22%20y1%3D%22285%22%20x2%3D%22820%22%20y2%3D%22285%22%20stroke%3D%22%2365705c%22%20stroke-width%3D%225%22%20marker-end%3D%22url(%23arr)%22%2F%3E%0A%20%20%3Ctext%20x%3D%22757.5%22%20y%3D%22273%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2220%22%20font-weight%3D%22700%22%20fill%3D%22%2365705c%22%3E%3Ctspan%20x%3D%22757.5%22%20dy%3D%220%22%3EQuery%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%0A%20%20%3Crect%20x%3D%22830%22%20y%3D%22210%22%20width%3D%22300%22%20height%3D%22150%22%20rx%3D%2224%22%20fill%3D%22%23e9eee3%22%20stroke%3D%22%23aeb99e%22%20stroke-width%3D%223%22%2F%3E%0A%20%20%3Ctext%20x%3D%22980%22%20y%3D%22262%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23283126%22%3E%3Ctspan%20x%3D%22980%22%20dy%3D%220%22%3E%EA%B4%80%EA%B3%84%ED%98%95%20DB%3C%2Ftspan%3E%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22980%22%20y%3D%22304%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2221%22%20font-weight%3D%22500%22%20fill%3D%22%235e6258%22%3E%3Ctspan%20x%3D%22980%22%20dy%3D%220%22%3E%ED%96%89%20%3D%20%EB%8D%B0%EC%9D%B4%ED%84%B0%3C%2Ftspan%3E%3Ctspan%20x%3D%22980%22%20dy%3D%2226.25%22%3E%EC%97%B4%20%3D%20%ED%95%AD%EB%AA%A9%20%C2%B7%20Schema%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%3Ctext%20x%3D%22600%22%20y%3D%22470%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2229%22%20font-weight%3D%22800%22%20fill%3D%22%2343513e%22%3E%3Ctspan%20x%3D%22600%22%20dy%3D%220%22%3E%ED%85%8D%EC%8A%A4%ED%8A%B8%20%ED%8C%8C%EC%9D%BC%20%E2%86%92%20%EA%B2%80%EC%83%89%20%ED%95%9C%EA%B3%84%20%E2%86%92%20%EA%B4%80%EA%B3%84%ED%98%95%20%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%3C%2Ftspan%3E%3C%2Ftext%3E%0A%3Ctext%20x%3D%22600%22%20y%3D%22525%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22600%22%20fill%3D%22%236c7066%22%3E%3Ctspan%20x%3D%22600%22%20dy%3D%220%22%3EQuery%20%3D%20%EC%9B%90%ED%95%98%EB%8A%94%20%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%A5%BC%20%EA%BA%BC%EB%82%B4%EA%B1%B0%EB%82%98%20%EB%B0%94%EA%BE%B8%EB%8A%94%20%EC%9A%94%EC%B2%AD%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%3Ctext%20x%3D%221140%22%20y%3D%22642%22%20text-anchor%3D%22end%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2217%22%20fill%3D%22%238c8578%22%3ECHATBOOK%20%C2%B7%20BACKEND%20ROOT%20MAP%3C%2Ftext%3E%0A%3C%2Fsvg%3E",
+              "caption": "클라이언트 요청 → 백엔드 로직 → 데이터베이스 조회·저장의 기본 흐름."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c3-p5",
+              "type": "p",
+              "text": "강의가 백엔드를 한 문장으로 압축하는 부분도 여기입니다. 백엔드는 결국 데이터 시스템입니다. 사용자의 요청을 받고, 데이터를 읽거나 저장하고, 서비스 규칙에 따라 처리한 뒤 결과를 돌려주는 역할입니다."
+            }
+          ]
+        },
+        {
+          "id": "yt-backend-roots-0SGfDKMLdaI-c4",
+          "title": "MVC와 비즈니스 로직",
+          "subtitle": "기능이 늘어나면 코드를 역할별로 나눠야 한다",
+          "summary": [
+            "화면·DB·검색·방명록 코드가 한 파일에 뒤섞이면 수정 비용이 커진다.",
+            "MVC는 Model·View·Controller로 역할을 나누는 대표적 정리 방식이다.",
+            "비즈니스 로직은 주문·결제·재고처럼 서비스 자체의 핵심 규칙이다."
+          ],
+          "blocks": [
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c4-p1",
+              "type": "p",
+              "text": "서비스에 방명록, 검색, 회원가입, 댓글 같은 기능이 붙으면 코드도 빠르게 커집니다. 화면을 만드는 코드, 데이터베이스에서 값을 가져오는 코드, 검색 결과를 계산하는 코드가 한 파일에 섞이면 작은 기능 하나를 고치기 위해 관련 없는 코드까지 읽어야 합니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c4-p2",
+              "type": "p",
+              "text": "이런 복잡성을 줄이기 위해 역할을 나누는 대표적인 방식이 MVC입니다. Model은 데이터를 다루는 부분입니다. 데이터베이스에서 값을 읽고 저장하는 역할을 맡습니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c4-p3",
+              "type": "p",
+              "text": "View는 사용자에게 보여 줄 화면을 만드는 부분이고, Controller는 요청이 들어왔을 때 어떤 데이터를 가져와 어떤 흐름으로 처리하고 어떤 화면이나 응답을 줄지를 조정합니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c4-img1",
+              "type": "image",
+              "src": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221200%22%20height%3D%22675%22%20viewBox%3D%220%200%201200%20675%22%3E%0A%3Crect%20width%3D%221200%22%20height%3D%22675%22%20fill%3D%22%23f7f1e6%22%2F%3E%0A%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221200%22%20height%3D%2213%22%20fill%3D%22%2366735b%22%2F%3E%0A%3Ctext%20x%3D%2260%22%20y%3D%2272%22%20text-anchor%3D%22start%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2238%22%20font-weight%3D%22800%22%20fill%3D%22%23252a22%22%3E%3Ctspan%20x%3D%2260%22%20dy%3D%220%22%3EMVC%EC%99%80%20%EB%B9%84%EC%A6%88%EB%8B%88%EC%8A%A4%20%EB%A1%9C%EC%A7%81%3C%2Ftspan%3E%3C%2Ftext%3E%0A%3Ctext%20x%3D%2260%22%20y%3D%22116%22%20text-anchor%3D%22start%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2222%22%20font-weight%3D%22500%22%20fill%3D%22%236d6a60%22%3E%3Ctspan%20x%3D%2260%22%20dy%3D%220%22%3E%EB%92%A4%EC%84%9E%EC%9D%B8%20%EC%BD%94%EB%93%9C%EB%A5%BC%20%EC%97%AD%ED%95%A0%EB%B3%84%EB%A1%9C%20%EB%82%98%EB%88%A0%20%EA%B4%80%EB%A6%AC%ED%95%9C%EB%8B%A4%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%0A%20%20%3Crect%20x%3D%2285%22%20y%3D%22205%22%20width%3D%22250%22%20height%3D%22165%22%20rx%3D%2224%22%20fill%3D%22%23e9eee3%22%20stroke%3D%22%23aeb99e%22%20stroke-width%3D%223%22%2F%3E%0A%20%20%3Ctext%20x%3D%22210%22%20y%3D%22257%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23283126%22%3E%3Ctspan%20x%3D%22210%22%20dy%3D%220%22%3EModel%3C%2Ftspan%3E%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22210%22%20y%3D%22299%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2221%22%20font-weight%3D%22500%22%20fill%3D%22%235e6258%22%3E%3Ctspan%20x%3D%22210%22%20dy%3D%220%22%3EDB%20%EB%8D%B0%EC%9D%B4%ED%84%B0%3C%2Ftspan%3E%3Ctspan%20x%3D%22210%22%20dy%3D%2226.25%22%3E%EC%A1%B0%ED%9A%8C%20%C2%B7%20%EC%A0%80%EC%9E%A5%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%0A%20%20%3Crect%20x%3D%22475%22%20y%3D%22205%22%20width%3D%22250%22%20height%3D%22165%22%20rx%3D%2224%22%20fill%3D%22%23f3ead7%22%20stroke%3D%22%23c9b68e%22%20stroke-width%3D%223%22%2F%3E%0A%20%20%3Ctext%20x%3D%22600%22%20y%3D%22257%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23283126%22%3E%3Ctspan%20x%3D%22600%22%20dy%3D%220%22%3EController%3C%2Ftspan%3E%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22600%22%20y%3D%22299%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2221%22%20font-weight%3D%22500%22%20fill%3D%22%235e6258%22%3E%3Ctspan%20x%3D%22600%22%20dy%3D%220%22%3E%EC%9A%94%EC%B2%AD%EC%9D%84%20%EB%B0%9B%EA%B3%A0%3C%2Ftspan%3E%3Ctspan%20x%3D%22600%22%20dy%3D%2226.25%22%3E%ED%9D%90%EB%A6%84%EC%9D%84%20%EA%B2%B0%EC%A0%95%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%0A%20%20%3Crect%20x%3D%22865%22%20y%3D%22205%22%20width%3D%22250%22%20height%3D%22165%22%20rx%3D%2224%22%20fill%3D%22%23e7edf1%22%20stroke%3D%22%239fb1bd%22%20stroke-width%3D%223%22%2F%3E%0A%20%20%3Ctext%20x%3D%22990%22%20y%3D%22257%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23283126%22%3E%3Ctspan%20x%3D%22990%22%20dy%3D%220%22%3EView%3C%2Ftspan%3E%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22990%22%20y%3D%22299%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2221%22%20font-weight%3D%22500%22%20fill%3D%22%235e6258%22%3E%3Ctspan%20x%3D%22990%22%20dy%3D%220%22%3E%EC%82%AC%EC%9A%A9%EC%9E%90%EC%97%90%EA%B2%8C%3C%2Ftspan%3E%3Ctspan%20x%3D%22990%22%20dy%3D%2226.25%22%3E%EB%B3%B4%EC%97%AC%20%EC%A4%84%20%ED%99%94%EB%A9%B4%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%0A%20%20%3Cdefs%3E%3Cmarker%20id%3D%22arr%22%20markerWidth%3D%2210%22%20markerHeight%3D%2210%22%20refX%3D%227%22%20refY%3D%223%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M0%2C0%20L0%2C6%20L8%2C3%20z%22%20fill%3D%22%2365705c%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%0A%20%20%3Cline%20x1%3D%22345%22%20y1%3D%22287%22%20x2%3D%22465%22%20y2%3D%22287%22%20stroke%3D%22%2365705c%22%20stroke-width%3D%225%22%20marker-end%3D%22url(%23arr)%22%2F%3E%0A%20%20%0A%0A%0A%20%20%3Cdefs%3E%3Cmarker%20id%3D%22arr%22%20markerWidth%3D%2210%22%20markerHeight%3D%2210%22%20refX%3D%227%22%20refY%3D%223%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M0%2C0%20L0%2C6%20L8%2C3%20z%22%20fill%3D%22%2365705c%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%0A%20%20%3Cline%20x1%3D%22735%22%20y1%3D%22287%22%20x2%3D%22855%22%20y2%3D%22287%22%20stroke%3D%22%2365705c%22%20stroke-width%3D%225%22%20marker-end%3D%22url(%23arr)%22%2F%3E%0A%20%20%0A%0A%3Ctext%20x%3D%22600%22%20y%3D%22465%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2234%22%20font-weight%3D%22800%22%20fill%3D%22%23283126%22%3E%3Ctspan%20x%3D%22600%22%20dy%3D%220%22%3E%EB%B9%84%EC%A6%88%EB%8B%88%EC%8A%A4%20%EB%A1%9C%EC%A7%81%20%3D%20%EC%84%9C%EB%B9%84%EC%8A%A4%EC%9D%98%20%ED%95%B5%EC%8B%AC%20%EA%B7%9C%EC%B9%99%3C%2Ftspan%3E%3C%2Ftext%3E%0A%3Ctext%20x%3D%22600%22%20y%3D%22525%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22600%22%20fill%3D%22%2362675d%22%3E%3Ctspan%20x%3D%22600%22%20dy%3D%220%22%3E%EC%98%88%3A%20%EC%9E%AC%EA%B3%A0%20%ED%99%95%EC%9D%B8%20%E2%86%92%20%EA%B2%B0%EC%A0%9C%20%E2%86%92%20%EC%9E%AC%EA%B3%A0%20%EA%B0%90%EC%86%8C%20%E2%86%92%20%EB%B0%B0%EC%86%A1%20%EC%A0%95%EB%B3%B4%20%E2%86%92%20%EC%95%8C%EB%A6%BC%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%3Ctext%20x%3D%221140%22%20y%3D%22642%22%20text-anchor%3D%22end%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2217%22%20fill%3D%22%238c8578%22%3ECHATBOOK%20%C2%B7%20BACKEND%20ROOT%20MAP%3C%2Ftext%3E%0A%3C%2Fsvg%3E",
+              "caption": "Model · Controller · View와 비즈니스 로직의 역할을 분리한 개념도."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c4-p4",
+              "type": "p",
+              "text": "여기서 비즈니스 로직이라는 말이 등장합니다. 쇼핑몰의 주문을 예로 들면 재고를 확인하고, 결제를 처리하고, 결제가 성공하면 재고를 줄이고, 배송 정보를 만들고, 주문 완료 알림을 보내는 일련의 규칙입니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c4-p5",
+              "type": "p",
+              "text": "비즈니스 로직은 단순히 화면을 그리는 것도 아니고 데이터베이스에 값을 넣는 것만도 아닙니다. ‘이 서비스가 실제로 어떤 규칙으로 움직이는가’를 코드로 표현한 부분입니다. 바이브코딩으로 백엔드를 만들 때도 기능 이름보다 이 규칙을 구체적으로 설명하는 것이 중요합니다."
+            }
+          ]
+        },
+        {
+          "id": "yt-backend-roots-0SGfDKMLdaI-c5",
+          "title": "API: 서버가 화면 대신 데이터를 공급하기 시작하다",
+          "subtitle": "웹과 모바일 앱이 같은 백엔드를 사용하게 만드는 약속",
+          "summary": [
+            "모바일 앱이 등장하면서 서버가 HTML만 보내는 방식으로는 다양한 클라이언트를 지원하기 어려워졌다.",
+            "API는 웹·앱 등이 같은 서버에 데이터를 요청하는 공통 창구다.",
+            "JSON·Endpoint·CRUD는 API를 이해하는 핵심 용어다."
+          ],
+          "blocks": [
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c5-p1",
+              "type": "p",
+              "text": "스마트폰과 앱스토어가 등장하면서 서버의 역할은 다시 변합니다. 웹 브라우저는 HTML을 받아 화면을 보여 줄 수 있지만 모바일 앱은 같은 데이터를 자기 UI 방식으로 사용하고 싶어 합니다. 서버가 특정 HTML 화면만 만들어 주면 재사용이 어렵습니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c5-p2",
+              "type": "p",
+              "text": "그래서 서버가 화면을 만들어 주는 역할에서 데이터를 공급하는 역할로 이동합니다. 웹이든 모바일 앱이든 같은 API에 요청을 보내고, 서버는 데이터를 돌려줍니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c5-p3",
+              "type": "p",
+              "text": "강의에서는 API를 ‘데이터 요청 창구’처럼 설명합니다. `/guestbook`, `/search`, `/users` 같은 엔드포인트는 각각 어떤 기능이나 데이터를 요청할지 구분하는 주소입니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c5-p4",
+              "type": "p",
+              "text": "서버와 화면 사이에서 자주 사용하는 데이터 형식으로 JSON을 설명합니다. 키와 값의 짝으로 데이터를 표현해 웹과 앱이 같은 정보를 주고받을 수 있습니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c5-p5",
+              "type": "p",
+              "text": "데이터를 다루는 기본 동작은 CRUD로 정리합니다. Create는 생성, Read는 조회, Update는 수정, Delete는 삭제입니다. 강의자는 여러 개의 목록을 조회하는 List를 별도로 생각해 CRUDL이라는 표현도 선호한다고 설명합니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c5-img1",
+              "type": "image",
+              "src": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221200%22%20height%3D%22675%22%20viewBox%3D%220%200%201200%20675%22%3E%0A%3Crect%20width%3D%221200%22%20height%3D%22675%22%20fill%3D%22%23f7f1e6%22%2F%3E%0A%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221200%22%20height%3D%2213%22%20fill%3D%22%2366735b%22%2F%3E%0A%3Ctext%20x%3D%2260%22%20y%3D%2272%22%20text-anchor%3D%22start%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2238%22%20font-weight%3D%22800%22%20fill%3D%22%23252a22%22%3E%3Ctspan%20x%3D%2260%22%20dy%3D%220%22%3EAPI%20%C2%B7%20JSON%20%C2%B7%20CRUD%3C%2Ftspan%3E%3C%2Ftext%3E%0A%3Ctext%20x%3D%2260%22%20y%3D%22116%22%20text-anchor%3D%22start%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2222%22%20font-weight%3D%22500%22%20fill%3D%22%236d6a60%22%3E%3Ctspan%20x%3D%2260%22%20dy%3D%220%22%3E%EC%84%9C%EB%B2%84%EB%8A%94%20HTML%20%EC%A0%9C%EC%A1%B0%EA%B8%B0%EC%97%90%EC%84%9C%20%E2%80%98%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EA%B3%B5%EA%B8%89%EC%9E%90%E2%80%99%EB%A1%9C%20%EC%97%AD%ED%95%A0%EC%9D%B4%20%EB%B0%94%EB%80%90%EB%8B%A4%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%0A%20%20%3Crect%20x%3D%2265%22%20y%3D%22190%22%20width%3D%22230%22%20height%3D%22165%22%20rx%3D%2224%22%20fill%3D%22%23e7edf1%22%20stroke%3D%22%239fb1bd%22%20stroke-width%3D%223%22%2F%3E%0A%20%20%3Ctext%20x%3D%22180%22%20y%3D%22242%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23283126%22%3E%3Ctspan%20x%3D%22180%22%20dy%3D%220%22%3E%EC%9B%B9%20%2F%20%EC%95%B1%3C%2Ftspan%3E%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22180%22%20y%3D%22284%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2221%22%20font-weight%3D%22500%22%20fill%3D%22%235e6258%22%3E%3Ctspan%20x%3D%22180%22%20dy%3D%220%22%3E%ED%99%94%EB%A9%B4%EC%9D%80%20%EA%B0%81%EC%9E%90%3C%2Ftspan%3E%3Ctspan%20x%3D%22180%22%20dy%3D%2226.25%22%3E%EC%9E%90%EA%B8%B0%20%EB%B0%A9%EC%8B%9D%EC%9C%BC%EB%A1%9C%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%0A%20%20%3Cdefs%3E%3Cmarker%20id%3D%22arr%22%20markerWidth%3D%2210%22%20markerHeight%3D%2210%22%20refX%3D%227%22%20refY%3D%223%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M0%2C0%20L0%2C6%20L8%2C3%20z%22%20fill%3D%22%2365705c%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%0A%20%20%3Cline%20x1%3D%22305%22%20y1%3D%22273%22%20x2%3D%22430%22%20y2%3D%22273%22%20stroke%3D%22%2365705c%22%20stroke-width%3D%225%22%20marker-end%3D%22url(%23arr)%22%2F%3E%0A%20%20%3Ctext%20x%3D%22367.5%22%20y%3D%22261%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2220%22%20font-weight%3D%22700%22%20fill%3D%22%2365705c%22%3E%3Ctspan%20x%3D%22367.5%22%20dy%3D%220%22%3EHTTP%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%0A%20%20%3Crect%20x%3D%22440%22%20y%3D%22190%22%20width%3D%22300%22%20height%3D%22165%22%20rx%3D%2224%22%20fill%3D%22%23f3ead7%22%20stroke%3D%22%23c9b68e%22%20stroke-width%3D%223%22%2F%3E%0A%20%20%3Ctext%20x%3D%22590%22%20y%3D%22242%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23283126%22%3E%3Ctspan%20x%3D%22590%22%20dy%3D%220%22%3EAPI%20Endpoint%3C%2Ftspan%3E%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22590%22%20y%3D%22284%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2221%22%20font-weight%3D%22500%22%20fill%3D%22%235e6258%22%3E%3Ctspan%20x%3D%22590%22%20dy%3D%220%22%3E%2Fusers%3C%2Ftspan%3E%3Ctspan%20x%3D%22590%22%20dy%3D%2226.25%22%3E%2Fsearch%3C%2Ftspan%3E%3Ctspan%20x%3D%22590%22%20dy%3D%2226.25%22%3E%2Fguestbook%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%0A%20%20%3Cdefs%3E%3Cmarker%20id%3D%22arr%22%20markerWidth%3D%2210%22%20markerHeight%3D%2210%22%20refX%3D%227%22%20refY%3D%223%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M0%2C0%20L0%2C6%20L8%2C3%20z%22%20fill%3D%22%2365705c%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%0A%20%20%3Cline%20x1%3D%22750%22%20y1%3D%22273%22%20x2%3D%22875%22%20y2%3D%22273%22%20stroke%3D%22%2365705c%22%20stroke-width%3D%225%22%20marker-end%3D%22url(%23arr)%22%2F%3E%0A%20%20%3Ctext%20x%3D%22812.5%22%20y%3D%22261%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2220%22%20font-weight%3D%22700%22%20fill%3D%22%2365705c%22%3E%3Ctspan%20x%3D%22812.5%22%20dy%3D%220%22%3EJSON%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%0A%20%20%3Crect%20x%3D%22885%22%20y%3D%22190%22%20width%3D%22250%22%20height%3D%22165%22%20rx%3D%2224%22%20fill%3D%22%23e9eee3%22%20stroke%3D%22%23aeb99e%22%20stroke-width%3D%223%22%2F%3E%0A%20%20%3Ctext%20x%3D%221010%22%20y%3D%22242%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23283126%22%3E%3Ctspan%20x%3D%221010%22%20dy%3D%220%22%3E%EB%B0%B1%EC%97%94%EB%93%9C%3C%2Ftspan%3E%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%221010%22%20y%3D%22284%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2221%22%20font-weight%3D%22500%22%20fill%3D%22%235e6258%22%3E%3Ctspan%20x%3D%221010%22%20dy%3D%220%22%3E%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EA%B3%B5%EA%B8%89%3C%2Ftspan%3E%3Ctspan%20x%3D%221010%22%20dy%3D%2226.25%22%3E%EA%B7%9C%EC%B9%99%20%EC%8B%A4%ED%96%89%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%3Ctext%20x%3D%22600%22%20y%3D%22455%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2230%22%20font-weight%3D%22800%22%20fill%3D%22%2343513e%22%3E%3Ctspan%20x%3D%22600%22%20dy%3D%220%22%3EC%20Create%20%20%20R%20Read%20%20%20U%20Update%20%20%20D%20Delete%3C%2Ftspan%3E%3C%2Ftext%3E%0A%3Ctext%20x%3D%22600%22%20y%3D%22520%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2232%22%20font-weight%3D%22800%22%20fill%3D%22%23283126%22%3E%3Ctspan%20x%3D%22600%22%20dy%3D%220%22%3EAPI%20%3D%20%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%A5%BC%20%EC%9A%94%EC%B2%AD%ED%95%98%EA%B3%A0%20%EB%8F%8C%EB%A0%A4%EB%B0%9B%EB%8A%94%20%EC%95%BD%EC%86%8D%EB%90%9C%20%EC%B0%BD%EA%B5%AC%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%3Ctext%20x%3D%221140%22%20y%3D%22642%22%20text-anchor%3D%22end%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2217%22%20fill%3D%22%238c8578%22%3ECHATBOOK%20%C2%B7%20BACKEND%20ROOT%20MAP%3C%2Ftext%3E%0A%3C%2Fsvg%3E",
+              "caption": "웹·앱 → API Endpoint → JSON 데이터 → 백엔드로 이어지는 구조와 CRUD."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c5-p6",
+              "type": "p",
+              "text": "API가 자리 잡으면서 프론트엔드와 백엔드의 책임도 더 분명해집니다. 백엔드는 데이터를 제공하고 규칙을 실행하며, 프론트엔드는 그 데이터를 받아 사용자에게 보여 줄 화면을 만듭니다."
+            }
+          ]
+        },
+        {
+          "id": "yt-backend-roots-0SGfDKMLdaI-c6",
+          "title": "백엔드 언어와 프레임워크는 왜 이렇게 많을까",
+          "subtitle": "도구는 달라도 결국 HTTP 요청을 받아 처리하고 응답한다",
+          "summary": [
+            "PHP·Python·Ruby·Java·C#·Go·JavaScript 등은 서로 다른 시대와 문제에서 발전했다.",
+            "프레임워크는 각 언어로 웹 서버를 구조적으로 만들 수 있게 돕는다.",
+            "정답 하나가 있는 것이 아니라 팀·규모·속도·안정성 요구에 따라 선택한다."
+          ],
+          "blocks": [
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c6-p1",
+              "type": "p",
+              "text": "백엔드 공부를 시작하면 PHP, Python, Java, C#, Go, JavaScript 같은 이름이 한꺼번에 나오기 때문에 혼란스럽습니다. 강의의 설명은 이들을 모두 외우라는 것이 아니라, 서로 다른 시대와 문제에서 발전한 선택지로 보라는 것입니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c6-p2",
+              "type": "p",
+              "text": "PHP는 초기 동적 웹에서 빠르게 퍼졌고 Laravel은 PHP를 구조적으로 쓰기 위한 대표 프레임워크로 소개됩니다. Python은 범용 언어에서 Django 같은 웹 프레임워크로 영역을 넓혔고, API 서버 쪽에서는 FastAPI가 언급됩니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c6-p3",
+              "type": "p",
+              "text": "Ruby on Rails는 ‘설정보다 관례’라는 철학으로 빠른 웹 개발을 보여 준 사례로 소개됩니다. Java와 Spring은 대기업·금융·공공처럼 규모가 크고 장기간 운영되는 시스템에서 널리 사용된 조합으로 설명됩니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c6-p4",
+              "type": "p",
+              "text": "Microsoft 생태계에는 C#과 ASP.NET이 있고, Go는 가볍고 많은 동시 요청을 처리하는 서버 영역에서 사용되는 언어로 소개됩니다. JavaScript는 원래 브라우저 언어였지만 Node.js가 등장하면서 서버에서도 사용할 수 있게 됐고, NestJS 같은 프레임워크로 구조화된 서버를 만들 수 있습니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c6-p5",
+              "type": "p",
+              "text": "강의의 결론은 ‘무조건 이것이 최고’가 아닙니다. 팀이 익숙한 기술, 서비스 규모, 얼마나 빨리 만들어야 하는지, 얼마나 검증된 안정성이 필요한지에 따라 선택이 달라집니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c6-p6",
+              "type": "p",
+              "text": "도구가 달라도 백엔드가 하는 가장 큰 흐름은 같습니다. HTTP 요청을 받고, 데이터를 읽거나 저장하고, 비즈니스 로직을 실행하고, 결과를 응답합니다. 이 공통 구조를 잡아 두면 언어 이름이 바뀌어도 백엔드 전체 지도를 잃지 않습니다."
+            }
+          ]
+        },
+        {
+          "id": "yt-backend-roots-0SGfDKMLdaI-c7",
+          "title": "HTTP는 기억하지 않는다: Session과 Cookie",
+          "subtitle": "로그인 상태를 유지하려면 ‘기억 장치’가 필요하다",
+          "summary": [
+            "HTTP 요청은 기본적으로 서로 독립적이라 이전 요청의 상태를 자동으로 기억하지 않는다.",
+            "세션은 서버 쪽에 로그인 상태를 보관하고 식별자를 발급하는 방식으로 설명된다.",
+            "쿠키는 브라우저가 식별 정보를 보관하고 다음 요청에 함께 보내는 데 사용된다."
+          ],
+          "blocks": [
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c7-p1",
+              "type": "p",
+              "text": "API를 만들고 로그인까지 구현했는데 다음 페이지로 이동하자 로그인이 풀리는 문제가 생길 수 있습니다. 이유를 이해하려면 HTTP의 중요한 성질인 Stateless를 알아야 합니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c7-p2",
+              "type": "p",
+              "text": "Stateless는 요청 하나가 끝난 뒤 서버가 다음 요청에서 자동으로 ‘방금 이 사람이 로그인했었다’고 기억해 주지 않는다는 의미로 설명됩니다. 요청은 기본적으로 서로 독립적입니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c7-p3",
+              "type": "p",
+              "text": "세션 방식에서는 로그인에 성공하면 서버 쪽에 사용자의 로그인 상태를 보관하고, 사용자를 식별할 번호표 같은 값을 발급합니다. 다음 요청에 그 번호표가 오면 서버는 저장된 세션을 찾아 같은 사용자임을 확인합니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c7-p4",
+              "type": "p",
+              "text": "쿠키는 브라우저에 작은 정보를 저장해 두고 요청할 때 함께 보내는 방식입니다. 세션 식별자를 쿠키에 담으면 브라우저가 다음 요청에도 식별 정보를 자동으로 보내 로그인 상태를 이어갈 수 있습니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c7-img1",
+              "type": "image",
+              "src": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221200%22%20height%3D%22675%22%20viewBox%3D%220%200%201200%20675%22%3E%0A%3Crect%20width%3D%221200%22%20height%3D%22675%22%20fill%3D%22%23f7f1e6%22%2F%3E%0A%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221200%22%20height%3D%2213%22%20fill%3D%22%2366735b%22%2F%3E%0A%3Ctext%20x%3D%2260%22%20y%3D%2272%22%20text-anchor%3D%22start%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2238%22%20font-weight%3D%22800%22%20fill%3D%22%23252a22%22%3E%3Ctspan%20x%3D%2260%22%20dy%3D%220%22%3E%EB%A1%9C%EA%B7%B8%EC%9D%B8%20%EC%9C%A0%EC%A7%80%EC%99%80%20%EA%B6%8C%ED%95%9C%3C%2Ftspan%3E%3C%2Ftext%3E%0A%3Ctext%20x%3D%2260%22%20y%3D%22116%22%20text-anchor%3D%22start%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2222%22%20font-weight%3D%22500%22%20fill%3D%22%236d6a60%22%3E%3Ctspan%20x%3D%2260%22%20dy%3D%220%22%3EHTTP%EB%8A%94%20%EA%B8%B0%EB%B3%B8%EC%A0%81%EC%9C%BC%EB%A1%9C%20%EC%9D%B4%EC%A0%84%20%EC%9A%94%EC%B2%AD%EC%9D%84%20%EA%B8%B0%EC%96%B5%ED%95%98%EC%A7%80%20%EC%95%8A%EB%8A%94%EB%8B%A4%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%0A%20%20%3Crect%20x%3D%2250%22%20y%3D%22180%22%20width%3D%22235%22%20height%3D%22160%22%20rx%3D%2224%22%20fill%3D%22%23ece9df%22%20stroke%3D%22%23b8b09b%22%20stroke-width%3D%223%22%2F%3E%0A%20%20%3Ctext%20x%3D%22167.5%22%20y%3D%22232%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23283126%22%3E%3Ctspan%20x%3D%22167.5%22%20dy%3D%220%22%3EHTTP%3C%2Ftspan%3E%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22167.5%22%20y%3D%22274%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2221%22%20font-weight%3D%22500%22%20fill%3D%22%235e6258%22%3E%3Ctspan%20x%3D%22167.5%22%20dy%3D%220%22%3EStateless%3C%2Ftspan%3E%3Ctspan%20x%3D%22167.5%22%20dy%3D%2226.25%22%3E%EC%9A%94%EC%B2%AD%EB%A7%88%EB%8B%A4%20%EB%8F%85%EB%A6%BD%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%0A%20%20%3Cdefs%3E%3Cmarker%20id%3D%22arr%22%20markerWidth%3D%2210%22%20markerHeight%3D%2210%22%20refX%3D%227%22%20refY%3D%223%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M0%2C0%20L0%2C6%20L8%2C3%20z%22%20fill%3D%22%2365705c%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%0A%20%20%3Cline%20x1%3D%22295%22%20y1%3D%22260%22%20x2%3D%22405%22%20y2%3D%22260%22%20stroke%3D%22%2365705c%22%20stroke-width%3D%225%22%20marker-end%3D%22url(%23arr)%22%2F%3E%0A%20%20%0A%0A%0A%20%20%3Crect%20x%3D%22415%22%20y%3D%22180%22%20width%3D%22235%22%20height%3D%22160%22%20rx%3D%2224%22%20fill%3D%22%23e9eee3%22%20stroke%3D%22%23aeb99e%22%20stroke-width%3D%223%22%2F%3E%0A%20%20%3Ctext%20x%3D%22532.5%22%20y%3D%22232%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23283126%22%3E%3Ctspan%20x%3D%22532.5%22%20dy%3D%220%22%3ESession%20%2B%20Cookie%3C%2Ftspan%3E%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22532.5%22%20y%3D%22274%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2221%22%20font-weight%3D%22500%22%20fill%3D%22%235e6258%22%3E%3Ctspan%20x%3D%22532.5%22%20dy%3D%220%22%3E%EC%84%9C%EB%B2%84%EC%B8%A1%20%EC%83%81%ED%83%9C%20%2B%3C%2Ftspan%3E%3Ctspan%20x%3D%22532.5%22%20dy%3D%2226.25%22%3E%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%20%EB%B2%88%ED%98%B8%ED%91%9C%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%0A%20%20%3Cdefs%3E%3Cmarker%20id%3D%22arr%22%20markerWidth%3D%2210%22%20markerHeight%3D%2210%22%20refX%3D%227%22%20refY%3D%223%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M0%2C0%20L0%2C6%20L8%2C3%20z%22%20fill%3D%22%2365705c%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%0A%20%20%3Cline%20x1%3D%22660%22%20y1%3D%22260%22%20x2%3D%22770%22%20y2%3D%22260%22%20stroke%3D%22%2365705c%22%20stroke-width%3D%225%22%20marker-end%3D%22url(%23arr)%22%2F%3E%0A%20%20%0A%0A%0A%20%20%3Crect%20x%3D%22780%22%20y%3D%22180%22%20width%3D%22365%22%20height%3D%22160%22%20rx%3D%2224%22%20fill%3D%22%23f3ead7%22%20stroke%3D%22%23c9b68e%22%20stroke-width%3D%223%22%2F%3E%0A%20%20%3Ctext%20x%3D%22962.5%22%20y%3D%22232%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23283126%22%3E%3Ctspan%20x%3D%22962.5%22%20dy%3D%220%22%3E%EC%9D%B8%EC%A6%9D%20%2F%20%EC%9D%B8%EA%B0%80%3C%2Ftspan%3E%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22962.5%22%20y%3D%22274%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2221%22%20font-weight%3D%22500%22%20fill%3D%22%235e6258%22%3E%3Ctspan%20x%3D%22962.5%22%20dy%3D%220%22%3EAuthentication%20%3D%20%EB%88%84%EA%B5%AC%3F%3C%2Ftspan%3E%3Ctspan%20x%3D%22962.5%22%20dy%3D%2226.25%22%3EAuthorization%20%3D%20%ED%95%B4%EB%8F%84%20%EB%8F%BC%3F%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%3Ctext%20x%3D%22120%22%20y%3D%22455%22%20text-anchor%3D%22start%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2230%22%20font-weight%3D%22800%22%20fill%3D%22%23334451%22%3E%3Ctspan%20x%3D%22120%22%20dy%3D%220%22%3EJWT%3C%2Ftspan%3E%3C%2Ftext%3E%0A%3Ctext%20x%3D%22225%22%20y%3D%22455%22%20text-anchor%3D%22start%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22700%22%20fill%3D%22%235d6b75%22%3E%3Ctspan%20x%3D%22225%22%20dy%3D%220%22%3EHeader%20.%20Payload%20.%20Signature%3C%2Ftspan%3E%3C%2Ftext%3E%0A%3Ctext%20x%3D%22120%22%20y%3D%22520%22%20text-anchor%3D%22start%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2230%22%20font-weight%3D%22800%22%20fill%3D%22%234b3d2b%22%3E%3Ctspan%20x%3D%22120%22%20dy%3D%220%22%3E%EB%B9%84%EB%B0%80%EB%B2%88%ED%98%B8%3C%2Ftspan%3E%3C%2Ftext%3E%0A%3Ctext%20x%3D%22270%22%20y%3D%22520%22%20text-anchor%3D%22start%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22700%22%20fill%3D%22%2376654b%22%3E%3Ctspan%20x%3D%22270%22%20dy%3D%220%22%3E%EC%9B%90%EB%AC%B8%20%EC%A0%80%EC%9E%A5%20%EB%8C%80%EC%8B%A0%20Hash%EB%A5%BC%20%EC%82%AC%EC%9A%A9%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%3Ctext%20x%3D%221140%22%20y%3D%22642%22%20text-anchor%3D%22end%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2217%22%20fill%3D%22%238c8578%22%3ECHATBOOK%20%C2%B7%20BACKEND%20ROOT%20MAP%3C%2Ftext%3E%0A%3C%2Fsvg%3E",
+              "caption": "Stateless HTTP 위에서 Session·Cookie로 상태를 이어가고, 인증·인가·JWT까지 확장되는 흐름."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c7-p5",
+              "type": "p",
+              "text": "중요한 연결은 ‘HTTP가 원래 로그인 기능을 기억하는 프로토콜이 아니기 때문에, 그 위에 상태를 유지하기 위한 별도의 장치를 얹었다’는 것입니다."
+            }
+          ]
+        },
+        {
+          "id": "yt-backend-roots-0SGfDKMLdaI-c8",
+          "title": "인증 · 인가 · JWT · 비밀번호 저장",
+          "subtitle": "누구인지와 무엇을 할 수 있는지는 다른 질문이다",
+          "summary": [
+            "인증은 사용자가 누구인지 확인하고, 인가는 그 사용자가 특정 행동을 해도 되는지 판단한다.",
+            "JWT는 Header·Payload·Signature의 세 부분으로 설명되며 서명으로 위변조를 검증한다.",
+            "비밀번호는 원문 그대로 보관하지 않고 해시를 이용하는 것이 핵심이다."
+          ],
+          "blocks": [
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c8-p1",
+              "type": "p",
+              "text": "로그인이 유지된다고 해서 보안 문제가 끝나는 것은 아닙니다. 첫 번째 질문은 ‘이 요청을 보낸 사람이 정말 누구인가?’입니다. 이것이 인증(Authentication)입니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c8-p2",
+              "type": "p",
+              "text": "두 번째 질문은 ‘이 사람이 이 행동을 할 권한이 있는가?’입니다. 이것이 인가(Authorization)입니다. 일반 사용자가 관리자 전용 기능에 접근하지 못하게 막는 것이 대표적인 예입니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c8-p3",
+              "type": "p",
+              "text": "서버가 여러 대가 되면 특정 서버 메모리에만 로그인 세션을 저장하는 구조는 관리가 복잡해질 수 있습니다. 강의는 이런 맥락에서 JWT, JSON Web Token을 소개합니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c8-p4",
+              "type": "p",
+              "text": "JWT는 점으로 구분된 Header, Payload, Signature 세 덩어리로 설명됩니다. Payload에는 사용자 식별 정보 같은 데이터가 들어갈 수 있고, Signature는 토큰이 임의로 바뀌지 않았는지 서버가 검증하는 역할을 합니다. Base64로 보이는 문자열은 읽기 어렵게 보일 뿐 그 자체가 암호화는 아니라는 점도 짚습니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c8-p5",
+              "type": "p",
+              "text": "비밀번호는 특히 민감합니다. 데이터베이스에 원문 그대로 저장하면 안 되고, 해시를 이용해 원래 비밀번호를 그대로 보관하지 않는 방식이 필요합니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c8-p6",
+              "type": "p",
+              "text": "백엔드에서 보안은 기능을 다 만든 뒤 붙이는 장식이 아니라 서비스가 처음부터 갖춰야 하는 기본 조건이라는 것이 이 장의 핵심입니다."
+            }
+          ]
+        },
+        {
+          "id": "yt-backend-roots-0SGfDKMLdaI-c9",
+          "title": "사용자가 늘면: 비동기와 동시성",
+          "subtitle": "기다리는 동안 다른 요청을 처리한다",
+          "summary": [
+            "요청을 하나씩 순서대로만 처리하면 뒤에 온 사용자는 오래 기다리게 된다.",
+            "비동기는 느린 작업을 기다리는 동안 다른 일을 진행해 대기 시간을 낭비하지 않는 방식으로 설명된다.",
+            "멀티스레드·이벤트 루프·Non-blocking은 동시 요청 처리에서 만나는 핵심 용어다."
+          ],
+          "blocks": [
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c9-p1",
+              "type": "p",
+              "text": "서비스가 잘되어 사용자가 늘면 서버로 들어오는 요청도 많아집니다. 요청을 항상 하나씩 끝낸 뒤 다음 요청을 처리한다면 100명이 동시에 왔을 때 마지막 사용자는 앞의 작업이 모두 끝날 때까지 기다려야 합니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c9-p2",
+              "type": "p",
+              "text": "비동기 처리는 데이터베이스나 외부 서비스의 응답을 기다리는 동안 서버가 아무것도 하지 않고 멈춰 있는 대신 다른 요청을 처리할 수 있게 하는 사고방식으로 설명됩니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c9-p3",
+              "type": "p",
+              "text": "강의는 멀티스레드를 여러 명의 직원을 두는 방식, 이벤트 루프를 한 직원이 여러 일을 빠르게 번갈아 처리하는 방식에 비유합니다. 세부 구현은 다르지만 공통 목표는 기다리는 시간을 낭비하지 않는 것입니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c9-p4",
+              "type": "p",
+              "text": "여기서 Non-blocking이라는 말도 등장합니다. 한 작업이 느린 이유로 기다리는 동안 전체 흐름이 완전히 막히지 않고 다른 일이 진행될 수 있다는 의미입니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c9-img1",
+              "type": "image",
+              "src": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221200%22%20height%3D%22675%22%20viewBox%3D%220%200%201200%20675%22%3E%0A%3Crect%20width%3D%221200%22%20height%3D%22675%22%20fill%3D%22%23f7f1e6%22%2F%3E%0A%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221200%22%20height%3D%2213%22%20fill%3D%22%2366735b%22%2F%3E%0A%3Ctext%20x%3D%2260%22%20y%3D%2272%22%20text-anchor%3D%22start%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2238%22%20font-weight%3D%22800%22%20fill%3D%22%23252a22%22%3E%3Ctspan%20x%3D%2260%22%20dy%3D%220%22%3E%EC%84%B1%EB%8A%A5%3A%20%EA%B8%B0%EB%8B%A4%EB%A6%AC%EC%A7%80%20%EB%A7%90%EA%B3%A0%2C%20%EC%9E%90%EC%A3%BC%20%EC%93%B0%EB%8A%94%20%EA%B1%B4%20%EA%B0%80%EA%B9%8C%EC%9D%B4%3C%2Ftspan%3E%3C%2Ftext%3E%0A%3Ctext%20x%3D%2260%22%20y%3D%22116%22%20text-anchor%3D%22start%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2222%22%20font-weight%3D%22500%22%20fill%3D%22%236d6a60%22%3E%3Ctspan%20x%3D%2260%22%20dy%3D%220%22%3E%EB%B9%84%EB%8F%99%EA%B8%B0%20%C2%B7%20%EB%8F%99%EC%8B%9C%EC%84%B1%20%C2%B7%20Cache%20%C2%B7%20Redis%20%C2%B7%20CDN%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%0A%20%20%3Crect%20x%3D%2260%22%20y%3D%22180%22%20width%3D%22260%22%20height%3D%22165%22%20rx%3D%2224%22%20fill%3D%22%23e7edf1%22%20stroke%3D%22%239fb1bd%22%20stroke-width%3D%223%22%2F%3E%0A%20%20%3Ctext%20x%3D%22190%22%20y%3D%22232%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23283126%22%3E%3Ctspan%20x%3D%22190%22%20dy%3D%220%22%3E%EB%B9%84%EB%8F%99%EA%B8%B0%20%EC%B2%98%EB%A6%AC%3C%2Ftspan%3E%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22190%22%20y%3D%22274%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2221%22%20font-weight%3D%22500%22%20fill%3D%22%235e6258%22%3E%3Ctspan%20x%3D%22190%22%20dy%3D%220%22%3EDB%20%EB%8C%80%EA%B8%B0%20%EC%A4%91%EC%97%90%EB%8F%84%3C%2Ftspan%3E%3Ctspan%20x%3D%22190%22%20dy%3D%2226.25%22%3E%EB%8B%A4%EB%A5%B8%20%EC%9A%94%EC%B2%AD%20%EC%B2%98%EB%A6%AC%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%0A%20%20%3Crect%20x%3D%22365%22%20y%3D%22180%22%20width%3D%22260%22%20height%3D%22165%22%20rx%3D%2224%22%20fill%3D%22%23e9eee3%22%20stroke%3D%22%23aeb99e%22%20stroke-width%3D%223%22%2F%3E%0A%20%20%3Ctext%20x%3D%22495%22%20y%3D%22232%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23283126%22%3E%3Ctspan%20x%3D%22495%22%20dy%3D%220%22%3ECache%20%2F%20Redis%3C%2Ftspan%3E%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22495%22%20y%3D%22274%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2221%22%20font-weight%3D%22500%22%20fill%3D%22%235e6258%22%3E%3Ctspan%20x%3D%22495%22%20dy%3D%220%22%3E%EC%9E%90%EC%A3%BC%20%EC%93%B0%EB%8A%94%20%EB%8D%B0%EC%9D%B4%ED%84%B0%3C%2Ftspan%3E%3Ctspan%20x%3D%22495%22%20dy%3D%2226.25%22%3E%EB%A9%94%EB%AA%A8%EB%A6%AC%EC%97%90%EC%84%9C%20%EC%A6%89%EC%8B%9C%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%0A%20%20%3Crect%20x%3D%22670%22%20y%3D%22180%22%20width%3D%22220%22%20height%3D%22165%22%20rx%3D%2224%22%20fill%3D%22%23f3ead7%22%20stroke%3D%22%23c9b68e%22%20stroke-width%3D%223%22%2F%3E%0A%20%20%3Ctext%20x%3D%22780%22%20y%3D%22232%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23283126%22%3E%3Ctspan%20x%3D%22780%22%20dy%3D%220%22%3ETTL%3C%2Ftspan%3E%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22780%22%20y%3D%22274%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2221%22%20font-weight%3D%22500%22%20fill%3D%22%235e6258%22%3E%3Ctspan%20x%3D%22780%22%20dy%3D%220%22%3E%EC%BA%90%EC%8B%9C%EC%9D%98%3C%2Ftspan%3E%3Ctspan%20x%3D%22780%22%20dy%3D%2226.25%22%3E%EC%9C%A0%ED%9A%A8%20%EC%8B%9C%EA%B0%84%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%0A%20%20%3Crect%20x%3D%22935%22%20y%3D%22180%22%20width%3D%22205%22%20height%3D%22165%22%20rx%3D%2224%22%20fill%3D%22%23eee4ea%22%20stroke%3D%22%23bea8b4%22%20stroke-width%3D%223%22%2F%3E%0A%20%20%3Ctext%20x%3D%221037.5%22%20y%3D%22232%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23283126%22%3E%3Ctspan%20x%3D%221037.5%22%20dy%3D%220%22%3ECDN%3C%2Ftspan%3E%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%221037.5%22%20y%3D%22274%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2221%22%20font-weight%3D%22500%22%20fill%3D%22%235e6258%22%3E%3Ctspan%20x%3D%221037.5%22%20dy%3D%220%22%3E%EA%B0%80%EA%B9%8C%EC%9A%B4%20%EC%A7%80%EC%97%AD%EC%97%90%EC%84%9C%3C%2Ftspan%3E%3Ctspan%20x%3D%221037.5%22%20dy%3D%2226.25%22%3E%ED%8C%8C%EC%9D%BC%20%EC%A0%84%EB%8B%AC%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%3Ctext%20x%3D%22600%22%20y%3D%22455%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2229%22%20font-weight%3D%22800%22%20fill%3D%22%2343513e%22%3E%3Ctspan%20x%3D%22600%22%20dy%3D%220%22%3ENon-blocking%3A%20%ED%95%98%EB%82%98%EA%B0%80%20%EA%B8%B0%EB%8B%A4%EB%A0%A4%EB%8F%84%20%EB%8B%A4%EB%A5%B8%20%EC%9D%BC%EC%9D%80%20%EC%A7%84%ED%96%89%3C%2Ftspan%3E%3C%2Ftext%3E%0A%3Ctext%20x%3D%22600%22%20y%3D%22520%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2233%22%20font-weight%3D%22800%22%20fill%3D%22%23283126%22%3E%3Ctspan%20x%3D%22600%22%20dy%3D%220%22%3E%EC%86%8D%EB%8F%84%20%EB%AC%B8%EC%A0%9C%EC%9D%98%20%ED%95%B5%EC%8B%AC%20%ED%95%B4%EB%B2%95%20%EC%A4%91%20%ED%95%98%EB%82%98%20%3D%20%EC%BA%90%EC%8B%B1%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%3Ctext%20x%3D%221140%22%20y%3D%22642%22%20text-anchor%3D%22end%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2217%22%20fill%3D%22%238c8578%22%3ECHATBOOK%20%C2%B7%20BACKEND%20ROOT%20MAP%3C%2Ftext%3E%0A%3C%2Fsvg%3E",
+              "caption": "비동기 처리와 Cache·Redis·TTL·CDN을 한 장에서 연결한 성능 지도."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c9-p5",
+              "type": "p",
+              "text": "모든 서비스가 처음부터 극단적인 동시성을 설계할 필요는 없지만, 사용자가 늘면 성능 문제는 자연스럽게 나타납니다. 그래서 ‘기능이 된다’와 ‘많은 사용자가 동시에 써도 된다’는 서로 다른 단계의 문제입니다."
+            }
+          ]
+        },
+        {
+          "id": "yt-backend-roots-0SGfDKMLdaI-c10",
+          "title": "Cache · Redis · TTL · CDN",
+          "subtitle": "자주 쓰는 데이터는 더 가까운 곳에서 빠르게 꺼낸다",
+          "summary": [
+            "같은 데이터를 반복해서 DB에서 읽으면 불필요한 비용이 생긴다.",
+            "캐시는 자주 요청되는 값을 빠른 메모리에 두고 DB 접근을 줄인다.",
+            "TTL은 캐시 유효시간, CDN은 정적 파일을 사용자와 가까운 위치에서 제공하는 방식이다."
+          ],
+          "blocks": [
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c10-p1",
+              "type": "p",
+              "text": "비동기로 요청을 잘 처리해도 데이터베이스 자체가 병목이 될 수 있습니다. 같은 데이터를 백만 명이 요청할 때 같은 쿼리를 백만 번 실행하면 낭비가 큽니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c10-p2",
+              "type": "p",
+              "text": "캐시는 자주 요청되는 데이터를 더 빠른 메모리에 올려두고, 다음 요청에는 데이터베이스까지 가지 않고 바로 돌려주는 방식입니다. 강의는 데이터베이스가 창고라면 Redis 같은 캐시는 계산대 옆에 자주 팔리는 물건을 미리 꺼내 둔 바구니와 비슷하다고 설명합니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c10-p3",
+              "type": "p",
+              "text": "캐시는 영원히 같은 값을 가지고 있으면 안 됩니다. 원본 데이터가 바뀔 수 있기 때문입니다. TTL(Time To Live)은 캐시에 저장된 데이터가 얼마나 오래 유효한지를 정하는 시간입니다. 시간이 지나면 오래된 값을 버리고 새로 가져옵니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c10-p4",
+              "type": "p",
+              "text": "CDN도 캐시와 가까운 생각입니다. 이미지나 동영상 같은 파일을 전 세계 여러 지역에 미리 복사해 두고, 한국 사용자는 한국과 가까운 위치에서, 미국 사용자는 미국과 가까운 위치에서 파일을 받을 수 있게 합니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c10-p5",
+              "type": "p",
+              "text": "이 장의 핵심은 모든 요청이 가장 멀고 비싼 저장소까지 갈 필요가 없다는 것입니다. 자주 쓰는 것은 가까이에 두고, 오래된 값은 적절한 시점에 갱신하면 속도와 서버 부담을 함께 줄일 수 있습니다."
+            }
+          ]
+        },
+        {
+          "id": "yt-backend-roots-0SGfDKMLdaI-c11",
+          "title": "Transaction과 ACID",
+          "subtitle": "여러 데이터 변경을 하나의 안전한 작업으로 묶는다",
+          "summary": [
+            "계좌 이체처럼 여러 변경이 한 세트인 작업은 일부만 성공하면 데이터가 망가진다.",
+            "트랜잭션은 관련 작업을 전부 성공시키거나 전부 되돌리는 단위다.",
+            "Commit·Rollback과 ACID는 데이터 일관성을 이해하는 핵심 개념이다."
+          ],
+          "blocks": [
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c11-p1",
+              "type": "p",
+              "text": "A가 B에게 10만 원을 보내는 상황을 생각해 봅니다. 서버는 A 계좌에서 10만 원을 빼고 B 계좌에 10만 원을 더해야 합니다. 첫 번째 작업만 성공하고 두 번째 작업 도중 서버가 멈춘다면 돈이 사라진 것처럼 보이는 심각한 문제가 생깁니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c11-p2",
+              "type": "p",
+              "text": "트랜잭션은 이렇게 서로 묶여 있어야 하는 여러 작업을 하나의 단위로 다룹니다. 모두 성공하면 실제 데이터베이스에 확정하고, 중간에 하나라도 실패하면 앞에서 했던 작업도 되돌립니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c11-p3",
+              "type": "p",
+              "text": "모든 작업이 성공했을 때 확정하는 것을 Commit이라고 하고, 문제가 생겼을 때 시작 전 상태로 되돌리는 것을 Rollback이라고 설명합니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c11-img1",
+              "type": "image",
+              "src": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221200%22%20height%3D%22675%22%20viewBox%3D%220%200%201200%20675%22%3E%0A%3Crect%20width%3D%221200%22%20height%3D%22675%22%20fill%3D%22%23f7f1e6%22%2F%3E%0A%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221200%22%20height%3D%2213%22%20fill%3D%22%2366735b%22%2F%3E%0A%3Ctext%20x%3D%2260%22%20y%3D%2272%22%20text-anchor%3D%22start%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2238%22%20font-weight%3D%22800%22%20fill%3D%22%23252a22%22%3E%3Ctspan%20x%3D%2260%22%20dy%3D%220%22%3E%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98%3A%20%EC%A0%84%EB%B6%80%20%EC%84%B1%EA%B3%B5%ED%95%98%EA%B1%B0%EB%82%98%20%EC%A0%84%EB%B6%80%20%EC%8B%A4%ED%8C%A8%3C%2Ftspan%3E%3C%2Ftext%3E%0A%3Ctext%20x%3D%2260%22%20y%3D%22116%22%20text-anchor%3D%22start%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2222%22%20font-weight%3D%22500%22%20fill%3D%22%236d6a60%22%3E%3Ctspan%20x%3D%2260%22%20dy%3D%220%22%3E%EB%8F%88%EC%9D%B4%20%EB%B9%A0%EC%A1%8C%EB%8A%94%EB%8D%B0%20%EC%83%81%EB%8C%80%EC%97%90%EA%B2%8C%20%EC%95%88%20%EB%93%A4%EC%96%B4%EA%B0%80%EB%8A%94%20%EC%A4%91%EA%B0%84%20%EC%83%81%ED%83%9C%EB%A5%BC%20%EB%A7%89%EB%8A%94%EB%8B%A4%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%0A%20%20%3Crect%20x%3D%2280%22%20y%3D%22190%22%20width%3D%22240%22%20height%3D%22160%22%20rx%3D%2224%22%20fill%3D%22%23eee4ea%22%20stroke%3D%22%23bea8b4%22%20stroke-width%3D%223%22%2F%3E%0A%20%20%3Ctext%20x%3D%22200%22%20y%3D%22242%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23283126%22%3E%3Ctspan%20x%3D%22200%22%20dy%3D%220%22%3EA%20%EA%B3%84%EC%A2%8C%3C%2Ftspan%3E%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22200%22%20y%3D%22284%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2221%22%20font-weight%3D%22500%22%20fill%3D%22%235e6258%22%3E%3Ctspan%20x%3D%22200%22%20dy%3D%220%22%3E-%20100%2C000%EC%9B%90%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%0A%20%20%3Cdefs%3E%3Cmarker%20id%3D%22arr%22%20markerWidth%3D%2210%22%20markerHeight%3D%2210%22%20refX%3D%227%22%20refY%3D%223%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M0%2C0%20L0%2C6%20L8%2C3%20z%22%20fill%3D%22%2365705c%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%0A%20%20%3Cline%20x1%3D%22330%22%20y1%3D%22270%22%20x2%3D%22480%22%20y2%3D%22270%22%20stroke%3D%22%2365705c%22%20stroke-width%3D%225%22%20marker-end%3D%22url(%23arr)%22%2F%3E%0A%20%20%3Ctext%20x%3D%22405%22%20y%3D%22258%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2220%22%20font-weight%3D%22700%22%20fill%3D%22%2365705c%22%3E%3Ctspan%20x%3D%22405%22%20dy%3D%220%22%3ETransaction%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%0A%20%20%3Crect%20x%3D%22490%22%20y%3D%22190%22%20width%3D%22220%22%20height%3D%22160%22%20rx%3D%2224%22%20fill%3D%22%23e9eee3%22%20stroke%3D%22%23aeb99e%22%20stroke-width%3D%223%22%2F%3E%0A%20%20%3Ctext%20x%3D%22600%22%20y%3D%22242%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23283126%22%3E%3Ctspan%20x%3D%22600%22%20dy%3D%220%22%3ECommit%3C%2Ftspan%3E%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22600%22%20y%3D%22284%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2221%22%20font-weight%3D%22500%22%20fill%3D%22%235e6258%22%3E%3Ctspan%20x%3D%22600%22%20dy%3D%220%22%3E%EB%AA%A8%EB%93%A0%20%EC%9E%91%EC%97%85%20%EC%84%B1%EA%B3%B5%3C%2Ftspan%3E%3Ctspan%20x%3D%22600%22%20dy%3D%2226.25%22%3E%EC%8B%A4%EC%A0%9C%20%EB%B0%98%EC%98%81%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%0A%20%20%3Crect%20x%3D%22760%22%20y%3D%22190%22%20width%3D%22220%22%20height%3D%22160%22%20rx%3D%2224%22%20fill%3D%22%23f3ead7%22%20stroke%3D%22%23c9b68e%22%20stroke-width%3D%223%22%2F%3E%0A%20%20%3Ctext%20x%3D%22870%22%20y%3D%22242%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23283126%22%3E%3Ctspan%20x%3D%22870%22%20dy%3D%220%22%3ERollback%3C%2Ftspan%3E%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22870%22%20y%3D%22284%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2221%22%20font-weight%3D%22500%22%20fill%3D%22%235e6258%22%3E%3Ctspan%20x%3D%22870%22%20dy%3D%220%22%3E%ED%95%98%EB%82%98%EB%9D%BC%EB%8F%84%20%EC%8B%A4%ED%8C%A8%3C%2Ftspan%3E%3Ctspan%20x%3D%22870%22%20dy%3D%2226.25%22%3E%EC%9B%90%EB%9E%98%EB%8C%80%EB%A1%9C%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%0A%20%20%3Crect%20x%3D%221000%22%20y%3D%22190%22%20width%3D%22140%22%20height%3D%22160%22%20rx%3D%2224%22%20fill%3D%22%23e7edf1%22%20stroke%3D%22%239fb1bd%22%20stroke-width%3D%223%22%2F%3E%0A%20%20%3Ctext%20x%3D%221070%22%20y%3D%22242%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23283126%22%3E%3Ctspan%20x%3D%221070%22%20dy%3D%220%22%3EB%20%EA%B3%84%EC%A2%8C%3C%2Ftspan%3E%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%221070%22%20y%3D%22284%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2221%22%20font-weight%3D%22500%22%20fill%3D%22%235e6258%22%3E%3Ctspan%20x%3D%221070%22%20dy%3D%220%22%3E%2B%20100%2C000%EC%9B%90%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%3Ctext%20x%3D%22110%22%20y%3D%22470%22%20text-anchor%3D%22start%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2232%22%20font-weight%3D%22900%22%20fill%3D%22%23283126%22%3E%3Ctspan%20x%3D%22110%22%20dy%3D%220%22%3EACID%3C%2Ftspan%3E%3C%2Ftext%3E%0A%3Ctext%20x%3D%22235%22%20y%3D%22470%22%20text-anchor%3D%22start%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2227%22%20font-weight%3D%22700%22%20fill%3D%22%23596057%22%3E%3Ctspan%20x%3D%22235%22%20dy%3D%220%22%3EAtomicity%20%C2%B7%20Consistency%20%C2%B7%20Isolation%20%C2%B7%20Durability%3C%2Ftspan%3E%3C%2Ftext%3E%0A%3Ctext%20x%3D%22600%22%20y%3D%22535%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2230%22%20font-weight%3D%22800%22%20fill%3D%22%2343513e%22%3E%3Ctspan%20x%3D%22600%22%20dy%3D%220%22%3E%EC%A4%91%EA%B0%84%20%EC%83%81%ED%83%9C%EB%A5%BC%20%ED%97%88%EC%9A%A9%ED%95%98%EC%A7%80%20%EC%95%8A%EA%B3%A0%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%9D%BC%EA%B4%80%EC%84%B1%EC%9D%84%20%EC%A7%80%ED%82%A8%EB%8B%A4%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%3Ctext%20x%3D%221140%22%20y%3D%22642%22%20text-anchor%3D%22end%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2217%22%20fill%3D%22%238c8578%22%3ECHATBOOK%20%C2%B7%20BACKEND%20ROOT%20MAP%3C%2Ftext%3E%0A%3C%2Fsvg%3E",
+              "caption": "계좌 이체 예제로 보는 Commit · Rollback과 ACID."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c11-p4",
+              "type": "p",
+              "text": "강의는 트랜잭션의 중요한 성질을 ACID로 소개합니다. Atomicity는 전부 또는 전무, Consistency는 데이터가 정해진 규칙을 지키는 일관성, Isolation은 동시에 실행되는 작업이 서로 부적절하게 간섭하지 않는 격리성, Durability는 완료된 작업이 시스템이 꺼져도 남는 지속성입니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c11-p5",
+              "type": "p",
+              "text": "백엔드는 값을 저장하는 것만큼 ‘중간에 실패했을 때 어떤 상태가 남는가’를 중요하게 다룹니다. 특히 돈, 재고, 예약처럼 여러 변경이 연결된 기능에서는 성공 경로뿐 아니라 실패 경로를 함께 설계해야 합니다."
+            }
+          ]
+        },
+        {
+          "id": "yt-backend-roots-0SGfDKMLdaI-c12",
+          "title": "서버 확장과 Load Balancer",
+          "subtitle": "한 대를 무한히 키우기보다 여러 대가 나눠 일한다",
+          "summary": [
+            "수직 확장은 한 서버의 성능을 높이는 방식이다.",
+            "수평 확장은 같은 역할의 서버를 여러 대 늘리는 방식이다.",
+            "Load Balancer가 요청을 여러 서버에 분배하며 이런 구조를 분산 시스템으로 이해할 수 있다."
+          ],
+          "blocks": [
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c12-p1",
+              "type": "p",
+              "text": "비동기와 캐시를 적용해도 사용자가 계속 늘면 서버 한 대의 물리적인 한계에 도달합니다. 이때 첫 번째 방법은 더 좋은 CPU와 더 많은 메모리를 가진 서버로 바꾸는 것입니다. 이것을 수직 확장이라고 설명합니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c12-p2",
+              "type": "p",
+              "text": "수직 확장은 단순하지만 더 비싼 장비가 필요하고 결국 한계가 있습니다. 두 번째 방법은 같은 역할의 서버를 여러 대로 늘리는 수평 확장입니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c12-p3",
+              "type": "p",
+              "text": "서버가 여러 대가 되면 사용자의 요청을 어느 서버로 보낼지 정해야 합니다. 이 역할이 Load Balancer입니다. 들어오는 요청을 여러 서버에 적절히 분배해 한 대에 부하가 몰리는 것을 줄입니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c12-img1",
+              "type": "image",
+              "src": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221200%22%20height%3D%22675%22%20viewBox%3D%220%200%201200%20675%22%3E%0A%3Crect%20width%3D%221200%22%20height%3D%22675%22%20fill%3D%22%23f7f1e6%22%2F%3E%0A%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221200%22%20height%3D%2213%22%20fill%3D%22%2366735b%22%2F%3E%0A%3Ctext%20x%3D%2260%22%20y%3D%2272%22%20text-anchor%3D%22start%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2238%22%20font-weight%3D%22800%22%20fill%3D%22%23252a22%22%3E%3Ctspan%20x%3D%2260%22%20dy%3D%220%22%3E%ED%99%95%EC%9E%A5%3A%20%EB%8D%94%20%EC%84%BC%20%EC%84%9C%EB%B2%84%20vs%20%EB%8D%94%20%EB%A7%8E%EC%9D%80%20%EC%84%9C%EB%B2%84%3C%2Ftspan%3E%3C%2Ftext%3E%0A%3Ctext%20x%3D%2260%22%20y%3D%22116%22%20text-anchor%3D%22start%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2222%22%20font-weight%3D%22500%22%20fill%3D%22%236d6a60%22%3E%3Ctspan%20x%3D%2260%22%20dy%3D%220%22%3E%EB%8C%80%ED%98%95%20%EC%84%9C%EB%B9%84%EC%8A%A4%EB%8A%94%20%EC%97%AC%EB%9F%AC%20%EC%84%9C%EB%B2%84%EC%97%90%20%EC%9A%94%EC%B2%AD%EC%9D%84%20%EB%82%98%EB%88%A0%20%EC%B2%98%EB%A6%AC%ED%95%9C%EB%8B%A4%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%0A%20%20%3Crect%20x%3D%2265%22%20y%3D%22185%22%20width%3D%22280%22%20height%3D%22165%22%20rx%3D%2224%22%20fill%3D%22%23f3ead7%22%20stroke%3D%22%23c9b68e%22%20stroke-width%3D%223%22%2F%3E%0A%20%20%3Ctext%20x%3D%22205%22%20y%3D%22237%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23283126%22%3E%3Ctspan%20x%3D%22205%22%20dy%3D%220%22%3E%EC%88%98%EC%A7%81%20%ED%99%95%EC%9E%A5%3C%2Ftspan%3E%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22205%22%20y%3D%22279%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2221%22%20font-weight%3D%22500%22%20fill%3D%22%235e6258%22%3E%3Ctspan%20x%3D%22205%22%20dy%3D%220%22%3E%ED%95%9C%20%EB%8C%80%EB%A5%BC%20%EB%8D%94%20%EA%B0%95%ED%95%98%EA%B2%8C%3C%2Ftspan%3E%3Ctspan%20x%3D%22205%22%20dy%3D%2226.25%22%3ECPU%20%C2%B7%20RAM%20%EC%97%85%EA%B7%B8%EB%A0%88%EC%9D%B4%EB%93%9C%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%3Ctext%20x%3D%22410%22%20y%3D%22275%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2238%22%20font-weight%3D%22900%22%20fill%3D%22%237c7468%22%3E%3Ctspan%20x%3D%22410%22%20dy%3D%220%22%3EVS%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%20%20%3Crect%20x%3D%22475%22%20y%3D%22185%22%20width%3D%22280%22%20height%3D%22165%22%20rx%3D%2224%22%20fill%3D%22%23e9eee3%22%20stroke%3D%22%23aeb99e%22%20stroke-width%3D%223%22%2F%3E%0A%20%20%3Ctext%20x%3D%22615%22%20y%3D%22237%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23283126%22%3E%3Ctspan%20x%3D%22615%22%20dy%3D%220%22%3E%EC%88%98%ED%8F%89%20%ED%99%95%EC%9E%A5%3C%2Ftspan%3E%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22615%22%20y%3D%22279%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2221%22%20font-weight%3D%22500%22%20fill%3D%22%235e6258%22%3E%3Ctspan%20x%3D%22615%22%20dy%3D%220%22%3E%EA%B0%99%EC%9D%80%20%EC%84%9C%EB%B2%84%EB%A5%BC%3C%2Ftspan%3E%3Ctspan%20x%3D%22615%22%20dy%3D%2226.25%22%3E%EC%97%AC%EB%9F%AC%20%EB%8C%80%EB%A1%9C%20%EB%8A%98%EB%A6%BC%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%0A%20%20%3Cdefs%3E%3Cmarker%20id%3D%22arr%22%20markerWidth%3D%2210%22%20markerHeight%3D%2210%22%20refX%3D%227%22%20refY%3D%223%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M0%2C0%20L0%2C6%20L8%2C3%20z%22%20fill%3D%22%2365705c%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%0A%20%20%3Cline%20x1%3D%22765%22%20y1%3D%22267%22%20x2%3D%22875%22%20y2%3D%22267%22%20stroke%3D%22%2365705c%22%20stroke-width%3D%225%22%20marker-end%3D%22url(%23arr)%22%2F%3E%0A%20%20%0A%0A%0A%20%20%3Crect%20x%3D%22885%22%20y%3D%22185%22%20width%3D%22250%22%20height%3D%22165%22%20rx%3D%2224%22%20fill%3D%22%23e7edf1%22%20stroke%3D%22%239fb1bd%22%20stroke-width%3D%223%22%2F%3E%0A%20%20%3Ctext%20x%3D%221010%22%20y%3D%22237%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23283126%22%3E%3Ctspan%20x%3D%221010%22%20dy%3D%220%22%3ELoad%20Balancer%3C%2Ftspan%3E%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%221010%22%20y%3D%22279%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2221%22%20font-weight%3D%22500%22%20fill%3D%22%235e6258%22%3E%3Ctspan%20x%3D%221010%22%20dy%3D%220%22%3E%EB%93%A4%EC%96%B4%EC%98%A8%20%EC%9A%94%EC%B2%AD%EC%9D%84%3C%2Ftspan%3E%3Ctspan%20x%3D%221010%22%20dy%3D%2226.25%22%3E%EC%97%AC%EB%9F%AC%20%EC%84%9C%EB%B2%84%EB%A1%9C%20%EB%B6%84%EB%B0%B0%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%3Ctext%20x%3D%22600%22%20y%3D%22475%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2231%22%20font-weight%3D%22800%22%20fill%3D%22%2343513e%22%3E%3Ctspan%20x%3D%22600%22%20dy%3D%220%22%3E%EC%97%AC%EB%9F%AC%20%EC%84%9C%EB%B2%84%EA%B0%80%20%EB%82%98%EB%88%A0%20%EC%9D%BC%ED%95%98%EB%8A%94%20%EA%B5%AC%EC%A1%B0%20%3D%20%EB%B6%84%EC%82%B0%20%EC%8B%9C%EC%8A%A4%ED%85%9C%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%3Ctext%20x%3D%221140%22%20y%3D%22642%22%20text-anchor%3D%22end%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2217%22%20fill%3D%22%238c8578%22%3ECHATBOOK%20%C2%B7%20BACKEND%20ROOT%20MAP%3C%2Ftext%3E%0A%3C%2Fsvg%3E",
+              "caption": "수직 확장과 수평 확장, Load Balancer의 관계."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c12-p4",
+              "type": "p",
+              "text": "여러 서버가 역할을 나눠 하나의 서비스를 제공하는 구조는 분산 시스템의 출발점입니다. 강의가 강조하는 발상 전환은 ‘서버 한 대를 계속 키우기’에서 ‘여러 서버가 나눠 일하게 하기’로 넘어가는 것입니다."
+            }
+          ]
+        },
+        {
+          "id": "yt-backend-roots-0SGfDKMLdaI-c13",
+          "title": "Monolith와 Microservice",
+          "subtitle": "하나의 큰 서버를 기능별 서비스로 나누다",
+          "summary": [
+            "모놀리스는 로그인·상품·주문·결제 등 여러 기능이 하나의 코드와 배포 단위에 있는 구조다.",
+            "마이크로서비스는 기능별 서비스를 독립적으로 운영한다.",
+            "API Gateway와 Message Queue가 분리된 서비스의 연결을 돕는다."
+          ],
+          "blocks": [
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c13-p1",
+              "type": "p",
+              "text": "초기에는 로그인, 상품 조회, 주문, 결제, 리뷰 같은 기능이 하나의 서버 코드 안에 함께 들어 있는 경우가 많았습니다. 이런 하나의 큰 애플리케이션 구조를 Monolith라고 설명합니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c13-p2",
+              "type": "p",
+              "text": "모놀리스는 시작하기 단순하지만 기능이 많아지면 일부만 수정해도 전체를 다시 배포해야 하고, 하나의 문제가 애플리케이션 전체에 영향을 줄 수 있습니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c13-p3",
+              "type": "p",
+              "text": "마이크로서비스는 기능별로 서비스를 나눕니다. 로그인 서버, 상품 서버, 결제 서버처럼 각각 독립적으로 운영하고 배포할 수 있습니다. 한 서비스에 문제가 생겼을 때 다른 서비스까지 반드시 함께 멈추지 않도록 경계를 만들 수 있습니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c13-p4",
+              "type": "p",
+              "text": "서비스가 여러 개라면 사용자의 요청이 어느 서비스로 가야 하는지 정리할 입구가 필요합니다. API Gateway는 모든 요청을 받아 적절한 서비스로 전달하는 역할로 설명됩니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c13-p5",
+              "type": "p",
+              "text": "서비스끼리 항상 실시간으로 직접 호출해야 하는 것도 아닙니다. Message Queue는 해야 할 일을 메시지로 쌓아 두었다가 상대 서비스가 처리할 수 있을 때 순서대로 가져가도록 만드는 방식입니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c13-img1",
+              "type": "image",
+              "src": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221200%22%20height%3D%22675%22%20viewBox%3D%220%200%201200%20675%22%3E%0A%3Crect%20width%3D%221200%22%20height%3D%22675%22%20fill%3D%22%23f7f1e6%22%2F%3E%0A%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221200%22%20height%3D%2213%22%20fill%3D%22%2366735b%22%2F%3E%0A%3Ctext%20x%3D%2260%22%20y%3D%2272%22%20text-anchor%3D%22start%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2238%22%20font-weight%3D%22800%22%20fill%3D%22%23252a22%22%3E%3Ctspan%20x%3D%2260%22%20dy%3D%220%22%3E%EB%AA%A8%EB%86%80%EB%A6%AC%EC%8A%A4%20%E2%86%92%20%EB%A7%88%EC%9D%B4%ED%81%AC%EB%A1%9C%EC%84%9C%EB%B9%84%EC%8A%A4%3C%2Ftspan%3E%3C%2Ftext%3E%0A%3Ctext%20x%3D%2260%22%20y%3D%22116%22%20text-anchor%3D%22start%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2222%22%20font-weight%3D%22500%22%20fill%3D%22%236d6a60%22%3E%3Ctspan%20x%3D%2260%22%20dy%3D%220%22%3E%EA%B8%B0%EB%8A%A5%EB%B3%84%EB%A1%9C%20%EB%B6%84%EB%A6%AC%ED%95%98%EA%B3%A0%20Gateway%EC%99%80%20Queue%EB%A1%9C%20%EC%97%B0%EA%B2%B0%ED%95%9C%EB%8B%A4%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%0A%20%20%3Crect%20x%3D%2245%22%20y%3D%22180%22%20width%3D%22255%22%20height%3D%22175%22%20rx%3D%2224%22%20fill%3D%22%23ece9df%22%20stroke%3D%22%23b8b09b%22%20stroke-width%3D%223%22%2F%3E%0A%20%20%3Ctext%20x%3D%22172.5%22%20y%3D%22232%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23283126%22%3E%3Ctspan%20x%3D%22172.5%22%20dy%3D%220%22%3EMonolith%3C%2Ftspan%3E%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22172.5%22%20y%3D%22274%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2221%22%20font-weight%3D%22500%22%20fill%3D%22%235e6258%22%3E%3Ctspan%20x%3D%22172.5%22%20dy%3D%220%22%3E%EB%A1%9C%EA%B7%B8%EC%9D%B8%20%C2%B7%20%EC%83%81%ED%92%88%20%C2%B7%20%EC%A3%BC%EB%AC%B8%3C%2Ftspan%3E%3Ctspan%20x%3D%22172.5%22%20dy%3D%2226.25%22%3E%EA%B2%B0%EC%A0%9C%20%C2%B7%20%EB%A6%AC%EB%B7%B0%3C%2Ftspan%3E%3Ctspan%20x%3D%22172.5%22%20dy%3D%2226.25%22%3E%ED%95%9C%20%EB%8D%A9%EC%96%B4%EB%A6%AC%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%0A%20%20%3Cdefs%3E%3Cmarker%20id%3D%22arr%22%20markerWidth%3D%2210%22%20markerHeight%3D%2210%22%20refX%3D%227%22%20refY%3D%223%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M0%2C0%20L0%2C6%20L8%2C3%20z%22%20fill%3D%22%2365705c%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%0A%20%20%3Cline%20x1%3D%22310%22%20y1%3D%22268%22%20x2%3D%22420%22%20y2%3D%22268%22%20stroke%3D%22%2365705c%22%20stroke-width%3D%225%22%20marker-end%3D%22url(%23arr)%22%2F%3E%0A%20%20%0A%0A%0A%20%20%3Crect%20x%3D%22430%22%20y%3D%22180%22%20width%3D%22260%22%20height%3D%22175%22%20rx%3D%2224%22%20fill%3D%22%23f3ead7%22%20stroke%3D%22%23c9b68e%22%20stroke-width%3D%223%22%2F%3E%0A%20%20%3Ctext%20x%3D%22560%22%20y%3D%22232%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23283126%22%3E%3Ctspan%20x%3D%22560%22%20dy%3D%220%22%3EAPI%20Gateway%3C%2Ftspan%3E%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22560%22%20y%3D%22274%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2221%22%20font-weight%3D%22500%22%20fill%3D%22%235e6258%22%3E%3Ctspan%20x%3D%22560%22%20dy%3D%220%22%3E%EB%AA%A8%EB%93%A0%20%EC%9A%94%EC%B2%AD%EC%9D%84%20%EB%B0%9B%EA%B3%A0%3C%2Ftspan%3E%3Ctspan%20x%3D%22560%22%20dy%3D%2226.25%22%3E%EB%A7%9E%EB%8A%94%20%EC%84%9C%EB%B9%84%EC%8A%A4%EB%A1%9C%20%EC%A0%84%EB%8B%AC%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%0A%20%20%3Cdefs%3E%3Cmarker%20id%3D%22arr%22%20markerWidth%3D%2210%22%20markerHeight%3D%2210%22%20refX%3D%227%22%20refY%3D%223%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M0%2C0%20L0%2C6%20L8%2C3%20z%22%20fill%3D%22%2365705c%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%0A%20%20%3Cline%20x1%3D%22700%22%20y1%3D%22220%22%20x2%3D%22820%22%20y2%3D%22205%22%20stroke%3D%22%2365705c%22%20stroke-width%3D%225%22%20marker-end%3D%22url(%23arr)%22%2F%3E%0A%20%20%0A%0A%0A%20%20%3Cdefs%3E%3Cmarker%20id%3D%22arr%22%20markerWidth%3D%2210%22%20markerHeight%3D%2210%22%20refX%3D%227%22%20refY%3D%223%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M0%2C0%20L0%2C6%20L8%2C3%20z%22%20fill%3D%22%2365705c%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%0A%20%20%3Cline%20x1%3D%22700%22%20y1%3D%22270%22%20x2%3D%22820%22%20y2%3D%22270%22%20stroke%3D%22%2365705c%22%20stroke-width%3D%225%22%20marker-end%3D%22url(%23arr)%22%2F%3E%0A%20%20%0A%0A%0A%20%20%3Cdefs%3E%3Cmarker%20id%3D%22arr%22%20markerWidth%3D%2210%22%20markerHeight%3D%2210%22%20refX%3D%227%22%20refY%3D%223%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M0%2C0%20L0%2C6%20L8%2C3%20z%22%20fill%3D%22%2365705c%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%0A%20%20%3Cline%20x1%3D%22700%22%20y1%3D%22320%22%20x2%3D%22820%22%20y2%3D%22335%22%20stroke%3D%22%2365705c%22%20stroke-width%3D%225%22%20marker-end%3D%22url(%23arr)%22%2F%3E%0A%20%20%0A%0A%0A%20%20%3Crect%20x%3D%22835%22%20y%3D%22150%22%20width%3D%22300%22%20height%3D%22105%22%20rx%3D%2224%22%20fill%3D%22%23e9eee3%22%20stroke%3D%22%23aeb99e%22%20stroke-width%3D%223%22%2F%3E%0A%20%20%3Ctext%20x%3D%22985%22%20y%3D%22202%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23283126%22%3E%3Ctspan%20x%3D%22985%22%20dy%3D%220%22%3E%EB%A1%9C%EA%B7%B8%EC%9D%B8%20%EC%84%9C%EB%B9%84%EC%8A%A4%3C%2Ftspan%3E%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22985%22%20y%3D%22244%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2221%22%20font-weight%3D%22500%22%20fill%3D%22%235e6258%22%3E%3Ctspan%20x%3D%22985%22%20dy%3D%220%22%3E%EB%8F%85%EB%A6%BD%20%EC%9A%B4%EC%98%81%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%0A%20%20%3Crect%20x%3D%22835%22%20y%3D%22265%22%20width%3D%22300%22%20height%3D%22105%22%20rx%3D%2224%22%20fill%3D%22%23e7edf1%22%20stroke%3D%22%239fb1bd%22%20stroke-width%3D%223%22%2F%3E%0A%20%20%3Ctext%20x%3D%22985%22%20y%3D%22317%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23283126%22%3E%3Ctspan%20x%3D%22985%22%20dy%3D%220%22%3E%EC%A3%BC%EB%AC%B8%20%2F%20%EA%B2%B0%EC%A0%9C%3C%2Ftspan%3E%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22985%22%20y%3D%22359%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2221%22%20font-weight%3D%22500%22%20fill%3D%22%235e6258%22%3E%3Ctspan%20x%3D%22985%22%20dy%3D%220%22%3E%EB%8F%85%EB%A6%BD%20%EC%9A%B4%EC%98%81%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%0A%20%20%3Crect%20x%3D%22835%22%20y%3D%22380%22%20width%3D%22300%22%20height%3D%22105%22%20rx%3D%2224%22%20fill%3D%22%23eee4ea%22%20stroke%3D%22%23bea8b4%22%20stroke-width%3D%223%22%2F%3E%0A%20%20%3Ctext%20x%3D%22985%22%20y%3D%22432%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23283126%22%3E%3Ctspan%20x%3D%22985%22%20dy%3D%220%22%3E%EC%95%8C%EB%A6%BC%20%EC%84%9C%EB%B9%84%EC%8A%A4%3C%2Ftspan%3E%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22985%22%20y%3D%22474%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2221%22%20font-weight%3D%22500%22%20fill%3D%22%235e6258%22%3E%3Ctspan%20x%3D%22985%22%20dy%3D%220%22%3EQueue%EB%A1%9C%20%EC%A7%80%EC%97%B0%20%EC%B2%98%EB%A6%AC%20%EA%B0%80%EB%8A%A5%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%3Ctext%20x%3D%22600%22%20y%3D%22555%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2224%22%20font-weight%3D%22700%22%20fill%3D%22%234e5549%22%3E%3Ctspan%20x%3D%22600%22%20dy%3D%220%22%3EMessage%20Queue%20%3D%20%EC%83%81%EB%8C%80%20%EC%84%9C%EB%B9%84%EC%8A%A4%EA%B0%80%20%EC%9E%A0%EA%B9%90%20%EB%A9%88%EC%B6%B0%EB%8F%84%20%EC%9D%BC%EC%9D%84%20%EC%9E%83%EC%A7%80%20%EC%95%8A%EA%B2%8C%20%EC%8C%93%EC%95%84%20%EB%91%90%EB%8A%94%20%EB%A9%94%EB%AA%A8%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%3Ctext%20x%3D%221140%22%20y%3D%22642%22%20text-anchor%3D%22end%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2217%22%20fill%3D%22%238c8578%22%3ECHATBOOK%20%C2%B7%20BACKEND%20ROOT%20MAP%3C%2Ftext%3E%0A%3C%2Fsvg%3E",
+              "caption": "Monolith에서 Microservice로 나뉘고 API Gateway·Message Queue로 연결되는 구조."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c13-p6",
+              "type": "p",
+              "text": "강의의 배달 주문 예시처럼 알림 서비스가 잠시 과부하로 멈춰도 주문 메시지가 큐에 남아 있다면 복구 후 다시 처리할 수 있습니다. 핵심은 서비스가 잠시 느리거나 멈춰도 중요한 일을 잃지 않도록 결합도를 낮추는 것입니다."
+            }
+          ]
+        },
+        {
+          "id": "yt-backend-roots-0SGfDKMLdaI-c14",
+          "title": "배포 · CI/CD · Docker · 운영",
+          "subtitle": "백엔드 개발은 코드를 쓰는 것으로 끝나지 않는다",
+          "summary": [
+            "배포는 수정한 코드를 실제 사용자가 쓰는 서버에 반영하는 과정이다.",
+            "CI/CD는 테스트와 배포를 자동화해 반복 수작업과 실수를 줄인다.",
+            "Docker·환경 분리·로그·모니터링은 안정적인 운영을 위한 핵심 도구다."
+          ],
+          "blocks": [
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c14-p1",
+              "type": "p",
+              "text": "기능별 서비스가 많아질수록 코드를 실제 서버에 올리는 작업도 복잡해집니다. 배포는 개발자가 수정한 코드를 사용자가 실제로 접속하는 서버에 반영하는 과정입니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c14-p2",
+              "type": "p",
+              "text": "예전에는 사람이 서버에 직접 접속해 파일을 올리고, 서버를 재시작하고, 테스트하는 과정을 반복했습니다. 서비스가 수십 개라면 이 작업도 수십 번 필요해집니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c14-p3",
+              "type": "p",
+              "text": "CI/CD는 이런 과정을 자동화합니다. 코드를 올리면 자동으로 테스트를 실행하고, 기준을 통과하면 자동으로 배포하는 흐름을 만들 수 있습니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c14-p4",
+              "type": "p",
+              "text": "Docker는 코드와 그 코드가 실행되는 환경을 함께 포장하는 기술로 설명됩니다. ‘내 컴퓨터에서는 되는데 서버에서는 안 된다’는 환경 차이를 줄이고 같은 실행 조건을 반복해서 만들 수 있게 합니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c14-img1",
+              "type": "image",
+              "src": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221200%22%20height%3D%22675%22%20viewBox%3D%220%200%201200%20675%22%3E%0A%3Crect%20width%3D%221200%22%20height%3D%22675%22%20fill%3D%22%23f7f1e6%22%2F%3E%0A%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221200%22%20height%3D%2213%22%20fill%3D%22%2366735b%22%2F%3E%0A%3Ctext%20x%3D%2260%22%20y%3D%2272%22%20text-anchor%3D%22start%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2238%22%20font-weight%3D%22800%22%20fill%3D%22%23252a22%22%3E%3Ctspan%20x%3D%2260%22%20dy%3D%220%22%3E%EB%B0%B0%ED%8F%AC%EC%99%80%20%EC%9A%B4%EC%98%81%3A%20DevOps%3C%2Ftspan%3E%3C%2Ftext%3E%0A%3Ctext%20x%3D%2260%22%20y%3D%22116%22%20text-anchor%3D%22start%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2222%22%20font-weight%3D%22500%22%20fill%3D%22%236d6a60%22%3E%3Ctspan%20x%3D%2260%22%20dy%3D%220%22%3E%EC%BD%94%EB%93%9C%EB%8A%94%20%EC%84%9C%EB%B2%84%EC%97%90%20%EC%98%AC%EB%9D%BC%EA%B0%80%EA%B3%A0%2C%20%EC%84%9C%EB%B9%84%EC%8A%A4%EB%8A%94%20%EA%B3%84%EC%86%8D%20%EA%B4%80%EC%B0%B0%EB%90%98%EC%96%B4%EC%95%BC%20%ED%95%9C%EB%8B%A4%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%0A%20%20%3Crect%20x%3D%2245%22%20y%3D%22205%22%20width%3D%22180%22%20height%3D%22135%22%20rx%3D%2224%22%20fill%3D%22%23ece9df%22%20stroke%3D%22%23b8b09b%22%20stroke-width%3D%223%22%2F%3E%0A%20%20%3Ctext%20x%3D%22135%22%20y%3D%22257%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23283126%22%3E%3Ctspan%20x%3D%22135%22%20dy%3D%220%22%3ECode%3C%2Ftspan%3E%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22135%22%20y%3D%22299%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2221%22%20font-weight%3D%22500%22%20fill%3D%22%235e6258%22%3E%3Ctspan%20x%3D%22135%22%20dy%3D%220%22%3E%EC%88%98%EC%A0%95%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%0A%20%20%3Cdefs%3E%3Cmarker%20id%3D%22arr%22%20markerWidth%3D%2210%22%20markerHeight%3D%2210%22%20refX%3D%227%22%20refY%3D%223%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M0%2C0%20L0%2C6%20L8%2C3%20z%22%20fill%3D%22%2365705c%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%0A%20%20%3Cline%20x1%3D%22235%22%20y1%3D%22272%22%20x2%3D%22315%22%20y2%3D%22272%22%20stroke%3D%22%2365705c%22%20stroke-width%3D%225%22%20marker-end%3D%22url(%23arr)%22%2F%3E%0A%20%20%0A%0A%0A%20%20%3Crect%20x%3D%22325%22%20y%3D%22205%22%20width%3D%22180%22%20height%3D%22135%22%20rx%3D%2224%22%20fill%3D%22%23e7edf1%22%20stroke%3D%22%239fb1bd%22%20stroke-width%3D%223%22%2F%3E%0A%20%20%3Ctext%20x%3D%22415%22%20y%3D%22257%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23283126%22%3E%3Ctspan%20x%3D%22415%22%20dy%3D%220%22%3ECI%3C%2Ftspan%3E%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22415%22%20y%3D%22299%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2221%22%20font-weight%3D%22500%22%20fill%3D%22%235e6258%22%3E%3Ctspan%20x%3D%22415%22%20dy%3D%220%22%3E%EC%9E%90%EB%8F%99%20Test%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%0A%20%20%3Cdefs%3E%3Cmarker%20id%3D%22arr%22%20markerWidth%3D%2210%22%20markerHeight%3D%2210%22%20refX%3D%227%22%20refY%3D%223%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M0%2C0%20L0%2C6%20L8%2C3%20z%22%20fill%3D%22%2365705c%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%0A%20%20%3Cline%20x1%3D%22515%22%20y1%3D%22272%22%20x2%3D%22595%22%20y2%3D%22272%22%20stroke%3D%22%2365705c%22%20stroke-width%3D%225%22%20marker-end%3D%22url(%23arr)%22%2F%3E%0A%20%20%0A%0A%0A%20%20%3Crect%20x%3D%22605%22%20y%3D%22205%22%20width%3D%22180%22%20height%3D%22135%22%20rx%3D%2224%22%20fill%3D%22%23e9eee3%22%20stroke%3D%22%23aeb99e%22%20stroke-width%3D%223%22%2F%3E%0A%20%20%3Ctext%20x%3D%22695%22%20y%3D%22257%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23283126%22%3E%3Ctspan%20x%3D%22695%22%20dy%3D%220%22%3ECD%3C%2Ftspan%3E%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%22695%22%20y%3D%22299%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2221%22%20font-weight%3D%22500%22%20fill%3D%22%235e6258%22%3E%3Ctspan%20x%3D%22695%22%20dy%3D%220%22%3E%EC%9E%90%EB%8F%99%20Deploy%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%0A%20%20%3Cdefs%3E%3Cmarker%20id%3D%22arr%22%20markerWidth%3D%2210%22%20markerHeight%3D%2210%22%20refX%3D%227%22%20refY%3D%223%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M0%2C0%20L0%2C6%20L8%2C3%20z%22%20fill%3D%22%2365705c%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%0A%20%20%3Cline%20x1%3D%22795%22%20y1%3D%22272%22%20x2%3D%22875%22%20y2%3D%22272%22%20stroke%3D%22%2365705c%22%20stroke-width%3D%225%22%20marker-end%3D%22url(%23arr)%22%2F%3E%0A%20%20%0A%0A%0A%20%20%3Crect%20x%3D%22885%22%20y%3D%22205%22%20width%3D%22260%22%20height%3D%22135%22%20rx%3D%2224%22%20fill%3D%22%23f3ead7%22%20stroke%3D%22%23c9b68e%22%20stroke-width%3D%223%22%2F%3E%0A%20%20%3Ctext%20x%3D%221015%22%20y%3D%22257%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23283126%22%3E%3Ctspan%20x%3D%221015%22%20dy%3D%220%22%3EProduction%3C%2Ftspan%3E%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%221015%22%20y%3D%22299%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2221%22%20font-weight%3D%22500%22%20fill%3D%22%235e6258%22%3E%3Ctspan%20x%3D%221015%22%20dy%3D%220%22%3EDocker%20%ED%99%98%EA%B2%BD%3C%2Ftspan%3E%3Ctspan%20x%3D%221015%22%20dy%3D%2226.25%22%3E%EC%9A%B4%EC%98%81%20%EC%84%9C%EB%B2%84%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%3Ctext%20x%3D%22600%22%20y%3D%22445%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2229%22%20font-weight%3D%22800%22%20fill%3D%22%2343513e%22%3E%3Ctspan%20x%3D%22600%22%20dy%3D%220%22%3EDocker%20%3D%20%EC%BD%94%EB%93%9C%20%2B%20%EC%8B%A4%ED%96%89%20%ED%99%98%EA%B2%BD%EC%9D%84%20%ED%95%A8%EA%BB%98%20%ED%8F%AC%EC%9E%A5%3C%2Ftspan%3E%3C%2Ftext%3E%0A%3Ctext%20x%3D%22600%22%20y%3D%22505%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2227%22%20font-weight%3D%22700%22%20fill%3D%22%235f655a%22%3E%3Ctspan%20x%3D%22600%22%20dy%3D%220%22%3ELog%20%3D%20%ED%96%89%EB%8F%99%20%EA%B8%B0%EB%A1%9D%20%20%20%20%20Monitoring%20%3D%20%EC%8B%A4%EC%8B%9C%EA%B0%84%20%EC%83%81%ED%83%9C%20%ED%99%95%EC%9D%B8%3C%2Ftspan%3E%3C%2Ftext%3E%0A%3Ctext%20x%3D%22600%22%20y%3D%22565%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2231%22%20font-weight%3D%22800%22%20fill%3D%22%23283126%22%3E%3Ctspan%20x%3D%22600%22%20dy%3D%220%22%3E%EA%B0%9C%EB%B0%9C%20%ED%99%98%EA%B2%BD%EA%B3%BC%20%EC%9A%B4%EC%98%81%20%ED%99%98%EA%B2%BD%EC%9D%80%20%EB%B6%84%EB%A6%AC%ED%95%9C%EB%8B%A4%3C%2Ftspan%3E%3C%2Ftext%3E%0A%0A%3Ctext%20x%3D%221140%22%20y%3D%22642%22%20text-anchor%3D%22end%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2217%22%20fill%3D%22%238c8578%22%3ECHATBOOK%20%C2%B7%20BACKEND%20ROOT%20MAP%3C%2Ftext%3E%0A%3C%2Fsvg%3E",
+              "caption": "Code → Test → CI/CD → Docker → Production → Log/Monitoring으로 이어지는 운영 흐름."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c14-p5",
+              "type": "p",
+              "text": "개발 환경과 운영 환경을 분리하는 것도 중요합니다. 개발자가 시험하는 과정에서 실제 사용자 데이터를 실수로 지우는 것 같은 사고를 막으려면 환경과 접근 권한을 분리해야 합니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c14-p6",
+              "type": "p",
+              "text": "서비스가 실제로 운영되면 로그와 모니터링이 필요합니다. 로그는 서버가 수행한 행동과 오류를 남기는 기록이고, 모니터링은 시스템의 상태와 이상 징후를 계속 관찰하는 활동입니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c14-p7",
+              "type": "p",
+              "text": "강의의 결론처럼 백엔드 개발자의 일은 코드를 작성하는 순간 끝나지 않습니다. 실제 사용자가 안정적으로 쓸 수 있게 배포하고, 상태를 확인하고, 문제가 생기면 원인을 찾아 복구하는 운영까지 이어집니다."
+            }
+          ]
+        },
+        {
+          "id": "yt-backend-roots-0SGfDKMLdaI-c15",
+          "title": "백엔드 전체 지도를 한 번에 연결하기",
+          "subtitle": "모든 발전은 앞 단계에서 생긴 문제를 해결한 결과다",
+          "summary": [
+            "동적 화면이 필요해 백엔드가 생기고, 데이터를 남기기 위해 DB가 생겼다.",
+            "복잡한 코드는 MVC, 다양한 클라이언트는 API, 로그인 상태는 세션·쿠키와 인증으로 해결했다.",
+            "성능·일관성·확장·서비스 분리·운영 문제를 해결하며 현대 백엔드 구조가 만들어졌다."
+          ],
+          "blocks": [
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c15-p1",
+              "type": "p",
+              "text": "백엔드의 역사를 한 번에 이어 보면 기술 이름이 훨씬 덜 무섭습니다. 처음에는 서버가 파일을 그대로 전달했습니다. 사용자마다 다른 화면이 필요해지자 서버가 요청을 계산해 동적인 결과를 만들기 시작했습니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c15-p2",
+              "type": "p",
+              "text": "사용자가 남긴 데이터를 계속 보관해야 해서 데이터베이스가 필요해졌고, 코드가 뒤섞이자 MVC 같은 역할 분리와 비즈니스 로직 구조가 중요해졌습니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c15-p3",
+              "type": "p",
+              "text": "웹뿐 아니라 모바일 앱도 같은 서버 데이터를 사용해야 하면서 API와 JSON, Endpoint, CRUD가 중심에 들어왔습니다. HTTP가 이전 요청을 기억하지 않기 때문에 Session과 Cookie가 필요했고, 사용자의 신원과 권한을 판단하기 위해 인증과 인가가 중요해졌습니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c15-p4",
+              "type": "p",
+              "text": "사용자가 늘자 비동기 처리와 동시성이 필요했고, 같은 데이터를 반복해서 읽는 비용을 줄이기 위해 Cache, Redis, TTL, CDN 같은 기술을 사용합니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c15-p5",
+              "type": "p",
+              "text": "여러 데이터 변경이 중간에 꼬이지 않도록 Transaction과 ACID를 사용하고, 서버 한 대가 버티지 못하면 Load Balancer와 수평 확장으로 여러 서버가 나눠 일합니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c15-p6",
+              "type": "p",
+              "text": "서비스가 거대해지면 Monolith를 여러 Microservice로 나누기도 하고, API Gateway와 Message Queue로 서비스 사이의 흐름을 관리합니다. 서비스 수가 늘면 배포와 운영도 자동화해야 하므로 CI/CD, Docker, 환경 분리, 로그와 모니터링이 중요해집니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c15-p7",
+              "type": "p",
+              "text": "이 모든 단어를 따로 외우는 것이 목표가 아닙니다. ‘어떤 문제가 생겨서 다음 기술이 필요해졌는가’를 연결하면 백엔드를 하나의 지도처럼 볼 수 있습니다. 바이브코딩에서도 오류가 났을 때 인증 문제인지, 데이터베이스 문제인지, 캐시 문제인지, 배포 문제인지 대략적인 위치를 잡는 힘이 생깁니다."
+            },
+            {
+              "id": "yt-backend-roots-0SGfDKMLdaI-c15-q1",
+              "type": "quote",
+              "text": "백엔드는 요청과 데이터와 규칙과 운영이 이어지는 하나의 시스템이다."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "yt-backend-roots-0SGfDKMLdaI-q1",
+          "chapter": 0,
+          "question": "초기 정적 서버의 역할에 가장 가까운 것은?",
+          "choices": [
+            "요청마다 새로운 HTML을 계산한다",
+            "저장된 HTML 파일을 그대로 전달한다",
+            "항상 JSON만 보낸다",
+            "데이터베이스를 자동 설계한다"
+          ],
+          "answer": 1,
+          "explanation": "초기 웹에서는 서버가 미리 저장된 HTML 파일을 찾아 그대로 보내는 역할에 가까웠습니다."
+        },
+        {
+          "id": "yt-backend-roots-0SGfDKMLdaI-q2",
+          "chapter": 0,
+          "question": "방명록과 검색이 정적 파일 방식의 한계를 드러낸 이유는?",
+          "choices": [
+            "CSS가 없어서",
+            "사용자 입력에 따라 결과가 달라져 미리 모든 페이지를 만들 수 없어서",
+            "서버에 이미지가 없어서",
+            "HTTP가 존재하지 않아서"
+          ],
+          "answer": 1,
+          "explanation": "누가 어떤 글이나 검색어를 입력할지 미리 알 수 없어 요청 시 계산이 필요했습니다."
+        },
+        {
+          "id": "yt-backend-roots-0SGfDKMLdaI-q3",
+          "chapter": 1,
+          "question": "다섯 가지 공통 프로그래밍 기초에 포함되지 않는 것은?",
+          "choices": [
+            "변수",
+            "조건문",
+            "반복문",
+            "로드밸런서"
+          ],
+          "answer": 3,
+          "explanation": "강의는 변수·조건문·반복문·함수·데이터 타입을 공통 뼈대로 설명합니다."
+        },
+        {
+          "id": "yt-backend-roots-0SGfDKMLdaI-q4",
+          "chapter": 1,
+          "question": "로그인 로직의 핵심을 가장 잘 표현한 것은?",
+          "choices": [
+            "언어마다 완전히 다른 논리를 사용한다",
+            "조건을 검사해 성공과 실패를 나눈다",
+            "반드시 데이터베이스 없이 구현한다",
+            "CSS로 로그인 상태를 결정한다"
+          ],
+          "answer": 1,
+          "explanation": "문법은 달라도 조건에 따라 성공·실패를 결정하는 로직 구조는 같습니다."
+        },
+        {
+          "id": "yt-backend-roots-0SGfDKMLdaI-q5",
+          "chapter": 2,
+          "question": "텍스트 파일에 데이터가 많아질 때 나타나는 대표적인 문제는?",
+          "choices": [
+            "특정 데이터를 찾기 위해 많은 내용을 순차적으로 읽어야 할 수 있다",
+            "항상 자동으로 인덱스가 생긴다",
+            "HTML이 Java로 바뀐다",
+            "쿠키가 삭제된다"
+          ],
+          "answer": 0,
+          "explanation": "데이터가 커질수록 단순 파일에서 원하는 정보를 찾고 관리하기 어려워집니다."
+        },
+        {
+          "id": "yt-backend-roots-0SGfDKMLdaI-q6",
+          "chapter": 2,
+          "question": "Schema를 가장 가깝게 설명한 것은?",
+          "choices": [
+            "화면 색상 규칙",
+            "데이터 표의 항목과 타입 같은 구조 정의",
+            "사용자 비밀번호",
+            "서버 CPU 개수"
+          ],
+          "answer": 1,
+          "explanation": "스키마는 어떤 필드와 데이터 타입을 사용하는지 같은 데이터 구조를 정의합니다."
+        },
+        {
+          "id": "yt-backend-roots-0SGfDKMLdaI-q7",
+          "chapter": 3,
+          "question": "MVC의 Model 역할은?",
+          "choices": [
+            "데이터를 읽고 저장하는 부분",
+            "사용자 화면만 꾸미는 부분",
+            "서버를 여러 대로 늘리는 부분",
+            "DNS를 관리하는 부분"
+          ],
+          "answer": 0,
+          "explanation": "Model은 데이터와 데이터베이스를 다루는 역할로 설명됩니다."
+        },
+        {
+          "id": "yt-backend-roots-0SGfDKMLdaI-q8",
+          "chapter": 3,
+          "question": "비즈니스 로직에 가장 가까운 예시는?",
+          "choices": [
+            "버튼 색상을 파란색으로 지정",
+            "주문 시 재고 확인 → 결제 → 재고 감소 → 알림",
+            "브라우저 창 크기 조절",
+            "CSS 파일 이름 변경"
+          ],
+          "answer": 1,
+          "explanation": "비즈니스 로직은 서비스가 실제로 지켜야 하는 핵심 처리 규칙입니다."
+        },
+        {
+          "id": "yt-backend-roots-0SGfDKMLdaI-q9",
+          "chapter": 4,
+          "question": "모바일 앱의 등장으로 서버 역할이 어떻게 바뀌었나?",
+          "choices": [
+            "항상 HTML만 만들게 됐다",
+            "화면 대신 데이터를 공급하는 API 역할이 중요해졌다",
+            "데이터를 저장하지 않게 됐다",
+            "네트워크가 필요 없어졌다"
+          ],
+          "answer": 1,
+          "explanation": "웹과 앱이 같은 백엔드를 쓰려면 화면보다 데이터를 공통으로 제공하는 구조가 필요했습니다."
+        },
+        {
+          "id": "yt-backend-roots-0SGfDKMLdaI-q10",
+          "chapter": 4,
+          "question": "CRUD의 U는 무엇인가?",
+          "choices": [
+            "Upload",
+            "Update",
+            "User",
+            "Utility"
+          ],
+          "answer": 1,
+          "explanation": "CRUD는 Create·Read·Update·Delete입니다."
+        },
+        {
+          "id": "yt-backend-roots-0SGfDKMLdaI-q11",
+          "chapter": 4,
+          "question": "Endpoint란?",
+          "choices": [
+            "API에서 특정 기능이나 데이터 요청을 받는 주소",
+            "데이터베이스 비밀번호",
+            "서버의 전원 버튼",
+            "HTML의 마지막 줄"
+          ],
+          "answer": 0,
+          "explanation": "Endpoint는 `/users`, `/search`처럼 요청 목적을 구분하는 API 주소입니다."
+        },
+        {
+          "id": "yt-backend-roots-0SGfDKMLdaI-q12",
+          "chapter": 5,
+          "question": "백엔드 언어 선택에 대한 강의의 결론은?",
+          "choices": [
+            "항상 Python만 정답",
+            "항상 Java만 정답",
+            "팀·규모·속도·안정성 요구에 따라 달라진다",
+            "언어는 아무 차이가 없다"
+          ],
+          "answer": 2,
+          "explanation": "도구는 상황에 따라 선택되지만 백엔드의 기본 처리 흐름은 공통적이라고 설명합니다."
+        },
+        {
+          "id": "yt-backend-roots-0SGfDKMLdaI-q13",
+          "chapter": 5,
+          "question": "Node.js가 등장하면서 생긴 변화는?",
+          "choices": [
+            "JavaScript를 서버에서도 실행할 수 있게 됐다",
+            "JavaScript가 CSS가 됐다",
+            "PHP가 브라우저 언어가 됐다",
+            "HTTP가 사라졌다"
+          ],
+          "answer": 0,
+          "explanation": "Node.js는 JavaScript를 브라우저 밖에서도 실행할 수 있게 한 런타임입니다."
+        },
+        {
+          "id": "yt-backend-roots-0SGfDKMLdaI-q14",
+          "chapter": 6,
+          "question": "HTTP가 Stateless라는 설명의 의미는?",
+          "choices": [
+            "서버가 모든 과거 요청을 자동 기억한다",
+            "각 요청이 기본적으로 독립적이다",
+            "HTTP는 로그인 전용이다",
+            "쿠키가 서버에만 저장된다"
+          ],
+          "answer": 1,
+          "explanation": "이전 요청의 로그인 상태가 자동으로 이어지지 않기 때문에 별도 상태 관리가 필요합니다."
+        },
+        {
+          "id": "yt-backend-roots-0SGfDKMLdaI-q15",
+          "chapter": 6,
+          "question": "Session과 Cookie의 관계를 가장 잘 설명한 것은?",
+          "choices": [
+            "세션은 서버 측 상태, 쿠키는 브라우저에 식별 정보를 보관하는 데 쓰일 수 있다",
+            "둘 다 CSS 기능이다",
+            "둘은 데이터베이스 종류다",
+            "세션은 이미지 파일이다"
+          ],
+          "answer": 0,
+          "explanation": "세션 상태를 서버에서 보관하고 브라우저 쿠키가 세션 식별자를 함께 보내는 구성이 대표적입니다."
+        },
+        {
+          "id": "yt-backend-roots-0SGfDKMLdaI-q16",
+          "chapter": 7,
+          "question": "인증(Authentication)과 인가(Authorization)의 차이는?",
+          "choices": [
+            "인증은 누구인지, 인가는 무엇을 해도 되는지 확인",
+            "완전히 같은 의미",
+            "인증은 디자인, 인가는 데이터베이스",
+            "인증은 서버 확장, 인가는 캐시"
+          ],
+          "answer": 0,
+          "explanation": "신원 확인과 권한 확인은 다른 문제입니다."
+        },
+        {
+          "id": "yt-backend-roots-0SGfDKMLdaI-q17",
+          "chapter": 7,
+          "question": "JWT의 세 부분으로 강의에서 설명한 것은?",
+          "choices": [
+            "Header · Payload · Signature",
+            "HTML · CSS · JS",
+            "Session · Cookie · Redis",
+            "Model · View · Controller"
+          ],
+          "answer": 0,
+          "explanation": "JWT는 Header, Payload, Signature 세 부분으로 설명됩니다."
+        },
+        {
+          "id": "yt-backend-roots-0SGfDKMLdaI-q18",
+          "chapter": 7,
+          "question": "Base64로 인코딩된 JWT 내용에 대한 설명으로 맞는 것은?",
+          "choices": [
+            "보이기 어렵다고 반드시 암호화된 것은 아니다",
+            "무조건 비밀번호를 안전하게 숨긴다",
+            "내용을 절대 읽을 수 없다",
+            "서명은 필요 없다"
+          ],
+          "answer": 0,
+          "explanation": "강의는 Base64 인코딩이 그 자체로 암호화는 아니라고 짚습니다."
+        },
+        {
+          "id": "yt-backend-roots-0SGfDKMLdaI-q19",
+          "chapter": 8,
+          "question": "비동기 처리의 핵심 목적은?",
+          "choices": [
+            "느린 작업을 기다리는 동안 다른 일을 진행해 대기 시간을 낭비하지 않기",
+            "모든 요청을 반드시 하나씩 처리하기",
+            "캐시를 삭제하기",
+            "서버를 한 대만 사용하기"
+          ],
+          "answer": 0,
+          "explanation": "DB나 외부 응답 대기 중에도 다른 요청을 처리하는 것이 핵심입니다."
+        },
+        {
+          "id": "yt-backend-roots-0SGfDKMLdaI-q20",
+          "chapter": 8,
+          "question": "Non-blocking에 가장 가까운 설명은?",
+          "choices": [
+            "한 작업이 막혀 있어도 다른 작업이 진행될 수 있음",
+            "모든 작업을 중단함",
+            "HTML만 전송함",
+            "데이터베이스를 잠금"
+          ],
+          "answer": 0,
+          "explanation": "한 작업의 대기가 전체 처리를 막지 않는다는 개념입니다."
+        },
+        {
+          "id": "yt-backend-roots-0SGfDKMLdaI-q21",
+          "chapter": 9,
+          "question": "Cache를 사용하는 이유는?",
+          "choices": [
+            "같은 데이터를 반복해 DB에서 읽는 비용을 줄이기",
+            "데이터를 영원히 바꾸지 않기",
+            "사용자 비밀번호를 공개하기",
+            "API를 없애기"
+          ],
+          "answer": 0,
+          "explanation": "자주 요청되는 데이터를 더 빠른 저장소에서 돌려주어 DB 부담을 줄입니다."
+        },
+        {
+          "id": "yt-backend-roots-0SGfDKMLdaI-q22",
+          "chapter": 9,
+          "question": "TTL은 무엇을 의미하나?",
+          "choices": [
+            "캐시 데이터가 유효한 시간",
+            "서버 개수",
+            "API 주소 길이",
+            "HTML 태그 수"
+          ],
+          "answer": 0,
+          "explanation": "오래된 캐시를 갱신하기 위해 유효 시간을 둡니다."
+        },
+        {
+          "id": "yt-backend-roots-0SGfDKMLdaI-q23",
+          "chapter": 9,
+          "question": "CDN의 목적에 가장 가까운 것은?",
+          "choices": [
+            "정적 파일을 사용자와 가까운 위치에서 빠르게 제공",
+            "모든 데이터를 한 서버에만 저장",
+            "인증을 대체",
+            "트랜잭션을 실행"
+          ],
+          "answer": 0,
+          "explanation": "전 세계 여러 위치에 파일을 복제해 가까운 곳에서 전달합니다."
+        },
+        {
+          "id": "yt-backend-roots-0SGfDKMLdaI-q24",
+          "chapter": 10,
+          "question": "계좌 이체에서 A의 돈만 빠지고 B에게 안 들어가는 상태를 막는 핵심 개념은?",
+          "choices": [
+            "Transaction",
+            "CSS Cascade",
+            "Cookie",
+            "CDN"
+          ],
+          "answer": 0,
+          "explanation": "여러 데이터 변경을 하나의 작업 단위로 묶어 전부 성공하거나 되돌립니다."
+        },
+        {
+          "id": "yt-backend-roots-0SGfDKMLdaI-q25",
+          "chapter": 10,
+          "question": "Rollback이 의미하는 것은?",
+          "choices": [
+            "실패 시 이전 상태로 되돌림",
+            "서버를 더 많이 추가",
+            "캐시를 연장",
+            "JWT를 발급"
+          ],
+          "answer": 0,
+          "explanation": "중간 오류가 생기면 앞의 변경까지 취소해 트랜잭션 전 상태로 되돌립니다."
+        },
+        {
+          "id": "yt-backend-roots-0SGfDKMLdaI-q26",
+          "chapter": 10,
+          "question": "ACID의 A는?",
+          "choices": [
+            "Atomicity",
+            "API",
+            "Authentication",
+            "Async"
+          ],
+          "answer": 0,
+          "explanation": "Atomicity는 전부 성공하거나 전부 실패하는 원자성을 뜻합니다."
+        },
+        {
+          "id": "yt-backend-roots-0SGfDKMLdaI-q27",
+          "chapter": 11,
+          "question": "수직 확장(Scale Up)은?",
+          "choices": [
+            "한 서버의 성능을 높이는 방식",
+            "같은 서버를 여러 대 추가",
+            "API를 여러 개 생성",
+            "쿠키를 늘림"
+          ],
+          "answer": 0,
+          "explanation": "더 강한 CPU·메모리 등 한 서버 자체의 성능을 높입니다."
+        },
+        {
+          "id": "yt-backend-roots-0SGfDKMLdaI-q28",
+          "chapter": 11,
+          "question": "Load Balancer가 필요한 이유는?",
+          "choices": [
+            "여러 서버에 요청을 분배하기 위해",
+            "DB 스키마를 만들기 위해",
+            "JWT를 암호화하기 위해",
+            "CSS를 빌드하기 위해"
+          ],
+          "answer": 0,
+          "explanation": "수평 확장된 여러 서버 사이에 요청을 적절히 나눕니다."
+        },
+        {
+          "id": "yt-backend-roots-0SGfDKMLdaI-q29",
+          "chapter": 12,
+          "question": "Monolith의 특징은?",
+          "choices": [
+            "여러 기능이 하나의 큰 코드·배포 단위에 있음",
+            "모든 기능이 독립 서버",
+            "데이터베이스가 없음",
+            "항상 Message Queue를 사용"
+          ],
+          "answer": 0,
+          "explanation": "로그인·상품·주문·결제 등이 한 애플리케이션에 함께 있는 구조입니다."
+        },
+        {
+          "id": "yt-backend-roots-0SGfDKMLdaI-q30",
+          "chapter": 12,
+          "question": "API Gateway의 역할은?",
+          "choices": [
+            "들어오는 요청을 적절한 마이크로서비스로 연결",
+            "비밀번호 해싱",
+            "CSS 렌더링",
+            "DB 트랜잭션을 대신 실행"
+          ],
+          "answer": 0,
+          "explanation": "여러 서비스 앞의 공통 입구에서 요청을 라우팅합니다."
+        },
+        {
+          "id": "yt-backend-roots-0SGfDKMLdaI-q31",
+          "chapter": 12,
+          "question": "Message Queue가 특히 도움이 되는 상황은?",
+          "choices": [
+            "상대 서비스가 잠시 멈춰도 일을 잃지 않고 나중에 처리해야 할 때",
+            "이미지를 꾸밀 때",
+            "HTML 제목을 바꿀 때",
+            "한 번도 비동기 처리를 하지 않을 때"
+          ],
+          "answer": 0,
+          "explanation": "메시지를 큐에 남겨 소비 서비스가 복구된 뒤 처리할 수 있습니다."
+        },
+        {
+          "id": "yt-backend-roots-0SGfDKMLdaI-q32",
+          "chapter": 13,
+          "question": "CI/CD의 핵심은?",
+          "choices": [
+            "코드 변경 후 테스트와 배포를 자동화",
+            "쿠키를 직접 편집",
+            "HTML을 PDF로 변환",
+            "모든 서버를 한 대로 합침"
+          ],
+          "answer": 0,
+          "explanation": "반복적인 검사와 배포 과정을 자동화해 실수를 줄입니다."
+        },
+        {
+          "id": "yt-backend-roots-0SGfDKMLdaI-q33",
+          "chapter": 13,
+          "question": "Docker를 강의에서 가장 가깝게 설명한 것은?",
+          "choices": [
+            "코드와 실행 환경을 함께 포장하는 기술",
+            "관계형 데이터베이스",
+            "API 인증 토큰",
+            "브라우저 렌더러"
+          ],
+          "answer": 0,
+          "explanation": "환경 차이로 인한 ‘내 컴퓨터에서는 된다’ 문제를 줄이는 데 사용됩니다."
+        },
+        {
+          "id": "yt-backend-roots-0SGfDKMLdaI-q34",
+          "chapter": 13,
+          "question": "Log와 Monitoring의 차이에 가장 가까운 것은?",
+          "choices": [
+            "Log는 행동 기록, Monitoring은 상태를 지속적으로 관찰",
+            "둘은 완전히 같은 파일",
+            "Log는 프론트엔드만 사용",
+            "Monitoring은 배포를 뜻함"
+          ],
+          "answer": 0,
+          "explanation": "문제가 생겼을 때 기록을 남기고 실시간 상태를 보는 운영 도구입니다."
+        },
+        {
+          "id": "yt-backend-roots-0SGfDKMLdaI-q35",
+          "chapter": 14,
+          "question": "영상 전체 흐름을 가장 잘 요약한 것은?",
+          "choices": [
+            "백엔드 기술은 앞 단계의 문제를 해결하며 하나씩 쌓였다",
+            "처음부터 현재 구조가 완성돼 있었다",
+            "백엔드는 데이터와 무관하다",
+            "운영은 백엔드와 관계없다"
+          ],
+          "answer": 0,
+          "explanation": "동적 처리·DB·API·인증·성능·확장·운영은 각각 앞에서 생긴 문제의 해법으로 연결됩니다."
+        },
+        {
+          "id": "yt-backend-roots-0SGfDKMLdaI-q36",
+          "chapter": 14,
+          "question": "바이브코더가 이 강의에서 얻어야 할 가장 중요한 능력은?",
+          "choices": [
+            "모든 언어 문법 암기",
+            "문제가 데이터·API·인증·성능·배포 중 어디에 있는지 큰 위치를 잡는 능력",
+            "서버를 직접 제조하는 능력",
+            "DB 없이 서비스 만들기"
+          ],
+          "answer": 1,
+          "explanation": "큰 지도가 있으면 AI에게 문제 위치와 요구사항을 더 정확히 설명할 수 있습니다."
+        }
+      ],
+      "summary": [
+        "사용자마다 다른 결과가 필요해지면서 서버가 파일 보관함에서 요청을 처리하는 백엔드로 발전했다.",
+        "백엔드 언어는 달라도 변수·조건문·반복문·함수·데이터 타입과 HTTP 요청 처리라는 공통 뼈대를 가진다.",
+        "데이터를 지속적으로 저장하고 검색하기 위해 데이터베이스·스키마·쿼리가 중요해졌다.",
+        "코드가 복잡해지면서 MVC와 비즈니스 로직처럼 역할을 분리하는 구조가 필요해졌다.",
+        "모바일 앱과 다양한 클라이언트가 등장하면서 서버는 HTML 대신 API와 JSON으로 데이터를 공급하는 역할이 커졌다.",
+        "HTTP의 Stateless 특성 위에 Session·Cookie·JWT와 인증·인가가 로그인과 권한을 구현한다.",
+        "많은 요청을 처리하기 위해 비동기·동시성·Cache·Redis·TTL·CDN 같은 성능 기술을 사용한다.",
+        "데이터 일관성을 위해 Transaction·Commit·Rollback·ACID를 사용한다.",
+        "사용자 증가에 대응해 수직·수평 확장, Load Balancer, 분산 시스템이 필요해진다.",
+        "거대한 Monolith를 Microservice로 나누고 API Gateway·Message Queue로 연결하기도 한다.",
+        "실제 서비스 운영에는 CI/CD, Docker, 개발·운영 환경 분리, Log·Monitoring이 필요하다."
+      ]
+    },
     {
       "id": "yt-frontend-roots-Kl5EcYd3G2E",
       "title": "프론트엔드 기본 지식 완전교재",
