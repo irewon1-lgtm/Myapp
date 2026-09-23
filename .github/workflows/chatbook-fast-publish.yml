@@ -1,4 +1,4 @@
-# Publish the existing Chatbook site with source-generated metadata and canonical HTML cache exclusions.
+# Supported production route: pin source, serialize publication, check latest source again before deploy.
 name: Chatbook fast publish
 on:
   workflow_dispatch:
@@ -8,8 +8,8 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: chatbook-fast-publish
-  cancel-in-progress: true
+  group: chatbook-production
+  cancel-in-progress: false
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -17,11 +17,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: chatbook-app-20260923
+          ref: ${{ github.sha }}
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Test, validate release information and publish existing site
+      - name: Test current source and publish the existing site
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: node scripts/fast-publish.mjs
@@ -29,16 +29,21 @@ jobs:
         run: |
           npm install --no-save --package-lock=false playwright
           npx playwright install --with-deps chromium
-      - name: Verify current HTTPS release and metadata-independent reader
-        run: node tests/release-live.mjs
+      - name: Verify actual HTTPS reader and metadata
+        run: |
+          node tests/release-live.mjs
+          node tests/current-spec-live.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: chatbook-release-production-evidence
+          name: chatbook-current-spec-verification
           path: |
             tests/release-live-results/
+            tests/current-spec-results/
             dist/version.json
             dist/engine-info.json
             dist/engine-info.html
+            dist/engine-spec.json
+            dist/engine-spec.html
             dist/llms.txt
           retention-days: 3

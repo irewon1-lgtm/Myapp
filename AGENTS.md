@@ -1,19 +1,21 @@
-# Chatbook maintenance rules
+# Chatbook maintenance
 
-Scope: this repository's `chatbook-app-20260923` branch and the existing site https://chatbook-library-20260923.netlify.app only. Do not merge this work into main or change the other apps. Preserve books, book IDs, notes, bookmarks, sync data, and the current reader UI unless the user explicitly requests those changes.
+Only `irewon1-lgtm/Myapp` branch `chatbook-app-20260923` and the existing https://chatbook-library-20260923.netlify.app site are in scope. Do not change main or other apps. Preserve existing books, IDs, notes, bookmarks, sync data and reader UI.
 
-## Generated engine information
+## One current authoring source
 
-`npm run build` must generate `dist/engine-info.json`, `dist/engine-info.html`, `dist/llms.txt`, and `dist/version.json` together. These are read-only information, not a runtime dependency of the reader and not an administration API. Do not edit generated files manually or use a previous deployment's metadata with a new app.
+Read `/engine-spec.json` for a new book. It contains the current rules AND one representative excerpt in one response. Save its contentDigest and snapshot with the job; resume that snapshot, not a newer or remembered version. `engine/cli.mjs prepare` saves the snapshot, `spec JOB_DIR` reads it, and old jobs are not silently migrated. A book-only request does not modify common policy. Explicit user requests can revise the current book or future policy; explain that scope.
 
-Read the executable `public/engine/learning.mjs` VERSION, PROFILE, POLICY and DEFAULTS. Keep `public/engine/defaults.json` and `public/engine/learning-policy.json` consistent when changing the engine. `core.mjs` is the compatibility API; its version need not equal the current production learning engine. App version comes from package.json. A source fingerprint identifies changes even when a numeric version is unchanged.
+Edit `public/engine/learning-policy.json` authoring in place. Replace changed rules and the relevant example; remove superseded requirements. Do not append historical exceptions, copy rules into another source, repeatedly summarize the whole policy, or regenerate unchanged books. Runtime policy in learning.mjs/defaults and the policy manifest must still agree. Verify the example's meaning when writing style changes. Old versions stay in Git history, outside normal authoring input. Current means the actually published bundle, including after rollback, not the highest version number.
 
-Every supported build must run the actual current npm test suite and stop on failure. Only publish fresh, source-bound test evidence. Configuration limits are not measured video success. Never turn structural tests into a claim of semantic fidelity, complete video access, physical Galaxy testing, or production end-to-end success. Unperformed checks stay explicitly unverified.
+`npm run build` generates current spec JSON/HTML, engine-info JSON/HTML, llms.txt and version.json from the same source with fresh actual npm tests. The generator is idempotent. Never edit generated output. Runtime defaults are configuration, not evidence of successful long-video generation. Structural tests/hash consistency do not certify translation, prose, complete source access or reader understanding. Unperformed tests stay unverified.
 
-Keep `node scripts/verify-release.mjs` as the pre-publication gate. App identity, engine identity, public metadata, and published file hashes must agree. Production verification must compare the deployed version.json and engine-info.json to the exact tested sourceDigest. Publish the same bundle or roll back the same bundle; do not update metadata separately.
+`node scripts/verify-release.mjs` rejects broken/mixed bundles and stale evidence. Do not impose page counts, paragraph counts or fixed per-concept templates as publication gates. Editorial issues require local editing, not infinite retries or full-book rewrites. A failed release keeps the previous site and drafts.
 
-Metadata URLs must not enter service-worker offline caches; keep no-store/revalidation headers. Missing/unavailable metadata must never prevent books, quizzes or the reader from opening. The publisher should reject missing metadata, but the running reader must not depend on it.
+## Safe publication and storage
 
-Do not publish API keys, credentials, encrypted handoffs, user notes, connection codes, or environment dumps in metadata, logs, or source archives. Use only explicit non-secret build identifiers. Public URLs do not confer edit/deploy permission.
+Use `.github/workflows/chatbook-fast-publish.yml` / `scripts/fast-publish.mjs` for production. It checks out the source commit, serializes with `chatbook-production`, and compares the current branch's app source before publishing. One-use handoff/current-result files are replaced, not accumulated; they are never public app content. Do not revive historical one-off installers as a normal publishing route. Resolve concurrent source changes before retrying; never force-push over others. A maintainer can change these safeguards, so they are not a platform permission boundary.
 
-If a later architecture change requires replacing this build pipeline, migrate its metadata generation, validation, cache exclusions and these maintenance rules in the same change. Do not silently bypass them. A maintainer with write access can change these safeguards; they are not an unchangeable platform permission boundary.
+Publish/rollback the complete tested bundle. Compare live release and spec identities with tested artifacts. Metadata is read-only, not a reader runtime dependency, generation service or grant of edit/deploy authorization. Never include keys, credentials, user records or environment dumps in public metadata/artifacts.
+
+Keep all metadata aliases network-only and no-store/revalidation protected. Use only the current app cache for offline fallback. Remove only retired `chatbook-offline-*` generated caches after normal worker activation; do not force a worker into an open reader. Never clear localStorage, IndexedDB, unrelated caches or saved user downloads to perform an upgrade. Preserve these boundaries when changing the pipeline.

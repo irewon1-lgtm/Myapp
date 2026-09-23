@@ -7,6 +7,22 @@
   directory = "netlify/functions"
   node_bundler = "esbuild"
 [[redirects]]
+  from = "/engine-spec"
+  to = "/engine-spec.html"
+  status = 200
+[[redirects]]
+  from = "/engine-spec/"
+  to = "/engine-spec.html"
+  status = 200
+[[redirects]]
+  from = "/engine-info"
+  to = "/engine-info.html"
+  status = 200
+[[redirects]]
+  from = "/engine-info/"
+  to = "/engine-info.html"
+  status = 200
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
