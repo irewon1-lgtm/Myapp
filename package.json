@@ -1,1 +1,16 @@
-{"name":"chatbook-library","version":"1.0.2","private":true,"type":"module","scripts":{"build":"node scripts/build.mjs","test":"node --check public/core.js && node --check public/views.js && node --check public/reader.js && node --check public/exports.js && node --check public/app.js && node scripts/api-contract-test.mjs"},"dependencies":{"@netlify/blobs":"latest","@netlify/functions":"latest"}}
+{
+  "name": "chatbook-library",
+  "version": "1.0.2",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --check public/core.js && node --check public/views.js && node --check public/reader.js && node --check public/exports.js && node --check public/app.js && node scripts/api-contract-test.mjs && node --test tests/engine/*.test.mjs",
+    "engine:benchmark": "node engine/benchmark.mjs",
+    "engine:test": "node --test tests/engine/*.test.mjs"
+  },
+  "dependencies": {
+    "@netlify/blobs": "latest",
+    "@netlify/functions": "latest"
+  }
+}

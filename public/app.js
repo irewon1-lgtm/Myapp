@@ -78,6 +78,7 @@
  case'notification-permission':if(!('Notification'in window))throw Error('이 브라우저는 기기 알림을 지원하지 않습니다. 앱 안의 알림함을 이용해 주세요.');await Notification.requestPermission();C.showNotificationSettings();break;
  case'notification-test':await C.notify('챗북','오늘도, 나의 속도로 한 페이지. 알림이 연결됐어요.');C.toast('알림 전송을 요청했어요.');break;
  case'help':C.showHelp();break;
+ case'engine-settings':location.href='./engine/';break;
  case'about':C.showAbout();break;
  case'install-help':{if(C.installPrompt){await C.installPrompt.prompt();C.installPrompt=null;}else C.showModal('앱처럼 사용하기',`<p>${location.protocol==='file:'?'현재 파일은 설치 없이 열어 사용하는 실행본입니다. 파일을 보관해 두고 같은 브라우저로 열어주세요.':'Chrome에서 오른쪽 위 메뉴를 열고 ‘홈 화면에 추가’ 또는 ‘앱 설치’를 선택하세요.'}</p><p class="help">기록은 브라우저별로 따로 저장됩니다. 이동하기 전에 ‘서재 백업’을 이용해 주세요.</p>${C.btn('닫기','modal-close','','full')}`);break;}
  case'modal-close':C.closeModal();break;
