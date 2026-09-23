@@ -44,6 +44,8 @@ print('Applied verified files:',len(prepared))
 `;
 const manifest=path.join(process.env.RUNNER_TEMP,'chatbook-applied-manifest.json');cmd('python',['-c',apply,zip,manifest]);
 cmd('npm',['test']);cmd('python',['tests/narrative_book.py']);cmd('npm',['run','build']);
+// The build regenerates this tracked cache file; publish will regenerate it again.
+cmd('git',['restore','--','public/sw.js']);
 const applied=JSON.parse(fs.readFileSync(manifest));cmd('git',['config','user.name','github-actions[bot]']);cmd('git',['config','user.email','41898282+github-actions[bot]@users.noreply.github.com']);
 cmd('git',['add','--',...applied.files.map(f=>f.path)]);cmd('git',['commit','-m','Upgrade Chatbook 1.2 narrative engine and Python textbook v3; preserve source and other books']);
 cmd('git',['pull','--rebase','origin',branch]);cmd('git',['push','origin','HEAD:'+branch]);
