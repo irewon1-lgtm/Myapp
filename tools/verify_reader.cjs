@@ -43,6 +43,13 @@ assert(html.includes('section-marker type-'),'content-type section marker missin
 assert(html.includes("glossary:'용어'")&&html.includes("practice:'실습'")&&html.includes("solution:'풀이'")&&html.includes("summary:'정리'"),'content-type label mapping missing');
 assert(html.includes('solution-banner'),'solution visual hierarchy missing');
 assert(html.includes('--navSafe:calc(28px + env(safe-area-inset-bottom))'),'Android bottom safe area missing');
+assert(html.includes('EXACT_READER_RESUME_V1'),'exact reader resume marker missing');
+assert(html.includes('readerPositions')&&html.includes('pendingSavedPosition'),'exact physical reading position state missing');
+assert(html.includes('function saveReaderPosition()')&&html.includes('function savedReaderPosition('),'reader position persistence helpers missing');
+assert(html.includes('data-action="continue-track"'),'track resume button must restore exact reading position');
+assert(html.includes('TRACK_SWIPE_NAV_V1')&&html.includes('function installTrackGestures()'),'track swipe navigation missing');
+assert(html.includes('COZY_EDITORIAL_2026_V1'),'cozy 2026 UI redesign marker missing');
+assert(html.includes('track-dots')&&html.includes('cozy-track-rail'),'track carousel UI missing');
 assert(!html.includes('scale=Math.min(1,avail/'),'scale-to-fit must not return');
 assert(!html.includes('space-evenly'),'sparse filler stretching must not return');
 assert(!html.includes('PREMIUM_MINIMAL_V3')&&!html.includes('UNIFORM_READER_GRID_V6')&&!html.includes('NO_GAP_FULL_PAGE_V7'),'legacy CSS layers must not return');
@@ -165,6 +172,11 @@ if(practice){
 }
 const p1=course.chapters[0].pages[0].id;
 const p2=course.chapters.find(c=>c.track===2)?.pages[0].id||course.chapters[0].pages[1].id;
+f.run('openPage('+JSON.stringify(p1)+');physicalPage=3;physicalPages=6;state.location='+JSON.stringify(p1)+';saveReaderPosition()');
+assert.equal(f.run('state.readerPositions[chapters[current.c].id].physical'),3,'exact physical slide must be saved');
+assert.equal(f.run('state.readerPositions[chapters[current.c].id].total'),6,'reader layout size must be saved with exact slide');
+f.run('openPage('+JSON.stringify(p1)+',false,true)');
+assert.equal(f.run('pendingSavedPosition.physical'),3,'continue must request saved physical slide');
 f.run('openPage('+JSON.stringify(p1)+');doAction("bookmark",{})');
 f.run('openPage('+JSON.stringify(p2)+');doAction("bookmark",{})');
 assert.equal(f.run('state.bookmarks.length'),2);
@@ -175,6 +187,8 @@ assert(f.run('searchResults("NameError")').includes('NameError'));
 const before=f.run('JSON.stringify(state)');
 f.run('window.importProgress("bad json")');
 assert.equal(f.run('JSON.stringify(state)'),before);
+assert.equal(typeof f.run('switchTrack'),'function','track swipe switch helper missing');
+assert.equal(typeof f.run('installTrackGestures'),'function','track swipe gesture helper missing');
 for(const r of ['home','books','track','reader','search','saved','settings']){
   f.run('route='+JSON.stringify(r)+';render()');
   assert(f.elements.app.innerHTML.length>100,'route '+r+' did not render');
@@ -225,7 +239,10 @@ const report={
     'numeric-only page counter',
     'single whole-page transition for forward/back/swipe/buttons',
     'read/remaining counters removed',
-    'Android bottom safe area'
+    'Android bottom safe area',
+    'exact logical + physical slide resume after back/navigation',
+    'track detail swipe navigation and horizontal track carousel',
+    'cozy 2030-oriented dimensional UI redesign'
   ],
   status:'PASS'
 };
