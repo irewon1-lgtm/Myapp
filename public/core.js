@@ -28,7 +28,10 @@
  C.annotations=(id,kind)=>C.all('annotation:').filter(a=>(!id||a.bookId===id)&&(!kind||a.kind===kind)).sort((a,b)=>b.t-a.t);
  C.bookmarks=id=>C.annotations(id,'bookmark');
  C.annotationKey=(kind,bookId,anchor)=>'annotation:'+kind+':'+bookId+':'+anchor;
- C.applyPrefs=()=>{let theme=C.pref('theme','cream');if(theme==='system')theme=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'cream';document.body.dataset.theme=theme;document.body.dataset.motion=C.pref('motion',false)?'reduce':'normal';document.documentElement.style.setProperty('--hero',`url("${C.art('stilllife')}")`);document.querySelector('meta[name=theme-color]')?.setAttribute('content',theme==='dark'?'#23251f':'#f7f1e6');};
+ C.resolvedTheme=()=>{let theme=C.pref('theme','cream');if(theme==='system')theme=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'cream';return theme;};
+ C.darkMode=()=>C.resolvedTheme()==='dark';
+ C.toggleDarkMode=()=>{if(C.darkMode()){let back=C.pref('themeBeforeDark','cream');if(!['cream','light'].includes(back))back='cream';C.setPref('theme',back);}else{const current=C.pref('theme','cream');if(current!=='dark')C.set('pref:themeBeforeDark',current==='system'?'cream':current);C.setPref('theme','dark');}};
+ C.applyPrefs=()=>{const theme=C.resolvedTheme();document.body.dataset.theme=theme;document.body.dataset.motion=C.pref('motion',false)?'reduce':'normal';document.documentElement.style.setProperty('--hero',`url("${C.art('stilllife')}")`);document.querySelector('meta[name=theme-color]')?.setAttribute('content',theme==='dark'?'#23251f':'#f7f1e6');};
  C.go=path=>{if(location.hash.slice(1)===path){C.render?.();return;}location.hash=path;};
  C.read=(id,anchor,offset=0)=>{C.select(id);C.pendingAnchor=anchor||null;C.pendingOffset=offset;C.closeModal();C.go('read/'+encodeURIComponent(id));};
  C.empty=(text,ico='book',more='')=>`<div class="empty">${C.i(ico,33)}<p>${C.e(text)}</p>${more}</div>`;
