@@ -8,7 +8,7 @@ permissions:
 jobs:
   fetch:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
         with:
@@ -16,72 +16,40 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Fetch video metadata and captions
+      - name: Try multiple YouTube extraction routes
         shell: bash
         run: |
-          set -u
-          python -m pip install -q yt-dlp
-          mkdir -p imports/q-j2scvSwdA
+          set +e
+          python -m pip install -q 'yt-dlp[default,curl-cffi]'
+          mkdir -p imports/q-j2scvSwdA/attempts
           URL='https://www.youtube.com/watch?v=q-j2scvSwdA'
-          rm -f imports/q-j2scvSwdA/metadata.json imports/q-j2scvSwdA/provider.json imports/q-j2scvSwdA/video.*.vtt
-          yt-dlp --no-playlist --skip-download --js-runtimes node --write-info-json --write-subs --write-auto-subs             --sub-langs 'ko.*,ko,en.*,en' --sub-format vtt             -o 'imports/q-j2scvSwdA/video.%(ext)s' "$URL" || true
-          yt-dlp --no-playlist --skip-download --js-runtimes node --dump-single-json "$URL" > imports/q-j2scvSwdA/metadata.tmp 2>/dev/null || true
-          python - <<'PY'
-          import json, pathlib
-          p=pathlib.Path('imports/q-j2scvSwdA/metadata.tmp')
-          ok=False
-          if p.exists():
-              try:
-                  d=json.loads(p.read_text() or 'null')
-                  ok=isinstance(d,dict) and bool(d.get('id')) and bool(d.get('title'))
-              except Exception: pass
-          if ok: p.replace('imports/q-j2scvSwdA/metadata.json')
-          else: p.unlink(missing_ok=True)
-          PY
-          if [ ! -s imports/q-j2scvSwdA/metadata.json ]; then
-            for base in https://pipedapi-libre.kavin.rocks https://piped-api.privacy.com.de https://pipedapi.adminforge.de https://api.piped.yt https://pipedapi.drgns.space https://pipedapi.owo.si https://pipedapi.ducks.party https://piped-api.codespace.cz https://pipedapi.reallyaweso.me https://api.piped.private.coffee https://pipedapi.darkness.services https://pipedapi.orangenet.cc; do
-              echo "Trying $base"
-              if curl -fL --retry 1 --connect-timeout 10 --max-time 35 "$base/streams/q-j2scvSwdA" -o imports/q-j2scvSwdA/provider.tmp; then
-                if python - <<'PY'
-          import json
-          p='imports/q-j2scvSwdA/provider.tmp'
+          curl -fL --max-time 30 'https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=q-j2scvSwdA&format=json' -o imports/q-j2scvSwdA/oembed.json 2>imports/q-j2scvSwdA/attempts/oembed.err
+          for client in android_vr web_embedded tv_embedded ios mweb web_creator; do
+            echo "TRY $client"
+            yt-dlp --no-playlist --skip-download --js-runtimes node --remote-components ejs:github --impersonate chrome --extractor-args "youtube:player_client=$client" --dump-single-json "$URL" > "imports/q-j2scvSwdA/attempts/$client.json" 2> "imports/q-j2scvSwdA/attempts/$client.err"
+            python - "$client" <<'PY'
+          import json,sys,pathlib
+          p=pathlib.Path('imports/q-j2scvSwdA/attempts')/(sys.argv[1]+'.json')
           try:
-              d=json.load(open(p))
-              assert isinstance(d,dict) and d.get('title')
-          except Exception:
-              raise SystemExit(1)
+              d=json.loads(p.read_text() or 'null')
+              ok=isinstance(d,dict) and d.get('id') and d.get('title')
+          except Exception: ok=False
+          raise SystemExit(0 if ok else 1)
           PY
-                then mv imports/q-j2scvSwdA/provider.tmp imports/q-j2scvSwdA/provider.json; break; fi
-              fi
-            done
-          fi
-          if [ ! -s imports/q-j2scvSwdA/metadata.json ] && [ ! -s imports/q-j2scvSwdA/provider.json ]; then
-            for base in https://inv.nadeko.net https://invidious.nerdvpn.de https://invidious.tiekoetter.com; do
-              echo "Trying $base"
-              if curl -fL --retry 1 --connect-timeout 10 --max-time 35 "$base/api/v1/videos/q-j2scvSwdA" -o imports/q-j2scvSwdA/provider.tmp; then
-                if python - <<'PY'
-          import json
-          p='imports/q-j2scvSwdA/provider.tmp'
-          try:
-              d=json.load(open(p))
-              assert isinstance(d,dict) and d.get('title')
-          except Exception:
-              raise SystemExit(1)
-          PY
-                then mv imports/q-j2scvSwdA/provider.tmp imports/q-j2scvSwdA/provider.json; break; fi
-              fi
-            done
-          fi
-          rm -f imports/q-j2scvSwdA/provider.tmp
-          find imports/q-j2scvSwdA -maxdepth 1 -type f -printf '%f %s bytes\n' | sort
-          test -s imports/q-j2scvSwdA/metadata.json -o -s imports/q-j2scvSwdA/provider.json
-      - name: Commit retrieved source material
+            if [ $? -eq 0 ]; then
+              cp "imports/q-j2scvSwdA/attempts/$client.json" imports/q-j2scvSwdA/metadata.json
+              yt-dlp --no-playlist --skip-download --js-runtimes node --remote-components ejs:github --impersonate chrome --extractor-args "youtube:player_client=$client" --write-subs --write-auto-subs --sub-langs 'ko.*,ko,en.*,en' --sub-format vtt -o 'imports/q-j2scvSwdA/video.%(ext)s' "$URL" > "imports/q-j2scvSwdA/attempts/$client-subs.out" 2> "imports/q-j2scvSwdA/attempts/$client-subs.err"
+              break
+            fi
+          done
+          find imports/q-j2scvSwdA -maxdepth 2 -type f -printf '%p %s bytes\\n' | sort
+      - name: Commit source attempts
         shell: bash
         run: |
           git config user.name 'Chatbook Source Importer'
           git config user.email 'chatbook-import@users.noreply.github.com'
           git add imports/q-j2scvSwdA
           if ! git diff --cached --quiet; then
-            git commit -m 'Retrieve metadata for requested YouTube source'
+            git commit -m 'Probe requested YouTube source with alternate clients'
             git push origin chatbook-app-20260923
           fi
