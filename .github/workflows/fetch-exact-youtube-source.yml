@@ -1,0 +1,73 @@
+name: Fetch exact YouTube lesson source
+on:
+  push:
+    branches: [chatbook-app-20260923]
+    paths: [.github/workflows/fetch-exact-youtube-source.yml]
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: chatbook-app-20260923
+      - name: Fetch exact video via YouTube player API
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p exact_source/q-j2scvSwdA
+          cat > /tmp/body.json <<'JSON'
+          {"context":{"client":{"clientName":"ANDROID","clientVersion":"20.10.38","androidSdkVersion":30,"hl":"ko","gl":"KR"}},"videoId":"q-j2scvSwdA","contentCheckOk":true,"racyCheckOk":true}
+          JSON
+          curl -sS --fail-with-body -H 'Content-Type: application/json' -H 'User-Agent: com.google.android.youtube/20.10.38 (Linux; U; Android 11)'             --data-binary @/tmp/body.json 'https://www.youtube.com/youtubei/v1/player?prettyPrint=false'             -o exact_source/q-j2scvSwdA/player.json
+          python - <<'PY'
+          import json, pathlib, urllib.request
+          p=pathlib.Path('exact_source/q-j2scvSwdA')
+          d=json.load(open(p/'player.json'))
+          out={
+            'playability': d.get('playabilityStatus',{}),
+            'videoDetails': d.get('videoDetails',{}),
+            'microformat': d.get('microformat',{}).get('playerMicroformatRenderer',{}),
+          }
+          tracks=d.get('captions',{}).get('playerCaptionsTracklistRenderer',{}).get('captionTracks',[])
+          out['captionTracks']=[{k:t.get(k) for k in ['baseUrl','name','vssId','languageCode','kind','isTranslatable']} for t in tracks]
+          json.dump(out,open(p/'source-meta.json','w'),ensure_ascii=False,indent=2)
+          print('status',out['playability'].get('status'),'title',out['videoDetails'].get('title'),'len',out['videoDetails'].get('lengthSeconds'),'tracks',[(x.get('languageCode'),x.get('kind')) for x in out['captionTracks']])
+          if tracks:
+            url=tracks[0]['baseUrl']+'&fmt=json3'
+            req=urllib.request.Request(url,headers={'User-Agent':'Mozilla/5.0'})
+            data=urllib.request.urlopen(req,timeout=30).read()
+            open(p/'captions.json3','wb').write(data)
+          fmts=d.get('streamingData',{}).get('formats',[])
+          direct=[x for x in fmts if x.get('url') and x.get('mimeType','').startswith('video/mp4')]
+          direct=sorted(direct,key=lambda x:(x.get('height',9999),x.get('bitrate',999999999)))
+          if direct:
+            open(p/'video-url.txt','w').write(direct[0]['url'])
+            print('video',direct[0].get('qualityLabel'),direct[0].get('contentLength'))
+          PY
+          if [ -s exact_source/q-j2scvSwdA/video-url.txt ]; then
+            URL=$(cat exact_source/q-j2scvSwdA/video-url.txt)
+            curl -L --fail --max-time 120 "$URL" -o /tmp/video.mp4 || true
+            if [ -s /tmp/video.mp4 ]; then
+              ffmpeg -hide_banner -loglevel error -i /tmp/video.mp4 -vf "fps=1/20,scale=480:-1,tile=5x4" -q:v 5 exact_source/q-j2scvSwdA/contact-%02d.jpg || true
+              python - <<'PY'
+              import base64,glob,json,os
+              imgs=[]
+              for fn in sorted(glob.glob('exact_source/q-j2scvSwdA/contact-*.jpg')):
+                  imgs.append({'name':os.path.basename(fn),'data':'data:image/jpeg;base64,'+base64.b64encode(open(fn,'rb').read()).decode()})
+              json.dump(imgs,open('exact_source/q-j2scvSwdA/contact-sheets.json','w'))
+              PY
+              rm -f exact_source/q-j2scvSwdA/contact-*.jpg
+            fi
+          fi
+          rm -f exact_source/q-j2scvSwdA/player.json exact_source/q-j2scvSwdA/video-url.txt
+      - name: Commit exact source
+        shell: bash
+        run: |
+          git config user.name 'Chatbook Exact Source'
+          git config user.email 'chatbook-source@users.noreply.github.com'
+          git add exact_source/q-j2scvSwdA
+          git commit -m 'Fetch exact YouTube lesson source once' || exit 0
+          git push origin chatbook-app-20260923
