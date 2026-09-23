@@ -1,4 +1,4 @@
-# one final structural publish: remote catalog mode
+# publish Chatbook 1.0.2 split-sync + deterministic source provenance
 name: Chatbook fast publish
 on:
   workflow_dispatch:
