@@ -1,4 +1,4 @@
-# Supported production route: stable source identity survives Netlify mirror rebuilds; exact current-spec comparison remains mandatory.
+# Supported production route: exact current content plus actual browser navigation; tolerate canonical URL spelling, not content drift.
 name: Chatbook fast publish
 on:
   workflow_dispatch:
