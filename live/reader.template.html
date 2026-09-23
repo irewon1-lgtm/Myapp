@@ -697,6 +697,95 @@ html,body{
   .bottom-nav{width:calc(100% - 22px);border-radius:22px}
 }
 
+
+/* EDITORIAL_REFERENCE_2026_V2 — selected premium reference, implementation layer */
+:root{
+  --e-bg:#f3f0e9;--e-paper:#fbfaf6;--e-ink:#181716;--e-muted:#777269;--e-line:#ddd8ce;
+  --e-gold:#a1844f;--e-gold2:#c7ae7a;--e-charcoal:#1b1d20;--e-soft:#ebe7de;
+}
+html,body{background:var(--e-bg);color:var(--e-ink);font-family:"Pretendard","Noto Sans KR",system-ui,-apple-system,sans-serif}
+.editorial-screen{background:linear-gradient(180deg,#f8f6f0 0%,#efebe3 100%)}
+.editorial-shell{max-width:920px;padding-top:22px}
+.editorial-top{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;margin:0 0 16px}
+.editorial-brand{font-family:"Noto Serif KR","NanumMyeongjo",serif;font-size:31px;font-weight:800;letter-spacing:-.045em}
+.editorial-top p{margin:5px 0 0;color:var(--e-muted);font-size:12px}
+.icon-only{width:40px;height:40px;border:1px solid var(--e-line);background:var(--e-paper);border-radius:50%}
+.hero-landscape{position:relative;min-height:270px;overflow:hidden;border-radius:16px;background:
+  radial-gradient(circle at 76% 24%,#f3d995 0 6%,transparent 7%),
+  linear-gradient(180deg,#c9c2b2 0 36%,#77736b 37% 57%,#3d403e 58% 73%,#202628 74% 100%);
+  box-shadow:0 14px 32px #423e351f}
+.hero-copy{position:relative;z-index:6;width:min(62%,480px);padding:28px;color:white;text-shadow:0 2px 12px #0008}
+.hero-copy strong{display:block;font-family:"Noto Serif KR","NanumMyeongjo",serif;font-size:clamp(27px,4vw,40px);line-height:1.22;letter-spacing:-.045em}
+.hero-copy p{font-family:"Noto Serif KR",serif;line-height:1.55}
+.hero-copy small{display:block;margin-top:25px;font-size:9px;letter-spacing:.22em}
+.hero-ridge{position:absolute;left:-5%;right:-5%;bottom:0;border-radius:50% 50% 0 0}
+.ridge-one{height:48%;background:#4d504c;clip-path:polygon(0 100%,0 68%,14% 55%,27% 63%,38% 37%,49% 58%,62% 25%,78% 50%,88% 28%,100% 55%,100% 100%)}
+.ridge-two{height:34%;background:#232a2b;clip-path:polygon(0 100%,0 72%,17% 52%,35% 74%,51% 45%,68% 65%,83% 38%,100% 62%,100% 100%)}
+.hero-road{position:absolute;right:19%;bottom:-16px;width:19%;height:58%;border-radius:50%;border-left:13px solid #ded4bf;border-right:3px solid #8d816d;transform:rotate(24deg);opacity:.85}
+.editorial-section{margin-top:22px}
+.editorial-section-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.editorial-section-head h2{font-family:"Noto Serif KR",serif;font-size:22px;margin:0}
+.editorial-section-head button{border:0;background:transparent;color:var(--e-muted);font-size:12px}
+.resume-card{width:100%;display:grid;grid-template-columns:54px minmax(0,1fr) auto auto;gap:12px;align-items:center;border:1px solid var(--e-line);border-radius:14px;background:#fbfaf6;padding:12px;text-align:left;box-shadow:0 6px 18px #302c2410}
+.resume-thumb{width:54px;height:54px;display:grid;place-items:center;border-radius:9px;background:linear-gradient(135deg,#c9c2b7,#938a7d);color:white}
+.resume-copy{display:grid;gap:3px;min-width:0}.resume-copy small{color:var(--e-muted);font-size:10px}.resume-copy strong{font-family:"Noto Serif KR",serif;font-size:17px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.resume-progress{height:5px;background:#e3dfd7;border-radius:99px;overflow:hidden}.resume-progress i{display:block;height:100%;background:var(--e-gold)}
+.resume-card>b{font-size:12px;color:var(--e-muted)}
+.editorial-track-rail{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(165px,210px);gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;scrollbar-width:none}
+.editorial-track-card{position:relative;min-height:185px;border:1px solid #d8d3ca;border-radius:12px;padding:16px;text-align:left;scroll-snap-align:start;overflow:hidden;background:#ddd8cf}
+.editorial-track-card small{font-size:10px}.editorial-track-card strong{display:block;font-family:"Noto Serif KR",serif;font-size:20px;margin:8px 0}.editorial-track-card p{font-size:12px;line-height:1.45;color:#5f5a53}.editorial-track-card>span{position:absolute;bottom:12px;left:14px;width:31px;height:31px;border-radius:50%;background:#fff;display:grid;place-items:center}
+.track-tone-1{background:linear-gradient(150deg,#30302f 0 50%,#706b61 100%);color:white}.track-tone-1 p{color:#ddd8d0}
+.track-tone-2{background:linear-gradient(150deg,#e4dfd4,#c5b9a4)}
+.track-tone-3{background:linear-gradient(150deg,#dadbd6,#a8aca5)}
+.editorial-nav{grid-template-columns:repeat(5,1fr)!important;background:#f9f7f2f5!important;border-top:1px solid #d9d5cd!important;box-shadow:0 -8px 28px #0000000c!important}
+.editorial-nav button{color:#6e6a64!important}.editorial-nav button.active{color:#141414!important;background:transparent!important}
+.editorial-all-tracks{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.all-track-card{min-height:180px;border:1px solid var(--e-line);border-radius:14px;padding:20px;text-align:left}.all-track-card strong{display:block;font:700 23px/1.2 "Noto Serif KR",serif;margin:10px 0}.all-track-card p{font-size:12px}.all-track-card span{font-weight:800}
+.track-editorial-hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(220px,.85fr);min-height:240px;border-bottom:1px solid var(--e-line);padding:10px 0 20px}
+.track-hero-copy small{color:var(--e-muted)}.track-hero-copy h1{font:800 clamp(32px,5vw,50px)/1.05 "Noto Serif KR",serif;margin:8px 0}.track-hero-copy p{font:500 16px "Noto Serif KR",serif}.track-hero-copy em{font-style:normal;color:var(--e-muted);font-size:12px;line-height:1.6}
+.track-road-art{position:relative;overflow:hidden;border-radius:16px;background:linear-gradient(160deg,#ece9e2,#c7c2b9)}
+.track-road-art:before{content:"";position:absolute;inset:0;background:linear-gradient(150deg,transparent 0 35%,#8d8980 36% 41%,#f0ede6 42% 49%,#79756e 50% 55%,transparent 56%);transform:scale(1.25) rotate(-4deg)}
+.track-progress-card{margin:0 0 10px;padding:14px;border:1px solid var(--e-line);border-radius:13px;background:#fbfaf6}.track-progress-card>div:first-child{display:flex;justify-content:space-between}.track-progress-line{height:6px;background:#e1ddd4;border-radius:99px;margin:10px 0}.track-progress-line i{display:block;height:100%;background:var(--e-gold);border-radius:99px}.track-progress-card small{color:var(--e-muted)}
+.track-tabs{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--e-line);margin-bottom:4px}.track-tabs button{border:0;background:transparent;padding:13px 5px;color:var(--e-muted)}.track-tabs button.active{color:#111;border-bottom:2px solid #111;font-weight:800}
+.editorial-chapter-list{display:grid}.editorial-chapter-row{display:grid;grid-template-columns:44px minmax(0,1fr) auto;align-items:center;gap:12px;border:0;border-bottom:1px solid #e0dcd3;background:transparent;padding:13px 5px;text-align:left}.timeline-dot{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;border:1px solid #d8d2c8;color:#766d60}.timeline-dot.done{background:var(--e-gold);border-color:var(--e-gold);color:white}.timeline-dot.active{background:#3b352c;color:white;border-color:#3b352c}.chapter-copy strong{font:700 16px "Noto Serif KR",serif}.chapter-copy small{display:block;color:var(--e-muted);margin-top:3px}.continue-chip{background:#242424;color:white;border-radius:9px;padding:9px 12px;font-size:11px}.row-arrow{font-size:22px;color:#8b857c}
+.reader-shell.light{--reader:#f8f6f0;--reader2:#fbfaf6;--readerInk:#191817;--readerMuted:#7e786f;--readerHair:#ddd8ce;--readerGold:#a1844f}
+.reader-shell.light,.reader-shell.light .reader-paper-wrap,.reader-shell.light .reader-stage,.reader-shell.light .reader-paper,.reader-shell.light .topic-header{background:var(--reader)}
+.reader-shell.light .reader-top{background:#f8f6f0f2;border-bottom:1px solid #ded9cf}
+.reader-shell.light .reader-top button{color:#171717}
+.reader-shell.light .reader-heading strong{color:#171717}
+.reader-shell.light .reader-heading small{color:#8a8379}
+.reader-breadcrumb{margin:3px var(--pagePad) 7px;color:var(--readerMuted);font:700 10px/1.2 system-ui;letter-spacing:.03em}
+.reader-shell.light .section-marker{background:transparent;border-color:#d9d4cb}.reader-shell.light .section-marker .kind{color:#6e6559}.reader-shell.light .section-marker:before{background:#a1844f}
+.reader-shell.light .reader-flow,.reader-shell.light .reader-flow p,.reader-shell.light .topic-title{color:#24211e}
+.reader-shell.light .chapter-ribbon{background:#eee9e0;border-color:#d8d2c6}.reader-shell.light .chapter-ribbon small,.reader-shell.light .chapter-ribbon strong{color:#50493f}
+.reader-shell.light .callout,.reader-shell.light .practice-box,.reader-shell.light .question-box,.reader-shell.light .summary-card,.reader-shell.light .code-explain,.reader-shell.light .extra-card{background:#f0ece4;border-color:#d9d2c6;color:#312d28}
+.reader-shell.light .reader-bottom{background:#f8f6f0f4;border-color:#ded9cf}
+.reader-shell.dark{--reader:#1d1d1c;--reader2:#242321;--readerInk:#f0ede6;--readerMuted:#aaa398;--readerHair:#393734;--readerGold:#b5945b}
+.reader-shell.dark .reader-top,.reader-shell.dark .reader-bottom{background:#1d1d1cf3}
+.reader-top{grid-template-columns:auto minmax(0,1fr) auto auto auto!important;position:relative}
+.reader-more{letter-spacing:2px}
+.reader-menu{position:fixed;z-index:90;right:max(14px,env(safe-area-inset-right));top:64px;width:min(290px,calc(100vw - 28px));padding:15px;border:1px solid #d8d3ca;border-radius:14px;background:#fbfaf7;box-shadow:0 18px 50px #0003;color:#222}
+.reader-shell.dark .reader-menu{background:#2b2926;color:#f3eee6;border-color:#494640}
+.reader-setting-row{display:flex;align-items:center;justify-content:space-between;padding-bottom:14px;border-bottom:1px solid #ddd8ce}.reader-shell.dark .reader-setting-row{border-color:#47443f}
+.reader-setting-row span{display:flex;gap:9px;align-items:center;font-weight:700}
+.theme-switch{width:50px;height:28px;border:0;border-radius:99px;background:#cdc9c1;padding:3px}.theme-switch i{display:block;width:22px;height:22px;border-radius:50%;background:white;transition:.2s}.theme-switch.on{background:#9b8154}.theme-switch.on i{transform:translateX(22px)}
+.reader-font-setting{padding-top:14px}.reader-font-setting>div{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:9px;margin-bottom:10px}.reader-font-setting input{width:100%;accent-color:#8d7449}
+.editorial-reader-bottom{display:grid!important;grid-template-columns:1fr!important;gap:6px!important;min-height:94px!important;padding:5px 18px var(--navSafe)!important}
+.reader-page-info{width:min(420px,100%);margin:auto}
+.reader-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;width:min(460px,100%);margin:auto}.reader-tabs button{border:1px solid var(--readerHair)!important;background:transparent!important;border-radius:99px!important;min-height:38px!important;color:var(--readerInk)!important;display:flex;align-items:center;justify-content:center;gap:7px}.reader-tabs button.active{background:var(--readerInk)!important;color:var(--reader)!important}.reader-tabs .nav-icon{width:18px;height:18px}
+.code{border-radius:10px!important;border-color:#383b3f!important;background:#1b1e22!important;overflow:hidden!important}.reader-flow .code-bar{background:#202328!important;color:#d7d9dc!important}.reader-flow pre{background:#1b1e22!important;color:#e7e9eb!important;padding:12px 0!important}.code-line{display:grid;grid-template-columns:38px minmax(0,1fr);padding:0 12px}.code-line>i{font-style:normal;color:#656a73;text-align:right;padding-right:12px;user-select:none}.tok-keyword{color:#db8c7c}.tok-string{color:#98bc74}.tok-number{color:#7ba8db}.tok-comment{color:#777d84}
+.practice-shell{padding-bottom:125px}.practice-kicker{color:var(--e-muted);font-size:11px}.practice-shell h1{font:800 34px/1.15 "Noto Serif KR",serif;margin:8px 0}.practice-lead{color:var(--e-muted);margin:0 0 18px}
+.practice-editor-card{border:1px solid var(--e-line);border-radius:14px;background:#f9f7f2;padding:12px}.practice-editor-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:9px}.python-badge{font-weight:800}.practice-editor-head>span:last-child{font-size:10px;color:var(--e-muted)}
+#practice-code{width:100%;min-height:250px;resize:vertical;border:0;border-radius:10px;background:#1b1e22;color:#eceff1;padding:14px;font:15px/1.65 ui-monospace,SFMono-Regular,Consolas,monospace;outline:none;tab-size:4}
+.run-python-btn{width:100%;min-height:48px;margin-top:10px;border:0;border-radius:10px;background:#2d2923;color:white;font-weight:800}
+.practice-result{margin-top:14px}.practice-empty,.practice-loading{border:1px dashed #cbc4b8;border-radius:12px;padding:18px;color:var(--e-muted);text-align:center}.practice-console{border-radius:12px;overflow:hidden;background:#1b1e22;color:#fff}.console-head{padding:8px 12px;border-bottom:1px solid #393c40;font-size:11px;color:#bfc3c8}.practice-console pre{margin:0;padding:14px;white-space:pre-wrap;font:15px/1.6 ui-monospace,monospace}.practice-console.error pre{color:#ffb5aa}
+.why-card{margin-top:12px;border:1px solid var(--e-line);border-radius:12px;background:#fbfaf6;padding:16px}.why-card h3{font:800 19px "Noto Serif KR",serif;margin:0 0 10px}.why-card p{line-height:1.65}.why-card code{font-family:ui-monospace,monospace;background:#eeeae2;padding:2px 5px;border-radius:4px}.state-change{display:flex;align-items:center;gap:12px;margin-top:12px}.state-change span{padding:8px 14px;border-radius:8px;background:#eeeae2}.state-change span:last-child{background:#e2d5b9}.practice-explain-list{padding-left:22px}.small-text-btn{border:0;background:transparent;color:var(--e-muted)}
+@media(max-width:720px){
+  .editorial-shell{padding:18px 14px 125px}.editorial-brand{font-size:25px}.hero-landscape{min-height:255px}.hero-copy{width:78%;padding:22px}.hero-copy strong{font-size:29px}
+  .editorial-track-rail{grid-auto-columns:minmax(150px,47vw)}.track-editorial-hero{grid-template-columns:1fr 42%;min-height:200px}.track-hero-copy h1{font-size:30px}.track-road-art{min-height:180px}
+  .reader-menu{top:58px}.topic-title{font-size:30px!important}.reader-paper,.topic-header{width:calc(100% - 34px)!important}
+}
+
 </style>
 </head>
 <body>
@@ -711,13 +800,16 @@ const chapters=COURSE.chapters;
 const native=window.RoadmapNative;
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const txt=s=>esc(s).replace(/\n/g,'<br>');
-const defaults={schema:1,version:3,location:chapters[0].pages[0].id,bookmarks:[],notes:{},complete:[],visited:[],readerPositions:{},migrated:false};
+const defaults={schema:1,version:4,location:chapters[0].pages[0].id,bookmarks:[],notes:{},complete:[],visited:[],readerPositions:{},readerDark:false,readerFont:18,practiceCode:{},migrated:false};
 let state;
 try{state=JSON.parse(native?native.getState():localStorage.getItem('codingroadmap-live-state')||'{}')}catch(e){state={}}
 state=Object.assign({},defaults,state);
 for(const k of ['bookmarks','complete','visited'])if(!Array.isArray(state[k]))state[k]=[];
 if(!state.notes||typeof state.notes!=='object'||Array.isArray(state.notes))state.notes={};
 if(!state.readerPositions||typeof state.readerPositions!=='object'||Array.isArray(state.readerPositions))state.readerPositions={};
+if(!state.practiceCode||typeof state.practiceCode!=='object'||Array.isArray(state.practiceCode))state.practiceCode={};
+state.readerDark=!!state.readerDark;
+state.readerFont=Math.max(15,Math.min(24,Number(state.readerFont)||18));
 let route='home';
 let current=locate(state.location)||{c:0,p:0};
 let selectedTrack=chapters[current.c].track;
@@ -734,6 +826,11 @@ let pendingPhysicalRatio=null;
 let pendingSavedPosition=null;
 let pageTurnActive=false;
 let trackTransitionDir=0;
+let readerMenuOpen=false;
+let practiceOutput='';
+let practiceError='';
+let practiceRunning=false;
+let pyodidePromise=null;
 let trackSlideMap={track:null,key:'',entries:[],byId:{},total:1,ready:false};
 let previewRoute='';
 try{if(typeof location!=='undefined')previewRoute=new URLSearchParams(location.search).get('preview')||''}catch(e){}
@@ -820,13 +917,20 @@ function toast(message){
 function navSvg(type){
   const common='viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="nav-icon" aria-hidden="true"';
   if(type==='home')return '<svg '+common+'><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10.5V20h13v-9.5"/><path d="M9.5 20v-5.5h5V20"/></svg>';
-  if(type==='books')return '<svg '+common+'><path d="M4 4.5h6.5v15H4z"/><path d="M13.5 4.5H20v15h-6.5z"/><path d="M10.5 7.5h3"/></svg>';
-  if(type==='saved')return '<svg '+common+'><path d="M6 3.5h12v17l-6-4-6 4z"/></svg>';
-  return '<svg '+common+'><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.8 1.8 0 0 0 .4 2l.1.1-2.8 2.8-.1-.1a1.8 1.8 0 0 0-2-.4 1.8 1.8 0 0 0-1.1 1.6V21h-4v-.1A1.8 1.8 0 0 0 8.8 19a1.8 1.8 0 0 0-2 .4l-.1.1-2.8-2.8.1-.1a1.8 1.8 0 0 0 .4-2A1.8 1.8 0 0 0 2.8 13H2.7V9h.1A1.8 1.8 0 0 0 4.4 8a1.8 1.8 0 0 0-.4-2l-.1-.1 2.8-2.8.1.1a1.8 1.8 0 0 0 2 .4A1.8 1.8 0 0 0 9.9 2h4a1.8 1.8 0 0 0 1.1 1.6 1.8 1.8 0 0 0 2-.4l.1-.1 2.8 2.8-.1.1a1.8 1.8 0 0 0-.4 2A1.8 1.8 0 0 0 21 9h.1v4H21a1.8 1.8 0 0 0-1.6 2z"/></svg>';
+  if(type==='track')return '<svg '+common+'><path d="M5 4h14v4H5z"/><path d="M5 10h14v4H5z"/><path d="M5 16h14v4H5z"/></svg>';
+  if(type==='read')return '<svg '+common+'><path d="M4 5.5c2.9-.6 5.6.1 8 2v11c-2.4-1.9-5.1-2.6-8-2z"/><path d="M20 5.5c-2.9-.6-5.6.1-8 2v11c2.4-1.9 5.1-2.6 8-2z"/></svg>';
+  if(type==='practice')return '<svg '+common+'><path d="m8 9-4 3 4 3"/><path d="m16 9 4 3-4 3"/><path d="m14 5-4 14"/></svg>';
+  return '<svg '+common+'><circle cx="12" cy="8" r="3"/><path d="M5.5 20c.8-4 3-6 6.5-6s5.7 2 6.5 6"/></svg>';
 }
 function bottomNav(){
-  const item=(id,label)=>'<button class="'+(route===id||(id==='books'&&route==='track')?'active':'')+'" data-action="'+id+'">'+navSvg(id)+'<span>'+label+'</span></button>';
-  return '<nav class="bottom-nav">'+item('home','홈')+item('books','서재')+item('saved','북마크')+item('settings','설정')+'</nav>';
+  const item=(action,label,type,active)=>'<button class="'+(active?'active':'')+'" data-action="'+action+'">'+navSvg(type)+'<span>'+label+'</span></button>';
+  return '<nav class="bottom-nav editorial-nav">'+
+    item('home','홈','home',route==='home')+
+    item('track-current','트랙','track',route==='track'||route==='books')+
+    item('continue','읽기','read',route==='reader')+
+    item('practice','실습','practice',route==='practice')+
+    item('settings','마이','settings',route==='settings')+
+    '</nav>';
 }
 function trackPageIds(id){
   return chapters.filter(c=>c.track===id).flatMap(c=>c.pages.map(p=>p.id));
@@ -934,33 +1038,42 @@ function bookCard(track){
 }
 function home(){
   const c=chapters[current.c],p=c.pages[current.p],prog=progressForTrack(c.track);
-  return '<div class="screen"><main class="shell">'+
-    '<section class="home-head"><div><h1 class="display-title">코딩 로드맵</h1><p class="home-sub">오늘도, 더 나은 개발자가 되어볼까요?</p></div><div class="home-quote">좋은 코드는<br>더 좋은 가능성을<br>만듭니다.</div></section>'+
-    '<section class="continue-card"><div class="continue-copy"><div class="continue-kicker serif">이어 학습하기</div><p class="continue-lead">지금의 한 걸음이,<br>더 넓은 세상을 만듭니다.</p><div class="continue-rule"></div><div class="continue-meta">TRACK '+String(c.track).padStart(2,'0')+' · '+esc(c.title)+'</div><h2 class="continue-title">'+esc(p.title)+'</h2><div class="progress-row"><div class="progress-track"><i style="width:'+prog+'%"></i></div><b>'+prog+'%</b></div><button class="pill-primary" data-action="continue">이어보기 →</button></div><div class="still-life" aria-hidden="true"></div></section>'+
-    '<div class="section-head"><div><h2 class="section-title">학습 트랙</h2><p class="section-caption">한 장씩, 차근차근 나만의 속도로.</p></div><button class="section-link" data-action="books">전체 보기 ›</button></div>'+
-    '<div class="book-rail cozy-track-rail">'+COURSE.tracks.map(bookCard).join('')+'</div>'+
-    '<div class="section-head"><div><h2 class="section-title">내 서재</h2><p class="section-caption">지금의 배움이, 언젠가 더 큰 나를 만듭니다.</p></div></div>'+
-    '<div class="library-banner"><span class="leaf">❧</span><span>꾸준히 배우는<br><strong>당신이 이미 특별합니다.</strong></span><span>Good Code<br>A Kinder Tomorrow</span></div>'+
-    '</main>'+bottomNav()+'</div>';
+  return '<div class="screen editorial-screen"><main class="shell editorial-shell">'+
+    '<header class="editorial-top"><div><div class="editorial-brand">코딩로드맵</div><p>더 깊이, 더 멀리 · 코드로 만드는 새로운 가능성</p></div><button class="icon-only" data-action="settings" aria-label="마이">○</button></header>'+
+    '<section class="hero-landscape"><div class="hero-copy"><strong>지금도,<br>조금씩 더 나은<br>개발자가 되고 있어요.</strong><p>코드는 결국,<br>더 나은 나를 만드는 여정입니다.</p><small>SMALL PROGRESS · BIG POSSIBILITIES</small></div><div class="hero-sun"></div><div class="hero-ridge ridge-one"></div><div class="hero-ridge ridge-two"></div><div class="hero-road"></div></section>'+
+    '<section class="editorial-section"><div class="editorial-section-head"><h2>이어 읽기</h2><button data-action="continue">전체 보기 ›</button></div>'+
+      '<button class="resume-card" data-action="continue"><span class="resume-thumb">'+navSvg('read')+'</span><span class="resume-copy"><small>트랙 '+c.track+' · '+esc(c.title)+'</small><strong>'+esc(p.title)+'</strong><span class="resume-progress"><i style="width:'+prog+'%"></i></span></span><b>'+prog+'%</b><span>›</span></button>'+
+    '</section>'+
+    '<section class="editorial-section"><div class="editorial-section-head"><h2>학습 트랙</h2><button data-action="books">전체 보기 ›</button></div>'+
+      '<div class="editorial-track-rail">'+COURSE.tracks.map((t,i)=>'<button class="editorial-track-card track-tone-'+((i%3)+1)+'" data-action="track" data-track="'+t.id+'" '+(t.available?'':'disabled')+'><small>트랙 '+t.id+'</small><strong>'+esc(t.title)+'</strong><p>'+esc(t.subtitle||'차근차근 배우는 학습 여정')+'</p><span>›</span></button>').join('')+'</div>'+
+    '</section>'+
+  '</main>'+bottomNav()+'</div>';
 }
 function books(){
-  return '<div class="screen"><main class="shell"><section class="home-head"><div><h1 class="display-title">내 서재</h1><p class="home-sub">옆으로 넘기며 배우고 싶은 트랙을 골라보세요.</p></div><div class="home-quote">작은 배움이 모여,<br>큰 변화를 만듭니다.</div></section>'+
-    '<div class="book-rail cozy-track-rail library-track-rail">'+COURSE.tracks.map(bookCard).join('')+'</div><p class="swipe-caption">← 좌우로 밀어서 다른 트랙 보기 →</p></main>'+bottomNav()+'</div>';
+  return '<div class="screen editorial-screen"><main class="shell editorial-shell"><div class="top-row"><button class="back-btn" data-action="home">←</button><div class="track-name">전체 학습 트랙</div></div>'+
+    '<div class="editorial-all-tracks">'+COURSE.tracks.map((t,i)=>'<button class="all-track-card track-tone-'+((i%3)+1)+'" data-action="track" data-track="'+t.id+'" '+(t.available?'':'disabled')+'><small>TRACK '+String(t.id).padStart(2,'0')+'</small><strong>'+esc(t.title)+'</strong><p>'+esc(t.subtitle||'차근차근 배우는 학습 여정')+'</p><span>'+progressForTrack(t.id)+'%</span></button>').join('')+'</div>'+
+    '</main>'+bottomNav()+'</div>';
 }
 function trackPage(){
-  const t=COURSE.tracks.find(x=>x.id===selectedTrack);
-  const list=chapters.map((c,i)=>{
-    if(c.track!==selectedTrack)return '';
-    const status=state.complete.includes(c.id)?'<span class="status-chip done">✓ 완료</span>':i===current.c?'<span class="status-chip reading">읽는 중</span>':'<span class="status-chip">›</span>';
-    return '<button class="chapter-row '+(i===current.c?'current':'')+'" data-action="chapter" data-c="'+i+'"><span class="chapter-num">'+c.chapter+'</span><span><span class="chapter-name">Chapter '+c.chapter+' · '+esc(c.title)+'</span><span class="chapter-sub">'+c.pages.length+'장 · 직접 연습 포함</span></span>'+status+'</button>';
-  }).join('');
-  const first=chapters.findIndex(c=>c.track===selectedTrack);
+  const t=COURSE.tracks.find(x=>x.id===selectedTrack)||COURSE.tracks[0];
+  const indices=chapters.map((c,i)=>({c,i})).filter(x=>x.c.track===selectedTrack);
+  const first=indices.length?indices[0].i:0;
   const target=chapters[current.c]&&chapters[current.c].track===selectedTrack?current.c:first;
   const prog=progressForTrack(selectedTrack);
   const dots=COURSE.tracks.map(x=>'<button class="track-dot '+(x.id===selectedTrack?'active':'')+'" data-action="track" data-track="'+x.id+'" aria-label="Track '+x.id+'"></button>').join('');
-  return '<div class="screen track-screen"><main class="shell track-shell '+(trackTransitionDir>0?'slide-from-right':trackTransitionDir<0?'slide-from-left':'')+'"><div class="track-swipe-surface"><div class="top-row"><button class="back-btn" data-action="home">←</button><div class="track-name">TRACK '+String(t.id).padStart(2,'0')+' · '+esc(t.title)+'</div><div class="track-swipe-hint">‹ 좌우로 넘기기 ›</div></div><div class="track-dots">'+dots+'</div>'+
-    '<section class="track-hero"><div class="track-mini"><small>TRACK '+String(t.id).padStart(2,'0')+'</small><strong>'+esc(t.title)+'</strong><div class="photo"></div></div><div class="track-copy"><div class="track-headline serif">지금의 한 걸음이,<br>더 넓은 세상을 만듭니다.</div><p class="track-desc">'+esc(t.subtitle||'차근차근, 어렵지 않게 배웁니다.')+'</p><div class="progress-row" style="margin-top:14px"><div class="progress-track"><i style="width:'+prog+'%"></i></div><b>'+prog+'%</b></div><button class="pill-primary" data-action="continue-track" data-c="'+target+'">이어보기 →</button></div></section>'+
-    '<div class="section-head"><div><h2 class="section-title">목차</h2><p class="section-caption">작은 배움이 모여, 큰 변화를 만듭니다.</p></div></div><div class="chapter-list">'+list+'</div></div></main>'+bottomNav()+'</div>';
+  const list=indices.map(({c,i})=>{
+    const done=state.complete.includes(c.id);
+    const active=i===current.c;
+    return '<button class="editorial-chapter-row '+(active?'current':'')+'" data-action="chapter" data-c="'+i+'><span class="timeline-dot '+(done?'done':active?'active':'')+'">'+(done?'✓':c.chapter)+'</span><span class="chapter-copy"><strong>'+c.chapter+'. '+esc(c.title)+'</strong><small>'+c.pages.length+'개 학습 페이지</small></span>'+(active?'<b class="continue-chip">이어하기</b>':'<span class="row-arrow">›</span>')+'</button>';
+  }).join('');
+  return '<div class="screen editorial-screen track-screen"><main class="shell editorial-shell track-shell '+(trackTransitionDir>0?'slide-from-right':trackTransitionDir<0?'slide-from-left':'')+'"><div class="track-swipe-surface">'+
+    '<div class="top-row editorial-track-top"><button class="back-btn" data-action="home">←</button><div class="track-name">학습 트랙</div><span></span></div>'+
+    '<div class="track-dots">'+dots+'</div>'+
+    '<section class="track-editorial-hero"><div class="track-hero-copy"><small>트랙 '+t.id+'</small><h1>'+esc(t.title)+'</h1><p>'+esc(t.subtitle||'코드로 세상을 이해하는 첫걸음')+'</p><em>프로그래밍의 핵심 개념을 차근차근 익히고,<br>튼튼한 기초를 만들어보세요.</em></div><div class="track-road-art"><i></i></div></section>'+
+    '<section class="track-progress-card"><div><strong>진행률</strong><b>'+prog+'%</b></div><div class="track-progress-line"><i style="width:'+prog+'%"></i></div><small>'+trackStats(selectedTrack).read+' / '+trackStats(selectedTrack).total+' 페이지 학습</small></section>'+
+    '<div class="track-tabs"><button class="active">챕터 목록</button><button>학습 목표</button><button>추천 자료</button></div>'+
+    '<div class="editorial-chapter-list">'+list+'</div>'+
+    '</div></main>'+bottomNav()+'</div>';
 }
 function pageText(page){
   return [page.title].concat(page.paragraphs||[],page.bullets||[],page.question||'',page.practicePrompt||'',page.code||'',...(page.glossary||[]).flatMap(g=>[g.term,g.description,g.usage,g.example])).join(' ');
@@ -1019,9 +1132,37 @@ function diagram(page,c){
   if(!rows)return '';
   return '<div class="diagram">'+rows.map(r=>'<div class="diagram-row"><span class="diagram-key">'+esc(r[0])+'</span><span>'+esc(r[1])+'</span></div>').join('')+'</div>';
 }
+function highlightPythonLine(line){
+  let out='',i=0;
+  const keywords=new Set(['def','return','if','elif','else','for','while','in','not','and','or','True','False','None','try','except','finally','raise','break','continue','import','from','as','class','with','lambda']);
+  const escChar=c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]||c);
+  while(i<line.length){
+    const ch=line[i];
+    if(ch==='#'){out+='<span class="tok-comment">'+esc(line.slice(i))+'</span>';break}
+    if(ch==='"'||ch==="'"){
+      const q=ch;let j=i+1;
+      while(j<line.length){if(line[j]==='\\'){j+=2;continue}if(line[j]===q){j++;break}j++}
+      out+='<span class="tok-string">'+esc(line.slice(i,j))+'</span>';i=j;continue;
+    }
+    if(/[0-9]/.test(ch)){
+      let j=i+1;while(j<line.length&&/[0-9._]/.test(line[j]))j++;
+      out+='<span class="tok-number">'+esc(line.slice(i,j))+'</span>';i=j;continue;
+    }
+    if(/[A-Za-z_]/.test(ch)){
+      let j=i+1;while(j<line.length&&/[A-Za-z0-9_]/.test(line[j]))j++;
+      const word=line.slice(i,j);
+      out+=(keywords.has(word)?'<span class="tok-keyword">'+word+'</span>':esc(word));i=j;continue;
+    }
+    out+=escChar(ch);i++;
+  }
+  return out||' ';
+}
+function highlightedPython(code){
+  return String(code||'').split('\n').map((line,i)=>'<span class="code-line"><i>'+(i+1)+'</i><span>'+highlightPythonLine(line)+'</span></span>').join('');
+}
 function codeBlock(code,note,label){
-  const head=label||'Python · 예제 코드';
-  return '<div class="code"><div class="code-bar"><span>'+esc(head)+'</span><button class="copy-btn" data-action="copy-code">복사하기</button></div><pre><code>'+esc(code)+'</code></pre>'+(note?'<div class="code-output">'+esc(note)+'</div>':'')+'</div>';
+  const head=label||'Python';
+  return '<div class="code"><div class="code-bar"><span>'+esc(head)+'</span><button class="copy-btn" data-action="copy-code">▣ 복사</button></div><pre><code>'+highlightedPython(code)+'</code></pre>'+(note?'<div class="code-output">'+esc(note)+'</div>':'')+'</div>';
 }
 function kindLabel(kind){
   const map={glossary:'용어',concept:'개념',visual:'흐름',example:'예제',practice:'실습',solution:'풀이',check:'확인',summary:'정리'};
@@ -1084,18 +1225,97 @@ function lessonSection(page,c,index){
 function chapterFlow(c){
   return lessonSection(c.pages[current.p],c,current.p);
 }
+function readerMenu(){
+  return '<div id="reader-menu" class="reader-menu" '+(readerMenuOpen?'':'hidden')+'>'+
+    '<div class="reader-setting-row"><span><b>☾</b> 다크 모드</span><button class="theme-switch '+(state.readerDark?'on':'')+'" data-action="toggle-dark" aria-label="다크 모드"><i></i></button></div>'+
+    '<div class="reader-font-setting"><div><span>A</span><strong>글자 크기</strong><span id="font-value">'+state.readerFont+'px</span></div><input id="reader-font-range" type="range" min="15" max="24" step="1" value="'+state.readerFont+'" aria-label="글자 크기"></div>'+
+    '</div>';
+}
 function reader(){
   const c=chapters[current.c],p=c.pages[current.p];
-  return '<div class="reader-shell '+(focus?'focus':'')+'">'+
-    '<header class="reader-top"><button data-action="track-current" aria-label="목차">←</button><div class="reader-heading"><strong>CHAPTER '+String(c.chapter).padStart(2,'0')+' · '+esc(c.title)+'</strong><small>TRACK '+String(c.track).padStart(2,'0')+'</small></div><button data-action="bookmark" aria-label="북마크">'+(state.bookmarks.includes(p.id)?'★':'☆')+'</button><button class="note-top" data-action="note" aria-label="메모">▤</button><button data-action="display" aria-label="읽기 설정">Aa</button></header>'+
-    '<div class="reader-paper-wrap"><div class="topic-header"><h1 class="topic-title">'+esc(p.title)+'</h1><div class="section-marker type-'+esc(p.kind)+'"><span class="kind">'+esc(kindLabel(p.kind))+'</span><span class="hint">'+esc(sectionHint(p))+'</span></div></div><div class="reader-stage"><button class="edge-zone edge-prev" data-action="prev" aria-label="이전 페이지"></button><article id="paper" class="reader-paper"><div id="flow" class="reader-flow">'+chapterFlow(c)+'</div></article><button class="edge-zone edge-next" data-action="next" aria-label="다음 페이지"></button></div></div>'+
-    '<footer class="reader-bottom"><button class="circle-btn" data-action="prev" aria-label="이전">‹</button><div class="reader-page-info"><span id="page-pos">1 / 1</span><div class="reader-progress"><i id="page-progress" style="width:0%"></i></div></div><button class="circle-btn" data-action="next" aria-label="다음">›</button><button class="focus-btn" data-action="focus">▣ 집중</button></footer>'+
+  return '<div class="reader-shell '+(focus?'focus ':'')+(state.readerDark?'dark':'light')+'" style="--readerBody:'+state.readerFont+'px">'+
+    '<header class="reader-top"><button data-action="track-current" aria-label="목차">←</button><div class="reader-heading"><strong>읽기</strong><small>트랙 '+c.track+' · '+esc(c.title)+'</small></div><button class="reader-aa" data-action="reader-menu" aria-label="글자 설정">Aa</button><button data-action="bookmark" aria-label="북마크">'+(state.bookmarks.includes(p.id)?'★':'☆')+'</button><button class="reader-more" data-action="reader-menu" aria-label="더보기">•••</button></header>'+
+    readerMenu()+
+    '<div class="reader-paper-wrap"><div class="topic-header"><div class="reader-breadcrumb">트랙 '+c.track+' · 챕터 '+c.chapter+'</div><h1 class="topic-title">'+esc(p.title)+'</h1><div class="section-marker type-'+esc(p.kind)+'"><span class="kind">'+esc(kindLabel(p.kind))+'</span><span class="hint">'+esc(sectionHint(p))+'</span></div></div><div class="reader-stage"><button class="edge-zone edge-prev" data-action="prev" aria-label="이전 페이지"></button><article id="paper" class="reader-paper"><div id="flow" class="reader-flow">'+chapterFlow(c)+'</div></article><button class="edge-zone edge-next" data-action="next" aria-label="다음 페이지"></button></div></div>'+
+    '<footer class="reader-bottom editorial-reader-bottom"><div class="reader-page-info"><span id="page-pos">1 / 1</span><div class="reader-progress"><i id="page-progress" style="width:0%"></i></div></div><div class="reader-tabs"><button class="active">'+navSvg('read')+'<span>읽기</span></button><button data-action="summary">▤<span>요약</span></button><button data-action="practice">'+navSvg('practice')+'<span>실습</span></button></div></footer>'+
     '<button class="focus-exit" data-action="focus">집중모드 종료</button><div id="focus-hud" class="focus-hud"></div>'+
     '</div>';
 }
+/* PRACTICE_PYTHON_ENGINE_V1 — real Python via Pyodide, loaded only when needed */
+function practicePageSource(){
+  const p=chapters[current.c]?.pages[current.p];
+  const sample='student = {"name": "민수", "score": 80}\n\nprint(student["name"])\nstudent["score"] = 90\nprint(student["score"])';
+  return (state.practiceCode[p?.id]||p?.code||sample);
+}
+function practiceExplanation(code,output){
+  const safeOut=esc(output||'출력이 없습니다.');
+  if(/student\s*=\s*\{[\s\S]*["']name["'][\s\S]*["']score["'][\s\S]*\}/.test(code)&&/student\[["']score["']\]\s*=\s*90/.test(code)){
+    return '<p><strong>첫 번째 줄</strong>에서 <code>student</code>라는 딕셔너리를 만들고, <code>name</code>에는 “민수”, <code>score</code>에는 80을 저장합니다.</p>'+
+      '<p><code>print(student["name"])</code>은 딕셔너리의 <code>name</code> 값을 꺼내기 때문에 <strong>민수</strong>가 출력됩니다.</p>'+
+      '<p>그다음 <code>student["score"] = 90</code>이 기존 점수 80을 90으로 바꿉니다. 딕셔너리 전체를 새로 만드는 게 아니라 <strong>score 칸 하나만 변경</strong>하는 겁니다.</p>'+
+      '<p>마지막 <code>print(student["score"])</code>은 바뀐 값을 읽으므로 <strong>90</strong>이 출력됩니다.</p>'+
+      '<div class="state-change"><span>score: 80</span><b>→</b><span>score: 90</span></div>';
+  }
+  const lines=String(code||'').split('\n').filter(x=>x.trim());
+  return '<p>Python이 위에서 아래로 코드를 실제 실행한 결과입니다.</p>'+
+    '<ol class="practice-explain-list">'+lines.slice(0,10).map((line,i)=>'<li><b>'+(i+1)+'단계</b> <code>'+esc(line.trim())+'</code> 줄을 실행합니다.</li>').join('')+'</ol>'+
+    '<p>최종 콘솔 출력은 아래와 같습니다: <code>'+safeOut.replace(/\n/g,' / ')+'</code></p>';
+}
+function practiceResultMarkup(){
+  if(practiceRunning)return '<div class="practice-loading">Python 엔진 실행 중…</div>';
+  if(practiceError)return '<div class="practice-console error"><div class="console-head">오류</div><pre>'+esc(practiceError)+'</pre></div>';
+  if(!practiceOutput)return '<div class="practice-empty">코드를 실행하면 실제 Python 출력이 여기에 표시됩니다.</div>';
+  return '<div class="practice-console"><div class="console-head">실행 결과</div><pre>'+esc(practiceOutput)+'</pre></div><section class="why-card"><h3>왜 이렇게 나오나요?</h3>'+practiceExplanation(document.getElementById('practice-code')?.value||practicePageSource(),practiceOutput)+'</section>';
+}
+function practice(){
+  const c=chapters[current.c],p=c.pages[current.p];
+  const code=practicePageSource();
+  return '<div class="screen editorial-screen practice-screen"><main class="shell editorial-shell practice-shell">'+
+    '<div class="top-row"><button class="back-btn" data-action="continue">←</button><div class="track-name">실습</div><button class="small-text-btn" data-action="practice-reset">초기화</button></div>'+
+    '<div class="practice-kicker">트랙 '+c.track+' · '+esc(c.title)+'</div><h1>코드를 직접 실행해보세요</h1><p class="practice-lead">예제를 수정하고 실행하면서 Python이 실제로 어떻게 동작하는지 확인하세요.</p>'+
+    '<section class="practice-editor-card"><div class="practice-editor-head"><span class="python-badge">🐍 Python</span><span>실제 Python 실행</span></div><textarea id="practice-code" spellcheck="false">'+esc(code)+'</textarea><button class="run-python-btn" data-action="run-python">▶ 코드 실행하기</button></section>'+
+    '<section id="practice-result" class="practice-result">'+practiceResultMarkup()+'</section>'+
+    '</main>'+bottomNav()+'</div>';
+}
+function ensurePyodide(){
+  if(pyodidePromise)return pyodidePromise;
+  pyodidePromise=new Promise((resolve,reject)=>{
+    if(window.loadPyodide){resolve();return}
+    const sc=document.createElement('script');
+    sc.src='https://cdn.jsdelivr.net/pyodide/v0.27.7/full/pyodide.js';
+    sc.onload=resolve;sc.onerror=()=>reject(new Error('Python 실행 엔진을 불러오지 못했습니다. 인터넷 연결을 확인해 주세요.'));
+    document.head.appendChild(sc);
+  }).then(()=>window.loadPyodide({indexURL:'https://cdn.jsdelivr.net/pyodide/v0.27.7/full/'}));
+  return pyodidePromise;
+}
+async function runPythonPractice(){
+  const area=document.getElementById('practice-code');
+  if(!area)return;
+  const code=area.value;
+  const p=chapters[current.c]?.pages[current.p];
+  if(p){state.practiceCode[p.id]=code;persist()}
+  practiceRunning=true;practiceError='';practiceOutput='';
+  const box=document.getElementById('practice-result');if(box)box.innerHTML=practiceResultMarkup();
+  try{
+    const py=await ensurePyodide();
+    const out=[],err=[];
+    py.setStdout({batched:s=>out.push(s)});
+    py.setStderr({batched:s=>err.push(s)});
+    const result=await py.runPythonAsync(code);
+    practiceOutput=out.join('\n');
+    if(!practiceOutput&&result!==undefined&&result!==null)practiceOutput=String(result);
+    if(err.length)practiceError=err.join('\n');
+  }catch(e){
+    practiceError=String(e&&e.message?e.message:e);
+  }finally{
+    practiceRunning=false;
+    const resultBox=document.getElementById('practice-result');
+    if(resultBox)resultBox.innerHTML=practiceResultMarkup();
+  }
+}
 function render(){
   if(previewRoute==='reader'){route='reader';previewRoute=''}else if(previewRoute==='books'){route='books';previewRoute=''}else if(previewRoute==='track'){route='track';selectedTrack=1;previewRoute=''}else if(previewRoute==='saved'){route='saved';previewRoute=''}
-  const map={home,books,track:trackPage,reader,search,saved,settings};
+  const map={home,books,track:trackPage,reader,practice,search,saved,settings};
   document.getElementById('app').innerHTML=(map[route]||home)();
   document.title='코딩 로드맵 · '+(route==='reader'?chapters[current.c].title:'서재');
   if(route==='reader'){
@@ -1400,9 +1620,9 @@ function goBack(){
   if(d.open){d.close();return true}
   if(route==='home')return false;
   if(route==='reader'){
-    saveReaderPosition();
-    route='track';
-    selectedTrack=chapters[current.c].track;
+    saveReaderPosition();route='track';selectedTrack=chapters[current.c].track;
+  }else if(route==='practice'){
+    route='reader';
   }else route='home';
   render();
   return true;
@@ -1410,49 +1630,57 @@ function goBack(){
 window.goBack=goBack;
 function doAction(action,el){
   const c=chapters[current.c],p=c.pages[current.p];
-  if(action==='home'||action==='books'||action==='search'||action==='saved'||action==='settings'){leaveReader();route=action;render();return}
-  if(action==='track'){leaveReader();trackTransitionDir=Number(el.dataset.track)>selectedTrack?1:-1;selectedTrack=Number(el.dataset.track);route='track';render();return}
-  if(action==='track-current'){saveReaderPosition();selectedTrack=c.track;route='track';render();return}
+  if(action==='home'||action==='books'||action==='search'||action==='saved'||action==='settings'){leaveReader();readerMenuOpen=false;route=action;render();return}
+  if(action==='track'){leaveReader();readerMenuOpen=false;trackTransitionDir=Number(el.dataset.track)>selectedTrack?1:-1;selectedTrack=Number(el.dataset.track);route='track';render();return}
+  if(action==='track-current'){saveReaderPosition();readerMenuOpen=false;selectedTrack=c.track;route='track';render();return}
   if(action==='chapter'){const i=Number(el.dataset.c);openPage(chapters[i].pages[0].id);return}
-  if(action==='continue'){openPage(state.location,false,true);return}
+  if(action==='continue'){readerMenuOpen=false;openPage(state.location,false,true);return}
   if(action==='continue-track'){
     const saved=locate(state.location);
     if(saved&&chapters[saved.c].track===selectedTrack)openPage(state.location,false,true);
-    else{
-      const first=chapters.findIndex(x=>x.track===selectedTrack);
-      if(first>=0)openPage(chapters[first].pages[0].id);
-    }
+    else{const first=chapters.findIndex(x=>x.track===selectedTrack);if(first>=0)openPage(chapters[first].pages[0].id)}
     return;
   }
   if(action==='open'){openPage(el.dataset.id);return}
   if(action==='prev'){changePhysical(-1);return}
   if(action==='next'){changePhysical(1);return}
-  if(action==='focus'){
-    pendingPhysicalRatio=physicalPages>1?physicalPage/(physicalPages-1):0;
-    focus=!focus;
-    render();
+  if(action==='reader-menu'){
+    readerMenuOpen=!readerMenuOpen;
+    const menu=document.getElementById('reader-menu');if(menu)menu.hidden=!readerMenuOpen;
     return;
+  }
+  if(action==='toggle-dark'){
+    pendingPhysicalRatio=physicalPages>1?physicalPage/(physicalPages-1):0;
+    state.readerDark=!state.readerDark;persist();readerMenuOpen=true;render();return;
   }
   if(action==='bookmark'){
     state.bookmarks=state.bookmarks.includes(p.id)?state.bookmarks.filter(x=>x!==p.id):state.bookmarks.concat(p.id);
-    persist();render();toast(state.bookmarks.includes(p.id)?'북마크에 저장했습니다':'북마크를 해제했습니다');return;
+    persist();
+    const star=document.querySelector('[data-action="bookmark"]');if(star)star.textContent=state.bookmarks.includes(p.id)?'★':'☆';
+    toast(state.bookmarks.includes(p.id)?'북마크에 저장했습니다':'북마크를 해제했습니다');return;
+  }
+  if(action==='summary'){
+    const summary=(p.paragraphs||[]).slice(0,3).join('\n\n')||(p.bullets||[]).join('\n• ');
+    modal('핵심 요약','<section class="summary-modal"><h3>'+esc(p.title)+'</h3><p>'+txt(summary||'이 페이지의 핵심 내용을 다시 읽어보세요.')+'</p></section>');return;
+  }
+  if(action==='practice'){leaveReader();readerMenuOpen=false;route='practice';practiceOutput='';practiceError='';render();return}
+  if(action==='run-python'){runPythonPractice();return}
+  if(action==='practice-reset'){
+    if(p){delete state.practiceCode[p.id];persist()}
+    practiceOutput='';practiceError='';render();return;
   }
   if(action==='note'){modal('내 메모','<p style="color:#817567;margin-top:0">Chapter '+c.chapter+' · '+esc(p.title)+'</p><textarea id="note" rows="8">'+esc(state.notes[p.id]||'')+'</textarea>');return}
-  if(action==='display'){modal('읽기 설정','<section class="panel"><h3>고정 읽기 규격</h3><p>본문 18px · 줄간격 1.68 · 페이지별 자동 확대/축소 없음.</p></section>');return}
+  if(action==='display'){readerMenuOpen=true;const menu=document.getElementById('reader-menu');if(menu)menu.hidden=false;return}
   if(action==='complete'){state.complete=state.complete.includes(c.id)?state.complete.filter(x=>x!==c.id):state.complete.concat(c.id);persist();render();return}
   if(action==='copy-code'){
     const code=el.closest('.code').querySelector('code').textContent;
-    if(navigator.clipboard)navigator.clipboard.writeText(code).then(()=>toast('코드를 복사했습니다')).catch(()=>copyFallback(code));else copyFallback(code);
-    return;
+    if(navigator.clipboard)navigator.clipboard.writeText(code).then(()=>toast('코드를 복사했습니다')).catch(()=>copyFallback(code));else copyFallback(code);return;
   }
   if(action==='saved-filter'){savedFilter=el.dataset.filter||'all';render();return}
   if(action==='refresh'){if(native){native.refresh();toast('최신 교재를 확인합니다')}return}
   if(action==='apply'){if(native)native.apply();return}
   if(action==='legacy'){if(native)native.openLegacy();return}
-  if(action==='export'){
-    const raw=JSON.stringify({app:'codingroadmap-live-v1',state},null,2);
-    if(native)native.exportState(raw);return;
-  }
+  if(action==='export'){const raw=JSON.stringify({app:'codingroadmap-live-v1',state},null,2);if(native)native.exportState(raw);return}
   if(action==='import'){if(native)native.importState();else document.getElementById('import-file').click();return}
   if(action==='close'){document.getElementById('modal').close();return}
 }
@@ -1469,6 +1697,18 @@ document.addEventListener('click',e=>{
 document.addEventListener('input',e=>{
   if(e.target.id==='search'){searchQuery=e.target.value;document.getElementById('results').innerHTML=searchResults(searchQuery)}
   if(e.target.id==='note'){state.notes[chapters[current.c].pages[current.p].id]=e.target.value;persist()}
+  if(e.target.id==='practice-code'){
+    const p=chapters[current.c]?.pages[current.p];if(p){state.practiceCode[p.id]=e.target.value;persist()}
+  }
+  if(e.target.id==='reader-font-range'){
+    const value=Math.max(15,Math.min(24,Number(e.target.value)||18));
+    pendingPhysicalRatio=physicalPages>1?physicalPage/(physicalPages-1):0;
+    state.readerFont=value;persist();
+    const shell=document.querySelector('.reader-shell');if(shell)shell.style.setProperty('--readerBody',value+'px');
+    const label=document.getElementById('font-value');if(label)label.textContent=value+'px';
+    trackSlideMap.ready=false;
+    setTimeout(layoutReader,30);
+  }
 });
 document.addEventListener('visibilitychange',()=>{if(document.hidden)saveReaderPosition()});
 if(typeof window.addEventListener==='function')window.addEventListener('pagehide',saveReaderPosition);
