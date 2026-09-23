@@ -1,0 +1,133 @@
+{
+  "schema": 1,
+  "engine": "1.0.0",
+  "profile": "absolute-beginner-two-pass",
+  "videoId": "Kl5EcYd3G2E",
+  "sourceUrl": "https://youtu.be/Kl5EcYd3G2E",
+  "title": "비개발자 바이브코더를 위해 만든, 가볍게 들어도 깊게 남는 프론트엔드 기본 지식",
+  "duration": "29:10",
+  "transcriptPath": "exact_source/Kl5EcYd3G2E/transcript.md",
+  "chunking": {
+    "targetSeconds": 240,
+    "maxSeconds": 360,
+    "concurrency": 2
+  },
+  "chunks": [
+    {
+      "id": "c001",
+      "range": "00:01-04:06",
+      "topics": [
+        "프론트엔드 기술을 외우기보다 발생 이유로 이해하기",
+        "인터넷과 웹 구분",
+        "웹의 시작",
+        "HTML·URL·HTTP",
+        "초기 정적 웹"
+      ]
+    },
+    {
+      "id": "c002",
+      "range": "04:07-08:06",
+      "topics": [
+        "CSS의 등장",
+        "구조와 표현 분리",
+        "JavaScript",
+        "Event",
+        "DOM",
+        "브라우저 전쟁 시작"
+      ]
+    },
+    {
+      "id": "c003",
+      "range": "08:07-12:16",
+      "topics": [
+        "브라우저 전쟁",
+        "크로스 브라우저",
+        "렌더링 과정",
+        "Layout·Paint",
+        "Reflow"
+      ]
+    },
+    {
+      "id": "c004",
+      "range": "12:17-16:22",
+      "topics": [
+        "jQuery",
+        "React",
+        "추상화",
+        "컴포넌트",
+        "상태",
+        "Node.js",
+        "npm",
+        "package.json"
+      ]
+    },
+    {
+      "id": "c005",
+      "range": "16:23-20:27",
+      "topics": [
+        "Dependency",
+        "조립식 개발",
+        "Build",
+        "Transpile",
+        "Bundle",
+        "Tree Shaking",
+        "Production 최적화"
+      ]
+    },
+    {
+      "id": "c006",
+      "range": "20:28-24:34",
+      "topics": [
+        "MPA",
+        "SPA",
+        "클라이언트 사이드 라우팅",
+        "프론트엔드 직군 변화",
+        "API",
+        "프론트엔드·백엔드 분리"
+      ]
+    },
+    {
+      "id": "c007",
+      "range": "24:35-28:07",
+      "topics": [
+        "SPA 초기 로딩",
+        "SEO",
+        "SSR",
+        "CSR",
+        "Hydration",
+        "하이브리드 렌더링",
+        "Open Graph",
+        "트레이드오프",
+        "전체 복습"
+      ]
+    },
+    {
+      "id": "c008",
+      "range": "28:08-29:10",
+      "topics": [
+        "프론트엔드의 독립적 엔지니어링 영역",
+        "백엔드와의 대비",
+        "다음 강의 연결"
+      ]
+    }
+  ],
+  "ambiguity": [
+    {
+      "range": "18:26-18:56",
+      "text": "자동자막이 빌드 도구 이름을 '화이트'로 인식함",
+      "handling": "본문에서는 특정 도구명으로 단정하지 않고 Webpack과 함께 현대 빌드 도구가 언급된다고만 서술"
+    },
+    {
+      "range": "10:15-10:45",
+      "text": "자동자막이 Render Tree를 '랜더리'처럼 인식함",
+      "handling": "문맥상 실제로 화면에 그릴 요소를 추리는 단계로만 설명"
+    }
+  ],
+  "preservationRules": [
+    "주장·정의·예시·비유·연결 설명·주의사항을 보존한다.",
+    "자동자막의 기계적 반복, 인사, 홍보성 마무리만 제거한다.",
+    "초보자 해설 단계에서 새로운 사실·추천·수치·인과관계를 만들지 않는다.",
+    "전문용어는 뜻→왜 필요한지→영상의 비유/예시→현재 문맥 순으로 풀어쓴다.",
+    "실제 화면을 검증하지 못한 경우 원본 캡처라고 부르지 않고 재구성 개념도로 구분한다."
+  ]
+}
