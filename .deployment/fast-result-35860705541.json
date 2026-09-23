@@ -1,0 +1,12 @@
+{
+  "run": "35860705541",
+  "status": "success",
+  "url": "https://chatbook-library-20260923.netlify.app",
+  "sourceSha": "fcf6b65ec31de5bd192899eefef76ea45ebe2db9",
+  "sourceDigest": "28230e1a2d0ff9dc00f1e307921f67557e5efce57d95be4c00d7898cd370c2d2",
+  "releaseId": "1.0.3-1.2.0-28230e1a2d0ff9dc",
+  "engineVersion": "1.2.0",
+  "liveSourceSha": "8841a4342eff54126306065e14a034d1a2231f17",
+  "verificationScope": "Build tests, local release gate and published identity; browser report is a separate subsequent workflow step.",
+  "completedAt": "2026-09-23T12:30:19.571Z"
+}
