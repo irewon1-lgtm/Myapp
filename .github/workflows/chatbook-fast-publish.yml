@@ -1,4 +1,4 @@
-# publish catalog visibility and CSP fix
+# publish reader pagination swipe and image readability fix
 name: Chatbook fast publish
 on:
   workflow_dispatch:
