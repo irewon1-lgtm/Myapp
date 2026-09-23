@@ -786,6 +786,8 @@ html,body{background:var(--e-bg);color:var(--e-ink);font-family:"Pretendard","No
   .reader-menu{top:58px}.topic-title{font-size:30px!important}.reader-paper,.topic-header{width:calc(100% - 34px)!important}
 }
 
+
+.track-info-panel{padding:22px 8px 10px}.track-info-panel h3{font:800 24px "Noto Serif KR",serif;margin:0 0 10px}.track-info-panel p,.track-info-panel li{line-height:1.7;color:var(--e-muted)}.resource-list{display:grid;gap:8px}.resource-list>div{display:flex;justify-content:space-between;gap:12px;padding:13px;border-bottom:1px solid var(--e-line)}.resource-list span{color:var(--e-muted);font-size:12px}
 </style>
 </head>
 <body>
@@ -827,6 +829,7 @@ let pendingSavedPosition=null;
 let pageTurnActive=false;
 let trackTransitionDir=0;
 let readerMenuOpen=false;
+let trackTab='chapters';
 let practiceOutput='';
 let practiceError='';
 let practiceRunning=false;
@@ -1071,8 +1074,10 @@ function trackPage(){
     '<div class="track-dots">'+dots+'</div>'+
     '<section class="track-editorial-hero"><div class="track-hero-copy"><small>트랙 '+t.id+'</small><h1>'+esc(t.title)+'</h1><p>'+esc(t.subtitle||'코드로 세상을 이해하는 첫걸음')+'</p><em>프로그래밍의 핵심 개념을 차근차근 익히고,<br>튼튼한 기초를 만들어보세요.</em></div><div class="track-road-art"><i></i></div></section>'+
     '<section class="track-progress-card"><div><strong>진행률</strong><b>'+prog+'%</b></div><div class="track-progress-line"><i style="width:'+prog+'%"></i></div><small>'+trackStats(selectedTrack).read+' / '+trackStats(selectedTrack).total+' 페이지 학습</small></section>'+
-    '<div class="track-tabs"><button class="active">챕터 목록</button><button>학습 목표</button><button>추천 자료</button></div>'+
-    '<div class="editorial-chapter-list">'+list+'</div>'+
+    '<div class="track-tabs"><button class="'+(trackTab==='chapters'?'active':'')+'" data-action="track-tab" data-tab="chapters">챕터 목록</button><button class="'+(trackTab==='goals'?'active':'')+'" data-action="track-tab" data-tab="goals">학습 목표</button><button class="'+(trackTab==='resources'?'active':'')+'" data-action="track-tab" data-tab="resources">추천 자료</button></div>'+
+    (trackTab==='chapters'?'<div class="editorial-chapter-list">'+list+'</div>':
+     trackTab==='goals'?'<section class="track-info-panel"><h3>학습 목표</h3><p>'+esc(t.subtitle||'핵심 개념을 이해하고 실제 코드에서 읽고 수정할 수 있는 힘을 기릅니다.')+'</p><ul><li>코드를 한 줄씩 읽고 실행 흐름을 설명하기</li><li>예제 코드를 직접 수정해 결과 변화를 확인하기</li><li>AI가 만든 코드를 이해하고 필요한 부분을 고치기</li></ul></section>':
+     '<section class="track-info-panel"><h3>추천 자료</h3><div class="resource-list">'+chapters.filter(x=>x.track===selectedTrack).flatMap(x=>x.references||[]).filter((x,i,a)=>a.findIndex(y=>y.book===x.book)===i).slice(0,6).map(x=>'<div><strong>'+esc(x.book)+'</strong><span>'+esc(x.author||'')+'</span></div>').join('')+'</div></section>')+
     '</div></main>'+bottomNav()+'</div>';
 }
 function pageText(page){
@@ -1162,7 +1167,7 @@ function highlightedPython(code){
 }
 function codeBlock(code,note,label){
   const head=label||'Python';
-  return '<div class="code"><div class="code-bar"><span>'+esc(head)+'</span><button class="copy-btn" data-action="copy-code">▣ 복사</button></div><pre><code>'+highlightedPython(code)+'</code></pre>'+(note?'<div class="code-output">'+esc(note)+'</div>':'')+'</div>';
+  return '<div class="code"><div class="code-bar"><span>'+esc(head)+'</span><button class="copy-btn" data-action="copy-code" data-code="'+encodeURIComponent(code)+'">▣ 복사</button></div><pre><code>'+highlightedPython(code)+'</code></pre>'+(note?'<div class="code-output">'+esc(note)+'</div>':'')+'</div>';
 }
 function kindLabel(kind){
   const map={glossary:'용어',concept:'개념',visual:'흐름',example:'예제',practice:'실습',solution:'풀이',check:'확인',summary:'정리'};
@@ -1585,6 +1590,7 @@ function switchTrack(delta){
   const next=Math.max(0,Math.min(tracks.length-1,index+delta));
   if(next===index)return;
   trackTransitionDir=delta;
+  trackTab='chapters';
   selectedTrack=tracks[next].id;
   route='track';
   render();
@@ -1631,8 +1637,9 @@ window.goBack=goBack;
 function doAction(action,el){
   const c=chapters[current.c],p=c.pages[current.p];
   if(action==='home'||action==='books'||action==='search'||action==='saved'||action==='settings'){leaveReader();readerMenuOpen=false;route=action;render();return}
-  if(action==='track'){leaveReader();readerMenuOpen=false;trackTransitionDir=Number(el.dataset.track)>selectedTrack?1:-1;selectedTrack=Number(el.dataset.track);route='track';render();return}
+  if(action==='track'){leaveReader();readerMenuOpen=false;trackTab='chapters';trackTransitionDir=Number(el.dataset.track)>selectedTrack?1:-1;selectedTrack=Number(el.dataset.track);route='track';render();return}
   if(action==='track-current'){saveReaderPosition();readerMenuOpen=false;selectedTrack=c.track;route='track';render();return}
+  if(action==='track-tab'){trackTab=el.dataset.tab||'chapters';render();return}
   if(action==='chapter'){const i=Number(el.dataset.c);openPage(chapters[i].pages[0].id);return}
   if(action==='continue'){readerMenuOpen=false;openPage(state.location,false,true);return}
   if(action==='continue-track'){
@@ -1673,7 +1680,7 @@ function doAction(action,el){
   if(action==='display'){readerMenuOpen=true;const menu=document.getElementById('reader-menu');if(menu)menu.hidden=false;return}
   if(action==='complete'){state.complete=state.complete.includes(c.id)?state.complete.filter(x=>x!==c.id):state.complete.concat(c.id);persist();render();return}
   if(action==='copy-code'){
-    const code=el.closest('.code').querySelector('code').textContent;
+    const code=decodeURIComponent(el.dataset.code||'');
     if(navigator.clipboard)navigator.clipboard.writeText(code).then(()=>toast('코드를 복사했습니다')).catch(()=>copyFallback(code));else copyFallback(code);return;
   }
   if(action==='saved-filter'){savedFilter=el.dataset.filter||'all';render();return}
