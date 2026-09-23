@@ -1,9 +1,3412 @@
 {
   "schema": 1,
-  "version": "2026-09-23.11",
-  "updatedAt": "2026-09-23T07:53:21.761Z",
-  "notice": "프론트엔드 기본 지식 완전교재를 챗북 엔진 1.0 기준으로 원문부터 다시 대조해 개정했습니다.",
+  "version": "2026-09-23.12",
+  "updatedAt": "2026-09-23T10:16:13.416Z",
+  "notice": "영어 강의 Learn Python in 1 hour!을 챗북 엔진 1.1 기준의 한국어 완전 초보 교재로 추가했습니다.",
   "books": [
+    {
+      "id": "yt-python-1h-8KCuHHeC_M0",
+      "title": "파이썬 1시간 완전 초보 교재",
+      "subtitle": "코딩 0일차가 print()부터 List · Tuple · Set까지 따라가는 한국어 해설판",
+      "author": "Bro Code",
+      "edition": "YouTube 강의 완전교재 · 챗북 엔진 1.1 · 영어 원문잠금→한국어 초보자해설판 · 59분 58초",
+      "category": "코딩·Python",
+      "cover": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22900%22%20height%3D%221200%22%20viewBox%3D%220%200%20900%201200%22%3E%3Crect%20width%3D%22900%22%20height%3D%221200%22%20fill%3D%22%23edf2ea%22%2F%3E%3Crect%20x%3D%2255%22%20y%3D%2255%22%20width%3D%22790%22%20height%3D%221090%22%20rx%3D%2244%22%20fill%3D%22%23fff%22%20stroke%3D%22%2361705d%22%20stroke-width%3D%225%22%2F%3E%3Ctext%20x%3D%22110%22%20y%3D%22165%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2233%22%20font-weight%3D%22800%22%20fill%3D%22%2361705d%22%3EPYTHON%20%C2%B7%20ABSOLUTE%20BEGINNER%3C%2Ftext%3E%3Ctext%20x%3D%22110%22%20y%3D%22285%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2272%22%20font-weight%3D%22900%22%20fill%3D%22%23202520%22%3E%ED%8C%8C%EC%9D%B4%EC%8D%AC%201%EC%8B%9C%EA%B0%84%3C%2Ftext%3E%3Ctext%20x%3D%22110%22%20y%3D%22370%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2266%22%20font-weight%3D%22900%22%20fill%3D%22%23202520%22%3E%EC%99%84%EC%A0%84%20%EC%B4%88%EB%B3%B4%20%EA%B5%90%EC%9E%AC%3C%2Ftext%3E%3Ctext%20x%3D%22110%22%20y%3D%22438%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2229%22%20font-weight%3D%22600%22%20fill%3D%22%23485047%22%3E%EC%BD%94%EB%94%A9%200%EC%9D%BC%EC%B0%A8%EA%B0%80%20%EC%B2%98%EC%9D%8C%EB%B6%80%ED%84%B0%20%EB%94%B0%EB%9D%BC%EA%B0%80%EB%8A%94%20%ED%95%9C%EA%B5%AD%EC%96%B4%20%ED%95%B4%EC%84%A4%ED%8C%90%3C%2Ftext%3E%3Cg%20transform%3D%22translate(110%20550)%22%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%22680%22%20height%3D%22116%22%20rx%3D%2224%22%20fill%3D%22%23eef3eb%22%20stroke%3D%22%236c7c66%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%2236%22%20y%3D%2248%22%20font-family%3D%22monospace%22%20font-size%3D%2228%22%20font-weight%3D%22700%22%20fill%3D%22%23263126%22%3Eprint(%22I%20like%20pizza%22)%3C%2Ftext%3E%3Ctext%20x%3D%2236%22%20y%3D%2287%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2222%22%20fill%3D%22%23465046%22%3E%EC%BD%94%EB%93%9C%EB%A5%BC%20%EC%93%B0%EA%B3%A0%20%E2%86%92%20%EC%8B%A4%ED%96%89%ED%95%98%EA%B3%A0%20%E2%86%92%20%EA%B2%B0%EA%B3%BC%EB%A5%BC%20%ED%99%95%EC%9D%B8%ED%95%9C%EB%8B%A4%3C%2Ftext%3E%3C%2Fg%3E%3Ctext%20x%3D%22110%22%20y%3D%22785%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%232d332d%22%3E%EB%B3%80%EC%88%98%20%C2%B7%20%EC%9E%90%EB%A3%8C%ED%98%95%20%C2%B7%20%EC%82%B0%EC%88%A0%20%C2%B7%20%EC%9E%85%EB%A0%A5%20%C2%B7%20%EC%A1%B0%EA%B1%B4%EB%AC%B8%3C%2Ftext%3E%3Ctext%20x%3D%22110%22%20y%3D%22835%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%232d332d%22%3E%EB%85%BC%EB%A6%AC%EC%97%B0%EC%82%B0%20%C2%B7%20while%20%C2%B7%20for%20%C2%B7%20List%20%C2%B7%20Tuple%20%C2%B7%20Set%3C%2Ftext%3E%3Cline%20x1%3D%22110%22%20y1%3D%22920%22%20x2%3D%22790%22%20y2%3D%22920%22%20stroke%3D%22%23b8b8b1%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22110%22%20y%3D%221000%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2224%22%20fill%3D%22%234c514b%22%3ESource%3A%20Bro%20Code%20%C2%B7%20Learn%20Python%20in%201%20hour!%3C%2Ftext%3E%3Ctext%20x%3D%22110%22%20y%3D%221045%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2224%22%20fill%3D%22%234c514b%22%3E59%3A58%20%C2%B7%20%EC%98%81%EC%96%B4%20%EC%9B%90%EB%AC%B8%20%EC%9E%A0%EA%B8%88%20%E2%86%92%20%ED%95%9C%EA%B5%AD%EC%96%B4%20%EC%B4%88%EB%B3%B4%EC%9E%90%20%ED%95%B4%EC%84%A4%3C%2Ftext%3E%3C%2Fsvg%3E",
+      "portrait": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22900%22%20height%3D%221200%22%20viewBox%3D%220%200%20900%201200%22%3E%3Crect%20width%3D%22900%22%20height%3D%221200%22%20fill%3D%22%23edf2ea%22%2F%3E%3Crect%20x%3D%2255%22%20y%3D%2255%22%20width%3D%22790%22%20height%3D%221090%22%20rx%3D%2244%22%20fill%3D%22%23fff%22%20stroke%3D%22%2361705d%22%20stroke-width%3D%225%22%2F%3E%3Ctext%20x%3D%22110%22%20y%3D%22165%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2233%22%20font-weight%3D%22800%22%20fill%3D%22%2361705d%22%3EPYTHON%20%C2%B7%20ABSOLUTE%20BEGINNER%3C%2Ftext%3E%3Ctext%20x%3D%22110%22%20y%3D%22285%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2272%22%20font-weight%3D%22900%22%20fill%3D%22%23202520%22%3E%ED%8C%8C%EC%9D%B4%EC%8D%AC%201%EC%8B%9C%EA%B0%84%3C%2Ftext%3E%3Ctext%20x%3D%22110%22%20y%3D%22370%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2266%22%20font-weight%3D%22900%22%20fill%3D%22%23202520%22%3E%EC%99%84%EC%A0%84%20%EC%B4%88%EB%B3%B4%20%EA%B5%90%EC%9E%AC%3C%2Ftext%3E%3Ctext%20x%3D%22110%22%20y%3D%22438%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2229%22%20font-weight%3D%22600%22%20fill%3D%22%23485047%22%3E%EC%BD%94%EB%94%A9%200%EC%9D%BC%EC%B0%A8%EA%B0%80%20%EC%B2%98%EC%9D%8C%EB%B6%80%ED%84%B0%20%EB%94%B0%EB%9D%BC%EA%B0%80%EB%8A%94%20%ED%95%9C%EA%B5%AD%EC%96%B4%20%ED%95%B4%EC%84%A4%ED%8C%90%3C%2Ftext%3E%3Cg%20transform%3D%22translate(110%20550)%22%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%22680%22%20height%3D%22116%22%20rx%3D%2224%22%20fill%3D%22%23eef3eb%22%20stroke%3D%22%236c7c66%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%2236%22%20y%3D%2248%22%20font-family%3D%22monospace%22%20font-size%3D%2228%22%20font-weight%3D%22700%22%20fill%3D%22%23263126%22%3Eprint(%22I%20like%20pizza%22)%3C%2Ftext%3E%3Ctext%20x%3D%2236%22%20y%3D%2287%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2222%22%20fill%3D%22%23465046%22%3E%EC%BD%94%EB%93%9C%EB%A5%BC%20%EC%93%B0%EA%B3%A0%20%E2%86%92%20%EC%8B%A4%ED%96%89%ED%95%98%EA%B3%A0%20%E2%86%92%20%EA%B2%B0%EA%B3%BC%EB%A5%BC%20%ED%99%95%EC%9D%B8%ED%95%9C%EB%8B%A4%3C%2Ftext%3E%3C%2Fg%3E%3Ctext%20x%3D%22110%22%20y%3D%22785%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%232d332d%22%3E%EB%B3%80%EC%88%98%20%C2%B7%20%EC%9E%90%EB%A3%8C%ED%98%95%20%C2%B7%20%EC%82%B0%EC%88%A0%20%C2%B7%20%EC%9E%85%EB%A0%A5%20%C2%B7%20%EC%A1%B0%EA%B1%B4%EB%AC%B8%3C%2Ftext%3E%3Ctext%20x%3D%22110%22%20y%3D%22835%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%232d332d%22%3E%EB%85%BC%EB%A6%AC%EC%97%B0%EC%82%B0%20%C2%B7%20while%20%C2%B7%20for%20%C2%B7%20List%20%C2%B7%20Tuple%20%C2%B7%20Set%3C%2Ftext%3E%3Cline%20x1%3D%22110%22%20y1%3D%22920%22%20x2%3D%22790%22%20y2%3D%22920%22%20stroke%3D%22%23b8b8b1%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22110%22%20y%3D%221000%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2224%22%20fill%3D%22%234c514b%22%3ESource%3A%20Bro%20Code%20%C2%B7%20Learn%20Python%20in%201%20hour!%3C%2Ftext%3E%3Ctext%20x%3D%22110%22%20y%3D%221045%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2224%22%20fill%3D%22%234c514b%22%3E59%3A58%20%C2%B7%20%EC%98%81%EC%96%B4%20%EC%9B%90%EB%AC%B8%20%EC%9E%A0%EA%B8%88%20%E2%86%92%20%ED%95%9C%EA%B5%AD%EC%96%B4%20%EC%B4%88%EB%B3%B4%EC%9E%90%20%ED%95%B4%EC%84%A4%3C%2Ftext%3E%3C%2Fsvg%3E",
+      "published": "2026-09-23",
+      "version": 1,
+      "imported": false,
+      "generated": true,
+      "sourceType": "youtube",
+      "sourceUrl": "https://youtu.be/8KCuHHeC_M0",
+      "sourceDuration": "59:58",
+      "quote": "코딩은 처음부터 모든 문법을 외우는 일이 아니라, 값을 저장하고 판단하고 반복하는 흐름을 이해하는 것부터 시작한다.",
+      "description": "Bro Code의 영어 강의 「Learn Python in 1 hour!」를 영어 원문 기준으로 고정한 뒤, 코딩 경험이 전혀 없는 한국어 독자가 따라갈 수 있도록 같은 내용 범위 안에서 풀어 쓴 교재입니다. 설치와 첫 print()부터 Variable·Data Type·산술·Type Casting·User Input·if·Logical Operator·while·for·List·Tuple·Set까지 영상 순서를 유지합니다.",
+      "chapters": [
+        {
+          "id": "yt-python-1h-8KCuHHeC_M0-c1",
+          "title": "Python을 시작하기 위한 준비",
+          "subtitle": "Interpreter · IDE · Project · .py 파일",
+          "summary": [
+            "영상은 Python 실행 환경과 코드를 작성할 IDE를 준비하는 것부터 시작한다.",
+            "Windows에서는 Python 설치 시 PATH 옵션을 체크하는 과정을 보여 준다.",
+            "PyCharm 또는 VS Code에서 Python 파일을 만들고 실행할 준비를 한다."
+          ],
+          "sourceRefs": [
+            {
+              "range": "00:01-03:10",
+              "chunk": "c001",
+              "videoId": "8KCuHHeC_M0"
+            }
+          ],
+          "glossary": [
+            {
+              "term": "Python Interpreter",
+              "plain": "영상에서는 작성한 Python 코드를 실행 가능한 형태로 처리하는 프로그램이라고 설명한다.",
+              "why": "쓴 코드를 실제로 실행해야 하기 때문에",
+              "context": "Python 설치 단계에서 가장 먼저 준비한다.",
+              "sourceRefs": [
+                {
+                  "range": "00:01-01:02",
+                  "chunk": "c001",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ]
+            },
+            {
+              "term": "IDE",
+              "plain": "코드를 작성하고 실행하기 편하도록 여러 도구를 모아 둔 작업 공간",
+              "why": "코드를 쓰고 파일을 관리하고 실행하기 쉽게 하려고",
+              "context": "PyCharm과 VS Code가 예로 나온다.",
+              "sourceRefs": [
+                {
+                  "range": "01:03-02:37",
+                  "chunk": "c001",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ]
+            },
+            {
+              "term": ".py",
+              "plain": "Python 소스 파일에 붙는 파일 확장자",
+              "why": "운영체제와 도구가 Python 파일임을 구분하기 위해",
+              "context": "main.py를 만드는 장면에서 나온다.",
+              "sourceRefs": [
+                {
+                  "range": "02:38-03:10",
+                  "chunk": "c001",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ]
+            }
+          ],
+          "blocks": [
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c1-p1",
+              "type": "p",
+              "text": "영상은 ‘1시간 안에 가능한 한 많은 Python을 알려 주겠다’고 시작합니다. 이미 다른 언어를 쓰던 사람의 빠른 입문에도 맞지만, 여기서는 코딩을 처음 보는 사람 기준으로 하나씩 풀어 읽겠습니다.",
+              "sourceRefs": [
+                {
+                  "range": "00:01-00:31",
+                  "chunk": "c001",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c1-p2",
+              "type": "p",
+              "text": "첫 번째 준비물은 Python을 실행할 수 있는 환경입니다. 영상에서는 Python Interpreter가 우리가 적은 코드를 컴퓨터가 실행할 수 있게 처리한다고 설명합니다.",
+              "sourceRefs": [
+                {
+                  "range": "00:01-01:02",
+                  "chunk": "c001",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c1-p3",
+              "type": "p",
+              "text": "처음 보는 사람에게는 ‘내가 Python 문장으로 적은 명령을 실제로 실행해 주는 프로그램’ 정도로 이해하면 충분합니다.",
+              "sourceRefs": [
+                {
+                  "range": "00:01-01:02",
+                  "chunk": "c001",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "explanation"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c1-p4",
+              "type": "p",
+              "text": "영상은 python.org에서 최신 Python을 내려받고, Windows라면 설치 화면에서 `Add Python exe to PATH` 옵션을 체크한 뒤 설치하는 과정을 보여 줍니다.",
+              "sourceRefs": [
+                {
+                  "range": "00:32-01:02",
+                  "chunk": "c001",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c1-p5",
+              "type": "p",
+              "text": "두 번째 준비물은 IDE입니다. IDE는 Integrated Development Environment의 약자이고, 영상은 ‘코드를 작성하는 장소’라고 쉽게 설명합니다.",
+              "sourceRefs": [
+                {
+                  "range": "01:03-01:34",
+                  "chunk": "c001",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c1-p6",
+              "type": "p",
+              "text": "영상에서는 Python용 IDE로 PyCharm과 VS Code를 언급합니다. 이미 VS Code를 쓴다면 Python extension을 설치해 계속 써도 되고, 처음 코딩한다면 강의자는 PyCharm이 더 초보자 친화적이라고 말합니다.",
+              "sourceRefs": [
+                {
+                  "range": "01:03-01:34",
+                  "chunk": "c001",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c1-p7",
+              "type": "p",
+              "text": "PyCharm은 Professional과 Community 버전이 있는데 영상은 무료 Community Edition을 사용합니다.",
+              "sourceRefs": [
+                {
+                  "range": "01:35-02:06",
+                  "chunk": "c001",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c1-p8",
+              "type": "p",
+              "text": "설치가 끝나면 새 Project를 만들고 Python 버전을 선택합니다. Project는 아주 쉽게 말해 ‘이번에 만들 코드와 관련 파일을 한곳에 모아 둔 작업 폴더’라고 보면 됩니다.",
+              "sourceRefs": [
+                {
+                  "range": "02:07-02:37",
+                  "chunk": "c001",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "explanation"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c1-p9",
+              "type": "p",
+              "text": "Project 안에서 새 Python file을 만들고 이름을 `main`으로 정합니다. Python 파일은 `.py` 확장자를 사용하므로 실제 파일은 main.py 같은 형태가 됩니다.",
+              "sourceRefs": [
+                {
+                  "range": "02:38-03:10",
+                  "chunk": "c001",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c1-img",
+              "type": "image",
+              "src": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221200%22%20height%3D%22675%22%20viewBox%3D%220%200%201200%20675%22%3E%3Crect%20width%3D%221200%22%20height%3D%22675%22%20fill%3D%22%23fff%22%2F%3E%3Crect%20width%3D%221200%22%20height%3D%2212%22%20fill%3D%22%2364725f%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2270%22%20text-anchor%3D%22start%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2238%22%20font-weight%3D%22900%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%2260%22%20dy%3D%220%22%3EPython%EC%9D%84%20%EC%8B%A4%ED%96%89%ED%95%98%EA%B8%B0%20%EC%9C%84%ED%95%9C%20%EC%A4%80%EB%B9%84%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%2260%22%20y%3D%22114%22%20text-anchor%3D%22start%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2221%22%20font-weight%3D%22600%22%20fill%3D%22%23444a43%22%3E%3Ctspan%20x%3D%2260%22%20dy%3D%220%22%3E%EC%BD%94%EB%93%9C%20%E2%86%92%20Python%20%EC%8B%A4%ED%96%89%20%ED%99%98%EA%B2%BD%20%E2%86%92%20%EA%B2%B0%EA%B3%BC%3C%2Ftspan%3E%3C%2Ftext%3E%3Crect%20x%3D%2270%22%20y%3D%22210%22%20width%3D%22280%22%20height%3D%22165%22%20rx%3D%2222%22%20fill%3D%22%23eef3eb%22%20stroke%3D%22%236f786b%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22256%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2226%22%20font-weight%3D%22800%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22210%22%20dy%3D%220%22%3E%EB%82%B4%EA%B0%80%20%EC%93%B4%20%EC%BD%94%EB%93%9C%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%22210%22%20y%3D%22296%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22210%22%20dy%3D%220%22%3Emain.py%3C%2Ftspan%3E%3Ctspan%20x%3D%22210%22%20dy%3D%2225%22%3EPython%20%EB%AC%B8%EB%B2%95%3C%2Ftspan%3E%3C%2Ftext%3E%3Cdefs%3E%3Cmarker%20id%3D%22a%22%20markerWidth%3D%2210%22%20markerHeight%3D%2210%22%20refX%3D%228%22%20refY%3D%223%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M0%2C0%20L0%2C6%20L8%2C3%20z%22%20fill%3D%22%235e685a%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%3Cline%20x1%3D%22365%22%20y1%3D%22292%22%20x2%3D%22505%22%20y2%3D%22292%22%20stroke%3D%22%235e685a%22%20stroke-width%3D%225%22%20marker-end%3D%22url(%23a)%22%2F%3E%3Ctext%20x%3D%22435%22%20y%3D%22280%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22435%22%20dy%3D%220%22%3E%EC%8B%A4%ED%96%89%3C%2Ftspan%3E%3C%2Ftext%3E%3Crect%20x%3D%22520%22%20y%3D%22210%22%20width%3D%22300%22%20height%3D%22165%22%20rx%3D%2222%22%20fill%3D%22%23f4ecdf%22%20stroke%3D%22%23897552%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22670%22%20y%3D%22256%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2226%22%20font-weight%3D%22800%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22670%22%20dy%3D%220%22%3EPython%20%ED%99%98%EA%B2%BD%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%22670%22%20y%3D%22296%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22670%22%20dy%3D%220%22%3E%EC%98%81%EC%83%81%EC%97%90%EC%84%9C%EB%8A%94%20Interpreter%EA%B0%80%3C%2Ftspan%3E%3Ctspan%20x%3D%22670%22%20dy%3D%2225%22%3E%EC%BD%94%EB%93%9C%EB%A5%BC%20%EC%8B%A4%ED%96%89%ED%95%9C%EB%8B%A4%EA%B3%A0%20%EC%84%A4%EB%AA%85%3C%2Ftspan%3E%3C%2Ftext%3E%3Cdefs%3E%3Cmarker%20id%3D%22a%22%20markerWidth%3D%2210%22%20markerHeight%3D%2210%22%20refX%3D%228%22%20refY%3D%223%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M0%2C0%20L0%2C6%20L8%2C3%20z%22%20fill%3D%22%235e685a%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%3Cline%20x1%3D%22835%22%20y1%3D%22292%22%20x2%3D%22955%22%20y2%3D%22292%22%20stroke%3D%22%235e685a%22%20stroke-width%3D%225%22%20marker-end%3D%22url(%23a)%22%2F%3E%3Crect%20x%3D%22970%22%20y%3D%22210%22%20width%3D%22160%22%20height%3D%22165%22%20rx%3D%2222%22%20fill%3D%22%23e8edf0%22%20stroke%3D%22%23647b88%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%221050%22%20y%3D%22256%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2226%22%20font-weight%3D%22800%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%221050%22%20dy%3D%220%22%3E%EC%B6%9C%EB%A0%A5%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%221050%22%20y%3D%22296%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%221050%22%20dy%3D%220%22%3EConsole%3C%2Ftspan%3E%3Ctspan%20x%3D%221050%22%20dy%3D%2225%22%3E%EA%B2%B0%EA%B3%BC%20%ED%99%95%EC%9D%B8%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%22600%22%20y%3D%22500%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2229%22%20font-weight%3D%22800%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22600%22%20dy%3D%220%22%3EIDE%20%3D%20%EC%BD%94%EB%93%9C%EB%A5%BC%20%EC%93%B0%EA%B3%A0%20%EC%8B%A4%ED%96%89%ED%95%98%EA%B8%B0%20%ED%8E%B8%ED%95%9C%20%EC%9E%91%EC%97%85%20%EA%B3%B5%EA%B0%84%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%221140%22%20y%3D%22642%22%20text-anchor%3D%22end%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2217%22%20fill%3D%22%23626860%22%3ECHATBOOK%20%C2%B7%20PYTHON%200-DAY%20MAP%3C%2Ftext%3E%3C%2Fsvg%3E",
+              "caption": "개념도 · 코드가 실행되어 Console 결과로 이어지는 흐름",
+              "sourceRefs": [
+                {
+                  "range": "00:01-03:10",
+                  "chunk": "c001",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_provenance": {
+                "kind": "diagram",
+                "reconstructed": true,
+                "label": "개념도"
+              }
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c1-q",
+              "type": "quote",
+              "text": "처음에는 ‘코드를 쓰는 파일’과 ‘그 코드를 실행해 주는 환경’이 따로 있다는 것만 잡으면 된다.",
+              "sourceRefs": [
+                {
+                  "range": "00:01-03:10",
+                  "chunk": "c001",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            }
+          ]
+        },
+        {
+          "id": "yt-python-1h-8KCuHHeC_M0-c2",
+          "title": "첫 Python 프로그램과 Comment",
+          "subtitle": "print()로 결과를 내보내고 #으로 메모 남기기",
+          "summary": [
+            "print()는 괄호 안의 내용을 Console에 출력한다.",
+            "문자열은 작은따옴표 또는 큰따옴표로 감쌀 수 있다.",
+            "# 뒤의 Comment는 실행 결과에 출력되지 않는 메모로 사용한다."
+          ],
+          "sourceRefs": [
+            {
+              "range": "03:11-05:15",
+              "chunk": "c001",
+              "videoId": "8KCuHHeC_M0"
+            }
+          ],
+          "glossary": [
+            {
+              "term": "print()",
+              "plain": "괄호 안의 값을 Console에 출력하는 함수",
+              "why": "프로그램이 무엇을 계산했는지 눈으로 확인하려고",
+              "context": "영상의 첫 코드가 print(\"I like pizza\")다.",
+              "sourceRefs": [
+                {
+                  "range": "03:11-04:45",
+                  "chunk": "c001",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ]
+            },
+            {
+              "term": "String",
+              "plain": "따옴표 안에 적는 글자 데이터",
+              "why": "숫자 계산이 아닌 글자를 다루기 위해",
+              "context": "피자 문장과 이후 변수 파트에서 반복해서 나온다.",
+              "sourceRefs": [
+                {
+                  "range": "03:11-04:45",
+                  "chunk": "c001",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ]
+            },
+            {
+              "term": "Comment",
+              "plain": "# 뒤에 적는 실행되지 않는 메모",
+              "why": "나중의 나나 다른 사람이 코드를 이해하기 쉽게 하려고",
+              "context": "영상에서는 첫 Python 프로그램이라는 메모를 남긴다.",
+              "sourceRefs": [
+                {
+                  "range": "04:46-05:15",
+                  "chunk": "c001",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ]
+            }
+          ],
+          "blocks": [
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c2-p1",
+              "type": "p",
+              "text": "이제 실제로 한 줄을 실행합니다. 영상은 `print(\"I like pizza\")`라는 문장을 적습니다.",
+              "sourceRefs": [
+                {
+                  "range": "03:11-03:41",
+                  "chunk": "c001",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c2-p2",
+              "type": "p",
+              "text": "`print`는 ‘화면에 보여 줘’라는 명령처럼 생각하면 됩니다. 그 뒤의 괄호 안에 무엇을 보여 줄지 넣습니다.",
+              "sourceRefs": [
+                {
+                  "range": "03:11-03:41",
+                  "chunk": "c001",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "explanation"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c2-p3",
+              "type": "p",
+              "text": "글자를 출력할 때는 따옴표로 감쌉니다. 영상은 큰따옴표를 선호하지만 작은따옴표도 사용할 수 있다고 설명합니다.",
+              "sourceRefs": [
+                {
+                  "range": "03:11-03:41",
+                  "chunk": "c001",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c2-p4",
+              "type": "p",
+              "text": "실행 버튼을 누르면 Console에 `I like pizza`가 출력됩니다. Console은 프로그램이 출력한 결과나 메시지를 확인하는 창이라고 생각하면 됩니다.",
+              "sourceRefs": [
+                {
+                  "range": "03:42-04:13",
+                  "chunk": "c001",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "explanation"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c2-p5",
+              "type": "p",
+              "text": "두 번째 print 문장을 추가하면 두 번째 줄도 출력됩니다. 즉 코드는 위에서 아래로 여러 명령을 차례로 실행할 수 있습니다.",
+              "sourceRefs": [
+                {
+                  "range": "04:14-04:45",
+                  "chunk": "c001",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c2-p6",
+              "type": "p",
+              "text": "다음은 Comment입니다. Python에서 `#` 뒤에 적은 내용은 실행 결과로 출력되지 않습니다.",
+              "sourceRefs": [
+                {
+                  "range": "04:46-05:15",
+                  "chunk": "c001",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c2-p7",
+              "type": "p",
+              "text": "영상에서는 Comment를 자신이나 다른 사람이 나중에 코드를 읽을 때 참고하는 메모로 설명합니다.",
+              "sourceRefs": [
+                {
+                  "range": "04:46-05:15",
+                  "chunk": "c001",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c2-code",
+              "type": "quote",
+              "text": "print(\"I like pizza\")  →  Console에 I like pizza가 보인다.",
+              "sourceRefs": [
+                {
+                  "range": "03:11-04:13",
+                  "chunk": "c001",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c2-q",
+              "type": "quote",
+              "text": "처음 코딩은 ‘명령을 적고 → 실행하고 → 결과를 확인하는 것’부터 익히면 된다.",
+              "sourceRefs": [
+                {
+                  "range": "03:11-05:15",
+                  "chunk": "c001",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            }
+          ]
+        },
+        {
+          "id": "yt-python-1h-8KCuHHeC_M0-c3",
+          "title": "Variable과 네 가지 기본 Data Type",
+          "subtitle": "String · Integer · Float · Boolean",
+          "summary": [
+            "Variable은 값을 다시 사용할 수 있도록 이름을 붙인 저장 공간처럼 설명된다.",
+            "초보자가 먼저 알아야 할 네 자료형으로 String·Integer·Float·Boolean을 소개한다.",
+            "F-string은 문자열 안에 변수 값을 끼워 넣을 때 사용한다."
+          ],
+          "sourceRefs": [
+            {
+              "range": "05:16-09:59",
+              "chunk": "c002",
+              "videoId": "8KCuHHeC_M0"
+            }
+          ],
+          "glossary": [
+            {
+              "term": "Variable",
+              "plain": "값을 담고 다시 사용할 수 있게 이름을 붙인 컨테이너",
+              "why": "같은 값을 여러 곳에서 재사용하거나 바꾸기 위해",
+              "context": "full_name, age, gpa, is_student 예시가 나온다.",
+              "sourceRefs": [
+                {
+                  "range": "05:16-09:59",
+                  "chunk": "c002",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ]
+            },
+            {
+              "term": "String",
+              "plain": "글자들의 연속",
+              "why": "이름이나 문장 같은 텍스트를 다루기 위해",
+              "context": "full_name 예시가 나온다.",
+              "sourceRefs": [
+                {
+                  "range": "05:48-06:50",
+                  "chunk": "c002",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ]
+            },
+            {
+              "term": "Integer",
+              "plain": "소수점이 없는 정수",
+              "why": "나이처럼 온전한 정수를 다루기 위해",
+              "context": "age=25 예시가 나온다.",
+              "sourceRefs": [
+                {
+                  "range": "06:20-07:23",
+                  "chunk": "c002",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ]
+            },
+            {
+              "term": "Float",
+              "plain": "소수점을 포함할 수 있는 숫자",
+              "why": "3.2처럼 소수값을 다루기 위해",
+              "context": "GPA 예시가 나온다.",
+              "sourceRefs": [
+                {
+                  "range": "07:24-07:54",
+                  "chunk": "c002",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ]
+            },
+            {
+              "term": "Boolean",
+              "plain": "True 또는 False 두 값 중 하나",
+              "why": "조건이 맞는지 아닌지를 표현하기 위해",
+              "context": "is_student와 if 예시가 나온다.",
+              "sourceRefs": [
+                {
+                  "range": "07:55-09:59",
+                  "chunk": "c002",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ]
+            },
+            {
+              "term": "F-string",
+              "plain": "문자열 안에 변수 값을 넣는 Python 문자열 형식",
+              "why": "문장과 변수 값을 함께 출력하기 위해",
+              "context": "Hello {full_name} 예시가 나온다.",
+              "sourceRefs": [
+                {
+                  "range": "06:20-06:50",
+                  "chunk": "c002",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ]
+            }
+          ],
+          "blocks": [
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c3-p1",
+              "type": "p",
+              "text": "영상은 Variable을 ‘값을 담는 재사용 가능한 컨테이너’라고 설명합니다. 예를 들어 `full_name`이라는 이름에 자신의 이름을 저장해 두면 나중에 그 이름을 다시 사용할 수 있습니다.",
+              "sourceRefs": [
+                {
+                  "range": "05:16-05:47",
+                  "chunk": "c002",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c3-p2",
+              "type": "p",
+              "text": "Variable은 어렵게 생각하지 말고 ‘값에 이름표를 붙여 둔다’고 생각하면 됩니다. 이름표를 부르면 그 안의 값을 다시 사용할 수 있습니다.",
+              "sourceRefs": [
+                {
+                  "range": "05:16-05:47",
+                  "chunk": "c002",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "explanation"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c3-p3",
+              "type": "p",
+              "text": "첫 번째 자료형은 String입니다. String은 글자의 연속이고 Python에서는 큰따옴표나 작은따옴표 안에 적습니다.",
+              "sourceRefs": [
+                {
+                  "range": "05:48-06:19",
+                  "chunk": "c002",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c3-p4",
+              "type": "p",
+              "text": "영상은 `full_name = \"Bro Code\"`처럼 이름을 String으로 저장합니다.",
+              "sourceRefs": [
+                {
+                  "range": "05:48-06:19",
+                  "chunk": "c002",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c3-p5",
+              "type": "p",
+              "text": "F-string은 문장 중간에 변수 값을 넣을 때 사용합니다. 문자열 앞에 `f`를 붙이고 중괄호 `{ }` 안에 변수 이름을 적습니다.",
+              "sourceRefs": [
+                {
+                  "range": "06:20-06:50",
+                  "chunk": "c002",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c3-p6",
+              "type": "p",
+              "text": "예를 들어 `f\"Hello {full_name}\"`은 Hello라는 글 뒤에 full_name 변수의 실제 값을 끼워 넣습니다.",
+              "sourceRefs": [
+                {
+                  "range": "06:20-06:50",
+                  "chunk": "c002",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "explanation"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c3-p7",
+              "type": "p",
+              "text": "두 번째는 Integer입니다. Integer는 소수점이 없는 정수입니다. 영상은 나이를 예로 들어 `age = 25`를 사용합니다.",
+              "sourceRefs": [
+                {
+                  "range": "06:51-07:23",
+                  "chunk": "c002",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c3-p8",
+              "type": "p",
+              "text": "세 번째는 Float입니다. Float는 소수점을 포함할 수 있는 숫자입니다. GPA 3.2 예시가 나옵니다.",
+              "sourceRefs": [
+                {
+                  "range": "07:24-07:54",
+                  "chunk": "c002",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c3-p9",
+              "type": "p",
+              "text": "네 번째는 Boolean입니다. Boolean은 True 또는 False입니다. Python에서는 영상 예시처럼 `True`, `False`의 첫 글자를 대문자로 씁니다.",
+              "sourceRefs": [
+                {
+                  "range": "07:55-08:26",
+                  "chunk": "c002",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c3-p10",
+              "type": "p",
+              "text": "Boolean은 그냥 화면에 출력할 수도 있지만, 영상은 보통 프로그램 내부에서 조건을 판단할 때 많이 쓴다고 설명합니다.",
+              "sourceRefs": [
+                {
+                  "range": "08:27-09:28",
+                  "chunk": "c002",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c3-p11",
+              "type": "p",
+              "text": "예를 들어 `is_student`가 True라면 ‘학생입니다’를 출력하고 False라면 ‘학생이 아닙니다’를 출력하는 식입니다. 뒤에서 if 문을 배울 때 이 개념이 다시 연결됩니다.",
+              "sourceRefs": [
+                {
+                  "range": "08:57-09:59",
+                  "chunk": "c002",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c3-img",
+              "type": "image",
+              "src": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221200%22%20height%3D%22675%22%20viewBox%3D%220%200%201200%20675%22%3E%3Crect%20width%3D%221200%22%20height%3D%22675%22%20fill%3D%22%23fff%22%2F%3E%3Crect%20width%3D%221200%22%20height%3D%2212%22%20fill%3D%22%2364725f%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2270%22%20text-anchor%3D%22start%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2238%22%20font-weight%3D%22900%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%2260%22%20dy%3D%220%22%3E%EB%B3%80%EC%88%98%EC%99%80%20%EB%84%A4%20%EA%B0%80%EC%A7%80%20%EA%B8%B0%EB%B3%B8%20%EC%9E%90%EB%A3%8C%ED%98%95%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%2260%22%20y%3D%22114%22%20text-anchor%3D%22start%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2221%22%20font-weight%3D%22600%22%20fill%3D%22%23444a43%22%3E%3Ctspan%20x%3D%2260%22%20dy%3D%220%22%3E%EA%B0%92%EC%9D%84%20%EC%9D%B4%EB%A6%84%20%EB%B6%99%EC%97%AC%20%EC%A0%80%EC%9E%A5%ED%95%98%EA%B3%A0%2C%20%EC%A2%85%EB%A5%98%EC%97%90%20%EB%94%B0%EB%9D%BC%20%EB%8B%A4%EB%A5%B4%EA%B2%8C%20%EB%8B%A4%EB%A3%AC%EB%8B%A4%3C%2Ftspan%3E%3C%2Ftext%3E%3Crect%20x%3D%2255%22%20y%3D%22190%22%20width%3D%22250%22%20height%3D%22175%22%20rx%3D%2222%22%20fill%3D%22%23eef3eb%22%20stroke%3D%22%236f786b%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22180%22%20y%3D%22236%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2226%22%20font-weight%3D%22800%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22180%22%20dy%3D%220%22%3EString%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%22180%22%20y%3D%22276%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22180%22%20dy%3D%220%22%3E%EA%B8%80%EC%9E%90%3C%2Ftspan%3E%3Ctspan%20x%3D%22180%22%20dy%3D%2225%22%3E%22Bro%20Code%22%3C%2Ftspan%3E%3C%2Ftext%3E%3Crect%20x%3D%22330%22%20y%3D%22190%22%20width%3D%22250%22%20height%3D%22175%22%20rx%3D%2222%22%20fill%3D%22%23f4ecdf%22%20stroke%3D%22%23897552%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22455%22%20y%3D%22236%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2226%22%20font-weight%3D%22800%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22455%22%20dy%3D%220%22%3EInteger%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%22455%22%20y%3D%22276%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22455%22%20dy%3D%220%22%3E%EC%A0%95%EC%88%98%3C%2Ftspan%3E%3Ctspan%20x%3D%22455%22%20dy%3D%2225%22%3E25%3C%2Ftspan%3E%3C%2Ftext%3E%3Crect%20x%3D%22605%22%20y%3D%22190%22%20width%3D%22250%22%20height%3D%22175%22%20rx%3D%2222%22%20fill%3D%22%23e8edf0%22%20stroke%3D%22%23647b88%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22730%22%20y%3D%22236%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2226%22%20font-weight%3D%22800%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22730%22%20dy%3D%220%22%3EFloat%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%22730%22%20y%3D%22276%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22730%22%20dy%3D%220%22%3E%EC%86%8C%EC%88%98%3C%2Ftspan%3E%3Ctspan%20x%3D%22730%22%20dy%3D%2225%22%3E3.2%3C%2Ftspan%3E%3C%2Ftext%3E%3Crect%20x%3D%22880%22%20y%3D%22190%22%20width%3D%22250%22%20height%3D%22175%22%20rx%3D%2222%22%20fill%3D%22%23efe8ef%22%20stroke%3D%22%23806b7c%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%221005%22%20y%3D%22236%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2226%22%20font-weight%3D%22800%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%221005%22%20dy%3D%220%22%3EBoolean%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%221005%22%20y%3D%22276%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%221005%22%20dy%3D%220%22%3ETrue%20%2F%20False%3C%2Ftspan%3E%3Ctspan%20x%3D%221005%22%20dy%3D%2225%22%3E%EC%B0%B8%20%C2%B7%20%EA%B1%B0%EC%A7%93%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%22600%22%20y%3D%22500%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22600%22%20dy%3D%220%22%3E%EB%B3%80%EC%88%98%EB%8A%94%20%EA%B0%92%EC%9D%84%20%EB%8B%A4%EC%8B%9C%20%EC%93%B8%20%EC%88%98%20%EC%9E%88%EA%B2%8C%20%EC%9D%B4%EB%A6%84%EC%9D%84%20%EB%B6%99%EC%97%AC%20%EB%91%94%20%EC%83%81%EC%9E%90%EC%B2%98%EB%9F%BC%20%EC%83%9D%EA%B0%81%ED%95%98%EB%A9%B4%20%EC%89%BD%EB%8B%A4%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%221140%22%20y%3D%22642%22%20text-anchor%3D%22end%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2217%22%20fill%3D%22%23626860%22%3ECHATBOOK%20%C2%B7%20PYTHON%200-DAY%20MAP%3C%2Ftext%3E%3C%2Fsvg%3E",
+              "caption": "개념도 · Variable과 String · Integer · Float · Boolean의 차이",
+              "sourceRefs": [
+                {
+                  "range": "05:16-09:59",
+                  "chunk": "c002",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_provenance": {
+                "kind": "diagram",
+                "reconstructed": true,
+                "label": "개념도"
+              }
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c3-q",
+              "type": "quote",
+              "text": "같은 Variable이라는 그릇에 무엇을 넣었는지에 따라 String·Integer·Float·Boolean처럼 값의 종류가 달라진다.",
+              "sourceRefs": [
+                {
+                  "range": "05:16-09:59",
+                  "chunk": "c002",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            }
+          ]
+        },
+        {
+          "id": "yt-python-1h-8KCuHHeC_M0-c4",
+          "title": "기본 Arithmetic",
+          "subtitle": "+ · - · * · / · // · %와 +=",
+          "summary": [
+            "Python의 기본 산술 연산자를 실제 변수 값에 적용한다.",
+            "/는 일반 나눗셈, //는 정수 나눗셈, %는 나머지를 구한다.",
+            "+= 같은 Augmented Assignment는 계산 후 같은 변수에 다시 저장하는 짧은 표현이다."
+          ],
+          "sourceRefs": [
+            {
+              "range": "09:29-14:39",
+              "chunk": "c003",
+              "videoId": "8KCuHHeC_M0"
+            }
+          ],
+          "glossary": [
+            {
+              "term": "Operator",
+              "plain": "값에 계산이나 비교를 적용하는 기호",
+              "why": "숫자에 어떤 연산을 할지 표현하기 위해",
+              "context": "+ - * / // %가 나온다.",
+              "sourceRefs": [
+                {
+                  "range": "09:29-14:39",
+                  "chunk": "c003",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ]
+            },
+            {
+              "term": "Augmented Assignment",
+              "plain": "`x = x + 1`을 `x += 1`처럼 줄여 쓰는 문법",
+              "why": "같은 변수에 계산 결과를 다시 저장하는 코드를 짧게 쓰기 위해",
+              "context": "friends += 1 예시가 나온다.",
+              "sourceRefs": [
+                {
+                  "range": "10:30-13:36",
+                  "chunk": "c003",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ]
+            },
+            {
+              "term": "Modulus %",
+              "plain": "나눗셈의 나머지를 구하는 연산자",
+              "why": "짝이 안 맞고 남는 값처럼 나머지가 필요할 때",
+              "context": "10명을 3명씩 묶을 때 1명이 남는 예시가 나온다.",
+              "sourceRefs": [
+                {
+                  "range": "14:09-14:39",
+                  "chunk": "c003",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ]
+            }
+          ],
+          "blocks": [
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c4-p1",
+              "type": "p",
+              "text": "영상은 `friends = 5`라는 숫자 변수로 기본 산술을 보여 줍니다.",
+              "sourceRefs": [
+                {
+                  "range": "09:29-09:59",
+                  "chunk": "c003",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c4-p2",
+              "type": "p",
+              "text": "`+`는 덧셈, `-`는 뺄셈, `*`는 곱셈, `/`는 일반 나눗셈입니다.",
+              "sourceRefs": [
+                {
+                  "range": "10:00-13:04",
+                  "chunk": "c003",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c4-p3",
+              "type": "p",
+              "text": "`friends = friends + 1`처럼 기존 값에 1을 더하고 다시 같은 변수에 저장할 수 있습니다.",
+              "sourceRefs": [
+                {
+                  "range": "10:30-10:59",
+                  "chunk": "c003",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c4-p4",
+              "type": "p",
+              "text": "이 표현은 `friends += 1`로 줄여 쓸 수 있습니다. 영상은 이를 Augmented Assignment라고 설명합니다.",
+              "sourceRefs": [
+                {
+                  "range": "11:00-11:29",
+                  "chunk": "c003",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c4-p5",
+              "type": "p",
+              "text": "Python에는 일부 다른 언어에서 보이는 `++` 증가 연산자가 없다고 영상은 보여 줍니다. 한 번 증가시키려면 `+= 1`을 사용합니다.",
+              "sourceRefs": [
+                {
+                  "range": "11:00-11:29",
+                  "chunk": "c003",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c4-p6",
+              "type": "p",
+              "text": "곱셈은 `*`를 사용합니다. 예를 들어 5명의 친구 수를 두 배로 하면 `friends * 2`로 10이 됩니다.",
+              "sourceRefs": [
+                {
+                  "range": "12:03-12:33",
+                  "chunk": "c003",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c4-p7",
+              "type": "p",
+              "text": "일반 나눗셈 `/`의 결과는 영상 예시에서 Float가 됩니다. 5를 2로 나누면 2.5이고, 10을 2로 나눠도 5.0처럼 소수형 숫자로 나타납니다.",
+              "sourceRefs": [
+                {
+                  "range": "12:34-13:04",
+                  "chunk": "c003",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c4-p8",
+              "type": "p",
+              "text": "정수 나눗셈 `//`은 영상에서 아래쪽 정수로 내려간 결과를 돌려준다고 설명합니다. 10 // 3은 3입니다.",
+              "sourceRefs": [
+                {
+                  "range": "13:05-14:08",
+                  "chunk": "c003",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c4-p9",
+              "type": "p",
+              "text": "`%`는 Modulus 연산자이고 나머지를 구합니다. 10명을 3명씩 그룹으로 나누면 한 명이 남으므로 10 % 3은 1이라는 예시입니다.",
+              "sourceRefs": [
+                {
+                  "range": "14:09-14:39",
+                  "chunk": "c003",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c4-p10",
+              "type": "p",
+              "text": "초보자에게는 `//`와 `%`가 특히 낯설 수 있습니다. `//`는 ‘몇 묶음이 온전히 들어가는가’, `%`는 ‘묶고 나서 무엇이 남는가’로 연결해 생각하면 영상 예시가 이해하기 쉽습니다.",
+              "sourceRefs": [
+                {
+                  "range": "13:05-14:39",
+                  "chunk": "c003",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "explanation"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c4-img",
+              "type": "image",
+              "src": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221200%22%20height%3D%22675%22%20viewBox%3D%220%200%201200%20675%22%3E%3Crect%20width%3D%221200%22%20height%3D%22675%22%20fill%3D%22%23fff%22%2F%3E%3Crect%20width%3D%221200%22%20height%3D%2212%22%20fill%3D%22%2364725f%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2270%22%20text-anchor%3D%22start%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2238%22%20font-weight%3D%22900%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%2260%22%20dy%3D%220%22%3EPython%20%EA%B8%B0%EB%B3%B8%20%EC%82%B0%EC%88%A0%20%EC%97%B0%EC%82%B0%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%2260%22%20y%3D%22114%22%20text-anchor%3D%22start%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2221%22%20font-weight%3D%22600%22%20fill%3D%22%23444a43%22%3E%3Ctspan%20x%3D%2260%22%20dy%3D%220%22%3E%EA%B0%99%EC%9D%80%20%EC%88%AB%EC%9E%90%EB%8F%84%20%EC%97%B0%EC%82%B0%EC%9E%90%EC%97%90%20%EB%94%B0%EB%9D%BC%20%EB%8B%A4%EB%A5%B8%20%EA%B3%84%EC%82%B0%EC%9D%84%20%ED%95%9C%EB%8B%A4%3C%2Ftspan%3E%3C%2Ftext%3E%3Crect%20x%3D%2255%22%20y%3D%22185%22%20width%3D%22210%22%20height%3D%22175%22%20rx%3D%2222%22%20fill%3D%22%23eef3eb%22%20stroke%3D%22%236f786b%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22160%22%20y%3D%22231%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2226%22%20font-weight%3D%22800%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22160%22%20dy%3D%220%22%3E%2B%20%20-%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%22160%22%20y%3D%22271%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22160%22%20dy%3D%220%22%3E%EB%8D%94%ED%95%98%EA%B8%B0%3C%2Ftspan%3E%3Ctspan%20x%3D%22160%22%20dy%3D%2225%22%3E%EB%B9%BC%EA%B8%B0%3C%2Ftspan%3E%3C%2Ftext%3E%3Crect%20x%3D%22300%22%20y%3D%22185%22%20width%3D%22210%22%20height%3D%22175%22%20rx%3D%2222%22%20fill%3D%22%23f4ecdf%22%20stroke%3D%22%23897552%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22405%22%20y%3D%22231%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2226%22%20font-weight%3D%22800%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22405%22%20dy%3D%220%22%3E*%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%22405%22%20y%3D%22271%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22405%22%20dy%3D%220%22%3E%EA%B3%B1%ED%95%98%EA%B8%B0%3C%2Ftspan%3E%3Ctspan%20x%3D%22405%22%20dy%3D%2225%22%3Efriends%20*%202%3C%2Ftspan%3E%3C%2Ftext%3E%3Crect%20x%3D%22545%22%20y%3D%22185%22%20width%3D%22210%22%20height%3D%22175%22%20rx%3D%2222%22%20fill%3D%22%23e8edf0%22%20stroke%3D%22%23647b88%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22650%22%20y%3D%22231%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2226%22%20font-weight%3D%22800%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22650%22%20dy%3D%220%22%3E%2F%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%22650%22%20y%3D%22271%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22650%22%20dy%3D%220%22%3E%EC%9D%BC%EB%B0%98%20%EB%82%98%EB%88%97%EC%85%88%3C%2Ftspan%3E%3Ctspan%20x%3D%22650%22%20dy%3D%2225%22%3E%EA%B2%B0%EA%B3%BC%EB%8A%94%20Float%3C%2Ftspan%3E%3C%2Ftext%3E%3Crect%20x%3D%22790%22%20y%3D%22185%22%20width%3D%22210%22%20height%3D%22175%22%20rx%3D%2222%22%20fill%3D%22%23efe8ef%22%20stroke%3D%22%23806b7c%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22895%22%20y%3D%22231%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2226%22%20font-weight%3D%22800%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22895%22%20dy%3D%220%22%3E%2F%2F%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%22895%22%20y%3D%22271%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22895%22%20dy%3D%220%22%3E%EC%A0%95%EC%88%98%20%EB%82%98%EB%88%97%EC%85%88%3C%2Ftspan%3E%3Ctspan%20x%3D%22895%22%20dy%3D%2225%22%3E%EC%95%84%EB%9E%98%EC%AA%BD%20%EC%A0%95%EC%88%98%3C%2Ftspan%3E%3C%2Ftext%3E%3Crect%20x%3D%221030%22%20y%3D%22185%22%20width%3D%22125%22%20height%3D%22175%22%20rx%3D%2222%22%20fill%3D%22%23f1eeee%22%20stroke%3D%22%238b6f6f%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%221092.5%22%20y%3D%22231%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2226%22%20font-weight%3D%22800%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%221092.5%22%20dy%3D%220%22%3E%25%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%221092.5%22%20y%3D%22271%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%221092.5%22%20dy%3D%220%22%3E%EB%82%98%EB%A8%B8%EC%A7%80%3C%2Ftspan%3E%3Ctspan%20x%3D%221092.5%22%20dy%3D%2225%22%3ERemainder%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%22600%22%20y%3D%22505%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22600%22%20dy%3D%220%22%3E%2B%3D%2C%20-%3D%2C%20*%3D%20%EA%B0%99%EC%9D%80%20%ED%91%9C%EA%B8%B0%EB%8A%94%20%EA%B3%84%EC%82%B0%20%ED%9B%84%20%EA%B0%99%EC%9D%80%20%EB%B3%80%EC%88%98%EC%97%90%20%EB%8B%A4%EC%8B%9C%20%EC%A0%80%EC%9E%A5%ED%95%98%EB%8A%94%20%EC%A7%A7%EC%9D%80%20%EB%AC%B8%EB%B2%95%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%221140%22%20y%3D%22642%22%20text-anchor%3D%22end%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2217%22%20fill%3D%22%23626860%22%3ECHATBOOK%20%C2%B7%20PYTHON%200-DAY%20MAP%3C%2Ftext%3E%3C%2Fsvg%3E",
+              "caption": "개념도 · Python 기본 산술 연산자의 역할",
+              "sourceRefs": [
+                {
+                  "range": "09:29-14:39",
+                  "chunk": "c003",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_provenance": {
+                "kind": "diagram",
+                "reconstructed": true,
+                "label": "개념도"
+              }
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c4-q",
+              "type": "quote",
+              "text": "/는 일반 나눗셈, //는 정수 나눗셈, %는 나머지다.",
+              "sourceRefs": [
+                {
+                  "range": "12:34-14:39",
+                  "chunk": "c003",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            }
+          ]
+        },
+        {
+          "id": "yt-python-1h-8KCuHHeC_M0-c5",
+          "title": "Type Casting",
+          "subtitle": "String · Integer · Float · Boolean 사이에서 값의 종류 바꾸기",
+          "summary": [
+            "Type Casting은 값을 한 Data Type에서 다른 Data Type으로 바꾸는 과정이다.",
+            "type()으로 현재 자료형을 확인할 수 있다.",
+            "String 숫자와 실제 숫자는 겉모양이 같아도 연산 결과가 달라진다."
+          ],
+          "sourceRefs": [
+            {
+              "range": "14:40-19:50",
+              "chunk": "c004",
+              "videoId": "8KCuHHeC_M0"
+            }
+          ],
+          "glossary": [
+            {
+              "term": "Type Casting",
+              "plain": "값을 다른 자료형으로 변환하는 과정",
+              "why": "입력값이나 기존 값을 계산에 맞는 종류로 바꾸기 위해",
+              "context": "int(), float(), str(), bool() 예시가 나온다.",
+              "sourceRefs": [
+                {
+                  "range": "14:40-19:50",
+                  "chunk": "c004",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ]
+            },
+            {
+              "term": "type()",
+              "plain": "값이나 변수의 현재 자료형을 확인하는 함수",
+              "why": "현재 값이 String인지 Integer인지 등을 확인하려고",
+              "context": "name·age·gpa·is_student를 검사한다.",
+              "sourceRefs": [
+                {
+                  "range": "15:40-16:10",
+                  "chunk": "c004",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ]
+            },
+            {
+              "term": "Concatenation",
+              "plain": "문자열을 이어 붙이는 동작",
+              "why": "String + String이 숫자 덧셈과 다르게 동작함을 보여 주기 위해",
+              "context": "\"25\" + \"1\"이 251이 되는 예시가 나온다.",
+              "sourceRefs": [
+                {
+                  "range": "17:48-18:49",
+                  "chunk": "c004",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ]
+            }
+          ],
+          "blocks": [
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c5-p1",
+              "type": "p",
+              "text": "Type Casting은 변수를 한 Data Type에서 다른 Data Type으로 바꾸는 과정입니다.",
+              "sourceRefs": [
+                {
+                  "range": "14:40-15:09",
+                  "chunk": "c004",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c5-p2",
+              "type": "p",
+              "text": "영상은 `str()`, `int()`, `float()`, `bool()` 함수를 이용해 String·Integer·Float·Boolean으로 변환하는 방법을 보여 줍니다.",
+              "sourceRefs": [
+                {
+                  "range": "14:40-15:39",
+                  "chunk": "c004",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c5-p3",
+              "type": "p",
+              "text": "`type()` 함수로 현재 값의 자료형을 확인할 수 있습니다. 영상은 name은 String, age는 Integer, GPA는 Float, is_student는 Boolean으로 확인합니다.",
+              "sourceRefs": [
+                {
+                  "range": "15:40-16:10",
+                  "chunk": "c004",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c5-p4",
+              "type": "p",
+              "text": "Float 3.2를 `int()`로 바꾸면 영상에서는 소수 부분이 잘리고 3이 됩니다.",
+              "sourceRefs": [
+                {
+                  "range": "16:11-16:43",
+                  "chunk": "c004",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c5-p5",
+              "type": "p",
+              "text": "Integer 25를 `float()`로 바꾸면 25.0이 됩니다.",
+              "sourceRefs": [
+                {
+                  "range": "16:44-17:13",
+                  "chunk": "c004",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c5-p6",
+              "type": "p",
+              "text": "25를 `str()`로 바꾸면 화면에는 여전히 25처럼 보이지만, 이제 숫자가 아니라 글자 데이터입니다.",
+              "sourceRefs": [
+                {
+                  "range": "17:14-17:47",
+                  "chunk": "c004",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c5-p7",
+              "type": "p",
+              "text": "이 차이가 중요한 이유는 같은 모양이어도 동작이 달라지기 때문입니다. String \"25\"에 String \"1\"을 이어 붙이면 26이 아니라 251이 됩니다.",
+              "sourceRefs": [
+                {
+                  "range": "17:48-18:49",
+                  "chunk": "c004",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c5-p8",
+              "type": "p",
+              "text": "영상은 숫자 연산과 String Concatenation이 다르게 동작한다는 점을 이 예시로 보여 줍니다.",
+              "sourceRefs": [
+                {
+                  "range": "18:19-18:49",
+                  "chunk": "c004",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c5-p9",
+              "type": "p",
+              "text": "String을 Boolean으로 변환하는 예시도 나옵니다. 내용이 있는 String은 True가 되고, 빈 String은 False가 되는 결과를 보여 줍니다.",
+              "sourceRefs": [
+                {
+                  "range": "18:50-19:50",
+                  "chunk": "c004",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c5-p10",
+              "type": "p",
+              "text": "영상은 이 성질을 사용자가 이름을 입력했는지 확인하는 식으로 사용할 수 있다고 설명합니다.",
+              "sourceRefs": [
+                {
+                  "range": "19:21-19:50",
+                  "chunk": "c004",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c5-img",
+              "type": "image",
+              "src": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221200%22%20height%3D%22675%22%20viewBox%3D%220%200%201200%20675%22%3E%3Crect%20width%3D%221200%22%20height%3D%22675%22%20fill%3D%22%23fff%22%2F%3E%3Crect%20width%3D%221200%22%20height%3D%2212%22%20fill%3D%22%2364725f%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2270%22%20text-anchor%3D%22start%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2238%22%20font-weight%3D%22900%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%2260%22%20dy%3D%220%22%3EType%20Casting%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%2260%22%20y%3D%22114%22%20text-anchor%3D%22start%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2221%22%20font-weight%3D%22600%22%20fill%3D%22%23444a43%22%3E%3Ctspan%20x%3D%2260%22%20dy%3D%220%22%3E%EA%B0%92%EC%9D%98%20%EC%A2%85%EB%A5%98%EB%A5%BC%20%EB%8B%A4%EB%A5%B8%20%EC%9E%90%EB%A3%8C%ED%98%95%EC%9C%BC%EB%A1%9C%20%EB%B0%94%EA%BE%B8%EA%B8%B0%3C%2Ftspan%3E%3C%2Ftext%3E%3Crect%20x%3D%2290%22%20y%3D%22205%22%20width%3D%22245%22%20height%3D%22165%22%20rx%3D%2222%22%20fill%3D%22%23eef3eb%22%20stroke%3D%22%236f786b%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22212.5%22%20y%3D%22251%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2226%22%20font-weight%3D%22800%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22212.5%22%20dy%3D%220%22%3E%EC%9B%90%EB%9E%98%20%EA%B0%92%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%22212.5%22%20y%3D%22291%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22212.5%22%20dy%3D%220%22%3E%2225%22%3C%2Ftspan%3E%3Ctspan%20x%3D%22212.5%22%20dy%3D%2225%22%3EString%3C%2Ftspan%3E%3C%2Ftext%3E%3Cdefs%3E%3Cmarker%20id%3D%22a%22%20markerWidth%3D%2210%22%20markerHeight%3D%2210%22%20refX%3D%228%22%20refY%3D%223%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M0%2C0%20L0%2C6%20L8%2C3%20z%22%20fill%3D%22%235e685a%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%3Cline%20x1%3D%22350%22%20y1%3D%22287%22%20x2%3D%22500%22%20y2%3D%22287%22%20stroke%3D%22%235e685a%22%20stroke-width%3D%225%22%20marker-end%3D%22url(%23a)%22%2F%3E%3Ctext%20x%3D%22425%22%20y%3D%22275%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22425%22%20dy%3D%220%22%3Eint(...)%3C%2Ftspan%3E%3C%2Ftext%3E%3Crect%20x%3D%22515%22%20y%3D%22205%22%20width%3D%22245%22%20height%3D%22165%22%20rx%3D%2222%22%20fill%3D%22%23f4ecdf%22%20stroke%3D%22%23897552%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22637.5%22%20y%3D%22251%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2226%22%20font-weight%3D%22800%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22637.5%22%20dy%3D%220%22%3E%EB%B3%80%ED%99%98%EB%90%9C%20%EA%B0%92%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%22637.5%22%20y%3D%22291%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22637.5%22%20dy%3D%220%22%3E25%3C%2Ftspan%3E%3Ctspan%20x%3D%22637.5%22%20dy%3D%2225%22%3EInteger%3C%2Ftspan%3E%3C%2Ftext%3E%3Cdefs%3E%3Cmarker%20id%3D%22a%22%20markerWidth%3D%2210%22%20markerHeight%3D%2210%22%20refX%3D%228%22%20refY%3D%223%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M0%2C0%20L0%2C6%20L8%2C3%20z%22%20fill%3D%22%235e685a%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%3Cline%20x1%3D%22775%22%20y1%3D%22287%22%20x2%3D%22925%22%20y2%3D%22287%22%20stroke%3D%22%235e685a%22%20stroke-width%3D%225%22%20marker-end%3D%22url(%23a)%22%2F%3E%3Ctext%20x%3D%22850%22%20y%3D%22275%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22850%22%20dy%3D%220%22%3Estr(...)%3C%2Ftspan%3E%3C%2Ftext%3E%3Crect%20x%3D%22940%22%20y%3D%22205%22%20width%3D%22170%22%20height%3D%22165%22%20rx%3D%2222%22%20fill%3D%22%23e8edf0%22%20stroke%3D%22%23647b88%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%221025%22%20y%3D%22251%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2226%22%20font-weight%3D%22800%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%221025%22%20dy%3D%220%22%3E%EB%8B%A4%EC%8B%9C%20%EA%B8%80%EC%9E%90%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%221025%22%20y%3D%22291%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%221025%22%20dy%3D%220%22%3E%2225%22%3C%2Ftspan%3E%3Ctspan%20x%3D%221025%22%20dy%3D%2225%22%3EString%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%22600%22%20y%3D%22505%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2227%22%20font-weight%3D%22800%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22600%22%20dy%3D%220%22%3E%EA%B2%89%EC%9C%BC%EB%A1%9C%20%EA%B0%99%EC%9D%80%2025%EC%B2%98%EB%9F%BC%20%EB%B3%B4%EC%97%AC%EB%8F%84%20String%2025%EC%99%80%20Integer%2025%EB%8A%94%20%EB%8F%99%EC%9E%91%EC%9D%B4%20%EB%8B%A4%EB%A5%B4%EB%8B%A4%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%221140%22%20y%3D%22642%22%20text-anchor%3D%22end%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2217%22%20fill%3D%22%23626860%22%3ECHATBOOK%20%C2%B7%20PYTHON%200-DAY%20MAP%3C%2Ftext%3E%3C%2Fsvg%3E",
+              "caption": "개념도 · 같은 값의 모양과 실제 Data Type이 다를 수 있다는 점",
+              "sourceRefs": [
+                {
+                  "range": "14:40-19:50",
+                  "chunk": "c004",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_provenance": {
+                "kind": "diagram",
+                "reconstructed": true,
+                "label": "개념도"
+              }
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c5-q",
+              "type": "quote",
+              "text": "겉으로 25처럼 보여도 Integer 25와 String \"25\"는 서로 다른 종류의 값이라 동작도 달라질 수 있다.",
+              "sourceRefs": [
+                {
+                  "range": "17:14-18:49",
+                  "chunk": "c004",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            }
+          ]
+        },
+        {
+          "id": "yt-python-1h-8KCuHHeC_M0-c6",
+          "title": "User Input",
+          "subtitle": "input()으로 입력받고 필요한 자료형으로 바꾸기",
+          "summary": [
+            "input()은 Console에서 사용자의 입력을 받는다.",
+            "영상은 input()으로 받은 값을 항상 String으로 설명한다.",
+            "숫자 계산이 필요하면 int()나 float()로 변환한 뒤 사용한다."
+          ],
+          "sourceRefs": [
+            {
+              "range": "19:51-24:27",
+              "chunk": "c005",
+              "videoId": "8KCuHHeC_M0"
+            }
+          ],
+          "glossary": [
+            {
+              "term": "input()",
+              "plain": "사용자가 Console에 입력한 값을 받아오는 함수",
+              "why": "프로그램이 사용자에게 값을 받을 수 있게 하려고",
+              "context": "이름과 나이를 입력받는 예시가 나온다.",
+              "sourceRefs": [
+                {
+                  "range": "19:51-24:27",
+                  "chunk": "c005",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ]
+            },
+            {
+              "term": "Prompt",
+              "plain": "사용자에게 무엇을 입력해야 하는지 보여 주는 안내문",
+              "why": "입력할 내용을 알려 주기 위해",
+              "context": "Enter your name, Enter your age가 예다.",
+              "sourceRefs": [
+                {
+                  "range": "20:21-23:56",
+                  "chunk": "c005",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ]
+            }
+          ],
+          "blocks": [
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c6-p1",
+              "type": "p",
+              "text": "사용자의 입력을 받으려면 `input()` 함수를 사용합니다. 괄호 안에는 사용자가 무엇을 입력해야 하는지 알려 주는 문장을 넣을 수 있습니다.",
+              "sourceRefs": [
+                {
+                  "range": "19:51-20:20",
+                  "chunk": "c005",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c6-p2",
+              "type": "p",
+              "text": "예를 들어 `name = input(\"Enter your name: \")`처럼 쓰면 사용자가 입력한 값이 name 변수에 저장됩니다.",
+              "sourceRefs": [
+                {
+                  "range": "20:21-21:20",
+                  "chunk": "c005",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c6-p3",
+              "type": "p",
+              "text": "영상은 입력받은 name을 F-string으로 다시 출력해 `Hello ...` 문장을 만드는 과정을 보여 줍니다.",
+              "sourceRefs": [
+                {
+                  "range": "20:51-21:20",
+                  "chunk": "c005",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c6-p4",
+              "type": "p",
+              "text": "중요한 규칙이 하나 있습니다. 영상에서는 `input()`으로 받은 값은 String이라고 설명합니다.",
+              "sourceRefs": [
+                {
+                  "range": "21:21-22:25",
+                  "chunk": "c005",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c6-p5",
+              "type": "p",
+              "text": "그래서 나이 25를 입력해도 처음에는 숫자 25가 아니라 글자 \"25\"로 들어옵니다.",
+              "sourceRefs": [
+                {
+                  "range": "21:53-22:56",
+                  "chunk": "c005",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "explanation"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c6-p6",
+              "type": "p",
+              "text": "이 상태에서 1을 더하려고 하면 String과 Integer를 섞는 Type Error가 발생하는 예시를 보여 줍니다.",
+              "sourceRefs": [
+                {
+                  "range": "22:57-23:26",
+                  "chunk": "c005",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c6-p7",
+              "type": "p",
+              "text": "나이처럼 정수 계산이 필요하면 `int()`로 변환해야 합니다. 영상은 입력받은 age를 Integer로 바꾼 뒤 1을 더하는 과정을 보여 줍니다.",
+              "sourceRefs": [
+                {
+                  "range": "23:27-23:56",
+                  "chunk": "c005",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c6-p8",
+              "type": "p",
+              "text": "변환은 별도 줄에 해도 되고, `int(input(...))`처럼 input()을 int()로 감싸 한 줄에서 바로 바꿀 수도 있습니다.",
+              "sourceRefs": [
+                {
+                  "range": "23:57-24:27",
+                  "chunk": "c005",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c6-img",
+              "type": "image",
+              "src": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221200%22%20height%3D%22675%22%20viewBox%3D%220%200%201200%20675%22%3E%3Crect%20width%3D%221200%22%20height%3D%22675%22%20fill%3D%22%23fff%22%2F%3E%3Crect%20width%3D%221200%22%20height%3D%2212%22%20fill%3D%22%2364725f%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2270%22%20text-anchor%3D%22start%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2238%22%20font-weight%3D%22900%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%2260%22%20dy%3D%220%22%3E%EC%82%AC%EC%9A%A9%EC%9E%90%20%EC%9E%85%EB%A0%A5%EC%9D%98%20%ED%9D%90%EB%A6%84%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%2260%22%20y%3D%22114%22%20text-anchor%3D%22start%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2221%22%20font-weight%3D%22600%22%20fill%3D%22%23444a43%22%3E%3Ctspan%20x%3D%2260%22%20dy%3D%220%22%3Einput()%EC%9C%BC%EB%A1%9C%20%EB%B0%9B%EC%9D%80%20%EA%B0%92%EC%9D%80%20%EB%A8%BC%EC%A0%80%20String%EC%9C%BC%EB%A1%9C%20%EB%93%A4%EC%96%B4%EC%98%A8%EB%8B%A4%3C%2Ftspan%3E%3C%2Ftext%3E%3Crect%20x%3D%2265%22%20y%3D%22205%22%20width%3D%22250%22%20height%3D%22165%22%20rx%3D%2222%22%20fill%3D%22%23eef3eb%22%20stroke%3D%22%236f786b%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22190%22%20y%3D%22251%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2226%22%20font-weight%3D%22800%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22190%22%20dy%3D%220%22%3E%EC%82%AC%EC%9A%A9%EC%9E%90%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%22190%22%20y%3D%22291%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22190%22%20dy%3D%220%22%3E%ED%82%A4%EB%B3%B4%EB%93%9C%EB%A1%9C%20%EC%9E%85%EB%A0%A5%3C%2Ftspan%3E%3Ctspan%20x%3D%22190%22%20dy%3D%2225%22%3E25%3C%2Ftspan%3E%3C%2Ftext%3E%3Cdefs%3E%3Cmarker%20id%3D%22a%22%20markerWidth%3D%2210%22%20markerHeight%3D%2210%22%20refX%3D%228%22%20refY%3D%223%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M0%2C0%20L0%2C6%20L8%2C3%20z%22%20fill%3D%22%235e685a%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%3Cline%20x1%3D%22325%22%20y1%3D%22287%22%20x2%3D%22455%22%20y2%3D%22287%22%20stroke%3D%22%235e685a%22%20stroke-width%3D%225%22%20marker-end%3D%22url(%23a)%22%2F%3E%3Crect%20x%3D%22470%22%20y%3D%22205%22%20width%3D%22260%22%20height%3D%22165%22%20rx%3D%2222%22%20fill%3D%22%23f4ecdf%22%20stroke%3D%22%23897552%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22600%22%20y%3D%22251%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2226%22%20font-weight%3D%22800%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22600%22%20dy%3D%220%22%3Einput()%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%22600%22%20y%3D%22291%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22600%22%20dy%3D%220%22%3E%2225%22%3C%2Ftspan%3E%3Ctspan%20x%3D%22600%22%20dy%3D%2225%22%3EString%3C%2Ftspan%3E%3C%2Ftext%3E%3Cdefs%3E%3Cmarker%20id%3D%22a%22%20markerWidth%3D%2210%22%20markerHeight%3D%2210%22%20refX%3D%228%22%20refY%3D%223%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M0%2C0%20L0%2C6%20L8%2C3%20z%22%20fill%3D%22%235e685a%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%3Cline%20x1%3D%22740%22%20y1%3D%22287%22%20x2%3D%22870%22%20y2%3D%22287%22%20stroke%3D%22%235e685a%22%20stroke-width%3D%225%22%20marker-end%3D%22url(%23a)%22%2F%3E%3Ctext%20x%3D%22805%22%20y%3D%22275%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22805%22%20dy%3D%220%22%3Eint(...)%3C%2Ftspan%3E%3C%2Ftext%3E%3Crect%20x%3D%22885%22%20y%3D%22205%22%20width%3D%22250%22%20height%3D%22165%22%20rx%3D%2222%22%20fill%3D%22%23e8edf0%22%20stroke%3D%22%23647b88%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%221010%22%20y%3D%22251%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2226%22%20font-weight%3D%22800%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%221010%22%20dy%3D%220%22%3E%EA%B3%84%EC%82%B0%20%EA%B0%80%EB%8A%A5%ED%95%9C%20%EA%B0%92%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%221010%22%20y%3D%22291%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%221010%22%20dy%3D%220%22%3E25%3C%2Ftspan%3E%3Ctspan%20x%3D%221010%22%20dy%3D%2225%22%3EInteger%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%22600%22%20y%3D%22505%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22600%22%20dy%3D%220%22%3E%EC%9E%85%EB%A0%A5%EA%B0%92%EC%9C%BC%EB%A1%9C%20%EA%B3%84%EC%82%B0%ED%95%98%EB%A0%A4%EB%A9%B4%20%ED%95%84%EC%9A%94%ED%95%9C%20%EA%B2%BD%EC%9A%B0%20%EC%9E%90%EB%A3%8C%ED%98%95%20%EB%B3%80%ED%99%98%EC%9D%84%20%EB%A8%BC%EC%A0%80%20%ED%95%9C%EB%8B%A4%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%221140%22%20y%3D%22642%22%20text-anchor%3D%22end%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2217%22%20fill%3D%22%23626860%22%3ECHATBOOK%20%C2%B7%20PYTHON%200-DAY%20MAP%3C%2Ftext%3E%3C%2Fsvg%3E",
+              "caption": "개념도 · input() 값이 String으로 들어오고 계산 전에 변환되는 흐름",
+              "sourceRefs": [
+                {
+                  "range": "19:51-24:27",
+                  "chunk": "c005",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_provenance": {
+                "kind": "diagram",
+                "reconstructed": true,
+                "label": "개념도"
+              }
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c6-q",
+              "type": "quote",
+              "text": "input()으로 숫자처럼 보이는 값을 받아도 먼저 String이므로, 계산하려면 필요한 자료형으로 바꿔야 할 수 있다.",
+              "sourceRefs": [
+                {
+                  "range": "21:21-24:27",
+                  "chunk": "c005",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            }
+          ]
+        },
+        {
+          "id": "yt-python-1h-8KCuHHeC_M0-c7",
+          "title": "if Statement",
+          "subtitle": "조건이 맞을 때만 코드 실행하기",
+          "summary": [
+            "if는 조건이 True일 때 해당 코드 블록을 실행한다.",
+            "elif와 else로 여러 갈래의 판단을 만들 수 있다.",
+            "조건은 위에서부터 확인하므로 순서가 결과에 영향을 줄 수 있다.",
+            "=는 대입이고 ==는 같은지 비교하는 연산자다."
+          ],
+          "sourceRefs": [
+            {
+              "range": "24:28-32:49",
+              "chunk": "c006",
+              "videoId": "8KCuHHeC_M0"
+            }
+          ],
+          "glossary": [
+            {
+              "term": "if",
+              "plain": "조건이 True일 때만 아래 코드 블록을 실행하는 문장",
+              "why": "프로그램이 상황에 따라 다른 행동을 하게 하려고",
+              "context": "나이에 따라 성인 여부를 판단한다.",
+              "sourceRefs": [
+                {
+                  "range": "24:28-32:49",
+                  "chunk": "c006",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ]
+            },
+            {
+              "term": "elif",
+              "plain": "앞 조건이 False일 때 다음 조건을 확인하는 분기",
+              "why": "여러 경우 중 하나를 선택하기 위해",
+              "context": "나이 65 이상, 18 이상 등 여러 조건을 비교한다.",
+              "sourceRefs": [
+                {
+                  "range": "26:30-29:07",
+                  "chunk": "c006",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ]
+            },
+            {
+              "term": "else",
+              "plain": "앞의 조건들이 모두 False일 때 실행하는 마지막 분기",
+              "why": "나머지 모든 경우를 처리하기 위해",
+              "context": "성인이 아니면 child라고 출력하는 예가 나온다.",
+              "sourceRefs": [
+                {
+                  "range": "25:59-26:29",
+                  "chunk": "c006",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ]
+            },
+            {
+              "term": "==",
+              "plain": "두 값이 같은지 비교하는 연산자",
+              "why": "대입과 비교를 구분하기 위해",
+              "context": "age == 0 예시가 나온다.",
+              "sourceRefs": [
+                {
+                  "range": "27:34-28:05",
+                  "chunk": "c006",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ]
+            },
+            {
+              "term": "Indentation",
+              "plain": "코드 앞의 들여쓰기",
+              "why": "어떤 코드가 if 블록 안에 속하는지 Python이 구분하기 위해",
+              "context": "if 아래 print 문이 들여쓰기된다.",
+              "sourceRefs": [
+                {
+                  "range": "24:58-25:58",
+                  "chunk": "c006",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ]
+            }
+          ],
+          "blocks": [
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c7-p1",
+              "type": "p",
+              "text": "if Statement는 기본적인 의사결정을 가능하게 합니다. 조건이 True일 때만 특정 코드를 실행합니다.",
+              "sourceRefs": [
+                {
+                  "range": "24:28-24:57",
+                  "chunk": "c006",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c7-p2",
+              "type": "p",
+              "text": "영상은 사용자의 나이를 입력받고 Integer로 변환한 뒤 `if age >= 18:` 조건을 검사합니다.",
+              "sourceRefs": [
+                {
+                  "range": "24:58-25:27",
+                  "chunk": "c006",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c7-p3",
+              "type": "p",
+              "text": "조건이 True이면 들여쓰기된 코드가 실행되어 ‘You are an adult’를 출력합니다.",
+              "sourceRefs": [
+                {
+                  "range": "25:28-25:58",
+                  "chunk": "c006",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c7-p4",
+              "type": "p",
+              "text": "조건이 False이면 그 if 블록을 건너뜁니다. `else`를 추가하면 앞 조건이 맞지 않을 때 다른 코드를 실행할 수 있습니다.",
+              "sourceRefs": [
+                {
+                  "range": "25:59-26:29",
+                  "chunk": "c006",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c7-p5",
+              "type": "p",
+              "text": "`elif`는 else if의 줄임말처럼 사용되며, 앞 조건이 False일 때 다른 조건을 이어서 검사합니다.",
+              "sourceRefs": [
+                {
+                  "range": "26:30-27:33",
+                  "chunk": "c006",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c7-p6",
+              "type": "p",
+              "text": "Python에서 `=`는 변수에 값을 넣는 대입이고, `==`는 두 값이 같은지 비교하는 연산자입니다. 영상은 age가 0인지 확인할 때 `age == 0`을 사용합니다.",
+              "sourceRefs": [
+                {
+                  "range": "27:34-28:05",
+                  "chunk": "c006",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c7-p7",
+              "type": "p",
+              "text": "조건문의 순서는 중요합니다. 영상에서 70살을 검사할 때 `age >= 18`이 먼저 있으면 이미 True가 되어 뒤의 `age >= 65`는 건너뜁니다.",
+              "sourceRefs": [
+                {
+                  "range": "28:06-29:07",
+                  "chunk": "c006",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c7-p8",
+              "type": "p",
+              "text": "그래서 더 구체적인 `age >= 65` 조건을 위로 옮기면 70살이 Senior Citizen으로 처리됩니다.",
+              "sourceRefs": [
+                {
+                  "range": "28:38-29:07",
+                  "chunk": "c006",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c7-p9",
+              "type": "p",
+              "text": "Boolean 변수도 조건으로 바로 사용할 수 있습니다. `if has_ticket:`은 has_ticket이 True인지 확인하는 방식으로 보여 줍니다.",
+              "sourceRefs": [
+                {
+                  "range": "29:08-30:43",
+                  "chunk": "c006",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c7-p10",
+              "type": "p",
+              "text": "영상은 나이에 따라 ticket price를 달리 계산하는 예시로 if / elif / else가 실제 프로그램 판단에 어떻게 연결되는지 보여 줍니다.",
+              "sourceRefs": [
+                {
+                  "range": "30:44-32:49",
+                  "chunk": "c006",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c7-p11",
+              "type": "p",
+              "text": "초보자에게 핵심은 ‘위에서부터 질문을 하나씩 던지고, 먼저 True가 된 길의 코드를 실행한다’는 흐름입니다.",
+              "sourceRefs": [
+                {
+                  "range": "24:28-32:49",
+                  "chunk": "c006",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "explanation"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c7-img",
+              "type": "image",
+              "src": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221200%22%20height%3D%22675%22%20viewBox%3D%220%200%201200%20675%22%3E%3Crect%20width%3D%221200%22%20height%3D%22675%22%20fill%3D%22%23fff%22%2F%3E%3Crect%20width%3D%221200%22%20height%3D%2212%22%20fill%3D%22%2364725f%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2270%22%20text-anchor%3D%22start%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2238%22%20font-weight%3D%22900%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%2260%22%20dy%3D%220%22%3Eif%20%2F%20elif%20%2F%20else%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%2260%22%20y%3D%22114%22%20text-anchor%3D%22start%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2221%22%20font-weight%3D%22600%22%20fill%3D%22%23444a43%22%3E%3Ctspan%20x%3D%2260%22%20dy%3D%220%22%3E%EC%A1%B0%EA%B1%B4%EC%9D%84%20%EC%9C%84%EC%97%90%EC%84%9C%EB%B6%80%ED%84%B0%20%ED%99%95%EC%9D%B8%ED%95%98%EA%B3%A0%2C%20%EB%A7%9E%EB%8A%94%20%EA%B8%B8%EC%9D%84%20%EC%84%A0%ED%83%9D%ED%95%9C%EB%8B%A4%3C%2Ftspan%3E%3C%2Ftext%3E%3Crect%20x%3D%2270%22%20y%3D%22185%22%20width%3D%22245%22%20height%3D%22175%22%20rx%3D%2222%22%20fill%3D%22%23eef3eb%22%20stroke%3D%22%236f786b%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22192.5%22%20y%3D%22231%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2226%22%20font-weight%3D%22800%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22192.5%22%20dy%3D%220%22%3Eif%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%22192.5%22%20y%3D%22271%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22192.5%22%20dy%3D%220%22%3Eage%20%26gt%3B%3D%2065%20%3F%3C%2Ftspan%3E%3Ctspan%20x%3D%22192.5%22%20dy%3D%2225%22%3E%EC%B0%B8%EC%9D%B4%EB%A9%B4%20%EC%8B%A4%ED%96%89%3C%2Ftspan%3E%3C%2Ftext%3E%3Cdefs%3E%3Cmarker%20id%3D%22a%22%20markerWidth%3D%2210%22%20markerHeight%3D%2210%22%20refX%3D%228%22%20refY%3D%223%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M0%2C0%20L0%2C6%20L8%2C3%20z%22%20fill%3D%22%235e685a%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%3Cline%20x1%3D%22325%22%20y1%3D%22272%22%20x2%3D%22460%22%20y2%3D%22272%22%20stroke%3D%22%235e685a%22%20stroke-width%3D%225%22%20marker-end%3D%22url(%23a)%22%2F%3E%3Ctext%20x%3D%22392.5%22%20y%3D%22260%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22392.5%22%20dy%3D%220%22%3EFalse%3C%2Ftspan%3E%3C%2Ftext%3E%3Crect%20x%3D%22475%22%20y%3D%22185%22%20width%3D%22245%22%20height%3D%22175%22%20rx%3D%2222%22%20fill%3D%22%23f4ecdf%22%20stroke%3D%22%23897552%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22597.5%22%20y%3D%22231%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2226%22%20font-weight%3D%22800%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22597.5%22%20dy%3D%220%22%3Eelif%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%22597.5%22%20y%3D%22271%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22597.5%22%20dy%3D%220%22%3Eage%20%26gt%3B%3D%2018%20%3F%3C%2Ftspan%3E%3Ctspan%20x%3D%22597.5%22%20dy%3D%2225%22%3E%EB%8B%A4%EC%9D%8C%20%EC%A1%B0%EA%B1%B4%3C%2Ftspan%3E%3C%2Ftext%3E%3Cdefs%3E%3Cmarker%20id%3D%22a%22%20markerWidth%3D%2210%22%20markerHeight%3D%2210%22%20refX%3D%228%22%20refY%3D%223%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M0%2C0%20L0%2C6%20L8%2C3%20z%22%20fill%3D%22%235e685a%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%3Cline%20x1%3D%22730%22%20y1%3D%22272%22%20x2%3D%22865%22%20y2%3D%22272%22%20stroke%3D%22%235e685a%22%20stroke-width%3D%225%22%20marker-end%3D%22url(%23a)%22%2F%3E%3Ctext%20x%3D%22797.5%22%20y%3D%22260%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22797.5%22%20dy%3D%220%22%3EFalse%3C%2Ftspan%3E%3C%2Ftext%3E%3Crect%20x%3D%22880%22%20y%3D%22185%22%20width%3D%22245%22%20height%3D%22175%22%20rx%3D%2222%22%20fill%3D%22%23e8edf0%22%20stroke%3D%22%23647b88%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%221002.5%22%20y%3D%22231%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2226%22%20font-weight%3D%22800%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%221002.5%22%20dy%3D%220%22%3Eelse%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%221002.5%22%20y%3D%22271%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%221002.5%22%20dy%3D%220%22%3E%EC%95%9E%20%EC%A1%B0%EA%B1%B4%EC%9D%B4%20%EB%AA%A8%EB%91%90%20False%3C%2Ftspan%3E%3Ctspan%20x%3D%221002.5%22%20dy%3D%2225%22%3E%EB%A7%88%EC%A7%80%EB%A7%89%20%EC%B2%98%EB%A6%AC%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%22600%22%20y%3D%22505%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2229%22%20font-weight%3D%22800%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22600%22%20dy%3D%220%22%3E%EC%9C%84%EC%97%90%EC%84%9C%20%EB%A8%BC%EC%A0%80%20True%EA%B0%80%20%EB%90%9C%20%EB%B6%84%EA%B8%B0%EB%A5%BC%20%EC%8B%A4%ED%96%89%ED%95%98%EB%A9%B4%20%EB%92%A4%EC%9D%98%20%EB%B6%84%EA%B8%B0%EB%8A%94%20%EA%B1%B4%EB%84%88%EB%9B%B4%EB%8B%A4%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%221140%22%20y%3D%22642%22%20text-anchor%3D%22end%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2217%22%20fill%3D%22%23626860%22%3ECHATBOOK%20%C2%B7%20PYTHON%200-DAY%20MAP%3C%2Ftext%3E%3C%2Fsvg%3E",
+              "caption": "개념도 · if · elif · else가 위에서부터 조건을 확인하는 흐름",
+              "sourceRefs": [
+                {
+                  "range": "24:28-32:49",
+                  "chunk": "c006",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_provenance": {
+                "kind": "diagram",
+                "reconstructed": true,
+                "label": "개념도"
+              }
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c7-q",
+              "type": "quote",
+              "text": "if / elif / else는 위에서부터 조건을 확인해 맞는 한 갈래를 선택한다.",
+              "sourceRefs": [
+                {
+                  "range": "24:28-32:49",
+                  "chunk": "c006",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            }
+          ]
+        },
+        {
+          "id": "yt-python-1h-8KCuHHeC_M0-c8",
+          "title": "Logical Operator",
+          "subtitle": "or · and · not로 여러 조건 연결하기",
+          "summary": [
+            "or는 여러 조건 중 하나라도 True이면 전체가 True가 된다.",
+            "and는 연결된 조건이 모두 True여야 전체가 True가 된다.",
+            "not은 Boolean 판단을 반대로 뒤집는다."
+          ],
+          "sourceRefs": [
+            {
+              "range": "32:50-40:20",
+              "chunk": "c007",
+              "videoId": "8KCuHHeC_M0"
+            }
+          ],
+          "glossary": [
+            {
+              "term": "or",
+              "plain": "여러 조건 중 하나라도 True이면 전체를 True로 판단하는 논리 연산자",
+              "why": "여러 위험 조건 중 하나만 생겨도 같은 행동을 하게 하려고",
+              "context": "너무 덥거나 춥거나 비가 오면 야외 행사를 취소하는 예시다.",
+              "sourceRefs": [
+                {
+                  "range": "32:50-35:22",
+                  "chunk": "c007",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ]
+            },
+            {
+              "term": "and",
+              "plain": "연결한 조건이 모두 True일 때만 전체를 True로 판단하는 논리 연산자",
+              "why": "두 조건이 동시에 성립할 때만 행동하게 하려고",
+              "context": "덥고 동시에 맑은 날씨 예시가 나온다.",
+              "sourceRefs": [
+                {
+                  "range": "35:23-38:27",
+                  "chunk": "c007",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ]
+            },
+            {
+              "term": "not",
+              "plain": "True와 False의 판단을 반대로 만드는 연산자",
+              "why": "조건의 반대를 검사하기 위해",
+              "context": "맑지 않으면 cloudy로 처리하는 예시가 나온다.",
+              "sourceRefs": [
+                {
+                  "range": "38:28-40:20",
+                  "chunk": "c007",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ]
+            }
+          ],
+          "blocks": [
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c8-p1",
+              "type": "p",
+              "text": "Logical Operator는 여러 조건을 연결해 한 번에 판단할 때 사용합니다. 영상은 `or`, `and`, `not` 세 가지를 설명합니다.",
+              "sourceRefs": [
+                {
+                  "range": "32:50-33:19",
+                  "chunk": "c007",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c8-p2",
+              "type": "p",
+              "text": "`or`는 연결한 조건 중 하나라도 True이면 전체를 True로 봅니다.",
+              "sourceRefs": [
+                {
+                  "range": "33:20-35:22",
+                  "chunk": "c007",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c8-p3",
+              "type": "p",
+              "text": "영상은 야외 행사 예시를 사용합니다. 기온이 너무 높거나, 너무 낮거나, 비가 오면 셋 중 하나만 맞아도 행사를 취소합니다.",
+              "sourceRefs": [
+                {
+                  "range": "33:20-35:22",
+                  "chunk": "c007",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c8-p4",
+              "type": "p",
+              "text": "`and`는 연결한 조건이 모두 True여야 전체가 True가 됩니다.",
+              "sourceRefs": [
+                {
+                  "range": "35:23-36:53",
+                  "chunk": "c007",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c8-p5",
+              "type": "p",
+              "text": "예를 들어 기온이 충분히 높고 동시에 sunny가 True일 때만 ‘It is hot outside’를 출력하는 식입니다.",
+              "sourceRefs": [
+                {
+                  "range": "35:23-36:53",
+                  "chunk": "c007",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c8-p6",
+              "type": "p",
+              "text": "여러 조건을 `and`로 이어 일정 온도 범위 안인지 검사하는 예시도 나옵니다.",
+              "sourceRefs": [
+                {
+                  "range": "37:26-38:27",
+                  "chunk": "c007",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c8-p7",
+              "type": "p",
+              "text": "`not`은 Boolean 판단을 뒤집습니다. True를 False처럼, False를 True처럼 판단하게 만듭니다.",
+              "sourceRefs": [
+                {
+                  "range": "38:28-40:20",
+                  "chunk": "c007",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c8-p8",
+              "type": "p",
+              "text": "초보자는 `or = 하나라도`, `and = 모두`, `not = 반대로` 세 문장으로 먼저 기억하면 됩니다.",
+              "sourceRefs": [
+                {
+                  "range": "32:50-40:20",
+                  "chunk": "c007",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "explanation"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c8-img",
+              "type": "image",
+              "src": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221200%22%20height%3D%22675%22%20viewBox%3D%220%200%201200%20675%22%3E%3Crect%20width%3D%221200%22%20height%3D%22675%22%20fill%3D%22%23fff%22%2F%3E%3Crect%20width%3D%221200%22%20height%3D%2212%22%20fill%3D%22%2364725f%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2270%22%20text-anchor%3D%22start%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2238%22%20font-weight%3D%22900%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%2260%22%20dy%3D%220%22%3E%EB%85%BC%EB%A6%AC%20%EC%97%B0%EC%82%B0%EC%9E%90%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%2260%22%20y%3D%22114%22%20text-anchor%3D%22start%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2221%22%20font-weight%3D%22600%22%20fill%3D%22%23444a43%22%3E%3Ctspan%20x%3D%2260%22%20dy%3D%220%22%3E%EC%97%AC%EB%9F%AC%20%EC%A1%B0%EA%B1%B4%EC%9D%84%20%ED%95%9C%20%EB%AC%B8%EC%9E%A5%EC%9C%BC%EB%A1%9C%20%EC%97%B0%EA%B2%B0%ED%95%9C%EB%8B%A4%3C%2Ftspan%3E%3C%2Ftext%3E%3Crect%20x%3D%2280%22%20y%3D%22195%22%20width%3D%22300%22%20height%3D%22170%22%20rx%3D%2222%22%20fill%3D%22%23eef3eb%22%20stroke%3D%22%236f786b%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22230%22%20y%3D%22241%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2226%22%20font-weight%3D%22800%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22230%22%20dy%3D%220%22%3Eor%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%22230%22%20y%3D%22281%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22230%22%20dy%3D%220%22%3E%EB%91%98%20%EC%A4%91%20%ED%95%98%EB%82%98%EB%9D%BC%EB%8F%84%20True%EB%A9%B4%3C%2Ftspan%3E%3Ctspan%20x%3D%22230%22%20dy%3D%2225%22%3E%EC%A0%84%EC%B2%B4%EA%B0%80%20True%3C%2Ftspan%3E%3C%2Ftext%3E%3Crect%20x%3D%22450%22%20y%3D%22195%22%20width%3D%22300%22%20height%3D%22170%22%20rx%3D%2222%22%20fill%3D%22%23f4ecdf%22%20stroke%3D%22%23897552%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22600%22%20y%3D%22241%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2226%22%20font-weight%3D%22800%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22600%22%20dy%3D%220%22%3Eand%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%22600%22%20y%3D%22281%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22600%22%20dy%3D%220%22%3E%EB%91%90%20%EC%A1%B0%EA%B1%B4%EC%9D%B4%20%EB%AA%A8%EB%91%90%20True%EB%A9%B4%3C%2Ftspan%3E%3Ctspan%20x%3D%22600%22%20dy%3D%2225%22%3E%EC%A0%84%EC%B2%B4%EA%B0%80%20True%3C%2Ftspan%3E%3C%2Ftext%3E%3Crect%20x%3D%22820%22%20y%3D%22195%22%20width%3D%22300%22%20height%3D%22170%22%20rx%3D%2222%22%20fill%3D%22%23e8edf0%22%20stroke%3D%22%23647b88%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22970%22%20y%3D%22241%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2226%22%20font-weight%3D%22800%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22970%22%20dy%3D%220%22%3Enot%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%22970%22%20y%3D%22281%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22970%22%20dy%3D%220%22%3ETrue%20%E2%86%94%20False%3C%2Ftspan%3E%3Ctspan%20x%3D%22970%22%20dy%3D%2225%22%3E%ED%8C%90%EC%A0%95%EC%9D%84%20%EB%92%A4%EC%A7%91%EC%9D%8C%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%22600%22%20y%3D%22505%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2227%22%20font-weight%3D%22800%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22600%22%20dy%3D%220%22%3E%EC%98%A8%EB%8F%84%20%C2%B7%20%EB%B9%84%20%C2%B7%20%ED%96%87%EB%B9%9B%20%EC%98%88%EC%8B%9C%EC%B2%98%EB%9F%BC%20%EC%97%AC%EB%9F%AC%20%EC%83%81%ED%99%A9%EC%9D%84%20%EB%8F%99%EC%8B%9C%EC%97%90%20%ED%8C%90%EB%8B%A8%ED%95%A0%20%EB%95%8C%20%EC%82%AC%EC%9A%A9%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%221140%22%20y%3D%22642%22%20text-anchor%3D%22end%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2217%22%20fill%3D%22%23626860%22%3ECHATBOOK%20%C2%B7%20PYTHON%200-DAY%20MAP%3C%2Ftext%3E%3C%2Fsvg%3E",
+              "caption": "개념도 · or · and · not의 판단 차이",
+              "sourceRefs": [
+                {
+                  "range": "32:50-40:20",
+                  "chunk": "c007",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_provenance": {
+                "kind": "diagram",
+                "reconstructed": true,
+                "label": "개념도"
+              }
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c8-q",
+              "type": "quote",
+              "text": "or는 하나라도, and는 모두, not은 반대로 판단한다.",
+              "sourceRefs": [
+                {
+                  "range": "32:50-40:20",
+                  "chunk": "c007",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            }
+          ]
+        },
+        {
+          "id": "yt-python-1h-8KCuHHeC_M0-c9",
+          "title": "while Loop",
+          "subtitle": "조건이 True인 동안 계속 반복하기",
+          "summary": [
+            "while은 조건이 True인 동안 코드 블록을 반복한다.",
+            "탈출할 수 없는 조건이면 Infinite Loop가 될 수 있다.",
+            "사용자 입력이 유효할 때까지 다시 묻는 예시로 while을 사용한다."
+          ],
+          "sourceRefs": [
+            {
+              "range": "40:21-44:57",
+              "chunk": "c008",
+              "videoId": "8KCuHHeC_M0"
+            }
+          ],
+          "glossary": [
+            {
+              "term": "while Loop",
+              "plain": "조건이 True인 동안 같은 코드 블록을 반복하는 구조",
+              "why": "조건이 바뀔 때까지 같은 작업을 계속하기 위해",
+              "context": "빈 이름이나 음수 나이를 다시 입력받는 예시가 나온다.",
+              "sourceRefs": [
+                {
+                  "range": "40:21-44:57",
+                  "chunk": "c008",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ]
+            },
+            {
+              "term": "Infinite Loop",
+              "plain": "끝날 조건이 없어 계속 반복되는 Loop",
+              "why": "반복문에 탈출 방법이 필요한 이유를 보여 주기 위해",
+              "context": "1 == 1 조건으로 계속 출력하는 예시가 나온다.",
+              "sourceRefs": [
+                {
+                  "range": "40:21-41:21",
+                  "chunk": "c008",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ]
+            },
+            {
+              "term": "Iteration",
+              "plain": "반복문의 한 번의 반복",
+              "why": "Loop가 몇 번 실행되는지 설명하기 위해",
+              "context": "조건이 다시 True이면 다음 Iteration을 수행한다고 설명한다.",
+              "sourceRefs": [
+                {
+                  "range": "44:27-44:57",
+                  "chunk": "c008",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ]
+            }
+          ],
+          "blocks": [
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c9-p1",
+              "type": "p",
+              "text": "while Loop는 조건이 True인 동안 코드 블록을 반복합니다. 한 번 실행하고 끝나는 if와 달리 조건을 다시 확인합니다.",
+              "sourceRefs": [
+                {
+                  "range": "40:21-41:21",
+                  "chunk": "c008",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c9-p2",
+              "type": "p",
+              "text": "영상은 `1 == 1`처럼 항상 True인 조건을 while에 넣어 같은 문장이 계속 출력되는 Infinite Loop를 보여 줍니다.",
+              "sourceRefs": [
+                {
+                  "range": "40:21-41:21",
+                  "chunk": "c008",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c9-p3",
+              "type": "p",
+              "text": "이 예시의 목적은 while에는 빠져나갈 방법이 필요하다는 점을 보여 주는 것입니다.",
+              "sourceRefs": [
+                {
+                  "range": "40:21-41:21",
+                  "chunk": "c008",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "explanation"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c9-p4",
+              "type": "p",
+              "text": "실용적인 예시로 이름 입력을 받습니다. 사용자가 아무것도 입력하지 않아 빈 String이면 while Loop 안에서 이름을 다시 물어봅니다.",
+              "sourceRefs": [
+                {
+                  "range": "41:22-42:54",
+                  "chunk": "c008",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c9-p5",
+              "type": "p",
+              "text": "사용자가 실제 이름을 입력하면 더 이상 빈 String 조건이 True가 아니므로 Loop를 빠져나옵니다.",
+              "sourceRefs": [
+                {
+                  "range": "42:23-42:54",
+                  "chunk": "c008",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c9-p6",
+              "type": "p",
+              "text": "나이 입력에서도 같은 구조를 사용합니다. age가 0보다 작으면 ‘Age can't be less than zero’라고 출력하고 다시 나이를 입력받습니다.",
+              "sourceRefs": [
+                {
+                  "range": "42:55-44:26",
+                  "chunk": "c008",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c9-p7",
+              "type": "p",
+              "text": "유효한 나이가 들어오면 조건이 False가 되어 while Loop가 끝납니다.",
+              "sourceRefs": [
+                {
+                  "range": "44:27-44:57",
+                  "chunk": "c008",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c9-p8",
+              "type": "p",
+              "text": "영상은 while Loop가 잘못된 사용자 입력을 다시 받는 데 유용하다고 정리합니다.",
+              "sourceRefs": [
+                {
+                  "range": "44:27-44:57",
+                  "chunk": "c008",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c9-img",
+              "type": "image",
+              "src": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221200%22%20height%3D%22675%22%20viewBox%3D%220%200%201200%20675%22%3E%3Crect%20width%3D%221200%22%20height%3D%22675%22%20fill%3D%22%23fff%22%2F%3E%3Crect%20width%3D%221200%22%20height%3D%2212%22%20fill%3D%22%2364725f%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2270%22%20text-anchor%3D%22start%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2238%22%20font-weight%3D%22900%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%2260%22%20dy%3D%220%22%3Ewhile%EA%B3%BC%20for%EC%9D%98%20%EC%B0%A8%EC%9D%B4%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%2260%22%20y%3D%22114%22%20text-anchor%3D%22start%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2221%22%20font-weight%3D%22600%22%20fill%3D%22%23444a43%22%3E%3Ctspan%20x%3D%2260%22%20dy%3D%220%22%3E%EC%A1%B0%EA%B1%B4%EC%9D%B4%20%EA%B3%84%EC%86%8D%20%EB%A7%9E%EB%8A%94%20%EB%8F%99%EC%95%88%20vs%20%EC%A0%95%ED%95%B4%EC%A7%84%20%EC%88%9C%EC%84%9C%2F%ED%9A%9F%EC%88%98%3C%2Ftspan%3E%3C%2Ftext%3E%3Crect%20x%3D%2295%22%20y%3D%22190%22%20width%3D%22420%22%20height%3D%22190%22%20rx%3D%2222%22%20fill%3D%22%23eef3eb%22%20stroke%3D%22%236f786b%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22305%22%20y%3D%22236%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2226%22%20font-weight%3D%22800%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22305%22%20dy%3D%220%22%3Ewhile%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%22305%22%20y%3D%22276%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22305%22%20dy%3D%220%22%3E%EC%A1%B0%EA%B1%B4%EC%9D%B4%20True%EC%9D%B8%20%EB%8F%99%EC%95%88%20%EB%B0%98%EB%B3%B5%3C%2Ftspan%3E%3Ctspan%20x%3D%22305%22%20dy%3D%2225%22%3E%ED%83%88%EC%B6%9C%20%EC%A1%B0%EA%B1%B4%EC%9D%B4%20%EC%97%86%EC%9C%BC%EB%A9%B4%20%EA%B3%84%EC%86%8D%20%EB%B0%98%EB%B3%B5%20%EA%B0%80%EB%8A%A5%3C%2Ftspan%3E%3C%2Ftext%3E%3Crect%20x%3D%22685%22%20y%3D%22190%22%20width%3D%22420%22%20height%3D%22190%22%20rx%3D%2222%22%20fill%3D%22%23f4ecdf%22%20stroke%3D%22%23897552%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22895%22%20y%3D%22236%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2226%22%20font-weight%3D%22800%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22895%22%20dy%3D%220%22%3Efor%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%22895%22%20y%3D%22276%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22895%22%20dy%3D%220%22%3E%EB%AC%B8%EC%9E%90%EC%97%B4%C2%B7range%20%EA%B0%99%EC%9D%80%20Sequence%EB%A5%BC%20%EB%94%B0%EB%9D%BC%20%EB%B0%98%EB%B3%B5%3C%2Ftspan%3E%3Ctspan%20x%3D%22895%22%20dy%3D%2225%22%3E%EC%A0%95%ED%95%B4%EC%A7%84%20%ED%9A%9F%EC%88%98%20%EB%B0%98%EB%B3%B5%EC%97%90%20%ED%8E%B8%EB%A6%AC%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%22600%22%20y%3D%22515%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2227%22%20font-weight%3D%22800%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22600%22%20dy%3D%220%22%3Ewhile%EC%9D%80%20%EC%9E%85%EB%A0%A5%20%EA%B2%80%EC%A6%9D%2C%20for%EB%8A%94%20%ED%9A%9F%EC%88%98%C2%B7%EC%88%9C%EC%84%9C%EA%B0%80%20%EC%A0%95%ED%95%B4%EC%A7%84%20%EB%B0%98%EB%B3%B5%20%EC%98%88%EC%8B%9C%EB%A1%9C%20%EC%84%A4%EB%AA%85%EB%90%9C%EB%8B%A4%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%221140%22%20y%3D%22642%22%20text-anchor%3D%22end%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2217%22%20fill%3D%22%23626860%22%3ECHATBOOK%20%C2%B7%20PYTHON%200-DAY%20MAP%3C%2Ftext%3E%3C%2Fsvg%3E",
+              "caption": "개념도 · while은 조건이 맞는 동안 반복한다는 구조",
+              "sourceRefs": [
+                {
+                  "range": "40:21-44:57",
+                  "chunk": "c008",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_provenance": {
+                "kind": "diagram",
+                "reconstructed": true,
+                "label": "개념도"
+              }
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c9-q",
+              "type": "quote",
+              "text": "while은 조건이 계속 True이면 계속 반복하므로, 언젠가 False가 될 수 있는 탈출 조건이 중요하다.",
+              "sourceRefs": [
+                {
+                  "range": "40:21-44:57",
+                  "chunk": "c008",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            }
+          ]
+        },
+        {
+          "id": "yt-python-1h-8KCuHHeC_M0-c10",
+          "title": "for Loop와 range()",
+          "subtitle": "정해진 횟수와 순서를 따라 반복하기",
+          "summary": [
+            "for Loop는 String·List·Tuple·Set 같은 Sequence를 순회하거나 정해진 횟수만큼 반복할 수 있다.",
+            "range()에서 시작값은 포함되고 끝값은 제외된다.",
+            "세 번째 값으로 Step을 지정해 증가 폭이나 감소 방향을 바꿀 수 있다.",
+            "마지막에 countdown과 time.sleep() 미니 프로젝트를 만든다."
+          ],
+          "sourceRefs": [
+            {
+              "range": "44:58-50:05",
+              "chunk": "c009",
+              "videoId": "8KCuHHeC_M0"
+            }
+          ],
+          "glossary": [
+            {
+              "term": "for Loop",
+              "plain": "정해진 순서나 횟수를 따라 반복하는 구조",
+              "why": "문자열 문자나 숫자 범위를 하나씩 처리하기 위해",
+              "context": "range로 1~10을 세거나 이름의 글자를 순회한다.",
+              "sourceRefs": [
+                {
+                  "range": "44:58-50:05",
+                  "chunk": "c009",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ]
+            },
+            {
+              "term": "range()",
+              "plain": "숫자의 반복 범위를 만들어 주는 함수",
+              "why": "for Loop에서 몇 번, 어느 숫자까지 반복할지 정하기 위해",
+              "context": "1부터 10, 91부터 100 등의 예시가 나온다.",
+              "sourceRefs": [
+                {
+                  "range": "45:28-47:30",
+                  "chunk": "c009",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ]
+            },
+            {
+              "term": "Step",
+              "plain": "range()에서 한 번 반복할 때 숫자가 얼마나 변할지 정하는 값",
+              "why": "2씩 증가하거나 -1씩 감소하는 반복을 만들기 위해",
+              "context": "1,3,5 또는 10부터 거꾸로 세는 예시가 나온다.",
+              "sourceRefs": [
+                {
+                  "range": "47:01-49:32",
+                  "chunk": "c009",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ]
+            }
+          ],
+          "blocks": [
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c10-p1",
+              "type": "p",
+              "text": "for Loop는 String, List, Tuple, Set 같은 값을 순서대로 하나씩 다루거나, 정해진 횟수만큼 코드를 반복하는 데 사용합니다.",
+              "sourceRefs": [
+                {
+                  "range": "44:58-45:27",
+                  "chunk": "c009",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c10-p2",
+              "type": "p",
+              "text": "영상은 `for i in range(10)`으로 10번 반복하는 예시를 보여 줍니다. 기본적으로 숫자는 0부터 시작해 9까지 나옵니다.",
+              "sourceRefs": [
+                {
+                  "range": "45:28-45:59",
+                  "chunk": "c009",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c10-p3",
+              "type": "p",
+              "text": "시작값과 끝값을 둘 다 적을 수 있습니다. `range(1, 11)`이면 1은 포함하고 11은 제외하므로 1부터 10까지 반복합니다.",
+              "sourceRefs": [
+                {
+                  "range": "46:00-46:30",
+                  "chunk": "c009",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c10-p4",
+              "type": "p",
+              "text": "영상은 첫 번째 숫자는 Inclusive, 두 번째 숫자는 Exclusive라고 설명합니다. 즉 시작은 포함되고 끝은 포함되지 않습니다.",
+              "sourceRefs": [
+                {
+                  "range": "46:00-46:30",
+                  "chunk": "c009",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c10-p5",
+              "type": "p",
+              "text": "세 번째 값은 Step입니다. `range(1, 11, 2)`처럼 쓰면 1, 3, 5, 7, 9로 두 칸씩 이동합니다.",
+              "sourceRefs": [
+                {
+                  "range": "47:01-47:30",
+                  "chunk": "c009",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c10-p6",
+              "type": "p",
+              "text": "for Loop는 숫자뿐 아니라 String의 각 글자를 하나씩 순회할 수도 있습니다. 영상은 이름 문자열의 letter를 하나씩 출력합니다.",
+              "sourceRefs": [
+                {
+                  "range": "47:31-48:30",
+                  "chunk": "c009",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c10-p7",
+              "type": "p",
+              "text": "미니 프로젝트로 10부터 1까지 거꾸로 세고 Happy New Year를 출력합니다. Step을 -1로 두어 뒤로 이동합니다.",
+              "sourceRefs": [
+                {
+                  "range": "48:31-49:01",
+                  "chunk": "c009",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c10-p8",
+              "type": "p",
+              "text": "여기에 `time` module을 import하고 `time.sleep(1)`을 사용해 숫자 사이에 1초씩 기다리는 countdown을 만듭니다.",
+              "sourceRefs": [
+                {
+                  "range": "49:02-50:05",
+                  "chunk": "c009",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c10-p9",
+              "type": "p",
+              "text": "while과 비교하면, 영상은 while을 조건이 유지되는 동안 반복하는 구조로, for를 정해진 Sequence나 횟수를 순회하는 구조로 보여 줍니다.",
+              "sourceRefs": [
+                {
+                  "range": "44:58-50:05",
+                  "chunk": "c009",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "explanation"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c10-img",
+              "type": "image",
+              "src": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221200%22%20height%3D%22675%22%20viewBox%3D%220%200%201200%20675%22%3E%3Crect%20width%3D%221200%22%20height%3D%22675%22%20fill%3D%22%23fff%22%2F%3E%3Crect%20width%3D%221200%22%20height%3D%2212%22%20fill%3D%22%2364725f%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2270%22%20text-anchor%3D%22start%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2238%22%20font-weight%3D%22900%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%2260%22%20dy%3D%220%22%3Ewhile%EA%B3%BC%20for%EC%9D%98%20%EC%B0%A8%EC%9D%B4%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%2260%22%20y%3D%22114%22%20text-anchor%3D%22start%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2221%22%20font-weight%3D%22600%22%20fill%3D%22%23444a43%22%3E%3Ctspan%20x%3D%2260%22%20dy%3D%220%22%3E%EC%A1%B0%EA%B1%B4%EC%9D%B4%20%EA%B3%84%EC%86%8D%20%EB%A7%9E%EB%8A%94%20%EB%8F%99%EC%95%88%20vs%20%EC%A0%95%ED%95%B4%EC%A7%84%20%EC%88%9C%EC%84%9C%2F%ED%9A%9F%EC%88%98%3C%2Ftspan%3E%3C%2Ftext%3E%3Crect%20x%3D%2295%22%20y%3D%22190%22%20width%3D%22420%22%20height%3D%22190%22%20rx%3D%2222%22%20fill%3D%22%23eef3eb%22%20stroke%3D%22%236f786b%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22305%22%20y%3D%22236%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2226%22%20font-weight%3D%22800%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22305%22%20dy%3D%220%22%3Ewhile%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%22305%22%20y%3D%22276%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22305%22%20dy%3D%220%22%3E%EC%A1%B0%EA%B1%B4%EC%9D%B4%20True%EC%9D%B8%20%EB%8F%99%EC%95%88%20%EB%B0%98%EB%B3%B5%3C%2Ftspan%3E%3Ctspan%20x%3D%22305%22%20dy%3D%2225%22%3E%ED%83%88%EC%B6%9C%20%EC%A1%B0%EA%B1%B4%EC%9D%B4%20%EC%97%86%EC%9C%BC%EB%A9%B4%20%EA%B3%84%EC%86%8D%20%EB%B0%98%EB%B3%B5%20%EA%B0%80%EB%8A%A5%3C%2Ftspan%3E%3C%2Ftext%3E%3Crect%20x%3D%22685%22%20y%3D%22190%22%20width%3D%22420%22%20height%3D%22190%22%20rx%3D%2222%22%20fill%3D%22%23f4ecdf%22%20stroke%3D%22%23897552%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22895%22%20y%3D%22236%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2226%22%20font-weight%3D%22800%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22895%22%20dy%3D%220%22%3Efor%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%22895%22%20y%3D%22276%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22895%22%20dy%3D%220%22%3E%EB%AC%B8%EC%9E%90%EC%97%B4%C2%B7range%20%EA%B0%99%EC%9D%80%20Sequence%EB%A5%BC%20%EB%94%B0%EB%9D%BC%20%EB%B0%98%EB%B3%B5%3C%2Ftspan%3E%3Ctspan%20x%3D%22895%22%20dy%3D%2225%22%3E%EC%A0%95%ED%95%B4%EC%A7%84%20%ED%9A%9F%EC%88%98%20%EB%B0%98%EB%B3%B5%EC%97%90%20%ED%8E%B8%EB%A6%AC%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%22600%22%20y%3D%22515%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2227%22%20font-weight%3D%22800%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22600%22%20dy%3D%220%22%3Ewhile%EC%9D%80%20%EC%9E%85%EB%A0%A5%20%EA%B2%80%EC%A6%9D%2C%20for%EB%8A%94%20%ED%9A%9F%EC%88%98%C2%B7%EC%88%9C%EC%84%9C%EA%B0%80%20%EC%A0%95%ED%95%B4%EC%A7%84%20%EB%B0%98%EB%B3%B5%20%EC%98%88%EC%8B%9C%EB%A1%9C%20%EC%84%A4%EB%AA%85%EB%90%9C%EB%8B%A4%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%221140%22%20y%3D%22642%22%20text-anchor%3D%22end%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2217%22%20fill%3D%22%23626860%22%3ECHATBOOK%20%C2%B7%20PYTHON%200-DAY%20MAP%3C%2Ftext%3E%3C%2Fsvg%3E",
+              "caption": "개념도 · while과 for가 반복을 결정하는 방식의 차이",
+              "sourceRefs": [
+                {
+                  "range": "44:58-50:05",
+                  "chunk": "c009",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_provenance": {
+                "kind": "diagram",
+                "reconstructed": true,
+                "label": "개념도"
+              }
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c10-q",
+              "type": "quote",
+              "text": "range에서 시작값은 포함되고 끝값은 제외된다.",
+              "sourceRefs": [
+                {
+                  "range": "46:00-47:30",
+                  "chunk": "c009",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            }
+          ]
+        },
+        {
+          "id": "yt-python-1h-8KCuHHeC_M0-c11",
+          "title": "List",
+          "subtitle": "여러 값을 순서대로 담고 자유롭게 바꾸기",
+          "summary": [
+            "List는 대괄호 [ ] 안에 여러 값을 담는다.",
+            "Index는 0부터 시작한다.",
+            "List는 Mutable이라 요소를 바꾸고 append·remove·pop·clear 할 수 있다."
+          ],
+          "sourceRefs": [
+            {
+              "range": "50:06-54:16",
+              "chunk": "c010",
+              "videoId": "8KCuHHeC_M0"
+            }
+          ],
+          "glossary": [
+            {
+              "term": "List",
+              "plain": "여러 값을 순서대로 담는 Collection",
+              "why": "한 변수에 여러 관련 값을 함께 저장하기 위해",
+              "context": "fruits에 apple, orange, banana, coconut을 담는다.",
+              "sourceRefs": [
+                {
+                  "range": "50:06-54:16",
+                  "chunk": "c010",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ]
+            },
+            {
+              "term": "Index",
+              "plain": "순서가 있는 Collection에서 각 요소의 위치 번호",
+              "why": "특정 요소 하나를 찾아 쓰기 위해",
+              "context": "첫 번째 요소의 Index가 0이라고 설명한다.",
+              "sourceRefs": [
+                {
+                  "range": "51:10-51:41",
+                  "chunk": "c010",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ]
+            },
+            {
+              "term": "Mutable",
+              "plain": "만든 뒤 내부 요소를 바꿀 수 있다는 뜻",
+              "why": "List와 Tuple의 차이를 설명하기 위해",
+              "context": "List의 요소 변경·추가·삭제가 가능하다고 설명한다.",
+              "sourceRefs": [
+                {
+                  "range": "52:14-54:16",
+                  "chunk": "c010",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ]
+            }
+          ],
+          "blocks": [
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c11-p1",
+              "type": "p",
+              "text": "Variable 하나는 보통 한 값을 담지만, List는 여러 값을 한꺼번에 담을 수 있습니다. 영상은 fruit 여러 개를 대괄호 `[ ]` 안에 넣습니다.",
+              "sourceRefs": [
+                {
+                  "range": "50:06-50:38",
+                  "chunk": "c010",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c11-p2",
+              "type": "p",
+              "text": "각 요소는 쉼표로 구분합니다. 예시는 apple, orange, banana, coconut입니다.",
+              "sourceRefs": [
+                {
+                  "range": "50:39-51:09",
+                  "chunk": "c010",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c11-p3",
+              "type": "p",
+              "text": "List 전체를 print하면 대괄호를 포함한 목록이 출력됩니다.",
+              "sourceRefs": [
+                {
+                  "range": "51:10-51:40",
+                  "chunk": "c010",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c11-p4",
+              "type": "p",
+              "text": "특정 요소를 가져오려면 Index를 사용합니다. Python의 첫 번째 Index는 0입니다. 그래서 fruits[0]은 첫 번째 fruit입니다.",
+              "sourceRefs": [
+                {
+                  "range": "51:10-51:40",
+                  "chunk": "c010",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c11-p5",
+              "type": "p",
+              "text": "없는 Index를 요청하면 Index Error가 발생하는 예시도 보여 줍니다.",
+              "sourceRefs": [
+                {
+                  "range": "51:41-52:13",
+                  "chunk": "c010",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c11-p6",
+              "type": "p",
+              "text": "for Loop를 사용해 List 안의 각 fruit를 하나씩 출력할 수 있습니다.",
+              "sourceRefs": [
+                {
+                  "range": "51:41-52:13",
+                  "chunk": "c010",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c11-p7",
+              "type": "p",
+              "text": "List는 Mutable입니다. 즉 만든 뒤에도 요소를 바꿀 수 있습니다. 예를 들어 첫 번째 apple을 pineapple로 바꿀 수 있습니다.",
+              "sourceRefs": [
+                {
+                  "range": "52:14-52:43",
+                  "chunk": "c010",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c11-p8",
+              "type": "p",
+              "text": "`append()`는 List 끝에 새 요소를 추가합니다.",
+              "sourceRefs": [
+                {
+                  "range": "52:44-53:15",
+                  "chunk": "c010",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c11-p9",
+              "type": "p",
+              "text": "`remove()`는 지정한 값을 제거합니다.",
+              "sourceRefs": [
+                {
+                  "range": "53:16-53:46",
+                  "chunk": "c010",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c11-p10",
+              "type": "p",
+              "text": "`pop()`은 영상에서 Index 위치의 요소를 제거하는 방법으로 보여 줍니다. 범위를 벗어난 Index를 사용하면 오류가 납니다.",
+              "sourceRefs": [
+                {
+                  "range": "53:16-53:46",
+                  "chunk": "c010",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c11-p11",
+              "type": "p",
+              "text": "`clear()`는 List의 모든 요소를 제거합니다.",
+              "sourceRefs": [
+                {
+                  "range": "53:47-54:16",
+                  "chunk": "c010",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c11-q",
+              "type": "quote",
+              "text": "List는 순서가 있고 Index로 접근하며, 만든 뒤 요소를 바꿀 수 있다.",
+              "sourceRefs": [
+                {
+                  "range": "50:06-54:16",
+                  "chunk": "c010",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            }
+          ]
+        },
+        {
+          "id": "yt-python-1h-8KCuHHeC_M0-c12",
+          "title": "Tuple",
+          "subtitle": "만든 뒤 값을 바꾸지 않는 Collection",
+          "summary": [
+            "Tuple은 괄호 ( ) 안에 여러 값을 담는다.",
+            "Tuple은 Immutable이라 만든 뒤 요소를 바꾸거나 append·remove 할 수 없다.",
+            "영상은 이러한 성질 때문에 List와 다른 선택지가 된다고 설명한다."
+          ],
+          "sourceRefs": [
+            {
+              "range": "54:17-55:48",
+              "chunk": "c011",
+              "videoId": "8KCuHHeC_M0"
+            }
+          ],
+          "glossary": [
+            {
+              "term": "Tuple",
+              "plain": "괄호 ( ) 안에 여러 값을 담는 Collection",
+              "why": "만든 뒤 요소를 바꾸지 않을 목록을 표현하기 위해",
+              "context": "List 다음에 비교 대상으로 소개된다.",
+              "sourceRefs": [
+                {
+                  "range": "54:17-55:48",
+                  "chunk": "c011",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ]
+            },
+            {
+              "term": "Immutable",
+              "plain": "만든 뒤 내부 값을 바꿀 수 없다는 뜻",
+              "why": "Tuple과 List의 차이를 설명하기 위해",
+              "context": "Tuple 요소 대입·append·remove가 오류가 되는 장면이 나온다.",
+              "sourceRefs": [
+                {
+                  "range": "54:17-55:48",
+                  "chunk": "c011",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ]
+            }
+          ],
+          "blocks": [
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c12-p1",
+              "type": "p",
+              "text": "Tuple은 List와 비슷하게 여러 값을 담지만, 대괄호가 아니라 괄호 `( )`를 사용합니다.",
+              "sourceRefs": [
+                {
+                  "range": "54:17-54:46",
+                  "chunk": "c011",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c12-p2",
+              "type": "p",
+              "text": "가장 중요한 차이는 Tuple이 Immutable이라는 점입니다. 한 번 만든 뒤에는 요소를 바꿀 수 없습니다.",
+              "sourceRefs": [
+                {
+                  "range": "54:17-54:46",
+                  "chunk": "c011",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c12-p3",
+              "type": "p",
+              "text": "영상은 Index 0의 값을 다른 fruit로 바꾸려 할 때 Type Error가 나는 장면을 보여 줍니다.",
+              "sourceRefs": [
+                {
+                  "range": "54:47-55:18",
+                  "chunk": "c011",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c12-p4",
+              "type": "p",
+              "text": "`append()`나 `remove()`도 Tuple에는 사용할 수 없다는 오류 예시가 나옵니다.",
+              "sourceRefs": [
+                {
+                  "range": "55:19-55:48",
+                  "chunk": "c011",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c12-p5",
+              "type": "p",
+              "text": "영상에서는 Tuple이 바뀌지 않는 Collection이 필요할 때 좋고, List보다 요소 접근이 빠르다고 설명합니다. 이 문장은 영상의 설명을 그대로 보존한 것입니다.",
+              "sourceRefs": [
+                {
+                  "range": "55:19-55:48",
+                  "chunk": "c011",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c12-p6",
+              "type": "p",
+              "text": "초보자에게는 우선 ‘List는 바꿀 수 있고, Tuple은 만든 뒤 바꿀 수 없다’는 차이를 확실히 구분하는 것이 핵심입니다.",
+              "sourceRefs": [
+                {
+                  "range": "54:17-55:48",
+                  "chunk": "c011",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "explanation"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c12-q",
+              "type": "quote",
+              "text": "Tuple의 핵심 차이는 만든 뒤 요소를 바꿀 수 없는 Immutable Collection이라는 점이다.",
+              "sourceRefs": [
+                {
+                  "range": "54:17-55:48",
+                  "chunk": "c011",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            }
+          ]
+        },
+        {
+          "id": "yt-python-1h-8KCuHHeC_M0-c13",
+          "title": "Set",
+          "subtitle": "순서가 없고 중복을 허용하지 않는 Collection",
+          "summary": [
+            "Set은 중괄호 { }를 사용하고 순서가 정해져 있지 않다.",
+            "Set은 Index로 요소를 접근하지 않는다.",
+            "요소를 add·remove 할 수 있고 중복 값을 허용하지 않는다.",
+            "영상은 Set이 Membership Testing에 효율적이라고 설명한다."
+          ],
+          "sourceRefs": [
+            {
+              "range": "55:49-59:58",
+              "chunk": "c012",
+              "videoId": "8KCuHHeC_M0"
+            }
+          ],
+          "glossary": [
+            {
+              "term": "Set",
+              "plain": "순서가 없고 중복 값을 허용하지 않는 Collection",
+              "why": "고유한 값들을 보관하거나 포함 여부를 검사하기 위해",
+              "context": "fruit 목록을 중괄호로 만드는 예시가 나온다.",
+              "sourceRefs": [
+                {
+                  "range": "55:49-59:58",
+                  "chunk": "c012",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ]
+            },
+            {
+              "term": "Unordered",
+              "plain": "요소의 고정된 순서를 전제로 하지 않는다는 뜻",
+              "why": "Set을 Index로 다룰 수 없는 이유를 설명하기 위해",
+              "context": "실행할 때 fruit 출력 순서가 달라지는 장면이 나온다.",
+              "sourceRefs": [
+                {
+                  "range": "55:49-56:50",
+                  "chunk": "c012",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ]
+            },
+            {
+              "term": "Membership Testing",
+              "plain": "어떤 값이 Collection 안에 있는지 검사하는 것",
+              "why": "특정 값을 빠르게 포함 여부로 판단하기 위해",
+              "context": "`if fruit in fruits` 예시가 나온다.",
+              "sourceRefs": [
+                {
+                  "range": "57:53-59:58",
+                  "chunk": "c012",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ]
+            }
+          ],
+          "blocks": [
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c13-p1",
+              "type": "p",
+              "text": "Set은 중괄호 `{ }` 안에 여러 값을 담습니다. List나 Tuple과 달리 순서가 정해져 있지 않다고 영상은 설명합니다.",
+              "sourceRefs": [
+                {
+                  "range": "55:49-56:18",
+                  "chunk": "c012",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c13-p2",
+              "type": "p",
+              "text": "실행할 때 fruit가 출력되는 순서가 달라지는 모습을 보여 주며 Set이 Unordered라고 설명합니다.",
+              "sourceRefs": [
+                {
+                  "range": "55:49-56:18",
+                  "chunk": "c012",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c13-p3",
+              "type": "p",
+              "text": "순서가 없기 때문에 List처럼 `fruits[0]` 식의 Index 접근을 전제로 하지 않습니다.",
+              "sourceRefs": [
+                {
+                  "range": "56:19-56:50",
+                  "chunk": "c012",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c13-p4",
+              "type": "p",
+              "text": "Set은 요소를 `add()`로 추가하고 `remove()`로 제거할 수 있습니다.",
+              "sourceRefs": [
+                {
+                  "range": "56:51-57:21",
+                  "chunk": "c012",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c13-p5",
+              "type": "p",
+              "text": "`pop()`에 특정 Index를 넣는 방식은 사용할 수 없다는 예시도 보여 줍니다.",
+              "sourceRefs": [
+                {
+                  "range": "57:22-57:52",
+                  "chunk": "c012",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c13-p6",
+              "type": "p",
+              "text": "Set은 중복 값을 허용하지 않습니다. coconut을 여러 번 넣어도 결과에는 하나만 남는 예시가 나옵니다.",
+              "sourceRefs": [
+                {
+                  "range": "57:22-57:52",
+                  "chunk": "c012",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c13-p7",
+              "type": "p",
+              "text": "영상은 Set이 Membership Testing에 효율적이라고 설명합니다. 즉 어떤 값이 Set 안에 있는지 확인하는 데 적합하다는 설명입니다.",
+              "sourceRefs": [
+                {
+                  "range": "57:53-58:25",
+                  "chunk": "c012",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c13-p8",
+              "type": "p",
+              "text": "`if \"apple\" in fruits:`처럼 작성해 apple이 들어 있는지 확인할 수 있습니다.",
+              "sourceRefs": [
+                {
+                  "range": "57:53-58:25",
+                  "chunk": "c012",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c13-p9",
+              "type": "p",
+              "text": "마지막에는 사용자가 fruit 이름을 입력하면 그 값이 Set 안에 있는지 확인해 found / not found를 출력합니다.",
+              "sourceRefs": [
+                {
+                  "range": "58:26-59:26",
+                  "chunk": "c012",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c13-p10",
+              "type": "p",
+              "text": "영상은 세 Collection을 이렇게 정리합니다. List는 Mutable이고 유연하며, Tuple은 Immutable이고, Set은 Unordered이고 중복을 허용하지 않으며 포함 여부 검사에 좋다고 설명합니다.",
+              "sourceRefs": [
+                {
+                  "range": "59:27-59:58",
+                  "chunk": "c012",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c13-img",
+              "type": "image",
+              "src": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221200%22%20height%3D%22675%22%20viewBox%3D%220%200%201200%20675%22%3E%3Crect%20width%3D%221200%22%20height%3D%22675%22%20fill%3D%22%23fff%22%2F%3E%3Crect%20width%3D%221200%22%20height%3D%2212%22%20fill%3D%22%2364725f%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2270%22%20text-anchor%3D%22start%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2238%22%20font-weight%3D%22900%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%2260%22%20dy%3D%220%22%3EList%20%C2%B7%20Tuple%20%C2%B7%20Set%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%2260%22%20y%3D%22114%22%20text-anchor%3D%22start%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2221%22%20font-weight%3D%22600%22%20fill%3D%22%23444a43%22%3E%3Ctspan%20x%3D%2260%22%20dy%3D%220%22%3E%EC%97%AC%EB%9F%AC%20%EA%B0%92%EC%9D%84%20%EB%8B%B4%EB%8A%94%20%EC%84%B8%20%EA%B0%80%EC%A7%80%20Collection%3C%2Ftspan%3E%3C%2Ftext%3E%3Crect%20x%3D%2245%22%20y%3D%22175%22%20width%3D%22340%22%20height%3D%22210%22%20rx%3D%2222%22%20fill%3D%22%23eef3eb%22%20stroke%3D%22%236f786b%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22215%22%20y%3D%22221%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2226%22%20font-weight%3D%22800%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22215%22%20dy%3D%220%22%3EList%20%20%5B%20%5D%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%22215%22%20y%3D%22261%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22215%22%20dy%3D%220%22%3E%EC%88%9C%EC%84%9C%20%EC%9E%88%EC%9D%8C%20%C2%B7%20Index%20%EC%82%AC%EC%9A%A9%3C%2Ftspan%3E%3Ctspan%20x%3D%22215%22%20dy%3D%2225%22%3E%EA%B0%92%20%EB%B3%80%EA%B2%BD%20%EA%B0%80%EB%8A%A5%20%C2%B7%20append%2Fremove%3C%2Ftspan%3E%3C%2Ftext%3E%3Crect%20x%3D%22430%22%20y%3D%22175%22%20width%3D%22340%22%20height%3D%22210%22%20rx%3D%2222%22%20fill%3D%22%23f4ecdf%22%20stroke%3D%22%23897552%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22600%22%20y%3D%22221%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2226%22%20font-weight%3D%22800%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22600%22%20dy%3D%220%22%3ETuple%20%20(%20)%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%22600%22%20y%3D%22261%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22600%22%20dy%3D%220%22%3E%EC%88%9C%EC%84%9C%20%EC%9E%88%EC%9D%8C%20%C2%B7%20Index%20%EC%82%AC%EC%9A%A9%3C%2Ftspan%3E%3Ctspan%20x%3D%22600%22%20dy%3D%2225%22%3E%EB%A7%8C%EB%93%A0%20%EB%92%A4%20%EA%B0%92%20%EB%B3%80%EA%B2%BD%20%EB%B6%88%EA%B0%80%3C%2Ftspan%3E%3C%2Ftext%3E%3Crect%20x%3D%22815%22%20y%3D%22175%22%20width%3D%22340%22%20height%3D%22210%22%20rx%3D%2222%22%20fill%3D%22%23e8edf0%22%20stroke%3D%22%23647b88%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22985%22%20y%3D%22221%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2226%22%20font-weight%3D%22800%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22985%22%20dy%3D%220%22%3ESet%20%20%7B%20%7D%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%22985%22%20y%3D%22261%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22985%22%20dy%3D%220%22%3E%EC%88%9C%EC%84%9C%20%EC%97%86%EC%9D%8C%20%C2%B7%20Index%20%EC%97%86%EC%9D%8C%3C%2Ftspan%3E%3Ctspan%20x%3D%22985%22%20dy%3D%2225%22%3E%EC%A4%91%EB%B3%B5%20%ED%97%88%EC%9A%A9%20%EC%95%88%20%ED%95%A8%20%C2%B7%20membership%20%EA%B2%80%EC%82%AC%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%22600%22%20y%3D%22530%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2226%22%20font-weight%3D%22800%22%20fill%3D%22%23252925%22%3E%3Ctspan%20x%3D%22600%22%20dy%3D%220%22%3E%EC%98%81%EC%83%81%EC%9D%98%20%ED%95%B5%EC%8B%AC%20%EB%B9%84%EA%B5%90%3A%20%EB%B0%94%EA%BF%80%20%EC%88%98%20%EC%9E%88%EB%8A%94%EA%B0%80%3F%20%EC%88%9C%EC%84%9C%EA%B0%80%20%EC%9E%88%EB%8A%94%EA%B0%80%3F%20%EC%A4%91%EB%B3%B5%EC%9D%84%20%ED%97%88%EC%9A%A9%ED%95%98%EB%8A%94%EA%B0%80%3F%3C%2Ftspan%3E%3C%2Ftext%3E%3Ctext%20x%3D%221140%22%20y%3D%22642%22%20text-anchor%3D%22end%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2217%22%20fill%3D%22%23626860%22%3ECHATBOOK%20%C2%B7%20PYTHON%200-DAY%20MAP%3C%2Ftext%3E%3C%2Fsvg%3E",
+              "caption": "개념도 · List · Tuple · Set의 핵심 차이",
+              "sourceRefs": [
+                {
+                  "range": "50:06-59:58",
+                  "chunk": "c012",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_provenance": {
+                "kind": "diagram",
+                "reconstructed": true,
+                "label": "개념도"
+              }
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c13-q",
+              "type": "quote",
+              "text": "List는 바꿀 수 있고 순서가 있으며, Tuple은 바꿀 수 없고, Set은 순서가 없고 중복을 허용하지 않는다.",
+              "sourceRefs": [
+                {
+                  "range": "50:06-59:58",
+                  "chunk": "c012",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            }
+          ]
+        },
+        {
+          "id": "yt-python-1h-8KCuHHeC_M0-c14",
+          "title": "1시간 전체 지도",
+          "subtitle": "처음 코딩하는 사람이 여기까지 알면 무엇이 연결되는가",
+          "summary": [
+            "코드를 작성하고 실행하는 기본 흐름부터 시작한다.",
+            "값을 저장하고 계산하고 입력받고 조건에 따라 판단하고 반복하는 기본 구조를 배운다.",
+            "마지막에는 여러 값을 담는 Collection의 차이를 익힌다."
+          ],
+          "sourceRefs": [
+            {
+              "range": "00:01-24:27",
+              "chunk": "c001-c005",
+              "videoId": "8KCuHHeC_M0"
+            },
+            {
+              "range": "24:28-44:57",
+              "chunk": "c006-c008",
+              "videoId": "8KCuHHeC_M0"
+            },
+            {
+              "range": "44:58-59:58",
+              "chunk": "c009-c012",
+              "videoId": "8KCuHHeC_M0"
+            }
+          ],
+          "glossary": [],
+          "blocks": [
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c14-p1",
+              "type": "p",
+              "text": "이 영상의 첫 절반은 ‘값을 어떻게 다루는가’를 배웁니다. print로 출력하고, Variable에 값을 저장하고, String·Integer·Float·Boolean처럼 값의 종류를 구분합니다.",
+              "sourceRefs": [
+                {
+                  "range": "03:11-09:59",
+                  "chunk": "c001-c002",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c14-p2",
+              "type": "p",
+              "text": "그다음 숫자를 계산하고, Type Casting으로 값의 종류를 바꾸고, input으로 사용자의 값을 받아옵니다.",
+              "sourceRefs": [
+                {
+                  "range": "09:29-24:27",
+                  "chunk": "c003-c005",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c14-p3",
+              "type": "p",
+              "text": "여기까지 연결하면 아주 중요한 흐름 하나가 보입니다. ‘사용자가 값을 입력한다 → 필요한 자료형으로 바꾼다 → 계산하거나 저장한다 → 결과를 출력한다’입니다.",
+              "sourceRefs": [
+                {
+                  "range": "19:51-24:27",
+                  "chunk": "c005",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "explanation"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c14-p4",
+              "type": "p",
+              "text": "두 번째 큰 덩어리는 ‘프로그램이 어떻게 판단하는가’입니다. if / elif / else로 조건에 따라 갈림길을 만들고, or / and / not으로 여러 조건을 연결합니다.",
+              "sourceRefs": [
+                {
+                  "range": "24:28-40:20",
+                  "chunk": "c006-c007",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c14-p5",
+              "type": "p",
+              "text": "세 번째는 ‘어떻게 반복하는가’입니다. while은 조건이 True인 동안 반복하고, for는 Sequence나 range를 따라 반복합니다.",
+              "sourceRefs": [
+                {
+                  "range": "40:21-50:05",
+                  "chunk": "c008-c009",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c14-p6",
+              "type": "p",
+              "text": "마지막은 ‘여러 값을 어떻게 한꺼번에 보관하는가’입니다. List, Tuple, Set을 비교하면서 순서, 변경 가능 여부, 중복 허용 여부가 다르다는 점을 배웁니다.",
+              "sourceRefs": [
+                {
+                  "range": "50:06-59:58",
+                  "chunk": "c010-c012",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c14-p7",
+              "type": "p",
+              "text": "코딩을 처음 보는 사람에게는 이 모든 문법을 외우는 것보다 각 개념의 역할을 구분하는 것이 먼저입니다. 값 저장은 Variable, 판단은 if, 반복은 Loop, 여러 값 보관은 Collection이라는 큰 지도를 잡으면 됩니다.",
+              "sourceRefs": [
+                {
+                  "range": "05:16-59:58",
+                  "chunk": "c002-c012",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "explanation"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c14-p8",
+              "type": "p",
+              "text": "이 책의 모든 쉬운 설명은 영상의 해당 구간에 연결해서 작성했습니다. 영상 밖의 새로운 라이브러리나 문법을 학습 내용으로 추가하지 않았습니다.",
+              "sourceRefs": [
+                {
+                  "range": "00:01-59:58",
+                  "chunk": "c001-c012",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "explanation"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c14-q",
+              "type": "quote",
+              "text": "값을 저장하고 → 입력받고 → 판단하고 → 반복하고 → 여러 값을 묶어 다루는 것이 이 1시간 강의의 큰 흐름이다.",
+              "sourceRefs": [
+                {
+                  "range": "00:01-59:58",
+                  "chunk": "c001-c012",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "source"
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "yt-python-1h-8KCuHHeC_M0-q1",
+          "chapter": 0,
+          "question": "Python 파일의 확장자로 영상에서 사용하는 것은?",
+          "choices": [
+            ".py",
+            ".html",
+            ".css",
+            ".txt"
+          ],
+          "answer": 0,
+          "explanation": "Python 파일은 .py 확장자를 사용합니다."
+        },
+        {
+          "id": "yt-python-1h-8KCuHHeC_M0-q2",
+          "chapter": 0,
+          "question": "IDE를 가장 쉽게 설명한 것은?",
+          "choices": [
+            "코드를 작성하고 실행하기 편한 작업 공간",
+            "숫자 자료형",
+            "반복문",
+            "웹 주소"
+          ],
+          "answer": 0,
+          "explanation": "영상은 IDE를 코드를 작성하는 장소로 설명합니다."
+        },
+        {
+          "id": "yt-python-1h-8KCuHHeC_M0-q3",
+          "chapter": 1,
+          "question": "print()의 역할은?",
+          "choices": [
+            "값을 Console에 출력",
+            "파일 삭제",
+            "숫자형 변환",
+            "조건 비교"
+          ],
+          "answer": 0,
+          "explanation": "print()는 괄호 안의 값을 출력합니다."
+        },
+        {
+          "id": "yt-python-1h-8KCuHHeC_M0-q4",
+          "chapter": 1,
+          "question": "Python Comment를 시작하는 기호는?",
+          "choices": [
+            "#",
+            "@",
+            "%",
+            "//"
+          ],
+          "answer": 0,
+          "explanation": "영상은 # 뒤를 Comment로 사용합니다."
+        },
+        {
+          "id": "yt-python-1h-8KCuHHeC_M0-q5",
+          "chapter": 2,
+          "question": "Variable을 영상은 무엇에 비유하는가?",
+          "choices": [
+            "값을 담는 재사용 가능한 컨테이너",
+            "브라우저",
+            "서버",
+            "파일 확장자"
+          ],
+          "answer": 0,
+          "explanation": "Variable은 값을 담는 reusable container로 설명됩니다."
+        },
+        {
+          "id": "yt-python-1h-8KCuHHeC_M0-q6",
+          "chapter": 2,
+          "question": "다음 중 Boolean 값은?",
+          "choices": [
+            "True",
+            "3.2",
+            "25",
+            "\"pizza\""
+          ],
+          "answer": 0,
+          "explanation": "Boolean은 True 또는 False입니다."
+        },
+        {
+          "id": "yt-python-1h-8KCuHHeC_M0-q7",
+          "chapter": 2,
+          "question": "Float의 예로 영상에 나오는 것은?",
+          "choices": [
+            "3.2",
+            "25",
+            "True",
+            "\"Bro Code\""
+          ],
+          "answer": 0,
+          "explanation": "GPA 3.2가 Float 예시입니다."
+        },
+        {
+          "id": "yt-python-1h-8KCuHHeC_M0-q8",
+          "chapter": 2,
+          "question": "F-string의 목적은?",
+          "choices": [
+            "문자열 안에 변수 값을 넣기",
+            "파일 이름 바꾸기",
+            "반복 종료",
+            "자료형 검사"
+          ],
+          "answer": 0,
+          "explanation": "F-string은 문자열에 변수 값을 삽입할 때 사용합니다."
+        },
+        {
+          "id": "yt-python-1h-8KCuHHeC_M0-q9",
+          "chapter": 3,
+          "question": "Python에서 곱셈 기호는?",
+          "choices": [
+            "*",
+            "x",
+            "#",
+            "%"
+          ],
+          "answer": 0,
+          "explanation": "곱셈은 *를 사용합니다."
+        },
+        {
+          "id": "yt-python-1h-8KCuHHeC_M0-q10",
+          "chapter": 3,
+          "question": "// 연산자는 영상에서 무엇으로 설명되나?",
+          "choices": [
+            "정수 나눗셈",
+            "문자열 연결",
+            "나머지",
+            "비교"
+          ],
+          "answer": 0,
+          "explanation": "//는 integer division으로 설명됩니다."
+        },
+        {
+          "id": "yt-python-1h-8KCuHHeC_M0-q11",
+          "chapter": 3,
+          "question": "% 연산자의 결과는?",
+          "choices": [
+            "나눗셈의 나머지",
+            "몫의 소수",
+            "문자열",
+            "Boolean만"
+          ],
+          "answer": 0,
+          "explanation": "%는 remainder를 구합니다."
+        },
+        {
+          "id": "yt-python-1h-8KCuHHeC_M0-q12",
+          "chapter": 3,
+          "question": "friends += 1의 뜻은?",
+          "choices": [
+            "friends에 1을 더해 다시 저장",
+            "friends를 String으로 변환",
+            "friends를 삭제",
+            "friends가 1인지 비교"
+          ],
+          "answer": 0,
+          "explanation": "+=는 계산 후 같은 변수에 다시 저장하는 축약 표현입니다."
+        },
+        {
+          "id": "yt-python-1h-8KCuHHeC_M0-q13",
+          "chapter": 4,
+          "question": "Type Casting은 무엇인가?",
+          "choices": [
+            "자료형을 다른 자료형으로 바꾸는 과정",
+            "코드를 반복하는 과정",
+            "파일을 저장하는 과정",
+            "조건을 비교하는 과정"
+          ],
+          "answer": 0,
+          "explanation": "Type Casting은 Data Type 변환입니다."
+        },
+        {
+          "id": "yt-python-1h-8KCuHHeC_M0-q14",
+          "chapter": 4,
+          "question": "type() 함수의 목적은?",
+          "choices": [
+            "값의 자료형 확인",
+            "문자 출력",
+            "반복 실행",
+            "파일 열기"
+          ],
+          "answer": 0,
+          "explanation": "type()으로 변수의 Data Type을 확인합니다."
+        },
+        {
+          "id": "yt-python-1h-8KCuHHeC_M0-q15",
+          "chapter": 4,
+          "question": "String \"25\"에 String \"1\"을 이어 붙인 영상 예시 결과는?",
+          "choices": [
+            "251",
+            "26",
+            "24",
+            "오직 25"
+          ],
+          "answer": 0,
+          "explanation": "문자열 연결이므로 251이 됩니다."
+        },
+        {
+          "id": "yt-python-1h-8KCuHHeC_M0-q16",
+          "chapter": 5,
+          "question": "input()으로 받은 값은 영상에서 어떤 자료형이라고 설명하나?",
+          "choices": [
+            "String",
+            "Integer",
+            "Float",
+            "Set"
+          ],
+          "answer": 0,
+          "explanation": "User Input은 먼저 String으로 들어옵니다."
+        },
+        {
+          "id": "yt-python-1h-8KCuHHeC_M0-q17",
+          "chapter": 5,
+          "question": "입력받은 나이로 숫자 계산하려면 무엇이 필요할 수 있나?",
+          "choices": [
+            "int() 같은 Type Casting",
+            "Comment",
+            "Set",
+            "Tuple"
+          ],
+          "answer": 0,
+          "explanation": "숫자 계산 전에 Integer나 Float로 변환할 수 있습니다."
+        },
+        {
+          "id": "yt-python-1h-8KCuHHeC_M0-q18",
+          "chapter": 6,
+          "question": "if 아래 코드가 실행되는 조건은?",
+          "choices": [
+            "조건이 True",
+            "조건이 항상 False",
+            "파일이 .py가 아닐 때",
+            "Set일 때"
+          ],
+          "answer": 0,
+          "explanation": "if는 조건이 True일 때 실행됩니다."
+        },
+        {
+          "id": "yt-python-1h-8KCuHHeC_M0-q19",
+          "chapter": 6,
+          "question": "==의 역할은?",
+          "choices": [
+            "두 값이 같은지 비교",
+            "값 대입",
+            "나눗셈",
+            "주석"
+          ],
+          "answer": 0,
+          "explanation": "==는 equality comparison입니다."
+        },
+        {
+          "id": "yt-python-1h-8KCuHHeC_M0-q20",
+          "chapter": 6,
+          "question": "조건문의 순서가 중요한 이유는?",
+          "choices": [
+            "위에서 먼저 True가 된 분기가 실행되고 뒤는 건너뛸 수 있어서",
+            "Python이 아래에서 위로만 읽어서",
+            "변수가 사라져서",
+            "String만 비교 가능해서"
+          ],
+          "answer": 0,
+          "explanation": "영상의 70세 예시가 이를 보여 줍니다."
+        },
+        {
+          "id": "yt-python-1h-8KCuHHeC_M0-q21",
+          "chapter": 7,
+          "question": "or의 의미는?",
+          "choices": [
+            "조건 중 하나라도 True면 전체 True",
+            "모든 조건이 True여야 함",
+            "조건을 뒤집음",
+            "반복"
+          ],
+          "answer": 0,
+          "explanation": "or는 하나 이상의 조건이 True이면 전체가 True입니다."
+        },
+        {
+          "id": "yt-python-1h-8KCuHHeC_M0-q22",
+          "chapter": 7,
+          "question": "and의 의미는?",
+          "choices": [
+            "연결된 조건이 모두 True여야 전체 True",
+            "하나만 True면 충분",
+            "무조건 False",
+            "문자열 연결"
+          ],
+          "answer": 0,
+          "explanation": "and는 모두 True여야 합니다."
+        },
+        {
+          "id": "yt-python-1h-8KCuHHeC_M0-q23",
+          "chapter": 7,
+          "question": "not의 역할은?",
+          "choices": [
+            "판정을 반대로 뒤집기",
+            "숫자 더하기",
+            "List 추가",
+            "파일 저장"
+          ],
+          "answer": 0,
+          "explanation": "not은 True/False 판단을 반대로 만듭니다."
+        },
+        {
+          "id": "yt-python-1h-8KCuHHeC_M0-q24",
+          "chapter": 8,
+          "question": "while Loop의 특징은?",
+          "choices": [
+            "조건이 True인 동안 반복",
+            "항상 한 번만 실행",
+            "List만 출력",
+            "파일만 반복"
+          ],
+          "answer": 0,
+          "explanation": "while은 조건을 반복해서 다시 확인합니다."
+        },
+        {
+          "id": "yt-python-1h-8KCuHHeC_M0-q25",
+          "chapter": 8,
+          "question": "while에서 탈출 조건이 없으면 생길 수 있는 것은?",
+          "choices": [
+            "Infinite Loop",
+            "Type Casting",
+            "Tuple",
+            "Comment"
+          ],
+          "answer": 0,
+          "explanation": "항상 True이면 무한 반복이 될 수 있습니다."
+        },
+        {
+          "id": "yt-python-1h-8KCuHHeC_M0-q26",
+          "chapter": 9,
+          "question": "range(1,11)은 어떤 숫자를 만든다고 영상에서 설명하나?",
+          "choices": [
+            "1부터 10",
+            "0부터 11",
+            "1부터 11 모두",
+            "2부터 10"
+          ],
+          "answer": 0,
+          "explanation": "시작은 포함, 끝은 제외되어 1~10입니다."
+        },
+        {
+          "id": "yt-python-1h-8KCuHHeC_M0-q27",
+          "chapter": 9,
+          "question": "range의 세 번째 값은 무엇을 정하나?",
+          "choices": [
+            "Step",
+            "String 종류",
+            "Comment",
+            "IDE"
+          ],
+          "answer": 0,
+          "explanation": "Step은 증가 또는 감소 폭을 정합니다."
+        },
+        {
+          "id": "yt-python-1h-8KCuHHeC_M0-q28",
+          "chapter": 9,
+          "question": "거꾸로 세려면 영상 countdown 예시에서 Step은?",
+          "choices": [
+            "-1",
+            "1",
+            "0",
+            "10"
+          ],
+          "answer": 0,
+          "explanation": "10부터 내려갈 때 -1 Step을 사용합니다."
+        },
+        {
+          "id": "yt-python-1h-8KCuHHeC_M0-q29",
+          "chapter": 10,
+          "question": "List의 첫 Index는?",
+          "choices": [
+            "0",
+            "1",
+            "-1만 가능",
+            "A"
+          ],
+          "answer": 0,
+          "explanation": "Python List의 첫 요소 Index는 0입니다."
+        },
+        {
+          "id": "yt-python-1h-8KCuHHeC_M0-q30",
+          "chapter": 10,
+          "question": "List가 Mutable이라는 뜻은?",
+          "choices": [
+            "만든 뒤 요소를 바꿀 수 있다",
+            "순서가 없다",
+            "중복을 못 쓴다",
+            "파일로만 쓴다"
+          ],
+          "answer": 0,
+          "explanation": "List는 요소 변경이 가능합니다."
+        },
+        {
+          "id": "yt-python-1h-8KCuHHeC_M0-q31",
+          "chapter": 10,
+          "question": "List 끝에 새 요소를 넣는 Method는?",
+          "choices": [
+            "append()",
+            "type()",
+            "input()",
+            "range()"
+          ],
+          "answer": 0,
+          "explanation": "append()로 끝에 요소를 추가합니다."
+        },
+        {
+          "id": "yt-python-1h-8KCuHHeC_M0-q32",
+          "chapter": 11,
+          "question": "Tuple의 핵심 특징은?",
+          "choices": [
+            "Immutable",
+            "항상 Unordered",
+            "중복 불가",
+            "무조건 숫자만 저장"
+          ],
+          "answer": 0,
+          "explanation": "Tuple은 만든 뒤 요소를 바꿀 수 없습니다."
+        },
+        {
+          "id": "yt-python-1h-8KCuHHeC_M0-q33",
+          "chapter": 12,
+          "question": "Set의 특징으로 영상이 설명한 것은?",
+          "choices": [
+            "Unordered",
+            "항상 Index 0이 고정",
+            "중복을 여러 개 유지",
+            "Tuple과 동일"
+          ],
+          "answer": 0,
+          "explanation": "Set은 unordered입니다."
+        },
+        {
+          "id": "yt-python-1h-8KCuHHeC_M0-q34",
+          "chapter": 12,
+          "question": "Set은 중복 값에 대해 어떻게 동작한다고 영상은 보여 주나?",
+          "choices": [
+            "중복을 하나만 남김",
+            "중복을 모두 유지",
+            "오류를 무조건 냄",
+            "자동 정렬"
+          ],
+          "answer": 0,
+          "explanation": "같은 coconut을 여러 번 넣어도 하나만 남는 예시가 나옵니다."
+        },
+        {
+          "id": "yt-python-1h-8KCuHHeC_M0-q35",
+          "chapter": 12,
+          "question": "Membership Testing의 예는?",
+          "choices": [
+            "값이 Set 안에 있는지 확인",
+            "Float를 Integer로 바꾸기",
+            "코드를 주석 처리",
+            "Project 생성"
+          ],
+          "answer": 0,
+          "explanation": "if fruit in fruits처럼 포함 여부를 검사합니다."
+        },
+        {
+          "id": "yt-python-1h-8KCuHHeC_M0-q36",
+          "chapter": 13,
+          "question": "이 1시간 영상의 큰 흐름으로 가장 알맞은 것은?",
+          "choices": [
+            "값 저장·입력·판단·반복·Collection",
+            "HTML·CSS·React만 학습",
+            "서버 구축만 학습",
+            "이미지 편집만 학습"
+          ],
+          "answer": 0,
+          "explanation": "영상은 Python 기본 문법을 이 순서로 넓혀 갑니다."
+        }
+      ],
+      "summary": [
+        "Python 실행 환경과 IDE를 준비하고 .py 파일을 만들어 첫 프로그램을 실행한다.",
+        "Variable과 String·Integer·Float·Boolean을 구분하고 F-string으로 값을 문장에 넣는다.",
+        "산술 연산과 Type Casting을 통해 숫자와 문자열의 동작 차이를 이해한다.",
+        "input()으로 받은 String을 필요한 자료형으로 바꿔 실제 계산에 사용한다.",
+        "if / elif / else와 or / and / not으로 프로그램에 판단 구조를 만든다.",
+        "while과 for로 반복을 만들고 range()의 시작·끝·Step을 이해한다.",
+        "List·Tuple·Set의 변경 가능 여부·순서·중복 처리 차이를 비교한다."
+      ],
+      "_engine": {
+        "version": "1.1.0",
+        "profile": "faithful-ko-selective-beginner-v1",
+        "sourceVideoId": "8KCuHHeC_M0",
+        "sourceDuration": "59:58",
+        "sourceTranscript": "exact_source/8KCuHHeC_M0/transcript.md",
+        "sourceTranscriptSha": "c44a548b04cd3240c767e8bc41640eb31fd70f86",
+        "sourceLanguage": "en",
+        "targetLanguage": "ko",
+        "passes": [
+          "source-freeze",
+          "aligned-korean-basis",
+          "selective-beginner-explanation",
+          "direct-source-review",
+          "assemble-publish"
+        ],
+        "chunking": {
+          "targetSeconds": 240,
+          "concurrency": 2,
+          "logicalChunks": 12
+        },
+        "preservation": [
+          "claim",
+          "definition",
+          "example",
+          "analogy",
+          "transition",
+          "caveat"
+        ],
+        "visualStatus": "targeted YouTube frame extraction attempted twice; YouTube bot/auth gate blocked real frames, so no thumbnail or unverified screenshots used",
+        "visualPolicy": "reconstructed diagrams only; YouTube hqdefault/hq1/hq2/hq3 are not used as lesson screenshots",
+        "review": {
+          "sourceCoverage": "English transcript covered from 00:01 through 59:58 in chapter ranges",
+          "beginner": "terms expanded at first use without adding later Python topics absent from the video",
+          "ambiguity": "automatic English captions contain repetitions; exact repeated ASR fragments were treated as duplication, not new lesson content",
+          "caveat": "structural/source-range review reduces drift but does not mathematically prove translation correctness"
+        }
+      }
+    },
     {
       "id": "yt-backend-roots-0SGfDKMLdaI",
       "title": "백엔드 기본 지식 완전교재",
