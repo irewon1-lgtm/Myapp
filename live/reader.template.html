@@ -1124,7 +1124,7 @@ function trackPage(){
   const list=indices.map(({c,i})=>{
     const done=state.complete.includes(c.id);
     const active=i===current.c;
-    return '<button class="editorial-chapter-row '+(active?'current':'')+'" data-action="'+(active?'continue-track':'chapter')+'" data-c="'+i+'><span class="timeline-dot '+(done?'done':active?'active':'')+'">'+(done?'✓':c.chapter)+'</span><span class="chapter-copy"><strong>'+c.chapter+'. '+esc(c.title)+'</strong><small>'+c.pages.length+'개 학습 페이지</small></span>'+(active?'<b class="continue-chip">이어하기</b>':'<span class="row-arrow">›</span>')+'</button>';
+    return '<button class="editorial-chapter-row '+(active?'current':'')+'" data-action="chapter" data-c="'+i+'"><span class="timeline-dot '+(done?'done':active?'active':'')+'">'+(done?'✓':c.chapter)+'</span><span class="chapter-copy"><strong>'+c.chapter+'. '+esc(c.title)+'</strong><small>'+c.pages.length+'개 학습 페이지</small></span>'+(active?'<b class="continue-chip">읽는 중</b>':'<span class="row-arrow">›</span>')+'</button>';
   }).join('');
   return '<div class="screen editorial-screen track-screen"><main class="shell editorial-shell track-shell '+(trackTransitionDir>0?'slide-from-right':trackTransitionDir<0?'slide-from-left':'')+'"><div class="track-swipe-surface">'+
     '<div class="top-row editorial-track-top"><button class="back-btn" data-action="home">←</button><div class="track-name">학습 트랙</div><span></span></div>'+
