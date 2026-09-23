@@ -11,7 +11,7 @@ concurrency:
 jobs:
   install:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
         with:
@@ -48,7 +48,10 @@ jobs:
             cmd('git',['pull','--ff-only','origin',branch]);const booksBefore=sha('public/content/catalog.json'),readerBefore=sha('public/reader.js');
             cmd('python3',['-c',"import zipfile,pathlib,sys; z=zipfile.ZipFile(sys.argv[1]); root=pathlib.Path('.').resolve(); allowed=('public/engine/','engine/','tests/engine/','docs/'); assert all((i.filename.startswith(allowed) or i.filename=='CHATBOOK_ENGINE.md') and (root/i.filename).resolve().is_relative_to(root) and not i.is_dir() and ((i.external_attr>>16)&0o170000)!=0o120000 for i in z.infolist()); z.extractall('.')",zip]);
             cmd('npm',['ci','--no-audit','--no-fund']);cmd('node',['engine/install.mjs']);cmd('npm',['test']);cmd('node',['engine/benchmark.mjs']);
-            cmd('python3',['-m','pip','install','--quiet','pillow','playwright']);cmd('python3',['tests/engine/frames_test.py']);
+            if(spawnSync('which',['ffmpeg']).status!==0){cmd('sudo',['apt-get','update','-qq']);cmd('sudo',['apt-get','install','-y','ffmpeg']);}
+            cmd('python3',['-m','pip','install','--quiet','pillow','playwright']);
+            if(!['/usr/bin/chromium','/usr/bin/google-chrome','/usr/bin/chromium-browser'].some(x=>fs.existsSync(x)))cmd('python3',['-m','playwright','install','--with-deps','chromium']);
+            cmd('python3',['tests/engine/frames_test.py']);
             process.env.ENGINE_BROWSER_REPORT=process.env.RUNNER_TEMP+'/engine-browser-before.json';
             const server=spawn('python3',['-m','http.server','8768','--directory','public'],{stdio:'ignore'});await sleep(800);
             try{cmd('python3',['tests/engine/browser_check.py','http://127.0.0.1:8768/engine/']);}finally{server.kill();}
