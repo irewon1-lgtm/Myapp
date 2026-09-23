@@ -1,0 +1,25 @@
+name: Chatbook isolated build and deploy
+on:
+  push:
+    branches: [chatbook-app-20260923]
+    paths: [.github/workflows/chatbook-ci.yml]
+permissions:
+  contents: write
+concurrency:
+  group: chatbook-isolated-publication
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: chatbook-app-20260923
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Sealed deployment and browser verification
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/ci-deploy.mjs
