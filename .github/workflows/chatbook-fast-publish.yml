@@ -1,4 +1,4 @@
-# Supported production route: pin source, serialize publication, check latest source again before deploy.
+# Supported production route: stable source identity survives Netlify mirror rebuilds; exact current-spec comparison remains mandatory.
 name: Chatbook fast publish
 on:
   workflow_dispatch:
