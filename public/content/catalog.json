@@ -1,27 +1,27 @@
 {
   "schema": 1,
-  "version": "2026-09-23.12",
-  "updatedAt": "2026-09-23T10:16:13.416Z",
-  "notice": "영어 강의 Learn Python in 1 hour!을 챗북 엔진 1.1 기준의 한국어 완전 초보 교재로 추가했습니다.",
+  "version": "2026-09-23.13",
+  "updatedAt": "2026-09-23T10:25:35.744Z",
+  "notice": "파이썬 1시간 교재의 1차 조립본이 원 영상 길이에 비해 압축되어 있어, 원문 범위를 늘리지 않고 초보자 설명만 보강한 v2를 반영했습니다.",
   "books": [
     {
       "id": "yt-python-1h-8KCuHHeC_M0",
       "title": "파이썬 1시간 완전 초보 교재",
       "subtitle": "코딩 0일차가 print()부터 List · Tuple · Set까지 따라가는 한국어 해설판",
       "author": "Bro Code",
-      "edition": "YouTube 강의 완전교재 · 챗북 엔진 1.1 · 영어 원문잠금→한국어 초보자해설판 · 59분 58초",
+      "edition": "YouTube 강의 완전교재 · 챗북 엔진 1.1 · 영어 원문잠금→코딩 0일차 심화해설판 · 59분 58초",
       "category": "코딩·Python",
       "cover": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22900%22%20height%3D%221200%22%20viewBox%3D%220%200%20900%201200%22%3E%3Crect%20width%3D%22900%22%20height%3D%221200%22%20fill%3D%22%23edf2ea%22%2F%3E%3Crect%20x%3D%2255%22%20y%3D%2255%22%20width%3D%22790%22%20height%3D%221090%22%20rx%3D%2244%22%20fill%3D%22%23fff%22%20stroke%3D%22%2361705d%22%20stroke-width%3D%225%22%2F%3E%3Ctext%20x%3D%22110%22%20y%3D%22165%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2233%22%20font-weight%3D%22800%22%20fill%3D%22%2361705d%22%3EPYTHON%20%C2%B7%20ABSOLUTE%20BEGINNER%3C%2Ftext%3E%3Ctext%20x%3D%22110%22%20y%3D%22285%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2272%22%20font-weight%3D%22900%22%20fill%3D%22%23202520%22%3E%ED%8C%8C%EC%9D%B4%EC%8D%AC%201%EC%8B%9C%EA%B0%84%3C%2Ftext%3E%3Ctext%20x%3D%22110%22%20y%3D%22370%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2266%22%20font-weight%3D%22900%22%20fill%3D%22%23202520%22%3E%EC%99%84%EC%A0%84%20%EC%B4%88%EB%B3%B4%20%EA%B5%90%EC%9E%AC%3C%2Ftext%3E%3Ctext%20x%3D%22110%22%20y%3D%22438%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2229%22%20font-weight%3D%22600%22%20fill%3D%22%23485047%22%3E%EC%BD%94%EB%94%A9%200%EC%9D%BC%EC%B0%A8%EA%B0%80%20%EC%B2%98%EC%9D%8C%EB%B6%80%ED%84%B0%20%EB%94%B0%EB%9D%BC%EA%B0%80%EB%8A%94%20%ED%95%9C%EA%B5%AD%EC%96%B4%20%ED%95%B4%EC%84%A4%ED%8C%90%3C%2Ftext%3E%3Cg%20transform%3D%22translate(110%20550)%22%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%22680%22%20height%3D%22116%22%20rx%3D%2224%22%20fill%3D%22%23eef3eb%22%20stroke%3D%22%236c7c66%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%2236%22%20y%3D%2248%22%20font-family%3D%22monospace%22%20font-size%3D%2228%22%20font-weight%3D%22700%22%20fill%3D%22%23263126%22%3Eprint(%22I%20like%20pizza%22)%3C%2Ftext%3E%3Ctext%20x%3D%2236%22%20y%3D%2287%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2222%22%20fill%3D%22%23465046%22%3E%EC%BD%94%EB%93%9C%EB%A5%BC%20%EC%93%B0%EA%B3%A0%20%E2%86%92%20%EC%8B%A4%ED%96%89%ED%95%98%EA%B3%A0%20%E2%86%92%20%EA%B2%B0%EA%B3%BC%EB%A5%BC%20%ED%99%95%EC%9D%B8%ED%95%9C%EB%8B%A4%3C%2Ftext%3E%3C%2Fg%3E%3Ctext%20x%3D%22110%22%20y%3D%22785%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%232d332d%22%3E%EB%B3%80%EC%88%98%20%C2%B7%20%EC%9E%90%EB%A3%8C%ED%98%95%20%C2%B7%20%EC%82%B0%EC%88%A0%20%C2%B7%20%EC%9E%85%EB%A0%A5%20%C2%B7%20%EC%A1%B0%EA%B1%B4%EB%AC%B8%3C%2Ftext%3E%3Ctext%20x%3D%22110%22%20y%3D%22835%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%232d332d%22%3E%EB%85%BC%EB%A6%AC%EC%97%B0%EC%82%B0%20%C2%B7%20while%20%C2%B7%20for%20%C2%B7%20List%20%C2%B7%20Tuple%20%C2%B7%20Set%3C%2Ftext%3E%3Cline%20x1%3D%22110%22%20y1%3D%22920%22%20x2%3D%22790%22%20y2%3D%22920%22%20stroke%3D%22%23b8b8b1%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22110%22%20y%3D%221000%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2224%22%20fill%3D%22%234c514b%22%3ESource%3A%20Bro%20Code%20%C2%B7%20Learn%20Python%20in%201%20hour!%3C%2Ftext%3E%3Ctext%20x%3D%22110%22%20y%3D%221045%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2224%22%20fill%3D%22%234c514b%22%3E59%3A58%20%C2%B7%20%EC%98%81%EC%96%B4%20%EC%9B%90%EB%AC%B8%20%EC%9E%A0%EA%B8%88%20%E2%86%92%20%ED%95%9C%EA%B5%AD%EC%96%B4%20%EC%B4%88%EB%B3%B4%EC%9E%90%20%ED%95%B4%EC%84%A4%3C%2Ftext%3E%3C%2Fsvg%3E",
       "portrait": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22900%22%20height%3D%221200%22%20viewBox%3D%220%200%20900%201200%22%3E%3Crect%20width%3D%22900%22%20height%3D%221200%22%20fill%3D%22%23edf2ea%22%2F%3E%3Crect%20x%3D%2255%22%20y%3D%2255%22%20width%3D%22790%22%20height%3D%221090%22%20rx%3D%2244%22%20fill%3D%22%23fff%22%20stroke%3D%22%2361705d%22%20stroke-width%3D%225%22%2F%3E%3Ctext%20x%3D%22110%22%20y%3D%22165%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2233%22%20font-weight%3D%22800%22%20fill%3D%22%2361705d%22%3EPYTHON%20%C2%B7%20ABSOLUTE%20BEGINNER%3C%2Ftext%3E%3Ctext%20x%3D%22110%22%20y%3D%22285%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2272%22%20font-weight%3D%22900%22%20fill%3D%22%23202520%22%3E%ED%8C%8C%EC%9D%B4%EC%8D%AC%201%EC%8B%9C%EA%B0%84%3C%2Ftext%3E%3Ctext%20x%3D%22110%22%20y%3D%22370%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2266%22%20font-weight%3D%22900%22%20fill%3D%22%23202520%22%3E%EC%99%84%EC%A0%84%20%EC%B4%88%EB%B3%B4%20%EA%B5%90%EC%9E%AC%3C%2Ftext%3E%3Ctext%20x%3D%22110%22%20y%3D%22438%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2229%22%20font-weight%3D%22600%22%20fill%3D%22%23485047%22%3E%EC%BD%94%EB%94%A9%200%EC%9D%BC%EC%B0%A8%EA%B0%80%20%EC%B2%98%EC%9D%8C%EB%B6%80%ED%84%B0%20%EB%94%B0%EB%9D%BC%EA%B0%80%EB%8A%94%20%ED%95%9C%EA%B5%AD%EC%96%B4%20%ED%95%B4%EC%84%A4%ED%8C%90%3C%2Ftext%3E%3Cg%20transform%3D%22translate(110%20550)%22%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%22680%22%20height%3D%22116%22%20rx%3D%2224%22%20fill%3D%22%23eef3eb%22%20stroke%3D%22%236c7c66%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%2236%22%20y%3D%2248%22%20font-family%3D%22monospace%22%20font-size%3D%2228%22%20font-weight%3D%22700%22%20fill%3D%22%23263126%22%3Eprint(%22I%20like%20pizza%22)%3C%2Ftext%3E%3Ctext%20x%3D%2236%22%20y%3D%2287%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2222%22%20fill%3D%22%23465046%22%3E%EC%BD%94%EB%93%9C%EB%A5%BC%20%EC%93%B0%EA%B3%A0%20%E2%86%92%20%EC%8B%A4%ED%96%89%ED%95%98%EA%B3%A0%20%E2%86%92%20%EA%B2%B0%EA%B3%BC%EB%A5%BC%20%ED%99%95%EC%9D%B8%ED%95%9C%EB%8B%A4%3C%2Ftext%3E%3C%2Fg%3E%3Ctext%20x%3D%22110%22%20y%3D%22785%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%232d332d%22%3E%EB%B3%80%EC%88%98%20%C2%B7%20%EC%9E%90%EB%A3%8C%ED%98%95%20%C2%B7%20%EC%82%B0%EC%88%A0%20%C2%B7%20%EC%9E%85%EB%A0%A5%20%C2%B7%20%EC%A1%B0%EA%B1%B4%EB%AC%B8%3C%2Ftext%3E%3Ctext%20x%3D%22110%22%20y%3D%22835%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%232d332d%22%3E%EB%85%BC%EB%A6%AC%EC%97%B0%EC%82%B0%20%C2%B7%20while%20%C2%B7%20for%20%C2%B7%20List%20%C2%B7%20Tuple%20%C2%B7%20Set%3C%2Ftext%3E%3Cline%20x1%3D%22110%22%20y1%3D%22920%22%20x2%3D%22790%22%20y2%3D%22920%22%20stroke%3D%22%23b8b8b1%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22110%22%20y%3D%221000%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2224%22%20fill%3D%22%234c514b%22%3ESource%3A%20Bro%20Code%20%C2%B7%20Learn%20Python%20in%201%20hour!%3C%2Ftext%3E%3Ctext%20x%3D%22110%22%20y%3D%221045%22%20font-family%3D%22Arial%2C'Noto%20Sans%20KR'%2Csans-serif%22%20font-size%3D%2224%22%20fill%3D%22%234c514b%22%3E59%3A58%20%C2%B7%20%EC%98%81%EC%96%B4%20%EC%9B%90%EB%AC%B8%20%EC%9E%A0%EA%B8%88%20%E2%86%92%20%ED%95%9C%EA%B5%AD%EC%96%B4%20%EC%B4%88%EB%B3%B4%EC%9E%90%20%ED%95%B4%EC%84%A4%3C%2Ftext%3E%3C%2Fsvg%3E",
       "published": "2026-09-23",
-      "version": 1,
+      "version": 2,
       "imported": false,
       "generated": true,
       "sourceType": "youtube",
       "sourceUrl": "https://youtu.be/8KCuHHeC_M0",
       "sourceDuration": "59:58",
       "quote": "코딩은 처음부터 모든 문법을 외우는 일이 아니라, 값을 저장하고 판단하고 반복하는 흐름을 이해하는 것부터 시작한다.",
-      "description": "Bro Code의 영어 강의 「Learn Python in 1 hour!」를 영어 원문 기준으로 고정한 뒤, 코딩 경험이 전혀 없는 한국어 독자가 따라갈 수 있도록 같은 내용 범위 안에서 풀어 쓴 교재입니다. 설치와 첫 print()부터 Variable·Data Type·산술·Type Casting·User Input·if·Logical Operator·while·for·List·Tuple·Set까지 영상 순서를 유지합니다.",
+      "description": "Bro Code의 영어 강의 「Learn Python in 1 hour!」를 영어 원문 기준으로 고정한 뒤, 코딩 경험이 전혀 없는 한국어 독자가 영상 없이도 흐름을 따라갈 수 있도록 같은 의미 범위 안에서 다시 풀어 쓴 교재입니다. 원문의 예시·조건·오류 장면·연결 설명을 줄이지 않고, 어려운 부분에만 추가 해설을 붙였습니다.",
       "chapters": [
         {
           "id": "yt-python-1h-8KCuHHeC_M0-c1",
@@ -217,6 +217,32 @@
               }
             },
             {
+              "id": "yt-python-1h-8KCuHHeC_M0-c1-deep-1",
+              "type": "p",
+              "text": "처음 보는 사람에게는 Python 자체와 IDE를 같은 것으로 착각하기 쉽습니다. Python은 코드를 실행하는 언어와 실행 환경 쪽이고, IDE는 그 코드를 편하게 작성하고 실행하도록 도와주는 작업 공간입니다. 영상이 Python 설치와 IDE 설치를 따로 보여 주는 이유가 바로 이 차이 때문입니다.",
+              "sourceRefs": [
+                {
+                  "range": "00:32-01:34",
+                  "chunk": "c001",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "explanation"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c1-deep-2",
+              "type": "p",
+              "text": "Project를 만든 뒤 그 안에 main.py를 만드는 흐름도 중요합니다. Project는 이번 학습과 관련된 파일을 한곳에 모으는 큰 폴더이고, main.py는 실제 Python 코드를 적는 파일입니다. 앞으로 코드를 실행할 때는 결국 이런 .py 파일 안의 문장을 Python이 읽게 됩니다.",
+              "sourceRefs": [
+                {
+                  "range": "02:38-03:10",
+                  "chunk": "c001",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "explanation"
+            },
+            {
               "id": "yt-python-1h-8KCuHHeC_M0-c1-q",
               "type": "quote",
               "text": "처음에는 ‘코드를 쓰는 파일’과 ‘그 코드를 실행해 주는 환경’이 따로 있다는 것만 잡으면 된다.",
@@ -379,6 +405,32 @@
                 }
               ],
               "_origin": "source"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c2-deep-1",
+              "type": "p",
+              "text": "`print()`를 처음 볼 때 괄호와 따옴표가 왜 필요한지 헷갈릴 수 있습니다. print는 실행할 기능의 이름이고, 괄호 안에는 그 기능에 전달할 값을 넣습니다. 따옴표는 그 값이 계산할 숫자가 아니라 그대로 보여 줄 글자라는 표시입니다.",
+              "sourceRefs": [
+                {
+                  "range": "03:11-04:45",
+                  "chunk": "c001",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "explanation"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c2-deep-2",
+              "type": "p",
+              "text": "Comment는 프로그램 결과에는 영향을 주지 않지만 사람이 코드를 이해하는 데 도움을 줍니다. 영상이 첫 프로그램에 Comment를 넣는 이유는 코드는 컴퓨터만 읽는 것이 아니라 나중에 사람도 다시 읽기 때문입니다.",
+              "sourceRefs": [
+                {
+                  "range": "04:46-05:15",
+                  "chunk": "c001",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "explanation"
             },
             {
               "id": "yt-python-1h-8KCuHHeC_M0-c2-code",
@@ -667,6 +719,45 @@
               }
             },
             {
+              "id": "yt-python-1h-8KCuHHeC_M0-c3-deep-1",
+              "type": "p",
+              "text": "`full_name = \"Bro Code\"`에서 `=`는 ‘같다’라는 수학 기호로 쓰인 것이 아니라, 오른쪽 값을 왼쪽 이름에 저장한다는 뜻입니다. 즉 full_name이라는 이름표를 만들고 그 안에 Bro Code라는 글자를 넣는 과정입니다.",
+              "sourceRefs": [
+                {
+                  "range": "05:16-06:19",
+                  "chunk": "c002",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "explanation"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c3-deep-2",
+              "type": "p",
+              "text": "String과 숫자형을 구분하는 가장 쉬운 기준은 ‘계산 대상인가, 글자로 취급할 것인가’입니다. 이름은 String이고 나이 25는 Integer, GPA 3.2는 Float입니다. 같은 25라도 따옴표 안에 넣으면 글자로 취급될 수 있습니다.",
+              "sourceRefs": [
+                {
+                  "range": "06:20-07:54",
+                  "chunk": "c002",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "explanation"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c3-deep-3",
+              "type": "p",
+              "text": "Boolean은 단순히 True나 False를 화면에 보여 주는 용도보다, 프로그램이 어떤 길로 갈지 판단하는 재료로 더 중요합니다. 영상이 바로 뒤에서 if 예시를 살짝 보여 주는 이유도 Boolean이 조건 판단과 연결되기 때문입니다.",
+              "sourceRefs": [
+                {
+                  "range": "07:55-09:59",
+                  "chunk": "c002",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "explanation"
+            },
+            {
               "id": "yt-python-1h-8KCuHHeC_M0-c3-q",
               "type": "quote",
               "text": "같은 Variable이라는 그릇에 무엇을 넣었는지에 따라 String·Integer·Float·Boolean처럼 값의 종류가 달라진다.",
@@ -886,6 +977,45 @@
                 "reconstructed": true,
                 "label": "개념도"
               }
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c4-deep-1",
+              "type": "p",
+              "text": "`friends = friends + 1`은 오른쪽의 현재 friends 값에 1을 더한 뒤 그 결과를 다시 왼쪽 friends에 저장하는 문장입니다. `friends += 1`은 같은 일을 더 짧게 쓴 표현입니다. 처음에는 짧은 문법보다 긴 형태의 의미를 이해한 뒤 축약형을 보는 편이 쉽습니다.",
+              "sourceRefs": [
+                {
+                  "range": "10:30-11:30",
+                  "chunk": "c003",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "explanation"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c4-deep-2",
+              "type": "p",
+              "text": "`/`, `//`, `%`는 모두 나눗셈과 관련 있지만 질문이 다릅니다. `/`는 실제 나눈 값을, `//`는 영상 예시에서 온전히 들어가는 정수 몫을, `%`는 나누고 남은 값을 구합니다. 같은 10과 3을 사용해도 각각 결과가 다릅니다.",
+              "sourceRefs": [
+                {
+                  "range": "12:34-14:39",
+                  "chunk": "c003",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "explanation"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c4-deep-3",
+              "type": "p",
+              "text": "Modulus `%`의 친구 그룹 예시는 꽤 중요합니다. 10명을 3명씩 묶으면 세 그룹을 만들고 한 명이 남습니다. `%`가 구하는 것은 바로 그 ‘남는 한 명’입니다. 숫자 기호만 외우기보다 이 장면을 떠올리는 편이 이해하기 쉽습니다.",
+              "sourceRefs": [
+                {
+                  "range": "14:09-14:39",
+                  "chunk": "c003",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "explanation"
             },
             {
               "id": "yt-python-1h-8KCuHHeC_M0-c4-q",
@@ -1109,6 +1239,45 @@
               }
             },
             {
+              "id": "yt-python-1h-8KCuHHeC_M0-c5-deep-1",
+              "type": "p",
+              "text": "`type()`은 값을 바꾸는 함수가 아니라 지금 어떤 자료형인지 확인하는 함수입니다. 반면 `int()`, `float()`, `str()`, `bool()`은 값을 다른 자료형으로 바꾸려고 사용합니다. 확인하는 기능과 바꾸는 기능을 구분하면 덜 헷갈립니다.",
+              "sourceRefs": [
+                {
+                  "range": "15:40-16:43",
+                  "chunk": "c004",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "explanation"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c5-deep-2",
+              "type": "p",
+              "text": "String \"25\"와 Integer 25는 화면에 보이는 모양은 비슷하지만 Python이 다르게 취급합니다. 숫자 25에는 1을 더해 26을 만들 수 있지만, 글자 \"25\"에 글자 \"1\"을 붙이면 \"251\"이 됩니다. 자료형이 왜 중요한지 보여 주는 핵심 예시입니다.",
+              "sourceRefs": [
+                {
+                  "range": "17:14-18:49",
+                  "chunk": "c004",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "explanation"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c5-deep-3",
+              "type": "p",
+              "text": "영상의 Boolean 변환 예시는 ‘내용이 있는 문자열인가, 비어 있는가’를 True/False로 확인하는 아이디어를 보여 줍니다. 여기서는 규칙을 외우기보다, 자료형을 바꾸면 같은 값도 다른 방식으로 판단에 사용할 수 있다는 점을 잡으면 됩니다.",
+              "sourceRefs": [
+                {
+                  "range": "18:50-19:50",
+                  "chunk": "c004",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "explanation"
+            },
+            {
               "id": "yt-python-1h-8KCuHHeC_M0-c5-q",
               "type": "quote",
               "text": "겉으로 25처럼 보여도 Integer 25와 String \"25\"는 서로 다른 종류의 값이라 동작도 달라질 수 있다.",
@@ -1289,6 +1458,45 @@
                 "reconstructed": true,
                 "label": "개념도"
               }
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c6-deep-1",
+              "type": "p",
+              "text": "`input()`은 프로그램이 사용자에게 질문을 던지고 답을 기다리는 기능입니다. Prompt는 그 질문 문장이고, 사용자가 입력한 답은 변수에 저장할 수 있습니다. 그래서 프로그램이 고정된 값만 쓰는 것이 아니라 사람에게서 값을 받아 동작할 수 있게 됩니다.",
+              "sourceRefs": [
+                {
+                  "range": "20:21-21:53",
+                  "chunk": "c005",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "explanation"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c6-deep-2",
+              "type": "p",
+              "text": "입력한 나이가 25라고 해서 Python이 자동으로 숫자라고 판단하지 않는다는 점이 중요합니다. 영상은 input()의 결과를 String으로 설명하므로, 산술 계산을 하려면 우리가 직접 `int()` 같은 변환을 해야 합니다.",
+              "sourceRefs": [
+                {
+                  "range": "21:53-23:27",
+                  "chunk": "c005",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "explanation"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c6-deep-3",
+              "type": "p",
+              "text": "`int(input(...))`는 두 단계를 안쪽부터 실행한다고 생각하면 쉽습니다. 먼저 input()으로 글자를 받고, 그 결과를 int()가 Integer로 바꿉니다. 한 줄로 적었다고 해서 과정이 사라지는 것이 아니라 두 작업을 겹쳐 쓴 것입니다.",
+              "sourceRefs": [
+                {
+                  "range": "23:27-24:27",
+                  "chunk": "c005",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "explanation"
             },
             {
               "id": "yt-python-1h-8KCuHHeC_M0-c6-q",
@@ -1552,6 +1760,58 @@
               }
             },
             {
+              "id": "yt-python-1h-8KCuHHeC_M0-c7-deep-1",
+              "type": "p",
+              "text": "if 문 아래의 들여쓰기는 단순히 보기 좋게 띄어 쓰는 장식이 아닙니다. Python에서는 어떤 코드가 그 조건에 속하는지 구분하는 구조입니다. 조건이 True일 때는 들여쓰기된 블록을 실행하고, False이면 그 블록을 건너뜁니다.",
+              "sourceRefs": [
+                {
+                  "range": "24:58-26:29",
+                  "chunk": "c006",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "explanation"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c7-deep-2",
+              "type": "p",
+              "text": "`=`와 `==`는 초보자가 자주 헷갈리는 부분입니다. `=`는 값을 저장하는 대입이고, `==`는 두 값이 같은지 묻는 비교입니다. 영상에서 age = 0이라고 쓰면 값을 0으로 넣는 뜻이 되고, age == 0이라고 해야 ‘0인가?’를 묻게 됩니다.",
+              "sourceRefs": [
+                {
+                  "range": "27:34-29:07",
+                  "chunk": "c006",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "explanation"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c7-deep-3",
+              "type": "p",
+              "text": "조건 순서 예시는 ‘조건이 맞기만 하면 끝’이 아니라 ‘어느 조건을 먼저 검사하느냐도 프로그램의 의미’라는 점을 보여 줍니다. 70은 18 이상이기도 하고 65 이상이기도 하므로, 더 구체적인 Senior 조건을 먼저 검사해야 영상이 의도한 결과가 나옵니다.",
+              "sourceRefs": [
+                {
+                  "range": "28:06-29:07",
+                  "chunk": "c006",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "explanation"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c7-deep-4",
+              "type": "p",
+              "text": "Ticket Price 예시는 조건문이 실제 계산과 연결되는 모습을 보여 줍니다. 나이를 판단한 뒤 단순 문장만 출력하는 것이 아니라, 그 판단 결과에 따라 가격 계산까지 달라질 수 있습니다. 프로그램의 ‘의사결정’이라는 말이 이런 뜻입니다.",
+              "sourceRefs": [
+                {
+                  "range": "30:44-32:49",
+                  "chunk": "c006",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "explanation"
+            },
+            {
               "id": "yt-python-1h-8KCuHHeC_M0-c7-q",
               "type": "quote",
               "text": "if / elif / else는 위에서부터 조건을 확인해 맞는 한 갈래를 선택한다.",
@@ -1747,6 +2007,45 @@
               }
             },
             {
+              "id": "yt-python-1h-8KCuHHeC_M0-c8-deep-1",
+              "type": "p",
+              "text": "`or` 예시에서는 너무 덥거나 너무 춥거나 비가 오는 세 조건 중 하나만 맞아도 행사를 취소합니다. 여러 이유 중 어느 하나라도 같은 결과를 만들어야 할 때 or가 맞습니다.",
+              "sourceRefs": [
+                {
+                  "range": "33:20-35:22",
+                  "chunk": "c007",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "explanation"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c8-deep-2",
+              "type": "p",
+              "text": "`and`는 반대로 모든 조건이 동시에 맞아야 합니다. ‘덥다’와 ‘맑다’가 둘 다 True일 때만 특정 문장을 출력하는 예시처럼, 두 조건이 함께 성립해야 하는 상황에 사용합니다.",
+              "sourceRefs": [
+                {
+                  "range": "35:23-38:27",
+                  "chunk": "c007",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "explanation"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c8-deep-3",
+              "type": "p",
+              "text": "`not`은 새로운 조건을 하나 더 만드는 것처럼 보이지만 실제로는 기존 True/False 판단을 뒤집습니다. `is_sunny`가 False일 때 `not is_sunny`는 True가 되어 Cloudy 쪽 코드를 실행할 수 있습니다.",
+              "sourceRefs": [
+                {
+                  "range": "38:28-40:20",
+                  "chunk": "c007",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "explanation"
+            },
+            {
               "id": "yt-python-1h-8KCuHHeC_M0-c8-q",
               "type": "quote",
               "text": "or는 하나라도, and는 모두, not은 반대로 판단한다.",
@@ -1940,6 +2239,45 @@
                 "reconstructed": true,
                 "label": "개념도"
               }
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c9-deep-1",
+              "type": "p",
+              "text": "if와 while의 가장 큰 차이는 다시 확인하느냐입니다. if는 조건을 한 번 보고 지나가지만 while은 블록을 실행한 뒤 조건을 다시 검사합니다. 그래서 조건이 계속 True이면 같은 코드가 계속 반복됩니다.",
+              "sourceRefs": [
+                {
+                  "range": "40:21-41:21",
+                  "chunk": "c008",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "explanation"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c9-deep-2",
+              "type": "p",
+              "text": "이름 입력 예시에서는 빈 String이 ‘아직 올바른 이름을 받지 못했다’는 상태 역할을 합니다. while은 그 상태가 계속되는 동안 입력을 다시 요청하고, 사용자가 실제 글자를 입력하면 조건이 False가 되어 빠져나옵니다.",
+              "sourceRefs": [
+                {
+                  "range": "41:22-42:54",
+                  "chunk": "c008",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "explanation"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c9-deep-3",
+              "type": "p",
+              "text": "나이 예시도 구조는 같습니다. 음수 나이는 잘못된 값이므로 while 안에서 계속 다시 묻습니다. 올바른 값이 들어왔을 때만 다음 코드로 넘어갑니다. 이 때문에 영상은 while을 사용자 입력 검증에 유용하다고 설명합니다.",
+              "sourceRefs": [
+                {
+                  "range": "42:55-44:57",
+                  "chunk": "c008",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "explanation"
             },
             {
               "id": "yt-python-1h-8KCuHHeC_M0-c9-q",
@@ -2149,6 +2487,58 @@
                 "reconstructed": true,
                 "label": "개념도"
               }
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c10-deep-1",
+              "type": "p",
+              "text": "for Loop에서 `i`는 특별한 예약어가 아니라 반복할 때 현재 값을 담는 변수 이름입니다. 영상에서는 Index의 첫 글자를 따서 i를 흔히 쓴다고 설명합니다. 다른 이름을 사용해도 반복 원리는 같습니다.",
+              "sourceRefs": [
+                {
+                  "range": "45:28-47:30",
+                  "chunk": "c009",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "explanation"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c10-deep-2",
+              "type": "p",
+              "text": "range의 끝값이 제외된다는 규칙은 처음에는 어색할 수 있습니다. `range(1, 11)`에서 11은 포함하지 않기 때문에 실제 출력은 1부터 10까지입니다. 영상이 시작값 Inclusive, 끝값 Exclusive라고 반복해서 짚는 이유입니다.",
+              "sourceRefs": [
+                {
+                  "range": "46:00-47:30",
+                  "chunk": "c009",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "explanation"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c10-deep-3",
+              "type": "p",
+              "text": "for는 숫자만 세는 문법이 아닙니다. String도 하나씩 순회할 수 있어서 이름의 각 글자를 차례로 꺼낼 수 있습니다. 즉 for의 핵심은 ‘반복 가능한 대상에서 하나씩 꺼내 처리한다’는 데 있습니다.",
+              "sourceRefs": [
+                {
+                  "range": "47:31-48:30",
+                  "chunk": "c009",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "explanation"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c10-deep-4",
+              "type": "p",
+              "text": "Countdown 예시는 range의 Step을 음수로 주면 거꾸로 진행할 수 있다는 점을 보여 줍니다. 여기에 `time.sleep(1)`을 넣어 매 반복 사이에 1초를 기다리게 하면서 실제 타이머처럼 보이게 만듭니다.",
+              "sourceRefs": [
+                {
+                  "range": "48:31-50:05",
+                  "chunk": "c009",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "explanation"
             },
             {
               "id": "yt-python-1h-8KCuHHeC_M0-c10-q",
@@ -2367,6 +2757,45 @@
               "_origin": "source"
             },
             {
+              "id": "yt-python-1h-8KCuHHeC_M0-c11-deep-1",
+              "type": "p",
+              "text": "List를 처음 배울 때는 ‘한 변수 안에 여러 칸이 있다’고 생각하면 쉽습니다. 각 칸에는 apple, orange 같은 값이 들어 있고, Index는 그 칸의 번호입니다. 첫 번째 칸 번호가 0이라는 것이 Python의 중요한 규칙입니다.",
+              "sourceRefs": [
+                {
+                  "range": "50:39-51:41",
+                  "chunk": "c010",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "explanation"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c11-deep-2",
+              "type": "p",
+              "text": "Index Error는 Python이 ‘그 번호의 칸은 존재하지 않는다’고 알려 주는 오류입니다. List 길이를 넘어선 Index를 요청하면 이런 오류가 납니다. 오류 메시지는 잘못된 위치를 찾았다는 단서가 됩니다.",
+              "sourceRefs": [
+                {
+                  "range": "51:41-52:13",
+                  "chunk": "c010",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "explanation"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c11-deep-3",
+              "type": "p",
+              "text": "Mutable이라는 말은 List를 만든 뒤에도 내부 값을 바꿀 수 있다는 뜻입니다. 값 바꾸기, append로 추가하기, remove나 pop으로 없애기, clear로 모두 비우기가 가능한 이유가 이 성질과 연결됩니다.",
+              "sourceRefs": [
+                {
+                  "range": "52:14-54:16",
+                  "chunk": "c010",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "explanation"
+            },
+            {
               "id": "yt-python-1h-8KCuHHeC_M0-c11-q",
               "type": "quote",
               "text": "List는 순서가 있고 Index로 접근하며, 만든 뒤 요소를 바꿀 수 있다.",
@@ -2498,6 +2927,32 @@
               "sourceRefs": [
                 {
                   "range": "54:17-55:48",
+                  "chunk": "c011",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "explanation"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c12-deep-1",
+              "type": "p",
+              "text": "Tuple도 여러 값을 순서대로 담는다는 점은 List와 비슷하지만, 만든 뒤 내용을 바꿀 수 없다는 것이 핵심입니다. 그래서 List에서 가능했던 요소 대입이나 append, remove를 시도하면 영상에서는 오류가 발생합니다.",
+              "sourceRefs": [
+                {
+                  "range": "54:17-55:48",
+                  "chunk": "c011",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "explanation"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c12-deep-2",
+              "type": "p",
+              "text": "초보자 단계에서는 Tuple의 모든 세부 성능 특성을 외우기보다 ‘바뀌면 안 되는 묶음에는 Tuple 같은 선택지가 있다’는 정도로 역할 차이를 잡는 것이 먼저입니다. 영상은 Tuple이 List보다 접근이 빠르다고도 설명합니다.",
+              "sourceRefs": [
+                {
+                  "range": "54:47-55:48",
                   "chunk": "c011",
                   "videoId": "8KCuHHeC_M0"
                 }
@@ -2727,6 +3182,45 @@
               }
             },
             {
+              "id": "yt-python-1h-8KCuHHeC_M0-c13-deep-1",
+              "type": "p",
+              "text": "Set에서 가장 먼저 버려야 할 생각은 ‘첫 번째, 두 번째’라는 고정 순서입니다. 영상은 실행할 때마다 출력 순서가 달라지는 모습을 보여 주며 Unordered라는 특징을 설명합니다. 그래서 Index 0을 기준으로 다루지 않습니다.",
+              "sourceRefs": [
+                {
+                  "range": "55:49-56:50",
+                  "chunk": "c012",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "explanation"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c13-deep-2",
+              "type": "p",
+              "text": "Set은 순서는 없지만 값을 추가하거나 제거할 수 있습니다. 또 같은 coconut을 여러 번 적어도 하나만 남는 예시를 통해 중복을 허용하지 않는 특징을 보여 줍니다.",
+              "sourceRefs": [
+                {
+                  "range": "56:51-57:52",
+                  "chunk": "c012",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "explanation"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c13-deep-3",
+              "type": "p",
+              "text": "Membership Testing은 말이 어렵지만 질문은 단순합니다. ‘이 값이 안에 있나?’를 확인하는 것입니다. `fruit in fruits`는 사용자가 입력한 fruit가 Set 안에 있는지 검사하고, 그 결과에 따라 found / not found를 출력합니다.",
+              "sourceRefs": [
+                {
+                  "range": "57:53-59:58",
+                  "chunk": "c012",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "explanation"
+            },
+            {
               "id": "yt-python-1h-8KCuHHeC_M0-c13-q",
               "type": "quote",
               "text": "List는 바꿀 수 있고 순서가 있으며, Tuple은 바꿀 수 없고, Set은 순서가 없고 중복을 허용하지 않는다.",
@@ -2868,6 +3362,32 @@
                 {
                   "range": "00:01-59:58",
                   "chunk": "c001-c012",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "explanation"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c14-deep-1",
+              "type": "p",
+              "text": "이 한 시간 강의의 개념은 서로 떨어져 있지 않습니다. Variable에 값을 저장하고, input으로 새 값을 받고, Type Casting으로 종류를 맞추고, if로 판단하고, Loop로 반복하고, List·Tuple·Set으로 여러 값을 묶습니다. 앞에서 배운 것이 뒤에서 계속 다시 쓰입니다.",
+              "sourceRefs": [
+                {
+                  "range": "00:01-59:58",
+                  "chunk": "c001-c005",
+                  "videoId": "8KCuHHeC_M0"
+                }
+              ],
+              "_origin": "explanation"
+            },
+            {
+              "id": "yt-python-1h-8KCuHHeC_M0-c14-deep-2",
+              "type": "p",
+              "text": "따라서 처음 읽을 때 모든 문법을 외우려고 할 필요는 없습니다. ‘값을 다룬다 → 조건을 판단한다 → 반복한다 → 여러 값을 모아 다룬다’는 큰 흐름을 먼저 잡고, 실제 코드를 볼 때 각 문법이 어느 역할인지 연결하면 됩니다.",
+              "sourceRefs": [
+                {
+                  "range": "00:01-59:58",
+                  "chunk": "c001-c005",
                   "videoId": "8KCuHHeC_M0"
                 }
               ],
@@ -3403,7 +3923,9 @@
           "sourceCoverage": "English transcript covered from 00:01 through 59:58 in chapter ranges",
           "beginner": "terms expanded at first use without adding later Python topics absent from the video",
           "ambiguity": "automatic English captions contain repetitions; exact repeated ASR fragments were treated as duplication, not new lesson content",
-          "caveat": "structural/source-range review reduces drift but does not mathematically prove translation correctness"
+          "caveat": "structural/source-range review reduces drift but does not mathematically prove translation correctness",
+          "lengthPolicy": "fixed page/character targets are not used; unchanged source content is preserved and difficult passages receive local explanations",
+          "deepening": "40 beginner explanation paragraphs added after detecting that the first assembled draft was too compressed for the one-hour source"
         }
       }
     },
