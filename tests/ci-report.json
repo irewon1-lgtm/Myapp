@@ -1,5 +1,5 @@
 {
-  "startedAt": "2026-09-23T00:21:35.497Z",
+  "startedAt": "2026-09-23T00:27:28.739Z",
   "environment": "GitHub-hosted Chromium against the published Netlify HTTPS app; not physical Galaxy hardware",
   "url": "https://chatbook-library-20260923.netlify.app",
   "checks": [
@@ -225,13 +225,16 @@
     },
     {
       "name": "Disposable sync collection cleaned",
-      "passed": false
+      "passed": true
+    },
+    {
+      "name": "No application JavaScript exceptions",
+      "passed": true,
+      "details": "0 runtime errors"
     }
   ],
   "runtimeErrors": [],
-  "failures": [
-    "Check failed: Disposable sync collection cleaned"
-  ],
-  "status": "failed",
-  "completedAt": "2026-09-23T00:21:54.471Z"
+  "failures": [],
+  "status": "passed",
+  "completedAt": "2026-09-23T00:27:46.458Z"
 }
