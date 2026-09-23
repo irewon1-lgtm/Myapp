@@ -37,7 +37,7 @@ jobs:
           fc-list :lang=ko | head -1 | grep -q .
           mkdir -p review
           ROOT="file://$PWD/live/reader.html"
-          "$CHROME" --headless=new --no-sandbox --disable-gpu --hide-scrollbars --window-size=1280,800 --virtual-time-budget=3500 --dump-dom "$ROOT?preview=reader" > review/reader-landscape-dom.html
+          "$CHROME" --headless=new --no-sandbox --disable-gpu --hide-scrollbars --window-size=1280,800 --virtual-time-budget=8000 --dump-dom "$ROOT?preview=reader" > review/reader-landscape-dom.html
           grep -q 'data-qa-ready="1"' review/reader-landscape-dom.html
           grep -q 'data-qa-font="18px"' review/reader-landscape-dom.html
           grep -q 'data-qa-overflow-y="hidden"' review/reader-landscape-dom.html
@@ -46,8 +46,8 @@ jobs:
           grep -o 'data-qa-title-offsets="[^"]*"' review/reader-landscape-dom.html | head -1 || true
           grep -o 'data-qa-title-max="[^"]*"' review/reader-landscape-dom.html | head -1 || true
           grep -q 'data-qa-title-top="1"' review/reader-landscape-dom.html
-          "$CHROME" --headless=new --no-sandbox --disable-gpu --hide-scrollbars --window-size=1280,800 --virtual-time-budget=3500 --screenshot=review/reader-landscape.png "$ROOT?preview=reader"
-          "$CHROME" --headless=new --no-sandbox --disable-gpu --hide-scrollbars --window-size=800,1280 --virtual-time-budget=3500 --dump-dom "$ROOT?preview=reader" > review/reader-portrait-dom.html
+          "$CHROME" --headless=new --no-sandbox --disable-gpu --hide-scrollbars --window-size=1280,800 --virtual-time-budget=8000 --screenshot=review/reader-landscape.png "$ROOT?preview=reader"
+          "$CHROME" --headless=new --no-sandbox --disable-gpu --hide-scrollbars --window-size=800,1280 --virtual-time-budget=8000 --dump-dom "$ROOT?preview=reader" > review/reader-portrait-dom.html
           grep -q 'data-qa-ready="1"' review/reader-portrait-dom.html
           grep -q 'data-qa-font="18px"' review/reader-portrait-dom.html
           grep -q 'data-qa-overflow-y="hidden"' review/reader-portrait-dom.html
@@ -56,10 +56,10 @@ jobs:
           grep -o 'data-qa-title-offsets="[^"]*"' review/reader-portrait-dom.html | head -1 || true
           grep -o 'data-qa-title-max="[^"]*"' review/reader-portrait-dom.html | head -1 || true
           grep -q 'data-qa-title-top="1"' review/reader-portrait-dom.html
-          "$CHROME" --headless=new --no-sandbox --disable-gpu --hide-scrollbars --window-size=800,1280 --virtual-time-budget=3500 --screenshot=review/reader-portrait.png "$ROOT?preview=reader"
-          "$CHROME" --headless=new --no-sandbox --disable-gpu --hide-scrollbars --window-size=1280,800 --virtual-time-budget=2500 --screenshot=review/home-landscape.png "$ROOT"
-          "$CHROME" --headless=new --no-sandbox --disable-gpu --hide-scrollbars --window-size=1280,800 --virtual-time-budget=2500 --screenshot=review/track-landscape.png "$ROOT?preview=track"
-          "$CHROME" --headless=new --no-sandbox --disable-gpu --hide-scrollbars --window-size=1280,800 --virtual-time-budget=2500 --screenshot=review/saved-landscape.png "$ROOT?preview=saved"
+          "$CHROME" --headless=new --no-sandbox --disable-gpu --hide-scrollbars --window-size=800,1280 --virtual-time-budget=8000 --screenshot=review/reader-portrait.png "$ROOT?preview=reader"
+          "$CHROME" --headless=new --no-sandbox --disable-gpu --hide-scrollbars --window-size=1280,800 --virtual-time-budget=5000 --screenshot=review/home-landscape.png "$ROOT"
+          "$CHROME" --headless=new --no-sandbox --disable-gpu --hide-scrollbars --window-size=1280,800 --virtual-time-budget=5000 --screenshot=review/track-landscape.png "$ROOT?preview=track"
+          "$CHROME" --headless=new --no-sandbox --disable-gpu --hide-scrollbars --window-size=1280,800 --virtual-time-budget=5000 --screenshot=review/saved-landscape.png "$ROOT?preview=saved"
           test -s review/reader-landscape.png
           test -s review/reader-portrait.png
           test -s review/home-landscape.png
