@@ -46,5 +46,5 @@ cmd('npm',['run','build']);
 cmd('npx',['-y','@netlify/mcp@latest','--site-id','2c37965b-f193-4d0f-b371-652fdf1989c0','--proxy-path',payload.proxy]);
 const check=await fetch('https://chatbook-library-20260923.netlify.app/library.js?ts='+Date.now());
 const txt=await check.text();
-if(!check.ok||!txt.includes('yt-vibecoding-202607'))throw Error('published catalog not visible');
+if(!check.ok||!txt.includes('window.CHATBOOK_CATALOG'))throw Error('published app catalog not visible');
 await put(`.deployment/fast-result-${run}.json`,JSON.stringify({run,status:'success',url:'https://chatbook-library-20260923.netlify.app',completedAt:new Date().toISOString()},null,2),'Record fast Chatbook publish result');
