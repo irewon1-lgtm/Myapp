@@ -1,0 +1,25 @@
+name: Chatbook fast publish
+on:
+  push:
+    branches: [chatbook-app-20260923]
+    paths: [.github/workflows/chatbook-fast-publish.yml]
+permissions:
+  contents: write
+concurrency:
+  group: chatbook-fast-publish
+  cancel-in-progress: true
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: chatbook-app-20260923
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Fast build and Netlify publish
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/fast-publish.mjs
