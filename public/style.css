@@ -14,3 +14,23 @@ body.reading{overflow:hidden}.reader{height:100dvh;max-width:1000px;margin:auto;
 /* Soft photographic edges instead of rectangular decorative pictures. */
 .app-shell:before{height:205px;background:var(--hero) right 35px/53% auto no-repeat;mask-image:linear-gradient(to bottom,transparent,black 29%,black 64%,transparent),linear-gradient(to right,transparent 38%,black 78%);mask-composite:intersect;opacity:.7}.footer-quote{background-image:linear-gradient(90deg,var(--soft) 36%,transparent),var(--hero);background-position:right center;background-repeat:no-repeat;background-size:cover,40% auto}.continue-card:after{mask-image:linear-gradient(to left,black,transparent);opacity:.13}
 @media(max-width:650px){.continue-copy h2{font-size:18px;line-height:1.55;letter-spacing:-.7px}.quote-inline{font-size:12px}.feature-card{padding:10px 9px 12px}.feature-card p{font-size:10px;line-height:1.7}.footer-quote{font-size:13px}.page-heading p{max-width:100%;position:relative}}
+
+/* Reader interaction repair 2026-09-23 */
+.reader-viewport{overscroll-behavior-x:contain;touch-action:pan-y pinch-zoom}
+.reader-flow{transition:transform .16s cubic-bezier(.22,.72,.24,1)}
+.reader-flow.no-motion{transition:none!important}
+.reader-flow .chapter-start:not(:first-child){break-before:auto}
+.reader-flow figure{background:#fff;border:1.5px solid #5f625d;border-radius:14px;padding:6px 6px 8px;box-shadow:0 3px 12px #00000012}
+.reader-figure-open{display:block;width:100%;border-radius:10px;overflow:hidden;background:#fff;cursor:zoom-in}
+.reader-flow figure img{width:100%;height:auto!important;max-height:none!important;object-fit:contain!important;background:#fff;filter:contrast(1.08)}
+.reader-flow figcaption{color:#343632!important;font-size:10px!important;text-align:left!important;padding:4px 3px 0}
+.reader-image-modal{background:#fff;border:2px solid #2f322e;border-radius:14px;padding:8px}
+.reader-image-modal img{width:100%;max-height:72dvh;object-fit:contain;background:#fff}
+.reader-image-caption{margin:10px 2px 0!important;color:#252723!important;font-size:13px!important;line-height:1.65!important}
+body[data-theme=dark] .reader-flow figure,body[data-theme=dark] .reader-figure-open,body[data-theme=dark] .reader-image-modal{background:#fff}
+@media(max-width:650px){
+ .reader-viewport{margin-inline:18px}
+ .reader-flow figcaption{font-size:10px!important;line-height:1.55!important}
+ .reader-flow figure{margin:12px 0 18px;padding:5px}
+ .reader-image-modal{padding:5px}
+}
