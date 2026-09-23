@@ -203,6 +203,16 @@ f.run('openPage('+JSON.stringify(p1)+',false,true)');
 assert.equal(f.run('pendingSavedPosition.physical'),3,'continue must request saved physical slide');
 f.run('state.readerDark=false;doAction("toggle-dark",{})');
 assert.equal(f.run('state.readerDark'),true,'dark mode toggle must persist state');
+const chapterClickIndex=course.chapters.findIndex(c=>c.track===2&&c.pages&&c.pages.length);
+if(chapterClickIndex>=0){
+  const chapterFirstId=course.chapters[chapterClickIndex].pages[0].id;
+  f.run('route="track";selectedTrack=2;render()');
+  assert(f.elements.app.innerHTML.includes('data-action="chapter" data-c="'+chapterClickIndex+'"'),'chapter row must be directly clickable');
+  f.run('doAction("chapter",{dataset:{c:"'+chapterClickIndex+'"}})');
+  assert.equal(f.run('state.location'),chapterFirstId,'chapter row must open the first page of that chapter');
+  assert.equal(f.run('current.p'),0,'chapter row must land on logical page index 0');
+}
+
 
 f.run('openPage('+JSON.stringify(p1)+');doAction("bookmark",{})');
 f.run('openPage('+JSON.stringify(p2)+');doAction("bookmark",{})');
@@ -280,7 +290,8 @@ const report={
     'direct draggable reader font-size slider',
     'real Python practice route and execution engine',
     'Python syntax-colored examples with real output panel',
-    'working reader summary, bookmark and practice controls'
+    'working reader summary, bookmark and practice controls',
+    'every chapter row opens that chapter first page'
   ],
   status:'PASS'
 };
