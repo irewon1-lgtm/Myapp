@@ -1,3 +1,4 @@
+# Retry source transfer only; reuse already tested narrative patch.
 name: Chatbook narrative 1.2 upgrade
 on:
   workflow_dispatch:
@@ -17,6 +18,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: chatbook-app-20260923
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: 22
