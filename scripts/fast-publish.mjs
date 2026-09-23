@@ -1,6 +1,7 @@
 import {generateKeyPairSync,privateDecrypt,createDecipheriv,constants} from 'node:crypto';
 import {spawnSync} from 'node:child_process';
 import fs from 'node:fs';
+import {verifyRelease} from './engine-info.mjs';
 
 const repo=process.env.GITHUB_REPOSITORY, branch=process.env.GITHUB_REF_NAME, run=process.env.GITHUB_RUN_ID;
 if(branch!=='chatbook-app-20260923') throw Error('wrong branch');
@@ -41,9 +42,10 @@ for(let i=0;i<60;i++){
 }
 if(!payload?.proxy?.startsWith('https://netlify-mcp.netlify.app/proxy/'))throw Error('deploy handoff missing');
 console.log('::add-mask::'+payload.proxy);
-cmd('npm',['install','--no-audit','--no-fund']);
-cmd('npm',['test']);
+cmd('npm',['ci','--no-audit','--no-fund']);
+// The build itself always runs fresh tests and rejects inconsistent metadata.
 cmd('npm',['run','build']);
+await verifyRelease('dist');
 const localVersion=JSON.parse(fs.readFileSync('dist/version.json','utf8'));
 cmd('npx',['-y','@netlify/mcp@latest','--site-id','2c37965b-f193-4d0f-b371-652fdf1989c0','--proxy-path',payload.proxy]);
 const check=await fetch('https://chatbook-library-20260923.netlify.app/library.js?ts='+Date.now());
@@ -52,5 +54,9 @@ if(!check.ok||!txt.includes('window.CHATBOOK_CATALOG'))throw Error('published ap
 const versionCheck=await fetch('https://chatbook-library-20260923.netlify.app/version.json?ts='+Date.now());
 if(!versionCheck.ok)throw Error('published source manifest not visible');
 const version=await versionCheck.json();
-if(version.sourceDigest!==localVersion.sourceDigest)throw Error('published source digest mismatch');
-await put(`.deployment/fast-result-${run}.json`,JSON.stringify({run,status:'success',url:'https://chatbook-library-20260923.netlify.app',sourceSha:process.env.GITHUB_SHA,sourceDigest:localVersion.sourceDigest,liveSourceSha:version.sourceSha,completedAt:new Date().toISOString()},null,2),'Record fast Chatbook publish result');
+if(version.sourceDigest!==localVersion.sourceDigest||version.releaseId!==localVersion.releaseId)throw Error('published source identity mismatch');
+const infoCheck=await fetch('https://chatbook-library-20260923.netlify.app/engine-info.json?ts='+Date.now());
+if(!infoCheck.ok||!infoCheck.headers.get('content-type')?.includes('application/json'))throw Error('published engine information missing');
+const info=await infoCheck.json();
+if(info.release?.id!==version.releaseId||info.release?.sourceDigest!==version.sourceDigest||info.engine?.version!==version.engineVersion)throw Error('published app/engine information mismatch');
+await put(`.deployment/fast-result-${run}.json`,JSON.stringify({run,status:'success',url:'https://chatbook-library-20260923.netlify.app',sourceSha:process.env.GITHUB_SHA,sourceDigest:localVersion.sourceDigest,releaseId:version.releaseId,engineVersion:info.engine.version,liveSourceSha:version.sourceSha,verificationScope:'Build tests, local release gate and published identity; browser report is a separate subsequent workflow step.',completedAt:new Date().toISOString()},null,2),'Record verified Chatbook release metadata publication');
