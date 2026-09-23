@@ -1218,7 +1218,7 @@ function lessonSection(page,c,index){
   if(page.kind==='summary'){
     if(c.remember)out+='<div class="summary-card"><p>'+esc(c.remember)+'</p></div>';
     if(page.references&&page.references.length){
-      out+='<section class="chapter-references"><h3>참고한 2026 베스트셀러</h3><ol>'+page.references.map(r=>'<li><strong>'+esc(r.book)+'</strong> · '+esc(r.author)+' ('+esc(r.year)+')<br>'+esc(r.note)+'</li>').join('')+'</ol></section>';
+      out+='<section class="chapter-references"><h3>참고한 2025년 이후 검증 도서</h3><ol>'+page.references.map(r=>'<li><strong>'+esc(r.book)+'</strong> · '+esc(r.author)+' ('+esc(r.year)+')<br>'+esc(r.note)+'</li>').join('')+'</ol></section>';
     }
     if(page.sources&&page.sources.length){
       out+='<section class="chapter-references"><h3>영상 출처</h3><ol>'+page.sources.map(r=>'<li><strong>'+esc(r.title)+'</strong>'+(r.url?' · <a href="'+esc(r.url)+'" target="_blank" rel="noopener">원본 영상</a>':'')+(r.note?'<br>'+esc(r.note):'')+'</li>').join('')+'</ol></section>';
