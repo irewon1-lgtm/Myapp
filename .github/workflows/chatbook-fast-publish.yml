@@ -1,4 +1,4 @@
-# publish dark mode toggle and reader-only wake lock
+# publish swipeable recent books carousel
 name: Chatbook fast publish
 on:
   workflow_dispatch:
