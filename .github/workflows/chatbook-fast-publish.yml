@@ -1,6 +1,7 @@
 # one final structural publish: remote catalog mode
 name: Chatbook fast publish
 on:
+  workflow_dispatch:
   push:
     branches: [chatbook-app-20260923]
     paths: [.github/workflows/chatbook-fast-publish.yml]
