@@ -1465,7 +1465,7 @@ function layoutReader(){
       document.body.dataset.qaFooterVisible=(!fr||fr.bottom<=innerHeight+1?'1':'0');
       document.body.dataset.qaViewport=String(innerWidth)+'x'+String(innerHeight);
       document.body.dataset.qaColumnFill='auto';
-      const qaWrap=document.querySelector('.reader-paper-wrap'),topic=document.querySelector('.topic-title');
+      const qaWrap=document.querySelector('.reader-paper-wrap'),topic=document.querySelector('.topic-header');
       const wrapRect=qaWrap&&qaWrap.getBoundingClientRect?qaWrap.getBoundingClientRect():null;
       const topicRect=topic&&topic.getBoundingClientRect?topic.getBoundingClientRect():null;
       const titleOffset=(wrapRect&&topicRect)?Math.round(topicRect.top-wrapRect.top):9999;
