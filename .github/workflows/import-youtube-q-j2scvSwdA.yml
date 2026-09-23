@@ -39,7 +39,7 @@ jobs:
           else: p.unlink(missing_ok=True)
           PY
           if [ ! -s imports/q-j2scvSwdA/metadata.json ]; then
-            for base in https://pipedapi.kavin.rocks https://pipedapi.leptons.xyz https://pipedapi.nosebs.ru; do
+            for base in https://pipedapi-libre.kavin.rocks https://piped-api.privacy.com.de https://pipedapi.adminforge.de https://api.piped.yt https://pipedapi.drgns.space https://pipedapi.owo.si https://pipedapi.ducks.party https://piped-api.codespace.cz https://pipedapi.reallyaweso.me https://api.piped.private.coffee https://pipedapi.darkness.services https://pipedapi.orangenet.cc; do
               echo "Trying $base"
               if curl -fL --retry 1 --connect-timeout 10 --max-time 35 "$base/streams/q-j2scvSwdA" -o imports/q-j2scvSwdA/provider.tmp; then
                 if python - <<'PY'
