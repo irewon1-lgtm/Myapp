@@ -1,4 +1,4 @@
-# Publish approved narrative 1.2, Python textbook v3, app 1.0.3.
+# Publish the existing Chatbook site with source-generated release metadata.
 name: Chatbook fast publish
 on:
   workflow_dispatch:
@@ -21,7 +21,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Fast build and Netlify publish
+      - name: Test, validate release information and publish existing site
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: node scripts/fast-publish.mjs
@@ -29,13 +29,16 @@ jobs:
         run: |
           npm install --no-save --package-lock=false playwright
           npx playwright install --with-deps chromium
-      - name: Verify live HTTPS content, layout and persistence
-        run: node tests/narrative-live.mjs
+      - name: Verify current HTTPS release and metadata-independent reader
+        run: node tests/release-live.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: chatbook-narrative-production-evidence
+          name: chatbook-release-production-evidence
           path: |
-            tests/narrative-live-results/
+            tests/release-live-results/
             dist/version.json
+            dist/engine-info.json
+            dist/engine-info.html
+            dist/llms.txt
           retention-days: 3
