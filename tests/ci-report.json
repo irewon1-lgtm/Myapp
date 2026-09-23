@@ -1,0 +1,237 @@
+{
+  "startedAt": "2026-09-23T00:21:35.497Z",
+  "environment": "GitHub-hosted Chromium against the published Netlify HTTPS app; not physical Galaxy hardware",
+  "url": "https://chatbook-library-20260923.netlify.app",
+  "checks": [
+    {
+      "name": "Published HTTPS document",
+      "passed": true
+    },
+    {
+      "name": "Real browser persistent storage",
+      "passed": true
+    },
+    {
+      "name": "Nine original demonstration books",
+      "passed": true
+    },
+    {
+      "name": "home 360px no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "library 360px no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "exports 360px no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "quiz 360px no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "settings 360px no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "review 360px no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "home 412px no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "library 412px no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "exports 412px no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "quiz 412px no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "settings 412px no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "review 412px no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "home 768px no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "library 768px no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "exports 768px no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "quiz 768px no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "settings 768px no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "review 768px no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "home 1366px no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "library 1366px no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "exports 1366px no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "quiz 1366px no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "settings 1366px no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "review 1366px no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "Library title search",
+      "passed": true
+    },
+    {
+      "name": "Empty library search state",
+      "passed": true
+    },
+    {
+      "name": "Reader measured pagination",
+      "passed": true
+    },
+    {
+      "name": "Next page saved",
+      "passed": true
+    },
+    {
+      "name": "Bookmark and note stored",
+      "passed": true
+    },
+    {
+      "name": "Page position survives real reload",
+      "passed": true
+    },
+    {
+      "name": "Bookmark and note survive real reload",
+      "passed": true
+    },
+    {
+      "name": "TOC opens correct chapter",
+      "passed": true
+    },
+    {
+      "name": "Font reflow retains chapter",
+      "passed": true
+    },
+    {
+      "name": "Quiz actual 2 out of 3 score",
+      "passed": true
+    },
+    {
+      "name": "Wrong answer enters review queue",
+      "passed": true
+    },
+    {
+      "name": "Review answer rescheduled",
+      "passed": true
+    },
+    {
+      "name": "Theme survives real reload",
+      "passed": true
+    },
+    {
+      "name": "Real pdf file download",
+      "passed": true,
+      "details": "1833147 bytes"
+    },
+    {
+      "name": "Real summary file download",
+      "passed": true,
+      "details": "238442 bytes"
+    },
+    {
+      "name": "Real print file download",
+      "passed": true,
+      "details": "241134 bytes"
+    },
+    {
+      "name": "Real pptx file download",
+      "passed": true,
+      "details": "226700 bytes"
+    },
+    {
+      "name": "Four stored output records",
+      "passed": true
+    },
+    {
+      "name": "IndexedDB output survives real reload",
+      "passed": true
+    },
+    {
+      "name": "Backup contains reader records",
+      "passed": true
+    },
+    {
+      "name": "Offline cache save state",
+      "passed": true
+    },
+    {
+      "name": "Offline reopening contains all nine books",
+      "passed": true
+    },
+    {
+      "name": "Offline page reader operates",
+      "passed": true
+    },
+    {
+      "name": "Sync rejects unauthenticated requests",
+      "passed": true
+    },
+    {
+      "name": "Second isolated browser decrypts shared note",
+      "passed": true
+    },
+    {
+      "name": "Second-device edit synchronizes back",
+      "passed": true
+    },
+    {
+      "name": "Server stores encrypted payload only",
+      "passed": true
+    },
+    {
+      "name": "Disposable sync collection cleaned",
+      "passed": false
+    }
+  ],
+  "runtimeErrors": [],
+  "failures": [
+    "Check failed: Disposable sync collection cleaned"
+  ],
+  "status": "failed",
+  "completedAt": "2026-09-23T00:21:54.471Z"
+}
