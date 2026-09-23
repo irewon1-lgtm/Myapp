@@ -1116,7 +1116,7 @@ function search(){
 }
 function settings(){
   return '<div class="screen"><main class="shell"><div class="top-row"><button class="back-btn" data-action="home">←</button><div class="track-name">설정</div></div>'+
-    '<section class="panel"><h3>읽기 화면</h3><p>본문 크기 18px · 줄간격 1.68 · 페이지별 자동 축소 없음. 화면 크기에 맞춰 같은 규격으로 페이지를 나눕니다.</p></section>'+
+    '<section class="panel"><h3>읽기 화면</h3><p>리더 상단의 <strong>•••</strong> 메뉴에서 다크 모드와 글자 크기를 직접 조절할 수 있습니다.</p></section>'+
     '<section class="panel"><h3>자동 업데이트</h3><p>'+esc(updateStatus)+'</p><div class="actions"><button class="small-btn" data-action="refresh">지금 확인</button><button class="small-btn" data-action="apply">받은 변경 적용</button></div></section>'+
     '<section class="panel"><h3>학습 기록</h3><p>읽던 위치, 북마크, 메모, 완료 기록을 파일로 저장하거나 복원합니다.</p><div class="actions"><button class="small-btn" data-action="export">기록 내보내기</button><button class="small-btn" data-action="import">기록 가져오기</button></div><input id="import-file" type="file" accept="application/json" hidden></section>'+
     '<section class="panel"><h3>기존 화면</h3><p>APK에 포함된 이전 화면을 열 수 있습니다.</p><div class="actions"><button class="small-btn" data-action="legacy">이전 앱 화면 열기</button></div></section>'+
@@ -1651,6 +1651,10 @@ function doAction(action,el){
   if(action==='open'){openPage(el.dataset.id);return}
   if(action==='prev'){changePhysical(-1);return}
   if(action==='next'){changePhysical(1);return}
+  if(action==='focus'){
+    pendingPhysicalRatio=physicalPages>1?physicalPage/(physicalPages-1):0;
+    focus=!focus;render();return;
+  }
   if(action==='reader-menu'){
     readerMenuOpen=!readerMenuOpen;
     const menu=document.getElementById('reader-menu');if(menu)menu.hidden=!readerMenuOpen;
