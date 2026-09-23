@@ -20,6 +20,7 @@
  case'reader-back':C.go('library');break;
  case'reader-prev':C.Reader.goPage(C.Reader.page-1);break;
  case'reader-next':C.Reader.goPage(C.Reader.page+1);break;
+ case'reader-image':{const block=C.Reader.book?.chapters?.flatMap(ch=>ch.blocks||[]).find(bl=>bl.id===d.blockId);if(block?.src)C.showModal('그림 크게 보기',`<div class="reader-image-modal"><img src="${C.art(block.src)}" alt="${C.e(block.caption||'강의 이해를 돕는 그림')}"/></div>${block.caption?`<p class="reader-image-caption">${C.e(block.caption)}</p>`:''}`,true);break;}
  case'reader-note':C.selectionText='';C.showNote();break;
  case'reader-bookmark':C.Reader.bookmark();break;
  case'selection-save':{if(!C.selectionText)return;C.set('annotation:highlight:'+C.uid(),{kind:'highlight',bookId:C.Reader.book.id,anchor:C.selectionAnchor,excerpt:C.selectionText});const anchor=C.selectionAnchor;C.selectionText='';C.$('#selection')?.remove();C.read(C.Reader.book.id,anchor);C.toast('문장을 저장했어요.');break;}
