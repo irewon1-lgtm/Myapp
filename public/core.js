@@ -1,6 +1,6 @@
 /* Chatbook v1.0 — original, local-first reader. No API keys or AI generation. */
 (()=>{'use strict';
- const C=window.CB={version:'1.0.1',catalog:window.CHATBOOK_CATALOG,route:'home',modal:null,pendingAnchor:null,busy:false,installed:false,exporting:false};
+ const C=window.CB={version:'1.0.2',catalog:window.CHATBOOK_CATALOG,route:'home',modal:null,pendingAnchor:null,busy:false,installed:false,exporting:false};
 
  const memoryStorage=new Map();C.persistent=true;C.storage={getItem(k){try{return window.localStorage.getItem(k);}catch{C.persistent=false;return memoryStorage.get(k)??null;}},setItem(k,v){try{window.localStorage.setItem(k,String(v));}catch{C.persistent=false;memoryStorage.set(k,String(v));}},removeItem(k){try{window.localStorage.removeItem(k);}catch{memoryStorage.delete(k);}}};
  C.uid=()=>typeof crypto.randomUUID==='function'?crypto.randomUUID():[...crypto.getRandomValues(new Uint8Array(16))].map(n=>n.toString(16).padStart(2,'0')).join('');
