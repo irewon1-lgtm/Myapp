@@ -4,7 +4,7 @@
 
 Netlify project: chatbook-library-20260923
 Site ID: 2c37965b-f193-4d0f-b371-652fdf1989c0
-버전: 1.0.1 (2026-09-23)
+버전: 1.0.2 (2026-09-23)
 
 ## 다음 대화에서 이어서 수정할 때
 
@@ -38,9 +38,9 @@ Site ID: 2c37965b-f193-4d0f-b371-652fdf1989c0
 
 - 챗북의 정본은 이 브랜치 `chatbook-app-20260923`입니다.
 - 소스 변경은 `Chatbook source verification` 워크플로에서 자동으로 테스트·빌드됩니다.
-- 모든 배포 빌드는 `/version.json`에 앱 버전, Git branch, 정확한 source SHA, build 시각을 기록합니다.
+- 모든 배포 빌드는 `/version.json`에 앱 버전, source branch, source SHA(전달 가능한 경우), 결정적 sourceDigest, build 시각을 기록합니다.
 - 앱의 ‘챗북에 대하여’ 화면에도 배포된 source SHA 앞 7자리를 표시합니다.
-- 빠른 배포는 배포 후 운영 주소의 `/version.json`이 트리거한 Git SHA와 일치하지 않으면 실패 처리합니다.
+- 빠른 배포는 로컬 빌드와 운영 `/version.json`의 sourceDigest가 일치하지 않으면 실패 처리하고, 성공 결과에는 트리거한 Git SHA와 sourceDigest를 함께 기록합니다.
 - 기존 `/api/sync`는 구버전 앱 호환용으로 유지하고, 새 앱은 pull/push/reset 전용 엔드포인트를 사용합니다.
 
 ## 실제 검증
