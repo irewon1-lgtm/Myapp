@@ -1,4 +1,4 @@
-# publish clean source-locked beginner frontend textbook v5
+# publish Python 1-hour beginner textbook from locked English source
 name: Chatbook fast publish
 on:
   workflow_dispatch:
