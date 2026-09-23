@@ -13,37 +13,75 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: chatbook-app-20260923
-      - name: Download low-resolution video and extract lesson frames
+      - name: Try storyboard and video-frame extraction without failing source import
         shell: bash
         run: |
-          set -euo pipefail
+          set -u
           ID='8KCuHHeC_M0'
-          OUT="exact_source/$ID/frames"
+          OUT="exact_source/$ID/frame_candidates"
           mkdir -p "$OUT"
-          python -m pip install -q -U yt-dlp
-          yt-dlp --no-warnings -f "worstvideo[height>=360][ext=mp4]/worstvideo[ext=mp4]/worst[ext=mp4]/worst" "https://www.youtube.com/watch?v=$ID" -o /tmp/source.%(ext)s
-          SRC=$(ls /tmp/source.* | head -1)
-          i=1
-          for ts in 00:03:42 00:05:48 00:10:30 00:15:40 00:21:53 00:25:28 00:33:51 00:41:53 00:46:30 00:50:39 00:54:17 00:55:49 00:57:53; do
-            ffmpeg -loglevel error -y -ss "$ts" -i "$SRC" -frames:v 1 -vf "scale='min(960,iw)':-2" -q:v 3 "$OUT/frame-$(printf '%02d' $i).jpg"
-            i=$((i+1))
-          done
-          python - <<'PY'
+          LOG="$OUT/extraction-log.txt"
+          : > "$LOG"
+          python -m pip install -q -U yt-dlp pillow >>"$LOG" 2>&1 || true
+          echo "== storyboard attempt ==" >>"$LOG"
+          yt-dlp -v --skip-download -f "sb2/sb1/sb0" "https://www.youtube.com/watch?v=$ID" -o "/tmp/storyboard.%(ext)s" >>"$LOG" 2>&1 || true
+          python - <<'PY' >>"$LOG" 2>&1
           from pathlib import Path
-          import json
-          root=Path("exact_source/8KCuHHeC_M0/frames")
-          stamps=["00:03:42","00:05:48","00:10:30","00:15:40","00:21:53","00:25:28","00:33:51","00:41:53","00:46:30","00:50:39","00:54:17","00:55:49","00:57:53"]
-          files=sorted(p.name for p in root.glob("frame-*.jpg"))
-          assert len(files)==len(stamps), (len(files),len(stamps))
-          meta=[{"file":f,"timestamp":t} for f,t in zip(files,stamps)]
-          (root/"frames.json").write_text(json.dumps(meta,ensure_ascii=False,indent=2))
-          print(json.dumps(meta,ensure_ascii=False))
+          import email,io,json
+          from PIL import Image
+          out=Path("exact_source/8KCuHHeC_M0/frame_candidates")
+          files=[]
+          for mhtml in Path("/tmp").glob("storyboard*.mhtml"):
+              msg=email.message_from_bytes(mhtml.read_bytes())
+              for part in msg.walk():
+                  if part.get_content_type() not in ("image/jpeg","image/webp","image/png"): continue
+                  data=part.get_payload(decode=True)
+                  if not data: continue
+                  try: sheet=Image.open(io.BytesIO(data)).convert("RGB")
+                  except: continue
+                  w,h=sheet.size
+                  best=None
+                  for cols in (5,10):
+                      if w%cols: continue
+                      cw=w//cols; ch=round(cw*9/16); rows=h//ch if ch else 0
+                      if 1<=rows<=10:
+                          score=abs(h-rows*ch)
+                          if best is None or score<best[0]: best=(score,cols,rows,cw,ch)
+                  if not best: continue
+                  _,cols,rows,cw,ch=best
+                  for y in range(rows):
+                      for x in range(cols):
+                          crop=sheet.crop((x*cw,y*ch,(x+1)*cw,(y+1)*ch))
+                          p=out/f"story-{len(files):04d}.jpg"
+                          crop.save(p,"JPEG",quality=86)
+                          files.append(p.name)
+          (out/"storyboard-result.json").write_text(json.dumps({"frameCount":len(files),"files":files},indent=2))
+          print("storyboard frames",len(files))
           PY
-      - name: Commit frames
+          COUNT=$(python - <<'PY'
+          import json
+          print(json.load(open("exact_source/8KCuHHeC_M0/frame_candidates/storyboard-result.json"))["frameCount"])
+          PY
+          )
+          if [ "$COUNT" -eq 0 ]; then
+            echo "== low-res video fallback ==" >>"$LOG"
+            yt-dlp -v --extractor-args "youtube:player_client=web_embedded,android_vr" -S "res:360" -f "bv*[height<=480]/b[height<=480]/worst" "https://www.youtube.com/watch?v=$ID" -o "/tmp/source.%(ext)s" >>"$LOG" 2>&1 || true
+            SRC=$(ls /tmp/source.* 2>/dev/null | head -1 || true)
+            if [ -n "$SRC" ]; then
+              i=1
+              for ts in 00:03:42 00:05:48 00:10:30 00:15:40 00:21:53 00:25:28 00:33:51 00:41:53 00:46:30 00:50:39 00:54:17 00:55:49 00:57:53; do
+                ffmpeg -loglevel error -y -ss "$ts" -i "$SRC" -frames:v 1 -vf "scale='min(960,iw)':-2" -q:v 3 "$OUT/target-$(printf '%02d' $i).jpg" >>"$LOG" 2>&1 || true
+                i=$((i+1))
+              done
+            fi
+          fi
+          echo "files:" >>"$LOG"
+          find "$OUT" -maxdepth 1 -type f -printf '%f %s bytes\n' | sort >>"$LOG"
+      - name: Commit extraction result
         shell: bash
         run: |
           git config user.name 'Chatbook Frame Import'
           git config user.email 'chatbook-source@users.noreply.github.com'
-          git add exact_source/8KCuHHeC_M0/frames
-          git commit -m 'Add targeted source frames for 8KCuHHeC_M0'
+          git add exact_source/8KCuHHeC_M0/frame_candidates
+          git commit -m 'Record frame extraction result for 8KCuHHeC_M0' || exit 0
           git push origin chatbook-app-20260923
