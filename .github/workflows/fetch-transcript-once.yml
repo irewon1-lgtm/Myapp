@@ -1,0 +1,31 @@
+name: Fetch exact transcript once
+on:
+  push:
+    branches: [chatbook-app-20260923]
+    paths: [.github/workflows/fetch-transcript-once.yml]
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: chatbook-app-20260923
+      - name: Fetch timestamped transcript
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p exact_source/q-j2scvSwdA
+          curl -fL --retry 1 --max-time 60             'https://youtube-transcript.ai/transcript/q-j2scvSwdA.txt?lang=ko'             -o exact_source/q-j2scvSwdA/transcript.md
+          test $(wc -c < exact_source/q-j2scvSwdA/transcript.md) -gt 1000
+          head -n 12 exact_source/q-j2scvSwdA/transcript.md
+      - name: Commit transcript
+        shell: bash
+        run: |
+          git config user.name 'Chatbook Transcript Import'
+          git config user.email 'chatbook-transcript@users.noreply.github.com'
+          git add exact_source/q-j2scvSwdA/transcript.md
+          git commit -m 'Fetch exact timestamped transcript for requested video'
+          git push origin chatbook-app-20260923
