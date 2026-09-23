@@ -1,0 +1,44 @@
+name: Import YouTube source q-j2scvSwdA
+on:
+  push:
+    branches: [chatbook-app-20260923]
+    paths: [.github/workflows/import-youtube-q-j2scvSwdA.yml]
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: chatbook-app-20260923
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Fetch video metadata and captions
+        shell: bash
+        run: |
+          set -euxo pipefail
+          python -m pip install -q yt-dlp
+          mkdir -p imports/q-j2scvSwdA
+          URL='https://www.youtube.com/watch?v=q-j2scvSwdA'
+          yt-dlp --no-playlist --skip-download --write-info-json --write-subs --write-auto-subs             --sub-langs 'ko.*,ko,en.*,en' --sub-format vtt             -o 'imports/q-j2scvSwdA/video.%(ext)s' "$URL" || true
+          yt-dlp --no-playlist --skip-download --dump-single-json "$URL" > imports/q-j2scvSwdA/metadata.json || true
+          if [ ! -s imports/q-j2scvSwdA/metadata.json ]; then
+            for base in https://pipedapi.kavin.rocks https://pipedapi.leptons.xyz https://pipedapi.nosebs.ru; do
+              curl -fL --max-time 20 "$base/streams/q-j2scvSwdA" -o imports/q-j2scvSwdA/piped.json && break || true
+            done
+          fi
+          find imports/q-j2scvSwdA -maxdepth 1 -type f -printf '%f %s bytes\n' | sort
+          test -s imports/q-j2scvSwdA/metadata.json -o -s imports/q-j2scvSwdA/piped.json
+      - name: Commit retrieved source material
+        shell: bash
+        run: |
+          git config user.name 'Chatbook Source Importer'
+          git config user.email 'chatbook-import@users.noreply.github.com'
+          git add imports/q-j2scvSwdA
+          if ! git diff --cached --quiet; then
+            git commit -m 'Import source metadata and captions for q-j2scvSwdA'
+            git push origin chatbook-app-20260923
+          fi
