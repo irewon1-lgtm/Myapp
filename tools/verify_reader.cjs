@@ -160,8 +160,8 @@ function fixture(legacy){
   return {ctx,events,elements,storage,run:s=>vm.runInContext(s,ctx)};
 }
 const f=fixture();
-assert(f.elements.app.innerHTML.includes('코딩 로드맵'));
-assert(f.elements.app.innerHTML.includes('이어 학습하기'));
+assert(f.elements.app.innerHTML.includes('코딩로드맵'));
+assert(f.elements.app.innerHTML.includes('이어 읽기'));
 for(const c of course.chapters)for(const p of c.pages){
   f.run('openPage('+JSON.stringify(p.id)+')');
   assert(f.elements.app.innerHTML.includes('reader-shell'));
