@@ -47,4 +47,8 @@ cmd('npx',['-y','@netlify/mcp@latest','--site-id','2c37965b-f193-4d0f-b371-652fd
 const check=await fetch('https://chatbook-library-20260923.netlify.app/library.js?ts='+Date.now());
 const txt=await check.text();
 if(!check.ok||!txt.includes('window.CHATBOOK_CATALOG'))throw Error('published app catalog not visible');
-await put(`.deployment/fast-result-${run}.json`,JSON.stringify({run,status:'success',url:'https://chatbook-library-20260923.netlify.app',completedAt:new Date().toISOString()},null,2),'Record fast Chatbook publish result');
+const versionCheck=await fetch('https://chatbook-library-20260923.netlify.app/version.json?ts='+Date.now());
+if(!versionCheck.ok)throw Error('published source manifest not visible');
+const version=await versionCheck.json();
+if(version.sourceSha!==process.env.GITHUB_SHA)throw Error('published source SHA mismatch');
+await put(`.deployment/fast-result-${run}.json`,JSON.stringify({run,status:'success',url:'https://chatbook-library-20260923.netlify.app',sourceSha:process.env.GITHUB_SHA,completedAt:new Date().toISOString()},null,2),'Record fast Chatbook publish result');
