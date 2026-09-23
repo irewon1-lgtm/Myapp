@@ -1,0 +1,30 @@
+{
+  "engineVersion": "1.0",
+  "bookId": "yt-frontend-roots-Kl5EcYd3G2E",
+  "bookVersion": 4,
+  "catalogVersion": "2026-09-23.10",
+  "checks": {
+    "everyChapterHasSourceRefs": true,
+    "everyParagraphHasSourceRefs": true,
+    "sourceAndExplanationSeparated": true,
+    "glossaryPresent": true,
+    "imagesAreLabelledDiagrams": true,
+    "noYoutubeThumbnailAsLessonImage": true,
+    "questionCountPreserved": true
+  },
+  "counts": {
+    "chapters": 16,
+    "sourceParagraphs": 150,
+    "beginnerExplanationParagraphs": 49,
+    "totalParagraphs": 199,
+    "glossaryTerms": 43,
+    "diagrams": 12,
+    "questions": 33,
+    "bodyChars": 19682
+  },
+  "limitations": [
+    "구조·출처 연결 검사는 의미 진실성을 수학적으로 보증하지 않음",
+    "실제 영상 프레임 전수 검토는 하지 않았으며 이번 판의 삽화는 개념도만 사용",
+    "자동자막 자체의 오인식 가능성은 남아 있음"
+  ]
+}
