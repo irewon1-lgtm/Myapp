@@ -1,4 +1,4 @@
-# Publish the existing Chatbook site with source-generated release metadata.
+# Publish the existing Chatbook site with source-generated metadata and canonical HTML cache exclusions.
 name: Chatbook fast publish
 on:
   workflow_dispatch:
