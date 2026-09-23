@@ -1,0 +1,78 @@
+name: Import 0SGfDKMLdaI source once
+on:
+  push:
+    branches: [chatbook-app-20260923]
+    paths: [.github/workflows/import-0SGfDKMLdaI-once.yml]
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: chatbook-app-20260923
+      - name: Fetch transcript metadata and real storyboard frames
+        shell: bash
+        run: |
+          set -euo pipefail
+          ID='0SGfDKMLdaI'
+          OUT="exact_source/$ID"
+          mkdir -p "$OUT/frames"
+          curl -fL --retry 1 --max-time 60 "https://youtube-transcript.ai/transcript/$ID.txt?lang=ko" -o "$OUT/transcript.md"
+          test $(wc -c < "$OUT/transcript.md") -gt 1000
+          curl -fL --max-time 30 "https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=$ID&format=json" -o "$OUT/oembed.json"
+          python -m pip install -q -U yt-dlp pillow
+          yt-dlp --no-warnings --skip-download --write-info-json "https://www.youtube.com/watch?v=$ID" -o "$OUT/video" || true
+          yt-dlp --no-warnings -f "sb2/sb1/sb0" "https://www.youtube.com/watch?v=$ID" -o "$OUT/storyboard.%(ext)s" || true
+          python - <<'PY'
+          from pathlib import Path
+          import email, re, io, json, base64
+          from PIL import Image
+          root=Path("exact_source/0SGfDKMLdaI")
+          mhtml=next(root.glob("storyboard*.mhtml"),None)
+          frames=[]
+          if mhtml:
+              msg=email.message_from_bytes(mhtml.read_bytes())
+              n=0
+              for part in msg.walk():
+                  ct=part.get_content_type()
+                  if ct not in ("image/jpeg","image/webp","image/png"): continue
+                  data=part.get_payload(decode=True)
+                  if not data: continue
+                  try:
+                      sheet=Image.open(io.BytesIO(data)).convert("RGB")
+                  except: continue
+                  w,h=sheet.size
+                  # yt-dlp storyboard common grids: 5x5 or 10x10. Infer square cells from 16:9-ish tiles.
+                  candidates=[]
+                  for cols in (5,10):
+                      if w%cols: continue
+                      cw=w//cols
+                      ch=round(cw*9/16)
+                      if ch>0 and h>=ch:
+                          rows=h//ch
+                          if 1<=rows<=10: candidates.append((abs(h-rows*ch),cols,rows,cw,ch))
+                  if not candidates: continue
+                  _,cols,rows,cw,ch=min(candidates)
+                  for y in range(rows):
+                      for x in range(cols):
+                          crop=sheet.crop((x*cw,y*ch,(x+1)*cw,(y+1)*ch))
+                          if crop.getbbox() is None: continue
+                          p=root/"frames"/f"frame-{n:04d}.jpg"
+                          crop.save(p,"JPEG",quality=88)
+                          n+=1
+              frames=[p.name for p in sorted((root/"frames").glob("*.jpg"))]
+          (root/"storyboard-result.json").write_text(json.dumps({"frameCount":len(frames),"files":frames},ensure_ascii=False,indent=2))
+          print("frames",len(frames))
+          print((root/"transcript.md").read_text()[:500])
+          PY
+      - name: Commit source
+        shell: bash
+        run: |
+          git config user.name 'Chatbook Source Import'
+          git config user.email 'chatbook-source@users.noreply.github.com'
+          git add exact_source/0SGfDKMLdaI
+          git commit -m 'Import exact source for 0SGfDKMLdaI'
+          git push origin chatbook-app-20260923
