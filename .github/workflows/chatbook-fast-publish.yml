@@ -1,4 +1,4 @@
-# publish frontend textbook with Chatbook Engine 1.0 beginner pass
+# publish finalized engine 1.0 frontend textbook
 name: Chatbook fast publish
 on:
   workflow_dispatch:
