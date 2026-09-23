@@ -5672,7 +5672,7 @@
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c5-p2",
-          "code": "text = \"Python\"\nprint(text[0])\nprint(text[0:3])\nprint(text[-1])",
+          "code": "# 용어를 실제 코드에서 확인: 코드에서 자주 만나는 표현\ntext = \"Python\"\nprint(text[0])\nprint(text[0:3])\nprint(text[-1])",
           "codeNote": "첫 글자는 P, 0:3은 Pyt, 마지막 글자는 n입니다.",
           "codeExplain": [
             "1행 「text = \"Python\"」 — 문자열 \"Python\"을 구한 뒤 결과를 text라는 변수에 저장합니다. 이 줄 이후에는 text라는 이름으로 방금 만든 값을 다시 사용할 수 있습니다. split, strip, f-string를 실제 코드와 연결해서 보면 1행은 \"Python\"에서 만든 결과를 text에 저장하거나 갱신하는 줄입니다.",
@@ -5700,7 +5700,7 @@
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c5-p3",
-          "code": "text = \"Python\"\nprint(text[0])\nprint(text[0:3])\nprint(text[-1])",
+          "code": "# 개념을 코드로 확인: 문자열도 순서가 있는 데이터입니다\ntext = \"Python\"\nprint(text[0])\nprint(text[0:3])\nprint(text[-1])",
           "codeNote": "첫 글자는 P, 0:3은 Pyt, 마지막 글자는 n입니다.",
           "codeExplain": [
             "1행 「text = \"Python\"」 — 문자열 \"Python\"을 구한 뒤 결과를 text라는 변수에 저장합니다. 이 줄 이후에는 text라는 이름으로 방금 만든 값을 다시 사용할 수 있습니다. ‘문자열도 순서가 있는 데이터입니다’ 내용을 설명하는 코드에서는 1행은 \"Python\"에서 만든 결과를 text에 저장하거나 갱신하는 줄입니다.",
@@ -5784,7 +5784,7 @@
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c5-p6",
-          "code": "raw = \"  YES  \"\nclean = raw.strip().lower()\nprint(clean)\nprint(clean == \"yes\")",
+          "code": "# 개념을 코드로 확인: 문자열 검색과 비교는 대소문자와 공백을 고려합니다\nraw = \"  YES  \"\nclean = raw.strip().lower()\nprint(clean)\nprint(clean == \"yes\")",
           "codeNote": "양끝 공백을 없애고 소문자로 바꿔 \"yes\"와 안정적으로 비교합니다.",
           "codeExplain": [
             "1행 「raw = \"  YES  \"」 — 문자열 \"  YES  \"을 구한 뒤 결과를 raw라는 변수에 저장합니다. 이 줄 이후에는 raw라는 이름으로 방금 만든 값을 다시 사용할 수 있습니다. ‘문자열 검색과 비교는 대소문자와 공백을 고려합니다’ 내용을 설명하는 코드에서는 1행은 \"  YES  \"에서 만든 결과를 raw에 저장하거나 갱신하는 줄입니다.",
@@ -5839,7 +5839,7 @@
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c5-p8",
-          "code": "text = \"Python\"\nprint(text[0])\nprint(text[0:3])\nprint(text[-1])",
+          "code": "# 개념을 코드로 확인: 문자열 처리는 작은 단계로 나누면 오류가 줄어듭니다\ntext = \"Python\"\nprint(text[0])\nprint(text[0:3])\nprint(text[-1])",
           "codeNote": "첫 글자는 P, 0:3은 Pyt, 마지막 글자는 n입니다.",
           "codeExplain": [
             "1행 「text = \"Python\"」 — 문자열 \"Python\"을 구한 뒤 결과를 text라는 변수에 저장합니다. 이 줄 이후에는 text라는 이름으로 방금 만든 값을 다시 사용할 수 있습니다. ‘문자열 처리는 작은 단계로 나누면 오류가 줄어듭니다’ 내용을 설명하는 코드에서는 1행은 \"Python\"에서 만든 결과를 text에 저장하거나 갱신하는 줄입니다.",
@@ -5867,7 +5867,7 @@
           "extras": [],
           "visibleExtras": 1,
           "id": "t2-c5-p9",
-          "code": "text = \"Python\"\nprint(text[0])\nprint(text[0:3])\nprint(text[-1])",
+          "code": "# 전체 실행 흐름 확인: 문자열 다루기의 전체 흐름\ntext = \"Python\"\nprint(text[0])\nprint(text[0:3])\nprint(text[-1])",
           "codeNote": "첫 글자는 P, 0:3은 Pyt, 마지막 글자는 n입니다.",
           "codeExplain": [
             "1행 「text = \"Python\"」 — 문자열 \"Python\"을 구한 뒤 결과를 text라는 변수에 저장합니다. 이 줄 이후에는 text라는 이름으로 방금 만든 값을 다시 사용할 수 있습니다. ‘문자열 다루기의 전체 흐름’ 흐름에서는 1행은 \"Python\"에서 만든 결과를 text에 저장하거나 갱신하는 줄입니다.",
@@ -5881,7 +5881,7 @@
           "eyebrow": "핵심 예제",
           "title": "문자열 다루기를 하나의 코드로 연결합니다",
           "paragraphs": [],
-          "code": "text = \"Python\"\nprint(text[0])\nprint(text[0:3])\nprint(text[-1])",
+          "code": "# 예제로 동작 확인: 문자열 다루기를 하나의 코드로 연결합니다\ntext = \"Python\"\nprint(text[0])\nprint(text[0:3])\nprint(text[-1])",
           "codeNote": "첫 글자는 P, 0:3은 Pyt, 마지막 글자는 n입니다.",
           "extras": [],
           "visibleExtras": 2,
@@ -5951,7 +5951,7 @@
           "visibleExtras": 3,
           "id": "t2-c5-p12",
           "answerOnNext": true,
-          "code": "text = \"Python\"\nprint(text[0])\nprint(text[0:3])\nprint(text[-1])",
+          "code": "# 핵심 개념 확인: 문자열 다루기 핵심을 확인합니다\ntext = \"Python\"\nprint(text[0])\nprint(text[0:3])\nprint(text[-1])",
           "codeNote": "첫 글자는 P, 0:3은 Pyt, 마지막 글자는 n입니다.",
           "codeExplain": [
             "1행 「text = \"Python\"」 — 문자열 \"Python\"을 구한 뒤 결과를 text라는 변수에 저장합니다. 이 줄 이후에는 text라는 이름으로 방금 만든 값을 다시 사용할 수 있습니다. ‘문자열 다루기 핵심을 확인합니다’ 확인 문제의 코드에서는 1행은 \"Python\"에서 만든 결과를 text에 저장하거나 갱신하는 줄입니다.",
@@ -5996,7 +5996,7 @@
             "slice"
           ],
           "extras": [],
-          "code": "text = \"Python\"\nprint(text[0])\nprint(text[0:3])\nprint(text[-1])",
+          "code": "# 개념을 코드로 확인: 문자열은 글자들이 줄을 서 있는 데이터입니다\ntext = \"Python\"\nprint(text[0])\nprint(text[0:3])\nprint(text[-1])",
           "codeNote": "첫 글자는 P, 0:3은 Pyt, 마지막 글자는 n입니다.",
           "codeExplain": [
             "1행 「text = \"Python\"」 — 문자열 \"Python\"을 구한 뒤 결과를 text라는 변수에 저장합니다. 이 줄 이후에는 text라는 이름으로 방금 만든 값을 다시 사용할 수 있습니다. ‘문자열은 글자들이 줄을 서 있는 데이터입니다’ 내용을 설명하는 코드에서는 1행은 \"Python\"에서 만든 결과를 text에 저장하거나 갱신하는 줄입니다.",
@@ -6015,7 +6015,7 @@
             "text[0:2]는 0번부터 2번 직전까지, 즉 0번과 1번 글자를 가져옵니다.",
             "슬라이스의 끝 번호가 포함되지 않는다는 규칙은 range와 비슷합니다."
           ],
-          "code": "text = \"Python\"\nprint(text[0])\nprint(text[0:3])\nprint(text[-1])",
+          "code": "# 예제로 동작 확인: 문자열도 [0]과 [시작:끝]으로 꺼낼 수 있습니다\ntext = \"Python\"\nprint(text[0])\nprint(text[0:3])\nprint(text[-1])",
           "codeNote": "첫 글자는 P, 0:3은 Pyt, 마지막 글자는 n입니다.",
           "extras": [],
           "codeExplain": [
@@ -6037,7 +6037,7 @@
             "replace(old, new)는 문자열 안의 일부 글자를 다른 글자로 바꾼 새 문자열을 만듭니다."
           ],
           "extras": [],
-          "code": "raw = \"  YES  \"\nclean = raw.strip().lower()\nprint(clean)\nprint(clean == \"yes\")",
+          "code": "# 개념을 코드로 확인: strip · lower · replace는 입력값을 정리할 때 자주 씁니다\nraw = \"  YES  \"\nclean = raw.strip().lower()\nprint(clean)\nprint(clean == \"yes\")",
           "codeNote": "양끝 공백을 없애고 소문자로 바꿔 \"yes\"와 안정적으로 비교합니다.",
           "codeExplain": [
             "1행 「raw = \"  YES  \"」 — 문자열 \"  YES  \"을 구한 뒤 결과를 raw라는 변수에 저장합니다. 이 줄 이후에는 raw라는 이름으로 방금 만든 값을 다시 사용할 수 있습니다. ‘strip · lower · replace는 입력값을 정리할 때 자주 씁니다’ 내용을 설명하는 코드에서는 1행은 \"  YES  \"에서 만든 결과를 raw에 저장하거나 갱신하는 줄입니다.",
@@ -6056,7 +6056,7 @@
             "strip으로 공백을 없애고 lower로 소문자로 만들면 \"yes\"로 통일됩니다.",
             "그 뒤 \"yes\"와 비교하면 입력 모양이 조금 달라도 같은 뜻으로 처리할 수 있습니다."
           ],
-          "code": "text = \"Python\"\nprint(text[0])\nprint(text[0:3])\nprint(text[-1])",
+          "code": "# 예제로 동작 확인: 사용자 입력을 정리한 뒤 비교하면 실수가 줄어듭니다\ntext = \"Python\"\nprint(text[0])\nprint(text[0:3])\nprint(text[-1])",
           "codeNote": "첫 글자는 P, 0:3은 Pyt, 마지막 글자는 n입니다.",
           "extras": [],
           "codeExplain": [
@@ -6097,7 +6097,7 @@
             "split(\",\")으로 나눈 뒤 각 조각에 strip을 적용하면 공백을 없앨 수 있습니다.",
             "마지막에 \" / \".join(names)로 한 줄을 만듭니다."
           ],
-          "code": "raw = \"민수,영희,철수\"\nnames = raw.split(\",\")\nprint(names)\nprint(\" / \".join(names))",
+          "code": "# 예제로 동작 확인: 이름 세 개를 나눴다가 보기 좋게 다시 붙입니다\nraw = \"민수,영희,철수\"\nnames = raw.split(\",\")\nprint(names)\nprint(\" / \".join(names))",
           "codeNote": "split은 문자열을 리스트로 나누고 join은 리스트의 문자열들을 다시 한 줄로 이어 붙입니다.",
           "extras": [],
           "codeExplain": [
@@ -6200,7 +6200,7 @@
           "question": "text=\"hello python\"일 때 \"python\" in text의 결과는 무엇인가요?",
           "answerOnNext": true,
           "extras": [],
-          "code": "name = \"민수\"\nage = 10\nprint(f\"{name}는 {age}살입니다\")",
+          "code": "# 핵심 개념 확인: f-string과 in을 읽어 보세요\nname = \"민수\"\nage = 10\nprint(f\"{name}는 {age}살입니다\")",
           "codeNote": "중괄호 안의 변수 값이 문자열 안에 들어가 “민수는 10살입니다”가 출력됩니다.",
           "codeExplain": [
             "1행 「name = \"민수\"」 — 문자열 \"민수\"을 구한 뒤 결과를 name라는 변수에 저장합니다. 이 줄 이후에는 name라는 이름으로 방금 만든 값을 다시 사용할 수 있습니다. ‘f-string과 in을 읽어 보세요’ 확인 문제의 코드에서는 1행은 \"민수\"에서 만든 결과를 name에 저장하거나 갱신하는 줄입니다.",
@@ -6239,7 +6239,7 @@
             "그래서 name = name.lower()처럼 결과를 다시 저장하는 패턴을 자주 사용합니다."
           ],
           "extras": [],
-          "code": "name = \"MINSU\"\nlower_name = name.lower()\nprint(name)\nprint(lower_name)",
+          "code": "# 개념을 코드로 확인: 문자열 메서드는 원본을 몰래 바꾸지 않습니다\nname = \"MINSU\"\nlower_name = name.lower()\nprint(name)\nprint(lower_name)",
           "codeNote": "lower()는 새 문자열을 만들기 때문에 name은 MINSU 그대로이고 lower_name만 minsu가 됩니다.",
           "codeExplain": [
             "1행 「name = \"MINSU\"」 — 문자열 \"MINSU\"을 구한 뒤 결과를 name라는 변수에 저장합니다. 이 줄 이후에는 name라는 이름으로 방금 만든 값을 다시 사용할 수 있습니다. ‘문자열 메서드는 원본을 몰래 바꾸지 않습니다’ 내용을 설명하는 코드에서는 1행은 \"MINSU\"에서 만든 결과를 name에 저장하거나 갱신하는 줄입니다.",
@@ -6285,7 +6285,7 @@
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c5-p13",
-          "code": "text = \"Python\"\nprint(text[0])\nprint(text[0:3])\nprint(text[-1])",
+          "code": "# 챕터 핵심 다시 확인: 지금 알아야 할 것\ntext = \"Python\"\nprint(text[0])\nprint(text[0:3])\nprint(text[-1])",
           "codeNote": "첫 글자는 P, 0:3은 Pyt, 마지막 글자는 n입니다.",
           "codeExplain": [
             "1행 「text = \"Python\"」 — 문자열 \"Python\"을 구한 뒤 결과를 text라는 변수에 저장합니다. 이 줄 이후에는 text라는 이름으로 방금 만든 값을 다시 사용할 수 있습니다. ‘지금 알아야 할 것’ 정리 코드에서는 1행은 \"Python\"에서 만든 결과를 text에 저장하거나 갱신하는 줄입니다.",
@@ -6419,7 +6419,7 @@
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c6-p2",
-          "code": "with open(\"memo.txt\", \"r\", encoding=\"utf-8\") as f:\n    text = f.read()\n\nprint(text)",
+          "code": "# 용어를 실제 코드에서 확인: 코드에서 자주 만나는 표현\nwith open(\"memo.txt\", \"r\", encoding=\"utf-8\") as f:\n    text = f.read()\n\nprint(text)",
           "codeNote": "파일 전체 내용을 문자열로 읽어 text에 저장한 뒤 화면에 출력합니다.",
           "codeExplain": [
             "1행 「with open(\"memo.txt\", \"r\", encoding=\"utf-8\") as f:」 — \"memo.txt\" 파일을 읽기 모드(r)로 열고 열린 파일 객체를 f라는 이름으로 사용합니다. encoding=\"utf-8\"로 문자 해석 규칙도 지정합니다. with 블록이 끝나면 파일은 자동으로 닫힙니다. read / write mode, encoding 인코딩, with context manager를 실제 코드와 연결해서 보면 1행은 \"memo.txt\" 파일을 여는 단계입니다. 모드 r가 읽기·덮어쓰기·이어쓰기 중 무엇인지 여기서 결정됩니다.",
@@ -6446,7 +6446,7 @@
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c6-p3",
-          "code": "with open(\"memo.txt\", \"r\", encoding=\"utf-8\") as f:\n    text = f.read()\n\nprint(text)",
+          "code": "# 개념을 코드로 확인: 파일은 프로그램 밖에 남는 상태입니다\nwith open(\"memo.txt\", \"r\", encoding=\"utf-8\") as f:\n    text = f.read()\n\nprint(text)",
           "codeNote": "파일 전체 내용을 문자열로 읽어 text에 저장한 뒤 화면에 출력합니다.",
           "codeExplain": [
             "1행 「with open(\"memo.txt\", \"r\", encoding=\"utf-8\") as f:」 — \"memo.txt\" 파일을 읽기 모드(r)로 열고 열린 파일 객체를 f라는 이름으로 사용합니다. encoding=\"utf-8\"로 문자 해석 규칙도 지정합니다. with 블록이 끝나면 파일은 자동으로 닫힙니다. ‘파일은 프로그램 밖에 남는 상태입니다’ 내용을 설명하는 코드에서는 1행은 \"memo.txt\" 파일을 여는 단계입니다. 모드 r가 읽기·덮어쓰기·이어쓰기 중 무엇인지 여기서 결정됩니다.",
@@ -6499,7 +6499,7 @@
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c6-p5",
-          "code": "with open(\"memo.txt\", \"w\", encoding=\"utf-8\") as f:\n    f.write(\"새 메모\\\\n\")",
+          "code": "# 개념을 코드로 확인: 쓰기 모드는 기존 데이터를 지울 수 있습니다\nwith open(\"memo.txt\", \"w\", encoding=\"utf-8\") as f:\n    f.write(\"새 메모\\\\n\")",
           "codeNote": "w 모드는 기존 내용을 새로 쓰므로 같은 파일이 이미 있으면 내용이 바뀔 수 있습니다.",
           "codeExplain": [
             "1행 「with open(\"memo.txt\", \"w\", encoding=\"utf-8\") as f:」 — \"memo.txt\" 파일을 기존 내용을 새로 덮어쓸 수 있는 쓰기 모드(w)로 열고 열린 파일 객체를 f라는 이름으로 사용합니다. encoding=\"utf-8\"로 문자 해석 규칙도 지정합니다. with 블록이 끝나면 파일은 자동으로 닫힙니다. ‘쓰기 모드는 기존 데이터를 지울 수 있습니다’ 내용을 설명하는 코드에서는 1행은 \"memo.txt\" 파일을 여는 단계입니다. 모드 w가 읽기·덮어쓰기·이어쓰기 중 무엇인지 여기서 결정됩니다.",
@@ -6582,7 +6582,7 @@
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c6-p8",
-          "code": "with open(\"memo.txt\", \"r\", encoding=\"utf-8\") as f:\n    text = f.read()\n\nprint(text)",
+          "code": "# 개념을 코드로 확인: 읽기와 쓰기는 데이터 검증과 함께 사용합니다\nwith open(\"memo.txt\", \"r\", encoding=\"utf-8\") as f:\n    text = f.read()\n\nprint(text)",
           "codeNote": "파일 전체 내용을 문자열로 읽어 text에 저장한 뒤 화면에 출력합니다.",
           "codeExplain": [
             "1행 「with open(\"memo.txt\", \"r\", encoding=\"utf-8\") as f:」 — \"memo.txt\" 파일을 읽기 모드(r)로 열고 열린 파일 객체를 f라는 이름으로 사용합니다. encoding=\"utf-8\"로 문자 해석 규칙도 지정합니다. with 블록이 끝나면 파일은 자동으로 닫힙니다. ‘읽기와 쓰기는 데이터 검증과 함께 사용합니다’ 내용을 설명하는 코드에서는 1행은 \"memo.txt\" 파일을 여는 단계입니다. 모드 r가 읽기·덮어쓰기·이어쓰기 중 무엇인지 여기서 결정됩니다.",
@@ -6609,7 +6609,7 @@
           "extras": [],
           "visibleExtras": 1,
           "id": "t2-c6-p9",
-          "code": "with open(\"memo.txt\", \"r\", encoding=\"utf-8\") as f:\n    text = f.read()\n\nprint(text)",
+          "code": "# 전체 실행 흐름 확인: 파일 읽기와 쓰기의 전체 흐름\nwith open(\"memo.txt\", \"r\", encoding=\"utf-8\") as f:\n    text = f.read()\n\nprint(text)",
           "codeNote": "파일 전체 내용을 문자열로 읽어 text에 저장한 뒤 화면에 출력합니다.",
           "codeExplain": [
             "1행 「with open(\"memo.txt\", \"r\", encoding=\"utf-8\") as f:」 — \"memo.txt\" 파일을 읽기 모드(r)로 열고 열린 파일 객체를 f라는 이름으로 사용합니다. encoding=\"utf-8\"로 문자 해석 규칙도 지정합니다. with 블록이 끝나면 파일은 자동으로 닫힙니다. ‘파일 읽기와 쓰기의 전체 흐름’ 흐름에서는 1행은 \"memo.txt\" 파일을 여는 단계입니다. 모드 r가 읽기·덮어쓰기·이어쓰기 중 무엇인지 여기서 결정됩니다.",
@@ -6622,7 +6622,7 @@
           "eyebrow": "핵심 예제",
           "title": "파일 읽기와 쓰기를 하나의 코드로 연결합니다",
           "paragraphs": [],
-          "code": "with open(\"memo.txt\", \"r\", encoding=\"utf-8\") as f:\n    text = f.read()\n\nprint(text)",
+          "code": "# 예제로 동작 확인: 파일 읽기와 쓰기를 하나의 코드로 연결합니다\nwith open(\"memo.txt\", \"r\", encoding=\"utf-8\") as f:\n    text = f.read()\n\nprint(text)",
           "codeNote": "파일 전체 내용을 문자열로 읽어 text에 저장한 뒤 화면에 출력합니다.",
           "extras": [],
           "visibleExtras": 2,
@@ -6692,7 +6692,7 @@
           "visibleExtras": 3,
           "id": "t2-c6-p12",
           "answerOnNext": true,
-          "code": "with open(\"memo.txt\", \"r\", encoding=\"utf-8\") as f:\n    text = f.read()\n\nprint(text)",
+          "code": "# 핵심 개념 확인: 파일 읽기와 쓰기 핵심을 확인합니다\nwith open(\"memo.txt\", \"r\", encoding=\"utf-8\") as f:\n    text = f.read()\n\nprint(text)",
           "codeNote": "파일 전체 내용을 문자열로 읽어 text에 저장한 뒤 화면에 출력합니다.",
           "codeExplain": [
             "1행 「with open(\"memo.txt\", \"r\", encoding=\"utf-8\") as f:」 — \"memo.txt\" 파일을 읽기 모드(r)로 열고 열린 파일 객체를 f라는 이름으로 사용합니다. encoding=\"utf-8\"로 문자 해석 규칙도 지정합니다. with 블록이 끝나면 파일은 자동으로 닫힙니다. ‘파일 읽기와 쓰기 핵심을 확인합니다’ 확인 문제의 코드에서는 1행은 \"memo.txt\" 파일을 여는 단계입니다. 모드 r가 읽기·덮어쓰기·이어쓰기 중 무엇인지 여기서 결정됩니다.",
@@ -6709,7 +6709,7 @@
             "\"w\" 모드는 파일을 새로 쓰는 방식이라 기존 내용이 덮어써져 사라질 수 있습니다. 기존 내용 뒤에 추가하려면 상황에 따라 \"a\" 모드를 고려해야 합니다."
           ],
           "extras": [],
-          "code": "with open(\"memo.txt\", \"r\", encoding=\"utf-8\") as f:\n    text = f.read()\n\nprint(text)",
+          "code": "# 정답 코드의 동작 확인: 파일 읽기와 쓰기 핵심을 확인합니다\nwith open(\"memo.txt\", \"r\", encoding=\"utf-8\") as f:\n    text = f.read()\n\nprint(text)",
           "codeNote": "r 모드로 파일을 읽고 그 내용을 text 변수에 저장합니다.",
           "codeExplain": [
             "1행 「with open(\"memo.txt\", \"r\", encoding=\"utf-8\") as f:」 — \"memo.txt\" 파일을 읽기 모드(r)로 열고 열린 파일 객체를 f라는 이름으로 사용합니다. encoding=\"utf-8\"로 문자 해석 규칙도 지정합니다. with 블록이 끝나면 파일은 자동으로 닫힙니다. ‘파일 읽기와 쓰기 핵심을 확인합니다’ 풀이에서는 1행은 \"memo.txt\" 파일을 여는 단계입니다. 모드 r가 읽기·덮어쓰기·이어쓰기 중 무엇인지 여기서 결정됩니다.",
@@ -6735,7 +6735,7 @@
             "write"
           ],
           "extras": [],
-          "code": "with open(\"memo.txt\", \"r\", encoding=\"utf-8\") as f:\n    text = f.read()\n\nprint(text)",
+          "code": "# 개념을 코드로 확인: 파일은 프로그램을 꺼도 남는 공책입니다\nwith open(\"memo.txt\", \"r\", encoding=\"utf-8\") as f:\n    text = f.read()\n\nprint(text)",
           "codeNote": "파일 전체 내용을 문자열로 읽어 text에 저장한 뒤 화면에 출력합니다.",
           "codeExplain": [
             "1행 「with open(\"memo.txt\", \"r\", encoding=\"utf-8\") as f:」 — \"memo.txt\" 파일을 읽기 모드(r)로 열고 열린 파일 객체를 f라는 이름으로 사용합니다. encoding=\"utf-8\"로 문자 해석 규칙도 지정합니다. with 블록이 끝나면 파일은 자동으로 닫힙니다. ‘파일은 프로그램을 꺼도 남는 공책입니다’ 내용을 설명하는 코드에서는 1행은 \"memo.txt\" 파일을 여는 단계입니다. 모드 r가 읽기·덮어쓰기·이어쓰기 중 무엇인지 여기서 결정됩니다.",
@@ -6753,7 +6753,7 @@
             "with 블록 안에서 f.read()로 내용을 읽습니다.",
             "with 블록이 끝나면 Python이 파일을 자동으로 닫아 줍니다."
           ],
-          "code": "with open(\"memo.txt\", \"w\", encoding=\"utf-8\") as f:\n    f.write(\"새 메모\\\\n\")",
+          "code": "# 예제로 동작 확인: with open을 쓰면 파일을 안전하게 열고 자동으로 닫습니다\nwith open(\"memo.txt\", \"w\", encoding=\"utf-8\") as f:\n    f.write(\"새 메모\\\\n\")",
           "codeNote": "w 모드는 기존 내용을 새로 쓰므로 같은 파일이 이미 있으면 내용이 바뀔 수 있습니다.",
           "extras": [],
           "codeExplain": [
@@ -6775,7 +6775,7 @@
           "calloutTitle": "중요 경고",
           "calloutBody": "w 모드는 기존 파일을 덮어쓸 수 있습니다. 중요한 파일에는 먼저 복사본을 만들어 두세요.",
           "extras": [],
-          "code": "with open(\"memo.txt\", \"w\", encoding=\"utf-8\") as f:\n    f.write(\"새 메모\\\\n\")",
+          "code": "# 개념을 코드로 확인: r · w · a 모드는 파일에 하는 일이 다릅니다\nwith open(\"memo.txt\", \"w\", encoding=\"utf-8\") as f:\n    f.write(\"새 메모\\\\n\")",
           "codeNote": "w 모드는 기존 내용을 새로 쓰므로 같은 파일이 이미 있으면 내용이 바뀔 수 있습니다.",
           "codeExplain": [
             "1행 「with open(\"memo.txt\", \"w\", encoding=\"utf-8\") as f:」 — \"memo.txt\" 파일을 기존 내용을 새로 덮어쓸 수 있는 쓰기 모드(w)로 열고 열린 파일 객체를 f라는 이름으로 사용합니다. encoding=\"utf-8\"로 문자 해석 규칙도 지정합니다. with 블록이 끝나면 파일은 자동으로 닫힙니다. ‘r · w · a 모드는 파일에 하는 일이 다릅니다’ 내용을 설명하는 코드에서는 1행은 \"memo.txt\" 파일을 여는 단계입니다. 모드 w가 읽기·덮어쓰기·이어쓰기 중 무엇인지 여기서 결정됩니다.",
@@ -6792,7 +6792,7 @@
             "두 번째 with는 같은 파일을 read 모드로 다시 열어 읽습니다.",
             "저장 → 다시 읽기 흐름을 직접 해보면 파일 입출력이 쉽게 연결됩니다."
           ],
-          "code": "with open(\"memo.txt\", \"r\", encoding=\"utf-8\") as f:\n    text = f.read()\n\nprint(text)",
+          "code": "# 예제로 동작 확인: 한 줄을 저장한 뒤 다시 읽어 봅니다\nwith open(\"memo.txt\", \"r\", encoding=\"utf-8\") as f:\n    text = f.read()\n\nprint(text)",
           "codeNote": "파일 전체 내용을 문자열로 읽어 text에 저장한 뒤 화면에 출력합니다.",
           "extras": [],
           "codeExplain": [
@@ -6813,7 +6813,7 @@
             "파일을 못 찾으면 문법보다 먼저 실행 위치와 파일 위치가 같은지 확인하세요."
           ],
           "extras": [],
-          "code": "filename = \"data/memo.txt\"\n\nwith open(filename, \"r\", encoding=\"utf-8\") as f:\n    text = f.read()\n\nprint(text)",
+          "code": "# 개념을 코드로 확인: 경로와 인코딩은 “어디 파일인지, 어떤 글자 규칙인지” 알려 줍니다\nfilename = \"data/memo.txt\"\n\nwith open(filename, \"r\", encoding=\"utf-8\") as f:\n    text = f.read()\n\nprint(text)",
           "codeNote": "파일 위치는 filename 경로가 결정하고, utf-8은 한글을 읽는 문자 인코딩을 지정합니다.",
           "codeExplain": [
             "1행 「filename = \"data/memo.txt\"」 — 문자열 \"data/memo.txt\"을 구한 뒤 결과를 filename라는 변수에 저장합니다. 이 줄 이후에는 filename라는 이름으로 방금 만든 값을 다시 사용할 수 있습니다. ‘경로와 인코딩은 “어디 파일인지, 어떤 글자 규칙인지” 알려 줍니다’ 내용을 설명하는 코드에서는 1행은 \"data/memo.txt\"에서 만든 결과를 filename에 저장하거나 갱신하는 줄입니다.",
@@ -6941,7 +6941,7 @@
           "question": "중요한 diary.txt가 이미 있는데 \"w\" 모드로 열고 새 글을 쓰면 기존 내용은 어떻게 될까요?",
           "answerOnNext": true,
           "extras": [],
-          "code": "with open(\"memo.txt\", \"w\", encoding=\"utf-8\") as f:\n    f.write(\"새 메모\\\\n\")",
+          "code": "# 핵심 개념 확인: 파일이 없을 때와 w 모드일 때를 구분해 보세요\nwith open(\"memo.txt\", \"w\", encoding=\"utf-8\") as f:\n    f.write(\"새 메모\\\\n\")",
           "codeNote": "w 모드는 기존 내용을 새로 쓰므로 같은 파일이 이미 있으면 내용이 바뀔 수 있습니다.",
           "codeExplain": [
             "1행 「with open(\"memo.txt\", \"w\", encoding=\"utf-8\") as f:」 — \"memo.txt\" 파일을 기존 내용을 새로 덮어쓸 수 있는 쓰기 모드(w)로 열고 열린 파일 객체를 f라는 이름으로 사용합니다. encoding=\"utf-8\"로 문자 해석 규칙도 지정합니다. with 블록이 끝나면 파일은 자동으로 닫힙니다. ‘파일이 없을 때와 w 모드일 때를 구분해 보세요’ 확인 문제의 코드에서는 1행은 \"memo.txt\" 파일을 여는 단계입니다. 모드 w가 읽기·덮어쓰기·이어쓰기 중 무엇인지 여기서 결정됩니다.",
@@ -6999,7 +6999,7 @@
             "parts[0]은 이름이고 parts[1]은 점수 글자입니다. 점수 글자는 int로 숫자로 바꿉니다.",
             "점수를 total에 더하고 count를 늘린 뒤 평균을 계산합니다. 한 줄씩 값이 어떻게 변하는지 따라가 보세요."
           ],
-          "code": "total = 0\n\nwith open(\"numbers.txt\", \"r\", encoding=\"utf-8\") as f:\n    for line in f:\n        total += int(line.strip())\n\nprint(total)",
+          "code": "# 예제로 동작 확인: 이름과 점수가 적힌 파일을 읽어 평균을 구합니다\ntotal = 0\n\nwith open(\"numbers.txt\", \"r\", encoding=\"utf-8\") as f:\n    for line in f:\n        total += int(line.strip())\n\nprint(total)",
           "codeNote": "한 줄씩 읽은 문자열을 정수로 바꿔 total에 누적합니다.",
           "extras": [],
           "codeExplain": [
@@ -7027,7 +7027,7 @@
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c6-p13",
-          "code": "with open(\"memo.txt\", \"r\", encoding=\"utf-8\") as f:\n    text = f.read()\n\nprint(text)",
+          "code": "# 챕터 핵심 다시 확인: 지금 알아야 할 것\nwith open(\"memo.txt\", \"r\", encoding=\"utf-8\") as f:\n    text = f.read()\n\nprint(text)",
           "codeNote": "파일 전체 내용을 문자열로 읽어 text에 저장한 뒤 화면에 출력합니다.",
           "codeExplain": [
             "1행 「with open(\"memo.txt\", \"r\", encoding=\"utf-8\") as f:」 — \"memo.txt\" 파일을 읽기 모드(r)로 열고 열린 파일 객체를 f라는 이름으로 사용합니다. encoding=\"utf-8\"로 문자 해석 규칙도 지정합니다. with 블록이 끝나면 파일은 자동으로 닫힙니다. ‘지금 알아야 할 것’ 정리 코드에서는 1행은 \"memo.txt\" 파일을 여는 단계입니다. 모드 r가 읽기·덮어쓰기·이어쓰기 중 무엇인지 여기서 결정됩니다.",
@@ -7162,7 +7162,7 @@
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c7-p2",
-          "code": "try:\n    age = int(\"10\")\n    print(age)\nexcept ValueError:\n    print(\"숫자로 입력하세요\")",
+          "code": "# 용어를 실제 코드에서 확인: 코드에서 자주 만나는 표현\ntry:\n    age = int(\"10\")\n    print(age)\nexcept ValueError:\n    print(\"숫자로 입력하세요\")",
           "codeNote": "\"10\"은 정수 10으로 변환되므로 except 없이 10이 출력됩니다.",
           "codeExplain": [
             "1행 「try:」 — 실패할 가능성이 있는 코드를 먼저 실행해 보는 try 블록을 시작합니다. 아래 코드가 정상적으로 끝나면 except는 건너뛰고, 예외가 생기면 그 종류와 맞는 except로 이동합니다. finally, raise, fallback 대체 처리를 실제 코드와 연결해서 보면 1행부터 예외가 날 수 있는 코드를 별도 try 구역에서 실행합니다.",
@@ -7191,7 +7191,7 @@
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c7-p3",
-          "code": "try:\n    age = int(\"10\")\n    print(age)\nexcept ValueError:\n    print(\"숫자로 입력하세요\")",
+          "code": "# 개념을 코드로 확인: 예외 처리는 오류를 없애는 것이 아니라 다루는 방법입니다\ntry:\n    age = int(\"10\")\n    print(age)\nexcept ValueError:\n    print(\"숫자로 입력하세요\")",
           "codeNote": "\"10\"은 정수 10으로 변환되므로 except 없이 10이 출력됩니다.",
           "codeExplain": [
             "1행 「try:」 — 실패할 가능성이 있는 코드를 먼저 실행해 보는 try 블록을 시작합니다. 아래 코드가 정상적으로 끝나면 except는 건너뛰고, 예외가 생기면 그 종류와 맞는 except로 이동합니다. ‘예외 처리는 오류를 없애는 것이 아니라 다루는 방법입니다’ 내용을 설명하는 코드에서는 1행부터 예외가 날 수 있는 코드를 별도 try 구역에서 실행합니다.",
@@ -7249,7 +7249,7 @@
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c7-p5",
-          "code": "try:\n    age = int(\"10\")\n    print(age)\nexcept ValueError:\n    print(\"숫자로 입력하세요\")",
+          "code": "# 개념을 코드로 확인: 예외 종류는 문제의 범주를 알려 주는 신호입니다\ntry:\n    age = int(\"10\")\n    print(age)\nexcept ValueError:\n    print(\"숫자로 입력하세요\")",
           "codeNote": "\"10\"은 정수 10으로 변환되므로 except 없이 10이 출력됩니다.",
           "codeExplain": [
             "1행 「try:」 — 실패할 가능성이 있는 코드를 먼저 실행해 보는 try 블록을 시작합니다. 아래 코드가 정상적으로 끝나면 except는 건너뛰고, 예외가 생기면 그 종류와 맞는 except로 이동합니다. ‘예외 종류는 문제의 범주를 알려 주는 신호입니다’ 내용을 설명하는 코드에서는 1행부터 예외가 날 수 있는 코드를 별도 try 구역에서 실행합니다.",
@@ -7278,7 +7278,7 @@
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c7-p6",
-          "code": "try:\n    age = int(\"10\")\n    print(age)\nexcept ValueError:\n    print(\"숫자로 입력하세요\")",
+          "code": "# 개념을 코드로 확인: 재시도는 종료 조건과 함께 설계합니다\ntry:\n    age = int(\"10\")\n    print(age)\nexcept ValueError:\n    print(\"숫자로 입력하세요\")",
           "codeNote": "\"10\"은 정수 10으로 변환되므로 except 없이 10이 출력됩니다.",
           "codeExplain": [
             "1행 「try:」 — 실패할 가능성이 있는 코드를 먼저 실행해 보는 try 블록을 시작합니다. 아래 코드가 정상적으로 끝나면 except는 건너뛰고, 예외가 생기면 그 종류와 맞는 except로 이동합니다. ‘재시도는 종료 조건과 함께 설계합니다’ 내용을 설명하는 코드에서는 1행부터 예외가 날 수 있는 코드를 별도 try 구역에서 실행합니다.",
@@ -7307,7 +7307,7 @@
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c7-p7",
-          "code": "try:\n    age = int(\"10\")\n    print(age)\nexcept ValueError:\n    print(\"숫자로 입력하세요\")",
+          "code": "# 개념을 코드로 확인: fallback은 데이터 의미를 망치지 않아야 합니다\ntry:\n    age = int(\"10\")\n    print(age)\nexcept ValueError:\n    print(\"숫자로 입력하세요\")",
           "codeNote": "\"10\"은 정수 10으로 변환되므로 except 없이 10이 출력됩니다.",
           "codeExplain": [
             "1행 「try:」 — 실패할 가능성이 있는 코드를 먼저 실행해 보는 try 블록을 시작합니다. 아래 코드가 정상적으로 끝나면 except는 건너뛰고, 예외가 생기면 그 종류와 맞는 except로 이동합니다. ‘fallback은 데이터 의미를 망치지 않아야 합니다’ 내용을 설명하는 코드에서는 1행부터 예외가 날 수 있는 코드를 별도 try 구역에서 실행합니다.",
@@ -7336,7 +7336,7 @@
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c7-p8",
-          "code": "try:\n    age = int(\"10\")\n    print(age)\nexcept ValueError:\n    print(\"숫자로 입력하세요\")",
+          "code": "# 개념을 코드로 확인: 예외 처리 후에도 정상 흐름을 검증합니다\ntry:\n    age = int(\"10\")\n    print(age)\nexcept ValueError:\n    print(\"숫자로 입력하세요\")",
           "codeNote": "\"10\"은 정수 10으로 변환되므로 except 없이 10이 출력됩니다.",
           "codeExplain": [
             "1행 「try:」 — 실패할 가능성이 있는 코드를 먼저 실행해 보는 try 블록을 시작합니다. 아래 코드가 정상적으로 끝나면 except는 건너뛰고, 예외가 생기면 그 종류와 맞는 except로 이동합니다. ‘예외 처리 후에도 정상 흐름을 검증합니다’ 내용을 설명하는 코드에서는 1행부터 예외가 날 수 있는 코드를 별도 try 구역에서 실행합니다.",
@@ -7365,7 +7365,7 @@
           "extras": [],
           "visibleExtras": 1,
           "id": "t2-c7-p9",
-          "code": "try:\n    age = int(\"10\")\n    print(age)\nexcept ValueError:\n    print(\"숫자로 입력하세요\")",
+          "code": "# 전체 실행 흐름 확인: 예외 처리의 전체 흐름\ntry:\n    age = int(\"10\")\n    print(age)\nexcept ValueError:\n    print(\"숫자로 입력하세요\")",
           "codeNote": "\"10\"은 정수 10으로 변환되므로 except 없이 10이 출력됩니다.",
           "codeExplain": [
             "1행 「try:」 — 실패할 가능성이 있는 코드를 먼저 실행해 보는 try 블록을 시작합니다. 아래 코드가 정상적으로 끝나면 except는 건너뛰고, 예외가 생기면 그 종류와 맞는 except로 이동합니다. ‘예외 처리의 전체 흐름’ 흐름에서는 1행부터 예외가 날 수 있는 코드를 별도 try 구역에서 실행합니다.",
@@ -7380,7 +7380,7 @@
           "eyebrow": "핵심 예제",
           "title": "예외 처리를 하나의 코드로 연결합니다",
           "paragraphs": [],
-          "code": "try:\n    age = int(\"10\")\n    print(age)\nexcept ValueError:\n    print(\"숫자로 입력하세요\")",
+          "code": "# 예제로 동작 확인: 예외 처리를 하나의 코드로 연결합니다\ntry:\n    age = int(\"10\")\n    print(age)\nexcept ValueError:\n    print(\"숫자로 입력하세요\")",
           "codeNote": "\"10\"은 정수 10으로 변환되므로 except 없이 10이 출력됩니다.",
           "extras": [],
           "visibleExtras": 2,
@@ -7463,7 +7463,7 @@
           "visibleExtras": 3,
           "id": "t2-c7-p12",
           "answerOnNext": true,
-          "code": "try:\n    age = int(\"10\")\n    print(age)\nexcept ValueError:\n    print(\"숫자로 입력하세요\")",
+          "code": "# 핵심 개념 확인: 예외 처리 핵심을 확인합니다\ntry:\n    age = int(\"10\")\n    print(age)\nexcept ValueError:\n    print(\"숫자로 입력하세요\")",
           "codeNote": "\"10\"은 정수 10으로 변환되므로 except 없이 10이 출력됩니다.",
           "codeExplain": [
             "1행 「try:」 — 실패할 가능성이 있는 코드를 먼저 실행해 보는 try 블록을 시작합니다. 아래 코드가 정상적으로 끝나면 except는 건너뛰고, 예외가 생기면 그 종류와 맞는 except로 이동합니다. ‘예외 처리 핵심을 확인합니다’ 확인 문제의 코드에서는 1행부터 예외가 날 수 있는 코드를 별도 try 구역에서 실행합니다.",
@@ -7509,7 +7509,7 @@
             "예외"
           ],
           "extras": [],
-          "code": "try:\n    age = int(\"10\")\n    print(age)\nexcept ValueError:\n    print(\"숫자로 입력하세요\")",
+          "code": "# 개념을 코드로 확인: 예외 처리는 프로그램의 안전벨트입니다\ntry:\n    age = int(\"10\")\n    print(age)\nexcept ValueError:\n    print(\"숫자로 입력하세요\")",
           "codeNote": "\"10\"은 정수 10으로 변환되므로 except 없이 10이 출력됩니다.",
           "codeExplain": [
             "1행 「try:」 — 실패할 가능성이 있는 코드를 먼저 실행해 보는 try 블록을 시작합니다. 아래 코드가 정상적으로 끝나면 except는 건너뛰고, 예외가 생기면 그 종류와 맞는 except로 이동합니다. ‘예외 처리는 프로그램의 안전벨트입니다’ 내용을 설명하는 코드에서는 1행부터 예외가 날 수 있는 코드를 별도 try 구역에서 실행합니다.",
@@ -7551,7 +7551,7 @@
             "except Exception처럼 모든 오류를 한꺼번에 잡으면 진짜 버그까지 숨길 수 있습니다."
           ],
           "extras": [],
-          "code": "try:\n    age = int(\"10\")\n    print(age)\nexcept ValueError:\n    print(\"숫자로 입력하세요\")",
+          "code": "# 개념을 코드로 확인: 오류 종류가 다르면 except도 나눠 쓰는 편이 좋습니다\ntry:\n    age = int(\"10\")\n    print(age)\nexcept ValueError:\n    print(\"숫자로 입력하세요\")",
           "codeNote": "\"10\"은 정수 10으로 변환되므로 except 없이 10이 출력됩니다.",
           "codeExplain": [
             "1행 「try:」 — 실패할 가능성이 있는 코드를 먼저 실행해 보는 try 블록을 시작합니다. 아래 코드가 정상적으로 끝나면 except는 건너뛰고, 예외가 생기면 그 종류와 맞는 except로 이동합니다. ‘오류 종류가 다르면 except도 나눠 쓰는 편이 좋습니다’ 내용을 설명하는 코드에서는 1행부터 예외가 날 수 있는 코드를 별도 try 구역에서 실행합니다.",
@@ -7571,7 +7571,7 @@
             "b가 0이면 나눗셈에서 ZeroDivisionError가 납니다.",
             "두 오류를 따로 처리하면 원인이 분명합니다."
           ],
-          "code": "try:\n    print(10 / 0)\nexcept ZeroDivisionError:\n    print(\"0으로 나눌 수 없습니다\")",
+          "code": "# 예제로 동작 확인: 간단한 나눗셈에서 두 종류의 오류를 따로 처리합니다\ntry:\n    print(10 / 0)\nexcept ZeroDivisionError:\n    print(\"0으로 나눌 수 없습니다\")",
           "codeNote": "10 / 0에서 ZeroDivisionError가 발생하고 해당 except가 처리합니다.",
           "extras": [],
           "codeExplain": [
@@ -7728,7 +7728,7 @@
           "question": "숫자 변환 실패만 예상한다면 except ValueError와 그냥 except: 중 어느 쪽이 더 좋은가요?",
           "answerOnNext": true,
           "extras": [],
-          "code": "try:\n    age = int(\"10\")\n    print(age)\nexcept ValueError:\n    print(\"숫자로 입력하세요\")",
+          "code": "# 핵심 개념 확인: 모든 오류를 그냥 except로 숨기면 왜 위험할까요?\ntry:\n    age = int(\"10\")\n    print(age)\nexcept ValueError:\n    print(\"숫자로 입력하세요\")",
           "codeNote": "\"10\"은 정수 10으로 변환되므로 except 없이 10이 출력됩니다.",
           "codeExplain": [
             "1행 「try:」 — 실패할 가능성이 있는 코드를 먼저 실행해 보는 try 블록을 시작합니다. 아래 코드가 정상적으로 끝나면 except는 건너뛰고, 예외가 생기면 그 종류와 맞는 except로 이동합니다. ‘모든 오류를 그냥 except로 숨기면 왜 위험할까요?’ 확인 문제의 코드에서는 1행부터 예외가 날 수 있는 코드를 별도 try 구역에서 실행합니다.",
@@ -7748,7 +7748,7 @@
             "우리가 예상한 숫자 변환 실패만 처리하고 다른 버그는 드러나게 합니다.",
             "예외 처리는 오류를 숨기는 기술이 아니라 예상 가능한 실패를 정확히 다루는 기술입니다."
           ],
-          "code": "try:\n    number = int(\"abc\")\nexcept ValueError:\n    print(\"숫자로 바꿀 수 없습니다\")",
+          "code": "# 정답 코드의 동작 확인: 모든 오류를 그냥 except로 숨기면 왜 위험할까요?\ntry:\n    number = int(\"abc\")\nexcept ValueError:\n    print(\"숫자로 바꿀 수 없습니다\")",
           "codeNote": "예상 출력: 숫자로 바꿀 수 없습니다",
           "extras": [],
           "codeExplain": [
@@ -7770,7 +7770,7 @@
             "초보 단계에서는 try/except가 우선이지만 입력 검증에서 자주 만나게 됩니다."
           ],
           "extras": [],
-          "code": "try:\n    age = int(\"10\")\n    print(age)\nexcept ValueError:\n    print(\"숫자로 입력하세요\")",
+          "code": "# 개념을 코드로 확인: 잘못된 값은 직접 예외를 발생시켜 막을 수도 있습니다\ntry:\n    age = int(\"10\")\n    print(age)\nexcept ValueError:\n    print(\"숫자로 입력하세요\")",
           "codeNote": "\"10\"은 정수 10으로 변환되므로 except 없이 10이 출력됩니다.",
           "codeExplain": [
             "1행 「try:」 — 실패할 가능성이 있는 코드를 먼저 실행해 보는 try 블록을 시작합니다. 아래 코드가 정상적으로 끝나면 except는 건너뛰고, 예외가 생기면 그 종류와 맞는 except로 이동합니다. ‘잘못된 값은 직접 예외를 발생시켜 막을 수도 있습니다’ 내용을 설명하는 코드에서는 1행부터 예외가 날 수 있는 코드를 별도 try 구역에서 실행합니다.",
@@ -7818,7 +7818,7 @@
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c7-p13",
-          "code": "try:\n    age = int(\"10\")\n    print(age)\nexcept ValueError:\n    print(\"숫자로 입력하세요\")",
+          "code": "# 챕터 핵심 다시 확인: 지금 알아야 할 것\ntry:\n    age = int(\"10\")\n    print(age)\nexcept ValueError:\n    print(\"숫자로 입력하세요\")",
           "codeNote": "\"10\"은 정수 10으로 변환되므로 except 없이 10이 출력됩니다.",
           "codeExplain": [
             "1행 「try:」 — 실패할 가능성이 있는 코드를 먼저 실행해 보는 try 블록을 시작합니다. 아래 코드가 정상적으로 끝나면 except는 건너뛰고, 예외가 생기면 그 종류와 맞는 except로 이동합니다. ‘지금 알아야 할 것’ 정리 코드에서는 1행부터 예외가 날 수 있는 코드를 별도 try 구역에서 실행합니다.",
@@ -7955,7 +7955,7 @@
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c8-p2",
-          "code": "raw = [\"1000\", \"2500\", \"3000\"]\nvalues = []\n\nfor text in raw:\n    values.append(int(text))\n\nprint(values)",
+          "code": "# 용어를 실제 코드에서 확인: 코드에서 자주 만나는 표현\nraw = [\"1000\", \"2500\", \"3000\"]\nvalues = []\n\nfor text in raw:\n    values.append(int(text))\n\nprint(values)",
           "codeNote": "문자열 금액을 정수로 변환해 다음 계산에 사용할 숫자 리스트를 만듭니다.",
           "codeExplain": [
             "1행 「raw = [\"1000\", \"2500\", \"3000\"]」 — 여러 값을 순서대로 담은 리스트 [\"1000\", \"2500\", \"3000\"]을 구한 뒤 결과를 raw라는 변수에 저장합니다. 이 줄 이후에는 raw라는 이름으로 방금 만든 값을 다시 사용할 수 있습니다. logging 기록, idempotent 반복 실행 안전성, test case 테스트 케이스를 실제 코드와 연결해서 보면 1행은 [\"1000\", \"2500\", \"3000\"]에서 만든 결과를 raw에 저장하거나 갱신하는 줄입니다.",
@@ -7984,7 +7984,7 @@
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c8-p3",
-          "code": "raw = [\"1000\", \"2500\", \"3000\"]\nvalues = []\n\nfor text in raw:\n    values.append(int(text))\n\nprint(values)",
+          "code": "# 개념을 코드로 확인: 자동화는 반복 작업을 작은 단계로 분해하는 것에서 시작합니다\nraw = [\"1000\", \"2500\", \"3000\"]\nvalues = []\n\nfor text in raw:\n    values.append(int(text))\n\nprint(values)",
           "codeNote": "문자열 금액을 정수로 변환해 다음 계산에 사용할 숫자 리스트를 만듭니다.",
           "codeExplain": [
             "1행 「raw = [\"1000\", \"2500\", \"3000\"]」 — 여러 값을 순서대로 담은 리스트 [\"1000\", \"2500\", \"3000\"]을 구한 뒤 결과를 raw라는 변수에 저장합니다. 이 줄 이후에는 raw라는 이름으로 방금 만든 값을 다시 사용할 수 있습니다. ‘자동화는 반복 작업을 작은 단계로 분해하는 것에서 시작합니다’ 내용을 설명하는 코드에서는 1행은 [\"1000\", \"2500\", \"3000\"]에서 만든 결과를 raw에 저장하거나 갱신하는 줄입니다.",
@@ -8166,7 +8166,7 @@
           "extras": [],
           "visibleExtras": 1,
           "id": "t2-c8-p9",
-          "code": "raw = [\"1000\", \"2500\", \"3000\"]\nvalues = []\n\nfor text in raw:\n    values.append(int(text))\n\nprint(values)",
+          "code": "# 전체 실행 흐름 확인: Python 자동화 미니 프로젝트의 전체 흐름\nraw = [\"1000\", \"2500\", \"3000\"]\nvalues = []\n\nfor text in raw:\n    values.append(int(text))\n\nprint(values)",
           "codeNote": "문자열 금액을 정수로 변환해 다음 계산에 사용할 숫자 리스트를 만듭니다.",
           "codeExplain": [
             "1행 「raw = [\"1000\", \"2500\", \"3000\"]」 — 여러 값을 순서대로 담은 리스트 [\"1000\", \"2500\", \"3000\"]을 구한 뒤 결과를 raw라는 변수에 저장합니다. 이 줄 이후에는 raw라는 이름으로 방금 만든 값을 다시 사용할 수 있습니다. ‘Python 자동화 미니 프로젝트의 전체 흐름’ 흐름에서는 1행은 [\"1000\", \"2500\", \"3000\"]에서 만든 결과를 raw에 저장하거나 갱신하는 줄입니다.",
@@ -8209,7 +8209,7 @@
           "eyebrow": "핵심 예제",
           "title": "Python 자동화 미니 프로젝트를 하나의 코드로 연결합니다",
           "paragraphs": [],
-          "code": "raw = [\"1000\", \"2500\", \"3000\"]\nvalues = []\n\nfor text in raw:\n    values.append(int(text))\n\nprint(values)",
+          "code": "# 예제로 동작 확인: Python 자동화 미니 프로젝트를 하나의 코드로 연결합니다\nraw = [\"1000\", \"2500\", \"3000\"]\nvalues = []\n\nfor text in raw:\n    values.append(int(text))\n\nprint(values)",
           "codeNote": "문자열 금액을 정수로 변환해 다음 계산에 사용할 숫자 리스트를 만듭니다.",
           "extras": [],
           "visibleExtras": 2,
@@ -8305,7 +8305,7 @@
           "visibleExtras": 3,
           "id": "t2-c8-p12",
           "answerOnNext": true,
-          "code": "raw = [\"1000\", \"2500\", \"3000\"]\nvalues = []\n\nfor text in raw:\n    values.append(int(text))\n\nprint(values)",
+          "code": "# 핵심 개념 확인: Python 자동화 미니 프로젝트 핵심을 확인합니다\nraw = [\"1000\", \"2500\", \"3000\"]\nvalues = []\n\nfor text in raw:\n    values.append(int(text))\n\nprint(values)",
           "codeNote": "문자열 금액을 정수로 변환해 다음 계산에 사용할 숫자 리스트를 만듭니다.",
           "codeExplain": [
             "1행 「raw = [\"1000\", \"2500\", \"3000\"]」 — 여러 값을 순서대로 담은 리스트 [\"1000\", \"2500\", \"3000\"]을 구한 뒤 결과를 raw라는 변수에 저장합니다. 이 줄 이후에는 raw라는 이름으로 방금 만든 값을 다시 사용할 수 있습니다. ‘Python 자동화 미니 프로젝트 핵심을 확인합니다’ 확인 문제의 코드에서는 1행은 [\"1000\", \"2500\", \"3000\"]에서 만든 결과를 raw에 저장하거나 갱신하는 줄입니다.",
@@ -8352,7 +8352,7 @@
             "검증"
           ],
           "extras": [],
-          "code": "raw = [\"1000\", \"2500\", \"3000\"]\nvalues = []\n\nfor text in raw:\n    values.append(int(text))\n\nprint(values)",
+          "code": "# 개념을 코드로 확인: 자동화는 “귀찮은 일을 컴퓨터에게 넘기는 레시피”입니다\nraw = [\"1000\", \"2500\", \"3000\"]\nvalues = []\n\nfor text in raw:\n    values.append(int(text))\n\nprint(values)",
           "codeNote": "문자열 금액을 정수로 변환해 다음 계산에 사용할 숫자 리스트를 만듭니다.",
           "codeExplain": [
             "1행 「raw = [\"1000\", \"2500\", \"3000\"]」 — 여러 값을 순서대로 담은 리스트 [\"1000\", \"2500\", \"3000\"]을 구한 뒤 결과를 raw라는 변수에 저장합니다. 이 줄 이후에는 raw라는 이름으로 방금 만든 값을 다시 사용할 수 있습니다. ‘자동화는 “귀찮은 일을 컴퓨터에게 넘기는 레시피”입니다’ 내용을 설명하는 코드에서는 1행은 [\"1000\", \"2500\", \"3000\"]에서 만든 결과를 raw에 저장하거나 갱신하는 줄입니다.",
@@ -8395,7 +8395,7 @@
             "출력은 결과입니다. 화면에 보여 주거나 새 파일로 저장할 수 있습니다."
           ],
           "extras": [],
-          "code": "raw = [\"1000\", \"2500\", \"3000\"]\nvalues = []\n\nfor text in raw:\n    values.append(int(text))\n\nprint(values)",
+          "code": "# 개념을 코드로 확인: 프로젝트는 입력 → 처리 → 출력 세 칸으로 나누면 쉽습니다\nraw = [\"1000\", \"2500\", \"3000\"]\nvalues = []\n\nfor text in raw:\n    values.append(int(text))\n\nprint(values)",
           "codeNote": "문자열 금액을 정수로 변환해 다음 계산에 사용할 숫자 리스트를 만듭니다.",
           "codeExplain": [
             "1행 「raw = [\"1000\", \"2500\", \"3000\"]」 — 여러 값을 순서대로 담은 리스트 [\"1000\", \"2500\", \"3000\"]을 구한 뒤 결과를 raw라는 변수에 저장합니다. 이 줄 이후에는 raw라는 이름으로 방금 만든 값을 다시 사용할 수 있습니다. ‘프로젝트는 입력 → 처리 → 출력 세 칸으로 나누면 쉽습니다’ 내용을 설명하는 코드에서는 1행은 [\"1000\", \"2500\", \"3000\"]에서 만든 결과를 raw에 저장하거나 갱신하는 줄입니다.",
@@ -8415,7 +8415,7 @@
             "각 줄을 strip한 뒤 int로 바꾸고 total에 더합니다.",
             "반복문, 문자열, 형변환, 누적값이 한 번에 연결됩니다."
           ],
-          "code": "raw = [\"1000\", \"2500\", \"3000\"]\nvalues = []\n\nfor text in raw:\n    values.append(int(text))\n\nprint(values)",
+          "code": "# 예제로 동작 확인: 문자열 기록을 숫자로 바꿔 합계를 만드는 전체 흐름입니다\nraw = [\"1000\", \"2500\", \"3000\"]\nvalues = []\n\nfor text in raw:\n    values.append(int(text))\n\nprint(values)",
           "codeNote": "문자열 금액을 정수로 변환해 다음 계산에 사용할 숫자 리스트를 만듭니다.",
           "extras": [],
           "codeExplain": [
@@ -8440,7 +8440,7 @@
           "calloutTitle": "자동화 안전 원칙",
           "calloutBody": "처음엔 읽기 → 화면 출력 → 검증 → 마지막에 저장 순서로 만듭니다.",
           "extras": [],
-          "code": "raw = [\"1000\", \"2500\", \"3000\"]\nvalues = []\n\nfor text in raw:\n    values.append(int(text))\n\nprint(values)",
+          "code": "# 개념을 코드로 확인: 자동화는 “틀렸을 때 안전한가?”까지 설계해야 합니다\nraw = [\"1000\", \"2500\", \"3000\"]\nvalues = []\n\nfor text in raw:\n    values.append(int(text))\n\nprint(values)",
           "codeNote": "문자열 금액을 정수로 변환해 다음 계산에 사용할 숫자 리스트를 만듭니다.",
           "codeExplain": [
             "1행 「raw = [\"1000\", \"2500\", \"3000\"]」 — 여러 값을 순서대로 담은 리스트 [\"1000\", \"2500\", \"3000\"]을 구한 뒤 결과를 raw라는 변수에 저장합니다. 이 줄 이후에는 raw라는 이름으로 방금 만든 값을 다시 사용할 수 있습니다. ‘자동화는 “틀렸을 때 안전한가?”까지 설계해야 합니다’ 내용을 설명하는 코드에서는 1행은 [\"1000\", \"2500\", \"3000\"]에서 만든 결과를 raw에 저장하거나 갱신하는 줄입니다.",
@@ -8460,7 +8460,7 @@
             "결과는 summary.txt라는 다른 파일에 저장합니다.",
             "계산이 잘못되어도 원본 데이터는 남습니다."
           ],
-          "code": "expenses = [12000, 3500, 8000]\ntotal = 0\n\nfor money in expenses:\n    total += money\n\nprint(\"총 지출:\", total)",
+          "code": "# 예제로 동작 확인: 파일을 바로 덮어쓰지 않고 새 결과 파일에 저장합니다\nexpenses = [12000, 3500, 8000]\ntotal = 0\n\nfor money in expenses:\n    total += money\n\nprint(\"총 지출:\", total)",
           "codeNote": "세 금액을 차례대로 더해 총 지출 23500을 만듭니다.",
           "extras": [],
           "codeExplain": [
@@ -8569,7 +8569,7 @@
           "question": "10, 20, 30 세 개를 처리하는 프로그램이라면 어떤 값을 확인하면 제대로 처리됐다고 더 자신 있게 말할 수 있을까요?",
           "answerOnNext": true,
           "extras": [],
-          "code": "raw = [\"1000\", \"2500\", \"3000\"]\nvalues = []\n\nfor text in raw:\n    values.append(int(text))\n\nprint(values)",
+          "code": "# 핵심 개념 확인: 자동화가 실행됐다고 바로 성공이라고 보면 안 됩니다\nraw = [\"1000\", \"2500\", \"3000\"]\nvalues = []\n\nfor text in raw:\n    values.append(int(text))\n\nprint(values)",
           "codeNote": "문자열 금액을 정수로 변환해 다음 계산에 사용할 숫자 리스트를 만듭니다.",
           "codeExplain": [
             "1행 「raw = [\"1000\", \"2500\", \"3000\"]」 — 여러 값을 순서대로 담은 리스트 [\"1000\", \"2500\", \"3000\"]을 구한 뒤 결과를 raw라는 변수에 저장합니다. 이 줄 이후에는 raw라는 이름으로 방금 만든 값을 다시 사용할 수 있습니다. ‘자동화가 실행됐다고 바로 성공이라고 보면 안 됩니다’ 확인 문제의 코드에서는 1행은 [\"1000\", \"2500\", \"3000\"]에서 만든 결과를 raw에 저장하거나 갱신하는 줄입니다.",
@@ -8616,7 +8616,7 @@
             "초보자는 먼저 한 덩어리 코드로 성공시킨 뒤 반복되거나 의미가 분명한 부분부터 함수로 나누면 됩니다."
           ],
           "extras": [],
-          "code": "def parse_amount(text):\n    return int(text.strip())\n\ndef add_amount(total, text):\n    return total + parse_amount(text)\n\nprint(add_amount(1000, \"2500\"))",
+          "code": "# 개념을 코드로 확인: 작은 함수들을 연결하면 자동화 프로젝트가 읽기 쉬워집니다\ndef parse_amount(text):\n    return int(text.strip())\n\ndef add_amount(total, text):\n    return total + parse_amount(text)\n\nprint(add_amount(1000, \"2500\"))",
           "codeNote": "문자열 정리·변환과 합산을 서로 다른 함수로 나누어 어느 단계가 실패했는지 찾기 쉽습니다.",
           "codeExplain": [
             "1행 「def parse_amount(text):」 — parse_amount이라는 새 함수를 정의합니다. 괄호 안 text는 나중에 함수가 호출될 때 받을 입력 자리입니다. 이 줄에서는 함수의 이름과 입구만 정하고 실제 동작은 아래 들여쓰기 블록에 작성합니다. ‘작은 함수들을 연결하면 자동화 프로젝트가 읽기 쉬워집니다’ 내용을 설명하는 코드에서는 1행은 parse_amount 함수의 이름과 입력 자리 text을 정하는 함수 입구입니다.",
@@ -8636,7 +8636,7 @@
             "숫자가 아닌 줄은 ValueError를 잡아 “건너뜀”이라고 알려 주고 계속 진행합니다.",
             "정상 숫자만 리스트에 넣은 뒤 별도의 calculate_total 함수가 하나씩 더합니다. 반복문·함수·문자열·파일·예외 처리가 모두 눈에 보이게 연결됩니다."
           ],
-          "code": "expenses = [12000, 3500, 8000]\ntotal = 0\n\nfor money in expenses:\n    total += money\n\nprint(\"총 지출:\", total)",
+          "code": "# 예제로 동작 확인: 파일·함수·예외 처리를 연결한 작은 지출 요약기를 완성합니다\nexpenses = [12000, 3500, 8000]\ntotal = 0\n\nfor money in expenses:\n    total += money\n\nprint(\"총 지출:\", total)",
           "codeNote": "세 금액을 차례대로 더해 총 지출 23500을 만듭니다.",
           "extras": [],
           "codeExplain": [
@@ -8664,7 +8664,7 @@
           "extras": [],
           "visibleExtras": 2,
           "id": "t2-c8-p13",
-          "code": "raw = [\"1000\", \"2500\", \"3000\"]\nvalues = []\n\nfor text in raw:\n    values.append(int(text))\n\nprint(values)",
+          "code": "# 챕터 핵심 다시 확인: 지금 알아야 할 것\nraw = [\"1000\", \"2500\", \"3000\"]\nvalues = []\n\nfor text in raw:\n    values.append(int(text))\n\nprint(values)",
           "codeNote": "문자열 금액을 정수로 변환해 다음 계산에 사용할 숫자 리스트를 만듭니다.",
           "codeExplain": [
             "1행 「raw = [\"1000\", \"2500\", \"3000\"]」 — 여러 값을 순서대로 담은 리스트 [\"1000\", \"2500\", \"3000\"]을 구한 뒤 결과를 raw라는 변수에 저장합니다. 이 줄 이후에는 raw라는 이름으로 방금 만든 값을 다시 사용할 수 있습니다. ‘지금 알아야 할 것’ 정리 코드에서는 1행은 [\"1000\", \"2500\", \"3000\"]에서 만든 결과를 raw에 저장하거나 갱신하는 줄입니다.",
@@ -12169,6 +12169,7 @@
     "track2LineExplainMethod": "context-aware base explanation + duplicate-only pedagogical context",
     "track2KoreanPolish": true,
     "track2DuplicateContextOnly": true,
-    "track2NoRepeatedSentenceGate": true
+    "track2NoRepeatedSentenceGate": true,
+    "track2DuplicateExamplesContextualized": true
   }
 }
