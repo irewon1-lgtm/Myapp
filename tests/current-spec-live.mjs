@@ -9,23 +9,27 @@ const base='https://chatbook-library-20260923.netlify.app',dir='tests/current-sp
 const expected=JSON.parse(fs.readFileSync('dist/engine-spec.json','utf8'));
 const report={scope:'Published HTTPS current specification and isolated Chromium; actual generated worker tested on local HTTP across update/failure. No physical Galaxy or new-video generation.',checks:[],errors:[],startedAt:new Date().toISOString()};
 const save=()=>fs.writeFileSync(dir+'/report.json',JSON.stringify(report,null,2));
-function check(name,value,detail){report.checks.push({name,passed:!!value,detail});save();console.log(name,!!value);if(!value)throw Error(name);}
+function check(name,value,detail){report.checks.push({name,passed:!!value,detail});save();console.log(name,!!value);}
 const get=p=>fetch(base+p+'?verify='+Date.now(),{cache:'no-store',signal:AbortSignal.timeout(20000)});
 let browser,server;
 try{
   const response=await get('/engine-spec.json'),text=await response.text(),spec=JSON.parse(text);
-  report.specDigest=spec.contentDigest;report.specBytes=Buffer.byteLength(text);
+  report.specDigest=spec.contentDigest;report.specBytes=Buffer.byteLength(text);fs.writeFileSync(dir+'/public-engine-spec.json',text);
   check('published current spec exactly matches tested bundle',canonical(spec)===canonical(expected));
   check('spec is JSON and not a JavaScript-only app fallback',response.headers.get('content-type')?.includes('application/json'));
   for(const p of ['/engine-spec.json','/engine-spec.html','/engine-spec','/engine-spec/']){const r=await get(p);check('current spec alias accessible and no-store '+p,r.ok&&/no-store/i.test(r.headers.get('cache-control')||''));}
-  const home=await(await get('/')).text();check('base URL exposes the current spec link',home.includes('href="/engine-spec.json"')&&home.includes('href="/engine-spec.html"'));
+  const home=await(await get('/')).text();fs.writeFileSync(dir+'/public-home.html',home);
   const bytes=Buffer.from(await(await get('/content/catalog.json')).arrayBuffer());
   const hash=b=>createHash('sha256').update(b).digest('hex');
   check('published catalog is byte-identical to preserved source',hash(bytes)===hash(fs.readFileSync('public/content/catalog.json')));
   report.books=JSON.parse(bytes).books.length;
   browser=await chromium.launch({headless:true});
   const staticContext=await browser.newContext({javaScriptEnabled:false,viewport:{width:360,height:800}}),p=await staticContext.newPage();
-  await p.goto(base+'/engine-spec.html',{waitUntil:'domcontentloaded'});
+  p.setDefaultTimeout(20000);await p.goto(base,{waitUntil:'domcontentloaded'});
+  check('base URL exposes the current spec JSON',await p.locator('link[rel="alternate"][type="application/json"][href="/engine-spec.json"]').count()===1);
+  const specLink=p.locator('a[href="/engine-spec"],a[href="/engine-spec/"],a[href="/engine-spec.html"]').first();
+  const hasSpecLink=await specLink.count()>0;check('base URL exposes a readable current-spec link',hasSpecLink);
+  if(hasSpecLink){await specLink.click();await p.waitForLoadState('domcontentloaded');}else await p.goto(base+'/engine-spec.html',{waitUntil:'domcontentloaded'});
   check('current rules and prose readable without JavaScript',(await p.locator('body').innerText()).includes(spec.example.title));
   check('static page has matching spec identity',await p.locator('body').getAttribute('data-spec-digest')===spec.contentDigest);
   check('static page fits 360px',await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
@@ -63,8 +67,8 @@ try{
   check('offline fallback reads current version only',(await b.evaluate(async()=>await(await fetch('/reader.js?v=older')).text())).includes('READER_2'));
   check('offline mode cannot return a cached latest spec',await b.evaluate(async()=>{try{await fetch('/engine-spec.json');return false;}catch{return true;}}));
   await ctx.setOffline(false);version=3;failInstall=true;
-  await b.evaluate(async()=>{const reg=await navigator.serviceWorker.getRegistration();await reg.update();if(reg.installing)await new Promise(resolve=>{const w=reg.installing;w.addEventListener('statechange',()=>{if(w.state==='redundant'||w.state==='installed')resolve();});});});
+  await b.evaluate(async()=>{const reg=await navigator.serviceWorker.getRegistration();await reg.update();const w=reg.installing;if(w&&!['redundant','installed'].includes(w.state))await new Promise((resolve,reject)=>{const timer=setTimeout(()=>reject(Error('worker install state timeout')),15000);const done=()=>{if(w.state==='redundant'||w.state==='installed'){clearTimeout(timer);resolve();}};w.addEventListener('statechange',done);done();});});
   await ctx.setOffline(true);
   check('failed new worker install retains working prior offline reader',(await b.evaluate(async()=>await(await fetch('/reader.js')).text())).includes('READER_2'));
-  await ctx.close();check('no reader JavaScript exceptions',report.errors.length===0,report.errors);report.status='passed';
+  await ctx.close();check('no reader JavaScript exceptions',report.errors.length===0,report.errors);report.status=report.checks.every(x=>x.passed)?'passed':'failed';if(report.status==='failed'){report.failure=report.checks.filter(x=>!x.passed).map(x=>x.name).join('; ');process.exitCode=1;}
 }catch(e){report.status='failed';report.failure=String(e);process.exitCode=1;}finally{report.completedAt=new Date().toISOString();save();await browser?.close();if(server)await new Promise(resolve=>server.close(resolve));}
