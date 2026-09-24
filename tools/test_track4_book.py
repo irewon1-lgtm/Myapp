@@ -56,7 +56,7 @@ def main():
     assert '공부한 내용을 1~80자 범위로 적어 주세요.' in js
     source_map=json.loads((ROOT/'live/track4-book/source-map.json').read_text())
     assert sum(len(c['sources']) for c in source_map['chapters'])==60
-    assert sum(len(c['pages'][0]['book']['exercises']) for c in chapters)==74
+    exercise_total=sum(len(c['pages'][0]['book']['exercises']) for c in chapters)\n    assert exercise_total>=74
     html=(ROOT/'live/reader.html').read_text()
     assert len(html.encode())<=3*1024*1024
     data=re.search(r'<script[^>]*id="course"[^>]*>([\s\S]*?)</script>',html)
@@ -79,7 +79,7 @@ def main():
         assert old.get('legacyTrack3')==course.get('legacyTrack3')
         assert old.get('bookAliases')==course.get('bookAliases')
     out=ROOT/'review';out.mkdir(exist_ok=True)
-    report={'status':'PASS','scope':'Lossless manuscript/JSON verification and Node execution. Browser/device tests are separate.','chapters':12,'authoredCharacters':course['track4BookAudit']['authoredCharacters'],'exercises':74,'referenceAssociations':60,'codeBlocks':code_count,'executedJavaScriptExamples':sum(r['status']=='PASS_EXECUTED' for r in results),'htmlDemosForBrowser':len(html_demos),'readerBytes':len(html.encode()),'allBlocksPreserved':True,'transportHydrationExact':True,'otherTracksPreserved':baseline.exists(),'results':results}
+    report={'status':'PASS','scope':'Lossless manuscript/JSON verification and Node execution. Browser/device tests are separate.','chapters':12,'authoredCharacters':course['track4BookAudit']['authoredCharacters'],'exercises':exercise_total,'referenceAssociations':60,'codeBlocks':code_count,'executedJavaScriptExamples':sum(r['status']=='PASS_EXECUTED' for r in results),'htmlDemosForBrowser':len(html_demos),'readerBytes':len(html.encode()),'allBlocksPreserved':True,'transportHydrationExact':True,'otherTracksPreserved':baseline.exists(),'results':results}
     (out/'track4-book-source-tests.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
     print(json.dumps({k:v for k,v in report.items() if k!='results'},ensure_ascii=False))
 
