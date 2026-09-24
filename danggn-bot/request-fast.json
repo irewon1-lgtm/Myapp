@@ -1,16 +1,18 @@
 {
   "regionSlugs": [
-    "잠실동-6188",
-    "풍납1동-405",
-    "풍납2동-406",
-    "거여1동-407",
-    "거여2동-408",
-    "마천1동-409",
-    "마천2동-410",
-    "방이1동-411"
+    "잠실동-6188"
   ],
   "queries": [
-    "노트북"
+    "노트북",
+    "갤럭시북",
+    "그램",
+    "ThinkPad",
+    "레노버 노트북",
+    "HP 노트북",
+    "ASUS 노트북",
+    "델 노트북",
+    "삼성 노트북",
+    "맥북"
   ],
   "ramGB": [
     16,
@@ -21,18 +23,22 @@
     1024
   ],
   "onlyOngoing": true,
-  "minPrice": 0,
-  "maxPrice": 2000000,
-  "perQuery": 5,
+  "minPrice": 100000,
+  "maxPrice": 1500000,
+  "perQuery": 120,
   "detailLimit": 0,
-  "outputLimit": 10,
+  "outputLimit": 100,
   "targetCities": [
-    "서울특별시",
-    "성남시",
-    "하남시",
-    "구리시"
+    "송파구",
+    "강남구",
+    "강동구",
+    "광진구",
+    "성동구",
+    "서초구",
+    "성남시 수정구",
+    "하남시"
   ],
   "postedSince": "2026-09-11T00:00:00+09:00",
-  "targetDetailLimit": 10,
-  "runToken": "jamsil-neighborhood-discovery-hop3"
+  "targetDetailLimit": 220,
+  "runToken": "jamsil-max-deep-final"
 }
