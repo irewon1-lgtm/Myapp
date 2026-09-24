@@ -1,0 +1,26 @@
+{
+  "regionSlug": "잠실동-6188",
+  "queries": [
+    "노트북 16GB 512GB",
+    "노트북 32GB 1TB",
+    "갤럭시북 16GB",
+    "LG그램 16GB",
+    "ThinkPad 16GB",
+    "레노버 노트북 16GB",
+    "ASUS 노트북 16GB"
+  ],
+  "ramGB": [
+    16,
+    32
+  ],
+  "ssdGB": [
+    512,
+    1024
+  ],
+  "onlyOngoing": true,
+  "minPrice": 150000,
+  "maxPrice": 1200000,
+  "perQuery": 30,
+  "detailLimit": 45,
+  "outputLimit": 60
+}
