@@ -56,7 +56,8 @@ def main():
     assert '공부한 내용을 1~80자 범위로 적어 주세요.' in js
     source_map=json.loads((ROOT/'live/track4-book/source-map.json').read_text())
     assert sum(len(c['sources']) for c in source_map['chapters'])==60
-    exercise_total=sum(len(c['pages'][0]['book']['exercises']) for c in chapters)\n    assert exercise_total>=74
+    exercise_total=sum(len(c['pages'][0]['book']['exercises']) for c in chapters)
+    assert exercise_total>=74
     html=(ROOT/'live/reader.html').read_text()
     assert len(html.encode())<=3*1024*1024
     data=re.search(r'<script[^>]*id="course"[^>]*>([\s\S]*?)</script>',html)
