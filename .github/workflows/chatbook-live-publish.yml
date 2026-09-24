@@ -1,0 +1,56 @@
+name: Chatbook verified live update (NO NETLIFY DEPLOY)
+on:
+  push:
+    branches: [chatbook-app-20260923]
+    paths:
+      - 'public/**'
+      - 'engine/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - 'netlify/**'
+      - 'netlify.toml'
+      - 'package.json'
+      - 'live/retired-anchors.json'
+      - '.github/workflows/chatbook-live-publish.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: chatbook-live-publication
+  cancel-in-progress: true
+jobs:
+  verify-and-publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: node scripts/live-contract.mjs check
+      - run: npm ci --no-audit --no-fund
+      - run: npm run build
+      - run: node scripts/live-package.mjs
+      - name: Prepare isolated browser
+        run: |
+          python -m pip install playwright==1.55.0
+          python -m playwright install --with-deps chromium
+      - name: Execute real browser recovery and data-retention cases
+        run: python tests/live/browser.py
+      - name: Publish verified files on GitHub only
+        run: node scripts/promote-live.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: chatbook-live-verification
+          retention-days: 3
+          path: |
+            review/live-browser/
+            live/channel.json
+            live/release.json
