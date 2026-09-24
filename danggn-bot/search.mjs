@@ -162,6 +162,7 @@ async function detailOne(item) {
         mannerTemperature: product.user?.score ?? item.mannerTemperature,
         location: product.locationName ?? product.region?.name ?? item.location,
         regionPath: [product.region?.name1, product.region?.name2, product.region?.name3].filter(Boolean).join(' ') || item.regionPath,
+        regionSlug: product.region?.name && product.region?.dbId ? product.region.name + '-' + product.region.dbId : item.regionSlug,
         status: product.status ?? item.status,
         postedAt: product.createdAt ?? item.postedAt,
         boostedAt: product.boostedAt ?? item.boostedAt
@@ -234,6 +235,7 @@ function score(item, request) {
 
 const request = JSON.parse(await fs.readFile(REQUEST_PATH, 'utf8'));
 const regionSlug = request.regionSlug || '';
+const regionSlugs = request.regionSlugs?.length ? request.regionSlugs : [regionSlug];
 const queries = request.queries?.length ? request.queries : ['노트북'];
 const perQuery = Math.max(5, Math.min(300, request.perQuery ?? 30));
 const detailLimit = Math.max(0, Math.min(80, request.detailLimit ?? 40));
@@ -241,17 +243,19 @@ const detailLimit = Math.max(0, Math.min(80, request.detailLimit ?? 40));
 const all = [];
 const errors = [];
 const discoveredRegions = [];
-for (const q of queries) {
-  try {
-    const found = await searchOne(q, regionSlug, perQuery);
-    all.push(...found.items);
-    for (const r of found.regions) {
-      if (!discoveredRegions.some(x => x.slug === r.slug)) discoveredRegions.push(r);
+for (const rs of regionSlugs) {
+  for (const q of queries) {
+    try {
+      const found = await searchOne(q, rs, perQuery);
+      all.push(...found.items.map(item => ({ ...item, sourceRegionSlug: rs })));
+      for (const r of found.regions) {
+        if (!discoveredRegions.some(x => x.slug === r.slug)) discoveredRegions.push(r);
+      }
+    } catch (e) {
+      errors.push({ query: q, regionSlug: rs, error: String(e) });
     }
-  } catch (e) {
-    errors.push({ query: q, error: String(e) });
+    await sleep(350);
   }
-  await sleep(900);
 }
 
 const map = new Map();
@@ -277,18 +281,23 @@ for (const item of items.slice(0, detailLimit)) {
 }
 items = [...detailed, ...items.slice(detailLimit)];
 
-const localRecent = items.filter(item => isTargetArea(item, request) && isRecentEnough(item, request));
+const likelySpec = items.filter(item => {
+  const text = (item.title ?? '').replace(/\s+/g, ' ');
+  return /(?:16|32)\s*(?:GB|G)\b/i.test(text) || /(?:512\s*(?:GB|G)|1\s*TB|1024\s*(?:GB|G))/i.test(text);
+});
 const targetDetailed = [];
-for (const item of localRecent.slice(0, request.targetDetailLimit ?? 80)) {
+for (const item of likelySpec.slice(0, request.targetDetailLimit ?? 120)) {
   targetDetailed.push(item.description !== undefined ? item : await detailOne(item));
-  await sleep(450);
+  await sleep(300);
 }
-const exactTargetCandidates = targetDetailed
+const localRecent = targetDetailed.filter(item => isTargetArea(item, request) && isRecentEnough(item, request));
+const exactTargetCandidates = localRecent
   .filter(item => matchesTargetSpecs(item, request))
   .map(item => ({ ...item, score: score(item, request) }))
   .sort((a, b) => b.score - a.score || (a.price || 1e15) - (b.price || 1e15));
 
 console.log('TARGET_SCAN_STATS=' + JSON.stringify({
+  likelySpec: likelySpec.length,
   localRecent: localRecent.length,
   detailed: targetDetailed.length,
   exact: exactTargetCandidates.length,
