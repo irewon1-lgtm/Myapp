@@ -2,7 +2,7 @@ name: Publish CodingRoadmap lessons and screen
 on:
   push:
     branches: [coding-roadmap-live]
-    paths: ['live/content.json', 'live/reader.template.html', 'tools/build_content.py', 'tools/verify_reader.cjs', '.github/workflows/publish-coding-roadmap-live.yml']
+    paths: ['live/content.json', 'live/reader.template.html', 'live/track3.manuscript.md', 'tools/build_content.py', 'tools/verify_reader.cjs', '.github/workflows/publish-coding-roadmap-live.yml']
 permissions:
   contents: write
 concurrency:
