@@ -36,4 +36,5 @@ jobs:
             exit 0
           fi
           git commit -m "chore: update danggn search result"
+          git pull --rebase origin danggn-search-bot
           git push
