@@ -1,3 +1,4 @@
+throw new Error('Production publishing is disabled. Use chatbook-live-publish: books/UI/spec update without a Netlify deploy.');
 import {generateKeyPairSync,privateDecrypt,createDecipheriv,constants} from 'node:crypto';
 import {spawnSync} from 'node:child_process';
 import fs from 'node:fs';

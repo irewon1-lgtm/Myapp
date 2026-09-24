@@ -19,3 +19,15 @@ Use `.github/workflows/chatbook-fast-publish.yml` / `scripts/fast-publish.mjs` f
 Publish/rollback the complete tested bundle. Compare live release and spec identities with tested artifacts. Metadata is read-only, not a reader runtime dependency, generation service or grant of edit/deploy authorization. Never include keys, credentials, user records or environment dumps in public metadata/artifacts.
 
 Keep all metadata aliases network-only and no-store/revalidation protected. Use only the current app cache for offline fallback. Remove only retired `chatbook-offline-*` generated caches after normal worker activation; do not force a worker into an open reader. Never clear localStorage, IndexedDB, unrelated caches or saved user downloads to perform an upgrade. Preserve these boundaries when changing the pipeline.
+
+## Live update contract (supersedes the former production-publication paragraph)
+
+The user sends YouTube URLs to ChatGPT, NOT to an AI generation server in this app. Read the actual current `/engine-spec.json`, save its digest/snapshot, write the Korean book, and register only authorized content. Keep private user notes/keys out of this public repository. No Gemini/OpenAI paid generation API is added by this migration.
+
+Ordinary changes to books, chapters, reader UI, CSS, JS and the current authoring rules go through `.github/workflows/chatbook-live-publish.yml`. It builds, tests in Chromium, writes immutable `live/assets`/`live/release.json`, then atomically advances `live/channel.json`. It NEVER calls Netlify. The existing Netlify URL uses a fixed same-origin gateway. Do not revive legacy production helpers or archived workflows.
+
+`netlify/**`, `netlify.toml`, `public/live-guard.js`, `public/live-sw.js`, and the PWA identity are the frozen bootstrap contract. A necessary security/server/loader update needs a separately approved and tested bootstrap deployment, not a routine live publish. The user approved one initial migration deployment; that does not authorize further production deployments.
+
+The live gateway permits only fixed-repository manifest-listed assets, verifies size/SHA-256, retains CSP self-only scripts, pins one complete version, and preserves the same origin and sync endpoints. The guard defers record writes during startup, and a broken startup falls back to a prior known-good/bundled reader. Offline caching advances only after every asset is verified. First offline use requires one successful online preparation; actual Galaxy behavior is not implied by Chromium tests.
+
+Never silently remove existing book/chapter/block IDs. For explicitly requested structural removals, document retired anchors in `live/retired-anchors.json`; keep user annotation records untouched. A hash and structural test cannot prove video access, accurate translation, or semantic completeness. Common policy edits remain separate from book-only edits.

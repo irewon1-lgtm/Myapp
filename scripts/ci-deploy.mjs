@@ -1,3 +1,4 @@
+throw new Error('Legacy production pipeline disabled after live-update migration.');
 /** Per-run sealed deployment handoff: no credential is committed to source. */
 import fs from 'node:fs';
 import {generateKeyPairSync,privateDecrypt,createDecipheriv,createHash,constants} from 'node:crypto';

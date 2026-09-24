@@ -35,3 +35,7 @@ try {
   fs.renameSync(temp,path.join(root,'dist'));
   console.log('Built and verified Chatbook release:',verified.releaseId,`(${verified.assetCount} file hashes)`);
 } finally {fs.rmSync(temp,{recursive:true,force:true});}
+
+// Frozen emergency package for the fixed live gateway; never part of the moving live asset map.
+const {makeManifest}=await import('./live-package.mjs');
+fs.writeFileSync(path.join(root,'dist/bootstrap-manifest.json'),JSON.stringify(makeManifest(path.join(root,'dist'),{sequence:1,sourceSha}),null,2)+'\n');
