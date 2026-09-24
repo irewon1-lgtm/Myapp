@@ -1,6 +1,6 @@
 {
   "ok": true,
-  "generatedAt": "2026-09-24T18:20:34.193Z",
+  "generatedAt": "2026-09-24T18:21:05.544Z",
   "request": {
     "regionSlug": "",
     "queries": [
@@ -26,12 +26,12 @@
     "perQuery": 300,
     "detailLimit": 0,
     "outputLimit": 500,
-    "runToken": "broad-discovery-300"
+    "runToken": "broad-discovery-300-retry"
   },
   "stats": {
-    "rawCount": 1875,
-    "uniqueCount": 1657,
-    "finalCount": 1071,
+    "rawCount": 1605,
+    "uniqueCount": 1493,
+    "finalCount": 925,
     "detailedCount": 0
   },
   "errors": [],
@@ -143,16 +143,6 @@
       "score": 66
     },
     {
-      "id": "h3egs2fw3eba",
-      "title": "박스미개봉! 15.6인치 최신 초경량 노트북 N150/16GB/512GB",
-      "price": 600000,
-      "url": "https://www.daangn.com/kr/buy-sell/%EB%B0%95%EC%8A%A4%EB%AF%B8%EA%B0%9C%EB%B4%89-15-6%EC%9D%B8%EC%B9%98-%EC%B5%9C%EC%8B%A0-%EC%B4%88%EA%B2%BD%EB%9F%89-%EB%85%B8%ED%8A%B8%EB%B6%81-n150-16gb-512gb-h3egs2fw3eba/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202512/6e11079b06af9678ee2bea48247f64463a919c673b84699a7ed4604264fda3cb_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "노트북",
-      "score": 63
-    },
-    {
       "id": "w4n89i5v6973",
       "title": "삼성 갤럭시북 플렉스 NT950QCG-X71SB / i7 / 16GB / SSD 1TB / S펜",
       "price": 800000,
@@ -250,16 +240,6 @@
       "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/17890161019637e9793466a590d541d052db4c59b08fc4617326db35127e4a500b052afab9dba0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
       "sourceQuery": "레노버 노트북",
-      "score": 60
-    },
-    {
-      "id": "5a7rtphe5u3o",
-      "title": "Lg 울트라북 32gb 512gb",
-      "price": 680000,
-      "url": "https://www.daangn.com/kr/buy-sell/lg-%EC%9A%B8%ED%8A%B8%EB%9D%BC%EB%B6%81-32gb-512gb-5a7rtphe5u3o/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/1789988032937614e82eb18dc2110d32cce64b2053d7b83d9b240893f1e414ad21641461fa58c0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "노트북",
       "score": 60
     },
     {
@@ -441,10 +421,7 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%81-%ED%94%8C%EB%A0%89%EC%8A%A4-%EC%95%8C%ED%8C%8C-i7-16gb-256gb-%ED%8C%9C%EB%8B%88%EB%8B%A4-6s58jk46xw8t/",
       "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202607/178506564695568d348e2a05bca3e2133dc08e95ba031c2e50f99280dbd5461ec7552759c50420.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "갤럭시북"
-      ],
+      "sourceQuery": "갤럭시북",
       "score": 50
     },
     {
@@ -660,36 +637,6 @@
       "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/8f42b631-eb7e-4a30-adab-a540e9573f1c.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
       "sourceQuery": "HP 노트북",
-      "score": 42
-    },
-    {
-      "id": "jztafz2t6wgo",
-      "title": "MSI 게이밍 노트북 i7-6700HQ 16GB 윈도우11",
-      "price": 320000,
-      "url": "https://www.daangn.com/kr/buy-sell/msi-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-i7-6700hq-16gb-%EC%9C%88%EB%8F%84%EC%9A%B011-jztafz2t6wgo/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202602/0be078d1ad8cc2faa3e68961544154063b03f271a4eb74730fec897b89bc177a_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "노트북",
-      "score": 42
-    },
-    {
-      "id": "7q38cjpxxres",
-      "title": "LG 노트북 15U480 i5 8250U 16GB",
-      "price": 340000,
-      "url": "https://www.daangn.com/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-15u480-i5-8250u-16gb-7q38cjpxxres/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202607/1783735886187d2558c840c9434a635b1025ee25bbf322fea5b47dff94349ffdd6be36b18af6d0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "노트북",
-      "score": 42
-    },
-    {
-      "id": "dzn4ycddqpqb",
-      "title": "삼성 NT550XDA  K03 I5 11세대  16gb",
-      "price": 400000,
-      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-nt550xda-k03-i5-11%EC%84%B8%EB%8C%80-16gb-dzn4ycddqpqb/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/39720362-86e5-4e58-9784-895fbfbe2737.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "노트북",
       "score": 42
     },
     {
@@ -916,46 +863,6 @@
       "score": 33
     },
     {
-      "id": "kjtc94asmcjd",
-      "title": "삼성 아티브북8 i7 노트북 / RAM 8GB / 1TB",
-      "price": 120000,
-      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EC%95%84%ED%8B%B0%EB%B8%8C%EB%B6%818-i7-%EB%85%B8%ED%8A%B8%EB%B6%81-ram-8gb-1tb-kjtc94asmcjd/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/4228e092-270e-4b3e-8b2b-f1edf550d043.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "노트북",
-      "score": 32
-    },
-    {
-      "id": "h4x4aramjnxh",
-      "title": "LG 15.6인치 노트북 i7 / RAM 8GB / SSD 120GB + HDD 1TB",
-      "price": 126000,
-      "url": "https://www.daangn.com/kr/buy-sell/lg-15-6%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-i7-ram-8gb-ssd-120gb-hdd-1tb-h4x4aramjnxh/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/e5b94e17-5d7d-4a08-bf7f-15e5796bb5d4.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "노트북",
-      "score": 32
-    },
-    {
-      "id": "zpv3w1x9kk62",
-      "title": "LG 노트북 14U53  i5 4GB SSD 512GB",
-      "price": 135000,
-      "url": "https://www.daangn.com/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-14u53-i5-4gb-ssd-512gb-zpv3w1x9kk62/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202605/f423b6c6e2874cdd616951173e74f0452394bbf543bed503e312c4b552919866_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "노트북",
-      "score": 32
-    },
-    {
-      "id": "w4tt3pdjaeak",
-      "title": "LG 노트북 i7 4712, 8GB RAM, 128GB SSD, 1TB HDD",
-      "price": 200000,
-      "url": "https://www.daangn.com/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-i7-4712-8gb-ram-128gb-ssd-1tb-hdd-w4tt3pdjaeak/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/07b9ba5a-f0c0-4048-a7a6-9e087b53b771.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "노트북",
-      "score": 32
-    },
-    {
       "id": "shfebvexw5f8",
       "title": "레노버 씽크북 lenovo 5625u 24GB 512GB + 512GB",
       "price": 600000,
@@ -1022,16 +929,6 @@
       "score": 30
     },
     {
-      "id": "7tgx66m1y8h9",
-      "title": "MSI 게이밍 노트북 i7-13세대 RTX 4060 16GB",
-      "price": 920000,
-      "url": "https://www.daangn.com/kr/buy-sell/msi-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-i7-13%EC%84%B8%EB%8C%80-rtx-4060-16gb-7tgx66m1y8h9/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/f2554cc2-be98-4bce-92e2-6d0d4c8dd083.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "노트북",
-      "score": 30
-    },
-    {
       "id": "p9u353t13jub",
       "title": "✨HP 엔비15-ep0095TX 15.6인치 32GB ✨",
       "price": 920000,
@@ -1039,16 +936,6 @@
       "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202606/17804473085731803d8a87f148973aa19c355e4a8c7a5d7e1564af6c84d44e1de6740a93bbbca0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
       "sourceQuery": "HP 노트북",
-      "score": 30
-    },
-    {
-      "id": "bkwjz4iytuae",
-      "title": "삼성 노트북 i7-10세대 32GB RAM 2TB SSD",
-      "price": 1000000,
-      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-i7-10%EC%84%B8%EB%8C%80-32gb-ram-2tb-ssd-bkwjz4iytuae/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/17901302617005efbf5110cf043cec9869b2698a4529b193f21998690e0b250a85af20de2d6410.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "노트북",
       "score": 30
     },
     {
@@ -1090,16 +977,6 @@
       "status": "Ongoing",
       "sourceQuery": "HP 노트북",
       "score": 28
-    },
-    {
-      "id": "qhhh4exzp4vb",
-      "title": "RTX3060 게이밍 노트북 / i7 / 램 24GB / SSD 512GB",
-      "price": 800000,
-      "url": "https://www.daangn.com/kr/buy-sell/rtx3060-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-i7-%EB%9E%A8-24gb-ssd-512gb-qhhh4exzp4vb/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/73606b77-4efd-4bb2-a0f6-c7ca5a453a26.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "노트북",
-      "score": 26
     },
     {
       "id": "6r7h3geos4o5",
@@ -1384,23 +1261,7 @@
       "url": "https://www.daangn.com/kr/buy-sell/hp-probook-430-g4-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-745r5yxyr7h8/",
       "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/48c266d255e3f9456bea341c73cdc79ebeb2e7f81f2496b159378a589a1aef86_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "HP 노트북"
-      ],
-      "score": 22
-    },
-    {
-      "id": "aiqtg8kckz11",
-      "title": "LG 그램 14Z990-GP5WL 노트북 / 8GB / 충전기 포함",
-      "price": 120000,
-      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-14z990-gp5wl-%EB%85%B8%ED%8A%B8%EB%B6%81-8gb-%EC%B6%A9%EC%A0%84%EA%B8%B0-%ED%8F%AC%ED%95%A8-aiqtg8kckz11/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/17898200509807025907275054601602d318da007752863fb533982e6f928b5a9f0a9f60a9b250.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "그램"
-      ],
+      "sourceQuery": "HP 노트북",
       "score": 22
     },
     {
@@ -1411,6 +1272,16 @@
       "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202608/2b2e0ba010dab84fd8fec928dd0380c25bbf62de1fd8fb6da780a4f6be069144_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
       "sourceQuery": "갤럭시북",
+      "score": 22
+    },
+    {
+      "id": "aiqtg8kckz11",
+      "title": "LG 그램 14Z990-GP5WL 노트북 / 8GB / 충전기 포함",
+      "price": 120000,
+      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-14z990-gp5wl-%EB%85%B8%ED%8A%B8%EB%B6%81-8gb-%EC%B6%A9%EC%A0%84%EA%B8%B0-%ED%8F%AC%ED%95%A8-aiqtg8kckz11/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/17898200509807025907275054601602d318da007752863fb533982e6f928b5a9f0a9f60a9b250.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "status": "Ongoing",
+      "sourceQuery": "그램",
       "score": 22
     },
     {
@@ -1453,10 +1324,7 @@
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-29ys2h5j5ifv/",
       "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/52ee73fbcbb6d003320d9461a0435bdecd0afdd5d776566b3e3f7ccd333113e8_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "그램"
-      ],
+      "sourceQuery": "그램",
       "score": 22
     },
     {
@@ -1476,10 +1344,7 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EC%97%98%EC%A7%80-%EA%B7%B8%EB%9E%A8-13%EC%9D%B8%EC%B9%98-13zd940-i5-4210-ssd256-8%EA%B8%B0%EA%B0%80-dzxpzpbhkgy1/",
       "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/b58efb0f21db25842ac4d33bae283bb01a8f05b2ae1ad0230381e97185c4c0b0_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "그램"
-      ],
+      "sourceQuery": "그램",
       "score": 22
     },
     {
@@ -1489,10 +1354,7 @@
       "url": "https://www.daangn.com/kr/buy-sell/lg%EA%B7%B8%EB%9E%A8-14z950-i5-5200u-2seqqkkbwqc4/",
       "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202608/57df50873c01aa48cc49349bafb904e4c3d1a72625a8b3d91483aafac41c1041_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "그램"
-      ],
+      "sourceQuery": "그램",
       "score": 22
     },
     {
@@ -1549,19 +1411,6 @@
       "score": 22
     },
     {
-      "id": "pedrxdxbiumg",
-      "title": "Lenovo IdeaPad S145-14IWL 노트북",
-      "price": 140000,
-      "url": "https://www.daangn.com/kr/buy-sell/lenovo-ideapad-s145-14iwl-%EB%85%B8%ED%8A%B8%EB%B6%81-pedrxdxbiumg/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/da406975-77c4-4350-a79c-be82f4ff6de1.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "레노버 노트북"
-      ],
-      "score": 22
-    },
-    {
       "id": "burra3unsn4w",
       "title": "LG 그램 노트북 화이트",
       "price": 140000,
@@ -1595,6 +1444,16 @@
         "ThinkPad",
         "레노버 노트북"
       ],
+      "score": 22
+    },
+    {
+      "id": "pedrxdxbiumg",
+      "title": "Lenovo IdeaPad S145-14IWL 노트북",
+      "price": 140000,
+      "url": "https://www.daangn.com/kr/buy-sell/lenovo-ideapad-s145-14iwl-%EB%85%B8%ED%8A%B8%EB%B6%81-pedrxdxbiumg/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/da406975-77c4-4350-a79c-be82f4ff6de1.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "status": "Ongoing",
+      "sourceQuery": "레노버 노트북",
       "score": 22
     },
     {
@@ -1637,16 +1496,13 @@
       "score": 22
     },
     {
-      "id": "ui4j395qr6bb",
-      "title": "LG 그램 노트북 i3-7100U 8GB RAM 128GB SSD",
+      "id": "ejh1usizp5xs",
+      "title": "갤럭시북s 판매합니다!",
       "price": 150000,
-      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-i3-7100u-8gb-ram-128gb-ssd-ui4j395qr6bb/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/04546d67-2fcd-45b5-a294-22fe54fb5203.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "url": "https://www.daangn.com/kr/buy-sell/%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%81s-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-ejh1usizp5xs/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/ae8e0e05-7291-4b92-b845-443da3aaab9d.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "그램"
-      ],
+      "sourceQuery": "갤럭시북",
       "score": 22
     },
     {
@@ -1656,33 +1512,7 @@
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-13%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-o5976vsj119y/",
       "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202607/673817ddfa0a08697d1f78df4cca81f55c085d4d73bc1f5399fada8bd78614d8_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "그램"
-      ],
-      "score": 22
-    },
-    {
-      "id": "hfppj3k7utuo",
-      "title": "LG 그램 노트북 (i5, 15인치)",
-      "price": 150000,
-      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-15%EC%9D%B8%EC%B9%98-hfppj3k7utuo/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202606/8e546a4e4bcf8dd9050e87e8b3350f15da256b403da3faae2acfe4c1465a3395_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "그램"
-      ],
-      "score": 22
-    },
-    {
-      "id": "ejh1usizp5xs",
-      "title": "갤럭시북s 판매합니다!",
-      "price": 150000,
-      "url": "https://www.daangn.com/kr/buy-sell/%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%81s-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-ejh1usizp5xs/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/ae8e0e05-7291-4b92-b845-443da3aaab9d.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "갤럭시북",
+      "sourceQuery": "그램",
       "score": 22
     },
     {
@@ -1711,6 +1541,26 @@
       "price": 150000,
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-14%EC%9D%B8%EC%B9%98-i5-5%EC%84%B8%EB%8C%80-%EA%B0%80%EC%84%B1%EB%B9%84-%EC%82%AC%EB%AC%B4%EC%9A%A9-%EB%85%B8%ED%8A%B8%EB%B6%81-9y1soqixxcxo/",
       "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/1a1643dd-c462-49b4-91d7-698a978b3af6.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "status": "Ongoing",
+      "sourceQuery": "그램",
+      "score": 22
+    },
+    {
+      "id": "ui4j395qr6bb",
+      "title": "LG 그램 노트북 i3-7100U 8GB RAM 128GB SSD",
+      "price": 150000,
+      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-i3-7100u-8gb-ram-128gb-ssd-ui4j395qr6bb/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/04546d67-2fcd-45b5-a294-22fe54fb5203.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "status": "Ongoing",
+      "sourceQuery": "그램",
+      "score": 22
+    },
+    {
+      "id": "hfppj3k7utuo",
+      "title": "LG 그램 노트북 (i5, 15인치)",
+      "price": 150000,
+      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-15%EC%9D%B8%EC%B9%98-hfppj3k7utuo/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202606/8e546a4e4bcf8dd9050e87e8b3350f15da256b403da3faae2acfe4c1465a3395_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
       "sourceQuery": "그램",
       "score": 22
@@ -1798,23 +1648,7 @@
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-13%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-%EB%85%B8%ED%8A%B8%EB%B6%81-13z950-%EC%82%AC%EB%AC%B4%EC%9A%A9-%EB%85%B8%ED%8A%B8%EB%B6%81-ps99dgi6mmq7/",
       "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/5eadb151-62d4-4ab0-930e-431500b6edda.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "그램"
-      ],
-      "score": 22
-    },
-    {
-      "id": "hwkwdyr2e3ws",
-      "title": "LG 노트북 셀러론 8GB 화이트 14u380그램",
-      "price": 160000,
-      "url": "https://www.daangn.com/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%85%80%EB%9F%AC%EB%A1%A0-8gb-%ED%99%94%EC%9D%B4%ED%8A%B8-14u380%EA%B7%B8%EB%9E%A8-hwkwdyr2e3ws/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/8d804330-e382-44b4-90d7-55c22934daff.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "그램"
-      ],
+      "sourceQuery": "그램",
       "score": 22
     },
     {
@@ -1823,6 +1657,16 @@
       "price": 160000,
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-14%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-%EA%B0%80%EC%84%B1%EB%B9%84-%EC%97%85%EB%AC%B4%EC%9A%A9-%EB%85%B8%ED%8A%B8%EB%B6%81-kvbg1xfrzgg7/",
       "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202607/7cff0d5e46f5515edd0164d7f3825f0cdaebdba2ac9b39632cf1e0e08297ea29_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "status": "Ongoing",
+      "sourceQuery": "그램",
+      "score": 22
+    },
+    {
+      "id": "hwkwdyr2e3ws",
+      "title": "LG 노트북 셀러론 8GB 화이트 14u380그램",
+      "price": 160000,
+      "url": "https://www.daangn.com/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%85%80%EB%9F%AC%EB%A1%A0-8gb-%ED%99%94%EC%9D%B4%ED%8A%B8-14u380%EA%B7%B8%EB%9E%A8-hwkwdyr2e3ws/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/8d804330-e382-44b4-90d7-55c22934daff.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
       "sourceQuery": "그램",
       "score": 22
@@ -1851,19 +1695,6 @@
       "score": 22
     },
     {
-      "id": "tguu5yaa67d4",
-      "title": "LG 그램 노트북  화이트",
-      "price": 170000,
-      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-tguu5yaa67d4/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/17901731073782f2e48e1fa9698d79c5ff5dd116327b2fa507c57c4fe8ad6797c52690fcabef30.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "그램"
-      ],
-      "score": 22
-    },
-    {
       "id": "9nh93o9qvwmh",
       "title": "삼성전자 노트북 갤럭시북 고 NT345XLA",
       "price": 170000,
@@ -1871,6 +1702,16 @@
       "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/1789992880623de9797b1b5ec731fac12e9953d076197f73823a767b61b163d5a6e826e35693d0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
       "sourceQuery": "갤럭시북",
+      "score": 22
+    },
+    {
+      "id": "tguu5yaa67d4",
+      "title": "LG 그램 노트북  화이트",
+      "price": 170000,
+      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-tguu5yaa67d4/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/17901731073782f2e48e1fa9698d79c5ff5dd116327b2fa507c57c4fe8ad6797c52690fcabef30.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "status": "Ongoing",
+      "sourceQuery": "그램",
       "score": 22
     },
     {
@@ -1956,32 +1797,6 @@
       "score": 22
     },
     {
-      "id": "ntu5qwpwrhez",
-      "title": "그램 노트북 LG 그램 노트북",
-      "price": 180000,
-      "url": "https://www.daangn.com/kr/buy-sell/%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-ntu5qwpwrhez/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/9fd076ad4b013b882f97fae130df2fb73ee9c42f8dd8a4cf37c80e8ca441ef00_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "그램"
-      ],
-      "score": 22
-    },
-    {
-      "id": "99hrzzzno7ss",
-      "title": "LG 그램 14ZD960-GX58K 화이트 노트북",
-      "price": 180000,
-      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-14zd960-gx58k-%ED%99%94%EC%9D%B4%ED%8A%B8-%EB%85%B8%ED%8A%B8%EB%B6%81-99hrzzzno7ss/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/178952329043384dddd24816ff55b9919585d8f7a43ee87a9aafaef4dc165e058bf45c61669a40.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "그램"
-      ],
-      "score": 22
-    },
-    {
       "id": "37x2suyz3t4q",
       "title": "삼성 갤럭시북 15인치 실버",
       "price": 180000,
@@ -2009,6 +1824,26 @@
       "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202606/1497bb0f9adf457b060e57d14be910ba0a59df6ac9d4e04b1d59749e7c370e83_1.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
       "sourceQuery": "갤럭시북",
+      "score": 22
+    },
+    {
+      "id": "ntu5qwpwrhez",
+      "title": "그램 노트북 LG 그램 노트북",
+      "price": 180000,
+      "url": "https://www.daangn.com/kr/buy-sell/%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-ntu5qwpwrhez/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/9fd076ad4b013b882f97fae130df2fb73ee9c42f8dd8a4cf37c80e8ca441ef00_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "status": "Ongoing",
+      "sourceQuery": "그램",
+      "score": 22
+    },
+    {
+      "id": "99hrzzzno7ss",
+      "title": "LG 그램 14ZD960-GX58K 화이트 노트북",
+      "price": 180000,
+      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-14zd960-gx58k-%ED%99%94%EC%9D%B4%ED%8A%B8-%EB%85%B8%ED%8A%B8%EB%B6%81-99hrzzzno7ss/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/178952329043384dddd24816ff55b9919585d8f7a43ee87a9aafaef4dc165e058bf45c61669a40.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "status": "Ongoing",
+      "sourceQuery": "그램",
       "score": 22
     },
     {
@@ -2231,45 +2066,6 @@
       "score": 22
     },
     {
-      "id": "hp2o8dff35jy",
-      "title": "LG 그램 화이트 노트북",
-      "price": 200000,
-      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%ED%99%94%EC%9D%B4%ED%8A%B8-%EB%85%B8%ED%8A%B8%EB%B6%81-hp2o8dff35jy/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/8f976d0c1b8ddc6a9b6eb451a171363eb10b8a74d92a66a1cfb0ed32901e78c6_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "그램"
-      ],
-      "score": 22
-    },
-    {
-      "id": "4pv19em8g9em",
-      "title": "LG Gram Type 15.6 inch notebook White Color .",
-      "price": 200000,
-      "url": "https://www.daangn.com/kr/buy-sell/lg-gram-type-15-6-inch-notebook-white-color-4pv19em8g9em/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/fe4ccd06-0640-47cc-b38f-0ced56f9c141.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "그램"
-      ],
-      "score": 22
-    },
-    {
-      "id": "rjn2jsu1mod9",
-      "title": "LG 그램 15인치 초경량 노트북 (15ZD960) 판매합니다",
-      "price": 200000,
-      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-15%EC%9D%B8%EC%B9%98-%EC%B4%88%EA%B2%BD%EB%9F%89-%EB%85%B8%ED%8A%B8%EB%B6%81-15zd960-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-rjn2jsu1mod9/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/a6586615-1f26-4647-837d-5347c2c09932.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "그램"
-      ],
-      "score": 22
-    },
-    {
       "id": "natyx9rudtrx",
       "title": "갤럭시북 고 NT345XLA",
       "price": 200000,
@@ -2310,11 +2106,41 @@
       "score": 22
     },
     {
+      "id": "hp2o8dff35jy",
+      "title": "LG 그램 화이트 노트북",
+      "price": 200000,
+      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%ED%99%94%EC%9D%B4%ED%8A%B8-%EB%85%B8%ED%8A%B8%EB%B6%81-hp2o8dff35jy/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/8f976d0c1b8ddc6a9b6eb451a171363eb10b8a74d92a66a1cfb0ed32901e78c6_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "status": "Ongoing",
+      "sourceQuery": "그램",
+      "score": 22
+    },
+    {
+      "id": "4pv19em8g9em",
+      "title": "LG Gram Type 15.6 inch notebook White Color .",
+      "price": 200000,
+      "url": "https://www.daangn.com/kr/buy-sell/lg-gram-type-15-6-inch-notebook-white-color-4pv19em8g9em/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/fe4ccd06-0640-47cc-b38f-0ced56f9c141.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "status": "Ongoing",
+      "sourceQuery": "그램",
+      "score": 22
+    },
+    {
       "id": "ufd53yfawnt2",
       "title": "LG 그램 14ZD950 화이트 노트북 i7 5500u",
       "price": 200000,
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-14zd950-%ED%99%94%EC%9D%B4%ED%8A%B8-%EB%85%B8%ED%8A%B8%EB%B6%81-i7-5500u-ufd53yfawnt2/",
       "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/437b1567-944f-4306-88a3-b0d6e612bce5.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "status": "Ongoing",
+      "sourceQuery": "그램",
+      "score": 22
+    },
+    {
+      "id": "rjn2jsu1mod9",
+      "title": "LG 그램 15인치 초경량 노트북 (15ZD960) 판매합니다",
+      "price": 200000,
+      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-15%EC%9D%B8%EC%B9%98-%EC%B4%88%EA%B2%BD%EB%9F%89-%EB%85%B8%ED%8A%B8%EB%B6%81-15zd960-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-rjn2jsu1mod9/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/a6586615-1f26-4647-837d-5347c2c09932.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
       "sourceQuery": "그램",
       "score": 22
@@ -2617,23 +2443,7 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EC%97%98%EC%A7%80-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-15z960-gr3gk-%EA%B8%89%EC%B2%98-firmyxrgvg3m/",
       "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202508/17563687640187d9a75233ce2212ba99c172417df0fee3834b3e6d79dbeea85874779b85923320.jpg?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "그램"
-      ],
-      "score": 22
-    },
-    {
-      "id": "kz1osrwtcsnv",
-      "title": "그램형삼성노트북 급팔아요",
-      "price": 230000,
-      "url": "https://www.daangn.com/kr/buy-sell/%EA%B7%B8%EB%9E%A8%ED%98%95%EC%82%BC%EC%84%B1%EB%85%B8%ED%8A%B8%EB%B6%81-%EA%B8%89%ED%8C%94%EC%95%84%EC%9A%94-kz1osrwtcsnv/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/11d1d380-4150-46c4-a10e-17129bcac4bb.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "그램"
-      ],
+      "sourceQuery": "그램",
       "score": 22
     },
     {
@@ -2654,6 +2464,16 @@
       "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202508/16ccf0963ff035106c09a3df0a8b1139de5a7600f2641ceb1e981a0173ff54e4_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
       "sourceQuery": "갤럭시북",
+      "score": 22
+    },
+    {
+      "id": "kz1osrwtcsnv",
+      "title": "그램형삼성노트북 급팔아요",
+      "price": 230000,
+      "url": "https://www.daangn.com/kr/buy-sell/%EA%B7%B8%EB%9E%A8%ED%98%95%EC%82%BC%EC%84%B1%EB%85%B8%ED%8A%B8%EB%B6%81-%EA%B8%89%ED%8C%94%EC%95%84%EC%9A%94-kz1osrwtcsnv/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/11d1d380-4150-46c4-a10e-17129bcac4bb.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "status": "Ongoing",
+      "sourceQuery": "그램",
       "score": 22
     },
     {
@@ -2686,10 +2506,7 @@
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-14zd960-%EB%85%B8%ED%8A%B8%EB%B6%81-sdd250-8%EA%B8%B0%EA%B0%80-%ED%8C%9D%EB%8B%88%EB%8B%A4-5csuxr1psqts/",
       "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202608/09185c71cb5e80d7a6bc4def6f55e9787657e85e0d9545f894f84fd294fc5788_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "그램"
-      ],
+      "sourceQuery": "그램",
       "score": 22
     },
     {
@@ -2723,16 +2540,23 @@
       "score": 22
     },
     {
+      "id": "uxnrybnphjgt",
+      "title": "삼성 노트북 갤럭시북3 Go",
+      "price": 250000,
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%813-go-uxnrybnphjgt/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202608/f789b37842705d2949e98eaa1b219883d3679a06831afe5d3b38acce2279f59c_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "status": "Ongoing",
+      "sourceQuery": "갤럭시북",
+      "score": 22
+    },
+    {
       "id": "obsbefu8b8tu",
       "title": "LG 그램 노트북 15인치 화이트",
       "price": 250000,
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-15%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-obsbefu8b8tu/",
       "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/1789302348040c485eb4ae107c93b83fa0072a6c6c985caceacdd6b00f1cfb0b9681b98537a010.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "그램"
-      ],
+      "sourceQuery": "그램",
       "score": 22
     },
     {
@@ -2742,20 +2566,7 @@
       "url": "https://www.daangn.com/kr/buy-sell/lg%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4-oxc6hf3pjzay/",
       "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202412/adf0371a680029ac87197535e246b68147697a36151e2b4926361042f490e8a8_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "그램"
-      ],
-      "score": 22
-    },
-    {
-      "id": "uxnrybnphjgt",
-      "title": "삼성 노트북 갤럭시북3 Go",
-      "price": 250000,
-      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%813-go-uxnrybnphjgt/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202608/f789b37842705d2949e98eaa1b219883d3679a06831afe5d3b38acce2279f59c_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "갤럭시북",
+      "sourceQuery": "그램",
       "score": 22
     },
     {
@@ -2878,19 +2689,6 @@
       "score": 22
     },
     {
-      "id": "ui9iw52z9otq",
-      "title": "LG 그램 15인치 노트북",
-      "price": 280000,
-      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-15%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-ui9iw52z9otq/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202607/92561ffe8f945e2d65185c8e98586145a0070760a64d3fca5f7250f430fe5d23_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "그램"
-      ],
-      "score": 22
-    },
-    {
       "id": "np2qp9kvxckr",
       "title": "(A급)갤럭시북3 go 5G 25년구입(Win11, MS오피스,한글)",
       "price": 280000,
@@ -2898,6 +2696,16 @@
       "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/db09c6d7-e5e1-4fc4-84a9-254d33c4d196.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
       "sourceQuery": "갤럭시북",
+      "score": 22
+    },
+    {
+      "id": "ui9iw52z9otq",
+      "title": "LG 그램 15인치 노트북",
+      "price": 280000,
+      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-15%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-ui9iw52z9otq/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202607/92561ffe8f945e2d65185c8e98586145a0070760a64d3fca5f7250f430fe5d23_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "status": "Ongoing",
+      "sourceQuery": "그램",
       "score": 22
     },
     {
@@ -2944,20 +2752,6 @@
       "score": 22
     },
     {
-      "id": "kupqiyokch4g",
-      "title": "씽크패드 X1 카본 5세대 / 배터리 교체 / 박스·정품충전기 풀구성",
-      "price": 300000,
-      "url": "https://www.daangn.com/kr/buy-sell/%EC%94%BD%ED%81%AC%ED%8C%A8%EB%93%9C-x1-%EC%B9%B4%EB%B3%B8-5%EC%84%B8%EB%8C%80-%EB%B0%B0%ED%84%B0%EB%A6%AC-%EA%B5%90%EC%B2%B4-%EB%B0%95%EC%8A%A4-%EC%A0%95%ED%92%88%EC%B6%A9%EC%A0%84%EA%B8%B0-%ED%92%80%EA%B5%AC%EC%84%B1-kupqiyokch4g/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/17893003823265f52c5540c05098ef0fff9f8933f73629eef2665fd774c58b8c1bfa826a61f980.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "ThinkPad",
-        "레노버 노트북"
-      ],
-      "score": 22
-    },
-    {
       "id": "9gszzuvgv149",
       "title": "삼성 갤럭시북 i5 15인치 블루 노트북",
       "price": 300000,
@@ -2965,6 +2759,19 @@
       "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/8fb816a5-370c-4f34-bfe8-5b1647ea5d43.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
       "sourceQuery": "갤럭시북",
+      "score": 22
+    },
+    {
+      "id": "kupqiyokch4g",
+      "title": "씽크패드 X1 카본 5세대 / 배터리 교체 / 박스·정품충전기 풀구성",
+      "price": 300000,
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%94%BD%ED%81%AC%ED%8C%A8%EB%93%9C-x1-%EC%B9%B4%EB%B3%B8-5%EC%84%B8%EB%8C%80-%EB%B0%B0%ED%84%B0%EB%A6%AC-%EA%B5%90%EC%B2%B4-%EB%B0%95%EC%8A%A4-%EC%A0%95%ED%92%88%EC%B6%A9%EC%A0%84%EA%B8%B0-%ED%92%80%EA%B5%AC%EC%84%B1-kupqiyokch4g/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/17893003823265f52c5540c05098ef0fff9f8933f73629eef2665fd774c58b8c1bfa826a61f980.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "status": "Ongoing",
+      "sourceQuery": [
+        "ThinkPad",
+        "레노버 노트북"
+      ],
       "score": 22
     },
     {
@@ -2997,10 +2804,7 @@
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-15zd995-lx20k-8ot6e48qm8dx/",
       "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202608/701c89593de7b1e7a1ce18a74dd083d98fc0f9a695775286733148f0a46ba13f_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "그램"
-      ],
+      "sourceQuery": "그램",
       "score": 22
     },
     {
@@ -3043,29 +2847,23 @@
       "score": 22
     },
     {
-      "id": "k4rjbt896ef7",
-      "title": "LG 그램 14인치 노트북 화이트 14ZD90N",
-      "price": 350000,
-      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-14%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-14zd90n-k4rjbt896ef7/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/1789998553973946b9e56fd20364b5cb20823fa54a0174938677f108aac34c4e33f39496ac7e50.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "그램"
-      ],
-      "score": 22
-    },
-    {
       "id": "74oeah3sn3cm",
       "title": "LG그램 노트북 판매",
       "price": 350000,
       "url": "https://www.daangn.com/kr/buy-sell/lg%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4-74oeah3sn3cm/",
       "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/1790259813277a6b007de114347c612cadf3e80d98546d0fb5a97db5b488f2b958c371823eb4f0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "그램"
-      ],
+      "sourceQuery": "그램",
+      "score": 22
+    },
+    {
+      "id": "k4rjbt896ef7",
+      "title": "LG 그램 14인치 노트북 화이트 14ZD90N",
+      "price": 350000,
+      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-14%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-14zd90n-k4rjbt896ef7/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/1789998553973946b9e56fd20364b5cb20823fa54a0174938677f108aac34c4e33f39496ac7e50.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "status": "Ongoing",
+      "sourceQuery": "그램",
       "score": 22
     },
     {
@@ -3075,10 +2873,7 @@
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-15%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-7%EC%84%B8%EB%8C%80-%EC%98%A4%ED%94%BC%EC%8A%A4-%EC%84%A4%EC%B9%98-et9e2z9tnyb6/",
       "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/b9f12e30-3341-42dd-8011-7e110a916c0b.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "그램"
-      ],
+      "sourceQuery": "그램",
       "score": 22
     },
     {
@@ -3202,7 +2997,6 @@
       "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202608/9106c1fe676a88cea202f6fd18b8d884b3291568b9cc7d502f13ae2ce1673c69_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
       "sourceQuery": [
-        "노트북",
         "ThinkPad",
         "레노버 노트북"
       ],
@@ -3215,10 +3009,7 @@
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EC%9A%B8%ED%8A%B8%EB%9D%BC%EA%B7%B8%EB%9E%A8pc-15ud40n-gx-%EB%9D%BC%EC%9D%B4%EC%A0%A0-%EB%85%B8%ED%8A%B8%EB%B6%81%ED%8C%9D%EB%8B%88%EB%8B%A4-%EB%B0%A7%EB%8D%B0%EB%A6%AC%EA%B5%90%EC%B2%B4-gta5%EA%B0%80%EB%8F%99-tqrq2pjut6gf/",
       "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202608/623270a148cf733d9d4a09a5fa6223df30ee1dbc09a14130fac40a7cd7fc53a7_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "그램"
-      ],
+      "sourceQuery": "그램",
       "score": 22
     },
     {
@@ -3238,10 +3029,7 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%81-nt750xda-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%8B%A4%EB%B2%84-15%EC%9D%B8%EC%B9%98-%ED%8C%90%EB%A7%A4-%EB%84%A4%EA%B3%A0%EA%B0%80%EB%8A%A5-f3x6vk9xx8h8/",
       "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202608/1787479270654b86fbcaec2ed945e860699f3d5e67c1f68df538cc3b4a31a5db30bb0262297f30.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "갤럭시북"
-      ],
+      "sourceQuery": "갤럭시북",
       "score": 22
     },
     {
@@ -3251,10 +3039,7 @@
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-intel-core-i5-8250u-wpqw18kgs9sw/",
       "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/1790247299175de71388041f48af57210237da6a95c517d955de06afc03581f69242a9969efca0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "그램"
-      ],
+      "sourceQuery": "그램",
       "score": 22
     },
     {
@@ -3265,7 +3050,6 @@
       "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/1790082441481538df88ef0afcc0507a42a95ec8037eeeab6387d091154434c21c4632a0020ce0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
       "sourceQuery": [
-        "노트북",
         "ThinkPad",
         "레노버 노트북"
       ],
@@ -3312,19 +3096,6 @@
       "score": 22
     },
     {
-      "id": "whuca97ehi1h",
-      "title": "LG 그램 14인치 노트북",
-      "price": 400000,
-      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-14%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-whuca97ehi1h/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202606/6401efa70684f611aabdc37feeaff6d72352acb0de5cf55a0154ef73ca650fac_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "그램"
-      ],
-      "score": 22
-    },
-    {
       "id": "j14rp3ypapqq",
       "title": "4.7배송 받은 삼성 갤럭시북3 Go NT345XPA-K14A LTE 5G 노트북",
       "price": 400000,
@@ -3340,6 +3111,16 @@
       "price": 400000,
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-13zd980-gx50k-%ED%99%94%EC%9D%B4%ED%8A%B8-%EB%85%B8%ED%8A%B8%EB%B6%81-4en1fszxn2ep/",
       "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/74f4d686-20ea-4811-931e-9ffe428e9710.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "status": "Ongoing",
+      "sourceQuery": "그램",
+      "score": 22
+    },
+    {
+      "id": "whuca97ehi1h",
+      "title": "LG 그램 14인치 노트북",
+      "price": 400000,
+      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-14%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-whuca97ehi1h/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202606/6401efa70684f611aabdc37feeaff6d72352acb0de5cf55a0154ef73ca650fac_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
       "sourceQuery": "그램",
       "score": 22
@@ -3431,10 +3212,7 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EC%83%88%EC%A0%9C%ED%92%88-%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%813-go-%ED%92%80%EB%B0%95%EC%8A%A4-y584hhur412x/",
       "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/33395dea930ee2b296ea05fb2453afd8ce784f69110e303ae0b96c976f5d8a36_4.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "갤럭시북"
-      ],
+      "sourceQuery": "갤럭시북",
       "score": 22
     },
     {
@@ -3444,10 +3222,7 @@
       "url": "https://www.daangn.com/kr/buy-sell/lg%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-14%EC%9D%B8%EC%B9%98-z8zprk96defk/",
       "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202606/9d4ae2dee663ebd9575644aa488daf440e3fcf54458bd31ea12bceb8d3649ed3_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "그램"
-      ],
+      "sourceQuery": "그램",
       "score": 22
     },
     {
@@ -3520,10 +3295,7 @@
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-14%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-14z990-gr5dk-hfrpvxzbyynf/",
       "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/178873877108322fc22ae21e90fc973e75cb71f518a289cc94b0796242c366fc863c2c126347f0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "그램"
-      ],
+      "sourceQuery": "그램",
       "score": 22
     },
     {
@@ -3567,16 +3339,13 @@
       "score": 22
     },
     {
-      "id": "16u8pxi6vwzw",
-      "title": "LG 그램 노트북 15인치 화이트",
+      "id": "6v3gxs8aa3tq",
+      "title": "삼성 갤럭시북 이온 15.6인치 배터리 효율 94% / MX250 / 256GB (NT950XCR)",
       "price": 450000,
-      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-15%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-16u8pxi6vwzw/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202608/178593175392762d15102ed3947cfcb3adefbabfd9add6290c92b650292a77321a61de254d69a0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%81-%EC%9D%B4%EC%98%A8-15-6%EC%9D%B8%EC%B9%98-%EB%B0%B0%ED%84%B0%EB%A6%AC-%ED%9A%A8%EC%9C%A8-94-mx250-256gb-nt950xcr-6v3gxs8aa3tq/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202608/1787985132233065b78642946155a2375997f6c06a9b4c1bb69000a5ee6b3a33398c5a81cbfb30.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "그램"
-      ],
+      "sourceQuery": "갤럭시북",
       "score": 22
     },
     {
@@ -3586,23 +3355,7 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-15-6%EC%9D%B8%EC%B9%98-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%81-nt550xez-a58a-8dzwui2xsc77/",
       "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/019ed33b-f203-484e-9748-b4008ec2e688.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "갤럭시북"
-      ],
-      "score": 22
-    },
-    {
-      "id": "6v3gxs8aa3tq",
-      "title": "삼성 갤럭시북 이온 15.6인치 배터리 효율 94% / MX250 / 256GB (NT950XCR)",
-      "price": 450000,
-      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%81-%EC%9D%B4%EC%98%A8-15-6%EC%9D%B8%EC%B9%98-%EB%B0%B0%ED%84%B0%EB%A6%AC-%ED%9A%A8%EC%9C%A8-94-mx250-256gb-nt950xcr-6v3gxs8aa3tq/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202608/1787985132233065b78642946155a2375997f6c06a9b4c1bb69000a5ee6b3a33398c5a81cbfb30.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "갤럭시북"
-      ],
+      "sourceQuery": "갤럭시북",
       "score": 22
     },
     {
@@ -3613,6 +3366,16 @@
       "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/5a376407-1247-45e7-b5f8-6786f23299f6.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
       "sourceQuery": "갤럭시북",
+      "score": 22
+    },
+    {
+      "id": "16u8pxi6vwzw",
+      "title": "LG 그램 노트북 15인치 화이트",
+      "price": 450000,
+      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-15%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-16u8pxi6vwzw/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202608/178593175392762d15102ed3947cfcb3adefbabfd9add6290c92b650292a77321a61de254d69a0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "status": "Ongoing",
+      "sourceQuery": "그램",
       "score": 22
     },
     {
@@ -3744,10 +3507,7 @@
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-17%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-%EB%85%B8%ED%8A%B8%EB%B6%81-guhj5n9rc9fv/",
       "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202607/c69ad1d7d0e42c65ce2cd9c9662fe1daea5125a3e820e0311c578cd4a334fb74_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "그램"
-      ],
+      "sourceQuery": "그램",
       "score": 22
     },
     {
@@ -3758,19 +3518,6 @@
       "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202608/756a69bd-eba9-4d73-882e-7d0a1d23c115.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
       "sourceQuery": "ThinkPad",
-      "score": 22
-    },
-    {
-      "id": "2kq2dbtt5fh7",
-      "title": "LG 그램 화이트 노트북",
-      "price": 500000,
-      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%ED%99%94%EC%9D%B4%ED%8A%B8-%EB%85%B8%ED%8A%B8%EB%B6%81-2kq2dbtt5fh7/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202512/17666641330724532e521a9339ed43e74ecf6334d9a5ab8ac521eca1d1c3b7a0b2419812b942f0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "그램"
-      ],
       "score": 22
     },
     {
@@ -3799,6 +3546,16 @@
       "price": 500000,
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-15%EC%9D%B8%EC%B9%98-%ED%84%B0%EC%B9%98%EC%8A%A4%ED%81%AC%EB%A6%B0-cfwmz9mpq83i/",
       "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/1788844622176e535eadbafb375d06624a252d27565f41efa166b2f09043641da6a6fe2f114870.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "status": "Ongoing",
+      "sourceQuery": "그램",
+      "score": 22
+    },
+    {
+      "id": "2kq2dbtt5fh7",
+      "title": "LG 그램 화이트 노트북",
+      "price": 500000,
+      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%ED%99%94%EC%9D%B4%ED%8A%B8-%EB%85%B8%ED%8A%B8%EB%B6%81-2kq2dbtt5fh7/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202512/17666641330724532e521a9339ed43e74ecf6334d9a5ab8ac521eca1d1c3b7a0b2419812b942f0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
       "sourceQuery": "그램",
       "score": 22
@@ -3887,16 +3644,26 @@
       "score": 22
     },
     {
+      "id": "nmfp1vyw4eaw",
+      "title": "삼성 노트북 갤럭시북 프로 lte(NT935XDB-KK58B)",
+      "price": 540000,
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%81-%ED%94%84%EB%A1%9C-lte-nt935xdb-kk58b-nmfp1vyw4eaw/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202511/17633698851158c27b2bc90331086f44095c7253811ee0e8c9c03c6453be53f8abdd58ee172120.jpg?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "status": "Ongoing",
+      "sourceQuery": [
+        "갤럭시북",
+        "그램"
+      ],
+      "score": 22
+    },
+    {
       "id": "n6mvwaryy1hu",
       "title": "LG 그램 i5 1135G7, 15Z95N-GP50ML, 윈11 노트북, 15.6인치",
       "price": 540000,
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-i5-1135g7-15z95n-gp50ml-%EC%9C%8811-%EB%85%B8%ED%8A%B8%EB%B6%81-15-6%EC%9D%B8%EC%B9%98-n6mvwaryy1hu/",
       "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/b678bd25-5d8f-431c-98c5-1569303b8af0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "그램"
-      ],
+      "sourceQuery": "그램",
       "score": 22
     },
     {
@@ -3906,24 +3673,7 @@
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%ED%99%94%EC%9D%B4%ED%8A%B8-%EB%85%B8%ED%8A%B8%EB%B6%81-gzrpcmjm51v3/",
       "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202608/17862583533045597eb57c93d8772e41c88dde3e9cbda78e4d7e1744227025c6470d14a04a1be0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "그램"
-      ],
-      "score": 22
-    },
-    {
-      "id": "nmfp1vyw4eaw",
-      "title": "삼성 노트북 갤럭시북 프로 lte(NT935XDB-KK58B)",
-      "price": 540000,
-      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%81-%ED%94%84%EB%A1%9C-lte-nt935xdb-kk58b-nmfp1vyw4eaw/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202511/17633698851158c27b2bc90331086f44095c7253811ee0e8c9c03c6453be53f8abdd58ee172120.jpg?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "갤럭시북",
-        "그램"
-      ],
+      "sourceQuery": "그램",
       "score": 22
     },
     {
@@ -4086,10 +3836,7 @@
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-i7-16%EC%9D%B8%EC%B9%98-%ED%8C%9D%EB%8B%88%EB%8B%A4-8dovpfzskf19/",
       "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/8fb166f0-cb10-4e44-84f6-74650f9597d4.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "그램"
-      ],
+      "sourceQuery": "그램",
       "score": 22
     },
     {
@@ -4099,10 +3846,7 @@
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EC%8B%A0%ED%98%95-10%EC%84%B8%EB%8C%80-ram16g-15-6%EC%9D%B8%EC%B9%98%ED%98%95-%EC%9C%88%EB%8F%84%EC%9A%B0-%ED%8F%AC%ED%95%A8%EB%90%9C-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%95%9C%EA%B8%80-ms%EC%98%A4%ED%94%BC%EC%8A%A4%EB%8F%84-%EC%9E%88%EC%9D%8C-src7ujsrkdd3/",
       "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/9477e545-01f0-46d3-84c1-2013167b771f.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "그램"
-      ],
+      "sourceQuery": "그램",
       "score": 22
     },
     {
@@ -4112,10 +3856,7 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%8B%A8%EC%88%9C%EA%B0%9C%EB%B4%89%EA%B8%89-%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%81-%EC%95%8C%ED%8C%8C-%ED%84%B0%EC%B9%98%ED%8E%9C-%ED%84%B0%EC%B9%98%EC%8A%A4%ED%81%AC%EB%A6%B0-360%ED%9A%8C%EC%A0%84-yi29ao9vgktg/",
       "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/17900625986704f43bcfbcc0572c2472f1c7547e3d79c7f343003aea90abe650dd41fa825cccf0.jpg?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "갤럭시북"
-      ],
+      "sourceQuery": "갤럭시북",
       "score": 22
     },
     {
@@ -4221,10 +3962,7 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%814-15%EC%9D%B8%EC%B9%98-u300-8g-256gb-%EB%85%B8%ED%8A%B8%EB%B6%81-p6ab1j4scam4/",
       "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/93680ce8-7078-4511-a94b-21c5e154c3e7.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "갤럭시북"
-      ],
+      "sourceQuery": "갤럭시북",
       "score": 22
     },
     {
@@ -4245,33 +3983,6 @@
       "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202504/17448014009485b9607bbf8657d12ea882edcbfd57acd28def17d560822525a53dc9ea81a8ec20.jpg?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
       "sourceQuery": "그램",
-      "score": 22
-    },
-    {
-      "id": "x6eqvewnt1zj",
-      "title": "Lg엘지 그램 노트북 16인치 싸게 판매해용",
-      "price": 650000,
-      "url": "https://www.daangn.com/kr/buy-sell/lg%EC%97%98%EC%A7%80-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-16%EC%9D%B8%EC%B9%98-%EC%8B%B8%EA%B2%8C-%ED%8C%90%EB%A7%A4%ED%95%B4%EC%9A%A9-x6eqvewnt1zj/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/178844284511871e477c4cc0028c40957c8d7aa5dfad7fc2a2a9abeb9699dff84f954a95fdd0d0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "그램"
-      ],
-      "score": 22
-    },
-    {
-      "id": "1xnxxd9kp68o",
-      "title": "Lenovo ThinkPad E14 gen 5",
-      "price": 650000,
-      "url": "https://www.daangn.com/kr/buy-sell/lenovo-thinkpad-e14-gen-5-1xnxxd9kp68o/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/17898984841993bf9f43d921021e505670dea75b97ffbffded75a3c64d9a299573eb04362e8a00.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "ThinkPad",
-        "레노버 노트북"
-      ],
       "score": 22
     },
     {
@@ -4315,6 +4026,16 @@
       "score": 22
     },
     {
+      "id": "x6eqvewnt1zj",
+      "title": "Lg엘지 그램 노트북 16인치 싸게 판매해용",
+      "price": 650000,
+      "url": "https://www.daangn.com/kr/buy-sell/lg%EC%97%98%EC%A7%80-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-16%EC%9D%B8%EC%B9%98-%EC%8B%B8%EA%B2%8C-%ED%8C%90%EB%A7%A4%ED%95%B4%EC%9A%A9-x6eqvewnt1zj/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/178844284511871e477c4cc0028c40957c8d7aa5dfad7fc2a2a9abeb9699dff84f954a95fdd0d0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "status": "Ongoing",
+      "sourceQuery": "그램",
+      "score": 22
+    },
+    {
       "id": "9km1a31p9gnh",
       "title": "LG 그램 17인치 노트북",
       "price": 650000,
@@ -4335,6 +4056,19 @@
       "score": 22
     },
     {
+      "id": "1xnxxd9kp68o",
+      "title": "Lenovo ThinkPad E14 gen 5",
+      "price": 650000,
+      "url": "https://www.daangn.com/kr/buy-sell/lenovo-thinkpad-e14-gen-5-1xnxxd9kp68o/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/17898984841993bf9f43d921021e505670dea75b97ffbffded75a3c64d9a299573eb04362e8a00.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "status": "Ongoing",
+      "sourceQuery": [
+        "ThinkPad",
+        "레노버 노트북"
+      ],
+      "score": 22
+    },
+    {
       "id": "dma4h3p471iw",
       "title": "(새제품)레노버 ThinkPad L15 Gen 2 노트북",
       "price": 650000,
@@ -4348,19 +4082,6 @@
       "score": 22
     },
     {
-      "id": "vktca26ksu79",
-      "title": "LG 그램 노트북 (화이트)",
-      "price": 680000,
-      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-vktca26ksu79/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/1789317773987ade7db14c6a957039459a4f7531410b06b7bc7873a92cf4d8f9aff44b7376d840.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "그램"
-      ],
-      "score": 22
-    },
-    {
       "id": "u8a9ecy9ua3k",
       "title": "삼성 갤럭시북 노트북 판매합니다 (15인치)",
       "price": 680000,
@@ -4368,6 +4089,16 @@
       "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/f8c18bf8-e415-4950-943a-bb3f0291da8d.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
       "sourceQuery": "갤럭시북",
+      "score": 22
+    },
+    {
+      "id": "vktca26ksu79",
+      "title": "LG 그램 노트북 (화이트)",
+      "price": 680000,
+      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-vktca26ksu79/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/1789317773987ade7db14c6a957039459a4f7531410b06b7bc7873a92cf4d8f9aff44b7376d840.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "status": "Ongoing",
+      "sourceQuery": "그램",
       "score": 22
     },
     {
@@ -4447,19 +4178,6 @@
       "score": 22
     },
     {
-      "id": "s5j28t529tk9",
-      "title": "LG 그램 노트북 그레이[15Z95N]",
-      "price": 700000,
-      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-%EA%B7%B8%EB%A0%88%EC%9D%B4-15z95n-s5j28t529tk9/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/84c95595-dd2d-4087-a236-efb1d3bc2c38.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "그램"
-      ],
-      "score": 22
-    },
-    {
       "id": "idte1tes6wv5",
       "title": "삼성전자 갤럭시북 플렉스 알파",
       "price": 700000,
@@ -4477,6 +4195,16 @@
       "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202605/61b755eabd7a97b1d7c21cbe3b5053f704994ff9d8bee416fca0359654e49cd4_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
       "sourceQuery": "갤럭시북",
+      "score": 22
+    },
+    {
+      "id": "s5j28t529tk9",
+      "title": "LG 그램 노트북 그레이[15Z95N]",
+      "price": 700000,
+      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-%EA%B7%B8%EB%A0%88%EC%9D%B4-15z95n-s5j28t529tk9/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/84c95595-dd2d-4087-a236-efb1d3bc2c38.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "status": "Ongoing",
+      "sourceQuery": "그램",
       "score": 22
     },
     {
@@ -4622,20 +4350,7 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EC%83%88%EC%83%81%ED%92%88-%EB%A0%88%EB%85%B8%EB%B2%84-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-d8ut6gpt68x7/",
       "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/1c4666a8-388b-4595-906d-0c45f3f57a0c.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "레노버 노트북"
-      ],
-      "score": 17
-    },
-    {
-      "id": "5z9uo9cr7dxa",
-      "title": "(새상품) LG전자 노트북 판매합니다",
-      "price": 420000,
-      "url": "https://www.daangn.com/kr/buy-sell/%EC%83%88%EC%83%81%ED%92%88-lg%EC%A0%84%EC%9E%90-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-5z9uo9cr7dxa/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/12d9b951-ca4e-4b2a-a285-0b63e8726cbb.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "노트북",
+      "sourceQuery": "레노버 노트북",
       "score": 17
     },
     {
@@ -4702,19 +4417,6 @@
       "score": 16
     },
     {
-      "id": "ktq1wvb9r77a",
-      "title": "LG 그램 11세대 i5 노트북 17Z95N",
-      "price": 750000,
-      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-11%EC%84%B8%EB%8C%80-i5-%EB%85%B8%ED%8A%B8%EB%B6%81-17z95n-ktq1wvb9r77a/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/178999420950348ce218f8e9f2949572854fdb6a9ea6bfa7261054b09af876b5411cb75615f3a0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "그램"
-      ],
-      "score": 16
-    },
-    {
       "id": "6ua4xiot9r2t",
       "title": "[삼성] 갤럭시북2 프로 13.3인치 노트북",
       "price": 750000,
@@ -4742,6 +4444,16 @@
       "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202604/cb93a4eded6e812315f4a31d1ef5eed9482b4a383eb072cd56e0da3f060591e2_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
       "sourceQuery": "갤럭시북",
+      "score": 16
+    },
+    {
+      "id": "ktq1wvb9r77a",
+      "title": "LG 그램 11세대 i5 노트북 17Z95N",
+      "price": 750000,
+      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-11%EC%84%B8%EB%8C%80-i5-%EB%85%B8%ED%8A%B8%EB%B6%81-17z95n-ktq1wvb9r77a/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/178999420950348ce218f8e9f2949572854fdb6a9ea6bfa7261054b09af876b5411cb75615f3a0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "status": "Ongoing",
+      "sourceQuery": "그램",
       "score": 16
     },
     {
@@ -4814,19 +4526,6 @@
       "score": 16
     },
     {
-      "id": "x9z7sn9dpkvc",
-      "title": "LG 그램 노트북 17인치 저렴하게 판매합니다",
-      "price": 800000,
-      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-17%EC%9D%B8%EC%B9%98-%EC%A0%80%EB%A0%B4%ED%95%98%EA%B2%8C-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-x9z7sn9dpkvc/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/75c6bbec-b827-4371-9f52-2c8c7f6eff61.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "그램"
-      ],
-      "score": 16
-    },
-    {
       "id": "w9yvuvjcc7p8",
       "title": "삼성 노트북 갤럭시북3 i7 / 16G / 512 / Arc A350M / 15.6인치",
       "price": 800000,
@@ -4852,6 +4551,16 @@
       "price": 800000,
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8%EB%B6%81-ai-2026-15%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%83%80%EC%9D%B4%ED%83%84-%EB%B8%94%EB%9E%99-23qfosz1e4qi/",
       "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/17886765753490a631b2374aefe4aa46332db1d1eb797db97acfb49f458976f262f6dcf1ceab70.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "status": "Ongoing",
+      "sourceQuery": "그램",
+      "score": 16
+    },
+    {
+      "id": "x9z7sn9dpkvc",
+      "title": "LG 그램 노트북 17인치 저렴하게 판매합니다",
+      "price": 800000,
+      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-17%EC%9D%B8%EC%B9%98-%EC%A0%80%EB%A0%B4%ED%95%98%EA%B2%8C-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-x9z7sn9dpkvc/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/75c6bbec-b827-4371-9f52-2c8c7f6eff61.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
       "sourceQuery": "그램",
       "score": 16
@@ -5245,139 +4954,13 @@
       "score": 16
     },
     {
-      "id": "dfvsjia9tjg5",
-      "title": "노트북 판매",
-      "price": 100000,
-      "url": "https://www.daangn.com/kr/buy-sell/%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4-dfvsjia9tjg5/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202608/829bb349-0269-40d1-83f9-f0a6df04fe16.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "노트북",
-      "score": 14
-    },
-    {
-      "id": "ko719qjpyrwz",
-      "title": "삼성 노트북 NT900X3Q 실버",
-      "price": 100000,
-      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt900x3q-%EC%8B%A4%EB%B2%84-ko719qjpyrwz/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/84fa0db9-ba43-4e1d-972b-21736ed38ada.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "노트북",
-      "score": 14
-    },
-    {
-      "id": "9d41aawqubtc",
-      "title": "LG 엑스노트 Z350 i5 울트라북",
-      "price": 100000,
-      "url": "https://www.daangn.com/kr/buy-sell/lg-%EC%97%91%EC%8A%A4%EB%85%B8%ED%8A%B8-z350-i5-%EC%9A%B8%ED%8A%B8%EB%9D%BC%EB%B6%81-9d41aawqubtc/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202603/48df79f6433bec8346e8f6dd662d81f6b90cabc8979a9519298fe2e5b7f0f77c_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "노트북",
-      "score": 14
-    },
-    {
       "id": "y6pt5xib6t3j",
       "title": "레노버 아이디어패드1노트북",
       "price": 100000,
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%95%84%EC%9D%B4%EB%94%94%EC%96%B4%ED%8C%A8%EB%93%9C1%EB%85%B8%ED%8A%B8%EB%B6%81-y6pt5xib6t3j/",
       "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/1790248847711c9a9c1a5120cb1529c89e659da81ea3214ca3de3814617b112a6771b2a2fe7180.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "레노버 노트북"
-      ],
-      "score": 14
-    },
-    {
-      "id": "ckr8bd9mvyab",
-      "title": "🚨찐막가격내림🚨LG 엑스노트 15인치 노트북 (윈도우11 Pro)인강·사무·롤용 + 리시버 풀세트",
-      "price": 100000,
-      "url": "https://www.daangn.com/kr/buy-sell/%EC%B0%90%EB%A7%89%EA%B0%80%EA%B2%A9%EB%82%B4%EB%A6%BC-lg-%EC%97%91%EC%8A%A4%EB%85%B8%ED%8A%B8-15%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%9C%88%EB%8F%84%EC%9A%B011-pro-%EC%9D%B8%EA%B0%95-%EC%82%AC%EB%AC%B4-%EB%A1%A4%EC%9A%A9-%EB%A6%AC%EC%8B%9C%EB%B2%84-%ED%92%80%EC%84%B8%ED%8A%B8-ckr8bd9mvyab/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/6d8388b182ba4dc85bd2609b10e00983190f8c567ebfae3b2563ce0aa25f88c3_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "노트북",
-      "score": 14
-    },
-    {
-      "id": "eqvtpoyd2fak",
-      "title": "디클 클릭북 D11 11.6인치 화이트 노트북",
-      "price": 100000,
-      "url": "https://www.daangn.com/kr/buy-sell/%EB%94%94%ED%81%B4-%ED%81%B4%EB%A6%AD%EB%B6%81-d11-11-6%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-%EB%85%B8%ED%8A%B8%EB%B6%81-eqvtpoyd2fak/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202512/176689065333036dc6c42bae7533d79508674a43e798b0d0b41d2e208b090f941a0ce96bf824c0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "노트북",
-      "score": 14
-    },
-    {
-      "id": "31n6iwu28vxn",
-      "title": "삼성 노트북 화이트 i3",
-      "price": 100000,
-      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-i3-31n6iwu28vxn/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202603/578667213e3c6106fb6b790e5f1b8f97e0b79f7ee45e7eb8720b35b7cfaeb4f3_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "노트북",
-      "score": 14
-    },
-    {
-      "id": "846gp8gt2w46",
-      "title": "삼성 업무용 노트북 i7 m620 ssd 128gb ram 4gb 15.6인치",
-      "price": 100000,
-      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EC%97%85%EB%AC%B4%EC%9A%A9-%EB%85%B8%ED%8A%B8%EB%B6%81-i7-m620-ssd-128gb-ram-4gb-15-6%EC%9D%B8%EC%B9%98-846gp8gt2w46/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/336c6e63a17be9e8707310761a3a908317d2b487562ac24f50637f12958c26f2_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "노트북",
-      "score": 14
-    },
-    {
-      "id": "exoomjreb3v7",
-      "title": "13인치 삼성노트북 NT911S3L",
-      "price": 100000,
-      "url": "https://www.daangn.com/kr/buy-sell/13%EC%9D%B8%EC%B9%98-%EC%82%BC%EC%84%B1%EB%85%B8%ED%8A%B8%EB%B6%81-nt911s3l-exoomjreb3v7/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/2db1cc58-591a-45db-981b-336fd1bd131d.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "노트북",
-      "score": 14
-    },
-    {
-      "id": "172o8a83osky",
-      "title": "HP 14s-cf2055TU 노트북",
-      "price": 100000,
-      "url": "https://www.daangn.com/kr/buy-sell/hp-14s-cf2055tu-%EB%85%B8%ED%8A%B8%EB%B6%81-172o8a83osky/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202604/17752711979132184de9792f717fe358e1f4fc158202de648a238cc076a6311469eefb42563900.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": [
-        "노트북",
-        "HP 노트북"
-      ],
-      "score": 14
-    },
-    {
-      "id": "zyx4e613zze9",
-      "title": "삼성 노트북  T6OF9TH7 인텔 i5 8GB RAM",
-      "price": 100000,
-      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-t6of9th7-%EC%9D%B8%ED%85%94-i5-8gb-ram-zyx4e613zze9/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/a659af68-6aec-4973-94e8-fa61004e8efb.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "노트북",
-      "score": 14
-    },
-    {
-      "id": "4j19nkyvj7r2",
-      "title": "삼성 아티브북9 Plus 13.3인치 노트북 (i5/8G/SSD128G) 판매합니다",
-      "price": 100000,
-      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EC%95%84%ED%8B%B0%EB%B8%8C%EB%B6%819-plus-13-3%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-8g-ssd128g-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-4j19nkyvj7r2/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/2ad9f076-386c-455c-b6b5-e42f5caace63.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "노트북",
-      "score": 14
-    },
-    {
-      "id": "7m1n4diujrwg",
-      "title": "삼성 노트북 (블랙)",
-      "price": 100000,
-      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%B8%94%EB%9E%99-7m1n4diujrwg/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/etc/202609/6880fe6eb3317a9213a2bb62ef9a1c25e4c901bc7a149b96caa4bac9fcbb1092_0.webp?service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "노트북",
+      "sourceQuery": "레노버 노트북",
       "score": 14
     },
     {
@@ -5441,6 +5024,16 @@
       "score": 14
     },
     {
+      "id": "172o8a83osky",
+      "title": "HP 14s-cf2055TU 노트북",
+      "price": 100000,
+      "url": "https://www.daangn.com/kr/buy-sell/hp-14s-cf2055tu-%EB%85%B8%ED%8A%B8%EB%B6%81-172o8a83osky/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202604/17752711979132184de9792f717fe358e1f4fc158202de648a238cc076a6311469eefb42563900.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "status": "Ongoing",
+      "sourceQuery": "HP 노트북",
+      "score": 14
+    },
+    {
       "id": "hqix4562vnqy",
       "title": "HP 파빌리온 i7 노트북",
       "price": 100000,
@@ -5466,6 +5059,249 @@
       "price": 100000,
       "url": "https://www.daangn.com/kr/buy-sell/regendary-25%EB%85%84%EC%A0%84-hp-compaq-tc1100-%ED%83%9C%EB%B8%94%EB%A6%BF-pc-sadvjgzk98m7/",
       "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202603/8bf398eeb00d1267ca6dbccb7a95b4291bb3d6aaf76d2e6c720c836440ef0578_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "status": "Ongoing",
+      "sourceQuery": "HP 노트북",
+      "score": 14
+    },
+    {
+      "id": "y7wjnzrx4pdi",
+      "title": "HP Pavilion 노트북 나스셋팅 완료",
+      "price": 100000,
+      "url": "https://www.daangn.com/kr/buy-sell/hp-pavilion-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%82%98%EC%8A%A4%EC%85%8B%ED%8C%85-%EC%99%84%EB%A3%8C-y7wjnzrx4pdi/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202605/3578e2d48f19f53b061a90ce38a844c5de54c5a8e12360c4021b872ccfd3b92b_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "status": "Ongoing",
+      "sourceQuery": "HP 노트북",
+      "score": 14
+    },
+    {
+      "id": "i5w98kdy34vy",
+      "title": "ASUS 젠북14 팝니다",
+      "price": 100000,
+      "url": "https://www.daangn.com/kr/buy-sell/asus-%EC%A0%A0%EB%B6%8114-%ED%8C%9D%EB%8B%88%EB%8B%A4-i5w98kdy34vy/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/2bcc3992-3e7d-4cab-a5bc-24d4d2b35e5b.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "status": "Ongoing",
+      "sourceQuery": "ASUS 노트북",
+      "score": 14
+    },
+    {
+      "id": "w4butnzdw7f4",
+      "title": "ASUS 노트북 + 가방",
+      "price": 100000,
+      "url": "https://www.daangn.com/kr/buy-sell/asus-%EB%85%B8%ED%8A%B8%EB%B6%81-%EA%B0%80%EB%B0%A9-w4butnzdw7f4/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202509/f7167267b32ef4011e2edf0af95e215b32225d3d186f1b21e335e99ae6cb5190_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "status": "Ongoing",
+      "sourceQuery": "ASUS 노트북",
+      "score": 14
+    },
+    {
+      "id": "i41ujas8chun",
+      "title": "ASUS N43JQ 노트북 (i7 CPU, 8GB RAM)",
+      "price": 100000,
+      "url": "https://www.daangn.com/kr/buy-sell/asus-n43jq-%EB%85%B8%ED%8A%B8%EB%B6%81-i7-cpu-8gb-ram-i41ujas8chun/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202608/3b91121c8f8580546e9dc5b853094d548b39ac172d50404e4de8c440cf680a99_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "status": "Ongoing",
+      "sourceQuery": "ASUS 노트북",
+      "score": 14
+    },
+    {
+      "id": "u8akdd3q91pg",
+      "title": "ASUS 노트북 블랙",
+      "price": 100000,
+      "url": "https://www.daangn.com/kr/buy-sell/asus-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%B8%94%EB%9E%99-u8akdd3q91pg/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202606/08329821cc52c359f0f11fe259e2e29ea62cf2686aae4f6805efe034405796aa_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "status": "Ongoing",
+      "sourceQuery": "ASUS 노트북",
+      "score": 14
+    },
+    {
+      "id": "hicw9f44hasp",
+      "title": "ASUS 화이트 노트북 (어댑터 포함)",
+      "price": 100000,
+      "url": "https://www.daangn.com/kr/buy-sell/asus-%ED%99%94%EC%9D%B4%ED%8A%B8-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%96%B4%EB%8C%91%ED%84%B0-%ED%8F%AC%ED%95%A8-hicw9f44hasp/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202606/b4a306c0fbb80e30297b0b884b2da598a3e9bc3ab7a1331d5b9e8450d1400de5_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "status": "Ongoing",
+      "sourceQuery": "ASUS 노트북",
+      "score": 14
+    },
+    {
+      "id": "eoj25yr82dco",
+      "title": "asus zenscreen 15.6 보조모니터 usb-c연결(노트북 듀얼",
+      "price": 100000,
+      "url": "https://www.daangn.com/kr/buy-sell/asus-zenscreen-15-6-%EB%B3%B4%EC%A1%B0%EB%AA%A8%EB%8B%88%ED%84%B0-usb-c%EC%97%B0%EA%B2%B0-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%93%80%EC%96%BC-eoj25yr82dco/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/1789960373230a95dd816b1b65f1632a066f506a736a8a73b45a769c5a1b9c447b7176b130a9f0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "status": "Ongoing",
+      "sourceQuery": "ASUS 노트북",
+      "score": 14
+    },
+    {
+      "id": "fv9i2ghvcs2b",
+      "title": "노트북 아수스 S300C  i5-3317 램4g  ssd128g",
+      "price": 100000,
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%95%84%EC%88%98%EC%8A%A4-s300c-i5-3317-%EB%9E%A84g-ssd128g-fv9i2ghvcs2b/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202607/027c6d75ffcc6c81ad18611031cd0036fe98a162bd0be0d2ee6cd31a364b8976_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "status": "Ongoing",
+      "sourceQuery": "ASUS 노트북",
+      "score": 14
+    },
+    {
+      "id": "y8h2nbgynk6p",
+      "title": "HP  i5 노트북",
+      "price": 105000,
+      "url": "https://www.daangn.com/kr/buy-sell/hp-i5-%EB%85%B8%ED%8A%B8%EB%B6%81-y8h2nbgynk6p/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/8f39c413-cb41-442e-bc0b-0e2dee6061b4.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "status": "Ongoing",
+      "sourceQuery": "HP 노트북",
+      "score": 14
+    },
+    {
+      "id": "2ku4pcefci3j",
+      "title": "(그래픽GT620M)레노버 s430 i7-3520M 노트북(유튭2k가능)",
+      "price": 106000,
+      "url": "https://www.daangn.com/kr/buy-sell/%EA%B7%B8%EB%9E%98%ED%94%BDgt620m-%EB%A0%88%EB%85%B8%EB%B2%84-s430-i7-3520m-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%9C%A0%ED%8A%AD2k%EA%B0%80%EB%8A%A5-2ku4pcefci3j/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/cfe87ff8-d51d-422d-aa6f-e97f5fa7fe73.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "status": "Ongoing",
+      "sourceQuery": "레노버 노트북",
+      "score": 14
+    },
+    {
+      "id": "nk28fwbo8k3k",
+      "title": "갤럭시 북 12인치",
+      "price": 110000,
+      "url": "https://www.daangn.com/kr/buy-sell/%EA%B0%A4%EB%9F%AD%EC%8B%9C-%EB%B6%81-12%EC%9D%B8%EC%B9%98-nk28fwbo8k3k/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/8f7856b3-631f-42eb-be23-566db9c41b63.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "status": "Ongoing",
+      "sourceQuery": "갤럭시북",
+      "score": 14
+    },
+    {
+      "id": "98cnxyv5paja",
+      "title": "Lenovo x240 레노버 노트북",
+      "price": 110000,
+      "url": "https://www.daangn.com/kr/buy-sell/lenovo-x240-%EB%A0%88%EB%85%B8%EB%B2%84-%EB%85%B8%ED%8A%B8%EB%B6%81-98cnxyv5paja/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202607/1784648943897b3567f89c9128308c9144964d0fe4bb61d0933e135113025882bab9122a81b170.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "status": "Ongoing",
+      "sourceQuery": [
+        "ThinkPad",
+        "레노버 노트북"
+      ],
+      "score": 14
+    },
+    {
+      "id": "d83wh24uacab",
+      "title": "새것처럼 깨끗한 레노버 아이디어패드 510S-14ISK 노트북 (레드)",
+      "price": 110000,
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%83%88%EA%B2%83%EC%B2%98%EB%9F%BC-%EA%B9%A8%EB%81%97%ED%95%9C-%EB%A0%88%EB%85%B8%EB%B2%84-%EC%95%84%EC%9D%B4%EB%94%94%EC%96%B4%ED%8C%A8%EB%93%9C-510s-14isk-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%A0%88%EB%93%9C-d83wh24uacab/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/fdb12d11-55a8-45ff-b212-f10ab1d9adc6.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "status": "Ongoing",
+      "sourceQuery": "레노버 노트북",
+      "score": 14
+    },
+    {
+      "id": "tias675dsdpi",
+      "title": "레노버 아이디어패드 510S-14ISK 노트북 (레드)",
+      "price": 110000,
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%95%84%EC%9D%B4%EB%94%94%EC%96%B4%ED%8C%A8%EB%93%9C-510s-14isk-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%A0%88%EB%93%9C-tias675dsdpi/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/fdb12d11-55a8-45ff-b212-f10ab1d9adc6.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "status": "Ongoing",
+      "sourceQuery": "레노버 노트북",
+      "score": 14
+    },
+    {
+      "id": "gcttgfzvwuaa",
+      "title": "HP 인텔 i5-4210U CPU, 8GB RAM, 256GB",
+      "price": 110000,
+      "url": "https://www.daangn.com/kr/buy-sell/hp-%EC%9D%B8%ED%85%94-i5-4210u-cpu-8gb-ram-256gb-gcttgfzvwuaa/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202607/22da4665fa9b595460f897dc065a03d236f211f400a2c483a1aa8263cfa6d7cf_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "status": "Ongoing",
+      "sourceQuery": "HP 노트북",
+      "score": 14
+    },
+    {
+      "id": "21ixmpu8jck2",
+      "title": "HP 엘리트북 840 G2 (i7-5600u/8G/SSD128G)",
+      "price": 113000,
+      "url": "https://www.daangn.com/kr/buy-sell/hp-%EC%97%98%EB%A6%AC%ED%8A%B8%EB%B6%81-840-g2-i7-5600u-8g-ssd128g-21ixmpu8jck2/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/22340b56-b7fa-4337-bb68-69404a90372d.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "status": "Ongoing",
+      "sourceQuery": "HP 노트북",
+      "score": 14
+    },
+    {
+      "id": "77jb9dkm6irh",
+      "title": "아수스 비보북 A407MA-EB198T",
+      "price": 117000,
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%95%84%EC%88%98%EC%8A%A4-%EB%B9%84%EB%B3%B4%EB%B6%81-a407ma-eb198t-77jb9dkm6irh/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202606/1780672190458f98ee0a7cb997eff4a130759e8c48a3d1e01ea613c7d7d89871ad3f32b760ba80.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "status": "Ongoing",
+      "sourceQuery": "ASUS 노트북",
+      "score": 14
+    },
+    {
+      "id": "b88c89uk6ysc",
+      "title": "레노버 일체형 올인원 컴퓨터",
+      "price": 120000,
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%9D%BC%EC%B2%B4%ED%98%95-%EC%98%AC%EC%9D%B8%EC%9B%90-%EC%BB%B4%ED%93%A8%ED%84%B0-b88c89uk6ysc/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202604/815a5c7baa4824feae13dadc402d5a95593d073836dffb29a03e2a72faf85940_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "status": "Ongoing",
+      "sourceQuery": "ThinkPad",
+      "score": 14
+    },
+    {
+      "id": "w6riv9z7yk15",
+      "title": "레노버 ThinkCentre M700 미니 PC",
+      "price": 120000,
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-thinkcentre-m700-%EB%AF%B8%EB%8B%88-pc-w6riv9z7yk15/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202606/3208a957c6a0d210d40989074caa3f33b27e2b27338715f4a2f62fe5d7de4e30_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "status": "Ongoing",
+      "sourceQuery": "ThinkPad",
+      "score": 14
+    },
+    {
+      "id": "q1ivtosobtn8",
+      "title": "레노버 노트북 i3-8130U 4GB RAM 128GB SSD",
+      "price": 120000,
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EB%85%B8%ED%8A%B8%EB%B6%81-i3-8130u-4gb-ram-128gb-ssd-q1ivtosobtn8/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/81a24e42-841a-4692-ba6d-47f0245a28eb.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "status": "Ongoing",
+      "sourceQuery": "레노버 노트북",
+      "score": 14
+    },
+    {
+      "id": "mxjdf31b7kww",
+      "title": "레노버 노트북 (i3-6100U, 4GB RAM) + 충전기",
+      "price": 120000,
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EB%85%B8%ED%8A%B8%EB%B6%81-i3-6100u-4gb-ram-%EC%B6%A9%EC%A0%84%EA%B8%B0-mxjdf31b7kww/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/b08b8eac-eab5-4c05-af90-c3c7936ebca6.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "status": "Ongoing",
+      "sourceQuery": "레노버 노트북",
+      "score": 14
+    },
+    {
+      "id": "m5xxgxv72ihi",
+      "title": "레노버 아이디어패드 320S 노트북",
+      "price": 120000,
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%95%84%EC%9D%B4%EB%94%94%EC%96%B4%ED%8C%A8%EB%93%9C-320s-%EB%85%B8%ED%8A%B8%EB%B6%81-m5xxgxv72ihi/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/4f6ca9c2-3962-48bd-8d82-c61c3f3c5f6f.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "status": "Ongoing",
+      "sourceQuery": "레노버 노트북",
+      "score": 14
+    },
+    {
+      "id": "pssmvamyvmk2",
+      "title": "레노버 노트북 아이디어패드 300 시리즈",
+      "price": 120000,
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%95%84%EC%9D%B4%EB%94%94%EC%96%B4%ED%8C%A8%EB%93%9C-300-%EC%8B%9C%EB%A6%AC%EC%A6%88-pssmvamyvmk2/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/9a27411f-3265-4893-9bec-360a24bec5c6.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "status": "Ongoing",
+      "sourceQuery": "레노버 노트북",
+      "score": 14
+    },
+    {
+      "id": "n27dofdgdw14",
+      "title": "HP 노트북 실버",
+      "price": 120000,
+      "url": "https://www.daangn.com/kr/buy-sell/hp-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%8B%A4%EB%B2%84-n27dofdgdw14/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202607/5039d931afc09f881497a5ea01380eb16fab7a37bc582ef4cdf7f1716b0967fe_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
       "sourceQuery": "HP 노트북",
       "score": 14
