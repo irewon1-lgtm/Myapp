@@ -1,9 +1,10 @@
 {
   "kind": "chatbook-live-routing-correction",
-  "status": "deployed-awaiting-https-check",
+  "status": "https-identity-verified",
   "run": "36029901453",
   "liveCommit": "888f87933aaefd8d03b7ebbf31fa7e553ad57229",
   "productionCalls": 1,
   "totalTransitionCalls": 2,
-  "createdAt": "2026-09-24T16:52:21.224Z"
+  "createdAt": "2026-09-24T16:52:21.224Z",
+  "verifiedAt": "2026-09-24T16:52:25.405Z"
 }
