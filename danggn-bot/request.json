@@ -7,7 +7,10 @@
     "ThinkPad",
     "레노버 노트북",
     "HP 노트북",
-    "ASUS 노트북"
+    "ASUS 노트북",
+    "델 노트북",
+    "삼성 노트북",
+    "LG 노트북"
   ],
   "ramGB": [
     16,
@@ -22,6 +25,14 @@
   "maxPrice": 1500000,
   "perQuery": 300,
   "detailLimit": 0,
-  "outputLimit": 500,
-  "runToken": "broad-discovery-300-retry"
+  "outputLimit": 60,
+  "targetCities": [
+    "군포시",
+    "과천시",
+    "의왕시",
+    "안양시"
+  ],
+  "postedSince": "2026-09-11T00:00:00+09:00",
+  "targetDetailLimit": 120,
+  "runToken": "south-gyeonggi-14d-exact"
 }
