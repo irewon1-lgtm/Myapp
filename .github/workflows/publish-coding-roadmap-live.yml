@@ -1,38 +1,37 @@
 name: Publish CodingRoadmap lessons and screen
 on:
   push:
-    branches: [coding-roadmap-live]
-    paths: ['live/content.json', 'live/reader.template.html', 'live/track3-book/**', 'tools/build_content.py', 'tools/compile_track3_book.py', 'tools/verify_reader.cjs', 'tools/test_track3_*.py', '.github/workflows/publish-coding-roadmap-live.yml']
+    branches: [coding-roadmap-live, track4-continuous-book-20260925]
+    paths: ['live/content.json', 'live/reader.template.html', 'live/track3-book/**', 'live/track4-book/**', 'tools/build_content.py', 'tools/compile_track3_book.py', 'tools/compile_track4_book.py', 'tools/prepare_track4_release.py', 'tools/verify_reader.cjs', 'tools/test_track3_*.py', 'tools/test_track4_*.py', '.github/workflows/publish-coding-roadmap-live.yml']
 permissions:
   contents: write
 concurrency:
-  group: coding-roadmap-live-publication
+  group: coding-roadmap-publication-${{ github.ref }}
   cancel-in-progress: true
 jobs:
   publish:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: coding-roadmap-live
+          ref: ${{ github.ref_name }}
           fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Install browser test tools and Korean fonts
+      - name: Install real browser test tools and Korean fonts
         run: |
           python -m pip install --disable-pip-version-check playwright==1.55.0
           sudo apt-get update -qq
           sudo apt-get install -y -qq fonts-noto-cjk >/dev/null
           fc-cache -f
-      - name: Replace the fragmented edition once
+      - name: Preserve baseline and prepare additive Track 4 integration
         run: |
-          if ! grep -q '^from compile_track3_book import build$' tools/build_content.py; then
-            python tools/prepare_track3_release.py
-            git restore .github/workflows/publish-coding-roadmap-live.yml
-          fi
-      - name: Build canonical continuous textbook
+          mkdir -p review
+          cp live/content.json review/track4-before.json
+          python tools/prepare_track4_release.py
+      - name: Build complete continuous textbooks within the native download limit
         run: |
           python - <<'PY'
           import json,time,pathlib
@@ -41,47 +40,72 @@ jobs:
           python tools/build_content.py
           python - <<'PY'
           from pathlib import Path
-          p=Path('live/reader.html');assert 0<p.stat().st_size<=3*1024*1024, 'Native reader download limit exceeded'
+          p=Path('live/reader.html');assert 0<p.stat().st_size<=3*1024*1024, 'Native HTML download limit exceeded'
           PY
-      - name: Verify all authored examples and preserved source
+      - name: Verify all source, examples, references and unrelated-track preservation
         run: |
           python tools/test_track3_book.py
+          python tools/test_track4_book.py
           node tools/verify_reader.cjs
-      - name: Verify real browser layout and persisted records
+      - name: Verify existing Track 3 reader and persisted records
         run: python tools/test_track3_browser.py
-      - name: Verify real Python worker and complete capstone
+      - name: Verify Track 4 reader, web execution and complete HTTP project
+        run: python tools/test_track4_browser.py
+      - name: Retain real Python execution verification for Track 3
         run: python tools/test_track3_worker.py
-      - name: Publish immutable reader then atomically move live channel
+      - name: Commit verified snapshot and publish only from the canonical live branch
+        env:
+          TARGET_BRANCH: ${{ github.ref_name }}
         shell: bash
         run: |
           set -euo pipefail
-          git fetch origin coding-roadmap-live
-          test "$(git rev-parse origin/coding-roadmap-live)" = "$(git rev-parse HEAD)" || { echo 'Newer source exists; refusing to overwrite it.'; exit 1; }
+          git fetch origin "$TARGET_BRANCH"
+          test "$(git rev-parse origin/"$TARGET_BRANCH")" = "$(git rev-parse HEAD)" || { echo 'Newer source exists; refusing to overwrite.'; exit 1; }
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add live/content.json live/reader.html live/track3-book tools/build_content.py CODINGROADMAP_LIVE.md .github/workflows/publish-coding-roadmap-live.yml
-          git add -u live
-          if test -f archive/track3-fragmented-manuscript-20260924.md; then git add archive/track3-fragmented-manuscript-20260924.md; fi
-          git commit -m 'Build and verify continuous Track 3 textbook reader'
+          git add live/content.json live/reader.html live/track3-book live/track4-book tools/build_content.py tools/test_track3_book.py CODINGROADMAP_LIVE.md
+          git commit -m 'Build and verify complete Track 4 continuous textbook; preserve prior tracks'
           export CONTENT_COMMIT="$(git rev-parse HEAD)"
           python - <<'PY'
           import os,json,pathlib,hashlib
           p=pathlib.Path('live/reader.html');b=p.read_bytes();d=json.loads(pathlib.Path('live/content.json').read_text())
           channel={'schema':'codingroadmap-live-v1','minShell':1,'version':d['version'],'label':d['label'],'commit':os.environ['CONTENT_COMMIT'],'sha256':hashlib.sha256(b).hexdigest(),'size':len(b)}
-          pathlib.Path('live/channel.json').write_text(json.dumps(channel,ensure_ascii=False,indent=2)+'\n')
-          pathlib.Path('review/published-channel.json').write_text(json.dumps(channel,ensure_ascii=False,indent=2)+'\n')
+          if os.environ['TARGET_BRANCH']=='coding-roadmap-live':
+              pathlib.Path('live/channel.json').write_text(json.dumps(channel,ensure_ascii=False,indent=2)+'\n')
+              pathlib.Path('review/published-channel.json').write_text(json.dumps(channel,ensure_ascii=False,indent=2)+'\n')
+          else:
+              channel['publicationStatus']='VERIFIED_STAGING_ONLY'
+              pathlib.Path('review/staging-snapshot.json').write_text(json.dumps(channel,ensure_ascii=False,indent=2)+'\n')
           PY
-          git add live/channel.json
-          git commit -m 'Publish verified continuous Track 3 textbook channel'
-          git push origin HEAD:coding-roadmap-live
+          if [ "$TARGET_BRANCH" = 'coding-roadmap-live' ]; then
+            git add live/channel.json
+            git commit -m 'Publish verified Track 4 twelve-chapter textbook channel'
+          fi
+          git push origin HEAD:"$TARGET_BRANCH"
+      - name: Assemble source and test package
+        if: always()
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import zipfile
+          root=Path('.')
+          with zipfile.ZipFile('Track4_Continuous_Book_Verified_Release.zip','w',zipfile.ZIP_DEFLATED) as z:
+              for base in ['live','tools','review']:
+                  for p in (root/base).rglob('*'):
+                      if not p.is_file() or '__pycache__' in p.parts or p.name=='track4-before.json':continue
+                      if p.suffix not in ['.html','.json','.md','.css','.js','.py','.cjs','.png','.txt']:continue
+                      z.write(p,p.as_posix())
+              z.write('CODINGROADMAP_LIVE.md')
+          PY
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: track3-continuous-book-publication
+          name: track4-continuous-book-publication
           retention-days: 7
           path: |
-            live/channel.json
-            live/content.json
-            live/reader.html
-            live/track3-book
-            review
+            Track4_Continuous_Book_Verified_Release.zip
+            review/track4-book-compile.json
+            review/track4-book-source-tests.json
+            review/track4-book-browser-tests.json
+            review/staging-snapshot.json
+            review/published-channel.json
