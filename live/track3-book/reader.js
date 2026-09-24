@@ -24,7 +24,7 @@
   function sampleMarkup(sample){
     const label=sample.fragment?'부분 코드 · 실행 전 보완 필요':sample.expectedError?'예외를 관찰하는 예제':sample.capstoneTests?'종합 검사 · 함수 정의가 함께 실행됩니다':'Python 예제';
     const actions='<button data-action="copy-code" data-code="'+encodeURIComponent(sample.code)+'">복사</button>'+(sample.runCode?'<button data-action="book-run" data-sample="'+sample.id+'">실습에서 실행</button>':'');
-    const code=sample.code.split('\n').map((line,i)=>'<span class="book-code-line" id="'+sample.anchor+'-line'+i+'" data-book-anchor="'+sample.anchor+'-line'+i+'" data-code-line="'+i+'">'+highlightPythonLine(line)+'</span>').join('');
+    const code=sample.code.split('\n').map((line,i)=>'<span class="book-code-line" id="'+sample.anchor+'-line'+i+'" data-book-anchor="'+sample.anchor+'-line'+i+'" data-code-line="'+i+'">'+(line?highlightPythonLine(line):'')+'</span>').join('');
     return '<div class="book-code" id="'+sample.anchor+'" data-book-anchor="'+sample.anchor+'"><div class="book-code-head"><span>'+esc(label)+'</span><div class="book-code-actions">'+actions+'</div></div><pre class="book-pre"><code>'+code+'</code></pre></div>';
   }
   function bookHTML(page){
@@ -276,6 +276,10 @@
     if(e.target.id==='practice-code'&&isBook()&&activeSample){state.bookPractice[activeSample.id]=e.target.value;persist();return true}
     return false;
   };
+  // Save book-specific fields before the shared reader input handler.
+  if(document.body&&typeof document.body.addEventListener==='function'){
+    document.body.addEventListener('input',e=>{if(window.bookInput(e))e.stopPropagation()});
+  }
   window.importProgress=function(raw){
     let incoming;try{incoming=JSON.parse(raw)}catch(e){return original.importProgress(raw)}
     original.importProgress(raw);

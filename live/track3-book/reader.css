@@ -1,7 +1,7 @@
 /* TRACK3_CONTINUOUS_BOOK_V1: scoped to the new manuscript reader only. */
 .reader-shell.book-mode{--bookRule:#d4cfc5;--bookMuted:#68635d;--bookCode:#f0eee8;--bookCodeInk:#272a2d;--readerLine:1.78}
 .reader-shell.book-mode.dark{--bookRule:#474844;--bookMuted:#b2b0a6;--bookCode:#222522;--bookCodeInk:#e4e8e1}
-.book-mode .reader-top{grid-template-columns:auto minmax(0,1fr) auto auto auto auto;gap:2px}
+.book-mode .reader-top{grid-template-columns:auto minmax(0,1fr) auto auto auto auto auto!important;gap:2px}
 .book-mode .reader-top button{min-width:36px;padding:4px}
 .book-mode .reader-heading small{display:none}
 .book-mode .reader-paper,.book-mode .topic-header{width:min(820px,calc(100% - 44px))!important}
@@ -45,3 +45,5 @@
 .book-practice-stop{padding:12px 18px;margin:10px 0;border:1px solid #b5aba0;border-radius:6px;background:transparent;color:inherit}
 @media(max-width:520px){.book-mode .reader-paper,.book-mode .topic-header{width:calc(100% - 36px)!important}.book-mode .reader-top{padding-left:7px;padding-right:7px}.book-mode .reader-heading strong{font-size:14px}.book-mode .book-chapter table{font-size:.79em}.book-mode .book-code-line{padding-left:7px;padding-right:7px}}
 @media(max-height:500px){.book-mode .topic-header{padding:3px 0 5px;margin-bottom:6px}.book-mode .reader-top{min-height:40px}.book-mode .book-chapter h1{font-size:1.35em!important}}
+
+.book-mode .reader-page-info,.book-mode #page-pos{color:var(--bookMuted)!important}
