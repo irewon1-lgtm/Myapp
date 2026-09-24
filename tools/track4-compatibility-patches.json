@@ -63,5 +63,20 @@
     "path":"live/track4-book/reader.js",
     "old":"    if(m.kind==='html-ready'){clearTimeout(timer);running=false;finished=true;paint();}\n",
     "new":"    if(m.kind==='html-ready'){clearTimeout(timer);const shown=frame;shown.scrollIntoView({block:'center',behavior:'instant'});requestAnimationFrame(()=>requestAnimationFrame(()=>{if(frame!==shown)return;running=false;finished=true;paint();}));}\n"
+  },
+  {
+    "path":"tools/test_track4_browser.py",
+    "old":"    p.evaluate(\"window.realSetItem=Storage.prototype.setItem;Storage.prototype.setItem=function(){throw new DOMException('test full','QuotaExceededError')}\")\n",
+    "new":"    p.evaluate(\"()=>{window.realSetItem=Storage.prototype.setItem;Storage.prototype.setItem=function(){throw new DOMException('test full','QuotaExceededError')};}\")\n"
+  },
+  {
+    "path":"tools/test_track4_browser.py",
+    "old":"    p.evaluate('Storage.prototype.setItem=window.realSetItem')\n",
+    "new":"    p.evaluate('()=>{Storage.prototype.setItem=window.realSetItem;}')\n"
+  },
+  {
+    "path":"tools/test_track4_browser.py",
+    "old":"        p.locator('#load-topics').click();p.wait_for_function(\"!document.getElementById('load-topics').disabled\")\n        text=p.locator('#topics-message').inner_text()\n",
+    "new":"        with p.expect_response('**/topics.json') as received:\n            p.locator('#load-topics').click()\n        assert received.value.status==status\n        expected='제공되는 주제가 없습니다.' if label=='empty' else '주제를 불러오지 못했습니다. 다시 시도해 주세요.'\n        expect(p.locator('#topics-message')).to_have_text(expected,timeout=5000)\n        expect(p.locator('#load-topics')).to_be_enabled()\n        text=p.locator('#topics-message').inner_text()\n"
   }
 ]
