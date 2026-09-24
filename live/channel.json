@@ -1,10 +1,15 @@
 {
   "schema": 1,
   "kind": "chatbook-live-channel",
-  "sequence": 1790267530269,
+  "sequence": 1790268518923,
   "current": {
-    "commit": "6a0d61524160b16c6649506be5b43351757820df",
-    "manifestSha": "69dcd753c9004f42074e56442a9b47811ad767ac66cc5e4b3bca210efee03f9e"
+    "commit": "888f87933aaefd8d03b7ebbf31fa7e553ad57229",
+    "manifestSha": "2ed3d87340cc21063adca171a1dc25352557e3cba737f5616cc4f082f556039a"
   },
-  "previous": []
+  "previous": [
+    {
+      "commit": "6a0d61524160b16c6649506be5b43351757820df",
+      "manifestSha": "69dcd753c9004f42074e56442a9b47811ad767ac66cc5e4b3bca210efee03f9e"
+    }
+  ]
 }
