@@ -21,6 +21,7 @@
   "minPrice": 150000,
   "maxPrice": 1200000,
   "perQuery": 30,
-  "detailLimit": 45,
-  "outputLimit": 60
+  "detailLimit": 10,
+  "outputLimit": 60,
+  "runToken": "retry-2"
 }
