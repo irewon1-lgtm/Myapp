@@ -1,4 +1,4 @@
-# Test attempt 3: preserve the anti-rollback gate and recover with a newer fixture.
+# Workflow definitions are preinstalled; the runner publishes application files only.
 name: Chatbook one-time live migration and verified bootstrap
 on:
   push:
@@ -29,6 +29,7 @@ jobs:
       - name: Install scoped candidate, preserving content and sync functions
         run: |
           test ! -f .deployment/live-bootstrap-receipt.json
+          python scripts/live-migration-workflows-prepared.py
           python scripts/live-migration-install.py
           python scripts/live-migration-testfix.py
           node scripts/live-contract.mjs record
