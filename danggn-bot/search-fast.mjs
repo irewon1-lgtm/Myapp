@@ -305,6 +305,7 @@ console.log('TARGET_SCAN_STATS=' + JSON.stringify({
   targetCities: request.targetCities ?? []
 }));
 console.log('TARGET_CANDIDATES_JSON=' + JSON.stringify(exactTargetCandidates.slice(0, 80)));
+console.log('DISCOVERED_REGIONS_JSON=' + JSON.stringify(discoveredRegions));
 
 for (const item of items) item.score = score(item, request);
 items.sort((a, b) => b.score - a.score || (a.price || 1e15) - (b.price || 1e15));
