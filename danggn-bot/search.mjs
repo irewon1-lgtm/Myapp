@@ -67,6 +67,7 @@ function normalizeArticle(raw, sourceQuery) {
     imageUrl: raw.thumbnail ?? undefined,
     location: raw.locationName ?? raw.region?.name,
     regionPath: [raw.region?.name1, raw.region?.name2, raw.region?.name3].filter(Boolean).join(' ') || undefined,
+    regionSlug: raw.region?.name && raw.region?.dbId ? raw.region.name + '-' + raw.region.dbId : undefined,
     postedAt: raw.createdAt,
     boostedAt: raw.boostedAt,
     chatCount: raw.chatCount ?? 0,
@@ -209,7 +210,7 @@ function score(item, request) {
 const request = JSON.parse(await fs.readFile(REQUEST_PATH, 'utf8'));
 const regionSlug = request.regionSlug || '';
 const queries = request.queries?.length ? request.queries : ['노트북'];
-const perQuery = Math.max(5, Math.min(50, request.perQuery ?? 30));
+const perQuery = Math.max(5, Math.min(300, request.perQuery ?? 30));
 const detailLimit = Math.max(0, Math.min(80, request.detailLimit ?? 40));
 
 const all = [];
