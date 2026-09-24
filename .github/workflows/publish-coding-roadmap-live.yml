@@ -2,7 +2,7 @@ name: Publish CodingRoadmap lessons and screen
 on:
   push:
     branches: [coding-roadmap-live, track4-continuous-book-20260925]
-    paths: ['live/content.json', 'live/reader.template.html', 'live/track3-book/**', 'live/track4-book/**', 'tools/build_content.py', 'tools/compile_track3_book.py', 'tools/compile_track4_book.py', 'tools/prepare_track4_release.py', 'tools/verify_reader.cjs', 'tools/test_track3_*.py', 'tools/test_track4_*.py', '.github/workflows/publish-coding-roadmap-live.yml']
+    paths: ['live/content.json', 'live/reader.template.html', 'live/track3-book/**', 'live/track4-book/**', 'tools/build_content.py', 'tools/compile_track3_book.py', 'tools/compile_track4_book.py', 'tools/prepare_track4_release.py', 'tools/track4-compatibility-patches.json', 'tools/verify_reader.cjs', 'tools/test_track3_*.py', 'tools/test_track4_*.py', '.github/workflows/publish-coding-roadmap-live.yml']
 permissions:
   contents: write
 concurrency:
@@ -63,7 +63,7 @@ jobs:
           test "$(git rev-parse origin/"$TARGET_BRANCH")" = "$(git rev-parse HEAD)" || { echo 'Newer source exists; refusing to overwrite.'; exit 1; }
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add live/content.json live/reader.html live/track3-book live/track4-book tools/build_content.py tools/test_track3_book.py CODINGROADMAP_LIVE.md
+          git add live/content.json live/reader.html live/track3-book live/track4-book tools/build_content.py tools/test_track3_book.py tools/test_track4_browser.py tools/verify_reader.cjs CODINGROADMAP_LIVE.md
           git commit -m 'Build and verify complete Track 4 continuous textbook; preserve prior tracks'
           export CONTENT_COMMIT="$(git rev-parse HEAD)"
           python - <<'PY'
