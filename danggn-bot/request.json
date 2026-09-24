@@ -1,7 +1,13 @@
 {
-  "regionSlug": "내손동-4731",
+  "regionSlug": "",
   "queries": [
-    "노트북"
+    "노트북",
+    "갤럭시북",
+    "그램",
+    "ThinkPad",
+    "레노버 노트북",
+    "HP 노트북",
+    "ASUS 노트북"
   ],
   "ramGB": [
     16,
@@ -12,10 +18,10 @@
     1024
   ],
   "onlyOngoing": true,
-  "minPrice": 0,
-  "maxPrice": 2000000,
-  "perQuery": 5,
+  "minPrice": 100000,
+  "maxPrice": 1500000,
+  "perQuery": 300,
   "detailLimit": 0,
-  "outputLimit": 5,
-  "runToken": "discover-nearby"
+  "outputLimit": 500,
+  "runToken": "broad-discovery-300"
 }
