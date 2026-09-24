@@ -1,13 +1,7 @@
 {
-  "regionSlug": "잠실동-6188",
+  "regionSlug": "내손동-4731",
   "queries": [
-    "노트북 16GB 512GB",
-    "노트북 32GB 1TB",
-    "갤럭시북 16GB",
-    "LG그램 16GB",
-    "ThinkPad 16GB",
-    "레노버 노트북 16GB",
-    "ASUS 노트북 16GB"
+    "노트북"
   ],
   "ramGB": [
     16,
@@ -18,10 +12,10 @@
     1024
   ],
   "onlyOngoing": true,
-  "minPrice": 150000,
-  "maxPrice": 1200000,
-  "perQuery": 30,
-  "detailLimit": 10,
-  "outputLimit": 60,
-  "runToken": "retry-3"
+  "minPrice": 0,
+  "maxPrice": 2000000,
+  "perQuery": 5,
+  "detailLimit": 0,
+  "outputLimit": 5,
+  "runToken": "discover-nearby"
 }
