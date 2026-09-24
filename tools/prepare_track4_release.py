@@ -1,5 +1,6 @@
 """One-time, reviewable migration of the existing continuous reader to multiple tracks."""
 from pathlib import Path
+import json
 ROOT=Path(__file__).resolve().parents[1]
 
 
@@ -8,8 +9,18 @@ def replace_once(text, old, new):
     return text.replace(old,new,1)
 
 
+def apply_compatibility():
+    patches=json.loads((ROOT/'tools/track4-compatibility-patches.json').read_text())
+    allowed={'tools/verify_reader.cjs','tools/test_track4_browser.py','live/track4-book/reader.js'}
+    for patch in patches:
+        assert patch['path'] in allowed
+        path=ROOT/patch['path'];text=path.read_text()
+        if patch['new'] in text:continue
+        path.write_text(replace_once(text,patch['old'],patch['new']))
+
+
 def main():
-    # Correct two draft editorial slips before compilation or publication.
+    apply_compatibility()
     path=ROOT/'live/track4-book/ch02.md'
     text=path.read_text()
     text=text.replace('Jennifer Niederstetter Robbins가 아닌 Jennifer Niederst Robbins, 2025.', 'Jennifer Niederst Robbins, 2025.')
