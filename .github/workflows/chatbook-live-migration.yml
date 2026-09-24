@@ -1,3 +1,4 @@
+# Test attempt 3: preserve the anti-rollback gate and recover with a newer fixture.
 name: Chatbook one-time live migration and verified bootstrap
 on:
   push:
