@@ -6,7 +6,8 @@
     "거여1동-407",
     "거여2동-408",
     "마천1동-409",
-    "마천2동-410"
+    "마천2동-410",
+    "방이1동-411"
   ],
   "queries": [
     "노트북"
@@ -32,6 +33,6 @@
     "구리시"
   ],
   "postedSince": "2026-09-11T00:00:00+09:00",
-  "targetDetailLimit": 8,
-  "runToken": "jamsil-neighborhood-discovery-hop2"
+  "targetDetailLimit": 10,
+  "runToken": "jamsil-neighborhood-discovery-hop3"
 }
