@@ -1,18 +1,18 @@
 {
   "schemaVersion": 1,
   "kind": "read-only-release-information",
-  "generatedAt": "2026-09-24T16:58:13.463Z",
+  "generatedAt": "2026-09-24T17:58:48.710Z",
   "app": {
     "name": "챗북",
     "version": "1.0.3",
     "homepage": "https://chatbook-library-20260923.netlify.app"
   },
   "release": {
-    "id": "1.0.3-1.2.0-c0cfc8402f638484",
-    "sourceDigest": "c0cfc8402f63848498af773a9784eaccceb1e8594bf9b277caeb17534e6d8113",
-    "sourceSha": "bc7419849304f3f79f55505d7c687fc86bd3e6e8",
+    "id": "1.0.3-1.2.0-7c1f5043fb84772b",
+    "sourceDigest": "7c1f5043fb84772b59c9dc8cd727901a9bd8d5aa85183d2dce8372ec963023da",
+    "sourceSha": "ba14ec18e813480370647fe2f99b58f00114dc15",
     "sourceBranch": "chatbook-app-20260923",
-    "buildRunId": "36031004052",
+    "buildRunId": "36038020264",
     "deployId": null
   },
   "engine": {
@@ -142,13 +142,13 @@
       "command": "npm test",
       "status": "passed",
       "exitCode": 0,
-      "checkedAt": "2026-09-24T16:58:13.463Z",
-      "sourceDigest": "c0cfc8402f63848498af773a9784eaccceb1e8594bf9b277caeb17534e6d8113",
+      "checkedAt": "2026-09-24T17:58:48.710Z",
+      "sourceDigest": "7c1f5043fb84772b59c9dc8cd727901a9bd8d5aa85183d2dce8372ec963023da",
       "nodeTests": 191,
       "nodePassed": 191,
       "nodeFailed": 0,
       "nodeSkipped": 0,
-      "outputSha256": "fc91f418f1dd412a5a3fc88697d00027e90f4fb63ff0f8f3adfc541763d705d5",
+      "outputSha256": "ab07dcc5e69028b77cd0875e6ac91d1b07492c2f2fbf79627c27a12003434d84",
       "scope": "Local syntax, API contract and Node engine tests only; not live video or production end-to-end verification."
     },
     "productionEndToEnd": {
@@ -183,7 +183,7 @@
   },
   "assetSha256": {
     "/app.js": "7610b783ea0472c38ce8ef59d43a75bc226ea5e6a807d8bd9ad63c170de4f4e0",
-    "/content/catalog.json": "23f811c10a4ddd98c15f24203d97dfd97ffa784976672753b0fffd1635016275",
+    "/content/catalog.json": "2034a3d5ba165f5d70ac035203f2c7197df1a13d52d27fc5947e15a36e556249",
     "/core.js": "85db61fdc45aaa2c43d770c398b36cb123531ecc6f6e9c05bfadf91f9fa3127a",
     "/engine/benchmark.json": "6c66ebe966dacd3c2e637eb607008d6212c76e90a11d0e86e504c93addaa7554",
     "/engine/core.mjs": "5433fe8d0c49b4465bc98abd0202dd7010705665331b842a6ea768c1f2088152",
@@ -197,7 +197,7 @@
     "/engine/workbench.css": "9c1c60d10b7b7b108b0a612eca4aa71b89f466b459ce62e994120d3d9c9478a4",
     "/engine/workbench.mjs": "1e9a34263ec2fb4a2662fc6e98028ebf7d7919db6b37ea9d4b26d0b6c4aca6ee",
     "/exports.js": "4c380780a1bbe520b3b2270c65ae64642d1681dbee8f90f4520615ac98b2aade",
-    "/library.js": "5bf08909b9d16ea7369ce11d43f5ab93c8acb9df69e0ebc29ef9eb3acf848314",
+    "/library.js": "7585a46c03cf8dbf7968cce245caab85a256e631aea7443ca3b15a59c0044460",
     "/reader.js": "2b71f6855efa43f82d147c97867d333b312c08da55ba733b9bdd2cc1313de197",
     "/views.js": "eba5aa2936da0b3120d9d2bfeeefca0e4829d52019d9583041a2afc355763a47"
   }
