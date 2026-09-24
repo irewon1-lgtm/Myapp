@@ -29,6 +29,7 @@ jobs:
         run: |
           test ! -f .deployment/live-bootstrap-receipt.json
           python scripts/live-migration-install.py
+          python scripts/live-migration-testfix.py
           node scripts/live-contract.mjs record
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
