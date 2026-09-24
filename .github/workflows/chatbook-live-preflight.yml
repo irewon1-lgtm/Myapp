@@ -1,0 +1,52 @@
+name: Chatbook live migration preflight (NO DEPLOY)
+on:
+  push:
+    branches: [chatbook-app-20260923]
+    paths: [.github/workflows/chatbook-live-preflight.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: chatbook-live-preflight
+  cancel-in-progress: true
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Capture read-only public production evidence
+        run: |
+          mkdir -p review/live-preflight
+          python3 - <<'PY'
+          import urllib.request,json,pathlib,hashlib
+          root=pathlib.Path('review/live-preflight')
+          report={'scope':'Read-only requests; no sync writes or deployment','sourceSha':'${{ github.sha }}','requests':[]}
+          for name in ['engine-spec.json','version.json','core.js','sw.js','api/health']:
+            url='https://chatbook-library-20260923.netlify.app/'+name
+            try:
+              with urllib.request.urlopen(url,timeout=25) as r:
+                data=r.read(); filename=name.replace('/','-')
+                (root/filename).write_bytes(data)
+                report['requests'].append({'path':name,'status':r.status,'size':len(data),'sha256':hashlib.sha256(data).hexdigest(),'headers':dict(r.headers)})
+            except Exception as e:
+              report['requests'].append({'path':name,'error':str(e)})
+          (root/'report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2))
+          print(json.dumps(report,ensure_ascii=False,indent=2))
+          PY
+      - run: npm ci --no-audit --no-fund
+      - run: npm run build
+      - name: Archive approved source without credentials or deployment handoffs
+        if: always()
+        run: |
+          tar --exclude=.git --exclude=node_modules --exclude=.deployment --exclude=.netlify --exclude='*.keystore' --exclude='*.jks' --exclude='.env*' -czf /tmp/chatbook-source-test-snapshot.tar.gz .
+          cp /tmp/chatbook-source-test-snapshot.tar.gz review/live-preflight/
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: chatbook-source-test-snapshot
+          path: review/live-preflight/
+          retention-days: 2
