@@ -1,0 +1,30 @@
+name: Danggn Fast Search
+
+on:
+  push:
+    branches:
+      - danggn-search-bot
+    paths:
+      - 'danggn-bot/request-fast.json'
+
+permissions:
+  contents: read
+
+jobs:
+  search-fast:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: danggn-search-bot
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Search Danggn fast
+        run: node danggn-bot/search-fast.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: danggn-fast-result
+          path: danggn-bot/result-fast.json
+          retention-days: 1
