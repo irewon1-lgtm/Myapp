@@ -1,0 +1,67 @@
+[
+  {
+    "path":"tools/verify_reader.cjs",
+    "old":"  assert(!f.elements.app.innerHTML.includes('undefined'));\n",
+    "new":"  assert(!f.elements.app.innerHTML.includes('undefined')||JSON.stringify(p).includes('undefined'),'Unexplained undefined in '+p.id);\n  assert(!/\\b(?:id|class|data-[\\w-]+)=\\\"undefined\\\"/.test(f.elements.app.innerHTML),'Undefined rendered attribute in '+p.id);\n"
+  },
+  {
+    "path":"tools/test_track4_browser.py",
+    "old":"from playwright.sync_api import sync_playwright\n",
+    "new":"from playwright.sync_api import sync_playwright,expect\n"
+  },
+  {
+    "path":"tools/test_track4_browser.py",
+    "old":"    p.evaluate(\"id=>Track4Web.openSample(id)\",sid);p.locator('#web-execute').click()\n",
+    "new":"    p.evaluate(\"id=>Track4Web.openSample(id)\",sid);p.locator('#web-execute').click()\n    p.wait_for_function(\"document.getElementById('web-run-status').textContent==='예제 화면 준비 완료'\",timeout=10000)\n    p.wait_for_timeout(180)  # Allow the cross-process iframe hit-test surface to settle.\n"
+  },
+  {
+    "path":"tools/test_track4_browser.py",
+    "old":"    assert f.locator('#status').inner_text()=='버튼을 눌렀습니다.'\n",
+    "new":"    expect(f.locator('#status')).to_have_text('버튼을 눌렀습니다.',timeout=5000)\n"
+  },
+  {
+    "path":"tools/test_track4_browser.py",
+    "old":"    p.evaluate(\"id=>Track4Web.openSample(id)\",sid);p.locator('#web-execute').click();f=p.frame_locator('.web-example-frame')\n",
+    "new":"    p.evaluate(\"id=>Track4Web.openSample(id)\",sid);p.locator('#web-execute').click()\n    p.wait_for_function(\"document.getElementById('web-run-status').textContent==='예제 화면 준비 완료'\",timeout=10000)\n    p.wait_for_timeout(180)  # Allow the cross-process iframe hit-test surface to settle.\n    f=p.frame_locator('.web-example-frame')\n"
+  },
+  {
+    "path":"tools/test_track4_browser.py",
+    "old":"    assert f.locator('#records li').count()==1 and 'HTML · 20분' in f.locator('#records').inner_text()\n",
+    "new":"    expect(f.locator('#records li')).to_have_count(1,timeout=5000)\n    assert 'HTML · 20분' in f.locator('#records').inner_text()\n"
+  },
+  {
+    "path":"tools/test_track4_browser.py",
+    "old":"        browser=pw.chromium.launch(executable_path=executable,headless=True,args=['--no-sandbox','--disable-dev-shm-usage'])\n",
+    "new":"        browser=pw.chromium.launch(executable_path=executable,headless=True,args=['--no-sandbox','--disable-dev-shm-usage'])\n        complete=False\n"
+  },
+  {
+    "path":"tools/test_track4_browser.py",
+    "old":"            assert not ERRORS,ERRORS\n",
+    "new":"            assert not ERRORS,ERRORS\n            complete=True\n"
+  },
+  {
+    "path":"tools/test_track4_browser.py",
+    "old":"            report={'status':'PASS' if not ERRORS and len(RESULTS)>60 else 'INCOMPLETE','scope':'Real Chromium, native bridge emulator, isolated web execution and local HTTP capstone. NOT physical Galaxy installation or updater receipt.','cases':RESULTS,'consoleErrors':ERRORS}\n",
+    "new":"            report={'status':'PASS' if complete else 'INCOMPLETE','scope':'Real Chromium, native bridge emulator, isolated web execution and local HTTP capstone. NOT physical Galaxy installation or updater receipt.','cases':RESULTS,'consoleErrors':ERRORS}\n"
+  },
+  {
+    "path":"live/track4-book/reader.js",
+    "old":"    const output=document.getElementById('web-console');if(output)output.textContent=(lastError?lastError+'\\n':'')+lines.join('\\n')+(finished&&!lastError&&!lines.length?'(콘솔 출력 없이 종료)':'');\n    const status=document.getElementById('web-run-status');if(status)status.textContent=running?'실행 중':lastError?'실행 오류 또는 중지':finished?'실제 실행 결과':active?.mode==='html'?'실행하면 아래에 독립된 예제 화면이 표시됩니다.':'실행하면 실제 콘솔 출력이 표시됩니다.';\n",
+    "new":"    const output=document.getElementById('web-console');if(output)output.textContent=(lastError?lastError+'\\n':'')+lines.join('\\n')+(finished&&!lastError&&!lines.length&&active?.mode!=='html'?'(콘솔 출력 없이 종료)':'');\n    const status=document.getElementById('web-run-status');if(status)status.textContent=running?'실행 중':lastError?'실행 오류 또는 중지':finished?(active?.mode==='html'?'예제 화면 준비 완료':'실제 실행 결과'):active?.mode==='html'?'실행하면 아래에 독립된 예제 화면이 표시됩니다.':'실행하면 실제 콘솔 출력이 표시됩니다.';\n"
+  },
+  {
+    "path":"live/track4-book/reader.js",
+    "old":"addEventListener('DOMContentLoaded',()=>send('html-ready',''));\n",
+    "new":"addEventListener('DOMContentLoaded',()=>requestAnimationFrame(()=>requestAnimationFrame(()=>send('html-ready',''))));\n"
+  },
+  {
+    "path":"live/track4-book/reader.js",
+    "old":"    if(m.kind==='error'){lastError=String(m.text).slice(0,16000);running=false;finished=true;clearTimeout(timer);paint();return;}\n",
+    "new":"    if(m.kind==='error'){lastError=String(m.text).slice(0,16000);running=false;finished=true;clearTimeout(timer);if(active?.mode==='console')stop();paint();return;}\n"
+  },
+  {
+    "path":"live/track4-book/reader.js",
+    "old":"    if(m.kind==='html-ready'){clearTimeout(timer);running=false;finished=true;paint();}\n",
+    "new":"    if(m.kind==='html-ready'){clearTimeout(timer);const shown=frame;shown.scrollIntoView({block:'center',behavior:'instant'});requestAnimationFrame(()=>requestAnimationFrame(()=>{if(frame!==shown)return;running=false;finished=true;paint();}));}\n"
+  }
+]
