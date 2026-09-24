@@ -1,16 +1,10 @@
 {
   "ok": true,
-  "generatedAt": "2026-09-24T18:15:25.094Z",
+  "generatedAt": "2026-09-24T18:18:36.093Z",
   "request": {
-    "regionSlug": "잠실동-6188",
+    "regionSlug": "내손동-4731",
     "queries": [
-      "노트북 16GB 512GB",
-      "노트북 32GB 1TB",
-      "갤럭시북 16GB",
-      "LG그램 16GB",
-      "ThinkPad 16GB",
-      "레노버 노트북 16GB",
-      "ASUS 노트북 16GB"
+      "노트북"
     ],
     "ramGB": [
       16,
@@ -21,770 +15,100 @@
       1024
     ],
     "onlyOngoing": true,
-    "minPrice": 150000,
-    "maxPrice": 1200000,
-    "perQuery": 30,
-    "detailLimit": 10,
-    "outputLimit": 60,
-    "runToken": "retry-3"
+    "minPrice": 0,
+    "maxPrice": 2000000,
+    "perQuery": 5,
+    "detailLimit": 0,
+    "outputLimit": 5,
+    "runToken": "discover-nearby"
   },
   "stats": {
-    "rawCount": 210,
-    "uniqueCount": 182,
-    "finalCount": 130,
-    "detailedCount": 10
+    "rawCount": 5,
+    "uniqueCount": 5,
+    "finalCount": 5,
+    "detailedCount": 0
   },
   "errors": [],
+  "discoveredRegions": [
+    {
+      "name": "전체",
+      "slug": "내손동-4731"
+    },
+    {
+      "name": "고천동",
+      "slug": "고천동-1644"
+    },
+    {
+      "name": "부곡동",
+      "slug": "부곡동-1645"
+    },
+    {
+      "name": "오전동",
+      "slug": "오전동-1646"
+    },
+    {
+      "name": "내손1동",
+      "slug": "내손1동-1647"
+    },
+    {
+      "name": "내손2동",
+      "slug": "내손2동-1648"
+    },
+    {
+      "name": "청계동",
+      "slug": "청계동-1649"
+    }
+  ],
   "items": [
     {
-      "id": "xzet6vxcgd3y",
-      "title": "LG그램 게이밍 16인치 i5 12세대 RTL2050 16gb 1tb",
-      "price": 900000,
-      "url": "https://www.daangn.com/kr/buy-sell/lg%EA%B7%B8%EB%9E%A8-%EA%B2%8C%EC%9D%B4%EB%B0%8D-16%EC%9D%B8%EC%B9%98-i5-12%EC%84%B8%EB%8C%80-rtl2050-16gb-1tb-xzet6vxcgd3y/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/dcd68fe3-893e-450a-a51b-891836fd8b34.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "id": "pzwe71ibwsk4",
+      "title": "LG 그램 노트북 13Z940-GX30K 화이트",
+      "price": 120000,
+      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-13z940-gx30k-%ED%99%94%EC%9D%B4%ED%8A%B8-pzwe71ibwsk4/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/17891751639227e2715a56ff29b82ad06c11becb91c3530b03bd3c2ad9e50f62a9076012be9240.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
-      "sellerName": "안사부",
-      "sourceQuery": [
-        "노트북 16GB 512GB",
-        "노트북 32GB 1TB",
-        "LG그램 16GB"
-      ],
-      "description": "LG그램 게이밍노트북\n화면: 16인치\nCPU: Intel i5-1240P\nGPU: Nvidia geforce RTX 2050 4gb\nRAM: DDR5 16GB\n저장장치:Nvme M.2 1TB\n운영체제: Windows 11(자체인증),한글,오피스\n대체로 깨끗합니다.\n✅ 16zd90q-ex56k 2022,07\n✅배터리 6시간내외\n✅구성품  노트북,정품C타입충전기,노트북가방\n✅바로구매시 잘 포장해서 보냅니다.",
-      "categoryName": "기타 중고물품",
-      "viewCount": 526,
-      "sellerReviewCount": 220,
-      "mannerTemperature": 60.2,
-      "location": "덕곡동",
-      "regionPath": "경상북도 김천시 덕곡동",
-      "postedAt": "2026-09-22T09:50:20.250+09:00",
-      "boostedAt": "2026-09-24T12:01:49.996+09:00",
-      "score": 80
+      "sourceQuery": "노트북",
+      "score": 22
     },
     {
-      "id": "tj7mqqq9pvfe",
-      "title": "HP 13세대 i5 노트북 16GB RAM 477GB 512GB SDD",
-      "price": 550000,
-      "url": "https://www.daangn.com/kr/buy-sell/hp-13%EC%84%B8%EB%8C%80-i5-%EB%85%B8%ED%8A%B8%EB%B6%81-16gb-ram-477gb-512gb-sdd-tj7mqqq9pvfe/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/0ac1d280-811a-4a5d-b68b-c046a059a903.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "id": "xuwqi72wfztu",
+      "title": "LG그램 LG13Z94 노트북",
+      "price": 140000,
+      "url": "https://www.daangn.com/kr/buy-sell/lg%EA%B7%B8%EB%9E%A8-lg13z94-%EB%85%B8%ED%8A%B8%EB%B6%81-xuwqi72wfztu/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/890d98b8-9d5c-48bd-a4d0-199a6249ca68.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
-      "sellerName": "걀걀",
-      "sourceQuery": "노트북 16GB 512GB",
-      "description": "HP 노트북 \n13세대 인텔 코어 i5-1335U 프로세서\nDDR4 16GB RAM, \n512GB SSD 탑재되어 있습니다. \n그래픽 카드는 13세대 인텔 Iris Xe 그래픽으로 선명한 화면을 즐길 수 있습니다. 깔끔한 디자인으로 어디서든 사용하기 좋아요. 문서 작업, 영상 시청 등 다양한 용도로 활용하기 좋은 노트북입니다.\n본체와 충전기,파우치 드리고 있어요.",
-      "categoryName": "취미/게임/음반",
-      "viewCount": 269,
-      "sellerReviewCount": 23,
-      "mannerTemperature": 41.7,
-      "location": "중산동",
-      "regionPath": "울산광역시 북구 중산동",
-      "postedAt": "2026-09-23T21:54:13.455+09:00",
-      "boostedAt": "2026-09-23T21:54:13.451+09:00",
-      "score": 78
+      "sourceQuery": "노트북",
+      "score": 22
     },
     {
-      "id": "h48r2c77q2u5",
-      "title": "갤럭시북 프로 I7-1165G7 16GB 512GB",
-      "price": 540000,
-      "url": "https://www.daangn.com/kr/buy-sell/%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%81-%ED%94%84%EB%A1%9C-i7-1165g7-16gb-512gb-h48r2c77q2u5/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202608/d51125ee2360e1f2349f250627bb301a800aef614da055036557ce53feef25eb_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "id": "kz1osrwtcsnv",
+      "title": "그램형삼성노트북 급팔아요",
+      "price": 230000,
+      "url": "https://www.daangn.com/kr/buy-sell/%EA%B7%B8%EB%9E%A8%ED%98%95%EC%82%BC%EC%84%B1%EB%85%B8%ED%8A%B8%EB%B6%81-%EA%B8%89%ED%8C%94%EC%95%84%EC%9A%94-kz1osrwtcsnv/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/11d1d380-4150-46c4-a10e-17129bcac4bb.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
-      "sourceQuery": [
-        "노트북 16GB 512GB",
-        "레노버 노트북 16GB"
-      ],
-      "score": 76
+      "sourceQuery": "노트북",
+      "score": 22
     },
     {
-      "id": "nz772mrgax1o",
-      "title": "LG그램 16인치 2023년형 i5 / 16GB / 256GB / 배터리83%",
-      "price": 620000,
-      "url": "https://www.daangn.com/kr/buy-sell/lg%EA%B7%B8%EB%9E%A8-16%EC%9D%B8%EC%B9%98-2023%EB%85%84%ED%98%95-i5-16gb-256gb-%EB%B0%B0%ED%84%B0%EB%A6%AC83-nz772mrgax1o/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/4805342e-70dc-4b12-8b56-c61cdaafd2c6.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "id": "bzkb9v2gwtu5",
+      "title": "삼성 노트북 i3 윈도우11 Home",
+      "price": 130000,
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-i3-%EC%9C%88%EB%8F%84%EC%9A%B011-home-bzkb9v2gwtu5/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/89a4417e-319c-4a96-8cd9-0e020bc7f643.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
-      "sellerName": "AJH",
-      "sourceQuery": [
-        "노트북 16GB 512GB",
-        "LG그램 16GB"
-      ],
-      "description": "LG gram 16인치 판매합니다.\n모델명 16Z90R-GA5JK / 2023년형입니다.\n\n외관 사용감이 있는 대신 성능이나 실제 사용에는 문제 없고, 사양 대비 저렴하게 판매합니다.\n\n외관 신경 안 쓰시고 가성비 좋은 대화면 그램 찾으시는 분께 추천드려요.\n\n[사양]\nIntel 13세대 Core i5-1340P\nRAM 16GB\nSSD 256GB\n16인치 WQXGA (2560×1600)\nIntel Iris Xe Graphics\nWindows 11 Home\n정품 LG 충전기 포함\n판매 전 초기화 완료\n[배터리 상태]\n설계 용량: 80,000mWh\n완충 가능 용량: 66,710mWh\n배터리 성능 약 83%\n사이클 수 158회\n배터리 리포트 사진 첨부했습니다.\n\n⚠️ 외관 상태 꼭 확인해주세요.\n사진처럼 본체 테두리와 모서리 쪽 도장 까짐/찍힘이 여러 군데 있습니다. 특히 앞쪽 테두리와 양쪽 모서리에 사용감이 꽤 있는 편입니다. 하판에도 생활기스와 사용감 있습니다.\n\n외관 상태가 좋은 제품은 아닙니다. 이 부분 때문에 가격 낮춰서 판매합니다.\n대신 화면, 키보드, 터치패드, 충전 및 기본적인 작동은 정상이며 사용하는 데에는 문제 없었습니다.\n\n16인치라 화면이 넓고, i5-1340P + RAM 16GB라 문서작업, 인터넷, 인강/영상, 대학생 과제, 사무용, 가벼운 개발 작업 등에 충분히 사용하기 좋습니다. 그램답게 16인치 대화면 대비 휴대하기도 편한 편입니다.\n\n외관 까짐 부분은 사진에 최대한 자세하게 찍어서 올렸으니 사진 확인 후 구매 부탁드립니다.\n\n외관 사용감에 민감하신 분보다는 외관보다 성능/가성비 중요하게 보시는 분께 추천드립니다.\n\n정품 충전기 같이 드립니다.\n\n초기화 완료된 상태로 전달드립니다.",
-      "categoryName": "디지털기기",
-      "viewCount": 113,
-      "sellerReviewCount": 16,
-      "mannerTemperature": 38,
-      "location": "잠실4동",
-      "regionPath": "서울특별시 송파구 잠실4동",
-      "postedAt": "2026-09-22T23:54:51.225+09:00",
-      "boostedAt": "2026-09-23T23:56:51.864+09:00",
-      "score": 68
+      "sourceQuery": "노트북",
+      "score": 14
     },
     {
-      "id": "md8kaumbwjwn",
-      "title": "​[삼성] 갤럭시북 i7 11세대 / 16GB / SSD 512GB (NT750XDZ-A71AU)",
-      "price": 650000,
-      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%81-i7-11%EC%84%B8%EB%8C%80-16gb-ssd-512gb-nt750xdz-a71au-md8kaumbwjwn/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/ce0ee4e6-eaa5-43a0-bca1-2e511fcbff3e.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": [
-        "노트북 16GB 512GB",
-        "갤럭시북 16GB"
-      ],
-      "score": 68
-    },
-    {
-      "id": "h3egs2fw3eba",
-      "title": "박스미개봉! 15.6인치 최신 초경량 노트북 N150/16GB/512GB",
-      "price": 600000,
-      "url": "https://www.daangn.com/kr/buy-sell/%EB%B0%95%EC%8A%A4%EB%AF%B8%EA%B0%9C%EB%B4%89-15-6%EC%9D%B8%EC%B9%98-%EC%B5%9C%EC%8B%A0-%EC%B4%88%EA%B2%BD%EB%9F%89-%EB%85%B8%ED%8A%B8%EB%B6%81-n150-16gb-512gb-h3egs2fw3eba/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202512/6e11079b06af9678ee2bea48247f64463a919c673b84699a7ed4604264fda3cb_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "노트북 16GB 512GB",
-      "score": 63
-    },
-    {
-      "id": "am1e2j76daf3",
-      "title": "[새상품 즁고가격]HP 노트북 15-fc1061AU 라이젠5 16GB",
-      "price": 670000,
-      "url": "https://www.daangn.com/kr/buy-sell/%EC%83%88%EC%83%81%ED%92%88-%EC%A6%81%EA%B3%A0%EA%B0%80%EA%B2%A9-hp-%EB%85%B8%ED%8A%B8%EB%B6%81-15-fc1061au-%EB%9D%BC%EC%9D%B4%EC%A0%A05-16gb-am1e2j76daf3/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/57840e89-ebb9-4ded-8fb8-4060bc61e447.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sellerName": "나나랜별",
-      "sourceQuery": "노트북 16GB 512GB",
-      "description": "미개봉 새상품입니다. 중고 가격으로 빠르게 판매합니다.\nHP 노트북 15-fc1061AU 모델입니다. 라이젠5 CPU와 16GB 메모리, 512GB SSD를 탑재했어요. 15.6인치 FHD IPS 디스플레이로 선명한 화면을 즐길 수 있습니다. 고성능 작업도 거뜬한 노트북으로 일상을 더욱 편리하게 만들어 보세요.",
-      "categoryName": "디지털기기",
-      "viewCount": 78,
-      "sellerReviewCount": 47,
-      "mannerTemperature": 48,
-      "location": "잠실3동",
-      "regionPath": "서울특별시 송파구 잠실3동",
-      "postedAt": "2026-09-20T11:15:00.522+09:00",
-      "boostedAt": "2026-09-22T14:12:04.692+09:00",
-      "score": 63
-    },
-    {
-      "id": "8mxt2ni7j1h2",
-      "title": "LG 그램 스타일 14인치 노트북 14z90rs 16램 512",
-      "price": 850000,
-      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EC%8A%A4%ED%83%80%EC%9D%BC-14%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-14z90rs-16%EB%9E%A8-512-8mxt2ni7j1h2/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/c5ef4a7a-bacb-4cc5-8130-c9a3c6ff53bb.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sellerName": "젠틀맨",
-      "sourceQuery": [
-        "노트북 16GB 512GB",
-        "LG그램 16GB"
-      ],
-      "description": "LG 그램 스타일 14인치 노트북이에요. 16GB 메모리와 512GB SSD가 탑재되어 있어 빠르고 쾌적하게 사용하실 수 있어요. 2880x1800 고해상도 디스플레이로 선명한 화면을 즐겨보세요. 가볍고 슬림한 디자인으로 휴대하기 좋아요. 초고사양입니다\n가볍고 상태좋습니다. 박스없고 본체만있습니다. 윈도우 한컴오피스 설치완료 비흡연 비애완동물",
-      "categoryName": "디지털기기",
-      "viewCount": 82,
-      "sellerReviewCount": 402,
-      "mannerTemperature": 62.2,
-      "location": "잠실본동",
-      "regionPath": "서울특별시 송파구 잠실본동",
-      "postedAt": "2026-09-22T19:43:17.327+09:00",
-      "boostedAt": "2026-09-25T00:40:27.296+09:00",
-      "score": 62
-    },
-    {
-      "id": "in6ek2wiyh3t",
-      "title": "(외관신품급) RTX3060 / SSD 512GB / I5-11300H /RAM16GB /  ASUS 15노트북",
-      "price": 850000,
-      "url": "https://www.daangn.com/kr/buy-sell/%EC%99%B8%EA%B4%80%EC%8B%A0%ED%92%88%EA%B8%89-rtx3060-ssd-512gb-i5-11300h-ram16gb-asus-15%EB%85%B8%ED%8A%B8%EB%B6%81-in6ek2wiyh3t/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/342a6dbb-9bd0-4cf2-aaf8-e3c86fe4faab.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "ASUS 노트북 16GB",
-      "score": 62
-    },
-    {
-      "id": "qnnk5bogvybd",
-      "title": "DELL 인텔 i7 11Gen 노트북 16GB RAM 512GB SSD",
-      "price": 480000,
-      "url": "https://www.daangn.com/kr/buy-sell/dell-%EC%9D%B8%ED%85%94-i7-11gen-%EB%85%B8%ED%8A%B8%EB%B6%81-16gb-ram-512gb-ssd-qnnk5bogvybd/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/e0b0ad6e-0f20-4b62-b2dc-37f014a0de8b.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "노트북 16GB 512GB",
-      "score": 60
-    },
-    {
-      "id": "fguuka5s4vdi",
-      "title": "15인치 노트북 i5-1335U 16GB RAM 477GB SSD",
-      "price": 500000,
-      "url": "https://www.daangn.com/kr/buy-sell/15%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-1335u-16gb-ram-477gb-ssd-fguuka5s4vdi/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/aa16fb802026627341861fac620b1368f11437575dc65397c5e7211fe275bf70_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sellerName": "엄쿠",
-      "sourceQuery": "노트북 16GB 512GB",
-      "description": "HP 인텔 13세대 i5-1335U 프로세서와 16GB RAM, 477GB SSD를 탑재한 HP 노트북이에요. 윈도우 11 홈이 설치되어 있어 바로 사용 가능하답니다. 문서 작업, 웹 서핑, 동영상 시청 등 다양한 작업을 쾌적하게 할 수 있어요. 깔끔한 디자인으로 어디서든 활용하기 좋아요.\n\n배터리 92프로로 좋아요 \n외관내부   깨끗합니다 \n조금의 생활흔적정도\n정품 충전기 본체  구성이에요 ",
-      "categoryName": "취미/게임/음반",
-      "viewCount": 90,
-      "sellerReviewCount": 92,
-      "mannerTemperature": 48.7,
-      "location": "서창동",
-      "regionPath": "경상남도 양산시 서창동",
-      "postedAt": "2026-09-24T19:23:41.992+09:00",
-      "boostedAt": "2026-09-24T19:23:41.991+09:00",
-      "score": 60
-    },
-    {
-      "id": "o7frgwp1ur5y",
-      "title": "삼성 노트북 11세대 i7 16GB RAM 256GB SSD 1TB hdd",
-      "price": 570000,
-      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-11%EC%84%B8%EB%8C%80-i7-16gb-ram-256gb-ssd-1tb-hdd-o7frgwp1ur5y/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/24cbe43a9bbab8e0af4873f72a825dc28a91eb269465f47c8f2a5926a4eaacaf_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sellerName": "안뇨옹",
-      "sourceQuery": "노트북 16GB 512GB",
-      "description": "21년도산 삼성전자의 노트북입니다. 11세대 인텔 코어 i7 프로세서와 16GB RAM, 1TB hdd, 256gb SSD를 탑재하여 빠르고 쾌적한 사용이 가능해요. 넉넉한 저장 공간으로 많은 자료를 보관하기 좋아요. 노트북은 현재 초기화 상태입니당\n\n약 5년사용 배터리 효율 약 80.1%\n외부 사용감 있어요 (기스 등등.) 내부 자판 및 화면은 깨끗해요.\n오후 6시 이후 삼전역부근 직거래합니당",
-      "categoryName": "디지털기기",
-      "viewCount": 628,
-      "sellerReviewCount": 4,
-      "mannerTemperature": 36.9,
-      "location": "삼전동",
-      "regionPath": "서울특별시 송파구 삼전동",
-      "postedAt": "2026-09-10T23:05:28.181+09:00",
-      "boostedAt": "2026-09-18T03:31:26.783+09:00",
-      "score": 60
-    },
-    {
-      "id": "p6hphx11g278",
-      "title": "레노버 노트북 V15 G5 IRL i5-13420H   DDR5 16GB",
-      "price": 580000,
-      "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EB%85%B8%ED%8A%B8%EB%B6%81-v15-g5-irl-i5-13420h-ddr5-16gb-p6hphx11g278/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202603/17747381659188fb798beac058e3b4bede1271a9f5fc9466a6b6dbd3d52a54735c43c790009260.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": [
-        "ThinkPad 16GB",
-        "레노버 노트북 16GB"
-      ],
-      "score": 60
-    },
-    {
-      "id": "jvcwqn2s4kfi",
-      "title": "레노버 아이디어패드 슬림3 15.6인치(512GB, 16GB)",
-      "price": 650000,
-      "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%95%84%EC%9D%B4%EB%94%94%EC%96%B4%ED%8C%A8%EB%93%9C-%EC%8A%AC%EB%A6%BC3-15-6%EC%9D%B8%EC%B9%98-512gb-16gb-jvcwqn2s4kfi/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/17890161019637e9793466a590d541d052db4c59b08fc4617326db35127e4a500b052afab9dba0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "노트북 16GB 512GB",
-      "score": 60
-    },
-    {
-      "id": "ixmzubx3me7c",
-      "title": "Apple MacBook Pro 16인치 i7 32GB RAM 512GB SSD",
-      "price": 650000,
-      "url": "https://www.daangn.com/kr/buy-sell/apple-macbook-pro-16%EC%9D%B8%EC%B9%98-i7-32gb-ram-512gb-ssd-ixmzubx3me7c/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202606/40fa348f60ac0d272877c7073f614667d6c5e114f76583179788aefc7fbcd3a6_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "ThinkPad 16GB",
-      "score": 60
-    },
-    {
-      "id": "n6xr6ry2cvk7",
-      "title": "15인치 라이젠5 7000 16GB 512GB HP 노트북 미개봉",
-      "price": 750000,
-      "url": "https://www.daangn.com/kr/buy-sell/15%EC%9D%B8%EC%B9%98-%EB%9D%BC%EC%9D%B4%EC%A0%A05-7000-16gb-512gb-hp-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%AF%B8%EA%B0%9C%EB%B4%89-n6xr6ry2cvk7/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/178990566026370dbc8fa93a9aa7f295f2bcc5c1cf9a863edce0611e92af4250e06926c7dd8a60.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sellerName": "thx",
-      "sourceQuery": "노트북 16GB 512GB",
-      "description": "HP 노트북 15인치 라이젠5 모델이에요. 15.6인치 FHD IPS 패널과 512GB SSD, 16GB RAM으로 쾌적한 사용이 가능해요. USB-PD 충전 지원으로 편리하게 사용할 수 있어요.\n\n문제없고 기존 노트북 쓰기로 해서 판매합니다",
-      "categoryName": "디지털기기",
-      "viewCount": 48,
-      "sellerReviewCount": 398,
-      "mannerTemperature": 72.2,
-      "location": "대치1동",
-      "regionPath": "서울특별시 강남구 대치1동",
-      "postedAt": "2026-09-20T21:02:26.120+09:00",
-      "boostedAt": "2026-09-23T10:16:55.623+09:00",
-      "score": 57
-    },
-    {
-      "id": "x2b6d7zvffem",
-      "title": "LG 그램 14인치 16gb/512gb 화이트 풀박스 새제품",
-      "price": 1100000,
-      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-14%EC%9D%B8%EC%B9%98-16gb-512gb-%ED%99%94%EC%9D%B4%ED%8A%B8-%ED%92%80%EB%B0%95%EC%8A%A4-%EC%83%88%EC%A0%9C%ED%92%88-x2b6d7zvffem/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/17900786100678c4fb8bb1eb7811275f1047caec5d7fc836c34893de22904882627d7874a9acc0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "LG그램 16GB",
-      "score": 56
-    },
-    {
-      "id": "we5mj59q2gtx",
-      "title": "[S급/램32GB] 레노버 씽크패드 X13 Gen 5 (울트라5/1TB) 판매합니다.",
-      "price": 1110000,
-      "url": "https://www.daangn.com/kr/buy-sell/s%EA%B8%89-%EB%9E%A832gb-%EB%A0%88%EB%85%B8%EB%B2%84-%EC%94%BD%ED%81%AC%ED%8C%A8%EB%93%9C-x13-gen-5-%EC%9A%B8%ED%8A%B8%EB%9D%BC5-1tb-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-we5mj59q2gtx/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/17885767768056d4e39c1b60dc0ca768987ff3b6252c5ade8c692df755d3a7da25658946057440.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "노트북 32GB 1TB",
-      "score": 56
-    },
-    {
-      "id": "7avc8j89982t",
-      "title": "갤럭시북4프로 16GB 512GB 16인치 윈도우11탑재 반사방지보호필름 및 전신 보호필름 착용",
-      "price": 1150000,
-      "url": "https://www.daangn.com/kr/buy-sell/%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%814%ED%94%84%EB%A1%9C-16gb-512gb-16%EC%9D%B8%EC%B9%98-%EC%9C%88%EB%8F%84%EC%9A%B011%ED%83%91%EC%9E%AC-%EB%B0%98%EC%82%AC%EB%B0%A9%EC%A7%80%EB%B3%B4%ED%98%B8%ED%95%84%EB%A6%84-%EB%B0%8F-%EC%A0%84%EC%8B%A0-%EB%B3%B4%ED%98%B8%ED%95%84%EB%A6%84-%EC%B0%A9%EC%9A%A9-7avc8j89982t/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/1790210603658cc1ee0b64d3d768e2f3c5adf2297ec0ae96414f7e63c02c624fc4bd173f3715e0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "갤럭시북 16GB",
-      "score": 56
-    },
-    {
-      "id": "iyww6nmipomy",
-      "title": "ASUS 비보북 17인치 노트북 i5 512GB 16GB(보증기간 넉넉)",
-      "price": 740000,
-      "url": "https://www.daangn.com/kr/buy-sell/asus-%EB%B9%84%EB%B3%B4%EB%B6%81-17%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-512gb-16gb-%EB%B3%B4%EC%A6%9D%EA%B8%B0%EA%B0%84-%EB%84%89%EB%84%89-iyww6nmipomy/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/bde7015b-1ea9-4e1e-b216-251dc579061c.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": [
-        "노트북 16GB 512GB",
-        "ASUS 노트북 16GB"
-      ],
-      "score": 54
-    },
-    {
-      "id": "rwjr55rpfmri",
-      "title": "아이디어패드 슬림5 oled 8845HS 32GB 512GB",
-      "price": 800000,
-      "url": "https://www.daangn.com/kr/buy-sell/%EC%95%84%EC%9D%B4%EB%94%94%EC%96%B4%ED%8C%A8%EB%93%9C-%EC%8A%AC%EB%A6%BC5-oled-8845hs-32gb-512gb-rwjr55rpfmri/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/e3b9dff7-071e-4306-8317-10999acfa1d0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": [
-        "노트북 32GB 1TB",
-        "레노버 노트북 16GB"
-      ],
-      "score": 54
-    },
-    {
-      "id": "ytjrw6oc4875",
-      "title": "갤럭시 북4 엣지 판매합니다",
-      "price": 880000,
-      "url": "https://www.daangn.com/kr/buy-sell/%EA%B0%A4%EB%9F%AD%EC%8B%9C-%EB%B6%814-%EC%97%A3%EC%A7%80-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-ytjrw6oc4875/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/0c38a47c-8c0b-49fc-80f9-63e3c816d357.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sellerName": "상어",
-      "sourceQuery": [
-        "노트북 16GB 512GB",
-        "갤럭시북 16GB"
-      ],
-      "description": "갤럭시 북 4엣지 15.6인치 판매합니다 \n올해 3월달에 노트북이 필요해서 사용해볼려고 구매 했다가 집밖에서는 거의 사용안하고 집에서 4~5번 정도 사용하고 거의 사용하지 않아 판매합니다\n\n풀박스 구성 입니다 \n\n기스나 하자 없습니다 \n뒤에 붙은건 노트북 거치대 인데 필요하시면 사용하시고 필요 없으시면 그냥 떼셔도 자국 같은건 남지 않습니다\n\n얇고 가벼워서 들고 다니기 정말 편해서 \n들고 다니면서 작업 하시는 분들에게 추천드립니다\n\n16인치 fhd \n\n윈도우 11\n\n스냅 드래곤x 프로세서 \n\n16gb ram \n\n256gb + 512gb sb 추가로 드립니다\n\n관심있으시면 연락주세요\n",
-      "categoryName": "취미/게임/음반",
-      "viewCount": 316,
-      "sellerReviewCount": 72,
-      "mannerTemperature": 49.1,
-      "location": "초장동",
-      "regionPath": "경상남도 진주시 초장동",
-      "postedAt": "2026-09-24T13:17:38.287+09:00",
-      "boostedAt": "2026-09-24T13:17:38.222+09:00",
-      "score": 54
-    },
-    {
-      "id": "5r9dqyom5ssp",
-      "title": "MSI GS75 Stealth A급 / i7 / RAM 32GB / SSD 1TB / GTX1660T!",
-      "price": 900000,
-      "url": "https://www.daangn.com/kr/buy-sell/msi-gs75-stealth-a%EA%B8%89-i7-ram-32gb-ssd-1tb-gtx1660t-5r9dqyom5ssp/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202607/0d3a12b9d2324cf40786019710ece16b6f7784522967c8dcd79a4d9527f78ea9_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "노트북 32GB 1TB",
-      "score": 54
-    },
-    {
-      "id": "zzesz47vumfy",
-      "title": "ASUS Zenbook 14인치 노트북 i7 16GB RAM",
-      "price": 430000,
-      "url": "https://www.daangn.com/kr/buy-sell/asus-zenbook-14%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-i7-16gb-ram-zzesz47vumfy/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202606/53ecef8cbb23476c27bfbcecb442aef68e29b35d56c177d2b4593d260c0139fd_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "ASUS 노트북 16GB",
-      "score": 50
-    },
-    {
-      "id": "6inqkdtyosho",
-      "title": "HP 노트북 15인치 RYZEN 7 4700u 16GB RAM",
-      "price": 450000,
-      "url": "https://www.daangn.com/kr/buy-sell/hp-%EB%85%B8%ED%8A%B8%EB%B6%81-15%EC%9D%B8%EC%B9%98-ryzen-7-4700u-16gb-ram-6inqkdtyosho/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/50220941-aa5f-4a0f-be9c-3baf508355de.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "노트북 16GB 512GB",
-      "score": 50
-    },
-    {
-      "id": "6s58jk46xw8t",
-      "title": "갤럭시북 플렉스 알파 i7 16GB 256GB 팜니다",
-      "price": 500000,
-      "url": "https://www.daangn.com/kr/buy-sell/%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%81-%ED%94%8C%EB%A0%89%EC%8A%A4-%EC%95%8C%ED%8C%8C-i7-16gb-256gb-%ED%8C%9C%EB%8B%88%EB%8B%A4-6s58jk46xw8t/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202607/178506564695568d348e2a05bca3e2133dc08e95ba031c2e50f99280dbd5461ec7552759c50420.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "갤럭시북 16GB",
-      "score": 50
-    },
-    {
-      "id": "a1mhtdxp8qt1",
-      "title": "갤럭시북2 램 16GB SSD 756GB",
-      "price": 550000,
-      "url": "https://www.daangn.com/kr/buy-sell/%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%812-%EB%9E%A8-16gb-ssd-756gb-a1mhtdxp8qt1/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/178970796352831fe2a1849203c9d198e448a97616ed0d2dc349e45ad80e50c9b27ab6b395a1d0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "갤럭시북 16GB",
-      "score": 50
-    },
-    {
-      "id": "nb3p2a95z7fw",
-      "title": "[1.26kg 초경량] 레노버 씽크패드 X13 Gen3 AMD (라이젠5 6650U / 16GB / 256GB)",
-      "price": 650000,
-      "url": "https://www.daangn.com/kr/buy-sell/1-26kg-%EC%B4%88%EA%B2%BD%EB%9F%89-%EB%A0%88%EB%85%B8%EB%B2%84-%EC%94%BD%ED%81%AC%ED%8C%A8%EB%93%9C-x13-gen3-amd-%EB%9D%BC%EC%9D%B4%EC%A0%A05-6650u-16gb-256gb-nb3p2a95z7fw/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/d88f7cb4-2513-412a-b116-08769832ba48.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": [
-        "노트북 16GB 512GB",
-        "ThinkPad 16GB",
-        "레노버 노트북 16GB"
-      ],
-      "score": 50
-    },
-    {
-      "id": "cqi1xtcb21rv",
-      "title": "레노버 씽크패드 X1 Carbon 9세대 i7 32GB RAM",
-      "price": 670000,
-      "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%94%BD%ED%81%AC%ED%8C%A8%EB%93%9C-x1-carbon-9%EC%84%B8%EB%8C%80-i7-32gb-ram-cqi1xtcb21rv/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/1789274600905b3546e359b9ee0d9b2d45e31b4a86e6180c64f571bb6caa0ecdd441069b7b2860.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "노트북 32GB 1TB",
-      "score": 50
-    },
-    {
-      "id": "nss4j1sis3pr",
-      "title": "삼성 갤럭시북2 프로 노트북 16GB RAM",
-      "price": 700000,
-      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%812-%ED%94%84%EB%A1%9C-%EB%85%B8%ED%8A%B8%EB%B6%81-16gb-ram-nss4j1sis3pr/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202608/178766272902583678dab8350e76b5cd89cf419fc0111ed04e88263e769a10cce6e46d3c3a1870.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": [
-        "노트북 16GB 512GB",
-        "갤럭시북 16GB"
-      ],
-      "score": 50
-    },
-    {
-      "id": "xb4edtfiiyf5",
-      "title": "삼성 갤럭시 북4 NT750XGR A71 노트북 i7 16GB 512GB",
-      "price": 1000000,
-      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C-%EB%B6%814-nt750xgr-a71-%EB%85%B8%ED%8A%B8%EB%B6%81-i7-16gb-512gb-xb4edtfiiyf5/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/f69cecc7-b0da-4ef7-bf62-19340858687a.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "갤럭시북 16GB",
-      "score": 48
-    },
-    {
-      "id": "gv7oc7x5fsah",
-      "title": "Asus Tuf A16 R7/16GB/512GB/RTX4050",
-      "price": 1100000,
-      "url": "https://www.daangn.com/kr/buy-sell/asus-tuf-a16-r7-16gb-512gb-rtx4050-gv7oc7x5fsah/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/dd3e9117-f74c-413f-aaf2-21b451f39e52.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "ASUS 노트북 16GB",
-      "score": 48
-    },
-    {
-      "id": "2ssj93m4nk8t",
-      "title": "HP 게이밍 노트북 오멘16 4060/32GB/13500hx/512gb/QHD240hz",
-      "price": 1200000,
-      "url": "https://www.daangn.com/kr/buy-sell/hp-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%98%A4%EB%A9%9816-4060-32gb-13500hx-512gb-qhd240hz-2ssj93m4nk8t/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/178990460908226888e2e758360e3e03cde98b7f9eaddb3100007624f738f2afadd0e5a6d71930.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "노트북 32GB 1TB",
-      "score": 48
-    },
-    {
-      "id": "chha534tycpe",
-      "title": "LG 노트북15인치 (i5 11세대, 16GB RAM,500GB)",
-      "price": 560000,
-      "url": "https://www.daangn.com/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%8115%EC%9D%B8%EC%B9%98-i5-11%EC%84%B8%EB%8C%80-16gb-ram-500gb-chha534tycpe/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/0a785b44-62c1-4226-ab75-a7d962fb3034.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sellerName": "기분좋은날",
-      "sourceQuery": "노트북 16GB 512GB",
-      "description": "국내 대기업 LG전자의 믿을 수 있는 베스트셀러, 울트라PC 15(15U50P-GP50ML) 화이트 모델 판매합니다.  \n\n외관상태 S급 입니다\n\n​인텔 11세대 타이거레이크 코어 i5 프로세서와 넉넉한 16GB 고속 메모리, 초고속 512GB NVMe SSD를 탑재하여 일반적인 사무·학습은 물론 고부하 멀티태스킹, 4K 고화질 영상 시청, 캐주얼 온라인 게임까지 쾌적하게 지원합니다.  \n\n​배터리 리포트 실측 기준, 설계 용량(51,282 mWh) 대비 완충 용량 46,500 mWh로 잔여 수명 약 90% 이상(90.6%)의 최상급 컨디션을 유지하고 있습니다.  \n\n​또한 기기 전체를 알코올/에탄올로 내외부 정밀 살균 소독 및 클리닝을 마쳤으며, 윈도우 정품 및 기본 최적화 세팅까지 완료하여 찝찝함 없이 받아서 전원만 켜고 바로 사용하시면 됩니다.  \n\n​━━━━━━━━━━━━━\n\n​💻 [한눈에 보는 주요 스펙]\n​모델명: LG전자 울트라PC 15U50P-GP50ML  \n\n​CPU: 인텔 11세대 코어 i5-1135G7 (최대 4.20GHz / 4코어 8스레드)  \n\n​디스플레이: 15.6인치 대화면 / FHD(1920×1080) 고해상도 / 슬림 베젤  \n\n​그래픽: Intel® Iris® Xe Graphics (강력한 내장 그래픽으로 4K 영상 재생 및 온라인 게임 지원)  \n\n​메모리(RAM): DDR4 16GB (3200 MT/s / ★ 16GB 대용량 구성으로 쾌적한 멀티태스킹 보장 ★)  \n\n​저장공간: 초고속 NVMe SSD 512GB (실사용 약 471GB 여유 / 초고속 부팅 및 로딩)  \n\n​배터리: 설계 용량 51,282 mWh / 완충 용량 46,500 mWh (수명 90% 이상 최상급 컨디션)  \n\n​운영체제: Windows 64bit (정품 인증 완료 / 클린 세팅 완료)  \n​키보드/편의: 숫자 키패드 포함 풀배열 키보드 / 웹캠 / 블루투스 지원  \n\n​━━━━━━━━━━━━━\n\n​💡 [왜 구형 저사양 노트북보다 만족도와 실성능이 훨씬 높을까요?]\n​▶ 15.6인치 대화면과 풀사이즈 숫자 키패드의 실용성\n​시원시원한 15.6인치 대화면으로 좌우 창 분할 작업 시 답답함이 전혀 없습니다.  \n​엑셀, 회계 작업, 숫자 입력이 잦은 사무/학습 환경에 필수적인 독립 숫자 키패드가 기본 탑재되어 별도 외장 키보드 없이도 작업 효율이 극대화됩니다.  \n\n​▶ 인텔 11세대 i5 + Iris Xe 그래픽의 탄탄한 기본기\n​인텔 11세대 i5-1135G7 프로세서와 대폭 향상된 Iris Xe 내장 그래픽 탑재로, 구형 세대 CPU 대비 웹서핑 반응 속도와 4K 미디어 재생 능력이 월등합니다.  \n​문서 작업은 물론 대규모 엑셀 시트 연산, 포토샵 편집까지 매끄럽게 처리합니다.\n\n​▶ 16GB 넉넉한 램 & 512GB 초고속 NVMe SSD\n​기본 8GB 사양 대비 램 부족이나 버벅임이 없어 인터넷 창을 수십 개 띄워두거나 여러 프로그램을 동시에 구동해도 쾌적함을 유지합니다.  \n​NVMe SSD가 장착되어 부팅과 프로그램 실행 속도가 매우 빠르며, 넉넉한 저장공간을 제공합니다.  \n\n​▶ 배터리 수명 90% 이상 유지\n​중고 노트북 구매 시 가장 우려되는 배터리 노화 걱정 없이 실외, 카페, 도서관에서도 안심하고 장시간 사용하실 수 있습니다.  \n​━━━━━━━━━━━━━━━━━━━━\n​🔍 [특장점]\n​​구동 권장 범위\n\n​작업: 오피스 전 제품군(엑셀, 파워포인트, 워드), 한글, 포토샵, 컷편집, 주식 HTS 다중 모니터링, 줌(Zoom) 화상 회의 및 온라인 인강 완벽 지원\n\n​게임: 리그 오브 레전드(LoL), 메이플스토리, 카트라이더, 스타크래프트 등 대중적인 캐주얼 온라인 게임 쾌적 구동\n\n​배터리 & 위생/기기 컨디션\n​정밀 소독: 외관 상하판 및 키보드, 팜레스트, 터치패드까지 에탄올로 꼼꼼하게 살균 클리닝을 완료하여 매우 청결합니다.  \n\n​배터리 리포트: 완충 용량 46,500 mWh(설계 51,282 mWh 대비 90% 이상 유지)로 건강 상태 매우 우수합니다.\n\n화면 멍이나 불량화소 없으며 키보드 타건감, 터치패드, 웹캠, 각 포트 단자 모두 정상 작동 검수를 마쳤습니다.  \n​━━━━━━━━━━━━━━━━━━━━\n​📦 [구성품]\n​LG 울트라PC 본체  \n​전용 전원 충전 어댑터\n​무선 마우스  \n​━━━━━━━━━━━━━━━━━━━━\n​🚗 [거래 안내]\n​직거래: 배달 가능하며 현장에서 직접 부팅 상태와 외관, 기능 확인 후 안심 거래 가능합니다.\n\n​택배 거래: 당근바로구매 시 에어캡 완충재로 꼼꼼하고 안전하게 포장하여 발송해 드립니다.\n\n​중고 전자기기 특성상 단순 변심으로 인한 교환 및 환불은 어려운 점 양해 부탁드립니다.\n\n​구매를 원하시거나 궁금한 점은 언제든 편하게 채팅 주세요!",
-      "categoryName": "취미/게임/음반",
-      "viewCount": 1707,
-      "sellerReviewCount": 345,
-      "mannerTemperature": 68.4,
-      "location": "신매동",
-      "regionPath": "대구광역시 수성구 신매동",
-      "postedAt": "2026-09-19T12:31:40.686+09:00",
-      "boostedAt": "2026-09-22T13:46:40.497+09:00",
-      "score": 46
-    },
-    {
-      "id": "tzsam2tuou7u",
-      "title": "​[상태양호] 삼성 갤럭시북2 프로 15.6인치 (i7 / RAM 32GB / SSD 256GB)",
-      "price": 719000,
-      "url": "https://www.daangn.com/kr/buy-sell/%EC%83%81%ED%83%9C%EC%96%91%ED%98%B8-%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%812-%ED%94%84%EB%A1%9C-15-6%EC%9D%B8%EC%B9%98-i7-ram-32gb-ssd-256gb-tzsam2tuou7u/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202608/137b0d12097b3c15aafba743c64b1eed3d9d5e1cf22e3e7a6e6e976d84c30592_2.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": [
-        "노트북 16GB 512GB",
-        "갤럭시북 16GB"
-      ],
-      "score": 44
-    },
-    {
-      "id": "bn33cza2bzsy",
-      "title": "HP i7 6세대 16GB 15.6인치 사무용 노트북",
+      "id": "befokn45hc9k",
+      "title": "고성능i7 삼성노트북 급처분",
       "price": 250000,
-      "url": "https://www.daangn.com/kr/buy-sell/hp-i7-6%EC%84%B8%EB%8C%80-16gb-15-6%EC%9D%B8%EC%B9%98-%EC%82%AC%EB%AC%B4%EC%9A%A9-%EB%85%B8%ED%8A%B8%EB%B6%81-bn33cza2bzsy/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/8f42b631-eb7e-4a30-adab-a540e9573f1c.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+      "url": "https://www.daangn.com/kr/buy-sell/%EA%B3%A0%EC%84%B1%EB%8A%A5i7-%EC%82%BC%EC%84%B1%EB%85%B8%ED%8A%B8%EB%B6%81-%EA%B8%89%EC%B2%98%EB%B6%84-befokn45hc9k/",
+      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/f48df5e3-7268-4ec7-b736-4bd2ea4c3144.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
       "status": "Ongoing",
-      "sourceQuery": "노트북 16GB 512GB",
-      "score": 42
-    },
-    {
-      "id": "g5f8u3soz1ce",
-      "title": "삼성 노트북 NT550XDA 11세대 i5 16GB RAM",
-      "price": 470000,
-      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt550xda-11%EC%84%B8%EB%8C%80-i5-16gb-ram-g5f8u3soz1ce/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/1788587355964e3627c4eefa3df83ddd0f2002ea6d9ca19a9ca2f88b56e60045c892604d79c9d0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "노트북 16GB 512GB",
-      "score": 42
-    },
-    {
-      "id": "7vgridsfm3vr",
-      "title": "MSI Sword 15 노트북 i5 / GTX 1650 / 16GB",
-      "price": 480000,
-      "url": "https://www.daangn.com/kr/buy-sell/msi-sword-15-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-gtx-1650-16gb-7vgridsfm3vr/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/cc2c9804-3ab4-41d8-8e88-325be786a18c.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "노트북 16GB 512GB",
-      "score": 42
-    },
-    {
-      "id": "qwcacu9rzkzm",
-      "title": "삼성 노트북  i7 16GB RAM",
-      "price": 600000,
-      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-i7-16gb-ram-qwcacu9rzkzm/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/42207c25-e9a0-4c43-afed-47b1152d455d.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "노트북 16GB 512GB",
-      "score": 42
-    },
-    {
-      "id": "fu9osaw29scv",
-      "title": "15인치 ASUS 비보북 M3502Q 노트북 (Ryzen 5, Radeon Graphics) 120hz, 램16gb",
-      "price": 650000,
-      "url": "https://www.daangn.com/kr/buy-sell/15%EC%9D%B8%EC%B9%98-asus-%EB%B9%84%EB%B3%B4%EB%B6%81-m3502q-%EB%85%B8%ED%8A%B8%EB%B6%81-ryzen-5-radeon-graphics-120hz-%EB%9E%A816gb-fu9osaw29scv/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/e32ca5b2-cb96-49da-a9b6-d47fecb41c00.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "ASUS 노트북 16GB",
-      "score": 42
-    },
-    {
-      "id": "kbryc514qom8",
-      "title": "🔥 2.8K OLED + RTX30시리즈 ASUS 비보북 Pro 14X / R7 / 16GB",
-      "price": 699000,
-      "url": "https://www.daangn.com/kr/buy-sell/2-8k-oled-rtx30%EC%8B%9C%EB%A6%AC%EC%A6%88-asus-%EB%B9%84%EB%B3%B4%EB%B6%81-pro-14x-r7-16gb-kbryc514qom8/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/87976b16-32b6-47c1-976b-cbf7e8236a40.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "ASUS 노트북 16GB",
-      "score": 42
-    },
-    {
-      "id": "tbrgpq7m1n1y",
-      "title": "🔥 2.8K OLED + RTX30시리즈  ASUS 비보북 Pro 14X / R7 / 16GB",
-      "price": 699000,
-      "url": "https://www.daangn.com/kr/buy-sell/2-8k-oled-rtx30%EC%8B%9C%EB%A6%AC%EC%A6%88-asus-%EB%B9%84%EB%B3%B4%EB%B6%81-pro-14x-r7-16gb-tbrgpq7m1n1y/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/e15f2e01-990a-4b4c-826a-c69cbd6dcf05.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "ASUS 노트북 16GB",
-      "score": 42
-    },
-    {
-      "id": "vnnk99344rn2",
-      "title": "[급급처] 갤럭시북4 프로 14인치 U5 125H / 16GB / 256GB / 터치스크린 / 상태좋음",
-      "price": 1050000,
-      "url": "https://www.daangn.com/kr/buy-sell/%EA%B8%89%EA%B8%89%EC%B2%98-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%814-%ED%94%84%EB%A1%9C-14%EC%9D%B8%EC%B9%98-u5-125h-16gb-256gb-%ED%84%B0%EC%B9%98%EC%8A%A4%ED%81%AC%EB%A6%B0-%EC%83%81%ED%83%9C%EC%A2%8B%EC%9D%8C-vnnk99344rn2/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/178875855662515a911757072f522396a4657326e6596cb29f2dca26d2adfda4ddd218cf08adf0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "갤럭시북 16GB",
-      "score": 38
-    },
-    {
-      "id": "wrkixtbeh969",
-      "title": "LG 그램 17인치 화이트 (i7-11세대 / RAM 16G / SSD 512G / Win11) 팝니다",
-      "price": 760000,
-      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-17%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-i7-11%EC%84%B8%EB%8C%80-ram-16g-ssd-512g-win11-%ED%8C%9D%EB%8B%88%EB%8B%A4-wrkixtbeh969/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/0e09915d-1eae-43d8-865c-07ef53d8b880.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "LG그램 16GB",
-      "score": 34
-    },
-    {
-      "id": "soyu9piq15x2",
-      "title": "[미개봉 새상품] 갤럭시 북4 급처 (16GB 램, 256GB SSD)",
-      "price": 950000,
-      "url": "https://www.daangn.com/kr/buy-sell/%EB%AF%B8%EA%B0%9C%EB%B4%89-%EC%83%88%EC%83%81%ED%92%88-%EA%B0%A4%EB%9F%AD%EC%8B%9C-%EB%B6%814-%EA%B8%89%EC%B2%98-16gb-%EB%9E%A8-256gb-ssd-soyu9piq15x2/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/86e223eee962ba76e4ac67f1d45df78b37852d4f0129433d9652fb3531762f28_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "갤럭시북 16GB",
-      "score": 33
-    },
-    {
-      "id": "ivzfbpqrqi55",
-      "title": "i7 Msi 17인치 게이밍노트북 램16기가 SSD256+HD1TB",
-      "price": 520000,
-      "url": "https://www.daangn.com/kr/buy-sell/i7-msi-17%EC%9D%B8%EC%B9%98-%EA%B2%8C%EC%9D%B4%EB%B0%8D%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%9E%A816%EA%B8%B0%EA%B0%80-ssd256-hd1tb-ivzfbpqrqi55/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/17893349983799939babc3047a02f1e2b4a1c102dd97e5f7be6a883a848962003c0044e1180ac0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "노트북 32GB 1TB",
-      "score": 32
-    },
-    {
-      "id": "tpeqrfnm9kxf",
-      "title": "LG 그램 14z95 팝니다. (i5-5200U, 8GB RAM,256ssd)",
-      "price": 200000,
-      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-14z95-%ED%8C%9D%EB%8B%88%EB%8B%A4-i5-5200u-8gb-ram-256ssd-tpeqrfnm9kxf/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/748f7c57-eec5-4a9e-b748-ede9a7cf17db.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "LG그램 16GB",
-      "score": 22
-    },
-    {
-      "id": "k5ne9e66h7pn",
-      "title": "레노버 ThinkPad T550 i7 8GB RAM 500GB SSD 노트북",
-      "price": 200000,
-      "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-thinkpad-t550-i7-8gb-ram-500gb-ssd-%EB%85%B8%ED%8A%B8%EB%B6%81-k5ne9e66h7pn/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/126b670f-24ce-43b7-b395-39d32041ee21.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": [
-        "ThinkPad 16GB",
-        "레노버 노트북 16GB"
-      ],
-      "score": 22
-    },
-    {
-      "id": "a4joz8dv4kk7",
-      "title": "레노버 씽크패드 T460s (i7-6600U / 8GB / SSD 250GB)",
-      "price": 200000,
-      "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%94%BD%ED%81%AC%ED%8C%A8%EB%93%9C-t460s-i7-6600u-8gb-ssd-250gb-a4joz8dv4kk7/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/66e8488c-3c96-43f1-8a98-e746810ff92d.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "ThinkPad 16GB",
-      "score": 22
-    },
-    {
-      "id": "sec5167pirqb",
-      "title": "삼성 갤럭시북GO 3 128GB  급처",
-      "price": 230000,
-      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%81go-3-128gb-%EB%A7%88%EC%A7%80%EB%A7%89-%EA%B0%80%EA%B2%A9%EB%82%B4%EB%A6%BC-%EA%B8%89%EC%B2%98-sec5167pirqb/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/1789713172569c9f4c07b305ebeb2e97f0726bc17410719a54e13a4421933cb215b457b44ff9f0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "갤럭시북 16GB",
-      "score": 22
-    },
-    {
-      "id": "maasz253askx",
-      "title": "레노버 ThinkPad 블랙 i5 256GB 8GB 노트북",
-      "price": 230000,
-      "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-thinkpad-%EB%B8%94%EB%9E%99-i5-256gb-8gb-%EB%85%B8%ED%8A%B8%EB%B6%81-maasz253askx/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/fb29805b-c104-43da-ac22-49855b910ed8.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": [
-        "ThinkPad 16GB",
-        "레노버 노트북 16GB"
-      ],
-      "score": 22
-    },
-    {
-      "id": "o8qg7f641ktm",
-      "title": "레노버 씽크패드 i5",
-      "price": 300000,
-      "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%94%BD%ED%81%AC%ED%8C%A8%EB%93%9C-i5-o8qg7f641ktm/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/1789814872767dd536351429bf32e25692ae0558824a2b94d1737df36c1d20f85374ade639ca70.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": [
-        "ThinkPad 16GB",
-        "레노버 노트북 16GB"
-      ],
-      "score": 22
-    },
-    {
-      "id": "74oeah3sn3cm",
-      "title": "LG그램 노트북 판매",
-      "price": 350000,
-      "url": "https://www.daangn.com/kr/buy-sell/lg%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4-74oeah3sn3cm/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/1790259813277a6b007de114347c612cadf3e80d98546d0fb5a97db5b488f2b958c371823eb4f0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "LG그램 16GB",
-      "score": 22
-    },
-    {
-      "id": "965a14i7ghib",
-      "title": "레노버 씽크패드 X395 노트북",
-      "price": 360000,
-      "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%94%BD%ED%81%AC%ED%8C%A8%EB%93%9C-x395-%EB%85%B8%ED%8A%B8%EB%B6%81-965a14i7ghib/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202608/9106c1fe676a88cea202f6fd18b8d884b3291568b9cc7d502f13ae2ce1673c69_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": [
-        "ThinkPad 16GB",
-        "레노버 노트북 16GB"
-      ],
-      "score": 22
-    },
-    {
-      "id": "azyuvg5ngk19",
-      "title": "LG 노트북 그램 15ZD90N i5-10세대 8/256GB 1.12Kg 15.6 추석 급매",
-      "price": 400000,
-      "url": "https://www.daangn.com/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-%EA%B7%B8%EB%9E%A8-15zd90n-i5-10%EC%84%B8%EB%8C%80-8-256gb-1-12kg-15-6-%EC%B6%94%EC%84%9D-%EA%B8%89%EB%A7%A4-azyuvg5ngk19/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/776f417d-0e23-42d5-a185-8e4ee2ec54e6.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "LG그램 16GB",
-      "score": 22
-    },
-    {
-      "id": "b9yuuoq36at4",
-      "title": "씽크패드 x1 익스트림 gen 2",
-      "price": 400000,
-      "url": "https://www.daangn.com/kr/buy-sell/%EC%94%BD%ED%81%AC%ED%8C%A8%EB%93%9C-x1-%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%A6%BC-gen-2-b9yuuoq36at4/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/1788682859467ea3ac0041074766b3fd46168114c3606da64a50a620dea722a37b866c3182e000.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "ThinkPad 16GB",
-      "score": 22
-    },
-    {
-      "id": "yd5p9uabmu3j",
-      "title": "LG 노트북 그램 15Z90N i5-10세대 8/256GB 1.12Kg 15.6 추석 급매",
-      "price": 430000,
-      "url": "https://www.daangn.com/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-%EA%B7%B8%EB%9E%A8-15z90n-i5-10%EC%84%B8%EB%8C%80-8-256gb-1-12kg-15-6-%EC%B6%94%EC%84%9D-%EA%B8%89%EB%A7%A4-yd5p9uabmu3j/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/28d8341a-825a-4fbd-b4b1-88ca5d3b6c84.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "LG그램 16GB",
-      "score": 22
-    },
-    {
-      "id": "d7s9mse6i3ij",
-      "title": "LG그램 15.6인치 초경량  i5 8세대 8gb 256gb",
-      "price": 430000,
-      "url": "https://www.daangn.com/kr/buy-sell/lg%EA%B7%B8%EB%9E%A8-15-6%EC%9D%B8%EC%B9%98-%EC%B4%88%EA%B2%BD%EB%9F%89-i5-8%EC%84%B8%EB%8C%80-8gb-256gb-d7s9mse6i3ij/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/e9ed4ee5-1e56-4f68-aea8-36a201e1b404.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "LG그램 16GB",
-      "score": 22
-    },
-    {
-      "id": "8dzwui2xsc77",
-      "title": "삼성 노트북 15.6인치 갤럭시북 NT550XEZ-A58A",
-      "price": 450000,
-      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-15-6%EC%9D%B8%EC%B9%98-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%81-nt550xez-a58a-8dzwui2xsc77/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202609/019ed33b-f203-484e-9748-b4008ec2e688.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "갤럭시북 16GB",
-      "score": 22
-    },
-    {
-      "id": "6v3gxs8aa3tq",
-      "title": "삼성 갤럭시북 이온 15.6인치 배터리 효율 94% / MX250 / 256GB (NT950XCR)",
-      "price": 450000,
-      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%81-%EC%9D%B4%EC%98%A8-15-6%EC%9D%B8%EC%B9%98-%EB%B0%B0%ED%84%B0%EB%A6%AC-%ED%9A%A8%EC%9C%A8-94-mx250-256gb-nt950xcr-6v3gxs8aa3tq/",
-      "imageUrl": "https://img.kr.gcp-karroter.net/origin/article/202608/1787985132233065b78642946155a2375997f6c06a9b4c1bb69000a5ee6b3a33398c5a81cbfb30.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-      "status": "Ongoing",
-      "sourceQuery": "갤럭시북 16GB",
-      "score": 22
+      "sourceQuery": "노트북",
+      "score": 14
     }
   ]
 }
