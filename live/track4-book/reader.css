@@ -1,0 +1,21 @@
+/* TRACK4_WEB_PRACTICE_V1: continuous book typography remains shared with Track 3. */
+.web-practice-shell{max-width:960px;margin:0 auto;padding-bottom:145px;min-width:0}
+.web-practice h1{font-size:clamp(23px,4vw,32px);line-height:1.35;margin:0}
+.web-practice h2{font-size:20px;line-height:1.4;margin-top:24px}
+.web-practice label{display:block;margin:16px 0 6px;font-weight:700}
+.web-practice select{width:100%;min-height:48px;border:1px solid #c8baa5;border-radius:9px;padding:10px;background:#fffaf2;color:#30281f;font:inherit}
+.web-practice select option{white-space:normal}
+.web-practice .web-scope{font-size:16px;line-height:1.8;overflow-wrap:anywhere;padding:13px 0}
+#web-code-input{display:block;width:100%;min-height:270px;resize:vertical;background:#19212b;color:#eef3f8;border:1px solid #6b7a8a;font:15px/1.65 ui-monospace,SFMono-Regular,Consolas,monospace;white-space:pre;overflow-x:auto;tab-size:2;border-radius:10px;padding:16px}
+.web-practice .actions{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}
+.web-practice .actions button{min-height:46px;border:1px solid #9c886c;border-radius:9px;background:#ece2d2;color:#30281f;padding:10px 16px;font:inherit}
+.web-practice button:disabled{opacity:.55;cursor:not-allowed}
+.web-practice button:focus-visible,.web-practice textarea:focus-visible,.web-practice select:focus-visible{outline:3px solid #986e2e;outline-offset:3px}
+#web-run-status{min-height:1.7em;line-height:1.7;font-size:16px}
+#web-frame-mount{position:relative;width:100%;min-width:0}
+.web-example-frame{display:block;width:100%;height:460px;border:1px solid #a99b85;border-radius:8px;background:#fff;color:#111}
+.web-example-frame.console-frame{position:absolute;width:1px;height:1px;left:-10000px;top:0;visibility:hidden;border:0;pointer-events:none}
+#web-console,.web-expected{white-space:pre-wrap;overflow-wrap:anywhere;max-height:400px;overflow:auto;padding:14px;border-radius:9px;background:#19212b;color:#eff4f9;font:15px/1.65 ui-monospace,SFMono-Regular,Consolas,monospace;min-height:48px}
+.web-expected{background:#eee5d7;color:#33281d;border:1px solid #c7baa5}
+.book-mode .book-code-head>span{overflow-wrap:anywhere;min-width:0}
+@media(max-width:420px){.web-practice-shell{padding-left:16px;padding-right:16px}.web-example-frame{height:400px}.web-practice .top-row{gap:8px}#web-code-input{font-size:14px;padding:10px}}
