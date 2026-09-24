@@ -1,0 +1,22 @@
+name: Seongnam Laptop Scan
+on:
+  push:
+    branches: [danggn-search-bot]
+    paths: ['danggn-bot/seongnam-trigger.txt']
+permissions:
+  contents: read
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: danggn-search-bot }
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - run: node danggn-bot/seongnam-now.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: seongnam-result
+          path: danggn-bot/seongnam-result.json
+          retention-days: 1
