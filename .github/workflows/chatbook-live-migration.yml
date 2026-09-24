@@ -1,0 +1,68 @@
+name: Chatbook one-time live migration and verified bootstrap
+on:
+  push:
+    branches: [chatbook-app-20260923]
+    paths: [.github/workflows/chatbook-live-migration.yml]
+permissions:
+  contents: write
+concurrency:
+  group: chatbook-live-publication
+  cancel-in-progress: false
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      CHATBOOK_INITIAL_MIGRATION: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install scoped candidate, preserving content and sync functions
+        run: |
+          test ! -f .deployment/live-bootstrap-receipt.json
+          python scripts/live-migration-install.py
+          node scripts/live-contract.mjs record
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add AGENTS.md netlify.toml package.json public netlify scripts tests/live .github/workflows docs/disabled-workflows live/shell-contract.json
+          git commit -m 'Implement fixed same-origin Chatbook live updates and recovery safeguards'
+      - run: npm ci --no-audit --no-fund
+      - name: Execute full unit and build verification
+        run: npm run build
+      - name: Prepare immutable candidate with annotation-ID checks
+        run: node scripts/live-package.mjs
+      - name: Install isolated Chromium
+        run: |
+          python -m pip install playwright==1.55.0
+          python -m playwright install --with-deps chromium
+      - name: Execute browser fault injection and data retention tests
+        run: python tests/live/browser.py
+      - name: Promote only the tested candidate on GitHub
+        env:
+          CHATBOOK_BASE_SHA: ${{ github.sha }}
+        run: node scripts/promote-live.mjs
+      - name: One approved bootstrap installation after passing tests
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/bootstrap-once.mjs
+      - name: Verify actual production HTTPS and reader
+        run: python tests/live/production-smoke.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: chatbook-live-migration-evidence
+          retention-days: 3
+          path: |
+            review/live-browser/
+            review/live-production/
+            live/channel.json
+            live/release.json
+            live/shell-contract.json
