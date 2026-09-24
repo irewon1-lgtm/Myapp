@@ -1,0 +1,678 @@
+{
+  "accessDate": "2026-09-25",
+  "scope": "Five principal source works/course/documentation collections per chapter; sources reused across chapters; not sixty paid books read in full. 2024 works are supplemental.",
+  "chapters": [
+    {
+      "chapter": 1,
+      "title": "웹페이지는 어떻게 내 화면에 나타날까?",
+      "sources": [
+        {
+          "book": "Learning Web Design, 6th Edition — 공식 목차",
+          "author": "Jennifer Niederst Robbins",
+          "year": 2025,
+          "url": "https://learningwebdesign.com/toc.html",
+          "number": 1,
+          "scope": "공식 목차·공개 안내; 유료 본문 전체 아님",
+          "note": "Jennifer Niederst Robbins, 2025. 2장 How the Web Works, 4장 Creating a Simple Page의 공개 목차를 확인했습니다. 웹의 역할을 먼저 설명하고 작은 문서로 연결하는 범위 설계에 참고했으며 유료 본문 전체를 읽은 것은 아닙니다.",
+          "accessed": "2026-09-25"
+        },
+        {
+          "book": "Murach’s HTML and CSS, 6th Edition — 출판사 공개 목차·소개",
+          "author": "Zak Ruvalcaba · Anne Boehm · Mary Delamater",
+          "year": 2024,
+          "url": "https://www.murach.com/shop/html-and-css-6th-edition-detail",
+          "number": 2,
+          "scope": "출판사 공개 목차·소개; 2024년 보조",
+          "note": "Zak Ruvalcaba·Anne Boehm·Mary Delamater, 2024년 12월. 웹앱, 파일 작성, 테스트의 공개 항목을 확인했습니다. 2024년 보조 참고자료입니다.",
+          "accessed": "2026-09-25"
+        },
+        {
+          "book": "CS50x — Lecture 8 공개 강의 노트",
+          "author": "Harvard University",
+          "year": "공개 강좌",
+          "url": "https://cs50.harvard.edu/x/notes/8/",
+          "number": 3,
+          "scope": "공개 강의 본문 또는 과제; 최초 집필 연도와 확인일 구분",
+          "note": "Harvard University. HTTP, HTML 문서, CSS와 JavaScript 연결에 관한 공개 본문을 확인했습니다. 현재 공개 강좌 자료이며 확인 연도가 모든 본문의 최초 집필 연도는 아닙니다.",
+          "accessed": "2026-09-25"
+        },
+        {
+          "book": "MDN — How the web works",
+          "author": "MDN Web Docs",
+          "year": "지속 갱신",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Web_standards/How_the_web_works",
+          "number": 4,
+          "scope": "관련 공식 문서·학습 본문",
+          "note": "MDN Web Docs. 클라이언트·서버, HTTP, 파일을 받아 화면으로 만드는 과정의 공개 본문을 확인했습니다.",
+          "accessed": "2026-09-25"
+        },
+        {
+          "book": "Full Stack Open — Fundamentals of Web apps",
+          "author": "University of Helsinki",
+          "year": "공개 강좌",
+          "url": "https://fullstackopen.com/en/part0/fundamentals_of_web_apps/",
+          "number": 5,
+          "scope": "관련 공개 강의 본문",
+          "note": "University of Helsinki. 문서·스크립트·데이터 요청을 브라우저에서 구분해 관찰하는 공개 본문을 확인했습니다. 후반 프레임워크 수업 전체를 이 장의 선수 지식으로 삼지 않습니다.",
+          "accessed": "2026-09-25"
+        }
+      ]
+    },
+    {
+      "chapter": 2,
+      "title": "HTML로 내용의 구조와 의미 만들기",
+      "sources": [
+        {
+          "book": "Learning Web Design, 6th Edition — 공식 목차",
+          "author": "Jennifer Niederst Robbins",
+          "year": 2025,
+          "url": "https://learningwebdesign.com/toc.html",
+          "number": 1,
+          "scope": "공식 목차·공개 안내; 유료 본문 전체 아님",
+          "note": "Jennifer Niederst Robbins, 2025. 4~7장의 문서 구조·텍스트·링크·이미지 관련 공개 목차를 참고했습니다.",
+          "accessed": "2026-09-25"
+        },
+        {
+          "book": "Murach’s HTML and CSS, 6th Edition",
+          "author": "Zak Ruvalcaba · Anne Boehm · Mary Delamater",
+          "year": 2024,
+          "url": "https://www.murach.com/shop/html-and-css-6th-edition-detail",
+          "number": 2,
+          "scope": "출판사 공개 목차·소개; 2024년 보조",
+          "note": "Zak Ruvalcaba·Anne Boehm·Mary Delamater, 2024. 3장의 문서·텍스트·목록·링크·이미지에 관한 출판사 공개 목차와 소개를 확인했습니다. 2024년 보조 참고자료이며 유료 본문 전체를 읽은 것으로 표현하지 않습니다.",
+          "accessed": "2026-09-25"
+        },
+        {
+          "book": "CS50x — Lecture 8",
+          "author": "Harvard University",
+          "year": "공개 강좌",
+          "url": "https://cs50.harvard.edu/x/notes/8/",
+          "number": 3,
+          "scope": "공개 강의 본문 또는 과제; 최초 집필 연도와 확인일 구분",
+          "note": "Harvard University. HTML 문서, 제목, 목록, 링크, 이미지에 관한 공개 강의 본문을 확인했습니다.",
+          "accessed": "2026-09-25"
+        },
+        {
+          "book": "MDN — Basic HTML syntax",
+          "author": "MDN Web Docs",
+          "year": "지속 갱신",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Basic_HTML_syntax",
+          "number": 4,
+          "scope": "관련 공식 문서·학습 본문",
+          "note": "MDN Web Docs. 요소·속성·포함 관계·빈 요소·문자 참조 관련 공개 본문을 확인했습니다.",
+          "accessed": "2026-09-25"
+        },
+        {
+          "book": "web.dev — Semantic HTML",
+          "author": "Google web.dev",
+          "year": "지속 갱신",
+          "url": "https://web.dev/learn/html/semantic-html",
+          "number": 5,
+          "scope": "공식 학습 과정의 관련 절",
+          "note": "Google web.dev. 문서 요소의 의미와 접근성을 다룬 공개 본문을 확인했습니다. 설명에 필요한 문서 기초는 같은 과정의 Document structure 절도 함께 확인했습니다.",
+          "accessed": "2026-09-25"
+        }
+      ]
+    },
+    {
+      "chapter": 3,
+      "title": "입력창·버튼·폼으로 사용자 입력 받기",
+      "sources": [
+        {
+          "book": "Learning Web Design, 6th Edition — 공식 목차",
+          "author": "Jennifer Niederst Robbins",
+          "year": 2025,
+          "url": "https://learningwebdesign.com/toc.html",
+          "number": 1,
+          "scope": "공식 목차·공개 안내; 유료 본문 전체 아님",
+          "note": "Jennifer Niederst Robbins, 2025. 9장 Forms의 요소·컨트롤·접근성·폼 배치 관련 공개 목차를 확인했습니다. 유료 본문 전체의 통독을 뜻하지 않습니다.",
+          "accessed": "2026-09-25"
+        },
+        {
+          "book": "Murach’s HTML and CSS, 6th Edition",
+          "author": "Zak Ruvalcaba · Anne Boehm · Mary Delamater",
+          "year": 2024,
+          "url": "https://www.murach.com/shop/html-and-css-6th-edition-detail",
+          "number": 2,
+          "scope": "출판사 공개 목차·소개; 2024년 보조",
+          "note": "Zak Ruvalcaba·Anne Boehm·Mary Delamater, 2024. 12장의 label, 입력 종류, 유효성 검사에 관한 출판사 공개 목차·소개를 참고했습니다. 2024년 보조 자료입니다.",
+          "accessed": "2026-09-25"
+        },
+        {
+          "book": "CS50x — Lecture 8",
+          "author": "Harvard University",
+          "year": "공개 강좌",
+          "url": "https://cs50.harvard.edu/x/notes/8/",
+          "number": 3,
+          "scope": "공개 강의 본문 또는 과제; 최초 집필 연도와 확인일 구분",
+          "note": "Harvard University. 폼의 입력과 제출, name과 요청을 연결하는 공개 강의 본문을 확인했습니다.",
+          "accessed": "2026-09-25"
+        },
+        {
+          "book": "MDN — HTML forms and buttons",
+          "author": "MDN Web Docs",
+          "year": "지속 갱신",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_forms",
+          "number": 4,
+          "scope": "관련 공식 문서·학습 본문",
+          "note": "MDN Web Docs. 폼·입력·label·버튼의 의미에 관한 공개 교육 본문을 확인했습니다.",
+          "accessed": "2026-09-25"
+        },
+        {
+          "book": "web.dev — Learn Forms: form element",
+          "author": "Google web.dev",
+          "year": "지속 갱신",
+          "url": "https://web.dev/learn/forms/form",
+          "number": 5,
+          "scope": "공식 학습 과정의 관련 절",
+          "note": "Google web.dev. 폼과 제출을 다룬 본문 및 같은 과정의 [Validation](https://web.dev/learn/forms/validation) 공개 절을 확인했습니다. 두 페이지를 서로 다른 두 권으로 세지 않고 하나의 공식 교육 과정으로 구분했습니다.",
+          "accessed": "2026-09-25"
+        }
+      ]
+    },
+    {
+      "chapter": 4,
+      "title": "CSS는 어떤 규칙으로 화면에 적용될까?",
+      "sources": [
+        {
+          "book": "Learning Web Design, 6th Edition — 공식 목차",
+          "author": "Jennifer Niederst Robbins",
+          "year": 2025,
+          "url": "https://learningwebdesign.com/toc.html",
+          "number": 1,
+          "scope": "공식 목차·공개 안내; 유료 본문 전체 아님",
+          "note": "Jennifer Niederst Robbins, 2025. 11~14장의 CSS 규칙·글꼴·선택자·스타일시트 관련 공개 목차를 확인해 학습 범위를 설계했습니다. 유료 본문 전체를 읽었다고 주장하지 않습니다.",
+          "accessed": "2026-09-25"
+        },
+        {
+          "book": "Murach’s HTML and CSS, 6th Edition",
+          "author": "Zak Ruvalcaba · Anne Boehm · Mary Delamater",
+          "year": 2024,
+          "url": "https://www.murach.com/shop/html-and-css-6th-edition-detail",
+          "number": 2,
+          "scope": "출판사 공개 목차·소개; 2024년 보조",
+          "note": "Zak Ruvalcaba·Anne Boehm·Mary Delamater, 2024. CSS 선택자·측정값·폰트·캐스케이드·사용자 정의 속성 관련 공개 목차와 설명을 참고했습니다. 2024년 보조 자료입니다.",
+          "accessed": "2026-09-25"
+        },
+        {
+          "book": "CS50x — Lecture 8",
+          "author": "Harvard University",
+          "year": "공개 강좌",
+          "url": "https://cs50.harvard.edu/x/notes/8/",
+          "number": 3,
+          "scope": "공개 강의 본문 또는 과제; 최초 집필 연도와 확인일 구분",
+          "note": "Harvard University. HTML과 CSS의 분리, 선택자를 이용한 스타일 적용에 관한 공개 강의 본문을 확인했습니다.",
+          "accessed": "2026-09-25"
+        },
+        {
+          "book": "MDN — Handling conflicts",
+          "author": "MDN Web Docs",
+          "year": "지속 갱신",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Handling_conflicts",
+          "number": 4,
+          "scope": "관련 공식 문서·학습 본문",
+          "note": "MDN Web Docs. 캐스케이드·상속·구체성의 공개 본문을 확인했습니다. 이 장의 단순 예제를 모든 CSS 조건에 일반화하지 않도록 범위를 명시했습니다.",
+          "accessed": "2026-09-25"
+        },
+        {
+          "book": "web.dev — Specificity",
+          "author": "Google web.dev",
+          "year": "지속 갱신",
+          "url": "https://web.dev/learn/css/specificity",
+          "number": 5,
+          "scope": "공식 학습 과정의 관련 절",
+          "note": "Google web.dev. 선택자 구체성과 적용 관계에 관한 공개 교육 본문을 확인했습니다. 점수 암기보다 실제로 선택된 규칙을 설명하는 방향으로 재구성했습니다.",
+          "accessed": "2026-09-25"
+        }
+      ]
+    },
+    {
+      "chapter": 5,
+      "title": "박스·Flexbox·Grid로 화면 배치하기",
+      "sources": [
+        {
+          "book": "Learning Web Design, 6th Edition — 공식 목차",
+          "author": "Jennifer Niederst Robbins",
+          "year": 2025,
+          "url": "https://learningwebdesign.com/toc.html",
+          "number": 1,
+          "scope": "공식 목차·공개 안내; 유료 본문 전체 아님",
+          "note": "Jennifer Niederst Robbins, 2025. 박스 모델, 기본 흐름, Flexbox, Grid의 장 구성과 공개 목차를 참고했습니다. 유료 본문 전체를 통독한 것으로 표시하지 않습니다.",
+          "accessed": "2026-09-25"
+        },
+        {
+          "book": "Murach’s HTML and CSS, 6th Edition",
+          "author": "Zak Ruvalcaba · Anne Boehm · Mary Delamater",
+          "year": 2024,
+          "url": "https://www.murach.com/shop/html-and-css-6th-edition-detail",
+          "number": 2,
+          "scope": "출판사 공개 목차·소개; 2024년 보조",
+          "note": "Zak Ruvalcaba·Anne Boehm·Mary Delamater, 2024. 박스 모델·Flexbox·Grid에 관한 출판사 공개 목차와 설명을 참고한 보조 자료입니다.",
+          "accessed": "2026-09-25"
+        },
+        {
+          "book": "CS50 Web — Lecture 0: HTML and CSS",
+          "author": "Harvard University",
+          "year": "공개 강좌",
+          "url": "https://cs50.harvard.edu/web/notes/0/",
+          "number": 3,
+          "scope": "공개 강의 본문 또는 과제; 최초 집필 연도와 확인일 구분",
+          "note": "Harvard University. Flexbox·Grid를 포함한 공개 강의 본문을 확인했습니다. 공개되어 있는 강좌의 자료이며 새로 출간된 2026년 책이라고 표시하지 않습니다.",
+          "accessed": "2026-09-25"
+        },
+        {
+          "book": "MDN — The box model",
+          "author": "MDN Web Docs",
+          "year": "지속 갱신",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Box_model",
+          "number": 4,
+          "scope": "관련 공식 문서·학습 본문",
+          "note": "MDN Web Docs. content-box와 border-box, block·inline, 여백에 관한 공개 본문을 확인했습니다.",
+          "accessed": "2026-09-25"
+        },
+        {
+          "book": "web.dev — Learn CSS: Flexbox",
+          "author": "Google web.dev",
+          "year": "지속 갱신",
+          "url": "https://web.dev/learn/css/flexbox",
+          "number": 5,
+          "scope": "공식 학습 과정의 관련 절",
+          "note": "Google web.dev. 같은 과정의 [Box model](https://web.dev/learn/css/box-model)과 [Grid](https://web.dev/learn/css/grid) 본문도 확인했습니다. 세 절을 별개 세 권으로 세지 않고 하나의 공식 교육 과정으로 묶었습니다.",
+          "accessed": "2026-09-25"
+        }
+      ]
+    },
+    {
+      "chapter": 6,
+      "title": "휴대폰·태블릿에서도 읽고 누를 수 있는 화면",
+      "sources": [
+        {
+          "book": "Learning Web Design, 6th Edition — 공식 목차",
+          "author": "Jennifer Niederst Robbins",
+          "year": 2025,
+          "url": "https://learningwebdesign.com/toc.html",
+          "number": 1,
+          "scope": "공식 목차·공개 안내; 유료 본문 전체 아님",
+          "note": "Jennifer Niederst Robbins, 2025. 3장과19장의 장치·접근성·반응형·viewport·미디어 쿼리 관련 공개 목차를 참고했습니다. 유료 본문 전체를 통독한 것은 아닙니다.",
+          "accessed": "2026-09-25"
+        },
+        {
+          "book": "Murach’s HTML and CSS, 6th Edition",
+          "author": "Zak Ruvalcaba · Anne Boehm · Mary Delamater",
+          "year": 2024,
+          "url": "https://www.murach.com/shop/html-and-css-6th-edition-detail",
+          "number": 2,
+          "scope": "출판사 공개 목차·소개; 2024년 보조",
+          "note": "Zak Ruvalcaba·Anne Boehm·Mary Delamater, 2024. 반응형 설계·미디어 쿼리·모바일 우선·테스트 관련 출판사 공개 항목을 확인한 보조 자료입니다.",
+          "accessed": "2026-09-25"
+        },
+        {
+          "book": "MDN — Responsive design",
+          "author": "MDN Web Docs",
+          "year": "지속 갱신",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Responsive_Design",
+          "number": 3,
+          "scope": "관련 공식 문서·학습 본문",
+          "note": "MDN Web Docs. 유연한 배치·미디어 쿼리·viewport에 관한 공개 본문을 확인했습니다.",
+          "accessed": "2026-09-25"
+        },
+        {
+          "book": "web.dev — Learn Responsive Design",
+          "author": "Google web.dev",
+          "year": "지속 갱신",
+          "url": "https://web.dev/learn/design",
+          "number": 4,
+          "scope": "공식 학습 과정의 관련 절",
+          "note": "Google web.dev. 다양한 화면과 입력 방식에 적응하는 공식 교육 과정의 공개 자료를 확인했습니다.",
+          "accessed": "2026-09-25"
+        },
+        {
+          "book": "W3C WAI — Easy Checks",
+          "author": "W3C WAI",
+          "year": "공개 자료",
+          "url": "https://www.w3.org/WAI/test-evaluate/easy-checks/",
+          "number": 5,
+          "scope": "첫 점검 안내; 완전한 적합성 인증 아님",
+          "note": "W3C Web Accessibility Initiative. 접근성의 첫 점검에 관한 공개 자료를 참고했습니다. 확인 시 공개 페이지에 Draft 표시가 있었으며, 이 장의 점검표를 완전한 접근성 인증 절차로 표현하지 않습니다.",
+          "accessed": "2026-09-25"
+        }
+      ]
+    },
+    {
+      "chapter": 7,
+      "title": "Python에서 JavaScript로 — 아는 개념을 새 문법에 연결하기",
+      "sources": [
+        {
+          "book": "Learning Web Design, 6th Edition — 공식 목차",
+          "author": "Jennifer Niederst Robbins",
+          "year": 2025,
+          "url": "https://learningwebdesign.com/toc.html",
+          "number": 1,
+          "scope": "공식 목차·공개 안내; 유료 본문 전체 아님",
+          "note": "Jennifer Niederst Robbins, 2025. 22~23장의 값·변수·함수·조건·배열·반복에 관한 공개 목차를 범위 설계에 참고했습니다. 유료 본문 전체를 읽은 것이 아닙니다.",
+          "accessed": "2026-09-25"
+        },
+        {
+          "book": "Eloquent JavaScript, 4th Edition — Program Structure",
+          "author": "Marijn Haverbeke",
+          "year": 2024,
+          "url": "https://eloquentjavascript.net/02_program_structure.html",
+          "number": 2,
+          "scope": "관련 공개 본문; 2024년 보조",
+          "note": "Marijn Haverbeke, 2024. 같은 공개 책의 [Functions](https://eloquentjavascript.net/03_functions.html), [Data Structures](https://eloquentjavascript.net/04_data.html) 본문도 확인했습니다. 2024년 보조 교재 한 종이며 세 장을 별개 세 권으로 세지 않습니다.",
+          "accessed": "2026-09-25"
+        },
+        {
+          "book": "MDN — Grammar and types",
+          "author": "MDN Web Docs",
+          "year": "지속 갱신",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types",
+          "number": 3,
+          "scope": "관련 공식 문서·학습 본문",
+          "note": "MDN Web Docs. let·const, 값의 종류, 숫자 변환, 문자열과 범위에 관한 공개 본문을 확인했습니다.",
+          "accessed": "2026-09-25"
+        },
+        {
+          "book": "CS50 Web — Lecture 5: JavaScript",
+          "author": "Harvard University",
+          "year": "공개 강좌",
+          "url": "https://cs50.harvard.edu/web/notes/5/",
+          "number": 4,
+          "scope": "공개 강의 본문 또는 과제; 최초 집필 연도와 확인일 구분",
+          "note": "Harvard University. 함수·조건·배열·반복의 공개 강의 본문을 확인했습니다. 강좌의 공개 자료를 2026년 신간 서적이라고 표현하지 않습니다.",
+          "accessed": "2026-09-25"
+        },
+        {
+          "book": "Full Stack Open — JavaScript",
+          "author": "University of Helsinki",
+          "year": "공개 강좌",
+          "url": "https://fullstackopen.com/en/part1/java_script/",
+          "number": 5,
+          "scope": "관련 공개 강의 본문",
+          "note": "University of Helsinki. 배열·객체·함수의 공개 본문을 확인했습니다. 이 과정의 React 구현까지 초보자의 선수 지식으로 요구하지 않습니다.",
+          "accessed": "2026-09-25"
+        }
+      ]
+    },
+    {
+      "chapter": 8,
+      "title": "버튼을 누르면 무슨 일이 생길까? — DOM과 이벤트",
+      "sources": [
+        {
+          "book": "Learning Web Design, 6th Edition — 공식 목차",
+          "author": "Jennifer Niederst Robbins",
+          "year": 2025,
+          "url": "https://learningwebdesign.com/toc.html",
+          "number": 1,
+          "scope": "공식 목차·공개 안내; 유료 본문 전체 아님",
+          "note": "Jennifer Niederst Robbins, 2025. 24장의 DOM·새 요소·이벤트·접근성 관련 공개 목차를 확인했습니다. 유료 본문 전체를 통독한 것은 아닙니다.",
+          "accessed": "2026-09-25"
+        },
+        {
+          "book": "Eloquent JavaScript, 4th Edition — The Document Object Model",
+          "author": "Marijn Haverbeke",
+          "year": 2024,
+          "url": "https://eloquentjavascript.net/14_dom.html",
+          "number": 2,
+          "scope": "관련 공개 본문; 2024년 보조",
+          "note": "Marijn Haverbeke, 2024. 같은 책의 [Handling Events](https://eloquentjavascript.net/15_event.html) 공개 본문도 확인한 보조 교재입니다.",
+          "accessed": "2026-09-25"
+        },
+        {
+          "book": "MDN — DOM scripting",
+          "author": "MDN Web Docs",
+          "year": "지속 갱신",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/DOM_scripting",
+          "number": 3,
+          "scope": "관련 공식 문서·학습 본문",
+          "note": "MDN Web Docs. 요소 선택·텍스트 변경·요소 생성과 연결의 공개 본문을 확인했습니다.",
+          "accessed": "2026-09-25"
+        },
+        {
+          "book": "CS50 Web — Lecture 5",
+          "author": "Harvard University",
+          "year": "공개 강좌",
+          "url": "https://cs50.harvard.edu/web/notes/5/",
+          "number": 4,
+          "scope": "공개 강의 본문 또는 과제; 최초 집필 연도와 확인일 구분",
+          "note": "Harvard University. 이벤트와 DOM을 연결하는 공개 강의 본문을 확인했습니다. 강좌 공개 연도와 서적 출간 연도를 혼동하지 않습니다.",
+          "accessed": "2026-09-25"
+        },
+        {
+          "book": "Full Stack Open — Fundamentals of Web apps",
+          "author": "University of Helsinki",
+          "year": "공개 강좌",
+          "url": "https://fullstackopen.com/en/part0/fundamentals_of_web_apps/",
+          "number": 5,
+          "scope": "관련 공개 강의 본문",
+          "note": "University of Helsinki. 브라우저 문서, 이벤트 처리와 화면 변화의 공개 설명을 확인했습니다. 그 강의의 오래된 요청 코드를 현재 예제의 구현 방식으로 그대로 복제하지 않았습니다.",
+          "accessed": "2026-09-25"
+        }
+      ]
+    },
+    {
+      "chapter": 9,
+      "title": "화면 상태와 데이터 저장 — 새로고침해도 기록 남기기",
+      "sources": [
+        {
+          "book": "Eloquent JavaScript, 4th Edition — HTTP and Forms",
+          "author": "Marijn Haverbeke",
+          "year": 2024,
+          "url": "https://eloquentjavascript.net/18_http.html",
+          "number": 1,
+          "scope": "관련 공개 본문; 2024년 보조",
+          "note": "Marijn Haverbeke, 2024. 브라우저 저장과 폼을 다룬 공개 본문을 확인했습니다. 2024년 보조 교재입니다.",
+          "accessed": "2026-09-25"
+        },
+        {
+          "book": "MDN — Client-side storage",
+          "author": "MDN Web Docs",
+          "year": "지속 갱신",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Client-side_APIs/Client-side_storage",
+          "number": 2,
+          "scope": "관련 공식 문서·학습 본문",
+          "note": "MDN Web Docs. 클라이언트·서버 저장의 차이, localStorage와 구조화 데이터 관련 공개 교육 본문을 확인했습니다.",
+          "accessed": "2026-09-25"
+        },
+        {
+          "book": "WHATWG — HTML Standard: Web storage",
+          "author": "WHATWG",
+          "year": "Living Standard",
+          "url": "https://html.spec.whatwg.org/multipage/webstorage.html",
+          "number": 3,
+          "scope": "Web storage 표준 본문",
+          "note": "WHATWG. Storage 인터페이스, 문자열 저장, 출처와 실패 조건의 공식 표준 본문을 확인했습니다.",
+          "accessed": "2026-09-25"
+        },
+        {
+          "book": "CS50 Web — Lecture 5",
+          "author": "Harvard University",
+          "year": "공개 강좌",
+          "url": "https://cs50.harvard.edu/web/notes/5/",
+          "number": 4,
+          "scope": "공개 강의 본문 또는 과제; 최초 집필 연도와 확인일 구분",
+          "note": "Harvard University. JavaScript 상태와 localStorage를 연결하는 공개 강의 본문을 확인했습니다. 강좌 운영 자료이며 2026년 신간 도서로 표시하지 않습니다.",
+          "accessed": "2026-09-25"
+        },
+        {
+          "book": "Full Stack Open — JavaScript",
+          "author": "University of Helsinki",
+          "year": "공개 강좌",
+          "url": "https://fullstackopen.com/en/part1/java_script/",
+          "number": 5,
+          "scope": "관련 공개 강의 본문",
+          "note": "University of Helsinki. 배열·객체·변경과 새 배열을 다루는 공개 본문을 참고했습니다. 이 자료를 localStorage 표준의 근거로 사용한 것은 아니며, 프로그램 상태를 표현하는 부분에 연결했습니다.",
+          "accessed": "2026-09-25"
+        }
+      ]
+    },
+    {
+      "chapter": 10,
+      "title": "인터넷에서 데이터 가져오기 — 요청·응답과 기다리는 작업",
+      "sources": [
+        {
+          "book": "Eloquent JavaScript, 4th Edition — Asynchronous Programming",
+          "author": "Marijn Haverbeke",
+          "year": 2024,
+          "url": "https://eloquentjavascript.net/11_async.html",
+          "number": 1,
+          "scope": "관련 공개 본문; 2024년 보조",
+          "note": "Marijn Haverbeke, 2024. 같은 책의 [HTTP and Forms](https://eloquentjavascript.net/18_http.html) 본문도 확인했습니다. 2024년 보조 교재 한 종입니다.",
+          "accessed": "2026-09-25"
+        },
+        {
+          "book": "CS50 Web — Lecture 5",
+          "author": "Harvard University",
+          "year": "공개 강좌",
+          "url": "https://cs50.harvard.edu/web/notes/5/",
+          "number": 2,
+          "scope": "공개 강의 본문 또는 과제; 최초 집필 연도와 확인일 구분",
+          "note": "Harvard University. JavaScript 요청·응답·비동기 처리의 공개 강의 본문을 확인했습니다.",
+          "accessed": "2026-09-25"
+        },
+        {
+          "book": "MDN — Using the Fetch API",
+          "author": "MDN Web Docs",
+          "year": "지속 갱신",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch",
+          "number": 3,
+          "scope": "관련 공식 문서·학습 본문",
+          "note": "MDN Web Docs. Promise, HTTP 오류 상태, 응답 본문, 취소 신호, CORS 관련 공식 문서를 확인했습니다.",
+          "accessed": "2026-09-25"
+        },
+        {
+          "book": "Full Stack Open — Getting data from server",
+          "author": "University of Helsinki",
+          "year": "공개 강좌",
+          "url": "https://fullstackopen.com/en/part2/getting_data_from_server/",
+          "number": 4,
+          "scope": "관련 공개 강의 본문",
+          "note": "University of Helsinki. 서버 데이터와 비동기 결과에 관한 공개 본문을 참고했습니다. 해당 강좌의 React·Axios 구성을 이 초보자 예제에 그대로 요구하지 않습니다.",
+          "accessed": "2026-09-25"
+        },
+        {
+          "book": "Chrome DevTools — Inspect network activity",
+          "author": "Google Chrome Developers",
+          "year": "지속 갱신",
+          "url": "https://developer.chrome.com/docs/devtools/network",
+          "number": 5,
+          "scope": "공식 개발자 도구 문서",
+          "note": "Google Chrome Developers. 요청 주소·상태·본문·시간을 관찰하는 공식 설명을 확인해 성공과 실패를 구분하는 검사 범위에 반영했습니다.",
+          "accessed": "2026-09-25"
+        }
+      ]
+    },
+    {
+      "chapter": 11,
+      "title": "고장 난 웹앱의 원인을 찾고 수정 검증하기",
+      "sources": [
+        {
+          "book": "Eloquent JavaScript, 4th Edition — Bugs and Errors",
+          "author": "Marijn Haverbeke",
+          "year": 2024,
+          "url": "https://eloquentjavascript.net/08_error.html",
+          "number": 1,
+          "scope": "관련 공개 본문; 2024년 보조",
+          "note": "Marijn Haverbeke, 2024. 테스트·오류·예외 처리의 공개 본문을 확인했습니다. 2024년 보조 교재입니다.",
+          "accessed": "2026-09-25"
+        },
+        {
+          "book": "CS50 Web — Lecture 7: Testing, CI/CD",
+          "author": "Harvard University",
+          "year": "공개 강좌",
+          "url": "https://cs50.harvard.edu/web/notes/7/",
+          "number": 2,
+          "scope": "공개 강의 본문 또는 과제; 최초 집필 연도와 확인일 구분",
+          "note": "Harvard University. 테스트의 역할과 자동 검증 관련 공개 강의 본문을 확인했습니다. 대규모 배포 체계 전체를 이번 초보자 수업의 필수 실습으로 요구하지 않습니다.",
+          "accessed": "2026-09-25"
+        },
+        {
+          "book": "MDN — What went wrong? Troubleshooting JavaScript",
+          "author": "MDN Web Docs",
+          "year": "지속 갱신",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/What_went_wrong",
+          "number": 3,
+          "scope": "관련 공식 문서·학습 본문",
+          "note": "MDN Web Docs. 문법·논리 오류와 관찰을 통한 수정의 공개 교육 본문을 확인했습니다.",
+          "accessed": "2026-09-25"
+        },
+        {
+          "book": "Chrome DevTools — Debug JavaScript",
+          "author": "Google Chrome Developers",
+          "year": "지속 갱신",
+          "url": "https://developer.chrome.com/docs/devtools/javascript",
+          "number": 4,
+          "scope": "공식 개발자 도구 문서",
+          "note": "Google Chrome Developers. 중단점·값 관찰·실행 순서의 공식 설명을 확인했습니다. 같은 공식 문서의 Network 설명도 관련 관찰에 참고했습니다.",
+          "accessed": "2026-09-25"
+        },
+        {
+          "book": "Full Stack Open — Fundamentals of Web apps",
+          "author": "University of Helsinki",
+          "year": "공개 강좌",
+          "url": "https://fullstackopen.com/en/part0/fundamentals_of_web_apps/",
+          "number": 5,
+          "scope": "관련 공개 강의 본문",
+          "note": "University of Helsinki. 브라우저 도구로 문서와 요청을 확인하는 공개 본문을 참고했습니다. 도구로 확인한 범위를 넘어 실기기 검증을 주장하지 않는 방향으로 구성했습니다.",
+          "accessed": "2026-09-25"
+        }
+      ]
+    },
+    {
+      "chapter": 12,
+      "title": "종합 프로젝트 — AI 초안을 이해하고 내 웹앱으로 완성하기",
+      "sources": [
+        {
+          "book": "Learning Web Design, 6th Edition — 공식 목차",
+          "author": "Jennifer Niederst Robbins",
+          "year": 2025,
+          "url": "https://learningwebdesign.com/toc.html",
+          "number": 1,
+          "scope": "공식 목차·공개 안내; 유료 본문 전체 아님",
+          "note": "Jennifer Niederst Robbins, 2025. 공개 목차와 [공식 연습자료 안내](https://learningwebdesign.com/6e/materials/index.html)를 확인해 설명과 실습이 연결되는 전체 범위를 참고했습니다. 유료 본문 전체나 다운로드 자료 전부를 통독했다고 표현하지 않습니다.",
+          "accessed": "2026-09-25"
+        },
+        {
+          "book": "CS50x — Homepage 과제",
+          "author": "Harvard University",
+          "year": "공개 강좌",
+          "url": "https://cs50.harvard.edu/x/psets/8/homepage/",
+          "number": 2,
+          "scope": "공개 강의 본문 또는 과제; 최초 집필 연도와 확인일 구분",
+          "note": "Harvard University. 여러 웹 기술을 연결한 결과물을 요구하고 검사하는 공개 과제 본문을 확인했습니다. 그 과제의 조건을 그대로 이번 기록장의 요구사항으로 복제하지 않았습니다.",
+          "accessed": "2026-09-25"
+        },
+        {
+          "book": "MDN — Curriculum",
+          "author": "MDN Web Docs",
+          "year": "지속 갱신",
+          "url": "https://developer.mozilla.org/en-US/curriculum/",
+          "number": 3,
+          "scope": "관련 공식 문서·학습 본문",
+          "note": "MDN Web Docs. 핵심 웹 기술과 접근성을 연결하는 공개 교육 범위를 참고했습니다. 이 장의 구현 세부는 앞 장에 명시한 같은 MDN의 DOM·Storage·Fetch 공식 문서와 함께 대조했습니다.",
+          "accessed": "2026-09-25"
+        },
+        {
+          "book": "W3C WAI — Easy Checks",
+          "author": "W3C WAI",
+          "year": "공개 자료",
+          "url": "https://www.w3.org/WAI/test-evaluate/easy-checks/",
+          "number": 4,
+          "scope": "첫 점검 안내; 완전한 적합성 인증 아님",
+          "note": "W3C Web Accessibility Initiative. 읽기·이동·입력·조작을 확인하는 첫 점검의 공개 자료를 참고했습니다. 이 예제의 검사 통과를 완전한 접근성 인증이라고 표현하지 않습니다.",
+          "accessed": "2026-09-25"
+        },
+        {
+          "book": "How AI assistance impacts the formation of coding skills — 저자 연구 보고",
+          "author": "Anthropic",
+          "year": 2026,
+          "url": "https://www.anthropic.com/research/AI-assistance-coding-skills",
+          "number": 5,
+          "scope": "저자 연구 보고; 개발자 52명·특정 과제·단기 실험",
+          "note": "Anthropic, 2026. 새 Python 라이브러리를 배우는 개발자52명의 실험을 설명한 공개 저자 보고를 확인했습니다. 단기·특정 과제 연구이며 모든 웹 초보자에게 같은 효과가 난다는 일반적 인과 결론으로 사용하지 않았습니다.",
+          "accessed": "2026-09-25"
+        }
+      ]
+    }
+  ]
+}

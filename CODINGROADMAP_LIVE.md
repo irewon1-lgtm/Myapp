@@ -37,3 +37,16 @@
 
 ## Android 본체와 서명
 Application ID는 com.codingroadmap.app이다. 네이티브 권한·WebView 외부 동작 수정은 별도 서명 APK 갱신이 필요하다. 개인키를 만들거나 공개 저장소에 올리지 않는다. 기존 인증서 SHA-256은 3a51cc8b57302cb4b64a941f079352ed2c312c1a987696ee22495a0491a2ae5a 이다. 기존 classes.dex/classes2.dex 및 이전 내장 교재는 이 콘텐츠 개편에서 변경하지 않는다.
+
+## Track 4 연속 교재
+- 원고 정본: live/track4-book/ch01.md ~ ch12.md
+- 주제: 웹의 기본 — 화면·동작·데이터 연결하기
+- 변환: tools/compile_track4_book.py; build_content.py가 Track 3 이후 호출한다.
+- 참조: 장별 주된 자료 5종, 총 60건의 연결이다. 60권 완독을 주장하지 않는다. 2024년 책은 보조 자료이다.
+- 표·문단·코드·연습·해설을 원고 순서대로 보존하고 장마다 하나의 연속 본문을 제공한다.
+- 기존 Track 1~3 원문과 기록 ID를 보존한다. Track 4의 문제 ID에는 t4 접두사를 둔다.
+- reader.js의 책 페이지 계산은 현재 트랙을 기준으로 한다. Track 4 코드는 Python 실행기로 보내지 않는다.
+- 짧은 JavaScript는 격리된 Worker, 완전한 HTML 예제는 출처가 분리된 sandbox iframe에서 실행한다. 네트워크·저장소·다운로드가 필요한 전체 프로젝트와 혼동하지 않는다.
+- 전체 프로젝트: live/track4-book/project/index.html, style.css, app.js, topics.json.
+- 테스트: tools/test_track4_book.py, tools/test_track4_browser.py. 기존 Track 3 검사도 유지한다.
+- 전송본에서는 book.html/text의 중복 집계 문자열만 제거하고 원본 블록으로 복원한다. 내용을 요약하거나 삭제하지 않는다. 3 MiB 네이티브 다운로드 상한을 검사한다.

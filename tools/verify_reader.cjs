@@ -185,7 +185,8 @@ assert(f.elements.app.innerHTML.includes('이어 읽기'));
 for(const c of course.chapters)for(const p of c.pages){
   f.run('openPage('+JSON.stringify(p.id)+')');
   assert(f.elements.app.innerHTML.includes('reader-shell'));
-  assert(!f.elements.app.innerHTML.includes('undefined'));
+  assert(!f.elements.app.innerHTML.includes('undefined')||JSON.stringify(p).includes('undefined'),'Unexplained undefined in '+p.id);
+  assert(!/\b(?:id|class|data-[\w-]+)=\"undefined\"/.test(f.elements.app.innerHTML),'Undefined rendered attribute in '+p.id);
 }
 const firstTrack1=course.chapters.filter(c=>c.track===1).at(-1);
 const firstTrack2=course.chapters.find(c=>c.track===2);

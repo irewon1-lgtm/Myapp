@@ -45,7 +45,7 @@ def main():
                     assert proc.stdout.rstrip('\n')==s['expectedOutput'],(s['id'],repr(proc.stdout),repr(s['expectedOutput']))
                 row.update(status='PASS',stdout=proc.stdout)
             results.append(row)
-    assert all(p.get('kind')!='book' for c in course['chapters'] if c.get('track')!=3 for p in c['pages'])
+    assert all(p.get('kind')!='book' for c in course['chapters'] if c.get('track') not in (3,4) for p in c['pages'])
     report={'status':'PASS','kind':'Python source and execution tests, not device or UI tests','chapters':len(chapters),'authoredCharacters':course['track3BookAudit']['authoredCharacters'],'exercises':sum(len(c['pages'][0]['book']['exercises']) for c in chapters),'executedExamples':sum(x['status']!='NOT_EXECUTED' for x in results),'intentionalFragments':sum(x['status']=='NOT_EXECUTED' for x in results),'expectedExceptionExamples':sum(x['status']=='PASS_EXPECTED_EXCEPTION' for x in results),'allSourceBlocksAndFencesPreserved':True,'results':results}
     (ROOT/'review').mkdir(exist_ok=True)
     (ROOT/'review/track3-book-python-tests.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')

@@ -6,7 +6,7 @@ from functools import partial
 from http.server import SimpleHTTPRequestHandler,ThreadingHTTPServer
 from pathlib import Path
 import json,os,shutil,threading
-from playwright.sync_api import sync_playwright
+from playwright.sync_api import sync_playwright,expect
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'review';OUT.mkdir(exist_ok=True)
 SOURCE=(ROOT/'live/reader.html').read_text()
@@ -116,13 +116,19 @@ def practice_tests(browser):
     open_book(p,4,8)
     sid=p.evaluate("chapters[current.c].pages[0].book.samples.find(s=>s.mode==='html'&&s.code.includes('클릭과 함수')).id")
     p.evaluate("id=>Track4Web.openSample(id)",sid);p.locator('#web-execute').click()
+    p.wait_for_function("document.getElementById('web-run-status').textContent==='예제 화면 준비 완료'",timeout=10000)
+    p.wait_for_timeout(180)  # Allow the cross-process iframe hit-test surface to settle.
     f=p.frame_locator('.web-example-frame');f.locator('#change').click()
-    assert f.locator('#status').inner_text()=='버튼을 눌렀습니다.'
+    expect(f.locator('#status')).to_have_text('버튼을 눌렀습니다.',timeout=5000)
     record('actual isolated HTML click event')
     sid=p.evaluate("chapters[current.c].pages[0].book.samples.find(s=>s.mode==='html'&&s.code.includes('record-form')).id")
-    p.evaluate("id=>Track4Web.openSample(id)",sid);p.locator('#web-execute').click();f=p.frame_locator('.web-example-frame')
+    p.evaluate("id=>Track4Web.openSample(id)",sid);p.locator('#web-execute').click()
+    p.wait_for_function("document.getElementById('web-run-status').textContent==='예제 화면 준비 완료'",timeout=10000)
+    p.wait_for_timeout(180)  # Allow the cross-process iframe hit-test surface to settle.
+    f=p.frame_locator('.web-example-frame')
     f.locator('#topic').fill('HTML');f.locator('#minutes').fill('20');f.locator('button[type=submit]').click()
-    assert f.locator('#records li').count()==1 and 'HTML · 20분' in f.locator('#records').inner_text()
+    expect(f.locator('#records li')).to_have_count(1,timeout=5000)
+    assert 'HTML · 20분' in f.locator('#records').inner_text()
     sandbox=p.locator('.web-example-frame').get_attribute('sandbox');assert 'allow-same-origin' not in sandbox
     record('actual isolated form submission; host origin not granted')
     p.screenshot(path=str(OUT/'track4-html-practice-working.png'))
@@ -189,17 +195,22 @@ def capstone_tests(browser):
     record('corrupt storage blocks edits, preserves and exports original')
     p.evaluate("localStorage.removeItem('study-log-v1')");p.reload();add('기존 기록',15)
     old=p.evaluate("localStorage.getItem('study-log-v1')")
-    p.evaluate("window.realSetItem=Storage.prototype.setItem;Storage.prototype.setItem=function(){throw new DOMException('test full','QuotaExceededError')}")
+    p.evaluate("()=>{window.realSetItem=Storage.prototype.setItem;Storage.prototype.setItem=function(){throw new DOMException('test full','QuotaExceededError')};}")
     add('실패해도 남길 입력',20)
     assert p.locator('#topic').input_value()=='실패해도 남길 입력'
     assert p.locator('#records>.record').count()==1 and p.evaluate("localStorage.getItem('study-log-v1')")==old
-    p.evaluate('Storage.prototype.setItem=window.realSetItem')
+    p.evaluate('()=>{Storage.prototype.setItem=window.realSetItem;}')
     record('storage failure retains original state and typed input')
     p.locator('#load-topics').click();p.wait_for_function("document.querySelectorAll('#topics-list li').length===3")
     record('same-origin real JSON fetch')
     for label,body,status in [('empty','[]',200),('http404','not found',404),('invalid-json','{broken',200),('wrong-shape','{"message":"unavailable"}',200)]:
-        p.route('**/topics.json',lambda route,b=body,s=status:route.fulfill(status=s,content_type='application/json',body=b))
-        p.locator('#load-topics').click();p.wait_for_function("!document.getElementById('load-topics').disabled")
+        p.route('**/topics.json',lambda route,request,b=body,s=status:route.fulfill(status=s,content_type='application/json',body=b))
+        with p.expect_response('**/topics.json') as received:
+            p.locator('#load-topics').click()
+        assert received.value.status==status
+        expected='제공되는 주제가 없습니다.' if label=='empty' else '주제를 불러오지 못했습니다. 다시 시도해 주세요.'
+        expect(p.locator('#topics-message')).to_have_text(expected,timeout=5000)
+        expect(p.locator('#load-topics')).to_be_enabled()
         text=p.locator('#topics-message').inner_text()
         assert ('제공되는 주제가 없습니다' in text) if label=='empty' else ('못했습니다' in text),(label,text)
         record('request handling',scenario=label);p.unroute('**/topics.json')
@@ -226,12 +237,14 @@ def main():
         executable=os.environ.get('CHROME') or shutil.which('chromium') or shutil.which('google-chrome') or shutil.which('google-chrome-stable')
         assert executable,'Chromium required'
         browser=pw.chromium.launch(executable_path=executable,headless=True,args=['--no-sandbox','--disable-dev-shm-usage'])
+        complete=False
         try:
             reader_tests(browser);practice_tests(browser);capstone_tests(browser)
             assert not ERRORS,ERRORS
+            complete=True
         finally:
             browser.close()
-            report={'status':'PASS' if not ERRORS and len(RESULTS)>60 else 'INCOMPLETE','scope':'Real Chromium, native bridge emulator, isolated web execution and local HTTP capstone. NOT physical Galaxy installation or updater receipt.','cases':RESULTS,'consoleErrors':ERRORS}
+            report={'status':'PASS' if complete else 'INCOMPLETE','scope':'Real Chromium, native bridge emulator, isolated web execution and local HTTP capstone. NOT physical Galaxy installation or updater receipt.','cases':RESULTS,'consoleErrors':ERRORS}
             (OUT/'track4-book-browser-tests.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
     print(json.dumps({'status':'PASS','cases':len(RESULTS),'consoleErrors':ERRORS}))
 

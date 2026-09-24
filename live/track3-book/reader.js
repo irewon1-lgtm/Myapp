@@ -1,3 +1,4 @@
+/* CONTINUOUS_MULTI_TRACK_V1 — preserve Track 3; use the selected book track. */
 /* TRACK3_CONTINUOUS_BOOK_V1: full chapters, not reconstructed lesson cards. */
 (function installContinuousBook(){
   const original={locate,lessonSection,reader,layoutReader,saveReaderPosition,openPage,saved,pageText,summaryText,doAction,practicePageSource,practiceResultMarkup,practice,runPythonPractice,trackPage,progressForTrack,importProgress:window.importProgress};
@@ -22,6 +23,7 @@
     return null;
   }
   function sampleMarkup(sample){
+    if(sample.language && sample.language!=="python")return window.Track4Web.sampleMarkup(sample);
     const label=sample.fragment?'부분 코드 · 실행 전 보완 필요':sample.expectedError?'예외를 관찰하는 예제':sample.capstoneTests?'종합 검사 · 함수 정의가 함께 실행됩니다':'Python 예제';
     const actions='<button data-action="copy-code" data-code="'+encodeURIComponent(sample.code)+'">복사</button>'+(sample.runCode?'<button data-action="book-run" data-sample="'+sample.id+'">실습에서 실행</button>':'');
     const code=sample.code.split('\n').map((line,i)=>'<span class="book-code-line" id="'+sample.anchor+'-line'+i+'" data-book-anchor="'+sample.anchor+'-line'+i+'" data-code-line="'+i+'">'+(line?highlightPythonLine(line):'')+'</span>').join('');
@@ -36,7 +38,7 @@
   }
   lessonSection=function(page,c,index){
     if(!page.book)return original.lessonSection(page,c,index);
-    return '<section class="lesson-section book-chapter" data-logical-page-id="'+page.id+'">'+bookHTML(page)+'<div class="book-end"><button data-action="complete">'+(state.complete.includes(c.id)?'완료 표시 취소':'이 장 완료 표시')+'</button><button data-action="track-current">9장 목차로</button></div></section>';
+    return '<section class="lesson-section book-chapter" data-logical-page-id="'+page.id+'">'+bookHTML(page)+'<div class="book-end"><button data-action="complete">'+(state.complete.includes(c.id)?'완료 표시 취소':'이 장 완료 표시')+'</button><button data-action="track-current">트랙 목차로</button></div></section>';
   };
   reader=function(){
     let value=original.reader();if(!isBook())return value;
@@ -46,14 +48,14 @@
     return value;
   };
   trackPage=function(){
-    let value=original.trackPage();if(selectedTrack!==3)return value;
+    let value=original.trackPage();if(!chapters.some(c=>c.track===selectedTrack&&c.pages[0]?.book))return value;
     value=value.replace(/1개 학습 페이지/g,'설명·예제·연습·풀이가 이어지는 본문');
-    value=value.replace(/<small>\d+ \/ \d+ 페이지 학습<\/small>/,'<small>9장 · 마지막으로 읽은 위치 기준</small>');
+    value=value.replace(/<small>\d+ \/ \d+ 페이지 학습<\/small>/,'<small>'+chapters.filter(c=>c.track===selectedTrack&&c.pages[0]?.book).length+'장 · 마지막으로 읽은 위치 기준</small>');
     return value;
   };
   progressForTrack=function(id){
-    if(id!==3)return original.progressForTrack(id);
-    const books=chapters.filter(c=>c.track===3);
+    if(!chapters.some(c=>c.track===id&&c.pages[0]?.book))return original.progressForTrack(id);
+    const books=chapters.filter(c=>c.track===id&&c.pages[0]?.book);
     if(!books.length)return 0;
     return Math.round(100*books.reduce((n,c)=>n+(state.complete.includes(c.id)?1:Math.min(1,Number(state.bookProgress[c.pages[0].id])||0)),0)/books.length);
   };
@@ -111,14 +113,14 @@
   };
 
   function buildBookSlideMap(width,height){
-    const key=['book-v1',COURSE.version,width,height,state.readerFont].join(':');
+    const key=['book-v1',COURSE.version,chapters[current.c].track,width,height,state.readerFont].join(':');
     if(trackSlideMap.ready&&trackSlideMap.key===key)return;
     const host=document.createElement('div');
     host.className='reader-shell book-mode '+(state.readerDark?'dark':'light');
     host.style.cssText='position:fixed;left:-30000px;top:0;visibility:hidden;pointer-events:none;display:block;width:'+width+'px;height:'+height+'px;--readerBody:'+state.readerFont+'px';
     document.body.appendChild(host);
     let total=0;const entries=[],byId={};
-    for(const c of chapters.filter(x=>x.track===3)){
+    for(const c of chapters.filter(x=>x.track===chapters[current.c].track&&x.pages[0]?.book)){
       const p=c.pages[0];
       host.innerHTML='<div class="reader-flow">'+lessonSection(p,c,0).replace(/ id="[^"]*"/g,'')+'</div>';
       const flow=host.firstElementChild;
@@ -126,7 +128,7 @@
       const count=Math.max(1,Math.ceil(flow.scrollWidth/width-.001));
       const entry={id:p.id,start:total,count};entries.push(entry);byId[p.id]=entry;total+=count;
     }
-    host.remove();trackSlideMap={track:3,key,ready:true,entries,byId,total};
+    host.remove();trackSlideMap={track:chapters[current.c].track,key,ready:true,entries,byId,total};
   }
   layoutReader=function(){
     if(!isBook())return original.layoutReader();

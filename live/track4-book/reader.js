@@ -31,8 +31,8 @@
     saveReaderPosition();stop();active=found.s;lines=[];lastError='';finished=false;readerMenuOpen=false;route='practice';render();
   }
   function paint(){
-    const output=document.getElementById('web-console');if(output)output.textContent=(lastError?lastError+'\n':'')+lines.join('\n')+(finished&&!lastError&&!lines.length?'(콘솔 출력 없이 종료)':'');
-    const status=document.getElementById('web-run-status');if(status)status.textContent=running?'실행 중':lastError?'실행 오류 또는 중지':finished?'실제 실행 결과':active?.mode==='html'?'실행하면 아래에 독립된 예제 화면이 표시됩니다.':'실행하면 실제 콘솔 출력이 표시됩니다.';
+    const output=document.getElementById('web-console');if(output)output.textContent=(lastError?lastError+'\n':'')+lines.join('\n')+(finished&&!lastError&&!lines.length&&active?.mode!=='html'?'(콘솔 출력 없이 종료)':'');
+    const status=document.getElementById('web-run-status');if(status)status.textContent=running?'실행 중':lastError?'실행 오류 또는 중지':finished?(active?.mode==='html'?'예제 화면 준비 완료':'실제 실행 결과'):active?.mode==='html'?'실행하면 아래에 독립된 예제 화면이 표시됩니다.':'실행하면 실제 콘솔 출력이 표시됩니다.';
     const button=document.getElementById('web-execute');if(button)button.disabled=running||!active||active.mode==='reference';
     const stopButton=document.getElementById('web-stop');if(stopButton)stopButton.hidden=!running;
   }
@@ -67,7 +67,7 @@ const send=(kind,text)=>parent.postMessage({source:'track4-web',token:${JSON.str
 addEventListener('error',e=>{send('error',e.message);e.preventDefault();});
 addEventListener('unhandledrejection',e=>{send('error',e.reason?.message||e.reason);e.preventDefault();});
 console.log=(...x)=>send('log',x.map(v=>typeof v==='string'?v:JSON.stringify(v)).join(' '));
-addEventListener('DOMContentLoaded',()=>send('html-ready',''));
+addEventListener('DOMContentLoaded',()=>requestAnimationFrame(()=>requestAnimationFrame(()=>send('html-ready',''))));
 `;
     const head=policy+'<meta name="viewport" content="width=device-width, initial-scale=1"><script>'+script+closingScript;
     return /<head(?:\s[^>]*)?>/i.test(code)?code.replace(/<head(?:\s[^>]*)?>/i,match=>match+head):'<!doctype html><html><head>'+head+'</head><body>'+code+'</body></html>';
@@ -93,9 +93,9 @@ addEventListener('DOMContentLoaded',()=>send('html-ready',''));
       if(lines.join('\n').length>64000||lines.length>300){stop('출력 한도를 넘겨 중지했습니다.');return}
       lines.push(String(m.text).slice(0,32000));paint();return;
     }
-    if(m.kind==='error'){lastError=String(m.text).slice(0,16000);running=false;finished=true;clearTimeout(timer);paint();return;}
+    if(m.kind==='error'){lastError=String(m.text).slice(0,16000);running=false;finished=true;clearTimeout(timer);if(active?.mode==='console')stop();paint();return;}
     if(m.kind==='done'){finished=true;running=false;stop();paint();return;}
-    if(m.kind==='html-ready'){clearTimeout(timer);running=false;finished=true;paint();}
+    if(m.kind==='html-ready'){clearTimeout(timer);const shown=frame;shown.scrollIntoView({block:'center',behavior:'instant'});requestAnimationFrame(()=>requestAnimationFrame(()=>{if(frame!==shown)return;running=false;finished=true;paint();}));}
   }
   if(typeof window.addEventListener==='function')window.addEventListener('message',receive);
   practice=function(){
