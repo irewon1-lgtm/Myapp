@@ -48,6 +48,10 @@ try:
     control('a');open_page(page)
     record('approved release A booted',page.evaluate('ChatbookLive.commit')=='a'*40)
     record('same origin remains unchanged',page.evaluate('location.origin')==base)
+    for static_path in ['/live-guard.js','/live-sw.js','/manifest.webmanifest']:
+        status,headers,body=get(static_path)
+        record('cold gateway bootstrap route '+static_path,status==200 and headers.get('x-chatbook-bootstrap')=='1' and len(body)>0)
+
     record('production-only script policy retained',"script-src 'self'" in get('/')[1].get('content-security-policy',''))
     record('PWA manifest stays at stable origin path',page.locator('link[rel=manifest]').get_attribute('href')=='/manifest.webmanifest')
     expected=len(json.loads((ROOT/'public/content/catalog.json').read_text())['books'])

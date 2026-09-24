@@ -30,3 +30,14 @@ test('duplicate book IDs rejected',()=>{const c=structuredClone(catalog);c.books
 test('missing chapters rejected',()=>{const c=structuredClone(catalog);c.books[0].chapters=[];assert.throws(()=>validateCatalog(c));});
 test('existing annotation anchor cannot silently disappear',()=>{const c=structuredClone(catalog);c.books[0].chapters[0].blocks[0].id='different';assert.throws(()=>preserveCatalog(catalog,c));});
 test('explicitly retired anchor can be acknowledged without changing user records',()=>{const c=structuredClone(catalog);c.books[0].chapters[0].blocks[0].id='different';assert.equal(preserveCatalog(catalog,c,['paragraph1']),true);assert.equal(catalog.books[0].chapters[0].blocks[0].id,'paragraph1');});
+
+for(const file of ['live-guard.js','live-sw.js','manifest.webmanifest','icon-192.png','icon-512.png'])test('cold gateway serves frozen bootstrap '+file+' without static shortcut',async()=>{
+ const v=fixture(),dir=fs.mkdtempSync(path.join(os.tmpdir(),'cb-boot-'));
+ try{v.f[file]=Buffer.from(file.endsWith('.js')?'/* bootstrap */':'{}');v.m.assets[file]={sha256:sha(v.f[file]),bytes:v.f[file].length};
+  for(const[p,b]of Object.entries(v.f)){fs.mkdirSync(path.dirname(path.join(dir,p)),{recursive:true});fs.writeFileSync(path.join(dir,p),b);}
+  const mp=path.join(dir,'manifest.json');fs.writeFileSync(mp,JSON.stringify(v.m));let requests=0;
+  const g=createGateway({bundleRoot:dir,manifestFile:mp,fetcher:async()=>{requests++;throw Error('offline');}});
+  const r=await g(req('/'+file));assert.equal(r.status,200);assert.equal(Buffer.from(await r.arrayBuffer()).toString(),v.f[file].toString());assert.equal(requests,0);assert.equal(r.headers.get('Service-Worker-Allowed'),'/');
+  if(file.endsWith('.js'))assert.match(r.headers.get('Content-Type'),/javascript/);
+ }finally{fs.rmSync(dir,{recursive:true,force:true});}
+});

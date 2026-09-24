@@ -34,9 +34,6 @@ const server=http.createServer(async(req,res)=>{
    const u=new URL(req.url,'http://127.0.0.1');
    if(u.pathname==='/__test/control'){let b='';for await(const chunk of req)b+=chunk;const d=JSON.parse(b||'{}');mode=d.mode||mode;failPath=d.failPath||'';res.setHeader('content-type','application/json');res.end(JSON.stringify({mode,failPath,requests:requests.length}));return;}
    if(u.pathname==='/__test/requests'){res.setHeader('content-type','application/json');res.end(JSON.stringify(requests));return;}
-   if(['/live-guard.js','/live-sw.js','/manifest.webmanifest','/icon-192.png','/icon-512.png'].includes(u.pathname)){
-     res.setHeader('Cache-Control','no-store');res.setHeader('Content-Type',u.pathname.endsWith('.js')?'text/javascript':u.pathname.endsWith('.webmanifest')?'application/manifest+json':'image/png');res.end(fs.readFileSync(path.join(dist,u.pathname)));return;
-   }
    if(u.pathname.startsWith('/api/')){res.setHeader('Content-Type','application/json');res.statusCode=401;res.end('{"error":"test only; no real sync credentials"}');return;}
    const out=await gateway(new Request('http://127.0.0.1:'+server.address().port+req.url,{method:req.method}));res.writeHead(out.status,Object.fromEntries(out.headers));res.end(Buffer.from(await out.arrayBuffer()));
  }catch(e){res.statusCode=500;res.end(String(e));}

@@ -10,6 +10,6 @@ export default async (request: Request) => {
   return gateway(request);
 };
 export const config: Config = {
-  path: ['/', '/index.html', '/__cb/*', '/engine-spec', '/engine-spec/', '/engine-spec.json', '/engine-spec.html', '/engine-info', '/engine-info/', '/engine-info.json', '/engine-info.html', '/version.json', '/llms.txt', '/content/*', '/engine/*'],
+  path: ['/', '/index.html', '/live-guard.js', '/live-sw.js', '/manifest.webmanifest', '/icon-192.png', '/icon-512.png', '/__cb/*', '/engine-spec', '/engine-spec/', '/engine-spec.json', '/engine-spec.html', '/engine-info', '/engine-info/', '/engine-info.json', '/engine-info.html', '/version.json', '/llms.txt', '/content/*', '/engine/*'],
   preferStatic: false,
 };

@@ -87,6 +87,12 @@ export function createGateway({fetcher=fetch,bundleRoot=path.resolve('dist'),man
    // No credentials, cookies or user-selected hosts are ever forwarded upstream.
    if(/%(?:2f|5c|2e)|\.\./i.test(p))return response('{"error":"invalid path"}',400);
    try{
+     // Platform SPA rewrites may forward an original static URL here. Handle
+     // the immutable bootstrap explicitly, even on a completely cold CDN.
+     if(['/live-guard.js','/live-sw.js','/manifest.webmanifest','/icon-192.png','/icon-512.png'].includes(p)){
+       const file=p.slice(1),v=await manifest('bundled'),b=await asset('bundled',v.manifest,file);
+       return response(request.method==='HEAD'?null:b,200,file,{'Cache-Control':'no-cache, must-revalidate','Service-Worker-Allowed':'/','X-Chatbook-Bootstrap':'1'});
+     }
      if(p==='/'||p==='/index.html'){
        const pin=u.searchParams.get('cb_release');
        if(pin){if(pin!=='bundled'&&!COMMIT.test(pin))return response('{"error":"invalid release"}',400);try{return await entry(pin);}catch{return await entry('bundled');}}
