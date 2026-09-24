@@ -283,7 +283,10 @@ items = [...detailed, ...items.slice(detailLimit)];
 
 const likelySpec = items.filter(item => {
   const text = (item.title ?? '').replace(/\s+/g, ' ');
-  return /(?:16|32)\s*(?:GB|G)\b/i.test(text) || /(?:512\s*(?:GB|G)|1\s*TB|1024\s*(?:GB|G))/i.test(text);
+  const titleSpec = /(?:16|32)\s*(?:GB|G)\b/i.test(text) || /(?:512\s*(?:GB|G)|1\s*TB|1024\s*(?:GB|G))/i.test(text);
+  const place = ((item.regionPath ?? '') + ' ' + (item.location ?? '')).trim();
+  const targetArea = (request.targetCities ?? []).some(city => place.includes(city));
+  return titleSpec || targetArea;
 });
 const targetDetailed = [];
 for (const item of likelySpec.slice(0, request.targetDetailLimit ?? 120)) {
