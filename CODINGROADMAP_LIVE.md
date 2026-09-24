@@ -7,6 +7,7 @@
 - Repository: `irewon1-lgtm/Myapp`
 - Branch: `coding-roadmap-live`
 - Course: `live/content.json`
+- Track 3 authored source: `live/track3.manuscript.md`
 - Screen: `live/reader.template.html`
 - Generated self-contained reader: `live/reader.html`
 - Channel: `live/channel.json`
@@ -49,7 +50,7 @@
 
 ## 보통의 교재·화면 수정
 
-1. 정본 브랜치 최신 상태를 읽는다. 원본 content.json과 template만 수정한다.
+1. 정본 브랜치 최신 상태를 읽는다. 일반 교재는 content.json, Track 3 본문은 `live/track3.manuscript.md`, 화면은 template을 정본으로 수정한다.
 2. 기존 page.id를 바꾸지 않는다. 추가 페이지는 새로운 고유 ID를 부여한다. 기존 메모·북마크는 이 ID에 연결된다.
 3. `python3 tools/build_content.py`, `node tools/verify_reader.cjs`로 기본 구조와 학습 기록 로직을 확인한다. 이 검사는 렌더링/실기기 검사가 아니다.
 4. 정본 브랜치에 커밋한다. `Publish CodingRoadmap lessons and screen` workflow가 교재·화면 통합본을 생성하고 커밋 고정 주소 + SHA-256을 채널에 게시한다.
@@ -81,4 +82,4 @@
 
 기준 APK 정적 분석, Java 빌드, APK 서명·버전, 교재 구조, Python 풀이 실행, JavaScript 상태 로직을 검증한다. 실제 Galaxy 기기 설치/업데이트, 이전 기록 마이그레이션, 화면 크기별 렌더링, 네트워크에서 실제 채널 갱신은 실기기 검증 전까지 미검증으로 남긴다.
 
-트랙 1·2 전체와 트랙 3 Chapter 1을 제공한다. 트랙 3의 나머지 챕터 및 4~11은 준비 중이다. Python 실행기는 없으며 출력 설명을 실제 실행 결과처럼 표시하지 않는다. 전체 커리큘럼 완성을 주장하지 않는다.
+트랙 1·2 전체와 트랙 3의 9개 챕터를 제공한다. 트랙 4~11은 준비 중이다. 실습 화면은 Pyodide 기반 실제 Python 실행을 지원하며, 교재의 검증 결과와 기기 전체 동작 범위는 구분해서 표시한다. 전체 커리큘럼 완성을 주장하지 않는다.
