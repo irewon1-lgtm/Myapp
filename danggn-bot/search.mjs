@@ -78,6 +78,21 @@ function normalizeArticle(raw, sourceQuery) {
   };
 }
 
+
+function parseRegionLinks(html) {
+  const out = [];
+  const seen = new Set();
+  const re = /<a[^>]+href=['"]([^'"]*\bin=([^&'"]+)[^'"]*)['"][^>]*>([\s\S]*?)<\/a>/gi;
+  for (const m of html.matchAll(re)) {
+    const slug = decodeURIComponent(m[2] ?? '');
+    if (!slug || seen.has(slug)) continue;
+    seen.add(slug);
+    const name = (m[3] ?? '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim() || slug.split('-')[0] || slug;
+    out.push({ name, slug });
+  }
+  return out;
+}
+
 function parseLdJson(html) {
   const out = [];
   for (const m of html.matchAll(/<script[^>]+type=['"]application\/ld\+json['"][^>]*>([\s\S]*?)<\/script>/gi)) {
@@ -124,7 +139,10 @@ async function searchOne(query, regionSlug, limit) {
   url.searchParams.set('search', query);
   if (regionSlug) url.searchParams.set('in', regionSlug);
   const html = await getHtml(url);
-  return parseSearch(html, query).slice(0, limit);
+  return {
+    items: parseSearch(html, query).slice(0, limit),
+    regions: parseRegionLinks(html)
+  };
 }
 
 async function detailOne(item) {
@@ -196,10 +214,14 @@ const detailLimit = Math.max(0, Math.min(80, request.detailLimit ?? 40));
 
 const all = [];
 const errors = [];
+const discoveredRegions = [];
 for (const q of queries) {
   try {
-    const items = await searchOne(q, regionSlug, perQuery);
-    all.push(...items);
+    const found = await searchOne(q, regionSlug, perQuery);
+    all.push(...found.items);
+    for (const r of found.regions) {
+      if (!discoveredRegions.some(x => x.slug === r.slug)) discoveredRegions.push(r);
+    }
   } catch (e) {
     errors.push({ query: q, error: String(e) });
   }
@@ -243,6 +265,7 @@ const result = {
     detailedCount: detailed.length
   },
   errors,
+  discoveredRegions,
   items: items.slice(0, request.outputLimit ?? 60)
 };
 
