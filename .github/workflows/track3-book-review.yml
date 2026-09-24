@@ -1,0 +1,27 @@
+name: Track 3 book source and review
+on:
+  push:
+    branches: [coding-roadmap-live]
+    paths: ['.github/workflows/track3-book-review.yml']
+permissions:
+  contents: read
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - name: Snapshot public reader source only
+        run: |
+          mkdir -p track3-review-source
+          cp -r live tools track3-review-source/
+          cp CODINGROADMAP_LIVE.md track3-review-source/
+          mkdir -p track3-review-source/.github/workflows
+          cp .github/workflows/publish-coding-roadmap-live.yml track3-review-source/.github/workflows/
+          git rev-parse HEAD > track3-review-source/SOURCE_COMMIT.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: track3-book-source
+          path: track3-review-source
+          include-hidden-files: true
+          retention-days: 3
