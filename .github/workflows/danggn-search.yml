@@ -26,7 +26,15 @@ jobs:
       - name: Search Danggn
         run: node danggn-bot/search.mjs
 
+      - name: Upload result artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: danggn-result
+          path: danggn-bot/result.json
+          retention-days: 1
+
       - name: Commit result
+        continue-on-error: true
         run: |
           git config user.name "danggn-search-bot"
           git config user.email "actions@users.noreply.github.com"
