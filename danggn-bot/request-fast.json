@@ -1,0 +1,38 @@
+{
+  "regionSlugs": [
+    "당정동-4459",
+    "갈산동-1406",
+    "관양1동-1395",
+    "원문동-4433",
+    "내손동-4731"
+  ],
+  "queries": [
+    "노트북 16GB 512GB",
+    "노트북 16GB 1TB",
+    "노트북 32GB 512GB",
+    "노트북 32GB 1TB"
+  ],
+  "ramGB": [
+    16,
+    32
+  ],
+  "ssdGB": [
+    512,
+    1024
+  ],
+  "onlyOngoing": true,
+  "minPrice": 100000,
+  "maxPrice": 1500000,
+  "perQuery": 25,
+  "detailLimit": 0,
+  "outputLimit": 50,
+  "targetCities": [
+    "군포시",
+    "과천시",
+    "의왕시",
+    "안양시"
+  ],
+  "postedSince": "2026-09-11T00:00:00+09:00",
+  "targetDetailLimit": 35,
+  "runToken": "fast-1"
+}
