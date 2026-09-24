@@ -1,0 +1,39 @@
+name: Danggn Search Bot
+
+on:
+  push:
+    branches:
+      - danggn-search-bot
+    paths:
+      - 'danggn-bot/request.json'
+
+permissions:
+  contents: write
+
+jobs:
+  search:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: danggn-search-bot
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Search Danggn
+        run: node danggn-bot/search.mjs
+
+      - name: Commit result
+        run: |
+          git config user.name "danggn-search-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add danggn-bot/result.json
+          if git diff --cached --quiet; then
+            echo "No result changes"
+            exit 0
+          fi
+          git commit -m "chore: update danggn search result"
+          git push
