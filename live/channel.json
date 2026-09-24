@@ -1,19 +1,19 @@
 {
   "schema": 1,
   "kind": "chatbook-live-channel",
-  "sequence": 1790272728890,
+  "sequence": 1790275393831,
   "current": {
-    "commit": "36f44cb94400fa63e258bd4bc712c422feaf8d5b",
-    "manifestSha": "1a99d324f406560265e4cd359974f7eff7835c9900ea5103466543e5be97315a"
+    "commit": "ab8d6f029a9f6db026d69f5f4ed211ebea8dd38a",
+    "manifestSha": "93771a47787634b9f8e88862c15beca3494a48cd2389a857750c481f51e47bb6"
   },
   "previous": [
     {
-      "commit": "bd4f2e3181eaef3b97a39d30d672c0d8ff47e20b",
-      "manifestSha": "76257dcd0a4cc9f922a26fe7f3725b57f0b41b59d5c5d4a3e18c44b037c8383e"
+      "commit": "36f44cb94400fa63e258bd4bc712c422feaf8d5b",
+      "manifestSha": "1a99d324f406560265e4cd359974f7eff7835c9900ea5103466543e5be97315a"
     },
     {
-      "commit": "888f87933aaefd8d03b7ebbf31fa7e553ad57229",
-      "manifestSha": "2ed3d87340cc21063adca171a1dc25352557e3cba737f5616cc4f082f556039a"
+      "commit": "bd4f2e3181eaef3b97a39d30d672c0d8ff47e20b",
+      "manifestSha": "76257dcd0a4cc9f922a26fe7f3725b57f0b41b59d5c5d4a3e18c44b037c8383e"
     }
   ]
 }
