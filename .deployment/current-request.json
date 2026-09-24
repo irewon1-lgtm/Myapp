@@ -1,7 +1,10 @@
 {
-  "run": "35876033785",
+  "kind": "chatbook-live-one-time-bootstrap",
+  "run": "36028017324",
   "branch": "chatbook-app-20260923",
-  "publicKey": "-----BEGIN PUBLIC KEY-----\nMIIBojANBgkqhkiG9w0BAQEFAAOCAY8AMIIBigKCAYEAtYkexOBacPv8viE4vfCw\nuAQ/IbA5swaFPxZY4kjJOka5xdH0UsmIzFvha7/cmAZA88UNceJA1EyDwxHgHFvO\nX4U2ySbNiMC9+Kvc8YSxCN1MgbGB3MyhGy2WzKwulvTeNQZuFEuHlrfbNjKrfoSl\nLz2ZeKRKEnRo0IfIkPchH6xtQtoEG8yYU+xSExt1WQ/ynO0hsa77YkNESpwqInDD\nxrhIqXdru11E9/OC2f8y1tp3eDbxaxJOZ7Omat6tFARQsr2S01abqnuMxuuQBKJ7\n0LmL4T944SqB0QjkoNnXB70Vkn/zIYz/qx2Gec/DsUUdSn8GPwXzTtrWHEu5Q+Ig\n+q14SM3N/kOCbub0QQcEfOI0QiJFXuGCuDWt3Tz3Aae1YGWDkXZc4ySERxEdtaHY\nBafmTZet68x2kuwLIlA7Zzm2hdYnZDbcWr4m/09cTdEuvpod5nSFqluHtSyMp1g8\nNmpq3CFaWq3zxhAdZp/lFVzWk1GLcn7pkxem9m3OJi1ZAgMBAAE=\n-----END PUBLIC KEY-----\n",
-  "sourceDigest": "6e689b2e7a457f5b72591969b1558b2733606fb0f0b411a8ee9ca7df448d0efa",
-  "createdAt": "2026-09-23T14:42:36.054Z"
+  "siteId": "2c37965b-f193-4d0f-b371-652fdf1989c0",
+  "publicKey": "-----BEGIN PUBLIC KEY-----\nMIIBojANBgkqhkiG9w0BAQEFAAOCAY8AMIIBigKCAYEAzM8XKNXSatEM/FCIshoT\nDrttbD858eUhdgmkRqeiS9+azF6rn+HHYZs84H3TUst1XPWG3d2BgLI7ZGXe4/aC\n65333dLGrWXoSOmCSuHvxNeO+worNO6jacRTRDBE0EX2r0xYq2vv6zuMKkLIjypA\nXGL+BQMqOT5nKXONIq+VVK5V2EN40rkJhC/a+tDPVbhShtqXRcSPZ3wmMqKeT/1z\n+5+QIIshyZkmL2K3dk1XlcUdEls/zxBZ7DJQXlr1puG3qA2Jz7dImYrfYdNgAOj9\njcNoA+3M3U6MrDLuL14Zrm3RT5VOxhtu77dmaawOHkw1w4iUedJDo9JDt3M8+kcY\nhCKH67xPyl3YUrw8vjGD78rrIH49Wca0prT9fjfxGnZqQ43q6snn3HYuY8VJSLoC\nPpHE6oDmk5idD8sX6nNNraivbTRRbqpomPDdz2yyd6ztSTHj3+WoCYhmBYXQIn/P\ntWREwhA/h22BEkenR0kE7Ot/oVs/xAfTg49ES6+lACqfAgMBAAE=\n-----END PUBLIC KEY-----\n",
+  "liveCommit": "6a0d61524160b16c6649506be5b43351757820df",
+  "manifestSha": "69dcd753c9004f42074e56442a9b47811ad767ac66cc5e4b3bca210efee03f9e",
+  "createdAt": "2026-09-24T16:32:52.735Z"
 }
