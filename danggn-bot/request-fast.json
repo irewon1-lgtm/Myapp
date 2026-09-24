@@ -1,6 +1,12 @@
 {
   "regionSlugs": [
-    "잠실동-6188"
+    "잠실동-6188",
+    "풍납1동-405",
+    "풍납2동-406",
+    "거여1동-407",
+    "거여2동-408",
+    "마천1동-409",
+    "마천2동-410"
   ],
   "queries": [
     "노트북"
@@ -27,5 +33,5 @@
   ],
   "postedSince": "2026-09-11T00:00:00+09:00",
   "targetDetailLimit": 8,
-  "runToken": "jamsil-neighborhood-discovery"
+  "runToken": "jamsil-neighborhood-discovery-hop2"
 }
