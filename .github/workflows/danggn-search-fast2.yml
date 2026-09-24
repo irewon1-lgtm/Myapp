@@ -1,0 +1,25 @@
+name: Danggn Fast2 Search
+
+on:
+  push:
+    branches:
+      - danggn-search-bot
+    paths:
+      - 'danggn-bot/request-fast2.json'
+
+permissions:
+  contents: read
+
+jobs:
+  search-fast2:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: danggn-search-bot
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Search Danggn fast2
+        run: node danggn-bot/search-fast2.mjs
