@@ -1,16 +1,20 @@
 {
-  "regionSlug": "",
+  "regionSlugs": [
+    "당정동-4459",
+    "갈산동-1406",
+    "관양1동-1395",
+    "원문동-4433",
+    "내손동-4731"
+  ],
   "queries": [
-    "노트북",
-    "갤럭시북",
-    "그램",
-    "ThinkPad",
-    "레노버 노트북",
-    "HP 노트북",
-    "ASUS 노트북",
-    "델 노트북",
-    "삼성 노트북",
-    "LG 노트북"
+    "노트북 16GB 512GB",
+    "노트북 16GB 1TB",
+    "노트북 32GB 512GB",
+    "노트북 32GB 1TB",
+    "갤럭시북 16GB 512GB",
+    "그램 16GB 512GB",
+    "ThinkPad 16GB 512GB",
+    "레노버 16GB 512GB"
   ],
   "ramGB": [
     16,
@@ -23,9 +27,9 @@
   "onlyOngoing": true,
   "minPrice": 100000,
   "maxPrice": 1500000,
-  "perQuery": 300,
+  "perQuery": 60,
   "detailLimit": 0,
-  "outputLimit": 60,
+  "outputLimit": 80,
   "targetCities": [
     "군포시",
     "과천시",
@@ -33,6 +37,6 @@
     "안양시"
   ],
   "postedSince": "2026-09-11T00:00:00+09:00",
-  "targetDetailLimit": 120,
-  "runToken": "south-gyeonggi-14d-exact"
+  "targetDetailLimit": 180,
+  "runToken": "south-gyeonggi-regions-final"
 }
