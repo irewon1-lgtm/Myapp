@@ -1,12 +1,12 @@
 """Actual HTTPS validation, with a fresh disposable browser profile and synthetic local data.
 No user credentials, no sync writes, no Netlify deployment.
 """
-import json,pathlib,time,urllib.request
+import json,pathlib,time,urllib.request,re
 from playwright.sync_api import sync_playwright
 base='https://chatbook-library-20260923.netlify.app'
 out=pathlib.Path('review/live-production');out.mkdir(parents=True,exist_ok=True)
 channel=json.loads(pathlib.Path('live/channel.json').read_text());manifest=json.loads(pathlib.Path('live/release.json').read_text())
-report={'scope':'Real production HTTPS, cold browser and offline restart; no physical Galaxy and no user sync data','checks':[]}
+report={'scope':'Real production HTTPS, cold browser and offline restart; no physical Galaxy and no user sync data','checks':[],'liveCommit':channel['current']['commit'],'manifestSha':channel['current']['manifestSha'],'workflowNetlifyDeploys':0}
 def check(name,value,detail=None):
  report['checks'].append({'name':name,'passed':bool(value),'detail':detail});print(name,value,flush=True)
  if not value:raise AssertionError(name)
@@ -33,6 +33,9 @@ try:
   page.goto(base+'/',wait_until='domcontentloaded',timeout=60000)
   wait_js(page,'window.CB?.catalog?.books?.length>0&&window.ChatbookLive?.pending===false')
   check('actual UI selected the latest GitHub release',page.evaluate('ChatbookLive.commit')==channel['current']['commit'])
+  expected_marker=re.search(r'<meta name="chatbook-live-proof" content="([^"]+)"',pathlib.Path('public/index.html').read_text())
+  if expected_marker:
+   check('new HTML marker reached production through GitHub-only publication',page.locator('meta[name="chatbook-live-proof"]').get_attribute('content')==expected_marker.group(1),expected_marker.group(1))
   for asset in ['/live-guard.js','/live-sw.js','/manifest.webmanifest']:
    result=page.evaluate("async p=>{const r=await fetch(p,{cache:'no-store'});return {status:r.status,type:r.headers.get('content-type'),boot:r.headers.get('x-chatbook-bootstrap')}}",asset)
    check('cold bootstrap path '+asset,result['status']==200 and result['boot']=='1',result)

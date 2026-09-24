@@ -10,6 +10,7 @@ on:
       - 'netlify/**'
       - 'netlify.toml'
       - 'package.json'
+      - 'package-lock.json'
       - 'live/retired-anchors.json'
       - '.github/workflows/chatbook-live-publish.yml'
   workflow_dispatch:
@@ -45,6 +46,8 @@ jobs:
         run: python tests/live/browser.py
       - name: Publish verified files on GitHub only
         run: node scripts/promote-live.mjs
+      - name: Verify actual HTTPS and offline reader without a Netlify deployment
+        run: python tests/live/production-final.py
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -52,5 +55,7 @@ jobs:
           retention-days: 3
           path: |
             review/live-browser/
+            review/live-production/
             live/channel.json
             live/release.json
+            live/shell-contract.json
