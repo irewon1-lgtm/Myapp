@@ -180,6 +180,31 @@ function hasSpec(text, values, unit) {
   return values.some(v => s.includes(String(v) + unit.toLowerCase()));
 }
 
+
+function matchesTargetSpecs(item, request) {
+  const text = ((item.title ?? '') + ' ' + (item.description ?? '')).replace(/\s+/g, ' ');
+  const ramMatch =
+    /(?:RAM|메모리|램)\s*[:\-]?\s*(16|32)\s*(?:GB|G)\b/i.test(text) ||
+    /\b(16|32)\s*GB\s*(?:RAM|메모리|램)\b/i.test(text);
+  const storageValue = '(?:512\\s*(?:GB|G)|1\\s*TB|1024\\s*(?:GB|G))';
+  const ssdMatch =
+    new RegExp('(?:SSD|NVMe|M\\.?2)[^\\n]{0,24}' + storageValue, 'i').test(text) ||
+    new RegExp(storageValue + '[^\\n]{0,24}(?:SSD|NVMe|M\\.?2)', 'i').test(text);
+  return ramMatch && ssdMatch;
+}
+
+function isTargetArea(item, request) {
+  const place = ((item.regionPath ?? '') + ' ' + (item.location ?? '')).trim();
+  const cities = request.targetCities ?? [];
+  return cities.length === 0 || cities.some(city => place.includes(city));
+}
+
+function isRecentEnough(item, request) {
+  if (!request.postedSince) return true;
+  if (!item.postedAt) return false;
+  return new Date(item.postedAt).getTime() >= new Date(request.postedSince).getTime();
+}
+
 function score(item, request) {
   const text = (item.title + ' ' + (item.description ?? '')).toLowerCase();
   let s = 0;
@@ -251,6 +276,26 @@ for (const item of items.slice(0, detailLimit)) {
   await sleep(700);
 }
 items = [...detailed, ...items.slice(detailLimit)];
+
+const localRecent = items.filter(item => isTargetArea(item, request) && isRecentEnough(item, request));
+const targetDetailed = [];
+for (const item of localRecent.slice(0, request.targetDetailLimit ?? 80)) {
+  targetDetailed.push(item.description !== undefined ? item : await detailOne(item));
+  await sleep(450);
+}
+const exactTargetCandidates = targetDetailed
+  .filter(item => matchesTargetSpecs(item, request))
+  .map(item => ({ ...item, score: score(item, request) }))
+  .sort((a, b) => b.score - a.score || (a.price || 1e15) - (b.price || 1e15));
+
+console.log('TARGET_SCAN_STATS=' + JSON.stringify({
+  localRecent: localRecent.length,
+  detailed: targetDetailed.length,
+  exact: exactTargetCandidates.length,
+  postedSince: request.postedSince ?? null,
+  targetCities: request.targetCities ?? []
+}));
+console.log('TARGET_CANDIDATES_JSON=' + JSON.stringify(exactTargetCandidates.slice(0, 80)));
 
 for (const item of items) item.score = score(item, request);
 items.sort((a, b) => b.score - a.score || (a.price || 1e15) - (b.price || 1e15));
