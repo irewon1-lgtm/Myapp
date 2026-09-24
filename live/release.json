@@ -1,0 +1,244 @@
+{
+  "schema": 1,
+  "kind": "chatbook-live-release",
+  "shell": 1,
+  "syncSchema": 1,
+  "sequence": 1790267530269,
+  "sourceSha": "1d95c8d3adec50045d13b6a009e0a54a5c132208",
+  "releaseId": "1.0.3-1.2.0-025f580740d49839",
+  "specDigest": "8f188430ce8fd3caa3b6f0a14de5a858352f47dd5c01b0d3841f704b317e186c",
+  "assets": {
+    "app.js": {
+      "sha256": "7610b783ea0472c38ce8ef59d43a75bc226ea5e6a807d8bd9ad63c170de4f4e0",
+      "bytes": 15839
+    },
+    "art/ai.webp": {
+      "sha256": "170d7f3511c64da95ec6501f57a8500b43dada43df5a0b9c6dab27da83cc24a7",
+      "bytes": 16332
+    },
+    "art/dialogue.webp": {
+      "sha256": "831c762f7705abec9acdf359d0bf9d9e4d879705d17330972f8b3347277a4665",
+      "bytes": 11862
+    },
+    "art/economy.webp": {
+      "sha256": "a79ffdd8a4f310e7e6d95940f5327252d53b446cb9d5bb20c342e0be95bbc7ca",
+      "bytes": 10620
+    },
+    "art/habit-portrait.webp": {
+      "sha256": "9e1f2537af2a725db1a966b8409f2187dfac2b7bfd41880097de67e1d062c199",
+      "bytes": 13460
+    },
+    "art/habit.webp": {
+      "sha256": "3ca3577ef89e4ac686a4d5687b01e82de97615a94fd9b1d5a29f51be9cd8f706",
+      "bytes": 11624
+    },
+    "art/leaves.webp": {
+      "sha256": "82581eeb6aeb86da3afcca9e68a247336c6275b0b3bf12a4e30462da03b3df8f",
+      "bytes": 1770
+    },
+    "art/mind.webp": {
+      "sha256": "2fb76d678fc56c6f1a16163a6e5679167510477502c2feee1a00cca9b3a04b94",
+      "bytes": 9186
+    },
+    "art/parent.webp": {
+      "sha256": "dfaae7c97a20ceb16f56ed87c0aadc35e145f4fad74b0dad42950398eb005916",
+      "bytes": 12896
+    },
+    "art/reading-scene.webp": {
+      "sha256": "c5962edf206a25c35a4e64718aeac3853f0a8072f3f33906f7ae395aa5531dc4",
+      "bytes": 22614
+    },
+    "art/routine.webp": {
+      "sha256": "31963d89e802a0a9324708d41c53a3f7925f6389f5c7967c2c8c64aea812bcac",
+      "bytes": 11826
+    },
+    "art/slow.webp": {
+      "sha256": "5ed089f11d63f337d835c4054d7c4b9d90d7cfb8543599325a88bd6684d93d4a",
+      "bytes": 16980
+    },
+    "art/stilllife.webp": {
+      "sha256": "034d6e5dec799e7745cf288743cfa744df3611af83740529075a12ced6522251",
+      "bytes": 9780
+    },
+    "art/wisdom.webp": {
+      "sha256": "815a7aa985aa1c553bd1c4a58a75825c2746fae4ef70d921d6a5fb13eb59b05c",
+      "bytes": 9344
+    },
+    "art/yt-vibe-0.webp": {
+      "sha256": "db5a5f181c90d11eeb3675e4eebd7b78bdae06e2812e29fc5240fd8627d3bb51",
+      "bytes": 24976
+    },
+    "art/yt-vibe-1.webp": {
+      "sha256": "8a49d64e283e55339ad80046e68e7b57cdf1969292386a51b05000a89db6aa12",
+      "bytes": 1056
+    },
+    "art/yt-vibe-2.webp": {
+      "sha256": "793f159e7fb5cafecf16d22732452521989a332743aaca7f7b91157f5a3e72bd",
+      "bytes": 1030
+    },
+    "art/yt-vibe-3.webp": {
+      "sha256": "69593a5b41ca1fe887d69250c77e8e7d36ce9a7457c85cb103180d0addeb5277",
+      "bytes": 2022
+    },
+    "art/yt-vibe-hq1.webp": {
+      "sha256": "88939b11a34efb745f13e71190f6fe372fb80da2a76acfee6a5be03069945fe3",
+      "bytes": 7842
+    },
+    "art/yt-vibe-hq2.webp": {
+      "sha256": "7721ec82d057972853b756d2a1cc8a9d00405c8a395ade848814cf5e50f88c7c",
+      "bytes": 8096
+    },
+    "art/yt-vibe-hq3.webp": {
+      "sha256": "5a60a41e26b9b3e2ee4411bc06c90627987f79a03ce0f30106516d2b0b4fe978",
+      "bytes": 13716
+    },
+    "art/yt-vibe-hqdefault.webp": {
+      "sha256": "db5a5f181c90d11eeb3675e4eebd7b78bdae06e2812e29fc5240fd8627d3bb51",
+      "bytes": 24976
+    },
+    "content/catalog.json": {
+      "sha256": "23f811c10a4ddd98c15f24203d97dfd97ffa784976672753b0fffd1635016275",
+      "bytes": 1017851
+    },
+    "content/source-maps/8KCuHHeC_M0-review.json": {
+      "sha256": "6c9b0967ea1160d73ba3d354b939ac48f0512b19ac75d1842f3da600be42ce71",
+      "bytes": 706
+    },
+    "content/source-maps/Kl5EcYd3G2E-review.json": {
+      "sha256": "d4aaf6f5334fa3fca7e9f9e0af2a32e02b56ee8232cf15af17613fd8c498118e",
+      "bytes": 841
+    },
+    "content/source-maps/Kl5EcYd3G2E.json": {
+      "sha256": "06b9632653c0db7f9e4262ed85da6d42472e2e1f023c5dd7683d123528d752c6",
+      "bytes": 3553
+    },
+    "core.js": {
+      "sha256": "85db61fdc45aaa2c43d770c398b36cb123531ecc6f6e9c05bfadf91f9fa3127a",
+      "bytes": 21569
+    },
+    "engine-info.html": {
+      "sha256": "5518280fd9b1b5c4b9fbf18519451df53c009eee14d4d7c631d1f47f709ca60e",
+      "bytes": 5295
+    },
+    "engine-info.json": {
+      "sha256": "e76e883cf786acd37d014cd523b1b33468b152e0f0ee8af05a8f331b17e44e3d",
+      "bytes": 7755
+    },
+    "engine-spec.html": {
+      "sha256": "aa63a089c8d61e89868bd5efa6aad34cfb5d2e8b0ebfebfcaf6ecd3cb386bae8",
+      "bytes": 7600
+    },
+    "engine-spec.json": {
+      "sha256": "dc0ebdf00c120c9fd32beb3af9dab826f97bb217e4f792a66d4b6a8e48f35d53",
+      "bytes": 7878
+    },
+    "engine/benchmark.json": {
+      "sha256": "6c66ebe966dacd3c2e637eb607008d6212c76e90a11d0e86e504c93addaa7554",
+      "bytes": 32729
+    },
+    "engine/core.mjs": {
+      "sha256": "5433fe8d0c49b4465bc98abd0202dd7010705665331b842a6ea768c1f2088152",
+      "bytes": 30583
+    },
+    "engine/defaults.json": {
+      "sha256": "3119ee5b56443cc6168fa5145a4ad47bb555bb3683e5e6e5b141037e2fb68e0d",
+      "bytes": 768
+    },
+    "engine/index.html": {
+      "sha256": "5daa6934ef4402785a423f9bbdb9e84740e9b08b3668a4da4059a327a176219a",
+      "bytes": 4834
+    },
+    "engine/learning-policy.json": {
+      "sha256": "4095c282a3705bf602d4beb7ec4036bda4a92cf9d4a261eada64c716b7a0ac04",
+      "bytes": 6661
+    },
+    "engine/learning-validation.json": {
+      "sha256": "9e9364f4e12cd4ac298932265d260071bb78b6ddb4b1751c74564bfc8289f682",
+      "bytes": 1115
+    },
+    "engine/learning.mjs": {
+      "sha256": "f459d29da595831394a74c74f4903972b49a0fba9642fb2fbd0aece75a523ecf",
+      "bytes": 18942
+    },
+    "engine/narrative.mjs": {
+      "sha256": "622d178038ffd76891b788b12109bd9b3162cb0ac9a66b265532164e1693a959",
+      "bytes": 5785
+    },
+    "engine/verification.json": {
+      "sha256": "422f6a74d9c3d3d7b35815348919bd917c627ab0d054562366dac42b13df5648",
+      "bytes": 3535
+    },
+    "engine/workbench.css": {
+      "sha256": "9c1c60d10b7b7b108b0a612eca4aa71b89f466b459ce62e994120d3d9c9478a4",
+      "bytes": 3004
+    },
+    "engine/workbench.mjs": {
+      "sha256": "1e9a34263ec2fb4a2662fc6e98028ebf7d7919db6b37ea9d4b26d0b6c4aca6ee",
+      "bytes": 4644
+    },
+    "exports.js": {
+      "sha256": "4c380780a1bbe520b3b2270c65ae64642d1681dbee8f90f4520615ac98b2aade",
+      "bytes": 11474
+    },
+    "icon-192.png": {
+      "sha256": "5781d63cf72bf119ea5427bedfb755cc9bd8216990971fad787234cf6fc6a02e",
+      "bytes": 1108
+    },
+    "icon-512.png": {
+      "sha256": "861df3a8e0fee8cca434f7b71b96946c31c283046aa5de16f0ad192bd800b0db",
+      "bytes": 3207
+    },
+    "index.html": {
+      "sha256": "85116d3d9e23da4f0f35e9410ee8de15d3d96c3046c19cd8267471ea00f53d40",
+      "bytes": 2043
+    },
+    "library.js": {
+      "sha256": "5bf08909b9d16ea7369ce11d43f5ab93c8acb9df69e0ebc29ef9eb3acf848314",
+      "bytes": 752199
+    },
+    "live-guard.js": {
+      "sha256": "42303e9d85f403384791dd949d75cbefcf9abc89ab91deb34beeabecbad271e7",
+      "bytes": 6327
+    },
+    "live-sw.js": {
+      "sha256": "98e7d5f7802aece7034b5775c0e61236d0a5d01d4df781afa4a05d791ec139a9",
+      "bytes": 5327
+    },
+    "llms.txt": {
+      "sha256": "1c2718a08c8a1db5da6e081d283bb1120f23871c5d0aa984d18f34ae42b424c3",
+      "bytes": 749
+    },
+    "manifest.webmanifest": {
+      "sha256": "e2f0234ed77d8099a25175d5cdeb44cf7387f8459b1f26a6c9e58ef790ed0402",
+      "bytes": 365
+    },
+    "reader.js": {
+      "sha256": "2b71f6855efa43f82d147c97867d333b312c08da55ba733b9bdd2cc1313de197",
+      "bytes": 15133
+    },
+    "style.css": {
+      "sha256": "b8ee2cc5b44e5569c54f48a93bd94873bac7010783a1099bad85b679f4a257df",
+      "bytes": 42347
+    },
+    "sw.js": {
+      "sha256": "53b2827dbfbb476da87fba59613f360bc71e2d57906a03fcd7a2970d5e4b6f4b",
+      "bytes": 3033
+    },
+    "vendor/PPTXGENJS-LICENSE.txt": {
+      "sha256": "7a2bfe96150786ed1908b8e63f98ebab88875c1e79e28faff6649e0f11f77e52",
+      "bytes": 1081
+    },
+    "vendor/pptxgen.bundle.js": {
+      "sha256": "ab17e9c619b099cee283f0b5010c846585976a1e3d81b841153dc86bbc52cf51",
+      "bytes": 460216
+    },
+    "version.json": {
+      "sha256": "74dc39fc2d9cedc6eeae1ccb992d83b436a026f3a98c53c5a2dd9b7875c3ed7d",
+      "bytes": 396
+    },
+    "views.js": {
+      "sha256": "eba5aa2936da0b3120d9d2bfeeefca0e4829d52019d9583041a2afc355763a47",
+      "bytes": 39795
+    }
+  }
+}

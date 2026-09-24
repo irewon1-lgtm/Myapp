@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "engine": "1.0.0",
+  "profile": "absolute-beginner-two-pass",
+  "videoId": "Kl5EcYd3G2E",
+  "bookId": "yt-frontend-roots-Kl5EcYd3G2E",
+  "catalogVersion": "2026-09-23.11",
+  "checks": {
+    "sourceRangesPresent": true,
+    "sourceAndExplanationSeparated": true,
+    "glossaryGrounded": true,
+    "noYoutubeThumbnailLessonImage": true,
+    "diagramsLabelled": true,
+    "noCrossVideoToolTerms": true,
+    "questionCount": 34,
+    "chapterCount": 16
+  },
+  "documentedAmbiguities": [
+    {
+      "range": "18:26-18:55",
+      "issue": "자동자막의 현대 빌드 도구명 한 개가 불확실해 본문에서 특정 이름으로 단정하지 않음"
+    }
+  ],
+  "visualStatus": "재구성 개념도만 사용. 실제 영상 스크린샷 전수 검증으로 주장하지 않음.",
+  "reviewer": "assistant-second-pass"
+}

@@ -1,0 +1,205 @@
+{
+  "scope": "Actual Chromium browser with production Chatbook source and isolated upstream/API fault injection; not physical Galaxy.",
+  "checks": [
+    {
+      "name": "approved release A booted",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "same origin remains unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "production-only script policy retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "PWA manifest stays at stable origin path",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "all existing books present",
+      "passed": true,
+      "detail": 13
+    },
+    {
+      "name": "reader fits width 360",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "reader fits width 412",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "reader fits width 800",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "reader fits width 1280",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "dark theme still works",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "synthetic note and bookmark saved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "complete version A offline cache committed after integrity checks",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "normal reader raised no JavaScript errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "open reader not hot-swapped while reading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "release B UI update works without Netlify deployment",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "new book published without Netlify deployment",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "chapter update delivered with the same verified version",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "body update delivered with the same verified version",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "existing note survived UI update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "private imported book survives update",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "unrelated cached downloads retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "existing screen remains usable: home",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "existing screen remains usable: library",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "existing screen remains usable: quiz",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "existing screen remains usable: settings",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "version B becomes complete offline version",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "sync authentication failure leaves local records untouched",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "bad JavaScript rolls back to previous healthy B",
+      "passed": true,
+      "detail": "http://127.0.0.1:33995/?cb_release=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb&cb_recovery=1"
+    },
+    {
+      "name": "failed startup did not erase notes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "corrupt bytes rejected and previous B retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "partial download rolls back to previous B",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "future incompatible shell cannot replace healthy reader",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "malformed channel leaves a usable reader",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "stale channel does not downgrade accepted B",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "offline restart loads complete cached release",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "offline notes remain readable",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "offline does not pretend old engine-spec is latest",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "offline chapter navigation works",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "current authoring specification readable without JavaScript",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "status": "passed",
+  "intentionalJavaScriptFaults": [
+    "Missing initializer in const declaration"
+  ],
+  "completedAt": "2026-09-24T16:32:50Z"
+}

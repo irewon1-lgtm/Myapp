@@ -1,0 +1,79 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>챗북 엔진 정보</title><link rel="alternate" type="application/json" href="/engine-info.json"><style>body{font-family:system-ui,sans-serif;max-width:850px;margin:40px auto;padding:0 20px;line-height:1.8;overflow-wrap:anywhere}pre{white-space:pre-wrap;border:1px solid;padding:16px}a{color:inherit}small{display:block}</style></head><body data-release-id="1.0.3-1.2.0-025f580740d49839"><nav><a href="/">챗북</a> · <a href="/engine-spec.html">현재 교재 제작 기준·대표 예시</a> · <a href="/engine-info.json">배포 JSON</a></nav><h1>챗북 엔진 정보</h1><p>앱 1.0.3 · 교재 제작 엔진 1.2.0</p><p>다른 방에서 교재를 만들 때는 <a href="/engine-spec.json">현재 제작 규격</a>을 먼저 읽습니다. 이 페이지는 배포 정보이며 생성 API나 관리 권한이 아닙니다.</p><h2>현재 배포 묶음</h2><p>1.0.3-1.2.0-025f580740d49839</p><small>생성 시각: 2026-09-24T16:32:10.177Z · 소스 SHA: 1d95c8d3adec50045d13b6a009e0a54a5c132208</small><h2>실행한 빌드 검사</h2><p>npm test: passed · 2026-09-24T16:32:10.177Z</p><h2>확인 범위</h2><ul><li>공개 안내서는 소스와 검사 기록의 요약이며 실제 영상 품질이나 무오류를 보증하지 않습니다.</li><li>영상 길이·동시성 등 defaults는 설정값이며 해당 길이의 실제 영상 성공 기록이 아닙니다.</li><li>이 안내 생성기는 영상 분석·번역을 실행하지 않습니다. URL 입력만으로 실행 가능한 서버 기능 여부는 별도 API·운영 검증이 필요합니다.</li><li>제작 도구는 승인된 작업 환경에서 사용합니다. 공개 웹페이지가 제작 권한을 주지 않습니다.</li><li>YouTube 원본 프레임 확보, 원음 전체 대조, 독자의 이해도는 이 빌드 검사에 포함되지 않습니다.</li></ul><h2>실행 코드의 정책과 설정</h2><pre>{
+  &quot;policy&quot;: {
+    &quot;profile&quot;: &quot;faithful-ko-narrative-v1&quot;,
+    &quot;sourceLanguages&quot;: [
+      &quot;ko&quot;,
+      &quot;en&quot;
+    ],
+    &quot;targetLanguage&quot;: &quot;ko&quot;,
+    &quot;stages&quot;: [
+      &quot;source-freeze&quot;,
+      &quot;aligned-korean-basis&quot;,
+      &quot;selective-beginner-explanation&quot;,
+      &quot;direct-source-review&quot;,
+      &quot;assemble-publish&quot;
+    ],
+    &quot;preserve&quot;: [
+      &quot;claim&quot;,
+      &quot;definition&quot;,
+      &quot;example&quot;,
+      &quot;analogy&quot;,
+      &quot;transition&quot;,
+      &quot;caveat&quot;
+    ],
+    &quot;preserveQualifiers&quot;: [
+      &quot;negation&quot;,
+      &quot;condition&quot;,
+      &quot;modality&quot;,
+      &quot;attribution&quot;,
+      &quot;number-and-unit&quot;,
+      &quot;code&quot;
+    ],
+    &quot;newFacts&quot;: &quot;verified-and-labelled-supplement-only&quot;,
+    &quot;sourceCorrection&quot;: &quot;flag-not-silent-correction&quot;,
+    &quot;writingUnit&quot;: &quot;conceptual-chapter&quot;,
+    &quot;analysisUnit&quot;: &quot;bounded-source-chunk&quot;,
+    &quot;prose&quot;: &quot;connected-paragraphs&quot;,
+    &quot;fixedConceptTemplate&quot;: false,
+    &quot;additionalModelPasses&quot;: 0,
+    &quot;fullBookRewrite&quot;: false,
+    &quot;narrativeContextMaxBytes&quot;: 4000,
+    &quot;minPages&quot;: null,
+    &quot;maxPages&quot;: null,
+    &quot;forcedExpansionRatio&quot;: null,
+    &quot;unchangedText&quot;: &quot;copy-without-regeneration&quot;,
+    &quot;difficultText&quot;: &quot;patch-or-local-rewrite&quot;,
+    &quot;compressionAlarmRatio&quot;: 0.9,
+    &quot;inventedImagesAsScreenshots&quot;: false,
+    &quot;reviewIsProof&quot;: false
+  },
+  &quot;defaults&quot;: {
+    &quot;version&quot;: &quot;1.2.0&quot;,
+    &quot;profile&quot;: &quot;faithful-ko-narrative-v1&quot;,
+    &quot;targetSeconds&quot;: 240,
+    &quot;maxSeconds&quot;: 360,
+    &quot;maxSourceBytes&quot;: 16000,
+    &quot;contextCues&quot;: 1,
+    &quot;concurrency&quot;: 2,
+    &quot;maxAttempts&quot;: 2,
+    &quot;maxJobCalls&quot;: 96,
+    &quot;requestTimeoutMs&quot;: 45000,
+    &quot;maxInputBytes&quot;: 90000,
+    &quot;maxOutputTokens&quot;: 6500,
+    &quot;maxJobOutputTokens&quot;: 650000,
+    &quot;externalCallsEnabled&quot;: false,
+    &quot;maxCostUsd&quot;: 0,
+    &quot;fullTimelineScanIntervalSeconds&quot;: 20,
+    &quot;maxVisualCandidates&quot;: 240,
+    &quot;maxFiguresPerChunk&quot;: 3,
+    &quot;minFrameWidth&quot;: 640,
+    &quot;maxDurationSeconds&quot;: 14400,
+    &quot;autoPublish&quot;: false,
+    &quot;preserveAllMeaningfulContent&quot;: true,
+    &quot;missingVisual&quot;: &quot;hold-if-required&quot;,
+    &quot;termFirstUseExplanation&quot;: true,
+    &quot;semanticReviewRequired&quot;: true,
+    &quot;requireOwnerApproval&quot;: true,
+    &quot;targetLanguage&quot;: &quot;ko&quot;
+  }
+}</pre><h2>유지보수</h2><p><a href="https://github.com/irewon1-lgtm/Myapp/blob/chatbook-app-20260923/AGENTS.md">소스 작업 규칙</a> · <a href="https://github.com/irewon1-lgtm/Myapp/tree/chatbook-app-20260923">소스 저장소</a></p><p>안내 파일을 읽지 못해도 서재·리더·퀴즈는 계속 사용할 수 있습니다.</p></body></html>

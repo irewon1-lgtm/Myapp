@@ -1,0 +1,20 @@
+{
+  "videoId": "8KCuHHeC_M0",
+  "bookId": "yt-python-1h-8KCuHHeC_M0",
+  "engine": "1.1.0",
+  "sourceTranscriptSha": "c44a548b04cd3240c767e8bc41640eb31fd70f86",
+  "checks": {
+    "chapterCount": 14,
+    "questionCount": 36,
+    "everyParagraphHasSourceRefs": true,
+    "allFiguresAreReconstructedDiagrams": true,
+    "noYoutubeThumbnailLessonImage": true,
+    "sourceStartsAt": "00:01",
+    "sourceEndsAt": "59:58"
+  },
+  "limitations": [
+    "실제 YouTube 비디오 프레임 추출은 로그인/봇 확인 차단으로 실패하여 사용하지 않음",
+    "영어 자동자막 자체의 오인식 가능성이 있음",
+    "출처 범위 연결은 의미 정확성의 수학적 증명이 아님"
+  ]
+}

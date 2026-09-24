@@ -1,0 +1,204 @@
+{
+  "schemaVersion": 1,
+  "kind": "read-only-release-information",
+  "generatedAt": "2026-09-24T16:32:10.177Z",
+  "app": {
+    "name": "챗북",
+    "version": "1.0.3",
+    "homepage": "https://chatbook-library-20260923.netlify.app"
+  },
+  "release": {
+    "id": "1.0.3-1.2.0-025f580740d49839",
+    "sourceDigest": "025f580740d4983943b42cb2607343d9ea6401365800b3aa0ae30e41f08b244c",
+    "sourceSha": "1d95c8d3adec50045d13b6a009e0a54a5c132208",
+    "sourceBranch": "chatbook-app-20260923",
+    "buildRunId": "36028017324",
+    "deployId": null
+  },
+  "engine": {
+    "version": "1.2.0",
+    "profile": "faithful-ko-narrative-v1",
+    "entrypoint": "/engine/learning.mjs",
+    "policy": {
+      "profile": "faithful-ko-narrative-v1",
+      "sourceLanguages": [
+        "ko",
+        "en"
+      ],
+      "targetLanguage": "ko",
+      "stages": [
+        "source-freeze",
+        "aligned-korean-basis",
+        "selective-beginner-explanation",
+        "direct-source-review",
+        "assemble-publish"
+      ],
+      "preserve": [
+        "claim",
+        "definition",
+        "example",
+        "analogy",
+        "transition",
+        "caveat"
+      ],
+      "preserveQualifiers": [
+        "negation",
+        "condition",
+        "modality",
+        "attribution",
+        "number-and-unit",
+        "code"
+      ],
+      "newFacts": "verified-and-labelled-supplement-only",
+      "sourceCorrection": "flag-not-silent-correction",
+      "writingUnit": "conceptual-chapter",
+      "analysisUnit": "bounded-source-chunk",
+      "prose": "connected-paragraphs",
+      "fixedConceptTemplate": false,
+      "additionalModelPasses": 0,
+      "fullBookRewrite": false,
+      "narrativeContextMaxBytes": 4000,
+      "minPages": null,
+      "maxPages": null,
+      "forcedExpansionRatio": null,
+      "unchangedText": "copy-without-regeneration",
+      "difficultText": "patch-or-local-rewrite",
+      "compressionAlarmRatio": 0.9,
+      "inventedImagesAsScreenshots": false,
+      "reviewIsProof": false
+    },
+    "defaults": {
+      "version": "1.2.0",
+      "profile": "faithful-ko-narrative-v1",
+      "targetSeconds": 240,
+      "maxSeconds": 360,
+      "maxSourceBytes": 16000,
+      "contextCues": 1,
+      "concurrency": 2,
+      "maxAttempts": 2,
+      "maxJobCalls": 96,
+      "requestTimeoutMs": 45000,
+      "maxInputBytes": 90000,
+      "maxOutputTokens": 6500,
+      "maxJobOutputTokens": 650000,
+      "externalCallsEnabled": false,
+      "maxCostUsd": 0,
+      "fullTimelineScanIntervalSeconds": 20,
+      "maxVisualCandidates": 240,
+      "maxFiguresPerChunk": 3,
+      "minFrameWidth": 640,
+      "maxDurationSeconds": 14400,
+      "autoPublish": false,
+      "preserveAllMeaningfulContent": true,
+      "missingVisual": "hold-if-required",
+      "termFirstUseExplanation": true,
+      "semanticReviewRequired": true,
+      "requireOwnerApproval": true,
+      "targetLanguage": "ko"
+    },
+    "exports": [
+      "DEFAULTS",
+      "EngineError",
+      "POLICY",
+      "PROFILE",
+      "SCHEMAS",
+      "VERSION",
+      "applyBeginnerPatch",
+      "approve",
+      "auditReadability",
+      "basisDraft",
+      "bytes",
+      "cancel",
+      "canonical",
+      "clone",
+      "configuration",
+      "digest",
+      "exportBook",
+      "failurePolicy",
+      "mergeCatalog",
+      "newJob",
+      "planChunks",
+      "preflight",
+      "prepareSource",
+      "publicationGate",
+      "qualityAlarms",
+      "reserveCall",
+      "setReadingPlan",
+      "submit",
+      "task",
+      "validateFigure",
+      "videoId",
+      "visualPlan",
+      "writingPrerequisite"
+    ]
+  },
+  "authoring": {
+    "current": "/engine-spec.json",
+    "readable": "/engine-spec.html",
+    "runtimeDependency": false
+  },
+  "verification": {
+    "buildTests": {
+      "command": "npm test",
+      "status": "passed",
+      "exitCode": 0,
+      "checkedAt": "2026-09-24T16:32:10.177Z",
+      "sourceDigest": "025f580740d4983943b42cb2607343d9ea6401365800b3aa0ae30e41f08b244c",
+      "nodeTests": 186,
+      "nodePassed": 186,
+      "nodeFailed": 0,
+      "nodeSkipped": 0,
+      "outputSha256": "2683732b02abec36effcec4b34ce413e868b4189653eabcd98343a83ed7ac26b",
+      "scope": "Local syntax, API contract and Node engine tests only; not live video or production end-to-end verification."
+    },
+    "productionEndToEnd": {
+      "status": "not-run-by-this-build"
+    },
+    "semanticAccuracy": {
+      "status": "not-certified-by-structural-tests"
+    },
+    "physicalGalaxy": {
+      "status": "not-tested-by-this-build"
+    },
+    "longVideoEndToEnd": {
+      "status": "not-tested-by-this-build"
+    }
+  },
+  "limitations": [
+    "공개 안내서는 소스와 검사 기록의 요약이며 실제 영상 품질이나 무오류를 보증하지 않습니다.",
+    "영상 길이·동시성 등 defaults는 설정값이며 해당 길이의 실제 영상 성공 기록이 아닙니다.",
+    "이 안내 생성기는 영상 분석·번역을 실행하지 않습니다. URL 입력만으로 실행 가능한 서버 기능 여부는 별도 API·운영 검증이 필요합니다.",
+    "제작 도구는 승인된 작업 환경에서 사용합니다. 공개 웹페이지가 제작 권한을 주지 않습니다.",
+    "YouTube 원본 프레임 확보, 원음 전체 대조, 독자의 이해도는 이 빌드 검사에 포함되지 않습니다."
+  ],
+  "maintenance": {
+    "generated": true,
+    "command": "npm run build",
+    "checkCommand": "node scripts/verify-release.mjs",
+    "runtimeDependency": false,
+    "updateRule": "Runtime policy/defaults, current authoring rules and one example are generated with fresh tests in the same build. Edit the source policy, not generated files.",
+    "rollbackRule": "Publish or roll back the complete tested bundle. The currently published spec is authoritative, not the numerically highest historical version.",
+    "sourceRepository": "https://github.com/irewon1-lgtm/Myapp/tree/chatbook-app-20260923",
+    "sourceGuide": "https://github.com/irewon1-lgtm/Myapp/blob/chatbook-app-20260923/AGENTS.md"
+  },
+  "assetSha256": {
+    "/app.js": "7610b783ea0472c38ce8ef59d43a75bc226ea5e6a807d8bd9ad63c170de4f4e0",
+    "/content/catalog.json": "23f811c10a4ddd98c15f24203d97dfd97ffa784976672753b0fffd1635016275",
+    "/core.js": "85db61fdc45aaa2c43d770c398b36cb123531ecc6f6e9c05bfadf91f9fa3127a",
+    "/engine/benchmark.json": "6c66ebe966dacd3c2e637eb607008d6212c76e90a11d0e86e504c93addaa7554",
+    "/engine/core.mjs": "5433fe8d0c49b4465bc98abd0202dd7010705665331b842a6ea768c1f2088152",
+    "/engine/defaults.json": "3119ee5b56443cc6168fa5145a4ad47bb555bb3683e5e6e5b141037e2fb68e0d",
+    "/engine/index.html": "5daa6934ef4402785a423f9bbdb9e84740e9b08b3668a4da4059a327a176219a",
+    "/engine/learning-policy.json": "4095c282a3705bf602d4beb7ec4036bda4a92cf9d4a261eada64c716b7a0ac04",
+    "/engine/learning-validation.json": "9e9364f4e12cd4ac298932265d260071bb78b6ddb4b1751c74564bfc8289f682",
+    "/engine/learning.mjs": "f459d29da595831394a74c74f4903972b49a0fba9642fb2fbd0aece75a523ecf",
+    "/engine/narrative.mjs": "622d178038ffd76891b788b12109bd9b3162cb0ac9a66b265532164e1693a959",
+    "/engine/verification.json": "422f6a74d9c3d3d7b35815348919bd917c627ab0d054562366dac42b13df5648",
+    "/engine/workbench.css": "9c1c60d10b7b7b108b0a612eca4aa71b89f466b459ce62e994120d3d9c9478a4",
+    "/engine/workbench.mjs": "1e9a34263ec2fb4a2662fc6e98028ebf7d7919db6b37ea9d4b26d0b6c4aca6ee",
+    "/exports.js": "4c380780a1bbe520b3b2270c65ae64642d1681dbee8f90f4520615ac98b2aade",
+    "/library.js": "5bf08909b9d16ea7369ce11d43f5ab93c8acb9df69e0ebc29ef9eb3acf848314",
+    "/reader.js": "2b71f6855efa43f82d147c97867d333b312c08da55ba733b9bdd2cc1313de197",
+    "/views.js": "eba5aa2936da0b3120d9d2bfeeefca0e4829d52019d9583041a2afc355763a47"
+  }
+}

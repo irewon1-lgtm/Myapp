@@ -1,0 +1,12 @@
+# Chatbook
+
+Release: 1.0.3-1.2.0-025f580740d49839
+Authoring digest: 8f188430ce8fd3caa3b6f0a14de5a858352f47dd5c01b0d3841f704b317e186c
+
+- [CURRENT authoring rules and representative prose](/engine-spec.json): Read this one response before a new book. Do not merge historical rules. Save its digest and snapshot for resume.
+- [Readable current rules](/engine-spec.html)
+- [Release and actual verification scope](/engine-info.json)
+- [Build identity](/version.json)
+- [Maintenance source](https://github.com/irewon1-lgtm/Myapp/blob/chatbook-app-20260923/AGENTS.md)
+
+If current rules cannot be read, disclose it; do not fabricate a latest version. Publication requires authorized source/deployment access. No metadata is required to read existing books.
