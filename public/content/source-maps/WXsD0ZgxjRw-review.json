@@ -1,119 +1,28 @@
 {
-  "schema": 1,
+  "schema": 2,
   "videoId": "WXsD0ZgxjRw",
   "sourceUrl": "https://youtu.be/WXsD0ZgxjRw",
-  "title": "APIs for Beginners 2023 – How to use an API",
+  "title": "APIs for Beginners 2023 - How to use an API",
   "duration": "03:07:06",
+  "captionWords": 36122,
   "bookId": "yt-api-beginners-WXsD0ZgxjRw",
-  "engineProfile": "faithful-ko-narrative-v1",
+  "bookVersion": 2,
   "engineVersion": "1.2.0",
-  "publicationKind": "expanded-beginner-study-text",
-  "coverage": [
-    {
-      "index": 1,
-      "start": "00:00:00",
-      "end": "00:04:50",
-      "section": "Welcome"
-    },
-    {
-      "index": 2,
-      "start": "00:04:50",
-      "end": "00:08:49",
-      "section": "Defining Interface"
-    },
-    {
-      "index": 3,
-      "start": "00:08:49",
-      "end": "00:13:59",
-      "section": "Defining API"
-    },
-    {
-      "index": 4,
-      "start": "00:13:59",
-      "end": "00:18:17",
-      "section": "Remote APIs"
-    },
-    {
-      "index": 5,
-      "start": "00:18:17",
-      "end": "00:23:21",
-      "section": "How the web works"
-    },
-    {
-      "index": 6,
-      "start": "00:23:21",
-      "end": "00:29:06",
-      "section": "RESTful API Constraint Scavenger Hunt"
-    },
-    {
-      "index": 7,
-      "start": "00:29:06",
-      "end": "00:45:01",
-      "section": "Exploring an API online"
-    },
-    {
-      "index": 8,
-      "start": "00:45:01",
-      "end": "00:56:20",
-      "section": "Using an API from the command line"
-    },
-    {
-      "index": 9,
-      "start": "00:56:20",
-      "end": "01:14:21",
-      "section": "You go Curl"
-    },
-    {
-      "index": 10,
-      "start": "01:14:21",
-      "end": "01:36:20",
-      "section": "Using tools to explore APIs"
-    },
-    {
-      "index": 11,
-      "start": "01:36:20",
-      "end": "01:48:34",
-      "section": "More tools for your API exploring toolbox"
-    },
-    {
-      "index": 12,
-      "start": "01:48:34",
-      "end": "02:15:30",
-      "section": "Using Helper Libraries"
-    },
-    {
-      "index": 13,
-      "start": "02:15:30",
-      "end": "02:23:30",
-      "section": "Introducing the Project"
-    },
-    {
-      "index": 14,
-      "start": "02:23:30",
-      "end": "02:37:08",
-      "section": "Serverless"
-    },
-    {
-      "index": 15,
-      "start": "02:37:08",
-      "end": "02:56:54",
-      "section": "Writing a Server Side API"
-    },
-    {
-      "index": 16,
-      "start": "02:56:54",
-      "end": "03:05:29",
-      "section": "Fetching Results on the Client from our Server"
-    },
-    {
-      "index": 17,
-      "start": "03:05:29",
-      "end": "03:07:06",
-      "section": "Wrap Up"
-    }
-  ],
-  "chapterCount": 17,
-  "questionCount": 17,
-  "declaration": "17개 공식 강의 구간에 대응해 개념·실습 흐름·코드 구조·오류·주의사항을 독립 교재로 재구성. 2023 서비스 UI는 현재와 다를 수 있으며 영상 프레임 전체 검증 완료를 주장하지 않음.",
-  "registeredAt": "2026-09-25T02:22:00+09:00"
+  "engineProfile": "faithful-ko-narrative-v1",
+  "stats": {
+    "chapters": 17,
+    "blocks": 437,
+    "paragraphs": 377,
+    "code": 29,
+    "output": 7,
+    "images": 24,
+    "body_chars": 57380,
+    "glossary_terms": 111,
+    "questions": 34
+  },
+  "visuals": "17 chapter concept screens + 4 extra hard-concept screens + official YouTube thumbnail + Restfox official screenshot + Thunder Client official screenshot",
+  "beginnerPolicy": "API라는 단어도 처음 듣는 코딩 0일차 기준",
+  "preservesExistingAnchors": true,
+  "declaration": "기존 17장/207블록/이미지0 상태를 재검토하고 전체 영어 캡션의 실습 흐름·오류 수정·도구 사용·코드 흐름을 반영한 상세판. 교재용 SVG는 영상 캡처가 아니라고 표시하고 Restfox/Thunder Client는 공식 프로젝트 스크린샷으로 구분.",
+  "registeredAt": "2026-09-25T03:30:00+09:00"
 }
