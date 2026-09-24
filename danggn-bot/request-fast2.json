@@ -1,0 +1,37 @@
+{
+  "regionSlugs": [
+    "정자동-1339",
+    "수내2동-1337",
+    "야탑3동-1349",
+    "판교동-1350",
+    "신흥2동-1307",
+    "복정동-1318",
+    "은행2동-1328"
+  ],
+  "queries": [
+    "노트북 16GB 512GB",
+    "노트북 16GB 1TB",
+    "노트북 32GB 512GB",
+    "노트북 32GB 1TB"
+  ],
+  "ramGB": [
+    16,
+    32
+  ],
+  "ssdGB": [
+    512,
+    1024
+  ],
+  "onlyOngoing": true,
+  "minPrice": 100000,
+  "maxPrice": 1500000,
+  "perQuery": 22,
+  "detailLimit": 0,
+  "outputLimit": 40,
+  "targetCities": [
+    "성남시"
+  ],
+  "postedSince": "2026-09-11T00:00:00+09:00",
+  "targetDetailLimit": 45,
+  "runToken": "seongnam-ultrafast"
+}
