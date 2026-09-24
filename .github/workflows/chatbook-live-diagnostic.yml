@@ -1,0 +1,54 @@
+name: Chatbook production read-only diagnostic
+on:
+  push:
+    branches: [chatbook-app-20260923]
+    paths: [.github/workflows/chatbook-live-diagnostic.yml]
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: |
+          python -m pip install playwright==1.55.0
+          python -m playwright install --with-deps chromium
+      - name: Capture only disposable-browser diagnostics
+        run: |
+          mkdir -p review/live-diagnostic
+          python -u - <<'PY'
+          import json,pathlib,time,urllib.request,re,hashlib,base64,urllib.parse
+          from playwright.sync_api import sync_playwright
+          root=pathlib.Path('review/live-diagnostic');base='https://chatbook-library-20260923.netlify.app'
+          report={'http':[],'console':[],'errors':[],'failedRequests':[],'responses':[]}
+          for suffix in ['/', '/live-guard.js','/live-sw.js','/__cb/channel.json','/engine-spec.json']:
+            try:
+              with urllib.request.urlopen(base+suffix,timeout=20) as r:
+                data=r.read();report['http'].append({'path':suffix,'status':r.status,'headers':dict(r.headers),'size':len(data),'head':data[:1000].decode(errors='replace')})
+                if suffix=='/': (root/'root.html').write_bytes(data)
+            except Exception as e:report['http'].append({'path':suffix,'error':str(e)})
+          with sync_playwright() as p:
+            b=p.chromium.launch(headless=True,args=['--no-sandbox']);c=b.new_context(viewport={'width':412,'height':915},service_workers='block');page=c.new_page()
+            page.on('console',lambda m:report['console'].append({'type':m.type,'text':m.text}))
+            page.on('pageerror',lambda e:report['errors'].append(str(e)))
+            page.on('requestfailed',lambda r:report['failedRequests'].append({'url':r.url,'failure':r.failure}))
+            page.on('response',lambda r:report['responses'].append({'url':r.url,'status':r.status,'headers':r.headers}))
+            try:
+              page.goto(base,wait_until='domcontentloaded',timeout=45000);page.wait_for_timeout(12000)
+              report['page']=page.evaluate('({url:location.href,base:document.baseURI,cb:typeof CB,live:window.ChatbookLive,body:document.body.innerText.slice(0,3000),scripts:Array.from(document.scripts).map(s=>({src:s.src,integrity:s.integrity}))})')
+              page.screenshot(path=str(root/'production.png'),full_page=True)
+            except Exception as e:report['failure']=str(e)
+            b.close()
+          (root/'report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2))
+          print(json.dumps(report,ensure_ascii=False,indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: chatbook-production-read-only-diagnostic
+          path: review/live-diagnostic/
+          retention-days: 2
