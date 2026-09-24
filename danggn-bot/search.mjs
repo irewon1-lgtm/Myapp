@@ -108,6 +108,7 @@ function parseSearch(html, sourceQuery) {
 
 async function getHtml(url) {
   const res = await fetch(url, {
+    signal: AbortSignal.timeout(12000),
     headers: {
       'User-Agent': UA,
       'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
