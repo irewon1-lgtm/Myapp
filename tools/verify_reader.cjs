@@ -53,6 +53,11 @@ assert(html.includes('track-dots')&&html.includes('cozy-track-rail'),'track caro
 assert(html.includes('EDITORIAL_REFERENCE_2026_V2'),'selected editorial reference UI marker missing');
 assert(html.includes('PRACTICE_PYTHON_ENGINE_V1'),'real Python practice engine marker missing');
 assert(html.includes('reader-font-range')&&html.includes('type="range"'),'reader font-size slider missing');
+assert(html.includes('ANDROID_SYSTEM_BAR_GUARD_V1')&&html.includes('native-reader'),'Android native system-bar guard missing');
+assert(html.includes('--readerTopGuard:28px')&&html.includes('--readerBottomGuard:30px'),'Android reader safe spacing contract missing');
+assert(html.includes('READER_PAGE_SCRUBBER_V1')&&html.includes('id="page-scrubber"'),'draggable reader page scrubber missing');
+assert(html.includes('function jumpToTrackSlide('),'reader page scrubber jump helper missing');
+assert(html.includes("e.target.id==='page-scrubber'"),'reader page scrubber event handling missing');
 assert(html.includes('다크 모드')&&html.includes('toggle-dark'),'reader dark-mode control missing');
 assert(html.includes('theme-switch')&&html.includes('reader-menu'),'reader two-control settings menu missing');
 assert(html.includes('highlightedPython(')&&html.includes('code-line'),'Python syntax presentation missing');

@@ -845,6 +845,55 @@ html,body{background:var(--e-bg);color:var(--e-ink);font-family:"Pretendard","No
 .reader-shell.light .chapter-references h3,
 .reader-shell.light .chapter-references li{color:#4b453e!important}
 
+/* ANDROID_SYSTEM_BAR_GUARD_V1 — keep native reader controls outside One UI system bars */
+.reader-shell.native-reader{
+  --readerTopGuard:28px;
+  --readerBottomGuard:30px;
+  padding-top:max(var(--readerTopGuard),env(safe-area-inset-top,0px));
+  padding-bottom:max(var(--readerBottomGuard),env(safe-area-inset-bottom,0px));
+}
+.reader-shell.native-reader .reader-menu{
+  top:calc(64px + max(var(--readerTopGuard),env(safe-area-inset-top,0px)));
+}
+.reader-shell.native-reader.focus .focus-exit{
+  bottom:calc(16px + max(var(--readerBottomGuard),env(safe-area-inset-bottom,0px)));
+}
+.reader-shell.native-reader.focus .focus-hud{
+  bottom:calc(18px + max(var(--readerBottomGuard),env(safe-area-inset-bottom,0px)));
+}
+
+/* READER_PAGE_SCRUBBER_V1 — drag the footer bar to jump within the current track */
+.reader-progress-slider{
+  --progressPct:0%;
+  display:block;
+  width:min(280px,100%);
+  height:24px;
+  margin:0 auto;
+  padding:0;
+  border:0;
+  background:transparent;
+  accent-color:var(--readerGold);
+  -webkit-appearance:none;
+  appearance:none;
+  touch-action:pan-x;
+}
+.reader-progress-slider::-webkit-slider-runnable-track{
+  height:5px;
+  border-radius:99px;
+  background:linear-gradient(90deg,var(--readerGold) 0,var(--readerGold) var(--progressPct),var(--readerHair) var(--progressPct),var(--readerHair) 100%);
+}
+.reader-progress-slider::-webkit-slider-thumb{
+  -webkit-appearance:none;
+  appearance:none;
+  width:18px;
+  height:18px;
+  margin-top:-6.5px;
+  border:2px solid var(--reader);
+  border-radius:50%;
+  background:var(--readerInk);
+  box-shadow:0 2px 8px #0005;
+}
+.reader-progress-slider:focus-visible{outline:2px solid var(--readerGold);outline-offset:2px}
 </style>
 </head>
 <body>
@@ -882,6 +931,7 @@ let physicalPages=1;
 let pendingTargetId=state.location;
 let pendingLast=false;
 let pendingPhysicalRatio=null;
+let pendingPhysicalPage=null;
 let pendingSavedPosition=null;
 let pageTurnActive=false;
 let trackTransitionDir=0;
@@ -1089,6 +1139,31 @@ function currentTrackSlidePosition(){
     total:trackSlideMap.total
   };
 }
+function jumpToTrackSlide(raw){
+  if(!trackSlideMap.ready||!trackSlideMap.entries.length)return;
+  const target=Math.max(1,Math.min(trackSlideMap.total,Math.round(Number(raw)||1)));
+  const zero=target-1;
+  let entry=trackSlideMap.entries.find(x=>zero>=x.start&&zero<x.start+x.count);
+  if(!entry)entry=trackSlideMap.entries[trackSlideMap.entries.length-1];
+  if(!entry)return;
+  const loc=locate(entry.id);
+  if(!loc)return;
+  const desired=Math.max(0,Math.min(Math.max(0,entry.count-1),zero-entry.start));
+  beginPageTurn();
+  current=loc;
+  selectedTrack=chapters[loc.c].track;
+  state.location=entry.id;
+  if(!state.visited.includes(entry.id))state.visited.push(entry.id);
+  persist();
+  pendingTargetId=entry.id;
+  pendingPhysicalPage=desired;
+  pendingPhysicalRatio=null;
+  pendingSavedPosition=null;
+  pendingLast=false;
+  readerMenuOpen=false;
+  route='reader';
+  render();
+}
 function coverTone(id){return 'tone'+(((Number(id)||1)-1)%4+1)}
 function bookCard(track){
   const p=progressForTrack(track.id);
@@ -1295,11 +1370,11 @@ function readerMenu(){
 }
 function reader(){
   const c=chapters[current.c],p=c.pages[current.p];
-  return '<div class="reader-shell '+(focus?'focus ':'')+(state.readerDark?'dark':'light')+'" style="--readerBody:'+state.readerFont+'px">'+
+  return '<div class="reader-shell '+(native?'native-reader ':'')+(focus?'focus ':'')+(state.readerDark?'dark':'light')+'" style="--readerBody:'+state.readerFont+'px">'+
     '<header class="reader-top"><button data-action="track-current" aria-label="목차">←</button><div class="reader-heading"><strong>읽기</strong><small>트랙 '+c.track+' · '+esc(c.title)+'</small></div><button class="reader-aa" data-action="reader-menu" aria-label="글자 설정">Aa</button><button data-action="bookmark" aria-label="북마크">'+(state.bookmarks.includes(p.id)?'★':'☆')+'</button><button class="reader-more" data-action="reader-menu" aria-label="더보기">•••</button></header>'+
     readerMenu()+
     '<div class="reader-paper-wrap"><div class="topic-header"><div class="reader-breadcrumb">트랙 '+c.track+' · 챕터 '+c.chapter+'</div><h1 class="topic-title">'+esc(p.title)+'</h1><div class="section-marker type-'+esc(p.kind)+'"><span class="kind">'+esc(kindLabel(p.kind))+'</span><span class="hint">'+esc(sectionHint(p))+'</span></div></div><div class="reader-stage"><button class="edge-zone edge-prev" data-action="prev" aria-label="이전 페이지"></button><article id="paper" class="reader-paper"><div id="flow" class="reader-flow">'+chapterFlow(c)+'</div></article><button class="edge-zone edge-next" data-action="next" aria-label="다음 페이지"></button></div></div>'+
-    '<footer class="reader-bottom editorial-reader-bottom"><div class="reader-page-info"><span id="page-pos">1 / 1</span><div class="reader-progress"><i id="page-progress" style="width:0%"></i></div></div><div class="reader-tabs"><button class="active">'+navSvg('read')+'<span>읽기</span></button><button data-action="summary">▤<span>요약</span></button><button data-action="practice">'+navSvg('practice')+'<span>실습</span></button></div></footer>'+
+    '<footer class="reader-bottom editorial-reader-bottom"><div class="reader-page-info"><span id="page-pos">1 / 1</span><input id="page-scrubber" class="reader-progress-slider" type="range" min="1" max="1" step="1" value="1" aria-label="페이지 이동"></div><div class="reader-tabs"><button class="active">'+navSvg('read')+'<span>읽기</span></button><button data-action="summary">▤<span>요약</span></button><button data-action="practice">'+navSvg('practice')+'<span>실습</span></button></div></footer>'+
     '<button class="focus-exit" data-action="focus">집중모드 종료</button><div id="focus-hud" class="focus-hud"></div>'+
     '</div>';
 }
@@ -1392,6 +1467,7 @@ function openPage(id,last,resumeExact){
   let pos=locate(id);
   if(!pos){toast('현재 교재에서 이 페이지를 찾지 못했습니다');return}
   pendingSavedPosition=null;
+  pendingPhysicalPage=null;
   if(resumeExact){
     const saved=savedReaderPosition(pos.c);
     if(saved){
@@ -1466,13 +1542,17 @@ function syncLogical(){
 }
 function updateHud(){
   const pos=document.getElementById('page-pos');
-  const bar=document.getElementById('page-progress');
+  const scrubber=document.getElementById('page-scrubber');
   const focusHud=document.getElementById('focus-hud');
   const slide=currentTrackSlidePosition();
   const label=slide.current+' / '+slide.total;
   if(pos)pos.textContent=label;
   if(focusHud)focusHud.textContent=label;
-  if(bar)bar.style.width=(100*slide.current/Math.max(slide.total,1))+'%';
+  if(scrubber){
+    scrubber.max=String(Math.max(1,slide.total));
+    scrubber.value=String(Math.max(1,slide.current));
+    scrubber.style.setProperty('--progressPct',(100*slide.current/Math.max(slide.total,1))+'%');
+  }
 }
 function layoutReader(){
   const paper=document.getElementById('paper'),flow=document.getElementById('flow');
@@ -1487,7 +1567,10 @@ function layoutReader(){
   paper.scrollLeft=0;
   if(typeof requestAnimationFrame==='function')requestAnimationFrame(()=>{
     physicalPages=Math.max(1,Math.ceil(Math.max(flow.scrollWidth,w)/w-.001));
-    if(pendingPhysicalRatio!==null){
+    if(pendingPhysicalPage!==null){
+      physicalPage=Math.max(0,Math.min(physicalPages-1,Math.round(Number(pendingPhysicalPage)||0)));
+      pendingPhysicalPage=null;
+    }else if(pendingPhysicalRatio!==null){
       physicalPage=Math.max(0,Math.min(physicalPages-1,Math.round(pendingPhysicalRatio*Math.max(physicalPages-1,0))));
       pendingPhysicalRatio=null;
     }else if(pendingSavedPosition){
@@ -1777,6 +1860,15 @@ document.addEventListener('input',e=>{
     trackSlideMap.ready=false;
     setTimeout(layoutReader,30);
   }
+  if(e.target.id==='page-scrubber'){
+    const total=Math.max(1,Number(e.target.max)||1);
+    const value=Math.max(1,Math.min(total,Math.round(Number(e.target.value)||1)));
+    const pos=document.getElementById('page-pos');if(pos)pos.textContent=value+' / '+total;
+    e.target.style.setProperty('--progressPct',(100*value/total)+'%');
+  }
+});
+document.addEventListener('change',e=>{
+  if(e.target.id==='page-scrubber')jumpToTrackSlide(e.target.value);
 });
 document.addEventListener('visibilitychange',()=>{if(document.hidden)saveReaderPosition()});
 if(typeof window.addEventListener==='function')window.addEventListener('pagehide',saveReaderPosition);
