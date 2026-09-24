@@ -1,0 +1,22 @@
+name: Jamsil Max Laptop Scan
+on:
+  push:
+    branches: [danggn-search-bot]
+    paths: ['danggn-bot/jamsil-max-trigger.txt']
+permissions:
+  contents: read
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: danggn-search-bot }
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - run: node danggn-bot/jamsil-max-now.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: jamsil-max-result
+          path: danggn-bot/jamsil-max-result.json
+          retention-days: 1
