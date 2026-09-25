@@ -1,18 +1,21 @@
 {
   "regionSlugs": [
-    "갈산동-1406",
-    "관양1동-1395",
-    "비산1동-1390",
-    "석수1동-1384",
-    "호계동-4640",
-    "평촌동-1398",
-    "안양동-4643"
+    "당정동-4459",
+    "산본2동-1635"
   ],
   "queries": [
+    "노트북",
     "노트북 16GB 512GB",
     "노트북 16GB 1TB",
     "노트북 32GB 512GB",
-    "노트북 32GB 1TB"
+    "노트북 32GB 1TB",
+    "갤럭시북",
+    "그램",
+    "ThinkPad",
+    "레노버 노트북",
+    "HP 노트북",
+    "ASUS 노트북",
+    "델 노트북"
   ],
   "ramGB": [
     16,
@@ -25,13 +28,13 @@
   "onlyOngoing": true,
   "minPrice": 100000,
   "maxPrice": 1500000,
-  "perQuery": 35,
+  "perQuery": 60,
   "detailLimit": 0,
-  "outputLimit": 80,
+  "outputLimit": 100,
   "targetCities": [
-    "안양시"
+    "군포시"
   ],
-  "postedSince": "2026-09-25T16:28:24+09:00",
-  "targetDetailLimit": 70,
-  "runToken": "manual-final-anyang-20260925-2228"
+  "postedSince": "2026-09-25T16:38:41+09:00",
+  "targetDetailLimit": 120,
+  "runToken": "auto-seq-gunpo-20260925-223841"
 }
