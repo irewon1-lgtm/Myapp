@@ -1,0 +1,72 @@
+name: Daangn Laptop Watch
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "7 * * * *"
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/daangn-laptop-watch.yml"
+      - "tools/daangn_watch/scan.py"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daangn-laptop-watch
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Playwright
+        run: |
+          python -m pip install --upgrade pip
+          pip install playwright
+          python -m playwright install --with-deps chromium
+
+      - name: Scan Daangn sequentially
+        run: python tools/daangn_watch/scan.py
+
+      - name: Show latest result
+        if: always()
+        run: |
+          echo "===== latest_scan.md ====="
+          cat tools/daangn_watch/output/latest_scan.md 2>/dev/null || true
+          echo "===== diagnostics ====="
+          cat tools/daangn_watch/output/latest_diagnostics.json 2>/dev/null || true
+
+      - name: Persist state and latest result
+        if: success()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tools/daangn_watch/state.json tools/daangn_watch/output/
+          if git diff --cached --quiet; then
+            echo "No state changes"
+          else
+            git commit -m "[skip ci] update daangn watch state"
+            git push
+          fi
+
+      - name: Upload scan artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: daangn-laptop-watch
+          path: tools/daangn_watch/output/
+          if-no-files-found: ignore
+          retention-days: 7
