@@ -435,6 +435,8 @@ async function main() {
     if (errors.length) warnings.push(city.name + ': search errors ' + errors.length + '/' + attempted);
 
     const stage1 = [];
+    const startedIso = startedAt.toISOString();
+
     for (const item of found.values()) {
       if (item.status !== 'Ongoing') continue;
       if (!belongsToCityOrUnknown(item, city.name)) continue;
@@ -443,8 +445,14 @@ async function main() {
       const key = itemKey(city.name, item);
       const previous = originalState.items?.[key];
       const unseen = !previous;
-      const isNew = unseen && isRecentByPostedAt(item, nowMs);
-      const needsPostedAtCheck = unseen && !item.postedAt;
+      const firstSeenAt = previous?.firstSeenAt ?? startedIso;
+      const pendingNewnessCheck = Boolean(previous?.pendingNewnessCheck);
+      const itemWithKnownDate = {
+        ...item,
+        postedAt: item.postedAt ?? previous?.postedAt ?? null
+      };
+      const isNew = unseen && isRecentByPostedAt(itemWithKnownDate, nowMs);
+      const needsPostedAtCheck = pendingNewnessCheck || (unseen && !itemWithKnownDate.postedAt);
       const isPriceDrop = Boolean(
         previous
         && item.price > 0
@@ -454,25 +462,38 @@ async function main() {
 
       if (isNew || isPriceDrop || needsPostedAtCheck) {
         stage1.push({
-          ...item,
+          ...itemWithKnownDate,
           changeType: isPriceDrop ? 'price_drop' : (isNew ? 'new' : 'newness_check'),
-          previousPrice: isPriceDrop ? Number(previous.lastPrice) : null
+          previousPrice: isPriceDrop ? Number(previous.lastPrice) : null,
+          firstSeenAt
         });
       }
 
-      const deferState = isNew || isPriceDrop || needsPostedAtCheck;
-      if (!deferState) {
-        nextState.items[key] = {
-          id: item.id,
-          title: item.title,
-          url: item.url,
-          lastPrice: item.price || previous?.lastPrice || null,
-          postedAt: item.postedAt ?? previous?.postedAt ?? null,
-          lastSeenAt: startedAt.toISOString(),
-          city: city.name
-        };
-      }
+      // Persist every in-city item immediately so a large one-time backlog cannot
+      // hide genuinely new listings on the next hourly run. Unknown postedAt items
+      // remain flagged as pending and are retried in newest-first order.
+      nextState.items[key] = {
+        ...previous,
+        id: item.id,
+        title: item.title,
+        url: item.url,
+        lastPrice: isPriceDrop ? previous.lastPrice : (item.price || previous?.lastPrice || null),
+        postedAt: itemWithKnownDate.postedAt,
+        firstSeenAt,
+        pendingNewnessCheck: needsPostedAtCheck,
+        lastSeenAt: startedIso,
+        city: city.name
+      };
     }
+
+    const priority = { price_drop: 0, new: 1, newness_check: 2 };
+    stage1.sort((a, b) => {
+      const p = (priority[a.changeType] ?? 9) - (priority[b.changeType] ?? 9);
+      if (p !== 0) return p;
+      const aFirst = new Date(a.firstSeenAt ?? 0).getTime();
+      const bFirst = new Date(b.firstSeenAt ?? 0).getTime();
+      return bFirst - aFirst;
+    });
 
     let detailedCount = 0;
     for (const baseItem of stage1.slice(0, DETAIL_LIMIT_PER_CITY)) {
@@ -480,12 +501,16 @@ async function main() {
       detailedCount++;
       await sleep(220);
 
+      const stateKey = itemKey(city.name, item);
       if (item.detailError) {
         warnings.push(city.name + ': detail failed ' + item.id);
         continue;
       }
       if (item.status !== 'Ongoing') continue;
-      if (!belongsToCity(item, city.name)) continue;
+      if (!belongsToCity(item, city.name)) {
+        delete nextState.items[stateKey];
+        continue;
+      }
 
       let changeType = item.changeType;
       if (changeType === 'newness_check') {
@@ -493,38 +518,44 @@ async function main() {
           warnings.push(city.name + ': postedAt unavailable after detail ' + item.id);
           continue;
         }
-        if (!isRecentByPostedAt(item, nowMs)) {
-          const baselineKey = itemKey(city.name, item);
-          nextState.items[baselineKey] = {
+
+        const firstSeenMs = new Date(item.firstSeenAt ?? startedIso).getTime();
+        const referenceMs = Number.isFinite(firstSeenMs) ? firstSeenMs : nowMs;
+        if (!isRecentByPostedAt(item, referenceMs)) {
+          const baseline = nextState.items[stateKey] ?? {};
+          nextState.items[stateKey] = {
+            ...baseline,
             id: item.id,
             title: item.title,
             url: item.url,
-            lastPrice: Number(item.price) || null,
+            lastPrice: Number(item.price) || baseline.lastPrice || null,
             postedAt: item.postedAt,
-            lastSeenAt: startedAt.toISOString(),
+            firstSeenAt: baseline.firstSeenAt ?? item.firstSeenAt ?? startedIso,
+            pendingNewnessCheck: false,
+            lastSeenAt: startedIso,
             city: city.name
           };
           continue;
         }
         changeType = 'new';
       } else if (changeType === 'new' && !isRecentByPostedAt(item, nowMs)) {
-        changeType = 'newness_check';
-        if (!item.postedAt) continue;
-        const baselineKey = itemKey(city.name, item);
-        nextState.items[baselineKey] = {
+        const baseline = nextState.items[stateKey] ?? {};
+        nextState.items[stateKey] = {
+          ...baseline,
           id: item.id,
           title: item.title,
           url: item.url,
-          lastPrice: Number(item.price) || null,
-          postedAt: item.postedAt,
-          lastSeenAt: startedAt.toISOString(),
+          lastPrice: Number(item.price) || baseline.lastPrice || null,
+          postedAt: item.postedAt ?? baseline.postedAt ?? null,
+          firstSeenAt: baseline.firstSeenAt ?? item.firstSeenAt ?? startedIso,
+          pendingNewnessCheck: false,
+          lastSeenAt: startedIso,
           city: city.name
         };
         continue;
       }
 
       const currentPrice = Number(item.price) || 0;
-      const stateKey = itemKey(city.name, item);
       const previousState = nextState.items[stateKey] ?? originalState.items?.[stateKey] ?? {};
       nextState.items[stateKey] = {
         ...previousState,
@@ -533,7 +564,9 @@ async function main() {
         url: item.url,
         lastPrice: currentPrice || previousState.lastPrice || null,
         postedAt: item.postedAt ?? previousState.postedAt ?? null,
-        lastSeenAt: startedAt.toISOString(),
+        firstSeenAt: previousState.firstSeenAt ?? item.firstSeenAt ?? startedIso,
+        pendingNewnessCheck: false,
+        lastSeenAt: startedIso,
         city: city.name
       };
 
@@ -572,7 +605,6 @@ async function main() {
         sellerName: item.sellerName ?? null,
         mannerTemperature: item.mannerTemperature ?? null
       });
-
     }
 
     cityRuns.push({
@@ -628,6 +660,9 @@ async function main() {
       stateItemCount: hardFailure
         ? Object.keys(originalState.items ?? {}).length
         : Object.keys(nextState.items ?? {}).length,
+      pendingNewnessCount: hardFailure
+        ? Object.values(originalState.items ?? {}).filter(item => item?.pendingNewnessCheck).length
+        : Object.values(nextState.items ?? {}).filter(item => item?.pendingNewnessCheck).length,
       durationMs: Date.now() - nowMs
     },
     candidates: uniqueCandidates
