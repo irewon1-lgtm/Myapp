@@ -12,6 +12,7 @@ const STATE_RETENTION_DAYS = 30;
 const MAX_STATE_ITEMS = 5000;
 const SEARCH_LIMIT = 80;
 const DETAIL_LIMIT_PER_CITY = 80;
+const UNKNOWN_NEWNESS_PROBE_LIMIT_PER_CITY = 40;
 
 const QUERIES = [
   '노트북',
@@ -549,8 +550,30 @@ async function main() {
       return bFirst - aFirst;
     });
 
+    const detailQueue = [];
+    let unknownProbeCount = 0;
+    for (const item of stage1) {
+      const isUnknownProbe = item.changeType === 'newness_check' || item.changeType === 'newness_backlog';
+      if (isUnknownProbe) {
+        if (unknownProbeCount >= UNKNOWN_NEWNESS_PROBE_LIMIT_PER_CITY) {
+          const key = itemKey(city.name, item);
+          const baseline = nextState.items[key] ?? {};
+          nextState.items[key] = {
+            ...baseline,
+            pendingNewnessCheck: false,
+            newnessProbeSkipped: true,
+            lastSeenAt: startedIso
+          };
+          continue;
+        }
+        unknownProbeCount++;
+      }
+      detailQueue.push(item);
+      if (detailQueue.length >= DETAIL_LIMIT_PER_CITY) break;
+    }
+
     let detailedCount = 0;
-    for (const baseItem of stage1.slice(0, DETAIL_LIMIT_PER_CITY)) {
+    for (const baseItem of detailQueue) {
       const item = await detailOne(baseItem);
       detailedCount++;
       await sleep(220);
@@ -744,6 +767,9 @@ async function main() {
       pendingAttemptedCount: hardFailure
         ? Object.values(originalState.items ?? {}).filter(item => item?.pendingNewnessCheck && item?.newnessDetailAttempted).length
         : Object.values(nextState.items ?? {}).filter(item => item?.pendingNewnessCheck && item?.newnessDetailAttempted).length,
+      skippedUnknownProbeCount: hardFailure
+        ? Object.values(originalState.items ?? {}).filter(item => item?.newnessProbeSkipped).length
+        : Object.values(nextState.items ?? {}).filter(item => item?.newnessProbeSkipped).length,
       durationMs: Date.now() - nowMs
     },
     candidates: uniqueCandidates
