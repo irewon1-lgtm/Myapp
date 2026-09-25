@@ -1,7 +1,10 @@
 {
   "regionSlugs": [
-    "당정동-4459",
-    "산본2동-1635"
+    "내손동-4731",
+    "포일동-4244",
+    "고천동-1644",
+    "오전동-1646",
+    "청계동-1649"
   ],
   "queries": [
     "노트북",
@@ -31,9 +34,9 @@
   "detailLimit": 0,
   "outputLimit": 80,
   "targetCities": [
-    "군포시"
+    "의왕시"
   ],
   "postedSince": "2026-09-25T16:28:24+09:00",
   "targetDetailLimit": 100,
-  "runToken": "manual-final-gunpo-20260925-2228"
+  "runToken": "manual-final-uiwang-20260925-2228"
 }
