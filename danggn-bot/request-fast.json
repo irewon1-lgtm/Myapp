@@ -1,18 +1,32 @@
 {
   "regionSlugs": [
-    "잠실동-6188"
+    "당정동-4459",
+    "산본2동-1635",
+    "갈산동-1406",
+    "관양1동-1395",
+    "비산1동-1390",
+    "석수1동-1384",
+    "호계동-4640",
+    "원문동-4433",
+    "내손동-4731",
+    "포일동-4244",
+    "고천동-1644",
+    "오전동-1646",
+    "청계동-1649"
   ],
   "queries": [
     "노트북",
+    "노트북 16GB 512GB",
+    "노트북 16GB 1TB",
+    "노트북 32GB 512GB",
+    "노트북 32GB 1TB",
     "갤럭시북",
     "그램",
     "ThinkPad",
     "레노버 노트북",
     "HP 노트북",
     "ASUS 노트북",
-    "델 노트북",
-    "삼성 노트북",
-    "맥북"
+    "델 노트북"
   ],
   "ramGB": [
     16,
@@ -25,20 +39,16 @@
   "onlyOngoing": true,
   "minPrice": 100000,
   "maxPrice": 1500000,
-  "perQuery": 120,
+  "perQuery": 80,
   "detailLimit": 0,
   "outputLimit": 100,
   "targetCities": [
-    "송파구",
-    "강남구",
-    "강동구",
-    "광진구",
-    "성동구",
-    "서초구",
-    "성남시 수정구",
-    "하남시"
+    "군포시",
+    "과천시",
+    "의왕시",
+    "안양시"
   ],
   "postedSince": "2026-09-11T00:00:00+09:00",
-  "targetDetailLimit": 220,
-  "runToken": "jamsil-max-deep-final"
+  "targetDetailLimit": 240,
+  "runToken": "gunpo-uiwang-gwacheon-anyang-deep-20260925"
 }
