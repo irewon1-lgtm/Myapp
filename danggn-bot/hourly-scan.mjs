@@ -369,6 +369,18 @@ function clone(value) {
   return JSON.parse(JSON.stringify(value));
 }
 
+function expirePendingNewness(state, nowMs) {
+  const maxAgeMs = WINDOW_HOURS * 60 * 60 * 1000;
+  for (const item of Object.values(state.items ?? {})) {
+    if (!item?.pendingNewnessCheck) continue;
+    const firstSeenMs = new Date(item.firstSeenAt ?? 0).getTime();
+    if (!Number.isFinite(firstSeenMs)) continue;
+    if (nowMs - firstSeenMs <= maxAgeMs) continue;
+    item.pendingNewnessCheck = false;
+    item.newnessUnknownExpired = true;
+  }
+}
+
 function pruneState(state, nowMs) {
   const cutoff = nowMs - STATE_RETENTION_DAYS * 24 * 60 * 60 * 1000;
   const entries = Object.entries(state.items ?? {}).filter(([, value]) => {
@@ -385,6 +397,7 @@ async function main() {
   const nowMs = startedAt.getTime();
   const originalState = await readState();
   const nextState = clone(originalState);
+  expirePendingNewness(nextState, nowMs);
 
   const candidates = [];
   const cityRuns = [];
@@ -439,20 +452,31 @@ async function main() {
 
     for (const item of found.values()) {
       if (item.status !== 'Ongoing') continue;
-      if (!belongsToCityOrUnknown(item, city.name)) continue;
       if (item.price && (item.price < 100000 || item.price > 1500000)) continue;
 
       const key = itemKey(city.name, item);
-      const previous = originalState.items?.[key];
+      const previous = nextState.items?.[key];
+
+      if (!belongsToCityOrUnknown(item, city.name)) {
+        if (previous) delete nextState.items[key];
+        continue;
+      }
+
       const unseen = !previous;
       const firstSeenAt = previous?.firstSeenAt ?? startedIso;
-      const pendingNewnessCheck = Boolean(previous?.pendingNewnessCheck);
+      const firstSeenMs = new Date(firstSeenAt).getTime();
+      const referenceMs = Number.isFinite(firstSeenMs) ? firstSeenMs : nowMs;
       const itemWithKnownDate = {
         ...item,
         postedAt: item.postedAt ?? previous?.postedAt ?? null
       };
-      const isNew = unseen && isRecentByPostedAt(itemWithKnownDate, nowMs);
-      const needsPostedAtCheck = pendingNewnessCheck || (unseen && !itemWithKnownDate.postedAt);
+
+      const pendingBefore = Boolean(previous?.pendingNewnessCheck);
+      const detailAttemptedBefore = Boolean(previous?.newnessDetailAttempted);
+      const dateResolvedWhilePending = pendingBefore && Boolean(itemWithKnownDate.postedAt);
+      const isNewNow = unseen && isRecentByPostedAt(itemWithKnownDate, nowMs);
+      const wasNewWhenFirstSeen = dateResolvedWhilePending
+        && isRecentByPostedAt(itemWithKnownDate, referenceMs);
       const isPriceDrop = Boolean(
         previous
         && item.price > 0
@@ -460,18 +484,39 @@ async function main() {
         && item.price < Number(previous.lastPrice)
       );
 
-      if (isNew || isPriceDrop || needsPostedAtCheck) {
+      let pendingNewnessCheck = pendingBefore;
+      let newnessDetailAttempted = detailAttemptedBefore;
+      let newnessUnknownExpired = Boolean(previous?.newnessUnknownExpired);
+
+      if (dateResolvedWhilePending) {
+        pendingNewnessCheck = false;
+        newnessUnknownExpired = false;
+      } else if (unseen && !itemWithKnownDate.postedAt) {
+        pendingNewnessCheck = true;
+        newnessDetailAttempted = false;
+        newnessUnknownExpired = false;
+      }
+
+      let changeType = null;
+      if (isPriceDrop) {
+        changeType = 'price_drop';
+      } else if (isNewNow || wasNewWhenFirstSeen) {
+        changeType = 'new';
+      } else if (unseen && !itemWithKnownDate.postedAt) {
+        changeType = 'newness_check';
+      } else if (pendingNewnessCheck && !itemWithKnownDate.postedAt && !newnessDetailAttempted) {
+        changeType = 'newness_backlog';
+      }
+
+      if (changeType) {
         stage1.push({
           ...itemWithKnownDate,
-          changeType: isPriceDrop ? 'price_drop' : (isNew ? 'new' : 'newness_check'),
+          changeType,
           previousPrice: isPriceDrop ? Number(previous.lastPrice) : null,
           firstSeenAt
         });
       }
 
-      // Persist every in-city item immediately so a large one-time backlog cannot
-      // hide genuinely new listings on the next hourly run. Unknown postedAt items
-      // remain flagged as pending and are retried in newest-first order.
       nextState.items[key] = {
         ...previous,
         id: item.id,
@@ -480,16 +525,25 @@ async function main() {
         lastPrice: isPriceDrop ? previous.lastPrice : (item.price || previous?.lastPrice || null),
         postedAt: itemWithKnownDate.postedAt,
         firstSeenAt,
-        pendingNewnessCheck: needsPostedAtCheck,
+        pendingNewnessCheck,
+        newnessDetailAttempted,
+        newnessUnknownExpired,
         lastSeenAt: startedIso,
         city: city.name
       };
     }
 
-    const priority = { price_drop: 0, new: 1, newness_check: 2 };
+    // Fresh/known events always outrank legacy metadata backlog.
+    // boostedAt is used only as a queue-priority hint; it never proves newness.
+    const priority = { price_drop: 0, new: 1, newness_check: 2, newness_backlog: 3 };
     stage1.sort((a, b) => {
       const p = (priority[a.changeType] ?? 9) - (priority[b.changeType] ?? 9);
       if (p !== 0) return p;
+      const aBoost = new Date(a.boostedAt ?? 0).getTime();
+      const bBoost = new Date(b.boostedAt ?? 0).getTime();
+      if (Number.isFinite(aBoost) && Number.isFinite(bBoost) && aBoost !== bBoost) {
+        return bBoost - aBoost;
+      }
       const aFirst = new Date(a.firstSeenAt ?? 0).getTime();
       const bFirst = new Date(b.firstSeenAt ?? 0).getTime();
       return bFirst - aFirst;
@@ -502,6 +556,8 @@ async function main() {
       await sleep(220);
 
       const stateKey = itemKey(city.name, item);
+      const stateBeforeDetail = nextState.items[stateKey] ?? {};
+
       if (item.detailError) {
         warnings.push(city.name + ': detail failed ' + item.id);
         continue;
@@ -513,32 +569,49 @@ async function main() {
       }
 
       let changeType = item.changeType;
-      if (changeType === 'newness_check') {
+      const isNewnessProbe = changeType === 'newness_check' || changeType === 'newness_backlog';
+
+      if (isNewnessProbe) {
+        const firstSeenMs = new Date(item.firstSeenAt ?? stateBeforeDetail.firstSeenAt ?? startedIso).getTime();
+        const referenceMs = Number.isFinite(firstSeenMs) ? firstSeenMs : nowMs;
+
         if (!item.postedAt) {
+          nextState.items[stateKey] = {
+            ...stateBeforeDetail,
+            id: item.id,
+            title: item.title,
+            url: item.url,
+            lastPrice: Number(item.price) || stateBeforeDetail.lastPrice || null,
+            firstSeenAt: stateBeforeDetail.firstSeenAt ?? item.firstSeenAt ?? startedIso,
+            pendingNewnessCheck: true,
+            newnessDetailAttempted: true,
+            lastSeenAt: startedIso,
+            city: city.name
+          };
           warnings.push(city.name + ': postedAt unavailable after detail ' + item.id);
           continue;
         }
 
-        const firstSeenMs = new Date(item.firstSeenAt ?? startedIso).getTime();
-        const referenceMs = Number.isFinite(firstSeenMs) ? firstSeenMs : nowMs;
-        if (!isRecentByPostedAt(item, referenceMs)) {
-          const baseline = nextState.items[stateKey] ?? {};
-          nextState.items[stateKey] = {
-            ...baseline,
-            id: item.id,
-            title: item.title,
-            url: item.url,
-            lastPrice: Number(item.price) || baseline.lastPrice || null,
-            postedAt: item.postedAt,
-            firstSeenAt: baseline.firstSeenAt ?? item.firstSeenAt ?? startedIso,
-            pendingNewnessCheck: false,
-            lastSeenAt: startedIso,
-            city: city.name
-          };
-          continue;
-        }
+        const recentAtFirstSeen = isRecentByPostedAt(item, referenceMs);
+        nextState.items[stateKey] = {
+          ...stateBeforeDetail,
+          id: item.id,
+          title: item.title,
+          url: item.url,
+          lastPrice: Number(item.price) || stateBeforeDetail.lastPrice || null,
+          postedAt: item.postedAt,
+          firstSeenAt: stateBeforeDetail.firstSeenAt ?? item.firstSeenAt ?? startedIso,
+          pendingNewnessCheck: false,
+          newnessDetailAttempted: true,
+          newnessUnknownExpired: false,
+          lastSeenAt: startedIso,
+          city: city.name
+        };
+
+        if (!recentAtFirstSeen) continue;
         changeType = 'new';
-      } else if (changeType === 'new' && !isRecentByPostedAt(item, nowMs)) {
+      } else if (changeType === 'new' && !isRecentByPostedAt(item, item.firstSeenAt ? new Date(item.firstSeenAt).getTime() : nowMs)) {
+        // Search metadata said "new", but detail is authoritative when available.
         const baseline = nextState.items[stateKey] ?? {};
         nextState.items[stateKey] = {
           ...baseline,
@@ -547,8 +620,8 @@ async function main() {
           url: item.url,
           lastPrice: Number(item.price) || baseline.lastPrice || null,
           postedAt: item.postedAt ?? baseline.postedAt ?? null,
-          firstSeenAt: baseline.firstSeenAt ?? item.firstSeenAt ?? startedIso,
           pendingNewnessCheck: false,
+          newnessDetailAttempted: true,
           lastSeenAt: startedIso,
           city: city.name
         };
@@ -556,7 +629,7 @@ async function main() {
       }
 
       const currentPrice = Number(item.price) || 0;
-      const previousState = nextState.items[stateKey] ?? originalState.items?.[stateKey] ?? {};
+      const previousState = nextState.items[stateKey] ?? {};
       nextState.items[stateKey] = {
         ...previousState,
         id: item.id,
@@ -566,6 +639,8 @@ async function main() {
         postedAt: item.postedAt ?? previousState.postedAt ?? null,
         firstSeenAt: previousState.firstSeenAt ?? item.firstSeenAt ?? startedIso,
         pendingNewnessCheck: false,
+        newnessDetailAttempted: true,
+        newnessUnknownExpired: false,
         lastSeenAt: startedIso,
         city: city.name
       };
@@ -663,6 +738,12 @@ async function main() {
       pendingNewnessCount: hardFailure
         ? Object.values(originalState.items ?? {}).filter(item => item?.pendingNewnessCheck).length
         : Object.values(nextState.items ?? {}).filter(item => item?.pendingNewnessCheck).length,
+      pendingUnattemptedCount: hardFailure
+        ? Object.values(originalState.items ?? {}).filter(item => item?.pendingNewnessCheck && !item?.newnessDetailAttempted).length
+        : Object.values(nextState.items ?? {}).filter(item => item?.pendingNewnessCheck && !item?.newnessDetailAttempted).length,
+      pendingAttemptedCount: hardFailure
+        ? Object.values(originalState.items ?? {}).filter(item => item?.pendingNewnessCheck && item?.newnessDetailAttempted).length
+        : Object.values(nextState.items ?? {}).filter(item => item?.pendingNewnessCheck && item?.newnessDetailAttempted).length,
       durationMs: Date.now() - nowMs
     },
     candidates: uniqueCandidates
