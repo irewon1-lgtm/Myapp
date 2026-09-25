@@ -1,0 +1,74 @@
+name: Danggn Hourly Sequential Scan
+
+on:
+  schedule:
+    - cron: '16 * * * *'
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/danggn-hourly-scan.yml'
+      - 'ops/danggn-hourly-trigger.txt'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: danggn-hourly-sequential-scan
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+
+    steps:
+      - name: Checkout Danggn branch
+        uses: actions/checkout@v4
+        with:
+          ref: danggn-search-bot
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run sequential scanner
+        id: scanner
+        continue-on-error: true
+        run: node danggn-bot/hourly-scan.mjs
+
+      - name: Persist latest state and result
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "danggn-hourly-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add danggn-bot/hourly-state.json danggn-bot/hourly-result.json
+
+          if git diff --cached --quiet; then
+            echo "No state/result changes"
+            exit 0
+          fi
+
+          git commit -m "chore: hourly danggn snapshot [skip ci]"
+
+          for attempt in 1 2 3; do
+            if git pull --rebase origin danggn-search-bot && git push origin HEAD:danggn-search-bot; then
+              exit 0
+            fi
+            echo "Push retry \${attempt}/3"
+            sleep \$((attempt * 2))
+          done
+
+          echo "Failed to persist hourly Danggn state/result"
+          exit 1
+
+      - name: Mark failed scan
+        if: steps.scanner.outcome != 'success'
+        run: |
+          echo "Danggn scanner reported a failure"
+          exit 1
