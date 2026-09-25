@@ -31,7 +31,7 @@
   "onlyOngoing": true,
   "minPrice": 100000,
   "maxPrice": 1500000,
-  "perQuery": 30,
+  "perQuery": 40,
   "detailLimit": 0,
   "outputLimit": 60,
   "targetCities": [
@@ -40,7 +40,7 @@
     "의왕시",
     "안양시"
   ],
-  "postedSince": "2026-09-11T00:00:00+09:00",
-  "targetDetailLimit": 80,
-  "runToken": "fourcity-fast-crosscheck-20260925"
+  "postedSince": "2026-09-11T17:28:23+09:00",
+  "targetDetailLimit": 120,
+  "runToken": "automation-20260925-172823"
 }
