@@ -8,45 +8,35 @@ on:
     branches: [main]
     paths:
       - ".github/workflows/daangn-laptop-watch.yml"
-      - "tools/daangn_watch/scan.py"
+      - "tools/daangn_watch/scan.mjs"
 
 permissions:
   contents: write
 
 concurrency:
   group: daangn-laptop-watch
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   scan:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 8
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 1
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Set up Node
+        uses: actions/setup-node@v4
         with:
-          python-version: "3.12"
-
-      - name: Install Playwright
-        run: |
-          python -m pip install --upgrade pip
-          pip install playwright
-          python -m playwright install --with-deps chromium
+          node-version: "24"
 
       - name: Scan Daangn sequentially
-        run: python tools/daangn_watch/scan.py
+        run: node tools/daangn_watch/scan.mjs
 
       - name: Show latest result
         if: always()
         run: |
-          echo "===== latest_scan.md ====="
           cat tools/daangn_watch/output/latest_scan.md 2>/dev/null || true
-          echo "===== diagnostics ====="
           cat tools/daangn_watch/output/latest_diagnostics.json 2>/dev/null || true
 
       - name: Persist state and latest result
