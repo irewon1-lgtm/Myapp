@@ -287,10 +287,15 @@ function placeText(item) {
   return ((item.regionPath ?? '') + ' ' + (item.location ?? '')).trim();
 }
 
-function definitelyOtherTargetCity(item, currentCity) {
+function belongsToCityOrUnknown(item, currentCity) {
   const place = placeText(item);
-  if (!place) return false;
-  return CITIES.some(city => city.name !== currentCity && place.includes(city.name));
+  if (!place) return true;
+  return place.includes(currentCity);
+}
+
+function belongsToCity(item, currentCity) {
+  const place = placeText(item);
+  return Boolean(place && place.includes(currentCity));
 }
 
 function isRecentByPostedAt(item, nowMs) {
@@ -432,7 +437,7 @@ async function main() {
     const stage1 = [];
     for (const item of found.values()) {
       if (item.status !== 'Ongoing') continue;
-      if (definitelyOtherTargetCity(item, city.name)) continue;
+      if (!belongsToCityOrUnknown(item, city.name)) continue;
       if (item.price && (item.price < 100000 || item.price > 1500000)) continue;
 
       const key = itemKey(city.name, item);
@@ -480,7 +485,7 @@ async function main() {
         continue;
       }
       if (item.status !== 'Ongoing') continue;
-      if (definitelyOtherTargetCity(item, city.name)) continue;
+      if (!belongsToCity(item, city.name)) continue;
 
       let changeType = item.changeType;
       if (changeType === 'newness_check') {
