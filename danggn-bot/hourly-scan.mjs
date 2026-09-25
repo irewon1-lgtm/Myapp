@@ -223,32 +223,38 @@ function isRecentByPostedAt(item, nowMs) {
   return postedMs >= nowMs - WINDOW_HOURS * 60 * 60 * 1000 && postedMs <= nowMs + 5 * 60 * 1000;
 }
 
-function exactSpecs(item) {
+function analyzeSpecs(item) {
   const text = ((item.title ?? '') + '\n' + (item.description ?? '')).replace(/\s+/g, ' ');
 
-  const ram =
+  const labeledRam =
     text.match(/(?:RAM|메모리|램)\s*[:\-]?\s*(16|32)\s*(?:GB|G)\b/i)?.[1]
     ?? text.match(/\b(16|32)\s*(?:GB|G)\s*(?:RAM|메모리|램)\b/i)?.[1]
     ?? null;
+  const genericRam = text.match(/\b(16|32)\s*GB\b/i)?.[1] ?? null;
+  const ram = labeledRam ?? genericRam;
 
   const storageForward = text.match(/(?:SSD|NVMe|M\.?2)[^.;,\n]{0,32}?(512\s*(?:GB|G)|1\s*TB|1024\s*(?:GB|G))/i);
   const storageReverse = text.match(/(512\s*(?:GB|G)|1\s*TB|1024\s*(?:GB|G))[^.;,\n]{0,32}?(?:SSD|NVMe|M\.?2)/i);
-  const storageRaw = storageForward?.[1] ?? storageReverse?.[1] ?? null;
+  const labeledStorage = storageForward?.[1] ?? storageReverse?.[1] ?? null;
+  const genericStorage = text.match(/\b(512\s*GB|1\s*TB|1024\s*GB)\b/i)?.[1] ?? null;
+  const storageRaw = labeledStorage ?? genericStorage;
 
   const mixedBad =
     /(?:SSD|NVMe|M\.?2)[^.;,\n]{0,24}?256\s*(?:GB|G)[^.;,\n]{0,48}?(?:HDD|하드)[^.;,\n]{0,24}?(?:1\s*TB|1024\s*(?:GB|G))/i.test(text)
     || /(?:HDD|하드)[^.;,\n]{0,24}?(?:1\s*TB|1024\s*(?:GB|G))[^.;,\n]{0,48}?(?:SSD|NVMe|M\.?2)[^.;,\n]{0,24}?256\s*(?:GB|G)/i.test(text);
 
-  if (!ram || !storageRaw || mixedBad) {
-    return { ok: false, ramGB: ram ? Number(ram) : null, storageGB: null, mixedBad };
-  }
+  const storageGB = storageRaw
+    ? (/1\s*TB|1024/i.test(storageRaw) ? 1024 : 512)
+    : null;
 
-  const storageGB = /1\s*TB|1024/i.test(storageRaw) ? 1024 : 512;
   return {
-    ok: [16, 32].includes(Number(ram)) && [512, 1024].includes(storageGB),
-    ramGB: Number(ram),
+    ok: Boolean(ram && storageGB && !mixedBad),
+    ramGB: ram ? Number(ram) : null,
     storageGB,
-    mixedBad: false
+    mixedBad,
+    ramTypeConfirmed: Boolean(labeledRam),
+    storageTypeConfirmed: Boolean(labeledStorage),
+    confidence: labeledRam && labeledStorage ? 'explicit' : 'needs_verification'
   };
 }
 
@@ -385,7 +391,7 @@ async function main() {
       if (item.status !== 'Ongoing') continue;
       if (definitelyOtherTargetCity(item, city.name)) continue;
 
-      const specs = exactSpecs(item);
+      const specs = analyzeSpecs(item);
       if (!specs.ok) continue;
 
       const text = (item.title ?? '') + '\n' + (item.description ?? '');
@@ -408,6 +414,9 @@ async function main() {
         cpuHint: extractCpu(text),
         ramGB: specs.ramGB,
         storageGB: specs.storageGB,
+        specConfidence: specs.confidence,
+        ramTypeConfirmed: specs.ramTypeConfirmed,
+        storageTypeConfirmed: specs.storageTypeConfirmed,
         postedAt: item.postedAt ?? null,
         boostedAt: item.boostedAt ?? null,
         status: item.status,
