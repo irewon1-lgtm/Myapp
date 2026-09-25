@@ -1,0 +1,17 @@
+name: Inspect Danggn Geo
+on:
+  push:
+    branches: [danggn-search-bot]
+    paths: ['danggn-bot/inspect-geo-trigger.txt']
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: danggn-search-bot }
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - run: node danggn-bot/inspect-geo.mjs
