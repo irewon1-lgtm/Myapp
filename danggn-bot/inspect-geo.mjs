@@ -1,15 +1,12 @@
-const urls=[
-'https://www.daangn.com/kr/buy-sell/?search=%EB%85%B8%ED%8A%B8%EB%B6%81&in=%EC%9E%A0%EC%8B%A4%EB%8F%99-6188',
-'https://www.daangn.com/kr/buy-sell/?search=%EB%85%B8%ED%8A%B8%EB%B6%81&in=%EC%8B%A0%EC%B2%9C%EB%8F%99-400'
-];
-for(const url of urls){
- const r=await fetch(url,{headers:{'User-Agent':'Mozilla/5.0','Accept-Language':'ko-KR,ko;q=0.9'}});
+const center={lat:37.5183859,lng:127.1107552};
+const regions=['잠실동-6188','풍납1동-405','방이동-6185','가락1동-420','대치1동-389','삼성1동-387','역삼동-6035'];
+function pick(h,k){const m=h.match(new RegExp('"'+k+'"\\s*":\\s*(\\{[^{}]+\\})'));if(!m)return null;try{return JSON.parse(m[1])}catch{return null}}
+function hav(a,b){const R=6371,toRad=x=>x*Math.PI/180;const dlat=toRad(b.lat-a.lat),dlon=toRad(b.lng-a.lng);const s=Math.sin(dlat/2)**2+Math.cos(toRad(a.lat))*Math.cos(toRad(b.lat))*Math.sin(dlon/2)**2;return 2*R*Math.asin(Math.sqrt(s))}
+for(const slug of regions){
+ const u='https://www.daangn.com/kr/buy-sell/?search=%EB%85%B8%ED%8A%B8%EB%B6%81&in='+encodeURIComponent(slug);
+ const r=await fetch(u,{headers:{'User-Agent':'Mozilla/5.0','Accept-Language':'ko-KR,ko;q=0.9'}});
  const h=await r.text();
- console.log('URL',url,'STATUS',r.status,'LEN',h.length);
- for(const pat of ['latitude','longitude','\"lat\"','\"lng\"','coordinates','centerLat','centerLng']){
-   const i=h.indexOf(pat);
-   if(i>=0) console.log('FOUND',pat,h.slice(Math.max(0,i-180),i+360).replace(/\s+/g,' '));
- }
- const regionMatches=[...h.matchAll(/"region"\s*:\s*\{[^{}]{0,600}\}/g)].slice(0,3).map(m=>m[0]);
- console.log('REGION_SNIPPETS',JSON.stringify(regionMatches));
+ const c=pick(h,'regionCenterCoordinate'),b=pick(h,'regionBounds');
+ console.log('RADIUS_TEST',JSON.stringify({slug,status:r.status,center:c,bounds:b,km:c?Number(hav(center,c).toFixed(3)):null}));
+ await new Promise(x=>setTimeout(x,400));
 }
