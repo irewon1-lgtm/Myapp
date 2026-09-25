@@ -28,7 +28,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: danggn-search-bot
-          fetch-depth: 0
+          fetch-depth: 1
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -57,11 +57,13 @@ jobs:
           git commit -m "chore: hourly danggn snapshot [skip ci]"
 
           for attempt in 1 2 3; do
-            if git pull --rebase origin danggn-search-bot && git push origin HEAD:danggn-search-bot; then
+            if git push origin HEAD:danggn-search-bot; then
               exit 0
             fi
-            echo "Push retry \${attempt}/3"
-            sleep \$((attempt * 2))
+            git fetch origin danggn-search-bot --depth=20
+            git rebase origin/danggn-search-bot
+            echo "Push retry ${attempt}/3"
+            sleep $((attempt * 2))
           done
 
           echo "Failed to persist hourly Danggn state/result"
