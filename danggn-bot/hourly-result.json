@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-25T19:29:47.461Z",
+  "generatedAt": "2026-09-25T20:31:45.275Z",
   "expectedScheduleMinute": 16,
   "scanWindowHours": 6,
   "searchOrder": [
@@ -39,10 +39,10 @@
         "attempted": 8,
         "succeeded": 8,
         "errors": 0,
-        "uniqueListings": 328,
-        "changedCandidates": 65,
-        "detailedCandidates": 41,
-        "durationMs": 50611
+        "uniqueListings": 330,
+        "changedCandidates": 45,
+        "detailedCandidates": 40,
+        "durationMs": 60444
       },
       {
         "city": "의왕시",
@@ -56,10 +56,10 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 436,
-        "changedCandidates": 67,
+        "uniqueListings": 440,
+        "changedCandidates": 46,
         "detailedCandidates": 40,
-        "durationMs": 70961
+        "durationMs": 83039
       },
       {
         "city": "안양시",
@@ -75,10 +75,10 @@
         "attempted": 28,
         "succeeded": 28,
         "errors": 0,
-        "uniqueListings": 392,
-        "changedCandidates": 53,
-        "detailedCandidates": 40,
-        "durationMs": 86822
+        "uniqueListings": 401,
+        "changedCandidates": 38,
+        "detailedCandidates": 38,
+        "durationMs": 100413
       },
       {
         "city": "과천시",
@@ -88,19 +88,19 @@
         "attempted": 4,
         "succeeded": 4,
         "errors": 0,
-        "uniqueListings": 293,
-        "changedCandidates": 47,
-        "detailedCandidates": 40,
-        "durationMs": 37553
+        "uniqueListings": 295,
+        "changedCandidates": 39,
+        "detailedCandidates": 39,
+        "durationMs": 42650
       }
     ],
     "finalCandidateCount": 0,
-    "stateItemCount": 1395,
+    "stateItemCount": 1408,
     "pendingNewnessCount": 1,
     "pendingUnattemptedCount": 1,
     "pendingAttemptedCount": 0,
-    "skippedUnknownProbeCount": 196,
-    "durationMs": 245979
+    "skippedUnknownProbeCount": 207,
+    "durationMs": 286581
   },
   "candidates": []
 }
