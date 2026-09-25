@@ -1,12 +1,19 @@
 {
   "regionSlugs": [
-    "원문동-4433"
+    "잠실동-6188"
   ],
   "queries": [
+    "노트북",
     "노트북 16GB 512GB",
     "노트북 16GB 1TB",
     "노트북 32GB 512GB",
-    "노트북 32GB 1TB"
+    "노트북 32GB 1TB",
+    "갤럭시북",
+    "그램",
+    "레노버 노트북",
+    "HP 노트북",
+    "ASUS 노트북",
+    "델 노트북"
   ],
   "ramGB": [
     16,
@@ -19,13 +26,20 @@
   "onlyOngoing": true,
   "minPrice": 100000,
   "maxPrice": 1500000,
-  "perQuery": 40,
+  "perQuery": 80,
   "detailLimit": 0,
-  "outputLimit": 80,
+  "outputLimit": 100,
   "targetCities": [
-    "과천시"
+    "송파구",
+    "강남구",
+    "강동구",
+    "광진구",
+    "성동구",
+    "서초구",
+    "성남시 수정구",
+    "하남시"
   ],
   "postedSince": "2026-09-25T16:28:24+09:00",
-  "targetDetailLimit": 60,
-  "runToken": "manual-final-gwacheon-20260925-2228"
+  "targetDetailLimit": 120,
+  "runToken": "manual-final-jamsil-20260925-2228"
 }
