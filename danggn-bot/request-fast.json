@@ -1,18 +1,16 @@
 {
   "regionSlugs": [
-    "잠실동-6188"
+    "당정동-4459",
+    "관양1동-1395",
+    "원문동-4433",
+    "내손동-4731",
+    "포일동-4244"
   ],
   "queries": [
-    "노트북",
-    "갤럭시북",
-    "그램",
-    "ThinkPad",
-    "레노버 노트북",
-    "HP 노트북",
-    "ASUS 노트북",
-    "델 노트북",
-    "삼성 노트북",
-    "맥북"
+    "노트북 16GB 512GB",
+    "노트북 16GB 1TB",
+    "노트북 32GB 512GB",
+    "노트북 32GB 1TB"
   ],
   "ramGB": [
     16,
@@ -25,20 +23,16 @@
   "onlyOngoing": true,
   "minPrice": 100000,
   "maxPrice": 1500000,
-  "perQuery": 120,
+  "perQuery": 35,
   "detailLimit": 0,
-  "outputLimit": 100,
+  "outputLimit": 80,
   "targetCities": [
-    "송파구",
-    "강남구",
-    "강동구",
-    "광진구",
-    "성동구",
-    "서초구",
-    "성남시 수정구",
-    "하남시"
+    "군포시",
+    "과천시",
+    "의왕시",
+    "안양시"
   ],
   "postedSince": "2026-09-11T00:00:00+09:00",
-  "targetDetailLimit": 220,
-  "runToken": "rerun-15pct-jamsil-1790341479172"
+  "targetDetailLimit": 80,
+  "runToken": "rerun-15pct-fourcity-quick-1790341833797"
 }
