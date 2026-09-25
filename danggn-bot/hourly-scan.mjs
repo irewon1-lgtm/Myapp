@@ -21,10 +21,10 @@ const QUERIES = [
 ];
 
 const CITIES = [
-  { name: '군포시', regions: ['당정동-4459', '산본2동-1635'] },
-  { name: '의왕시', regions: ['내손동-4731', '포일동-4244', '고천동-1644', '오전동-1646', '청계동-1649'] },
-  { name: '안양시', regions: ['갈산동-1406', '관양1동-1395', '비산1동-1390', '석수1동-1384', '호계동-4640', '평촌동-1398', '안양동-4643'] },
-  { name: '과천시', regions: ['원문동-4433'] }
+  { name: '군포시', regionNames: ['당정동', '산본2동'] },
+  { name: '의왕시', regionNames: ['내손동', '포일동', '고천동', '오전동', '청계동'] },
+  { name: '안양시', regionNames: ['갈산동', '관양1동', '비산1동', '석수1동', '호계동', '평촌동', '안양동'] },
+  { name: '과천시', regionNames: ['원문동'] }
 ];
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
@@ -77,6 +77,28 @@ function priceNum(value) {
   return Number.isFinite(n) ? n : 0;
 }
 
+function normalizeTimestamp(value) {
+  if (value == null || value === '') return null;
+  if (typeof value === 'number') {
+    const ms = value < 1e12 ? value * 1000 : value;
+    const d = new Date(ms);
+    return Number.isFinite(d.getTime()) ? d.toISOString() : null;
+  }
+  const text = String(value).trim();
+  if (!text) return null;
+  if (/^\d{10,13}$/.test(text)) return normalizeTimestamp(Number(text));
+  const d = new Date(text);
+  return Number.isFinite(d.getTime()) ? d.toISOString() : null;
+}
+
+function firstTimestamp(raw, keys) {
+  for (const key of keys) {
+    const normalized = normalizeTimestamp(raw?.[key]);
+    if (normalized) return normalized;
+  }
+  return null;
+}
+
 function normalizeArticle(raw, sourceQuery, sourceRegion) {
   const id = articleId(raw.href || raw.id) || 'unknown';
   const url = raw.href
@@ -91,8 +113,8 @@ function normalizeArticle(raw, sourceQuery, sourceRegion) {
     imageUrl: raw.thumbnail ?? undefined,
     location: raw.locationName ?? raw.region?.name,
     regionPath: [raw.region?.name1, raw.region?.name2, raw.region?.name3].filter(Boolean).join(' ') || undefined,
-    postedAt: raw.createdAt,
-    boostedAt: raw.boostedAt,
+    postedAt: firstTimestamp(raw, ['createdAt', 'created_at', 'publishedAt', 'published_at', 'dateCreated', 'datePublished']),
+    boostedAt: firstTimestamp(raw, ['boostedAt', 'boosted_at', 'bumpedAt', 'bumped_at']),
     chatCount: raw.chatCount ?? 0,
     favoriteCount: raw.favoriteCount ?? 0,
     status: raw.status ?? 'Ongoing',
@@ -156,12 +178,67 @@ async function getHtml(url, attempts = 2) {
   throw lastError;
 }
 
-async function searchOne(query, regionSlug) {
+function normalizeRegionResponse(data, city) {
+  const rows = Array.isArray(data?.locations) ? data.locations : [];
+  const all = rows
+    .filter(r => r && Number(r.depth) === 3)
+    .filter(r => r.name1 === '경기도')
+    .filter(r => typeof r.name2 === 'string' && (r.name2 === city.name || r.name2.startsWith(city.name + ' ')))
+    .filter(r => /^\d{1,8}$/.test(String(r.id)))
+    .map(r => ({
+      id: String(r.id),
+      name: String(r.name3 || r.name || '').trim(),
+      slug: String(r.name3 || r.name || '').trim() + '-' + String(r.id)
+    }))
+    .filter(r => r.name);
+
+  const byName = new Map(all.map(r => [r.name, r]));
+  const selected = city.regionNames.map(name => byName.get(name)).filter(Boolean);
+  if (selected.length) return selected;
+
+  // If a neighborhood was renamed, fall back to a small deterministic subset
+  // instead of silently returning zero listings for the entire city.
+  return all.slice(0, Math.min(3, all.length));
+}
+
+async function resolveCityRegions(city) {
+  const url = new URL(BASE + '/kr/api/v1/regions/keyword');
+  url.searchParams.set('keyword', '경기도 ' + city.name);
+  const text = await getHtml(url);
+  const data = JSON.parse(text);
+  const regions = normalizeRegionResponse(data, city);
+  if (!regions.length) throw new Error('No Daangn regions resolved for ' + city.name);
+  return regions;
+}
+
+function parseRouteSearch(data, query, region) {
+  if (data?.region?.id != null && String(data.region.id) !== String(region.id)) {
+    throw new Error('Region mismatch: requested ' + region.id + ', got ' + data.region.id);
+  }
+  const rows = data?.allPage?.fleamarketArticles;
+  if (!Array.isArray(rows)) return [];
+  return rows.map(item => normalizeArticle(item, query, region.slug)).slice(0, SEARCH_LIMIT);
+}
+
+async function searchOne(query, region) {
+  // Prefer Daangn's route-data response. It currently contains createdAt/boostedAt,
+  // while the public HTML may fall back to JSON-LD that omits postedAt.
+  try {
+    const routeUrl = new URL(BASE + '/kr/buy-sell/all/');
+    routeUrl.searchParams.set('search', query);
+    routeUrl.searchParams.set('in', region.slug);
+    routeUrl.searchParams.set('_data', 'routes/kr.buy-sell._index');
+    const text = await getHtml(routeUrl);
+    const data = JSON.parse(text);
+    const rows = parseRouteSearch(data, query, region);
+    if (rows.length) return rows;
+  } catch {}
+
   const url = new URL(SEARCH);
   url.searchParams.set('search', query);
-  url.searchParams.set('in', regionSlug);
+  url.searchParams.set('in', region.slug);
   const html = await getHtml(url);
-  return parseSearch(html, query, regionSlug).slice(0, SEARCH_LIMIT);
+  return parseSearch(html, query, region.slug).slice(0, SEARCH_LIMIT);
 }
 
 async function detailOne(item) {
@@ -183,8 +260,8 @@ async function detailOne(item) {
         regionPath: [product.region?.name1, product.region?.name2, product.region?.name3].filter(Boolean).join(' ') || item.regionPath,
         status: product.status ?? item.status,
         price: priceNum(product.price ?? item.price),
-        postedAt: product.createdAt ?? item.postedAt,
-        boostedAt: product.boostedAt ?? item.boostedAt
+        postedAt: firstTimestamp(product, ['createdAt', 'created_at', 'publishedAt', 'published_at', 'dateCreated', 'datePublished']) ?? item.postedAt,
+        boostedAt: firstTimestamp(product, ['boostedAt', 'boosted_at', 'bumpedAt', 'bumped_at']) ?? item.boostedAt
       };
     }
 
@@ -316,11 +393,18 @@ async function main() {
     let succeeded = 0;
     const errors = [];
 
-    for (const regionSlug of city.regions) {
+    let resolvedRegions = [];
+    try {
+      resolvedRegions = await resolveCityRegions(city);
+    } catch (error) {
+      errors.push({ regionSlug: 'region-resolution', query: '-', error: String(error) });
+    }
+
+    for (const region of resolvedRegions) {
       for (const query of QUERIES) {
         attempted++;
         try {
-          const items = await searchOne(query, regionSlug);
+          const items = await searchOne(query, region);
           succeeded++;
           for (const item of items) {
             const key = item.id !== 'unknown' ? item.id : item.url;
@@ -330,10 +414,12 @@ async function main() {
               const prev = found.get(key);
               prev.sourceQuery = Array.from(new Set([].concat(prev.sourceQuery ?? [], item.sourceQuery ?? [])));
               prev.sourceRegion = Array.from(new Set([].concat(prev.sourceRegion ?? [], item.sourceRegion ?? [])));
+              if (!prev.postedAt && item.postedAt) prev.postedAt = item.postedAt;
+              if (!prev.boostedAt && item.boostedAt) prev.boostedAt = item.boostedAt;
             }
           }
         } catch (error) {
-          errors.push({ regionSlug, query, error: String(error) });
+          errors.push({ regionSlug: region.slug, query, error: String(error) });
         }
         await sleep(140);
       }
@@ -351,7 +437,9 @@ async function main() {
 
       const key = itemKey(city.name, item);
       const previous = originalState.items?.[key];
-      const isNew = !previous && isRecentByPostedAt(item, nowMs);
+      const unseen = !previous;
+      const isNew = unseen && isRecentByPostedAt(item, nowMs);
+      const needsPostedAtCheck = unseen && !item.postedAt;
       const isPriceDrop = Boolean(
         previous
         && item.price > 0
@@ -359,23 +447,26 @@ async function main() {
         && item.price < Number(previous.lastPrice)
       );
 
-      if (isNew || isPriceDrop) {
+      if (isNew || isPriceDrop || needsPostedAtCheck) {
         stage1.push({
           ...item,
-          changeType: isNew ? 'new' : 'price_drop',
+          changeType: isPriceDrop ? 'price_drop' : (isNew ? 'new' : 'newness_check'),
           previousPrice: isPriceDrop ? Number(previous.lastPrice) : null
         });
       }
 
-      nextState.items[key] = {
-        id: item.id,
-        title: item.title,
-        url: item.url,
-        lastPrice: item.price || previous?.lastPrice || null,
-        postedAt: item.postedAt ?? previous?.postedAt ?? null,
-        lastSeenAt: startedAt.toISOString(),
-        city: city.name
-      };
+      const deferState = isNew || isPriceDrop || needsPostedAtCheck;
+      if (!deferState) {
+        nextState.items[key] = {
+          id: item.id,
+          title: item.title,
+          url: item.url,
+          lastPrice: item.price || previous?.lastPrice || null,
+          postedAt: item.postedAt ?? previous?.postedAt ?? null,
+          lastSeenAt: startedAt.toISOString(),
+          city: city.name
+        };
+      }
     }
 
     let detailedCount = 0;
@@ -391,16 +482,65 @@ async function main() {
       if (item.status !== 'Ongoing') continue;
       if (definitelyOtherTargetCity(item, city.name)) continue;
 
+      let changeType = item.changeType;
+      if (changeType === 'newness_check') {
+        if (!item.postedAt) {
+          warnings.push(city.name + ': postedAt unavailable after detail ' + item.id);
+          continue;
+        }
+        if (!isRecentByPostedAt(item, nowMs)) {
+          const baselineKey = itemKey(city.name, item);
+          nextState.items[baselineKey] = {
+            id: item.id,
+            title: item.title,
+            url: item.url,
+            lastPrice: Number(item.price) || null,
+            postedAt: item.postedAt,
+            lastSeenAt: startedAt.toISOString(),
+            city: city.name
+          };
+          continue;
+        }
+        changeType = 'new';
+      } else if (changeType === 'new' && !isRecentByPostedAt(item, nowMs)) {
+        changeType = 'newness_check';
+        if (!item.postedAt) continue;
+        const baselineKey = itemKey(city.name, item);
+        nextState.items[baselineKey] = {
+          id: item.id,
+          title: item.title,
+          url: item.url,
+          lastPrice: Number(item.price) || null,
+          postedAt: item.postedAt,
+          lastSeenAt: startedAt.toISOString(),
+          city: city.name
+        };
+        continue;
+      }
+
+      const currentPrice = Number(item.price) || 0;
+      const stateKey = itemKey(city.name, item);
+      const previousState = nextState.items[stateKey] ?? originalState.items?.[stateKey] ?? {};
+      nextState.items[stateKey] = {
+        ...previousState,
+        id: item.id,
+        title: item.title,
+        url: item.url,
+        lastPrice: currentPrice || previousState.lastPrice || null,
+        postedAt: item.postedAt ?? previousState.postedAt ?? null,
+        lastSeenAt: startedAt.toISOString(),
+        city: city.name
+      };
+
       const specs = analyzeSpecs(item);
       if (!specs.ok) continue;
 
       const text = (item.title ?? '') + '\n' + (item.description ?? '');
-      const currentPrice = Number(item.price) || 0;
-      const previousPrice = item.changeType === 'price_drop' ? Number(item.previousPrice) || null : null;
+      const previousPrice = changeType === 'price_drop' ? Number(item.previousPrice) || null : null;
 
       candidates.push({
         id: item.id,
-        changeType: item.changeType,
+        changeType,
         previousPrice,
         price: currentPrice,
         priceDropPercent: previousPrice && currentPrice
@@ -428,22 +568,11 @@ async function main() {
         mannerTemperature: item.mannerTemperature ?? null
       });
 
-      const key = itemKey(city.name, item);
-      const previous = nextState.items[key] ?? {};
-      nextState.items[key] = {
-        ...previous,
-        id: item.id,
-        title: item.title,
-        url: item.url,
-        lastPrice: currentPrice || previous.lastPrice || null,
-        postedAt: item.postedAt ?? previous.postedAt ?? null,
-        lastSeenAt: startedAt.toISOString(),
-        city: city.name
-      };
     }
 
     cityRuns.push({
       city: city.name,
+      regions: resolvedRegions.map(region => region.slug),
       attempted,
       succeeded,
       errors: errors.length,
