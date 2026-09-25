@@ -31,16 +31,16 @@
   "onlyOngoing": true,
   "minPrice": 100000,
   "maxPrice": 1500000,
-  "perQuery": 40,
+  "perQuery": 35,
   "detailLimit": 0,
-  "outputLimit": 60,
+  "outputLimit": 80,
   "targetCities": [
     "군포시",
     "과천시",
     "의왕시",
     "안양시"
   ],
-  "postedSince": "2026-09-11T17:28:23+09:00",
-  "targetDetailLimit": 120,
-  "runToken": "automation-20260925-172823"
+  "postedSince": "2026-09-11T00:00:00+09:00",
+  "targetDetailLimit": 100,
+  "runToken": "manual-alert-fourcity-20260925-1718"
 }
