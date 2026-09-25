@@ -1,16 +1,20 @@
 {
   "regionSlugs": [
     "당정동-4459",
-    "관양1동-1395",
-    "원문동-4433",
-    "내손동-4731",
-    "포일동-4244"
+    "산본2동-1635"
   ],
   "queries": [
+    "노트북",
     "노트북 16GB 512GB",
     "노트북 16GB 1TB",
     "노트북 32GB 512GB",
-    "노트북 32GB 1TB"
+    "노트북 32GB 1TB",
+    "갤럭시북",
+    "그램",
+    "레노버 노트북",
+    "HP 노트북",
+    "ASUS 노트북",
+    "델 노트북"
   ],
   "ramGB": [
     16,
@@ -23,16 +27,13 @@
   "onlyOngoing": true,
   "minPrice": 100000,
   "maxPrice": 1500000,
-  "perQuery": 35,
+  "perQuery": 45,
   "detailLimit": 0,
   "outputLimit": 80,
   "targetCities": [
-    "군포시",
-    "과천시",
-    "의왕시",
-    "안양시"
+    "군포시"
   ],
-  "postedSince": "2026-09-11T00:00:00+09:00",
-  "targetDetailLimit": 80,
-  "runToken": "rerun-15pct-fourcity-quick-1790341833797"
+  "postedSince": "2026-09-25T16:28:24+09:00",
+  "targetDetailLimit": 100,
+  "runToken": "manual-final-gunpo-20260925-2228"
 }
