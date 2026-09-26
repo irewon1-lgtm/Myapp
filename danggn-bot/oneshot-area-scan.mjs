@@ -5,8 +5,9 @@ const SEARCH = BASE + '/kr/buy-sell/';
 const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36';
 const WINDOW_HOURS = 48;
 const SEARCH_LIMIT = 80;
-const DETAIL_LIMIT_PER_REGION = 10;
-const QUERIES = ['노트북', '그램', '갤럭시북', 'ThinkPad'];
+const FAST_MODE = process.env.FAST_MODE === '1';
+const DETAIL_LIMIT_PER_REGION = FAST_MODE ? 2 : 10;
+const QUERIES = FAST_MODE ? ['노트북'] : ['노트북', '그램', '갤럭시북', 'ThinkPad'];
 
 const TARGETS = {
   seongnam: { name: '성남시', province: '경기도' },
