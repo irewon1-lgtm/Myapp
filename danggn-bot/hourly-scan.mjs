@@ -7,7 +7,7 @@ const BASE = 'https://www.daangn.com';
 const SEARCH = BASE + '/kr/buy-sell/';
 const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36';
 
-const WINDOW_HOURS = 48;
+const WINDOW_HOURS = 6;
 const STATE_RETENTION_DAYS = 30;
 const MAX_STATE_ITEMS = 5000;
 const SEARCH_LIMIT = 80;
@@ -22,12 +22,10 @@ const QUERIES = [
 ];
 
 const CITIES = [
-  { name: '성남시', province: '경기도', allRegions: true },
-  { name: '광진구', province: '서울특별시', allRegions: true },
-  { name: '송파구', province: '서울특별시', allRegions: true },
-  { name: '강남구', province: '서울특별시', allRegions: true },
-  { name: '서초구', province: '서울특별시', allRegions: true },
-  { name: '강동구', province: '서울특별시', allRegions: true }
+  { name: '군포시', regionNames: ['당정동', '산본2동'] },
+  { name: '의왕시', regionNames: ['내손동', '포일동', '고천동', '오전동', '청계동'] },
+  { name: '안양시', regionNames: ['갈산동', '관양1동', '비산1동', '석수1동', '호계동', '평촌동', '안양동'] },
+  { name: '과천시', regionNames: ['원문동'] }
 ];
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
@@ -185,7 +183,7 @@ function normalizeRegionResponse(data, city) {
   const rows = Array.isArray(data?.locations) ? data.locations : [];
   const all = rows
     .filter(r => r && Number(r.depth) === 3)
-    .filter(r => r.name1 === city.province)
+    .filter(r => r.name1 === '경기도')
     .filter(r => typeof r.name2 === 'string' && (r.name2 === city.name || r.name2.startsWith(city.name + ' ')))
     .filter(r => /^\d{1,8}$/.test(String(r.id)))
     .map(r => ({
@@ -195,18 +193,18 @@ function normalizeRegionResponse(data, city) {
     }))
     .filter(r => r.name);
 
-  if (city.allRegions) return all;
-
   const byName = new Map(all.map(r => [r.name, r]));
-  const selected = (city.regionNames ?? []).map(name => byName.get(name)).filter(Boolean);
+  const selected = city.regionNames.map(name => byName.get(name)).filter(Boolean);
   if (selected.length) return selected;
 
+  // If a neighborhood was renamed, fall back to a small deterministic subset
+  // instead of silently returning zero listings for the entire city.
   return all.slice(0, Math.min(3, all.length));
 }
 
 async function resolveCityRegions(city) {
   const url = new URL(BASE + '/kr/api/v1/regions/keyword');
-  url.searchParams.set('keyword', city.province + ' ' + city.name);
+  url.searchParams.set('keyword', '경기도 ' + city.name);
   const text = await getHtml(url);
   const data = JSON.parse(text);
   const regions = normalizeRegionResponse(data, city);
