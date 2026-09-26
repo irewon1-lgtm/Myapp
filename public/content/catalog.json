@@ -1,8 +1,8 @@
 {
   "schema": 1,
-  "version": "2026-09-25.17-api-beginners-detailed-v2",
-  "updatedAt": "2026-09-25T03:30:00+09:00",
-  "notice": "API 3시간 7분 교재를 전체 영어 캡션 대조·코딩 0일차 해설·교재용 화면 24개를 포함한 상세판 v2로 교체했습니다. 기존 책·장·기존 블록 ID는 보존됩니다.",
+  "version": "2026-09-26.18-api-zero-day-v3",
+  "updatedAt": "2026-09-26T21:45:00+09:00",
+  "notice": "API 3시간 7분 교재를 v3 코딩 0일차 확장판으로 갱신했습니다. 기존 강의 내용·장·식별자는 보존하고, 각 장의 쉬운 선행 설명·코드 사람말 풀이·강사 비유 장면 재현을 본문 바로 옆에 추가했습니다.",
   "books": [
     {
       "id": "yt-python-1h-8KCuHHeC_M0",
@@ -17145,23 +17145,23 @@
     },
     {
       "id": "yt-api-beginners-WXsD0ZgxjRw",
-      "title": "API 완전 초보 교재 — 3시간 7분 강의 상세판",
-      "subtitle": "API라는 단어를 오늘 처음 듣는 사람도 따라가는 HTTP·REST·cURL·Twilio·SDK·Serverless·Fetch 완전 해설",
+      "title": "API 완전 초보 교재 — 3시간 7분 강의 · 코딩 0일차 확장판",
+      "subtitle": "API라는 말도 처음 듣는 사람을 위해 장면·비유·전문용어·코드를 사람 말부터 설명하는 HTTP·REST·cURL·Twilio·SDK·Serverless·Fetch 교재",
       "author": "Craig Dennis / freeCodeCamp.org",
-      "edition": "챗북 엔진 1.2 · 전체 영어 캡션 대조 · 초보자 상세 해설 + 교재용 화면 강화판",
+      "edition": "챗북 엔진 1.2 · 코딩 0일차 설명·장면 재현 강화판 v3",
       "category": "코딩·API·Backend",
       "cover": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22900%22%20height%3D%221200%22%20viewBox%3D%220%200%20900%201200%22%3E%0A%3Crect%20width%3D%22900%22%20height%3D%221200%22%20fill%3D%22%23edf2ea%22/%3E%0A%3Crect%20x%3D%2255%22%20y%3D%2255%22%20width%3D%22790%22%20height%3D%221090%22%20rx%3D%2244%22%20fill%3D%22%23fff%22%20stroke%3D%22%2361705d%22%20stroke-width%3D%225%22/%3E%0A%3Ctext%20x%3D%22110%22%20y%3D%22170%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2234%22%20font-weight%3D%22800%22%20fill%3D%22%2361705d%22%3EAPI%20%C2%B7%20ABSOLUTE%20BEGINNER%3C/text%3E%0A%3Ctext%20x%3D%22110%22%20y%3D%22300%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2266%22%20font-weight%3D%22900%22%20fill%3D%22%23202520%22%3EAPI%20%EC%99%84%EC%A0%84%20%EC%B4%88%EB%B3%B4%3C/text%3E%0A%3Ctext%20x%3D%22110%22%20y%3D%22380%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2258%22%20font-weight%3D%22900%22%20fill%3D%22%23202520%22%3E3%EC%8B%9C%EA%B0%84%20%EA%B0%95%EC%9D%98%20%EA%B5%90%EC%9E%AC%3C/text%3E%0A%3Ctext%20x%3D%22110%22%20y%3D%22455%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2227%22%20font-weight%3D%22600%22%20fill%3D%22%23485047%22%3EHTTP%20%C2%B7%20REST%20%C2%B7%20cURL%20%C2%B7%20SDK%20%C2%B7%20Serverless%20%C2%B7%20Fetch%3C/text%3E%0A%3Crect%20x%3D%22110%22%20y%3D%22560%22%20width%3D%22680%22%20height%3D%22170%22%20rx%3D%2224%22%20fill%3D%22%23eef3eb%22%20stroke%3D%22%236c7c66%22%20stroke-width%3D%223%22/%3E%0A%3Ctext%20x%3D%22145%22%20y%3D%22615%22%20font-family%3D%22monospace%22%20font-size%3D%2227%22%20font-weight%3D%22700%22%20fill%3D%22%23263126%22%3Eclient%20%E2%86%92%20request%20%E2%86%92%20API%20%E2%86%92%20response%3C/text%3E%0A%3Ctext%20x%3D%22145%22%20y%3D%22665%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2223%22%20fill%3D%22%23465046%22%3E%EC%98%81%EC%83%81%20%EA%B3%B5%EC%8B%9D%20%EA%B5%AC%EA%B0%84%2017/17%20%EB%8C%80%EC%9D%91%3C/text%3E%0A%3Ctext%20x%3D%22145%22%20y%3D%22705%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2223%22%20fill%3D%22%23465046%22%3E%EC%BD%94%EB%94%A9%200%EC%9D%BC%EC%B0%A8%20%EC%84%B8%EB%B6%80%20%ED%95%B4%EC%84%A4%20%2B%20%EC%BD%94%EB%93%9C%20%EC%9D%BD%EA%B8%B0%3C/text%3E%0A%3Cline%20x1%3D%22110%22%20y1%3D%22920%22%20x2%3D%22790%22%20y2%3D%22920%22%20stroke%3D%22%23b8b8b1%22%20stroke-width%3D%223%22/%3E%0A%3Ctext%20x%3D%22110%22%20y%3D%22995%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2224%22%20fill%3D%22%234c514b%22%3ESource%3A%20freeCodeCamp%20%C2%B7%20Craig%20Dennis%3C/text%3E%0A%3Ctext%20x%3D%22110%22%20y%3D%221040%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2224%22%20fill%3D%22%234c514b%22%3E3%3A07%3A06%20%C2%B7%20APIs%20for%20Beginners%202023%3C/text%3E%0A%3C/svg%3E",
       "portrait": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22900%22%20height%3D%221200%22%20viewBox%3D%220%200%20900%201200%22%3E%0A%3Crect%20width%3D%22900%22%20height%3D%221200%22%20fill%3D%22%23edf2ea%22/%3E%0A%3Crect%20x%3D%2255%22%20y%3D%2255%22%20width%3D%22790%22%20height%3D%221090%22%20rx%3D%2244%22%20fill%3D%22%23fff%22%20stroke%3D%22%2361705d%22%20stroke-width%3D%225%22/%3E%0A%3Ctext%20x%3D%22110%22%20y%3D%22170%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2234%22%20font-weight%3D%22800%22%20fill%3D%22%2361705d%22%3EAPI%20%C2%B7%20ABSOLUTE%20BEGINNER%3C/text%3E%0A%3Ctext%20x%3D%22110%22%20y%3D%22300%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2266%22%20font-weight%3D%22900%22%20fill%3D%22%23202520%22%3EAPI%20%EC%99%84%EC%A0%84%20%EC%B4%88%EB%B3%B4%3C/text%3E%0A%3Ctext%20x%3D%22110%22%20y%3D%22380%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2258%22%20font-weight%3D%22900%22%20fill%3D%22%23202520%22%3E3%EC%8B%9C%EA%B0%84%20%EA%B0%95%EC%9D%98%20%EA%B5%90%EC%9E%AC%3C/text%3E%0A%3Ctext%20x%3D%22110%22%20y%3D%22455%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2227%22%20font-weight%3D%22600%22%20fill%3D%22%23485047%22%3EHTTP%20%C2%B7%20REST%20%C2%B7%20cURL%20%C2%B7%20SDK%20%C2%B7%20Serverless%20%C2%B7%20Fetch%3C/text%3E%0A%3Crect%20x%3D%22110%22%20y%3D%22560%22%20width%3D%22680%22%20height%3D%22170%22%20rx%3D%2224%22%20fill%3D%22%23eef3eb%22%20stroke%3D%22%236c7c66%22%20stroke-width%3D%223%22/%3E%0A%3Ctext%20x%3D%22145%22%20y%3D%22615%22%20font-family%3D%22monospace%22%20font-size%3D%2227%22%20font-weight%3D%22700%22%20fill%3D%22%23263126%22%3Eclient%20%E2%86%92%20request%20%E2%86%92%20API%20%E2%86%92%20response%3C/text%3E%0A%3Ctext%20x%3D%22145%22%20y%3D%22665%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2223%22%20fill%3D%22%23465046%22%3E%EC%98%81%EC%83%81%20%EA%B3%B5%EC%8B%9D%20%EA%B5%AC%EA%B0%84%2017/17%20%EB%8C%80%EC%9D%91%3C/text%3E%0A%3Ctext%20x%3D%22145%22%20y%3D%22705%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2223%22%20fill%3D%22%23465046%22%3E%EC%BD%94%EB%94%A9%200%EC%9D%BC%EC%B0%A8%20%EC%84%B8%EB%B6%80%20%ED%95%B4%EC%84%A4%20%2B%20%EC%BD%94%EB%93%9C%20%EC%9D%BD%EA%B8%B0%3C/text%3E%0A%3Cline%20x1%3D%22110%22%20y1%3D%22920%22%20x2%3D%22790%22%20y2%3D%22920%22%20stroke%3D%22%23b8b8b1%22%20stroke-width%3D%223%22/%3E%0A%3Ctext%20x%3D%22110%22%20y%3D%22995%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2224%22%20fill%3D%22%234c514b%22%3ESource%3A%20freeCodeCamp%20%C2%B7%20Craig%20Dennis%3C/text%3E%0A%3Ctext%20x%3D%22110%22%20y%3D%221040%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2224%22%20fill%3D%22%234c514b%22%3E3%3A07%3A06%20%C2%B7%20APIs%20for%20Beginners%202023%3C/text%3E%0A%3C/svg%3E",
       "published": "2026-09-25",
-      "version": 2,
+      "version": 3,
       "imported": false,
       "generated": true,
       "sourceType": "youtube",
       "sourceUrl": "https://youtu.be/WXsD0ZgxjRw",
       "sourceDuration": "3:07:06",
       "quote": "API는 모든 내부를 직접 만드는 기술이 아니라, 다른 기능의 계약을 읽고 안전하게 연결하는 기술이다.",
-      "description": "freeCodeCamp의 3시간 7분 API 입문 강의를 전체 영어 캡션과 공식 강의 노트에 맞춰 다시 대조하고, API를 처음 듣는 독자가 이해할 수 있도록 모든 핵심 용어·기호·요청/응답 흐름·실습 오류·코드 실행 순서를 풀어 쓴 상세판입니다. 각 장에는 교재용 재현 화면을 배치하고, Restfox/Thunder Client는 공식 프로젝트 스크린샷을 추가했습니다.",
-      "sourceNote": "영상의 17개 공식 구간뿐 아니라 전체 영어 캡션의 실제 설명·예시·실습 오류·전환을 대조해 학습 내용이 압축되지 않도록 확장했습니다. 교재용 SVG는 이해를 위한 재현 화면이며 영상 캡처가 아닙니다. Restfox/Thunder Client 이미지는 각 공식 프로젝트 스크린샷이며 영상 프레임이 아닙니다.",
+      "description": "3시간 7분 영어 API 강의의 기존 내용과 식별자를 보존하면서, 전문용어가 나오기 전에 사람 말로 큰 그림을 잡고 강사의 비유·장면을 교재용 재현 화면으로 바로 보여 주도록 확장한 초보 교재입니다.",
+      "sourceNote": "기존 17개 공식 구간과 저장된 영어 캡션 기반 상세 내용을 유지했습니다. v3는 각 장 앞에 코딩 0일차용 연결 설명을 추가하고, 강사가 사용한 핵심 비유·장면을 해당 문단 바로 옆 교재용 재현 화면으로 보강했습니다. 재현 화면은 영상 캡처가 아니라고 명시합니다.",
       "coverage": [
         {
           "index": 1,
@@ -17384,6 +17384,41 @@
               "caption": "API 강의 전체 지도 · 교재용 재현 화면(영상 캡처 아님)"
             },
             {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c1-zero3-intro",
+              "type": "p",
+              "text": "【전문용어 보기 전, 먼저 사람 말로】 이 장에서 강사가 말하려는 큰 그림을 일상적인 말부터 잡고 들어갑니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c1-zero3-bridge-1",
+              "type": "p",
+              "text": "API라는 영어 세 글자를 먼저 외울 필요는 없습니다. 지금은 “내 프로그램이 다른 프로그램의 기능이나 데이터를 빌려 쓰는 정해진 통로”라고만 잡으세요. 내 앱이 지도를 직접 만들지 않고 지도 서비스에 주소를 보내 결과를 받는다면, 그 부탁이 오가는 통로가 API입니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c1-zero3-bridge-2",
+              "type": "p",
+              "text": "식당으로 바꿔 생각하면 쉽습니다. 손님은 주방으로 들어가 냄비를 직접 만지지 않습니다. 메뉴를 보고 주문하면 직원이 주방에 전달하고 음식이 돌아옵니다. 손님은 주방의 내부 구조를 몰라도 됩니다. API도 내부를 직접 만지지 않고 정해진 주문 방법으로 기능을 요청합니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c1-zero3-bridge-3",
+              "type": "p",
+              "text": "이 강의의 목표는 API 정의 한 문장을 암기하는 것이 아닙니다. 어디에 요청을 보내는지, 무엇을 함께 보내는지, 답이 성공했는지 실패했는지 읽는 법을 익히는 것입니다. 뒤에서 계속 반복되는 기본 흐름은 요청(request) → 처리 → 응답(response)입니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c1-zero3-bridge-4",
+              "type": "p",
+              "text": "request는 부탁, response는 돌아온 답, client는 부탁하는 쪽, server는 부탁을 처리하는 쪽입니다. 이 네 단어만 먼저 잡으면 HTTP와 REST가 나와도 길을 잃지 않습니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c1-zero3-bridge-5",
+              "type": "p",
+              "text": "마지막 프로젝트에서는 문자로 받은 사진을 웹페이지에 보여 줍니다. 지금은 코드보다 “외부 문자 서비스에서 데이터를 받고 → 내 서버가 보기 좋은 모양으로 바꾸고 → 브라우저가 받아 화면에 그린다”는 세 단계만 기억하세요."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c1-zero3-checkpoint",
+              "type": "p",
+              "text": "【여기까지만 이해해도 다음으로 갈 수 있습니다】 용어 철자를 외우는 것보다 “누가 요청하고, 누가 처리하고, 무엇이 돌아오는가”를 자기 말로 설명할 수 있으면 충분합니다."
+            },
+            {
               "id": "yt-api-beginners-WXsD0ZgxjRw-c1-official-youtube-thumb",
               "type": "image",
               "src": "https://i.ytimg.com/vi/WXsD0ZgxjRw/hqdefault.jpg",
@@ -17492,6 +17527,17 @@
               ],
               "_origin": "source-learning",
               "id": "yt-api-beginners-WXsD0ZgxjRw-c1-deep-01"
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c1-zero3-scene-restaurant-intro",
+              "type": "p",
+              "text": "【강사의 장면·비유를 눈으로 보기】 내부 주방을 몰라도 정해진 주문 창구로 부탁할 수 있습니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c1-zero3-scene-restaurant",
+              "type": "image",
+              "src": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221200%22%20height%3D%22675%22%20viewBox%3D%220%200%201200%20675%22%3E%3Crect%20width%3D%221200%22%20height%3D%22675%22%20fill%3D%22%23f8f4ea%22%2F%3E%3Crect%20width%3D%221200%22%20height%3D%2214%22%20fill%3D%22%2366735f%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2278%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2235%22%20font-weight%3D%22800%22%20fill%3D%22%23222820%22%3EAPI%EB%A5%BC%20%EC%8B%9D%EB%8B%B9%20%EC%A3%BC%EB%AC%B8%EC%9C%BC%EB%A1%9C%20%EB%A8%BC%EC%A0%80%20%EB%B3%B4%EA%B8%B0%3C%2Ftext%3E%3Ctext%20x%3D%2260%22%20y%3D%22118%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2221%22%20fill%3D%22%23596055%22%3E%EB%82%B4%EB%B6%80%20%EC%A3%BC%EB%B0%A9%EC%9D%84%20%EB%AA%B0%EB%9D%BC%EB%8F%84%20%EC%A0%95%ED%95%B4%EC%A7%84%20%EC%A3%BC%EB%AC%B8%20%EC%B0%BD%EA%B5%AC%EB%A1%9C%20%EB%B6%80%ED%83%81%ED%95%A0%20%EC%88%98%20%EC%9E%88%EC%8A%B5%EB%8B%88%EB%8B%A4.%3C%2Ftext%3E%3Crect%20x%3D%2260%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%2284%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3E%EC%86%90%EB%8B%98%20%2F%20%EC%95%B1%3C%2Ftext%3E%3Ctext%20x%3D%2284%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EC%9B%90%ED%95%98%EB%8A%94%20%EA%B2%83%EC%9D%84%20%EC%A0%95%ED%95%A8%3C%2Ftext%3E%3Ctext%20x%3D%2284%22%20y%3D%22311%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EC%A3%BC%EB%B0%A9%20%EB%82%B4%EB%B6%80%EB%8A%94%20%EB%AA%A8%EB%A6%84%3C%2Ftext%3E%3Crect%20x%3D%22428%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22452%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3E%EC%A3%BC%EB%AC%B8%20%EC%B0%BD%EA%B5%AC%20%2F%20API%3C%2Ftext%3E%3Ctext%20x%3D%22452%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EC%A0%95%ED%95%B4%EC%A7%84%20%EB%B0%A9%EC%8B%9D%EC%9C%BC%EB%A1%9C%20%EC%9A%94%EC%B2%AD%3C%2Ftext%3E%3Ctext%20x%3D%22452%22%20y%3D%22311%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EC%A3%BC%EB%AC%B8%EC%9D%84%20%EC%A0%84%EB%8B%AC%3C%2Ftext%3E%3Crect%20x%3D%22796%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22820%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3E%EC%A3%BC%EB%B0%A9%20%2F%20%EB%8B%A4%EB%A5%B8%20%EC%84%9C%EB%B9%84%EC%8A%A4%3C%2Ftext%3E%3Ctext%20x%3D%22820%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EC%8B%A4%EC%A0%9C%20%EC%9E%91%EC%97%85%20%EC%88%98%ED%96%89%3C%2Ftext%3E%3Ctext%20x%3D%22820%22%20y%3D%22311%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EA%B2%B0%EA%B3%BC%EB%A5%BC%20%EB%8F%8C%EB%A0%A4%EC%A4%8C%3C%2Ftext%3E%3Ctext%20x%3D%2260%22%20y%3D%22630%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23747a70%22%3E%EA%B5%90%EC%9E%AC%EC%9A%A9%20%EC%9E%A5%EB%A9%B4%20%EC%9E%AC%ED%98%84%20%C2%B7%20%EC%98%81%EC%83%81%20%EC%BA%A1%EC%B2%98%20%EC%95%84%EB%8B%98%3C%2Ftext%3E%3C%2Fsvg%3E",
+              "caption": "API를 식당 주문으로 먼저 보기 · 교재용 장면 재현(영상 캡처 아님)"
             },
             {
               "type": "p",
@@ -17690,6 +17736,41 @@
               "caption": "Interface는 '조작 가능한 손잡이' · 교재용 재현 화면(영상 캡처 아님)"
             },
             {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c2-zero3-intro",
+              "type": "p",
+              "text": "【전문용어 보기 전, 먼저 사람 말로】 이 장에서 강사가 말하려는 큰 그림을 일상적인 말부터 잡고 들어갑니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c2-zero3-bridge-1",
+              "type": "p",
+              "text": "interface(인터페이스)는 “사람이나 프로그램이 무언가를 조작하는 겉면과 사용 규칙”입니다. 텔레비전 안의 회로를 몰라도 리모컨의 전원 버튼을 누를 수 있습니다. 그 버튼과 사용법이 인터페이스입니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c2-zero3-bridge-2",
+              "type": "p",
+              "text": "강사는 라디오를 보여 주며 설명합니다. 사용자는 볼륨 다이얼을 돌리면 소리가 커진다는 것만 알면 됩니다. 다이얼 뒤에서 전기 신호가 어떻게 바뀌는지는 기기 내부가 책임집니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c2-zero3-bridge-3",
+              "type": "p",
+              "text": "화면의 버튼처럼 사람이 직접 만지는 것은 UI(User Interface)이고, 코드가 다른 코드의 기능을 쓰는 규칙은 API(Application Programming Interface)입니다. 둘 다 “사용하는 쪽과 내부 구현 사이의 경계”라는 공통점이 있습니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c2-zero3-bridge-4",
+              "type": "p",
+              "text": "개발자가 버튼 하나를 쓸 때 픽셀, 눌림 효과, 접근성 처리를 전부 처음부터 만들지 않는 것도 같은 이유입니다. 이미 만들어진 버튼 API에 “클릭되면 이 함수를 실행해”라고 자신의 코드를 연결합니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c2-zero3-bridge-5",
+              "type": "p",
+              "text": "API를 볼 때 처음부터 내부 구현을 파헤치지 말고 “무엇을 넣을 수 있고, 무엇을 돌려받을 수 있는가?”부터 확인하세요."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c2-zero3-checkpoint",
+              "type": "p",
+              "text": "【여기까지만 이해해도 다음으로 갈 수 있습니다】 용어 철자를 외우는 것보다 “누가 요청하고, 누가 처리하고, 무엇이 돌아오는가”를 자기 말로 설명할 수 있으면 충분합니다."
+            },
+            {
               "type": "p",
               "text": "API를 이해하기 전에 강사는 먼저 Interface라는 단어를 떼어 놓고 설명합니다. 라디오를 생각하면 사용자는 내부 회로를 보지 않습니다. 전원 버튼, 볼륨 다이얼, 채널 버튼만 알면 됩니다. 사용자는 “볼륨을 올린다”는 의도를 인터페이스를 통해 전달하고, 실제 전기 신호가 어떻게 바뀌는지는 기기 내부 구현이 담당합니다.",
               "sourceRefs": [
@@ -17701,6 +17782,17 @@
               ],
               "_origin": "source-learning",
               "id": "yt-api-beginners-WXsD0ZgxjRw-c2-b1"
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c2-zero3-scene-radio-intro",
+              "type": "p",
+              "text": "【강사의 장면·비유를 눈으로 보기】 사용자는 겉의 조작만 알고 복잡한 내부는 기기가 처리합니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c2-zero3-scene-radio",
+              "type": "image",
+              "src": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221200%22%20height%3D%22675%22%20viewBox%3D%220%200%201200%20675%22%3E%3Crect%20width%3D%221200%22%20height%3D%22675%22%20fill%3D%22%23f8f4ea%22%2F%3E%3Crect%20width%3D%221200%22%20height%3D%2214%22%20fill%3D%22%2366735f%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2278%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2235%22%20font-weight%3D%22800%22%20fill%3D%22%23222820%22%3E%EA%B0%95%EC%82%AC%EA%B0%80%20%EB%B3%B4%EC%97%AC%20%EC%A4%80%20%EB%9D%BC%EB%94%94%EC%98%A4%20%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%3C%2Ftext%3E%3Ctext%20x%3D%2260%22%20y%3D%22118%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2221%22%20fill%3D%22%23596055%22%3E%EC%82%AC%EC%9A%A9%EC%9E%90%EB%8A%94%20%EA%B2%89%EC%9D%98%20%EC%A1%B0%EC%9E%91%EB%A7%8C%20%EC%95%8C%EA%B3%A0%20%EB%B3%B5%EC%9E%A1%ED%95%9C%20%EB%82%B4%EB%B6%80%EB%8A%94%20%EA%B8%B0%EA%B8%B0%EA%B0%80%20%EC%B2%98%EB%A6%AC%ED%95%A9%EB%8B%88%EB%8B%A4.%3C%2Ftext%3E%3Crect%20x%3D%2260%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%2284%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3E%EC%82%AC%EC%9A%A9%EC%9E%90%3C%2Ftext%3E%3Ctext%20x%3D%2284%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EC%A0%84%EC%9B%90%20%EB%B2%84%ED%8A%BC%3C%2Ftext%3E%3Ctext%20x%3D%2284%22%20y%3D%22311%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EB%B3%BC%EB%A5%A8%20%EB%8B%A4%EC%9D%B4%EC%96%BC%3C%2Ftext%3E%3Ctext%20x%3D%2284%22%20y%3D%22357%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EC%B1%84%EB%84%90%20%EC%84%A0%ED%83%9D%3C%2Ftext%3E%3Crect%20x%3D%22428%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22452%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3E%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%3C%2Ftext%3E%3Ctext%20x%3D%22452%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EB%A7%8C%EC%A7%88%20%EC%88%98%20%EC%9E%88%EB%8A%94%20%EC%A1%B0%EC%9E%91%3C%2Ftext%3E%3Ctext%20x%3D%22452%22%20y%3D%22311%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EC%A0%95%ED%95%B4%EC%A7%84%20%EC%82%AC%EC%9A%A9%EB%B2%95%3C%2Ftext%3E%3Crect%20x%3D%22796%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22820%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3E%EA%B8%B0%EA%B8%B0%20%EB%82%B4%EB%B6%80%3C%2Ftext%3E%3Ctext%20x%3D%22820%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%ED%9A%8C%EB%A1%9C%EC%99%80%20%EC%8B%A0%ED%98%B8%20%EC%B2%98%EB%A6%AC%3C%2Ftext%3E%3Ctext%20x%3D%22820%22%20y%3D%22311%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EB%AA%B0%EB%9D%BC%EB%8F%84%20%EC%82%AC%EC%9A%A9%20%EA%B0%80%EB%8A%A5%3C%2Ftext%3E%3Ctext%20x%3D%2260%22%20y%3D%22630%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23747a70%22%3E%EA%B5%90%EC%9E%AC%EC%9A%A9%20%EC%9E%A5%EB%A9%B4%20%EC%9E%AC%ED%98%84%20%C2%B7%20%EC%98%81%EC%83%81%20%EC%BA%A1%EC%B2%98%20%EC%95%84%EB%8B%98%3C%2Ftext%3E%3C%2Fsvg%3E",
+              "caption": "강사가 보여 준 라디오 인터페이스 · 교재용 장면 재현(영상 캡처 아님)"
             },
             {
               "type": "p",
@@ -18016,6 +18108,41 @@
               "caption": "API = 개발자를 위한 계약 · 교재용 재현 화면(영상 캡처 아님)"
             },
             {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c3-zero3-intro",
+              "type": "p",
+              "text": "【전문용어 보기 전, 먼저 사람 말로】 이 장에서 강사가 말하려는 큰 그림을 일상적인 말부터 잡고 들어갑니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c3-zero3-bridge-1",
+              "type": "p",
+              "text": "API를 “계약(contract)”이라고 부르는 것은 법률 문서를 외우라는 뜻이 아닙니다. 자판기에 돈을 넣고 번호를 누르면 음료가 나온다는 사용 규칙이 있는 것처럼, API에도 정해진 사용법이 있습니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c3-zero3-bridge-2",
+              "type": "p",
+              "text": "프로그램의 API는 “이 이름으로 기능을 부르고, 이런 값을 주면, 이런 결과를 돌려준다”는 약속을 갖습니다. API 문서는 그 약속을 사람이 읽을 수 있게 적어 둔 설명서입니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c3-zero3-bridge-3",
+              "type": "p",
+              "text": "문자열을 대문자로 바꾸는 기능이나 사진을 흑백으로 바꾸는 기능이 이미 준비되어 있다면 개발자는 내부 계산을 매번 다시 만들지 않습니다. 정해진 메서드를 호출해서 결과를 받습니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c3-zero3-bridge-4",
+              "type": "p",
+              "text": "abstraction(추상화)은 “복잡한 속은 숨기고 필요한 손잡이만 보이게 한다”는 뜻입니다. 자동차 운전자가 엔진 점화 과정을 몰라도 시동 버튼을 누를 수 있는 것과 같습니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c3-zero3-bridge-5",
+              "type": "p",
+              "text": "웹 API도 본질은 같습니다. 다만 다른 컴퓨터까지 네트워크를 건너가므로 URL, HTTP, 인증 같은 요소가 추가됩니다. 그래도 핵심은 정해진 입력 → 정해진 결과입니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c3-zero3-checkpoint",
+              "type": "p",
+              "text": "【여기까지만 이해해도 다음으로 갈 수 있습니다】 용어 철자를 외우는 것보다 “누가 요청하고, 누가 처리하고, 무엇이 돌아오는가”를 자기 말로 설명할 수 있으면 충분합니다."
+            },
+            {
               "type": "p",
               "text": "강사는 API를 일종의 계약이라고 설명합니다. 어떤 기능을 어떤 이름으로 호출해야 하는지, 어떤 입력을 줄 수 있는지, 무엇을 돌려받을 수 있는지가 정해져 있습니다. 사용자는 계약을 지키면 내부 구현을 몰라도 결과를 사용할 수 있습니다.",
               "sourceRefs": [
@@ -18144,6 +18271,17 @@
               ],
               "_origin": "source-learning",
               "id": "yt-api-beginners-WXsD0ZgxjRw-c3-deep-01"
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c3-zero3-scene-contract-intro",
+              "type": "p",
+              "text": "【강사의 장면·비유를 눈으로 보기】 정해진 입력을 주면 약속된 형태의 결과를 받습니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c3-zero3-scene-contract",
+              "type": "image",
+              "src": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221200%22%20height%3D%22675%22%20viewBox%3D%220%200%201200%20675%22%3E%3Crect%20width%3D%221200%22%20height%3D%22675%22%20fill%3D%22%23f8f4ea%22%2F%3E%3Crect%20width%3D%221200%22%20height%3D%2214%22%20fill%3D%22%2366735f%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2278%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2235%22%20font-weight%3D%22800%22%20fill%3D%22%23222820%22%3EAPI%EB%A5%BC%20%E2%80%9C%EA%B3%84%EC%95%BD%E2%80%9D%EC%9C%BC%EB%A1%9C%20%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0%3C%2Ftext%3E%3Ctext%20x%3D%2260%22%20y%3D%22118%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2221%22%20fill%3D%22%23596055%22%3E%EC%A0%95%ED%95%B4%EC%A7%84%20%EC%9E%85%EB%A0%A5%EC%9D%84%20%EC%A3%BC%EB%A9%B4%20%EC%95%BD%EC%86%8D%EB%90%9C%20%ED%98%95%ED%83%9C%EC%9D%98%20%EA%B2%B0%EA%B3%BC%EB%A5%BC%20%EB%B0%9B%EC%8A%B5%EB%8B%88%EB%8B%A4.%3C%2Ftext%3E%3Crect%20x%3D%2260%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%2284%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3E%EC%82%AC%EC%9A%A9%20%EB%B0%A9%EB%B2%95%3C%2Ftext%3E%3Ctext%20x%3D%2284%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EA%B8%B0%EB%8A%A5%20%EC%9D%B4%EB%A6%84%3C%2Ftext%3E%3Ctext%20x%3D%2284%22%20y%3D%22311%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%ED%95%84%EC%9A%94%ED%95%9C%20%EC%9E%85%EB%A0%A5%3C%2Ftext%3E%3Crect%20x%3D%22428%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22452%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3EAPI%20%EA%B3%84%EC%95%BD%3C%2Ftext%3E%3Ctext%20x%3D%22452%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%ED%97%88%EC%9A%A9%EB%90%9C%20%EA%B7%9C%EC%B9%99%3C%2Ftext%3E%3Ctext%20x%3D%22452%22%20y%3D%22311%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EB%AC%B8%EC%84%9C%EB%A1%9C%20%EC%84%A4%EB%AA%85%3C%2Ftext%3E%3Crect%20x%3D%22796%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22820%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3E%EA%B2%B0%EA%B3%BC%3C%2Ftext%3E%3Ctext%20x%3D%22820%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EB%8F%8C%EB%A0%A4%EB%B0%9B%EB%8A%94%20%EA%B0%92%3C%2Ftext%3E%3Ctext%20x%3D%22820%22%20y%3D%22311%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EC%98%A4%EB%A5%98%EB%8F%84%20%EA%B7%9C%EC%B9%99%EC%9D%98%20%EC%9D%BC%EB%B6%80%3C%2Ftext%3E%3Ctext%20x%3D%2260%22%20y%3D%22630%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23747a70%22%3E%EA%B5%90%EC%9E%AC%EC%9A%A9%20%EC%9E%A5%EB%A9%B4%20%EC%9E%AC%ED%98%84%20%C2%B7%20%EC%98%81%EC%83%81%20%EC%BA%A1%EC%B2%98%20%EC%95%84%EB%8B%98%3C%2Ftext%3E%3C%2Fsvg%3E",
+              "caption": "API를 “계약”으로 이해하기 · 교재용 장면 재현(영상 캡처 아님)"
             },
             {
               "type": "p",
@@ -18342,6 +18480,41 @@
               "caption": "Remote API · 교재용 재현 화면(영상 캡처 아님)"
             },
             {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c4-zero3-intro",
+              "type": "p",
+              "text": "【전문용어 보기 전, 먼저 사람 말로】 이 장에서 강사가 말하려는 큰 그림을 일상적인 말부터 잡고 들어갑니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c4-zero3-bridge-1",
+              "type": "p",
+              "text": "Remote API의 remote는 “멀리 떨어져 있다”는 뜻입니다. 기능이 내 프로그램 안에 있는 것이 아니라 인터넷이나 네트워크 너머의 다른 컴퓨터에 있습니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c4-zero3-bridge-2",
+              "type": "p",
+              "text": "강사는 소파에서 리모컨으로 라디오를 조작하는 장면을 사용합니다. 손은 소파에 있지만 실제 동작은 떨어진 기기에서 일어납니다. 원격 API도 내 앱이 명령을 보내고 실제 계산이나 데이터 조회는 다른 서버가 합니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c4-zero3-bridge-3",
+              "type": "p",
+              "text": "왜 멀리 있는 서버를 쓸까요? 데이터가 너무 크거나 자주 바뀌거나 계산이 무거울 수 있기 때문입니다. 휴대폰에 전 세계 음악 정보를 전부 넣는 대신 음악 서비스 서버에 검색을 부탁할 수 있습니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c4-zero3-bridge-4",
+              "type": "p",
+              "text": "API와 REST는 같은 단어가 아닙니다. API가 큰 개념이고 REST는 웹 API를 설계하는 여러 방식 중 하나입니다. 모든 자동차가 세단이 아닌 것처럼 모든 API가 REST인 것은 아닙니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c4-zero3-bridge-5",
+              "type": "p",
+              "text": "뒤에서 용어가 많아져도 “다른 컴퓨터에 정해진 방식으로 부탁하고 결과를 받는다”는 큰 그림을 놓치지 않으면 됩니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c4-zero3-checkpoint",
+              "type": "p",
+              "text": "【여기까지만 이해해도 다음으로 갈 수 있습니다】 용어 철자를 외우는 것보다 “누가 요청하고, 누가 처리하고, 무엇이 돌아오는가”를 자기 말로 설명할 수 있으면 충분합니다."
+            },
+            {
               "type": "p",
               "text": "원격 API를 설명할 때 강사는 리모컨을 떠올리게 합니다. 기기 본체에 손을 대지 않고 떨어진 곳에서 버튼을 눌러 명령을 전달하듯, 원격 API는 내 프로그램이 다른 컴퓨터나 서비스의 기능을 호출하게 합니다.",
               "sourceRefs": [
@@ -18353,6 +18526,17 @@
               ],
               "_origin": "source-learning",
               "id": "yt-api-beginners-WXsD0ZgxjRw-c4-b1"
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c4-zero3-scene-remote-intro",
+              "type": "p",
+              "text": "【강사의 장면·비유를 눈으로 보기】 명령은 여기서 보내고 실제 동작은 떨어진 곳에서 일어납니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c4-zero3-scene-remote",
+              "type": "image",
+              "src": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221200%22%20height%3D%22675%22%20viewBox%3D%220%200%201200%20675%22%3E%3Crect%20width%3D%221200%22%20height%3D%22675%22%20fill%3D%22%23f8f4ea%22%2F%3E%3Crect%20width%3D%221200%22%20height%3D%2214%22%20fill%3D%22%2366735f%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2278%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2235%22%20font-weight%3D%22800%22%20fill%3D%22%23222820%22%3E%EA%B0%95%EC%82%AC%EC%9D%98%20%EC%86%8C%ED%8C%8C%C2%B7%EB%A6%AC%EB%AA%A8%EC%BB%A8%20%EB%B9%84%EC%9C%A0%3C%2Ftext%3E%3Ctext%20x%3D%2260%22%20y%3D%22118%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2221%22%20fill%3D%22%23596055%22%3E%EB%AA%85%EB%A0%B9%EC%9D%80%20%EC%97%AC%EA%B8%B0%EC%84%9C%20%EB%B3%B4%EB%82%B4%EA%B3%A0%20%EC%8B%A4%EC%A0%9C%20%EB%8F%99%EC%9E%91%EC%9D%80%20%EB%96%A8%EC%96%B4%EC%A7%84%20%EA%B3%B3%EC%97%90%EC%84%9C%20%EC%9D%BC%EC%96%B4%EB%82%A9%EB%8B%88%EB%8B%A4.%3C%2Ftext%3E%3Crect%20x%3D%2260%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%2284%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3E%EB%82%B4%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8%3C%2Ftext%3E%3Ctext%20x%3D%2284%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EB%AA%85%EB%A0%B9%EC%9D%84%20%EB%B3%B4%EB%83%84%3C%2Ftext%3E%3Ctext%20x%3D%2284%22%20y%3D%22311%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EA%B2%B0%EA%B3%BC%EB%A5%BC%20%EA%B8%B0%EB%8B%A4%EB%A6%BC%3C%2Ftext%3E%3Crect%20x%3D%22428%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22452%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3E%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%3C%2Ftext%3E%3Ctext%20x%3D%22452%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EC%9A%94%EC%B2%AD%20%EC%A0%84%EB%8B%AC%3C%2Ftext%3E%3Ctext%20x%3D%22452%22%20y%3D%22311%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EC%9D%91%EB%8B%B5%20%EC%A0%84%EB%8B%AC%3C%2Ftext%3E%3Crect%20x%3D%22796%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22820%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3E%EC%9B%90%EA%B2%A9%20%EC%84%9C%EB%B2%84%3C%2Ftext%3E%3Ctext%20x%3D%22820%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%A1%B0%ED%9A%8C%3C%2Ftext%3E%3Ctext%20x%3D%22820%22%20y%3D%22311%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EA%B3%84%EC%82%B0%20%EC%88%98%ED%96%89%3C%2Ftext%3E%3Ctext%20x%3D%2260%22%20y%3D%22630%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23747a70%22%3E%EA%B5%90%EC%9E%AC%EC%9A%A9%20%EC%9E%A5%EB%A9%B4%20%EC%9E%AC%ED%98%84%20%C2%B7%20%EC%98%81%EC%83%81%20%EC%BA%A1%EC%B2%98%20%EC%95%84%EB%8B%98%3C%2Ftext%3E%3C%2Fsvg%3E",
+              "caption": "강사의 소파·리모컨 비유 · 교재용 장면 재현(영상 캡처 아님)"
             },
             {
               "type": "p",
@@ -18694,8 +18878,48 @@
               "caption": "HTTP 요청과 응답 · 교재용 재현 화면(영상 캡처 아님)"
             },
             {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c5-zero3-intro",
               "type": "p",
-              "text": "브라우저는 대표적인 웹 클라이언트입니다. 주소창에 URL을 입력하면 브라우저는 그 주소가 가리키는 서버에 HTTP 요청을 보냅니다. 서버는 요청을 처리하고 HTTP 응답을 돌려줍니다. 웹페이지라면 응답 body에 HTML이 들어갈 수 있습니다.",
+              "text": "【전문용어 보기 전, 먼저 사람 말로】 이 장에서 강사가 말하려는 큰 그림을 일상적인 말부터 잡고 들어갑니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c5-zero3-bridge-1",
+              "type": "p",
+              "text": "이 장부터 HTTP, URL, method, header, body, status code가 한꺼번에 나옵니다. 전부 외우지 마세요. 인터넷 주문으로 바꾸면 됩니다. 어느 가게에(URL) → 무엇을 해 달라고(method) → 추가 메모를 붙이고(header) → 필요한 내용을 보내면(body) → 가게가 결과(status)와 실제 답(body)을 돌려줍니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c5-zero3-bridge-2",
+              "type": "p",
+              "text": "client는 부탁하는 쪽입니다. 브라우저가 client가 될 수 있습니다. server는 부탁을 받아 처리하는 쪽입니다. 주소창에 웹주소를 넣으면 브라우저가 서버에 “이 페이지를 주세요”라고 요청합니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c5-zero3-bridge-3",
+              "type": "p",
+              "text": "HTTP는 그 부탁과 답을 어떤 형식으로 주고받을지 정한 약속입니다. 영어 풀네임을 먼저 외우지 말고 “브라우저와 서버가 서로 알아듣기 위한 대화 규칙”이라고 이해하세요."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c5-zero3-bridge-4",
+              "type": "p",
+              "text": "URL은 목적지 주소, method는 부탁의 종류입니다. GET은 “읽어 줘”, POST는 “이 내용을 받아 새로 만들거나 처리해 줘”에 가깝습니다. header는 봉투 겉면의 메모, body는 실제로 보내는 내용이라고 생각하면 됩니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c5-zero3-bridge-5",
+              "type": "p",
+              "text": "서버가 답할 때 status code라는 숫자를 붙입니다. 200은 대체로 성공, 404는 찾는 대상이 없다는 뜻입니다. 번호를 모두 외우지 말고 성공인지, 요청 쪽 문제인지, 서버 쪽 문제인지 큰 범주부터 보세요."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c5-zero3-bridge-6",
+              "type": "p",
+              "text": "stateless는 “서버가 아무것도 기억할 수 없다”는 말이 아닙니다. 각 요청이 필요한 정보를 스스로 들고 오는 것을 기본으로 한다는 뜻에 가깝습니다. 로그인처럼 이어져야 할 상태는 쿠키나 토큰 등을 다음 요청에도 같이 보냅니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c5-zero3-checkpoint",
+              "type": "p",
+              "text": "【여기까지만 이해해도 다음으로 갈 수 있습니다】 용어 철자를 외우는 것보다 “누가 요청하고, 누가 처리하고, 무엇이 돌아오는가”를 자기 말로 설명할 수 있으면 충분합니다."
+            },
+            {
+              "type": "p",
+              "text": "브라우저는 인터넷에서 “부탁을 보내는 쪽”입니다. 이런 쪽을 client(클라이언트)라고 부릅니다. 주소창에 웹주소를 넣으면 브라우저가 그 주소의 server(서버)에 “이 페이지를 보내 주세요”라고 요청합니다. 서버가 처리한 뒤 답을 돌려주고, 그 답 안에 HTML 같은 실제 페이지 내용이 들어올 수 있습니다.",
               "sourceRefs": [
                 {
                   "videoId": "WXsD0ZgxjRw",
@@ -18708,7 +18932,7 @@
             },
             {
               "type": "p",
-              "text": "URL 앞의 `http` 또는 `https`는 어떤 통신 규칙을 사용할지 나타냅니다. HTTP는 Hypertext Transfer Protocol의 약자입니다. 여기서 protocol은 서로 어떤 형식으로 요청하고 응답할지 정해 둔 약속입니다.",
+              "text": "`http`나 `https`는 브라우저와 서버가 어떤 통신 규칙으로 대화할지 표시합니다. HTTP는 Hypertext Transfer Protocol의 약자지만 지금 영어를 외울 필요는 없습니다. “브라우저와 서버가 서로 알아듣게 요청과 답의 형식을 정한 약속”이라고 이해하면 충분합니다.",
               "sourceRefs": [
                 {
                   "videoId": "WXsD0ZgxjRw",
@@ -18721,7 +18945,7 @@
             },
             {
               "type": "p",
-              "text": "HTTP 요청에는 대상 URL만 있는 것이 아닙니다. HTTP method가 요청의 의도를 나타냅니다. `GET`은 주로 읽기, `POST`는 주로 새 데이터 제출이나 생성에 사용됩니다. 뒤에서는 `PATCH`와 `DELETE`도 등장합니다.",
+              "text": "요청에는 어디로 갈지뿐 아니라 가서 무엇을 할지도 들어갑니다. 그 역할을 method가 합니다. `GET`은 주로 “읽어 줘”, `POST`는 “이 내용을 받아 새로 만들거나 처리해 줘”에 가깝습니다. 뒤에서 `PATCH`는 일부 수정, `DELETE`는 삭제로 다시 나옵니다.",
               "sourceRefs": [
                 {
                   "videoId": "WXsD0ZgxjRw",
@@ -18734,7 +18958,7 @@
             },
             {
               "type": "p",
-              "text": "요청 조건은 URL의 query string으로 전달할 수 있습니다. 예를 들어 `?q=beyonce&type=artist`라면 `q`와 `type`이라는 두 조건을 서버에 전달합니다. 물음표 `?`는 경로와 query string을 나누고, 여러 조건은 `&`로 연결합니다.",
+              "text": "같은 주소에 조건을 더 붙이고 싶을 때 query string을 씁니다. `?q=beyonce&type=artist`는 “검색어(q)는 beyonce이고 종류(type)는 artist로 찾아 줘”라는 뜻입니다. `?`는 조건 시작, `&`는 조건 하나 더 붙이기라고 읽으면 됩니다.",
               "sourceRefs": [
                 {
                   "videoId": "WXsD0ZgxjRw",
@@ -18747,7 +18971,7 @@
             },
             {
               "type": "p",
-              "text": "Headers는 요청과 응답의 본문 밖에 있는 부가 정보입니다. 요청 측에서는 원하는 콘텐츠 유형이나 언어, 인증 정보, 캐시 조건을 보낼 수 있습니다. 응답 측에서는 실제 콘텐츠 유형, 길이, 수정 시각, 캐시 정책 등을 알려 줄 수 있습니다.",
+              "text": "header는 요청이나 응답에 붙는 “겉면 메모”라고 생각하세요. 실제 내용(body)과 따로 “JSON으로 받고 싶어요”, “이 인증 토큰을 가지고 있어요” 같은 설명을 붙입니다. 응답에도 “지금 보내는 내용은 JSON입니다” 같은 메모가 붙을 수 있습니다.",
               "sourceRefs": [
                 {
                   "videoId": "WXsD0ZgxjRw",
@@ -18760,7 +18984,7 @@
             },
             {
               "type": "p",
-              "text": "서버는 처리 결과를 status code로 알려 줍니다. `200 OK`는 대표적인 정상 응답이고, `404 Not Found`는 요청한 리소스를 찾지 못했다는 뜻입니다. 나중에는 생성 성공을 뜻하는 `201 Created`, 인증 문제의 `401`, 캐시와 관련된 `304 Not Modified`도 직접 보게 됩니다.",
+              "text": "서버는 답과 함께 status code라는 숫자를 보냅니다. 이 숫자는 “처리가 어떻게 끝났는지” 알려 주는 표지판입니다. `200 OK`는 대표적인 성공, `404 Not Found`는 찾는 대상이 없다는 뜻입니다. 나머지 번호는 실제 상황과 함께 천천히 익히면 됩니다.",
               "sourceRefs": [
                 {
                   "videoId": "WXsD0ZgxjRw",
@@ -18773,7 +18997,7 @@
             },
             {
               "type": "p",
-              "text": "HTTP는 기본적으로 stateless합니다. 서버가 자동으로 “방금 이 사람이 무엇을 했는지”를 기억한다는 전제가 없습니다. 로그인 상태가 필요하면 쿠키나 토큰 같은 식별 정보를 다음 요청에도 전달해야 합니다.",
+              "text": "HTTP는 기본적으로 stateless라고 합니다. 쉽게 말하면 “각 요청이 자기에게 필요한 정보를 들고 오는 것을 기본으로 한다”는 뜻입니다. 로그인처럼 이어지는 상태가 필요하면 쿠키나 토큰 같은 정보를 다음 요청에도 같이 보내 연결합니다.",
               "sourceRefs": [
                 {
                   "videoId": "WXsD0ZgxjRw",
@@ -18786,7 +19010,7 @@
             },
             {
               "type": "p",
-              "text": "초보자는 HTTP 요청을 네 조각으로 읽으면 편합니다. **어디로(URL), 무엇을 하러(method), 어떤 부가 조건으로(headers), 어떤 실제 데이터를 가지고(body)** 가는지를 봅니다. 응답은 **결과 코드(status), 부가 정보(headers), 실제 데이터(body)** 로 읽으면 됩니다.",
+              "text": "요청은 네 질문으로 읽으세요. ① 어디로? URL ② 무엇을 해 달라나? method ③ 겉에 붙은 추가 정보는? headers ④ 실제로 보내는 내용은? body. 응답은 ① 결과는? status ② 추가 정보는? headers ③ 실제 답은? body. 긴 HTTP 문장도 이 조각으로 나누면 됩니다.",
               "sourceRefs": [
                 {
                   "videoId": "WXsD0ZgxjRw",
@@ -18812,8 +19036,18 @@
               "_format": "code"
             },
             {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c5-b9-zero3-explain-1",
               "type": "p",
-              "text": "위 예시는 특정 서비스의 실제 명령을 복제한 것이 아니라 요청 구조를 보여 주기 위한 학습 예입니다. 첫 줄은 메서드와 경로, Host는 대상 서버, Accept는 원하는 응답 형식, Authorization은 인증 정보를 나타냅니다.",
+              "text": "【코드를 사람 말로 1】 이 블록은 실행하라고 준 프로그램이 아니라 HTTP 요청의 모양을 보여 주는 예입니다. 첫 줄의 `GET`은 읽기, `/v1/search`는 찾아갈 길, `?q=...`는 검색 조건입니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c5-b9-zero3-explain-2",
+              "type": "p",
+              "text": "【코드를 사람 말로 2】 `Host`는 어느 서버인지, `Accept`는 어떤 형식으로 받고 싶은지, `Authorization`은 요청 자격을 증명하는 값입니다. 지금은 문법보다 각 줄의 역할만 구분하면 됩니다."
+            },
+            {
+              "type": "p",
+              "text": "아래 HTTP 예시는 외울 코드가 아닙니다. 첫 줄의 `GET`은 읽기 요청, `/v1/search...`는 요청할 길과 검색 조건입니다. `Host`는 어느 서버인지, `Accept`는 어떤 형식으로 받고 싶은지, `Authorization`은 요청 자격을 증명하는 정보입니다.",
               "sourceRefs": [
                 {
                   "videoId": "WXsD0ZgxjRw",
@@ -18827,7 +19061,7 @@
             {
               "id": "yt-api-beginners-WXsD0ZgxjRw-c5-b11",
               "type": "p",
-              "text": "【URL을 잘게 읽기】 `https://api.example.com/v1/artists/42?market=KR`을 보면 `https`는 통신 방식, `api.example.com`은 host, `/v1/artists/42`는 path, `?market=KR`은 query string입니다. path는 보통 “어떤 리소스인가”를 식별하고, query는 같은 리소스를 어떤 조건으로 보고 싶은지를 표현하는 데 많이 사용합니다.",
+              "text": "【URL을 한 조각씩】 `https://api.example.com/v1/artists/42?market=KR`을 한 번에 읽지 마세요. `https`는 통신 방식, `api.example.com`은 서버, `/v1/artists/42`는 그 서버 안의 대상, `?market=KR`은 추가 조건입니다. 주소가 길어도 네 조각으로 나누면 됩니다.",
               "sourceRefs": [
                 {
                   "videoId": "WXsD0ZgxjRw",
@@ -18840,7 +19074,7 @@
             {
               "id": "yt-api-beginners-WXsD0ZgxjRw-c5-b12",
               "type": "p",
-              "text": "【Accept와 Content-Type은 서로 다른 질문】 `Accept: application/json`은 클라이언트가 “가능하면 JSON으로 받고 싶다”고 말하는 요청 header입니다. `Content-Type: application/json`은 보내는 쪽이 “지금 이 body는 JSON이다”라고 설명하는 header입니다. 둘 다 JSON이라는 단어가 나와서 초보자가 자주 섞지만 방향이 다릅니다.",
+              "text": "【Accept와 Content-Type】 `Accept: application/json`은 받는 사람이 “가능하면 JSON으로 주세요”라고 말하는 것입니다. `Content-Type: application/json`은 보내는 사람이 “지금 보내는 내용은 JSON입니다”라고 설명하는 것입니다. 하나는 받고 싶은 형식, 다른 하나는 보내는 내용의 형식입니다.",
               "sourceRefs": [
                 {
                   "videoId": "WXsD0ZgxjRw",
@@ -18853,7 +19087,7 @@
             {
               "id": "yt-api-beginners-WXsD0ZgxjRw-c5-b13",
               "type": "p",
-              "text": "【상태 코드 숫자를 통째로 외우지 말기】 2xx는 대체로 성공, 3xx는 리다이렉션·캐시 같은 추가 처리, 4xx는 클라이언트 요청·인증 문제, 5xx는 서버 쪽 실패라는 큰 범주를 먼저 잡으세요. 이후 자주 만나는 `200`, `201`, `304`, `400`, `401`, `403`, `404`, `429`, `500`을 상황과 함께 익히면 됩니다.",
+              "text": "【상태 코드는 가족부터】 번호를 통째로 외우지 마세요. 2xx는 대체로 성공, 3xx는 다른 곳 안내·캐시 같은 추가 처리, 4xx는 요청·인증 쪽 문제, 5xx는 서버 쪽 문제입니다. 먼저 어느 가족인지 보는 습관부터 들이면 됩니다.",
               "sourceRefs": [
                 {
                   "videoId": "WXsD0ZgxjRw",
@@ -18901,6 +19135,17 @@
               ],
               "_origin": "source-learning",
               "id": "yt-api-beginners-WXsD0ZgxjRw-c5-deep-03"
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c5-zero3-scene-chant-intro",
+              "type": "p",
+              "text": "【강사의 장면·비유를 눈으로 보기】 protocol은 서로 정해 둔 말의 순서와 형식입니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c5-zero3-scene-chant",
+              "type": "image",
+              "src": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221200%22%20height%3D%22675%22%20viewBox%3D%220%200%201200%20675%22%3E%3Crect%20width%3D%221200%22%20height%3D%22675%22%20fill%3D%22%23f8f4ea%22%2F%3E%3Crect%20width%3D%221200%22%20height%3D%2214%22%20fill%3D%22%2366735f%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2278%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2235%22%20font-weight%3D%22800%22%20fill%3D%22%23222820%22%3E%EA%B0%95%EC%82%AC%EA%B0%80%20%EB%93%A0%20%EA%B5%AC%ED%98%B8%20%EC%A3%BC%EA%B3%A0%EB%B0%9B%EA%B8%B0%20%EB%B9%84%EC%9C%A0%3C%2Ftext%3E%3Ctext%20x%3D%2260%22%20y%3D%22118%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2221%22%20fill%3D%22%23596055%22%3Eprotocol%EC%9D%80%20%EC%84%9C%EB%A1%9C%20%EC%A0%95%ED%95%B4%20%EB%91%94%20%EB%A7%90%EC%9D%98%20%EC%88%9C%EC%84%9C%EC%99%80%20%ED%98%95%EC%8B%9D%EC%9E%85%EB%8B%88%EB%8B%A4.%3C%2Ftext%3E%3Crect%20x%3D%2260%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%2284%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3E%EC%95%9E%EC%82%AC%EB%9E%8C%3C%2Ftext%3E%3Ctext%20x%3D%2284%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%E2%80%9C%EC%A4%80%EB%B9%84%EB%90%90%EB%82%98%EC%9A%94%3F%E2%80%9D%3C%2Ftext%3E%3Ctext%20x%3D%2284%22%20y%3D%22311%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EC%A0%95%ED%95%B4%EC%A7%84%20%EC%8B%A0%ED%98%B8%3C%2Ftext%3E%3Crect%20x%3D%22428%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22452%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3E%EB%92%B7%EC%82%AC%EB%9E%8C%3C%2Ftext%3E%3Ctext%20x%3D%22452%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%E2%80%9C%EC%A4%80%EB%B9%84%EB%90%90%EC%8A%B5%EB%8B%88%EB%8B%A4!%E2%80%9D%3C%2Ftext%3E%3Ctext%20x%3D%22452%22%20y%3D%22311%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EC%A0%95%ED%95%B4%EC%A7%84%20%EB%8B%B5%3C%2Ftext%3E%3Crect%20x%3D%22796%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22820%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3EHTTP%3C%2Ftext%3E%3Ctext%20x%3D%22820%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EC%9A%94%EC%B2%AD%20%ED%98%95%EC%8B%9D%3C%2Ftext%3E%3Ctext%20x%3D%22820%22%20y%3D%22311%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EC%9D%91%EB%8B%B5%20%ED%98%95%EC%8B%9D%3C%2Ftext%3E%3Ctext%20x%3D%22820%22%20y%3D%22357%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EC%84%9C%EB%A1%9C%20%EC%9D%B4%ED%95%B4%3C%2Ftext%3E%3Ctext%20x%3D%2260%22%20y%3D%22630%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23747a70%22%3E%EA%B5%90%EC%9E%AC%EC%9A%A9%20%EC%9E%A5%EB%A9%B4%20%EC%9E%AC%ED%98%84%20%C2%B7%20%EC%98%81%EC%83%81%20%EC%BA%A1%EC%B2%98%20%EC%95%84%EB%8B%98%3C%2Ftext%3E%3C%2Fsvg%3E",
+              "caption": "강사가 든 구호 주고받기 비유 · 교재용 장면 재현(영상 캡처 아님)"
             },
             {
               "type": "p",
@@ -19159,6 +19404,41 @@
               "caption": "REST 사고방식 · 교재용 재현 화면(영상 캡처 아님)"
             },
             {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c6-zero3-intro",
+              "type": "p",
+              "text": "【전문용어 보기 전, 먼저 사람 말로】 이 장에서 강사가 말하려는 큰 그림을 일상적인 말부터 잡고 들어갑니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c6-zero3-bridge-1",
+              "type": "p",
+              "text": "REST를 처음 볼 때 여섯 가지 제약 조건 이름부터 외우면 너무 어렵습니다. 먼저 resource라는 단어만 잡으세요. resource는 API가 다루는 대상입니다. 책 API라면 책 한 권, 저자 한 명, 리뷰 하나가 resource입니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c6-zero3-bridge-2",
+              "type": "p",
+              "text": "collection은 같은 종류의 resource를 모은 목록입니다. `/books`는 책장 전체, `/books/42`는 그 책장 속 42번 책 한 권이라고 생각하면 됩니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c6-zero3-bridge-3",
+              "type": "p",
+              "text": "CRUD는 만들기(Create), 읽기(Read), 고치기(Update), 지우기(Delete) 네 동작입니다. HTTP에서는 흔히 POST·GET·PATCH·DELETE가 이 역할과 연결됩니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c6-zero3-bridge-4",
+              "type": "p",
+              "text": "REST 스타일에서는 URL은 “무엇을”, method는 “무엇을 할지” 담당하도록 역할을 나누는 방식이 흔합니다. `/deleteBook/42`보다 `/books/42`에 DELETE를 보내는 식입니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c6-zero3-bridge-5",
+              "type": "p",
+              "text": "강사가 REST 조건을 “보물찾기(scavenger hunt)”처럼 하나씩 찾는 이유는 이름 암기보다 실제 API에서 조건이 어떻게 드러나는지 보게 하려는 것입니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c6-zero3-checkpoint",
+              "type": "p",
+              "text": "【여기까지만 이해해도 다음으로 갈 수 있습니다】 용어 철자를 외우는 것보다 “누가 요청하고, 누가 처리하고, 무엇이 돌아오는가”를 자기 말로 설명할 수 있으면 충분합니다."
+            },
+            {
               "type": "p",
               "text": "강사는 REST 제약 조건을 처음부터 암기시키기보다 실습 과정에서 하나씩 찾아가는 방식으로 진행합니다. 이름을 외우는 것보다 “이 제약이 실제 API에서 어떤 문제를 해결하는가”를 보는 것이 목표입니다.",
               "sourceRefs": [
@@ -19251,6 +19531,16 @@
               "_format": "code"
             },
             {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c6-b7-zero3-explain-1",
+              "type": "p",
+              "text": "【코드를 사람 말로 1】 다섯 줄에서 `/authors/42`가 반복되는 이유는 같은 42번 저자에게 서로 다른 행동을 요청하기 때문입니다. 주소는 누구를, method는 무엇을 할지를 말합니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c6-b7-zero3-explain-2",
+              "type": "p",
+              "text": "【코드를 사람 말로 2】 `GET /authors`는 전체 목록, `GET /authors/42`는 한 명, `POST`는 새 저자, `PATCH`는 일부 수정, `DELETE`는 삭제라고 읽습니다."
+            },
+            {
               "type": "p",
               "text": "JSON은 리소스의 “표현(representation)”으로 자주 사용됩니다. 서버의 데이터베이스 내부 구조가 그대로 공개되는 것이 아니라, 클라이언트가 사용할 수 있는 형태로 리소스의 현재 상태를 JSON으로 표현해 전달합니다.",
               "sourceRefs": [
@@ -19327,6 +19617,17 @@
               ],
               "_origin": "source-learning",
               "id": "yt-api-beginners-WXsD0ZgxjRw-c6-deep-01"
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c6-zero3-scene-hunt-intro",
+              "type": "p",
+              "text": "【강사의 장면·비유를 눈으로 보기】 강의가 조건을 처음부터 암기시키지 않는 이유입니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c6-zero3-scene-hunt",
+              "type": "image",
+              "src": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221200%22%20height%3D%22675%22%20viewBox%3D%220%200%201200%20675%22%3E%3Crect%20width%3D%221200%22%20height%3D%22675%22%20fill%3D%22%23f8f4ea%22%2F%3E%3Crect%20width%3D%221200%22%20height%3D%2214%22%20fill%3D%22%2366735f%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2278%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2235%22%20font-weight%3D%22800%22%20fill%3D%22%23222820%22%3EREST%20%EC%A1%B0%EA%B1%B4%EC%9D%84%20%EB%B3%B4%EB%AC%BC%EC%B0%BE%EA%B8%B0%EC%B2%98%EB%9F%BC%20%EC%B0%BE%EA%B8%B0%3C%2Ftext%3E%3Ctext%20x%3D%2260%22%20y%3D%22118%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2221%22%20fill%3D%22%23596055%22%3E%EA%B0%95%EC%9D%98%EA%B0%80%20%EC%A1%B0%EA%B1%B4%EC%9D%84%20%EC%B2%98%EC%9D%8C%EB%B6%80%ED%84%B0%20%EC%95%94%EA%B8%B0%EC%8B%9C%ED%82%A4%EC%A7%80%20%EC%95%8A%EB%8A%94%20%EC%9D%B4%EC%9C%A0%EC%9E%85%EB%8B%88%EB%8B%A4.%3C%2Ftext%3E%3Crect%20x%3D%2260%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%2284%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3E%EC%9D%B4%EB%AF%B8%20%EC%B0%BE%EC%9D%8C%3C%2Ftext%3E%3Ctext%20x%3D%2284%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3EClient-Server%3C%2Ftext%3E%3Ctext%20x%3D%2284%22%20y%3D%22311%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3EStateless%3C%2Ftext%3E%3Crect%20x%3D%22428%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22452%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3E%EB%8B%A4%EC%9D%8C%20%EB%8B%A8%EC%84%9C%3C%2Ftext%3E%3Ctext%20x%3D%22452%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3ECacheable%3C%2Ftext%3E%3Ctext%20x%3D%22452%22%20y%3D%22311%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3ELayered%20System%3C%2Ftext%3E%3Crect%20x%3D%22796%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22820%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3E%EC%B5%9C%EC%A2%85%20%EC%A0%90%EA%B2%80%3C%2Ftext%3E%3Ctext%20x%3D%22820%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3EUniform%20Interface%3C%2Ftext%3E%3Ctext%20x%3D%22820%22%20y%3D%22311%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EC%A1%B0%EA%B1%B4%EC%9D%98%20%EC%9D%B4%EC%9C%A0%3C%2Ftext%3E%3Ctext%20x%3D%2260%22%20y%3D%22630%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23747a70%22%3E%EA%B5%90%EC%9E%AC%EC%9A%A9%20%EC%9E%A5%EB%A9%B4%20%EC%9E%AC%ED%98%84%20%C2%B7%20%EC%98%81%EC%83%81%20%EC%BA%A1%EC%B2%98%20%EC%95%84%EB%8B%98%3C%2Ftext%3E%3C%2Fsvg%3E",
+              "caption": "REST 조건을 보물찾기처럼 찾기 · 교재용 장면 재현(영상 캡처 아님)"
             },
             {
               "type": "p",
@@ -19578,6 +19879,46 @@
               "caption": "Spotify API 탐색 순서 · 교재용 재현 화면(영상 캡처 아님)"
             },
             {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c7-zero3-intro",
+              "type": "p",
+              "text": "【전문용어 보기 전, 먼저 사람 말로】 이 장에서 강사가 말하려는 큰 그림을 일상적인 말부터 잡고 들어갑니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c7-zero3-bridge-1",
+              "type": "p",
+              "text": "실제 API를 쓰려면 코딩보다 먼저 문서를 읽어야 합니다. 문서는 “어느 주소로, 어떤 방법으로, 무엇을 함께 보내야 하는지” 적힌 사용설명서입니다. 처음 보는 서비스에서는 Developers, API, Documentation 같은 메뉴를 찾습니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c7-zero3-bridge-2",
+              "type": "p",
+              "text": "Spotify 검색에서는 검색어와 검색 대상 종류를 함께 보냅니다. “Beyoncé를 찾아 줘”에 `type=artist`를 더하면 “Beyoncé와 관련된 것 중 아티스트만 찾아 줘”라는 뜻이 됩니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c7-zero3-bridge-3",
+              "type": "p",
+              "text": "응답이 JSON 수백 줄로 보여도 한 번에 읽지 마세요. JSON은 상자 안의 상자처럼 읽으면 됩니다. `artists` 상자를 열고 → 그 안의 `items` 목록을 열고 → 한 항목의 `name`이나 `id`를 찾습니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c7-zero3-bridge-4",
+              "type": "p",
+              "text": "ID는 컴퓨터가 대상을 정확히 구분하는 번호표입니다. 이름이 같아도 ID가 다르면 다른 대상입니다. API는 artist, album, track 같은 resource를 ID로 정확히 가리킵니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c7-zero3-bridge-5",
+              "type": "p",
+              "text": "token은 “이 요청을 할 자격이 있다”는 임시 출입증에 가깝습니다. 화면에 보였다고 그대로 공유하거나 공개 저장소에 넣으면 안 됩니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c7-zero3-bridge-6",
+              "type": "p",
+              "text": "이 장의 목표는 Spotify를 외우는 것이 아니라 문서에서 endpoint를 찾고 → parameter와 token을 준비하고 → JSON에서 필요한 값의 길을 찾는 순서를 익히는 것입니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c7-zero3-checkpoint",
+              "type": "p",
+              "text": "【여기까지만 이해해도 다음으로 갈 수 있습니다】 용어 철자를 외우는 것보다 “누가 요청하고, 누가 처리하고, 무엇이 돌아오는가”를 자기 말로 설명할 수 있으면 충분합니다."
+            },
+            {
               "type": "p",
               "text": "실제 API를 처음 만났을 때 가장 먼저 배워야 할 기술은 “문서를 읽는 법”입니다. 강사는 서비스 사이트에서 Developers 영역을 찾고 API 문서와 콘솔을 열어, 어떤 요청을 어떻게 보내는지 문서에서 확인합니다.",
               "sourceRefs": [
@@ -19746,6 +20087,17 @@
                 }
               ],
               "_origin": "explanation"
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c7-zero3-scene-boxes-intro",
+              "type": "p",
+              "text": "【강사의 장면·비유를 눈으로 보기】 필요한 key의 길만 한 칸씩 따라갑니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c7-zero3-scene-boxes",
+              "type": "image",
+              "src": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221200%22%20height%3D%22675%22%20viewBox%3D%220%200%201200%20675%22%3E%3Crect%20width%3D%221200%22%20height%3D%22675%22%20fill%3D%22%23f8f4ea%22%2F%3E%3Crect%20width%3D%221200%22%20height%3D%2214%22%20fill%3D%22%2366735f%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2278%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2235%22%20font-weight%3D%22800%22%20fill%3D%22%23222820%22%3EJSON%EC%9D%80%20%EC%83%81%EC%9E%90%20%EC%95%88%EC%9D%98%20%EC%83%81%EC%9E%90%3C%2Ftext%3E%3Ctext%20x%3D%2260%22%20y%3D%22118%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2221%22%20fill%3D%22%23596055%22%3E%ED%95%84%EC%9A%94%ED%95%9C%20key%EC%9D%98%20%EA%B8%B8%EB%A7%8C%20%ED%95%9C%20%EC%B9%B8%EC%94%A9%20%EB%94%B0%EB%9D%BC%EA%B0%91%EB%8B%88%EB%8B%A4.%3C%2Ftext%3E%3Crect%20x%3D%2260%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%2284%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3Eartists%3C%2Ftext%3E%3Ctext%20x%3D%2284%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%ED%81%B0%20%EC%83%81%EC%9E%90%20%EC%97%B4%EA%B8%B0%3C%2Ftext%3E%3Crect%20x%3D%22428%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22452%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3Eitems%3C%2Ftext%3E%3Ctext%20x%3D%22452%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EB%AA%A9%EB%A1%9D%20%EC%97%B4%EA%B8%B0%3C%2Ftext%3E%3Ctext%20x%3D%22452%22%20y%3D%22311%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%ED%95%AD%EB%AA%A9%20%ED%95%98%EB%82%98%20%EC%84%A0%ED%83%9D%3C%2Ftext%3E%3Crect%20x%3D%22796%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22820%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3Ename%20%2F%20id%3C%2Ftext%3E%3Ctext%20x%3D%22820%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%ED%95%84%EC%9A%94%ED%95%9C%20%EA%B0%92%20%EA%BA%BC%EB%82%B4%EA%B8%B0%3C%2Ftext%3E%3Ctext%20x%3D%22820%22%20y%3D%22311%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EC%9D%B4%EB%A6%84%EA%B3%BC%20%EB%B2%88%ED%98%B8%ED%91%9C%3C%2Ftext%3E%3Ctext%20x%3D%2260%22%20y%3D%22630%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23747a70%22%3E%EA%B5%90%EC%9E%AC%EC%9A%A9%20%EC%9E%A5%EB%A9%B4%20%EC%9E%AC%ED%98%84%20%C2%B7%20%EC%98%81%EC%83%81%20%EC%BA%A1%EC%B2%98%20%EC%95%84%EB%8B%98%3C%2Ftext%3E%3C%2Fsvg%3E",
+              "caption": "JSON은 상자 안의 상자 · 교재용 장면 재현(영상 캡처 아님)"
             },
             {
               "id": "yt-api-beginners-WXsD0ZgxjRw-c7-b14",
@@ -20063,6 +20415,46 @@
               "caption": "cURL 명령을 눈으로 쪼개기 · 교재용 재현 화면(영상 캡처 아님)"
             },
             {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c8-zero3-intro",
+              "type": "p",
+              "text": "【전문용어 보기 전, 먼저 사람 말로】 이 장에서 강사가 말하려는 큰 그림을 일상적인 말부터 잡고 들어갑니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c8-zero3-bridge-1",
+              "type": "p",
+              "text": "cURL은 브라우저 화면 없이도 인터넷 요청을 보낼 수 있는 도구입니다. 터미널에서 쓰는 “HTTP 요청 리모컨”이라고 생각하면 됩니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c8-zero3-bridge-2",
+              "type": "p",
+              "text": "터미널은 마우스로 버튼을 누르는 대신 글자로 컴퓨터에 명령하는 창입니다. `curl` 뒤에 URL을 붙이면 그 주소로 요청을 보낼 수 있습니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c8-zero3-bridge-3",
+              "type": "p",
+              "text": "명령이 길어지는 이유는 주소뿐 아니라 method, header, token도 글자로 모두 적기 때문입니다. 처음에는 철자를 외우지 말고 어느 조각이 URL이고 어느 조각이 header인지 찾는 연습을 하세요."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c8-zero3-bridge-4",
+              "type": "p",
+              "text": "따옴표는 공백이나 특수문자가 있는 내용을 한 덩어리로 묶어 줍니다. 여러 줄로 나눈 cURL 예제도 실제로는 하나의 긴 요청 명령입니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c8-zero3-bridge-5",
+              "type": "p",
+              "text": "`|`는 pipe라고 부릅니다. 수도관처럼 앞 프로그램에서 나온 결과를 다음 프로그램에 넘깁니다. cURL이 받은 JSON을 `jq`로 넘기면 jq가 보기 좋게 정리해 줍니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c8-zero3-bridge-6",
+              "type": "p",
+              "text": "API 초보가 cURL 옵션을 모두 외울 필요는 없습니다. 문서의 cURL 예제에서 URL·method·header를 찾아 실제 응답을 확인할 수 있으면 됩니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c8-zero3-checkpoint",
+              "type": "p",
+              "text": "【여기까지만 이해해도 다음으로 갈 수 있습니다】 용어 철자를 외우는 것보다 “누가 요청하고, 누가 처리하고, 무엇이 돌아오는가”를 자기 말로 설명할 수 있으면 충분합니다."
+            },
+            {
               "type": "p",
               "text": "브라우저의 API 콘솔은 편하지만 모든 API가 그런 화면을 제공하는 것은 아닙니다. 그래서 다음 도구로 터미널과 cURL을 배웁니다. 터미널은 텍스트 명령으로 프로그램을 실행하는 환경이고, cURL은 URL을 통해 데이터를 보내고 받는 명령줄 프로그램입니다.",
               "sourceRefs": [
@@ -20141,6 +20533,16 @@
               "_origin": "explanation",
               "id": "yt-api-beginners-WXsD0ZgxjRw-c8-b6",
               "_format": "code"
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c8-b6-zero3-explain-1",
+              "type": "p",
+              "text": "【코드를 사람 말로 1】 `curl -X GET`은 cURL로 GET 요청을 보내겠다는 뜻입니다. 그다음 긴 따옴표 안이 실제 요청 주소입니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c8-b6-zero3-explain-2",
+              "type": "p",
+              "text": "【코드를 사람 말로 2】 `-H`는 header를 붙인다는 표시입니다. 하나는 JSON 응답을 원한다는 말이고 다른 하나는 access token으로 인증한다는 말입니다. `$ACCESS_TOKEN`은 비밀값을 코드에 직접 쓰지 않고 다른 곳에서 읽는 자리입니다."
             },
             {
               "type": "p",
@@ -20338,6 +20740,17 @@
               "id": "yt-api-beginners-WXsD0ZgxjRw-c8-deep-08"
             },
             {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c8-zero3-scene-pipe-intro",
+              "type": "p",
+              "text": "【강사의 장면·비유를 눈으로 보기】 앞 명령의 출력이 다음 프로그램의 입력이 됩니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c8-zero3-scene-pipe",
+              "type": "image",
+              "src": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221200%22%20height%3D%22675%22%20viewBox%3D%220%200%201200%20675%22%3E%3Crect%20width%3D%221200%22%20height%3D%22675%22%20fill%3D%22%23f8f4ea%22%2F%3E%3Crect%20width%3D%221200%22%20height%3D%2214%22%20fill%3D%22%2366735f%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2278%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2235%22%20font-weight%3D%22800%22%20fill%3D%22%23222820%22%3E%7C%20%EB%8A%94%20%EA%B2%B0%EA%B3%BC%EB%A5%BC%20%EB%84%98%EA%B8%B0%EB%8A%94%20%ED%8C%8C%EC%9D%B4%ED%94%84%3C%2Ftext%3E%3Ctext%20x%3D%2260%22%20y%3D%22118%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2221%22%20fill%3D%22%23596055%22%3E%EC%95%9E%20%EB%AA%85%EB%A0%B9%EC%9D%98%20%EC%B6%9C%EB%A0%A5%EC%9D%B4%20%EB%8B%A4%EC%9D%8C%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8%EC%9D%98%20%EC%9E%85%EB%A0%A5%EC%9D%B4%20%EB%90%A9%EB%8B%88%EB%8B%A4.%3C%2Ftext%3E%3Crect%20x%3D%2260%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%2284%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3Ecurl%3C%2Ftext%3E%3Ctext%20x%3D%2284%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EC%84%9C%EB%B2%84%20%EC%9A%94%EC%B2%AD%3C%2Ftext%3E%3Ctext%20x%3D%2284%22%20y%3D%22311%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3EJSON%20%EB%B0%9B%EA%B8%B0%3C%2Ftext%3E%3Crect%20x%3D%22428%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22452%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3E%7C%20pipe%3C%2Ftext%3E%3Ctext%20x%3D%22452%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EC%95%9E%20%EA%B2%B0%EA%B3%BC%20%EC%A0%84%EB%8B%AC%3C%2Ftext%3E%3Ctext%20x%3D%22452%22%20y%3D%22311%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EB%8B%A4%EC%9D%8C%EC%9C%BC%EB%A1%9C%20%ED%9D%90%EB%A6%84%3C%2Ftext%3E%3Crect%20x%3D%22796%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22820%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3Ejq%3C%2Ftext%3E%3Ctext%20x%3D%22820%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3EJSON%20%EC%A0%95%EB%A6%AC%3C%2Ftext%3E%3Ctext%20x%3D%22820%22%20y%3D%22311%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%ED%95%84%EC%9A%94%ED%95%9C%20%EA%B0%92%20%ED%91%9C%EC%8B%9C%3C%2Ftext%3E%3Ctext%20x%3D%2260%22%20y%3D%22630%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23747a70%22%3E%EA%B5%90%EC%9E%AC%EC%9A%A9%20%EC%9E%A5%EB%A9%B4%20%EC%9E%AC%ED%98%84%20%C2%B7%20%EC%98%81%EC%83%81%20%EC%BA%A1%EC%B2%98%20%EC%95%84%EB%8B%98%3C%2Ftext%3E%3C%2Fsvg%3E",
+              "caption": "| 는 결과를 넘기는 파이프 · 교재용 장면 재현(영상 캡처 아님)"
+            },
+            {
               "type": "p",
               "text": "검색어에 공백이 있으면 URL encoding이 필요합니다. 화면의 `Who Runs the World`가 URL에서는 `Who+Runs+the+World` 또는 `%20`이 섞인 형태로 보일 수 있습니다. URL 안에서 특수문자를 안전하게 표현하기 위한 규칙입니다.",
               "sourceRefs": [
@@ -20496,6 +20909,41 @@
               "caption": "Twilio 문자 API · 교재용 재현 화면(영상 캡처 아님)"
             },
             {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c9-zero3-intro",
+              "type": "p",
+              "text": "【전문용어 보기 전, 먼저 사람 말로】 이 장에서 강사가 말하려는 큰 그림을 일상적인 말부터 잡고 들어갑니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c9-zero3-bridge-1",
+              "type": "p",
+              "text": "이번 장에서는 API 요청이 진짜 바깥 세상에서 행동을 일으킬 수 있다는 것을 봅니다. Twilio API에 요청하면 실제 휴대폰으로 문자가 전송될 수 있습니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c9-zero3-bridge-2",
+              "type": "p",
+              "text": "조회용 GET은 데이터를 읽는 데서 끝나는 경우가 많지만 문자 발송·결제·삭제는 돈이 들거나 되돌리기 어려울 수 있습니다. 테스트 환경, 대상, 횟수와 비용을 먼저 확인해야 합니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c9-zero3-bridge-3",
+              "type": "p",
+              "text": "Twilio의 Account SID와 Auth Token은 “어느 계정이 요청하는가”와 “그 계정을 사용할 권한이 있는가”를 증명하는 열쇠입니다. 공개 화면이나 저장소에 올리면 안 됩니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c9-zero3-bridge-4",
+              "type": "p",
+              "text": "cURL에서 From은 보내는 번호, To는 받는 번호, Body는 문자 내용입니다. 사람에게는 한 문장이지만 서버에는 이름표가 붙은 여러 값으로 전달됩니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c9-zero3-bridge-5",
+              "type": "p",
+              "text": "강의 중 느낌표 때문에 shell이 문자열을 다르게 해석해 요청이 실패하는 장면이 나옵니다. 이것은 API 고장이 아니라 터미널의 문자 해석 문제였습니다. 오류가 나면 서버 문제인지 명령 문제인지 나누어 보는 습관이 중요합니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c9-zero3-checkpoint",
+              "type": "p",
+              "text": "【여기까지만 이해해도 다음으로 갈 수 있습니다】 용어 철자를 외우는 것보다 “누가 요청하고, 누가 처리하고, 무엇이 돌아오는가”를 자기 말로 설명할 수 있으면 충분합니다."
+            },
+            {
               "type": "p",
               "text": "Spotify가 주로 데이터를 읽는 예였다면, Twilio 실습은 API 요청이 실제 세계의 통신 행동으로 이어지는 모습을 보여 줍니다. 문자 한 통을 보내기 위해 개발자가 통신사 네트워크와 전화번호 라우팅을 직접 구현할 필요는 없습니다. API가 그 복잡성을 숨깁니다.",
               "sourceRefs": [
@@ -20547,6 +20995,16 @@
               "_origin": "explanation",
               "id": "yt-api-beginners-WXsD0ZgxjRw-c9-b4",
               "_format": "code"
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c9-b4-zero3-explain-1",
+              "type": "p",
+              "text": "【코드를 사람 말로 1】 이 명령은 실제 문자를 보낼 수 있는 형태이므로 반복 실행하기 전에 테스트 번호와 비용·대상을 확인해야 합니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c9-b4-zero3-explain-2",
+              "type": "p",
+              "text": "【코드를 사람 말로 2】 `POST`는 메시지 생성 요청, `-u`는 인증, From은 보내는 번호, To는 받는 번호, Body는 문자 내용입니다. 여러 줄이지만 결국 “인증한 계정으로 이 글을 이 번호에 보내라”는 한 문장입니다."
             },
             {
               "type": "p",
@@ -20664,6 +21122,17 @@
               ],
               "_origin": "source-learning",
               "id": "yt-api-beginners-WXsD0ZgxjRw-c9-deep-01"
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c9-zero3-scene-sms-intro",
+              "type": "p",
+              "text": "【강사의 장면·비유를 눈으로 보기】 코드 한 번이 바깥 세상의 행동으로 이어질 수 있습니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c9-zero3-scene-sms",
+              "type": "image",
+              "src": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221200%22%20height%3D%22675%22%20viewBox%3D%220%200%201200%20675%22%3E%3Crect%20width%3D%221200%22%20height%3D%22675%22%20fill%3D%22%23f8f4ea%22%2F%3E%3Crect%20width%3D%221200%22%20height%3D%2214%22%20fill%3D%22%2366735f%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2278%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2235%22%20font-weight%3D%22800%22%20fill%3D%22%23222820%22%3EAPI%20%EC%9A%94%EC%B2%AD%EC%9D%B4%20%EC%8B%A4%EC%A0%9C%20%EB%AC%B8%EC%9E%90%EB%A1%9C%20%EB%82%98%EA%B0%80%EB%8A%94%20%ED%9D%90%EB%A6%84%3C%2Ftext%3E%3Ctext%20x%3D%2260%22%20y%3D%22118%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2221%22%20fill%3D%22%23596055%22%3E%EC%BD%94%EB%93%9C%20%ED%95%9C%20%EB%B2%88%EC%9D%B4%20%EB%B0%94%EA%B9%A5%20%EC%84%B8%EC%83%81%EC%9D%98%20%ED%96%89%EB%8F%99%EC%9C%BC%EB%A1%9C%20%EC%9D%B4%EC%96%B4%EC%A7%88%20%EC%88%98%20%EC%9E%88%EC%8A%B5%EB%8B%88%EB%8B%A4.%3C%2Ftext%3E%3Crect%20x%3D%2260%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%2284%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3E%EB%82%B4%20%EB%AA%85%EB%A0%B9%3C%2Ftext%3E%3Ctext%20x%3D%2284%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3EPOST%20%EC%9A%94%EC%B2%AD%3C%2Ftext%3E%3Ctext%20x%3D%2284%22%20y%3D%22311%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3EFrom%20%2F%20To%20%2F%20Body%3C%2Ftext%3E%3Crect%20x%3D%22428%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22452%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3ETwilio%20API%3C%2Ftext%3E%3Ctext%20x%3D%22452%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EC%9D%B8%EC%A6%9D%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%3Ctext%20x%3D%22452%22%20y%3D%22311%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EB%AC%B8%EC%9E%90%20%EB%B0%9C%EC%86%A1%20%EC%B2%98%EB%A6%AC%3C%2Ftext%3E%3Crect%20x%3D%22796%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22820%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3E%ED%9C%B4%EB%8C%80%ED%8F%B0%3C%2Ftext%3E%3Ctext%20x%3D%22820%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EC%8B%A4%EC%A0%9C%20%EB%AC%B8%EC%9E%90%20%EB%8F%84%EC%B0%A9%3C%2Ftext%3E%3Ctext%20x%3D%22820%22%20y%3D%22311%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EB%B9%84%EC%9A%A9%C2%B7%EB%8C%80%EC%83%81%20%EC%A3%BC%EC%9D%98%3C%2Ftext%3E%3Ctext%20x%3D%2260%22%20y%3D%22630%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23747a70%22%3E%EA%B5%90%EC%9E%AC%EC%9A%A9%20%EC%9E%A5%EB%A9%B4%20%EC%9E%AC%ED%98%84%20%C2%B7%20%EC%98%81%EC%83%81%20%EC%BA%A1%EC%B2%98%20%EC%95%84%EB%8B%98%3C%2Ftext%3E%3C%2Fsvg%3E",
+              "caption": "API 요청이 실제 문자로 나가는 흐름 · 교재용 장면 재현(영상 캡처 아님)"
             },
             {
               "type": "p",
@@ -20916,6 +21385,46 @@
               "caption": "REST Client 화면 읽는 법 · 교재용 재현 화면(영상 캡처 아님)"
             },
             {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c10-zero3-intro",
+              "type": "p",
+              "text": "【전문용어 보기 전, 먼저 사람 말로】 이 장에서 강사가 말하려는 큰 그림을 일상적인 말부터 잡고 들어갑니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c10-zero3-bridge-1",
+              "type": "p",
+              "text": "cURL은 구조를 배우기 좋지만 길어질수록 눈으로 수정하기 어렵습니다. REST client는 같은 HTTP 요청을 화면의 여러 칸으로 나누어 보여 주는 도구입니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c10-zero3-bridge-2",
+              "type": "p",
+              "text": "URL 칸은 목적지, Query는 검색 조건, Auth는 인증, Headers는 부가 정보, Body는 실제 보낼 내용입니다. 한 줄에 섞여 있던 조각을 서랍별로 나눈 셈입니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c10-zero3-bridge-3",
+              "type": "p",
+              "text": "401 Unauthorized가 나오면 URL이 무조건 틀렸다는 뜻이 아닙니다. 서버에는 도착했지만 “누가 요청했는지 증명하는 정보가 없거나 맞지 않는다”는 경우가 많습니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c10-zero3-bridge-4",
+              "type": "p",
+              "text": "path parameter는 주소 중간에서 값이 바뀌는 자리입니다. `/Accounts/{accountId}/Messages`에서 중괄호 부분만 실제 계정 값으로 바뀝니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c10-zero3-bridge-5",
+              "type": "p",
+              "text": "전화번호의 `+`처럼 URL에서 특별한 뜻을 가질 수 있는 문자는 `%2B` 같은 안전한 형태로 바뀔 수 있습니다. 이것이 URL encoding입니다. REST client가 이런 작업을 대신해 주기도 합니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c10-zero3-bridge-6",
+              "type": "p",
+              "text": "특정 REST client 이름을 외우는 것이 목표가 아닙니다. HTTP 요청이 URL·Query·Auth·Headers·Body라는 독립된 조각으로 조립된다는 것을 눈으로 익히는 것이 핵심입니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c10-zero3-checkpoint",
+              "type": "p",
+              "text": "【여기까지만 이해해도 다음으로 갈 수 있습니다】 용어 철자를 외우는 것보다 “누가 요청하고, 누가 처리하고, 무엇이 돌아오는가”를 자기 말로 설명할 수 있으면 충분합니다."
+            },
+            {
               "type": "p",
               "text": "cURL은 요청의 원형을 잘 보여 주지만 요청을 여러 개 저장하고 조금씩 수정하며 탐색하기에는 불편할 수 있습니다. 시각적 REST client는 URL, query, headers, auth, body를 별도 영역으로 나누어 보여 줍니다.",
               "sourceRefs": [
@@ -21102,6 +21611,17 @@
               ],
               "_origin": "source-learning",
               "id": "yt-api-beginners-WXsD0ZgxjRw-c10-deep-01"
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c10-zero3-scene-restclient-intro",
+              "type": "p",
+              "text": "【강사의 장면·비유를 눈으로 보기】 긴 요청을 역할별 칸으로 나눠 눈으로 조립합니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c10-zero3-scene-restclient",
+              "type": "image",
+              "src": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221200%22%20height%3D%22675%22%20viewBox%3D%220%200%201200%20675%22%3E%3Crect%20width%3D%221200%22%20height%3D%22675%22%20fill%3D%22%23f8f4ea%22%2F%3E%3Crect%20width%3D%221200%22%20height%3D%2214%22%20fill%3D%22%2366735f%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2278%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2235%22%20font-weight%3D%22800%22%20fill%3D%22%23222820%22%3EREST%20Client%EB%A5%BC%20%EC%84%9C%EB%9E%8D%EC%B2%98%EB%9F%BC%20%EB%B3%B4%EA%B8%B0%3C%2Ftext%3E%3Ctext%20x%3D%2260%22%20y%3D%22118%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2221%22%20fill%3D%22%23596055%22%3E%EA%B8%B4%20%EC%9A%94%EC%B2%AD%EC%9D%84%20%EC%97%AD%ED%95%A0%EB%B3%84%20%EC%B9%B8%EC%9C%BC%EB%A1%9C%20%EB%82%98%EB%88%A0%20%EB%88%88%EC%9C%BC%EB%A1%9C%20%EC%A1%B0%EB%A6%BD%ED%95%A9%EB%8B%88%EB%8B%A4.%3C%2Ftext%3E%3Crect%20x%3D%2260%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%2284%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3E%EB%AA%A9%EC%A0%81%EC%A7%80%3C%2Ftext%3E%3Ctext%20x%3D%2284%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3EURL%3C%2Ftext%3E%3Ctext%20x%3D%2284%22%20y%3D%22311%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3EQuery%3C%2Ftext%3E%3Crect%20x%3D%22428%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22452%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3E%EC%9E%90%EA%B2%A9%C2%B7%EC%84%A4%EB%AA%85%3C%2Ftext%3E%3Ctext%20x%3D%22452%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3EAuth%3C%2Ftext%3E%3Ctext%20x%3D%22452%22%20y%3D%22311%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3EHeaders%3C%2Ftext%3E%3Crect%20x%3D%22796%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22820%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3E%EC%8B%A4%EC%A0%9C%20%EB%82%B4%EC%9A%A9%3C%2Ftext%3E%3Ctext%20x%3D%22820%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3EBody%3C%2Ftext%3E%3Ctext%20x%3D%22820%22%20y%3D%22311%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3ESend%20%E2%86%92%20Response%3C%2Ftext%3E%3Ctext%20x%3D%2260%22%20y%3D%22630%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23747a70%22%3E%EA%B5%90%EC%9E%AC%EC%9A%A9%20%EC%9E%A5%EB%A9%B4%20%EC%9E%AC%ED%98%84%20%C2%B7%20%EC%98%81%EC%83%81%20%EC%BA%A1%EC%B2%98%20%EC%95%84%EB%8B%98%3C%2Ftext%3E%3C%2Fsvg%3E",
+              "caption": "REST Client를 서랍처럼 보기 · 교재용 장면 재현(영상 캡처 아님)"
             },
             {
               "type": "p",
@@ -21399,6 +21919,41 @@
               "caption": "캐시: 다시 받지 않아도 되는 데이터 · 교재용 재현 화면(영상 캡처 아님)"
             },
             {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c11-zero3-intro",
+              "type": "p",
+              "text": "【전문용어 보기 전, 먼저 사람 말로】 이 장에서 강사가 말하려는 큰 그림을 일상적인 말부터 잡고 들어갑니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c11-zero3-bridge-1",
+              "type": "p",
+              "text": "문자 메시지 하나에는 사진이 여러 장 붙을 수 있습니다. 그래서 “메시지 한 개”와 “그 메시지에 붙은 미디어 여러 개”가 부모-자식처럼 연결된 resource 관계가 됩니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c11-zero3-bridge-2",
+              "type": "p",
+              "text": "API 응답 안에 다음 resource로 가는 URI가 있으면 그 주소를 따라가 추가 데이터를 읽을 수 있습니다. 메시지 → 미디어 목록 → 개별 미디어 순입니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c11-zero3-bridge-3",
+              "type": "p",
+              "text": "cache는 이미 받은 데이터를 잠시 저장해 다시 쓰는 것입니다. 같은 사진이 바뀌지 않았는데 매번 다시 받으면 시간과 데이터가 낭비됩니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c11-zero3-bridge-4",
+              "type": "p",
+              "text": "`If-Modified-Since`는 “나는 이 시각 버전을 갖고 있는데 그 뒤에 바뀌었으면 새것을 줘”라는 질문입니다. 바뀐 것이 없으면 서버가 304 Not Modified를 보내고 본문을 다시 보내지 않을 수 있습니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c11-zero3-bridge-5",
+              "type": "p",
+              "text": "Postman이나 Thunder Client 같은 도구 이름보다 중요한 것은 요청을 저장하고 다시 실행하며 다른 사람과 공유할 수 있다는 점입니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c11-zero3-checkpoint",
+              "type": "p",
+              "text": "【여기까지만 이해해도 다음으로 갈 수 있습니다】 용어 철자를 외우는 것보다 “누가 요청하고, 누가 처리하고, 무엇이 돌아오는가”를 자기 말로 설명할 수 있으면 충분합니다."
+            },
+            {
               "type": "p",
               "text": "문자 메시지 하나에는 여러 사진이 붙을 수 있습니다. 따라서 메시지 리소스에는 media라는 하위 리소스가 연결됩니다. API 응답에 포함된 URI를 따라가면 “메시지 → 미디어 목록 → 개별 미디어”처럼 관계를 탐색할 수 있습니다.",
               "sourceRefs": [
@@ -21573,6 +22128,17 @@
               ],
               "_origin": "source-learning",
               "id": "yt-api-beginners-WXsD0ZgxjRw-c11-deep-01"
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c11-zero3-scene-media-intro",
+              "type": "p",
+              "text": "【강사의 장면·비유를 눈으로 보기】 한 메시지 아래에 여러 media resource가 연결됩니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c11-zero3-scene-media",
+              "type": "image",
+              "src": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221200%22%20height%3D%22675%22%20viewBox%3D%220%200%201200%20675%22%3E%3Crect%20width%3D%221200%22%20height%3D%22675%22%20fill%3D%22%23f8f4ea%22%2F%3E%3Crect%20width%3D%221200%22%20height%3D%2214%22%20fill%3D%22%2366735f%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2278%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2235%22%20font-weight%3D%22800%22%20fill%3D%22%23222820%22%3E%EB%A9%94%EC%8B%9C%EC%A7%80%EC%99%80%20%EC%82%AC%EC%A7%84%EC%9D%98%20%EB%B6%80%EB%AA%A8-%EC%9E%90%EC%8B%9D%20%EA%B4%80%EA%B3%84%3C%2Ftext%3E%3Ctext%20x%3D%2260%22%20y%3D%22118%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2221%22%20fill%3D%22%23596055%22%3E%ED%95%9C%20%EB%A9%94%EC%8B%9C%EC%A7%80%20%EC%95%84%EB%9E%98%EC%97%90%20%EC%97%AC%EB%9F%AC%20media%20resource%EA%B0%80%20%EC%97%B0%EA%B2%B0%EB%90%A9%EB%8B%88%EB%8B%A4.%3C%2Ftext%3E%3Crect%20x%3D%2260%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%2284%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3EMessage%3C%2Ftext%3E%3Ctext%20x%3D%2284%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EB%AC%B8%EC%9E%90%20%EB%B3%B8%EB%AC%B8%3C%2Ftext%3E%3Ctext%20x%3D%2284%22%20y%3D%22311%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3Emessage%20ID%3C%2Ftext%3E%3Crect%20x%3D%22428%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22452%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3EMedia%20%EB%AA%A9%EB%A1%9D%3C%2Ftext%3E%3Ctext%20x%3D%22452%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EC%82%AC%EC%A7%84%201%3C%2Ftext%3E%3Ctext%20x%3D%22452%22%20y%3D%22311%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EC%82%AC%EC%A7%84%202%3C%2Ftext%3E%3Ctext%20x%3D%22452%22%20y%3D%22357%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EC%97%AC%EB%9F%AC%20%EA%B0%9C%20%EA%B0%80%EB%8A%A5%3C%2Ftext%3E%3Crect%20x%3D%22796%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22820%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3E%EA%B0%9C%EB%B3%84%20Media%3C%2Ftext%3E%3Ctext%20x%3D%22820%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3EURI%20%EB%94%B0%EB%9D%BC%20%EC%A1%B0%ED%9A%8C%3C%2Ftext%3E%3Ctext%20x%3D%22820%22%20y%3D%22311%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EC%8B%A4%EC%A0%9C%20%ED%8C%8C%EC%9D%BC%20%EC%A0%95%EB%B3%B4%3C%2Ftext%3E%3Ctext%20x%3D%2260%22%20y%3D%22630%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23747a70%22%3E%EA%B5%90%EC%9E%AC%EC%9A%A9%20%EC%9E%A5%EB%A9%B4%20%EC%9E%AC%ED%98%84%20%C2%B7%20%EC%98%81%EC%83%81%20%EC%BA%A1%EC%B2%98%20%EC%95%84%EB%8B%98%3C%2Ftext%3E%3C%2Fsvg%3E",
+              "caption": "메시지와 사진의 부모-자식 관계 · 교재용 장면 재현(영상 캡처 아님)"
             },
             {
               "type": "p",
@@ -21851,6 +22417,51 @@
               "caption": "Promise와 await · 교재용 재현 화면(영상 캡처 아님)"
             },
             {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c12-zero3-intro",
+              "type": "p",
+              "text": "【전문용어 보기 전, 먼저 사람 말로】 이 장에서 강사가 말하려는 큰 그림을 일상적인 말부터 잡고 들어갑니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c12-zero3-bridge-1",
+              "type": "p",
+              "text": "SDK나 helper library는 HTTP 요청을 없애는 마법이 아닙니다. 우리가 길게 적던 URL, header, 인증, body 조립을 라이브러리 안에서 대신 해 주는 포장지입니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c12-zero3-bridge-2",
+              "type": "p",
+              "text": "`client.messages.create(...)`라고 쓰면 겉으로는 “메시지를 만들어”라는 JavaScript 메서드처럼 보이지만 내부에서는 결국 올바른 URL과 인증 정보로 HTTP 요청을 보냅니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c12-zero3-bridge-3",
+              "type": "p",
+              "text": "Promise는 “결과가 지금 바로 없지만 나중에 도착할 작업”을 나타내는 약속표라고 생각하면 됩니다. 네트워크 요청은 시간이 걸리므로 JavaScript는 그 자리에서 모든 일을 멈추지 않을 수 있습니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c12-zero3-bridge-4",
+              "type": "p",
+              "text": "강의에서 `Starting program`과 `Gathering message log`가 예상과 다른 순서로 찍히는 이유가 이것입니다. API 응답을 기다리는 동안 다음 줄이 먼저 실행될 수 있습니다. asynchronous는 “모든 것을 한 줄씩 끝날 때까지 멈추는 방식만 쓰지 않는다”는 뜻입니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c12-zero3-bridge-5",
+              "type": "p",
+              "text": "`await`는 Promise 결과가 꼭 필요한 지점에서 “여기서는 결과가 올 때까지 기다렸다가 이어가자”라고 쓰는 문법입니다. 결과가 오면 실제 값이 변수에 들어갑니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c12-zero3-bridge-6",
+              "type": "p",
+              "text": "삭제 예제에서는 곧바로 삭제하지 않고 먼저 “지웠다면 이 대상을 지웠을 것”을 출력합니다. 대상이 맞는지 확인한 뒤 실제 삭제를 켜는 안전한 습관입니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c12-zero3-bridge-7",
+              "type": "p",
+              "text": "강사가 처음에 `delete()`라고 생각했다가 문서를 보고 `remove()`로 고치는 장면도 중요합니다. 숙련자도 API를 전부 외우지 않습니다. 오류를 읽고 문서를 확인해 고치는 것이 정상입니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c12-zero3-checkpoint",
+              "type": "p",
+              "text": "【여기까지만 이해해도 다음으로 갈 수 있습니다】 용어 철자를 외우는 것보다 “누가 요청하고, 누가 처리하고, 무엇이 돌아오는가”를 자기 말로 설명할 수 있으면 충분합니다."
+            },
+            {
               "type": "p",
               "text": "HTTP 요청을 직접 쓰면 URL 조합, 인증 headers, 데이터 인코딩, 응답 파싱 같은 코드가 반복됩니다. 이런 반복 코드를 boilerplate라고 합니다. 서비스 제공자는 이를 줄이기 위해 언어별 helper library 또는 SDK를 제공합니다.",
               "sourceRefs": [
@@ -21918,6 +22529,16 @@
               "_format": "code"
             },
             {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c12-b5-zero3-explain-1",
+              "type": "p",
+              "text": "【코드를 사람 말로 1】 첫 줄은 설치한 SDK를 불러옵니다. 그다음 `client`라는 API 사용 도구를 만들고 계정 ID와 token을 연결합니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c12-b5-zero3-explain-2",
+              "type": "p",
+              "text": "【코드를 사람 말로 2】 `client.messages.create({...})` 안의 from, to, body가 새 문자에 필요한 값입니다. 성공하면 `.then(...)`, 실패하면 `.catch(...)`가 실행됩니다."
+            },
+            {
               "type": "p",
               "text": "`client`는 인증 정보가 연결된 API 클라이언트입니다. `client.messages`는 Message 리소스에 접근하는 창구이고 `.create(...)`는 새 메시지 생성 요청을 감쌉니다. cURL에서 봤던 URL·POST·인증·폼 데이터가 객체와 메서드로 변한 것입니다.",
               "sourceRefs": [
@@ -21982,6 +22603,16 @@
               "_origin": "explanation",
               "id": "yt-api-beginners-WXsD0ZgxjRw-c12-b10",
               "_format": "code"
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c12-b10-zero3-explain-1",
+              "type": "p",
+              "text": "【코드를 사람 말로 1】 `async function`은 안에서 `await`를 쓸 수 있는 함수입니다. 메시지 목록이 올 때까지 기다린 뒤 실제 결과를 `messages`에 넣습니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c12-b10-zero3-explain-2",
+              "type": "p",
+              "text": "【코드를 사람 말로 2】 `for (const message of messages)`는 메시지를 하나씩 꺼냅니다. 실제 삭제 줄은 `//`로 막혀 있어 지금은 지우지 않고 “would delete”만 보여 줍니다. 먼저 대상을 확인하는 안전장치입니다."
             },
             {
               "type": "p",
@@ -22153,6 +22784,17 @@
               "id": "yt-api-beginners-WXsD0ZgxjRw-c12-deep-06"
             },
             {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c12-zero3-scene-async-intro",
+              "type": "p",
+              "text": "【강사의 장면·비유를 눈으로 보기】 네트워크 응답은 늦게 도착할 수 있습니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c12-zero3-scene-async",
+              "type": "image",
+              "src": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221200%22%20height%3D%22675%22%20viewBox%3D%220%200%201200%20675%22%3E%3Crect%20width%3D%221200%22%20height%3D%22675%22%20fill%3D%22%23f8f4ea%22%2F%3E%3Crect%20width%3D%221200%22%20height%3D%2214%22%20fill%3D%22%2366735f%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2278%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2235%22%20font-weight%3D%22800%22%20fill%3D%22%23222820%22%3E%EB%B9%84%EB%8F%99%EA%B8%B0%3A%20%EA%B8%B0%EB%8B%A4%EB%A6%AC%EB%8A%94%20%EB%8F%99%EC%95%88%20%EB%8B%A4%EB%A5%B8%20%EC%A4%84%EC%9D%B4%20%EA%B0%88%20%EC%88%98%20%EC%9E%88%EC%9D%8C%3C%2Ftext%3E%3Ctext%20x%3D%2260%22%20y%3D%22118%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2221%22%20fill%3D%22%23596055%22%3E%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%20%EC%9D%91%EB%8B%B5%EC%9D%80%20%EB%8A%A6%EA%B2%8C%20%EB%8F%84%EC%B0%A9%ED%95%A0%20%EC%88%98%20%EC%9E%88%EC%8A%B5%EB%8B%88%EB%8B%A4.%3C%2Ftext%3E%3Crect%20x%3D%2260%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%2284%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3E1.%20%EC%9A%94%EC%B2%AD%20%EC%8B%9C%EC%9E%91%3C%2Ftext%3E%3Ctext%20x%3D%2284%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EB%AA%A9%EB%A1%9D%20%EC%9A%94%EC%B2%AD%3C%2Ftext%3E%3Ctext%20x%3D%2284%22%20y%3D%22311%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EC%95%84%EC%A7%81%20%EA%B2%B0%EA%B3%BC%20%EC%97%86%EC%9D%8C%3C%2Ftext%3E%3Crect%20x%3D%22428%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22452%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3E2.%20%EB%8B%A4%EB%A5%B8%20%EC%A4%84%3C%2Ftext%3E%3Ctext%20x%3D%22452%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EB%8B%A4%EC%9D%8C%20%EC%9E%91%EC%97%85%20%EC%A7%84%ED%96%89%3C%2Ftext%3E%3Ctext%20x%3D%22452%22%20y%3D%22311%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EC%B6%9C%EB%A0%A5%EC%9D%B4%20%EB%A8%BC%EC%A0%80%20%EB%B3%B4%EC%9D%BC%20%EC%88%98%20%EC%9E%88%EC%9D%8C%3C%2Ftext%3E%3Crect%20x%3D%22796%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22820%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3E3.%20%EC%9D%91%EB%8B%B5%20%EB%8F%84%EC%B0%A9%3C%2Ftext%3E%3Ctext%20x%3D%22820%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3EPromise%20%EC%99%84%EB%A3%8C%3C%2Ftext%3E%3Ctext%20x%3D%22820%22%20y%3D%22311%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EA%B2%B0%EA%B3%BC%20%EC%82%AC%EC%9A%A9%3C%2Ftext%3E%3Ctext%20x%3D%2260%22%20y%3D%22630%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23747a70%22%3E%EA%B5%90%EC%9E%AC%EC%9A%A9%20%EC%9E%A5%EB%A9%B4%20%EC%9E%AC%ED%98%84%20%C2%B7%20%EC%98%81%EC%83%81%20%EC%BA%A1%EC%B2%98%20%EC%95%84%EB%8B%98%3C%2Ftext%3E%3C%2Fsvg%3E",
+              "caption": "비동기: 기다리는 동안 다른 줄이 갈 수 있음 · 교재용 장면 재현(영상 캡처 아님)"
+            },
+            {
               "type": "p",
               "text": "`.then(messages => ...)`는 요청이 성공해 실제 messages가 생긴 뒤 실행할 코드를 등록합니다. 화살표 `=>`는 짧게 함수를 만드는 JavaScript 문법입니다. `messages.forEach(...)`는 배열의 메시지를 하나씩 처리합니다.",
               "sourceRefs": [
@@ -22190,6 +22832,17 @@
               ],
               "_origin": "source-learning",
               "id": "yt-api-beginners-WXsD0ZgxjRw-c12-deep-09"
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c12-zero3-scene-await-intro",
+              "type": "p",
+              "text": "【강사의 장면·비유를 눈으로 보기】 Promise 결과가 필요한 지점에서 기다립니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c12-zero3-scene-await",
+              "type": "image",
+              "src": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221200%22%20height%3D%22675%22%20viewBox%3D%220%200%201200%20675%22%3E%3Crect%20width%3D%221200%22%20height%3D%22675%22%20fill%3D%22%23f8f4ea%22%2F%3E%3Crect%20width%3D%221200%22%20height%3D%2214%22%20fill%3D%22%2366735f%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2278%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2235%22%20font-weight%3D%22800%22%20fill%3D%22%23222820%22%3Eawait%EB%8A%94%20%EC%97%AC%EA%B8%B0%EC%84%9C%EB%8A%94%20%EA%B2%B0%EA%B3%BC%EB%A5%BC%20%EB%B0%9B%EA%B3%A0%20%EA%B0%80%EC%9E%90%3C%2Ftext%3E%3Ctext%20x%3D%2260%22%20y%3D%22118%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2221%22%20fill%3D%22%23596055%22%3EPromise%20%EA%B2%B0%EA%B3%BC%EA%B0%80%20%ED%95%84%EC%9A%94%ED%95%9C%20%EC%A7%80%EC%A0%90%EC%97%90%EC%84%9C%20%EA%B8%B0%EB%8B%A4%EB%A6%BD%EB%8B%88%EB%8B%A4.%3C%2Ftext%3E%3Crect%20x%3D%2260%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%2284%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3E%EC%9A%94%EC%B2%AD%3C%2Ftext%3E%3Ctext%20x%3D%2284%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3Elist()%20%EC%8B%9C%EC%9E%91%3C%2Ftext%3E%3Ctext%20x%3D%2284%22%20y%3D%22311%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3EPromise%3C%2Ftext%3E%3Crect%20x%3D%22428%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22452%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3Eawait%3C%2Ftext%3E%3Ctext%20x%3D%22452%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EA%B2%B0%EA%B3%BC%20%EB%8F%84%EC%B0%A9%20%EB%8C%80%EA%B8%B0%3C%2Ftext%3E%3Ctext%20x%3D%22452%22%20y%3D%22311%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EC%9D%B4%20%EC%A7%80%EC%A0%90%EC%97%90%EC%84%9C%20%EB%A9%88%EC%B6%A4%3C%2Ftext%3E%3Crect%20x%3D%22796%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22820%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3E%EB%8B%A4%EC%9D%8C%20%EC%A4%84%3C%2Ftext%3E%3Ctext%20x%3D%22820%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EC%8B%A4%EC%A0%9C%20%EA%B0%92%20%EC%82%AC%EC%9A%A9%3C%2Ftext%3E%3Ctext%20x%3D%22820%22%20y%3D%22311%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3Emessages%EC%97%90%20%EC%A0%80%EC%9E%A5%3C%2Ftext%3E%3Ctext%20x%3D%2260%22%20y%3D%22630%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23747a70%22%3E%EA%B5%90%EC%9E%AC%EC%9A%A9%20%EC%9E%A5%EB%A9%B4%20%EC%9E%AC%ED%98%84%20%C2%B7%20%EC%98%81%EC%83%81%20%EC%BA%A1%EC%B2%98%20%EC%95%84%EB%8B%98%3C%2Ftext%3E%3C%2Fsvg%3E",
+              "caption": "await는 여기서는 결과를 받고 가자 · 교재용 장면 재현(영상 캡처 아님)"
             },
             {
               "type": "p",
@@ -22409,6 +23062,46 @@
               "caption": "최종 프로젝트의 데이터 흐름 · 교재용 재현 화면(영상 캡처 아님)"
             },
             {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c13-zero3-intro",
+              "type": "p",
+              "text": "【전문용어 보기 전, 먼저 사람 말로】 이 장에서 강사가 말하려는 큰 그림을 일상적인 말부터 잡고 들어갑니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c13-zero3-bridge-1",
+              "type": "p",
+              "text": "이제 앞에서 따로 배운 요청을 작은 웹페이지에 연결합니다. 목표는 HTML과 CSS를 처음부터 만드는 것이 아니라 준비된 화면에서 “데이터가 들어오는 자리”를 찾는 것입니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c13-zero3-bridge-2",
+              "type": "p",
+              "text": "starter HTML은 기본 화면과 Vue가 이미 준비된 출발 파일입니다. 빈 집을 새로 짓기보다 가구가 놓인 집에서 필요한 전선을 연결하는 것과 비슷합니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c13-zero3-bridge-3",
+              "type": "p",
+              "text": "`data()` 안의 값은 화면이 사용할 데이터입니다. `callToAction`은 안내 문구이고 `gallery`는 사진 목록입니다. 처음에는 gallery가 빈 배열 `[]`입니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c13-zero3-bridge-4",
+              "type": "p",
+              "text": "`{{ callToAction }}` 같은 중괄호 두 쌍은 Vue가 데이터 값을 화면에 끼워 넣는 자리입니다. 데이터가 바뀌면 화면도 다시 그려집니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c13-zero3-bridge-5",
+              "type": "p",
+              "text": "`mounted()`는 화면 구성요소가 준비된 뒤 실행되는 시점입니다. 여기서 `loadImages()`를 호출하면 페이지가 열린 뒤 서버에서 사진을 받아오는 흐름이 시작됩니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c13-zero3-bridge-6",
+              "type": "p",
+              "text": "이 장에서는 문법 암기보다 “화면에 필요한 데이터 모양을 정하고 → 서버에서 받아 → 화면에 연결한다”는 순서를 잡으세요."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c13-zero3-checkpoint",
+              "type": "p",
+              "text": "【여기까지만 이해해도 다음으로 갈 수 있습니다】 용어 철자를 외우는 것보다 “누가 요청하고, 누가 처리하고, 무엇이 돌아오는가”를 자기 말로 설명할 수 있으면 충분합니다."
+            },
+            {
               "type": "p",
               "text": "마지막 단원에서는 사용자가 특정 주제의 사진과 캡션을 문자로 보내고, 웹페이지가 그 사진들을 갤러리로 보여 주는 작은 앱을 만듭니다. 강의에서는 음식 사진 같은 예시로 진행하지만 핵심은 “외부 메시징 서비스의 데이터를 웹 UI에 연결한다”는 것입니다.",
               "sourceRefs": [
@@ -22604,6 +23297,17 @@
               ],
               "_origin": "source-learning",
               "id": "yt-api-beginners-WXsD0ZgxjRw-c13-deep-02"
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c13-zero3-scene-starter-intro",
+              "type": "p",
+              "text": "【강사의 장면·비유를 눈으로 보기】 강의는 빈 HTML부터 만들지 않고 starter를 사용합니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c13-zero3-scene-starter",
+              "type": "image",
+              "src": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221200%22%20height%3D%22675%22%20viewBox%3D%220%200%201200%20675%22%3E%3Crect%20width%3D%221200%22%20height%3D%22675%22%20fill%3D%22%23f8f4ea%22%2F%3E%3Crect%20width%3D%221200%22%20height%3D%2214%22%20fill%3D%22%2366735f%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2278%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2235%22%20font-weight%3D%22800%22%20fill%3D%22%23222820%22%3E%EC%A4%80%EB%B9%84%EB%90%9C%20%ED%99%94%EB%A9%B4%EC%97%90%EC%84%9C%20API%20%EC%97%B0%EA%B2%B0%20%EC%9E%90%EB%A6%AC%20%EC%B0%BE%EA%B8%B0%3C%2Ftext%3E%3Ctext%20x%3D%2260%22%20y%3D%22118%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2221%22%20fill%3D%22%23596055%22%3E%EA%B0%95%EC%9D%98%EB%8A%94%20%EB%B9%88%20HTML%EB%B6%80%ED%84%B0%20%EB%A7%8C%EB%93%A4%EC%A7%80%20%EC%95%8A%EA%B3%A0%20starter%EB%A5%BC%20%EC%82%AC%EC%9A%A9%ED%95%A9%EB%8B%88%EB%8B%A4.%3C%2Ftext%3E%3Crect%20x%3D%2260%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%2284%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3EStarter%20HTML%3C%2Ftext%3E%3Ctext%20x%3D%2284%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EA%B8%B0%EB%B3%B8%20%ED%99%94%EB%A9%B4%20%EC%A4%80%EB%B9%84%3C%2Ftext%3E%3Ctext%20x%3D%2284%22%20y%3D%22311%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3EVue%20%EC%A4%80%EB%B9%84%3C%2Ftext%3E%3Crect%20x%3D%22428%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22452%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3Edata()%3C%2Ftext%3E%3Ctext%20x%3D%22452%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3EcallToAction%3C%2Ftext%3E%3Ctext%20x%3D%22452%22%20y%3D%22311%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3Egallery%3A%20%5B%5D%3C%2Ftext%3E%3Crect%20x%3D%22796%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22820%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3E%EC%97%B0%EA%B2%B0%3C%2Ftext%3E%3Ctext%20x%3D%22820%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EC%84%9C%EB%B2%84%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EB%B0%9B%EA%B8%B0%3C%2Ftext%3E%3Ctext%20x%3D%22820%22%20y%3D%22311%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%ED%99%94%EB%A9%B4%20%EB%8B%A4%EC%8B%9C%20%EA%B7%B8%EB%A6%BC%3C%2Ftext%3E%3Ctext%20x%3D%2260%22%20y%3D%22630%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23747a70%22%3E%EA%B5%90%EC%9E%AC%EC%9A%A9%20%EC%9E%A5%EB%A9%B4%20%EC%9E%AC%ED%98%84%20%C2%B7%20%EC%98%81%EC%83%81%20%EC%BA%A1%EC%B2%98%20%EC%95%84%EB%8B%98%3C%2Ftext%3E%3C%2Fsvg%3E",
+              "caption": "준비된 화면에서 API 연결 자리 찾기 · 교재용 장면 재현(영상 캡처 아님)"
             },
             {
               "type": "p",
@@ -22855,6 +23559,46 @@
               "caption": "Webhook = API가 나를 호출 · 교재용 재현 화면(영상 캡처 아님)"
             },
             {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c14-zero3-intro",
+              "type": "p",
+              "text": "【전문용어 보기 전, 먼저 사람 말로】 이 장에서 강사가 말하려는 큰 그림을 일상적인 말부터 잡고 들어갑니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c14-zero3-bridge-1",
+              "type": "p",
+              "text": "serverless는 “서버가 없다”는 뜻이 아닙니다. 실제 서버는 있습니다. 다만 개발자가 서버 컴퓨터를 직접 설치하고 계속 관리하는 일을 플랫폼이 대신한다는 뜻에 가깝습니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c14-zero3-bridge-2",
+              "type": "p",
+              "text": "작은 함수를 올려 두면 요청이 왔을 때 플랫폼이 그 함수를 실행합니다. 개발자는 서버 머신보다 “어떤 요청에 어떤 코드를 실행할지”에 집중합니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c14-zero3-bridge-3",
+              "type": "p",
+              "text": "webhook은 내가 계속 “새 문자 왔어?”라고 묻는 대신 문자가 도착했을 때 Twilio가 내가 정한 주소로 “새 문자 왔습니다”라고 알려 주는 방식입니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c14-zero3-bridge-4",
+              "type": "p",
+              "text": "`event.Body`는 들어온 문자 본문입니다. To, From 같은 값도 같은 event에서 받을 수 있습니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c14-zero3-bridge-5",
+              "type": "p",
+              "text": "TwiML은 Twilio가 이해하는 응답용 마크업입니다. 브라우저가 HTML을 읽듯 Twilio는 TwiML을 읽어 문자·전화 동작을 결정할 수 있습니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c14-zero3-bridge-6",
+              "type": "p",
+              "text": "이 장의 큰 흐름은 문자 도착 → webhook 호출 → serverless 함수 실행 → 응답 생성입니다. 영어 단어보다 화살표 순서를 먼저 기억하세요."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c14-zero3-checkpoint",
+              "type": "p",
+              "text": "【여기까지만 이해해도 다음으로 갈 수 있습니다】 용어 철자를 외우는 것보다 “누가 요청하고, 누가 처리하고, 무엇이 돌아오는가”를 자기 말로 설명할 수 있으면 충분합니다."
+            },
+            {
               "type": "p",
               "text": "예전에는 웹 서비스를 공개하려면 물리 서버나 가상 서버를 준비하고, 운영체제를 관리하고, 프로세스를 항상 실행하며, 장애와 확장을 직접 관리해야 했습니다. serverless는 이런 인프라 운영의 상당 부분을 플랫폼에 맡기고 함수와 정적 자산 배포에 집중하게 합니다.",
               "sourceRefs": [
@@ -22919,6 +23663,16 @@
               "_origin": "explanation",
               "id": "yt-api-beginners-WXsD0ZgxjRw-c14-b5",
               "_format": "code"
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c14-b5-zero3-explain-1",
+              "type": "p",
+              "text": "【코드를 사람 말로 1】 `exports.handler`는 요청이 들어왔을 때 플랫폼이 실행할 함수입니다. `event.Body`에서 사용자가 보낸 문자 본문을 읽습니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c14-b5-zero3-explain-2",
+              "type": "p",
+              "text": "【코드를 사람 말로 2】 `MessagingResponse()`로 Twilio가 이해하는 응답을 만들고 답장 문구를 넣습니다. 마지막 `callback(null, response)`가 완성한 응답을 Twilio 쪽으로 돌려보냅니다."
             },
             {
               "type": "p",
@@ -23051,6 +23805,17 @@
               "id": "yt-api-beginners-WXsD0ZgxjRw-c14-deep-02"
             },
             {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c14-zero3-scene-serverless-intro",
+              "type": "p",
+              "text": "【강사의 장면·비유를 눈으로 보기】 서버 운영을 플랫폼이 대신 맡는 구조입니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c14-zero3-scene-serverless",
+              "type": "image",
+              "src": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221200%22%20height%3D%22675%22%20viewBox%3D%220%200%201200%20675%22%3E%3Crect%20width%3D%221200%22%20height%3D%22675%22%20fill%3D%22%23f8f4ea%22%2F%3E%3Crect%20width%3D%221200%22%20height%3D%2214%22%20fill%3D%22%2366735f%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2278%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2235%22%20font-weight%3D%22800%22%20fill%3D%22%23222820%22%3EServerless%20%3D%20%EC%84%9C%EB%B2%84%EA%B0%80%20%EC%97%86%EB%8A%94%20%EA%B2%83%EC%9D%B4%20%EC%95%84%EB%8B%98%3C%2Ftext%3E%3Ctext%20x%3D%2260%22%20y%3D%22118%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2221%22%20fill%3D%22%23596055%22%3E%EC%84%9C%EB%B2%84%20%EC%9A%B4%EC%98%81%EC%9D%84%20%ED%94%8C%EB%9E%AB%ED%8F%BC%EC%9D%B4%20%EB%8C%80%EC%8B%A0%20%EB%A7%A1%EB%8A%94%20%EA%B5%AC%EC%A1%B0%EC%9E%85%EB%8B%88%EB%8B%A4.%3C%2Ftext%3E%3Crect%20x%3D%2260%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%2284%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3E%EA%B0%9C%EB%B0%9C%EC%9E%90%3C%2Ftext%3E%3Ctext%20x%3D%2284%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%ED%95%A8%EC%88%98%20%EC%BD%94%EB%93%9C%20%EC%9E%91%EC%84%B1%3C%2Ftext%3E%3Ctext%20x%3D%2284%22%20y%3D%22311%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EC%84%9C%EB%B2%84%20%EB%A8%B8%EC%8B%A0%20%EA%B4%80%EB%A6%AC%20X%3C%2Ftext%3E%3Crect%20x%3D%22428%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22452%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3E%ED%94%8C%EB%9E%AB%ED%8F%BC%3C%2Ftext%3E%3Ctext%20x%3D%22452%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EC%9A%94%EC%B2%AD%20%EB%95%8C%20%EC%8B%A4%ED%96%89%3C%2Ftext%3E%3Ctext%20x%3D%22452%22%20y%3D%22311%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EC%9A%B4%EC%98%81%C2%B7%ED%99%95%EC%9E%A5%20%EB%8B%B4%EB%8B%B9%3C%2Ftext%3E%3Crect%20x%3D%22796%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22820%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3E%EC%8B%A4%EC%A0%9C%20%EC%84%9C%EB%B2%84%3C%2Ftext%3E%3Ctext%20x%3D%22820%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EC%96%B4%EB%94%98%EA%B0%80%EC%97%90%20%EC%A1%B4%EC%9E%AC%3C%2Ftext%3E%3Ctext%20x%3D%22820%22%20y%3D%22311%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%ED%95%A8%EC%88%98%20%EC%8B%A4%EC%A0%9C%20%EC%8B%A4%ED%96%89%3C%2Ftext%3E%3Ctext%20x%3D%2260%22%20y%3D%22630%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23747a70%22%3E%EA%B5%90%EC%9E%AC%EC%9A%A9%20%EC%9E%A5%EB%A9%B4%20%EC%9E%AC%ED%98%84%20%C2%B7%20%EC%98%81%EC%83%81%20%EC%BA%A1%EC%B2%98%20%EC%95%84%EB%8B%98%3C%2Ftext%3E%3C%2Fsvg%3E",
+              "caption": "Serverless = 서버가 없는 것이 아님 · 교재용 장면 재현(영상 캡처 아님)"
+            },
+            {
               "type": "p",
               "text": "Twilio Functions & Assets에서 Service를 만들고 앞 장의 `index.html`을 public asset으로 업로드합니다. 업로드만 한 상태는 아직 인터넷에 공개된 것이 아니고 Deploy All을 눌러야 실제 URL에서 접근할 수 있습니다.",
               "sourceRefs": [
@@ -23127,6 +23892,17 @@
               ],
               "_origin": "source-learning",
               "id": "yt-api-beginners-WXsD0ZgxjRw-c14-deep-08"
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c14-zero3-scene-webhook-intro",
+              "type": "p",
+              "text": "【강사의 장면·비유를 눈으로 보기】 계속 물어보지 않아도 사건이 생겼을 때 요청이 옵니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c14-zero3-scene-webhook",
+              "type": "image",
+              "src": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221200%22%20height%3D%22675%22%20viewBox%3D%220%200%201200%20675%22%3E%3Crect%20width%3D%221200%22%20height%3D%22675%22%20fill%3D%22%23f8f4ea%22%2F%3E%3Crect%20width%3D%221200%22%20height%3D%2214%22%20fill%3D%22%2366735f%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2278%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2235%22%20font-weight%3D%22800%22%20fill%3D%22%23222820%22%3EWebhook%EC%9D%80%20%EC%83%88%20%EC%9D%BC%EC%9D%B4%20%EC%83%9D%EA%B8%B0%EB%A9%B4%20%EB%A8%BC%EC%A0%80%20%EC%95%8C%EB%A0%A4%20%EC%A3%BC%EB%8A%94%20%EC%A0%84%ED%99%94%3C%2Ftext%3E%3Ctext%20x%3D%2260%22%20y%3D%22118%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2221%22%20fill%3D%22%23596055%22%3E%EA%B3%84%EC%86%8D%20%EB%AC%BC%EC%96%B4%EB%B3%B4%EC%A7%80%20%EC%95%8A%EC%95%84%EB%8F%84%20%EC%82%AC%EA%B1%B4%EC%9D%B4%20%EC%83%9D%EA%B2%BC%EC%9D%84%20%EB%95%8C%20%EC%9A%94%EC%B2%AD%EC%9D%B4%20%EC%98%B5%EB%8B%88%EB%8B%A4.%3C%2Ftext%3E%3Crect%20x%3D%2260%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%2284%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3E%EB%AC%B8%EC%9E%90%20%EB%8F%84%EC%B0%A9%3C%2Ftext%3E%3Ctext%20x%3D%2284%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EC%82%AC%EC%9A%A9%EC%9E%90%EA%B0%80%20%EC%A0%84%EC%86%A1%3C%2Ftext%3E%3Crect%20x%3D%22428%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22452%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3ETwilio%3C%2Ftext%3E%3Ctext%20x%3D%22452%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3EWebhook%20%ED%98%B8%EC%B6%9C%3C%2Ftext%3E%3Ctext%20x%3D%22452%22%20y%3D%22311%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3Eevent%20%EC%A0%84%EB%8B%AC%3C%2Ftext%3E%3Crect%20x%3D%22796%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22820%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3E%EC%9A%B0%EB%A6%AC%20%ED%95%A8%EC%88%98%3C%2Ftext%3E%3Ctext%20x%3D%22820%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3EBody%20%EC%9D%BD%EA%B8%B0%3C%2Ftext%3E%3Ctext%20x%3D%22820%22%20y%3D%22311%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EC%9D%91%EB%8B%B5%20%EB%A7%8C%EB%93%A4%EA%B8%B0%3C%2Ftext%3E%3Ctext%20x%3D%2260%22%20y%3D%22630%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23747a70%22%3E%EA%B5%90%EC%9E%AC%EC%9A%A9%20%EC%9E%A5%EB%A9%B4%20%EC%9E%AC%ED%98%84%20%C2%B7%20%EC%98%81%EC%83%81%20%EC%BA%A1%EC%B2%98%20%EC%95%84%EB%8B%98%3C%2Ftext%3E%3C%2Fsvg%3E",
+              "caption": "Webhook은 새 일이 생기면 먼저 알려 주는 전화 · 교재용 장면 재현(영상 캡처 아님)"
             },
             {
               "type": "p",
@@ -23300,6 +24076,46 @@
               "caption": "중첩 반복문이 필요한 이유 · 교재용 재현 화면(영상 캡처 아님)"
             },
             {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c15-zero3-intro",
+              "type": "p",
+              "text": "【전문용어 보기 전, 먼저 사람 말로】 이 장에서 강사가 말하려는 큰 그림을 일상적인 말부터 잡고 들어갑니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c15-zero3-bridge-1",
+              "type": "p",
+              "text": "이제 외부 서비스의 데이터를 그대로 보여 주지 않고 우리 웹페이지가 쓰기 좋은 JSON으로 바꿉니다. 이것이 server-side API의 중요한 역할 중 하나입니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c15-zero3-bridge-2",
+              "type": "p",
+              "text": "브라우저는 갤러리를 그리기 위해 `src`, `description`, `alt`, `thumbnailWidth` 같은 일정한 모양의 배열을 원합니다. 서버가 Twilio의 복잡한 원본 응답을 이 모양으로 정리해 주면 브라우저는 단순해집니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c15-zero3-bridge-3",
+              "type": "p",
+              "text": "먼저 메시지 목록을 가져오고, 메시지를 하나씩 돌면서 그 메시지의 사진 목록을 가져옵니다. 사진을 하나씩 돌면서 gallery 배열에 필요한 객체를 넣습니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c15-zero3-bridge-4",
+              "type": "p",
+              "text": "반복문이 두 겹이라고 겁먹지 마세요. 바깥 반복문은 “문자 한 통씩”, 안쪽 반복문은 “그 문자 안의 사진 한 장씩”입니다. 문자 2통에 사진이 2장과 1장 붙었다면 gallery에는 총 3개가 들어갑니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c15-zero3-bridge-5",
+              "type": "p",
+              "text": "data shaping은 외부 서비스가 준 데이터 중 필요한 것만 골라 우리 앱이 원하는 모양으로 다시 정리하는 것입니다. 택배 상자 속 물건을 우리 서랍 규칙에 맞게 옮기는 것과 비슷합니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c15-zero3-bridge-6",
+              "type": "p",
+              "text": "실무라면 사진을 검증하고 데이터베이스에 저장한 뒤 화면용 API가 DB에서 읽게 만들 수도 있습니다. 강의는 API 연결 흐름을 보여 주기 위해 더 단순하게 구성합니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c15-zero3-checkpoint",
+              "type": "p",
+              "text": "【여기까지만 이해해도 다음으로 갈 수 있습니다】 용어 철자를 외우는 것보다 “누가 요청하고, 누가 처리하고, 무엇이 돌아오는가”를 자기 말로 설명할 수 있으면 충분합니다."
+            },
+            {
               "type": "p",
               "text": "이제 프런트엔드가 실제로 호출할 서버 API를 만듭니다. 여기서 가장 먼저 할 일은 외부 서비스에 연결하는 것이 아니라 “우리 API가 어떤 JSON을 반환해야 하는가”를 정하는 것입니다. 프런트엔드 gallery plugin이 기대하는 배열 모양이 이미 있기 때문입니다.",
               "sourceRefs": [
@@ -23406,6 +24222,21 @@
               "_format": "code"
             },
             {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c15-b8-zero3-explain-1",
+              "type": "p",
+              "text": "【코드를 사람 말로 1】 처음에는 빈 `gallery = []`를 만들고 메시지 목록을 받습니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c15-b8-zero3-explain-2",
+              "type": "p",
+              "text": "【코드를 사람 말로 2】 첫 번째 `for`는 문자 한 통씩, 두 번째 `for`는 그 문자 속 사진 한 장씩 돕니다. 사진을 만날 때마다 `gallery.push(...)`로 화면이 원하는 객체를 하나 넣습니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c15-b8-zero3-explain-3",
+              "type": "p",
+              "text": "【코드를 사람 말로 3】 마지막 `callback(null, gallery)`는 다 모은 사진 배열을 API 응답으로 보냅니다. Twilio 원본 → 필요한 사진 선택 → 우리 앱용 JSON 순서입니다."
+            },
+            {
               "type": "p",
               "text": "첫 번째 `await client.messages.list(...)`는 조건에 맞는 메시지 목록을 가져옵니다. 메시지 하나에는 사진이 여러 개 붙을 수 있으므로 바깥 반복문은 메시지를 하나씩 돌고, 안쪽 반복문은 그 메시지의 media를 하나씩 돕니다.",
               "sourceRefs": [
@@ -23508,6 +24339,17 @@
                 }
               ],
               "_origin": "explanation"
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c15-zero3-scene-loops-intro",
+              "type": "p",
+              "text": "【강사의 장면·비유를 눈으로 보기】 바깥은 문자, 안쪽은 그 문자에 붙은 사진입니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c15-zero3-scene-loops",
+              "type": "image",
+              "src": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221200%22%20height%3D%22675%22%20viewBox%3D%220%200%201200%20675%22%3E%3Crect%20width%3D%221200%22%20height%3D%22675%22%20fill%3D%22%23f8f4ea%22%2F%3E%3Crect%20width%3D%221200%22%20height%3D%2214%22%20fill%3D%22%2366735f%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2278%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2235%22%20font-weight%3D%22800%22%20fill%3D%22%23222820%22%3E%EC%A4%91%EC%B2%A9%20%EB%B0%98%EB%B3%B5%EB%AC%B8%EC%9D%84%20%EC%82%AC%EB%9E%8C%20%EB%A7%90%EB%A1%9C%3C%2Ftext%3E%3Ctext%20x%3D%2260%22%20y%3D%22118%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2221%22%20fill%3D%22%23596055%22%3E%EB%B0%94%EA%B9%A5%EC%9D%80%20%EB%AC%B8%EC%9E%90%2C%20%EC%95%88%EC%AA%BD%EC%9D%80%20%EA%B7%B8%20%EB%AC%B8%EC%9E%90%EC%97%90%20%EB%B6%99%EC%9D%80%20%EC%82%AC%EC%A7%84%EC%9E%85%EB%8B%88%EB%8B%A4.%3C%2Ftext%3E%3Crect%20x%3D%2260%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%2284%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3E%EB%AC%B8%EC%9E%90%20A%3C%2Ftext%3E%3Ctext%20x%3D%2284%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EC%82%AC%EC%A7%84%20A1%3C%2Ftext%3E%3Ctext%20x%3D%2284%22%20y%3D%22311%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EC%82%AC%EC%A7%84%20A2%3C%2Ftext%3E%3Ctext%20x%3D%2284%22%20y%3D%22357%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E2%EA%B0%9C%20%EC%B6%94%EA%B0%80%3C%2Ftext%3E%3Crect%20x%3D%22428%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22452%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3E%EB%AC%B8%EC%9E%90%20B%3C%2Ftext%3E%3Ctext%20x%3D%22452%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EC%82%AC%EC%A7%84%20B1%3C%2Ftext%3E%3Ctext%20x%3D%22452%22%20y%3D%22311%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E1%EA%B0%9C%20%EC%B6%94%EA%B0%80%3C%2Ftext%3E%3Crect%20x%3D%22796%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22820%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3Egallery%3C%2Ftext%3E%3Ctext%20x%3D%22820%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3EA1%2C%20A2%2C%20B1%3C%2Ftext%3E%3Ctext%20x%3D%22820%22%20y%3D%22311%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EC%B5%9C%EC%A2%85%203%EA%B0%9C%3C%2Ftext%3E%3Ctext%20x%3D%2260%22%20y%3D%22630%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23747a70%22%3E%EA%B5%90%EC%9E%AC%EC%9A%A9%20%EC%9E%A5%EB%A9%B4%20%EC%9E%AC%ED%98%84%20%C2%B7%20%EC%98%81%EC%83%81%20%EC%BA%A1%EC%B2%98%20%EC%95%84%EB%8B%98%3C%2Ftext%3E%3C%2Fsvg%3E",
+              "caption": "중첩 반복문을 사람 말로 · 교재용 장면 재현(영상 캡처 아님)"
             },
             {
               "id": "yt-api-beginners-WXsD0ZgxjRw-c15-b17",
@@ -23856,6 +24698,46 @@
               "caption": "Fetch 두 줄의 의미 · 교재용 재현 화면(영상 캡처 아님)"
             },
             {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c16-zero3-intro",
+              "type": "p",
+              "text": "【전문용어 보기 전, 먼저 사람 말로】 이 장에서 강사가 말하려는 큰 그림을 일상적인 말부터 잡고 들어갑니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c16-zero3-bridge-1",
+              "type": "p",
+              "text": "마지막 연결은 브라우저가 우리 서버의 `/api/pics`를 호출해 JSON을 받는 것입니다. 여기서 쓰는 브라우저 기능이 Fetch API입니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c16-zero3-bridge-2",
+              "type": "p",
+              "text": "`fetch(\"/api/pics\")`는 “현재 사이트의 /api/pics 주소에 요청을 보내 줘”라고 읽으면 됩니다. `await`가 있으므로 그 결과가 필요한 다음 단계는 응답을 기다립니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c16-zero3-bridge-3",
+              "type": "p",
+              "text": "`response.json()`은 서버 응답의 본문을 JSON 규칙으로 읽어 JavaScript 배열이나 객체로 바꿉니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c16-zero3-bridge-4",
+              "type": "p",
+              "text": "그 결과를 `this.gallery`에 넣으면 Vue가 gallery가 바뀐 것을 알아차리고 화면을 다시 그립니다. 요청 → JSON 변환 → 상태 저장 → 화면 갱신 순서입니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c16-zero3-bridge-5",
+              "type": "p",
+              "text": "브라우저가 Twilio API를 직접 호출하지 않는 것도 중요합니다. 비밀 인증 정보는 서버 쪽에 남겨 두고, 브라우저는 우리 서버가 공개하기로 한 `/api/pics`만 호출합니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c16-zero3-bridge-6",
+              "type": "p",
+              "text": "코드가 두 줄이어도 뒤에서는 네트워크 요청과 데이터 변환, 화면 갱신이 이어집니다. 두 줄을 “서버 데이터와 화면을 잇는 연결선”이라고 이해하면 됩니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c16-zero3-checkpoint",
+              "type": "p",
+              "text": "【여기까지만 이해해도 다음으로 갈 수 있습니다】 용어 철자를 외우는 것보다 “누가 요청하고, 누가 처리하고, 무엇이 돌아오는가”를 자기 말로 설명할 수 있으면 충분합니다."
+            },
+            {
               "type": "p",
               "text": "서버 API가 완성되면 하드코딩된 예시 사진 배열을 지우고 브라우저가 `/api/pics`를 호출하도록 바꿉니다. 브라우저에는 네트워크 요청을 위한 Fetch API가 기본 제공됩니다.",
               "sourceRefs": [
@@ -23881,6 +24763,16 @@
               "_origin": "explanation",
               "id": "yt-api-beginners-WXsD0ZgxjRw-c16-b2",
               "_format": "code"
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c16-b2-zero3-explain-1",
+              "type": "p",
+              "text": "【코드를 사람 말로 1】 첫 줄은 `/api/pics`에 요청하고 응답을 `response`에 받습니다. `await` 때문에 응답이 와야 그 결과가 필요한 다음 단계로 갑니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c16-b2-zero3-explain-2",
+              "type": "p",
+              "text": "【코드를 사람 말로 2】 둘째 줄의 `response.json()`은 응답 본문을 JavaScript가 쓸 수 있는 배열이나 객체로 바꿉니다. 그 값을 `this.gallery`에 넣으면 Vue가 화면을 다시 그립니다."
             },
             {
               "type": "p",
@@ -24156,6 +25048,17 @@
               "_origin": "explanation",
               "_format": "output",
               "id": "yt-api-beginners-WXsD0ZgxjRw-c16-extra-code-02"
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c16-zero3-scene-fetch-intro",
+              "type": "p",
+              "text": "【강사의 장면·비유를 눈으로 보기】 요청부터 화면 갱신까지 여러 단계가 이어집니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c16-zero3-scene-fetch",
+              "type": "image",
+              "src": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221200%22%20height%3D%22675%22%20viewBox%3D%220%200%201200%20675%22%3E%3Crect%20width%3D%221200%22%20height%3D%22675%22%20fill%3D%22%23f8f4ea%22%2F%3E%3Crect%20width%3D%221200%22%20height%3D%2214%22%20fill%3D%22%2366735f%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2278%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2235%22%20font-weight%3D%22800%22%20fill%3D%22%23222820%22%3Efetch%20%EB%91%90%20%EC%A4%84%20%EB%92%A4%EC%9D%98%20%EC%8B%A4%EC%A0%9C%20%ED%9D%90%EB%A6%84%3C%2Ftext%3E%3Ctext%20x%3D%2260%22%20y%3D%22118%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2221%22%20fill%3D%22%23596055%22%3E%EC%9A%94%EC%B2%AD%EB%B6%80%ED%84%B0%20%ED%99%94%EB%A9%B4%20%EA%B0%B1%EC%8B%A0%EA%B9%8C%EC%A7%80%20%EC%97%AC%EB%9F%AC%20%EB%8B%A8%EA%B3%84%EA%B0%80%20%EC%9D%B4%EC%96%B4%EC%A7%91%EB%8B%88%EB%8B%A4.%3C%2Ftext%3E%3Crect%20x%3D%2260%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%2284%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3E%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%3C%2Ftext%3E%3Ctext%20x%3D%2284%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3EGET%20%2Fapi%2Fpics%3C%2Ftext%3E%3Ctext%20x%3D%2284%22%20y%3D%22311%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EC%84%9C%EB%B2%84%20%EC%9A%94%EC%B2%AD%3C%2Ftext%3E%3Crect%20x%3D%22428%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22452%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3E%EC%9D%91%EB%8B%B5%20%EC%B2%98%EB%A6%AC%3C%2Ftext%3E%3Ctext%20x%3D%22452%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3EJSON%20%EB%B0%9B%EA%B8%B0%3C%2Ftext%3E%3Ctext%20x%3D%22452%22%20y%3D%22311%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EB%B0%B0%EC%97%B4%EB%A1%9C%20%EB%B3%80%ED%99%98%3C%2Ftext%3E%3Crect%20x%3D%22796%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22820%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3EVue%20%ED%99%94%EB%A9%B4%3C%2Ftext%3E%3Ctext%20x%3D%22820%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3Egallery%20%EC%A0%80%EC%9E%A5%3C%2Ftext%3E%3Ctext%20x%3D%22820%22%20y%3D%22311%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%ED%99%94%EB%A9%B4%20%EB%8B%A4%EC%8B%9C%20%EA%B7%B8%EB%A6%BC%3C%2Ftext%3E%3Ctext%20x%3D%2260%22%20y%3D%22630%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23747a70%22%3E%EA%B5%90%EC%9E%AC%EC%9A%A9%20%EC%9E%A5%EB%A9%B4%20%EC%9E%AC%ED%98%84%20%C2%B7%20%EC%98%81%EC%83%81%20%EC%BA%A1%EC%B2%98%20%EC%95%84%EB%8B%98%3C%2Ftext%3E%3C%2Fsvg%3E",
+              "caption": "fetch 두 줄 뒤의 실제 흐름 · 교재용 장면 재현(영상 캡처 아님)"
             }
           ]
         },
@@ -24274,6 +25177,46 @@
               "type": "image",
               "src": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22675%22%20viewBox%3D%220%200%201200%20675%22%3E%3Crect%20width%3D%221200%22%20height%3D%22675%22%20fill%3D%22%23f8f4ea%22/%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221200%22%20height%3D%2214%22%20fill%3D%22%2366735f%22/%3E%3Ctext%20x%3D%2260%22%20y%3D%2272%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2235%22%20font-weight%3D%22800%22%20fill%3D%22%23222820%22%3ERESTful%20%EC%B5%9C%EC%A2%85%20%ED%8C%90%EC%A0%95%ED%91%9C%3C/text%3E%3Ctext%20x%3D%2260%22%20y%3D%22112%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2221%22%20fill%3D%22%23596055%22%3E%EC%9D%B4%EB%A6%84%EC%9D%B4%20%EC%95%84%EB%8B%88%EB%9D%BC%20%EC%A0%9C%EC%95%BD%20%EC%A1%B0%EA%B1%B4%EC%9D%84%20%ED%95%98%EB%82%98%EC%94%A9%20%ED%99%95%EC%9D%B8%3C/text%3E%3Crect%20x%3D%2260%22%20y%3D%22165%22%20width%3D%22341%22%20height%3D%22390%22%20rx%3D%2224%22%20fill%3D%22%23ffffff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22/%3E%3Ctext%20x%3D%2284%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3E%EC%B6%A9%EC%A1%B1%3C/text%3E%3Ctext%20x%3D%2284%22%20y%3D%22257%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3EClient-Server%3C/text%3E%3Ctext%20x%3D%2284%22%20y%3D%22297%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3EStateless%3C/text%3E%3Ctext%20x%3D%2284%22%20y%3D%22337%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3ELayered%20System%3C/text%3E%3Crect%20x%3D%22429%22%20y%3D%22165%22%20width%3D%22341%22%20height%3D%22390%22%20rx%3D%2224%22%20fill%3D%22%23ffffff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22/%3E%3Ctext%20x%3D%22453%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3E%EB%B6%80%EB%B6%84/%EC%84%A0%ED%83%9D%3C/text%3E%3Ctext%20x%3D%22453%22%20y%3D%22257%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3ECacheability%EB%8A%94%20%EB%B3%B4%EA%B0%95%3C/text%3E%3Ctext%20x%3D%22453%22%20y%3D%22291%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EA%B0%80%EB%8A%A5%3C/text%3E%3Ctext%20x%3D%22453%22%20y%3D%22331%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3ECode%20on%20Demand%EB%8A%94%20%EC%84%A0%ED%83%9D%3C/text%3E%3Ctext%20x%3D%22453%22%20y%3D%22371%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%ED%98%84%EC%9E%AC%EB%8A%94%20%EC%82%AC%EC%9A%A9%20%EC%95%88%20%ED%95%A8%3C/text%3E%3Crect%20x%3D%22799%22%20y%3D%22165%22%20width%3D%22341%22%20height%3D%22390%22%20rx%3D%2224%22%20fill%3D%22%23ffffff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22/%3E%3Ctext%20x%3D%22823%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3E%EB%AF%B8%EC%B6%A9%EC%A1%B1%20%ED%95%B5%EC%8B%AC%3C/text%3E%3Ctext%20x%3D%22823%22%20y%3D%22257%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3EResource%20%EC%8B%9D%EB%B3%84%20%EB%B6%80%EC%A1%B1%3C/text%3E%3Ctext%20x%3D%22823%22%20y%3D%22297%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EC%A1%B0%EC%9E%91%20%EB%A7%81%ED%81%AC%20%EB%B6%80%EC%A1%B1%3C/text%3E%3Ctext%20x%3D%22823%22%20y%3D%22337%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3EHATEOAS%20%EB%B6%80%EC%A1%B1%3C/text%3E%3Ctext%20x%3D%2260%22%20y%3D%22630%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23747a70%22%3E%EA%B5%90%EC%9E%AC%EC%9A%A9%20%EC%9E%AC%ED%98%84%20%ED%99%94%EB%A9%B4%20%C2%B7%20%EC%98%81%EC%83%81%20%EC%BA%A1%EC%B2%98%20%EC%95%84%EB%8B%98%3C/text%3E%3C/svg%3E",
               "caption": "RESTful 최종 판정표 · 교재용 재현 화면(영상 캡처 아님)"
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c17-zero3-intro",
+              "type": "p",
+              "text": "【전문용어 보기 전, 먼저 사람 말로】 이 장에서 강사가 말하려는 큰 그림을 일상적인 말부터 잡고 들어갑니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c17-zero3-bridge-1",
+              "type": "p",
+              "text": "프로젝트가 끝났다고 REST를 무조건 “완벽히 지켰다”고 선언하지 않습니다. 강사는 처음 체크표로 돌아가 실제 만든 `/api/pics`를 조건별로 점검합니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c17-zero3-bridge-2",
+              "type": "p",
+              "text": "Client-Server는 브라우저와 서버 역할이 나뉘었는가, Stateless는 요청이 필요한 정보를 독립적으로 담는가, Cacheable은 재사용할 응답 규칙이 있는가를 묻습니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c17-zero3-bridge-3",
+              "type": "p",
+              "text": "Layered System은 클라이언트가 중간 계층을 몰라도 되는가를 봅니다. Code on Demand는 선택 조건이라 꼭 쓸 필요는 없습니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c17-zero3-bridge-4",
+              "type": "p",
+              "text": "Uniform Interface는 가장 까다롭습니다. JSON을 돌려준다는 이유만으로 자동 통과하지 않습니다. 리소스를 일관되게 식별하고 조작하며 메시지가 충분히 스스로 설명되어야 합니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c17-zero3-bridge-5",
+              "type": "p",
+              "text": "강의의 결론은 목적에는 맞지만 엄격한 의미의 완전한 RESTful API라고 하기는 어렵다는 쪽입니다. REST를 이름이 아니라 구체적인 설계 조건으로 점검한 것입니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c17-zero3-bridge-6",
+              "type": "p",
+              "text": "여기까지 오면 API를 한 문장으로 설명할 수 있습니다. 클라이언트가 정해진 주소와 규칙으로 요청하고, 서버가 처리한 뒤 상태와 데이터를 응답하며, 프로그램은 그 결과를 다음 동작에 사용합니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c17-zero3-checkpoint",
+              "type": "p",
+              "text": "【여기까지만 이해해도 다음으로 갈 수 있습니다】 용어 철자를 외우는 것보다 “누가 요청하고, 누가 처리하고, 무엇이 돌아오는가”를 자기 말로 설명할 수 있으면 충분합니다."
             },
             {
               "type": "p",
@@ -24613,6 +25556,17 @@
               "_origin": "explanation",
               "_format": "output",
               "id": "yt-api-beginners-WXsD0ZgxjRw-c17-extra-code-01"
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c17-zero3-scene-restcheck-intro",
+              "type": "p",
+              "text": "【강사의 장면·비유를 눈으로 보기】 REST라는 이름 대신 조건을 하나씩 근거로 확인합니다."
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c17-zero3-scene-restcheck",
+              "type": "image",
+              "src": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221200%22%20height%3D%22675%22%20viewBox%3D%220%200%201200%20675%22%3E%3Crect%20width%3D%221200%22%20height%3D%22675%22%20fill%3D%22%23f8f4ea%22%2F%3E%3Crect%20width%3D%221200%22%20height%3D%2214%22%20fill%3D%22%2366735f%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2278%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2235%22%20font-weight%3D%22800%22%20fill%3D%22%23222820%22%3E%EB%A7%88%EC%A7%80%EB%A7%89%20REST%20%EC%B2%B4%ED%81%AC%ED%91%9C%3C%2Ftext%3E%3Ctext%20x%3D%2260%22%20y%3D%22118%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2221%22%20fill%3D%22%23596055%22%3EREST%EB%9D%BC%EB%8A%94%20%EC%9D%B4%EB%A6%84%20%EB%8C%80%EC%8B%A0%20%EC%A1%B0%EA%B1%B4%EC%9D%84%20%ED%95%98%EB%82%98%EC%94%A9%20%EA%B7%BC%EA%B1%B0%EB%A1%9C%20%ED%99%95%EC%9D%B8%ED%95%A9%EB%8B%88%EB%8B%A4.%3C%2Ftext%3E%3Crect%20x%3D%2260%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%2284%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3E%EC%B6%A9%EC%A1%B1%3C%2Ftext%3E%3Ctext%20x%3D%2284%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3EClient-Server%3C%2Ftext%3E%3Ctext%20x%3D%2284%22%20y%3D%22311%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3EStateless%3C%2Ftext%3E%3Ctext%20x%3D%2284%22%20y%3D%22357%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3ELayered%3C%2Ftext%3E%3Crect%20x%3D%22428%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22452%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3E%EB%B3%B4%EA%B0%95%20%ED%95%84%EC%9A%94%3C%2Ftext%3E%3Ctext%20x%3D%22452%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3ECacheable%3C%2Ftext%3E%3Ctext%20x%3D%22452%22%20y%3D%22311%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3Eheader%20%EB%B6%80%EC%A1%B1%3C%2Ftext%3E%3Crect%20x%3D%22796%22%20y%3D%22165%22%20width%3D%22342%22%20height%3D%22385%22%20rx%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23aab3a3%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%22820%22%20y%3D%22215%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2225%22%20font-weight%3D%22800%22%20fill%3D%22%2331402e%22%3E%EC%97%84%EA%B2%A9%20%EC%A0%90%EA%B2%80%3C%2Ftext%3E%3Ctext%20x%3D%22820%22%20y%3D%22265%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3EUniform%20Interface%3C%2Ftext%3E%3Ctext%20x%3D%22820%22%20y%3D%22311%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23343a32%22%3E%EC%9D%BC%EB%B6%80%20%EC%9A%94%EA%B1%B4%20%EB%B6%80%EC%A1%B1%3C%2Ftext%3E%3Ctext%20x%3D%2260%22%20y%3D%22630%22%20font-family%3D%22Arial%2CNoto%20Sans%20KR%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23747a70%22%3E%EA%B5%90%EC%9E%AC%EC%9A%A9%20%EC%9E%A5%EB%A9%B4%20%EC%9E%AC%ED%98%84%20%C2%B7%20%EC%98%81%EC%83%81%20%EC%BA%A1%EC%B2%98%20%EC%95%84%EB%8B%98%3C%2Ftext%3E%3C%2Fsvg%3E",
+              "caption": "마지막 REST 체크표 · 교재용 장면 재현(영상 캡처 아님)"
             }
           ]
         }
@@ -25073,19 +26027,19 @@
         "officialSections": "17/17",
         "captionSource": "full English captions, 36,122 words",
         "duration": "187m 6s",
-        "visuals": "17 chapter concept screens + 4 extra hard-concept screens + official YouTube thumbnail + Restfox official screenshot + Thunder Client official screenshot",
-        "beginnerPolicy": "API라는 단어도 처음 듣는 코딩 0일차 기준",
+        "visuals": "43 total book visuals; inline instructor-analogy scene reconstructions are labelled as non-video captures",
+        "beginnerPolicy": "전문용어를 모르는 비전공 초보가 사람 말 → 그림/장면 → 원래 용어 → 코드 순서로 읽는 기준",
         "preservedExistingAnchors": true,
-        "note": "광고·인사·반복 농담 자체는 줄이되, 학습에 영향을 주는 예시·실수·오류 수정·도구 사용 흐름은 보존."
+        "note": "기존 source-derived 블록과 장/블록 ID를 보존하고 초보 연결 설명과 장면 재현을 추가. 강의 비유가 학습에 필요한 곳은 텍스트만 남기지 않고 인접 시각 자료로 보강."
       },
       "revisionStats": {
         "chapters": 17,
-        "blocks": 437,
-        "paragraphs": 377,
+        "blocks": 624,
+        "paragraphs": 545,
         "code": 29,
         "output": 7,
-        "images": 24,
-        "body_chars": 57380,
+        "images": 43,
+        "body_chars": 72973,
         "glossary_terms": 111,
         "questions": 34
       }
