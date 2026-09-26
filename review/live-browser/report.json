@@ -154,7 +154,7 @@
     {
       "name": "bad JavaScript rolls back to previous healthy B",
       "passed": true,
-      "detail": "http://127.0.0.1:38261/?cb_release=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb&cb_recovery=1"
+      "detail": "http://127.0.0.1:35467/?cb_release=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb&cb_recovery=1"
     },
     {
       "name": "failed startup did not erase notes",
@@ -216,5 +216,5 @@
   "intentionalJavaScriptFaults": [
     "Missing initializer in const declaration"
   ],
-  "completedAt": "2026-09-24T18:43:49Z"
+  "completedAt": "2026-09-26T13:00:40Z"
 }
