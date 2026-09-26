@@ -618,6 +618,35 @@ for (const item of [...knownRecent, ...[...unknownByRegion.values()].flat()]) {
 }
 
 const detailed = await mapLimit(detailQueue, 2, detailOne);
+const recentItems = detailed
+  .filter(item => !item.detailError)
+  .filter(item => item.status === 'Ongoing')
+  .filter(item => belongs(item))
+  .filter(item => isRecent(item, nowMs))
+  .map(item => {
+    const specs = analyzeSpecs(item);
+    const text = (item.title ?? '') + '\n' + (item.description ?? '');
+    return {
+      id: item.id,
+      area: target.name,
+      location: item.location ?? null,
+      regionPath: item.regionPath ?? null,
+      title: item.title,
+      price: Number(item.price) || 0,
+      cpuHint: extractCpu(text),
+      ramGB: specs.ramGB,
+      storageGB: specs.storageGB,
+      specPass: specs.ok,
+      specConfidence: specs.confidence,
+      postedAt: item.postedAt,
+      boostedAt: item.boostedAt ?? null,
+      description: String(item.description ?? '').slice(0, 2200),
+      url: item.url,
+      favoriteCount: item.favoriteCount ?? 0,
+      chatCount: item.chatCount ?? 0
+    };
+  });
+
 const candidates = detailed
   .filter(item => !item.detailError)
   .filter(item => item.status === 'Ongoing')
@@ -658,6 +687,7 @@ const result = {
   uniqueListingCount: found.size,
   recentListingCount: detailed.filter(item => isRecent(item, nowMs)).length,
   candidateCount: candidates.length,
+  recentItems,
   errors: errors.slice(0,20),
   candidates
 };
