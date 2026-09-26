@@ -7,6 +7,17 @@ on:
       - integrate/v1-depth-latest-main
       - textbook-v3-deep-beginner
       - main
+    paths:
+      - 'app/**'
+      - 'tools/**'
+      - 'gradle/**'
+      - 'gradlew'
+      - 'gradlew.bat'
+      - 'build.gradle.kts'
+      - 'settings.gradle.kts'
+      - 'gradle.properties'
+      - 'package.json'
+      - 'test.keystore'
   workflow_dispatch:
 
 jobs:
