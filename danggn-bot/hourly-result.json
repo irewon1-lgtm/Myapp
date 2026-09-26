@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-26T02:38:24.438Z",
+  "generatedAt": "2026-09-26T02:57:15.975Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -43,10 +43,10 @@
         "attempted": 8,
         "succeeded": 8,
         "errors": 0,
-        "uniqueListings": 342,
-        "changedCandidates": 45,
-        "detailedCandidates": 42,
-        "durationMs": 49135
+        "uniqueListings": 328,
+        "changedCandidates": 41,
+        "detailedCandidates": 40,
+        "durationMs": 54074
       },
       {
         "city": "의왕시",
@@ -60,10 +60,10 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 452,
-        "changedCandidates": 53,
-        "detailedCandidates": 42,
-        "durationMs": 73670
+        "uniqueListings": 430,
+        "changedCandidates": 47,
+        "detailedCandidates": 40,
+        "durationMs": 79938
       },
       {
         "city": "안양시",
@@ -79,10 +79,10 @@
         "attempted": 28,
         "succeeded": 28,
         "errors": 0,
-        "uniqueListings": 404,
-        "changedCandidates": 47,
-        "detailedCandidates": 42,
-        "durationMs": 90757
+        "uniqueListings": 390,
+        "changedCandidates": 45,
+        "detailedCandidates": 41,
+        "durationMs": 105901
       },
       {
         "city": "과천시",
@@ -92,19 +92,47 @@
         "attempted": 4,
         "succeeded": 4,
         "errors": 0,
-        "uniqueListings": 301,
-        "changedCandidates": 42,
-        "detailedCandidates": 41,
-        "durationMs": 38161
+        "uniqueListings": 240,
+        "changedCandidates": 12,
+        "detailedCandidates": 12,
+        "durationMs": 21181
       }
     ],
-    "finalCandidateCount": 0,
-    "stateItemCount": 1594,
+    "finalCandidateCount": 1,
+    "stateItemCount": 1608,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
-    "skippedUnknownProbeCount": 397,
-    "durationMs": 251753
+    "skippedUnknownProbeCount": 409,
+    "durationMs": 261137
   },
-  "candidates": []
+  "candidates": [
+    {
+      "id": "t33n2o6ehu3m",
+      "changeType": "new",
+      "previousPrice": null,
+      "price": 580000,
+      "priceDropPercent": null,
+      "city": "안양시",
+      "location": "비산1동",
+      "regionPath": "경기도 안양시 동안구 비산1동",
+      "title": "ASUS ROG Zephyrus G14 게이밍 노트북",
+      "modelHint": "ASUS ROG Zephyrus G14 게이밍 노트북",
+      "cpuHint": null,
+      "ramGB": 16,
+      "storageGB": 1024,
+      "specConfidence": "explicit",
+      "ramTypeConfirmed": true,
+      "storageTypeConfirmed": true,
+      "postedAt": "2026-09-26T02:46:44.568Z",
+      "boostedAt": "2026-09-26T02:46:44.566Z",
+      "status": "Ongoing",
+      "description": "CPU : AMD 라이젠 9 4900HS\nGPU : RTX 2060 Max-Q \n램 : 16GB (8GB 온보드+8GB 구성)\nSSD : 1TB\n\n2차 구매입니다.\n\n본체 + 충전기 구성\n(박스 없음)\n\n외관 아주 깨끗한 편입니다.\n배터리 94-96% 살아 있습니다.\n키패드 백라이트가 최대로 해도 흐릿한 편이긴 한데\n원래 이런지 잘 모르겠습니다.\n\n사양 찍은 사진을 나중에 여기 올리면서 보니\n액정이 이상하게 찍혀 있어 사진 두장 더 첨부했습니다.\n이상 없음.",
+      "url": "https://www.daangn.com/kr/buy-sell/asus-rog-zephyrus-g14-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-t33n2o6ehu3m/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "시나몬",
+      "mannerTemperature": 37.6
+    }
+  ]
 }
