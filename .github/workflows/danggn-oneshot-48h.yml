@@ -16,7 +16,7 @@ jobs:
   scan:
     strategy:
       fail-fast: false
-      max-parallel: 4
+      max-parallel: 1
       matrix:
         include:
           - target: seongnam
@@ -31,42 +31,6 @@ jobs:
           - target: seongnam
             chunk: 3
             chunks: 10
-          - target: seongnam
-            chunk: 4
-            chunks: 10
-          - target: seongnam
-            chunk: 5
-            chunks: 10
-          - target: seongnam
-            chunk: 6
-            chunks: 10
-          - target: seongnam
-            chunk: 7
-            chunks: 10
-          - target: seongnam
-            chunk: 8
-            chunks: 10
-          - target: seongnam
-            chunk: 9
-            chunks: 10
-          - target: gwangjin
-            chunk: 0
-            chunks: 3
-          - target: gwangjin
-            chunk: 1
-            chunks: 3
-          - target: gwangjin
-            chunk: 2
-            chunks: 3
-          - target: songpa
-            chunk: 0
-            chunks: 5
-          - target: songpa
-            chunk: 1
-            chunks: 5
-          - target: songpa
-            chunk: 2
-            chunks: 5
           - target: songpa
             chunk: 3
             chunks: 5
@@ -91,24 +55,9 @@ jobs:
           - target: seocho
             chunk: 1
             chunks: 4
-          - target: seocho
-            chunk: 2
-            chunks: 4
-          - target: seocho
-            chunk: 3
-            chunks: 4
-          - target: gangdong
-            chunk: 0
-            chunks: 3
-          - target: gangdong
-            chunk: 1
-            chunks: 3
-          - target: gangdong
-            chunk: 2
-            chunks: 3
 
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 20
 
     steps:
       - name: Checkout scanner branch
@@ -132,7 +81,7 @@ jobs:
       - name: Upload result
         uses: actions/upload-artifact@v4
         with:
-          name: danggn-48h-${{ matrix.target }}-${{ matrix.chunk }}
+          name: danggn-48h-retry-${{ matrix.target }}-${{ matrix.chunk }}
           path: oneshot-result-${{ matrix.target }}-${{ matrix.chunk }}.json
           if-no-files-found: error
           retention-days: 1
