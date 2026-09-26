@@ -10,6 +10,7 @@
     "노트북 32GB 1TB",
     "갤럭시북",
     "그램",
+    "ThinkPad",
     "레노버 노트북",
     "HP 노트북",
     "ASUS 노트북",
@@ -31,15 +32,12 @@
   "outputLimit": 100,
   "targetCities": [
     "송파구",
-    "강남구",
-    "강동구",
     "광진구",
-    "성동구",
     "서초구",
-    "성남시 수정구",
-    "하남시"
+    "강남구",
+    "강동구"
   ],
-  "postedSince": "2026-09-25T16:28:24+09:00",
-  "targetDetailLimit": 120,
-  "runToken": "manual-final-jamsil-20260925-2228"
+  "postedSince": "2026-09-23T14:36:00+09:00",
+  "targetDetailLimit": 180,
+  "runToken": "manual-seoul5-3day-20260926"
 }
