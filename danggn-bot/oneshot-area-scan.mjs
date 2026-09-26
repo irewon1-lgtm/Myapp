@@ -6,7 +6,7 @@ const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
 const WINDOW_HOURS = 48;
 const SEARCH_LIMIT = 80;
 const FAST_MODE = process.env.FAST_MODE === '1';
-const DETAIL_LIMIT_PER_REGION = FAST_MODE ? 6 : 10;
+const DETAIL_LIMIT_PER_REGION = FAST_MODE ? 4 : 10;
 const QUERIES = ['노트북', '그램', '갤럭시북', 'ThinkPad'];
 
 const TARGETS = {
@@ -384,7 +384,7 @@ function parseSearch(html, sourceQuery, sourceRegion) {
   return [];
 }
 
-async function getText(url, attempts = 4) {
+async function getText(url, attempts = (FAST_MODE ? 2 : 4)) {
   let lastError;
   for (let attempt = 1; attempt <= attempts; attempt++) {
     try {
@@ -440,6 +440,8 @@ async function searchOne(query, region) {
     }
   } catch {}
 
+  if (FAST_MODE) return [];
+
   const url = new URL(SEARCH);
   url.searchParams.set('search', query);
   url.searchParams.set('in', region.slug);
@@ -468,7 +470,9 @@ async function detailOne(item) {
         };
       }
     }
-  } catch {}
+  } catch (e) {
+    if (FAST_MODE) return { ...item, detailError: String(e) };
+  }
 
   try {
     const html = await getText(item.url);
