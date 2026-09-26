@@ -1,0 +1,25 @@
+name: Seoul 5 District 3-Day Scan
+on:
+  push:
+    branches: [danggn-search-bot]
+    paths:
+      - '.github/workflows/seoul-3day-scan.yml'
+permissions:
+  contents: read
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: danggn-search-bot
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: node danggn-bot/seoul-3day-scan.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: seoul-3day-result
+          path: danggn-bot/seoul-3day-result.json
+          retention-days: 1
