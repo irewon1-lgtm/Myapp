@@ -417,15 +417,15 @@ async function resolveRegions() {
 async function searchOne(query, region) {
   try {
     const routeUrl = new URL(BASE + '/kr/buy-sell/all/');
-    routeUrl.searchParams.set('search', query);
     routeUrl.searchParams.set('in', region.slug);
+    routeUrl.searchParams.set('search', query);
+    routeUrl.searchParams.set('only_on_sale', 'true');
     routeUrl.searchParams.set('_data', 'routes/kr.buy-sell._index');
     const text = await getText(routeUrl);
     if (text.trim()) {
       const data = JSON.parse(text);
-      if (data?.region?.id != null && String(data.region.id) !== String(region.id)) return [];
       const rows = data?.allPage?.fleamarketArticles;
-      if (Array.isArray(rows) && rows.length) {
+      if (Array.isArray(rows)) {
         return rows.map(item => normalizeArticle(item, query, region.slug)).slice(0, SEARCH_LIMIT);
       }
     }
@@ -434,11 +434,33 @@ async function searchOne(query, region) {
   const url = new URL(SEARCH);
   url.searchParams.set('search', query);
   url.searchParams.set('in', region.slug);
+  url.searchParams.set('only_on_sale', 'true');
   const html = await getText(url);
   return parseSearch(html, query, region.slug).slice(0, SEARCH_LIMIT);
 }
 
 async function detailOne(item) {
+  try {
+    const routeUrl = item.url.replace(/\/$/, '') + '/?_data=routes%2Fkr.buy-sell.%24buy_sell_id';
+    const routeText = await getText(routeUrl);
+    if (routeText.trim()) {
+      const data = JSON.parse(routeText);
+      const product = data?.product ?? data?.article ?? data;
+      if (product && typeof product === 'object') {
+        return {
+          ...item,
+          description: product.content ?? product.description ?? '',
+          location: product.locationName ?? product.region?.name ?? item.location,
+          regionPath: [product.region?.name1, product.region?.name2, product.region?.name3].filter(Boolean).join(' ') || item.regionPath,
+          status: product.status ?? item.status,
+          price: priceNum(product.price ?? item.price),
+          postedAt: firstTimestamp(product, ['createdAt','created_at','publishedAt','published_at','dateCreated','datePublished']) ?? item.postedAt,
+          boostedAt: firstTimestamp(product, ['boostedAt','boosted_at','bumpedAt','bumped_at']) ?? item.boostedAt
+        };
+      }
+    }
+  } catch {}
+
   try {
     const html = await getText(item.url);
     const product = extractJsonAfterMarker(html, '"product":', '{')
