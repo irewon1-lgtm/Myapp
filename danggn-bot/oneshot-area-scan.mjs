@@ -6,8 +6,8 @@ const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
 const WINDOW_HOURS = 48;
 const SEARCH_LIMIT = 80;
 const FAST_MODE = process.env.FAST_MODE === '1';
-const DETAIL_LIMIT_PER_REGION = FAST_MODE ? 2 : 10;
-const QUERIES = FAST_MODE ? ['노트북'] : ['노트북', '그램', '갤럭시북', 'ThinkPad'];
+const DETAIL_LIMIT_PER_REGION = FAST_MODE ? 6 : 10;
+const QUERIES = ['노트북', '그램', '갤럭시북', 'ThinkPad'];
 
 const TARGETS = {
   seongnam: { name: '성남시', province: '경기도' },
@@ -242,6 +242,14 @@ const REGION_SLUGS = {
     "마천2동-410"
   ]
 };
+const FAST_REGION_SLUGS = {
+  seongnam: ['정자동-1339', '판교동-1350', '야탑동-4505', '성남동-1323', '신흥동-4514', '위례동-3971'],
+  gwangjin: ['자양동-6060', '구의동-6059', '중곡동-6061'],
+  songpa: ['잠실동-6188', '문정동-6184', '오금동-414'],
+  gangnam: ['역삼동-6035', '대치동-6032', '개포동-6030'],
+  seocho: ['서초동-6128', '반포동-6126', '방배동-6127', '양재동-6130'],
+  gangdong: ['천호동-6044', '고덕동-6039', '둔촌동-6040']
+};
 
 const slug = process.env.TARGET_SLUG;
 const target = TARGETS[slug];
@@ -407,7 +415,7 @@ async function getText(url, attempts = 4) {
 }
 
 async function resolveRegions() {
-  const slugs = REGION_SLUGS[slug] ?? [];
+  const slugs = (FAST_MODE ? FAST_REGION_SLUGS[slug] : REGION_SLUGS[slug]) ?? [];
   return slugs.map(value => {
     const m = String(value).match(/^(.*)-(\d+)$/);
     if (!m) throw new Error('Invalid fixed region slug: ' + value);
