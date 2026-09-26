@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-26T06:27:04.674Z",
+  "generatedAt": "2026-09-26T06:44:19.797Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -43,10 +43,10 @@
         "attempted": 8,
         "succeeded": 8,
         "errors": 0,
-        "uniqueListings": 343,
-        "changedCandidates": 45,
+        "uniqueListings": 341,
+        "changedCandidates": 42,
         "detailedCandidates": 40,
-        "durationMs": 45025
+        "durationMs": 52659
       },
       {
         "city": "의왕시",
@@ -60,10 +60,10 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 448,
-        "changedCandidates": 50,
-        "detailedCandidates": 41,
-        "durationMs": 65877
+        "uniqueListings": 438,
+        "changedCandidates": 44,
+        "detailedCandidates": 42,
+        "durationMs": 78791
       },
       {
         "city": "안양시",
@@ -79,10 +79,10 @@
         "attempted": 28,
         "succeeded": 28,
         "errors": 0,
-        "uniqueListings": 412,
-        "changedCandidates": 50,
+        "uniqueListings": 409,
+        "changedCandidates": 49,
         "detailedCandidates": 41,
-        "durationMs": 80111
+        "durationMs": 97490
       },
       {
         "city": "과천시",
@@ -92,47 +92,19 @@
         "attempted": 4,
         "succeeded": 4,
         "errors": 0,
-        "uniqueListings": 302,
-        "changedCandidates": 42,
-        "detailedCandidates": 40,
-        "durationMs": 33126
+        "uniqueListings": 303,
+        "changedCandidates": 45,
+        "detailedCandidates": 41,
+        "durationMs": 42794
       }
     ],
-    "finalCandidateCount": 1,
-    "stateItemCount": 1768,
+    "finalCandidateCount": 0,
+    "stateItemCount": 1781,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
-    "skippedUnknownProbeCount": 568,
-    "durationMs": 224179
+    "skippedUnknownProbeCount": 581,
+    "durationMs": 271770
   },
-  "candidates": [
-    {
-      "id": "4jp7ypwff7xw",
-      "changeType": "new",
-      "previousPrice": null,
-      "price": 650000,
-      "priceDropPercent": null,
-      "city": "안양시",
-      "location": "부흥동",
-      "regionPath": "경기도 안양시 동안구 부흥동",
-      "title": "HP ZBook Power G8 i7 노트북 65만원",
-      "modelHint": "HP ZBook Power G8 i7 노트북 65만원",
-      "cpuHint": "i7-11800H",
-      "ramGB": 32,
-      "storageGB": 512,
-      "specConfidence": "explicit",
-      "ramTypeConfirmed": true,
-      "storageTypeConfirmed": true,
-      "postedAt": "2026-09-26T05:45:00.550Z",
-      "boostedAt": "2026-09-26T05:45:00.549Z",
-      "status": "Ongoing",
-      "description": "HP ZBook Power G8 i7 11세대 32GB램, 512GB SSD\n\nHP ZBook Power G8 모델 노트북 판매합니다\n\n- CPU: i7-11800H\n- RAM: 32GB, SSD : 512GB\n- 그래픽: NVIDIA T600\n- 화면: 15.6인치\n- OS: Windows 11 Pro\n- 지문인식, PD충전\n- 무게 : 1.8kg\n- 22년 구매\n- 노트북, 충전기, 유선마우스\n- 판매가 : 65만원\n- 직거래 장소 : 동안구 은하수벽산아파트 \n\n설계작업에 특화한 모바일 워크스테이션으로, 출고가 300만원이상의 고가의 메탈재질 노트북입니다.\n전문가 수준의 성능을 제공하며, 휴대성과 강력한 성능을 동시에 누릴 수 있습니다.\n\n메탈(알루미늄)재질이라 사진에서 보이는 것처럼 칠 벗겨짐이 있습니다. 꼼꼼하게 보시고 판단바랍니다~",
-      "url": "https://www.daangn.com/kr/buy-sell/hp-zbook-power-g8-i7-%EB%85%B8%ED%8A%B8%EB%B6%81-65%EB%A7%8C%EC%9B%90-4jp7ypwff7xw/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "동해좋아",
-      "mannerTemperature": 44.9
-    }
-  ]
+  "candidates": []
 }
