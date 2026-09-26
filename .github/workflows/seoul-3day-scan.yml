@@ -1,4 +1,4 @@
-# route-shape debug
+# jsonld full scan
 name: Seoul 5 District 3-Day Scan
 on:
   push:
@@ -10,7 +10,7 @@ permissions:
 jobs:
   scan:
     runs-on: ubuntu-latest
-    timeout-minutes: 7
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
         with:
