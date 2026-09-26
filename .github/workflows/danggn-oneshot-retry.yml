@@ -1,4 +1,4 @@
-name: Danggn Retry Failed 48h Shards
+name: Danggn Retry Failed 48h Chunks
 
 on:
   push:
@@ -6,6 +6,8 @@ on:
       - main
     paths:
       - '.github/workflows/danggn-oneshot-retry.yml'
+      - 'ops/danggn-oneshot-retry-trigger.txt'
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -69,7 +71,7 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Retry failed shard
+      - name: Retry failed chunk slowly
         env:
           TARGET_SLUG: ${{ matrix.target }}
           CHUNK_INDEX: ${{ matrix.chunk }}
