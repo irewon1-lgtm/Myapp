@@ -5,7 +5,7 @@ const SEARCH = BASE + '/kr/buy-sell/';
 const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36';
 const WINDOW_HOURS = 48;
 const SEARCH_LIMIT = 80;
-const DETAIL_LIMIT = 120;
+const DETAIL_LIMIT = 800;
 const QUERIES = ['노트북', '그램', '갤럭시북', 'ThinkPad'];
 
 const TARGETS = {
@@ -171,6 +171,21 @@ async function resolveRegions() {
   url.searchParams.set('keyword', target.province + ' ' + target.name);
   const data = JSON.parse(await getText(url));
   const rows = Array.isArray(data?.locations) ? data.locations : [];
+
+  const districtLevel = rows
+    .filter(r => r && Number(r.depth) === 2)
+    .filter(r => r.name1 === target.province)
+    .filter(r => typeof r.name2 === 'string' && (r.name2 === target.name || r.name2.startsWith(target.name + ' ')))
+    .filter(r => /^\d{1,8}$/.test(String(r.id)))
+    .map(r => ({
+      id: String(r.id),
+      name: String(r.name2 || r.name || '').trim(),
+      slug: String(r.name2 || r.name || '').trim() + '-' + String(r.id)
+    }))
+    .filter(r => r.name);
+
+  if (districtLevel.length) return districtLevel;
+
   return rows
     .filter(r => r && Number(r.depth) === 3)
     .filter(r => r.name1 === target.province)
@@ -299,7 +314,7 @@ if (!regions.length) throw new Error('No regions resolved for ' + target.name);
 const tasks = [];
 for (const region of regions) for (const query of QUERIES) tasks.push({ region, query });
 
-const searched = await mapLimit(tasks, 4, async ({region, query}) => {
+const searched = await mapLimit(tasks, 2, async ({region, query}) => {
   try { return await searchOne(query, region); }
   catch (e) { return [{ _searchError: String(e), sourceRegion: region.slug, sourceQuery: query }]; }
 });
@@ -316,18 +331,22 @@ for (const item of searched.flat().filter(x => !x?._searchError)) {
   }
 }
 
-const recent = [...found.values()]
+const detailQueue = [...found.values()]
   .filter(item => item.status === 'Ongoing')
   .filter(item => !item.price || (item.price >= 100000 && item.price <= 1500000))
-  .filter(item => isRecent(item, nowMs))
+  .filter(item => !item.postedAt || isRecent(item, nowMs))
   .filter(item => {
     const p = ((item.regionPath ?? '') + ' ' + (item.location ?? '')).trim();
     return !p || p.includes(target.name);
   })
-  .sort((a,b) => new Date(b.postedAt).getTime() - new Date(a.postedAt).getTime())
+  .sort((a,b) => {
+    const at = a.postedAt ? new Date(a.postedAt).getTime() : 0;
+    const bt = b.postedAt ? new Date(b.postedAt).getTime() : 0;
+    return bt - at;
+  })
   .slice(0, DETAIL_LIMIT);
 
-const detailed = await mapLimit(recent, 4, detailOne);
+const detailed = await mapLimit(detailQueue, 4, detailOne);
 const candidates = detailed
   .filter(item => !item.detailError)
   .filter(item => item.status === 'Ongoing')
@@ -363,7 +382,7 @@ const result = {
   searchTaskCount: tasks.length,
   searchErrorCount: errors.length,
   uniqueListingCount: found.size,
-  recentListingCount: recent.length,
+  recentListingCount: detailed.filter(item => isRecent(item, nowMs)).length,
   candidateCount: candidates.length,
   errors: errors.slice(0,20),
   candidates
