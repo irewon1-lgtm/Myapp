@@ -12,55 +12,17 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: danggn-fast-48h-pass
+  cancel-in-progress: true
+
 jobs:
   scan:
     strategy:
       fail-fast: false
-      max-parallel: 4
+      max-parallel: 1
       matrix:
-        include:
-          - target: seongnam
-            chunk: 0
-            chunks: 5
-          - target: seongnam
-            chunk: 1
-            chunks: 5
-          - target: seongnam
-            chunk: 2
-            chunks: 5
-          - target: seongnam
-            chunk: 3
-            chunks: 5
-          - target: seongnam
-            chunk: 4
-            chunks: 5
-          - target: gwangjin
-            chunk: 0
-            chunks: 1
-          - target: songpa
-            chunk: 0
-            chunks: 2
-          - target: songpa
-            chunk: 1
-            chunks: 2
-          - target: gangnam
-            chunk: 0
-            chunks: 2
-          - target: gangnam
-            chunk: 1
-            chunks: 2
-          - target: seocho
-            chunk: 0
-            chunks: 2
-          - target: seocho
-            chunk: 1
-            chunks: 2
-          - target: gangdong
-            chunk: 0
-            chunks: 2
-          - target: gangdong
-            chunk: 1
-            chunks: 2
+        target: [seongnam, gwangjin, songpa, gangnam, seocho, gangdong]
 
     runs-on: ubuntu-latest
     timeout-minutes: 10
@@ -77,18 +39,18 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Run fast 48h scan
+      - name: Run stable 48h scan
         env:
           TARGET_SLUG: ${{ matrix.target }}
-          CHUNK_INDEX: ${{ matrix.chunk }}
-          CHUNK_COUNT: ${{ matrix.chunks }}
+          CHUNK_INDEX: '0'
+          CHUNK_COUNT: '1'
           FAST_MODE: '1'
         run: node danggn-bot/oneshot-area-scan.mjs
 
       - name: Upload result
         uses: actions/upload-artifact@v4
         with:
-          name: danggn-fast-48h-${{ matrix.target }}-${{ matrix.chunk }}
-          path: oneshot-result-${{ matrix.target }}-${{ matrix.chunk }}.json
+          name: danggn-fast-48h-${{ matrix.target }}
+          path: oneshot-result-${{ matrix.target }}-0.json
           if-no-files-found: error
           retention-days: 1
