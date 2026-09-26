@@ -3,7 +3,7 @@ import fs from 'node:fs/promises';
 const BASE='https://www.daangn.com';
 const UA='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36';
 const SINCE=new Date('2026-09-23T14:36:00+09:00').getTime();
-const QUERIES=['노트북','그램','갤럭시북','ThinkPad','ThinkBook','레노버 노트북','HP 노트북','ASUS 노트북','델 노트북'];
+const QUERIES=['노트북','그램','갤럭시북','ThinkPad'];
 const TARGETS=[
  {name:'송파구', preferred:['잠실본동','잠실2동','가락본동','문정2동','방이2동','오금동','위례동','거여2동']},
  {name:'광진구', preferred:['자양1동','구의1동','광장동','화양동','중곡1동']},
@@ -42,14 +42,14 @@ function district(item){const p=((item.regionPath||'')+' '+(item.location||''));
 function recent(i){if(!i.postedAt)return false;const x=new Date(i.postedAt).getTime();return Number.isFinite(x)&&x>=SINCE&&x<=Date.now()+300000}
 
 const resolution=[];for(const t of TARGETS){try{resolution.push({target:t,...await resolve(t)})}catch(e){resolution.push({target:t,all:[],pick:[],error:String(e)})}}
-const tasks=[];for(const rr of resolution)for(const r of rr.pick)for(const q of QUERIES)tasks.push(async()=>({district:rr.target.name,items:await searchOne(q,r)}));
-const searched=await pool(tasks,8);const errs=searched.filter(x=>x?.__error);
+const tasks=[];for(const rr of resolution)for(const r of rr.pick)for(const q of QUERIES)tasks.push(async()=>{try{const items=await searchOne(q,r);await sleep(160);return {district:rr.target.name,items}}catch(e){await sleep(700);throw e}});
+const searched=await pool(tasks,1);const errs=searched.filter(x=>x?.__error);
 const map=new Map();for(const batch of searched){if(!batch||batch.__error)continue;for(const i of batch.items){const k=i.id!=='unknown'?i.id:i.url;if(!map.has(k))map.set(k,i);else{const p=map.get(k);p.sourceQuery=[...new Set([].concat(p.sourceQuery||[],i.sourceQuery||[]))]}}}
 let stage=[...map.values()].filter(i=>i.status==='Ongoing'&&i.price>=100000&&i.price<=1500000&&recent(i));
 const detailed=await pool(stage.map(i=>()=>detail(i)),8);
 const exact=detailed.filter(i=>i&&!i.__error&&!i.detailError&&i.status==='Ongoing'&&recent(i)&&district(i)&&specs(i).ok).map(i=>{const s=specs(i);return{id:i.id,title:i.title,price:i.price,url:i.url,district:district(i),location:i.location,regionPath:i.regionPath,postedAt:i.postedAt,boostedAt:i.boostedAt,cpuHint:cpu((i.title||'')+' '+(i.description||'')),ramGB:s.ramGB,storageGB:s.storageGB,description:String(i.description||'').slice(0,1400)}}).sort((a,b)=>new Date(b.postedAt)-new Date(a.postedAt)||a.price-b.price);
 const result={generatedAt:new Date().toISOString(),since:new Date(SINCE).toISOString(),targets:TARGETS.map(x=>x.name),resolution:resolution.map(r=>({district:r.target.name,totalRegions:r.all.length,selected:r.pick.map(x=>x.slug),error:r.error||null})),stats:{searchTasks:tasks.length,searchErrors:errs.length,rawUnique:map.size,recentBeforeDetail:stage.length,exact:exact.length},items:exact};
-console.log('SEOUL3D_STATS='+JSON.stringify(result.stats));
+console.log('SEOUL3D_STATS='+JSON.stringify(result.stats));\nconsole.log('SEOUL3D_ERRORS='+JSON.stringify(errs.slice(0,20)));
 console.log('SEOUL3D_REGIONS='+JSON.stringify(result.resolution));
 console.log('SEOUL3D_ITEMS='+JSON.stringify(exact));
 await fs.writeFile('danggn-bot/seoul-3day-result.json',JSON.stringify(result,null,2));
