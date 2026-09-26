@@ -1,0 +1,53 @@
+name: Seoul 5 District 72h Scan 2
+on:
+  push:
+    branches: [danggn-search-bot]
+    paths:
+      - '.github/workflows/seoul-3day-scan2.yml'
+permissions:
+  contents: read
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: danggn-search-bot
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Prepare isolated copy of proven hourly scanner
+        run: |
+          cp danggn-bot/hourly-scan.mjs /tmp/seoul-scan.mjs
+          python - <<'PY'
+          import re, pathlib
+          p=pathlib.Path('/tmp/seoul-scan.mjs')
+          s=p.read_text()
+          s=s.replace("const STATE_PATH = new URL('./hourly-state.json', import.meta.url);","const STATE_PATH = new URL('./seoul-state.json', import.meta.url);")
+          s=s.replace("const RESULT_PATH = new URL('./hourly-result.json', import.meta.url);","const RESULT_PATH = new URL('./seoul-result.json', import.meta.url);")
+          s=s.replace("const WINDOW_HOURS = 6;","const WINDOW_HOURS = 72;")
+          old=re.search(r"const CITIES = \[[\s\S]*?\n\];",s)
+          new="""const CITIES = [
+            { name: '송파구', regionNames: ['잠실본동','잠실2동','가락본동','문정2동','방이2동','오금동','위례동','거여2동'] },
+            { name: '광진구', regionNames: ['광장동','화양동','자양제4동','자양제3동'] },
+            { name: '서초구', regionNames: ['서초1동','반포1동','방배본동','양재1동','잠원동'] },
+            { name: '강남구', regionNames: ['역삼1동','삼성1동','대치1동','압구정동','수서동'] },
+            { name: '강동구', regionNames: ['천호동','강일동','명일동','암사제1동','고덕제1동','고덕제2동'] }
+          ];"""
+          if not old: raise SystemExit('CITIES block not found')
+          s=s[:old.start()]+new+s[old.end():]
+          s=s.replace("r.name1 === '경기도'","r.name1 === '서울특별시'")
+          s=s.replace("'경기도 ' + city.name","'서울특별시 ' + city.name")
+          p.write_text(s)
+          pathlib.Path('/tmp/seoul-state.json').write_text('{"version":1,"updatedAt":null,"items":{}}')
+          PY
+      - name: Run isolated scan
+        run: node /tmp/seoul-scan.mjs
+      - name: Show result
+        run: cat /tmp/seoul-result.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: seoul-72h-result
+          path: /tmp/seoul-result.json
+          retention-days: 1
