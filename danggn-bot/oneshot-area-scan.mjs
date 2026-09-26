@@ -434,13 +434,11 @@ async function searchOne(query, region) {
     if (text.trim()) {
       const data = JSON.parse(text);
       const rows = data?.allPage?.fleamarketArticles;
-      if (Array.isArray(rows)) {
+      if (Array.isArray(rows) && rows.length) {
         return rows.map(item => normalizeArticle(item, query, region.slug)).slice(0, SEARCH_LIMIT);
       }
     }
   } catch {}
-
-  if (FAST_MODE) return [];
 
   const url = new URL(SEARCH);
   url.searchParams.set('search', query);
