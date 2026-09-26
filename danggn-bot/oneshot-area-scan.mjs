@@ -6,8 +6,11 @@ const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
 const WINDOW_HOURS = 48;
 const SEARCH_LIMIT = 80;
 const FAST_MODE = process.env.FAST_MODE === '1';
-const DETAIL_LIMIT_PER_REGION = FAST_MODE ? 4 : 10;
-const QUERIES = ['노트북', '그램', '갤럭시북', 'ThinkPad'];
+const MICRO_MODE = process.env.MICRO_MODE === '1';
+const REGION_OVERRIDE = process.env.REGION_OVERRIDE || '';
+const QUERY_OVERRIDE = process.env.QUERY_OVERRIDE || '';
+const DETAIL_LIMIT_PER_REGION = MICRO_MODE ? 5 : (FAST_MODE ? 4 : 10);
+const QUERIES = QUERY_OVERRIDE ? [QUERY_OVERRIDE] : ['노트북', '그램', '갤럭시북', 'ThinkPad'];
 
 const TARGETS = {
   seongnam: { name: '성남시', province: '경기도' },
@@ -415,7 +418,9 @@ async function getText(url, attempts = (FAST_MODE ? 2 : 4)) {
 }
 
 async function resolveRegions() {
-  const slugs = (FAST_MODE ? FAST_REGION_SLUGS[slug] : REGION_SLUGS[slug]) ?? [];
+  const slugs = REGION_OVERRIDE
+    ? [REGION_OVERRIDE]
+    : ((FAST_MODE ? FAST_REGION_SLUGS[slug] : REGION_SLUGS[slug]) ?? []);
   return slugs.map(value => {
     const m = String(value).match(/^(.*)-(\d+)$/);
     if (!m) throw new Error('Invalid fixed region slug: ' + value);
