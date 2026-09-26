@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-26T11:37:31.911Z",
+  "generatedAt": "2026-09-26T11:55:53.773Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -43,10 +43,10 @@
         "attempted": 8,
         "succeeded": 8,
         "errors": 0,
-        "uniqueListings": 335,
-        "changedCandidates": 42,
-        "detailedCandidates": 41,
-        "durationMs": 47144
+        "uniqueListings": 339,
+        "changedCandidates": 41,
+        "detailedCandidates": 40,
+        "durationMs": 52106
       },
       {
         "city": "의왕시",
@@ -60,10 +60,10 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 440,
-        "changedCandidates": 49,
-        "detailedCandidates": 41,
-        "durationMs": 78414
+        "uniqueListings": 442,
+        "changedCandidates": 42,
+        "detailedCandidates": 40,
+        "durationMs": 74526
       },
       {
         "city": "안양시",
@@ -79,10 +79,10 @@
         "attempted": 28,
         "succeeded": 28,
         "errors": 0,
-        "uniqueListings": 397,
-        "changedCandidates": 42,
+        "uniqueListings": 406,
+        "changedCandidates": 49,
         "detailedCandidates": 41,
-        "durationMs": 92882
+        "durationMs": 93607
       },
       {
         "city": "과천시",
@@ -93,18 +93,46 @@
         "succeeded": 4,
         "errors": 0,
         "uniqueListings": 299,
-        "changedCandidates": 42,
+        "changedCandidates": 44,
         "detailedCandidates": 41,
-        "durationMs": 41226
+        "durationMs": 40672
       }
     ],
-    "finalCandidateCount": 0,
-    "stateItemCount": 1935,
+    "finalCandidateCount": 1,
+    "stateItemCount": 1948,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
-    "skippedUnknownProbeCount": 736,
-    "durationMs": 259711
+    "skippedUnknownProbeCount": 750,
+    "durationMs": 260954
   },
-  "candidates": []
+  "candidates": [
+    {
+      "id": "gywjcjgwj18y",
+      "changeType": "new",
+      "previousPrice": null,
+      "price": 200000,
+      "priceDropPercent": null,
+      "city": "의왕시",
+      "location": "내손동",
+      "regionPath": "경기도 의왕시 내손동",
+      "title": "LG 그램 14인치 노트북 판매합니다.",
+      "modelHint": "LG 그램 14인치 노트북 판매합니다.",
+      "cpuHint": "i5-7200U",
+      "ramGB": 16,
+      "storageGB": 512,
+      "specConfidence": "explicit",
+      "ramTypeConfirmed": true,
+      "storageTypeConfirmed": true,
+      "postedAt": "2026-09-26T11:41:17.414Z",
+      "boostedAt": "2026-09-26T11:41:17.412Z",
+      "status": "Ongoing",
+      "description": "모델명 : LG gram 14Z970-GA56K\n\n- CPU : Intel Core i5-7200U\n- RAM : 16GB\n- SSD : 삼성 512GB\n- 그래픽 : Intel HD Graphics 620\n- 디스플레이 : 14인치 FHD\n- 운영체제 : Windows 10 Home\n- 배터리 효율 : 약 83%\n  (설계용량 60,060mWh / 완충용량 49,680mWh)\n- 배터리 사이클 : 81회\n\nRAM 16GB로 업그레이드되어 있고 삼성 SSD 512GB 장착되어 있습니다.\n\n연식 대비 배터리 상태도 좋은 편이며, 가벼운 그램이라 휴대하면서 인터넷, 유튜브, 인강, 문서작업 등 사무용으로 사용하기 좋습니다.\n\n정상 작동하며 액정 상태도 양호합니다.\n\n연식이 있는 제품이라 상판 및 외관에 생활기스와 사용감은 있습니다. 사진에 최대한 잘 보이게 촬영했으니 외관 상태 확인 부탁드립니다.\n\n개인정보 삭제 후 초기화하여 전달드리겠습니다.",
+      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-14%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-gywjcjgwj18y/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "담이",
+      "mannerTemperature": 40
+    }
+  ]
 }
