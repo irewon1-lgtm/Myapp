@@ -1,0 +1,48 @@
+name: Danggn One-shot 48h Area Scan
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/danggn-oneshot-48h.yml'
+      - 'ops/danggn-oneshot-trigger.txt'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  scan:
+    strategy:
+      fail-fast: false
+      matrix:
+        target: [seongnam, gwangjin, songpa, gangnam, seocho, gangdong]
+
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+
+    steps:
+      - name: Checkout scanner branch
+        uses: actions/checkout@v4
+        with:
+          ref: danggn-search-bot
+          fetch-depth: 1
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run 48h area scan
+        env:
+          TARGET_SLUG: ${{ matrix.target }}
+        run: node danggn-bot/oneshot-area-scan.mjs
+
+      - name: Upload result
+        uses: actions/upload-artifact@v4
+        with:
+          name: danggn-48h-${{ matrix.target }}
+          path: oneshot-result-${{ matrix.target }}.json
+          if-no-files-found: error
+          retention-days: 1
