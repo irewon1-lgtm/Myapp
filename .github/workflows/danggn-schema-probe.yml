@@ -1,0 +1,26 @@
+name: Danggn Search Schema Probe
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/danggn-schema-probe.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: danggn-search-bot
+          fetch-depth: 1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: node danggn-bot/schema-probe.mjs
