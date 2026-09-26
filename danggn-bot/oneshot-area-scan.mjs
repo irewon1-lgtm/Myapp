@@ -108,6 +108,42 @@ function normalizeArticle(raw, sourceQuery, sourceRegion) {
   };
 }
 
+
+function parseLdJson(html) {
+  const out = [];
+  for (const m of html.matchAll(/<script[^>]+type=['"]application\\/ld\\+json['"][^>]*>([\\s\\S]*?)<\\/script>/gi)) {
+    try { out.push(JSON.parse(m[1])); } catch {}
+  }
+  return out;
+}
+
+function parseSearch(html, sourceQuery, sourceRegion) {
+  const embedded = extractJsonAfterMarker(html, '"fleamarketArticles":', '[') ?? [];
+  if (Array.isArray(embedded) && embedded.length) {
+    return embedded.map(item => normalizeArticle(item, sourceQuery, sourceRegion));
+  }
+  for (const block of parseLdJson(html)) {
+    if (block?.['@type'] !== 'ItemList' || !Array.isArray(block.itemListElement)) continue;
+    return block.itemListElement
+      .map(x => x?.item)
+      .filter(Boolean)
+      .map(item => ({
+        id: articleId(item.url) || 'unknown',
+        title: item.name ?? '제목 없음',
+        price: priceNum(item.offers?.price),
+        url: item.url,
+        location: item.address?.addressLocality,
+        postedAt: normalizeTimestamp(item.datePosted ?? item.dateCreated ?? item.datePublished),
+        status: 'Ongoing',
+        favoriteCount: 0,
+        chatCount: 0,
+        sourceQuery,
+        sourceRegion
+      }));
+  }
+  return [];
+}
+
 async function getText(url, attempts = 2) {
   let lastError;
   for (let attempt = 1; attempt <= attempts; attempt++) {
@@ -149,15 +185,27 @@ async function resolveRegions() {
 }
 
 async function searchOne(query, region) {
-  const routeUrl = new URL(BASE + '/kr/buy-sell/all/');
-  routeUrl.searchParams.set('search', query);
-  routeUrl.searchParams.set('in', region.slug);
-  routeUrl.searchParams.set('_data', 'routes/kr.buy-sell._index');
-  const data = JSON.parse(await getText(routeUrl));
-  if (data?.region?.id != null && String(data.region.id) !== String(region.id)) return [];
-  const rows = data?.allPage?.fleamarketArticles;
-  if (!Array.isArray(rows)) return [];
-  return rows.map(item => normalizeArticle(item, query, region.slug)).slice(0, SEARCH_LIMIT);
+  try {
+    const routeUrl = new URL(BASE + '/kr/buy-sell/all/');
+    routeUrl.searchParams.set('search', query);
+    routeUrl.searchParams.set('in', region.slug);
+    routeUrl.searchParams.set('_data', 'routes/kr.buy-sell._index');
+    const text = await getText(routeUrl);
+    if (text.trim()) {
+      const data = JSON.parse(text);
+      if (data?.region?.id != null && String(data.region.id) !== String(region.id)) return [];
+      const rows = data?.allPage?.fleamarketArticles;
+      if (Array.isArray(rows) && rows.length) {
+        return rows.map(item => normalizeArticle(item, query, region.slug)).slice(0, SEARCH_LIMIT);
+      }
+    }
+  } catch {}
+
+  const url = new URL(SEARCH);
+  url.searchParams.set('search', query);
+  url.searchParams.set('in', region.slug);
+  const html = await getText(url);
+  return parseSearch(html, query, region.slug).slice(0, SEARCH_LIMIT);
 }
 
 async function detailOne(item) {
@@ -251,7 +299,7 @@ if (!regions.length) throw new Error('No regions resolved for ' + target.name);
 const tasks = [];
 for (const region of regions) for (const query of QUERIES) tasks.push({ region, query });
 
-const searched = await mapLimit(tasks, 12, async ({region, query}) => {
+const searched = await mapLimit(tasks, 4, async ({region, query}) => {
   try { return await searchOne(query, region); }
   catch (e) { return [{ _searchError: String(e), sourceRegion: region.slug, sourceQuery: query }]; }
 });
@@ -279,7 +327,7 @@ const recent = [...found.values()]
   .sort((a,b) => new Date(b.postedAt).getTime() - new Date(a.postedAt).getTime())
   .slice(0, DETAIL_LIMIT);
 
-const detailed = await mapLimit(recent, 10, detailOne);
+const detailed = await mapLimit(recent, 4, detailOne);
 const candidates = detailed
   .filter(item => !item.detailError)
   .filter(item => item.status === 'Ongoing')
