@@ -1,0 +1,162 @@
+name: Danggn Micro Retry Scan
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/danggn-micro-retry.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  scan:
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        include:
+          - target: gwangjin
+            region: '자양동-6060'
+            query: '노트북'
+          - target: gwangjin
+            region: '자양동-6060'
+            query: '그램'
+          - target: gwangjin
+            region: '자양동-6060'
+            query: '갤럭시북'
+          - target: gwangjin
+            region: '자양동-6060'
+            query: 'ThinkPad'
+          - target: gwangjin
+            region: '구의동-6059'
+            query: '노트북'
+          - target: gwangjin
+            region: '구의동-6059'
+            query: '그램'
+          - target: gwangjin
+            region: '구의동-6059'
+            query: '갤럭시북'
+          - target: gwangjin
+            region: '구의동-6059'
+            query: 'ThinkPad'
+          - target: gwangjin
+            region: '중곡동-6061'
+            query: '노트북'
+          - target: gwangjin
+            region: '중곡동-6061'
+            query: '그램'
+          - target: gwangjin
+            region: '중곡동-6061'
+            query: '갤럭시북'
+          - target: gwangjin
+            region: '중곡동-6061'
+            query: 'ThinkPad'
+          - target: gangnam
+            region: '역삼동-6035'
+            query: '노트북'
+          - target: gangnam
+            region: '역삼동-6035'
+            query: '그램'
+          - target: gangnam
+            region: '역삼동-6035'
+            query: '갤럭시북'
+          - target: gangnam
+            region: '역삼동-6035'
+            query: 'ThinkPad'
+          - target: gangnam
+            region: '대치동-6032'
+            query: '노트북'
+          - target: gangnam
+            region: '대치동-6032'
+            query: '그램'
+          - target: gangnam
+            region: '대치동-6032'
+            query: '갤럭시북'
+          - target: gangnam
+            region: '대치동-6032'
+            query: 'ThinkPad'
+          - target: gangnam
+            region: '개포동-6030'
+            query: '노트북'
+          - target: gangnam
+            region: '개포동-6030'
+            query: '그램'
+          - target: gangnam
+            region: '개포동-6030'
+            query: '갤럭시북'
+          - target: gangnam
+            region: '개포동-6030'
+            query: 'ThinkPad'
+          - target: seocho
+            region: '서초동-6128'
+            query: '노트북'
+          - target: seocho
+            region: '서초동-6128'
+            query: '그램'
+          - target: seocho
+            region: '서초동-6128'
+            query: '갤럭시북'
+          - target: seocho
+            region: '서초동-6128'
+            query: 'ThinkPad'
+          - target: seocho
+            region: '반포동-6126'
+            query: '노트북'
+          - target: seocho
+            region: '반포동-6126'
+            query: '그램'
+          - target: seocho
+            region: '반포동-6126'
+            query: '갤럭시북'
+          - target: seocho
+            region: '반포동-6126'
+            query: 'ThinkPad'
+          - target: seocho
+            region: '방배동-6127'
+            query: '노트북'
+          - target: seocho
+            region: '방배동-6127'
+            query: '그램'
+          - target: seocho
+            region: '방배동-6127'
+            query: '갤럭시북'
+          - target: seocho
+            region: '방배동-6127'
+            query: 'ThinkPad'
+          - target: seocho
+            region: '양재동-6130'
+            query: '노트북'
+          - target: seocho
+            region: '양재동-6130'
+            query: '그램'
+          - target: seocho
+            region: '양재동-6130'
+            query: '갤럭시북'
+          - target: seocho
+            region: '양재동-6130'
+            query: 'ThinkPad'
+
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: danggn-search-bot
+          fetch-depth: 1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Run micro scan
+        env:
+          TARGET_SLUG: ${{ matrix.target }}
+          CHUNK_INDEX: '0'
+          CHUNK_COUNT: '1'
+          FAST_MODE: '1'
+          MICRO_MODE: '1'
+          REGION_OVERRIDE: ${{ matrix.region }}
+          QUERY_OVERRIDE: ${{ matrix.query }}
+        run: node danggn-bot/oneshot-area-scan.mjs
