@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-26T01:37:51.813Z",
+  "generatedAt": "2026-09-26T01:56:54.594Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -44,9 +44,9 @@
         "succeeded": 8,
         "errors": 0,
         "uniqueListings": 346,
-        "changedCandidates": 41,
+        "changedCandidates": 45,
         "detailedCandidates": 40,
-        "durationMs": 53292
+        "durationMs": 50679
       },
       {
         "city": "의왕시",
@@ -60,10 +60,10 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 446,
-        "changedCandidates": 43,
-        "detailedCandidates": 40,
-        "durationMs": 80669
+        "uniqueListings": 448,
+        "changedCandidates": 47,
+        "detailedCandidates": 41,
+        "durationMs": 74191
       },
       {
         "city": "안양시",
@@ -79,10 +79,10 @@
         "attempted": 28,
         "succeeded": 28,
         "errors": 0,
-        "uniqueListings": 409,
-        "changedCandidates": 43,
+        "uniqueListings": 403,
+        "changedCandidates": 42,
         "detailedCandidates": 40,
-        "durationMs": 98501
+        "durationMs": 97937
       },
       {
         "city": "과천시",
@@ -92,19 +92,19 @@
         "attempted": 4,
         "succeeded": 4,
         "errors": 0,
-        "uniqueListings": 303,
-        "changedCandidates": 41,
+        "uniqueListings": 301,
+        "changedCandidates": 40,
         "detailedCandidates": 40,
-        "durationMs": 42227
+        "durationMs": 38546
       }
     ],
     "finalCandidateCount": 0,
-    "stateItemCount": 1536,
+    "stateItemCount": 1547,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
-    "skippedUnknownProbeCount": 337,
-    "durationMs": 274734
+    "skippedUnknownProbeCount": 350,
+    "durationMs": 261392
   },
   "candidates": []
 }
