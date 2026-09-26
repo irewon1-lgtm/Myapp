@@ -5,7 +5,7 @@ const SEARCH = BASE + '/kr/buy-sell/';
 const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36';
 const WINDOW_HOURS = 48;
 const SEARCH_LIMIT = 80;
-const DETAIL_LIMIT = 800;
+const DETAIL_LIMIT_PER_REGION = 10;
 const QUERIES = ['노트북', '그램', '갤럭시북', 'ThinkPad'];
 
 const TARGETS = {
@@ -20,6 +20,12 @@ const TARGETS = {
 const slug = process.env.TARGET_SLUG;
 const target = TARGETS[slug];
 if (!target) throw new Error('Unknown TARGET_SLUG: ' + slug);
+
+const chunkIndex = Number.parseInt(process.env.CHUNK_INDEX ?? '0', 10);
+const chunkCount = Number.parseInt(process.env.CHUNK_COUNT ?? '1', 10);
+if (!Number.isInteger(chunkIndex) || !Number.isInteger(chunkCount) || chunkCount < 1 || chunkIndex < 0 || chunkIndex >= chunkCount) {
+  throw new Error('Invalid chunk settings: ' + JSON.stringify({ chunkIndex, chunkCount }));
+}
 
 function extractBalancedJson(input, startIndex, openChar) {
   const closeChar = openChar === '{' ? '}' : ']';
@@ -308,8 +314,11 @@ async function mapLimit(items, limit, fn) {
 
 const startedAt = new Date();
 const nowMs = startedAt.getTime();
-const regions = await resolveRegions();
-if (!regions.length) throw new Error('No regions resolved for ' + target.name);
+const allRegions = await resolveRegions();
+if (!allRegions.length) throw new Error('No regions resolved for ' + target.name);
+
+const regions = allRegions.filter((_, index) => index % chunkCount === chunkIndex);
+if (!regions.length) throw new Error('No regions assigned to chunk ' + chunkIndex + '/' + chunkCount + ' for ' + target.name);
 
 const tasks = [];
 for (const region of regions) for (const query of QUERIES) tasks.push({ region, query });
@@ -331,22 +340,36 @@ for (const item of searched.flat().filter(x => !x?._searchError)) {
   }
 }
 
-const detailQueue = [...found.values()]
+const detailBase = [...found.values()]
   .filter(item => item.status === 'Ongoing')
   .filter(item => !item.price || (item.price >= 100000 && item.price <= 1500000))
   .filter(item => !item.postedAt || isRecent(item, nowMs))
   .filter(item => {
     const p = ((item.regionPath ?? '') + ' ' + (item.location ?? '')).trim();
     return !p || p.includes(target.name);
-  })
-  .sort((a,b) => {
-    const at = a.postedAt ? new Date(a.postedAt).getTime() : 0;
-    const bt = b.postedAt ? new Date(b.postedAt).getTime() : 0;
-    return bt - at;
-  })
-  .slice(0, DETAIL_LIMIT);
+  });
 
-const detailed = await mapLimit(detailQueue, 4, detailOne);
+const knownRecent = detailBase
+  .filter(item => item.postedAt && isRecent(item, nowMs));
+
+const unknownByRegion = new Map();
+for (const item of detailBase.filter(item => !item.postedAt)) {
+  const key = String(item.sourceRegion ?? 'unknown');
+  if (!unknownByRegion.has(key)) unknownByRegion.set(key, []);
+  const bucket = unknownByRegion.get(key);
+  if (bucket.length < DETAIL_LIMIT_PER_REGION) bucket.push(item);
+}
+
+const detailQueue = [];
+const seenDetail = new Set();
+for (const item of [...knownRecent, ...[...unknownByRegion.values()].flat()]) {
+  const key = item.id !== 'unknown' ? item.id : item.url;
+  if (seenDetail.has(key)) continue;
+  seenDetail.add(key);
+  detailQueue.push(item);
+}
+
+const detailed = await mapLimit(detailQueue, 2, detailOne);
 const candidates = detailed
   .filter(item => !item.detailError)
   .filter(item => item.status === 'Ongoing')
@@ -377,6 +400,9 @@ const result = {
   generatedAt: new Date().toISOString(),
   scanWindowHours: WINDOW_HOURS,
   target,
+  chunkIndex,
+  chunkCount,
+  totalRegionCount: allRegions.length,
   regionCount: regions.length,
   regions: regions.map(r => r.slug),
   searchTaskCount: tasks.length,
@@ -388,10 +414,13 @@ const result = {
   candidates
 };
 
-const outPath = 'oneshot-result-' + slug + '.json';
+const outPath = 'oneshot-result-' + slug + '-' + chunkIndex + '.json';
 await fs.writeFile(outPath, JSON.stringify(result, null, 2) + '\n');
 console.log('RESULT_SUMMARY=' + JSON.stringify({
   target: target.name,
+  chunkIndex,
+  chunkCount,
+  totalRegionCount: result.totalRegionCount,
   regionCount: result.regionCount,
   searchTaskCount: result.searchTaskCount,
   searchErrorCount: result.searchErrorCount,
