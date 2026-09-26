@@ -1,0 +1,94 @@
+name: Danggn Fast 48h Laptop Pass
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/danggn-fast-48h.yml'
+      - 'ops/danggn-fast-trigger.txt'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  scan:
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        include:
+          - target: seongnam
+            chunk: 0
+            chunks: 5
+          - target: seongnam
+            chunk: 1
+            chunks: 5
+          - target: seongnam
+            chunk: 2
+            chunks: 5
+          - target: seongnam
+            chunk: 3
+            chunks: 5
+          - target: seongnam
+            chunk: 4
+            chunks: 5
+          - target: gwangjin
+            chunk: 0
+            chunks: 1
+          - target: songpa
+            chunk: 0
+            chunks: 2
+          - target: songpa
+            chunk: 1
+            chunks: 2
+          - target: gangnam
+            chunk: 0
+            chunks: 2
+          - target: gangnam
+            chunk: 1
+            chunks: 2
+          - target: seocho
+            chunk: 0
+            chunks: 2
+          - target: seocho
+            chunk: 1
+            chunks: 2
+          - target: gangdong
+            chunk: 0
+            chunks: 2
+          - target: gangdong
+            chunk: 1
+            chunks: 2
+
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout scanner branch
+        uses: actions/checkout@v4
+        with:
+          ref: danggn-search-bot
+          fetch-depth: 1
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run fast 48h scan
+        env:
+          TARGET_SLUG: ${{ matrix.target }}
+          CHUNK_INDEX: ${{ matrix.chunk }}
+          CHUNK_COUNT: ${{ matrix.chunks }}
+          FAST_MODE: '1'
+        run: node danggn-bot/oneshot-area-scan.mjs
+
+      - name: Upload result
+        uses: actions/upload-artifact@v4
+        with:
+          name: danggn-fast-48h-${{ matrix.target }}-${{ matrix.chunk }}
+          path: oneshot-result-${{ matrix.target }}-${{ matrix.chunk }}.json
+          if-no-files-found: error
+          retention-days: 1
