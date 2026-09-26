@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-26T09:22:29.610Z",
+  "generatedAt": "2026-09-26T09:37:35.092Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -43,10 +43,10 @@
         "attempted": 8,
         "succeeded": 8,
         "errors": 0,
-        "uniqueListings": 339,
-        "changedCandidates": 44,
-        "detailedCandidates": 40,
-        "durationMs": 48883
+        "uniqueListings": 336,
+        "changedCandidates": 38,
+        "detailedCandidates": 38,
+        "durationMs": 45238
       },
       {
         "city": "의왕시",
@@ -61,9 +61,9 @@
         "succeeded": 20,
         "errors": 0,
         "uniqueListings": 443,
-        "changedCandidates": 45,
-        "detailedCandidates": 40,
-        "durationMs": 76960
+        "changedCandidates": 42,
+        "detailedCandidates": 41,
+        "durationMs": 71039
       },
       {
         "city": "안양시",
@@ -79,10 +79,10 @@
         "attempted": 28,
         "succeeded": 28,
         "errors": 0,
-        "uniqueListings": 389,
-        "changedCandidates": 44,
-        "detailedCandidates": 40,
-        "durationMs": 99859
+        "uniqueListings": 405,
+        "changedCandidates": 42,
+        "detailedCandidates": 41,
+        "durationMs": 85582
       },
       {
         "city": "과천시",
@@ -92,47 +92,19 @@
         "attempted": 4,
         "succeeded": 4,
         "errors": 0,
-        "uniqueListings": 302,
-        "changedCandidates": 43,
-        "detailedCandidates": 41,
-        "durationMs": 40196
+        "uniqueListings": 300,
+        "changedCandidates": 37,
+        "detailedCandidates": 37,
+        "durationMs": 34265
       }
     ],
-    "finalCandidateCount": 1,
-    "stateItemCount": 1899,
+    "finalCandidateCount": 0,
+    "stateItemCount": 1897,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
-    "skippedUnknownProbeCount": 700,
-    "durationMs": 265941
+    "skippedUnknownProbeCount": 698,
+    "durationMs": 236169
   },
-  "candidates": [
-    {
-      "id": "m8hqwagpg4t9",
-      "changeType": "new",
-      "previousPrice": null,
-      "price": 260000,
-      "priceDropPercent": null,
-      "city": "군포시",
-      "location": "금정동",
-      "regionPath": "경기도 군포시 금정동",
-      "title": "MSI 게이밍 노트북 (i7-6700HQ/16GB RAM/1TB HDD/GTX 1060)",
-      "modelHint": "MSI 게이밍 노트북 (i7-6700HQ/16GB RAM/1TB HDD/GTX 1060)",
-      "cpuHint": "i7-6700HQ",
-      "ramGB": 16,
-      "storageGB": 1024,
-      "specConfidence": "explicit",
-      "ramTypeConfirmed": true,
-      "storageTypeConfirmed": true,
-      "postedAt": "2026-09-26T09:13:47.853Z",
-      "boostedAt": "2026-09-26T09:13:47.851Z",
-      "status": "Ongoing",
-      "description": "고성능 MSI 게이밍 노트북을 만나보세요. 인텔 i7-6700HQ 프로세서와 GTX 1060 그래픽 카드로 쾌적한 게이밍 환경을 제공해요. 16GB RAM과 256GB SSD 1TB HDD로 넉넉한 저장 공간과 빠른 속도를 자랑합니다. 게임은 물론 다양한 작업까지 부드럽게 즐길 수 있어요.\n\n왼쪽 usb포트하나와 c타입이 먹통\n배터리방전으로 교체필요\n태국어+영어 자판\n그외 성능잘나옴\n\n스타 롤 가능 \n\n구매후환불불가",
-      "url": "https://www.daangn.com/kr/buy-sell/msi-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-i7-6700hq-16gb-ram-1tb-hdd-gtx-1060-m8hqwagpg4t9/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "눈두두",
-      "mannerTemperature": 36.5
-    }
-  ]
+  "candidates": []
 }
