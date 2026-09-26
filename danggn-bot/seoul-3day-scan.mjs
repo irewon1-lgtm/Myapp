@@ -49,7 +49,8 @@ let stage=[...map.values()].filter(i=>i.status==='Ongoing'&&i.price>=100000&&i.p
 const detailed=await pool(stage.map(i=>()=>detail(i)),8);
 const exact=detailed.filter(i=>i&&!i.__error&&!i.detailError&&i.status==='Ongoing'&&recent(i)&&district(i)&&specs(i).ok).map(i=>{const s=specs(i);return{id:i.id,title:i.title,price:i.price,url:i.url,district:district(i),location:i.location,regionPath:i.regionPath,postedAt:i.postedAt,boostedAt:i.boostedAt,cpuHint:cpu((i.title||'')+' '+(i.description||'')),ramGB:s.ramGB,storageGB:s.storageGB,description:String(i.description||'').slice(0,1400)}}).sort((a,b)=>new Date(b.postedAt)-new Date(a.postedAt)||a.price-b.price);
 const result={generatedAt:new Date().toISOString(),since:new Date(SINCE).toISOString(),targets:TARGETS.map(x=>x.name),resolution:resolution.map(r=>({district:r.target.name,totalRegions:r.all.length,selected:r.pick.map(x=>x.slug),error:r.error||null})),stats:{searchTasks:tasks.length,searchErrors:errs.length,rawUnique:map.size,recentBeforeDetail:stage.length,exact:exact.length},items:exact};
-console.log('SEOUL3D_STATS='+JSON.stringify(result.stats));\nconsole.log('SEOUL3D_ERRORS='+JSON.stringify(errs.slice(0,20)));
+console.log('SEOUL3D_STATS='+JSON.stringify(result.stats));
+console.log('SEOUL3D_ERRORS='+JSON.stringify(errs.slice(0,20)));
 console.log('SEOUL3D_REGIONS='+JSON.stringify(result.resolution));
 console.log('SEOUL3D_ITEMS='+JSON.stringify(exact));
 await fs.writeFile('danggn-bot/seoul-3day-result.json',JSON.stringify(result,null,2));
