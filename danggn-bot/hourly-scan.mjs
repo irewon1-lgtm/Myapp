@@ -736,7 +736,7 @@ async function main() {
   const result = {
     schemaVersion: 1,
     generatedAt: new Date().toISOString(),
-    expectedScheduleMinute: 16,
+    expectedScheduleMinutes: [7, 27, 47],
     scanWindowHours: WINDOW_HOURS,
     searchOrder: CITIES.map(city => city.name),
     health: {
@@ -785,7 +785,7 @@ main().catch(async error => {
   const result = {
     schemaVersion: 1,
     generatedAt: new Date().toISOString(),
-    expectedScheduleMinute: 16,
+    expectedScheduleMinutes: [7, 27, 47],
     health: {
       status: 'failed',
       stateCommitted: false,
