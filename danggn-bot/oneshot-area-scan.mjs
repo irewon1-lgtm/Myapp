@@ -111,7 +111,7 @@ function normalizeArticle(raw, sourceQuery, sourceRegion) {
 
 function parseLdJson(html) {
   const out = [];
-  for (const m of html.matchAll(/<script[^>]+type=['"]application\\/ld\\+json['"][^>]*>([\\s\\S]*?)<\\/script>/gi)) {
+  for (const m of html.matchAll(/<script[^>]+type=['"]application\/ld\+json['"][^>]*>([\s\S]*?)<\/script>/gi)) {
     try { out.push(JSON.parse(m[1])); } catch {}
   }
   return out;
