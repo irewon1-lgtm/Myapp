@@ -1,0 +1,33 @@
+name: Danggn One-Time Detail fp383rbhdeu4
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/danggn-once-detail-fp383.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: danggn-search-bot
+          fetch-depth: 1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: node danggn-bot/once-detail-fp383rbhdeu4.mjs
+      - shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "danggn-once-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add danggn-bot/once-detail-fp383rbhdeu4.json
+          git commit -m "chore: save one-time detail fp383 [skip ci]"
+          git push origin HEAD:danggn-search-bot
