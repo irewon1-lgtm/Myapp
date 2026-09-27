@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-27T09:38:06.871Z",
+  "generatedAt": "2026-09-27T09:56:24.260Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -43,10 +43,10 @@
         "attempted": 8,
         "succeeded": 8,
         "errors": 0,
-        "uniqueListings": 339,
+        "uniqueListings": 342,
         "changedCandidates": 41,
         "detailedCandidates": 41,
-        "durationMs": 44723
+        "durationMs": 46458
       },
       {
         "city": "의왕시",
@@ -60,10 +60,10 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 460,
-        "changedCandidates": 45,
-        "detailedCandidates": 41,
-        "durationMs": 62636
+        "uniqueListings": 463,
+        "changedCandidates": 48,
+        "detailedCandidates": 42,
+        "durationMs": 72635
       },
       {
         "city": "안양시",
@@ -79,10 +79,10 @@
         "attempted": 28,
         "succeeded": 28,
         "errors": 0,
-        "uniqueListings": 404,
-        "changedCandidates": 43,
-        "detailedCandidates": 43,
-        "durationMs": 78228
+        "uniqueListings": 406,
+        "changedCandidates": 48,
+        "detailedCandidates": 42,
+        "durationMs": 88988
       },
       {
         "city": "과천시",
@@ -92,19 +92,19 @@
         "attempted": 4,
         "succeeded": 4,
         "errors": 0,
-        "uniqueListings": 303,
-        "changedCandidates": 38,
-        "detailedCandidates": 38,
-        "durationMs": 30502
+        "uniqueListings": 301,
+        "changedCandidates": 42,
+        "detailedCandidates": 42,
+        "durationMs": 38997
       }
     ],
-    "finalCandidateCount": 1,
-    "stateItemCount": 2420,
+    "finalCandidateCount": 2,
+    "stateItemCount": 2427,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
-    "skippedUnknownProbeCount": 1232,
-    "durationMs": 216150
+    "skippedUnknownProbeCount": 1241,
+    "durationMs": 247135
   },
   "candidates": [
     {
@@ -133,6 +133,33 @@
       "chatCount": 0,
       "sellerName": "baeknk",
       "mannerTemperature": 37.2
+    },
+    {
+      "id": "2j7hy1h5hf68",
+      "changeType": "price_drop",
+      "previousPrice": 1250000,
+      "price": 1200000,
+      "priceDropPercent": 4,
+      "city": "과천시",
+      "location": "별양동",
+      "regionPath": "경기도 과천시 별양동",
+      "title": "미사용 게이밍 노트북",
+      "modelHint": "미사용 게이밍 노트북",
+      "cpuHint": null,
+      "ramGB": 16,
+      "storageGB": 512,
+      "specConfidence": "needs_verification",
+      "ramTypeConfirmed": false,
+      "storageTypeConfirmed": false,
+      "postedAt": "2026-09-21T14:39:33.292Z",
+      "boostedAt": "2026-09-27T09:41:32.773Z",
+      "status": "Ongoing",
+      "description": "경품으로 받은 게이밍 노트북입니다 \nHP 빅터스 15 \n15-3001ax\n라이젠9 512GB 16GB  RTX4060 144Hz\n미사용이고 윈도우 안깔려있어요 \n작동되는지 전원만 켜봤습니다 \n박스 그대로 있습니다",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%AF%B8%EC%82%AC%EC%9A%A9-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-2j7hy1h5hf68/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "lt",
+      "mannerTemperature": 40.1
     }
   ]
 }
