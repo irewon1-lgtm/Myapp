@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-27T07:57:07.058Z",
+  "generatedAt": "2026-09-27T08:24:08.860Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -43,10 +43,10 @@
         "attempted": 8,
         "succeeded": 8,
         "errors": 0,
-        "uniqueListings": 339,
-        "changedCandidates": 41,
+        "uniqueListings": 341,
+        "changedCandidates": 47,
         "detailedCandidates": 40,
-        "durationMs": 52930
+        "durationMs": 56895
       },
       {
         "city": "의왕시",
@@ -60,10 +60,10 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 452,
-        "changedCandidates": 47,
-        "detailedCandidates": 41,
-        "durationMs": 80277
+        "uniqueListings": 446,
+        "changedCandidates": 56,
+        "detailedCandidates": 42,
+        "durationMs": 89483
       },
       {
         "city": "안양시",
@@ -79,10 +79,10 @@
         "attempted": 28,
         "succeeded": 28,
         "errors": 0,
-        "uniqueListings": 395,
-        "changedCandidates": 46,
-        "detailedCandidates": 40,
-        "durationMs": 97843
+        "uniqueListings": 402,
+        "changedCandidates": 56,
+        "detailedCandidates": 42,
+        "durationMs": 100318
       },
       {
         "city": "과천시",
@@ -92,19 +92,47 @@
         "attempted": 4,
         "succeeded": 4,
         "errors": 0,
-        "uniqueListings": 303,
-        "changedCandidates": 41,
-        "detailedCandidates": 40,
-        "durationMs": 43431
+        "uniqueListings": 302,
+        "changedCandidates": 47,
+        "detailedCandidates": 42,
+        "durationMs": 42825
       }
     ],
-    "finalCandidateCount": 0,
-    "stateItemCount": 2344,
+    "finalCandidateCount": 1,
+    "stateItemCount": 2385,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
-    "skippedUnknownProbeCount": 1160,
-    "durationMs": 274524
+    "skippedUnknownProbeCount": 1199,
+    "durationMs": 289572
   },
-  "candidates": []
+  "candidates": [
+    {
+      "id": "wbr6rpiimc4n",
+      "changeType": "price_drop",
+      "previousPrice": 250000,
+      "price": 250000,
+      "priceDropPercent": 0,
+      "city": "안양시",
+      "location": "병목안동",
+      "regionPath": "경기도 안양시 만안구 병목안동",
+      "title": "MSI GE72 APACHE PRO 233 게이밍 노트북",
+      "modelHint": "MSI GE72 APACHE PRO 233 게이밍 노트북",
+      "cpuHint": null,
+      "ramGB": 16,
+      "storageGB": 1024,
+      "specConfidence": "explicit",
+      "ramTypeConfirmed": true,
+      "storageTypeConfirmed": true,
+      "postedAt": "2026-09-26T21:19:29.588Z",
+      "boostedAt": "2026-09-26T21:19:29.583Z",
+      "status": "Ongoing",
+      "description": "MSI GE62 Apache Pro 게이밍 노트북 판매합니다.\n\n- CPU: Intel Core i7\n- GPU: NVIDIA GeForce GTX 970M\n- RAM: 16GB\n- SSD: 128GB\n- HDD: 1TB\n- 디스플레이: 15.6인치\n- 구성품: 노트북 / 전원 어댑터\n- OS : windows 10\n\n참고 URL :\nhttps://m.blog.naver.com/matella/220920564445\n\n전체적으로 사용감 적고 외관 및 관리 상태 A급입니다.\n\n정상 작동하며 기본적인 기능 이상 없습니다.\nGTX 970M 외장그래픽 탑재 모델로 사무용, 인터넷, 영상 시청 및 가벼운 게임 용도로 사용 가능합니다.\n\n중고제품 특성상 미세한 사용 흔적은 있을 수 있습니다.\n직거래 시 제품 상태 확인 가능합니다.\n\n직거래 선호하며, 제품 특성상 택배거래시 파손 부분은 책임지지 않습니다.\n\n네고 사절합니다.\n\n판매가: 25만원",
+      "url": "https://www.daangn.com/kr/buy-sell/msi-ge72-apache-pro-233-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-wbr6rpiimc4n/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "baeknk",
+      "mannerTemperature": 37.2
+    }
+  ]
 }
