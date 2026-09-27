@@ -102,7 +102,7 @@ jobs:
           print("pending alerts:", len(items))
           PY
 
-      - name: Send ntfy once per listing
+      - name: Send ntfy once for ChatGPT-approved deals
         if: always()
         continue-on-error: true
         env:
@@ -121,46 +121,46 @@ jobs:
               print("NTFY_URL missing; skip")
               raise SystemExit(0)
 
-          result_path = Path("danggn-bot/hourly-result.json")
+          approved_path = Path("danggn-bot/chatgpt-approved.json")
           sent_path = Path("danggn-bot/ntfy-sent.json")
 
           try:
-              result = json.loads(result_path.read_text(encoding="utf-8"))
+              approved_doc = json.loads(approved_path.read_text(encoding="utf-8"))
           except Exception:
-              result = {"candidates": []}
+              approved_doc = {"version": 1, "updatedAt": None, "items": {}}
 
           try:
               sent_doc = json.loads(sent_path.read_text(encoding="utf-8"))
           except Exception:
               sent_doc = {"version": 1, "updatedAt": None, "items": {}}
 
+          approved = approved_doc.get("items")
           sent = sent_doc.get("items")
+          if not isinstance(approved, dict):
+              approved = {}
           if not isinstance(sent, dict):
               sent = {}
 
           fresh = []
-          for item in result.get("candidates") or []:
-              key = str(item.get("id") or item.get("url") or "").strip()
-              if not key:
+          for key, item in approved.items():
+              if not isinstance(item, dict):
                   continue
-
               current_price = item.get("price")
               old = sent.get(key) if isinstance(sent.get(key), dict) else None
               old_price = old.get("price") if old else None
 
-              is_new_alert = old is None
-              is_lower_price = (
+              first_time = old is None
+              lower_price = (
                   old is not None
                   and isinstance(current_price, (int, float))
                   and isinstance(old_price, (int, float))
                   and current_price < old_price
               )
-
-              if is_new_alert or is_lower_price:
-                  fresh.append(item)
+              if first_time or lower_price:
+                  fresh.append((str(key), item))
 
           if not fresh:
-              print("ntfy: no new one-time alerts")
+              print("ntfy: no new approved deals")
               raise SystemExit(0)
 
           def won(v):
@@ -169,9 +169,9 @@ jobs:
               except Exception:
                   return "가격 확인 필요"
 
-          lines = ["당근 새 후보"]
-          for idx, item in enumerate(fresh[:10], 1):
-              title = str(item.get("title") or item.get("modelHint") or "노트북 매물").replace("\n", " ").strip()
+          lines = ["당근 특가"]
+          for idx, (_, item) in enumerate(fresh[:10], 1):
+              title = str(item.get("title") or "노트북 매물").replace("\n", " ").strip()
               place = " ".join(str(x) for x in [item.get("city"), item.get("location")] if x)
               spec = " · ".join(
                   str(x) for x in [
@@ -184,6 +184,8 @@ jobs:
               lines.append(won(item.get("price")) + ((" · " + place) if place else ""))
               if spec:
                   lines.append(spec)
+              if item.get("dealReason"):
+                  lines.append(str(item.get("dealReason")))
               if item.get("url"):
                   lines.append(str(item.get("url")))
               lines.append("")
@@ -191,12 +193,11 @@ jobs:
           body = "\n".join(lines).strip()
           headers = {
               "Content-Type": "text/plain; charset=utf-8",
-              "Title": "Danggn new candidate",
+              "Title": "Danggn deal",
               "Priority": "high",
-              "Tags": "computer"
+              "Tags": "computer,moneybag"
           }
-
-          first_url = next((str(x.get("url")) for x in fresh if x.get("url")), None)
+          first_url = next((str(item.get("url")) for _, item in fresh if item.get("url")), None)
           if first_url:
               headers["Click"] = first_url
 
@@ -210,10 +211,7 @@ jobs:
               print("ntfy status:", response.status)
 
           now = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
-          for item in fresh:
-              key = str(item.get("id") or item.get("url") or "").strip()
-              if not key:
-                  continue
+          for key, item in fresh:
               sent[key] = {
                   "id": item.get("id"),
                   "price": item.get("price"),
@@ -230,7 +228,7 @@ jobs:
               json.dumps(sent_doc, ensure_ascii=False, indent=2) + "\n",
               encoding="utf-8"
           )
-          print("ntfy one-time alerts:", len(fresh))
+          print("ntfy approved one-time alerts:", len(fresh))
           PY
 
       - name: Persist latest state and result
