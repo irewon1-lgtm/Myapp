@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-27T23:20:47.304Z",
+  "generatedAt": "2026-09-27T23:37:29.534Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -43,10 +43,10 @@
         "attempted": 8,
         "succeeded": 8,
         "errors": 0,
-        "uniqueListings": 339,
+        "uniqueListings": 335,
         "changedCandidates": 43,
         "detailedCandidates": 41,
-        "durationMs": 41848
+        "durationMs": 46469
       },
       {
         "city": "의왕시",
@@ -60,10 +60,10 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 444,
-        "changedCandidates": 44,
+        "uniqueListings": 443,
+        "changedCandidates": 43,
         "detailedCandidates": 41,
-        "durationMs": 62628
+        "durationMs": 71686
       },
       {
         "city": "안양시",
@@ -79,10 +79,10 @@
         "attempted": 28,
         "succeeded": 28,
         "errors": 0,
-        "uniqueListings": 400,
-        "changedCandidates": 44,
-        "detailedCandidates": 42,
-        "durationMs": 79860
+        "uniqueListings": 395,
+        "changedCandidates": 43,
+        "detailedCandidates": 41,
+        "durationMs": 88921
       },
       {
         "city": "과천시",
@@ -92,19 +92,47 @@
         "attempted": 4,
         "succeeded": 4,
         "errors": 0,
-        "uniqueListings": 299,
-        "changedCandidates": 41,
-        "detailedCandidates": 40,
-        "durationMs": 35191
+        "uniqueListings": 297,
+        "changedCandidates": 43,
+        "detailedCandidates": 41,
+        "durationMs": 37077
       }
     ],
-    "finalCandidateCount": 0,
-    "stateItemCount": 2708,
+    "finalCandidateCount": 1,
+    "stateItemCount": 2713,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
-    "skippedUnknownProbeCount": 1519,
-    "durationMs": 219585
+    "skippedUnknownProbeCount": 1527,
+    "durationMs": 244209
   },
-  "candidates": []
+  "candidates": [
+    {
+      "id": "23mq74t6pz7e",
+      "changeType": "new",
+      "previousPrice": null,
+      "price": 1050000,
+      "priceDropPercent": null,
+      "city": "안양시",
+      "location": "관양동",
+      "regionPath": "경기도 안양시 동안구 관양동",
+      "title": "[급처] 삼성 갤럭시북4 프로 빠르게 판매 (새제품급)",
+      "modelHint": "[급처] 삼성 갤럭시북4 프로 빠르게 판매 (새제품급)",
+      "cpuHint": null,
+      "ramGB": 16,
+      "storageGB": 1024,
+      "specConfidence": "needs_verification",
+      "ramTypeConfirmed": false,
+      "storageTypeConfirmed": true,
+      "postedAt": "2026-09-27T23:26:55.683Z",
+      "boostedAt": "2026-09-27T23:26:55.681Z",
+      "status": "Ongoing",
+      "description": "[사양]\nCPU : 인텔 / 코어 울트라5 / 125H (4.5GHz)\nRAM : LPDDR5 16GB(온보드)\n저장장치 : NVME SSD 1TB (용량 넉넉)\nOS : 윈도우 11 프로 정품 설치\n규격 : 11.6mm\n무게: 1.23kg\n색상 : 그레이\n크기 : 35.6cm (14인치)\n* 화면 터치스크린(매우편리)\n\n방치만된 처음그대로 새제품이라고 보시면 됩니다.\n눈에보이는 기스찾기 힘들고  실 사용 거의 제로입니다.\n(안쓴 박스 충전기는 이사할때 분실ㅜ)\n\n다나와에서 동일사양 윈도우 홈버전\n설치 제품이 190만원 전후 거래되고 있습니다.(사진)\n윈도우가 홈버전이 아닌 회사 업무용으로도 \n사용가능한 10만원 더비싼 프로버전으로\n200만원 정도로 신품구매 가능한 제품입니다.\n\n당연히 실사용없는 새제품급이라 가장 중요한\n배터리 상태 99%이상 최상입니다.(사진)\n배터리 광탈제품은 사시면 안됩니다. \n\n3만원 상당 로지텍 무선 마우스세트 미개봉,\n3만원 상당 C타입 충전기 미개봉\n같이 서비스 드립니다.(사진)\n\n새제품급이지만 중고이므로 신품 반값정도에\n저렴하게 가져가세요.\n이유있는 네고 아니면 답장안합니다.\n죄송합니다.\n\n고가 전자제품이므로 직접 확인하실수 있게\n경기도 시흥 은행동부근 직거래만 하겠습니다. \n\n일부러 구매한 예쁜 쇼핑백에 다 담아서 드립니다.\n쿨거래 환영합니다.\n채팅주세요~",
+      "url": "https://www.daangn.com/kr/buy-sell/%EA%B8%89%EC%B2%98-%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%814-%ED%94%84%EB%A1%9C-%EB%B9%A0%EB%A5%B4%EA%B2%8C-%ED%8C%90%EB%A7%A4-%EC%83%88%EC%A0%9C%ED%92%88%EA%B8%89-23mq74t6pz7e/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "체리보이",
+      "mannerTemperature": 44
+    }
+  ]
 }
