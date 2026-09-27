@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-27T04:23:30.918Z",
+  "generatedAt": "2026-09-27T04:39:46.501Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -43,10 +43,10 @@
         "attempted": 8,
         "succeeded": 8,
         "errors": 0,
-        "uniqueListings": 251,
-        "changedCandidates": 39,
-        "detailedCandidates": 39,
-        "durationMs": 47467
+        "uniqueListings": 325,
+        "changedCandidates": 48,
+        "detailedCandidates": 40,
+        "durationMs": 46157
       },
       {
         "city": "의왕시",
@@ -60,10 +60,10 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 387,
-        "changedCandidates": 53,
-        "detailedCandidates": 41,
-        "durationMs": 81030
+        "uniqueListings": 449,
+        "changedCandidates": 46,
+        "detailedCandidates": 40,
+        "durationMs": 68310
       },
       {
         "city": "안양시",
@@ -79,10 +79,10 @@
         "attempted": 28,
         "succeeded": 28,
         "errors": 0,
-        "uniqueListings": 397,
-        "changedCandidates": 48,
-        "detailedCandidates": 42,
-        "durationMs": 89138
+        "uniqueListings": 394,
+        "changedCandidates": 42,
+        "detailedCandidates": 40,
+        "durationMs": 83731
       },
       {
         "city": "과천시",
@@ -92,19 +92,47 @@
         "attempted": 4,
         "succeeded": 4,
         "errors": 0,
-        "uniqueListings": 303,
-        "changedCandidates": 45,
-        "detailedCandidates": 41,
-        "durationMs": 37988
+        "uniqueListings": 302,
+        "changedCandidates": 41,
+        "detailedCandidates": 40,
+        "durationMs": 36121
       }
     ],
-    "finalCandidateCount": 0,
-    "stateItemCount": 2225,
+    "finalCandidateCount": 1,
+    "stateItemCount": 2243,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
-    "skippedUnknownProbeCount": 1036,
-    "durationMs": 255663
+    "skippedUnknownProbeCount": 1053,
+    "durationMs": 234368
   },
-  "candidates": []
+  "candidates": [
+    {
+      "id": "2ookeiwcgm7e",
+      "changeType": "new",
+      "previousPrice": null,
+      "price": 790000,
+      "priceDropPercent": null,
+      "city": "안양시",
+      "location": "안양5동",
+      "regionPath": "경기도 안양시 만안구 안양5동",
+      "title": "HP 빅터스 15 게이밍 노트북 RTX 4050",
+      "modelHint": "HP 빅터스 15 게이밍 노트북 RTX 4050",
+      "cpuHint": null,
+      "ramGB": 16,
+      "storageGB": 512,
+      "specConfidence": "explicit",
+      "ramTypeConfirmed": true,
+      "storageTypeConfirmed": true,
+      "postedAt": "2026-09-27T04:22:45.428Z",
+      "boostedAt": "2026-09-27T04:22:45.428Z",
+      "status": "Ongoing",
+      "description": "HP 빅터스 15 게이밍 노트북입니다. RTX 4050 그래픽카드가 탑재되어 있어 쾌적한 게이밍 환경을 제공해요. 12세대 인텔 코어 i5 프로세서와 16GB RAM, 512GB SSD로 빠른 속도를 자랑합니다. 박스와 구성품 모두 갖춰져 있어 새 제품처럼 사용 가능해요. 고사양 게임을 즐기기에 안성맞춤인 노트북이랍니다.\n\n비슷한가격의 조립pc본체교환도가능합니다~~",
+      "url": "https://www.daangn.com/kr/buy-sell/hp-%EB%B9%85%ED%84%B0%EC%8A%A4-15-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-rtx-4050-2ookeiwcgm7e/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "야오스",
+      "mannerTemperature": 38
+    }
+  ]
 }
