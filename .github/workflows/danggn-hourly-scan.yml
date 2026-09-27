@@ -102,6 +102,137 @@ jobs:
           print("pending alerts:", len(items))
           PY
 
+      - name: Send ntfy once per listing
+        if: always()
+        continue-on-error: true
+        env:
+          NTFY_URL: ${{ secrets.NTFY_URL }}
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          import urllib.request
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          ntfy_url = os.environ.get("NTFY_URL", "").strip()
+          if not ntfy_url:
+              print("NTFY_URL missing; skip")
+              raise SystemExit(0)
+
+          result_path = Path("danggn-bot/hourly-result.json")
+          sent_path = Path("danggn-bot/ntfy-sent.json")
+
+          try:
+              result = json.loads(result_path.read_text(encoding="utf-8"))
+          except Exception:
+              result = {"candidates": []}
+
+          try:
+              sent_doc = json.loads(sent_path.read_text(encoding="utf-8"))
+          except Exception:
+              sent_doc = {"version": 1, "updatedAt": None, "items": {}}
+
+          sent = sent_doc.get("items")
+          if not isinstance(sent, dict):
+              sent = {}
+
+          fresh = []
+          for item in result.get("candidates") or []:
+              key = str(item.get("id") or item.get("url") or "").strip()
+              if not key:
+                  continue
+
+              current_price = item.get("price")
+              old = sent.get(key) if isinstance(sent.get(key), dict) else None
+              old_price = old.get("price") if old else None
+
+              is_new_alert = old is None
+              is_lower_price = (
+                  old is not None
+                  and isinstance(current_price, (int, float))
+                  and isinstance(old_price, (int, float))
+                  and current_price < old_price
+              )
+
+              if is_new_alert or is_lower_price:
+                  fresh.append(item)
+
+          if not fresh:
+              print("ntfy: no new one-time alerts")
+              raise SystemExit(0)
+
+          def won(v):
+              try:
+                  return f"{int(float(v)):,}원"
+              except Exception:
+                  return "가격 확인 필요"
+
+          lines = ["당근 새 후보"]
+          for idx, item in enumerate(fresh[:10], 1):
+              title = str(item.get("title") or item.get("modelHint") or "노트북 매물").replace("\n", " ").strip()
+              place = " ".join(str(x) for x in [item.get("city"), item.get("location")] if x)
+              spec = " · ".join(
+                  str(x) for x in [
+                      item.get("cpuHint"),
+                      ("RAM " + str(item.get("ramGB")) + "GB") if item.get("ramGB") else None,
+                      ("SSD " + str(item.get("storageGB")) + "GB") if item.get("storageGB") else None
+                  ] if x
+              )
+              lines.append(f"[{idx}] {title}")
+              lines.append(won(item.get("price")) + ((" · " + place) if place else ""))
+              if spec:
+                  lines.append(spec)
+              if item.get("url"):
+                  lines.append(str(item.get("url")))
+              lines.append("")
+
+          body = "\n".join(lines).strip()
+          headers = {
+              "Content-Type": "text/plain; charset=utf-8",
+              "Title": "Danggn new candidate",
+              "Priority": "high",
+              "Tags": "computer"
+          }
+
+          first_url = next((str(x.get("url")) for x in fresh if x.get("url")), None)
+          if first_url:
+              headers["Click"] = first_url
+
+          req = urllib.request.Request(
+              ntfy_url,
+              data=body.encode("utf-8"),
+              method="POST",
+              headers=headers
+          )
+          with urllib.request.urlopen(req, timeout=10) as response:
+              print("ntfy status:", response.status)
+
+          now = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
+          for item in fresh:
+              key = str(item.get("id") or item.get("url") or "").strip()
+              if not key:
+                  continue
+              sent[key] = {
+                  "id": item.get("id"),
+                  "price": item.get("price"),
+                  "url": item.get("url"),
+                  "sentAt": now
+              }
+
+          sent_doc = {
+              "version": 1,
+              "updatedAt": now,
+              "items": sent
+          }
+          sent_path.write_text(
+              json.dumps(sent_doc, ensure_ascii=False, indent=2) + "\n",
+              encoding="utf-8"
+          )
+          print("ntfy one-time alerts:", len(fresh))
+          PY
+
       - name: Persist latest state and result
         if: always()
         shell: bash
@@ -109,7 +240,9 @@ jobs:
           set -euo pipefail
           git config user.name "danggn-hourly-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add danggn-bot/hourly-state.json danggn-bot/hourly-result.json danggn-bot/pending-alerts.json
+
+          git add danggn-bot/hourly-state.json danggn-bot/hourly-result.json
+          git add danggn-bot/pending-alerts.json danggn-bot/ntfy-sent.json 2>/dev/null || true
 
           if git diff --cached --quiet; then
             echo "No state/result changes"
@@ -130,11 +263,6 @@ jobs:
 
           echo "Failed to persist hourly Danggn state/result"
           exit 1
-
-      - name: Ntfy notifications temporarily paused
-        if: always()
-        run: |
-          echo "ntfy paused until high-confidence deal filter is installed"
 
       - name: Mark failed scan
         if: steps.scanner.outcome != 'success'
