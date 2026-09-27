@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-27T02:57:20.332Z",
+  "generatedAt": "2026-09-27T03:24:00.216Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -43,10 +43,10 @@
         "attempted": 8,
         "succeeded": 8,
         "errors": 0,
-        "uniqueListings": 335,
-        "changedCandidates": 42,
+        "uniqueListings": 336,
+        "changedCandidates": 41,
         "detailedCandidates": 41,
-        "durationMs": 46642
+        "durationMs": 54893
       },
       {
         "city": "의왕시",
@@ -60,10 +60,10 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 450,
-        "changedCandidates": 46,
-        "detailedCandidates": 42,
-        "durationMs": 66566
+        "uniqueListings": 436,
+        "changedCandidates": 49,
+        "detailedCandidates": 41,
+        "durationMs": 88904
       },
       {
         "city": "안양시",
@@ -80,9 +80,9 @@
         "succeeded": 28,
         "errors": 0,
         "uniqueListings": 402,
-        "changedCandidates": 44,
-        "detailedCandidates": 42,
-        "durationMs": 83183
+        "changedCandidates": 46,
+        "detailedCandidates": 40,
+        "durationMs": 103276
       },
       {
         "city": "과천시",
@@ -92,47 +92,19 @@
         "attempted": 4,
         "succeeded": 4,
         "errors": 0,
-        "uniqueListings": 299,
-        "changedCandidates": 39,
-        "detailedCandidates": 39,
-        "durationMs": 35438
+        "uniqueListings": 301,
+        "changedCandidates": 41,
+        "detailedCandidates": 41,
+        "durationMs": 42467
       }
     ],
-    "finalCandidateCount": 1,
-    "stateItemCount": 2204,
+    "finalCandidateCount": 0,
+    "stateItemCount": 2216,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
-    "skippedUnknownProbeCount": 1009,
-    "durationMs": 231888
+    "skippedUnknownProbeCount": 1020,
+    "durationMs": 289588
   },
-  "candidates": [
-    {
-      "id": "swjrumqdbvoc",
-      "changeType": "new",
-      "previousPrice": null,
-      "price": 750000,
-      "priceDropPercent": null,
-      "city": "안양시",
-      "location": "평촌동",
-      "regionPath": "경기도 안양시 동안구 평촌동",
-      "title": "레노버 씽크북 14 G8 i7 노트북",
-      "modelHint": "레노버 씽크북 14 G8 i7 노트북",
-      "cpuHint": null,
-      "ramGB": 16,
-      "storageGB": 512,
-      "specConfidence": "explicit",
-      "ramTypeConfirmed": true,
-      "storageTypeConfirmed": true,
-      "postedAt": "2026-09-27T02:47:56.452Z",
-      "boostedAt": "2026-09-27T02:47:56.450Z",
-      "status": "Ongoing",
-      "description": "문서 작업, 영상 편집 등 다용도로 활용하기 좋은 레노버 ThinkBook 14 G8 노트북이에요\n14인치 WUXGA 디스플레이와 인텔 코어 i7 CPU 탑재로 쾌적한 사용이 가능해요\nSSD 512GB와 16GB RAM으로 넉넉한 저장 공간과 빠른 속도를 자랑합니다.\n구매후 2~3주 정도 사용후 전혀 사용을 하지 않아서 판매합니다. 상태는 거의 신품급 입니다.\n가성비 좋은 노트북을 찾으시는 분들께 추천드려요",
-      "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%94%BD%ED%81%AC%EB%B6%81-14-g8-i7-%EB%85%B8%ED%8A%B8%EB%B6%81-swjrumqdbvoc/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "지후니",
-      "mannerTemperature": 38.7
-    }
-  ]
+  "candidates": []
 }
