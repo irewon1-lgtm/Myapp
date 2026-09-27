@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-27T00:31:48.065Z",
+  "generatedAt": "2026-09-27T01:00:54.105Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -44,9 +44,9 @@
         "succeeded": 8,
         "errors": 0,
         "uniqueListings": 337,
-        "changedCandidates": 44,
-        "detailedCandidates": 42,
-        "durationMs": 57604
+        "changedCandidates": 46,
+        "detailedCandidates": 41,
+        "durationMs": 51892
       },
       {
         "city": "의왕시",
@@ -60,10 +60,10 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 441,
-        "changedCandidates": 45,
-        "detailedCandidates": 42,
-        "durationMs": 80568
+        "uniqueListings": 449,
+        "changedCandidates": 52,
+        "detailedCandidates": 40,
+        "durationMs": 80054
       },
       {
         "city": "안양시",
@@ -79,10 +79,10 @@
         "attempted": 28,
         "succeeded": 28,
         "errors": 0,
-        "uniqueListings": 396,
-        "changedCandidates": 45,
-        "detailedCandidates": 40,
-        "durationMs": 95366
+        "uniqueListings": 401,
+        "changedCandidates": 52,
+        "detailedCandidates": 41,
+        "durationMs": 101212
       },
       {
         "city": "과천시",
@@ -93,46 +93,18 @@
         "succeeded": 4,
         "errors": 0,
         "uniqueListings": 300,
-        "changedCandidates": 41,
-        "detailedCandidates": 41,
-        "durationMs": 40796
+        "changedCandidates": 49,
+        "detailedCandidates": 40,
+        "durationMs": 43156
       }
     ],
-    "finalCandidateCount": 1,
-    "stateItemCount": 2093,
+    "finalCandidateCount": 0,
+    "stateItemCount": 2130,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
-    "skippedUnknownProbeCount": 903,
-    "durationMs": 274385
+    "skippedUnknownProbeCount": 939,
+    "durationMs": 276351
   },
-  "candidates": [
-    {
-      "id": "paeh8z146xke",
-      "changeType": "new",
-      "previousPrice": null,
-      "price": 950000,
-      "priceDropPercent": null,
-      "city": "군포시",
-      "location": "당정동",
-      "regionPath": "경기도 군포시 당정동",
-      "title": "HP omen 16 i7 12700h, rtx3060 게이밍 노트북",
-      "modelHint": "HP omen 16 i7 12700h, rtx3060 게이밍 노트북",
-      "cpuHint": "i7-12700H",
-      "ramGB": 16,
-      "storageGB": 512,
-      "specConfidence": "needs_verification",
-      "ramTypeConfirmed": false,
-      "storageTypeConfirmed": false,
-      "postedAt": "2026-09-27T00:22:56.849Z",
-      "boostedAt": "2026-09-27T00:22:56.848Z",
-      "status": "Ongoing",
-      "description": "2023년 말, 170에 구매했었습니다.\n\n실 사용 기간 : 1년\n배터리 성능 : 94%, 사이클 수 : 50\n\n\n가정에서 게임용으로 사용했고 최근까지 팰월드, gta5 부족함 없이 넉넉하게 즐겼습니다.\n게임 쾌적하게 잘 돌아갑니다.\n\n항상 충전기 꽂고 사용하여 상태 좋고 깨끗합니다.\nHP 게이밍 노트북 라인업 중에 오멘은 최상급에 속하여 쿨링 성능 및 디스플레이, 키보드, 재질 모두 최상급입니다.\n(오멘 > 빅터스 = 보급형)\n\nKinmac 노트북 가방, 잘만 zm-ns2000(약 4만원) 노트북 쿨러까지 함께 드립니다.\n\n(상세 사양)\n- CPU : 인텔 i7-12700H\n- GPU : RTX 3060 TGP 140W\n- RAM : 삼성 ddr5 4800mhz 16GB(8gb x 2)\n- SSD: SK Hynix Pc801 PCIe 4.0 512GB \n(p41 oem) Dram 탑재된 고성능 모델 \n읽기 속도 : 7000mb/s, 쓰기 속도 : 4700mb/s\n- 디스플레이 : 16인치 FHD 144hz sRGB 100%\n- OS : 윈도우11 정품포함",
-      "url": "https://www.daangn.com/kr/buy-sell/hp-omen-16-i7-12700h-rtx3060-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-paeh8z146xke/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "니쿠네임",
-      "mannerTemperature": 42
-    }
-  ]
+  "candidates": []
 }
