@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-27T01:13:59.133Z",
+  "expectedScheduleMinutes": [
+    7,
+    27,
+    47
+  ],
+  "scanWindowHours": 6,
+  "searchOrder": [
+    "송파구",
+    "광진구",
+    "강동구",
+    "성남시"
+  ],
+  "health": {
+    "status": "ok",
+    "stateCommitted": true,
+    "warnings": []
+  },
+  "rules": {
+    "newnessField": "postedAt",
+    "boostedAtCreatesNewCandidate": false,
+    "onlyStatus": "Ongoing",
+    "ramGB": [
+      16,
+      32
+    ],
+    "storageGB": [
+      512,
+      1024
+    ],
+    "mixed256SsdPlusHdd1TbAllowed": false
+  },
+  "stats": {
+    "cities": [
+      {
+        "city": "송파구",
+        "regions": [
+          "잠실동-6188",
+          "문정동-6184"
+        ],
+        "attempted": 8,
+        "succeeded": 8,
+        "errors": 0,
+        "uniqueListings": 400,
+        "changedCandidates": 353,
+        "detailedCandidates": 40,
+        "durationMs": 42983
+      },
+      {
+        "city": "광진구",
+        "regions": [
+          "자양동-6060",
+          "중곡동-6061"
+        ],
+        "attempted": 8,
+        "succeeded": 8,
+        "errors": 0,
+        "uniqueListings": 373,
+        "changedCandidates": 316,
+        "detailedCandidates": 40,
+        "durationMs": 43418
+      },
+      {
+        "city": "강동구",
+        "regions": [
+          "천호동-6044",
+          "고덕동-6039"
+        ],
+        "attempted": 8,
+        "succeeded": 8,
+        "errors": 0,
+        "uniqueListings": 357,
+        "changedCandidates": 297,
+        "detailedCandidates": 40,
+        "durationMs": 41570
+      },
+      {
+        "city": "성남시",
+        "regions": [
+          "정자동-1339",
+          "판교동-1350",
+          "신흥2동-1307",
+          "복정동-1318"
+        ],
+        "attempted": 16,
+        "succeeded": 16,
+        "errors": 0,
+        "uniqueListings": 503,
+        "changedCandidates": 412,
+        "detailedCandidates": 40,
+        "durationMs": 58376
+      }
+    ],
+    "finalCandidateCount": 0,
+    "stateItemCount": 1256,
+    "pendingNewnessCount": 0,
+    "pendingUnattemptedCount": 0,
+    "pendingAttemptedCount": 0,
+    "skippedUnknownProbeCount": 1218,
+    "durationMs": 186366
+  },
+  "candidates": []
+}
