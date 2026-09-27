@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-27T05:21:56.446Z",
+  "generatedAt": "2026-09-27T05:38:46.392Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -44,9 +44,9 @@
         "succeeded": 8,
         "errors": 0,
         "uniqueListings": 337,
-        "changedCandidates": 42,
-        "detailedCandidates": 41,
-        "durationMs": 46640
+        "changedCandidates": 49,
+        "detailedCandidates": 40,
+        "durationMs": 50661
       },
       {
         "city": "의왕시",
@@ -60,10 +60,10 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 447,
-        "changedCandidates": 49,
+        "uniqueListings": 444,
+        "changedCandidates": 51,
         "detailedCandidates": 41,
-        "durationMs": 71803
+        "durationMs": 82468
       },
       {
         "city": "안양시",
@@ -79,10 +79,10 @@
         "attempted": 28,
         "succeeded": 28,
         "errors": 0,
-        "uniqueListings": 394,
-        "changedCandidates": 43,
-        "detailedCandidates": 42,
-        "durationMs": 92241
+        "uniqueListings": 402,
+        "changedCandidates": 54,
+        "detailedCandidates": 43,
+        "durationMs": 101727
       },
       {
         "city": "과천시",
@@ -92,47 +92,47 @@
         "attempted": 4,
         "succeeded": 4,
         "errors": 0,
-        "uniqueListings": 299,
-        "changedCandidates": 41,
-        "detailedCandidates": 41,
-        "durationMs": 36624
+        "uniqueListings": 295,
+        "changedCandidates": 43,
+        "detailedCandidates": 40,
+        "durationMs": 40561
       }
     ],
     "finalCandidateCount": 1,
-    "stateItemCount": 2259,
+    "stateItemCount": 2291,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
-    "skippedUnknownProbeCount": 1073,
-    "durationMs": 247362
+    "skippedUnknownProbeCount": 1106,
+    "durationMs": 275467
   },
   "candidates": [
     {
-      "id": "azqhem7n176j",
-      "changeType": "new",
-      "previousPrice": null,
-      "price": 430000,
-      "priceDropPercent": null,
+      "id": "5hdu4raokydx",
+      "changeType": "price_drop",
+      "previousPrice": 800000,
+      "price": 770000,
+      "priceDropPercent": 3.8,
       "city": "안양시",
-      "location": "비산1동",
-      "regionPath": "경기도 안양시 동안구 비산1동",
-      "title": "gram 노트북 i5 16GB RAM  SSD 512GB  그래픽 UHD 620 판매",
-      "modelHint": "gram 노트북 i5 16GB RAM  SSD 512GB  그래픽 UHD 620 판매",
+      "location": "인덕원동",
+      "regionPath": "경기도 안양시 동안구 인덕원동",
+      "title": "(풀박스)ASUS i7, RTX 2070 게이밍 노트북 17인치",
+      "modelHint": "(풀박스)ASUS i7, RTX 2070 게이밍 노트북 17인치",
       "cpuHint": null,
       "ramGB": 16,
-      "storageGB": 512,
-      "specConfidence": "explicit",
-      "ramTypeConfirmed": true,
+      "storageGB": 1024,
+      "specConfidence": "needs_verification",
+      "ramTypeConfirmed": false,
       "storageTypeConfirmed": true,
-      "postedAt": "2026-09-27T04:58:23.547Z",
-      "boostedAt": "2026-09-27T04:58:23.544Z",
+      "postedAt": "2026-09-25T09:08:57.548Z",
+      "boostedAt": "2026-09-27T05:33:56.970Z",
       "status": "Ongoing",
-      "description": "상태좋은 LG 그램 노트북 판매합니다\n인텔 코어 i5 프로세서, 메모리 16GB RAM, 512GB (256×2개) SSD를 탑재했어요.\nintel UHD Graphics 620 그래픽카드 모델입니다.\nC에 Win11pro 정품 인증 설치, D는 256 데이터 사용하시면 됩니다\n그냄 가벼워서 업무 및 대학생용으노 좋습니다! 15.6인치 LG gram 모델입니다. \n구성품으로 노트북 본체, 충전기, 마우스가 포함\n2020.07월 모델이고 상태 깨끗하고 좋습니다 노트북 메모리 가격 비싼데 업무용, 대학생 용으로 가볍고 충분한 성능입니다 직거래만 합니다 보고 가져 가셔요, 배터리사이클 용량도 테스트도 사진에 남겨둡니다",
-      "url": "https://www.daangn.com/kr/buy-sell/gram-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-16gb-ram-ssd-512gb-%EA%B7%B8%EB%9E%98%ED%94%BD-uhd-620-%ED%8C%90%EB%A7%A4-azqhem7n176j/",
+      "description": "고성능 게이밍 노트북 판매해요. 인텔 i7 CPU와 RTX 2070 그래픽카드가 탑재되어 있어 쾌적한 게이밍 환경을 제공해요. 16GB 메모리와 512GB SSD+1TB로 넉넉한 저장 공간과 빠른 속도를 자랑해요. 고사양 게임도 부드럽게 즐길 수 있는 매력적인 노트북이랍니다.\n17인치로 큰 화면입니다\n구매 할 때 박스그대로 들고 있어서 박스에 넣어드릴게요\n\n구매 할 때 300만원 가까이 주고 구매했어요\n요즘게임 다 돌아가용 학교다닐때 업무용으로 실사용1년정도 되고 그뒤로는 계속 보관만했어요 상태는 사진으로 보시는거와 같이 좋아요",
+      "url": "https://www.daangn.com/kr/buy-sell/%ED%92%80%EB%B0%95%EC%8A%A4-asus-i7-rtx-2070-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-17%EC%9D%B8%EC%B9%98-5hdu4raokydx/",
       "favoriteCount": 0,
       "chatCount": 0,
-      "sellerName": "여우",
-      "mannerTemperature": 36.5
+      "sellerName": "우어어어옹아이",
+      "mannerTemperature": 36.6
     }
   ]
 }
