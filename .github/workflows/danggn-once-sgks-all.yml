@@ -33,3 +33,5 @@ jobs:
           git add danggn-bot/once-sgks-all-result.json
           git commit -m "chore: save all-dong one-time SGKS scan [skip ci]"
           git push origin HEAD:danggn-search-bot
+
+# one-time trigger: 2026-09-27
