@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-27T04:57:56.823Z",
+  "generatedAt": "2026-09-27T05:21:56.446Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -43,10 +43,10 @@
         "attempted": 8,
         "succeeded": 8,
         "errors": 0,
-        "uniqueListings": 331,
-        "changedCandidates": 44,
+        "uniqueListings": 337,
+        "changedCandidates": 42,
         "detailedCandidates": 41,
-        "durationMs": 54720
+        "durationMs": 46640
       },
       {
         "city": "의왕시",
@@ -60,10 +60,10 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 446,
-        "changedCandidates": 46,
+        "uniqueListings": 447,
+        "changedCandidates": 49,
         "detailedCandidates": 41,
-        "durationMs": 80935
+        "durationMs": 71803
       },
       {
         "city": "안양시",
@@ -79,10 +79,10 @@
         "attempted": 28,
         "succeeded": 28,
         "errors": 0,
-        "uniqueListings": 398,
-        "changedCandidates": 45,
+        "uniqueListings": 394,
+        "changedCandidates": 43,
         "detailedCandidates": 42,
-        "durationMs": 98319
+        "durationMs": 92241
       },
       {
         "city": "과천시",
@@ -92,19 +92,47 @@
         "attempted": 4,
         "succeeded": 4,
         "errors": 0,
-        "uniqueListings": 300,
-        "changedCandidates": 38,
-        "detailedCandidates": 38,
-        "durationMs": 39086
+        "uniqueListings": 299,
+        "changedCandidates": 41,
+        "detailedCandidates": 41,
+        "durationMs": 36624
       }
     ],
-    "finalCandidateCount": 0,
-    "stateItemCount": 2252,
+    "finalCandidateCount": 1,
+    "stateItemCount": 2259,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
-    "skippedUnknownProbeCount": 1063,
-    "durationMs": 273109
+    "skippedUnknownProbeCount": 1073,
+    "durationMs": 247362
   },
-  "candidates": []
+  "candidates": [
+    {
+      "id": "azqhem7n176j",
+      "changeType": "new",
+      "previousPrice": null,
+      "price": 430000,
+      "priceDropPercent": null,
+      "city": "안양시",
+      "location": "비산1동",
+      "regionPath": "경기도 안양시 동안구 비산1동",
+      "title": "gram 노트북 i5 16GB RAM  SSD 512GB  그래픽 UHD 620 판매",
+      "modelHint": "gram 노트북 i5 16GB RAM  SSD 512GB  그래픽 UHD 620 판매",
+      "cpuHint": null,
+      "ramGB": 16,
+      "storageGB": 512,
+      "specConfidence": "explicit",
+      "ramTypeConfirmed": true,
+      "storageTypeConfirmed": true,
+      "postedAt": "2026-09-27T04:58:23.547Z",
+      "boostedAt": "2026-09-27T04:58:23.544Z",
+      "status": "Ongoing",
+      "description": "상태좋은 LG 그램 노트북 판매합니다\n인텔 코어 i5 프로세서, 메모리 16GB RAM, 512GB (256×2개) SSD를 탑재했어요.\nintel UHD Graphics 620 그래픽카드 모델입니다.\nC에 Win11pro 정품 인증 설치, D는 256 데이터 사용하시면 됩니다\n그냄 가벼워서 업무 및 대학생용으노 좋습니다! 15.6인치 LG gram 모델입니다. \n구성품으로 노트북 본체, 충전기, 마우스가 포함\n2020.07월 모델이고 상태 깨끗하고 좋습니다 노트북 메모리 가격 비싼데 업무용, 대학생 용으로 가볍고 충분한 성능입니다 직거래만 합니다 보고 가져 가셔요, 배터리사이클 용량도 테스트도 사진에 남겨둡니다",
+      "url": "https://www.daangn.com/kr/buy-sell/gram-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-16gb-ram-ssd-512gb-%EA%B7%B8%EB%9E%98%ED%94%BD-uhd-620-%ED%8C%90%EB%A7%A4-azqhem7n176j/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "여우",
+      "mannerTemperature": 36.5
+    }
+  ]
 }
