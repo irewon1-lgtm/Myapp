@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-27T14:00:34.106Z",
+  "generatedAt": "2026-09-27T14:20:45.161Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -43,10 +43,10 @@
         "attempted": 8,
         "succeeded": 8,
         "errors": 0,
-        "uniqueListings": 337,
-        "changedCandidates": 39,
-        "detailedCandidates": 39,
-        "durationMs": 50620
+        "uniqueListings": 335,
+        "changedCandidates": 43,
+        "detailedCandidates": 40,
+        "durationMs": 43596
       },
       {
         "city": "의왕시",
@@ -60,10 +60,10 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 442,
-        "changedCandidates": 42,
-        "detailedCandidates": 40,
-        "durationMs": 77434
+        "uniqueListings": 437,
+        "changedCandidates": 44,
+        "detailedCandidates": 41,
+        "durationMs": 63846
       },
       {
         "city": "안양시",
@@ -79,10 +79,10 @@
         "attempted": 28,
         "succeeded": 28,
         "errors": 0,
-        "uniqueListings": 402,
-        "changedCandidates": 43,
+        "uniqueListings": 397,
+        "changedCandidates": 45,
         "detailedCandidates": 42,
-        "durationMs": 93944
+        "durationMs": 80188
       },
       {
         "city": "과천시",
@@ -92,19 +92,19 @@
         "attempted": 4,
         "succeeded": 4,
         "errors": 0,
-        "uniqueListings": 301,
-        "changedCandidates": 42,
-        "detailedCandidates": 40,
-        "durationMs": 40232
+        "uniqueListings": 240,
+        "changedCandidates": 7,
+        "detailedCandidates": 7,
+        "durationMs": 12390
       }
     ],
     "finalCandidateCount": 0,
-    "stateItemCount": 2624,
+    "stateItemCount": 2633,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
-    "skippedUnknownProbeCount": 1431,
-    "durationMs": 262283
+    "skippedUnknownProbeCount": 1440,
+    "durationMs": 200053
   },
   "candidates": []
 }
