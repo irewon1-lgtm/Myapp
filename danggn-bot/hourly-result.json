@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-28T02:59:19.923Z",
+  "generatedAt": "2026-09-28T03:25:07.325Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -43,10 +43,10 @@
         "attempted": 8,
         "succeeded": 8,
         "errors": 0,
-        "uniqueListings": 336,
-        "changedCandidates": 42,
-        "detailedCandidates": 41,
-        "durationMs": 52749
+        "uniqueListings": 322,
+        "changedCandidates": 37,
+        "detailedCandidates": 37,
+        "durationMs": 50971
       },
       {
         "city": "의왕시",
@@ -60,10 +60,10 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 451,
-        "changedCandidates": 42,
+        "uniqueListings": 452,
+        "changedCandidates": 48,
         "detailedCandidates": 41,
-        "durationMs": 78900
+        "durationMs": 73922
       },
       {
         "city": "안양시",
@@ -79,10 +79,10 @@
         "attempted": 28,
         "succeeded": 28,
         "errors": 0,
-        "uniqueListings": 407,
-        "changedCandidates": 42,
-        "detailedCandidates": 41,
-        "durationMs": 100508
+        "uniqueListings": 414,
+        "changedCandidates": 46,
+        "detailedCandidates": 43,
+        "durationMs": 87994
       },
       {
         "city": "과천시",
@@ -92,47 +92,19 @@
         "attempted": 4,
         "succeeded": 4,
         "errors": 0,
-        "uniqueListings": 301,
-        "changedCandidates": 44,
-        "detailedCandidates": 41,
-        "durationMs": 43528
+        "uniqueListings": 299,
+        "changedCandidates": 43,
+        "detailedCandidates": 40,
+        "durationMs": 36355
       }
     ],
-    "finalCandidateCount": 1,
-    "stateItemCount": 2845,
+    "finalCandidateCount": 0,
+    "stateItemCount": 2854,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
-    "skippedUnknownProbeCount": 1669,
-    "durationMs": 275750
+    "skippedUnknownProbeCount": 1677,
+    "durationMs": 249301
   },
-  "candidates": [
-    {
-      "id": "3fhkwjn8yycv",
-      "changeType": "price_drop",
-      "previousPrice": 870000,
-      "price": 840000,
-      "priceDropPercent": 3.4,
-      "city": "안양시",
-      "location": "안양7동",
-      "regionPath": "경기도 안양시 만안구 안양7동",
-      "title": "삼성 노트북 갤럭시북 4 cpu i7, ram16 ddr4, 512g",
-      "modelHint": "삼성 노트북 갤럭시북 4 cpu i7, ram16 ddr4, 512g",
-      "cpuHint": "i7-1355U",
-      "ramGB": 16,
-      "storageGB": 512,
-      "specConfidence": "explicit",
-      "ramTypeConfirmed": true,
-      "storageTypeConfirmed": true,
-      "postedAt": "2026-08-19T10:15:37.875Z",
-      "boostedAt": "2026-09-28T02:48:02.324Z",
-      "status": "Ongoing",
-      "description": "삼성 갤럭시북4  판매합니다.\n\n사무용, 인강용, 대학생 노트북으로 쓰기 좋은 모델이고 윈도우11 설치되어 있어서 바로 사용 가능합니다. 정품 o\n\nCPU: 인텔 i7-1355U\n\nRAM: 16GB\n\nSSD: 512 G\n\n화면: 15.6인치 FHD\n\n그래픽: Iris Xe 내장그래픽\n\n무게: 약 1.55kg\n\n충전: USB-C PD 충전\n\n문서작업, 인터넷, 유튜브, 수업, 인강, 엑셀, 한글 작업용으로 충분합니다.\n\nSSD 512G로 저장공간 넉넉하고 속도 빠릅니다.\n\n초기화 완료 후 드리고, 직거래 시 작동 확인 가능합니다.\n\n구성품은 본체와 충전기 입니다 박스 없습니다\n\n상태 깔끔하고 하자 없습니다.",
-      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%81-4-cpu-i7-ram16-ddr4-512g-3fhkwjn8yycv/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "enddk",
-      "mannerTemperature": 38.9
-    }
-  ]
+  "candidates": []
 }
