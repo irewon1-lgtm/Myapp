@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-28T08:28:40.559Z",
+  "generatedAt": "2026-09-28T08:43:47.620Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -43,10 +43,10 @@
         "attempted": 8,
         "succeeded": 8,
         "errors": 0,
-        "uniqueListings": 341,
-        "changedCandidates": 44,
+        "uniqueListings": 342,
+        "changedCandidates": 42,
         "detailedCandidates": 40,
-        "durationMs": 53351
+        "durationMs": 44770
       },
       {
         "city": "의왕시",
@@ -60,10 +60,10 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 446,
-        "changedCandidates": 48,
+        "uniqueListings": 436,
+        "changedCandidates": 43,
         "detailedCandidates": 40,
-        "durationMs": 82368
+        "durationMs": 69316
       },
       {
         "city": "안양시",
@@ -79,10 +79,10 @@
         "attempted": 28,
         "succeeded": 28,
         "errors": 0,
-        "uniqueListings": 404,
-        "changedCandidates": 46,
+        "uniqueListings": 398,
+        "changedCandidates": 41,
         "detailedCandidates": 40,
-        "durationMs": 104370
+        "durationMs": 83688
       },
       {
         "city": "과천시",
@@ -92,19 +92,47 @@
         "attempted": 4,
         "succeeded": 4,
         "errors": 0,
-        "uniqueListings": 302,
-        "changedCandidates": 42,
-        "detailedCandidates": 41,
-        "durationMs": 46226
+        "uniqueListings": 303,
+        "changedCandidates": 41,
+        "detailedCandidates": 40,
+        "durationMs": 35671
       }
     ],
-    "finalCandidateCount": 0,
-    "stateItemCount": 3013,
+    "finalCandidateCount": 1,
+    "stateItemCount": 3022,
     "pendingNewnessCount": 1,
     "pendingUnattemptedCount": 1,
     "pendingAttemptedCount": 0,
-    "skippedUnknownProbeCount": 1825,
-    "durationMs": 286383
+    "skippedUnknownProbeCount": 1832,
+    "durationMs": 233511
   },
-  "candidates": []
+  "candidates": [
+    {
+      "id": "gtb77mpmjq8c",
+      "changeType": "new",
+      "previousPrice": null,
+      "price": 300000,
+      "priceDropPercent": null,
+      "city": "군포시",
+      "location": "당동",
+      "regionPath": "경기도 군포시 당동",
+      "title": "14Z970 메모리 16기가 SSD 1TB",
+      "modelHint": "14Z970 메모리 16기가 SSD 1TB",
+      "cpuHint": "i5-7200U",
+      "ramGB": 16,
+      "storageGB": 1024,
+      "specConfidence": "needs_verification",
+      "ramTypeConfirmed": false,
+      "storageTypeConfirmed": true,
+      "postedAt": "2026-09-28T08:39:21.305Z",
+      "boostedAt": "2026-09-28T08:39:21.283Z",
+      "status": "Ongoing",
+      "description": "14Z970 \nCPU i5-7200U\n메모리 DDR4 16GB\nSSD Nvme 1TB\nWindows11 pro 정품\n크리스탈인포  확인완료\n배터리 상태양호\n\n사용감 있습니다. \n키보드 변색있습니다 \n밑판 고무없음. 마감 확인해주세요\n\n2대 동일\n\n구성품 : 노트북 + 정품아답타",
+      "url": "https://www.daangn.com/kr/buy-sell/14z970-%EB%A9%94%EB%AA%A8%EB%A6%AC-16%EA%B8%B0%EA%B0%80-ssd-1tb-gtb77mpmjq8c/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "JH",
+      "mannerTemperature": 49.5
+    }
+  ]
 }
