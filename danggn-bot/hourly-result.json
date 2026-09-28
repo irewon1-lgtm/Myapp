@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-28T18:45:06.898Z",
+  "generatedAt": "2026-09-28T19:00:54.032Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -16,7 +16,9 @@
   "health": {
     "status": "ok",
     "stateCommitted": true,
-    "warnings": []
+    "warnings": [
+      "안양시: search errors 2/28"
+    ]
   },
   "rules": {
     "newnessField": "postedAt",
@@ -46,7 +48,7 @@
         "uniqueListings": 328,
         "changedCandidates": 38,
         "detailedCandidates": 38,
-        "durationMs": 45933
+        "durationMs": 38350
       },
       {
         "city": "의왕시",
@@ -61,9 +63,9 @@
         "succeeded": 20,
         "errors": 0,
         "uniqueListings": 440,
-        "changedCandidates": 41,
+        "changedCandidates": 40,
         "detailedCandidates": 40,
-        "durationMs": 72072
+        "durationMs": 62712
       },
       {
         "city": "안양시",
@@ -77,12 +79,12 @@
           "안양동-4639"
         ],
         "attempted": 28,
-        "succeeded": 28,
-        "errors": 0,
-        "uniqueListings": 400,
-        "changedCandidates": 43,
-        "detailedCandidates": 41,
-        "durationMs": 96446
+        "succeeded": 26,
+        "errors": 2,
+        "uniqueListings": 397,
+        "changedCandidates": 40,
+        "detailedCandidates": 40,
+        "durationMs": 79502
       },
       {
         "city": "과천시",
@@ -92,47 +94,19 @@
         "attempted": 4,
         "succeeded": 4,
         "errors": 0,
-        "uniqueListings": 294,
-        "changedCandidates": 34,
-        "detailedCandidates": 34,
-        "durationMs": 32890
+        "uniqueListings": 240,
+        "changedCandidates": 16,
+        "detailedCandidates": 16,
+        "durationMs": 17762
       }
     ],
-    "finalCandidateCount": 1,
+    "finalCandidateCount": 0,
     "stateItemCount": 3314,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 2127,
-    "durationMs": 247416
+    "durationMs": 198390
   },
-  "candidates": [
-    {
-      "id": "vqswm89do432",
-      "changeType": "price_drop",
-      "previousPrice": 520000,
-      "price": 450000,
-      "priceDropPercent": 13.5,
-      "city": "안양시",
-      "location": "비산1동",
-      "regionPath": "경기도 안양시 동안구 비산1동",
-      "title": "ASUS TUF Gaming A15  (Ryzen7 4800H / GTX1650 / 16GB / 512GB)",
-      "modelHint": "ASUS TUF Gaming A15  (Ryzen7 4800H / GTX1650 / 16GB / 512GB)",
-      "cpuHint": "Ryzen7 4800H",
-      "ramGB": 16,
-      "storageGB": 512,
-      "specConfidence": "explicit",
-      "ramTypeConfirmed": true,
-      "storageTypeConfirmed": true,
-      "postedAt": "2026-09-26T12:22:21.627Z",
-      "boostedAt": "2026-09-28T12:31:18.613Z",
-      "status": "Ongoing",
-      "description": "ASUS TUF Gaming A15 FA506IH 판매합니다.\n\n* CPU: AMD Ryzen 7 4800H\n* GPU: NVIDIA GTX 1650 4GB\n* RAM: 16GB\n* SSD: 512GB\n* 15.6인치 FHD / 144Hz\n* Windows 11 Pro\n* 정품 충전기 포함\n\n게이밍 및 영상편집 등 사용 가능합니다.\n사용감은 조금 있으며 전체적으로 정상 작동합니다.\n와이파이가 연결창이 아예 안뜨는 오류가 있는데 드라이버 재설치하면 해결된다고합니다.",
-      "url": "https://www.daangn.com/kr/buy-sell/asus-tuf-gaming-a15-ryzen7-4800h-gtx1650-16gb-512gb-vqswm89do432/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "김영훈",
-      "mannerTemperature": 36.6
-    }
-  ]
+  "candidates": []
 }
