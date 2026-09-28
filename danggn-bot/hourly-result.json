@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-28T03:42:23.408Z",
+  "generatedAt": "2026-09-28T04:00:04.673Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -43,10 +43,10 @@
         "attempted": 8,
         "succeeded": 8,
         "errors": 0,
-        "uniqueListings": 340,
+        "uniqueListings": 338,
         "changedCandidates": 45,
-        "detailedCandidates": 41,
-        "durationMs": 55763
+        "detailedCandidates": 40,
+        "durationMs": 52832
       },
       {
         "city": "의왕시",
@@ -60,10 +60,10 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 450,
-        "changedCandidates": 42,
-        "detailedCandidates": 40,
-        "durationMs": 78757
+        "uniqueListings": 449,
+        "changedCandidates": 48,
+        "detailedCandidates": 41,
+        "durationMs": 79193
       },
       {
         "city": "안양시",
@@ -79,10 +79,10 @@
         "attempted": 28,
         "succeeded": 28,
         "errors": 0,
-        "uniqueListings": 395,
-        "changedCandidates": 45,
-        "detailedCandidates": 42,
-        "durationMs": 104002
+        "uniqueListings": 410,
+        "changedCandidates": 52,
+        "detailedCandidates": 41,
+        "durationMs": 95936
       },
       {
         "city": "과천시",
@@ -92,47 +92,19 @@
         "attempted": 4,
         "succeeded": 4,
         "errors": 0,
-        "uniqueListings": 300,
-        "changedCandidates": 46,
-        "detailedCandidates": 40,
-        "durationMs": 40637
+        "uniqueListings": 299,
+        "changedCandidates": 43,
+        "detailedCandidates": 41,
+        "durationMs": 41238
       }
     ],
-    "finalCandidateCount": 1,
-    "stateItemCount": 2867,
+    "finalCandidateCount": 0,
+    "stateItemCount": 2890,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
-    "skippedUnknownProbeCount": 1690,
-    "durationMs": 279217
+    "skippedUnknownProbeCount": 1713,
+    "durationMs": 269265
   },
-  "candidates": [
-    {
-      "id": "3kgxe2737s8t",
-      "changeType": "new",
-      "previousPrice": null,
-      "price": 650000,
-      "priceDropPercent": null,
-      "city": "과천시",
-      "location": "문원동",
-      "regionPath": "경기도 과천시 문원동",
-      "title": "에이서 스위프트 GO14 OLED 노트북 512gb 16gb",
-      "modelHint": "에이서 스위프트 GO14 OLED 노트북 512gb 16gb",
-      "cpuHint": null,
-      "ramGB": 16,
-      "storageGB": 512,
-      "specConfidence": "explicit",
-      "ramTypeConfirmed": true,
-      "storageTypeConfirmed": true,
-      "postedAt": "2026-09-28T03:40:30.479Z",
-      "boostedAt": "2026-09-28T03:40:30.476Z",
-      "status": "Ongoing",
-      "description": "고성능 노트북 판매해 봅니다\n속도 빠르고 저장공간 넉넉하고 외관도 좋아요\n해상도는 QHD OLED이고  모니터 연결하여 썼어요\n윈도우 home 기본 내장 되어 있고\nCPU i5 125h SSD 512GB RAM 16GB\n\n빠른 거래 위해 저렴하게 올려 봅니다!\n쿨 거래 시 약간의 네고 가능합니다\n박스는 없고 본체와 충전기 드려요",
-      "url": "https://www.daangn.com/kr/buy-sell/%EC%97%90%EC%9D%B4%EC%84%9C-%EC%8A%A4%EC%9C%84%ED%94%84%ED%8A%B8-go14-oled-%EB%85%B8%ED%8A%B8%EB%B6%81-512gb-16gb-3kgxe2737s8t/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "료캉",
-      "mannerTemperature": 65.5
-    }
-  ]
+  "candidates": []
 }
