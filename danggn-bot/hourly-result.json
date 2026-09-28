@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-28T23:22:47.036Z",
+  "generatedAt": "2026-09-28T23:38:50.471Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -43,10 +43,10 @@
         "attempted": 8,
         "succeeded": 8,
         "errors": 0,
-        "uniqueListings": 327,
-        "changedCandidates": 38,
-        "detailedCandidates": 38,
-        "durationMs": 46767
+        "uniqueListings": 331,
+        "changedCandidates": 41,
+        "detailedCandidates": 41,
+        "durationMs": 44464
       },
       {
         "city": "의왕시",
@@ -60,10 +60,10 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 440,
-        "changedCandidates": 43,
+        "uniqueListings": 435,
+        "changedCandidates": 46,
         "detailedCandidates": 42,
-        "durationMs": 74604
+        "durationMs": 69853
       },
       {
         "city": "안양시",
@@ -79,10 +79,10 @@
         "attempted": 28,
         "succeeded": 28,
         "errors": 0,
-        "uniqueListings": 392,
-        "changedCandidates": 38,
-        "detailedCandidates": 38,
-        "durationMs": 90300
+        "uniqueListings": 403,
+        "changedCandidates": 45,
+        "detailedCandidates": 43,
+        "durationMs": 86408
       },
       {
         "city": "과천시",
@@ -92,47 +92,19 @@
         "attempted": 4,
         "succeeded": 4,
         "errors": 0,
-        "uniqueListings": 298,
-        "changedCandidates": 38,
-        "detailedCandidates": 38,
-        "durationMs": 37450
+        "uniqueListings": 297,
+        "changedCandidates": 42,
+        "detailedCandidates": 41,
+        "durationMs": 36178
       }
     ],
-    "finalCandidateCount": 1,
+    "finalCandidateCount": 0,
     "stateItemCount": 3326,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
-    "skippedUnknownProbeCount": 2139,
-    "durationMs": 249192
+    "skippedUnknownProbeCount": 2143,
+    "durationMs": 236972
   },
-  "candidates": [
-    {
-      "id": "izc427cficvs",
-      "changeType": "new",
-      "previousPrice": null,
-      "price": 500000,
-      "priceDropPercent": null,
-      "city": "군포시",
-      "location": "당동",
-      "regionPath": "경기도 군포시 당동",
-      "title": "LG 그램 i5-1035G7",
-      "modelHint": "LG 그램 i5-1035G7",
-      "cpuHint": null,
-      "ramGB": 16,
-      "storageGB": 1024,
-      "specConfidence": "needs_verification",
-      "ramTypeConfirmed": false,
-      "storageTypeConfirmed": true,
-      "postedAt": "2026-09-28T23:09:29.572Z",
-      "boostedAt": "2026-09-28T23:09:29.571Z",
-      "status": "Ongoing",
-      "description": "cpu i5-1035G7\nram ddr4 16gb\nssd 256gb + 1tb\nWindows11 pro 정품\n14인치모델입니다. \n\n사무실에서 데스크탑대용으로 쓰던거라 깨끗하고 생활기스정도 있습니다.\n배터리효율 100% \n\n구성품 노트북+ LG정품아답타",
-      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-i5-1035g7-izc427cficvs/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "JH",
-      "mannerTemperature": 49.5
-    }
-  ]
+  "candidates": []
 }
