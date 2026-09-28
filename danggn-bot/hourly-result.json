@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-28T18:26:31.793Z",
+  "generatedAt": "2026-09-28T18:45:06.898Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -43,10 +43,10 @@
         "attempted": 8,
         "succeeded": 8,
         "errors": 0,
-        "uniqueListings": 329,
+        "uniqueListings": 328,
         "changedCandidates": 38,
         "detailedCandidates": 38,
-        "durationMs": 42899
+        "durationMs": 45933
       },
       {
         "city": "의왕시",
@@ -60,10 +60,10 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 444,
+        "uniqueListings": 440,
         "changedCandidates": 41,
         "detailedCandidates": 40,
-        "durationMs": 64052
+        "durationMs": 72072
       },
       {
         "city": "안양시",
@@ -79,10 +79,10 @@
         "attempted": 28,
         "succeeded": 28,
         "errors": 0,
-        "uniqueListings": 404,
-        "changedCandidates": 42,
-        "detailedCandidates": 42,
-        "durationMs": 79097
+        "uniqueListings": 400,
+        "changedCandidates": 43,
+        "detailedCandidates": 41,
+        "durationMs": 96446
       },
       {
         "city": "과천시",
@@ -92,27 +92,27 @@
         "attempted": 4,
         "succeeded": 4,
         "errors": 0,
-        "uniqueListings": 295,
+        "uniqueListings": 294,
         "changedCandidates": 34,
         "detailedCandidates": 34,
-        "durationMs": 28970
+        "durationMs": 32890
       }
     ],
     "finalCandidateCount": 1,
-    "stateItemCount": 3311,
+    "stateItemCount": 3314,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
-    "skippedUnknownProbeCount": 2124,
-    "durationMs": 215083
+    "skippedUnknownProbeCount": 2127,
+    "durationMs": 247416
   },
   "candidates": [
     {
       "id": "vqswm89do432",
       "changeType": "price_drop",
       "previousPrice": 520000,
-      "price": 520000,
-      "priceDropPercent": 0,
+      "price": 450000,
+      "priceDropPercent": 13.5,
       "city": "안양시",
       "location": "비산1동",
       "regionPath": "경기도 안양시 동안구 비산1동",
@@ -125,7 +125,7 @@
       "ramTypeConfirmed": true,
       "storageTypeConfirmed": true,
       "postedAt": "2026-09-26T12:22:21.627Z",
-      "boostedAt": "2026-09-26T12:22:21.626Z",
+      "boostedAt": "2026-09-28T12:31:18.613Z",
       "status": "Ongoing",
       "description": "ASUS TUF Gaming A15 FA506IH 판매합니다.\n\n* CPU: AMD Ryzen 7 4800H\n* GPU: NVIDIA GTX 1650 4GB\n* RAM: 16GB\n* SSD: 512GB\n* 15.6인치 FHD / 144Hz\n* Windows 11 Pro\n* 정품 충전기 포함\n\n게이밍 및 영상편집 등 사용 가능합니다.\n사용감은 조금 있으며 전체적으로 정상 작동합니다.\n와이파이가 연결창이 아예 안뜨는 오류가 있는데 드라이버 재설치하면 해결된다고합니다.",
       "url": "https://www.daangn.com/kr/buy-sell/asus-tuf-gaming-a15-ryzen7-4800h-gtx1650-16gb-512gb-vqswm89do432/",
