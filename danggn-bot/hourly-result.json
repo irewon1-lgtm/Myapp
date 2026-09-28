@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-28T16:00:17.218Z",
+  "generatedAt": "2026-09-28T16:27:13.885Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -43,10 +43,10 @@
         "attempted": 8,
         "succeeded": 8,
         "errors": 0,
-        "uniqueListings": 329,
-        "changedCandidates": 37,
-        "detailedCandidates": 37,
-        "durationMs": 42920
+        "uniqueListings": 333,
+        "changedCandidates": 39,
+        "detailedCandidates": 39,
+        "durationMs": 45075
       },
       {
         "city": "의왕시",
@@ -60,10 +60,10 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 439,
+        "uniqueListings": 445,
         "changedCandidates": 41,
         "detailedCandidates": 40,
-        "durationMs": 68200
+        "durationMs": 69780
       },
       {
         "city": "안양시",
@@ -79,10 +79,10 @@
         "attempted": 28,
         "succeeded": 28,
         "errors": 0,
-        "uniqueListings": 394,
-        "changedCandidates": 41,
+        "uniqueListings": 399,
+        "changedCandidates": 43,
         "detailedCandidates": 41,
-        "durationMs": 85212
+        "durationMs": 83448
       },
       {
         "city": "과천시",
@@ -92,21 +92,75 @@
         "attempted": 4,
         "succeeded": 4,
         "errors": 0,
-        "uniqueListings": 293,
-        "changedCandidates": 35,
-        "detailedCandidates": 35,
-        "durationMs": 31909
+        "uniqueListings": 295,
+        "changedCandidates": 34,
+        "detailedCandidates": 34,
+        "durationMs": 30783
       }
     ],
-    "finalCandidateCount": 1,
-    "stateItemCount": 3305,
+    "finalCandidateCount": 3,
+    "stateItemCount": 3310,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
-    "skippedUnknownProbeCount": 2119,
-    "durationMs": 228302
+    "skippedUnknownProbeCount": 2122,
+    "durationMs": 229163
   },
   "candidates": [
+    {
+      "id": "r32gwp8voj84",
+      "changeType": "new",
+      "previousPrice": null,
+      "price": 800000,
+      "priceDropPercent": null,
+      "city": "군포시",
+      "location": "부곡동",
+      "regionPath": "경기도 군포시 부곡동",
+      "title": "MSI 게이밈 노트북 팝니다.",
+      "modelHint": "MSI 게이밈 노트북 팝니다.",
+      "cpuHint": "i7-12650H",
+      "ramGB": 32,
+      "storageGB": 1024,
+      "specConfidence": "explicit",
+      "ramTypeConfirmed": true,
+      "storageTypeConfirmed": true,
+      "postedAt": "2026-09-28T16:17:08.838Z",
+      "boostedAt": "2026-09-28T16:17:08.836Z",
+      "status": "Ongoing",
+      "description": "💻 MSI Sword 17 A12UDX 게이밍 노트북 \n\n*사양\nCPU : Intel Core i7-12650H (12세대)\nGPU : NVIDIA GeForce RTX 3050 Laptop 6GB (일반4GB 아닌 6GB입니다)\nRAM : 32GB\nSSD : 1TB\n디스플레이 : 17.3인치 FHD 144Hz\nOS : Windows 11 Pro\n화이트 바디의 MSI Sword 17입니다.\n내·외관 상태 매우 깨끗하며, 스팀 게임 위주로 사용했습니다.\n\n추가 구성품\n🎮 Xbox 무선 컨트롤러 4세대 아쿠아 시프트\n박스 포함 풀세트\n신품급 상태\n아머 케이스\n스틱 갈림 방지 및 스틱 보호 커버 장착\n\n❄️ 노트북 쿨링 받침대\n🖱️ 마우스\n사진에 보이는 구성품 모두 함께 드립니다.\n\n17.3인치 대화면 + RTX 3050 6GB + RAM 32GB + SSD 1TB 구성이라 게임용으로 사용하기 좋습니다.",
+      "url": "https://www.daangn.com/kr/buy-sell/msi-%EA%B2%8C%EC%9D%B4%EB%B0%88-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%9D%EB%8B%88%EB%8B%A4-r32gwp8voj84/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "하으니",
+      "mannerTemperature": 50.8
+    },
+    {
+      "id": "2mi3ozafey77",
+      "changeType": "new",
+      "previousPrice": null,
+      "price": 700000,
+      "priceDropPercent": null,
+      "city": "의왕시",
+      "location": "고천동",
+      "regionPath": "경기도 의왕시 고천동",
+      "title": "ASUS VIVOBOOK PRO 15 노트북 팝니다 (작업/게임), 네고X",
+      "modelHint": "ASUS VIVOBOOK PRO 15 노트북 팝니다 (작업/게임), 네고X",
+      "cpuHint": "Ryzen 7 5800H",
+      "ramGB": 16,
+      "storageGB": 512,
+      "specConfidence": "needs_verification",
+      "ramTypeConfirmed": false,
+      "storageTypeConfirmed": true,
+      "postedAt": "2026-09-28T16:10:59.851Z",
+      "boostedAt": "2026-09-28T16:10:59.844Z",
+      "status": "Ongoing",
+      "description": "크리에이터/작업, 간단한 게임용 노트북 팝니다. \n\n<스펙>\n- 모델명: ASUS Vivobook Pro 15 M6500QE-MA001\n- CPU: Ryzen 7 5800H\n- 그래픽 카드: RTX 3050ti, 4GB\n  - TGP: 50-60W 추정 (공식 명시X)\n- RAM: DDR4, 3200MHz, 16GB\n- SSD: 512GB\n- 디스플레이: \n  - 해상도: 2.8k (2880×1620)\n  - 패널: OLED 패널 탑재\n  - 최대 밝기 600nit\n- 배터리 효율: 50988Wh/70032Wh × 100% = 약 72%\n- 구성: 노트북, 정품 충전기(120W), 노트북 파우치(박스X)\n- 기타: 먼지, 사용감은 있습니다\n\n<용도>\n- 화면 해상도, OLED 패널과 최대 밝기까지 디스플레이 스펙이 뭐하나 빠짐없이 고사양으로 구성됐기 때문에 크리에이터, 영상편집, 작업용에 쓰기 좋은 노트북입니다.\n- Cpu랑 글카 스펙까지 감안하면 오버워치나 발로란트 급의 게임까지도 쾌적하게 즐길 수 있지만, tgp가 높지 않은 관계로 그 이상의 고사양 게임은 현실적으로 쾌적하게 돌아가진 않습니다.\n\n<거래>\n- 직거래/택배 거래 가능하며, 택배 거래시 배송비 별도로 추가될 수 있습니다.\n\n스펙은 가능한 자세하게 적어봤고, 더 궁금한 사항이 있으시면 편하게 문의 주세요. 제목에도 적어놨듯이 가격 관련 네고는 죄송하지만 받지 않겠습니다.",
+      "url": "https://www.daangn.com/kr/buy-sell/asus-vivobook-pro-15-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%9D%EB%8B%88%EB%8B%A4-%EC%9E%91%EC%97%85-%EA%B2%8C%EC%9E%84-%EB%84%A4%EA%B3%A0x-2mi3ozafey77/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "판매완료",
+      "mannerTemperature": 37.9
+    },
     {
       "id": "vqswm89do432",
       "changeType": "price_drop",
