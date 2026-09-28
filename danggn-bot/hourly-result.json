@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-28T05:40:29.242Z",
+  "generatedAt": "2026-09-28T05:58:22.592Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -43,10 +43,10 @@
         "attempted": 8,
         "succeeded": 8,
         "errors": 0,
-        "uniqueListings": 335,
-        "changedCandidates": 40,
-        "detailedCandidates": 40,
-        "durationMs": 52213
+        "uniqueListings": 337,
+        "changedCandidates": 39,
+        "detailedCandidates": 39,
+        "durationMs": 50893
       },
       {
         "city": "의왕시",
@@ -60,10 +60,10 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 452,
-        "changedCandidates": 41,
-        "detailedCandidates": 40,
-        "durationMs": 76456
+        "uniqueListings": 447,
+        "changedCandidates": 36,
+        "detailedCandidates": 36,
+        "durationMs": 73680
       },
       {
         "city": "안양시",
@@ -79,10 +79,10 @@
         "attempted": 28,
         "succeeded": 28,
         "errors": 0,
-        "uniqueListings": 415,
-        "changedCandidates": 37,
-        "detailedCandidates": 37,
-        "durationMs": 89546
+        "uniqueListings": 408,
+        "changedCandidates": 36,
+        "detailedCandidates": 36,
+        "durationMs": 91515
       },
       {
         "city": "과천시",
@@ -92,19 +92,47 @@
         "attempted": 4,
         "succeeded": 4,
         "errors": 0,
-        "uniqueListings": 299,
-        "changedCandidates": 36,
-        "detailedCandidates": 36,
-        "durationMs": 37076
+        "uniqueListings": 300,
+        "changedCandidates": 35,
+        "detailedCandidates": 35,
+        "durationMs": 36098
       }
     ],
-    "finalCandidateCount": 0,
-    "stateItemCount": 2961,
+    "finalCandidateCount": 1,
+    "stateItemCount": 2960,
     "pendingNewnessCount": 1,
     "pendingUnattemptedCount": 1,
     "pendingAttemptedCount": 0,
-    "skippedUnknownProbeCount": 1778,
-    "durationMs": 255342
+    "skippedUnknownProbeCount": 1774,
+    "durationMs": 252249
   },
-  "candidates": []
+  "candidates": [
+    {
+      "id": "fab7jeh4vs4f",
+      "changeType": "new",
+      "previousPrice": null,
+      "price": 700000,
+      "priceDropPercent": null,
+      "city": "안양시",
+      "location": "비산1동",
+      "regionPath": "경기도 안양시 동안구 비산1동",
+      "title": "Lenovo ThinkPad P16s Gen 2 AMD 팔아요",
+      "modelHint": "Lenovo ThinkPad P16s Gen 2 AMD 팔아요",
+      "cpuHint": null,
+      "ramGB": 16,
+      "storageGB": 512,
+      "specConfidence": "explicit",
+      "ramTypeConfirmed": true,
+      "storageTypeConfirmed": true,
+      "postedAt": "2026-09-28T05:40:07.064Z",
+      "boostedAt": "2026-09-28T05:40:07.063Z",
+      "status": "Ongoing",
+      "description": "Lenovo ThinkPad P16s Gen 2 AMD (21KAS05A00) 노트북 판매해요. 인텔 코어 i7 프로세서와 16GB RAM, 512GB SSD를 탑재하여 빠르고 쾌적한 사용이 가능해요. 윈도우 11 Pro가 설치되어 있어 바로 사용하실 수 있습니다. 사진에서 보이는 구성품 그대로 드려요. 고성능 작업도 문제없이 처리할 수 있는 매력적인 노트북입니다.",
+      "url": "https://www.daangn.com/kr/buy-sell/lenovo-thinkpad-p16s-gen-2-amd-%ED%8C%94%EC%95%84%EC%9A%94-fab7jeh4vs4f/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "안녕하세유",
+      "mannerTemperature": 37.5
+    }
+  ]
 }
