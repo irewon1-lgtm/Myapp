@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-28T15:26:39.132Z",
+  "generatedAt": "2026-09-28T15:42:45.378Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -43,10 +43,10 @@
         "attempted": 8,
         "succeeded": 8,
         "errors": 0,
-        "uniqueListings": 331,
-        "changedCandidates": 45,
-        "detailedCandidates": 41,
-        "durationMs": 46570
+        "uniqueListings": 329,
+        "changedCandidates": 42,
+        "detailedCandidates": 40,
+        "durationMs": 51193
       },
       {
         "city": "의왕시",
@@ -60,10 +60,10 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 447,
-        "changedCandidates": 46,
+        "uniqueListings": 440,
+        "changedCandidates": 44,
         "detailedCandidates": 41,
-        "durationMs": 69299
+        "durationMs": 76101
       },
       {
         "city": "안양시",
@@ -79,10 +79,10 @@
         "attempted": 28,
         "succeeded": 28,
         "errors": 0,
-        "uniqueListings": 401,
-        "changedCandidates": 45,
-        "detailedCandidates": 42,
-        "durationMs": 85140
+        "uniqueListings": 386,
+        "changedCandidates": 43,
+        "detailedCandidates": 41,
+        "durationMs": 95818
       },
       {
         "city": "과천시",
@@ -92,19 +92,19 @@
         "attempted": 4,
         "succeeded": 4,
         "errors": 0,
-        "uniqueListings": 294,
-        "changedCandidates": 38,
-        "detailedCandidates": 38,
-        "durationMs": 33842
+        "uniqueListings": 296,
+        "changedCandidates": 43,
+        "detailedCandidates": 40,
+        "durationMs": 39791
       }
     ],
     "finalCandidateCount": 1,
-    "stateItemCount": 3294,
+    "stateItemCount": 3304,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
-    "skippedUnknownProbeCount": 2109,
-    "durationMs": 234926
+    "skippedUnknownProbeCount": 2118,
+    "durationMs": 262962
   },
   "candidates": [
     {
