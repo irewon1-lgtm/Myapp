@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-29T16:43:12.123Z",
+  "generatedAt": "2026-09-29T17:00:06.615Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -14,9 +14,53 @@
     "과천시"
   ],
   "health": {
-    "status": "ok",
-    "stateCommitted": true,
-    "warnings": []
+    "status": "failed",
+    "stateCommitted": false,
+    "warnings": [
+      "의왕시: detail failed 591o5tay61gp",
+      "의왕시: detail failed 7d6mjd32db8j",
+      "의왕시: detail failed 6948n3jh2375",
+      "안양시: search errors 16/28",
+      "안양시: detail failed zbm2684fwnr5",
+      "안양시: detail failed wp2x5ffrup6w",
+      "안양시: detail failed 1vooqi8ar4zh",
+      "안양시: detail failed d2jwuka93pvr",
+      "안양시: detail failed ntu5qwpwrhez",
+      "안양시: detail failed ms54g5fzpkzt",
+      "안양시: detail failed kcxr3v6ph9ig",
+      "안양시: detail failed ctspvm6thtmi",
+      "안양시: detail failed haog5unbygmj",
+      "안양시: detail failed rggzux9pwvr4",
+      "안양시: detail failed cbzbfdapsmb4",
+      "안양시: detail failed 7d6mjd32db8j",
+      "안양시: detail failed rti4z31m51v3",
+      "안양시: detail failed kutzkbp86apd",
+      "안양시: detail failed kefwxtuidjou",
+      "안양시: detail failed cq5nqcxzrosv",
+      "안양시: detail failed i2tdxsiqhmmq",
+      "안양시: detail failed gtb77mpmjq8c",
+      "안양시: detail failed d8e4i8sfy2cw",
+      "안양시: detail failed x7ec4qqy7cyf",
+      "안양시: detail failed 87iccqzwfkg6",
+      "안양시: detail failed jxg1sb3wf8ns",
+      "안양시: detail failed fpuut2cd296s",
+      "안양시: detail failed 39154g3smihy",
+      "안양시: detail failed bnjvazvow1yo",
+      "안양시: detail failed ijm1twaij3ey",
+      "안양시: detail failed dvkduso2sy8x",
+      "안양시: detail failed 3eqvzauq6nsz",
+      "안양시: detail failed e7rp5xirqgp5",
+      "안양시: detail failed j3y69ftm1f57",
+      "안양시: detail failed tufzvesegw7d",
+      "안양시: detail failed u9ouu2y5o6k8",
+      "안양시: detail failed ziwx8quvzpj9",
+      "안양시: detail failed 4krkyrfe48iu",
+      "안양시: detail failed b8pbhongnyfn",
+      "안양시: detail failed yb97frfgo8hu",
+      "안양시: detail failed hxp5j7a3ydhu",
+      "안양시: detail failed 6948n3jh2375",
+      "과천시: search errors 4/4"
+    ]
   },
   "rules": {
     "newnessField": "postedAt",
@@ -43,10 +87,10 @@
         "attempted": 8,
         "succeeded": 8,
         "errors": 0,
-        "uniqueListings": 335,
-        "changedCandidates": 39,
-        "detailedCandidates": 39,
-        "durationMs": 40485
+        "uniqueListings": 332,
+        "changedCandidates": 35,
+        "detailedCandidates": 35,
+        "durationMs": 36113
       },
       {
         "city": "의왕시",
@@ -60,10 +104,10 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 420,
+        "uniqueListings": 450,
         "changedCandidates": 38,
         "detailedCandidates": 38,
-        "durationMs": 68467
+        "durationMs": 58135
       },
       {
         "city": "안양시",
@@ -77,12 +121,12 @@
           "안양동-4639"
         ],
         "attempted": 28,
-        "succeeded": 28,
-        "errors": 0,
-        "uniqueListings": 413,
+        "succeeded": 12,
+        "errors": 16,
+        "uniqueListings": 377,
         "changedCandidates": 38,
         "detailedCandidates": 38,
-        "durationMs": 75547
+        "durationMs": 86645
       },
       {
         "city": "과천시",
@@ -90,49 +134,21 @@
           "원문동-4433"
         ],
         "attempted": 4,
-        "succeeded": 4,
-        "errors": 0,
-        "uniqueListings": 298,
-        "changedCandidates": 38,
-        "detailedCandidates": 38,
-        "durationMs": 32110
+        "succeeded": 0,
+        "errors": 4,
+        "uniqueListings": 0,
+        "changedCandidates": 0,
+        "detailedCandidates": 0,
+        "durationMs": 7009
       }
     ],
-    "finalCandidateCount": 1,
+    "finalCandidateCount": 0,
     "stateItemCount": 3808,
     "pendingNewnessCount": 3,
     "pendingUnattemptedCount": 3,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 2599,
-    "durationMs": 216692
+    "durationMs": 187928
   },
-  "candidates": [
-    {
-      "id": "5xkxvaq7xd53",
-      "changeType": "price_drop",
-      "previousPrice": 700000,
-      "price": 700000,
-      "priceDropPercent": 0,
-      "city": "과천시",
-      "location": "갈현동",
-      "regionPath": "경기도 과천시 갈현동",
-      "title": "레노버 씽크패드 T15g Gen2 노트북",
-      "modelHint": "레노버 씽크패드 T15g Gen2 노트북",
-      "cpuHint": null,
-      "ramGB": 32,
-      "storageGB": 1024,
-      "specConfidence": "explicit",
-      "ramTypeConfirmed": true,
-      "storageTypeConfirmed": true,
-      "postedAt": "2026-09-09T08:37:26.322Z",
-      "boostedAt": "2026-09-23T05:21:01.131Z",
-      "status": "Ongoing",
-      "description": "레노버 T15g Gen2 모델 15.6인치 노트북입니다. \n2022년 구매 제품이에요. \n메모리 32GB / NVMe 1TB , 256GB 장착되어 있습니다. \n그래픽 카드는 RTX3070 추가 구성되어 있어요. \n\n노트북 외관은 사용감이 있고, 하자는 액정 중간에 하얀 점 하나가 있습니다. (네번째 사진 참조)\n\n배터리, 그래픽카드, SSD 상태도 사진으로 올려두었어요. 레노버 Vantage 테스트 통과 내역은 요청하시면 개별로 보내드릴게요.",
-      "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%94%BD%ED%81%AC%ED%8C%A8%EB%93%9C-t15g-gen2-%EB%85%B8%ED%8A%B8%EB%B6%81-5xkxvaq7xd53/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "Shoney",
-      "mannerTemperature": 40.2
-    }
-  ]
+  "candidates": []
 }
