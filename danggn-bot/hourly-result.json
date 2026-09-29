@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-29T11:00:19.444Z",
+  "generatedAt": "2026-09-29T11:25:05.927Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -43,10 +43,10 @@
         "attempted": 8,
         "succeeded": 8,
         "errors": 0,
-        "uniqueListings": 332,
-        "changedCandidates": 47,
-        "detailedCandidates": 40,
-        "durationMs": 52795
+        "uniqueListings": 334,
+        "changedCandidates": 45,
+        "detailedCandidates": 43,
+        "durationMs": 65101
       },
       {
         "city": "의왕시",
@@ -60,10 +60,10 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 456,
-        "changedCandidates": 48,
-        "detailedCandidates": 40,
-        "durationMs": 79823
+        "uniqueListings": 454,
+        "changedCandidates": 47,
+        "detailedCandidates": 42,
+        "durationMs": 84941
       },
       {
         "city": "안양시",
@@ -79,10 +79,10 @@
         "attempted": 28,
         "succeeded": 28,
         "errors": 0,
-        "uniqueListings": 409,
-        "changedCandidates": 47,
-        "detailedCandidates": 40,
-        "durationMs": 99332
+        "uniqueListings": 413,
+        "changedCandidates": 48,
+        "detailedCandidates": 42,
+        "durationMs": 105299
       },
       {
         "city": "과천시",
@@ -93,46 +93,18 @@
         "succeeded": 4,
         "errors": 0,
         "uniqueListings": 305,
-        "changedCandidates": 45,
+        "changedCandidates": 50,
         "detailedCandidates": 41,
-        "durationMs": 41601
+        "durationMs": 43395
       }
     ],
-    "finalCandidateCount": 1,
-    "stateItemCount": 3631,
+    "finalCandidateCount": 0,
+    "stateItemCount": 3646,
     "pendingNewnessCount": 1,
     "pendingUnattemptedCount": 1,
     "pendingAttemptedCount": 0,
-    "skippedUnknownProbeCount": 2426,
-    "durationMs": 273628
+    "skippedUnknownProbeCount": 2441,
+    "durationMs": 298787
   },
-  "candidates": [
-    {
-      "id": "9odeoqdaxq71",
-      "changeType": "new",
-      "previousPrice": null,
-      "price": 820000,
-      "priceDropPercent": null,
-      "city": "군포시",
-      "location": "금정동",
-      "regionPath": "경기도 군포시 금정동",
-      "title": "MSI 노트북 RTX 4050 12세대 i5",
-      "modelHint": "MSI 노트북 RTX 4050 12세대 i5",
-      "cpuHint": "i5-12450H",
-      "ramGB": 16,
-      "storageGB": 512,
-      "specConfidence": "explicit",
-      "ramTypeConfirmed": true,
-      "storageTypeConfirmed": true,
-      "postedAt": "2026-09-29T10:47:53.469Z",
-      "boostedAt": "2026-09-29T10:47:53.460Z",
-      "status": "Ongoing",
-      "description": "고성능 MSI 게이밍 노트북을 만나보세요. RTX 4050 그래픽 카드와 12세대 인텔 코어 i5-12450H 프로세서가 탑재되어 뛰어난 성능을 자랑합니다. 선명한 디스플레이와 편안한 키보드로 쾌적한 사용 경험을 제공해요. 게임부터 작업까지 모든 것을 만족시켜 줄 매력적인 노트북입니다.\n\n16GB RAM\n512GB 삼성NVMe SSD탑재\n15인치144Hz FHD IPS고화질디스플레이\n\n외관에 사용감 조금있습니다\n직거래택배 둘다가능합니다",
-      "url": "https://www.daangn.com/kr/buy-sell/msi-%EB%85%B8%ED%8A%B8%EB%B6%81-rtx-4050-12%EC%84%B8%EB%8C%80-i5-9odeoqdaxq71/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "눈두두",
-      "mannerTemperature": 36.8
-    }
-  ]
+  "candidates": []
 }
