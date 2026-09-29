@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-29T13:45:39.407Z",
+  "generatedAt": "2026-09-29T14:02:02.942Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -43,10 +43,10 @@
         "attempted": 8,
         "succeeded": 8,
         "errors": 0,
-        "uniqueListings": 337,
+        "uniqueListings": 335,
         "changedCandidates": 47,
-        "detailedCandidates": 41,
-        "durationMs": 44115
+        "detailedCandidates": 42,
+        "durationMs": 52727
       },
       {
         "city": "의왕시",
@@ -60,10 +60,10 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 458,
-        "changedCandidates": 45,
-        "detailedCandidates": 42,
-        "durationMs": 64957
+        "uniqueListings": 460,
+        "changedCandidates": 50,
+        "detailedCandidates": 43,
+        "durationMs": 80178
       },
       {
         "city": "안양시",
@@ -79,10 +79,10 @@
         "attempted": 28,
         "succeeded": 28,
         "errors": 0,
-        "uniqueListings": 423,
-        "changedCandidates": 49,
-        "detailedCandidates": 41,
-        "durationMs": 78380
+        "uniqueListings": 383,
+        "changedCandidates": 44,
+        "detailedCandidates": 42,
+        "durationMs": 107641
       },
       {
         "city": "과천시",
@@ -92,19 +92,19 @@
         "attempted": 4,
         "succeeded": 4,
         "errors": 0,
-        "uniqueListings": 304,
-        "changedCandidates": 44,
-        "detailedCandidates": 42,
-        "durationMs": 33367
+        "uniqueListings": 240,
+        "changedCandidates": 13,
+        "detailedCandidates": 13,
+        "durationMs": 22186
       }
     ],
     "finalCandidateCount": 1,
-    "stateItemCount": 3725,
+    "stateItemCount": 3731,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
-    "skippedUnknownProbeCount": 2519,
-    "durationMs": 220893
+    "skippedUnknownProbeCount": 2525,
+    "durationMs": 262797
   },
   "candidates": [
     {
