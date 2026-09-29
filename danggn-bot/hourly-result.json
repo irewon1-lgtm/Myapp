@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-29T11:25:05.927Z",
+  "generatedAt": "2026-09-29T11:39:31.088Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -43,10 +43,10 @@
         "attempted": 8,
         "succeeded": 8,
         "errors": 0,
-        "uniqueListings": 334,
-        "changedCandidates": 45,
-        "detailedCandidates": 43,
-        "durationMs": 65101
+        "uniqueListings": 332,
+        "changedCandidates": 42,
+        "detailedCandidates": 41,
+        "durationMs": 47497
       },
       {
         "city": "의왕시",
@@ -60,10 +60,10 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 454,
-        "changedCandidates": 47,
-        "detailedCandidates": 42,
-        "durationMs": 84941
+        "uniqueListings": 462,
+        "changedCandidates": 46,
+        "detailedCandidates": 40,
+        "durationMs": 71116
       },
       {
         "city": "안양시",
@@ -79,10 +79,10 @@
         "attempted": 28,
         "succeeded": 28,
         "errors": 0,
-        "uniqueListings": 413,
-        "changedCandidates": 48,
-        "detailedCandidates": 42,
-        "durationMs": 105299
+        "uniqueListings": 415,
+        "changedCandidates": 45,
+        "detailedCandidates": 41,
+        "durationMs": 87338
       },
       {
         "city": "과천시",
@@ -92,19 +92,19 @@
         "attempted": 4,
         "succeeded": 4,
         "errors": 0,
-        "uniqueListings": 305,
-        "changedCandidates": 50,
-        "detailedCandidates": 41,
-        "durationMs": 43395
+        "uniqueListings": 304,
+        "changedCandidates": 42,
+        "detailedCandidates": 40,
+        "durationMs": 37152
       }
     ],
     "finalCandidateCount": 0,
-    "stateItemCount": 3646,
+    "stateItemCount": 3657,
     "pendingNewnessCount": 1,
     "pendingUnattemptedCount": 1,
     "pendingAttemptedCount": 0,
-    "skippedUnknownProbeCount": 2441,
-    "durationMs": 298787
+    "skippedUnknownProbeCount": 2452,
+    "durationMs": 243178
   },
   "candidates": []
 }
