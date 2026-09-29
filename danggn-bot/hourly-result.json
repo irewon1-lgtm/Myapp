@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-29T19:01:06.025Z",
+  "generatedAt": "2026-09-29T19:24:59.313Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -43,10 +43,10 @@
         "attempted": 8,
         "succeeded": 8,
         "errors": 0,
-        "uniqueListings": 333,
-        "changedCandidates": 39,
-        "detailedCandidates": 39,
-        "durationMs": 46912
+        "uniqueListings": 335,
+        "changedCandidates": 37,
+        "detailedCandidates": 37,
+        "durationMs": 45591
       },
       {
         "city": "의왕시",
@@ -60,10 +60,10 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 453,
-        "changedCandidates": 39,
-        "detailedCandidates": 39,
-        "durationMs": 70197
+        "uniqueListings": 447,
+        "changedCandidates": 30,
+        "detailedCandidates": 30,
+        "durationMs": 67799
       },
       {
         "city": "안양시",
@@ -79,10 +79,10 @@
         "attempted": 28,
         "succeeded": 28,
         "errors": 0,
-        "uniqueListings": 416,
-        "changedCandidates": 39,
-        "detailedCandidates": 39,
-        "durationMs": 88129
+        "uniqueListings": 418,
+        "changedCandidates": 35,
+        "detailedCandidates": 35,
+        "durationMs": 89159
       },
       {
         "city": "과천시",
@@ -92,19 +92,19 @@
         "attempted": 4,
         "succeeded": 4,
         "errors": 0,
-        "uniqueListings": 240,
-        "changedCandidates": 13,
-        "detailedCandidates": 13,
-        "durationMs": 17778
+        "uniqueListings": 298,
+        "changedCandidates": 33,
+        "detailedCandidates": 33,
+        "durationMs": 32650
       }
     ],
     "finalCandidateCount": 0,
-    "stateItemCount": 3809,
-    "pendingNewnessCount": 3,
-    "pendingUnattemptedCount": 3,
+    "stateItemCount": 3811,
+    "pendingNewnessCount": 5,
+    "pendingUnattemptedCount": 5,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 2600,
-    "durationMs": 223127
+    "durationMs": 235271
   },
   "candidates": []
 }
