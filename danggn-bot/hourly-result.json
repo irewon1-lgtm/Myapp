@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-29T23:37:14.693Z",
+  "generatedAt": "2026-09-29T23:57:07.864Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -43,10 +43,10 @@
         "attempted": 8,
         "succeeded": 8,
         "errors": 0,
-        "uniqueListings": 338,
+        "uniqueListings": 337,
         "changedCandidates": 43,
-        "detailedCandidates": 42,
-        "durationMs": 45821
+        "detailedCandidates": 41,
+        "durationMs": 52655
       },
       {
         "city": "의왕시",
@@ -61,9 +61,9 @@
         "succeeded": 20,
         "errors": 0,
         "uniqueListings": 460,
-        "changedCandidates": 43,
-        "detailedCandidates": 42,
-        "durationMs": 69355
+        "changedCandidates": 47,
+        "detailedCandidates": 41,
+        "durationMs": 82558
       },
       {
         "city": "안양시",
@@ -79,10 +79,10 @@
         "attempted": 28,
         "succeeded": 28,
         "errors": 0,
-        "uniqueListings": 420,
-        "changedCandidates": 45,
+        "uniqueListings": 423,
+        "changedCandidates": 47,
         "detailedCandidates": 40,
-        "durationMs": 82100
+        "durationMs": 99073
       },
       {
         "city": "과천시",
@@ -92,19 +92,47 @@
         "attempted": 4,
         "succeeded": 4,
         "errors": 0,
-        "uniqueListings": 301,
-        "changedCandidates": 37,
-        "detailedCandidates": 37,
-        "durationMs": 30876
+        "uniqueListings": 303,
+        "changedCandidates": 40,
+        "detailedCandidates": 40,
+        "durationMs": 39892
       }
     ],
-    "finalCandidateCount": 0,
-    "stateItemCount": 3804,
+    "finalCandidateCount": 1,
+    "stateItemCount": 3820,
     "pendingNewnessCount": 1,
     "pendingUnattemptedCount": 1,
     "pendingAttemptedCount": 0,
-    "skippedUnknownProbeCount": 2592,
-    "durationMs": 228231
+    "skippedUnknownProbeCount": 2607,
+    "durationMs": 274257
   },
-  "candidates": []
+  "candidates": [
+    {
+      "id": "xn5qqx225tf9",
+      "changeType": "new",
+      "previousPrice": null,
+      "price": 630000,
+      "priceDropPercent": null,
+      "city": "군포시",
+      "location": "금정동",
+      "regionPath": "경기도 군포시 금정동",
+      "title": "ASUS 젠북 15 라이젠 7 16gb 512gb",
+      "modelHint": "ASUS 젠북 15 라이젠 7 16gb 512gb",
+      "cpuHint": null,
+      "ramGB": 16,
+      "storageGB": 512,
+      "specConfidence": "needs_verification",
+      "ramTypeConfirmed": false,
+      "storageTypeConfirmed": false,
+      "postedAt": "2026-09-29T23:43:18.869Z",
+      "boostedAt": "2026-09-29T23:43:18.867Z",
+      "status": "Ongoing",
+      "description": "개발용으로 2년 6개월정도 썻고 스크래치는.없습니다. 아래 링크 참고 바랍니다.\n충전기랑 박스 있습니다.\n\n\nhttps://www.coupang.com/vp/products/7812355971?vendorItemId=88905330811&landingType=USED_DETAIL&sourceType=MyCoupang_my_orders_list_product_title",
+      "url": "https://www.daangn.com/kr/buy-sell/asus-%EC%A0%A0%EB%B6%81-15-%EB%9D%BC%EC%9D%B4%EC%A0%A0-7-16gb-512gb-xn5qqx225tf9/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "Aszza15281",
+      "mannerTemperature": 37.4
+    }
+  ]
 }
