@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-30T03:41:15.928Z",
+  "generatedAt": "2026-09-30T04:00:21.118Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -44,9 +44,9 @@
         "succeeded": 8,
         "errors": 0,
         "uniqueListings": 334,
-        "changedCandidates": 42,
+        "changedCandidates": 40,
         "detailedCandidates": 40,
-        "durationMs": 47911
+        "durationMs": 51366
       },
       {
         "city": "의왕시",
@@ -60,10 +60,10 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 446,
-        "changedCandidates": 42,
+        "uniqueListings": 464,
+        "changedCandidates": 44,
         "detailedCandidates": 40,
-        "durationMs": 74305
+        "durationMs": 79801
       },
       {
         "city": "안양시",
@@ -79,10 +79,10 @@
         "attempted": 28,
         "succeeded": 28,
         "errors": 0,
-        "uniqueListings": 413,
-        "changedCandidates": 41,
+        "uniqueListings": 419,
+        "changedCandidates": 43,
         "detailedCandidates": 40,
-        "durationMs": 90414
+        "durationMs": 98922
       },
       {
         "city": "과천시",
@@ -92,19 +92,47 @@
         "attempted": 4,
         "succeeded": 4,
         "errors": 0,
-        "uniqueListings": 240,
-        "changedCandidates": 12,
-        "detailedCandidates": 12,
-        "durationMs": 20403
+        "uniqueListings": 302,
+        "changedCandidates": 39,
+        "detailedCandidates": 39,
+        "durationMs": 42605
       }
     ],
-    "finalCandidateCount": 0,
-    "stateItemCount": 3887,
+    "finalCandidateCount": 1,
+    "stateItemCount": 3895,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
-    "skippedUnknownProbeCount": 2670,
-    "durationMs": 233086
+    "skippedUnknownProbeCount": 2677,
+    "durationMs": 272773
   },
-  "candidates": []
+  "candidates": [
+    {
+      "id": "z6p36set5txv",
+      "changeType": "new",
+      "previousPrice": null,
+      "price": 1500000,
+      "priceDropPercent": null,
+      "city": "군포시",
+      "location": "수리동",
+      "regionPath": "경기도 군포시 수리동",
+      "title": "맥북에어 15 M2 16GB 1TB 박스 / 배터리 100% 사이클 41 / 애플케어 27년 3월까지",
+      "modelHint": "맥북에어 15 M2 16GB 1TB 박스 / 배터리 100% 사이클 41 / 애플케어 27년 3월까지",
+      "cpuHint": null,
+      "ramGB": 16,
+      "storageGB": 1024,
+      "specConfidence": "needs_verification",
+      "ramTypeConfirmed": false,
+      "storageTypeConfirmed": true,
+      "postedAt": "2026-09-30T03:47:46.267Z",
+      "boostedAt": "2026-09-30T03:47:46.264Z",
+      "status": "Ongoing",
+      "description": "맥북에어 15인치 M2 16GB 1TB 판매합니다.\n\n2024년 3월에 구매한 국내 정발 제품이에요. (MQTK3KH/A)\n애플케어플러스 2027년 3월 7일까지 남아 있고, 기기에 등록된 거라 그대로 이어서 쓰시면 됩니다.\n\n배터리 사이클 41회, 성능 최대치 100%예요.\n외관 상태 좋습니다. 사진 참고해 주세요.\n\n색상: 스페이스그레이\n구성: 본체, 박스, c type 케이블\n\n초기화하고 애플 계정 로그아웃한 상태로 드려요.",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81%EC%97%90%EC%96%B4-15-m2-16gb-1tb-%EB%B0%95%EC%8A%A4-%EB%B0%B0%ED%84%B0%EB%A6%AC-100-%EC%82%AC%EC%9D%B4%ED%81%B4-41-%EC%95%A0%ED%94%8C%EC%BC%80%EC%96%B4-27%EB%85%84-3%EC%9B%94%EA%B9%8C%EC%A7%80-z6p36set5txv/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "헬로우바이",
+      "mannerTemperature": 38.9
+    }
+  ]
 }
