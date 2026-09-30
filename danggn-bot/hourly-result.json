@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-30T16:02:10.417Z",
+  "generatedAt": "2026-09-30T16:20:04.496Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -22,15 +22,14 @@
     "newnessField": "postedAt",
     "boostedAtCreatesNewCandidate": false,
     "onlyStatus": "Ongoing",
-    "ramGB": [
-      16,
-      32
-    ],
-    "storageGB": [
-      512,
-      1024
-    ],
-    "mixed256SsdPlusHdd1TbAllowed": false
+    "target": "Qwen3.8-27B smooth local inference",
+    "priceGate": false,
+    "storageGate": false,
+    "acceptedHardware": [
+      "NVIDIA RTX laptop/workstation GPU with >=16GB VRAM",
+      "Ryzen AI Max 385/388/390/392/395 with >=64GB unified memory",
+      "Apple M1-M5 Max with >=32GB unified memory"
+    ]
   },
   "stats": {
     "cities": [
@@ -43,10 +42,10 @@
         "attempted": 8,
         "succeeded": 8,
         "errors": 0,
-        "uniqueListings": 333,
-        "changedCandidates": 42,
-        "detailedCandidates": 40,
-        "durationMs": 45839
+        "uniqueListings": 276,
+        "changedCandidates": 230,
+        "detailedCandidates": 42,
+        "durationMs": 50123
       },
       {
         "city": "의왕시",
@@ -60,10 +59,10 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 448,
-        "changedCandidates": 43,
-        "detailedCandidates": 40,
-        "durationMs": 71928
+        "uniqueListings": 349,
+        "changedCandidates": 275,
+        "detailedCandidates": 44,
+        "durationMs": 78765
       },
       {
         "city": "안양시",
@@ -79,10 +78,10 @@
         "attempted": 28,
         "succeeded": 28,
         "errors": 0,
-        "uniqueListings": 409,
-        "changedCandidates": 42,
-        "detailedCandidates": 40,
-        "durationMs": 98421
+        "uniqueListings": 343,
+        "changedCandidates": 261,
+        "detailedCandidates": 45,
+        "durationMs": 95269
       },
       {
         "city": "과천시",
@@ -92,19 +91,19 @@
         "attempted": 4,
         "succeeded": 4,
         "errors": 0,
-        "uniqueListings": 292,
-        "changedCandidates": 42,
-        "detailedCandidates": 40,
-        "durationMs": 37255
+        "uniqueListings": 253,
+        "changedCandidates": 233,
+        "detailedCandidates": 41,
+        "durationMs": 40017
       }
     ],
     "finalCandidateCount": 0,
-    "stateItemCount": 4321,
-    "pendingNewnessCount": 0,
-    "pendingUnattemptedCount": 0,
+    "stateItemCount": 5000,
+    "pendingNewnessCount": 1013,
+    "pendingUnattemptedCount": 1013,
     "pendingAttemptedCount": 0,
-    "skippedUnknownProbeCount": 3081,
-    "durationMs": 253511
+    "skippedUnknownProbeCount": 3819,
+    "durationMs": 264282
   },
   "candidates": []
 }
