@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-30T02:40:31.045Z",
+  "generatedAt": "2026-09-30T02:59:40.800Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -43,10 +43,10 @@
         "attempted": 8,
         "succeeded": 8,
         "errors": 0,
-        "uniqueListings": 318,
-        "changedCandidates": 41,
+        "uniqueListings": 331,
+        "changedCandidates": 43,
         "detailedCandidates": 40,
-        "durationMs": 55217
+        "durationMs": 52408
       },
       {
         "city": "의왕시",
@@ -60,10 +60,10 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 456,
-        "changedCandidates": 49,
-        "detailedCandidates": 41,
-        "durationMs": 81289
+        "uniqueListings": 458,
+        "changedCandidates": 44,
+        "detailedCandidates": 40,
+        "durationMs": 74877
       },
       {
         "city": "안양시",
@@ -79,10 +79,10 @@
         "attempted": 28,
         "succeeded": 28,
         "errors": 0,
-        "uniqueListings": 414,
-        "changedCandidates": 45,
+        "uniqueListings": 403,
+        "changedCandidates": 43,
         "detailedCandidates": 41,
-        "durationMs": 100214
+        "durationMs": 93450
       },
       {
         "city": "과천시",
@@ -93,18 +93,46 @@
         "succeeded": 4,
         "errors": 0,
         "uniqueListings": 300,
-        "changedCandidates": 37,
-        "detailedCandidates": 37,
-        "durationMs": 38667
+        "changedCandidates": 39,
+        "detailedCandidates": 39,
+        "durationMs": 39220
       }
     ],
-    "finalCandidateCount": 0,
-    "stateItemCount": 3864,
+    "finalCandidateCount": 1,
+    "stateItemCount": 3873,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
-    "skippedUnknownProbeCount": 2649,
-    "durationMs": 275461
+    "skippedUnknownProbeCount": 2656,
+    "durationMs": 260027
   },
-  "candidates": []
+  "candidates": [
+    {
+      "id": "bhebhvp5xb37",
+      "changeType": "new",
+      "previousPrice": null,
+      "price": 1100000,
+      "priceDropPercent": null,
+      "city": "안양시",
+      "location": "평안동",
+      "regionPath": "경기도 안양시 동안구 평안동",
+      "title": "Apple 맥북 에어 15인치 실버(m2/16gb/512gb)",
+      "modelHint": "Apple 맥북 에어 15인치 실버(m2/16gb/512gb)",
+      "cpuHint": null,
+      "ramGB": 16,
+      "storageGB": 512,
+      "specConfidence": "explicit",
+      "ramTypeConfirmed": true,
+      "storageTypeConfirmed": true,
+      "postedAt": "2026-09-30T02:50:31.525Z",
+      "boostedAt": "2026-09-30T02:50:31.524Z",
+      "status": "Ongoing",
+      "description": "24년 1월 제조 23년형 맥북 에어 15인치 실버 모델입니다. 공홈에서 램16gb 저장공간512gb으로 업그레이드해서 샀고 박스와 같이 받은 충전기도 드려요.\n주로 집에 두고 쓰고 떨어트린 적도 없어서 외관하자 기능하자 모두 없습니다.\n배터리효율은 96퍼 사이클수는 71로 뜨네요\n월,화요일은 서울 동작구와 안양 인덕원에서, 그외 요일 모두 인덕원에서 직거래 가능합니다.",
+      "url": "https://www.daangn.com/kr/buy-sell/apple-%EB%A7%A5%EB%B6%81-%EC%97%90%EC%96%B4-15%EC%9D%B8%EC%B9%98-%EC%8B%A4%EB%B2%84-m2-16gb-512gb-bhebhvp5xb37/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "룰루",
+      "mannerTemperature": 38
+    }
+  ]
 }
