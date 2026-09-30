@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-30T22:59:01.112Z",
+  "generatedAt": "2026-09-30T23:22:19.784Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -42,10 +42,10 @@
         "attempted": 8,
         "succeeded": 8,
         "errors": 0,
-        "uniqueListings": 279,
-        "changedCandidates": 216,
-        "detailedCandidates": 41,
-        "durationMs": 48615
+        "uniqueListings": 280,
+        "changedCandidates": 220,
+        "detailedCandidates": 42,
+        "durationMs": 48640
       },
       {
         "city": "의왕시",
@@ -59,10 +59,10 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 352,
-        "changedCandidates": 256,
+        "uniqueListings": 357,
+        "changedCandidates": 264,
         "detailedCandidates": 42,
-        "durationMs": 67429
+        "durationMs": 64454
       },
       {
         "city": "안양시",
@@ -78,10 +78,10 @@
         "attempted": 28,
         "succeeded": 28,
         "errors": 0,
-        "uniqueListings": 347,
-        "changedCandidates": 210,
-        "detailedCandidates": 43,
-        "durationMs": 77668
+        "uniqueListings": 335,
+        "changedCandidates": 212,
+        "detailedCandidates": 42,
+        "durationMs": 91409
       },
       {
         "city": "과천시",
@@ -91,19 +91,19 @@
         "attempted": 4,
         "succeeded": 4,
         "errors": 0,
-        "uniqueListings": 253,
-        "changedCandidates": 216,
-        "detailedCandidates": 40,
-        "durationMs": 33223
+        "uniqueListings": 254,
+        "changedCandidates": 220,
+        "detailedCandidates": 41,
+        "durationMs": 36920
       }
     ],
     "finalCandidateCount": 0,
-    "stateItemCount": 4979,
-    "pendingNewnessCount": 816,
-    "pendingUnattemptedCount": 816,
+    "stateItemCount": 5000,
+    "pendingNewnessCount": 841,
+    "pendingUnattemptedCount": 841,
     "pendingAttemptedCount": 0,
-    "skippedUnknownProbeCount": 3844,
-    "durationMs": 227037
+    "skippedUnknownProbeCount": 3869,
+    "durationMs": 241528
   },
   "candidates": []
 }
