@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-30T10:26:45.196Z",
+  "generatedAt": "2026-09-30T10:41:55.621Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -43,10 +43,10 @@
         "attempted": 8,
         "succeeded": 8,
         "errors": 0,
-        "uniqueListings": 334,
-        "changedCandidates": 44,
-        "detailedCandidates": 42,
-        "durationMs": 59343
+        "uniqueListings": 335,
+        "changedCandidates": 42,
+        "detailedCandidates": 40,
+        "durationMs": 46644
       },
       {
         "city": "의왕시",
@@ -60,10 +60,10 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 438,
-        "changedCandidates": 45,
-        "detailedCandidates": 42,
-        "durationMs": 83850
+        "uniqueListings": 463,
+        "changedCandidates": 48,
+        "detailedCandidates": 41,
+        "durationMs": 69347
       },
       {
         "city": "안양시",
@@ -79,10 +79,10 @@
         "attempted": 28,
         "succeeded": 28,
         "errors": 0,
-        "uniqueListings": 416,
+        "uniqueListings": 397,
         "changedCandidates": 46,
         "detailedCandidates": 41,
-        "durationMs": 99517
+        "durationMs": 93091
       },
       {
         "city": "과천시",
@@ -92,19 +92,74 @@
         "attempted": 4,
         "succeeded": 4,
         "errors": 0,
-        "uniqueListings": 297,
-        "changedCandidates": 44,
-        "detailedCandidates": 40,
-        "durationMs": 42491
+        "uniqueListings": 298,
+        "changedCandidates": 43,
+        "detailedCandidates": 41,
+        "durationMs": 35638
       }
     ],
-    "finalCandidateCount": 0,
-    "stateItemCount": 4109,
+    "finalCandidateCount": 2,
+    "stateItemCount": 4126,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
-    "skippedUnknownProbeCount": 2879,
-    "durationMs": 285286
+    "skippedUnknownProbeCount": 2893,
+    "durationMs": 244800
   },
-  "candidates": []
+  "candidates": [
+    {
+      "id": "t8ndra143cxw",
+      "changeType": "new",
+      "previousPrice": null,
+      "price": 1200000,
+      "priceDropPercent": null,
+      "city": "의왕시",
+      "location": "삼동",
+      "regionPath": "경기도 의왕시 삼동",
+      "title": "HP 빅터스 16 게이밍 노트북 RTX 4060",
+      "modelHint": "HP 빅터스 16 게이밍 노트북 RTX 4060",
+      "cpuHint": "i7-13700HX",
+      "ramGB": 16,
+      "storageGB": 512,
+      "specConfidence": "explicit",
+      "ramTypeConfirmed": true,
+      "storageTypeConfirmed": true,
+      "postedAt": "2026-09-30T10:36:29.759Z",
+      "boostedAt": "2026-09-30T10:36:29.758Z",
+      "status": "Ongoing",
+      "description": "안녕하세요! 부품 추가 및 세팅 완료한 HP 빅터스 16 고성능 게이밍 노트북(16-r0089TX) 판매합니다.\n​최근 출장이 줄어들면서 자연스럽게 사용 빈도가 떨어져 깨끗하게 정리하려고 올립니다.\n​i5/FHD 모델이 아닌 i7-13700HX + QHD 디스플레이 + MUX 스위치가 탑재된 최상위 스펙이며, SK하이닉스 512GB + 마이크론 P3 1TB 듀얼 NVMe SSD(총 1.5TB) 구성과 8GB+8GB 듀얼채널 램으로 세팅해 두어 바로 실사용하기 최적의 상태입니다.\n\n​💻 상세 스펙\n​모델명: HP Victus 16-r0089TX\n​CPU: 인텔 코어 i7-13700HX (16코어 24쓰레드, 데스크톱급 고성능 HX 라인)\n​GPU: NVIDIA GeForce RTX 4060 (MUX 스위치 지원)\n​디스플레이: 16.1인치 QHD (2560x1440) 고해상도 / 고주사율\n​RAM: 16GB (8GB + 8GB 듀얼채널 구성으로 대역폭 최적화)\n​SSD: 총 1.5TB (메인 SK하이닉스 512GB + 서브 마이크론 P3 1TB NVMe)\n​OS: 윈도우 설치 완료 (로컬 계정 세팅)\n\n​✨ 제품 특징 및 상태\n​믿을 수 있는 대기업 듀얼 SSD (총 1.5TB): 메인 SK하이닉스 512GB에 서브 마이크론 P3 1TB를 추가하여 고용량 게임이나 작업 파일도 넉넉하게 저장 가능합니다.\n​8GB + 8GB 듀얼채널 메모리: 싱글 채널 대비 프레임 방어 및 작업 속도가 우수합니다.\n​i7-13700HX + QHD 패널 & MUX: 일반 FHD/i5 모델과 차원이 다른 화질과 데스크톱급 성능을 보여주며, MUX 스위치로 RTX 4060 성능을 100% 활용할 수 있습니다.\n​쾌적한 S급 상태: 실내 비흡연 및 반려동물 없는 환경에서 시즈모드로 깔끔하게 관리했습니다. 담배 냄새나 착색, 외관/기능 하자 일절 없습니다.\n\n​💡 OS 및 포장 관련 참고사항\n​윈도우 세팅: 클린 설치 후 로컬 계정으로 세팅해 두어 바로 부팅해 사용 가능합니다. 프리도스(FreeDOS) 모델이라 정품 키(Key)는 제거된 상태이므로 소장하신 키를 입력해 사용하시면 됩니다.\n​구성품 및 포장: 제품 원래 박스는 보관하고 있지 않아, 기존에 사용하던 노트북 가방에 안전하게 담아서 드릴 예정입니다. (구성품: 노트북 본체 + 정품 고용량 어댑터 + 노트북 가방)",
+      "url": "https://www.daangn.com/kr/buy-sell/hp-%EB%B9%85%ED%84%B0%EC%8A%A4-16-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-rtx-4060-t8ndra143cxw/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "fran",
+      "mannerTemperature": 37.6
+    },
+    {
+      "id": "a4aqeheys5et",
+      "changeType": "new",
+      "previousPrice": null,
+      "price": 1200000,
+      "priceDropPercent": null,
+      "city": "과천시",
+      "location": "갈현동",
+      "regionPath": "경기도 과천시 갈현동",
+      "title": "HP 빅터스 16 게이밍 노트북 RTX 4060",
+      "modelHint": "HP 빅터스 16 게이밍 노트북 RTX 4060",
+      "cpuHint": "i7-13700HX",
+      "ramGB": 16,
+      "storageGB": 512,
+      "specConfidence": "explicit",
+      "ramTypeConfirmed": true,
+      "storageTypeConfirmed": true,
+      "postedAt": "2026-09-30T10:36:29.636Z",
+      "boostedAt": "2026-09-30T10:36:29.633Z",
+      "status": "Ongoing",
+      "description": "안녕하세요! 부품 추가 및 세팅 완료한 HP 빅터스 16 고성능 게이밍 노트북(16-r0089TX) 판매합니다.\n​최근 출장이 줄어들면서 자연스럽게 사용 빈도가 떨어져 깨끗하게 정리하려고 올립니다.\n​i5/FHD 모델이 아닌 i7-13700HX + QHD 디스플레이 + MUX 스위치가 탑재된 최상위 스펙이며, SK하이닉스 512GB + 마이크론 P3 1TB 듀얼 NVMe SSD(총 1.5TB) 구성과 8GB+8GB 듀얼채널 램으로 세팅해 두어 바로 실사용하기 최적의 상태입니다.\n\n​💻 상세 스펙\n​모델명: HP Victus 16-r0089TX\n​CPU: 인텔 코어 i7-13700HX (16코어 24쓰레드, 데스크톱급 고성능 HX 라인)\n​GPU: NVIDIA GeForce RTX 4060 (MUX 스위치 지원)\n​디스플레이: 16.1인치 QHD (2560x1440) 고해상도 / 고주사율\n​RAM: 16GB (8GB + 8GB 듀얼채널 구성으로 대역폭 최적화)\n​SSD: 총 1.5TB (메인 SK하이닉스 512GB + 서브 마이크론 P3 1TB NVMe)\n​OS: 윈도우 설치 완료 (로컬 계정 세팅)\n\n​✨ 제품 특징 및 상태\n​믿을 수 있는 대기업 듀얼 SSD (총 1.5TB): 메인 SK하이닉스 512GB에 서브 마이크론 P3 1TB를 추가하여 고용량 게임이나 작업 파일도 넉넉하게 저장 가능합니다.\n​8GB + 8GB 듀얼채널 메모리: 싱글 채널 대비 프레임 방어 및 작업 속도가 우수합니다.\n​i7-13700HX + QHD 패널 & MUX: 일반 FHD/i5 모델과 차원이 다른 화질과 데스크톱급 성능을 보여주며, MUX 스위치로 RTX 4060 성능을 100% 활용할 수 있습니다.\n​쾌적한 S급 상태: 실내 비흡연 및 반려동물 없는 환경에서 시즈모드로 깔끔하게 관리했습니다. 담배 냄새나 착색, 외관/기능 하자 일절 없습니다.\n\n​💡 OS 및 포장 관련 참고사항\n​윈도우 세팅: 클린 설치 후 로컬 계정으로 세팅해 두어 바로 부팅해 사용 가능합니다. 프리도스(FreeDOS) 모델이라 정품 키(Key)는 제거된 상태이므로 소장하신 키를 입력해 사용하시면 됩니다.\n​구성품 및 포장: 제품 원래 박스는 보관하고 있지 않아, 기존에 사용하던 노트북 가방에 안전하게 담아서 드릴 예정입니다. (구성품: 노트북 본체 + 정품 고용량 어댑터 + 노트북 가방)",
+      "url": "https://www.daangn.com/kr/buy-sell/hp-%EB%B9%85%ED%84%B0%EC%8A%A4-16-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-rtx-4060-a4aqeheys5et/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "fran",
+      "mannerTemperature": 37.6
+    }
+  ]
 }
