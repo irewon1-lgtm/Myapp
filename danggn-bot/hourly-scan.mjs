@@ -320,8 +320,8 @@ function analyzeHardware(item) {
   const text = ((item.title ?? '') + '\n' + (item.description ?? '')).replace(/\s+/g, ' ');
 
   const labeledRam =
-    text.match(/(?:RAM|메모리|램|통합\s*메모리)\s*[:\-]?\s*(16|24|32|36|48|64|96|128|192)\s*(?:GB|G)\b/i)?.[1]
-    ?? text.match(/\b(16|24|32|36|48|64|96|128|192)\s*(?:GB|G)\s*(?:RAM|메모리|램|통합\s*메모리)\b/i)?.[1]
+    text.match(/(?:\bRAM\b|메모리|램|통합\s*메모리)\s*[:\-]?\s*(16|24|32|36|48|64|96|128|192)\s*(?:GB|G)\b/i)?.[1]
+    ?? text.match(/\b(16|24|32|36|48|64|96|128|192)\s*(?:GB|G)\s*(?:\bRAM\b|메모리|램|통합\s*메모리)/i)?.[1]
     ?? null;
   const genericRam = text.match(/\b(32|36|48|64|96|128|192)\s*(?:GB|G)\b/i)?.[1] ?? null;
   const ramGB = Number(labeledRam ?? genericRam) || null;
