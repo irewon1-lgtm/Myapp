@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-30T18:26:48.492Z",
+  "generatedAt": "2026-09-30T18:45:23.293Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -42,10 +42,10 @@
         "attempted": 8,
         "succeeded": 8,
         "errors": 0,
-        "uniqueListings": 273,
+        "uniqueListings": 277,
         "changedCandidates": 222,
         "detailedCandidates": 40,
-        "durationMs": 45557
+        "durationMs": 49804
       },
       {
         "city": "의왕시",
@@ -59,10 +59,10 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 346,
-        "changedCandidates": 266,
-        "detailedCandidates": 40,
-        "durationMs": 69562
+        "uniqueListings": 330,
+        "changedCandidates": 260,
+        "detailedCandidates": 41,
+        "durationMs": 69736
       },
       {
         "city": "안양시",
@@ -78,10 +78,10 @@
         "attempted": 28,
         "succeeded": 28,
         "errors": 0,
-        "uniqueListings": 342,
-        "changedCandidates": 237,
-        "detailedCandidates": 40,
-        "durationMs": 86232
+        "uniqueListings": 344,
+        "changedCandidates": 235,
+        "detailedCandidates": 41,
+        "durationMs": 87768
       },
       {
         "city": "과천시",
@@ -91,19 +91,19 @@
         "attempted": 4,
         "succeeded": 4,
         "errors": 0,
-        "uniqueListings": 252,
-        "changedCandidates": 223,
+        "uniqueListings": 253,
+        "changedCandidates": 222,
         "detailedCandidates": 40,
-        "durationMs": 36795
+        "durationMs": 37662
       }
     ],
     "finalCandidateCount": 0,
-    "stateItemCount": 5000,
-    "pendingNewnessCount": 990,
-    "pendingUnattemptedCount": 990,
+    "stateItemCount": 4994,
+    "pendingNewnessCount": 966,
+    "pendingUnattemptedCount": 966,
     "pendingAttemptedCount": 0,
-    "skippedUnknownProbeCount": 3846,
-    "durationMs": 238258
+    "skippedUnknownProbeCount": 3838,
+    "durationMs": 245074
   },
   "candidates": []
 }
