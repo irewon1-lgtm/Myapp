@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-30T10:41:55.621Z",
+  "generatedAt": "2026-09-30T11:00:20.770Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -43,10 +43,10 @@
         "attempted": 8,
         "succeeded": 8,
         "errors": 0,
-        "uniqueListings": 335,
-        "changedCandidates": 42,
+        "uniqueListings": 331,
+        "changedCandidates": 43,
         "detailedCandidates": 40,
-        "durationMs": 46644
+        "durationMs": 51029
       },
       {
         "city": "의왕시",
@@ -60,10 +60,10 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 463,
-        "changedCandidates": 48,
-        "detailedCandidates": 41,
-        "durationMs": 69347
+        "uniqueListings": 457,
+        "changedCandidates": 42,
+        "detailedCandidates": 40,
+        "durationMs": 75309
       },
       {
         "city": "안양시",
@@ -79,10 +79,10 @@
         "attempted": 28,
         "succeeded": 28,
         "errors": 0,
-        "uniqueListings": 397,
-        "changedCandidates": 46,
-        "detailedCandidates": 41,
-        "durationMs": 93091
+        "uniqueListings": 418,
+        "changedCandidates": 42,
+        "detailedCandidates": 40,
+        "durationMs": 90736
       },
       {
         "city": "과천시",
@@ -92,74 +92,47 @@
         "attempted": 4,
         "succeeded": 4,
         "errors": 0,
-        "uniqueListings": 298,
-        "changedCandidates": 43,
-        "detailedCandidates": 41,
-        "durationMs": 35638
+        "uniqueListings": 239,
+        "changedCandidates": 13,
+        "detailedCandidates": 13,
+        "durationMs": 19660
       }
     ],
-    "finalCandidateCount": 2,
-    "stateItemCount": 4126,
+    "finalCandidateCount": 1,
+    "stateItemCount": 4134,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
-    "skippedUnknownProbeCount": 2893,
-    "durationMs": 244800
+    "skippedUnknownProbeCount": 2900,
+    "durationMs": 236804
   },
   "candidates": [
     {
-      "id": "t8ndra143cxw",
+      "id": "oppodxhwkzk9",
       "changeType": "new",
       "previousPrice": null,
-      "price": 1200000,
+      "price": 1500000,
       "priceDropPercent": null,
-      "city": "의왕시",
-      "location": "삼동",
-      "regionPath": "경기도 의왕시 삼동",
-      "title": "HP 빅터스 16 게이밍 노트북 RTX 4060",
-      "modelHint": "HP 빅터스 16 게이밍 노트북 RTX 4060",
-      "cpuHint": "i7-13700HX",
-      "ramGB": 16,
+      "city": "안양시",
+      "location": "안양동",
+      "regionPath": "경기도 안양시 만안구 안양동",
+      "title": "[상태최상 풀박스] 맥북프로 14인치 M1 Pro / 32GB / 512GB",
+      "modelHint": "[상태최상 풀박스] 맥북프로 14인치 M1 Pro / 32GB / 512GB",
+      "cpuHint": null,
+      "ramGB": 32,
       "storageGB": 512,
       "specConfidence": "explicit",
       "ramTypeConfirmed": true,
       "storageTypeConfirmed": true,
-      "postedAt": "2026-09-30T10:36:29.759Z",
-      "boostedAt": "2026-09-30T10:36:29.758Z",
+      "postedAt": "2026-09-30T10:57:32.979Z",
+      "boostedAt": "2026-09-30T10:57:32.978Z",
       "status": "Ongoing",
-      "description": "안녕하세요! 부품 추가 및 세팅 완료한 HP 빅터스 16 고성능 게이밍 노트북(16-r0089TX) 판매합니다.\n​최근 출장이 줄어들면서 자연스럽게 사용 빈도가 떨어져 깨끗하게 정리하려고 올립니다.\n​i5/FHD 모델이 아닌 i7-13700HX + QHD 디스플레이 + MUX 스위치가 탑재된 최상위 스펙이며, SK하이닉스 512GB + 마이크론 P3 1TB 듀얼 NVMe SSD(총 1.5TB) 구성과 8GB+8GB 듀얼채널 램으로 세팅해 두어 바로 실사용하기 최적의 상태입니다.\n\n​💻 상세 스펙\n​모델명: HP Victus 16-r0089TX\n​CPU: 인텔 코어 i7-13700HX (16코어 24쓰레드, 데스크톱급 고성능 HX 라인)\n​GPU: NVIDIA GeForce RTX 4060 (MUX 스위치 지원)\n​디스플레이: 16.1인치 QHD (2560x1440) 고해상도 / 고주사율\n​RAM: 16GB (8GB + 8GB 듀얼채널 구성으로 대역폭 최적화)\n​SSD: 총 1.5TB (메인 SK하이닉스 512GB + 서브 마이크론 P3 1TB NVMe)\n​OS: 윈도우 설치 완료 (로컬 계정 세팅)\n\n​✨ 제품 특징 및 상태\n​믿을 수 있는 대기업 듀얼 SSD (총 1.5TB): 메인 SK하이닉스 512GB에 서브 마이크론 P3 1TB를 추가하여 고용량 게임이나 작업 파일도 넉넉하게 저장 가능합니다.\n​8GB + 8GB 듀얼채널 메모리: 싱글 채널 대비 프레임 방어 및 작업 속도가 우수합니다.\n​i7-13700HX + QHD 패널 & MUX: 일반 FHD/i5 모델과 차원이 다른 화질과 데스크톱급 성능을 보여주며, MUX 스위치로 RTX 4060 성능을 100% 활용할 수 있습니다.\n​쾌적한 S급 상태: 실내 비흡연 및 반려동물 없는 환경에서 시즈모드로 깔끔하게 관리했습니다. 담배 냄새나 착색, 외관/기능 하자 일절 없습니다.\n\n​💡 OS 및 포장 관련 참고사항\n​윈도우 세팅: 클린 설치 후 로컬 계정으로 세팅해 두어 바로 부팅해 사용 가능합니다. 프리도스(FreeDOS) 모델이라 정품 키(Key)는 제거된 상태이므로 소장하신 키를 입력해 사용하시면 됩니다.\n​구성품 및 포장: 제품 원래 박스는 보관하고 있지 않아, 기존에 사용하던 노트북 가방에 안전하게 담아서 드릴 예정입니다. (구성품: 노트북 본체 + 정품 고용량 어댑터 + 노트북 가방)",
-      "url": "https://www.daangn.com/kr/buy-sell/hp-%EB%B9%85%ED%84%B0%EC%8A%A4-16-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-rtx-4060-t8ndra143cxw/",
+      "description": "[제품 정보]\n모델명: 맥북프로 14인치 (A2442)  \n스펙: M1 Pro (8코어 CPU / 14코어 GPU) /RAM 32GB (CTO 업그레이드) / SSD 512GB  \n색상: 스페이스 그레이  \n구성품: 본체, 정품 박스 및 구성품 일체\n\n어제 선물로 받은 제품입니다\n기존에 사용하던 제품의 메인보드/칩셋 관련 부품을 새로 교체 및 정비하여 기스나 사용감 없이 외관 및 기능 상태 모두 새 제품급으로 매우 깨끗합니다. \n RAM 32GB 업그레이드 옵션 모델이라 고사양 작업(영상 편집, 그래픽 디자인, 개발 등) 시에도 쾌적하게 작동합니다.\n구매 확정 시 애플 계정 로그아웃 및 깔끔하게 완전 초기화해서 전달해 드립니다\n+충전기도 드립니다\n\n* 직거래는 서울 안에서만 *\n* 택배거래는 파손주의 포장 후 발송 (택배비 별도/선불) *\n\n편하게 연락주세요! 급전이라 싸게 내놓은겁니다\n고가 전자기기 판매 처음이라 모르는것이 많습니다, 하여 가격 제안 가능하고 상태 상세컷이나 작동여부컷 부탁하시면 보내드릴게요!",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%83%81%ED%83%9C%EC%B5%9C%EC%83%81-%ED%92%80%EB%B0%95%EC%8A%A4-%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C-14%EC%9D%B8%EC%B9%98-m1-pro-32gb-512gb-oppodxhwkzk9/",
       "favoriteCount": 0,
       "chatCount": 0,
-      "sellerName": "fran",
-      "mannerTemperature": 37.6
-    },
-    {
-      "id": "a4aqeheys5et",
-      "changeType": "new",
-      "previousPrice": null,
-      "price": 1200000,
-      "priceDropPercent": null,
-      "city": "과천시",
-      "location": "갈현동",
-      "regionPath": "경기도 과천시 갈현동",
-      "title": "HP 빅터스 16 게이밍 노트북 RTX 4060",
-      "modelHint": "HP 빅터스 16 게이밍 노트북 RTX 4060",
-      "cpuHint": "i7-13700HX",
-      "ramGB": 16,
-      "storageGB": 512,
-      "specConfidence": "explicit",
-      "ramTypeConfirmed": true,
-      "storageTypeConfirmed": true,
-      "postedAt": "2026-09-30T10:36:29.636Z",
-      "boostedAt": "2026-09-30T10:36:29.633Z",
-      "status": "Ongoing",
-      "description": "안녕하세요! 부품 추가 및 세팅 완료한 HP 빅터스 16 고성능 게이밍 노트북(16-r0089TX) 판매합니다.\n​최근 출장이 줄어들면서 자연스럽게 사용 빈도가 떨어져 깨끗하게 정리하려고 올립니다.\n​i5/FHD 모델이 아닌 i7-13700HX + QHD 디스플레이 + MUX 스위치가 탑재된 최상위 스펙이며, SK하이닉스 512GB + 마이크론 P3 1TB 듀얼 NVMe SSD(총 1.5TB) 구성과 8GB+8GB 듀얼채널 램으로 세팅해 두어 바로 실사용하기 최적의 상태입니다.\n\n​💻 상세 스펙\n​모델명: HP Victus 16-r0089TX\n​CPU: 인텔 코어 i7-13700HX (16코어 24쓰레드, 데스크톱급 고성능 HX 라인)\n​GPU: NVIDIA GeForce RTX 4060 (MUX 스위치 지원)\n​디스플레이: 16.1인치 QHD (2560x1440) 고해상도 / 고주사율\n​RAM: 16GB (8GB + 8GB 듀얼채널 구성으로 대역폭 최적화)\n​SSD: 총 1.5TB (메인 SK하이닉스 512GB + 서브 마이크론 P3 1TB NVMe)\n​OS: 윈도우 설치 완료 (로컬 계정 세팅)\n\n​✨ 제품 특징 및 상태\n​믿을 수 있는 대기업 듀얼 SSD (총 1.5TB): 메인 SK하이닉스 512GB에 서브 마이크론 P3 1TB를 추가하여 고용량 게임이나 작업 파일도 넉넉하게 저장 가능합니다.\n​8GB + 8GB 듀얼채널 메모리: 싱글 채널 대비 프레임 방어 및 작업 속도가 우수합니다.\n​i7-13700HX + QHD 패널 & MUX: 일반 FHD/i5 모델과 차원이 다른 화질과 데스크톱급 성능을 보여주며, MUX 스위치로 RTX 4060 성능을 100% 활용할 수 있습니다.\n​쾌적한 S급 상태: 실내 비흡연 및 반려동물 없는 환경에서 시즈모드로 깔끔하게 관리했습니다. 담배 냄새나 착색, 외관/기능 하자 일절 없습니다.\n\n​💡 OS 및 포장 관련 참고사항\n​윈도우 세팅: 클린 설치 후 로컬 계정으로 세팅해 두어 바로 부팅해 사용 가능합니다. 프리도스(FreeDOS) 모델이라 정품 키(Key)는 제거된 상태이므로 소장하신 키를 입력해 사용하시면 됩니다.\n​구성품 및 포장: 제품 원래 박스는 보관하고 있지 않아, 기존에 사용하던 노트북 가방에 안전하게 담아서 드릴 예정입니다. (구성품: 노트북 본체 + 정품 고용량 어댑터 + 노트북 가방)",
-      "url": "https://www.daangn.com/kr/buy-sell/hp-%EB%B9%85%ED%84%B0%EC%8A%A4-16-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-rtx-4060-a4aqeheys5et/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "fran",
-      "mannerTemperature": 37.6
+      "sellerName": "원이를원한다",
+      "mannerTemperature": 36.8
     }
   ]
 }
