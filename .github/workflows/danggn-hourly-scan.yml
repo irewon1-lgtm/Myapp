@@ -82,8 +82,12 @@ jobs:
                   "city": candidate.get("city"),
                   "location": candidate.get("location"),
                   "cpuHint": candidate.get("cpuHint"),
+                  "gpuHint": candidate.get("gpuHint"),
+                  "vramGB": candidate.get("vramGB"),
                   "ramGB": candidate.get("ramGB"),
                   "storageGB": candidate.get("storageGB"),
+                  "llmCapability": candidate.get("llmCapability"),
+                  "llmReason": candidate.get("llmReason"),
                   "postedAt": candidate.get("postedAt"),
                   "url": candidate.get("url"),
                   "firstAlertedAt": old.get("firstAlertedAt") or now,
@@ -102,7 +106,7 @@ jobs:
           print("pending alerts:", len(items))
           PY
 
-      - name: Send ntfy once for ChatGPT-approved deals
+      - name: Send ntfy once for Qwen3.8-27B capable laptops
         if: always()
         continue-on-error: true
         env:
@@ -121,34 +125,33 @@ jobs:
               print("NTFY_URL missing; skip")
               raise SystemExit(0)
 
-          approved_path = Path("danggn-bot/chatgpt-approved.json")
+          result_path = Path("danggn-bot/hourly-result.json")
           sent_path = Path("danggn-bot/ntfy-sent.json")
 
           try:
-              approved_doc = json.loads(approved_path.read_text(encoding="utf-8"))
+              result = json.loads(result_path.read_text(encoding="utf-8"))
           except Exception:
-              approved_doc = {"version": 1, "updatedAt": None, "items": {}}
+              result = {"candidates": []}
 
           try:
               sent_doc = json.loads(sent_path.read_text(encoding="utf-8"))
           except Exception:
               sent_doc = {"version": 1, "updatedAt": None, "items": {}}
 
-          approved = approved_doc.get("items")
           sent = sent_doc.get("items")
-          if not isinstance(approved, dict):
-              approved = {}
           if not isinstance(sent, dict):
               sent = {}
 
           fresh = []
-          for key, item in approved.items():
+          for item in result.get("candidates") or []:
               if not isinstance(item, dict):
+                  continue
+              key = str(item.get("id") or item.get("url") or "").strip()
+              if not key:
                   continue
               current_price = item.get("price")
               old = sent.get(key) if isinstance(sent.get(key), dict) else None
               old_price = old.get("price") if old else None
-
               first_time = old is None
               lower_price = (
                   old is not None
@@ -157,10 +160,10 @@ jobs:
                   and current_price < old_price
               )
               if first_time or lower_price:
-                  fresh.append((str(key), item))
+                  fresh.append((key, item))
 
           if not fresh:
-              print("ntfy: no new approved deals")
+              print("ntfy: no new Qwen-capable laptops")
               raise SystemExit(0)
 
           def won(v):
@@ -169,13 +172,15 @@ jobs:
               except Exception:
                   return "가격 확인 필요"
 
-          lines = ["당근 특가"]
+          lines = ["Qwen3.8-27B 구동 가능 노트북"]
           for idx, (_, item) in enumerate(fresh[:10], 1):
               title = str(item.get("title") or "노트북 매물").replace("\n", " ").strip()
               place = " ".join(str(x) for x in [item.get("city"), item.get("location")] if x)
               spec = " · ".join(
                   str(x) for x in [
                       item.get("cpuHint"),
+                      item.get("gpuHint"),
+                      ("VRAM " + str(item.get("vramGB")) + "GB") if item.get("vramGB") else None,
                       ("RAM " + str(item.get("ramGB")) + "GB") if item.get("ramGB") else None,
                       ("SSD " + str(item.get("storageGB")) + "GB") if item.get("storageGB") else None
                   ] if x
@@ -184,8 +189,8 @@ jobs:
               lines.append(won(item.get("price")) + ((" · " + place) if place else ""))
               if spec:
                   lines.append(spec)
-              if item.get("dealReason"):
-                  lines.append(str(item.get("dealReason")))
+              if item.get("llmReason"):
+                  lines.append(str(item.get("llmReason")))
               if item.get("url"):
                   lines.append(str(item.get("url")))
               lines.append("")
@@ -193,9 +198,9 @@ jobs:
           body = "\n".join(lines).strip()
           headers = {
               "Content-Type": "text/plain; charset=utf-8",
-              "Title": "Danggn deal",
+              "Title": "Qwen 27B laptop",
               "Priority": "high",
-              "Tags": "computer,moneybag"
+              "Tags": "computer,robot"
           }
           first_url = next((str(item.get("url")) for _, item in fresh if item.get("url")), None)
           if first_url:
@@ -228,7 +233,7 @@ jobs:
               json.dumps(sent_doc, ensure_ascii=False, indent=2) + "\n",
               encoding="utf-8"
           )
-          print("ntfy approved one-time alerts:", len(fresh))
+          print("ntfy Qwen-capable alerts:", len(fresh))
           PY
 
       - name: Persist latest state and result
