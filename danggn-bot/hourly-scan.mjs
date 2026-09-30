@@ -13,12 +13,13 @@ const MAX_STATE_ITEMS = 5000;
 const SEARCH_LIMIT = 80;
 const DETAIL_LIMIT_PER_CITY = 80;
 const UNKNOWN_NEWNESS_PROBE_LIMIT_PER_CITY = 40;
+const MAX_NEWNESS_DETAIL_ATTEMPTS = 3;
 
 const QUERIES = [
   '노트북',
-  '그램',
-  '갤럭시북',
-  'ThinkPad'
+  'RTX 노트북',
+  'Ryzen AI Max',
+  '맥북 Max'
 ];
 
 const CITIES = [
@@ -306,38 +307,82 @@ function isRecentByPostedAt(item, nowMs) {
   return postedMs >= nowMs - WINDOW_HOURS * 60 * 60 * 1000 && postedMs <= nowMs + 5 * 60 * 1000;
 }
 
-function analyzeSpecs(item) {
+function capacityToGB(raw) {
+  if (!raw) return null;
+  const m = String(raw).match(/(\d+(?:\.\d+)?)\s*(TB|GB|G)\b/i);
+  if (!m) return null;
+  const value = Number(m[1]);
+  if (!Number.isFinite(value)) return null;
+  return /TB/i.test(m[2]) ? Math.round(value * 1024) : Math.round(value);
+}
+
+function analyzeHardware(item) {
   const text = ((item.title ?? '') + '\n' + (item.description ?? '')).replace(/\s+/g, ' ');
 
   const labeledRam =
-    text.match(/(?:RAM|메모리|램)\s*[:\-]?\s*(16|32)\s*(?:GB|G)\b/i)?.[1]
-    ?? text.match(/\b(16|32)\s*(?:GB|G)\s*(?:RAM|메모리|램)\b/i)?.[1]
+    text.match(/(?:RAM|메모리|램|통합\s*메모리)\s*[:\-]?\s*(16|24|32|36|48|64|96|128|192)\s*(?:GB|G)\b/i)?.[1]
+    ?? text.match(/\b(16|24|32|36|48|64|96|128|192)\s*(?:GB|G)\s*(?:RAM|메모리|램|통합\s*메모리)\b/i)?.[1]
     ?? null;
-  const genericRam = text.match(/\b(16|32)\s*GB\b/i)?.[1] ?? null;
-  const ram = labeledRam ?? genericRam;
+  const genericRam = text.match(/\b(32|36|48|64|96|128|192)\s*(?:GB|G)\b/i)?.[1] ?? null;
+  const ramGB = Number(labeledRam ?? genericRam) || null;
 
-  const storageForward = text.match(/(?:SSD|NVMe|M\.?2)[^.;,\n]{0,32}?(512\s*(?:GB|G)|1\s*TB|1024\s*(?:GB|G))/i);
-  const storageReverse = text.match(/(512\s*(?:GB|G)|1\s*TB|1024\s*(?:GB|G))[^.;,\n]{0,32}?(?:SSD|NVMe|M\.?2)/i);
-  const labeledStorage = storageForward?.[1] ?? storageReverse?.[1] ?? null;
-  const genericStorage = text.match(/\b(512\s*GB|1\s*TB|1024\s*GB)\b/i)?.[1] ?? null;
-  const storageRaw = labeledStorage ?? genericStorage;
+  const storageRaw =
+    text.match(/(?:SSD|NVMe|M\.?2)[^.;,\n]{0,32}?(256\s*(?:GB|G)|512\s*(?:GB|G)|\d+(?:\.\d+)?\s*TB|1024\s*(?:GB|G)|2048\s*(?:GB|G))/i)?.[1]
+    ?? text.match(/(256\s*(?:GB|G)|512\s*(?:GB|G)|\d+(?:\.\d+)?\s*TB|1024\s*(?:GB|G)|2048\s*(?:GB|G))[^.;,\n]{0,32}?(?:SSD|NVMe|M\.?2)/i)?.[1]
+    ?? null;
+  const storageGB = capacityToGB(storageRaw);
 
-  const mixedBad =
-    /(?:SSD|NVMe|M\.?2)[^.;,\n]{0,24}?256\s*(?:GB|G)[^.;,\n]{0,48}?(?:HDD|하드)[^.;,\n]{0,24}?(?:1\s*TB|1024\s*(?:GB|G))/i.test(text)
-    || /(?:HDD|하드)[^.;,\n]{0,24}?(?:1\s*TB|1024\s*(?:GB|G))[^.;,\n]{0,48}?(?:SSD|NVMe|M\.?2)[^.;,\n]{0,24}?256\s*(?:GB|G)/i.test(text);
+  const gpuHint =
+    text.match(/\bRTX\s*(?:PRO\s*)?\d{4}(?:\s*Ti)?(?:\s*(?:Laptop|Mobile|Ada|Blackwell))?\b/i)?.[0]
+    ?? text.match(/\bRTX\s*A\d{4}\b/i)?.[0]
+    ?? text.match(/\bRadeon\s*80(?:50|60)S\b/i)?.[0]
+    ?? text.match(/\bApple\s*M[1-5]\s*Max\b/i)?.[0]
+    ?? text.match(/\bM[1-5]\s*Max\b/i)?.[0]
+    ?? null;
 
-  const storageGB = storageRaw
-    ? (/1\s*TB|1024/i.test(storageRaw) ? 1024 : 512)
-    : null;
+  const explicitVram =
+    text.match(/(?:VRAM|그래픽\s*(?:메모리)?|GDDR[67X]*)\s*[:\-]?\s*(8|10|12|16|20|24|32|48)\s*(?:GB|G)\b/i)?.[1]
+    ?? text.match(/\b(8|10|12|16|20|24|32|48)\s*(?:GB|G)\s*(?:VRAM|GDDR[67X]*)\b/i)?.[1]
+    ?? null;
+
+  let vramGB = Number(explicitVram) || null;
+  if (/\bRTX\s*5090\b/i.test(text)) vramGB = Math.max(vramGB ?? 0, 24);
+  if (/\bRTX\s*(?:5080|4090)\b/i.test(text)) vramGB = Math.max(vramGB ?? 0, 16);
+  if (/\bRTX\s*3080\s*Ti\b/i.test(text)) vramGB = Math.max(vramGB ?? 0, 16);
+  if (/\bRTX\s*5000\s*Ada\b/i.test(text)) vramGB = Math.max(vramGB ?? 0, 16);
+  if (/\bRTX\s*PRO\s*5000\s*Blackwell\b/i.test(text)) vramGB = Math.max(vramGB ?? 0, 24);
+  if (/\bRTX\s*PRO\s*4000\s*Blackwell\b/i.test(text)) vramGB = Math.max(vramGB ?? 0, 16);
+
+  const nvidiaCapable = /\bRTX\b/i.test(text) && (vramGB ?? 0) >= 16;
+  const strixHalo = /\bRyzen\s*AI\s*Max(?:\+|\s*Plus|\s*Pro)?\s*(?:385|388|390|392|395)\b/i.test(text)
+    && (ramGB ?? 0) >= 64;
+  const appleMax = /\b(?:Apple\s*)?M[1-5]\s*Max\b/i.test(text)
+    && (ramGB ?? 0) >= 32;
+
+  let llmCapability = null;
+  let llmReason = null;
+  if (nvidiaCapable) {
+    llmCapability = (vramGB ?? 0) >= 24 ? 'QWEN27B_FULL_GPU' : 'QWEN27B_16GB_GPU';
+    llmReason = (vramGB ?? 0) >= 24
+      ? 'VRAM 24GB 이상: Qwen3.8-27B 4-bit를 GPU에 올리고 컨텍스트 여유 확보 가능'
+      : 'VRAM 16GB급: IQ4_XS/Q4 계열로 실사용 가능한 GPU 가속 구동 가능';
+  } else if (strixHalo) {
+    llmCapability = 'QWEN27B_STRIX_HALO';
+    llmReason = 'Ryzen AI Max 385/388/390/392/395 + 통합메모리 64GB 이상: Qwen3.8-27B 4-bit 실사용 가능';
+  } else if (appleMax) {
+    llmCapability = 'QWEN27B_APPLE_MAX';
+    llmReason = 'Apple M Max + 통합메모리 32GB 이상: Qwen3.8-27B 4-bit 실사용 가능';
+  }
 
   return {
-    ok: Boolean(ram && storageGB && !mixedBad),
-    ramGB: ram ? Number(ram) : null,
+    ok: Boolean(llmCapability),
+    ramGB,
     storageGB,
-    mixedBad,
-    ramTypeConfirmed: Boolean(labeledRam),
-    storageTypeConfirmed: Boolean(labeledStorage),
-    confidence: labeledRam && labeledStorage ? 'explicit' : 'needs_verification'
+    gpuHint,
+    vramGB,
+    llmCapability,
+    llmReason,
+    confidence: (vramGB || strixHalo || appleMax) ? 'explicit_or_model_known' : 'insufficient'
   };
 }
 
@@ -345,8 +390,10 @@ function extractCpu(text) {
   const compact = String(text ?? '').replace(/\s+/g, ' ');
   return compact.match(/\b(?:Intel\s*)?Core\s*Ultra\s*[3579]\s*\d{3}[A-Z]*\b/i)?.[0]
     ?? compact.match(/\bi[3579]-?\d{4,5}[A-Z]{0,2}\b/i)?.[0]
+    ?? compact.match(/\bRyzen\s*AI\s*Max(?:\+|\s*Plus|\s*Pro)?\s*\d{3}\b/i)?.[0]
     ?? compact.match(/\bRyzen\s*[3579]\s*\d{4}[A-Z]{0,3}\b/i)?.[0]
-    ?? compact.match(/\bApple\s*M[1-4](?:\s*(?:Pro|Max|Ultra))?\b/i)?.[0]
+    ?? compact.match(/\bApple\s*M[1-5](?:\s*(?:Pro|Max|Ultra))?\b/i)?.[0]
+    ?? compact.match(/\bM[1-5]\s*(?:Pro|Max|Ultra)\b/i)?.[0]
     ?? null;
 }
 
@@ -368,6 +415,15 @@ async function readState() {
 
 function clone(value) {
   return JSON.parse(JSON.stringify(value));
+}
+
+function reviveSkippedNewness(state) {
+  for (const item of Object.values(state.items ?? {})) {
+    if (!item?.newnessProbeSkipped || item?.postedAt || item?.newnessUnknownExpired) continue;
+    item.pendingNewnessCheck = true;
+    item.newnessDetailAttempted = false;
+    item.newnessDetailAttempts = Number(item.newnessDetailAttempts) || 0;
+  }
 }
 
 function expirePendingNewness(state, nowMs) {
@@ -398,6 +454,7 @@ async function main() {
   const nowMs = startedAt.getTime();
   const originalState = await readState();
   const nextState = clone(originalState);
+  reviveSkippedNewness(nextState);
   expirePendingNewness(nextState, nowMs);
 
   const candidates = [];
@@ -453,7 +510,6 @@ async function main() {
 
     for (const item of found.values()) {
       if (item.status !== 'Ongoing') continue;
-      if (item.price && (item.price < 100000 || item.price > 1500000)) continue;
 
       const key = itemKey(city.name, item);
       const previous = nextState.items?.[key];
@@ -487,14 +543,17 @@ async function main() {
 
       let pendingNewnessCheck = pendingBefore;
       let newnessDetailAttempted = detailAttemptedBefore;
+      let newnessDetailAttempts = Number(previous?.newnessDetailAttempts) || 0;
       let newnessUnknownExpired = Boolean(previous?.newnessUnknownExpired);
 
       if (dateResolvedWhilePending) {
         pendingNewnessCheck = false;
+        newnessDetailAttempts = 0;
         newnessUnknownExpired = false;
       } else if (unseen && !itemWithKnownDate.postedAt) {
         pendingNewnessCheck = true;
         newnessDetailAttempted = false;
+        newnessDetailAttempts = 0;
         newnessUnknownExpired = false;
       }
 
@@ -505,7 +564,7 @@ async function main() {
         changeType = 'new';
       } else if (unseen && !itemWithKnownDate.postedAt) {
         changeType = 'newness_check';
-      } else if (pendingNewnessCheck && !itemWithKnownDate.postedAt && !newnessDetailAttempted) {
+      } else if (pendingNewnessCheck && !itemWithKnownDate.postedAt && newnessDetailAttempts < MAX_NEWNESS_DETAIL_ATTEMPTS) {
         changeType = 'newness_backlog';
       }
 
@@ -528,6 +587,7 @@ async function main() {
         firstSeenAt,
         pendingNewnessCheck,
         newnessDetailAttempted,
+        newnessDetailAttempts,
         newnessUnknownExpired,
         lastSeenAt: startedIso,
         city: city.name
@@ -550,27 +610,46 @@ async function main() {
       return bFirst - aFirst;
     });
 
-    const detailQueue = [];
-    let unknownProbeCount = 0;
-    for (const item of stage1) {
-      const isUnknownProbe = item.changeType === 'newness_check' || item.changeType === 'newness_backlog';
-      if (isUnknownProbe) {
-        if (unknownProbeCount >= UNKNOWN_NEWNESS_PROBE_LIMIT_PER_CITY) {
-          const key = itemKey(city.name, item);
-          const baseline = nextState.items[key] ?? {};
-          nextState.items[key] = {
-            ...baseline,
-            pendingNewnessCheck: false,
-            newnessProbeSkipped: true,
-            lastSeenAt: startedIso
-          };
-          continue;
-        }
-        unknownProbeCount++;
-      }
-      detailQueue.push(item);
-      if (detailQueue.length >= DETAIL_LIMIT_PER_CITY) break;
+    const nonProbe = stage1.filter(item => item.changeType !== 'newness_check' && item.changeType !== 'newness_backlog');
+    const freshProbe = stage1.filter(item => item.changeType === 'newness_check');
+    const backlogProbe = stage1
+      .filter(item => item.changeType === 'newness_backlog')
+      .sort((a, b) => new Date(a.firstSeenAt ?? 0).getTime() - new Date(b.firstSeenAt ?? 0).getTime());
+
+    const halfProbeBudget = Math.floor(UNKNOWN_NEWNESS_PROBE_LIMIT_PER_CITY / 2);
+    let selectedFresh = freshProbe.slice(0, halfProbeBudget);
+    let selectedBacklog = backlogProbe.slice(0, halfProbeBudget);
+    let spareProbeBudget = UNKNOWN_NEWNESS_PROBE_LIMIT_PER_CITY - selectedFresh.length - selectedBacklog.length;
+
+    if (spareProbeBudget > 0) {
+      const extraFresh = freshProbe.slice(selectedFresh.length, selectedFresh.length + spareProbeBudget);
+      selectedFresh = selectedFresh.concat(extraFresh);
+      spareProbeBudget -= extraFresh.length;
     }
+    if (spareProbeBudget > 0) {
+      selectedBacklog = selectedBacklog.concat(
+        backlogProbe.slice(selectedBacklog.length, selectedBacklog.length + spareProbeBudget)
+      );
+    }
+
+    const selectedProbeKeys = new Set(
+      selectedFresh.concat(selectedBacklog).map(item => itemKey(city.name, item))
+    );
+    for (const item of freshProbe.concat(backlogProbe)) {
+      const key = itemKey(city.name, item);
+      if (selectedProbeKeys.has(key)) continue;
+      const baseline = nextState.items[key] ?? {};
+      nextState.items[key] = {
+        ...baseline,
+        pendingNewnessCheck: true,
+        newnessProbeSkipped: true,
+        lastSeenAt: startedIso
+      };
+    }
+
+    const detailQueue = nonProbe
+      .concat(selectedFresh, selectedBacklog)
+      .slice(0, DETAIL_LIMIT_PER_CITY);
 
     let detailedCount = 0;
     for (const baseItem of detailQueue) {
@@ -599,19 +678,29 @@ async function main() {
         const referenceMs = Number.isFinite(firstSeenMs) ? firstSeenMs : nowMs;
 
         if (!item.postedAt) {
+          const attempts = (Number(stateBeforeDetail.newnessDetailAttempts) || 0) + 1;
+          const firstSeenAt = stateBeforeDetail.firstSeenAt ?? item.firstSeenAt ?? startedIso;
+          const firstSeenAgeMs = nowMs - new Date(firstSeenAt).getTime();
+          const mayRetry = attempts < MAX_NEWNESS_DETAIL_ATTEMPTS
+            && Number.isFinite(firstSeenAgeMs)
+            && firstSeenAgeMs <= WINDOW_HOURS * 60 * 60 * 1000;
+
           nextState.items[stateKey] = {
             ...stateBeforeDetail,
             id: item.id,
             title: item.title,
             url: item.url,
             lastPrice: Number(item.price) || stateBeforeDetail.lastPrice || null,
-            firstSeenAt: stateBeforeDetail.firstSeenAt ?? item.firstSeenAt ?? startedIso,
-            pendingNewnessCheck: true,
+            firstSeenAt,
+            pendingNewnessCheck: mayRetry,
             newnessDetailAttempted: true,
+            newnessDetailAttempts: attempts,
+            newnessProbeSkipped: false,
+            newnessUnknownExpired: !mayRetry,
             lastSeenAt: startedIso,
             city: city.name
           };
-          warnings.push(city.name + ': postedAt unavailable after detail ' + item.id);
+          warnings.push(city.name + ': postedAt unavailable after detail ' + item.id + ' attempt ' + attempts);
           continue;
         }
 
@@ -626,6 +715,8 @@ async function main() {
           firstSeenAt: stateBeforeDetail.firstSeenAt ?? item.firstSeenAt ?? startedIso,
           pendingNewnessCheck: false,
           newnessDetailAttempted: true,
+          newnessDetailAttempts: 0,
+          newnessProbeSkipped: false,
           newnessUnknownExpired: false,
           lastSeenAt: startedIso,
           city: city.name
@@ -668,7 +759,7 @@ async function main() {
         city: city.name
       };
 
-      const specs = analyzeSpecs(item);
+      const specs = analyzeHardware(item);
       if (!specs.ok) continue;
 
       const text = (item.title ?? '') + '\n' + (item.description ?? '');
@@ -688,11 +779,13 @@ async function main() {
         title: item.title,
         modelHint: item.title,
         cpuHint: extractCpu(text),
+        gpuHint: specs.gpuHint,
+        vramGB: specs.vramGB,
         ramGB: specs.ramGB,
         storageGB: specs.storageGB,
+        llmCapability: specs.llmCapability,
+        llmReason: specs.llmReason,
         specConfidence: specs.confidence,
-        ramTypeConfirmed: specs.ramTypeConfirmed,
-        storageTypeConfirmed: specs.storageTypeConfirmed,
         postedAt: item.postedAt ?? null,
         boostedAt: item.boostedAt ?? null,
         status: item.status,
@@ -748,9 +841,14 @@ async function main() {
       newnessField: 'postedAt',
       boostedAtCreatesNewCandidate: false,
       onlyStatus: 'Ongoing',
-      ramGB: [16, 32],
-      storageGB: [512, 1024],
-      mixed256SsdPlusHdd1TbAllowed: false
+      target: 'Qwen3.8-27B smooth local inference',
+      priceGate: false,
+      storageGate: false,
+      acceptedHardware: [
+        'NVIDIA RTX laptop/workstation GPU with >=16GB VRAM',
+        'Ryzen AI Max 385/388/390/392/395 with >=64GB unified memory',
+        'Apple M1-M5 Max with >=32GB unified memory'
+      ]
     },
     stats: {
       cities: cityRuns,
