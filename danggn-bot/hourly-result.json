@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-30T06:30:27.782Z",
+  "generatedAt": "2026-09-30T06:51:07.308Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -43,10 +43,10 @@
         "attempted": 8,
         "succeeded": 8,
         "errors": 0,
-        "uniqueListings": 338,
-        "changedCandidates": 42,
-        "detailedCandidates": 42,
-        "durationMs": 55764
+        "uniqueListings": 331,
+        "changedCandidates": 45,
+        "detailedCandidates": 41,
+        "durationMs": 53747
       },
       {
         "city": "의왕시",
@@ -60,10 +60,10 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 446,
-        "changedCandidates": 45,
+        "uniqueListings": 459,
+        "changedCandidates": 46,
         "detailedCandidates": 41,
-        "durationMs": 76742
+        "durationMs": 84396
       },
       {
         "city": "안양시",
@@ -79,10 +79,10 @@
         "attempted": 28,
         "succeeded": 28,
         "errors": 0,
-        "uniqueListings": 419,
-        "changedCandidates": 47,
-        "detailedCandidates": 42,
-        "durationMs": 93405
+        "uniqueListings": 416,
+        "changedCandidates": 45,
+        "detailedCandidates": 41,
+        "durationMs": 108752
       },
       {
         "city": "과천시",
@@ -92,47 +92,19 @@
         "attempted": 4,
         "succeeded": 4,
         "errors": 0,
-        "uniqueListings": 298,
-        "changedCandidates": 40,
+        "uniqueListings": 299,
+        "changedCandidates": 43,
         "detailedCandidates": 40,
-        "durationMs": 41555
+        "durationMs": 42446
       }
     ],
-    "finalCandidateCount": 1,
-    "stateItemCount": 3939,
+    "finalCandidateCount": 0,
+    "stateItemCount": 3955,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
-    "skippedUnknownProbeCount": 2721,
-    "durationMs": 267529
+    "skippedUnknownProbeCount": 2735,
+    "durationMs": 289418
   },
-  "candidates": [
-    {
-      "id": "bkm8hbgaz258",
-      "changeType": "new",
-      "previousPrice": null,
-      "price": 350000,
-      "priceDropPercent": null,
-      "city": "의왕시",
-      "location": "오전동",
-      "regionPath": "경기도 의왕시 오전동",
-      "title": "맥북 프로 PRO 15인치 고급형 512GB 16RAM 2016 풀박스",
-      "modelHint": "맥북 프로 PRO 15인치 고급형 512GB 16RAM 2016 풀박스",
-      "cpuHint": null,
-      "ramGB": 16,
-      "storageGB": 512,
-      "specConfidence": "needs_verification",
-      "ramTypeConfirmed": false,
-      "storageTypeConfirmed": false,
-      "postedAt": "2026-09-30T06:04:28.676Z",
-      "boostedAt": "2026-09-30T06:04:28.675Z",
-      "status": "Ongoing",
-      "description": "판매) 맥북 프로 PRO 15인치 고급형 512GB 16RAM 2016 풀박스\n\n✅구매전 필독사항 봐주세요\n❌살 마음 없으면 찔러보지 마세요!!!! >차단❌\n\n프로세서\n\t•\t2.5GHz 쿼드코어 Intel Core i7\n\t•\t6MB L3 캐시\n\t•\tTurbo Boost 최대 3.7GHz\n\n메모리\n\t•\t16GB 1600MHz DDR3L SDRAM\n\n저장장치\n\t•\t512GB\n\n디스플레이\n\t•\tRetina 디스플레이\n\t•\t15.4형(대각선) LED 백라이트 디스플레이\n\t•\tIPS 기술\n\t•\t해상도 2880 × 1800\n\n백화점에서 구입 후 바로\n키보드 패드\n맥북 외관 앞,뒤\n디스플레이 필름\n마우스패드 필름 붙이고 사용했어요\n\n충전기는 사용감 많이 있고 \n케이블은 한번도 쓴적이 없는데 노란색 필통에 보관중 물들었습니다\n\n- 박스 구성에 있던거 다 드려요\n- 업체에서 15주고 이상없는거 확인\n- 안에 부품 청소, OS,윈도우 다시 깔아주셨습니다",
-      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-pro-15%EC%9D%B8%EC%B9%98-%EA%B3%A0%EA%B8%89%ED%98%95-512gb-16ram-2016-%ED%92%80%EB%B0%95%EC%8A%A4-bkm8hbgaz258/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "zizi",
-      "mannerTemperature": 36.5
-    }
-  ]
+  "candidates": []
 }
