@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-30T04:26:23.256Z",
+  "generatedAt": "2026-09-30T04:42:00.786Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -43,10 +43,10 @@
         "attempted": 8,
         "succeeded": 8,
         "errors": 0,
-        "uniqueListings": 327,
-        "changedCandidates": 41,
-        "detailedCandidates": 40,
-        "durationMs": 55483
+        "uniqueListings": 336,
+        "changedCandidates": 38,
+        "detailedCandidates": 38,
+        "durationMs": 46239
       },
       {
         "city": "의왕시",
@@ -60,10 +60,10 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 461,
-        "changedCandidates": 40,
+        "uniqueListings": 460,
+        "changedCandidates": 43,
         "detailedCandidates": 40,
-        "durationMs": 81482
+        "durationMs": 74834
       },
       {
         "city": "안양시",
@@ -79,10 +79,10 @@
         "attempted": 28,
         "succeeded": 28,
         "errors": 0,
-        "uniqueListings": 415,
-        "changedCandidates": 42,
-        "detailedCandidates": 40,
-        "durationMs": 97100
+        "uniqueListings": 418,
+        "changedCandidates": 44,
+        "detailedCandidates": 41,
+        "durationMs": 100839
       },
       {
         "city": "과천시",
@@ -92,19 +92,47 @@
         "attempted": 4,
         "succeeded": 4,
         "errors": 0,
-        "uniqueListings": 303,
-        "changedCandidates": 41,
+        "uniqueListings": 301,
+        "changedCandidates": 43,
         "detailedCandidates": 40,
-        "durationMs": 41632
+        "durationMs": 39151
       }
     ],
-    "finalCandidateCount": 0,
-    "stateItemCount": 3899,
+    "finalCandidateCount": 1,
+    "stateItemCount": 3908,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
-    "skippedUnknownProbeCount": 2681,
-    "durationMs": 275750
+    "skippedUnknownProbeCount": 2689,
+    "durationMs": 261140
   },
-  "candidates": []
+  "candidates": [
+    {
+      "id": "4g2x9en5i5wn",
+      "changeType": "new",
+      "previousPrice": null,
+      "price": 1100000,
+      "priceDropPercent": null,
+      "city": "안양시",
+      "location": "관양동",
+      "regionPath": "경기도 안양시 동안구 관양동",
+      "title": "LG 그램 노트북 15인치 울트라5 팝니다",
+      "modelHint": "LG 그램 노트북 15인치 울트라5 팝니다",
+      "cpuHint": null,
+      "ramGB": 16,
+      "storageGB": 512,
+      "specConfidence": "explicit",
+      "ramTypeConfirmed": true,
+      "storageTypeConfirmed": true,
+      "postedAt": "2026-09-30T04:38:25.473Z",
+      "boostedAt": "2026-09-30T04:38:25.472Z",
+      "status": "Ongoing",
+      "description": "LG 그램 노트북 15.3인치 화이트 모델입니다. 인텔 코어 울트라 5 프로세서와 16GB RAM, 256GB과 512GB SSD 2개를 탑재하여 빠르고 쾌적한 사용이 가능해요. 가볍고 슬림한 디자인으로 휴대하기 좋습니다. 가볍고 성능 좋은 노트북을 찾으시는 분께 추천드려요. 실사용 그리많지않고 다른 노트북이 있어서 정리해봅니다. 직거래 인덕원역 부근 가능하고요. 가방은 새가방 드릴수있어요.",
+      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-15%EC%9D%B8%EC%B9%98-%EC%9A%B8%ED%8A%B8%EB%9D%BC5-%ED%8C%9D%EB%8B%88%EB%8B%A4-4g2x9en5i5wn/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "죠니댑",
+      "mannerTemperature": 44.6
+    }
+  ]
 }
