@@ -12,7 +12,7 @@ const STATE_RETENTION_DAYS = 30;
 const MAX_STATE_ITEMS = 5000;
 const SEARCH_LIMIT = 80;
 const DETAIL_WORKERS = 2;
-const DETAIL_BUDGET_PER_CITY_MS = 60000;
+const DETAIL_BUDGET_PER_CITY_MS = 55000;
 const SCAN_BUDGET_MS = 330000;
 const NEWNESS_RETRY_DELAY_MS = 60 * 60 * 1000;
 const REQUEST_GAP_MS = 1200;
@@ -162,14 +162,16 @@ function parseSearch(html, sourceQuery, sourceRegion) {
   return [];
 }
 
-async function getHtml(url, attempts = 2) {
+async function getHtml(url, attempts = 2, pace = false) {
   let lastError;
   for (let attempt = 1; attempt <= attempts; attempt++) {
     try {
       if (Date.now() < requestCooldownUntil) throw new Error('HTTP 429 cooldown; retained for next scan');
-      const requestAt = Math.max(Date.now(), nextRequestAt);
-      nextRequestAt = requestAt + REQUEST_GAP_MS;
-      await sleep(Math.max(0, requestAt - Date.now()));
+      if (pace) {
+        const requestAt = Math.max(Date.now(), nextRequestAt);
+        nextRequestAt = requestAt + REQUEST_GAP_MS;
+        await sleep(Math.max(0, requestAt - Date.now()));
+      }
       if (Date.now() < requestCooldownUntil) throw new Error('HTTP 429 cooldown; retained for next scan');
       const response = await fetch(url, {
         signal: AbortSignal.timeout(10000),
@@ -256,7 +258,7 @@ async function searchOne(query, region) {
 
 async function detailOne(item) {
   try {
-    const html = await getHtml(item.url);
+    const html = await getHtml(item.url, 2, true);
     const product = extractJsonAfterMarker(html, '"product":', '{')
       ?? extractJsonAfterMarker(html, '\\"product\\":', '{');
 
