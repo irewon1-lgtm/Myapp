@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-01T06:02:33.445Z",
+  "generatedAt": "2026-10-01T06:33:00.247Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -17,18 +17,25 @@
     "status": "ok",
     "stateCommitted": true,
     "warnings": [
-      "군포시: detail failed qbs1piywnu8o: Error: HTTP 404 Not Found",
-      "군포시: detail failed 2wyvec74uoez: Error: HTTP 404 Not Found",
-      "군포시: detail failed x3tapqzuukdc: Error: HTTP 404 Not Found",
-      "군포시: detail failed 1vyfofo8uqde: Error: HTTP 404 Not Found",
-      "군포시: detail failed xs36v16io2a1: Error: HTTP 404 Not Found",
-      "군포시: detail failed 8enr7dbmn4vg: Error: HTTP 404 Not Found",
-      "의왕시: detail failed eb7g1g3118vx: Error: HTTP 404 Not Found",
-      "의왕시: detail failed qbs1piywnu8o: Error: HTTP 404 Not Found",
-      "의왕시: detail failed 7q63p5jophf3: Error: HTTP 404 Not Found",
-      "안양시: detail failed w4hrke3azw7a: Error: HTTP 404 Not Found",
-      "과천시: detail failed 2wyvec74uoez: Error: HTTP 404 Not Found",
-      "Detail queue retained for retry: 3857"
+      "군포시: detail failed k7eg51md43pv: Error: HTTP 404 Not Found",
+      "군포시: detail failed xq2y1sfvk5m3: Error: HTTP 404 Not Found",
+      "군포시: detail failed 1t2j7cvbwz1j: Error: HTTP 404 Not Found",
+      "군포시: detail failed w4hrke3azw7a: Error: HTTP 404 Not Found",
+      "군포시: detail failed ocxxotemtex7: Error: HTTP 404 Not Found",
+      "군포시: detail failed d1x3gbuqtocn: Error: HTTP 404 Not Found",
+      "군포시: detail failed iygwc36u7nts: Error: HTTP 404 Not Found",
+      "의왕시: detail failed 2wyvec74uoez: Error: HTTP 404 Not Found",
+      "의왕시: detail failed 1vyfofo8uqde: Error: HTTP 404 Not Found",
+      "의왕시: detail failed x3tapqzuukdc: Error: HTTP 404 Not Found",
+      "의왕시: detail failed xs36v16io2a1: Error: HTTP 404 Not Found",
+      "안양시: detail failed 42rxc7ujwmvi: Error: HTTP 404 Not Found",
+      "안양시: detail failed qbs1piywnu8o: Error: HTTP 404 Not Found",
+      "안양시: detail failed pa1cz2ksvrn5: Error: HTTP 404 Not Found",
+      "안양시: detail failed 54vgbdq7vzqq: Error: HTTP 404 Not Found",
+      "안양시: detail failed zjq899oe9uxr: Error: HTTP 404 Not Found",
+      "과천시: detail failed x3tapqzuukdc: Error: HTTP 404 Not Found",
+      "과천시: detail failed 1vyfofo8uqde: Error: HTTP 404 Not Found",
+      "Detail queue retained for retry: 3815"
     ]
   },
   "rules": {
@@ -55,11 +62,11 @@
         "attempted": 8,
         "succeeded": 8,
         "errors": 0,
-        "uniqueListings": 277,
-        "changedCandidates": 855,
-        "detailedCandidates": 43,
-        "deferredDetails": 812,
-        "durationMs": 77371
+        "uniqueListings": 185,
+        "changedCandidates": 826,
+        "detailedCandidates": 40,
+        "deferredDetails": 786,
+        "durationMs": 74335
       },
       {
         "city": "의왕시",
@@ -73,11 +80,11 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 305,
-        "changedCandidates": 1325,
-        "detailedCandidates": 45,
-        "deferredDetails": 1280,
-        "durationMs": 107496
+        "uniqueListings": 346,
+        "changedCandidates": 1317,
+        "detailedCandidates": 43,
+        "deferredDetails": 1274,
+        "durationMs": 105341
       },
       {
         "city": "안양시",
@@ -93,11 +100,11 @@
         "attempted": 28,
         "succeeded": 28,
         "errors": 0,
-        "uniqueListings": 302,
-        "changedCandidates": 1075,
-        "detailedCandidates": 46,
-        "deferredDetails": 1029,
-        "durationMs": 125067
+        "uniqueListings": 337,
+        "changedCandidates": 1058,
+        "detailedCandidates": 43,
+        "deferredDetails": 1015,
+        "durationMs": 120432
       },
       {
         "city": "과천시",
@@ -108,19 +115,19 @@
         "succeeded": 4,
         "errors": 0,
         "uniqueListings": 255,
-        "changedCandidates": 734,
-        "detailedCandidates": 9,
-        "deferredDetails": 725,
-        "durationMs": 21394
+        "changedCandidates": 739,
+        "detailedCandidates": 17,
+        "deferredDetails": 722,
+        "durationMs": 32329
       }
     ],
     "finalCandidateCount": 0,
-    "stateItemCount": 4890,
-    "pendingNewnessCount": 3857,
-    "pendingUnattemptedCount": 3857,
+    "stateItemCount": 4868,
+    "pendingNewnessCount": 3815,
+    "pendingUnattemptedCount": 3815,
     "pendingAttemptedCount": 0,
-    "skippedUnknownProbeCount": 3696,
-    "durationMs": 331444
+    "skippedUnknownProbeCount": 3632,
+    "durationMs": 332540
   },
   "candidates": []
 }
