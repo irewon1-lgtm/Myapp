@@ -142,13 +142,24 @@ jobs:
           if not isinstance(sent, dict):
               sent = {}
 
+          # Retry persisted candidates as well as those found in this run.
+          pending_path = Path("danggn-bot/pending-alerts.json")
+          try:
+              pending = json.loads(pending_path.read_text(encoding="utf-8")).get("items") or {}
+          except Exception:
+              pending = {}
+          candidates = list(pending.values()) if isinstance(pending, dict) else []
+          candidates.extend(result.get("candidates") or [])
+
           fresh = []
-          for item in result.get("candidates") or []:
+          queued = set()
+          for item in candidates:
               if not isinstance(item, dict):
                   continue
               key = str(item.get("id") or item.get("url") or "").strip()
-              if not key:
+              if not key or key in queued:
                   continue
+              queued.add(key)
               current_price = item.get("price")
               old = sent.get(key) if isinstance(sent.get(key), dict) else None
               old_price = old.get("price") if old else None
@@ -216,7 +227,7 @@ jobs:
               print("ntfy status:", response.status)
 
           now = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
-          for key, item in fresh:
+          for key, item in fresh[:10]:
               sent[key] = {
                   "id": item.get("id"),
                   "price": item.get("price"),
@@ -233,7 +244,7 @@ jobs:
               json.dumps(sent_doc, ensure_ascii=False, indent=2) + "\n",
               encoding="utf-8"
           )
-          print("ntfy Qwen-capable alerts:", len(fresh))
+          print("ntfy Qwen-capable alerts:", len(fresh[:10]))
           PY
 
       - name: Persist latest state and result
