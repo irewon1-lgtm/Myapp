@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-01T09:28:26.994Z",
+  "generatedAt": "2026-10-01T09:44:45.669Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -17,19 +17,21 @@
     "status": "ok",
     "stateCommitted": true,
     "warnings": [
-      "군포시: detail failed ykwbs7wekbt7: Error: HTTP 404 Not Found",
-      "군포시: detail failed 17aspofd7muu: Error: HTTP 404 Not Found",
-      "군포시: detail failed egizw1kbz1sd: Error: HTTP 404 Not Found",
-      "군포시: detail failed fs8pgv3i41np: Error: HTTP 404 Not Found",
-      "의왕시: detail failed 7t44m6demmvf: Error: HTTP 404 Not Found",
-      "의왕시: detail failed n1bi5rnw2p4y: Error: HTTP 404 Not Found",
-      "의왕시: detail failed etbksxtergps: Error: HTTP 404 Not Found",
-      "안양시: detail failed 24se1ut194sx: Error: HTTP 404 Not Found",
-      "안양시: detail failed qemw8fyt8bex: Error: HTTP 404 Not Found",
-      "안양시: detail failed 852c69bn13vi: Error: HTTP 404 Not Found",
-      "안양시: detail failed sjrhszqdqtrm: Error: HTTP 404 Not Found",
-      "과천시: detail failed ynbd3wj6drki: Error: HTTP 404 Not Found",
-      "Detail queue retained for retry: 3445"
+      "군포시: detail failed x9zwr24ucyz8: Error: HTTP 404 Not Found",
+      "군포시: detail failed jy8urfnpy4g7: Error: HTTP 404 Not Found",
+      "의왕시: detail failed fs8pgv3i41np: Error: HTTP 404 Not Found",
+      "의왕시: detail failed v4oa2npairua: Error: HTTP 404 Not Found",
+      "의왕시: detail failed 8ce1m8h3o9ko: Error: HTTP 404 Not Found",
+      "의왕시: detail failed uk2ar9eejyuj: Error: HTTP 404 Not Found",
+      "안양시: detail failed c1tv7k5ysn3s: Error: HTTP 404 Not Found",
+      "안양시: detail failed o9gfhubwkcyt: Error: HTTP 404 Not Found",
+      "안양시: detail failed ynbd3wj6drki: Error: HTTP 404 Not Found",
+      "안양시: detail failed 4agkrpvp8n94: Error: HTTP 404 Not Found",
+      "안양시: detail failed oam4pc53be3w: Error: HTTP 404 Not Found",
+      "안양시: detail failed 7nvjkje7kzgt: Error: HTTP 404 Not Found",
+      "과천시: detail failed 4agkrpvp8n94: Error: HTTP 404 Not Found",
+      "과천시: detail failed 7nvjkje7kzgt: Error: HTTP 404 Not Found",
+      "Detail queue retained for retry: 3396"
     ]
   },
   "rules": {
@@ -56,11 +58,11 @@
         "attempted": 8,
         "succeeded": 8,
         "errors": 0,
-        "uniqueListings": 280,
-        "changedCandidates": 716,
+        "uniqueListings": 278,
+        "changedCandidates": 702,
         "detailedCandidates": 45,
-        "deferredDetails": 671,
-        "durationMs": 77016
+        "deferredDetails": 657,
+        "durationMs": 73702
       },
       {
         "city": "의왕시",
@@ -74,11 +76,11 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 333,
-        "changedCandidates": 1226,
-        "detailedCandidates": 44,
-        "deferredDetails": 1182,
-        "durationMs": 98949
+        "uniqueListings": 331,
+        "changedCandidates": 1208,
+        "detailedCandidates": 43,
+        "deferredDetails": 1165,
+        "durationMs": 104624
       },
       {
         "city": "안양시",
@@ -94,11 +96,11 @@
         "attempted": 28,
         "succeeded": 28,
         "errors": 0,
-        "uniqueListings": 348,
-        "changedCandidates": 957,
-        "detailedCandidates": 44,
-        "deferredDetails": 913,
-        "durationMs": 118079
+        "uniqueListings": 346,
+        "changedCandidates": 943,
+        "detailedCandidates": 41,
+        "deferredDetails": 902,
+        "durationMs": 113708
       },
       {
         "city": "과천시",
@@ -109,19 +111,19 @@
         "succeeded": 4,
         "errors": 0,
         "uniqueListings": 255,
-        "changedCandidates": 690,
-        "detailedCandidates": 23,
-        "deferredDetails": 667,
-        "durationMs": 37829
+        "changedCandidates": 682,
+        "detailedCandidates": 24,
+        "deferredDetails": 658,
+        "durationMs": 39956
       }
     ],
     "finalCandidateCount": 0,
-    "stateItemCount": 4703,
-    "pendingNewnessCount": 3445,
-    "pendingUnattemptedCount": 3445,
+    "stateItemCount": 4676,
+    "pendingNewnessCount": 3396,
+    "pendingUnattemptedCount": 3396,
     "pendingAttemptedCount": 0,
-    "skippedUnknownProbeCount": 3087,
-    "durationMs": 331991
+    "skippedUnknownProbeCount": 3023,
+    "durationMs": 332109
   },
   "candidates": []
 }
