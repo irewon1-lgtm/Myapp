@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-01T20:26:42.966Z",
+  "generatedAt": "2026-10-01T20:44:20.057Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -17,7 +17,7 @@
     "status": "ok",
     "stateCommitted": true,
     "warnings": [
-      "Detail queue retained for retry: 34"
+      "Detail queue retained for retry: 36"
     ]
   },
   "rules": {
@@ -44,11 +44,11 @@
         "attempted": 8,
         "succeeded": 8,
         "errors": 0,
-        "uniqueListings": 273,
+        "uniqueListings": 276,
         "changedCandidates": 57,
         "detailedCandidates": 48,
         "deferredDetails": 9,
-        "durationMs": 75719
+        "durationMs": 75515
       },
       {
         "city": "의왕시",
@@ -62,11 +62,11 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 341,
-        "changedCandidates": 60,
+        "uniqueListings": 322,
+        "changedCandidates": 54,
         "detailedCandidates": 48,
-        "deferredDetails": 12,
-        "durationMs": 100287
+        "deferredDetails": 6,
+        "durationMs": 106091
       },
       {
         "city": "안양시",
@@ -86,7 +86,7 @@
         "changedCandidates": 59,
         "detailedCandidates": 48,
         "deferredDetails": 11,
-        "durationMs": 115636
+        "durationMs": 116075
       },
       {
         "city": "과천시",
@@ -97,19 +97,19 @@
         "succeeded": 4,
         "errors": 0,
         "uniqueListings": 252,
-        "changedCandidates": 28,
-        "detailedCandidates": 26,
-        "deferredDetails": 2,
-        "durationMs": 39936
+        "changedCandidates": 32,
+        "detailedCandidates": 22,
+        "deferredDetails": 10,
+        "durationMs": 34501
       }
     ],
     "finalCandidateCount": 0,
-    "stateItemCount": 4566,
-    "pendingNewnessCount": 34,
-    "pendingUnattemptedCount": 34,
+    "stateItemCount": 4569,
+    "pendingNewnessCount": 36,
+    "pendingUnattemptedCount": 36,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 331683
+    "durationMs": 332289
   },
   "candidates": []
 }
