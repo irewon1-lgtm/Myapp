@@ -430,13 +430,20 @@ function clone(value) {
   return JSON.parse(JSON.stringify(value));
 }
 
-function reviveSkippedNewness(state) {
+function resetAndExpireNewness(state, nowMs) {
+  const reset = !state.newnessBacklogResetAt;
   for (const item of Object.values(state.items ?? {})) {
-    // Restore even legacy items expired before their first detail request.
-    if (!item?.newnessProbeSkipped || item?.postedAt) continue;
-    item.pendingNewnessCheck = true;
-    item.newnessUnknownExpired = false;
+    if (!item?.pendingNewnessCheck && !item?.newnessProbeSkipped) continue;
+    const firstSeenMs = new Date(item.firstSeenAt ?? 0).getTime();
+    if (reset || !Number.isFinite(firstSeenMs)
+      || nowMs - firstSeenMs > WINDOW_HOURS * 60 * 60 * 1000) {
+      item.pendingNewnessCheck = false;
+      item.newnessProbeSkipped = false;
+      item.newnessDetailAttempts = 0;
+      item.newnessUnknownExpired = true;
+    }
   }
+  if (reset) state.newnessBacklogResetAt = new Date(nowMs).toISOString();
 }
 
 async function detailBatch(queue, deadlineMs) {
@@ -473,7 +480,7 @@ async function main() {
   const nowMs = startedAt.getTime();
   const originalState = await readState();
   const nextState = clone(originalState);
-  reviveSkippedNewness(nextState);
+  resetAndExpireNewness(nextState, nowMs);
 
   const candidates = [];
   const cityRuns = [];
@@ -645,11 +652,8 @@ async function main() {
     });
     const fresh = eligible.filter(item => item.changeType !== 'newness_backlog');
     const backlog = eligible.filter(item => item.changeType === 'newness_backlog');
-    const detailQueue = [];
-    for (let index = 0; index < Math.max(fresh.length, backlog.length); index++) {
-      if (fresh[index]) detailQueue.push(fresh[index]);
-      if (backlog[index]) detailQueue.push(backlog[index]);
-    }
+    // New listings and price drops always precede recent unknown-date retries.
+    const detailQueue = fresh.concat(backlog);
     // Bound runtime rather than dropping work at an arbitrary item count.
     const detailedItems = await detailBatch(detailQueue,
       Math.min(nowMs + SCAN_BUDGET_MS, Date.now() + DETAIL_BUDGET_PER_CITY_MS));
