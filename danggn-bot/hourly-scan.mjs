@@ -11,9 +11,10 @@ const WINDOW_HOURS = 6;
 const STATE_RETENTION_DAYS = 30;
 const MAX_STATE_ITEMS = 5000;
 const SEARCH_LIMIT = 80;
-const DETAIL_LIMIT_PER_CITY = 80;
-const UNKNOWN_NEWNESS_PROBE_LIMIT_PER_CITY = 40;
-const MAX_NEWNESS_DETAIL_ATTEMPTS = 3;
+const DETAIL_WORKERS = 4;
+const DETAIL_BUDGET_PER_CITY_MS = 45000;
+const SCAN_BUDGET_MS = 330000;
+const NEWNESS_RETRY_DELAY_MS = 60 * 60 * 1000;
 
 const QUERIES = [
   '노트북',
@@ -419,23 +420,24 @@ function clone(value) {
 
 function reviveSkippedNewness(state) {
   for (const item of Object.values(state.items ?? {})) {
-    if (!item?.newnessProbeSkipped || item?.postedAt || item?.newnessUnknownExpired) continue;
+    // Restore even legacy items expired before their first detail request.
+    if (!item?.newnessProbeSkipped || item?.postedAt) continue;
     item.pendingNewnessCheck = true;
-    item.newnessDetailAttempted = false;
-    item.newnessDetailAttempts = Number(item.newnessDetailAttempts) || 0;
+    item.newnessUnknownExpired = false;
   }
 }
 
-function expirePendingNewness(state, nowMs) {
-  const maxAgeMs = WINDOW_HOURS * 60 * 60 * 1000;
-  for (const item of Object.values(state.items ?? {})) {
-    if (!item?.pendingNewnessCheck) continue;
-    const firstSeenMs = new Date(item.firstSeenAt ?? 0).getTime();
-    if (!Number.isFinite(firstSeenMs)) continue;
-    if (nowMs - firstSeenMs <= maxAgeMs) continue;
-    item.pendingNewnessCheck = false;
-    item.newnessUnknownExpired = true;
-  }
+async function detailBatch(queue, deadlineMs) {
+  let cursor = 0;
+  const results = [];
+  await Promise.all(Array.from({ length: DETAIL_WORKERS }, async () => {
+    while (cursor < queue.length && Date.now() < deadlineMs) {
+      const baseItem = queue[cursor++];
+      results.push(await detailOne(baseItem));
+      await sleep(220);
+    }
+  }));
+  return results;
 }
 
 function pruneState(state, nowMs) {
@@ -446,7 +448,12 @@ function pruneState(state, nowMs) {
   });
 
   entries.sort((a, b) => new Date(b[1].lastSeenAt).getTime() - new Date(a[1].lastSeenAt).getTime());
-  state.items = Object.fromEntries(entries.slice(0, MAX_STATE_ITEMS));
+  const pending = Object.entries(state.items ?? {}).filter(([, value]) =>
+    value.pendingNewnessCheck || value.pendingDetailEvent);
+  const pendingKeys = new Set(pending.map(([key]) => key));
+  state.items = Object.fromEntries(pending.concat(
+    entries.filter(([key]) => !pendingKeys.has(key)).slice(0, Math.max(0, MAX_STATE_ITEMS - pending.length))
+  ));
 }
 
 async function main() {
@@ -455,7 +462,6 @@ async function main() {
   const originalState = await readState();
   const nextState = clone(originalState);
   reviveSkippedNewness(nextState);
-  expirePendingNewness(nextState, nowMs);
 
   const candidates = [];
   const cityRuns = [];
@@ -564,15 +570,17 @@ async function main() {
         changeType = 'new';
       } else if (unseen && !itemWithKnownDate.postedAt) {
         changeType = 'newness_check';
-      } else if (pendingNewnessCheck && !itemWithKnownDate.postedAt && newnessDetailAttempts < MAX_NEWNESS_DETAIL_ATTEMPTS) {
+      } else if (pendingNewnessCheck && !itemWithKnownDate.postedAt) {
         changeType = 'newness_backlog';
       }
 
+      const deferredEvent = previous?.pendingDetailEvent;
+      if (!changeType && deferredEvent) changeType = deferredEvent.changeType;
       if (changeType) {
         stage1.push({
           ...itemWithKnownDate,
           changeType,
-          previousPrice: isPriceDrop ? Number(previous.lastPrice) : null,
+          previousPrice: isPriceDrop ? Number(previous.lastPrice) : (deferredEvent?.previousPrice ?? null),
           firstSeenAt
         });
       }
@@ -586,6 +594,9 @@ async function main() {
         postedAt: itemWithKnownDate.postedAt,
         firstSeenAt,
         pendingNewnessCheck,
+        pendingDetailEvent: changeType === 'new' || changeType === 'price_drop'
+          ? { changeType, previousPrice: isPriceDrop ? Number(previous.lastPrice) : (deferredEvent?.previousPrice ?? null) }
+          : (previous?.pendingDetailEvent ?? null),
         newnessDetailAttempted,
         newnessDetailAttempts,
         newnessUnknownExpired,
@@ -594,77 +605,56 @@ async function main() {
       };
     }
 
-    // Fresh/known events always outrank legacy metadata backlog.
-    // boostedAt is used only as a queue-priority hint; it never proves newness.
-    const priority = { price_drop: 0, new: 1, newness_check: 2, newness_backlog: 3 };
+    // Search disappearance must not remove a saved detail task.
+    const queuedKeys = new Set(stage1.map(item => itemKey(city.name, item)));
+    for (const [key, saved] of Object.entries(nextState.items)) {
+      if (saved.city !== city.name || queuedKeys.has(key)) continue;
+      if (!saved.pendingNewnessCheck && !saved.pendingDetailEvent) continue;
+      stage1.push({
+        ...saved,
+        price: saved.lastPrice,
+        status: 'Ongoing',
+        changeType: saved.pendingDetailEvent?.changeType ?? 'newness_backlog',
+        previousPrice: saved.pendingDetailEvent?.previousPrice ?? null
+      });
+    }
+    // Fair retry order: unattempted tasks first, then the least recently tried.
     stage1.sort((a, b) => {
-      const p = (priority[a.changeType] ?? 9) - (priority[b.changeType] ?? 9);
-      if (p !== 0) return p;
-      const aBoost = new Date(a.boostedAt ?? 0).getTime();
-      const bBoost = new Date(b.boostedAt ?? 0).getTime();
-      if (Number.isFinite(aBoost) && Number.isFinite(bBoost) && aBoost !== bBoost) {
-        return bBoost - aBoost;
-      }
-      const aFirst = new Date(a.firstSeenAt ?? 0).getTime();
-      const bFirst = new Date(b.firstSeenAt ?? 0).getTime();
-      return bFirst - aFirst;
+      const sa = nextState.items[itemKey(city.name, a)] ?? {};
+      const sb = nextState.items[itemKey(city.name, b)] ?? {};
+      return new Date(sa.detailLastAttemptAt ?? 0) - new Date(sb.detailLastAttemptAt ?? 0)
+        || new Date(a.firstSeenAt ?? 0) - new Date(b.firstSeenAt ?? 0);
     });
-
-    const nonProbe = stage1.filter(item => item.changeType !== 'newness_check' && item.changeType !== 'newness_backlog');
-    const freshProbe = stage1.filter(item => item.changeType === 'newness_check');
-    const backlogProbe = stage1
-      .filter(item => item.changeType === 'newness_backlog')
-      .sort((a, b) => new Date(a.firstSeenAt ?? 0).getTime() - new Date(b.firstSeenAt ?? 0).getTime());
-
-    const halfProbeBudget = Math.floor(UNKNOWN_NEWNESS_PROBE_LIMIT_PER_CITY / 2);
-    let selectedFresh = freshProbe.slice(0, halfProbeBudget);
-    let selectedBacklog = backlogProbe.slice(0, halfProbeBudget);
-    let spareProbeBudget = UNKNOWN_NEWNESS_PROBE_LIMIT_PER_CITY - selectedFresh.length - selectedBacklog.length;
-
-    if (spareProbeBudget > 0) {
-      const extraFresh = freshProbe.slice(selectedFresh.length, selectedFresh.length + spareProbeBudget);
-      selectedFresh = selectedFresh.concat(extraFresh);
-      spareProbeBudget -= extraFresh.length;
-    }
-    if (spareProbeBudget > 0) {
-      selectedBacklog = selectedBacklog.concat(
-        backlogProbe.slice(selectedBacklog.length, selectedBacklog.length + spareProbeBudget)
-      );
-    }
-
-    const selectedProbeKeys = new Set(
-      selectedFresh.concat(selectedBacklog).map(item => itemKey(city.name, item))
-    );
-    for (const item of freshProbe.concat(backlogProbe)) {
-      const key = itemKey(city.name, item);
-      if (selectedProbeKeys.has(key)) continue;
-      const baseline = nextState.items[key] ?? {};
-      nextState.items[key] = {
-        ...baseline,
-        pendingNewnessCheck: true,
-        newnessProbeSkipped: true,
-        lastSeenAt: startedIso
-      };
-    }
-
-    const detailQueue = nonProbe
-      .concat(selectedFresh, selectedBacklog)
-      .slice(0, DETAIL_LIMIT_PER_CITY);
-
+    const detailQueue = stage1.filter(item => {
+      const saved = nextState.items[itemKey(city.name, item)] ?? {};
+      if (item.changeType === 'new' || item.changeType === 'price_drop') return true;
+      const retryDelay = saved.newnessDetailAttempts >= 3 ? NEWNESS_RETRY_DELAY_MS : 0;
+      return nowMs - new Date(saved.detailLastAttemptAt ?? 0).getTime() >= retryDelay;
+    });
+    // Bound runtime rather than dropping work at an arbitrary item count.
+    const detailedItems = await detailBatch(detailQueue,
+      Math.min(nowMs + SCAN_BUDGET_MS, Date.now() + DETAIL_BUDGET_PER_CITY_MS));
     let detailedCount = 0;
-    for (const baseItem of detailQueue) {
-      const item = await detailOne(baseItem);
+    for (const item of detailedItems) {
       detailedCount++;
-      await sleep(220);
-
       const stateKey = itemKey(city.name, item);
+      nextState.items[stateKey].detailLastAttemptAt = new Date().toISOString();
       const stateBeforeDetail = nextState.items[stateKey] ?? {};
 
       if (item.detailError) {
         warnings.push(city.name + ': detail failed ' + item.id);
         continue;
       }
-      if (item.status !== 'Ongoing') continue;
+      if (item.status !== 'Ongoing') {
+        nextState.items[stateKey].pendingNewnessCheck = false;
+        nextState.items[stateKey].pendingDetailEvent = null;
+        nextState.items[stateKey].newnessProbeSkipped = false;
+        continue;
+      }
+      if (!placeText(item)) {
+        warnings.push(city.name + ': location unavailable after detail ' + item.id);
+        continue;
+      }
       if (!belongsToCity(item, city.name)) {
         delete nextState.items[stateKey];
         continue;
@@ -680,11 +670,6 @@ async function main() {
         if (!item.postedAt) {
           const attempts = (Number(stateBeforeDetail.newnessDetailAttempts) || 0) + 1;
           const firstSeenAt = stateBeforeDetail.firstSeenAt ?? item.firstSeenAt ?? startedIso;
-          const firstSeenAgeMs = nowMs - new Date(firstSeenAt).getTime();
-          const mayRetry = attempts < MAX_NEWNESS_DETAIL_ATTEMPTS
-            && Number.isFinite(firstSeenAgeMs)
-            && firstSeenAgeMs <= WINDOW_HOURS * 60 * 60 * 1000;
-
           nextState.items[stateKey] = {
             ...stateBeforeDetail,
             id: item.id,
@@ -692,11 +677,11 @@ async function main() {
             url: item.url,
             lastPrice: Number(item.price) || stateBeforeDetail.lastPrice || null,
             firstSeenAt,
-            pendingNewnessCheck: mayRetry,
+            pendingNewnessCheck: true,
             newnessDetailAttempted: true,
             newnessDetailAttempts: attempts,
             newnessProbeSkipped: false,
-            newnessUnknownExpired: !mayRetry,
+            newnessUnknownExpired: false,
             lastSeenAt: startedIso,
             city: city.name
           };
@@ -735,6 +720,7 @@ async function main() {
           lastPrice: Number(item.price) || baseline.lastPrice || null,
           postedAt: item.postedAt ?? baseline.postedAt ?? null,
           pendingNewnessCheck: false,
+          pendingDetailEvent: null,
           newnessDetailAttempted: true,
           lastSeenAt: startedIso,
           city: city.name
@@ -753,6 +739,7 @@ async function main() {
         postedAt: item.postedAt ?? previousState.postedAt ?? null,
         firstSeenAt: previousState.firstSeenAt ?? item.firstSeenAt ?? startedIso,
         pendingNewnessCheck: false,
+        pendingDetailEvent: null,
         newnessDetailAttempted: true,
         newnessUnknownExpired: false,
         lastSeenAt: startedIso,
@@ -807,9 +794,13 @@ async function main() {
       uniqueListings: found.size,
       changedCandidates: stage1.length,
       detailedCandidates: detailedCount,
+      deferredDetails: detailQueue.length - detailedCount,
       durationMs: Date.now() - cityStarted
     });
   }
+
+  const waiting = Object.values(nextState.items).filter(item => item.pendingNewnessCheck || item.pendingDetailEvent);
+  if (waiting.length) warnings.push('Detail queue retained for retry: ' + waiting.length);
 
   const uniqueCandidates = [];
   const seenCandidateIds = new Set();
