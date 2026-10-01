@@ -11,10 +11,13 @@ const WINDOW_HOURS = 6;
 const STATE_RETENTION_DAYS = 30;
 const MAX_STATE_ITEMS = 5000;
 const SEARCH_LIMIT = 80;
-const DETAIL_WORKERS = 4;
-const DETAIL_BUDGET_PER_CITY_MS = 45000;
+const DETAIL_WORKERS = 2;
+const DETAIL_BUDGET_PER_CITY_MS = 60000;
 const SCAN_BUDGET_MS = 330000;
 const NEWNESS_RETRY_DELAY_MS = 60 * 60 * 1000;
+const REQUEST_GAP_MS = 1200;
+let nextRequestAt = 0;
+let requestCooldownUntil = 0;
 
 const QUERIES = [
   '노트북',
@@ -163,6 +166,11 @@ async function getHtml(url, attempts = 2) {
   let lastError;
   for (let attempt = 1; attempt <= attempts; attempt++) {
     try {
+      if (Date.now() < requestCooldownUntil) throw new Error('HTTP 429 cooldown; retained for next scan');
+      const requestAt = Math.max(Date.now(), nextRequestAt);
+      nextRequestAt = requestAt + REQUEST_GAP_MS;
+      await sleep(Math.max(0, requestAt - Date.now()));
+      if (Date.now() < requestCooldownUntil) throw new Error('HTTP 429 cooldown; retained for next scan');
       const response = await fetch(url, {
         signal: AbortSignal.timeout(10000),
         headers: {
@@ -171,10 +179,12 @@ async function getHtml(url, attempts = 2) {
           'Accept-Language': 'ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7'
         }
       });
+      if (response.status === 429) requestCooldownUntil = Date.now() + 60 * 60 * 1000;
       if (!response.ok) throw new Error('HTTP ' + response.status + ' ' + response.statusText);
       return await response.text();
     } catch (error) {
       lastError = error;
+      if (Date.now() < requestCooldownUntil) break;
       if (attempt < attempts) await sleep(700);
     }
   }
@@ -625,12 +635,19 @@ async function main() {
       return new Date(sa.detailLastAttemptAt ?? 0) - new Date(sb.detailLastAttemptAt ?? 0)
         || new Date(a.firstSeenAt ?? 0) - new Date(b.firstSeenAt ?? 0);
     });
-    const detailQueue = stage1.filter(item => {
+    const eligible = stage1.filter(item => {
       const saved = nextState.items[itemKey(city.name, item)] ?? {};
       if (item.changeType === 'new' || item.changeType === 'price_drop') return true;
       const retryDelay = saved.newnessDetailAttempts >= 3 ? NEWNESS_RETRY_DELAY_MS : 0;
       return nowMs - new Date(saved.detailLastAttemptAt ?? 0).getTime() >= retryDelay;
     });
+    const fresh = eligible.filter(item => item.changeType !== 'newness_backlog');
+    const backlog = eligible.filter(item => item.changeType === 'newness_backlog');
+    const detailQueue = [];
+    for (let index = 0; index < Math.max(fresh.length, backlog.length); index++) {
+      if (fresh[index]) detailQueue.push(fresh[index]);
+      if (backlog[index]) detailQueue.push(backlog[index]);
+    }
     // Bound runtime rather than dropping work at an arbitrary item count.
     const detailedItems = await detailBatch(detailQueue,
       Math.min(nowMs + SCAN_BUDGET_MS, Date.now() + DETAIL_BUDGET_PER_CITY_MS));
@@ -642,7 +659,7 @@ async function main() {
       const stateBeforeDetail = nextState.items[stateKey] ?? {};
 
       if (item.detailError) {
-        warnings.push(city.name + ': detail failed ' + item.id);
+        warnings.push(city.name + ': detail failed ' + item.id + ': ' + item.detailError);
         continue;
       }
       if (item.status !== 'Ongoing') {
@@ -811,7 +828,8 @@ async function main() {
     uniqueCandidates.push(candidate);
   }
 
-  if (!hardFailure) {
+  // Search failures do not invalidate independently completed detail tasks.
+  {
     nextState.updatedAt = startedAt.toISOString();
     pruneState(nextState, nowMs);
     await fs.writeFile(STATE_PATH, JSON.stringify(nextState, null, 2) + '\n');
@@ -825,7 +843,7 @@ async function main() {
     searchOrder: CITIES.map(city => city.name),
     health: {
       status: hardFailure ? 'failed' : 'ok',
-      stateCommitted: !hardFailure,
+      stateCommitted: true,
       warnings
     },
     rules: {
@@ -844,21 +862,11 @@ async function main() {
     stats: {
       cities: cityRuns,
       finalCandidateCount: uniqueCandidates.length,
-      stateItemCount: hardFailure
-        ? Object.keys(originalState.items ?? {}).length
-        : Object.keys(nextState.items ?? {}).length,
-      pendingNewnessCount: hardFailure
-        ? Object.values(originalState.items ?? {}).filter(item => item?.pendingNewnessCheck).length
-        : Object.values(nextState.items ?? {}).filter(item => item?.pendingNewnessCheck).length,
-      pendingUnattemptedCount: hardFailure
-        ? Object.values(originalState.items ?? {}).filter(item => item?.pendingNewnessCheck && !item?.newnessDetailAttempted).length
-        : Object.values(nextState.items ?? {}).filter(item => item?.pendingNewnessCheck && !item?.newnessDetailAttempted).length,
-      pendingAttemptedCount: hardFailure
-        ? Object.values(originalState.items ?? {}).filter(item => item?.pendingNewnessCheck && item?.newnessDetailAttempted).length
-        : Object.values(nextState.items ?? {}).filter(item => item?.pendingNewnessCheck && item?.newnessDetailAttempted).length,
-      skippedUnknownProbeCount: hardFailure
-        ? Object.values(originalState.items ?? {}).filter(item => item?.newnessProbeSkipped).length
-        : Object.values(nextState.items ?? {}).filter(item => item?.newnessProbeSkipped).length,
+      stateItemCount: Object.keys(nextState.items ?? {}).length,
+      pendingNewnessCount: Object.values(nextState.items ?? {}).filter(item => item?.pendingNewnessCheck).length,
+      pendingUnattemptedCount: Object.values(nextState.items ?? {}).filter(item => item?.pendingNewnessCheck && !item?.newnessDetailAttempted).length,
+      pendingAttemptedCount: Object.values(nextState.items ?? {}).filter(item => item?.pendingNewnessCheck && item?.newnessDetailAttempted).length,
+      skippedUnknownProbeCount: Object.values(nextState.items ?? {}).filter(item => item?.newnessProbeSkipped).length,
       durationMs: Date.now() - nowMs
     },
     candidates: uniqueCandidates
