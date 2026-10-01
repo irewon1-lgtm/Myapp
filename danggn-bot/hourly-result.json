@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-30T23:57:36.964Z",
+  "generatedAt": "2026-10-01T00:34:10.908Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -42,10 +42,10 @@
         "attempted": 8,
         "succeeded": 8,
         "errors": 0,
-        "uniqueListings": 282,
-        "changedCandidates": 222,
+        "uniqueListings": 281,
+        "changedCandidates": 230,
         "detailedCandidates": 40,
-        "durationMs": 46751
+        "durationMs": 52137
       },
       {
         "city": "의왕시",
@@ -59,10 +59,10 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 357,
-        "changedCandidates": 264,
-        "detailedCandidates": 40,
-        "durationMs": 67368
+        "uniqueListings": 347,
+        "changedCandidates": 261,
+        "detailedCandidates": 42,
+        "durationMs": 77351
       },
       {
         "city": "안양시",
@@ -78,10 +78,10 @@
         "attempted": 28,
         "succeeded": 28,
         "errors": 0,
-        "uniqueListings": 348,
-        "changedCandidates": 212,
-        "detailedCandidates": 40,
-        "durationMs": 80634
+        "uniqueListings": 345,
+        "changedCandidates": 216,
+        "detailedCandidates": 42,
+        "durationMs": 90180
       },
       {
         "city": "과천시",
@@ -91,19 +91,19 @@
         "attempted": 4,
         "succeeded": 4,
         "errors": 0,
-        "uniqueListings": 252,
-        "changedCandidates": 220,
+        "uniqueListings": 253,
+        "changedCandidates": 222,
         "detailedCandidates": 41,
-        "durationMs": 37889
+        "durationMs": 39656
       }
     ],
     "finalCandidateCount": 0,
     "stateItemCount": 5000,
-    "pendingNewnessCount": 856,
-    "pendingUnattemptedCount": 856,
+    "pendingNewnessCount": 909,
+    "pendingUnattemptedCount": 909,
     "pendingAttemptedCount": 0,
-    "skippedUnknownProbeCount": 3877,
-    "durationMs": 232738
+    "skippedUnknownProbeCount": 3892,
+    "durationMs": 259429
   },
   "candidates": []
 }
