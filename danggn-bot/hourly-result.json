@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-02T17:41:51.100Z",
+  "generatedAt": "2026-10-02T18:00:26.145Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -18,7 +18,8 @@
     "stateCommitted": true,
     "warnings": [
       "안양시: detail failed cmf4xbwdefdp: Error: HTTP 404 Not Found",
-      "Detail queue retained for retry: 306"
+      "과천시: detail failed ot1kao8kactj: Error: HTTP 404 Not Found",
+      "Detail queue retained for retry: 285"
     ]
   },
   "rules": {
@@ -45,11 +46,11 @@
         "attempted": 8,
         "succeeded": 8,
         "errors": 0,
-        "uniqueListings": 283,
-        "changedCandidates": 107,
-        "detailedCandidates": 47,
-        "deferredDetails": 60,
-        "durationMs": 73248
+        "uniqueListings": 277,
+        "changedCandidates": 101,
+        "detailedCandidates": 48,
+        "deferredDetails": 53,
+        "durationMs": 74495
       },
       {
         "city": "의왕시",
@@ -63,11 +64,11 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 354,
-        "changedCandidates": 124,
+        "uniqueListings": 356,
+        "changedCandidates": 125,
         "detailedCandidates": 48,
-        "deferredDetails": 76,
-        "durationMs": 100094
+        "deferredDetails": 77,
+        "durationMs": 95413
       },
       {
         "city": "안양시",
@@ -83,11 +84,11 @@
         "attempted": 28,
         "succeeded": 28,
         "errors": 0,
-        "uniqueListings": 346,
-        "changedCandidates": 121,
-        "detailedCandidates": 47,
-        "deferredDetails": 74,
-        "durationMs": 118099
+        "uniqueListings": 351,
+        "changedCandidates": 116,
+        "detailedCandidates": 48,
+        "deferredDetails": 68,
+        "durationMs": 111750
       },
       {
         "city": "과천시",
@@ -98,19 +99,19 @@
         "succeeded": 4,
         "errors": 0,
         "uniqueListings": 253,
-        "changedCandidates": 122,
-        "detailedCandidates": 27,
-        "deferredDetails": 95,
-        "durationMs": 40762
+        "changedCandidates": 119,
+        "detailedCandidates": 34,
+        "deferredDetails": 85,
+        "durationMs": 50121
       }
     ],
     "finalCandidateCount": 0,
-    "stateItemCount": 4944,
-    "pendingNewnessCount": 304,
-    "pendingUnattemptedCount": 304,
+    "stateItemCount": 4930,
+    "pendingNewnessCount": 284,
+    "pendingUnattemptedCount": 284,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 332319
+    "durationMs": 331901
   },
   "candidates": []
 }
