@@ -51,6 +51,7 @@ jobs:
 
           result_path = Path("danggn-bot/hourly-result.json")
           pending_path = Path("danggn-bot/pending-alerts.json")
+          ack_path = Path("danggn-bot/chatgpt-ack.json")
 
           try:
               result = json.loads(result_path.read_text(encoding="utf-8"))
@@ -62,9 +63,18 @@ jobs:
           except Exception:
               pending_doc = {"version": 1, "updatedAt": None, "items": {}}
 
+          try:
+              ack_doc = json.loads(ack_path.read_text(encoding="utf-8"))
+          except Exception:
+              ack_doc = {"version": 1, "updatedAt": None, "items": {}}
+
           items = pending_doc.get("items")
           if not isinstance(items, dict):
               items = {}
+
+          ack_items = ack_doc.get("items")
+          if not isinstance(ack_items, dict):
+              ack_items = {}
 
           now = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
 
@@ -72,6 +82,21 @@ jobs:
               key = str(candidate.get("id") or candidate.get("url") or "").strip()
               if not key:
                   continue
+
+              current_price = candidate.get("price")
+              acked = ack_items.get(key) if isinstance(ack_items.get(key), dict) else None
+              if acked:
+                  acked_price = acked.get("price")
+                  try:
+                      current_num = float(current_price)
+                      acked_num = float(acked_price)
+                      if current_num >= acked_num:
+                          items.pop(key, None)
+                          continue
+                  except Exception:
+                      items.pop(key, None)
+                      continue
+
               old = items.get(key) if isinstance(items.get(key), dict) else {}
               items[key] = {
                   "id": candidate.get("id"),
@@ -259,6 +284,9 @@ jobs:
           git add danggn-bot/pending-alerts.json
           if [ -f danggn-bot/ntfy-sent.json ]; then
             git add danggn-bot/ntfy-sent.json
+          fi
+          if [ -f danggn-bot/chatgpt-ack.json ]; then
+            git add danggn-bot/chatgpt-ack.json
           fi
 
           if git diff --cached --quiet; then
