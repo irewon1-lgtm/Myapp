@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-02T00:33:43.942Z",
+  "generatedAt": "2026-10-02T01:04:14.640Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -17,7 +17,7 @@
     "status": "ok",
     "stateCommitted": true,
     "warnings": [
-      "Detail queue retained for retry: 209"
+      "Detail queue retained for retry: 245"
     ]
   },
   "rules": {
@@ -44,11 +44,11 @@
         "attempted": 8,
         "succeeded": 8,
         "errors": 0,
-        "uniqueListings": 278,
-        "changedCandidates": 91,
+        "uniqueListings": 273,
+        "changedCandidates": 96,
         "detailedCandidates": 48,
-        "deferredDetails": 43,
-        "durationMs": 75398
+        "deferredDetails": 48,
+        "durationMs": 74462
       },
       {
         "city": "의왕시",
@@ -62,11 +62,11 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 355,
-        "changedCandidates": 112,
+        "uniqueListings": 332,
+        "changedCandidates": 119,
         "detailedCandidates": 48,
-        "deferredDetails": 64,
-        "durationMs": 100076
+        "deferredDetails": 71,
+        "durationMs": 106738
       },
       {
         "city": "안양시",
@@ -82,11 +82,11 @@
         "attempted": 28,
         "succeeded": 28,
         "errors": 0,
-        "uniqueListings": 332,
-        "changedCandidates": 102,
+        "uniqueListings": 350,
+        "changedCandidates": 117,
         "detailedCandidates": 48,
-        "deferredDetails": 54,
-        "durationMs": 115882
+        "deferredDetails": 69,
+        "durationMs": 113987
       },
       {
         "city": "과천시",
@@ -97,19 +97,19 @@
         "succeeded": 4,
         "errors": 0,
         "uniqueListings": 251,
-        "changedCandidates": 74,
-        "detailedCandidates": 26,
-        "deferredDetails": 48,
-        "durationMs": 40176
+        "changedCandidates": 80,
+        "detailedCandidates": 23,
+        "deferredDetails": 57,
+        "durationMs": 35886
       }
     ],
     "finalCandidateCount": 0,
-    "stateItemCount": 4731,
-    "pendingNewnessCount": 208,
-    "pendingUnattemptedCount": 208,
+    "stateItemCount": 4772,
+    "pendingNewnessCount": 244,
+    "pendingUnattemptedCount": 244,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 331633
+    "durationMs": 331146
   },
   "candidates": []
 }
