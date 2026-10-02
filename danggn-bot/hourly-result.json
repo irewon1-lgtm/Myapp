@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-02T10:42:06.233Z",
+  "generatedAt": "2026-10-02T11:01:06.099Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -17,12 +17,10 @@
     "status": "ok",
     "stateCommitted": true,
     "warnings": [
-      "의왕시: detail failed cmf4xbwdefdp: Error: HTTP 404 Not Found",
-      "의왕시: detail failed kut88bacaqku: Error: HTTP 404 Not Found",
-      "안양시: detail failed cmf4xbwdefdp: Error: HTTP 404 Not Found",
-      "과천시: detail failed tru5mjuzsdhu: Error: HTTP 404 Not Found",
-      "과천시: detail failed nt2ampbqzpxm: Error: HTTP 404 Not Found",
-      "Detail queue retained for retry: 382"
+      "과천시: detail failed hewmdiv12nn2: Error: HTTP 404 Not Found",
+      "과천시: detail failed dubvwtyze94g: Error: HTTP 404 Not Found",
+      "과천시: detail failed rv7n7rhnh8h2: Error: HTTP 404 Not Found",
+      "Detail queue retained for retry: 379"
     ]
   },
   "rules": {
@@ -49,11 +47,11 @@
         "attempted": 8,
         "succeeded": 8,
         "errors": 0,
-        "uniqueListings": 281,
-        "changedCandidates": 122,
+        "uniqueListings": 277,
+        "changedCandidates": 127,
         "detailedCandidates": 48,
-        "deferredDetails": 74,
-        "durationMs": 73840
+        "deferredDetails": 79,
+        "durationMs": 76070
       },
       {
         "city": "의왕시",
@@ -67,11 +65,11 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 360,
-        "changedCandidates": 139,
-        "detailedCandidates": 47,
-        "deferredDetails": 92,
-        "durationMs": 94133
+        "uniqueListings": 357,
+        "changedCandidates": 146,
+        "detailedCandidates": 48,
+        "deferredDetails": 98,
+        "durationMs": 101639
       },
       {
         "city": "안양시",
@@ -87,11 +85,11 @@
         "attempted": 28,
         "succeeded": 28,
         "errors": 0,
-        "uniqueListings": 350,
-        "changedCandidates": 159,
-        "detailedCandidates": 47,
-        "deferredDetails": 112,
-        "durationMs": 111953
+        "uniqueListings": 349,
+        "changedCandidates": 162,
+        "detailedCandidates": 48,
+        "deferredDetails": 114,
+        "durationMs": 117416
       },
       {
         "city": "과천시",
@@ -101,20 +99,20 @@
         "attempted": 4,
         "succeeded": 4,
         "errors": 0,
-        "uniqueListings": 254,
-        "changedCandidates": 134,
-        "detailedCandidates": 35,
-        "deferredDetails": 99,
-        "durationMs": 51482
+        "uniqueListings": 177,
+        "changedCandidates": 106,
+        "detailedCandidates": 21,
+        "deferredDetails": 85,
+        "durationMs": 38114
       }
     ],
     "finalCandidateCount": 0,
-    "stateItemCount": 4995,
-    "pendingNewnessCount": 379,
-    "pendingUnattemptedCount": 379,
+    "stateItemCount": 5000,
+    "pendingNewnessCount": 376,
+    "pendingUnattemptedCount": 376,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 331524
+    "durationMs": 333345
   },
   "candidates": []
 }
