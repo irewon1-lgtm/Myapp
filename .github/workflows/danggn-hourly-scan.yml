@@ -131,8 +131,8 @@ jobs:
           print("pending alerts:", len(items))
           PY
 
-      - name: Send ntfy once for Qwen3.8-27B capable laptops
-        if: always()
+      - name: Raw candidate ntfy disabled; ChatGPT performs market/usage review
+        if: ${{ false }}
         continue-on-error: true
         env:
           NTFY_URL: ${{ secrets.NTFY_URL }}
