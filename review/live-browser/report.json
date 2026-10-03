@@ -67,6 +67,298 @@
       "detail": null
     },
     {
+      "name": "comfort: real teaching books and unsigned disposable profile",
+      "passed": true,
+      "detail": {
+        "svg": {
+          "book": "yt-api-beginners-WXsD0ZgxjRw",
+          "block": "yt-api-beginners-WXsD0ZgxjRw-c1-visual-main",
+          "title": "API 완전 초보 교재 — 3시간 7분 강의 · 코딩 0일차 확장판"
+        },
+        "photo": {
+          "book": "yt-vibecoding-202607",
+          "block": "yt-vibecoding-202607-c2-img-yt-vibe-hq1",
+          "title": "최신 바이브코딩 13분 완전교재"
+        },
+        "unsigned": true
+      }
+    },
+    {
+      "name": "comfort: small focus control has 44px target and accessible instructions",
+      "passed": true,
+      "detail": {
+        "width": 44,
+        "height": 44,
+        "label": "집중모드 켜기",
+        "pressed": "false",
+        "hint": "집중모드에서는 버튼이 5초 뒤 사라집니다. 같은 자리를 누르면 버튼이 나타나고, 한 번 더 누르면 해제됩니다.",
+        "opacity": "1"
+      }
+    },
+    {
+      "name": "comfort: actual SVG and caption use the dark reading theme",
+      "passed": true,
+      "detail": {
+        "filter": "invert(0.9) hue-rotate(180deg) contrast(0.9)",
+        "background": "rgb(45, 48, 40)",
+        "paper": "rgb(45, 48, 40)",
+        "caption": "rgb(180, 176, 164)",
+        "loaded": true
+      }
+    },
+    {
+      "name": "comfort: enlarged actual diagram and caption keep the dark theme",
+      "passed": true,
+      "detail": {
+        "filter": "invert(0.9) hue-rotate(180deg) contrast(0.9)",
+        "background": "rgb(45, 48, 40)",
+        "paper": "rgb(45, 48, 40)",
+        "caption": "rgb(239, 233, 223)",
+        "loaded": true
+      }
+    },
+    {
+      "name": "comfort: actual photo dims without color inversion, including enlargement",
+      "passed": true,
+      "detail": {
+        "inline": {
+          "filter": "brightness(0.78) saturate(0.86)",
+          "background": "rgb(45, 48, 40)",
+          "paper": "rgb(45, 48, 40)",
+          "caption": "rgb(180, 176, 164)",
+          "loaded": true
+        },
+        "enlarged": {
+          "filter": "brightness(0.78) saturate(0.86)",
+          "background": "rgb(45, 48, 40)",
+          "paper": "rgb(45, 48, 40)",
+          "caption": "rgb(239, 233, 223)",
+          "loaded": true
+        }
+      }
+    },
+    {
+      "name": "comfort: switching back to light removes dark image treatment",
+      "passed": true,
+      "detail": {
+        "filter": "contrast(1.08)",
+        "background": "rgb(255, 255, 255)",
+        "paper": "rgb(255, 255, 255)",
+        "caption": "rgb(117, 110, 99)",
+        "loaded": true
+      }
+    },
+    {
+      "name": "comfort: all four widths hide chrome, expand content and fit the screen",
+      "passed": true,
+      "detail": [
+        {
+          "focus": true,
+          "height": 839,
+          "header": "none",
+          "footer": "none",
+          "end": "none",
+          "toast": "none",
+          "fits": true,
+          "target": 44,
+          "width": 360,
+          "before": 708,
+          "anchorVisible": true
+        },
+        {
+          "focus": true,
+          "height": 839,
+          "header": "none",
+          "footer": "none",
+          "end": "none",
+          "toast": "none",
+          "fits": true,
+          "target": 44,
+          "width": 412,
+          "before": 705,
+          "anchorVisible": true
+        },
+        {
+          "focus": true,
+          "height": 839,
+          "header": "none",
+          "footer": "none",
+          "end": "none",
+          "toast": "none",
+          "fits": true,
+          "target": 44,
+          "width": 800,
+          "before": 693,
+          "anchorVisible": true
+        },
+        {
+          "focus": true,
+          "height": 839,
+          "header": "none",
+          "footer": "none",
+          "end": "none",
+          "toast": "none",
+          "fits": true,
+          "target": 44,
+          "width": 1280,
+          "before": 684,
+          "anchorVisible": true
+        }
+      ]
+    },
+    {
+      "name": "comfort: immediate page-turn focus preserves the visible reading anchor",
+      "passed": true,
+      "detail": [
+        {
+          "focus": true,
+          "height": 839,
+          "header": "none",
+          "footer": "none",
+          "end": "none",
+          "toast": "none",
+          "fits": true,
+          "target": 44,
+          "width": 360,
+          "before": 708,
+          "anchorVisible": true
+        },
+        {
+          "focus": true,
+          "height": 839,
+          "header": "none",
+          "footer": "none",
+          "end": "none",
+          "toast": "none",
+          "fits": true,
+          "target": 44,
+          "width": 412,
+          "before": 705,
+          "anchorVisible": true
+        },
+        {
+          "focus": true,
+          "height": 839,
+          "header": "none",
+          "footer": "none",
+          "end": "none",
+          "toast": "none",
+          "fits": true,
+          "target": 44,
+          "width": 800,
+          "before": 693,
+          "anchorVisible": true
+        },
+        {
+          "focus": true,
+          "height": 839,
+          "header": "none",
+          "footer": "none",
+          "end": "none",
+          "toast": "none",
+          "fits": true,
+          "target": 44,
+          "width": 1280,
+          "before": 684,
+          "anchorVisible": true
+        }
+      ]
+    },
+    {
+      "name": "comfort: button is visible before 5s and hides at the 5s boundary",
+      "passed": true,
+      "detail": {
+        "before": {
+          "elapsed": 4800.200000000012,
+          "hidden": false,
+          "opacity": "1"
+        },
+        "hiddenAt": 5000.300000000003,
+        "hidden": true,
+        "opacity": "0",
+        "focus": true
+      }
+    },
+    {
+      "name": "comfort: first tap at hidden position only reveals the control",
+      "passed": true,
+      "detail": {
+        "focus": true,
+        "hidden": false,
+        "page": 63,
+        "opacity": "1"
+      }
+    },
+    {
+      "name": "comfort: second tap exits and restores reading controls",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "comfort: keyboard and touch-edge page navigation remain active",
+      "passed": true,
+      "detail": {
+        "before": 62,
+        "afterKeyboard": 63
+      }
+    },
+    {
+      "name": "comfort: Escape closes image first and focus only on the next press",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "comfort: scroll mode keeps its reading anchor and scrolls in focus",
+      "passed": true,
+      "detail": {
+        "entryAnchorVisible": true,
+        "wheelMoved": true,
+        "exitAnchorVisible": true
+      }
+    },
+    {
+      "name": "comfort: entering focus from completion stays at the end of the book",
+      "passed": true,
+      "detail": {
+        "before": 185,
+        "after": {
+          "page": 153,
+          "pages": 154,
+          "anchor": "yt-api-beginners-WXsD0ZgxjRw-c17-extra-code-01",
+          "focus": true,
+          "display": "none"
+        }
+      }
+    },
+    {
+      "name": "comfort: reader destruction clears focus and old hide callbacks",
+      "passed": true,
+      "detail": {
+        "focus": false,
+        "hidden": false,
+        "body": false,
+        "opacity": "1"
+      }
+    },
+    {
+      "name": "comfort: focus toggle remains reachable with a visible keyboard focus",
+      "passed": true,
+      "detail": {
+        "focused": true,
+        "visible": "1",
+        "outline": "solid"
+      }
+    },
+    {
+      "name": "comfort: existing books and annotations remain unchanged",
+      "passed": true,
+      "detail": {
+        "catalog": true,
+        "annotations": true,
+        "unsigned": true
+      }
+    },
+    {
       "name": "synthetic note and bookmark saved",
       "passed": true,
       "detail": null
@@ -154,7 +446,7 @@
     {
       "name": "bad JavaScript rolls back to previous healthy B",
       "passed": true,
-      "detail": "http://127.0.0.1:35467/?cb_release=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb&cb_recovery=1"
+      "detail": "http://127.0.0.1:37905/?cb_release=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb&cb_recovery=1"
     },
     {
       "name": "failed startup did not erase notes",
@@ -216,5 +508,5 @@
   "intentionalJavaScriptFaults": [
     "Missing initializer in const declaration"
   ],
-  "completedAt": "2026-09-26T13:00:40Z"
+  "completedAt": "2026-10-03T16:53:49Z"
 }

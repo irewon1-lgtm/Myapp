@@ -18,6 +18,7 @@
  case'hidden-books':{let books=C.catalog.books.filter(b=>C.get('hidden:'+b.id,false));C.showModal('숨긴 책',books.length?books.map(b=>`<div class="toc-item"><div><strong>${C.e(b.title)}</strong></div>${C.btn('다시 꺼내기','unhide-book',`data-id="${C.e(b.id)}"`,'small secondary')}</div>`).join(''):C.empty('숨긴 책이 없어요.'));break;}
  case'unhide-book':C.set('hidden:'+d.id,false);C.closeModal();C.render();C.toast('책을 다시 서재에 꺼냈어요.');break;
  case'reader-back':C.go('library');break;
+ case'reader-focus':C.Reader.toggleFocus();break;
  case'reader-prev':C.Reader.goPage(C.Reader.page-1);break;
  case'reader-next':C.Reader.goPage(C.Reader.page+1);break;
  case'reader-image':{const block=C.Reader.book?.chapters?.flatMap(ch=>ch.blocks||[]).find(bl=>bl.id===d.blockId);if(block?.src)C.showModal('그림 크게 보기',`<div class="reader-image-modal"><img src="${C.art(block.src)}" alt="${C.e(block.caption||'강의 이해를 돕는 그림')}"/></div>${block.caption?`<p class="reader-image-caption">${C.e(block.caption)}</p>`:''}`,true);break;}
