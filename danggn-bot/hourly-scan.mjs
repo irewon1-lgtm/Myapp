@@ -331,72 +331,104 @@ function capacityToGB(raw) {
 
 function analyzeHardware(item) {
   const text = ((item.title ?? '') + '\n' + (item.description ?? '')).replace(/\s+/g, ' ');
+  const memoryUnit = '(?:GB|G|기가(?:바이트)?)';
+  const memoryValues = '(16|24|32|36|48|64|96|128|192)';
+  const ramLabel = '(?:RAM|램|렘|메모리|memory|system\\s*memory|통합\\s*메모리|unified\\s*memory)';
+  const vramLabel = '(?:VRAM|브이램|비램|GPU\\s*메모리|그래픽\\s*(?:전용\\s*)?메모리|video\\s*memory|GDDR[67X]*)';
 
-  const labeledRam =
-    text.match(/(?:\bRAM\b|메모리|램|통합\s*메모리|unified\s*memory)\s*[:\-]?\s*(16|24|32|36|48|64|96|128|192)\s*(?:GB|G)\b/i)?.[1]
-    ?? text.match(/\b(16|24|32|36|48|64|96|128|192)\s*(?:GB|G)\s*(?:\bRAM\b|메모리|램|통합\s*메모리|unified\s*memory)/i)?.[1]
-    ?? null;
-  const genericRam = text.match(/\b(32|36|48|64|96|128|192)\s*(?:GB|G)\b/i)?.[1] ?? null;
-  const ramGB = Number(labeledRam ?? genericRam) || null;
+  const ramForward = new RegExp(ramLabel + '\\s*(?:용량)?\\s*[:=\\-]?\\s*' + memoryValues + '\\s*' + memoryUnit + '?', 'i');
+  const ramReverse = new RegExp(memoryValues + '\\s*' + memoryUnit + '?\\s*' + ramLabel, 'i');
+  const ramMatch = text.match(ramForward) ?? text.match(ramReverse);
+  const ramGB = ramMatch ? Number(ramMatch[1]) || null : null;
+
+  const vramForward = new RegExp(vramLabel + '\\s*(?:용량)?\\s*[:=\\-]?\\s*(8|10|12|16|20|24|32|48)\\s*' + memoryUnit + '?', 'i');
+  const vramReverse = new RegExp('(8|10|12|16|20|24|32|48)\\s*' + memoryUnit + '?\\s*' + vramLabel, 'i');
+  const vramMatch = text.match(vramForward) ?? text.match(vramReverse);
+
+  // Bare expressions such as "16기가", "32G", "64 GB" are preserved as
+  // ambiguous memory evidence. Never silently treat them as RAM or VRAM.
+  const ambiguousMemoryMatch = text.match(/(?:^|[\\s/|,;:()])(?:용량\\s*)?(16|24|32|36|48|64|96|128|192)\\s*(GB|G|기가(?:바이트)?)(?=$|[\\s/|,;:()])/i);
+  const ambiguousMemoryGB = ambiguousMemoryMatch ? Number(ambiguousMemoryMatch[1]) || null : null;
 
   const storageRaw =
-    text.match(/(?:SSD|NVMe|M\.?2)[^.;,\n]{0,32}?(256\s*(?:GB|G)|512\s*(?:GB|G)|\d+(?:\.\d+)?\s*TB|1024\s*(?:GB|G)|2048\s*(?:GB|G))/i)?.[1]
-    ?? text.match(/(256\s*(?:GB|G)|512\s*(?:GB|G)|\d+(?:\.\d+)?\s*TB|1024\s*(?:GB|G)|2048\s*(?:GB|G))[^.;,\n]{0,32}?(?:SSD|NVMe|M\.?2)/i)?.[1]
+    text.match(/(?:SSD|NVMe|M\\.?2)[^.;,\\n]{0,32}?(256\\s*(?:GB|G)|512\\s*(?:GB|G)|\\d+(?:\\.\\d+)?\\s*TB|1024\\s*(?:GB|G)|2048\\s*(?:GB|G))/i)?.[1]
+    ?? text.match(/(256\\s*(?:GB|G)|512\\s*(?:GB|G)|\\d+(?:\\.\\d+)?\\s*TB|1024\\s*(?:GB|G)|2048\\s*(?:GB|G))[^.;,\\n]{0,32}?(?:SSD|NVMe|M\\.?2)/i)?.[1]
     ?? null;
   const storageGB = capacityToGB(storageRaw);
 
   const gpuHint =
-    text.match(/\bRTX\s*(?:PRO\s*)?\d{4}(?:\s*Ti)?(?:\s*(?:Laptop|Mobile|Ada|Blackwell))?\b/i)?.[0]
-    ?? text.match(/\bRTX\s*A\d{4}\b/i)?.[0]
-    ?? text.match(/\bRadeon\s*[A-Z0-9 ]{2,18}\b/i)?.[0]
-    ?? text.match(/\bApple\s*M[1-5]\s*(?:Pro|Max|Ultra)?\b/i)?.[0]
-    ?? text.match(/\bM[1-5]\s*(?:Pro|Max|Ultra)\b/i)?.[0]
+    text.match(/\\bRTX\\s*(?:PRO\\s*)?\\d{4}(?:\\s*Ti)?(?:\\s*(?:Laptop|Mobile|Ada|Blackwell))?\\b/i)?.[0]
+    ?? text.match(/\\bRTX\\s*A\\d{4}\\b/i)?.[0]
+    ?? text.match(/\\bQuadro\\s*RTX\\s*\\d{4}\\b/i)?.[0]
+    ?? text.match(/\\bRadeon\\s*[A-Z0-9 ]{2,18}\\b/i)?.[0]
+    ?? text.match(/\\bApple\\s*M[1-5]\\s*(?:Pro|Max|Ultra)?\\b/i)?.[0]
+    ?? text.match(/\\bM[1-5]\\s*(?:Pro|Max|Ultra)\\b/i)?.[0]
     ?? null;
 
-  const explicitVram =
-    text.match(/(?:VRAM|그래픽\s*(?:메모리)?|GDDR[67X]*)\s*[:\-]?\s*(8|10|12|16|20|24|32|48)\s*(?:GB|G)\b/i)?.[1]
-    ?? text.match(/\b(8|10|12|16|20|24|32|48)\s*(?:GB|G)\s*(?:VRAM|GDDR[67X]*)\b/i)?.[1]
-    ?? null;
+  let vramGB = vramMatch ? Number(vramMatch[1]) || null : null;
 
-  let vramGB = Number(explicitVram) || null;
-  if (/\bRTX\s*5090\b/i.test(text)) vramGB = Math.max(vramGB ?? 0, 24);
-  if (/\bRTX\s*(?:5080|4090)\b/i.test(text)) vramGB = Math.max(vramGB ?? 0, 16);
-  if (/\bRTX\s*3080\s*Ti\b/i.test(text)) vramGB = Math.max(vramGB ?? 0, 16);
-  if (/\bRTX\s*5000\s*Ada\b/i.test(text)) vramGB = Math.max(vramGB ?? 0, 16);
-  if (/\bRTX\s*PRO\s*5000\s*Blackwell\b/i.test(text)) vramGB = Math.max(vramGB ?? 0, 24);
-  if (/\bRTX\s*PRO\s*4000\s*Blackwell\b/i.test(text)) vramGB = Math.max(vramGB ?? 0, 16);
+  // Only map GPU models whose laptop/workstation VRAM is unambiguous enough
+  // for this filter. Unknown or ambiguous models are left for ChatGPT review.
+  if (/\\bRTX\\s*5090(?:\\s*Laptop)?\\b/i.test(text)) vramGB = Math.max(vramGB ?? 0, 24);
+  if (/\\bRTX\\s*5080(?:\\s*Laptop)?\\b/i.test(text)) vramGB = Math.max(vramGB ?? 0, 16);
+  if (/\\bRTX\\s*4090(?:\\s*Laptop)?\\b/i.test(text)) vramGB = Math.max(vramGB ?? 0, 16);
+  if (/\\bRTX\\s*3080\\s*Ti(?:\\s*Laptop)?\\b/i.test(text)) vramGB = Math.max(vramGB ?? 0, 16);
+  if (/\\bRTX\\s*A5000\\b/i.test(text)) vramGB = Math.max(vramGB ?? 0, 16);
+  if (/\\bQuadro\\s*RTX\\s*5000\\b/i.test(text)) vramGB = Math.max(vramGB ?? 0, 16);
+  if (/\\bRTX\\s*5000\\s*Ada\\b/i.test(text)) vramGB = Math.max(vramGB ?? 0, 16);
+  if (/\\bRTX\\s*PRO\\s*5000\\s*Blackwell\\b/i.test(text)) vramGB = Math.max(vramGB ?? 0, 24);
+  if (/\\bRTX\\s*PRO\\s*4000\\s*Blackwell\\b/i.test(text)) vramGB = Math.max(vramGB ?? 0, 16);
 
   const ramPass = (ramGB ?? 0) >= 32;
   const vramPass = (vramGB ?? 0) >= 16;
-  const ryzenAiMaxShared64 = /\bRyzen\s*AI\s*Max(?:\+|\s*Plus|\s*Pro)?\s*\d{3}\b/i.test(text)
-    && (ramGB ?? 0) >= 64;
-  const ok = ramPass || vramPass || ryzenAiMaxShared64;
+  const ryzenAiMaxShared64 = /\\bRyzen\\s*AI\\s*Max(?:\\+|\\s*Plus|\\s*Pro)?\\s*\\d{3}\\b/i.test(text)
+    && Math.max(ramGB ?? 0, ambiguousMemoryGB ?? 0) >= 64;
 
+  const confirmedPass = ramPass || vramPass || ryzenAiMaxShared64;
+  const memoryAtLeast16 = Math.max(ramGB ?? 0, ambiguousMemoryGB ?? 0) >= 16;
+  const needsReview = !confirmedPass && memoryAtLeast16;
+  const ok = confirmedPass || needsReview;
+
+  let hardwareReviewStatus = 'FAIL';
   let llmCapability = null;
   let llmReason = null;
+
   if (ramPass && vramPass) {
+    hardwareReviewStatus = 'PASS_RAM_VRAM';
     llmCapability = 'HYBRID_WORK_LOCAL_LLM';
     llmReason = 'RAM 32GB 이상 + VRAM 16GB 이상: Codex/ChatGPT Work/개발 멀티태스킹과 로컬 LLM GPU 가속 모두 강점';
   } else if (vramPass) {
+    hardwareReviewStatus = 'PASS_VRAM';
     llmCapability = 'LOCAL_LLM_GPU';
-    llmReason = 'VRAM 16GB 이상: 로컬 LLM GPU 가속 후보';
+    llmReason = 'VRAM 16GB 이상이 직접 표기되었거나 확정 가능한 GPU 모델로 확인됨';
   } else if (ryzenAiMaxShared64) {
+    hardwareReviewStatus = 'PASS_SHARED64';
     llmCapability = 'RYZEN_AI_MAX_SHARED';
-    llmReason = 'Ryzen AI Max + 공유메모리 64GB 이상: 개발 멀티태스킹과 대용량 로컬 LLM 후보';
+    llmReason = 'Ryzen AI Max + 공유/통합메모리 64GB 이상 후보';
   } else if (ramPass) {
+    hardwareReviewStatus = 'PASS_RAM';
     llmCapability = 'WORK_DEV_RAM32';
-    llmReason = 'RAM 32GB 이상: Codex/ChatGPT Work/브라우저/개발 멀티태스킹 후보; 로컬 LLM 속도는 GPU 구성에 따라 달라짐';
+    llmReason = 'RAM 32GB 이상: Codex/ChatGPT Work/브라우저/개발 멀티태스킹 후보';
+  } else if (needsReview) {
+    hardwareReviewStatus = 'CHECK_MEMORY_GPU';
+    llmCapability = 'SPEC_CHECK_REQUIRED';
+    llmReason = '16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 또는 GPU 세부사양만으로 최종 성능 조건을 확정할 수 없어 2차 확인 필요';
   }
 
   return {
     ok,
     ramGB,
+    ambiguousMemoryGB,
     storageGB,
     gpuHint,
     vramGB,
+    hardwareReviewStatus,
     llmCapability,
     llmReason,
-    confidence: (labeledRam || vramGB || ryzenAiMaxShared64) ? 'explicit_or_model_known' : 'generic_memory_match'
+    ramEvidence: ramMatch?.[0] ?? null,
+    vramEvidence: vramMatch?.[0] ?? null,
+    ambiguousMemoryEvidence: ambiguousMemoryMatch?.[0]?.trim() ?? null,
+    confidence: confirmedPass ? 'confirmed' : (needsReview ? 'needs_review' : 'insufficient')
   };
 }
 
@@ -843,6 +875,11 @@ async function main() {
         gpuHint: specs.gpuHint,
         vramGB: specs.vramGB,
         ramGB: specs.ramGB,
+        ambiguousMemoryGB: specs.ambiguousMemoryGB,
+        hardwareReviewStatus: specs.hardwareReviewStatus,
+        ramEvidence: specs.ramEvidence,
+        vramEvidence: specs.vramEvidence,
+        ambiguousMemoryEvidence: specs.ambiguousMemoryEvidence,
         storageGB: specs.storageGB,
         llmCapability: specs.llmCapability,
         llmReason: specs.llmReason,
@@ -913,9 +950,11 @@ async function main() {
       storageGate: false,
       cpuBaseline: 'AMD Ryzen 7 PRO 7840U or better/equivalent',
       acceptedHardware: [
-        'RAM >=32GB OR VRAM >=16GB',
-        'Ryzen AI Max with >=64GB shared/unified memory is explicitly accepted'
-      ]
+        'CONFIRMED: explicit RAM >=32GB OR explicit/model-confirmed VRAM >=16GB',
+        'CONFIRMED: Ryzen AI Max with >=64GB shared/unified memory',
+        'REVIEW: memory expression >=16GB (including RAM/램/렘/메모리/memory, 기가/G/GB variants or bare 16G/32기가) when RAM/VRAM cannot yet be distinguished'
+      ],
+      hardwareReviewStates: ['PASS_RAM', 'PASS_VRAM', 'PASS_RAM_VRAM', 'PASS_SHARED64', 'CHECK_MEMORY_GPU']
     },
     stats: {
       cities: cityRuns,
