@@ -333,8 +333,8 @@ function analyzeHardware(item) {
   const text = ((item.title ?? '') + '\n' + (item.description ?? '')).replace(/\s+/g, ' ');
   const memoryUnit = '(?:GB|G|기가(?:바이트)?)';
   const memoryValues = '(16|24|32|36|48|64|96|128|192)';
-  const ramLabel = '(?:\\bRAM\\b|램|렘|메모리|memory|system\\s*memory|통합\\s*메모리|unified\\s*memory)';
-  const vramLabel = '(?:\\bVRAM\\b|브이램|비램|GPU\\s*메모리|그래픽\\s*(?:전용\\s*)?메모리|video\\s*memory|GDDR[67X]*)';
+  const ramLabel = '(?:(?<![A-Za-z])RAM(?![A-Za-z])|램|렘|메모리|memory|system\\s*memory|통합\\s*메모리|unified\\s*memory)';
+  const vramLabel = '(?:(?<![A-Za-z])VRAM(?![A-Za-z])|브이램|비램|GPU\\s*메모리|그래픽\\s*(?:전용\\s*)?메모리|video\\s*memory|GDDR[67X]*)';
 
   // Parse VRAM first so strings such as "VRAM16GB" or "그래픽 메모리 16G"
   // can never be reinterpreted as ordinary system RAM.
