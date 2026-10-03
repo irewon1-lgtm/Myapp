@@ -333,8 +333,8 @@ function analyzeHardware(item) {
   const text = ((item.title ?? '') + '\n' + (item.description ?? '')).replace(/\s+/g, ' ');
 
   const labeledRam =
-    text.match(/(?:\bRAM\b|메모리|램|통합\s*메모리)\s*[:\-]?\s*(16|24|32|36|48|64|96|128|192)\s*(?:GB|G)\b/i)?.[1]
-    ?? text.match(/\b(16|24|32|36|48|64|96|128|192)\s*(?:GB|G)\s*(?:\bRAM\b|메모리|램|통합\s*메모리)/i)?.[1]
+    text.match(/(?:\bRAM\b|메모리|램|통합\s*메모리|unified\s*memory)\s*[:\-]?\s*(16|24|32|36|48|64|96|128|192)\s*(?:GB|G)\b/i)?.[1]
+    ?? text.match(/\b(16|24|32|36|48|64|96|128|192)\s*(?:GB|G)\s*(?:\bRAM\b|메모리|램|통합\s*메모리|unified\s*memory)/i)?.[1]
     ?? null;
   const genericRam = text.match(/\b(32|36|48|64|96|128|192)\s*(?:GB|G)\b/i)?.[1] ?? null;
   const ramGB = Number(labeledRam ?? genericRam) || null;
@@ -348,9 +348,9 @@ function analyzeHardware(item) {
   const gpuHint =
     text.match(/\bRTX\s*(?:PRO\s*)?\d{4}(?:\s*Ti)?(?:\s*(?:Laptop|Mobile|Ada|Blackwell))?\b/i)?.[0]
     ?? text.match(/\bRTX\s*A\d{4}\b/i)?.[0]
-    ?? text.match(/\bRadeon\s*80(?:50|60)S\b/i)?.[0]
-    ?? text.match(/\bApple\s*M[1-5]\s*Max\b/i)?.[0]
-    ?? text.match(/\bM[1-5]\s*Max\b/i)?.[0]
+    ?? text.match(/\bRadeon\s*[A-Z0-9 ]{2,18}\b/i)?.[0]
+    ?? text.match(/\bApple\s*M[1-5]\s*(?:Pro|Max|Ultra)?\b/i)?.[0]
+    ?? text.match(/\bM[1-5]\s*(?:Pro|Max|Ultra)\b/i)?.[0]
     ?? null;
 
   const explicitVram =
@@ -366,48 +366,96 @@ function analyzeHardware(item) {
   if (/\bRTX\s*PRO\s*5000\s*Blackwell\b/i.test(text)) vramGB = Math.max(vramGB ?? 0, 24);
   if (/\bRTX\s*PRO\s*4000\s*Blackwell\b/i.test(text)) vramGB = Math.max(vramGB ?? 0, 16);
 
-  const nvidiaCapable = /\bRTX\b/i.test(text) && (vramGB ?? 0) >= 16;
-  const strixHalo = /\bRyzen\s*AI\s*Max(?:\+|\s*Plus|\s*Pro)?\s*(?:385|388|390|392|395)\b/i.test(text)
+  const ramPass = (ramGB ?? 0) >= 32;
+  const vramPass = (vramGB ?? 0) >= 16;
+  const ryzenAiMaxShared64 = /\bRyzen\s*AI\s*Max(?:\+|\s*Plus|\s*Pro)?\s*\d{3}\b/i.test(text)
     && (ramGB ?? 0) >= 64;
-  const appleMax = /\b(?:Apple\s*)?M[1-5]\s*Max\b/i.test(text)
-    && (ramGB ?? 0) >= 32;
+  const ok = ramPass || vramPass || ryzenAiMaxShared64;
 
   let llmCapability = null;
   let llmReason = null;
-  if (nvidiaCapable) {
-    llmCapability = (vramGB ?? 0) >= 24 ? 'QWEN27B_FULL_GPU' : 'QWEN27B_16GB_GPU';
-    llmReason = (vramGB ?? 0) >= 24
-      ? 'VRAM 24GB 이상: Qwen3.8-27B 4-bit를 GPU에 올리고 컨텍스트 여유 확보 가능'
-      : 'VRAM 16GB급: IQ4_XS/Q4 계열로 실사용 가능한 GPU 가속 구동 가능';
-  } else if (strixHalo) {
-    llmCapability = 'QWEN27B_STRIX_HALO';
-    llmReason = 'Ryzen AI Max 385/388/390/392/395 + 통합메모리 64GB 이상: Qwen3.8-27B 4-bit 실사용 가능';
-  } else if (appleMax) {
-    llmCapability = 'QWEN27B_APPLE_MAX';
-    llmReason = 'Apple M Max + 통합메모리 32GB 이상: Qwen3.8-27B 4-bit 실사용 가능';
+  if (ramPass && vramPass) {
+    llmCapability = 'HYBRID_WORK_LOCAL_LLM';
+    llmReason = 'RAM 32GB 이상 + VRAM 16GB 이상: Codex/ChatGPT Work/개발 멀티태스킹과 로컬 LLM GPU 가속 모두 강점';
+  } else if (vramPass) {
+    llmCapability = 'LOCAL_LLM_GPU';
+    llmReason = 'VRAM 16GB 이상: 로컬 LLM GPU 가속 후보';
+  } else if (ryzenAiMaxShared64) {
+    llmCapability = 'RYZEN_AI_MAX_SHARED';
+    llmReason = 'Ryzen AI Max + 공유메모리 64GB 이상: 개발 멀티태스킹과 대용량 로컬 LLM 후보';
+  } else if (ramPass) {
+    llmCapability = 'WORK_DEV_RAM32';
+    llmReason = 'RAM 32GB 이상: Codex/ChatGPT Work/브라우저/개발 멀티태스킹 후보; 로컬 LLM 속도는 GPU 구성에 따라 달라짐';
   }
 
   return {
-    ok: Boolean(llmCapability),
+    ok,
     ramGB,
     storageGB,
     gpuHint,
     vramGB,
     llmCapability,
     llmReason,
-    confidence: (vramGB || strixHalo || appleMax) ? 'explicit_or_model_known' : 'insufficient'
+    confidence: (labeledRam || vramGB || ryzenAiMaxShared64) ? 'explicit_or_model_known' : 'generic_memory_match'
   };
 }
 
 function extractCpu(text) {
   const compact = String(text ?? '').replace(/\s+/g, ' ');
-  return compact.match(/\b(?:Intel\s*)?Core\s*Ultra\s*[3579]\s*\d{3}[A-Z]*\b/i)?.[0]
-    ?? compact.match(/\bi[3579]-?\d{4,5}[A-Z]{0,2}\b/i)?.[0]
-    ?? compact.match(/\bRyzen\s*AI\s*Max(?:\+|\s*Plus|\s*Pro)?\s*\d{3}\b/i)?.[0]
-    ?? compact.match(/\bRyzen\s*[3579]\s*\d{4}[A-Z]{0,3}\b/i)?.[0]
+  return compact.match(/\bRyzen\s*AI\s*Max(?:\+|\s*Plus|\s*Pro)?\s*\d{3}\b/i)?.[0]
+    ?? compact.match(/\bRyzen\s*AI\s*[79]\s*(?:HX\s*)?\d{3}\b/i)?.[0]
+    ?? compact.match(/\bRyzen\s*[79](?:\s*PRO)?\s*\d{4}[A-Z]{0,3}\b/i)?.[0]
+    ?? compact.match(/\b(?:Intel\s*)?Core\s*Ultra\s*[79]\s*\d{3}[A-Z]*\b/i)?.[0]
+    ?? compact.match(/\bi[79]-?\d{4,5}[A-Z]{0,2}\b/i)?.[0]
     ?? compact.match(/\bApple\s*M[1-5](?:\s*(?:Pro|Max|Ultra))?\b/i)?.[0]
     ?? compact.match(/\bM[1-5]\s*(?:Pro|Max|Ultra)\b/i)?.[0]
     ?? null;
+}
+
+function cpuMeetsBaseline(cpuHint) {
+  if (!cpuHint) return false;
+  const cpu = String(cpuHint).replace(/\s+/g, ' ').trim();
+
+  if (/\bRyzen\s*AI\s*Max/i.test(cpu)) return true;
+  if (/\bRyzen\s*AI\s*[79]\b/i.test(cpu)) return true;
+
+  const amd = cpu.match(/\bRyzen\s*([79])(?:\s*PRO)?\s*(\d{4})([A-Z]{0,3})\b/i);
+  if (amd) {
+    const model = Number(amd[2]);
+    if (model >= 8000) return true;
+    if (model >= 7840 && model < 8000) return true;
+    return false;
+  }
+
+  const ultra = cpu.match(/\bCore\s*Ultra\s*([79])\s*(\d{3})([A-Z]*)\b/i);
+  if (ultra) {
+    const model = Number(ultra[2]);
+    const suffix = String(ultra[3] || '').toUpperCase();
+    if (model >= 200) return true;
+    return model >= 155 && /H|HX/.test(suffix);
+  }
+
+  const intel = cpu.match(/\bi([79])-?(\d{4,5})([A-Z]{0,2})\b/i);
+  if (intel) {
+    const model = Number(intel[2]);
+    const suffix = String(intel[3] || '').toUpperCase();
+    const generation = model >= 10000 ? Math.floor(model / 1000) : Math.floor(model / 1000);
+    if (!/H|HX/.test(suffix)) return false;
+    if (generation >= 13) return true;
+    if (generation === 12 && model >= 12700) return true;
+    return false;
+  }
+
+  const apple = cpu.match(/\b(?:Apple\s*)?M([1-5])\s*(Pro|Max|Ultra)?\b/i);
+  if (apple) {
+    const generation = Number(apple[1]);
+    const tier = String(apple[2] || '').toLowerCase();
+    if (generation >= 3) return true;
+    if (generation >= 2 && /pro|max|ultra/.test(tier)) return true;
+    if (generation === 1 && /max|ultra/.test(tier)) return true;
+  }
+
+  return false;
 }
 
 function trimText(value, max = 1800) {
@@ -773,6 +821,8 @@ async function main() {
       if (!specs.ok) continue;
 
       const text = (item.title ?? '') + '\n' + (item.description ?? '');
+      const cpuHint = extractCpu(text);
+      if (!cpuMeetsBaseline(cpuHint)) continue;
       const previousPrice = changeType === 'price_drop' ? Number(item.previousPrice) || null : null;
 
       candidates.push({
@@ -788,7 +838,8 @@ async function main() {
         regionPath: item.regionPath ?? null,
         title: item.title,
         modelHint: item.title,
-        cpuHint: extractCpu(text),
+        cpuHint,
+        cpuBaselinePass: true,
         gpuHint: specs.gpuHint,
         vramGB: specs.vramGB,
         ramGB: specs.ramGB,
@@ -856,13 +907,14 @@ async function main() {
       newnessField: 'postedAt',
       boostedAtCreatesNewCandidate: false,
       onlyStatus: 'Ongoing',
-      target: 'Qwen3.8-27B smooth local inference',
+      target: 'Codex + ChatGPT Work + coding + local LLM',
       priceGate: false,
+      marketPriceCheck: 'deferred to ChatGPT; prefer >=10% below used-market average; insufficient market evidence => HOLD, do not auto-reject',
       storageGate: false,
+      cpuBaseline: 'AMD Ryzen 7 PRO 7840U or better/equivalent',
       acceptedHardware: [
-        'NVIDIA RTX laptop/workstation GPU with >=16GB VRAM',
-        'Ryzen AI Max 385/388/390/392/395 with >=64GB unified memory',
-        'Apple M1-M5 Max with >=32GB unified memory'
+        'RAM >=32GB OR VRAM >=16GB',
+        'Ryzen AI Max with >=64GB shared/unified memory is explicitly accepted'
       ]
     },
     stats: {
