@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-03T14:51:01.335Z",
+  "generatedAt": "2026-10-03T15:54:25.404Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -17,20 +17,21 @@
     "status": "ok",
     "stateCommitted": true,
     "warnings": [
-      "Detail queue retained for retry: 291"
+      "Detail queue retained for retry: 228"
     ]
   },
   "rules": {
     "newnessField": "postedAt",
     "boostedAtCreatesNewCandidate": false,
     "onlyStatus": "Ongoing",
-    "target": "Qwen3.8-27B smooth local inference",
+    "target": "Codex + ChatGPT Work + coding + local LLM",
     "priceGate": false,
+    "marketPriceCheck": "deferred to ChatGPT; prefer >=10% below used-market average; insufficient market evidence => HOLD, do not auto-reject",
     "storageGate": false,
+    "cpuBaseline": "AMD Ryzen 7 PRO 7840U or better/equivalent",
     "acceptedHardware": [
-      "NVIDIA RTX laptop/workstation GPU with >=16GB VRAM",
-      "Ryzen AI Max 385/388/390/392/395 with >=64GB unified memory",
-      "Apple M1-M5 Max with >=32GB unified memory"
+      "RAM >=32GB OR VRAM >=16GB",
+      "Ryzen AI Max with >=64GB shared/unified memory is explicitly accepted"
     ]
   },
   "stats": {
@@ -44,11 +45,11 @@
         "attempted": 8,
         "succeeded": 8,
         "errors": 0,
-        "uniqueListings": 277,
-        "changedCandidates": 126,
+        "uniqueListings": 282,
+        "changedCandidates": 104,
         "detailedCandidates": 48,
-        "deferredDetails": 78,
-        "durationMs": 76240
+        "deferredDetails": 56,
+        "durationMs": 77286
       },
       {
         "city": "의왕시",
@@ -62,11 +63,11 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 353,
-        "changedCandidates": 130,
+        "uniqueListings": 337,
+        "changedCandidates": 117,
         "detailedCandidates": 48,
-        "deferredDetails": 82,
-        "durationMs": 101519
+        "deferredDetails": 69,
+        "durationMs": 99063
       },
       {
         "city": "안양시",
@@ -82,11 +83,11 @@
         "attempted": 28,
         "succeeded": 28,
         "errors": 0,
-        "uniqueListings": 339,
-        "changedCandidates": 110,
+        "uniqueListings": 360,
+        "changedCandidates": 104,
         "detailedCandidates": 48,
-        "deferredDetails": 62,
-        "durationMs": 118155
+        "deferredDetails": 56,
+        "durationMs": 116097
       },
       {
         "city": "과천시",
@@ -96,20 +97,20 @@
         "attempted": 4,
         "succeeded": 4,
         "errors": 0,
-        "uniqueListings": 252,
-        "changedCandidates": 92,
-        "detailedCandidates": 23,
-        "deferredDetails": 69,
-        "durationMs": 36195
+        "uniqueListings": 253,
+        "changedCandidates": 73,
+        "detailedCandidates": 26,
+        "deferredDetails": 47,
+        "durationMs": 39625
       }
     ],
     "finalCandidateCount": 0,
     "stateItemCount": 5000,
-    "pendingNewnessCount": 286,
-    "pendingUnattemptedCount": 286,
+    "pendingNewnessCount": 221,
+    "pendingUnattemptedCount": 221,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 332181
+    "durationMs": 332182
   },
   "candidates": []
 }
