@@ -333,28 +333,36 @@ function analyzeHardware(item) {
   const text = ((item.title ?? '') + '\n' + (item.description ?? '')).replace(/\s+/g, ' ');
   const memoryUnit = '(?:GB|G|기가(?:바이트)?)';
   const memoryValues = '(16|24|32|36|48|64|96|128|192)';
-  const ramLabel = '(?:RAM|램|렘|메모리|memory|system\\s*memory|통합\\s*메모리|unified\\s*memory)';
-  const vramLabel = '(?:VRAM|브이램|비램|GPU\\s*메모리|그래픽\\s*(?:전용\\s*)?메모리|video\\s*memory|GDDR[67X]*)';
+  const ramLabel = '(?:\\bRAM\\b|램|렘|메모리|memory|system\\s*memory|통합\\s*메모리|unified\\s*memory)';
+  const vramLabel = '(?:\\bVRAM\\b|브이램|비램|GPU\\s*메모리|그래픽\\s*(?:전용\\s*)?메모리|video\\s*memory|GDDR[67X]*)';
 
-  const ramForward = new RegExp(ramLabel + '\\s*(?:용량)?\\s*[:=\\-]?\\s*' + memoryValues + '\\s*' + memoryUnit + '?', 'i');
-  const ramReverse = new RegExp(memoryValues + '\\s*' + memoryUnit + '?\\s*' + ramLabel, 'i');
-  const ramMatch = text.match(ramForward) ?? text.match(ramReverse);
-  const ramGB = ramMatch ? Number(ramMatch[1]) || null : null;
-
+  // Parse VRAM first so strings such as "VRAM16GB" or "그래픽 메모리 16G"
+  // can never be reinterpreted as ordinary system RAM.
   const vramForward = new RegExp(vramLabel + '\\s*(?:용량)?\\s*[:=\\-]?\\s*(8|10|12|16|20|24|32|48)\\s*' + memoryUnit + '?', 'i');
   const vramReverse = new RegExp('(8|10|12|16|20|24|32|48)\\s*' + memoryUnit + '?\\s*' + vramLabel, 'i');
   const vramMatch = text.match(vramForward) ?? text.match(vramReverse);
+  const textWithoutVram = vramMatch ? text.replace(vramMatch[0], ' ') : text;
 
-  // Bare expressions such as "16기가", "32G", "64 GB" are preserved as
-  // ambiguous memory evidence. Never silently treat them as RAM or VRAM.
-  const ambiguousMemoryMatch = text.match(/(?:^|[\\s/|,;:()])(?:용량\\s*)?(16|24|32|36|48|64|96|128|192)\\s*(GB|G|기가(?:바이트)?)(?=$|[\\s/|,;:()])/i);
-  const ambiguousMemoryGB = ambiguousMemoryMatch ? Number(ambiguousMemoryMatch[1]) || null : null;
+  const ramForward = new RegExp(ramLabel + '\\s*(?:용량)?\\s*[:=\\-]?\\s*' + memoryValues + '\\s*' + memoryUnit + '?', 'i');
+  const ramReverse = new RegExp(memoryValues + '\\s*' + memoryUnit + '?\\s*' + ramLabel, 'i');
+  const ramMatch = textWithoutVram.match(ramForward) ?? textWithoutVram.match(ramReverse);
+  const ramGB = ramMatch ? Number(ramMatch[1]) || null : null;
 
   const storageRaw =
-    text.match(/(?:SSD|NVMe|M\\.?2)[^.;,\\n]{0,32}?(256\\s*(?:GB|G)|512\\s*(?:GB|G)|\\d+(?:\\.\\d+)?\\s*TB|1024\\s*(?:GB|G)|2048\\s*(?:GB|G))/i)?.[1]
-    ?? text.match(/(256\\s*(?:GB|G)|512\\s*(?:GB|G)|\\d+(?:\\.\\d+)?\\s*TB|1024\\s*(?:GB|G)|2048\\s*(?:GB|G))[^.;,\\n]{0,32}?(?:SSD|NVMe|M\\.?2)/i)?.[1]
+    text.match(/(?:SSD|NVMe|M\\.?2)[^.;,\\n]{0,32}?(256\\s*(?:GB|G)|512\\s*(?:GB|G)|\\d+(?:\\.\\d+)?\\s*TB|1024\\s*(?:GB|G)|2048\\s*(?:GB|G)|128\\s*(?:GB|G))/i)?.[1]
+    ?? text.match(/(128\\s*(?:GB|G)|256\\s*(?:GB|G)|512\\s*(?:GB|G)|\\d+(?:\\.\\d+)?\\s*TB|1024\\s*(?:GB|G)|2048\\s*(?:GB|G))[^.;,\\n]{0,32}?(?:SSD|NVMe|M\\.?2)/i)?.[1]
     ?? null;
   const storageGB = capacityToGB(storageRaw);
+
+  // Bare expressions such as "16기가", "32G", "64 GB" are preserved only
+  // when they are not already explained by RAM/VRAM/storage labels.
+  let ambiguousText = textWithoutVram;
+  if (ramMatch) ambiguousText = ambiguousText.replace(ramMatch[0], ' ');
+  ambiguousText = ambiguousText
+    .replace(/(?:SSD|NVMe|M\\.?2)\\s*[:=\\-]?\\s*\\d+(?:\\.\\d+)?\\s*(?:TB|GB|G)/ig, ' ')
+    .replace(/\\d+(?:\\.\\d+)?\\s*(?:TB|GB|G)\\s*(?:SSD|NVMe|M\\.?2)/ig, ' ');
+  const ambiguousMemoryMatch = ambiguousText.match(/(?:^|[\\s/|,;:()])(?:용량\\s*)?(16|24|32|36|48|64|96|128|192)\\s*(GB|G|기가(?:바이트)?)(?=$|[\\s/|,;:()])/i);
+  const ambiguousMemoryGB = ambiguousMemoryMatch ? Number(ambiguousMemoryMatch[1]) || null : null;
 
   const gpuHint =
     text.match(/\\bRTX\\s*(?:PRO\\s*)?\\d{4}(?:\\s*Ti)?(?:\\s*(?:Laptop|Mobile|Ada|Blackwell))?\\b/i)?.[0]
