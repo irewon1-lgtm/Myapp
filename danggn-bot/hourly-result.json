@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-03T16:00:11.056Z",
+  "generatedAt": "2026-10-03T16:21:30.127Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -17,7 +17,8 @@
     "status": "ok",
     "stateCommitted": true,
     "warnings": [
-      "Detail queue retained for retry: 212"
+      "과천시: detail failed buwat8stnge3: Error: HTTP 404 Not Found",
+      "Detail queue retained for retry: 210"
     ]
   },
   "rules": {
@@ -30,8 +31,16 @@
     "storageGate": false,
     "cpuBaseline": "AMD Ryzen 7 PRO 7840U or better/equivalent",
     "acceptedHardware": [
-      "RAM >=32GB OR VRAM >=16GB",
-      "Ryzen AI Max with >=64GB shared/unified memory is explicitly accepted"
+      "CONFIRMED: explicit RAM >=32GB OR explicit/model-confirmed VRAM >=16GB",
+      "CONFIRMED: Ryzen AI Max with >=64GB shared/unified memory",
+      "REVIEW: memory expression >=16GB (including RAM/램/렘/메모리/memory, 기가/G/GB variants or bare 16G/32기가) when RAM/VRAM cannot yet be distinguished"
+    ],
+    "hardwareReviewStates": [
+      "PASS_RAM",
+      "PASS_VRAM",
+      "PASS_RAM_VRAM",
+      "PASS_SHARED64",
+      "CHECK_MEMORY_GPU"
     ]
   },
   "stats": {
@@ -45,11 +54,11 @@
         "attempted": 8,
         "succeeded": 8,
         "errors": 0,
-        "uniqueListings": 285,
-        "changedCandidates": 102,
+        "uniqueListings": 288,
+        "changedCandidates": 105,
         "detailedCandidates": 48,
-        "deferredDetails": 54,
-        "durationMs": 72473
+        "deferredDetails": 57,
+        "durationMs": 76475
       },
       {
         "city": "의왕시",
@@ -63,11 +72,11 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 352,
-        "changedCandidates": 117,
+        "uniqueListings": 353,
+        "changedCandidates": 120,
         "detailedCandidates": 48,
-        "deferredDetails": 69,
-        "durationMs": 94797
+        "deferredDetails": 72,
+        "durationMs": 102502
       },
       {
         "city": "안양시",
@@ -84,10 +93,10 @@
         "succeeded": 28,
         "errors": 0,
         "uniqueListings": 352,
-        "changedCandidates": 103,
+        "changedCandidates": 106,
         "detailedCandidates": 48,
-        "deferredDetails": 55,
-        "durationMs": 110391
+        "deferredDetails": 58,
+        "durationMs": 120529
       },
       {
         "city": "과천시",
@@ -97,20 +106,20 @@
         "attempted": 4,
         "succeeded": 4,
         "errors": 0,
-        "uniqueListings": 252,
-        "changedCandidates": 73,
-        "detailedCandidates": 39,
-        "deferredDetails": 34,
-        "durationMs": 53996
+        "uniqueListings": 175,
+        "changedCandidates": 39,
+        "detailedCandidates": 17,
+        "deferredDetails": 22,
+        "durationMs": 31943
       }
     ],
     "finalCandidateCount": 0,
-    "stateItemCount": 4997,
-    "pendingNewnessCount": 205,
-    "pendingUnattemptedCount": 205,
+    "stateItemCount": 4992,
+    "pendingNewnessCount": 203,
+    "pendingUnattemptedCount": 203,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 331749
+    "durationMs": 331541
   },
   "candidates": []
 }
