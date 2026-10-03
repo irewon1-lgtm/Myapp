@@ -3,6 +3,7 @@ No user credentials, no sync writes, no Netlify deployment.
 """
 import json,pathlib,time,urllib.request,re
 from playwright.sync_api import sync_playwright
+from reader_comfort import verify_reader_comfort
 base='https://chatbook-library-20260923.netlify.app'
 out=pathlib.Path('review/live-production');out.mkdir(parents=True,exist_ok=True)
 channel=json.loads(pathlib.Path('live/channel.json').read_text());manifest=json.loads(pathlib.Path('live/release.json').read_text())
@@ -44,6 +45,7 @@ try:
   for width in [360,412,800,1280]:
    page.set_viewport_size({'width':width,'height':915});page.evaluate('CB.read(CB.catalog.books[0].id)');page.wait_for_timeout(500)
    check('actual reader fits '+str(width),page.evaluate('CB.Reader.pages>=1&&document.documentElement.scrollWidth<=innerWidth+1'))
+  verify_reader_comfort(page, check, out)
   page.evaluate("CB.set('annotation:note:production-check',{kind:'note',bookId:CB.Reader.book.id,anchor:CB.Reader.book.chapters[0].blocks[0].id,text:'DISPOSABLE_PROFILE_KEEP'});CB.Reader.bookmark();")
   check('synthetic reading record saved locally',page.evaluate("CB.get('annotation:note:production-check').text")=='DISPOSABLE_PROFILE_KEEP')
   for route in ['home','library','quiz','settings']:
@@ -60,6 +62,9 @@ try:
   check('actual offline note survives',page.evaluate("CB.get('annotation:note:production-check').text")=='DISPOSABLE_PROFILE_KEEP')
   page.evaluate('CB.read(CB.catalog.books[0].id)');page.wait_for_timeout(400)
   check('actual offline chapter navigation works',page.evaluate('CB.Reader.pages>=1'))
+  page.evaluate('CB.Reader.setFocus(true)')
+  check('actual offline focus mode works',page.evaluate("CB.Reader.focus&&getComputedStyle(document.querySelector('.reader-footer')).display==='none'"))
+  page.evaluate('CB.Reader.setFocus(false)')
   page.screenshot(path=str(out/'actual-offline-reader-412.png'),full_page=True)
   check('no JavaScript exceptions during actual use',not errors,errors)
   b.close();report['status']='passed'

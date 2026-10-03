@@ -3,6 +3,7 @@ Only synthetic reading records are used. No production writes, no video/API gene
 """
 import json, os, pathlib, subprocess, time, urllib.request, traceback
 from playwright.sync_api import sync_playwright
+from reader_comfort import verify_reader_comfort
 ROOT=pathlib.Path(__file__).resolve().parents[2]; os.chdir(ROOT)
 OUT=ROOT/'review'/'live-browser'; OUT.mkdir(parents=True,exist_ok=True)
 report={'scope':'Actual Chromium browser with production Chatbook source and isolated upstream/API fault injection; not physical Galaxy.', 'checks':[], 'status':'running'}
@@ -65,6 +66,7 @@ try:
     page.set_viewport_size({'width':412,'height':915});page.wait_for_timeout(300)
     page.evaluate("CB.setPref('theme','dark'); CB.applyPrefs(); CB.Reader.applySettings();")
     record('dark theme still works',page.evaluate('document.body.dataset.theme')=='dark')
+    verify_reader_comfort(page, record, OUT)
     page.evaluate('CB.Reader.bookmark()');page.wait_for_timeout(250)
     page.evaluate("CB.set('annotation:note:live-test',{kind:'note',bookId:CB.Reader.book.id,anchor:CB.Reader.book.chapters[0].blocks[0].id,text:'KEEP_NOTE_123'}); CB.set('custom:migration-test',{keep:true});")
     before=page.evaluate("({note:CB.get('annotation:note:live-test'),marker:CB.get('custom:migration-test'),bookmarks:CB.annotations(CB.Reader.book.id,'bookmark').length})")

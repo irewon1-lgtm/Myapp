@@ -20,14 +20,19 @@ body.reading{overflow:hidden}.reader{height:100dvh;max-width:1000px;margin:auto;
 .reader-flow{transition:transform .16s cubic-bezier(.22,.72,.24,1)}
 .reader-flow.no-motion{transition:none!important}
 .reader-flow .chapter-start:not(:first-child){break-before:auto}
-.reader-flow figure{background:#fff;border:1.5px solid #5f625d;border-radius:14px;padding:6px 6px 8px;box-shadow:0 3px 12px #00000012}
-.reader-figure-open{display:block;width:100%;border-radius:10px;overflow:hidden;background:#fff;cursor:zoom-in}
+.reader-flow figure{background:var(--paper);border:1.5px solid var(--line);border-radius:14px;padding:6px 6px 8px;box-shadow:0 3px 12px #00000012}
+.reader-figure-open{display:block;width:100%;border-radius:10px;overflow:hidden;background:var(--paper);cursor:zoom-in}
 .reader-flow figure img{width:100%;height:auto!important;max-height:none!important;object-fit:contain!important;background:#fff;filter:contrast(1.08)}
-.reader-flow figcaption{color:#343632!important;font-size:10px!important;text-align:left!important;padding:4px 3px 0}
-.reader-image-modal{background:#fff;border:2px solid #2f322e;border-radius:14px;padding:8px}
+.reader-flow figcaption{color:var(--muted)!important;font-size:10px!important;text-align:left!important;padding:4px 3px 0}
+.reader-image-modal{background:var(--paper);border:2px solid var(--line);border-radius:14px;padding:8px}
 .reader-image-modal img{width:100%;max-height:72dvh;object-fit:contain;background:#fff}
-.reader-image-caption{margin:10px 2px 0!important;color:#252723!important;font-size:13px!important;line-height:1.65!important}
-body[data-theme=dark] .reader-flow figure,body[data-theme=dark] .reader-figure-open,body[data-theme=dark] .reader-image-modal{background:#fff}
+.reader-image-caption{margin:10px 2px 0!important;color:var(--text)!important;font-size:13px!important;line-height:1.65!important}
+/* Bright educational diagrams need light text on dark paper, including the enlarged view.
+   Photos and captured program screens retain their colors with softer brightness. */
+body[data-theme=dark] .reader-flow figure img,
+body[data-theme=dark] .reader-image-modal img{background:var(--paper);filter:brightness(.78) saturate(.86)}
+body[data-theme=dark] .reader-flow figure img[src^="data:image/svg+xml"],
+body[data-theme=dark] .reader-image-modal img[src^="data:image/svg+xml"]{background:transparent;filter:invert(.9) hue-rotate(180deg) contrast(.9)}
 @media(max-width:650px){
  .reader-viewport{margin-inline:18px}
  .reader-flow figcaption{font-size:10px!important;line-height:1.55!important}
@@ -113,3 +118,16 @@ body[data-theme=dark] .reader-flow figure,body[data-theme=dark] .reader-figure-o
 }
 .reader-flow pre.reader-output::before{content:"실행 결과";}
 .print-content pre{font:12px/1.6 monospace;white-space:pre-wrap;overflow-wrap:anywhere;break-inside:auto;border:1px solid #ddd;padding:10px;border-radius:6px;}
+
+/* Focus reading: a small visible glyph inside a stable, finger-sized target. */
+.reader-header{padding-right:max(54px,calc(env(safe-area-inset-right) + 54px))}
+.reader-focus-toggle{position:absolute;z-index:5;top:max(7px,env(safe-area-inset-top));right:max(7px,env(safe-area-inset-right));width:44px;height:44px;display:grid;place-items:center;color:var(--muted);border-radius:50%;touch-action:manipulation;opacity:1}
+.reader-focus-glyph{width:28px;height:28px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;background:var(--paper)}
+.reader-focus-toggle[aria-pressed=true] .reader-focus-glyph{color:var(--text)}
+.reader-focus-toggle.is-hidden{opacity:0}
+.reader-focus-toggle.is-hidden:focus-visible{opacity:1}
+.reader-focus .reader-header,.reader-focus .reader-footer,.reader-focus .bottom-nav,
+.reader-focus .selection-bubble,.reader-focus .toast-region,.reader-focus .reader-flow .end-note{display:none!important}
+.reader-focus .reader{box-shadow:none}
+.reader-focus .reader-viewport{margin-top:max(56px,calc(env(safe-area-inset-top) + 50px));margin-bottom:max(20px,env(safe-area-inset-bottom));scrollbar-width:none}
+.reader-focus .reader-viewport::-webkit-scrollbar{display:none}
