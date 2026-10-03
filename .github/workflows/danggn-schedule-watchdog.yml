@@ -1,0 +1,57 @@
+name: Danggn Schedule Watchdog
+
+on:
+  schedule:
+    - cron: '17,37,57 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: write
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout latest Danggn state
+        uses: actions/checkout@v4
+        with:
+          ref: danggn-search-bot
+          fetch-depth: 1
+
+      - name: Check scan freshness
+        id: freshness
+        shell: bash
+        run: |
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          import json
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          path = Path("danggn-bot/hourly-result.json")
+          try:
+              doc = json.loads(path.read_text(encoding="utf-8"))
+              generated = str(doc.get("generatedAt") or "")
+              status = str((doc.get("health") or {}).get("status") or "")
+              dt = datetime.fromisoformat(generated.replace("Z", "+00:00"))
+              age = (datetime.now(timezone.utc) - dt.astimezone(timezone.utc)).total_seconds()
+              recover = status != "ok" or age > 23 * 60
+              print(f"recover={'true' if recover else 'false'}")
+              print(f"age_seconds={max(0, int(age))}")
+              print(f"health={status or 'unknown'}")
+          except Exception as exc:
+              print("recover=true")
+              print("age_seconds=-1")
+              print("health=unreadable")
+              print(f"reason={type(exc).__name__}")
+          PY
+
+      - name: Dispatch recovery scan
+        if: steps.freshness.outputs.recover == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          curl --fail-with-body -L             -X POST             -H "Accept: application/vnd.github+json"             -H "Authorization: Bearer ${GH_TOKEN}"             -H "X-GitHub-Api-Version: 2022-11-28"             https://api.github.com/repos/${{ github.repository }}/actions/workflows/danggn-hourly-scan.yml/dispatches             -d '{"ref":"main"}'
+          echo "Recovery scan dispatched"
