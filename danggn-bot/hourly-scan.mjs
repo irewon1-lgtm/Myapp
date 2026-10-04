@@ -387,12 +387,12 @@ function analyzeHardware(item) {
   if (/\\bRTX\\s*PRO\\s*5000\\s*Blackwell\\b/i.test(text)) vramGB = Math.max(vramGB ?? 0, 24);
   if (/\\bRTX\\s*PRO\\s*4000\\s*Blackwell\\b/i.test(text)) vramGB = Math.max(vramGB ?? 0, 16);
 
-  const ramPass = (ramGB ?? 0) >= 16;
+  const ramPass = (ramGB ?? 0) >= 32;
   const vramPass = (vramGB ?? 0) >= 16;
   const ryzenAiMaxShared64 = /\\bRyzen\\s*AI\\s*Max(?:\\+|\\s*Plus|\\s*Pro)?\\s*\\d{3}\\b/i.test(text)
     && Math.max(ramGB ?? 0, ambiguousMemoryGB ?? 0) >= 64;
 
-  const confirmedPass = ramPass;
+  const confirmedPass = ramPass || vramPass || ryzenAiMaxShared64;
   const memoryAtLeast16 = Math.max(ramGB ?? 0, ambiguousMemoryGB ?? 0) >= 16;
   const needsReview = !confirmedPass && memoryAtLeast16;
   const ok = confirmedPass || needsReview;
