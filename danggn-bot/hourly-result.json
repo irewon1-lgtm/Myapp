@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-04T06:06:24.392Z",
+  "generatedAt": "2026-10-04T06:46:24.605Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -17,7 +17,7 @@
     "status": "ok",
     "stateCommitted": true,
     "warnings": [
-      "Detail queue retained for retry: 207"
+      "Detail queue retained for retry: 256"
     ]
   },
   "rules": {
@@ -53,11 +53,11 @@
         "attempted": 8,
         "succeeded": 8,
         "errors": 0,
-        "uniqueListings": 262,
-        "changedCandidates": 77,
+        "uniqueListings": 260,
+        "changedCandidates": 78,
         "detailedCandidates": 48,
-        "deferredDetails": 29,
-        "durationMs": 77814
+        "deferredDetails": 30,
+        "durationMs": 79622
       },
       {
         "city": "의왕시",
@@ -71,11 +71,11 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 331,
-        "changedCandidates": 114,
+        "uniqueListings": 345,
+        "changedCandidates": 127,
         "detailedCandidates": 48,
-        "deferredDetails": 66,
-        "durationMs": 97811
+        "deferredDetails": 79,
+        "durationMs": 106715
       },
       {
         "city": "안양시",
@@ -91,11 +91,11 @@
         "attempted": 28,
         "succeeded": 28,
         "errors": 0,
-        "uniqueListings": 358,
-        "changedCandidates": 116,
+        "uniqueListings": 355,
+        "changedCandidates": 121,
         "detailedCandidates": 47,
-        "deferredDetails": 69,
-        "durationMs": 111918
+        "deferredDetails": 74,
+        "durationMs": 125927
       },
       {
         "city": "과천시",
@@ -105,56 +105,20 @@
         "attempted": 4,
         "succeeded": 4,
         "errors": 0,
-        "uniqueListings": 253,
-        "changedCandidates": 73,
-        "detailedCandidates": 30,
-        "deferredDetails": 43,
-        "durationMs": 44278
+        "uniqueListings": 252,
+        "changedCandidates": 81,
+        "detailedCandidates": 8,
+        "deferredDetails": 73,
+        "durationMs": 19769
       }
     ],
-    "finalCandidateCount": 1,
+    "finalCandidateCount": 0,
     "stateItemCount": 5000,
-    "pendingNewnessCount": 205,
-    "pendingUnattemptedCount": 205,
+    "pendingNewnessCount": 253,
+    "pendingUnattemptedCount": 253,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 331936
+    "durationMs": 332136
   },
-  "candidates": [
-    {
-      "id": "exu2xzb79xha",
-      "changeType": "price_drop",
-      "previousPrice": 1900000,
-      "price": 1800000,
-      "priceDropPercent": 5.3,
-      "city": "군포시",
-      "location": "당정동",
-      "regionPath": "경기도 군포시 당정동",
-      "title": "삼성 갤럭시북3 울트라 i9-13900h",
-      "modelHint": "삼성 갤럭시북3 울트라 i9-13900h",
-      "cpuHint": "i9-13900h",
-      "cpuBaselinePass": true,
-      "gpuHint": null,
-      "vramGB": null,
-      "ramGB": 32,
-      "ambiguousMemoryGB": null,
-      "hardwareReviewStatus": "PASS_RAM",
-      "ramEvidence": "메모리: 32GB",
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": null,
-      "storageGB": null,
-      "llmCapability": "WORK_DEV_RAM32",
-      "llmReason": "RAM 32GB 이상: Codex/ChatGPT Work/브라우저/개발 멀티태스킹 후보",
-      "specConfidence": "confirmed",
-      "postedAt": "2026-09-30T06:39:44.948Z",
-      "boostedAt": "2026-10-03T07:01:53.943Z",
-      "status": "Ongoing",
-      "description": "삼성 갤럭시북3 울트라 판매합니다.\n\n모델명은 NT960XFH-XD92G입니다.\n\n인텔 i9 프로세서와 RTX 4070 외장 그래픽이 탑재된 상위 사양 모델입니다.\n\n거의 사용하지않아서 외관매우 새거와같음 박스 다 있습니다.\n\n■ 주요 사양\n\n모델명: NT960XFH-XD92G\n\nCPU: 인텔 13세대 코어 i9-13900H\n\n그래픽: NVIDIA GeForce RTX 4070 Laptop GPU / 전용 메모리 8GB\n\n메모리: 32GB LPDDR5\n\n저장장치: NVMe SSD 1TB\n\n화면: 16인치 Dynamic AMOLED 2X\n\n해상도: 2880 × 1800 / 최대 120Hz",
-      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%813-%EC%9A%B8%ED%8A%B8%EB%9D%BC-i9-13900h-exu2xzb79xha/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "도깨비",
-      "mannerTemperature": 39
-    }
-  ]
+  "candidates": []
 }
