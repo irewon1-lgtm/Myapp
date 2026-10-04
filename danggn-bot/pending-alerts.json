@@ -1,5 +1,56 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-04T02:23:17.342688Z",
-  "items": {}
+  "updatedAt": "2026-10-04T04:21:11.660116Z",
+  "items": {
+    "u8eppnonopiu": {
+      "id": "u8eppnonopiu",
+      "title": "오멘16 omen16 i7-14650hx rtx5070 게이밍 노트북",
+      "price": 1750000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "비산1동",
+      "cpuHint": "i7-14650hx",
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "ram 16gb",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 또는 GPU 세부사양만으로 최종 성능 조건을 확정할 수 없어 2차 확인 필요",
+      "postedAt": "2026-10-04T04:17:09.969Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%98%A4%EB%A9%9816-omen16-i7-14650hx-rtx5070-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-u8eppnonopiu/",
+      "firstAlertedAt": "2026-10-04T04:21:11.660116Z",
+      "lastCandidateAt": "2026-10-04T04:21:11.660116Z"
+    },
+    "5gv84s9ufj4y": {
+      "id": "5gv84s9ufj4y",
+      "title": "오멘16 omen16 i7-14650hx rtx5070 게이밍 노트북",
+      "price": 1750000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "과천시",
+      "location": "별양동",
+      "cpuHint": "i7-14650hx",
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "ram 16gb",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 또는 GPU 세부사양만으로 최종 성능 조건을 확정할 수 없어 2차 확인 필요",
+      "postedAt": "2026-10-04T04:17:10.023Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%98%A4%EB%A9%9816-omen16-i7-14650hx-rtx5070-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-5gv84s9ufj4y/",
+      "firstAlertedAt": "2026-10-04T04:21:11.660116Z",
+      "lastCandidateAt": "2026-10-04T04:21:11.660116Z"
+    }
+  }
 }
