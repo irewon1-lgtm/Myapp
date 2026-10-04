@@ -15,7 +15,7 @@ const DETAIL_WORKERS = 3;
 const DETAIL_BUDGET_PER_CITY_MS = 55000;
 const SCAN_BUDGET_MS = 330000;
 const NEWNESS_RETRY_DELAY_MS = 60 * 60 * 1000;
-const REQUEST_GAP_MS = 1200;
+const REQUEST_GAP_MS = 800;
 let nextRequestAt = 0;
 let requestCooldownUntil = 0;
 
