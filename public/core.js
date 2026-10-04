@@ -31,7 +31,7 @@
  C.resolvedTheme=()=>{let theme=C.pref('theme','cream');if(theme==='system')theme=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'cream';return theme;};
  C.darkMode=()=>C.resolvedTheme()==='dark';
  C.toggleDarkMode=()=>{if(C.darkMode()){let back=C.pref('themeBeforeDark','cream');if(!['cream','light'].includes(back))back='cream';C.setPref('theme',back);}else{const current=C.pref('theme','cream');if(current!=='dark')C.set('pref:themeBeforeDark',current==='system'?'cream':current);C.setPref('theme','dark');}};
- C.applyPrefs=()=>{const theme=C.resolvedTheme();document.body.dataset.theme=theme;document.body.dataset.motion=C.pref('motion',false)?'reduce':'normal';document.documentElement.style.setProperty('--hero',`url("${C.art('stilllife')}")`);document.querySelector('meta[name=theme-color]')?.setAttribute('content',theme==='dark'?'#23251f':'#f7f1e6');};
+ C.applyPrefs=()=>{const theme=C.resolvedTheme();document.documentElement.dataset.theme=theme;document.body.dataset.theme=theme;document.body.dataset.motion=C.pref('motion',false)?'reduce':'normal';document.documentElement.style.setProperty('--hero',`url("${C.art('stilllife')}")`);document.querySelector('meta[name=theme-color]')?.setAttribute('content',theme==='dark'?'#000000':theme==='light'?'#fafaf7':'#f7f1e6');document.querySelector('meta[name=color-scheme]')?.setAttribute('content',theme==='dark'?'dark':'light');};
  C.go=path=>{if(location.hash.slice(1)===path){C.render?.();return;}location.hash=path;};
  C.read=(id,anchor,offset=0)=>{C.select(id);C.pendingAnchor=anchor||null;C.pendingOffset=offset;C.closeModal();C.go('read/'+encodeURIComponent(id));};
  C.empty=(text,ico='book',more='')=>`<div class="empty">${C.i(ico,33)}<p>${C.e(text)}</p>${more}</div>`;

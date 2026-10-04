@@ -73,15 +73,90 @@ def verify_reader_comfort(page, check, out):
         }""", arg=selector, timeout=15000)
         return selector
 
-    def visible(snapshot):
-        # Reflow changes page numbers. Check the saved character's viewport instead.
+    def geometry(reference=None):
+        # The same character must keep its screen coordinates, not merely remain visible.
         return page.evaluate("""saved => {
-            const R = CB.Reader, block = R.blocks.find(n => n.dataset.block === saved.anchor);
-            if (!block || !block.getClientRects().length) return false;
-            const r = R.characterRect(block, saved.offset), v = R.viewport.getBoundingClientRect();
-            return r.right > v.left - 2 && r.left < v.right + 2 &&
-                   r.bottom > v.top - 3 && r.top < v.bottom + 3;
-        }""", snapshot)
+            const R=CB.Reader, info=saved||R.info();
+            const block=R.blocks.find(n => n.dataset.block===info.anchor);
+            const rect=r=>({x:r.x,y:r.y,width:r.width,height:r.height});
+            return {reference:{anchor:info.anchor,offset:info.offset||0},
+                page:R.page,pages:R.pages,step:R.step,
+                viewport:rect(R.viewport.getBoundingClientRect()),
+                clientWidth:R.viewport.clientWidth,clientHeight:R.viewport.clientHeight,
+                scrollTop:R.viewport.scrollTop,scrollHeight:R.viewport.scrollHeight,
+                styleTransform:R.flow.style.transform,transform:getComputedStyle(R.flow).transform,
+                documentX:scrollX,documentY:scrollY,
+                character:block?rect(R.characterRect(block,info.offset||0)):null};
+        }""", reference)
+
+    def changes(before, after):
+        changed = []
+        for key in ('page', 'pages', 'step', 'clientWidth', 'clientHeight', 'scrollHeight',
+                    'styleTransform', 'transform', 'documentX', 'documentY'):
+            if before[key] != after[key]:
+                changed.append(key)
+        if abs(before['scrollTop'] - after['scrollTop']) > 0.05:
+            changed.append('scrollTop')
+        for key in ('viewport', 'character'):
+            if before[key] is None or after[key] is None:
+                changed.append(key + '.missing')
+            else:
+                for axis in ('x', 'y', 'width', 'height'):
+                    if abs(before[key][axis] - after[key][axis]) > 0.05:
+                        changed.append(key + '.' + axis)
+        return changed
+
+    def wait_reader_settled():
+        # Finish a preceding page turn/resize before taking the focus baseline.
+        # Samples after the focus action remain immediate and keep the same tolerance.
+        wait_js("""() => {
+            const R=CB.Reader;
+            if(!R.alive || !R.measured || R.measuring ||
+               R.width!==R.viewport.clientWidth || R.height!==R.viewport.clientHeight) return false;
+            if(R.flow.getAnimations().some(a=>a.pending || a.playState==='running')) return false;
+            if(R.mode()!=='page') return true;
+            const transform=getComputedStyle(R.flow).transform;
+            const x=transform==='none'?0:new DOMMatrixReadOnly(transform).m41;
+            return Math.abs(x-(-R.page*R.step))<=0.05;
+        }""")
+
+    def transition(action):
+        wait_reader_settled()
+        before = geometry()
+        action()
+        immediate = geometry(before['reference'])
+        page.evaluate('() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)))')
+        framed = geometry(before['reference'])
+        page.wait_for_timeout(250)
+        settled = geometry(before['reference'])
+        return {'before': before, 'after': settled,
+                'changedImmediately': changes(before, immediate),
+                'changedAfterFrames': changes(before, framed),
+                'changedAfter250ms': changes(before, settled)}
+
+    def unmoved(result):
+        return not any(result[key] for key in
+                       ('changedImmediately', 'changedAfterFrames', 'changedAfter250ms'))
+
+    def chrome():
+        return page.evaluate("""() => ({
+            focus:CB.Reader.focus,
+            hidden:['.reader-header','.reader-footer','.end-note'].map(selector=>{
+                const el=document.querySelector(selector),s=getComputedStyle(el);
+                return {selector,visibility:s.visibility,display:s.display,inert:el.inert};
+            }),toast:getComputedStyle(document.querySelector('.toast-region')).display,
+            fits:document.documentElement.scrollWidth<=innerWidth+1,
+            target:document.querySelector('#reader-focus-toggle').getBoundingClientRect().width
+        })""")
+
+    def theme_state():
+        return page.evaluate("""() => ({
+            rootTheme:document.documentElement.dataset.theme,bodyTheme:document.body.dataset.theme,
+            colors:['html','body','.reader','.reader-footer'].map(s=>getComputedStyle(document.querySelector(s)).backgroundColor),
+            bodyImage:getComputedStyle(document.body).backgroundImage,
+            scheme:getComputedStyle(document.documentElement).colorScheme,
+            meta:document.querySelector('meta[name="theme-color"]')?.content
+        })""")
 
     def focus_on():
         if not page.evaluate('CB.Reader.focus'):
@@ -121,10 +196,15 @@ def verify_reader_comfort(page, check, out):
               '5초' in (control['hint'] or '') and control['opacity'] == '1', control)
 
         svg_style = image_style(svg_selector)
-        check('comfort: actual SVG and caption use the dark reading theme',
+        dark = theme_state()
+        check('comfort: actual diagram and root/body/reader use pure black dark mode',
               svg_style['loaded'] and 'invert(' in svg_style['filter'] and
               svg_style['background'] == svg_style['paper'] and
-              svg_style['caption'] not in (None, 'rgb(47, 50, 46)'), svg_style)
+              svg_style['caption'] not in (None, 'rgb(47, 50, 46)') and
+              dark['rootTheme'] == dark['bodyTheme'] == 'dark' and
+              all(color == 'rgb(0, 0, 0)' for color in dark['colors']) and
+              dark['bodyImage'] == 'none' and dark['scheme'] == 'dark' and
+              (dark['meta'] or '').lower() == '#000000', {'image': svg_style, 'theme': dark})
         page.screenshot(path=str(out / 'comfort-dark-diagram-412.png'), full_page=True)
         page.locator(svg_selector + ' button').click()
         page.wait_for_selector('.reader-image-modal img')
@@ -149,9 +229,14 @@ def verify_reader_comfort(page, check, out):
         page.keyboard.press('Escape')
         page.evaluate("CB.setPref('theme','light')")
         light_style = image_style(photo_selector)
-        check('comfort: switching back to light removes dark image treatment',
+        light = theme_state()
+        check('comfort: light mode restores root/system colors and normal image treatment',
               'brightness(' not in light_style['filter'] and
-              'invert(' not in light_style['filter'], light_style)
+              'invert(' not in light_style['filter'] and
+              light['rootTheme'] == light['bodyTheme'] == 'light' and
+              light['scheme'] == 'light' and bool(light['meta']) and
+              light['meta'].lower() != '#000000',
+              {'image': light_style, 'theme': light})
         page.evaluate("CB.setPref('theme','dark')")
         open_book(books['svg']['book'])
 
@@ -160,35 +245,53 @@ def verify_reader_comfort(page, check, out):
             focus_off()
             page.set_viewport_size({'width': width, 'height': 915})
             page.wait_for_timeout(300)
-            before = page.evaluate('CB.Reader.viewport.clientHeight')
-            # Capture and toggle in the same task, before goPage's 180ms save timer.
-            snapshot = page.evaluate("""() => {
-                const R=CB.Reader; R.goPage(Math.max(1, Math.floor(R.pages*.4)));
-                const saved=R.info(); document.querySelector('#reader-focus-toggle').click();
-                return saved;
-            }""")
+            page.evaluate('CB.Reader.goPage(Math.max(1,Math.floor(CB.Reader.pages*.4)))')
+            # Complete the requested page turn before measuring focus-only movement.
             page.wait_for_timeout(300)
-            state = page.evaluate("""() => ({
-                focus:CB.Reader.focus, height:CB.Reader.viewport.clientHeight,
-                header:getComputedStyle(document.querySelector('.reader-header')).display,
-                footer:getComputedStyle(document.querySelector('.reader-footer')).display,
-                end:getComputedStyle(document.querySelector('.end-note')).display,
-                toast:getComputedStyle(document.querySelector('.toast-region')).display,
-                fits:document.documentElement.scrollWidth<=innerWidth+1,
-                target:document.querySelector('#reader-focus-toggle').getBoundingClientRect().width
-            })""")
-            state.update(width=width, before=before, anchorVisible=visible(snapshot))
-            layouts.append(state)
-        check('comfort: all four widths hide chrome, expand content and fit the screen',
-              all(s['focus'] and s['header'] == s['footer'] == s['end'] == s['toast'] == 'none'
-                  and s['height'] > s['before'] and s['fits'] and s['target'] >= 44
-                  for s in layouts), layouts)
-        check('comfort: immediate page-turn focus preserves the visible reading anchor',
-              all(s['anchorVisible'] for s in layouts), layouts)
+            entered = transition(lambda: button.click())
+            hidden = chrome()
+            exited = transition(lambda: button.click())
+            restored = chrome()
+            layouts.append({'width': width, 'entry': entered, 'exit': exited,
+                            'hidden': hidden, 'restored': restored})
+        check('comfort: four widths hide controls without moving any text or page',
+              all(unmoved(s['entry']) and unmoved(s['exit']) and s['hidden']['focus'] and
+                  all(el['visibility'] == 'hidden' and el['display'] != 'none' and el['inert']
+                      for el in s['hidden']['hidden']) and
+                  s['hidden']['toast'] == 'none' and s['hidden']['fits'] and
+                  s['hidden']['target'] >= 44 and not s['restored']['focus'] and
+                  all(el['visibility'] == 'visible' and not el['inert']
+                      for el in s['restored']['hidden']) for s in layouts), layouts)
+
+        # A pending normal page save must survive an immediate focus toggle.
+        pending = page.evaluate("""() => {
+            const R=CB.Reader, previous=CB.progress(R.book.id).page;
+            R.goPage(Math.min(R.pages-2,R.page+2));
+            const expected={page:R.page,pages:R.pages,step:R.step,transform:R.flow.style.transform};
+            const beforeRecord=CB.progress(R.book.id).page;
+            document.querySelector('#reader-focus-toggle').click();
+            return {previous,beforeRecord,expected,immediate:{page:R.page,pages:R.pages,
+                step:R.step,transform:R.flow.style.transform}};
+        }""")
+        page.wait_for_timeout(350)
+        saved = page.evaluate("""() => ({page:CB.Reader.page,pages:CB.Reader.pages,
+            step:CB.Reader.step,transform:CB.Reader.flow.style.transform,
+            storedPage:CB.progress(CB.Reader.book.id).page,
+            storedPages:CB.progress(CB.Reader.book.id).pages,focus:CB.Reader.focus})""")
+        check('comfort: immediate focus keeps the target page and its pending save',
+              pending['previous'] == pending['beforeRecord'] and
+              pending['previous'] != pending['expected']['page'] and
+              pending['immediate'] == pending['expected'] and saved['focus'] and
+              all(saved[key] == pending['expected'][key] for key in pending['expected']) and
+              saved['storedPage'] == pending['expected']['page'] and
+              saved['storedPages'] == pending['expected']['pages'],
+              {'pending': pending, 'saved': saved})
 
         focus_off()
         page.set_viewport_size({'width': 412, 'height': 915})
         page.wait_for_timeout(300)
+        wait_reader_settled()
+        timer_position = geometry()
         # One real 5.4-second interval. No clock install or application timer replacement.
         timing = page.evaluate("""() => new Promise(resolve => {
             const button=document.querySelector('#reader-focus-toggle');
@@ -200,7 +303,7 @@ def verify_reader_comfort(page, check, out):
             });
             observer.observe(button,{attributes:true,attributeFilter:['class']});
             button.click();
-            // Exclude the book reflow performed synchronously inside the click.
+            // Start after event dispatch; no clock or application callback is replaced.
             started=performance.now();
             setTimeout(() => {before={elapsed:performance.now()-started,
                 hidden:CB.Reader.focusHidden,opacity:getComputedStyle(button).opacity};},4800);
@@ -208,26 +311,33 @@ def verify_reader_comfort(page, check, out):
                 hidden:CB.Reader.focusHidden,opacity:getComputedStyle(button).opacity,
                 focus:CB.Reader.focus});},5400);
         })""")
-        check('comfort: button is visible before 5s and hides at the 5s boundary',
+        timer_after = geometry(timer_position['reference'])
+        check('comfort: button hides at 5s without moving the text or page',
               timing['before'] is not None and timing['before']['elapsed'] < 5000 and
               not timing['before']['hidden'] and timing['before']['opacity'] == '1' and
               timing['hiddenAt'] is not None and 4980 <= timing['hiddenAt'] <= 5400 and
-              timing['hidden'] and timing['opacity'] == '0' and timing['focus'], timing)
+              timing['hidden'] and timing['opacity'] == '0' and timing['focus'] and
+              not changes(timer_position, timer_after),
+              {'timing': timing, 'before': timer_position, 'after': timer_after,
+               'changed': changes(timer_position, timer_after)})
         page.screenshot(path=str(out / 'comfort-focus-hidden-412.png'), full_page=True)
-        number = page.evaluate('CB.Reader.page')
         rect = button.bounding_box()
-        page.mouse.click(rect['x'] + rect['width']/2, rect['y'] + rect['height']/2)
+        revealed_position = transition(lambda: page.mouse.click(
+            rect['x'] + rect['width']/2, rect['y'] + rect['height']/2))
         revealed = page.evaluate("""() => ({focus:CB.Reader.focus, hidden:CB.Reader.focusHidden,
             page:CB.Reader.page,opacity:getComputedStyle(document.querySelector('#reader-focus-toggle')).opacity})""")
-        check('comfort: first tap at hidden position only reveals the control',
+        check('comfort: first tap only reveals the control and keeps exact reading geometry',
               revealed['focus'] and not revealed['hidden'] and
-              revealed['page'] == number and revealed['opacity'] == '1', revealed)
-        page.mouse.click(rect['x'] + rect['width']/2, rect['y'] + rect['height']/2)
-        page.wait_for_timeout(300)
-        check('comfort: second tap exits and restores reading controls',
-              page.evaluate("""!CB.Reader.focus && !CB.Reader.focusHidden &&
-                  getComputedStyle(document.querySelector('.reader-header')).display!=='none' &&
-                  getComputedStyle(document.querySelector('.reader-footer')).display!=='none'"""))
+              revealed['opacity'] == '1' and unmoved(revealed_position),
+              {'state': revealed, 'position': revealed_position})
+        exited_position = transition(lambda: page.mouse.click(
+            rect['x'] + rect['width']/2, rect['y'] + rect['height']/2))
+        restored = chrome()
+        check('comfort: second tap restores controls without moving the text or page',
+              not restored['focus'] and unmoved(exited_position) and
+              all(el['visibility'] == 'visible' and not el['inert']
+                  for el in restored['hidden']),
+              {'state': restored, 'position': exited_position})
 
         focus_on()
         number = page.evaluate('CB.Reader.page')
@@ -267,41 +377,47 @@ def verify_reader_comfort(page, check, out):
             R.viewport.style.scrollBehavior=last;
         }""")
         page.wait_for_timeout(250)
-        scroll_snapshot = page.evaluate('CB.Reader.info()')
-        focus_on()
-        scroll_preserved = visible(scroll_snapshot)
+        scroll_entered = transition(lambda: button.click())
         top = page.evaluate('CB.Reader.viewport.scrollTop')
         viewport = page.locator('#reader-viewport').bounding_box()
         page.mouse.move(viewport['x']+viewport['width']/2, viewport['y']+viewport['height']/2)
         page.mouse.wheel(0, 340)
         page.wait_for_timeout(350)
         moved = page.evaluate('CB.Reader.viewport.scrollTop') > top + 20
-        scroll_exit = page.evaluate('CB.Reader.info()')
-        page.keyboard.press('Escape')
+        scroll_exited = transition(lambda: page.keyboard.press('Escape'))
+        page.evaluate("""() => {
+            const R=CB.Reader,last=R.viewport.style.scrollBehavior;
+            R.viewport.style.scrollBehavior='auto';R.viewport.scrollTop=R.viewport.scrollHeight;
+            R.viewport.style.scrollBehavior=last;
+        }""")
         page.wait_for_timeout(300)
-        check('comfort: scroll mode keeps its reading anchor and scrolls in focus',
-              scroll_preserved and moved and visible(scroll_exit) and
+        bottom_entered = transition(lambda: button.click())
+        bottom_exited = transition(lambda: button.click())
+        bottom = bottom_entered['before']
+        check('comfort: scroll focus preserves exact middle/end positions and allows scrolling',
+              moved and all(unmoved(result) for result in
+                  (scroll_entered, scroll_exited, bottom_entered, bottom_exited)) and
+              bottom['scrollTop'] > 0 and
+              abs(bottom['scrollTop'] + bottom['clientHeight'] - bottom['scrollHeight']) <= 1 and
               page.evaluate('!CB.Reader.focus'),
-              {'entryAnchorVisible': scroll_preserved, 'wheelMoved': moved,
-               'exitAnchorVisible': visible(scroll_exit)})
+              {'middleEntry': scroll_entered, 'middleExit': scroll_exited,
+               'wheelMoved': moved, 'bottomEntry': bottom_entered, 'bottomExit': bottom_exited})
 
         page.evaluate("CB.setPref('readingMode','page'); CB.Reader.applySettings()")
         page.wait_for_timeout(350)
-        end_before = page.evaluate("""() => {
-            const R=CB.Reader; R.goAnchor(R.book.id+'-end'); return R.page;
-        }""")
-        page.wait_for_timeout(250)
-        focus_on()
-        end_after = page.evaluate("""() => ({page:CB.Reader.page,pages:CB.Reader.pages,
-            anchor:CB.Reader.info().anchor,focus:CB.Reader.focus,
-            display:getComputedStyle(document.querySelector('.end-note')).display})""")
-        check('comfort: entering focus from completion stays at the end of the book',
-              end_before > 0 and end_after['focus'] and end_after['display'] == 'none' and
-              end_after['page'] > 0 and end_after['page'] >= end_after['pages'] - 2,
-              {'before': end_before, 'after': end_after})
+        page.evaluate('CB.Reader.goAnchor(CB.Reader.book.id+"-end")')
+        page.wait_for_timeout(300)
+        end_entered = transition(lambda: button.click())
+        end_hidden = chrome()
+        end_exited = transition(lambda: button.click())
+        check('comfort: completion keeps exactly the same page, page count and position',
+              end_entered['before']['page'] > 0 and unmoved(end_entered) and unmoved(end_exited) and
+              all(el['visibility'] == 'hidden' and el['display'] != 'none' and el['inert']
+                  for el in end_hidden['hidden']),
+              {'entry': end_entered, 'exit': end_exited, 'hidden': end_hidden})
 
         # Leave with a live hide timer, then use a second real interval to catch stale callbacks.
-        page.evaluate('CB.Reader.showFocusButton(); CB.go("library")')
+        page.evaluate('CB.Reader.setFocus(true); CB.Reader.showFocusButton(); CB.go("library")')
         wait_js('!CB.Reader.alive && !document.body.classList.contains("reader-focus")')
         open_book(books['svg']['book'], books['svg']['block'])
         page.wait_for_timeout(5100)
@@ -316,9 +432,27 @@ def verify_reader_comfort(page, check, out):
         keyboard = page.locator('#reader-focus-toggle').evaluate("""el => ({
             focused:document.activeElement===el,visible:getComputedStyle(el).opacity,
             outline:getComputedStyle(el).outlineStyle})""")
-        check('comfort: focus toggle remains reachable with a visible keyboard focus',
+        page.keyboard.press('Enter')
+        inert = page.evaluate("""() => [...document.querySelectorAll(
+            '.reader-header button,.reader-footer button,.end-note button')].map(el => {
+            el.focus({preventScroll:true});return {action:el.dataset.action,
+                focused:document.activeElement===el,inert:!!el.closest('[inert]')};
+        })""")
+        page.keyboard.press('Tab')
+        check('comfort: keyboard reaches focus toggle and skips all hidden inert controls',
               keyboard['focused'] and keyboard['visible'] == '1' and
-              keyboard['outline'] != 'none', keyboard)
+              keyboard['outline'] != 'none' and len(inert) > 0 and
+              all(el['inert'] and not el['focused'] for el in inert) and
+              page.evaluate('CB.Reader.focus && document.activeElement===CB.Reader.viewport'),
+              {'keyboard': keyboard, 'hiddenControls': inert})
+        page.keyboard.press('Escape')
+
+        # One tablet reference image, without adding another viewport test matrix.
+        page.set_viewport_size({'width': 960, 'height': 1536})
+        open_book(books['svg']['book'], books['svg']['block'])
+        focus_on()
+        page.screenshot(path=str(out / 'comfort-black-focus-tablet-960.png'), full_page=True)
+        focus_off()
         unchanged = page.evaluate("""initial => ({
             catalog:JSON.stringify(CB.catalog)===initial.content,
             annotations:JSON.stringify(CB.all('annotation:'))===initial.annotations,

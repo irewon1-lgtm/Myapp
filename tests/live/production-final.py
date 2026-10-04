@@ -63,7 +63,7 @@ try:
   page.evaluate('CB.read(CB.catalog.books[0].id)');page.wait_for_timeout(400)
   check('actual offline chapter navigation works',page.evaluate('CB.Reader.pages>=1'))
   page.evaluate('CB.Reader.setFocus(true)')
-  check('actual offline focus mode works',page.evaluate("CB.Reader.focus&&getComputedStyle(document.querySelector('.reader-footer')).display==='none'"))
+  check('actual offline focus mode works',page.evaluate("CB.Reader.focus&&getComputedStyle(document.querySelector('.reader-footer')).visibility==='hidden'&&document.querySelector('.reader-footer').inert"))
   page.evaluate('CB.Reader.setFocus(false)')
   page.screenshot(path=str(out/'actual-offline-reader-412.png'),full_page=True)
   check('no JavaScript exceptions during actual use',not errors,errors)
