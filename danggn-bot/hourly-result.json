@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-04T20:06:29.859Z",
+  "generatedAt": "2026-10-04T20:46:02.799Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -18,7 +18,7 @@
     "stateCommitted": true,
     "warnings": [
       "안양시: detail failed cmf4xbwdefdp: Error: HTTP 404 Not Found",
-      "Detail queue retained for retry: 63"
+      "Detail queue retained for retry: 1"
     ]
   },
   "rules": {
@@ -29,11 +29,12 @@
     "priceGate": false,
     "marketPriceCheck": "deferred to ChatGPT; prefer >=10% below used-market average; insufficient market evidence => HOLD, do not auto-reject",
     "storageGate": false,
-    "cpuBaseline": "AMD Ryzen 7 PRO 7840U or better/equivalent",
+    "cpuBaseline": "disabled; CPU is informational only",
     "acceptedHardware": [
       "CONFIRMED: explicit RAM >=32GB OR explicit/model-confirmed VRAM >=16GB",
       "CONFIRMED: Ryzen AI Max with >=64GB shared/unified memory",
-      "REVIEW: memory expression >=16GB (including RAM/램/렘/메모리/memory, 기가/G/GB variants or bare 16G/32기가) when RAM/VRAM cannot yet be distinguished"
+      "REVIEW: any memory expression >=16GB (RAM/램/렘/메모리/memory, VRAM/그래픽메모리/GDDR, 기가/G/GB variants, or bare 16G/32기가) when RAM/VRAM cannot be safely resolved",
+      "CPU/GPU/price do not reject candidates; they are informational only"
     ],
     "hardwareReviewStates": [
       "PASS_RAM",
@@ -54,11 +55,11 @@
         "attempted": 8,
         "succeeded": 8,
         "errors": 0,
-        "uniqueListings": 259,
+        "uniqueListings": 258,
         "changedCandidates": 52,
-        "detailedCandidates": 47,
-        "deferredDetails": 5,
-        "durationMs": 74481
+        "detailedCandidates": 52,
+        "deferredDetails": 0,
+        "durationMs": 58564
       },
       {
         "city": "의왕시",
@@ -72,11 +73,11 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 332,
-        "changedCandidates": 65,
-        "detailedCandidates": 48,
-        "deferredDetails": 17,
-        "durationMs": 97376
+        "uniqueListings": 341,
+        "changedCandidates": 67,
+        "detailedCandidates": 67,
+        "deferredDetails": 0,
+        "durationMs": 92934
       },
       {
         "city": "안양시",
@@ -92,11 +93,11 @@
         "attempted": 28,
         "succeeded": 28,
         "errors": 0,
-        "uniqueListings": 352,
-        "changedCandidates": 60,
-        "detailedCandidates": 48,
-        "deferredDetails": 12,
-        "durationMs": 113469
+        "uniqueListings": 350,
+        "changedCandidates": 55,
+        "detailedCandidates": 55,
+        "deferredDetails": 0,
+        "durationMs": 99191
       },
       {
         "city": "과천시",
@@ -107,19 +108,19 @@
         "succeeded": 4,
         "errors": 0,
         "uniqueListings": 253,
-        "changedCandidates": 60,
-        "detailedCandidates": 32,
-        "deferredDetails": 28,
-        "durationMs": 46942
+        "changedCandidates": 62,
+        "detailedCandidates": 62,
+        "deferredDetails": 0,
+        "durationMs": 57434
       }
     ],
     "finalCandidateCount": 0,
-    "stateItemCount": 4945,
-    "pendingNewnessCount": 62,
-    "pendingUnattemptedCount": 62,
+    "stateItemCount": 4890,
+    "pendingNewnessCount": 0,
+    "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 332380
+    "durationMs": 308197
   },
   "candidates": []
 }
