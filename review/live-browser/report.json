@@ -96,14 +96,29 @@
       }
     },
     {
-      "name": "comfort: actual SVG and caption use the dark reading theme",
+      "name": "comfort: actual diagram and root/body/reader use pure black dark mode",
       "passed": true,
       "detail": {
-        "filter": "invert(0.9) hue-rotate(180deg) contrast(0.9)",
-        "background": "rgb(45, 48, 40)",
-        "paper": "rgb(45, 48, 40)",
-        "caption": "rgb(180, 176, 164)",
-        "loaded": true
+        "image": {
+          "filter": "invert(0.9) hue-rotate(180deg) contrast(0.9)",
+          "background": "rgb(0, 0, 0)",
+          "paper": "rgb(0, 0, 0)",
+          "caption": "rgb(161, 161, 161)",
+          "loaded": true
+        },
+        "theme": {
+          "rootTheme": "dark",
+          "bodyTheme": "dark",
+          "colors": [
+            "rgb(0, 0, 0)",
+            "rgb(0, 0, 0)",
+            "rgb(0, 0, 0)",
+            "rgb(0, 0, 0)"
+          ],
+          "bodyImage": "none",
+          "scheme": "dark",
+          "meta": "#000000"
+        }
       }
     },
     {
@@ -111,9 +126,9 @@
       "passed": true,
       "detail": {
         "filter": "invert(0.9) hue-rotate(180deg) contrast(0.9)",
-        "background": "rgb(45, 48, 40)",
-        "paper": "rgb(45, 48, 40)",
-        "caption": "rgb(239, 233, 223)",
+        "background": "rgb(0, 0, 0)",
+        "paper": "rgb(0, 0, 0)",
+        "caption": "rgb(214, 214, 214)",
         "loaded": true
       }
     },
@@ -123,183 +138,1059 @@
       "detail": {
         "inline": {
           "filter": "brightness(0.78) saturate(0.86)",
-          "background": "rgb(45, 48, 40)",
-          "paper": "rgb(45, 48, 40)",
-          "caption": "rgb(180, 176, 164)",
+          "background": "rgb(0, 0, 0)",
+          "paper": "rgb(0, 0, 0)",
+          "caption": "rgb(161, 161, 161)",
           "loaded": true
         },
         "enlarged": {
           "filter": "brightness(0.78) saturate(0.86)",
-          "background": "rgb(45, 48, 40)",
-          "paper": "rgb(45, 48, 40)",
-          "caption": "rgb(239, 233, 223)",
+          "background": "rgb(0, 0, 0)",
+          "paper": "rgb(0, 0, 0)",
+          "caption": "rgb(214, 214, 214)",
           "loaded": true
         }
       }
     },
     {
-      "name": "comfort: switching back to light removes dark image treatment",
+      "name": "comfort: light mode restores root/system colors and normal image treatment",
       "passed": true,
       "detail": {
-        "filter": "contrast(1.08)",
-        "background": "rgb(255, 255, 255)",
-        "paper": "rgb(255, 255, 255)",
-        "caption": "rgb(117, 110, 99)",
-        "loaded": true
+        "image": {
+          "filter": "contrast(1.08)",
+          "background": "rgb(255, 255, 255)",
+          "paper": "rgb(255, 255, 255)",
+          "caption": "rgb(117, 110, 99)",
+          "loaded": true
+        },
+        "theme": {
+          "rootTheme": "light",
+          "bodyTheme": "light",
+          "colors": [
+            "rgb(250, 250, 247)",
+            "rgb(250, 250, 247)",
+            "rgb(255, 255, 255)",
+            "rgb(255, 255, 255)"
+          ],
+          "bodyImage": "radial-gradient(at 20% 0px, rgba(255, 250, 241, 0.565), rgba(0, 0, 0, 0) 55%), none",
+          "scheme": "light",
+          "meta": "#fafaf7"
+        }
       }
     },
     {
-      "name": "comfort: all four widths hide chrome, expand content and fit the screen",
+      "name": "comfort: four widths hide controls without moving any text or page",
       "passed": true,
       "detail": [
         {
-          "focus": true,
-          "height": 839,
-          "header": "none",
-          "footer": "none",
-          "end": "none",
-          "toast": "none",
-          "fits": true,
-          "target": 44,
           "width": 360,
-          "before": 708,
-          "anchorVisible": true
+          "entry": {
+            "before": {
+              "reference": {
+                "anchor": "yt-api-beginners-WXsD0ZgxjRw-c8-b13",
+                "offset": 145
+              },
+              "page": 82,
+              "pages": 205,
+              "step": 376,
+              "viewport": {
+                "x": 18,
+                "y": 105.09375,
+                "width": 324,
+                "height": 707.90625
+              },
+              "clientWidth": 324,
+              "clientHeight": 708,
+              "scrollTop": 0,
+              "scrollHeight": 708,
+              "styleTransform": "translate3d(-30832px, 0px, 0px)",
+              "transform": "matrix(1, 0, 0, 1, -30832, 0)",
+              "documentX": 0,
+              "documentY": 0,
+              "character": {
+                "x": 18,
+                "y": 111.09375,
+                "width": 18,
+                "height": 20
+              }
+            },
+            "after": {
+              "reference": {
+                "anchor": "yt-api-beginners-WXsD0ZgxjRw-c8-b13",
+                "offset": 145
+              },
+              "page": 82,
+              "pages": 205,
+              "step": 376,
+              "viewport": {
+                "x": 18,
+                "y": 105.09375,
+                "width": 324,
+                "height": 707.90625
+              },
+              "clientWidth": 324,
+              "clientHeight": 708,
+              "scrollTop": 0,
+              "scrollHeight": 708,
+              "styleTransform": "translate3d(-30832px, 0px, 0px)",
+              "transform": "matrix(1, 0, 0, 1, -30832, 0)",
+              "documentX": 0,
+              "documentY": 0,
+              "character": {
+                "x": 18,
+                "y": 111.09375,
+                "width": 18,
+                "height": 20
+              }
+            },
+            "changedImmediately": [],
+            "changedAfterFrames": [],
+            "changedAfter250ms": []
+          },
+          "exit": {
+            "before": {
+              "reference": {
+                "anchor": "yt-api-beginners-WXsD0ZgxjRw-c8-b13",
+                "offset": 145
+              },
+              "page": 82,
+              "pages": 205,
+              "step": 376,
+              "viewport": {
+                "x": 18,
+                "y": 105.09375,
+                "width": 324,
+                "height": 707.90625
+              },
+              "clientWidth": 324,
+              "clientHeight": 708,
+              "scrollTop": 0,
+              "scrollHeight": 708,
+              "styleTransform": "translate3d(-30832px, 0px, 0px)",
+              "transform": "matrix(1, 0, 0, 1, -30832, 0)",
+              "documentX": 0,
+              "documentY": 0,
+              "character": {
+                "x": 18,
+                "y": 111.09375,
+                "width": 18,
+                "height": 20
+              }
+            },
+            "after": {
+              "reference": {
+                "anchor": "yt-api-beginners-WXsD0ZgxjRw-c8-b13",
+                "offset": 145
+              },
+              "page": 82,
+              "pages": 205,
+              "step": 376,
+              "viewport": {
+                "x": 18,
+                "y": 105.09375,
+                "width": 324,
+                "height": 707.90625
+              },
+              "clientWidth": 324,
+              "clientHeight": 708,
+              "scrollTop": 0,
+              "scrollHeight": 708,
+              "styleTransform": "translate3d(-30832px, 0px, 0px)",
+              "transform": "matrix(1, 0, 0, 1, -30832, 0)",
+              "documentX": 0,
+              "documentY": 0,
+              "character": {
+                "x": 18,
+                "y": 111.09375,
+                "width": 18,
+                "height": 20
+              }
+            },
+            "changedImmediately": [],
+            "changedAfterFrames": [],
+            "changedAfter250ms": []
+          },
+          "hidden": {
+            "focus": true,
+            "hidden": [
+              {
+                "selector": ".reader-header",
+                "visibility": "hidden",
+                "display": "flex",
+                "inert": true
+              },
+              {
+                "selector": ".reader-footer",
+                "visibility": "hidden",
+                "display": "block",
+                "inert": true
+              },
+              {
+                "selector": ".end-note",
+                "visibility": "hidden",
+                "display": "block",
+                "inert": true
+              }
+            ],
+            "toast": "none",
+            "fits": true,
+            "target": 44
+          },
+          "restored": {
+            "focus": false,
+            "hidden": [
+              {
+                "selector": ".reader-header",
+                "visibility": "visible",
+                "display": "flex",
+                "inert": false
+              },
+              {
+                "selector": ".reader-footer",
+                "visibility": "visible",
+                "display": "block",
+                "inert": false
+              },
+              {
+                "selector": ".end-note",
+                "visibility": "visible",
+                "display": "block",
+                "inert": false
+              }
+            ],
+            "toast": "block",
+            "fits": true,
+            "target": 44
+          }
         },
         {
-          "focus": true,
-          "height": 839,
-          "header": "none",
-          "footer": "none",
-          "end": "none",
-          "toast": "none",
-          "fits": true,
-          "target": 44,
           "width": 412,
-          "before": 705,
-          "anchorVisible": true
+          "entry": {
+            "before": {
+              "reference": {
+                "anchor": "yt-api-beginners-WXsD0ZgxjRw-c8-b13",
+                "offset": 0
+              },
+              "page": 74,
+              "pages": 186,
+              "step": 428,
+              "viewport": {
+                "x": 18,
+                "y": 108.09375,
+                "width": 376,
+                "height": 704.90625
+              },
+              "clientWidth": 376,
+              "clientHeight": 705,
+              "scrollTop": 0,
+              "scrollHeight": 705,
+              "styleTransform": "translate3d(-31672px, 0px, 0px)",
+              "transform": "matrix(1, 0, 0, 1, -31672, 0)",
+              "documentX": 0,
+              "documentY": 0,
+              "character": {
+                "x": 18,
+                "y": 114.09375,
+                "width": 18,
+                "height": 20
+              }
+            },
+            "after": {
+              "reference": {
+                "anchor": "yt-api-beginners-WXsD0ZgxjRw-c8-b13",
+                "offset": 0
+              },
+              "page": 74,
+              "pages": 186,
+              "step": 428,
+              "viewport": {
+                "x": 18,
+                "y": 108.09375,
+                "width": 376,
+                "height": 704.90625
+              },
+              "clientWidth": 376,
+              "clientHeight": 705,
+              "scrollTop": 0,
+              "scrollHeight": 705,
+              "styleTransform": "translate3d(-31672px, 0px, 0px)",
+              "transform": "matrix(1, 0, 0, 1, -31672, 0)",
+              "documentX": 0,
+              "documentY": 0,
+              "character": {
+                "x": 18,
+                "y": 114.09375,
+                "width": 18,
+                "height": 20
+              }
+            },
+            "changedImmediately": [],
+            "changedAfterFrames": [],
+            "changedAfter250ms": []
+          },
+          "exit": {
+            "before": {
+              "reference": {
+                "anchor": "yt-api-beginners-WXsD0ZgxjRw-c8-b13",
+                "offset": 0
+              },
+              "page": 74,
+              "pages": 186,
+              "step": 428,
+              "viewport": {
+                "x": 18,
+                "y": 108.09375,
+                "width": 376,
+                "height": 704.90625
+              },
+              "clientWidth": 376,
+              "clientHeight": 705,
+              "scrollTop": 0,
+              "scrollHeight": 705,
+              "styleTransform": "translate3d(-31672px, 0px, 0px)",
+              "transform": "matrix(1, 0, 0, 1, -31672, 0)",
+              "documentX": 0,
+              "documentY": 0,
+              "character": {
+                "x": 18,
+                "y": 114.09375,
+                "width": 18,
+                "height": 20
+              }
+            },
+            "after": {
+              "reference": {
+                "anchor": "yt-api-beginners-WXsD0ZgxjRw-c8-b13",
+                "offset": 0
+              },
+              "page": 74,
+              "pages": 186,
+              "step": 428,
+              "viewport": {
+                "x": 18,
+                "y": 108.09375,
+                "width": 376,
+                "height": 704.90625
+              },
+              "clientWidth": 376,
+              "clientHeight": 705,
+              "scrollTop": 0,
+              "scrollHeight": 705,
+              "styleTransform": "translate3d(-31672px, 0px, 0px)",
+              "transform": "matrix(1, 0, 0, 1, -31672, 0)",
+              "documentX": 0,
+              "documentY": 0,
+              "character": {
+                "x": 18,
+                "y": 114.09375,
+                "width": 18,
+                "height": 20
+              }
+            },
+            "changedImmediately": [],
+            "changedAfterFrames": [],
+            "changedAfter250ms": []
+          },
+          "hidden": {
+            "focus": true,
+            "hidden": [
+              {
+                "selector": ".reader-header",
+                "visibility": "hidden",
+                "display": "flex",
+                "inert": true
+              },
+              {
+                "selector": ".reader-footer",
+                "visibility": "hidden",
+                "display": "block",
+                "inert": true
+              },
+              {
+                "selector": ".end-note",
+                "visibility": "hidden",
+                "display": "block",
+                "inert": true
+              }
+            ],
+            "toast": "none",
+            "fits": true,
+            "target": 44
+          },
+          "restored": {
+            "focus": false,
+            "hidden": [
+              {
+                "selector": ".reader-header",
+                "visibility": "visible",
+                "display": "flex",
+                "inert": false
+              },
+              {
+                "selector": ".reader-footer",
+                "visibility": "visible",
+                "display": "block",
+                "inert": false
+              },
+              {
+                "selector": ".end-note",
+                "visibility": "visible",
+                "display": "block",
+                "inert": false
+              }
+            ],
+            "toast": "block",
+            "fits": true,
+            "target": 44
+          }
         },
         {
-          "focus": true,
-          "height": 839,
-          "header": "none",
-          "footer": "none",
-          "end": "none",
-          "toast": "none",
-          "fits": true,
-          "target": 44,
           "width": 800,
-          "before": 693,
-          "anchorVisible": true
+          "entry": {
+            "before": {
+              "reference": {
+                "anchor": "yt-api-beginners-WXsD0ZgxjRw-c8-b11",
+                "offset": 0
+              },
+              "page": 61,
+              "pages": 154,
+              "step": 772,
+              "viewport": {
+                "x": 40,
+                "y": 109,
+                "width": 720,
+                "height": 693
+              },
+              "clientWidth": 720,
+              "clientHeight": 693,
+              "scrollTop": 0,
+              "scrollHeight": 693,
+              "styleTransform": "translate3d(-47092px, 0px, 0px)",
+              "transform": "matrix(1, 0, 0, 1, -47092, 0)",
+              "documentX": 0,
+              "documentY": 0,
+              "character": {
+                "x": 40,
+                "y": 115,
+                "width": 16.28125,
+                "height": 20
+              }
+            },
+            "after": {
+              "reference": {
+                "anchor": "yt-api-beginners-WXsD0ZgxjRw-c8-b11",
+                "offset": 0
+              },
+              "page": 61,
+              "pages": 154,
+              "step": 772,
+              "viewport": {
+                "x": 40,
+                "y": 109,
+                "width": 720,
+                "height": 693
+              },
+              "clientWidth": 720,
+              "clientHeight": 693,
+              "scrollTop": 0,
+              "scrollHeight": 693,
+              "styleTransform": "translate3d(-47092px, 0px, 0px)",
+              "transform": "matrix(1, 0, 0, 1, -47092, 0)",
+              "documentX": 0,
+              "documentY": 0,
+              "character": {
+                "x": 40,
+                "y": 115,
+                "width": 16.28125,
+                "height": 20
+              }
+            },
+            "changedImmediately": [],
+            "changedAfterFrames": [],
+            "changedAfter250ms": []
+          },
+          "exit": {
+            "before": {
+              "reference": {
+                "anchor": "yt-api-beginners-WXsD0ZgxjRw-c8-b11",
+                "offset": 0
+              },
+              "page": 61,
+              "pages": 154,
+              "step": 772,
+              "viewport": {
+                "x": 40,
+                "y": 109,
+                "width": 720,
+                "height": 693
+              },
+              "clientWidth": 720,
+              "clientHeight": 693,
+              "scrollTop": 0,
+              "scrollHeight": 693,
+              "styleTransform": "translate3d(-47092px, 0px, 0px)",
+              "transform": "matrix(1, 0, 0, 1, -47092, 0)",
+              "documentX": 0,
+              "documentY": 0,
+              "character": {
+                "x": 40,
+                "y": 115,
+                "width": 16.28125,
+                "height": 20
+              }
+            },
+            "after": {
+              "reference": {
+                "anchor": "yt-api-beginners-WXsD0ZgxjRw-c8-b11",
+                "offset": 0
+              },
+              "page": 61,
+              "pages": 154,
+              "step": 772,
+              "viewport": {
+                "x": 40,
+                "y": 109,
+                "width": 720,
+                "height": 693
+              },
+              "clientWidth": 720,
+              "clientHeight": 693,
+              "scrollTop": 0,
+              "scrollHeight": 693,
+              "styleTransform": "translate3d(-47092px, 0px, 0px)",
+              "transform": "matrix(1, 0, 0, 1, -47092, 0)",
+              "documentX": 0,
+              "documentY": 0,
+              "character": {
+                "x": 40,
+                "y": 115,
+                "width": 16.28125,
+                "height": 20
+              }
+            },
+            "changedImmediately": [],
+            "changedAfterFrames": [],
+            "changedAfter250ms": []
+          },
+          "hidden": {
+            "focus": true,
+            "hidden": [
+              {
+                "selector": ".reader-header",
+                "visibility": "hidden",
+                "display": "flex",
+                "inert": true
+              },
+              {
+                "selector": ".reader-footer",
+                "visibility": "hidden",
+                "display": "block",
+                "inert": true
+              },
+              {
+                "selector": ".end-note",
+                "visibility": "hidden",
+                "display": "block",
+                "inert": true
+              }
+            ],
+            "toast": "none",
+            "fits": true,
+            "target": 44
+          },
+          "restored": {
+            "focus": false,
+            "hidden": [
+              {
+                "selector": ".reader-header",
+                "visibility": "visible",
+                "display": "flex",
+                "inert": false
+              },
+              {
+                "selector": ".reader-footer",
+                "visibility": "visible",
+                "display": "block",
+                "inert": false
+              },
+              {
+                "selector": ".end-note",
+                "visibility": "visible",
+                "display": "block",
+                "inert": false
+              }
+            ],
+            "toast": "block",
+            "fits": true,
+            "target": 44
+          }
         },
         {
-          "focus": true,
-          "height": 839,
-          "header": "none",
-          "footer": "none",
-          "end": "none",
-          "toast": "none",
-          "fits": true,
-          "target": 44,
           "width": 1280,
-          "before": 684,
-          "anchorVisible": true
+          "entry": {
+            "before": {
+              "reference": {
+                "anchor": "yt-api-beginners-WXsD0ZgxjRw-c8-b12",
+                "offset": 0
+              },
+              "page": 60,
+              "pages": 151,
+              "step": 912,
+              "viewport": {
+                "x": 210,
+                "y": 114.59375,
+                "width": 860,
+                "height": 684.40625
+              },
+              "clientWidth": 860,
+              "clientHeight": 684,
+              "scrollTop": 0,
+              "scrollHeight": 684,
+              "styleTransform": "translate3d(-54720px, 0px, 0px)",
+              "transform": "matrix(1, 0, 0, 1, -54720, 0)",
+              "documentX": 0,
+              "documentY": 0,
+              "character": {
+                "x": 210,
+                "y": 120.59375,
+                "width": 18,
+                "height": 20
+              }
+            },
+            "after": {
+              "reference": {
+                "anchor": "yt-api-beginners-WXsD0ZgxjRw-c8-b12",
+                "offset": 0
+              },
+              "page": 60,
+              "pages": 151,
+              "step": 912,
+              "viewport": {
+                "x": 210,
+                "y": 114.59375,
+                "width": 860,
+                "height": 684.40625
+              },
+              "clientWidth": 860,
+              "clientHeight": 684,
+              "scrollTop": 0,
+              "scrollHeight": 684,
+              "styleTransform": "translate3d(-54720px, 0px, 0px)",
+              "transform": "matrix(1, 0, 0, 1, -54720, 0)",
+              "documentX": 0,
+              "documentY": 0,
+              "character": {
+                "x": 210,
+                "y": 120.59375,
+                "width": 18,
+                "height": 20
+              }
+            },
+            "changedImmediately": [],
+            "changedAfterFrames": [],
+            "changedAfter250ms": []
+          },
+          "exit": {
+            "before": {
+              "reference": {
+                "anchor": "yt-api-beginners-WXsD0ZgxjRw-c8-b12",
+                "offset": 0
+              },
+              "page": 60,
+              "pages": 151,
+              "step": 912,
+              "viewport": {
+                "x": 210,
+                "y": 114.59375,
+                "width": 860,
+                "height": 684.40625
+              },
+              "clientWidth": 860,
+              "clientHeight": 684,
+              "scrollTop": 0,
+              "scrollHeight": 684,
+              "styleTransform": "translate3d(-54720px, 0px, 0px)",
+              "transform": "matrix(1, 0, 0, 1, -54720, 0)",
+              "documentX": 0,
+              "documentY": 0,
+              "character": {
+                "x": 210,
+                "y": 120.59375,
+                "width": 18,
+                "height": 20
+              }
+            },
+            "after": {
+              "reference": {
+                "anchor": "yt-api-beginners-WXsD0ZgxjRw-c8-b12",
+                "offset": 0
+              },
+              "page": 60,
+              "pages": 151,
+              "step": 912,
+              "viewport": {
+                "x": 210,
+                "y": 114.59375,
+                "width": 860,
+                "height": 684.40625
+              },
+              "clientWidth": 860,
+              "clientHeight": 684,
+              "scrollTop": 0,
+              "scrollHeight": 684,
+              "styleTransform": "translate3d(-54720px, 0px, 0px)",
+              "transform": "matrix(1, 0, 0, 1, -54720, 0)",
+              "documentX": 0,
+              "documentY": 0,
+              "character": {
+                "x": 210,
+                "y": 120.59375,
+                "width": 18,
+                "height": 20
+              }
+            },
+            "changedImmediately": [],
+            "changedAfterFrames": [],
+            "changedAfter250ms": []
+          },
+          "hidden": {
+            "focus": true,
+            "hidden": [
+              {
+                "selector": ".reader-header",
+                "visibility": "hidden",
+                "display": "flex",
+                "inert": true
+              },
+              {
+                "selector": ".reader-footer",
+                "visibility": "hidden",
+                "display": "block",
+                "inert": true
+              },
+              {
+                "selector": ".end-note",
+                "visibility": "hidden",
+                "display": "block",
+                "inert": true
+              }
+            ],
+            "toast": "none",
+            "fits": true,
+            "target": 44
+          },
+          "restored": {
+            "focus": false,
+            "hidden": [
+              {
+                "selector": ".reader-header",
+                "visibility": "visible",
+                "display": "flex",
+                "inert": false
+              },
+              {
+                "selector": ".reader-footer",
+                "visibility": "visible",
+                "display": "block",
+                "inert": false
+              },
+              {
+                "selector": ".end-note",
+                "visibility": "visible",
+                "display": "block",
+                "inert": false
+              }
+            ],
+            "toast": "block",
+            "fits": true,
+            "target": 44
+          }
         }
       ]
     },
     {
-      "name": "comfort: immediate page-turn focus preserves the visible reading anchor",
-      "passed": true,
-      "detail": [
-        {
-          "focus": true,
-          "height": 839,
-          "header": "none",
-          "footer": "none",
-          "end": "none",
-          "toast": "none",
-          "fits": true,
-          "target": 44,
-          "width": 360,
-          "before": 708,
-          "anchorVisible": true
-        },
-        {
-          "focus": true,
-          "height": 839,
-          "header": "none",
-          "footer": "none",
-          "end": "none",
-          "toast": "none",
-          "fits": true,
-          "target": 44,
-          "width": 412,
-          "before": 705,
-          "anchorVisible": true
-        },
-        {
-          "focus": true,
-          "height": 839,
-          "header": "none",
-          "footer": "none",
-          "end": "none",
-          "toast": "none",
-          "fits": true,
-          "target": 44,
-          "width": 800,
-          "before": 693,
-          "anchorVisible": true
-        },
-        {
-          "focus": true,
-          "height": 839,
-          "header": "none",
-          "footer": "none",
-          "end": "none",
-          "toast": "none",
-          "fits": true,
-          "target": 44,
-          "width": 1280,
-          "before": 684,
-          "anchorVisible": true
-        }
-      ]
-    },
-    {
-      "name": "comfort: button is visible before 5s and hides at the 5s boundary",
+      "name": "comfort: immediate focus keeps the target page and its pending save",
       "passed": true,
       "detail": {
+        "pending": {
+          "previous": 60,
+          "beforeRecord": 60,
+          "expected": {
+            "page": 62,
+            "pages": 151,
+            "step": 912,
+            "transform": "translate3d(-56544px, 0px, 0px)"
+          },
+          "immediate": {
+            "page": 62,
+            "pages": 151,
+            "step": 912,
+            "transform": "translate3d(-56544px, 0px, 0px)"
+          }
+        },
+        "saved": {
+          "page": 62,
+          "pages": 151,
+          "step": 912,
+          "transform": "translate3d(-56544px, 0px, 0px)",
+          "storedPage": 62,
+          "storedPages": 151,
+          "focus": true
+        }
+      }
+    },
+    {
+      "name": "comfort: button hides at 5s without moving the text or page",
+      "passed": true,
+      "detail": {
+        "timing": {
+          "before": {
+            "elapsed": 4800.200000000012,
+            "hidden": false,
+            "opacity": "1"
+          },
+          "hiddenAt": 5000.3000000000175,
+          "hidden": true,
+          "opacity": "0",
+          "focus": true
+        },
         "before": {
-          "elapsed": 4800.200000000012,
+          "reference": {
+            "anchor": "yt-api-beginners-WXsD0ZgxjRw-c8-deep-07",
+            "offset": 0
+          },
+          "page": 76,
+          "pages": 186,
+          "step": 428,
+          "viewport": {
+            "x": 18,
+            "y": 108.09375,
+            "width": 376,
+            "height": 704.90625
+          },
+          "clientWidth": 376,
+          "clientHeight": 705,
+          "scrollTop": 0,
+          "scrollHeight": 705,
+          "styleTransform": "translate3d(-32528px, 0px, 0px)",
+          "transform": "matrix(1, 0, 0, 1, -32528, 0)",
+          "documentX": 0,
+          "documentY": 0,
+          "character": {
+            "x": 18,
+            "y": 114.09375,
+            "width": 7.015625,
+            "height": 20
+          }
+        },
+        "after": {
+          "reference": {
+            "anchor": "yt-api-beginners-WXsD0ZgxjRw-c8-deep-07",
+            "offset": 0
+          },
+          "page": 76,
+          "pages": 186,
+          "step": 428,
+          "viewport": {
+            "x": 18,
+            "y": 108.09375,
+            "width": 376,
+            "height": 704.90625
+          },
+          "clientWidth": 376,
+          "clientHeight": 705,
+          "scrollTop": 0,
+          "scrollHeight": 705,
+          "styleTransform": "translate3d(-32528px, 0px, 0px)",
+          "transform": "matrix(1, 0, 0, 1, -32528, 0)",
+          "documentX": 0,
+          "documentY": 0,
+          "character": {
+            "x": 18,
+            "y": 114.09375,
+            "width": 7.015625,
+            "height": 20
+          }
+        },
+        "changed": []
+      }
+    },
+    {
+      "name": "comfort: first tap only reveals the control and keeps exact reading geometry",
+      "passed": true,
+      "detail": {
+        "state": {
+          "focus": true,
           "hidden": false,
+          "page": 76,
           "opacity": "1"
         },
-        "hiddenAt": 5000.300000000003,
-        "hidden": true,
-        "opacity": "0",
-        "focus": true
+        "position": {
+          "before": {
+            "reference": {
+              "anchor": "yt-api-beginners-WXsD0ZgxjRw-c8-deep-07",
+              "offset": 0
+            },
+            "page": 76,
+            "pages": 186,
+            "step": 428,
+            "viewport": {
+              "x": 18,
+              "y": 108.09375,
+              "width": 376,
+              "height": 704.90625
+            },
+            "clientWidth": 376,
+            "clientHeight": 705,
+            "scrollTop": 0,
+            "scrollHeight": 705,
+            "styleTransform": "translate3d(-32528px, 0px, 0px)",
+            "transform": "matrix(1, 0, 0, 1, -32528, 0)",
+            "documentX": 0,
+            "documentY": 0,
+            "character": {
+              "x": 18,
+              "y": 114.09375,
+              "width": 7.015625,
+              "height": 20
+            }
+          },
+          "after": {
+            "reference": {
+              "anchor": "yt-api-beginners-WXsD0ZgxjRw-c8-deep-07",
+              "offset": 0
+            },
+            "page": 76,
+            "pages": 186,
+            "step": 428,
+            "viewport": {
+              "x": 18,
+              "y": 108.09375,
+              "width": 376,
+              "height": 704.90625
+            },
+            "clientWidth": 376,
+            "clientHeight": 705,
+            "scrollTop": 0,
+            "scrollHeight": 705,
+            "styleTransform": "translate3d(-32528px, 0px, 0px)",
+            "transform": "matrix(1, 0, 0, 1, -32528, 0)",
+            "documentX": 0,
+            "documentY": 0,
+            "character": {
+              "x": 18,
+              "y": 114.09375,
+              "width": 7.015625,
+              "height": 20
+            }
+          },
+          "changedImmediately": [],
+          "changedAfterFrames": [],
+          "changedAfter250ms": []
+        }
       }
     },
     {
-      "name": "comfort: first tap at hidden position only reveals the control",
+      "name": "comfort: second tap restores controls without moving the text or page",
       "passed": true,
       "detail": {
-        "focus": true,
-        "hidden": false,
-        "page": 63,
-        "opacity": "1"
+        "state": {
+          "focus": false,
+          "hidden": [
+            {
+              "selector": ".reader-header",
+              "visibility": "visible",
+              "display": "flex",
+              "inert": false
+            },
+            {
+              "selector": ".reader-footer",
+              "visibility": "visible",
+              "display": "block",
+              "inert": false
+            },
+            {
+              "selector": ".end-note",
+              "visibility": "visible",
+              "display": "block",
+              "inert": false
+            }
+          ],
+          "toast": "block",
+          "fits": true,
+          "target": 44
+        },
+        "position": {
+          "before": {
+            "reference": {
+              "anchor": "yt-api-beginners-WXsD0ZgxjRw-c8-deep-07",
+              "offset": 0
+            },
+            "page": 76,
+            "pages": 186,
+            "step": 428,
+            "viewport": {
+              "x": 18,
+              "y": 108.09375,
+              "width": 376,
+              "height": 704.90625
+            },
+            "clientWidth": 376,
+            "clientHeight": 705,
+            "scrollTop": 0,
+            "scrollHeight": 705,
+            "styleTransform": "translate3d(-32528px, 0px, 0px)",
+            "transform": "matrix(1, 0, 0, 1, -32528, 0)",
+            "documentX": 0,
+            "documentY": 0,
+            "character": {
+              "x": 18,
+              "y": 114.09375,
+              "width": 7.015625,
+              "height": 20
+            }
+          },
+          "after": {
+            "reference": {
+              "anchor": "yt-api-beginners-WXsD0ZgxjRw-c8-deep-07",
+              "offset": 0
+            },
+            "page": 76,
+            "pages": 186,
+            "step": 428,
+            "viewport": {
+              "x": 18,
+              "y": 108.09375,
+              "width": 376,
+              "height": 704.90625
+            },
+            "clientWidth": 376,
+            "clientHeight": 705,
+            "scrollTop": 0,
+            "scrollHeight": 705,
+            "styleTransform": "translate3d(-32528px, 0px, 0px)",
+            "transform": "matrix(1, 0, 0, 1, -32528, 0)",
+            "documentX": 0,
+            "documentY": 0,
+            "character": {
+              "x": 18,
+              "y": 114.09375,
+              "width": 7.015625,
+              "height": 20
+            }
+          },
+          "changedImmediately": [],
+          "changedAfterFrames": [],
+          "changedAfter250ms": []
+        }
       }
-    },
-    {
-      "name": "comfort: second tap exits and restores reading controls",
-      "passed": true,
-      "detail": null
     },
     {
       "name": "comfort: keyboard and touch-edge page navigation remain active",
       "passed": true,
       "detail": {
-        "before": 62,
-        "afterKeyboard": 63
+        "before": 76,
+        "afterKeyboard": 77
       }
     },
     {
@@ -308,25 +1199,419 @@
       "detail": null
     },
     {
-      "name": "comfort: scroll mode keeps its reading anchor and scrolls in focus",
+      "name": "comfort: scroll focus preserves exact middle/end positions and allows scrolling",
       "passed": true,
       "detail": {
-        "entryAnchorVisible": true,
+        "middleEntry": {
+          "before": {
+            "reference": {
+              "anchor": "yt-api-beginners-WXsD0ZgxjRw-c7-deep-06",
+              "offset": 56
+            },
+            "page": 61,
+            "pages": 175,
+            "step": 705,
+            "viewport": {
+              "x": 18,
+              "y": 108.09375,
+              "width": 376,
+              "height": 704.90625
+            },
+            "clientWidth": 376,
+            "clientHeight": 705,
+            "scrollTop": 43095,
+            "scrollHeight": 123129,
+            "styleTransform": "none",
+            "transform": "none",
+            "documentX": 0,
+            "documentY": 0,
+            "character": {
+              "x": 18,
+              "y": 123.9375,
+              "width": 18,
+              "height": 20
+            }
+          },
+          "after": {
+            "reference": {
+              "anchor": "yt-api-beginners-WXsD0ZgxjRw-c7-deep-06",
+              "offset": 56
+            },
+            "page": 61,
+            "pages": 175,
+            "step": 705,
+            "viewport": {
+              "x": 18,
+              "y": 108.09375,
+              "width": 376,
+              "height": 704.90625
+            },
+            "clientWidth": 376,
+            "clientHeight": 705,
+            "scrollTop": 43095,
+            "scrollHeight": 123129,
+            "styleTransform": "none",
+            "transform": "none",
+            "documentX": 0,
+            "documentY": 0,
+            "character": {
+              "x": 18,
+              "y": 123.9375,
+              "width": 18,
+              "height": 20
+            }
+          },
+          "changedImmediately": [],
+          "changedAfterFrames": [],
+          "changedAfter250ms": []
+        },
+        "middleExit": {
+          "before": {
+            "reference": {
+              "anchor": "yt-api-beginners-WXsD0ZgxjRw-c7-deep-08",
+              "offset": 0
+            },
+            "page": 61,
+            "pages": 175,
+            "step": 705,
+            "viewport": {
+              "x": 18,
+              "y": 108.09375,
+              "width": 376,
+              "height": 704.90625
+            },
+            "clientWidth": 376,
+            "clientHeight": 705,
+            "scrollTop": 43435,
+            "scrollHeight": 123129,
+            "styleTransform": "none",
+            "transform": "none",
+            "documentX": 0,
+            "documentY": 0,
+            "character": {
+              "x": 18,
+              "y": 119.609375,
+              "width": 18,
+              "height": 20
+            }
+          },
+          "after": {
+            "reference": {
+              "anchor": "yt-api-beginners-WXsD0ZgxjRw-c7-deep-08",
+              "offset": 0
+            },
+            "page": 61,
+            "pages": 175,
+            "step": 705,
+            "viewport": {
+              "x": 18,
+              "y": 108.09375,
+              "width": 376,
+              "height": 704.90625
+            },
+            "clientWidth": 376,
+            "clientHeight": 705,
+            "scrollTop": 43435,
+            "scrollHeight": 123129,
+            "styleTransform": "none",
+            "transform": "none",
+            "documentX": 0,
+            "documentY": 0,
+            "character": {
+              "x": 18,
+              "y": 119.609375,
+              "width": 18,
+              "height": 20
+            }
+          },
+          "changedImmediately": [],
+          "changedAfterFrames": [],
+          "changedAfter250ms": []
+        },
         "wheelMoved": true,
-        "exitAnchorVisible": true
+        "bottomEntry": {
+          "before": {
+            "reference": {
+              "anchor": "yt-api-beginners-WXsD0ZgxjRw-c17-extra-code-01",
+              "offset": 144
+            },
+            "page": 174,
+            "pages": 175,
+            "step": 705,
+            "viewport": {
+              "x": 18,
+              "y": 108.09375,
+              "width": 376,
+              "height": 704.90625
+            },
+            "clientWidth": 376,
+            "clientHeight": 705,
+            "scrollTop": 122424,
+            "scrollHeight": 123129,
+            "styleTransform": "none",
+            "transform": "none",
+            "documentX": 0,
+            "documentY": 0,
+            "character": {
+              "x": 37.109375,
+              "y": 111.625,
+              "width": 0,
+              "height": 18
+            }
+          },
+          "after": {
+            "reference": {
+              "anchor": "yt-api-beginners-WXsD0ZgxjRw-c17-extra-code-01",
+              "offset": 144
+            },
+            "page": 174,
+            "pages": 175,
+            "step": 705,
+            "viewport": {
+              "x": 18,
+              "y": 108.09375,
+              "width": 376,
+              "height": 704.90625
+            },
+            "clientWidth": 376,
+            "clientHeight": 705,
+            "scrollTop": 122424,
+            "scrollHeight": 123129,
+            "styleTransform": "none",
+            "transform": "none",
+            "documentX": 0,
+            "documentY": 0,
+            "character": {
+              "x": 37.109375,
+              "y": 111.625,
+              "width": 0,
+              "height": 18
+            }
+          },
+          "changedImmediately": [],
+          "changedAfterFrames": [],
+          "changedAfter250ms": []
+        },
+        "bottomExit": {
+          "before": {
+            "reference": {
+              "anchor": "yt-api-beginners-WXsD0ZgxjRw-c17-extra-code-01",
+              "offset": 144
+            },
+            "page": 174,
+            "pages": 175,
+            "step": 705,
+            "viewport": {
+              "x": 18,
+              "y": 108.09375,
+              "width": 376,
+              "height": 704.90625
+            },
+            "clientWidth": 376,
+            "clientHeight": 705,
+            "scrollTop": 122424,
+            "scrollHeight": 123129,
+            "styleTransform": "none",
+            "transform": "none",
+            "documentX": 0,
+            "documentY": 0,
+            "character": {
+              "x": 37.109375,
+              "y": 111.625,
+              "width": 0,
+              "height": 18
+            }
+          },
+          "after": {
+            "reference": {
+              "anchor": "yt-api-beginners-WXsD0ZgxjRw-c17-extra-code-01",
+              "offset": 144
+            },
+            "page": 174,
+            "pages": 175,
+            "step": 705,
+            "viewport": {
+              "x": 18,
+              "y": 108.09375,
+              "width": 376,
+              "height": 704.90625
+            },
+            "clientWidth": 376,
+            "clientHeight": 705,
+            "scrollTop": 122424,
+            "scrollHeight": 123129,
+            "styleTransform": "none",
+            "transform": "none",
+            "documentX": 0,
+            "documentY": 0,
+            "character": {
+              "x": 37.109375,
+              "y": 111.625,
+              "width": 0,
+              "height": 18
+            }
+          },
+          "changedImmediately": [],
+          "changedAfterFrames": [],
+          "changedAfter250ms": []
+        }
       }
     },
     {
-      "name": "comfort: entering focus from completion stays at the end of the book",
+      "name": "comfort: completion keeps exactly the same page, page count and position",
       "passed": true,
       "detail": {
-        "before": 185,
-        "after": {
-          "page": 153,
-          "pages": 154,
-          "anchor": "yt-api-beginners-WXsD0ZgxjRw-c17-extra-code-01",
+        "entry": {
+          "before": {
+            "reference": {
+              "anchor": "yt-api-beginners-WXsD0ZgxjRw-c17-zero3-scene-restcheck",
+              "offset": 0
+            },
+            "page": 185,
+            "pages": 186,
+            "step": 428,
+            "viewport": {
+              "x": 18,
+              "y": 108.09375,
+              "width": 376,
+              "height": 704.90625
+            },
+            "clientWidth": 376,
+            "clientHeight": 705,
+            "scrollTop": 0,
+            "scrollHeight": 705,
+            "styleTransform": "translate3d(-79180px, 0px, 0px)",
+            "transform": "matrix(1, 0, 0, 1, -79180, 0)",
+            "documentX": 0,
+            "documentY": 0,
+            "character": {
+              "x": 27,
+              "y": 329.84375,
+              "width": 10,
+              "height": 11
+            }
+          },
+          "after": {
+            "reference": {
+              "anchor": "yt-api-beginners-WXsD0ZgxjRw-c17-zero3-scene-restcheck",
+              "offset": 0
+            },
+            "page": 185,
+            "pages": 186,
+            "step": 428,
+            "viewport": {
+              "x": 18,
+              "y": 108.09375,
+              "width": 376,
+              "height": 704.90625
+            },
+            "clientWidth": 376,
+            "clientHeight": 705,
+            "scrollTop": 0,
+            "scrollHeight": 705,
+            "styleTransform": "translate3d(-79180px, 0px, 0px)",
+            "transform": "matrix(1, 0, 0, 1, -79180, 0)",
+            "documentX": 0,
+            "documentY": 0,
+            "character": {
+              "x": 27,
+              "y": 329.84375,
+              "width": 10,
+              "height": 11
+            }
+          },
+          "changedImmediately": [],
+          "changedAfterFrames": [],
+          "changedAfter250ms": []
+        },
+        "exit": {
+          "before": {
+            "reference": {
+              "anchor": "yt-api-beginners-WXsD0ZgxjRw-c17-zero3-scene-restcheck",
+              "offset": 0
+            },
+            "page": 185,
+            "pages": 186,
+            "step": 428,
+            "viewport": {
+              "x": 18,
+              "y": 108.09375,
+              "width": 376,
+              "height": 704.90625
+            },
+            "clientWidth": 376,
+            "clientHeight": 705,
+            "scrollTop": 0,
+            "scrollHeight": 705,
+            "styleTransform": "translate3d(-79180px, 0px, 0px)",
+            "transform": "matrix(1, 0, 0, 1, -79180, 0)",
+            "documentX": 0,
+            "documentY": 0,
+            "character": {
+              "x": 27,
+              "y": 329.84375,
+              "width": 10,
+              "height": 11
+            }
+          },
+          "after": {
+            "reference": {
+              "anchor": "yt-api-beginners-WXsD0ZgxjRw-c17-zero3-scene-restcheck",
+              "offset": 0
+            },
+            "page": 185,
+            "pages": 186,
+            "step": 428,
+            "viewport": {
+              "x": 18,
+              "y": 108.09375,
+              "width": 376,
+              "height": 704.90625
+            },
+            "clientWidth": 376,
+            "clientHeight": 705,
+            "scrollTop": 0,
+            "scrollHeight": 705,
+            "styleTransform": "translate3d(-79180px, 0px, 0px)",
+            "transform": "matrix(1, 0, 0, 1, -79180, 0)",
+            "documentX": 0,
+            "documentY": 0,
+            "character": {
+              "x": 27,
+              "y": 329.84375,
+              "width": 10,
+              "height": 11
+            }
+          },
+          "changedImmediately": [],
+          "changedAfterFrames": [],
+          "changedAfter250ms": []
+        },
+        "hidden": {
           "focus": true,
-          "display": "none"
+          "hidden": [
+            {
+              "selector": ".reader-header",
+              "visibility": "hidden",
+              "display": "flex",
+              "inert": true
+            },
+            {
+              "selector": ".reader-footer",
+              "visibility": "hidden",
+              "display": "block",
+              "inert": true
+            },
+            {
+              "selector": ".end-note",
+              "visibility": "hidden",
+              "display": "block",
+              "inert": true
+            }
+          ],
+          "toast": "none",
+          "fits": true,
+          "target": 44
         }
       }
     },
@@ -341,12 +1626,66 @@
       }
     },
     {
-      "name": "comfort: focus toggle remains reachable with a visible keyboard focus",
+      "name": "comfort: keyboard reaches focus toggle and skips all hidden inert controls",
       "passed": true,
       "detail": {
-        "focused": true,
-        "visible": "1",
-        "outline": "solid"
+        "keyboard": {
+          "focused": true,
+          "visible": "1",
+          "outline": "solid"
+        },
+        "hiddenControls": [
+          {
+            "action": "reader-back",
+            "focused": false,
+            "inert": true
+          },
+          {
+            "action": "reader-bookmark",
+            "focused": false,
+            "inert": true
+          },
+          {
+            "action": "reading-settings",
+            "focused": false,
+            "inert": true
+          },
+          {
+            "action": "quiz-retry",
+            "focused": false,
+            "inert": true
+          },
+          {
+            "action": "book-export",
+            "focused": false,
+            "inert": true
+          },
+          {
+            "action": "reader-prev",
+            "focused": false,
+            "inert": true
+          },
+          {
+            "action": "reader-toc",
+            "focused": false,
+            "inert": true
+          },
+          {
+            "action": "reader-note",
+            "focused": false,
+            "inert": true
+          },
+          {
+            "action": "reader-bookmark",
+            "focused": false,
+            "inert": true
+          },
+          {
+            "action": "reader-next",
+            "focused": false,
+            "inert": true
+          }
+        ]
       }
     },
     {
@@ -446,7 +1785,7 @@
     {
       "name": "bad JavaScript rolls back to previous healthy B",
       "passed": true,
-      "detail": "http://127.0.0.1:37905/?cb_release=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb&cb_recovery=1"
+      "detail": "http://127.0.0.1:36633/?cb_release=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb&cb_recovery=1"
     },
     {
       "name": "failed startup did not erase notes",
@@ -508,5 +1847,5 @@
   "intentionalJavaScriptFaults": [
     "Missing initializer in const declaration"
   ],
-  "completedAt": "2026-10-03T16:53:49Z"
+  "completedAt": "2026-10-04T01:02:31Z"
 }
