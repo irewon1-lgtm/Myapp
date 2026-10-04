@@ -401,14 +401,26 @@ function analyzeHardware(item) {
   let llmCapability = null;
   let llmReason = null;
 
-  if (ramPass) {
+  if (ramPass && vramPass) {
+    hardwareReviewStatus = 'PASS_RAM_VRAM';
+    llmCapability = 'HYBRID_WORK_LOCAL_LLM';
+    llmReason = 'RAM 32GB 이상 + VRAM 16GB 이상 확정 후보';
+  } else if (vramPass) {
+    hardwareReviewStatus = 'PASS_VRAM';
+    llmCapability = 'LOCAL_LLM_GPU';
+    llmReason = 'VRAM 16GB 이상이 직접 표기되었거나 GPU 모델로 확인됨';
+  } else if (ryzenAiMaxShared64) {
+    hardwareReviewStatus = 'PASS_SHARED64';
+    llmCapability = 'RYZEN_AI_MAX_SHARED';
+    llmReason = 'Ryzen AI Max + 공유/통합메모리 64GB 이상 후보';
+  } else if (ramPass) {
     hardwareReviewStatus = 'PASS_RAM';
-    llmCapability = 'RAM16_CANDIDATE';
-    llmReason = 'RAM 16GB 이상: 후보 통과. CPU/GPU/가격은 후속 확인용이며 자동 탈락 조건이 아님';
+    llmCapability = 'WORK_DEV_RAM32';
+    llmReason = 'RAM 32GB 이상 확정 후보';
   } else if (needsReview) {
     hardwareReviewStatus = 'CHECK_MEMORY_GPU';
     llmCapability = 'SPEC_CHECK_REQUIRED';
-    llmReason = '16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 또는 GPU 세부사양만으로 최종 성능 조건을 확정할 수 없어 2차 확인 필요';
+    llmReason = '16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지';
   }
 
   return {
@@ -945,11 +957,12 @@ async function main() {
       storageGate: false,
       cpuBaseline: 'disabled; CPU is informational only',
       acceptedHardware: [
-        'CONFIRMED: explicit RAM >=16GB',
-        'REVIEW: memory expression >=16GB (including RAM/램/렘/메모리/memory, 기가/G/GB variants or bare 16G/32기가) when RAM cannot yet be distinguished',
+        'CONFIRMED: explicit RAM >=32GB OR explicit/model-confirmed VRAM >=16GB',
+        'CONFIRMED: Ryzen AI Max with >=64GB shared/unified memory',
+        'REVIEW: any memory expression >=16GB (RAM/램/렘/메모리/memory, VRAM/그래픽메모리/GDDR, 기가/G/GB variants, or bare 16G/32기가) when RAM/VRAM cannot be safely resolved',
         'CPU/GPU/price do not reject candidates; they are informational only'
       ],
-      hardwareReviewStates: ['PASS_RAM', 'CHECK_MEMORY_GPU']
+      hardwareReviewStates: ['PASS_RAM', 'PASS_VRAM', 'PASS_RAM_VRAM', 'PASS_SHARED64', 'CHECK_MEMORY_GPU']
     },
     stats: {
       cities: cityRuns,
