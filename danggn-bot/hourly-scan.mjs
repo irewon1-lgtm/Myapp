@@ -401,22 +401,10 @@ function analyzeHardware(item) {
   let llmCapability = null;
   let llmReason = null;
 
-  if (ramPass && vramPass) {
-    hardwareReviewStatus = 'PASS_RAM_VRAM';
-    llmCapability = 'HYBRID_WORK_LOCAL_LLM';
-    llmReason = 'RAM 32GB 이상 + VRAM 16GB 이상: Codex/ChatGPT Work/개발 멀티태스킹과 로컬 LLM GPU 가속 모두 강점';
-  } else if (vramPass) {
-    hardwareReviewStatus = 'PASS_VRAM';
-    llmCapability = 'LOCAL_LLM_GPU';
-    llmReason = 'VRAM 16GB 이상이 직접 표기되었거나 확정 가능한 GPU 모델로 확인됨';
-  } else if (ryzenAiMaxShared64) {
-    hardwareReviewStatus = 'PASS_SHARED64';
-    llmCapability = 'RYZEN_AI_MAX_SHARED';
-    llmReason = 'Ryzen AI Max + 공유/통합메모리 64GB 이상 후보';
-  } else if (ramPass) {
+  if (ramPass) {
     hardwareReviewStatus = 'PASS_RAM';
-    llmCapability = 'WORK_DEV_RAM32';
-    llmReason = 'RAM 32GB 이상: Codex/ChatGPT Work/브라우저/개발 멀티태스킹 후보';
+    llmCapability = 'RAM16_CANDIDATE';
+    llmReason = 'RAM 16GB 이상: 후보 통과. CPU/GPU/가격은 후속 확인용이며 자동 탈락 조건이 아님';
   } else if (needsReview) {
     hardwareReviewStatus = 'CHECK_MEMORY_GPU';
     llmCapability = 'SPEC_CHECK_REQUIRED';
@@ -862,7 +850,6 @@ async function main() {
 
       const text = (item.title ?? '') + '\n' + (item.description ?? '');
       const cpuHint = extractCpu(text);
-      if (!cpuMeetsBaseline(cpuHint)) continue;
       const previousPrice = changeType === 'price_drop' ? Number(item.previousPrice) || null : null;
 
       candidates.push({
@@ -879,7 +866,7 @@ async function main() {
         title: item.title,
         modelHint: item.title,
         cpuHint,
-        cpuBaselinePass: true,
+        cpuBaselinePass: null,
         gpuHint: specs.gpuHint,
         vramGB: specs.vramGB,
         ramGB: specs.ramGB,
@@ -956,13 +943,13 @@ async function main() {
       priceGate: false,
       marketPriceCheck: 'deferred to ChatGPT; prefer >=10% below used-market average; insufficient market evidence => HOLD, do not auto-reject',
       storageGate: false,
-      cpuBaseline: 'AMD Ryzen 7 PRO 7840U or better/equivalent',
+      cpuBaseline: 'disabled; CPU is informational only',
       acceptedHardware: [
-        'CONFIRMED: explicit RAM >=32GB OR explicit/model-confirmed VRAM >=16GB',
-        'CONFIRMED: Ryzen AI Max with >=64GB shared/unified memory',
-        'REVIEW: memory expression >=16GB (including RAM/램/렘/메모리/memory, 기가/G/GB variants or bare 16G/32기가) when RAM/VRAM cannot yet be distinguished'
+        'CONFIRMED: explicit RAM >=16GB',
+        'REVIEW: memory expression >=16GB (including RAM/램/렘/메모리/memory, 기가/G/GB variants or bare 16G/32기가) when RAM cannot yet be distinguished',
+        'CPU/GPU/price do not reject candidates; they are informational only'
       ],
-      hardwareReviewStates: ['PASS_RAM', 'PASS_VRAM', 'PASS_RAM_VRAM', 'PASS_SHARED64', 'CHECK_MEMORY_GPU']
+      hardwareReviewStates: ['PASS_RAM', 'CHECK_MEMORY_GPU']
     },
     stats: {
       cities: cityRuns,
