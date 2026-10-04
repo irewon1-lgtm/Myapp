@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-04T23:41:19.199Z",
+  "generatedAt": "2026-10-04T23:59:02.556Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -18,7 +18,7 @@
     "stateCommitted": true,
     "warnings": [
       "안양시: detail failed cmf4xbwdefdp: Error: HTTP 404 Not Found",
-      "Detail queue retained for retry: 6"
+      "Detail queue retained for retry: 24"
     ]
   },
   "rules": {
@@ -55,11 +55,11 @@
         "attempted": 8,
         "succeeded": 8,
         "errors": 0,
-        "uniqueListings": 277,
-        "changedCandidates": 69,
-        "detailedCandidates": 69,
+        "uniqueListings": 274,
+        "changedCandidates": 67,
+        "detailedCandidates": 67,
         "deferredDetails": 0,
-        "durationMs": 73581
+        "durationMs": 73682
       },
       {
         "city": "의왕시",
@@ -73,11 +73,11 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 347,
+        "uniqueListings": 343,
         "changedCandidates": 67,
         "detailedCandidates": 67,
         "deferredDetails": 0,
-        "durationMs": 95578
+        "durationMs": 100899
       },
       {
         "city": "안양시",
@@ -93,11 +93,11 @@
         "attempted": 28,
         "succeeded": 28,
         "errors": 0,
-        "uniqueListings": 357,
+        "uniqueListings": 350,
         "changedCandidates": 66,
         "detailedCandidates": 66,
         "deferredDetails": 0,
-        "durationMs": 111024
+        "durationMs": 118844
       },
       {
         "city": "과천시",
@@ -108,55 +108,19 @@
         "succeeded": 4,
         "errors": 0,
         "uniqueListings": 251,
-        "changedCandidates": 56,
-        "detailedCandidates": 51,
-        "deferredDetails": 5,
-        "durationMs": 51364
+        "changedCandidates": 58,
+        "detailedCandidates": 35,
+        "deferredDetails": 23,
+        "durationMs": 38194
       }
     ],
-    "finalCandidateCount": 1,
-    "stateItemCount": 4889,
-    "pendingNewnessCount": 5,
-    "pendingUnattemptedCount": 5,
+    "finalCandidateCount": 0,
+    "stateItemCount": 4901,
+    "pendingNewnessCount": 23,
+    "pendingUnattemptedCount": 23,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 331636
+    "durationMs": 331722
   },
-  "candidates": [
-    {
-      "id": "ndrt9bbkrt4r",
-      "changeType": "new",
-      "previousPrice": null,
-      "price": 790000,
-      "priceDropPercent": null,
-      "city": "군포시",
-      "location": "금정동",
-      "regionPath": "경기도 군포시 금정동",
-      "title": "급쳐 MSI 씬 15 B12VE 게이밍 노트북",
-      "modelHint": "급쳐 MSI 씬 15 B12VE 게이밍 노트북",
-      "cpuHint": null,
-      "cpuBaselinePass": null,
-      "gpuHint": null,
-      "vramGB": null,
-      "ramGB": 16,
-      "ambiguousMemoryGB": null,
-      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": "16GB RAM",
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": null,
-      "storageGB": null,
-      "llmCapability": "SPEC_CHECK_REQUIRED",
-      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
-      "specConfidence": "needs_review",
-      "postedAt": "2026-10-04T23:23:58.902Z",
-      "boostedAt": "2026-10-04T23:23:58.901Z",
-      "status": "Ongoing",
-      "description": "고성능 15인치 MSI 게이밍 노트북을 만나보세요. RTX 4050 그래픽 카드와 12세대 인텔 코어 i5-12450H 프로세서가 탑재되어 뛰어난 성능을 자랑합니다. 선명한 디스플레이와 편안한 키보드로 쾌적한 사용 경험을 제공해요. 게임부터 작업까지 모든 것을 만족시켜 줄 매력적인 노트북입니다.\n\n16GB RAM\n512GB 삼성NVMe SSD탑재\n15인치144Hz FHD IPS고화질디스플레이\n\n외관에 사용감 조금있습니다\n직거래택배 둘다가능합니다",
-      "url": "https://www.daangn.com/kr/buy-sell/%EA%B8%89%EC%B3%90-msi-%EC%94%AC-15-b12ve-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-ndrt9bbkrt4r/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "눈두두",
-      "mannerTemperature": 36.8
-    }
-  ]
+  "candidates": []
 }
