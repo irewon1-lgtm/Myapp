@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-05T16:59:10.084Z",
+  "generatedAt": "2026-10-05T17:21:22.290Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -72,21 +72,26 @@
             "tradingCoordinates": []
           },
           {
-            "id": "/kr/buy-sell/lg-%EC%8A%AC%EB%A6%BC-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%9E%91%EB%8F%99-%EC%9E%98%EB%90%A9%EB%8B%88%EB%8B%A4-lg15u34-i5eirgjar3yn/",
-            "href": "/kr/buy-sell/lg-%EC%8A%AC%EB%A6%BC-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%9E%91%EB%8F%99-%EC%9E%98%EB%90%A9%EB%8B%88%EB%8B%A4-lg15u34-i5eirgjar3yn/",
-            "title": "LG 슬림 노트북 작동 잘됩니다 LG15U34",
-            "content": "15.6인치 LG 노트북 입니다\n\n사무용.인터넷용,문서 작업용 좋아요\n작동 잘됩니다\n충전기,마우스 포함\n\n한글,엑셀,파워 포인트,워드 깔려 있습니다\nSSD120GB \n포맷 완료 바로 사용 가능해요",
-            "price": "120000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/1791218465310da5b1e9c9772c0ac879473c8f99240f2929d00cddc8331b8b899efa91ff4eae10.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%EA%B0%80%EC%84%B1%EB%B9%84-%ED%84%B0%EC%B9%98%ED%99%94%EB%A9%B4-%EB%85%B8%ED%8A%B8%EB%B6%81-i7-15%EC%9D%B8%EC%B9%98-43zshbgmz1bv/",
+            "href": "/kr/buy-sell/%EA%B0%80%EC%84%B1%EB%B9%84-%ED%84%B0%EC%B9%98%ED%99%94%EB%A9%B4-%EB%85%B8%ED%8A%B8%EB%B6%81-i7-15%EC%9D%B8%EC%B9%98-43zshbgmz1bv/",
+            "title": "가성비 터치화면 노트북 i7 15인치",
+            "content": "윈도우 11에  엑셀 워드 한글 파워포인트 포토샵 일러스트 프리미어프로 등 있어요\n\n​터치스크린이라서 터치로도 선택 됩니다\n아답타랑 마우스 드립니당\n\ncpu i7 램 8GB, 용량 SSD 128GB 그래픽 라데온 R7\n외관은 사용감있고, 스피커소리 크게 키우면 소리 갈라져서 나옵니다, 화면은  액정깨짐없지만 가운데 아랫부분 미세하게 어두운곳 있습니다 미세해서 쓰는데는 크게 불편없습니다 그외 기능 문제없이 바로 사용하시면 됩니다\n",
+            "price": "150000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/46fdf6552f1dfc885dd3aecf0c4dbae437ad53a01ef983b22f6428eddef9e83e_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-05T16:42:41.891Z",
-            "boostedAt": "2026-10-05T16:42:41.891Z",
+            "createdAt": "2026-10-05T16:27:22.620Z",
+            "boostedAt": "2026-10-05T16:27:22.619Z",
             "region": {
-              "name": "북부동"
+              "name": "진평동"
             },
             "category": null,
-            "tradingCoordinates": []
+            "tradingCoordinates": [
+              {
+                "latitude": 36.140066416855475,
+                "longitude": 128.42918520109788
+              }
+            ]
           },
           {
             "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-13z940-gx30k-%ED%99%94%EC%9D%B4%ED%8A%B8-pzwe71ibwsk4/",
@@ -113,38 +118,38 @@
         ],
         "dateFieldSnippets": [
           "createdAt\":\"2026-10-05T16:41:03.798Z\",\"boostedAt\":\"2026-10-05T16:41:03.791Z\",\"region\":{\"name\":\"양학동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-05T16:42:41.891Z\",\"boostedAt\":\"2026-10-05T16:42:41.891Z\",\"region\":{\"name\":\"북부동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-05T16:27:22.620Z\",\"boostedAt\":\"2026-10-05T16:27:22.619Z\",\"region\":{\"name\":\"진평동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-09-12T01:06:48.247Z\",\"boostedAt\":\"2026-10-05T06:58:29.633Z\",\"region\":{\"name\":\"평촌동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-01T05:01:47.195Z\",\"boostedAt\":\"2026-10-05T16:53:39.010Z\",\"region\":{\"name\":\"광남동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-05T15:45:36.528Z\",\"boostedAt\":\"2026-10-05T15:45:36.527Z\",\"region\":{\"name\":\"가양동\"},\"category\":null,\"tradingCoor"
+          "createdAt\":\"2026-10-05T16:42:41.891Z\",\"boostedAt\":\"2026-10-05T16:42:41.891Z\",\"region\":{\"name\":\"북부동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-05T15:01:46.511Z\",\"boostedAt\":\"2026-10-05T15:01:46.510Z\",\"region\":{\"name\":\"신암2동\"},\"category\":null,\"tradingCoo"
         ],
         "scriptHeads": [
           "window.sentryEnv = {\n  release: \"75c6cc0\",\n  environment: \"prod-kr\"\n};",
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":263,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"HP i7 GTX 960M 게이밍 노트북\",\"descr",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":265,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"HP i7 GTX 960M 게이밍 노트북\",\"descr",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-4ed31242.js\";\nimport * as route0 from \"/_remix/root-P4ns_lso.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-3lwXWrYq.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 1218,
-    "globalUniqueListings": 441,
-    "duplicateListingsRemoved": 777,
-    "detailQueueStart": 4,
-    "freshDetailTasks": 4,
+    "searchUniqueListings": 1184,
+    "globalUniqueListings": 421,
+    "duplicateListingsRemoved": 763,
+    "detailQueueStart": 3,
+    "freshDetailTasks": 3,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 4,
-    "detailSucceeded": 4,
+    "detailRequestsExecuted": 3,
+    "detailSucceeded": 3,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 441,
+    "postedAtResolvedFromSearch": 421,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 84354,
+    "scanDurationMs": 82608,
     "cities": [
       {
         "city": "군포시",
@@ -156,8 +161,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 277,
-        "durationMs": 12301
+        "uniqueListings": 281,
+        "durationMs": 12329
       },
       {
         "city": "의왕시",
@@ -172,8 +177,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 342,
-        "durationMs": 25552
+        "uniqueListings": 331,
+        "durationMs": 25642
       },
       {
         "city": "안양시",
@@ -190,8 +195,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 346,
-        "durationMs": 35714
+        "uniqueListings": 319,
+        "durationMs": 34983
       },
       {
         "city": "과천시",
@@ -203,16 +208,16 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 253,
-        "durationMs": 6281
+        "durationMs": 6432
       }
     ],
     "finalCandidateCount": 0,
-    "stateItemCount": 2493,
+    "stateItemCount": 2496,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 84356
+    "durationMs": 82610
   },
   "candidates": []
 }
