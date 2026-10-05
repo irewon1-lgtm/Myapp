@@ -38,7 +38,9 @@ jobs:
       - name: Run sequential scanner
         id: scanner
         continue-on-error: true
-        run: node danggn-bot/hourly-scan.mjs
+        run: |
+          node --test danggn-bot/detail-queue.test.mjs
+          node danggn-bot/hourly-scan.mjs
 
       - name: Keep unconfirmed candidates
         if: always()
