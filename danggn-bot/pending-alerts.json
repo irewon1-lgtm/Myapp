@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-05T11:03:03.705885Z",
+  "updatedAt": "2026-10-05T11:27:15.615254Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -251,6 +251,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EC%83%81%ED%83%9C%EC%A2%8B%EC%9D%80-10%EC%84%B8%EB%8C%80-%EC%82%BC%EC%84%B1-15%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-nt350xcr-9h3cgzuphxi3/",
       "firstAlertedAt": "2026-10-05T09:04:49.290689Z",
       "lastCandidateAt": "2026-10-05T09:04:49.290689Z"
+    },
+    "qbjy4k8944y5": {
+      "id": "qbjy4k8944y5",
+      "title": "lg 14z970 ga75k 노트북 상태좋음",
+      "price": 550000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "당정동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16gb ram",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-05T11:08:59.385Z",
+      "url": "https://www.daangn.com/kr/buy-sell/lg-14z970-ga75k-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%83%81%ED%83%9C%EC%A2%8B%EC%9D%8C-qbjy4k8944y5/",
+      "firstAlertedAt": "2026-10-05T11:27:15.615254Z",
+      "lastCandidateAt": "2026-10-05T11:27:15.615254Z"
     }
   }
 }
