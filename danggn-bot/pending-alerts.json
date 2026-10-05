@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-05T22:36:55.704214Z",
+  "updatedAt": "2026-10-05T22:55:55.558428Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -501,6 +501,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%812-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-i5-12%EC%84%B8%EB%8C%80-%EB%9E%A816-ssd-500g-6fcr5tts4qwd/",
       "firstAlertedAt": "2026-10-05T17:39:05.754229Z",
       "lastCandidateAt": "2026-10-05T17:39:05.754229Z"
+    },
+    "q11cb3t6ghyb": {
+      "id": "q11cb3t6ghyb",
+      "title": "레노버 2024 씽크패드 T14s G6 라이젠7, 블랙, 1TB, 32GB, WIN11 Pro, 21M1002MKR",
+      "price": 1700000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "과천시",
+      "location": "갈현동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 32,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "32GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-05T22:43:10.242Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-2024-%EC%94%BD%ED%81%AC%ED%8C%A8%EB%93%9C-t14s-g6-%EB%9D%BC%EC%9D%B4%EC%A0%A07-%EB%B8%94%EB%9E%99-1tb-32gb-win11-pro-21m1002mkr-q11cb3t6ghyb/",
+      "firstAlertedAt": "2026-10-05T22:55:55.558428Z",
+      "lastCandidateAt": "2026-10-05T22:55:55.558428Z"
     }
   }
 }
