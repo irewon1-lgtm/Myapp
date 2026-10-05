@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-05T07:50:00.058Z",
+  "generatedAt": "2026-10-05T08:04:59.673Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -17,8 +17,7 @@
     "status": "ok",
     "stateCommitted": true,
     "warnings": [
-      "의왕시: detail failed 1x2syjb3qhm5: Error: HTTP 404 Not Found",
-      "Detail queue retained for retry: 246"
+      "Detail queue retained for retry: 232"
     ]
   },
   "rules": {
@@ -55,11 +54,11 @@
         "attempted": 8,
         "succeeded": 8,
         "errors": 0,
-        "uniqueListings": 278,
-        "changedCandidates": 103,
+        "uniqueListings": 279,
+        "changedCandidates": 104,
         "detailedCandidates": 71,
-        "deferredDetails": 32,
-        "durationMs": 74570
+        "deferredDetails": 33,
+        "durationMs": 75137
       },
       {
         "city": "의왕시",
@@ -73,11 +72,11 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 326,
-        "changedCandidates": 145,
+        "uniqueListings": 336,
+        "changedCandidates": 143,
         "detailedCandidates": 71,
-        "deferredDetails": 74,
-        "durationMs": 99052
+        "deferredDetails": 72,
+        "durationMs": 100815
       },
       {
         "city": "안양시",
@@ -93,11 +92,11 @@
         "attempted": 28,
         "succeeded": 28,
         "errors": 0,
-        "uniqueListings": 335,
-        "changedCandidates": 144,
+        "uniqueListings": 340,
+        "changedCandidates": 134,
         "detailedCandidates": 71,
-        "deferredDetails": 73,
-        "durationMs": 115136
+        "deferredDetails": 63,
+        "durationMs": 115441
       },
       {
         "city": "과천시",
@@ -107,20 +106,56 @@
         "attempted": 4,
         "succeeded": 4,
         "errors": 0,
-        "uniqueListings": 252,
-        "changedCandidates": 109,
-        "detailedCandidates": 43,
-        "deferredDetails": 66,
-        "durationMs": 43115
+        "uniqueListings": 253,
+        "changedCandidates": 104,
+        "detailedCandidates": 40,
+        "deferredDetails": 64,
+        "durationMs": 40932
       }
     ],
-    "finalCandidateCount": 0,
-    "stateItemCount": 4993,
-    "pendingNewnessCount": 244,
-    "pendingUnattemptedCount": 244,
+    "finalCandidateCount": 1,
+    "stateItemCount": 4999,
+    "pendingNewnessCount": 230,
+    "pendingUnattemptedCount": 230,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 331985
+    "durationMs": 332412
   },
-  "candidates": []
+  "candidates": [
+    {
+      "id": "5jr88gxc2vfe",
+      "changeType": "new",
+      "previousPrice": null,
+      "price": 3000000,
+      "priceDropPercent": null,
+      "city": "의왕시",
+      "location": "내손2동",
+      "regionPath": "경기도 의왕시 내손2동",
+      "title": "삼성 노트북 갤럭시 북6 프로, 16인치, 32gb, SSD 1TB, NT960XJG-KD72S 실버",
+      "modelHint": "삼성 노트북 갤럭시 북6 프로, 16인치, 32gb, SSD 1TB, NT960XJG-KD72S 실버",
+      "cpuHint": null,
+      "cpuBaselinePass": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 32,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "램 32GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "specConfidence": "confirmed",
+      "postedAt": "2026-10-05T07:46:27.872Z",
+      "boostedAt": "2026-10-05T07:46:27.869Z",
+      "status": "Ongoing",
+      "description": "삼성 노트북 갤럭시 북6 프로, 16인치, 32gb, SSD 1TB, NT960XJG-KD72S 실버 고사양 제품입니다.\n(사양 사진 확인)\n\n첫째 선물이었는데, 원하는 모델 쓰겠다고 난리를.....  어쩔수없이 판매합니다. (8월말 배송제품)\n전원 켜서 5회 미만 확인만 해봤고, 실제로 30분이상  사용한 적 일체없는 99.999%  새상품입니다ㅜㅜ\n너무 아까운데 원하는 제품 사줘야되서 부득이 판매하네요.\n\n상태 대면 확인가능 (쿨거래 네고 가)\n\n구성품 전부 포함입니다 (마우스 충전기 셋트)\n📌  사양\n인텔 코어 울트라 X7 358H\n램 32GB / SSD 1TB\n16인치 2880x1800 AMOLED 터치스크린 (120Hz)\n무게 1.59kg, 배터리 78.07Wh\n윈도우11\n색상: 실버",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%EA%B0%A4%EB%9F%AD%EC%8B%9C-%EB%B6%816-%ED%94%84%EB%A1%9C-16%EC%9D%B8%EC%B9%98-32gb-ssd-1tb-nt960xjg-kd72s-%EC%8B%A4%EB%B2%84-5jr88gxc2vfe/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "구르미",
+      "mannerTemperature": 44.9
+    }
+  ]
 }
