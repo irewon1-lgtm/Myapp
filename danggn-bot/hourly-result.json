@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-05T14:28:02.488Z",
+  "generatedAt": "2026-10-05T14:47:48.514Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -110,36 +110,36 @@
           "createdAt\":\"2026-10-05T14:02:15.724Z\",\"boostedAt\":\"2026-10-05T14:02:15.724Z\",\"region\":{\"name\":\"작전서운동\"},\"category\":null,\"tradingCo",
           "createdAt\":\"2026-10-05T14:18:06.462Z\",\"boostedAt\":\"2026-10-05T14:18:06.461Z\",\"region\":{\"name\":\"작전서운동\"},\"category\":null,\"tradingCo",
           "createdAt\":\"2026-10-05T13:55:04.439Z\",\"boostedAt\":\"2026-10-05T13:55:04.436Z\",\"region\":{\"name\":\"반월동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-05T14:12:34.787Z\",\"boostedAt\":\"2026-10-05T14:12:34.784Z\",\"region\":{\"name\":\"비산3동\"},\"category\":null,\"tradingCoo",
-          "createdAt\":\"2026-09-03T02:16:30.745Z\",\"boostedAt\":\"2026-10-05T12:26:47.740Z\",\"region\":{\"name\":\"월피동\"},\"category\":null,\"tradingCoor"
+          "createdAt\":\"2026-09-03T02:16:30.745Z\",\"boostedAt\":\"2026-10-05T12:26:47.740Z\",\"region\":{\"name\":\"월피동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-05T14:12:34.787Z\",\"boostedAt\":\"2026-10-05T14:12:34.784Z\",\"region\":{\"name\":\"비산3동\"},\"category\":null,\"tradingCoo"
         ],
         "scriptHeads": [
           "window.sentryEnv = {\n  release: \"75c6cc0\",\n  environment: \"prod-kr\"\n};",
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":264,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"기가바이트 P25 i7 4700MQ 765M 15.6 ",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":262,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"기가바이트 P25 i7 4700MQ 765M 15.6 ",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-4ed31242.js\";\nimport * as route0 from \"/_remix/root-P4ns_lso.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-3lwXWrYq.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 1098,
-    "globalUniqueListings": 418,
-    "duplicateListingsRemoved": 680,
-    "detailQueueStart": 6,
-    "freshDetailTasks": 6,
+    "searchUniqueListings": 1144,
+    "globalUniqueListings": 440,
+    "duplicateListingsRemoved": 704,
+    "detailQueueStart": 3,
+    "freshDetailTasks": 3,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 6,
-    "detailSucceeded": 6,
+    "detailRequestsExecuted": 3,
+    "detailSucceeded": 3,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 418,
+    "postedAtResolvedFromSearch": 440,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 86134,
+    "scanDurationMs": 83321,
     "cities": [
       {
         "city": "군포시",
@@ -151,8 +151,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 275,
-        "durationMs": 12354
+        "uniqueListings": 277,
+        "durationMs": 12396
       },
       {
         "city": "의왕시",
@@ -167,8 +167,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 329,
-        "durationMs": 25605
+        "uniqueListings": 346,
+        "durationMs": 25952
       },
       {
         "city": "안양시",
@@ -185,8 +185,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 320,
-        "durationMs": 34925
+        "uniqueListings": 347,
+        "durationMs": 35298
       },
       {
         "city": "과천시",
@@ -198,16 +198,16 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 174,
-        "durationMs": 6640
+        "durationMs": 6551
       }
     ],
     "finalCandidateCount": 0,
-    "stateItemCount": 2459,
+    "stateItemCount": 2463,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 86136
+    "durationMs": 83324
   },
   "candidates": []
 }
