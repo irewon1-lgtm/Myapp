@@ -159,7 +159,22 @@ function parseLdJson(html) {
   return out;
 }
 
+function remixArticles(html) {
+  const context = extractJsonAfterMarker(html, 'window.__remixContext =', '{');
+  const rows = [];
+  function visit(value) {
+    if (!value || typeof value !== 'object') return;
+    if (!Array.isArray(value) && (value.title || value.name) &&
+      (value.id || value.href || value.url) && Object.hasOwn(value, 'createdAt') &&
+      Object.hasOwn(value, 'price')) rows.push(value);
+    for (const child of Object.values(value)) if (child && typeof child === 'object') visit(child);
+  }
+  visit(context?.state?.loaderData ?? context);
+  return rows;
+}
+
 function parseSearch(html, sourceQuery, sourceRegion) {
+  const dates = new Map(remixArticles(html).map(raw => [articleId(raw.id) || articleId(raw.href || raw.url), raw]));
   const embedded = extractJsonAfterMarker(html, '"fleamarketArticles":', '[') ?? [];
   if (Array.isArray(embedded) && embedded.length) {
     return embedded.map(item => normalizeArticle(item, sourceQuery, sourceRegion));
@@ -176,13 +191,15 @@ function parseSearch(html, sourceQuery, sourceRegion) {
         price: priceNum(item.offers?.price),
         url: item.url,
         imageUrl: Array.isArray(item.image) ? item.image[0] : item.image,
-        postedAt: firstTimestamp(item, ['datePublished', 'dateCreated', 'createdAt', 'postedAt']),
+        postedAt: firstTimestamp(item, ['datePublished', 'dateCreated', 'createdAt', 'postedAt'])
+          ?? firstTimestamp(dates.get(articleId(item.url)), ['createdAt','created_at','postedAt','datePublished']),
+        boostedAt: firstTimestamp(dates.get(articleId(item.url)), ['boostedAt','bumpedAt']),
         status: 'Ongoing',
         sourceQuery,
         sourceRegion
       }));
   }
-  return [];
+  return remixArticles(html).map(raw => normalizeArticle(raw, sourceQuery, sourceRegion));
 }
 
 async function getHtml(url, attempts = 2, pace = false) {
@@ -309,6 +326,7 @@ async function searchOne(query, region) {
   if (!searchTimestampDiagnostics.htmlSample) {
     searchTimestampDiagnostics.htmlSample = {
       embeddedArticles: html.includes('fleamarketArticles'),
+      remixArticleSamples: remixArticles(html).slice(0,3),
       dateFieldSnippets: [...html.matchAll(/(?:createdAt|created_at|publishedAt|datePublished|postedAt|dateCreated).{0,120}/g)].slice(0,5).map(x=>x[0]),
       scriptHeads: [...html.matchAll(/<script[^>]*>([\s\S]*?)<\/script>/gi)].map(x=>x[1].slice(0,220)).filter(Boolean).slice(-5)
     };
@@ -362,7 +380,7 @@ function placeText(item) {
 
 function belongsToCityOrUnknown(item, currentCity) {
   const place = placeText(item);
-  if (!place) return true;
+  if (!place || !item.regionPath) return true;
   return place.includes(currentCity);
 }
 

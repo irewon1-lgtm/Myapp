@@ -16,9 +16,10 @@ context.BASE='https://www.daangn.com';context.SEARCH=context.BASE+'/kr/buy-sell/
 test('Test 1 parser: public timestamps, escaped embedded JSON, JSON-LD, boost excluded',()=>{
  const raw={id:'abc123',href:'/kr/buy-sell/abc123/',title:'노트북',createdAt:new Date(now).toISOString()};
  const fixtures=[`<script>{"fleamarketArticles":${JSON.stringify([raw])}}</script>`,`<script>enqueue(${JSON.stringify(JSON.stringify({fleamarketArticles:[raw]}))})</script>`,`<script type="application/ld+json">${JSON.stringify({'@type':'ItemList',itemListElement:[{item:{url:raw.href,name:raw.title,datePublished:raw.createdAt}}]})}</script>`];
+ fixtures.push(`<script>window.__remixContext = ${JSON.stringify({state:{loaderData:{'routes/kr.search.buy-sell._index':{articles:[{...raw,price:100}]}}}})}</script><script type="application/ld+json">${JSON.stringify({'@type':'ItemList',itemListElement:[{item:{url:raw.href,name:raw.title}}]})}</script>`);
  const old=fixtures.flatMap(x=>context.parseSearch(x,'q','r')).filter(x=>x.postedAt).length;
  const updated=fixtures.flatMap(x=>parseSearch(x,'q','r')).filter(x=>x.postedAt).length;
- assert.equal(old,1);assert.equal(updated,3);console.log('parser fixture postedAt: before 1/3 -> after 3/3');
+ assert.equal(old,1);assert.equal(updated,4);console.log('parser fixture postedAt: before 1/4 -> after 4/4');
  assert.equal(parseSearch('<script>{"fleamarketArticles":[{"id":"abc","boostedAt":"2026-10-05"}]}</script>','q','r')[0].postedAt,null);
  assert.equal(parseRouteSearch({allPage:{fleamarketArticles:[raw]}},'q',{slug:'r',id:1})[0].postedAt,raw.createdAt);
 });
