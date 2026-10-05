@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-05T18:27:00.153Z",
+  "generatedAt": "2026-10-05T18:48:48.736Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -77,23 +77,6 @@
             ]
           },
           {
-            "id": "/kr/buy-sell/hp-i7-gtx-960m-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-fhasyhsmstxp/",
-            "href": "/kr/buy-sell/hp-i7-gtx-960m-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-fhasyhsmstxp/",
-            "title": "HP i7 GTX 960M 게이밍 노트북",
-            "content": "HP 파빌리온 노트북\n\nCPU: i7 6700HQ\nRAM: DDR4 8GB (듀얼)\nSSD: 240GB\nGPU: 지포스 GTX 960M\n화면: 1920*1080 FHD\n윈도우: 10 (정품 x)\n구성품 : 노트북, 충전기\n\n발로란트 오버워치 롤 로블록스 정도는 60 프레임 이상 나옵니다\n터치 다 잘 되고 깔끔해요\n배터리 2~3시간 정도\n컴퓨터 장만해서 팔아요\n\n집에 있는 시간이 유동적이라 비대면 거래만 가능합니다",
-            "price": "200000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/0f9ee5f5-2084-4cfb-b785-3c6d61703c0d.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-05T16:41:03.869Z",
-            "boostedAt": "2026-10-05T16:41:03.868Z",
-            "region": {
-              "name": "산격동"
-            },
-            "category": null,
-            "tradingCoordinates": []
-          },
-          {
             "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-13z940-gx30k-%ED%99%94%EC%9D%B4%ED%8A%B8-pzwe71ibwsk4/",
             "href": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-13z940-gx30k-%ED%99%94%EC%9D%B4%ED%8A%B8-pzwe71ibwsk4/",
             "title": "LG 그램 노트북 13Z940-GX30K 화이트",
@@ -114,14 +97,36 @@
                 "longitude": 126.96085026628037
               }
             ]
+          },
+          {
+            "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-15%EC%9D%B8%EC%B9%98-%EC%8B%A4%EB%B2%84-rgcpyzypvwc5/",
+            "href": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-15%EC%9D%B8%EC%B9%98-%EC%8B%A4%EB%B2%84-rgcpyzypvwc5/",
+            "title": "LG 그램 노트북 15인치 실버",
+            "content": "LG 그램 노트북 15인치 실버 판매해요. 윈도우 10 탑재되어 있고, 사진에서 보시는 것처럼 깔끔한 상태입니다. 가볍고 성능 좋아서 휴대하며 사용하기 좋아요. 새 제품 가격보다 훨씬 저렴하게 가져가세요.",
+            "price": "170000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/8799f05e-e921-496f-be6e-12bbf720a0be.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-04T08:49:15.120Z",
+            "boostedAt": "2026-10-05T08:49:42.120Z",
+            "region": {
+              "name": "법1동"
+            },
+            "category": null,
+            "tradingCoordinates": [
+              {
+                "latitude": 36.374413461889766,
+                "longitude": 127.42654781788586
+              }
+            ]
           }
         ],
         "dateFieldSnippets": [
           "createdAt\":\"2026-10-05T15:45:36.528Z\",\"boostedAt\":\"2026-10-05T15:45:36.527Z\",\"region\":{\"name\":\"가양동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-05T16:41:03.869Z\",\"boostedAt\":\"2026-10-05T16:41:03.868Z\",\"region\":{\"name\":\"산격동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-09-12T01:06:48.247Z\",\"boostedAt\":\"2026-10-05T06:58:29.633Z\",\"region\":{\"name\":\"평촌동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-04T08:49:15.120Z\",\"boostedAt\":\"2026-10-05T08:49:42.120Z\",\"region\":{\"name\":\"법1동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-09-27T10:40:30.519Z\",\"boostedAt\":\"2026-10-05T17:41:44.759Z\",\"region\":{\"name\":\"목감동\"},\"category\":null,\"tradingCoor"
+          "createdAt\":\"2026-10-05T16:41:03.869Z\",\"boostedAt\":\"2026-10-05T16:41:03.868Z\",\"region\":{\"name\":\"산격동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-05T05:58:19.139Z\",\"boostedAt\":\"2026-10-05T05:58:19.137Z\",\"region\":{\"name\":\"비산3동\"},\"category\":null,\"tradingCoo"
         ],
         "scriptHeads": [
           "window.sentryEnv = {\n  release: \"75c6cc0\",\n  environment: \"prod-kr\"\n};",
@@ -132,9 +137,9 @@
         ]
       }
     },
-    "searchUniqueListings": 1223,
-    "globalUniqueListings": 435,
-    "duplicateListingsRemoved": 788,
+    "searchUniqueListings": 1211,
+    "globalUniqueListings": 432,
+    "duplicateListingsRemoved": 779,
     "detailQueueStart": 0,
     "freshDetailTasks": 0,
     "backlogDetailTasks": 0,
@@ -146,10 +151,10 @@
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 435,
+    "postedAtResolvedFromSearch": 432,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 80367,
+    "scanDurationMs": 78898,
     "cities": [
       {
         "city": "군포시",
@@ -161,8 +166,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 278,
-        "durationMs": 12129
+        "uniqueListings": 276,
+        "durationMs": 12213
       },
       {
         "city": "의왕시",
@@ -177,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 352,
-        "durationMs": 25588
+        "uniqueListings": 347,
+        "durationMs": 25594
       },
       {
         "city": "안양시",
@@ -195,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 340,
-        "durationMs": 35431
+        "uniqueListings": 335,
+        "durationMs": 34920
       },
       {
         "city": "과천시",
@@ -208,7 +213,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 253,
-        "durationMs": 7153
+        "durationMs": 6081
       }
     ],
     "finalCandidateCount": 0,
@@ -217,7 +222,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 80369
+    "durationMs": 78901
   },
   "candidates": []
 }
