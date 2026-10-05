@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-05T22:21:21.042Z",
+  "generatedAt": "2026-10-05T22:36:55.643Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -77,6 +77,28 @@
             ]
           },
           {
+            "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-15%EC%9D%B8%EC%B9%98-%EC%8B%A4%EB%B2%84-rgcpyzypvwc5/",
+            "href": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-15%EC%9D%B8%EC%B9%98-%EC%8B%A4%EB%B2%84-rgcpyzypvwc5/",
+            "title": "LG 그램 노트북 15인치 실버",
+            "content": "LG 그램 노트북 15인치 실버 판매해요. 윈도우 10 탑재되어 있고, 사진에서 보시는 것처럼 깔끔한 상태입니다. 가볍고 성능 좋아서 휴대하며 사용하기 좋아요. 새 제품 가격보다 훨씬 저렴하게 가져가세요.",
+            "price": "170000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/8799f05e-e921-496f-be6e-12bbf720a0be.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-04T08:49:15.120Z",
+            "boostedAt": "2026-10-05T08:49:42.120Z",
+            "region": {
+              "name": "법1동"
+            },
+            "category": null,
+            "tradingCoordinates": [
+              {
+                "latitude": 36.374413461889766,
+                "longitude": 127.42654781788586
+              }
+            ]
+          },
+          {
             "id": "/kr/buy-sell/%EA%B8%B0%EA%B0%80%EB%B0%94%EC%9D%B4%ED%8A%B8-p15-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-vof1v4dwiht5/",
             "href": "/kr/buy-sell/%EA%B8%B0%EA%B0%80%EB%B0%94%EC%9D%B4%ED%8A%B8-p15-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-vof1v4dwiht5/",
             "title": "기가바이트 P15 게이밍 노트북",
@@ -92,31 +114,14 @@
             },
             "category": null,
             "tradingCoordinates": []
-          },
-          {
-            "id": "/kr/buy-sell/%EA%B9%94%EB%81%94%ED%95%9C-%ED%99%94%EC%9D%B4%ED%8A%B8-%EB%85%B8%ED%8A%B8%EB%B6%81-n5qm3r1f69gp/",
-            "href": "/kr/buy-sell/%EA%B9%94%EB%81%94%ED%95%9C-%ED%99%94%EC%9D%B4%ED%8A%B8-%EB%85%B8%ED%8A%B8%EB%B6%81-n5qm3r1f69gp/",
-            "title": "깔끔한 화이트 노트북",
-            "content": "가볍고 슬림한 디자인의 화이트 노트북이에요. 인터넷.문서작업.유튜브.인강용으로 사용하기좋은 제품입니다\nREM:8GB\nSSD:256GB\n운영체제:Windows 11\n색상:화이트\n충전기 포함\n판매가격:20만원",
-            "price": "200000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202609/cfd68532-9bb3-4b86-a201-dedd45f569f1.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-09-25T11:47:23.391Z",
-            "boostedAt": "2026-10-05T22:05:33.820Z",
-            "region": {
-              "name": "계산2동"
-            },
-            "category": null,
-            "tradingCoordinates": []
           }
         ],
         "dateFieldSnippets": [
           "createdAt\":\"2026-10-05T22:05:27.526Z\",\"boostedAt\":\"2026-10-05T22:05:27.523Z\",\"region\":{\"name\":\"동림동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-04T08:49:15.120Z\",\"boostedAt\":\"2026-10-05T08:49:42.120Z\",\"region\":{\"name\":\"법1동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-05T21:58:32.894Z\",\"boostedAt\":\"2026-10-05T21:58:32.894Z\",\"region\":{\"name\":\"산본1동\"},\"category\":null,\"tradingCoo",
-          "createdAt\":\"2026-09-25T11:47:23.391Z\",\"boostedAt\":\"2026-10-05T22:05:33.820Z\",\"region\":{\"name\":\"계산2동\"},\"category\":null,\"tradingCoo",
           "createdAt\":\"2026-09-12T01:06:48.247Z\",\"boostedAt\":\"2026-10-05T06:58:29.633Z\",\"region\":{\"name\":\"평촌동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-04T08:49:15.120Z\",\"boostedAt\":\"2026-10-05T08:49:42.120Z\",\"region\":{\"name\":\"법1동\"},\"category\":null,\"tradingCoor"
+          "createdAt\":\"2026-09-25T11:47:23.391Z\",\"boostedAt\":\"2026-10-05T22:05:33.820Z\",\"region\":{\"name\":\"계산2동\"},\"category\":null,\"tradingCoo"
         ],
         "scriptHeads": [
           "window.sentryEnv = {\n  release: \"75c6cc0\",\n  environment: \"prod-kr\"\n};",
@@ -127,24 +132,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1178,
-    "globalUniqueListings": 430,
-    "duplicateListingsRemoved": 748,
-    "detailQueueStart": 6,
-    "freshDetailTasks": 6,
+    "searchUniqueListings": 1217,
+    "globalUniqueListings": 440,
+    "duplicateListingsRemoved": 777,
+    "detailQueueStart": 2,
+    "freshDetailTasks": 2,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 6,
-    "detailSucceeded": 6,
+    "detailRequestsExecuted": 2,
+    "detailSucceeded": 2,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 430,
+    "postedAtResolvedFromSearch": 440,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 85654,
+    "scanDurationMs": 81551,
     "cities": [
       {
         "city": "군포시",
@@ -156,8 +161,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 279,
-        "durationMs": 12195
+        "uniqueListings": 278,
+        "durationMs": 12069
       },
       {
         "city": "의왕시",
@@ -172,8 +177,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 347,
-        "durationMs": 25587
+        "uniqueListings": 349,
+        "durationMs": 25783
       },
       {
         "city": "안양시",
@@ -190,8 +195,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 299,
-        "durationMs": 34982
+        "uniqueListings": 336,
+        "durationMs": 34997
       },
       {
         "city": "과천시",
@@ -202,17 +207,17 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 253,
-        "durationMs": 6217
+        "uniqueListings": 254,
+        "durationMs": 6814
       }
     ],
     "finalCandidateCount": 0,
-    "stateItemCount": 2517,
+    "stateItemCount": 2518,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 85657
+    "durationMs": 81554
   },
   "candidates": []
 }
