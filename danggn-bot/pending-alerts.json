@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-05T22:55:55.558428Z",
+  "updatedAt": "2026-10-05T23:19:24.037692Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -526,6 +526,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-2024-%EC%94%BD%ED%81%AC%ED%8C%A8%EB%93%9C-t14s-g6-%EB%9D%BC%EC%9D%B4%EC%A0%A07-%EB%B8%94%EB%9E%99-1tb-32gb-win11-pro-21m1002mkr-q11cb3t6ghyb/",
       "firstAlertedAt": "2026-10-05T22:55:55.558428Z",
       "lastCandidateAt": "2026-10-05T22:55:55.558428Z"
+    },
+    "omrxgtf86mai": {
+      "id": "omrxgtf86mai",
+      "title": "LG 그램 14Z90N 노트북 싸게판매합니다",
+      "price": 470000,
+      "previousPrice": 480000,
+      "changeType": "price_drop",
+      "city": "안양시",
+      "location": "석수동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "RAM 16GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": 256,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-09-15T23:12:00.577Z",
+      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-14z90n-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%8B%B8%EA%B2%8C%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-omrxgtf86mai/",
+      "firstAlertedAt": "2026-10-05T23:19:24.037692Z",
+      "lastCandidateAt": "2026-10-05T23:19:24.037692Z"
+    },
+    "aziqrb1mcxkc": {
+      "id": "aziqrb1mcxkc",
+      "title": "HP OMEN 15 게이밍 노트북",
+      "price": 550000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "안양1동",
+      "cpuHint": "I7-10750H",
+      "gpuHint": "RTX2060",
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-05T23:03:25.425Z",
+      "url": "https://www.daangn.com/kr/buy-sell/hp-omen-15-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-aziqrb1mcxkc/",
+      "firstAlertedAt": "2026-10-05T23:19:24.037692Z",
+      "lastCandidateAt": "2026-10-05T23:19:24.037692Z"
     }
   }
 }
