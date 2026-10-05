@@ -1,13 +1,13 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-05T07:10:03.599982Z",
+  "updatedAt": "2026-10-05T07:31:20.039891Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
       "title": "오멘16 omen16 i7-14650hx rtx5070 게이밍 노트북",
-      "price": 1750000,
-      "previousPrice": null,
-      "changeType": "new",
+      "price": 1700000,
+      "previousPrice": 1750000,
+      "changeType": "price_drop",
       "city": "안양시",
       "location": "비산1동",
       "cpuHint": "i7-14650hx",
@@ -21,11 +21,11 @@
       "ambiguousMemoryEvidence": null,
       "storageGB": null,
       "llmCapability": "SPEC_CHECK_REQUIRED",
-      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 또는 GPU 세부사양만으로 최종 성능 조건을 확정할 수 없어 2차 확인 필요",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
       "postedAt": "2026-10-04T04:17:09.969Z",
       "url": "https://www.daangn.com/kr/buy-sell/%EC%98%A4%EB%A9%9816-omen16-i7-14650hx-rtx5070-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-u8eppnonopiu/",
       "firstAlertedAt": "2026-10-04T04:21:11.660116Z",
-      "lastCandidateAt": "2026-10-04T04:21:11.660116Z"
+      "lastCandidateAt": "2026-10-05T07:31:20.039891Z"
     },
     "5gv84s9ufj4y": {
       "id": "5gv84s9ufj4y",
