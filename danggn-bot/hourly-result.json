@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-05T11:45:38.170Z",
+  "generatedAt": "2026-10-05T12:02:50.545Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -17,11 +17,8 @@
     "status": "ok",
     "stateCommitted": true,
     "warnings": [
-      "군포시: detail failed 2na3fq8adz5p: Error: HTTP 404 Not Found",
-      "군포시: detail failed y4h1gy8hemia: Error: HTTP 404 Not Found",
-      "과천시: detail failed y4h1gy8hemia: Error: HTTP 404 Not Found",
-      "과천시: detail failed r72cehmaorpg: Error: HTTP 404 Not Found",
-      "Detail queue retained for retry: 214"
+      "안양시: detail failed cmf4xbwdefdp: Error: HTTP 404 Not Found",
+      "Detail queue retained for retry: 242"
     ]
   },
   "rules": {
@@ -58,11 +55,11 @@
         "attempted": 8,
         "succeeded": 8,
         "errors": 0,
-        "uniqueListings": 180,
-        "changedCandidates": 39,
-        "detailedCandidates": 39,
-        "deferredDetails": 0,
-        "durationMs": 48462
+        "uniqueListings": 276,
+        "changedCandidates": 93,
+        "detailedCandidates": 72,
+        "deferredDetails": 21,
+        "durationMs": 73938
       },
       {
         "city": "의왕시",
@@ -76,11 +73,11 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 333,
-        "changedCandidates": 158,
+        "uniqueListings": 347,
+        "changedCandidates": 151,
         "detailedCandidates": 71,
-        "deferredDetails": 87,
-        "durationMs": 95968
+        "deferredDetails": 80,
+        "durationMs": 98002
       },
       {
         "city": "안양시",
@@ -96,11 +93,11 @@
         "attempted": 28,
         "succeeded": 28,
         "errors": 0,
-        "uniqueListings": 338,
-        "changedCandidates": 131,
-        "detailedCandidates": 72,
-        "deferredDetails": 59,
-        "durationMs": 111031
+        "uniqueListings": 301,
+        "changedCandidates": 117,
+        "detailedCandidates": 71,
+        "deferredDetails": 46,
+        "durationMs": 124089
       },
       {
         "city": "과천시",
@@ -110,56 +107,20 @@
         "attempted": 4,
         "succeeded": 4,
         "errors": 0,
-        "uniqueListings": 251,
-        "changedCandidates": 134,
-        "detailedCandidates": 70,
-        "deferredDetails": 64,
-        "durationMs": 65650
+        "uniqueListings": 252,
+        "changedCandidates": 129,
+        "detailedCandidates": 35,
+        "deferredDetails": 94,
+        "durationMs": 35838
       }
     ],
-    "finalCandidateCount": 1,
-    "stateItemCount": 4956,
-    "pendingNewnessCount": 213,
-    "pendingUnattemptedCount": 213,
+    "finalCandidateCount": 0,
+    "stateItemCount": 4998,
+    "pendingNewnessCount": 239,
+    "pendingUnattemptedCount": 239,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 321270
+    "durationMs": 331962
   },
-  "candidates": [
-    {
-      "id": "kex546dgdx5m",
-      "changeType": "price_drop",
-      "previousPrice": 2050000,
-      "price": 2000000,
-      "priceDropPercent": 2.4,
-      "city": "안양시",
-      "location": "비산1동",
-      "regionPath": "경기도 안양시 동안구 비산1동",
-      "title": "에이서 게이밍 노트북 니트로 16S  5070 32G 1T",
-      "modelHint": "에이서 게이밍 노트북 니트로 16S  5070 32G 1T",
-      "cpuHint": null,
-      "cpuBaselinePass": null,
-      "gpuHint": null,
-      "vramGB": null,
-      "ramGB": 32,
-      "ambiguousMemoryGB": null,
-      "hardwareReviewStatus": "PASS_RAM",
-      "ramEvidence": "RAM : 32GB",
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": null,
-      "storageGB": null,
-      "llmCapability": "WORK_DEV_RAM32",
-      "llmReason": "RAM 32GB 이상 확정 후보",
-      "specConfidence": "confirmed",
-      "postedAt": "2026-09-16T10:18:55.659Z",
-      "boostedAt": "2026-10-05T10:33:52.188Z",
-      "status": "Ongoing",
-      "description": "에이서 게이밍 노트북 니트로 16S 모델입니다.\n- CPU : 라이젠 AI 9 365\n- GPU : RTX 5070\n- RAM : 32GB(DDR5)\n- 저장장치 : 1T NVMe \n- 디스플레이 : 16인치 QHD\n-원도우 설치\n-쿠팡 5년 무상보증 가입 (올해초 가입)\n\n풀박스 상태 좋습니다.S급 (실사용도 적음)\n\n유튜브 용으로 가끔사용하다\n과스팩 인거같아 판매합니다.",
-      "url": "https://www.daangn.com/kr/buy-sell/%EC%97%90%EC%9D%B4%EC%84%9C-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%8B%88%ED%8A%B8%EB%A1%9C-16s-5070-32g-1t-kex546dgdx5m/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "시원시원",
-      "mannerTemperature": 67.4
-    }
-  ]
+  "candidates": []
 }
