@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-05T14:01:12.668Z",
+  "generatedAt": "2026-10-05T14:05:07.524Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -14,15 +14,19 @@
     "과천시"
   ],
   "health": {
-    "status": "failed",
+    "status": "ok",
     "stateCommitted": true,
     "warnings": [
-      "안양시: search errors 8/28",
-      "과천시: search errors 1/0",
-      "군포시: detail failed ne79yczbhzyi: Error: HTTP 429 cooldown; retained for next scan",
-      "의왕시: detail failed jm6zgxy3w5vt: Error: HTTP 429 cooldown; retained for next scan",
-      "안양시: detail failed bocxifh78ydp: Error: HTTP 429 cooldown; retained for next scan",
-      "Detail queue retained for retry: 138"
+      "의왕시: detail failed fysc1vtprmjd: Error: HTTP 404 Not Found",
+      "안양시: detail failed oge13grtauc7: Error: HTTP 404 Not Found",
+      "과천시: detail failed ra72a3867q2m: Error: HTTP 404 Not Found",
+      "안양시: detail failed 9pwj6d1eg6ha: Error: HTTP 404 Not Found",
+      "과천시: detail failed wsemikzce18o: Error: HTTP 404 Not Found",
+      "과천시: detail failed 2m5ctrg5zzvx: Error: HTTP 404 Not Found",
+      "안양시: detail failed cmf4xbwdefdp: Error: HTTP 404 Not Found",
+      "안양시: detail failed yhd3psq5t9ji: Error: HTTP 404 Not Found",
+      "과천시: detail failed gubn6gvutomc: Error: HTTP 404 Not Found",
+      "Detail queue retained for retry: 3"
     ]
   },
   "rules": {
@@ -52,27 +56,27 @@
     "searchTimestampDiagnostics": {
       "routeRows": 0,
       "routeDates": 0,
-      "htmlFallbacks": 48,
+      "htmlFallbacks": 60,
       "unknownSamples": []
     },
-    "searchUniqueListings": 900,
-    "globalUniqueListings": 389,
-    "duplicateListingsRemoved": 511,
-    "detailQueueStart": 138,
-    "freshDetailTasks": 27,
-    "backlogDetailTasks": 111,
-    "detailRequestsExecuted": 0,
-    "detailSucceeded": 0,
-    "detailFailed": 3,
-    "detail404": 0,
-    "detail429": 3,
-    "detailDeferred": 135,
-    "backlogStart": 177,
-    "backlogEnd": 138,
+    "searchUniqueListings": 1197,
+    "globalUniqueListings": 438,
+    "duplicateListingsRemoved": 759,
+    "detailQueueStart": 145,
+    "freshDetailTasks": 7,
+    "backlogDetailTasks": 138,
+    "detailRequestsExecuted": 142,
+    "detailSucceeded": 133,
+    "detailFailed": 9,
+    "detail404": 9,
+    "detail429": 0,
+    "detailDeferred": 3,
+    "backlogStart": 138,
+    "backlogEnd": 3,
     "postedAtResolvedFromSearch": 0,
-    "postedAtResolvedFromDetail": 0,
-    "candidateCount": 0,
-    "scanDurationMs": 82925,
+    "postedAtResolvedFromDetail": 128,
+    "candidateCount": 1,
+    "scanDurationMs": 215126,
     "cities": [
       {
         "city": "군포시",
@@ -83,8 +87,8 @@
         "attempted": 8,
         "succeeded": 8,
         "errors": 0,
-        "uniqueListings": 275,
-        "durationMs": 14505
+        "uniqueListings": 278,
+        "durationMs": 14074
       },
       {
         "city": "의왕시",
@@ -98,8 +102,8 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 329,
-        "durationMs": 33746
+        "uniqueListings": 335,
+        "durationMs": 33560
       },
       {
         "city": "안양시",
@@ -113,28 +117,66 @@
           "안양동-4639"
         ],
         "attempted": 28,
-        "succeeded": 20,
-        "errors": 8,
-        "uniqueListings": 296,
-        "durationMs": 34560
+        "succeeded": 28,
+        "errors": 0,
+        "uniqueListings": 332,
+        "durationMs": 46381
       },
       {
         "city": "과천시",
-        "regions": [],
-        "attempted": 0,
-        "succeeded": 0,
-        "errors": 1,
-        "uniqueListings": 0,
-        "durationMs": 1
+        "regions": [
+          "원문동-4433"
+        ],
+        "attempted": 4,
+        "succeeded": 4,
+        "errors": 0,
+        "uniqueListings": 252,
+        "durationMs": 7862
       }
     ],
-    "finalCandidateCount": 0,
-    "stateItemCount": 2442,
-    "pendingNewnessCount": 128,
-    "pendingUnattemptedCount": 128,
+    "finalCandidateCount": 1,
+    "stateItemCount": 2449,
+    "pendingNewnessCount": 0,
+    "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 82928
+    "durationMs": 215129
   },
-  "candidates": []
+  "candidates": [
+    {
+      "id": "qbjy4k8944y5",
+      "changeType": "price_drop",
+      "previousPrice": 550000,
+      "price": 500000,
+      "priceDropPercent": 9.1,
+      "city": "군포시",
+      "location": "당정동",
+      "regionPath": "경기도 군포시 당정동",
+      "title": "lg 14z970 ga75k 노트북 상태좋음",
+      "modelHint": "lg 14z970 ga75k 노트북 상태좋음",
+      "cpuHint": null,
+      "cpuBaselinePass": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "램 16gb",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16gb",
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "specConfidence": "needs_review",
+      "postedAt": "2026-10-05T11:08:59.385Z",
+      "boostedAt": "2026-10-05T11:08:59.385Z",
+      "status": "Ongoing",
+      "description": "i7 7500u\n16gb ram\n512gb ssd\n당시\n올데이그램 최고등급입니다.! (i7 클럭 최고급,램 16gb, 512gb)\n진짜가벼워요.\n윈도우 포함제품\n\n와이프가 집에서만 쓰던것이라  연식대비 상태좋고 사용량 많지않습니다.\n특히 키보드커버 써서 키보드부도깨끗합니다.\n초기화다했습니다.\n\n구성품은 본체+정품 파우치(파우치상태는좋지않아요)포함입니다.\n\n쿨거래네고가능",
+      "url": "https://www.daangn.com/kr/buy-sell/lg-14z970-ga75k-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%83%81%ED%83%9C%EC%A2%8B%EC%9D%8C-qbjy4k8944y5/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "부리너부리",
+      "mannerTemperature": 51.9
+    }
+  ]
 }
