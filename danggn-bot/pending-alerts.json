@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-05T15:44:03.937216Z",
+  "updatedAt": "2026-10-05T15:59:58.307400Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -451,6 +451,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EC%9D%B4%EC%A0%80%EB%B8%94%EB%A0%88%EC%9D%B4%EB%93%9C-18-%EA%B3%A0%EC%82%AC%EC%96%91-%EA%B2%8C%EC%9D%B4%EB%B0%8D%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-i9-13950hx-rtx4070-runf4jcetpie/",
       "firstAlertedAt": "2026-10-05T15:25:43.806856Z",
       "lastCandidateAt": "2026-10-05T15:25:43.806856Z"
+    },
+    "eczqpg6axf92": {
+      "id": "eczqpg6axf92",
+      "title": "LG 그램 16ZD90Q-GX56K 16인치 노트북",
+      "price": 500000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "호계1동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "램 16",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-05T15:53:24.362Z",
+      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-16zd90q-gx56k-16%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-eczqpg6axf92/",
+      "firstAlertedAt": "2026-10-05T15:59:58.307400Z",
+      "lastCandidateAt": "2026-10-05T15:59:58.307400Z"
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-05T15:44:03.887Z",
+  "generatedAt": "2026-10-05T15:59:58.245Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,6 +55,23 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
+            "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-16zd90q-gx56k-16%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-eczqpg6axf92/",
+            "href": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-16zd90q-gx56k-16%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-eczqpg6axf92/",
+            "title": "LG 그램 16ZD90Q-GX56K 16인치 노트북",
+            "content": "LG 그램 16인치 노트북입니다.\n\n22년 11월 구매했어요!\n\n\t•\t16인치\n\t•\tRAM 16GB\n\t•\t2022년 8월 제조\n\t•\t정상 작동합니다.\n\n전체적으로 사용감은 있는 편이고, 사진처럼 외관에 찍힘/생활흔적이 있습니다.\n양 모서리에 찍힘이 있고, 나머지 부분은 보호필름 붙여놔서 깨끗합니다.\n그래서 외관 상태 감안해서 가격 낮춰 올립니다.\n\n화면이나 키보드 등 사용에 필요한 기능은 정상이고, 가볍고 화면이 커서 학교/사무용, 재택근무용으로 쓰기 좋습니다.\n\n빨리 판매하고싶어서 저렴하게 내놓습니다\n입금순으로 판매할게요!!",
+            "price": "500000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/179121503248579fd0d261603658069d68005c88f1b5abf9357f14b6e34c923974b6f200b4ce10.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-10-05T15:53:24.362Z",
+            "boostedAt": "2026-10-05T15:53:24.360Z",
+            "region": {
+              "name": "호계1동"
+            },
+            "category": null,
+            "tradingCoordinates": []
+          },
+          {
             "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-mxwfo3eeftr3/",
             "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-mxwfo3eeftr3/",
             "title": "삼성노트북 판매합니다!",
@@ -92,64 +109,42 @@
                 "longitude": 126.84632498770952
               }
             ]
-          },
-          {
-            "id": "/kr/buy-sell/%EC%82%BD%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-550xda-%EC%9D%B8%ED%85%94-%EC%83%90%EB%9F%AC%EB%A1%A0-6305-o7m92tscu9hv/",
-            "href": "/kr/buy-sell/%EC%82%BD%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-550xda-%EC%9D%B8%ED%85%94-%EC%83%90%EB%9F%AC%EB%A1%A0-6305-o7m92tscu9hv/",
-            "title": "삽성 노트북 550XDA 인텔 샐러론 6305",
-            "content": "사진대로 입니다. 화이트 색상이고 깨끗합니다. \n생활기스 정도 있습니다. \n\n배터리가 수리가 필요한지 충전이 되지 않아 싸게 팝니다.\n배터리는 0%인데 선 연결해서 쓸수 있습니다.",
-            "price": "180000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202609/9cef53c8-e190-45c7-9e5a-cf9bd1bf7193.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": false,
-            "createdAt": "2026-09-29T12:49:37.049Z",
-            "boostedAt": "2026-10-05T15:18:09.597Z",
-            "region": {
-              "name": "율전동"
-            },
-            "category": null,
-            "tradingCoordinates": [
-              {
-                "latitude": 37.30047354840194,
-                "longitude": 126.97105935403926
-              }
-            ]
           }
         ],
         "dateFieldSnippets": [
+          "createdAt\":\"2026-10-05T15:53:24.362Z\",\"boostedAt\":\"2026-10-05T15:53:24.360Z\",\"region\":{\"name\":\"호계1동\"},\"category\":null,\"tradingCoo",
           "createdAt\":\"2026-10-05T15:01:46.511Z\",\"boostedAt\":\"2026-10-05T15:01:46.510Z\",\"region\":{\"name\":\"신암2동\"},\"category\":null,\"tradingCoo",
           "createdAt\":\"2026-09-03T02:16:30.745Z\",\"boostedAt\":\"2026-10-05T12:26:47.740Z\",\"region\":{\"name\":\"월피동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-09-29T12:49:37.049Z\",\"boostedAt\":\"2026-10-05T15:18:09.597Z\",\"region\":{\"name\":\"율전동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-05T14:02:15.724Z\",\"boostedAt\":\"2026-10-05T14:02:15.724Z\",\"region\":{\"name\":\"작전서운동\"},\"category\":null,\"tradingCo",
-          "createdAt\":\"2026-10-05T11:18:16.777Z\",\"boostedAt\":\"2026-10-05T11:18:16.775Z\",\"region\":{\"name\":\"봉선동\"},\"category\":null,\"tradingCoor"
+          "createdAt\":\"2026-10-05T15:07:52.498Z\",\"boostedAt\":\"2026-10-05T15:07:52.477Z\",\"region\":{\"name\":\"월암동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-05T14:02:15.724Z\",\"boostedAt\":\"2026-10-05T14:02:15.724Z\",\"region\":{\"name\":\"작전서운동\"},\"category\":null,\"tradingCo"
         ],
         "scriptHeads": [
           "window.sentryEnv = {\n  release: \"75c6cc0\",\n  environment: \"prod-kr\"\n};",
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":263,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성노트북 판매합니다!\",\"description\":\"사",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":264,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG 그램 16ZD90Q-GX56K 16인치 노트북\",",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-4ed31242.js\";\nimport * as route0 from \"/_remix/root-P4ns_lso.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-3lwXWrYq.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 1122,
-    "globalUniqueListings": 426,
-    "duplicateListingsRemoved": 696,
-    "detailQueueStart": 4,
-    "freshDetailTasks": 4,
+    "searchUniqueListings": 1133,
+    "globalUniqueListings": 435,
+    "duplicateListingsRemoved": 698,
+    "detailQueueStart": 3,
+    "freshDetailTasks": 3,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 4,
-    "detailSucceeded": 4,
+    "detailRequestsExecuted": 3,
+    "detailSucceeded": 3,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 426,
+    "postedAtResolvedFromSearch": 435,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 0,
-    "scanDurationMs": 83984,
+    "candidateCount": 1,
+    "scanDurationMs": 81999,
     "cities": [
       {
         "city": "군포시",
@@ -161,8 +156,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 276,
-        "durationMs": 12177
+        "uniqueListings": 278,
+        "durationMs": 11811
       },
       {
         "city": "의왕시",
@@ -177,8 +172,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 344,
-        "durationMs": 25551
+        "uniqueListings": 343,
+        "durationMs": 25635
       },
       {
         "city": "안양시",
@@ -195,8 +190,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 328,
-        "durationMs": 35181
+        "uniqueListings": 338,
+        "durationMs": 34849
       },
       {
         "city": "과천시",
@@ -208,16 +203,52 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 174,
-        "durationMs": 6769
+        "durationMs": 6535
       }
     ],
-    "finalCandidateCount": 0,
-    "stateItemCount": 2479,
+    "finalCandidateCount": 1,
+    "stateItemCount": 2482,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 83987
+    "durationMs": 82002
   },
-  "candidates": []
+  "candidates": [
+    {
+      "id": "eczqpg6axf92",
+      "changeType": "new",
+      "previousPrice": null,
+      "price": 500000,
+      "priceDropPercent": null,
+      "city": "안양시",
+      "location": "호계1동",
+      "regionPath": "경기도 안양시 동안구 호계1동",
+      "title": "LG 그램 16ZD90Q-GX56K 16인치 노트북",
+      "modelHint": "LG 그램 16ZD90Q-GX56K 16인치 노트북",
+      "cpuHint": null,
+      "cpuBaselinePass": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "램 16",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "specConfidence": "needs_review",
+      "postedAt": "2026-10-05T15:53:24.362Z",
+      "boostedAt": "2026-10-05T15:53:24.360Z",
+      "status": "Ongoing",
+      "description": "LG 그램 16인치 노트북입니다.\n\n22년 11월 구매했어요!\n\n\t•\t16인치\n\t•\tRAM 16GB\n\t•\t2022년 8월 제조\n\t•\t충전기 포함\n\t•\t정상 작동합니다.\n\n전체적으로 사용감은 있는 편이고, 사진처럼 외관에 찍힘/생활흔적이 있습니다.\n양 모서리에 찍힘이 있고, 나머지 부분은 보호필름 붙여놔서 깨끗합니다.\n그래서 외관 상태 감안해서 가격 낮춰 올립니다.\n\n화면이나 키보드 등 사용에 필요한 기능은 정상이고, 가볍고 화면이 커서 학교/사무용, 재택근무용으로 쓰기 좋습니다.\n\n빨리 판매하고싶어서 저렴하게 내놓습니다\n입금순으로 판매할게요!!",
+      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-16zd90q-gx56k-16%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-eczqpg6axf92/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "브루밍",
+      "mannerTemperature": 54
+    }
+  ]
 }
