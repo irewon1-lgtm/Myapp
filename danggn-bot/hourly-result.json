@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-05T05:31:32.784Z",
+  "generatedAt": "2026-10-05T05:51:20.470Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -17,7 +17,7 @@
     "status": "ok",
     "stateCommitted": true,
     "warnings": [
-      "Detail queue retained for retry: 163"
+      "Detail queue retained for retry: 215"
     ]
   },
   "rules": {
@@ -54,11 +54,11 @@
         "attempted": 8,
         "succeeded": 8,
         "errors": 0,
-        "uniqueListings": 281,
-        "changedCandidates": 86,
+        "uniqueListings": 282,
+        "changedCandidates": 93,
         "detailedCandidates": 71,
-        "deferredDetails": 15,
-        "durationMs": 74035
+        "deferredDetails": 22,
+        "durationMs": 76604
       },
       {
         "city": "의왕시",
@@ -72,11 +72,11 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 325,
-        "changedCandidates": 124,
+        "uniqueListings": 344,
+        "changedCandidates": 135,
         "detailedCandidates": 71,
-        "deferredDetails": 53,
-        "durationMs": 94591
+        "deferredDetails": 64,
+        "durationMs": 102319
       },
       {
         "city": "안양시",
@@ -92,11 +92,11 @@
         "attempted": 28,
         "succeeded": 28,
         "errors": 0,
-        "uniqueListings": 353,
-        "changedCandidates": 126,
+        "uniqueListings": 355,
+        "changedCandidates": 134,
         "detailedCandidates": 71,
-        "deferredDetails": 55,
-        "durationMs": 110671
+        "deferredDetails": 63,
+        "durationMs": 119539
       },
       {
         "city": "과천시",
@@ -108,54 +108,18 @@
         "errors": 0,
         "uniqueListings": 252,
         "changedCandidates": 96,
-        "detailedCandidates": 56,
-        "deferredDetails": 40,
-        "durationMs": 52943
+        "detailedCandidates": 30,
+        "deferredDetails": 66,
+        "durationMs": 33120
       }
     ],
-    "finalCandidateCount": 1,
-    "stateItemCount": 4984,
-    "pendingNewnessCount": 159,
-    "pendingUnattemptedCount": 159,
+    "finalCandidateCount": 0,
+    "stateItemCount": 5000,
+    "pendingNewnessCount": 210,
+    "pendingUnattemptedCount": 210,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 332312
+    "durationMs": 331694
   },
-  "candidates": [
-    {
-      "id": "cgywnbcta778",
-      "changeType": "price_drop",
-      "previousPrice": 400000,
-      "price": 370000,
-      "priceDropPercent": 7.5,
-      "city": "안양시",
-      "location": "안양동",
-      "regionPath": "경기도 안양시 만안구 안양동",
-      "title": "[상태최상/급처] 맥북프로 13인치 (인텔 i5 / 16GB / 512GB)",
-      "modelHint": "[상태최상/급처] 맥북프로 13인치 (인텔 i5 / 16GB / 512GB)",
-      "cpuHint": null,
-      "cpuBaselinePass": null,
-      "gpuHint": null,
-      "vramGB": null,
-      "ramGB": 16,
-      "ambiguousMemoryGB": null,
-      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": "메모리: 16GB",
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": null,
-      "storageGB": null,
-      "llmCapability": "SPEC_CHECK_REQUIRED",
-      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
-      "specConfidence": "needs_review",
-      "postedAt": "2026-09-30T14:18:54.232Z",
-      "boostedAt": "2026-10-04T01:03:06.434Z",
-      "status": "Ongoing",
-      "description": "[제품 정보]\n 모델명: 맥북 프로 13인치 (2020, 썬더볼트 3 포트 4개 탑재형)  \n 사양:\n 프로세서: 2.0GHz 쿼드 코어 Intel Core i5  \n 메모리: 16GB  \n 그래픽: Intel Iris Plus Graphics  \n 색상: 스페이스 그레이\n 구성품: 본체, 상품 설명서, 배터리\n(참고: 박스는 다른 맥북 박스이며 본체만 기스 없이 매우 깨끗합니다)\n\n어제 선물로 받은 제품입니다. 아버님 지인분께서 회사에서 쓰시다가 주신 제품이라 배터리 새거로 교체 후 판매합니다.\n외관에 기스나 사용감 없이 정말 깨끗하게 잘 관리된 상태입니다.\n문서 작업, 웹서핑, 동영상 시청용으로 아주 쾌적하게 쓰실 수 있습니다.\n거래 확정 시 계정 로그아웃 및 완전 초기화해서 초기 설정 화면으로 전달해 드립니다.\n\n* 직거래는 서울 안에서만\n* 택배거래는 파손주의 포장 후 발송(택배비 별도)\n\n고가 기기 처음 판매해보는거라 모르는 점이 있을 수 있습니다! 상세컷이나 잘 돌아가는지 확인컷 부탁하시면 보내드립니다 편하게 톡주세요!",
-      "url": "https://www.daangn.com/kr/buy-sell/%EC%83%81%ED%83%9C%EC%B5%9C%EC%83%81-%EA%B8%89%EC%B2%98-%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C-13%EC%9D%B8%EC%B9%98-%EC%9D%B8%ED%85%94-i5-16gb-512gb-cgywnbcta778/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "원이를원한다",
-      "mannerTemperature": 36.8
-    }
-  ]
+  "candidates": []
 }
