@@ -4,7 +4,7 @@ import fs from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import vm from 'node:vm';
-import { parseSearch, parseRouteSearch, analyzeHardware, detailOne, main, CITIES, QUERIES } from './hourly-scan.mjs';
+import { parseSearch, parseRouteSearch, analyzeHardware, detailOne, searchOne, main, CITIES, QUERIES } from './hourly-scan.mjs';
 import { canonicalKey, mergeListings, migrateState, expireTasks, priority, retryTask, runDetailPool } from './detail-queue.mjs';
 const now = Date.now();
 const make = (id, extra={}) => ({id, url:`https://www.daangn.com/kr/buy-sell/title-${id}/`, title:'RTX5070 RAM 32GB', price:1000, status:'Ongoing', postedAt:new Date(now-1000).toISOString(), regionPath:'경기도 군포시', location:'당정동', city:'군포시', firstSeenAt:new Date(now).toISOString(), ...extra});
@@ -69,9 +69,9 @@ test('Test 6: real state migration and reproducible multi-scan drain, new/price-
   for(let scan=0;scan<3;scan++){
    let simulatedClock = now + scan * 1200000 + 52000;
    const seen=[];const pendingBefore=Object.values(state.items).filter(x=>x.pendingNewnessCheck||x.pendingDetailEvent).length;
-   const {result,state:next}=await main({now:now+scan*1200000,state,statePath:path.join(tmp,'state.json'),resultPath:path.join(tmp,'result.json'),resolve:async city=>[{slug:city.name,id:1}],search:async()=>[make('drop'),make('fresh'+scan)],details:async(queue)=>runDetailPool(queue,now+scan*1200000+330000,async x=>{simulatedClock += 800;seen.push(x.id);return {...x,postedAt:new Date(now+scan*1200000-1000).toISOString(),description:'RAM 32GB'};},{now:()=>simulatedClock})});
+   const {result,state:next}=await main({now:now+scan*1200000,state,statePath:path.join(tmp,'state.json'),resultPath:path.join(tmp,'result.json'),resolve:async city=>[{slug:city.name,id:1}],search:async()=>[make('drop'),make('fresh'+scan)],details:async(queue)=>runDetailPool(queue,now+scan*1200000+330000,async x=>{simulatedClock += 1200;seen.push(x.id);return {...x,postedAt:new Date(now+scan*1200000-1000).toISOString(),description:'RAM 32GB'};},{now:()=>simulatedClock})});
    console.log('drain',JSON.stringify({scan,start:pendingBefore,fresh:result.stats.freshDetailTasks,completed:result.stats.detailSucceeded,end:result.stats.backlogEnd,simulatedDurationMs:simulatedClock-(now+scan*1200000)}));
-   assert.equal(result.stats.backlogEnd,0);assert.ok(result.candidates.some(x=>x.id==='fresh'+scan));if(scan===0){assert.equal(seen[0],'drop');assert.ok(result.candidates.some(x=>x.id==='drop'&&x.changeType==='price_drop'));}else assert.ok(!result.candidates.some(x=>x.id==='drop'));
+   if(scan===0) assert.ok(result.stats.backlogEnd < pendingBefore); else assert.equal(result.stats.backlogEnd,0);assert.ok(result.candidates.some(x=>x.id==='fresh'+scan));if(scan===0){assert.equal(seen[0],'drop');assert.ok(result.candidates.some(x=>x.id==='drop'&&x.changeType==='price_drop'));}else assert.ok(!result.candidates.some(x=>x.id==='drop'));
    state=next;
   }
   const stale=make('stale',{lastPrice:123,pendingNewnessCheck:true,firstSeenAt:new Date(now-7*3600000).toISOString()});expireTasks({items:{stale}},now);assert.equal(stale.pendingNewnessCheck,false);assert.equal(stale.lastPrice,123);
@@ -92,4 +92,11 @@ test('existing alert corpus preserves every hardware candidate and does not muta
   const baseline=context.analyzeHardware({title});const updated=analyzeHardware({title});assert.ok(!baseline.ok||updated.ok,item.id);
  }
  assert.equal(await fs.readFile(filename,'utf8'),original);
+});
+
+
+test('unsupported route-data is requested once while every search still executes',async()=>{
+ const old=global.fetch;let routeCalls=0,searchCalls=0;
+ global.fetch=async(url)=>{ if(new URL(url).searchParams.has('_data')){routeCalls++;return new Response('Not Found',{status:404});}searchCalls++;return new Response('<script>{"fleamarketArticles":[{"id":"abc123","createdAt":"2026-10-05T00:00:00Z"}]}</script>'); };
+ try {const rows=await Promise.all(['a','b','c'].map(query=>searchOne(query,{slug:'당정동-4459',id:4459})));assert.equal(routeCalls,1);assert.equal(searchCalls,3);assert.equal(rows.length,3);}finally{global.fetch=old;}
 });

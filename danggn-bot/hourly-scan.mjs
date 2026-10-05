@@ -16,7 +16,7 @@ const SEARCH_LIMIT = 80;
 const DETAIL_WORKERS = 3;
 
 const SCAN_BUDGET_MS = 330000;
-const REQUEST_GAP_MS = 800;
+const REQUEST_GAP_MS = 1200;
 const SEARCH_REQUEST_GAP_MS = 1200;
 let routeCapability = null;
 let nextRequestAt = 0;
@@ -650,7 +650,7 @@ async function main(options = {}) {
     searchUniqueListings += found.size;
     for (const item of found.values()) mergeListings(globalFound, { ...item, sourceCities: [city.name] });
     cityRuns.push({ city: city.name, regions: resolvedRegions.map(r => r.slug), attempted, succeeded,
-      errors: errors.length, uniqueListings: found.size, durationMs: Date.now() - cityStarted });
+      errors: errors.length, errorSamples: errors.slice(0,3), uniqueListings: found.size, durationMs: Date.now() - cityStarted });
   }
   const stage1 = [];
   const startedIso = startedAt.toISOString();
@@ -1032,7 +1032,7 @@ async function main(options = {}) {
   return { state: nextState, result };
 }
 
-export { parseSearch, parseRouteSearch, normalizeArticle, analyzeHardware, detailOne, main, CITIES, QUERIES };
+export { parseSearch, parseRouteSearch, normalizeArticle, analyzeHardware, detailOne, searchOne, main, CITIES, QUERIES };
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) main().catch(async error => {
   const result = {
