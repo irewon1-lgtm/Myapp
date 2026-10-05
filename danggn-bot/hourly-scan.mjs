@@ -17,6 +17,8 @@ const DETAIL_WORKERS = 3;
 
 const SCAN_BUDGET_MS = 330000;
 const REQUEST_GAP_MS = 800;
+const SEARCH_REQUEST_GAP_MS = 1200;
+let routeCapability = null;
 let nextRequestAt = 0;
 let requestCooldownUntil = 0;
 let detailRequestsExecuted = 0;
@@ -190,7 +192,7 @@ async function getHtml(url, attempts = 2, pace = false) {
       if (Date.now() < requestCooldownUntil) throw new Error('HTTP 429 cooldown; retained for next scan');
       {
         const requestAt = Math.max(Date.now(), nextRequestAt);
-        nextRequestAt = requestAt + REQUEST_GAP_MS;
+        nextRequestAt = requestAt + (pace ? REQUEST_GAP_MS : SEARCH_REQUEST_GAP_MS);
         await sleep(Math.max(0, requestAt - Date.now()));
       }
       if (Date.now() < requestCooldownUntil) throw new Error('HTTP 429 cooldown; retained for next scan');
@@ -257,31 +259,60 @@ function parseRouteSearch(data, query, region) {
   return rows.map(item => normalizeArticle(item, query, region.slug)).slice(0, SEARCH_LIMIT);
 }
 
-async function searchOne(query, region) {
-  // Prefer Daangn's route-data response. It currently contains createdAt/boostedAt,
-  // while the public HTML may fall back to JSON-LD that omits postedAt.
-  try {
-    const routeUrl = new URL(BASE + '/kr/buy-sell/all/');
-    routeUrl.searchParams.set('search', query);
-    routeUrl.searchParams.set('in', region.slug);
-    routeUrl.searchParams.set('_data', 'routes/kr.buy-sell._index');
-    const text = await getHtml(routeUrl);
-    const data = JSON.parse(text);
-    const rows = parseRouteSearch(data, query, region);
-    searchTimestampDiagnostics.routeRows += rows.length;
-    searchTimestampDiagnostics.routeDates += rows.filter(x => x.postedAt).length;
-    if (searchTimestampDiagnostics.unknownSamples.length < 3) {
-      const raw = data?.allPage?.fleamarketArticles?.find(x => !firstTimestamp(x, ['createdAt','created_at','publishedAt','datePublished','postedAt']));
-      if (raw) searchTimestampDiagnostics.unknownSamples.push(raw);
-    }
-    if (rows.length) return rows;
-  } catch {}
+async function fetchRoute(query, region) {
+  const routeUrl = new URL(BASE + '/kr/buy-sell/all/');
+  routeUrl.searchParams.set('search', query);
+  routeUrl.searchParams.set('in', region.slug);
+  routeUrl.searchParams.set('_data', 'routes/kr.buy-sell._index');
+  const text = await getHtml(routeUrl, 1);
+  let data;
+  try { data = JSON.parse(text); } catch {
+    searchTimestampDiagnostics.routeProbe = { error: 'NON_JSON', head: text.slice(0,300) };
+    throw new Error('Public route-data returned non-JSON');
+  }
+  if (!Array.isArray(data?.allPage?.fleamarketArticles)) {
+    searchTimestampDiagnostics.routeProbe = { error: 'SCHEMA_UNAVAILABLE', keys: Object.keys(data) };
+    throw new Error('Public route-data schema unavailable');
+  }
+  const rows = parseRouteSearch(data, query, region);
+  searchTimestampDiagnostics.routeRows += rows.length;
+  searchTimestampDiagnostics.routeDates += rows.filter(x => x.postedAt).length;
+  if (searchTimestampDiagnostics.unknownSamples.length < 3) {
+    const raw = data.allPage.fleamarketArticles.find(x => !firstTimestamp(x, ['createdAt','created_at','publishedAt','datePublished','postedAt']));
+    if (raw) searchTimestampDiagnostics.unknownSamples.push(raw);
+  }
+  return rows;
+}
 
+async function searchOne(query, region) {
+  // One coalesced capability probe per scan. An unsupported public route must
+  // not double every search with a failing request and an HTML fallback.
+  const key = region.slug + '|' + query;
+  if (!routeCapability) routeCapability = fetchRoute(query, region)
+    .then(rows => ({ supported: true, key, rows }))
+    .catch(error => {
+      searchTimestampDiagnostics.routeProbe ??= { error: String(error) };
+      return { supported: false };
+    });
+  const capability = await routeCapability;
+  if (capability.supported) {
+    try {
+      const rows = capability.key === key ? capability.rows : await fetchRoute(query, region);
+      if (rows.length) return rows;
+    } catch {}
+  }
   const url = new URL(SEARCH);
   url.searchParams.set('search', query);
   url.searchParams.set('in', region.slug);
   const html = await getHtml(url);
   searchTimestampDiagnostics.htmlFallbacks++;
+  if (!searchTimestampDiagnostics.htmlSample) {
+    searchTimestampDiagnostics.htmlSample = {
+      embeddedArticles: html.includes('fleamarketArticles'),
+      dateFieldSnippets: [...html.matchAll(/(?:createdAt|created_at|publishedAt|datePublished|postedAt|dateCreated).{0,120}/g)].slice(0,5).map(x=>x[0]),
+      scriptHeads: [...html.matchAll(/<script[^>]*>([\s\S]*?)<\/script>/gi)].map(x=>x[1].slice(0,220)).filter(Boolean).slice(-5)
+    };
+  }
   return parseSearch(html, query, region.slug).slice(0, SEARCH_LIMIT);
 }
 
@@ -766,7 +797,7 @@ async function main(options = {}) {
       if (item.detailError) {
         detailFailed++;
         if (/HTTP 404/.test(item.detailError)) detail404++;
-        if (/HTTP 429/.test(item.detailError)) detail429++;
+        if (/HTTP 429/.test(item.detailError) && !/cooldown/.test(item.detailError)) detail429++;
         retryTask(stateBeforeDetail, item.detailError, nowMs);
         warnings.push(city.name + ': detail failed ' + item.id + ': ' + item.detailError);
         continue;
@@ -878,7 +909,6 @@ async function main(options = {}) {
       };
 
       clearTask(nextState.items[stateKey]);
-      nextState.items[stateKey].detailCache = { description: item.description, postedAt: item.postedAt, location: item.location, regionPath: item.regionPath, status: item.status };
       const specs = analyzeHardware(item);
       if (!specs.ok) continue;
 

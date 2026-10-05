@@ -67,12 +67,29 @@ test('Test 6: real state migration and reproducible multi-scan drain, new/price-
   let state={items:Object.fromEntries(Array.from({length:300},(_,i)=>['군포시|old'+i,make('old'+i,{postedAt:null,pendingNewnessCheck:true})])),newnessBacklogResetAt:new Date(now).toISOString()};
   state.items['군포시|drop']=make('drop',{lastPrice:1200});
   for(let scan=0;scan<3;scan++){
+   let simulatedClock = now + scan * 1200000 + 52000;
    const seen=[];const pendingBefore=Object.values(state.items).filter(x=>x.pendingNewnessCheck||x.pendingDetailEvent).length;
-   const {result,state:next}=await main({now:now+scan*1200000,state,statePath:path.join(tmp,'state.json'),resultPath:path.join(tmp,'result.json'),resolve:async city=>[{slug:city.name,id:1}],search:async()=>[make('drop'),make('fresh'+scan)],details:async(queue)=>runDetailPool(queue,Infinity,async x=>{seen.push(x.id);return {...x,postedAt:new Date(now+scan*1200000-1000).toISOString(),description:'RAM 32GB'};})});
-   console.log('drain',JSON.stringify({scan,start:pendingBefore,fresh:result.stats.freshDetailTasks,completed:result.stats.detailSucceeded,end:result.stats.backlogEnd}));
+   const {result,state:next}=await main({now:now+scan*1200000,state,statePath:path.join(tmp,'state.json'),resultPath:path.join(tmp,'result.json'),resolve:async city=>[{slug:city.name,id:1}],search:async()=>[make('drop'),make('fresh'+scan)],details:async(queue)=>runDetailPool(queue,now+scan*1200000+330000,async x=>{simulatedClock += 800;seen.push(x.id);return {...x,postedAt:new Date(now+scan*1200000-1000).toISOString(),description:'RAM 32GB'};},{now:()=>simulatedClock})});
+   console.log('drain',JSON.stringify({scan,start:pendingBefore,fresh:result.stats.freshDetailTasks,completed:result.stats.detailSucceeded,end:result.stats.backlogEnd,simulatedDurationMs:simulatedClock-(now+scan*1200000)}));
    assert.equal(result.stats.backlogEnd,0);assert.ok(result.candidates.some(x=>x.id==='fresh'+scan));if(scan===0){assert.equal(seen[0],'drop');assert.ok(result.candidates.some(x=>x.id==='drop'&&x.changeType==='price_drop'));}else assert.ok(!result.candidates.some(x=>x.id==='drop'));
    state=next;
   }
   const stale=make('stale',{lastPrice:123,pendingNewnessCheck:true,firstSeenAt:new Date(now-7*3600000).toISOString()});expireTasks({items:{stale}},now);assert.equal(stale.pendingNewnessCheck,false);assert.equal(stale.lastPrice,123);
  }finally{await fs.rm(tmp,{recursive:true,force:true});}
+});
+
+
+test('migration keeps completed state, price baseline, and all source cities',()=>{
+ const completed=make('shared',{lastPrice:900,pendingNewnessCheck:false,pendingDetailEvent:null,lastSeenAt:new Date(now).toISOString()});
+ const stale=make('shared',{lastPrice:1000,pendingNewnessCheck:true,pendingDetailEvent:{changeType:'price_drop'},lastSeenAt:new Date(now-1000).toISOString(),city:'의왕시'});
+ const state=migrateState({items:{a:stale,b:completed}});assert.equal(Object.keys(state.items).length,1);assert.equal(state.items.shared.lastPrice,900);assert.equal(state.items.shared.pendingDetailEvent,null);assert.equal(state.items.shared.sourceCities.length,2);
+});
+
+test('existing alert corpus preserves every hardware candidate and does not mutate dedupe data',async()=>{
+ const filename=new URL('./pending-alerts.json',import.meta.url), original=await fs.readFile(filename,'utf8');
+ for (const item of Object.values(JSON.parse(original).items)) {
+  const title=[item.title,item.ramEvidence,item.vramEvidence,item.ambiguousMemoryEvidence].filter(Boolean).join(' ');
+  const baseline=context.analyzeHardware({title});const updated=analyzeHardware({title});assert.ok(!baseline.ok||updated.ok,item.id);
+ }
+ assert.equal(await fs.readFile(filename,'utf8'),original);
 });
