@@ -29,7 +29,12 @@ test('Test 2: four regions/queries coalesce to exactly one detail HTTP request',
  global.fetch=async()=>{calls++;return new Response(JSON.stringify({product:{content:'RAM 32GB',createdAt:new Date(now).toISOString(),region:{name1:'경기도',name2:'군포시',name3:'당정동'}}}));};
  try {
   const queue=['군포시','의왕시','안양시','과천시'].map(city=>make('same123',{sourceRegion:city,sourceCities:[city],sourceQuery:city}));
+  context.UA = 'fixture'; context.REQUEST_GAP_MS = 0; context.nextRequestAt = 0; context.requestCooldownUntil = 0; context.DETAIL_WORKERS = 3; context.AbortSignal = AbortSignal; context.sleep = async () => {};
+  context.fetch = global.fetch;
+  vm.runInContext(beforeSource.slice(beforeSource.indexOf('async function getHtml'),beforeSource.indexOf('function normalizeRegionResponse')) + beforeSource.slice(beforeSource.indexOf('async function detailOne'),beforeSource.indexOf('function itemKey')) + beforeSource.slice(beforeSource.indexOf('async function detailBatch'),beforeSource.indexOf('function pruneState')) + '\nthis.detailBatch = detailBatch;',context);
+  await context.detailBatch(queue,Date.now()+10000);assert.equal(calls,4);calls=0;
   const result=await runDetailPool(queue,Date.now()+10000,detailOne);
+  console.log('duplicate fixture detail HTTP requests: before 4 -> after 1');
   assert.equal(calls,1);assert.equal(result.length,1);assert.equal(result[0].sourceRegion.length,4);
   assert.equal(canonicalKey({id:'unknown',url:'https://www.daangn.com/kr/buy-sell/foo/?a=1#b'}),canonicalKey({url:'https://www.daangn.com/kr/buy-sell/foo'}));
  } finally { global.fetch=oldFetch; }
@@ -106,4 +111,14 @@ test('unsupported route-data is requested once while every search still executes
 test('cooldown without HTTP request does not retain a phantom retry delay',()=>{
  const item=make('cool',{lastError:'Error: HTTP 429 cooldown; retained for next scan',attempts:1,nextEligibleAt:now+3600000,pendingDetailEvent:{changeType:'price_drop'}});
  const saved=migrateState({items:{cool:item}}).items.cool;assert.equal(saved.nextEligibleAt,0);assert.equal(saved.attempts,0);assert.ok(saved.pendingDetailEvent);
+});
+
+test('captured public search records: creation time recall 0/3 -> 3/3',async()=>{
+ const records=JSON.parse(await fs.readFile(new URL('./fixtures/search-remix-records.json',import.meta.url),'utf8'));
+ const html=`<script>window.__remixContext = ${JSON.stringify({state:{loaderData:{'routes/kr.search.buy-sell._index':{articles:records}}}})}</script><script type="application/ld+json">${JSON.stringify({'@type':'ItemList',itemListElement:records.map(x=>({item:{url:'https://www.daangn.com'+x.href,name:x.title,offers:{price:x.price}}}))})}</script>`;
+ const baseline=context.parseSearch(html,'노트북','당정동-4459');const updated=parseSearch(html,'노트북','당정동-4459');
+ assert.equal(baseline.filter(x=>x.postedAt).length,0);assert.equal(updated.filter(x=>x.postedAt).length,3);
+ assert.equal(updated.length,baseline.length);
+ for(let i=0;i<records.length;i++){assert.equal(updated[i].postedAt,records[i].createdAt);assert.equal(updated[i].id,baseline[i].id);}
+ console.log('captured live-record timestamp fixture: 0/3 -> 3/3');
 });
