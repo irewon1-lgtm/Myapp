@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-05T14:47:48.576219Z",
+  "updatedAt": "2026-10-05T15:04:13.773150Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -351,6 +351,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C-%EB%A0%88%ED%8B%B0%EB%82%98-13%EC%9D%B8%EC%B9%98-2015-%EB%B6%88%EB%B9%9B-%EC%82%AC%EA%B3%BC%EB%A1%9C%EA%B3%A0-%EC%B6%A9%EC%A0%84%EA%B8%B0-h824bu3aj9ux/",
       "firstAlertedAt": "2026-10-05T14:11:05.731539Z",
       "lastCandidateAt": "2026-10-05T14:11:05.731539Z"
+    },
+    "dnrqogku6itv": {
+      "id": "dnrqogku6itv",
+      "title": "HP 오멘 16 게이밍 노트북 (라이젠9-8940HX/24GB/5070/1TB)",
+      "price": 2300000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "과천시",
+      "location": "별양동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 24,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "/24GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-05T15:01:05.741Z",
+      "url": "https://www.daangn.com/kr/buy-sell/hp-%EC%98%A4%EB%A9%98-16-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%9D%BC%EC%9D%B4%EC%A0%A09-8940hx-24gb-5070-1tb-dnrqogku6itv/",
+      "firstAlertedAt": "2026-10-05T15:04:13.773150Z",
+      "lastCandidateAt": "2026-10-05T15:04:13.773150Z"
     }
   }
 }
