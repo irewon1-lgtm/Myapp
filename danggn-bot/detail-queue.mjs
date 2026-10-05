@@ -32,6 +32,10 @@ export function migrateState(state) {
     if (pending && !rows.some(x=>!x.pendingDetailEvent && new Date(x.lastSeenAt) >= new Date(pending.lastSeenAt))) newest.pendingDetailEvent = pending.pendingDetailEvent;
     newest.sourceCities = [...new Set(rows.flatMap(x=>[...list(x.sourceCities), x.city]).filter(Boolean))];
     newest.sourceRegion = [...new Set(rows.flatMap(x=>list(x.sourceRegion)))];
+    // Legacy cooldown failures were raised before fetch, not HTTP attempts.
+    if (/HTTP 429 cooldown/.test(newest.lastError ?? '')) {
+      newest.nextEligibleAt = 0; newest.attempts = 0; newest.lastError = null;
+    }
     state.items[key] = newest;
   }
   state.version = 2;

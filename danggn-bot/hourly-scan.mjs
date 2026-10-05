@@ -577,6 +577,7 @@ function clone(value) {
 }
 
 async function detailBatch(queue, deadlineMs) {
+  if (Date.now() < requestCooldownUntil) return [];
   return runDetailPool(queue, deadlineMs, detailOne, { workers: DETAIL_WORKERS });
 }
 
@@ -788,6 +789,7 @@ async function main(options = {}) {
     let detailedCount = 0;
     for (const item of detailedItems) {
       const city = { name: CITIES.find(c => belongsToCity(item, c.name))?.name ?? item.city };
+      if (/HTTP 429 cooldown/.test(item.detailError ?? '')) continue;
       detailedCount++;
       const stateKey = itemKey(city.name, item);
       nextState.items[stateKey].detailLastAttemptAt = new Date().toISOString();

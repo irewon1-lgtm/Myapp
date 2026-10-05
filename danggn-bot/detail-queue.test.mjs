@@ -100,3 +100,9 @@ test('unsupported route-data is requested once while every search still executes
  global.fetch=async(url)=>{ if(new URL(url).searchParams.has('_data')){routeCalls++;return new Response('Not Found',{status:404});}searchCalls++;return new Response('<script>{"fleamarketArticles":[{"id":"abc123","createdAt":"2026-10-05T00:00:00Z"}]}</script>'); };
  try {const rows=await Promise.all(['a','b','c'].map(query=>searchOne(query,{slug:'당정동-4459',id:4459})));assert.equal(routeCalls,1);assert.equal(searchCalls,3);assert.equal(rows.length,3);}finally{global.fetch=old;}
 });
+
+
+test('cooldown without HTTP request does not retain a phantom retry delay',()=>{
+ const item=make('cool',{lastError:'Error: HTTP 429 cooldown; retained for next scan',attempts:1,nextEligibleAt:now+3600000,pendingDetailEvent:{changeType:'price_drop'}});
+ const saved=migrateState({items:{cool:item}}).items.cool;assert.equal(saved.nextEligibleAt,0);assert.equal(saved.attempts,0);assert.ok(saved.pendingDetailEvent);
+});
