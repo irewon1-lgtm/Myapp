@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-05T08:48:26.512Z",
+  "generatedAt": "2026-10-05T09:04:49.241Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -17,7 +17,7 @@
     "status": "ok",
     "stateCommitted": true,
     "warnings": [
-      "Detail queue retained for retry: 274"
+      "Detail queue retained for retry: 252"
     ]
   },
   "rules": {
@@ -54,11 +54,11 @@
         "attempted": 8,
         "succeeded": 8,
         "errors": 0,
-        "uniqueListings": 278,
-        "changedCandidates": 109,
+        "uniqueListings": 277,
+        "changedCandidates": 111,
         "detailedCandidates": 71,
-        "deferredDetails": 38,
-        "durationMs": 77549
+        "deferredDetails": 40,
+        "durationMs": 74446
       },
       {
         "city": "의왕시",
@@ -72,11 +72,11 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 354,
-        "changedCandidates": 146,
+        "uniqueListings": 329,
+        "changedCandidates": 134,
         "detailedCandidates": 71,
-        "deferredDetails": 75,
-        "durationMs": 104456
+        "deferredDetails": 63,
+        "durationMs": 107861
       },
       {
         "city": "안양시",
@@ -92,11 +92,11 @@
         "attempted": 28,
         "succeeded": 28,
         "errors": 0,
-        "uniqueListings": 346,
-        "changedCandidates": 136,
+        "uniqueListings": 342,
+        "changedCandidates": 130,
         "detailedCandidates": 71,
-        "deferredDetails": 65,
-        "durationMs": 124241
+        "deferredDetails": 59,
+        "durationMs": 113453
       },
       {
         "city": "과천시",
@@ -106,20 +106,56 @@
         "attempted": 4,
         "succeeded": 4,
         "errors": 0,
-        "uniqueListings": 253,
-        "changedCandidates": 115,
-        "detailedCandidates": 19,
-        "deferredDetails": 96,
-        "durationMs": 25618
+        "uniqueListings": 252,
+        "changedCandidates": 123,
+        "detailedCandidates": 33,
+        "deferredDetails": 90,
+        "durationMs": 35344
       }
     ],
-    "finalCandidateCount": 0,
-    "stateItemCount": 5000,
-    "pendingNewnessCount": 272,
-    "pendingUnattemptedCount": 272,
+    "finalCandidateCount": 1,
+    "stateItemCount": 4989,
+    "pendingNewnessCount": 250,
+    "pendingUnattemptedCount": 250,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 331977
+    "durationMs": 331224
   },
-  "candidates": []
+  "candidates": [
+    {
+      "id": "9h3cgzuphxi3",
+      "changeType": "price_drop",
+      "previousPrice": 300000,
+      "price": 280000,
+      "priceDropPercent": 6.7,
+      "city": "군포시",
+      "location": "군포2동",
+      "regionPath": "경기도 군포시 군포2동",
+      "title": "상태좋은 10세대 삼성 15인치  노트북 NT350XCR",
+      "modelHint": "상태좋은 10세대 삼성 15인치  노트북 NT350XCR",
+      "cpuHint": null,
+      "cpuBaselinePass": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16g 램",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "specConfidence": "needs_review",
+      "postedAt": "2026-09-30T09:11:58.494Z",
+      "boostedAt": "2026-10-05T08:59:18.344Z",
+      "status": "Ongoing",
+      "description": "상태좋은 10세대 15인치 삼성 노트북 NT350XCR 모델입니다. \n\n노트북이라 생활기스 정도는 있지만 깨끗합니다. \n눈에 띄는 기스는 터치패드 옆 기스정도입니다. 사진에 찍어두었습니다. \n\n너무 민감하신분은 피해주세요. \n\ni3-10110u\n16g 램\n256g ssd\n\n로 용량 넉넉하고 일반적인 업무는 빠릿합니다. 크게 두껍지 않아서 휴대성도 좋습니다. \n\n어댑터도 휴대성 더 좋은 lg 정품 어댑터로 사용중입니다. 동일 규격이라 상관없습니다.\n\n배터리도 3시간 정도는 사용 가능해서 급할때는 쓸만합니다. \n\n게임만 아니면 불편함 없을겁니다.\n\n윈도우10프로 정품이고 초기화해서 재설치 해 두었습니다. 바로 사용가능합니다. \n\n사진 자세하게 보시고 연락주세요. \n\n택배시 포장은 걱정 안하셔도 됩니다!",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%83%81%ED%83%9C%EC%A2%8B%EC%9D%80-10%EC%84%B8%EB%8C%80-%EC%82%BC%EC%84%B1-15%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-nt350xcr-9h3cgzuphxi3/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "가을하늘",
+      "mannerTemperature": 67.4
+    }
+  ]
 }
