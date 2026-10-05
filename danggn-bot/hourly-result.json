@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-05T05:00:57.047Z",
+  "generatedAt": "2026-10-05T05:31:32.784Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -17,8 +17,7 @@
     "status": "ok",
     "stateCommitted": true,
     "warnings": [
-      "과천시: detail failed 4p5ausgg9fg4: Error: HTTP 404 Not Found",
-      "Detail queue retained for retry: 135"
+      "Detail queue retained for retry: 163"
     ]
   },
   "rules": {
@@ -55,11 +54,11 @@
         "attempted": 8,
         "succeeded": 8,
         "errors": 0,
-        "uniqueListings": 262,
-        "changedCandidates": 82,
+        "uniqueListings": 281,
+        "changedCandidates": 86,
         "detailedCandidates": 71,
-        "deferredDetails": 11,
-        "durationMs": 72623
+        "deferredDetails": 15,
+        "durationMs": 74035
       },
       {
         "city": "의왕시",
@@ -73,11 +72,11 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 334,
-        "changedCandidates": 120,
+        "uniqueListings": 325,
+        "changedCandidates": 124,
         "detailedCandidates": 71,
-        "deferredDetails": 49,
-        "durationMs": 97563
+        "deferredDetails": 53,
+        "durationMs": 94591
       },
       {
         "city": "안양시",
@@ -93,11 +92,11 @@
         "attempted": 28,
         "succeeded": 28,
         "errors": 0,
-        "uniqueListings": 339,
-        "changedCandidates": 123,
+        "uniqueListings": 353,
+        "changedCandidates": 126,
         "detailedCandidates": 71,
-        "deferredDetails": 52,
-        "durationMs": 111251
+        "deferredDetails": 55,
+        "durationMs": 110671
       },
       {
         "city": "과천시",
@@ -107,56 +106,56 @@
         "attempted": 4,
         "succeeded": 4,
         "errors": 0,
-        "uniqueListings": 174,
-        "changedCandidates": 74,
-        "detailedCandidates": 52,
-        "deferredDetails": 22,
-        "durationMs": 49809
+        "uniqueListings": 252,
+        "changedCandidates": 96,
+        "detailedCandidates": 56,
+        "deferredDetails": 40,
+        "durationMs": 52943
       }
     ],
     "finalCandidateCount": 1,
-    "stateItemCount": 4957,
-    "pendingNewnessCount": 131,
-    "pendingUnattemptedCount": 131,
+    "stateItemCount": 4984,
+    "pendingNewnessCount": 159,
+    "pendingUnattemptedCount": 159,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 331375
+    "durationMs": 332312
   },
   "candidates": [
     {
-      "id": "o2j3tibs5upo",
-      "changeType": "new",
-      "previousPrice": null,
-      "price": 470000,
-      "priceDropPercent": null,
+      "id": "cgywnbcta778",
+      "changeType": "price_drop",
+      "previousPrice": 400000,
+      "price": 370000,
+      "priceDropPercent": 7.5,
       "city": "안양시",
-      "location": "안양6동",
-      "regionPath": "경기도 안양시 만안구 안양6동",
-      "title": "ASUS TUF 게이밍 노트북 (A15 FA506IH-BQ149)",
-      "modelHint": "ASUS TUF 게이밍 노트북 (A15 FA506IH-BQ149)",
-      "cpuHint": "Ryzen 7 4800H",
+      "location": "안양동",
+      "regionPath": "경기도 안양시 만안구 안양동",
+      "title": "[상태최상/급처] 맥북프로 13인치 (인텔 i5 / 16GB / 512GB)",
+      "modelHint": "[상태최상/급처] 맥북프로 13인치 (인텔 i5 / 16GB / 512GB)",
+      "cpuHint": null,
       "cpuBaselinePass": null,
       "gpuHint": null,
       "vramGB": null,
       "ramGB": 16,
       "ambiguousMemoryGB": null,
       "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": "RAM : 16G",
+      "ramEvidence": "메모리: 16GB",
       "vramEvidence": null,
       "ambiguousMemoryEvidence": null,
       "storageGB": null,
       "llmCapability": "SPEC_CHECK_REQUIRED",
       "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
       "specConfidence": "needs_review",
-      "postedAt": "2026-10-05T04:49:31.667Z",
-      "boostedAt": "2026-10-05T04:49:31.665Z",
+      "postedAt": "2026-09-30T14:18:54.232Z",
+      "boostedAt": "2026-10-04T01:03:06.434Z",
       "status": "Ongoing",
-      "description": "안녕하세요.\n\nASUS TUF 게이밍 노트북\n(A15 FA506IH-BQ149)\n판매합니다.\n\n<상세 스펙>\n\n- 디스플레이 : 15.6인치 (39.62cm)\n\n- 해상도 : 1920*1080(FHD)\n\n- 무게 : 2.3kg\n\n- CPU : Ryzen 7 4800H 2.9GHz\n\n- GPU : 외장그래픽 NVIDIA\n              GeForce GTX 1650(4G)\n\n- RAM : 16G\n\n- 저장소 : SSD 512G\n\n- OS: Win11 Pro\n\n와이파이, 블루투스 등 이상 없고\n키보드 라이트닝도 이상 없으며\n터치 마우스도 잘 작동합니다.\n유선랜포트, USB포트 3곳도\n이상 없습니다.\n\nFC온라인, 디아블로2 레저렉션 등\n제가 했던 게임들은\n잘 구동되는 것 확인하고\n초기화 하였습니다.\n\n초기화 후 윈도우 업데이트 및\n필수 드라이버,\n크롬, 카카오톡 정도만 설치한 후\n깨끗이 닦아서 잘 보관중입니다.\n\n눈에 띄는 큰 기스는 없고\n외관, 액정도 깨끗한 편 입니다.\n\n다만 키보드 자판 키캡 중\nE,R,D,F,G,C,CTRL 쪽이\n자주 누르는 키캡부분이라\n흐릿해졌습니다.\n업로드한 이미지 확인 부탁드려요.\n\n배터리 타임은 100% 완충 시\n1시간 30분 정도 입니다.\n게이밍 노트북들은 대체로\n배터리 타임이 길지 않더라구요.\n\n구성품은 하기와 같습니다.\n\n- ASUS TUF 게이밍 노트북 본품\n\n- 충전 어댑터\n\n- 마우스 패드\n\n- 펜톤 클리커 6버튼 무소음\n   무선 버티컬 마우스\n  (깨끗합니다)\n\n- 노트북 파우치(세제품)\n\n\n직거래 안양시 만안로 57\n비전타워에서 가능하고\n장소는 협의 가능합니다.\n\n완연한 가을이 찾아왔고\n밤에는 쌀쌀하네요.\n건강 유의하시고\n좋은 일만 가득하시길 바랍니다.\n\n과하지 않은 상식선에서의\n네고/찔러보기 가능합니다.\n채팅 주시면 최대한 빨리\n답변 드리겠습니다.\n\n감사합니다.",
-      "url": "https://www.daangn.com/kr/buy-sell/asus-tuf-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-a15-fa506ih-bq149-o2j3tibs5upo/",
+      "description": "[제품 정보]\n 모델명: 맥북 프로 13인치 (2020, 썬더볼트 3 포트 4개 탑재형)  \n 사양:\n 프로세서: 2.0GHz 쿼드 코어 Intel Core i5  \n 메모리: 16GB  \n 그래픽: Intel Iris Plus Graphics  \n 색상: 스페이스 그레이\n 구성품: 본체, 상품 설명서, 배터리\n(참고: 박스는 다른 맥북 박스이며 본체만 기스 없이 매우 깨끗합니다)\n\n어제 선물로 받은 제품입니다. 아버님 지인분께서 회사에서 쓰시다가 주신 제품이라 배터리 새거로 교체 후 판매합니다.\n외관에 기스나 사용감 없이 정말 깨끗하게 잘 관리된 상태입니다.\n문서 작업, 웹서핑, 동영상 시청용으로 아주 쾌적하게 쓰실 수 있습니다.\n거래 확정 시 계정 로그아웃 및 완전 초기화해서 초기 설정 화면으로 전달해 드립니다.\n\n* 직거래는 서울 안에서만\n* 택배거래는 파손주의 포장 후 발송(택배비 별도)\n\n고가 기기 처음 판매해보는거라 모르는 점이 있을 수 있습니다! 상세컷이나 잘 돌아가는지 확인컷 부탁하시면 보내드립니다 편하게 톡주세요!",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%83%81%ED%83%9C%EC%B5%9C%EC%83%81-%EA%B8%89%EC%B2%98-%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C-13%EC%9D%B8%EC%B9%98-%EC%9D%B8%ED%85%94-i5-16gb-512gb-cgywnbcta778/",
       "favoriteCount": 0,
       "chatCount": 0,
-      "sellerName": "Beer",
-      "mannerTemperature": 66.9
+      "sellerName": "원이를원한다",
+      "mannerTemperature": 36.8
     }
   ]
 }

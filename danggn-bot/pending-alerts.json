@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-05T05:00:57.117695Z",
+  "updatedAt": "2026-10-05T05:31:32.832001Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -176,6 +176,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/asus-tuf-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-a15-fa506ih-bq149-o2j3tibs5upo/",
       "firstAlertedAt": "2026-10-05T05:00:57.117695Z",
       "lastCandidateAt": "2026-10-05T05:00:57.117695Z"
+    },
+    "cgywnbcta778": {
+      "id": "cgywnbcta778",
+      "title": "[상태최상/급처] 맥북프로 13인치 (인텔 i5 / 16GB / 512GB)",
+      "price": 370000,
+      "previousPrice": 400000,
+      "changeType": "price_drop",
+      "city": "안양시",
+      "location": "안양동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "메모리: 16GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-09-30T14:18:54.232Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%83%81%ED%83%9C%EC%B5%9C%EC%83%81-%EA%B8%89%EC%B2%98-%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C-13%EC%9D%B8%EC%B9%98-%EC%9D%B8%ED%85%94-i5-16gb-512gb-cgywnbcta778/",
+      "firstAlertedAt": "2026-10-05T05:31:32.832001Z",
+      "lastCandidateAt": "2026-10-05T05:31:32.832001Z"
     }
   }
 }
