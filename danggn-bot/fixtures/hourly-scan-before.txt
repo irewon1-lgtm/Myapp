@@ -1,6 +1,4 @@
 import fs from 'node:fs/promises';
-import { canonicalKey, mergeListings, migrateState, expireTasks, priority, retryTask, clearTask, runDetailPool } from './detail-queue.mjs';
-import { pathToFileURL } from 'node:url';
 
 const STATE_PATH = new URL('./hourly-state.json', import.meta.url);
 const RESULT_PATH = new URL('./hourly-result.json', import.meta.url);
@@ -14,13 +12,12 @@ const STATE_RETENTION_DAYS = 30;
 const MAX_STATE_ITEMS = 5000;
 const SEARCH_LIMIT = 80;
 const DETAIL_WORKERS = 3;
-
+const DETAIL_BUDGET_PER_CITY_MS = 55000;
 const SCAN_BUDGET_MS = 330000;
+const NEWNESS_RETRY_DELAY_MS = 60 * 60 * 1000;
 const REQUEST_GAP_MS = 800;
 let nextRequestAt = 0;
 let requestCooldownUntil = 0;
-let detailRequestsExecuted = 0;
-const searchTimestampDiagnostics = { routeRows: 0, routeDates: 0, htmlFallbacks: 0, unknownSamples: [] };
 
 const QUERIES = [
   '노트북',
@@ -61,26 +58,9 @@ function extractBalancedJson(input, startIndex, openChar) {
   return null;
 }
 
-function publicJsonTexts(html, marker) {
-  const texts = [html];
-  for (const script of html.matchAll(/<script[^>]*>([\s\S]*?)<\/script>/gi)) {
-    if (!script[1].includes(marker.replace(/[":]/g, ''))) continue;
-    for (const literal of script[1].matchAll(/"(?:\\.|[^"\\])*"/g)) {
-      try { const decoded = JSON.parse(literal[0]); if (decoded.includes(marker)) texts.push(decoded); } catch {}
-    }
-  }
-  return texts;
-}
-
 function extractJsonAfterMarker(html, marker, openChar) {
   const markerIndex = html.indexOf(marker);
-  if (markerIndex < 0) {
-    for (const decoded of publicJsonTexts(html, marker).slice(1)) {
-      const value = extractJsonAfterMarker(decoded, marker, openChar);
-      if (value) return value;
-    }
-    return null;
-  }
+  if (markerIndex < 0) return null;
   const tail = html.slice(markerIndex + marker.length);
   const start = tail.indexOf(openChar);
   if (start < 0) return null;
@@ -126,7 +106,7 @@ function firstTimestamp(raw, keys) {
 }
 
 function normalizeArticle(raw, sourceQuery, sourceRegion) {
-  const id = articleId(raw.id) || articleId(raw.href) || 'unknown';
+  const id = articleId(raw.href || raw.id) || 'unknown';
   const url = raw.href
     ? (String(raw.href).startsWith('http') ? raw.href : BASE + raw.href)
     : SEARCH + id + '/';
@@ -139,7 +119,7 @@ function normalizeArticle(raw, sourceQuery, sourceRegion) {
     imageUrl: raw.thumbnail ?? undefined,
     location: raw.locationName ?? raw.region?.name,
     regionPath: [raw.region?.name1, raw.region?.name2, raw.region?.name3].filter(Boolean).join(' ') || undefined,
-    postedAt: firstTimestamp(raw, ['createdAt', 'created_at', 'publishedAt', 'published_at', 'dateCreated', 'datePublished', 'postedAt', 'posted_at']),
+    postedAt: firstTimestamp(raw, ['createdAt', 'created_at', 'publishedAt', 'published_at', 'dateCreated', 'datePublished']),
     boostedAt: firstTimestamp(raw, ['boostedAt', 'boosted_at', 'bumpedAt', 'bumped_at']),
     chatCount: raw.chatCount ?? 0,
     favoriteCount: raw.favoriteCount ?? 0,
@@ -174,7 +154,6 @@ function parseSearch(html, sourceQuery, sourceRegion) {
         price: priceNum(item.offers?.price),
         url: item.url,
         imageUrl: Array.isArray(item.image) ? item.image[0] : item.image,
-        postedAt: firstTimestamp(item, ['datePublished', 'dateCreated', 'createdAt', 'postedAt']),
         status: 'Ongoing',
         sourceQuery,
         sourceRegion
@@ -188,13 +167,12 @@ async function getHtml(url, attempts = 2, pace = false) {
   for (let attempt = 1; attempt <= attempts; attempt++) {
     try {
       if (Date.now() < requestCooldownUntil) throw new Error('HTTP 429 cooldown; retained for next scan');
-      {
+      if (pace) {
         const requestAt = Math.max(Date.now(), nextRequestAt);
         nextRequestAt = requestAt + REQUEST_GAP_MS;
         await sleep(Math.max(0, requestAt - Date.now()));
       }
       if (Date.now() < requestCooldownUntil) throw new Error('HTTP 429 cooldown; retained for next scan');
-      if (pace) detailRequestsExecuted++;
       const response = await fetch(url, {
         signal: AbortSignal.timeout(10000),
         headers: {
@@ -203,7 +181,7 @@ async function getHtml(url, attempts = 2, pace = false) {
           'Accept-Language': 'ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7'
         }
       });
-      if (response.status === 429 || response.status === 403) requestCooldownUntil = Date.now() + 60 * 60 * 1000;
+      if (response.status === 429) requestCooldownUntil = Date.now() + 60 * 60 * 1000;
       if (!response.ok) throw new Error('HTTP ' + response.status + ' ' + response.statusText);
       return await response.text();
     } catch (error) {
@@ -268,12 +246,6 @@ async function searchOne(query, region) {
     const text = await getHtml(routeUrl);
     const data = JSON.parse(text);
     const rows = parseRouteSearch(data, query, region);
-    searchTimestampDiagnostics.routeRows += rows.length;
-    searchTimestampDiagnostics.routeDates += rows.filter(x => x.postedAt).length;
-    if (searchTimestampDiagnostics.unknownSamples.length < 3) {
-      const raw = data?.allPage?.fleamarketArticles?.find(x => !firstTimestamp(x, ['createdAt','created_at','publishedAt','datePublished','postedAt']));
-      if (raw) searchTimestampDiagnostics.unknownSamples.push(raw);
-    }
     if (rows.length) return rows;
   } catch {}
 
@@ -281,13 +253,12 @@ async function searchOne(query, region) {
   url.searchParams.set('search', query);
   url.searchParams.set('in', region.slug);
   const html = await getHtml(url);
-  searchTimestampDiagnostics.htmlFallbacks++;
   return parseSearch(html, query, region.slug).slice(0, SEARCH_LIMIT);
 }
 
 async function detailOne(item) {
   try {
-    const html = await getHtml(item.url, 1, true);
+    const html = await getHtml(item.url, 2, true);
     const product = extractJsonAfterMarker(html, '"product":', '{')
       ?? extractJsonAfterMarker(html, '\\"product\\":', '{');
 
@@ -317,13 +288,15 @@ async function detailOne(item) {
         price: priceNum(ld.offers?.price ?? item.price)
       };
     }
-    return { ...item, detailError: 'DETAIL_PARSE_EMPTY' };
+    return item;
   } catch (error) {
     return { ...item, detailError: String(error) };
   }
 }
 
-function itemKey(cityName, item) { return canonicalKey(item); }
+function itemKey(cityName, item) {
+  return cityName + '|' + (item.id !== 'unknown' ? item.id : item.url);
+}
 
 function placeText(item) {
   return ((item.regionPath ?? '') + ' ' + (item.location ?? '')).trim();
@@ -376,8 +349,8 @@ function analyzeHardware(item) {
   const ramGB = ramMatch ? Number(ramMatch[1]) || null : null;
 
   const storageRaw =
-    text.match(/(?:SSD|NVMe|M\.?2)[^.;,\n]{0,32}?(256\s*(?:GB|G)|512\s*(?:GB|G)|\d+(?:\.\d+)?\s*TB|1024\s*(?:GB|G)|2048\s*(?:GB|G)|128\s*(?:GB|G))/i)?.[1]
-    ?? text.match(/(128\s*(?:GB|G)|256\s*(?:GB|G)|512\s*(?:GB|G)|\d+(?:\.\d+)?\s*TB|1024\s*(?:GB|G)|2048\s*(?:GB|G))[^.;,\n]{0,32}?(?:SSD|NVMe|M\.?2)/i)?.[1]
+    text.match(/(?:SSD|NVMe|M\\.?2)[^.;,\\n]{0,32}?(256\\s*(?:GB|G)|512\\s*(?:GB|G)|\\d+(?:\\.\\d+)?\\s*TB|1024\\s*(?:GB|G)|2048\\s*(?:GB|G)|128\\s*(?:GB|G))/i)?.[1]
+    ?? text.match(/(128\\s*(?:GB|G)|256\\s*(?:GB|G)|512\\s*(?:GB|G)|\\d+(?:\\.\\d+)?\\s*TB|1024\\s*(?:GB|G)|2048\\s*(?:GB|G))[^.;,\\n]{0,32}?(?:SSD|NVMe|M\\.?2)/i)?.[1]
     ?? null;
   const storageGB = capacityToGB(storageRaw);
 
@@ -386,37 +359,37 @@ function analyzeHardware(item) {
   let ambiguousText = textWithoutVram;
   if (ramMatch) ambiguousText = ambiguousText.replace(ramMatch[0], ' ');
   ambiguousText = ambiguousText
-    .replace(/(?:SSD|NVMe|M\.?2)\s*[:=\-]?\s*\d+(?:\.\d+)?\s*(?:TB|GB|G)/ig, ' ')
-    .replace(/\d+(?:\.\d+)?\s*(?:TB|GB|G)\s*(?:SSD|NVMe|M\.?2)/ig, ' ');
-  const ambiguousMemoryMatch = ambiguousText.match(/(?:^|[\s/|,;:()])(?:용량\s*)?(16|24|32|36|48|64|96|128|192)\s*(GB|G|기가(?:바이트)?)(?=$|[\s/|,;:()])/i);
+    .replace(/(?:SSD|NVMe|M\\.?2)\\s*[:=\\-]?\\s*\\d+(?:\\.\\d+)?\\s*(?:TB|GB|G)/ig, ' ')
+    .replace(/\\d+(?:\\.\\d+)?\\s*(?:TB|GB|G)\\s*(?:SSD|NVMe|M\\.?2)/ig, ' ');
+  const ambiguousMemoryMatch = ambiguousText.match(/(?:^|[\\s/|,;:()])(?:용량\\s*)?(16|24|32|36|48|64|96|128|192)\\s*(GB|G|기가(?:바이트)?)(?=$|[\\s/|,;:()])/i);
   const ambiguousMemoryGB = ambiguousMemoryMatch ? Number(ambiguousMemoryMatch[1]) || null : null;
 
   const gpuHint =
-    text.match(/\bRTX\s*(?:PRO\s*)?\d{4}(?:\s*Ti)?(?:\s*(?:Laptop|Mobile|Ada|Blackwell))?\b/i)?.[0]
-    ?? text.match(/\bRTX\s*A\d{4}\b/i)?.[0]
-    ?? text.match(/\bQuadro\s*RTX\s*\d{4}\b/i)?.[0]
-    ?? text.match(/\bRadeon\s*[A-Z0-9 ]{2,18}\b/i)?.[0]
-    ?? text.match(/\bApple\s*M[1-5]\s*(?:Pro|Max|Ultra)?\b/i)?.[0]
-    ?? text.match(/\bM[1-5]\s*(?:Pro|Max|Ultra)\b/i)?.[0]
+    text.match(/\\bRTX\\s*(?:PRO\\s*)?\\d{4}(?:\\s*Ti)?(?:\\s*(?:Laptop|Mobile|Ada|Blackwell))?\\b/i)?.[0]
+    ?? text.match(/\\bRTX\\s*A\\d{4}\\b/i)?.[0]
+    ?? text.match(/\\bQuadro\\s*RTX\\s*\\d{4}\\b/i)?.[0]
+    ?? text.match(/\\bRadeon\\s*[A-Z0-9 ]{2,18}\\b/i)?.[0]
+    ?? text.match(/\\bApple\\s*M[1-5]\\s*(?:Pro|Max|Ultra)?\\b/i)?.[0]
+    ?? text.match(/\\bM[1-5]\\s*(?:Pro|Max|Ultra)\\b/i)?.[0]
     ?? null;
 
   let vramGB = vramMatch ? Number(vramMatch[1]) || null : null;
 
   // Only map GPU models whose laptop/workstation VRAM is unambiguous enough
   // for this filter. Unknown or ambiguous models are left for ChatGPT review.
-  if (/\bRTX\s*5090(?:\s*Laptop)?\b/i.test(text)) vramGB = Math.max(vramGB ?? 0, 24);
-  if (/\bRTX\s*5080(?:\s*Laptop)?\b/i.test(text)) vramGB = Math.max(vramGB ?? 0, 16);
-  if (/\bRTX\s*4090(?:\s*Laptop)?\b/i.test(text)) vramGB = Math.max(vramGB ?? 0, 16);
-  if (/\bRTX\s*3080\s*Ti(?:\s*Laptop)?\b/i.test(text)) vramGB = Math.max(vramGB ?? 0, 16);
-  if (/\bRTX\s*A5000\b/i.test(text)) vramGB = Math.max(vramGB ?? 0, 16);
-  if (/\bQuadro\s*RTX\s*5000\b/i.test(text)) vramGB = Math.max(vramGB ?? 0, 16);
-  if (/\bRTX\s*5000\s*Ada\b/i.test(text)) vramGB = Math.max(vramGB ?? 0, 16);
-  if (/\bRTX\s*PRO\s*5000\s*Blackwell\b/i.test(text)) vramGB = Math.max(vramGB ?? 0, 24);
-  if (/\bRTX\s*PRO\s*4000\s*Blackwell\b/i.test(text)) vramGB = Math.max(vramGB ?? 0, 16);
+  if (/\\bRTX\\s*5090(?:\\s*Laptop)?\\b/i.test(text)) vramGB = Math.max(vramGB ?? 0, 24);
+  if (/\\bRTX\\s*5080(?:\\s*Laptop)?\\b/i.test(text)) vramGB = Math.max(vramGB ?? 0, 16);
+  if (/\\bRTX\\s*4090(?:\\s*Laptop)?\\b/i.test(text)) vramGB = Math.max(vramGB ?? 0, 16);
+  if (/\\bRTX\\s*3080\\s*Ti(?:\\s*Laptop)?\\b/i.test(text)) vramGB = Math.max(vramGB ?? 0, 16);
+  if (/\\bRTX\\s*A5000\\b/i.test(text)) vramGB = Math.max(vramGB ?? 0, 16);
+  if (/\\bQuadro\\s*RTX\\s*5000\\b/i.test(text)) vramGB = Math.max(vramGB ?? 0, 16);
+  if (/\\bRTX\\s*5000\\s*Ada\\b/i.test(text)) vramGB = Math.max(vramGB ?? 0, 16);
+  if (/\\bRTX\\s*PRO\\s*5000\\s*Blackwell\\b/i.test(text)) vramGB = Math.max(vramGB ?? 0, 24);
+  if (/\\bRTX\\s*PRO\\s*4000\\s*Blackwell\\b/i.test(text)) vramGB = Math.max(vramGB ?? 0, 16);
 
   const ramPass = (ramGB ?? 0) >= 32;
   const vramPass = (vramGB ?? 0) >= 16;
-  const ryzenAiMaxShared64 = /\bRyzen\s*AI\s*Max(?:\+|\s*Plus|\s*Pro)?\s*\d{3}\b/i.test(text)
+  const ryzenAiMaxShared64 = /\\bRyzen\\s*AI\\s*Max(?:\\+|\\s*Plus|\\s*Pro)?\\s*\\d{3}\\b/i.test(text)
     && Math.max(ramGB ?? 0, ambiguousMemoryGB ?? 0) >= 64;
 
   const confirmedPass = ramPass || vramPass || ryzenAiMaxShared64;
@@ -545,8 +518,33 @@ function clone(value) {
   return JSON.parse(JSON.stringify(value));
 }
 
+function resetAndExpireNewness(state, nowMs) {
+  const reset = !state.newnessBacklogResetAt;
+  for (const item of Object.values(state.items ?? {})) {
+    if (!item?.pendingNewnessCheck && !item?.newnessProbeSkipped) continue;
+    const firstSeenMs = new Date(item.firstSeenAt ?? 0).getTime();
+    if (reset || !Number.isFinite(firstSeenMs)
+      || nowMs - firstSeenMs > WINDOW_HOURS * 60 * 60 * 1000) {
+      item.pendingNewnessCheck = false;
+      item.newnessProbeSkipped = false;
+      item.newnessDetailAttempts = 0;
+      item.newnessUnknownExpired = true;
+    }
+  }
+  if (reset) state.newnessBacklogResetAt = new Date(nowMs).toISOString();
+}
+
 async function detailBatch(queue, deadlineMs) {
-  return runDetailPool(queue, deadlineMs, detailOne, { workers: DETAIL_WORKERS });
+  let cursor = 0;
+  const results = [];
+  await Promise.all(Array.from({ length: DETAIL_WORKERS }, async () => {
+    while (cursor < queue.length && Date.now() < deadlineMs) {
+      const baseItem = queue[cursor++];
+      results.push(await detailOne(baseItem));
+      await sleep(220);
+    }
+  }));
+  return results;
 }
 
 function pruneState(state, nowMs) {
@@ -565,17 +563,12 @@ function pruneState(state, nowMs) {
   ));
 }
 
-async function main(options = {}) {
-  detailRequestsExecuted = 0;
-  const startedAt = new Date(options.now ?? Date.now());
+async function main() {
+  const startedAt = new Date();
   const nowMs = startedAt.getTime();
-  const wallStartedMs = Date.now();
-  const originalState = options.state ?? await readState();
-  const nextState = migrateState(clone(originalState));
-  const backlogStart = Object.values(nextState.items).filter(x => x.pendingNewnessCheck || x.pendingDetailEvent).length;
-  expireTasks(nextState, nowMs);
-  const globalFound = new Map();
-  let searchUniqueListings = 0;
+  const originalState = await readState();
+  const nextState = clone(originalState);
+  resetAndExpireNewness(nextState, nowMs);
 
   const candidates = [];
   const cityRuns = [];
@@ -591,51 +584,53 @@ async function main(options = {}) {
 
     let resolvedRegions = [];
     try {
-      resolvedRegions = await (options.resolve ?? resolveCityRegions)(city);
+      resolvedRegions = await resolveCityRegions(city);
     } catch (error) {
       errors.push({ regionSlug: 'region-resolution', query: '-', error: String(error) });
     }
 
-    const searches = resolvedRegions.flatMap(region => QUERIES.map(query => ({ region, query })));
-    let searchCursor = 0;
-    await Promise.all(Array.from({ length: 3 }, async () => {
-      while (searchCursor < searches.length) {
-        const { region, query } = searches[searchCursor++];
+    for (const region of resolvedRegions) {
+      for (const query of QUERIES) {
         attempted++;
         try {
-          const items = await (options.search ?? searchOne)(query, region);
+          const items = await searchOne(query, region);
           succeeded++;
-          for (const item of items) mergeListings(found, item);
+          for (const item of items) {
+            const key = item.id !== 'unknown' ? item.id : item.url;
+            if (!found.has(key)) {
+              found.set(key, item);
+            } else {
+              const prev = found.get(key);
+              prev.sourceQuery = Array.from(new Set([].concat(prev.sourceQuery ?? [], item.sourceQuery ?? [])));
+              prev.sourceRegion = Array.from(new Set([].concat(prev.sourceRegion ?? [], item.sourceRegion ?? [])));
+              if (!prev.postedAt && item.postedAt) prev.postedAt = item.postedAt;
+              if (!prev.boostedAt && item.boostedAt) prev.boostedAt = item.boostedAt;
+            }
+          }
         } catch (error) {
           errors.push({ regionSlug: region.slug, query, error: String(error) });
         }
+        await sleep(140);
       }
-    }));
+    }
 
     const successRatio = attempted ? succeeded / attempted : 0;
     if (successRatio < 0.75) hardFailure = true;
     if (errors.length) warnings.push(city.name + ': search errors ' + errors.length + '/' + attempted);
 
-    searchUniqueListings += found.size;
-    for (const item of found.values()) mergeListings(globalFound, { ...item, sourceCities: [city.name] });
-    cityRuns.push({ city: city.name, regions: resolvedRegions.map(r => r.slug), attempted, succeeded,
-      errors: errors.length, uniqueListings: found.size, durationMs: Date.now() - cityStarted });
-  }
-  const stage1 = [];
-  const startedIso = startedAt.toISOString();
-  let postedAtResolvedFromSearch = 0;
-  for (const item of globalFound.values()) {
-    if (item.postedAt) postedAtResolvedFromSearch++;
-    item.city = CITIES.find(c => belongsToCity(item, c.name))?.name ?? item.sourceCities[0];
-  }
-    for (const item of globalFound.values()) {
-      const city = { name: item.city };
-      if (item.status !== 'Ongoing') { const saved = nextState.items[itemKey(city.name, item)]; if (saved) clearTask(saved); continue; }
+    const stage1 = [];
+    const startedIso = startedAt.toISOString();
+
+    for (const item of found.values()) {
+      if (item.status !== 'Ongoing') continue;
 
       const key = itemKey(city.name, item);
       const previous = nextState.items?.[key];
 
-      if (!belongsToCityOrUnknown(item, city.name)) continue;
+      if (!belongsToCityOrUnknown(item, city.name)) {
+        if (previous) delete nextState.items[key];
+        continue;
+      }
 
       const unseen = !previous;
       const firstSeenAt = previous?.firstSeenAt ?? startedIso;
@@ -687,19 +682,13 @@ async function main(options = {}) {
       }
 
       const deferredEvent = previous?.pendingDetailEvent;
-      const freshTask = unseen || isPriceDrop || isNewNow || wasNewWhenFirstSeen;
-      if (freshTask && previous) {
-        previous.attempts = 0; previous.nextEligibleAt = 0; previous.detailTerminal = false;
-      }
       if (!changeType && deferredEvent) changeType = deferredEvent.changeType;
       if (changeType) {
         stage1.push({
           ...itemWithKnownDate,
           changeType,
           previousPrice: isPriceDrop ? Number(previous.lastPrice) : (deferredEvent?.previousPrice ?? null),
-          firstSeenAt,
-          city: city.name,
-          freshTask
+          firstSeenAt
         });
       }
 
@@ -708,7 +697,7 @@ async function main(options = {}) {
         id: item.id,
         title: item.title,
         url: item.url,
-        lastPrice: item.price || previous?.lastPrice || null,
+        lastPrice: isPriceDrop ? previous.lastPrice : (item.price || previous?.lastPrice || null),
         postedAt: itemWithKnownDate.postedAt,
         firstSeenAt,
         pendingNewnessCheck,
@@ -719,16 +708,14 @@ async function main(options = {}) {
         newnessDetailAttempts,
         newnessUnknownExpired,
         lastSeenAt: startedIso,
-        city: city.name,
-        sourceRegion: item.sourceRegion, sourceCities: item.sourceCities, sourceQuery: item.sourceQuery,
-        location: item.location, regionPath: item.regionPath
+        city: city.name
       };
     }
 
     // Search disappearance must not remove a saved detail task.
-    const queuedKeys = new Set(stage1.map(item => canonicalKey(item)));
+    const queuedKeys = new Set(stage1.map(item => itemKey(city.name, item)));
     for (const [key, saved] of Object.entries(nextState.items)) {
-      if (queuedKeys.has(key)) continue;
+      if (saved.city !== city.name || queuedKeys.has(key)) continue;
       if (!saved.pendingNewnessCheck && !saved.pendingDetailEvent) continue;
       stage1.push({
         ...saved,
@@ -740,53 +727,47 @@ async function main(options = {}) {
     }
     // Fair retry order: unattempted tasks first, then the least recently tried.
     stage1.sort((a, b) => {
-      const sa = nextState.items[canonicalKey(a)] ?? {};
-      const sb = nextState.items[canonicalKey(b)] ?? {};
-      return priority(a) - priority(b) || new Date(sa.detailLastAttemptAt ?? 0) - new Date(sb.detailLastAttemptAt ?? 0)
+      const sa = nextState.items[itemKey(city.name, a)] ?? {};
+      const sb = nextState.items[itemKey(city.name, b)] ?? {};
+      return new Date(sa.detailLastAttemptAt ?? 0) - new Date(sb.detailLastAttemptAt ?? 0)
         || new Date(a.firstSeenAt ?? 0) - new Date(b.firstSeenAt ?? 0);
     });
     const eligible = stage1.filter(item => {
-      const saved = nextState.items[canonicalKey(item)] ?? {};
-      saved.priority = priority(item);
-      saved.pendingReason = item.changeType;
-      return (item.freshTask || nowMs >= (saved.nextEligibleAt ?? 0)) && !saved.detailTerminal;
+      const saved = nextState.items[itemKey(city.name, item)] ?? {};
+      if (item.changeType === 'new' || item.changeType === 'price_drop') return true;
+      const retryDelay = saved.newnessDetailAttempts >= 3 ? NEWNESS_RETRY_DELAY_MS : 0;
+      return nowMs - new Date(saved.detailLastAttemptAt ?? 0).getTime() >= retryDelay;
     });
-    const detailQueue = eligible;
-    const detailedItems = await (options.details ?? detailBatch)(detailQueue, nowMs + SCAN_BUDGET_MS);
-    let detailSucceeded = 0, detailFailed = 0, detail404 = 0, detail429 = 0, postedAtResolvedFromDetail = 0;
+    const fresh = eligible.filter(item => item.changeType !== 'newness_backlog');
+    const backlog = eligible.filter(item => item.changeType === 'newness_backlog');
+    // New listings and price drops always precede recent unknown-date retries.
+    const detailQueue = fresh.concat(backlog);
+    // Bound runtime rather than dropping work at an arbitrary item count.
+    const detailedItems = await detailBatch(detailQueue,
+      Math.min(nowMs + SCAN_BUDGET_MS, Date.now() + DETAIL_BUDGET_PER_CITY_MS));
     let detailedCount = 0;
     for (const item of detailedItems) {
-      const city = { name: CITIES.find(c => belongsToCity(item, c.name))?.name ?? item.city };
       detailedCount++;
       const stateKey = itemKey(city.name, item);
       nextState.items[stateKey].detailLastAttemptAt = new Date().toISOString();
       const stateBeforeDetail = nextState.items[stateKey] ?? {};
-      stateBeforeDetail.lastAttemptAt = new Date().toISOString();
 
       if (item.detailError) {
-        detailFailed++;
-        if (/HTTP 404/.test(item.detailError)) detail404++;
-        if (/HTTP 429/.test(item.detailError)) detail429++;
-        retryTask(stateBeforeDetail, item.detailError, nowMs);
         warnings.push(city.name + ': detail failed ' + item.id + ': ' + item.detailError);
         continue;
       }
-      detailSucceeded++;
-      if (item.postedAt && !stateBeforeDetail.postedAt) postedAtResolvedFromDetail++;
       if (item.status !== 'Ongoing') {
-        clearTask(stateBeforeDetail);
         nextState.items[stateKey].pendingNewnessCheck = false;
         nextState.items[stateKey].pendingDetailEvent = null;
         nextState.items[stateKey].newnessProbeSkipped = false;
         continue;
       }
       if (!placeText(item)) {
-        retryTask(stateBeforeDetail, 'LOCATION_UNKNOWN', nowMs);
         warnings.push(city.name + ': location unavailable after detail ' + item.id);
         continue;
       }
       if (!belongsToCity(item, city.name)) {
-        clearTask(stateBeforeDetail);
+        delete nextState.items[stateKey];
         continue;
       }
 
@@ -815,7 +796,6 @@ async function main(options = {}) {
             lastSeenAt: startedIso,
             city: city.name
           };
-          retryTask(nextState.items[stateKey], 'POSTED_AT_UNKNOWN', nowMs);
           warnings.push(city.name + ': postedAt unavailable after detail ' + item.id + ' attempt ' + attempts);
           continue;
         }
@@ -838,7 +818,7 @@ async function main(options = {}) {
           city: city.name
         };
 
-        if (!recentAtFirstSeen) { clearTask(nextState.items[stateKey]); continue; }
+        if (!recentAtFirstSeen) continue;
         changeType = 'new';
       } else if (changeType === 'new' && !isRecentByPostedAt(item, item.firstSeenAt ? new Date(item.firstSeenAt).getTime() : nowMs)) {
         // Search metadata said "new", but detail is authoritative when available.
@@ -877,8 +857,6 @@ async function main(options = {}) {
         city: city.name
       };
 
-      clearTask(nextState.items[stateKey]);
-      nextState.items[stateKey].detailCache = { description: item.description, postedAt: item.postedAt, location: item.location, regionPath: item.regionPath, status: item.status };
       const specs = analyzeHardware(item);
       if (!specs.ok) continue;
 
@@ -925,7 +903,20 @@ async function main(options = {}) {
       });
     }
 
-  expireTasks(nextState, Date.now());
+    cityRuns.push({
+      city: city.name,
+      regions: resolvedRegions.map(region => region.slug),
+      attempted,
+      succeeded,
+      errors: errors.length,
+      uniqueListings: found.size,
+      changedCandidates: stage1.length,
+      detailedCandidates: detailedCount,
+      deferredDetails: detailQueue.length - detailedCount,
+      durationMs: Date.now() - cityStarted
+    });
+  }
+
   const waiting = Object.values(nextState.items).filter(item => item.pendingNewnessCheck || item.pendingDetailEvent);
   if (waiting.length) warnings.push('Detail queue retained for retry: ' + waiting.length);
 
@@ -942,7 +933,7 @@ async function main(options = {}) {
   {
     nextState.updatedAt = startedAt.toISOString();
     pruneState(nextState, nowMs);
-    await fs.writeFile(options.statePath ?? STATE_PATH, JSON.stringify(nextState, null, 2) + '\n');
+    await fs.writeFile(STATE_PATH, JSON.stringify(nextState, null, 2) + '\n');
   }
 
   const result = {
@@ -974,15 +965,6 @@ async function main(options = {}) {
       hardwareReviewStates: ['PASS_RAM', 'PASS_VRAM', 'PASS_RAM_VRAM', 'PASS_SHARED64', 'CHECK_MEMORY_GPU']
     },
     stats: {
-      searchTimestampDiagnostics,
-      searchUniqueListings, globalUniqueListings: globalFound.size,
-      duplicateListingsRemoved: searchUniqueListings - globalFound.size,
-      detailQueueStart: stage1.length, freshDetailTasks: stage1.filter(x => x.freshTask).length,
-      backlogDetailTasks: stage1.filter(x => !x.freshTask).length,
-      detailRequestsExecuted,
-      detailSucceeded, detailFailed, detail404, detail429, detailDeferred: stage1.length - detailedItems.length,
-      backlogStart, backlogEnd: waiting.length, postedAtResolvedFromSearch, postedAtResolvedFromDetail,
-      candidateCount: uniqueCandidates.length, scanDurationMs: Date.now() - wallStartedMs,
       cities: cityRuns,
       finalCandidateCount: uniqueCandidates.length,
       stateItemCount: Object.keys(nextState.items ?? {}).length,
@@ -990,21 +972,18 @@ async function main(options = {}) {
       pendingUnattemptedCount: Object.values(nextState.items ?? {}).filter(item => item?.pendingNewnessCheck && !item?.newnessDetailAttempted).length,
       pendingAttemptedCount: Object.values(nextState.items ?? {}).filter(item => item?.pendingNewnessCheck && item?.newnessDetailAttempted).length,
       skippedUnknownProbeCount: Object.values(nextState.items ?? {}).filter(item => item?.newnessProbeSkipped).length,
-      durationMs: Date.now() - wallStartedMs
+      durationMs: Date.now() - nowMs
     },
     candidates: uniqueCandidates
   };
 
-  await fs.writeFile(options.resultPath ?? RESULT_PATH, JSON.stringify(result, null, 2) + '\n');
+  await fs.writeFile(RESULT_PATH, JSON.stringify(result, null, 2) + '\n');
   console.log(JSON.stringify({ health: result.health.status, candidates: uniqueCandidates.length, durationMs: result.stats.durationMs }));
 
-  if (hardFailure && !options.state) process.exitCode = 2;
-  return { state: nextState, result };
+  if (hardFailure) process.exitCode = 2;
 }
 
-export { parseSearch, parseRouteSearch, normalizeArticle, analyzeHardware, detailOne, main, CITIES, QUERIES };
-
-if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) main().catch(async error => {
+main().catch(async error => {
   const result = {
     schemaVersion: 1,
     generatedAt: new Date().toISOString(),
