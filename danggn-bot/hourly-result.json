@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-05T12:33:51.467Z",
+  "generatedAt": "2026-10-05T13:08:37.854Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -17,7 +17,9 @@
     "status": "ok",
     "stateCommitted": true,
     "warnings": [
-      "Detail queue retained for retry: 267"
+      "과천시: detail failed oge13grtauc7: Error: HTTP 404 Not Found",
+      "과천시: detail failed gubn6gvutomc: Error: HTTP 404 Not Found",
+      "Detail queue retained for retry: 247"
     ]
   },
   "rules": {
@@ -54,11 +56,11 @@
         "attempted": 8,
         "succeeded": 8,
         "errors": 0,
-        "uniqueListings": 276,
+        "uniqueListings": 272,
         "changedCandidates": 94,
         "detailedCandidates": 71,
         "deferredDetails": 23,
-        "durationMs": 76922
+        "durationMs": 73227
       },
       {
         "city": "의왕시",
@@ -72,11 +74,11 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 346,
-        "changedCandidates": 154,
+        "uniqueListings": 338,
+        "changedCandidates": 150,
         "detailedCandidates": 71,
-        "deferredDetails": 83,
-        "durationMs": 103141
+        "deferredDetails": 79,
+        "durationMs": 94702
       },
       {
         "city": "안양시",
@@ -92,11 +94,11 @@
         "attempted": 28,
         "succeeded": 28,
         "errors": 0,
-        "uniqueListings": 346,
-        "changedCandidates": 130,
+        "uniqueListings": 338,
+        "changedCandidates": 131,
         "detailedCandidates": 71,
-        "deferredDetails": 59,
-        "durationMs": 120269
+        "deferredDetails": 60,
+        "durationMs": 109143
       },
       {
         "city": "과천시",
@@ -107,19 +109,55 @@
         "succeeded": 4,
         "errors": 0,
         "uniqueListings": 251,
-        "changedCandidates": 130,
-        "detailedCandidates": 28,
-        "deferredDetails": 102,
-        "durationMs": 31505
+        "changedCandidates": 141,
+        "detailedCandidates": 58,
+        "deferredDetails": 83,
+        "durationMs": 55485
       }
     ],
-    "finalCandidateCount": 0,
-    "stateItemCount": 5000,
-    "pendingNewnessCount": 263,
-    "pendingUnattemptedCount": 263,
+    "finalCandidateCount": 1,
+    "stateItemCount": 4988,
+    "pendingNewnessCount": 243,
+    "pendingUnattemptedCount": 243,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 331954
+    "durationMs": 332671
   },
-  "candidates": []
+  "candidates": [
+    {
+      "id": "xumfj7wbc24i",
+      "changeType": "price_drop",
+      "previousPrice": 1250000,
+      "price": 1200000,
+      "priceDropPercent": 4,
+      "city": "과천시",
+      "location": "문원동",
+      "regionPath": "경기도 과천시 문원동",
+      "title": "hp 하이퍼엑스 오멘 15 게이밍 노트북 1tb 24b rtx5050",
+      "modelHint": "hp 하이퍼엑스 오멘 15 게이밍 노트북 1tb 24b rtx5050",
+      "cpuHint": null,
+      "cpuBaselinePass": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 24,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "ram 24gb",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "specConfidence": "needs_review",
+      "postedAt": "2026-10-03T00:36:54.302Z",
+      "boostedAt": "2026-10-05T11:56:01.538Z",
+      "status": "Ongoing",
+      "description": "단순개봉 후 윈도우 설치(프리도스)만 했습니다\n기스나 하자 일절 없습니다\n라이젠5 240 ssd 1tb(pcie gen4)\nram 24gb(5600mt/s) rtx5050\n디스플레이 2k fhd+ (1920*1200) 165hz주사율\n풀박스(박스 본체 충전기) 그대로 있습니다!\n\n너무 고사양 필요 없어 기존의 것 사용으로 올려요\n월요일까지만 올려봅니다! 필요하신 분 톡 주세요",
+      "url": "https://www.daangn.com/kr/buy-sell/hp-%ED%95%98%EC%9D%B4%ED%8D%BC%EC%97%91%EC%8A%A4-%EC%98%A4%EB%A9%98-15-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-1tb-24b-rtx5050-xumfj7wbc24i/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "료캉",
+      "mannerTemperature": 65.2
+    }
+  ]
 }
