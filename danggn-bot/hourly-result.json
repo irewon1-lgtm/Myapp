@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-05T13:51:58.248Z",
+  "generatedAt": "2026-10-05T14:01:12.668Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -14,10 +14,15 @@
     "과천시"
   ],
   "health": {
-    "status": "ok",
+    "status": "failed",
     "stateCommitted": true,
     "warnings": [
-      "Detail queue retained for retry: 255"
+      "안양시: search errors 8/28",
+      "과천시: search errors 1/0",
+      "군포시: detail failed ne79yczbhzyi: Error: HTTP 429 cooldown; retained for next scan",
+      "의왕시: detail failed jm6zgxy3w5vt: Error: HTTP 429 cooldown; retained for next scan",
+      "안양시: detail failed bocxifh78ydp: Error: HTTP 429 cooldown; retained for next scan",
+      "Detail queue retained for retry: 138"
     ]
   },
   "rules": {
@@ -44,6 +49,30 @@
     ]
   },
   "stats": {
+    "searchTimestampDiagnostics": {
+      "routeRows": 0,
+      "routeDates": 0,
+      "htmlFallbacks": 48,
+      "unknownSamples": []
+    },
+    "searchUniqueListings": 900,
+    "globalUniqueListings": 389,
+    "duplicateListingsRemoved": 511,
+    "detailQueueStart": 138,
+    "freshDetailTasks": 27,
+    "backlogDetailTasks": 111,
+    "detailRequestsExecuted": 0,
+    "detailSucceeded": 0,
+    "detailFailed": 3,
+    "detail404": 0,
+    "detail429": 3,
+    "detailDeferred": 135,
+    "backlogStart": 177,
+    "backlogEnd": 138,
+    "postedAtResolvedFromSearch": 0,
+    "postedAtResolvedFromDetail": 0,
+    "candidateCount": 0,
+    "scanDurationMs": 82925,
     "cities": [
       {
         "city": "군포시",
@@ -55,10 +84,7 @@
         "succeeded": 8,
         "errors": 0,
         "uniqueListings": 275,
-        "changedCandidates": 94,
-        "detailedCandidates": 71,
-        "deferredDetails": 23,
-        "durationMs": 77477
+        "durationMs": 14505
       },
       {
         "city": "의왕시",
@@ -72,11 +98,8 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 345,
-        "changedCandidates": 147,
-        "detailedCandidates": 71,
-        "deferredDetails": 76,
-        "durationMs": 103585
+        "uniqueListings": 329,
+        "durationMs": 33746
       },
       {
         "city": "안양시",
@@ -90,36 +113,28 @@
           "안양동-4639"
         ],
         "attempted": 28,
-        "succeeded": 28,
-        "errors": 0,
-        "uniqueListings": 340,
-        "changedCandidates": 130,
-        "detailedCandidates": 71,
-        "deferredDetails": 59,
-        "durationMs": 119823
+        "succeeded": 20,
+        "errors": 8,
+        "uniqueListings": 296,
+        "durationMs": 34560
       },
       {
         "city": "과천시",
-        "regions": [
-          "원문동-4433"
-        ],
-        "attempted": 4,
-        "succeeded": 4,
-        "errors": 0,
-        "uniqueListings": 252,
-        "changedCandidates": 124,
-        "detailedCandidates": 27,
-        "deferredDetails": 97,
-        "durationMs": 31124
+        "regions": [],
+        "attempted": 0,
+        "succeeded": 0,
+        "errors": 1,
+        "uniqueListings": 0,
+        "durationMs": 1
       }
     ],
     "finalCandidateCount": 0,
-    "stateItemCount": 5000,
-    "pendingNewnessCount": 250,
-    "pendingUnattemptedCount": 250,
+    "stateItemCount": 2442,
+    "pendingNewnessCount": 128,
+    "pendingUnattemptedCount": 128,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 332118
+    "durationMs": 82928
   },
   "candidates": []
 }
