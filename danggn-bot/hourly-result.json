@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-05T06:36:12.792Z",
+  "generatedAt": "2026-10-05T07:10:03.537Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -17,7 +17,7 @@
     "status": "ok",
     "stateCommitted": true,
     "warnings": [
-      "Detail queue retained for retry: 253"
+      "Detail queue retained for retry: 248"
     ]
   },
   "rules": {
@@ -54,11 +54,11 @@
         "attempted": 8,
         "succeeded": 8,
         "errors": 0,
-        "uniqueListings": 280,
-        "changedCandidates": 100,
+        "uniqueListings": 260,
+        "changedCandidates": 98,
         "detailedCandidates": 71,
-        "deferredDetails": 29,
-        "durationMs": 76646
+        "deferredDetails": 27,
+        "durationMs": 72978
       },
       {
         "city": "의왕시",
@@ -72,11 +72,11 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 343,
-        "changedCandidates": 149,
-        "detailedCandidates": 71,
-        "deferredDetails": 78,
-        "durationMs": 105275
+        "uniqueListings": 346,
+        "changedCandidates": 153,
+        "detailedCandidates": 72,
+        "deferredDetails": 81,
+        "durationMs": 96200
       },
       {
         "city": "안양시",
@@ -92,11 +92,11 @@
         "attempted": 28,
         "succeeded": 28,
         "errors": 0,
-        "uniqueListings": 346,
-        "changedCandidates": 138,
+        "uniqueListings": 348,
+        "changedCandidates": 147,
         "detailedCandidates": 71,
-        "deferredDetails": 67,
-        "durationMs": 121783
+        "deferredDetails": 76,
+        "durationMs": 114324
       },
       {
         "city": "과천시",
@@ -107,19 +107,55 @@
         "succeeded": 4,
         "errors": 0,
         "uniqueListings": 253,
-        "changedCandidates": 102,
-        "detailedCandidates": 23,
-        "deferredDetails": 79,
-        "durationMs": 29013
+        "changedCandidates": 114,
+        "detailedCandidates": 50,
+        "deferredDetails": 64,
+        "durationMs": 48134
       }
     ],
-    "finalCandidateCount": 0,
-    "stateItemCount": 5000,
-    "pendingNewnessCount": 248,
-    "pendingUnattemptedCount": 248,
+    "finalCandidateCount": 1,
+    "stateItemCount": 4994,
+    "pendingNewnessCount": 243,
+    "pendingUnattemptedCount": 243,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 332809
+    "durationMs": 331748
   },
-  "candidates": []
+  "candidates": [
+    {
+      "id": "5gv84s9ufj4y",
+      "changeType": "price_drop",
+      "previousPrice": 1750000,
+      "price": 1700000,
+      "priceDropPercent": 2.9,
+      "city": "과천시",
+      "location": "별양동",
+      "regionPath": "경기도 과천시 별양동",
+      "title": "오멘16 omen16 i7-14650hx rtx5070 게이밍 노트북",
+      "modelHint": "오멘16 omen16 i7-14650hx rtx5070 게이밍 노트북",
+      "cpuHint": "i7-14650hx",
+      "cpuBaselinePass": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "ram 16gb",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "specConfidence": "needs_review",
+      "postedAt": "2026-10-04T04:17:10.023Z",
+      "boostedAt": "2026-10-04T04:17:10.022Z",
+      "status": "Ongoing",
+      "description": "26년 8월 1일에 구매했습니다.\n박스와 구성품 다 있습니다.\n\n데스크탑이 있어 사용을 많이 하지않아 판매합니다.\n\ncpu i7-14650hx\ngpu rtx5070 \nram 16gb\nnvme 500gb\n16인치에 500nits 입니다.\n\n상세 사양은 사진 올러놨습니다.\n\n발열과 소음은 다른 노트북에 비해 좋습니다.\n\n직거래 과천입니다.",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%98%A4%EB%A9%9816-omen16-i7-14650hx-rtx5070-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-5gv84s9ufj4y/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "우아",
+      "mannerTemperature": 41.4
+    }
+  ]
 }
