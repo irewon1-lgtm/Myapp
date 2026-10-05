@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-05T11:27:15.553Z",
+  "generatedAt": "2026-10-05T11:45:38.170Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -17,8 +17,11 @@
     "status": "ok",
     "stateCommitted": true,
     "warnings": [
-      "과천시: detail failed jkmrmtv62dib: Error: HTTP 404 Not Found",
-      "Detail queue retained for retry: 271"
+      "군포시: detail failed 2na3fq8adz5p: Error: HTTP 404 Not Found",
+      "군포시: detail failed y4h1gy8hemia: Error: HTTP 404 Not Found",
+      "과천시: detail failed y4h1gy8hemia: Error: HTTP 404 Not Found",
+      "과천시: detail failed r72cehmaorpg: Error: HTTP 404 Not Found",
+      "Detail queue retained for retry: 214"
     ]
   },
   "rules": {
@@ -55,11 +58,11 @@
         "attempted": 8,
         "succeeded": 8,
         "errors": 0,
-        "uniqueListings": 276,
-        "changedCandidates": 95,
-        "detailedCandidates": 71,
-        "deferredDetails": 24,
-        "durationMs": 73987
+        "uniqueListings": 180,
+        "changedCandidates": 39,
+        "detailedCandidates": 39,
+        "deferredDetails": 0,
+        "durationMs": 48462
       },
       {
         "city": "의왕시",
@@ -73,11 +76,11 @@
         "attempted": 20,
         "succeeded": 20,
         "errors": 0,
-        "uniqueListings": 344,
+        "uniqueListings": 333,
         "changedCandidates": 158,
         "detailedCandidates": 71,
         "deferredDetails": 87,
-        "durationMs": 96531
+        "durationMs": 95968
       },
       {
         "city": "안양시",
@@ -93,11 +96,11 @@
         "attempted": 28,
         "succeeded": 28,
         "errors": 0,
-        "uniqueListings": 341,
-        "changedCandidates": 137,
-        "detailedCandidates": 71,
-        "deferredDetails": 66,
-        "durationMs": 112854
+        "uniqueListings": 338,
+        "changedCandidates": 131,
+        "detailedCandidates": 72,
+        "deferredDetails": 59,
+        "durationMs": 111031
       },
       {
         "city": "과천시",
@@ -107,56 +110,56 @@
         "attempted": 4,
         "succeeded": 4,
         "errors": 0,
-        "uniqueListings": 250,
-        "changedCandidates": 143,
-        "detailedCandidates": 50,
-        "deferredDetails": 93,
-        "durationMs": 48327
+        "uniqueListings": 251,
+        "changedCandidates": 134,
+        "detailedCandidates": 70,
+        "deferredDetails": 64,
+        "durationMs": 65650
       }
     ],
     "finalCandidateCount": 1,
-    "stateItemCount": 5000,
-    "pendingNewnessCount": 265,
-    "pendingUnattemptedCount": 265,
+    "stateItemCount": 4956,
+    "pendingNewnessCount": 213,
+    "pendingUnattemptedCount": 213,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 331811
+    "durationMs": 321270
   },
   "candidates": [
     {
-      "id": "qbjy4k8944y5",
-      "changeType": "new",
-      "previousPrice": null,
-      "price": 550000,
-      "priceDropPercent": null,
-      "city": "군포시",
-      "location": "당정동",
-      "regionPath": "경기도 군포시 당정동",
-      "title": "lg 14z970 ga75k 노트북 상태좋음",
-      "modelHint": "lg 14z970 ga75k 노트북 상태좋음",
+      "id": "kex546dgdx5m",
+      "changeType": "price_drop",
+      "previousPrice": 2050000,
+      "price": 2000000,
+      "priceDropPercent": 2.4,
+      "city": "안양시",
+      "location": "비산1동",
+      "regionPath": "경기도 안양시 동안구 비산1동",
+      "title": "에이서 게이밍 노트북 니트로 16S  5070 32G 1T",
+      "modelHint": "에이서 게이밍 노트북 니트로 16S  5070 32G 1T",
       "cpuHint": null,
       "cpuBaselinePass": null,
       "gpuHint": null,
       "vramGB": null,
-      "ramGB": 16,
+      "ramGB": 32,
       "ambiguousMemoryGB": null,
-      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": "16gb ram",
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "RAM : 32GB",
       "vramEvidence": null,
       "ambiguousMemoryEvidence": null,
       "storageGB": null,
-      "llmCapability": "SPEC_CHECK_REQUIRED",
-      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
-      "specConfidence": "needs_review",
-      "postedAt": "2026-10-05T11:08:59.385Z",
-      "boostedAt": "2026-10-05T11:08:59.385Z",
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "specConfidence": "confirmed",
+      "postedAt": "2026-09-16T10:18:55.659Z",
+      "boostedAt": "2026-10-05T10:33:52.188Z",
       "status": "Ongoing",
-      "description": "i7 7500u\n16gb ram\n512gb ssd\n당시\n올데이그램 최고등급입니다.!\n윈도우 포함제품\n\n와이프가 집에서만 쓰던것이라  연식대비 상태좋고 사용량 많지않습니다.\n특히 키보드커버 써서 키보드부도깨끗합니다.\n초기화다했습니다.\n\n구성품은 본체+정품 파우치포함입니다.",
-      "url": "https://www.daangn.com/kr/buy-sell/lg-14z970-ga75k-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%83%81%ED%83%9C%EC%A2%8B%EC%9D%8C-qbjy4k8944y5/",
+      "description": "에이서 게이밍 노트북 니트로 16S 모델입니다.\n- CPU : 라이젠 AI 9 365\n- GPU : RTX 5070\n- RAM : 32GB(DDR5)\n- 저장장치 : 1T NVMe \n- 디스플레이 : 16인치 QHD\n-원도우 설치\n-쿠팡 5년 무상보증 가입 (올해초 가입)\n\n풀박스 상태 좋습니다.S급 (실사용도 적음)\n\n유튜브 용으로 가끔사용하다\n과스팩 인거같아 판매합니다.",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%97%90%EC%9D%B4%EC%84%9C-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%8B%88%ED%8A%B8%EB%A1%9C-16s-5070-32g-1t-kex546dgdx5m/",
       "favoriteCount": 0,
       "chatCount": 0,
-      "sellerName": "부리너부리",
-      "mannerTemperature": 51.9
+      "sellerName": "시원시원",
+      "mannerTemperature": 67.4
     }
   ]
 }
