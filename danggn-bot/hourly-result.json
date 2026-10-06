@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-06T06:27:48.419Z",
+  "generatedAt": "2026-10-06T06:50:01.086Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -16,9 +16,7 @@
   "health": {
     "status": "ok",
     "stateCommitted": true,
-    "warnings": [
-      "의왕시: detail failed 8enm7ngp7zu4: Error: HTTP 404 Not Found"
-    ]
+    "warnings": []
   },
   "rules": {
     "newnessField": "postedAt",
@@ -57,40 +55,35 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-15-6%EC%9D%B8%EC%B9%98-6au3xif94wsk/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-15-6%EC%9D%B8%EC%B9%98-6au3xif94wsk/",
-            "title": "삼성 노트북 15.6인치",
-            "content": "삼성 노트북이며 화면에 윈도우가 실행되어 있어요.\n프로세서는 인텔 코어 i5-5200U이고 Ram 4GB예요.\n화면 크기는 15.6인치\n문서 작업이나 인터넷용 노트북을 찾는 분께 추천해요.",
-            "price": "130000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/53912592-c28b-4b7a-b88c-9ae5f3914eef.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt500r5k-k555-%EB%B8%94%EB%9E%99-8jzpsed2g2sb/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt500r5k-k555-%EB%B8%94%EB%9E%99-8jzpsed2g2sb/",
+            "title": "삼성 노트북 NT500R5K-K555 블랙",
+            "content": "삼성 노트북 NT500R5K-K555 모델이에요.\n화면은 15.6인치이고, 메모리는 16GB예요.\n충전 어댑터와 전원 케이블이 포함돼 있어요.\n박스는 없고 중고제품이다 보니 사용감 있습니다.배터리는 4시간 정도 사용할 수 있고 점검 받은지\n얼마되지 않아 상태 좋습니다 \n금액 제안도 가능합니다\n",
+            "price": "200000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/6a71715c-2b92-4265-8cbc-5adf3ccc1cb7.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-06T06:19:44.774Z",
-            "boostedAt": "2026-10-06T06:19:44.773Z",
+            "createdAt": "2026-10-06T06:42:25.643Z",
+            "boostedAt": "2026-10-06T06:42:25.641Z",
             "region": {
-              "name": "가포동"
+              "name": "신광면"
             },
             "category": null,
-            "tradingCoordinates": [
-              {
-                "latitude": 35.16297171888519,
-                "longitude": 128.57663709998047
-              }
-            ]
+            "tradingCoordinates": []
           },
           {
-            "id": "/kr/buy-sell/dell-%EB%85%B8%ED%8A%B8%EB%B6%81-i7-8550u-8gb-mx150-kyxwv7wtm3fp/",
-            "href": "/kr/buy-sell/dell-%EB%85%B8%ED%8A%B8%EB%B6%81-i7-8550u-8gb-mx150-kyxwv7wtm3fp/",
-            "title": "dell 노트북(i7 8550u/8gb/mx150)",
-            "content": "Dell Inspiron 14 7472\ncpu i7-8550U(4코어 8스레드)\nram 8gb\nssd 128gb \nhdd 500gb\ngpu mx150 2gb, Intel UHD graphics 620\n\n1. 현재 윈도우 중국어임(변경 가능)\n2. 외관 스크래치 및 찍힘 있음\n3. 액정 좌측 검은줄 있음(사진3 참고)",
-            "price": "200000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/108e03cd-4cc7-4ffb-b652-328b67e520a1.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%EC%95%84%EC%88%98%EC%8A%A4-%EB%B9%84%EB%B3%B4%EB%B6%81-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%9E%A8-8%EA%B8%B0%EA%B0%80-ssd-512%EA%B8%B0%EA%B0%80-7gbiyhh7ym8a/",
+            "href": "/kr/buy-sell/%EC%95%84%EC%88%98%EC%8A%A4-%EB%B9%84%EB%B3%B4%EB%B6%81-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%9E%A8-8%EA%B8%B0%EA%B0%80-ssd-512%EA%B8%B0%EA%B0%80-7gbiyhh7ym8a/",
+            "title": "아수스 비보북 노트북 램 8기가 SSD 512기가",
+            "content": "CPU : 인텔 N-305(11세대급 저전력)\n램 : 8기가(추가 장착 가능)\nSSD : 512기가\n\n전체적으로 파손 없이 깨끗한 편입니다",
+            "price": "300000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/17912685803587fad8f1b064e5e83de1bdd8a284e73151b525950ae83bff132268889e3c1dde20.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-06T06:13:11.096Z",
-            "boostedAt": "2026-10-06T06:13:11.096Z",
+            "createdAt": "2026-10-06T06:38:20.428Z",
+            "boostedAt": "2026-10-06T06:38:20.425Z",
             "region": {
-              "name": "심곡동"
+              "name": "구서동"
             },
             "category": null,
             "tradingCoordinates": []
@@ -119,39 +112,39 @@
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-10-06T06:19:44.774Z\",\"boostedAt\":\"2026-10-06T06:19:44.773Z\",\"region\":{\"name\":\"가포동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-06T06:13:11.096Z\",\"boostedAt\":\"2026-10-06T06:13:11.096Z\",\"region\":{\"name\":\"심곡동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-06T06:42:25.643Z\",\"boostedAt\":\"2026-10-06T06:42:25.641Z\",\"region\":{\"name\":\"신광면\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-06T06:38:20.428Z\",\"boostedAt\":\"2026-10-06T06:38:20.425Z\",\"region\":{\"name\":\"구서동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-06T06:01:47.431Z\",\"boostedAt\":\"2026-10-06T06:01:47.431Z\",\"region\":{\"name\":\"금정동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-06T05:31:18.357Z\",\"boostedAt\":\"2026-10-06T05:31:18.350Z\",\"region\":{\"name\":\"비산1동\"},\"category\":null,\"tradingCoo",
-          "createdAt\":\"2026-10-06T06:05:22.740Z\",\"boostedAt\":\"2026-10-06T06:05:22.739Z\",\"region\":{\"name\":\"월계동\"},\"category\":null,\"tradingCoor"
+          "createdAt\":\"2026-10-06T05:24:20.634Z\",\"boostedAt\":\"2026-10-06T05:24:20.632Z\",\"region\":{\"name\":\"건건동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-06T06:19:44.774Z\",\"boostedAt\":\"2026-10-06T06:19:44.773Z\",\"region\":{\"name\":\"가포동\"},\"category\":null,\"tradingCoor"
         ],
         "scriptHeads": [
           "window.sentryEnv = {\n  release: \"75c6cc0\",\n  environment: \"prod-kr\"\n};",
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":272,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 노트북 15.6인치\",\"description\":\"",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":273,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 노트북 NT500R5K-K555 블랙\",\"desc",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-4ed31242.js\";\nimport * as route0 from \"/_remix/root-P4ns_lso.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-3lwXWrYq.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 1226,
-    "globalUniqueListings": 447,
-    "duplicateListingsRemoved": 779,
-    "detailQueueStart": 18,
-    "freshDetailTasks": 18,
+    "searchUniqueListings": 1155,
+    "globalUniqueListings": 440,
+    "duplicateListingsRemoved": 715,
+    "detailQueueStart": 6,
+    "freshDetailTasks": 6,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 18,
-    "detailSucceeded": 17,
-    "detailFailed": 1,
-    "detail404": 1,
+    "detailRequestsExecuted": 6,
+    "detailSucceeded": 6,
+    "detailFailed": 0,
+    "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 447,
+    "postedAtResolvedFromSearch": 440,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 100256,
+    "scanDurationMs": 86695,
     "cities": [
       {
         "city": "군포시",
@@ -163,8 +156,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 283,
-        "durationMs": 12193
+        "uniqueListings": 284,
+        "durationMs": 12233
       },
       {
         "city": "의왕시",
@@ -179,8 +172,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 353,
-        "durationMs": 25550
+        "uniqueListings": 358,
+        "durationMs": 25694
       },
       {
         "city": "안양시",
@@ -198,7 +191,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 336,
-        "durationMs": 35024
+        "durationMs": 35108
       },
       {
         "city": "과천시",
@@ -209,17 +202,17 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 254,
-        "durationMs": 6428
+        "uniqueListings": 177,
+        "durationMs": 6982
       }
     ],
     "finalCandidateCount": 0,
-    "stateItemCount": 2696,
+    "stateItemCount": 2708,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 100259
+    "durationMs": 86698
   },
   "candidates": []
 }
