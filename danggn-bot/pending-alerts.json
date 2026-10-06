@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-06T07:24:41.823520Z",
+  "updatedAt": "2026-10-06T07:39:47.514037Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -826,6 +826,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/asus-zenbook-14-ux3407qa-sb284w-%EB%85%B8%ED%8A%B8%EB%B6%81-qc42g15oc3t4/",
       "firstAlertedAt": "2026-10-06T07:23:02.060514Z",
       "lastCandidateAt": "2026-10-06T07:23:02.060514Z"
+    },
+    "7skagjk4umx6": {
+      "id": "7skagjk4umx6",
+      "title": "삼성 갤럭시북2 프로 360 15인치 풀박스 판매합니다.",
+      "price": 750000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "부림동",
+      "cpuHint": "I7-1260P",
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "메모리 16G",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-06T07:31:51.045Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%812-%ED%94%84%EB%A1%9C-360-15%EC%9D%B8%EC%B9%98-%ED%92%80%EB%B0%95%EC%8A%A4-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-7skagjk4umx6/",
+      "firstAlertedAt": "2026-10-06T07:39:47.514037Z",
+      "lastCandidateAt": "2026-10-06T07:39:47.514037Z"
     }
   }
 }
