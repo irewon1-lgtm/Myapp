@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-06T19:00:16.926Z",
+  "generatedAt": "2026-10-06T19:20:42.539Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -115,36 +115,36 @@
           "createdAt\":\"2026-10-06T09:28:27.628Z\",\"boostedAt\":\"2026-10-06T09:28:27.625Z\",\"region\":{\"name\":\"권선동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-06T12:28:27.110Z\",\"boostedAt\":\"2026-10-06T12:28:27.104Z\",\"region\":{\"name\":\"동호동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-09-12T01:06:48.247Z\",\"boostedAt\":\"2026-10-05T06:58:29.633Z\",\"region\":{\"name\":\"평촌동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-04T08:49:15.120Z\",\"boostedAt\":\"2026-10-05T08:49:42.120Z\",\"region\":{\"name\":\"법1동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-06T03:53:45.559Z\",\"boostedAt\":\"2026-10-06T03:53:45.557Z\",\"region\":{\"name\":\"광양읍\"},\"category\":null,\"tradingCoor"
+          "createdAt\":\"2026-10-06T14:00:36.902Z\",\"boostedAt\":\"2026-10-06T14:00:36.900Z\",\"region\":{\"name\":\"금곡동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-06T05:31:18.357Z\",\"boostedAt\":\"2026-10-06T05:31:18.350Z\",\"region\":{\"name\":\"비산1동\"},\"category\":null,\"tradingCoo"
         ],
         "scriptHeads": [
           "window.sentryEnv = {\n  release: \"75c6cc0\",\n  environment: \"prod-kr\"\n};",
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":267,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG  노트북(LG15U34) 15인치 화이트\",\"de",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":266,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG  노트북(LG15U34) 15인치 화이트\",\"de",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-4ed31242.js\";\nimport * as route0 from \"/_remix/root-P4ns_lso.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-3lwXWrYq.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 1160,
-    "globalUniqueListings": 444,
-    "duplicateListingsRemoved": 716,
-    "detailQueueStart": 1,
-    "freshDetailTasks": 1,
+    "searchUniqueListings": 1154,
+    "globalUniqueListings": 439,
+    "duplicateListingsRemoved": 715,
+    "detailQueueStart": 0,
+    "freshDetailTasks": 0,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 1,
-    "detailSucceeded": 1,
+    "detailRequestsExecuted": 0,
+    "detailSucceeded": 0,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 444,
+    "postedAtResolvedFromSearch": 439,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 79829,
+    "scanDurationMs": 78654,
     "cities": [
       {
         "city": "군포시",
@@ -156,8 +156,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 283,
-        "durationMs": 12253
+        "uniqueListings": 285,
+        "durationMs": 11844
       },
       {
         "city": "의왕시",
@@ -172,8 +172,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 356,
-        "durationMs": 25292
+        "uniqueListings": 353,
+        "durationMs": 25416
       },
       {
         "city": "안양시",
@@ -190,8 +190,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 344,
-        "durationMs": 35137
+        "uniqueListings": 339,
+        "durationMs": 34991
       },
       {
         "city": "과천시",
@@ -203,7 +203,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 177,
-        "durationMs": 6318
+        "durationMs": 6338
       }
     ],
     "finalCandidateCount": 0,
@@ -212,7 +212,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 79832
+    "durationMs": 78656
   },
   "candidates": []
 }
