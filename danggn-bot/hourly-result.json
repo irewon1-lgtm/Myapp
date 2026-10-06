@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-06T09:41:04.020Z",
+  "generatedAt": "2026-10-06T09:58:32.177Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,6 +55,28 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-cyozp96febe5/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-cyozp96febe5/",
+            "title": "삼성 노트북 판매합니다",
+            "content": "삼성 노트북 판매합니다. \n\n사양은\n i5-6200U CPU, \n8GB RAM, \n128GB SSD\n13.3인치\n베터리 교체로 효율100%\n키보드도 까진곳없고\n생활기스는 조금있지만 전체적으로깨끗합니다\n\n가볍고 휴대하기 좋아 어디서든 편리하게 사용하실 수 있어요. \n\n직거래 방배동 상문고근처\n택배거래도가능합니다\n",
+            "price": "140000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/6d267385-a289-4652-ae27-7ce60de77c2e.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-06T09:43:35.747Z",
+            "boostedAt": "2026-10-06T09:43:35.745Z",
+            "region": {
+              "name": "서초3동"
+            },
+            "category": null,
+            "tradingCoordinates": [
+              {
+                "latitude": 37.47972178740089,
+                "longitude": 127.00268473818477
+              }
+            ]
+          },
+          {
             "id": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-lg15u34-15%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-5ot7yfd8iegk/",
             "href": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-lg15u34-15%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-5ot7yfd8iegk/",
             "title": "LG  노트북(LG15U34) 15인치 화이트",
@@ -72,84 +94,57 @@
             "tradingCoordinates": []
           },
           {
-            "id": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%94%BD%ED%81%AC%EB%B6%81-%EC%8B%A4%EB%B2%84-16p-rtx3060-r7-5800h-c46983ft8hjv/",
-            "href": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%94%BD%ED%81%AC%EB%B6%81-%EC%8B%A4%EB%B2%84-16p-rtx3060-r7-5800h-c46983ft8hjv/",
-            "title": "레노버 씽크북 실버 16p (RTX3060/R7 5800H)",
-            "content": "\n깔끔하게 사용한 제품이고 실사용 기간은 약 1년 정도입니다\n배터리는 최근 새 배터리로 교체해서 배터리 상태도 좋습니다\n\nCPU: AMD 라이젠 7 5800H\n\nGPU: NVIDIA RTX 3060 6GB\n\nRAM: 16GB\n\nSSD: NVMe 512GB\n\n디스플레이: 16인치 WQXGA 2560×1600 / 400nit / 색재현율 100%\n\n무게: 약 1.9kg\n\nWindows 11\n\nRTX 3060이라 게임이나 그래픽 작업용으로 충분히 사용 가능하고 2560×1600 고해상도 디스플레이라 영상이나 작업용으로도 좋습니다\n\n윈도우 11 최신 업데이트 완료되어 있고 바로 사용하실 수 있습니다\n\n노트북이 본가에 있어서 목요일쯤에 보내드릴 수 있을 것 같습니다",
-            "price": "850000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/f72b8f9e-909d-431d-8dae-94c5eaf41ec0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-06T09:26:01.883Z",
-            "boostedAt": "2026-10-06T09:26:01.880Z",
-            "region": {
-              "name": "아주동"
-            },
-            "category": null,
-            "tradingCoordinates": [
-              {
-                "latitude": 34.86485640868506,
-                "longitude": 128.69382835596093
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-13z940-gx30k-%ED%99%94%EC%9D%B4%ED%8A%B8-pzwe71ibwsk4/",
-            "href": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-13z940-gx30k-%ED%99%94%EC%9D%B4%ED%8A%B8-pzwe71ibwsk4/",
-            "title": "LG 그램 노트북 13Z940-GX30K 화이트",
-            "content": "가볍고 휴대하기 좋은 LG 그램 노트북이에요. 인텔 i3-4005U CPU에요\n\n포멧하고 드릴예정이구요\n윈도우 미포함입니다\n\n아이패드만 사용해서 노트북은 사용을 잘 안하는데 연식은 있습니다",
-            "price": "110000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202609/17891751639227e2715a56ff29b82ad06c11becb91c3530b03bd3c2ad9e50f62a9076012be9240.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%95%84%EC%9D%B4%EB%94%94%EC%96%B4%ED%8C%A8%EB%93%9C-320-15%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-9vvz9g9u9scc/",
+            "href": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%95%84%EC%9D%B4%EB%94%94%EC%96%B4%ED%8C%A8%EB%93%9C-320-15%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-9vvz9g9u9scc/",
+            "title": "레노버 아이디어패드 320 15인치 노트북",
+            "content": "레노버 아이디어패드 320 15인치 노트북입니다. 인텔 코어 i3-6006U CPU가 탑재되어 있으며, \nddr4 4GB RAM과 \n128GB 하이닉스 SSD로 쾌적한 사용이 가능해요. USB-C 포트와\nusb sd카드단자와 고속 와이파이를 지원하여 편리하게 사용할 수 있습니다. \n배터리는 완충시 3시간정도로 나옵니다\n윈10프로와 오피스 21 한글 오피스 24 가 설치되어 있습니다.\n외형상태 깨끝하고 성능또한\n아주 좋습니다.\n사진상 8번처럼 뚜껑열면 뭔지 모르는 것들이 묻어 있습니다.\n깔끔한 디자인으로 어디서든 잘 어울리는 노트북이에요.\n개인간의 중고거래 특성상 반품 환불 불가 합니다.\n직거래 합니다.\n",
+            "price": "75000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/80bb39e6-957d-4f53-b405-13331cb2843a.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": false,
-            "createdAt": "2026-09-12T01:06:48.247Z",
-            "boostedAt": "2026-10-05T06:58:29.633Z",
+            "createdAt": "2026-10-03T00:27:24.840Z",
+            "boostedAt": "2026-10-06T09:45:02.453Z",
             "region": {
-              "name": "평촌동"
+              "name": "율천동"
             },
             "category": null,
-            "tradingCoordinates": [
-              {
-                "latitude": 37.38810367011931,
-                "longitude": 126.96085026628037
-              }
-            ]
+            "tradingCoordinates": []
           }
         ],
         "dateFieldSnippets": [
+          "createdAt\":\"2026-10-06T09:43:35.747Z\",\"boostedAt\":\"2026-10-06T09:43:35.745Z\",\"region\":{\"name\":\"서초3동\"},\"category\":null,\"tradingCoo",
           "createdAt\":\"2026-10-06T09:28:27.628Z\",\"boostedAt\":\"2026-10-06T09:28:27.625Z\",\"region\":{\"name\":\"권선동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-06T09:26:01.883Z\",\"boostedAt\":\"2026-10-06T09:26:01.880Z\",\"region\":{\"name\":\"아주동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-03T00:27:24.840Z\",\"boostedAt\":\"2026-10-06T09:45:02.453Z\",\"region\":{\"name\":\"율천동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-09-12T01:06:48.247Z\",\"boostedAt\":\"2026-10-05T06:58:29.633Z\",\"region\":{\"name\":\"평촌동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-06T09:01:36.283Z\",\"boostedAt\":\"2026-10-06T09:01:36.281Z\",\"region\":{\"name\":\"나운2동\"},\"category\":null,\"tradingCoo",
-          "createdAt\":\"2026-10-06T07:57:14.175Z\",\"boostedAt\":\"2026-10-06T07:57:14.171Z\",\"region\":{\"name\":\"북면\"},\"category\":null,\"tradingCoord"
+          "createdAt\":\"2026-10-06T09:01:36.283Z\",\"boostedAt\":\"2026-10-06T09:01:36.281Z\",\"region\":{\"name\":\"나운2동\"},\"category\":null,\"tradingCoo"
         ],
         "scriptHeads": [
           "window.sentryEnv = {\n  release: \"75c6cc0\",\n  environment: \"prod-kr\"\n};",
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":268,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG  노트북(LG15U34) 15인치 화이트\",\"de",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":268,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 노트북 판매합니다\",\"description\":\"삼",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-4ed31242.js\";\nimport * as route0 from \"/_remix/root-P4ns_lso.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-3lwXWrYq.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 1130,
-    "globalUniqueListings": 429,
-    "duplicateListingsRemoved": 701,
-    "detailQueueStart": 9,
-    "freshDetailTasks": 9,
+    "searchUniqueListings": 1233,
+    "globalUniqueListings": 446,
+    "duplicateListingsRemoved": 787,
+    "detailQueueStart": 6,
+    "freshDetailTasks": 6,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 9,
-    "detailSucceeded": 9,
+    "detailRequestsExecuted": 6,
+    "detailSucceeded": 6,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 429,
+    "postedAtResolvedFromSearch": 446,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 89647,
+    "scanDurationMs": 85949,
     "cities": [
       {
         "city": "군포시",
@@ -161,8 +156,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 282,
-        "durationMs": 12466
+        "uniqueListings": 280,
+        "durationMs": 12161
       },
       {
         "city": "의왕시",
@@ -177,8 +172,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 355,
-        "durationMs": 25522
+        "uniqueListings": 351,
+        "durationMs": 25693
       },
       {
         "city": "안양시",
@@ -195,8 +190,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 316,
-        "durationMs": 34905
+        "uniqueListings": 347,
+        "durationMs": 34973
       },
       {
         "city": "과천시",
@@ -207,17 +202,17 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 177,
-        "durationMs": 6775
+        "uniqueListings": 255,
+        "durationMs": 6360
       }
     ],
     "finalCandidateCount": 0,
-    "stateItemCount": 2765,
+    "stateItemCount": 2771,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 89650
+    "durationMs": 85952
   },
   "candidates": []
 }
