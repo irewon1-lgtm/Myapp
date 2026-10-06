@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-06T11:58:07.773954Z",
+  "updatedAt": "2026-10-06T12:27:30.179805Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -951,6 +951,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%814-i3-16gb-256gb-%ED%8C%90%EB%A7%A4-pkrj8zqup6u9/",
       "firstAlertedAt": "2026-10-06T11:58:07.773954Z",
       "lastCandidateAt": "2026-10-06T11:58:07.773954Z"
+    },
+    "wgrsrhhrxptd": {
+      "id": "wgrsrhhrxptd",
+      "title": "Imation DDR5 16GB 노트북 램 팝니다  6개 보유",
+      "price": 270000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "의왕시",
+      "location": "부곡동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB 램",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-06T12:17:26.039Z",
+      "url": "https://www.daangn.com/kr/buy-sell/imation-ddr5-16gb-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%9E%A8-%ED%8C%9D%EB%8B%88%EB%8B%A4-6%EA%B0%9C-%EB%B3%B4%EC%9C%A0-wgrsrhhrxptd/",
+      "firstAlertedAt": "2026-10-06T12:27:30.179805Z",
+      "lastCandidateAt": "2026-10-06T12:27:30.179805Z"
+    },
+    "cb7a4w93apcw": {
+      "id": "cb7a4w93apcw",
+      "title": "맥북프로 16 M4max 48GB 1TB",
+      "price": 4700000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "호계동",
+      "cpuHint": "M4max",
+      "gpuHint": "M4max",
+      "vramGB": null,
+      "ramGB": 48,
+      "ambiguousMemoryGB": 48,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "48GB RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "48GB",
+      "storageGB": 1024,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "postedAt": "2026-10-06T12:16:01.938Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C-16-m4max-48gb-1tb-cb7a4w93apcw/",
+      "firstAlertedAt": "2026-10-06T12:27:30.179805Z",
+      "lastCandidateAt": "2026-10-06T12:27:30.179805Z"
     }
   }
 }
