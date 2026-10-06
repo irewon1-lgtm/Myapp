@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-06T01:01:58.321933Z",
+  "updatedAt": "2026-10-06T01:21:59.437368Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -626,6 +626,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EC%A0%9C%EB%AA%A9-lg-%EA%B7%B8%EB%9E%A8-ai-16%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-16z90tl-gs5wk-%EB%AF%B8%EA%B0%9C%EB%B4%89-%EC%84%B8%EC%9E%AC%ED%92%88-y53oer874xmx/",
       "firstAlertedAt": "2026-10-06T00:32:17.922853Z",
       "lastCandidateAt": "2026-10-06T00:32:17.922853Z"
+    },
+    "isk4ur6a8pss": {
+      "id": "isk4ur6a8pss",
+      "title": "MSI GF75 Thin 게이밍 노트북",
+      "price": 600000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "석수1동",
+      "cpuHint": "i7-10750H",
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 24,
+      "ambiguousMemoryGB": 24,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "24GB RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "24기가",
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-06T01:09:33.665Z",
+      "url": "https://www.daangn.com/kr/buy-sell/msi-gf75-thin-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-isk4ur6a8pss/",
+      "firstAlertedAt": "2026-10-06T01:21:59.437368Z",
+      "lastCandidateAt": "2026-10-06T01:21:59.437368Z"
     }
   }
 }
