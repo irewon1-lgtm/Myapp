@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-06T03:58:45.652548Z",
+  "updatedAt": "2026-10-06T04:23:31.414821Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -726,6 +726,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-16gb-512gb-5idrxf97b2xy/",
       "firstAlertedAt": "2026-10-06T02:39:29.034349Z",
       "lastCandidateAt": "2026-10-06T02:39:29.034349Z"
+    },
+    "y5261bkpifu7": {
+      "id": "y5261bkpifu7",
+      "title": "LG gram i5 10세대 14인치 16g 238g 팝니다",
+      "price": 450000,
+      "previousPrice": 500000,
+      "changeType": "price_drop",
+      "city": "안양시",
+      "location": "귀인동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16g",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-09-28T01:21:03.674Z",
+      "url": "https://www.daangn.com/kr/buy-sell/lg-gram-i5-10%EC%84%B8%EB%8C%80-14%EC%9D%B8%EC%B9%98-16g-238g-%ED%8C%9D%EB%8B%88%EB%8B%A4-y5261bkpifu7/",
+      "firstAlertedAt": "2026-10-06T04:23:31.414821Z",
+      "lastCandidateAt": "2026-10-06T04:23:31.414821Z"
     }
   }
 }
