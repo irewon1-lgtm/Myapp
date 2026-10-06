@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-06T10:39:40.834424Z",
+  "updatedAt": "2026-10-06T10:58:56.005328Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -876,6 +876,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-16%ED%98%95-i9-16gb-1tb-2019-hxnnisuax1dx/",
       "firstAlertedAt": "2026-10-06T10:23:05.580291Z",
       "lastCandidateAt": "2026-10-06T10:23:05.580291Z"
+    },
+    "ve8mzbysvd8p": {
+      "id": "ve8mzbysvd8p",
+      "title": "[풀박스] Apple MacBook Pro M4 Max 128GB (16-inch)",
+      "price": 8000000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "오금동",
+      "cpuHint": "M4 Max",
+      "gpuHint": "M4 Max",
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 128,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "128GB",
+      "storageGB": 128,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-06T10:44:29.471Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%ED%92%80%EB%B0%95%EC%8A%A4-apple-macbook-pro-m4-max-128gb-16-inch-ve8mzbysvd8p/",
+      "firstAlertedAt": "2026-10-06T10:58:56.005328Z",
+      "lastCandidateAt": "2026-10-06T10:58:56.005328Z"
     }
   }
 }
