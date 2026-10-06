@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-06T22:38:16.689Z",
+  "generatedAt": "2026-10-06T22:55:45.404Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -72,23 +72,6 @@
             "tradingCoordinates": []
           },
           {
-            "id": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-lg15u34-15%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-5ot7yfd8iegk/",
-            "href": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-lg15u34-15%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-5ot7yfd8iegk/",
-            "title": "LG  노트북(LG15U34) 15인치 화이트",
-            "content": "LG 그램 노트북 15인치 화이트 색상입니다. \n인텔 i5 CPU와 8GB RAM, 256GB SSD를 탑재(업그레이드)하고 있습니다. \n윈도우 10이 설치되어 있어 바로 사용 가능해요. 가볍고 성능 좋은 노트북을 찾으신다면 만족하실 거예요.",
-            "price": "150000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/9448f42f-8084-48c7-ac1a-8e6dd1eeb507.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-06T09:28:27.628Z",
-            "boostedAt": "2026-10-06T09:28:27.625Z",
-            "region": {
-              "name": "권선동"
-            },
-            "category": null,
-            "tradingCoordinates": []
-          },
-          {
             "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-13z940-gx30k-%ED%99%94%EC%9D%B4%ED%8A%B8-pzwe71ibwsk4/",
             "href": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-13z940-gx30k-%ED%99%94%EC%9D%B4%ED%8A%B8-pzwe71ibwsk4/",
             "title": "LG 그램 노트북 13Z940-GX30K 화이트",
@@ -109,32 +92,49 @@
                 "longitude": 126.96085026628037
               }
             ]
+          },
+          {
+            "id": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-lg15u34-15%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-5ot7yfd8iegk/",
+            "href": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-lg15u34-15%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-5ot7yfd8iegk/",
+            "title": "LG  노트북(LG15U34) 15인치 화이트",
+            "content": "LG 그램 노트북 15인치 화이트 색상입니다. \n인텔 i5 CPU와 8GB RAM, 256GB SSD를 탑재(업그레이드)하고 있습니다. \n윈도우 10이 설치되어 있어 바로 사용 가능해요. 가볍고 성능 좋은 노트북을 찾으신다면 만족하실 거예요.",
+            "price": "150000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/9448f42f-8084-48c7-ac1a-8e6dd1eeb507.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-06T09:28:27.628Z",
+            "boostedAt": "2026-10-06T09:28:27.625Z",
+            "region": {
+              "name": "권선동"
+            },
+            "category": null,
+            "tradingCoordinates": []
           }
         ],
         "dateFieldSnippets": [
           "createdAt\":\"2026-10-06T22:34:39.149Z\",\"boostedAt\":\"2026-10-06T22:34:39.144Z\",\"region\":{\"name\":\"내덕1동\"},\"category\":null,\"tradingCoo",
-          "createdAt\":\"2026-10-06T09:28:27.628Z\",\"boostedAt\":\"2026-10-06T09:28:27.625Z\",\"region\":{\"name\":\"권선동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-09-12T01:06:48.247Z\",\"boostedAt\":\"2026-10-05T06:58:29.633Z\",\"region\":{\"name\":\"평촌동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-06T09:28:27.628Z\",\"boostedAt\":\"2026-10-06T09:28:27.625Z\",\"region\":{\"name\":\"권선동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-06T22:19:57.775Z\",\"boostedAt\":\"2026-10-06T22:19:57.775Z\",\"region\":{\"name\":\"양산동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-09-22T14:00:56.583Z\",\"boostedAt\":\"2026-10-06T21:45:05.490Z\",\"region\":{\"name\":\"아라동\"},\"category\":null,\"tradingCoor"
+          "createdAt\":\"2026-10-06T05:31:18.357Z\",\"boostedAt\":\"2026-10-06T05:31:18.350Z\",\"region\":{\"name\":\"비산1동\"},\"category\":null,\"tradingCoo"
         ],
         "scriptHeads": [
           "window.sentryEnv = {\n  release: \"75c6cc0\",\n  environment: \"prod-kr\"\n};",
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":266,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 17인치 노트북 NT300E5C-A28L\",\"de",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":264,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 17인치 노트북 NT300E5C-A28L\",\"de",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-4ed31242.js\";\nimport * as route0 from \"/_remix/root-P4ns_lso.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-3lwXWrYq.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 1236,
+    "searchUniqueListings": 1156,
     "globalUniqueListings": 444,
-    "duplicateListingsRemoved": 792,
-    "detailQueueStart": 1,
-    "freshDetailTasks": 1,
+    "duplicateListingsRemoved": 712,
+    "detailQueueStart": 2,
+    "freshDetailTasks": 2,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 1,
-    "detailSucceeded": 1,
+    "detailRequestsExecuted": 2,
+    "detailSucceeded": 2,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
@@ -144,7 +144,7 @@
     "postedAtResolvedFromSearch": 444,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 80382,
+    "scanDurationMs": 82001,
     "cities": [
       {
         "city": "군포시",
@@ -156,8 +156,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 285,
-        "durationMs": 12371
+        "uniqueListings": 284,
+        "durationMs": 12124
       },
       {
         "city": "의왕시",
@@ -172,8 +172,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 351,
-        "durationMs": 25837
+        "uniqueListings": 348,
+        "durationMs": 25731
       },
       {
         "city": "안양시",
@@ -190,8 +190,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 344,
-        "durationMs": 35317
+        "uniqueListings": 347,
+        "durationMs": 35717
       },
       {
         "city": "과천시",
@@ -202,17 +202,17 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 256,
-        "durationMs": 6495
+        "uniqueListings": 177,
+        "durationMs": 6447
       }
     ],
     "finalCandidateCount": 0,
-    "stateItemCount": 2921,
+    "stateItemCount": 2923,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 80385
+    "durationMs": 82005
   },
   "candidates": []
 }
