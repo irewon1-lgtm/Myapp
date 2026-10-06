@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-06T08:24:32.808Z",
+  "generatedAt": "2026-10-06T08:40:55.571Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -53,35 +53,103 @@
       },
       "htmlSample": {
         "embeddedArticles": false,
-        "remixArticleSamples": [],
-        "dateFieldSnippets": [],
+        "remixArticleSamples": [
+          {
+            "id": "/kr/buy-sell/lionine-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-rtx-3070-tiibgy37d1rh/",
+            "href": "/kr/buy-sell/lionine-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-rtx-3070-tiibgy37d1rh/",
+            "title": "LIONINE 게이밍 노트북 RTX 3070",
+            "content": "고성능 LIONINE 게이밍 노트북을 만나보세요. AMD Ryzen 7 5800H 프로세서와 NVIDIA GeForce RTX 3070 그래픽 카드가 탑재되어 쾌적한 게이밍 환경을 제공해요. 16GB RAM과 466GB SSD로 넉넉한 저장 공간과 빠른 속도를 자랑합니다. 고사양 게임도 문제없이 즐길 수 있는 매력적인 노트북이에요.\n문의사항 010 4사77 삼803 감사합니다 ",
+            "price": "900000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202609/902fd948-c807-41c9-b5c4-5b0421b550f0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-09-30T08:27:49.492Z",
+            "boostedAt": "2026-10-06T08:19:33.251Z",
+            "region": {
+              "name": "의령읍"
+            },
+            "category": null,
+            "tradingCoordinates": []
+          },
+          {
+            "id": "/kr/buy-sell/asus-rog-flow-z13-%EB%85%B8%ED%8A%B8%EB%B6%81-1gjyhnf1gnrb/",
+            "href": "/kr/buy-sell/asus-rog-flow-z13-%EB%85%B8%ED%8A%B8%EB%B6%81-1gjyhnf1gnrb/",
+            "title": "ASUS ROG Flow Z13 노트북",
+            "content": "ASUS ROG Flow Z13 게이밍 노트북\n\n- CPU 인텔 i7 - 12700H 프로세서\n- 그래픽카드 RTX 3050 \n- RAM  16 ( GB )\n- ROM  512  ( GB )\n- 윈도우  11\n\n- 본기기 + 키보드 케이스 + 아답터 ( 충전기 ) + 보호가방\n\n단점 - 케이스 생활 흠집 있고 , 키보드케이스 작은구멍\n           있습니다  - 사진  ( 5, 6번 )  작동무관 !!!",
+            "price": "990000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202609/71ae6748cfa0f26c09fc40e4a0c9c91d6f0b6a4309012b22ba48a013e893531d_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-09-10T04:53:48.353Z",
+            "boostedAt": "2026-10-06T08:30:09.486Z",
+            "region": {
+              "name": "부곡동"
+            },
+            "category": null,
+            "tradingCoordinates": [
+              {
+                "latitude": 37.33583322169902,
+                "longitude": 126.86335131525993
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-13z940-gx30k-%ED%99%94%EC%9D%B4%ED%8A%B8-pzwe71ibwsk4/",
+            "href": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-13z940-gx30k-%ED%99%94%EC%9D%B4%ED%8A%B8-pzwe71ibwsk4/",
+            "title": "LG 그램 노트북 13Z940-GX30K 화이트",
+            "content": "가볍고 휴대하기 좋은 LG 그램 노트북이에요. 인텔 i3-4005U CPU에요\n\n포멧하고 드릴예정이구요\n윈도우 미포함입니다\n\n아이패드만 사용해서 노트북은 사용을 잘 안하는데 연식은 있습니다",
+            "price": "110000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202609/17891751639227e2715a56ff29b82ad06c11becb91c3530b03bd3c2ad9e50f62a9076012be9240.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-09-12T01:06:48.247Z",
+            "boostedAt": "2026-10-05T06:58:29.633Z",
+            "region": {
+              "name": "평촌동"
+            },
+            "category": null,
+            "tradingCoordinates": [
+              {
+                "latitude": 37.38810367011931,
+                "longitude": 126.96085026628037
+              }
+            ]
+          }
+        ],
+        "dateFieldSnippets": [
+          "createdAt\":\"2026-09-30T08:27:49.492Z\",\"boostedAt\":\"2026-10-06T08:19:33.251Z\",\"region\":{\"name\":\"의령읍\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-09-10T04:53:48.353Z\",\"boostedAt\":\"2026-10-06T08:30:09.486Z\",\"region\":{\"name\":\"부곡동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-09-12T01:06:48.247Z\",\"boostedAt\":\"2026-10-05T06:58:29.633Z\",\"region\":{\"name\":\"평촌동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-06T05:31:18.357Z\",\"boostedAt\":\"2026-10-06T05:31:18.350Z\",\"region\":{\"name\":\"비산1동\"},\"category\":null,\"tradingCoo",
+          "createdAt\":\"2026-10-06T08:23:32.317Z\",\"boostedAt\":\"2026-10-06T08:23:32.310Z\",\"region\":{\"name\":\"송도2동\"},\"category\":null,\"tradingCoo"
+        ],
         "scriptHeads": [
-          "\n    (function(window, document, mode) {\n      try {\n        document.documentElement.dataset.seed = '';\n        document.documentElement.dataset.seedColorMode = mode;\n      } catch (e) {}\n\n      try {\n        var prefer",
           "window.sentryEnv = {\n  release: \"75c6cc0\",\n  environment: \"prod-kr\"\n};",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":270,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LIONINE 게이밍 노트북 RTX 3070\",\"des",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-4ed31242.js\";\nimport * as route0 from \"/_remix/root-P4ns_lso.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-3lwXWrYq.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 1175,
-    "globalUniqueListings": 438,
-    "duplicateListingsRemoved": 737,
-    "detailQueueStart": 16,
-    "freshDetailTasks": 16,
+    "searchUniqueListings": 1003,
+    "globalUniqueListings": 400,
+    "duplicateListingsRemoved": 603,
+    "detailQueueStart": 3,
+    "freshDetailTasks": 3,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 16,
-    "detailSucceeded": 16,
+    "detailRequestsExecuted": 3,
+    "detailSucceeded": 3,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 438,
+    "postedAtResolvedFromSearch": 400,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 99437,
+    "scanDurationMs": 83347,
     "cities": [
       {
         "city": "군포시",
@@ -93,8 +161,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 263,
-        "durationMs": 12486
+        "uniqueListings": 280,
+        "durationMs": 12625
       },
       {
         "city": "의왕시",
@@ -109,8 +177,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 356,
-        "durationMs": 25867
+        "uniqueListings": 326,
+        "durationMs": 25898
       },
       {
         "city": "안양시",
@@ -127,8 +195,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 301,
-        "durationMs": 35486
+        "uniqueListings": 220,
+        "durationMs": 35210
       },
       {
         "city": "과천시",
@@ -139,17 +207,17 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 255,
-        "durationMs": 6485
+        "uniqueListings": 177,
+        "durationMs": 6473
       }
     ],
     "finalCandidateCount": 0,
-    "stateItemCount": 2744,
+    "stateItemCount": 2745,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 99440
+    "durationMs": 83351
   },
   "candidates": []
 }
