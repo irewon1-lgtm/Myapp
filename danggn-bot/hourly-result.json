@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-06T07:58:30.157Z",
+  "generatedAt": "2026-10-06T08:24:32.808Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -53,103 +53,35 @@
       },
       "htmlSample": {
         "embeddedArticles": false,
-        "remixArticleSamples": [
-          {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-9-%EB%A9%94%ED%83%88-1-29kg-mep4zmrj38wq/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-9-%EB%A9%94%ED%83%88-1-29kg-mep4zmrj38wq/",
-            "title": "삼성 노트북 9 메탈 1.29kg",
-            "content": "NT900X5L-L38L\n@ CPU : 인텔 i3-6006U\n@ RAM : 8GB \n@ SSD :  256GB \n@ 15인치\n@ C타입 지원\n\n작동 잘 합니다\n상태는 사진과 같습니다 \n한글 엑셀 파워포인트 깔려 있습니다 \n충전기 드려요\n가까운곳.  가져다 드립니다^^\n바로 구매시 포장 잘 해서 보내드리겠습니다 \n ",
-            "price": "160000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/c99f5a70-e47c-4a5c-94f0-923cc70abaf9.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-06T07:47:23.971Z",
-            "boostedAt": "2026-10-06T07:47:23.966Z",
-            "region": {
-              "name": "둔산1동"
-            },
-            "category": null,
-            "tradingCoordinates": []
-          },
-          {
-            "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-13z940-gx30k-%ED%99%94%EC%9D%B4%ED%8A%B8-pzwe71ibwsk4/",
-            "href": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-13z940-gx30k-%ED%99%94%EC%9D%B4%ED%8A%B8-pzwe71ibwsk4/",
-            "title": "LG 그램 노트북 13Z940-GX30K 화이트",
-            "content": "가볍고 휴대하기 좋은 LG 그램 노트북이에요. 인텔 i3-4005U CPU에요\n\n포멧하고 드릴예정이구요\n윈도우 미포함입니다\n\n아이패드만 사용해서 노트북은 사용을 잘 안하는데 연식은 있습니다",
-            "price": "110000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202609/17891751639227e2715a56ff29b82ad06c11becb91c3530b03bd3c2ad9e50f62a9076012be9240.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": false,
-            "createdAt": "2026-09-12T01:06:48.247Z",
-            "boostedAt": "2026-10-05T06:58:29.633Z",
-            "region": {
-              "name": "평촌동"
-            },
-            "category": null,
-            "tradingCoordinates": [
-              {
-                "latitude": 37.38810367011931,
-                "longitude": 126.96085026628037
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-15-6%EC%9D%B8%EC%B9%98-p3jc1qttx32y/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-15-6%EC%9D%B8%EC%B9%98-p3jc1qttx32y/",
-            "title": "삼성 노트북 15.6인치",
-            "content": "삼성 노트북 15.6인치 모델입니다. 인텔 코어 i5 프로세서와 4GB 메모리가 탑재되어 있어 문서 작업 및 웹 서핑에 충분한 성능을 제공해요. 윈도우 7이 설치되어 있어 바로 사용 가능합니다. 깔끔한 디자인으로 어디서든 사용하기 좋아요.",
-            "price": "45000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/6dbeeaa1-7681-4dbf-b9a9-99e18aca9f32.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": false,
-            "createdAt": "2026-10-06T05:24:20.634Z",
-            "boostedAt": "2026-10-06T05:24:20.632Z",
-            "region": {
-              "name": "건건동"
-            },
-            "category": null,
-            "tradingCoordinates": [
-              {
-                "latitude": 37.31034617760018,
-                "longitude": 126.90590670001814
-              }
-            ]
-          }
-        ],
-        "dateFieldSnippets": [
-          "createdAt\":\"2026-10-06T07:47:23.971Z\",\"boostedAt\":\"2026-10-06T07:47:23.966Z\",\"region\":{\"name\":\"둔산1동\"},\"category\":null,\"tradingCoo",
-          "createdAt\":\"2026-09-12T01:06:48.247Z\",\"boostedAt\":\"2026-10-05T06:58:29.633Z\",\"region\":{\"name\":\"평촌동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-06T05:24:20.634Z\",\"boostedAt\":\"2026-10-06T05:24:20.632Z\",\"region\":{\"name\":\"건건동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-06T07:52:28.785Z\",\"boostedAt\":\"2026-10-06T07:52:28.779Z\",\"region\":{\"name\":\"도산동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-06T07:40:54.752Z\",\"boostedAt\":\"2026-10-06T07:40:54.746Z\",\"region\":{\"name\":\"백석읍\"},\"category\":null,\"tradingCoor"
-        ],
+        "remixArticleSamples": [],
+        "dateFieldSnippets": [],
         "scriptHeads": [
+          "\n    (function(window, document, mode) {\n      try {\n        document.documentElement.dataset.seed = '';\n        document.documentElement.dataset.seedColorMode = mode;\n      } catch (e) {}\n\n      try {\n        var prefer",
           "window.sentryEnv = {\n  release: \"75c6cc0\",\n  environment: \"prod-kr\"\n};",
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":270,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 노트북 9 메탈 1.29kg\",\"descripti",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-4ed31242.js\";\nimport * as route0 from \"/_remix/root-P4ns_lso.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-3lwXWrYq.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 1191,
-    "globalUniqueListings": 423,
-    "duplicateListingsRemoved": 768,
-    "detailQueueStart": 10,
-    "freshDetailTasks": 10,
+    "searchUniqueListings": 1175,
+    "globalUniqueListings": 438,
+    "duplicateListingsRemoved": 737,
+    "detailQueueStart": 16,
+    "freshDetailTasks": 16,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 10,
-    "detailSucceeded": 10,
+    "detailRequestsExecuted": 16,
+    "detailSucceeded": 16,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 423,
+    "postedAtResolvedFromSearch": 438,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 90591,
+    "scanDurationMs": 99437,
     "cities": [
       {
         "city": "군포시",
@@ -161,8 +93,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 282,
-        "durationMs": 12246
+        "uniqueListings": 263,
+        "durationMs": 12486
       },
       {
         "city": "의왕시",
@@ -177,8 +109,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 336,
-        "durationMs": 25548
+        "uniqueListings": 356,
+        "durationMs": 25867
       },
       {
         "city": "안양시",
@@ -195,8 +127,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 318,
-        "durationMs": 35087
+        "uniqueListings": 301,
+        "durationMs": 35486
       },
       {
         "city": "과천시",
@@ -208,16 +140,16 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 255,
-        "durationMs": 6260
+        "durationMs": 6485
       }
     ],
     "finalCandidateCount": 0,
-    "stateItemCount": 2734,
+    "stateItemCount": 2744,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 90594
+    "durationMs": 99440
   },
   "candidates": []
 }
