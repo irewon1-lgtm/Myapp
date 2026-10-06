@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-06T16:24:53.693Z",
+  "generatedAt": "2026-10-06T16:42:24.346Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -94,34 +94,29 @@
             ]
           },
           {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1%EB%85%B8%ED%8A%B8%EB%B6%81-i5-3230m-ssd-128gb-ram-8gb-radeon-8750m-2gb-16w4afqsv3h9/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1%EB%85%B8%ED%8A%B8%EB%B6%81-i5-3230m-ssd-128gb-ram-8gb-radeon-8750m-2gb-16w4afqsv3h9/",
-            "title": "삼성노트북 i5-3230M, SSD 128GB, RAM 8GB, RADEON 8750M 2GB",
-            "content": "모델명 : NT370R5E-S68\n\nCPU : i5-3230M 2.6GHz\n\n그래픽 :  15.6인치 HD RADEON 8750M 2GB GDDR3 / Intel HD 4000\n\nSSD : 128GB\n\nRAM : DDR3L 8GB \n\n윈도우 11 홈 인증\n\n정품 아답터 포함\n\n배터리 : 배터리 리포트상 29,640/43,092  약 69% 효율성가짐\n \n우측 하단 모서리가 약깐 깨졌습니다.\n\n중고 인점 감안해주세요. ",
-            "price": "90000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/86d72eb8-3f6d-4cfc-bc2d-8be4ec1265ca.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/hp-%EB%85%B8%ED%8A%B8%EB%B6%81-14%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-5q5yqptxbq7j/",
+            "href": "/kr/buy-sell/hp-%EB%85%B8%ED%8A%B8%EB%B6%81-14%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-5q5yqptxbq7j/",
+            "title": "HP 노트북 14인치 화이트",
+            "content": "깔끔한 화이트 색상의 HP 노트북이에요. 14인치 화면으로 휴대하기 좋고, 일상적인 작업에 충분한 성능을 갖추고 있어요. 사진에서 보이는 구성품 그대로 보내드려요. 새 제품 가격보다 훨씬 저렴하게 만나보세요!",
+            "price": "150000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/968a405d-677a-48e8-871d-712ac167f631.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-06T16:19:16.486Z",
-            "boostedAt": "2026-10-06T16:19:16.486Z",
+            "createdAt": "2026-10-06T15:53:21.627Z",
+            "boostedAt": "2026-10-06T15:53:21.625Z",
             "region": {
-              "name": "상도동"
+              "name": "웅천동"
             },
             "category": null,
-            "tradingCoordinates": [
-              {
-                "latitude": 37.49695034899146,
-                "longitude": 126.95135162922361
-              }
-            ]
+            "tradingCoordinates": []
           }
         ],
         "dateFieldSnippets": [
           "createdAt\":\"2026-10-06T16:13:46.568Z\",\"boostedAt\":\"2026-10-06T16:13:46.568Z\",\"region\":{\"name\":\"진량읍\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-09-12T01:06:48.247Z\",\"boostedAt\":\"2026-10-05T06:58:29.633Z\",\"region\":{\"name\":\"평촌동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-06T16:19:16.486Z\",\"boostedAt\":\"2026-10-06T16:19:16.486Z\",\"region\":{\"name\":\"상도동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-06T15:53:21.627Z\",\"boostedAt\":\"2026-10-06T15:53:21.625Z\",\"region\":{\"name\":\"웅천동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-06T05:31:18.357Z\",\"boostedAt\":\"2026-10-06T05:31:18.350Z\",\"region\":{\"name\":\"비산1동\"},\"category\":null,\"tradingCoo"
+          "createdAt\":\"2026-10-06T05:31:18.357Z\",\"boostedAt\":\"2026-10-06T05:31:18.350Z\",\"region\":{\"name\":\"비산1동\"},\"category\":null,\"tradingCoo",
+          "createdAt\":\"2026-09-04T07:27:50.760Z\",\"boostedAt\":\"2026-10-05T22:41:33.486Z\",\"region\":{\"name\":\"정자1동\"},\"category\":null,\"tradingCoo"
         ],
         "scriptHeads": [
           "window.sentryEnv = {\n  release: \"75c6cc0\",\n  environment: \"prod-kr\"\n};",
@@ -132,24 +127,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1224,
-    "globalUniqueListings": 444,
-    "duplicateListingsRemoved": 780,
-    "detailQueueStart": 5,
-    "freshDetailTasks": 5,
+    "searchUniqueListings": 1228,
+    "globalUniqueListings": 441,
+    "duplicateListingsRemoved": 787,
+    "detailQueueStart": 0,
+    "freshDetailTasks": 0,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 5,
-    "detailSucceeded": 5,
+    "detailRequestsExecuted": 0,
+    "detailSucceeded": 0,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 444,
+    "postedAtResolvedFromSearch": 441,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 84800,
+    "scanDurationMs": 79404,
     "cities": [
       {
         "city": "군포시",
@@ -161,8 +156,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 281,
-        "durationMs": 12087
+        "uniqueListings": 283,
+        "durationMs": 12349
       },
       {
         "city": "의왕시",
@@ -177,8 +172,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 354,
-        "durationMs": 25605
+        "uniqueListings": 356,
+        "durationMs": 25271
       },
       {
         "city": "안양시",
@@ -195,8 +190,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 335,
-        "durationMs": 34954
+        "uniqueListings": 334,
+        "durationMs": 35179
       },
       {
         "city": "과천시",
@@ -207,17 +202,17 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 254,
-        "durationMs": 6244
+        "uniqueListings": 255,
+        "durationMs": 6498
       }
     ],
     "finalCandidateCount": 0,
-    "stateItemCount": 2902,
+    "stateItemCount": 2903,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 84803
+    "durationMs": 79407
   },
   "candidates": []
 }
