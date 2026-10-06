@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-05T23:53:58.782899Z",
+  "updatedAt": "2026-10-06T00:32:17.922853Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -576,6 +576,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/hp-omen-15-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-aziqrb1mcxkc/",
       "firstAlertedAt": "2026-10-05T23:19:24.037692Z",
       "lastCandidateAt": "2026-10-05T23:19:24.037692Z"
+    },
+    "5dao9n5dyzcm": {
+      "id": "5dao9n5dyzcm",
+      "title": "HP 엘리트북 13인치 인텔10세대 깨끗한 노트북  판매합니다",
+      "price": 340000,
+      "previousPrice": 350000,
+      "changeType": "price_drop",
+      "city": "안양시",
+      "location": "석수동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": 256,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-09-30T23:12:30.521Z",
+      "url": "https://www.daangn.com/kr/buy-sell/hp-%EC%97%98%EB%A6%AC%ED%8A%B8%EB%B6%81-13%EC%9D%B8%EC%B9%98-%EC%9D%B8%ED%85%9410%EC%84%B8%EB%8C%80-%EA%B9%A8%EB%81%97%ED%95%9C-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-5dao9n5dyzcm/",
+      "firstAlertedAt": "2026-10-06T00:32:17.922853Z",
+      "lastCandidateAt": "2026-10-06T00:32:17.922853Z"
+    },
+    "y53oer874xmx": {
+      "id": "y53oer874xmx",
+      "title": "제목 : LG 그램 AI 16인치 노트북 16Z90TL-GS5WK (미개봉 세재품)",
+      "price": 1900000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "충훈동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16 메모리",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-06T00:07:39.807Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%A0%9C%EB%AA%A9-lg-%EA%B7%B8%EB%9E%A8-ai-16%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-16z90tl-gs5wk-%EB%AF%B8%EA%B0%9C%EB%B4%89-%EC%84%B8%EC%9E%AC%ED%92%88-y53oer874xmx/",
+      "firstAlertedAt": "2026-10-06T00:32:17.922853Z",
+      "lastCandidateAt": "2026-10-06T00:32:17.922853Z"
     }
   }
 }
