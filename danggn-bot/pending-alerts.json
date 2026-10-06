@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-06T06:50:01.150543Z",
+  "updatedAt": "2026-10-06T07:23:02.060514Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -776,6 +776,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-16%EC%9D%B8%EC%B9%98-m1-max-32gb-1tb-%EC%8A%A4%ED%8E%98%EC%9D%B4%EC%8A%A4-%EA%B7%B8%EB%A0%88%EC%9D%B4-jz8dc3zv5bf2/",
       "firstAlertedAt": "2026-10-06T05:57:22.395076Z",
       "lastCandidateAt": "2026-10-06T05:57:22.395076Z"
+    },
+    "t6k7u1u8vreh": {
+      "id": "t6k7u1u8vreh",
+      "title": "서피스 랩탑 스튜디오1 i7,32gb,3050ti,ssd1tb",
+      "price": 1400000,
+      "previousPrice": 1500000,
+      "changeType": "price_drop",
+      "city": "군포시",
+      "location": "금정동",
+      "cpuHint": null,
+      "gpuHint": "rtx3050ti",
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 32,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": ",32gb",
+      "storageGB": 1024,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-09-15T16:02:28.842Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%84%9C%ED%94%BC%EC%8A%A4-%EB%9E%A9%ED%83%91-%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A41-i7-32gb-3050ti-ssd1tb-t6k7u1u8vreh/",
+      "firstAlertedAt": "2026-10-06T07:23:02.060514Z",
+      "lastCandidateAt": "2026-10-06T07:23:02.060514Z"
+    },
+    "qc42g15oc3t4": {
+      "id": "qc42g15oc3t4",
+      "title": "ASUS Zenbook 14 UX3407QA-SB284W 노트북",
+      "price": 810000,
+      "previousPrice": 855000,
+      "changeType": "price_drop",
+      "city": "안양시",
+      "location": "명학동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "RAM 16GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-09-10T21:08:09.116Z",
+      "url": "https://www.daangn.com/kr/buy-sell/asus-zenbook-14-ux3407qa-sb284w-%EB%85%B8%ED%8A%B8%EB%B6%81-qc42g15oc3t4/",
+      "firstAlertedAt": "2026-10-06T07:23:02.060514Z",
+      "lastCandidateAt": "2026-10-06T07:23:02.060514Z"
     }
   }
 }
