@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-06T23:18:47.341Z",
+  "updatedAt": "2026-10-06T23:36:28.491Z",
   "items": {
     "ovdfrz3uxooc": {
       "id": "ovdfrz3uxooc",
@@ -14,7 +14,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "sourceCities": [
         "의왕시",
@@ -53,7 +53,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "sourceCities": [
         "의왕시"
@@ -86,7 +86,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceCities": [
         "군포시",
@@ -97,9 +97,6 @@
       "sourceRegion": [
         "당정동-4459",
         "산본2동-1635",
-        "내손동-4731",
-        "고천동-1644",
-        "오전동-1646",
         "청계동-1649",
         "갈산동-1406",
         "원문동-4433"
@@ -128,7 +125,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceCities": [
         "군포시",
@@ -177,7 +174,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceCities": [
         "군포시",
@@ -226,7 +223,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceCities": [
         "군포시",
@@ -275,7 +272,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "안양시",
       "sourceCities": [
         "안양시"
@@ -307,7 +304,7 @@
       "newnessDetailAttempted": true,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceCities": [
         "군포시",
@@ -363,7 +360,7 @@
       "newnessDetailAttempted": true,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "detailLastAttemptAt": "2026-10-05T14:05:07.486Z",
       "newnessProbeSkipped": false,
@@ -383,10 +380,7 @@
         "갈산동-1406",
         "관양1동-1395",
         "비산1동-1390",
-        "석수1동-1384",
-        "호계동-4640",
-        "평촌동-1398",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "attempts": 0,
       "nextEligibleAt": 0,
@@ -418,7 +412,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceCities": [
         "군포시",
@@ -467,7 +461,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "안양시",
       "sourceCities": [
         "안양시"
@@ -500,7 +494,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceCities": [
         "군포시",
@@ -518,10 +512,7 @@
         "갈산동-1406",
         "관양1동-1395",
         "비산1동-1390",
-        "석수1동-1384",
-        "호계동-4640",
-        "평촌동-1398",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "sourceQuery": [
         "노트북"
@@ -547,7 +538,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceCities": [
         "군포시",
@@ -557,7 +548,6 @@
       "sourceRegion": [
         "당정동-4459",
         "산본2동-1635",
-        "내손동-4731",
         "포일동-4244",
         "고천동-1644",
         "오전동-1646",
@@ -591,7 +581,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceCities": [
         "군포시",
@@ -628,7 +618,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceCities": [
         "군포시",
@@ -678,7 +668,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceCities": [
         "군포시",
@@ -727,7 +717,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceCities": [
         "군포시",
@@ -776,7 +766,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "과천시",
       "sourceCities": [
         "과천시"
@@ -809,7 +799,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "당정동-4459",
@@ -822,10 +812,7 @@
         "갈산동-1406",
         "관양1동-1395",
         "비산1동-1390",
-        "석수1동-1384",
-        "호계동-4640",
-        "평촌동-1398",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "sourceCities": [
         "군포시",
@@ -856,7 +843,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "당정동-4459",
@@ -869,10 +856,7 @@
         "갈산동-1406",
         "관양1동-1395",
         "비산1동-1390",
-        "석수1동-1384",
-        "호계동-4640",
-        "평촌동-1398",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "sourceCities": [
         "군포시",
@@ -903,7 +887,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "sourceCities": [
         "의왕시"
@@ -929,7 +913,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceCities": [
         "군포시",
@@ -979,7 +963,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceCities": [
         "군포시",
@@ -1018,7 +1002,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceCities": [
         "군포시",
@@ -1061,7 +1045,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceCities": [
         "군포시",
@@ -1074,9 +1058,7 @@
         "내손동-4731",
         "오전동-1646",
         "청계동-1649",
-        "갈산동-1406",
-        "호계동-4640",
-        "평촌동-1398"
+        "갈산동-1406"
       ],
       "pendingReason": null,
       "newnessProbeSkipped": false,
@@ -1096,7 +1078,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceCities": [
         "군포시",
@@ -1136,7 +1118,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceCities": [
         "군포시",
@@ -1186,7 +1168,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "과천시",
       "sourceCities": [
         "과천시"
@@ -1212,7 +1194,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceCities": [
         "군포시",
@@ -1255,7 +1237,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceCities": [
         "군포시",
@@ -1298,7 +1280,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceCities": [
         "군포시",
@@ -1341,7 +1323,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "안양시",
       "sourceCities": [
         "안양시",
@@ -1370,7 +1352,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "안양시",
       "sourceCities": [
         "안양시",
@@ -1407,7 +1389,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "sourceCities": [
         "의왕시",
@@ -1441,7 +1423,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceCities": [
         "군포시",
@@ -1484,7 +1466,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceCities": [
         "군포시",
@@ -1527,7 +1509,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "안양시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -1560,7 +1542,7 @@
       "newnessDetailAttempted": true,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "detailLastAttemptAt": "2026-10-05T07:30:41.746Z",
       "newnessProbeSkipped": false,
@@ -1579,10 +1561,7 @@
         "갈산동-1406",
         "관양1동-1395",
         "비산1동-1390",
-        "석수1동-1384",
-        "호계동-4640",
-        "평촌동-1398",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "pendingReason": null,
       "sourceQuery": [
@@ -1601,7 +1580,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -1627,7 +1606,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -1677,7 +1656,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -1720,7 +1699,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -1763,7 +1742,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -1789,7 +1768,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -1832,7 +1811,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "안양시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -1867,7 +1846,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -1910,7 +1889,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -1922,7 +1901,6 @@
         "당정동-4459",
         "산본2동-1635",
         "내손동-4731",
-        "고천동-1644",
         "오전동-1646",
         "갈산동-1406",
         "호계동-4640",
@@ -1946,7 +1924,7 @@
       "newnessDetailAttempted": true,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -1989,7 +1967,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "안양시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -2016,7 +1994,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -2066,7 +2044,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -2109,7 +2087,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -2152,7 +2130,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -2195,7 +2173,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -2238,7 +2216,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -2288,7 +2266,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -2338,7 +2316,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -2381,7 +2359,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -2424,7 +2402,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -2465,7 +2443,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -2493,7 +2471,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -2536,7 +2514,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -2574,7 +2552,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -2600,7 +2578,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -2626,7 +2604,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -2659,7 +2637,7 @@
       "newnessDetailAttempted": true,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -2709,7 +2687,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -2745,7 +2723,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "안양시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -2774,7 +2752,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -2824,7 +2802,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -2874,7 +2852,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -2914,7 +2892,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "detailLastAttemptAt": "2026-10-03T02:51:21.312Z",
       "newnessProbeSkipped": false,
@@ -2951,7 +2929,7 @@
       "newnessDetailAttempted": true,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -2998,7 +2976,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -3036,7 +3014,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -3079,7 +3057,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -3122,7 +3100,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -3148,7 +3126,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -3178,7 +3156,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -3221,7 +3199,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "안양시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -3245,7 +3223,7 @@
       "pendingNewnessCheck": false,
       "newnessDetailAttempted": false,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "newnessProbeSkipped": false,
       "newnessDetailAttempts": 0,
@@ -3278,7 +3256,7 @@
       "pendingNewnessCheck": false,
       "newnessDetailAttempted": false,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "newnessProbeSkipped": false,
       "newnessDetailAttempts": 0,
@@ -3304,7 +3282,7 @@
       "pendingNewnessCheck": false,
       "newnessDetailAttempted": false,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "newnessDetailAttempts": 0,
@@ -3348,7 +3326,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -3388,7 +3366,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -3429,7 +3407,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -3472,7 +3450,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -3514,7 +3492,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -3549,7 +3527,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -3592,7 +3570,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -3635,7 +3613,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -3671,7 +3649,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -3697,7 +3675,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -3723,7 +3701,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "안양시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -3753,7 +3731,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "안양시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -3783,7 +3761,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "안양시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -3812,7 +3790,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "안양시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -3840,7 +3818,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "안양시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -3868,7 +3846,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "안양시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -3894,7 +3872,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -3921,7 +3899,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -3948,7 +3926,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -3974,7 +3952,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -4001,7 +3979,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -4044,7 +4022,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -4070,7 +4048,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -4096,7 +4074,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -4139,7 +4117,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -4181,7 +4159,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -4224,7 +4202,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -4267,7 +4245,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -4310,7 +4288,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -4353,7 +4331,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -4390,7 +4368,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -4440,7 +4418,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -4483,7 +4461,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -4526,7 +4504,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -4569,7 +4547,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -4595,7 +4573,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -4638,7 +4616,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -4681,7 +4659,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -4724,7 +4702,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -4767,7 +4745,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -4810,7 +4788,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -4849,7 +4827,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -4892,7 +4870,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -4935,7 +4913,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -4975,7 +4953,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -5018,7 +4996,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -5056,7 +5034,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -5093,7 +5071,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -5129,7 +5107,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -5157,7 +5135,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -5191,7 +5169,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -5234,7 +5212,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -5262,7 +5240,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -5295,7 +5273,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -5338,7 +5316,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -5377,7 +5355,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -5417,7 +5395,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -5460,7 +5438,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -5503,7 +5481,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -5546,7 +5524,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -5589,7 +5567,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -5632,7 +5610,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -5675,7 +5653,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -5708,7 +5686,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -5751,7 +5729,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -5794,7 +5772,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -5822,7 +5800,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -5833,7 +5811,6 @@
         "과천시"
       ],
       "sourceRegion": [
-        "당정동-4459",
         "산본2동-1635",
         "내손동-4731",
         "포일동-4244",
@@ -5861,7 +5838,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -5904,7 +5881,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -5944,7 +5921,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -5987,7 +5964,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -6028,7 +6005,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -6058,7 +6035,7 @@
       "newnessDetailAttempted": true,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -6105,7 +6082,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -6148,7 +6125,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -6191,7 +6168,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -6234,7 +6211,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -6277,7 +6254,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "안양시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -6307,7 +6284,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "안양시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -6337,7 +6314,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -6378,7 +6355,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -6417,7 +6394,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -6456,7 +6433,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -6484,7 +6461,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "안양시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -6514,7 +6491,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -6557,7 +6534,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -6600,7 +6577,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -6643,7 +6620,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -6683,7 +6660,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -6710,7 +6687,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -6753,7 +6730,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -6796,7 +6773,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -6839,7 +6816,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "안양시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -6868,7 +6845,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "안양시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -6898,7 +6875,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -6932,7 +6909,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "안양시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -6961,7 +6938,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "안양시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -6991,7 +6968,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -7020,7 +6997,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -7063,7 +7040,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -7104,7 +7081,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -7144,7 +7121,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -7187,7 +7164,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -7237,7 +7214,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "안양시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -7265,7 +7242,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -7315,7 +7292,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -7358,7 +7335,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "안양시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -7386,7 +7363,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "안양시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -7413,7 +7390,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "안양시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -7439,7 +7416,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -7482,7 +7459,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -7524,7 +7501,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -7561,7 +7538,7 @@
       "newnessDetailAttempted": true,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -7603,7 +7580,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "안양시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -7630,7 +7607,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -7666,7 +7643,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -7709,7 +7686,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -7749,7 +7726,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -7792,7 +7769,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -7828,7 +7805,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -7878,7 +7855,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -7921,7 +7898,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -7946,7 +7923,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -7974,7 +7951,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -8012,7 +7989,7 @@
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-13z940-gx30k-%ED%99%94%EC%9D%B4%ED%8A%B8-pzwe71ibwsk4/",
       "lastPrice": 110000,
       "postedAt": "2026-09-12T01:06:48.247Z",
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "firstSeenAt": "2026-09-25T15:00:31.520Z",
       "pendingNewnessCheck": false,
@@ -8037,10 +8014,7 @@
         "갈산동-1406",
         "관양1동-1395",
         "비산1동-1390",
-        "석수1동-1384",
-        "호계동-4640",
-        "평촌동-1398",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "pendingReason": null,
       "newnessProbeSkipped": false,
@@ -8059,7 +8033,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -8103,7 +8077,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -8145,7 +8119,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -8164,10 +8138,7 @@
         "갈산동-1406",
         "관양1동-1395",
         "비산1동-1390",
-        "석수1동-1384",
-        "호계동-4640",
-        "평촌동-1398",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "pendingReason": null,
       "sourceQuery": [
@@ -8185,7 +8156,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -8228,7 +8199,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "안양시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -8254,7 +8225,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -8292,7 +8263,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -8327,7 +8298,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -8345,10 +8316,7 @@
         "청계동-1649",
         "갈산동-1406",
         "관양1동-1395",
-        "비산1동-1390",
-        "호계동-4640",
-        "평촌동-1398",
-        "안양동-4639"
+        "비산1동-1390"
       ],
       "pendingReason": null,
       "sourceQuery": [
@@ -8366,7 +8334,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -8398,7 +8366,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -8424,7 +8392,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -8443,10 +8411,7 @@
         "갈산동-1406",
         "관양1동-1395",
         "비산1동-1390",
-        "석수1동-1384",
-        "호계동-4640",
-        "평촌동-1398",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "pendingReason": null,
       "sourceQuery": [
@@ -8465,7 +8430,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -8490,7 +8455,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -8539,7 +8504,7 @@
       "pendingNewnessCheck": false,
       "newnessDetailAttempted": true,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessDetailAttempts": 0,
       "pendingDetailEvent": null,
@@ -8559,10 +8524,7 @@
         "청계동-1649",
         "갈산동-1406",
         "관양1동-1395",
-        "비산1동-1390",
-        "호계동-4640",
-        "평촌동-1398",
-        "안양동-4639"
+        "비산1동-1390"
       ],
       "pendingReason": null,
       "newnessProbeSkipped": false,
@@ -8580,7 +8542,7 @@
       "pendingNewnessCheck": false,
       "newnessDetailAttempted": false,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "newnessDetailAttempts": 0,
@@ -8594,8 +8556,7 @@
         "당정동-4459",
         "고천동-1644",
         "오전동-1646",
-        "갈산동-1406",
-        "호계동-4640"
+        "갈산동-1406"
       ],
       "pendingReason": null,
       "sourceQuery": [
@@ -8614,7 +8575,7 @@
       "newnessDetailAttempted": true,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "detailLastAttemptAt": "2026-10-05T11:26:27.169Z",
       "newnessProbeSkipped": false,
@@ -8633,10 +8594,7 @@
         "청계동-1649",
         "갈산동-1406",
         "관양1동-1395",
-        "비산1동-1390",
-        "호계동-4640",
-        "평촌동-1398",
-        "안양동-4639"
+        "비산1동-1390"
       ],
       "pendingReason": null,
       "sourceQuery": [
@@ -8649,7 +8607,7 @@
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B0%80%EC%84%B1%EB%B9%84-%EB%85%B8%ED%8A%B8%EB%B6%81-d8nhuf1tiay2/",
       "lastPrice": 150000,
       "postedAt": "2026-04-10T05:49:31.443Z",
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "firstSeenAt": "2026-09-25T15:11:04.551Z",
       "pendingNewnessCheck": false,
@@ -8673,10 +8631,7 @@
         "갈산동-1406",
         "관양1동-1395",
         "비산1동-1390",
-        "석수1동-1384",
-        "호계동-4640",
-        "평촌동-1398",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "pendingReason": null,
       "newnessProbeSkipped": false,
@@ -8696,7 +8651,7 @@
       "newnessDetailAttempted": true,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "detailLastAttemptAt": "2026-10-04T18:02:21.879Z",
       "newnessProbeSkipped": false,
@@ -8715,10 +8670,7 @@
         "갈산동-1406",
         "관양1동-1395",
         "비산1동-1390",
-        "석수1동-1384",
-        "호계동-4640",
-        "평촌동-1398",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "pendingReason": null,
       "sourceQuery": [
@@ -8737,7 +8689,7 @@
       "newnessDetailAttempted": true,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "detailLastAttemptAt": "2026-10-05T12:29:36.491Z",
       "newnessProbeSkipped": false,
@@ -8778,7 +8730,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "과천시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -8811,7 +8763,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -8839,7 +8791,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "과천시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -8864,7 +8816,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "과천시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -8890,7 +8842,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "과천시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -8916,7 +8868,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "과천시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -8942,7 +8894,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "과천시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -8969,7 +8921,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "과천시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -8995,7 +8947,7 @@
       "newnessDetailAttempted": true,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "과천시",
       "detailLastAttemptAt": "2026-10-05T15:25:43.723Z",
       "newnessProbeSkipped": false,
@@ -9028,7 +8980,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -9071,7 +9023,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "안양시",
       "sourceRegion": [
         "석수1동-1384",
@@ -9103,7 +9055,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -9147,7 +9099,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -9159,11 +9111,7 @@
         "산본2동-1635",
         "내손동-4731",
         "오전동-1646",
-        "갈산동-1406",
-        "비산1동-1390",
-        "호계동-4640",
-        "평촌동-1398",
-        "안양동-4639"
+        "비산1동-1390"
       ],
       "pendingReason": null,
       "sourceQuery": [
@@ -9182,7 +9130,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -9220,7 +9168,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -9250,7 +9198,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceCities": [
         "군포시",
@@ -9268,10 +9216,7 @@
         "갈산동-1406",
         "관양1동-1395",
         "비산1동-1390",
-        "석수1동-1384",
-        "호계동-4640",
-        "평촌동-1398",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "priority": 2,
       "pendingReason": null,
@@ -9296,7 +9241,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "과천시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -9322,7 +9267,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "과천시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -9350,7 +9295,7 @@
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-14%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-npj4shii4qf1/",
       "lastPrice": 350000,
       "postedAt": "2026-07-25T15:12:12.336Z",
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "firstSeenAt": "2026-09-25T15:00:31.520Z",
       "pendingNewnessCheck": false,
@@ -9373,10 +9318,7 @@
         "갈산동-1406",
         "관양1동-1395",
         "비산1동-1390",
-        "석수1동-1384",
-        "호계동-4640",
-        "평촌동-1398",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "pendingReason": null,
       "newnessProbeSkipped": false,
@@ -9396,7 +9338,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -9414,10 +9356,7 @@
         "갈산동-1406",
         "관양1동-1395",
         "비산1동-1390",
-        "석수1동-1384",
-        "호계동-4640",
-        "평촌동-1398",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "pendingReason": null,
       "sourceQuery": [
@@ -9436,7 +9375,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -9461,7 +9400,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -9488,7 +9427,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -9514,7 +9453,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "sourceRegion": [
         "청계동-1649"
@@ -9547,7 +9486,7 @@
       "newnessDetailAttempted": true,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "당정동-4459",
@@ -9593,7 +9532,7 @@
       "newnessDetailAttempted": true,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "당정동-4459",
@@ -9641,7 +9580,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "안양시",
       "sourceRegion": [
         "비산1동-1390",
@@ -9669,7 +9608,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceCities": [
         "군포시",
@@ -9685,9 +9624,7 @@
         "오전동-1646",
         "청계동-1649",
         "갈산동-1406",
-        "관양1동-1395",
-        "호계동-4640",
-        "평촌동-1398"
+        "관양1동-1395"
       ],
       "pendingReason": null,
       "newnessProbeSkipped": false,
@@ -9706,7 +9643,7 @@
       "newnessDetailAttempted": true,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -9724,9 +9661,7 @@
         "오전동-1646",
         "청계동-1649",
         "갈산동-1406",
-        "관양1동-1395",
-        "호계동-4640",
-        "평촌동-1398"
+        "관양1동-1395"
       ],
       "pendingReason": null,
       "sourceQuery": [
@@ -9739,7 +9674,7 @@
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EC%9A%B8%ED%8A%B8%EB%9D%BC-pc-14u390-me1tk-%ED%99%94%EC%9D%B4%ED%8A%B8-x21wo1as1ujn/",
       "lastPrice": 105000,
       "postedAt": "2026-09-13T00:18:56.548Z",
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "firstSeenAt": "2026-09-25T15:00:31.520Z",
       "pendingNewnessCheck": false,
@@ -9774,7 +9709,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -9788,8 +9723,7 @@
         "내손동-4731",
         "고천동-1644",
         "오전동-1646",
-        "갈산동-1406",
-        "호계동-4640"
+        "갈산동-1406"
       ],
       "pendingReason": null,
       "sourceQuery": [
@@ -9808,7 +9742,7 @@
       "newnessDetailAttempted": true,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "detailLastAttemptAt": "2026-10-02T09:25:08.734Z",
       "newnessProbeSkipped": false,
@@ -9826,10 +9760,7 @@
         "오전동-1646",
         "청계동-1649",
         "갈산동-1406",
-        "관양1동-1395",
-        "호계동-4640",
-        "평촌동-1398",
-        "안양동-4639"
+        "관양1동-1395"
       ],
       "pendingReason": null,
       "sourceQuery": [
@@ -9848,7 +9779,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -9867,10 +9798,7 @@
         "갈산동-1406",
         "관양1동-1395",
         "비산1동-1390",
-        "석수1동-1384",
-        "호계동-4640",
-        "평촌동-1398",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "pendingReason": null,
       "attempts": 0,
@@ -9896,7 +9824,7 @@
       "newnessDetailAttempted": true,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "detailLastAttemptAt": "2026-10-04T14:46:25.726Z",
       "newnessProbeSkipped": false,
@@ -9911,10 +9839,7 @@
         "갈산동-1406",
         "관양1동-1395",
         "비산1동-1390",
-        "석수1동-1384",
-        "호계동-4640",
-        "평촌동-1398",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "pendingReason": null,
       "sourceQuery": [
@@ -9932,7 +9857,7 @@
       "newnessDetailAttempted": true,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -9948,10 +9873,7 @@
         "갈산동-1406",
         "관양1동-1395",
         "비산1동-1390",
-        "석수1동-1384",
-        "호계동-4640",
-        "평촌동-1398",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "pendingReason": null,
       "sourceQuery": [
@@ -9964,7 +9886,7 @@
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-14z90n-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%8B%B8%EA%B2%8C%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-omrxgtf86mai/",
       "lastPrice": 470000,
       "postedAt": "2026-09-15T23:12:00.577Z",
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "firstSeenAt": "2026-09-25T15:00:31.520Z",
       "pendingNewnessCheck": false,
@@ -9984,10 +9906,7 @@
         "갈산동-1406",
         "관양1동-1395",
         "비산1동-1390",
-        "석수1동-1384",
-        "호계동-4640",
-        "평촌동-1398",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "pendingReason": null,
       "newnessProbeSkipped": false,
@@ -10014,7 +9933,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "당정동-4459",
@@ -10026,10 +9945,7 @@
         "갈산동-1406",
         "관양1동-1395",
         "비산1동-1390",
-        "석수1동-1384",
-        "호계동-4640",
-        "평촌동-1398",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "sourceCities": [
         "군포시",
@@ -10053,7 +9969,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -10065,8 +9981,7 @@
         "내손동-4731",
         "포일동-4244",
         "청계동-1649",
-        "관양1동-1395",
-        "평촌동-1398"
+        "관양1동-1395"
       ],
       "pendingReason": null,
       "sourceQuery": [
@@ -10084,7 +9999,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -10102,10 +10017,7 @@
         "청계동-1649",
         "갈산동-1406",
         "관양1동-1395",
-        "비산1동-1390",
-        "호계동-4640",
-        "평촌동-1398",
-        "안양동-4639"
+        "비산1동-1390"
       ],
       "pendingReason": null,
       "sourceQuery": [
@@ -10124,7 +10036,7 @@
       "newnessDetailAttempted": true,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "당정동-4459",
@@ -10170,17 +10082,14 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "sourceRegion": [
         "내손동-4731",
         "포일동-4244",
         "고천동-1644",
-        "오전동-1646",
         "청계동-1649",
-        "석수1동-1384",
-        "평촌동-1398",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "sourceCities": [
         "의왕시",
@@ -10203,7 +10112,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -10245,7 +10154,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "당정동-4459",
@@ -10258,10 +10167,7 @@
         "갈산동-1406",
         "관양1동-1395",
         "비산1동-1390",
-        "석수1동-1384",
-        "호계동-4640",
-        "평촌동-1398",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "sourceCities": [
         "군포시",
@@ -10292,7 +10198,7 @@
       "newnessDetailAttempted": true,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "당정동-4459",
@@ -10340,7 +10246,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -10352,8 +10258,7 @@
         "당정동-4459",
         "고천동-1644",
         "오전동-1646",
-        "갈산동-1406",
-        "호계동-4640"
+        "갈산동-1406"
       ],
       "pendingReason": null,
       "sourceQuery": [
@@ -10377,7 +10282,7 @@
       "pendingNewnessCheck": false,
       "newnessDetailAttempted": false,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "newnessDetailAttempts": 0,
@@ -10408,7 +10313,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -10436,7 +10341,7 @@
       "newnessDetailAttempted": true,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "detailLastAttemptAt": "2026-10-04T02:18:59.560Z",
       "newnessProbeSkipped": false,
@@ -10468,17 +10373,14 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "산본2동-1635",
         "내손동-4731",
         "포일동-4244",
         "오전동-1646",
-        "청계동-1649",
-        "비산1동-1390",
-        "호계동-4640",
-        "평촌동-1398"
+        "비산1동-1390"
       ],
       "sourceCities": [
         "군포시",
@@ -10509,7 +10411,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "sourceRegion": [
         "내손동-4731",
@@ -10542,7 +10444,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "과천시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -10575,7 +10477,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "당정동-4459",
@@ -10588,10 +10490,7 @@
         "갈산동-1406",
         "관양1동-1395",
         "비산1동-1390",
-        "석수1동-1384",
-        "호계동-4640",
-        "평촌동-1398",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "sourceCities": [
         "군포시",
@@ -10620,7 +10519,7 @@
       "pendingNewnessCheck": false,
       "newnessDetailAttempted": true,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "newnessProbeSkipped": false,
       "newnessDetailAttempts": 0,
@@ -10634,10 +10533,7 @@
         "포일동-4244",
         "고천동-1644",
         "오전동-1646",
-        "관양1동-1395",
-        "호계동-4640",
-        "평촌동-1398",
-        "안양동-4639"
+        "관양1동-1395"
       ],
       "pendingReason": null,
       "sourceQuery": [
@@ -10656,7 +10552,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "당정동-4459",
@@ -10705,20 +10601,15 @@
       "newnessDetailAttempted": true,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "newnessProbeSkipped": false,
       "sourceCities": [
-        "의왕시",
-        "안양시"
+        "의왕시"
       ],
       "sourceRegion": [
         "내손동-4731",
-        "포일동-4244",
-        "고천동-1644",
-        "오전동-1646",
-        "청계동-1649",
-        "평촌동-1398"
+        "청계동-1649"
       ],
       "pendingReason": null,
       "attempts": 0,
@@ -10744,7 +10635,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "sourceRegion": [
         "내손동-4731",
@@ -10780,7 +10671,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceCities": [
         "군포시",
@@ -10790,10 +10681,7 @@
       "sourceRegion": [
         "산본2동-1635",
         "오전동-1646",
-        "갈산동-1406",
-        "관양1동-1395",
-        "호계동-4640",
-        "평촌동-1398"
+        "관양1동-1395"
       ],
       "sourceQuery": [
         "노트북"
@@ -10819,7 +10707,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -10829,8 +10717,7 @@
       "sourceRegion": [
         "산본2동-1635",
         "비산1동-1390",
-        "석수1동-1384",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "pendingReason": null,
       "sourceQuery": [
@@ -10845,7 +10732,7 @@
       "postedAt": "2026-08-05T14:58:03.940Z",
       "firstSeenAt": "2026-09-25T15:00:31.520Z",
       "pendingNewnessCheck": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessDetailAttempted": false,
       "newnessUnknownExpired": true,
@@ -10859,8 +10746,7 @@
       "sourceRegion": [
         "산본2동-1635",
         "비산1동-1390",
-        "석수1동-1384",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "pendingReason": null,
       "sourceQuery": [
@@ -10879,7 +10765,7 @@
       "newnessDetailAttempted": true,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "당정동-4459",
@@ -10891,10 +10777,7 @@
         "갈산동-1406",
         "관양1동-1395",
         "비산1동-1390",
-        "석수1동-1384",
-        "호계동-4640",
-        "평촌동-1398",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "sourceCities": [
         "군포시",
@@ -10925,7 +10808,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "당정동-4459",
@@ -10968,7 +10851,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "당정동-4459",
@@ -10981,10 +10864,7 @@
         "갈산동-1406",
         "관양1동-1395",
         "비산1동-1390",
-        "석수1동-1384",
-        "호계동-4640",
-        "평촌동-1398",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "sourceCities": [
         "군포시",
@@ -11015,7 +10895,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "당정동-4459",
@@ -11054,7 +10934,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "당정동-4459",
@@ -11097,7 +10977,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "당정동-4459",
@@ -11140,7 +11020,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "sourceRegion": [
         "오전동-1646",
@@ -11167,7 +11047,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "sourceRegion": [
         "청계동-1649"
@@ -11193,7 +11073,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "sourceRegion": [
         "청계동-1649"
@@ -11219,7 +11099,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "과천시",
       "sourceRegion": [
         "원문동-4433"
@@ -11245,17 +11125,15 @@
       "newnessDetailAttempted": true,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "detailLastAttemptAt": "2026-10-03T18:48:42.391Z",
       "newnessProbeSkipped": false,
       "sourceCities": [
-        "의왕시",
-        "안양시"
+        "의왕시"
       ],
       "sourceRegion": [
-        "청계동-1649",
-        "평촌동-1398"
+        "청계동-1649"
       ],
       "pendingReason": null,
       "sourceQuery": [
@@ -11273,7 +11151,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -11300,7 +11178,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "당정동-4459",
@@ -11345,19 +11223,17 @@
       "postedAt": "2026-04-08T11:45:25.820Z",
       "firstSeenAt": "2026-09-25T15:00:31.520Z",
       "pendingNewnessCheck": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
-      "city": "군포시",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
+      "city": "의왕시",
       "newnessDetailAttempted": false,
       "newnessUnknownExpired": true,
       "newnessProbeSkipped": false,
       "newnessDetailAttempts": 0,
       "pendingDetailEvent": null,
       "sourceCities": [
-        "군포시",
         "의왕시"
       ],
       "sourceRegion": [
-        "당정동-4459",
         "고천동-1644"
       ],
       "pendingReason": null,
@@ -11377,7 +11253,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "당정동-4459",
@@ -11390,9 +11266,7 @@
         "갈산동-1406",
         "관양1동-1395",
         "비산1동-1390",
-        "석수1동-1384",
-        "호계동-4640",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "sourceCities": [
         "군포시",
@@ -11423,7 +11297,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -11438,9 +11312,7 @@
         "고천동-1644",
         "오전동-1646",
         "관양1동-1395",
-        "비산1동-1390",
-        "호계동-4640",
-        "평촌동-1398"
+        "비산1동-1390"
       ],
       "pendingReason": null,
       "sourceQuery": [
@@ -11459,7 +11331,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "당정동-4459",
@@ -11508,7 +11380,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -11549,7 +11421,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "sourceCities": [
         "의왕시",
@@ -11559,9 +11431,7 @@
         "포일동-4244",
         "관양1동-1395",
         "비산1동-1390",
-        "석수1동-1384",
-        "평촌동-1398",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "sourceQuery": [
         "노트북"
@@ -11587,7 +11457,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "sourceCities": [
         "의왕시",
@@ -11597,8 +11467,7 @@
         "포일동-4244",
         "관양1동-1395",
         "비산1동-1390",
-        "석수1동-1384",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "sourceQuery": [
         "노트북"
@@ -11624,7 +11493,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "sourceCities": [
         "의왕시",
@@ -11634,9 +11503,7 @@
         "포일동-4244",
         "관양1동-1395",
         "비산1동-1390",
-        "석수1동-1384",
-        "평촌동-1398",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "pendingReason": null,
       "newnessProbeSkipped": false,
@@ -11656,7 +11523,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -11667,8 +11534,7 @@
         "포일동-4244",
         "관양1동-1395",
         "비산1동-1390",
-        "석수1동-1384",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "pendingReason": null,
       "sourceQuery": [
@@ -11687,7 +11553,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "sourceCities": [
         "의왕시",
@@ -11697,8 +11563,7 @@
         "포일동-4244",
         "관양1동-1395",
         "비산1동-1390",
-        "석수1동-1384",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "sourceQuery": [
         "노트북"
@@ -11725,21 +11590,17 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
-        "산본2동-1635",
+        "당정동-4459",
         "내손동-4731",
-        "포일동-4244",
         "고천동-1644",
         "오전동-1646",
         "갈산동-1406",
         "관양1동-1395",
         "비산1동-1390",
-        "석수1동-1384",
-        "호계동-4640",
-        "평촌동-1398",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "sourceCities": [
         "군포시",
@@ -11764,7 +11625,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "당정동-4459",
@@ -11777,10 +11638,7 @@
         "갈산동-1406",
         "관양1동-1395",
         "비산1동-1390",
-        "석수1동-1384",
-        "호계동-4640",
-        "평촌동-1398",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "sourceCities": [
         "군포시",
@@ -11811,7 +11669,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "당정동-4459",
@@ -11860,7 +11718,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "당정동-4459",
@@ -11896,15 +11754,13 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
-      "city": "군포시",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
+      "city": "의왕시",
       "newnessProbeSkipped": false,
       "sourceCities": [
-        "군포시",
         "의왕시"
       ],
       "sourceRegion": [
-        "당정동-4459",
         "고천동-1644",
         "청계동-1649"
       ],
@@ -11931,7 +11787,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -11959,7 +11815,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -11972,15 +11828,10 @@
         "산본2동-1635",
         "내손동-4731",
         "포일동-4244",
-        "고천동-1644",
         "오전동-1646",
-        "청계동-1649",
         "갈산동-1406",
         "비산1동-1390",
-        "석수1동-1384",
-        "호계동-4640",
-        "평촌동-1398",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "pendingReason": null,
       "sourceQuery": [
@@ -11999,7 +11850,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "당정동-4459",
@@ -12012,10 +11863,7 @@
         "갈산동-1406",
         "관양1동-1395",
         "비산1동-1390",
-        "석수1동-1384",
-        "호계동-4640",
-        "평촌동-1398",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "sourceCities": [
         "군포시",
@@ -12046,7 +11894,7 @@
       "newnessDetailAttempted": true,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "당정동-4459",
@@ -12092,7 +11940,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "sourceRegion": [
         "포일동-4244",
@@ -12128,7 +11976,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "sourceRegion": [
         "청계동-1649",
@@ -12162,7 +12010,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "당정동-4459",
@@ -12175,10 +12023,7 @@
         "갈산동-1406",
         "관양1동-1395",
         "비산1동-1390",
-        "석수1동-1384",
-        "호계동-4640",
-        "평촌동-1398",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "sourceCities": [
         "군포시",
@@ -12209,7 +12054,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -12235,7 +12080,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -12261,7 +12106,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "당정동-4459",
@@ -12294,7 +12139,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "산본2동-1635"
@@ -12326,17 +12171,15 @@
       "newnessDetailAttempted": true,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "detailLastAttemptAt": "2026-10-05T09:04:13.824Z",
       "newnessProbeSkipped": false,
       "sourceCities": [
-        "의왕시",
-        "안양시"
+        "의왕시"
       ],
       "sourceRegion": [
-        "내손동-4731",
-        "평촌동-1398"
+        "내손동-4731"
       ],
       "pendingReason": null,
       "sourceQuery": [
@@ -12355,7 +12198,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "sourceCities": [
         "의왕시"
@@ -12381,16 +12224,15 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "당정동-4459",
-        "포일동-4244",
-        "관양1동-1395"
+        "관양1동-1395",
+        "석수1동-1384"
       ],
       "sourceCities": [
         "군포시",
-        "의왕시",
         "안양시"
       ],
       "sourceQuery": [
@@ -12417,7 +12259,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -12430,6 +12272,7 @@
         "포일동-4244",
         "고천동-1644",
         "오전동-1646",
+        "청계동-1649",
         "갈산동-1406",
         "관양1동-1395",
         "안양동-4639"
@@ -12451,21 +12294,19 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "당정동-4459",
         "산본2동-1635",
         "내손동-4731",
-        "포일동-4244",
         "고천동-1644",
         "오전동-1646",
         "청계동-1649",
         "갈산동-1406",
         "관양1동-1395",
         "비산1동-1390",
-        "호계동-4640",
-        "평촌동-1398"
+        "석수1동-1384"
       ],
       "sourceCities": [
         "군포시",
@@ -12496,7 +12337,7 @@
       "newnessDetailAttempted": true,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "당정동-4459",
@@ -12543,7 +12384,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -12562,10 +12403,7 @@
         "갈산동-1406",
         "관양1동-1395",
         "비산1동-1390",
-        "석수1동-1384",
-        "호계동-4640",
-        "평촌동-1398",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "pendingReason": null,
       "sourceQuery": [
@@ -12591,7 +12429,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -12603,8 +12441,7 @@
         "당정동-4459",
         "고천동-1644",
         "오전동-1646",
-        "갈산동-1406",
-        "호계동-4640"
+        "갈산동-1406"
       ],
       "pendingReason": null,
       "sourceQuery": [
@@ -12623,7 +12460,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -12642,10 +12479,7 @@
         "갈산동-1406",
         "관양1동-1395",
         "비산1동-1390",
-        "석수1동-1384",
-        "호계동-4640",
-        "평촌동-1398",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "pendingReason": null,
       "sourceQuery": [
@@ -12664,7 +12498,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "당정동-4459",
@@ -12677,10 +12511,7 @@
         "갈산동-1406",
         "관양1동-1395",
         "비산1동-1390",
-        "석수1동-1384",
-        "호계동-4640",
-        "평촌동-1398",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "sourceCities": [
         "군포시",
@@ -12711,14 +12542,13 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "당정동-4459",
         "고천동-1644",
         "오전동-1646",
-        "갈산동-1406",
-        "호계동-4640"
+        "갈산동-1406"
       ],
       "sourceCities": [
         "군포시",
@@ -12749,7 +12579,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "당정동-4459",
@@ -12762,10 +12592,7 @@
         "갈산동-1406",
         "관양1동-1395",
         "비산1동-1390",
-        "석수1동-1384",
-        "호계동-4640",
-        "평촌동-1398",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "sourceCities": [
         "군포시",
@@ -12796,7 +12623,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "당정동-4459",
@@ -12809,10 +12636,7 @@
         "갈산동-1406",
         "관양1동-1395",
         "비산1동-1390",
-        "석수1동-1384",
-        "호계동-4640",
-        "평촌동-1398",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "sourceCities": [
         "군포시",
@@ -12844,7 +12668,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -12852,7 +12676,6 @@
         "안양시"
       ],
       "sourceRegion": [
-        "내손동-4731",
         "포일동-4244",
         "비산1동-1390"
       ],
@@ -12873,7 +12696,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "당정동-4459",
@@ -12922,7 +12745,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "산본2동-1635",
@@ -12950,17 +12773,14 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
-      "city": "의왕시",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
+      "city": "안양시",
       "newnessProbeSkipped": false,
       "sourceCities": [
-        "의왕시",
         "안양시"
       ],
       "sourceRegion": [
-        "고천동-1644",
-        "관양1동-1395",
-        "호계동-4640"
+        "관양1동-1395"
       ],
       "pendingReason": null,
       "sourceQuery": [
@@ -12979,7 +12799,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "당정동-4459",
@@ -12992,10 +12812,7 @@
         "갈산동-1406",
         "관양1동-1395",
         "비산1동-1390",
-        "석수1동-1384",
-        "호계동-4640",
-        "평촌동-1398",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "sourceCities": [
         "군포시",
@@ -13026,7 +12843,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "당정동-4459",
@@ -13075,7 +12892,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "안양시",
       "sourceRegion": [
         "관양1동-1395",
@@ -13109,7 +12926,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "과천시",
       "sourceRegion": [
         "원문동-4433"
@@ -13141,7 +12958,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "당정동-4459",
@@ -13154,10 +12971,7 @@
         "갈산동-1406",
         "관양1동-1395",
         "비산1동-1390",
-        "석수1동-1384",
-        "호계동-4640",
-        "평촌동-1398",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "sourceCities": [
         "군포시",
@@ -13188,15 +13002,14 @@
       "newnessDetailAttempted": true,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "산본2동-1635",
         "내손동-4731",
         "포일동-4244",
         "오전동-1646",
-        "비산1동-1390",
-        "평촌동-1398"
+        "비산1동-1390"
       ],
       "sourceCities": [
         "군포시",
@@ -13227,7 +13040,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "sourceRegion": [
         "청계동-1649"
@@ -13259,7 +13072,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "당정동-4459",
@@ -13272,10 +13085,7 @@
         "갈산동-1406",
         "관양1동-1395",
         "비산1동-1390",
-        "석수1동-1384",
-        "호계동-4640",
-        "평촌동-1398",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "sourceCities": [
         "군포시",
@@ -13306,7 +13116,7 @@
       "newnessDetailAttempted": true,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "당정동-4459",
@@ -13318,10 +13128,7 @@
         "청계동-1649",
         "갈산동-1406",
         "관양1동-1395",
-        "비산1동-1390",
-        "호계동-4640",
-        "평촌동-1398",
-        "안양동-4639"
+        "비산1동-1390"
       ],
       "sourceCities": [
         "군포시",
@@ -13352,7 +13159,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "당정동-4459",
@@ -13365,10 +13172,7 @@
         "갈산동-1406",
         "관양1동-1395",
         "비산1동-1390",
-        "석수1동-1384",
-        "호계동-4640",
-        "평촌동-1398",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "sourceCities": [
         "군포시",
@@ -13399,16 +13203,14 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
-      "city": "안양시",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
+      "city": "과천시",
       "detailLastAttemptAt": "2026-10-01T21:42:17.765Z",
       "newnessProbeSkipped": false,
       "sourceCities": [
-        "안양시",
         "과천시"
       ],
       "sourceRegion": [
-        "평촌동-1398",
         "원문동-4433"
       ],
       "pendingReason": null,
@@ -13428,15 +13230,15 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
-      "city": "의왕시",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
+      "city": "군포시",
       "sourceCities": [
-        "의왕시",
-        "안양시"
+        "군포시",
+        "의왕시"
       ],
       "sourceRegion": [
-        "청계동-1649",
-        "갈산동-1406"
+        "당정동-4459",
+        "청계동-1649"
       ],
       "sourceQuery": [
         "노트북"
@@ -13462,7 +13264,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "안양시",
       "sourceRegion": [
         "관양1동-1395",
@@ -13495,7 +13297,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "당정동-4459",
@@ -13544,7 +13346,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "당정동-4459",
@@ -13593,15 +13395,13 @@
       "newnessDetailAttempted": true,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
-      "city": "군포시",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
+      "city": "의왕시",
       "sourceRegion": [
-        "당정동-4459",
         "고천동-1644",
         "청계동-1649"
       ],
       "sourceCities": [
-        "군포시",
         "의왕시"
       ],
       "sourceQuery": [
@@ -13628,7 +13428,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -13655,7 +13455,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "sourceCities": [
         "의왕시"
@@ -13687,7 +13487,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -13720,7 +13520,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -13746,7 +13546,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "sourceRegion": [
         "청계동-1649"
@@ -13779,7 +13579,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -13805,7 +13605,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "sourceRegion": [
         "청계동-1649"
@@ -13837,7 +13637,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "sourceRegion": [
         "청계동-1649"
@@ -13869,7 +13669,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "sourceRegion": [
         "청계동-1649"
@@ -13895,7 +13695,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "sourceRegion": [
         "청계동-1649"
@@ -13927,7 +13727,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -13953,7 +13753,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -13978,7 +13778,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -14007,7 +13807,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "당정동-4459",
@@ -14020,10 +13820,7 @@
         "갈산동-1406",
         "관양1동-1395",
         "비산1동-1390",
-        "석수1동-1384",
-        "호계동-4640",
-        "평촌동-1398",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "sourceCities": [
         "군포시",
@@ -14054,20 +13851,17 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
-      "city": "군포시",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
+      "city": "의왕시",
       "newnessProbeSkipped": false,
       "sourceCities": [
-        "군포시",
         "의왕시",
         "안양시"
       ],
       "sourceRegion": [
-        "산본2동-1635",
         "내손동-4731",
         "오전동-1646",
-        "갈산동-1406",
-        "평촌동-1398"
+        "갈산동-1406"
       ],
       "pendingReason": null,
       "sourceQuery": [
@@ -14086,18 +13880,17 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
-      "city": "의왕시",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
+      "city": "군포시",
       "sourceRegion": [
+        "당정동-4459",
         "고천동-1644",
         "오전동-1646",
         "청계동-1649",
-        "관양1동-1395",
-        "석수1동-1384",
-        "평촌동-1398",
-        "안양동-4639"
+        "관양1동-1395"
       ],
       "sourceCities": [
+        "군포시",
         "의왕시",
         "안양시"
       ],
@@ -14119,7 +13912,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "당정동-4459",
@@ -14168,7 +13961,7 @@
       "newnessDetailAttempted": true,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "당정동-4459",
@@ -14206,16 +13999,13 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
-      "city": "군포시",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
+      "city": "안양시",
       "sourceCities": [
-        "군포시",
         "안양시"
       ],
       "sourceRegion": [
-        "당정동-4459",
-        "관양1동-1395",
-        "안양동-4639"
+        "관양1동-1395"
       ],
       "pendingReason": null,
       "newnessProbeSkipped": false,
@@ -14234,7 +14024,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -14268,7 +14058,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "sourceCities": [
         "의왕시"
@@ -14300,7 +14090,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -14339,7 +14129,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "당정동-4459",
@@ -14382,7 +14172,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -14407,7 +14197,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -14421,9 +14211,7 @@
         "내손동-4731",
         "포일동-4244",
         "고천동-1644",
-        "갈산동-1406",
-        "관양1동-1395",
-        "평촌동-1398"
+        "관양1동-1395"
       ],
       "pendingReason": null,
       "sourceQuery": [
@@ -14442,7 +14230,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "과천시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -14468,14 +14256,12 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
-      "city": "의왕시",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
+      "city": "과천시",
       "sourceRegion": [
-        "청계동-1649",
         "원문동-4433"
       ],
       "sourceCities": [
-        "의왕시",
         "과천시"
       ],
       "sourceQuery": [
@@ -14502,7 +14288,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceCities": [
         "군포시",
@@ -14511,16 +14297,12 @@
       ],
       "sourceRegion": [
         "당정동-4459",
-        "산본2동-1635",
         "포일동-4244",
         "고천동-1644",
         "청계동-1649",
         "갈산동-1406",
         "관양1동-1395",
-        "석수1동-1384",
-        "호계동-4640",
-        "평촌동-1398",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "pendingReason": null,
       "newnessProbeSkipped": false,
@@ -14540,7 +14322,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "sourceRegion": [
         "청계동-1649"
@@ -14566,7 +14348,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -14609,15 +14391,17 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
-        "군포시"
+        "군포시",
+        "의왕시"
       ],
       "sourceRegion": [
         "당정동-4459",
-        "산본2동-1635"
+        "산본2동-1635",
+        "고천동-1644"
       ],
       "pendingReason": null,
       "sourceQuery": [
@@ -14635,7 +14419,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "pendingDetailEvent": null,
@@ -14667,37 +14451,6 @@
         "맥북 Max"
       ]
     },
-    "qrrvmhotmtdb": {
-      "id": "qrrvmhotmtdb",
-      "title": "i5 터치 노트북(win11, 한컴오피스, ms오피스, 램8GB, ssd128GB)",
-      "url": "https://www.daangn.com/kr/buy-sell/i5-%ED%84%B0%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-win11-%ED%95%9C%EC%BB%B4%EC%98%A4%ED%94%BC%EC%8A%A4-ms%EC%98%A4%ED%94%BC%EC%8A%A4-%EB%9E%A88gb-ssd128gb-qrrvmhotmtdb/",
-      "lastPrice": 120000,
-      "postedAt": "2026-10-02T04:33:41.958Z",
-      "firstSeenAt": "2026-10-02T04:38:32.164Z",
-      "pendingNewnessCheck": false,
-      "pendingDetailEvent": null,
-      "newnessDetailAttempted": false,
-      "newnessDetailAttempts": 0,
-      "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
-      "city": "의왕시",
-      "newnessProbeSkipped": false,
-      "sourceCities": [
-        "의왕시",
-        "안양시"
-      ],
-      "sourceRegion": [
-        "고천동-1644",
-        "청계동-1649",
-        "갈산동-1406",
-        "호계동-4640",
-        "평촌동-1398"
-      ],
-      "pendingReason": null,
-      "sourceQuery": [
-        "노트북"
-      ]
-    },
     "m9ob55z3cwcf": {
       "id": "m9ob55z3cwcf",
       "title": "LG그램 14인치 노트북 14Z960-GA56K",
@@ -14710,7 +14463,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -14729,10 +14482,7 @@
         "갈산동-1406",
         "관양1동-1395",
         "비산1동-1390",
-        "석수1동-1384",
-        "호계동-4640",
-        "평촌동-1398",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "pendingReason": null,
       "sourceQuery": [
@@ -14758,7 +14508,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -14777,10 +14527,7 @@
         "갈산동-1406",
         "관양1동-1395",
         "비산1동-1390",
-        "석수1동-1384",
-        "호계동-4640",
-        "평촌동-1398",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "pendingReason": null,
       "attempts": 0,
@@ -14804,7 +14551,7 @@
       "pendingNewnessCheck": false,
       "newnessDetailAttempted": true,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessDetailAttempts": 0,
       "pendingDetailEvent": null,
@@ -14824,10 +14571,7 @@
         "갈산동-1406",
         "관양1동-1395",
         "비산1동-1390",
-        "석수1동-1384",
-        "호계동-4640",
-        "평촌동-1398",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "pendingReason": null,
       "newnessProbeSkipped": false,
@@ -14853,7 +14597,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "당정동-4459",
@@ -14866,10 +14610,7 @@
         "갈산동-1406",
         "관양1동-1395",
         "비산1동-1390",
-        "석수1동-1384",
-        "호계동-4640",
-        "평촌동-1398",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "sourceCities": [
         "군포시",
@@ -14894,7 +14635,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "sourceCities": [
         "의왕시"
@@ -14926,7 +14667,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -14952,7 +14693,7 @@
       "pendingNewnessCheck": false,
       "newnessDetailAttempted": true,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "newnessDetailAttempts": 0,
@@ -14972,9 +14713,7 @@
         "오전동-1646",
         "갈산동-1406",
         "관양1동-1395",
-        "비산1동-1390",
-        "호계동-4640",
-        "평촌동-1398"
+        "비산1동-1390"
       ],
       "pendingReason": null,
       "sourceQuery": [
@@ -14993,7 +14732,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -15002,8 +14741,7 @@
       ],
       "sourceRegion": [
         "산본2동-1635",
-        "비산1동-1390",
-        "안양동-4639"
+        "비산1동-1390"
       ],
       "pendingReason": null,
       "sourceQuery": [
@@ -15022,7 +14760,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "과천시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -15048,7 +14786,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "안양시",
       "sourceCities": [
         "안양시"
@@ -15060,32 +14798,6 @@
       "newnessProbeSkipped": false,
       "sourceQuery": [
         "RTX 노트북"
-      ]
-    },
-    "32r6nw5cf2m3": {
-      "id": "32r6nw5cf2m3",
-      "title": "LG XNOTE 노트북 i5/8GB RAM/256GB SSD",
-      "url": "https://www.daangn.com/kr/buy-sell/lg-xnote-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-8gb-ram-256gb-ssd-32r6nw5cf2m3/",
-      "lastPrice": 80000,
-      "postedAt": "2026-09-23T04:30:05.188Z",
-      "firstSeenAt": "2026-10-01T02:55:36.302Z",
-      "pendingNewnessCheck": false,
-      "newnessDetailAttempted": false,
-      "newnessDetailAttempts": 0,
-      "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
-      "city": "안양시",
-      "newnessProbeSkipped": false,
-      "pendingDetailEvent": null,
-      "sourceCities": [
-        "안양시"
-      ],
-      "sourceRegion": [
-        "갈산동-1406"
-      ],
-      "pendingReason": null,
-      "sourceQuery": [
-        "노트북"
       ]
     },
     "jjhzmj26oypm": {
@@ -15100,14 +14812,12 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "당정동-4459",
-        "포일동-4244",
-        "오전동-1646",
-        "평촌동-1398",
-        "안양동-4639"
+        "고천동-1644",
+        "갈산동-1406"
       ],
       "sourceCities": [
         "군포시",
@@ -15138,12 +14848,11 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "안양시",
       "sourceRegion": [
         "비산1동-1390",
-        "석수1동-1384",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "sourceCities": [
         "안양시"
@@ -15166,7 +14875,7 @@
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-i7-%EB%85%B8%ED%8A%B8%EB%B6%81-14%EC%9D%B8%EC%B9%98-ykm2u2acmtsy/",
       "lastPrice": 330000,
       "postedAt": "2026-08-06T03:47:22.768Z",
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "안양시",
       "firstSeenAt": "2026-09-25T15:00:31.520Z",
       "pendingNewnessCheck": false,
@@ -15179,8 +14888,7 @@
       ],
       "sourceRegion": [
         "비산1동-1390",
-        "석수1동-1384",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "pendingReason": null,
       "newnessProbeSkipped": false,
@@ -15194,7 +14902,7 @@
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-15z970-ea50k-29%EB%A7%8C%EC%9B%90-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-pf3vfty4dton/",
       "lastPrice": 290000,
       "postedAt": "2026-09-08T06:44:07.196Z",
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "안양시",
       "firstSeenAt": "2026-09-25T15:00:31.520Z",
       "pendingNewnessCheck": false,
@@ -15207,8 +14915,7 @@
       ],
       "sourceRegion": [
         "비산1동-1390",
-        "석수1동-1384",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "pendingReason": null,
       "newnessProbeSkipped": false,
@@ -15235,7 +14942,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "안양시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -15243,8 +14950,7 @@
       ],
       "sourceRegion": [
         "비산1동-1390",
-        "석수1동-1384",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "pendingReason": null,
       "sourceQuery": [
@@ -15263,14 +14969,13 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "안양시",
       "sourceCities": [
         "안양시"
       ],
       "sourceRegion": [
-        "석수1동-1384",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "priority": 2,
       "pendingReason": null,
@@ -15296,15 +15001,14 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "안양시",
       "newnessProbeSkipped": false,
       "sourceCities": [
         "안양시"
       ],
       "sourceRegion": [
-        "석수1동-1384",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "pendingReason": null,
       "sourceQuery": [
@@ -15323,7 +15027,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "안양시",
       "sourceRegion": [
         "관양1동-1395"
@@ -15355,7 +15059,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "안양시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -15375,7 +15079,7 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-15%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4-%EB%A7%A4%EC%9A%B0%EA%B9%A8%EB%81%97-ojjkwm3cju2w/",
       "lastPrice": 220000,
       "postedAt": "2026-09-18T14:36:27.161Z",
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "안양시",
       "firstSeenAt": "2026-09-25T15:00:31.520Z",
       "pendingNewnessCheck": false,
@@ -15407,7 +15111,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "안양시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -15433,7 +15137,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "안양시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -15459,7 +15163,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "안양시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -15485,7 +15189,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "안양시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -15511,7 +15215,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "안양시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -15537,7 +15241,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -15563,15 +15267,14 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "안양시",
       "newnessProbeSkipped": false,
       "sourceCities": [
         "안양시"
       ],
       "sourceRegion": [
-        "석수1동-1384",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "pendingReason": null,
       "sourceQuery": [
@@ -15590,7 +15293,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "당정동-4459",
@@ -15603,10 +15306,7 @@
         "갈산동-1406",
         "관양1동-1395",
         "비산1동-1390",
-        "석수1동-1384",
-        "호계동-4640",
-        "평촌동-1398",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "sourceCities": [
         "군포시",
@@ -15637,7 +15337,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "당정동-4459",
@@ -15650,10 +15350,7 @@
         "갈산동-1406",
         "관양1동-1395",
         "비산1동-1390",
-        "석수1동-1384",
-        "호계동-4640",
-        "평촌동-1398",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "sourceCities": [
         "군포시",
@@ -15665,38 +15362,6 @@
       ],
       "pendingReason": null,
       "newnessProbeSkipped": false
-    },
-    "j6357m1gc5mq": {
-      "id": "j6357m1gc5mq",
-      "title": "ASUS ROG G16 RTX 5080 / Ultra 9 275HX / 32GB / 1TB 게이밍 노트북",
-      "url": "https://www.daangn.com/kr/buy-sell/asus-rog-g16-rtx-5080-ultra-9-275hx-32gb-1tb-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-j6357m1gc5mq/",
-      "lastPrice": 4900000,
-      "postedAt": "2026-10-06T16:53:12.377Z",
-      "firstSeenAt": "2026-10-06T16:58:01.663Z",
-      "pendingNewnessCheck": false,
-      "pendingDetailEvent": null,
-      "newnessDetailAttempted": false,
-      "newnessDetailAttempts": 0,
-      "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
-      "city": "의왕시",
-      "sourceRegion": [
-        "청계동-1649"
-      ],
-      "sourceCities": [
-        "의왕시"
-      ],
-      "sourceQuery": [
-        "RTX 노트북"
-      ],
-      "priority": 0,
-      "pendingReason": null,
-      "detailLastAttemptAt": "2026-10-06T16:59:21.679Z",
-      "lastAttemptAt": "2026-10-06T16:59:21.679Z",
-      "newnessProbeSkipped": false,
-      "nextEligibleAt": 0,
-      "attempts": 0,
-      "lastError": null
     },
     "56unqymkejid": {
       "id": "56unqymkejid",
@@ -15710,16 +15375,17 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
-      "city": "안양시",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
+      "city": "군포시",
       "sourceRegion": [
-        "관양1동-1395",
-        "비산1동-1390",
-        "석수1동-1384",
-        "호계동-4640",
-        "평촌동-1398"
+        "산본2동-1635",
+        "고천동-1644",
+        "갈산동-1406",
+        "비산1동-1390"
       ],
       "sourceCities": [
+        "군포시",
+        "의왕시",
         "안양시"
       ],
       "sourceQuery": [
@@ -15747,7 +15413,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -15787,20 +15453,20 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "당정동-4459",
         "산본2동-1635",
         "내손동-4731",
+        "포일동-4244",
         "고천동-1644",
+        "오전동-1646",
         "청계동-1649",
         "갈산동-1406",
         "관양1동-1395",
         "비산1동-1390",
-        "석수1동-1384",
-        "호계동-4640",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "sourceCities": [
         "군포시",
@@ -15825,7 +15491,7 @@
       "newnessDetailAttempted": true,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "detailLastAttemptAt": "2026-10-01T10:25:24.935Z",
       "newnessProbeSkipped": false,
@@ -15854,7 +15520,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -15880,7 +15546,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "의왕시",
       "sourceCities": [
         "의왕시"
@@ -15900,32 +15566,6 @@
       "attempts": 0,
       "lastError": null
     },
-    "bo714dnqdevk": {
-      "id": "bo714dnqdevk",
-      "title": "삼성 NT500R5K-K34W 화이트 노트북",
-      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-nt500r5k-k34w-%ED%99%94%EC%9D%B4%ED%8A%B8-%EB%85%B8%ED%8A%B8%EB%B6%81-bo714dnqdevk/",
-      "lastPrice": 50000,
-      "postedAt": "2026-09-29T00:11:28.202Z",
-      "firstSeenAt": "2026-10-01T05:34:00.847Z",
-      "pendingNewnessCheck": false,
-      "pendingDetailEvent": null,
-      "newnessDetailAttempted": false,
-      "newnessDetailAttempts": 0,
-      "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
-      "city": "군포시",
-      "newnessProbeSkipped": false,
-      "sourceCities": [
-        "군포시"
-      ],
-      "sourceRegion": [
-        "당정동-4459"
-      ],
-      "pendingReason": null,
-      "sourceQuery": [
-        "노트북"
-      ]
-    },
     "j1arcyezhwkz": {
       "id": "j1arcyezhwkz",
       "title": "리오나인 RTX 3070 게이밍 노트북",
@@ -15938,7 +15578,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -15966,7 +15606,8 @@
       ],
       "pendingReason": null,
       "sourceQuery": [
-        "RTX 노트북"
+        "RTX 노트북",
+        "노트북"
       ]
     },
     "itcbz1nswbj5": {
@@ -15981,7 +15622,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "newnessProbeSkipped": false,
       "sourceCities": [
@@ -16000,10 +15641,7 @@
         "갈산동-1406",
         "관양1동-1395",
         "비산1동-1390",
-        "석수1동-1384",
-        "호계동-4640",
-        "평촌동-1398",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "pendingReason": null,
       "attempts": 0,
@@ -16029,14 +15667,14 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "안양시",
       "newnessProbeSkipped": false,
       "sourceCities": [
         "안양시"
       ],
       "sourceRegion": [
-        "호계동-4640"
+        "갈산동-1406"
       ],
       "pendingReason": null,
       "attempts": 0,
@@ -16062,7 +15700,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "당정동-4459",
@@ -16075,10 +15713,7 @@
         "갈산동-1406",
         "관양1동-1395",
         "비산1동-1390",
-        "석수1동-1384",
-        "호계동-4640",
-        "평촌동-1398",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "sourceCities": [
         "군포시",
@@ -16109,7 +15744,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "당정동-4459",
@@ -16159,7 +15794,7 @@
       "newnessDetailAttempted": true,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "당정동-4459",
@@ -16168,14 +15803,10 @@
         "포일동-4244",
         "고천동-1644",
         "오전동-1646",
-        "청계동-1649",
         "갈산동-1406",
         "관양1동-1395",
         "비산1동-1390",
-        "석수1동-1384",
-        "호계동-4640",
-        "평촌동-1398",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "sourceCities": [
         "군포시",
@@ -16206,7 +15837,7 @@
       "newnessDetailAttempted": false,
       "newnessDetailAttempts": 0,
       "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
       "city": "군포시",
       "sourceRegion": [
         "당정동-4459",
@@ -16219,10 +15850,7 @@
         "갈산동-1406",
         "관양1동-1395",
         "비산1동-1390",
-        "석수1동-1384",
-        "호계동-4640",
-        "평촌동-1398",
-        "안양동-4639"
+        "석수1동-1384"
       ],
       "sourceCities": [
         "군포시",
@@ -16240,6 +15868,451 @@
       "nextEligibleAt": 0,
       "attempts": 0,
       "lastError": null
+    },
+    "7pfoeks9k6ro": {
+      "id": "7pfoeks9k6ro",
+      "title": "에이서 프레데터 헬리오스 고사양 게이밍 노트북",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%97%90%EC%9D%B4%EC%84%9C-%ED%94%84%EB%A0%88%EB%8D%B0%ED%84%B0-%ED%97%AC%EB%A6%AC%EC%98%A4%EC%8A%A4-%EA%B3%A0%EC%82%AC%EC%96%91-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-7pfoeks9k6ro/",
+      "lastPrice": 1550000,
+      "postedAt": "2026-09-14T06:43:43.482Z",
+      "firstSeenAt": "2026-10-05T10:57:32.038Z",
+      "pendingNewnessCheck": false,
+      "pendingDetailEvent": null,
+      "newnessDetailAttempted": false,
+      "newnessDetailAttempts": 0,
+      "newnessUnknownExpired": false,
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
+      "city": "안양시",
+      "sourceCities": [
+        "안양시"
+      ],
+      "sourceRegion": [
+        "평촌동-1398"
+      ],
+      "sourceQuery": [
+        "RTX 노트북"
+      ],
+      "priority": 2,
+      "pendingReason": null,
+      "detailLastAttemptAt": "2026-10-05T14:05:07.482Z",
+      "lastAttemptAt": "2026-10-05T14:05:07.482Z",
+      "newnessProbeSkipped": false,
+      "nextEligibleAt": 0,
+      "attempts": 0,
+      "lastError": null
+    },
+    "yq37t5d8efmk": {
+      "id": "yq37t5d8efmk",
+      "title": "ASUS 비보북 R9 6900HX 16GB RAM 노트북",
+      "url": "https://www.daangn.com/kr/buy-sell/asus-%EB%B9%84%EB%B3%B4%EB%B6%81-r9-6900hx-16gb-ram-%EB%85%B8%ED%8A%B8%EB%B6%81-yq37t5d8efmk/",
+      "lastPrice": 1000000,
+      "postedAt": "2026-06-08T06:05:27.859Z",
+      "firstSeenAt": "2026-09-30T16:15:40.221Z",
+      "pendingNewnessCheck": false,
+      "newnessDetailAttempted": false,
+      "newnessDetailAttempts": 0,
+      "newnessUnknownExpired": true,
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
+      "city": "의왕시",
+      "newnessProbeSkipped": false,
+      "pendingDetailEvent": null,
+      "sourceCities": [
+        "의왕시"
+      ],
+      "sourceRegion": [
+        "내손동-4731"
+      ],
+      "pendingReason": null,
+      "sourceQuery": [
+        "RTX 노트북"
+      ]
+    },
+    "8i973j7drf7o": {
+      "id": "8i973j7drf7o",
+      "title": "삼성 노트북 NT910S3L-M14W 화이트",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt910s3l-m14w-%ED%99%94%EC%9D%B4%ED%8A%B8-8i973j7drf7o/",
+      "lastPrice": 150000,
+      "postedAt": "2026-10-03T12:24:49.296Z",
+      "firstSeenAt": "2026-10-04T14:00:51.669Z",
+      "pendingNewnessCheck": false,
+      "pendingDetailEvent": null,
+      "newnessDetailAttempted": false,
+      "newnessDetailAttempts": 0,
+      "newnessUnknownExpired": true,
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
+      "city": "의왕시",
+      "newnessProbeSkipped": false,
+      "sourceCities": [
+        "의왕시",
+        "안양시"
+      ],
+      "sourceRegion": [
+        "내손동-4731",
+        "갈산동-1406",
+        "비산1동-1390"
+      ],
+      "pendingReason": null,
+      "sourceQuery": [
+        "노트북"
+      ]
+    },
+    "pedrxdxbiumg": {
+      "id": "pedrxdxbiumg",
+      "title": "Lenovo IdeaPad S145-14IWL 노트북",
+      "url": "https://www.daangn.com/kr/buy-sell/lenovo-ideapad-s145-14iwl-%EB%85%B8%ED%8A%B8%EB%B6%81-pedrxdxbiumg/",
+      "lastPrice": 135000,
+      "postedAt": "2026-09-16T01:44:36.966Z",
+      "firstSeenAt": "2026-10-03T02:45:48.655Z",
+      "pendingNewnessCheck": false,
+      "pendingDetailEvent": null,
+      "newnessDetailAttempted": false,
+      "newnessDetailAttempts": 0,
+      "newnessUnknownExpired": true,
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
+      "city": "군포시",
+      "newnessProbeSkipped": false,
+      "sourceCities": [
+        "군포시",
+        "의왕시",
+        "안양시"
+      ],
+      "sourceRegion": [
+        "당정동-4459",
+        "산본2동-1635",
+        "내손동-4731",
+        "포일동-4244",
+        "갈산동-1406"
+      ],
+      "pendingReason": null,
+      "sourceQuery": [
+        "노트북"
+      ]
+    },
+    "1d4x32vpnfup": {
+      "id": "1d4x32vpnfup",
+      "title": "노트북i5 5200u팝니다속도빨라서좋아요",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%85%B8%ED%8A%B8%EB%B6%81i5-5200u%ED%8C%9D%EB%8B%88%EB%8B%A4%EC%86%8D%EB%8F%84%EB%B9%A8%EB%9D%BC%EC%84%9C%EC%A2%8B%EC%95%84%EC%9A%94-1d4x32vpnfup/",
+      "lastPrice": 85000,
+      "postedAt": "2026-09-29T13:32:33.278Z",
+      "firstSeenAt": "2026-10-01T05:34:00.847Z",
+      "pendingNewnessCheck": false,
+      "pendingDetailEvent": null,
+      "newnessDetailAttempted": false,
+      "newnessDetailAttempts": 0,
+      "newnessUnknownExpired": true,
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
+      "city": "의왕시",
+      "newnessProbeSkipped": false,
+      "sourceCities": [
+        "의왕시",
+        "안양시"
+      ],
+      "sourceRegion": [
+        "포일동-4244",
+        "고천동-1644",
+        "청계동-1649",
+        "갈산동-1406",
+        "비산1동-1390",
+        "석수1동-1384"
+      ],
+      "pendingReason": null,
+      "sourceQuery": [
+        "노트북"
+      ]
+    },
+    "aezs3o1ejh5k": {
+      "id": "aezs3o1ejh5k",
+      "title": "LG 노트북 i3-4005U 8GB RAM 128GB SSD",
+      "url": "https://www.daangn.com/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-i3-4005u-8gb-ram-128gb-ssd-aezs3o1ejh5k/",
+      "lastPrice": 100000,
+      "postedAt": "2026-07-19T13:26:04.242Z",
+      "firstSeenAt": "2026-09-30T11:35:41.918Z",
+      "pendingNewnessCheck": false,
+      "newnessDetailAttempted": false,
+      "newnessUnknownExpired": true,
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
+      "city": "군포시",
+      "newnessProbeSkipped": false,
+      "newnessDetailAttempts": 0,
+      "pendingDetailEvent": null,
+      "sourceCities": [
+        "군포시",
+        "의왕시",
+        "안양시"
+      ],
+      "sourceRegion": [
+        "당정동-4459",
+        "포일동-4244",
+        "갈산동-1406",
+        "관양1동-1395",
+        "석수1동-1384"
+      ],
+      "pendingReason": null,
+      "sourceQuery": [
+        "노트북"
+      ]
+    },
+    "wy2uom8aioz3": {
+      "id": "wy2uom8aioz3",
+      "title": "삼성 노트북 550XDZ-AD1AW 플러스2",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-550xdz-ad1aw-%ED%94%8C%EB%9F%AC%EC%8A%A42-wy2uom8aioz3/",
+      "lastPrice": 400000,
+      "postedAt": "2026-10-06T23:28:16.277Z",
+      "firstSeenAt": "2026-10-06T23:36:28.491Z",
+      "pendingNewnessCheck": false,
+      "pendingDetailEvent": null,
+      "newnessDetailAttempted": true,
+      "newnessDetailAttempts": 0,
+      "newnessUnknownExpired": false,
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
+      "city": "안양시",
+      "sourceRegion": [
+        "당정동-4459",
+        "산본2동-1635",
+        "내손동-4731",
+        "포일동-4244",
+        "고천동-1644",
+        "오전동-1646",
+        "청계동-1649",
+        "갈산동-1406",
+        "관양1동-1395",
+        "비산1동-1390",
+        "석수1동-1384"
+      ],
+      "sourceCities": [
+        "군포시",
+        "의왕시",
+        "안양시"
+      ],
+      "sourceQuery": [
+        "노트북"
+      ],
+      "priority": 0,
+      "pendingReason": null,
+      "detailLastAttemptAt": "2026-10-06T23:37:52.495Z",
+      "lastAttemptAt": "2026-10-06T23:37:52.496Z",
+      "newnessProbeSkipped": false,
+      "nextEligibleAt": 0,
+      "attempts": 0,
+      "lastError": null
+    },
+    "zypnhy9x2wvn": {
+      "id": "zypnhy9x2wvn",
+      "title": "LG 17인치 울트라기어 게이밍 노트북 판매합니다",
+      "url": "https://www.daangn.com/kr/buy-sell/lg-17%EC%9D%B8%EC%B9%98-%EC%9A%B8%ED%8A%B8%EB%9D%BC%EA%B8%B0%EC%96%B4-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-zypnhy9x2wvn/",
+      "lastPrice": 820000,
+      "postedAt": "2026-10-06T23:35:36.602Z",
+      "firstSeenAt": "2026-10-06T23:36:28.491Z",
+      "pendingNewnessCheck": false,
+      "pendingDetailEvent": null,
+      "newnessDetailAttempted": false,
+      "newnessDetailAttempts": 0,
+      "newnessUnknownExpired": false,
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
+      "city": "군포시",
+      "sourceRegion": [
+        "당정동-4459",
+        "고천동-1644"
+      ],
+      "sourceCities": [
+        "군포시",
+        "의왕시"
+      ],
+      "sourceQuery": [
+        "노트북",
+        "RTX 노트북"
+      ],
+      "priority": 0,
+      "pendingReason": null,
+      "detailLastAttemptAt": "2026-10-06T23:37:52.498Z",
+      "lastAttemptAt": "2026-10-06T23:37:52.498Z",
+      "newnessProbeSkipped": false,
+      "nextEligibleAt": 0,
+      "attempts": 0,
+      "lastError": null
+    },
+    "ncjxhwg2skxp": {
+      "id": "ncjxhwg2skxp",
+      "title": "삼성 노트북 코어 i5 고장(부품용)",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%BD%94%EC%96%B4-i5-%EA%B3%A0%EC%9E%A5-%EB%B6%80%ED%92%88%EC%9A%A9-ncjxhwg2skxp/",
+      "lastPrice": 30000,
+      "postedAt": "2026-10-06T23:31:09.139Z",
+      "firstSeenAt": "2026-10-06T23:36:28.491Z",
+      "pendingNewnessCheck": false,
+      "pendingDetailEvent": null,
+      "newnessDetailAttempted": false,
+      "newnessDetailAttempts": 0,
+      "newnessUnknownExpired": false,
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
+      "city": "군포시",
+      "sourceRegion": [
+        "당정동-4459",
+        "고천동-1644"
+      ],
+      "sourceCities": [
+        "군포시",
+        "의왕시"
+      ],
+      "sourceQuery": [
+        "노트북"
+      ],
+      "priority": 0,
+      "pendingReason": null,
+      "detailLastAttemptAt": "2026-10-06T23:37:52.498Z",
+      "lastAttemptAt": "2026-10-06T23:37:52.498Z",
+      "newnessProbeSkipped": false,
+      "nextEligibleAt": 0,
+      "attempts": 0,
+      "lastError": null
+    },
+    "msn1xhep6n16": {
+      "id": "msn1xhep6n16",
+      "title": "LG 17인치 울트라기어 게이밍 노트북 판매합니다",
+      "url": "https://www.daangn.com/kr/buy-sell/lg-17%EC%9D%B8%EC%B9%98-%EC%9A%B8%ED%8A%B8%EB%9D%BC%EA%B8%B0%EC%96%B4-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-msn1xhep6n16/",
+      "lastPrice": 820000,
+      "postedAt": "2026-10-06T23:35:36.534Z",
+      "firstSeenAt": "2026-10-06T23:36:28.491Z",
+      "pendingNewnessCheck": false,
+      "pendingDetailEvent": null,
+      "newnessDetailAttempted": false,
+      "newnessDetailAttempts": 0,
+      "newnessUnknownExpired": false,
+      "lastSeenAt": "2026-10-06T23:36:28.491Z",
+      "city": "의왕시",
+      "sourceRegion": [
+        "오전동-1646",
+        "청계동-1649"
+      ],
+      "sourceCities": [
+        "의왕시"
+      ],
+      "sourceQuery": [
+        "노트북",
+        "RTX 노트북"
+      ],
+      "priority": 0,
+      "pendingReason": null,
+      "detailLastAttemptAt": "2026-10-06T23:37:52.498Z",
+      "lastAttemptAt": "2026-10-06T23:37:52.498Z",
+      "newnessProbeSkipped": false,
+      "nextEligibleAt": 0,
+      "attempts": 0,
+      "lastError": null
+    },
+    "qrrvmhotmtdb": {
+      "id": "qrrvmhotmtdb",
+      "title": "i5 터치 노트북(win11, 한컴오피스, ms오피스, 램8GB, ssd128GB)",
+      "url": "https://www.daangn.com/kr/buy-sell/i5-%ED%84%B0%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-win11-%ED%95%9C%EC%BB%B4%EC%98%A4%ED%94%BC%EC%8A%A4-ms%EC%98%A4%ED%94%BC%EC%8A%A4-%EB%9E%A88gb-ssd128gb-qrrvmhotmtdb/",
+      "lastPrice": 120000,
+      "postedAt": "2026-10-02T04:33:41.958Z",
+      "firstSeenAt": "2026-10-02T04:38:32.164Z",
+      "pendingNewnessCheck": false,
+      "pendingDetailEvent": null,
+      "newnessDetailAttempted": false,
+      "newnessDetailAttempts": 0,
+      "newnessUnknownExpired": true,
+      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "city": "의왕시",
+      "newnessProbeSkipped": false,
+      "sourceCities": [
+        "의왕시",
+        "안양시"
+      ],
+      "sourceRegion": [
+        "고천동-1644",
+        "청계동-1649",
+        "갈산동-1406",
+        "호계동-4640",
+        "평촌동-1398"
+      ],
+      "pendingReason": null,
+      "sourceQuery": [
+        "노트북"
+      ]
+    },
+    "32r6nw5cf2m3": {
+      "id": "32r6nw5cf2m3",
+      "title": "LG XNOTE 노트북 i5/8GB RAM/256GB SSD",
+      "url": "https://www.daangn.com/kr/buy-sell/lg-xnote-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-8gb-ram-256gb-ssd-32r6nw5cf2m3/",
+      "lastPrice": 80000,
+      "postedAt": "2026-09-23T04:30:05.188Z",
+      "firstSeenAt": "2026-10-01T02:55:36.302Z",
+      "pendingNewnessCheck": false,
+      "newnessDetailAttempted": false,
+      "newnessDetailAttempts": 0,
+      "newnessUnknownExpired": true,
+      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "city": "안양시",
+      "newnessProbeSkipped": false,
+      "pendingDetailEvent": null,
+      "sourceCities": [
+        "안양시"
+      ],
+      "sourceRegion": [
+        "갈산동-1406"
+      ],
+      "pendingReason": null,
+      "sourceQuery": [
+        "노트북"
+      ]
+    },
+    "j6357m1gc5mq": {
+      "id": "j6357m1gc5mq",
+      "title": "ASUS ROG G16 RTX 5080 / Ultra 9 275HX / 32GB / 1TB 게이밍 노트북",
+      "url": "https://www.daangn.com/kr/buy-sell/asus-rog-g16-rtx-5080-ultra-9-275hx-32gb-1tb-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-j6357m1gc5mq/",
+      "lastPrice": 4900000,
+      "postedAt": "2026-10-06T16:53:12.377Z",
+      "firstSeenAt": "2026-10-06T16:58:01.663Z",
+      "pendingNewnessCheck": false,
+      "pendingDetailEvent": null,
+      "newnessDetailAttempted": false,
+      "newnessDetailAttempts": 0,
+      "newnessUnknownExpired": false,
+      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "city": "의왕시",
+      "sourceRegion": [
+        "청계동-1649"
+      ],
+      "sourceCities": [
+        "의왕시"
+      ],
+      "sourceQuery": [
+        "RTX 노트북"
+      ],
+      "priority": 0,
+      "pendingReason": null,
+      "detailLastAttemptAt": "2026-10-06T16:59:21.679Z",
+      "lastAttemptAt": "2026-10-06T16:59:21.679Z",
+      "newnessProbeSkipped": false,
+      "nextEligibleAt": 0,
+      "attempts": 0,
+      "lastError": null
+    },
+    "bo714dnqdevk": {
+      "id": "bo714dnqdevk",
+      "title": "삼성 NT500R5K-K34W 화이트 노트북",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-nt500r5k-k34w-%ED%99%94%EC%9D%B4%ED%8A%B8-%EB%85%B8%ED%8A%B8%EB%B6%81-bo714dnqdevk/",
+      "lastPrice": 50000,
+      "postedAt": "2026-09-29T00:11:28.202Z",
+      "firstSeenAt": "2026-10-01T05:34:00.847Z",
+      "pendingNewnessCheck": false,
+      "pendingDetailEvent": null,
+      "newnessDetailAttempted": false,
+      "newnessDetailAttempts": 0,
+      "newnessUnknownExpired": true,
+      "lastSeenAt": "2026-10-06T23:18:47.341Z",
+      "city": "군포시",
+      "newnessProbeSkipped": false,
+      "sourceCities": [
+        "군포시"
+      ],
+      "sourceRegion": [
+        "당정동-4459"
+      ],
+      "pendingReason": null,
+      "sourceQuery": [
+        "노트북"
+      ]
     },
     "wf8xzcp1npxa": {
       "id": "wf8xzcp1npxa",
@@ -16387,43 +16460,6 @@
       ],
       "pendingReason": null,
       "newnessProbeSkipped": false
-    },
-    "7pfoeks9k6ro": {
-      "id": "7pfoeks9k6ro",
-      "title": "에이서 프레데터 헬리오스 고사양 게이밍 노트북",
-      "url": "https://www.daangn.com/kr/buy-sell/%EC%97%90%EC%9D%B4%EC%84%9C-%ED%94%84%EB%A0%88%EB%8D%B0%ED%84%B0-%ED%97%AC%EB%A6%AC%EC%98%A4%EC%8A%A4-%EA%B3%A0%EC%82%AC%EC%96%91-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-7pfoeks9k6ro/",
-      "lastPrice": 1550000,
-      "postedAt": "2026-09-14T06:43:43.482Z",
-      "firstSeenAt": "2026-10-05T10:57:32.038Z",
-      "pendingNewnessCheck": false,
-      "pendingDetailEvent": null,
-      "newnessDetailAttempted": false,
-      "newnessDetailAttempts": 0,
-      "newnessUnknownExpired": false,
-      "lastSeenAt": "2026-10-06T22:54:23.403Z",
-      "city": "군포시",
-      "sourceCities": [
-        "군포시",
-        "의왕시",
-        "안양시"
-      ],
-      "sourceRegion": [
-        "산본2동-1635",
-        "오전동-1646",
-        "평촌동-1398",
-        "안양동-4639"
-      ],
-      "sourceQuery": [
-        "RTX 노트북"
-      ],
-      "priority": 2,
-      "pendingReason": null,
-      "detailLastAttemptAt": "2026-10-05T14:05:07.482Z",
-      "lastAttemptAt": "2026-10-05T14:05:07.482Z",
-      "newnessProbeSkipped": false,
-      "nextEligibleAt": 0,
-      "attempts": 0,
-      "lastError": null
     },
     "3kkpjppykej8": {
       "id": "3kkpjppykej8",
@@ -25229,32 +25265,6 @@
       "detailLastAttemptAt": "2026-10-06T07:23:01.961Z",
       "lastAttemptAt": "2026-10-06T07:23:01.961Z",
       "lastError": null
-    },
-    "yq37t5d8efmk": {
-      "id": "yq37t5d8efmk",
-      "title": "ASUS 비보북 R9 6900HX 16GB RAM 노트북",
-      "url": "https://www.daangn.com/kr/buy-sell/asus-%EB%B9%84%EB%B3%B4%EB%B6%81-r9-6900hx-16gb-ram-%EB%85%B8%ED%8A%B8%EB%B6%81-yq37t5d8efmk/",
-      "lastPrice": 1000000,
-      "postedAt": "2026-06-08T06:05:27.859Z",
-      "firstSeenAt": "2026-09-30T16:15:40.221Z",
-      "pendingNewnessCheck": false,
-      "newnessDetailAttempted": false,
-      "newnessDetailAttempts": 0,
-      "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-06T08:57:17.210Z",
-      "city": "안양시",
-      "newnessProbeSkipped": false,
-      "pendingDetailEvent": null,
-      "sourceCities": [
-        "안양시"
-      ],
-      "sourceRegion": [
-        "갈산동-1406"
-      ],
-      "pendingReason": null,
-      "sourceQuery": [
-        "RTX 노트북"
-      ]
     },
     "gr9dcvpmohri": {
       "id": "gr9dcvpmohri",
@@ -44640,27 +44650,6 @@
       "sourceRegion": [],
       "pendingReason": null
     },
-    "8i973j7drf7o": {
-      "id": "8i973j7drf7o",
-      "title": "삼성 노트북 NT910S3L-M14W 화이트",
-      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt910s3l-m14w-%ED%99%94%EC%9D%B4%ED%8A%B8-8i973j7drf7o/",
-      "lastPrice": 150000,
-      "postedAt": null,
-      "firstSeenAt": "2026-10-04T14:00:51.669Z",
-      "pendingNewnessCheck": false,
-      "pendingDetailEvent": null,
-      "newnessDetailAttempted": false,
-      "newnessDetailAttempts": 0,
-      "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-05T01:37:17.210Z",
-      "city": "의왕시",
-      "newnessProbeSkipped": false,
-      "sourceCities": [
-        "의왕시"
-      ],
-      "sourceRegion": [],
-      "pendingReason": null
-    },
     "kezhi7r5954w": {
       "id": "kezhi7r5954w",
       "title": "DELL 터치스크린. i5 속도 굿",
@@ -52352,29 +52341,6 @@
       "sourceRegion": [],
       "pendingReason": null
     },
-    "pedrxdxbiumg": {
-      "id": "pedrxdxbiumg",
-      "title": "Lenovo IdeaPad S145-14IWL 노트북",
-      "url": "https://www.daangn.com/kr/buy-sell/lenovo-ideapad-s145-14iwl-%EB%85%B8%ED%8A%B8%EB%B6%81-pedrxdxbiumg/",
-      "lastPrice": 135000,
-      "postedAt": null,
-      "firstSeenAt": "2026-10-03T02:45:48.655Z",
-      "pendingNewnessCheck": false,
-      "pendingDetailEvent": null,
-      "newnessDetailAttempted": false,
-      "newnessDetailAttempts": 0,
-      "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-03T20:03:49.025Z",
-      "city": "과천시",
-      "newnessProbeSkipped": false,
-      "sourceCities": [
-        "과천시",
-        "안양시",
-        "의왕시"
-      ],
-      "sourceRegion": [],
-      "pendingReason": null
-    },
     "cm5p2nhj2u12": {
       "id": "cm5p2nhj2u12",
       "title": "삼성 노트북 i5-2467M",
@@ -55551,28 +55517,6 @@
         "군포시",
         "의왕시",
         "안양시"
-      ],
-      "sourceRegion": [],
-      "pendingReason": null
-    },
-    "1d4x32vpnfup": {
-      "id": "1d4x32vpnfup",
-      "title": "노트북i5 5200u팝니다속도빨라서좋아요",
-      "url": "https://www.daangn.com/kr/buy-sell/%EB%85%B8%ED%8A%B8%EB%B6%81i5-5200u%ED%8C%9D%EB%8B%88%EB%8B%A4%EC%86%8D%EB%8F%84%EB%B9%A8%EB%9D%BC%EC%84%9C%EC%A2%8B%EC%95%84%EC%9A%94-1d4x32vpnfup/",
-      "lastPrice": 72000,
-      "postedAt": null,
-      "firstSeenAt": "2026-10-01T05:34:00.847Z",
-      "pendingNewnessCheck": false,
-      "pendingDetailEvent": null,
-      "newnessDetailAttempted": false,
-      "newnessDetailAttempts": 0,
-      "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-03T08:58:06.823Z",
-      "city": "안양시",
-      "newnessProbeSkipped": false,
-      "sourceCities": [
-        "안양시",
-        "군포시"
       ],
       "sourceRegion": [],
       "pendingReason": null
@@ -60124,29 +60068,6 @@
       "newnessProbeSkipped": false,
       "sourceCities": [
         "군포시",
-        "의왕시",
-        "안양시"
-      ],
-      "sourceRegion": [],
-      "pendingReason": null
-    },
-    "aezs3o1ejh5k": {
-      "id": "aezs3o1ejh5k",
-      "title": "LG 노트북 i3-4005U 8GB RAM 128GB SSD",
-      "url": "https://www.daangn.com/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-i3-4005u-8gb-ram-128gb-ssd-aezs3o1ejh5k/",
-      "lastPrice": 100000,
-      "postedAt": null,
-      "firstSeenAt": "2026-09-30T11:35:41.918Z",
-      "pendingNewnessCheck": false,
-      "newnessDetailAttempted": false,
-      "newnessUnknownExpired": true,
-      "lastSeenAt": "2026-10-03T01:00:16.685Z",
-      "city": "과천시",
-      "newnessProbeSkipped": false,
-      "newnessDetailAttempts": 0,
-      "pendingDetailEvent": null,
-      "sourceCities": [
-        "과천시",
         "의왕시",
         "안양시"
       ],
