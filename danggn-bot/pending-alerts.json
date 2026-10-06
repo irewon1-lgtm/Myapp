@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-06T12:48:45.409239Z",
+  "updatedAt": "2026-10-06T13:04:03.161436Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -1001,6 +1001,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C-16-m4max-48gb-1tb-cb7a4w93apcw/",
       "firstAlertedAt": "2026-10-06T12:27:30.179805Z",
       "lastCandidateAt": "2026-10-06T12:27:30.179805Z"
+    },
+    "x24bq3x6hw83": {
+      "id": "x24bq3x6hw83",
+      "title": "에이서 니트로 5 게이밍 노트북",
+      "price": 400000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "군포1동",
+      "cpuHint": "i7-9750H",
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB 메모리",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-06T12:49:07.552Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%97%90%EC%9D%B4%EC%84%9C-%EB%8B%88%ED%8A%B8%EB%A1%9C-5-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-x24bq3x6hw83/",
+      "firstAlertedAt": "2026-10-06T13:04:03.161436Z",
+      "lastCandidateAt": "2026-10-06T13:04:03.161436Z"
     }
   }
 }
