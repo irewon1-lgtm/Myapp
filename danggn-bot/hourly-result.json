@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-06T17:20:23.210Z",
+  "generatedAt": "2026-10-06T17:38:01.355Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,21 +55,26 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%95%84%EC%9D%B4%EB%94%94%EC%96%B4%ED%8C%A8%EB%93%9C-s340-15api-%EB%85%B8%ED%8A%B8%EB%B6%81-xqqs6a1mwojn/",
-            "href": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%95%84%EC%9D%B4%EB%94%94%EC%96%B4%ED%8C%A8%EB%93%9C-s340-15api-%EB%85%B8%ED%8A%B8%EB%B6%81-xqqs6a1mwojn/",
-            "title": "레노버 아이디어패드 S340-15API 노트북",
-            "content": "레노버 아이디어패드 S340-15API 노트북 판매해요.\nAMD Ryzen 5 3500U 프로세서와 8GB RAM, 256GB 저장공간을 갖추고 있어요.\n윈도우 10 홈이 설치되어 있어 바로 사용 가능합니다.\n가볍고 슬림한 디자인으로 휴대하고 인강, 사무용으로 사용하기 좋아요.\n액정도 상태좋습니다.\n\n구성품 : 본품 + 정품 충전기",
-            "price": "150000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/0c30533b-2410-456d-af9d-fc6c4f810f89.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/hp-%ED%8C%8C%EB%B9%8C%EB%A6%AC%EC%98%A8-i5-16ram-ssd500gb-%EC%98%A4%ED%86%A0%EC%BA%90%EB%93%9C-%ED%95%9C%EC%BB%B4%EC%98%A4%ED%94%BC%EC%8A%A4-6tfz9ifxpkhn/",
+            "href": "/kr/buy-sell/hp-%ED%8C%8C%EB%B9%8C%EB%A6%AC%EC%98%A8-i5-16ram-ssd500gb-%EC%98%A4%ED%86%A0%EC%BA%90%EB%93%9C-%ED%95%9C%EC%BB%B4%EC%98%A4%ED%94%BC%EC%8A%A4-6tfz9ifxpkhn/",
+            "title": "HP 파빌리온 i5 16RAM SSD500GB 오토캐드 한컴오피스",
+            "content": "깔끔한 화이트 색상의 파빌리온 노트북이에요. \n인텔 코어 i5-4200U  15.6인치\nIntel(R) HD Graphics Family\n♡12RAM\n♡SSD500GB \n♡win11 Home\n♡배터리2시간\n오토캐드2024/ 한글/ 한컴오피스/한셀.한쇼.한워드.PDF\n바로 작업가능.\n와이파이 \n인터넷 문서작업 유튜브 \n램 12RAM 속도빠르고 \nSSD500GB 대용량 하드디스크 저장공간도 넉넉함.\n\n*구성품* 풀구성세트\n노트북\n아답터충전기\n무선마우스(새제품)\n마우스패드(새제품)\n\n\n",
+            "price": "200000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/9f9717a5-648c-406d-b7ae-5d8533b692b4.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-06T16:13:46.568Z",
-            "boostedAt": "2026-10-06T16:13:46.568Z",
+            "createdAt": "2026-10-06T17:30:12.033Z",
+            "boostedAt": "2026-10-06T17:30:12.033Z",
             "region": {
-              "name": "진량읍"
+              "name": "맹동면"
             },
             "category": null,
-            "tradingCoordinates": []
+            "tradingCoordinates": [
+              {
+                "latitude": 36.913423022813774,
+                "longitude": 127.54203463821494
+              }
+            ]
           },
           {
             "id": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-lg15u34-15%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-5ot7yfd8iegk/",
@@ -112,39 +117,39 @@
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-10-06T16:13:46.568Z\",\"boostedAt\":\"2026-10-06T16:13:46.568Z\",\"region\":{\"name\":\"진량읍\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-06T17:30:12.033Z\",\"boostedAt\":\"2026-10-06T17:30:12.033Z\",\"region\":{\"name\":\"맹동면\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-06T09:28:27.628Z\",\"boostedAt\":\"2026-10-06T09:28:27.625Z\",\"region\":{\"name\":\"권선동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-09-12T01:06:48.247Z\",\"boostedAt\":\"2026-10-05T06:58:29.633Z\",\"region\":{\"name\":\"평촌동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-06T15:53:21.627Z\",\"boostedAt\":\"2026-10-06T15:53:21.625Z\",\"region\":{\"name\":\"웅천동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-06T16:13:46.568Z\",\"boostedAt\":\"2026-10-06T16:13:46.568Z\",\"region\":{\"name\":\"진량읍\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-06T14:00:36.902Z\",\"boostedAt\":\"2026-10-06T14:00:36.900Z\",\"region\":{\"name\":\"금곡동\"},\"category\":null,\"tradingCoor"
         ],
         "scriptHeads": [
           "window.sentryEnv = {\n  release: \"75c6cc0\",\n  environment: \"prod-kr\"\n};",
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":266,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"레노버 아이디어패드 S340-15API 노트북\",\"de",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":266,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"HP 파빌리온 i5 16RAM SSD500GB 오토캐드",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-4ed31242.js\";\nimport * as route0 from \"/_remix/root-P4ns_lso.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-3lwXWrYq.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 1151,
-    "globalUniqueListings": 440,
-    "duplicateListingsRemoved": 711,
-    "detailQueueStart": 1,
-    "freshDetailTasks": 1,
+    "searchUniqueListings": 1234,
+    "globalUniqueListings": 446,
+    "duplicateListingsRemoved": 788,
+    "detailQueueStart": 2,
+    "freshDetailTasks": 2,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 1,
-    "detailSucceeded": 1,
+    "detailRequestsExecuted": 2,
+    "detailSucceeded": 2,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 440,
+    "postedAtResolvedFromSearch": 446,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 80234,
+    "scanDurationMs": 81839,
     "cities": [
       {
         "city": "군포시",
@@ -156,8 +161,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 280,
-        "durationMs": 12297
+        "uniqueListings": 281,
+        "durationMs": 12039
       },
       {
         "city": "의왕시",
@@ -172,8 +177,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 351,
-        "durationMs": 25555
+        "uniqueListings": 353,
+        "durationMs": 25403
       },
       {
         "city": "안양시",
@@ -190,8 +195,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 343,
-        "durationMs": 35100
+        "uniqueListings": 344,
+        "durationMs": 35501
       },
       {
         "city": "과천시",
@@ -202,17 +207,17 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 177,
-        "durationMs": 6428
+        "uniqueListings": 256,
+        "durationMs": 6996
       }
     ],
     "finalCandidateCount": 0,
-    "stateItemCount": 2904,
+    "stateItemCount": 2906,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 80237
+    "durationMs": 81842
   },
   "candidates": []
 }
