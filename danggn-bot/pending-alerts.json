@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-06T05:38:53.180329Z",
+  "updatedAt": "2026-10-06T05:57:22.395076Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -751,6 +751,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/lg-gram-i5-10%EC%84%B8%EB%8C%80-14%EC%9D%B8%EC%B9%98-16g-238g-%ED%8C%9D%EB%8B%88%EB%8B%A4-y5261bkpifu7/",
       "firstAlertedAt": "2026-10-06T04:23:31.414821Z",
       "lastCandidateAt": "2026-10-06T04:23:31.414821Z"
+    },
+    "jz8dc3zv5bf2": {
+      "id": "jz8dc3zv5bf2",
+      "title": "맥북 프로 16인치 M1 Max 32GB 1TB 스페이스 그레이",
+      "price": 1749000,
+      "previousPrice": 1799000,
+      "changeType": "price_drop",
+      "city": "안양시",
+      "location": "호계동",
+      "cpuHint": "M1 Max",
+      "gpuHint": "M1 Max",
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 32,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "32GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-04T00:47:42.320Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-16%EC%9D%B8%EC%B9%98-m1-max-32gb-1tb-%EC%8A%A4%ED%8E%98%EC%9D%B4%EC%8A%A4-%EA%B7%B8%EB%A0%88%EC%9D%B4-jz8dc3zv5bf2/",
+      "firstAlertedAt": "2026-10-06T05:57:22.395076Z",
+      "lastCandidateAt": "2026-10-06T05:57:22.395076Z"
     }
   }
 }
