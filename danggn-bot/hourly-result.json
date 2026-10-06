@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-06T20:40:22.476Z",
+  "generatedAt": "2026-10-06T20:56:47.096Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -115,7 +115,7 @@
           "createdAt\":\"2026-10-06T09:28:27.628Z\",\"boostedAt\":\"2026-10-06T09:28:27.625Z\",\"region\":{\"name\":\"권선동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-06T12:28:27.110Z\",\"boostedAt\":\"2026-10-06T12:28:27.104Z\",\"region\":{\"name\":\"동호동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-09-12T01:06:48.247Z\",\"boostedAt\":\"2026-10-05T06:58:29.633Z\",\"region\":{\"name\":\"평촌동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-04T08:49:15.120Z\",\"boostedAt\":\"2026-10-05T08:49:42.120Z\",\"region\":{\"name\":\"법1동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-06T14:00:36.902Z\",\"boostedAt\":\"2026-10-06T14:00:36.900Z\",\"region\":{\"name\":\"금곡동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-06T05:31:18.357Z\",\"boostedAt\":\"2026-10-06T05:31:18.350Z\",\"region\":{\"name\":\"비산1동\"},\"category\":null,\"tradingCoo"
         ],
         "scriptHeads": [
@@ -127,14 +127,14 @@
         ]
       }
     },
-    "searchUniqueListings": 1163,
+    "searchUniqueListings": 1164,
     "globalUniqueListings": 444,
-    "duplicateListingsRemoved": 719,
-    "detailQueueStart": 0,
-    "freshDetailTasks": 0,
+    "duplicateListingsRemoved": 720,
+    "detailQueueStart": 1,
+    "freshDetailTasks": 1,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 0,
-    "detailSucceeded": 0,
+    "detailRequestsExecuted": 1,
+    "detailSucceeded": 1,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
@@ -144,7 +144,7 @@
     "postedAtResolvedFromSearch": 444,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 78567,
+    "scanDurationMs": 80386,
     "cities": [
       {
         "city": "군포시",
@@ -157,7 +157,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 286,
-        "durationMs": 12034
+        "durationMs": 12198
       },
       {
         "city": "의왕시",
@@ -173,7 +173,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 357,
-        "durationMs": 25418
+        "durationMs": 25730
       },
       {
         "city": "안양시",
@@ -190,8 +190,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 343,
-        "durationMs": 34889
+        "uniqueListings": 344,
+        "durationMs": 34954
       },
       {
         "city": "과천시",
@@ -203,7 +203,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 177,
-        "durationMs": 6124
+        "durationMs": 6261
       }
     ],
     "finalCandidateCount": 0,
@@ -212,7 +212,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 78570
+    "durationMs": 80389
   },
   "candidates": []
 }
