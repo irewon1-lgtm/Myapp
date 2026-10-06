@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-06T04:40:13.400Z",
+  "generatedAt": "2026-10-06T04:58:12.099Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,23 +55,6 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-8250u-mx150-%ED%9D%B0%EC%83%89-fr2qt4zz78mq/",
-            "href": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-8250u-mx150-%ED%9D%B0%EC%83%89-fr2qt4zz78mq/",
-            "title": "LG 노트북 i5-8250U MX150 흰색",
-            "content": "[LG 노트북 i5 / SSD 256GB + HDD 500GB / MX150]\n\nLG 노트북 판매합니다.\n\n- CPU : Intel i5-8265U\n- RAM : 8GB\n- SSD : 256GB\n- HDD : 500GB\n- 그래픽 : NVIDIA GeForce MX150 2GB\n- Windows 10 Home\n\n인터넷, 유튜브, 문서작업, 인강, 간단한 사진·영상 편집용으로 사용하기 좋습니다.\nSSD와 HDD가 같이 있어서 저장공간도 넉넉한 편입니다.\n\n현재 정상 작동 확인했습니다.\n사용감은 있습니다.\n\n구성품 : 노트북 + 충전기\n박스 및 기타 구성품은 없습니다.\n\n판매가 180,000원\n직거래 우선합니다.\n약간의 가격 조정은 가능합니다.",
-            "price": "180000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/93a5a8e7-976d-4d8e-b84e-6f9a817d022f.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-06T04:27:39.334Z",
-            "boostedAt": "2026-10-06T04:27:39.332Z",
-            "region": {
-              "name": "신평면"
-            },
-            "category": null,
-            "tradingCoordinates": []
-          },
-          {
             "id": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%9D%EB%8B%88%EB%8B%A4-3y7mybymtq2o/",
             "href": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%9D%EB%8B%88%EB%8B%A4-3y7mybymtq2o/",
             "title": "LG 노트북 팝니다",
@@ -104,27 +87,44 @@
             },
             "category": null,
             "tradingCoordinates": []
+          },
+          {
+            "id": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EB%85%B8%ED%8A%B8%EB%B6%81-thinkbook-14-g6-abp-r5-7530u-32gb-ram-2-2k-srgb-100-g4wg6gzd5qnq/",
+            "href": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EB%85%B8%ED%8A%B8%EB%B6%81-thinkbook-14-g6-abp-r5-7530u-32gb-ram-2-2k-srgb-100-g4wg6gzd5qnq/",
+            "title": "레노버 노트북 ThinkBook 14 G6 ABP, R5 7530U, 32GB ram, 2.2K sRGB 100%",
+            "content": "* 직거래시 만원 빼드림\n\n모델명: 레노버 씽크북(ThinkBook) 14 G6 ABP\nCPU: AMD 라이젠 5 7530U\nRAM : 32GB \n저장장치: 256GB SSD\n디스플레이: 14\" / 2.2K (2240x1400, 16:10, IPS) / sRGB 100% \n운영체제: 윈도우 설치 및 기본 세팅 완료 (바로 사용 가능)\n배터리: 효율 96.3% (57.8wh/60.0wh) 사이클카운트 3, 레노버 벤티지 배터리 충전 보호 모드 상시 사용\n* 구성품: 노트북 본체, 전원 어댑터\n\n\n거래는\n\n(평일만)주엽역 5번출구 신한은행 일산중앙점 혹은\n\n주말 종일 및 평일 19시반이후엔 \n구파발역 인근 통일로 1030 GS25 진관헤스티아점 앞에서 하고 있습니다",
+            "price": "650000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/1c1a1182-2a93-49c9-b87a-9e1a51473fde.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-06T04:46:35.198Z",
+            "boostedAt": "2026-10-06T04:46:35.196Z",
+            "region": {
+              "name": "진관동"
+            },
+            "category": null,
+            "tradingCoordinates": []
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-10-06T04:27:39.334Z\",\"boostedAt\":\"2026-10-06T04:27:39.332Z\",\"region\":{\"name\":\"신평면\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-06T04:13:36.128Z\",\"boostedAt\":\"2026-10-06T04:13:36.125Z\",\"region\":{\"name\":\"화봉동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-06T03:22:30.237Z\",\"boostedAt\":\"2026-10-06T03:22:30.235Z\",\"region\":{\"name\":\"안양7동\"},\"category\":null,\"tradingCoo",
-          "createdAt\":\"2026-10-06T04:27:54.872Z\",\"boostedAt\":\"2026-10-06T04:27:54.871Z\",\"region\":{\"name\":\"내방동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-06T04:22:35.371Z\",\"boostedAt\":\"2026-10-06T04:22:35.369Z\",\"region\":{\"name\":\"퇴계원읍\"},\"category\":null,\"tradingCoo"
+          "createdAt\":\"2026-10-06T04:46:35.198Z\",\"boostedAt\":\"2026-10-06T04:46:35.196Z\",\"region\":{\"name\":\"진관동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-06T04:45:25.044Z\",\"boostedAt\":\"2026-10-06T04:45:25.042Z\",\"region\":{\"name\":\"식사동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-09-12T01:06:48.247Z\",\"boostedAt\":\"2026-10-05T06:58:29.633Z\",\"region\":{\"name\":\"평촌동\"},\"category\":null,\"tradingCoor"
         ],
         "scriptHeads": [
           "window.sentryEnv = {\n  release: \"75c6cc0\",\n  environment: \"prod-kr\"\n};",
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":270,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG 노트북 i5-8250U MX150 흰색\",\"des",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":270,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG 노트북 팝니다\",\"description\":\"LG ",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-4ed31242.js\";\nimport * as route0 from \"/_remix/root-P4ns_lso.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-3lwXWrYq.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 1211,
-    "globalUniqueListings": 429,
-    "duplicateListingsRemoved": 782,
+    "searchUniqueListings": 1094,
+    "globalUniqueListings": 409,
+    "duplicateListingsRemoved": 685,
     "detailQueueStart": 7,
     "freshDetailTasks": 7,
     "backlogDetailTasks": 0,
@@ -136,10 +136,10 @@
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 429,
+    "postedAtResolvedFromSearch": 409,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 88572,
+    "scanDurationMs": 87406,
     "cities": [
       {
         "city": "군포시",
@@ -151,8 +151,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 277,
-        "durationMs": 12420
+        "uniqueListings": 278,
+        "durationMs": 12216
       },
       {
         "city": "의왕시",
@@ -167,8 +167,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 346,
-        "durationMs": 25861
+        "uniqueListings": 343,
+        "durationMs": 25659
       },
       {
         "city": "안양시",
@@ -185,8 +185,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 336,
-        "durationMs": 35986
+        "uniqueListings": 299,
+        "durationMs": 35616
       },
       {
         "city": "과천시",
@@ -197,17 +197,17 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 252,
-        "durationMs": 6464
+        "uniqueListings": 174,
+        "durationMs": 6183
       }
     ],
     "finalCandidateCount": 0,
-    "stateItemCount": 2647,
+    "stateItemCount": 2651,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 88575
+    "durationMs": 87410
   },
   "candidates": []
 }
