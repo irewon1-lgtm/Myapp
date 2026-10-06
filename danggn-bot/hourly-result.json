@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-06T23:37:52.532Z",
+  "generatedAt": "2026-10-06T23:55:59.584Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -72,6 +72,23 @@
             "tradingCoordinates": []
           },
           {
+            "id": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-lg15u34-15%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-5ot7yfd8iegk/",
+            "href": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-lg15u34-15%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-5ot7yfd8iegk/",
+            "title": "LG  노트북(LG15U34) 15인치 화이트",
+            "content": "LG 그램 노트북 15인치 화이트 색상입니다. \n인텔 i5 CPU와 8GB RAM, 256GB SSD를 탑재(업그레이드)하고 있습니다. \n윈도우 10이 설치되어 있어 바로 사용 가능해요. 가볍고 성능 좋은 노트북을 찾으신다면 만족하실 거예요.",
+            "price": "150000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/9448f42f-8084-48c7-ac1a-8e6dd1eeb507.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-06T09:28:27.628Z",
+            "boostedAt": "2026-10-06T09:28:27.625Z",
+            "region": {
+              "name": "권선동"
+            },
+            "category": null,
+            "tradingCoordinates": []
+          },
+          {
             "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-550xdz-ad1aw-%ED%94%8C%EB%9F%AC%EC%8A%A42-wy2uom8aioz3/",
             "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-550xdz-ad1aw-%ED%94%8C%EB%9F%AC%EC%8A%A42-wy2uom8aioz3/",
             "title": "삼성 노트북 550XDZ-AD1AW 플러스2",
@@ -92,59 +109,42 @@
                 "longitude": 126.95737444975215
               }
             ]
-          },
-          {
-            "id": "/kr/buy-sell/lg-17%EC%9D%B8%EC%B9%98-%EC%9A%B8%ED%8A%B8%EB%9D%BC%EA%B8%B0%EC%96%B4-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-zypnhy9x2wvn/",
-            "href": "/kr/buy-sell/lg-17%EC%9D%B8%EC%B9%98-%EC%9A%B8%ED%8A%B8%EB%9D%BC%EA%B8%B0%EC%96%B4-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-zypnhy9x2wvn/",
-            "title": "LG 17인치 울트라기어 게이밍 노트북 판매합니다",
-            "content": "LG 울트라기어 17UD70Q-PX70K 팝니다.\n\n출장 다닐때 작업용으로 사용하던 제품입니다.\n\n최신 기종으로 업그레이드하면서 정리합니다.\n\n외관은 가방에 넣고다니느라 사용감 조금 있으나 전체적으로 깨끗한 편입니다.\n\n하자 없고 초기화 완료해두어서 바로 사용하시면 됩니다.\n\n노트북 + 충전기 있습니다.\n\n• CPU: 인텔 12세대 i7-1260P\n• GPU: RTX 3050 Ti\n• RAM: 32GB DDR5\n• SSD: 2TB(1.8T)\n• 화면: 17인치\n\n택배거래 안됩니다.\n네고 어렵습니다.\n구매하실분만 연락 주세요\n작성 완료",
-            "price": "820000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/1791329406017bf69c11a871721a6499b1b35fd41c9be6702832133d5301db8d295e2a10ad7940.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": false,
-            "createdAt": "2026-10-06T23:35:36.602Z",
-            "boostedAt": "2026-10-06T23:35:36.602Z",
-            "region": {
-              "name": "정자2동"
-            },
-            "category": null,
-            "tradingCoordinates": []
           }
         ],
         "dateFieldSnippets": [
           "createdAt\":\"2026-10-06T23:10:41.171Z\",\"boostedAt\":\"2026-10-06T23:10:41.171Z\",\"region\":{\"name\":\"동변동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-06T09:28:27.628Z\",\"boostedAt\":\"2026-10-06T09:28:27.625Z\",\"region\":{\"name\":\"권선동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-06T23:28:16.277Z\",\"boostedAt\":\"2026-10-06T23:28:16.275Z\",\"region\":{\"name\":\"호계동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-06T23:35:36.602Z\",\"boostedAt\":\"2026-10-06T23:35:36.602Z\",\"region\":{\"name\":\"정자2동\"},\"category\":null,\"tradingCoo",
-          "createdAt\":\"2026-10-06T23:10:27.931Z\",\"boostedAt\":\"2026-10-06T23:10:27.930Z\",\"region\":{\"name\":\"맹동면\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-09-30T07:56:05.415Z\",\"boostedAt\":\"2026-10-06T22:50:08.100Z\",\"region\":{\"name\":\"정왕3동\"},\"category\":null,\"tradingCoo"
+          "createdAt\":\"2026-09-12T01:06:48.247Z\",\"boostedAt\":\"2026-10-05T06:58:29.633Z\",\"region\":{\"name\":\"평촌동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-06T22:34:39.149Z\",\"boostedAt\":\"2026-10-06T22:34:39.144Z\",\"region\":{\"name\":\"내덕1동\"},\"category\":null,\"tradingCoo"
         ],
         "scriptHeads": [
           "window.sentryEnv = {\n  release: \"75c6cc0\",\n  environment: \"prod-kr\"\n};",
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":269,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 노트북 실버 8GB i5-5200U 사무 학습 유",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":266,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 노트북 실버 8GB i5-5200U 사무 학습 유",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-4ed31242.js\";\nimport * as route0 from \"/_remix/root-P4ns_lso.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-3lwXWrYq.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 1150,
-    "globalUniqueListings": 442,
-    "duplicateListingsRemoved": 708,
-    "detailQueueStart": 4,
-    "freshDetailTasks": 4,
+    "searchUniqueListings": 1135,
+    "globalUniqueListings": 430,
+    "duplicateListingsRemoved": 705,
+    "detailQueueStart": 1,
+    "freshDetailTasks": 1,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 4,
-    "detailSucceeded": 4,
+    "detailRequestsExecuted": 1,
+    "detailSucceeded": 1,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 442,
+    "postedAtResolvedFromSearch": 430,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 84041,
+    "scanDurationMs": 81553,
     "cities": [
       {
         "city": "군포시",
@@ -156,8 +156,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 281,
-        "durationMs": 12633
+        "uniqueListings": 280,
+        "durationMs": 12335
       },
       {
         "city": "의왕시",
@@ -172,8 +172,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 356,
-        "durationMs": 25709
+        "uniqueListings": 353,
+        "durationMs": 25729
       },
       {
         "city": "안양시",
@@ -190,8 +190,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 336,
-        "durationMs": 34908
+        "uniqueListings": 325,
+        "durationMs": 35541
       },
       {
         "city": "과천시",
@@ -203,16 +203,16 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 177,
-        "durationMs": 6476
+        "durationMs": 7231
       }
     ],
     "finalCandidateCount": 0,
-    "stateItemCount": 2935,
+    "stateItemCount": 2936,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 84045
+    "durationMs": 81556
   },
   "candidates": []
 }
