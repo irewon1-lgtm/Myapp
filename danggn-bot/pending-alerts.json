@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-06T01:21:59.437368Z",
+  "updatedAt": "2026-10-06T01:37:25.444763Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -651,6 +651,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/msi-gf75-thin-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-isk4ur6a8pss/",
       "firstAlertedAt": "2026-10-06T01:21:59.437368Z",
       "lastCandidateAt": "2026-10-06T01:21:59.437368Z"
+    },
+    "73yjhgrcmm4c": {
+      "id": "73yjhgrcmm4c",
+      "title": "리전 5 프로 RTX 1660. Ti. 16 G. 500.     55만 원",
+      "price": 550000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "안양2동",
+      "cpuHint": "i7-9750HF",
+      "gpuHint": "RTX 1660",
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-06T01:23:25.639Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A6%AC%EC%A0%84-5-%ED%94%84%EB%A1%9C-rtx-1660-ti-16-g-500-55%EB%A7%8C-%EC%9B%90-73yjhgrcmm4c/",
+      "firstAlertedAt": "2026-10-06T01:37:25.444763Z",
+      "lastCandidateAt": "2026-10-06T01:37:25.444763Z"
     }
   }
 }
