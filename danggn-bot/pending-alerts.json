@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-06T09:58:32.240006Z",
+  "updatedAt": "2026-10-06T10:23:05.580291Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -851,6 +851,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%812-%ED%94%84%EB%A1%9C-360-15%EC%9D%B8%EC%B9%98-%ED%92%80%EB%B0%95%EC%8A%A4-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-7skagjk4umx6/",
       "firstAlertedAt": "2026-10-06T07:39:47.514037Z",
       "lastCandidateAt": "2026-10-06T07:39:47.514037Z"
+    },
+    "hxnnisuax1dx": {
+      "id": "hxnnisuax1dx",
+      "title": "맥북 프로 16형 i9 16GB 1TB 2019",
+      "price": 806000,
+      "previousPrice": 807000,
+      "changeType": "price_drop",
+      "city": "군포시",
+      "location": "산본1동",
+      "cpuHint": null,
+      "gpuHint": "Radeon Pro 5500M 4GB",
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": 1024,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-06-22T23:20:28.651Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-16%ED%98%95-i9-16gb-1tb-2019-hxnnisuax1dx/",
+      "firstAlertedAt": "2026-10-06T10:23:05.580291Z",
+      "lastCandidateAt": "2026-10-06T10:23:05.580291Z"
     }
   }
 }
