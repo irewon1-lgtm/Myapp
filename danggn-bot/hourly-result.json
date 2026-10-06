@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-06T11:22:14.528Z",
+  "generatedAt": "2026-10-06T11:38:41.207Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -53,35 +53,103 @@
       },
       "htmlSample": {
         "embeddedArticles": false,
-        "remixArticleSamples": [],
-        "dateFieldSnippets": [],
+        "remixArticleSamples": [
+          {
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt500r5k-cnmkv3dge76b/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt500r5k-cnmkv3dge76b/",
+            "title": "삼성 노트북 NT500R5K",
+            "content": "삼성 노트북예요.\n노트북 + 전원케이블 + 마우스\n모두 드립니다.\n인텔 코어 i5-5200U 프로세서와 8GB 메모리가 탑재되어 있어요.\n저장 공간은 119GB이고, 그래픽 메모리는 2GB예요.\n가정이나 사무실에서 기본적인 PC 작업을 할 때 쓰기 좋아요.",
+            "price": "120000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/95701bf4-2778-44cb-bb19-a34c3b49ff76.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-06T11:34:46.796Z",
+            "boostedAt": "2026-10-06T11:34:46.793Z",
+            "region": {
+              "name": "수택2동"
+            },
+            "category": null,
+            "tradingCoordinates": [
+              {
+                "latitude": 37.596779608052486,
+                "longitude": 127.13996761709433
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/%EC%83%81%ED%83%9Cs%EA%B8%89-%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-i3-11%EC%84%B8%EB%8C%80-56unqymkejid/",
+            "href": "/kr/buy-sell/%EC%83%81%ED%83%9Cs%EA%B8%89-%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-i3-11%EC%84%B8%EB%8C%80-56unqymkejid/",
+            "title": "(상태S급) 삼성 노트북 ( i3-11세대)",
+            "content": "15인치 삼성 노트북 당근합니다! \n\n사진 보시듯 외관 깔끔하고 흠집 없이 상태 정말 좋습니다. \n\n🔸 상세 스펙 🔸\n\n• CPU: 인텔 i3-1115G4\n• 그래픽: 인텔 UHD 그래픽스\n• 램: 8GB\n• 용량: SSD 120GB\n• OS: 윈도우 11 프로 (정품)\n\n\n🔋 특징\n\n인강용, 사무용, 문서 작업용으로 가볍고 쾌적하게 쓰기 좋은 삼성 노트북입니다. 작동 잘 되고 군더더기 없이 깔끔합니다. 👍\n\n구성품\n노트북, 충전기\n\n택배거래는 포장 완벽하게 해서 보내드려요. \n(포장 달인입니다 📦)",
+            "price": "350000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/d5344873-bb12-4089-b146-4f9881a9c0c6.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-06T11:27:52.146Z",
+            "boostedAt": "2026-10-06T11:27:52.146Z",
+            "region": {
+              "name": "복대동"
+            },
+            "category": null,
+            "tradingCoordinates": []
+          },
+          {
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-15%EC%9D%B8%EC%B9%98-8gb-zfqmyz9wg4ht/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-15%EC%9D%B8%EC%B9%98-8gb-zfqmyz9wg4ht/",
+            "title": "삼성 노트북 15인치 8GB",
+            "content": "삼성 노트북으로 15인치 화면을 갖췄어요.\n인텔 코어 i5-5200U 프로세서와 8GB 메모리, 128GB 저장장치가 탑재되어 있어요.\n검은색 본체에 숫자 키패드와 넓은 터치패드가 있어요.\n문서 작업이나 인터넷 검색용 노트북을 찾는 분께 추천해요. \n충전기가 없는 점을 감안해서 가격을 저렴하게 책정했습니다. 문제없이 정상적으로 작동합니다.",
+            "price": "50000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/1791286286702cb54d576435ab93b52410941101bca7e399751cd075b99bf5397a14298ddf2040.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-10-06T11:34:26.148Z",
+            "boostedAt": "2026-10-06T11:34:26.148Z",
+            "region": {
+              "name": "안양1동"
+            },
+            "category": null,
+            "tradingCoordinates": [
+              {
+                "latitude": 37.40382807117199,
+                "longitude": 126.91442307474017
+              }
+            ]
+          }
+        ],
+        "dateFieldSnippets": [
+          "createdAt\":\"2026-10-06T11:34:46.796Z\",\"boostedAt\":\"2026-10-06T11:34:46.793Z\",\"region\":{\"name\":\"수택2동\"},\"category\":null,\"tradingCoo",
+          "createdAt\":\"2026-10-06T11:27:52.146Z\",\"boostedAt\":\"2026-10-06T11:27:52.146Z\",\"region\":{\"name\":\"복대동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-06T11:34:26.148Z\",\"boostedAt\":\"2026-10-06T11:34:26.148Z\",\"region\":{\"name\":\"안양1동\"},\"category\":null,\"tradingCoo",
+          "createdAt\":\"2026-10-06T11:35:48.154Z\",\"boostedAt\":\"2026-10-06T11:35:48.152Z\",\"region\":{\"name\":\"검단동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-06T09:28:27.628Z\",\"boostedAt\":\"2026-10-06T09:28:27.625Z\",\"region\":{\"name\":\"권선동\"},\"category\":null,\"tradingCoor"
+        ],
         "scriptHeads": [
-          "\n    (function(window, document, mode) {\n      try {\n        document.documentElement.dataset.seed = '';\n        document.documentElement.dataset.seedColorMode = mode;\n      } catch (e) {}\n\n      try {\n        var prefer",
           "window.sentryEnv = {\n  release: \"75c6cc0\",\n  environment: \"prod-kr\"\n};",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":268,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 노트북 NT500R5K\",\"description\"",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-4ed31242.js\";\nimport * as route0 from \"/_remix/root-P4ns_lso.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-3lwXWrYq.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 1035,
-    "globalUniqueListings": 427,
-    "duplicateListingsRemoved": 608,
-    "detailQueueStart": 12,
-    "freshDetailTasks": 12,
+    "searchUniqueListings": 1180,
+    "globalUniqueListings": 424,
+    "duplicateListingsRemoved": 756,
+    "detailQueueStart": 6,
+    "freshDetailTasks": 6,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 12,
-    "detailSucceeded": 12,
+    "detailRequestsExecuted": 6,
+    "detailSucceeded": 6,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 427,
+    "postedAtResolvedFromSearch": 424,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 0,
-    "scanDurationMs": 94651,
+    "candidateCount": 1,
+    "scanDurationMs": 87038,
     "cities": [
       {
         "city": "군포시",
@@ -93,8 +161,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 185,
-        "durationMs": 12394
+        "uniqueListings": 282,
+        "durationMs": 12684
       },
       {
         "city": "의왕시",
@@ -109,8 +177,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 341,
-        "durationMs": 26018
+        "uniqueListings": 305,
+        "durationMs": 25786
       },
       {
         "city": "안양시",
@@ -127,8 +195,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 332,
-        "durationMs": 35531
+        "uniqueListings": 339,
+        "durationMs": 35231
       },
       {
         "city": "과천시",
@@ -139,17 +207,53 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 177,
-        "durationMs": 6993
+        "uniqueListings": 254,
+        "durationMs": 6535
       }
     ],
-    "finalCandidateCount": 0,
-    "stateItemCount": 2806,
+    "finalCandidateCount": 1,
+    "stateItemCount": 2812,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 94654
+    "durationMs": 87042
   },
-  "candidates": []
+  "candidates": [
+    {
+      "id": "zfqmyz9wg4ht",
+      "changeType": "new",
+      "previousPrice": null,
+      "price": 50000,
+      "priceDropPercent": null,
+      "city": "안양시",
+      "location": "안양1동",
+      "regionPath": "경기도 안양시 만안구 안양1동",
+      "title": "삼성 노트북 15인치 8GB",
+      "modelHint": "삼성 노트북 15인치 8GB",
+      "cpuHint": null,
+      "cpuBaselinePass": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 128,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "128GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "specConfidence": "needs_review",
+      "postedAt": "2026-10-06T11:34:26.148Z",
+      "boostedAt": "2026-10-06T11:34:26.148Z",
+      "status": "Ongoing",
+      "description": "삼성 노트북으로 15인치 화면을 갖췄어요.\n인텔 코어 i5-5200U 프로세서와 8GB 메모리, 128GB 저장장치가 탑재되어 있어요.\n검은색 본체에 숫자 키패드와 넓은 터치패드가 있어요.\n문서 작업이나 인터넷 검색용 노트북을 찾는 분께 추천해요. \n충전기가 없는 점을 감안해서 가격을 저렴하게 책정했습니다. 문제없이 정상적으로 작동합니다.",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-15%EC%9D%B8%EC%B9%98-8gb-zfqmyz9wg4ht/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "Diyorbek",
+      "mannerTemperature": 40.5
+    }
+  ]
 }

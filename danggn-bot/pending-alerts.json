@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-06T11:22:14.575798Z",
+  "updatedAt": "2026-10-06T11:38:41.277569Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -901,6 +901,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%ED%92%80%EB%B0%95%EC%8A%A4-apple-macbook-pro-m4-max-128gb-16-inch-ve8mzbysvd8p/",
       "firstAlertedAt": "2026-10-06T10:58:56.005328Z",
       "lastCandidateAt": "2026-10-06T10:58:56.005328Z"
+    },
+    "zfqmyz9wg4ht": {
+      "id": "zfqmyz9wg4ht",
+      "title": "삼성 노트북 15인치 8GB",
+      "price": 50000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "안양1동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 128,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "128GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-06T11:34:26.148Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-15%EC%9D%B8%EC%B9%98-8gb-zfqmyz9wg4ht/",
+      "firstAlertedAt": "2026-10-06T11:38:41.277569Z",
+      "lastCandidateAt": "2026-10-06T11:38:41.277569Z"
     }
   }
 }
