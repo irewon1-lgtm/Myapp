@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-07T06:48:53.705Z",
+  "generatedAt": "2026-10-07T07:23:02.965Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,38 +55,26 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1%EB%85%B8%ED%8A%B8%EB%B6%81-y4wa11fzomkw/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1%EB%85%B8%ED%8A%B8%EB%B6%81-y4wa11fzomkw/",
-            "title": "삼성노트북",
-            "content": "삼성노트북\n\n인텔 i5 4210M\n삼성메모리 8기가\n인텔 HD 내장그래픽\nGEFORCE GT820M 외장그래픽\nM.2 SSD 120기가\n하드디스크 500기가\n15.6인치 해상도 FHD\n\n윈도10 최적화\n한글 엑셀 설치\n유무선 인터넷 빠르고\n밧데리 2시간 갑니다.\n\n삼성정품아답타 포함",
-            "price": "150000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/d80282bf-41d5-4e4a-9ea3-cb0aced3d289.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/hp-%EB%85%B8%ED%8A%B8%EB%B6%81-15%EC%9D%B8%EC%B9%98-i3-6006u-16gb-ram-grkaup969xde/",
+            "href": "/kr/buy-sell/hp-%EB%85%B8%ED%8A%B8%EB%B6%81-15%EC%9D%B8%EC%B9%98-i3-6006u-16gb-ram-grkaup969xde/",
+            "title": "HP 노트북 15인치 i3-6006U 16GB RAM",
+            "content": "HP 노트북 15인치 모델을 판매해요. \n인텔 코어 i3-6006U\n메모리 16GB RAM이라 속도가 빠름\n119GB SSD 장착\n화면 15.6인치\n배터리 정상품 대비 94% 수준\n모델명 3168NGW\nWindows11 설치 되어 있음",
+            "price": "140000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/70c9cb3c-9a5a-43aa-aaa4-8233f93b41f9.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-07T06:41:27.555Z",
-            "boostedAt": "2026-10-07T06:41:27.552Z",
+            "createdAt": "2026-10-07T07:06:21.007Z",
+            "boostedAt": "2026-10-07T07:06:21.006Z",
             "region": {
-              "name": "학정동"
+              "name": "남외동"
             },
             "category": null,
-            "tradingCoordinates": []
-          },
-          {
-            "id": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-15u470-%ED%99%94%EC%9D%B4%ED%8A%B8-%EA%B9%94%EB%81%94%ED%95%9C-%EB%94%94%EC%9E%90%EC%9D%B8-rfiaurkudyy1/",
-            "href": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-15u470-%ED%99%94%EC%9D%B4%ED%8A%B8-%EA%B9%94%EB%81%94%ED%95%9C-%EB%94%94%EC%9E%90%EC%9D%B8-rfiaurkudyy1/",
-            "title": "LG 노트북 15U470 화이트 깔끔한 디자인",
-            "content": "LG 15U470 노트북이에요. 인텔 코어 i3-7100U 프로세서와 8GB RAM을 탑재하고 있어요. 윈도우 10 Home이 설치되어 있어 바로 사용 가능해요. 깔끔한 화이트 색상으로 어디에 두어도 잘 어울리는 노트북이에요.",
-            "price": "200000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202609/e0c084ab-1eb5-4d11-97d3-fefabd9c8941.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-09-19T12:53:19.152Z",
-            "boostedAt": "2026-10-07T06:13:14.345Z",
-            "region": {
-              "name": "구포제1동"
-            },
-            "category": null,
-            "tradingCoordinates": []
+            "tradingCoordinates": [
+              {
+                "latitude": 35.56597293627368,
+                "longitude": 129.34747869995238
+              }
+            ]
           },
           {
             "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-13z940-gx30k-%ED%99%94%EC%9D%B4%ED%8A%B8-pzwe71ibwsk4/",
@@ -109,42 +97,59 @@
                 "longitude": 126.96085026628037
               }
             ]
+          },
+          {
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt300e5k-%EC%8B%B8%EA%B2%8C-%EB%84%98%EA%B2%A8%EC%9A%94-bhdzb6xwyc6s/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt300e5k-%EC%8B%B8%EA%B2%8C-%EB%84%98%EA%B2%A8%EC%9A%94-bhdzb6xwyc6s/",
+            "title": "삼성 노트북 NT300E5K 싸게 넘겨요",
+            "content": "삼성 노트북입니다.\n\n모델명  NT300 E5K  15.6인치\n(정확한건 검색해보세요)\nhttps://danawa.page.link/53YyxKnHUkjvCqq39\n\nCPU 펜티엄 듀얼코어 3825u 1.90 GHz\nRAM 4GB (추가가능)\nSSD 128GB \n공장 초기화 해두었습니다.\n\n노트북 가방은 따로 없어요\n본체랑 전원 코드 드립니다.\n\n율하2지구로 오세요.",
+            "price": "118000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202609/9e2e5e67-66a1-44f2-9a51-84b9ffd16c5b.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-09-28T09:25:35.851Z",
+            "boostedAt": "2026-10-07T07:13:16.782Z",
+            "region": {
+              "name": "중앙동4가"
+            },
+            "category": null,
+            "tradingCoordinates": []
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-10-07T06:41:27.555Z\",\"boostedAt\":\"2026-10-07T06:41:27.552Z\",\"region\":{\"name\":\"학정동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-09-19T12:53:19.152Z\",\"boostedAt\":\"2026-10-07T06:13:14.345Z\",\"region\":{\"name\":\"구포제1동\"},\"category\":null,\"tradingCo",
+          "createdAt\":\"2026-10-07T07:06:21.007Z\",\"boostedAt\":\"2026-10-07T07:06:21.006Z\",\"region\":{\"name\":\"남외동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-09-12T01:06:48.247Z\",\"boostedAt\":\"2026-10-05T06:58:29.633Z\",\"region\":{\"name\":\"평촌동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-07T06:28:27.233Z\",\"boostedAt\":\"2026-10-07T06:28:27.231Z\",\"region\":{\"name\":\"가평읍\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-07T06:45:15.974Z\",\"boostedAt\":\"2026-10-07T06:45:15.972Z\",\"region\":{\"name\":\"인계동\"},\"category\":null,\"tradingCoor"
+          "createdAt\":\"2026-09-28T09:25:35.851Z\",\"boostedAt\":\"2026-10-07T07:13:16.782Z\",\"region\":{\"name\":\"중앙동4가\"},\"category\":null,\"tradingCo",
+          "createdAt\":\"2026-10-07T07:05:42.950Z\",\"boostedAt\":\"2026-10-07T07:05:42.946Z\",\"region\":{\"name\":\"송도동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-07T07:08:52.732Z\",\"boostedAt\":\"2026-10-07T07:08:52.731Z\",\"region\":{\"name\":\"석수1동\"},\"category\":null,\"tradingCoo"
         ],
         "scriptHeads": [
           "window.sentryEnv = {\n  release: \"5945e4f\",\n  environment: \"prod-kr\"\n};",
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":270,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성노트북\",\"description\":\"삼성노트북\\n\\",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":270,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"HP 노트북 15인치 i3-6006U 16GB RAM\"",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-75b1b624.js\";\nimport * as route0 from \"/_remix/root-P4ns_lso.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-u7IPCM8v.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 1168,
-    "globalUniqueListings": 455,
-    "duplicateListingsRemoved": 713,
-    "detailQueueStart": 7,
-    "freshDetailTasks": 7,
+    "searchUniqueListings": 1113,
+    "globalUniqueListings": 428,
+    "duplicateListingsRemoved": 685,
+    "detailQueueStart": 18,
+    "freshDetailTasks": 18,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 7,
-    "detailSucceeded": 7,
+    "detailRequestsExecuted": 18,
+    "detailSucceeded": 18,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 455,
+    "postedAtResolvedFromSearch": 428,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 1,
-    "scanDurationMs": 87720,
+    "scanDurationMs": 99912,
     "cities": [
       {
         "city": "군포시",
@@ -156,8 +161,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 285,
-        "durationMs": 12599
+        "uniqueListings": 287,
+        "durationMs": 12057
       },
       {
         "city": "의왕시",
@@ -172,8 +177,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 363,
-        "durationMs": 25577
+        "uniqueListings": 309,
+        "durationMs": 25605
       },
       {
         "city": "안양시",
@@ -190,8 +195,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 343,
-        "durationMs": 34804
+        "uniqueListings": 340,
+        "durationMs": 34956
       },
       {
         "city": "과천시",
@@ -203,52 +208,52 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 177,
-        "durationMs": 6594
+        "durationMs": 6262
       }
     ],
     "finalCandidateCount": 1,
-    "stateItemCount": 3058,
+    "stateItemCount": 3076,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 87724
+    "durationMs": 99916
   },
   "candidates": [
     {
-      "id": "3bc22njca7qa",
+      "id": "zd8s9ju6kn1d",
       "changeType": "new",
       "previousPrice": null,
-      "price": 650000,
+      "price": 950000,
       "priceDropPercent": null,
-      "city": "군포시",
-      "location": "군포2동",
-      "regionPath": "경기도 군포시 군포2동",
-      "title": "ASUS 비보북 S 15 Ryzen 5 16GB",
-      "modelHint": "ASUS 비보북 S 15 Ryzen 5 16GB",
+      "city": "안양시",
+      "location": "석수1동",
+      "regionPath": "경기도 안양시 만안구 석수1동",
+      "title": "풀박스)LG 그램 노트북 16Z90SP-GA5HK, 울트라 5, 16/256G",
+      "modelHint": "풀박스)LG 그램 노트북 16Z90SP-GA5HK, 울트라 5, 16/256G",
       "cpuHint": null,
       "cpuBaselinePass": null,
       "gpuHint": null,
       "vramGB": null,
-      "ramGB": null,
+      "ramGB": 16,
       "ambiguousMemoryGB": 16,
       "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": null,
+      "ramEvidence": "램 16",
       "vramEvidence": null,
       "ambiguousMemoryEvidence": "16GB",
-      "storageGB": null,
+      "storageGB": 256,
       "llmCapability": "SPEC_CHECK_REQUIRED",
       "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
       "specConfidence": "needs_review",
-      "postedAt": "2026-10-07T06:29:29.896Z",
-      "boostedAt": "2026-10-07T06:29:29.886Z",
+      "postedAt": "2026-10-07T07:08:52.732Z",
+      "boostedAt": "2026-10-07T07:08:52.731Z",
       "status": "Ongoing",
-      "description": "ASUS 비보북 S 15 노트북이에요.\nAMD Ryzen 5 7535HS 프로세서와 Radeon 그래픽을 탑재했어요.\n메모리는 16GB LPDDR5이고, 저장장치는 477GB SSD예요.\n15.6인치 화면과 숫자 키패드가 있는 키보드를 갖춰 문서 작업이나 일상적인 사용에 좋아요.\n\n전자기기상 반품 환불 불가합니다.\n네고시 답변 안드립니다.",
-      "url": "https://www.daangn.com/kr/buy-sell/asus-%EB%B9%84%EB%B3%B4%EB%B6%81-s-15-ryzen-5-16gb-3bc22njca7qa/",
+      "description": "LG 그램 16Z90SP-GA5HK 판매합니다.\n\n2024년 10월 제조 노트북입니다\n배터리 사이클 112, 효율 95프로 남았습니다\n\n💻 LG 그램 16인치\n모델명: 16Z90SP-GA5HK\nCPU: 인텔 Ultra 5 125H\nRAM: 16GB\nSSD: 256GB\n디스플레이: 16인치 WQXGA\n144Hz 고주사율\n\n가볍고 휴대성 좋은 LG 그램\n전체적으로 깔끔하게 사용했습니다. \n화면, 키보드, 터치패드 등 기본 기능 정상 작동합니다\n\n왼쪽 끝 중앙부분에 약한 빛샘 하나가 있습니다\n사진에 잘 안 찍힐 정도인데 최대한 찍어서 사진 첨부합니다(마지막 사진 참조)\n흰 화면에서만 약간 보이고 색감있는 화면에선 전혀 티 안납니다\n사용 시 불편함은 거의 없었습니다 \n\n윈도우 11 정품인증 노트북이고 \n초기화 한 후 기본 프로그램(한글, 엑셀 등) 설치해서 바로 사용 가능합니다\n\n구성품은 출고박스, 충전기, 노트북 거치대 입니다",
+      "url": "https://www.daangn.com/kr/buy-sell/%ED%92%80%EB%B0%95%EC%8A%A4-lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-16z90sp-ga5hk-%EC%9A%B8%ED%8A%B8%EB%9D%BC-5-16-256g-zd8s9ju6kn1d/",
       "favoriteCount": 0,
       "chatCount": 0,
-      "sellerName": "가이",
-      "mannerTemperature": 40.8
+      "sellerName": "즐거운당근",
+      "mannerTemperature": 53.1
     }
   ]
 }
