@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-07T17:28:17.676Z",
+  "generatedAt": "2026-10-07T17:45:22.858Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,23 +55,6 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%95%84%EC%9D%B4%EB%94%94%EC%96%B4%ED%8C%A8%EB%93%9C-110-15ikr-%EB%85%B8%ED%8A%B8%EB%B6%81-kqi74nasmfig/",
-            "href": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%95%84%EC%9D%B4%EB%94%94%EC%96%B4%ED%8C%A8%EB%93%9C-110-15ikr-%EB%85%B8%ED%8A%B8%EB%B6%81-kqi74nasmfig/",
-            "title": "레노버 아이디어패드 110-15IKR 노트북",
-            "content": "레노버 아이디어패드 110-15IKR 노트북 판매해요. \n인텔 코어 i5-6200U CPU, \nddr4 8GB RAM, \nssd 128g hdd 500g\n사용감 있지만 잘됩니다 \n노트북 본체. 전원 아답타 드립니다",
-            "price": "120000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/6447c1dc-d621-4ae6-b6e9-03bfd8f70e25.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-07T17:18:05.017Z",
-            "boostedAt": "2026-10-07T17:18:05.017Z",
-            "region": {
-              "name": "범어동"
-            },
-            "category": null,
-            "tradingCoordinates": []
-          },
-          {
             "id": "/kr/buy-sell/hp-x360%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%84%B0%EC%B9%98%EC%8A%A4%ED%81%AC%EB%A6%B0-%ED%83%9C%EB%B8%94%EB%A6%BF%EB%AA%A8%EB%93%9C-i5-10%EC%84%B8%EB%8C%80-%EC%83%88%EA%B1%B0%EC%BB%A8%EB%94%94%EC%85%98-7qfwb5w1h19b/",
             "href": "/kr/buy-sell/hp-x360%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%84%B0%EC%B9%98%EC%8A%A4%ED%81%AC%EB%A6%B0-%ED%83%9C%EB%B8%94%EB%A6%BF%EB%AA%A8%EB%93%9C-i5-10%EC%84%B8%EB%8C%80-%EC%83%88%EA%B1%B0%EC%BB%A8%EB%94%94%EC%85%98-7qfwb5w1h19b/",
             "title": "hp x360노트북.터치스크린.태블릿모드.i5 10세대.새거컨디션",
@@ -100,8 +83,8 @@
             "content": "LG 그램 13인치 노트북입니다. \n저는 화면용 서브노트북이 필요해서\n메인노트북 따로 두고 썼습니다.\n화면 서브용으로만 써서 깨끗합니다만\n배터리 충전기가 해졌습니다(기능은 완전 잘됨). 네이버로 1만원 대로 새로 구매 가능하십니다.\nLG정품 소가죽 파우치도 드립니다.\n포맷 - 윈도우 설치 후 드리겠습니다.\n사양 상 메인용은 어렵고 저처럼 서브용으로 쓰실 분 저렴히 가져가세요.\n\n2019년 3월 제조.\n가볍고 휴대하기 좋은 제품입니다. 깔끔한 화이트 색상으로 어디에나 잘 어울려요. 이 매력적인 노트북으로 당신의 일상을 더욱 풍요롭게 만들어보세요.",
             "price": "170000",
             "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/99787f96-807a-439b-8f7d-0244b5564310.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
+            "status": "Reserved",
+            "isInstantBuyAvailable": false,
             "createdAt": "2026-10-07T13:19:55.514Z",
             "boostedAt": "2026-10-07T13:19:55.509Z",
             "region": {
@@ -109,42 +92,59 @@
             },
             "category": null,
             "tradingCoordinates": []
+          },
+          {
+            "id": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%95%84%EC%9D%B4%EB%94%94%EC%96%B4%ED%8C%A8%EB%93%9C-110-15ikr-%EB%85%B8%ED%8A%B8%EB%B6%81-kqi74nasmfig/",
+            "href": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%95%84%EC%9D%B4%EB%94%94%EC%96%B4%ED%8C%A8%EB%93%9C-110-15ikr-%EB%85%B8%ED%8A%B8%EB%B6%81-kqi74nasmfig/",
+            "title": "레노버 아이디어패드 110-15IKR 노트북",
+            "content": "레노버 아이디어패드 110-15IKR 노트북 판매해요. \n인텔 코어 i5-6200U CPU, \nddr4 8GB RAM, \nssd 128g hdd 500g\n사용감 있지만 잘됩니다 \n노트북 본체. 전원 아답타 드립니다",
+            "price": "120000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/6447c1dc-d621-4ae6-b6e9-03bfd8f70e25.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-07T17:18:05.017Z",
+            "boostedAt": "2026-10-07T17:18:05.017Z",
+            "region": {
+              "name": "범어동"
+            },
+            "category": null,
+            "tradingCoordinates": []
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-10-07T17:18:05.017Z\",\"boostedAt\":\"2026-10-07T17:18:05.017Z\",\"region\":{\"name\":\"범어동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-07T17:07:26.016Z\",\"boostedAt\":\"2026-10-07T17:07:26.013Z\",\"region\":{\"name\":\"호계2동\"},\"category\":null,\"tradingCoo",
           "createdAt\":\"2026-10-07T13:19:55.514Z\",\"boostedAt\":\"2026-10-07T13:19:55.509Z\",\"region\":{\"name\":\"관양동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-07T14:18:40.975Z\",\"boostedAt\":\"2026-10-07T14:18:40.974Z\",\"region\":{\"name\":\"범서읍\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-07T16:31:17.997Z\",\"boostedAt\":\"2026-10-07T16:31:17.996Z\",\"region\":{\"name\":\"역곡동\"},\"category\":null,\"tradingCoor"
+          "createdAt\":\"2026-10-07T17:18:05.017Z\",\"boostedAt\":\"2026-10-07T17:18:05.017Z\",\"region\":{\"name\":\"범어동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-06T09:28:27.628Z\",\"boostedAt\":\"2026-10-06T09:28:27.625Z\",\"region\":{\"name\":\"권선동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-09-12T01:06:48.247Z\",\"boostedAt\":\"2026-10-05T06:58:29.633Z\",\"region\":{\"name\":\"평촌동\"},\"category\":null,\"tradingCoor"
         ],
         "scriptHeads": [
           "window.sentryEnv = {\n  release: \"5945e4f\",\n  environment: \"prod-kr\"\n};",
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":268,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"레노버 아이디어패드 110-15IKR 노트북\",\"des",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":269,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"hp x360노트북.터치스크린.태블릿모드.i5 10세대",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-75b1b624.js\";\nimport * as route0 from \"/_remix/root-P4ns_lso.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-u7IPCM8v.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 1229,
-    "globalUniqueListings": 448,
+    "searchUniqueListings": 1233,
+    "globalUniqueListings": 452,
     "duplicateListingsRemoved": 781,
-    "detailQueueStart": 1,
-    "freshDetailTasks": 1,
+    "detailQueueStart": 0,
+    "freshDetailTasks": 0,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 1,
-    "detailSucceeded": 1,
+    "detailRequestsExecuted": 0,
+    "detailSucceeded": 0,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 448,
+    "postedAtResolvedFromSearch": 452,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 79422,
+    "scanDurationMs": 79615,
     "cities": [
       {
         "city": "군포시",
@@ -156,8 +156,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 283,
-        "durationMs": 12328
+        "uniqueListings": 279,
+        "durationMs": 12355
       },
       {
         "city": "의왕시",
@@ -172,8 +172,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 358,
-        "durationMs": 25744
+        "uniqueListings": 359,
+        "durationMs": 25566
       },
       {
         "city": "안양시",
@@ -190,8 +190,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 331,
-        "durationMs": 34832
+        "uniqueListings": 338,
+        "durationMs": 35150
       },
       {
         "city": "과천시",
@@ -203,7 +203,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 257,
-        "durationMs": 6062
+        "durationMs": 6446
       }
     ],
     "finalCandidateCount": 0,
@@ -212,7 +212,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 79426
+    "durationMs": 79619
   },
   "candidates": []
 }
