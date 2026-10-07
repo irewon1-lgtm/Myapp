@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-07T05:58:27.965Z",
+  "generatedAt": "2026-10-07T06:27:08.098Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -16,9 +16,7 @@
   "health": {
     "status": "ok",
     "stateCommitted": true,
-    "warnings": [
-      "안양시: detail failed pq6ku2q475qm: Error: HTTP 404 Not Found"
-    ]
+    "warnings": []
   },
   "rules": {
     "newnessField": "postedAt",
@@ -55,98 +53,35 @@
       },
       "htmlSample": {
         "embeddedArticles": false,
-        "remixArticleSamples": [
-          {
-            "id": "/kr/buy-sell/%EA%B8%89%EC%B2%98-%EA%B7%B8%EB%9E%A8%ED%98%95-%EC%97%98%EC%A7%80%EB%85%B8%ED%8A%B8%EB%B6%81-pr6jp7ktsaiw/",
-            "href": "/kr/buy-sell/%EA%B8%89%EC%B2%98-%EA%B7%B8%EB%9E%A8%ED%98%95-%EC%97%98%EC%A7%80%EB%85%B8%ED%8A%B8%EB%B6%81-pr6jp7ktsaiw/",
-            "title": "급처)그램형 엘지노트북",
-            "content": "그램형 엘지노트북\n\ni5 6200u 8램 ssd120 fhd고해상도\n♡ 문서 유투브 웹서핑(멀티태스킹)을 쾌적하게 처리할 수 있습니다\n♡노트북 시장에서 가장 범용적인 15.6인치 크기에 1920x1080 해상도를 지원하여 화면 왜곡 없이 엑셀, 인강 시청, 동영상 감상 시 탁월한 개방감을 줍니다. 오른쪽 숫자 키패드가 포함된 경우가 많아 문서 타이핑에도 유리합니다\n♡준수한 체감 속도 SSD부팅 속도가 수 초 내로 매우 빠르고, 프로그램 실행 및 파일 복사 속도가 답답함 없이 매끄럽습니다.\n♡노트북본체+충전기+마우스 드려요 \n",
-            "price": "250000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/71d9a47a-e47f-491f-b1c1-6d78abad9e09.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-07T05:44:35.392Z",
-            "boostedAt": "2026-10-07T05:44:35.365Z",
-            "region": {
-              "name": "송정동"
-            },
-            "category": null,
-            "tradingCoordinates": []
-          },
-          {
-            "id": "/kr/buy-sell/13%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-i9fxz9pvb7pk/",
-            "href": "/kr/buy-sell/13%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-i9fxz9pvb7pk/",
-            "title": "13인치 노트북",
-            "content": "노트북 13인치 테클라스트 TECLAST \n360도 화면 접히는 노트북(사진참고)\n강의,서핑,유튜브,영화,주식 \n바로사용 하도록 셋팅완료 \n\n- 인텔 셀러론 N4000  CPU  \n- 8기가메모리 설치됨 \n- SSD 128기가 설치됨  \n- UHD 그래픽 600\n- 배터리 4시간이상 표시됨 \n- 생활기스 있슴 \n- 노트북 및 정품충전기 드림 \n\n윈도우11프로 새로설치됨 ( 인증됨 )\n워드,엑셀,한글,파워포인트,포토샾설치 \n바로사용 하시면 됩니다 \n\n",
-            "price": "110000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/49eb320d-b761-49ae-8b00-42ddac513847.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-07T05:54:50.916Z",
-            "boostedAt": "2026-10-07T05:54:50.915Z",
-            "region": {
-              "name": "온양6동"
-            },
-            "category": null,
-            "tradingCoordinates": []
-          },
-          {
-            "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-13z940-gx30k-%ED%99%94%EC%9D%B4%ED%8A%B8-pzwe71ibwsk4/",
-            "href": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-13z940-gx30k-%ED%99%94%EC%9D%B4%ED%8A%B8-pzwe71ibwsk4/",
-            "title": "LG 그램 노트북 13Z940-GX30K 화이트",
-            "content": "가볍고 휴대하기 좋은 LG 그램 노트북이에요. 인텔 i3-4005U CPU에요\n\n포멧하고 드릴예정이구요\n윈도우 미포함입니다\n\n아이패드만 사용해서 노트북은 사용을 잘 안하는데 연식은 있습니다",
-            "price": "110000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202609/17891751639227e2715a56ff29b82ad06c11becb91c3530b03bd3c2ad9e50f62a9076012be9240.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": false,
-            "createdAt": "2026-09-12T01:06:48.247Z",
-            "boostedAt": "2026-10-05T06:58:29.633Z",
-            "region": {
-              "name": "평촌동"
-            },
-            "category": null,
-            "tradingCoordinates": [
-              {
-                "latitude": 37.38810367011931,
-                "longitude": 126.96085026628037
-              }
-            ]
-          }
-        ],
-        "dateFieldSnippets": [
-          "createdAt\":\"2026-10-07T05:44:35.392Z\",\"boostedAt\":\"2026-10-07T05:44:35.365Z\",\"region\":{\"name\":\"송정동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-07T05:54:50.916Z\",\"boostedAt\":\"2026-10-07T05:54:50.915Z\",\"region\":{\"name\":\"온양6동\"},\"category\":null,\"tradingCoo",
-          "createdAt\":\"2026-09-12T01:06:48.247Z\",\"boostedAt\":\"2026-10-05T06:58:29.633Z\",\"region\":{\"name\":\"평촌동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-04T04:32:36.200Z\",\"boostedAt\":\"2026-10-07T05:26:50.328Z\",\"region\":{\"name\":\"율천동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-07T04:11:31.639Z\",\"boostedAt\":\"2026-10-07T04:11:31.635Z\",\"region\":{\"name\":\"방어동\"},\"category\":null,\"tradingCoor"
-        ],
+        "remixArticleSamples": [],
+        "dateFieldSnippets": [],
         "scriptHeads": [
+          "\n    (function(window, document, mode) {\n      try {\n        document.documentElement.dataset.seed = '';\n        document.documentElement.dataset.seedColorMode = mode;\n      } catch (e) {}\n\n      try {\n        var prefer",
           "window.sentryEnv = {\n  release: \"75c6cc0\",\n  environment: \"prod-kr\"\n};",
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":271,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"급처)그램형 엘지노트북\",\"description\":\"그",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-4ed31242.js\";\nimport * as route0 from \"/_remix/root-P4ns_lso.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-3lwXWrYq.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 1245,
-    "globalUniqueListings": 459,
-    "duplicateListingsRemoved": 786,
-    "detailQueueStart": 8,
-    "freshDetailTasks": 8,
+    "searchUniqueListings": 1022,
+    "globalUniqueListings": 421,
+    "duplicateListingsRemoved": 601,
+    "detailQueueStart": 6,
+    "freshDetailTasks": 6,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 8,
-    "detailSucceeded": 7,
-    "detailFailed": 1,
-    "detail404": 1,
+    "detailRequestsExecuted": 6,
+    "detailSucceeded": 6,
+    "detailFailed": 0,
+    "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 459,
+    "postedAtResolvedFromSearch": 421,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 87838,
+    "scanDurationMs": 85701,
     "cities": [
       {
         "city": "군포시",
@@ -158,8 +93,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 288,
-        "durationMs": 12239
+        "uniqueListings": 185,
+        "durationMs": 12047
       },
       {
         "city": "의왕시",
@@ -174,8 +109,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 361,
-        "durationMs": 25394
+        "uniqueListings": 359,
+        "durationMs": 25572
       },
       {
         "city": "안양시",
@@ -192,8 +127,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 340,
-        "durationMs": 34999
+        "uniqueListings": 301,
+        "durationMs": 35243
       },
       {
         "city": "과천시",
@@ -204,17 +139,17 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 256,
-        "durationMs": 6026
+        "uniqueListings": 177,
+        "durationMs": 6169
       }
     ],
     "finalCandidateCount": 0,
-    "stateItemCount": 3041,
+    "stateItemCount": 3049,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 87841
+    "durationMs": 85704
   },
   "candidates": []
 }
