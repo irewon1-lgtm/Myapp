@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-07T13:05:08.540368Z",
+  "updatedAt": "2026-10-07T13:26:45.768783Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -1401,6 +1401,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/hp-%EB%B9%85%ED%84%B0%EC%8A%A4-16%EC%9D%B8%EC%B9%98-rtx-3050tii-%EA%B2%8C%EC%9D%B4%EB%B0%8D%EB%85%B8%ED%8A%B8%EB%B6%81-u7jroe9dy1cw/",
       "firstAlertedAt": "2026-10-07T13:05:08.540368Z",
       "lastCandidateAt": "2026-10-07T13:05:08.540368Z"
+    },
+    "t6poa1ankrrf": {
+      "id": "t6poa1ankrrf",
+      "title": "삼성 갤럭시북4 NT750XGR-A51A 노트북",
+      "price": 700000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "군포2동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-07T13:08:59.477Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%814-nt750xgr-a51a-%EB%85%B8%ED%8A%B8%EB%B6%81-t6poa1ankrrf/",
+      "firstAlertedAt": "2026-10-07T13:26:45.768783Z",
+      "lastCandidateAt": "2026-10-07T13:26:45.768783Z"
     }
   }
 }
