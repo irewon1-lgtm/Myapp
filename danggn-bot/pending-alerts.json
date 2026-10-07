@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-07T10:23:38.329550Z",
+  "updatedAt": "2026-10-07T10:40:13.978370Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -1201,6 +1201,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/rog-z13-flow-64gb-2tb-bek9w8v6ytvy/",
       "firstAlertedAt": "2026-10-07T09:23:59.410206Z",
       "lastCandidateAt": "2026-10-07T09:23:59.410206Z"
+    },
+    "6f498rgpgttf": {
+      "id": "6f498rgpgttf",
+      "title": "급쳐 16인치 RTX4060 게이밍 노트북",
+      "price": 980000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "금정동",
+      "cpuHint": null,
+      "gpuHint": "RTX4060",
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB 메모리",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-07T10:30:00.515Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EA%B8%89%EC%B3%90-16%EC%9D%B8%EC%B9%98-rtx4060-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-6f498rgpgttf/",
+      "firstAlertedAt": "2026-10-07T10:40:13.978370Z",
+      "lastCandidateAt": "2026-10-07T10:40:13.978370Z"
     }
   }
 }
