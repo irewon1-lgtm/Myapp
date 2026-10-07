@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-07T13:03:21.518449Z",
+  "updatedAt": "2026-10-07T13:05:08.540368Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -1376,6 +1376,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%B8%94%EB%A3%A8-15%EC%9D%B8%EC%B9%98-%EC%9D%B8%ED%85%94-%ED%8E%9C%ED%8B%B0%EC%97%84-t8ux85169mog/",
       "firstAlertedAt": "2026-10-07T12:30:02.797487Z",
       "lastCandidateAt": "2026-10-07T12:30:02.797487Z"
+    },
+    "u7jroe9dy1cw": {
+      "id": "u7jroe9dy1cw",
+      "title": "HP 빅터스 16인치 RTX 3050Tii 게이밍노트북",
+      "price": 720000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "금정동",
+      "cpuHint": null,
+      "gpuHint": "RTX 3050Ti",
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB 메모리",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-07T13:03:58.956Z",
+      "url": "https://www.daangn.com/kr/buy-sell/hp-%EB%B9%85%ED%84%B0%EC%8A%A4-16%EC%9D%B8%EC%B9%98-rtx-3050tii-%EA%B2%8C%EC%9D%B4%EB%B0%8D%EB%85%B8%ED%8A%B8%EB%B6%81-u7jroe9dy1cw/",
+      "firstAlertedAt": "2026-10-07T13:05:08.540368Z",
+      "lastCandidateAt": "2026-10-07T13:05:08.540368Z"
     }
   }
 }
