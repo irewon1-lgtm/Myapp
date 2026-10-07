@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-07T16:43:38.644Z",
+  "generatedAt": "2026-10-07T17:08:28.352Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -89,18 +89,18 @@
             "tradingCoordinates": []
           },
           {
-            "id": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-224gb-ssd-8gb-ram-e36k79zf5ywi/",
-            "href": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-224gb-ssd-8gb-ram-e36k79zf5ywi/",
-            "title": "LG 노트북 i5 224GB SSD 8GB RAM",
-            "content": "LG 노트북 판매해요. 인텔 CPU와 8GB RAM, 240GB SSD를 탑재하여 쾌적한 사용이 가능해요. 사진에서 보이는 것처럼 깔끔한 상태이며, 사무용이나 학생용으로 사용하기 좋아요. 넉넉한 저장 공간과 빠른 속도로 다양한 작업을 효율적으로 할 수 있어요.",
-            "price": "80000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/579a14e3-fd0f-4ff2-9a9c-149fb781467f.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-lg15u34-15%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-5ot7yfd8iegk/",
+            "href": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-lg15u34-15%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-5ot7yfd8iegk/",
+            "title": "LG  노트북(LG15U34) 15인치 화이트",
+            "content": "LG 그램 노트북 15인치 화이트 색상입니다. \n인텔 i5 CPU와 8GB RAM, 256GB SSD를 탑재(업그레이드)하고 있습니다. \n윈도우 10이 설치되어 있어 바로 사용 가능해요. 가볍고 성능 좋은 노트북을 찾으신다면 만족하실 거예요.",
+            "price": "150000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/9448f42f-8084-48c7-ac1a-8e6dd1eeb507.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-07T14:18:40.975Z",
-            "boostedAt": "2026-10-07T14:18:40.974Z",
+            "createdAt": "2026-10-06T09:28:27.628Z",
+            "boostedAt": "2026-10-06T09:28:27.625Z",
             "region": {
-              "name": "범서읍"
+              "name": "권선동"
             },
             "category": null,
             "tradingCoordinates": []
@@ -109,9 +109,9 @@
         "dateFieldSnippets": [
           "createdAt\":\"2026-10-07T16:31:17.997Z\",\"boostedAt\":\"2026-10-07T16:31:17.996Z\",\"region\":{\"name\":\"역곡동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-07T13:19:55.514Z\",\"boostedAt\":\"2026-10-07T13:19:55.509Z\",\"region\":{\"name\":\"관양동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-07T14:18:40.975Z\",\"boostedAt\":\"2026-10-07T14:18:40.974Z\",\"region\":{\"name\":\"범서읍\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-07T16:01:19.084Z\",\"boostedAt\":\"2026-10-07T16:01:19.080Z\",\"region\":{\"name\":\"신갈동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-09-12T01:06:48.247Z\",\"boostedAt\":\"2026-10-05T06:58:29.633Z\",\"region\":{\"name\":\"평촌동\"},\"category\":null,\"tradingCoor"
+          "createdAt\":\"2026-10-06T09:28:27.628Z\",\"boostedAt\":\"2026-10-06T09:28:27.625Z\",\"region\":{\"name\":\"권선동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-09-12T01:06:48.247Z\",\"boostedAt\":\"2026-10-05T06:58:29.633Z\",\"region\":{\"name\":\"평촌동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-07T14:18:40.975Z\",\"boostedAt\":\"2026-10-07T14:18:40.974Z\",\"region\":{\"name\":\"범서읍\"},\"category\":null,\"tradingCoor"
         ],
         "scriptHeads": [
           "window.sentryEnv = {\n  release: \"5945e4f\",\n  environment: \"prod-kr\"\n};",
@@ -123,8 +123,8 @@
       }
     },
     "searchUniqueListings": 1233,
-    "globalUniqueListings": 450,
-    "duplicateListingsRemoved": 783,
+    "globalUniqueListings": 447,
+    "duplicateListingsRemoved": 786,
     "detailQueueStart": 2,
     "freshDetailTasks": 2,
     "backlogDetailTasks": 0,
@@ -136,10 +136,10 @@
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 450,
+    "postedAtResolvedFromSearch": 447,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 80200,
+    "scanDurationMs": 81233,
     "cities": [
       {
         "city": "군포시",
@@ -151,8 +151,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 279,
-        "durationMs": 12022
+        "uniqueListings": 282,
+        "durationMs": 12393
       },
       {
         "city": "의왕시",
@@ -167,8 +167,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 356,
-        "durationMs": 25340
+        "uniqueListings": 354,
+        "durationMs": 25393
       },
       {
         "city": "안양시",
@@ -185,8 +185,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 341,
-        "durationMs": 34756
+        "uniqueListings": 340,
+        "durationMs": 35176
       },
       {
         "city": "과천시",
@@ -198,16 +198,16 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 257,
-        "durationMs": 6132
+        "durationMs": 6380
       }
     ],
     "finalCandidateCount": 0,
-    "stateItemCount": 3269,
+    "stateItemCount": 3272,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 80204
+    "durationMs": 81237
   },
   "candidates": []
 }
