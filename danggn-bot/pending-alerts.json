@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-07T11:22:38.697223Z",
+  "updatedAt": "2026-10-07T11:39:35.133047Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -255,8 +255,8 @@
     "qbjy4k8944y5": {
       "id": "qbjy4k8944y5",
       "title": "lg 14z970 ga75k 노트북 상태좋음",
-      "price": 500000,
-      "previousPrice": 550000,
+      "price": 440000,
+      "previousPrice": 500000,
       "changeType": "price_drop",
       "city": "군포시",
       "location": "당정동",
@@ -275,7 +275,7 @@
       "postedAt": "2026-10-05T11:08:59.385Z",
       "url": "https://www.daangn.com/kr/buy-sell/lg-14z970-ga75k-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%83%81%ED%83%9C%EC%A2%8B%EC%9D%8C-qbjy4k8944y5/",
       "firstAlertedAt": "2026-10-05T11:27:15.615254Z",
-      "lastCandidateAt": "2026-10-05T14:05:07.682442Z"
+      "lastCandidateAt": "2026-10-07T11:39:35.133047Z"
     },
     "kex546dgdx5m": {
       "id": "kex546dgdx5m",
@@ -1276,6 +1276,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-14-m4-512gb-%EB%A0%9816-14%EC%9D%B8%EC%B9%98-8ge78qmmdjzd/",
       "firstAlertedAt": "2026-10-07T11:22:38.697223Z",
       "lastCandidateAt": "2026-10-07T11:22:38.697223Z"
+    },
+    "og1kd7v744b6": {
+      "id": "og1kd7v744b6",
+      "title": "미개봉 LG 그램 Pro Al 2026 노트북 [16Z95U-G.AS5ZK]",
+      "price": 2100000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "의왕시",
+      "location": "오전동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB 메모리",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-07T11:38:32.698Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%AF%B8%EA%B0%9C%EB%B4%89-lg-%EA%B7%B8%EB%9E%A8-pro-al-2026-%EB%85%B8%ED%8A%B8%EB%B6%81-16z95u-g-as5zk-og1kd7v744b6/",
+      "firstAlertedAt": "2026-10-07T11:39:35.133047Z",
+      "lastCandidateAt": "2026-10-07T11:39:35.133047Z"
     }
   }
 }
