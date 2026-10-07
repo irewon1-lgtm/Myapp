@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-07T23:18:41.767914Z",
+  "updatedAt": "2026-10-07T23:36:49.520316Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -1501,6 +1501,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%81-%ED%94%8C%EB%9F%AC%EC%8A%A42-11%EC%84%B8%EB%8C%80cpu-1%ED%85%8C%EB%9D%BC%EC%97%85%EA%B8%80-%EB%B0%B0%ED%84%B0%EB%A6%AC92-%EC%83%81%ED%83%9C%EC%A2%8B%EC%9D%8C-h8rms9a7wk23/",
       "firstAlertedAt": "2026-10-07T19:56:58.210712Z",
       "lastCandidateAt": "2026-10-07T19:56:58.210712Z"
+    },
+    "dy29ptyidpg6": {
+      "id": "dy29ptyidpg6",
+      "title": "HP 15인치 노트북 i5-1035G1+16GB RAM, 256GB Nvme",
+      "price": 310000,
+      "previousPrice": 330000,
+      "changeType": "price_drop",
+      "city": "의왕시",
+      "location": "삼동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": 256,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-09-12T00:44:43.903Z",
+      "url": "https://www.daangn.com/kr/buy-sell/hp-15%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-1035g1-16gb-ram-256gb-nvme-dy29ptyidpg6/",
+      "firstAlertedAt": "2026-10-07T23:36:49.520316Z",
+      "lastCandidateAt": "2026-10-07T23:36:49.520316Z"
     }
   }
 }
