@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-07T20:58:09.835Z",
+  "generatedAt": "2026-10-07T21:22:25.038Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -120,8 +120,8 @@
           "createdAt\":\"2026-09-27T12:29:22.158Z\",\"boostedAt\":\"2026-10-07T20:31:28.426Z\",\"region\":{\"name\":\"연산제9동\"},\"category\":null,\"tradingCo",
           "createdAt\":\"2026-09-18T22:57:37.145Z\",\"boostedAt\":\"2026-10-07T20:31:34.833Z\",\"region\":{\"name\":\"연산제9동\"},\"category\":null,\"tradingCo",
           "createdAt\":\"2026-10-05T21:58:32.894Z\",\"boostedAt\":\"2026-10-07T14:02:38.238Z\",\"region\":{\"name\":\"산본1동\"},\"category\":null,\"tradingCoo",
-          "createdAt\":\"2026-09-27T12:35:29.044Z\",\"boostedAt\":\"2026-10-07T20:32:20.400Z\",\"region\":{\"name\":\"연산제9동\"},\"category\":null,\"tradingCo",
-          "createdAt\":\"2026-09-30T04:41:53.794Z\",\"boostedAt\":\"2026-10-07T11:24:55.547Z\",\"region\":{\"name\":\"동읍\"},\"category\":null,\"tradingCoord"
+          "createdAt\":\"2026-09-30T04:41:53.794Z\",\"boostedAt\":\"2026-10-07T11:24:55.547Z\",\"region\":{\"name\":\"동읍\"},\"category\":null,\"tradingCoord",
+          "createdAt\":\"2026-10-07T14:18:40.975Z\",\"boostedAt\":\"2026-10-07T14:18:40.974Z\",\"region\":{\"name\":\"범서읍\"},\"category\":null,\"tradingCoor"
         ],
         "scriptHeads": [
           "window.sentryEnv = {\n  release: \"5945e4f\",\n  environment: \"prod-kr\"\n};",
@@ -132,9 +132,9 @@
         ]
       }
     },
-    "searchUniqueListings": 1241,
-    "globalUniqueListings": 461,
-    "duplicateListingsRemoved": 780,
+    "searchUniqueListings": 1228,
+    "globalUniqueListings": 454,
+    "duplicateListingsRemoved": 774,
     "detailQueueStart": 0,
     "freshDetailTasks": 0,
     "backlogDetailTasks": 0,
@@ -146,10 +146,10 @@
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 461,
+    "postedAtResolvedFromSearch": 454,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 78726,
+    "scanDurationMs": 79973,
     "cities": [
       {
         "city": "군포시",
@@ -161,8 +161,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 283,
-        "durationMs": 12147
+        "uniqueListings": 285,
+        "durationMs": 12480
       },
       {
         "city": "의왕시",
@@ -177,8 +177,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 362,
-        "durationMs": 25383
+        "uniqueListings": 361,
+        "durationMs": 25675
       },
       {
         "city": "안양시",
@@ -195,8 +195,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 339,
-        "durationMs": 34941
+        "uniqueListings": 325,
+        "durationMs": 35220
       },
       {
         "city": "과천시",
@@ -208,16 +208,16 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 257,
-        "durationMs": 6133
+        "durationMs": 6470
       }
     ],
     "finalCandidateCount": 0,
-    "stateItemCount": 3301,
+    "stateItemCount": 3302,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 78729
+    "durationMs": 79977
   },
   "candidates": []
 }
