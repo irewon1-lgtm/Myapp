@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-07T23:36:49.458Z",
+  "generatedAt": "2026-10-07T23:55:35.422Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,40 +55,6 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-15ud590-lx20k-%ED%99%94%EC%9D%B4%ED%8A%B8-o9iin2n2v5h7/",
-            "href": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-15ud590-lx20k-%ED%99%94%EC%9D%B4%ED%8A%B8-o9iin2n2v5h7/",
-            "title": "LG 노트북 15UD590-LX20K 화이트",
-            "content": "LG 15.6인치 노트북이에요.\n-인텔 펜티엄 골드 5405U 프로세서\n- 8GB 메모리, \n-하드m.2ssd 256GB 저장 공간을 갖췄어요.\n\n15.6인치 화면과 흰색 키보드, 숫자 키패드가 있어요.\n문서 작업과 인터넷 이용에 쓸 노트북을 찾는 분께 추천해요.\n화면 바깥쪽 테두리쪽 약간 어두움 \n사진 보시고 구매하세요 \n본체.충전어뎁터 드립니다 ",
-            "price": "170000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/2b2a8d50-2ad9-4d3f-a0fc-72c42177e999.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-07T23:29:12.660Z",
-            "boostedAt": "2026-10-07T23:29:12.658Z",
-            "region": {
-              "name": "화봉동"
-            },
-            "category": null,
-            "tradingCoordinates": []
-          },
-          {
-            "id": "/kr/buy-sell/asus-%EB%B9%84%EB%B3%B4%EB%B6%81-15-x512fa-i5-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-p8dbbaye2ncd/",
-            "href": "/kr/buy-sell/asus-%EB%B9%84%EB%B3%B4%EB%B6%81-15-x512fa-i5-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-p8dbbaye2ncd/",
-            "title": "ASUS 비보북 15 X512FA i5 노트북 판매합니다☺️",
-            "content": "ASUS VivoBook 15 X512FA 노트북 판매합니다☺️\n\n💻 사양\n\n* ASUS VivoBook 15 X512FA\n* Intel Core i5-10210U (10세대)\n* Intel UHD Graphics\n* 15.6인치 FHD (1920×1080)\n* Windows 11 Pro\n\n가격: 250,000원\n\n정상적으로 사용하던 제품이고 기본적인 문서작업, 인터넷, 영상 시청 등으로 사용하기 좋습니다.\n\n사진에 보이는 제품이며, 노트북 + 충전기 함께 드립니다.\n\n거래 전 직접 전원 및 작동 상태 확인하셔도 됩니다!\n\n📍 직거래 희망합니다.\n편하게 연락 주세요 :)",
-            "price": "250000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/1791415129234146b319b626501929f0b7354a3b8fb8e03ff409708ff06b7e40394f6be8f954f0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": false,
-            "createdAt": "2026-10-07T23:20:54.465Z",
-            "boostedAt": "2026-10-07T23:20:54.460Z",
-            "region": {
-              "name": "파장동"
-            },
-            "category": null,
-            "tradingCoordinates": []
-          },
-          {
             "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-15%EC%9D%B8%EC%B9%98-dem1s2h2f8pp/",
             "href": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-15%EC%9D%B8%EC%B9%98-dem1s2h2f8pp/",
             "title": "LG 그램 노트북 화이트 15인치",
@@ -104,42 +70,81 @@
             },
             "category": null,
             "tradingCoordinates": []
+          },
+          {
+            "id": "/kr/buy-sell/asus-%EB%B9%84%EB%B3%B4%EB%B6%81-15-x512fa-i5-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-p8dbbaye2ncd/",
+            "href": "/kr/buy-sell/asus-%EB%B9%84%EB%B3%B4%EB%B6%81-15-x512fa-i5-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-p8dbbaye2ncd/",
+            "title": "ASUS 비보북 15 X512FA i5 노트북 판매합니다☺️",
+            "content": "ASUS VivoBook 15 X512FA 노트북 판매합니다☺️\n\n💻 사양\n\n* ASUS VivoBook 15 X512FA\n* Intel Core i5-10210U (10세대)\n* Intel UHD Graphics\n* 15.6인치 FHD (1920×1080)\n* Windows 11 Pro\n\n가격: 250,000원\n\n정상적으로 사용하던 제품이고 기본적인 문서작업, 인터넷, 영상 시청 등으로 사용하기 좋습니다.\n\n사진에 보이는 제품이며, 노트북 + 충전기 함께 드립니다.\n\n거래 전 직접 전원 및 작동 상태 확인하셔도 됩니다!\n\n📍 직거래 희망합니다.\n편하게 연락 주세요 :)",
+            "price": "250000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/1791415129234146b319b626501929f0b7354a3b8fb8e03ff409708ff06b7e40394f6be8f954f0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Reserved",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-10-07T23:20:54.465Z",
+            "boostedAt": "2026-10-07T23:20:54.460Z",
+            "region": {
+              "name": "파장동"
+            },
+            "category": null,
+            "tradingCoordinates": []
+          },
+          {
+            "id": "/kr/buy-sell/hp-15%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-1035g1-16gb-ram-256gb-nvme-dy29ptyidpg6/",
+            "href": "/kr/buy-sell/hp-15%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-1035g1-16gb-ram-256gb-nvme-dy29ptyidpg6/",
+            "title": "HP 15인치 노트북 i5-1035G1+16GB RAM, 256GB Nvme",
+            "content": "HP 15인치 노트북 판매해요. 인텔 코어 i5-1035G1 CPU와 16GB RAM, 256GB Nvme가 탑재되어 있어요.\n어뎁터 포함 밧데리 성능 좋아요.\n유선 랜카드는 Ctype로 구해야 됩니다.\n윈도우 10이 설치되어 있어 바로 사용 가능합니다. 깔끔한 디자인으로 어디서든 사용하기 좋아요.",
+            "price": "310000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202609/ec72a717-60a6-4b9a-bcdc-9fbfeffe2da2.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-09-12T00:44:43.903Z",
+            "boostedAt": "2026-10-07T23:29:01.023Z",
+            "region": {
+              "name": "삼동"
+            },
+            "category": null,
+            "tradingCoordinates": [
+              {
+                "latitude": 37.355780864565695,
+                "longitude": 126.98524497449398
+              }
+            ]
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-10-07T23:29:12.660Z\",\"boostedAt\":\"2026-10-07T23:29:12.658Z\",\"region\":{\"name\":\"화봉동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-07T23:20:54.465Z\",\"boostedAt\":\"2026-10-07T23:20:54.460Z\",\"region\":{\"name\":\"파장동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-07T23:22:21.874Z\",\"boostedAt\":\"2026-10-07T23:22:21.871Z\",\"region\":{\"name\":\"행궁동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-07T23:20:54.465Z\",\"boostedAt\":\"2026-10-07T23:20:54.460Z\",\"region\":{\"name\":\"파장동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-09-12T00:44:43.903Z\",\"boostedAt\":\"2026-10-07T23:29:01.023Z\",\"region\":{\"name\":\"삼동\"},\"category\":null,\"tradingCoord",
+          "createdAt\":\"2026-10-07T23:29:12.660Z\",\"boostedAt\":\"2026-10-07T23:29:12.658Z\",\"region\":{\"name\":\"화봉동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-07T22:59:40.575Z\",\"boostedAt\":\"2026-10-07T22:59:40.575Z\",\"region\":{\"name\":\"의령읍\"},\"category\":null,\"tradingCoor"
         ],
         "scriptHeads": [
           "window.sentryEnv = {\n  release: \"5945e4f\",\n  environment: \"prod-kr\"\n};",
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":266,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG 노트북 15UD590-LX20K 화이트\",\"des",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":267,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG 그램 노트북 화이트 15인치\",\"descripti",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-75b1b624.js\";\nimport * as route0 from \"/_remix/root-P4ns_lso.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-u7IPCM8v.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 1167,
-    "globalUniqueListings": 449,
-    "duplicateListingsRemoved": 718,
-    "detailQueueStart": 6,
-    "freshDetailTasks": 6,
+    "searchUniqueListings": 1253,
+    "globalUniqueListings": 471,
+    "duplicateListingsRemoved": 782,
+    "detailQueueStart": 7,
+    "freshDetailTasks": 7,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 6,
-    "detailSucceeded": 6,
+    "detailRequestsExecuted": 7,
+    "detailSucceeded": 7,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 449,
+    "postedAtResolvedFromSearch": 471,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 1,
-    "scanDurationMs": 85545,
+    "candidateCount": 0,
+    "scanDurationMs": 86844,
     "cities": [
       {
         "city": "군포시",
@@ -151,8 +156,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 284,
-        "durationMs": 12054
+        "uniqueListings": 283,
+        "durationMs": 12132
       },
       {
         "city": "의왕시",
@@ -167,8 +172,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 363,
-        "durationMs": 25429
+        "uniqueListings": 365,
+        "durationMs": 25554
       },
       {
         "city": "안양시",
@@ -185,8 +190,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 343,
-        "durationMs": 35005
+        "uniqueListings": 348,
+        "durationMs": 35065
       },
       {
         "city": "과천시",
@@ -197,53 +202,17 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 177,
-        "durationMs": 6196
+        "uniqueListings": 257,
+        "durationMs": 6325
       }
     ],
-    "finalCandidateCount": 1,
-    "stateItemCount": 3318,
+    "finalCandidateCount": 0,
+    "stateItemCount": 3323,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 85548
+    "durationMs": 86847
   },
-  "candidates": [
-    {
-      "id": "dy29ptyidpg6",
-      "changeType": "price_drop",
-      "previousPrice": 330000,
-      "price": 310000,
-      "priceDropPercent": 6.1,
-      "city": "의왕시",
-      "location": "삼동",
-      "regionPath": "경기도 의왕시 삼동",
-      "title": "HP 15인치 노트북 i5-1035G1+16GB RAM, 256GB Nvme",
-      "modelHint": "HP 15인치 노트북 i5-1035G1+16GB RAM, 256GB Nvme",
-      "cpuHint": null,
-      "cpuBaselinePass": null,
-      "gpuHint": null,
-      "vramGB": null,
-      "ramGB": 16,
-      "ambiguousMemoryGB": 16,
-      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": "16GB RAM",
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": "16GB",
-      "storageGB": 256,
-      "llmCapability": "SPEC_CHECK_REQUIRED",
-      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
-      "specConfidence": "needs_review",
-      "postedAt": "2026-09-12T00:44:43.903Z",
-      "boostedAt": "2026-10-07T23:29:01.023Z",
-      "status": "Ongoing",
-      "description": "HP 15인치 노트북 판매해요. 인텔 코어 i5-1035G1 CPU와 16GB RAM, 256GB Nvme가 탑재되어 있어요.\n어뎁터 포함 밧데리 성능 좋아요.\n유선 랜카드는 Ctype로 구해야 됩니다.\n윈도우 10이 설치되어 있어 바로 사용 가능합니다. 깔끔한 디자인으로 어디서든 사용하기 좋아요.",
-      "url": "https://www.daangn.com/kr/buy-sell/hp-15%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-1035g1-16gb-ram-256gb-nvme-dy29ptyidpg6/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "짱짱",
-      "mannerTemperature": 45
-    }
-  ]
+  "candidates": []
 }
