@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-07T08:59:28.885734Z",
+  "updatedAt": "2026-10-07T09:23:59.410206Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -1176,6 +1176,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%ED%92%80%EB%B0%95%EC%8A%A4-lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-16z90sp-ga5hk-%EC%9A%B8%ED%8A%B8%EB%9D%BC-5-16-256g-zd8s9ju6kn1d/",
       "firstAlertedAt": "2026-10-07T07:23:03.029677Z",
       "lastCandidateAt": "2026-10-07T07:23:03.029677Z"
+    },
+    "bek9w8v6ytvy": {
+      "id": "bek9w8v6ytvy",
+      "title": "rog z13 flow 64gb 2tb",
+      "price": 3000000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "당정동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 64,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "64gb",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-07T09:18:44.604Z",
+      "url": "https://www.daangn.com/kr/buy-sell/rog-z13-flow-64gb-2tb-bek9w8v6ytvy/",
+      "firstAlertedAt": "2026-10-07T09:23:59.410206Z",
+      "lastCandidateAt": "2026-10-07T09:23:59.410206Z"
     }
   }
 }

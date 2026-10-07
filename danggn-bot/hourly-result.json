@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-07T08:59:28.829Z",
+  "generatedAt": "2026-10-07T09:23:59.351Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,106 +55,91 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/hp-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-9e5d8p6absjr/",
-            "href": "/kr/buy-sell/hp-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-9e5d8p6absjr/",
-            "title": "HP 노트북 화이트",
-            "content": "깔끔한 화이트 색상의 HP 노트북이에요. 사진에서 보이는 것처럼 전원 어댑터 포함되어 있습니다. 문서 작업이나 인터넷 서핑 등 일상적인 용도로 사용하기 좋아요. ",
-            "price": "100000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/6ea60fbc-6b6c-4e0c-8829-547a8265a691.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-g73gjmo2fqyj/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-g73gjmo2fqyj/",
+            "title": "삼성 노트북",
+            "content": "삼성 노트북 판매해요. 인텔 코어 i5-3540M CPU와 8GB RAM, 115GB 저장 공간을 갖추고 있어요. 윈도우 10이 설치되어 있어 바로 사용 가능합니다. 문서 작업이나 인터넷 서핑 등 일상적인 용도로 사용하기 좋아요.",
+            "price": "120000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/46be9049-eed0-4618-9d8a-21683305335f.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-07T08:43:05.425Z",
-            "boostedAt": "2026-10-07T08:43:05.390Z",
+            "createdAt": "2026-10-07T09:12:30.587Z",
+            "boostedAt": "2026-10-07T09:12:30.585Z",
             "region": {
-              "name": "퇴촌면"
+              "name": "조례동"
             },
             "category": null,
-            "tradingCoordinates": [
-              {
-                "latitude": 37.46695620000604,
-                "longitude": 127.308399300009
-              }
-            ]
+            "tradingCoordinates": []
           },
           {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt300e5q-%ED%99%94%EC%9D%B4%ED%8A%B8-o3s8nvx9gzhn/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt300e5q-%ED%99%94%EC%9D%B4%ED%8A%B8-o3s8nvx9gzhn/",
-            "title": "삼성 노트북 NT300E5Q 화이트",
-            "content": "삼성 노트북 NT300E5Q 모델입니다. 15인치 화면에 8GB RAM, 118GB HDD를 탑재하고 있습니다. 윈도우 11 홈이 설치되어 있어 바로 사용 가능해요. \nIntel(R) Pentium(R) CPU 3825U @ 1.90GHz\n깔끔한 화이트 색상으로 어디서든 잘 어울린답니다. 문서 작업이나 인터넷 서핑 등 일상적인 용도로 사용하기 좋아요.\n노트북 가방 하고 무선 마우스 같이 드리겠습니다 ",
-            "price": "45000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/6cdb6bdb-4c1f-4af6-ad61-7269a6aa644c.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%EB%8C%80%ED%99%94%EB%A9%B417%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-i3-8%EC%84%B8%EB%8C%80-h9jdiidxhuqb/",
+            "href": "/kr/buy-sell/%EB%8C%80%ED%99%94%EB%A9%B417%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-i3-8%EC%84%B8%EB%8C%80-h9jdiidxhuqb/",
+            "title": "대화면17인치 노트북 i3-8세대",
+            "content": "안녕하세요! HP 17.3인치 노트북 판매합니다.\n윈도우11정품인증.한글오피스설치\n인텔 i3-8세대 프로세서와 8GB RAM SSD128GB으로 쾌적한 사용이 가능해요.\n사진에서 보시는 것처럼 깔끔한 상태를 유지하고 있습니다.\n일상적인 작업부터 멀티미디어 감상까지, 만족스러운 경험을 선사할 거예요.\n미새기스외에 깔끔합니다\n노트북 충전기 마우스 드립니당",
+            "price": "280000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/525b33fc-606b-4c21-9f64-ed771319d5f7.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-07T08:53:09.727Z",
-            "boostedAt": "2026-10-07T08:53:09.724Z",
+            "createdAt": "2026-10-07T09:20:48.699Z",
+            "boostedAt": "2026-10-07T09:20:48.697Z",
             "region": {
-              "name": "신암1동"
+              "name": "어룡동"
             },
             "category": null,
-            "tradingCoordinates": [
-              {
-                "latitude": 35.89024748950659,
-                "longitude": 128.6246920382074
-              }
-            ]
+            "tradingCoordinates": []
           },
           {
-            "id": "/kr/buy-sell/asus-%EB%B9%84%EB%B3%B4%EB%B6%81-11%EC%84%B8%EB%8C%80-%EB%85%B8%ED%8A%B8%EB%B6%81-6vgtkq835hrw/",
-            "href": "/kr/buy-sell/asus-%EB%B9%84%EB%B3%B4%EB%B6%81-11%EC%84%B8%EB%8C%80-%EB%85%B8%ED%8A%B8%EB%B6%81-6vgtkq835hrw/",
-            "title": "ASUS 비보북 11세대  노트북",
-            "content": "ASUS 비보북 노트북\n15.4인치\ni5-1135G7 (11세대) \n8GB RAM\n256 ssd\n\n전체적으로 상태 깔끔\nLED키보드\n지문인식\n소닉마스터사운드\n배터리 70%\n \n포맷후 윈도우11 정품설치\n엑셀 / 한글등 오피스 정품설치\n충전기 드림\n\n에누리 없이 35에 팝니다.\n",
-            "price": "350000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/e5c101e0-93c8-4992-8146-6e1fbe33d526.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%812-%EB%85%B8%ED%8A%B8%EB%B6%81-nt550xed-3r53ma9oaswm/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%812-%EB%85%B8%ED%8A%B8%EB%B6%81-nt550xed-3r53ma9oaswm/",
+            "title": "삼성 갤럭시북2 노트북 NT550XED",
+            "content": "삼성 갤럭시북2 노트북 판매합니다\n\n흠집 거의없이 깨끗합니다\n뒷판에 나사 가리개 하나가 빠져있습니다(서비스센터에서 5백원에 판매합니다)\n\n모델명 - NT550XED K24AG\n\nCPU 인텔 펜티엄골드 8505\n8G DDR4 Memory\nSSD m.2.nvme  128G(추가슬롯 있음)\n15.6 인치 FHD 1920x1080\n\n2024년 5월 제조\n\n180도 펼쳐집니다\nPD충전 지원되어 C타입 충전 가능합니다\n\n구성품 - 노트북 단품\n\n윈도우 11 PRO 정품인증 되어 있습니다\n\n기본 프로그램(한글, 엑셀 등) 설치되어 있어서 바로 사용 가능합니다\n\n배터리 사이클 40, 효율 89프로 이상 남았습니다",
+            "price": "300000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/6c55d693-5e08-479e-9648-e2a476f6280a.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": false,
-            "createdAt": "2026-10-07T08:39:37.045Z",
-            "boostedAt": "2026-10-07T08:39:37.041Z",
+            "createdAt": "2026-10-07T08:58:35.018Z",
+            "boostedAt": "2026-10-07T08:58:35.016Z",
             "region": {
-              "name": "삼동"
+              "name": "석수1동"
             },
             "category": null,
-            "tradingCoordinates": [
-              {
-                "latitude": 37.31864297305599,
-                "longitude": 126.9535028201409
-              }
-            ]
+            "tradingCoordinates": []
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-10-07T08:43:05.425Z\",\"boostedAt\":\"2026-10-07T08:43:05.390Z\",\"region\":{\"name\":\"퇴촌면\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-07T08:53:09.727Z\",\"boostedAt\":\"2026-10-07T08:53:09.724Z\",\"region\":{\"name\":\"신암1동\"},\"category\":null,\"tradingCoo",
+          "createdAt\":\"2026-10-07T09:12:30.587Z\",\"boostedAt\":\"2026-10-07T09:12:30.585Z\",\"region\":{\"name\":\"조례동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-07T09:20:48.699Z\",\"boostedAt\":\"2026-10-07T09:20:48.697Z\",\"region\":{\"name\":\"어룡동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-07T08:58:35.018Z\",\"boostedAt\":\"2026-10-07T08:58:35.016Z\",\"region\":{\"name\":\"석수1동\"},\"category\":null,\"tradingCoo",
           "createdAt\":\"2026-10-07T08:39:37.045Z\",\"boostedAt\":\"2026-10-07T08:39:37.041Z\",\"region\":{\"name\":\"삼동\"},\"category\":null,\"tradingCoord",
-          "createdAt\":\"2026-10-07T08:29:49.334Z\",\"boostedAt\":\"2026-10-07T08:29:49.332Z\",\"region\":{\"name\":\"삼동\"},\"category\":null,\"tradingCoord",
-          "createdAt\":\"2026-10-06T09:28:27.628Z\",\"boostedAt\":\"2026-10-06T09:28:27.625Z\",\"region\":{\"name\":\"권선동\"},\"category\":null,\"tradingCoor"
+          "createdAt\":\"2026-10-07T09:02:15.741Z\",\"boostedAt\":\"2026-10-07T09:02:15.741Z\",\"region\":{\"name\":\"신인동\"},\"category\":null,\"tradingCoor"
         ],
         "scriptHeads": [
           "window.sentryEnv = {\n  release: \"5945e4f\",\n  environment: \"prod-kr\"\n};",
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":269,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"HP 노트북 화이트\",\"description\":\"깔끔한",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":268,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 노트북\",\"description\":\"삼성 노트북 ",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-75b1b624.js\";\nimport * as route0 from \"/_remix/root-P4ns_lso.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-u7IPCM8v.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 1240,
-    "globalUniqueListings": 452,
-    "duplicateListingsRemoved": 788,
-    "detailQueueStart": 6,
-    "freshDetailTasks": 6,
+    "searchUniqueListings": 1159,
+    "globalUniqueListings": 446,
+    "duplicateListingsRemoved": 713,
+    "detailQueueStart": 10,
+    "freshDetailTasks": 10,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 6,
-    "detailSucceeded": 6,
+    "detailRequestsExecuted": 10,
+    "detailSucceeded": 10,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 452,
+    "postedAtResolvedFromSearch": 446,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 0,
-    "scanDurationMs": 85629,
+    "candidateCount": 1,
+    "scanDurationMs": 92496,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +151,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 283,
-        "durationMs": 12201
+        "uniqueListings": 285,
+        "durationMs": 12381
       },
       {
         "city": "의왕시",
@@ -183,7 +168,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 359,
-        "durationMs": 25477
+        "durationMs": 26285
       },
       {
         "city": "안양시",
@@ -200,8 +185,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 341,
-        "durationMs": 34949
+        "uniqueListings": 338,
+        "durationMs": 35242
       },
       {
         "city": "과천시",
@@ -212,17 +197,53 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 257,
-        "durationMs": 6336
+        "uniqueListings": 177,
+        "durationMs": 6524
       }
     ],
-    "finalCandidateCount": 0,
-    "stateItemCount": 3105,
+    "finalCandidateCount": 1,
+    "stateItemCount": 3116,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 85633
+    "durationMs": 92499
   },
-  "candidates": []
+  "candidates": [
+    {
+      "id": "bek9w8v6ytvy",
+      "changeType": "new",
+      "previousPrice": null,
+      "price": 3000000,
+      "priceDropPercent": null,
+      "city": "군포시",
+      "location": "당정동",
+      "regionPath": "경기도 군포시 당정동",
+      "title": "rog z13 flow 64gb 2tb",
+      "modelHint": "rog z13 flow 64gb 2tb",
+      "cpuHint": null,
+      "cpuBaselinePass": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 64,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "64gb",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "specConfidence": "needs_review",
+      "postedAt": "2026-10-07T09:18:44.604Z",
+      "boostedAt": "2026-10-07T09:18:44.599Z",
+      "status": "Ongoing",
+      "description": "보증 28년4월까지입니다.\n\n전체 좀비배리어 필름 입혀놧고\n시즈로 써서 상태좋습니다.\n\n팬서 클로+@도 받습니다.",
+      "url": "https://www.daangn.com/kr/buy-sell/rog-z13-flow-64gb-2tb-bek9w8v6ytvy/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "부리너부리",
+      "mannerTemperature": 51.9
+    }
+  ]
 }
