@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-07T09:59:51.438Z",
+  "generatedAt": "2026-10-07T10:23:38.273Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,6 +55,23 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
+            "id": "/kr/buy-sell/lg15-6%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-%EB%9E%A88gb-ssd-1tb-%EC%83%88-%EC%B6%A9%EC%A0%84%EA%B8%B0-72eywua6f6kw/",
+            "href": "/kr/buy-sell/lg15-6%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-%EB%9E%A88gb-ssd-1tb-%EC%83%88-%EC%B6%A9%EC%A0%84%EA%B8%B0-72eywua6f6kw/",
+            "title": "LG15.6인치 노트북 i5, 램8GB, SSD+1TB, 새 충전기",
+            "content": "깔끔한 은색 LG 15ND530 노트북 팝니다. 15.6인치 대화면에 숫자 키패드가 있어서 문서 작업용, 인강용, 가벼운 게임(롤 등)용으로 아주 좋습니다.\n​✅ 소프트웨어 특징\n• Windows 11 Pro 정품 인증 완료\n• MS 오피스 2024 인증 완료\n• 한글 2024 (본인 계정 로그인 후 바로 사용 가능)\n​📋 [상세 사양]\n• 화면: 15.6인치 (숫자 키패드 포함)\n• CPU: 인텔 코어 i5-4200M @ 2.5GHz\n🎮그래픽: 지포스 GT 740M\n• RAM: 8GB\n• 저장장치: 고속 SSD (부팅 매우 빠름) + CD롬 자리에 1TB 대용량 하드(HDD) 추가 (장착자료 넉넉하게 저장 📂) \n​🎁 구성품: 가방/충전기는 최근에 새로 구입한 새 것으로 드립니다.\n⚠️ 참고사항: 배터리가 노후되어 충전기를 꽂은 상태로 사용하셔야 합니다. (이 점 감안하여 저렴하게 가격 책정했습니다)\n중고 제품 특성상 생활 사용감은 있습니다.\n예민하신 분은 신중 구매 부탁드립니다.​\n",
+            "price": "200000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/d5f51730-9706-4687-a5f3-b98f7e3c36c3.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-07T09:59:26.782Z",
+            "boostedAt": "2026-10-07T09:59:26.779Z",
+            "region": {
+              "name": "신갈동"
+            },
+            "category": null,
+            "tradingCoordinates": []
+          },
+          {
             "id": "/kr/buy-sell/a%EA%B8%89-%EC%97%90%EC%9D%B4%EC%84%9C-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%9D%BC%EC%9D%B4%EC%A0%A05-i5-11%EC%84%B8%EB%8C%80-%EC%9C%97%EA%B8%89-4cjvjkfo9yiv/",
             "href": "/kr/buy-sell/a%EA%B8%89-%EC%97%90%EC%9D%B4%EC%84%9C-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%9D%BC%EC%9D%B4%EC%A0%A05-i5-11%EC%84%B8%EB%8C%80-%EC%9C%97%EA%B8%89-4cjvjkfo9yiv/",
             "title": "(A급) 에이서 노트북 (라이젠5, i5 11세대 윗급)",
@@ -67,23 +84,6 @@
             "boostedAt": "2026-10-07T09:56:31.371Z",
             "region": {
               "name": "송도동"
-            },
-            "category": null,
-            "tradingCoordinates": []
-          },
-          {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nxv81jerckx9/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nxv81jerckx9/",
-            "title": "삼성 노트북",
-            "content": "오늘만 급처해요. \n7만원이면 가성비 좋고요.\n유튜브 인강 문서작업용으로 적당해요.\n중고라서 사용감은 감안하셔야해요.\n\n코어 i5-3340\n렘8GB\n용량 128GB SSD",
-            "price": "70000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/24b80502-2932-4eab-a67a-f3a56425b7ad.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-07T09:50:28.440Z",
-            "boostedAt": "2026-10-07T09:50:28.438Z",
-            "region": {
-              "name": "조례동"
             },
             "category": null,
             "tradingCoordinates": []
@@ -107,39 +107,39 @@
           }
         ],
         "dateFieldSnippets": [
+          "createdAt\":\"2026-10-07T09:59:26.782Z\",\"boostedAt\":\"2026-10-07T09:59:26.779Z\",\"region\":{\"name\":\"신갈동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-07T09:56:31.456Z\",\"boostedAt\":\"2026-10-07T09:56:31.371Z\",\"region\":{\"name\":\"송도동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-07T09:50:28.440Z\",\"boostedAt\":\"2026-10-07T09:50:28.438Z\",\"region\":{\"name\":\"조례동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-07T08:58:35.018Z\",\"boostedAt\":\"2026-10-07T08:58:35.016Z\",\"region\":{\"name\":\"석수1동\"},\"category\":null,\"tradingCoo",
-          "createdAt\":\"2026-10-07T08:39:37.045Z\",\"boostedAt\":\"2026-10-07T08:39:37.041Z\",\"region\":{\"name\":\"삼동\"},\"category\":null,\"tradingCoord",
+          "createdAt\":\"2026-10-07T09:50:28.440Z\",\"boostedAt\":\"2026-10-07T09:50:28.438Z\",\"region\":{\"name\":\"조례동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-07T09:49:14.031Z\",\"boostedAt\":\"2026-10-07T09:49:14.030Z\",\"region\":{\"name\":\"고덕동\"},\"category\":null,\"tradingCoor"
         ],
         "scriptHeads": [
           "window.sentryEnv = {\n  release: \"5945e4f\",\n  environment: \"prod-kr\"\n};",
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":268,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"(A급) 에이서 노트북 (라이젠5, i5 11세대 윗급",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":268,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG15.6인치 노트북 i5, 램8GB, SSD+1TB",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-75b1b624.js\";\nimport * as route0 from \"/_remix/root-P4ns_lso.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-u7IPCM8v.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 1169,
-    "globalUniqueListings": 454,
-    "duplicateListingsRemoved": 715,
-    "detailQueueStart": 6,
-    "freshDetailTasks": 6,
+    "searchUniqueListings": 1212,
+    "globalUniqueListings": 439,
+    "duplicateListingsRemoved": 773,
+    "detailQueueStart": 8,
+    "freshDetailTasks": 8,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 6,
-    "detailSucceeded": 6,
+    "detailRequestsExecuted": 8,
+    "detailSucceeded": 8,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 454,
+    "postedAtResolvedFromSearch": 439,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 85970,
+    "scanDurationMs": 87915,
     "cities": [
       {
         "city": "군포시",
@@ -151,8 +151,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 282,
-        "durationMs": 12109
+        "uniqueListings": 280,
+        "durationMs": 12374
       },
       {
         "city": "의왕시",
@@ -167,8 +167,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 361,
-        "durationMs": 25572
+        "uniqueListings": 339,
+        "durationMs": 25631
       },
       {
         "city": "안양시",
@@ -185,8 +185,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 349,
-        "durationMs": 35074
+        "uniqueListings": 336,
+        "durationMs": 34882
       },
       {
         "city": "과천시",
@@ -197,17 +197,17 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 177,
-        "durationMs": 6538
+        "uniqueListings": 257,
+        "durationMs": 6200
       }
     ],
     "finalCandidateCount": 0,
-    "stateItemCount": 3126,
+    "stateItemCount": 3134,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 85974
+    "durationMs": 87919
   },
   "candidates": []
 }
