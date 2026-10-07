@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-07T11:39:35.133047Z",
+  "updatedAt": "2026-10-07T11:58:12.827833Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -1301,6 +1301,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%AF%B8%EA%B0%9C%EB%B4%89-lg-%EA%B7%B8%EB%9E%A8-pro-al-2026-%EB%85%B8%ED%8A%B8%EB%B6%81-16z95u-g-as5zk-og1kd7v744b6/",
       "firstAlertedAt": "2026-10-07T11:39:35.133047Z",
       "lastCandidateAt": "2026-10-07T11:39:35.133047Z"
+    },
+    "hsqeb7nx2wjs": {
+      "id": "hsqeb7nx2wjs",
+      "title": "레노버 요가북9i Lenovo Yoga Book 9i 13IMU9 13.3인치 RAM 32G 1TB SSD 새제품",
+      "price": 1800000,
+      "previousPrice": 1900000,
+      "changeType": "price_drop",
+      "city": "의왕시",
+      "location": "포일동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 32,
+      "ambiguousMemoryGB": 32,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "RAM 32G",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "32G",
+      "storageGB": 1024,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "postedAt": "2026-09-23T05:45:45.452Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%9A%94%EA%B0%80%EB%B6%819i-lenovo-yoga-book-9i-13imu9-13-3%EC%9D%B8%EC%B9%98-ram-32g-1tb-ssd-%EC%83%88%EC%A0%9C%ED%92%88-hsqeb7nx2wjs/",
+      "firstAlertedAt": "2026-10-07T11:58:12.827833Z",
+      "lastCandidateAt": "2026-10-07T11:58:12.827833Z"
+    },
+    "5uwz8iosocii": {
+      "id": "5uwz8iosocii",
+      "title": "아수스 게이밍 노트북 (GTX 1060, 16램, 1TB)",
+      "price": 350000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "안양3동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "램 : 16기가",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-07T11:44:53.172Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%95%84%EC%88%98%EC%8A%A4-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-gtx-1060-16%EB%9E%A8-1tb-5uwz8iosocii/",
+      "firstAlertedAt": "2026-10-07T11:58:12.827833Z",
+      "lastCandidateAt": "2026-10-07T11:58:12.827833Z"
     }
   }
 }
