@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-08T19:39:54.614231Z",
+  "updatedAt": "2026-10-08T19:59:13.488940Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -2226,6 +2226,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%ED%92%80%EB%B0%95%EC%8A%A4-asus-i7-rtx-2070-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-17%EC%9D%B8%EC%B9%98-5hdu4raokydx/",
       "firstAlertedAt": "2026-10-08T17:40:33.561657Z",
       "lastCandidateAt": "2026-10-08T17:40:33.561657Z"
+    },
+    "1288hts3r6tw": {
+      "id": "1288hts3r6tw",
+      "title": "삼성 갤럭시북4",
+      "price": 800000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "평촌동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "램 16GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-08T19:50:21.517Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%814-1288hts3r6tw/",
+      "firstAlertedAt": "2026-10-08T19:59:13.488940Z",
+      "lastCandidateAt": "2026-10-08T19:59:13.488940Z"
     }
   }
 }
