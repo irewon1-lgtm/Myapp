@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-08T09:24:03.605523Z",
+  "updatedAt": "2026-10-08T09:41:40.141412Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -2026,6 +2026,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/hp-omen16-ultra7-5060-24gb-1tb-qd5ikj5qid44/",
       "firstAlertedAt": "2026-10-08T09:00:15.297344Z",
       "lastCandidateAt": "2026-10-08T09:00:15.297344Z"
+    },
+    "sv18ajk5k7ff": {
+      "id": "sv18ajk5k7ff",
+      "title": "노트북16인치 GIGABYTE  5070/32GB/1TB",
+      "price": 1900000,
+      "previousPrice": 1950000,
+      "changeType": "price_drop",
+      "city": "안양시",
+      "location": "호계동",
+      "cpuHint": null,
+      "gpuHint": "RTX 5070 Laptop",
+      "vramGB": null,
+      "ramGB": 32,
+      "ambiguousMemoryGB": 32,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "32GB RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "/32GB",
+      "storageGB": null,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "postedAt": "2026-09-28T09:25:49.917Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%85%B8%ED%8A%B8%EB%B6%8116%EC%9D%B8%EC%B9%98-gigabyte-5070-32gb-1tb-sv18ajk5k7ff/",
+      "firstAlertedAt": "2026-10-08T09:41:40.141412Z",
+      "lastCandidateAt": "2026-10-08T09:41:40.141412Z"
+    },
+    "akp1upmuh3kt": {
+      "id": "akp1upmuh3kt",
+      "title": "MSI Stealth 16 Mercedes-AMG i9 4070 32gb 3tb",
+      "price": 1650000,
+      "previousPrice": 1700000,
+      "changeType": "price_drop",
+      "city": "군포시",
+      "location": "산본동",
+      "cpuHint": null,
+      "gpuHint": "RTX 4070",
+      "vramGB": null,
+      "ramGB": 32,
+      "ambiguousMemoryGB": 32,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "32GB RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "32gb",
+      "storageGB": 1024,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "postedAt": "2026-09-28T01:13:21.899Z",
+      "url": "https://www.daangn.com/kr/buy-sell/msi-stealth-16-mercedes-amg-i9-4070-32gb-3tb-akp1upmuh3kt/",
+      "firstAlertedAt": "2026-10-08T09:41:40.141412Z",
+      "lastCandidateAt": "2026-10-08T09:41:40.141412Z"
     }
   }
 }
