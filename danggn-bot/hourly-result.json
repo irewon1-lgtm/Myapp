@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-08T13:03:01.482Z",
+  "generatedAt": "2026-10-08T13:04:46.348Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -132,24 +132,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1104,
-    "globalUniqueListings": 427,
-    "duplicateListingsRemoved": 677,
-    "detailQueueStart": 14,
-    "freshDetailTasks": 14,
+    "searchUniqueListings": 1148,
+    "globalUniqueListings": 446,
+    "duplicateListingsRemoved": 702,
+    "detailQueueStart": 0,
+    "freshDetailTasks": 0,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 14,
-    "detailSucceeded": 14,
+    "detailRequestsExecuted": 0,
+    "detailSucceeded": 0,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 427,
+    "postedAtResolvedFromSearch": 446,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 1,
-    "scanDurationMs": 95717,
+    "candidateCount": 0,
+    "scanDurationMs": 78848,
     "cities": [
       {
         "city": "군포시",
@@ -161,8 +161,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 275,
-        "durationMs": 12363
+        "uniqueListings": 276,
+        "durationMs": 12142
       },
       {
         "city": "의왕시",
@@ -177,8 +177,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 316,
-        "durationMs": 25336
+        "uniqueListings": 363,
+        "durationMs": 25197
       },
       {
         "city": "안양시",
@@ -195,8 +195,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 337,
-        "durationMs": 35109
+        "uniqueListings": 333,
+        "durationMs": 35277
       },
       {
         "city": "과천시",
@@ -208,52 +208,16 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 176,
-        "durationMs": 6468
+        "durationMs": 6119
       }
     ],
-    "finalCandidateCount": 1,
-    "stateItemCount": 3597,
+    "finalCandidateCount": 0,
+    "stateItemCount": 3598,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 95720
+    "durationMs": 78851
   },
-  "candidates": [
-    {
-      "id": "hkku5183mg9p",
-      "changeType": "new",
-      "previousPrice": null,
-      "price": 850000,
-      "priceDropPercent": null,
-      "city": "과천시",
-      "location": "원문동",
-      "regionPath": "경기도 과천시 원문동",
-      "title": "HP 울트론 AI 14 내추럴실버 512GB 24GB",
-      "modelHint": "HP 울트론 AI 14 내추럴실버 512GB 24GB",
-      "cpuHint": null,
-      "cpuBaselinePass": null,
-      "gpuHint": null,
-      "vramGB": null,
-      "ramGB": 24,
-      "ambiguousMemoryGB": 24,
-      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": "램 : 24기가",
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": "24GB",
-      "storageGB": null,
-      "llmCapability": "SPEC_CHECK_REQUIRED",
-      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
-      "specConfidence": "needs_review",
-      "postedAt": "2026-10-08T12:37:13.860Z",
-      "boostedAt": "2026-10-08T12:37:13.858Z",
-      "status": "Ongoing",
-      "description": "깔끔한 HP 울트론 AI 14 노트북이에요. 512GB 저장 공간과 24GB RAM으로 넉넉하게 사용 가능해요.\n구매일자 : 26년 5월 4일\n흠집 없고 거치대에 올려서 2일에 한번꼴로 롤만 했음\n\n상태 : S\nCPU : 인텔 울트라코어5\n램 : 24기가\n윈도우 설치함.\n램가격이랑 씨피유 요즘 비싸서 품절되고 입고 안되고 있어요 85만원에 팝니다. 빠른 쿨거래시 80",
-      "url": "https://www.daangn.com/kr/buy-sell/hp-%EC%9A%B8%ED%8A%B8%EB%A1%A0-ai-14-%EB%82%B4%EC%B6%94%EB%9F%B4%EC%8B%A4%EB%B2%84-512gb-24gb-hkku5183mg9p/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "자두",
-      "mannerTemperature": 39.4
-    }
-  ]
+  "candidates": []
 }
