@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-08T07:59:59.341432Z",
+  "updatedAt": "2026-10-08T08:24:57.433329Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -1926,6 +1926,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-i7-16gb-ram-rkswmf1fyhsn/",
       "firstAlertedAt": "2026-10-08T07:59:59.341432Z",
       "lastCandidateAt": "2026-10-08T07:59:59.341432Z"
+    },
+    "ypv8sa9ntg8j": {
+      "id": "ypv8sa9ntg8j",
+      "title": "LG 그램 프로 AI 16인치 16ZD90TS-GX5PK",
+      "price": 1490000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "과천시",
+      "location": "부림동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16기가",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-08T08:08:17.895Z",
+      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%ED%94%84%EB%A1%9C-ai-16%EC%9D%B8%EC%B9%98-16zd90ts-gx5pk-ypv8sa9ntg8j/",
+      "firstAlertedAt": "2026-10-08T08:24:57.433329Z",
+      "lastCandidateAt": "2026-10-08T08:24:57.433329Z"
+    },
+    "ed314u49apk1": {
+      "id": "ed314u49apk1",
+      "title": "HP ZBook Studio 16인치 G10, i7-13800H 14코어 20쓰레드",
+      "price": 790000,
+      "previousPrice": 800000,
+      "changeType": "price_drop",
+      "city": "과천시",
+      "location": "갈현동",
+      "cpuHint": "i7-13800H",
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "RAM: 16GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 1024,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-09-17T10:33:38.961Z",
+      "url": "https://www.daangn.com/kr/buy-sell/hp-zbook-studio-16%EC%9D%B8%EC%B9%98-g10-i7-13800h-14%EC%BD%94%EC%96%B4-20%EC%93%B0%EB%A0%88%EB%93%9C-ed314u49apk1/",
+      "firstAlertedAt": "2026-10-08T08:24:57.433329Z",
+      "lastCandidateAt": "2026-10-08T08:24:57.433329Z"
     }
   }
 }
