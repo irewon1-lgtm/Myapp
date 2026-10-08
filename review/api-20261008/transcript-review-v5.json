@@ -1,0 +1,182 @@
+{
+  "checkedAt": "2026-10-08T00:41:45.985079+00:00",
+  "engineSnapshotDigest": "8f188430ce8fd3caa3b6f0a14de5a858352f47dd5c01b0d3841f704b317e186c",
+  "sourceBookVersion": 4,
+  "outputBookVersion": 5,
+  "sources": {
+    "youtube": {
+      "url": "https://www.youtube.com/watch?v=WXsD0ZgxjRw",
+      "sha256": "7aa5babfd6503e58886384480497a7e0c509332af755c086ca9f4f1be09d06b4",
+      "captionLines": 4244
+    },
+    "sozai": {
+      "url": "https://sozai.app/transcript/apis-for-beginners-full-course-tutorial/",
+      "format": "page MD download",
+      "sha256": "2af1f801879576516dd3a1fb98e0615e6b524b1f0fb0102eb5e977b3190baccb",
+      "entries": 1430
+    }
+  },
+  "comparison": {
+    "normalization": "lowercase [a-z0-9]+ word tokens; excludes timestamps, headers, punctuation and caption splits",
+    "wordTokens": 38260,
+    "sequenceEqual": true,
+    "diffSegments": 0,
+    "doesNotProve": "accurate caption recognition or verified visuals"
+  },
+  "chapters": [
+    {
+      "chapterId": "yt-api-beginners-WXsD0ZgxjRw-c1",
+      "reviewState": "COMPLETE",
+      "sourceChunkSha256": "fc69c5b8e83c85be829a503d70880fd5252f33451f979c1deab72f79a75b4a5e",
+      "captionLines": 115,
+      "reviewedTopics": "course goals/prerequisites/notes/learning pace",
+      "note": "Preserved existing explanations; added only process gaps or clarified attribution/current behavior."
+    },
+    {
+      "chapterId": "yt-api-beginners-WXsD0ZgxjRw-c2",
+      "reviewState": "COMPLETE",
+      "sourceChunkSha256": "c9ceb68f5f9a6a01a80cca77d3ffcc882ea6ed0fa80f10fe42988b37b078fa10",
+      "captionLines": 92,
+      "reviewedTopics": "radio/GUI/events/media/network abstraction",
+      "note": "Preserved existing explanations; added only process gaps or clarified attribution/current behavior."
+    },
+    {
+      "chapterId": "yt-api-beginners-WXsD0ZgxjRw-c3",
+      "reviewState": "COMPLETE",
+      "sourceChunkSha256": "002c8ab761413c7f5c789f94ff59c7ff701e827c35505a8d59c96c511e785877",
+      "captionLines": 120,
+      "reviewedTopics": "contract/local APIs/strings/files/browser/library/framework/reflection",
+      "note": "Preserved existing explanations; added only process gaps or clarified attribution/current behavior."
+    },
+    {
+      "chapterId": "yt-api-beginners-WXsD0ZgxjRw-c4",
+      "reviewState": "COMPLETE",
+      "sourceChunkSha256": "5e651c9e0e725bbade7e911da39d828736d473ca82e15563d1fb6234b87f9676",
+      "captionLines": 98,
+      "reviewedTopics": "remote control/robot/data/compute/REST/GraphQL",
+      "note": "Preserved existing explanations; added only process gaps or clarified attribution/current behavior."
+    },
+    {
+      "chapterId": "yt-api-beginners-WXsD0ZgxjRw-c5",
+      "reviewState": "COMPLETE",
+      "sourceChunkSha256": "9d42801e74dbc87dfae50ce64587aacfbc88d077e263cae417c1196f55faeb6d",
+      "captionLines": 116,
+      "reviewedTopics": "HTTP client/server/URI/scheme/GET/POST/stateless/headers/status/body",
+      "note": "Preserved existing explanations; added only process gaps or clarified attribution/current behavior."
+    },
+    {
+      "chapterId": "yt-api-beginners-WXsD0ZgxjRw-c6",
+      "reviewState": "COMPLETE",
+      "sourceChunkSha256": "3661ce484d4a08ebe4df56aaa8778a92b5bb64fed7a5ccf3f503dc1d0412854c",
+      "captionLines": 123,
+      "reviewedTopics": "REST resources/relationships/CRUD/JSON/mashups",
+      "note": "Preserved existing explanations; added only process gaps or clarified attribution/current behavior."
+    },
+    {
+      "chapterId": "yt-api-beginners-WXsD0ZgxjRw-c7",
+      "reviewState": "COMPLETE",
+      "sourceChunkSha256": "df5f40bd927de8f4543d4b071df015521f3246f72f6d83eea010dc3ec3795c17",
+      "captionLines": 376,
+      "reviewedTopics": "Spotify documentation/auth/search/artist ID/albums/images/pagination/cache/layers",
+      "note": "Preserved existing explanations; added only process gaps or clarified attribution/current behavior."
+    },
+    {
+      "chapterId": "yt-api-beginners-WXsD0ZgxjRw-c8",
+      "reviewState": "COMPLETE",
+      "sourceChunkSha256": "a8063bd95788adaa18f45150e865da564ea7c3f4aa8071ab1892e476d875c3ab",
+      "captionLines": 267,
+      "reviewedTopics": "terminal/curl installation/test/search/albums/history/jq/encoding/result disambiguation",
+      "note": "Preserved existing explanations; added only process gaps or clarified attribution/current behavior."
+    },
+    {
+      "chapterId": "yt-api-beginners-WXsD0ZgxjRw-c9",
+      "reviewState": "COMPLETE",
+      "sourceChunkSha256": "a1093e3c1edd0680ddc6bb970dad993e8b225d5a8c492653ec72e5f8a297fef1",
+      "captionLines": 418,
+      "reviewedTopics": "Twilio signup/restriction/number/trial/create/auth/quoting/SMS receipt/message log",
+      "note": "Preserved existing explanations; added only process gaps or clarified attribution/current behavior."
+    },
+    {
+      "chapterId": "yt-api-beginners-WXsD0ZgxjRw-c10",
+      "reviewState": "COMPLETE",
+      "sourceChunkSha256": "ae5b7b773dc9fe6749a813a9922e2701a554295f248e42900b561a8cecee3318",
+      "captionLines": 480,
+      "reviewedTopics": "Restfox/Govee/folders/query/path/auth/401/JSON/notes/duplicate/POST/form/MMS/environments",
+      "note": "Preserved existing explanations; added only process gaps or clarified attribution/current behavior."
+    },
+    {
+      "chapterId": "yt-api-beginners-WXsD0ZgxjRw-c11",
+      "reviewState": "COMPLETE",
+      "sourceChunkSha256": "c58eafe48c91d411260f980e48129401b2534413b2558fe0ef87342d679f06ea",
+      "captionLines": 285,
+      "reviewedTopics": "VS Code/Thunder collection/media/auth/cache/304/Postman/code generation",
+      "note": "Preserved existing explanations; added only process gaps or clarified attribution/current behavior."
+    },
+    {
+      "chapterId": "yt-api-beginners-WXsD0ZgxjRw-c12",
+      "reviewState": "COMPLETE",
+      "sourceChunkSha256": "6bb80fd7e21fff32704fb0b52a93ca105d4eb72ca05568df7f1a19f989ed0cc6",
+      "captionLines": 595,
+      "reviewedTopics": "SDK/npm/files/environment/list/Promise/log order/save/errors/remove/dry-run/await/uniform/CLI",
+      "note": "Preserved existing explanations; added only process gaps or clarified attribution/current behavior."
+    },
+    {
+      "chapterId": "yt-api-beginners-WXsD0ZgxjRw-c13",
+      "reviewState": "COMPLETE",
+      "sourceChunkSha256": "6dc82883342d0cd3fc0beeea66cb6c0a085e21b5d033f8f27f61fae8f39fa535",
+      "captionLines": 181,
+      "reviewedTopics": "starter HTML/Vue/SilentBox/data/mounted/TODO/local change",
+      "note": "Preserved existing explanations; added only process gaps or clarified attribution/current behavior."
+    },
+    {
+      "chapterId": "yt-api-beginners-WXsD0ZgxjRw-c14",
+      "reviewState": "COMPLETE",
+      "sourceChunkSha256": "7fda080d690866e9e2554cda9b16830ddaf9981473ae8347ef46f91023b4b7da",
+      "captionLines": 313,
+      "reviewedTopics": "serverless/service/asset/public/save/deploy/webhook/TwiML/handler/logs/number wiring/trial",
+      "note": "Preserved existing explanations; added only process gaps or clarified attribution/current behavior."
+    },
+    {
+      "chapterId": "yt-api-beginners-WXsD0ZgxjRw-c15",
+      "reviewState": "COMPLETE",
+      "sourceChunkSha256": "7945b2ddfbfa8c90805aa67557ccae1300758b2848bfcf14718e17375193f2c8",
+      "captionLines": 440,
+      "reviewedTopics": "contract/static JSON/public/SDK/env/messages/media/loops/shaping/src/DB",
+      "note": "Preserved existing explanations; added only process gaps or clarified attribution/current behavior."
+    },
+    {
+      "chapterId": "yt-api-beginners-WXsD0ZgxjRw-c16",
+      "reviewState": "COMPLETE",
+      "sourceChunkSha256": "36cc4e2b35574045188921059b26a3dbef30e42b556476d84d04fe624ba73984",
+      "captionLines": 197,
+      "reviewedTopics": "Fetch/Response/JSON/gallery/save/secret separation/REST constraint review",
+      "note": "Preserved existing explanations; added only process gaps or clarified attribution/current behavior."
+    },
+    {
+      "chapterId": "yt-api-beginners-WXsD0ZgxjRw-c17",
+      "reviewState": "COMPLETE",
+      "sourceChunkSha256": "434937cd7e1c4714278bf2789edb62f35070ce4bbdb0502b8226baf4bb20fc60",
+      "captionLines": 28,
+      "reviewedTopics": "wrap-up/abstraction/feedback APIs",
+      "note": "REST constraint recap is deliberately retained in chapter 17 though lecture recap falls in source chunk 16. Existing source/deep blocks checked to avoid duplicate additions."
+    }
+  ],
+  "textReview": "COMPLETE_17_SECTIONS",
+  "notFullTranslation": true,
+  "preservation": {
+    "oldBlockIds": 667,
+    "newBlockIds": 695,
+    "allOldIdsPreserved": true,
+    "chapterIdsPreserved": true,
+    "otherBooksUnchanged": true,
+    "userRecordsNotModified": true
+  },
+  "lectureScreenshots": {
+    "captured": 0,
+    "replaced": 0,
+    "state": "BLOCKED_MEDIA_NOT_LOADED",
+    "evidence": "YouTube player remained black with loading indicator; DOM video readyState=0, videoWidth=0, currentTime=0 after one reload. Caption timestamp alone not a frame. No reconstructed image passed off as video."
+  },
+  "externalAccountExercises": "NOT_RUN",
+  "publication": "PENDING"
+}
