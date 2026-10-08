@@ -3,9 +3,9 @@
   "kind": "chatbook-live-release",
   "shell": 1,
   "syncSchema": 1,
-  "sequence": 1791418395240,
-  "sourceSha": "7f4e587e67c538717827e3cd3015674f301aed50",
-  "releaseId": "1.0.3-1.2.0-7b5c0f56dd6d4a6d",
+  "sequence": 1791420198266,
+  "sourceSha": "a2527e1e8c9b27cfef6c685af3416af69c17a514",
+  "releaseId": "1.0.3-1.2.0-76fb8171b61d97e9",
   "specDigest": "8f188430ce8fd3caa3b6f0a14de5a858352f47dd5c01b0d3841f704b317e186c",
   "assets": {
     "app.js": {
@@ -97,8 +97,8 @@
       "bytes": 24976
     },
     "content/catalog.json": {
-      "sha256": "8eff1f674ed92fde66dbb21cb65abeaf0ea6b1e612cdd58ecdc3c072bef62e4f",
-      "bytes": 1714165
+      "sha256": "1e2f9c434322eabd5d9eac8f24af5a499fa60b18ff78493cdb13cea3db6b050a",
+      "bytes": 1742788
     },
     "content/source-maps/8KCuHHeC_M0-review.json": {
       "sha256": "6c9b0967ea1160d73ba3d354b939ac48f0512b19ac75d1842f3da600be42ce71",
@@ -121,19 +121,19 @@
       "bytes": 21745
     },
     "engine-info.html": {
-      "sha256": "189e2b649effc1baa7ecc2959bcfa5184c6c7527763a718a0d099c240906e7f6",
+      "sha256": "07dbbb6e0708343d026358c518f40dd57671c1d69ac14700e0ddc36370e7a0bf",
       "bytes": 5295
     },
     "engine-info.json": {
-      "sha256": "0269a666a962b5fd4c5013940c9a53161c143c6ce07e73af3115e33b4c347d19",
+      "sha256": "8c45905729a04ab803474cbc6ddcc6a9bf03d26ade742c9f0c9e2ba7ab514d7d",
       "bytes": 7755
     },
     "engine-spec.html": {
-      "sha256": "720d857aa806635e612dee04127b4540ff6179393be75f4e84801eba46c71201",
+      "sha256": "33ef8a5143b56da5cd5be7314d25e1e261c8efa66f4c229a480bca266d956c68",
       "bytes": 7600
     },
     "engine-spec.json": {
-      "sha256": "e372c1cb70678b03db329e0aa289fb465a24fb7933517ae44bc8a801f39bae64",
+      "sha256": "2146a9132e12b637d58bfee5dd5ff6e69e3d63a2d58ce2d23ab5fa556179f5bb",
       "bytes": 7878
     },
     "engine/benchmark.json": {
@@ -193,12 +193,12 @@
       "bytes": 3207
     },
     "index.html": {
-      "sha256": "5531e477186a279f7c194dce85e17975ccdf3070352a65d7411fd37001c5eb2d",
+      "sha256": "c5c7e73b8646be0af4c981f52c2d11c9b19acde633f62c628ab786c43e1efed7",
       "bytes": 2156
     },
     "library.js": {
-      "sha256": "99348948e5d197fb66fd70f1388b2a4ace7fb9a227698c310adc7f1bd2a15f9a",
-      "bytes": 1298833
+      "sha256": "8963e0470df86a60e8de8153fa9dbb453a9b1bb25a2bb514e74da26808f57c74",
+      "bytes": 1320178
     },
     "live-guard.js": {
       "sha256": "42303e9d85f403384791dd949d75cbefcf9abc89ab91deb34beeabecbad271e7",
@@ -209,7 +209,7 @@
       "bytes": 5327
     },
     "llms.txt": {
-      "sha256": "aa724a497e9d7392eade8b8a4c6ba90d9facc612d0136281cc83fb242f3cc22d",
+      "sha256": "79c1647723736e95c4832ee8b9cca1cc7114f741b1ee0e24b3f07941afef3f5a",
       "bytes": 749
     },
     "manifest.webmanifest": {
@@ -225,7 +225,7 @@
       "bytes": 44276
     },
     "sw.js": {
-      "sha256": "d380812ed11bb1be97fb87447467a4eeb9d143f4412694029805d69bc8e3044f",
+      "sha256": "9f59e16ec455f8614f65857c4d3df45e10088b200a8306cc585ea0d4cc5e3653",
       "bytes": 3081
     },
     "vendor/PPTXGENJS-LICENSE.txt": {
@@ -237,7 +237,7 @@
       "bytes": 460216
     },
     "version.json": {
-      "sha256": "267707a69fd658657f5e81f725954aa9de5bac34ebe02fdcdd840539613911ef",
+      "sha256": "94602dcfd59947e4b51d150cbe66e656bb171239c1a4a8f22052a2ad04b14b5c",
       "bytes": 396
     },
     "views.js": {

@@ -1,8 +1,8 @@
 {
   "schema": 1,
-  "version": "2026-10-08-api-v4",
-  "updatedAt": "2026-10-08T00:06:28.638994+00:00",
-  "notice": "API 교재 v4: 초보자 실습 설명을 일부 보강했습니다. 실제 강의 캡처 교체와 전사문 전체 대조는 아직 미완료입니다.",
+  "version": "2026-10-08-api-v5",
+  "updatedAt": "2026-10-08T00:41:07.738286+00:00",
+  "notice": "API 교재 v5: 전사문 전체 17구간 대조와 실습 설명 보강을 반영했습니다. 실제 강의 캡처 교체는 영상 미확보로 미완료입니다.",
   "books": [
     {
       "id": "yt-python-1h-8KCuHHeC_M0",
@@ -17148,20 +17148,20 @@
       "title": "API 완전 초보 교재 — 3시간 7분 강의 · 코딩 0일차 확장판",
       "subtitle": "API라는 말도 처음 듣는 사람을 위해 장면·비유·전문용어·코드를 사람 말부터 설명하는 HTTP·REST·cURL·Twilio·SDK·Serverless·Fetch 교재",
       "author": "Craig Dennis / freeCodeCamp.org",
-      "edition": "챗북 엔진 1.2 · 초보자 실습 설명 보강 v4",
+      "edition": "챗북 엔진 1.2 · 전사문 전체 대조·실습 보강 v5",
       "category": "코딩·API·Backend",
       "cover": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22900%22%20height%3D%221200%22%20viewBox%3D%220%200%20900%201200%22%3E%0A%3Crect%20width%3D%22900%22%20height%3D%221200%22%20fill%3D%22%23edf2ea%22/%3E%0A%3Crect%20x%3D%2255%22%20y%3D%2255%22%20width%3D%22790%22%20height%3D%221090%22%20rx%3D%2244%22%20fill%3D%22%23fff%22%20stroke%3D%22%2361705d%22%20stroke-width%3D%225%22/%3E%0A%3Ctext%20x%3D%22110%22%20y%3D%22170%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2234%22%20font-weight%3D%22800%22%20fill%3D%22%2361705d%22%3EAPI%20%C2%B7%20ABSOLUTE%20BEGINNER%3C/text%3E%0A%3Ctext%20x%3D%22110%22%20y%3D%22300%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2266%22%20font-weight%3D%22900%22%20fill%3D%22%23202520%22%3EAPI%20%EC%99%84%EC%A0%84%20%EC%B4%88%EB%B3%B4%3C/text%3E%0A%3Ctext%20x%3D%22110%22%20y%3D%22380%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2258%22%20font-weight%3D%22900%22%20fill%3D%22%23202520%22%3E3%EC%8B%9C%EA%B0%84%20%EA%B0%95%EC%9D%98%20%EA%B5%90%EC%9E%AC%3C/text%3E%0A%3Ctext%20x%3D%22110%22%20y%3D%22455%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2227%22%20font-weight%3D%22600%22%20fill%3D%22%23485047%22%3EHTTP%20%C2%B7%20REST%20%C2%B7%20cURL%20%C2%B7%20SDK%20%C2%B7%20Serverless%20%C2%B7%20Fetch%3C/text%3E%0A%3Crect%20x%3D%22110%22%20y%3D%22560%22%20width%3D%22680%22%20height%3D%22170%22%20rx%3D%2224%22%20fill%3D%22%23eef3eb%22%20stroke%3D%22%236c7c66%22%20stroke-width%3D%223%22/%3E%0A%3Ctext%20x%3D%22145%22%20y%3D%22615%22%20font-family%3D%22monospace%22%20font-size%3D%2227%22%20font-weight%3D%22700%22%20fill%3D%22%23263126%22%3Eclient%20%E2%86%92%20request%20%E2%86%92%20API%20%E2%86%92%20response%3C/text%3E%0A%3Ctext%20x%3D%22145%22%20y%3D%22665%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2223%22%20fill%3D%22%23465046%22%3E%EC%98%81%EC%83%81%20%EA%B3%B5%EC%8B%9D%20%EA%B5%AC%EA%B0%84%2017/17%20%EB%8C%80%EC%9D%91%3C/text%3E%0A%3Ctext%20x%3D%22145%22%20y%3D%22705%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2223%22%20fill%3D%22%23465046%22%3E%EC%BD%94%EB%94%A9%200%EC%9D%BC%EC%B0%A8%20%EC%84%B8%EB%B6%80%20%ED%95%B4%EC%84%A4%20%2B%20%EC%BD%94%EB%93%9C%20%EC%9D%BD%EA%B8%B0%3C/text%3E%0A%3Cline%20x1%3D%22110%22%20y1%3D%22920%22%20x2%3D%22790%22%20y2%3D%22920%22%20stroke%3D%22%23b8b8b1%22%20stroke-width%3D%223%22/%3E%0A%3Ctext%20x%3D%22110%22%20y%3D%22995%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2224%22%20fill%3D%22%234c514b%22%3ESource%3A%20freeCodeCamp%20%C2%B7%20Craig%20Dennis%3C/text%3E%0A%3Ctext%20x%3D%22110%22%20y%3D%221040%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2224%22%20fill%3D%22%234c514b%22%3E3%3A07%3A06%20%C2%B7%20APIs%20for%20Beginners%202023%3C/text%3E%0A%3C/svg%3E",
       "portrait": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22900%22%20height%3D%221200%22%20viewBox%3D%220%200%20900%201200%22%3E%0A%3Crect%20width%3D%22900%22%20height%3D%221200%22%20fill%3D%22%23edf2ea%22/%3E%0A%3Crect%20x%3D%2255%22%20y%3D%2255%22%20width%3D%22790%22%20height%3D%221090%22%20rx%3D%2244%22%20fill%3D%22%23fff%22%20stroke%3D%22%2361705d%22%20stroke-width%3D%225%22/%3E%0A%3Ctext%20x%3D%22110%22%20y%3D%22170%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2234%22%20font-weight%3D%22800%22%20fill%3D%22%2361705d%22%3EAPI%20%C2%B7%20ABSOLUTE%20BEGINNER%3C/text%3E%0A%3Ctext%20x%3D%22110%22%20y%3D%22300%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2266%22%20font-weight%3D%22900%22%20fill%3D%22%23202520%22%3EAPI%20%EC%99%84%EC%A0%84%20%EC%B4%88%EB%B3%B4%3C/text%3E%0A%3Ctext%20x%3D%22110%22%20y%3D%22380%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2258%22%20font-weight%3D%22900%22%20fill%3D%22%23202520%22%3E3%EC%8B%9C%EA%B0%84%20%EA%B0%95%EC%9D%98%20%EA%B5%90%EC%9E%AC%3C/text%3E%0A%3Ctext%20x%3D%22110%22%20y%3D%22455%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2227%22%20font-weight%3D%22600%22%20fill%3D%22%23485047%22%3EHTTP%20%C2%B7%20REST%20%C2%B7%20cURL%20%C2%B7%20SDK%20%C2%B7%20Serverless%20%C2%B7%20Fetch%3C/text%3E%0A%3Crect%20x%3D%22110%22%20y%3D%22560%22%20width%3D%22680%22%20height%3D%22170%22%20rx%3D%2224%22%20fill%3D%22%23eef3eb%22%20stroke%3D%22%236c7c66%22%20stroke-width%3D%223%22/%3E%0A%3Ctext%20x%3D%22145%22%20y%3D%22615%22%20font-family%3D%22monospace%22%20font-size%3D%2227%22%20font-weight%3D%22700%22%20fill%3D%22%23263126%22%3Eclient%20%E2%86%92%20request%20%E2%86%92%20API%20%E2%86%92%20response%3C/text%3E%0A%3Ctext%20x%3D%22145%22%20y%3D%22665%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2223%22%20fill%3D%22%23465046%22%3E%EC%98%81%EC%83%81%20%EA%B3%B5%EC%8B%9D%20%EA%B5%AC%EA%B0%84%2017/17%20%EB%8C%80%EC%9D%91%3C/text%3E%0A%3Ctext%20x%3D%22145%22%20y%3D%22705%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2223%22%20fill%3D%22%23465046%22%3E%EC%BD%94%EB%94%A9%200%EC%9D%BC%EC%B0%A8%20%EC%84%B8%EB%B6%80%20%ED%95%B4%EC%84%A4%20%2B%20%EC%BD%94%EB%93%9C%20%EC%9D%BD%EA%B8%B0%3C/text%3E%0A%3Cline%20x1%3D%22110%22%20y1%3D%22920%22%20x2%3D%22790%22%20y2%3D%22920%22%20stroke%3D%22%23b8b8b1%22%20stroke-width%3D%223%22/%3E%0A%3Ctext%20x%3D%22110%22%20y%3D%22995%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2224%22%20fill%3D%22%234c514b%22%3ESource%3A%20freeCodeCamp%20%C2%B7%20Craig%20Dennis%3C/text%3E%0A%3Ctext%20x%3D%22110%22%20y%3D%221040%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2224%22%20fill%3D%22%234c514b%22%3E3%3A07%3A06%20%C2%B7%20APIs%20for%20Beginners%202023%3C/text%3E%0A%3C/svg%3E",
       "published": "2026-09-25",
-      "version": 4,
+      "version": 5,
       "imported": false,
       "generated": true,
       "sourceType": "youtube",
       "sourceUrl": "https://youtu.be/WXsD0ZgxjRw",
       "sourceDuration": "3:07:06",
       "quote": "API는 모든 내부를 직접 만드는 기술이 아니라, 다른 기능의 계약을 읽고 안전하게 연결하는 기술이다.",
-      "description": "3시간 7분 영어 API 강의의 기존 내용과 식별자를 보존하면서, 전문용어가 나오기 전에 사람 말로 큰 그림을 잡고 강사의 비유·장면을 교재용 재현 화면으로 바로 보여 주도록 확장한 초보 교재입니다.",
-      "sourceNote": "기존 17장과 모든 기존 장·블록 ID를 보존한 설명 보강판입니다. 가상 SDK 예제와 잘못된 코드 언어 표기를 수정하고 실습 설명을 보강했습니다. 실제 강의 캡처는 확보하지 못했으며 재현 그림은 아직 교체하지 않았습니다. 전사 전체 의미 대조는 미완료입니다.",
+      "description": "강의 전체 전사문을 17구간에 걸쳐 대조하고 초보자가 실습을 따라갈 준비·입력·확인 과정을 보강한 API 교재입니다. 기존 책과 메모 연결 ID를 보존했습니다. 실제 강의 캡처 교체는 영상 데이터 미확보로 아직 완료하지 못했습니다.",
+      "sourceNote": "SozAI 전체 MD 전사문 1430구간과 YouTube 전체 자막 4244구간을 확보했습니다. 구두점·대소문자·자막 분할을 제외한 정규화 단어 38260개가 전체 순서까지 일치하며, 17구간의 의미·예시·실습을 기존 본문과 대조했습니다. 초보 설명과 현재 공식 API 문서 차이를 국소 수정했습니다. 실제 영상 프레임 확보·재현 이미지 교체는 미완료이며 외부 계정 실습을 실행한 검증 기록은 아닙니다.",
       "coverage": [
         {
           "index": 1,
@@ -17491,7 +17491,7 @@
             },
             {
               "type": "p",
-              "text": "이 교재는 영상의 공식 17개 구간에 대응하는 한국어 학습 보조 자료입니다. 기존 본문을 보존하고 어려운 코드와 생략된 과정에 설명을 보강하고 있습니다. 전체 발화를 문장별로 대조한 검수와 실제 학습 장면 교체는 아직 끝나지 않았으므로, 모든 내용과 화면을 빠짐없이 반영한 완성본이라고 보지는 않습니다. 화면 버튼 이름은 영상 당시와 현재가 다를 수 있습니다.",
+              "text": "이 교재는 영상의 17개 구간에 대응하는 한국어 학습 보조 자료입니다. 이번 v5에서는 SozAI 전체 전사문과 YouTube 전체 자막이 같은 내용임을 확인하고, 17개 구간의 설명과 실습을 기존 본문에 대조해 필요한 부분을 보강했습니다. 문장별 직역본은 아닙니다. 실제 강의 영상 프레임은 확보하지 못해 재현 그림을 교체하지 않았습니다. 따라서 본문 대조 완료와 강의 화면 교체 미완료를 구분해 읽어 주세요.",
               "sourceRefs": [
                 {
                   "videoId": "WXsD0ZgxjRw",
@@ -17552,6 +17552,20 @@
               ],
               "_origin": "source-learning",
               "id": "yt-api-beginners-WXsD0ZgxjRw-c1-deep-02"
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c1-deep-02-revision5-1",
+              "type": "p",
+              "text": "처음이라 Hello, world도 실행해 본 적 없다면, 먼저 짧은 프로그램을 저장하고 실행해 글자가 출력되는 경험부터 해 보세요. 이 책의 코드 설명은 그 다음을 연결합니다. 강사가 안내하는 영상 설명란의 학습 노트에는 입문 자료와 서비스 화면 변경사항이 들어가므로, 가입이나 설치 화면이 달라질 때 확인할 출발점입니다. 이 강의 자체도 2019년판을 갱신한 버전입니다.",
+              "_origin": "explanation",
+              "sourceRefs": [
+                {
+                  "kind": "lecture-caption-review",
+                  "videoId": "WXsD0ZgxjRw",
+                  "start": 51,
+                  "end": 151
+                }
+              ]
             },
             {
               "type": "p",
@@ -17961,6 +17975,20 @@
               ],
               "_origin": "source-learning",
               "id": "yt-api-beginners-WXsD0ZgxjRw-c2-deep-04"
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c2-deep-04-revision5-1",
+              "type": "p",
+              "text": "GUI는 Graphical User Interface, 즉 화면의 그림·버튼으로 조작하는 사용자 인터페이스라는 말입니다. 스마트폰의 재생 버튼이 그 예입니다. API는 그 화면을 보는 이름이 아니라, 개발자가 재생 기능이나 버튼 동작을 코드에서 이용하는 약속을 가리킵니다.",
+              "_origin": "explanation",
+              "sourceRefs": [
+                {
+                  "kind": "lecture-caption-review",
+                  "videoId": "WXsD0ZgxjRw",
+                  "start": 353,
+                  "end": 391
+                }
+              ]
             },
             {
               "type": "p",
@@ -18411,6 +18439,20 @@
               "id": "yt-api-beginners-WXsD0ZgxjRw-c3-deep-07"
             },
             {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c3-deep-07-revision5-1",
+              "type": "p",
+              "text": "잠깐 멈추고 오늘 쓴 프로그램 하나를 골라 보세요. 브라우저에서 영상을 재생했다면, 사람이 누른 재생 버튼은 UI이고 개발자가 이용했을 재생·네트워크 기능은 API입니다. 내부 구현을 추측해서 확정할 필요는 없습니다. “사용하는 입구와 안쪽 구현은 다르다”는 구분을 자신의 예로 말해 보는 연습입니다.",
+              "_origin": "explanation",
+              "sourceRefs": [
+                {
+                  "kind": "lecture-caption-review",
+                  "videoId": "WXsD0ZgxjRw",
+                  "start": 792,
+                  "end": 819
+                }
+              ]
+            },
+            {
               "type": "p",
               "text": "API와 구현을 구분하는 것이 중요한 이유는, 같은 인터페이스를 유지하면서 내부 구현을 교체할 수 있기 때문입니다. 사용자는 같은 메서드나 같은 URL을 계속 쓰고, 서비스 제공자는 뒤쪽 코드를 개선할 수 있습니다.",
               "sourceRefs": [
@@ -18732,7 +18774,7 @@
             },
             {
               "type": "p",
-              "text": "이런 원격 호출은 처음부터 지금처럼 편하지 않았습니다. RPC, SOAP 같은 여러 접근을 거치며 표준화가 발전했고, 웹의 장점을 잘 이용하는 REST라는 아키텍처 스타일이 널리 퍼졌습니다.",
+              "text": "강사는 원격 API가 편해지기까지 공통 표준을 찾는 과정이 있었고, REST라는 설계 스타일이 웹의 리소스를 다루는 방법으로 널리 쓰이게 됐다고 설명합니다. 이 구간에서 특정 역사적 기술의 세부 연혁을 가르치지는 않습니다. 지금은 원격 호출의 필요성과 공통 사용법의 가치를 연결하면 됩니다.",
               "sourceRefs": [
                 {
                   "videoId": "WXsD0ZgxjRw",
@@ -19019,6 +19061,25 @@
               "id": "yt-api-beginners-WXsD0ZgxjRw-c5-b4"
             },
             {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c5-b4-revision5-1",
+              "type": "p",
+              "text": "URL은 Uniform Resource Locator, URI는 Uniform Resource Identifier입니다. 전사에는 Universal로 적힌 부분이 있으나 여기서는 표준 용어인 Uniform으로 바로잡습니다. URI는 대상을 식별하는 더 넓은 말이고 URL은 위치를 통해 찾는 주소입니다. https://example.com/books/42에서 https는 접근 방식을 나타내는 scheme, example.com은 호스트, /books/42는 경로입니다.",
+              "_origin": "explanation",
+              "sourceRefs": [
+                {
+                  "kind": "lecture-caption-review",
+                  "videoId": "WXsD0ZgxjRw",
+                  "start": 1120,
+                  "end": 1140
+                },
+                {
+                  "kind": "verified-supplement",
+                  "url": "https://www.rfc-editor.org/rfc/rfc3986",
+                  "checkedAt": "2026-10-08"
+                }
+              ]
+            },
+            {
               "type": "p",
               "text": "header는 요청이나 응답에 붙는 “겉면 메모”라고 생각하세요. 실제 내용(body)과 따로 “JSON으로 받고 싶어요”, “이 인증 토큰을 가지고 있어요” 같은 설명을 붙입니다. 응답에도 “지금 보내는 내용은 JSON입니다” 같은 메모가 붙을 수 있습니다.",
               "sourceRefs": [
@@ -19043,6 +19104,25 @@
               ],
               "_origin": "source-learning",
               "id": "yt-api-beginners-WXsD0ZgxjRw-c5-b6"
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c5-b6-revision5-1",
+              "type": "p",
+              "text": "상태 코드와 일반 헤더 필드도 구분해 두세요. HTTP/1.1 응답 예시의 첫 줄 HTTP/1.1 200 OK가 처리 결과를 알려 주고, 그 아래 Content-Type: application/json 같은 줄이 본문의 종류를 알려 줍니다. 전사에서 상태 코드를 헤더 설명과 묶어 말하더라도 “결과 숫자”와 “이름: 값으로 된 추가 정보”를 같은 항목으로 외우지 않으면 됩니다.",
+              "_origin": "explanation",
+              "sourceRefs": [
+                {
+                  "kind": "lecture-caption-review",
+                  "videoId": "WXsD0ZgxjRw",
+                  "start": 1330,
+                  "end": 1397
+                },
+                {
+                  "kind": "verified-supplement",
+                  "url": "https://www.rfc-editor.org/rfc/rfc9112",
+                  "checkedAt": "2026-10-08"
+                }
+              ]
             },
             {
               "type": "p",
@@ -19834,6 +19914,20 @@
               "id": "yt-api-beginners-WXsD0ZgxjRw-c6-deep-09"
             },
             {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c6-deep-09-revision5-1",
+              "type": "p",
+              "text": "직접 확인할 작은 연습을 해 봅시다. “저자 목록 읽기”에는 GET /authors, “새 저자 등록”에는 POST /authors, “저자 42 삭제”에는 DELETE /authors/42를 연결해 보세요. 이것들은 강의 개념을 연습하는 가상 경로입니다. 실제 API에서는 문서의 경로·메서드·필수 필드를 확인해야 하며 이름만 보고 임의로 요청을 보내지는 않습니다.",
+              "_origin": "explanation",
+              "sourceRefs": [
+                {
+                  "kind": "lecture-caption-review",
+                  "videoId": "WXsD0ZgxjRw",
+                  "start": 1512,
+                  "end": 1707
+                }
+              ]
+            },
+            {
               "type": "p",
               "text": "GET    /books        # 목록 읽기\nGET    /books/42     # 42번 책 읽기\nPOST   /books        # 새 책 만들기\nPATCH  /books/42     # 42번 책 수정\nDELETE /books/42     # 42번 책 삭제",
               "sourceRefs": [
@@ -20072,6 +20166,25 @@
               "id": "yt-api-beginners-WXsD0ZgxjRw-c7-b4"
             },
             {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c7-b4-revision5-1",
+              "type": "p",
+              "text": "2026-10-08 확인한 현재 Spotify 문서는 Web API 사용에 Premium 계정을 요구하며, Development Mode 앱의 소유자도 활성 Premium 구독이 필요하다고 안내합니다. 영상 당시 콘솔의 Get Token 버튼과 가입 흐름이 지금도 그대로 있을 것이라고 가정하지 마세요. 현재 출발점은 Dashboard의 앱 생성 → 해당 인증 방식으로 액세스 토큰 발급 → 요청에 토큰 사용입니다. 이 설명은 현재 문서 보완이며 이번 작업에서 계정을 만들거나 결제하지 않았습니다.",
+              "_origin": "explanation",
+              "sourceRefs": [
+                {
+                  "kind": "lecture-caption-review",
+                  "videoId": "WXsD0ZgxjRw",
+                  "start": 2113,
+                  "end": 2347
+                },
+                {
+                  "kind": "verified-supplement",
+                  "url": "https://developer.spotify.com/documentation/web-api/tutorials/february-2026-migration-guide",
+                  "checkedAt": "2026-10-08"
+                }
+              ]
+            },
+            {
               "type": "p",
               "text": "검색 결과는 JSON으로 돌아옵니다. 결과에서 원하는 아티스트의 고유 ID를 찾고, 그 ID를 다시 다른 endpoint에 넣어 앨범 목록을 요청합니다. “이름으로 검색해서 고유 ID를 얻고, ID로 정확한 리소스를 조회한다”는 흐름은 수많은 API에서 반복됩니다.",
               "sourceRefs": [
@@ -20083,6 +20196,20 @@
               ],
               "_origin": "source-learning",
               "id": "yt-api-beginners-WXsD0ZgxjRw-c7-b5"
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c7-b5-revision5-1",
+              "type": "p",
+              "text": "찾은 아티스트 id는 다음 주소의 {id} 자리에 넣습니다. /v1/artists/{id}/albums는 그 아티스트의 앨범 목록입니다. 응답의 items 안에서 앨범 하나를 골라 name과 images의 URL을 확인해 보세요. 검색 결과의 아티스트 id와 앨범의 id는 같은 것이 아닙니다. 다음 요청이 무엇을 요구하는지 보고 해당 종류의 id를 복사합니다.",
+              "_origin": "explanation",
+              "sourceRefs": [
+                {
+                  "kind": "lecture-caption-review",
+                  "videoId": "WXsD0ZgxjRw",
+                  "start": 2398,
+                  "end": 2495
+                }
+              ]
             },
             {
               "type": "p",
@@ -20125,7 +20252,7 @@
             },
             {
               "type": "p",
-              "text": "API는 일반 사용자 화면에 직접 보이지 않는 데이터도 제공할 수 있습니다. 음악의 분석 특성처럼 서비스 내부 데이터가 API를 통해 노출되면, 개발자는 그 데이터를 이용해 추천·분석·자동화 같은 새로운 제품을 만들 수 있습니다.",
+              "text": "영상에서는 음악의 분석 특성처럼 일반 사용자 화면과 다른 데이터를 API로 활용하는 가능성도 소개합니다. 이는 영상 당시 기능 소개입니다. 모든 음악 분석 기능이 현재 새 앱에도 제공된다는 뜻은 아니므로, 만들려는 기능의 현재 endpoint와 앱 이용 조건을 먼저 확인해야 합니다.",
               "sourceRefs": [
                 {
                   "videoId": "WXsD0ZgxjRw",
@@ -20138,7 +20265,7 @@
             },
             {
               "type": "p",
-              "text": "빠른 응답을 보면서 cacheability와 layered system도 연결합니다. 자주 변하지 않는 정보는 캐시될 수 있고, 클라이언트는 요청 뒤에 실제로 몇 개의 서버·캐시·데이터베이스가 있는지 몰라도 동일한 API 계약만 보면 됩니다.",
+              "text": "빠른 응답을 보면서 cacheability와 layered system도 연결합니다. 자주 변하지 않는 정보는 캐시할 수 있습니다. 강사는 Spotify의 서버 쪽 캐시를 추측하지만 내부 구성을 실제로 확인한 것은 아닙니다. 클라이언트는 뒤에 몇 개의 서버·캐시·데이터베이스가 있는지 몰라도 공개된 API 계약을 통해 요청할 수 있다는 점이 핵심입니다.",
               "sourceRefs": [
                 {
                   "videoId": "WXsD0ZgxjRw",
@@ -20252,6 +20379,20 @@
               ],
               "_origin": "source-learning",
               "id": "yt-api-beginners-WXsD0ZgxjRw-c7-deep-03"
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c7-deep-03-revision5-1",
+              "type": "p",
+              "text": "화면을 찾는 순서는 서비스의 Developers 영역 → Web API 문서 → Search 설명입니다. 검색어 q와 검색 대상 type=artist를 입력하고, 문서가 요구하는 토큰을 준비한 다음 요청을 보냅니다. 응답이 오면 아티스트 이름과 id를 함께 확인하세요. 화면의 앨범이나 트랙 항목으로 바로 넘어가기 전에, 지금 받은 목록이 아티스트 목록인지부터 확인하는 과정입니다.",
+              "_origin": "explanation",
+              "sourceRefs": [
+                {
+                  "kind": "lecture-caption-review",
+                  "videoId": "WXsD0ZgxjRw",
+                  "start": 1756,
+                  "end": 2370
+                }
+              ]
             },
             {
               "type": "p",
@@ -20853,6 +20994,20 @@
               "id": "yt-api-beginners-WXsD0ZgxjRw-c8-deep-04"
             },
             {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c8-deep-04-revision5-1",
+              "type": "p",
+              "text": "설치 확인과 인터넷 요청 확인은 다릅니다. 먼저 터미널에 curl --help를 입력해 도움말이 나오는지 봅니다. 그다음 강의의 시험 주소를 curl https://icanhazdadjoke.com/처럼 호출해 응답이 돌아오는지 확인합니다. 도움말은 나오는데 이 요청이 실패하면, 명령 설치 문제와 인터넷·서버 응답 문제를 나누어 살펴보세요. 이 주소 호출은 본 교재 수정 과정에서 실행한 검증 기록은 아닙니다.",
+              "_origin": "explanation",
+              "sourceRefs": [
+                {
+                  "kind": "lecture-caption-review",
+                  "videoId": "WXsD0ZgxjRw",
+                  "start": 2821,
+                  "end": 2916
+                }
+              ]
+            },
+            {
               "type": "p",
               "text": "Spotify console에서 만들어 준 cURL 명령을 복사해 터미널에 붙입니다. 긴 명령도 쪼개 보면 `curl` 프로그램 + GET 요청 URL + 여러 `-H` header로 구성되어 있습니다.",
               "sourceRefs": [
@@ -20955,6 +21110,34 @@
               "_format": "code",
               "id": "yt-api-beginners-WXsD0ZgxjRw-c8-extra-code-01",
               "_codeLabel": "터미널 명령"
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c8-extra-code-01-revision5-1",
+              "type": "p",
+              "text": "강의의 다음 연습은 검색 때 받은 아티스트 id로 앨범을 터미널에서 다시 조회하는 것입니다. 기존 명령을 위쪽 화살표로 불러온 뒤 URL을 https://api.spotify.com/v1/artists/실제아티스트ID/albums로 바꾸고 Authorization 헤더는 유지합니다. Enter를 누른 뒤 items에 앨범이 들어오는지 확인합니다. “실제아티스트ID”는 설명 표기이므로 그대로 입력하지 않습니다. 콘솔에서 새 cURL 예제를 복사해도 같은 요청 구조인지 비교할 수 있습니다.",
+              "_origin": "explanation",
+              "sourceRefs": [
+                {
+                  "kind": "lecture-caption-review",
+                  "videoId": "WXsD0ZgxjRw",
+                  "start": 3043,
+                  "end": 3344
+                }
+              ]
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c8-extra-code-01-revision5-2",
+              "type": "p",
+              "text": "jq가 설치돼 있다면 받은 앨범 JSON을 | jq로 정리하고, | jq \".items[].name\"으로 각 앨범 이름을 골라 보는 선택 연습도 할 수 있습니다. |는 앞 명령의 출력 글자를 뒤 프로그램의 입력으로 넘깁니다. jq를 안 써도 HTTP 요청 실습은 가능합니다. 검색 결과에서 엉뚱한 커버곡을 고른 강의 사례처럼, 링크를 복사하기 전에 name과 artists를 같이 확인하면 다른 대상을 고르는 실수를 줄일 수 있습니다.",
+              "_origin": "explanation",
+              "sourceRefs": [
+                {
+                  "kind": "lecture-caption-review",
+                  "videoId": "WXsD0ZgxjRw",
+                  "start": 3043,
+                  "end": 3344
+                }
+              ]
             }
           ]
         },
@@ -21136,6 +21319,20 @@
               "id": "yt-api-beginners-WXsD0ZgxjRw-c9-b2"
             },
             {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c9-b2-revision5-1",
+              "type": "p",
+              "text": "영상의 준비 과정은 시험 계정 가입 → 이메일 확인 → 본인 전화번호 확인 → SMS 용도 선택 → Twilio 발신 번호 확보입니다. 계정 식별자와 인증 토큰이 보인다고 발신 번호까지 준비된 것은 아닙니다. 강사도 번호 발급 제한을 만나 안내에 따라 검토를 요청한 뒤 진행했습니다. 현재 자신의 계정에서 막혔다면 오류 안내와 공식 지원 경로를 확인하고, 그 단계가 해결된 뒤 발송 실습으로 넘어갑니다. 영상의 가입 질문·시험 크레딧·개인 번호를 지금의 고정 조건으로 복사하지 마세요.",
+              "_origin": "explanation",
+              "sourceRefs": [
+                {
+                  "kind": "lecture-caption-review",
+                  "videoId": "WXsD0ZgxjRw",
+                  "start": 3465,
+                  "end": 3827
+                }
+              ]
+            },
+            {
               "type": "p",
               "text": "Message 생성 endpoint에 `POST` 요청을 보내고 body에 `From`, `To`, `Body`를 넣으면 새 메시지 리소스가 생성됩니다. 즉 문자 전송도 REST 관점에서는 “메시지 컬렉션에 새 리소스를 만든다”로 볼 수 있습니다.",
               "sourceRefs": [
@@ -21150,7 +21347,7 @@
             },
             {
               "type": "p",
-              "text": "curl -X POST \\\n  \"https://api.example.com/Accounts/$ACCOUNT_ID/Messages.json\" \\\n  -u \"$ACCOUNT_ID:$AUTH_TOKEN\" \\\n  --data-urlencode \"From=$SERVICE_NUMBER\" \\\n  --data-urlencode \"To=$MY_NUMBER\" \\\n  --data-urlencode \"Body=Hello from the API\"",
+              "text": "curl -X POST \\\n  \"https://api.twilio.com/2010-04-01/Accounts/$TWILIO_ACCOUNT_SID/Messages.json\" \\\n  -u \"$TWILIO_ACCOUNT_SID:$TWILIO_AUTH_TOKEN\" \\\n  --data-urlencode \"From=$TWILIO_NUMBER\" \\\n  --data-urlencode \"To=$MY_NUMBER\" \\\n  --data-urlencode \"Body=Hello from the API\"",
               "sourceRefs": [
                 {
                   "videoId": "WXsD0ZgxjRw",
@@ -21162,6 +21359,25 @@
               "id": "yt-api-beginners-WXsD0ZgxjRw-c9-b4",
               "_format": "code",
               "_codeLabel": "터미널 명령"
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c9-b4-revision5-1",
+              "type": "p",
+              "text": "이 예시는 실제 Twilio 주소 형식을 사용하며 bash 계열 셸 기준입니다. 필요한 네 환경 변수와 검증된 수신 번호는 독자가 준비해야 합니다. POST를 실행하면 실제 문자 발송과 비용이 연결될 수 있습니다. 이 교재 작업에서는 발송하지 않았습니다. 처음에는 본인 시험 번호 한 개로 요청·응답·수신을 확인하고, 성공 여부는 JSON만으로 확정하지 않습니다.",
+              "_origin": "explanation",
+              "sourceRefs": [
+                {
+                  "kind": "lecture-caption-review",
+                  "videoId": "WXsD0ZgxjRw",
+                  "start": 3920,
+                  "end": 4320
+                },
+                {
+                  "kind": "verified-supplement",
+                  "url": "https://www.twilio.com/docs/messaging/api/message-resource",
+                  "checkedAt": "2026-10-08"
+                }
+              ]
             },
             {
               "id": "yt-api-beginners-WXsD0ZgxjRw-c9-b4-zero3-explain-1",
@@ -21261,6 +21477,20 @@
               ],
               "_origin": "source-learning",
               "id": "yt-api-beginners-WXsD0ZgxjRw-c9-b8"
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c9-b8-revision5-1",
+              "type": "p",
+              "text": "그다음은 같은 메시지 컬렉션을 조회하는 연습입니다. 방금 쓴 주소와 인증은 그대로 두고, 메서드를 GET으로 바꾸며 From·To·Body를 보내던 --data-urlencode 옵션은 모두 제거합니다. 응답의 messages 목록에서 방금 보낸 본문과 번호를 찾아보세요. 생성은 POST, 기록 확인은 GET이라는 차이를 같은 URL에서 비교하는 과정입니다.",
+              "_origin": "explanation",
+              "sourceRefs": [
+                {
+                  "kind": "lecture-caption-review",
+                  "videoId": "WXsD0ZgxjRw",
+                  "start": 4330,
+                  "end": 4378
+                }
+              ]
             },
             {
               "type": "p",
@@ -21933,6 +22163,20 @@
               "id": "yt-api-beginners-WXsD0ZgxjRw-c10-deep-09"
             },
             {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c10-deep-09-revision5-1",
+              "type": "p",
+              "text": "복제한 요청에는 이전의 To 조회 조건이 남아 있을 수 있습니다. POST로 바꿀 때 Query의 필터를 지우고 Body에서 form URL encoded를 선택한 뒤 To·From·Body·MediaUrl을 각각 별도 필드로 넣습니다. 이때 To는 수신 휴대폰 번호, From은 Twilio 발신 번호입니다. 인증과 계정 경로는 유지합니다. Send 뒤에는 201과 생성된 메시지 본문을 확인하고 수신까지 따로 확인해야 합니다.",
+              "_origin": "explanation",
+              "sourceRefs": [
+                {
+                  "kind": "lecture-caption-review",
+                  "videoId": "WXsD0ZgxjRw",
+                  "start": 5260,
+                  "end": 5490
+                }
+              ]
+            },
+            {
               "type": "p",
               "text": "성공 응답은 `201 Created`입니다. 200이 아니어도 성공일 수 있다는 점을 여기서 배웁니다. 201은 ‘새 resource가 만들어졌다’는 더 구체적인 성공 상태입니다.",
               "sourceRefs": [
@@ -21957,6 +22201,20 @@
               ],
               "_origin": "source-learning",
               "id": "yt-api-beginners-WXsD0ZgxjRw-c10-deep-11"
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c10-deep-11-revision5-1",
+              "type": "p",
+              "text": "환경 JSON에서는 이름과 문자열 값을 큰따옴표로 감싸고 콜론으로 연결합니다. 예를 들어 \"TWILIO_NUMBER\": \"+국가코드와번호\"처럼 적고, 항목을 추가할 때는 앞 항목 뒤에 쉼표를 둡니다. 실제 값 대신 설명 문장을 넣었다면 실행용 번호가 아닙니다. 환경을 선택한 뒤 From에 {{TWILIO_NUMBER}}를 참조하고 요청 미리보기에서 실제 값이 치환되는지 확인합니다. 같은 이름을 만들었어도 다른 환경을 선택하면 기대한 값이 쓰이지 않을 수 있습니다.",
+              "_origin": "explanation",
+              "sourceRefs": [
+                {
+                  "kind": "lecture-caption-review",
+                  "videoId": "WXsD0ZgxjRw",
+                  "start": 5540,
+                  "end": 5736
+                }
+              ]
             },
             {
               "type": "p",
@@ -22216,6 +22474,20 @@
               "id": "yt-api-beginners-WXsD0ZgxjRw-c11-b2"
             },
             {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c11-b2-revision5-1",
+              "type": "p",
+              "text": "강의에서는 VS Code를 설치한 뒤 명령 팔레트의 Install Extensions에서 Thunder Client를 찾아 설치하고, 확장 기능 안에 Twilio collection과 새 GET 요청을 만듭니다. 응답의 subresource URI는 /2010-04-01/...처럼 호스트가 없는 경로일 수 있으므로 https://api.twilio.com을 앞에 붙여 완전한 주소를 만듭니다. messages 안의 특정 메시지 → media 목록 → 개별 media 순서로 이동하는 과정이며, 목록 주소와 파일 하나의 주소를 혼동하지 마세요.",
+              "_origin": "explanation",
+              "sourceRefs": [
+                {
+                  "kind": "lecture-caption-review",
+                  "videoId": "WXsD0ZgxjRw",
+                  "start": 5815,
+                  "end": 6046
+                }
+              ]
+            },
+            {
               "type": "p",
               "text": "미디어 메타데이터 endpoint와 실제 이미지 파일 endpoint가 다를 수 있습니다. 한 URL에서는 JSON 메타데이터를 받고, 다른 형태의 URL에서는 이미지 바이트를 받습니다. 같은 “사진”이라도 표현(representation)이 다를 수 있다는 점을 볼 수 있습니다.",
               "sourceRefs": [
@@ -22412,7 +22684,7 @@
             },
             {
               "type": "p",
-              "text": "흥미롭게도 실제 이미지 요청은 이 예에서 인증을 상속하면 오히려 문제가 생겨, 그 요청만 인증 상속을 끕니다. ‘상위 Collection의 설정을 무조건 적용하면 된다’가 아니라 endpoint마다 필요한 인증 조건을 확인해야 합니다.",
+              "text": "영상 당시 실제 이미지 요청에서는 인증 상속을 끄고 파일을 받는 모습을 보여 줍니다. 그러나 2026-10-08 확인한 현재 Twilio Media 문서는 모든 media URL에 HTTP Basic Authentication을 요구하며 API key SID와 secret을 사용하라고 안내합니다. 영상의 “이미지 요청 인증 끄기”를 현재 실행 지침으로 따라 하면 안 됩니다. 현재 endpoint의 인증 조건과 파일 응답을 별도로 확인해야 합니다.",
               "sourceRefs": [
                 {
                   "videoId": "WXsD0ZgxjRw",
@@ -22422,6 +22694,25 @@
               ],
               "_origin": "source-learning",
               "id": "yt-api-beginners-WXsD0ZgxjRw-c11-deep-05"
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c11-deep-05-revision5-1",
+              "type": "p",
+              "text": "갤러리의 src에 인증이 필요한 Twilio URL만 넣으면 일반 이미지 태그가 그 API 비밀값을 함께 보내지 않아 사진을 표시하지 못할 수 있습니다. 브라우저에 API secret을 넣는 방법으로 해결하지 마세요. 현재 서비스를 새로 구현하려면 서버에서 인증해 파일을 가져와 자신의 권한 정책으로 제공하는 경로 등을 별도로 설계해야 합니다. 이 서버 경로는 강의 뒤에 필요한 현재 보완점이며 여기서 구현·실행한 기능은 아닙니다.",
+              "_origin": "explanation",
+              "sourceRefs": [
+                {
+                  "kind": "lecture-caption-review",
+                  "videoId": "WXsD0ZgxjRw",
+                  "start": 6060,
+                  "end": 6137
+                },
+                {
+                  "kind": "verified-supplement",
+                  "url": "https://www.twilio.com/docs/messaging/api/media-resource",
+                  "checkedAt": "2026-10-08"
+                }
+              ]
             },
             {
               "type": "p",
@@ -22796,6 +23087,20 @@
               ]
             },
             {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c12-b4-revision4-2-revision5-1",
+              "type": "p",
+              "text": "강의가 본격적으로 실행하는 첫 SDK 예제는 새 문자 발송보다 메시지 목록 조회입니다. 이 장 뒤의 client.messages.list() 예제를 explorer.cjs에 넣을 때는 위에서 만든 client 초기화도 함께 있어야 합니다. 파일 저장 → 같은 폴더의 터미널 → node explorer.cjs 순서로 실행하고, 목록이나 오류가 출력되는지 봅니다. 파일에 새 코드를 적고 저장하지 않으면 Node는 이전에 저장된 내용을 실행합니다.",
+              "_origin": "explanation",
+              "sourceRefs": [
+                {
+                  "kind": "lecture-caption-review",
+                  "videoId": "WXsD0ZgxjRw",
+                  "start": 6691,
+                  "end": 7199
+                }
+              ]
+            },
+            {
               "type": "p",
               "text": "const twilio = require(\"twilio\");\n\nconst client = twilio(\n  process.env.TWILIO_ACCOUNT_SID,\n  process.env.TWILIO_AUTH_TOKEN\n);\n\nclient.messages\n  .create({\n    from: process.env.TWILIO_NUMBER,\n    to: process.env.MY_NUMBER,\n    body: \"Hello from Node\",\n  })\n  .then((message) => console.log(message.sid))\n  .catch((error) => console.error(error));",
               "sourceRefs": [
@@ -22819,6 +23124,25 @@
                 {
                   "kind": "verified-supplement",
                   "basis": "existing-book-code"
+                }
+              ]
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c12-b5-revision4-1-revision5-1",
+              "type": "p",
+              "text": "환경 변수 파일도 만드는 것과 적용하는 것이 다릅니다. 강의의 macOS 셸에서는 twilio.env에 export TWILIO_ACCOUNT_SID=...와 export TWILIO_AUTH_TOKEN=...를 적고 source ./twilio.env로 현재 셸에 적용한 뒤 같은 터미널에서 Node를 실행합니다. 파일이 폴더에 있다는 사실만으로 process.env에 자동으로 값이 생기지는 않습니다. 이 파일은 비밀값을 담으므로 Git에 넣지 않습니다. Windows에서는 해당 셸용 공식 설정 방법을 사용해야 합니다.",
+              "_origin": "explanation",
+              "sourceRefs": [
+                {
+                  "kind": "lecture-caption-review",
+                  "videoId": "WXsD0ZgxjRw",
+                  "start": 6850,
+                  "end": 7007
+                },
+                {
+                  "kind": "verified-supplement",
+                  "url": "https://www.twilio.com/docs/usage/secure-credentials",
+                  "checkedAt": "2026-10-08"
                 }
               ]
             },
@@ -22947,6 +23271,20 @@
               ],
               "_origin": "source-learning",
               "id": "yt-api-beginners-WXsD0ZgxjRw-c12-b11"
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c12-b11-revision5-1",
+              "type": "p",
+              "text": "강사는 처음 message.delete()라고 적어 “함수가 아니다”라는 오류를 만나고, SDK 메서드를 message.remove()로 고쳐 실행합니다. HTTP 메서드 DELETE와 JavaScript 메서드 이름 remove는 다른 층의 이름입니다. 오류가 보이면 HTTP 개념을 바꾸기 전에 SDK 문서의 메서드 철자와 파일 저장 여부를 확인하세요. 교재 예제는 실제 삭제 줄을 주석으로 두었으므로 대상 출력만으로 삭제됐다고 판단하지 않습니다.",
+              "_origin": "explanation",
+              "sourceRefs": [
+                {
+                  "kind": "lecture-caption-review",
+                  "videoId": "WXsD0ZgxjRw",
+                  "start": 7789,
+                  "end": 7860
+                }
+              ]
             },
             {
               "type": "p",
@@ -23659,6 +23997,20 @@
               "id": "yt-api-beginners-WXsD0ZgxjRw-c13-deep-01"
             },
             {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c13-deep-01-revision5-1",
+              "type": "p",
+              "text": "starter HTML을 가져오면 먼저 index.html이라는 파일로 저장하고 열어, 기본 고양이 갤러리가 보이는지 확인합니다. 다음에는 callToAction의 문구를 자신의 사진 주제로 바꾸고 저장한 뒤 브라우저를 새로고침합니다. 이 단계의 목표는 문자 사진이 나오는 것이 아니라 “내가 저장한 파일의 변경이 화면에 보인다”는 확인입니다. 강의의 macOS open 명령은 운영체제에 따른 파일 열기 방법이며 모든 환경의 공통 명령은 아닙니다.",
+              "_origin": "explanation",
+              "sourceRefs": [
+                {
+                  "kind": "lecture-caption-review",
+                  "videoId": "WXsD0ZgxjRw",
+                  "start": 8196,
+                  "end": 8576
+                }
+              ]
+            },
+            {
               "type": "p",
               "text": "웹 개발 경험이 거의 없는 사람을 위해 강사는 완성된 HTML 템플릿을 제공합니다. 목표는 HTML·CSS를 처음부터 만드는 것이 아니라 ‘이미 작동하는 화면에서 API 연결 지점을 찾는 경험’을 하는 것입니다.",
               "sourceRefs": [
@@ -24010,6 +24362,20 @@
               ],
               "_origin": "source-learning",
               "id": "yt-api-beginners-WXsD0ZgxjRw-c14-b3"
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c14-b3-revision5-1",
+              "type": "p",
+              "text": "강의의 Twilio 콘솔 작업은 Functions and Assets → Services → 새 Service 생성 → index.html 업로드 → Public asset 선택 → Deploy All → 배포 URL 열기 순서입니다. 업로드·저장·공개 배포는 각기 다른 단계입니다. 아직 고양이 사진이 보여도 이 시점에는 정적 HTML 호스팅 확인에 성공한 것입니다. 이 문단은 강의의 실습 안내이며 이번 챗북 반영 과정에서 Twilio나 Netlify에 새 배포를 실행했다는 뜻이 아닙니다.",
+              "_origin": "explanation",
+              "sourceRefs": [
+                {
+                  "kind": "lecture-caption-review",
+                  "videoId": "WXsD0ZgxjRw",
+                  "start": 8673,
+                  "end": 8821
+                }
+              ]
             },
             {
               "type": "p",
@@ -24786,6 +25152,25 @@
               "id": "yt-api-beginners-WXsD0ZgxjRw-c15-b11"
             },
             {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c15-b11-revision5-1",
+              "type": "p",
+              "text": "주소에서 .json을 지우는 변환은 응답 형식을 고르는 과정입니다. 현재 Twilio에서는 확장자 없는 media 주소도 인증을 요구하므로, 이 변환만으로 브라우저에 표시 가능한 공개 사진이 만들어지는 것은 아닙니다. 위 코드는 영상의 데이터 변환 구조를 설명하는 예제입니다. 현재 실행에는 앞 장에서 설명한 서버 쪽 media 전달 경로 등 별도 보완이 필요합니다.",
+              "_origin": "explanation",
+              "sourceRefs": [
+                {
+                  "kind": "lecture-caption-review",
+                  "videoId": "WXsD0ZgxjRw",
+                  "start": 10091,
+                  "end": 10207
+                },
+                {
+                  "kind": "verified-supplement",
+                  "url": "https://www.twilio.com/docs/messaging/api/media-resource",
+                  "checkedAt": "2026-10-08"
+                }
+              ]
+            },
+            {
               "type": "p",
               "text": "문자 본문을 `description`과 `alt`로 사용하면 같은 문자의 여러 사진이 같은 설명을 갖습니다. 실제 제품에서는 접근성을 위해 더 정확한 alt를 만들거나 별도 설명 입력을 받는 설계도 고려할 수 있습니다.",
               "sourceRefs": [
@@ -24951,6 +25336,20 @@
               ],
               "_origin": "source-learning",
               "id": "yt-api-beginners-WXsD0ZgxjRw-c15-deep-05"
+            },
+            {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c15-deep-05-revision5-1",
+              "type": "p",
+              "text": "현재 함수에서 인증된 client를 얻을 수 있는지는 서비스의 환경 설정에도 달려 있습니다. 강의는 계정 자격증명을 함수 환경에 추가하는 설정을 확인합니다. TWILIO_NUMBER도 환경 변수로 저장한 뒤 코드의 context.TWILIO_NUMBER로 읽습니다. 로컬 Node의 process.env와 Twilio Functions의 context는 이 예제에서 값을 읽는 위치가 다릅니다. 같은 변수 이름을 썼어도 서로 다른 실행 환경에 각각 설정해야 합니다.",
+              "_origin": "explanation",
+              "sourceRefs": [
+                {
+                  "kind": "lecture-caption-review",
+                  "videoId": "WXsD0ZgxjRw",
+                  "start": 9810,
+                  "end": 9950
+                }
+              ]
             },
             {
               "type": "p",
@@ -25531,6 +25930,20 @@
               "id": "yt-api-beginners-WXsD0ZgxjRw-c16-deep-06"
             },
             {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c16-deep-06-revision5-1",
+              "type": "p",
+              "text": "마지막 화면 확인은 세 번 나누면 원인이 보입니다. 먼저 /api/pics를 열어 배열과 src·description·alt·thumbnailWidth가 있는지 확인합니다. 다음에는 src 하나를 실제로 열어 이미지 파일 응답이 오는지 봅니다. 마지막으로 HTML을 저장·반영한 뒤 갤러리가 뜨고 사진 클릭 시 확대 화면과 설명이 보이는지 확인합니다. JSON만 보이면 첫 단계 확인일 뿐, 사진 표시까지 끝난 것은 아닙니다.",
+              "_origin": "explanation",
+              "sourceRefs": [
+                {
+                  "kind": "lecture-caption-review",
+                  "videoId": "WXsD0ZgxjRw",
+                  "start": 10772,
+                  "end": 10850
+                }
+              ]
+            },
+            {
               "type": "p",
               "text": "결과적으로 핵심 연결 코드는 두 줄뿐이지만 그 뒤에는 Fetch API, HTTP, 서버 Function, Twilio API, Vue API, gallery plugin API가 겹쳐 있습니다. 강의가 처음 말한 ‘추상화가 복잡한 일을 몇 줄로 만든다’는 메시지가 여기서 완성됩니다.",
               "sourceRefs": [
@@ -26093,6 +26506,20 @@
               "id": "yt-api-beginners-WXsD0ZgxjRw-c17-deep-12"
             },
             {
+              "id": "yt-api-beginners-WXsD0ZgxjRw-c17-deep-12-revision5-1",
+              "type": "p",
+              "text": "마지막 복습에서는 사용한 도구를 기능과 연결해 보세요. cURL과 REST client는 요청을 탐색하고, SDK는 같은 HTTP 요청을 코드에서 쉽게 쓰게 하고, 서버 함수는 비밀값과 데이터 변환을 맡고, Fetch와 Vue는 결과를 화면으로 연결합니다. 강사는 문자 설문과 음성 피드백도 API 활용 예로 소개하지만, 영상에 나온 옛 번호를 지금도 유효한 학습 연락처라고 보장하지는 않습니다.",
+              "_origin": "explanation",
+              "sourceRefs": [
+                {
+                  "kind": "lecture-caption-review",
+                  "videoId": "WXsD0ZgxjRw",
+                  "start": 11130,
+                  "end": 11191
+                }
+              ]
+            },
+            {
               "type": "p",
               "text": "REST 점검 결과\n✓ Client-Server\n✓ Stateless\n△ Cacheable: 현재 구현은 보강 필요\n✓ Layered System\n○ Code on Demand: 선택 조건, 미사용\n✗ Uniform Interface: 일부 하위 요건 부족\n\n결론: 목적에는 맞지만 엄격한 의미의 완전한 RESTful API는 아님",
               "sourceRefs": [
@@ -26574,28 +27001,32 @@
       ],
       "coverageAudit": {
         "officialSections": "17/17",
-        "captionSource": "full English captions, 36,122 words",
+        "captionSource": "SozAI MD 1430 entries and YouTube 4244 caption lines, normalized lexical sequence 38260 words identical",
         "duration": "187m 6s",
         "visuals": "43 total book visuals; inline instructor-analogy scene reconstructions are labelled as non-video captures",
         "beginnerPolicy": "전문용어를 모르는 비전공 초보가 사람 말 → 그림/장면 → 원래 용어 → 코드 순서로 읽는 기준",
         "preservedExistingAnchors": true,
-        "note": "기존 source-derived 블록과 장/블록 ID를 보존하고 초보 연결 설명과 장면 재현을 추가. 강의 비유가 학습에 필요한 곳은 텍스트만 남기지 않고 인접 시각 자료로 보강."
+        "note": "Review records are in review/api-20261008/transcript-review-v5.json; reconstructions remain explicitly labelled non-captures.",
+        "textReview": "17/17 sections reviewed",
+        "visualReview": "actual lecture frames not acquired"
       },
       "revisionStats": {
         "chapters": 17,
-        "blocks": 624,
-        "paragraphs": 545,
+        "blocks": 695,
+        "paragraphs": 652,
         "code": 29,
         "output": 7,
         "images": 43,
-        "body_chars": 72973,
+        "body_chars": 89172,
         "glossary_terms": 111,
         "questions": 34
       },
       "revisionStatus": {
-        "state": "PARTIAL_REVISION",
+        "state": "TEXT_REVIEW_COMPLETE_VISUALS_PENDING",
         "screenshotsReplaced": 0,
-        "fullTranscriptReview": "NOT_COMPLETE"
+        "fullTranscriptReview": "COMPLETE_17_SECTIONS",
+        "lectureFrames": "BLOCKED_MEDIA_NOT_LOADED",
+        "externalServiceExercises": "NOT_RUN"
       }
     }
   ]
