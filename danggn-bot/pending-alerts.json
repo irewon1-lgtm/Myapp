@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-08T02:57:13.779299Z",
+  "updatedAt": "2026-10-08T03:23:27.477252Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -1626,6 +1626,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt900x4d-a58-i5-8g-128gb-15%EC%9D%B8%EC%B9%98-aku1dnozicxa/",
       "firstAlertedAt": "2026-10-08T02:57:13.779299Z",
       "lastCandidateAt": "2026-10-08T02:57:13.779299Z"
+    },
+    "v11u2fe91pq5": {
+      "id": "v11u2fe91pq5",
+      "title": "Dell G15 5521 Special Edition",
+      "price": 850000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "관양동",
+      "cpuHint": "i7-12700H",
+      "gpuHint": "RTX 3070 Ti",
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 32,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "32GB",
+      "storageGB": 1024,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-08T02:59:18.630Z",
+      "url": "https://www.daangn.com/kr/buy-sell/dell-g15-5521-special-edition-v11u2fe91pq5/",
+      "firstAlertedAt": "2026-10-08T03:23:27.477252Z",
+      "lastCandidateAt": "2026-10-08T03:23:27.477252Z"
     }
   }
 }
