@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-08T20:42:14.642Z",
+  "generatedAt": "2026-10-08T20:59:45.734Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -53,20 +53,83 @@
       },
       "htmlSample": {
         "embeddedArticles": false,
-        "remixArticleSamples": [],
-        "dateFieldSnippets": [],
+        "remixArticleSamples": [
+          {
+            "id": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%95%84%EC%9D%B4%EB%94%94%EC%96%B4%ED%8C%A8%EB%93%9C-%EB%85%B8%ED%8A%B8%EB%B6%81-14%EC%9D%B8%EC%B9%98-p9feg7pfunjd/",
+            "href": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%95%84%EC%9D%B4%EB%94%94%EC%96%B4%ED%8C%A8%EB%93%9C-%EB%85%B8%ED%8A%B8%EB%B6%81-14%EC%9D%B8%EC%B9%98-p9feg7pfunjd/",
+            "title": "레노버 아이디어패드 노트북 14인치",
+            "content": "\n레노버 IdeaPad 1 14IGL05 노트북 판매합니다\nCeleron N4020 / RAM 4GB\nWindows 11 Home 정품 인증\n14인치\n충전기 포함\n인터넷, 문서작업, 인강 등 기본적인 용도로 사용하기 좋습니다.\n생활 사용감 있으나 기능 정상입니다.\n 문서작업용, 영상 시청용으로 사용했습니다 \n\n 충전하면서 사용추천드려용 손가락 터치패드는 고장나서 마우스 연결해서 쓰셔야합니다\n\n네고x 구매 후 환불x 클레임x",
+            "price": "100000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/1ccafca7-945f-41d1-a173-89b2eb5cffaf.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-08T20:50:31.945Z",
+            "boostedAt": "2026-10-08T20:50:31.943Z",
+            "region": {
+              "name": "대평동"
+            },
+            "category": null,
+            "tradingCoordinates": [
+              {
+                "latitude": 36.474884276018685,
+                "longitude": 127.28118374318353
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%95%84%EC%9D%B4%EB%94%94%EC%96%B4%ED%8C%A8%EB%93%9C-110s-11ibr-%ED%99%94%EC%9D%B4%ED%8A%B8-%EB%85%B8%ED%8A%B8%EB%B6%81-ym4bbbx2rssr/",
+            "href": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%95%84%EC%9D%B4%EB%94%94%EC%96%B4%ED%8C%A8%EB%93%9C-110s-11ibr-%ED%99%94%EC%9D%B4%ED%8A%B8-%EB%85%B8%ED%8A%B8%EB%B6%81-ym4bbbx2rssr/",
+            "title": "레노버 아이디어패드 110S-11IBR 화이트 노트북",
+            "content": "뱃데리 없고 충전기 사용해야됩니다\n충전기도. 없습니댜\n깨끗합니다\n레노버 아이디어패드 110S-11IBR 화이트 노트북이에요.\n11.6인치 화면과 인텔 셀러론 N3060 프로세서, 2GB 메모리를 갖췄어요.\n저장장치는 32GB eMMC이며 윈도우 10이 설치되어 있어요.\n한글24 \nms office 24 설치ㅈ되어 있습니댜\n간단한 문서 작업이나 웹서핑용 노트북을 찾는 분께 추천해요.",
+            "price": "25000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/61d41a30-891f-4b2b-a11c-5c0f0301d9ab.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-08T20:53:57.203Z",
+            "boostedAt": "2026-10-08T20:53:57.200Z",
+            "region": {
+              "name": "농소2동"
+            },
+            "category": null,
+            "tradingCoordinates": []
+          },
+          {
+            "id": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-15%EC%9D%B8%EC%B9%98-x1xvpppsq42s/",
+            "href": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-15%EC%9D%B8%EC%B9%98-x1xvpppsq42s/",
+            "title": "LG 노트북 15인치",
+            "content": "LG 노트북 15인치\n모델 : LG 15U34\nCPU : Intel Pentium\nRAM : 8 GB\nSSD : 240 GB (속도빠름)\n배터리 3시간 이상 (5번사진)\n윈도10, MS오피스, 한글 설치됨\n인터넷, 문서작성 성능 우수함\n노트북 외관 깨끗함\n충전기, 무선마우스(새것),\nLG정품가방(새것)\n모두 드립니다",
+            "price": "150000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/300c600a-d0c0-4ea3-86d0-7a1fa461f664.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-08T13:36:44.345Z",
+            "boostedAt": "2026-10-08T13:36:44.343Z",
+            "region": {
+              "name": "오금동"
+            },
+            "category": null,
+            "tradingCoordinates": []
+          }
+        ],
+        "dateFieldSnippets": [
+          "createdAt\":\"2026-10-08T20:50:31.945Z\",\"boostedAt\":\"2026-10-08T20:50:31.943Z\",\"region\":{\"name\":\"대평동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-08T20:53:57.203Z\",\"boostedAt\":\"2026-10-08T20:53:57.200Z\",\"region\":{\"name\":\"농소2동\"},\"category\":null,\"tradingCoo",
+          "createdAt\":\"2026-10-08T13:36:44.345Z\",\"boostedAt\":\"2026-10-08T13:36:44.343Z\",\"region\":{\"name\":\"오금동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-08T02:54:57.507Z\",\"boostedAt\":\"2026-10-08T02:54:57.504Z\",\"region\":{\"name\":\"산본동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-09-23T09:23:11.424Z\",\"boostedAt\":\"2026-10-08T20:25:24.106Z\",\"region\":{\"name\":\"명륜3가\"},\"category\":null,\"tradingCoo"
+        ],
         "scriptHeads": [
-          "\n    (function(window, document, mode) {\n      try {\n        document.documentElement.dataset.seed = '';\n        document.documentElement.dataset.seedColorMode = mode;\n      } catch (e) {}\n\n      try {\n        var prefer",
           "window.sentryEnv = {\n  release: \"5cab355\",\n  environment: \"prod-kr\"\n};",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":262,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"레노버 아이디어패드 노트북 14인치\",\"descript",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-94566b97.js\";\nimport * as route0 from \"/_remix/root-P4ns_lso.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-u7IPCM8v.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 1216,
-    "globalUniqueListings": 456,
-    "duplicateListingsRemoved": 760,
+    "searchUniqueListings": 1248,
+    "globalUniqueListings": 467,
+    "duplicateListingsRemoved": 781,
     "detailQueueStart": 2,
     "freshDetailTasks": 2,
     "backlogDetailTasks": 0,
@@ -78,10 +141,10 @@
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 456,
+    "postedAtResolvedFromSearch": 467,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 80412,
+    "scanDurationMs": 79993,
     "cities": [
       {
         "city": "군포시",
@@ -93,8 +156,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 266,
-        "durationMs": 12205
+        "uniqueListings": 277,
+        "durationMs": 11967
       },
       {
         "city": "의왕시",
@@ -109,8 +172,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 365,
-        "durationMs": 25398
+        "uniqueListings": 366,
+        "durationMs": 25375
       },
       {
         "city": "안양시",
@@ -127,8 +190,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 329,
-        "durationMs": 34906
+        "uniqueListings": 349,
+        "durationMs": 34902
       },
       {
         "city": "과천시",
@@ -140,16 +203,16 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 256,
-        "durationMs": 6115
+        "durationMs": 6088
       }
     ],
     "finalCandidateCount": 0,
-    "stateItemCount": 3672,
+    "stateItemCount": 3674,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 80417
+    "durationMs": 79997
   },
   "candidates": []
 }
