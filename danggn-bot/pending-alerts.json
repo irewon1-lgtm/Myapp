@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-08T03:41:18.355353Z",
+  "updatedAt": "2026-10-08T03:59:33.615007Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -1651,6 +1651,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/dell-g15-5521-special-edition-v11u2fe91pq5/",
       "firstAlertedAt": "2026-10-08T03:23:27.477252Z",
       "lastCandidateAt": "2026-10-08T03:23:27.477252Z"
+    },
+    "85hzrv6agp53": {
+      "id": "85hzrv6agp53",
+      "title": "DELL 래티튜드 5501 15인치 노트북",
+      "price": 390000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "의왕시",
+      "location": "부곡동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "RAM 16G",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": 256,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-08T03:43:17.499Z",
+      "url": "https://www.daangn.com/kr/buy-sell/dell-%EB%9E%98%ED%8B%B0%ED%8A%9C%EB%93%9C-5501-15%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-85hzrv6agp53/",
+      "firstAlertedAt": "2026-10-08T03:59:33.615007Z",
+      "lastCandidateAt": "2026-10-08T03:59:33.615007Z"
+    },
+    "herugyec7on9": {
+      "id": "herugyec7on9",
+      "title": "HP 울트라북 i3-2375M 8GB RAM 240GB SSD",
+      "price": 40000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "산본1동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 24,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "RAM 24",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-08T03:54:18.840Z",
+      "url": "https://www.daangn.com/kr/buy-sell/hp-%EC%9A%B8%ED%8A%B8%EB%9D%BC%EB%B6%81-i3-2375m-8gb-ram-240gb-ssd-herugyec7on9/",
+      "firstAlertedAt": "2026-10-08T03:59:33.615007Z",
+      "lastCandidateAt": "2026-10-08T03:59:33.615007Z"
     }
   }
 }
