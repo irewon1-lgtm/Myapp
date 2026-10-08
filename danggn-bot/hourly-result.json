@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-08T14:02:06.906Z",
+  "generatedAt": "2026-10-08T14:25:42.577Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -53,35 +53,93 @@
       },
       "htmlSample": {
         "embeddedArticles": false,
-        "remixArticleSamples": [],
-        "dateFieldSnippets": [],
+        "remixArticleSamples": [
+          {
+            "id": "/kr/buy-sell/msi-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-i7-rtx-866qtzyc9k5m/",
+            "href": "/kr/buy-sell/msi-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-i7-rtx-866qtzyc9k5m/",
+            "title": "MSI 게이밍 노트북 (i7, RTX)",
+            "content": "MSI 게이밍 노트북을 판매해요. 인텔 코어 i7 프로세서와 NVIDIA GeForce RTX 그래픽 카드가 탑재되어 있어 고사양 게임도 문제없이 즐길 수 있어요. 선명한 레드 백라이트 키보드로 밤에도 편안하게 사용할 수 있답니다. 게임을 좋아하시는 분이라면 만족하실 거예요.\n\n인텔 i7 11세대 cpu\nram 16 gb\nssd 512gb\nvga gtx 1660 4gb\n키보드 레드 led\n인텔 무선랜카드 \nos windows 11\n\n외장 그래픽이 있어 게임 등에 유리합니다. 뒷면 보시면 아시겠지만 쿨링도 잘 되ㅣ어 있고 통풍구도 많아 발열제어가\n용이합니다. 노트북에 지문이 묻어서 더러워 보이네요. 판매할때는 깨끗히 닦아서 보내드릴겠습니다.\n노트북 내부는 먼지 제거 스프레이로 깨끗히 세척했습니다.\n",
+            "price": "690000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/a28a60c3-8c0e-432f-b8af-8dff69554f47.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-08T11:52:34.602Z",
+            "boostedAt": "2026-10-08T11:52:34.593Z",
+            "region": {
+              "name": "대원동"
+            },
+            "category": null,
+            "tradingCoordinates": []
+          },
+          {
+            "id": "/kr/buy-sell/%EA%B8%89%EC%B3%90-17%EC%9D%B8%EC%B9%98-rtx-3060-%EA%B2%8C%EC%9D%B4%EB%B0%8D%EB%85%B8%ED%8A%B8%EB%B6%81-9twpfzyed7yb/",
+            "href": "/kr/buy-sell/%EA%B8%89%EC%B3%90-17%EC%9D%B8%EC%B9%98-rtx-3060-%EA%B2%8C%EC%9D%B4%EB%B0%8D%EB%85%B8%ED%8A%B8%EB%B6%81-9twpfzyed7yb/",
+            "title": "급쳐 17인치 RTX 3060 게이밍노트북",
+            "content": "에이수스 ROG 게이밍 노트북이에요.\nAMD 라이젠 7 6800H 프로세서와 지포스 RTX 3060 그래픽을 탑재했어요.\n메모리는 DDR5 16GB이고 저장 공간은 477GB로 표시돼요.\n2560×1440 해상도와 240Hz 주사율 디스플레이를 갖췄어요.\n고주사율 게이밍 노트북 찾는 분께 추천해요.\n\n고해상도2k 로 화질좋아요\n",
+            "price": "750000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/dc8e7b53-5a02-4998-b510-2e3b11747310.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-08T12:13:06.018Z",
+            "boostedAt": "2026-10-08T12:13:06.015Z",
+            "region": {
+              "name": "금정동"
+            },
+            "category": null,
+            "tradingCoordinates": []
+          },
+          {
+            "id": "/kr/buy-sell/hp-omen-16-%EA%B2%8C%EC%9D%B4%EB%B0%8D%EB%85%B8%ED%8A%B8%EB%B6%81-i7-13700hx-rtx4060-qhd-240hz-nerpxom7tkjn/",
+            "href": "/kr/buy-sell/hp-omen-16-%EA%B2%8C%EC%9D%B4%EB%B0%8D%EB%85%B8%ED%8A%B8%EB%B6%81-i7-13700hx-rtx4060-qhd-240hz-nerpxom7tkjn/",
+            "title": "HP OMEN 16 게이밍노트북 i7-13700HX RTX4060 QHD 240Hz",
+            "content": "HP OMEN 16-wf0093TX\n\n* CPU: i7-13700HX\n* GPU: RTX 4060 Laptop 8GB\n* RAM: 16GB DDR5\n* SSD: 512GB\n* 디스플레이: 16.1인치 QHD 2560×1440 / 240Hz / 100% sRGB\n* 무게 약 2.37kg\n* Windows 11 Home \n\n자세한 내용은 아래 링크로 참고해주세요!\nhttps://link.coupang.com/a/hFFaY0EkQC",
+            "price": "1400000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/d68d03ea-ea9a-410f-8644-108f483243ab.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-08T02:15:18.892Z",
+            "boostedAt": "2026-10-08T02:15:18.891Z",
+            "region": {
+              "name": "은현면"
+            },
+            "category": null,
+            "tradingCoordinates": []
+          }
+        ],
+        "dateFieldSnippets": [
+          "createdAt\":\"2026-10-08T11:52:34.602Z\",\"boostedAt\":\"2026-10-08T11:52:34.593Z\",\"region\":{\"name\":\"대원동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-08T12:13:06.018Z\",\"boostedAt\":\"2026-10-08T12:13:06.015Z\",\"region\":{\"name\":\"금정동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-08T02:15:18.892Z\",\"boostedAt\":\"2026-10-08T02:15:18.891Z\",\"region\":{\"name\":\"은현면\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-09-12T13:48:40.314Z\",\"boostedAt\":\"2026-10-08T04:34:17.282Z\",\"region\":{\"name\":\"부곡동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-08T12:15:13.005Z\",\"boostedAt\":\"2026-10-08T12:15:13.002Z\",\"region\":{\"name\":\"비아동\"},\"category\":null,\"tradingCoor"
+        ],
         "scriptHeads": [
-          "\n    (function(window, document, mode) {\n      try {\n        document.documentElement.dataset.seed = '';\n        document.documentElement.dataset.seedColorMode = mode;\n      } catch (e) {}\n\n      try {\n        var prefer",
           "window.sentryEnv = {\n  release: \"5cab355\",\n  environment: \"prod-kr\"\n};",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":280,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"MSI 게이밍 노트북 (i7, RTX)\",\"descri",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-94566b97.js\";\nimport * as route0 from \"/_remix/root-P4ns_lso.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-u7IPCM8v.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 1055,
-    "globalUniqueListings": 447,
-    "duplicateListingsRemoved": 608,
-    "detailQueueStart": 7,
-    "freshDetailTasks": 7,
+    "searchUniqueListings": 913,
+    "globalUniqueListings": 385,
+    "duplicateListingsRemoved": 528,
+    "detailQueueStart": 6,
+    "freshDetailTasks": 6,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 7,
-    "detailSucceeded": 7,
+    "detailRequestsExecuted": 6,
+    "detailSucceeded": 6,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 447,
+    "postedAtResolvedFromSearch": 385,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 1,
-    "scanDurationMs": 87620,
+    "candidateCount": 0,
+    "scanDurationMs": 86407,
     "cities": [
       {
         "city": "군포시",
@@ -93,8 +151,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 187,
-        "durationMs": 11968
+        "uniqueListings": 188,
+        "durationMs": 12402
       },
       {
         "city": "의왕시",
@@ -109,8 +167,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 357,
-        "durationMs": 25421
+        "uniqueListings": 241,
+        "durationMs": 25719
       },
       {
         "city": "안양시",
@@ -127,8 +185,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 335,
-        "durationMs": 35262
+        "uniqueListings": 308,
+        "durationMs": 35160
       },
       {
         "city": "과천시",
@@ -140,52 +198,16 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 176,
-        "durationMs": 6812
+        "durationMs": 6484
       }
     ],
-    "finalCandidateCount": 1,
-    "stateItemCount": 3624,
+    "finalCandidateCount": 0,
+    "stateItemCount": 3629,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 87624
+    "durationMs": 86412
   },
-  "candidates": [
-    {
-      "id": "x1kv24p4hpqx",
-      "changeType": "new",
-      "previousPrice": null,
-      "price": 300000,
-      "priceDropPercent": null,
-      "city": "군포시",
-      "location": "산본2동",
-      "regionPath": "경기도 군포시 산본2동",
-      "title": "2019 애플 맥북 프로 13인치 실버",
-      "modelHint": "2019 애플 맥북 프로 13인치 실버",
-      "cpuHint": null,
-      "cpuBaselinePass": null,
-      "gpuHint": null,
-      "vramGB": null,
-      "ramGB": 16,
-      "ambiguousMemoryGB": null,
-      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": "메모리: 16GB",
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": null,
-      "storageGB": 512,
-      "llmCapability": "SPEC_CHECK_REQUIRED",
-      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
-      "specConfidence": "needs_review",
-      "postedAt": "2026-10-08T14:00:04.531Z",
-      "boostedAt": "2026-10-08T14:00:04.528Z",
-      "status": "Ongoing",
-      "description": "일련번호(CO2CP5NLMD6P)\n\nApple MacBook Pro 16인치(2019년 모델, MacBookPro16,1) 제 품입니다. \n\n이 기기의 기본 사양은 \n• 모델명: MacBook Pro (16-inch, 2019) / 식별자\nMacBookPro16,1 @ GitHub +1\n• 모델 번호: A2141 @\n• 프로세서: 인텔 Core i7 2.6GHz (6코어)\n• 메모리: 16GB RAM ©\n• 저장 공간: 512GB SSD\n• 색상: 실버(Silver)\n\n하자 여부 \n\n생활 기스 옆면에 있고, 찌그러짐 약간 있어요 그 부분은 사진에 체크해뒀습니다.\n\n살짝 이염 부분도 있어요. 참고 부탁드려요.\n\n박스 없고, 충전기는 있어요( 사용감 많아서 따로 구매 하시는게 좋을것 같아요)",
-      "url": "https://www.daangn.com/kr/buy-sell/2019-%EC%95%A0%ED%94%8C-%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-13%EC%9D%B8%EC%B9%98-%EC%8B%A4%EB%B2%84-x1kv24p4hpqx/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "밍하",
-      "mannerTemperature": 37.4
-    }
-  ]
+  "candidates": []
 }
