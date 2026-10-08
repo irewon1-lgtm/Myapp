@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-08T10:00:58.161828Z",
+  "updatedAt": "2026-10-08T10:24:49.942955Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -255,8 +255,8 @@
     "qbjy4k8944y5": {
       "id": "qbjy4k8944y5",
       "title": "lg 14z970 ga75k 노트북 상태좋음",
-      "price": 420000,
-      "previousPrice": 440000,
+      "price": 400000,
+      "previousPrice": 420000,
       "changeType": "price_drop",
       "city": "군포시",
       "location": "당정동",
@@ -275,7 +275,7 @@
       "postedAt": "2026-10-05T11:08:59.385Z",
       "url": "https://www.daangn.com/kr/buy-sell/lg-14z970-ga75k-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%83%81%ED%83%9C%EC%A2%8B%EC%9D%8C-qbjy4k8944y5/",
       "firstAlertedAt": "2026-10-05T11:27:15.615254Z",
-      "lastCandidateAt": "2026-10-07T13:03:21.518449Z"
+      "lastCandidateAt": "2026-10-08T10:24:49.942955Z"
     },
     "kex546dgdx5m": {
       "id": "kex546dgdx5m",
@@ -2076,6 +2076,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/msi-stealth-16-mercedes-amg-i9-4070-32gb-3tb-akp1upmuh3kt/",
       "firstAlertedAt": "2026-10-08T09:41:40.141412Z",
       "lastCandidateAt": "2026-10-08T09:41:40.141412Z"
+    },
+    "48quubi9q3g4": {
+      "id": "48quubi9q3g4",
+      "title": "레노버 고사양 loq 노트북 rtx4060",
+      "price": 1050000,
+      "previousPrice": 1100000,
+      "changeType": "price_drop",
+      "city": "군포시",
+      "location": "군포2동",
+      "cpuHint": null,
+      "gpuHint": "rtx4060",
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16g",
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-05T12:17:43.574Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EA%B3%A0%EC%82%AC%EC%96%91-loq-%EB%85%B8%ED%8A%B8%EB%B6%81-rtx4060-48quubi9q3g4/",
+      "firstAlertedAt": "2026-10-08T10:24:49.942955Z",
+      "lastCandidateAt": "2026-10-08T10:24:49.942955Z"
     }
   }
 }
