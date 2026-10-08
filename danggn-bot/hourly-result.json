@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-08T04:23:33.516Z",
+  "generatedAt": "2026-10-08T04:41:35.950Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -64,24 +64,24 @@
         ]
       }
     },
-    "searchUniqueListings": 819,
-    "globalUniqueListings": 293,
-    "duplicateListingsRemoved": 526,
-    "detailQueueStart": 3,
-    "freshDetailTasks": 3,
+    "searchUniqueListings": 895,
+    "globalUniqueListings": 370,
+    "duplicateListingsRemoved": 525,
+    "detailQueueStart": 10,
+    "freshDetailTasks": 10,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 3,
-    "detailSucceeded": 3,
+    "detailRequestsExecuted": 10,
+    "detailSucceeded": 10,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 293,
+    "postedAtResolvedFromSearch": 370,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 0,
-    "scanDurationMs": 83465,
+    "candidateCount": 1,
+    "scanDurationMs": 91324,
     "cities": [
       {
         "city": "군포시",
@@ -94,7 +94,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 185,
-        "durationMs": 12557
+        "durationMs": 12471
       },
       {
         "city": "의왕시",
@@ -110,7 +110,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 235,
-        "durationMs": 25767
+        "durationMs": 25850
       },
       {
         "city": "안양시",
@@ -127,8 +127,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 223,
-        "durationMs": 35264
+        "uniqueListings": 299,
+        "durationMs": 35325
       },
       {
         "city": "과천시",
@@ -140,16 +140,52 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 176,
-        "durationMs": 6572
+        "durationMs": 6112
       }
     ],
-    "finalCandidateCount": 0,
-    "stateItemCount": 3419,
+    "finalCandidateCount": 1,
+    "stateItemCount": 3428,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 83469
+    "durationMs": 91327
   },
-  "candidates": []
+  "candidates": [
+    {
+      "id": "we9qvq9bpurz",
+      "changeType": "new",
+      "previousPrice": null,
+      "price": 500000,
+      "priceDropPercent": null,
+      "city": "안양시",
+      "location": "안양동",
+      "regionPath": "경기도 안양시 동안구 안양동",
+      "title": "레노버 아이디어패드 슬림5 16IAH8 512G, 램 16GB 클라우드 그레이",
+      "modelHint": "레노버 아이디어패드 슬림5 16IAH8 512G, 램 16GB 클라우드 그레이",
+      "cpuHint": null,
+      "cpuBaselinePass": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "램 16GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "specConfidence": "needs_review",
+      "postedAt": "2026-10-08T04:40:41.710Z",
+      "boostedAt": "2026-10-08T04:40:41.703Z",
+      "status": "Ongoing",
+      "description": "전체 모델명: 레노버 2023 아이디어패드 슬림 5 16IAH8 16, 클라우드 그레이, 512GB, 16GB, Fre83BG0008KR\n\n작년 겨울에 80만원에 구매한 후 집에서만 네이버 서칭용으로 10회 이하 사용했습니다\n마지막 사진에 보시다시피 눈에 띄지 않는 아주 미세한 좁쌀만한 까짐 제외하고는 완전 새제품 같아요\n램 16기가에 전체 용량 512기가라 엄청 빠릿빠릿해서 문서 작업은 물론이고 가벼운 게임 정도까지 가능한 노트북입니다\n별도로 윈도우 설치할 필요없이 초기화만 하시면 바로 사용하실 수 있어요\n구성품은 본체와 충전기입니다\n\nGS25 안양아트센터점 직거래",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%95%84%EC%9D%B4%EB%94%94%EC%96%B4%ED%8C%A8%EB%93%9C-%EC%8A%AC%EB%A6%BC5-16iah8-512g-%EB%9E%A8-16gb-%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C-%EA%B7%B8%EB%A0%88%EC%9D%B4-we9qvq9bpurz/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "펄스",
+      "mannerTemperature": 48.4
+    }
+  ]
 }
