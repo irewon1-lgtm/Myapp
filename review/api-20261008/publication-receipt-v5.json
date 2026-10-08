@@ -1,0 +1,66 @@
+{
+  "schema": 1,
+  "checkedAt": "2026-10-08T00:51:54.172Z",
+  "bookId": "yt-api-beginners-WXsD0ZgxjRw",
+  "bookVersion": 5,
+  "sourceCommit": "a2527e1e8c9b27cfef6c685af3416af69c17a514",
+  "promotionCommit": "f07603abd9899781808999bfa349d5b21c1986f5",
+  "liveCommit": "fbfcd156d51eb7d6ab392a04a6f5ff79e35411ed",
+  "manifestSha": "1255566063d3a8452040e911e1ca9581b245b6493b923dfa8b56b61f9e14fdd0",
+  "workflow": {
+    "id": 37709210734,
+    "url": "https://github.com/irewon1-lgtm/Myapp/actions/runs/37709210734",
+    "conclusion": "success",
+    "netlifyProductionDeployments": 0
+  },
+  "completed": {
+    "fullTranscriptReview": "COMPLETE_17_SECTIONS",
+    "sozaiAndYoutubeNormalizedTokenSequenceEqual": true,
+    "beginnerParagraphsAdded": 28,
+    "existingBlocksLocallyRevised": 6,
+    "bookIdPreserved": true,
+    "chapterIdsPreserved": 17,
+    "existingBlockIdsPreserved": 667,
+    "newBookBlockCount": 695,
+    "otherBooksUnchanged": true,
+    "noteAndSyncRecordsNotModified": true,
+    "localNodeTestsPassed": 191,
+    "isolatedBrowserRecoveryChecksPassed": 60,
+    "actualHttpsAndOfflineChecksPassed": 41
+  },
+  "actualAppObservation": {
+    "url": "https://chatbook-library-20260923.netlify.app/#read/yt-api-beginners-WXsD0ZgxjRw",
+    "edition": "챗북 엔진 1.2 · 전사문 전체 대조·실습 보강 v5",
+    "libraryScript": "/__cb/r/fbfcd156d51eb7d6ab392a04a6f5ff79e35411ed/library.js",
+    "newSupplementBlocksFound": 28,
+    "visibleSupplementBlock": "yt-api-beginners-WXsD0ZgxjRw-c11-b2-revision5-1",
+    "proofScreenshot": "Chatbook_API_v5_LIVE_20261008.jpg",
+    "screenshotRole": "actual app verification; NOT a lecture frame",
+    "imagesLoaded": 42,
+    "imagesTotal": 43,
+    "unloadedImage": "https://i.ytimg.com/vi/WXsD0ZgxjRw/hqdefault.jpg",
+    "officialThunderClientImageVisuallyVerified": true,
+    "totalPagesAtObservedDesktopSize": 163
+  },
+  "remaining": {
+    "actualLectureFramesAcquired": 0,
+    "actualLectureScreenshotsReplaced": 0,
+    "lectureVideoState": {
+      "readyState": 0,
+      "videoWidth": 0,
+      "videoHeight": 0
+    },
+    "lectureFrameReplacement": "BLOCKED_MEDIA_NOT_LOADED",
+    "existingExternalThumbnail": "LOAD_FAILED_IN_CLOUD_BROWSER",
+    "externalTwilioAndSpotifyAccountExercises": "NOT_RUN",
+    "physicalGalaxy": "NOT_TESTED",
+    "everyExistingUsersSyncRecords": "NOT_VERIFIED"
+  },
+  "notes": [
+    "The complete caption text comparison excludes punctuation, timestamps, headers and caption splits; it does not certify caption recognition or actual video frames.",
+    "The 17 source sections were compared with the existing book. This is an original Korean learning supplement, not a sentence-by-sentence translation.",
+    "The ordinary HTTPS application first showed v4 during channel propagation, then selected the exact v5 release and displayed the new paragraph. No storage was cleared.",
+    "All 43 previous image blocks remain unchanged. No reconstruction or official tool screenshot is claimed to be a captured lecture frame.",
+    "Historical v4 receipts remain unchanged; this v5 receipt supersedes their then-incomplete transcript review status only."
+  ]
+}
