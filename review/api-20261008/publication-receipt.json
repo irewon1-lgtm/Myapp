@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "checkedAt": "2026-10-08T00:18:47.143Z",
+  "bookId": "yt-api-beginners-WXsD0ZgxjRw",
+  "bookVersion": 4,
+  "sourceCommit": "84b330200e2e6e9caaada864847b64b8870ffbc2",
+  "validationCommit": "7f4e587e67c538717827e3cd3015674f301aed50",
+  "liveCommit": "d1b2a458ada60873f58391c96e5e586f0bbaacc5",
+  "manifestSha": "feb90d90f1bb70ece90889b2d668edc625fbbe639e9548f57df779ab9a4b35b7",
+  "workflow": {
+    "id": 37706572511,
+    "url": "https://github.com/irewon1-lgtm/Myapp/actions/runs/37706572511",
+    "status": "completed",
+    "conclusion": "success",
+    "netlifyProductionDeployments": 0
+  },
+  "completed": {
+    "beginnerParagraphsAdded": 43,
+    "existingBlocksLocallyRevised": 9,
+    "bookIdPreserved": true,
+    "chaptersPreserved": 17,
+    "existingBlockIdsPreserved": 624,
+    "newBookBlockCount": 667,
+    "otherBooksUnchanged": true,
+    "noteAndSyncRecordsNotModified": true,
+    "localNodeTestsPassed": 191,
+    "isolatedBrowserRecoveryChecksPassed": 60,
+    "productionHttpsAndOfflineWorkflowPassed": true
+  },
+  "actualAppObservation": {
+    "url": "https://chatbook-library-20260923.netlify.app/#read/yt-api-beginners-WXsD0ZgxjRw",
+    "ordinaryUrlLoadedLiveCommit": "d1b2a458ada60873f58391c96e5e586f0bbaacc5",
+    "edition": "챗북 엔진 1.2 · 초보자 실습 설명 보강 v4",
+    "newSupplementAnchorsFound": 43,
+    "domAnchorsIncludingChapterHeadingsAndEnd": 685,
+    "codeLabels": [
+      "HTTP 요청 예시",
+      "터미널 명령",
+      "JSON 예시",
+      "JavaScript 코드"
+    ],
+    "pythonLabelsInApiBook": 0,
+    "npmInstallTwilioPresent": true,
+    "imagesLoaded": 42,
+    "imagesTotal": 43,
+    "unloadedImage": "https://i.ytimg.com/vi/WXsD0ZgxjRw/hqdefault.jpg",
+    "proofScreenshot": "Chatbook_API_v4_LIVE_20261008.jpg"
+  },
+  "remaining": {
+    "actualLectureScreenshotsReplaced": 0,
+    "fullTranscriptSemanticReview": "NOT_COMPLETE",
+    "externalOfficialThumbnailLoad": "NOT_VERIFIED_IN_CLOUD_BROWSER",
+    "allExistingUsersNotesEndToEnd": "NOT_VERIFIED"
+  },
+  "notes": [
+    "First publication reached GitHub but the original 60-second production channel wait expired while HTTPS returned v3.",
+    "GitHub raw response advertised max-age=300. Production validation now waits at most six minutes for the exact canonical channel identity; all HTTPS/offline assertions are unchanged.",
+    "The final workflow and ordinary production URL selected the v4 live release. This receipt certifies the partial explanation revision, not completion of the requested lecture-frame replacement or full transcript review."
+  ]
+}
