@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-08T07:03:05.389Z",
+  "generatedAt": "2026-10-08T07:04:44.795Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -125,36 +125,36 @@
           "createdAt\":\"2026-10-08T06:53:04.104Z\",\"boostedAt\":\"2026-10-08T06:53:04.102Z\",\"region\":{\"name\":\"오전동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-08T06:48:52.584Z\",\"boostedAt\":\"2026-10-08T06:48:52.581Z\",\"region\":{\"name\":\"사천읍\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-08T06:52:05.443Z\",\"boostedAt\":\"2026-10-08T06:52:05.442Z\",\"region\":{\"name\":\"명지동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-08T06:30:28.940Z\",\"boostedAt\":\"2026-10-08T06:30:28.936Z\",\"region\":{\"name\":\"금정동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-08T06:05:39.387Z\",\"boostedAt\":\"2026-10-08T06:05:39.385Z\",\"region\":{\"name\":\"안양7동\"},\"category\":null,\"tradingCoo"
+          "createdAt\":\"2026-10-08T06:05:39.387Z\",\"boostedAt\":\"2026-10-08T06:05:39.385Z\",\"region\":{\"name\":\"안양7동\"},\"category\":null,\"tradingCoo",
+          "createdAt\":\"2026-10-08T02:54:57.507Z\",\"boostedAt\":\"2026-10-08T02:54:57.504Z\",\"region\":{\"name\":\"산본동\"},\"category\":null,\"tradingCoor"
         ],
         "scriptHeads": [
           "window.sentryEnv = {\n  release: \"5945e4f\",\n  environment: \"prod-kr\"\n};",
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":265,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"델 XPS 13 9340 노트북\",\"descriptio",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":263,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"델 XPS 13 9340 노트북\",\"descriptio",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-75b1b624.js\";\nimport * as route0 from \"/_remix/root-P4ns_lso.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-u7IPCM8v.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 1095,
-    "globalUniqueListings": 440,
-    "duplicateListingsRemoved": 655,
-    "detailQueueStart": 15,
-    "freshDetailTasks": 15,
+    "searchUniqueListings": 1109,
+    "globalUniqueListings": 421,
+    "duplicateListingsRemoved": 688,
+    "detailQueueStart": 0,
+    "freshDetailTasks": 0,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 15,
-    "detailSucceeded": 15,
+    "detailRequestsExecuted": 0,
+    "detailSucceeded": 0,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 440,
+    "postedAtResolvedFromSearch": 421,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 2,
-    "scanDurationMs": 97933,
+    "candidateCount": 0,
+    "scanDurationMs": 79235,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +166,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 264,
-        "durationMs": 12431
+        "uniqueListings": 277,
+        "durationMs": 12312
       },
       {
         "city": "의왕시",
@@ -182,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 319,
-        "durationMs": 25752
+        "uniqueListings": 317,
+        "durationMs": 25525
       },
       {
         "city": "안양시",
@@ -200,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 336,
-        "durationMs": 35185
+        "uniqueListings": 339,
+        "durationMs": 35150
       },
       {
         "city": "과천시",
@@ -213,87 +213,16 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 176,
-        "durationMs": 6666
+        "durationMs": 6150
       }
     ],
-    "finalCandidateCount": 2,
+    "finalCandidateCount": 0,
     "stateItemCount": 3478,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 97936
+    "durationMs": 79239
   },
-  "candidates": [
-    {
-      "id": "k6sci3yvh8pv",
-      "changeType": "new",
-      "previousPrice": null,
-      "price": 800000,
-      "priceDropPercent": null,
-      "city": "의왕시",
-      "location": "오전동",
-      "regionPath": "경기도 의왕시 오전동",
-      "title": "델 XPS 13 9340 노트북",
-      "modelHint": "델 XPS 13 9340 노트북",
-      "cpuHint": "Intel Core Ultra 7 165H",
-      "cpuBaselinePass": null,
-      "gpuHint": null,
-      "vramGB": null,
-      "ramGB": 16,
-      "ambiguousMemoryGB": null,
-      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": "16GB RAM",
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": null,
-      "storageGB": null,
-      "llmCapability": "SPEC_CHECK_REQUIRED",
-      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
-      "specConfidence": "needs_review",
-      "postedAt": "2026-10-08T06:53:04.104Z",
-      "boostedAt": "2026-10-08T06:53:04.102Z",
-      "status": "Ongoing",
-      "description": "- Dell XPS 13 9340 모델입니다.\n- Intel Core Ultra 7 165H, 16GB RAM, Arc Graphics, 512GB 사양 (사진 참고)\n- 상태는 사용감 조금 있으나 큰 문제 없이 깔끔합니다. 외부 상/하단부 보호 필름 부착되어 있습니다. (사진 참고)\n- 구성품은 기기 단품입니다.\n- 오전동 인근 및 백운호수에서 직거래 가능하며, 환불 불가 및 택배비 구매자 부담 조건으로 택배 거래 가능합니다.",
-      "url": "https://www.daangn.com/kr/buy-sell/%EB%8D%B8-xps-13-9340-%EB%85%B8%ED%8A%B8%EB%B6%81-k6sci3yvh8pv/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "창림",
-      "mannerTemperature": 44.5
-    },
-    {
-      "id": "c8ybdvfbpvky",
-      "changeType": "new",
-      "previousPrice": null,
-      "price": 2200000,
-      "priceDropPercent": null,
-      "city": "군포시",
-      "location": "산본1동",
-      "regionPath": "경기도 군포시 산본1동",
-      "title": "Msi 백터 5070ti 게이밍 노트북 팝니다(미개봉)",
-      "modelHint": "Msi 백터 5070ti 게이밍 노트북 팝니다(미개봉)",
-      "cpuHint": null,
-      "cpuBaselinePass": null,
-      "gpuHint": null,
-      "vramGB": null,
-      "ramGB": 16,
-      "ambiguousMemoryGB": null,
-      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": "램 16기가",
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": null,
-      "storageGB": null,
-      "llmCapability": "SPEC_CHECK_REQUIRED",
-      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
-      "specConfidence": "needs_review",
-      "postedAt": "2026-10-08T06:49:27.083Z",
-      "boostedAt": "2026-10-08T06:49:27.082Z",
-      "status": "Ongoing",
-      "description": "구매하고 사용하려했으나 사용안해서 판매합ㄴ다\n제품은 미개봉 상태고\nCpu 8840hx\n글카 5070ti(140w)\n램 16기가(8기가 2개)\nSsd 512기가 윈도우11 깔려있습니다 관심있으신준들 연락주세여",
-      "url": "https://www.daangn.com/kr/buy-sell/msi-%EB%B0%B1%ED%84%B0-5070ti-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%9D%EB%8B%88%EB%8B%A4-%EB%AF%B8%EA%B0%9C%EB%B4%89-c8ybdvfbpvky/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "크로와상제일",
-      "mannerTemperature": 37.8
-    }
-  ]
+  "candidates": []
 }
