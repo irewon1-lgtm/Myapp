@@ -20,8 +20,10 @@ def wait_js(page,expression,timeout=60000):
   time.sleep(.15)
  raise AssertionError('Browser condition timed out: '+expression)
 try:
- # Wait for the bounded channel cache, not a new deployment.
- for attempt in range(12):
+ # GitHub raw branch responses advertise max-age=300. Wait up to six minutes
+ # for the canonical channel to advance; the published identity must still match.
+ channel_deadline=time.monotonic()+360
+ while time.monotonic()<channel_deadline:
   try:
    with urllib.request.urlopen(base+'/__cb/channel.json',timeout=15) as r:c=json.load(r)
    if c['current']['commit']==channel['current']['commit']:break
