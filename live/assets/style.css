@@ -111,7 +111,7 @@ body[data-theme=dark] .reader-image-modal img[src^="data:image/svg+xml"]{backgro
   letter-spacing:.08em;
   color:var(--muted);
 }
-.reader-flow pre.reader-code::before{content:"PYTHON 코드";}
+.reader-flow pre.reader-code::before{content:attr(data-code-label);}
 .reader-flow pre.reader-output{
   font-size:.84em;
   border-left-color:var(--gold,#b19873);
