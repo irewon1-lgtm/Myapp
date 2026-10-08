@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-08T06:29:47.288481Z",
+  "updatedAt": "2026-10-08T07:03:05.440520Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -1801,6 +1801,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EC%95%84%EC%88%98%EC%8A%A4-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-gtx-1060-16%EB%9E%A8-1tb-kyv5wjxiqq3c/",
       "firstAlertedAt": "2026-10-08T05:58:31.796731Z",
       "lastCandidateAt": "2026-10-08T05:58:31.796731Z"
+    },
+    "k6sci3yvh8pv": {
+      "id": "k6sci3yvh8pv",
+      "title": "델 XPS 13 9340 노트북",
+      "price": 800000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "의왕시",
+      "location": "오전동",
+      "cpuHint": "Intel Core Ultra 7 165H",
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-08T06:53:04.104Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%8D%B8-xps-13-9340-%EB%85%B8%ED%8A%B8%EB%B6%81-k6sci3yvh8pv/",
+      "firstAlertedAt": "2026-10-08T07:03:05.440520Z",
+      "lastCandidateAt": "2026-10-08T07:03:05.440520Z"
+    },
+    "c8ybdvfbpvky": {
+      "id": "c8ybdvfbpvky",
+      "title": "Msi 백터 5070ti 게이밍 노트북 팝니다(미개봉)",
+      "price": 2200000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "산본1동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "램 16기가",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-08T06:49:27.083Z",
+      "url": "https://www.daangn.com/kr/buy-sell/msi-%EB%B0%B1%ED%84%B0-5070ti-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%9D%EB%8B%88%EB%8B%A4-%EB%AF%B8%EA%B0%9C%EB%B4%89-c8ybdvfbpvky/",
+      "firstAlertedAt": "2026-10-08T07:03:05.440520Z",
+      "lastCandidateAt": "2026-10-08T07:03:05.440520Z"
     }
   }
 }
