@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-08T08:43:15.895575Z",
+  "updatedAt": "2026-10-08T09:00:15.297344Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -1976,6 +1976,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/hp-zbook-studio-16%EC%9D%B8%EC%B9%98-g10-i7-13800h-14%EC%BD%94%EC%96%B4-20%EC%93%B0%EB%A0%88%EB%93%9C-ed314u49apk1/",
       "firstAlertedAt": "2026-10-08T08:24:57.433329Z",
       "lastCandidateAt": "2026-10-08T08:24:57.433329Z"
+    },
+    "5kujdwfb47nf": {
+      "id": "5kujdwfb47nf",
+      "title": "Hp omen16 ultra7/5060/24gb/1tb",
+      "price": 1800000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "의왕시",
+      "location": "오전동",
+      "cpuHint": null,
+      "gpuHint": "RTX5060",
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 24,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "/24gb",
+      "storageGB": 1024,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-08T08:58:55.330Z",
+      "url": "https://www.daangn.com/kr/buy-sell/hp-omen16-ultra7-5060-24gb-1tb-5kujdwfb47nf/",
+      "firstAlertedAt": "2026-10-08T09:00:15.297344Z",
+      "lastCandidateAt": "2026-10-08T09:00:15.297344Z"
+    },
+    "qd5ikj5qid44": {
+      "id": "qd5ikj5qid44",
+      "title": "Hp omen16 ultra7/5060/24gb/1tb",
+      "price": 1800000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "갈산동",
+      "cpuHint": null,
+      "gpuHint": "RTX5060",
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 24,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "/24gb",
+      "storageGB": 1024,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-08T08:58:55.228Z",
+      "url": "https://www.daangn.com/kr/buy-sell/hp-omen16-ultra7-5060-24gb-1tb-qd5ikj5qid44/",
+      "firstAlertedAt": "2026-10-08T09:00:15.297344Z",
+      "lastCandidateAt": "2026-10-08T09:00:15.297344Z"
     }
   }
 }
