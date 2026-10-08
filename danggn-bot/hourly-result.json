@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-08T09:41:40.077Z",
+  "generatedAt": "2026-10-08T10:00:58.102Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -53,35 +53,103 @@
       },
       "htmlSample": {
         "embeddedArticles": false,
-        "remixArticleSamples": [],
-        "dateFieldSnippets": [],
+        "remixArticleSamples": [
+          {
+            "id": "/kr/buy-sell/hp-%ED%8C%8C%EB%B9%8C%EB%A6%AC%EC%98%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-9x39br8e5dia/",
+            "href": "/kr/buy-sell/hp-%ED%8C%8C%EB%B9%8C%EB%A6%AC%EC%98%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-9x39br8e5dia/",
+            "title": "HP 파빌리온 노트북",
+            "content": "HP 파빌리온 노트북 판매해요. 인텔 i5 프로세서와 6GB RAM으로 쾌적한 사용이 가능해요. 넉넉한 저장 공간과 선명한 디스플레이로 문서 작업, 웹 서핑, 멀티미디어 감상까지 모두 만족시켜 드릴 거예요. 깔끔한 디자인으로 어디서든 잘 어울린답니다.\n 항상 전기에 연결되어 있어야 합니다. \n 화면 가장자리에 선이 있습니다 ",
+            "price": "39000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/7c5af7470366e64a9b4d62df7fb03f94c733f5168b2522fa1ff7e2516268450b_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-02T10:17:03.147Z",
+            "boostedAt": "2026-10-08T09:43:58.175Z",
+            "region": {
+              "name": "성산읍"
+            },
+            "category": null,
+            "tradingCoordinates": [
+              {
+                "latitude": 33.418976885360884,
+                "longitude": 126.91084317862986
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt370e5l-hbp3z1s9q4ry/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt370e5l-hbp3z1s9q4ry/",
+            "title": "삼성 노트북 NT370E5L",
+            "content": "삼성 노트북 NT370E5L  \n15.6인치모델입니다.\n 인텔 펜티엄  프로세서\n4GB RAM\nSSD128GB\nHDD 500GB \n깔끔한 디자인으로 어디서든 잘 어울립니다. 문서 작업이나 웹 서핑 등 일상적인 용도로 사용하기 좋아요.\n윈도우11홈 영구정품인증 ms오피스 한글 설치 인증완료하여 바로사용가능합니다 \n\n배터리도 2시간 이상갑니다\n사진 한장씩 넘겨서보시고 꼭 \n사실분만 체팅부탑합니다\n\n중고특성상 반품환불불가요 ",
+            "price": "135000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/08f09002-1b1d-45c4-b0c1-0e63d9ab4e1e.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-08T09:57:48.829Z",
+            "boostedAt": "2026-10-08T09:57:48.828Z",
+            "region": {
+              "name": "방이2동"
+            },
+            "category": null,
+            "tradingCoordinates": []
+          },
+          {
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt900x4d-a58-i5-8g-128gb-15%EC%9D%B8%EC%B9%98-aku1dnozicxa/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt900x4d-a58-i5-8g-128gb-15%EC%9D%B8%EC%B9%98-aku1dnozicxa/",
+            "title": "삼성 노트북 NT900X4D-A58 (i5, 8G, 128gb, 15인치)",
+            "content": "삼성 노트북 NT900X4D-A58 모델입니다.\n\n인텔 i7 프로세서와 8GB RAM, 128GB 저장 공간을 갖추고 있으며 15인치 화면을 제공합니다.\n\n사진에서 보시는 것처럼 깔끔한 상태이며, 전원 어댑터가 포함되어 있습니다. \n파우치나 가방은 없어요.\n\n가볍고 슬림한 디자인으로 휴대성이 좋습니다. \n문서 작업이나 웹 서핑 등 일상적인 용도로 사용하기에 충분한 성능을 제공합니다.\n\n외관 상태는 깨끗하고 아주 좋아요.\n\n산본 이마트 옆 인베스텔(투데이몰)에서 직거래 가능하구요. 현금, 당근페이, 계좌 송금 거래 원합니다.\n\n교환/반품은 안되는 점 양해부탁드립니다.",
+            "price": "130000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/e97022bc-aae7-4617-9b2c-cb4ae33d3107.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-08T02:54:57.507Z",
+            "boostedAt": "2026-10-08T02:54:57.504Z",
+            "region": {
+              "name": "산본동"
+            },
+            "category": null,
+            "tradingCoordinates": [
+              {
+                "latitude": 37.36047104894929,
+                "longitude": 126.93055923596444
+              }
+            ]
+          }
+        ],
+        "dateFieldSnippets": [
+          "createdAt\":\"2026-10-02T10:17:03.147Z\",\"boostedAt\":\"2026-10-08T09:43:58.175Z\",\"region\":{\"name\":\"성산읍\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-08T09:57:48.829Z\",\"boostedAt\":\"2026-10-08T09:57:48.828Z\",\"region\":{\"name\":\"방이2동\"},\"category\":null,\"tradingCoo",
+          "createdAt\":\"2026-10-08T02:54:57.507Z\",\"boostedAt\":\"2026-10-08T02:54:57.504Z\",\"region\":{\"name\":\"산본동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-08T07:09:39.232Z\",\"boostedAt\":\"2026-10-08T07:09:39.231Z\",\"region\":{\"name\":\"정자동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-08T09:07:41.184Z\",\"boostedAt\":\"2026-10-08T09:07:41.182Z\",\"region\":{\"name\":\"문산읍\"},\"category\":null,\"tradingCoor"
+        ],
         "scriptHeads": [
-          "\n    (function(window, document, mode) {\n      try {\n        document.documentElement.dataset.seed = '';\n        document.documentElement.dataset.seedColorMode = mode;\n      } catch (e) {}\n\n      try {\n        var prefer",
           "window.sentryEnv = {\n  release: \"5945e4f\",\n  environment: \"prod-kr\"\n};",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":265,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"HP 파빌리온 노트북\",\"description\":\"HP",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-75b1b624.js\";\nimport * as route0 from \"/_remix/root-P4ns_lso.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-u7IPCM8v.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 1019,
-    "globalUniqueListings": 433,
-    "duplicateListingsRemoved": 586,
-    "detailQueueStart": 6,
-    "freshDetailTasks": 6,
+    "searchUniqueListings": 1137,
+    "globalUniqueListings": 441,
+    "duplicateListingsRemoved": 696,
+    "detailQueueStart": 7,
+    "freshDetailTasks": 7,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 6,
-    "detailSucceeded": 6,
+    "detailRequestsExecuted": 7,
+    "detailSucceeded": 7,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 433,
+    "postedAtResolvedFromSearch": 441,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 2,
-    "scanDurationMs": 86794,
+    "candidateCount": 0,
+    "scanDurationMs": 88034,
     "cities": [
       {
         "city": "군포시",
@@ -93,8 +161,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 185,
-        "durationMs": 12157
+        "uniqueListings": 276,
+        "durationMs": 12848
       },
       {
         "city": "의왕시",
@@ -109,8 +177,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 240,
-        "durationMs": 25648
+        "uniqueListings": 364,
+        "durationMs": 25743
       },
       {
         "city": "안양시",
@@ -127,8 +195,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 338,
-        "durationMs": 35266
+        "uniqueListings": 321,
+        "durationMs": 35200
       },
       {
         "city": "과천시",
@@ -139,88 +207,17 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 256,
-        "durationMs": 6435
+        "uniqueListings": 176,
+        "durationMs": 6331
       }
     ],
-    "finalCandidateCount": 2,
-    "stateItemCount": 3524,
+    "finalCandidateCount": 0,
+    "stateItemCount": 3531,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 86798
+    "durationMs": 88038
   },
-  "candidates": [
-    {
-      "id": "sv18ajk5k7ff",
-      "changeType": "price_drop",
-      "previousPrice": 1950000,
-      "price": 1900000,
-      "priceDropPercent": 2.6,
-      "city": "안양시",
-      "location": "호계동",
-      "regionPath": "경기도 안양시 동안구 호계동",
-      "title": "노트북16인치 GIGABYTE  5070/32GB/1TB",
-      "modelHint": "노트북16인치 GIGABYTE  5070/32GB/1TB",
-      "cpuHint": null,
-      "cpuBaselinePass": null,
-      "gpuHint": "RTX 5070 Laptop",
-      "vramGB": null,
-      "ramGB": 32,
-      "ambiguousMemoryGB": 32,
-      "hardwareReviewStatus": "PASS_RAM",
-      "ramEvidence": "32GB RAM",
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": "/32GB",
-      "storageGB": null,
-      "llmCapability": "WORK_DEV_RAM32",
-      "llmReason": "RAM 32GB 이상 확정 후보",
-      "specConfidence": "confirmed",
-      "postedAt": "2026-09-28T09:25:49.917Z",
-      "boostedAt": "2026-10-06T08:54:06.667Z",
-      "status": "Ongoing",
-      "description": "GIGABYTE GAMING A16 3WH\n\nAMD Ryzen 7 260W 프로세서\n32GB RAM 5600 MT/s\nNVIDIA GeForce RTX 5070 Laptop GPU\n내장그래픽 까지 해서 총 2개 셋팅하기 좋아요\n(게임 따로 영상 및 웹따로 쓰기 좋습니다)\n1t SSD\n\n시즈모드 사용했으며 전 주인도 시즈모드 사용했다고 전해 들었습니다. 제가 두번째 사용자입니다.\n\n한달가량 사용했는데 디아2 하는데 너무 고사양이라 다운 그레이드 할려고 합니다.\n\n실기스 하나 없어요. \n\n보증 27년 11월 17일까지 입니다.\n\n박스 본품 어뎁터 있습니다. 박스에 넣어서 드려요.\n\n보시다 시피 고사양입니다.\n\n어느 정도 네고는 생각하고 있습니다.\n\n편하게 연락 주세요. 직거래만 합니다.\n(이중거래 방지 차원에서 제가 보는데서 당근 어플 확인하고 드립니다)\n\n개인입니다 카드 안됩니다.",
-      "url": "https://www.daangn.com/kr/buy-sell/%EB%85%B8%ED%8A%B8%EB%B6%8116%EC%9D%B8%EC%B9%98-gigabyte-5070-32gb-1tb-sv18ajk5k7ff/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "당근토끼",
-      "mannerTemperature": 38.5
-    },
-    {
-      "id": "akp1upmuh3kt",
-      "changeType": "price_drop",
-      "previousPrice": 1700000,
-      "price": 1650000,
-      "priceDropPercent": 2.9,
-      "city": "군포시",
-      "location": "산본동",
-      "regionPath": "경기도 군포시 산본동",
-      "title": "MSI Stealth 16 Mercedes-AMG i9 4070 32gb 3tb",
-      "modelHint": "MSI Stealth 16 Mercedes-AMG i9 4070 32gb 3tb",
-      "cpuHint": null,
-      "cpuBaselinePass": null,
-      "gpuHint": "RTX 4070",
-      "vramGB": null,
-      "ramGB": 32,
-      "ambiguousMemoryGB": 32,
-      "hardwareReviewStatus": "PASS_RAM",
-      "ramEvidence": "32GB RAM",
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": "32gb",
-      "storageGB": 1024,
-      "llmCapability": "WORK_DEV_RAM32",
-      "llmReason": "RAM 32GB 이상 확정 후보",
-      "specConfidence": "confirmed",
-      "postedAt": "2026-09-28T01:13:21.899Z",
-      "boostedAt": "2026-10-06T22:39:17.146Z",
-      "status": "Ongoing",
-      "description": "MSI Stealth 16 Mercedes-AMG 입니다.\n13세대 i9 프로세서와 RTX 4070 32GB RAM이고 SSD 기본 1TB에 키옥시아2TB 추가 했습니다 약간의 생활 기스 있습니다.\n구매 의사 있으신 분만 연락 부탁드리며, 직거래 위주로 판매 하겠습니다.\n빠른 거래 해주시면 조이트론 쿨러(10만원 상당) 함께 드리겠습니다.",
-      "url": "https://www.daangn.com/kr/buy-sell/msi-stealth-16-mercedes-amg-i9-4070-32gb-3tb-akp1upmuh3kt/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "기포",
-      "mannerTemperature": 40.8
-    }
-  ]
+  "candidates": []
 }
