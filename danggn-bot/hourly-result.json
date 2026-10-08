@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-08T16:45:15.326Z",
+  "generatedAt": "2026-10-08T17:01:57.335Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -53,98 +53,35 @@
       },
       "htmlSample": {
         "embeddedArticles": false,
-        "remixArticleSamples": [
-          {
-            "id": "/kr/buy-sell/%EB%B2%A0%EC%9D%B4%EC%A7%81%EB%B6%8113-%EB%85%B8%ED%8A%B8%EB%B6%81-go5fkedfzbtw/",
-            "href": "/kr/buy-sell/%EB%B2%A0%EC%9D%B4%EC%A7%81%EB%B6%8113-%EB%85%B8%ED%8A%B8%EB%B6%81-go5fkedfzbtw/",
-            "title": "베이직북13 노트북",
-            "content": "BASICBOOK 13 노트북 판매해요.\n인텔 셀러론 N4120 CPU, 8GB RAM, 256GB SSD 탑재되어 있어요.\n윈도우 10 홈 설치되어 있어 바로 사용 가능해요.\n가볍고 슬림해서 휴대하기 좋아요.\n\n미세흠집 하나 있는 것 말고는 새 것의 상태와 진배없습니다.\n기기와 충전기만 있다보니\n저렴한 가격에 판매합니다.",
-            "price": "70000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/17914771553711eb74b9d41a8230cb7d20d1faf6d81bca850cb9c491be7649b1c1f569055784c0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-08T16:35:04.645Z",
-            "boostedAt": "2026-10-08T16:35:04.644Z",
-            "region": {
-              "name": "명지동"
-            },
-            "category": null,
-            "tradingCoordinates": [
-              {
-                "latitude": 35.08276223450259,
-                "longitude": 128.9049400547629
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-15%EC%9D%B8%EC%B9%98-x1xvpppsq42s/",
-            "href": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-15%EC%9D%B8%EC%B9%98-x1xvpppsq42s/",
-            "title": "LG 노트북 15인치",
-            "content": "LG 노트북 15인치\n모델 : LG 15U34\nCPU : Intel Pentium\nRAM : 8 GB\nSSD : 240 GB (속도빠름)\n배터리 3시간 이상 (5번사진)\n윈도10, MS오피스, 한글 설치됨\n인터넷, 문서작성 성능 우수함\n노트북 외관 깨끗함\n충전기, 무선마우스(새것),\nLG정품가방(새것)\n모두 드립니다",
-            "price": "150000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/300c600a-d0c0-4ea3-86d0-7a1fa461f664.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-08T13:36:44.345Z",
-            "boostedAt": "2026-10-08T13:36:44.343Z",
-            "region": {
-              "name": "오금동"
-            },
-            "category": null,
-            "tradingCoordinates": []
-          },
-          {
-            "id": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EB%85%B8%ED%8A%B8%EB%B6%81-aqk5ekpum96x/",
-            "href": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EB%85%B8%ED%8A%B8%EB%B6%81-aqk5ekpum96x/",
-            "title": "레노버 노트북",
-            "content": "깔끔한 화이트 색상의 레노버 노트북이에요\n\n인텔 i5-7200U 프로세서와 4GB RAM, 128GB SSD가 탑재되어 있어요\n\n문서 작업이나 웹 서핑 등 일상적인 용도로 사용하기 좋아요\n\n가성비 좋은 노트북을 찾으시는 분들께 추천드려요\n\n램 추가. 가능해요 ",
-            "price": "160000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/364bfb9a-80d0-40db-aabe-c06e05dfc7e7.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-06T12:33:59.290Z",
-            "boostedAt": "2026-10-08T13:56:33.950Z",
-            "region": {
-              "name": "율천동"
-            },
-            "category": null,
-            "tradingCoordinates": []
-          }
-        ],
-        "dateFieldSnippets": [
-          "createdAt\":\"2026-10-08T16:35:04.645Z\",\"boostedAt\":\"2026-10-08T16:35:04.644Z\",\"region\":{\"name\":\"명지동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-08T13:36:44.345Z\",\"boostedAt\":\"2026-10-08T13:36:44.343Z\",\"region\":{\"name\":\"오금동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-06T12:33:59.290Z\",\"boostedAt\":\"2026-10-08T13:56:33.950Z\",\"region\":{\"name\":\"율천동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-08T14:41:40.345Z\",\"boostedAt\":\"2026-10-08T14:41:40.344Z\",\"region\":{\"name\":\"온산읍\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-06T12:28:27.110Z\",\"boostedAt\":\"2026-10-08T15:04:28.758Z\",\"region\":{\"name\":\"동호동\"},\"category\":null,\"tradingCoor"
-        ],
+        "remixArticleSamples": [],
+        "dateFieldSnippets": [],
         "scriptHeads": [
+          "\n    (function(window, document, mode) {\n      try {\n        document.documentElement.dataset.seed = '';\n        document.documentElement.dataset.seedColorMode = mode;\n      } catch (e) {}\n\n      try {\n        var prefer",
           "window.sentryEnv = {\n  release: \"5cab355\",\n  environment: \"prod-kr\"\n};",
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":264,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"베이직북13 노트북\",\"description\":\"BAS",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-94566b97.js\";\nimport * as route0 from \"/_remix/root-P4ns_lso.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-u7IPCM8v.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 1248,
-    "globalUniqueListings": 472,
-    "duplicateListingsRemoved": 776,
-    "detailQueueStart": 2,
-    "freshDetailTasks": 2,
+    "searchUniqueListings": 1048,
+    "globalUniqueListings": 443,
+    "duplicateListingsRemoved": 605,
+    "detailQueueStart": 3,
+    "freshDetailTasks": 3,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 2,
-    "detailSucceeded": 2,
+    "detailRequestsExecuted": 3,
+    "detailSucceeded": 3,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 472,
+    "postedAtResolvedFromSearch": 443,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 81944,
+    "scanDurationMs": 83382,
     "cities": [
       {
         "city": "군포시",
@@ -156,8 +93,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 278,
-        "durationMs": 12499
+        "uniqueListings": 185,
+        "durationMs": 12325
       },
       {
         "city": "의왕시",
@@ -172,8 +109,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 365,
-        "durationMs": 25529
+        "uniqueListings": 345,
+        "durationMs": 25852
       },
       {
         "city": "안양시",
@@ -190,8 +127,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 350,
-        "durationMs": 35130
+        "uniqueListings": 342,
+        "durationMs": 35091
       },
       {
         "city": "과천시",
@@ -202,17 +139,17 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 255,
-        "durationMs": 6479
+        "uniqueListings": 176,
+        "durationMs": 7037
       }
     ],
     "finalCandidateCount": 0,
-    "stateItemCount": 3660,
+    "stateItemCount": 3663,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 81948
+    "durationMs": 83385
   },
   "candidates": []
 }
