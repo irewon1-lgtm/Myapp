@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-08T15:24:15.292331Z",
+  "updatedAt": "2026-10-08T15:43:28.049317Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -2176,6 +2176,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/2019-%EC%95%A0%ED%94%8C-%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-13%EC%9D%B8%EC%B9%98-%EC%8B%A4%EB%B2%84-x1kv24p4hpqx/",
       "firstAlertedAt": "2026-10-08T14:02:06.970324Z",
       "lastCandidateAt": "2026-10-08T14:02:06.970324Z"
+    },
+    "a74aqybwwkz3": {
+      "id": "a74aqybwwkz3",
+      "title": "맥북 에어 M4 13인치 16GB/256GB 판매합니다!",
+      "price": 1150000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "산본동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-08T15:30:52.836Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81-%EC%97%90%EC%96%B4-m4-13%EC%9D%B8%EC%B9%98-16gb-256gb-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-a74aqybwwkz3/",
+      "firstAlertedAt": "2026-10-08T15:43:28.049317Z",
+      "lastCandidateAt": "2026-10-08T15:43:28.049317Z"
     }
   }
 }
