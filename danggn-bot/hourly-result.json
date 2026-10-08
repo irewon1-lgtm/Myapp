@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-08T05:39:33.871Z",
+  "generatedAt": "2026-10-08T05:58:31.742Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,18 +55,18 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-13%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-mxianhzts5qm/",
-            "href": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-13%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-mxianhzts5qm/",
-            "title": "LG 그램 노트북 13인치 화이트",
-            "content": "LG 그램 노트북 13인치 화이트 \n13Z950-GR30K\n\n사용감 있고\n많이 쓰지 않아\n큰무리 없음\n\n충전기 있음 ",
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-nt270e5r-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-1259rjhsbgjt/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-nt270e5r-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-1259rjhsbgjt/",
+            "title": "삼성 NT270E5R 노트북 판매합니다.",
+            "content": "삼성 NT270E5R 노트북 판매합니다.\n\n•  CPU : Intel Celeron 2957U 1.40GHz\n•  RAM : 4GB\n•  SSD :  ADATA SU650 120GB\n•  OS: Windows 10 Pro\n•  15인치 휴대용 노트북\n\n외관 사진과 같이 깨끗하며, 키보드 보호커버 덮어 사용했습니다. 초기화 완료 후 판매합니다.\n\n구성품 : 노트북 본체 + 정품 충전기\n\n연락주세요.",
             "price": "100000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/b6044093-17ed-45d3-9eb7-558e332ffde2.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/179143817733264953e294bdd24c8943480357e6a4dce8e51b6ae93fe116733086cfbf06de8940.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-08T05:18:54.166Z",
-            "boostedAt": "2026-10-08T05:18:54.164Z",
+            "createdAt": "2026-10-08T05:44:15.173Z",
+            "boostedAt": "2026-10-08T05:44:15.173Z",
             "region": {
-              "name": "정자동"
+              "name": "국우동"
             },
             "category": null,
             "tradingCoordinates": []
@@ -117,39 +117,39 @@
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-10-08T05:18:54.166Z\",\"boostedAt\":\"2026-10-08T05:18:54.164Z\",\"region\":{\"name\":\"정자동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-08T05:44:15.173Z\",\"boostedAt\":\"2026-10-08T05:44:15.173Z\",\"region\":{\"name\":\"국우동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-08T02:54:57.507Z\",\"boostedAt\":\"2026-10-08T02:54:57.504Z\",\"region\":{\"name\":\"산본동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-08T05:01:35.278Z\",\"boostedAt\":\"2026-10-08T05:01:35.277Z\",\"region\":{\"name\":\"신흥동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-08T04:46:46.484Z\",\"boostedAt\":\"2026-10-08T04:46:46.478Z\",\"region\":{\"name\":\"군포1동\"},\"category\":null,\"tradingCoo",
-          "createdAt\":\"2026-10-08T05:18:08.165Z\",\"boostedAt\":\"2026-10-08T05:18:08.163Z\",\"region\":{\"name\":\"월산동\"},\"category\":null,\"tradingCoor"
+          "createdAt\":\"2026-10-08T05:18:54.166Z\",\"boostedAt\":\"2026-10-08T05:18:54.164Z\",\"region\":{\"name\":\"정자동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-08T04:46:46.484Z\",\"boostedAt\":\"2026-10-08T04:46:46.478Z\",\"region\":{\"name\":\"군포1동\"},\"category\":null,\"tradingCoo"
         ],
         "scriptHeads": [
           "window.sentryEnv = {\n  release: \"5945e4f\",\n  environment: \"prod-kr\"\n};",
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":265,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG 그램 노트북 13인치 화이트\",\"descripti",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":262,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 NT270E5R 노트북 판매합니다.\",\"descr",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-75b1b624.js\";\nimport * as route0 from \"/_remix/root-P4ns_lso.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-u7IPCM8v.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 1220,
-    "globalUniqueListings": 452,
-    "duplicateListingsRemoved": 768,
-    "detailQueueStart": 3,
-    "freshDetailTasks": 3,
+    "searchUniqueListings": 1110,
+    "globalUniqueListings": 422,
+    "duplicateListingsRemoved": 688,
+    "detailQueueStart": 4,
+    "freshDetailTasks": 4,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 3,
-    "detailSucceeded": 3,
+    "detailRequestsExecuted": 4,
+    "detailSucceeded": 4,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 452,
+    "postedAtResolvedFromSearch": 422,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 0,
-    "scanDurationMs": 82241,
+    "candidateCount": 1,
+    "scanDurationMs": 83605,
     "cities": [
       {
         "city": "군포시",
@@ -161,8 +161,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 278,
-        "durationMs": 12169
+        "uniqueListings": 277,
+        "durationMs": 11958
       },
       {
         "city": "의왕시",
@@ -177,8 +177,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 346,
-        "durationMs": 25718
+        "uniqueListings": 318,
+        "durationMs": 25832
       },
       {
         "city": "안양시",
@@ -195,8 +195,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 340,
-        "durationMs": 35219
+        "uniqueListings": 339,
+        "durationMs": 35410
       },
       {
         "city": "과천시",
@@ -207,17 +207,53 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 256,
-        "durationMs": 6388
+        "uniqueListings": 176,
+        "durationMs": 6440
       }
     ],
-    "finalCandidateCount": 0,
-    "stateItemCount": 3450,
+    "finalCandidateCount": 1,
+    "stateItemCount": 3455,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 82244
+    "durationMs": 83608
   },
-  "candidates": []
+  "candidates": [
+    {
+      "id": "kyv5wjxiqq3c",
+      "changeType": "new",
+      "previousPrice": null,
+      "price": 350000,
+      "priceDropPercent": null,
+      "city": "안양시",
+      "location": "안양3동",
+      "regionPath": "경기도 안양시 만안구 안양3동",
+      "title": "아수스 게이밍 노트북 (GTX 1060, 16램, 1TB)",
+      "modelHint": "아수스 게이밍 노트북 (GTX 1060, 16램, 1TB)",
+      "cpuHint": null,
+      "cpuBaselinePass": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "램 : 16기가",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "specConfidence": "needs_review",
+      "postedAt": "2026-10-08T05:39:34.163Z",
+      "boostedAt": "2026-10-08T05:39:34.161Z",
+      "status": "Ongoing",
+      "description": "제품 : ASUS ROG GL503V\n그래픽 : GeForce GTX 1060\nCPU : i7\n램 : 16기가\n용량 : 1TB\n\n전체적으로 눈에 보이는 기스없이 깨끗합니다.\n노트북 어댑터 끼고 사용하는걸 추천 드리며,\n현재 키보드만 안되서 외장 USB 키보드\n연결하여 쓰셔야 합니다.\n전원버튼, 터치패드는 이상없습니다.\n사실분 당근주세요.",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%95%84%EC%88%98%EC%8A%A4-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-gtx-1060-16%EB%9E%A8-1tb-kyv5wjxiqq3c/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "요시",
+      "mannerTemperature": 47.3
+    }
+  ]
 }
