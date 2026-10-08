@@ -945,11 +945,11 @@
       "detail": {
         "timing": {
           "before": {
-            "elapsed": 4800.199999999997,
+            "elapsed": 4800.299999999988,
             "hidden": false,
             "opacity": "1"
           },
-          "hiddenAt": 5000.400000000009,
+          "hiddenAt": 5000.299999999988,
           "hidden": true,
           "opacity": "0",
           "focus": true
@@ -1785,7 +1785,7 @@
     {
       "name": "bad JavaScript rolls back to previous healthy B",
       "passed": true,
-      "detail": "http://127.0.0.1:45069/?cb_release=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb&cb_recovery=1"
+      "detail": "http://127.0.0.1:45309/?cb_release=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb&cb_recovery=1"
     },
     {
       "name": "failed startup did not erase notes",
@@ -1847,5 +1847,5 @@
   "intentionalJavaScriptFaults": [
     "Missing initializer in const declaration"
   ],
-  "completedAt": "2026-10-08T00:09:28Z"
+  "completedAt": "2026-10-08T00:14:17Z"
 }

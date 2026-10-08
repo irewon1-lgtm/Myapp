@@ -1,18 +1,18 @@
 {
   "schemaVersion": 1,
   "kind": "read-only-release-information",
-  "generatedAt": "2026-10-08T00:08:24.258Z",
+  "generatedAt": "2026-10-08T00:13:15.074Z",
   "app": {
     "name": "챗북",
     "version": "1.0.3",
     "homepage": "https://chatbook-library-20260923.netlify.app"
   },
   "release": {
-    "id": "1.0.3-1.2.0-61ca336bb1b1ba1e",
-    "sourceDigest": "61ca336bb1b1ba1ed372d149e4107e2732714325904df75a7109728d9e321f29",
-    "sourceSha": "84b330200e2e6e9caaada864847b64b8870ffbc2",
+    "id": "1.0.3-1.2.0-7b5c0f56dd6d4a6d",
+    "sourceDigest": "7b5c0f56dd6d4a6d6590283fa08367fac68e0064bcfa40df2b0f0195b12f89d7",
+    "sourceSha": "7f4e587e67c538717827e3cd3015674f301aed50",
     "sourceBranch": "chatbook-app-20260923",
-    "buildRunId": "37706122898",
+    "buildRunId": "37706572511",
     "deployId": null
   },
   "engine": {
@@ -142,13 +142,13 @@
       "command": "npm test",
       "status": "passed",
       "exitCode": 0,
-      "checkedAt": "2026-10-08T00:08:24.258Z",
-      "sourceDigest": "61ca336bb1b1ba1ed372d149e4107e2732714325904df75a7109728d9e321f29",
+      "checkedAt": "2026-10-08T00:13:15.074Z",
+      "sourceDigest": "7b5c0f56dd6d4a6d6590283fa08367fac68e0064bcfa40df2b0f0195b12f89d7",
       "nodeTests": 191,
       "nodePassed": 191,
       "nodeFailed": 0,
       "nodeSkipped": 0,
-      "outputSha256": "11b2701a49e70a8bbc8c20a74e93590779ce207d46d7ad6bc1d324388064c443",
+      "outputSha256": "3712d89ef433287bd072d284bed07397d54568958c1e122e901d5650d109b451",
       "scope": "Local syntax, API contract and Node engine tests only; not live video or production end-to-end verification."
     },
     "productionEndToEnd": {
