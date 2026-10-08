@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-08T04:41:35.950Z",
+  "generatedAt": "2026-10-08T04:59:02.113Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -53,35 +53,103 @@
       },
       "htmlSample": {
         "embeddedArticles": false,
-        "remixArticleSamples": [],
-        "dateFieldSnippets": [],
+        "remixArticleSamples": [
+          {
+            "id": "/kr/buy-sell/asus-rog-flow-z13-%EB%9D%BC%EC%9D%B4%EC%A0%A0-ai-max-395-96jmv4t9abmf/",
+            "href": "/kr/buy-sell/asus-rog-flow-z13-%EB%9D%BC%EC%9D%B4%EC%A0%A0-ai-max-395-96jmv4t9abmf/",
+            "title": "ASUS ROG Flow Z13 라이젠 AI MAX+ 395",
+            "content": "안녕하세요! ASUS ROG Flow Z13 노트북 판매합니다.\n라이젠 AI MAX+ 395 프로세서와 64GB RAM, 16GB 그래픽 메모리를 탑재하고 있습니다.\n186TB 저장 공간으로 넉넉하게 사용 가능해요.\n고성능 작업도 문제없이 처리할 수 있는 매력적인 노트북입니다.\n\n2027년 2월 까지 as \n\n64기가 2테라 입니다\n실사용을 했던 것이라 찍힘은 없으나 사용감이 있습니다\n깨끗합니다\n박스셋이나 노트북 파우치는 다른 것으로 대체해서 드립니다\n\n가격이 있는 만큼 직거래만 하며 부산 남구w아파트 쪽에서 거래 가능 합니다\n\n최저가로 내놓아 흥정은 어렵습니다",
+            "price": "2800000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/acb32e94-4fcb-4d96-825f-0849d6b6993e.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-10-03T02:25:56.413Z",
+            "boostedAt": "2026-10-06T01:34:34.179Z",
+            "region": {
+              "name": "용호제3동"
+            },
+            "category": null,
+            "tradingCoordinates": []
+          },
+          {
+            "id": "/kr/buy-sell/hp-zbook-ultra-g1a-14%EC%9D%B8%EC%B9%98-%EC%9B%8C%ED%81%AC%EC%8A%A4%ED%85%8C%EC%9D%B4%EC%85%98-%EB%85%B8%ED%8A%B8%EB%B6%81-8jj2d1qarx26/",
+            "href": "/kr/buy-sell/hp-zbook-ultra-g1a-14%EC%9D%B8%EC%B9%98-%EC%9B%8C%ED%81%AC%EC%8A%A4%ED%85%8C%EC%9D%B4%EC%85%98-%EB%85%B8%ED%8A%B8%EB%B6%81-8jj2d1qarx26/",
+            "title": "HP ZBook Ultra G1a 14인치 워크스테이션 노트북",
+            "content": "HP ZBook Ultra G1a 14인치 모바일 워크스테이션 노트북입니다.\n\nAMD Ryzen AI Max + 395 프로세서\nRadeon 8060S 그래픽이 탑재되어 뛰어난 성능을 자랑해요. 64GB RAM과 2tb의 넉넉한 저장 공간으로 다양한 작업을 원활하게 할 수 있어요. 고성능 작업에 적합한 매력적인 노트북을 만나보세요.\n\n실사용 얼마 안됩니다 \n영상 시청만 한 한달도 사용 안한 제품입니다.\n구매하신다면 사제 파우치도 함께 드립니다.\n\n정품 HP 고출력 충전기 포함 \n\n정품 윈도우 11 pro 설치\n\nas 11월 9일까지 무상 보증입니다.\n\n보증 살아있는 관계로 환불 불가능합니다.",
+            "price": "4500000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202609/c2471709-ad29-4544-a67a-70d96c2d3c68.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-09-28T04:37:27.256Z",
+            "boostedAt": "2026-10-01T03:24:50.967Z",
+            "region": {
+              "name": "신용동"
+            },
+            "category": null,
+            "tradingCoordinates": [
+              {
+                "latitude": 35.21303764401709,
+                "longitude": 126.8685121176984
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/gmktec-ryzen-ai-max-395-128gb-u2q5jtz4a38t/",
+            "href": "/kr/buy-sell/gmktec-ryzen-ai-max-395-128gb-u2q5jtz4a38t/",
+            "title": "GMKtec Ryzen AI Max+ 395 (128GB)",
+            "content": "AMD Ryzen AI Max+ 395 프로세서 탑재\n\nAMD Strix Halo 플랫폼이고 통합 128GB 램 + 2TB SSD 탑제 되어 있어요.\n\nAI 공부용으로 구입했었는데 성능이 필요 이상으로 높아서 팔아요. \n\n직구로 구입한거 아니고 쿠팡에서 국내 정식 유통 정품으로 구입했습니다.\n\n구성품은 본체 + 전원 있고 박스는 없어요. \n지난 4월 구입 제품입니다.",
+            "price": "4500000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202609/17890540462285f90f66df2f87972c5bbc1787e2e6a21e6c47aee77ffcd5d014f4ba242b713890.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-09-10T15:34:27.157Z",
+            "boostedAt": "2026-09-10T15:34:27.156Z",
+            "region": {
+              "name": "용두동"
+            },
+            "category": null,
+            "tradingCoordinates": [
+              {
+                "latitude": 37.5715918898254,
+                "longitude": 127.02841600723815
+              }
+            ]
+          }
+        ],
+        "dateFieldSnippets": [
+          "createdAt\":\"2026-10-03T02:25:56.413Z\",\"boostedAt\":\"2026-10-06T01:34:34.179Z\",\"region\":{\"name\":\"용호제3동\"},\"category\":null,\"tradingCo",
+          "createdAt\":\"2026-09-28T04:37:27.256Z\",\"boostedAt\":\"2026-10-01T03:24:50.967Z\",\"region\":{\"name\":\"신용동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-09-10T15:34:27.157Z\",\"boostedAt\":\"2026-09-10T15:34:27.156Z\",\"region\":{\"name\":\"용두동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-09-25T09:30:01.625Z\",\"boostedAt\":\"2026-10-07T10:32:57.796Z\",\"region\":{\"name\":\"잠실동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-02T07:51:42.212Z\",\"boostedAt\":\"2026-10-04T09:59:28.510Z\",\"region\":{\"name\":\"신정동\"},\"category\":null,\"tradingCoor"
+        ],
         "scriptHeads": [
-          "\n    (function(window, document, mode) {\n      try {\n        document.documentElement.dataset.seed = '';\n        document.documentElement.dataset.seedColorMode = mode;\n      } catch (e) {}\n\n      try {\n        var prefer",
           "window.sentryEnv = {\n  release: \"5945e4f\",\n  environment: \"prod-kr\"\n};",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":15,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"ASUS ROG Flow Z13 라이젠 AI MAX+ 3",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-75b1b624.js\";\nimport * as route0 from \"/_remix/root-P4ns_lso.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-u7IPCM8v.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 895,
-    "globalUniqueListings": 370,
+    "searchUniqueListings": 936,
+    "globalUniqueListings": 411,
     "duplicateListingsRemoved": 525,
-    "detailQueueStart": 10,
-    "freshDetailTasks": 10,
+    "detailQueueStart": 6,
+    "freshDetailTasks": 6,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 10,
-    "detailSucceeded": 10,
+    "detailRequestsExecuted": 6,
+    "detailSucceeded": 6,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 370,
+    "postedAtResolvedFromSearch": 411,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 1,
-    "scanDurationMs": 91324,
+    "scanDurationMs": 89146,
     "cities": [
       {
         "city": "군포시",
@@ -93,8 +161,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 185,
-        "durationMs": 12471
+        "uniqueListings": 184,
+        "durationMs": 12467
       },
       {
         "city": "의왕시",
@@ -109,8 +177,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 235,
-        "durationMs": 25850
+        "uniqueListings": 352,
+        "durationMs": 25742
       },
       {
         "city": "안양시",
@@ -127,8 +195,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 299,
-        "durationMs": 35325
+        "uniqueListings": 224,
+        "durationMs": 36917
       },
       {
         "city": "과천시",
@@ -140,29 +208,29 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 176,
-        "durationMs": 6112
+        "durationMs": 6886
       }
     ],
     "finalCandidateCount": 1,
-    "stateItemCount": 3428,
+    "stateItemCount": 3436,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 91327
+    "durationMs": 89149
   },
   "candidates": [
     {
-      "id": "we9qvq9bpurz",
+      "id": "k6j9pccpwnig",
       "changeType": "new",
       "previousPrice": null,
-      "price": 500000,
+      "price": 780000,
       "priceDropPercent": null,
       "city": "안양시",
-      "location": "안양동",
-      "regionPath": "경기도 안양시 동안구 안양동",
-      "title": "레노버 아이디어패드 슬림5 16IAH8 512G, 램 16GB 클라우드 그레이",
-      "modelHint": "레노버 아이디어패드 슬림5 16IAH8 512G, 램 16GB 클라우드 그레이",
+      "location": "석수1동",
+      "regionPath": "경기도 안양시 만안구 석수1동",
+      "title": "LG그램 노트북14Z90S, 배터리 100프로, 울트라5, 16G/256G",
+      "modelHint": "LG그램 노트북14Z90S, 배터리 100프로, 울트라5, 16G/256G",
       "cpuHint": null,
       "cpuBaselinePass": null,
       "gpuHint": null,
@@ -170,22 +238,22 @@
       "ramGB": 16,
       "ambiguousMemoryGB": 16,
       "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": "램 16GB",
+      "ramEvidence": "RAM 16G",
       "vramEvidence": null,
-      "ambiguousMemoryEvidence": "16GB",
-      "storageGB": null,
+      "ambiguousMemoryEvidence": "16G",
+      "storageGB": 256,
       "llmCapability": "SPEC_CHECK_REQUIRED",
       "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
       "specConfidence": "needs_review",
-      "postedAt": "2026-10-08T04:40:41.710Z",
-      "boostedAt": "2026-10-08T04:40:41.703Z",
+      "postedAt": "2026-10-08T04:43:42.211Z",
+      "boostedAt": "2026-10-08T04:43:42.207Z",
       "status": "Ongoing",
-      "description": "전체 모델명: 레노버 2023 아이디어패드 슬림 5 16IAH8 16, 클라우드 그레이, 512GB, 16GB, Fre83BG0008KR\n\n작년 겨울에 80만원에 구매한 후 집에서만 네이버 서칭용으로 10회 이하 사용했습니다\n마지막 사진에 보시다시피 눈에 띄지 않는 아주 미세한 좁쌀만한 까짐 제외하고는 완전 새제품 같아요\n램 16기가에 전체 용량 512기가라 엄청 빠릿빠릿해서 문서 작업은 물론이고 가벼운 게임 정도까지 가능한 노트북입니다\n별도로 윈도우 설치할 필요없이 초기화만 하시면 바로 사용하실 수 있어요\n구성품은 본체와 충전기입니다\n\nGS25 안양아트센터점 직거래",
-      "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%95%84%EC%9D%B4%EB%94%94%EC%96%B4%ED%8C%A8%EB%93%9C-%EC%8A%AC%EB%A6%BC5-16iah8-512g-%EB%9E%A8-16gb-%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C-%EA%B7%B8%EB%A0%88%EC%9D%B4-we9qvq9bpurz/",
+      "description": "LG그램 노트북 2024 14Z90S GA5PK 판매합니다\n\n배터리 사이클 0, 효율 100프로입니다\n\n모서리 한곳 찍힘이 있습니다\n액정이나 작동 이상은 전혀 없습니다\n\n14Z90S GA50K\n\nSSD 256G \nRAM 16G\nCPU ULTRA 5\n14인치\n2024년 1월 제조\n\n윈도우 11 정품 인증 모델입니다(프리도스 아님!)\n\nMS 오피스 및 한컴오피스 설치 했습니다 \n\n구성품 : 노트북, 충전기, 마우스",
+      "url": "https://www.daangn.com/kr/buy-sell/lg%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%8114z90s-%EB%B0%B0%ED%84%B0%EB%A6%AC-100%ED%94%84%EB%A1%9C-%EC%9A%B8%ED%8A%B8%EB%9D%BC5-16g-256g-k6j9pccpwnig/",
       "favoriteCount": 0,
       "chatCount": 0,
-      "sellerName": "펄스",
-      "mannerTemperature": 48.4
+      "sellerName": "업데이터",
+      "mannerTemperature": 50
     }
   ]
 }

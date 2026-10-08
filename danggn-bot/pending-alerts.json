@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-08T04:41:36.012195Z",
+  "updatedAt": "2026-10-08T04:59:02.158290Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -1726,6 +1726,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%95%84%EC%9D%B4%EB%94%94%EC%96%B4%ED%8C%A8%EB%93%9C-%EC%8A%AC%EB%A6%BC5-16iah8-512g-%EB%9E%A8-16gb-%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C-%EA%B7%B8%EB%A0%88%EC%9D%B4-we9qvq9bpurz/",
       "firstAlertedAt": "2026-10-08T04:41:36.012195Z",
       "lastCandidateAt": "2026-10-08T04:41:36.012195Z"
+    },
+    "k6j9pccpwnig": {
+      "id": "k6j9pccpwnig",
+      "title": "LG그램 노트북14Z90S, 배터리 100프로, 울트라5, 16G/256G",
+      "price": 780000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "석수1동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "RAM 16G",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16G",
+      "storageGB": 256,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-08T04:43:42.211Z",
+      "url": "https://www.daangn.com/kr/buy-sell/lg%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%8114z90s-%EB%B0%B0%ED%84%B0%EB%A6%AC-100%ED%94%84%EB%A1%9C-%EC%9A%B8%ED%8A%B8%EB%9D%BC5-16g-256g-k6j9pccpwnig/",
+      "firstAlertedAt": "2026-10-08T04:59:02.158290Z",
+      "lastCandidateAt": "2026-10-08T04:59:02.158290Z"
     }
   }
 }
