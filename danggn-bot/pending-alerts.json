@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-08T17:21:56.819757Z",
+  "updatedAt": "2026-10-08T17:40:33.561657Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -2201,6 +2201,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81-%EC%97%90%EC%96%B4-m4-13%EC%9D%B8%EC%B9%98-16gb-256gb-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-a74aqybwwkz3/",
       "firstAlertedAt": "2026-10-08T15:43:28.049317Z",
       "lastCandidateAt": "2026-10-08T15:43:28.049317Z"
+    },
+    "5hdu4raokydx": {
+      "id": "5hdu4raokydx",
+      "title": "(풀박스)ASUS i7, RTX 2070 게이밍 노트북 17인치",
+      "price": 760000,
+      "previousPrice": 770000,
+      "changeType": "price_drop",
+      "city": "안양시",
+      "location": "인덕원동",
+      "cpuHint": null,
+      "gpuHint": "RTX 2070",
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB 메모리",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 1024,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-09-25T09:08:57.548Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%ED%92%80%EB%B0%95%EC%8A%A4-asus-i7-rtx-2070-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-17%EC%9D%B8%EC%B9%98-5hdu4raokydx/",
+      "firstAlertedAt": "2026-10-08T17:40:33.561657Z",
+      "lastCandidateAt": "2026-10-08T17:40:33.561657Z"
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-08T17:21:56.755Z",
+  "generatedAt": "2026-10-08T17:40:33.500Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -53,35 +53,98 @@
       },
       "htmlSample": {
         "embeddedArticles": false,
-        "remixArticleSamples": [],
-        "dateFieldSnippets": [],
+        "remixArticleSamples": [
+          {
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-i3-6100u-8gb-ram-119gb-ssd-rc1fat27ym72/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-i3-6100u-8gb-ram-119gb-ssd-rc1fat27ym72/",
+            "title": "삼성 노트북 i3-6100U 8GB RAM 119GB SSD",
+            "content": "삼성 노트북 판매해요. 인텔 코어 i3-6100U 프로세서와 8GB RAM, 119GB SSD를 탑재했어요. 사진에서 보이는 그대로의 모습이에요. 가볍고 빠른 성능으로 문서 작업이나 웹 서핑에 좋아요.\n전원버튼 작은 수리해놓았구요 기능상문제없습니다 \n베터리 약두시간갑니다\n슬림하고 가볍습니다\n충전기 노트북 구성입니다\n한글 오피스 원도우10 ",
+            "price": "120000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/7f9b61c4-6a93-49d2-8578-b3658ca5c47b.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-08T16:45:41.800Z",
+            "boostedAt": "2026-10-08T16:45:41.800Z",
+            "region": {
+              "name": "태전1동"
+            },
+            "category": null,
+            "tradingCoordinates": [
+              {
+                "latitude": 35.91451440000006,
+                "longitude": 128.5479106000356
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/lg-15-6%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-amd-ryzen-3-7330u-2024%EB%85%84-%EC%B5%9C%EC%8B%A0-wy5isafbtxb1/",
+            "href": "/kr/buy-sell/lg-15-6%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-amd-ryzen-3-7330u-2024%EB%85%84-%EC%B5%9C%EC%8B%A0-wy5isafbtxb1/",
+            "title": "LG  15.6인치 노트북 (AMD Ryzen 3 7330U)2024년 최신",
+            "content": "LG 15.6인치 깔끔한 화이트 색상 노트북 판매합니다.상태 S정말 깨끗합니다 \n가볍고 성능이 좋아 대학생 인강용, 직장인 사무용, 유튜브 시청용으로 정말 좋습니다!\n💻 상세 스펙\n• 화면 크기: 15.6인치\n• CPU: AMD 라이젠 3 7330U\n• 그래픽: Radeon 그래픽 탑재 (부드럽고 빠른 사용감)\n• 메모리: 8GB RAM (쾌적한 멀티태스킹 가능)\n• 저장공간: 256GB SSD (넉넉한 저장 공간)\n• 색상: 깔끔한 화이트\n✨ 제품 상태\n• 디자인이 깔끔해서 어떤 환경에서도 잘 어울리고 예쁩니다.\n• 기능상 문제 전혀 없고 작동 아주 잘 됩니다.",
+            "price": "370000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/b8f93ea9e63d658e8110897c849d91bc6798084a80c97fffe65a337ae41e41c8_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-08T14:41:40.345Z",
+            "boostedAt": "2026-10-08T14:41:40.344Z",
+            "region": {
+              "name": "온산읍"
+            },
+            "category": null,
+            "tradingCoordinates": []
+          },
+          {
+            "id": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-15%EC%9D%B8%EC%B9%98-x1xvpppsq42s/",
+            "href": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-15%EC%9D%B8%EC%B9%98-x1xvpppsq42s/",
+            "title": "LG 노트북 15인치",
+            "content": "LG 노트북 15인치\n모델 : LG 15U34\nCPU : Intel Pentium\nRAM : 8 GB\nSSD : 240 GB (속도빠름)\n배터리 3시간 이상 (5번사진)\n윈도10, MS오피스, 한글 설치됨\n인터넷, 문서작성 성능 우수함\n노트북 외관 깨끗함\n충전기, 무선마우스(새것),\nLG정품가방(새것)\n모두 드립니다",
+            "price": "150000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/300c600a-d0c0-4ea3-86d0-7a1fa461f664.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-08T13:36:44.345Z",
+            "boostedAt": "2026-10-08T13:36:44.343Z",
+            "region": {
+              "name": "오금동"
+            },
+            "category": null,
+            "tradingCoordinates": []
+          }
+        ],
+        "dateFieldSnippets": [
+          "createdAt\":\"2026-10-08T16:45:41.800Z\",\"boostedAt\":\"2026-10-08T16:45:41.800Z\",\"region\":{\"name\":\"태전1동\"},\"category\":null,\"tradingCoo",
+          "createdAt\":\"2026-10-08T14:41:40.345Z\",\"boostedAt\":\"2026-10-08T14:41:40.344Z\",\"region\":{\"name\":\"온산읍\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-08T13:36:44.345Z\",\"boostedAt\":\"2026-10-08T13:36:44.343Z\",\"region\":{\"name\":\"오금동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-08T02:54:57.507Z\",\"boostedAt\":\"2026-10-08T02:54:57.504Z\",\"region\":{\"name\":\"산본동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-06T12:28:27.110Z\",\"boostedAt\":\"2026-10-08T15:04:28.758Z\",\"region\":{\"name\":\"동호동\"},\"category\":null,\"tradingCoor"
+        ],
         "scriptHeads": [
-          "\n    (function(window, document, mode) {\n      try {\n        document.documentElement.dataset.seed = '';\n        document.documentElement.dataset.seedColorMode = mode;\n      } catch (e) {}\n\n      try {\n        var prefer",
           "window.sentryEnv = {\n  release: \"5cab355\",\n  environment: \"prod-kr\"\n};",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":263,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 노트북 i3-6100U 8GB RAM 119GB ",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-94566b97.js\";\nimport * as route0 from \"/_remix/root-P4ns_lso.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-u7IPCM8v.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 1045,
-    "globalUniqueListings": 439,
-    "duplicateListingsRemoved": 606,
-    "detailQueueStart": 1,
-    "freshDetailTasks": 1,
+    "searchUniqueListings": 1175,
+    "globalUniqueListings": 464,
+    "duplicateListingsRemoved": 711,
+    "detailQueueStart": 2,
+    "freshDetailTasks": 2,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 1,
-    "detailSucceeded": 1,
+    "detailRequestsExecuted": 2,
+    "detailSucceeded": 2,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 439,
+    "postedAtResolvedFromSearch": 464,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 0,
-    "scanDurationMs": 79180,
+    "candidateCount": 1,
+    "scanDurationMs": 81426,
     "cities": [
       {
         "city": "군포시",
@@ -93,8 +156,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 185,
-        "durationMs": 11859
+        "uniqueListings": 278,
+        "durationMs": 12062
       },
       {
         "city": "의왕시",
@@ -109,8 +172,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 352,
-        "durationMs": 25389
+        "uniqueListings": 368,
+        "durationMs": 25597
       },
       {
         "city": "안양시",
@@ -127,8 +190,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 332,
-        "durationMs": 34872
+        "uniqueListings": 353,
+        "durationMs": 35078
       },
       {
         "city": "과천시",
@@ -140,16 +203,52 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 176,
-        "durationMs": 6370
+        "durationMs": 6318
       }
     ],
-    "finalCandidateCount": 0,
-    "stateItemCount": 3663,
+    "finalCandidateCount": 1,
+    "stateItemCount": 3664,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 79184
+    "durationMs": 81431
   },
-  "candidates": []
+  "candidates": [
+    {
+      "id": "5hdu4raokydx",
+      "changeType": "price_drop",
+      "previousPrice": 770000,
+      "price": 760000,
+      "priceDropPercent": 1.3,
+      "city": "안양시",
+      "location": "인덕원동",
+      "regionPath": "경기도 안양시 동안구 인덕원동",
+      "title": "(풀박스)ASUS i7, RTX 2070 게이밍 노트북 17인치",
+      "modelHint": "(풀박스)ASUS i7, RTX 2070 게이밍 노트북 17인치",
+      "cpuHint": null,
+      "cpuBaselinePass": null,
+      "gpuHint": "RTX 2070",
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB 메모리",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 1024,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "specConfidence": "needs_review",
+      "postedAt": "2026-09-25T09:08:57.548Z",
+      "boostedAt": "2026-10-07T17:48:37.772Z",
+      "status": "Ongoing",
+      "description": "고성능 게이밍 노트북 판매해요. 인텔 i7 CPU와 RTX 2070 그래픽카드가 탑재되어 있어 쾌적한 게이밍 환경을 제공해요. 16GB 메모리와 512GB SSD+1TB로 넉넉한 저장 공간과 빠른 속도를 자랑해요. 고사양 게임도 부드럽게 즐길 수 있는 매력적인 노트북이랍니다.\n17인치로 큰 화면입니다\n구매 할 때 박스그대로 들고 있어서 박스에 넣어드릴게요\n\n구매 할 때 300만원 가까이 주고 구매했어요\n요즘게임 다 돌아가용 학교다닐때 업무용으로 실사용1년정도 되고 그뒤로는 계속 보관만했어요 상태는 사진으로 보시는거와 같이 좋아요",
+      "url": "https://www.daangn.com/kr/buy-sell/%ED%92%80%EB%B0%95%EC%8A%A4-asus-i7-rtx-2070-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-17%EC%9D%B8%EC%B9%98-5hdu4raokydx/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "우어어어옹아이",
+      "mannerTemperature": 36.6
+    }
+  ]
 }
