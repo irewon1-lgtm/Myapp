@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-08T07:43:32.459628Z",
+  "updatedAt": "2026-10-08T07:59:59.341432Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -1901,6 +1901,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/asus-%EC%A0%A0%EB%B6%81-%EB%93%80%EC%98%A414-2025%EB%B2%84%EC%A0%84-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-%EC%9D%B4%EB%B2%88%EC%A3%BC-%EA%B8%88-%EC%9D%BC-%EB%8F%99%EC%95%88%EB%A7%8C-%EC%9D%B4-%EA%B0%80%EA%B2%A9-i6wtakkruwyr/",
       "firstAlertedAt": "2026-10-08T07:43:32.459628Z",
       "lastCandidateAt": "2026-10-08T07:43:32.459628Z"
+    },
+    "rkswmf1fyhsn": {
+      "id": "rkswmf1fyhsn",
+      "title": "LG 게이밍 노트북 i7 16GB RAM",
+      "price": 370000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "의왕시",
+      "location": "내손2동",
+      "cpuHint": "i7-8550U",
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": 256,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-08T07:50:17.416Z",
+      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-i7-16gb-ram-rkswmf1fyhsn/",
+      "firstAlertedAt": "2026-10-08T07:59:59.341432Z",
+      "lastCandidateAt": "2026-10-08T07:59:59.341432Z"
     }
   }
 }
