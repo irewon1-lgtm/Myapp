@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-08T10:24:49.872Z",
+  "generatedAt": "2026-10-08T10:42:23.370Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -53,103 +53,35 @@
       },
       "htmlSample": {
         "embeddedArticles": false,
-        "remixArticleSamples": [
-          {
-            "id": "/kr/buy-sell/asus-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-n3n7wjfgtj4o/",
-            "href": "/kr/buy-sell/asus-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-n3n7wjfgtj4o/",
-            "title": "Asus 노트북 판매합니다.",
-            "content": "Asus X540L 모델입니다. \n\n15인치 이며 초기화 해 놓았습니다.",
-            "price": "80000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/1791454073282dda1d0d6d63e94d200852b5708855e635a8a2c5bb730cee24dcbc618e4b28cd60.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-08T10:11:05.301Z",
-            "boostedAt": "2026-10-08T10:11:05.300Z",
-            "region": {
-              "name": "범어동"
-            },
-            "category": null,
-            "tradingCoordinates": [
-              {
-                "latitude": 35.86420129369156,
-                "longitude": 128.62759626349157
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-mm23pbx1sd3i/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-mm23pbx1sd3i/",
-            "title": "삼성 노트북",
-            "content": "삼성 노트북 재당근해요\n문서 작업용으로만 깨끗하게 사용했고 구매하고 거의 사용을 안했습니다!\n사용 잘 되고 쓸일이 없어 판매해요\n\n초기화한 상태고 깨끗합니다",
-            "price": "150000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/1791454034719d08d25c8b74b0e9a55a46342a46685667a8cd94c5f7d3105d785b78cf533bf950.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-08T10:10:55.245Z",
-            "boostedAt": "2026-10-08T10:10:55.245Z",
-            "region": {
-              "name": "위례동"
-            },
-            "category": null,
-            "tradingCoordinates": []
-          },
-          {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt900x4d-a58-i5-8g-128gb-15%EC%9D%B8%EC%B9%98-aku1dnozicxa/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt900x4d-a58-i5-8g-128gb-15%EC%9D%B8%EC%B9%98-aku1dnozicxa/",
-            "title": "삼성 노트북 NT900X4D-A58 (i5, 8G, 128gb, 15인치)",
-            "content": "삼성 노트북 NT900X4D-A58 모델입니다.\n\n인텔 i7 프로세서와 8GB RAM, 128GB 저장 공간을 갖추고 있으며 15인치 화면을 제공합니다.\n\n사진에서 보시는 것처럼 깔끔한 상태이며, 전원 어댑터가 포함되어 있습니다. \n파우치나 가방은 없어요.\n\n가볍고 슬림한 디자인으로 휴대성이 좋습니다. \n문서 작업이나 웹 서핑 등 일상적인 용도로 사용하기에 충분한 성능을 제공합니다.\n\n외관 상태는 깨끗하고 아주 좋아요.\n\n산본 이마트 옆 인베스텔(투데이몰)에서 직거래 가능하구요. 현금, 당근페이, 계좌 송금 거래 원합니다.\n\n교환/반품은 안되는 점 양해부탁드립니다.",
-            "price": "130000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/e97022bc-aae7-4617-9b2c-cb4ae33d3107.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-08T02:54:57.507Z",
-            "boostedAt": "2026-10-08T02:54:57.504Z",
-            "region": {
-              "name": "산본동"
-            },
-            "category": null,
-            "tradingCoordinates": [
-              {
-                "latitude": 37.36047104894929,
-                "longitude": 126.93055923596444
-              }
-            ]
-          }
-        ],
-        "dateFieldSnippets": [
-          "createdAt\":\"2026-10-08T10:11:05.301Z\",\"boostedAt\":\"2026-10-08T10:11:05.300Z\",\"region\":{\"name\":\"범어동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-08T10:10:55.245Z\",\"boostedAt\":\"2026-10-08T10:10:55.245Z\",\"region\":{\"name\":\"위례동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-08T02:54:57.507Z\",\"boostedAt\":\"2026-10-08T02:54:57.504Z\",\"region\":{\"name\":\"산본동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-08T04:46:46.484Z\",\"boostedAt\":\"2026-10-08T04:46:46.478Z\",\"region\":{\"name\":\"군포1동\"},\"category\":null,\"tradingCoo",
-          "createdAt\":\"2026-10-02T10:09:53.854Z\",\"boostedAt\":\"2026-10-08T10:13:31.629Z\",\"region\":{\"name\":\"보산동\"},\"category\":null,\"tradingCoor"
-        ],
+        "remixArticleSamples": [],
+        "dateFieldSnippets": [],
         "scriptHeads": [
+          "\n    (function(window, document, mode) {\n      try {\n        document.documentElement.dataset.seed = '';\n        document.documentElement.dataset.seedColorMode = mode;\n      } catch (e) {}\n\n      try {\n        var prefer",
           "window.sentryEnv = {\n  release: \"5cab355\",\n  environment: \"prod-kr\"\n};",
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":266,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"Asus 노트북 판매합니다.\",\"description\"",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-94566b97.js\";\nimport * as route0 from \"/_remix/root-P4ns_lso.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-u7IPCM8v.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 1163,
-    "globalUniqueListings": 454,
-    "duplicateListingsRemoved": 709,
-    "detailQueueStart": 12,
-    "freshDetailTasks": 12,
+    "searchUniqueListings": 1168,
+    "globalUniqueListings": 437,
+    "duplicateListingsRemoved": 731,
+    "detailQueueStart": 10,
+    "freshDetailTasks": 10,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 12,
-    "detailSucceeded": 12,
+    "detailRequestsExecuted": 10,
+    "detailSucceeded": 10,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 454,
+    "postedAtResolvedFromSearch": 437,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 2,
-    "scanDurationMs": 92903,
+    "candidateCount": 0,
+    "scanDurationMs": 90481,
     "cities": [
       {
         "city": "군포시",
@@ -161,8 +93,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 277,
-        "durationMs": 12242
+        "uniqueListings": 264,
+        "durationMs": 12343
       },
       {
         "city": "의왕시",
@@ -177,8 +109,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 365,
-        "durationMs": 25379
+        "uniqueListings": 346,
+        "durationMs": 25293
       },
       {
         "city": "안양시",
@@ -195,8 +127,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 345,
-        "durationMs": 34889
+        "uniqueListings": 302,
+        "durationMs": 35258
       },
       {
         "city": "과천시",
@@ -207,88 +139,17 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 176,
-        "durationMs": 6146
+        "uniqueListings": 256,
+        "durationMs": 5972
       }
     ],
-    "finalCandidateCount": 2,
-    "stateItemCount": 3540,
+    "finalCandidateCount": 0,
+    "stateItemCount": 3545,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 92908
+    "durationMs": 90485
   },
-  "candidates": [
-    {
-      "id": "48quubi9q3g4",
-      "changeType": "price_drop",
-      "previousPrice": 1100000,
-      "price": 1050000,
-      "priceDropPercent": 4.5,
-      "city": "군포시",
-      "location": "군포2동",
-      "regionPath": "경기도 군포시 군포2동",
-      "title": "레노버 고사양 loq 노트북 rtx4060",
-      "modelHint": "레노버 고사양 loq 노트북 rtx4060",
-      "cpuHint": null,
-      "cpuBaselinePass": null,
-      "gpuHint": "rtx4060",
-      "vramGB": null,
-      "ramGB": null,
-      "ambiguousMemoryGB": 16,
-      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": null,
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": "16g",
-      "storageGB": 512,
-      "llmCapability": "SPEC_CHECK_REQUIRED",
-      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
-      "specConfidence": "needs_review",
-      "postedAt": "2026-10-05T12:17:43.574Z",
-      "boostedAt": "2026-10-08T10:04:02.289Z",
-      "status": "Ongoing",
-      "description": "레노버의 loq 15.6인치 노트북입니다.\ni7 14700hx\nDdr5 16g\nRtx4060\n512g ssd\nFhd 144hz 모니터\n데스크탑을 사게 되어서 판매합니다\n\n램 업그레이드 원하시면 하이닉스 16g 5600램 추가가능합니다(+25만)\n궁금하신거 마음껏 물어봐주세요",
-      "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EA%B3%A0%EC%82%AC%EC%96%91-loq-%EB%85%B8%ED%8A%B8%EB%B6%81-rtx4060-48quubi9q3g4/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "Dsese1",
-      "mannerTemperature": 36.9
-    },
-    {
-      "id": "qbjy4k8944y5",
-      "changeType": "price_drop",
-      "previousPrice": 420000,
-      "price": 400000,
-      "priceDropPercent": 4.8,
-      "city": "군포시",
-      "location": "당정동",
-      "regionPath": "경기도 군포시 당정동",
-      "title": "lg 14z970 ga75k 노트북 상태좋음",
-      "modelHint": "lg 14z970 ga75k 노트북 상태좋음",
-      "cpuHint": null,
-      "cpuBaselinePass": null,
-      "gpuHint": null,
-      "vramGB": null,
-      "ramGB": 16,
-      "ambiguousMemoryGB": 16,
-      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": "램 16gb",
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": "16gb",
-      "storageGB": 512,
-      "llmCapability": "SPEC_CHECK_REQUIRED",
-      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
-      "specConfidence": "needs_review",
-      "postedAt": "2026-10-05T11:08:59.385Z",
-      "boostedAt": "2026-10-07T11:23:05.600Z",
-      "status": "Ongoing",
-      "description": "i7 7500u\n16gb ram\n512gb ssd\n당시\n올데이그램 최고등급입니다.! (i7 클럭 최고급,램 16gb, 512gb)\n진짜가벼워요.\n윈도우 포함제품\n\n와이프가 집에서만 쓰던것이라  연식대비 상태좋고 사용량 많지않습니다.\n특히 키보드커버 써서 키보드부도깨끗합니다.\n초기화다했습니다.\n\n구성품은 본체+정품 파우치(파우치상태는좋지않아요)포함입니다.",
-      "url": "https://www.daangn.com/kr/buy-sell/lg-14z970-ga75k-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%83%81%ED%83%9C%EC%A2%8B%EC%9D%8C-qbjy4k8944y5/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "부리너부리",
-      "mannerTemperature": 52.8
-    }
-  ]
+  "candidates": []
 }
