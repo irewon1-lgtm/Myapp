@@ -1,0 +1,61 @@
+{
+  "checkedAt": "2026-10-07T17:14:04.008556+00:00",
+  "sourceHead": "bf361f7419204b2b287a85714b5b9a71d0f3e9b7",
+  "specDigest": "8f188430ce8fd3caa3b6f0a14de5a858352f47dd5c01b0d3841f704b317e186c",
+  "tests": [
+    {
+      "step": "environment-and-repository-read",
+      "result": "PASS",
+      "observed": "Python/Node/Git/FFmpeg present; branch cloned; production current spec fetched"
+    },
+    {
+      "step": "github-write",
+      "result": "BLOCKED",
+      "observed": "git push dry-run failed: no credentials; create_blob and create_file: Resource not accessible by integration (403)"
+    },
+    {
+      "step": "source-access",
+      "result": "PARTIAL",
+      "observed": "YouTube full timecoded transcript exported; provided Sozai page available through search, direct download 403/timeouts; full semantic comparison not completed",
+      "transcriptSha256": "7aa5babfd6503e58886384480497a7e0c509332af755c086ca9f4f1be09d06b4",
+      "transcriptBytes": 227228
+    },
+    {
+      "step": "local-editorial-patch",
+      "result": "PASS",
+      "observed": "43 original beginner supplement paragraphs; 9 local rewrites; 624/624 old block IDs and 17/17 chapter IDs preserved; all other books unchanged"
+    },
+    {
+      "step": "actual-lecture-captures",
+      "result": "BLOCKED",
+      "observed": "Browser video stayed readyState=0, videoWidth=0 after one reload; FFmpeg media download failed with invalid data; storyboard responses unusable. No screenshots replaced."
+    },
+    {
+      "step": "local-tests-and-build",
+      "result": "PASS",
+      "observed": "npm run build passed; 191 Node tests passed, zero failed/skipped; renderer VM verified all API block anchors, API labels and Python fallback"
+    },
+    {
+      "step": "github-live-publication",
+      "result": "BLOCKED",
+      "observed": "No remote files or branch refs changed; no LIVE workflow triggered"
+    },
+    {
+      "step": "revised-production-body-and-image-verification",
+      "result": "NOT_RUN",
+      "observed": "Current v3 app opened; confirms PYTHON code labels and recreated images. Revised v4 has not reached production."
+    },
+    {
+      "step": "local-draft-browser-display",
+      "result": "BLOCKED",
+      "observed": "Cloud browser permits http/https only; local file URL rejected by browser security policy. No alternative workaround attempted."
+    }
+  ],
+  "netlifyProductionDeployments": 0,
+  "resume": [
+    "Restore GitHub repository content write access for the designated branch",
+    "Obtain readable original lecture frames; replace matching existing image blocks without removing IDs",
+    "Finish bounded full transcript/meaning review",
+    "Repeat relevant checks, atomically publish via existing LIVE workflow and verify actual HTTPS body/image display"
+  ]
+}
