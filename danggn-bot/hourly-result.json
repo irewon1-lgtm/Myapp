@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-08T17:40:33.500Z",
+  "generatedAt": "2026-10-08T17:58:34.531Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,26 +55,21 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-i3-6100u-8gb-ram-119gb-ssd-rc1fat27ym72/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-i3-6100u-8gb-ram-119gb-ssd-rc1fat27ym72/",
-            "title": "삼성 노트북 i3-6100U 8GB RAM 119GB SSD",
-            "content": "삼성 노트북 판매해요. 인텔 코어 i3-6100U 프로세서와 8GB RAM, 119GB SSD를 탑재했어요. 사진에서 보이는 그대로의 모습이에요. 가볍고 빠른 성능으로 문서 작업이나 웹 서핑에 좋아요.\n전원버튼 작은 수리해놓았구요 기능상문제없습니다 \n베터리 약두시간갑니다\n슬림하고 가볍습니다\n충전기 노트북 구성입니다\n한글 오피스 원도우10 ",
-            "price": "120000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/7f9b61c4-6a93-49d2-8578-b3658ca5c47b.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%EC%95%84%EC%88%98%EC%8A%A4-%EB%B9%84%EB%B3%B4%EB%B6%81-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%9E%A8-8%EA%B8%B0%EA%B0%80-ssd-512%EA%B8%B0%EA%B0%80-7gbiyhh7ym8a/",
+            "href": "/kr/buy-sell/%EC%95%84%EC%88%98%EC%8A%A4-%EB%B9%84%EB%B3%B4%EB%B6%81-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%9E%A8-8%EA%B8%B0%EA%B0%80-ssd-512%EA%B8%B0%EA%B0%80-7gbiyhh7ym8a/",
+            "title": "아수스 비보북 노트북 램 8기가 SSD 512기가",
+            "content": "CPU : 인텔 N-305(11세대급 저전력)\n램 : 8기가(추가 장착 가능)\nSSD : 512기가\n\n전체적으로 파손 없이 깨끗한 편입니다",
+            "price": "300000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/17912685803587fad8f1b064e5e83de1bdd8a284e73151b525950ae83bff132268889e3c1dde20.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-08T16:45:41.800Z",
-            "boostedAt": "2026-10-08T16:45:41.800Z",
+            "createdAt": "2026-10-06T06:38:20.428Z",
+            "boostedAt": "2026-10-08T17:32:38.182Z",
             "region": {
-              "name": "태전1동"
+              "name": "구서동"
             },
             "category": null,
-            "tradingCoordinates": [
-              {
-                "latitude": 35.91451440000006,
-                "longitude": 128.5479106000356
-              }
-            ]
+            "tradingCoordinates": []
           },
           {
             "id": "/kr/buy-sell/lg-15-6%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-amd-ryzen-3-7330u-2024%EB%85%84-%EC%B5%9C%EC%8B%A0-wy5isafbtxb1/",
@@ -112,39 +107,39 @@
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-10-08T16:45:41.800Z\",\"boostedAt\":\"2026-10-08T16:45:41.800Z\",\"region\":{\"name\":\"태전1동\"},\"category\":null,\"tradingCoo",
+          "createdAt\":\"2026-10-06T06:38:20.428Z\",\"boostedAt\":\"2026-10-08T17:32:38.182Z\",\"region\":{\"name\":\"구서동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-08T14:41:40.345Z\",\"boostedAt\":\"2026-10-08T14:41:40.344Z\",\"region\":{\"name\":\"온산읍\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-08T13:36:44.345Z\",\"boostedAt\":\"2026-10-08T13:36:44.343Z\",\"region\":{\"name\":\"오금동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-08T02:54:57.507Z\",\"boostedAt\":\"2026-10-08T02:54:57.504Z\",\"region\":{\"name\":\"산본동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-06T12:28:27.110Z\",\"boostedAt\":\"2026-10-08T15:04:28.758Z\",\"region\":{\"name\":\"동호동\"},\"category\":null,\"tradingCoor"
+          "createdAt\":\"2026-10-06T07:13:42.025Z\",\"boostedAt\":\"2026-10-08T17:32:43.504Z\",\"region\":{\"name\":\"구서동\"},\"category\":null,\"tradingCoor"
         ],
         "scriptHeads": [
           "window.sentryEnv = {\n  release: \"5cab355\",\n  environment: \"prod-kr\"\n};",
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":263,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 노트북 i3-6100U 8GB RAM 119GB ",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":264,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"아수스 비보북 노트북 램 8기가 SSD 512기가\",\"",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-94566b97.js\";\nimport * as route0 from \"/_remix/root-P4ns_lso.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-u7IPCM8v.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 1175,
-    "globalUniqueListings": 464,
-    "duplicateListingsRemoved": 711,
-    "detailQueueStart": 2,
-    "freshDetailTasks": 2,
+    "searchUniqueListings": 1244,
+    "globalUniqueListings": 470,
+    "duplicateListingsRemoved": 774,
+    "detailQueueStart": 0,
+    "freshDetailTasks": 0,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 2,
-    "detailSucceeded": 2,
+    "detailRequestsExecuted": 0,
+    "detailSucceeded": 0,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 464,
+    "postedAtResolvedFromSearch": 470,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 1,
-    "scanDurationMs": 81426,
+    "candidateCount": 0,
+    "scanDurationMs": 79859,
     "cities": [
       {
         "city": "군포시",
@@ -156,8 +151,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 278,
-        "durationMs": 12062
+        "uniqueListings": 274,
+        "durationMs": 12366
       },
       {
         "city": "의왕시",
@@ -172,8 +167,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 368,
-        "durationMs": 25597
+        "uniqueListings": 365,
+        "durationMs": 25633
       },
       {
         "city": "안양시",
@@ -190,8 +185,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 353,
-        "durationMs": 35078
+        "uniqueListings": 349,
+        "durationMs": 35265
       },
       {
         "city": "과천시",
@@ -202,53 +197,17 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 176,
-        "durationMs": 6318
+        "uniqueListings": 256,
+        "durationMs": 6454
       }
     ],
-    "finalCandidateCount": 1,
+    "finalCandidateCount": 0,
     "stateItemCount": 3664,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 81431
+    "durationMs": 79863
   },
-  "candidates": [
-    {
-      "id": "5hdu4raokydx",
-      "changeType": "price_drop",
-      "previousPrice": 770000,
-      "price": 760000,
-      "priceDropPercent": 1.3,
-      "city": "안양시",
-      "location": "인덕원동",
-      "regionPath": "경기도 안양시 동안구 인덕원동",
-      "title": "(풀박스)ASUS i7, RTX 2070 게이밍 노트북 17인치",
-      "modelHint": "(풀박스)ASUS i7, RTX 2070 게이밍 노트북 17인치",
-      "cpuHint": null,
-      "cpuBaselinePass": null,
-      "gpuHint": "RTX 2070",
-      "vramGB": null,
-      "ramGB": 16,
-      "ambiguousMemoryGB": null,
-      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": "16GB 메모리",
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": null,
-      "storageGB": 1024,
-      "llmCapability": "SPEC_CHECK_REQUIRED",
-      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
-      "specConfidence": "needs_review",
-      "postedAt": "2026-09-25T09:08:57.548Z",
-      "boostedAt": "2026-10-07T17:48:37.772Z",
-      "status": "Ongoing",
-      "description": "고성능 게이밍 노트북 판매해요. 인텔 i7 CPU와 RTX 2070 그래픽카드가 탑재되어 있어 쾌적한 게이밍 환경을 제공해요. 16GB 메모리와 512GB SSD+1TB로 넉넉한 저장 공간과 빠른 속도를 자랑해요. 고사양 게임도 부드럽게 즐길 수 있는 매력적인 노트북이랍니다.\n17인치로 큰 화면입니다\n구매 할 때 박스그대로 들고 있어서 박스에 넣어드릴게요\n\n구매 할 때 300만원 가까이 주고 구매했어요\n요즘게임 다 돌아가용 학교다닐때 업무용으로 실사용1년정도 되고 그뒤로는 계속 보관만했어요 상태는 사진으로 보시는거와 같이 좋아요",
-      "url": "https://www.daangn.com/kr/buy-sell/%ED%92%80%EB%B0%95%EC%8A%A4-asus-i7-rtx-2070-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-17%EC%9D%B8%EC%B9%98-5hdu4raokydx/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "우어어어옹아이",
-      "mannerTemperature": 36.6
-    }
-  ]
+  "candidates": []
 }
