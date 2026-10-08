@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-08T05:23:18.595Z",
+  "generatedAt": "2026-10-08T05:39:33.871Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -53,35 +53,103 @@
       },
       "htmlSample": {
         "embeddedArticles": false,
-        "remixArticleSamples": [],
-        "dateFieldSnippets": [],
+        "remixArticleSamples": [
+          {
+            "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-13%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-mxianhzts5qm/",
+            "href": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-13%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-mxianhzts5qm/",
+            "title": "LG 그램 노트북 13인치 화이트",
+            "content": "LG 그램 노트북 13인치 화이트 \n13Z950-GR30K\n\n사용감 있고\n많이 쓰지 않아\n큰무리 없음\n\n충전기 있음 ",
+            "price": "100000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/b6044093-17ed-45d3-9eb7-558e332ffde2.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-08T05:18:54.166Z",
+            "boostedAt": "2026-10-08T05:18:54.164Z",
+            "region": {
+              "name": "정자동"
+            },
+            "category": null,
+            "tradingCoordinates": []
+          },
+          {
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt900x4d-a58-i5-8g-128gb-15%EC%9D%B8%EC%B9%98-aku1dnozicxa/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt900x4d-a58-i5-8g-128gb-15%EC%9D%B8%EC%B9%98-aku1dnozicxa/",
+            "title": "삼성 노트북 NT900X4D-A58 (i5, 8G, 128gb, 15인치)",
+            "content": "삼성 노트북 NT900X4D-A58 모델입니다.\n\n인텔 i7 프로세서와 8GB RAM, 128GB 저장 공간을 갖추고 있으며 15인치 화면을 제공합니다.\n\n사진에서 보시는 것처럼 깔끔한 상태이며, 전원 어댑터가 포함되어 있습니다. \n파우치나 가방은 없어요.\n\n가볍고 슬림한 디자인으로 휴대성이 좋습니다. \n문서 작업이나 웹 서핑 등 일상적인 용도로 사용하기에 충분한 성능을 제공합니다.\n\n외관 상태는 깨끗하고 아주 좋아요.\n\n산본 이마트 옆 인베스텔(투데이몰)에서 직거래 가능하구요. 현금, 당근페이, 계좌 송금 거래 원합니다.\n\n교환/반품은 안되는 점 양해부탁드립니다.",
+            "price": "130000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/e97022bc-aae7-4617-9b2c-cb4ae33d3107.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-08T02:54:57.507Z",
+            "boostedAt": "2026-10-08T02:54:57.504Z",
+            "region": {
+              "name": "산본동"
+            },
+            "category": null,
+            "tradingCoordinates": [
+              {
+                "latitude": 37.36047104894929,
+                "longitude": 126.93055923596444
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-14%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-64ajmvei6h5f/",
+            "href": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-14%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-64ajmvei6h5f/",
+            "title": "LG 그램 14노트북  화이트",
+            "content": "LG 그램 노트북 14Z970-LR10K 화이트 색상입니다. \n인텔 펜티엄 CPU\nDDR4 4GB RAM, (슬롯있음)\nM.2 128GB SSD를 탑재하고 있습니다.  깔끔한 디자인과 가벼운 무게로 휴대하기 좋습니다. \n\n아주 깨끗합니다 ㆍ\n프로그램작업  되어 있습니다 ㆍ\n무선 마우스ㆍ가방 포함",
+            "price": "200000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/aae567a1-3ec2-45a0-a381-48b96175b8c6.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-08T05:01:35.278Z",
+            "boostedAt": "2026-10-08T05:01:35.277Z",
+            "region": {
+              "name": "신흥동"
+            },
+            "category": null,
+            "tradingCoordinates": [
+              {
+                "latitude": 37.5161269,
+                "longitude": 126.7702589
+              }
+            ]
+          }
+        ],
+        "dateFieldSnippets": [
+          "createdAt\":\"2026-10-08T05:18:54.166Z\",\"boostedAt\":\"2026-10-08T05:18:54.164Z\",\"region\":{\"name\":\"정자동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-08T02:54:57.507Z\",\"boostedAt\":\"2026-10-08T02:54:57.504Z\",\"region\":{\"name\":\"산본동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-08T05:01:35.278Z\",\"boostedAt\":\"2026-10-08T05:01:35.277Z\",\"region\":{\"name\":\"신흥동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-08T04:46:46.484Z\",\"boostedAt\":\"2026-10-08T04:46:46.478Z\",\"region\":{\"name\":\"군포1동\"},\"category\":null,\"tradingCoo",
+          "createdAt\":\"2026-10-08T05:18:08.165Z\",\"boostedAt\":\"2026-10-08T05:18:08.163Z\",\"region\":{\"name\":\"월산동\"},\"category\":null,\"tradingCoor"
+        ],
         "scriptHeads": [
-          "\n    (function(window, document, mode) {\n      try {\n        document.documentElement.dataset.seed = '';\n        document.documentElement.dataset.seedColorMode = mode;\n      } catch (e) {}\n\n      try {\n        var prefer",
           "window.sentryEnv = {\n  release: \"5945e4f\",\n  environment: \"prod-kr\"\n};",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":265,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG 그램 노트북 13인치 화이트\",\"descripti",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-75b1b624.js\";\nimport * as route0 from \"/_remix/root-P4ns_lso.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-u7IPCM8v.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 1037,
-    "globalUniqueListings": 443,
-    "duplicateListingsRemoved": 594,
-    "detailQueueStart": 10,
-    "freshDetailTasks": 10,
+    "searchUniqueListings": 1220,
+    "globalUniqueListings": 452,
+    "duplicateListingsRemoved": 768,
+    "detailQueueStart": 3,
+    "freshDetailTasks": 3,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 10,
-    "detailSucceeded": 10,
+    "detailRequestsExecuted": 3,
+    "detailSucceeded": 3,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 443,
+    "postedAtResolvedFromSearch": 452,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 2,
-    "scanDurationMs": 91601,
+    "candidateCount": 0,
+    "scanDurationMs": 82241,
     "cities": [
       {
         "city": "군포시",
@@ -93,8 +161,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 184,
-        "durationMs": 12191
+        "uniqueListings": 278,
+        "durationMs": 12169
       },
       {
         "city": "의왕시",
@@ -109,8 +177,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 371,
-        "durationMs": 25688
+        "uniqueListings": 346,
+        "durationMs": 25718
       },
       {
         "city": "안양시",
@@ -127,8 +195,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 226,
-        "durationMs": 35634
+        "uniqueListings": 340,
+        "durationMs": 35219
       },
       {
         "city": "과천시",
@@ -140,87 +208,16 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 256,
-        "durationMs": 6441
+        "durationMs": 6388
       }
     ],
-    "finalCandidateCount": 2,
-    "stateItemCount": 3445,
+    "finalCandidateCount": 0,
+    "stateItemCount": 3450,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 91605
+    "durationMs": 82244
   },
-  "candidates": [
-    {
-      "id": "fwx6m6gywaup",
-      "changeType": "price_drop",
-      "previousPrice": 600000,
-      "price": 550000,
-      "priceDropPercent": 8.3,
-      "city": "안양시",
-      "location": "안양3동",
-      "regionPath": "경기도 안양시 만안구 안양3동",
-      "title": "2021 LG 그램 16Z90P-GP5EL 팝니다",
-      "modelHint": "2021 LG 그램 16Z90P-GP5EL 팝니다",
-      "cpuHint": null,
-      "cpuBaselinePass": null,
-      "gpuHint": null,
-      "vramGB": null,
-      "ramGB": 16,
-      "ambiguousMemoryGB": 16,
-      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": "램 16",
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": "16GB",
-      "storageGB": 512,
-      "llmCapability": "SPEC_CHECK_REQUIRED",
-      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
-      "specConfidence": "needs_review",
-      "postedAt": "2026-08-28T12:52:28.743Z",
-      "boostedAt": "2026-10-08T05:22:09.181Z",
-      "status": "Ongoing",
-      "description": "LG 그램 노트북 16Z90P-GP5EL 모델이에요\n11세대 인텔 i5-1135G7 프로세서와 16GB RAM, 512GB SSD가 탑재되어있습니다\n\n충전기는 정품 새상품 보유하고 있습니다",
-      "url": "https://www.daangn.com/kr/buy-sell/2021-lg-%EA%B7%B8%EB%9E%A8-16z90p-gp5el-%ED%8C%9D%EB%8B%88%EB%8B%A4-fwx6m6gywaup/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "프랑스맨",
-      "mannerTemperature": 49.3
-    },
-    {
-      "id": "9h3cgzuphxi3",
-      "changeType": "price_drop",
-      "previousPrice": 280000,
-      "price": 270000,
-      "priceDropPercent": 3.6,
-      "city": "군포시",
-      "location": "군포2동",
-      "regionPath": "경기도 군포시 군포2동",
-      "title": "상태좋은 10세대 삼성 15인치  노트북 NT350XCR",
-      "modelHint": "상태좋은 10세대 삼성 15인치  노트북 NT350XCR",
-      "cpuHint": null,
-      "cpuBaselinePass": null,
-      "gpuHint": null,
-      "vramGB": null,
-      "ramGB": 16,
-      "ambiguousMemoryGB": null,
-      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": "16g 램",
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": null,
-      "storageGB": 256,
-      "llmCapability": "SPEC_CHECK_REQUIRED",
-      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
-      "specConfidence": "needs_review",
-      "postedAt": "2026-09-30T09:11:58.494Z",
-      "boostedAt": "2026-10-08T05:07:30.584Z",
-      "status": "Ongoing",
-      "description": "상태좋은 10세대 15인치 삼성 노트북 NT350XCR 모델입니다. \n\n노트북이라 생활기스 정도는 있지만 깨끗합니다. \n눈에 띄는 기스는 터치패드 옆 기스정도입니다. 사진에 찍어두었습니다. \n\n너무 민감하신분은 피해주세요. \n\ni3-10110u\n16g 램\n256g ssd\n\n로 용량 넉넉하고 일반적인 업무는 빠릿합니다. 크게 두껍지 않아서 휴대성도 좋습니다. \n\n어댑터도 휴대성 더 좋은 lg 정품 어댑터로 사용중입니다. 동일 규격이라 상관없습니다.\n\n배터리도 3시간 정도는 사용 가능해서 급할때는 쓸만합니다. \n\n게임만 아니면 불편함 없을겁니다.\n\n윈도우10프로 정품이고 초기화해서 재설치 해 두었습니다. 바로 사용가능합니다. \n\n사진 자세하게 보시고 연락주세요. \n\n택배시 포장은 걱정 안하셔도 됩니다!",
-      "url": "https://www.daangn.com/kr/buy-sell/%EC%83%81%ED%83%9C%EC%A2%8B%EC%9D%80-10%EC%84%B8%EB%8C%80-%EC%82%BC%EC%84%B1-15%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-nt350xcr-9h3cgzuphxi3/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "가을하늘",
-      "mannerTemperature": 67.3
-    }
-  ]
+  "candidates": []
 }
