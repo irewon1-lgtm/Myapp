@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-09T13:44:57.114Z",
+  "generatedAt": "2026-10-09T14:02:24.129Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -53,35 +53,98 @@
       },
       "htmlSample": {
         "embeddedArticles": false,
-        "remixArticleSamples": [],
-        "dateFieldSnippets": [],
+        "remixArticleSamples": [
+          {
+            "id": "/kr/buy-sell/%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%A0%88%EB%85%B8%EB%B2%84-%EB%85%B8%ED%8A%B8%EB%B6%81-7%EC%84%B8%EB%8C%80-%EB%85%B8%ED%8A%B8%EB%B6%81-66hzwpuw5kh6/",
+            "href": "/kr/buy-sell/%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%A0%88%EB%85%B8%EB%B2%84-%EB%85%B8%ED%8A%B8%EB%B6%81-7%EC%84%B8%EB%8C%80-%EB%85%B8%ED%8A%B8%EB%B6%81-66hzwpuw5kh6/",
+            "title": "노트북 레노버 노트북 7세대 노트북",
+            "content": "레노버 i5 7세대 노트북 상태 깨끗\n인강 사무용 웹서핑 주식용 다양하게\n활용할수 있어요\n15.6인치 화질도  좋아요\n초기화 다했구요 윈도우 11 프로 인증완료\n한컴오피스 MS오피스 둘다 있습니다\ni5-7200U. RAM 8G(DDR4)\nintel HD Graphics 620\nSSD 250G\n",
+            "price": "350000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202609/9db2154e27e641fabb9e22d9c169270047164c5726ee1249482d0b329f2c5374_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-09-17T14:25:04.198Z",
+            "boostedAt": "2026-10-09T12:35:34.448Z",
+            "region": {
+              "name": "월피동"
+            },
+            "category": null,
+            "tradingCoordinates": []
+          },
+          {
+            "id": "/kr/buy-sell/hp-%ED%8C%8C%EB%B9%8C%EB%A6%AC%EC%98%A8-15%EC%9D%B8%EC%B9%98-%EC%82%AC%EB%AC%B4%EC%9A%A9%EB%85%B8%ED%8A%B8%EB%B6%81-5ztvfgimfxme/",
+            "href": "/kr/buy-sell/hp-%ED%8C%8C%EB%B9%8C%EB%A6%AC%EC%98%A8-15%EC%9D%B8%EC%B9%98-%EC%82%AC%EB%AC%B4%EC%9A%A9%EB%85%B8%ED%8A%B8%EB%B6%81-5ztvfgimfxme/",
+            "title": "hp 파빌리온 15인치 사무용노트북",
+            "content": "HP 파빌리온 15-cs2086TX\n\n- ​CPU : i5-8265U (위스키레이크)\n- ​RAM : 8GB\n- ​그래픽 : NVIDIA GeForce MX250 (2GB) / 인텔 UHD Graphics 620\n- ​저장장치 : SSD 256GB + HDD 1TB\n- OS : Window 10 pro\n\n배터리가 수명을 다한 상태입니다.\n(전원선 연결한 채로는 사용 가능)\n배터리 모델은 ht03xl이고 현재 쿠팡에서 3.6만정도 하네요.\n교체는 유튜브 영상 많으니 셀프로 쉽게 가능합니다.",
+            "price": "160000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/81d16a2b-0902-4987-bae4-1243fc453d45.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-09T13:08:43.871Z",
+            "boostedAt": "2026-10-09T13:08:43.869Z",
+            "region": {
+              "name": "호매실동"
+            },
+            "category": null,
+            "tradingCoordinates": [
+              {
+                "latitude": 37.25905961956197,
+                "longitude": 126.96072673820777
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/asus-tuf-fx504ge-en565t-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-gtx1050ti-44nevb5uuj5r/",
+            "href": "/kr/buy-sell/asus-tuf-fx504ge-en565t-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-gtx1050ti-44nevb5uuj5r/",
+            "title": "ASUS TUF FX504GE-EN565T 게이밍 노트북(GTX1050Ti)",
+            "content": "ASUS TUF FX504GE-EN565T 게이밍 노트북 판매해요. 39.6cm(15.6인치) 120Hz 화면에 GTX1050Ti 그래픽카드가 탑재되어 있어 게임을 즐기기 좋아요. \ni7-8750H 프로세서와 램 8GB, SSD 275GB가 장착되어 있어 빠른 속도를 경험할 수 있어요. \n이 노트북으로 쾌적한 게이밍 환경을 만들어보세요.\n\n2018년 9월 제조\n배터리 효율 약 80%\n충분히 사용감 있으나 파손 없음\n전반적으로 상태 양호한 편\n예민/민감한 분 사절\n노트북+어댑터 구성",
+            "price": "370000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/fd2220d6-dfc7-4099-aebe-681e1da98b7e.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-10-09T13:41:22.814Z",
+            "boostedAt": "2026-10-09T13:41:22.813Z",
+            "region": {
+              "name": "안양동"
+            },
+            "category": null,
+            "tradingCoordinates": []
+          }
+        ],
+        "dateFieldSnippets": [
+          "createdAt\":\"2026-09-17T14:25:04.198Z\",\"boostedAt\":\"2026-10-09T12:35:34.448Z\",\"region\":{\"name\":\"월피동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-09T13:08:43.871Z\",\"boostedAt\":\"2026-10-09T13:08:43.869Z\",\"region\":{\"name\":\"호매실동\"},\"category\":null,\"tradingCoo",
+          "createdAt\":\"2026-10-09T13:41:22.814Z\",\"boostedAt\":\"2026-10-09T13:41:22.813Z\",\"region\":{\"name\":\"안양동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-09T12:35:53.955Z\",\"boostedAt\":\"2026-10-09T12:35:53.949Z\",\"region\":{\"name\":\"내손2동\"},\"category\":null,\"tradingCoo",
+          "createdAt\":\"2026-10-09T12:40:55.086Z\",\"boostedAt\":\"2026-10-09T12:40:55.084Z\",\"region\":{\"name\":\"팽성읍\"},\"category\":null,\"tradingCoor"
+        ],
         "scriptHeads": [
-          "\n    (function(window, document, mode) {\n      try {\n        document.documentElement.dataset.seed = '';\n        document.documentElement.dataset.seedColorMode = mode;\n      } catch (e) {}\n\n      try {\n        var prefer",
           "window.sentryEnv = {\n  release: \"5cab355\",\n  environment: \"prod-kr\"\n};",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":259,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"노트북 레노버 노트북 7세대 노트북\",\"descript",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-94566b97.js\";\nimport * as route0 from \"/_remix/root-P4ns_lso.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-u7IPCM8v.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 994,
-    "globalUniqueListings": 404,
-    "duplicateListingsRemoved": 590,
-    "detailQueueStart": 8,
-    "freshDetailTasks": 8,
+    "searchUniqueListings": 1207,
+    "globalUniqueListings": 436,
+    "duplicateListingsRemoved": 771,
+    "detailQueueStart": 2,
+    "freshDetailTasks": 2,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 8,
-    "detailSucceeded": 8,
+    "detailRequestsExecuted": 2,
+    "detailSucceeded": 2,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 404,
+    "postedAtResolvedFromSearch": 436,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 87447,
+    "scanDurationMs": 81935,
     "cities": [
       {
         "city": "군포시",
@@ -93,8 +156,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 189,
-        "durationMs": 11826
+        "uniqueListings": 280,
+        "durationMs": 12406
       },
       {
         "city": "의왕시",
@@ -109,8 +172,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 321,
-        "durationMs": 25545
+        "uniqueListings": 345,
+        "durationMs": 25743
       },
       {
         "city": "안양시",
@@ -127,8 +190,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 305,
-        "durationMs": 34925
+        "uniqueListings": 323,
+        "durationMs": 35253
       },
       {
         "city": "과천시",
@@ -139,17 +202,17 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 179,
-        "durationMs": 6113
+        "uniqueListings": 259,
+        "durationMs": 6569
       }
     ],
     "finalCandidateCount": 0,
-    "stateItemCount": 3987,
+    "stateItemCount": 3989,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 87453
+    "durationMs": 81940
   },
   "candidates": []
 }
