@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-09T03:41:50.218Z",
+  "generatedAt": "2026-10-09T04:00:12.645Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -53,35 +53,98 @@
       },
       "htmlSample": {
         "embeddedArticles": false,
-        "remixArticleSamples": [],
-        "dateFieldSnippets": [],
+        "remixArticleSamples": [
+          {
+            "id": "/kr/buy-sell/%EA%B8%B0%EA%B0%80%EB%B0%94%EC%9D%B4%ED%8A%B8-i7-6700hq-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-smjv4fuk3rgp/",
+            "href": "/kr/buy-sell/%EA%B8%B0%EA%B0%80%EB%B0%94%EC%9D%B4%ED%8A%B8-i7-6700hq-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-smjv4fuk3rgp/",
+            "title": "기가바이트 i7-6700HQ 게이밍 노트북",
+            "content": "학원에서 사용하던 노트북 정리합니다.\n\n기가바이트 P15 게이밍 노트북\n인텔 코어 i7-6700HQ CPU\n8GB RAM, \n126GB SSD,512 sata hdd\nNVIDIA GeForce GTX 950M 그래픽 카드\n모니터,키보드,마우스패드 이상없고 외부상태 깔끔합니다.\n노트북 본체와 전원충전케이블 드려요.\n\n중고품인만큼 환불,교환안됩니다. 네고도 제발 사절합니다.",
+            "price": "200000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/af2f02ab-8a26-433a-993d-604ff745ed19.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-09T03:53:15.600Z",
+            "boostedAt": "2026-10-09T03:53:15.582Z",
+            "region": {
+              "name": "발산제1동"
+            },
+            "category": null,
+            "tradingCoordinates": [
+              {
+                "latitude": 37.5536749876521,
+                "longitude": 126.82724549020759
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt500r5m-k55s-15-6%EC%9D%B8%EC%B9%98-agntcaq5a9yg/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt500r5m-k55s-15-6%EC%9D%B8%EC%B9%98-agntcaq5a9yg/",
+            "title": "삼성 노트북 NT500R5M-K55S 15.6인치",
+            "content": "삼성 NT500R5M-K55S 모델의 검은색 노트북이에요.\n15.6인치 화면과 숫자 키패드가 있는 키보드를 갖췄어요.\n전원 어댑터와 전원 케이블이 함께 있어요.\n문서 작업이나 인터넷 검색용 노트북을 찾는 분께 추천해요.\n마우스와 거치대 같이 드립니다 \n금액 제안 받아요",
+            "price": "150000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/b746981f-45c0-4334-b9bf-9936c21ce53c.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-09T03:46:10.689Z",
+            "boostedAt": "2026-10-09T03:46:10.687Z",
+            "region": {
+              "name": "신광면"
+            },
+            "category": null,
+            "tradingCoordinates": []
+          },
+          {
+            "id": "/kr/buy-sell/msi-ms-16g52-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-9m2iy6ny2qio/",
+            "href": "/kr/buy-sell/msi-ms-16g52-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-9m2iy6ny2qio/",
+            "title": "MSI MS-16G52 게이밍 노트북",
+            "content": "MSI MS-16G52 게이밍 노트북이에요.\n15.6인치 화면과 숫자 키패드가 있어요.\n인텔 코어 i5-2450M 프로세서, 메모리 8GB, 지포스 GT 635M 그래픽 카드, 삼성 120GB SSD가 장착되어 있어요.\n게이밍 노트북을 찾는 분들께 추천드려요.\n키보드 번들거림등 사용감 없고\n파손 기스 찍힘 없이 깨끗합니다",
+            "price": "180000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/825e372acb383822219c413efb2ca1eda5c8d52199894a020fa2f20117ce5128_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-10-09T02:42:22.383Z",
+            "boostedAt": "2026-10-09T02:42:22.381Z",
+            "region": {
+              "name": "내손2동"
+            },
+            "category": null,
+            "tradingCoordinates": []
+          }
+        ],
+        "dateFieldSnippets": [
+          "createdAt\":\"2026-10-09T03:53:15.600Z\",\"boostedAt\":\"2026-10-09T03:53:15.582Z\",\"region\":{\"name\":\"발산제1동\"},\"category\":null,\"tradingCo",
+          "createdAt\":\"2026-10-09T03:46:10.689Z\",\"boostedAt\":\"2026-10-09T03:46:10.687Z\",\"region\":{\"name\":\"신광면\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-09T02:42:22.383Z\",\"boostedAt\":\"2026-10-09T02:42:22.381Z\",\"region\":{\"name\":\"내손2동\"},\"category\":null,\"tradingCoo",
+          "createdAt\":\"2026-10-09T03:47:33.302Z\",\"boostedAt\":\"2026-10-09T03:47:33.299Z\",\"region\":{\"name\":\"율전동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-06T05:02:21.927Z\",\"boostedAt\":\"2026-10-09T00:39:37.685Z\",\"region\":{\"name\":\"어룡동\"},\"category\":null,\"tradingCoor"
+        ],
         "scriptHeads": [
-          "\n    (function(window, document, mode) {\n      try {\n        document.documentElement.dataset.seed = '';\n        document.documentElement.dataset.seedColorMode = mode;\n      } catch (e) {}\n\n      try {\n        var prefer",
           "window.sentryEnv = {\n  release: \"5cab355\",\n  environment: \"prod-kr\"\n};",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":261,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"기가바이트 i7-6700HQ 게이밍 노트북\",\"desc",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-94566b97.js\";\nimport * as route0 from \"/_remix/root-P4ns_lso.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-u7IPCM8v.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 1029,
-    "globalUniqueListings": 446,
-    "duplicateListingsRemoved": 583,
-    "detailQueueStart": 4,
-    "freshDetailTasks": 4,
+    "searchUniqueListings": 1262,
+    "globalUniqueListings": 478,
+    "duplicateListingsRemoved": 784,
+    "detailQueueStart": 8,
+    "freshDetailTasks": 8,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 4,
-    "detailSucceeded": 4,
+    "detailRequestsExecuted": 8,
+    "detailSucceeded": 8,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 446,
+    "postedAtResolvedFromSearch": 478,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 0,
-    "scanDurationMs": 82941,
+    "candidateCount": 1,
+    "scanDurationMs": 88745,
     "cities": [
       {
         "city": "군포시",
@@ -93,8 +156,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 187,
-        "durationMs": 12131
+        "uniqueListings": 282,
+        "durationMs": 11909
       },
       {
         "city": "의왕시",
@@ -109,8 +172,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 314,
-        "durationMs": 25555
+        "uniqueListings": 368,
+        "durationMs": 25552
       },
       {
         "city": "안양시",
@@ -127,8 +190,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 351,
-        "durationMs": 34990
+        "uniqueListings": 355,
+        "durationMs": 35672
       },
       {
         "city": "과천시",
@@ -139,17 +202,53 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 177,
-        "durationMs": 6293
+        "uniqueListings": 257,
+        "durationMs": 6349
       }
     ],
-    "finalCandidateCount": 0,
-    "stateItemCount": 3792,
+    "finalCandidateCount": 1,
+    "stateItemCount": 3800,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 82946
+    "durationMs": 88748
   },
-  "candidates": []
+  "candidates": [
+    {
+      "id": "aku1dnozicxa",
+      "changeType": "price_drop",
+      "previousPrice": 125000,
+      "price": 120000,
+      "priceDropPercent": 4,
+      "city": "군포시",
+      "location": "산본동",
+      "regionPath": "경기도 군포시 산본동",
+      "title": "삼성 노트북 NT900X4D-A58 (i5, 8G, 128gb, 15인치)",
+      "modelHint": "삼성 노트북 NT900X4D-A58 (i5, 8G, 128gb, 15인치)",
+      "cpuHint": null,
+      "cpuBaselinePass": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 128,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "128gb",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "specConfidence": "needs_review",
+      "postedAt": "2026-10-08T02:54:57.507Z",
+      "boostedAt": "2026-10-08T02:54:57.504Z",
+      "status": "Ongoing",
+      "description": "삼성 노트북 NT900X4D-A58 모델입니다.\n\n인텔 i7 프로세서와 8GB RAM, 128GB 저장 공간을 갖추고 있으며 15인치 화면을 제공합니다.\n\n사진에서 보시는 것처럼 깔끔한 상태이며, 전원 어댑터가 포함되어 있습니다. \n파우치나 가방은 없어요.\n\n가볍고 슬림한 디자인으로 휴대성이 좋습니다. \n문서 작업이나 웹 서핑 등 일상적인 용도로 사용하기에 충분한 성능을 제공합니다.\n\n외관 상태는 깨끗하고 아주 좋아요.\n\n산본 이마트 옆 인베스텔(투데이몰)에서 직거래 가능하구요. 현금, 당근페이, 계좌 송금 거래 원합니다.\n\n교환/반품은 안되는 점 양해부탁드립니다.",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt900x4d-a58-i5-8g-128gb-15%EC%9D%B8%EC%B9%98-aku1dnozicxa/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "동키호테",
+      "mannerTemperature": 69.7
+    }
+  ]
 }
