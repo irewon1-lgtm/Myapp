@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-09T21:03:00.304Z",
+  "generatedAt": "2026-10-09T21:42:47.171Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -77,26 +77,21 @@
             ]
           },
           {
-            "id": "/kr/buy-sell/14%EC%9D%B8%EC%B9%98-%EB%9D%BC%EC%9D%B4%EC%A0%A0-hfzoy9cqt23g/",
-            "href": "/kr/buy-sell/14%EC%9D%B8%EC%B9%98-%EB%9D%BC%EC%9D%B4%EC%A0%A0-hfzoy9cqt23g/",
-            "title": "14인치 라이젠",
-            "content": "엘리트북 745 G5 /AMD Ryzen 5 PRO 2500U /8GB /NVMe 512GB 14인치\n\n사무용으로쓰다 안써거 잘 쓰실분께 ㅠ ㅠ",
-            "price": "252000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/1791461417031354eec92692386fc7dddeb3277d61c60a7f4d01dec768b1731183886038210750.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%EB%85%B8%ED%8A%B8%EB%B6%81-lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-%EA%B3%A8%EB%93%9C-13%EC%9D%B8%EC%B9%98-ruu6h5ojye1i/",
+            "href": "/kr/buy-sell/%EB%85%B8%ED%8A%B8%EB%B6%81-lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-%EA%B3%A8%EB%93%9C-13%EC%9D%B8%EC%B9%98-ruu6h5ojye1i/",
+            "title": "노트북 LG 그램 노트북 (골드, 13인치)",
+            "content": "가볍고 휴대하기 좋은 LG 그램 노트북이에요. 13인치 화면에 8GB RAM, 128MB 그래픽 메모리, 168GB 저장 공간을 갖추고 있어요. 인텔 i3-6100U CPU가 탑재되어 있어 일상적인 작업에 충분하답니다. 깔끔한 골드 색상으로 어디서든 돋보일 거예요. 가벼운 무게로 이동이 잦은 분들께 추천드려요.\n외관 약간의 기스 있구요..충전기도 좀 시원찬습니다.",
+            "price": "150000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/6e2a9ba7-5e34-4234-a8a7-124d4f3ecb2e.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-08T12:12:10.468Z",
-            "boostedAt": "2026-10-09T18:31:54.473Z",
+            "createdAt": "2026-10-06T12:28:27.110Z",
+            "boostedAt": "2026-10-08T15:04:28.758Z",
             "region": {
-              "name": "탕정면"
+              "name": "동호동"
             },
             "category": null,
-            "tradingCoordinates": [
-              {
-                "latitude": 36.77662038096737,
-                "longitude": 127.09392680760851
-              }
-            ]
+            "tradingCoordinates": []
           },
           {
             "id": "/kr/buy-sell/msi-ms-16g52-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-9m2iy6ny2qio/",
@@ -118,10 +113,10 @@
         ],
         "dateFieldSnippets": [
           "createdAt\":\"2026-10-09T20:52:46.216Z\",\"boostedAt\":\"2026-10-09T20:52:46.216Z\",\"region\":{\"name\":\"장지동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-08T12:12:10.468Z\",\"boostedAt\":\"2026-10-09T18:31:54.473Z\",\"region\":{\"name\":\"탕정면\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-06T12:28:27.110Z\",\"boostedAt\":\"2026-10-08T15:04:28.758Z\",\"region\":{\"name\":\"동호동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-09T02:42:22.383Z\",\"boostedAt\":\"2026-10-09T02:42:22.381Z\",\"region\":{\"name\":\"내손2동\"},\"category\":null,\"tradingCoo",
           "createdAt\":\"2026-10-09T17:17:14.750Z\",\"boostedAt\":\"2026-10-09T17:17:14.749Z\",\"region\":{\"name\":\"내손동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-09T20:26:05.100Z\",\"boostedAt\":\"2026-10-09T20:26:05.099Z\",\"region\":{\"name\":\"서둔동\"},\"category\":null,\"tradingCoor"
+          "createdAt\":\"2026-10-08T12:12:10.468Z\",\"boostedAt\":\"2026-10-09T18:31:54.473Z\",\"region\":{\"name\":\"탕정면\"},\"category\":null,\"tradingCoor"
         ],
         "scriptHeads": [
           "window.sentryEnv = {\n  release: \"5cab355\",\n  environment: \"prod-kr\"\n};",
@@ -132,24 +127,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1252,
-    "globalUniqueListings": 465,
-    "duplicateListingsRemoved": 787,
-    "detailQueueStart": 4,
-    "freshDetailTasks": 4,
+    "searchUniqueListings": 1157,
+    "globalUniqueListings": 439,
+    "duplicateListingsRemoved": 718,
+    "detailQueueStart": 2,
+    "freshDetailTasks": 2,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 4,
-    "detailSucceeded": 4,
+    "detailRequestsExecuted": 2,
+    "detailSucceeded": 2,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 465,
+    "postedAtResolvedFromSearch": 439,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 83993,
+    "scanDurationMs": 80677,
     "cities": [
       {
         "city": "군포시",
@@ -162,7 +157,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 281,
-        "durationMs": 11847
+        "durationMs": 12166
       },
       {
         "city": "의왕시",
@@ -177,8 +172,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 364,
-        "durationMs": 25645
+        "uniqueListings": 352,
+        "durationMs": 25342
       },
       {
         "city": "안양시",
@@ -195,8 +190,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 349,
-        "durationMs": 35179
+        "uniqueListings": 345,
+        "durationMs": 35092
       },
       {
         "city": "과천시",
@@ -207,17 +202,17 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 258,
-        "durationMs": 6859
+        "uniqueListings": 179,
+        "durationMs": 6211
       }
     ],
     "finalCandidateCount": 0,
-    "stateItemCount": 4063,
+    "stateItemCount": 4064,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 83998
+    "durationMs": 80682
   },
   "candidates": []
 }
