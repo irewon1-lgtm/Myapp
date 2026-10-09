@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-09T07:02:58.652Z",
+  "generatedAt": "2026-10-09T07:04:44.119Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -116,7 +116,7 @@
           "createdAt\":\"2026-10-09T06:24:05.395Z\",\"boostedAt\":\"2026-10-09T06:24:05.394Z\",\"region\":{\"name\":\"도안동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-09T02:42:22.383Z\",\"boostedAt\":\"2026-10-09T02:42:22.381Z\",\"region\":{\"name\":\"내손2동\"},\"category\":null,\"tradingCoo",
           "createdAt\":\"2026-10-08T02:54:57.507Z\",\"boostedAt\":\"2026-10-08T02:54:57.504Z\",\"region\":{\"name\":\"산본동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-07T02:08:00.792Z\",\"boostedAt\":\"2026-10-09T04:01:12.676Z\",\"region\":{\"name\":\"청산면\"},\"category\":null,\"tradingCoor"
+          "createdAt\":\"2026-10-09T06:44:58.311Z\",\"boostedAt\":\"2026-10-09T06:44:58.306Z\",\"region\":{\"name\":\"별내동\"},\"category\":null,\"tradingCoor"
         ],
         "scriptHeads": [
           "window.sentryEnv = {\n  release: \"5cab355\",\n  environment: \"prod-kr\"\n};",
@@ -127,24 +127,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1123,
-    "globalUniqueListings": 426,
-    "duplicateListingsRemoved": 697,
-    "detailQueueStart": 11,
-    "freshDetailTasks": 11,
+    "searchUniqueListings": 1116,
+    "globalUniqueListings": 425,
+    "duplicateListingsRemoved": 691,
+    "detailQueueStart": 1,
+    "freshDetailTasks": 1,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 11,
-    "detailSucceeded": 11,
+    "detailRequestsExecuted": 1,
+    "detailSucceeded": 1,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 426,
+    "postedAtResolvedFromSearch": 425,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 93196,
+    "scanDurationMs": 80012,
     "cities": [
       {
         "city": "군포시",
@@ -157,7 +157,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 278,
-        "durationMs": 12458
+        "durationMs": 11833
       },
       {
         "city": "의왕시",
@@ -173,7 +173,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 326,
-        "durationMs": 25630
+        "durationMs": 26055
       },
       {
         "city": "안양시",
@@ -190,8 +190,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 340,
-        "durationMs": 35230
+        "uniqueListings": 333,
+        "durationMs": 35184
       },
       {
         "city": "과천시",
@@ -203,16 +203,16 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 179,
-        "durationMs": 6581
+        "durationMs": 6529
       }
     ],
     "finalCandidateCount": 0,
-    "stateItemCount": 3865,
+    "stateItemCount": 3866,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 93201
+    "durationMs": 80017
   },
   "candidates": []
 }
