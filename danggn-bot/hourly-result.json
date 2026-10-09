@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-09T09:59:49.525Z",
+  "generatedAt": "2026-10-09T10:24:44.115Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -121,35 +121,35 @@
           "createdAt\":\"2026-10-09T09:48:18.431Z\",\"boostedAt\":\"2026-10-09T09:48:18.428Z\",\"region\":{\"name\":\"호계동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-09T09:22:45.218Z\",\"boostedAt\":\"2026-10-09T09:22:45.216Z\",\"region\":{\"name\":\"용현5동\"},\"category\":null,\"tradingCoo",
           "createdAt\":\"2026-10-08T02:54:57.507Z\",\"boostedAt\":\"2026-10-08T02:54:57.504Z\",\"region\":{\"name\":\"산본동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-09T08:40:35.648Z\",\"boostedAt\":\"2026-10-09T08:40:35.646Z\",\"region\":{\"name\":\"석수1동\"},\"category\":null,\"tradingCoo"
+          "createdAt\":\"2026-10-09T06:14:53.709Z\",\"boostedAt\":\"2026-10-09T06:14:53.708Z\",\"region\":{\"name\":\"주덕읍\"},\"category\":null,\"tradingCoor"
         ],
         "scriptHeads": [
           "window.sentryEnv = {\n  release: \"5cab355\",\n  environment: \"prod-kr\"\n};",
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":258,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"노트북 팝니다\",\"description\":\"가볍고 휴대",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":259,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"노트북 팝니다\",\"description\":\"가볍고 휴대",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-94566b97.js\";\nimport * as route0 from \"/_remix/root-P4ns_lso.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-u7IPCM8v.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 1156,
-    "globalUniqueListings": 450,
-    "duplicateListingsRemoved": 706,
-    "detailQueueStart": 6,
-    "freshDetailTasks": 6,
+    "searchUniqueListings": 1170,
+    "globalUniqueListings": 458,
+    "duplicateListingsRemoved": 712,
+    "detailQueueStart": 10,
+    "freshDetailTasks": 10,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 6,
-    "detailSucceeded": 6,
+    "detailRequestsExecuted": 10,
+    "detailSucceeded": 10,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 450,
+    "postedAtResolvedFromSearch": 458,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 2,
-    "scanDurationMs": 86824,
+    "candidateCount": 0,
+    "scanDurationMs": 91038,
     "cities": [
       {
         "city": "군포시",
@@ -161,8 +161,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 281,
-        "durationMs": 12464
+        "uniqueListings": 284,
+        "durationMs": 12512
       },
       {
         "city": "의왕시",
@@ -177,8 +177,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 363,
-        "durationMs": 25748
+        "uniqueListings": 364,
+        "durationMs": 25641
       },
       {
         "city": "안양시",
@@ -195,8 +195,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 333,
-        "durationMs": 35301
+        "uniqueListings": 343,
+        "durationMs": 34790
       },
       {
         "city": "과천시",
@@ -208,87 +208,16 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 179,
-        "durationMs": 6701
+        "durationMs": 6559
       }
     ],
-    "finalCandidateCount": 2,
-    "stateItemCount": 3915,
+    "finalCandidateCount": 0,
+    "stateItemCount": 3919,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 86829
+    "durationMs": 91043
   },
-  "candidates": [
-    {
-      "id": "eoyz6ndyd53o",
-      "changeType": "new",
-      "previousPrice": null,
-      "price": 450000,
-      "priceDropPercent": null,
-      "city": "안양시",
-      "location": "호계동",
-      "regionPath": "경기도 안양시 동안구 호계동",
-      "title": "LG 그램 15인치 화이트 노트북",
-      "modelHint": "LG 그램 15인치 화이트 노트북",
-      "cpuHint": null,
-      "cpuBaselinePass": null,
-      "gpuHint": null,
-      "vramGB": null,
-      "ramGB": null,
-      "ambiguousMemoryGB": 128,
-      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": null,
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": "128GB",
-      "storageGB": null,
-      "llmCapability": "SPEC_CHECK_REQUIRED",
-      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
-      "specConfidence": "needs_review",
-      "postedAt": "2026-10-09T09:48:18.431Z",
-      "boostedAt": "2026-10-09T09:48:18.428Z",
-      "status": "Ongoing",
-      "description": "LG 그램 15인치 화이트 노트북이에요.\n인텔 코어 i3-10110U 프로세서와 8GB 메모리, 128GB 저장 공간을 갖췄어요.\n화면은 1920×1080 해상도이며, USB 포트와 HDMI 포트가 있어요.",
-      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-15%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-%EB%85%B8%ED%8A%B8%EB%B6%81-eoyz6ndyd53o/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "정리의삶",
-      "mannerTemperature": 79.5
-    },
-    {
-      "id": "cm6jnahqwnrb",
-      "changeType": "new",
-      "previousPrice": null,
-      "price": 1250000,
-      "priceDropPercent": null,
-      "city": "안양시",
-      "location": "호현동",
-      "regionPath": "경기도 안양시 만안구 호현동",
-      "title": "17인치 4070 게이밍 노트북 팝니다",
-      "modelHint": "17인치 4070 게이밍 노트북 팝니다",
-      "cpuHint": null,
-      "cpuBaselinePass": null,
-      "gpuHint": null,
-      "vramGB": null,
-      "ramGB": null,
-      "ambiguousMemoryGB": 16,
-      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": null,
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": "16기가",
-      "storageGB": 512,
-      "llmCapability": "SPEC_CHECK_REQUIRED",
-      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
-      "specConfidence": "needs_review",
-      "postedAt": "2026-10-09T09:42:31.012Z",
-      "boostedAt": "2026-10-09T09:42:31.010Z",
-      "status": "Ongoing",
-      "description": "모든게임 다 잘 돌아가고 17인치로 화면도 커서 쾌적합니다\nCpu 라이젠9 7945hx\n램 ddr5 16기가\n그래픽 4070\nSsd 512gb\n이며 외관 이상없고\n풀박스 보유중입니다",
-      "url": "https://www.daangn.com/kr/buy-sell/17%EC%9D%B8%EC%B9%98-4070-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%9D%EB%8B%88%EB%8B%A4-cm6jnahqwnrb/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "복주머니랑",
-      "mannerTemperature": 53.2
-    }
-  ]
+  "candidates": []
 }
