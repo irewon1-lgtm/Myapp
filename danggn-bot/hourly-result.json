@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-09T08:43:09.599Z",
+  "generatedAt": "2026-10-09T09:00:10.479Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -64,24 +64,24 @@
         ]
       }
     },
-    "searchUniqueListings": 924,
-    "globalUniqueListings": 389,
-    "duplicateListingsRemoved": 535,
-    "detailQueueStart": 7,
-    "freshDetailTasks": 7,
+    "searchUniqueListings": 1020,
+    "globalUniqueListings": 412,
+    "duplicateListingsRemoved": 608,
+    "detailQueueStart": 9,
+    "freshDetailTasks": 9,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 7,
-    "detailSucceeded": 7,
+    "detailRequestsExecuted": 9,
+    "detailSucceeded": 9,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 389,
+    "postedAtResolvedFromSearch": 412,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 1,
-    "scanDurationMs": 87197,
+    "candidateCount": 0,
+    "scanDurationMs": 90508,
     "cities": [
       {
         "city": "군포시",
@@ -93,8 +93,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 187,
-        "durationMs": 12252
+        "uniqueListings": 188,
+        "durationMs": 12187
       },
       {
         "city": "의왕시",
@@ -109,8 +109,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 333,
-        "durationMs": 25522
+        "uniqueListings": 349,
+        "durationMs": 25611
       },
       {
         "city": "안양시",
@@ -127,8 +127,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 225,
-        "durationMs": 35351
+        "uniqueListings": 304,
+        "durationMs": 35479
       },
       {
         "city": "과천시",
@@ -140,52 +140,16 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 179,
-        "durationMs": 6225
+        "durationMs": 6854
       }
     ],
-    "finalCandidateCount": 1,
-    "stateItemCount": 3896,
+    "finalCandidateCount": 0,
+    "stateItemCount": 3900,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 87200
+    "durationMs": 90512
   },
-  "candidates": [
-    {
-      "id": "etgxz5a1oqrk",
-      "changeType": "new",
-      "previousPrice": null,
-      "price": 590000,
-      "priceDropPercent": null,
-      "city": "안양시",
-      "location": "인덕원동",
-      "regionPath": "경기도 안양시 동안구 인덕원동",
-      "title": "갤럭시북 i5 11세대 ram 16g SSD 512G",
-      "modelHint": "갤럭시북 i5 11세대 ram 16g SSD 512G",
-      "cpuHint": null,
-      "cpuBaselinePass": null,
-      "gpuHint": null,
-      "vramGB": null,
-      "ramGB": 16,
-      "ambiguousMemoryGB": 16,
-      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": "ram 16g",
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": "16g",
-      "storageGB": 512,
-      "llmCapability": "SPEC_CHECK_REQUIRED",
-      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
-      "specConfidence": "needs_review",
-      "postedAt": "2026-10-09T08:27:16.487Z",
-      "boostedAt": "2026-10-09T08:27:16.485Z",
-      "status": "Ongoing",
-      "description": "무게 1kg 가량 가벼운 갤럭시 북입니다.\n\n스펙은 i5 11세대, ram 16g, 저장공간 512g, 그래픽 mx 450\n\n제품상태 연식에 비해 매우 깨끗하며 사무용으로 빠르고 쾌적합니다\n\n화면에 녹색 데드픽셀 1개 있는데 볼펜 점 1개 크기라서 사용상 문제 없습니다 (사진참조)\n\n직거래만 가능하며 장소는 역삼역 3번출구 뒷편 삼정 KPMG 별관 앞에서 합니다 \n\n네고문의 및 제품구매와 관련없는 문의사항은 답장드리지 않는 점 양해 부탁드립니다 \n\n감사합니다.",
-      "url": "https://www.daangn.com/kr/buy-sell/%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%81-i5-11%EC%84%B8%EB%8C%80-ram-16g-ssd-512g-etgxz5a1oqrk/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "라이언",
-      "mannerTemperature": 49.4
-    }
-  ]
+  "candidates": []
 }
