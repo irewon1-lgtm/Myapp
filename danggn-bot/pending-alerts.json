@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-08T23:56:59.237970Z",
+  "updatedAt": "2026-10-09T00:33:05.283354Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -2251,6 +2251,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%814-1288hts3r6tw/",
       "firstAlertedAt": "2026-10-08T19:59:13.488940Z",
       "lastCandidateAt": "2026-10-08T19:59:13.488940Z"
+    },
+    "bzih4scgxifz": {
+      "id": "bzih4scgxifz",
+      "title": "삼성 갤럭시",
+      "price": 18000000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "호계동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 32,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "램 32GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "postedAt": "2026-10-09T00:31:26.747Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C-bzih4scgxifz/",
+      "firstAlertedAt": "2026-10-09T00:33:05.283354Z",
+      "lastCandidateAt": "2026-10-09T00:33:05.283354Z"
     }
   }
 }
