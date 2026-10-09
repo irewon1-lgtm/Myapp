@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-09T18:03:07.676634Z",
+  "updatedAt": "2026-10-09T18:43:00.962606Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -2626,6 +2626,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EA%B8%89%EC%B3%90-%EC%B5%9C%EC%8B%A0-lg-%EA%B7%B8%EB%9E%A8-14%EC%9D%B8%EC%B9%98-14zb90s-gp56ml-7qyw2vovtpea/",
       "firstAlertedAt": "2026-10-09T14:45:57.888738Z",
       "lastCandidateAt": "2026-10-09T14:45:57.888738Z"
+    },
+    "ttrvwokgr9vv": {
+      "id": "ttrvwokgr9vv",
+      "title": "레노버 리전5 프로 16인치 RTX3080",
+      "price": 1400000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "범계동",
+      "cpuHint": null,
+      "gpuHint": "RTX3080",
+      "vramGB": null,
+      "ramGB": 32,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "32GB RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 1024,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "postedAt": "2026-10-09T18:32:59.370Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EB%A6%AC%EC%A0%845-%ED%94%84%EB%A1%9C-16%EC%9D%B8%EC%B9%98-rtx3080-ttrvwokgr9vv/",
+      "firstAlertedAt": "2026-10-09T18:43:00.962606Z",
+      "lastCandidateAt": "2026-10-09T18:43:00.962606Z"
     }
   }
 }
