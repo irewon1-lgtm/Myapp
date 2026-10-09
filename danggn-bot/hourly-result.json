@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-09T13:23:02.237Z",
+  "generatedAt": "2026-10-09T13:25:51.245Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -120,36 +120,36 @@
           "createdAt\":\"2026-10-09T13:08:43.871Z\",\"boostedAt\":\"2026-10-09T13:08:43.869Z\",\"region\":{\"name\":\"호매실동\"},\"category\":null,\"tradingCoo",
           "createdAt\":\"2026-09-17T14:25:04.198Z\",\"boostedAt\":\"2026-10-09T12:35:34.448Z\",\"region\":{\"name\":\"월피동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-09T12:35:53.955Z\",\"boostedAt\":\"2026-10-09T12:35:53.949Z\",\"region\":{\"name\":\"내손2동\"},\"category\":null,\"tradingCoo",
-          "createdAt\":\"2026-10-09T12:13:43.918Z\",\"boostedAt\":\"2026-10-09T12:13:43.916Z\",\"region\":{\"name\":\"내손2동\"},\"category\":null,\"tradingCoo",
+          "createdAt\":\"2026-10-09T02:42:22.383Z\",\"boostedAt\":\"2026-10-09T02:42:22.381Z\",\"region\":{\"name\":\"내손2동\"},\"category\":null,\"tradingCoo",
           "createdAt\":\"2026-10-09T12:35:18.169Z\",\"boostedAt\":\"2026-10-09T12:35:18.164Z\",\"region\":{\"name\":\"팽성읍\"},\"category\":null,\"tradingCoor"
         ],
         "scriptHeads": [
           "window.sentryEnv = {\n  release: \"5cab355\",\n  environment: \"prod-kr\"\n};",
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":261,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"hp 파빌리온 15인치 사무용노트북\",\"descript",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":260,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"hp 파빌리온 15인치 사무용노트북\",\"descript",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-94566b97.js\";\nimport * as route0 from \"/_remix/root-P4ns_lso.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-u7IPCM8v.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 1134,
-    "globalUniqueListings": 443,
-    "duplicateListingsRemoved": 691,
-    "detailQueueStart": 12,
-    "freshDetailTasks": 12,
+    "searchUniqueListings": 1158,
+    "globalUniqueListings": 450,
+    "duplicateListingsRemoved": 708,
+    "detailQueueStart": 2,
+    "freshDetailTasks": 2,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 12,
-    "detailSucceeded": 12,
+    "detailRequestsExecuted": 2,
+    "detailSucceeded": 2,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 443,
+    "postedAtResolvedFromSearch": 450,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 93387,
+    "scanDurationMs": 81718,
     "cities": [
       {
         "city": "군포시",
@@ -161,8 +161,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 280,
-        "durationMs": 12324
+        "uniqueListings": 281,
+        "durationMs": 12139
       },
       {
         "city": "의왕시",
@@ -177,8 +177,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 341,
-        "durationMs": 25639
+        "uniqueListings": 359,
+        "durationMs": 25850
       },
       {
         "city": "안양시",
@@ -195,8 +195,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 334,
-        "durationMs": 35146
+        "uniqueListings": 339,
+        "durationMs": 34958
       },
       {
         "city": "과천시",
@@ -208,16 +208,16 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 179,
-        "durationMs": 6294
+        "durationMs": 6567
       }
     ],
     "finalCandidateCount": 0,
-    "stateItemCount": 3981,
+    "stateItemCount": 3982,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 93392
+    "durationMs": 81723
   },
   "candidates": []
 }
