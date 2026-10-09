@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-09T00:33:05.218Z",
+  "generatedAt": "2026-10-09T00:34:48.385Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,10 +55,27 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
+            "id": "/kr/buy-sell/hp-%EB%85%B8%ED%8A%B8%EB%B6%81-15-r030tx-15-6-det2jqn8rr37/",
+            "href": "/kr/buy-sell/hp-%EB%85%B8%ED%8A%B8%EB%B6%81-15-r030tx-15-6-det2jqn8rr37/",
+            "title": "HP 노트북 15-r030TX 15.6\"",
+            "content": "HP 노트북 HP 15-r03tx 15.6\"\ni3 4005U (1.7GHz)\nssd 128g \n메모리 8g \n그래픽카드 GeForce  GTX 820M 2g\n배터리 방전 입니다 \n전원 연결 해서 사용하면 이상 없습니다 배터리만 구입 하면 됩니다 \n상태 아주 깨끗합니다 \n어댑터,유선마우스 있습니다\n윈도우11,한글,엑셀 파워포인트 각종 문서프로그램 설치되어 바로사용 가능합니다 ",
+            "price": "85000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/b3d4d3d9-dc65-46dd-bc2f-fa6e3c1f6c8d.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-09T00:31:43.898Z",
+            "boostedAt": "2026-10-09T00:31:43.894Z",
+            "region": {
+              "name": "송천1동"
+            },
+            "category": null,
+            "tradingCoordinates": []
+          },
+          {
             "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-14%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-14z970-3u8msh52j55k/",
             "href": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-14%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-14z970-3u8msh52j55k/",
             "title": "LG 그램 14인치 노트북 (14Z970)",
-            "content": "LG 그램 14인치 노트북입니다. 인텔 코어 i5 CPU와 8GB RAM으로 쾌적한 사용이 가능해요. 가볍고 슬림한 디자인으로 휴대하기 좋아요. 사진에서 보이는 구성품 그대로 드려요. 가벼운 작업부터 멀티미디어 감상까지 모두 만족시켜 줄 거예요.",
+            "content": "LG 그램 14인치 노트북입니다. (14Z970)\n사용감 많습니다. 초기화 하였습니다.",
             "price": "99000",
             "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/179150579434763ef8ae56fd09af92a021fccc4893cac4b794dffde44b6de70a015a30770a2bc0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
@@ -75,23 +92,6 @@
                 "longitude": 126.93297759737277
               }
             ]
-          },
-          {
-            "id": "/kr/buy-sell/hp-13%EC%9D%B8%EC%B9%98-%EC%82%AC%EB%AC%B4%EC%9A%A9-%EB%85%B8%ED%8A%B8%EB%B6%81-f16jtkm4x2g5/",
-            "href": "/kr/buy-sell/hp-13%EC%9D%B8%EC%B9%98-%EC%82%AC%EB%AC%B4%EC%9A%A9-%EB%85%B8%ED%8A%B8%EB%B6%81-f16jtkm4x2g5/",
-            "title": "HP 13인치 사무용 노트북",
-            "content": "사무용 인강용\n HP 13인치 5세대 슬림형 노트북 (HP 430 G2)\n\n▪CPU - Intel i5-5200U\n▪RAM - 8G\n▪HDD - SSD 120G\n▪배터리방전\n▪본체 + 어댑터\n\n윈도10 + 한글2024 + 오피스2024  클린설치\n외관 흠집없고 빠르게 작동",
-            "price": "100000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202609/0a778220-86e4-4c97-a15b-d087dceee648.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-08T23:39:14.712Z",
-            "boostedAt": "2026-10-08T23:39:14.712Z",
-            "region": {
-              "name": "장유3동"
-            },
-            "category": null,
-            "tradingCoordinates": []
           },
           {
             "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt900x4d-a58-i5-8g-128gb-15%EC%9D%B8%EC%B9%98-aku1dnozicxa/",
@@ -117,39 +117,39 @@
           }
         ],
         "dateFieldSnippets": [
+          "createdAt\":\"2026-10-09T00:31:43.898Z\",\"boostedAt\":\"2026-10-09T00:31:43.894Z\",\"region\":{\"name\":\"송천1동\"},\"category\":null,\"tradingCoo",
           "createdAt\":\"2026-10-09T00:30:41.045Z\",\"boostedAt\":\"2026-10-09T00:30:41.041Z\",\"region\":{\"name\":\"안양6동\"},\"category\":null,\"tradingCoo",
-          "createdAt\":\"2026-10-08T23:39:14.712Z\",\"boostedAt\":\"2026-10-08T23:39:14.712Z\",\"region\":{\"name\":\"장유3동\"},\"category\":null,\"tradingCoo",
           "createdAt\":\"2026-10-08T02:54:57.507Z\",\"boostedAt\":\"2026-10-08T02:54:57.504Z\",\"region\":{\"name\":\"산본동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-09T00:12:14.948Z\",\"boostedAt\":\"2026-10-09T00:12:14.944Z\",\"region\":{\"name\":\"연수3동\"},\"category\":null,\"tradingCoo",
-          "createdAt\":\"2026-10-08T13:36:44.345Z\",\"boostedAt\":\"2026-10-08T13:36:44.343Z\",\"region\":{\"name\":\"오금동\"},\"category\":null,\"tradingCoor"
+          "createdAt\":\"2026-10-08T23:39:14.712Z\",\"boostedAt\":\"2026-10-08T23:39:14.712Z\",\"region\":{\"name\":\"장유3동\"},\"category\":null,\"tradingCoo",
+          "createdAt\":\"2026-10-09T00:12:14.948Z\",\"boostedAt\":\"2026-10-09T00:12:14.944Z\",\"region\":{\"name\":\"연수3동\"},\"category\":null,\"tradingCoo"
         ],
         "scriptHeads": [
           "window.sentryEnv = {\n  release: \"5cab355\",\n  environment: \"prod-kr\"\n};",
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":263,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG 그램 14인치 노트북 (14Z970)\",\"desc",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":263,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"HP 노트북 15-r030TX 15.6\\\"\",\"desc",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-94566b97.js\";\nimport * as route0 from \"/_remix/root-P4ns_lso.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-u7IPCM8v.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 1265,
-    "globalUniqueListings": 479,
-    "duplicateListingsRemoved": 786,
-    "detailQueueStart": 10,
-    "freshDetailTasks": 10,
+    "searchUniqueListings": 1178,
+    "globalUniqueListings": 462,
+    "duplicateListingsRemoved": 716,
+    "detailQueueStart": 2,
+    "freshDetailTasks": 2,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 10,
-    "detailSucceeded": 10,
+    "detailRequestsExecuted": 2,
+    "detailSucceeded": 2,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 479,
+    "postedAtResolvedFromSearch": 462,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 1,
-    "scanDurationMs": 92068,
+    "scanDurationMs": 81105,
     "cities": [
       {
         "city": "군포시",
@@ -161,8 +161,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 286,
-        "durationMs": 12462
+        "uniqueListings": 287,
+        "durationMs": 12437
       },
       {
         "city": "의왕시",
@@ -177,8 +177,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 368,
-        "durationMs": 25862
+        "uniqueListings": 367,
+        "durationMs": 25110
       },
       {
         "city": "안양시",
@@ -195,8 +195,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 355,
-        "durationMs": 35215
+        "uniqueListings": 348,
+        "durationMs": 35352
       },
       {
         "city": "과천시",
@@ -207,25 +207,25 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 256,
-        "durationMs": 6776
+        "uniqueListings": 176,
+        "durationMs": 6340
       }
     ],
     "finalCandidateCount": 1,
-    "stateItemCount": 3716,
+    "stateItemCount": 3717,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 92073
+    "durationMs": 81109
   },
   "candidates": [
     {
       "id": "bzih4scgxifz",
-      "changeType": "new",
-      "previousPrice": null,
+      "changeType": "price_drop",
+      "previousPrice": 18000000,
       "price": 18000000,
-      "priceDropPercent": null,
+      "priceDropPercent": 0,
       "city": "안양시",
       "location": "호계동",
       "regionPath": "경기도 안양시 동안구 호계동",
