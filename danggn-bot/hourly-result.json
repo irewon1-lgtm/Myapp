@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-09T05:40:43.626Z",
+  "generatedAt": "2026-10-09T05:59:00.107Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -72,21 +72,26 @@
             "tradingCoordinates": []
           },
           {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-15%EC%9D%B8%EC%B9%98-i5-8gb-ram-256gb-ssd-7jp9a3gj8wq6/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-15%EC%9D%B8%EC%B9%98-i5-8gb-ram-256gb-ssd-7jp9a3gj8wq6/",
-            "title": "삼성 노트북 15인치 i5 8GB RAM 256GB SSD",
-            "content": "깔끔한 삼성 노트북 NT750XBE-K39M 판매합니다.\n인텔 i5-8265U CPU와 8GB RAM, 256GB SSD를 탑재하여 인터넷 서핑, 문서 작업, 인강 시청 등 빠르고 쾌적하게 사용 가능합니다. 가볍고 슬림한 디자인이라 휴대하며 들고 다니기에도 정말 좋습니다.\n• 모델명: NT750XBE\n• 주요 사양:\n\t• CPU: Intel Core i5-8265U\n\t• RAM: 8GB\n\t• 저장공간: SSD 256GB\n• 구성품: 노트북 본체, 충전 어댑터\n배터리 효율또한 87.5% 매우 양호합니다\n노트북 상태는 사진에서 보시는 것처럼 생활기스 및  생활흔적있습니다 . 이 노트북으로 당신의 일상을 더욱 스마트하게 만들어보세요!\n\n네고문의 응답안합니다",
-            "price": "250000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/a690fa8ecade54ad81f71c0be904b6436f7707b2ea2dbcb3ef3aecdb1c6934e5_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt900x4d-a58-i5-8g-128gb-15%EC%9D%B8%EC%B9%98-aku1dnozicxa/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt900x4d-a58-i5-8g-128gb-15%EC%9D%B8%EC%B9%98-aku1dnozicxa/",
+            "title": "삼성 노트북 NT900X4D-A58 (i5, 8G, 128gb, 15인치)",
+            "content": "삼성 노트북 NT900X4D-A58 모델입니다.\n\n인텔 i7 프로세서와 8GB RAM, 128GB 저장 공간을 갖추고 있으며 15인치 화면을 제공합니다.\n\n사진에서 보시는 것처럼 깔끔한 상태이며, 전원 어댑터가 포함되어 있습니다. \n파우치나 가방은 없어요.\n\n가볍고 슬림한 디자인으로 휴대성이 좋습니다. \n문서 작업이나 웹 서핑 등 일상적인 용도로 사용하기에 충분한 성능을 제공합니다.\n\n외관 상태는 깨끗하고 아주 좋아요.\n\n산본 이마트 옆 인베스텔(투데이몰)에서 직거래 가능하구요. 현금, 당근페이, 계좌 송금 거래 원합니다.\n\n교환/반품은 안되는 점 양해부탁드립니다.",
+            "price": "120000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/e97022bc-aae7-4617-9b2c-cb4ae33d3107.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-09T05:03:17.411Z",
-            "boostedAt": "2026-10-09T05:03:17.411Z",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-10-08T02:54:57.507Z",
+            "boostedAt": "2026-10-08T02:54:57.504Z",
             "region": {
-              "name": "부곡제3동"
+              "name": "산본동"
             },
             "category": null,
-            "tradingCoordinates": []
+            "tradingCoordinates": [
+              {
+                "latitude": 37.36047104894929,
+                "longitude": 126.93055923596444
+              }
+            ]
           },
           {
             "id": "/kr/buy-sell/msi-ms-16g52-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-9m2iy6ny2qio/",
@@ -108,38 +113,38 @@
         ],
         "dateFieldSnippets": [
           "createdAt\":\"2026-10-09T03:59:27.450Z\",\"boostedAt\":\"2026-10-09T03:59:27.440Z\",\"region\":{\"name\":\"청산면\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-09T05:03:17.411Z\",\"boostedAt\":\"2026-10-09T05:03:17.411Z\",\"region\":{\"name\":\"부곡제3동\"},\"category\":null,\"tradingCo",
+          "createdAt\":\"2026-10-08T02:54:57.507Z\",\"boostedAt\":\"2026-10-08T02:54:57.504Z\",\"region\":{\"name\":\"산본동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-09T02:42:22.383Z\",\"boostedAt\":\"2026-10-09T02:42:22.381Z\",\"region\":{\"name\":\"내손2동\"},\"category\":null,\"tradingCoo",
-          "createdAt\":\"2026-10-07T02:08:00.792Z\",\"boostedAt\":\"2026-10-09T04:01:12.676Z\",\"region\":{\"name\":\"청산면\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-09T03:53:15.600Z\",\"boostedAt\":\"2026-10-09T03:53:15.582Z\",\"region\":{\"name\":\"발산제1동\"},\"category\":null,\"tradingCo"
+          "createdAt\":\"2026-10-09T05:03:17.411Z\",\"boostedAt\":\"2026-10-09T05:03:17.411Z\",\"region\":{\"name\":\"부곡제3동\"},\"category\":null,\"tradingCo",
+          "createdAt\":\"2026-10-07T02:08:00.792Z\",\"boostedAt\":\"2026-10-09T04:01:12.676Z\",\"region\":{\"name\":\"청산면\"},\"category\":null,\"tradingCoor"
         ],
         "scriptHeads": [
           "window.sentryEnv = {\n  release: \"5cab355\",\n  environment: \"prod-kr\"\n};",
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":260,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"아수스 게이밍 노트북\",\"description\":\"CP",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":259,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"아수스 게이밍 노트북\",\"description\":\"CP",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-94566b97.js\";\nimport * as route0 from \"/_remix/root-P4ns_lso.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-u7IPCM8v.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 1178,
-    "globalUniqueListings": 460,
-    "duplicateListingsRemoved": 718,
-    "detailQueueStart": 5,
-    "freshDetailTasks": 5,
+    "searchUniqueListings": 1154,
+    "globalUniqueListings": 446,
+    "duplicateListingsRemoved": 708,
+    "detailQueueStart": 3,
+    "freshDetailTasks": 3,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 5,
-    "detailSucceeded": 5,
+    "detailRequestsExecuted": 3,
+    "detailSucceeded": 3,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 460,
+    "postedAtResolvedFromSearch": 446,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 1,
-    "scanDurationMs": 84338,
+    "candidateCount": 0,
+    "scanDurationMs": 83310,
     "cities": [
       {
         "city": "군포시",
@@ -151,8 +156,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 285,
-        "durationMs": 12093
+        "uniqueListings": 284,
+        "durationMs": 12290
       },
       {
         "city": "의왕시",
@@ -167,8 +172,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 373,
-        "durationMs": 25432
+        "uniqueListings": 370,
+        "durationMs": 25659
       },
       {
         "city": "안양시",
@@ -185,8 +190,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 341,
-        "durationMs": 35055
+        "uniqueListings": 321,
+        "durationMs": 35224
       },
       {
         "city": "과천시",
@@ -198,52 +203,16 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 179,
-        "durationMs": 6115
+        "durationMs": 6945
       }
     ],
-    "finalCandidateCount": 1,
-    "stateItemCount": 3840,
+    "finalCandidateCount": 0,
+    "stateItemCount": 3844,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 84342
+    "durationMs": 83315
   },
-  "candidates": [
-    {
-      "id": "cxkqux58q2c6",
-      "changeType": "new",
-      "previousPrice": null,
-      "price": 1490000,
-      "priceDropPercent": null,
-      "city": "안양시",
-      "location": "평촌동",
-      "regionPath": "경기도 안양시 동안구 평촌동",
-      "title": "급처(미개봉)LG그램 초경량 14인치 울트라5 16GB / SSD512업드레이드+윈도우 추가+무선마우스",
-      "modelHint": "급처(미개봉)LG그램 초경량 14인치 울트라5 16GB / SSD512업드레이드+윈도우 추가+무선마우스",
-      "cpuHint": null,
-      "cpuBaselinePass": null,
-      "gpuHint": null,
-      "vramGB": null,
-      "ramGB": 16,
-      "ambiguousMemoryGB": 16,
-      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": "메모리: 16GB",
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": "16GB",
-      "storageGB": 512,
-      "llmCapability": "SPEC_CHECK_REQUIRED",
-      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
-      "specConfidence": "needs_review",
-      "postedAt": "2026-10-09T05:17:12.857Z",
-      "boostedAt": "2026-10-09T05:17:12.853Z",
-      "status": "Ongoing",
-      "description": "휴대성과 디자인이 뛰어나며 성능까지 갖춘 노트북 판매합니다. 업무, 작업, 수업 최적화 사양입니다.\n\n*기본사양에서 SSD업그레이드+윈도우pro 추가 했어요\n\n•모델명: LG그램 노트북 14ZD90T-GX56K\n•화면: 14인치 WUXGA + IPS LCD 디스플레이\n•CPU: Ultra 5 225H AI엔진\n           (Ultra 5 cpu 등급 상)\n•메모리: 16GB\n•저장장치: SSD 512GB(업그레이드)\n•그래픽: Intel Arc 140T\n•운영체제: 윈도우 11 Pro (설치)\n•LG 공식 A/S: 1년\n•무게 : 1.1kg 초경량\n\n\n📌 별도구매한 로지텍 무섬 마우스 같이드려요\n📌 새상품 직거래로 판매합니다.\n\n초기구매 업그레이드 박스 1차 개봉하여 SSD업그레이드, 윈도우 정품 설치된 노트북입니다.",
-      "url": "https://www.daangn.com/kr/buy-sell/%EA%B8%89%EC%B2%98-%EB%AF%B8%EA%B0%9C%EB%B4%89-lg%EA%B7%B8%EB%9E%A8-%EC%B4%88%EA%B2%BD%EB%9F%89-14%EC%9D%B8%EC%B9%98-%EC%9A%B8%ED%8A%B8%EB%9D%BC5-16gb-ssd512%EC%97%85%EB%93%9C%EB%A0%88%EC%9D%B4%EB%93%9C-%EC%9C%88%EB%8F%84%EC%9A%B0-%EC%B6%94%EA%B0%80-%EB%AC%B4%EC%84%A0%EB%A7%88%EC%9A%B0%EC%8A%A4-cxkqux58q2c6/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "너를사랑해",
-      "mannerTemperature": 41.1
-    }
-  ]
+  "candidates": []
 }
