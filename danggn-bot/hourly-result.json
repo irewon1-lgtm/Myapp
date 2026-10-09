@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-09T12:49:54.426Z",
+  "generatedAt": "2026-10-09T13:23:02.237Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,18 +55,40 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%9D%B8%ED%85%94-i5-8gb-ram-7tauwnsp9rcc/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%9D%B8%ED%85%94-i5-8gb-ram-7tauwnsp9rcc/",
-            "title": "삼성 노트북 인텔 i5 8GB RAM",
-            "content": "삼성 노트북 NT300모델입니다. 인텔 코어 i5-3210M CPU와 8GB RAM을 탑재하여 일상적인 작업에 충분한 성능을 제공해요. 윈도우 10 Pro가 설치되어 있어 바로 사용하실 수 있습니다. 깔끔한 디자인으로 어디서든 활용하기 좋아요.",
-            "price": "150000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/38194bf6-5c96-4034-a8f1-fa326d9fafbb.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/hp-%ED%8C%8C%EB%B9%8C%EB%A6%AC%EC%98%A8-15%EC%9D%B8%EC%B9%98-%EC%82%AC%EB%AC%B4%EC%9A%A9%EB%85%B8%ED%8A%B8%EB%B6%81-5ztvfgimfxme/",
+            "href": "/kr/buy-sell/hp-%ED%8C%8C%EB%B9%8C%EB%A6%AC%EC%98%A8-15%EC%9D%B8%EC%B9%98-%EC%82%AC%EB%AC%B4%EC%9A%A9%EB%85%B8%ED%8A%B8%EB%B6%81-5ztvfgimfxme/",
+            "title": "hp 파빌리온 15인치 사무용노트북",
+            "content": "HP 파빌리온 15-cs2086TX\n\n- ​CPU : i5-8265U (위스키레이크)\n- ​RAM : 8GB\n- ​그래픽 : NVIDIA GeForce MX250 (2GB) / 인텔 UHD Graphics 620\n- ​저장장치 : SSD 256GB + HDD 1TB\n- OS : Window 10 pro\n\n배터리가 수명을 다한 상태입니다.\n(전원선 연결한 채로는 사용 가능)\n배터리 모델은 ht03xl이고 현재 쿠팡에서 3.6만정도 하네요.\n교체는 유튜브 영상 많으니 셀프로 쉽게 가능합니다.",
+            "price": "160000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/81d16a2b-0902-4987-bae4-1243fc453d45.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-09T12:17:40.642Z",
-            "boostedAt": "2026-10-09T12:17:40.640Z",
+            "createdAt": "2026-10-09T13:08:43.871Z",
+            "boostedAt": "2026-10-09T13:08:43.869Z",
             "region": {
-              "name": "남부동"
+              "name": "호매실동"
+            },
+            "category": null,
+            "tradingCoordinates": [
+              {
+                "latitude": 37.25905961956197,
+                "longitude": 126.96072673820777
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%A0%88%EB%85%B8%EB%B2%84-%EB%85%B8%ED%8A%B8%EB%B6%81-7%EC%84%B8%EB%8C%80-%EB%85%B8%ED%8A%B8%EB%B6%81-66hzwpuw5kh6/",
+            "href": "/kr/buy-sell/%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%A0%88%EB%85%B8%EB%B2%84-%EB%85%B8%ED%8A%B8%EB%B6%81-7%EC%84%B8%EB%8C%80-%EB%85%B8%ED%8A%B8%EB%B6%81-66hzwpuw5kh6/",
+            "title": "노트북 레노버 노트북 7세대 노트북",
+            "content": "레노버 i5 7세대 노트북 상태 깨끗\n인강 사무용 웹서핑 주식용 다양하게\n활용할수 있어요\n15.6인치 화질도  좋아요\n초기화 다했구요 윈도우 11 프로 인증완료\n한컴오피스 MS오피스 둘다 있습니다\ni5-7200U. RAM 8G(DDR4)\nintel HD Graphics 620\nSSD 250G\n",
+            "price": "350000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202609/9db2154e27e641fabb9e22d9c169270047164c5726ee1249482d0b329f2c5374_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-09-17T14:25:04.198Z",
+            "boostedAt": "2026-10-09T12:35:34.448Z",
+            "region": {
+              "name": "월피동"
             },
             "category": null,
             "tradingCoordinates": []
@@ -92,64 +114,42 @@
                 "longitude": 126.97926479998705
               }
             ]
-          },
-          {
-            "id": "/kr/buy-sell/%EC%82%AC%EB%AC%B4%EC%9A%A9-%EC%9D%B8%ED%84%B0%EB%84%B7-%EB%AC%B8%EC%84%9C%EC%9E%91%EC%97%85%EC%9A%A9-%EB%85%B8%ED%8A%B8%EB%B6%81-15-6%EC%9D%B8%EC%B9%98-co81bhi4gsk6/",
-            "href": "/kr/buy-sell/%EC%82%AC%EB%AC%B4%EC%9A%A9-%EC%9D%B8%ED%84%B0%EB%84%B7-%EB%AC%B8%EC%84%9C%EC%9E%91%EC%97%85%EC%9A%A9-%EB%85%B8%ED%8A%B8%EB%B6%81-15-6%EC%9D%B8%EC%B9%98-co81bhi4gsk6/",
-            "title": "사무용 인터넷·문서작업용 노트북 15.6인치",
-            "content": "📌 제품 사양\n\nCPU : Intel Celeron N5095A\nRAM : 16GB\n저장 공간 : 512GB급\n운영체제 : Windows 11 Home\n\n📌 사용 용도\n\n인터넷 검색\n유튜브 및 동영상 시청\n문서 작성\n간단한 사무 작업 \n\n엑셀공부용으로 선물받은 노트북인데\n사용하지않아 판매합니다\n\n* 초기화해서 드릴거구요\n워드,엑셀등등 직접 설치하셔서 쓰시면되요\n이런거까지 깔아달라 바라지 말아주세요...",
-            "price": "180000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/17915453938424fa44dd7271394bff8d40bb741e13b779aee4609b495c05ccd0e0e99703f78b60.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-09T11:33:35.661Z",
-            "boostedAt": "2026-10-09T11:33:35.659Z",
-            "region": {
-              "name": "백석읍"
-            },
-            "category": null,
-            "tradingCoordinates": [
-              {
-                "latitude": 37.795276975139934,
-                "longitude": 126.96917856536504
-              }
-            ]
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-10-09T12:17:40.642Z\",\"boostedAt\":\"2026-10-09T12:17:40.640Z\",\"region\":{\"name\":\"남부동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-09T13:08:43.871Z\",\"boostedAt\":\"2026-10-09T13:08:43.869Z\",\"region\":{\"name\":\"호매실동\"},\"category\":null,\"tradingCoo",
+          "createdAt\":\"2026-09-17T14:25:04.198Z\",\"boostedAt\":\"2026-10-09T12:35:34.448Z\",\"region\":{\"name\":\"월피동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-09T12:35:53.955Z\",\"boostedAt\":\"2026-10-09T12:35:53.949Z\",\"region\":{\"name\":\"내손2동\"},\"category\":null,\"tradingCoo",
-          "createdAt\":\"2026-10-09T11:33:35.661Z\",\"boostedAt\":\"2026-10-09T11:33:35.659Z\",\"region\":{\"name\":\"백석읍\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-09T12:13:43.918Z\",\"boostedAt\":\"2026-10-09T12:13:43.916Z\",\"region\":{\"name\":\"내손2동\"},\"category\":null,\"tradingCoo",
-          "createdAt\":\"2026-10-09T12:05:46.349Z\",\"boostedAt\":\"2026-10-09T12:05:46.348Z\",\"region\":{\"name\":\"동상동\"},\"category\":null,\"tradingCoor"
+          "createdAt\":\"2026-10-09T12:35:18.169Z\",\"boostedAt\":\"2026-10-09T12:35:18.164Z\",\"region\":{\"name\":\"팽성읍\"},\"category\":null,\"tradingCoor"
         ],
         "scriptHeads": [
           "window.sentryEnv = {\n  release: \"5cab355\",\n  environment: \"prod-kr\"\n};",
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":261,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 노트북 인텔 i5 8GB RAM\",\"descrip",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":261,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"hp 파빌리온 15인치 사무용노트북\",\"descript",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-94566b97.js\";\nimport * as route0 from \"/_remix/root-P4ns_lso.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-u7IPCM8v.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 1162,
-    "globalUniqueListings": 444,
-    "duplicateListingsRemoved": 718,
-    "detailQueueStart": 10,
-    "freshDetailTasks": 10,
+    "searchUniqueListings": 1134,
+    "globalUniqueListings": 443,
+    "duplicateListingsRemoved": 691,
+    "detailQueueStart": 12,
+    "freshDetailTasks": 12,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 10,
-    "detailSucceeded": 10,
+    "detailRequestsExecuted": 12,
+    "detailSucceeded": 12,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 444,
+    "postedAtResolvedFromSearch": 443,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 91540,
+    "scanDurationMs": 93387,
     "cities": [
       {
         "city": "군포시",
@@ -161,8 +161,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 286,
-        "durationMs": 12432
+        "uniqueListings": 280,
+        "durationMs": 12324
       },
       {
         "city": "의왕시",
@@ -177,8 +177,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 350,
-        "durationMs": 25864
+        "uniqueListings": 341,
+        "durationMs": 25639
       },
       {
         "city": "안양시",
@@ -195,8 +195,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 347,
-        "durationMs": 35292
+        "uniqueListings": 334,
+        "durationMs": 35146
       },
       {
         "city": "과천시",
@@ -208,16 +208,16 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 179,
-        "durationMs": 6553
+        "durationMs": 6294
       }
     ],
     "finalCandidateCount": 0,
-    "stateItemCount": 3970,
+    "stateItemCount": 3981,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 91545
+    "durationMs": 93392
   },
   "candidates": []
 }
