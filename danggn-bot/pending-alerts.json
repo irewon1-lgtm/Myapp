@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-09T14:25:31.882515Z",
+  "updatedAt": "2026-10-09T14:45:57.888738Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -2601,6 +2601,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-i5-6%EC%84%B8%EB%8C%80-4gb-128gb-15-6%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-n1dpsvizvo1t/",
       "firstAlertedAt": "2026-10-09T12:26:59.232370Z",
       "lastCandidateAt": "2026-10-09T12:26:59.232370Z"
+    },
+    "7qyw2vovtpea": {
+      "id": "7qyw2vovtpea",
+      "title": "급쳐 최신 LG 그램 14인치 14ZB90S-GP56ML",
+      "price": 950000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "오금동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 256,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-09T14:22:56.790Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EA%B8%89%EC%B3%90-%EC%B5%9C%EC%8B%A0-lg-%EA%B7%B8%EB%9E%A8-14%EC%9D%B8%EC%B9%98-14zb90s-gp56ml-7qyw2vovtpea/",
+      "firstAlertedAt": "2026-10-09T14:45:57.888738Z",
+      "lastCandidateAt": "2026-10-09T14:45:57.888738Z"
     }
   }
 }
