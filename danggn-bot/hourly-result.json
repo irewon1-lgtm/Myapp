@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-09T07:43:18.440Z",
+  "generatedAt": "2026-10-09T08:00:07.189Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,28 +55,6 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt-371b5m-3hespmajt2nr/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt-371b5m-3hespmajt2nr/",
-            "title": "삼성 노트북 NT-371b5m",
-            "content": "삼성 노트북 NT371B5m 판매해요. 인텔 코어 i7 7700프로세서와 8GB RAM으로 쾌적한 사용이 가능해요. 256GB SSD가 장착되어 있어 빠른 부팅과 파일 로딩이 가능합니다. 사진에서 보이는 구성품 그대로 드려요. 깔끔한 디자인으로 어디서든 사용하기 좋아요.",
-            "price": "290000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/d2c850be-3bb4-422a-9b78-2e17a805f130.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": false,
-            "createdAt": "2026-10-09T07:29:41.875Z",
-            "boostedAt": "2026-10-09T07:29:41.873Z",
-            "region": {
-              "name": "산본1동"
-            },
-            "category": null,
-            "tradingCoordinates": [
-              {
-                "latitude": 37.37228900723929,
-                "longitude": 126.942459768498
-              }
-            ]
-          },
-          {
             "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt530u4c-i5-3%EC%84%B8%EB%8C%80-12gb-ram-rygo5rg62jbq/",
             "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt530u4c-i5-3%EC%84%B8%EB%8C%80-12gb-ram-rygo5rg62jbq/",
             "title": "삼성 노트북 NT530U4C i5 3세대 12GB RAM",
@@ -119,42 +97,59 @@
                 "longitude": 127.79546309999427
               }
             ]
+          },
+          {
+            "id": "/kr/buy-sell/msi-ms-16g52-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-9m2iy6ny2qio/",
+            "href": "/kr/buy-sell/msi-ms-16g52-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-9m2iy6ny2qio/",
+            "title": "MSI MS-16G52 게이밍 노트북",
+            "content": "MSI MS-16G52 게이밍 노트북이에요.\n15.6인치 화면과 숫자 키패드가 있어요.\n인텔 코어 i5-2450M 프로세서, 메모리 8GB, 지포스 GT 635M 그래픽 카드, 삼성 120GB SSD가 장착되어 있어요.\n게이밍 노트북을 찾는 분들께 추천드려요.\n키보드 번들거림등 사용감 없고\n파손 기스 찍힘 없이 깨끗합니다",
+            "price": "150000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/825e372acb383822219c413efb2ca1eda5c8d52199894a020fa2f20117ce5128_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-10-09T02:42:22.383Z",
+            "boostedAt": "2026-10-09T02:42:22.381Z",
+            "region": {
+              "name": "내손2동"
+            },
+            "category": null,
+            "tradingCoordinates": []
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-10-09T07:29:41.875Z\",\"boostedAt\":\"2026-10-09T07:29:41.873Z\",\"region\":{\"name\":\"산본1동\"},\"category\":null,\"tradingCoo",
           "createdAt\":\"2026-10-09T07:05:34.459Z\",\"boostedAt\":\"2026-10-09T07:05:34.457Z\",\"region\":{\"name\":\"인평동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-09T06:14:53.709Z\",\"boostedAt\":\"2026-10-09T06:14:53.708Z\",\"region\":{\"name\":\"주덕읍\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-09T02:42:22.383Z\",\"boostedAt\":\"2026-10-09T02:42:22.381Z\",\"region\":{\"name\":\"내손2동\"},\"category\":null,\"tradingCoo",
+          "createdAt\":\"2026-10-08T14:41:40.345Z\",\"boostedAt\":\"2026-10-08T14:41:40.344Z\",\"region\":{\"name\":\"온산읍\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-08T02:54:57.507Z\",\"boostedAt\":\"2026-10-08T02:54:57.504Z\",\"region\":{\"name\":\"산본동\"},\"category\":null,\"tradingCoor"
         ],
         "scriptHeads": [
           "window.sentryEnv = {\n  release: \"5cab355\",\n  environment: \"prod-kr\"\n};",
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":259,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 노트북 NT-371b5m\",\"description",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":260,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 노트북 NT530U4C i5 3세대 12GB RA",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-94566b97.js\";\nimport * as route0 from \"/_remix/root-P4ns_lso.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-u7IPCM8v.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 1110,
-    "globalUniqueListings": 432,
-    "duplicateListingsRemoved": 678,
-    "detailQueueStart": 7,
-    "freshDetailTasks": 7,
+    "searchUniqueListings": 1166,
+    "globalUniqueListings": 451,
+    "duplicateListingsRemoved": 715,
+    "detailQueueStart": 5,
+    "freshDetailTasks": 5,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 7,
-    "detailSucceeded": 7,
+    "detailRequestsExecuted": 5,
+    "detailSucceeded": 5,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 432,
+    "postedAtResolvedFromSearch": 451,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 0,
-    "scanDurationMs": 87621,
+    "candidateCount": 1,
+    "scanDurationMs": 86875,
     "cities": [
       {
         "city": "군포시",
@@ -167,7 +162,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 284,
-        "durationMs": 12484
+        "durationMs": 12465
       },
       {
         "city": "의왕시",
@@ -182,8 +177,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 342,
-        "durationMs": 25824
+        "uniqueListings": 363,
+        "durationMs": 25859
       },
       {
         "city": "안양시",
@@ -200,8 +195,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 225,
-        "durationMs": 35265
+        "uniqueListings": 340,
+        "durationMs": 35532
       },
       {
         "city": "과천시",
@@ -212,17 +207,53 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 259,
-        "durationMs": 6059
+        "uniqueListings": 179,
+        "durationMs": 7149
       }
     ],
-    "finalCandidateCount": 0,
-    "stateItemCount": 3875,
+    "finalCandidateCount": 1,
+    "stateItemCount": 3883,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 87625
+    "durationMs": 86879
   },
-  "candidates": []
+  "candidates": [
+    {
+      "id": "phbf8gyjwasa",
+      "changeType": "new",
+      "previousPrice": null,
+      "price": 155000,
+      "priceDropPercent": null,
+      "city": "안양시",
+      "location": "비산2동",
+      "regionPath": "경기도 안양시 동안구 비산2동",
+      "title": "노트북 + 컴퓨터(intel , NVIDIA)본체 , 삼성 24인치 모니터 , 키보드 , 마우스 일괄 판매",
+      "modelHint": "노트북 + 컴퓨터(intel , NVIDIA)본체 , 삼성 24인치 모니터 , 키보드 , 마우스 일괄 판매",
+      "cpuHint": null,
+      "cpuBaselinePass": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 128,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "128GB",
+      "storageGB": 128,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "specConfidence": "needs_review",
+      "postedAt": "2026-10-09T07:51:49.857Z",
+      "boostedAt": "2026-10-09T07:51:49.855Z",
+      "status": "Ongoing",
+      "description": "노트북 + 컴퓨터 본체 , 24인치 삼성 모니터 , 키보드 , 마우스 , 각종 배선 등 일괄 판매합니다\n노트북 충전기 포함입니다\n사무용 프로그램 깔려있습니다 ( 한컴오피스 )\n본체는 롤 , 발로란트 , 서든어택 , 메이플 스토리 등 돌아갑니다\n본체 내부 먼지나 소음 없습니다\n노트북 사무용이나 유튜브 웹서핑용으로 좋습니다\n배터리 상태도 양호합니다\n\n스펙 \n본체 \nCPU / intel i3 6100 @ 3.70GHz \n그래픽카드 / NVIDIA Geforce GTX550TI\nRAM / DDR4 8GB\nSSD / 128GB\n케이스 / NCORE\n키보드\n마우스\n\n모니터 / 삼성 24인치 1920×1080(FHD) LED 모니터\n\n아이뮤즈 노트북 \nCPU / intel celeron N3350 @ 1.10GHz\nram / 4GB\nssd / 64GB\n충전기 \n배터리 상태 양호",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%BB%B4%ED%93%A8%ED%84%B0-intel-nvidia-%EB%B3%B8%EC%B2%B4-%EC%82%BC%EC%84%B1-24%EC%9D%B8%EC%B9%98-%EB%AA%A8%EB%8B%88%ED%84%B0-%ED%82%A4%EB%B3%B4%EB%93%9C-%EB%A7%88%EC%9A%B0%EC%8A%A4-%EC%9D%BC%EA%B4%84-%ED%8C%90%EB%A7%A4-phbf8gyjwasa/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "시청자",
+      "mannerTemperature": 42.5
+    }
+  ]
 }
