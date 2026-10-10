@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-10T16:02:58.144Z",
+  "generatedAt": "2026-10-10T16:19:25.747Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -72,24 +72,24 @@
             "tradingCoordinates": []
           },
           {
-            "id": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-s550-mh10k-r9damgiy7bhe/",
-            "href": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-s550-mh10k-r9damgiy7bhe/",
-            "title": "LG 노트북 S550-MH10K",
-            "content": "LG 엑스노트 S550 노트북입니다.  반주기로 사용하던 제품이라 고장없이 깔끔하게 잘 썼습니다 사진에서 보이는 그대로의 상태이며 충전선 전용 가방 있습니다 이 노트북으로 즐거운 컴퓨팅 경험을 만들어보세요.",
-            "price": "105000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/e34fb2d2-bdb1-453b-8661-2d40b66cc82a.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-14%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-i5-x3ydwdaaiy4f/",
+            "href": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-14%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-i5-x3ydwdaaiy4f/",
+            "title": "LG 그램 노트북 14인치 화이트 I5",
+            "content": "LG 그램 노트북 14인치 화이트 색상입니다. 인텔 i5-6200U CPU, 8GB RAM이 탑재되어 있습니다. 가볍고 휴대하기 좋은 제품이에요. 사진에서 보이는 구성품과 함께 드립니다. 깔끔한 디자인으로 어디서든 잘 어울려요.\n\n많이 가볍습니다\n많이 않써서 상태도 좋고요\n아답터는 호환품입니다 문제없습니다\n이번주말까지 15만원으로 인하",
+            "price": "150000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/1791621993177d0c3cf3762b9e3b154fa26959f4d67b7b5fa7404893da62dff63303a92cac42b0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-08T12:43:29.172Z",
-            "boostedAt": "2026-10-10T15:28:03.775Z",
+            "createdAt": "2026-10-10T08:48:07.054Z",
+            "boostedAt": "2026-10-10T08:48:07.053Z",
             "region": {
-              "name": "장유1동"
+              "name": "고촌읍"
             },
             "category": null,
             "tradingCoordinates": [
               {
-                "latitude": 35.19659656653325,
-                "longitude": 128.81456851959229
+                "latitude": 37.60192523698049,
+                "longitude": 126.7710118816424
               }
             ]
           },
@@ -113,38 +113,38 @@
         ],
         "dateFieldSnippets": [
           "createdAt\":\"2026-09-30T04:41:53.794Z\",\"boostedAt\":\"2026-10-10T14:16:15.136Z\",\"region\":{\"name\":\"동읍\"},\"category\":null,\"tradingCoord",
-          "createdAt\":\"2026-10-08T12:43:29.172Z\",\"boostedAt\":\"2026-10-10T15:28:03.775Z\",\"region\":{\"name\":\"장유1동\"},\"category\":null,\"tradingCoo",
+          "createdAt\":\"2026-10-10T08:48:07.054Z\",\"boostedAt\":\"2026-10-10T08:48:07.053Z\",\"region\":{\"name\":\"고촌읍\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-09T02:42:22.383Z\",\"boostedAt\":\"2026-10-09T02:42:22.381Z\",\"region\":{\"name\":\"내손2동\"},\"category\":null,\"tradingCoo",
           "createdAt\":\"2026-09-12T01:06:48.247Z\",\"boostedAt\":\"2026-10-09T02:52:10.801Z\",\"region\":{\"name\":\"평촌동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-10T08:48:07.054Z\",\"boostedAt\":\"2026-10-10T08:48:07.053Z\",\"region\":{\"name\":\"고촌읍\"},\"category\":null,\"tradingCoor"
+          "createdAt\":\"2026-10-10T07:46:07.927Z\",\"boostedAt\":\"2026-10-10T07:46:07.926Z\",\"region\":{\"name\":\"월피동\"},\"category\":null,\"tradingCoor"
         ],
         "scriptHeads": [
           "window.sentryEnv = {\n  release: \"5cab355\",\n  environment: \"prod-kr\"\n};",
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":264,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"HP 13인치 사무용 노트북\",\"description\"",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":265,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"HP 13인치 사무용 노트북\",\"description\"",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-94566b97.js\";\nimport * as route0 from \"/_remix/root-P4ns_lso.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-u7IPCM8v.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 1234,
-    "globalUniqueListings": 449,
+    "searchUniqueListings": 1240,
+    "globalUniqueListings": 455,
     "duplicateListingsRemoved": 785,
-    "detailQueueStart": 11,
-    "freshDetailTasks": 11,
+    "detailQueueStart": 2,
+    "freshDetailTasks": 2,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 11,
-    "detailSucceeded": 11,
+    "detailRequestsExecuted": 2,
+    "detailSucceeded": 2,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 449,
+    "postedAtResolvedFromSearch": 455,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 91032,
+    "scanDurationMs": 80661,
     "cities": [
       {
         "city": "군포시",
@@ -156,8 +156,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 282,
-        "durationMs": 11952
+        "uniqueListings": 277,
+        "durationMs": 12077
       },
       {
         "city": "의왕시",
@@ -172,8 +172,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 349,
-        "durationMs": 25485
+        "uniqueListings": 362,
+        "durationMs": 25280
       },
       {
         "city": "안양시",
@@ -190,8 +190,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 347,
-        "durationMs": 34876
+        "uniqueListings": 345,
+        "durationMs": 34970
       },
       {
         "city": "과천시",
@@ -203,16 +203,16 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 256,
-        "durationMs": 6094
+        "durationMs": 6288
       }
     ],
     "finalCandidateCount": 0,
-    "stateItemCount": 4320,
+    "stateItemCount": 4321,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 91039
+    "durationMs": 80668
   },
   "candidates": []
 }
