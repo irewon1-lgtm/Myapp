@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-10T03:13:09.768Z",
+  "generatedAt": "2026-10-10T03:52:56.719Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,24 +55,41 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-4310m-ram-8gb-ssd-256gb-zgwq3wtztkcq/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-4310m-ram-8gb-ssd-256gb-zgwq3wtztkcq/",
-            "title": "삼성 노트북 i5-4310M RAM 8GB SSD 256GB",
-            "content": "삼성 노트북 판매해요. 인텔 코어 i5-4310M CPU와 RAM 8GB, SSD 256GB가 탑재되어 있어요. 그래픽 카드는 NVIDIA Geforce 820M (2GB)입니다.  포맷 됨.\n\n무궁화효성,한양아파트에서  거래합니다.",
-            "price": "100000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/1ce636f6-c886-44c2-bcc3-30ecccf09268.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%ED%94%BC%ED%8C%8C-%EB%A1%A4-%EB%8F%8C%EC%95%84%EA%B0%80%EB%8A%94-%EB%85%B8%ED%8A%B8%EB%B6%81-%EA%B8%89%EC%B2%98%ED%95%A9%EB%8B%88%EB%8B%A4-4148hw8hrk9c/",
+            "href": "/kr/buy-sell/%ED%94%BC%ED%8C%8C-%EB%A1%A4-%EB%8F%8C%EC%95%84%EA%B0%80%EB%8A%94-%EB%85%B8%ED%8A%B8%EB%B6%81-%EA%B8%89%EC%B2%98%ED%95%A9%EB%8B%88%EB%8B%A4-4148hw8hrk9c/",
+            "title": "피파,롤 돌아가는 노트북 급처합니다",
+            "content": "오늘안에 구매시 20에 드려요",
+            "price": "230000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/17916028460290348d4863e500b33ac6d8dd9feae21643380f01c4c755d0076943fec6daaff2f0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": false,
-            "createdAt": "2026-10-10T02:56:15.648Z",
-            "boostedAt": "2026-10-10T02:56:15.647Z",
+            "createdAt": "2026-10-10T03:28:12.298Z",
+            "boostedAt": "2026-10-10T03:28:12.295Z",
             "region": {
-              "name": "신촌동"
+              "name": "정자1동"
+            },
+            "category": null,
+            "tradingCoordinates": []
+          },
+          {
+            "id": "/kr/buy-sell/lg-xnote-s525-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-2gb-ram-500gb-hdd-h1ir6di8v4uu/",
+            "href": "/kr/buy-sell/lg-xnote-s525-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-2gb-ram-500gb-hdd-h1ir6di8v4uu/",
+            "title": "LG XNOTE S525 노트북 (i5, 2GB RAM, 500GB HDD)",
+            "content": "LG XNOTE S525 노트북 판매해요. \n\n인텔 코어 i5-2450M 프로세서와\n\n 2GB RAM, \n\n500GB HDD를 탑재하고 있어요. \n\nDVD 슈퍼 멀티 드라이브와 \n\n15.6인치 디스플레이를 갖추고 있습니다.\n\ncctv용이나 기타 매일 켜둬야하는 곳에서 쓸수 있을거같네요\n\n윈7이에여 os는\n\n동부2차 문고리 거래합니다.\n\n노트북 가방도 드려요.\n",
+            "price": "50000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/444ef485-8913-4550-8ea7-1a858997e7ac.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-10T03:08:32.925Z",
+            "boostedAt": "2026-10-10T03:08:32.923Z",
+            "region": {
+              "name": "수청동"
             },
             "category": null,
             "tradingCoordinates": [
               {
-                "latitude": 37.38225643027906,
-                "longitude": 126.95459939539433
+                "latitude": 36.89681312018779,
+                "longitude": 126.6544242000275
               }
             ]
           },
@@ -92,64 +109,42 @@
             },
             "category": null,
             "tradingCoordinates": []
-          },
-          {
-            "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-15%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-d9qn8zj7dtug/",
-            "href": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-15%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-d9qn8zj7dtug/",
-            "title": "LG 그램 15인치 노트북",
-            "content": "가볍고 슬림한 LG 그램 15인치 노트북입니다.i3 6세대,램8g,ssd250g 윈도우 10이 설치되어 있어 바로 사용 가능해요.외관깨끗,제품하자없음,키패드, 깔끔한 화이트 색상으로 어떤 환경에서도 잘 어울립니다. 휴대하기 좋은 가벼운 무게로 어디든 함께하기 좋아요.",
-            "price": "180000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/06dfb68f-209a-458c-aea8-6586d41bfad3.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-10T02:17:25.275Z",
-            "boostedAt": "2026-10-10T02:17:25.272Z",
-            "region": {
-              "name": "안양2동"
-            },
-            "category": null,
-            "tradingCoordinates": [
-              {
-                "latitude": 37.40362623143215,
-                "longitude": 126.91532213240862
-              }
-            ]
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-10-10T02:56:15.648Z\",\"boostedAt\":\"2026-10-10T02:56:15.647Z\",\"region\":{\"name\":\"신촌동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-10T03:28:12.298Z\",\"boostedAt\":\"2026-10-10T03:28:12.295Z\",\"region\":{\"name\":\"정자1동\"},\"category\":null,\"tradingCoo",
+          "createdAt\":\"2026-10-10T03:08:32.925Z\",\"boostedAt\":\"2026-10-10T03:08:32.923Z\",\"region\":{\"name\":\"수청동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-10T02:34:13.151Z\",\"boostedAt\":\"2026-10-10T02:34:13.150Z\",\"region\":{\"name\":\"도산동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-10T02:17:25.275Z\",\"boostedAt\":\"2026-10-10T02:17:25.272Z\",\"region\":{\"name\":\"안양2동\"},\"category\":null,\"tradingCoo",
-          "createdAt\":\"2026-10-10T02:54:15.373Z\",\"boostedAt\":\"2026-10-10T02:54:15.370Z\",\"region\":{\"name\":\"봉명동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-09T02:42:22.383Z\",\"boostedAt\":\"2026-10-09T02:42:22.381Z\",\"region\":{\"name\":\"내손2동\"},\"category\":null,\"tradingCoo"
+          "createdAt\":\"2026-10-10T02:56:15.648Z\",\"boostedAt\":\"2026-10-10T02:56:15.647Z\",\"region\":{\"name\":\"신촌동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-10T02:17:25.275Z\",\"boostedAt\":\"2026-10-10T02:17:25.272Z\",\"region\":{\"name\":\"안양2동\"},\"category\":null,\"tradingCoo"
         ],
         "scriptHeads": [
           "window.sentryEnv = {\n  release: \"5cab355\",\n  environment: \"prod-kr\"\n};",
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":266,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 노트북 i5-4310M RAM 8GB SSD 25",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":267,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"피파,롤 돌아가는 노트북 급처합니다\",\"descript",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-94566b97.js\";\nimport * as route0 from \"/_remix/root-P4ns_lso.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-u7IPCM8v.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 1169,
-    "globalUniqueListings": 448,
-    "duplicateListingsRemoved": 721,
-    "detailQueueStart": 18,
-    "freshDetailTasks": 18,
+    "searchUniqueListings": 1192,
+    "globalUniqueListings": 466,
+    "duplicateListingsRemoved": 726,
+    "detailQueueStart": 10,
+    "freshDetailTasks": 10,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 18,
-    "detailSucceeded": 18,
+    "detailRequestsExecuted": 10,
+    "detailSucceeded": 10,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 448,
+    "postedAtResolvedFromSearch": 466,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 101431,
+    "scanDurationMs": 90517,
     "cities": [
       {
         "city": "군포시",
@@ -161,8 +156,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 280,
-        "durationMs": 12210
+        "uniqueListings": 283,
+        "durationMs": 12170
       },
       {
         "city": "의왕시",
@@ -177,8 +172,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 366,
-        "durationMs": 25782
+        "uniqueListings": 375,
+        "durationMs": 25676
       },
       {
         "city": "안양시",
@@ -195,8 +190,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 344,
-        "durationMs": 35490
+        "uniqueListings": 355,
+        "durationMs": 35001
       },
       {
         "city": "과천시",
@@ -208,16 +203,16 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 179,
-        "durationMs": 6458
+        "durationMs": 6262
       }
     ],
     "finalCandidateCount": 0,
-    "stateItemCount": 4164,
+    "stateItemCount": 4177,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 101437
+    "durationMs": 90522
   },
   "candidates": []
 }
