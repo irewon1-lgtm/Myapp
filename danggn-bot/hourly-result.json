@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-10T23:32:58.386Z",
+  "generatedAt": "2026-10-10T23:41:59.332Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -53,98 +53,35 @@
       },
       "htmlSample": {
         "embeddedArticles": false,
-        "remixArticleSamples": [
-          {
-            "id": "/kr/buy-sell/%EC%99%B8%EA%B4%80%EA%B9%94%EB%81%94-hp-%EB%85%B8%ED%8A%B8%EB%B6%81-5%EC%84%B8%EB%8C%80%EB%85%B8%ED%8A%B8%EB%B6%81-12c9x5ikh1t9/",
-            "href": "/kr/buy-sell/%EC%99%B8%EA%B4%80%EA%B9%94%EB%81%94-hp-%EB%85%B8%ED%8A%B8%EB%B6%81-5%EC%84%B8%EB%8C%80%EB%85%B8%ED%8A%B8%EB%B6%81-12c9x5ikh1t9/",
-            "title": "(외관깔끔) HP 노트북 / 5세대노트북",
-            "content": "(외관깔끔) HP 노트북 / 5세대노트북\n\n✅  제조사 및 모델명: \nHP노트북 5세대\n\n✅  외관상태 깔끔하고\n     배터리효율 91%로 좋아서 \n     몇시간 사용됩니다\n      \n✅ CPU :  Intel(R) i3-5005U\n         (인텔5세대 고성능CPU)\n✅ RAM : 4GB\n✅ 디스플레이 : \n    디스플레이 크기: 15형 (약 39.6cm)\n    해상도: 1366 x 768 (HD)\n✅ 구성품 : 노트북 + 충전기\n\n바로가져가셔서 사용가능합니다.\n단순변심이나 중고거래특성상 환불 반품은 불가합니다 ",
-            "price": "150000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/4009b045-6307-4775-b7e0-039dabf69452.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-10T22:59:26.928Z",
-            "boostedAt": "2026-10-10T22:59:26.926Z",
-            "region": {
-              "name": "연산제9동"
-            },
-            "category": null,
-            "tradingCoordinates": [
-              {
-                "latitude": 35.184582448440906,
-                "longitude": 129.11272924393415
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/%ED%99%94%EC%9D%B4%ED%8A%B8-%EB%85%B8%ED%8A%B8%EB%B6%81-znm93qonaupc/",
-            "href": "/kr/buy-sell/%ED%99%94%EC%9D%B4%ED%8A%B8-%EB%85%B8%ED%8A%B8%EB%B6%81-znm93qonaupc/",
-            "title": "화이트 노트북",
-            "content": "깔끔한 핑크상의 노트북이에요. 휴대하기 좋은 사이즈로 어디서든 편리하게 사용하실 수 있어요. \n디클클릭북 10인치입니다 당근에 중고로구매해서5번사용했습니다",
-            "price": "50000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/2c0ca7b1-deb9-4d72-9648-f40cb6cd5383.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-10T23:09:19.747Z",
-            "boostedAt": "2026-10-10T23:09:19.744Z",
-            "region": {
-              "name": "각산동"
-            },
-            "category": null,
-            "tradingCoordinates": []
-          },
-          {
-            "id": "/kr/buy-sell/msi-ms-16g52-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-9m2iy6ny2qio/",
-            "href": "/kr/buy-sell/msi-ms-16g52-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-9m2iy6ny2qio/",
-            "title": "MSI MS-16G52 게이밍 노트북",
-            "content": "MSI MS-16G52 게이밍 노트북이에요.\n15.6인치 화면과 숫자 키패드가 있어요.\n인텔 코어 i5-2450M 프로세서, 메모리 8GB, 지포스 GT 635M 그래픽 카드, 삼성 120GB SSD가 장착되어 있어요.\n게이밍 노트북을 찾는 분들께 추천드려요.\n키보드 번들거림등 사용감 없고\n파손 기스 찍힘 없이 깨끗합니다",
-            "price": "150000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/825e372acb383822219c413efb2ca1eda5c8d52199894a020fa2f20117ce5128_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": false,
-            "createdAt": "2026-10-09T02:42:22.383Z",
-            "boostedAt": "2026-10-09T02:42:22.381Z",
-            "region": {
-              "name": "내손2동"
-            },
-            "category": null,
-            "tradingCoordinates": []
-          }
-        ],
-        "dateFieldSnippets": [
-          "createdAt\":\"2026-10-10T22:59:26.928Z\",\"boostedAt\":\"2026-10-10T22:59:26.926Z\",\"region\":{\"name\":\"연산제9동\"},\"category\":null,\"tradingCo",
-          "createdAt\":\"2026-10-10T23:09:19.747Z\",\"boostedAt\":\"2026-10-10T23:09:19.744Z\",\"region\":{\"name\":\"각산동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-09T02:42:22.383Z\",\"boostedAt\":\"2026-10-09T02:42:22.381Z\",\"region\":{\"name\":\"내손2동\"},\"category\":null,\"tradingCoo",
-          "createdAt\":\"2026-09-04T07:27:50.760Z\",\"boostedAt\":\"2026-10-10T22:46:46.966Z\",\"region\":{\"name\":\"정자1동\"},\"category\":null,\"tradingCoo",
-          "createdAt\":\"2026-10-10T23:04:06.383Z\",\"boostedAt\":\"2026-10-10T23:04:06.381Z\",\"region\":{\"name\":\"신가동\"},\"category\":null,\"tradingCoor"
-        ],
+        "remixArticleSamples": [],
+        "dateFieldSnippets": [],
         "scriptHeads": [
+          "\n    (function(window, document, mode) {\n      try {\n        document.documentElement.dataset.seed = '';\n        document.documentElement.dataset.seedColorMode = mode;\n      } catch (e) {}\n\n      try {\n        var prefer",
           "window.sentryEnv = {\n  release: \"5cab355\",\n  environment: \"prod-kr\"\n};",
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":261,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"(외관깔끔) HP 노트북 / 5세대노트북\",\"descr",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-94566b97.js\";\nimport * as route0 from \"/_remix/root-P4ns_lso.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-u7IPCM8v.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 1155,
-    "globalUniqueListings": 444,
-    "duplicateListingsRemoved": 711,
-    "detailQueueStart": 8,
-    "freshDetailTasks": 8,
+    "searchUniqueListings": 1043,
+    "globalUniqueListings": 437,
+    "duplicateListingsRemoved": 606,
+    "detailQueueStart": 0,
+    "freshDetailTasks": 0,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 8,
-    "detailSucceeded": 8,
+    "detailRequestsExecuted": 0,
+    "detailSucceeded": 0,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 444,
+    "postedAtResolvedFromSearch": 437,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 89618,
+    "scanDurationMs": 80543,
     "cities": [
       {
         "city": "군포시",
@@ -156,8 +93,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 276,
-        "durationMs": 12617
+        "uniqueListings": 183,
+        "durationMs": 12429
       },
       {
         "city": "의왕시",
@@ -172,8 +109,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 362,
-        "durationMs": 25846
+        "uniqueListings": 346,
+        "durationMs": 25695
       },
       {
         "city": "안양시",
@@ -190,8 +127,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 339,
-        "durationMs": 35256
+        "uniqueListings": 336,
+        "durationMs": 35548
       },
       {
         "city": "과천시",
@@ -203,16 +140,16 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 178,
-        "durationMs": 6479
+        "durationMs": 6707
       }
     ],
     "finalCandidateCount": 0,
-    "stateItemCount": 4370,
+    "stateItemCount": 4371,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 89625
+    "durationMs": 80549
   },
   "candidates": []
 }
