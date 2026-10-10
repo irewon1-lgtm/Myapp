@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-10T14:02:58.772035Z",
+  "updatedAt": "2026-10-10T14:42:44.751006Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -3126,6 +3126,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EC%95%A0%ED%94%8C-%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-m3max-14%EC%9D%B8%EC%B9%98-svfaaoa7qhx5/",
       "firstAlertedAt": "2026-10-10T14:02:58.772035Z",
       "lastCandidateAt": "2026-10-10T14:02:58.772035Z"
+    },
+    "xjrbyavw4u67": {
+      "id": "xjrbyavw4u67",
+      "title": "HP 오멘 16 5060 32gb 블랙",
+      "price": 1900000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "호계동",
+      "cpuHint": null,
+      "gpuHint": "RTX 5060",
+      "vramGB": null,
+      "ramGB": 32,
+      "ambiguousMemoryGB": 32,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "32GB 메모리",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "32gb",
+      "storageGB": null,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "postedAt": "2026-10-10T09:48:18.788Z",
+      "url": "https://www.daangn.com/kr/buy-sell/hp-%EC%98%A4%EB%A9%98-16-5060-32gb-%EB%B8%94%EB%9E%99-xjrbyavw4u67/",
+      "firstAlertedAt": "2026-10-10T14:42:44.751006Z",
+      "lastCandidateAt": "2026-10-10T14:42:44.751006Z"
+    },
+    "d3rb82ohy7k1": {
+      "id": "d3rb82ohy7k1",
+      "title": "레노버 ThinkPad X240 i5-4200U 노트북",
+      "price": 80000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "의왕시",
+      "location": "부곡동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 128,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "128G",
+      "storageGB": 128,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-10T14:07:19.265Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-thinkpad-x240-i5-4200u-%EB%85%B8%ED%8A%B8%EB%B6%81-d3rb82ohy7k1/",
+      "firstAlertedAt": "2026-10-10T14:42:44.751006Z",
+      "lastCandidateAt": "2026-10-10T14:42:44.751006Z"
     }
   }
 }
