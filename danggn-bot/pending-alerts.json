@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-10T12:43:06.096152Z",
+  "updatedAt": "2026-10-10T13:22:56.058209Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -3076,6 +3076,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/hp-%EB%93%9C%EB%9E%98%EA%B3%A4%ED%94%8C%EB%9D%BC%EC%9D%B4-g2-2-in-1-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-11%EC%84%B8%EB%8C%80-byh6cuabaept/",
       "firstAlertedAt": "2026-10-10T12:03:01.056125Z",
       "lastCandidateAt": "2026-10-10T12:03:01.056125Z"
+    },
+    "fx8g97uz11va": {
+      "id": "fx8g97uz11va",
+      "title": "Dell latitude 5490 (인텔 I5 8세대)노트북 팝니다. 미국",
+      "price": 270000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "비산3동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "RAM 16G",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 256,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-10T12:59:15.255Z",
+      "url": "https://www.daangn.com/kr/buy-sell/dell-latitude-5490-%EC%9D%B8%ED%85%94-i5-8%EC%84%B8%EB%8C%80-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%9D%EB%8B%88%EB%8B%A4-%EB%AF%B8%EA%B5%AD-fx8g97uz11va/",
+      "firstAlertedAt": "2026-10-10T13:22:56.058209Z",
+      "lastCandidateAt": "2026-10-10T13:22:56.058209Z"
     }
   }
 }
