@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-10T03:52:56.719Z",
+  "generatedAt": "2026-10-10T04:33:00.264Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,23 +55,6 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/%ED%94%BC%ED%8C%8C-%EB%A1%A4-%EB%8F%8C%EC%95%84%EA%B0%80%EB%8A%94-%EB%85%B8%ED%8A%B8%EB%B6%81-%EA%B8%89%EC%B2%98%ED%95%A9%EB%8B%88%EB%8B%A4-4148hw8hrk9c/",
-            "href": "/kr/buy-sell/%ED%94%BC%ED%8C%8C-%EB%A1%A4-%EB%8F%8C%EC%95%84%EA%B0%80%EB%8A%94-%EB%85%B8%ED%8A%B8%EB%B6%81-%EA%B8%89%EC%B2%98%ED%95%A9%EB%8B%88%EB%8B%A4-4148hw8hrk9c/",
-            "title": "피파,롤 돌아가는 노트북 급처합니다",
-            "content": "오늘안에 구매시 20에 드려요",
-            "price": "230000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/17916028460290348d4863e500b33ac6d8dd9feae21643380f01c4c755d0076943fec6daaff2f0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": false,
-            "createdAt": "2026-10-10T03:28:12.298Z",
-            "boostedAt": "2026-10-10T03:28:12.295Z",
-            "region": {
-              "name": "정자1동"
-            },
-            "category": null,
-            "tradingCoordinates": []
-          },
-          {
             "id": "/kr/buy-sell/lg-xnote-s525-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-2gb-ram-500gb-hdd-h1ir6di8v4uu/",
             "href": "/kr/buy-sell/lg-xnote-s525-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-2gb-ram-500gb-hdd-h1ir6di8v4uu/",
             "title": "LG XNOTE S525 노트북 (i5, 2GB RAM, 500GB HDD)",
@@ -94,57 +77,79 @@
             ]
           },
           {
-            "id": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-15-6%EC%9D%B8%EC%B9%98-aggrte5igufw/",
-            "href": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-15-6%EC%9D%B8%EC%B9%98-aggrte5igufw/",
-            "title": "LG 노트북 i5 15.6인치",
-            "content": "가성비좋은LG 노트북으로, 우측숫자 키패드가 추가로있는 키보드를 갖췄어요.\n인텔 코어 i5프로세서와 8GB 메모리120GB SSD가 탑재되어 있어부팅및 인터냇속도빠릿해요\n문서 작업이나 영상 시청용 노트북을 찾는 분께 추천드려여\n\n화면은 15.6인치이며 윈도우 11이 설치되어 있어요.\n전체적으로 깨끗합니다.\n충전기와 마우스 드려영",
-            "price": "160000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/f90185e4f7fb59c78138f71e6da3fcbe1c2218688c1ea2351af062b463a2d4eb_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%ED%94%BC%ED%8C%8C-%EB%A1%A4-%EB%8F%8C%EC%95%84%EA%B0%80%EB%8A%94-%EB%85%B8%ED%8A%B8%EB%B6%81-%EA%B8%89%EC%B2%98%ED%95%A9%EB%8B%88%EB%8B%A4-4148hw8hrk9c/",
+            "href": "/kr/buy-sell/%ED%94%BC%ED%8C%8C-%EB%A1%A4-%EB%8F%8C%EC%95%84%EA%B0%80%EB%8A%94-%EB%85%B8%ED%8A%B8%EB%B6%81-%EA%B8%89%EC%B2%98%ED%95%A9%EB%8B%88%EB%8B%A4-4148hw8hrk9c/",
+            "title": "피파,롤 돌아가는 노트북 급처합니다",
+            "content": "오늘안에 구매시 20에 드려요",
+            "price": "230000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/17916028460290348d4863e500b33ac6d8dd9feae21643380f01c4c755d0076943fec6daaff2f0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-10T02:34:13.151Z",
-            "boostedAt": "2026-10-10T02:34:13.150Z",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-10-10T03:28:12.298Z",
+            "boostedAt": "2026-10-10T03:28:12.295Z",
             "region": {
-              "name": "도산동"
+              "name": "정자1동"
             },
             "category": null,
             "tradingCoordinates": []
+          },
+          {
+            "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-15%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-d9qn8zj7dtug/",
+            "href": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-15%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-d9qn8zj7dtug/",
+            "title": "LG 그램 15인치 노트북",
+            "content": "가볍고 슬림한 LG 그램 15인치 노트북입니다.i3 6세대,램8g,ssd250g 윈도우 10이 설치되어 있어 바로 사용 가능해요.외관깨끗,제품하자없음,키패드, 깔끔한 화이트 색상으로 어떤 환경에서도 잘 어울립니다. 휴대하기 좋은 가벼운 무게로 어디든 함께하기 좋아요.",
+            "price": "180000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/06dfb68f-209a-458c-aea8-6586d41bfad3.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Reserved",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-10-10T02:17:25.275Z",
+            "boostedAt": "2026-10-10T02:17:25.272Z",
+            "region": {
+              "name": "안양2동"
+            },
+            "category": null,
+            "tradingCoordinates": [
+              {
+                "latitude": 37.40362623143215,
+                "longitude": 126.91532213240862
+              }
+            ]
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-10-10T03:28:12.298Z\",\"boostedAt\":\"2026-10-10T03:28:12.295Z\",\"region\":{\"name\":\"정자1동\"},\"category\":null,\"tradingCoo",
           "createdAt\":\"2026-10-10T03:08:32.925Z\",\"boostedAt\":\"2026-10-10T03:08:32.923Z\",\"region\":{\"name\":\"수청동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-10T02:34:13.151Z\",\"boostedAt\":\"2026-10-10T02:34:13.150Z\",\"region\":{\"name\":\"도산동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-10T02:56:15.648Z\",\"boostedAt\":\"2026-10-10T02:56:15.647Z\",\"region\":{\"name\":\"신촌동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-10T02:17:25.275Z\",\"boostedAt\":\"2026-10-10T02:17:25.272Z\",\"region\":{\"name\":\"안양2동\"},\"category\":null,\"tradingCoo"
+          "createdAt\":\"2026-10-10T03:28:12.298Z\",\"boostedAt\":\"2026-10-10T03:28:12.295Z\",\"region\":{\"name\":\"정자1동\"},\"category\":null,\"tradingCoo",
+          "createdAt\":\"2026-10-10T02:17:25.275Z\",\"boostedAt\":\"2026-10-10T02:17:25.272Z\",\"region\":{\"name\":\"안양2동\"},\"category\":null,\"tradingCoo",
+          "createdAt\":\"2026-10-08T02:54:57.507Z\",\"boostedAt\":\"2026-10-10T04:02:10.088Z\",\"region\":{\"name\":\"산본동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-10T02:56:15.648Z\",\"boostedAt\":\"2026-10-10T02:56:15.647Z\",\"region\":{\"name\":\"신촌동\"},\"category\":null,\"tradingCoor"
         ],
         "scriptHeads": [
           "window.sentryEnv = {\n  release: \"5cab355\",\n  environment: \"prod-kr\"\n};",
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":267,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"피파,롤 돌아가는 노트북 급처합니다\",\"descript",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":262,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG XNOTE S525 노트북 (i5, 2GB RAM",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-94566b97.js\";\nimport * as route0 from \"/_remix/root-P4ns_lso.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-u7IPCM8v.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 1192,
-    "globalUniqueListings": 466,
+    "searchUniqueListings": 1184,
+    "globalUniqueListings": 458,
     "duplicateListingsRemoved": 726,
-    "detailQueueStart": 10,
-    "freshDetailTasks": 10,
+    "detailQueueStart": 12,
+    "freshDetailTasks": 12,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 10,
-    "detailSucceeded": 10,
+    "detailRequestsExecuted": 12,
+    "detailSucceeded": 12,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 466,
+    "postedAtResolvedFromSearch": 458,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 0,
-    "scanDurationMs": 90517,
+    "candidateCount": 2,
+    "scanDurationMs": 92721,
     "cities": [
       {
         "city": "군포시",
@@ -157,7 +162,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 283,
-        "durationMs": 12170
+        "durationMs": 12137
       },
       {
         "city": "의왕시",
@@ -172,8 +177,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 375,
-        "durationMs": 25676
+        "uniqueListings": 372,
+        "durationMs": 25682
       },
       {
         "city": "안양시",
@@ -190,8 +195,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 355,
-        "durationMs": 35001
+        "uniqueListings": 350,
+        "durationMs": 34952
       },
       {
         "city": "과천시",
@@ -203,16 +208,87 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 179,
-        "durationMs": 6262
+        "durationMs": 6084
       }
     ],
-    "finalCandidateCount": 0,
-    "stateItemCount": 4177,
+    "finalCandidateCount": 2,
+    "stateItemCount": 4181,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 90522
+    "durationMs": 92726
   },
-  "candidates": []
+  "candidates": [
+    {
+      "id": "fcd1a3iziddi",
+      "changeType": "new",
+      "previousPrice": null,
+      "price": 450000,
+      "priceDropPercent": null,
+      "city": "군포시",
+      "location": "산본동",
+      "regionPath": "경기도 군포시 산본동",
+      "title": "상태좋은 i5 10세대 ,ram16g ,ssd 512g 삼성노트북",
+      "modelHint": "상태좋은 i5 10세대 ,ram16g ,ssd 512g 삼성노트북",
+      "cpuHint": null,
+      "cpuBaselinePass": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "ram16g",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16G",
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "specConfidence": "needs_review",
+      "postedAt": "2026-10-10T03:54:03.296Z",
+      "boostedAt": "2026-10-10T03:54:03.294Z",
+      "status": "Ongoing",
+      "description": "구매한후 램과 SSD 업그레이드 해서 부팅속도 빠릅니다.\r\n배터리 상태 양호하고\r화면이 15.6 인치 여서 작업하기 편리 합니다.\r\n\n노트북 포멧 했고 오피스 한글 깔려 있습니다.\n충전기 드립니다\r\ni5 10세대 ,램 16G,  SSD 512G\r\nUHD 그래픽, 윈도우 11",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%83%81%ED%83%9C%EC%A2%8B%EC%9D%80-i5-10%EC%84%B8%EB%8C%80-ram16g-ssd-512g-%EC%82%BC%EC%84%B1%EB%85%B8%ED%8A%B8%EB%B6%81-fcd1a3iziddi/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "건강",
+      "mannerTemperature": 43.2
+    },
+    {
+      "id": "9vdm44orrzjs",
+      "changeType": "price_drop",
+      "previousPrice": 549000,
+      "price": 522000,
+      "priceDropPercent": 4.9,
+      "city": "안양시",
+      "location": "평촌동",
+      "regionPath": "경기도 안양시 동안구 평촌동",
+      "title": "LG 그램 15인치 노트북 15ZD980-TX56K i5 16GB RAM",
+      "modelHint": "LG 그램 15인치 노트북 15ZD980-TX56K i5 16GB RAM",
+      "cpuHint": null,
+      "cpuBaselinePass": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16기가",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "specConfidence": "needs_review",
+      "postedAt": "2026-06-28T12:30:21.114Z",
+      "boostedAt": "2026-10-10T04:30:21.566Z",
+      "status": "Ongoing",
+      "description": "LG 그램 노트북 15ZD980-tx56K 모델입니다. 2018년 출시한 모델입니다.\n그램 좀 써 보신 분 아시겠지만 터치 스크린 탑재 모델이 잘 없는데 이 모델은 탑재하고 있고요.\n요즘 램도 비싼데 현재 16기가 넣어둔 상태입니다. SSD는 256 입니다.\n배터리 사이클은 완충시 87% 나옵니다.\n\n사무용, 학습용으로는 차고 넘치고, 가벼워서 들고다니기도 편합니다. 저도 집에만 두고 잘 안쓰다가 이참에 판매합니다.",
+      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-15%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-15zd980-tx56k-i5-16gb-ram-9vdm44orrzjs/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "제발가져가줘요",
+      "mannerTemperature": 47.4
+    }
+  ]
 }

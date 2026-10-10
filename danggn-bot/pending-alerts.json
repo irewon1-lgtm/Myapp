@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-10T03:52:56.777061Z",
+  "updatedAt": "2026-10-10T04:33:00.325079Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -2776,6 +2776,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt905s3g-9r2arxeitffk/",
       "firstAlertedAt": "2026-10-10T01:13:27.695067Z",
       "lastCandidateAt": "2026-10-10T01:13:27.695067Z"
+    },
+    "fcd1a3iziddi": {
+      "id": "fcd1a3iziddi",
+      "title": "상태좋은 i5 10세대 ,ram16g ,ssd 512g 삼성노트북",
+      "price": 450000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "산본동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "ram16g",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16G",
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-10T03:54:03.296Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%83%81%ED%83%9C%EC%A2%8B%EC%9D%80-i5-10%EC%84%B8%EB%8C%80-ram16g-ssd-512g-%EC%82%BC%EC%84%B1%EB%85%B8%ED%8A%B8%EB%B6%81-fcd1a3iziddi/",
+      "firstAlertedAt": "2026-10-10T04:33:00.325079Z",
+      "lastCandidateAt": "2026-10-10T04:33:00.325079Z"
+    },
+    "9vdm44orrzjs": {
+      "id": "9vdm44orrzjs",
+      "title": "LG 그램 15인치 노트북 15ZD980-TX56K i5 16GB RAM",
+      "price": 522000,
+      "previousPrice": 549000,
+      "changeType": "price_drop",
+      "city": "안양시",
+      "location": "평촌동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16기가",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-06-28T12:30:21.114Z",
+      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-15%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-15zd980-tx56k-i5-16gb-ram-9vdm44orrzjs/",
+      "firstAlertedAt": "2026-10-10T04:33:00.325079Z",
+      "lastCandidateAt": "2026-10-10T04:33:00.325079Z"
     }
   }
 }
