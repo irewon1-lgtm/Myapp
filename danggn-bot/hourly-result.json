@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-10T20:52:48.648Z",
+  "generatedAt": "2026-10-10T21:32:44.793Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -99,57 +99,62 @@
             ]
           },
           {
-            "id": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%8115u470-i3-7100u-8gb-ram-256gb-ssd-%ED%99%94%EC%9D%B4%ED%8A%B8-6gib19ux9p8d/",
-            "href": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%8115u470-i3-7100u-8gb-ram-256gb-ssd-%ED%99%94%EC%9D%B4%ED%8A%B8-6gib19ux9p8d/",
-            "title": "LG 노트북15u470  i3-7100U 8GB RAM 256GB SSD 화이트",
-            "content": "깔끔한 화이트 색상의 LG 노트북이에요. 인텔 코어 i3-7100U 프로세서와 8GB RAM, 256GB SSD가 탑재되어 있어 일상적인 작업에 충분하답니다. 윈도우 10 홈이 설치되어 있어 바로 사용하실 수 있어요. 가볍고 휴대하기 좋아 어디서든 편리하게 사용하기 좋답니다.",
-            "price": "200000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202609/0b1543d8-23f9-493c-a424-7e57a5559e75.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-14%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-i5-x3ydwdaaiy4f/",
+            "href": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-14%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-i5-x3ydwdaaiy4f/",
+            "title": "LG 그램 노트북 14인치 화이트 I5",
+            "content": "LG 그램 노트북 14인치 화이트 색상입니다. 인텔 i5-6200U CPU, 8GB RAM이 탑재되어 있습니다. 가볍고 휴대하기 좋은 제품이에요. 사진에서 보이는 구성품과 함께 드립니다. 깔끔한 디자인으로 어디서든 잘 어울려요.\n\n많이 가볍습니다\n많이 않써서 상태도 좋고요\n아답터는 호환품입니다 문제없습니다\n이번주말까지 15만원으로 인하",
+            "price": "150000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/1791621993177d0c3cf3762b9e3b154fa26959f4d67b7b5fa7404893da62dff63303a92cac42b0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": true,
-            "createdAt": "2026-09-13T21:14:35.461Z",
-            "boostedAt": "2026-10-10T20:39:13.502Z",
+            "createdAt": "2026-10-10T08:48:07.054Z",
+            "boostedAt": "2026-10-10T08:48:07.053Z",
             "region": {
-              "name": "구포제1동"
+              "name": "고촌읍"
             },
             "category": null,
-            "tradingCoordinates": []
+            "tradingCoordinates": [
+              {
+                "latitude": 37.60192523698049,
+                "longitude": 126.7710118816424
+              }
+            ]
           }
         ],
         "dateFieldSnippets": [
           "createdAt\":\"2026-10-10T20:37:36.620Z\",\"boostedAt\":\"2026-10-10T20:37:36.619Z\",\"region\":{\"name\":\"호계2동\"},\"category\":null,\"tradingCoo",
           "createdAt\":\"2026-10-10T18:55:11.040Z\",\"boostedAt\":\"2026-10-10T18:55:11.039Z\",\"region\":{\"name\":\"칠전동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-09-13T21:14:35.461Z\",\"boostedAt\":\"2026-10-10T20:39:13.502Z\",\"region\":{\"name\":\"구포제1동\"},\"category\":null,\"tradingCo",
+          "createdAt\":\"2026-10-10T08:48:07.054Z\",\"boostedAt\":\"2026-10-10T08:48:07.053Z\",\"region\":{\"name\":\"고촌읍\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-10T19:40:38.632Z\",\"boostedAt\":\"2026-10-10T19:40:38.631Z\",\"region\":{\"name\":\"호계2동\"},\"category\":null,\"tradingCoo",
           "createdAt\":\"2026-10-10T19:10:26.968Z\",\"boostedAt\":\"2026-10-10T19:10:26.967Z\",\"region\":{\"name\":\"호계2동\"},\"category\":null,\"tradingCoo"
         ],
         "scriptHeads": [
           "window.sentryEnv = {\n  release: \"5cab355\",\n  environment: \"prod-kr\"\n};",
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":260,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"갤럭시북 플러스2.11세대cpu.상태좋고 배터리94%\"",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":258,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"갤럭시북 플러스2.11세대cpu.상태좋고 배터리94%\"",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-94566b97.js\";\nimport * as route0 from \"/_remix/root-P4ns_lso.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-u7IPCM8v.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 1248,
-    "globalUniqueListings": 460,
-    "duplicateListingsRemoved": 788,
-    "detailQueueStart": 2,
-    "freshDetailTasks": 2,
+    "searchUniqueListings": 1239,
+    "globalUniqueListings": 449,
+    "duplicateListingsRemoved": 790,
+    "detailQueueStart": 0,
+    "freshDetailTasks": 0,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 2,
-    "detailSucceeded": 2,
+    "detailRequestsExecuted": 0,
+    "detailSucceeded": 0,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 460,
+    "postedAtResolvedFromSearch": 449,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 1,
-    "scanDurationMs": 81169,
+    "candidateCount": 0,
+    "scanDurationMs": 79803,
     "cities": [
       {
         "city": "군포시",
@@ -161,8 +166,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 284,
-        "durationMs": 12228
+        "uniqueListings": 278,
+        "durationMs": 12265
       },
       {
         "city": "의왕시",
@@ -178,7 +183,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 364,
-        "durationMs": 25612
+        "durationMs": 26085
       },
       {
         "city": "안양시",
@@ -195,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 343,
-        "durationMs": 35079
+        "uniqueListings": 340,
+        "durationMs": 34958
       },
       {
         "city": "과천시",
@@ -208,52 +213,16 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 257,
-        "durationMs": 6205
+        "durationMs": 6366
       }
     ],
-    "finalCandidateCount": 1,
-    "stateItemCount": 4357,
+    "finalCandidateCount": 0,
+    "stateItemCount": 4359,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 81175
+    "durationMs": 79806
   },
-  "candidates": [
-    {
-      "id": "q39jv8yf5aoz",
-      "changeType": "new",
-      "previousPrice": null,
-      "price": 250000,
-      "priceDropPercent": null,
-      "city": "안양시",
-      "location": "호계2동",
-      "regionPath": "경기도 안양시 동안구 호계2동",
-      "title": "갤럭시북 플러스2.11세대cpu.상태좋고 배터리94%",
-      "modelHint": "갤럭시북 플러스2.11세대cpu.상태좋고 배터리94%",
-      "cpuHint": null,
-      "cpuBaselinePass": null,
-      "gpuHint": null,
-      "vramGB": null,
-      "ramGB": 128,
-      "ambiguousMemoryGB": null,
-      "hardwareReviewStatus": "PASS_RAM",
-      "ramEvidence": "램 128기가",
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": null,
-      "storageGB": null,
-      "llmCapability": "WORK_DEV_RAM32",
-      "llmReason": "RAM 32GB 이상 확정 후보",
-      "specConfidence": "confirmed",
-      "postedAt": "2026-10-10T20:37:36.620Z",
-      "boostedAt": "2026-10-10T20:37:36.619Z",
-      "status": "Ongoing",
-      "description": "삼성노트북 플러스2 모델 입니다.\n상판에 생활기스 있습니다.내부 터치패드 액정 키보드 깨끗하고 이상없습니다.배터리 94프로정도 효율로 상태좋고 사무용으로 제격입니다.\n2.5인치 ssd.hdd 베이 따로있어서 업글이 쉬워요.\n노트북은 특성상 드라이버부터 세팅을 잘해야합니다.\n믿고 바로 쓸수있도록 모든세팅 완벽해게 해놓고 \n판매를합니다.포맷과 클린설치후 모두세팅합니다.\n윈도우만 딱 설치해서 판매하지않고 풀세팅해서\n보내드립니다.\n11세대 6305셀러론cpu\n8기가램\n128기가ssd\n윈도우11 정품\n한글\n오피스 풀세팅 정품\n어댑터 포함\n바로사용가능합니다.",
-      "url": "https://www.daangn.com/kr/buy-sell/%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%81-%ED%94%8C%EB%9F%AC%EC%8A%A42-11%EC%84%B8%EB%8C%80cpu-%EC%83%81%ED%83%9C%EC%A2%8B%EA%B3%A0-%EB%B0%B0%ED%84%B0%EB%A6%AC94-q39jv8yf5aoz/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "요다네정직한상점",
-      "mannerTemperature": 78.3
-    }
-  ]
+  "candidates": []
 }
