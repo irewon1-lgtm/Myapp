@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-10T11:02:55.652Z",
+  "generatedAt": "2026-10-10T11:24:56.315Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -72,21 +72,26 @@
             "tradingCoordinates": []
           },
           {
-            "id": "/kr/buy-sell/asus-%EB%85%B8%ED%8A%B8%EB%B6%81-r5-vivobook-6wgzs8djz9tp/",
-            "href": "/kr/buy-sell/asus-%EB%85%B8%ED%8A%B8%EB%B6%81-r5-vivobook-6wgzs8djz9tp/",
-            "title": "(Asus 노트북) R5_VivoBook",
-            "content": "\nAsus Vivo book 16\"\n\nR5-4500U Renoir\nDdr4 8G Ram 3200Mt/s\nNvme 256G  \nAMD Radeon Graphics 496그래픽 조합입니다\n(Intel i5-11보다 cpu성능 우수합니다)\n\n배터리 양호하고 백라이트키보드에 DTs Sys 하만카돈 스피커로 사운드 아주 좋습니다\n정품 윈도우11pro 최신 25H2\n오피스 설치\n\n업무용 유튭넷플시청용 가벼운 게임용으로 적합\n\n초기화한 상태라 바로 사용 가능합니다\n\n\n\n\n",
-            "price": "430000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/954cac02-e8f1-4bc5-bf6b-0ade4e58adb6.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/lg-%EC%97%91%EC%8A%A4%EB%85%B8%ED%8A%B8-s550-%EB%85%B8%ED%8A%B8%EB%B6%81-4aw94rh4b1rz/",
+            "href": "/kr/buy-sell/lg-%EC%97%91%EC%8A%A4%EB%85%B8%ED%8A%B8-s550-%EB%85%B8%ED%8A%B8%EB%B6%81-4aw94rh4b1rz/",
+            "title": "LG 엑스노트 S550 노트북",
+            "content": "LG 엑스노트 S550 노트북 판매해요. 사진에서 보이는 것처럼 깔끔한 상태의 제품입니다. 넉넉한 저장 공간과 빠른 속도를 자랑하는 노트북으로, 다양한 작업에 활용하기 좋아요. 문서 작업부터 영상 시청까지 모두 만족시켜 드릴 거예요.\n전문가가 손 다본것임 속도 잘나와요.15.6인치대형 스크린 손해보고 파는거임.빠른거래 환영.당근페이 가능",
+            "price": "70000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/7d8c431e-a200-467a-91fb-aabb0e17801a.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-07T03:52:34.602Z",
-            "boostedAt": "2026-10-10T10:06:20.098Z",
+            "createdAt": "2026-10-06T05:07:25.310Z",
+            "boostedAt": "2026-10-10T08:33:31.173Z",
             "region": {
-              "name": "방어동"
+              "name": "동삼제1동"
             },
             "category": null,
-            "tradingCoordinates": []
+            "tradingCoordinates": [
+              {
+                "latitude": 35.07775261160242,
+                "longitude": 129.06912423670292
+              }
+            ]
           },
           {
             "id": "/kr/buy-sell/msi-ms-16g52-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-9m2iy6ny2qio/",
@@ -108,10 +113,10 @@
         ],
         "dateFieldSnippets": [
           "createdAt\":\"2026-09-23T05:26:05.131Z\",\"boostedAt\":\"2026-10-10T10:23:31.191Z\",\"region\":{\"name\":\"응봉동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-07T03:52:34.602Z\",\"boostedAt\":\"2026-10-10T10:06:20.098Z\",\"region\":{\"name\":\"방어동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-09T02:42:22.383Z\",\"boostedAt\":\"2026-10-09T02:42:22.381Z\",\"region\":{\"name\":\"내손2동\"},\"category\":null,\"tradingCoo",
           "createdAt\":\"2026-10-06T05:07:25.310Z\",\"boostedAt\":\"2026-10-10T08:33:31.173Z\",\"region\":{\"name\":\"동삼제1동\"},\"category\":null,\"tradingCo",
-          "createdAt\":\"2026-10-08T23:13:02.599Z\",\"boostedAt\":\"2026-10-09T23:26:04.370Z\",\"region\":{\"name\":\"율전동\"},\"category\":null,\"tradingCoor"
+          "createdAt\":\"2026-10-09T02:42:22.383Z\",\"boostedAt\":\"2026-10-09T02:42:22.381Z\",\"region\":{\"name\":\"내손2동\"},\"category\":null,\"tradingCoo",
+          "createdAt\":\"2026-10-08T23:13:02.599Z\",\"boostedAt\":\"2026-10-09T23:26:04.370Z\",\"region\":{\"name\":\"율전동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-06T12:28:27.110Z\",\"boostedAt\":\"2026-10-08T15:04:28.758Z\",\"region\":{\"name\":\"동호동\"},\"category\":null,\"tradingCoor"
         ],
         "scriptHeads": [
           "window.sentryEnv = {\n  release: \"5cab355\",\n  environment: \"prod-kr\"\n};",
@@ -122,24 +127,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1144,
-    "globalUniqueListings": 441,
-    "duplicateListingsRemoved": 703,
-    "detailQueueStart": 2,
-    "freshDetailTasks": 2,
+    "searchUniqueListings": 1167,
+    "globalUniqueListings": 449,
+    "duplicateListingsRemoved": 718,
+    "detailQueueStart": 5,
+    "freshDetailTasks": 5,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 2,
-    "detailSucceeded": 2,
+    "detailRequestsExecuted": 5,
+    "detailSucceeded": 5,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 441,
+    "postedAtResolvedFromSearch": 449,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 0,
-    "scanDurationMs": 81653,
+    "candidateCount": 1,
+    "scanDurationMs": 85012,
     "cities": [
       {
         "city": "군포시",
@@ -151,8 +156,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 278,
-        "durationMs": 12144
+        "uniqueListings": 279,
+        "durationMs": 12299
       },
       {
         "city": "의왕시",
@@ -167,8 +172,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 354,
-        "durationMs": 25482
+        "uniqueListings": 362,
+        "durationMs": 25573
       },
       {
         "city": "안양시",
@@ -185,8 +190,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 334,
-        "durationMs": 35194
+        "uniqueListings": 348,
+        "durationMs": 35081
       },
       {
         "city": "과천시",
@@ -198,16 +203,52 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 178,
-        "durationMs": 6664
+        "durationMs": 6290
       }
     ],
-    "finalCandidateCount": 0,
-    "stateItemCount": 4255,
+    "finalCandidateCount": 1,
+    "stateItemCount": 4256,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 81659
+    "durationMs": 85015
   },
-  "candidates": []
+  "candidates": [
+    {
+      "id": "og1kd7v744b6",
+      "changeType": "price_drop",
+      "previousPrice": 2100000,
+      "price": 2000000,
+      "priceDropPercent": 4.8,
+      "city": "의왕시",
+      "location": "오전동",
+      "regionPath": "경기도 의왕시 오전동",
+      "title": "미개봉 LG 그램 Pro Al 2026 노트북 [16Z95U-G.AS5ZK]",
+      "modelHint": "미개봉 LG 그램 Pro Al 2026 노트북 [16Z95U-G.AS5ZK]",
+      "cpuHint": null,
+      "cpuBaselinePass": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB 메모리",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "specConfidence": "needs_review",
+      "postedAt": "2026-10-07T11:38:32.698Z",
+      "boostedAt": "2026-10-10T11:08:51.467Z",
+      "status": "Ongoing",
+      "description": "LG 그램 Pro AI 2026 노트북을 판매합니다\n40.6cm 화면 AMD 라이젠 AI 5 프로세서,\n윈도우 11 탑재\n16GB 메모리 512GB SSD\n가볍고 슬림한 디자인으로 휴대성 용이\n\n검색 최저가 2,400,000원\n2,000,000원에 판매합니다.\n\n오전 오후 용인직거래 가능\n오후6시 이후 의왕 오전동직거래 가능",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%AF%B8%EA%B0%9C%EB%B4%89-lg-%EA%B7%B8%EB%9E%A8-pro-al-2026-%EB%85%B8%ED%8A%B8%EB%B6%81-16z95u-g-as5zk-og1kd7v744b6/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "잭씨네",
+      "mannerTemperature": 43.1
+    }
+  ]
 }
