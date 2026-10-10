@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-10T16:19:25.747Z",
+  "generatedAt": "2026-10-10T16:52:48.455Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,23 +55,6 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/hp-13%EC%9D%B8%EC%B9%98-%EC%82%AC%EB%AC%B4%EC%9A%A9-%EB%85%B8%ED%8A%B8%EB%B6%81-ia88zy9avycs/",
-            "href": "/kr/buy-sell/hp-13%EC%9D%B8%EC%B9%98-%EC%82%AC%EB%AC%B4%EC%9A%A9-%EB%85%B8%ED%8A%B8%EB%B6%81-ia88zy9avycs/",
-            "title": "HP 13인치 사무용 노트북",
-            "content": "사무용 인강용\n HP 13인치 5세대 슬림형 노트북 (HP 430 G2)\n\n▪CPU - Intel i5-5200U\n▪RAM - 8G\n▪HDD - SSD 120G\n▪배터리방전\n▪본체 + 어댑터\n\n윈도10 + 한글2024 + 오피스2024  클린설치\n외관 흠집없고 빠르게 작동\n배달가능",
-            "price": "100000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202609/0a778220-86e4-4c97-a15b-d087dceee648.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-09-30T04:41:53.794Z",
-            "boostedAt": "2026-10-10T14:16:15.136Z",
-            "region": {
-              "name": "동읍"
-            },
-            "category": null,
-            "tradingCoordinates": []
-          },
-          {
             "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-14%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-i5-x3ydwdaaiy4f/",
             "href": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-14%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-i5-x3ydwdaaiy4f/",
             "title": "LG 그램 노트북 14인치 화이트 I5",
@@ -109,42 +92,64 @@
             },
             "category": null,
             "tradingCoordinates": []
+          },
+          {
+            "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-13z940-gx30k-%ED%99%94%EC%9D%B4%ED%8A%B8-pzwe71ibwsk4/",
+            "href": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-13z940-gx30k-%ED%99%94%EC%9D%B4%ED%8A%B8-pzwe71ibwsk4/",
+            "title": "LG 그램 노트북 13Z940-GX30K 화이트",
+            "content": "가볍고 휴대하기 좋은 LG 그램 노트북이에요. 인텔 i3-4005U CPU에요 1.7GHz\n\n포멧하고 드릴예정이구요\n윈도우 미포함입니다\n\n아이패드만 사용해서 노트북은 사용을 잘 안하는데 연식은 있습니다\n\n금일기준 배터리성능 78%입니다\n최대용량 30,400mWh\n충전가능 용량 23,720mWh\n\n램 4Gb\nSSD 128G",
+            "price": "110000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202609/17891751639227e2715a56ff29b82ad06c11becb91c3530b03bd3c2ad9e50f62a9076012be9240.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-09-12T01:06:48.247Z",
+            "boostedAt": "2026-10-09T02:52:10.801Z",
+            "region": {
+              "name": "평촌동"
+            },
+            "category": null,
+            "tradingCoordinates": [
+              {
+                "latitude": 37.38810367011931,
+                "longitude": 126.96085026628037
+              }
+            ]
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-09-30T04:41:53.794Z\",\"boostedAt\":\"2026-10-10T14:16:15.136Z\",\"region\":{\"name\":\"동읍\"},\"category\":null,\"tradingCoord",
           "createdAt\":\"2026-10-10T08:48:07.054Z\",\"boostedAt\":\"2026-10-10T08:48:07.053Z\",\"region\":{\"name\":\"고촌읍\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-09T02:42:22.383Z\",\"boostedAt\":\"2026-10-09T02:42:22.381Z\",\"region\":{\"name\":\"내손2동\"},\"category\":null,\"tradingCoo",
           "createdAt\":\"2026-09-12T01:06:48.247Z\",\"boostedAt\":\"2026-10-09T02:52:10.801Z\",\"region\":{\"name\":\"평촌동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-10T07:46:07.927Z\",\"boostedAt\":\"2026-10-10T07:46:07.926Z\",\"region\":{\"name\":\"월피동\"},\"category\":null,\"tradingCoor"
+          "createdAt\":\"2026-09-30T04:41:53.794Z\",\"boostedAt\":\"2026-10-10T14:16:15.136Z\",\"region\":{\"name\":\"동읍\"},\"category\":null,\"tradingCoord",
+          "createdAt\":\"2026-10-07T01:11:16.418Z\",\"boostedAt\":\"2026-10-10T00:42:34.757Z\",\"region\":{\"name\":\"도산동\"},\"category\":null,\"tradingCoor"
         ],
         "scriptHeads": [
           "window.sentryEnv = {\n  release: \"5cab355\",\n  environment: \"prod-kr\"\n};",
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":265,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"HP 13인치 사무용 노트북\",\"description\"",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":262,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG 그램 노트북 14인치 화이트 I5\",\"descri",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-94566b97.js\";\nimport * as route0 from \"/_remix/root-P4ns_lso.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-u7IPCM8v.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 1240,
-    "globalUniqueListings": 455,
-    "duplicateListingsRemoved": 785,
-    "detailQueueStart": 2,
-    "freshDetailTasks": 2,
+    "searchUniqueListings": 1171,
+    "globalUniqueListings": 452,
+    "duplicateListingsRemoved": 719,
+    "detailQueueStart": 7,
+    "freshDetailTasks": 7,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 2,
-    "detailSucceeded": 2,
+    "detailRequestsExecuted": 7,
+    "detailSucceeded": 7,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 455,
+    "postedAtResolvedFromSearch": 452,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 80661,
+    "scanDurationMs": 87311,
     "cities": [
       {
         "city": "군포시",
@@ -156,8 +161,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 277,
-        "durationMs": 12077
+        "uniqueListings": 280,
+        "durationMs": 12160
       },
       {
         "city": "의왕시",
@@ -172,8 +177,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 362,
-        "durationMs": 25280
+        "uniqueListings": 367,
+        "durationMs": 25617
       },
       {
         "city": "안양시",
@@ -190,8 +195,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 345,
-        "durationMs": 34970
+        "uniqueListings": 346,
+        "durationMs": 35234
       },
       {
         "city": "과천시",
@@ -202,17 +207,17 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 256,
-        "durationMs": 6288
+        "uniqueListings": 178,
+        "durationMs": 6404
       }
     ],
     "finalCandidateCount": 0,
-    "stateItemCount": 4321,
+    "stateItemCount": 4327,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 80668
+    "durationMs": 87316
   },
   "candidates": []
 }
