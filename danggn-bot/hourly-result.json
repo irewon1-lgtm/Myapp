@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-11T18:12:47.351Z",
+  "generatedAt": "2026-10-11T18:52:48.201Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -126,35 +126,35 @@
           "createdAt\":\"2026-10-11T13:37:21.085Z\",\"boostedAt\":\"2026-10-11T13:37:21.082Z\",\"region\":{\"name\":\"정자3동\"},\"category\":null,\"tradingCoo",
           "createdAt\":\"2026-09-12T01:06:48.247Z\",\"boostedAt\":\"2026-10-09T02:52:10.801Z\",\"region\":{\"name\":\"평촌동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-11T04:44:39.324Z\",\"boostedAt\":\"2026-10-11T04:44:39.324Z\",\"region\":{\"name\":\"단봉동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-11T14:49:49.424Z\",\"boostedAt\":\"2026-10-11T14:49:49.422Z\",\"region\":{\"name\":\"상대원동\"},\"category\":null,\"tradingCoo"
+          "createdAt\":\"2026-10-11T16:09:38.627Z\",\"boostedAt\":\"2026-10-11T16:09:38.625Z\",\"region\":{\"name\":\"율천동\"},\"category\":null,\"tradingCoor"
         ],
         "scriptHeads": [
           "window.sentryEnv = {\n  release: \"5cab355\",\n  environment: \"prod-kr\"\n};",
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":264,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG 그램 노트북 14인치 화이트 I5\",\"descri",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":265,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG 그램 노트북 14인치 화이트 I5\",\"descri",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-94566b97.js\";\nimport * as route0 from \"/_remix/root-P4ns_lso.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-u7IPCM8v.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 1255,
-    "globalUniqueListings": 465,
-    "duplicateListingsRemoved": 790,
-    "detailQueueStart": 1,
-    "freshDetailTasks": 1,
+    "searchUniqueListings": 1263,
+    "globalUniqueListings": 470,
+    "duplicateListingsRemoved": 793,
+    "detailQueueStart": 0,
+    "freshDetailTasks": 0,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 1,
-    "detailSucceeded": 1,
+    "detailRequestsExecuted": 0,
+    "detailSucceeded": 0,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 465,
+    "postedAtResolvedFromSearch": 470,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 80467,
+    "scanDurationMs": 78819,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +166,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 282,
-        "durationMs": 12033
+        "uniqueListings": 286,
+        "durationMs": 12098
       },
       {
         "city": "의왕시",
@@ -182,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 366,
-        "durationMs": 25998
+        "uniqueListings": 370,
+        "durationMs": 25347
       },
       {
         "city": "안양시",
@@ -201,7 +201,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 352,
-        "durationMs": 35114
+        "durationMs": 35031
       },
       {
         "city": "과천시",
@@ -213,16 +213,16 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 255,
-        "durationMs": 6457
+        "durationMs": 6164
       }
     ],
     "finalCandidateCount": 0,
-    "stateItemCount": 4720,
+    "stateItemCount": 4724,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 80470
+    "durationMs": 78826
   },
   "candidates": []
 }
