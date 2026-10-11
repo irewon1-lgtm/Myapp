@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-11T11:03:24.551034Z",
+  "updatedAt": "2026-10-11T11:43:06.225128Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -3526,6 +3526,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%B2%A0%EC%9D%B4%EC%A7%81%EB%B6%81-%EB%B2%A0%EC%9D%B4%EC%A7%81%EC%8A%A4-basicwhite-14-1%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-i1umfpz6u3xm/",
       "firstAlertedAt": "2026-10-11T10:23:05.352350Z",
       "lastCandidateAt": "2026-10-11T10:23:05.352350Z"
+    },
+    "n19mh39aqgc2": {
+      "id": "n19mh39aqgc2",
+      "title": "한성컴퓨터 13인치 3205U/8GB/128GB 노트북",
+      "price": 80000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "의왕시",
+      "location": "내손2동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 128,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "/128GB",
+      "storageGB": 128,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-11T11:31:31.547Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%ED%95%9C%EC%84%B1%EC%BB%B4%ED%93%A8%ED%84%B0-13%EC%9D%B8%EC%B9%98-3205u-8gb-128gb-%EB%85%B8%ED%8A%B8%EB%B6%81-n19mh39aqgc2/",
+      "firstAlertedAt": "2026-10-11T11:43:06.225128Z",
+      "lastCandidateAt": "2026-10-11T11:43:06.225128Z"
+    },
+    "j6sdjrcsdq9r": {
+      "id": "j6sdjrcsdq9r",
+      "title": "레노버  V15 G4 ABP 16GB 노트북 풀박스",
+      "price": 420000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "명학동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": 256,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-11T11:23:05.668Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-v15-g4-abp-16gb-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%92%80%EB%B0%95%EC%8A%A4-j6sdjrcsdq9r/",
+      "firstAlertedAt": "2026-10-11T11:43:06.225128Z",
+      "lastCandidateAt": "2026-10-11T11:43:06.225128Z"
     }
   }
 }
