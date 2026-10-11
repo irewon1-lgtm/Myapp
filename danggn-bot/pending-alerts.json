@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-11T03:33:03.246914Z",
+  "updatedAt": "2026-10-11T04:13:12.524807Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -355,8 +355,8 @@
     "dnrqogku6itv": {
       "id": "dnrqogku6itv",
       "title": "몇일 안쓴!! HP 하이퍼엑스 오멘 16게이밍노트북 (라이젠9-8940HX/24GB/5070/1TB)",
-      "price": 2250000,
-      "previousPrice": 2300000,
+      "price": 2200000,
+      "previousPrice": 2250000,
       "changeType": "price_drop",
       "city": "과천시",
       "location": "별양동",
@@ -375,7 +375,7 @@
       "postedAt": "2026-10-05T15:01:05.741Z",
       "url": "https://www.daangn.com/kr/buy-sell/%EB%AA%87%EC%9D%BC-%EC%95%88%EC%93%B4-hp-%ED%95%98%EC%9D%B4%ED%8D%BC%EC%97%91%EC%8A%A4-%EC%98%A4%EB%A9%98-16%EA%B2%8C%EC%9D%B4%EB%B0%8D%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%9D%BC%EC%9D%B4%EC%A0%A09-8940hx-24gb-5070-1tb-dnrqogku6itv/",
       "firstAlertedAt": "2026-10-05T15:04:13.773150Z",
-      "lastCandidateAt": "2026-10-08T01:04:47.465457Z"
+      "lastCandidateAt": "2026-10-11T04:13:12.524807Z"
     },
     "vco4n85tm7e5": {
       "id": "vco4n85tm7e5",
@@ -3351,6 +3351,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%81-i5-16gb-512gb-7dpj2qte1dec/",
       "firstAlertedAt": "2026-10-11T03:33:03.246914Z",
       "lastCandidateAt": "2026-10-11T03:33:03.246914Z"
+    },
+    "efmibg1jwjwp": {
+      "id": "efmibg1jwjwp",
+      "title": "맥북 프로 15인치 2018 인텔 i7",
+      "price": 200000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "의왕시",
+      "location": "이동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB 메모리",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-11T04:03:00.599Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-15%EC%9D%B8%EC%B9%98-2018-%EC%9D%B8%ED%85%94-i7-efmibg1jwjwp/",
+      "firstAlertedAt": "2026-10-11T04:13:12.524807Z",
+      "lastCandidateAt": "2026-10-11T04:13:12.524807Z"
+    },
+    "cpogucpktcou": {
+      "id": "cpogucpktcou",
+      "title": "HP 파빌리온 15인치 노트북",
+      "price": 300000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "안양동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "메모리: 16GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-11T04:12:03.912Z",
+      "url": "https://www.daangn.com/kr/buy-sell/hp-%ED%8C%8C%EB%B9%8C%EB%A6%AC%EC%98%A8-15%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-cpogucpktcou/",
+      "firstAlertedAt": "2026-10-11T04:13:12.524807Z",
+      "lastCandidateAt": "2026-10-11T04:13:12.524807Z"
     }
   }
 }
