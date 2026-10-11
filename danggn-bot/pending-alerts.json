@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-11T02:13:47.036001Z",
+  "updatedAt": "2026-10-11T02:53:19.746015Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -2080,8 +2080,8 @@
     "48quubi9q3g4": {
       "id": "48quubi9q3g4",
       "title": "레노버 고사양 loq 노트북 rtx4060",
-      "price": 1050000,
-      "previousPrice": 1100000,
+      "price": 1000000,
+      "previousPrice": 1050000,
       "changeType": "price_drop",
       "city": "군포시",
       "location": "군포2동",
@@ -2100,7 +2100,7 @@
       "postedAt": "2026-10-05T12:17:43.574Z",
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EA%B3%A0%EC%82%AC%EC%96%91-loq-%EB%85%B8%ED%8A%B8%EB%B6%81-rtx4060-48quubi9q3g4/",
       "firstAlertedAt": "2026-10-08T10:24:49.942955Z",
-      "lastCandidateAt": "2026-10-08T10:24:49.942955Z"
+      "lastCandidateAt": "2026-10-11T02:53:19.746015Z"
     },
     "hkku5183mg9p": {
       "id": "hkku5183mg9p",
@@ -3276,6 +3276,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/14z970-%EB%A9%94%EB%AA%A8%EB%A6%AC-16%EA%B8%B0%EA%B0%80-ssd-1tb-gtb77mpmjq8c/",
       "firstAlertedAt": "2026-10-11T02:13:47.036001Z",
       "lastCandidateAt": "2026-10-11T02:13:47.036001Z"
+    },
+    "3jfiig5cur5h": {
+      "id": "3jfiig5cur5h",
+      "title": "헬리오스 네오16 RTX4060 / i7 / 32GB / 1TB 게이밍노트북",
+      "price": 1400000,
+      "previousPrice": 1430000,
+      "changeType": "price_drop",
+      "city": "안양시",
+      "location": "관양동",
+      "cpuHint": "i7-13700HX",
+      "gpuHint": "RTX4060",
+      "vramGB": null,
+      "ramGB": 32,
+      "ambiguousMemoryGB": 32,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "RAM: 32GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "32GB",
+      "storageGB": 1024,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "postedAt": "2026-10-03T10:01:29.425Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%ED%97%AC%EB%A6%AC%EC%98%A4%EC%8A%A4-%EB%84%A4%EC%98%A416-rtx4060-i7-32gb-1tb-%EA%B2%8C%EC%9D%B4%EB%B0%8D%EB%85%B8%ED%8A%B8%EB%B6%81-3jfiig5cur5h/",
+      "firstAlertedAt": "2026-10-11T02:53:19.746015Z",
+      "lastCandidateAt": "2026-10-11T02:53:19.746015Z"
+    },
+    "ys6eyxx24w22": {
+      "id": "ys6eyxx24w22",
+      "title": "Hp 빅터스15 고성능 게이밍 노트북 풀세트",
+      "price": 750000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "호계3동",
+      "cpuHint": null,
+      "gpuHint": "rtx3050",
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16g ram",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 256,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-11T02:51:01.020Z",
+      "url": "https://www.daangn.com/kr/buy-sell/hp-%EB%B9%85%ED%84%B0%EC%8A%A415-%EA%B3%A0%EC%84%B1%EB%8A%A5-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%92%80%EC%84%B8%ED%8A%B8-ys6eyxx24w22/",
+      "firstAlertedAt": "2026-10-11T02:53:19.746015Z",
+      "lastCandidateAt": "2026-10-11T02:53:19.746015Z"
     }
   }
 }
