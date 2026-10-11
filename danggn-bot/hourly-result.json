@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-11T15:23:05.334Z",
+  "generatedAt": "2026-10-11T15:37:17.894Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -126,35 +126,35 @@
           "createdAt\":\"2026-10-11T14:49:49.424Z\",\"boostedAt\":\"2026-10-11T14:49:49.422Z\",\"region\":{\"name\":\"상대원동\"},\"category\":null,\"tradingCoo",
           "createdAt\":\"2026-10-11T13:37:21.085Z\",\"boostedAt\":\"2026-10-11T13:37:21.082Z\",\"region\":{\"name\":\"정자3동\"},\"category\":null,\"tradingCoo",
           "createdAt\":\"2026-10-11T14:23:23.265Z\",\"boostedAt\":\"2026-10-11T14:23:23.264Z\",\"region\":{\"name\":\"해운동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-11T14:52:12.494Z\",\"boostedAt\":\"2026-10-11T14:52:12.492Z\",\"region\":{\"name\":\"유가읍\"},\"category\":null,\"tradingCoor"
+          "createdAt\":\"2026-10-10T10:20:32.154Z\",\"boostedAt\":\"2026-10-11T14:14:00.178Z\",\"region\":{\"name\":\"선암동\"},\"category\":null,\"tradingCoor"
         ],
         "scriptHeads": [
           "window.sentryEnv = {\n  release: \"5cab355\",\n  environment: \"prod-kr\"\n};",
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":263,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"베이직스 베이직북14 인텔 셀러론 N시리즈 256GB\"",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":260,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"베이직스 베이직북14 인텔 셀러론 N시리즈 256GB\"",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-94566b97.js\";\nimport * as route0 from \"/_remix/root-P4ns_lso.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-u7IPCM8v.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 1121,
-    "globalUniqueListings": 435,
-    "duplicateListingsRemoved": 686,
-    "detailQueueStart": 16,
-    "freshDetailTasks": 16,
+    "searchUniqueListings": 1232,
+    "globalUniqueListings": 458,
+    "duplicateListingsRemoved": 774,
+    "detailQueueStart": 5,
+    "freshDetailTasks": 5,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 16,
-    "detailSucceeded": 16,
+    "detailRequestsExecuted": 5,
+    "detailSucceeded": 5,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 435,
+    "postedAtResolvedFromSearch": 458,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 98077,
+    "scanDurationMs": 84394,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +166,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 277,
-        "durationMs": 12283
+        "uniqueListings": 274,
+        "durationMs": 12288
       },
       {
         "city": "의왕시",
@@ -182,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 337,
-        "durationMs": 25707
+        "uniqueListings": 360,
+        "durationMs": 25050
       },
       {
         "city": "안양시",
@@ -200,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 331,
-        "durationMs": 35195
+        "uniqueListings": 345,
+        "durationMs": 35193
       },
       {
         "city": "과천시",
@@ -212,17 +212,17 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 176,
-        "durationMs": 6329
+        "uniqueListings": 253,
+        "durationMs": 6201
       }
     ],
     "finalCandidateCount": 0,
-    "stateItemCount": 4699,
+    "stateItemCount": 4701,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 98083
+    "durationMs": 84400
   },
   "candidates": []
 }
