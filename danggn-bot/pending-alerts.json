@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-11T02:53:19.746015Z",
+  "updatedAt": "2026-10-11T03:33:03.246914Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -3326,6 +3326,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/hp-%EB%B9%85%ED%84%B0%EC%8A%A415-%EA%B3%A0%EC%84%B1%EB%8A%A5-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%92%80%EC%84%B8%ED%8A%B8-ys6eyxx24w22/",
       "firstAlertedAt": "2026-10-11T02:53:19.746015Z",
       "lastCandidateAt": "2026-10-11T02:53:19.746015Z"
+    },
+    "7dpj2qte1dec": {
+      "id": "7dpj2qte1dec",
+      "title": "삼성 갤럭시북 i5/16GB/512GB",
+      "price": 600000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "인덕원동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "ram 16g",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "/16GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-11T03:18:29.575Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%81-i5-16gb-512gb-7dpj2qte1dec/",
+      "firstAlertedAt": "2026-10-11T03:33:03.246914Z",
+      "lastCandidateAt": "2026-10-11T03:33:03.246914Z"
     }
   }
 }
