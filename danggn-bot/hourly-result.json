@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-11T19:32:51.896Z",
+  "generatedAt": "2026-10-11T19:45:05.465Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,43 +55,21 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/%EC%95%84%EC%88%98%EC%8A%A4-%EB%B9%84%EB%B3%B4%EB%B6%81-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%9E%A8-8%EA%B8%B0%EA%B0%80-ssd-512%EA%B8%B0%EA%B0%80-7gbiyhh7ym8a/",
-            "href": "/kr/buy-sell/%EC%95%84%EC%88%98%EC%8A%A4-%EB%B9%84%EB%B3%B4%EB%B6%81-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%9E%A8-8%EA%B8%B0%EA%B0%80-ssd-512%EA%B8%B0%EA%B0%80-7gbiyhh7ym8a/",
-            "title": "아수스 비보북 노트북 램 8기가 SSD 512기가",
-            "content": "CPU : 인텔 N-305(11세대급 저전력)\n램 : 8기가(추가 장착 가능)\nSSD : 512기가\n\n전체적으로 파손 없이 깨끗한 편입니다",
-            "price": "290000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/17912685803587fad8f1b064e5e83de1bdd8a284e73151b525950ae83bff132268889e3c1dde20.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%814-%ED%94%84%EB%A1%9C-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%92%80%EB%B0%95%EC%8A%A4-mx97bod9f99p/",
+            "href": "/kr/buy-sell/%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%814-%ED%94%84%EB%A1%9C-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%92%80%EB%B0%95%EC%8A%A4-mx97bod9f99p/",
+            "title": "갤럭시북4 프로 노트북 풀박스",
+            "content": "CPU : 인텔 울트라5-125H(인텔 14세대급)\n램 : 16기가\nSSD : 256기가\n\n풀박스 구성이고 전체적으로 깨끗한 편입니다.",
+            "price": "1000000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/1791270705502d4e423c7efcef1dbd41775eddaf6964892583c3b0525c29e60f22c8c97e0b7380.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-06T06:38:20.428Z",
-            "boostedAt": "2026-10-11T19:26:28.945Z",
+            "createdAt": "2026-10-06T07:13:42.025Z",
+            "boostedAt": "2026-10-11T19:26:37.217Z",
             "region": {
               "name": "구서동"
             },
             "category": null,
             "tradingCoordinates": []
-          },
-          {
-            "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-13z940-gx30k-%ED%99%94%EC%9D%B4%ED%8A%B8-pzwe71ibwsk4/",
-            "href": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-13z940-gx30k-%ED%99%94%EC%9D%B4%ED%8A%B8-pzwe71ibwsk4/",
-            "title": "LG 그램 노트북 13Z940-GX30K 화이트",
-            "content": "가볍고 휴대하기 좋은 LG 그램 노트북이에요. 인텔 i3-4005U CPU에요 1.7GHz\n\n포멧하고 드릴예정이구요\n윈도우 미포함입니다\n\n아이패드만 사용해서 노트북은 사용을 잘 안하는데 연식은 있습니다\n\n금일기준 배터리성능 78%입니다\n최대용량 30,400mWh\n충전가능 용량 23,720mWh\n\n램 4Gb\nSSD 128G",
-            "price": "110000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202609/17891751639227e2715a56ff29b82ad06c11becb91c3530b03bd3c2ad9e50f62a9076012be9240.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": false,
-            "createdAt": "2026-09-12T01:06:48.247Z",
-            "boostedAt": "2026-10-09T02:52:10.801Z",
-            "region": {
-              "name": "평촌동"
-            },
-            "category": null,
-            "tradingCoordinates": [
-              {
-                "latitude": 37.38810367011931,
-                "longitude": 126.96085026628037
-              }
-            ]
           },
           {
             "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-15z990-ga30k-%ED%99%94%EC%9D%B4%ED%8A%B8-%EB%85%B8%ED%8A%B8%EB%B6%81-2y9cspavm313/",
@@ -114,42 +92,64 @@
                 "longitude": 126.98594871908425
               }
             ]
+          },
+          {
+            "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-13z940-gx30k-%ED%99%94%EC%9D%B4%ED%8A%B8-pzwe71ibwsk4/",
+            "href": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-13z940-gx30k-%ED%99%94%EC%9D%B4%ED%8A%B8-pzwe71ibwsk4/",
+            "title": "LG 그램 노트북 13Z940-GX30K 화이트",
+            "content": "가볍고 휴대하기 좋은 LG 그램 노트북이에요. 인텔 i3-4005U CPU에요 1.7GHz\n\n포멧하고 드릴예정이구요\n윈도우 미포함입니다\n\n아이패드만 사용해서 노트북은 사용을 잘 안하는데 연식은 있습니다\n\n금일기준 배터리성능 78%입니다\n최대용량 30,400mWh\n충전가능 용량 23,720mWh\n\n램 4Gb\nSSD 128G",
+            "price": "110000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202609/17891751639227e2715a56ff29b82ad06c11becb91c3530b03bd3c2ad9e50f62a9076012be9240.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-09-12T01:06:48.247Z",
+            "boostedAt": "2026-10-09T02:52:10.801Z",
+            "region": {
+              "name": "평촌동"
+            },
+            "category": null,
+            "tradingCoordinates": [
+              {
+                "latitude": 37.38810367011931,
+                "longitude": 126.96085026628037
+              }
+            ]
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-10-06T06:38:20.428Z\",\"boostedAt\":\"2026-10-11T19:26:28.945Z\",\"region\":{\"name\":\"구서동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-09-12T01:06:48.247Z\",\"boostedAt\":\"2026-10-09T02:52:10.801Z\",\"region\":{\"name\":\"평촌동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-06T07:13:42.025Z\",\"boostedAt\":\"2026-10-11T19:26:37.217Z\",\"region\":{\"name\":\"구서동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-11T13:37:21.085Z\",\"boostedAt\":\"2026-10-11T13:37:21.082Z\",\"region\":{\"name\":\"정자3동\"},\"category\":null,\"tradingCoo",
-          "createdAt\":\"2026-10-11T04:44:39.324Z\",\"boostedAt\":\"2026-10-11T04:44:39.324Z\",\"region\":{\"name\":\"단봉동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-10T08:48:07.054Z\",\"boostedAt\":\"2026-10-10T08:48:07.053Z\",\"region\":{\"name\":\"고촌읍\"},\"category\":null,\"tradingCoor"
+          "createdAt\":\"2026-09-12T01:06:48.247Z\",\"boostedAt\":\"2026-10-09T02:52:10.801Z\",\"region\":{\"name\":\"평촌동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-10T08:48:07.054Z\",\"boostedAt\":\"2026-10-10T08:48:07.053Z\",\"region\":{\"name\":\"고촌읍\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-11T04:44:39.324Z\",\"boostedAt\":\"2026-10-11T04:44:39.324Z\",\"region\":{\"name\":\"단봉동\"},\"category\":null,\"tradingCoor"
         ],
         "scriptHeads": [
           "window.sentryEnv = {\n  release: \"5cab355\",\n  environment: \"prod-kr\"\n};",
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":264,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"아수스 비보북 노트북 램 8기가 SSD 512기가\",\"",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":267,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"갤럭시북4 프로 노트북 풀박스\",\"description",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-94566b97.js\";\nimport * as route0 from \"/_remix/root-P4ns_lso.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-u7IPCM8v.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 1264,
-    "globalUniqueListings": 469,
+    "searchUniqueListings": 1265,
+    "globalUniqueListings": 470,
     "duplicateListingsRemoved": 795,
-    "detailQueueStart": 1,
-    "freshDetailTasks": 1,
+    "detailQueueStart": 0,
+    "freshDetailTasks": 0,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 1,
-    "detailSucceeded": 1,
+    "detailRequestsExecuted": 0,
+    "detailSucceeded": 0,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 469,
+    "postedAtResolvedFromSearch": 470,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 79042,
+    "scanDurationMs": 79496,
     "cities": [
       {
         "city": "군포시",
@@ -161,8 +161,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 286,
-        "durationMs": 12040
+        "uniqueListings": 285,
+        "durationMs": 12133
       },
       {
         "city": "의왕시",
@@ -177,8 +177,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 369,
-        "durationMs": 25184
+        "uniqueListings": 370,
+        "durationMs": 25351
       },
       {
         "city": "안양시",
@@ -195,8 +195,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 354,
-        "durationMs": 34928
+        "uniqueListings": 355,
+        "durationMs": 35622
       },
       {
         "city": "과천시",
@@ -208,7 +208,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 255,
-        "durationMs": 6159
+        "durationMs": 6215
       }
     ],
     "finalCandidateCount": 0,
@@ -217,7 +217,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 79050
+    "durationMs": 79502
   },
   "candidates": []
 }
