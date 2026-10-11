@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-11T21:02:54.160453Z",
+  "updatedAt": "2026-10-11T21:42:50.572724Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -3701,6 +3701,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%ED%95%9C%EC%84%B1-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-tfx5550uc-%EC%95%A1%EC%A0%95%EA%B9%A8%EC%A7%90-ghnygv2nuohc/",
       "firstAlertedAt": "2026-10-11T14:42:57.794462Z",
       "lastCandidateAt": "2026-10-11T17:32:51.155439Z"
+    },
+    "ruxfvt3g31a5": {
+      "id": "ruxfvt3g31a5",
+      "title": "msi 노트북",
+      "price": 230000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "비산1동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16기가",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-11T21:21:12.465Z",
+      "url": "https://www.daangn.com/kr/buy-sell/msi-%EB%85%B8%ED%8A%B8%EB%B6%81-ruxfvt3g31a5/",
+      "firstAlertedAt": "2026-10-11T21:42:50.572724Z",
+      "lastCandidateAt": "2026-10-11T21:42:50.572724Z"
     }
   }
 }
