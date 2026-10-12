@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-12T06:33:06.730455Z",
+  "updatedAt": "2026-10-12T07:13:16.934299Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -2455,9 +2455,9 @@
     "phbf8gyjwasa": {
       "id": "phbf8gyjwasa",
       "title": "노트북 + 컴퓨터(intel , NVIDIA)본체 , 삼성 24인치 모니터 , 키보드 , 마우스 일괄 판매",
-      "price": 155000,
-      "previousPrice": null,
-      "changeType": "new",
+      "price": 150000,
+      "previousPrice": 155000,
+      "changeType": "price_drop",
       "city": "안양시",
       "location": "비산2동",
       "cpuHint": null,
@@ -2475,7 +2475,7 @@
       "postedAt": "2026-10-09T07:51:49.857Z",
       "url": "https://www.daangn.com/kr/buy-sell/%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%BB%B4%ED%93%A8%ED%84%B0-intel-nvidia-%EB%B3%B8%EC%B2%B4-%EC%82%BC%EC%84%B1-24%EC%9D%B8%EC%B9%98-%EB%AA%A8%EB%8B%88%ED%84%B0-%ED%82%A4%EB%B3%B4%EB%93%9C-%EB%A7%88%EC%9A%B0%EC%8A%A4-%EC%9D%BC%EA%B4%84-%ED%8C%90%EB%A7%A4-phbf8gyjwasa/",
       "firstAlertedAt": "2026-10-09T08:00:07.244359Z",
-      "lastCandidateAt": "2026-10-09T08:00:07.244359Z"
+      "lastCandidateAt": "2026-10-12T07:13:16.934299Z"
     },
     "etgxz5a1oqrk": {
       "id": "etgxz5a1oqrk",
@@ -4101,6 +4101,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%AF%B8%EA%B0%9C%EB%B4%89-%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-14-m3-max-36gb-ram-1tb-ssd-jrfrsqujfqga/",
       "firstAlertedAt": "2026-10-12T05:53:09.537407Z",
       "lastCandidateAt": "2026-10-12T05:53:09.537407Z"
+    },
+    "ek4fg5frsmr6": {
+      "id": "ek4fg5frsmr6",
+      "title": "LG 그램 15인치 i7 16GB 238GB",
+      "price": 1300000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "산본1동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB 메모리",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-12T07:10:55.284Z",
+      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-15%EC%9D%B8%EC%B9%98-i7-16gb-238gb-ek4fg5frsmr6/",
+      "firstAlertedAt": "2026-10-12T07:13:16.934299Z",
+      "lastCandidateAt": "2026-10-12T07:13:16.934299Z"
+    },
+    "7jk7m2tzts2d": {
+      "id": "7jk7m2tzts2d",
+      "title": "삼성 노트북 i3 4세대 외관 깨끗",
+      "price": 110000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "당정동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 128,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "128기가",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-12T06:59:53.377Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-i3-4%EC%84%B8%EB%8C%80-%EC%99%B8%EA%B4%80-%EA%B9%A8%EB%81%97-7jk7m2tzts2d/",
+      "firstAlertedAt": "2026-10-12T07:13:16.934299Z",
+      "lastCandidateAt": "2026-10-12T07:13:16.934299Z"
     }
   }
 }
