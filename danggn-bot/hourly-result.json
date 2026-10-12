@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-12T19:02:54.952Z",
+  "generatedAt": "2026-10-12T19:24:23.290Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -120,36 +120,36 @@
           "createdAt\":\"2026-09-27T10:40:30.519Z\",\"boostedAt\":\"2026-10-12T18:33:54.654Z\",\"region\":{\"name\":\"목감동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-12T07:30:57.044Z\",\"boostedAt\":\"2026-10-12T07:30:57.042Z\",\"region\":{\"name\":\"당정동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-12T13:05:14.413Z\",\"boostedAt\":\"2026-10-12T13:05:14.411Z\",\"region\":{\"name\":\"괴정제2동\"},\"category\":null,\"tradingCo",
-          "createdAt\":\"2026-10-12T05:00:40.947Z\",\"boostedAt\":\"2026-10-12T05:00:40.944Z\",\"region\":{\"name\":\"안양3동\"},\"category\":null,\"tradingCoo",
-          "createdAt\":\"2026-10-12T15:32:44.669Z\",\"boostedAt\":\"2026-10-12T15:32:44.669Z\",\"region\":{\"name\":\"난향동\"},\"category\":null,\"tradingCoor"
+          "createdAt\":\"2026-10-12T15:32:44.669Z\",\"boostedAt\":\"2026-10-12T15:32:44.669Z\",\"region\":{\"name\":\"난향동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-12T05:00:40.947Z\",\"boostedAt\":\"2026-10-12T05:00:40.944Z\",\"region\":{\"name\":\"안양3동\"},\"category\":null,\"tradingCoo"
         ],
         "scriptHeads": [
           "window.sentryEnv = {\n  release: \"c8cff58\",\n  environment: \"prod-kr\"\n};",
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":260,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"[초A급] 삼성노트북 CPU 8세대 i5 , 8GB(R",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":259,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"[초A급] 삼성노트북 CPU 8세대 i5 , 8GB(R",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-631c2db2.js\";\nimport * as route0 from \"/_remix/root-73Lk2GiS.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-BWbrVKGL.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 1183,
-    "globalUniqueListings": 457,
-    "duplicateListingsRemoved": 726,
-    "detailQueueStart": 5,
-    "freshDetailTasks": 5,
+    "searchUniqueListings": 1250,
+    "globalUniqueListings": 452,
+    "duplicateListingsRemoved": 798,
+    "detailQueueStart": 1,
+    "freshDetailTasks": 1,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 5,
-    "detailSucceeded": 5,
+    "detailRequestsExecuted": 1,
+    "detailSucceeded": 1,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 457,
+    "postedAtResolvedFromSearch": 452,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 84317,
+    "scanDurationMs": 80265,
     "cities": [
       {
         "city": "군포시",
@@ -161,8 +161,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 286,
-        "durationMs": 12163
+        "uniqueListings": 284,
+        "durationMs": 12415
       },
       {
         "city": "의왕시",
@@ -177,8 +177,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 367,
-        "durationMs": 25371
+        "uniqueListings": 370,
+        "durationMs": 25646
       },
       {
         "city": "안양시",
@@ -195,8 +195,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 352,
-        "durationMs": 35051
+        "uniqueListings": 338,
+        "durationMs": 35144
       },
       {
         "city": "과천시",
@@ -207,8 +207,8 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 178,
-        "durationMs": 6250
+        "uniqueListings": 258,
+        "durationMs": 6428
       }
     ],
     "finalCandidateCount": 0,
@@ -217,7 +217,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 84323
+    "durationMs": 80273
   },
   "candidates": []
 }
