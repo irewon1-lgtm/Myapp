@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-12T12:23:20.479685Z",
+  "updatedAt": "2026-10-12T13:03:25.091218Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -4351,6 +4351,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-14z995-%ED%8C%9D%EB%8B%88%EB%8B%A4-uf3vs82prjzm/",
       "firstAlertedAt": "2026-10-12T12:23:20.479685Z",
       "lastCandidateAt": "2026-10-12T12:23:20.479685Z"
+    },
+    "2ohxx2x3w72a": {
+      "id": "2ohxx2x3w72a",
+      "title": "LG gram 16 16인치 i5 13세대 16GB 256GB 화이트",
+      "price": 800000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "평촌동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "RAM: 16GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": 256,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-12T12:26:22.446Z",
+      "url": "https://www.daangn.com/kr/buy-sell/lg-gram-16-16%EC%9D%B8%EC%B9%98-i5-13%EC%84%B8%EB%8C%80-16gb-256gb-%ED%99%94%EC%9D%B4%ED%8A%B8-2ohxx2x3w72a/",
+      "firstAlertedAt": "2026-10-12T13:03:25.091218Z",
+      "lastCandidateAt": "2026-10-12T13:03:25.091218Z"
+    },
+    "nbsb4sz7yrft": {
+      "id": "nbsb4sz7yrft",
+      "title": "레노버 씽크북 16인치 노트북",
+      "price": 750000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "부흥동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 32,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "RAM 32GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "postedAt": "2026-10-12T12:30:52.382Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%94%BD%ED%81%AC%EB%B6%81-16%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-nbsb4sz7yrft/",
+      "firstAlertedAt": "2026-10-12T13:03:25.091218Z",
+      "lastCandidateAt": "2026-10-12T13:03:25.091218Z"
     }
   }
 }
