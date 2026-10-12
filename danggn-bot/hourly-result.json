@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-12T22:02:58.247Z",
+  "generatedAt": "2026-10-12T22:42:54.253Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,6 +55,45 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
+            "id": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-rotje5ws5oh3/",
+            "href": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-rotje5ws5oh3/",
+            "title": "LG 노트북 화이트",
+            "content": "LG 노트북 화이트 색상입니다. \n가볍고 휴대하기 좋아요. \n윈도우 설치되어 있어 바로 사용 가능합니다. \n깔끔한 디자인으로 어디서든 돋보이는 노트북입니다.",
+            "price": "170000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/1791838825591ba9579bd91c30176f396237bc405f04f52080a7217c87b9d8f67a6699311d6ce0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-10-12T21:01:20.091Z",
+            "boostedAt": "2026-10-12T21:01:20.073Z",
+            "region": {
+              "name": "비산동"
+            },
+            "category": null,
+            "tradingCoordinates": []
+          },
+          {
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt500r5k-bbjvgxgiudot/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt500r5k-bbjvgxgiudot/",
+            "title": "삼성 노트북 NT500R5K",
+            "content": "삼성 노트북 NT500R 모델이에요. \n15.6인치 화면으로  영상 시청에 좋아요. 마우스와 충전기도 함께 드려요.\n\nWindow 10, CPU i5-5200U\n500기가입니다",
+            "price": "80000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/0070e558-7f6f-436e-b04a-0fd55410d92a.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-12T21:35:51.874Z",
+            "boostedAt": "2026-10-12T21:35:51.872Z",
+            "region": {
+              "name": "관양동"
+            },
+            "category": null,
+            "tradingCoordinates": [
+              {
+                "latitude": 37.40931845819546,
+                "longitude": 126.97095103816491
+              }
+            ]
+          },
+          {
             "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt910s3l-k28p-%EB%A1%9C%EC%A6%88%EA%B3%A8%EB%93%9C-1f3p4trfqync/",
             "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt910s3l-k28p-%EB%A1%9C%EC%A6%88%EA%B3%A8%EB%93%9C-1f3p4trfqync/",
             "title": "삼성 노트북 NT910S3L-K28P 로즈골드",
@@ -75,81 +114,42 @@
                 "longitude": 126.8817576393485
               }
             ]
-          },
-          {
-            "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-15z980-mr3bk-%EB%85%B8%ED%8A%B8%EB%B6%81-hpbbhxwaydqx/",
-            "href": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-15z980-mr3bk-%EB%85%B8%ED%8A%B8%EB%B6%81-hpbbhxwaydqx/",
-            "title": "LG 그램 15Z980-MR3BK 노트북",
-            "content": "LG 그램 노트북 15Z980-MR3BK 판매해요. 인텔 i3 7100프로세서와 8GB RAM, 120GB,500GB SSD두를 탑재하고 있어요.\n\n구입하고 큰화면이 필요해서 잘 안쓰고 방치하다가 내놓습니다. 오랜간 안써서 그런지 키보드가 잘 안눌리네요. 대신 블루투스키보드도 함께 드립니다. 가방도 깨끗하게 관리했으니 관심있는 분들 연락주세요.",
-            "price": "140000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/8673f078-ca44-4310-8346-46d0926f7a59.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Reserved",
-            "isInstantBuyAvailable": false,
-            "createdAt": "2026-10-12T21:06:08.439Z",
-            "boostedAt": "2026-10-12T21:06:08.435Z",
-            "region": {
-              "name": "부곡동"
-            },
-            "category": null,
-            "tradingCoordinates": [
-              {
-                "latitude": 37.31988356958922,
-                "longitude": 126.95626874304583
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/%EB%8C%80%ED%99%94%EB%A9%B417%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-i3-8%EC%84%B8%EB%8C%80-h9jdiidxhuqb/",
-            "href": "/kr/buy-sell/%EB%8C%80%ED%99%94%EB%A9%B417%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-i3-8%EC%84%B8%EB%8C%80-h9jdiidxhuqb/",
-            "title": "대화면17인치 노트북 i3-8세대",
-            "content": "안녕하세요! HP 17.3인치 노트북 판매합니다.\n윈도우11정품인증.한글오피스설치\n인텔 i3-8세대 프로세서와 8GB RAM SSD128GB으로 쾌적한 사용이 가능해요.\n사진에서 보시는 것처럼 깔끔한 상태를 유지하고 있습니다.\n일상적인 작업부터 멀티미디어 감상까지, 만족스러운 경험을 선사할 거예요.\n미새기스외에 깔끔합니다\n노트북 충전기 마우스 드립니당",
-            "price": "270000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/df5a5205-c7b9-4e62-9811-ac447ca8158b.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-07T09:20:48.699Z",
-            "boostedAt": "2026-10-12T21:45:11.216Z",
-            "region": {
-              "name": "어룡동"
-            },
-            "category": null,
-            "tradingCoordinates": []
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-09-21T15:30:02.008Z\",\"boostedAt\":\"2026-10-12T21:50:19.998Z\",\"region\":{\"name\":\"월출동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-12T21:06:08.439Z\",\"boostedAt\":\"2026-10-12T21:06:08.435Z\",\"region\":{\"name\":\"부곡동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-07T09:20:48.699Z\",\"boostedAt\":\"2026-10-12T21:45:11.216Z\",\"region\":{\"name\":\"어룡동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-12T21:01:20.091Z\",\"boostedAt\":\"2026-10-12T21:01:20.073Z\",\"region\":{\"name\":\"비산동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-12T21:35:51.874Z\",\"boostedAt\":\"2026-10-12T21:35:51.872Z\",\"region\":{\"name\":\"관양동\"},\"category\":null,\"tradingCoor"
+          "createdAt\":\"2026-10-12T21:35:51.874Z\",\"boostedAt\":\"2026-10-12T21:35:51.872Z\",\"region\":{\"name\":\"관양동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-09-21T15:30:02.008Z\",\"boostedAt\":\"2026-10-12T21:50:19.998Z\",\"region\":{\"name\":\"월출동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-07T09:20:48.699Z\",\"boostedAt\":\"2026-10-12T21:45:11.216Z\",\"region\":{\"name\":\"어룡동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-12T22:11:04.502Z\",\"boostedAt\":\"2026-10-12T22:11:04.496Z\",\"region\":{\"name\":\"안양3동\"},\"category\":null,\"tradingCoo"
         ],
         "scriptHeads": [
           "window.sentryEnv = {\n  release: \"c8cff58\",\n  environment: \"prod-kr\"\n};",
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":258,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 노트북 NT910S3L-K28P 로즈골드\",\"de",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":258,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG 노트북 화이트\",\"description\":\"LG ",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-631c2db2.js\";\nimport * as route0 from \"/_remix/root-73Lk2GiS.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-BWbrVKGL.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 1172,
-    "globalUniqueListings": 455,
-    "duplicateListingsRemoved": 717,
-    "detailQueueStart": 3,
-    "freshDetailTasks": 3,
+    "searchUniqueListings": 1171,
+    "globalUniqueListings": 459,
+    "duplicateListingsRemoved": 712,
+    "detailQueueStart": 5,
+    "freshDetailTasks": 5,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 3,
-    "detailSucceeded": 3,
+    "detailRequestsExecuted": 5,
+    "detailSucceeded": 5,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 455,
+    "postedAtResolvedFromSearch": 459,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 0,
-    "scanDurationMs": 84298,
+    "candidateCount": 3,
+    "scanDurationMs": 86184,
     "cities": [
       {
         "city": "군포시",
@@ -161,8 +161,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 284,
-        "durationMs": 12457
+        "uniqueListings": 285,
+        "durationMs": 12481
       },
       {
         "city": "의왕시",
@@ -177,8 +177,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 364,
-        "durationMs": 26121
+        "uniqueListings": 363,
+        "durationMs": 25990
       },
       {
         "city": "안양시",
@@ -195,8 +195,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 346,
-        "durationMs": 35209
+        "uniqueListings": 345,
+        "durationMs": 35184
       },
       {
         "city": "과천시",
@@ -208,16 +208,122 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 178,
-        "durationMs": 6759
+        "durationMs": 6672
       }
     ],
-    "finalCandidateCount": 0,
+    "finalCandidateCount": 3,
     "stateItemCount": 5000,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 84305
+    "durationMs": 86189
   },
-  "candidates": []
+  "candidates": [
+    {
+      "id": "y1dufwk1cqwj",
+      "changeType": "new",
+      "previousPrice": null,
+      "price": 350000,
+      "priceDropPercent": null,
+      "city": "안양시",
+      "location": "안양3동",
+      "regionPath": "경기도 안양시 만안구 안양3동",
+      "title": "아수스 게이밍 노트북 (GTX 1060, 16램, 1TB)",
+      "modelHint": "아수스 게이밍 노트북 (GTX 1060, 16램, 1TB)",
+      "cpuHint": null,
+      "cpuBaselinePass": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "램 : 16기가",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "specConfidence": "needs_review",
+      "postedAt": "2026-10-12T22:11:04.502Z",
+      "boostedAt": "2026-10-12T22:11:04.496Z",
+      "status": "Ongoing",
+      "description": "제품 : ASUS ROG GL503V\n그래픽 : GeForce GTX 1060\nCPU : i7\n램 : 16기가\n용량 : 1TB\n\n전체적으로 눈에 보이는 기스없이 깨끗합니다.\n노트북 어댑터 끼고 사용하는걸 추천 드리며,\n현재 키보드만 안되서 외장 USB 키보드\n연결하여 쓰셔야 합니다.\n전원버튼, 터치패드는 이상없습니다.\n사실분 당근주세요.",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%95%84%EC%88%98%EC%8A%A4-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-gtx-1060-16%EB%9E%A8-1tb-y1dufwk1cqwj/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "요시",
+      "mannerTemperature": 47.2
+    },
+    {
+      "id": "948cnpgx7ygx",
+      "changeType": "new",
+      "previousPrice": null,
+      "price": 1000000,
+      "priceDropPercent": null,
+      "city": "의왕시",
+      "location": "내손1동",
+      "regionPath": "경기도 의왕시 내손1동",
+      "title": "맥북프로 M1 pro 16인치 실버 배터리효율 100%",
+      "modelHint": "맥북프로 M1 pro 16인치 실버 배터리효율 100%",
+      "cpuHint": "M1 pro",
+      "cpuBaselinePass": null,
+      "gpuHint": "M1 pro",
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "램 16GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "specConfidence": "needs_review",
+      "postedAt": "2026-10-12T22:13:24.937Z",
+      "boostedAt": "2026-10-12T22:13:24.934Z",
+      "status": "Ongoing",
+      "description": "실버 16인치입니다\n램 16GB ssd 512\n배터리 보다시피 사용을 안했어요\n하드케이스랑 노트북 파우치 같이드릴께요\n\n네고는 죄송합니다",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C-m1-pro-16%EC%9D%B8%EC%B9%98-%EC%8B%A4%EB%B2%84-%EB%B0%B0%ED%84%B0%EB%A6%AC%ED%9A%A8%EC%9C%A8-100-948cnpgx7ygx/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "JJ",
+      "mannerTemperature": 40.3
+    },
+    {
+      "id": "og1kd7v744b6",
+      "changeType": "price_drop",
+      "previousPrice": 2000000,
+      "price": 1900000,
+      "priceDropPercent": 5,
+      "city": "의왕시",
+      "location": "오전동",
+      "regionPath": "경기도 의왕시 오전동",
+      "title": "미개봉 LG 그램 Pro Al 2026 노트북 [16Z95U-G.AS5ZK]",
+      "modelHint": "미개봉 LG 그램 Pro Al 2026 노트북 [16Z95U-G.AS5ZK]",
+      "cpuHint": null,
+      "cpuBaselinePass": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB 메모리",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "specConfidence": "needs_review",
+      "postedAt": "2026-10-07T11:38:32.698Z",
+      "boostedAt": "2026-10-12T22:12:02.251Z",
+      "status": "Ongoing",
+      "description": "LG 그램 Pro AI 2026 노트북을 판매합니다\n40.6cm 화면 AMD 라이젠 AI 5 프로세서,\n윈도우 11 탑재\n16GB 메모리 512GB SSD\n가볍고 슬림한 디자인으로 휴대성 용이\n\n검색 최저가 2,400,000원\n1,900,000원에 판매합니다.\n\n오전 오후 용인직거래 가능\n오후6시 이후 의왕 오전동직거래 가능",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%AF%B8%EA%B0%9C%EB%B4%89-lg-%EA%B7%B8%EB%9E%A8-pro-al-2026-%EB%85%B8%ED%8A%B8%EB%B6%81-16z95u-g-as5zk-og1kd7v744b6/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "잭씨네",
+      "mannerTemperature": 43.1
+    }
+  ]
 }
