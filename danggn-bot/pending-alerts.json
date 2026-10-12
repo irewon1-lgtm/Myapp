@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-12T01:43:44.042384Z",
+  "updatedAt": "2026-10-12T02:23:11.479677Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -2355,8 +2355,8 @@
     "eyzu1zbr994j": {
       "id": "eyzu1zbr994j",
       "title": "DELL Latitude 5330 노트북",
-      "price": 550000,
-      "previousPrice": 600000,
+      "price": 450000,
+      "previousPrice": 550000,
       "changeType": "price_drop",
       "city": "안양시",
       "location": "부림동",
@@ -2375,7 +2375,7 @@
       "postedAt": "2026-10-03T06:27:35.175Z",
       "url": "https://www.daangn.com/kr/buy-sell/dell-latitude-5330-%EB%85%B8%ED%8A%B8%EB%B6%81-eyzu1zbr994j/",
       "firstAlertedAt": "2026-10-09T04:24:16.632584Z",
-      "lastCandidateAt": "2026-10-09T04:24:16.632584Z"
+      "lastCandidateAt": "2026-10-12T02:23:11.479677Z"
     },
     "cxkqux58q2c6": {
       "id": "cxkqux58q2c6",
@@ -2680,9 +2680,9 @@
     "zy8rdyv28ann": {
       "id": "zy8rdyv28ann",
       "title": "DELL Latitude 7310 노트북",
-      "price": 400000,
-      "previousPrice": null,
-      "changeType": "new",
+      "price": 380000,
+      "previousPrice": 400000,
+      "changeType": "price_drop",
       "city": "안양시",
       "location": "관양동",
       "cpuHint": "i7-10610U",
@@ -2700,7 +2700,7 @@
       "postedAt": "2026-10-10T00:29:00.494Z",
       "url": "https://www.daangn.com/kr/buy-sell/dell-latitude-7310-%EB%85%B8%ED%8A%B8%EB%B6%81-zy8rdyv28ann/",
       "firstAlertedAt": "2026-10-10T00:43:09.497512Z",
-      "lastCandidateAt": "2026-10-10T00:43:09.497512Z"
+      "lastCandidateAt": "2026-10-12T02:23:11.479677Z"
     },
     "dwhjvyk44j9v": {
       "id": "dwhjvyk44j9v",
@@ -3801,6 +3801,81 @@
       "url": "https://www.daangn.com/kr/buy-sell/thinkpad-x13-gen-7-amd-%ED%8C%9D%EB%8B%88%EB%8B%A4-ao283zj4x44p/",
       "firstAlertedAt": "2026-10-12T01:13:05.648637Z",
       "lastCandidateAt": "2026-10-12T01:13:05.648637Z"
+    },
+    "x3gonsnkebta": {
+      "id": "x3gonsnkebta",
+      "title": "에이서 니트로 V 16 게이밍 노트북 미개봉 팔아요",
+      "price": 1350000,
+      "previousPrice": 1400000,
+      "changeType": "price_drop",
+      "city": "안양시",
+      "location": "안양1동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-09-19T00:09:55.163Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%97%90%EC%9D%B4%EC%84%9C-%EB%8B%88%ED%8A%B8%EB%A1%9C-v-16-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%AF%B8%EA%B0%9C%EB%B4%89-%ED%8C%94%EC%95%84%EC%9A%94-x3gonsnkebta/",
+      "firstAlertedAt": "2026-10-12T02:23:11.479677Z",
+      "lastCandidateAt": "2026-10-12T02:23:11.479677Z"
+    },
+    "fdko6xuq1y9q": {
+      "id": "fdko6xuq1y9q",
+      "title": "에이수스 터프 게이밍 A16 RTX 4070(2024년)",
+      "price": 1900000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "석수1동",
+      "cpuHint": null,
+      "gpuHint": "RTX 4070",
+      "vramGB": null,
+      "ramGB": 48,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "RAM : 48기가",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 1024,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "postedAt": "2026-10-12T01:46:40.359Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%97%90%EC%9D%B4%EC%88%98%EC%8A%A4-%ED%84%B0%ED%94%84-%EA%B2%8C%EC%9D%B4%EB%B0%8D-a16-rtx-4070-2024%EB%85%84-fdko6xuq1y9q/",
+      "firstAlertedAt": "2026-10-12T02:23:11.479677Z",
+      "lastCandidateAt": "2026-10-12T02:23:11.479677Z"
+    },
+    "rtctyrypzinn": {
+      "id": "rtctyrypzinn",
+      "title": "레노버 아이디어패드 슬림3 노트북 (AMD 라이젠5, 16GB RAM)",
+      "price": 650000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "과천시",
+      "location": "과천동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-12T02:06:17.780Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%95%84%EC%9D%B4%EB%94%94%EC%96%B4%ED%8C%A8%EB%93%9C-%EC%8A%AC%EB%A6%BC3-%EB%85%B8%ED%8A%B8%EB%B6%81-amd-%EB%9D%BC%EC%9D%B4%EC%A0%A05-16gb-ram-rtctyrypzinn/",
+      "firstAlertedAt": "2026-10-12T02:23:11.479677Z",
+      "lastCandidateAt": "2026-10-12T02:23:11.479677Z"
     }
   }
 }
