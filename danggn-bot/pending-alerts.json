@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-12T03:13:03.228493Z",
+  "updatedAt": "2026-10-12T03:53:18.107360Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -3901,6 +3901,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%81-15-6%EC%9D%B8%EC%B9%98-%ED%92%80%EC%98%B5%EC%85%98-%EB%AA%A8%EB%8D%B8-nt750xdz-a71au-%EA%B8%89%EC%B2%98%ED%95%A9%EB%8B%88%EB%8B%A4-4yxhzm1y3heh/",
       "firstAlertedAt": "2026-10-12T02:32:11.473498Z",
       "lastCandidateAt": "2026-10-12T02:32:11.473498Z"
+    },
+    "n9h6k86kcuiz": {
+      "id": "n9h6k86kcuiz",
+      "title": "Asus게이밍 노트북 판매(17인치,라이젠7)",
+      "price": 980000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "당정동",
+      "cpuHint": null,
+      "gpuHint": "RTX 3060 Laptop",
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "RAM: 16GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-12T03:12:25.879Z",
+      "url": "https://www.daangn.com/kr/buy-sell/asus%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4-17%EC%9D%B8%EC%B9%98-%EB%9D%BC%EC%9D%B4%EC%A0%A07-n9h6k86kcuiz/",
+      "firstAlertedAt": "2026-10-12T03:53:18.107360Z",
+      "lastCandidateAt": "2026-10-12T03:53:18.107360Z"
     }
   }
 }
