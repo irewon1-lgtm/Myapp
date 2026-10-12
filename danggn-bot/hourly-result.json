@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-12T21:22:51.676Z",
+  "generatedAt": "2026-10-12T22:02:58.247Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,21 +55,26 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-rotje5ws5oh3/",
-            "href": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-rotje5ws5oh3/",
-            "title": "LG 노트북 화이트",
-            "content": "LG 노트북 화이트 색상입니다. \n가볍고 휴대하기 좋아요. \n윈도우 설치되어 있어 바로 사용 가능합니다. \n깔끔한 디자인으로 어디서든 돋보이는 노트북입니다.",
-            "price": "170000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/1791838825591ba9579bd91c30176f396237bc405f04f52080a7217c87b9d8f67a6699311d6ce0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt910s3l-k28p-%EB%A1%9C%EC%A6%88%EA%B3%A8%EB%93%9C-1f3p4trfqync/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt910s3l-k28p-%EB%A1%9C%EC%A6%88%EA%B3%A8%EB%93%9C-1f3p4trfqync/",
+            "title": "삼성 노트북 NT910S3L-K28P 로즈골드",
+            "content": "삼성 노트북 NT910S3L-K28P 로즈골드 색상입니다. 인텔 펜티엄 CPU, 8GB RAM, 128GB SSD가 탑재되어 있습니다. 윈도우 10 Home이 설치되어 있어 바로 사용 가능해요. 가볍고 예쁜 로즈골드 색상으로 어디서든 들고 다니기 좋아요.\n정상적으로 작동\n필요하시면 연락 주세요.",
+            "price": "120000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202609/da0aa9f0ab230ac856cb651c87606b86fb8227b7fa25b08c1c44155211596c43_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
-            "isInstantBuyAvailable": false,
-            "createdAt": "2026-10-12T21:01:20.091Z",
-            "boostedAt": "2026-10-12T21:01:20.073Z",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-09-21T15:30:02.008Z",
+            "boostedAt": "2026-10-12T21:50:19.998Z",
             "region": {
-              "name": "비산동"
+              "name": "월출동"
             },
             "category": null,
-            "tradingCoordinates": []
+            "tradingCoordinates": [
+              {
+                "latitude": 35.2444701574361,
+                "longitude": 126.8817576393485
+              }
+            ]
           },
           {
             "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-15z980-mr3bk-%EB%85%B8%ED%8A%B8%EB%B6%81-hpbbhxwaydqx/",
@@ -78,8 +83,8 @@
             "content": "LG 그램 노트북 15Z980-MR3BK 판매해요. 인텔 i3 7100프로세서와 8GB RAM, 120GB,500GB SSD두를 탑재하고 있어요.\n\n구입하고 큰화면이 필요해서 잘 안쓰고 방치하다가 내놓습니다. 오랜간 안써서 그런지 키보드가 잘 안눌리네요. 대신 블루투스키보드도 함께 드립니다. 가방도 깨끗하게 관리했으니 관심있는 분들 연락주세요.",
             "price": "140000",
             "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/8673f078-ca44-4310-8346-46d0926f7a59.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
+            "status": "Reserved",
+            "isInstantBuyAvailable": false,
             "createdAt": "2026-10-12T21:06:08.439Z",
             "boostedAt": "2026-10-12T21:06:08.435Z",
             "region": {
@@ -94,62 +99,57 @@
             ]
           },
           {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-sens-sf310%EB%93%B1-i7ewdj14euaj/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-sens-sf310%EB%93%B1-i7ewdj14euaj/",
-            "title": "삼성 노트북 SENS SF310등",
-            "content": "삼성 노트북 SENS SF310 등 2개 판매해요. 사진에서 보이는 것처럼 깔끔한 디자인의 노트북입니다. 자세한 스펙은 사진을 참고해주세요. 구매하시면 만족하실 거예요.\n부팅이되지않아 부속으로 사용가능합니다\n개당3만원 입니다 개별판매 가능합니다\n환불 안됩니다",
-            "price": "30000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/140d00e7-b30f-418e-a4d7-5fa09d431a12.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%EB%8C%80%ED%99%94%EB%A9%B417%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-i3-8%EC%84%B8%EB%8C%80-h9jdiidxhuqb/",
+            "href": "/kr/buy-sell/%EB%8C%80%ED%99%94%EB%A9%B417%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-i3-8%EC%84%B8%EB%8C%80-h9jdiidxhuqb/",
+            "title": "대화면17인치 노트북 i3-8세대",
+            "content": "안녕하세요! HP 17.3인치 노트북 판매합니다.\n윈도우11정품인증.한글오피스설치\n인텔 i3-8세대 프로세서와 8GB RAM SSD128GB으로 쾌적한 사용이 가능해요.\n사진에서 보시는 것처럼 깔끔한 상태를 유지하고 있습니다.\n일상적인 작업부터 멀티미디어 감상까지, 만족스러운 경험을 선사할 거예요.\n미새기스외에 깔끔합니다\n노트북 충전기 마우스 드립니당",
+            "price": "270000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/df5a5205-c7b9-4e62-9811-ac447ca8158b.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-12T21:08:22.235Z",
-            "boostedAt": "2026-10-12T21:08:22.232Z",
+            "createdAt": "2026-10-07T09:20:48.699Z",
+            "boostedAt": "2026-10-12T21:45:11.216Z",
             "region": {
-              "name": "서신면"
+              "name": "어룡동"
             },
             "category": null,
-            "tradingCoordinates": [
-              {
-                "latitude": 37.17080487015376,
-                "longitude": 126.70568193820571
-              }
-            ]
+            "tradingCoordinates": []
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-10-12T21:01:20.091Z\",\"boostedAt\":\"2026-10-12T21:01:20.073Z\",\"region\":{\"name\":\"비산동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-09-21T15:30:02.008Z\",\"boostedAt\":\"2026-10-12T21:50:19.998Z\",\"region\":{\"name\":\"월출동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-12T21:06:08.439Z\",\"boostedAt\":\"2026-10-12T21:06:08.435Z\",\"region\":{\"name\":\"부곡동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-12T21:08:22.235Z\",\"boostedAt\":\"2026-10-12T21:08:22.232Z\",\"region\":{\"name\":\"서신면\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-12T05:00:40.947Z\",\"boostedAt\":\"2026-10-12T05:00:40.944Z\",\"region\":{\"name\":\"안양3동\"},\"category\":null,\"tradingCoo",
-          "createdAt\":\"2026-10-12T07:30:57.044Z\",\"boostedAt\":\"2026-10-12T07:30:57.042Z\",\"region\":{\"name\":\"당정동\"},\"category\":null,\"tradingCoor"
+          "createdAt\":\"2026-10-07T09:20:48.699Z\",\"boostedAt\":\"2026-10-12T21:45:11.216Z\",\"region\":{\"name\":\"어룡동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-12T21:01:20.091Z\",\"boostedAt\":\"2026-10-12T21:01:20.073Z\",\"region\":{\"name\":\"비산동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-12T21:35:51.874Z\",\"boostedAt\":\"2026-10-12T21:35:51.872Z\",\"region\":{\"name\":\"관양동\"},\"category\":null,\"tradingCoor"
         ],
         "scriptHeads": [
           "window.sentryEnv = {\n  release: \"c8cff58\",\n  environment: \"prod-kr\"\n};",
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":257,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG 노트북 화이트\",\"description\":\"LG ",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":258,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 노트북 NT910S3L-K28P 로즈골드\",\"de",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-631c2db2.js\";\nimport * as route0 from \"/_remix/root-73Lk2GiS.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-BWbrVKGL.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 1173,
-    "globalUniqueListings": 456,
+    "searchUniqueListings": 1172,
+    "globalUniqueListings": 455,
     "duplicateListingsRemoved": 717,
-    "detailQueueStart": 4,
-    "freshDetailTasks": 4,
+    "detailQueueStart": 3,
+    "freshDetailTasks": 3,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 4,
-    "detailSucceeded": 4,
+    "detailRequestsExecuted": 3,
+    "detailSucceeded": 3,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 456,
+    "postedAtResolvedFromSearch": 455,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 83243,
+    "scanDurationMs": 84298,
     "cities": [
       {
         "city": "군포시",
@@ -161,8 +161,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 283,
-        "durationMs": 12262
+        "uniqueListings": 284,
+        "durationMs": 12457
       },
       {
         "city": "의왕시",
@@ -177,8 +177,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 366,
-        "durationMs": 25571
+        "uniqueListings": 364,
+        "durationMs": 26121
       },
       {
         "city": "안양시",
@@ -196,7 +196,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 346,
-        "durationMs": 34875
+        "durationMs": 35209
       },
       {
         "city": "과천시",
@@ -208,7 +208,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 178,
-        "durationMs": 6244
+        "durationMs": 6759
       }
     ],
     "finalCandidateCount": 0,
@@ -217,7 +217,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 83251
+    "durationMs": 84305
   },
   "candidates": []
 }
