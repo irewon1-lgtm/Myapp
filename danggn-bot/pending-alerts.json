@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-12T00:32:54.284767Z",
+  "updatedAt": "2026-10-12T01:13:05.648637Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -3305,8 +3305,8 @@
     "ys6eyxx24w22": {
       "id": "ys6eyxx24w22",
       "title": "Hp 빅터스15 고성능 게이밍 노트북 풀세트",
-      "price": 720000,
-      "previousPrice": 730000,
+      "price": 710000,
+      "previousPrice": 720000,
       "changeType": "price_drop",
       "city": "안양시",
       "location": "호계3동",
@@ -3325,7 +3325,7 @@
       "postedAt": "2026-10-11T02:51:01.020Z",
       "url": "https://www.daangn.com/kr/buy-sell/hp-%EB%B9%85%ED%84%B0%EC%8A%A415-%EA%B3%A0%EC%84%B1%EB%8A%A5-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%92%80%EC%84%B8%ED%8A%B8-ys6eyxx24w22/",
       "firstAlertedAt": "2026-10-11T02:53:19.746015Z",
-      "lastCandidateAt": "2026-10-11T13:03:09.129511Z"
+      "lastCandidateAt": "2026-10-12T01:13:05.648637Z"
     },
     "7dpj2qte1dec": {
       "id": "7dpj2qte1dec",
@@ -3751,6 +3751,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EA%B8%89%EC%B2%98-%EC%97%90%EC%9D%B4%EC%84%9C-%ED%94%84%EB%A0%88%EB%8D%B0%ED%84%B0-%ED%8A%B8%EB%A6%AC%ED%86%A4-17x-rtx4090-i9-ddr5-32gb-1tb-%EC%B5%9C%EA%B3%A0%EC%82%AC%EC%96%91-%EB%B0%95%EC%8A%A4%ED%92%80%EC%85%8B-dv5gv9v8gzku/",
       "firstAlertedAt": "2026-10-11T23:53:00.888833Z",
       "lastCandidateAt": "2026-10-11T23:53:00.888833Z"
+    },
+    "khm1rzrxdabb": {
+      "id": "khm1rzrxdabb",
+      "title": "Lg 그램 14Z90N 싸게 판매합니다",
+      "price": 470000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "석수동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "RAM: 16GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 256,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-12T00:47:29.973Z",
+      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-14z90n-%EC%8B%B8%EA%B2%8C-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-khm1rzrxdabb/",
+      "firstAlertedAt": "2026-10-12T01:13:05.648637Z",
+      "lastCandidateAt": "2026-10-12T01:13:05.648637Z"
+    },
+    "ao283zj4x44p": {
+      "id": "ao283zj4x44p",
+      "title": "ThinkPad X13 Gen 7 (AMD) 팝니다",
+      "price": 2800000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "과천시",
+      "location": "갈현동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 32,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "32기가 램",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "postedAt": "2026-10-12T00:39:59.483Z",
+      "url": "https://www.daangn.com/kr/buy-sell/thinkpad-x13-gen-7-amd-%ED%8C%9D%EB%8B%88%EB%8B%A4-ao283zj4x44p/",
+      "firstAlertedAt": "2026-10-12T01:13:05.648637Z",
+      "lastCandidateAt": "2026-10-12T01:13:05.648637Z"
     }
   }
 }
