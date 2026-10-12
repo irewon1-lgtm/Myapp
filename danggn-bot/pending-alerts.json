@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-12T15:03:17.305681Z",
+  "updatedAt": "2026-10-12T15:43:00.469761Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -4551,6 +4551,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/msi-gs65-stealth-9sd-i7-ram-16g-ssd-512g-gtx-1660ti-ebdyjs36fmic/",
       "firstAlertedAt": "2026-10-12T15:03:17.305681Z",
       "lastCandidateAt": "2026-10-12T15:03:17.305681Z"
+    },
+    "avy97qnnbhoy": {
+      "id": "avy97qnnbhoy",
+      "title": "맥북프로14인치 M4 -> 맥북에어 15인치 M5 교환",
+      "price": 100,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "도마교동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16기가",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-12T15:10:30.376Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C14%EC%9D%B8%EC%B9%98-m4-%EB%A7%A5%EB%B6%81%EC%97%90%EC%96%B4-15%EC%9D%B8%EC%B9%98-m5-%EA%B5%90%ED%99%98-avy97qnnbhoy/",
+      "firstAlertedAt": "2026-10-12T15:43:00.469761Z",
+      "lastCandidateAt": "2026-10-12T15:43:00.469761Z"
     }
   }
 }
