@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-13T13:03:03.114769Z",
+  "updatedAt": "2026-10-13T13:43:05.968647Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -5026,6 +5026,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-17z95n-%ED%8C%9D%EB%8B%88%EB%8B%A4-2y8hvga5e5y6/",
       "firstAlertedAt": "2026-10-13T12:23:01.173249Z",
       "lastCandidateAt": "2026-10-13T12:23:01.173249Z"
+    },
+    "ictz974xkrhv": {
+      "id": "ictz974xkrhv",
+      "title": "고성능 게이밍노트북 팔아용",
+      "price": 630000,
+      "previousPrice": 650000,
+      "changeType": "price_drop",
+      "city": "의왕시",
+      "location": "부곡동",
+      "cpuHint": "i7-12700H",
+      "gpuHint": "RTX 3060",
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 24,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "램 16GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "24GB",
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-09-12T13:48:40.314Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EA%B3%A0%EC%84%B1%EB%8A%A5-%EA%B2%8C%EC%9D%B4%EB%B0%8D%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%94%EC%95%84%EC%9A%A9-ictz974xkrhv/",
+      "firstAlertedAt": "2026-10-13T13:43:05.968647Z",
+      "lastCandidateAt": "2026-10-13T13:43:05.968647Z"
     }
   }
 }
