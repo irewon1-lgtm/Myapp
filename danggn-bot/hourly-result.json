@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-13T04:03:07.099Z",
+  "generatedAt": "2026-10-13T04:43:09.213Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -53,35 +53,108 @@
       },
       "htmlSample": {
         "embeddedArticles": false,
-        "remixArticleSamples": [],
-        "dateFieldSnippets": [],
+        "remixArticleSamples": [
+          {
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%94%8C%EB%9F%AC%EC%8A%A42-15-6%EC%9D%B8%EC%B9%98-8gb-256gb-%EC%9C%88%EB%8F%84%EC%9A%B011-pro-%EC%A0%95%ED%92%88-r1xnr1sfjpzf/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%94%8C%EB%9F%AC%EC%8A%A42-15-6%EC%9D%B8%EC%B9%98-8gb-256gb-%EC%9C%88%EB%8F%84%EC%9A%B011-pro-%EC%A0%95%ED%92%88-r1xnr1sfjpzf/",
+            "title": "삼성 노트북 플러스2 15.6인치 (8GB / 256GB / 윈도우11 Pro 정품)",
+            "content": "​모델명: NT550XDA-K24AG\n  \n​사양: 인텔 펜티엄 / RAM 8GB / SSD 256GB\n  \n​상태: 2022년 2월 구매 / 문서작업 및 인강용으로 깨끗하게 사용\n  \n​구성품: 노트북 본체 + 정품 충전기\n\n​초기화 완료해 두어서 바로 선만 꽂고 사용하시면 됩니다!\n쿨거래시 네고 가능합니다!",
+            "price": "180000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/71735721-87fc-45cc-b4f7-c550592b6997.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-13T04:39:35.467Z",
+            "boostedAt": "2026-10-13T04:39:35.440Z",
+            "region": {
+              "name": "소하1동"
+            },
+            "category": null,
+            "tradingCoordinates": [
+              {
+                "latitude": 37.455702323497604,
+                "longitude": 126.89390501735562
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/%ED%8A%BC%ED%8A%BC%ED%95%9C-%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-15%EC%9D%B8%EC%B9%98-%ED%8C%9D%EB%8B%88%EB%8B%A4-q5uqbwf7b1k8/",
+            "href": "/kr/buy-sell/%ED%8A%BC%ED%8A%BC%ED%95%9C-%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-15%EC%9D%B8%EC%B9%98-%ED%8C%9D%EB%8B%88%EB%8B%A4-q5uqbwf7b1k8/",
+            "title": "튼튼한 삼성 노트북 15인치 팝니다",
+            "content": "CPU i5 램은 8GB, 하드 SSD 128GB\n상태는 외관 사용감있어도 액정깨짐없고 이상없이  정상작동합니다\n\n윈도우10로 초기화된 상태라서 바로 쓰면 됩니다 오피스 등등 한글 워드 엑셀 파워포인트 있어요​",
+            "price": "100000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/5224031ac522b186d5a1f0b689c6c1aeef17ef4fd226fe11018bdf31f516b85c_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-13T04:37:19.080Z",
+            "boostedAt": "2026-10-13T04:37:19.078Z",
+            "region": {
+              "name": "옥계동"
+            },
+            "category": null,
+            "tradingCoordinates": [
+              {
+                "latitude": 36.13887216547832,
+                "longitude": 128.41178479754313
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/asus-%EB%B9%84%EB%B3%B4%EB%B6%81-11%EC%84%B8%EB%8C%80-%EB%85%B8%ED%8A%B8%EB%B6%81-6vgtkq835hrw/",
+            "href": "/kr/buy-sell/asus-%EB%B9%84%EB%B3%B4%EB%B6%81-11%EC%84%B8%EB%8C%80-%EB%85%B8%ED%8A%B8%EB%B6%81-6vgtkq835hrw/",
+            "title": "ASUS 비보북 11세대  노트북",
+            "content": "ASUS 비보북 노트북\n15.4인치\ni5-1135G7 (11세대) \n8GB RAM\n256 ssd\n\n전체적으로 상태 깔끔\nLED키보드\n지문인식\n소닉마스터사운드\n배터리 70%\n \n포맷후 윈도우11 정품설치\n엑셀 / 한글등 오피스 정품설치\n충전기 드림\n\n에누리 없이 35에 팝니다.\n",
+            "price": "350000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/e5c101e0-93c8-4992-8146-6e1fbe33d526.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-10-07T08:39:37.045Z",
+            "boostedAt": "2026-10-13T04:15:01.739Z",
+            "region": {
+              "name": "삼동"
+            },
+            "category": null,
+            "tradingCoordinates": [
+              {
+                "latitude": 37.31864297305599,
+                "longitude": 126.9535028201409
+              }
+            ]
+          }
+        ],
+        "dateFieldSnippets": [
+          "createdAt\":\"2026-10-13T04:39:35.467Z\",\"boostedAt\":\"2026-10-13T04:39:35.440Z\",\"region\":{\"name\":\"소하1동\"},\"category\":null,\"tradingCoo",
+          "createdAt\":\"2026-10-13T04:37:19.080Z\",\"boostedAt\":\"2026-10-13T04:37:19.078Z\",\"region\":{\"name\":\"옥계동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-07T08:39:37.045Z\",\"boostedAt\":\"2026-10-13T04:15:01.739Z\",\"region\":{\"name\":\"삼동\"},\"category\":null,\"tradingCoord",
+          "createdAt\":\"2026-10-13T04:30:31.088Z\",\"boostedAt\":\"2026-10-13T04:30:31.086Z\",\"region\":{\"name\":\"학성동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-13T04:34:40.705Z\",\"boostedAt\":\"2026-10-13T04:34:40.704Z\",\"region\":{\"name\":\"덕계동\"},\"category\":null,\"tradingCoor"
+        ],
         "scriptHeads": [
-          "\n    (function(window, document, mode) {\n      try {\n        document.documentElement.dataset.seed = '';\n        document.documentElement.dataset.seedColorMode = mode;\n      } catch (e) {}\n\n      try {\n        var prefer",
           "window.sentryEnv = {\n  release: \"c8cff58\",\n  environment: \"prod-kr\"\n};",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":260,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 노트북 플러스2 15.6인치 (8GB / 256G",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-631c2db2.js\";\nimport * as route0 from \"/_remix/root-73Lk2GiS.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-BWbrVKGL.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 946,
-    "globalUniqueListings": 425,
-    "duplicateListingsRemoved": 521,
-    "detailQueueStart": 5,
-    "freshDetailTasks": 5,
+    "searchUniqueListings": 1115,
+    "globalUniqueListings": 455,
+    "duplicateListingsRemoved": 660,
+    "detailQueueStart": 17,
+    "freshDetailTasks": 17,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 5,
-    "detailSucceeded": 5,
+    "detailRequestsExecuted": 17,
+    "detailSucceeded": 17,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 425,
+    "postedAtResolvedFromSearch": 455,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 0,
-    "scanDurationMs": 84231,
+    "candidateCount": 1,
+    "scanDurationMs": 100710,
     "cities": [
       {
         "city": "군포시",
@@ -93,8 +166,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 188,
-        "durationMs": 12114
+        "uniqueListings": 268,
+        "durationMs": 12478
       },
       {
         "city": "의왕시",
@@ -109,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 365,
-        "durationMs": 25451
+        "uniqueListings": 320,
+        "durationMs": 25941
       },
       {
         "city": "안양시",
@@ -127,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 313,
-        "durationMs": 34712
+        "uniqueListings": 349,
+        "durationMs": 35256
       },
       {
         "city": "과천시",
@@ -139,17 +212,53 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 80,
-        "durationMs": 6506
+        "uniqueListings": 178,
+        "durationMs": 6485
       }
     ],
-    "finalCandidateCount": 0,
+    "finalCandidateCount": 1,
     "stateItemCount": 5000,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 84237
+    "durationMs": 100715
   },
-  "candidates": []
+  "candidates": [
+    {
+      "id": "7dpj2qte1dec",
+      "changeType": "price_drop",
+      "previousPrice": 600000,
+      "price": 590000,
+      "priceDropPercent": 1.7,
+      "city": "안양시",
+      "location": "인덕원동",
+      "regionPath": "경기도 안양시 동안구 인덕원동",
+      "title": "삼성 갤럭시북 i5/16GB/512GB",
+      "modelHint": "삼성 갤럭시북 i5/16GB/512GB",
+      "cpuHint": null,
+      "cpuBaselinePass": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "ram 16g",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "/16GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "specConfidence": "needs_review",
+      "postedAt": "2026-10-11T03:18:29.575Z",
+      "boostedAt": "2026-10-13T04:38:20.373Z",
+      "status": "Ongoing",
+      "description": "무게 1kg 가량 가벼운 갤럭시 북입니다.\n\n스펙은 i5 11세대, ram 16g, 저장공간 512g, 그래픽 GeForce mx 450 입니다.\n\n제품상태 연식에 비해 매우 깨끗하며 사무용으로 빠르고 쾌적합니다(디자인 상판 실버 하판 화이트 투톤인데 깔끔하고 이쁘고 가볍습니다)\n\n판매 시 초기화해서 드리겠습니다 \n\n화면에 녹색 데드픽셀 1개 있는데 볼펜 점 1개 크기라서 사용상 문제 없습니다 (사진참조)\n\n직거래만 가능하며 장소는 역삼역 3번출구 뒷편 삼정 KPMG 별관 앞에서 합니다 \n\n네고문의 및 제품구매와 관련없는 문의사항은 답장드리지 않는 점 양해 부탁드립니다 \n\n감사합니다.",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%81-i5-16gb-512gb-7dpj2qte1dec/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "라이언",
+      "mannerTemperature": 49.4
+    }
+  ]
 }
