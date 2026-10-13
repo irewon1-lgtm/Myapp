@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-13T06:03:10.412091Z",
+  "updatedAt": "2026-10-13T06:43:04.512007Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -4726,6 +4726,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-rtx-5060-c-%ED%83%80%EC%9E%85-%ED%8F%AC%ED%8A%B8%EB%8F%84-%EC%9E%88%EC%8A%B5%EB%8B%88%EB%8B%A4-ss%EA%B8%89-7rcdq7tc3iuh/",
       "firstAlertedAt": "2026-10-13T06:03:10.412091Z",
       "lastCandidateAt": "2026-10-13T06:03:10.412091Z"
+    },
+    "gxkf1w1iqyr1": {
+      "id": "gxkf1w1iqyr1",
+      "title": "레이져 블레이드 Razer Blade 18 RTX 4090 게이밍 노트북",
+      "price": 4000000,
+      "previousPrice": 4200000,
+      "changeType": "price_drop",
+      "city": "안양시",
+      "location": "안양동",
+      "cpuHint": "i9-14900HX",
+      "gpuHint": "RTX 4090",
+      "vramGB": 16,
+      "ramGB": null,
+      "ambiguousMemoryGB": 32,
+      "hardwareReviewStatus": "PASS_VRAM",
+      "ramEvidence": null,
+      "vramEvidence": "16GB GDDR6",
+      "ambiguousMemoryEvidence": "32GB",
+      "storageGB": 2048,
+      "llmCapability": "LOCAL_LLM_GPU",
+      "llmReason": "VRAM 16GB 이상이 직접 표기되었거나 GPU 모델로 확인됨",
+      "postedAt": "2026-09-13T08:20:17.546Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EC%9D%B4%EC%A0%B8-%EB%B8%94%EB%A0%88%EC%9D%B4%EB%93%9C-razer-blade-18-rtx-4090-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-gxkf1w1iqyr1/",
+      "firstAlertedAt": "2026-10-13T06:43:04.512007Z",
+      "lastCandidateAt": "2026-10-13T06:43:04.512007Z"
+    },
+    "5xvog9783u1y": {
+      "id": "5xvog9783u1y",
+      "title": "레노버 x1 카본 13세대 + 5G 루나",
+      "price": 1000000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "평촌동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 32,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "Ram: 32gb",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 512,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "postedAt": "2026-10-13T06:26:37.237Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-x1-%EC%B9%B4%EB%B3%B8-13%EC%84%B8%EB%8C%80-5g-%EB%A3%A8%EB%82%98-5xvog9783u1y/",
+      "firstAlertedAt": "2026-10-13T06:43:04.512007Z",
+      "lastCandidateAt": "2026-10-13T06:43:04.512007Z"
     }
   }
 }
