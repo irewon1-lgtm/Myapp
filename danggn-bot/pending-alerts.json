@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-13T01:30:53.618891Z",
+  "updatedAt": "2026-10-13T02:03:04.501651Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -4676,6 +4676,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%812pro260-16%EC%9D%B8%EC%B9%98-9fzciv2qntsa/",
       "firstAlertedAt": "2026-10-13T01:30:53.618891Z",
       "lastCandidateAt": "2026-10-13T01:30:53.618891Z"
+    },
+    "77prs9vpqxqm": {
+      "id": "77prs9vpqxqm",
+      "title": "LG 그램 노트북(화이트)",
+      "price": 1300000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "의왕시",
+      "location": "내손1동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "RAM: 16GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 256,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-13T01:49:50.157Z",
+      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-77prs9vpqxqm/",
+      "firstAlertedAt": "2026-10-13T02:03:04.501651Z",
+      "lastCandidateAt": "2026-10-13T02:03:04.501651Z"
     }
   }
 }
