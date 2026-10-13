@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-13T19:42:53.120Z",
+  "generatedAt": "2026-10-13T20:22:48.663Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -72,28 +72,6 @@
             "tradingCoordinates": []
           },
           {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4-1cdvrq4vm8j4/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4-1cdvrq4vm8j4/",
-            "title": "삼성 노트북 판매",
-            "content": "삼성노트북nt501r5l팝니다\n\n펜티엄 4405  ssd128+500기가 하드2개 ddr4 15.6인치 1920 1080고해상도 밧데리상태좋음 얇고가벼운노트북\n윈도10. 한글 ms오피스2019.\n포토샵 일러스트 ",
-            "price": "110000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/5bcb9cea-d598-48c6-b46a-c3fe3ffd365a.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-13T14:13:07.000Z",
-            "boostedAt": "2026-10-13T14:13:06.997Z",
-            "region": {
-              "name": "지묘동"
-            },
-            "category": null,
-            "tradingCoordinates": [
-              {
-                "latitude": 35.938520105551824,
-                "longitude": 128.6428340524435
-              }
-            ]
-          },
-          {
             "id": "/kr/buy-sell/%EB%B9%A0%EB%A5%B4%EA%B2%8C-%EC%82%AC%EC%9A%A9%EA%B0%80%EB%8A%A5%ED%95%9C-%EC%82%BC%EC%84%B1%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4-36s2qvqs4zb1/",
             "href": "/kr/buy-sell/%EB%B9%A0%EB%A5%B4%EA%B2%8C-%EC%82%AC%EC%9A%A9%EA%B0%80%EB%8A%A5%ED%95%9C-%EC%82%BC%EC%84%B1%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4-36s2qvqs4zb1/",
             "title": "빠르게 사용가능한 삼성노트북 판매!!",
@@ -109,42 +87,64 @@
             },
             "category": null,
             "tradingCoordinates": []
+          },
+          {
+            "id": "/kr/buy-sell/%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-14%EC%9D%B8%EC%B9%98-fgt3pcrbgcu3/",
+            "href": "/kr/buy-sell/%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-14%EC%9D%B8%EC%B9%98-fgt3pcrbgcu3/",
+            "title": "그램 노트북 LG 그램 노트북 14인치",
+            "content": "LG 그램 노트북 14인치 화이트입니다\n상태 깨끗하고 작동하자없고 잘되요\n액정 멍이나 잔상 변색 없고 깨끗합니다. 화질굿\n한컴오피스 MS 오피스 둘다 설치되있어요\n윈도우 11 프로 포맷후 재설치 했어요\n전원 켜고 바로 사용하시면 되십니다\n마지막 사진 보시면 뒷쪽 모서리 작은 크랙 있어요\n작동과 상관없고 뒷모서리라 신경도 안쓰여요\n무선마우스 새거도 있어요\ni3-7100U. RAM 8G(DDR4)\nNVME SSD 256G\nHD Graphics 620\n",
+            "price": "280000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/427491e0-91d7-40ca-8580-6234bfb0e8a9.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-13T02:10:11.733Z",
+            "boostedAt": "2026-10-13T02:10:11.731Z",
+            "region": {
+              "name": "월피동"
+            },
+            "category": null,
+            "tradingCoordinates": [
+              {
+                "latitude": 37.33407459825561,
+                "longitude": 126.84632498770952
+              }
+            ]
           }
         ],
         "dateFieldSnippets": [
           "createdAt\":\"2026-10-13T19:22:44.731Z\",\"boostedAt\":\"2026-10-13T19:22:44.731Z\",\"region\":{\"name\":\"안양3동\"},\"category\":null,\"tradingCoo",
-          "createdAt\":\"2026-10-13T14:13:07.000Z\",\"boostedAt\":\"2026-10-13T14:13:06.997Z\",\"region\":{\"name\":\"지묘동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-12T13:05:14.413Z\",\"boostedAt\":\"2026-10-13T13:19:45.655Z\",\"region\":{\"name\":\"괴정제2동\"},\"category\":null,\"tradingCo",
-          "createdAt\":\"2026-10-13T18:38:18.805Z\",\"boostedAt\":\"2026-10-13T18:38:18.799Z\",\"region\":{\"name\":\"산본1동\"},\"category\":null,\"tradingCoo",
-          "createdAt\":\"2026-10-13T02:10:11.733Z\",\"boostedAt\":\"2026-10-13T02:10:11.731Z\",\"region\":{\"name\":\"월피동\"},\"category\":null,\"tradingCoor"
+          "createdAt\":\"2026-10-13T02:10:11.733Z\",\"boostedAt\":\"2026-10-13T02:10:11.731Z\",\"region\":{\"name\":\"월피동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-12T07:30:57.044Z\",\"boostedAt\":\"2026-10-12T07:30:57.042Z\",\"region\":{\"name\":\"당정동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-13T14:13:07.000Z\",\"boostedAt\":\"2026-10-13T14:13:06.997Z\",\"region\":{\"name\":\"지묘동\"},\"category\":null,\"tradingCoor"
         ],
         "scriptHeads": [
           "window.sentryEnv = {\n  release: \"fc983fa\",\n  environment: \"prod-kr\"\n};",
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":265,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"아수스 게이밍 노트북 (GTX 1060, 16램, 1T",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":264,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"아수스 게이밍 노트북 (GTX 1060, 16램, 1T",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-63a394b6.js\";\nimport * as route0 from \"/_remix/root-B6VHlIkp.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-CMV89P37.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 1195,
-    "globalUniqueListings": 465,
-    "duplicateListingsRemoved": 730,
-    "detailQueueStart": 2,
-    "freshDetailTasks": 2,
+    "searchUniqueListings": 1191,
+    "globalUniqueListings": 468,
+    "duplicateListingsRemoved": 723,
+    "detailQueueStart": 1,
+    "freshDetailTasks": 1,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 2,
-    "detailSucceeded": 2,
+    "detailRequestsExecuted": 1,
+    "detailSucceeded": 1,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 465,
+    "postedAtResolvedFromSearch": 468,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 1,
-    "scanDurationMs": 80729,
+    "candidateCount": 0,
+    "scanDurationMs": 79368,
     "cities": [
       {
         "city": "군포시",
@@ -156,8 +156,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 290,
-        "durationMs": 12142
+        "uniqueListings": 288,
+        "durationMs": 12056
       },
       {
         "city": "의왕시",
@@ -172,8 +172,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 367,
-        "durationMs": 25529
+        "uniqueListings": 359,
+        "durationMs": 25497
       },
       {
         "city": "안양시",
@@ -190,8 +190,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 359,
-        "durationMs": 34891
+        "uniqueListings": 365,
+        "durationMs": 34932
       },
       {
         "city": "과천시",
@@ -203,52 +203,16 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 179,
-        "durationMs": 6171
+        "durationMs": 5992
       }
     ],
-    "finalCandidateCount": 1,
+    "finalCandidateCount": 0,
     "stateItemCount": 5000,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 80735
+    "durationMs": 79375
   },
-  "candidates": [
-    {
-      "id": "ok78wycnx6c8",
-      "changeType": "new",
-      "previousPrice": null,
-      "price": 350000,
-      "priceDropPercent": null,
-      "city": "안양시",
-      "location": "안양3동",
-      "regionPath": "경기도 안양시 만안구 안양3동",
-      "title": "아수스 게이밍 노트북 (GTX 1060, 16램, 1TB)",
-      "modelHint": "아수스 게이밍 노트북 (GTX 1060, 16램, 1TB)",
-      "cpuHint": null,
-      "cpuBaselinePass": null,
-      "gpuHint": null,
-      "vramGB": null,
-      "ramGB": 16,
-      "ambiguousMemoryGB": null,
-      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": "램 : 16기가",
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": null,
-      "storageGB": null,
-      "llmCapability": "SPEC_CHECK_REQUIRED",
-      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
-      "specConfidence": "needs_review",
-      "postedAt": "2026-10-13T19:22:44.731Z",
-      "boostedAt": "2026-10-13T19:22:44.731Z",
-      "status": "Ongoing",
-      "description": "제품 : ASUS ROG GL503V\n그래픽 : GeForce GTX 1060\nCPU : i7\n램 : 16기가\n용량 : 1TB\n\n전체적으로 눈에 보이는 기스없이 깨끗합니다.\n노트북 어댑터 끼고 사용하는걸 추천 드리며,\n현재 키보드만 안되서 외장 USB 키보드\n연결하여 쓰셔야 합니다.\n전원버튼, 터치패드는 이상없습니다.\n사실분 당근주세요.",
-      "url": "https://www.daangn.com/kr/buy-sell/%EC%95%84%EC%88%98%EC%8A%A4-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-gtx-1060-16%EB%9E%A8-1tb-ok78wycnx6c8/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "요시",
-      "mannerTemperature": 47.2
-    }
-  ]
+  "candidates": []
 }
