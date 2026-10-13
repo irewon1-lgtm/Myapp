@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-13T11:43:04.416603Z",
+  "updatedAt": "2026-10-13T12:23:01.173249Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -5001,6 +5001,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EA%B8%89%EC%B3%90-15%EC%9D%B8%EC%B9%98-rtx4060-%EA%B2%8C%EC%9D%B4%EB%B0%8D%EB%85%B8%ED%8A%B8%EB%B6%81%ED%8C%9D%EB%8B%88%EB%8B%A4-e9y7u8kkmhfo/",
       "firstAlertedAt": "2026-10-13T10:22:55.881664Z",
       "lastCandidateAt": "2026-10-13T10:22:55.881664Z"
+    },
+    "2y8hvga5e5y6": {
+      "id": "2y8hvga5e5y6",
+      "title": "LG 그램 17Z95N 팝니다",
+      "price": 650000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "석수동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "RAM: 16GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-13T11:49:54.974Z",
+      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-17z95n-%ED%8C%9D%EB%8B%88%EB%8B%A4-2y8hvga5e5y6/",
+      "firstAlertedAt": "2026-10-13T12:23:01.173249Z",
+      "lastCandidateAt": "2026-10-13T12:23:01.173249Z"
     }
   }
 }
