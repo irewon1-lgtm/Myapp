@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-14T08:04:14.395523Z",
+  "updatedAt": "2026-10-14T08:42:29.167636Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -5276,6 +5276,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EC%95%84%EC%88%98%EC%8A%A4-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-gtx-1060-16%EB%9E%A8-1tb-74yws99oe983/",
       "firstAlertedAt": "2026-10-14T07:22:21.158811Z",
       "lastCandidateAt": "2026-10-14T07:22:21.158811Z"
+    },
+    "ytfuy3cczm1b": {
+      "id": "ytfuy3cczm1b",
+      "title": "삼성 갤럭시북4 프로 16인치",
+      "price": 1100000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "의왕시",
+      "location": "고천동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB 메모리",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-14T08:36:38.159Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%814-%ED%94%84%EB%A1%9C-16%EC%9D%B8%EC%B9%98-ytfuy3cczm1b/",
+      "firstAlertedAt": "2026-10-14T08:42:29.167636Z",
+      "lastCandidateAt": "2026-10-14T08:42:29.167636Z"
+    },
+    "i4wemofesubg": {
+      "id": "i4wemofesubg",
+      "title": "LG그램 10세대 i7 16GB 512GB 팝니다.",
+      "price": 700000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "안양6동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "RAM : 16GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-14T08:23:25.386Z",
+      "url": "https://www.daangn.com/kr/buy-sell/lg%EA%B7%B8%EB%9E%A8-10%EC%84%B8%EB%8C%80-i7-16gb-512gb-%ED%8C%9D%EB%8B%88%EB%8B%A4-i4wemofesubg/",
+      "firstAlertedAt": "2026-10-14T08:42:29.167636Z",
+      "lastCandidateAt": "2026-10-14T08:42:29.167636Z"
     }
   }
 }

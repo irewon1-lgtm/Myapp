@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-14T08:04:13.925Z",
+  "generatedAt": "2026-10-14T08:42:29.099Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -53,93 +53,35 @@
       },
       "htmlSample": {
         "embeddedArticles": false,
-        "remixArticleSamples": [
-          {
-            "id": "/kr/buy-sell/s%EA%B8%89-hp-%ED%99%94%EC%9D%B4%ED%8A%B8-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-10%EC%84%B8%EB%8C%80-8sw5ret3msnx/",
-            "href": "/kr/buy-sell/s%EA%B8%89-hp-%ED%99%94%EC%9D%B4%ED%8A%B8-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-10%EC%84%B8%EB%8C%80-8sw5ret3msnx/",
-            "title": "(S급) HP 화이트 노트북 (i5 10세대)",
-            "content": "외관 S급의 HP 노트북 입니다.\ni5 10세대 프로세서로 엄청 빠릿 하구요.\n배터리 100%찍혀서 테스트해보니\n풀영상 3시간 가네요. 사무작업은 훨씬 오래 가겠죠.\n\n모델명 : HP Laptop 15s-fq1008TU\n\nCPU : 인텔 코어 i5-1035G1 (10세대)\n\nRAM : DDR4 8GB (2667MHz)\n\nSSD : 마이크론 NVMe 256GB\n\n그래픽 : Intel UHD Graphics\n\n화면 : 15인치\n\n운영체제 : Windows 11\n\n",
-            "price": "340000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/27293982-19fb-49cb-8a1a-b329d29f6d59.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-14T07:52:21.869Z",
-            "boostedAt": "2026-10-14T07:52:21.864Z",
-            "region": {
-              "name": "송도동"
-            },
-            "category": null,
-            "tradingCoordinates": []
-          },
-          {
-            "id": "/kr/buy-sell/msi-gf65-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-rtx3060-ud421m8vge87/",
-            "href": "/kr/buy-sell/msi-gf65-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-rtx3060-ud421m8vge87/",
-            "title": "MSI GF65 게이밍 노트북 RTX3060",
-            "content": "MSI 게이밍 노트북 판매해요. 고사양 게임도 문제없이 즐길 수 있는 성능을 갖추고 있어요. 키보드 백라이트가 있어 어두운 곳에서도 편리하게 사용할 수 있습니다. 사진에서 보이는 것처럼 깔끔하게 관리되어 있어요. 이 노트북으로 즐거운 게이밍 경험을 만들어보세요.\n\n외관 새상품급입니다\n\nI5-10200\nRTX3060\nRAM 16GB\nSSD 500GB\n\n배터리효율 90프로정도 됩니다\n상태 최상급 기스도 거의 없습니다",
-            "price": "750000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/9073955c-2d3f-4a7f-b401-ccef24b53af0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-14T07:56:05.338Z",
-            "boostedAt": "2026-10-14T07:56:05.337Z",
-            "region": {
-              "name": "지행동"
-            },
-            "category": null,
-            "tradingCoordinates": []
-          },
-          {
-            "id": "/kr/buy-sell/%EB%85%B8%ED%8A%B8%EB%B6%81-w4syvznz71z6/",
-            "href": "/kr/buy-sell/%EB%85%B8%ED%8A%B8%EB%B6%81-w4syvznz71z6/",
-            "title": "노트북",
-            "content": "- CPU : Intel(R) Core(TM) I5-4200U\nHaswell(4th Gen)\n- Graphic : 112MB\n- RAM : 4.00GB\n- HDD : SSD 256GB\n- Operating System : Win 11 Pro\n\n평촌에서 직거래하며,\n구매 후 환불 불가입니다.\n꼭 사실 분만 연락주세요\n감사합니다.",
-            "price": "95000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202608/b1beca2a6b16758174d429d9411cac7aa129d10159bf3323994d627e4cefc457_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": false,
-            "createdAt": "2026-08-02T21:07:12.708Z",
-            "boostedAt": "2026-10-14T07:56:00.025Z",
-            "region": {
-              "name": "부림동"
-            },
-            "category": null,
-            "tradingCoordinates": []
-          }
-        ],
-        "dateFieldSnippets": [
-          "createdAt\":\"2026-10-14T07:52:21.869Z\",\"boostedAt\":\"2026-10-14T07:52:21.864Z\",\"region\":{\"name\":\"송도동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-14T07:56:05.338Z\",\"boostedAt\":\"2026-10-14T07:56:05.337Z\",\"region\":{\"name\":\"지행동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-08-02T21:07:12.708Z\",\"boostedAt\":\"2026-10-14T07:56:00.025Z\",\"region\":{\"name\":\"부림동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-12T07:30:57.044Z\",\"boostedAt\":\"2026-10-12T07:30:57.042Z\",\"region\":{\"name\":\"당정동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-14T08:00:02.043Z\",\"boostedAt\":\"2026-10-14T08:00:02.041Z\",\"region\":{\"name\":\"송도동\"},\"category\":null,\"tradingCoor"
-        ],
+        "remixArticleSamples": [],
+        "dateFieldSnippets": [],
         "scriptHeads": [
+          "\n    (function(window, document, mode) {\n      try {\n        document.documentElement.dataset.seed = '';\n        document.documentElement.dataset.seedColorMode = mode;\n      } catch (e) {}\n\n      try {\n        var prefer",
           "window.sentryEnv = {\n  release: \"050e2e9\",\n  environment: \"prod-kr\"\n};",
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":270,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"(S급) HP 화이트 노트북 (i5 10세대)\",\"de",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-71f8f593.js\";\nimport * as route0 from \"/_remix/root-ii7Ivh2t.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-DcCe9nPb.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 1098,
-    "globalUniqueListings": 449,
-    "duplicateListingsRemoved": 649,
-    "detailQueueStart": 14,
-    "freshDetailTasks": 14,
+    "searchUniqueListings": 1130,
+    "globalUniqueListings": 441,
+    "duplicateListingsRemoved": 689,
+    "detailQueueStart": 20,
+    "freshDetailTasks": 20,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 14,
-    "detailSucceeded": 14,
+    "detailRequestsExecuted": 20,
+    "detailSucceeded": 20,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 449,
+    "postedAtResolvedFromSearch": 441,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 0,
-    "scanDurationMs": 97523,
+    "candidateCount": 2,
+    "scanDurationMs": 102638,
     "cities": [
       {
         "city": "군포시",
@@ -151,8 +93,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 285,
-        "durationMs": 12282
+        "uniqueListings": 190,
+        "durationMs": 12158
       },
       {
         "city": "의왕시",
@@ -167,8 +109,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 365,
-        "durationMs": 25807
+        "uniqueListings": 367,
+        "durationMs": 25531
       },
       {
         "city": "안양시",
@@ -185,8 +127,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 349,
-        "durationMs": 35038
+        "uniqueListings": 316,
+        "durationMs": 34707
       },
       {
         "city": "과천시",
@@ -197,17 +139,88 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 99,
-        "durationMs": 6751
+        "uniqueListings": 257,
+        "durationMs": 6596
       }
     ],
-    "finalCandidateCount": 0,
+    "finalCandidateCount": 2,
     "stateItemCount": 5000,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 97581
+    "durationMs": 102645
   },
-  "candidates": []
+  "candidates": [
+    {
+      "id": "ytfuy3cczm1b",
+      "changeType": "new",
+      "previousPrice": null,
+      "price": 1100000,
+      "priceDropPercent": null,
+      "city": "의왕시",
+      "location": "고천동",
+      "regionPath": "경기도 의왕시 고천동",
+      "title": "삼성 갤럭시북4 프로 16인치",
+      "modelHint": "삼성 갤럭시북4 프로 16인치",
+      "cpuHint": null,
+      "cpuBaselinePass": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB 메모리",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "specConfidence": "needs_review",
+      "postedAt": "2026-10-14T08:36:38.159Z",
+      "boostedAt": "2026-10-14T08:36:38.159Z",
+      "status": "Ongoing",
+      "description": "삼성 갤럭시북4 프로 16인치 노트북입니다. 인텔 울트라 5 프로세서와 16GB 메모리, 512gb SSD를 탑재하여 빠르고 쾌적한 사용이 가능해요. AKG 사운드로 몰입감 있는 경험을 선사합니다. \n\n오늘 서비스센터에서 모든 기능이 정상 작동함을 확인했습니다. 슬림하고 세련된 디자인으로 어디서든 돋보이는 노트북입니다.",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%814-%ED%94%84%EB%A1%9C-16%EC%9D%B8%EC%B9%98-ytfuy3cczm1b/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "사기위해산다",
+      "mannerTemperature": 47.9
+    },
+    {
+      "id": "i4wemofesubg",
+      "changeType": "new",
+      "previousPrice": null,
+      "price": 700000,
+      "priceDropPercent": null,
+      "city": "안양시",
+      "location": "안양6동",
+      "regionPath": "경기도 안양시 만안구 안양6동",
+      "title": "LG그램 10세대 i7 16GB 512GB 팝니다.",
+      "modelHint": "LG그램 10세대 i7 16GB 512GB 팝니다.",
+      "cpuHint": null,
+      "cpuBaselinePass": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "RAM : 16GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "specConfidence": "needs_review",
+      "postedAt": "2026-10-14T08:23:25.386Z",
+      "boostedAt": "2026-10-14T08:23:25.384Z",
+      "status": "Ongoing",
+      "description": "모델 : 17Z90N\n연식 : 2020.12\nCPU : i7-1065G7\nRAM : 16GB(8+8)\nSSD : 512GB\nOS : 윈도우11pro 정품 \n배터리효율 : 89% 이상\n어댑터 : LG정품\nUSB-C PD 충전 가능\n\n\n\n연식대비 사용을 거의 하지 않아 외관상태가 새기기 급으로 매우 좋고 배터리 컨디션도 매우 좋은 상태입니다.\nOS 클린설치된 상태입니다.",
+      "url": "https://www.daangn.com/kr/buy-sell/lg%EA%B7%B8%EB%9E%A8-10%EC%84%B8%EB%8C%80-i7-16gb-512gb-%ED%8C%9D%EB%8B%88%EB%8B%A4-i4wemofesubg/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "중고상회",
+      "mannerTemperature": 57.6
+    }
+  ]
 }
