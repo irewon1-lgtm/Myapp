@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-14T20:52:13.456Z",
+  "generatedAt": "2026-10-14T21:32:28.218Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -77,24 +77,24 @@
             ]
           },
           {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1%EB%85%B8%ED%8A%B8%EB%B6%81%EC%9E%85%EB%8B%88%EB%8B%A4-p9m6xswv159o/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1%EB%85%B8%ED%8A%B8%EB%B6%81%EC%9E%85%EB%8B%88%EB%8B%A4-p9m6xswv159o/",
-            "title": "삼성노트북입니다",
-            "content": "무거운프로그램들을 많이 돌려서 제게 적합하지 않아서 판매합니다.\n\n패드왼쪽부분이 살짝 뻑뻑하고 윗면에 잔스크래치들이 조금 많고 스티커를 붙여놔서 싸게 판매합니다.\n\n삼성노트북이고 간단한 문서작업,영상시청 등 가벼운 프로그램들 사용엔 전혀 지장없습니다.\n\n15인치이구요 화면이 반짝거리는 유광재질이아니라 예전에 인강볼때 참 좋았습니다.",
-            "price": "75000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/1792008117091f50cc6b05d4c2c4948e7db2ca8a8476e7d52999d781a685b96fb09be3713ac9a0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%EC%95%84%EC%9D%B4%EB%AE%A4%EC%A6%88-%EC%8A%A4%ED%86%B0%EB%B6%814-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%9C%88%EB%8F%84%EC%9A%B011-j3obyweo3yfu/",
+            "href": "/kr/buy-sell/%EC%95%84%EC%9D%B4%EB%AE%A4%EC%A6%88-%EC%8A%A4%ED%86%B0%EB%B6%814-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%9C%88%EB%8F%84%EC%9A%B011-j3obyweo3yfu/",
+            "title": "아이뮤즈 스톰북4 노트북 윈도우11",
+            "content": "아이뮤즈 스톰북4 노트북 64GB\n윈도우 11이 설치되어 있어 바로 사용 가능해요.64GB\n유튜브영상 웹서핑 검색 사용편하기 괜찮은 노트북추천",
+            "price": "200000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/85cecfab-fc12-41b0-878e-58d6f91adb57.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-14T20:07:39.199Z",
-            "boostedAt": "2026-10-14T20:07:39.198Z",
+            "createdAt": "2026-10-14T21:20:32.732Z",
+            "boostedAt": "2026-10-14T21:20:32.721Z",
             "region": {
-              "name": "중산동"
+              "name": "동촌동"
             },
             "category": null,
             "tradingCoordinates": [
               {
-                "latitude": 37.692449831243856,
-                "longitude": 126.78201611313006
+                "latitude": 35.88674410792086,
+                "longitude": 128.63990309327232
               }
             ]
           },
@@ -123,38 +123,38 @@
         ],
         "dateFieldSnippets": [
           "createdAt\":\"2026-10-14T18:42:59.109Z\",\"boostedAt\":\"2026-10-14T18:42:59.108Z\",\"region\":{\"name\":\"왜관읍\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-14T20:07:39.199Z\",\"boostedAt\":\"2026-10-14T20:07:39.198Z\",\"region\":{\"name\":\"중산동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-14T21:20:32.732Z\",\"boostedAt\":\"2026-10-14T21:20:32.721Z\",\"region\":{\"name\":\"동촌동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-12T07:30:57.044Z\",\"boostedAt\":\"2026-10-12T07:30:57.042Z\",\"region\":{\"name\":\"당정동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-06T14:52:33.009Z\",\"boostedAt\":\"2026-10-14T20:25:09.228Z\",\"region\":{\"name\":\"연산제9동\"},\"category\":null,\"tradingCo",
+          "createdAt\":\"2026-10-14T21:01:03.706Z\",\"boostedAt\":\"2026-10-14T21:01:03.703Z\",\"region\":{\"name\":\"왜관읍\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-05T11:18:16.777Z\",\"boostedAt\":\"2026-10-14T14:03:35.096Z\",\"region\":{\"name\":\"봉선동\"},\"category\":null,\"tradingCoor"
         ],
         "scriptHeads": [
           "window.sentryEnv = {\n  release: \"050e2e9\",\n  environment: \"prod-kr\"\n};",
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":265,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG 그램 노트북 화이트\",\"description\":\"",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":268,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG 그램 노트북 화이트\",\"description\":\"",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-71f8f593.js\";\nimport * as route0 from \"/_remix/root-ii7Ivh2t.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-DcCe9nPb.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 1269,
-    "globalUniqueListings": 466,
-    "duplicateListingsRemoved": 803,
-    "detailQueueStart": 0,
-    "freshDetailTasks": 0,
+    "searchUniqueListings": 1271,
+    "globalUniqueListings": 469,
+    "duplicateListingsRemoved": 802,
+    "detailQueueStart": 3,
+    "freshDetailTasks": 3,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 0,
-    "detailSucceeded": 0,
+    "detailRequestsExecuted": 3,
+    "detailSucceeded": 3,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 466,
+    "postedAtResolvedFromSearch": 469,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 80068,
+    "scanDurationMs": 81903,
     "cities": [
       {
         "city": "군포시",
@@ -167,7 +167,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 288,
-        "durationMs": 12344
+        "durationMs": 12250
       },
       {
         "city": "의왕시",
@@ -182,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 379,
-        "durationMs": 25745
+        "uniqueListings": 376,
+        "durationMs": 25426
       },
       {
         "city": "안양시",
@@ -200,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 344,
-        "durationMs": 35216
+        "uniqueListings": 349,
+        "durationMs": 34955
       },
       {
         "city": "과천시",
@@ -213,7 +213,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 258,
-        "durationMs": 6550
+        "durationMs": 6226
       }
     ],
     "finalCandidateCount": 0,
@@ -222,7 +222,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 80073
+    "durationMs": 81909
   },
   "candidates": []
 }
