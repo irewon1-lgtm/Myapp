@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-14T19:08:54.928Z",
+  "generatedAt": "2026-10-14T19:32:10.001Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -77,21 +77,26 @@
             ]
           },
           {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt900x3k-i5-1-8ghz-119gb-dy36pjk7yjm7/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt900x3k-i5-1-8ghz-119gb-dy36pjk7yjm7/",
-            "title": "삼성 노트북 NT900X3K i5 1.8GHz 119GB",
-            "content": "삼성 노트북 NT900X3K 모델입니다. 인텔 i5 3세대 CPU와 1.8GHz 속도로 쾌적한 사용이 가능해요. 저장 공간은 119GB입니다. 가볍고 슬림한 디자인으로 휴대하기 좋아요. 사진에서 보이는 그대로의 제품입니다.\n\n충전기 없음 고장으로 미포함\n충전기 구매 후 충전 가능",
-            "price": "100000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/d2bf010a-f831-4ba3-b70b-7aa6f377fb78.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%817-%EB%85%B8%ED%8A%B8%EB%B6%81-w2arn12dsu71/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%817-%EB%85%B8%ED%8A%B8%EB%B6%81-w2arn12dsu71/",
+            "title": "삼성 갤럭시북7 노트북",
+            "content": "삼성 갤럭시북7 노트북이에요. \n윈도우가 설치되어 있어 바로 사용 가능해요. \n가볍고 휴대하기 좋아요. 지문인식 잘 됩니다\n\n힌지부분 손상되어 임시방편수리해두었습니다\n열고 닫고 잘되서 조심히 사용하시면 문제 없습니다!",
+            "price": "200000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/17920051976239f06bebb956297e4c2563a182fecc10257e32a29a059d233e84ebfe361fd219e0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-14T19:05:14.265Z",
-            "boostedAt": "2026-10-14T19:05:14.265Z",
+            "createdAt": "2026-10-14T19:14:34.911Z",
+            "boostedAt": "2026-10-14T19:14:34.908Z",
             "region": {
-              "name": "광남동"
+              "name": "왜관읍"
             },
             "category": null,
-            "tradingCoordinates": []
+            "tradingCoordinates": [
+              {
+                "latitude": 35.98465752526211,
+                "longitude": 128.4018879301044
+              }
+            ]
           },
           {
             "id": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EB%85%B8%ED%8A%B8%EB%B6%81-aqk5ekpum96x/",
@@ -113,10 +118,10 @@
         ],
         "dateFieldSnippets": [
           "createdAt\":\"2026-10-14T18:42:59.109Z\",\"boostedAt\":\"2026-10-14T18:42:59.108Z\",\"region\":{\"name\":\"왜관읍\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-14T19:05:14.265Z\",\"boostedAt\":\"2026-10-14T19:05:14.265Z\",\"region\":{\"name\":\"광남동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-14T19:14:34.911Z\",\"boostedAt\":\"2026-10-14T19:14:34.908Z\",\"region\":{\"name\":\"왜관읍\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-06T12:33:59.290Z\",\"boostedAt\":\"2026-10-14T14:19:40.314Z\",\"region\":{\"name\":\"율천동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-14T14:05:39.107Z\",\"boostedAt\":\"2026-10-14T14:05:39.106Z\",\"region\":{\"name\":\"신호동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-09-22T15:59:56.495Z\",\"boostedAt\":\"2026-10-14T19:06:02.673Z\",\"region\":{\"name\":\"창전동\"},\"category\":null,\"tradingCoor"
+          "createdAt\":\"2026-10-05T11:18:16.777Z\",\"boostedAt\":\"2026-10-14T14:03:35.096Z\",\"region\":{\"name\":\"봉선동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-14T19:05:14.265Z\",\"boostedAt\":\"2026-10-14T19:05:14.265Z\",\"region\":{\"name\":\"광남동\"},\"category\":null,\"tradingCoor"
         ],
         "scriptHeads": [
           "window.sentryEnv = {\n  release: \"050e2e9\",\n  environment: \"prod-kr\"\n};",
@@ -127,24 +132,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1212,
-    "globalUniqueListings": 475,
-    "duplicateListingsRemoved": 737,
-    "detailQueueStart": 3,
-    "freshDetailTasks": 3,
+    "searchUniqueListings": 1281,
+    "globalUniqueListings": 473,
+    "duplicateListingsRemoved": 808,
+    "detailQueueStart": 1,
+    "freshDetailTasks": 1,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 3,
-    "detailSucceeded": 3,
+    "detailRequestsExecuted": 1,
+    "detailSucceeded": 1,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 475,
+    "postedAtResolvedFromSearch": 473,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 82098,
+    "scanDurationMs": 79044,
     "cities": [
       {
         "city": "군포시",
@@ -156,8 +161,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 288,
-        "durationMs": 12096
+        "uniqueListings": 289,
+        "durationMs": 11936
       },
       {
         "city": "의왕시",
@@ -172,8 +177,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 379,
-        "durationMs": 25606
+        "uniqueListings": 378,
+        "durationMs": 25507
       },
       {
         "city": "안양시",
@@ -190,8 +195,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 366,
-        "durationMs": 34973
+        "uniqueListings": 356,
+        "durationMs": 34830
       },
       {
         "city": "과천시",
@@ -202,8 +207,8 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 179,
-        "durationMs": 6491
+        "uniqueListings": 258,
+        "durationMs": 6106
       }
     ],
     "finalCandidateCount": 0,
@@ -212,7 +217,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 82106
+    "durationMs": 79051
   },
   "candidates": []
 }
