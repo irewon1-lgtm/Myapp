@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-14T10:27:00.961Z",
+  "generatedAt": "2026-10-14T11:02:35.532Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -94,18 +94,18 @@
             ]
           },
           {
-            "id": "/kr/buy-sell/hp-%EB%B9%85%ED%84%B0%EC%8A%A4-15-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4-nfvfjgjbsh2j/",
-            "href": "/kr/buy-sell/hp-%EB%B9%85%ED%84%B0%EC%8A%A4-15-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4-nfvfjgjbsh2j/",
-            "title": "HP 빅터스 15 게이밍 노트북 판매",
-            "content": "깔끔한 HP 빅터스 게이밍 노트북이에요. 고사양 게임도 문제없이 즐길 수 있는 성능을 갖추고 있어요. 사진에서 보이는 것처럼 구성품도 잘 갖춰져 있답니다. 이 노트북으로 즐거운 컴퓨팅 경험을 만들어보세요.\n\n사양\n엔비디아 지포스 RTX 3050\nCPU i5-13420h\n램 16GB\nSSD 512GB\n\n",
-            "price": "750000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/3551c658-e158-4aeb-a703-ba4fa923f49b.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%EB%A7%A5%EB%B6%81-%EB%84%A4%EC%98%A4-%EB%B8%94%EB%9F%AC%EC%89%AC-%EC%83%89%EC%83%81-256g-hh1xbac5gjsy/",
+            "href": "/kr/buy-sell/%EB%A7%A5%EB%B6%81-%EB%84%A4%EC%98%A4-%EB%B8%94%EB%9F%AC%EC%89%AC-%EC%83%89%EC%83%81-256g-hh1xbac5gjsy/",
+            "title": "맥북 네오 블러쉬 색상 256g",
+            "content": "맥북 네오 핑크색상 256기가\n산지 한달도 안됐어요.\n아이폰에서 갤럭시 쓰게되서 판매합니다.",
+            "price": "900000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/032770ac-788f-4abc-9d0f-3496b0625d17.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": false,
-            "createdAt": "2026-10-14T09:41:40.214Z",
-            "boostedAt": "2026-10-14T09:41:40.213Z",
+            "createdAt": "2026-10-14T10:55:32.055Z",
+            "boostedAt": "2026-10-14T10:55:32.051Z",
             "region": {
-              "name": "부곡동"
+              "name": "오전동"
             },
             "category": null,
             "tradingCoordinates": []
@@ -114,9 +114,9 @@
         "dateFieldSnippets": [
           "createdAt\":\"2026-10-14T10:15:35.347Z\",\"boostedAt\":\"2026-10-14T10:15:35.346Z\",\"region\":{\"name\":\"온양6동\"},\"category\":null,\"tradingCoo",
           "createdAt\":\"2026-10-14T10:14:35.777Z\",\"boostedAt\":\"2026-10-14T10:14:35.774Z\",\"region\":{\"name\":\"오산동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-14T09:41:40.214Z\",\"boostedAt\":\"2026-10-14T09:41:40.213Z\",\"region\":{\"name\":\"부곡동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-14T10:55:32.055Z\",\"boostedAt\":\"2026-10-14T10:55:32.051Z\",\"region\":{\"name\":\"오전동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-09T02:42:22.383Z\",\"boostedAt\":\"2026-10-14T09:13:56.397Z\",\"region\":{\"name\":\"내손2동\"},\"category\":null,\"tradingCoo",
-          "createdAt\":\"2026-10-14T10:19:19.559Z\",\"boostedAt\":\"2026-10-14T10:19:19.555Z\",\"region\":{\"name\":\"서초동\"},\"category\":null,\"tradingCoor"
+          "createdAt\":\"2026-10-14T06:59:03.246Z\",\"boostedAt\":\"2026-10-14T06:59:03.242Z\",\"region\":{\"name\":\"상동\"},\"category\":null,\"tradingCoord"
         ],
         "scriptHeads": [
           "window.sentryEnv = {\n  release: \"050e2e9\",\n  environment: \"prod-kr\"\n};",
@@ -127,9 +127,9 @@
         ]
       }
     },
-    "searchUniqueListings": 1169,
-    "globalUniqueListings": 450,
-    "duplicateListingsRemoved": 719,
+    "searchUniqueListings": 1221,
+    "globalUniqueListings": 437,
+    "duplicateListingsRemoved": 784,
     "detailQueueStart": 11,
     "freshDetailTasks": 11,
     "backlogDetailTasks": 0,
@@ -141,10 +141,10 @@
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 450,
+    "postedAtResolvedFromSearch": 437,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 93308,
+    "scanDurationMs": 91775,
     "cities": [
       {
         "city": "군포시",
@@ -156,8 +156,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 286,
-        "durationMs": 12247
+        "uniqueListings": 285,
+        "durationMs": 12310
       },
       {
         "city": "의왕시",
@@ -172,8 +172,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 348,
-        "durationMs": 26592
+        "uniqueListings": 334,
+        "durationMs": 25341
       },
       {
         "city": "안양시",
@@ -190,8 +190,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 356,
-        "durationMs": 35117
+        "uniqueListings": 343,
+        "durationMs": 35072
       },
       {
         "city": "과천시",
@@ -202,8 +202,8 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 179,
-        "durationMs": 6480
+        "uniqueListings": 259,
+        "durationMs": 6340
       }
     ],
     "finalCandidateCount": 0,
@@ -212,7 +212,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 93314
+    "durationMs": 91782
   },
   "candidates": []
 }
