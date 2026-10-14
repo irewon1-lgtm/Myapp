@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-14T09:22:25.643615Z",
+  "updatedAt": "2026-10-14T09:58:07.171804Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -5351,6 +5351,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/hp-%EC%97%98%EB%A6%AC%ED%8A%B8%EB%B6%81-840-g2-i5-5%EC%84%B8%EB%8C%80-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%9D%EB%8B%88%EB%8B%A4-xd48ubssotpt/",
       "firstAlertedAt": "2026-10-14T09:22:25.643615Z",
       "lastCandidateAt": "2026-10-14T09:22:25.643615Z"
+    },
+    "nfvfjgjbsh2j": {
+      "id": "nfvfjgjbsh2j",
+      "title": "HP 빅터스 15 게이밍 노트북 판매",
+      "price": 750000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "부곡동",
+      "cpuHint": null,
+      "gpuHint": "RTX 3050",
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "램 16GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-14T09:41:40.214Z",
+      "url": "https://www.daangn.com/kr/buy-sell/hp-%EB%B9%85%ED%84%B0%EC%8A%A4-15-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4-nfvfjgjbsh2j/",
+      "firstAlertedAt": "2026-10-14T09:58:07.171804Z",
+      "lastCandidateAt": "2026-10-14T09:58:07.171804Z"
+    },
+    "8t535tkt7mbi": {
+      "id": "8t535tkt7mbi",
+      "title": "LG 그램 16 2022(16z95p-gr5bk) 판매합니다",
+      "price": 500000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "갈산동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "램 16 ",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-14T09:24:04.394Z",
+      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-16-2022-16z95p-gr5bk-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-8t535tkt7mbi/",
+      "firstAlertedAt": "2026-10-14T09:58:07.171804Z",
+      "lastCandidateAt": "2026-10-14T09:58:07.171804Z"
     }
   }
 }
