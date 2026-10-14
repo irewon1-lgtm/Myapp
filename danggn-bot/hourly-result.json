@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-14T13:02:47.694Z",
+  "generatedAt": "2026-10-14T13:42:32.082Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -53,35 +53,103 @@
       },
       "htmlSample": {
         "embeddedArticles": false,
-        "remixArticleSamples": [],
-        "dateFieldSnippets": [],
+        "remixArticleSamples": [
+          {
+            "id": "/kr/buy-sell/%EB%B6%80%ED%92%88%EC%9A%A9-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-i7-8%EC%84%B8%EB%8C%80-gtx1060-6gb-o9avbyt1smo2/",
+            "href": "/kr/buy-sell/%EB%B6%80%ED%92%88%EC%9A%A9-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-i7-8%EC%84%B8%EB%8C%80-gtx1060-6gb-o9avbyt1smo2/",
+            "title": "[부품용] 게이밍 노트북 i7 8세대/GTX1060 6GB",
+            "content": "i7 8750H / GTX1060 6GB\n헬리오스 15 프로 입니다.\n램 슬롯 2개, M.2 슬롯 2개와 SATA 슬롯 1개로 확장성이 좋습니다.\n\n램과 하드디스크는 없으며 구성품은 노트북과 어댑터 입니다.\n\n윈도우 설치 등 사용은 일반적인 가능합니다.\n다만, \n\n하자 1. 키보드가 잘 안되네요. 안되는 키보드 버튼은 없지만 꾹 눌러야되거나 2번 눌리는 키가 있습니다. 다른 기능은 잘 되는 것 같고요.\n\n하자 2. 모니터 부근 벌어짐이 있습니다. 파손이나 깨짐등은 아닌데 살짝 벌어져 있네요.\n\n외관 파손이나 깨짐등은 없고 생활감은 있습니다.\n\n램 하드는 제거 하고 위 이유로 부품용으로 판매합니다.\n\n원하시면 DDR4 8GB 노트북 램 하나 있는데 +4만원에 함께 보내드리겠습니다.",
+            "price": "200000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/d87c8e3d-348a-445c-bac7-3df2eaefbfc4.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-14T13:35:54.915Z",
+            "boostedAt": "2026-10-14T13:35:54.914Z",
+            "region": {
+              "name": "심곡동"
+            },
+            "category": null,
+            "tradingCoordinates": []
+          },
+          {
+            "id": "/kr/buy-sell/hp-i7-7500u-7%EC%84%B8%EB%8C%80-9ozkcp6oqjm9/",
+            "href": "/kr/buy-sell/hp-i7-7500u-7%EC%84%B8%EB%8C%80-9ozkcp6oqjm9/",
+            "title": "HP i7-7500U(7세대)",
+            "content": "RAM : 8GB\nSSD : 256GB\nHDD : 500GB\n그래픽 intel HD 620\n배터리 77%\n포맷한 상태입니다.\n\n택배 파손동의시 가능",
+            "price": "190000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/17919845857870e85a67bd989b4415c20020ccc0ee2225278f4e5d407b8bdcbb4876be0fbf74b0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-14T13:31:39.720Z",
+            "boostedAt": "2026-10-14T13:31:39.718Z",
+            "region": {
+              "name": "불광동"
+            },
+            "category": null,
+            "tradingCoordinates": [
+              {
+                "latitude": 37.610288959450216,
+                "longitude": 126.93034390223238
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/%EC%82%BD%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-550xda-%EC%9D%B8%ED%85%94-%EC%83%90%EB%9F%AC%EB%A1%A0-6305-53pckfmd3ngv/",
+            "href": "/kr/buy-sell/%EC%82%BD%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-550xda-%EC%9D%B8%ED%85%94-%EC%83%90%EB%9F%AC%EB%A1%A0-6305-53pckfmd3ngv/",
+            "title": "삽성 노트북 550XDA 인텔 샐러론 6305",
+            "content": "배터리 교체하셔야 합니다.\n그외 하자는 없습니다.",
+            "price": "180000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/4f8e0df5-ba1c-48c0-a09a-553557e5d125.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-10-14T13:30:02.612Z",
+            "boostedAt": "2026-10-14T13:30:02.610Z",
+            "region": {
+              "name": "율전동"
+            },
+            "category": null,
+            "tradingCoordinates": [
+              {
+                "latitude": 37.30047354840194,
+                "longitude": 126.97105935403926
+              }
+            ]
+          }
+        ],
+        "dateFieldSnippets": [
+          "createdAt\":\"2026-10-14T13:35:54.915Z\",\"boostedAt\":\"2026-10-14T13:35:54.914Z\",\"region\":{\"name\":\"심곡동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-14T13:31:39.720Z\",\"boostedAt\":\"2026-10-14T13:31:39.718Z\",\"region\":{\"name\":\"불광동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-14T13:30:02.612Z\",\"boostedAt\":\"2026-10-14T13:30:02.610Z\",\"region\":{\"name\":\"율전동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-14T12:48:06.719Z\",\"boostedAt\":\"2026-10-14T12:48:06.717Z\",\"region\":{\"name\":\"중리동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-14T12:37:56.645Z\",\"boostedAt\":\"2026-10-14T12:37:56.643Z\",\"region\":{\"name\":\"중리동\"},\"category\":null,\"tradingCoor"
+        ],
         "scriptHeads": [
-          "\n    (function(window, document, mode) {\n      try {\n        document.documentElement.dataset.seed = '';\n        document.documentElement.dataset.seedColorMode = mode;\n      } catch (e) {}\n\n      try {\n        var prefer",
           "window.sentryEnv = {\n  release: \"050e2e9\",\n  environment: \"prod-kr\"\n};",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":265,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"[부품용] 게이밍 노트북 i7 8세대/GTX1060 6",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-71f8f593.js\";\nimport * as route0 from \"/_remix/root-ii7Ivh2t.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-DcCe9nPb.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 930,
-    "globalUniqueListings": 385,
-    "duplicateListingsRemoved": 545,
-    "detailQueueStart": 17,
-    "freshDetailTasks": 17,
+    "searchUniqueListings": 1046,
+    "globalUniqueListings": 426,
+    "duplicateListingsRemoved": 620,
+    "detailQueueStart": 12,
+    "freshDetailTasks": 12,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 17,
-    "detailSucceeded": 17,
+    "detailRequestsExecuted": 12,
+    "detailSucceeded": 12,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 385,
+    "postedAtResolvedFromSearch": 426,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 1,
-    "scanDurationMs": 100592,
+    "scanDurationMs": 93843,
     "cities": [
       {
         "city": "군포시",
@@ -93,8 +161,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 189,
-        "durationMs": 12465
+        "uniqueListings": 288,
+        "durationMs": 12382
       },
       {
         "city": "의왕시",
@@ -109,8 +177,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 242,
-        "durationMs": 25736
+        "uniqueListings": 244,
+        "durationMs": 25808
       },
       {
         "city": "안양시",
@@ -127,8 +195,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 320,
-        "durationMs": 35222
+        "uniqueListings": 335,
+        "durationMs": 35281
       },
       {
         "city": "과천시",
@@ -140,7 +208,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 179,
-        "durationMs": 6855
+        "durationMs": 6358
       }
     ],
     "finalCandidateCount": 1,
@@ -149,43 +217,43 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 100596
+    "durationMs": 93850
   },
   "candidates": [
     {
-      "id": "879d7hqunvii",
+      "id": "ra4549yh2fwp",
       "changeType": "new",
       "previousPrice": null,
-      "price": 2300000,
+      "price": 2200000,
       "priceDropPercent": null,
       "city": "안양시",
-      "location": "안양1동",
-      "regionPath": "경기도 안양시 만안구 안양1동",
-      "title": "맥북 프로 14 M4 Pro 스페이스 블랙 판매합니다 (S급, 풀박스)",
-      "modelHint": "맥북 프로 14 M4 Pro 스페이스 블랙 판매합니다 (S급, 풀박스)",
-      "cpuHint": "Apple M4 Pro",
+      "location": "호현동",
+      "regionPath": "경기도 안양시 만안구 호현동",
+      "title": "[급처] 맥북프로 14 M4 Pro 24GB 512GB 스페이스블랙 판매합니다!",
+      "modelHint": "[급처] 맥북프로 14 M4 Pro 24GB 512GB 스페이스블랙 판매합니다!",
+      "cpuHint": "M4 Pro",
       "cpuBaselinePass": null,
-      "gpuHint": "Apple M4 Pro",
+      "gpuHint": "M4 Pro",
       "vramGB": null,
-      "ramGB": 24,
-      "ambiguousMemoryGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 24,
       "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": "메모리: 24GB",
+      "ramEvidence": null,
       "vramEvidence": null,
-      "ambiguousMemoryEvidence": null,
+      "ambiguousMemoryEvidence": "24GB",
       "storageGB": null,
       "llmCapability": "SPEC_CHECK_REQUIRED",
       "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
       "specConfidence": "needs_review",
-      "postedAt": "2026-10-14T12:23:46.710Z",
-      "boostedAt": "2026-10-14T12:23:46.708Z",
+      "postedAt": "2026-10-14T13:37:21.564Z",
+      "boostedAt": "2026-10-14T13:37:21.563Z",
       "status": "Ongoing",
-      "description": "• 사양\n - 프로세서: Apple M4 Pro\n - 메모리: 24GB\n - 저장용량: 512GB\n - 화면크기: 14인치\n\n사진과 같이 배터리 사이클 22회에 성능 최대치 100%입니다.\n이럴거면 왜 맥북 프로를 왜 샀냐 할 정도로 실사용도 적고 집에만 모셔두고 강의, 유튜브 시청 용도로만 사용했습니다. 정말 흠 잡을 것 없이 신품에 가까워서 제품 상태에 대해 설명할게 없습니다. 좋은 주인 잘 찾아갔으면 좋겠습니다.\n\n* 노트북 가방도 같이 드립니다.\n\n\n\n* 구매의사 있으신 분만 채팅 부탁드립니다. (네고 X)\n* 이마트24 안양푸르지오더샵점 앞에서 직거래합니다.",
-      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-14-m4-pro-%EC%8A%A4%ED%8E%98%EC%9D%B4%EC%8A%A4-%EB%B8%94%EB%9E%99-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-s%EA%B8%89-%ED%92%80%EB%B0%95%EC%8A%A4-879d7hqunvii/",
+      "description": "맥북프로 14 M4 Pro 24GB 512GB 스페이스블랙 모델 판매합니다.\n\n외관에 일부 생활흠집이 있으나 기능상 전혀 문제 없고, 키보드 쪽 하판과 디스플레이쪽에 보호필름이 있습니다.\n\n애플케어플러스 2028년 5월 19일까지 가능합니다.\n\n2차구매자로 구매하였는데 급전이 필요해져 시세대비 저렴하게 판매합니다..\n판매자께서 구매영수증 모두 함께 주셨고, 구성품 풀박스입니다.\nM4 아니고 M4 프로 CPU입니다.\n\n가격은 220만원이고 네고는 죄송합니다.\n\n많은 연락 주세요~!",
+      "url": "https://www.daangn.com/kr/buy-sell/%EA%B8%89%EC%B2%98-%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C-14-m4-pro-24gb-512gb-%EC%8A%A4%ED%8E%98%EC%9D%B4%EC%8A%A4%EB%B8%94%EB%9E%99-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-ra4549yh2fwp/",
       "favoriteCount": 0,
       "chatCount": 0,
-      "sellerName": "수리엘",
-      "mannerTemperature": 40
+      "sellerName": "사회초년생",
+      "mannerTemperature": 38.1
     }
   ]
 }
