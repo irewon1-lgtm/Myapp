@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-14T04:57:48.433160Z",
+  "updatedAt": "2026-10-14T05:27:34.384647Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -5176,6 +5176,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/hp-250-g7-i5-8%EC%84%B8%EB%8C%80-mcuxxa5bpaw5/",
       "firstAlertedAt": "2026-10-14T04:57:48.433160Z",
       "lastCandidateAt": "2026-10-14T04:57:48.433160Z"
+    },
+    "trm6h2upnaev": {
+      "id": "trm6h2upnaev",
+      "title": "Apple MacBook Pro 13인치 2018 i5 16GB RAM",
+      "price": 350000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "관양동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-14T04:58:52.474Z",
+      "url": "https://www.daangn.com/kr/buy-sell/apple-macbook-pro-13%EC%9D%B8%EC%B9%98-2018-i5-16gb-ram-trm6h2upnaev/",
+      "firstAlertedAt": "2026-10-14T05:27:34.384647Z",
+      "lastCandidateAt": "2026-10-14T05:27:34.384647Z"
     }
   }
 }
