@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-14T11:42:37.826035Z",
+  "updatedAt": "2026-10-14T12:22:28.564891Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -4205,27 +4205,27 @@
     "coenrbsqtu7e": {
       "id": "coenrbsqtu7e",
       "title": "HP ZBOOK S16 G9 노트북 i9 12세대",
-      "price": 1500000,
-      "previousPrice": null,
-      "changeType": "new",
+      "price": 1490000,
+      "previousPrice": 1500000,
+      "changeType": "price_drop",
       "city": "안양시",
       "location": "안양6동",
-      "cpuHint": null,
+      "cpuHint": "i9-12900H",
       "gpuHint": "RTX A1000",
       "vramGB": null,
       "ramGB": 64,
-      "ambiguousMemoryGB": null,
+      "ambiguousMemoryGB": 64,
       "hardwareReviewStatus": "PASS_RAM",
-      "ramEvidence": "64GB RAM",
+      "ramEvidence": "RAM: 64GB",
       "vramEvidence": null,
-      "ambiguousMemoryEvidence": null,
+      "ambiguousMemoryEvidence": "64GB",
       "storageGB": 2048,
       "llmCapability": "WORK_DEV_RAM32",
       "llmReason": "RAM 32GB 이상 확정 후보",
       "postedAt": "2026-10-12T11:38:30.645Z",
       "url": "https://www.daangn.com/kr/buy-sell/hp-zbook-s16-g9-%EB%85%B8%ED%8A%B8%EB%B6%81-i9-12%EC%84%B8%EB%8C%80-coenrbsqtu7e/",
       "firstAlertedAt": "2026-10-12T11:43:12.371726Z",
-      "lastCandidateAt": "2026-10-12T11:43:12.371726Z"
+      "lastCandidateAt": "2026-10-14T12:22:28.564891Z"
     },
     "isqkighctfsp": {
       "id": "isqkighctfsp",
