@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-14T08:42:29.167636Z",
+  "updatedAt": "2026-10-14T09:22:25.643615Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -880,9 +880,9 @@
     "ve8mzbysvd8p": {
       "id": "ve8mzbysvd8p",
       "title": "[풀박스] Apple MacBook Pro M4 Max 128GB (16-inch)",
-      "price": 8000000,
-      "previousPrice": null,
-      "changeType": "new",
+      "price": 7800000,
+      "previousPrice": 8000000,
+      "changeType": "price_drop",
       "city": "군포시",
       "location": "오금동",
       "cpuHint": "M4 Max",
@@ -900,7 +900,7 @@
       "postedAt": "2026-10-06T10:44:29.471Z",
       "url": "https://www.daangn.com/kr/buy-sell/%ED%92%80%EB%B0%95%EC%8A%A4-apple-macbook-pro-m4-max-128gb-16-inch-ve8mzbysvd8p/",
       "firstAlertedAt": "2026-10-06T10:58:56.005328Z",
-      "lastCandidateAt": "2026-10-06T10:58:56.005328Z"
+      "lastCandidateAt": "2026-10-14T09:22:25.643615Z"
     },
     "zfqmyz9wg4ht": {
       "id": "zfqmyz9wg4ht",
@@ -5326,6 +5326,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/lg%EA%B7%B8%EB%9E%A8-10%EC%84%B8%EB%8C%80-i7-16gb-512gb-%ED%8C%9D%EB%8B%88%EB%8B%A4-i4wemofesubg/",
       "firstAlertedAt": "2026-10-14T08:42:29.167636Z",
       "lastCandidateAt": "2026-10-14T08:42:29.167636Z"
+    },
+    "xd48ubssotpt": {
+      "id": "xd48ubssotpt",
+      "title": "HP 엘리트북 840 G2 i5-5세대 노트북 팝니다",
+      "price": 50000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "관양1동",
+      "cpuHint": null,
+      "gpuHint": "Radeon R7 M260X SSD",
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 32,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "32GB",
+      "storageGB": 128,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-14T09:09:52.241Z",
+      "url": "https://www.daangn.com/kr/buy-sell/hp-%EC%97%98%EB%A6%AC%ED%8A%B8%EB%B6%81-840-g2-i5-5%EC%84%B8%EB%8C%80-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%9D%EB%8B%88%EB%8B%A4-xd48ubssotpt/",
+      "firstAlertedAt": "2026-10-14T09:22:25.643615Z",
+      "lastCandidateAt": "2026-10-14T09:22:25.643615Z"
     }
   }
 }
