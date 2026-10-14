@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-14T04:32:17.575796Z",
+  "updatedAt": "2026-10-14T04:57:48.433160Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -5151,6 +5151,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%815-%ED%94%84%EB%A1%9C-16%EC%9D%B8%EC%B9%98-%EC%9A%B8%ED%8A%B8%EB%9D%BC7-32gb-1tb-s%EA%B8%89-qzs8eg7kv5xd/",
       "firstAlertedAt": "2026-10-14T04:32:17.575796Z",
       "lastCandidateAt": "2026-10-14T04:32:17.575796Z"
+    },
+    "mcuxxa5bpaw5": {
+      "id": "mcuxxa5bpaw5",
+      "title": "HP 250 G7(i5 8세대)",
+      "price": 160000,
+      "previousPrice": 190000,
+      "changeType": "price_drop",
+      "city": "안양시",
+      "location": "관양동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "RAM 16 ",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-10T06:14:10.948Z",
+      "url": "https://www.daangn.com/kr/buy-sell/hp-250-g7-i5-8%EC%84%B8%EB%8C%80-mcuxxa5bpaw5/",
+      "firstAlertedAt": "2026-10-14T04:57:48.433160Z",
+      "lastCandidateAt": "2026-10-14T04:57:48.433160Z"
     }
   }
 }
