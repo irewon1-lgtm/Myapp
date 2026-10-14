@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-14T12:22:28.457Z",
+  "generatedAt": "2026-10-14T13:02:47.694Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -64,24 +64,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1053,
-    "globalUniqueListings": 442,
-    "duplicateListingsRemoved": 611,
-    "detailQueueStart": 16,
-    "freshDetailTasks": 16,
+    "searchUniqueListings": 930,
+    "globalUniqueListings": 385,
+    "duplicateListingsRemoved": 545,
+    "detailQueueStart": 17,
+    "freshDetailTasks": 17,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 16,
-    "detailSucceeded": 16,
+    "detailRequestsExecuted": 17,
+    "detailSucceeded": 17,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 442,
+    "postedAtResolvedFromSearch": 385,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 1,
-    "scanDurationMs": 98413,
+    "scanDurationMs": 100592,
     "cities": [
       {
         "city": "군포시",
@@ -93,8 +93,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 188,
-        "durationMs": 12211
+        "uniqueListings": 189,
+        "durationMs": 12465
       },
       {
         "city": "의왕시",
@@ -109,8 +109,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 369,
-        "durationMs": 25697
+        "uniqueListings": 242,
+        "durationMs": 25736
       },
       {
         "city": "안양시",
@@ -127,8 +127,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 237,
-        "durationMs": 35608
+        "uniqueListings": 320,
+        "durationMs": 35222
       },
       {
         "city": "과천시",
@@ -139,8 +139,8 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 259,
-        "durationMs": 6012
+        "uniqueListings": 179,
+        "durationMs": 6855
       }
     ],
     "finalCandidateCount": 1,
@@ -149,43 +149,43 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 98417
+    "durationMs": 100596
   },
   "candidates": [
     {
-      "id": "coenrbsqtu7e",
-      "changeType": "price_drop",
-      "previousPrice": 1500000,
-      "price": 1490000,
-      "priceDropPercent": 0.7,
+      "id": "879d7hqunvii",
+      "changeType": "new",
+      "previousPrice": null,
+      "price": 2300000,
+      "priceDropPercent": null,
       "city": "안양시",
-      "location": "안양6동",
-      "regionPath": "경기도 안양시 만안구 안양6동",
-      "title": "HP ZBOOK S16 G9 노트북 i9 12세대",
-      "modelHint": "HP ZBOOK S16 G9 노트북 i9 12세대",
-      "cpuHint": "i9-12900H",
+      "location": "안양1동",
+      "regionPath": "경기도 안양시 만안구 안양1동",
+      "title": "맥북 프로 14 M4 Pro 스페이스 블랙 판매합니다 (S급, 풀박스)",
+      "modelHint": "맥북 프로 14 M4 Pro 스페이스 블랙 판매합니다 (S급, 풀박스)",
+      "cpuHint": "Apple M4 Pro",
       "cpuBaselinePass": null,
-      "gpuHint": "RTX A1000",
+      "gpuHint": "Apple M4 Pro",
       "vramGB": null,
-      "ramGB": 64,
-      "ambiguousMemoryGB": 64,
-      "hardwareReviewStatus": "PASS_RAM",
-      "ramEvidence": "RAM: 64GB",
+      "ramGB": 24,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "메모리: 24GB",
       "vramEvidence": null,
-      "ambiguousMemoryEvidence": "64GB",
-      "storageGB": 2048,
-      "llmCapability": "WORK_DEV_RAM32",
-      "llmReason": "RAM 32GB 이상 확정 후보",
-      "specConfidence": "confirmed",
-      "postedAt": "2026-10-12T11:38:30.645Z",
-      "boostedAt": "2026-10-14T12:05:13.273Z",
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "specConfidence": "needs_review",
+      "postedAt": "2026-10-14T12:23:46.710Z",
+      "boostedAt": "2026-10-14T12:23:46.708Z",
       "status": "Ongoing",
-      "description": "안녕하세요~\nHP ZBOOK S16 G9 노트북 판매합니다.\n인텔 12세대 i9 프로세서와 64GB RAM, 2TB NVMe SSD를 탑재하여 강력한 성능을 자랑합니다.\nRTX A1000 그래픽 카드로 디자인 및 영상 작업에도 탁월한 성능을 보여줍니다.\n\n​모델명: HP ZBOOK S16\n             (ZBook Studio 16 G9 계열)  \n​CPU: Intel Core i9-12900H \n           (인텔 12세대 고성능)  \n​RAM: 64GB  \n​SSD: 2TB NVMe  \n​VGA: NVIDIA RTX A1000  \n​생산일자 / 무상기간: 2024년 11월 생산 / 무상 2년 (2026년 11월경까지 AS 가능)\n고성능 작업에 최적화된 노트북으로, 빠르고 쾌적한 컴퓨팅 환경을 경험해보세요.\n\n26년 11월까지 무상 A/S 가능합니다\n사진으로 사양 확인하세요^^\n사정상 부득이 판매합니다\n필요하신분 편안히 연락주세요~\n\n생활기스, 단순변심 등 환불×",
-      "url": "https://www.daangn.com/kr/buy-sell/hp-zbook-s16-g9-%EB%85%B8%ED%8A%B8%EB%B6%81-i9-12%EC%84%B8%EB%8C%80-coenrbsqtu7e/",
+      "description": "• 사양\n - 프로세서: Apple M4 Pro\n - 메모리: 24GB\n - 저장용량: 512GB\n - 화면크기: 14인치\n\n사진과 같이 배터리 사이클 22회에 성능 최대치 100%입니다.\n이럴거면 왜 맥북 프로를 왜 샀냐 할 정도로 실사용도 적고 집에만 모셔두고 강의, 유튜브 시청 용도로만 사용했습니다. 정말 흠 잡을 것 없이 신품에 가까워서 제품 상태에 대해 설명할게 없습니다. 좋은 주인 잘 찾아갔으면 좋겠습니다.\n\n* 노트북 가방도 같이 드립니다.\n\n\n\n* 구매의사 있으신 분만 채팅 부탁드립니다. (네고 X)\n* 이마트24 안양푸르지오더샵점 앞에서 직거래합니다.",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-14-m4-pro-%EC%8A%A4%ED%8E%98%EC%9D%B4%EC%8A%A4-%EB%B8%94%EB%9E%99-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-s%EA%B8%89-%ED%92%80%EB%B0%95%EC%8A%A4-879d7hqunvii/",
       "favoriteCount": 0,
       "chatCount": 0,
-      "sellerName": "프리만느",
-      "mannerTemperature": 37.4
+      "sellerName": "수리엘",
+      "mannerTemperature": 40
     }
   ]
 }
