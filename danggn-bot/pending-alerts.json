@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-14T13:42:32.156437Z",
+  "updatedAt": "2026-10-14T14:22:29.331871Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -5476,6 +5476,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EA%B8%89%EC%B2%98-%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C-14-m4-pro-24gb-512gb-%EC%8A%A4%ED%8E%98%EC%9D%B4%EC%8A%A4%EB%B8%94%EB%9E%99-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-ra4549yh2fwp/",
       "firstAlertedAt": "2026-10-14T13:42:32.156437Z",
       "lastCandidateAt": "2026-10-14T13:42:32.156437Z"
+    },
+    "1bzy97821wgq": {
+      "id": "1bzy97821wgq",
+      "title": "[미개봉] 맥북 에어 15인치 M5 24GB 1TB 팝니다.",
+      "price": 3100000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "호현동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 24,
+      "ambiguousMemoryGB": 24,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "24GB 메모리",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "24GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-14T14:13:47.637Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%AF%B8%EA%B0%9C%EB%B4%89-%EB%A7%A5%EB%B6%81-%EC%97%90%EC%96%B4-15%EC%9D%B8%EC%B9%98-m5-24gb-1tb-%ED%8C%9D%EB%8B%88%EB%8B%A4-1bzy97821wgq/",
+      "firstAlertedAt": "2026-10-14T14:22:29.331871Z",
+      "lastCandidateAt": "2026-10-14T14:22:29.331871Z"
     }
   }
 }
