@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-14T01:52:19.453Z",
+  "generatedAt": "2026-10-14T02:32:21.144Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,18 +55,18 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%81-go-nt345xla-%EC%8B%A4%EB%B2%84-%EB%85%B8%ED%8A%B8%EB%B6%81-o513979hrodg/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%81-go-nt345xla-%EC%8B%A4%EB%B2%84-%EB%85%B8%ED%8A%B8%EB%B6%81-o513979hrodg/",
-            "title": "삼성 갤럭시북 Go NT345XLA 실버 노트북",
-            "content": "삼성 갤럭시북 Go NT345XLA 실버 노트북 판매해요. 14인치 화면에 가벼워서 휴대하기 좋아요. 구성품 모두 포함되어 있습니다. 얇고 세련된 디자인으로 어디서든 돋보일 거예요. 구성푸에 충전기 포함안됨.c타입으로 충전가능합니다.",
-            "price": "195000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/dd4638ea-2c6b-49e6-8cb4-614546f053f2.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-15-6%EC%9D%B8%EC%B9%98-44z2xh6qbgmx/",
+            "href": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-15-6%EC%9D%B8%EC%B9%98-44z2xh6qbgmx/",
+            "title": "LG 그램 노트북 15.6인치",
+            "content": "CPU intel Core i5 5200U\nRAM 8GB\nSSD 128GB\n배터리 성능 : 83%\nWindows 11 정품 라이센스 포함\n구성품 : 노트북, 충전기\n\n사무용으로 사용하던 노트북 판매합니다\n외관 파손이나 변색없이 깔끔하게 사용했습니다\n\n15인치 화면으로 문서작업이나 영상 시청하기 좋고\n윈도우 정품 등록 돼서 초기화시에도 자동 정품 인증됩니다\n\nUSB포트 2개, C타입 1개, HDMI포트, SD카드 지원하고\n옆면 포트, 와이파이, 블루투스, 키보드, 터치패드 하자없습니다\n\n초기화 상태이고 MS오피스, 한글만 설치된 상태로\n바로 사용 가능합니다\n",
+            "price": "280000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/54f8a7f9-ca53-48e9-9bdc-e975419dc724.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-14T01:35:30.707Z",
-            "boostedAt": "2026-10-14T01:35:30.700Z",
+            "createdAt": "2026-10-14T00:43:52.387Z",
+            "boostedAt": "2026-10-14T00:43:52.385Z",
             "region": {
-              "name": "중앙동"
+              "name": "행궁동"
             },
             "category": null,
             "tradingCoordinates": []
@@ -112,39 +112,39 @@
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-10-14T01:35:30.707Z\",\"boostedAt\":\"2026-10-14T01:35:30.700Z\",\"region\":{\"name\":\"중앙동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-14T00:43:52.387Z\",\"boostedAt\":\"2026-10-14T00:43:52.385Z\",\"region\":{\"name\":\"행궁동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-14T01:30:54.413Z\",\"boostedAt\":\"2026-10-14T01:30:54.407Z\",\"region\":{\"name\":\"압해읍\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-14T01:02:00.918Z\",\"boostedAt\":\"2026-10-14T01:02:00.915Z\",\"region\":{\"name\":\"관양1동\"},\"category\":null,\"tradingCoo",
-          "createdAt\":\"2026-10-14T01:37:09.676Z\",\"boostedAt\":\"2026-10-14T01:37:09.675Z\",\"region\":{\"name\":\"여의도동\"},\"category\":null,\"tradingCoo",
-          "createdAt\":\"2026-10-14T01:40:12.707Z\",\"boostedAt\":\"2026-10-14T01:40:12.707Z\",\"region\":{\"name\":\"공덕동\"},\"category\":null,\"tradingCoor"
+          "createdAt\":\"2026-10-12T07:30:57.044Z\",\"boostedAt\":\"2026-10-12T07:30:57.042Z\",\"region\":{\"name\":\"당정동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-13T23:51:42.825Z\",\"boostedAt\":\"2026-10-13T23:51:42.823Z\",\"region\":{\"name\":\"어룡동\"},\"category\":null,\"tradingCoor"
         ],
         "scriptHeads": [
           "window.sentryEnv = {\n  release: \"fc983fa\",\n  environment: \"prod-kr\"\n};",
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":264,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 갤럭시북 Go NT345XLA 실버 노트북\",\"d",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":266,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG 그램 노트북 15.6인치\",\"description",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-63a394b6.js\";\nimport * as route0 from \"/_remix/root-B6VHlIkp.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-CMV89P37.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 1090,
-    "globalUniqueListings": 447,
-    "duplicateListingsRemoved": 643,
-    "detailQueueStart": 14,
-    "freshDetailTasks": 14,
+    "searchUniqueListings": 1213,
+    "globalUniqueListings": 445,
+    "duplicateListingsRemoved": 768,
+    "detailQueueStart": 5,
+    "freshDetailTasks": 5,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 14,
-    "detailSucceeded": 14,
+    "detailRequestsExecuted": 5,
+    "detailSucceeded": 5,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 447,
+    "postedAtResolvedFromSearch": 445,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 96704,
+    "scanDurationMs": 86234,
     "cities": [
       {
         "city": "군포시",
@@ -156,8 +156,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 287,
-        "durationMs": 12452
+        "uniqueListings": 288,
+        "durationMs": 12658
       },
       {
         "city": "의왕시",
@@ -172,8 +172,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 368,
-        "durationMs": 25944
+        "uniqueListings": 346,
+        "durationMs": 26070
       },
       {
         "city": "안양시",
@@ -190,8 +190,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 336,
-        "durationMs": 35246
+        "uniqueListings": 320,
+        "durationMs": 35039
       },
       {
         "city": "과천시",
@@ -202,8 +202,8 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 99,
-        "durationMs": 6517
+        "uniqueListings": 259,
+        "durationMs": 6829
       }
     ],
     "finalCandidateCount": 0,
@@ -212,7 +212,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 96712
+    "durationMs": 86239
   },
   "candidates": []
 }
