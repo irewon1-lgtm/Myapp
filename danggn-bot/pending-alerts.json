@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-15T07:52:20.727729Z",
+  "updatedAt": "2026-10-15T08:32:20.147777Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -2355,8 +2355,8 @@
     "eyzu1zbr994j": {
       "id": "eyzu1zbr994j",
       "title": "DELL Latitude 5330 노트북",
-      "price": 450000,
-      "previousPrice": 550000,
+      "price": 320000,
+      "previousPrice": 450000,
       "changeType": "price_drop",
       "city": "안양시",
       "location": "부림동",
@@ -2375,7 +2375,7 @@
       "postedAt": "2026-10-03T06:27:35.175Z",
       "url": "https://www.daangn.com/kr/buy-sell/dell-latitude-5330-%EB%85%B8%ED%8A%B8%EB%B6%81-eyzu1zbr994j/",
       "firstAlertedAt": "2026-10-09T04:24:16.632584Z",
-      "lastCandidateAt": "2026-10-12T02:23:11.479677Z"
+      "lastCandidateAt": "2026-10-15T08:32:20.147777Z"
     },
     "cxkqux58q2c6": {
       "id": "cxkqux58q2c6",
@@ -5851,6 +5851,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/lg-15ud470-%EC%82%AC%EB%AC%B4%EC%9A%A9-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4-395ivznswj8p/",
       "firstAlertedAt": "2026-10-15T07:52:20.727729Z",
       "lastCandidateAt": "2026-10-15T07:52:20.727729Z"
+    },
+    "pnsftj2dsdz3": {
+      "id": "pnsftj2dsdz3",
+      "title": "맥북프로 M4 14인치 램24G 용량512G 배터리 100% 31사이클",
+      "price": 1850000,
+      "previousPrice": 2300000,
+      "changeType": "price_drop",
+      "city": "안양시",
+      "location": "호계동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 24,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "램24G",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-14T06:47:45.576Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C-m4-14%EC%9D%B8%EC%B9%98-%EB%9E%A824g-%EC%9A%A9%EB%9F%89512g-%EB%B0%B0%ED%84%B0%EB%A6%AC-100-31%EC%82%AC%EC%9D%B4%ED%81%B4-pnsftj2dsdz3/",
+      "firstAlertedAt": "2026-10-15T08:32:20.147777Z",
+      "lastCandidateAt": "2026-10-15T08:32:20.147777Z"
     }
   }
 }
