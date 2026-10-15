@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-15T12:32:18.613211Z",
+  "updatedAt": "2026-10-15T13:12:22.270245Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -6151,6 +6151,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-16%EC%9D%B8%EC%B9%98-m1-max-64gb-32%EC%BD%94%EC%96%B4-%ED%92%80%EC%B9%A9-%ED%8C%9D%EB%8B%88%EB%8B%A4-idagpjkjgdpe/",
       "firstAlertedAt": "2026-10-15T12:32:18.613211Z",
       "lastCandidateAt": "2026-10-15T12:32:18.613211Z"
+    },
+    "tbt1snm8c9b1": {
+      "id": "tbt1snm8c9b1",
+      "title": "MSI 사이보그 15인치 RTX 4060 게이밍 노트북",
+      "price": 770000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "산본동",
+      "cpuHint": null,
+      "gpuHint": "RTX 4060",
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 1024,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-15T13:10:11.243Z",
+      "url": "https://www.daangn.com/kr/buy-sell/msi-%EC%82%AC%EC%9D%B4%EB%B3%B4%EA%B7%B8-15%EC%9D%B8%EC%B9%98-rtx-4060-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-tbt1snm8c9b1/",
+      "firstAlertedAt": "2026-10-15T13:12:22.270245Z",
+      "lastCandidateAt": "2026-10-15T13:12:22.270245Z"
+    },
+    "kko7a8xauf2g": {
+      "id": "kko7a8xauf2g",
+      "title": "HP 오멘 16 게이밍 노트북 RTX 4060 ram32g",
+      "price": 1200000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "당동",
+      "cpuHint": null,
+      "gpuHint": "RTX 4060",
+      "vramGB": null,
+      "ramGB": 32,
+      "ambiguousMemoryGB": 32,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "ram32g",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "32GB",
+      "storageGB": 512,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "postedAt": "2026-10-15T12:34:19.716Z",
+      "url": "https://www.daangn.com/kr/buy-sell/hp-%EC%98%A4%EB%A9%98-16-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-rtx-4060-ram32g-kko7a8xauf2g/",
+      "firstAlertedAt": "2026-10-15T13:12:22.270245Z",
+      "lastCandidateAt": "2026-10-15T13:12:22.270245Z"
     }
   }
 }
