@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-15T22:01:59.632Z",
+  "generatedAt": "2026-10-15T22:33:26.125Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -53,35 +53,103 @@
       },
       "htmlSample": {
         "embeddedArticles": false,
-        "remixArticleSamples": [],
-        "dateFieldSnippets": [],
+        "remixArticleSamples": [
+          {
+            "id": "/kr/buy-sell/%EB%A7%A5%EB%B6%81-%EC%97%90%EC%96%B4-13%EC%9D%B8%EC%B9%98-2019-i5-8gb-z3s5dczusqa4/",
+            "href": "/kr/buy-sell/%EB%A7%A5%EB%B6%81-%EC%97%90%EC%96%B4-13%EC%9D%B8%EC%B9%98-2019-i5-8gb-z3s5dczusqa4/",
+            "title": "맥북 에어 13인치 2019 i5 8GB",
+            "content": "맥북 에어 13인치 2019년형 모델 판매합니다. \n\n인텔 코어 i5 프로세서\n8GB 메모리\n13인치 레티나 디스플레이\n\n가볍고 휴대하기 좋아 어디서든 작업하기 편리하고, 외관도 깨끗합니다.",
+            "price": "190000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/1792102584427a3aab1babe588e75a29cf11ed8c36bd0e3cb40e205e6b0d20e45ca6235fc59500.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-10-15T22:23:27.862Z",
+            "boostedAt": "2026-10-15T22:23:27.859Z",
+            "region": {
+              "name": "호계동"
+            },
+            "category": null,
+            "tradingCoordinates": [
+              {
+                "latitude": 37.38907232230172,
+                "longitude": 126.95066635101041
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-8gb-ram-238gb-ssd-%EC%A7%80%ED%8F%AC%EC%8A%A4-di1qkf479r2j/",
+            "href": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-8gb-ram-238gb-ssd-%EC%A7%80%ED%8F%AC%EC%8A%A4-di1qkf479r2j/",
+            "title": "LG 노트북 i5  8GB RAM 238GB SSD 지포스",
+            "content": "LG 15.6인치 노트북 (i5 4세대 / 8GB / SSD / 지포스)\nLG 노트북 판매합니다.\n인텔 코어 i5 4세대 프로세서에 램 8GB, SSD 238GB 들어가 있어서 부팅이랑 프로그램 실행이 빠른 편이에요.\n지포스 2GB 그래픽카드가 따로 달려 있어서 동영상 보기나 가벼운 작업은 무난하게 하실 수 있어요.\n15.6인치 풀HD(1920×1080) 화면이라 글씨도 선명하고 넉넉하게 쓰기 좋습니다.\n인강, 문서 작업, 유튜브용으로 추천드려요.\n깨끗하게 써서 상태 좋아요.\n구성품은 사진에 보이는 그대로 드립니다.",
+            "price": "150000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/f0e99a24-21e9-4b15-8ee6-8afc56acc5b8.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-15T12:16:13.883Z",
+            "boostedAt": "2026-10-15T12:16:13.881Z",
+            "region": {
+              "name": "호계동"
+            },
+            "category": null,
+            "tradingCoordinates": [
+              {
+                "latitude": 37.38288220371149,
+                "longitude": 126.94909584341809
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-dnh7xz72kksz/",
+            "href": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-dnh7xz72kksz/",
+            "title": "LG 노트북",
+            "content": "LG 노트북 판매해요. 프로세서와 8GB RAM, SSD120GB 탑재했어요. 윈도우 11 한글24 오피스21 배터리2시간정도갑니다 바로 사용 가능해요. 가볍고 성능 좋은 노트북을 찾으신다면 눈여겨봐 주세요.",
+            "price": "160000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202609/1789895507402772ed2f7130509f309df1c1289dc9cc9d87bfef2f37aab0b282e810feb04841a0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-09-20T09:15:01.336Z",
+            "boostedAt": "2026-10-15T19:45:19.086Z",
+            "region": {
+              "name": "명륜3가"
+            },
+            "category": null,
+            "tradingCoordinates": []
+          }
+        ],
+        "dateFieldSnippets": [
+          "createdAt\":\"2026-10-15T22:23:27.862Z\",\"boostedAt\":\"2026-10-15T22:23:27.859Z\",\"region\":{\"name\":\"호계동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-15T12:16:13.883Z\",\"boostedAt\":\"2026-10-15T12:16:13.881Z\",\"region\":{\"name\":\"호계동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-09-20T09:15:01.336Z\",\"boostedAt\":\"2026-10-15T19:45:19.086Z\",\"region\":{\"name\":\"명륜3가\"},\"category\":null,\"tradingCoo",
+          "createdAt\":\"2026-10-12T07:30:57.044Z\",\"boostedAt\":\"2026-10-12T07:30:57.042Z\",\"region\":{\"name\":\"당정동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-04T06:05:03.651Z\",\"boostedAt\":\"2026-10-15T21:43:58.741Z\",\"region\":{\"name\":\"정왕1동\"},\"category\":null,\"tradingCoo"
+        ],
         "scriptHeads": [
-          "\n    (function(window, document, mode) {\n      try {\n        document.documentElement.dataset.seed = '';\n        document.documentElement.dataset.seedColorMode = mode;\n      } catch (e) {}\n\n      try {\n        var prefer",
           "window.sentryEnv = {\n  release: \"050e2e9\",\n  environment: \"prod-kr\"\n};",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":268,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"맥북 에어 13인치 2019 i5 8GB\",\"descr",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-71f8f593.js\";\nimport * as route0 from \"/_remix/root-ii7Ivh2t.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-DcCe9nPb.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 884,
-    "globalUniqueListings": 432,
-    "duplicateListingsRemoved": 452,
-    "detailQueueStart": 1,
-    "freshDetailTasks": 1,
+    "searchUniqueListings": 1274,
+    "globalUniqueListings": 478,
+    "duplicateListingsRemoved": 796,
+    "detailQueueStart": 7,
+    "freshDetailTasks": 7,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 1,
-    "detailSucceeded": 1,
+    "detailRequestsExecuted": 7,
+    "detailSucceeded": 7,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 432,
+    "postedAtResolvedFromSearch": 478,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 80232,
+    "scanDurationMs": 89582,
     "cities": [
       {
         "city": "군포시",
@@ -93,8 +161,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 194,
-        "durationMs": 12295
+        "uniqueListings": 288,
+        "durationMs": 12335
       },
       {
         "city": "의왕시",
@@ -109,8 +177,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 368,
-        "durationMs": 25725
+        "uniqueListings": 381,
+        "durationMs": 26087
       },
       {
         "city": "안양시",
@@ -127,8 +195,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 242,
-        "durationMs": 35452
+        "uniqueListings": 347,
+        "durationMs": 35848
       },
       {
         "city": "과천시",
@@ -139,8 +207,8 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 80,
-        "durationMs": 5781
+        "uniqueListings": 258,
+        "durationMs": 6813
       }
     ],
     "finalCandidateCount": 0,
@@ -149,7 +217,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 80239
+    "durationMs": 89589
   },
   "candidates": []
 }
