@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-15T03:32:23.264719Z",
+  "updatedAt": "2026-10-15T04:12:28.495314Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -5579,28 +5579,28 @@
     },
     "1dsyyy1snzmg": {
       "id": "1dsyyy1snzmg",
-      "title": "한성 컴튜터 게이밍 노트북 X7967T / i7 / RTX 2060 / RAM 16GB / SSD 512GB",
-      "price": 300000,
-      "previousPrice": null,
-      "changeType": "new",
+      "title": "한성 컴튜터 게이밍 노트북 X7967T",
+      "price": 350000,
+      "previousPrice": 450000,
+      "changeType": "price_drop",
       "city": "안양시",
       "location": "호계3동",
       "cpuHint": "i7-9750H",
-      "gpuHint": "RTX 2060",
+      "gpuHint": null,
       "vramGB": null,
       "ramGB": 16,
       "ambiguousMemoryGB": null,
       "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": "RAM 16GB",
+      "ramEvidence": "램 16 기가",
       "vramEvidence": null,
       "ambiguousMemoryEvidence": null,
-      "storageGB": 512,
+      "storageGB": 256,
       "llmCapability": "SPEC_CHECK_REQUIRED",
       "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
       "postedAt": "2026-10-15T02:39:24.988Z",
-      "url": "https://www.daangn.com/kr/buy-sell/%ED%95%9C%EC%84%B1-%EC%BB%B4%ED%8A%9C%ED%84%B0-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-x7967t-i7-rtx-2060-ram-16gb-ssd-512gb-1dsyyy1snzmg/",
+      "url": "https://www.daangn.com/kr/buy-sell/%ED%95%9C%EC%84%B1-%EC%BB%B4%ED%8A%9C%ED%84%B0-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-x7967t-1dsyyy1snzmg/",
       "firstAlertedAt": "2026-10-15T02:52:29.215073Z",
-      "lastCandidateAt": "2026-10-15T02:52:29.215073Z"
+      "lastCandidateAt": "2026-10-15T04:12:28.495314Z"
     },
     "uq2nh5upovdy": {
       "id": "uq2nh5upovdy",
@@ -5626,6 +5626,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EA%B3%A0%EC%9E%A5-%EB%B6%80%ED%92%88%EC%9A%A9-%ED%8C%90%EB%A7%A4-rtx3070-%ED%95%9C%EC%84%B1%EB%85%B8%ED%8A%B8%EB%B6%81-ram-32gb-ssd-1tb-%EC%A0%95%ED%92%88-%EC%B6%A9%EC%A0%84%EA%B8%B0-uq2nh5upovdy/",
       "firstAlertedAt": "2026-10-15T02:52:29.215073Z",
       "lastCandidateAt": "2026-10-15T02:52:29.215073Z"
+    },
+    "9rzixxexmxuf": {
+      "id": "9rzixxexmxuf",
+      "title": "맥북프로 16인치 i9 최고사양 64GB RAM / 1TB SSD / Radeon Pro 5500M 판매합니다.",
+      "price": 850000,
+      "previousPrice": 900000,
+      "changeType": "price_drop",
+      "city": "안양시",
+      "location": "안양동",
+      "cpuHint": "i9-9980H",
+      "gpuHint": "Radeon Pro 5500M",
+      "vramGB": null,
+      "ramGB": 64,
+      "ambiguousMemoryGB": 64,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "64GB RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "64GB",
+      "storageGB": 1024,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "postedAt": "2026-08-04T10:56:28.605Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C-16%EC%9D%B8%EC%B9%98-i9-%EC%B5%9C%EA%B3%A0%EC%82%AC%EC%96%91-64gb-ram-1tb-ssd-radeon-pro-5500m-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-9rzixxexmxuf/",
+      "firstAlertedAt": "2026-10-15T04:12:28.495314Z",
+      "lastCandidateAt": "2026-10-15T04:12:28.495314Z"
     }
   }
 }
