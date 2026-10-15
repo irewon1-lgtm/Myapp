@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-15T05:50:33.491765Z",
+  "updatedAt": "2026-10-15T06:32:47.715993Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -5751,6 +5751,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C-a1708-ssd-251gb-%EB%A9%94%EB%AA%A8%EB%A6%AC16-jdhxnahwobey/",
       "firstAlertedAt": "2026-10-15T05:25:33.380992Z",
       "lastCandidateAt": "2026-10-15T05:25:33.380992Z"
+    },
+    "dm8vtx6bo4j7": {
+      "id": "dm8vtx6bo4j7",
+      "title": "삼성 갤럭시 북6 프로 NT960XJG-KC51G",
+      "price": 2000000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "비산1동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-15T06:20:10.114Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C-%EB%B6%816-%ED%94%84%EB%A1%9C-nt960xjg-kc51g-dm8vtx6bo4j7/",
+      "firstAlertedAt": "2026-10-15T06:32:47.715993Z",
+      "lastCandidateAt": "2026-10-15T06:32:47.715993Z"
+    },
+    "oip2iqcfc2yu": {
+      "id": "oip2iqcfc2yu",
+      "title": "레이저 블레이드16 4080 판매 2023년형",
+      "price": 1400000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "평촌동",
+      "cpuHint": "i9-13950hx",
+      "gpuHint": "rtx 4080 laptop",
+      "vramGB": null,
+      "ramGB": 32,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "ram 32gb",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 2048,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "postedAt": "2026-10-15T05:58:12.899Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EC%9D%B4%EC%A0%80-%EB%B8%94%EB%A0%88%EC%9D%B4%EB%93%9C16-4080-%ED%8C%90%EB%A7%A4-2023%EB%85%84%ED%98%95-oip2iqcfc2yu/",
+      "firstAlertedAt": "2026-10-15T06:32:47.715993Z",
+      "lastCandidateAt": "2026-10-15T06:32:47.715993Z"
     }
   }
 }
