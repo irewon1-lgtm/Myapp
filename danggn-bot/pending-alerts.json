@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-15T04:12:28.495314Z",
+  "updatedAt": "2026-10-15T04:52:23.802774Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -5651,6 +5651,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C-16%EC%9D%B8%EC%B9%98-i9-%EC%B5%9C%EA%B3%A0%EC%82%AC%EC%96%91-64gb-ram-1tb-ssd-radeon-pro-5500m-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-9rzixxexmxuf/",
       "firstAlertedAt": "2026-10-15T04:12:28.495314Z",
       "lastCandidateAt": "2026-10-15T04:12:28.495314Z"
+    },
+    "oyx1y2f8ocut": {
+      "id": "oyx1y2f8ocut",
+      "title": "삼성 노트북 NT551XDA 11세대 i5 16GB RAM",
+      "price": 450000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "호계1동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-15T04:24:48.131Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt551xda-11%EC%84%B8%EB%8C%80-i5-16gb-ram-oyx1y2f8ocut/",
+      "firstAlertedAt": "2026-10-15T04:52:23.802774Z",
+      "lastCandidateAt": "2026-10-15T04:52:23.802774Z"
+    },
+    "uvh1h9tgrm43": {
+      "id": "uvh1h9tgrm43",
+      "title": "삼성 갤럭시 북6 프로 NT960XJG-KC51G",
+      "price": 2000000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "의왕시",
+      "location": "고천동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-15T04:39:43.852Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C-%EB%B6%816-%ED%94%84%EB%A1%9C-nt960xjg-kc51g-uvh1h9tgrm43/",
+      "firstAlertedAt": "2026-10-15T04:52:23.802774Z",
+      "lastCandidateAt": "2026-10-15T04:52:23.802774Z"
     }
   }
 }
