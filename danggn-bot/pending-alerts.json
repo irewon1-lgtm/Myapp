@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-15T13:12:22.270245Z",
+  "updatedAt": "2026-10-15T13:52:12.251609Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -5355,8 +5355,8 @@
     "nfvfjgjbsh2j": {
       "id": "nfvfjgjbsh2j",
       "title": "HP 빅터스 15 게이밍 노트북 판매",
-      "price": 720000,
-      "previousPrice": 750000,
+      "price": 750000,
+      "previousPrice": 790000,
       "changeType": "price_drop",
       "city": "군포시",
       "location": "부곡동",
@@ -5375,7 +5375,7 @@
       "postedAt": "2026-10-14T09:41:40.214Z",
       "url": "https://www.daangn.com/kr/buy-sell/hp-%EB%B9%85%ED%84%B0%EC%8A%A4-15-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4-nfvfjgjbsh2j/",
       "firstAlertedAt": "2026-10-14T09:58:07.171804Z",
-      "lastCandidateAt": "2026-10-15T11:20:19.118308Z"
+      "lastCandidateAt": "2026-10-15T13:52:12.251609Z"
     },
     "8t535tkt7mbi": {
       "id": "8t535tkt7mbi",
@@ -6201,6 +6201,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/hp-%EC%98%A4%EB%A9%98-16-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-rtx-4060-ram32g-kko7a8xauf2g/",
       "firstAlertedAt": "2026-10-15T13:12:22.270245Z",
       "lastCandidateAt": "2026-10-15T13:12:22.270245Z"
+    },
+    "vcnfxg2u4bs5": {
+      "id": "vcnfxg2u4bs5",
+      "title": "☆☆☆LG그램 17인치 노트북 판매☆☆☆",
+      "price": 750000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "부흥동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "RAM: 16GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 1024,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-15T13:23:08.280Z",
+      "url": "https://www.daangn.com/kr/buy-sell/lg%EA%B7%B8%EB%9E%A8-17%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4-vcnfxg2u4bs5/",
+      "firstAlertedAt": "2026-10-15T13:52:12.251609Z",
+      "lastCandidateAt": "2026-10-15T13:52:12.251609Z"
     }
   }
 }

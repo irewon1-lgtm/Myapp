@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-15T13:12:22.209Z",
+  "generatedAt": "2026-10-15T13:52:12.185Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,106 +55,96 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/msi-%EC%82%AC%EC%9D%B4%EB%B3%B4%EA%B7%B8-15%EC%9D%B8%EC%B9%98-rtx-4060-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-tbt1snm8c9b1/",
-            "href": "/kr/buy-sell/msi-%EC%82%AC%EC%9D%B4%EB%B3%B4%EA%B7%B8-15%EC%9D%B8%EC%B9%98-rtx-4060-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-tbt1snm8c9b1/",
-            "title": "MSI 사이보그 15인치 RTX 4060 게이밍 노트북",
-            "content": "MSI 사이보그 게이밍 노트북 판매해요. 인텔 코어 i7 프로세서와 RTX 4060 그래픽 카드가 탑재되어 고사양 게임도 문제없이 즐길 수 있어요. 15인치 화면으로 몰입감 있는 게임 환경을 제공하며, 16GB RAM과 1TB SSD로 쾌적한 사용이 가능합니다. 게임을 좋아하시는 분이라면 만족하실 거예요. 구매는 23년도 7월쯤에 구매 했습니다.",
-            "price": "770000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/aba69490-4ab2-4429-89fa-fc6ae9cb03ab.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-d5149wjpa9ag/",
+            "href": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-d5149wjpa9ag/",
+            "title": "LG 노트북 판매합니다",
+            "content": "### 💻 LG 노트북 판매합니다 — 깔끔한 상태 & 정상 작동\n\n**LG 노트북 T6500 / RAM 4GB**\n\n깔끔하게 관리된 LG 노트북입니다.\n전체적으로 **깨끗하고 상태 좋으며**, 생활 스크래치나 찍힘 없이 깔끔합니다.\n\n✅ **Intel Core 2 Duo T6500 @ 2.10GHz**\n✅ **RAM 4GB**\n✅ **64-bit Windows**\n✅ 키보드 **모든 기능 정상 작동**\n✅ 마우스/터치패드 **정상 작동**\n✅ 화면 및 전원 **정상 작동**\n✅ 인터넷, 문서 작업 등 기본적인 작업에 적합\n✅ **수리 이력 없이 깔끔하게 사용**\n✅ **스크래치 및 찍힘 거의 없이 깨끗한 상태**\n\n📌 **문서 작성, 인터넷 검색, 간단한 업무용/학습용**으로 사용하기 좋습니다.\n\n사진처럼 전체적으로 깔끔한 제품이며, **직접 확인 후 구매하셔도 좋습니다.**\n관심 있으신 분 편하게 연락 주세요!\n",
+            "price": "135000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202609/0ce10119d150700d06f725c827c637c5fdfaaf55251f23fd2b64b6dc409ba2a6_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-09-22T14:00:56.583Z",
+            "boostedAt": "2026-10-15T13:25:44.364Z",
+            "region": {
+              "name": "아라동"
+            },
+            "category": null,
+            "tradingCoordinates": [
+              {
+                "latitude": 33.45642198832654,
+                "longitude": 126.56538205752128
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1%EB%85%B8%ED%8A%B8%EB%B6%81-15%EC%9D%B8%EC%B9%98-94z4362fbqdz/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1%EB%85%B8%ED%8A%B8%EB%B6%81-15%EC%9D%B8%EC%B9%98-94z4362fbqdz/",
+            "title": "삼성노트북 15인치",
+            "content": "삼성 노트북 15인치\n모델 : NT500R5M\nCPU : Intel Pentium 4415U\nRAM : 4 GB\nSSD : 128 GB (속도빠름)\n배터리 3시간 이상 (5번사진)\n윈도10, MS오피스, 한글 설치됨\n인터넷  문서작성 성능 우수함\n충전기, 유선마우스\n같이 드립니다\n한영키 불량으로 화면 우측하단에\n\"A\"를 눌러 \"한\"으로 변경함",
+            "price": "50000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/106f5592-0d5a-4f45-b6b5-9a7e97c18635.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-15T12:52:52.225Z",
+            "boostedAt": "2026-10-15T12:52:52.214Z",
+            "region": {
+              "name": "오금동"
+            },
+            "category": null,
+            "tradingCoordinates": []
+          },
+          {
+            "id": "/kr/buy-sell/lg%EA%B7%B8%EB%9E%A8-17%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4-vcnfxg2u4bs5/",
+            "href": "/kr/buy-sell/lg%EA%B7%B8%EB%9E%A8-17%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4-vcnfxg2u4bs5/",
+            "title": "☆☆☆LG그램 17인치 노트북 판매☆☆☆",
+            "content": "[LG 그램 17인치 노트북]\n☆ 제품 사양☆\n모델명: LG 그램 17Z95P-GA5WK\nCPU: 인텔 11세대 i5\nRAM: 16GB\n그래픽: Intel Iris Xe 내장 그래픽\n저장공간: \"\"삼성전자 M.2 EVO SSD 1TB 탑재\"\"\n운영체제: Windows 11 Pro\n디스플레이: 17인치 대화면\n\n사용용도: 대학교 시절 문서작업 및 캐드작업\n하자: 거의 없음\n배터리: 80%충전모드로 계속사용하여 문제 전혀없음.\n부속품: 충전기 및 파우치(살짝 사용기있음) 드립니다.\n\n사진참고하시어 추가적으로 문의주시면 답변해드리겠습니다. 거래는 직거래로 노트북  확인하면서 진행할 예정입니다. 많은 관심 부탁드려요~~~~ :)",
+            "price": "750000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/8b6d6918-fa3e-4cde-84d0-712d362cfa3b.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": false,
-            "createdAt": "2026-10-15T13:10:11.243Z",
-            "boostedAt": "2026-10-15T13:10:11.242Z",
+            "createdAt": "2026-10-15T13:23:08.280Z",
+            "boostedAt": "2026-10-15T13:23:08.274Z",
             "region": {
-              "name": "산본동"
+              "name": "부흥동"
             },
             "category": null,
-            "tradingCoordinates": [
-              {
-                "latitude": 37.3557005274959,
-                "longitude": 126.92073299740088
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt910s3l-%EB%A1%9C%EC%A6%88%EA%B3%A8%EB%93%9C-13%EC%9D%B8%EC%B9%98-u5picjiu91kq/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt910s3l-%EB%A1%9C%EC%A6%88%EA%B3%A8%EB%93%9C-13%EC%9D%B8%EC%B9%98-u5picjiu91kq/",
-            "title": "삼성 노트북 NT910S3L 로즈골드 13인치",
-            "content": "삼성 노트북 NT910S3L 로즈골드 색상입니다. 13인치 화면에 깔끔한 디자인을 자랑해요. 2016년 3월 제조 상품이며, 19V 2.1A 어댑터가 포함되어 있습니다. 가볍고 휴대하기 좋아 어디서든 편리하게 사용하실 수 있어요.",
-            "price": "95000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/b80c3abe-0fe6-400a-b7db-0439d2460ec9.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-15T13:00:11.328Z",
-            "boostedAt": "2026-10-15T13:00:11.326Z",
-            "region": {
-              "name": "신평동"
-            },
-            "category": null,
-            "tradingCoordinates": [
-              {
-                "latitude": 35.095465542691365,
-                "longitude": 128.96334528923035
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-8gb-ram-238gb-ssd-%EC%A7%80%ED%8F%AC%EC%8A%A4-di1qkf479r2j/",
-            "href": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-8gb-ram-238gb-ssd-%EC%A7%80%ED%8F%AC%EC%8A%A4-di1qkf479r2j/",
-            "title": "LG 노트북 i5  8GB RAM 238GB SSD 지포스",
-            "content": "LG 15.6인치 노트북 (i5 4세대 / 8GB / SSD / 지포스)\nLG 노트북 판매합니다.\n인텔 코어 i5 4세대 프로세서에 램 8GB, SSD 238GB 들어가 있어서 부팅이랑 프로그램 실행이 빠른 편이에요.\n지포스 2GB 그래픽카드가 따로 달려 있어서 동영상 보기나 가벼운 작업은 무난하게 하실 수 있어요.\n15.6인치 풀HD(1920×1080) 화면이라 글씨도 선명하고 넉넉하게 쓰기 좋습니다.\n인강, 문서 작업, 유튜브용으로 추천드려요.\n깨끗하게 써서 상태 좋아요.\n구성품은 사진에 보이는 그대로 드립니다.",
-            "price": "150000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/f0e99a24-21e9-4b15-8ee6-8afc56acc5b8.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-15T12:16:13.883Z",
-            "boostedAt": "2026-10-15T12:16:13.881Z",
-            "region": {
-              "name": "호계동"
-            },
-            "category": null,
-            "tradingCoordinates": [
-              {
-                "latitude": 37.38288220371149,
-                "longitude": 126.94909584341809
-              }
-            ]
+            "tradingCoordinates": []
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-10-15T13:10:11.243Z\",\"boostedAt\":\"2026-10-15T13:10:11.242Z\",\"region\":{\"name\":\"산본동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-15T13:00:11.328Z\",\"boostedAt\":\"2026-10-15T13:00:11.326Z\",\"region\":{\"name\":\"신평동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-15T12:16:13.883Z\",\"boostedAt\":\"2026-10-15T12:16:13.881Z\",\"region\":{\"name\":\"호계동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-09-22T14:00:56.583Z\",\"boostedAt\":\"2026-10-15T13:25:44.364Z\",\"region\":{\"name\":\"아라동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-15T12:52:52.225Z\",\"boostedAt\":\"2026-10-15T12:52:52.214Z\",\"region\":{\"name\":\"오금동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-15T12:47:19.187Z\",\"boostedAt\":\"2026-10-15T12:47:19.187Z\",\"region\":{\"name\":\"동변동\"},\"category\":null,\"tradingCoor"
+          "createdAt\":\"2026-10-15T13:23:08.280Z\",\"boostedAt\":\"2026-10-15T13:23:08.274Z\",\"region\":{\"name\":\"부흥동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-15T13:25:50.932Z\",\"boostedAt\":\"2026-10-15T13:25:50.931Z\",\"region\":{\"name\":\"반송동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-15T12:16:13.883Z\",\"boostedAt\":\"2026-10-15T12:16:13.881Z\",\"region\":{\"name\":\"호계동\"},\"category\":null,\"tradingCoor"
         ],
         "scriptHeads": [
           "window.sentryEnv = {\n  release: \"050e2e9\",\n  environment: \"prod-kr\"\n};",
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":269,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"MSI 사이보그 15인치 RTX 4060 게이밍 노트북",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":270,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG 노트북 판매합니다\",\"description\":\"#",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-71f8f593.js\";\nimport * as route0 from \"/_remix/root-ii7Ivh2t.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-DcCe9nPb.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 1063,
-    "globalUniqueListings": 450,
-    "duplicateListingsRemoved": 613,
-    "detailQueueStart": 17,
-    "freshDetailTasks": 17,
+    "searchUniqueListings": 1055,
+    "globalUniqueListings": 444,
+    "duplicateListingsRemoved": 611,
+    "detailQueueStart": 11,
+    "freshDetailTasks": 11,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 17,
-    "detailSucceeded": 17,
+    "detailRequestsExecuted": 11,
+    "detailSucceeded": 11,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 450,
+    "postedAtResolvedFromSearch": 444,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 2,
-    "scanDurationMs": 101225,
+    "scanDurationMs": 92767,
     "cities": [
       {
         "city": "군포시",
@@ -167,7 +157,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 283,
-        "durationMs": 12605
+        "durationMs": 12224
       },
       {
         "city": "의왕시",
@@ -182,8 +172,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 368,
-        "durationMs": 25927
+        "uniqueListings": 353,
+        "durationMs": 25727
       },
       {
         "city": "안양시",
@@ -200,8 +190,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 332,
-        "durationMs": 35657
+        "uniqueListings": 339,
+        "durationMs": 35503
       },
       {
         "city": "과천시",
@@ -213,7 +203,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 80,
-        "durationMs": 6653
+        "durationMs": 6289
       }
     ],
     "finalCandidateCount": 2,
@@ -222,78 +212,78 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 101231
+    "durationMs": 92774
   },
   "candidates": [
     {
-      "id": "tbt1snm8c9b1",
+      "id": "vcnfxg2u4bs5",
       "changeType": "new",
       "previousPrice": null,
-      "price": 770000,
+      "price": 750000,
       "priceDropPercent": null,
-      "city": "군포시",
-      "location": "산본동",
-      "regionPath": "경기도 군포시 산본동",
-      "title": "MSI 사이보그 15인치 RTX 4060 게이밍 노트북",
-      "modelHint": "MSI 사이보그 15인치 RTX 4060 게이밍 노트북",
+      "city": "안양시",
+      "location": "부흥동",
+      "regionPath": "경기도 안양시 동안구 부흥동",
+      "title": "☆☆☆LG그램 17인치 노트북 판매☆☆☆",
+      "modelHint": "☆☆☆LG그램 17인치 노트북 판매☆☆☆",
       "cpuHint": null,
       "cpuBaselinePass": null,
-      "gpuHint": "RTX 4060",
+      "gpuHint": null,
       "vramGB": null,
       "ramGB": 16,
       "ambiguousMemoryGB": null,
       "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": "16GB RAM",
+      "ramEvidence": "RAM: 16GB",
       "vramEvidence": null,
       "ambiguousMemoryEvidence": null,
       "storageGB": 1024,
       "llmCapability": "SPEC_CHECK_REQUIRED",
       "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
       "specConfidence": "needs_review",
-      "postedAt": "2026-10-15T13:10:11.243Z",
-      "boostedAt": "2026-10-15T13:10:11.242Z",
+      "postedAt": "2026-10-15T13:23:08.280Z",
+      "boostedAt": "2026-10-15T13:23:08.274Z",
       "status": "Ongoing",
-      "description": "MSI 사이보그 게이밍 노트북 판매해요. 인텔 코어 i7 프로세서와 RTX 4060 그래픽 카드가 탑재되어 고사양 게임도 문제없이 즐길 수 있어요. 15인치 화면으로 몰입감 있는 게임 환경을 제공하며, 16GB RAM과 1TB SSD로 쾌적한 사용이 가능합니다. 게임을 좋아하시는 분이라면 만족하실 거예요. 구매는 23년도 7월쯤에 구매 했습니다.",
-      "url": "https://www.daangn.com/kr/buy-sell/msi-%EC%82%AC%EC%9D%B4%EB%B3%B4%EA%B7%B8-15%EC%9D%B8%EC%B9%98-rtx-4060-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-tbt1snm8c9b1/",
+      "description": "[LG 그램 17인치 노트북]\n☆ 제품 사양☆\n모델명: LG 그램 17Z95P-GA5WK\nCPU: 인텔 11세대 i5\nRAM: 16GB\n그래픽: Intel Iris Xe 내장 그래픽\n저장공간: \"\"삼성전자 M.2 EVO SSD 1TB 탑재\"\"\n운영체제: Windows 11 Pro\n디스플레이: 17인치 대화면\n\n사용용도: 대학교 시절 문서작업 및 캐드작업\n하자: 거의 없음\n배터리: 80%충전모드로 계속사용하여 문제 전혀없음.\n부속품: 충전기 및 파우치(살짝 사용기있음) 드립니다.\n\n사진참고하시어 추가적으로 문의주시면 답변해드리겠습니다. 거래는 직거래로 노트북  확인하면서 진행할 예정입니다. 많은 관심 부탁드려요~~~~ :)",
+      "url": "https://www.daangn.com/kr/buy-sell/lg%EA%B7%B8%EB%9E%A8-17%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4-vcnfxg2u4bs5/",
       "favoriteCount": 0,
       "chatCount": 0,
-      "sellerName": "팬치",
-      "mannerTemperature": 36.8
+      "sellerName": "푸른밤",
+      "mannerTemperature": 39.6
     },
     {
-      "id": "kko7a8xauf2g",
-      "changeType": "new",
-      "previousPrice": null,
-      "price": 1200000,
-      "priceDropPercent": null,
+      "id": "nfvfjgjbsh2j",
+      "changeType": "price_drop",
+      "previousPrice": 790000,
+      "price": 750000,
+      "priceDropPercent": 5.1,
       "city": "군포시",
-      "location": "당동",
-      "regionPath": "경기도 군포시 당동",
-      "title": "HP 오멘 16 게이밍 노트북 RTX 4060 ram32g",
-      "modelHint": "HP 오멘 16 게이밍 노트북 RTX 4060 ram32g",
+      "location": "부곡동",
+      "regionPath": "경기도 군포시 부곡동",
+      "title": "HP 빅터스 15 게이밍 노트북 판매",
+      "modelHint": "HP 빅터스 15 게이밍 노트북 판매",
       "cpuHint": null,
       "cpuBaselinePass": null,
-      "gpuHint": "RTX 4060",
+      "gpuHint": "RTX 3050",
       "vramGB": null,
-      "ramGB": 32,
-      "ambiguousMemoryGB": 32,
-      "hardwareReviewStatus": "PASS_RAM",
-      "ramEvidence": "ram32g",
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "램 16GB",
       "vramEvidence": null,
-      "ambiguousMemoryEvidence": "32GB",
+      "ambiguousMemoryEvidence": null,
       "storageGB": 512,
-      "llmCapability": "WORK_DEV_RAM32",
-      "llmReason": "RAM 32GB 이상 확정 후보",
-      "specConfidence": "confirmed",
-      "postedAt": "2026-10-15T12:34:19.716Z",
-      "boostedAt": "2026-10-15T12:34:19.711Z",
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "specConfidence": "needs_review",
+      "postedAt": "2026-10-14T09:41:40.214Z",
+      "boostedAt": "2026-10-15T11:04:58.705Z",
       "status": "Ongoing",
-      "description": "[기본 스펙]\n모델명: HP OMEN 16-wf0156TX\n화면: 16.1인치\nCPU: intel i5-13500 hx\nGPU: NVIDIA GeForce RTX 4060 (8GB)\nRAM: 32GB (DDR5 4800MHz)\nSSD: 512GB (NVMe PCIe 4.0)\n\n고성능 게이밍을 위한 HP 오멘 16 노트북을 판매해요. 인텔 13세대 i5 프로세서와 RTX 4060 그래픽카드로 어떤 게임이든 부드럽게 즐길 수 있어요. 32GB 메모리와 512GB SSD로 쾌적한 사용 환경을 제공합니다. 구성품으로 노트북 본체, 어댑터, 마우스, 가방이 포함되어 있어요. \n24년도 구매후 한달도 사용안하고 창고에있었어서 상태 s급입니다 , 기스 오염 하나도없어요.",
-      "url": "https://www.daangn.com/kr/buy-sell/hp-%EC%98%A4%EB%A9%98-16-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-rtx-4060-ram32g-kko7a8xauf2g/",
+      "description": "깔끔한 HP 빅터스 게이밍 노트북이에요. 고사양 게임도 문제없이 즐길 수 있는 성능을 갖추고 있어요. 사진에서 보이는 것처럼 구성품도 잘 갖춰져 있답니다. 이 노트북으로 즐거운 컴퓨팅 경험을 만들어보세요.\n\n\n깨끗하게 사용 거의 새제품\n\n\n사양\n엔비디아 지포스 RTX 3050\nCPU i5-13420h\n램 16GB\nSSD 512GB",
+      "url": "https://www.daangn.com/kr/buy-sell/hp-%EB%B9%85%ED%84%B0%EC%8A%A4-15-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4-nfvfjgjbsh2j/",
       "favoriteCount": 0,
       "chatCount": 0,
-      "sellerName": "사과마루",
-      "mannerTemperature": 36.8
+      "sellerName": "부자",
+      "mannerTemperature": 46.7
     }
   ]
 }
