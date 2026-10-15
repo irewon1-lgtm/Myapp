@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-15T09:52:18.866843Z",
+  "updatedAt": "2026-10-15T10:17:38.683423Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -5976,6 +5976,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/lenovo-legion-7-%ED%99%94%EC%9D%B4%ED%8A%B8-emdo4s4jvz7q/",
       "firstAlertedAt": "2026-10-15T09:52:18.866843Z",
       "lastCandidateAt": "2026-10-15T09:52:18.866843Z"
+    },
+    "3i8n49wjezf6": {
+      "id": "3i8n49wjezf6",
+      "title": "LG 그램 17인치 노트북 (2026년형)",
+      "price": 1800000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "과천시",
+      "location": "원문동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB 메모리",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-15T10:14:03.646Z",
+      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-17%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-2026%EB%85%84%ED%98%95-3i8n49wjezf6/",
+      "firstAlertedAt": "2026-10-15T10:17:38.683423Z",
+      "lastCandidateAt": "2026-10-15T10:17:38.683423Z"
     }
   }
 }
