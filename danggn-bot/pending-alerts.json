@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-15T11:52:24.754554Z",
+  "updatedAt": "2026-10-15T12:32:18.613211Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -6101,6 +6101,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EA%B8%89%EC%B3%90-15%EC%9D%B8%EC%B9%98-rtx3060-%EA%B2%8C%EC%9D%B4%EB%B0%8D-6t16w4nce1cm/",
       "firstAlertedAt": "2026-10-15T11:20:19.118308Z",
       "lastCandidateAt": "2026-10-15T11:20:19.118308Z"
+    },
+    "v2w28efzzer2": {
+      "id": "v2w28efzzer2",
+      "title": "급쳐 14인치 RTX3050 OLED게이밍노트북",
+      "price": 62,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "오금동",
+      "cpuHint": null,
+      "gpuHint": "RTX3050",
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-15T12:03:35.726Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EA%B8%89%EC%B3%90-14%EC%9D%B8%EC%B9%98-rtx3050-oled%EA%B2%8C%EC%9D%B4%EB%B0%8D%EB%85%B8%ED%8A%B8%EB%B6%81-v2w28efzzer2/",
+      "firstAlertedAt": "2026-10-15T12:32:18.613211Z",
+      "lastCandidateAt": "2026-10-15T12:32:18.613211Z"
+    },
+    "idagpjkjgdpe": {
+      "id": "idagpjkjgdpe",
+      "title": "맥북 프로 16인치 M1 Max 64GB 32코어 풀칩 팝니다.",
+      "price": 2700000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "호계1동",
+      "cpuHint": "M1 Max",
+      "gpuHint": "M1 Max",
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 64,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "64GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-15T11:59:34.303Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-16%EC%9D%B8%EC%B9%98-m1-max-64gb-32%EC%BD%94%EC%96%B4-%ED%92%80%EC%B9%A9-%ED%8C%9D%EB%8B%88%EB%8B%A4-idagpjkjgdpe/",
+      "firstAlertedAt": "2026-10-15T12:32:18.613211Z",
+      "lastCandidateAt": "2026-10-15T12:32:18.613211Z"
     }
   }
 }
