@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-15T00:42:16.041Z",
+  "generatedAt": "2026-10-15T00:55:31.013Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -53,35 +53,103 @@
       },
       "htmlSample": {
         "embeddedArticles": false,
-        "remixArticleSamples": [],
-        "dateFieldSnippets": [],
+        "remixArticleSamples": [
+          {
+            "id": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%847th%ED%99%94%EC%9D%B4%ED%8A%B8%EC%8A%AC%EB%A6%BC%EB%85%B8%ED%8A%B8%EB%B6%81-9sdvcpg67wb3/",
+            "href": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%847th%ED%99%94%EC%9D%B4%ED%8A%B8%EC%8A%AC%EB%A6%BC%EB%85%B8%ED%8A%B8%EB%B6%81-9sdvcpg67wb3/",
+            "title": "레노버7th화이트슬림노트북",
+            "content": "레노버 14인치  슬림 사이즈의 휴대성\n비교적 최신 노트북으로 음악\n문서 인터넷 등 활용도 좋습니다\nmodel, ideapad330s\ncpu gold p 4415u\nssd 128기가\n액정 14인치 fhd\n원도우10 한글 오피스 설치\n배터리 사용되며 하자 없습니다\n아답터 포함",
+            "price": "100000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/17920242039446222637a9bdf0b57954ffb0de700115922cf4bf7966c3b58afb41b7a8cc8d2100.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-15T00:34:21.039Z",
+            "boostedAt": "2026-10-15T00:34:21.034Z",
+            "region": {
+              "name": "중2동"
+            },
+            "category": null,
+            "tradingCoordinates": []
+          },
+          {
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-yfcpqn428y54/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-yfcpqn428y54/",
+            "title": "삼성 노트북  판매합니다",
+            "content": "삼성 노트북  판매해요\nNT270E5RㅡXD8S\n사진에서 보이는 것처럼 깔끔하게 사용했어요. 문서 작업이나 인터넷 서핑 등 일상적인 용도로 사용하기 좋아요.",
+            "price": "60000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/03254dbc-31cb-4979-9fc0-477b21a5849b.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-10-12T07:30:57.044Z",
+            "boostedAt": "2026-10-12T07:30:57.042Z",
+            "region": {
+              "name": "당정동"
+            },
+            "category": null,
+            "tradingCoordinates": [
+              {
+                "latitude": 37.34433852256619,
+                "longitude": 126.95033971312631
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4-2yhmp5xajk9m/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4-2yhmp5xajk9m/",
+            "title": "삼성 노트북 판매",
+            "content": "삼성노트북nt450r5e팝니다\n\ni5 3230m 램8ssd250기가 15.6인치 밧데리상태2시간가능좋음\n얇고가벼운노트북 윈도10. 한글 ms오피스 포토샵 한글캐드 유튜브 ",
+            "price": "150000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/f078ed47-f47b-4d44-b48b-2271cff500b3.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-14T23:27:40.243Z",
+            "boostedAt": "2026-10-14T23:27:40.239Z",
+            "region": {
+              "name": "지묘동"
+            },
+            "category": null,
+            "tradingCoordinates": [
+              {
+                "latitude": 35.938520105551824,
+                "longitude": 128.6428340524435
+              }
+            ]
+          }
+        ],
+        "dateFieldSnippets": [
+          "createdAt\":\"2026-10-15T00:34:21.039Z\",\"boostedAt\":\"2026-10-15T00:34:21.034Z\",\"region\":{\"name\":\"중2동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-12T07:30:57.044Z\",\"boostedAt\":\"2026-10-12T07:30:57.042Z\",\"region\":{\"name\":\"당정동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-14T23:27:40.243Z\",\"boostedAt\":\"2026-10-14T23:27:40.239Z\",\"region\":{\"name\":\"지묘동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-14T18:42:59.109Z\",\"boostedAt\":\"2026-10-14T18:42:59.108Z\",\"region\":{\"name\":\"왜관읍\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-09T02:42:22.383Z\",\"boostedAt\":\"2026-10-14T09:13:56.397Z\",\"region\":{\"name\":\"내손2동\"},\"category\":null,\"tradingCoo"
+        ],
         "scriptHeads": [
-          "\n    (function(window, document, mode) {\n      try {\n        document.documentElement.dataset.seed = '';\n        document.documentElement.dataset.seedColorMode = mode;\n      } catch (e) {}\n\n      try {\n        var prefer",
           "window.sentryEnv = {\n  release: \"050e2e9\",\n  environment: \"prod-kr\"\n};",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":268,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"레노버7th화이트슬림노트북\",\"description\":",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
           "import \"/_remix/manifest-71f8f593.js\";\nimport * as route0 from \"/_remix/root-ii7Ivh2t.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-DcCe9nPb.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 1152,
-    "globalUniqueListings": 467,
-    "duplicateListingsRemoved": 685,
-    "detailQueueStart": 6,
-    "freshDetailTasks": 6,
+    "searchUniqueListings": 1174,
+    "globalUniqueListings": 453,
+    "duplicateListingsRemoved": 721,
+    "detailQueueStart": 2,
+    "freshDetailTasks": 2,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 6,
-    "detailSucceeded": 6,
+    "detailRequestsExecuted": 2,
+    "detailSucceeded": 2,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 467,
+    "postedAtResolvedFromSearch": 453,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 85786,
+    "scanDurationMs": 82181,
     "cities": [
       {
         "city": "군포시",
@@ -93,8 +161,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 192,
-        "durationMs": 12276
+        "uniqueListings": 286,
+        "durationMs": 12431
       },
       {
         "city": "의왕시",
@@ -109,8 +177,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 384,
-        "durationMs": 25412
+        "uniqueListings": 356,
+        "durationMs": 25728
       },
       {
         "city": "안양시",
@@ -127,8 +195,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 319,
-        "durationMs": 35377
+        "uniqueListings": 353,
+        "durationMs": 35417
       },
       {
         "city": "과천시",
@@ -139,8 +207,8 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 257,
-        "durationMs": 6207
+        "uniqueListings": 179,
+        "durationMs": 6571
       }
     ],
     "finalCandidateCount": 0,
@@ -149,7 +217,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 85792
+    "durationMs": 82187
   },
   "candidates": []
 }
