@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-15T02:12:22.268716Z",
+  "updatedAt": "2026-10-15T02:52:29.215073Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -5576,6 +5576,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%813-%ED%94%84%EB%A1%9C-16%EC%9D%B8%EC%B9%98-i5-1340p-32gb-mn75weky54dx/",
       "firstAlertedAt": "2026-10-15T02:12:22.268716Z",
       "lastCandidateAt": "2026-10-15T02:12:22.268716Z"
+    },
+    "1dsyyy1snzmg": {
+      "id": "1dsyyy1snzmg",
+      "title": "한성 컴튜터 게이밍 노트북 X7967T / i7 / RTX 2060 / RAM 16GB / SSD 512GB",
+      "price": 300000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "호계3동",
+      "cpuHint": "i7-9750H",
+      "gpuHint": "RTX 2060",
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "RAM 16GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-15T02:39:24.988Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%ED%95%9C%EC%84%B1-%EC%BB%B4%ED%8A%9C%ED%84%B0-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-x7967t-i7-rtx-2060-ram-16gb-ssd-512gb-1dsyyy1snzmg/",
+      "firstAlertedAt": "2026-10-15T02:52:29.215073Z",
+      "lastCandidateAt": "2026-10-15T02:52:29.215073Z"
+    },
+    "uq2nh5upovdy": {
+      "id": "uq2nh5upovdy",
+      "title": "[고장/부품용 판매] rtx3070 한성노트북(RAM 32GB + SSD 1TB + 정품 충전기)",
+      "price": 150000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "비산1동",
+      "cpuHint": "Ryzen 7 5800H",
+      "gpuHint": "rtx3070",
+      "vramGB": null,
+      "ramGB": 32,
+      "ambiguousMemoryGB": 32,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "RAM 32GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "32GB",
+      "storageGB": 1024,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "postedAt": "2026-10-15T02:25:31.249Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EA%B3%A0%EC%9E%A5-%EB%B6%80%ED%92%88%EC%9A%A9-%ED%8C%90%EB%A7%A4-rtx3070-%ED%95%9C%EC%84%B1%EB%85%B8%ED%8A%B8%EB%B6%81-ram-32gb-ssd-1tb-%EC%A0%95%ED%92%88-%EC%B6%A9%EC%A0%84%EA%B8%B0-uq2nh5upovdy/",
+      "firstAlertedAt": "2026-10-15T02:52:29.215073Z",
+      "lastCandidateAt": "2026-10-15T02:52:29.215073Z"
     }
   }
 }
