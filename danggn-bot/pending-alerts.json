@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-15T01:32:14.801746Z",
+  "updatedAt": "2026-10-15T02:12:22.268716Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -5526,6 +5526,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/15%EC%9D%B8%EC%B9%98-rx3060-%EB%B0%B0%EA%B7%B8%EA%B0%80%EB%8A%A5%EB%85%B8%ED%8A%B8%EB%B6%81-wdomitmkhy8f/",
       "firstAlertedAt": "2026-10-14T22:40:47.632578Z",
       "lastCandidateAt": "2026-10-14T22:40:47.632578Z"
+    },
+    "yiunukgb2os8": {
+      "id": "yiunukgb2os8",
+      "title": "기가바이트 게이밍 A16 노트북 (RTX 5070)",
+      "price": 1900000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "호계동",
+      "cpuHint": null,
+      "gpuHint": "RTX 5070",
+      "vramGB": null,
+      "ramGB": 32,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "32GB RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "postedAt": "2026-10-15T01:56:01.727Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EA%B8%B0%EA%B0%80%EB%B0%94%EC%9D%B4%ED%8A%B8-%EA%B2%8C%EC%9D%B4%EB%B0%8D-a16-%EB%85%B8%ED%8A%B8%EB%B6%81-rtx-5070-yiunukgb2os8/",
+      "firstAlertedAt": "2026-10-15T02:12:22.268716Z",
+      "lastCandidateAt": "2026-10-15T02:12:22.268716Z"
+    },
+    "mn75weky54dx": {
+      "id": "mn75weky54dx",
+      "title": "삼성 갤럭시북3 프로 16인치 i5-1340p 32gb",
+      "price": 790000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "군포1동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 32,
+      "ambiguousMemoryGB": 32,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "렘 32gb",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "32gb",
+      "storageGB": null,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "postedAt": "2026-10-15T02:03:42.576Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%813-%ED%94%84%EB%A1%9C-16%EC%9D%B8%EC%B9%98-i5-1340p-32gb-mn75weky54dx/",
+      "firstAlertedAt": "2026-10-15T02:12:22.268716Z",
+      "lastCandidateAt": "2026-10-15T02:12:22.268716Z"
     }
   }
 }
