@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-15T07:12:20.845451Z",
+  "updatedAt": "2026-10-15T07:52:20.727729Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -5826,6 +5826,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/lg-15ud50p-%EC%82%AC%EB%AC%B4%EC%9A%A9-%EB%85%B8%ED%8A%B8%EB%B6%81%ED%8C%90%EB%A7%A4-b8xq5svc48h3/",
       "firstAlertedAt": "2026-10-15T07:12:20.845451Z",
       "lastCandidateAt": "2026-10-15T07:12:20.845451Z"
+    },
+    "395ivznswj8p": {
+      "id": "395ivznswj8p",
+      "title": "LG 15UD470 사무용 노트북 판매",
+      "price": 150000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "석수동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16G",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-15T07:11:38.920Z",
+      "url": "https://www.daangn.com/kr/buy-sell/lg-15ud470-%EC%82%AC%EB%AC%B4%EC%9A%A9-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4-395ivznswj8p/",
+      "firstAlertedAt": "2026-10-15T07:52:20.727729Z",
+      "lastCandidateAt": "2026-10-15T07:52:20.727729Z"
     }
   }
 }
