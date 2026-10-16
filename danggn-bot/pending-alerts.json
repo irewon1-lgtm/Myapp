@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-16T05:42:12.942217Z",
+  "updatedAt": "2026-10-16T06:22:13.307488Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -6376,6 +6376,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-16%EC%9D%B8%EC%B9%98-2560x1600-wqhd-%EB%85%B8%ED%8A%B8%EB%B6%81-yn1r5n94pf1o/",
       "firstAlertedAt": "2026-10-16T05:42:12.942217Z",
       "lastCandidateAt": "2026-10-16T05:42:12.942217Z"
+    },
+    "zrc5khxs8kcy": {
+      "id": "zrc5khxs8kcy",
+      "title": "2019 맥북프로 16인치 기본형",
+      "price": 480000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "의왕시",
+      "location": "부곡동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-16T05:51:32.080Z",
+      "url": "https://www.daangn.com/kr/buy-sell/2019-%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C-16%EC%9D%B8%EC%B9%98-%EA%B8%B0%EB%B3%B8%ED%98%95-zrc5khxs8kcy/",
+      "firstAlertedAt": "2026-10-16T06:22:13.307488Z",
+      "lastCandidateAt": "2026-10-16T06:22:13.307488Z"
     }
   }
 }
