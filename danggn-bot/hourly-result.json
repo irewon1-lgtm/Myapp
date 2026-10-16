@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-16T09:42:06.176Z",
+  "generatedAt": "2026-10-16T09:59:01.774Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -53,10 +53,73 @@
       },
       "htmlSample": {
         "embeddedArticles": false,
-        "remixArticleSamples": [],
-        "dateFieldSnippets": [],
+        "remixArticleSamples": [
+          {
+            "id": "/kr/buy-sell/%EB%A1%A4-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-6davx9wwpenq/",
+            "href": "/kr/buy-sell/%EB%A1%A4-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-6davx9wwpenq/",
+            "title": "롤 게이밍 노트북",
+            "content": "기가 바이트 게이밍 노트북 입니다.\n노트북 + 전원어뎁터 + 쿨링패드 + 키보드&마우스 다드려요.\n\n인텔i7 , 엔비디아 외장그래픽카드 등 괜찮고 가벼운 게임 하기엔 좋습니다\n롤 . 메이플 했습니다.\n\n연식있다보니 어뎁터꼽아놓고 사용하셔야됩니다.\n감안해서 저렴하게 올립니다.",
+            "price": "160000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/1792143688232b9441dd8624d6104e5b119edfa1532ef723ab511409f407b560e92d98a0080ab0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-16T09:45:39.811Z",
+            "boostedAt": "2026-10-16T09:45:39.809Z",
+            "region": {
+              "name": "십정동"
+            },
+            "category": null,
+            "tradingCoordinates": [
+              {
+                "latitude": 37.472024517229514,
+                "longitude": 126.69640038994805
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%8D%EB%8B%88%EB%8B%A4-3h4acvjns27u/",
+            "href": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%8D%EB%8B%88%EB%8B%A4-3h4acvjns27u/",
+            "title": "LG 노트북 팍니다",
+            "content": "안녕하세요! LG 엑스노트 노트북 판매합니다. 인텔 코어 i5-2450 프로세서와 4GB RAM을 탑재\nHDD 용량은 사진확인하시구요\n\n윈10 인증해놨습니다\n가볍게 쓰기 괜찮습니다\n\n외관도 깔끔하며 깨지거나 고장난데 없어요\n배터리는 충전안되며 아답타 껴야합니다",
+            "price": "35000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/2f6afc01-517e-4fb9-9207-42fdb1b41e30.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-16T09:51:41.760Z",
+            "boostedAt": "2026-10-16T09:51:41.757Z",
+            "region": {
+              "name": "괴안동"
+            },
+            "category": null,
+            "tradingCoordinates": []
+          },
+          {
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EC%9A%B8%ED%8A%B8%EB%9D%BC%EB%B6%81-nt530u3c-%EB%85%B8%ED%8A%B8%EB%B6%81-maivwd3weakb/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EC%9A%B8%ED%8A%B8%EB%9D%BC%EB%B6%81-nt530u3c-%EB%85%B8%ED%8A%B8%EB%B6%81-maivwd3weakb/",
+            "title": "삼성 울트라북 NT530U3C 노트북",
+            "content": "삼성 울트라북 NT530U3C 노트북이에요.\n인텔 코어 i5-3317U 프로세서와 메모리 8GB, SSD128 공간 \n\n문서 작업이나 인터넷 검색용 노트북을 찾는 분께 추천해요.\n\n큰 파손이나 긁힘은 없습니다 \n\n2대 일괄 16만\n대당 9만\n\n일괄 구입하실 분은 채팅 주시면 금액 변경해 드리겠습니다",
+            "price": "90000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/a55fb369-4435-4a35-b5a9-8cbd6af0412b.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-16T08:30:43.321Z",
+            "boostedAt": "2026-10-16T08:30:43.319Z",
+            "region": {
+              "name": "율천동"
+            },
+            "category": null,
+            "tradingCoordinates": []
+          }
+        ],
+        "dateFieldSnippets": [
+          "createdAt\":\"2026-10-16T09:45:39.811Z\",\"boostedAt\":\"2026-10-16T09:45:39.809Z\",\"region\":{\"name\":\"십정동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-16T09:51:41.760Z\",\"boostedAt\":\"2026-10-16T09:51:41.757Z\",\"region\":{\"name\":\"괴안동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-16T08:30:43.321Z\",\"boostedAt\":\"2026-10-16T08:30:43.319Z\",\"region\":{\"name\":\"율천동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-09-08T11:22:01.804Z\",\"boostedAt\":\"2026-10-16T08:36:56.644Z\",\"region\":{\"name\":\"안양동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-16T00:03:37.477Z\",\"boostedAt\":\"2026-10-16T00:03:37.476Z\",\"region\":{\"name\":\"호계3동\"},\"category\":null,\"tradingCoo"
+        ],
         "scriptHeads": [
-          "window.sentryEnv = {\n  release: \"0e27a9a\",\n  environment: \"prod-kr\"\n};",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":263,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"롤 게이밍 노트북\",\"description\":\"기가 바",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -64,24 +127,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1083,
-    "globalUniqueListings": 474,
-    "duplicateListingsRemoved": 609,
-    "detailQueueStart": 9,
-    "freshDetailTasks": 9,
+    "searchUniqueListings": 1198,
+    "globalUniqueListings": 485,
+    "duplicateListingsRemoved": 713,
+    "detailQueueStart": 12,
+    "freshDetailTasks": 12,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 9,
-    "detailSucceeded": 9,
+    "detailRequestsExecuted": 12,
+    "detailSucceeded": 12,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 474,
+    "postedAtResolvedFromSearch": 485,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 0,
-    "scanDurationMs": 91208,
+    "candidateCount": 1,
+    "scanDurationMs": 93347,
     "cities": [
       {
         "city": "군포시",
@@ -93,8 +156,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 193,
-        "durationMs": 12388
+        "uniqueListings": 288,
+        "durationMs": 12221
       },
       {
         "city": "의왕시",
@@ -109,8 +172,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 359,
-        "durationMs": 25964
+        "uniqueListings": 378,
+        "durationMs": 25545
       },
       {
         "city": "안양시",
@@ -127,8 +190,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 352,
-        "durationMs": 35324
+        "uniqueListings": 353,
+        "durationMs": 34985
       },
       {
         "city": "과천시",
@@ -140,16 +203,52 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 179,
-        "durationMs": 6824
+        "durationMs": 6336
       }
     ],
-    "finalCandidateCount": 0,
+    "finalCandidateCount": 1,
     "stateItemCount": 5000,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 91216
+    "durationMs": 93355
   },
-  "candidates": []
+  "candidates": [
+    {
+      "id": "j61jomdnt74a",
+      "changeType": "new",
+      "previousPrice": null,
+      "price": 1800000,
+      "priceDropPercent": null,
+      "city": "과천시",
+      "location": "중앙동",
+      "regionPath": "경기도 과천시 중앙동",
+      "title": "Apple 맥북 에어 M5 13인치 512GB 16GB 미드나이트",
+      "modelHint": "Apple 맥북 에어 M5 13인치 512GB 16GB 미드나이트",
+      "cpuHint": null,
+      "cpuBaselinePass": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB 메모리",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "specConfidence": "needs_review",
+      "postedAt": "2026-10-16T09:50:10.120Z",
+      "boostedAt": "2026-10-16T09:50:10.119Z",
+      "status": "Ongoing",
+      "description": "맥북 에어 M5 13인치 모델이에요. \nM5 10코어 CPU와 8코어 GPU, 16GB 메모리와 512GB 저장 공간을 갖추고 있어 쾌적한 사용이 가능해요. \n풀박스로 거래 가능합니다.\n\n단순개봉하고 집에서 유튜브만 몇번 봤어요.\n역삼역 혹은 정부과천청사역에서 직거래 가능합니다.",
+      "url": "https://www.daangn.com/kr/buy-sell/apple-%EB%A7%A5%EB%B6%81-%EC%97%90%EC%96%B4-m5-13%EC%9D%B8%EC%B9%98-512gb-16gb-%EB%AF%B8%EB%93%9C%EB%82%98%EC%9D%B4%ED%8A%B8-j61jomdnt74a/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "움파",
+      "mannerTemperature": 36.8
+    }
+  ]
 }
