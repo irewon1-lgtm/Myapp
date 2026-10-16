@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-16T10:32:09.166631Z",
+  "updatedAt": "2026-10-16T11:12:11.639049Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -6476,6 +6476,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/apple-%EB%A7%A5%EB%B6%81-%EC%97%90%EC%96%B4-m5-13%EC%9D%B8%EC%B9%98-512gb-16gb-%EB%AF%B8%EB%93%9C%EB%82%98%EC%9D%B4%ED%8A%B8-j61jomdnt74a/",
       "firstAlertedAt": "2026-10-16T09:59:01.849165Z",
       "lastCandidateAt": "2026-10-16T09:59:01.849165Z"
+    },
+    "9r9u9muo5nrx": {
+      "id": "9r9u9muo5nrx",
+      "title": "맥북 에어 M1 13인치 스페이스 그레이 16GB",
+      "price": 800000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "안양3동",
+      "cpuHint": "Apple M1",
+      "gpuHint": "Apple M1 ",
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "RAM 16GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-16T11:01:56.221Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81-%EC%97%90%EC%96%B4-m1-13%EC%9D%B8%EC%B9%98-%EC%8A%A4%ED%8E%98%EC%9D%B4%EC%8A%A4-%EA%B7%B8%EB%A0%88%EC%9D%B4-16gb-9r9u9muo5nrx/",
+      "firstAlertedAt": "2026-10-16T11:12:11.639049Z",
+      "lastCandidateAt": "2026-10-16T11:12:11.639049Z"
     }
   }
 }
