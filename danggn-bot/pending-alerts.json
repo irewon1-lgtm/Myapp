@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-16T22:52:03.113801Z",
+  "updatedAt": "2026-10-16T23:32:05.369011Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -6626,6 +6626,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/apple-mac-pro-late-2013-%EC%97%B0%ED%83%84%EB%A7%A5-64gb%EB%9E%A8-256gb-ssd-1pf8d1sy4ix5/",
       "firstAlertedAt": "2026-10-16T16:02:08.041361Z",
       "lastCandidateAt": "2026-10-16T16:02:08.041361Z"
+    },
+    "fkspezp9trbp": {
+      "id": "fkspezp9trbp",
+      "title": "갤럭시북 프로 노트북 i7 11세대 16GB RAM",
+      "price": 600000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "의왕시",
+      "location": "내손동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-16T23:23:28.746Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%81-%ED%94%84%EB%A1%9C-%EB%85%B8%ED%8A%B8%EB%B6%81-i7-11%EC%84%B8%EB%8C%80-16gb-ram-fkspezp9trbp/",
+      "firstAlertedAt": "2026-10-16T23:32:05.369011Z",
+      "lastCandidateAt": "2026-10-16T23:32:05.369011Z"
     }
   }
 }
