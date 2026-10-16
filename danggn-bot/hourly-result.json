@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-16T11:52:13.182Z",
+  "generatedAt": "2026-10-16T12:32:18.840Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,21 +55,48 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/msi-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-4210h-gtx850m-ram-8g-ufguafratr8p/",
-            "href": "/kr/buy-sell/msi-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-4210h-gtx850m-ram-8g-ufguafratr8p/",
-            "title": "MSI 게이밍 노트북 / i5-4210H / GTX850M / RAM 8G",
-            "content": "MSI GE60 2PL 노트북 판매합니다.\n사양\nCPU : Intel Core i5-4210H 2.90GHz\nRAM : 8GB\n그래픽 : NVIDIA GeForce GTX 850M\n내장그래픽 : Intel HD Graphics 4600\n저장장치 : SSD + HDD \n운영체제 : Windows 10 Pro 64비트\n15.6인치 디스플레이\nNVIDIA 그래픽 드라이버 설치 완료했고\nGTX 850M 정상 인식 및 작동 확인했습니다.\nSSD가 장착되어 있어 윈도우 부팅 및 기본적인 사용은 무난합니다.\n상태\n정상 부팅\n배터리 정상\n팬 소음 이상 없음",
-            "price": "150000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/578c8b4d-bb69-4878-af63-ffb24f0d0598.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-15%EC%9D%B8%EC%B9%98-%ED%8C%9D%EB%8B%88%EB%8B%A4-g7tczfgpjja6/",
+            "href": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-15%EC%9D%B8%EC%B9%98-%ED%8C%9D%EB%8B%88%EB%8B%A4-g7tczfgpjja6/",
+            "title": "LG 노트북 15인치 팝니다",
+            "content": "LG 노트북 15인치. \n인텔 코어 i5 2520. 8GB RAM \nbattery 상태 양호\nms office\n한글 설치 \n단 트랙패드 연결 코드가 빠진상태라 마우스 연결 사용중(고장아님 연결만 하면 됨)\n유선 마우스, 전원 어뎁터 포함 ",
+            "price": "180000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/e9df7cbd-2ec3-44fc-a30b-dfc69cb54020.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-16T11:48:02.720Z",
-            "boostedAt": "2026-10-16T11:48:02.720Z",
+            "createdAt": "2026-10-16T12:21:06.561Z",
+            "boostedAt": "2026-10-16T12:21:06.560Z",
             "region": {
-              "name": "서초3동"
+              "name": "동삭동"
             },
             "category": null,
-            "tradingCoordinates": []
+            "tradingCoordinates": [
+              {
+                "latitude": 37.01616917511643,
+                "longitude": 127.10284173488616
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/13ud580-v4fpsxu5czrb/",
+            "href": "/kr/buy-sell/13ud580-v4fpsxu5czrb/",
+            "title": "13UD580",
+            "content": "cpu: i5 7200u\n램: ddr4 8기가(교체가능, 작동은 2133이지만 장착은 2666장착 )\nssd: 256기가\n윈도우 10정품인증( 윈도우11도 가능)\n무게: 약 1.3kg로 휴대성 우수\n배터리: 배터리 교체 완료\n구성품: 노트북 본체, 충전기\n내부 청소 및 써멀구리스 재도포 함",
+            "price": "220000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/d5be407a-94ac-4ba9-ab3a-85dc2d0d099f.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-16T12:04:43.940Z",
+            "boostedAt": "2026-10-16T12:04:43.936Z",
+            "region": {
+              "name": "조촌동"
+            },
+            "category": null,
+            "tradingCoordinates": [
+              {
+                "latitude": 35.97501886399648,
+                "longitude": 126.74467129999033
+              }
+            ]
           },
           {
             "id": "/kr/buy-sell/%EA%B0%80%EC%84%B1%EB%B9%84-%EC%9D%B8%EA%B0%95%EC%8B%9C%EC%B2%AD-%EC%98%81%EC%83%81%EC%8B%9C%EC%B2%AD-%EC%95%84%EC%8A%A4%EC%8A%A4-%EB%85%B8%ED%8A%B8%EB%B6%81-76mo3wqp71kz/",
@@ -87,39 +114,17 @@
             },
             "category": null,
             "tradingCoordinates": []
-          },
-          {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt550p5c-s66l-i5-3230m-4gb-ram-120gb-ssd-pjg8zpitp64s/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt550p5c-s66l-i5-3230m-4gb-ram-120gb-ssd-pjg8zpitp64s/",
-            "title": "삼성 노트북 NT550P5C-S66L i5-3230M 4GB RAM 120GB SSD",
-            "content": "삼성 노트북 NT550P5C-S66L 모델입니다. 인텔 코어 i5-3230M CPU와 4GB RAM, 120GB SSD를 탑재하고 있어요. 윈도우 10 설치되어 있습니다.\n밧데리 완충시 검사해보니 1시간30분-2시간정도 표시됩니다.\n사진에서 보듯이  깨끗합니다\n아답터 가방있습니다.",
-            "price": "60000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/c8ea8bb4-fd47-4e1b-b7ea-64e2013fa0cf.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-16T11:18:25.233Z",
-            "boostedAt": "2026-10-16T11:18:25.230Z",
-            "region": {
-              "name": "불로동"
-            },
-            "category": null,
-            "tradingCoordinates": [
-              {
-                "latitude": 37.61816340335825,
-                "longitude": 126.69463259996093
-              }
-            ]
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-10-16T11:48:02.720Z\",\"boostedAt\":\"2026-10-16T11:48:02.720Z\",\"region\":{\"name\":\"서초3동\"},\"category\":null,\"tradingCoo",
+          "createdAt\":\"2026-10-16T12:21:06.561Z\",\"boostedAt\":\"2026-10-16T12:21:06.560Z\",\"region\":{\"name\":\"동삭동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-16T12:04:43.940Z\",\"boostedAt\":\"2026-10-16T12:04:43.936Z\",\"region\":{\"name\":\"조촌동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-16T00:03:37.477Z\",\"boostedAt\":\"2026-10-16T00:03:37.476Z\",\"region\":{\"name\":\"호계3동\"},\"category\":null,\"tradingCoo",
-          "createdAt\":\"2026-10-16T11:18:25.233Z\",\"boostedAt\":\"2026-10-16T11:18:25.230Z\",\"region\":{\"name\":\"불로동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-16T08:30:43.321Z\",\"boostedAt\":\"2026-10-16T08:30:43.319Z\",\"region\":{\"name\":\"율천동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-03T00:27:24.840Z\",\"boostedAt\":\"2026-10-16T02:06:59.178Z\",\"region\":{\"name\":\"율천동\"},\"category\":null,\"tradingCoor"
+          "createdAt\":\"2026-10-16T11:47:51.122Z\",\"boostedAt\":\"2026-10-16T11:47:51.120Z\",\"region\":{\"name\":\"배방읍\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-16T12:19:12.317Z\",\"boostedAt\":\"2026-10-16T12:19:12.312Z\",\"region\":{\"name\":\"효자4동\"},\"category\":null,\"tradingCoo"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":264,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"MSI 게이밍 노트북 / i5-4210H / GTX85",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":264,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG 노트북 15인치 팝니다\",\"description\"",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -127,24 +132,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1112,
-    "globalUniqueListings": 471,
-    "duplicateListingsRemoved": 641,
-    "detailQueueStart": 8,
-    "freshDetailTasks": 8,
+    "searchUniqueListings": 998,
+    "globalUniqueListings": 448,
+    "duplicateListingsRemoved": 550,
+    "detailQueueStart": 16,
+    "freshDetailTasks": 16,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 8,
-    "detailSucceeded": 8,
+    "detailRequestsExecuted": 16,
+    "detailSucceeded": 16,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 471,
+    "postedAtResolvedFromSearch": 448,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 89133,
+    "scanDurationMs": 98127,
     "cities": [
       {
         "city": "군포시",
@@ -156,8 +161,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 287,
-        "durationMs": 12125
+        "uniqueListings": 288,
+        "durationMs": 12177
       },
       {
         "city": "의왕시",
@@ -172,8 +177,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 384,
-        "durationMs": 25716
+        "uniqueListings": 374,
+        "durationMs": 25804
       },
       {
         "city": "안양시",
@@ -190,8 +195,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 342,
-        "durationMs": 34911
+        "uniqueListings": 336,
+        "durationMs": 35222
       },
       {
         "city": "과천시",
@@ -202,8 +207,8 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 99,
-        "durationMs": 6755
+        "uniqueListings": 0,
+        "durationMs": 5940
       }
     ],
     "finalCandidateCount": 0,
@@ -212,7 +217,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 89140
+    "durationMs": 98134
   },
   "candidates": []
 }
