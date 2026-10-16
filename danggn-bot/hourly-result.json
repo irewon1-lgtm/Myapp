@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-16T08:22:14.817Z",
+  "generatedAt": "2026-10-16T09:02:14.709Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -16,9 +16,7 @@
   "health": {
     "status": "ok",
     "stateCommitted": true,
-    "warnings": [
-      "군포시: detail failed yc286qzpwqak: Error: HTTP 404 Not Found"
-    ]
+    "warnings": []
   },
   "rules": {
     "newnessField": "postedAt",
@@ -55,35 +53,93 @@
       },
       "htmlSample": {
         "embeddedArticles": false,
-        "remixArticleSamples": [],
-        "dateFieldSnippets": [],
+        "remixArticleSamples": [
+          {
+            "id": "/kr/buy-sell/%EA%B8%89%EC%B3%90-16%EC%9D%B8%EC%B9%98-rtx-5060-%EB%85%B8%ED%8A%B8%EB%B6%81%ED%8C%9D%EB%8B%88%EB%8B%A4-488jheq5eqmk/",
+            "href": "/kr/buy-sell/%EA%B8%89%EC%B3%90-16%EC%9D%B8%EC%B9%98-rtx-5060-%EB%85%B8%ED%8A%B8%EB%B6%81%ED%8C%9D%EB%8B%88%EB%8B%A4-488jheq5eqmk/",
+            "title": "급쳐 16인치 RTX 5060 노트북팝니다",
+            "content": "안녕하세요! 고성능 ASUS 비보북 노트북 판매합니다. 인텔 코어 최신 ULTRA 210H 프로세서와 RTX 5060 그래픽 카드로 게임 및 작업 모두 쾌적하게 사용 가능해요. DDR5 16GB RAM과 NVMe 512GB SSD 탑재로 넉넉한 저장 공간과 빠른 속도를 자랑합니다. 16인치 고해상도 디스플레이로 몰입감 있는 사용 경험을 선사합니다. 이 노트북으로 당신의 디지털 라이프를 업그레이드해보세요!\n\n무상as  내년1월까지있어서 사용도중 문제생기면\nAS가능합니다",
+            "price": "1200000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/2cfe9baa-e965-4465-be9d-399cd342ce0d.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-10-16T07:44:54.904Z",
+            "boostedAt": "2026-10-16T07:44:54.904Z",
+            "region": {
+              "name": "금정동"
+            },
+            "category": null,
+            "tradingCoordinates": []
+          },
+          {
+            "id": "/kr/buy-sell/%EA%B8%89%EC%B3%90-%EB%B9%84%EB%B3%B4%EB%B6%81-%ED%94%84%EB%A1%9C-14-oled-rtx3050-1v6dnpgeo5qi/",
+            "href": "/kr/buy-sell/%EA%B8%89%EC%B3%90-%EB%B9%84%EB%B3%B4%EB%B6%81-%ED%94%84%EB%A1%9C-14-oled-rtx3050-1v6dnpgeo5qi/",
+            "title": "급쳐 비보북 프로 14 OLED RTX3050",
+            "content": "ASUS 비보북 프로 14 OLED 노트북이에요. AMD 라이젠 5 5600H 프로세서와 RTX 3050 그래픽 카드가 탑재되어 있어 성능이 뛰어나요. 16GB RAM과 477GB SSD로 쾌적한 사용이 가능하답니다. 선명한 OLED 디스플레이로 몰입감 있는 경험을 선사할 거예요.\n\n2880x1620 OLED팬톤디스플레이로 화질이 매우좋습니다\n상판에 플라스틱변색으로 싸게팝니다 \n그외 성능잘나오고 문제없는 노트북입니다\n사진보시고연락주세요",
+            "price": "620000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/75c30e6a-22bf-4152-ab29-aa23f6eeb7cc.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-10-16T01:36:55.555Z",
+            "boostedAt": "2026-10-16T01:36:55.555Z",
+            "region": {
+              "name": "금정동"
+            },
+            "category": null,
+            "tradingCoordinates": []
+          },
+          {
+            "id": "/kr/buy-sell/hp-%EB%B9%85%ED%84%B0%EC%8A%A4-15-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4-nfvfjgjbsh2j/",
+            "href": "/kr/buy-sell/hp-%EB%B9%85%ED%84%B0%EC%8A%A4-15-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4-nfvfjgjbsh2j/",
+            "title": "HP 빅터스 15 게이밍 노트북 판매",
+            "content": "깔끔한 HP 빅터스 게이밍 노트북이에요. 고사양 게임도 문제없이 즐길 수 있는 성능을 갖추고 있어요. 사진에서 보이는 것처럼 구성품도 잘 갖춰져 있답니다. 이 노트북으로 즐거운 컴퓨팅 경험을 만들어보세요.\n\n\n깨끗하게 사용 거의 새제품\n\n\n사양\n엔비디아 지포스 RTX 3050\nCPU i5-13420h\n램 16GB\nSSD 512GB\n\n",
+            "price": "750000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/3551c658-e158-4aeb-a703-ba4fa923f49b.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-10-14T09:41:40.214Z",
+            "boostedAt": "2026-10-15T11:04:58.705Z",
+            "region": {
+              "name": "부곡동"
+            },
+            "category": null,
+            "tradingCoordinates": []
+          }
+        ],
+        "dateFieldSnippets": [
+          "createdAt\":\"2026-10-16T07:44:54.904Z\",\"boostedAt\":\"2026-10-16T07:44:54.904Z\",\"region\":{\"name\":\"금정동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-16T01:36:55.555Z\",\"boostedAt\":\"2026-10-16T01:36:55.555Z\",\"region\":{\"name\":\"금정동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-14T09:41:40.214Z\",\"boostedAt\":\"2026-10-15T11:04:58.705Z\",\"region\":{\"name\":\"부곡동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-16T02:43:21.669Z\",\"boostedAt\":\"2026-10-16T02:43:21.667Z\",\"region\":{\"name\":\"관양동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-08-13T13:06:35.000Z\",\"boostedAt\":\"2026-10-14T08:10:20.233Z\",\"region\":{\"name\":\"관양동\"},\"category\":null,\"tradingCoor"
+        ],
         "scriptHeads": [
-          "window.sentryEnv = {\n  release: \"4c73240\",\n  environment: \"prod-kr\"\n};",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":287,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"급쳐 16인치 RTX 5060 노트북팝니다\",\"desc",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
-          "import \"/_remix/manifest-5057d512.js\";\nimport * as route0 from \"/_remix/root-RA8VDB47.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-DGNM4ZfE.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
+          "import \"/_remix/manifest-f8f87035.js\";\nimport * as route0 from \"/_remix/root-RA8VDB47.js\";\nimport * as route1 from \"/_remix/kr.search.buy-sell._index-DGNM4ZfE.js\";\n\nwindow.__remixRouteModules = {\"root\":route0,\"routes/kr."
         ]
       }
     },
-    "searchUniqueListings": 997,
-    "globalUniqueListings": 457,
-    "duplicateListingsRemoved": 540,
-    "detailQueueStart": 15,
-    "freshDetailTasks": 15,
+    "searchUniqueListings": 875,
+    "globalUniqueListings": 426,
+    "duplicateListingsRemoved": 449,
+    "detailQueueStart": 12,
+    "freshDetailTasks": 12,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 15,
-    "detailSucceeded": 14,
-    "detailFailed": 1,
-    "detail404": 1,
+    "detailRequestsExecuted": 12,
+    "detailSucceeded": 12,
+    "detailFailed": 0,
+    "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 457,
+    "postedAtResolvedFromSearch": 426,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 2,
-    "scanDurationMs": 97028,
+    "candidateCount": 0,
+    "scanDurationMs": 94451,
     "cities": [
       {
         "city": "군포시",
@@ -95,8 +151,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 192,
-        "durationMs": 12345
+        "uniqueListings": 193,
+        "durationMs": 12169
       },
       {
         "city": "의왕시",
@@ -112,7 +168,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 364,
-        "durationMs": 25458
+        "durationMs": 25529
       },
       {
         "city": "안양시",
@@ -129,8 +185,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 342,
-        "durationMs": 35486
+        "uniqueListings": 318,
+        "durationMs": 35244
       },
       {
         "city": "과천시",
@@ -141,88 +197,17 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 99,
-        "durationMs": 5962
+        "uniqueListings": 0,
+        "durationMs": 7295
       }
     ],
-    "finalCandidateCount": 2,
+    "finalCandidateCount": 0,
     "stateItemCount": 5000,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 97036
+    "durationMs": 94459
   },
-  "candidates": [
-    {
-      "id": "488jheq5eqmk",
-      "changeType": "new",
-      "previousPrice": null,
-      "price": 1200000,
-      "priceDropPercent": null,
-      "city": "군포시",
-      "location": "금정동",
-      "regionPath": "경기도 군포시 금정동",
-      "title": "급쳐 16인치 RTX 5060 노트북팝니다",
-      "modelHint": "급쳐 16인치 RTX 5060 노트북팝니다",
-      "cpuHint": null,
-      "cpuBaselinePass": null,
-      "gpuHint": "RTX 5060",
-      "vramGB": null,
-      "ramGB": 16,
-      "ambiguousMemoryGB": null,
-      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": "16GB RAM",
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": null,
-      "storageGB": 512,
-      "llmCapability": "SPEC_CHECK_REQUIRED",
-      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
-      "specConfidence": "needs_review",
-      "postedAt": "2026-10-16T07:44:54.904Z",
-      "boostedAt": "2026-10-16T07:44:54.904Z",
-      "status": "Ongoing",
-      "description": "안녕하세요! 고성능 ASUS 비보북 노트북 판매합니다. 인텔 코어 최신 ULTRA 210H 프로세서와 RTX 5060 그래픽 카드로 게임 및 작업 모두 쾌적하게 사용 가능해요. DDR5 16GB RAM과 NVMe 512GB SSD 탑재로 넉넉한 저장 공간과 빠른 속도를 자랑합니다. 16인치 고해상도 디스플레이로 몰입감 있는 사용 경험을 선사합니다. 이 노트북으로 당신의 디지털 라이프를 업그레이드해보세요!\n\n무상as  내년1월까지있어서 사용도중 문제생기면\nAS가능합니다",
-      "url": "https://www.daangn.com/kr/buy-sell/%EA%B8%89%EC%B3%90-16%EC%9D%B8%EC%B9%98-rtx-5060-%EB%85%B8%ED%8A%B8%EB%B6%81%ED%8C%9D%EB%8B%88%EB%8B%A4-488jheq5eqmk/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "눈두두",
-      "mannerTemperature": 38.5
-    },
-    {
-      "id": "feizbmoo42zy",
-      "changeType": "new",
-      "previousPrice": null,
-      "price": 390000,
-      "priceDropPercent": null,
-      "city": "안양시",
-      "location": "부림동",
-      "regionPath": "경기도 안양시 동안구 부림동",
-      "title": "애플 맥북 프로 16인치 2019형  i7 16GB 512GB",
-      "modelHint": "애플 맥북 프로 16인치 2019형  i7 16GB 512GB",
-      "cpuHint": null,
-      "cpuBaselinePass": null,
-      "gpuHint": "Radeon Pro 5300M 4GB",
-      "vramGB": null,
-      "ramGB": null,
-      "ambiguousMemoryGB": 16,
-      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": null,
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": "16GB",
-      "storageGB": null,
-      "llmCapability": "SPEC_CHECK_REQUIRED",
-      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
-      "specConfidence": "needs_review",
-      "postedAt": "2026-10-16T08:18:39.666Z",
-      "boostedAt": "2026-10-16T08:18:39.664Z",
-      "status": "Ongoing",
-      "description": "애플 맥북 프로 16인치 2019년형이에요.\n\n프로세서는 i7 2.6GHz 6코어 Intel Core i7이고, 메모리는 16GB.\n별도 그래픽 카드는 AMD Radeon Pro 5300M 4GB\n저장 공간은 512GB.\n\n큰 화면으로 문서 작업이나 영상 감상을 할 노트북을 찾는 분께 추천해요.\n\n저는 오투캐드 솔리드웍스 사용 했습니다.\n\n어느정도 사용감 있는점 참고하시기 바랍니다.\n사진에 변색된 부분도..",
-      "url": "https://www.daangn.com/kr/buy-sell/%EC%95%A0%ED%94%8C-%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-16%EC%9D%B8%EC%B9%98-2019%ED%98%95-i7-16gb-512gb-feizbmoo42zy/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "신동권",
-      "mannerTemperature": 40.9
-    }
-  ]
+  "candidates": []
 }
