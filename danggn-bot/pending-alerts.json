@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-16T15:22:11.024329Z",
+  "updatedAt": "2026-10-16T16:02:08.041361Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -6576,6 +6576,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EA%B8%89%EC%B3%90-14%EC%9D%B8%EC%B9%98-rtx3050-oled-%EA%B2%8C%EC%9D%B4%EB%B0%8D%EB%85%B8%ED%8A%B8%EB%B6%81-as1dwwm4a3ry/",
       "firstAlertedAt": "2026-10-16T15:22:11.024329Z",
       "lastCandidateAt": "2026-10-16T15:22:11.024329Z"
+    },
+    "3hh1c8t9p5x9": {
+      "id": "3hh1c8t9p5x9",
+      "title": "델 에일리언웨어 16인치 5090 노트북 판매",
+      "price": 4700000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "박달동",
+      "cpuHint": null,
+      "gpuHint": "RTX5090",
+      "vramGB": 24,
+      "ramGB": null,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "PASS_VRAM",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": 1024,
+      "llmCapability": "LOCAL_LLM_GPU",
+      "llmReason": "VRAM 16GB 이상이 직접 표기되었거나 GPU 모델로 확인됨",
+      "postedAt": "2026-10-16T15:50:24.537Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%8D%B8-%EC%97%90%EC%9D%BC%EB%A6%AC%EC%96%B8%EC%9B%A8%EC%96%B4-16%EC%9D%B8%EC%B9%98-5090-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4-3hh1c8t9p5x9/",
+      "firstAlertedAt": "2026-10-16T16:02:08.041361Z",
+      "lastCandidateAt": "2026-10-16T16:02:08.041361Z"
+    },
+    "1pf8d1sy4ix5": {
+      "id": "1pf8d1sy4ix5",
+      "title": "Apple Mac Pro (Late 2013) 연탄맥 64GB램, 256GB SSD",
+      "price": 450000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "박달동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 64,
+      "ambiguousMemoryGB": 64,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "64GB램",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "64GB",
+      "storageGB": 256,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "postedAt": "2026-10-16T16:00:23.694Z",
+      "url": "https://www.daangn.com/kr/buy-sell/apple-mac-pro-late-2013-%EC%97%B0%ED%83%84%EB%A7%A5-64gb%EB%9E%A8-256gb-ssd-1pf8d1sy4ix5/",
+      "firstAlertedAt": "2026-10-16T16:02:08.041361Z",
+      "lastCandidateAt": "2026-10-16T16:02:08.041361Z"
     }
   }
 }
