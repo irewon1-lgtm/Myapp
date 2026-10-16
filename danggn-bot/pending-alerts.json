@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-16T01:22:18.318082Z",
+  "updatedAt": "2026-10-16T02:02:16.302352Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -6155,9 +6155,9 @@
     "tbt1snm8c9b1": {
       "id": "tbt1snm8c9b1",
       "title": "MSI 사이보그 15인치 RTX 4060 게이밍 노트북",
-      "price": 770000,
-      "previousPrice": null,
-      "changeType": "new",
+      "price": 900000,
+      "previousPrice": 900000,
+      "changeType": "price_drop",
       "city": "군포시",
       "location": "산본동",
       "cpuHint": null,
@@ -6175,7 +6175,7 @@
       "postedAt": "2026-10-15T13:10:11.243Z",
       "url": "https://www.daangn.com/kr/buy-sell/msi-%EC%82%AC%EC%9D%B4%EB%B3%B4%EA%B7%B8-15%EC%9D%B8%EC%B9%98-rtx-4060-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-tbt1snm8c9b1/",
       "firstAlertedAt": "2026-10-15T13:12:22.270245Z",
-      "lastCandidateAt": "2026-10-15T13:12:22.270245Z"
+      "lastCandidateAt": "2026-10-16T02:02:16.302352Z"
     },
     "kko7a8xauf2g": {
       "id": "kko7a8xauf2g",
@@ -6251,6 +6251,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/hp-elitebook-845-g8-%EB%85%B8%ED%8A%B8%EB%B6%81-n18jfg3fe6wh/",
       "firstAlertedAt": "2026-10-15T14:32:19.017207Z",
       "lastCandidateAt": "2026-10-15T14:32:19.017207Z"
+    },
+    "1v6dnpgeo5qi": {
+      "id": "1v6dnpgeo5qi",
+      "title": "급쳐 비보북 프로 14 OLED RTX3050",
+      "price": 620000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "금정동",
+      "cpuHint": null,
+      "gpuHint": "RTX3050",
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-16T01:36:55.555Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EA%B8%89%EC%B3%90-%EB%B9%84%EB%B3%B4%EB%B6%81-%ED%94%84%EB%A1%9C-14-oled-rtx3050-1v6dnpgeo5qi/",
+      "firstAlertedAt": "2026-10-16T02:02:16.302352Z",
+      "lastCandidateAt": "2026-10-16T02:02:16.302352Z"
     }
   }
 }
