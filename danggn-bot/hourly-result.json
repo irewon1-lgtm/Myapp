@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-16T16:02:07.985Z",
+  "generatedAt": "2026-10-16T16:42:01.936Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -64,24 +64,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1016,
-    "globalUniqueListings": 463,
-    "duplicateListingsRemoved": 553,
-    "detailQueueStart": 5,
-    "freshDetailTasks": 5,
+    "searchUniqueListings": 989,
+    "globalUniqueListings": 457,
+    "duplicateListingsRemoved": 532,
+    "detailQueueStart": 3,
+    "freshDetailTasks": 3,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 5,
-    "detailSucceeded": 5,
+    "detailRequestsExecuted": 3,
+    "detailSucceeded": 3,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 463,
+    "postedAtResolvedFromSearch": 457,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 2,
-    "scanDurationMs": 84290,
+    "candidateCount": 0,
+    "scanDurationMs": 82643,
     "cities": [
       {
         "city": "군포시",
@@ -93,8 +93,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 196,
-        "durationMs": 12161
+        "uniqueListings": 199,
+        "durationMs": 12204
       },
       {
         "city": "의왕시",
@@ -109,8 +109,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 373,
-        "durationMs": 25445
+        "uniqueListings": 367,
+        "durationMs": 25730
       },
       {
         "city": "안양시",
@@ -127,8 +127,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 348,
-        "durationMs": 34781
+        "uniqueListings": 343,
+        "durationMs": 35237
       },
       {
         "city": "과천시",
@@ -139,88 +139,17 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 99,
-        "durationMs": 6243
+        "uniqueListings": 80,
+        "durationMs": 6040
       }
     ],
-    "finalCandidateCount": 2,
+    "finalCandidateCount": 0,
     "stateItemCount": 5000,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 84296
+    "durationMs": 82650
   },
-  "candidates": [
-    {
-      "id": "3hh1c8t9p5x9",
-      "changeType": "new",
-      "previousPrice": null,
-      "price": 4700000,
-      "priceDropPercent": null,
-      "city": "안양시",
-      "location": "박달동",
-      "regionPath": "경기도 안양시 만안구 박달동",
-      "title": "델 에일리언웨어 16인치 5090 노트북 판매",
-      "modelHint": "델 에일리언웨어 16인치 5090 노트북 판매",
-      "cpuHint": null,
-      "cpuBaselinePass": null,
-      "gpuHint": "RTX5090",
-      "vramGB": 24,
-      "ramGB": null,
-      "ambiguousMemoryGB": 16,
-      "hardwareReviewStatus": "PASS_VRAM",
-      "ramEvidence": null,
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": "16GB",
-      "storageGB": 1024,
-      "llmCapability": "LOCAL_LLM_GPU",
-      "llmReason": "VRAM 16GB 이상이 직접 표기되었거나 GPU 모델로 확인됨",
-      "specConfidence": "confirmed",
-      "postedAt": "2026-10-16T15:50:24.537Z",
-      "boostedAt": "2026-10-16T15:50:24.536Z",
-      "status": "Ongoing",
-      "description": "275HX\n16인치\nRTX5090\n16GB x 2EA 5600 RAM\n1TB SSD 기본장착 모델\nAS는 최근 만료됨\n\n박달로 344 직거래",
-      "url": "https://www.daangn.com/kr/buy-sell/%EB%8D%B8-%EC%97%90%EC%9D%BC%EB%A6%AC%EC%96%B8%EC%9B%A8%EC%96%B4-16%EC%9D%B8%EC%B9%98-5090-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4-3hh1c8t9p5x9/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "니켈",
-      "mannerTemperature": 39.6
-    },
-    {
-      "id": "1pf8d1sy4ix5",
-      "changeType": "new",
-      "previousPrice": null,
-      "price": 450000,
-      "priceDropPercent": null,
-      "city": "안양시",
-      "location": "박달동",
-      "regionPath": "경기도 안양시 만안구 박달동",
-      "title": "Apple Mac Pro (Late 2013) 연탄맥 64GB램, 256GB SSD",
-      "modelHint": "Apple Mac Pro (Late 2013) 연탄맥 64GB램, 256GB SSD",
-      "cpuHint": null,
-      "cpuBaselinePass": null,
-      "gpuHint": null,
-      "vramGB": null,
-      "ramGB": 64,
-      "ambiguousMemoryGB": 64,
-      "hardwareReviewStatus": "PASS_RAM",
-      "ramEvidence": "64GB램",
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": "64GB",
-      "storageGB": 256,
-      "llmCapability": "WORK_DEV_RAM32",
-      "llmReason": "RAM 32GB 이상 확정 후보",
-      "specConfidence": "confirmed",
-      "postedAt": "2026-10-16T16:00:23.694Z",
-      "boostedAt": "2026-10-16T16:00:23.692Z",
-      "status": "Ongoing",
-      "description": "맥 프로 (Late 2013) 일명 연탄맥 팝니다.\n인텔 제온 E5 2.7GHz 12코어 프로세서와 64GB DDR3 메모리, 256GB SSD 탑재.\nAMD FirePro D300 2GB 그래픽 카드도 포함되어 있습니다.\n박스는 없고, 본체만 있습니다. \n무게가 있어 직거래만 가능합니다. 연락주세요.",
-      "url": "https://www.daangn.com/kr/buy-sell/apple-mac-pro-late-2013-%EC%97%B0%ED%83%84%EB%A7%A5-64gb%EB%9E%A8-256gb-ssd-1pf8d1sy4ix5/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "블루에떼",
-      "mannerTemperature": 47.1
-    }
-  ]
+  "candidates": []
 }
