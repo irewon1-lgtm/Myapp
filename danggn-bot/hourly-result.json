@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-16T07:42:29.029Z",
+  "generatedAt": "2026-10-16T08:22:14.817Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -16,7 +16,9 @@
   "health": {
     "status": "ok",
     "stateCommitted": true,
-    "warnings": []
+    "warnings": [
+      "군포시: detail failed yc286qzpwqak: Error: HTTP 404 Not Found"
+    ]
   },
   "rules": {
     "newnessField": "postedAt",
@@ -53,78 +55,10 @@
       },
       "htmlSample": {
         "embeddedArticles": false,
-        "remixArticleSamples": [
-          {
-            "id": "/kr/buy-sell/hp-zbook-ultra-g1a-14%EC%9D%B8%EC%B9%98-%EC%9B%8C%ED%81%AC%EC%8A%A4%ED%85%8C%EC%9D%B4%EC%85%98-%EB%85%B8%ED%8A%B8%EB%B6%81-8jj2d1qarx26/",
-            "href": "/kr/buy-sell/hp-zbook-ultra-g1a-14%EC%9D%B8%EC%B9%98-%EC%9B%8C%ED%81%AC%EC%8A%A4%ED%85%8C%EC%9D%B4%EC%85%98-%EB%85%B8%ED%8A%B8%EB%B6%81-8jj2d1qarx26/",
-            "title": "HP ZBook Ultra G1a 14인치 워크스테이션 노트북",
-            "content": "HP ZBook Ultra G1a 14인치 모바일 워크스테이션 노트북입니다.\n\nAMD Ryzen AI Max + 395 프로세서\nRadeon 8060S 그래픽이 탑재되어 뛰어난 성능을 자랑해요. 64GB RAM과 2tb의 넉넉한 저장 공간으로 다양한 작업을 원활하게 할 수 있어요. 고성능 작업에 적합한 매력적인 노트북을 만나보세요.\n\n실사용 얼마 안됩니다 \n영상 시청만 한 한달도 사용 안한 제품입니다.\n구매하신다면 사제 파우치도 함께 드립니다.\n\n정품 HP 고출력 충전기 포함 \n\n정품 윈도우 11 pro 설치\n\nas 11월 9일까지 무상 보증입니다.\n\n보증 살아있는 관계로 환불 불가능합니다.",
-            "price": "4000000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202609/c2471709-ad29-4544-a67a-70d96c2d3c68.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": false,
-            "createdAt": "2026-09-28T04:37:27.256Z",
-            "boostedAt": "2026-10-15T07:24:16.382Z",
-            "region": {
-              "name": "신용동"
-            },
-            "category": null,
-            "tradingCoordinates": [
-              {
-                "latitude": 35.21303764401709,
-                "longitude": 126.8685121176984
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/hp-z2-mini-g1a-ai-max395-128gb-%EB%AF%B8%EA%B0%9C%EB%B4%89-%EC%A0%9C%ED%92%88-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-g1a-a74wtav-iovynw92f6ia/",
-            "href": "/kr/buy-sell/hp-z2-mini-g1a-ai-max395-128gb-%EB%AF%B8%EA%B0%9C%EB%B4%89-%EC%A0%9C%ED%92%88-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-g1a-a74wtav-iovynw92f6ia/",
-            "title": "HP z2 mini g1a ai max395 128gb 미개봉 제품 판매합니다.(G1a-A74WTAV)",
-            "content": "HP z2 mini g1a ai max395 128gb 미개봉 제품 판매합니다.(G1a-A74WTAV)\n\n프로세서 : Ryzen AI MAX+ 395\n그래픽 : Radeon 8060S Graphics\n메모리 : LPDDR5x 8000Mt/s 128GB\nSSD : 1TB PCIE 4x4 NVME M.2 Z2 SSD\nOS : Windows 11 Pro\n\n제품보증은 3년 제한적 무상보증 (익일방문지원)입니다.\n(29.11.8일까지 보증, 케어팩 3년)\n\n서울 남대문 시장 근처에서 직거래 우선으로 거래하나,\n택배거래도 가능합니다. (우체국택배 발송)\n\n당근 챗으로 연락부탁드리겠습니다.\n\n감사합니다.",
-            "price": "6700000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/f0c71b08-ca6d-46ac-82c2-6b26c8d887ea.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": false,
-            "createdAt": "2026-10-12T07:10:39.972Z",
-            "boostedAt": "2026-10-16T00:23:56.095Z",
-            "region": {
-              "name": "남대문로3가"
-            },
-            "category": null,
-            "tradingCoordinates": [
-              {
-                "latitude": 37.56247588997135,
-                "longitude": 126.97978273820434
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/%EB%AF%B8%EA%B0%9C%EB%B4%89-hp-workstation-z2-mini-g1a-bw4a0pt-128gb-m-2-2tb-f7gc7vs3bx4h/",
-            "href": "/kr/buy-sell/%EB%AF%B8%EA%B0%9C%EB%B4%89-hp-workstation-z2-mini-g1a-bw4a0pt-128gb-m-2-2tb-f7gc7vs3bx4h/",
-            "title": "[미개봉] HP WorkStation Z2 Mini G1a BW4A0PT (128GB, M.2 2TB)",
-            "content": "HP WorkStation Z2 Mini G1a BW4A0PT (128GB, M.2 2TB)  미개봉 새상품입니다.\n2026년 02월 구매 제품입니다.\n공간은 적게 차지하면서도 서버급 성능을 내는 초소형 미니 워크스테이션입니다. \n3D CAD, 영상 편집, AI 개발 및 딥러닝 작업에 최적화된 고성능 장비입니다.\n• 프로세서: AMD Ryzen AI Max+ PRO (강력한 멀티태스킹 및 NPU 탑재로 온디바이스 AI 특화)\n• 그래픽 & 메모리: 초고속 LPDDR5X 통합 메모리 (Radeon 고성능 내장 그래픽과 결합하여 대용량 VRAM 할당 가능, 고부하 그래픽 작업 최적화)\n• 포트/확장성: 300W 파워 내장형 (지저분한 외부 어댑터 없음), Thunderbolt 4 / USB4 지원, Mini DisplayPort 2.1 다중 모니터 출력, Wi-Fi 7 지원\n\n국내에서는 거의 구하기 힘든 제품입니다.\n\n자세한 사양은 아래와 같습니다.      \n윈도우11 프로\n300W\nAMD 라이젠 AI Max+ / 라이젠 300시리즈 \n스트릭스 헤일로\n50TOPS \nCPU :1개\nLPDDR5X\n메모리 128GB\nSSD :  M.2 2TB\n네트워크 : 1Gbps 유선 / 802.11be(Wi-Fi 7) 무선 / 블루투스\nmini DP / USB3.x 10Gbps / USB3.x 5Gbps / USB C타입 10Gbps / 썬더볼트4\n파워서플라이\n미니PC",
-            "price": "7340000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/06ea46a9-9bc2-4cc4-9627-5f07f7cf3e7a.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": false,
-            "createdAt": "2026-10-11T14:48:55.506Z",
-            "boostedAt": "2026-10-15T03:56:06.821Z",
-            "region": {
-              "name": "잠실4동"
-            },
-            "category": null,
-            "tradingCoordinates": []
-          }
-        ],
-        "dateFieldSnippets": [
-          "createdAt\":\"2026-09-28T04:37:27.256Z\",\"boostedAt\":\"2026-10-15T07:24:16.382Z\",\"region\":{\"name\":\"신용동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-12T07:10:39.972Z\",\"boostedAt\":\"2026-10-16T00:23:56.095Z\",\"region\":{\"name\":\"남대문로3가\"},\"category\":null,\"tradingC",
-          "createdAt\":\"2026-10-11T14:48:55.506Z\",\"boostedAt\":\"2026-10-15T03:56:06.821Z\",\"region\":{\"name\":\"잠실4동\"},\"category\":null,\"tradingCoo",
-          "createdAt\":\"2026-09-10T15:34:27.157Z\",\"boostedAt\":\"2026-09-10T15:34:27.156Z\",\"region\":{\"name\":\"용두동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-09T03:19:46.370Z\",\"boostedAt\":\"2026-10-09T03:19:46.369Z\",\"region\":{\"name\":\"관저동\"},\"category\":null,\"tradingCoor"
-        ],
+        "remixArticleSamples": [],
+        "dateFieldSnippets": [],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":20,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"HP ZBook Ultra G1a 14인치 워크스테이션 ",
+          "window.sentryEnv = {\n  release: \"4c73240\",\n  environment: \"prod-kr\"\n};",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -132,24 +66,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1142,
-    "globalUniqueListings": 461,
-    "duplicateListingsRemoved": 681,
-    "detailQueueStart": 17,
-    "freshDetailTasks": 17,
+    "searchUniqueListings": 997,
+    "globalUniqueListings": 457,
+    "duplicateListingsRemoved": 540,
+    "detailQueueStart": 15,
+    "freshDetailTasks": 15,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 17,
-    "detailSucceeded": 17,
-    "detailFailed": 0,
-    "detail404": 0,
+    "detailRequestsExecuted": 15,
+    "detailSucceeded": 14,
+    "detailFailed": 1,
+    "detail404": 1,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 461,
+    "postedAtResolvedFromSearch": 457,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 0,
-    "scanDurationMs": 113557,
+    "candidateCount": 2,
+    "scanDurationMs": 97028,
     "cities": [
       {
         "city": "군포시",
@@ -161,8 +95,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 193,
-        "durationMs": 25959
+        "uniqueListings": 192,
+        "durationMs": 12345
       },
       {
         "city": "의왕시",
@@ -177,8 +111,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 372,
-        "durationMs": 25739
+        "uniqueListings": 364,
+        "durationMs": 25458
       },
       {
         "city": "안양시",
@@ -195,8 +129,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 318,
-        "durationMs": 35323
+        "uniqueListings": 342,
+        "durationMs": 35486
       },
       {
         "city": "과천시",
@@ -207,17 +141,88 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 259,
-        "durationMs": 6569
+        "uniqueListings": 99,
+        "durationMs": 5962
       }
     ],
-    "finalCandidateCount": 0,
+    "finalCandidateCount": 2,
     "stateItemCount": 5000,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 113562
+    "durationMs": 97036
   },
-  "candidates": []
+  "candidates": [
+    {
+      "id": "488jheq5eqmk",
+      "changeType": "new",
+      "previousPrice": null,
+      "price": 1200000,
+      "priceDropPercent": null,
+      "city": "군포시",
+      "location": "금정동",
+      "regionPath": "경기도 군포시 금정동",
+      "title": "급쳐 16인치 RTX 5060 노트북팝니다",
+      "modelHint": "급쳐 16인치 RTX 5060 노트북팝니다",
+      "cpuHint": null,
+      "cpuBaselinePass": null,
+      "gpuHint": "RTX 5060",
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "specConfidence": "needs_review",
+      "postedAt": "2026-10-16T07:44:54.904Z",
+      "boostedAt": "2026-10-16T07:44:54.904Z",
+      "status": "Ongoing",
+      "description": "안녕하세요! 고성능 ASUS 비보북 노트북 판매합니다. 인텔 코어 최신 ULTRA 210H 프로세서와 RTX 5060 그래픽 카드로 게임 및 작업 모두 쾌적하게 사용 가능해요. DDR5 16GB RAM과 NVMe 512GB SSD 탑재로 넉넉한 저장 공간과 빠른 속도를 자랑합니다. 16인치 고해상도 디스플레이로 몰입감 있는 사용 경험을 선사합니다. 이 노트북으로 당신의 디지털 라이프를 업그레이드해보세요!\n\n무상as  내년1월까지있어서 사용도중 문제생기면\nAS가능합니다",
+      "url": "https://www.daangn.com/kr/buy-sell/%EA%B8%89%EC%B3%90-16%EC%9D%B8%EC%B9%98-rtx-5060-%EB%85%B8%ED%8A%B8%EB%B6%81%ED%8C%9D%EB%8B%88%EB%8B%A4-488jheq5eqmk/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "눈두두",
+      "mannerTemperature": 38.5
+    },
+    {
+      "id": "feizbmoo42zy",
+      "changeType": "new",
+      "previousPrice": null,
+      "price": 390000,
+      "priceDropPercent": null,
+      "city": "안양시",
+      "location": "부림동",
+      "regionPath": "경기도 안양시 동안구 부림동",
+      "title": "애플 맥북 프로 16인치 2019형  i7 16GB 512GB",
+      "modelHint": "애플 맥북 프로 16인치 2019형  i7 16GB 512GB",
+      "cpuHint": null,
+      "cpuBaselinePass": null,
+      "gpuHint": "Radeon Pro 5300M 4GB",
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "specConfidence": "needs_review",
+      "postedAt": "2026-10-16T08:18:39.666Z",
+      "boostedAt": "2026-10-16T08:18:39.664Z",
+      "status": "Ongoing",
+      "description": "애플 맥북 프로 16인치 2019년형이에요.\n\n프로세서는 i7 2.6GHz 6코어 Intel Core i7이고, 메모리는 16GB.\n별도 그래픽 카드는 AMD Radeon Pro 5300M 4GB\n저장 공간은 512GB.\n\n큰 화면으로 문서 작업이나 영상 감상을 할 노트북을 찾는 분께 추천해요.\n\n저는 오투캐드 솔리드웍스 사용 했습니다.\n\n어느정도 사용감 있는점 참고하시기 바랍니다.\n사진에 변색된 부분도..",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%95%A0%ED%94%8C-%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-16%EC%9D%B8%EC%B9%98-2019%ED%98%95-i7-16gb-512gb-feizbmoo42zy/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "신동권",
+      "mannerTemperature": 40.9
+    }
+  ]
 }

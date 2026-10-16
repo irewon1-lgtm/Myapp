@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-16T07:42:29.079734Z",
+  "updatedAt": "2026-10-16T08:22:14.879202Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -6401,6 +6401,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/2019-%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C-16%EC%9D%B8%EC%B9%98-%EA%B8%B0%EB%B3%B8%ED%98%95-zrc5khxs8kcy/",
       "firstAlertedAt": "2026-10-16T06:22:13.307488Z",
       "lastCandidateAt": "2026-10-16T06:22:13.307488Z"
+    },
+    "488jheq5eqmk": {
+      "id": "488jheq5eqmk",
+      "title": "급쳐 16인치 RTX 5060 노트북팝니다",
+      "price": 1200000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "금정동",
+      "cpuHint": null,
+      "gpuHint": "RTX 5060",
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-16T07:44:54.904Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EA%B8%89%EC%B3%90-16%EC%9D%B8%EC%B9%98-rtx-5060-%EB%85%B8%ED%8A%B8%EB%B6%81%ED%8C%9D%EB%8B%88%EB%8B%A4-488jheq5eqmk/",
+      "firstAlertedAt": "2026-10-16T08:22:14.879202Z",
+      "lastCandidateAt": "2026-10-16T08:22:14.879202Z"
+    },
+    "feizbmoo42zy": {
+      "id": "feizbmoo42zy",
+      "title": "애플 맥북 프로 16인치 2019형  i7 16GB 512GB",
+      "price": 390000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "부림동",
+      "cpuHint": null,
+      "gpuHint": "Radeon Pro 5300M 4GB",
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-16T08:18:39.666Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%95%A0%ED%94%8C-%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-16%EC%9D%B8%EC%B9%98-2019%ED%98%95-i7-16gb-512gb-feizbmoo42zy/",
+      "firstAlertedAt": "2026-10-16T08:22:14.879202Z",
+      "lastCandidateAt": "2026-10-16T08:22:14.879202Z"
     }
   }
 }
