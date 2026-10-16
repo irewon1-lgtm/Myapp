@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-16T00:47:53.569018Z",
+  "updatedAt": "2026-10-16T01:22:18.318082Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -679,28 +679,28 @@
     },
     "v3nqyybv6p9z": {
       "id": "v3nqyybv6p9z",
-      "title": "애플 맥북 m3 MAX 램 64기가 풀칩 16인치",
-      "price": 4350000,
-      "previousPrice": 4400000,
+      "title": "애플 맥북 m3 MAX 64GB 1TB 16인치",
+      "price": 4300000,
+      "previousPrice": 4350000,
       "changeType": "price_drop",
       "city": "안양시",
       "location": "비산1동",
       "cpuHint": "m3 MAX",
       "gpuHint": "m3 MAX",
       "vramGB": null,
-      "ramGB": 64,
+      "ramGB": null,
       "ambiguousMemoryGB": 64,
-      "hardwareReviewStatus": "PASS_RAM",
-      "ramEvidence": "램 64기가",
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
       "vramEvidence": null,
-      "ambiguousMemoryEvidence": "64기가",
+      "ambiguousMemoryEvidence": "64GB",
       "storageGB": null,
-      "llmCapability": "WORK_DEV_RAM32",
-      "llmReason": "RAM 32GB 이상 확정 후보",
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
       "postedAt": "2026-09-01T04:43:41.001Z",
-      "url": "https://www.daangn.com/kr/buy-sell/%EC%95%A0%ED%94%8C-%EB%A7%A5%EB%B6%81-m3-max-%EB%9E%A8-64%EA%B8%B0%EA%B0%80-%ED%92%80%EC%B9%A9-16%EC%9D%B8%EC%B9%98-v3nqyybv6p9z/",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%95%A0%ED%94%8C-%EB%A7%A5%EB%B6%81-m3-max-64gb-1tb-16%EC%9D%B8%EC%B9%98-v3nqyybv6p9z/",
       "firstAlertedAt": "2026-10-06T02:21:33.557277Z",
-      "lastCandidateAt": "2026-10-06T02:21:33.557277Z"
+      "lastCandidateAt": "2026-10-16T01:22:18.318082Z"
     },
     "5idrxf97b2xy": {
       "id": "5idrxf97b2xy",
@@ -6005,9 +6005,9 @@
     "np2gdt95upsh": {
       "id": "np2gdt95upsh",
       "title": "한성 TFG 게이밍 노트북",
-      "price": 700000,
-      "previousPrice": null,
-      "changeType": "new",
+      "price": 650000,
+      "previousPrice": 700000,
+      "changeType": "price_drop",
       "city": "군포시",
       "location": "산본동",
       "cpuHint": null,
@@ -6025,7 +6025,7 @@
       "postedAt": "2026-10-15T10:30:59.201Z",
       "url": "https://www.daangn.com/kr/buy-sell/%ED%95%9C%EC%84%B1-tfg-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-np2gdt95upsh/",
       "firstAlertedAt": "2026-10-15T10:52:16.550776Z",
-      "lastCandidateAt": "2026-10-15T10:52:16.550776Z"
+      "lastCandidateAt": "2026-10-16T01:22:18.318082Z"
     },
     "9h42ap9uo414": {
       "id": "9h42ap9uo414",
