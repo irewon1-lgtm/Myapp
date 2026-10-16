@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-16T21:01:59.516Z",
+  "generatedAt": "2026-10-16T21:30:25.855Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -53,10 +53,78 @@
       },
       "htmlSample": {
         "embeddedArticles": false,
-        "remixArticleSamples": [],
-        "dateFieldSnippets": [],
+        "remixArticleSamples": [
+          {
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%814-%EB%85%B8%ED%8A%B8%EB%B6%81-tx1mq5yx3m1r/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%814-%EB%85%B8%ED%8A%B8%EB%B6%81-tx1mq5yx3m1r/",
+            "title": "삼성 갤럭시북4 노트북",
+            "content": "깔끔한 삼성 갤럭시북4 노트북이에요. 15.6인치 화면에 인텔 코어 i3 프로세서가 탑재되어 있어 문서 작업이나 웹 서핑 등 일상적인 용도로 사용하기 좋아요. 2023년 3월 제조 상품으로 상태도 좋습니다. 가볍고 휴대하기 좋은 노트북으로 어디서든 편리하게 사용해보세요.",
+            "price": "300000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/bc63a1259ba217fce58d5ca1bfea4ac66f0b8af591c003dabd17f01627f7afca_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-10-16T20:40:50.757Z",
+            "boostedAt": "2026-10-16T20:40:50.754Z",
+            "region": {
+              "name": "호계1동"
+            },
+            "category": null,
+            "tradingCoordinates": [
+              {
+                "latitude": 37.37687261981226,
+                "longitude": 126.95780890002169
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-i7-2670qm-6gb-ram-15%EC%9D%B8%EC%B9%98-%EC%9C%88%EB%8F%84%EC%9A%B0-11-%EB%85%B8%ED%8A%B8%EB%B6%81-%EA%B0%80%EB%B0%A9-%EC%83%88%EC%A0%9C%ED%92%88-mj9oj82uxbwk/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-i7-2670qm-6gb-ram-15%EC%9D%B8%EC%B9%98-%EC%9C%88%EB%8F%84%EC%9A%B0-11-%EB%85%B8%ED%8A%B8%EB%B6%81-%EA%B0%80%EB%B0%A9-%EC%83%88%EC%A0%9C%ED%92%88-mj9oj82uxbwk/",
+            "title": "삼성 노트북 화이트 (i7-2670QM, 6GB RAM) 15인치 윈도우 11  노트북 가방 새제품",
+            "content": "삼성 노트북 화이트 (i7-2670QM, 6GB RAM) 15인치 윈도우 11 \n노트북 가방 새제품 포함 \n배터리는 오래못갑니다",
+            "price": "110000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/7e67f72a-cda9-4053-a90d-5d4f3e86e9f3.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-10T08:07:34.048Z",
+            "boostedAt": "2026-10-16T10:20:33.448Z",
+            "region": {
+              "name": "옥천읍"
+            },
+            "category": null,
+            "tradingCoordinates": [
+              {
+                "latitude": 36.30026612868055,
+                "longitude": 127.56333230003867
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt371b5m-4f9ekb66huiu/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt371b5m-4f9ekb66huiu/",
+            "title": "삼성 노트북 NT371B5m",
+            "content": "삼성 노트북 NT371B5m 모델이에요. 인텔 코어 i7 7700 CPU와 8GB RAM ddr4 앤비디아 그래픽을 탑재하여 일상적인, 그랙픽등 작업을 하는데  충분한 성능을 제공해요. 윈도우11프로 영구인증 사진에서 보이는 것처럼 생활기스 상태의 제품입니다. 게임 그래픽 문서 작업이나 웹 서핑 등 가볍게 사용하기 좋은 노트북을 찾으신다면 만족하실 거예요.\n중고 전자제품상 반품 취소 안됩니다. ",
+            "price": "250000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202609/20179744e04b715b352267273d5cf5e5dd86e4e381323f04504e4f3c73282631_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-09-19T21:30:51.460Z",
+            "boostedAt": "2026-10-16T21:06:23.433Z",
+            "region": {
+              "name": "산본1동"
+            },
+            "category": null,
+            "tradingCoordinates": []
+          }
+        ],
+        "dateFieldSnippets": [
+          "createdAt\":\"2026-10-16T20:40:50.757Z\",\"boostedAt\":\"2026-10-16T20:40:50.754Z\",\"region\":{\"name\":\"호계1동\"},\"category\":null,\"tradingCoo",
+          "createdAt\":\"2026-10-10T08:07:34.048Z\",\"boostedAt\":\"2026-10-16T10:20:33.448Z\",\"region\":{\"name\":\"옥천읍\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-09-19T21:30:51.460Z\",\"boostedAt\":\"2026-10-16T21:06:23.433Z\",\"region\":{\"name\":\"산본1동\"},\"category\":null,\"tradingCoo",
+          "createdAt\":\"2026-10-14T14:05:39.107Z\",\"boostedAt\":\"2026-10-16T15:28:29.050Z\",\"region\":{\"name\":\"신호동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-16T14:40:33.123Z\",\"boostedAt\":\"2026-10-16T14:40:33.120Z\",\"region\":{\"name\":\"신원동\"},\"category\":null,\"tradingCoor"
+        ],
         "scriptHeads": [
-          "window.sentryEnv = {\n  release: \"0e27a9a\",\n  environment: \"prod-kr\"\n};",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":264,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 갤럭시북4 노트북\",\"description\":\"깔",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -64,24 +132,24 @@
         ]
       }
     },
-    "searchUniqueListings": 982,
-    "globalUniqueListings": 451,
-    "duplicateListingsRemoved": 531,
-    "detailQueueStart": 1,
-    "freshDetailTasks": 1,
+    "searchUniqueListings": 1253,
+    "globalUniqueListings": 469,
+    "duplicateListingsRemoved": 784,
+    "detailQueueStart": 2,
+    "freshDetailTasks": 2,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 1,
-    "detailSucceeded": 1,
+    "detailRequestsExecuted": 2,
+    "detailSucceeded": 2,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 451,
+    "postedAtResolvedFromSearch": 469,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 80461,
+    "scanDurationMs": 81665,
     "cities": [
       {
         "city": "군포시",
@@ -93,8 +161,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 195,
-        "durationMs": 12252
+        "uniqueListings": 287,
+        "durationMs": 12419
       },
       {
         "city": "의왕시",
@@ -109,8 +177,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 365,
-        "durationMs": 25800
+        "uniqueListings": 360,
+        "durationMs": 25343
       },
       {
         "city": "안양시",
@@ -127,8 +195,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 342,
-        "durationMs": 35525
+        "uniqueListings": 348,
+        "durationMs": 35327
       },
       {
         "city": "과천시",
@@ -139,8 +207,8 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 80,
-        "durationMs": 6068
+        "uniqueListings": 258,
+        "durationMs": 6455
       }
     ],
     "finalCandidateCount": 0,
@@ -149,7 +217,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 80468
+    "durationMs": 81673
   },
   "candidates": []
 }
