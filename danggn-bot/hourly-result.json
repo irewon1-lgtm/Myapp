@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-16T04:02:17.585Z",
+  "generatedAt": "2026-10-16T04:42:11.892Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -122,24 +122,24 @@
         ]
       }
     },
-    "searchUniqueListings": 990,
-    "globalUniqueListings": 458,
-    "duplicateListingsRemoved": 532,
-    "detailQueueStart": 13,
-    "freshDetailTasks": 13,
+    "searchUniqueListings": 844,
+    "globalUniqueListings": 394,
+    "duplicateListingsRemoved": 450,
+    "detailQueueStart": 10,
+    "freshDetailTasks": 10,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 13,
-    "detailSucceeded": 13,
+    "detailRequestsExecuted": 10,
+    "detailSucceeded": 10,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 458,
+    "postedAtResolvedFromSearch": 394,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 1,
-    "scanDurationMs": 95396,
+    "candidateCount": 0,
+    "scanDurationMs": 92125,
     "cities": [
       {
         "city": "군포시",
@@ -151,8 +151,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 193,
-        "durationMs": 12605
+        "uniqueListings": 192,
+        "durationMs": 11965
       },
       {
         "city": "의왕시",
@@ -167,8 +167,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 376,
-        "durationMs": 25675
+        "uniqueListings": 334,
+        "durationMs": 25694
       },
       {
         "city": "안양시",
@@ -185,8 +185,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 341,
-        "durationMs": 34862
+        "uniqueListings": 238,
+        "durationMs": 36502
       },
       {
         "city": "과천시",
@@ -198,52 +198,16 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 80,
-        "durationMs": 6522
+        "durationMs": 6247
       }
     ],
-    "finalCandidateCount": 1,
+    "finalCandidateCount": 0,
     "stateItemCount": 5000,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 95402
+    "durationMs": 92132
   },
-  "candidates": [
-    {
-      "id": "fti5g3rbx272",
-      "changeType": "new",
-      "previousPrice": null,
-      "price": 650000,
-      "priceDropPercent": null,
-      "city": "안양시",
-      "location": "석수1동",
-      "regionPath": "경기도 안양시 만안구 석수1동",
-      "title": "최상급)삼성 노트북 갤럭시북4 NT750XGJ, i5 13세대, 16G, 256G",
-      "modelHint": "최상급)삼성 노트북 갤럭시북4 NT750XGJ, i5 13세대, 16G, 256G",
-      "cpuHint": null,
-      "cpuBaselinePass": null,
-      "gpuHint": null,
-      "vramGB": null,
-      "ramGB": 16,
-      "ambiguousMemoryGB": 16,
-      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": "RAM : 16GB",
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": "16G",
-      "storageGB": 256,
-      "llmCapability": "SPEC_CHECK_REQUIRED",
-      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
-      "specConfidence": "needs_review",
-      "postedAt": "2026-10-16T03:59:15.742Z",
-      "boostedAt": "2026-10-16T03:59:15.742Z",
-      "status": "Ongoing",
-      "description": "신품급 삼성 갤럭시북 4 판매합니다\n\n흠집 전혀없이 깨끗합니다\n배터리 사이클 19, 효율 100프로 입니다\n\n모델명 : NT750XGJ KP51S\n\nCPU : i5-1335u\nRAM : 16GB\nnvme m.2 : 256GB\nOS : 윈도우 11  정품 인증\n모니터 : LED 15.6인치 광시야각(1920 X 1080 Full HD)\n\n제조년월 : 24년 9월\n\n180도 펼쳐집니다(컨설팅 모드)\n\n업데이트 완료했으며\n기본 프로그램(한글, 엑셀 정품인증) 설치되어 있습니다\n\n본체, 무선마우스, 파우치 포함입니다\n충전기는 분실해서 호환 충전기 드립니다",
-      "url": "https://www.daangn.com/kr/buy-sell/%EC%B5%9C%EC%83%81%EA%B8%89-%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%814-nt750xgj-i5-13%EC%84%B8%EB%8C%80-16g-256g-fti5g3rbx272/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "업데이터",
-      "mannerTemperature": 50.3
-    }
-  ]
+  "candidates": []
 }
