@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-17T01:11:51.919273Z",
+  "updatedAt": "2026-10-17T01:51:57.026623Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -6004,9 +6004,9 @@
     },
     "np2gdt95upsh": {
       "id": "np2gdt95upsh",
-      "title": "한성 TFG 게이밍 노트북",
-      "price": 650000,
-      "previousPrice": 700000,
+      "title": "한성 TFG 게이밍 노트북 RTX3050Ti",
+      "price": 600000,
+      "previousPrice": 650000,
       "changeType": "price_drop",
       "city": "군포시",
       "location": "산본동",
@@ -6023,9 +6023,9 @@
       "llmCapability": "SPEC_CHECK_REQUIRED",
       "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
       "postedAt": "2026-10-15T10:30:59.201Z",
-      "url": "https://www.daangn.com/kr/buy-sell/%ED%95%9C%EC%84%B1-tfg-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-np2gdt95upsh/",
+      "url": "https://www.daangn.com/kr/buy-sell/%ED%95%9C%EC%84%B1-tfg-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-rtx3050ti-np2gdt95upsh/",
       "firstAlertedAt": "2026-10-15T10:52:16.550776Z",
-      "lastCandidateAt": "2026-10-16T01:22:18.318082Z"
+      "lastCandidateAt": "2026-10-17T01:51:57.026623Z"
     },
     "9h42ap9uo414": {
       "id": "9h42ap9uo414",
@@ -6676,6 +6676,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EA%B8%89%EC%B2%98-%EC%97%90%EC%9D%B4%EC%84%9C-%ED%94%84%EB%A0%88%EB%8D%B0%ED%84%B0-%ED%8A%B8%EB%A6%AC%ED%86%A4-17x-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-86jgvwhvz9bx/",
       "firstAlertedAt": "2026-10-17T00:31:58.746325Z",
       "lastCandidateAt": "2026-10-17T00:31:58.746325Z"
+    },
+    "n66xbc2o1e49": {
+      "id": "n66xbc2o1e49",
+      "title": "레노버 씽크북 14IRL G8 노트북 i7 16GB",
+      "price": 700000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "평촌동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-17T01:13:42.172Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%94%BD%ED%81%AC%EB%B6%81-14irl-g8-%EB%85%B8%ED%8A%B8%EB%B6%81-i7-16gb-n66xbc2o1e49/",
+      "firstAlertedAt": "2026-10-17T01:51:57.026623Z",
+      "lastCandidateAt": "2026-10-17T01:51:57.026623Z"
     }
   }
 }
