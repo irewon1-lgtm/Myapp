@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-17T12:27:25.395025Z",
+  "updatedAt": "2026-10-17T13:02:05.177839Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -7080,9 +7080,9 @@
     "2nnend21zuzp": {
       "id": "2nnend21zuzp",
       "title": "맥북에어 M1 16GB 256GB",
-      "price": 430000,
-      "previousPrice": null,
-      "changeType": "new",
+      "price": 380000,
+      "previousPrice": 430000,
+      "changeType": "price_drop",
       "city": "안양시",
       "location": "안양1동",
       "cpuHint": null,
@@ -7100,7 +7100,32 @@
       "postedAt": "2026-10-17T12:21:15.184Z",
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81%EC%97%90%EC%96%B4-m1-16gb-256gb-2nnend21zuzp/",
       "firstAlertedAt": "2026-10-17T12:27:25.395025Z",
-      "lastCandidateAt": "2026-10-17T12:27:25.395025Z"
+      "lastCandidateAt": "2026-10-17T13:02:05.177839Z"
+    },
+    "ejewuhsimn3w": {
+      "id": "ejewuhsimn3w",
+      "title": "LG 그램 15Z90SP-GA5CK 노트북",
+      "price": 1000000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "관양1동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "RAM : 16GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 256,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-17T12:55:50.210Z",
+      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-15z90sp-ga5ck-%EB%85%B8%ED%8A%B8%EB%B6%81-ejewuhsimn3w/",
+      "firstAlertedAt": "2026-10-17T13:02:05.177839Z",
+      "lastCandidateAt": "2026-10-17T13:02:05.177839Z"
     }
   }
 }
