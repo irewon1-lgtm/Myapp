@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-17T13:02:05.177839Z",
+  "updatedAt": "2026-10-17T13:41:57.802626Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -7126,6 +7126,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-15z90sp-ga5ck-%EB%85%B8%ED%8A%B8%EB%B6%81-ejewuhsimn3w/",
       "firstAlertedAt": "2026-10-17T13:02:05.177839Z",
       "lastCandidateAt": "2026-10-17T13:02:05.177839Z"
+    },
+    "wdvrfthsm5s5": {
+      "id": "wdvrfthsm5s5",
+      "title": "맥북프로 M5 max 16인치 128gb 2tb 애플케어 포함",
+      "price": 9500000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "박달동",
+      "cpuHint": "M5 max",
+      "gpuHint": "M5 max",
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 128,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "128gb",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-17T13:35:07.002Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C-m5-max-16%EC%9D%B8%EC%B9%98-128gb-2tb-%EC%95%A0%ED%94%8C%EC%BC%80%EC%96%B4-%ED%8F%AC%ED%95%A8-wdvrfthsm5s5/",
+      "firstAlertedAt": "2026-10-17T13:41:57.802626Z",
+      "lastCandidateAt": "2026-10-17T13:41:57.802626Z"
     }
   }
 }
