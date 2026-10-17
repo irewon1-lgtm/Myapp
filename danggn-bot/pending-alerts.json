@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-17T05:32:05.283523Z",
+  "updatedAt": "2026-10-17T06:12:08.241825Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -6430,9 +6430,9 @@
     "feizbmoo42zy": {
       "id": "feizbmoo42zy",
       "title": "애플 맥북 프로 16인치 2019형  i7 16GB 512GB",
-      "price": 390000,
-      "previousPrice": null,
-      "changeType": "new",
+      "price": 350000,
+      "previousPrice": 390000,
+      "changeType": "price_drop",
       "city": "안양시",
       "location": "부림동",
       "cpuHint": null,
@@ -6450,7 +6450,7 @@
       "postedAt": "2026-10-16T08:18:39.666Z",
       "url": "https://www.daangn.com/kr/buy-sell/%EC%95%A0%ED%94%8C-%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-16%EC%9D%B8%EC%B9%98-2019%ED%98%95-i7-16gb-512gb-feizbmoo42zy/",
       "firstAlertedAt": "2026-10-16T08:22:14.879202Z",
-      "lastCandidateAt": "2026-10-16T08:22:14.879202Z"
+      "lastCandidateAt": "2026-10-17T06:12:08.241825Z"
     },
     "j61jomdnt74a": {
       "id": "j61jomdnt74a",
@@ -6755,9 +6755,9 @@
     "kiv16jxb9r7u": {
       "id": "kiv16jxb9r7u",
       "title": "게이밍 노트북 RTX 4060",
-      "price": 950000,
-      "previousPrice": null,
-      "changeType": "new",
+      "price": 900000,
+      "previousPrice": 950000,
+      "changeType": "price_drop",
       "city": "안양시",
       "location": "평촌동",
       "cpuHint": null,
@@ -6775,7 +6775,7 @@
       "postedAt": "2026-10-17T05:10:32.068Z",
       "url": "https://www.daangn.com/kr/buy-sell/%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-rtx-4060-kiv16jxb9r7u/",
       "firstAlertedAt": "2026-10-17T05:32:05.283523Z",
-      "lastCandidateAt": "2026-10-17T05:32:05.283523Z"
+      "lastCandidateAt": "2026-10-17T06:12:08.241825Z"
     },
     "fsbnp1at6y5z": {
       "id": "fsbnp1at6y5z",
@@ -6801,6 +6801,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-16-%EC%BD%94%EC%96%B4-%EC%9A%B8%ED%8A%B8%EB%9D%BC5-fsbnp1at6y5z/",
       "firstAlertedAt": "2026-10-17T05:32:05.283523Z",
       "lastCandidateAt": "2026-10-17T05:32:05.283523Z"
+    },
+    "oyyq4oiukipb": {
+      "id": "oyyq4oiukipb",
+      "title": "2026 에이서 스위프트 고 14 AI 노트북 (Ultra5, 16GB RAM, 512GB SSD)",
+      "price": 810000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "인덕원동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-17T05:58:24.123Z",
+      "url": "https://www.daangn.com/kr/buy-sell/2026-%EC%97%90%EC%9D%B4%EC%84%9C-%EC%8A%A4%EC%9C%84%ED%94%84%ED%8A%B8-%EA%B3%A0-14-ai-%EB%85%B8%ED%8A%B8%EB%B6%81-ultra5-16gb-ram-512gb-ssd-oyyq4oiukipb/",
+      "firstAlertedAt": "2026-10-17T06:12:08.241825Z",
+      "lastCandidateAt": "2026-10-17T06:12:08.241825Z"
     }
   }
 }
