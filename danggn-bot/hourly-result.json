@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-17T18:07:26.103Z",
+  "generatedAt": "2026-10-17T18:25:27.243Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -116,7 +116,7 @@
           "createdAt\":\"2026-10-14T01:02:00.918Z\",\"boostedAt\":\"2026-10-16T01:41:07.008Z\",\"region\":{\"name\":\"관양1동\"},\"category\":null,\"tradingCoo",
           "createdAt\":\"2026-10-17T11:14:50.751Z\",\"boostedAt\":\"2026-10-17T11:14:50.748Z\",\"region\":{\"name\":\"안양3동\"},\"category\":null,\"tradingCoo",
           "createdAt\":\"2026-10-13T02:39:51.031Z\",\"boostedAt\":\"2026-10-17T15:06:32.202Z\",\"region\":{\"name\":\"어룡동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-17T05:00:07.375Z\",\"boostedAt\":\"2026-10-17T05:00:07.375Z\",\"region\":{\"name\":\"대연동\"},\"category\":null,\"tradingCoor"
+          "createdAt\":\"2026-10-17T10:25:57.208Z\",\"boostedAt\":\"2026-10-17T10:25:57.203Z\",\"region\":{\"name\":\"어룡동\"},\"category\":null,\"tradingCoor"
         ],
         "scriptHeads": [
           "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":254,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG 그램 노트북 15인치 판매합니다.\",\"descri",
@@ -127,24 +127,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1236,
-    "globalUniqueListings": 454,
-    "duplicateListingsRemoved": 782,
-    "detailQueueStart": 0,
-    "freshDetailTasks": 0,
+    "searchUniqueListings": 1275,
+    "globalUniqueListings": 479,
+    "duplicateListingsRemoved": 796,
+    "detailQueueStart": 2,
+    "freshDetailTasks": 2,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 0,
-    "detailSucceeded": 0,
+    "detailRequestsExecuted": 2,
+    "detailSucceeded": 2,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 454,
+    "postedAtResolvedFromSearch": 479,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 80007,
+    "scanDurationMs": 80729,
     "cities": [
       {
         "city": "군포시",
@@ -156,8 +156,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 286,
-        "durationMs": 12010
+        "uniqueListings": 284,
+        "durationMs": 12078
       },
       {
         "city": "의왕시",
@@ -172,8 +172,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 345,
-        "durationMs": 25571
+        "uniqueListings": 374,
+        "durationMs": 25563
       },
       {
         "city": "안양시",
@@ -190,8 +190,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 346,
-        "durationMs": 35588
+        "uniqueListings": 358,
+        "durationMs": 34937
       },
       {
         "city": "과천시",
@@ -203,7 +203,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 259,
-        "durationMs": 6637
+        "durationMs": 6160
       }
     ],
     "finalCandidateCount": 0,
@@ -212,7 +212,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 80014
+    "durationMs": 80735
   },
   "candidates": []
 }
