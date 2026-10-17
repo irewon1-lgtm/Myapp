@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-17T12:02:04.986643Z",
+  "updatedAt": "2026-10-17T12:27:25.395025Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -780,8 +780,8 @@
     "t6k7u1u8vreh": {
       "id": "t6k7u1u8vreh",
       "title": "서피스 랩탑 스튜디오1 i7,32gb,3050ti,ssd1tb",
-      "price": 1350000,
-      "previousPrice": 1400000,
+      "price": 1300000,
+      "previousPrice": 1350000,
       "changeType": "price_drop",
       "city": "군포시",
       "location": "금정동",
@@ -800,7 +800,7 @@
       "postedAt": "2026-09-15T16:02:28.842Z",
       "url": "https://www.daangn.com/kr/buy-sell/%EC%84%9C%ED%94%BC%EC%8A%A4-%EB%9E%A9%ED%83%91-%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A41-i7-32gb-3050ti-ssd1tb-t6k7u1u8vreh/",
       "firstAlertedAt": "2026-10-06T07:23:02.060514Z",
-      "lastCandidateAt": "2026-10-10T12:43:06.096152Z"
+      "lastCandidateAt": "2026-10-17T12:27:25.395025Z"
     },
     "qc42g15oc3t4": {
       "id": "qc42g15oc3t4",
@@ -6055,9 +6055,9 @@
     "1zvzsxgtt6he": {
       "id": "1zvzsxgtt6he",
       "title": "삼성 갤럭시북4 프로 360 NT960QGK-KC51S 팔아요",
-      "price": 1280000,
-      "previousPrice": null,
-      "changeType": "new",
+      "price": 1180000,
+      "previousPrice": 1280000,
+      "changeType": "price_drop",
       "city": "안양시",
       "location": "호계동",
       "cpuHint": null,
@@ -6075,7 +6075,7 @@
       "postedAt": "2026-10-15T10:30:58.944Z",
       "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%814-%ED%94%84%EB%A1%9C-360-nt960qgk-kc51s-%ED%8C%94%EC%95%84%EC%9A%94-1zvzsxgtt6he/",
       "firstAlertedAt": "2026-10-15T10:52:16.550776Z",
-      "lastCandidateAt": "2026-10-15T10:52:16.550776Z"
+      "lastCandidateAt": "2026-10-17T12:27:25.395025Z"
     },
     "6t16w4nce1cm": {
       "id": "6t16w4nce1cm",
@@ -7051,6 +7051,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EC%95%84%EC%9D%B4%EB%AE%A4%EC%A6%88-%EC%8A%A4%ED%86%B0%EB%B6%81-14-%EC%95%84%ED%8F%B4%EB%A1%9C-%EB%A1%9C%EC%A6%88%EA%B3%A8%EB%93%9C-%EB%85%B8%ED%8A%B8%EB%B6%81-t7d5juqxemox/",
       "firstAlertedAt": "2026-10-17T12:02:04.986643Z",
       "lastCandidateAt": "2026-10-17T12:02:04.986643Z"
+    },
+    "px9aujeztvpr": {
+      "id": "px9aujeztvpr",
+      "title": "삼성 갤럭시 북3 울트라 16인치,  i9-13900H, RTX4070, 32GB DDR5, 1TB NVMe",
+      "price": 1850000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "호계동",
+      "cpuHint": "i9-13900H",
+      "gpuHint": "RTX4070",
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 32,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "32GB",
+      "storageGB": 1024,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-17T12:15:58.853Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C-%EB%B6%813-%EC%9A%B8%ED%8A%B8%EB%9D%BC-16%EC%9D%B8%EC%B9%98-i9-13900h-rtx4070-32gb-ddr5-1tb-nvme-px9aujeztvpr/",
+      "firstAlertedAt": "2026-10-17T12:27:25.395025Z",
+      "lastCandidateAt": "2026-10-17T12:27:25.395025Z"
+    },
+    "2nnend21zuzp": {
+      "id": "2nnend21zuzp",
+      "title": "맥북에어 M1 16GB 256GB",
+      "price": 430000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "안양1동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-17T12:21:15.184Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81%EC%97%90%EC%96%B4-m1-16gb-256gb-2nnend21zuzp/",
+      "firstAlertedAt": "2026-10-17T12:27:25.395025Z",
+      "lastCandidateAt": "2026-10-17T12:27:25.395025Z"
     }
   }
 }
