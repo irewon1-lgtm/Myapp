@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-17T02:31:59.623138Z",
+  "updatedAt": "2026-10-17T03:12:04.650362Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -6701,6 +6701,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%94%BD%ED%81%AC%EB%B6%81-14irl-g8-%EB%85%B8%ED%8A%B8%EB%B6%81-i7-16gb-n66xbc2o1e49/",
       "firstAlertedAt": "2026-10-17T01:51:57.026623Z",
       "lastCandidateAt": "2026-10-17T01:51:57.026623Z"
+    },
+    "q7gzfkk1w95u": {
+      "id": "q7gzfkk1w95u",
+      "title": "급쳐 ASUS 16인치 RTX 5060 노트북",
+      "price": 120,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "금정동",
+      "cpuHint": null,
+      "gpuHint": "RTX 5060",
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-17T02:56:11.004Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EA%B8%89%EC%B3%90-asus-16%EC%9D%B8%EC%B9%98-rtx-5060-%EB%85%B8%ED%8A%B8%EB%B6%81-q7gzfkk1w95u/",
+      "firstAlertedAt": "2026-10-17T03:12:04.650362Z",
+      "lastCandidateAt": "2026-10-17T03:12:04.650362Z"
+    },
+    "3oqknh8ct4uo": {
+      "id": "3oqknh8ct4uo",
+      "title": "ASUS ROG Flow 13.4인치 노트북 (블랙, 1TB) 팔아요",
+      "price": 2500000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "안양1동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 32,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "32램",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "postedAt": "2026-10-17T02:53:23.516Z",
+      "url": "https://www.daangn.com/kr/buy-sell/asus-rog-flow-13-4%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%B8%94%EB%9E%99-1tb-%ED%8C%94%EC%95%84%EC%9A%94-3oqknh8ct4uo/",
+      "firstAlertedAt": "2026-10-17T03:12:04.650362Z",
+      "lastCandidateAt": "2026-10-17T03:12:04.650362Z"
     }
   }
 }
