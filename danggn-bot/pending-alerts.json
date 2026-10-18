@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-18T04:22:14.885582Z",
+  "updatedAt": "2026-10-18T04:49:52.339733Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -7501,6 +7501,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-14%EC%9D%B8%EC%B9%98-m4-pro-48gb-1tb-2024-snda72k655pt/",
       "firstAlertedAt": "2026-10-18T04:22:14.885582Z",
       "lastCandidateAt": "2026-10-18T04:22:14.885582Z"
+    },
+    "fay45svqshig": {
+      "id": "fay45svqshig",
+      "title": "애플 맥북 맥스 m3 pro 14인치",
+      "price": 2200000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "산본1동",
+      "cpuHint": "Apple M3 Max",
+      "gpuHint": "Apple M3 Max",
+      "vramGB": null,
+      "ramGB": 36,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "통합 메모리: 36GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 1024,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "postedAt": "2026-10-18T04:44:44.331Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%95%A0%ED%94%8C-%EB%A7%A5%EB%B6%81-%EB%A7%A5%EC%8A%A4-m3-pro-14%EC%9D%B8%EC%B9%98-fay45svqshig/",
+      "firstAlertedAt": "2026-10-18T04:49:52.339733Z",
+      "lastCandidateAt": "2026-10-18T04:49:52.339733Z"
     }
   }
 }
