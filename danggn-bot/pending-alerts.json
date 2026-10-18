@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-18T03:42:00.250410Z",
+  "updatedAt": "2026-10-18T04:22:14.885582Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -3955,9 +3955,9 @@
     "ejjkqwvpqos4": {
       "id": "ejjkqwvpqos4",
       "title": "서피스 랩탑 스튜디오 i7 / 16GB / 512GB",
-      "price": 800000,
-      "previousPrice": null,
-      "changeType": "new",
+      "price": 780000,
+      "previousPrice": 800000,
+      "changeType": "price_drop",
       "city": "안양시",
       "location": "호계동",
       "cpuHint": "i7-11370H",
@@ -3975,7 +3975,7 @@
       "postedAt": "2026-10-12T04:23:35.397Z",
       "url": "https://www.daangn.com/kr/buy-sell/%EC%84%9C%ED%94%BC%EC%8A%A4-%EB%9E%A9%ED%83%91-%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4-i7-16gb-512gb-ejjkqwvpqos4/",
       "firstAlertedAt": "2026-10-12T04:33:12.175244Z",
-      "lastCandidateAt": "2026-10-12T04:33:12.175244Z"
+      "lastCandidateAt": "2026-10-18T04:22:14.885582Z"
     },
     "pv8aatsobebd": {
       "id": "pv8aatsobebd",
@@ -7476,6 +7476,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EC%9C%88%EB%8F%84%EC%9A%B011-%ED%83%91%EC%9E%AC-%ED%92%80%EB%B0%95%EC%8A%A4-899g-%EC%B4%88%EA%B2%BD%EB%9F%89-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%8B%A4%EC%82%AC%EC%9A%A9-3%EA%B0%9C%EC%9B%94-avgfzkzpkaqy/",
       "firstAlertedAt": "2026-10-18T03:42:00.250410Z",
       "lastCandidateAt": "2026-10-18T03:42:00.250410Z"
+    },
+    "snda72k655pt": {
+      "id": "snda72k655pt",
+      "title": "맥북 프로 14인치 M4 Pro 48GB / 1TB 2024",
+      "price": 2850000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "평안동",
+      "cpuHint": "M4 Pro",
+      "gpuHint": "M4 Pro",
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 48,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "48GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-18T04:00:13.315Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-14%EC%9D%B8%EC%B9%98-m4-pro-48gb-1tb-2024-snda72k655pt/",
+      "firstAlertedAt": "2026-10-18T04:22:14.885582Z",
+      "lastCandidateAt": "2026-10-18T04:22:14.885582Z"
     }
   }
 }
