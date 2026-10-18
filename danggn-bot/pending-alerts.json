@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-18T13:31:55.237433Z",
+  "updatedAt": "2026-10-18T13:36:32.455854Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -4305,9 +4305,9 @@
     "qohuv173dz2s": {
       "id": "qohuv173dz2s",
       "title": "MacBook Pro 15인치 2017터치바 박풀",
-      "price": 200000,
-      "previousPrice": null,
-      "changeType": "new",
+      "price": 300000,
+      "previousPrice": 400000,
+      "changeType": "price_drop",
       "city": "의왕시",
       "location": "내손동",
       "cpuHint": null,
@@ -4325,7 +4325,7 @@
       "postedAt": "2026-10-12T12:17:29.126Z",
       "url": "https://www.daangn.com/kr/buy-sell/macbook-pro-15%EC%9D%B8%EC%B9%98-2017%ED%84%B0%EC%B9%98%EB%B0%94-%EB%B0%95%ED%92%80-qohuv173dz2s/",
       "firstAlertedAt": "2026-10-12T12:23:20.479685Z",
-      "lastCandidateAt": "2026-10-12T12:23:20.479685Z"
+      "lastCandidateAt": "2026-10-18T13:36:32.455854Z"
     },
     "uf3vs82prjzm": {
       "id": "uf3vs82prjzm",
@@ -7901,6 +7901,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EC%9D%B4%EC%A0%80-%EB%B8%94%EB%A0%88%EC%9D%B4%EB%93%9C-%EC%8A%A4%ED%85%94%EC%8A%A4-13-%EA%B2%8C%EC%9D%B4%EB%B0%8D%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4-wa74obiofik1/",
       "firstAlertedAt": "2026-10-18T11:32:05.220894Z",
       "lastCandidateAt": "2026-10-18T11:32:05.220894Z"
+    },
+    "wknyhk91e6pv": {
+      "id": "wknyhk91e6pv",
+      "title": "맥북에어 M1 16GB 256GB",
+      "price": 420000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "안양1동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-18T13:05:18.863Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81%EC%97%90%EC%96%B4-m1-16gb-256gb-wknyhk91e6pv/",
+      "firstAlertedAt": "2026-10-18T13:36:32.455854Z",
+      "lastCandidateAt": "2026-10-18T13:36:32.455854Z"
     }
   }
 }
