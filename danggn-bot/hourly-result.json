@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-18T20:42:14.636Z",
+  "generatedAt": "2026-10-18T21:22:13.742Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -64,24 +64,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1223,
-    "globalUniqueListings": 458,
-    "duplicateListingsRemoved": 765,
-    "detailQueueStart": 0,
-    "freshDetailTasks": 0,
+    "searchUniqueListings": 1180,
+    "globalUniqueListings": 473,
+    "duplicateListingsRemoved": 707,
+    "detailQueueStart": 3,
+    "freshDetailTasks": 3,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 0,
-    "detailSucceeded": 0,
+    "detailRequestsExecuted": 3,
+    "detailSucceeded": 3,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 458,
+    "postedAtResolvedFromSearch": 473,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 0,
-    "scanDurationMs": 78619,
+    "candidateCount": 1,
+    "scanDurationMs": 83014,
     "cities": [
       {
         "city": "군포시",
@@ -93,8 +93,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 272,
-        "durationMs": 11956
+        "uniqueListings": 195,
+        "durationMs": 12374
       },
       {
         "city": "의왕시",
@@ -109,8 +109,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 364,
-        "durationMs": 25444
+        "uniqueListings": 384,
+        "durationMs": 25783
       },
       {
         "city": "안양시",
@@ -127,8 +127,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 326,
-        "durationMs": 34991
+        "uniqueListings": 340,
+        "durationMs": 35110
       },
       {
         "city": "과천시",
@@ -140,16 +140,52 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 261,
-        "durationMs": 5957
+        "durationMs": 6423
       }
     ],
-    "finalCandidateCount": 0,
+    "finalCandidateCount": 1,
     "stateItemCount": 5000,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 78625
+    "durationMs": 83018
   },
-  "candidates": []
+  "candidates": [
+    {
+      "id": "trheuvj1bv6k",
+      "changeType": "new",
+      "previousPrice": null,
+      "price": 1950000,
+      "priceDropPercent": null,
+      "city": "안양시",
+      "location": "안양2동",
+      "regionPath": "경기도 안양시 만안구 안양2동",
+      "title": "노트북 갤럭시북5 프로 16인치 울트라7 32GB/1TB 삼성케어 양도",
+      "modelHint": "노트북 갤럭시북5 프로 16인치 울트라7 32GB/1TB 삼성케어 양도",
+      "cpuHint": null,
+      "cpuBaselinePass": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 32,
+      "ambiguousMemoryGB": 32,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "램 32GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "32GB",
+      "storageGB": 1024,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "specConfidence": "confirmed",
+      "postedAt": "2026-10-18T21:05:20.753Z",
+      "boostedAt": "2026-10-18T21:05:20.750Z",
+      "status": "Ongoing",
+      "description": "갤럭시북5 프로 16인치 판매합니다.\n\n[사양]\n- NT960XHA-KD72G (25년 3월 제조)\n- 인텔 코어 울트라7 258V (Evo)\n- 램 32GB / SSD 1TB\n- 16인치 3K 120Hz 아몰레드 터치\n- 썬더볼트4 2개, HDMI, USB-A, microSD\n- 1.56kg / 그레이\n- 윈도우11 정품, 초기화 완료\n\n[구매]\n- 25년 4월 삼성닷컴 정품 구매\n- 구매내역 인증 가능\n\n[상태]\n- 대부분 집에서 쿨링패드 위에 두고 사용\n- 사용감 조금 있음\n- 테두리에 미세한 찍힘 1곳 (사진 참고)\n- 그 외 기능 이상 없음\n- 추가 SSD 장착했다가 분리 (하판 개봉 이력)\n- 현재 기본 구성, 빈 슬롯에 SSD 추가 가능\n\n[삼성케어플러스]\n- 양도 가능 \n- 원하시면 거래 시 명의변경 함께 진행\n\n[구성]\n- 본체, 박스 (충전기 미포함)\n- USB-C 65W PD 충전기로 충전 가능\n\n가격: 195만원\n\n직거래",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%85%B8%ED%8A%B8%EB%B6%81-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%815-%ED%94%84%EB%A1%9C-16%EC%9D%B8%EC%B9%98-%EC%9A%B8%ED%8A%B8%EB%9D%BC7-32gb-1tb-%EC%82%BC%EC%84%B1%EC%BC%80%EC%96%B4-%EC%96%91%EB%8F%84-trheuvj1bv6k/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "빈둥대는고양이",
+      "mannerTemperature": 39.9
+    }
+  ]
 }
