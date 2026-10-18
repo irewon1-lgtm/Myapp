@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-18T07:21:57.440725Z",
+  "updatedAt": "2026-10-18T08:02:05.389397Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -2680,8 +2680,8 @@
     "zy8rdyv28ann": {
       "id": "zy8rdyv28ann",
       "title": "DELL Latitude 7310 노트북",
-      "price": 380000,
-      "previousPrice": 400000,
+      "price": 360000,
+      "previousPrice": 380000,
       "changeType": "price_drop",
       "city": "안양시",
       "location": "관양동",
@@ -2700,7 +2700,7 @@
       "postedAt": "2026-10-10T00:29:00.494Z",
       "url": "https://www.daangn.com/kr/buy-sell/dell-latitude-7310-%EB%85%B8%ED%8A%B8%EB%B6%81-zy8rdyv28ann/",
       "firstAlertedAt": "2026-10-10T00:43:09.497512Z",
-      "lastCandidateAt": "2026-10-12T02:23:11.479677Z"
+      "lastCandidateAt": "2026-10-18T08:02:05.389397Z"
     },
     "dwhjvyk44j9v": {
       "id": "dwhjvyk44j9v",
@@ -7701,6 +7701,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/hp-probook-470-g3-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-i7-%EB%9E%A8-16gb-g18cvnww9j1n/",
       "firstAlertedAt": "2026-10-18T07:21:57.440725Z",
       "lastCandidateAt": "2026-10-18T07:21:57.440725Z"
+    },
+    "syhqhfssxscp": {
+      "id": "syhqhfssxscp",
+      "title": "LG 그램 노트북15,6인치  i3-1220P 16GB 250gb",
+      "price": 350000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "석수동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-18T07:47:06.869Z",
+      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%8115-6%EC%9D%B8%EC%B9%98-i3-1220p-16gb-250gb-syhqhfssxscp/",
+      "firstAlertedAt": "2026-10-18T08:02:05.389397Z",
+      "lastCandidateAt": "2026-10-18T08:02:05.389397Z"
+    },
+    "fbdrzagdijzz": {
+      "id": "fbdrzagdijzz",
+      "title": "LG그램 16인치 노트북",
+      "price": 100000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "평안동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "램 16",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-18T07:34:38.699Z",
+      "url": "https://www.daangn.com/kr/buy-sell/lg%EA%B7%B8%EB%9E%A8-16%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-fbdrzagdijzz/",
+      "firstAlertedAt": "2026-10-18T08:02:05.389397Z",
+      "lastCandidateAt": "2026-10-18T08:02:05.389397Z"
     }
   }
 }
