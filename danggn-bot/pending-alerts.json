@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-18T13:36:32.455854Z",
+  "updatedAt": "2026-10-18T14:11:57.306475Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -7926,6 +7926,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81%EC%97%90%EC%96%B4-m1-16gb-256gb-wknyhk91e6pv/",
       "firstAlertedAt": "2026-10-18T13:36:32.455854Z",
       "lastCandidateAt": "2026-10-18T13:36:32.455854Z"
+    },
+    "kvp7q4wis9a9": {
+      "id": "kvp7q4wis9a9",
+      "title": "ASUS ROG Strix G712lu  게이밍 노트북",
+      "price": 680000,
+      "previousPrice": 700000,
+      "changeType": "price_drop",
+      "city": "군포시",
+      "location": "산본동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "메모리: 16GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-07-26T11:35:53.844Z",
+      "url": "https://www.daangn.com/kr/buy-sell/asus-rog-strix-g712lu-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-kvp7q4wis9a9/",
+      "firstAlertedAt": "2026-10-18T14:11:57.306475Z",
+      "lastCandidateAt": "2026-10-18T14:11:57.306475Z"
     }
   }
 }
