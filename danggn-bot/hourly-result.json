@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-18T02:22:00.430Z",
+  "generatedAt": "2026-10-18T03:01:52.476Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -64,24 +64,24 @@
         ]
       }
     },
-    "searchUniqueListings": 991,
-    "globalUniqueListings": 444,
-    "duplicateListingsRemoved": 547,
-    "detailQueueStart": 15,
-    "freshDetailTasks": 15,
+    "searchUniqueListings": 993,
+    "globalUniqueListings": 448,
+    "duplicateListingsRemoved": 545,
+    "detailQueueStart": 6,
+    "freshDetailTasks": 6,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 15,
-    "detailSucceeded": 15,
+    "detailRequestsExecuted": 6,
+    "detailSucceeded": 6,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 444,
+    "postedAtResolvedFromSearch": 448,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 0,
-    "scanDurationMs": 96531,
+    "candidateCount": 1,
+    "scanDurationMs": 87620,
     "cities": [
       {
         "city": "군포시",
@@ -94,7 +94,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 194,
-        "durationMs": 12158
+        "durationMs": 12150
       },
       {
         "city": "의왕시",
@@ -109,8 +109,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 251,
-        "durationMs": 25609
+        "uniqueListings": 253,
+        "durationMs": 26171
       },
       {
         "city": "안양시",
@@ -128,7 +128,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 365,
-        "durationMs": 35012
+        "durationMs": 35336
       },
       {
         "city": "과천시",
@@ -140,16 +140,52 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 181,
-        "durationMs": 6195
+        "durationMs": 6957
       }
     ],
-    "finalCandidateCount": 0,
+    "finalCandidateCount": 1,
     "stateItemCount": 5000,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 96539
+    "durationMs": 87627
   },
-  "candidates": []
+  "candidates": [
+    {
+      "id": "1n83pz6tuo9z",
+      "changeType": "new",
+      "previousPrice": null,
+      "price": 3100000,
+      "priceDropPercent": null,
+      "city": "군포시",
+      "location": "산본1동",
+      "regionPath": "경기도 군포시 산본1동",
+      "title": "Apple MacBook m3 max 14인치",
+      "modelHint": "Apple MacBook m3 max 14인치",
+      "cpuHint": "Apple M3 Max",
+      "cpuBaselinePass": null,
+      "gpuHint": "Apple M3 Max",
+      "vramGB": null,
+      "ramGB": 36,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "통합 메모리: 36GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 1024,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "specConfidence": "confirmed",
+      "postedAt": "2026-10-18T02:59:56.434Z",
+      "boostedAt": "2026-10-18T02:59:56.434Z",
+      "status": "Ongoing",
+      "description": "노트북 스펙\n\n지급(구입)일 : 2024-06-13\n\n[판매 제품 사양]\n제품: Apple MacBook Pro 14형\n출시 연도: 2023년형\n칩셋: Apple M3 Max\nCPU: 14코어\nGPU: 30코어\n통합 메모리: 36GB\n저장 장치: 1TB SSD\n디스플레이: 14.2형 Liquid Retina XDR\n색상: [스페이스 블랙 / 실버]\n배터리 성능 최대치: 94%\n배터리 사이클: 300회\n배터리 상태: 정상\nAppleCare+: [x]\n구성품: [본체 / 충전기 / 케이블 / 박스 X]\n충전기 / 케이블 = 새제품\n\n외관 상태: 흠집 찍힘 없음. 스티커 뗀 자국 살짝 있습니다\n\n고사양 개발 작업, 영상 편집, 그래픽 작업 등에 적합한 M3 Max 모델입니다. 배터리 성능 최대치는 94%이며, macOS에서 확인한 배터리 상태는 ‘정상’입니다.\n\n배터리 상태는 양호합니다.\n성능 최대치: 94% → 좋은 편\n사이클 수: 300회 → 적지는 않지만 정상 범위\n배터리 조건: 정상 → 교체 경고 없음\n\n판매 글에는 이렇게 적으면 깔끔합니다.\n배터리 성능 최대치 94%, 사이클 수 300회, 배터리 상태 정상입니다.",
+      "url": "https://www.daangn.com/kr/buy-sell/apple-macbook-m3-max-14%EC%9D%B8%EC%B9%98-1n83pz6tuo9z/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "마징가제트",
+      "mannerTemperature": 41.7
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-18T02:22:00.488736Z",
+  "updatedAt": "2026-10-18T03:01:52.547073Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -7426,6 +7426,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/s%EA%B8%89-%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%815-%ED%94%84%EB%A1%9C-360-ultra7-1tb-32gb-tomtoc-%EA%B0%80%EB%B0%A9-g7k8shh6eugd/",
       "firstAlertedAt": "2026-10-18T01:42:02.907450Z",
       "lastCandidateAt": "2026-10-18T01:42:02.907450Z"
+    },
+    "1n83pz6tuo9z": {
+      "id": "1n83pz6tuo9z",
+      "title": "Apple MacBook m3 max 14인치",
+      "price": 3100000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "산본1동",
+      "cpuHint": "Apple M3 Max",
+      "gpuHint": "Apple M3 Max",
+      "vramGB": null,
+      "ramGB": 36,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "통합 메모리: 36GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 1024,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "postedAt": "2026-10-18T02:59:56.434Z",
+      "url": "https://www.daangn.com/kr/buy-sell/apple-macbook-m3-max-14%EC%9D%B8%EC%B9%98-1n83pz6tuo9z/",
+      "firstAlertedAt": "2026-10-18T03:01:52.547073Z",
+      "lastCandidateAt": "2026-10-18T03:01:52.547073Z"
     }
   }
 }
