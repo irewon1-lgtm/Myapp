@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-18T08:42:01.292610Z",
+  "updatedAt": "2026-10-18T09:22:10.239908Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -3029,9 +3029,9 @@
     },
     "5qrthmxadqnf": {
       "id": "5qrthmxadqnf",
-      "title": "ASUS TUF Gaming A15 노트북 RTX 4060",
-      "price": 198,
-      "previousPrice": 2100000,
+      "title": "게이밍 고사양 노트북 ASUS TUF Gaming 32G 1T RTX 4060",
+      "price": 1640000,
+      "previousPrice": 1980000,
       "changeType": "price_drop",
       "city": "안양시",
       "location": "안양동",
@@ -3039,18 +3039,18 @@
       "gpuHint": "RTX 4060",
       "vramGB": null,
       "ramGB": 32,
-      "ambiguousMemoryGB": null,
+      "ambiguousMemoryGB": 32,
       "hardwareReviewStatus": "PASS_RAM",
       "ramEvidence": "32GB RAM",
       "vramEvidence": null,
-      "ambiguousMemoryEvidence": null,
+      "ambiguousMemoryEvidence": "32G",
       "storageGB": null,
       "llmCapability": "WORK_DEV_RAM32",
       "llmReason": "RAM 32GB 이상 확정 후보",
       "postedAt": "2026-10-03T09:58:26.719Z",
-      "url": "https://www.daangn.com/kr/buy-sell/asus-tuf-gaming-a15-%EB%85%B8%ED%8A%B8%EB%B6%81-rtx-4060-5qrthmxadqnf/",
+      "url": "https://www.daangn.com/kr/buy-sell/%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EA%B3%A0%EC%82%AC%EC%96%91-%EB%85%B8%ED%8A%B8%EB%B6%81-asus-tuf-gaming-32g-1t-rtx-4060-5qrthmxadqnf/",
       "firstAlertedAt": "2026-10-10T12:03:01.056125Z",
-      "lastCandidateAt": "2026-10-10T12:03:01.056125Z"
+      "lastCandidateAt": "2026-10-18T09:22:10.239908Z"
     },
     "byh6cuabaept": {
       "id": "byh6cuabaept",
@@ -7776,6 +7776,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-15%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-10210u-16gb-ram-d3nvvyr9a7a7/",
       "firstAlertedAt": "2026-10-18T08:42:01.292610Z",
       "lastCandidateAt": "2026-10-18T08:42:01.292610Z"
+    },
+    "segcd7mtt869": {
+      "id": "segcd7mtt869",
+      "title": "[풀박스] 맥북프로 14 M1 Pro 512GB 기스 없음 배터리 90%",
+      "price": 1250000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "산본2동",
+      "cpuHint": "M1 Pro",
+      "gpuHint": "M1 Pro",
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "메모리: 16GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-18T08:56:23.252Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%ED%92%80%EB%B0%95%EC%8A%A4-%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C-14-m1-pro-512gb-%EA%B8%B0%EC%8A%A4-%EC%97%86%EC%9D%8C-%EB%B0%B0%ED%84%B0%EB%A6%AC-90-segcd7mtt869/",
+      "firstAlertedAt": "2026-10-18T09:22:10.239908Z",
+      "lastCandidateAt": "2026-10-18T09:22:10.239908Z"
     }
   }
 }
