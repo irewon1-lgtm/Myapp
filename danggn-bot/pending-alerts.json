@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-18T06:02:02.055456Z",
+  "updatedAt": "2026-10-18T06:41:59.987611Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -2505,9 +2505,9 @@
     "eoyz6ndyd53o": {
       "id": "eoyz6ndyd53o",
       "title": "LG 그램 15인치 화이트 노트북",
-      "price": 450000,
-      "previousPrice": null,
-      "changeType": "new",
+      "price": 400000,
+      "previousPrice": 450000,
+      "changeType": "price_drop",
       "city": "안양시",
       "location": "호계동",
       "cpuHint": null,
@@ -2525,7 +2525,7 @@
       "postedAt": "2026-10-09T09:48:18.431Z",
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-15%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-%EB%85%B8%ED%8A%B8%EB%B6%81-eoyz6ndyd53o/",
       "firstAlertedAt": "2026-10-09T09:59:49.590778Z",
-      "lastCandidateAt": "2026-10-09T09:59:49.590778Z"
+      "lastCandidateAt": "2026-10-18T06:41:59.987611Z"
     },
     "cm6jnahqwnrb": {
       "id": "cm6jnahqwnrb",
@@ -7601,6 +7601,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-rtx-4060-9diect2kof4j/",
       "firstAlertedAt": "2026-10-18T06:02:02.055456Z",
       "lastCandidateAt": "2026-10-18T06:02:02.055456Z"
+    },
+    "xmo7exx5u8x1": {
+      "id": "xmo7exx5u8x1",
+      "title": "LG 울트라PC 15U590 화이트 노트북",
+      "price": 300000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "산본1동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 256,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-18T06:09:42.364Z",
+      "url": "https://www.daangn.com/kr/buy-sell/lg-%EC%9A%B8%ED%8A%B8%EB%9D%BCpc-15u590-%ED%99%94%EC%9D%B4%ED%8A%B8-%EB%85%B8%ED%8A%B8%EB%B6%81-xmo7exx5u8x1/",
+      "firstAlertedAt": "2026-10-18T06:41:59.987611Z",
+      "lastCandidateAt": "2026-10-18T06:41:59.987611Z"
+    },
+    "m85rmaavr323": {
+      "id": "m85rmaavr323",
+      "title": "노트북 부품용",
+      "price": 50000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "당동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 64,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "64GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-18T06:32:33.029Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%B6%80%ED%92%88%EC%9A%A9-m85rmaavr323/",
+      "firstAlertedAt": "2026-10-18T06:41:59.987611Z",
+      "lastCandidateAt": "2026-10-18T06:41:59.987611Z"
     }
   }
 }
