@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-18T01:42:02.850Z",
+  "generatedAt": "2026-10-18T02:22:00.430Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -64,24 +64,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1067,
-    "globalUniqueListings": 463,
-    "duplicateListingsRemoved": 604,
-    "detailQueueStart": 14,
-    "freshDetailTasks": 14,
+    "searchUniqueListings": 991,
+    "globalUniqueListings": 444,
+    "duplicateListingsRemoved": 547,
+    "detailQueueStart": 15,
+    "freshDetailTasks": 15,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 14,
-    "detailSucceeded": 14,
+    "detailRequestsExecuted": 15,
+    "detailSucceeded": 15,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 463,
+    "postedAtResolvedFromSearch": 444,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 1,
-    "scanDurationMs": 95710,
+    "candidateCount": 0,
+    "scanDurationMs": 96531,
     "cities": [
       {
         "city": "군포시",
@@ -93,8 +93,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 195,
-        "durationMs": 12117
+        "uniqueListings": 194,
+        "durationMs": 12158
       },
       {
         "city": "의왕시",
@@ -109,8 +109,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 329,
-        "durationMs": 25554
+        "uniqueListings": 251,
+        "durationMs": 25609
       },
       {
         "city": "안양시",
@@ -127,8 +127,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 362,
-        "durationMs": 34950
+        "uniqueListings": 365,
+        "durationMs": 35012
       },
       {
         "city": "과천시",
@@ -140,52 +140,16 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 181,
-        "durationMs": 6303
+        "durationMs": 6195
       }
     ],
-    "finalCandidateCount": 1,
+    "finalCandidateCount": 0,
     "stateItemCount": 5000,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 95717
+    "durationMs": 96539
   },
-  "candidates": [
-    {
-      "id": "g7k8shh6eugd",
-      "changeType": "new",
-      "previousPrice": null,
-      "price": 2200000,
-      "priceDropPercent": null,
-      "city": "안양시",
-      "location": "호계동",
-      "regionPath": "경기도 안양시 동안구 호계동",
-      "title": "S급 삼성 갤럭시북5 프로 360, Ultra7, 1TB, 32GB + Tomtoc 가방",
-      "modelHint": "S급 삼성 갤럭시북5 프로 360, Ultra7, 1TB, 32GB + Tomtoc 가방",
-      "cpuHint": null,
-      "cpuBaselinePass": null,
-      "gpuHint": null,
-      "vramGB": null,
-      "ramGB": 32,
-      "ambiguousMemoryGB": 32,
-      "hardwareReviewStatus": "PASS_RAM",
-      "ramEvidence": "RAM 32GB",
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": "32GB",
-      "storageGB": 1024,
-      "llmCapability": "WORK_DEV_RAM32",
-      "llmReason": "RAM 32GB 이상 확정 후보",
-      "specConfidence": "confirmed",
-      "postedAt": "2026-10-18T01:26:32.905Z",
-      "boostedAt": "2026-10-18T01:26:32.896Z",
-      "status": "Ongoing",
-      "description": "삼성 갤럭시 북5 Pro 360\nNT960QHA-KD72G 그레이입니다\nSSD 1TB\nRAM 32GB\n360도 컨버터블\n고사양 모델입니다.\n베터리사이클 18\n밖에 가지고 나간적이 없고 집에서 주식 차트용으로 몇번 본거말곤 사용도 안해 \n모든면 기스, 잔기스, 찍힘 없는 S급입니다\n상태보고 구매 결정하셔도 됩니다\nS펜, 충전기 포함 풀박스 상태 그대로 드립니다.\nTomtoc 16인치 전용 보호가방 포함 일괄입니다.\n가방 제품 링크\nhttps://naver.me/GMP7yYp0",
-      "url": "https://www.daangn.com/kr/buy-sell/s%EA%B8%89-%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%815-%ED%94%84%EB%A1%9C-360-ultra7-1tb-32gb-tomtoc-%EA%B0%80%EB%B0%A9-g7k8shh6eugd/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "아일럼",
-      "mannerTemperature": 45.3
-    }
-  ]
+  "candidates": []
 }
