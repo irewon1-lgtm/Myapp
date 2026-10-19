@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-19T08:52:27.295Z",
+  "generatedAt": "2026-10-19T09:32:26.560Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,71 +55,76 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt50ebz-ad1a-ny4aqkw9eaew/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt50ebz-ad1a-ny4aqkw9eaew/",
-            "title": "삼성 노트북 NT50EBZ-AD1A",
-            "content": "삼성 노트북 NT50EBZ-AD1A. 인텔 3865 프로세서와 \n8GB RAM \n삼성 SSD 256GB \n 사진에서 보이는 것처럼 구성품(어댑터) 모두 포함되어 있어요. 깔끔한 디자인으로 어디서든 잘 어울릴 거예요.",
-            "price": "130000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/0cccc11f-0aad-42a4-877e-a05cf4196c6e.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%EC%A0%90%ED%8D%BC-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-ytc7nxr1pdxb/",
+            "href": "/kr/buy-sell/%EC%A0%90%ED%8D%BC-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-ytc7nxr1pdxb/",
+            "title": "점퍼 노트북 판매합니다.",
+            "content": "공부하려고 중고로 구매했는데 사용법을 잘 몰라서 다시 판매합니다.\n\n외관은 아직 새것처럼 깨끗하고 상태가 좋습니다.\n\n구매 당시 판매자분께서 기능은 모두 정상이고 배터리도 오래 간다고 하셨습니다.\n\n아직 제가 직접 사용해 보지는 않았으니 사진을 확인하시고 구매해 주세요.\n\n중고 거래 특성상 교환 및 환불은 불가능합니다.",
+            "price": "100000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/179240035537446f4a50fa86975f36f6169b051abc06d8ed693428951c4ee593fb02204ea308e0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-19T08:44:35.778Z",
-            "boostedAt": "2026-10-19T08:44:35.774Z",
+            "createdAt": "2026-10-19T09:02:12.748Z",
+            "boostedAt": "2026-10-19T09:02:12.747Z",
             "region": {
-              "name": "관문동"
+              "name": "마도면"
+            },
+            "category": null,
+            "tradingCoordinates": []
+          },
+          {
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt35v5c-a2bs-15%EC%9D%B8%EC%B9%98-1wqn5dbu63rz/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt35v5c-a2bs-15%EC%9D%B8%EC%B9%98-1wqn5dbu63rz/",
+            "title": "삼성 노트북 NT35V5C-A2BS 15인치",
+            "content": "삼성 노트북 NT35V5C-A2BS 15인치 모델입니다. \n15인치 화면과 AMD A6-4500M 프로세서, 8GB RAM, SSD 128GB을 탑재하고 있어요. \n사진에서 보이는 구성품 그대로 보내드려요. 연식은 있지만 영상 시청이나 문서 작업 등 일상적인 용도로 사용하기 좋습니다.\n\n직거래 및 택배 배송 가능 합니다.\n* 택배 배송 원하시면 '바로구매' 누르시고 진행 하시면 당근택배로 보내 드립니다.\n",
+            "price": "140000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202609/74d9c965-9a68-4a7f-9ed9-cd353e16c707.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-09-13T09:37:16.399Z",
+            "boostedAt": "2026-10-19T09:04:12.249Z",
+            "region": {
+              "name": "산본동"
             },
             "category": null,
             "tradingCoordinates": [
               {
-                "latitude": 35.89909699919191,
-                "longitude": 128.54476046673398
+                "latitude": 37.37256423284286,
+                "longitude": 126.94319905494518
               }
             ]
           },
           {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-15%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-xa4psqwyv6pa/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-15%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-xa4psqwyv6pa/",
-            "title": "삼성 노트북 15인치 화이트",
-            "content": "삼성 노트북 15인치 화이트 색상입니다. 깔끔한 디자인으로 어디서든 사용하기 좋아요. 사진에서 보이는 구성품 그대로 드립니다. 새 제품 가격보다 훨씬 저렴하게 가져가세요. 이 노트북으로 당신의 일상을 더욱 편리하게 만들어보세요. 정상작동 되구요 쿨거 하실분만 연락 주세요 네고 가능",
-            "price": "100000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/1792399100645912f910752180eefd9a735e9d7f582df257c6e7005fa388e1b7989f9c1dec6510.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%ED%99%94%EC%9D%B4%ED%8A%B8-%EB%85%B8%ED%8A%B8%EB%B6%81-oo9i4ycyzcgk/",
+            "href": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%ED%99%94%EC%9D%B4%ED%8A%B8-%EB%85%B8%ED%8A%B8%EB%B6%81-oo9i4ycyzcgk/",
+            "title": "LG 그램 화이트 노트북",
+            "content": "2026년 10월 10일 정상작동 되는거 확인 후\n초기화까지 완료한 LG 그램 노트북 판매해요.\n\n외관상 큰 찍힘이나 기스 없이 깔끔하게 사용하였고 노트북 뒤, 화면에는 필름이 부착되어있어 제거하시고 사용하셔도 됩니다.\n\n* 모델명: 13Z950-LR1SK\n* 화면 크기: 13.3인치\n* CPU: Intel Pentium 3825U\n* RAM: 4GB\n* SSD: 256GB\n* 그래픽: Intel HD Graphics\n* 운영체제: Windows 10 Home\n\n윈도우 10 홈이 설치되어 있어 바로 사용 가능합니다. 가볍고 휴대하기 좋은 노트북으로 문서 작업이나 웹 서핑에 적합해요.\n\n배터리 완충은 40분이면 되긴 하지만\n소진은 빨라서 충전기를 꼽고 사용하셔야 할거에요.\n\n구성품: LG정품 충전기, LG정품 노트북 가죽 케이스, LG 랜어댑터 새거, 쿠션감 좋은 노트북 케이스, 키보드 자판커버\n\n중고이다보니 사용감 있지만 큰 하자는 없습니다.",
+            "price": "160000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/1791693220335d4f33eb96184ecf15b0faeab63a1baae0479ad6cea0ae5982d13bc9fe8e637650.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-19T08:47:31.153Z",
-            "boostedAt": "2026-10-19T08:47:31.152Z",
+            "createdAt": "2026-10-11T04:44:39.324Z",
+            "boostedAt": "2026-10-19T03:04:11.083Z",
             "region": {
-              "name": "주안1동"
+              "name": "단봉동"
             },
             "category": null,
-            "tradingCoordinates": []
-          },
-          {
-            "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-lg14z960-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%AC%B4%EC%84%A0-%EB%A7%88%EC%9A%B0%EC%8A%A4-%ED%8F%AC%ED%95%A8-hqq8r5d64dyj/",
-            "href": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-lg14z960-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%AC%B4%EC%84%A0-%EB%A7%88%EC%9A%B0%EC%8A%A4-%ED%8F%AC%ED%95%A8-hqq8r5d64dyj/",
-            "title": "LG 그램 LG14z960 노트북 (무선 마우스 포함)",
-            "content": "모델명 LG14z960\n외관 ㆍ내관 상태 A급\n작동 상태  A급 \n무선 마우스 \n가격 150,000",
-            "price": "150000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/b586f3b4-eb31-4611-bc31-7584eb8289a1.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": false,
-            "createdAt": "2026-10-14T01:02:00.918Z",
-            "boostedAt": "2026-10-16T01:41:07.008Z",
-            "region": {
-              "name": "관양1동"
-            },
-            "category": null,
-            "tradingCoordinates": []
+            "tradingCoordinates": [
+              {
+                "latitude": 37.47933662425752,
+                "longitude": 129.12203085579677
+              }
+            ]
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-10-19T08:44:35.778Z\",\"boostedAt\":\"2026-10-19T08:44:35.774Z\",\"region\":{\"name\":\"관문동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-19T08:47:31.153Z\",\"boostedAt\":\"2026-10-19T08:47:31.152Z\",\"region\":{\"name\":\"주안1동\"},\"category\":null,\"tradingCoo",
+          "createdAt\":\"2026-10-19T09:02:12.748Z\",\"boostedAt\":\"2026-10-19T09:02:12.747Z\",\"region\":{\"name\":\"마도면\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-09-13T09:37:16.399Z\",\"boostedAt\":\"2026-10-19T09:04:12.249Z\",\"region\":{\"name\":\"산본동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-11T04:44:39.324Z\",\"boostedAt\":\"2026-10-19T03:04:11.083Z\",\"region\":{\"name\":\"단봉동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-14T01:02:00.918Z\",\"boostedAt\":\"2026-10-16T01:41:07.008Z\",\"region\":{\"name\":\"관양1동\"},\"category\":null,\"tradingCoo",
-          "createdAt\":\"2026-10-19T08:43:54.684Z\",\"boostedAt\":\"2026-10-19T08:43:54.678Z\",\"region\":{\"name\":\"효자5동\"},\"category\":null,\"tradingCoo",
-          "createdAt\":\"2026-10-11T04:44:39.324Z\",\"boostedAt\":\"2026-10-19T03:04:11.083Z\",\"region\":{\"name\":\"단봉동\"},\"category\":null,\"tradingCoor"
+          "createdAt\":\"2026-10-17T03:31:28.955Z\",\"boostedAt\":\"2026-10-19T09:22:46.523Z\",\"region\":{\"name\":\"파장동\"},\"category\":null,\"tradingCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":259,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 노트북 NT50EBZ-AD1A\",\"descript",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":260,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"점퍼 노트북 판매합니다.\",\"description\":\"",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -127,14 +132,14 @@
         ]
       }
     },
-    "searchUniqueListings": 1261,
+    "searchUniqueListings": 1254,
     "globalUniqueListings": 470,
-    "duplicateListingsRemoved": 791,
-    "detailQueueStart": 13,
-    "freshDetailTasks": 13,
+    "duplicateListingsRemoved": 784,
+    "detailQueueStart": 10,
+    "freshDetailTasks": 10,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 13,
-    "detailSucceeded": 13,
+    "detailRequestsExecuted": 10,
+    "detailSucceeded": 10,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
@@ -144,7 +149,7 @@
     "postedAtResolvedFromSearch": 470,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 1,
-    "scanDurationMs": 94948,
+    "scanDurationMs": 90295,
     "cities": [
       {
         "city": "군포시",
@@ -156,8 +161,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 290,
-        "durationMs": 12508
+        "uniqueListings": 287,
+        "durationMs": 12104
       },
       {
         "city": "의왕시",
@@ -172,8 +177,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 375,
-        "durationMs": 25690
+        "uniqueListings": 370,
+        "durationMs": 25429
       },
       {
         "city": "안양시",
@@ -190,8 +195,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 337,
-        "durationMs": 35183
+        "uniqueListings": 338,
+        "durationMs": 35166
       },
       {
         "city": "과천시",
@@ -203,7 +208,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 259,
-        "durationMs": 6252
+        "durationMs": 6112
       }
     ],
     "finalCandidateCount": 1,
@@ -212,43 +217,43 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 94953
+    "durationMs": 90303
   },
   "candidates": [
     {
-      "id": "32fkn1zjh856",
-      "changeType": "price_drop",
-      "previousPrice": 110000,
-      "price": 100000,
-      "priceDropPercent": 9.1,
-      "city": "안양시",
-      "location": "안양동",
-      "regionPath": "경기도 안양시 동안구 안양동",
-      "title": "삼성 노트북 13인치 램8 128G, 충전기 포함",
-      "modelHint": "삼성 노트북 13인치 램8 128G, 충전기 포함",
-      "cpuHint": null,
+      "id": "uww2idndub4k",
+      "changeType": "new",
+      "previousPrice": null,
+      "price": 2000000,
+      "priceDropPercent": null,
+      "city": "의왕시",
+      "location": "왕곡동",
+      "regionPath": "경기도 의왕시 왕곡동",
+      "title": "게이밍 노트북 기가바이트 에어로 X16 (라이젠 AI 7 / RTX 5070 / 32GB / 1TB)",
+      "modelHint": "게이밍 노트북 기가바이트 에어로 X16 (라이젠 AI 7 / RTX 5070 / 32GB / 1TB)",
+      "cpuHint": "Ryzen AI 7 350",
       "cpuBaselinePass": null,
-      "gpuHint": null,
+      "gpuHint": "RTX 5070",
       "vramGB": null,
-      "ramGB": null,
-      "ambiguousMemoryGB": 128,
-      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": null,
+      "ramGB": 32,
+      "ambiguousMemoryGB": 32,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "RAM: 32GB",
       "vramEvidence": null,
-      "ambiguousMemoryEvidence": "128G",
-      "storageGB": null,
-      "llmCapability": "SPEC_CHECK_REQUIRED",
-      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
-      "specConfidence": "needs_review",
-      "postedAt": "2026-10-13T08:32:19.139Z",
-      "boostedAt": "2026-10-19T08:29:01.531Z",
+      "ambiguousMemoryEvidence": "32GB",
+      "storageGB": 1024,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "specConfidence": "confirmed",
+      "postedAt": "2026-10-19T08:55:04.230Z",
+      "boostedAt": "2026-10-19T08:55:04.228Z",
       "status": "Ongoing",
-      "description": "삼성 노트북 판매해요. (NT900XG)\n램8, SSD128 윈도우11\n13인치 충전기, 파우치 함께 드립니다\n배터리 양호\n사용감있지만 편하게 쓰실 분 연락주세요",
-      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-13%EC%9D%B8%EC%B9%98-%EB%9E%A88-128g-%EC%B6%A9%EC%A0%84%EA%B8%B0-%ED%8F%AC%ED%95%A8-32fkn1zjh856/",
+      "description": "올해 2026년 1월 7일 쿠팡 로켓배송으로 정식 구매한 기가바이트 에어로 X16 루나화이트 모델 판매합니다. 박스풀셋\n\n업자사절\n\n덮어두고 해외출장갈때 2번정도 가져가고 미사용으로 판매합니다.\n데탑만 사용중 \n\n출시 초기 Free DOS(운영체제 미포함) 모델로 구매했으나, 현재 윈도우 정품설치 완료되어 있어 가져가셔서 바로 사용하시면 됩니다. 최신 라이젠 AI 300 시리즈 CPU와 RTX 5070 조합이라 고사양 작업(영상 편집, 그래픽, 다중 작업) 및 최신 게임 모두 쾌적하게 돌아갑니다. 모니터 OLED 에요\n\n1. 상세 스펙\n- 모델명: GIGABYTE AERO X16 1WH (1WH93KRC64D)\n- 색상: 루나화이트 (Lunar White)\n- CPU: AMD Ryzen AI 7 350 (w/ Radeon 860M 내장그래픽)\n- 외장 그래픽: NVIDIA GeForce RTX 5070 Laptop GPU (8GB)\n- RAM: 32GB (DDR5 5600 MT/s)\n- SSD: 1TB (실사용 가용 용량 954GB)\n\n2. 제품 상태 및 구성품\n- 무상보증 3년플랜포함\n- 외관 및 기능 상태: 실내에서만 거치해 두고 사용하여 찍힘이나 기스 없이 깔끔하며 기능 이상 전혀 없습니다.\n외부 ppf 필름 부착\n- 구성품: 본체, 순정 충전기, 구매 박스 풀박스 보유 중입니다.\n- 거래 방식: 고가의 전자제품인 만큼 직접 상태 확인하시고 거래하는 직거래 선호합니다.",
+      "url": "https://www.daangn.com/kr/buy-sell/%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%EA%B8%B0%EA%B0%80%EB%B0%94%EC%9D%B4%ED%8A%B8-%EC%97%90%EC%96%B4%EB%A1%9C-x16-%EB%9D%BC%EC%9D%B4%EC%A0%A0-ai-7-rtx-5070-32gb-1tb-uww2idndub4k/",
       "favoriteCount": 0,
       "chatCount": 0,
-      "sellerName": "블랙커피",
-      "mannerTemperature": 46
+      "sellerName": "코린이",
+      "mannerTemperature": 39
     }
   ]
 }
