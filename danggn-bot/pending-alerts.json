@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-19T09:32:26.633883Z",
+  "updatedAt": "2026-10-19T10:12:36.557463Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -7705,9 +7705,9 @@
     "syhqhfssxscp": {
       "id": "syhqhfssxscp",
       "title": "LG 그램 노트북15,6인치  i3-1220P 16GB 250gb",
-      "price": 350000,
-      "previousPrice": null,
-      "changeType": "new",
+      "price": 320000,
+      "previousPrice": 350000,
+      "changeType": "price_drop",
       "city": "안양시",
       "location": "석수동",
       "cpuHint": null,
@@ -7725,7 +7725,7 @@
       "postedAt": "2026-10-18T07:47:06.869Z",
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%8115-6%EC%9D%B8%EC%B9%98-i3-1220p-16gb-250gb-syhqhfssxscp/",
       "firstAlertedAt": "2026-10-18T08:02:05.389397Z",
-      "lastCandidateAt": "2026-10-18T08:02:05.389397Z"
+      "lastCandidateAt": "2026-10-19T10:12:36.557463Z"
     },
     "fbdrzagdijzz": {
       "id": "fbdrzagdijzz",
@@ -8301,6 +8301,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%EA%B8%B0%EA%B0%80%EB%B0%94%EC%9D%B4%ED%8A%B8-%EC%97%90%EC%96%B4%EB%A1%9C-x16-%EB%9D%BC%EC%9D%B4%EC%A0%A0-ai-7-rtx-5070-32gb-1tb-uww2idndub4k/",
       "firstAlertedAt": "2026-10-19T09:32:26.633883Z",
       "lastCandidateAt": "2026-10-19T09:32:26.633883Z"
+    },
+    "vg37d69duu7i": {
+      "id": "vg37d69duu7i",
+      "title": "LG 그램 14ZD980 싸게 팝니다",
+      "price": 420000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "석수동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "RAM: 16GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-19T09:42:01.034Z",
+      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-14zd980-%EC%8B%B8%EA%B2%8C-%ED%8C%9D%EB%8B%88%EB%8B%A4-vg37d69duu7i/",
+      "firstAlertedAt": "2026-10-19T10:12:36.557463Z",
+      "lastCandidateAt": "2026-10-19T10:12:36.557463Z"
     }
   }
 }
