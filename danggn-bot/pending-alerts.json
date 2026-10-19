@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-19T00:22:29.292959Z",
+  "updatedAt": "2026-10-19T01:02:30.512591Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -8076,6 +8076,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EC%95%A0%ED%94%8C-%EB%A7%A5%EB%B6%81-m3-max-64gb-16%EC%9D%B8%EC%B9%98-skxmsypizu6i/",
       "firstAlertedAt": "2026-10-18T23:32:27.486950Z",
       "lastCandidateAt": "2026-10-18T23:32:27.486950Z"
+    },
+    "9spun54t4a6v": {
+      "id": "9spun54t4a6v",
+      "title": "ASUS TUF 게이밍 노트북 FA506QR, 라이젠7·RTX 3070",
+      "price": 790000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "과천시",
+      "location": "갈현동",
+      "cpuHint": null,
+      "gpuHint": "RTX 3070",
+      "vramGB": 8,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "램 16GB",
+      "vramEvidence": "VRAM 8GB",
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-19T00:47:42.044Z",
+      "url": "https://www.daangn.com/kr/buy-sell/asus-tuf-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-fa506qr-%EB%9D%BC%EC%9D%B4%EC%A0%A07-rtx-3070-9spun54t4a6v/",
+      "firstAlertedAt": "2026-10-19T01:02:30.512591Z",
+      "lastCandidateAt": "2026-10-19T01:02:30.512591Z"
     }
   }
 }
