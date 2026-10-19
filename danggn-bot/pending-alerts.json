@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-19T14:37:03.011485Z",
+  "updatedAt": "2026-10-19T15:09:26.867850Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -8451,6 +8451,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/apple-2025-%EB%A7%A5%EB%B6%81-%EC%97%90%EC%96%B4-15-m4%EC%8B%A4%EB%B2%84-otj7iqqu25pm/",
       "firstAlertedAt": "2026-10-19T14:37:03.011485Z",
       "lastCandidateAt": "2026-10-19T14:37:03.011485Z"
+    },
+    "ok4mhtm5s6p3": {
+      "id": "ok4mhtm5s6p3",
+      "title": "맥스튜디오 M4 MAX 36GB/ 512GB",
+      "price": 3100000,
+      "previousPrice": 3200000,
+      "changeType": "price_drop",
+      "city": "의왕시",
+      "location": "고천동",
+      "cpuHint": "Apple M4 Max",
+      "gpuHint": "Apple M4 Max",
+      "vramGB": null,
+      "ramGB": 36,
+      "ambiguousMemoryGB": 36,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "36GB 통합 메모리",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "36GB",
+      "storageGB": 512,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "postedAt": "2026-10-04T09:22:55.540Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4-m4-max-36gb-512gb-ok4mhtm5s6p3/",
+      "firstAlertedAt": "2026-10-19T15:09:26.867850Z",
+      "lastCandidateAt": "2026-10-19T15:09:26.867850Z"
     }
   }
 }
