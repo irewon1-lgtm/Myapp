@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-19T19:02:17.415917Z",
+  "updatedAt": "2026-10-19T19:42:19.669267Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -5529,28 +5529,28 @@
     },
     "yiunukgb2os8": {
       "id": "yiunukgb2os8",
-      "title": "기가바이트 게이밍 A16 노트북 (RTX 5070)",
-      "price": 1900000,
-      "previousPrice": null,
-      "changeType": "new",
+      "title": "기가바이트 게이밍 A16(RTX 5070/32GB)",
+      "price": 1850000,
+      "previousPrice": 1900000,
+      "changeType": "price_drop",
       "city": "안양시",
       "location": "호계동",
       "cpuHint": null,
       "gpuHint": "RTX 5070",
       "vramGB": null,
       "ramGB": 32,
-      "ambiguousMemoryGB": null,
+      "ambiguousMemoryGB": 32,
       "hardwareReviewStatus": "PASS_RAM",
       "ramEvidence": "32GB RAM",
       "vramEvidence": null,
-      "ambiguousMemoryEvidence": null,
+      "ambiguousMemoryEvidence": "/32GB",
       "storageGB": null,
       "llmCapability": "WORK_DEV_RAM32",
       "llmReason": "RAM 32GB 이상 확정 후보",
       "postedAt": "2026-10-15T01:56:01.727Z",
-      "url": "https://www.daangn.com/kr/buy-sell/%EA%B8%B0%EA%B0%80%EB%B0%94%EC%9D%B4%ED%8A%B8-%EA%B2%8C%EC%9D%B4%EB%B0%8D-a16-%EB%85%B8%ED%8A%B8%EB%B6%81-rtx-5070-yiunukgb2os8/",
+      "url": "https://www.daangn.com/kr/buy-sell/%EA%B8%B0%EA%B0%80%EB%B0%94%EC%9D%B4%ED%8A%B8-%EA%B2%8C%EC%9D%B4%EB%B0%8D-a16-rtx-5070-32gb-yiunukgb2os8/",
       "firstAlertedAt": "2026-10-15T02:12:22.268716Z",
-      "lastCandidateAt": "2026-10-15T02:12:22.268716Z"
+      "lastCandidateAt": "2026-10-19T19:42:19.669267Z"
     },
     "mn75weky54dx": {
       "id": "mn75weky54dx",
@@ -5705,9 +5705,9 @@
     "o7ufx9vpz2rj": {
       "id": "o7ufx9vpz2rj",
       "title": "MSI GF65 게이밍 노트북 (i7 / 16GB / 512GB)",
-      "price": 600000,
-      "previousPrice": null,
-      "changeType": "new",
+      "price": 580000,
+      "previousPrice": 600000,
+      "changeType": "price_drop",
       "city": "안양시",
       "location": "관양1동",
       "cpuHint": "i7-9750H",
@@ -5725,7 +5725,7 @@
       "postedAt": "2026-10-15T05:20:10.592Z",
       "url": "https://www.daangn.com/kr/buy-sell/msi-gf65-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-i7-16gb-512gb-o7ufx9vpz2rj/",
       "firstAlertedAt": "2026-10-15T05:25:33.380992Z",
-      "lastCandidateAt": "2026-10-15T05:25:33.380992Z"
+      "lastCandidateAt": "2026-10-19T19:42:19.669267Z"
     },
     "jdhxnahwobey": {
       "id": "jdhxnahwobey",
