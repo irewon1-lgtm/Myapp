@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-19T14:12:31.817551Z",
+  "updatedAt": "2026-10-19T14:37:03.011485Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -8426,6 +8426,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt870z5g-x28-koudq3k6fb5i/",
       "firstAlertedAt": "2026-10-19T13:32:34.469601Z",
       "lastCandidateAt": "2026-10-19T13:32:34.469601Z"
+    },
+    "otj7iqqu25pm": {
+      "id": "otj7iqqu25pm",
+      "title": "Apple 2025 맥북 에어 15 M4실버",
+      "price": 1300000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "금정동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-19T14:28:27.790Z",
+      "url": "https://www.daangn.com/kr/buy-sell/apple-2025-%EB%A7%A5%EB%B6%81-%EC%97%90%EC%96%B4-15-m4%EC%8B%A4%EB%B2%84-otj7iqqu25pm/",
+      "firstAlertedAt": "2026-10-19T14:37:03.011485Z",
+      "lastCandidateAt": "2026-10-19T14:37:03.011485Z"
     }
   }
 }
