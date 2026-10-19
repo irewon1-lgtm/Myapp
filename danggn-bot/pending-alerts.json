@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-19T01:42:34.826730Z",
+  "updatedAt": "2026-10-19T01:45:24.452240Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -8101,6 +8101,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/asus-tuf-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-fa506qr-%EB%9D%BC%EC%9D%B4%EC%A0%A07-rtx-3070-9spun54t4a6v/",
       "firstAlertedAt": "2026-10-19T01:02:30.512591Z",
       "lastCandidateAt": "2026-10-19T01:02:30.512591Z"
+    },
+    "kjjgy9rq7g3o": {
+      "id": "kjjgy9rq7g3o",
+      "title": "Apple MacBook Air M3 15인치 16GB",
+      "price": 1300000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "호현동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": 256,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-19T01:41:35.581Z",
+      "url": "https://www.daangn.com/kr/buy-sell/apple-macbook-air-m3-15%EC%9D%B8%EC%B9%98-16gb-kjjgy9rq7g3o/",
+      "firstAlertedAt": "2026-10-19T01:45:24.452240Z",
+      "lastCandidateAt": "2026-10-19T01:45:24.452240Z"
     }
   }
 }
