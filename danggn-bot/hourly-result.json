@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-19T22:12:22.149Z",
+  "generatedAt": "2026-10-19T22:52:17.097Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -116,10 +116,10 @@
           "createdAt\":\"2026-10-11T04:44:39.324Z\",\"boostedAt\":\"2026-10-19T03:04:11.083Z\",\"region\":{\"name\":\"단봉동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-14T01:02:00.918Z\",\"boostedAt\":\"2026-10-16T01:41:07.008Z\",\"region\":{\"name\":\"관양1동\"},\"category\":null,\"tradingCoo",
           "createdAt\":\"2026-10-19T11:43:58.860Z\",\"boostedAt\":\"2026-10-19T11:43:58.857Z\",\"region\":{\"name\":\"인덕원동\"},\"category\":null,\"tradingCoo",
-          "createdAt\":\"2026-09-17T10:23:52.883Z\",\"boostedAt\":\"2026-10-19T22:09:26.324Z\",\"region\":{\"name\":\"입장면\"},\"category\":null,\"tradingCoor"
+          "createdAt\":\"2026-10-19T13:34:21.091Z\",\"boostedAt\":\"2026-10-19T13:34:21.088Z\",\"region\":{\"name\":\"마장면\"},\"category\":null,\"tradingCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":257,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"깨끗한 7세대 LG 노트북 i3-7100 판매합니다\",",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":258,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"깨끗한 7세대 LG 노트북 i3-7100 판매합니다\",",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -127,24 +127,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1361,
-    "globalUniqueListings": 554,
-    "duplicateListingsRemoved": 807,
-    "detailQueueStart": 6,
-    "freshDetailTasks": 6,
+    "searchUniqueListings": 1320,
+    "globalUniqueListings": 521,
+    "duplicateListingsRemoved": 799,
+    "detailQueueStart": 2,
+    "freshDetailTasks": 2,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 6,
-    "detailSucceeded": 6,
+    "detailRequestsExecuted": 2,
+    "detailSucceeded": 2,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 554,
+    "postedAtResolvedFromSearch": 521,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 1,
-    "scanDurationMs": 85748,
+    "candidateCount": 0,
+    "scanDurationMs": 81775,
     "cities": [
       {
         "city": "군포시",
@@ -156,8 +156,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 293,
-        "durationMs": 12115
+        "uniqueListings": 294,
+        "durationMs": 12268
       },
       {
         "city": "의왕시",
@@ -172,8 +172,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 376,
-        "durationMs": 25725
+        "uniqueListings": 370,
+        "durationMs": 25938
       },
       {
         "city": "안양시",
@@ -190,8 +190,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 432,
-        "durationMs": 34909
+        "uniqueListings": 396,
+        "durationMs": 35364
       },
       {
         "city": "과천시",
@@ -203,52 +203,16 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 260,
-        "durationMs": 6252
+        "durationMs": 6542
       }
     ],
-    "finalCandidateCount": 1,
+    "finalCandidateCount": 0,
     "stateItemCount": 5000,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 85757
+    "durationMs": 81783
   },
-  "candidates": [
-    {
-      "id": "qk8jegdir37j",
-      "changeType": "price_drop",
-      "previousPrice": 900000,
-      "price": 850000,
-      "priceDropPercent": 5.6,
-      "city": "군포시",
-      "location": "금정동",
-      "regionPath": "경기도 군포시 금정동",
-      "title": "갤럭시북4 15.6인치 NT750XGQ   NT750XGR상위",
-      "modelHint": "갤럭시북4 15.6인치 NT750XGQ   NT750XGR상위",
-      "cpuHint": null,
-      "cpuBaselinePass": null,
-      "gpuHint": null,
-      "vramGB": null,
-      "ramGB": 16,
-      "ambiguousMemoryGB": null,
-      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": "램 16기가",
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": null,
-      "storageGB": null,
-      "llmCapability": "SPEC_CHECK_REQUIRED",
-      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
-      "specConfidence": "needs_review",
-      "postedAt": "2026-10-17T15:47:03.595Z",
-      "boostedAt": "2026-10-19T22:04:15.381Z",
-      "status": "Ongoing",
-      "description": "삼성 갤럭시북4 15.6인치입니다(숫자패드 o)\n주로 거래되는  nt750xgr보다 상위모델입니다\n\n모델명  NT750XGQ AD51S  ( NT750XGR 상위)\nCPU     인텔 Core5 120U       (14세대)\n램          16기가\nSSD      512기가                      (256업글)\n색상      실버\n\nSSD 512 업글 및 CPU 업글버전으로 구매했습니다\n상태 좋으며 데스크탑 구매하여 판매합니다\n박스 풀(충전기 박스 본체) 및 파우치, 마우스 같이드려요\n\n직거래 장소 협의\n안양 수원",
-      "url": "https://www.daangn.com/kr/buy-sell/%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%814-15-6%EC%9D%B8%EC%B9%98-nt750xgq-nt750xgr%EC%83%81%EC%9C%84-qk8jegdir37j/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "태로조",
-      "mannerTemperature": 49
-    }
-  ]
+  "candidates": []
 }
