@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-19T18:22:18.819Z",
+  "generatedAt": "2026-10-19T19:02:17.355Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,6 +55,28 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
+            "id": "/kr/buy-sell/%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-15%EC%9D%B8%EC%B9%98-2018-i7-hxr9mxdz9py4/",
+            "href": "/kr/buy-sell/%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-15%EC%9D%B8%EC%B9%98-2018-i7-hxr9mxdz9py4/",
+            "title": "맥북 프로 15인치 2018 i7",
+            "content": "모델: MacBook Pro 15 (2018)\nCPU: i7-8750H (6C 12T)\nRAM: 16GB\nSSD: 256GB\nGPU: Radeon Pro 555X (외장그래픽)\n배터리 상태: 사이클 312회 (서비스 권장)\n\n외관 상태는 완벽하진 않지만 깔끔해요!\n화면과 키보드 문제 없습니다.\n연식 대비 관리는 잘 되어있습니다!\n기능상 문제 전혀 없습니다!\n중고 구매 후 자주 사용하지 않아 판매합니다.",
+            "price": "330000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/17924358577916ef22a921e6b601943537212e15a683967b9463771e6c9b9a7e4a8d49630f2580.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-10-19T18:59:56.152Z",
+            "boostedAt": "2026-10-19T18:59:56.150Z",
+            "region": {
+              "name": "삼동"
+            },
+            "category": null,
+            "tradingCoordinates": [
+              {
+                "latitude": 37.323515141702366,
+                "longitude": 126.95549610062517
+              }
+            ]
+          },
+          {
             "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-i7-7500u-8gb-256gb-zb8b8g5noece/",
             "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-i7-7500u-8gb-256gb-zb8b8g5noece/",
             "title": "삼성 노트북 i7-7500U 8GB 256GB",
@@ -67,23 +89,6 @@
             "boostedAt": "2026-10-19T18:11:28.820Z",
             "region": {
               "name": "성정2동"
-            },
-            "category": null,
-            "tradingCoordinates": []
-          },
-          {
-            "id": "/kr/buy-sell/hp-%EA%B3%A0%EA%B8%89%ED%98%95-%EB%85%B8%ED%8A%B8%EB%B6%81-15%EC%9D%B8%EC%B9%98-%ED%95%9C%EA%B8%80%EC%98%A4%ED%94%BC%EC%8A%A4-%EC%97%91%EC%85%80-9izw1j5q57ys/",
-            "href": "/kr/buy-sell/hp-%EA%B3%A0%EA%B8%89%ED%98%95-%EB%85%B8%ED%8A%B8%EB%B6%81-15%EC%9D%B8%EC%B9%98-%ED%95%9C%EA%B8%80%EC%98%A4%ED%94%BC%EC%8A%A4-%EC%97%91%EC%85%80-9izw1j5q57ys/",
-            "title": "HP 고급형 노트북 15인치 &한글오피스 엑셀",
-            "content": "👉한글오피스 엑셀도 다깔려있으며 \n속도는 엄청빨라서 영상이나 보시는데\n지장 없으시고 음성도 최고입니다\n\n밧데리는 방전이라서 꼽고사용하셔야 합니다\nHP 엘리트북 840 노트북으로, 시스템 화면에 인텔 코어 i7-620M 프로세서가 표시돼 있어요.\n메모리는 4GB, 시스템 종류는 64비트로 표시돼요.\n실버색 본체에 검은색 키보드와 화면 테두리가 있는 디자인이에요.\n웹 영상 시청이나 문서 작업용 노트북을 찾는 분께 추천해요.",
-            "price": "80000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/de1b5f1c-e6c1-4a92-bd81-60c977946fbf.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-19T18:03:54.769Z",
-            "boostedAt": "2026-10-19T18:03:54.764Z",
-            "region": {
-              "name": "학성동"
             },
             "category": null,
             "tradingCoordinates": []
@@ -107,14 +112,14 @@
           }
         ],
         "dateFieldSnippets": [
+          "createdAt\":\"2026-10-19T18:59:56.152Z\",\"boostedAt\":\"2026-10-19T18:59:56.150Z\",\"region\":{\"name\":\"삼동\"},\"category\":null,\"tradingCoord",
           "createdAt\":\"2026-10-19T18:11:28.823Z\",\"boostedAt\":\"2026-10-19T18:11:28.820Z\",\"region\":{\"name\":\"성정2동\"},\"category\":null,\"tradingCoo",
-          "createdAt\":\"2026-10-19T18:03:54.769Z\",\"boostedAt\":\"2026-10-19T18:03:54.764Z\",\"region\":{\"name\":\"학성동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-14T01:02:00.918Z\",\"boostedAt\":\"2026-10-16T01:41:07.008Z\",\"region\":{\"name\":\"관양1동\"},\"category\":null,\"tradingCoo",
-          "createdAt\":\"2026-10-19T11:43:58.860Z\",\"boostedAt\":\"2026-10-19T11:43:58.857Z\",\"region\":{\"name\":\"인덕원동\"},\"category\":null,\"tradingCoo",
-          "createdAt\":\"2026-10-19T16:55:51.490Z\",\"boostedAt\":\"2026-10-19T16:55:51.490Z\",\"region\":{\"name\":\"거제동\"},\"category\":null,\"tradingCoor"
+          "createdAt\":\"2026-10-11T04:44:39.324Z\",\"boostedAt\":\"2026-10-19T03:04:11.083Z\",\"region\":{\"name\":\"단봉동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-19T11:43:58.860Z\",\"boostedAt\":\"2026-10-19T11:43:58.857Z\",\"region\":{\"name\":\"인덕원동\"},\"category\":null,\"tradingCoo"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":255,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 노트북 i7-7500U 8GB 256GB\",\"de",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":254,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"맥북 프로 15인치 2018 i7\",\"descripti",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -122,24 +127,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1339,
-    "globalUniqueListings": 548,
-    "duplicateListingsRemoved": 791,
-    "detailQueueStart": 2,
-    "freshDetailTasks": 2,
+    "searchUniqueListings": 1353,
+    "globalUniqueListings": 541,
+    "duplicateListingsRemoved": 812,
+    "detailQueueStart": 1,
+    "freshDetailTasks": 1,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 2,
-    "detailSucceeded": 2,
+    "detailRequestsExecuted": 1,
+    "detailSucceeded": 1,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 548,
+    "postedAtResolvedFromSearch": 541,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 0,
-    "scanDurationMs": 81086,
+    "candidateCount": 1,
+    "scanDurationMs": 79811,
     "cities": [
       {
         "city": "군포시",
@@ -151,8 +156,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 293,
-        "durationMs": 12318
+        "uniqueListings": 289,
+        "durationMs": 12058
       },
       {
         "city": "의왕시",
@@ -167,8 +172,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 373,
-        "durationMs": 25397
+        "uniqueListings": 377,
+        "durationMs": 25589
       },
       {
         "city": "안양시",
@@ -185,8 +190,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 414,
-        "durationMs": 35227
+        "uniqueListings": 427,
+        "durationMs": 35044
       },
       {
         "city": "과천시",
@@ -197,17 +202,53 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 259,
-        "durationMs": 6448
+        "uniqueListings": 260,
+        "durationMs": 6302
       }
     ],
-    "finalCandidateCount": 0,
+    "finalCandidateCount": 1,
     "stateItemCount": 5000,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 81094
+    "durationMs": 79818
   },
-  "candidates": []
+  "candidates": [
+    {
+      "id": "hxr9mxdz9py4",
+      "changeType": "new",
+      "previousPrice": null,
+      "price": 320000,
+      "priceDropPercent": null,
+      "city": "의왕시",
+      "location": "삼동",
+      "regionPath": "경기도 의왕시 삼동",
+      "title": "맥북 프로 15인치 2018 i7",
+      "modelHint": "맥북 프로 15인치 2018 i7",
+      "cpuHint": "i7-8750H",
+      "cpuBaselinePass": null,
+      "gpuHint": "Radeon Pro 555X",
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "RAM: 16GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 256,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "specConfidence": "needs_review",
+      "postedAt": "2026-10-19T18:59:56.152Z",
+      "boostedAt": "2026-10-19T18:59:56.150Z",
+      "status": "Ongoing",
+      "description": "모델: MacBook Pro 15 (2018)\nCPU: i7-8750H (6C 12T)\nRAM: 16GB\nSSD: 256GB\nGPU: Radeon Pro 555X (외장그래픽)\n배터리 상태: 사이클 312회 (서비스 권장)\n\n외관 상태는 완벽하진 않지만 깔끔해요!\n화면과 키보드 문제 없습니다.\n연식 대비 관리는 잘 되어있습니다!\n기능상 문제 전혀 없습니다!\n중고 구매 후 자주 사용하지 않아 판매합니다.",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-15%EC%9D%B8%EC%B9%98-2018-i7-hxr9mxdz9py4/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "뿡뿡이",
+      "mannerTemperature": 39.6
+    }
+  ]
 }

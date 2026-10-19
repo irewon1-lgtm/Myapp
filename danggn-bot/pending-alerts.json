@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-19T18:22:18.887046Z",
+  "updatedAt": "2026-10-19T19:02:17.415917Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -8476,6 +8476,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4-m4-max-36gb-512gb-ok4mhtm5s6p3/",
       "firstAlertedAt": "2026-10-19T15:09:26.867850Z",
       "lastCandidateAt": "2026-10-19T15:09:26.867850Z"
+    },
+    "hxr9mxdz9py4": {
+      "id": "hxr9mxdz9py4",
+      "title": "맥북 프로 15인치 2018 i7",
+      "price": 320000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "의왕시",
+      "location": "삼동",
+      "cpuHint": "i7-8750H",
+      "gpuHint": "Radeon Pro 555X",
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "RAM: 16GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 256,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-19T18:59:56.152Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-15%EC%9D%B8%EC%B9%98-2018-i7-hxr9mxdz9py4/",
+      "firstAlertedAt": "2026-10-19T19:02:17.415917Z",
+      "lastCandidateAt": "2026-10-19T19:02:17.415917Z"
     }
   }
 }
