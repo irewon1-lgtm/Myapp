@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-19T22:52:17.169225Z",
+  "updatedAt": "2026-10-19T23:32:28.760389Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -8055,9 +8055,9 @@
     "skxmsypizu6i": {
       "id": "skxmsypizu6i",
       "title": "애플 맥북 m3 MAX 64GB 16인치",
-      "price": 4300000,
-      "previousPrice": null,
-      "changeType": "new",
+      "price": 4280000,
+      "previousPrice": 4300000,
+      "changeType": "price_drop",
       "city": "안양시",
       "location": "비산1동",
       "cpuHint": "m3 MAX",
@@ -8075,7 +8075,7 @@
       "postedAt": "2026-10-18T23:23:24.348Z",
       "url": "https://www.daangn.com/kr/buy-sell/%EC%95%A0%ED%94%8C-%EB%A7%A5%EB%B6%81-m3-max-64gb-16%EC%9D%B8%EC%B9%98-skxmsypizu6i/",
       "firstAlertedAt": "2026-10-18T23:32:27.486950Z",
-      "lastCandidateAt": "2026-10-18T23:32:27.486950Z"
+      "lastCandidateAt": "2026-10-19T23:32:28.760389Z"
     },
     "9spun54t4a6v": {
       "id": "9spun54t4a6v",
@@ -8501,6 +8501,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-15%EC%9D%B8%EC%B9%98-2018-i7-hxr9mxdz9py4/",
       "firstAlertedAt": "2026-10-19T19:02:17.415917Z",
       "lastCandidateAt": "2026-10-19T19:02:17.415917Z"
+    },
+    "skdu7gzrtset": {
+      "id": "skdu7gzrtset",
+      "title": "레노버 15AHP10 5060 노트북팝니다",
+      "price": 1200000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "호현동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "램 16 ",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-19T23:14:19.975Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-15ahp10-5060-%EB%85%B8%ED%8A%B8%EB%B6%81%ED%8C%9D%EB%8B%88%EB%8B%A4-skdu7gzrtset/",
+      "firstAlertedAt": "2026-10-19T23:32:28.760389Z",
+      "lastCandidateAt": "2026-10-19T23:32:28.760389Z"
     }
   }
 }
