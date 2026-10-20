@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-20T07:52:38.334863Z",
+  "updatedAt": "2026-10-20T08:32:29.684343Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -7380,9 +7380,9 @@
     "m9k88kgewe6p": {
       "id": "m9k88kgewe6p",
       "title": "델 노트북 인텔 코어 i7-9850H",
-      "price": 350000,
-      "previousPrice": null,
-      "changeType": "new",
+      "price": 330000,
+      "previousPrice": 350000,
+      "changeType": "price_drop",
       "city": "의왕시",
       "location": "부곡동",
       "cpuHint": "i7-9850H",
@@ -7400,7 +7400,7 @@
       "postedAt": "2026-10-18T00:59:17.955Z",
       "url": "https://www.daangn.com/kr/buy-sell/%EB%8D%B8-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%9D%B8%ED%85%94-%EC%BD%94%EC%96%B4-i7-9850h-m9k88kgewe6p/",
       "firstAlertedAt": "2026-10-18T01:02:01.290650Z",
-      "lastCandidateAt": "2026-10-18T01:02:01.290650Z"
+      "lastCandidateAt": "2026-10-20T08:32:29.684343Z"
     },
     "g7k8shh6eugd": {
       "id": "g7k8shh6eugd",
@@ -8626,6 +8626,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EC%97%90%EC%9D%B4%EC%88%98%EC%8A%A4-%EB%A1%9C%EA%B7%B8-%ED%94%8C%EB%A1%9C%EC%9A%B0-z13-2025-1tb-64gb-v2aeeu965ocm/",
       "firstAlertedAt": "2026-10-20T07:12:29.609977Z",
       "lastCandidateAt": "2026-10-20T07:12:29.609977Z"
+    },
+    "3ug54ayn7rqa": {
+      "id": "3ug54ayn7rqa",
+      "title": "맥북 프로 PRO 15인치 고급형 512GB 16RAM 2016 풀박스",
+      "price": 310000,
+      "previousPrice": 350000,
+      "changeType": "price_drop",
+      "city": "안양시",
+      "location": "범계동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-09-30T06:04:28.594Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-pro-15%EC%9D%B8%EC%B9%98-%EA%B3%A0%EA%B8%89%ED%98%95-512gb-16ram-2016-%ED%92%80%EB%B0%95%EC%8A%A4-3ug54ayn7rqa/",
+      "firstAlertedAt": "2026-10-20T08:32:29.684343Z",
+      "lastCandidateAt": "2026-10-20T08:32:29.684343Z"
     }
   }
 }
