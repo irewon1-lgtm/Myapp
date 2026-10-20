@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-19T23:50:28.125Z",
+  "generatedAt": "2026-10-20T00:22:24.884Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,45 +55,6 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/hp-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%9D%B8%ED%85%94-%EC%BD%94%EC%96%B4-i5-8265u-8gb-238gb-8hdyxwzv4dcw/",
-            "href": "/kr/buy-sell/hp-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%9D%B8%ED%85%94-%EC%BD%94%EC%96%B4-i5-8265u-8gb-238gb-8hdyxwzv4dcw/",
-            "title": "HP 노트북 인텔 코어 i5-8265U 8GB 238GB",
-            "content": "HP 노트북으로 인텔 코어 i5-8265U 프로세서와 8GB 메모리가 탑재되어 있어요.\n저장 공간은 238GB로 표시되어 있어요.\n검은색 본체에 숫자 키패드가 있는 구성이고, 노트북 작업용으로 사용할 수 있어요.",
-            "price": "200000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/cca17267-cf1f-486e-88ad-62673d87328c.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-19T23:46:23.532Z",
-            "boostedAt": "2026-10-19T23:46:23.530Z",
-            "region": {
-              "name": "오식도동"
-            },
-            "category": null,
-            "tradingCoordinates": [
-              {
-                "latitude": 35.96530760629999,
-                "longitude": 126.56867820003242
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/asus-rog-strix-g712lu-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-cd8tdaosoejz/",
-            "href": "/kr/buy-sell/asus-rog-strix-g712lu-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-cd8tdaosoejz/",
-            "title": "ASUS ROG Strix G712lu  게이밍 노트북",
-            "content": "노트북 설명:\n1 배터리 교체작업(100%성능복구)\n2고가 SSD 500GB*2=40만\n3CAD& Mastercam 학습용\n4구매사용시간은 3년정도지만\n   실사용시간은 1년반도안됨(보관용)\n\nCPU:인텔10세대-10750H(최대5.0Hz 👍）\n메모리: 16GB(8GB+8GB)\n그래픽: Nvidia GTX 1660Ti👍）\n모니터:17.3인치 144Hz 👍）\n하드디스크:순정NVMe SSD 512 👍）\n추가디스크: WD Blue SN500GB*2 👍）",
-            "price": "660000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/17924528755258702d328069b3938541256ea469d2b11dcfbc9cbf97dd19072f6d4ce87a643050.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Reserved",
-            "isInstantBuyAvailable": false,
-            "createdAt": "2026-10-19T23:36:17.333Z",
-            "boostedAt": "2026-10-19T23:36:17.331Z",
-            "region": {
-              "name": "산본동"
-            },
-            "category": null,
-            "tradingCoordinates": []
-          },
-          {
             "id": "/kr/buy-sell/%EA%B9%A8%EB%81%97%ED%95%9C-7%EC%84%B8%EB%8C%80-lg-%EB%85%B8%ED%8A%B8%EB%B6%81-i3-7100-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-h4wxe1hz8guv/",
             "href": "/kr/buy-sell/%EA%B9%A8%EB%81%97%ED%95%9C-7%EC%84%B8%EB%8C%80-lg-%EB%85%B8%ED%8A%B8%EB%B6%81-i3-7100-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-h4wxe1hz8guv/",
             "title": "깨끗한 7세대 LG 노트북 i3-7100 판매합니다",
@@ -109,17 +70,56 @@
             },
             "category": null,
             "tradingCoordinates": []
+          },
+          {
+            "id": "/kr/buy-sell/%EC%82%AC%EB%AC%B4%EC%9A%A9-%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-8gb-%EB%9E%A8-120gb-ssd-r365skquz9cm/",
+            "href": "/kr/buy-sell/%EC%82%AC%EB%AC%B4%EC%9A%A9-%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-8gb-%EB%9E%A8-120gb-ssd-r365skquz9cm/",
+            "title": "사무용 삼성 노트북 i5 8GB 램 120GB SSD",
+            "content": "써멀 교체까지 해서 사무용으로 좋습니다. 윈도우 10 설치 및 업데이트, 경량화 완료했습니다.",
+            "price": "90000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/bbbc430b-fa2b-4763-9fc8-6134610ad634.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-08T15:16:14.135Z",
+            "boostedAt": "2026-10-19T16:04:11.456Z",
+            "region": {
+              "name": "역삼2동"
+            },
+            "category": null,
+            "tradingCoordinates": [
+              {
+                "latitude": 37.4997598674976,
+                "longitude": 127.05095434549725
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/%EA%B9%94%EB%81%94%ED%95%9C-%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-i7-pgqots1ct6rh/",
+            "href": "/kr/buy-sell/%EA%B9%94%EB%81%94%ED%95%9C-%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-i7-pgqots1ct6rh/",
+            "title": "깔끔한 삼성 노트북 i7",
+            "content": "깔끔한 삼성 노트북 i7 입니다 . 가격:27만입니다 \n\n인텔 코어 i7-5500U 프로세서가 탑재되어 있어요.\n\n메모리는 8GB, 저장 공간은 256GB SSD 로 \n\n속도  빠르고 쾌적한 사용이 가능해요. \n\n15인치 화면으로 문서 작업 및 영상 시청에 좋아요\n\n사진에서 보시는대로  외관 생활기스외엔 \n\n액정 ,키보드 쪽은 깔끔하고 깨끗합니다 \n\n배터리 실사용  1시간 30분 -2시간 정도입니다\n\n윈10 초기화 완료 . 사무용 오피스 설치 완료\n\n바로 사용가능합니다.  \n\n충전기 + 유선 마우스 필요하시면 드릴게요",
+            "price": "200000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/1792416787273cd1bef3930af0e2ff5e6a96b8d9d1710ac1bfac32eea4cb0082eb9dcd273d5730.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-19T13:34:21.091Z",
+            "boostedAt": "2026-10-19T13:34:21.088Z",
+            "region": {
+              "name": "마장면"
+            },
+            "category": null,
+            "tradingCoordinates": []
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-10-19T23:46:23.532Z\",\"boostedAt\":\"2026-10-19T23:46:23.530Z\",\"region\":{\"name\":\"오식도동\"},\"category\":null,\"tradingCoo",
-          "createdAt\":\"2026-10-19T23:36:17.333Z\",\"boostedAt\":\"2026-10-19T23:36:17.331Z\",\"region\":{\"name\":\"산본동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-19T10:19:31.956Z\",\"boostedAt\":\"2026-10-19T10:19:31.953Z\",\"region\":{\"name\":\"송내동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-14T01:02:00.918Z\",\"boostedAt\":\"2026-10-16T01:41:07.008Z\",\"region\":{\"name\":\"관양1동\"},\"category\":null,\"tradingCoo",
-          "createdAt\":\"2026-10-19T11:43:58.860Z\",\"boostedAt\":\"2026-10-19T11:43:58.857Z\",\"region\":{\"name\":\"인덕원동\"},\"category\":null,\"tradingCoo"
+          "createdAt\":\"2026-10-08T15:16:14.135Z\",\"boostedAt\":\"2026-10-19T16:04:11.456Z\",\"region\":{\"name\":\"역삼2동\"},\"category\":null,\"tradingCoo",
+          "createdAt\":\"2026-10-19T13:34:21.091Z\",\"boostedAt\":\"2026-10-19T13:34:21.088Z\",\"region\":{\"name\":\"마장면\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-13T08:32:18.999Z\",\"boostedAt\":\"2026-10-19T08:29:01.329Z\",\"region\":{\"name\":\"도곡1동\"},\"category\":null,\"tradingCoo",
+          "createdAt\":\"2026-10-14T12:39:24.419Z\",\"boostedAt\":\"2026-10-16T21:17:31.477Z\",\"region\":{\"name\":\"역삼동\"},\"category\":null,\"tradingCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":260,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"HP 노트북 인텔 코어 i5-8265U 8GB 238G",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":264,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"깨끗한 7세대 LG 노트북 i3-7100 판매합니다\",",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -127,24 +127,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1318,
-    "globalUniqueListings": 522,
-    "duplicateListingsRemoved": 796,
-    "detailQueueStart": 4,
-    "freshDetailTasks": 4,
+    "searchUniqueListings": 1387,
+    "globalUniqueListings": 554,
+    "duplicateListingsRemoved": 833,
+    "detailQueueStart": 9,
+    "freshDetailTasks": 9,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 4,
-    "detailSucceeded": 4,
+    "detailRequestsExecuted": 9,
+    "detailSucceeded": 9,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 522,
+    "postedAtResolvedFromSearch": 554,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 1,
-    "scanDurationMs": 82939,
+    "candidateCount": 2,
+    "scanDurationMs": 90485,
     "cities": [
       {
         "city": "군포시",
@@ -156,8 +156,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 296,
-        "durationMs": 12020
+        "uniqueListings": 324,
+        "durationMs": 12518
       },
       {
         "city": "의왕시",
@@ -172,8 +172,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 374,
-        "durationMs": 25332
+        "uniqueListings": 379,
+        "durationMs": 25812
       },
       {
         "city": "안양시",
@@ -190,8 +190,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 388,
-        "durationMs": 34931
+        "uniqueListings": 424,
+        "durationMs": 35289
       },
       {
         "city": "과천시",
@@ -203,52 +203,87 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 260,
-        "durationMs": 6439
+        "durationMs": 6409
       }
     ],
-    "finalCandidateCount": 1,
+    "finalCandidateCount": 2,
     "stateItemCount": 5000,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 82944
+    "durationMs": 90493
   },
   "candidates": [
     {
-      "id": "cd8tdaosoejz",
+      "id": "n6bt3zhzptrn",
       "changeType": "new",
       "previousPrice": null,
-      "price": 660000,
+      "price": 700000,
       "priceDropPercent": null,
-      "city": "군포시",
-      "location": "산본동",
-      "regionPath": "경기도 군포시 산본동",
-      "title": "ASUS ROG Strix G712lu  게이밍 노트북",
-      "modelHint": "ASUS ROG Strix G712lu  게이밍 노트북",
+      "city": "안양시",
+      "location": "평촌동",
+      "regionPath": "경기도 안양시 동안구 평촌동",
+      "title": "레노버 씽크북 14 G8 i7 16GB",
+      "modelHint": "레노버 씽크북 14 G8 i7 16GB",
       "cpuHint": null,
       "cpuBaselinePass": null,
       "gpuHint": null,
       "vramGB": null,
       "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "specConfidence": "needs_review",
+      "postedAt": "2026-10-20T00:21:05.447Z",
+      "boostedAt": "2026-10-20T00:21:05.439Z",
+      "status": "Ongoing",
+      "description": "문서 작업, 영상 편집 등 다용도로 활용하기 좋은 레노버 ThinkBook 14 G8 노트북이에요\n14인치 WUXGA 디스플레이와 인텔 코어 i7 CPU 탑재로 쾌적한 사용이 가능해요\nSSD 512GB와 16GB RAM으로 넉넉한 저장 공간과 빠른 속도를 자랑합니다.\n구매후 2~3주 정도 사용후 전혀 사용을 하지 않아서 판매합니다. 상태는 거의 신품급 입니다.\n가성비 좋은 노트북을 찾으시는 분들께 추천드려요",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%94%BD%ED%81%AC%EB%B6%81-14-g8-i7-16gb-n6bt3zhzptrn/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "지후니",
+      "mannerTemperature": 39.5
+    },
+    {
+      "id": "6za4r4ukw6rn",
+      "changeType": "price_drop",
+      "previousPrice": 1650000,
+      "price": 1620000,
+      "priceDropPercent": 1.8,
+      "city": "안양시",
+      "location": "호계1동",
+      "regionPath": "경기도 안양시 동안구 호계1동",
+      "title": "HP 오멘 16 게이밍 노트북 판매합니다.",
+      "modelHint": "HP 오멘 16 게이밍 노트북 판매합니다.",
+      "cpuHint": "i7-14650HX",
+      "cpuBaselinePass": null,
+      "gpuHint": "RTX 5060",
+      "vramGB": null,
+      "ramGB": 16,
       "ambiguousMemoryGB": null,
       "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": "메모리: 16GB",
+      "ramEvidence": "메모리 16GB",
       "vramEvidence": null,
       "ambiguousMemoryEvidence": null,
       "storageGB": null,
       "llmCapability": "SPEC_CHECK_REQUIRED",
       "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
       "specConfidence": "needs_review",
-      "postedAt": "2026-10-19T23:36:17.333Z",
-      "boostedAt": "2026-10-19T23:36:17.331Z",
+      "postedAt": "2026-10-17T14:56:44.896Z",
+      "boostedAt": "2026-10-20T00:06:58.981Z",
       "status": "Ongoing",
-      "description": "노트북 설명:\n1 배터리 교체작업(100%성능복구)\n2고가 SSD 500GB*2=40만\n3CAD& Mastercam 학습용\n4구매사용시간은 3년정도지만\n   실사용시간은 1년반도안됨(보관용)\n\nCPU:인텔10세대-10750H(최대5.0Hz 👍）\n메모리: 16GB(8GB+8GB)\n그래픽: Nvidia GTX 1660Ti👍）\n모니터:17.3인치 144Hz 👍）\n하드디스크:순정NVMe SSD 512 👍）\n추가디스크: WD Blue SN500GB*2 👍）",
-      "url": "https://www.daangn.com/kr/buy-sell/asus-rog-strix-g712lu-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-cd8tdaosoejz/",
+      "description": "HP 오멘 16 게이밍 노트북이에요.\n인텔 코어 i7-14650HX, \n메모리 16GB, \n저장 용량 512GB, \nRTX 5060 \n원도우 정품인증\n\n26.4월 구매 (상태좋음)사진참고\n별로사용하지 않아 판매합니다.\n쿨거래시 노트북 쿨링패드 같이 드릴께요.^^\n직거래는 시흥 은계지구 입니다.",
+      "url": "https://www.daangn.com/kr/buy-sell/hp-%EC%98%A4%EB%A9%98-16-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-6za4r4ukw6rn/",
       "favoriteCount": 0,
       "chatCount": 0,
-      "sellerName": "DoctorX",
-      "mannerTemperature": 41.7
+      "sellerName": "시원시원",
+      "mannerTemperature": 67.3
     }
   ]
 }
