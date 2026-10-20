@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-20T10:12:33.742080Z",
+  "updatedAt": "2026-10-20T10:52:30.309661Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -8651,6 +8651,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-pro-15%EC%9D%B8%EC%B9%98-%EA%B3%A0%EA%B8%89%ED%98%95-512gb-16ram-2016-%ED%92%80%EB%B0%95%EC%8A%A4-3ug54ayn7rqa/",
       "firstAlertedAt": "2026-10-20T08:32:29.684343Z",
       "lastCandidateAt": "2026-10-20T08:32:29.684343Z"
+    },
+    "ocoiiqdscgy3": {
+      "id": "ocoiiqdscgy3",
+      "title": "삼성 15인치  9 NT900X4D / i5-3337",
+      "price": 40000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "산본1동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 128,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "128GB",
+      "storageGB": 128,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-20T10:23:39.723Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-15%EC%9D%B8%EC%B9%98-9-nt900x4d-i5-3337-ocoiiqdscgy3/",
+      "firstAlertedAt": "2026-10-20T10:52:30.309661Z",
+      "lastCandidateAt": "2026-10-20T10:52:30.309661Z"
+    },
+    "iutiinbeaec8": {
+      "id": "iutiinbeaec8",
+      "title": "legion5 pro 16arh7h 노트북",
+      "price": 700000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "산본1동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "램 16기가",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-20T10:21:36.303Z",
+      "url": "https://www.daangn.com/kr/buy-sell/legion5-pro-16arh7h-%EB%85%B8%ED%8A%B8%EB%B6%81-iutiinbeaec8/",
+      "firstAlertedAt": "2026-10-20T10:52:30.309661Z",
+      "lastCandidateAt": "2026-10-20T10:52:30.309661Z"
     }
   }
 }
