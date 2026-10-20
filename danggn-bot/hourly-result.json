@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-20T05:52:39.758Z",
+  "generatedAt": "2026-10-20T06:32:21.910Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,81 +55,71 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-5200u-4gb-119gb-cxh1xeb36fgt/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-5200u-4gb-119gb-cxh1xeb36fgt/",
-            "title": "삼성 노트북 i5-5200U 4GB 119GB",
-            "content": "삼성 노트북으로 Intel Core i5-5200U 프로세서와 Intel HD Graphics 5500 그래픽이 탑재되어 있어요.\nRAM은 4GB이고 저장 공간은 119GB로 표시돼요.\n은색 계열의 본체에 숫자 키패드와 터치패드가 있어요.\n문서 작업이나 웹 검색용 노트북을 찾는 분께 추천해요.",
-            "price": "50000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/1792475206318db536fb447daf11aedb3317f1ca57d65139aac60156de27d44330dc4ee9bcad40.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-lg14z960-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%AC%B4%EC%84%A0-%EB%A7%88%EC%9A%B0%EC%8A%A4-%ED%8F%AC%ED%95%A8-hqq8r5d64dyj/",
+            "href": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-lg14z960-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%AC%B4%EC%84%A0-%EB%A7%88%EC%9A%B0%EC%8A%A4-%ED%8F%AC%ED%95%A8-hqq8r5d64dyj/",
+            "title": "LG 그램 LG14z960 노트북 (무선 마우스 포함)",
+            "content": "모델명 LG14z960\n외관 ㆍ내관 상태 A급\n작동 상태  A급 \n무선 마우스 \n가격 150,000",
+            "price": "150000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/b586f3b4-eb31-4611-bc31-7584eb8289a1.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-20T05:47:48.792Z",
-            "boostedAt": "2026-10-20T05:47:48.787Z",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-10-14T01:02:00.918Z",
+            "boostedAt": "2026-10-16T01:41:07.008Z",
             "region": {
-              "name": "오창읍"
+              "name": "관양1동"
+            },
+            "category": null,
+            "tradingCoordinates": []
+          },
+          {
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-2019%EB%85%84-nt901x5h%EC%8B%A4%EB%B2%84-93i9ndjpumgf/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-2019%EB%85%84-nt901x5h%EC%8B%A4%EB%B2%84-93i9ndjpumgf/",
+            "title": "삼성 노트북 2019년 NT901X5H실버",
+            "content": "삼성 노트북 실버 모델입니다.  i5-6200U CPU와\n 8GB RAM, 240GB nvme ssd저장 공간을 갖추고 있어요. 구성품으로 노트북 본체와 충전 어댑터, 마우스가 포함되어 있습니다. 깔끔한 디자인으로 가볍고 어디서든 사용하기 좋아요.\n뒷면 생활기스 조금있음, 그외는 깨끗함\n네고불가 \n\n거래장소 ; 안양역 한양수자인리버파크 ",
+            "price": "160000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/5fd2f640-7084-4a07-b228-d084e627f1b9.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-10-18T03:48:19.468Z",
+            "boostedAt": "2026-10-20T04:23:55.262Z",
+            "region": {
+              "name": "안양동"
             },
             "category": null,
             "tradingCoordinates": [
               {
-                "latitude": 36.71345457581197,
-                "longitude": 127.42791622883797
+                "latitude": 37.40455962860065,
+                "longitude": 126.9213586904902
               }
             ]
           },
           {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt300e5l-k34d-i3-6%EC%84%B8%EB%8C%80-n4d2rj2w9gan/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt300e5l-k34d-i3-6%EC%84%B8%EB%8C%80-n4d2rj2w9gan/",
-            "title": "삼성 노트북 NT300E5L-K34D i3 6세대",
-            "content": "삼성 노트북 NT300E5L-K34D \n인텔 코어 i3 6세대\n메모리는 8GB이고\n 저장 공간은 119GB로 표시돼요.\n 15인치 화면이 확인돼요.\n전원 어댑터가 함께 있어 문서 작업이나 웹 이용용 노트북을 찾는 분께 추천해요.\n배터리효율 좋습니다. \n노트북 깨끗합니다.",
-            "price": "130000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/dc604c10-e2e7-4da1-b3c3-af5c52e55b55.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-n5095-16gb-512gb-rkesyk7bx8bt/",
+            "href": "/kr/buy-sell/%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-n5095-16gb-512gb-rkesyk7bx8bt/",
+            "title": "노트북 판매합니다 / N5095 / 16GB / 512GB",
+            "content": "해외제품 노트북 판매합니다. 물어보시는 분들이 많아서 추가로 작성합니다. \n해외제품이니 브랜드는 따로 없습니다. 참고부탁드립니다.\n\n2025년 11월 새제품 구매 후 1개월 정도 사용 후 데스크탑을 구매하여 간간히 전원 온오프정도만 했고 기본적인 인터넷이나 문서작업, 간단한 게이밍 용도로 사용했습니다.\n\n사양\n\n* Intel Celeron N5095\n* RAM 16GB\n* SSD 512GB\n* Intel UHD Graphics\n* Windows 사용 가능\n* 충전기 포함\n* 내장그래픽\n\n※ 구매 전 꼭 읽어주세요.\n\n구매 당시 판매페이지에는 CPU가 i5-1240P로 안내되어 있었는데 사용 후 실제 사양을 확인하는 과정에서 Windows 작업 관리자와 CPU-Z에서는 Intel N5095로 확인되었습니다.\n\nBIOS에서는 i5-1240P와 Jasper Lake 관련 정보가 함께 표시되는 부분도 확인되어 판매 당시 안내된 사양과 현재 확인되는 사양이 일치하지 않는 상태입니다.\n\n이 부분 때문에 구매 당시 판매처에 문의하고 관련 내용을 확인했으며 현재는 실제 확인되는 사양을 기준으로 판매합니다.\n\n따라서 위 내용을 충분히 확인하시고 구매 부탁드립니다. 사양을 모르고 구매하시는 분보다는 해당 내용을 이해하고 사용하실 분께 판매하고 싶습니다.",
+            "price": "190000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/17912601033221763f788ce2527d5d36cf1cbe4eaafffd8e85ccd082ec3521fc56ff1ecd9ec740.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-20T05:35:29.949Z",
-            "boostedAt": "2026-10-20T05:35:29.949Z",
+            "createdAt": "2026-10-06T04:20:36.908Z",
+            "boostedAt": "2026-10-20T04:43:36.622Z",
             "region": {
-              "name": "관문동"
+              "name": "율량.사천동"
             },
             "category": null,
-            "tradingCoordinates": [
-              {
-                "latitude": 35.89909699919191,
-                "longitude": 128.54476046673398
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/%EC%97%90%EC%9D%B4%EC%84%9C-%EC%95%84%EC%8A%A4%ED%8C%8C%EC%9D%B4%EC%96%B4-14-ai-9het7y7fj6cn/",
-            "href": "/kr/buy-sell/%EC%97%90%EC%9D%B4%EC%84%9C-%EC%95%84%EC%8A%A4%ED%8C%8C%EC%9D%B4%EC%96%B4-14-ai-9het7y7fj6cn/",
-            "title": "에이서 아스파이어 14 AI",
-            "content": "💻제품 주요 사양\n• 모델명: 에이서 아스파이어 14 Al A14-171M-565N\n• CPU: 인텔 코어 울트라5 325 (4.5GHz)\n• RAM: 16GB (램 교체 불가)\n• SSD: 512GB\n• 디스플레이: 14인치 / 16:10 화면비/ 1920x1200\n(WUXGA) / 120Hz 고주사율/ 350nit 밝기\n• 배터리: 65Wh 대용량 배터리 (최대 30시간 사용 가 능)\n• NPU: 인텔 AI Boost (47TOPS)\n• 무게: 1.25kg (휴대성 매우 좋음)\n•OS: 윈도우 11 홈 기본 탑재\n\n💻제품 상태\n• 배터리 효율 100% (신품급): 배터리 사이클 단 28 회이며, 완충 용량도 설계 용량(65Wh) 대비 100% 이 상 유지 중입니다.\n• 외관 상태: 우측 하단 스티커 부근에 마우스 사용으로 인한 살짝의 스크래치(사진 첨부) 빼고는 전체적으로 아주 깨끗하고 모든 기능 이상 없이 작동합니다.\n\n📦구성품\n• 노트북 본체 단품",
-            "price": "100",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/1792474796401900f5ad156f44e4867d9df5130a4c21ba873152822643e0aa4042097ec1490c10.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-20T05:40:19.951Z",
-            "boostedAt": "2026-10-20T05:40:19.948Z",
-            "region": {
-              "name": "생연동"
-            },
-            "category": null,
-            "tradingCoordinates": [
-              {
-                "latitude": 37.897954865604,
-                "longitude": 127.05424691063206
-              }
-            ]
+            "tradingCoordinates": []
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-10-20T05:47:48.792Z\",\"boostedAt\":\"2026-10-20T05:47:48.787Z\",\"region\":{\"name\":\"오창읍\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-20T05:35:29.949Z\",\"boostedAt\":\"2026-10-20T05:35:29.949Z\",\"region\":{\"name\":\"관문동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-20T05:40:19.951Z\",\"boostedAt\":\"2026-10-20T05:40:19.948Z\",\"region\":{\"name\":\"생연동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-20T05:19:34.904Z\",\"boostedAt\":\"2026-10-20T05:19:34.903Z\",\"region\":{\"name\":\"포승읍\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-14T01:02:00.918Z\",\"boostedAt\":\"2026-10-16T01:41:07.008Z\",\"region\":{\"name\":\"관양1동\"},\"category\":null,\"tradingCoo"
+          "createdAt\":\"2026-10-14T01:02:00.918Z\",\"boostedAt\":\"2026-10-16T01:41:07.008Z\",\"region\":{\"name\":\"관양1동\"},\"category\":null,\"tradingCoo",
+          "createdAt\":\"2026-10-18T03:48:19.468Z\",\"boostedAt\":\"2026-10-20T04:23:55.262Z\",\"region\":{\"name\":\"안양동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-06T04:20:36.908Z\",\"boostedAt\":\"2026-10-20T04:43:36.622Z\",\"region\":{\"name\":\"율량.사천동\"},\"category\":null,\"tradingC",
+          "createdAt\":\"2026-10-15T11:31:24.696Z\",\"boostedAt\":\"2026-10-18T01:00:40.933Z\",\"region\":{\"name\":\"동삼제1동\"},\"category\":null,\"tradingCo",
+          "createdAt\":\"2026-10-19T11:43:58.860Z\",\"boostedAt\":\"2026-10-19T11:43:58.857Z\",\"region\":{\"name\":\"인덕원동\"},\"category\":null,\"tradingCoo"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":262,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 노트북 i5-5200U 4GB 119GB\",\"de",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":261,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG 그램 LG14z960 노트북 (무선 마우스 포함)",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -137,24 +127,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1351,
-    "globalUniqueListings": 557,
-    "duplicateListingsRemoved": 794,
-    "detailQueueStart": 20,
-    "freshDetailTasks": 20,
+    "searchUniqueListings": 1319,
+    "globalUniqueListings": 510,
+    "duplicateListingsRemoved": 809,
+    "detailQueueStart": 6,
+    "freshDetailTasks": 6,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 20,
-    "detailSucceeded": 20,
+    "detailRequestsExecuted": 6,
+    "detailSucceeded": 6,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 557,
+    "postedAtResolvedFromSearch": 510,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 1,
-    "scanDurationMs": 103377,
+    "candidateCount": 0,
+    "scanDurationMs": 86275,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +156,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 289,
-        "durationMs": 12213
+        "uniqueListings": 287,
+        "durationMs": 12030
       },
       {
         "city": "의왕시",
@@ -182,8 +172,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 376,
-        "durationMs": 25645
+        "uniqueListings": 396,
+        "durationMs": 25600
       },
       {
         "city": "안양시",
@@ -200,8 +190,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 427,
-        "durationMs": 35118
+        "uniqueListings": 378,
+        "durationMs": 35056
       },
       {
         "city": "과천시",
@@ -212,53 +202,17 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 259,
-        "durationMs": 6510
+        "uniqueListings": 258,
+        "durationMs": 6342
       }
     ],
-    "finalCandidateCount": 1,
+    "finalCandidateCount": 0,
     "stateItemCount": 5000,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 103384
+    "durationMs": 86282
   },
-  "candidates": [
-    {
-      "id": "ejewuhsimn3w",
-      "changeType": "price_drop",
-      "previousPrice": 1000000,
-      "price": 920000,
-      "priceDropPercent": 8,
-      "city": "안양시",
-      "location": "관양1동",
-      "regionPath": "경기도 안양시 동안구 관양1동",
-      "title": "LG 그램 15Z90SP-GA5CK 노트북",
-      "modelHint": "LG 그램 15Z90SP-GA5CK 노트북",
-      "cpuHint": null,
-      "cpuBaselinePass": null,
-      "gpuHint": null,
-      "vramGB": null,
-      "ramGB": 16,
-      "ambiguousMemoryGB": null,
-      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": "RAM : 16GB",
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": null,
-      "storageGB": 256,
-      "llmCapability": "SPEC_CHECK_REQUIRED",
-      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
-      "specConfidence": "needs_review",
-      "postedAt": "2026-10-17T12:55:50.210Z",
-      "boostedAt": "2026-10-20T05:07:38.632Z",
-      "status": "Ongoing",
-      "description": "고사양 LG Gram 노트북 저렴하게 판매합니다.\n노트북 가방과 전원 어댑터, 케이블, 마우스 함께 있어요.\n문서 작업, 웹 검색, 고사양 게임 및 캐드 등 모든 사용에 가능한 노트북입니다.\n회사 노트북이 있어서 실제 구입 후 실사용은 거의 안했습니다.\n\n모델명 : 15Z90S-GA5PK\n출시 :   2022년형\n화면 :   15.6인치 FHD IPS\n밝기 :   350nit\nCPU :   Core Ultra 5 125H\nRAM :   16GB LPDDR5x\nRAM 증설 : 불가\nGPU :   Intel Arc Graphics\n기본 SSD : 256GB NVMe\nSSD 추가 가능, 슬롯 1개 추가\n배터리 : 72Wh\n무게 : 약 1.29kg\n색상 :   에센스 화이트\n얼굴인식 지원\nThunderbolt 4 지원\nUSB-PD 충전 지원\n사진 제품 제조 : 2022년 2월 표기\n\n희망판매가 : 100만원",
-      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-15z90sp-ga5ck-%EB%85%B8%ED%8A%B8%EB%B6%81-ejewuhsimn3w/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "대한의국모",
-      "mannerTemperature": 37.4
-    }
-  ]
+  "candidates": []
 }
