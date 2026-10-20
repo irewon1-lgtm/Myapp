@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-20T23:12:20.459829Z",
+  "updatedAt": "2026-10-20T23:52:17.449178Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -8901,6 +8901,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%94%BD%ED%81%AC%ED%8C%A8%EB%93%9C-t14-g2-11%EC%84%B8%EB%8C%80-i5-16gb-x8i8ia56jk9t/",
       "firstAlertedAt": "2026-10-20T17:52:23.840191Z",
       "lastCandidateAt": "2026-10-20T17:52:23.840191Z"
+    },
+    "fuqbptc68zih": {
+      "id": "fuqbptc68zih",
+      "title": "삼성 갤럭시북 프로 NT931XDB i5 11세대 16GB/256GB",
+      "price": 400000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "범계동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-20T23:38:38.148Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%81-%ED%94%84%EB%A1%9C-nt931xdb-i5-11%EC%84%B8%EB%8C%80-16gb-256gb-fuqbptc68zih/",
+      "firstAlertedAt": "2026-10-20T23:52:17.449178Z",
+      "lastCandidateAt": "2026-10-20T23:52:17.449178Z"
     }
   }
 }
