@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-20T20:42:16.190Z",
+  "generatedAt": "2026-10-20T21:22:12.920Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,6 +55,23 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
+            "id": "/kr/buy-sell/%EA%B8%89%EC%B2%98-%EC%97%98%EC%A7%80%EC%9A%B8%ED%8A%B8%EB%9D%BC%EB%B6%81-h9xpppyyfj35/",
+            "href": "/kr/buy-sell/%EA%B8%89%EC%B2%98-%EC%97%98%EC%A7%80%EC%9A%B8%ED%8A%B8%EB%9D%BC%EB%B6%81-h9xpppyyfj35/",
+            "title": "급처)엘지울트라북",
+            "content": "13.3인치 가성비엘지울트라북\n• CPU: 인텔N4200\n• 저장장치: SSD 128GB\n• 그래픽: 인텔 HD 그래픽스\n가벼운 웹서핑, 문서 작성(한글·MS 오피스), 간단한 유튜브/온라인 강의(인강) 시청 정도에 적합합니다\n뛰어난 가성비와 휴대성, 그리고 문서 작업 및 인강용으로 최적화\n모서리눌림조금잇네요 \n\n구성품 노트북 충전기 마우스\n",
+            "price": "150000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/437c5e7a-b63b-468a-bdc5-6ffdd37f58ed.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-17T10:25:57.208Z",
+            "boostedAt": "2026-10-20T12:25:39.719Z",
+            "region": {
+              "name": "어룡동"
+            },
+            "category": null,
+            "tradingCoordinates": []
+          },
+          {
             "id": "/kr/buy-sell/lg%EA%B7%B8%EB%9E%A8-14%EC%9D%B8%EC%B9%98-%EC%A0%80%EB%A0%B4%ED%9E%88-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-h7hsav5u6u2g/",
             "href": "/kr/buy-sell/lg%EA%B7%B8%EB%9E%A8-14%EC%9D%B8%EC%B9%98-%EC%A0%80%EB%A0%B4%ED%9E%88-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-h7hsav5u6u2g/",
             "title": "Lg그램 14인치 저렴히 판매합니다",
@@ -77,23 +94,6 @@
             ]
           },
           {
-            "id": "/kr/buy-sell/%EA%B8%89%EC%B2%98-%EC%97%98%EC%A7%80%EC%9A%B8%ED%8A%B8%EB%9D%BC%EB%B6%81-h9xpppyyfj35/",
-            "href": "/kr/buy-sell/%EA%B8%89%EC%B2%98-%EC%97%98%EC%A7%80%EC%9A%B8%ED%8A%B8%EB%9D%BC%EB%B6%81-h9xpppyyfj35/",
-            "title": "급처)엘지울트라북",
-            "content": "13.3인치 가성비엘지울트라북\n• CPU: 인텔N4200\n• 저장장치: SSD 128GB\n• 그래픽: 인텔 HD 그래픽스\n가벼운 웹서핑, 문서 작성(한글·MS 오피스), 간단한 유튜브/온라인 강의(인강) 시청 정도에 적합합니다\n뛰어난 가성비와 휴대성, 그리고 문서 작업 및 인강용으로 최적화\n모서리눌림조금잇네요 \n\n구성품 노트북 충전기 마우스\n",
-            "price": "150000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/437c5e7a-b63b-468a-bdc5-6ffdd37f58ed.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-17T10:25:57.208Z",
-            "boostedAt": "2026-10-20T12:25:39.719Z",
-            "region": {
-              "name": "어룡동"
-            },
-            "category": null,
-            "tradingCoordinates": []
-          },
-          {
             "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-13%EC%9D%B8%EC%B9%98-i5-%EB%9E%A88-128g-%EC%B6%A9%EC%A0%84%EA%B8%B0-%ED%8F%AC%ED%95%A8-z2yw5h1ufmt7/",
             "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-13%EC%9D%B8%EC%B9%98-i5-%EB%9E%A88-128g-%EC%B6%A9%EC%A0%84%EA%B8%B0-%ED%8F%AC%ED%95%A8-z2yw5h1ufmt7/",
             "title": "삼성 노트북 13인치 i5 램8 128G, 충전기 포함",
@@ -112,14 +112,14 @@
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-10-20T14:04:14.865Z\",\"boostedAt\":\"2026-10-20T14:04:14.862Z\",\"region\":{\"name\":\"장안동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-17T10:25:57.208Z\",\"boostedAt\":\"2026-10-20T12:25:39.719Z\",\"region\":{\"name\":\"어룡동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-20T14:04:14.865Z\",\"boostedAt\":\"2026-10-20T14:04:14.862Z\",\"region\":{\"name\":\"장안동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-13T08:32:18.999Z\",\"boostedAt\":\"2026-10-19T08:29:01.329Z\",\"region\":{\"name\":\"도곡1동\"},\"category\":null,\"tradingCoo",
-          "createdAt\":\"2026-10-20T13:43:08.576Z\",\"boostedAt\":\"2026-10-20T13:43:08.574Z\",\"region\":{\"name\":\"성복동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-20T10:44:11.477Z\",\"boostedAt\":\"2026-10-20T10:44:11.477Z\",\"region\":{\"name\":\"석수2동\"},\"category\":null,\"tradingCoo"
+          "createdAt\":\"2026-09-23T05:26:05.131Z\",\"boostedAt\":\"2026-10-20T20:51:46.330Z\",\"region\":{\"name\":\"응봉동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-20T13:43:08.576Z\",\"boostedAt\":\"2026-10-20T13:43:08.574Z\",\"region\":{\"name\":\"성복동\"},\"category\":null,\"tradingCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":258,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"Lg그램 14인치 저렴히 판매합니다\",\"descript",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":257,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"급처)엘지울트라북\",\"description\":\"13.3",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -127,9 +127,9 @@
         ]
       }
     },
-    "searchUniqueListings": 1347,
-    "globalUniqueListings": 526,
-    "duplicateListingsRemoved": 821,
+    "searchUniqueListings": 1388,
+    "globalUniqueListings": 563,
+    "duplicateListingsRemoved": 825,
     "detailQueueStart": 1,
     "freshDetailTasks": 1,
     "backlogDetailTasks": 0,
@@ -141,10 +141,10 @@
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 526,
+    "postedAtResolvedFromSearch": 563,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 1,
-    "scanDurationMs": 81035,
+    "candidateCount": 0,
+    "scanDurationMs": 80382,
     "cities": [
       {
         "city": "군포시",
@@ -156,8 +156,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 318,
-        "durationMs": 12352
+        "uniqueListings": 317,
+        "durationMs": 12287
       },
       {
         "city": "의왕시",
@@ -173,7 +173,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 383,
-        "durationMs": 25634
+        "durationMs": 25742
       },
       {
         "city": "안양시",
@@ -190,8 +190,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 388,
-        "durationMs": 35621
+        "uniqueListings": 430,
+        "durationMs": 35193
       },
       {
         "city": "과천시",
@@ -203,52 +203,16 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 258,
-        "durationMs": 6367
+        "durationMs": 6277
       }
     ],
-    "finalCandidateCount": 1,
+    "finalCandidateCount": 0,
     "stateItemCount": 5000,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 81042
+    "durationMs": 80388
   },
-  "candidates": [
-    {
-      "id": "px9aujeztvpr",
-      "changeType": "price_drop",
-      "previousPrice": 1850000,
-      "price": 1840000,
-      "priceDropPercent": 0.5,
-      "city": "안양시",
-      "location": "호계동",
-      "regionPath": "경기도 안양시 동안구 호계동",
-      "title": "삼성 갤럭시 북3 울트라 16인치,  i9-13900H, RTX4070, 32GB DDR5, 1TB NVMe",
-      "modelHint": "삼성 갤럭시 북3 울트라 16인치,  i9-13900H, RTX4070, 32GB DDR5, 1TB NVMe",
-      "cpuHint": "i9-13900H",
-      "cpuBaselinePass": null,
-      "gpuHint": "RTX4070",
-      "vramGB": null,
-      "ramGB": null,
-      "ambiguousMemoryGB": 32,
-      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": null,
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": "32GB",
-      "storageGB": 1024,
-      "llmCapability": "SPEC_CHECK_REQUIRED",
-      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
-      "specConfidence": "needs_review",
-      "postedAt": "2026-10-17T12:15:58.853Z",
-      "boostedAt": "2026-10-20T20:18:20.828Z",
-      "status": "Ongoing",
-      "description": "- Intel i9-13900H CPU\n- NVIDIA RTX 4070 GPU\n- 32GB DDR5 RAM\n- 1TB NVMe\n- 16인치 Dynamic AMOLED 2x 2880x1800 120hz\n\n풀박이며 액정보호필름 부착되어 있습니다.\n배터리 사이클은 58회 입니다.\n\n외관상 눈에 띄는 기스나 찍힘 같은건 없습니다.",
-      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C-%EB%B6%813-%EC%9A%B8%ED%8A%B8%EB%9D%BC-16%EC%9D%B8%EC%B9%98-i9-13900h-rtx4070-32gb-ddr5-1tb-nvme-px9aujeztvpr/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "망어니",
-      "mannerTemperature": 71.9
-    }
-  ]
+  "candidates": []
 }
