@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-20T12:52:34.005731Z",
+  "updatedAt": "2026-10-20T13:32:32.266037Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -7805,8 +7805,8 @@
     "hrdp73cwd183": {
       "id": "hrdp73cwd183",
       "title": "삼성 고사양 노트북 판매합니다.",
-      "price": 450000,
-      "previousPrice": 500000,
+      "price": 400000,
+      "previousPrice": 450000,
       "changeType": "price_drop",
       "city": "안양시",
       "location": "평촌동",
@@ -7825,7 +7825,7 @@
       "postedAt": "2026-10-18T10:32:22.704Z",
       "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B3%A0%EC%82%AC%EC%96%91-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-hrdp73cwd183/",
       "firstAlertedAt": "2026-10-18T10:51:59.739054Z",
-      "lastCandidateAt": "2026-10-18T11:32:05.220894Z"
+      "lastCandidateAt": "2026-10-20T13:32:32.266037Z"
     },
     "xrs335mufuyg": {
       "id": "xrs335mufuyg",
@@ -8801,6 +8801,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/i7-11800h-hp-zbook-%EB%85%B8%ED%8A%B8%EB%B6%81-vqy49yoxu3z6/",
       "firstAlertedAt": "2026-10-20T12:52:34.005731Z",
       "lastCandidateAt": "2026-10-20T12:52:34.005731Z"
+    },
+    "fnsbbu2t636d": {
+      "id": "fnsbbu2t636d",
+      "title": "Mac Studio 맥스튜디오 M4 Max 36GB RAM 512GB SSD",
+      "price": 3150000,
+      "previousPrice": 3300000,
+      "changeType": "price_drop",
+      "city": "의왕시",
+      "location": "내손동",
+      "cpuHint": "M4 Max",
+      "gpuHint": "M4 Max",
+      "vramGB": null,
+      "ramGB": 36,
+      "ambiguousMemoryGB": 36,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "36GB RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "36GB",
+      "storageGB": 512,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "postedAt": "2026-09-28T00:21:59.363Z",
+      "url": "https://www.daangn.com/kr/buy-sell/mac-studio-%EB%A7%A5%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4-m4-max-36gb-ram-512gb-ssd-fnsbbu2t636d/",
+      "firstAlertedAt": "2026-10-20T13:32:32.266037Z",
+      "lastCandidateAt": "2026-10-20T13:32:32.266037Z"
+    },
+    "kuzy64zpvb8i": {
+      "id": "kuzy64zpvb8i",
+      "title": "HP 빅터스 15 게이밍 노트북 (R7 8845HS / RTX 4060) 배터리 100%",
+      "price": 950000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "의왕시",
+      "location": "포일동",
+      "cpuHint": "Ryzen 7 8845HS",
+      "gpuHint": "RTX 4060",
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "RAM: 16GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-20T13:00:39.184Z",
+      "url": "https://www.daangn.com/kr/buy-sell/hp-%EB%B9%85%ED%84%B0%EC%8A%A4-15-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-r7-8845hs-rtx-4060-%EB%B0%B0%ED%84%B0%EB%A6%AC-100-kuzy64zpvb8i/",
+      "firstAlertedAt": "2026-10-20T13:32:32.266037Z",
+      "lastCandidateAt": "2026-10-20T13:32:32.266037Z"
     }
   }
 }
