@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-20T17:12:20.156Z",
+  "generatedAt": "2026-10-20T17:52:23.766Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,6 +55,28 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
+            "id": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%94%BD%ED%81%AC%ED%8C%A8%EB%93%9C-t14-g2-11%EC%84%B8%EB%8C%80-i5-16gb-x8i8ia56jk9t/",
+            "href": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%94%BD%ED%81%AC%ED%8C%A8%EB%93%9C-t14-g2-11%EC%84%B8%EB%8C%80-i5-16gb-x8i8ia56jk9t/",
+            "title": "레노버 씽크패드 T14 g2 11세대 i5 16GB",
+            "content": "레노버 씽크패드 T14\n11세대 i5 메모리는 16GB\n충전기 포함",
+            "price": "350000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/17925174327331bda524a389f8d7cface7ed2b342b724d5781847f5404b4e9baa790720313bcb0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-10-20T17:35:05.393Z",
+            "boostedAt": "2026-10-20T17:35:05.392Z",
+            "region": {
+              "name": "석수1동"
+            },
+            "category": null,
+            "tradingCoordinates": [
+              {
+                "latitude": 37.41609541879953,
+                "longitude": 126.90760575171264
+              }
+            ]
+          },
+          {
             "id": "/kr/buy-sell/%EA%B8%89%EC%B2%98-%EC%97%98%EC%A7%80%EC%9A%B8%ED%8A%B8%EB%9D%BC%EB%B6%81-h9xpppyyfj35/",
             "href": "/kr/buy-sell/%EA%B8%89%EC%B2%98-%EC%97%98%EC%A7%80%EC%9A%B8%ED%8A%B8%EB%9D%BC%EB%B6%81-h9xpppyyfj35/",
             "title": "급처)엘지울트라북",
@@ -92,34 +114,17 @@
                 "longitude": 127.079080528869
               }
             ]
-          },
-          {
-            "id": "/kr/buy-sell/%EC%97%98%EC%A7%80-%EA%B7%B8%EB%9E%A8-14%EC%9D%B8%EC%B9%98-14z90n-vr30k-20%EB%85%84%ED%98%95-rsyxk555ujvd/",
-            "href": "/kr/buy-sell/%EC%97%98%EC%A7%80-%EA%B7%B8%EB%9E%A8-14%EC%9D%B8%EC%B9%98-14z90n-vr30k-20%EB%85%84%ED%98%95-rsyxk555ujvd/",
-            "title": "엘지 그램 14인치 14Z90N-VR30K 20년형",
-            "content": "모델명: 14Z9ON-VR30K\n\n-CPU: Intel(R) Core(TM) i3-1005G1 CPU @ 1.20GHZ, 1190Mhz, 2 코어, 4 논리 프로세서\n\n-RAM: 8GB\n\n-SSD: 256GB\n\n제가 아는 지식으로는 알려드릴 수 있는 내용은 이정도이고 궁금하신점 있으면 알려드릴게요 연락주세요.\n\n상태 찍힘 등 한군데도 없습니다.\n\n정품 충전기 같이 있습니다.\n\n시세를 잘 몰라서 검색 후 다른 물건들보다 싸게 내놓았습니다.\n\n쿨거시 네고 가능합니다 !",
-            "price": "200000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/17924946258077b3f05cd7a20ac44317d722557d057b9397ef0b88a53cd11feaed7f31bb89cfc0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": false,
-            "createdAt": "2026-10-20T11:15:52.727Z",
-            "boostedAt": "2026-10-20T11:15:52.725Z",
-            "region": {
-              "name": "부곡동"
-            },
-            "category": null,
-            "tradingCoordinates": []
           }
         ],
         "dateFieldSnippets": [
+          "createdAt\":\"2026-10-20T17:35:05.393Z\",\"boostedAt\":\"2026-10-20T17:35:05.392Z\",\"region\":{\"name\":\"석수1동\"},\"category\":null,\"tradingCoo",
           "createdAt\":\"2026-10-17T10:25:57.208Z\",\"boostedAt\":\"2026-10-20T12:25:39.719Z\",\"region\":{\"name\":\"어룡동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-20T14:04:14.865Z\",\"boostedAt\":\"2026-10-20T14:04:14.862Z\",\"region\":{\"name\":\"장안동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-20T11:15:52.727Z\",\"boostedAt\":\"2026-10-20T11:15:52.725Z\",\"region\":{\"name\":\"부곡동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-18T10:32:22.704Z\",\"boostedAt\":\"2026-10-20T12:55:48.744Z\",\"region\":{\"name\":\"평촌동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-20T16:59:01.338Z\",\"boostedAt\":\"2026-10-20T16:59:01.338Z\",\"region\":{\"name\":\"하남동\"},\"category\":null,\"tradingCoor"
+          "createdAt\":\"2026-10-18T10:32:22.704Z\",\"boostedAt\":\"2026-10-20T12:55:48.744Z\",\"region\":{\"name\":\"평촌동\"},\"category\":null,\"tradingCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":256,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"급처)엘지울트라북\",\"description\":\"13.3",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":257,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"레노버 씽크패드 T14 g2 11세대 i5 16GB\",",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -127,24 +132,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1356,
-    "globalUniqueListings": 561,
-    "duplicateListingsRemoved": 795,
-    "detailQueueStart": 4,
-    "freshDetailTasks": 4,
+    "searchUniqueListings": 1352,
+    "globalUniqueListings": 565,
+    "duplicateListingsRemoved": 787,
+    "detailQueueStart": 7,
+    "freshDetailTasks": 7,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 4,
-    "detailSucceeded": 4,
+    "detailRequestsExecuted": 7,
+    "detailSucceeded": 7,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 561,
+    "postedAtResolvedFromSearch": 565,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 1,
-    "scanDurationMs": 83552,
+    "scanDurationMs": 87639,
     "cities": [
       {
         "city": "군포시",
@@ -156,8 +161,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 285,
-        "durationMs": 11937
+        "uniqueListings": 282,
+        "durationMs": 12297
       },
       {
         "city": "의왕시",
@@ -172,8 +177,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 377,
-        "durationMs": 25791
+        "uniqueListings": 381,
+        "durationMs": 25571
       },
       {
         "city": "안양시",
@@ -190,8 +195,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 437,
-        "durationMs": 34953
+        "uniqueListings": 434,
+        "durationMs": 35513
       },
       {
         "city": "과천시",
@@ -202,8 +207,8 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 257,
-        "durationMs": 6358
+        "uniqueListings": 255,
+        "durationMs": 6393
       }
     ],
     "finalCandidateCount": 1,
@@ -212,43 +217,43 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 83559
+    "durationMs": 87646
   },
   "candidates": [
     {
-      "id": "fjon9xd1nptg",
+      "id": "x8i8ia56jk9t",
       "changeType": "new",
       "previousPrice": null,
-      "price": 500000,
+      "price": 350000,
       "priceDropPercent": null,
       "city": "안양시",
-      "location": "호계2동",
-      "regionPath": "경기도 안양시 동안구 호계2동",
-      "title": "한성 게이밍노트북.i7-16g-256g-gtx1650.배터리93% 상태최상",
-      "modelHint": "한성 게이밍노트북.i7-16g-256g-gtx1650.배터리93% 상태최상",
+      "location": "석수1동",
+      "regionPath": "경기도 안양시 만안구 석수1동",
+      "title": "레노버 씽크패드 T14 g2 11세대 i5 16GB",
+      "modelHint": "레노버 씽크패드 T14 g2 11세대 i5 16GB",
       "cpuHint": null,
       "cpuBaselinePass": null,
       "gpuHint": null,
       "vramGB": null,
-      "ramGB": 16,
-      "ambiguousMemoryGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 16,
       "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": "16기가램",
+      "ramEvidence": null,
       "vramEvidence": null,
-      "ambiguousMemoryEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
       "storageGB": null,
       "llmCapability": "SPEC_CHECK_REQUIRED",
       "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
       "specConfidence": "needs_review",
-      "postedAt": "2026-10-20T16:35:23.861Z",
-      "boostedAt": "2026-10-20T16:35:23.858Z",
+      "postedAt": "2026-10-20T17:35:05.393Z",
+      "boostedAt": "2026-10-20T17:35:05.392Z",
       "status": "Ongoing",
-      "description": "한성 게이밍 노트북 17인치 모델입니다.\n17인치라 화면 시원하게 넓고 모니터주사율 120hz로 부드러운화면 제공합니다.\n상판 미세사용감있고 왼쪽 팜레스트 미세 기스있어요.\n나머지 rgb키보드 액정 터치패드 사용감없고 깨끗합니다.키보드 라이트는 색상변경 가능합니다.\n성능좋고 굉장히 깨끗합니다.배터리도 93프로 효율로 상태 좋습니다.\n노트북은 특성상 드라이버부터 세팅을 잘해야합니다.\n믿고 바로 쓸수있도록 모든세팅 완벽해게 해놓고 \n판매를합니다.포맷과 클린설치후 모두세팅합니다.\n윈도우만 딱 설치해서 판매하지않고 풀세팅해서\n보내드립니다.\ni7 9750h\n16기가램\n256기가ssd\ngtx1650 외장그래픽\n발광키보드\n윈도우11 정품\n한글\n오피스 풀세팅 정품\n어댑터 포함\n바로사용가능합니다.",
-      "url": "https://www.daangn.com/kr/buy-sell/%ED%95%9C%EC%84%B1-%EA%B2%8C%EC%9D%B4%EB%B0%8D%EB%85%B8%ED%8A%B8%EB%B6%81-i7-16g-256g-gtx1650-%EB%B0%B0%ED%84%B0%EB%A6%AC93-%EC%83%81%ED%83%9C%EC%B5%9C%EC%83%81-fjon9xd1nptg/",
+      "description": "레노버 씽크패드 T14\n11세대 i5 메모리는 16GB\n충전기 포함",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%94%BD%ED%81%AC%ED%8C%A8%EB%93%9C-t14-g2-11%EC%84%B8%EB%8C%80-i5-16gb-x8i8ia56jk9t/",
       "favoriteCount": 0,
       "chatCount": 0,
-      "sellerName": "요다네정직한상점",
-      "mannerTemperature": 78.2
+      "sellerName": "Maker",
+      "mannerTemperature": 36.6
     }
   ]
 }
