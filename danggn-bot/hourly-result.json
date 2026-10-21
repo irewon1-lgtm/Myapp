@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-21T00:32:33.778Z",
+  "generatedAt": "2026-10-21T00:34:17.621Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -120,11 +120,11 @@
           "createdAt\":\"2026-10-21T00:29:34.274Z\",\"boostedAt\":\"2026-10-21T00:29:34.271Z\",\"region\":{\"name\":\"호계동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-21T00:25:29.793Z\",\"boostedAt\":\"2026-10-21T00:25:29.777Z\",\"region\":{\"name\":\"산본2동\"},\"category\":null,\"tradingCoo",
           "createdAt\":\"2026-10-17T10:25:57.208Z\",\"boostedAt\":\"2026-10-20T12:25:39.719Z\",\"region\":{\"name\":\"어룡동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-21T00:08:19.306Z\",\"boostedAt\":\"2026-10-21T00:08:19.299Z\",\"region\":{\"name\":\"경안동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-20T14:04:14.865Z\",\"boostedAt\":\"2026-10-20T14:04:14.862Z\",\"region\":{\"name\":\"장안동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-21T00:12:18.455Z\",\"boostedAt\":\"2026-10-21T00:12:18.454Z\",\"region\":{\"name\":\"호계3동\"},\"category\":null,\"tradingCoo"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":253,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 갤럭시북 노트북 nt345xla-ku15s\",\"d",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":254,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 갤럭시북 노트북 nt345xla-ku15s\",\"d",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -132,24 +132,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1371,
-    "globalUniqueListings": 577,
-    "duplicateListingsRemoved": 794,
-    "detailQueueStart": 16,
-    "freshDetailTasks": 16,
+    "searchUniqueListings": 1355,
+    "globalUniqueListings": 542,
+    "duplicateListingsRemoved": 813,
+    "detailQueueStart": 1,
+    "freshDetailTasks": 1,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 16,
-    "detailSucceeded": 16,
+    "detailRequestsExecuted": 1,
+    "detailSucceeded": 1,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 577,
+    "postedAtResolvedFromSearch": 542,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 97880,
+    "scanDurationMs": 80277,
     "cities": [
       {
         "city": "군포시",
@@ -161,8 +161,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 291,
-        "durationMs": 12039
+        "uniqueListings": 289,
+        "durationMs": 12277
       },
       {
         "city": "의왕시",
@@ -177,8 +177,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 389,
-        "durationMs": 25506
+        "uniqueListings": 385,
+        "durationMs": 25560
       },
       {
         "city": "안양시",
@@ -195,8 +195,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 433,
-        "durationMs": 35028
+        "uniqueListings": 423,
+        "durationMs": 35223
       },
       {
         "city": "과천시",
@@ -208,7 +208,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 258,
-        "durationMs": 6324
+        "durationMs": 6377
       }
     ],
     "finalCandidateCount": 0,
@@ -217,7 +217,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 97886
+    "durationMs": 80283
   },
   "candidates": []
 }
