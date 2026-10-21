@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-21T14:22:35.789909Z",
+  "updatedAt": "2026-10-21T15:02:36.945144Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -9126,6 +9126,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/hp-%ED%94%84%EB%A1%9C%EB%B6%81-450-g6-%EB%85%B8%ED%8A%B8%EB%B6%81-7snem4xb3nf4/",
       "firstAlertedAt": "2026-10-21T13:42:23.911887Z",
       "lastCandidateAt": "2026-10-21T13:42:23.911887Z"
+    },
+    "rxnjhc62diwm": {
+      "id": "rxnjhc62diwm",
+      "title": "맥북 프로 14인치 2021년형 16GB RAM 1TB SSD",
+      "price": 1350000,
+      "previousPrice": 1500000,
+      "changeType": "price_drop",
+      "city": "안양시",
+      "location": "안양2동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 1024,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-07-31T02:45:02.237Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-14%EC%9D%B8%EC%B9%98-2021%EB%85%84%ED%98%95-16gb-ram-1tb-ssd-rxnjhc62diwm/",
+      "firstAlertedAt": "2026-10-21T15:02:36.945144Z",
+      "lastCandidateAt": "2026-10-21T15:02:36.945144Z"
     }
   }
 }
