@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-21T08:42:39.083Z",
+  "generatedAt": "2026-10-21T09:22:28.492Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,35 +55,40 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1%EB%85%B8%ED%8A%B8%EB%B3%B5%EA%B8%89%ED%8C%94%EC%95%84%EC%9A%94-fi2e885xf396/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1%EB%85%B8%ED%8A%B8%EB%B3%B5%EA%B8%89%ED%8C%94%EC%95%84%EC%9A%94-fi2e885xf396/",
-            "title": "삼성노트복급팔아요",
-            "content": "주식.인강.사무.영상감상용에좋아요\n마우스.충전어뎁터구성입니다\n상세사양사진에잇구요... 건강하세요",
-            "price": "320000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/03676e19-1240-4dfa-b213-3864418c6d99.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-9m2q9hdrvfm6/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-9m2q9hdrvfm6/",
+            "title": "삼성 노트북",
+            "content": "삼성 ATIV 노트북\n흰색 키보드와 숫자 키패드가 있고, 화면은 가로형\n사용감 적어서 상태 깨끗해요 \n블루색상 입니다",
+            "price": "100000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/23c9c823-a30c-4990-bd83-d08caf76ee68.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-21T08:29:58.626Z",
-            "boostedAt": "2026-10-21T08:29:58.622Z",
+            "createdAt": "2026-10-21T09:09:38.861Z",
+            "boostedAt": "2026-10-21T09:09:38.860Z",
             "region": {
-              "name": "선암동"
+              "name": "정평동"
             },
             "category": null,
-            "tradingCoordinates": []
+            "tradingCoordinates": [
+              {
+                "latitude": 35.84068069196206,
+                "longitude": 128.7283273542552
+              }
+            ]
           },
           {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-4gb-128gb-84svwa4pzv19/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-4gb-128gb-84svwa4pzv19/",
-            "title": "삼성 노트북 4GB 128GB",
-            "content": "삼성 노트북이며 화면은 약 15인치 크기예요.\n인텔 펜티엄 골드 4415U 프로세서와 인텔 HD 그래픽 610을 탑재했어요.\n메모리는 4GB이고 저장 장치는 128GB예요.\n문서 작업이나 인터넷 검색용 노트북을 찾는 분께 추천해요.",
-            "price": "103000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/a03f4429-b80d-4696-9416-874b92f807cb.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1%EB%85%B8%ED%8A%B8%EB%B3%B5%ED%99%94%EC%9D%B4%ED%8A%B8%ED%8C%9D%EB%8B%88%EB%8B%A4-qziu663tyqmi/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1%EB%85%B8%ED%8A%B8%EB%B3%B5%ED%99%94%EC%9D%B4%ED%8A%B8%ED%8C%9D%EB%8B%88%EB%8B%A4-qziu663tyqmi/",
+            "title": "삼성노트복화이트팝니다",
+            "content": "상세내역사진참고.\n웹 서핑, 문서 작업, 엑셀 데이터 처리, 화상 회의 등 비즈니스 및 사무 업무에 차고 넘치는 강력한 멀티태스킹 성능을 냅니다\n윈11  한글.액셀등 오피스잇어요\n충전어뎁터 마우스포함드려요",
+            "price": "280000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/ba7ecaee-c504-4f28-9ba9-408c352eb0fb.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-03T07:57:11.796Z",
-            "boostedAt": "2026-10-21T08:26:44.683Z",
+            "createdAt": "2026-10-21T09:09:44.661Z",
+            "boostedAt": "2026-10-21T09:09:44.659Z",
             "region": {
-              "name": "논공읍"
+              "name": "선암동"
             },
             "category": null,
             "tradingCoordinates": []
@@ -107,14 +112,14 @@
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-10-21T08:29:58.626Z\",\"boostedAt\":\"2026-10-21T08:29:58.622Z\",\"region\":{\"name\":\"선암동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-03T07:57:11.796Z\",\"boostedAt\":\"2026-10-21T08:26:44.683Z\",\"region\":{\"name\":\"논공읍\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-21T09:09:38.861Z\",\"boostedAt\":\"2026-10-21T09:09:38.860Z\",\"region\":{\"name\":\"정평동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-21T09:09:44.661Z\",\"boostedAt\":\"2026-10-21T09:09:44.659Z\",\"region\":{\"name\":\"선암동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-13T08:32:18.999Z\",\"boostedAt\":\"2026-10-19T08:29:01.329Z\",\"region\":{\"name\":\"도곡1동\"},\"category\":null,\"tradingCoo",
-          "createdAt\":\"2026-10-21T08:04:15.155Z\",\"boostedAt\":\"2026-10-21T08:04:15.152Z\",\"region\":{\"name\":\"별내동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-21T08:29:58.626Z\",\"boostedAt\":\"2026-10-21T08:29:58.622Z\",\"region\":{\"name\":\"선암동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-09-08T07:40:23.285Z\",\"boostedAt\":\"2026-10-09T08:44:40.725Z\",\"region\":{\"name\":\"사당동\"},\"category\":null,\"tradingCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":251,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성노트복급팔아요\",\"description\":\"주식.인",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":251,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 노트북\",\"description\":\"삼성 ATIV",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -122,24 +127,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1389,
-    "globalUniqueListings": 568,
-    "duplicateListingsRemoved": 821,
-    "detailQueueStart": 22,
-    "freshDetailTasks": 22,
+    "searchUniqueListings": 1353,
+    "globalUniqueListings": 564,
+    "duplicateListingsRemoved": 789,
+    "detailQueueStart": 14,
+    "freshDetailTasks": 14,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 22,
-    "detailSucceeded": 22,
+    "detailRequestsExecuted": 14,
+    "detailSucceeded": 14,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 568,
+    "postedAtResolvedFromSearch": 564,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 2,
-    "scanDurationMs": 104919,
+    "candidateCount": 0,
+    "scanDurationMs": 96371,
     "cities": [
       {
         "city": "군포시",
@@ -151,8 +156,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 321,
-        "durationMs": 12381
+        "uniqueListings": 274,
+        "durationMs": 12334
       },
       {
         "city": "의왕시",
@@ -167,8 +172,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 388,
-        "durationMs": 25536
+        "uniqueListings": 387,
+        "durationMs": 25657
       },
       {
         "city": "안양시",
@@ -185,8 +190,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 423,
-        "durationMs": 34948
+        "uniqueListings": 434,
+        "durationMs": 35234
       },
       {
         "city": "과천시",
@@ -197,88 +202,17 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 257,
-        "durationMs": 6176
+        "uniqueListings": 258,
+        "durationMs": 6489
       }
     ],
-    "finalCandidateCount": 2,
+    "finalCandidateCount": 0,
     "stateItemCount": 5000,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 104923
+    "durationMs": 96377
   },
-  "candidates": [
-    {
-      "id": "ww42m982dbvo",
-      "changeType": "new",
-      "previousPrice": null,
-      "price": 1100000,
-      "priceDropPercent": null,
-      "city": "의왕시",
-      "location": "삼동",
-      "regionPath": "경기도 의왕시 삼동",
-      "title": "MSI 카타나 17인치 RTX 4060 / RAM 32GB / SSD 1TB",
-      "modelHint": "MSI 카타나 17인치 RTX 4060 / RAM 32GB / SSD 1TB",
-      "cpuHint": "i7-13620H",
-      "cpuBaselinePass": null,
-      "gpuHint": "RTX 4060",
-      "vramGB": null,
-      "ramGB": 32,
-      "ambiguousMemoryGB": 32,
-      "hardwareReviewStatus": "PASS_RAM",
-      "ramEvidence": "RAM 32GB",
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": "32GB",
-      "storageGB": 1024,
-      "llmCapability": "WORK_DEV_RAM32",
-      "llmReason": "RAM 32GB 이상 확정 후보",
-      "specConfidence": "confirmed",
-      "postedAt": "2026-10-21T08:18:10.524Z",
-      "boostedAt": "2026-10-21T08:18:10.522Z",
-      "status": "Ongoing",
-      "description": "모델명: MSI Katana 17 B13VEK\nCPU: Intel Core i7-13620H (13세대)\nGPU: NVIDIA GeForce RTX 4060 Laptop GPU\nRAM: 32GB\nSSD: 1TB\n화면: 17.3인치\n운영체제: Windows 11 Pro 정품\n구매 시기: 2025년\n상태: 포맷 완료 / 배터리가 94%에서 충전이 멈추는 현상이 있습니다\n구성품: 본체, 정품 충전기",
-      "url": "https://www.daangn.com/kr/buy-sell/msi-%EC%B9%B4%ED%83%80%EB%82%98-17%EC%9D%B8%EC%B9%98-rtx-4060-ram-32gb-ssd-1tb-ww42m982dbvo/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "빨리빨리",
-      "mannerTemperature": 38.4
-    },
-    {
-      "id": "9jfi4d2zfpru",
-      "changeType": "new",
-      "previousPrice": null,
-      "price": 1450000,
-      "priceDropPercent": null,
-      "city": "과천시",
-      "location": "막계동",
-      "regionPath": "경기도 과천시 막계동",
-      "title": "맥북 프로 14인치 M1 Pro 32G/ 512G S급",
-      "modelHint": "맥북 프로 14인치 M1 Pro 32G/ 512G S급",
-      "cpuHint": "M1 Pro",
-      "cpuBaselinePass": null,
-      "gpuHint": "M1 Pro",
-      "vramGB": null,
-      "ramGB": null,
-      "ambiguousMemoryGB": 32,
-      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": null,
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": "32G",
-      "storageGB": null,
-      "llmCapability": "SPEC_CHECK_REQUIRED",
-      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
-      "specConfidence": "needs_review",
-      "postedAt": "2026-10-21T08:21:23.244Z",
-      "boostedAt": "2026-10-21T08:21:23.241Z",
-      "status": "Ongoing",
-      "description": "제가 올린 사진에 제품 정보가 아주 명확하게 나와 있습니다. 깨끗하고 흠집 하나 없으며, 특별한 이상이나 문제도 없습니다.\nM1 Pro 32G/ 512G\n사이큰 : 113회  87%\n기스 하나 없어요.\n직거래합니다",
-      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-14%EC%9D%B8%EC%B9%98-m1-pro-32g-512g-s%EA%B8%89-9jfi4d2zfpru/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "행상",
-      "mannerTemperature": 33.9
-    }
-  ]
+  "candidates": []
 }
