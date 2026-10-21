@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-21T08:02:29.031125Z",
+  "updatedAt": "2026-10-21T08:42:39.130203Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -9051,6 +9051,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-14%EC%9D%B8%EC%B9%98-m3-max-%EB%AF%B8%EA%B0%9C%EB%B4%89-%ED%8C%9D%EB%8B%88%EB%8B%A4-1ipcsf4tn71u/",
       "firstAlertedAt": "2026-10-21T06:02:36.095096Z",
       "lastCandidateAt": "2026-10-21T06:02:36.095096Z"
+    },
+    "ww42m982dbvo": {
+      "id": "ww42m982dbvo",
+      "title": "MSI 카타나 17인치 RTX 4060 / RAM 32GB / SSD 1TB",
+      "price": 1100000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "의왕시",
+      "location": "삼동",
+      "cpuHint": "i7-13620H",
+      "gpuHint": "RTX 4060",
+      "vramGB": null,
+      "ramGB": 32,
+      "ambiguousMemoryGB": 32,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "RAM 32GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "32GB",
+      "storageGB": 1024,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "postedAt": "2026-10-21T08:18:10.524Z",
+      "url": "https://www.daangn.com/kr/buy-sell/msi-%EC%B9%B4%ED%83%80%EB%82%98-17%EC%9D%B8%EC%B9%98-rtx-4060-ram-32gb-ssd-1tb-ww42m982dbvo/",
+      "firstAlertedAt": "2026-10-21T08:42:39.130203Z",
+      "lastCandidateAt": "2026-10-21T08:42:39.130203Z"
+    },
+    "9jfi4d2zfpru": {
+      "id": "9jfi4d2zfpru",
+      "title": "맥북 프로 14인치 M1 Pro 32G/ 512G S급",
+      "price": 1450000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "과천시",
+      "location": "막계동",
+      "cpuHint": "M1 Pro",
+      "gpuHint": "M1 Pro",
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 32,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "32G",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-21T08:21:23.244Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-14%EC%9D%B8%EC%B9%98-m1-pro-32g-512g-s%EA%B8%89-9jfi4d2zfpru/",
+      "firstAlertedAt": "2026-10-21T08:42:39.130203Z",
+      "lastCandidateAt": "2026-10-21T08:42:39.130203Z"
     }
   }
 }
