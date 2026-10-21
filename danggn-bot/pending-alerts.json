@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-21T05:22:02.262407Z",
+  "updatedAt": "2026-10-21T06:02:36.095096Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -5980,9 +5980,9 @@
     "3i8n49wjezf6": {
       "id": "3i8n49wjezf6",
       "title": "LG 그램 17인치 노트북 (2026년형)",
-      "price": 1800000,
-      "previousPrice": null,
-      "changeType": "new",
+      "price": 1620000,
+      "previousPrice": 1800000,
+      "changeType": "price_drop",
       "city": "과천시",
       "location": "원문동",
       "cpuHint": null,
@@ -6000,7 +6000,7 @@
       "postedAt": "2026-10-15T10:14:03.646Z",
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-17%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-2026%EB%85%84%ED%98%95-3i8n49wjezf6/",
       "firstAlertedAt": "2026-10-15T10:17:38.683423Z",
-      "lastCandidateAt": "2026-10-15T10:17:38.683423Z"
+      "lastCandidateAt": "2026-10-21T06:02:36.095096Z"
     },
     "np2gdt95upsh": {
       "id": "np2gdt95upsh",
@@ -9026,6 +9026,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-14%EC%9D%B8%EC%B9%98-i7-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-i4bjm2ddoj84/",
       "firstAlertedAt": "2026-10-21T05:12:29.312437Z",
       "lastCandidateAt": "2026-10-21T05:12:29.312437Z"
+    },
+    "1ipcsf4tn71u": {
+      "id": "1ipcsf4tn71u",
+      "title": "맥북 프로 14인치 m3 max 미개봉 팝니다",
+      "price": 3050000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "재궁동",
+      "cpuHint": "m3 max",
+      "gpuHint": "m3 max",
+      "vramGB": null,
+      "ramGB": 36,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "36GB RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 1024,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "postedAt": "2026-10-21T05:24:06.641Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-14%EC%9D%B8%EC%B9%98-m3-max-%EB%AF%B8%EA%B0%9C%EB%B4%89-%ED%8C%9D%EB%8B%88%EB%8B%A4-1ipcsf4tn71u/",
+      "firstAlertedAt": "2026-10-21T06:02:36.095096Z",
+      "lastCandidateAt": "2026-10-21T06:02:36.095096Z"
     }
   }
 }
