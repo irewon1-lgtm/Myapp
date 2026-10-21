@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-21T13:02:40.149545Z",
+  "updatedAt": "2026-10-21T13:42:23.911887Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -8705,9 +8705,9 @@
     "p6xnrc1r9iih": {
       "id": "p6xnrc1r9iih",
       "title": "LG그램 14인치 I5-7세대 노트북 팝니다.",
-      "price": 250000,
-      "previousPrice": null,
-      "changeType": "new",
+      "price": 230000,
+      "previousPrice": 250000,
+      "changeType": "price_drop",
       "city": "군포시",
       "location": "산본1동",
       "cpuHint": null,
@@ -8725,7 +8725,7 @@
       "postedAt": "2026-10-20T12:42:09.428Z",
       "url": "https://www.daangn.com/kr/buy-sell/lg%EA%B7%B8%EB%9E%A8-14%EC%9D%B8%EC%B9%98-i5-7%EC%84%B8%EB%8C%80-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%9D%EB%8B%88%EB%8B%A4-p6xnrc1r9iih/",
       "firstAlertedAt": "2026-10-20T12:52:34.005731Z",
-      "lastCandidateAt": "2026-10-20T12:52:34.005731Z"
+      "lastCandidateAt": "2026-10-21T13:42:23.911887Z"
     },
     "f4b6ux2vo2fo": {
       "id": "f4b6ux2vo2fo",
@@ -9101,6 +9101,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-14%EC%9D%B8%EC%B9%98-m1-pro-32g-512g-s%EA%B8%89-9jfi4d2zfpru/",
       "firstAlertedAt": "2026-10-21T08:42:39.130203Z",
       "lastCandidateAt": "2026-10-21T08:42:39.130203Z"
+    },
+    "7snem4xb3nf4": {
+      "id": "7snem4xb3nf4",
+      "title": "HP 프로북 450 G6 노트북",
+      "price": 350000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "비산1동",
+      "cpuHint": "i7-8565U",
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "메모리 16G",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 256,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-21T13:19:50.376Z",
+      "url": "https://www.daangn.com/kr/buy-sell/hp-%ED%94%84%EB%A1%9C%EB%B6%81-450-g6-%EB%85%B8%ED%8A%B8%EB%B6%81-7snem4xb3nf4/",
+      "firstAlertedAt": "2026-10-21T13:42:23.911887Z",
+      "lastCandidateAt": "2026-10-21T13:42:23.911887Z"
     }
   }
 }
