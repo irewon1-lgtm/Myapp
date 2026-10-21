@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-21T01:52:30.614683Z",
+  "updatedAt": "2026-10-21T02:32:29.012854Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -8926,6 +8926,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%81-%ED%94%84%EB%A1%9C-nt931xdb-i5-11%EC%84%B8%EB%8C%80-16gb-256gb-fuqbptc68zih/",
       "firstAlertedAt": "2026-10-20T23:52:17.449178Z",
       "lastCandidateAt": "2026-10-20T23:52:17.449178Z"
+    },
+    "8e5s34y6iicv": {
+      "id": "8e5s34y6iicv",
+      "title": "LG그램 스타일 노트북 14Z90RS i5 13세대, 16G/256G",
+      "price": 700000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "석수1동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "RAM : 16GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16G",
+      "storageGB": 256,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-21T02:24:12.011Z",
+      "url": "https://www.daangn.com/kr/buy-sell/lg%EA%B7%B8%EB%9E%A8-%EC%8A%A4%ED%83%80%EC%9D%BC-%EB%85%B8%ED%8A%B8%EB%B6%81-14z90rs-i5-13%EC%84%B8%EB%8C%80-16g-256g-8e5s34y6iicv/",
+      "firstAlertedAt": "2026-10-21T02:32:29.012854Z",
+      "lastCandidateAt": "2026-10-21T02:32:29.012854Z"
     }
   }
 }
