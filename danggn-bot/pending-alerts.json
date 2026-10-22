@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-22T08:02:26.613378Z",
+  "updatedAt": "2026-10-22T08:42:35.040753Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -2455,8 +2455,8 @@
     "phbf8gyjwasa": {
       "id": "phbf8gyjwasa",
       "title": "노트북 + 컴퓨터(intel , NVIDIA)본체 , 삼성 24인치 모니터 , 키보드 , 마우스 일괄 판매",
-      "price": 140000,
-      "previousPrice": 145000,
+      "price": 135000,
+      "previousPrice": 140000,
       "changeType": "price_drop",
       "city": "안양시",
       "location": "비산2동",
@@ -2475,7 +2475,7 @@
       "postedAt": "2026-10-09T07:51:49.857Z",
       "url": "https://www.daangn.com/kr/buy-sell/%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%BB%B4%ED%93%A8%ED%84%B0-intel-nvidia-%EB%B3%B8%EC%B2%B4-%EC%82%BC%EC%84%B1-24%EC%9D%B8%EC%B9%98-%EB%AA%A8%EB%8B%88%ED%84%B0-%ED%82%A4%EB%B3%B4%EB%93%9C-%EB%A7%88%EC%9A%B0%EC%8A%A4-%EC%9D%BC%EA%B4%84-%ED%8C%90%EB%A7%A4-phbf8gyjwasa/",
       "firstAlertedAt": "2026-10-09T08:00:07.244359Z",
-      "lastCandidateAt": "2026-10-18T21:38:50.719662Z"
+      "lastCandidateAt": "2026-10-22T08:42:35.040753Z"
     },
     "etgxz5a1oqrk": {
       "id": "etgxz5a1oqrk",
@@ -9351,6 +9351,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EC%97%90%EC%9D%B4%EC%84%9C-%EB%8B%88%ED%8A%B8%EB%A1%9C5-an515-45-nyqe1n53seby/",
       "firstAlertedAt": "2026-10-22T08:02:26.613378Z",
       "lastCandidateAt": "2026-10-22T08:02:26.613378Z"
+    },
+    "ugh84f3xrzrt": {
+      "id": "ugh84f3xrzrt",
+      "title": "SS급 레노버 아이디어패드 Slim 5 노트북 RAM16G SSD 512G I5-13500",
+      "price": 700000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "관양1동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "RAM16G",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-22T08:09:47.843Z",
+      "url": "https://www.daangn.com/kr/buy-sell/ss%EA%B8%89-%EB%A0%88%EB%85%B8%EB%B2%84-%EC%95%84%EC%9D%B4%EB%94%94%EC%96%B4%ED%8C%A8%EB%93%9C-slim-5-%EB%85%B8%ED%8A%B8%EB%B6%81-ram16g-ssd-512g-i5-13500-ugh84f3xrzrt/",
+      "firstAlertedAt": "2026-10-22T08:42:35.040753Z",
+      "lastCandidateAt": "2026-10-22T08:42:35.040753Z"
     }
   }
 }
