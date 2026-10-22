@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-22T21:51:59.012Z",
+  "generatedAt": "2026-10-22T22:32:06.947Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -48,8 +48,7 @@
       "htmlFallbacks": 60,
       "unknownSamples": [],
       "routeProbe": {
-        "error": "NON_JSON",
-        "head": ""
+        "error": "TypeError: fetch failed"
       },
       "htmlSample": {
         "embeddedArticles": false,
@@ -77,18 +76,18 @@
             ]
           },
           {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%EA%B0%A4%EB%9F%AD%EC%8B%9C-%EB%B6%81-%EA%B3%A0-%EC%B5%9C%EC%8B%A0%EC%83%81%ED%83%9C-ebh3arre4g4k/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%EA%B0%A4%EB%9F%AD%EC%8B%9C-%EB%B6%81-%EA%B3%A0-%EC%B5%9C%EC%8B%A0%EC%83%81%ED%83%9C-ebh3arre4g4k/",
-            "title": "삼성 노트북 갤럭시 북 고 최신상태",
-            "content": "삼성 갤럭시북 고 NT345XLA 노트북 판매합니다.\n\n- 윈도우10 ARM\n- 4GB RAM\n- 119GB 저장 공간\n- 퀄컴 2.55GHz 스냅드래곤 7c Gen 2 프로세서\n- FHD\n- LTE 가능\n- C타입 충전\n\n1.얇고 가벼운 디자인으로 휴대하기 편리해요.\n2. 매우 깔끔합니다.\n3. 디자인 용량보다 풀충전 용량이 더 높은 101% S급 입니다.\n4. 윈도우 초기화 오류 있습니다 현재 윈도우 자체 초기화 불가능 상태이고, 초기화하려면 삼성 서비스센터 방문 후 윈도우 소프트웨어 설치해야합니다.\n5. 위 문제는 초기화 문제라 노트북 실사용에는 전혀 지장 문제 없습니다. 해당 감안하여 싸게 내놓습니다.",
-            "price": "140000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/6b13bccc-a994-494c-a40c-83c7a5123a12.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-ipxmc2urs5kq/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-ipxmc2urs5kq/",
+            "title": "삼성 노트북 화이트",
+            "content": "인텔i5 3230M\n메모리8기가 \nssd128기가\n인텔HD그래픽15.6인치\n인텔i5라 빨라요 \n깔끔한 화이트 색상의 삼성 노트북이에요. 정품아답타 드려요\n상태좋아요 ",
+            "price": "180000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/10723eab-b296-4b54-93e0-fdc148e4c0f9.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-22T15:08:29.235Z",
-            "boostedAt": "2026-10-22T15:08:29.232Z",
+            "createdAt": "2026-10-22T12:47:02.611Z",
+            "boostedAt": "2026-10-22T12:47:02.609Z",
             "region": {
-              "name": "용전동"
+              "name": "중리동"
             },
             "category": null,
             "tradingCoordinates": []
@@ -113,13 +112,13 @@
         ],
         "dateFieldSnippets": [
           "createdAt\":\"2026-10-22T21:33:48.041Z\",\"boostedAt\":\"2026-10-22T21:33:48.034Z\",\"region\":{\"name\":\"용강동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-22T15:08:29.235Z\",\"boostedAt\":\"2026-10-22T15:08:29.232Z\",\"region\":{\"name\":\"용전동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-22T12:47:02.611Z\",\"boostedAt\":\"2026-10-22T12:47:02.609Z\",\"region\":{\"name\":\"중리동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-22T11:01:14.201Z\",\"boostedAt\":\"2026-10-22T11:01:14.201Z\",\"region\":{\"name\":\"인덕원동\"},\"category\":null,\"tradingCoo",
-          "createdAt\":\"2026-10-18T10:32:22.704Z\",\"boostedAt\":\"2026-10-20T12:55:48.744Z\",\"region\":{\"name\":\"평촌동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-22T12:47:02.611Z\",\"boostedAt\":\"2026-10-22T12:47:02.609Z\",\"region\":{\"name\":\"중리동\"},\"category\":null,\"tradingCoor"
+          "createdAt\":\"2026-10-22T05:15:01.724Z\",\"boostedAt\":\"2026-10-22T05:15:01.724Z\",\"region\":{\"name\":\"입북동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-19T06:02:34.645Z\",\"boostedAt\":\"2026-10-22T05:06:58.929Z\",\"region\":{\"name\":\"신월동\"},\"category\":null,\"tradingCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":264,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG 노트북 화이트\",\"description\":\"LG ",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":263,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG 노트북 화이트\",\"description\":\"LG ",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -127,9 +126,9 @@
         ]
       }
     },
-    "searchUniqueListings": 1301,
-    "globalUniqueListings": 515,
-    "duplicateListingsRemoved": 786,
+    "searchUniqueListings": 1306,
+    "globalUniqueListings": 523,
+    "duplicateListingsRemoved": 783,
     "detailQueueStart": 2,
     "freshDetailTasks": 2,
     "backlogDetailTasks": 0,
@@ -141,10 +140,10 @@
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 515,
+    "postedAtResolvedFromSearch": 523,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 81923,
+    "scanDurationMs": 86362,
     "cities": [
       {
         "city": "군포시",
@@ -156,8 +155,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 284,
-        "durationMs": 12210
+        "uniqueListings": 283,
+        "durationMs": 12266
       },
       {
         "city": "의왕시",
@@ -172,8 +171,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 366,
-        "durationMs": 25714
+        "uniqueListings": 370,
+        "durationMs": 25773
       },
       {
         "city": "안양시",
@@ -190,8 +189,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 395,
-        "durationMs": 34959
+        "uniqueListings": 397,
+        "durationMs": 38519
       },
       {
         "city": "과천시",
@@ -203,7 +202,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 256,
-        "durationMs": 6895
+        "durationMs": 7811
       }
     ],
     "finalCandidateCount": 0,
@@ -212,7 +211,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 81930
+    "durationMs": 86369
   },
   "candidates": []
 }
