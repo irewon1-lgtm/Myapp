@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-22T08:42:35.040753Z",
+  "updatedAt": "2026-10-22T09:22:24.594680Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -8779,10 +8779,10 @@
     },
     "vqy49yoxu3z6": {
       "id": "vqy49yoxu3z6",
-      "title": "i7 11800H HP ZBook 노트북",
-      "price": 570000,
-      "previousPrice": null,
-      "changeType": "new",
+      "title": "i7 11800H HP 16인치 노트북",
+      "price": 550000,
+      "previousPrice": 570000,
+      "changeType": "price_drop",
       "city": "안양시",
       "location": "부흥동",
       "cpuHint": null,
@@ -8798,9 +8798,9 @@
       "llmCapability": "SPEC_CHECK_REQUIRED",
       "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
       "postedAt": "2026-10-20T12:30:27.255Z",
-      "url": "https://www.daangn.com/kr/buy-sell/i7-11800h-hp-zbook-%EB%85%B8%ED%8A%B8%EB%B6%81-vqy49yoxu3z6/",
+      "url": "https://www.daangn.com/kr/buy-sell/i7-11800h-hp-16%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-vqy49yoxu3z6/",
       "firstAlertedAt": "2026-10-20T12:52:34.005731Z",
-      "lastCandidateAt": "2026-10-20T12:52:34.005731Z"
+      "lastCandidateAt": "2026-10-22T09:22:24.594680Z"
     },
     "fnsbbu2t636d": {
       "id": "fnsbbu2t636d",
@@ -9376,6 +9376,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/ss%EA%B8%89-%EB%A0%88%EB%85%B8%EB%B2%84-%EC%95%84%EC%9D%B4%EB%94%94%EC%96%B4%ED%8C%A8%EB%93%9C-slim-5-%EB%85%B8%ED%8A%B8%EB%B6%81-ram16g-ssd-512g-i5-13500-ugh84f3xrzrt/",
       "firstAlertedAt": "2026-10-22T08:42:35.040753Z",
       "lastCandidateAt": "2026-10-22T08:42:35.040753Z"
+    },
+    "cbf8tf12peu6": {
+      "id": "cbf8tf12peu6",
+      "title": "맥북프로 16인치  M5 Max 128GB 4TB 스페이스 블랙",
+      "price": 9750000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "달안동",
+      "cpuHint": "M5 Max",
+      "gpuHint": "M5 Max",
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 128,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "128GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-22T09:09:27.588Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C-16%EC%9D%B8%EC%B9%98-m5-max-128gb-4tb-%EC%8A%A4%ED%8E%98%EC%9D%B4%EC%8A%A4-%EB%B8%94%EB%9E%99-cbf8tf12peu6/",
+      "firstAlertedAt": "2026-10-22T09:22:24.594680Z",
+      "lastCandidateAt": "2026-10-22T09:22:24.594680Z"
     }
   }
 }
