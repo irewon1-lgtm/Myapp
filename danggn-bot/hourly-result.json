@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-22T11:40:49.042Z",
+  "generatedAt": "2026-10-22T12:22:26.521Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,76 +55,71 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/lg%EB%85%B8%ED%8A%B8%EB%B6%81-pja1rhmj4yum/",
-            "href": "/kr/buy-sell/lg%EB%85%B8%ED%8A%B8%EB%B6%81-pja1rhmj4yum/",
-            "title": "LG노트북",
-            "content": "21년 신형 구매 했습니다 구매 하시면 충전기 선 같이\n드려요~ 상태 진짜 좋아요",
-            "price": "290000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/17926662579615fb9ccbd7a77f5e5f64c42dd56dec823980ef0f5ca50c83628360cff1a9f073d0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-i3-%EC%8B%A4%EB%B2%84-c846zbhg6wwu/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-i3-%EC%8B%A4%EB%B2%84-c846zbhg6wwu/",
+            "title": "삼성 노트북 i3 실버",
+            "content": "가볍고 슬림한 삼성 노트북입니다. 인텔 코어 i3 프로세서가 탑재되어 있어 일상적인 작업에 충분한 성능을 제공해요. 깔끔한 실버 색상으로 어떤 환경에서도 잘 어울립니다. 휴대하기 좋은 사이즈로 언제 어디서든 편리하게 사용해보세요.",
+            "price": "150000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/2e28ecad-833b-4068-b48f-cb34360df1f9.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
-            "isInstantBuyAvailable": false,
-            "createdAt": "2026-10-22T11:01:14.201Z",
-            "boostedAt": "2026-10-22T11:01:14.201Z",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-22T12:17:30.504Z",
+            "boostedAt": "2026-10-22T12:17:30.502Z",
             "region": {
-              "name": "인덕원동"
+              "name": "나운3동"
+            },
+            "category": null,
+            "tradingCoordinates": [
+              {
+                "latitude": 35.94087749050816,
+                "longitude": 126.69296263822048
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-15u480-%ED%99%94%EC%9D%B4%ED%8A%B8-9tyanbsotyfc/",
+            "href": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-15u480-%ED%99%94%EC%9D%B4%ED%8A%B8-9tyanbsotyfc/",
+            "title": "LG 노트북 15U480 화이트",
+            "content": "LG 15인치 노트북입니다.  인텔 코어 8세대 i3 \nOS   WIN 11  PRO\n메모리 8G \nM.2  128G \n메모리 M.2 증설가능 일상적인 작업은 물론이고, 문서 작업이나 웹 서핑 등 가볍고 슬림한 디자인 \n배터리상태 양호합니다.",
+            "price": "170000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/1dc8edb1-c58d-4499-a1dc-5325d70a419f.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-22T06:50:12.842Z",
+            "boostedAt": "2026-10-22T06:50:12.841Z",
+            "region": {
+              "name": "서초동"
             },
             "category": null,
             "tradingCoordinates": []
           },
           {
-            "id": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-thinkpad-e530-%EB%85%B8%ED%8A%B8%EB%B6%81-2hdy3o9mbxr4/",
-            "href": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-thinkpad-e530-%EB%85%B8%ED%8A%B8%EB%B6%81-2hdy3o9mbxr4/",
-            "title": "레노버 ThinkPad E530 노트북",
-            "content": "레노버 ThinkPad E530 노트북 판매해요. 인텔 코어 i5 프로세서와 12GB RAM, 112GB SSD를 탑재하여 빠르고 쾌적한 사용이 가능해요. 사진에서 보이는 구성품 그대로 드려요. 문서 작업이나 인터넷 서핑 등 일상적인 용도로 사용하기 좋아요.\n배터리 상태가 괜찮습니다.\n사용 흔적이 약간 있습니다.\n필요하시면 연락 주세요",
-            "price": "190000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/1726a71e-6778-492f-938e-06bdd539cb77.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%9D%EB%8B%88%EB%8B%A4-etw554qujib8/",
+            "href": "/kr/buy-sell/%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%9D%EB%8B%88%EB%8B%A4-etw554qujib8/",
+            "title": "노트북 팝니다",
+            "content": "인텔 코어 i5 \n문서 작업 및 웹 서핑에 적합한 노트북이에요\nWindows 10 Pro가 설치되어 있어 바로 사용 가능해요\n마이크로소프트 설치되있어요\n밧데리 방전없으나 한두시간 정도 사용됩니다\n단 소리가 지지직 들려 리얼텍 직접 설치 하셔야 합니다\n교환 환불불가 입니다 \n질문사양 ",
+            "price": "60000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202609/3955bacad5ce32a5a91cb30d7d1fbd108e0f94e1eea8ee5dfa03118b690f315d_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-22T11:06:50.284Z",
-            "boostedAt": "2026-10-22T11:06:50.282Z",
+            "createdAt": "2026-09-08T07:40:23.285Z",
+            "boostedAt": "2026-10-22T11:39:08.145Z",
             "region": {
-              "name": "월출동"
+              "name": "사당동"
             },
             "category": null,
-            "tradingCoordinates": [
-              {
-                "latitude": 35.2444701574361,
-                "longitude": 126.8817576393485
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-loq-15ahp10-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%9D%BC%EC%9D%B4%EC%A0%A07-rtx-5060-jy85wqn9naex/",
-            "href": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-loq-15ahp10-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%9D%BC%EC%9D%B4%EC%A0%A07-rtx-5060-jy85wqn9naex/",
-            "title": "레노버 LOQ 15AHP10 게이밍 노트북 (라이젠7, RTX 5060)",
-            "content": "15.6인치 고사양 레노버 노트북 판매해요. \nCPU-라이젠7 250\n그래픽카드RTX 5060  \n16GB 메모리\nSSD- 512GB.\n144Hz 고주사율 모니터와 G-SYNC지원\n\n26년 2월구매",
-            "price": "115",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/39d10486-6f5c-4a64-80bf-95bdf28b20a2.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-22T10:52:03.174Z",
-            "boostedAt": "2026-10-22T10:52:03.171Z",
-            "region": {
-              "name": "호원2동"
-            },
-            "category": null,
-            "tradingCoordinates": [
-              {
-                "latitude": 37.72729043496779,
-                "longitude": 127.04471811997543
-              }
-            ]
+            "tradingCoordinates": []
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-10-22T11:01:14.201Z\",\"boostedAt\":\"2026-10-22T11:01:14.201Z\",\"region\":{\"name\":\"인덕원동\"},\"category\":null,\"tradingCoo",
-          "createdAt\":\"2026-10-22T11:06:50.284Z\",\"boostedAt\":\"2026-10-22T11:06:50.282Z\",\"region\":{\"name\":\"월출동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-22T10:52:03.174Z\",\"boostedAt\":\"2026-10-22T10:52:03.171Z\",\"region\":{\"name\":\"호원2동\"},\"category\":null,\"tradingCoo",
-          "createdAt\":\"2026-10-18T10:32:22.704Z\",\"boostedAt\":\"2026-10-20T12:55:48.744Z\",\"region\":{\"name\":\"평촌동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-22T10:47:03.179Z\",\"boostedAt\":\"2026-10-22T10:47:03.178Z\",\"region\":{\"name\":\"고덕동\"},\"category\":null,\"tradingCoor"
+          "createdAt\":\"2026-10-22T12:17:30.504Z\",\"boostedAt\":\"2026-10-22T12:17:30.502Z\",\"region\":{\"name\":\"나운3동\"},\"category\":null,\"tradingCoo",
+          "createdAt\":\"2026-10-22T06:50:12.842Z\",\"boostedAt\":\"2026-10-22T06:50:12.841Z\",\"region\":{\"name\":\"서초동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-09-08T07:40:23.285Z\",\"boostedAt\":\"2026-10-22T11:39:08.145Z\",\"region\":{\"name\":\"사당동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-22T11:55:07.506Z\",\"boostedAt\":\"2026-10-22T11:55:07.506Z\",\"region\":{\"name\":\"덕은동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-22T11:58:49.338Z\",\"boostedAt\":\"2026-10-22T11:58:49.337Z\",\"region\":{\"name\":\"증산동\"},\"category\":null,\"tradingCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":267,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG노트북\",\"description\":\"21년 신형 구",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":262,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 노트북 i3 실버\",\"description\":\"가",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -132,24 +127,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1304,
-    "globalUniqueListings": 491,
-    "duplicateListingsRemoved": 813,
-    "detailQueueStart": 7,
-    "freshDetailTasks": 7,
+    "searchUniqueListings": 1372,
+    "globalUniqueListings": 557,
+    "duplicateListingsRemoved": 815,
+    "detailQueueStart": 10,
+    "freshDetailTasks": 10,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 7,
-    "detailSucceeded": 7,
+    "detailRequestsExecuted": 10,
+    "detailSucceeded": 10,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 491,
+    "postedAtResolvedFromSearch": 557,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 87106,
+    "scanDurationMs": 92188,
     "cities": [
       {
         "city": "군포시",
@@ -161,8 +156,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 283,
-        "durationMs": 12223
+        "uniqueListings": 317,
+        "durationMs": 12325
       },
       {
         "city": "의왕시",
@@ -177,8 +172,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 392,
-        "durationMs": 25489
+        "uniqueListings": 366,
+        "durationMs": 26081
       },
       {
         "city": "안양시",
@@ -195,8 +190,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 374,
-        "durationMs": 35098
+        "uniqueListings": 433,
+        "durationMs": 35311
       },
       {
         "city": "과천시",
@@ -207,8 +202,8 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 255,
-        "durationMs": 6407
+        "uniqueListings": 256,
+        "durationMs": 6638
       }
     ],
     "finalCandidateCount": 0,
@@ -217,7 +212,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 87112
+    "durationMs": 92197
   },
   "candidates": []
 }
