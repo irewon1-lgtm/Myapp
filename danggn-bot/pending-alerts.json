@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-22T05:32:24.606004Z",
+  "updatedAt": "2026-10-22T06:01:23.733740Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -9276,6 +9276,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-550xda-11%EC%84%B8%EB%8C%80-i5-16-256-yxcoit5sjoo6/",
       "firstAlertedAt": "2026-10-22T04:52:26.200194Z",
       "lastCandidateAt": "2026-10-22T04:52:26.200194Z"
+    },
+    "85rwvfom81v4": {
+      "id": "85rwvfom81v4",
+      "title": "씽크패드 X220 i7 16G 500.    20 만 원",
+      "price": 200000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "안양2동",
+      "cpuHint": "i7-2640m",
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16G",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-22T05:48:32.362Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%94%BD%ED%81%AC%ED%8C%A8%EB%93%9C-x220-i7-16g-500-20-%EB%A7%8C-%EC%9B%90-85rwvfom81v4/",
+      "firstAlertedAt": "2026-10-22T06:01:23.733740Z",
+      "lastCandidateAt": "2026-10-22T06:01:23.733740Z"
     }
   }
 }
