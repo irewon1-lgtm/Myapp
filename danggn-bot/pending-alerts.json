@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-22T12:22:26.598144Z",
+  "updatedAt": "2026-10-22T13:02:36.589155Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -7180,8 +7180,8 @@
     "6za4r4ukw6rn": {
       "id": "6za4r4ukw6rn",
       "title": "HP 오멘 16 게이밍 노트북 판매합니다.",
-      "price": 1620000,
-      "previousPrice": 1650000,
+      "price": 1600000,
+      "previousPrice": 1620000,
       "changeType": "price_drop",
       "city": "안양시",
       "location": "호계1동",
@@ -7200,7 +7200,7 @@
       "postedAt": "2026-10-17T14:56:44.896Z",
       "url": "https://www.daangn.com/kr/buy-sell/hp-%EC%98%A4%EB%A9%98-16-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-6za4r4ukw6rn/",
       "firstAlertedAt": "2026-10-17T15:01:59.827257Z",
-      "lastCandidateAt": "2026-10-20T00:22:24.959589Z"
+      "lastCandidateAt": "2026-10-22T13:02:36.589155Z"
     },
     "uuci9hv4cp3b": {
       "id": "uuci9hv4cp3b",
@@ -9476,6 +9476,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/hp-zbook-fury-15-g7-%EC%8B%B8%EA%B2%8C-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-hw3tn54kbokg/",
       "firstAlertedAt": "2026-10-22T11:12:29.242920Z",
       "lastCandidateAt": "2026-10-22T11:12:29.242920Z"
+    },
+    "nfdesw8egkfp": {
+      "id": "nfdesw8egkfp",
+      "title": "2020년형 맥북프로 13인치 스페이스그레이",
+      "price": 500000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "호계동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB 메모리",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-22T12:31:37.238Z",
+      "url": "https://www.daangn.com/kr/buy-sell/2020%EB%85%84%ED%98%95-%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C-13%EC%9D%B8%EC%B9%98-%EC%8A%A4%ED%8E%98%EC%9D%B4%EC%8A%A4%EA%B7%B8%EB%A0%88%EC%9D%B4-nfdesw8egkfp/",
+      "firstAlertedAt": "2026-10-22T13:02:36.589155Z",
+      "lastCandidateAt": "2026-10-22T13:02:36.589155Z"
     }
   }
 }
