@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-22T22:32:06.947Z",
+  "generatedAt": "2026-10-22T23:12:08.651Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -48,46 +48,42 @@
       "htmlFallbacks": 60,
       "unknownSamples": [],
       "routeProbe": {
-        "error": "TypeError: fetch failed"
+        "error": "NON_JSON",
+        "head": ""
       },
       "htmlSample": {
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-efmavv8smu5m/",
-            "href": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-efmavv8smu5m/",
-            "title": "LG 노트북 화이트",
-            "content": "LG 울트라 노트북\n[제품 상세 정보]\n 모델명: LG전자 13U360-LX1HK\n 색상: 화이트\n 화면 크기: 13.3인치 \n 구성품: 노트북 본체 + 정품 충전 어댑터\n[제품 상태 및 설명]\n 문서 작업, 인강/동영상 시청, 웹서핑용으로 가볍고 깔끔하게 사용하기 좋은 LG 울트라북입니다.\n 외관 상태 전반적으로 깨끗하며, 키보드 및 디스플레이 이상 없이 잘 동작합니다.\n 초기화 완료해 두어서 구매 후 바로 설정해서 사용하시면 됩니다.",
-            "price": "110000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/1792704328498176932094ac6210a6c81c3bf521b62517f53ecb01c8e10e4a694c910a971cfdf0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-980x-%EC%8B%A4%EB%B2%84-bqz8i8ngqqmg/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-980x-%EC%8B%A4%EB%B2%84-bqz8i8ngqqmg/",
+            "title": "삼성 노트북 980X 실버",
+            "content": "삼성 노트북 900X 판매해요. 인텔 i5 프로세서와 SSD  m2 가 탑재되어 빠른 속도를 자랑합니다. 윈도우 10이 설치되어 있어 바로 사용 가능해요 한글.액셀설치도있읍니디ㅣ\n 얇고 가벼워 휴대하기 좋습니다. \n치수는가로36  세로24\n화면대각선으로38센지입니다\n15인치\n무개는약1.6k  밧데리도좋읍니다\n다만  화면에  밑부분 미세한백색있읍니다\n마지막사진 참조바람니다\n고지할뿐 이지 신경안써도 될듯합니다\n환불불가합니다",
+            "price": "150000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/929104c2-8b46-4f4f-9cbf-3b96cfd6d6f4.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-22T21:33:48.041Z",
-            "boostedAt": "2026-10-22T21:33:48.034Z",
+            "createdAt": "2026-10-22T23:07:40.621Z",
+            "boostedAt": "2026-10-22T23:07:40.611Z",
             "region": {
-              "name": "용강동"
+              "name": "신정6동"
             },
             "category": null,
-            "tradingCoordinates": [
-              {
-                "latitude": 35.883958678226556,
-                "longitude": 129.22571081872297
-              }
-            ]
+            "tradingCoordinates": []
           },
           {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-ipxmc2urs5kq/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-ipxmc2urs5kq/",
-            "title": "삼성 노트북 화이트",
-            "content": "인텔i5 3230M\n메모리8기가 \nssd128기가\n인텔HD그래픽15.6인치\n인텔i5라 빨라요 \n깔끔한 화이트 색상의 삼성 노트북이에요. 정품아답타 드려요\n상태좋아요 ",
-            "price": "180000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/10723eab-b296-4b54-93e0-fdc148e4c0f9.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-4210m-8gb-ram-%EC%82%AC%EB%AC%B4-%ED%95%99%EC%8A%B5-%EC%9C%A0%ED%8A%9C%EB%B8%8C-%EB%8F%99%EC%98%81%EC%83%81-%EC%8B%9C%EC%B2%AD-%EA%B9%A8%EB%81%97%ED%95%B4%EC%9A%94-%EC%8B%A0%ED%92%88%EA%B8%89-dxbna3yr5vqx/",
+            "href": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-4210m-8gb-ram-%EC%82%AC%EB%AC%B4-%ED%95%99%EC%8A%B5-%EC%9C%A0%ED%8A%9C%EB%B8%8C-%EB%8F%99%EC%98%81%EC%83%81-%EC%8B%9C%EC%B2%AD-%EA%B9%A8%EB%81%97%ED%95%B4%EC%9A%94-%EC%8B%A0%ED%92%88%EA%B8%89-dxbna3yr5vqx/",
+            "title": "LG 노트북 i5-4210M 8GB RAM 사무 학습 유튜브 동영상 시청 깨끗해요 신품급",
+            "content": "사무 학습 유튜브 동영상 시청용으로 사용하기 좋은 LG 노트북이에요. 인텔 i5-4210M CPU와 8GB RAM, 466GB HDD ssd 120기가 를 탑재하여 문서 작업이나 웹 서핑 유튜브동영상 등 기본적인 작업에 충분해요. \ni5 라 버버김 없고 속도 빨라요\n\n깔끔한 디자인으로 어디서든 사용하기 좋아요.\n내외부 기스없이 아주 깨끗하고 하자 없어요 리퍼 제품으로 받은 거라 새거 같아요\n내부 액정 깨끗하고 화면 화질 좋아요\n\n윈도우10 한글 엑셀 파워포인트 \n무선랜 내장 \n스피커 내장 소리 잘나와요\n밧데리 상태 좋아요 아답터 드립니다\n직거래 또는 택배 가능해요",
+            "price": "170000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/96ed77b9-6bcc-478c-86ab-4169471765af.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-22T12:47:02.611Z",
-            "boostedAt": "2026-10-22T12:47:02.609Z",
+            "createdAt": "2026-10-22T23:10:03.590Z",
+            "boostedAt": "2026-10-22T23:10:03.589Z",
             "region": {
-              "name": "중리동"
+              "name": "동변동"
             },
             "category": null,
             "tradingCoordinates": []
@@ -111,14 +107,14 @@
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-10-22T21:33:48.041Z\",\"boostedAt\":\"2026-10-22T21:33:48.034Z\",\"region\":{\"name\":\"용강동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-22T12:47:02.611Z\",\"boostedAt\":\"2026-10-22T12:47:02.609Z\",\"region\":{\"name\":\"중리동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-22T23:07:40.621Z\",\"boostedAt\":\"2026-10-22T23:07:40.611Z\",\"region\":{\"name\":\"신정6동\"},\"category\":null,\"tradingCoo",
+          "createdAt\":\"2026-10-22T23:10:03.590Z\",\"boostedAt\":\"2026-10-22T23:10:03.589Z\",\"region\":{\"name\":\"동변동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-22T11:01:14.201Z\",\"boostedAt\":\"2026-10-22T11:01:14.201Z\",\"region\":{\"name\":\"인덕원동\"},\"category\":null,\"tradingCoo",
-          "createdAt\":\"2026-10-22T05:15:01.724Z\",\"boostedAt\":\"2026-10-22T05:15:01.724Z\",\"region\":{\"name\":\"입북동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-19T06:02:34.645Z\",\"boostedAt\":\"2026-10-22T05:06:58.929Z\",\"region\":{\"name\":\"신월동\"},\"category\":null,\"tradingCoor"
+          "createdAt\":\"2026-10-22T12:47:02.611Z\",\"boostedAt\":\"2026-10-22T12:47:02.609Z\",\"region\":{\"name\":\"중리동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-22T05:15:01.724Z\",\"boostedAt\":\"2026-10-22T05:15:01.724Z\",\"region\":{\"name\":\"입북동\"},\"category\":null,\"tradingCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":263,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG 노트북 화이트\",\"description\":\"LG ",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":262,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 노트북 980X 실버\",\"description\":",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -126,24 +122,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1306,
-    "globalUniqueListings": 523,
-    "duplicateListingsRemoved": 783,
-    "detailQueueStart": 2,
-    "freshDetailTasks": 2,
+    "searchUniqueListings": 1323,
+    "globalUniqueListings": 561,
+    "duplicateListingsRemoved": 762,
+    "detailQueueStart": 5,
+    "freshDetailTasks": 5,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 2,
-    "detailSucceeded": 2,
+    "detailRequestsExecuted": 5,
+    "detailSucceeded": 5,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 523,
+    "postedAtResolvedFromSearch": 561,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 86362,
+    "scanDurationMs": 85844,
     "cities": [
       {
         "city": "군포시",
@@ -155,8 +151,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 283,
-        "durationMs": 12266
+        "uniqueListings": 288,
+        "durationMs": 12371
       },
       {
         "city": "의왕시",
@@ -171,8 +167,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 370,
-        "durationMs": 25773
+        "uniqueListings": 374,
+        "durationMs": 25814
       },
       {
         "city": "안양시",
@@ -189,8 +185,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 397,
-        "durationMs": 38519
+        "uniqueListings": 406,
+        "durationMs": 35429
       },
       {
         "city": "과천시",
@@ -201,8 +197,8 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 256,
-        "durationMs": 7811
+        "uniqueListings": 255,
+        "durationMs": 6552
       }
     ],
     "finalCandidateCount": 0,
@@ -211,7 +207,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 86369
+    "durationMs": 85852
   },
   "candidates": []
 }
