@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-22T23:12:08.651Z",
+  "generatedAt": "2026-10-22T23:15:58.627Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -110,8 +110,8 @@
           "createdAt\":\"2026-10-22T23:07:40.621Z\",\"boostedAt\":\"2026-10-22T23:07:40.611Z\",\"region\":{\"name\":\"신정6동\"},\"category\":null,\"tradingCoo",
           "createdAt\":\"2026-10-22T23:10:03.590Z\",\"boostedAt\":\"2026-10-22T23:10:03.589Z\",\"region\":{\"name\":\"동변동\"},\"category\":null,\"tradingCoor",
           "createdAt\":\"2026-10-22T11:01:14.201Z\",\"boostedAt\":\"2026-10-22T11:01:14.201Z\",\"region\":{\"name\":\"인덕원동\"},\"category\":null,\"tradingCoo",
-          "createdAt\":\"2026-10-22T12:47:02.611Z\",\"boostedAt\":\"2026-10-22T12:47:02.609Z\",\"region\":{\"name\":\"중리동\"},\"category\":null,\"tradingCoor",
-          "createdAt\":\"2026-10-22T05:15:01.724Z\",\"boostedAt\":\"2026-10-22T05:15:01.724Z\",\"region\":{\"name\":\"입북동\"},\"category\":null,\"tradingCoor"
+          "createdAt\":\"2026-10-22T05:15:01.724Z\",\"boostedAt\":\"2026-10-22T05:15:01.724Z\",\"region\":{\"name\":\"입북동\"},\"category\":null,\"tradingCoor",
+          "createdAt\":\"2026-10-22T21:33:48.041Z\",\"boostedAt\":\"2026-10-22T21:33:48.034Z\",\"region\":{\"name\":\"용강동\"},\"category\":null,\"tradingCoor"
         ],
         "scriptHeads": [
           "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":262,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 노트북 980X 실버\",\"description\":",
@@ -122,24 +122,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1323,
-    "globalUniqueListings": 561,
-    "duplicateListingsRemoved": 762,
-    "detailQueueStart": 5,
-    "freshDetailTasks": 5,
+    "searchUniqueListings": 1324,
+    "globalUniqueListings": 530,
+    "duplicateListingsRemoved": 794,
+    "detailQueueStart": 1,
+    "freshDetailTasks": 1,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 5,
-    "detailSucceeded": 5,
+    "detailRequestsExecuted": 1,
+    "detailSucceeded": 1,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 561,
+    "postedAtResolvedFromSearch": 530,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 85844,
+    "scanDurationMs": 81099,
     "cities": [
       {
         "city": "군포시",
@@ -151,8 +151,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 288,
-        "durationMs": 12371
+        "uniqueListings": 289,
+        "durationMs": 12342
       },
       {
         "city": "의왕시",
@@ -167,8 +167,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 374,
-        "durationMs": 25814
+        "uniqueListings": 373,
+        "durationMs": 25611
       },
       {
         "city": "안양시",
@@ -186,7 +186,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 406,
-        "durationMs": 35429
+        "durationMs": 35476
       },
       {
         "city": "과천시",
@@ -197,8 +197,8 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 255,
-        "durationMs": 6552
+        "uniqueListings": 256,
+        "durationMs": 6772
       }
     ],
     "finalCandidateCount": 0,
@@ -207,7 +207,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 85852
+    "durationMs": 81106
   },
   "candidates": []
 }
