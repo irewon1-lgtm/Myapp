@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-23T22:32:03.590Z",
+  "generatedAt": "2026-10-23T23:11:42.781Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -126,10 +126,10 @@
           "createdAt\":\"2026-10-22T11:01:14.201Z\",\"boostedAt\":\"2026-10-22T11:01:14.201Z\",\"region\":{\"name\":\"인덕원동\"},\"category\":null,\"contentCoo",
           "createdAt\":\"2026-10-21T11:37:23.723Z\",\"boostedAt\":\"2026-10-23T21:15:05.086Z\",\"region\":{\"name\":\"산본동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-23T16:49:30.152Z\",\"boostedAt\":\"2026-10-23T16:49:30.147Z\",\"region\":{\"name\":\"인의동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-10-22T10:28:19.650Z\",\"boostedAt\":\"2026-10-23T21:18:20.881Z\",\"region\":{\"name\":\"둔산1동\"},\"category\":null,\"contentCoo"
+          "createdAt\":\"2026-10-08T02:15:18.074Z\",\"boostedAt\":\"2026-10-22T02:34:04.537Z\",\"region\":{\"name\":\"흥천면\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":254,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG 노트북 i3 울트라 윈도우11 Pro\",\"desc",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":256,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG 노트북 i3 울트라 윈도우11 Pro\",\"desc",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -137,24 +137,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1242,
-    "globalUniqueListings": 516,
-    "duplicateListingsRemoved": 726,
-    "detailQueueStart": 4,
-    "freshDetailTasks": 4,
+    "searchUniqueListings": 1329,
+    "globalUniqueListings": 529,
+    "duplicateListingsRemoved": 800,
+    "detailQueueStart": 5,
+    "freshDetailTasks": 5,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 4,
-    "detailSucceeded": 4,
+    "detailRequestsExecuted": 5,
+    "detailSucceeded": 5,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 516,
+    "postedAtResolvedFromSearch": 529,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 1,
-    "scanDurationMs": 84859,
+    "scanDurationMs": 85441,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +166,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 286,
-        "durationMs": 12464
+        "uniqueListings": 289,
+        "durationMs": 12433
       },
       {
         "city": "의왕시",
@@ -182,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 382,
-        "durationMs": 25632
+        "uniqueListings": 381,
+        "durationMs": 25526
       },
       {
         "city": "안양시",
@@ -200,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 360,
-        "durationMs": 35436
+        "uniqueListings": 403,
+        "durationMs": 35294
       },
       {
         "city": "과천시",
@@ -212,8 +212,8 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 214,
-        "durationMs": 6571
+        "uniqueListings": 256,
+        "durationMs": 6440
       }
     ],
     "finalCandidateCount": 1,
@@ -222,43 +222,43 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 84865
+    "durationMs": 85446
   },
   "candidates": [
     {
-      "id": "nfdesw8egkfp",
+      "id": "z8yyq6a1qk3a",
       "changeType": "price_drop",
-      "previousPrice": 500000,
-      "price": 350000,
-      "priceDropPercent": 30,
+      "previousPrice": 4000000,
+      "price": 3900000,
+      "priceDropPercent": 2.5,
       "city": "안양시",
-      "location": "호계동",
-      "regionPath": "경기도 안양시 동안구 호계동",
-      "title": "2020년형 맥북프로 13인치 스페이스그레이",
-      "modelHint": "2020년형 맥북프로 13인치 스페이스그레이",
-      "cpuHint": null,
+      "location": "범계동",
+      "regionPath": "경기도 안양시 동안구 범계동",
+      "title": "애플 맥북프로 14 M5 pro 실버 최상품 판매",
+      "modelHint": "애플 맥북프로 14 M5 pro 실버 최상품 판매",
+      "cpuHint": "M5 pro",
       "cpuBaselinePass": null,
-      "gpuHint": null,
+      "gpuHint": "M5 pro",
       "vramGB": null,
-      "ramGB": 16,
+      "ramGB": 24,
       "ambiguousMemoryGB": null,
       "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": "16GB 메모리",
+      "ramEvidence": "RAM 24GB",
       "vramEvidence": null,
       "ambiguousMemoryEvidence": null,
-      "storageGB": null,
+      "storageGB": 2048,
       "llmCapability": "SPEC_CHECK_REQUIRED",
       "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
       "specConfidence": "needs_review",
-      "postedAt": "2026-10-22T12:31:37.238Z",
-      "boostedAt": "2026-10-23T22:02:41.391Z",
+      "postedAt": "2026-10-21T15:15:59.341Z",
+      "boostedAt": "2026-10-23T22:56:34.581Z",
       "status": "Ongoing",
-      "description": "2020년형 맥북프로 13인치 스페이스그레이 색상이에요. 인텔 2GHz 쿼드코어 i5 프로세서와 16GB 메모리, 512GB 저장 공간을 갖추고 있어요.(C포트 4개 고급형) 사이클 수 106회로 배터리 상태도 양호하답니다. 깔끔한 디자인으로 어디서든 활용하기 좋아요.\n\n참고로 우측 하단에 긁힘이 있습니다.(사진 참고)\n그리고 인텔 맥에다가 연식이 있다보니 팬소음이 있고, 물론 간단한 작업엔 조용하지만 저는 팬 컨트롤러를 사용해서 나름 최적화해서 사용하였습니다. \n\n구성품은 충전기랑 케이블은 제가 다른 맥에 사용해야 해서 본체만 판매하고 감안해서 금액을 책정하였습니다.",
-      "url": "https://www.daangn.com/kr/buy-sell/2020%EB%85%84%ED%98%95-%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C-13%EC%9D%B8%EC%B9%98-%EC%8A%A4%ED%8E%98%EC%9D%B4%EC%8A%A4%EA%B7%B8%EB%A0%88%EC%9D%B4-nfdesw8egkfp/",
+      "description": "맥북 프로 14 M5 Pro 실버 삭상입니다.\n- CPU 18코어\n- GPU 20코어\n- RAM 24GB\n- SSD 2TB\n스펙입니다.\n사용감 전혀없고 사용하지도 않은정도로 보시면됩니다.\n배터리이클 3회입니다. \n(제품 첫 개봉 시 2회부터 시작인걸로 알고 있어요.",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%95%A0%ED%94%8C-%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C-14-m5-pro-%EC%8B%A4%EB%B2%84-%EC%B5%9C%EC%83%81%ED%92%88-%ED%8C%90%EB%A7%A4-z8yyq6a1qk3a/",
       "favoriteCount": 0,
       "chatCount": 0,
-      "sellerName": "동하오동",
-      "mannerTemperature": 44.8
+      "sellerName": "당근나눔이",
+      "mannerTemperature": 41.6
     }
   ]
 }
