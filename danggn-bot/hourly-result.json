@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-23T12:42:16.773Z",
+  "generatedAt": "2026-10-23T13:22:21.469Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,24 +55,46 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EB%85%B8%ED%8A%B8%EB%B6%81-15-6%EC%9D%B8%EC%B9%98-i5-ssd-%EC%9C%88%EB%8F%84%EC%9A%B011-aoqzyg3a7pt3/",
-            "href": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EB%85%B8%ED%8A%B8%EB%B6%81-15-6%EC%9D%B8%EC%B9%98-i5-ssd-%EC%9C%88%EB%8F%84%EC%9A%B011-aoqzyg3a7pt3/",
-            "title": "레노버 노트북 15.6인치 i5 SSD 윈도우11",
-            "content": "레노버 노트북 판매해요. 15.6인치 화면에 인텔 i5 CPU, SSD 탑재되어 있어 빠르고 쾌적하게 사용 가능해요. 윈도우 11 Home 정품 설치되어 있어 바로 사용하시면 됩니다. 구성품으로 노트북 본체, 전원 어댑터, 마우스 함께 드려요. 문서 작업, 인터넷 서핑 등 일상적인 용도로 사용하기 좋아요.",
-            "price": "110000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/27896c6b-379c-4c1b-bfd7-4149a56b9037.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-bfa5otgf19ef/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-bfa5otgf19ef/",
+            "title": "삼성",
+            "content": "삼성노트북",
+            "price": "200000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/0e7fae7d-357a-48c9-b325-b6d0742de883.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-23T12:23:12.196Z",
-            "boostedAt": "2026-10-23T12:23:12.193Z",
+            "createdAt": "2026-10-23T13:02:31.185Z",
+            "boostedAt": "2026-10-23T13:02:31.183Z",
             "region": {
-              "name": "광적면"
+              "name": "일산동"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 37.86024,
-                "longitude": 126.9583613
+                "latitude": 37.3454422,
+                "longitude": 127.9438753
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/hp-15%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-uh9v3yb19875/",
+            "href": "/kr/buy-sell/hp-15%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-uh9v3yb19875/",
+            "title": "HP 15인치 노트북",
+            "content": "깔끔한 HP 15인치 노트북이에요. 라이젠5 프로세서와 4GB 메모리, 128GB 저장 공간을 갖추고 있어 다양한 작업에 충분해요. 윈도우 11이 설치되어 있어 바로 사용 가능합니다. 사진 속 노트북의 매력을 느껴보세요.",
+            "price": "200000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/1792760609296ec2a13217de491a64099a81458815d739fadb61da51fe6befcf3f107e6585c790.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-23T13:04:43.323Z",
+            "boostedAt": "2026-10-23T13:04:43.322Z",
+            "region": {
+              "name": "신정3동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 37.5087525,
+                "longitude": 126.8430034
               }
             ]
           },
@@ -97,39 +119,17 @@
                 "longitude": 127.0509543
               }
             ]
-          },
-          {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-13%EC%9D%B8%EC%B9%98-i5-%EB%9E%A88-128g-%EC%B6%A9%EC%A0%84%EA%B8%B0-%ED%8F%AC%ED%95%A8-z2yw5h1ufmt7/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-13%EC%9D%B8%EC%B9%98-i5-%EB%9E%A88-128g-%EC%B6%A9%EC%A0%84%EA%B8%B0-%ED%8F%AC%ED%95%A8-z2yw5h1ufmt7/",
-            "title": "삼성 노트북 13인치 i5 램8 128G, 충전기 포함",
-            "content": "삼성 노트북 판매해요. (NT900XG)\n램8, SSD128 윈도우11\n13인치 충전기, 파우치 함께 드립니다\n배터리 양호\n사용감있지만 편하게 쓰실 분 연락주세요",
-            "price": "100000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/17918800401163bfffcda20a3a7daa28a8592e6c5385f5c54bc722cc124dd51edb877e488a6020.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-13T08:32:18.999Z",
-            "boostedAt": "2026-10-22T04:00:44.857Z",
-            "region": {
-              "name": "도곡1동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 37.4931909,
-                "longitude": 127.046217
-              }
-            ]
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-10-23T12:23:12.196Z\",\"boostedAt\":\"2026-10-23T12:23:12.193Z\",\"region\":{\"name\":\"광적면\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-10-23T13:02:31.185Z\",\"boostedAt\":\"2026-10-23T13:02:31.183Z\",\"region\":{\"name\":\"일산동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-10-23T13:04:43.323Z\",\"boostedAt\":\"2026-10-23T13:04:43.322Z\",\"region\":{\"name\":\"신정3동\"},\"category\":null,\"contentCoo",
           "createdAt\":\"2026-10-23T12:23:16.752Z\",\"boostedAt\":\"2026-10-23T12:23:16.750Z\",\"region\":{\"name\":\"역삼2동\"},\"category\":null,\"contentCoo",
           "createdAt\":\"2026-10-13T08:32:18.999Z\",\"boostedAt\":\"2026-10-22T04:00:44.857Z\",\"region\":{\"name\":\"도곡1동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-10-23T12:16:18.724Z\",\"boostedAt\":\"2026-10-23T12:16:18.721Z\",\"region\":{\"name\":\"금정동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-10-23T11:51:22.589Z\",\"boostedAt\":\"2026-10-23T11:51:22.586Z\",\"region\":{\"name\":\"월피동\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-10-23T11:42:06.899Z\",\"boostedAt\":\"2026-10-23T11:42:06.897Z\",\"region\":{\"name\":\"모종동\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":258,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"레노버 노트북 15.6인치 i5 SSD 윈도우11\",\"",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":256,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성\",\"description\":\"삼성노트북\",\"ima",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -137,24 +137,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1273,
-    "globalUniqueListings": 534,
-    "duplicateListingsRemoved": 739,
-    "detailQueueStart": 14,
-    "freshDetailTasks": 14,
+    "searchUniqueListings": 1321,
+    "globalUniqueListings": 530,
+    "duplicateListingsRemoved": 791,
+    "detailQueueStart": 17,
+    "freshDetailTasks": 17,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 14,
-    "detailSucceeded": 14,
+    "detailRequestsExecuted": 17,
+    "detailSucceeded": 17,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 534,
+    "postedAtResolvedFromSearch": 530,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 95767,
+    "scanDurationMs": 99213,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +166,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 272,
-        "durationMs": 12300
+        "uniqueListings": 271,
+        "durationMs": 12118
       },
       {
         "city": "의왕시",
@@ -182,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 398,
-        "durationMs": 25602
+        "uniqueListings": 412,
+        "durationMs": 25426
       },
       {
         "city": "안양시",
@@ -200,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 391,
-        "durationMs": 35259
+        "uniqueListings": 396,
+        "durationMs": 35226
       },
       {
         "city": "과천시",
@@ -212,8 +212,8 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 212,
-        "durationMs": 6347
+        "uniqueListings": 242,
+        "durationMs": 6170
       }
     ],
     "finalCandidateCount": 0,
@@ -222,7 +222,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 95775
+    "durationMs": 99220
   },
   "candidates": []
 }
