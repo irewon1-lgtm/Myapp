@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-23T20:32:01.443Z",
+  "generatedAt": "2026-10-23T20:33:47.670Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,10 +55,10 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/%EC%83%88%EC%83%81%ED%92%88%EA%B8%89-%EC%97%90%EC%9D%B4%EC%84%9C-%EA%B3%A0%EC%82%AC%EC%96%91-4diaf6raexte/",
-            "href": "/kr/buy-sell/%EC%83%88%EC%83%81%ED%92%88%EA%B8%89-%EC%97%90%EC%9D%B4%EC%84%9C-%EA%B3%A0%EC%82%AC%EC%96%91-4diaf6raexte/",
-            "title": "(새상품급)에이서 고사양",
-            "content": "마지막 사진 참고 해주세요",
+            "id": "/kr/buy-sell/%EC%83%88%EC%83%81%ED%92%88%EA%B8%89-%EC%97%90%EC%9D%B4%EC%84%9C-%EA%B3%A0%EC%82%AC%EC%96%91-%EC%98%A4%EB%8A%98-%EB%A7%88%EC%A7%80%EB%A7%89-%EA%B0%80%EA%B2%A9-4diaf6raexte/",
+            "href": "/kr/buy-sell/%EC%83%88%EC%83%81%ED%92%88%EA%B8%89-%EC%97%90%EC%9D%B4%EC%84%9C-%EA%B3%A0%EC%82%AC%EC%96%91-%EC%98%A4%EB%8A%98-%EB%A7%88%EC%A7%80%EB%A7%89-%EA%B0%80%EA%B2%A9-4diaf6raexte/",
+            "title": "(새상품급)에이서 고사양 오늘 마지막 가격",
+            "content": "마지막 사진 참고 해주세요\n오늘 안팔리면 다시 140올리고 천천히 팝니다ㅜ",
             "price": "1300000",
             "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/4261d795-ed33-4f1a-a642-e151a1616af4.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
@@ -126,10 +126,10 @@
           "createdAt\":\"2026-10-23T16:49:30.152Z\",\"boostedAt\":\"2026-10-23T16:49:30.147Z\",\"region\":{\"name\":\"인의동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-22T11:01:14.201Z\",\"boostedAt\":\"2026-10-22T11:01:14.201Z\",\"region\":{\"name\":\"인덕원동\"},\"category\":null,\"contentCoo",
           "createdAt\":\"2026-10-21T23:25:45.544Z\",\"boostedAt\":\"2026-10-21T23:25:45.543Z\",\"region\":{\"name\":\"내손2동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-10-23T13:28:49.444Z\",\"boostedAt\":\"2026-10-23T13:28:49.442Z\",\"region\":{\"name\":\"별내동\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-10-12T06:24:40.798Z\",\"boostedAt\":\"2026-10-23T19:33:50.683Z\",\"region\":{\"name\":\"안흥동\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":252,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"(새상품급)에이서 고사양\",\"description\":\"",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":252,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"(새상품급)에이서 고사양 오늘 마지막 가격\",\"desc",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -137,9 +137,9 @@
         ]
       }
     },
-    "searchUniqueListings": 1236,
-    "globalUniqueListings": 514,
-    "duplicateListingsRemoved": 722,
+    "searchUniqueListings": 1312,
+    "globalUniqueListings": 518,
+    "duplicateListingsRemoved": 794,
     "detailQueueStart": 1,
     "freshDetailTasks": 1,
     "backlogDetailTasks": 0,
@@ -151,10 +151,10 @@
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 514,
+    "postedAtResolvedFromSearch": 518,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 81537,
+    "scanDurationMs": 79274,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +166,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 284,
-        "durationMs": 12260
+        "uniqueListings": 283,
+        "durationMs": 12026
       },
       {
         "city": "의왕시",
@@ -183,7 +183,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 373,
-        "durationMs": 25724
+        "durationMs": 25266
       },
       {
         "city": "안양시",
@@ -200,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 365,
-        "durationMs": 36201
+        "uniqueListings": 400,
+        "durationMs": 34817
       },
       {
         "city": "과천시",
@@ -212,8 +212,8 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 214,
-        "durationMs": 6520
+        "uniqueListings": 256,
+        "durationMs": 6039
       }
     ],
     "finalCandidateCount": 0,
@@ -222,7 +222,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 81544
+    "durationMs": 79281
   },
   "candidates": []
 }
