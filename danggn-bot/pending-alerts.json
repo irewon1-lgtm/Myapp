@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-23T09:12:08.816661Z",
+  "updatedAt": "2026-10-23T09:52:17.458746Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -9701,6 +9701,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%8D%B8-%EC%9D%B8%EC%8A%A4%ED%94%BC%EB%A1%A0-7559-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-i7-gtx960m-16%EB%9E%A8-256-ssd-1%ED%85%8C%EB%9D%BC-%ED%95%98%EB%93%9C-yx2ujyvpyz66/",
       "firstAlertedAt": "2026-10-23T07:52:14.224356Z",
       "lastCandidateAt": "2026-10-23T07:52:14.224356Z"
+    },
+    "c83z8fndrbe4": {
+      "id": "c83z8fndrbe4",
+      "title": "삼성 노트북 Pen S S펜 포함",
+      "price": 600000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "비산동",
+      "cpuHint": "i7-8565U",
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "RAM 16",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-23T09:35:24.288Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-pen-s-s%ED%8E%9C-%ED%8F%AC%ED%95%A8-c83z8fndrbe4/",
+      "firstAlertedAt": "2026-10-23T09:52:17.458746Z",
+      "lastCandidateAt": "2026-10-23T09:52:17.458746Z"
     }
   }
 }
