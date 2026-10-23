@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-23T15:22:04.114Z",
+  "generatedAt": "2026-10-23T16:02:06.453Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,6 +55,28 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%A1%9C%EC%A6%88%EA%B3%A8%EB%93%9C-o5u2xofb5h5w/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%A1%9C%EC%A6%88%EA%B3%A8%EB%93%9C-o5u2xofb5h5w/",
+            "title": "삼성 노트북 (로즈골드)",
+            "content": "깔끔한 로즈골드 색상의 삼성 노트북입니다. 8GB RAM으로 넉넉한 메모리를 갖추고 있어 업무용으로 다양한 작업을 원활하게 하실 수 있어요. 사진에서 보이는 구성품과 함께 드립니다. 가볍고 휴대하기 좋아 어디서든 편리하게 사용하실 수 있을 거예요.",
+            "price": "150000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/17927691130149e2da39d8180a2a82306631a2b3372fcede7a1ae5bef1ff0d2c9b5de8673a1fc0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-23T15:27:43.489Z",
+            "boostedAt": "2026-10-23T15:27:43.479Z",
+            "region": {
+              "name": "도담동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 36.5152297,
+                "longitude": 127.2617894
+              }
+            ]
+          },
+          {
             "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-bfa5otgf19ef/",
             "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-bfa5otgf19ef/",
             "title": "삼성",
@@ -73,28 +95,6 @@
               {
                 "latitude": 37.3454422,
                 "longitude": 127.9438753
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/%EC%82%AC%EB%AC%B4%EC%9A%A9-%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-8gb-%EB%9E%A8-120gb-ssd-x7v7pjv41vog/",
-            "href": "/kr/buy-sell/%EC%82%AC%EB%AC%B4%EC%9A%A9-%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-8gb-%EB%9E%A8-120gb-ssd-x7v7pjv41vog/",
-            "title": "사무용 삼성 노트북 i5 8GB 램 120GB SSD",
-            "content": "써멀 교체까지 해서 사무용으로 좋습니다. 윈도우 10 설치 및 업데이트, 경량화 완료했습니다. 엔비디아 외장 그래픽 있습니다.",
-            "price": "130000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/481b967b-1da8-4f75-b160-4bde73894830.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-23T12:23:16.752Z",
-            "boostedAt": "2026-10-23T12:23:16.750Z",
-            "region": {
-              "name": "역삼2동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 37.4997599,
-                "longitude": 127.0509543
               }
             ]
           },
@@ -122,14 +122,14 @@
           }
         ],
         "dateFieldSnippets": [
+          "createdAt\":\"2026-10-23T15:27:43.489Z\",\"boostedAt\":\"2026-10-23T15:27:43.479Z\",\"region\":{\"name\":\"도담동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-23T13:02:31.185Z\",\"boostedAt\":\"2026-10-23T13:02:31.183Z\",\"region\":{\"name\":\"일산동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-10-23T12:23:16.752Z\",\"boostedAt\":\"2026-10-23T12:23:16.750Z\",\"region\":{\"name\":\"역삼2동\"},\"category\":null,\"contentCoo",
           "createdAt\":\"2026-09-08T07:40:23.285Z\",\"boostedAt\":\"2026-10-22T11:39:08.145Z\",\"region\":{\"name\":\"사당동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-10-23T14:49:22.201Z\",\"boostedAt\":\"2026-10-23T14:49:22.200Z\",\"region\":{\"name\":\"시흥제1동\"},\"category\":null,\"contentCo",
+          "createdAt\":\"2026-10-13T08:32:18.999Z\",\"boostedAt\":\"2026-10-22T04:00:44.857Z\",\"region\":{\"name\":\"도곡1동\"},\"category\":null,\"contentCoo",
           "createdAt\":\"2026-10-18T13:06:03.718Z\",\"boostedAt\":\"2026-10-23T09:45:52.100Z\",\"region\":{\"name\":\"용호제2동\"},\"category\":null,\"contentCo"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":256,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성\",\"description\":\"삼성노트북\",\"ima",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":256,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 노트북 (로즈골드)\",\"description\":\"",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -137,24 +137,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1298,
-    "globalUniqueListings": 507,
-    "duplicateListingsRemoved": 791,
-    "detailQueueStart": 5,
-    "freshDetailTasks": 5,
+    "searchUniqueListings": 1273,
+    "globalUniqueListings": 495,
+    "duplicateListingsRemoved": 778,
+    "detailQueueStart": 6,
+    "freshDetailTasks": 6,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 5,
-    "detailSucceeded": 5,
+    "detailRequestsExecuted": 6,
+    "detailSucceeded": 6,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 507,
+    "postedAtResolvedFromSearch": 495,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 1,
-    "scanDurationMs": 85522,
+    "candidateCount": 0,
+    "scanDurationMs": 86207,
     "cities": [
       {
         "city": "군포시",
@@ -167,7 +167,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 271,
-        "durationMs": 12293
+        "durationMs": 12039
       },
       {
         "city": "의왕시",
@@ -182,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 406,
-        "durationMs": 25740
+        "uniqueListings": 402,
+        "durationMs": 25574
       },
       {
         "city": "안양시",
@@ -200,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 396,
-        "durationMs": 35419
+        "uniqueListings": 387,
+        "durationMs": 35472
       },
       {
         "city": "과천시",
@@ -212,53 +212,17 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 225,
-        "durationMs": 6519
+        "uniqueListings": 213,
+        "durationMs": 6470
       }
     ],
-    "finalCandidateCount": 1,
+    "finalCandidateCount": 0,
     "stateItemCount": 5000,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 85526
+    "durationMs": 86212
   },
-  "candidates": [
-    {
-      "id": "avgfzkzpkaqy",
-      "changeType": "price_drop",
-      "previousPrice": 900000,
-      "price": 855000,
-      "priceDropPercent": 5,
-      "city": "군포시",
-      "location": "수리동",
-      "regionPath": "경기도 군포시 수리동",
-      "title": "[윈도우11 탑재/풀박스] 899g 초경량 노트북 (실사용 3개월)",
-      "modelHint": "[윈도우11 탑재/풀박스] 899g 초경량 노트북 (실사용 3개월)",
-      "cpuHint": null,
-      "cpuBaselinePass": null,
-      "gpuHint": null,
-      "vramGB": null,
-      "ramGB": null,
-      "ambiguousMemoryGB": 16,
-      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": null,
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": "16GB",
-      "storageGB": null,
-      "llmCapability": "SPEC_CHECK_REQUIRED",
-      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
-      "specConfidence": "needs_review",
-      "postedAt": "2026-10-18T03:36:20.837Z",
-      "boostedAt": "2026-10-23T14:53:41.244Z",
-      "status": "Ongoing",
-      "description": "​899g으로 휴대하기 좋아 대학생/수험생에게 추천하는 14인치 노트북입니다.\n실사용 기간이 짧고 기기 상태가 매우 깨끗합니다.\n\n​📌 제품 스펙\n• OS : 윈도우 11 (정품 기본 탑재)\n• 화면/무게 : 14인치 / 899g\n• CPU : 최신 스냅드래곤\n• 메모리/용량 : 16GB(온보드) / 512GB\n\n​📌 제품 상태\n• 구입일 : 2026년 1월 30일 (실사용 3~4개월)\n• 구성품 : 풀박스 (구매 당시 상자 모두 보유)\n• 특이사항 : 외관 아주 깨끗함, 공장 초기화 완료 (바로 사용 가능)\n\n​📌 거래 방식\n• 고가의 전자기기이므로, 직접 상태를 꼼꼼히 확인하실 수 있는 직거래를 강력히 권장합니다.\n• 부득이한 경우, 파손 면책 동의 하에 택배 거래도 가능합니다. \n\n편하게 연락 주세요!",
-      "url": "https://www.daangn.com/kr/buy-sell/%EC%9C%88%EB%8F%84%EC%9A%B011-%ED%83%91%EC%9E%AC-%ED%92%80%EB%B0%95%EC%8A%A4-899g-%EC%B4%88%EA%B2%BD%EB%9F%89-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%8B%A4%EC%82%AC%EC%9A%A9-3%EA%B0%9C%EC%9B%94-avgfzkzpkaqy/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "감자고구마",
-      "mannerTemperature": 37.4
-    }
-  ]
+  "candidates": []
 }
