@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-23T19:51:58.529Z",
+  "generatedAt": "2026-10-23T20:32:01.443Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,24 +55,24 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/%EC%83%88%EC%83%81%ED%92%88%EA%B8%89-%EC%97%90%EC%9D%B4%EC%84%9C-%EC%B5%9C%EA%B3%A0%EC%82%AC%EC%96%91-y6a9qvymaee1/",
-            "href": "/kr/buy-sell/%EC%83%88%EC%83%81%ED%92%88%EA%B8%89-%EC%97%90%EC%9D%B4%EC%84%9C-%EC%B5%9C%EA%B3%A0%EC%82%AC%EC%96%91-y6a9qvymaee1/",
-            "title": "(새상품급)에이서 최고사양",
-            "content": "스팩은 마지막 사진 참고해주세요~^^",
-            "price": "1400000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/4d6a9878-9801-43f6-a9b4-fcf852e06f66.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%EC%83%88%EC%83%81%ED%92%88%EA%B8%89-%EC%97%90%EC%9D%B4%EC%84%9C-%EA%B3%A0%EC%82%AC%EC%96%91-4diaf6raexte/",
+            "href": "/kr/buy-sell/%EC%83%88%EC%83%81%ED%92%88%EA%B8%89-%EC%97%90%EC%9D%B4%EC%84%9C-%EA%B3%A0%EC%82%AC%EC%96%91-4diaf6raexte/",
+            "title": "(새상품급)에이서 고사양",
+            "content": "마지막 사진 참고 해주세요",
+            "price": "1300000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/4261d795-ed33-4f1a-a642-e151a1616af4.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-12T06:24:40.798Z",
-            "boostedAt": "2026-10-23T19:33:50.683Z",
+            "createdAt": "2026-10-11T22:21:15.506Z",
+            "boostedAt": "2026-10-23T19:36:01.576Z",
             "region": {
               "name": "안흥동"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 37.9281762,
-                "longitude": 127.0454903
+                "latitude": 37.8922023,
+                "longitude": 127.0167596
               }
             ]
           },
@@ -122,14 +122,14 @@
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-10-12T06:24:40.798Z\",\"boostedAt\":\"2026-10-23T19:33:50.683Z\",\"region\":{\"name\":\"안흥동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-10-11T22:21:15.506Z\",\"boostedAt\":\"2026-10-23T19:36:01.576Z\",\"region\":{\"name\":\"안흥동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-23T16:49:30.152Z\",\"boostedAt\":\"2026-10-23T16:49:30.147Z\",\"region\":{\"name\":\"인의동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-22T11:01:14.201Z\",\"boostedAt\":\"2026-10-22T11:01:14.201Z\",\"region\":{\"name\":\"인덕원동\"},\"category\":null,\"contentCoo",
           "createdAt\":\"2026-10-21T23:25:45.544Z\",\"boostedAt\":\"2026-10-21T23:25:45.543Z\",\"region\":{\"name\":\"내손2동\"},\"category\":null,\"contentCoo",
           "createdAt\":\"2026-10-23T13:28:49.444Z\",\"boostedAt\":\"2026-10-23T13:28:49.442Z\",\"region\":{\"name\":\"별내동\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":250,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"(새상품급)에이서 최고사양\",\"description\":",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":252,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"(새상품급)에이서 고사양\",\"description\":\"",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -137,24 +137,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1280,
-    "globalUniqueListings": 521,
-    "duplicateListingsRemoved": 759,
-    "detailQueueStart": 2,
-    "freshDetailTasks": 2,
+    "searchUniqueListings": 1236,
+    "globalUniqueListings": 514,
+    "duplicateListingsRemoved": 722,
+    "detailQueueStart": 1,
+    "freshDetailTasks": 1,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 2,
-    "detailSucceeded": 2,
+    "detailRequestsExecuted": 1,
+    "detailSucceeded": 1,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 521,
+    "postedAtResolvedFromSearch": 514,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 81492,
+    "scanDurationMs": 81537,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +166,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 280,
-        "durationMs": 11962
+        "uniqueListings": 284,
+        "durationMs": 12260
       },
       {
         "city": "의왕시",
@@ -182,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 378,
-        "durationMs": 25586
+        "uniqueListings": 373,
+        "durationMs": 25724
       },
       {
         "city": "안양시",
@@ -200,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 366,
-        "durationMs": 35009
+        "uniqueListings": 365,
+        "durationMs": 36201
       },
       {
         "city": "과천시",
@@ -212,8 +212,8 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 256,
-        "durationMs": 6774
+        "uniqueListings": 214,
+        "durationMs": 6520
       }
     ],
     "finalCandidateCount": 0,
@@ -222,7 +222,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 81500
+    "durationMs": 81544
   },
   "candidates": []
 }
