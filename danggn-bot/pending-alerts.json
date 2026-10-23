@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-23T16:42:01.112921Z",
+  "updatedAt": "2026-10-23T17:20:04.372444Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -9355,9 +9355,9 @@
     "ugh84f3xrzrt": {
       "id": "ugh84f3xrzrt",
       "title": "SS급 레노버 아이디어패드 Slim 5 노트북 RAM16G SSD 512G I5-13500",
-      "price": 700000,
-      "previousPrice": null,
-      "changeType": "new",
+      "price": 600000,
+      "previousPrice": 700000,
+      "changeType": "price_drop",
       "city": "안양시",
       "location": "관양1동",
       "cpuHint": null,
@@ -9375,7 +9375,7 @@
       "postedAt": "2026-10-22T08:09:47.843Z",
       "url": "https://www.daangn.com/kr/buy-sell/ss%EA%B8%89-%EB%A0%88%EB%85%B8%EB%B2%84-%EC%95%84%EC%9D%B4%EB%94%94%EC%96%B4%ED%8C%A8%EB%93%9C-slim-5-%EB%85%B8%ED%8A%B8%EB%B6%81-ram16g-ssd-512g-i5-13500-ugh84f3xrzrt/",
       "firstAlertedAt": "2026-10-22T08:42:35.040753Z",
-      "lastCandidateAt": "2026-10-22T08:42:35.040753Z"
+      "lastCandidateAt": "2026-10-23T17:20:04.372444Z"
     },
     "cbf8tf12peu6": {
       "id": "cbf8tf12peu6",
@@ -9776,6 +9776,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EA%B8%B0%EA%B0%80%EB%B0%94%EC%9D%B4%ED%8A%B8-aorus-17g-yd-%ED%92%80%EB%B0%95%EC%8A%A4-i7-11800h-rtx3080-32gb-wf7173txs7bv/",
       "firstAlertedAt": "2026-10-23T14:02:18.192277Z",
       "lastCandidateAt": "2026-10-23T14:02:18.192277Z"
+    },
+    "cssev4o8owxr": {
+      "id": "cssev4o8owxr",
+      "title": "S급-맥북 프로 터치바 15인치 2016 i7 16GB 1테라 고급형",
+      "price": 289900,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "호계1동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB 메모리",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-23T16:46:18.599Z",
+      "url": "https://www.daangn.com/kr/buy-sell/s%EA%B8%89-%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-%ED%84%B0%EC%B9%98%EB%B0%94-15%EC%9D%B8%EC%B9%98-2016-i7-16gb-1%ED%85%8C%EB%9D%BC-%EA%B3%A0%EA%B8%89%ED%98%95-cssev4o8owxr/",
+      "firstAlertedAt": "2026-10-23T17:20:04.372444Z",
+      "lastCandidateAt": "2026-10-23T17:20:04.372444Z"
     }
   }
 }
