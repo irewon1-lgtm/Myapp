@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-23T07:12:14.955126Z",
+  "updatedAt": "2026-10-23T07:52:14.224356Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -9676,6 +9676,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-e495-%EB%9D%BC%EC%9D%B4%EC%A0%A07-3700uu-fhd-16gb-nvme256gb-gfmyifav3ypo/",
       "firstAlertedAt": "2026-10-23T06:22:12.446169Z",
       "lastCandidateAt": "2026-10-23T06:22:12.446169Z"
+    },
+    "yx2ujyvpyz66": {
+      "id": "yx2ujyvpyz66",
+      "title": "델 인스피론 7559 노트북 판매합니다 (i7/GTX960M) 16램 256 ssd 1테라 하드",
+      "price": 150000,
+      "previousPrice": 160000,
+      "changeType": "price_drop",
+      "city": "군포시",
+      "location": "궁내동",
+      "cpuHint": "i7-6700HQ",
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16램",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": 256,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-22T06:35:50.221Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%8D%B8-%EC%9D%B8%EC%8A%A4%ED%94%BC%EB%A1%A0-7559-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-i7-gtx960m-16%EB%9E%A8-256-ssd-1%ED%85%8C%EB%9D%BC-%ED%95%98%EB%93%9C-yx2ujyvpyz66/",
+      "firstAlertedAt": "2026-10-23T07:52:14.224356Z",
+      "lastCandidateAt": "2026-10-23T07:52:14.224356Z"
     }
   }
 }
