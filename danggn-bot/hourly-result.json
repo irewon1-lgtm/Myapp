@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-24T04:02:13.484Z",
+  "generatedAt": "2026-10-24T04:42:08.159Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,24 +55,24 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/g10-%EB%85%B8%ED%8A%B8%EB%B6%81-15%EC%9D%B8%EC%B9%98-%ED%8C%9D%EB%8B%88%EB%8B%A4-61oams9jryy3/",
-            "href": "/kr/buy-sell/g10-%EB%85%B8%ED%8A%B8%EB%B6%81-15%EC%9D%B8%EC%B9%98-%ED%8C%9D%EB%8B%88%EB%8B%A4-61oams9jryy3/",
-            "title": "G10  노트북 15인치 팝니다",
-            "content": "여자친구가 사놓고 거의 쓰질않아서 팔아봐요 급하게 집 정리 때문에 내놔야되서 싸게 올려봅니다",
-            "price": "120000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/818eef24eb48087a7662a7aeff6d17fbdc4c07efc7e4c644cdabb3666908968b_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/i7-6700hq-%EC%82%BC%EC%84%B1%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%92%80hd-128g-500g-peq79uuj291w/",
+            "href": "/kr/buy-sell/i7-6700hq-%EC%82%BC%EC%84%B1%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%92%80hd-128g-500g-peq79uuj291w/",
+            "title": "i7-6700HQ / 삼성노트북 / 풀HD / 128G+500G",
+            "content": "고성능 인텔 i7-6700HQ 장착된 삼성 노트북.\n포멧 후 윈도우 클린설치 하여 바로 사용 가능.\n\n▫️삼성 NT371B5L\n▫️i7-6700HQ (성능/속도 잘 나옵니다)\n▫️DDR4 8GB램\n▫️128GB OS용 M.2 ssd\n▫️500GB 데이터 저장용 HDD\n▫️1920x1080 Full HD\n▫️배터리 2~3시간 작동\n▫️본체와 충전기 제공\n▫️윈도우11 pro 클린설치 인증\n▫️MS오피스 2021\n▫️한글 2022 등 유틸리티 \n▫️교환 / 환불 X\n\n[알림] 화면에 화이트스팟 (작동중 잘보이진 않음)",
+            "price": "180000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/521c8cc2-5d3b-43ca-ac8c-df09baa76437.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-24T02:54:22.913Z",
-            "boostedAt": "2026-10-24T02:54:22.912Z",
+            "createdAt": "2026-10-24T04:30:29.866Z",
+            "boostedAt": "2026-10-24T04:30:29.865Z",
             "region": {
-              "name": "안중읍"
+              "name": "상봉제1동"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 36.9846415,
-                "longitude": 126.9292492
+                "latitude": 37.5974942,
+                "longitude": 127.0921312
               }
             ]
           },
@@ -122,14 +122,14 @@
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-10-24T02:54:22.913Z\",\"boostedAt\":\"2026-10-24T02:54:22.912Z\",\"region\":{\"name\":\"안중읍\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-10-24T04:30:29.866Z\",\"boostedAt\":\"2026-10-24T04:30:29.865Z\",\"region\":{\"name\":\"상봉제1동\"},\"category\":null,\"contentCo",
           "createdAt\":\"2026-10-23T23:53:49.376Z\",\"boostedAt\":\"2026-10-23T23:53:49.374Z\",\"region\":{\"name\":\"배방읍\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-24T02:46:11.226Z\",\"boostedAt\":\"2026-10-24T02:46:11.225Z\",\"region\":{\"name\":\"서초3동\"},\"category\":null,\"contentCoo",
           "createdAt\":\"2026-09-08T07:40:23.285Z\",\"boostedAt\":\"2026-10-22T11:39:08.145Z\",\"region\":{\"name\":\"사당동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-21T12:31:33.624Z\",\"boostedAt\":\"2026-10-21T12:31:33.623Z\",\"region\":{\"name\":\"소담동\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":257,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"G10  노트북 15인치 팝니다\",\"descriptio",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":257,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"i7-6700HQ / 삼성노트북 / 풀HD / 128G",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -137,24 +137,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1290,
-    "globalUniqueListings": 548,
-    "duplicateListingsRemoved": 742,
-    "detailQueueStart": 11,
-    "freshDetailTasks": 11,
+    "searchUniqueListings": 1308,
+    "globalUniqueListings": 498,
+    "duplicateListingsRemoved": 810,
+    "detailQueueStart": 9,
+    "freshDetailTasks": 9,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 11,
-    "detailSucceeded": 11,
+    "detailRequestsExecuted": 9,
+    "detailSucceeded": 9,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 548,
+    "postedAtResolvedFromSearch": 498,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 1,
-    "scanDurationMs": 92971,
+    "candidateCount": 0,
+    "scanDurationMs": 90979,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +166,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 273,
-        "durationMs": 12382
+        "uniqueListings": 272,
+        "durationMs": 12037
       },
       {
         "city": "의왕시",
@@ -182,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 409,
-        "durationMs": 25967
+        "uniqueListings": 415,
+        "durationMs": 25699
       },
       {
         "city": "안양시",
@@ -200,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 395,
-        "durationMs": 35531
+        "uniqueListings": 365,
+        "durationMs": 35283
       },
       {
         "city": "과천시",
@@ -212,53 +212,17 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 213,
-        "durationMs": 6608
+        "uniqueListings": 256,
+        "durationMs": 7171
       }
     ],
-    "finalCandidateCount": 1,
+    "finalCandidateCount": 0,
     "stateItemCount": 5000,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 92979
+    "durationMs": 90985
   },
-  "candidates": [
-    {
-      "id": "c83z8fndrbe4",
-      "changeType": "price_drop",
-      "previousPrice": 600000,
-      "price": 500000,
-      "priceDropPercent": 16.7,
-      "city": "안양시",
-      "location": "비산동",
-      "regionPath": "경기도 안양시 동안구 비산동",
-      "title": "삼성 노트북 Pen S 15인치 S펜 포함",
-      "modelHint": "삼성 노트북 Pen S 15인치 S펜 포함",
-      "cpuHint": "i7-8565U",
-      "cpuBaselinePass": null,
-      "gpuHint": null,
-      "vramGB": null,
-      "ramGB": 16,
-      "ambiguousMemoryGB": null,
-      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": "RAM 16",
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": null,
-      "storageGB": null,
-      "llmCapability": "SPEC_CHECK_REQUIRED",
-      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
-      "specConfidence": "needs_review",
-      "postedAt": "2026-10-23T09:35:24.288Z",
-      "boostedAt": "2026-10-23T09:35:24.287Z",
-      "status": "Ongoing",
-      "description": "급처 합니다. 스펙 보면 아시다시피 그 당시에 300만원 가까이 주고 샀습니다. 메인노트북으로 쓰려고 화면 액정필름 키보드커버 전 후면 보호 필름등 씌워놨는데 얼마뒤 맥북프로 생겨서 거의 사용도 안하고 케이스에 있었던 친구입니다. 사용시간 아마 700시간도 안될거에요. 전 후면 외부에 가벼운 찍힘 하나씩 있는것 외에 기능상, 외관상 하자 거의 없는 상태 놓은 녀석입니다. 개인 사정으로 인해 팔게 되어서 실사용 하실 분들은 정말 좋은 기회이실 것 같습니다. \n\n전화면 터치스크린에 모니터 360회전 가능합니다.\n얼굴인식 및 지문인식 가능\n프로세서 Intel(R) Core(TM) i7-8565U CPU @ 1.80GHz(1.99 GHz)\n설치된 RAM 16.0GB(15.9GB 사용 가능)\n그래픽 카드 NVIDIA Gerorce MX150 (2 GB)\nIntel(R) UHD Graphics 620 (128 MB)\n저장소 512 GB \n시스템 종류 윈도우 11 64비트 운영 체제, x64 기반 프로세서\n펜 및 터지 펜과 10개 터치 포인트 지원",
-      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-pen-s-15%EC%9D%B8%EC%B9%98-s%ED%8E%9C-%ED%8F%AC%ED%95%A8-c83z8fndrbe4/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "ss2unghwany",
-      "mannerTemperature": 37.8
-    }
-  ]
+  "candidates": []
 }
