@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-24T02:42:16.458971Z",
+  "updatedAt": "2026-10-24T03:22:19.191329Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -9826,6 +9826,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/msi-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-i7-4720hq-gtx970m-16gb-ram-3vxp6ztq3jmk/",
       "firstAlertedAt": "2026-10-24T02:42:16.458971Z",
       "lastCandidateAt": "2026-10-24T02:42:16.458971Z"
+    },
+    "tpt4zqj6jgor": {
+      "id": "tpt4zqj6jgor",
+      "title": "HP EliteBook 830 G8 i7 32GB RAM 256GB SSD 13.3인치",
+      "price": 630000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "평촌동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 32,
+      "ambiguousMemoryGB": 32,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "32GB RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "32GB",
+      "storageGB": 256,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "postedAt": "2026-10-24T02:59:00.979Z",
+      "url": "https://www.daangn.com/kr/buy-sell/hp-elitebook-830-g8-i7-32gb-ram-256gb-ssd-13-3%EC%9D%B8%EC%B9%98-tpt4zqj6jgor/",
+      "firstAlertedAt": "2026-10-24T03:22:19.191329Z",
+      "lastCandidateAt": "2026-10-24T03:22:19.191329Z"
     }
   }
 }
