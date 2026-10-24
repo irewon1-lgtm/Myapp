@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-24T22:18:46.523Z",
+  "generatedAt": "2026-10-24T22:51:59.600Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -126,7 +126,7 @@
           "createdAt\":\"2026-10-06T01:52:55.910Z\",\"boostedAt\":\"2026-10-24T15:00:16.453Z\",\"region\":{\"name\":\"신내동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-22T11:01:14.201Z\",\"boostedAt\":\"2026-10-22T11:01:14.201Z\",\"region\":{\"name\":\"인덕원동\"},\"category\":null,\"contentCoo",
           "createdAt\":\"2026-10-18T16:18:39.258Z\",\"boostedAt\":\"2026-10-24T13:51:23.224Z\",\"region\":{\"name\":\"도마동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-10-17T01:31:53.874Z\",\"boostedAt\":\"2026-10-24T16:49:30.957Z\",\"region\":{\"name\":\"정왕3동\"},\"category\":null,\"contentCoo"
+          "createdAt\":\"2026-10-12T00:14:05.778Z\",\"boostedAt\":\"2026-10-24T22:45:47.920Z\",\"region\":{\"name\":\"가음동\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
           "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":251,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"깔끔 LG 그램 노트북 13인치\",\"descriptio",
@@ -137,24 +137,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1312,
-    "globalUniqueListings": 515,
-    "duplicateListingsRemoved": 797,
-    "detailQueueStart": 4,
-    "freshDetailTasks": 4,
+    "searchUniqueListings": 1313,
+    "globalUniqueListings": 514,
+    "duplicateListingsRemoved": 799,
+    "detailQueueStart": 2,
+    "freshDetailTasks": 2,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 4,
-    "detailSucceeded": 4,
+    "detailRequestsExecuted": 2,
+    "detailSucceeded": 2,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 515,
+    "postedAtResolvedFromSearch": 514,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 1,
-    "scanDurationMs": 82980,
+    "scanDurationMs": 82566,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +166,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 283,
-        "durationMs": 12008
+        "uniqueListings": 281,
+        "durationMs": 12448
       },
       {
         "city": "의왕시",
@@ -182,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 406,
-        "durationMs": 25437
+        "uniqueListings": 379,
+        "durationMs": 25949
       },
       {
         "city": "안양시",
@@ -200,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 367,
-        "durationMs": 34926
+        "uniqueListings": 397,
+        "durationMs": 35342
       },
       {
         "city": "과천시",
@@ -213,7 +213,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 256,
-        "durationMs": 5927
+        "durationMs": 6708
       }
     ],
     "finalCandidateCount": 1,
@@ -222,20 +222,20 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 82986
+    "durationMs": 82574
   },
   "candidates": [
     {
-      "id": "vqghb38d1cyg",
-      "changeType": "price_drop",
-      "previousPrice": 900000,
-      "price": 780000,
-      "priceDropPercent": 13.3,
+      "id": "f3dgr3nz8myy",
+      "changeType": "new",
+      "previousPrice": null,
+      "price": 700000,
+      "priceDropPercent": null,
       "city": "안양시",
-      "location": "부림동",
-      "regionPath": "경기도 안양시 동안구 부림동",
-      "title": "삼성 갤럭시 북3 프로 NT940XFT 13인치",
-      "modelHint": "삼성 갤럭시 북3 프로 NT940XFT 13인치",
+      "location": "평촌동",
+      "regionPath": "경기도 안양시 동안구 평촌동",
+      "title": "레노버 씽크북 14IRL G8 Core i7 SSD 512GB",
+      "modelHint": "레노버 씽크북 14IRL G8 Core i7 SSD 512GB",
       "cpuHint": null,
       "cpuBaselinePass": null,
       "gpuHint": null,
@@ -246,19 +246,19 @@
       "ramEvidence": "16GB RAM",
       "vramEvidence": null,
       "ambiguousMemoryEvidence": null,
-      "storageGB": null,
+      "storageGB": 512,
       "llmCapability": "SPEC_CHECK_REQUIRED",
       "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
       "specConfidence": "needs_review",
-      "postedAt": "2026-10-22T14:31:34.679Z",
-      "boostedAt": "2026-10-24T22:01:17.498Z",
+      "postedAt": "2026-10-24T22:21:24.832Z",
+      "boostedAt": "2026-10-24T22:21:24.829Z",
       "status": "Ongoing",
-      "description": "삼성 갤럭시 북3 프로 NT940XFT-A51AG 판매해요. \n13세대 인텔 i5-1340P 프로세서\n16GB RAM\n기존 256GB인데 512GB를 더 추가해서 750GB입니다\n13인치 모델이고 슬림하고 다크 그레이에 무게가 가볍습니다\n박스 구성 그대로 드림니다\n23년3월 모델입니다\n\n상태는 매우 좋습니다",
-      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C-%EB%B6%813-%ED%94%84%EB%A1%9C-nt940xft-13%EC%9D%B8%EC%B9%98-vqghb38d1cyg/",
+      "description": "문서 작업, 영상 편집 등 다용도로 활용하기 좋은 레노버 ThinkBook 14 G8 노트북이에요\n14인치 WUXGA 디스플레이와 인텔 코어 i7 CPU 탑재로 쾌적한 사용이 가능해요\nSSD 512GB와 16GB RAM으로 넉넉한 저장 공간과 빠른 속도를 자랑합니다.\n구매후 2~3주 정도 사용후 전혀 사용을 하지 않아서 판매합니다. 상태는 거의 신품급 입니다.\n가성비 좋은 노트북을 찾으시는 분들께 추천드려요",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%94%BD%ED%81%AC%EB%B6%81-14irl-g8-core-i7-ssd-512gb-f3dgr3nz8myy/",
       "favoriteCount": 0,
       "chatCount": 0,
-      "sellerName": "haru0609",
-      "mannerTemperature": 49.2
+      "sellerName": "지후니",
+      "mannerTemperature": 39.4
     }
   ]
 }
