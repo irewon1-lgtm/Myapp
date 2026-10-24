@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-24T21:14:47.991Z",
+  "generatedAt": "2026-10-24T21:51:57.258Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,6 +55,28 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
+            "id": "/kr/buy-sell/%ED%95%9C%EC%84%B1-%EB%B3%B4%EC%8A%A4%EB%AA%AC%EC%8A%A4%ED%84%B0-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-i7-gtx-860m-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-jax45g4rkzv9/",
+            "href": "/kr/buy-sell/%ED%95%9C%EC%84%B1-%EB%B3%B4%EC%8A%A4%EB%AA%AC%EC%8A%A4%ED%84%B0-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-i7-gtx-860m-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-jax45g4rkzv9/",
+            "title": "한성 보스몬스터 게이밍 노트북 i7 / GTX 860M 판매합니다",
+            "content": "모델명: BOSSMONSTER X54K (W35xSS_370SS)\n* CPU: Intel Core i7-4710MQ\n* RAM: 8GB DDR3\n* 그래픽카드: NVIDIA GeForce GTX 860M 2GB\n* 저장장치: SSD 128GB\n사용감 많아요 배터리 1시간 30분정도 갑니다\n반품,환불X",
+            "price": "50000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/17928779109844c1945a9c3f1b9a1a57d56ce66b9bd7a81f07262c13a01ce7ec22ec6f07d4c450.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-24T21:42:48.935Z",
+            "boostedAt": "2026-10-24T21:42:48.931Z",
+            "region": {
+              "name": "용이동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 36.9995777,
+                "longitude": 127.1313921
+              }
+            ]
+          },
+          {
             "id": "/kr/buy-sell/%EA%B9%94%EB%81%94-lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-13%EC%9D%B8%EC%B9%98-xkcisrybxdiy/",
             "href": "/kr/buy-sell/%EA%B9%94%EB%81%94-lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-13%EC%9D%B8%EC%B9%98-xkcisrybxdiy/",
             "title": "깔끔 LG 그램 노트북 13인치",
@@ -73,28 +95,6 @@
               {
                 "latitude": 36.0756776,
                 "longitude": 128.4057235
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/lg-14%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-fonvdyub2x9v/",
-            "href": "/kr/buy-sell/lg-14%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-fonvdyub2x9v/",
-            "title": "LG 14인치 노트북 판매합니다",
-            "content": "14인치\nIntel Celeron N4100\nRAM 4GB\n저장공간 128GB급\n충전기 포함\n정상 작동\n초기화 완료\n인터넷, 문서작업, 동영상 시청 등 간단한 용도로 사용하기 좋습니다.\n사용감은 있는 편이라 사진 확인 부탁드립니다. 수리 이력 없습니다.\n윈도우10\n직거래 편하게 문의 주세요.\n네고 가능합니다",
-            "price": "80000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/2e5a9511-ee95-475a-ab09-db712d887df6.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-06T01:52:55.910Z",
-            "boostedAt": "2026-10-24T15:00:16.453Z",
-            "region": {
-              "name": "신내동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 37.6122238,
-                "longitude": 127.0959498
               }
             ]
           },
@@ -122,14 +122,14 @@
           }
         ],
         "dateFieldSnippets": [
+          "createdAt\":\"2026-10-24T21:42:48.935Z\",\"boostedAt\":\"2026-10-24T21:42:48.931Z\",\"region\":{\"name\":\"용이동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-24T16:17:03.822Z\",\"boostedAt\":\"2026-10-24T16:17:03.821Z\",\"region\":{\"name\":\"석적읍\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-10-06T01:52:55.910Z\",\"boostedAt\":\"2026-10-24T15:00:16.453Z\",\"region\":{\"name\":\"신내동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-22T11:01:14.201Z\",\"boostedAt\":\"2026-10-22T11:01:14.201Z\",\"region\":{\"name\":\"인덕원동\"},\"category\":null,\"contentCoo",
           "createdAt\":\"2026-10-21T23:25:45.544Z\",\"boostedAt\":\"2026-10-21T23:25:45.543Z\",\"region\":{\"name\":\"내손2동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-10-18T16:18:39.258Z\",\"boostedAt\":\"2026-10-24T13:51:23.224Z\",\"region\":{\"name\":\"도마동\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-10-06T01:52:55.910Z\",\"boostedAt\":\"2026-10-24T15:00:16.453Z\",\"region\":{\"name\":\"신내동\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":248,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"깔끔 LG 그램 노트북 13인치\",\"descriptio",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":248,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"한성 보스몬스터 게이밍 노트북 i7 / GTX 860M",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -137,24 +137,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1325,
-    "globalUniqueListings": 521,
-    "duplicateListingsRemoved": 804,
-    "detailQueueStart": 0,
-    "freshDetailTasks": 0,
+    "searchUniqueListings": 1280,
+    "globalUniqueListings": 484,
+    "duplicateListingsRemoved": 796,
+    "detailQueueStart": 5,
+    "freshDetailTasks": 5,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 0,
-    "detailSucceeded": 0,
+    "detailRequestsExecuted": 5,
+    "detailSucceeded": 5,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 521,
+    "postedAtResolvedFromSearch": 484,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 79722,
+    "scanDurationMs": 85059,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +166,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 282,
-        "durationMs": 12501
+        "uniqueListings": 279,
+        "durationMs": 12075
       },
       {
         "city": "의왕시",
@@ -182,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 383,
-        "durationMs": 25574
+        "uniqueListings": 381,
+        "durationMs": 25542
       },
       {
         "city": "안양시",
@@ -200,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 404,
-        "durationMs": 35107
+        "uniqueListings": 364,
+        "durationMs": 35315
       },
       {
         "city": "과천시",
@@ -213,7 +213,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 256,
-        "durationMs": 6332
+        "durationMs": 6439
       }
     ],
     "finalCandidateCount": 0,
@@ -222,7 +222,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 79729
+    "durationMs": 85065
   },
   "candidates": []
 }
