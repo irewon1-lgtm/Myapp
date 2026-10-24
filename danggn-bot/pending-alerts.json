@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-24T06:02:08.768171Z",
+  "updatedAt": "2026-10-24T06:27:58.473440Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -9901,6 +9901,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-16%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-ssd-512gb-gxat2k18nqi8/",
       "firstAlertedAt": "2026-10-24T05:22:16.213345Z",
       "lastCandidateAt": "2026-10-24T05:22:16.213345Z"
+    },
+    "sycwmgbej3x1": {
+      "id": "sycwmgbej3x1",
+      "title": "삼성 갤럭시북5 프로 16인치 32GB",
+      "price": 1950000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "석수동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 32,
+      "ambiguousMemoryGB": 32,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "메모리: 32GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "32GB",
+      "storageGB": 512,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "postedAt": "2026-10-24T06:20:57.983Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%815-%ED%94%84%EB%A1%9C-16%EC%9D%B8%EC%B9%98-32gb-sycwmgbej3x1/",
+      "firstAlertedAt": "2026-10-24T06:27:58.473440Z",
+      "lastCandidateAt": "2026-10-24T06:27:58.473440Z"
+    },
+    "6ih8o3xw7d5n": {
+      "id": "6ih8o3xw7d5n",
+      "title": "노트북",
+      "price": 2380000,
+      "previousPrice": 2400000,
+      "changeType": "price_drop",
+      "city": "안양시",
+      "location": "부림동",
+      "cpuHint": "Ryzen 7 Pro 7840U",
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 32,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "Memory : 32GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 1024,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "postedAt": "2026-10-02T07:21:02.581Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%85%B8%ED%8A%B8%EB%B6%81-6ih8o3xw7d5n/",
+      "firstAlertedAt": "2026-10-24T06:27:58.473440Z",
+      "lastCandidateAt": "2026-10-24T06:27:58.473440Z"
     }
   }
 }
