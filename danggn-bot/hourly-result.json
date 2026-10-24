@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-24T07:52:05.551Z",
+  "generatedAt": "2026-10-24T08:32:15.927Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -77,24 +77,24 @@
             ]
           },
           {
-            "id": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-12%EC%84%B8%EB%8C%80-i5-%EB%85%B8%ED%8A%B8%EB%B6%81-16gb-wkzsmf1mref2/",
-            "href": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-12%EC%84%B8%EB%8C%80-i5-%EB%85%B8%ED%8A%B8%EB%B6%81-16gb-wkzsmf1mref2/",
-            "title": "레노버 12세대 i5 노트북 16GB",
-            "content": "레노버 idea pad slim \n12세대 인텔 코어 i5-12450H 프로세서와\n DDD5 16GB 메모리를 탑재했어요.\n238GB SSD와 인텔 UHD 그래픽을 갖췄어요.\n회색 본체에 숫자 키패드와 터치패드가 있어요.\n문서 작업이나 일상적인 컴퓨터 사용에 활용하기 좋아요.\n\n거의 사용 안했습니다.\n전자 기기 임으로 환불반품사절 합니다.\n네고문의시 대답않드립니다.",
-            "price": "500000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/399b2a4c-387b-4a08-82f9-c89aebc2eb46.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-rc530-ws55-%ED%8C%9D%EB%8B%88%EB%8B%A4-%EA%B0%80%EB%B0%A9%ED%8F%AC%ED%95%A8-tn4nhzn5p7ef/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-rc530-ws55-%ED%8C%9D%EB%8B%88%EB%8B%A4-%EA%B0%80%EB%B0%A9%ED%8F%AC%ED%95%A8-tn4nhzn5p7ef/",
+            "title": "삼성 노트북 RC530-WS55 팝니다(가방포함)",
+            "content": "삼성 노트북 RC530-WS55 모델입니다. 인텔 코어 i5 2450M 프로세서와 8GB RAM, 250G SSD를 그래픽카드는 엔비디아 지포스GT 540M 탑재하여 쾌적한 사용이 가능해요. 사진 속 가방과 아답터 모두 포함되어 있습니다. 윈도우는 11홈이 설치되어 있습니다.",
+            "price": "200000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/82b7d363-8076-4239-8d0f-938c2adaf1b8.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
-            "isInstantBuyAvailable": false,
-            "createdAt": "2026-10-04T01:43:28.058Z",
-            "boostedAt": "2026-10-24T07:43:56.417Z",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-24T08:14:09.800Z",
+            "boostedAt": "2026-10-24T08:14:09.797Z",
             "region": {
-              "name": "군포2동"
+              "name": "신장동"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 37.3385525,
-                "longitude": 126.931749
+                "latitude": 37.5418316,
+                "longitude": 127.2228331
               }
             ]
           },
@@ -123,10 +123,10 @@
         ],
         "dateFieldSnippets": [
           "createdAt\":\"2026-10-24T07:23:19.526Z\",\"boostedAt\":\"2026-10-24T07:23:19.519Z\",\"region\":{\"name\":\"금정동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-10-04T01:43:28.058Z\",\"boostedAt\":\"2026-10-24T07:43:56.417Z\",\"region\":{\"name\":\"군포2동\"},\"category\":null,\"contentCoo",
+          "createdAt\":\"2026-10-24T08:14:09.800Z\",\"boostedAt\":\"2026-10-24T08:14:09.797Z\",\"region\":{\"name\":\"신장동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-22T11:01:14.201Z\",\"boostedAt\":\"2026-10-22T11:01:14.201Z\",\"region\":{\"name\":\"인덕원동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-10-24T06:21:33.034Z\",\"boostedAt\":\"2026-10-24T06:21:33.026Z\",\"region\":{\"name\":\"광장동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-10-21T23:25:45.544Z\",\"boostedAt\":\"2026-10-21T23:25:45.543Z\",\"region\":{\"name\":\"내손2동\"},\"category\":null,\"contentCoo"
+          "createdAt\":\"2026-10-21T23:25:45.544Z\",\"boostedAt\":\"2026-10-21T23:25:45.543Z\",\"region\":{\"name\":\"내손2동\"},\"category\":null,\"contentCoo",
+          "createdAt\":\"2026-07-14T06:46:34.409Z\",\"boostedAt\":\"2026-10-24T07:52:10.227Z\",\"region\":{\"name\":\"삼동\"},\"category\":null,\"contentCoord"
         ],
         "scriptHeads": [
           "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":246,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"급쳐 17인치 지포스3060그래픽 노트북\",\"descr",
@@ -137,24 +137,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1360,
-    "globalUniqueListings": 527,
-    "duplicateListingsRemoved": 833,
-    "detailQueueStart": 8,
-    "freshDetailTasks": 8,
+    "searchUniqueListings": 1280,
+    "globalUniqueListings": 554,
+    "duplicateListingsRemoved": 726,
+    "detailQueueStart": 13,
+    "freshDetailTasks": 13,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 8,
-    "detailSucceeded": 8,
+    "detailRequestsExecuted": 13,
+    "detailSucceeded": 13,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 527,
+    "postedAtResolvedFromSearch": 554,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 89134,
+    "scanDurationMs": 94726,
     "cities": [
       {
         "city": "군포시",
@@ -167,7 +167,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 285,
-        "durationMs": 11842
+        "durationMs": 12376
       },
       {
         "city": "의왕시",
@@ -182,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 431,
-        "durationMs": 25833
+        "uniqueListings": 390,
+        "durationMs": 25398
       },
       {
         "city": "안양시",
@@ -200,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 389,
-        "durationMs": 35407
+        "uniqueListings": 393,
+        "durationMs": 35260
       },
       {
         "city": "과천시",
@@ -212,8 +212,8 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 255,
-        "durationMs": 6624
+        "uniqueListings": 212,
+        "durationMs": 6351
       }
     ],
     "finalCandidateCount": 0,
@@ -222,7 +222,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 89141
+    "durationMs": 94734
   },
   "candidates": []
 }
