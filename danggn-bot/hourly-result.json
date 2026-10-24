@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-24T21:11:58.862Z",
+  "generatedAt": "2026-10-24T21:14:47.991Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -126,10 +126,10 @@
           "createdAt\":\"2026-10-06T01:52:55.910Z\",\"boostedAt\":\"2026-10-24T15:00:16.453Z\",\"region\":{\"name\":\"신내동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-22T11:01:14.201Z\",\"boostedAt\":\"2026-10-22T11:01:14.201Z\",\"region\":{\"name\":\"인덕원동\"},\"category\":null,\"contentCoo",
           "createdAt\":\"2026-10-21T23:25:45.544Z\",\"boostedAt\":\"2026-10-21T23:25:45.543Z\",\"region\":{\"name\":\"내손2동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-10-24T16:15:26.725Z\",\"boostedAt\":\"2026-10-24T16:15:26.722Z\",\"region\":{\"name\":\"대관령면\"},\"category\":null,\"contentCoo"
+          "createdAt\":\"2026-10-18T16:18:39.258Z\",\"boostedAt\":\"2026-10-24T13:51:23.224Z\",\"region\":{\"name\":\"도마동\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":246,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"깔끔 LG 그램 노트북 13인치\",\"descriptio",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":248,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"깔끔 LG 그램 노트북 13인치\",\"descriptio",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -137,24 +137,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1287,
-    "globalUniqueListings": 519,
-    "duplicateListingsRemoved": 768,
-    "detailQueueStart": 2,
-    "freshDetailTasks": 2,
+    "searchUniqueListings": 1325,
+    "globalUniqueListings": 521,
+    "duplicateListingsRemoved": 804,
+    "detailQueueStart": 0,
+    "freshDetailTasks": 0,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 2,
-    "detailSucceeded": 2,
+    "detailRequestsExecuted": 0,
+    "detailSucceeded": 0,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 519,
+    "postedAtResolvedFromSearch": 521,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 80973,
+    "scanDurationMs": 79722,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +166,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 284,
-        "durationMs": 12070
+        "uniqueListings": 282,
+        "durationMs": 12501
       },
       {
         "city": "의왕시",
@@ -182,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 380,
-        "durationMs": 25456
+        "uniqueListings": 383,
+        "durationMs": 25574
       },
       {
         "city": "안양시",
@@ -200,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 367,
-        "durationMs": 34940
+        "uniqueListings": 404,
+        "durationMs": 35107
       },
       {
         "city": "과천시",
@@ -213,7 +213,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 256,
-        "durationMs": 6441
+        "durationMs": 6332
       }
     ],
     "finalCandidateCount": 0,
@@ -222,7 +222,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 80980
+    "durationMs": 79729
   },
   "candidates": []
 }
