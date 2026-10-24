@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-24T02:01:43.653009Z",
+  "updatedAt": "2026-10-24T02:42:16.458971Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -9801,6 +9801,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/s%EA%B8%89-%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-%ED%84%B0%EC%B9%98%EB%B0%94-15%EC%9D%B8%EC%B9%98-2016-i7-16gb-1%ED%85%8C%EB%9D%BC-%EA%B3%A0%EA%B8%89%ED%98%95-cssev4o8owxr/",
       "firstAlertedAt": "2026-10-23T17:20:04.372444Z",
       "lastCandidateAt": "2026-10-23T17:20:04.372444Z"
+    },
+    "3vxp6ztq3jmk": {
+      "id": "3vxp6ztq3jmk",
+      "title": "MSI 게이밍 노트북 i7-4720HQ GTX970M 16GB RAM",
+      "price": 110000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "금정동",
+      "cpuHint": "i7-4720HQ",
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": 1024,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-24T02:30:56.819Z",
+      "url": "https://www.daangn.com/kr/buy-sell/msi-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-i7-4720hq-gtx970m-16gb-ram-3vxp6ztq3jmk/",
+      "firstAlertedAt": "2026-10-24T02:42:16.458971Z",
+      "lastCandidateAt": "2026-10-24T02:42:16.458971Z"
     }
   }
 }
