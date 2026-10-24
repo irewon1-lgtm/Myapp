@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-24T17:12:03.105Z",
+  "generatedAt": "2026-10-24T17:44:25.891Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -99,24 +99,24 @@
             ]
           },
           {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-nt270e5g-%EB%85%B8%ED%8A%B8%EB%B6%81-i3-4gb-ram-500gb-hdd-wff99its8sp2/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-nt270e5g-%EB%85%B8%ED%8A%B8%EB%B6%81-i3-4gb-ram-500gb-hdd-wff99its8sp2/",
-            "title": "삼성 NT270E5G 노트북 (i3, 4GB RAM, 500GB HDD)",
-            "content": "삼성 NT270E5G 노트북 판매해요. 인텔 i3 프로세서와 4GB RAM, 500GB HDD를 탑재하고 있어요. 사진에서 보시는 것처럼 노트북 본체와 전원 어댑터, 그리고 무선 키보드와 마우스, 패드, 블루스트동글, 노트북 가방까지 모두 포함되어 있습니다. 깔끔한 디자인으로 어디서든 사용하기 좋아요.",
-            "price": "200000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/8edb2cf4-e1df-4326-9426-ab1afbb808c9.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/lg%EB%85%B8%ED%8A%B8%EB%B6%81-pja1rhmj4yum/",
+            "href": "/kr/buy-sell/lg%EB%85%B8%ED%8A%B8%EB%B6%81-pja1rhmj4yum/",
+            "title": "LG노트북",
+            "content": "21년 신형 구매 했습니다 구매 하시면 충전기 선 같이\n드려요~ 상태 진짜 좋아요",
+            "price": "290000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/17926662579615fb9ccbd7a77f5e5f64c42dd56dec823980ef0f5ca50c83628360cff1a9f073d0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": false,
-            "createdAt": "2026-10-24T16:35:53.456Z",
-            "boostedAt": "2026-10-24T16:35:53.455Z",
+            "createdAt": "2026-10-22T11:01:14.201Z",
+            "boostedAt": "2026-10-22T11:01:14.201Z",
             "region": {
-              "name": "반월동"
+              "name": "인덕원동"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 37.3024221,
-                "longitude": 126.9044215
+                "latitude": 37.4027054,
+                "longitude": 126.9735527
               }
             ]
           }
@@ -124,9 +124,9 @@
         "dateFieldSnippets": [
           "createdAt\":\"2026-10-24T16:15:26.725Z\",\"boostedAt\":\"2026-10-24T16:15:26.722Z\",\"region\":{\"name\":\"대관령면\"},\"category\":null,\"contentCoo",
           "createdAt\":\"2026-10-24T16:17:03.822Z\",\"boostedAt\":\"2026-10-24T16:17:03.821Z\",\"region\":{\"name\":\"석적읍\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-10-24T16:35:53.456Z\",\"boostedAt\":\"2026-10-24T16:35:53.455Z\",\"region\":{\"name\":\"반월동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-22T11:01:14.201Z\",\"boostedAt\":\"2026-10-22T11:01:14.201Z\",\"region\":{\"name\":\"인덕원동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-10-06T01:52:55.910Z\",\"boostedAt\":\"2026-10-24T15:00:16.453Z\",\"region\":{\"name\":\"신내동\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-10-21T23:25:45.544Z\",\"boostedAt\":\"2026-10-21T23:25:45.543Z\",\"region\":{\"name\":\"내손2동\"},\"category\":null,\"contentCoo",
+          "createdAt\":\"2026-10-24T11:48:14.907Z\",\"boostedAt\":\"2026-10-24T11:48:14.907Z\",\"region\":{\"name\":\"팽성읍\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
           "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":244,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"레노버 노트북 14인치\",\"description\":\"레",
@@ -137,24 +137,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1265,
-    "globalUniqueListings": 529,
-    "duplicateListingsRemoved": 736,
-    "detailQueueStart": 4,
-    "freshDetailTasks": 4,
+    "searchUniqueListings": 1324,
+    "globalUniqueListings": 519,
+    "duplicateListingsRemoved": 805,
+    "detailQueueStart": 3,
+    "freshDetailTasks": 3,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 4,
-    "detailSucceeded": 4,
+    "detailRequestsExecuted": 3,
+    "detailSucceeded": 3,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 529,
+    "postedAtResolvedFromSearch": 519,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 84280,
+    "scanDurationMs": 82487,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +166,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 279,
-        "durationMs": 12312
+        "uniqueListings": 287,
+        "durationMs": 12258
       },
       {
         "city": "의왕시",
@@ -182,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 383,
-        "durationMs": 25630
+        "uniqueListings": 386,
+        "durationMs": 25714
       },
       {
         "city": "안양시",
@@ -200,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 378,
-        "durationMs": 35283
+        "uniqueListings": 395,
+        "durationMs": 35005
       },
       {
         "city": "과천시",
@@ -212,8 +212,8 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 225,
-        "durationMs": 6485
+        "uniqueListings": 256,
+        "durationMs": 6238
       }
     ],
     "finalCandidateCount": 0,
@@ -222,7 +222,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 84287
+    "durationMs": 82494
   },
   "candidates": []
 }
