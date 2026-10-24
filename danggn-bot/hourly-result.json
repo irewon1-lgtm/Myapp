@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-24T05:22:16.144Z",
+  "generatedAt": "2026-10-24T06:02:08.708Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,6 +55,28 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1%EC%A0%84%EC%9E%90-i7-6770hq%EB%85%B8%ED%8A%B8%EB%B6%81-cies65yu623x/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1%EC%A0%84%EC%9E%90-i7-6770hq%EB%85%B8%ED%8A%B8%EB%B6%81-cies65yu623x/",
+            "title": "삼성전자 i7-6770HQ노트북",
+            "content": "-CPU: i7 6770HQ\n-메모리:8G(추가슬롯 있음)\n-SSD 128G+하드 1TB\n-그래픽: Intel Iris Pro Graphics 580\n-화면크기:15.6인치\n-해상도:1920*1080\n-밧데리:충전 2시간 이상\n*충전기 드려요\n*생활기스,찍힘들은 있을수 있어요",
+            "price": "200000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/1526f055-a920-4bf9-b8ba-aea4e411e93d.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-24T05:40:56.948Z",
+            "boostedAt": "2026-10-24T05:40:56.945Z",
+            "region": {
+              "name": "농성동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 35.1586433,
+                "longitude": 126.8858381
+              }
+            ]
+          },
+          {
             "id": "/kr/buy-sell/%EC%95%84%EC%88%98%EC%8A%A4-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-e8a2uzvb5zpv/",
             "href": "/kr/buy-sell/%EC%95%84%EC%88%98%EC%8A%A4-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-e8a2uzvb5zpv/",
             "title": "아수스 게이밍 노트북 판매합니다.",
@@ -73,28 +95,6 @@
               {
                 "latitude": 37.7387904,
                 "longitude": 127.0475812
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-i5-8265u-%EB%85%B8%ED%8A%B8%EB%B6%81-pcirvax6mu4y/",
-            "href": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-i5-8265u-%EB%85%B8%ED%8A%B8%EB%B6%81-pcirvax6mu4y/",
-            "title": "레노버 i5-8265U 노트북",
-            "content": "^제품 가벼워요^\n-CPU: i5-8265U\n-메모리:4G(추가슬롯 있음)\n-SSD M.2 128G+하드 500G\n-그래픽: Intel UHD Graphics 620\n-화면크기:15.6인치\n-해상도:1920*1080\n-밧데리:충전 2시간 이상\n\n*충전기 드려요\n\n*생활기스,찍힘들은 있을수 있어요",
-            "price": "170000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/de48e4fc-0772-4382-a984-b65243f62314.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-24T05:11:40.880Z",
-            "boostedAt": "2026-10-24T05:11:40.871Z",
-            "region": {
-              "name": "농성동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 35.1586433,
-                "longitude": 126.8858381
               }
             ]
           },
@@ -122,14 +122,14 @@
           }
         ],
         "dateFieldSnippets": [
+          "createdAt\":\"2026-10-24T05:40:56.948Z\",\"boostedAt\":\"2026-10-24T05:40:56.945Z\",\"region\":{\"name\":\"농성동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-24T05:15:37.314Z\",\"boostedAt\":\"2026-10-24T05:15:37.312Z\",\"region\":{\"name\":\"의정부동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-10-24T05:11:40.880Z\",\"boostedAt\":\"2026-10-24T05:11:40.871Z\",\"region\":{\"name\":\"농성동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-24T05:00:33.418Z\",\"boostedAt\":\"2026-10-24T05:00:33.416Z\",\"region\":{\"name\":\"개포동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-24T02:46:11.226Z\",\"boostedAt\":\"2026-10-24T02:46:11.225Z\",\"region\":{\"name\":\"서초3동\"},\"category\":null,\"contentCoo",
           "createdAt\":\"2026-10-23T23:53:49.376Z\",\"boostedAt\":\"2026-10-23T23:53:49.374Z\",\"region\":{\"name\":\"배방읍\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":255,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"아수스 게이밍 노트북 판매합니다.\",\"descripti",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":259,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성전자 i7-6770HQ노트북\",\"descriptio",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -137,24 +137,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1320,
-    "globalUniqueListings": 500,
-    "duplicateListingsRemoved": 820,
-    "detailQueueStart": 16,
-    "freshDetailTasks": 16,
+    "searchUniqueListings": 1294,
+    "globalUniqueListings": 507,
+    "duplicateListingsRemoved": 787,
+    "detailQueueStart": 9,
+    "freshDetailTasks": 9,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 16,
-    "detailSucceeded": 16,
+    "detailRequestsExecuted": 9,
+    "detailSucceeded": 9,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 500,
+    "postedAtResolvedFromSearch": 507,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 3,
-    "scanDurationMs": 99352,
+    "candidateCount": 0,
+    "scanDurationMs": 90152,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +166,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 273,
-        "durationMs": 12461
+        "uniqueListings": 272,
+        "durationMs": 12150
       },
       {
         "city": "의왕시",
@@ -182,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 406,
-        "durationMs": 25313
+        "uniqueListings": 409,
+        "durationMs": 25720
       },
       {
         "city": "안양시",
@@ -200,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 385,
-        "durationMs": 35499
+        "uniqueListings": 387,
+        "durationMs": 35550
       },
       {
         "city": "과천시",
@@ -212,123 +212,17 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 256,
-        "durationMs": 6969
+        "uniqueListings": 226,
+        "durationMs": 6661
       }
     ],
-    "finalCandidateCount": 3,
+    "finalCandidateCount": 0,
     "stateItemCount": 5000,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 99359
+    "durationMs": 90159
   },
-  "candidates": [
-    {
-      "id": "eoowywr26duf",
-      "changeType": "new",
-      "previousPrice": null,
-      "price": 1100000,
-      "priceDropPercent": null,
-      "city": "안양시",
-      "location": "귀인동",
-      "regionPath": "경기도 안양시 동안구 귀인동",
-      "title": "[풀박스]고사양 LG 그램 16(RTX 3050, Ram 16gb)",
-      "modelHint": "[풀박스]고사양 LG 그램 16(RTX 3050, Ram 16gb)",
-      "cpuHint": null,
-      "cpuBaselinePass": null,
-      "gpuHint": "RTX 3050",
-      "vramGB": null,
-      "ramGB": 16,
-      "ambiguousMemoryGB": 16,
-      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": "램 16",
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": "16gb",
-      "storageGB": null,
-      "llmCapability": "SPEC_CHECK_REQUIRED",
-      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
-      "specConfidence": "needs_review",
-      "postedAt": "2026-10-24T05:01:13.052Z",
-      "boostedAt": "2026-10-24T05:01:13.050Z",
-      "status": "Ongoing",
-      "description": "Lg 그램 16인치 팔아요. 모델명은 16Z90R-EA5HK입니다. 검색해보시면 기본 200만원은 넘는 제품입니다. 3050 그래픽 카드를 탑재해서 고사양 작업에 적합한 제품입니다.\n\n구매는 24년 9월에 했고 거의 쓰지 않아서 풀박스, 보호필름도 그대로 부착되어 있습니다. 배터리 효율도 사진 보시면 거의 최상급입니다.\n\n거의 세제품이라 봐도 무방합니다. 풀박스(충전기 포함) 전달 드리고 직거래만 합니다.\n\n시세보다 싸게 팔겠습니다😀",
-      "url": "https://www.daangn.com/kr/buy-sell/%ED%92%80%EB%B0%95%EC%8A%A4-%EA%B3%A0%EC%82%AC%EC%96%91-lg-%EA%B7%B8%EB%9E%A8-16-rtx-3050-ram-16gb-eoowywr26duf/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "acapella",
-      "mannerTemperature": 39.9
-    },
-    {
-      "id": "gxat2k18nqi8",
-      "changeType": "new",
-      "previousPrice": null,
-      "price": 1950000,
-      "priceDropPercent": null,
-      "city": "과천시",
-      "location": "갈현동",
-      "regionPath": "경기도 과천시 갈현동",
-      "title": "LG 그램 16인치 화이트 (SSD 512GB)",
-      "modelHint": "LG 그램 16인치 화이트 (SSD 512GB)",
-      "cpuHint": null,
-      "cpuBaselinePass": null,
-      "gpuHint": null,
-      "vramGB": null,
-      "ramGB": 16,
-      "ambiguousMemoryGB": null,
-      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": "램 16",
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": null,
-      "storageGB": 512,
-      "llmCapability": "SPEC_CHECK_REQUIRED",
-      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
-      "specConfidence": "needs_review",
-      "postedAt": "2026-10-24T04:50:56.892Z",
-      "boostedAt": "2026-10-24T04:50:56.889Z",
-      "status": "Ongoing",
-      "description": "LG 그램 16인치 노트북입니다. \nSSD는 512GB가 탑재되어 있습니다. \n화이트 색상이며 미개봉 새제품입니다.",
-      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-16%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-ssd-512gb-gxat2k18nqi8/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "맑고향기롭게",
-      "mannerTemperature": 39.2
-    },
-    {
-      "id": "kuf152ng34un",
-      "changeType": "price_drop",
-      "previousPrice": 1100000,
-      "price": 1080000,
-      "priceDropPercent": 1.8,
-      "city": "과천시",
-      "location": "문원동",
-      "regionPath": "경기도 과천시 문원동",
-      "title": "삼성 갤럭시북4 512GB 16GB(상태 S급, 풀박)",
-      "modelHint": "삼성 갤럭시북4 512GB 16GB(상태 S급, 풀박)",
-      "cpuHint": null,
-      "cpuBaselinePass": null,
-      "gpuHint": null,
-      "vramGB": null,
-      "ramGB": 16,
-      "ambiguousMemoryGB": 16,
-      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": "16GB RAM",
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": "16GB",
-      "storageGB": 512,
-      "llmCapability": "SPEC_CHECK_REQUIRED",
-      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
-      "specConfidence": "needs_review",
-      "postedAt": "2026-10-16T14:30:01.396Z",
-      "boostedAt": "2026-10-24T05:17:20.901Z",
-      "status": "Ongoing",
-      "description": "• 삼성 갤럭시북4 15.6인치 노트북\n• 모델명: NT750XGJ-KP51S\n• SSD 512GB, 16GB RAM\n• i5-1335U(13세대)\n• 윈도우 11 Home 포함\n• 한컴오피스 포함\n• 배터리 성능 100% (사이클 카운트4)\n• 제조년월: 26년 9월\n\n\n생활기스도 전혀없는 SSS급 상태입니다. \n풀박이구요. \n노트북사서 일을 시작하려했는데 사정이 생겨서 일을 못하게되어 판매합니다. 지금은 그냥 모셔놓은 상태입니다.\n새걸로 구매하려면 140만원 이상합니다.",
-      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%814-512gb-16gb-%EC%83%81%ED%83%9C-s%EA%B8%89-%ED%92%80%EB%B0%95-kuf152ng34un/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "소류",
-      "mannerTemperature": 38.5
-    }
-  ]
+  "candidates": []
 }
