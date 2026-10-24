@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-24T15:52:57.726Z",
+  "generatedAt": "2026-10-24T16:32:05.477Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,24 +55,46 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EB%85%B8%ED%8A%B8%EB%B6%81-ryzen-3-8gb-ram-256gb-ssd-xzn77qndq547/",
-            "href": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EB%85%B8%ED%8A%B8%EB%B6%81-ryzen-3-8gb-ram-256gb-ssd-xzn77qndq547/",
-            "title": "레노버 노트북 (Ryzen 3, 8GB RAM, 256GB SSD)",
-            "content": "안녕하세요! 레노버 노트북 판매합니다.\nAMD Ryzen 3 프로세서와 8GB RAM, 256GB SSD를 탑재하여 빠르고 쾌적한 사용이 가능해요.\n사진에서 보시는 것처럼 구성품(어댑터)도 함께 드립니다.\n일상적인 작업부터 멀티미디어 감상까지, 다재다능하게 활용해보세요.",
-            "price": "180000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/ad301340-413d-4f26-85bf-adbd7713efa9.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EB%85%B8%ED%8A%B8%EB%B6%81-14%EC%9D%B8%EC%B9%98-tc7knc5drxke/",
+            "href": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EB%85%B8%ED%8A%B8%EB%B6%81-14%EC%9D%B8%EC%B9%98-tc7knc5drxke/",
+            "title": "레노버 노트북 14인치",
+            "content": "레노버 아이디어패드 s145 블랙2대 판매합니다.\n윈10프로 정품 인증 되어있으며 필요시 11로 업그레이드 가능합니다.\n검색, 유튜브등 가벼운 업무에 맞는 크기와 성능입니다.\n사무용으로만 사용하여 상태 좋습니다.\n배터리만으로도 구동 가능합니다.\n구성품은 본체와 충전기이며 각 13만원입니다.",
+            "price": "130000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/179285842650108ceee0f77d05f300e26b39215b1ba982dba104071637a8f04fbfa25bc9235340.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-24T15:36:27.832Z",
-            "boostedAt": "2026-10-24T15:36:27.831Z",
+            "createdAt": "2026-10-24T16:15:26.725Z",
+            "boostedAt": "2026-10-24T16:15:26.722Z",
             "region": {
-              "name": "오류왕길동"
+              "name": "대관령면"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 37.5909121,
-                "longitude": 126.6164925
+                "latitude": 37.68525,
+                "longitude": 128.6841714
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/%EA%B9%94%EB%81%94-lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-13%EC%9D%B8%EC%B9%98-xkcisrybxdiy/",
+            "href": "/kr/buy-sell/%EA%B9%94%EB%81%94-lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-13%EC%9D%B8%EC%B9%98-xkcisrybxdiy/",
+            "title": "깔끔 LG 그램 노트북 13인치",
+            "content": "윈도우11이고 오피스 엑셀 한글 등 있어요\n\ni3 CPU, 8GB RAM, SSD 256GB 탑재했어요\n깔끔하고 무게도 980g으로 가벼워서 휴대하기 좋아요\n문제없이 다 잘됩니다\n\n사진에 보이는 마우스와 충전기 함께 드려요\n문서 작업이나 영상 시청 등 일상적인 용도로 사용하기 좋은 노트북이에요 ",
+            "price": "200000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/01ba404138367c89eddfba95a56d589da1fe0f1b1e5a789a02a22c5621a1767f_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-24T16:17:03.822Z",
+            "boostedAt": "2026-10-24T16:17:03.821Z",
+            "region": {
+              "name": "석적읍"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 36.0756776,
+                "longitude": 128.4057235
               }
             ]
           },
@@ -97,39 +119,17 @@
                 "longitude": 126.9735527
               }
             ]
-          },
-          {
-            "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-x1wh3saczdkr/",
-            "href": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-x1wh3saczdkr/",
-            "title": "LG 그램 노트북 화이트",
-            "content": "LG 그램 노트북 판매해요.\n인텔 코어 i5-8250U 프로세서와 8GB 메모리를 갖추고 있어요.\n저장장치는 SSD 256GB입니다.\n화이트 색상입니다.\n\n거의 새것상태입니다.\n기스조차 없이 깨끗합니다.\n배터리 컨디션도 아주 좋습니다.\n윈도우11\n한글\n오퍼스설치\n바로사용가능합니다.\n전원선 포함입니다.\n\n네고사절",
-            "price": "400000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/fae1e0b4791bcc3b9a593fd7af95aafeedc7d21b34ea97fe48f8d995ae813f44_1.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": false,
-            "createdAt": "2026-10-21T23:25:45.544Z",
-            "boostedAt": "2026-10-21T23:25:45.543Z",
-            "region": {
-              "name": "내손2동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 37.3923747,
-                "longitude": 126.987851
-              }
-            ]
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-10-24T15:36:27.832Z\",\"boostedAt\":\"2026-10-24T15:36:27.831Z\",\"region\":{\"name\":\"오류왕길동\"},\"category\":null,\"contentCo",
+          "createdAt\":\"2026-10-24T16:15:26.725Z\",\"boostedAt\":\"2026-10-24T16:15:26.722Z\",\"region\":{\"name\":\"대관령면\"},\"category\":null,\"contentCoo",
+          "createdAt\":\"2026-10-24T16:17:03.822Z\",\"boostedAt\":\"2026-10-24T16:17:03.821Z\",\"region\":{\"name\":\"석적읍\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-22T11:01:14.201Z\",\"boostedAt\":\"2026-10-22T11:01:14.201Z\",\"region\":{\"name\":\"인덕원동\"},\"category\":null,\"contentCoo",
           "createdAt\":\"2026-10-21T23:25:45.544Z\",\"boostedAt\":\"2026-10-21T23:25:45.543Z\",\"region\":{\"name\":\"내손2동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-10-24T15:46:45.199Z\",\"boostedAt\":\"2026-10-24T15:46:45.198Z\",\"region\":{\"name\":\"화곡제4동\"},\"category\":null,\"contentCo",
-          "createdAt\":\"2026-10-24T11:48:14.907Z\",\"boostedAt\":\"2026-10-24T11:48:14.907Z\",\"region\":{\"name\":\"팽성읍\"},\"category\":{\"thumbnail\":\"htt"
+          "createdAt\":\"2026-10-24T15:36:27.832Z\",\"boostedAt\":\"2026-10-24T15:36:27.831Z\",\"region\":{\"name\":\"오류왕길동\"},\"category\":null,\"contentCo"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":246,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"레노버 노트북 (Ryzen 3, 8GB RAM, 256",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":246,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"레노버 노트북 14인치\",\"description\":\"레",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -137,24 +137,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1290,
-    "globalUniqueListings": 489,
-    "duplicateListingsRemoved": 801,
-    "detailQueueStart": 10,
-    "freshDetailTasks": 10,
+    "searchUniqueListings": 1289,
+    "globalUniqueListings": 523,
+    "duplicateListingsRemoved": 766,
+    "detailQueueStart": 5,
+    "freshDetailTasks": 5,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 10,
-    "detailSucceeded": 10,
+    "detailRequestsExecuted": 5,
+    "detailSucceeded": 5,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 489,
+    "postedAtResolvedFromSearch": 523,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 89965,
+    "scanDurationMs": 85785,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +166,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 279,
-        "durationMs": 12145
+        "uniqueListings": 280,
+        "durationMs": 12287
       },
       {
         "city": "의왕시",
@@ -182,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 380,
-        "durationMs": 25394
+        "uniqueListings": 382,
+        "durationMs": 25709
       },
       {
         "city": "안양시",
@@ -200,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 375,
-        "durationMs": 34832
+        "uniqueListings": 414,
+        "durationMs": 35409
       },
       {
         "city": "과천시",
@@ -212,8 +212,8 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 256,
-        "durationMs": 6083
+        "uniqueListings": 213,
+        "durationMs": 6536
       }
     ],
     "finalCandidateCount": 0,
@@ -222,7 +222,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 89971
+    "durationMs": 85791
   },
   "candidates": []
 }
