@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-24T04:42:08.220700Z",
+  "updatedAt": "2026-10-24T05:22:16.213345Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -6530,8 +6530,8 @@
     "kuf152ng34un": {
       "id": "kuf152ng34un",
       "title": "삼성 갤럭시북4 512GB 16GB(상태 S급, 풀박)",
-      "price": 1100000,
-      "previousPrice": 1200000,
+      "price": 1080000,
+      "previousPrice": 1100000,
       "changeType": "price_drop",
       "city": "과천시",
       "location": "문원동",
@@ -6550,7 +6550,7 @@
       "postedAt": "2026-10-16T14:30:01.396Z",
       "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%814-512gb-16gb-%EC%83%81%ED%83%9C-s%EA%B8%89-%ED%92%80%EB%B0%95-kuf152ng34un/",
       "firstAlertedAt": "2026-10-16T14:31:55.709418Z",
-      "lastCandidateAt": "2026-10-18T07:21:57.440725Z"
+      "lastCandidateAt": "2026-10-24T05:22:16.213345Z"
     },
     "as1dwwm4a3ry": {
       "id": "as1dwwm4a3ry",
@@ -9851,6 +9851,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/hp-elitebook-830-g8-i7-32gb-ram-256gb-ssd-13-3%EC%9D%B8%EC%B9%98-tpt4zqj6jgor/",
       "firstAlertedAt": "2026-10-24T03:22:19.191329Z",
       "lastCandidateAt": "2026-10-24T03:22:19.191329Z"
+    },
+    "eoowywr26duf": {
+      "id": "eoowywr26duf",
+      "title": "[풀박스]고사양 LG 그램 16(RTX 3050, Ram 16gb)",
+      "price": 1100000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "귀인동",
+      "cpuHint": null,
+      "gpuHint": "RTX 3050",
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "램 16",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16gb",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-24T05:01:13.052Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%ED%92%80%EB%B0%95%EC%8A%A4-%EA%B3%A0%EC%82%AC%EC%96%91-lg-%EA%B7%B8%EB%9E%A8-16-rtx-3050-ram-16gb-eoowywr26duf/",
+      "firstAlertedAt": "2026-10-24T05:22:16.213345Z",
+      "lastCandidateAt": "2026-10-24T05:22:16.213345Z"
+    },
+    "gxat2k18nqi8": {
+      "id": "gxat2k18nqi8",
+      "title": "LG 그램 16인치 화이트 (SSD 512GB)",
+      "price": 1950000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "과천시",
+      "location": "갈현동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "램 16",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-24T04:50:56.892Z",
+      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-16%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-ssd-512gb-gxat2k18nqi8/",
+      "firstAlertedAt": "2026-10-24T05:22:16.213345Z",
+      "lastCandidateAt": "2026-10-24T05:22:16.213345Z"
     }
   }
 }
