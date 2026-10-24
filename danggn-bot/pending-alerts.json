@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-24T12:07:48.811397Z",
+  "updatedAt": "2026-10-24T12:42:12.243442Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -10101,6 +10101,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81-%EC%97%90%EC%96%B4-m5-13%EC%9D%B8%EC%B9%98-bzw9ox46nfef/",
       "firstAlertedAt": "2026-10-24T10:32:23.042227Z",
       "lastCandidateAt": "2026-10-24T10:32:23.042227Z"
+    },
+    "ewjdi6vxig3i": {
+      "id": "ewjdi6vxig3i",
+      "title": "레노버 씽크패드 L13 Gen2 노트북 1.8kg",
+      "price": 190000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "의왕시",
+      "location": "포일동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 256,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-24T12:17:29.571Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%94%BD%ED%81%AC%ED%8C%A8%EB%93%9C-l13-gen2-%EB%85%B8%ED%8A%B8%EB%B6%81-1-8kg-ewjdi6vxig3i/",
+      "firstAlertedAt": "2026-10-24T12:42:12.243442Z",
+      "lastCandidateAt": "2026-10-24T12:42:12.243442Z"
     }
   }
 }
