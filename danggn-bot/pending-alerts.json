@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-25T22:22:06.021642Z",
+  "updatedAt": "2026-10-25T23:02:05.731539Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -10776,6 +10776,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%ED%95%9C%EC%84%B1-17%EC%9D%B8%EC%B9%98-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-i7-9700-%ED%8C%94%EC%95%84%EC%9A%94-t4dz2rysdncb/",
       "firstAlertedAt": "2026-10-25T17:22:00.589566Z",
       "lastCandidateAt": "2026-10-25T22:22:06.021642Z"
+    },
+    "ezgkg29spt5a": {
+      "id": "ezgkg29spt5a",
+      "title": "맥북 프로 14인치 M4 Pro 24GB 스페이스 블랙",
+      "price": 2300000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "금정동",
+      "cpuHint": "M4 Pro",
+      "gpuHint": "M4 Pro",
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 24,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "24GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-25T22:52:33.393Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-14%EC%9D%B8%EC%B9%98-m4-pro-24gb-%EC%8A%A4%ED%8E%98%EC%9D%B4%EC%8A%A4-%EB%B8%94%EB%9E%99-ezgkg29spt5a/",
+      "firstAlertedAt": "2026-10-25T23:02:05.731539Z",
+      "lastCandidateAt": "2026-10-25T23:02:05.731539Z"
     }
   }
 }
