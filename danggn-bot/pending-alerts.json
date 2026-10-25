@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-25T14:32:19.127649Z",
+  "updatedAt": "2026-10-25T15:12:12.160888Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -10676,6 +10676,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%9A%94%EA%B0%80-%EC%8A%AC%EB%A6%BC-7-%EC%B9%B4%EB%B3%B8-14acn6-%EB%9D%BC%EC%9D%B4%EC%A0%A07-16gb-1tb-mx450-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-9mrpc55rc6x5/",
       "firstAlertedAt": "2026-10-25T10:22:08.923898Z",
       "lastCandidateAt": "2026-10-25T10:22:08.923898Z"
+    },
+    "zfpek48aorty": {
+      "id": "zfpek48aorty",
+      "title": "삼성 노트북 12세대 i5-1235U 16GB RAM 238GB SSD",
+      "price": 650000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "평촌동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-25T14:32:00.784Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-12%EC%84%B8%EB%8C%80-i5-1235u-16gb-ram-238gb-ssd-zfpek48aorty/",
+      "firstAlertedAt": "2026-10-25T15:12:12.160888Z",
+      "lastCandidateAt": "2026-10-25T15:12:12.160888Z"
+    },
+    "xqc5psfsdouf": {
+      "id": "xqc5psfsdouf",
+      "title": "Apple 맥북 프로 14 M4칩 스페이스 블랙",
+      "price": 2800000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "과천시",
+      "location": "원문동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 24,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "24GB 메모리",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-25T13:43:47.760Z",
+      "url": "https://www.daangn.com/kr/buy-sell/apple-%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-14-m4%EC%B9%A9-%EC%8A%A4%ED%8E%98%EC%9D%B4%EC%8A%A4-%EB%B8%94%EB%9E%99-xqc5psfsdouf/",
+      "firstAlertedAt": "2026-10-25T15:12:12.160888Z",
+      "lastCandidateAt": "2026-10-25T15:12:12.160888Z"
     }
   }
 }
