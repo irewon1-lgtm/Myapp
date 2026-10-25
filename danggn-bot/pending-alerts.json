@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-25T05:52:13.340312Z",
+  "updatedAt": "2026-10-25T06:26:35.449154Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -10526,6 +10526,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%8D%B8-5340-2%EC%9D%B81-%ED%84%B0%EC%B9%98-i7-1365u-32gb-2pd7cyg8osh9/",
       "firstAlertedAt": "2026-10-25T05:52:13.340312Z",
       "lastCandidateAt": "2026-10-25T05:52:13.340312Z"
+    },
+    "2cuxrwief8xv": {
+      "id": "2cuxrwief8xv",
+      "title": "Dell Vostro 15  i7-11370H 16GB RAM 954GB SSD",
+      "price": 300000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "석수동",
+      "cpuHint": "i7-11370H",
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-25T05:34:05.722Z",
+      "url": "https://www.daangn.com/kr/buy-sell/dell-vostro-15-i7-11370h-16gb-ram-954gb-ssd-2cuxrwief8xv/",
+      "firstAlertedAt": "2026-10-25T06:26:35.449154Z",
+      "lastCandidateAt": "2026-10-25T06:26:35.449154Z"
     }
   }
 }
