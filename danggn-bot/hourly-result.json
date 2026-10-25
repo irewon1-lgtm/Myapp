@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-25T18:56:13.942Z",
+  "generatedAt": "2026-10-25T19:31:57.690Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -126,10 +126,10 @@
           "createdAt\":\"2026-10-25T09:19:38.613Z\",\"boostedAt\":\"2026-10-25T09:19:38.613Z\",\"region\":{\"name\":\"금곡동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-25T10:40:07.193Z\",\"boostedAt\":\"2026-10-25T10:40:07.186Z\",\"region\":{\"name\":\"금정동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-25T14:04:57.249Z\",\"boostedAt\":\"2026-10-25T14:04:57.248Z\",\"region\":{\"name\":\"정왕2동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-10-24T16:17:03.822Z\",\"boostedAt\":\"2026-10-24T16:17:03.821Z\",\"region\":{\"name\":\"석적읍\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-10-25T16:40:21.106Z\",\"boostedAt\":\"2026-10-25T16:40:21.104Z\",\"region\":{\"name\":\"정왕3동\"},\"category\":null,\"contentCoo"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":249,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"갤럭시북5프로 풀박스 S급 / 울트라7 32G 512G",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":250,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"갤럭시북5프로 풀박스 S급 / 울트라7 32G 512G",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -137,24 +137,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1344,
-    "globalUniqueListings": 560,
-    "duplicateListingsRemoved": 784,
-    "detailQueueStart": 3,
-    "freshDetailTasks": 3,
+    "searchUniqueListings": 1314,
+    "globalUniqueListings": 515,
+    "duplicateListingsRemoved": 799,
+    "detailQueueStart": 2,
+    "freshDetailTasks": 2,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 3,
-    "detailSucceeded": 3,
+    "detailRequestsExecuted": 2,
+    "detailSucceeded": 2,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 560,
+    "postedAtResolvedFromSearch": 515,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 82080,
+    "scanDurationMs": 81731,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +166,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 279,
-        "durationMs": 12536
+        "uniqueListings": 281,
+        "durationMs": 12316
       },
       {
         "city": "의왕시",
@@ -182,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 379,
-        "durationMs": 25461
+        "uniqueListings": 380,
+        "durationMs": 25623
       },
       {
         "city": "안양시",
@@ -200,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 431,
-        "durationMs": 34893
+        "uniqueListings": 398,
+        "durationMs": 35087
       },
       {
         "city": "과천시",
@@ -213,7 +213,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 255,
-        "durationMs": 6150
+        "durationMs": 6659
       }
     ],
     "finalCandidateCount": 0,
@@ -222,7 +222,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 82087
+    "durationMs": 81738
   },
   "candidates": []
 }
