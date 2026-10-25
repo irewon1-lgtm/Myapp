@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-25T02:42:24.209341Z",
+  "updatedAt": "2026-10-25T03:22:20.105782Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -10351,6 +10351,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81%EC%97%90%EC%96%B4-m4-15%EC%9D%B8%EC%B9%98-16%EB%A9%94%EB%AA%A8%EB%A6%AC256gb-%EC%8B%A0%ED%92%88%EC%88%98%EC%A4%80-%ED%92%80%EB%B0%95%EC%8A%A4-4ktc9474rrd6/",
       "firstAlertedAt": "2026-10-25T02:42:24.209341Z",
       "lastCandidateAt": "2026-10-25T02:42:24.209341Z"
+    },
+    "aqy6xmr9jnc7": {
+      "id": "aqy6xmr9jnc7",
+      "title": "HP 빅터스 15 게이밍 노트북 (RTX 4060)",
+      "price": 1250000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "안양동",
+      "cpuHint": "Ryzen 9 8945HS",
+      "gpuHint": "RTX 4060",
+      "vramGB": null,
+      "ramGB": 32,
+      "ambiguousMemoryGB": 32,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "RAM 32GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "32GB",
+      "storageGB": 512,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "postedAt": "2026-10-25T03:09:15.173Z",
+      "url": "https://www.daangn.com/kr/buy-sell/hp-%EB%B9%85%ED%84%B0%EC%8A%A4-15-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-rtx-4060-aqy6xmr9jnc7/",
+      "firstAlertedAt": "2026-10-25T03:22:20.105782Z",
+      "lastCandidateAt": "2026-10-25T03:22:20.105782Z"
     }
   }
 }
