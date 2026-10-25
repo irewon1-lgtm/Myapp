@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-25T09:42:09.662763Z",
+  "updatedAt": "2026-10-25T10:22:08.923898Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -10626,6 +10626,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%81-%ED%94%84%EB%A1%9C-360-nt930qdb-k71an-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-6q3sg1pb6d6g/",
       "firstAlertedAt": "2026-10-25T08:22:15.008894Z",
       "lastCandidateAt": "2026-10-25T08:22:15.008894Z"
+    },
+    "sxsz8gdjcd5s": {
+      "id": "sxsz8gdjcd5s",
+      "title": "애플 맥북 프로 실버 16 M4 Pro 1TB S급",
+      "price": 3250000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "안양7동",
+      "cpuHint": "M4 Pro",
+      "gpuHint": "M4 Pro",
+      "vramGB": null,
+      "ramGB": 24,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "24GB 메모리",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-25T10:07:03.907Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%95%A0%ED%94%8C-%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-%EC%8B%A4%EB%B2%84-16-m4-pro-1tb-s%EA%B8%89-sxsz8gdjcd5s/",
+      "firstAlertedAt": "2026-10-25T10:22:08.923898Z",
+      "lastCandidateAt": "2026-10-25T10:22:08.923898Z"
+    },
+    "9mrpc55rc6x5": {
+      "id": "9mrpc55rc6x5",
+      "title": "레노버 요가 슬림 7 카본 14ACN6 (라이젠7 / 16GB / 1TB / MX450) 판매합니다",
+      "price": 600000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "의왕시",
+      "location": "부곡동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "RAM: 16GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": 1024,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-25T09:48:01.103Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%9A%94%EA%B0%80-%EC%8A%AC%EB%A6%BC-7-%EC%B9%B4%EB%B3%B8-14acn6-%EB%9D%BC%EC%9D%B4%EC%A0%A07-16gb-1tb-mx450-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-9mrpc55rc6x5/",
+      "firstAlertedAt": "2026-10-25T10:22:08.923898Z",
+      "lastCandidateAt": "2026-10-25T10:22:08.923898Z"
     }
   }
 }
