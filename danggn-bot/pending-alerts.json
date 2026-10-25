@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-25T04:42:19.365318Z",
+  "updatedAt": "2026-10-25T05:14:12.431745Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -10451,6 +10451,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EC%97%90%EC%9D%B4%EC%84%9C-%EB%8B%88%ED%8A%B8%EB%A1%9C-5-rtx-3060-%EB%9E%A8-16gb-%EB%85%B8%ED%8A%B8%EB%B6%81-xnt85r89y1wr/",
       "firstAlertedAt": "2026-10-25T04:42:19.365318Z",
       "lastCandidateAt": "2026-10-25T04:42:19.365318Z"
+    },
+    "r6e1tupv6foa": {
+      "id": "r6e1tupv6foa",
+      "title": "LG그램 15인치 i5 13세대/RAM 16GB 노트북",
+      "price": 850000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "산본동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "RAM 16GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-25T05:08:22.820Z",
+      "url": "https://www.daangn.com/kr/buy-sell/lg%EA%B7%B8%EB%9E%A8-15%EC%9D%B8%EC%B9%98-i5-13%EC%84%B8%EB%8C%80-ram-16gb-%EB%85%B8%ED%8A%B8%EB%B6%81-r6e1tupv6foa/",
+      "firstAlertedAt": "2026-10-25T05:14:12.431745Z",
+      "lastCandidateAt": "2026-10-25T05:14:12.431745Z"
     }
   }
 }
