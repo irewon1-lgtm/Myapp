@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-25T07:02:18.243Z",
+  "generatedAt": "2026-10-25T07:42:12.101Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,6 +55,28 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
+            "id": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84%EB%85%B8%ED%8A%B8%EB%B6%81%EA%B8%89%ED%8C%94%EC%95%84%EC%9A%94-yiq5w9h5vh55/",
+            "href": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84%EB%85%B8%ED%8A%B8%EB%B6%81%EA%B8%89%ED%8C%94%EC%95%84%EC%9A%94-yiq5w9h5vh55/",
+            "title": "레노버노트북급팔아요",
+            "content": "상태깨끗 속도빨라요\n주식.인강.사무.영상감상용에좋아요\n마우스.충전어뎁터구성입니다\n상세사양사진에잇구요... 건강하세요",
+            "price": "150000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/7a841bef-6509-4821-a64d-adba6ef997ed.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-25T07:08:33.349Z",
+            "boostedAt": "2026-10-25T07:08:33.345Z",
+            "region": {
+              "name": "선암동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 35.148648,
+                "longitude": 126.7767324
+              }
+            ]
+          },
+          {
             "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-15u340-lt30k-%ED%8C%9D%EB%8B%88%EB%8B%A4-crrhip7v8fub/",
             "href": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-15u340-lt30k-%ED%8C%9D%EB%8B%88%EB%8B%A4-crrhip7v8fub/",
             "title": "LG 그램 노트북 15U340-LT30K 팝니다",
@@ -73,28 +95,6 @@
               {
                 "latitude": 37.7568217,
                 "longitude": 126.7681005
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/%EA%B8%89%EC%B2%98-%EC%A7%84%EC%A7%9C%EC%8B%B8%EA%B2%8C%ED%8C%9D%EB%8B%88%EB%8B%A4-%EB%93%9D%ED%85%9C%ED%95%B4%EA%B0%80%EC%84%B8%EC%9A%94-%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%819-nt910s5k-w9yvvx19nt9j/",
-            "href": "/kr/buy-sell/%EA%B8%89%EC%B2%98-%EC%A7%84%EC%A7%9C%EC%8B%B8%EA%B2%8C%ED%8C%9D%EB%8B%88%EB%8B%A4-%EB%93%9D%ED%85%9C%ED%95%B4%EA%B0%80%EC%84%B8%EC%9A%94-%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%819-nt910s5k-w9yvvx19nt9j/",
-            "title": "(급처)(진짜싸게팝니다)(득템해가세요) 삼성 노트북9 NT910S5K",
-            "content": "상태 (S급) 삼성 노트북 9 15인치입니다. + 충잔기, 마우스 포함\n\n인터넷 출시가 : 1,350,000원\n중고 평균 거래가 : 200,000원 초중반\n180,000원 -> 150,000원 -> 145,000원 가걱 마지막으로 내립니다. 더이상 안 내려요\n\n사무용으로 사용하기 정말 좋습니다. 고화질 영상 시청하기도 좋아요",
-            "price": "145000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/179286041494995ac2343e0704ee4108f5ac070badac48fc8a53e6de695e5c2d59f9081e13e3d0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-24T11:48:14.907Z",
-            "boostedAt": "2026-10-24T11:48:14.907Z",
-            "region": {
-              "name": "팽성읍"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 36.9652122,
-                "longitude": 127.0624131
               }
             ]
           },
@@ -122,14 +122,14 @@
           }
         ],
         "dateFieldSnippets": [
+          "createdAt\":\"2026-10-25T07:08:33.349Z\",\"boostedAt\":\"2026-10-25T07:08:33.345Z\",\"region\":{\"name\":\"선암동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-25T05:39:30.621Z\",\"boostedAt\":\"2026-10-25T05:39:30.619Z\",\"region\":{\"name\":\"금촌1동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-10-24T11:48:14.907Z\",\"boostedAt\":\"2026-10-24T11:48:14.907Z\",\"region\":{\"name\":\"팽성읍\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-24T14:41:31.592Z\",\"boostedAt\":\"2026-10-24T14:41:31.590Z\",\"region\":{\"name\":\"서초1동\"},\"category\":null,\"contentCoo",
           "createdAt\":\"2026-09-08T07:40:23.285Z\",\"boostedAt\":\"2026-10-22T11:39:08.145Z\",\"region\":{\"name\":\"사당동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-10-24T16:17:03.822Z\",\"boostedAt\":\"2026-10-24T16:17:03.821Z\",\"region\":{\"name\":\"석적읍\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-10-24T11:48:14.907Z\",\"boostedAt\":\"2026-10-24T11:48:14.907Z\",\"region\":{\"name\":\"팽성읍\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":254,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG 그램 노트북 15U340-LT30K 팝니다\",\"d",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":254,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"레노버노트북급팔아요\",\"description\":\"상태깨",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -137,24 +137,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1304,
-    "globalUniqueListings": 532,
-    "duplicateListingsRemoved": 772,
-    "detailQueueStart": 14,
-    "freshDetailTasks": 14,
+    "searchUniqueListings": 1303,
+    "globalUniqueListings": 519,
+    "duplicateListingsRemoved": 784,
+    "detailQueueStart": 11,
+    "freshDetailTasks": 11,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 14,
-    "detailSucceeded": 14,
+    "detailRequestsExecuted": 11,
+    "detailSucceeded": 11,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 532,
+    "postedAtResolvedFromSearch": 519,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 2,
-    "scanDurationMs": 96010,
+    "candidateCount": 0,
+    "scanDurationMs": 93205,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +166,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 272,
-        "durationMs": 12140
+        "uniqueListings": 271,
+        "durationMs": 12120
       },
       {
         "city": "의왕시",
@@ -182,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 420,
-        "durationMs": 25660
+        "uniqueListings": 406,
+        "durationMs": 26213
       },
       {
         "city": "안양시",
@@ -200,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 370,
-        "durationMs": 35345
+        "uniqueListings": 402,
+        "durationMs": 35533
       },
       {
         "city": "과천시",
@@ -212,88 +212,17 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 242,
-        "durationMs": 6219
+        "uniqueListings": 224,
+        "durationMs": 6277
       }
     ],
-    "finalCandidateCount": 2,
+    "finalCandidateCount": 0,
     "stateItemCount": 5000,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 96018
+    "durationMs": 93212
   },
-  "candidates": [
-    {
-      "id": "66zy2x191r8o",
-      "changeType": "new",
-      "previousPrice": null,
-      "price": 1300000,
-      "priceDropPercent": null,
-      "city": "안양시",
-      "location": "석수1동",
-      "regionPath": "경기도 안양시 만안구 석수1동",
-      "title": "마이크로소프트 서피스 랩탑 13.8 (코파일럿+ PC) - 5년 보증 포함 / 고급 스킨 작업 / 풀박스",
-      "modelHint": "마이크로소프트 서피스 랩탑 13.8 (코파일럿+ PC) - 5년 보증 포함 / 고급 스킨 작업 / 풀박스",
-      "cpuHint": null,
-      "cpuBaselinePass": null,
-      "gpuHint": null,
-      "vramGB": null,
-      "ramGB": 16,
-      "ambiguousMemoryGB": null,
-      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": "16GB RAM",
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": null,
-      "storageGB": 512,
-      "llmCapability": "SPEC_CHECK_REQUIRED",
-      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
-      "specConfidence": "needs_review",
-      "postedAt": "2026-10-25T06:26:07.473Z",
-      "boostedAt": "2026-10-25T06:26:07.463Z",
-      "status": "Ongoing",
-      "description": "제품 상세 정보\n - 모델명: 마이크로소프트 서피스 랩탑 13.8 (Copilot+ PC)\n - 구매일자: 2026년 6월 (네이버 공식스토어 구매 / 영수증 첨부 가능)\n - 보증기간: ★ 5년 보증 적용 상품 ★ (장기간 안심하고 사용 가능)\n - 본체 색상: 샌드스톤 (골드) + 해외 dbrand 고급 블랙 스킨 부착\n - 구성품: 본체, 정품 충전기, 제품 박스 (풀박스) + 가죽 파우치/케이스\n\n■ 제품 상태 및 특징\n - 2026년 6월 구매 후 실사용 3회 1시간정도 최상급(S급) 상태입니다.\n - 5년 보증이 적용되어 있어 추후 고장이나 문제 발생 걱정 없이 안심하고 쓰실 수 있습니다.\n - 고급 블랙 스킨(dbrand)을 맞춤 부착하여 겉면 스크래치 방지 및 고급스러운 블랙&골드 매치가 돋보입니다.\n - 상판/하판/트랙패드 부분까지 스킨 작업 완벽하게 되어 있습니다.\n - 기스나 찍힘 일절 없으며 배터리 및 제반 성능 최상입니다.\n - 초기화 완료되어 있어 바로 가져가셔서 사용하시면 됩니다.\n\n\n\n저장용량 / 메모리: 512GB SSD / 16GB RAM\n - 보증기간: ★ 마이크로소프트 공식 5년 보증 포함 ★\n - 본체 색상: 샌드스톤 (골드) + 해외 dbrand 고급 블랙 스킨 완벽 부착.  스킨가격 9만원\n케이스별도구매\n - 구성품: 본체, 정품 충전기, 제품 박스 (풀박스)",
-      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%88%EC%9D%B4%ED%81%AC%EB%A1%9C%EC%86%8C%ED%94%84%ED%8A%B8-%EC%84%9C%ED%94%BC%EC%8A%A4-%EB%9E%A9%ED%83%91-13-8-%EC%BD%94%ED%8C%8C%EC%9D%BC%EB%9F%BF-pc-5%EB%85%84-%EB%B3%B4%EC%A6%9D-%ED%8F%AC%ED%95%A8-%EA%B3%A0%EA%B8%89-%EC%8A%A4%ED%82%A8-%EC%9E%91%EC%97%85-%ED%92%80%EB%B0%95%EC%8A%A4-66zy2x191r8o/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "유수",
-      "mannerTemperature": 42.4
-    },
-    {
-      "id": "eoowywr26duf",
-      "changeType": "price_drop",
-      "previousPrice": 1100000,
-      "price": 1000000,
-      "priceDropPercent": 9.1,
-      "city": "안양시",
-      "location": "귀인동",
-      "regionPath": "경기도 안양시 동안구 귀인동",
-      "title": "[풀박스]고사양 LG 그램 16(RTX 3050, Ram 16gb)",
-      "modelHint": "[풀박스]고사양 LG 그램 16(RTX 3050, Ram 16gb)",
-      "cpuHint": null,
-      "cpuBaselinePass": null,
-      "gpuHint": "RTX 3050",
-      "vramGB": null,
-      "ramGB": 16,
-      "ambiguousMemoryGB": 16,
-      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": "램 16",
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": "16gb",
-      "storageGB": null,
-      "llmCapability": "SPEC_CHECK_REQUIRED",
-      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
-      "specConfidence": "needs_review",
-      "postedAt": "2026-10-24T05:01:13.052Z",
-      "boostedAt": "2026-10-25T06:54:49.538Z",
-      "status": "Ongoing",
-      "description": "Lg 그램 16인치 팔아요. 모델명은 16Z90R-EA5HK입니다. 검색해보시면 기본 200만원은 넘는 제품입니다. 3050 그래픽 카드를 탑재해서 고사양 작업에 적합한 제품입니다.\n\n구매는 24년 9월에 했고 거의 쓰지 않아서 풀박스, 보호필름도 그대로 부착되어 있습니다. 배터리 효율도 사진 보시면 거의 최상급입니다.\n\n거의 세제품이라 봐도 무방합니다. 풀박스(충전기 포함) 전달 드리고 직거래만 합니다.\n\n시세보다 싸게 팔겠습니다😀",
-      "url": "https://www.daangn.com/kr/buy-sell/%ED%92%80%EB%B0%95%EC%8A%A4-%EA%B3%A0%EC%82%AC%EC%96%91-lg-%EA%B7%B8%EB%9E%A8-16-rtx-3050-ram-16gb-eoowywr26duf/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "acapella",
-      "mannerTemperature": 39.9
-    }
-  ]
+  "candidates": []
 }
