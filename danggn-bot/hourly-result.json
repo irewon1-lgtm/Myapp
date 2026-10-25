@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-25T12:32:05.549Z",
+  "generatedAt": "2026-10-25T13:12:15.149Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,6 +55,28 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
+            "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-15z950-i5-4gb-256gb-zpu8ibbkgcrm/",
+            "href": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-15z950-i5-4gb-256gb-zpu8ibbkgcrm/",
+            "title": "LG 그램 15Z950 i5 4GB 256GB",
+            "content": "인텔 i5-5200U 프로세서와 256GB SSD가 탑재된 LG 그램이에요\n4GB 메모리로 가볍게 사용하기 좋은 모델이에요\n인강 시청이나 문서 작업용으로 적합한 가성비 노트북이에요\ni5 - 5200U \nSSD 256GB\n창원 직거래가능합니다 \n쿨거네고가능",
+            "price": "200000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/77e03c28-1bf8-4ebb-8985-286a631c7c15.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-25T12:35:09.794Z",
+            "boostedAt": "2026-10-25T12:35:09.793Z",
+            "region": {
+              "name": "팔용동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 35.2542799,
+                "longitude": 128.6123781
+              }
+            ]
+          },
+          {
             "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-15%EC%9D%B8%EC%B9%98-i3-6100-u%EB%85%B8%ED%8A%B8%EB%B6%81-6j9tdhgre6z1/",
             "href": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-15%EC%9D%B8%EC%B9%98-i3-6100-u%EB%85%B8%ED%8A%B8%EB%B6%81-6j9tdhgre6z1/",
             "title": "LG 그램 15인치 i3-6100 u노트북",
@@ -73,28 +95,6 @@
               {
                 "latitude": 37.6362185,
                 "longitude": 127.2067453
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-trvnbj1hawas/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-trvnbj1hawas/",
-            "title": "삼성 노트북",
-            "content": "삼성 흰색 노트북\n모델 코드NT910S3K-K24W\n모니터 13.3인치 FHD (1920 x 1080)\n인텔® 펜티엄® 듀얼코어 3825U \n메모리 4GB\n저장 공간 128GB\n\n사진에 보시는 것처럼 액자 귀퉁이에 금이 갔어요\n충전기 선은 중간을 이어 붙였어요\n\n구성품  노트북, 충전기",
-            "price": "70000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/d1089032-7b90-4f41-86a0-a759026c801f.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-19T13:08:37.597Z",
-            "boostedAt": "2026-10-25T12:22:00.557Z",
-            "region": {
-              "name": "일로읍"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 34.8075072,
-                "longitude": 126.488586
               }
             ]
           },
@@ -122,14 +122,14 @@
           }
         ],
         "dateFieldSnippets": [
+          "createdAt\":\"2026-10-25T12:35:09.794Z\",\"boostedAt\":\"2026-10-25T12:35:09.793Z\",\"region\":{\"name\":\"팔용동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-25T09:19:38.613Z\",\"boostedAt\":\"2026-10-25T09:19:38.613Z\",\"region\":{\"name\":\"금곡동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-10-19T13:08:37.597Z\",\"boostedAt\":\"2026-10-25T12:22:00.557Z\",\"region\":{\"name\":\"일로읍\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-25T10:40:07.193Z\",\"boostedAt\":\"2026-10-25T10:40:07.186Z\",\"region\":{\"name\":\"금정동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-25T09:19:26.575Z\",\"boostedAt\":\"2026-10-25T09:19:26.573Z\",\"region\":{\"name\":\"초량제6동\"},\"category\":null,\"contentCo",
-          "createdAt\":\"2026-10-25T05:39:30.621Z\",\"boostedAt\":\"2026-10-25T05:39:30.619Z\",\"region\":{\"name\":\"금촌1동\"},\"category\":null,\"contentCoo"
+          "createdAt\":\"2026-10-25T11:14:11.155Z\",\"boostedAt\":\"2026-10-25T11:14:11.153Z\",\"region\":{\"name\":\"중리동\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":247,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG 그램 15인치 i3-6100 u노트북\",\"desc",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":249,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG 그램 15Z950 i5 4GB 256GB\",\"de",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -137,24 +137,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1297,
-    "globalUniqueListings": 528,
-    "duplicateListingsRemoved": 769,
-    "detailQueueStart": 7,
-    "freshDetailTasks": 7,
+    "searchUniqueListings": 1266,
+    "globalUniqueListings": 515,
+    "duplicateListingsRemoved": 751,
+    "detailQueueStart": 14,
+    "freshDetailTasks": 14,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 7,
-    "detailSucceeded": 7,
+    "detailRequestsExecuted": 14,
+    "detailSucceeded": 14,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 528,
+    "postedAtResolvedFromSearch": 515,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 88160,
+    "scanDurationMs": 95854,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +166,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 283,
-        "durationMs": 12473
+        "uniqueListings": 281,
+        "durationMs": 12236
       },
       {
         "city": "의왕시",
@@ -182,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 388,
-        "durationMs": 25685
+        "uniqueListings": 380,
+        "durationMs": 25513
       },
       {
         "city": "안양시",
@@ -200,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 402,
-        "durationMs": 35476
+        "uniqueListings": 393,
+        "durationMs": 35224
       },
       {
         "city": "과천시",
@@ -212,8 +212,8 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 224,
-        "durationMs": 6573
+        "uniqueListings": 212,
+        "durationMs": 6325
       }
     ],
     "finalCandidateCount": 0,
@@ -222,7 +222,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 88166
+    "durationMs": 95861
   },
   "candidates": []
 }
