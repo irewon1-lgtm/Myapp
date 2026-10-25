@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-25T04:02:15.105468Z",
+  "updatedAt": "2026-10-25T04:42:19.365318Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -1655,9 +1655,9 @@
     "85hzrv6agp53": {
       "id": "85hzrv6agp53",
       "title": "DELL 래티튜드 5501 15인치 노트북",
-      "price": 390000,
-      "previousPrice": null,
-      "changeType": "new",
+      "price": 350000,
+      "previousPrice": 390000,
+      "changeType": "price_drop",
       "city": "의왕시",
       "location": "부곡동",
       "cpuHint": null,
@@ -1675,7 +1675,7 @@
       "postedAt": "2026-10-08T03:43:17.499Z",
       "url": "https://www.daangn.com/kr/buy-sell/dell-%EB%9E%98%ED%8B%B0%ED%8A%9C%EB%93%9C-5501-15%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-85hzrv6agp53/",
       "firstAlertedAt": "2026-10-08T03:59:33.615007Z",
-      "lastCandidateAt": "2026-10-08T03:59:33.615007Z"
+      "lastCandidateAt": "2026-10-25T04:42:19.365318Z"
     },
     "herugyec7on9": {
       "id": "herugyec7on9",
@@ -10401,6 +10401,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-rtx-4060-%EB%9E%A8-64gb-ssd-2tb-do1xzwumrjxv/",
       "firstAlertedAt": "2026-10-25T04:02:15.105468Z",
       "lastCandidateAt": "2026-10-25T04:02:15.105468Z"
+    },
+    "oirb4zo1ne7p": {
+      "id": "oirb4zo1ne7p",
+      "title": "HP 노트북 ZBook 16인치",
+      "price": 4200000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "안양7동",
+      "cpuHint": null,
+      "gpuHint": "RTXPRO2000",
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "RAM: 16GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 1024,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-25T04:16:13.572Z",
+      "url": "https://www.daangn.com/kr/buy-sell/hp-%EB%85%B8%ED%8A%B8%EB%B6%81-zbook-16%EC%9D%B8%EC%B9%98-oirb4zo1ne7p/",
+      "firstAlertedAt": "2026-10-25T04:42:19.365318Z",
+      "lastCandidateAt": "2026-10-25T04:42:19.365318Z"
+    },
+    "xnt85r89y1wr": {
+      "id": "xnt85r89y1wr",
+      "title": "에이서 니트로 5 RTX 3060 램 16GB 노트북",
+      "price": 450000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "산본동",
+      "cpuHint": null,
+      "gpuHint": "RTX 3060",
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "램 16GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-25T04:16:11.576Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%97%90%EC%9D%B4%EC%84%9C-%EB%8B%88%ED%8A%B8%EB%A1%9C-5-rtx-3060-%EB%9E%A8-16gb-%EB%85%B8%ED%8A%B8%EB%B6%81-xnt85r89y1wr/",
+      "firstAlertedAt": "2026-10-25T04:42:19.365318Z",
+      "lastCandidateAt": "2026-10-25T04:42:19.365318Z"
     }
   }
 }
