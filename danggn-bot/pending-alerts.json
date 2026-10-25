@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-25T03:22:20.105782Z",
+  "updatedAt": "2026-10-25T04:02:15.105468Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -10376,6 +10376,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/hp-%EB%B9%85%ED%84%B0%EC%8A%A4-15-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-rtx-4060-aqy6xmr9jnc7/",
       "firstAlertedAt": "2026-10-25T03:22:20.105782Z",
       "lastCandidateAt": "2026-10-25T03:22:20.105782Z"
+    },
+    "do1xzwumrjxv": {
+      "id": "do1xzwumrjxv",
+      "title": "게이밍 노트북 RTX 4060 , 램 64GB , SSD 2TB",
+      "price": 1600000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "평촌동",
+      "cpuHint": null,
+      "gpuHint": "RTX 4060",
+      "vramGB": null,
+      "ramGB": 64,
+      "ambiguousMemoryGB": 64,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "램 64GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "64GB",
+      "storageGB": 2048,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "postedAt": "2026-10-25T03:53:23.795Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-rtx-4060-%EB%9E%A8-64gb-ssd-2tb-do1xzwumrjxv/",
+      "firstAlertedAt": "2026-10-25T04:02:15.105468Z",
+      "lastCandidateAt": "2026-10-25T04:02:15.105468Z"
     }
   }
 }
