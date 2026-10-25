@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-25T05:14:12.431745Z",
+  "updatedAt": "2026-10-25T05:52:13.340312Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -10476,6 +10476,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/lg%EA%B7%B8%EB%9E%A8-15%EC%9D%B8%EC%B9%98-i5-13%EC%84%B8%EB%8C%80-ram-16gb-%EB%85%B8%ED%8A%B8%EB%B6%81-r6e1tupv6foa/",
       "firstAlertedAt": "2026-10-25T05:14:12.431745Z",
       "lastCandidateAt": "2026-10-25T05:14:12.431745Z"
+    },
+    "vcryvsoqx79x": {
+      "id": "vcryvsoqx79x",
+      "title": "❗️삼성 갤럭시북 5 프로 360❗️(삼케플 양도 가능!) 판매합니다😄",
+      "price": 2600000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "산본동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 32,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "32GB 램",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "postedAt": "2026-10-25T05:33:22.852Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%81-5-%ED%94%84%EB%A1%9C-360-%EC%82%BC%EC%BC%80%ED%94%8C-%EC%96%91%EB%8F%84-%EA%B0%80%EB%8A%A5-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-vcryvsoqx79x/",
+      "firstAlertedAt": "2026-10-25T05:52:13.340312Z",
+      "lastCandidateAt": "2026-10-25T05:52:13.340312Z"
+    },
+    "2pd7cyg8osh9": {
+      "id": "2pd7cyg8osh9",
+      "title": "델 5340  2인1 터치 i7-1365u 32gb",
+      "price": 750000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "안양동",
+      "cpuHint": "i7-1365u",
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 32,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "32gb",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-25T05:38:49.092Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%8D%B8-5340-2%EC%9D%B81-%ED%84%B0%EC%B9%98-i7-1365u-32gb-2pd7cyg8osh9/",
+      "firstAlertedAt": "2026-10-25T05:52:13.340312Z",
+      "lastCandidateAt": "2026-10-25T05:52:13.340312Z"
     }
   }
 }
