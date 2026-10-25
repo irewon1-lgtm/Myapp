@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-25T02:02:10.624827Z",
+  "updatedAt": "2026-10-25T02:42:24.209341Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -7180,8 +7180,8 @@
     "6za4r4ukw6rn": {
       "id": "6za4r4ukw6rn",
       "title": "HP 오멘 16 게이밍 노트북 판매합니다.",
-      "price": 1600000,
-      "previousPrice": 1620000,
+      "price": 1560000,
+      "previousPrice": 1600000,
       "changeType": "price_drop",
       "city": "안양시",
       "location": "호계1동",
@@ -7200,7 +7200,7 @@
       "postedAt": "2026-10-17T14:56:44.896Z",
       "url": "https://www.daangn.com/kr/buy-sell/hp-%EC%98%A4%EB%A9%98-16-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-6za4r4ukw6rn/",
       "firstAlertedAt": "2026-10-17T15:01:59.827257Z",
-      "lastCandidateAt": "2026-10-22T13:02:36.589155Z"
+      "lastCandidateAt": "2026-10-25T02:42:24.209341Z"
     },
     "uuci9hv4cp3b": {
       "id": "uuci9hv4cp3b",
@@ -10326,6 +10326,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%ED%92%80%EB%B0%95%EC%8A%A4-2025-lg%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-14z90t-%EC%9A%B8%ED%8A%B8%EB%9D%BC5-225h-16g-256g-t7uutc4rfuir/",
       "firstAlertedAt": "2026-10-25T00:42:22.036038Z",
       "lastCandidateAt": "2026-10-25T00:42:22.036038Z"
+    },
+    "4ktc9474rrd6": {
+      "id": "4ktc9474rrd6",
+      "title": "맥북에어 M4 15인치 16메모리256GB 신품수준 풀박스",
+      "price": 1450000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "재궁동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16메모리",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-25T02:38:54.842Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81%EC%97%90%EC%96%B4-m4-15%EC%9D%B8%EC%B9%98-16%EB%A9%94%EB%AA%A8%EB%A6%AC256gb-%EC%8B%A0%ED%92%88%EC%88%98%EC%A4%80-%ED%92%80%EB%B0%95%EC%8A%A4-4ktc9474rrd6/",
+      "firstAlertedAt": "2026-10-25T02:42:24.209341Z",
+      "lastCandidateAt": "2026-10-25T02:42:24.209341Z"
     }
   }
 }
