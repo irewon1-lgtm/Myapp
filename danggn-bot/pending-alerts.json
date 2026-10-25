@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-25T07:42:12.182065Z",
+  "updatedAt": "2026-10-25T08:22:15.008894Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -7280,8 +7280,8 @@
     "qk8jegdir37j": {
       "id": "qk8jegdir37j",
       "title": "갤럭시북4 15.6인치 NT750XGQ   NT750XGR상위",
-      "price": 850000,
-      "previousPrice": 900000,
+      "price": 820000,
+      "previousPrice": 850000,
       "changeType": "price_drop",
       "city": "군포시",
       "location": "금정동",
@@ -7300,7 +7300,7 @@
       "postedAt": "2026-10-17T15:47:03.595Z",
       "url": "https://www.daangn.com/kr/buy-sell/%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%814-15-6%EC%9D%B8%EC%B9%98-nt750xgq-nt750xgr%EC%83%81%EC%9C%84-qk8jegdir37j/",
       "firstAlertedAt": "2026-10-17T15:49:37.671509Z",
-      "lastCandidateAt": "2026-10-19T22:12:22.224262Z"
+      "lastCandidateAt": "2026-10-25T08:22:15.008894Z"
     },
     "vrnd8c1omeiz": {
       "id": "vrnd8c1omeiz",
@@ -10576,6 +10576,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%88%EC%9D%B4%ED%81%AC%EB%A1%9C%EC%86%8C%ED%94%84%ED%8A%B8-%EC%84%9C%ED%94%BC%EC%8A%A4-%EB%9E%A9%ED%83%91-13-8-%EC%BD%94%ED%8C%8C%EC%9D%BC%EB%9F%BF-pc-5%EB%85%84-%EB%B3%B4%EC%A6%9D-%ED%8F%AC%ED%95%A8-%EA%B3%A0%EA%B8%89-%EC%8A%A4%ED%82%A8-%EC%9E%91%EC%97%85-%ED%92%80%EB%B0%95%EC%8A%A4-66zy2x191r8o/",
       "firstAlertedAt": "2026-10-25T07:02:18.315865Z",
       "lastCandidateAt": "2026-10-25T07:02:18.315865Z"
+    },
+    "p75kcuygop9d": {
+      "id": "p75kcuygop9d",
+      "title": "SLG 2026 그램 15 노트북 | 구매 2개월 | 2테라 32GB |",
+      "price": 1235000,
+      "previousPrice": 1300000,
+      "changeType": "price_drop",
+      "city": "안양시",
+      "location": "안양3동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 32,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "32GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-09-28T13:05:27.636Z",
+      "url": "https://www.daangn.com/kr/buy-sell/slg-2026-%EA%B7%B8%EB%9E%A8-15-%EB%85%B8%ED%8A%B8%EB%B6%81-%EA%B5%AC%EB%A7%A4-2%EA%B0%9C%EC%9B%94-2%ED%85%8C%EB%9D%BC-32gb-p75kcuygop9d/",
+      "firstAlertedAt": "2026-10-25T08:22:15.008894Z",
+      "lastCandidateAt": "2026-10-25T08:22:15.008894Z"
+    },
+    "6q3sg1pb6d6g": {
+      "id": "6q3sg1pb6d6g",
+      "title": "삼성 갤럭시북 프로 360 NT930QDB-K71AN 판매합니다",
+      "price": 450000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "의왕시",
+      "location": "내손1동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "RAM: 16GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-25T07:24:13.951Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%81-%ED%94%84%EB%A1%9C-360-nt930qdb-k71an-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-6q3sg1pb6d6g/",
+      "firstAlertedAt": "2026-10-25T08:22:15.008894Z",
+      "lastCandidateAt": "2026-10-25T08:22:15.008894Z"
     }
   }
 }
