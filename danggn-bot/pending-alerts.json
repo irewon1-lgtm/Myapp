@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-26T11:31:58.110473Z",
+  "updatedAt": "2026-10-26T12:12:19.423082Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -10976,6 +10976,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81%EC%97%90%EC%96%B4-m4-15%EC%9D%B8%EC%B9%98-16%EB%A9%94%EB%AA%A8%EB%A6%AC-256gb-%EC%8B%A0%ED%92%88%EC%88%98%EC%A4%80-p3rj6h4w4ktk/",
       "firstAlertedAt": "2026-10-26T09:02:20.604901Z",
       "lastCandidateAt": "2026-10-26T09:02:20.604901Z"
+    },
+    "bp9mjrsr3yjo": {
+      "id": "bp9mjrsr3yjo",
+      "title": "DELL Inspiron 15R 5437 노트북",
+      "price": 100000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "비산동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 128,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "128GB",
+      "storageGB": 128,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-26T12:07:35.589Z",
+      "url": "https://www.daangn.com/kr/buy-sell/dell-inspiron-15r-5437-%EB%85%B8%ED%8A%B8%EB%B6%81-bp9mjrsr3yjo/",
+      "firstAlertedAt": "2026-10-26T12:12:19.423082Z",
+      "lastCandidateAt": "2026-10-26T12:12:19.423082Z"
+    },
+    "p9ojwdgfdjua": {
+      "id": "p9ojwdgfdjua",
+      "title": "레노버 카본 젠8 노트북 i7 10세대 16기가 ssd500",
+      "price": 400000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "안양1동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16기가",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-26T11:32:41.474Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%B9%B4%EB%B3%B8-%EC%A0%A08-%EB%85%B8%ED%8A%B8%EB%B6%81-i7-10%EC%84%B8%EB%8C%80-16%EA%B8%B0%EA%B0%80-ssd500-p9ojwdgfdjua/",
+      "firstAlertedAt": "2026-10-26T12:12:19.423082Z",
+      "lastCandidateAt": "2026-10-26T12:12:19.423082Z"
     }
   }
 }
