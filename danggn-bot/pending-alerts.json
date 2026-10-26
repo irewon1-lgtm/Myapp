@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-26T07:03:11.061453Z",
+  "updatedAt": "2026-10-26T07:42:07.864046Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -10876,6 +10876,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EA%B8%89%EC%B2%98-%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-16%EC%9D%B8%EC%B9%98-i9-1tb-ram-16g-2019-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-%EC%82%AC%EC%9D%B4%ED%81%B4-182-8hy8rqn7p5wf/",
       "firstAlertedAt": "2026-10-26T05:35:10.909217Z",
       "lastCandidateAt": "2026-10-26T05:35:10.909217Z"
+    },
+    "9oh67s1o2nvg": {
+      "id": "9oh67s1o2nvg",
+      "title": "레노버 리전 프로5 16인치 / 게이밍노트북",
+      "price": 3500000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "비산1동",
+      "cpuHint": "intel core ultra 9 275HX",
+      "gpuHint": "RTX 5070Ti",
+      "vramGB": 12,
+      "ramGB": 32,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "32GB RAM",
+      "vramEvidence": "VRAM 12gb",
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 2048,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "postedAt": "2026-10-26T07:37:22.738Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EB%A6%AC%EC%A0%84-%ED%94%84%EB%A1%9C5-16%EC%9D%B8%EC%B9%98-%EA%B2%8C%EC%9D%B4%EB%B0%8D%EB%85%B8%ED%8A%B8%EB%B6%81-9oh67s1o2nvg/",
+      "firstAlertedAt": "2026-10-26T07:42:07.864046Z",
+      "lastCandidateAt": "2026-10-26T07:42:07.864046Z"
+    },
+    "upuzus4ikg46": {
+      "id": "upuzus4ikg46",
+      "title": "LG 울트라북 21년식 사무용 노트북 판매합니다.",
+      "price": 450000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "안양4동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-26T07:40:20.002Z",
+      "url": "https://www.daangn.com/kr/buy-sell/lg-%EC%9A%B8%ED%8A%B8%EB%9D%BC%EB%B6%81-21%EB%85%84%EC%8B%9D-%EC%82%AC%EB%AC%B4%EC%9A%A9-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-upuzus4ikg46/",
+      "firstAlertedAt": "2026-10-26T07:42:07.864046Z",
+      "lastCandidateAt": "2026-10-26T07:42:07.864046Z"
     }
   }
 }
