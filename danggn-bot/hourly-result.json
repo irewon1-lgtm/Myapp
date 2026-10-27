@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-27T03:42:18.597Z",
+  "generatedAt": "2026-10-27T04:22:07.439Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -77,24 +77,24 @@
             ]
           },
           {
-            "id": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-lg%EC%A0%84%EC%9E%90-i7-6500u-8gb-ram-kmebg44mzu6y/",
-            "href": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-lg%EC%A0%84%EC%9E%90-i7-6500u-8gb-ram-kmebg44mzu6y/",
-            "title": "LG 노트북 (LG전자) i7-6500U 8GB RAM",
-            "content": "LG전자 노트북 판매해요. 인텔 코어 i7-6500U 프로세서와 8GB RAM을 탑재하여 빠르고 쾌적한 사용이 가능해요. 윈도우 10이 설치되어 있어 바로 사용하실 수 있습니다. 깔끔한 화이트 색상의 노트북으로 어디서든 잘 어울려요. 문서 작업, 인터넷 서핑 등 다양한 용도로 활용하기 좋아요.\n\n아래한글은 사용가능.  엑셀은  인증만료로  안됨\n, 충전기드림",
-            "price": "180000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/c40bde38-c6cd-47e4-ae51-1784841a5744.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-15%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-m29a9wzaa5xc/",
+            "href": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-15%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-m29a9wzaa5xc/",
+            "title": "LG 노트북 15인치 화이트",
+            "content": "화이트 색상의 LG 노트북이에요. 15인치, 인텔 CPU가 탑재되어 있습니다\nwindow11과 한글 엑셀 파워포인트 설치되어 있어요\n배터리 효율은 좀 떨어집니다ㅜ",
+            "price": "80000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/1792736749240de4a1e715cce382b32d7cc3af40f7f41d170f68724d7c458e55f96310de201980.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-27T03:18:15.718Z",
-            "boostedAt": "2026-10-27T03:18:15.716Z",
+            "createdAt": "2026-10-27T04:10:49.323Z",
+            "boostedAt": "2026-10-27T04:10:49.322Z",
             "region": {
-              "name": "백석동"
+              "name": "중앙동"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 37.6430479,
-                "longitude": 126.7877167
+                "latitude": 35.8157106,
+                "longitude": 127.1428707
               }
             ]
           },
@@ -123,13 +123,13 @@
         ],
         "dateFieldSnippets": [
           "createdAt\":\"2026-10-27T03:06:44.428Z\",\"boostedAt\":\"2026-10-27T03:06:44.426Z\",\"region\":{\"name\":\"흥해읍\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-10-27T03:18:15.718Z\",\"boostedAt\":\"2026-10-27T03:18:15.716Z\",\"region\":{\"name\":\"백석동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-10-27T04:10:49.323Z\",\"boostedAt\":\"2026-10-27T04:10:49.322Z\",\"region\":{\"name\":\"중앙동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-27T02:19:05.732Z\",\"boostedAt\":\"2026-10-27T02:19:05.731Z\",\"region\":{\"name\":\"역삼동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-24T14:41:31.592Z\",\"boostedAt\":\"2026-10-24T14:41:31.590Z\",\"region\":{\"name\":\"서초1동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-10-27T03:10:31.653Z\",\"boostedAt\":\"2026-10-27T03:10:31.651Z\",\"region\":{\"name\":\"명서동\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-10-22T07:45:01.312Z\",\"boostedAt\":\"2026-10-27T03:42:14.431Z\",\"region\":{\"name\":\"덕곡동\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":264,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG 그램 노트북 (화이트)\",\"description\"",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":265,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG 그램 노트북 (화이트)\",\"description\"",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -137,24 +137,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1326,
-    "globalUniqueListings": 504,
-    "duplicateListingsRemoved": 822,
-    "detailQueueStart": 20,
-    "freshDetailTasks": 20,
+    "searchUniqueListings": 1329,
+    "globalUniqueListings": 506,
+    "duplicateListingsRemoved": 823,
+    "detailQueueStart": 10,
+    "freshDetailTasks": 10,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 20,
-    "detailSucceeded": 20,
+    "detailRequestsExecuted": 10,
+    "detailSucceeded": 10,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 504,
+    "postedAtResolvedFromSearch": 506,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 1,
-    "scanDurationMs": 103182,
+    "scanDurationMs": 91953,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +166,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 272,
-        "durationMs": 12208
+        "uniqueListings": 273,
+        "durationMs": 12465
       },
       {
         "city": "의왕시",
@@ -182,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 403,
-        "durationMs": 25642
+        "uniqueListings": 400,
+        "durationMs": 25802
       },
       {
         "city": "안양시",
@@ -200,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 395,
-        "durationMs": 35045
+        "uniqueListings": 400,
+        "durationMs": 35296
       },
       {
         "city": "과천시",
@@ -213,7 +213,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 256,
-        "durationMs": 6599
+        "durationMs": 6761
       }
     ],
     "finalCandidateCount": 1,
@@ -222,43 +222,43 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 103187
+    "durationMs": 91959
   },
   "candidates": [
     {
-      "id": "ez93agis2vhb",
-      "changeType": "new",
-      "previousPrice": null,
-      "price": 700000,
-      "priceDropPercent": null,
+      "id": "sxsz8gdjcd5s",
+      "changeType": "price_drop",
+      "previousPrice": 3250000,
+      "price": 3200000,
+      "priceDropPercent": 1.5,
       "city": "안양시",
-      "location": "평촌동",
-      "regionPath": "경기도 안양시 동안구 평촌동",
-      "title": "레노버 씽크북 14IRL G8 Core i7 SSD 512GB",
-      "modelHint": "레노버 씽크북 14IRL G8 Core i7 SSD 512GB",
-      "cpuHint": null,
+      "location": "안양7동",
+      "regionPath": "경기도 안양시 만안구 안양7동",
+      "title": "애플 맥북 프로 실버 16 M4 Pro 1TB S급",
+      "modelHint": "애플 맥북 프로 실버 16 M4 Pro 1TB S급",
+      "cpuHint": "M4 Pro",
       "cpuBaselinePass": null,
-      "gpuHint": null,
+      "gpuHint": "M4 Pro",
       "vramGB": null,
-      "ramGB": 16,
+      "ramGB": 24,
       "ambiguousMemoryGB": null,
       "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": "16GB RAM",
+      "ramEvidence": "24GB 메모리",
       "vramEvidence": null,
       "ambiguousMemoryEvidence": null,
-      "storageGB": 512,
+      "storageGB": null,
       "llmCapability": "SPEC_CHECK_REQUIRED",
       "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
       "specConfidence": "needs_review",
-      "postedAt": "2026-10-27T03:00:59.007Z",
-      "boostedAt": "2026-10-27T03:00:59.005Z",
+      "postedAt": "2026-10-25T10:07:03.907Z",
+      "boostedAt": "2026-10-25T10:07:03.903Z",
       "status": "Ongoing",
-      "description": "문서 작업, 영상 편집 등 다용도로 활용하기 좋은 레노버 ThinkBook 14 G8 노트북이에요\n14인치 WUXGA 디스플레이와 인텔 코어 i7 CPU 탑재로 쾌적한 사용이 가능해요\nSSD 512GB와 16GB RAM으로 넉넉한 저장 공간과 빠른 속도를 자랑합니다.\n구매후 2~3주 정도 사용후 전혀 사용을 하지 않아서 판매합니다. 상태는 거의 신품급 입니다.\n가성비 좋은 노트북을 찾으시는 분들께 추천드려요",
-      "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%94%BD%ED%81%AC%EB%B6%81-14irl-g8-core-i7-ssd-512gb-ez93agis2vhb/",
+      "description": "애플 맥북 프로 16인치 모델\nM4 Pro 칩, 24GB 메모리, 1TB\n배터리 성능 최대치 100%\n배터리 사이클 36\n애플케어 28.12.05\n한글자판 + 풀박스\n작년 12월 6일 구매\n화면보호필름 붙어있고 상태 S급 입니다.",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%95%A0%ED%94%8C-%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-%EC%8B%A4%EB%B2%84-16-m4-pro-1tb-s%EA%B8%89-sxsz8gdjcd5s/",
       "favoriteCount": 0,
       "chatCount": 0,
-      "sellerName": "지후니",
-      "mannerTemperature": 39.4
+      "sellerName": "찹쌀떡",
+      "mannerTemperature": 83.7
     }
   ]
 }
