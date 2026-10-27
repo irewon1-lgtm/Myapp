@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-27T13:52:10.739888Z",
+  "updatedAt": "2026-10-27T14:32:26.162198Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -11526,6 +11526,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%AC%B8%EC%A0%9C%EC%9E%88%EB%8A%94-%EB%A0%88%EB%85%B8%EB%B2%84-%EC%9A%94%EA%B0%80-2019%EB%85%84-i7-14%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-c740-14iml-beftzs1qd5nz/",
       "firstAlertedAt": "2026-10-27T12:12:16.225782Z",
       "lastCandidateAt": "2026-10-27T12:12:16.225782Z"
+    },
+    "343tovu3wbod": {
+      "id": "343tovu3wbod",
+      "title": "(미개봉) M3 맥북 프로맥스 14인치/36gb/1tb",
+      "price": 3000000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "석수1동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 36,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "/36gb",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-27T14:22:16.459Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%AF%B8%EA%B0%9C%EB%B4%89-m3-%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C%EB%A7%A5%EC%8A%A4-14%EC%9D%B8%EC%B9%98-36gb-1tb-343tovu3wbod/",
+      "firstAlertedAt": "2026-10-27T14:32:26.162198Z",
+      "lastCandidateAt": "2026-10-27T14:32:26.162198Z"
+    },
+    "fhrkj6ahttpb": {
+      "id": "fhrkj6ahttpb",
+      "title": "애플 맥 스튜디오 M1 Max 32GB / 512GB",
+      "price": 1700000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "수리동",
+      "cpuHint": "Apple M1 Max",
+      "gpuHint": "Apple M1 Max",
+      "vramGB": null,
+      "ramGB": 32,
+      "ambiguousMemoryGB": 32,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "메모리: 32GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "32GB",
+      "storageGB": 512,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "postedAt": "2026-10-27T14:18:12.658Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%95%A0%ED%94%8C-%EB%A7%A5-%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4-m1-max-32gb-512gb-fhrkj6ahttpb/",
+      "firstAlertedAt": "2026-10-27T14:32:26.162198Z",
+      "lastCandidateAt": "2026-10-27T14:32:26.162198Z"
     }
   }
 }
