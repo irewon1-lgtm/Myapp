@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-27T08:52:09.625102Z",
+  "updatedAt": "2026-10-27T09:32:18.169240Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -7505,8 +7505,8 @@
     "fay45svqshig": {
       "id": "fay45svqshig",
       "title": "애플 맥북 맥스 m3 max 14인치",
-      "price": 2700000,
-      "previousPrice": 2800000,
+      "price": 2600000,
+      "previousPrice": 2700000,
       "changeType": "price_drop",
       "city": "군포시",
       "location": "산본1동",
@@ -7525,7 +7525,7 @@
       "postedAt": "2026-10-18T04:44:44.331Z",
       "url": "https://www.daangn.com/kr/buy-sell/%EC%95%A0%ED%94%8C-%EB%A7%A5%EB%B6%81-%EB%A7%A5%EC%8A%A4-m3-max-14%EC%9D%B8%EC%B9%98-fay45svqshig/",
       "firstAlertedAt": "2026-10-18T04:49:52.339733Z",
-      "lastCandidateAt": "2026-10-20T07:52:38.334863Z"
+      "lastCandidateAt": "2026-10-27T09:32:18.169240Z"
     },
     "9mhdebzkxn1o": {
       "id": "9mhdebzkxn1o",
@@ -11426,6 +11426,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/hp-15-fd1172tu-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%9D%B8%ED%85%94-%EC%BD%94%EC%96%B4-%EC%9A%B8%ED%8A%B8%EB%9D%BC-5-okzkikb7pgsx/",
       "firstAlertedAt": "2026-10-27T08:12:23.246732Z",
       "lastCandidateAt": "2026-10-27T08:12:23.246732Z"
+    },
+    "hnqvudbd8zw2": {
+      "id": "hnqvudbd8zw2",
+      "title": "맥북 Pro 16인치 (2019) (65만)",
+      "price": 650000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "의왕시",
+      "location": "학의동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-27T08:56:52.241Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81-pro-16%EC%9D%B8%EC%B9%98-2019-65%EB%A7%8C-hnqvudbd8zw2/",
+      "firstAlertedAt": "2026-10-27T09:32:18.169240Z",
+      "lastCandidateAt": "2026-10-27T09:32:18.169240Z"
+    },
+    "ywkydith21ys": {
+      "id": "ywkydith21ys",
+      "title": "[새상품] LG 그램 프로 17인치 17ZD90T-GX56K / 울트라5 / 16GB / 512GB / 윈도우10",
+      "price": 1600000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "과천시",
+      "location": "원문동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "RAM : 16GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": 256,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-27T09:03:42.627Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%83%88%EC%83%81%ED%92%88-lg-%EA%B7%B8%EB%9E%A8-%ED%94%84%EB%A1%9C-17%EC%9D%B8%EC%B9%98-17zd90t-gx56k-%EC%9A%B8%ED%8A%B8%EB%9D%BC5-16gb-512gb-%EC%9C%88%EB%8F%84%EC%9A%B010-ywkydith21ys/",
+      "firstAlertedAt": "2026-10-27T09:32:18.169240Z",
+      "lastCandidateAt": "2026-10-27T09:32:18.169240Z"
     }
   }
 }
