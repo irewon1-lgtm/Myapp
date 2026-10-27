@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-27T17:22:01.758Z",
+  "generatedAt": "2026-10-27T18:02:06.210Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,6 +55,28 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
+            "id": "/kr/buy-sell/%EA%B9%A8%EB%81%97-lg-%EB%85%B8%ED%8A%B8%EB%B6%81-15%EC%9D%B8%EC%B9%98-%ED%8C%9D%EB%8B%88%EB%8B%A4-%EC%82%AC%EB%AC%B4%EC%9A%A9-b4udp7z1xcds/",
+            "href": "/kr/buy-sell/%EA%B9%A8%EB%81%97-lg-%EB%85%B8%ED%8A%B8%EB%B6%81-15%EC%9D%B8%EC%B9%98-%ED%8C%9D%EB%8B%88%EB%8B%A4-%EC%82%AC%EB%AC%B4%EC%9A%A9-b4udp7z1xcds/",
+            "title": "깨끗 LG 노트북 15인치 팝니다 사무용",
+            "content": "A급으로 깔끔합니다 2019년10월제조이고\nCPU 2.3G 램은 8GB, 하드 SSD 128GB \n상태는 외관 멀쩡하고 액정깨짐없고 이상없이 모두 정상작동합니다\n\n윈도우11로 초기화된 상태라서 바로 쓰면 됩니다 \n오피스 등 한글 워드 엑셀 파워포인트 있어용",
+            "price": "200000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/c18361e743a3687fcb02decb042905bff30a82d2f4bc74235691f1234a96fb0b_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-27T17:53:36.143Z",
+            "boostedAt": "2026-10-27T17:53:36.141Z",
+            "region": {
+              "name": "진미동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 36.0977389,
+                "longitude": 128.4256535
+              }
+            ]
+          },
+          {
             "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-13%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-%EB%85%B8%ED%8A%B8%EB%B6%81-xeyjxb9uk9ym/",
             "href": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-13%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-%EB%85%B8%ED%8A%B8%EB%B6%81-xeyjxb9uk9ym/",
             "title": "LG 그램 13인치 화이트 노트북",
@@ -73,28 +95,6 @@
               {
                 "latitude": 37.2927534,
                 "longitude": 127.1176243
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%81-go-%EB%85%B8%ED%8A%B8%EB%B6%81-uvma3mpaqwm5/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%81-go-%EB%85%B8%ED%8A%B8%EB%B6%81-uvma3mpaqwm5/",
-            "title": "삼성 갤럭시북 Go 노트북",
-            "content": "삼성 갤럭시북 Go 노트북 판매합니다 \nLTE 모델이라서 유심 장착 가능하세요 \n가볍고 외관도 깨끗한편이라서 휴대하기가 좋아요 웹서핑,유튜브,간단한 문서작업 하기가 좋고 편리합니다\n충전기는 따로 없고 마우스 같이 드리겠습니다^^",
-            "price": "150000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/e52f8008-72fe-4f12-bd78-d69cdbcb55c5.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-27T16:24:35.483Z",
-            "boostedAt": "2026-10-27T16:24:35.482Z",
-            "region": {
-              "name": "중앙동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 37.4298757,
-                "longitude": 126.9888194
               }
             ]
           },
@@ -122,14 +122,14 @@
           }
         ],
         "dateFieldSnippets": [
+          "createdAt\":\"2026-10-27T17:53:36.143Z\",\"boostedAt\":\"2026-10-27T17:53:36.141Z\",\"region\":{\"name\":\"진미동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-27T14:08:40.894Z\",\"boostedAt\":\"2026-10-27T14:08:40.892Z\",\"region\":{\"name\":\"구성동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-10-27T16:24:35.483Z\",\"boostedAt\":\"2026-10-27T16:24:35.482Z\",\"region\":{\"name\":\"중앙동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-27T11:26:18.319Z\",\"boostedAt\":\"2026-10-27T11:26:18.313Z\",\"region\":{\"name\":\"논현2동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-10-24T14:41:31.592Z\",\"boostedAt\":\"2026-10-24T14:41:31.590Z\",\"region\":{\"name\":\"서초1동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-10-27T03:06:44.428Z\",\"boostedAt\":\"2026-10-27T03:06:44.426Z\",\"region\":{\"name\":\"흥해읍\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-09-08T07:40:23.285Z\",\"boostedAt\":\"2026-10-22T11:39:08.145Z\",\"region\":{\"name\":\"사당동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-10-27T17:55:22.286Z\",\"boostedAt\":\"2026-10-27T17:55:22.281Z\",\"region\":{\"name\":\"목동\"},\"category\":null,\"contentCoord"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":266,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG 그램 13인치 화이트 노트북\",\"descripti",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":264,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"깨끗 LG 노트북 15인치 팝니다 사무용\",\"descr",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -137,9 +137,9 @@
         ]
       }
     },
-    "searchUniqueListings": 1299,
-    "globalUniqueListings": 492,
-    "duplicateListingsRemoved": 807,
+    "searchUniqueListings": 1254,
+    "globalUniqueListings": 511,
+    "duplicateListingsRemoved": 743,
     "detailQueueStart": 3,
     "freshDetailTasks": 3,
     "backlogDetailTasks": 0,
@@ -151,10 +151,10 @@
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 492,
+    "postedAtResolvedFromSearch": 511,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 83162,
+    "scanDurationMs": 82421,
     "cities": [
       {
         "city": "군포시",
@@ -167,7 +167,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 273,
-        "durationMs": 12295
+        "durationMs": 12407
       },
       {
         "city": "의왕시",
@@ -182,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 401,
-        "durationMs": 25651
+        "uniqueListings": 406,
+        "durationMs": 25268
       },
       {
         "city": "안양시",
@@ -200,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 394,
-        "durationMs": 35478
+        "uniqueListings": 320,
+        "durationMs": 35354
       },
       {
         "city": "과천시",
@@ -212,8 +212,8 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 231,
-        "durationMs": 6530
+        "uniqueListings": 255,
+        "durationMs": 6351
       }
     ],
     "finalCandidateCount": 0,
@@ -222,7 +222,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 83169
+    "durationMs": 82427
   },
   "candidates": []
 }
