@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-27T14:43:20.891975Z",
+  "updatedAt": "2026-10-27T15:24:30.718492Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -11055,9 +11055,9 @@
     "xof7ta58sufv": {
       "id": "xof7ta58sufv",
       "title": "맥스튜디오 M1 Max 64gb",
-      "price": 2900000,
-      "previousPrice": null,
-      "changeType": "new",
+      "price": 2800000,
+      "previousPrice": 2900000,
+      "changeType": "price_drop",
       "city": "안양시",
       "location": "갈산동",
       "cpuHint": "M1 Max",
@@ -11075,7 +11075,7 @@
       "postedAt": "2026-10-26T12:44:42.116Z",
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4-m1-max-64gb-xof7ta58sufv/",
       "firstAlertedAt": "2026-10-26T12:57:44.991351Z",
-      "lastCandidateAt": "2026-10-26T12:57:44.991351Z"
+      "lastCandidateAt": "2026-10-27T15:24:30.718492Z"
     },
     "rejfhfiatv6h": {
       "id": "rejfhfiatv6h",
@@ -11576,6 +11576,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EC%95%A0%ED%94%8C-%EB%A7%A5-%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4-m1-max-32gb-512gb-fhrkj6ahttpb/",
       "firstAlertedAt": "2026-10-27T14:32:26.162198Z",
       "lastCandidateAt": "2026-10-27T14:32:26.162198Z"
+    },
+    "ryo4kcspdt4h": {
+      "id": "ryo4kcspdt4h",
+      "title": "asus rog flow z13 2025년형 모델로 노트북 추금교환합니다.",
+      "price": 2500000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "호계2동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 32,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "ram 32gb",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 1024,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "postedAt": "2026-10-27T15:09:37.217Z",
+      "url": "https://www.daangn.com/kr/buy-sell/asus-rog-flow-z13-2025%EB%85%84%ED%98%95-%EB%AA%A8%EB%8D%B8%EB%A1%9C-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%B6%94%EA%B8%88%EA%B5%90%ED%99%98%ED%95%A9%EB%8B%88%EB%8B%A4-ryo4kcspdt4h/",
+      "firstAlertedAt": "2026-10-27T15:24:30.718492Z",
+      "lastCandidateAt": "2026-10-27T15:24:30.718492Z"
     }
   }
 }
