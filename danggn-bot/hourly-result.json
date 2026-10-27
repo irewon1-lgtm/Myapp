@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-27T16:02:03.033Z",
+  "generatedAt": "2026-10-27T16:42:02.441Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,6 +55,28 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%81-go-%EB%85%B8%ED%8A%B8%EB%B6%81-uvma3mpaqwm5/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%81-go-%EB%85%B8%ED%8A%B8%EB%B6%81-uvma3mpaqwm5/",
+            "title": "삼성 갤럭시북 Go 노트북",
+            "content": "삼성 갤럭시북 Go 노트북 판매합니다 \nLTE 모델이라서 유심 장착 가능하세요 \n가볍고 외관도 깨끗한편이라서 휴대하기가 좋아요 웹서핑,유튜브,간단한 문서작업 하기가 좋고 편리합니다\n충전기는 따로 없고 마우스 같이 드리겠습니다^^",
+            "price": "150000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/e52f8008-72fe-4f12-bd78-d69cdbcb55c5.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-27T16:24:35.483Z",
+            "boostedAt": "2026-10-27T16:24:35.482Z",
+            "region": {
+              "name": "중앙동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 37.4298757,
+                "longitude": 126.9888194
+              }
+            ]
+          },
+          {
             "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-13%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-%EB%85%B8%ED%8A%B8%EB%B6%81-xeyjxb9uk9ym/",
             "href": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-13%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-%EB%85%B8%ED%8A%B8%EB%B6%81-xeyjxb9uk9ym/",
             "title": "LG 그램 13인치 화이트 노트북",
@@ -73,28 +95,6 @@
               {
                 "latitude": 37.2927534,
                 "longitude": 127.1176243
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-74zzgt67ntcs/",
-            "href": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-74zzgt67ntcs/",
-            "title": "LG 그램 노트북 (화이트)",
-            "content": "가볍고 휴대하기 좋은 LG 그램 노트북입니다. 깔끔한 화이트 색상으로 어디서든 잘 어울려요. 문서 작업, 인터넷 서핑 등 일상적인 용도로 사용하기 좋습니다. 사진에서 보이는 그대로의 모습이며, 성능 좋은 노트북으로 새 주인을 기다립니다.",
-            "price": "150000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/7397349e-e1df-40bc-a6dd-2493a4abd5ca.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-27T03:06:44.428Z",
-            "boostedAt": "2026-10-27T03:06:44.426Z",
-            "region": {
-              "name": "흥해읍"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 36.0915559,
-                "longitude": 129.3468342
               }
             ]
           },
@@ -122,14 +122,14 @@
           }
         ],
         "dateFieldSnippets": [
+          "createdAt\":\"2026-10-27T16:24:35.483Z\",\"boostedAt\":\"2026-10-27T16:24:35.482Z\",\"region\":{\"name\":\"중앙동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-27T14:08:40.894Z\",\"boostedAt\":\"2026-10-27T14:08:40.892Z\",\"region\":{\"name\":\"구성동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-10-27T03:06:44.428Z\",\"boostedAt\":\"2026-10-27T03:06:44.426Z\",\"region\":{\"name\":\"흥해읍\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-27T11:26:18.319Z\",\"boostedAt\":\"2026-10-27T11:26:18.313Z\",\"region\":{\"name\":\"논현2동\"},\"category\":null,\"contentCoo",
           "createdAt\":\"2026-10-24T14:41:31.592Z\",\"boostedAt\":\"2026-10-24T14:41:31.590Z\",\"region\":{\"name\":\"서초1동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-10-27T14:59:14.991Z\",\"boostedAt\":\"2026-10-27T14:59:14.991Z\",\"region\":{\"name\":\"흑석동\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-10-27T03:06:44.428Z\",\"boostedAt\":\"2026-10-27T03:06:44.426Z\",\"region\":{\"name\":\"흥해읍\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":268,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG 그램 13인치 화이트 노트북\",\"descripti",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":267,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 갤럭시북 Go 노트북\",\"description\":",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -137,24 +137,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1276,
-    "globalUniqueListings": 529,
-    "duplicateListingsRemoved": 747,
-    "detailQueueStart": 3,
-    "freshDetailTasks": 3,
+    "searchUniqueListings": 1312,
+    "globalUniqueListings": 492,
+    "duplicateListingsRemoved": 820,
+    "detailQueueStart": 7,
+    "freshDetailTasks": 7,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 3,
-    "detailSucceeded": 3,
+    "detailRequestsExecuted": 7,
+    "detailSucceeded": 7,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 529,
+    "postedAtResolvedFromSearch": 492,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 1,
-    "scanDurationMs": 82301,
+    "scanDurationMs": 87336,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +166,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 272,
-        "durationMs": 11954
+        "uniqueListings": 273,
+        "durationMs": 12284
       },
       {
         "city": "의왕시",
@@ -182,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 396,
-        "durationMs": 25676
+        "uniqueListings": 390,
+        "durationMs": 25642
       },
       {
         "city": "안양시",
@@ -200,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 391,
-        "durationMs": 35439
+        "uniqueListings": 393,
+        "durationMs": 34771
       },
       {
         "city": "과천시",
@@ -212,8 +212,8 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 217,
-        "durationMs": 6350
+        "uniqueListings": 256,
+        "durationMs": 6708
       }
     ],
     "finalCandidateCount": 1,
@@ -222,43 +222,43 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 82308
+    "durationMs": 87341
   },
   "candidates": [
     {
-      "id": "ep8scqh683e9",
+      "id": "3jfis1s12zvo",
       "changeType": "new",
       "previousPrice": null,
-      "price": 85000,
+      "price": 950000,
       "priceDropPercent": null,
-      "city": "군포시",
-      "location": "산본1동",
-      "regionPath": "경기도 군포시 산본1동",
-      "title": "맥북에어 13인치 실버 (2014)",
-      "modelHint": "맥북에어 13인치 실버 (2014)",
+      "city": "안양시",
+      "location": "안양4동",
+      "regionPath": "경기도 안양시 만안구 안양4동",
+      "title": "LG 그램 17인치 i7 / RAM 24GB / SSD 1TB 판매합니다",
+      "modelHint": "LG 그램 17인치 i7 / RAM 24GB / SSD 1TB 판매합니다",
       "cpuHint": null,
       "cpuBaselinePass": null,
       "gpuHint": null,
       "vramGB": null,
-      "ramGB": null,
-      "ambiguousMemoryGB": 128,
+      "ramGB": 24,
+      "ambiguousMemoryGB": 24,
       "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": null,
+      "ramEvidence": "RAM 24GB",
       "vramEvidence": null,
-      "ambiguousMemoryEvidence": "128GB",
-      "storageGB": null,
+      "ambiguousMemoryEvidence": "24GB",
+      "storageGB": 1024,
       "llmCapability": "SPEC_CHECK_REQUIRED",
       "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
       "specConfidence": "needs_review",
-      "postedAt": "2026-10-27T15:30:15.346Z",
-      "boostedAt": "2026-10-27T15:30:15.344Z",
+      "postedAt": "2026-10-27T16:23:35.242Z",
+      "boostedAt": "2026-10-27T16:23:35.242Z",
       "status": "Ongoing",
-      "description": "i5, 8GB, 128GB \n찍힘, 생활하자 사진확인.\n사과불 들어오고 액정 이상 없습니다. \n문서작업, 영상시청으로 사용하기 좋습니다.\n\n-확장형 sd카드 128gb\n-왼쪽 uSb 고장. 오른쪽 사용\n-충전기 포함",
-      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81%EC%97%90%EC%96%B4-13%EC%9D%B8%EC%B9%98-%EC%8B%A4%EB%B2%84-2014-ep8scqh683e9/",
+      "description": "LG 그램 17 17ZD90N-VX70K 모델입니다.\n\nIntel Core i7-1065G7\n\nRAM 24GB\n\nSSD 1TB\n\nIntel Iris Plus Graphics\n\n17인치 대화면\n\nWindows 64비트\n\n램은 24GB, SSD는 1TB로 업그레이드되어 있어서 문서작업, 인터넷, 영상 시청은 물론 여러 프로그램을 동시에 띄워놓고 사용하기에도 괜찮습니다.\n\n외관은 전체적으로 A급 정도이고, 사용하면서 생긴 생활감과 때 탄 부분이 한 곳 있습니다. 큰 찍힘이나 심한 파손은 없습니다.\n\n배터리는 현재 완충용량 기준 약 75% 정도입니다.\n\n직접 사용하던 제품이라 기본적인 사용에는 문제없고, 초기화해서 드리겠습니다.\n\n판매가 95만원입니다.\n과도한 네고는 어렵고, 적당한 선에서만 협의하겠습니다.\n\n직거래 선호합니다.",
+      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-17%EC%9D%B8%EC%B9%98-i7-ram-24gb-ssd-1tb-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-3jfis1s12zvo/",
       "favoriteCount": 0,
       "chatCount": 0,
-      "sellerName": "당근당근",
-      "mannerTemperature": 42.1
+      "sellerName": "노란콘",
+      "mannerTemperature": 36.7
     }
   ]
 }

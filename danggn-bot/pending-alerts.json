@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-27T16:02:03.097951Z",
+  "updatedAt": "2026-10-27T16:42:02.497878Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -11626,6 +11626,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81%EC%97%90%EC%96%B4-13%EC%9D%B8%EC%B9%98-%EC%8B%A4%EB%B2%84-2014-ep8scqh683e9/",
       "firstAlertedAt": "2026-10-27T16:02:03.097951Z",
       "lastCandidateAt": "2026-10-27T16:02:03.097951Z"
+    },
+    "3jfis1s12zvo": {
+      "id": "3jfis1s12zvo",
+      "title": "LG 그램 17인치 i7 / RAM 24GB / SSD 1TB 판매합니다",
+      "price": 950000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "안양4동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 24,
+      "ambiguousMemoryGB": 24,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "RAM 24GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "24GB",
+      "storageGB": 1024,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-27T16:23:35.242Z",
+      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-17%EC%9D%B8%EC%B9%98-i7-ram-24gb-ssd-1tb-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-3jfis1s12zvo/",
+      "firstAlertedAt": "2026-10-27T16:42:02.497878Z",
+      "lastCandidateAt": "2026-10-27T16:42:02.497878Z"
     }
   }
 }
