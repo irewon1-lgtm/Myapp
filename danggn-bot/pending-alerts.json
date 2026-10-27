@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-27T15:24:30.718492Z",
+  "updatedAt": "2026-10-27T16:02:03.097951Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -11601,6 +11601,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/asus-rog-flow-z13-2025%EB%85%84%ED%98%95-%EB%AA%A8%EB%8D%B8%EB%A1%9C-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%B6%94%EA%B8%88%EA%B5%90%ED%99%98%ED%95%A9%EB%8B%88%EB%8B%A4-ryo4kcspdt4h/",
       "firstAlertedAt": "2026-10-27T15:24:30.718492Z",
       "lastCandidateAt": "2026-10-27T15:24:30.718492Z"
+    },
+    "ep8scqh683e9": {
+      "id": "ep8scqh683e9",
+      "title": "맥북에어 13인치 실버 (2014)",
+      "price": 85000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "산본1동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 128,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "128GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-27T15:30:15.346Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81%EC%97%90%EC%96%B4-13%EC%9D%B8%EC%B9%98-%EC%8B%A4%EB%B2%84-2014-ep8scqh683e9/",
+      "firstAlertedAt": "2026-10-27T16:02:03.097951Z",
+      "lastCandidateAt": "2026-10-27T16:02:03.097951Z"
     }
   }
 }
