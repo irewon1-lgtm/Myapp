@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-28T14:41:28.854Z",
+  "generatedAt": "2026-10-28T15:22:22.412Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,28 +55,6 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt900x5k-x58-%EC%8B%A4%EB%B2%84-wcdb1bmraqhn/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt900x5k-x58-%EC%8B%A4%EB%B2%84-wcdb1bmraqhn/",
-            "title": "삼성 노트북 NT900X5K-X58 실버",
-            "content": "삼성 노트북 NT900X5K-X58 실버 모델입니다. 인텔 i5 프로세서와 8GB RAM, 256GB SSD를 탑재하여 빠르고 쾌적한 사용이 가능해요. 윈도우 10이 설치되어 있어 바로 사용하실 수 있습니다. 가볍고 슬림한 디자인으로 휴대하기 좋아요. 문서 작업, 인터넷 서핑 등 일상적인 용도로 사용하기에 충분한 성능을 갖춘 노트북입니다.",
-            "price": "110000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/0cfef275-8a2f-4c49-9d54-8dc5d9541731.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-28T14:29:44.874Z",
-            "boostedAt": "2026-10-28T14:29:44.873Z",
-            "region": {
-              "name": "두류1.2동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 35.856833,
-                "longitude": 128.5680105
-              }
-            ]
-          },
-          {
             "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EC%95%84%ED%8B%B0%EB%B8%8C-%EB%85%B8%ED%8A%B8%EB%B6%815-nt500r5k-15-6%EC%9D%B8%EC%B9%98-ssd-128gb-ram-8gb-wypnpzt4n5an/",
             "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EC%95%84%ED%8B%B0%EB%B8%8C-%EB%85%B8%ED%8A%B8%EB%B6%815-nt500r5k-15-6%EC%9D%B8%EC%B9%98-ssd-128gb-ram-8gb-wypnpzt4n5an/",
             "title": "삼성 아티브 노트북5 NT500R5K 15.6인치 SSD 128GB RAM 8GB",
@@ -119,17 +97,39 @@
                 "longitude": 127.0412101
               }
             ]
+          },
+          {
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B5%AC%ED%98%95-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%9D%EB%8B%88%EB%8B%A4-ahj2incjmf65/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B5%AC%ED%98%95-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%9D%EB%8B%88%EB%8B%A4-ahj2incjmf65/",
+            "title": "삼성 구형 노트북 팝니다.",
+            "content": "연락주세요\n",
+            "price": "100000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/4f543bc3-dc05-4141-9815-a82364bbef3a.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-28T15:06:49.382Z",
+            "boostedAt": "2026-10-28T15:06:49.380Z",
+            "region": {
+              "name": "이로동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 34.8063762,
+                "longitude": 126.4054379
+              }
+            ]
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-10-28T14:29:44.874Z\",\"boostedAt\":\"2026-10-28T14:29:44.873Z\",\"region\":{\"name\":\"두류1.2동\"},\"category\":null,\"contentC",
           "createdAt\":\"2026-10-28T12:44:57.071Z\",\"boostedAt\":\"2026-10-28T12:44:57.069Z\",\"region\":{\"name\":\"서초동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-27T11:26:18.319Z\",\"boostedAt\":\"2026-10-27T11:26:18.313Z\",\"region\":{\"name\":\"논현2동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-10-28T13:06:11.821Z\",\"boostedAt\":\"2026-10-28T13:06:11.821Z\",\"region\":{\"name\":\"도촌동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-10-28T08:04:14.343Z\",\"boostedAt\":\"2026-10-28T08:04:14.338Z\",\"region\":{\"name\":\"활천동\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-10-28T15:06:49.382Z\",\"boostedAt\":\"2026-10-28T15:06:49.380Z\",\"region\":{\"name\":\"이로동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-10-28T15:00:19.915Z\",\"boostedAt\":\"2026-10-28T15:00:19.913Z\",\"region\":{\"name\":\"화도읍\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-10-24T14:41:31.592Z\",\"boostedAt\":\"2026-10-28T01:27:58.594Z\",\"region\":{\"name\":\"서초1동\"},\"category\":null,\"contentCoo"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":263,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 노트북 NT900X5K-X58 실버\",\"descr",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":263,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 아티브 노트북5 NT500R5K 15.6인치 SS",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -137,9 +137,9 @@
         ]
       }
     },
-    "searchUniqueListings": 1240,
-    "globalUniqueListings": 474,
-    "duplicateListingsRemoved": 766,
+    "searchUniqueListings": 1323,
+    "globalUniqueListings": 505,
+    "duplicateListingsRemoved": 818,
     "detailQueueStart": 7,
     "freshDetailTasks": 7,
     "backlogDetailTasks": 0,
@@ -151,10 +151,10 @@
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 474,
+    "postedAtResolvedFromSearch": 505,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 1,
-    "scanDurationMs": 87964,
+    "candidateCount": 0,
+    "scanDurationMs": 86792,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +166,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 274,
-        "durationMs": 12402
+        "uniqueListings": 319,
+        "durationMs": 12432
       },
       {
         "city": "의왕시",
@@ -182,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 328,
-        "durationMs": 26073
+        "uniqueListings": 368,
+        "durationMs": 25656
       },
       {
         "city": "안양시",
@@ -200,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 383,
-        "durationMs": 34950
+        "uniqueListings": 380,
+        "durationMs": 34828
       },
       {
         "city": "과천시",
@@ -212,53 +212,17 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 255,
-        "durationMs": 6205
+        "uniqueListings": 256,
+        "durationMs": 5997
       }
     ],
-    "finalCandidateCount": 1,
+    "finalCandidateCount": 0,
     "stateItemCount": 5000,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 87971
+    "durationMs": 86800
   },
-  "candidates": [
-    {
-      "id": "ejewuhsimn3w",
-      "changeType": "price_drop",
-      "previousPrice": 920000,
-      "price": 900000,
-      "priceDropPercent": 2.2,
-      "city": "안양시",
-      "location": "관양1동",
-      "regionPath": "경기도 안양시 동안구 관양1동",
-      "title": "LG 그램 15Z90SP-GA5CK 노트북",
-      "modelHint": "LG 그램 15Z90SP-GA5CK 노트북",
-      "cpuHint": null,
-      "cpuBaselinePass": null,
-      "gpuHint": null,
-      "vramGB": null,
-      "ramGB": 16,
-      "ambiguousMemoryGB": null,
-      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": "RAM : 16GB",
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": null,
-      "storageGB": 256,
-      "llmCapability": "SPEC_CHECK_REQUIRED",
-      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
-      "specConfidence": "needs_review",
-      "postedAt": "2026-10-17T12:55:50.210Z",
-      "boostedAt": "2026-10-28T14:13:54.697Z",
-      "status": "Ongoing",
-      "description": "고사양 LG Gram 노트북 저렴하게 판매합니다.\n노트북 가방과 전원 어댑터, 케이블, 마우스 함께 있어요.\n문서 작업, 웹 검색, 고사양 게임 및 캐드 등 모든 사용에 가능한 노트북입니다.\n회사 노트북이 있어서 실제 구입 후 실사용은 거의 안했습니다.\n\n모델명 : 15Z90S-GA5PK\n출시 :   2022년형\n화면 :   15.6인치 FHD IPS\n밝기 :   350nit\nCPU :   Core Ultra 5 125H\nRAM :   16GB LPDDR5x\nRAM 증설 : 불가\nGPU :   Intel Arc Graphics\n기본 SSD : 256GB NVMe\nSSD 추가 가능, 슬롯 1개 추가\n배터리 : 72Wh\n무게 : 약 1.29kg\n색상 :   에센스 화이트\n얼굴인식 지원\nThunderbolt 4 지원\nUSB-PD 충전 지원\n사진 제품 제조 : 2022년 2월 표기",
-      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-15z90sp-ga5ck-%EB%85%B8%ED%8A%B8%EB%B6%81-ejewuhsimn3w/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "대한의국모",
-      "mannerTemperature": 37.4
-    }
-  ]
+  "candidates": []
 }
