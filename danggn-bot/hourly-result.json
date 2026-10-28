@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-28T06:22:13.125Z",
+  "generatedAt": "2026-10-28T07:02:18.177Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -77,6 +77,28 @@
             ]
           },
           {
+            "id": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-lgz36-%ED%99%94%EC%9D%B4%ED%8A%B8-z3kynu31jbo8/",
+            "href": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-lgz36-%ED%99%94%EC%9D%B4%ED%8A%B8-z3kynu31jbo8/",
+            "title": "LG 노트북 LGZ36 화이트",
+            "content": "깔끔한 LG 노트북 LGZ36 화이트 색상이에요. 윈도우 8이 설치되어 있고, 2013년 4월에 제조되었어요. 가볍고 휴대하기 좋아요!\n\n사용감은 좀 있지만 모니터 정상으로 잘 돌아갑니다.",
+            "price": "85000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/1793100308400d671343ec97b5f714310ada761140223b330f4be900e3ed8ccce80174a0dcecb0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-27T11:26:18.319Z",
+            "boostedAt": "2026-10-27T11:26:18.313Z",
+            "region": {
+              "name": "논현2동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 37.5106711,
+                "longitude": 127.0412101
+              }
+            ]
+          },
+          {
             "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-74zzgt67ntcs/",
             "href": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-74zzgt67ntcs/",
             "title": "LG 그램 노트북 (화이트)",
@@ -97,39 +119,17 @@
                 "longitude": 129.3468342
               }
             ]
-          },
-          {
-            "id": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-8265u-vovjptgn5ua5/",
-            "href": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-8265u-vovjptgn5ua5/",
-            "title": "레노버 노트북 i5 8265U",
-            "content": "＊CPU: i5 8265U\n＊메모리:4G(추가슬롯 있음)\n＊SSD M.2 128G+하드 500G\n＊그래픽: Intel UHD Graphics 620\n＊화면크기:15.6인치\n＊해상도:1920*1080\n☆유선랜이 없는 제품\n＊밧데리:2시간 \n＊2020년 제조\n*충전기 새것 드려요(직접 구입해서..)\n*생활기스,긁힘,찍힘등은 있을수 있어요",
-            "price": "200000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/6d6b3aab-a38f-418a-9dd8-1a27066458c2.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-28T06:09:57.070Z",
-            "boostedAt": "2026-10-28T06:09:57.067Z",
-            "region": {
-              "name": "농성동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 35.1586433,
-                "longitude": 126.8858381
-              }
-            ]
           }
         ],
         "dateFieldSnippets": [
           "createdAt\":\"2026-10-28T05:44:47.891Z\",\"boostedAt\":\"2026-10-28T05:44:47.890Z\",\"region\":{\"name\":\"서초1동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-10-27T03:06:44.428Z\",\"boostedAt\":\"2026-10-27T03:06:44.426Z\",\"region\":{\"name\":\"흥해읍\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-10-28T06:09:57.070Z\",\"boostedAt\":\"2026-10-28T06:09:57.067Z\",\"region\":{\"name\":\"농성동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-27T11:26:18.319Z\",\"boostedAt\":\"2026-10-27T11:26:18.313Z\",\"region\":{\"name\":\"논현2동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-10-23T12:23:16.752Z\",\"boostedAt\":\"2026-10-27T06:14:53.960Z\",\"region\":{\"name\":\"역삼2동\"},\"category\":null,\"contentCoo"
+          "createdAt\":\"2026-10-27T03:06:44.428Z\",\"boostedAt\":\"2026-10-27T03:06:44.426Z\",\"region\":{\"name\":\"흥해읍\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-10-28T05:33:19.562Z\",\"boostedAt\":\"2026-10-28T05:33:19.560Z\",\"region\":{\"name\":\"교동\"},\"category\":null,\"contentCoord",
+          "createdAt\":\"2026-10-24T14:41:31.592Z\",\"boostedAt\":\"2026-10-28T01:27:58.594Z\",\"region\":{\"name\":\"서초1동\"},\"category\":null,\"contentCoo"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":263,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"갤럭시북5프로 단순개봉 (울트라5, 16G, 512G)",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":262,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"갤럭시북5프로 단순개봉 (울트라5, 16G, 512G)",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -137,9 +137,9 @@
         ]
       }
     },
-    "searchUniqueListings": 1299,
-    "globalUniqueListings": 475,
-    "duplicateListingsRemoved": 824,
+    "searchUniqueListings": 1249,
+    "globalUniqueListings": 514,
+    "duplicateListingsRemoved": 735,
     "detailQueueStart": 14,
     "freshDetailTasks": 14,
     "backlogDetailTasks": 0,
@@ -151,10 +151,10 @@
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 475,
+    "postedAtResolvedFromSearch": 514,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 2,
-    "scanDurationMs": 96571,
+    "scanDurationMs": 96325,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +166,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 273,
-        "durationMs": 12252
+        "uniqueListings": 275,
+        "durationMs": 11945
       },
       {
         "city": "의왕시",
@@ -182,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 397,
-        "durationMs": 25880
+        "uniqueListings": 411,
+        "durationMs": 25950
       },
       {
         "city": "안양시",
@@ -200,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 373,
-        "durationMs": 35308
+        "uniqueListings": 320,
+        "durationMs": 35372
       },
       {
         "city": "과천시",
@@ -212,8 +212,8 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 256,
-        "durationMs": 6793
+        "uniqueListings": 243,
+        "durationMs": 6408
       }
     ],
     "finalCandidateCount": 2,
@@ -222,78 +222,78 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 96579
+    "durationMs": 96332
   },
   "candidates": [
     {
-      "id": "mxi7jeueeasb",
+      "id": "1gftsq4aew7r",
       "changeType": "new",
       "previousPrice": null,
-      "price": 250000,
+      "price": 600000,
       "priceDropPercent": null,
       "city": "안양시",
-      "location": "안양동",
-      "regionPath": "경기도 안양시 동안구 안양동",
-      "title": "Dell Latitude 7400 노트북",
-      "modelHint": "Dell Latitude 7400 노트북",
+      "location": "평촌동",
+      "regionPath": "경기도 안양시 동안구 평촌동",
+      "title": "게이밍 노트북 RTX 3050 상태 SS급",
+      "modelHint": "게이밍 노트북 RTX 3050 상태 SS급",
       "cpuHint": null,
       "cpuBaselinePass": null,
-      "gpuHint": null,
+      "gpuHint": "RTX 3050",
       "vramGB": null,
       "ramGB": 16,
       "ambiguousMemoryGB": null,
       "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": "16GB RAM",
+      "ramEvidence": "램 : 16GB",
       "vramEvidence": null,
       "ambiguousMemoryEvidence": null,
-      "storageGB": null,
+      "storageGB": 256,
       "llmCapability": "SPEC_CHECK_REQUIRED",
       "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
       "specConfidence": "needs_review",
-      "postedAt": "2026-10-28T05:49:16.770Z",
-      "boostedAt": "2026-10-28T05:49:16.767Z",
+      "postedAt": "2026-10-28T06:44:22.468Z",
+      "boostedAt": "2026-10-28T06:44:22.466Z",
       "status": "Ongoing",
-      "description": "Dell Latitude 7400 노트북 판매해요. 인텔 i5-7300U CPU, 16GB RAM, 238GB SSD 탑재로 빠르고 쾌적한 사용이 가능해요. 다양한 포트 구성",
-      "url": "https://www.daangn.com/kr/buy-sell/dell-latitude-7400-%EB%85%B8%ED%8A%B8%EB%B6%81-mxi7jeueeasb/",
+      "description": "HP 빅터스 게이밍 노트북 입니다.\n상태 SS급입니다. 고장하자 절대없어요.\n\nCPU : 인텔 i5 12500H\n그래픽 카드 : RTX 3050\n램 : 16GB DDR 5 이며 최신 램입니다. \nSSD : 256GB \n윈도우 : 11 정품인증 완료며 구매후 바로 사용가능합니다. \n16.1인치 대화면이고 실물은 모니터 터 크고 외관정말 이뻐요.\n\n상태 S급 이에요 직거래시 확인가능합니다.",
+      "url": "https://www.daangn.com/kr/buy-sell/%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-rtx-3050-%EC%83%81%ED%83%9C-ss%EA%B8%89-1gftsq4aew7r/",
       "favoriteCount": 0,
       "chatCount": 0,
-      "sellerName": "딩동",
-      "mannerTemperature": 43.7
+      "sellerName": "댕근",
+      "mannerTemperature": 36.7
     },
     {
-      "id": "xk4h33212f2k",
-      "changeType": "new",
-      "previousPrice": null,
-      "price": 420000,
-      "priceDropPercent": null,
+      "id": "4h7p3mxwru1q",
+      "changeType": "price_drop",
+      "previousPrice": 2900000,
+      "price": 2800000,
+      "priceDropPercent": 3.4,
       "city": "안양시",
-      "location": "관양동",
-      "regionPath": "경기도 안양시 동안구 관양동",
-      "title": "맥북프로 13인치 m1  16gb 250ssd",
-      "modelHint": "맥북프로 13인치 m1  16gb 250ssd",
-      "cpuHint": null,
+      "location": "안양6동",
+      "regionPath": "경기도 안양시 만안구 안양6동",
+      "title": "맥스튜디오 M1 Max 64gb",
+      "modelHint": "맥스튜디오 M1 Max 64gb",
+      "cpuHint": "M1 Max",
       "cpuBaselinePass": null,
-      "gpuHint": null,
+      "gpuHint": "M1 Max",
       "vramGB": null,
-      "ramGB": null,
-      "ambiguousMemoryGB": 16,
-      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": null,
+      "ramGB": 64,
+      "ambiguousMemoryGB": 64,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "램 64기가",
       "vramEvidence": null,
-      "ambiguousMemoryEvidence": "16gb",
+      "ambiguousMemoryEvidence": "64gb",
       "storageGB": null,
-      "llmCapability": "SPEC_CHECK_REQUIRED",
-      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
-      "specConfidence": "needs_review",
-      "postedAt": "2026-10-28T05:46:31.907Z",
-      "boostedAt": "2026-10-28T05:46:31.907Z",
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "specConfidence": "confirmed",
+      "postedAt": "2026-10-26T12:44:42.044Z",
+      "boostedAt": "2026-10-26T12:44:42.042Z",
       "status": "Ongoing",
-      "description": "맥북프로 13인치 m1. 16gb 250ssd 실버입니다\n\n초기화, 로그아웃 해두었고, 외관이 험해\n\n제품확인차원에서 직거래만 합니다.\n\n군포시 고산로166 101동.\n\n제품 보시고 마음에 안들면 패스하셔도 됩니다.\n\n\n\n\n본체, 파우치만 있고, 아답터는 다른 제품에 사용중이라 미포함입니다.",
-      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C-13%EC%9D%B8%EC%B9%98-m1-16gb-250ssd-xk4h33212f2k/",
+      "description": "최근 맥 스튜디오 4개를 클러스터 연결해서 AI 돌리는 테스트가 reuters 에서 9월에 진행되고 램이 높은 맥 스튜디오가 가격이 올라가고 있다는 사실을 알았습니다. 이에 11월부터는 중고가격을 올릴 예정입니다. 양해 부탁드립니다. \n\n\n\nM1 Max 램 64기가 판매합니다.\n사무실에서 주로 영상 편집용으로 사용했습니다.\n현재는 가끔 컴퓨터 모자르면 렌더링 용으로 쓰는데\nM5,M6로 넘어가게 되서 판매합니다.\n\n판매되면 즉시 데이터 초기화해서 박스에 이쁘게 포장하겠습니다.",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4-m1-max-64gb-4h7p3mxwru1q/",
       "favoriteCount": 0,
       "chatCount": 0,
-      "sellerName": "버프",
-      "mannerTemperature": 47.7
+      "sellerName": "슈슈",
+      "mannerTemperature": 41.8
     }
   ]
 }
