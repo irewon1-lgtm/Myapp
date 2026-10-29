@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-29T17:02:02.880391Z",
+  "updatedAt": "2026-10-29T17:42:06.329422Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -8480,9 +8480,9 @@
     "hxr9mxdz9py4": {
       "id": "hxr9mxdz9py4",
       "title": "맥북 프로 15인치 2018 i7",
-      "price": 320000,
-      "previousPrice": null,
-      "changeType": "new",
+      "price": 310000,
+      "previousPrice": 330000,
+      "changeType": "price_drop",
       "city": "의왕시",
       "location": "삼동",
       "cpuHint": "i7-8750H",
@@ -8500,7 +8500,7 @@
       "postedAt": "2026-10-19T18:59:56.152Z",
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-15%EC%9D%B8%EC%B9%98-2018-i7-hxr9mxdz9py4/",
       "firstAlertedAt": "2026-10-19T19:02:17.415917Z",
-      "lastCandidateAt": "2026-10-19T19:02:17.415917Z"
+      "lastCandidateAt": "2026-10-29T17:42:06.329422Z"
     },
     "skdu7gzrtset": {
       "id": "skdu7gzrtset",
@@ -12476,6 +12476,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-14%EC%9D%B8%EC%B9%98-14u30p-ce54rhh3uxrj/",
       "firstAlertedAt": "2026-10-29T13:46:37.196882Z",
       "lastCandidateAt": "2026-10-29T13:46:37.196882Z"
+    },
+    "8pvan1aswoxs": {
+      "id": "8pvan1aswoxs",
+      "title": "레노버 씽크패드.14인치 노트북.라이젠7-16g-256g+512g.pd충전",
+      "price": 350000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "호계2동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16기가램",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-29T17:27:36.443Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%94%BD%ED%81%AC%ED%8C%A8%EB%93%9C-14%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%9D%BC%EC%9D%B4%EC%A0%A07-16g-256g-512g-pd%EC%B6%A9%EC%A0%84-8pvan1aswoxs/",
+      "firstAlertedAt": "2026-10-29T17:42:06.329422Z",
+      "lastCandidateAt": "2026-10-29T17:42:06.329422Z"
     }
   }
 }
