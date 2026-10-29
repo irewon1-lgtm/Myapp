@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-29T02:02:31.865681Z",
+  "updatedAt": "2026-10-29T02:42:30.930464Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -12026,6 +12026,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81-%EC%97%90%EC%96%B4-m2-16%EA%B8%B0%EA%B0%80-56%EA%B8%B0%EA%B0%80-%EC%83%81%ED%83%9C%EC%A2%8B%EC%9D%8C-%EA%B3%A0%EC%8B%9C-%ED%95%A9%EA%B2%A9%ED%85%9C-%ED%8C%9D%EB%8B%88%EB%8B%B9-akp454axnxov/",
       "firstAlertedAt": "2026-10-29T02:02:31.865681Z",
       "lastCandidateAt": "2026-10-29T02:02:31.865681Z"
+    },
+    "mprfsw7ey2y4": {
+      "id": "mprfsw7ey2y4",
+      "title": "게이밍 노트북 RTX 3050",
+      "price": 570000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "평촌동",
+      "cpuHint": null,
+      "gpuHint": "RTX 3050",
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "램 : 16GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 256,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-29T02:23:28.113Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-rtx-3050-mprfsw7ey2y4/",
+      "firstAlertedAt": "2026-10-29T02:42:30.930464Z",
+      "lastCandidateAt": "2026-10-29T02:42:30.930464Z"
     }
   }
 }
