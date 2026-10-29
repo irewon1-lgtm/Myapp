@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-29T02:42:30.930464Z",
+  "updatedAt": "2026-10-29T03:22:25.886068Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -11355,9 +11355,9 @@
     "yh9rfirp27ay": {
       "id": "yh9rfirp27ay",
       "title": "삼성 갤럭시북프로 NT950XDC-X71A 노트북 팝니다.",
-      "price": 500000,
-      "previousPrice": null,
-      "changeType": "new",
+      "price": 480000,
+      "previousPrice": 500000,
+      "changeType": "price_drop",
       "city": "안양시",
       "location": "부림동",
       "cpuHint": null,
@@ -11375,7 +11375,7 @@
       "postedAt": "2026-10-27T07:38:01.272Z",
       "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%81%ED%94%84%EB%A1%9C-nt950xdc-x71a-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%9D%EB%8B%88%EB%8B%A4-yh9rfirp27ay/",
       "firstAlertedAt": "2026-10-27T08:12:23.246732Z",
-      "lastCandidateAt": "2026-10-27T08:12:23.246732Z"
+      "lastCandidateAt": "2026-10-29T03:22:25.886068Z"
     },
     "xcxsqjsijw3g": {
       "id": "xcxsqjsijw3g",
@@ -12051,6 +12051,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-rtx-3050-mprfsw7ey2y4/",
       "firstAlertedAt": "2026-10-29T02:42:30.930464Z",
       "lastCandidateAt": "2026-10-29T02:42:30.930464Z"
+    },
+    "hoxauai7iykx": {
+      "id": "hoxauai7iykx",
+      "title": "델 G16 7630 rtx4060 240Hz 게이밍 노트북",
+      "price": 1100000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "의왕시",
+      "location": "내손2동",
+      "cpuHint": null,
+      "gpuHint": "rtx4060",
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-29T03:14:54.905Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%8D%B8-g16-7630-rtx4060-240hz-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-hoxauai7iykx/",
+      "firstAlertedAt": "2026-10-29T03:22:25.886068Z",
+      "lastCandidateAt": "2026-10-29T03:22:25.886068Z"
     }
   }
 }
