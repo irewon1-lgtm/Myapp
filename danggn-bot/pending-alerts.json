@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-29T05:22:16.328051Z",
+  "updatedAt": "2026-10-29T05:51:58.326532Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -12126,6 +12126,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/hp-%EC%98%A4%EB%A9%98-16-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-f36d1oz52hcj/",
       "firstAlertedAt": "2026-10-29T05:22:16.328051Z",
       "lastCandidateAt": "2026-10-29T05:22:16.328051Z"
+    },
+    "et7ipc1vngse": {
+      "id": "et7ipc1vngse",
+      "title": "HP Elite x2 G8 i5 11세대 16GB 256GB 터치 노트북",
+      "price": 480000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "범계동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-29T05:35:40.929Z",
+      "url": "https://www.daangn.com/kr/buy-sell/hp-elite-x2-g8-i5-11%EC%84%B8%EB%8C%80-16gb-256gb-%ED%84%B0%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-et7ipc1vngse/",
+      "firstAlertedAt": "2026-10-29T05:51:58.326532Z",
+      "lastCandidateAt": "2026-10-29T05:51:58.326532Z"
+    },
+    "2bhg4zdrvhb5": {
+      "id": "2bhg4zdrvhb5",
+      "title": "미개봉 맥북 프로 14 M5 24GB 1TB",
+      "price": 2800000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "과천시",
+      "location": "갈현동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 24,
+      "ambiguousMemoryGB": 24,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "24GB 메모리",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "24GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-29T05:35:24.337Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%AF%B8%EA%B0%9C%EB%B4%89-%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-14-m5-24gb-1tb-2bhg4zdrvhb5/",
+      "firstAlertedAt": "2026-10-29T05:51:58.326532Z",
+      "lastCandidateAt": "2026-10-29T05:51:58.326532Z"
     }
   }
 }
