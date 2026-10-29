@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-29T04:02:18.893480Z",
+  "updatedAt": "2026-10-29T04:42:21.262488Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -12076,6 +12076,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%8D%B8-g16-7630-rtx4060-240hz-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-hoxauai7iykx/",
       "firstAlertedAt": "2026-10-29T03:22:25.886068Z",
       "lastCandidateAt": "2026-10-29T03:22:25.886068Z"
+    },
+    "apv8n1wo9svj": {
+      "id": "apv8n1wo9svj",
+      "title": "갤럭시북6 프로",
+      "price": 2000000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "산본동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-29T04:15:07.291Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%816-%ED%94%84%EB%A1%9C-apv8n1wo9svj/",
+      "firstAlertedAt": "2026-10-29T04:42:21.262488Z",
+      "lastCandidateAt": "2026-10-29T04:42:21.262488Z"
     }
   }
 }
