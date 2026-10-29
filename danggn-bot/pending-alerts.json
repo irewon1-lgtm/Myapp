@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-29T07:52:10.514988Z",
+  "updatedAt": "2026-10-29T08:32:24.030953Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -11380,9 +11380,9 @@
     "xcxsqjsijw3g": {
       "id": "xcxsqjsijw3g",
       "title": "레노버 게이밍 노트북 i5-10300H 16GB RTX 1650",
-      "price": 400000,
-      "previousPrice": null,
-      "changeType": "new",
+      "price": 360000,
+      "previousPrice": 400000,
+      "changeType": "price_drop",
       "city": "안양시",
       "location": "호계동",
       "cpuHint": null,
@@ -11400,7 +11400,7 @@
       "postedAt": "2026-10-27T07:47:24.096Z",
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-10300h-16gb-rtx-1650-xcxsqjsijw3g/",
       "firstAlertedAt": "2026-10-27T08:12:23.246732Z",
-      "lastCandidateAt": "2026-10-27T08:12:23.246732Z"
+      "lastCandidateAt": "2026-10-29T08:32:24.030953Z"
     },
     "okzkikb7pgsx": {
       "id": "okzkikb7pgsx",
@@ -12201,6 +12201,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/apple-macbook-air-13%EC%9D%B8%EC%B9%98-2017-%ED%92%80%EB%B0%95%EC%8A%A4-f7wm5u1h3qmp/",
       "firstAlertedAt": "2026-10-29T07:52:10.514988Z",
       "lastCandidateAt": "2026-10-29T07:52:10.514988Z"
+    },
+    "76yaeinxijuy": {
+      "id": "76yaeinxijuy",
+      "title": "hp 15인치 i5 사무용 노트북",
+      "price": 250000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "군포1동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16기가 메모리",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-29T08:00:28.513Z",
+      "url": "https://www.daangn.com/kr/buy-sell/hp-15%EC%9D%B8%EC%B9%98-i5-%EC%82%AC%EB%AC%B4%EC%9A%A9-%EB%85%B8%ED%8A%B8%EB%B6%81-76yaeinxijuy/",
+      "firstAlertedAt": "2026-10-29T08:32:24.030953Z",
+      "lastCandidateAt": "2026-10-29T08:32:24.030953Z"
     }
   }
 }
