@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-29T09:52:16.484Z",
+  "generatedAt": "2026-10-29T10:32:18.575Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,24 +55,46 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-evi6dae1nnyp/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-evi6dae1nnyp/",
-            "title": "삼성 노트북",
-            "content": "삼성 노트북 판매해요. \n RAM 8G\nSSD 120G \n한컴오피스2024 설치되어 있습니다 \n충전기 포함\n바로 사용하실 수 있습니다. \n가볍고 휴대하기 좋은 노트북으로 어디서든 편리하게 사용해보세요.",
-            "price": "120000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/76972926-131f-4fd5-b676-6bb1d053395b.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/asus-vivobook-i3-%EB%85%B8%ED%8A%B8%EB%B6%81-15-6%EC%9D%B8%EC%B9%98-oj2zts1xkjtr/",
+            "href": "/kr/buy-sell/asus-vivobook-i3-%EB%85%B8%ED%8A%B8%EB%B6%81-15-6%EC%9D%B8%EC%B9%98-oj2zts1xkjtr/",
+            "title": "ASUS VivoBook i3 노트북 (15.6인치)",
+            "content": "인강 시청, 유튜브 감상, 재택근무 및 문서 작성(엑셀/워드)용으로 쓰기 좋은 가성비 좋은 에이수스(ASUS) 비보북 판매합니다. \n\n윈도우 11 Pro 정품 인증 및 최신 업데이트 완료해 두어서 구매 후 전원 켜고 바로 사용하시면 됩니다! 초기화도 깔끔하게 해 두었습니다.\n\n[상세 사양]\n- 모델명: ASUS VivoBook X509JA\n- CPU: Intel Core i3-1005G1\n- RAM: 4GB\n- 저장장치: SSD 238GB \n- OS: Windows 11 Pro (정품 인증 완료)\n\n[제품 상태]\n- 외관: 중고 특성상 생활 기스는 존재하나, 액정 깨짐이나 큰 파손 없이 전반적으로 깔끔합니다.\n\n[구성품]\n- 노트북 본체 + 정품 충전 어댑터\n\n가격네고가능하니 연락주세요!",
+            "price": "140000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/3cf3f230-6a90-40dc-933e-cf788e29143d.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-29T09:22:33.827Z",
-            "boostedAt": "2026-10-29T09:22:33.822Z",
+            "createdAt": "2026-10-29T10:29:18.606Z",
+            "boostedAt": "2026-10-29T10:29:18.602Z",
             "region": {
-              "name": "고아읍"
+              "name": "만수1동"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 36.1522127,
-                "longitude": 128.3338717
+                "latitude": 37.4492843,
+                "longitude": 126.7395808
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-13%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-%EB%85%B8%ED%8A%B8%EB%B6%81-lg-%EA%B7%B8%EB%9E%A8-13zd970-gx55k-jzdc2g7a45m1/",
+            "href": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-13%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-%EB%85%B8%ED%8A%B8%EB%B6%81-lg-%EA%B7%B8%EB%9E%A8-13zd970-gx55k-jzdc2g7a45m1/",
+            "title": "LG 그램 13인치 화이트 노트북 LG 그램 13ZD970-GX55K",
+            "content": "가볍고 휴대하기 좋은 LG 그램 노트북이에요. 13인치 화면으로 작업하기 편리하고, 화이트 색상입니다. \n\n2017년 1월 제조 상품이고 사용감이 있어요\n상자, 충전기 포함",
+            "price": "100000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/179326745819845baf36a023c3ca3426ec8a0307159b01538fee8c29790a0333ae16526f32d5d0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-29T09:57:34.961Z",
+            "boostedAt": "2026-10-29T09:57:34.959Z",
+            "region": {
+              "name": "소하동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 37.4332411,
+                "longitude": 126.8827021
               }
             ]
           },
@@ -97,39 +119,17 @@
                 "longitude": 127.0475812
               }
             ]
-          },
-          {
-            "id": "/kr/buy-sell/%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-rtx-4060-%EB%B0%B0%ED%84%B0%EB%A6%AC-%ED%9A%A8%EC%9C%A8-100-h2n12cmz86zn/",
-            "href": "/kr/buy-sell/%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-rtx-4060-%EB%B0%B0%ED%84%B0%EB%A6%AC-%ED%9A%A8%EC%9C%A8-100-h2n12cmz86zn/",
-            "title": "게이밍 노트북 RTX 4060 , 배터리 효율 100%",
-            "content": "외관 성능 면으로 고장 없습니다.\n외관은 생활기스도 안보일만큼 깨끗하네요\n직접 오서서 체크해보세요.\nCPU : 라이젠 7 8845HS ( 라이젠 5 랑 인텔 i5 랑 비교하지말아주세요 훨씬 좋고 빠릅니다. )\n그래픽 카드 : RTX 4060\n램 : 8GB DDR 5 정말 빠른램\nSSD : 512GB M.2\n윈도우 OS 11 정품 바로사용 게임 가능\n배터리 효율 100% 사이클 수만 봐도 아시겠죠? \n빅터스 HP 16 --> 16.1인치 대화면 입니다.\n\n롤 , 배그 , 오버워치 , 발로란트 , 피파 원활합니다.\n고장없고 하자없어요 네고 문의 안받습니다.",
-            "price": "850000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/5f730a67-b69f-42fa-90f2-891a3947c188.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": false,
-            "createdAt": "2026-10-29T09:19:09.621Z",
-            "boostedAt": "2026-10-29T09:19:09.621Z",
-            "region": {
-              "name": "평촌동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 37.3946068,
-                "longitude": 126.9768757
-              }
-            ]
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-10-29T09:22:33.827Z\",\"boostedAt\":\"2026-10-29T09:22:33.822Z\",\"region\":{\"name\":\"고아읍\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-10-29T10:29:18.606Z\",\"boostedAt\":\"2026-10-29T10:29:18.602Z\",\"region\":{\"name\":\"만수1동\"},\"category\":null,\"contentCoo",
+          "createdAt\":\"2026-10-29T09:57:34.961Z\",\"boostedAt\":\"2026-10-29T09:57:34.959Z\",\"region\":{\"name\":\"소하동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-29T08:35:28.826Z\",\"boostedAt\":\"2026-10-29T08:35:28.821Z\",\"region\":{\"name\":\"의정부동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-10-29T09:19:09.621Z\",\"boostedAt\":\"2026-10-29T09:19:09.621Z\",\"region\":{\"name\":\"평촌동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-10-29T09:48:00.884Z\",\"boostedAt\":\"2026-10-29T09:48:00.882Z\",\"region\":{\"name\":\"서둔동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-10-29T09:05:58.455Z\",\"boostedAt\":\"2026-10-29T09:05:58.452Z\",\"region\":{\"name\":\"용이동\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-10-29T10:01:02.161Z\",\"boostedAt\":\"2026-10-29T10:01:02.158Z\",\"region\":{\"name\":\"인현동2가\"},\"category\":null,\"contentCo",
+          "createdAt\":\"2026-09-30T08:37:55.246Z\",\"boostedAt\":\"2026-10-26T05:10:20.550Z\",\"region\":{\"name\":\"안양동\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":252,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 노트북\",\"description\":\"삼성 노트북 ",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":249,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"ASUS VivoBook i3 노트북 (15.6인치)\"",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -137,24 +137,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1304,
-    "globalUniqueListings": 503,
-    "duplicateListingsRemoved": 801,
-    "detailQueueStart": 17,
-    "freshDetailTasks": 17,
+    "searchUniqueListings": 1301,
+    "globalUniqueListings": 536,
+    "duplicateListingsRemoved": 765,
+    "detailQueueStart": 13,
+    "freshDetailTasks": 13,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 17,
-    "detailSucceeded": 17,
+    "detailRequestsExecuted": 13,
+    "detailSucceeded": 13,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 503,
+    "postedAtResolvedFromSearch": 536,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 1,
-    "scanDurationMs": 99778,
+    "candidateCount": 0,
+    "scanDurationMs": 95016,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +166,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 281,
-        "durationMs": 12173
+        "uniqueListings": 283,
+        "durationMs": 12067
       },
       {
         "city": "의왕시",
@@ -182,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 372,
-        "durationMs": 25590
+        "uniqueListings": 377,
+        "durationMs": 25414
       },
       {
         "city": "안양시",
@@ -200,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 394,
-        "durationMs": 34975
+        "uniqueListings": 385,
+        "durationMs": 35456
       },
       {
         "city": "과천시",
@@ -212,53 +212,17 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 257,
-        "durationMs": 6726
+        "uniqueListings": 256,
+        "durationMs": 6311
       }
     ],
-    "finalCandidateCount": 1,
+    "finalCandidateCount": 0,
     "stateItemCount": 5000,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 99783
+    "durationMs": 95024
   },
-  "candidates": [
-    {
-      "id": "ajib5wi9q994",
-      "changeType": "new",
-      "previousPrice": null,
-      "price": 780000,
-      "priceDropPercent": null,
-      "city": "안양시",
-      "location": "충훈동",
-      "regionPath": "경기도 안양시 만안구 충훈동",
-      "title": "ASUS TUF Gaming A17 게이밍 노트북 (RTX 3060)",
-      "modelHint": "ASUS TUF Gaming A17 게이밍 노트북 (RTX 3060)",
-      "cpuHint": "Ryzen 7 6800H",
-      "cpuBaselinePass": null,
-      "gpuHint": "RTX 3060",
-      "vramGB": null,
-      "ramGB": 16,
-      "ambiguousMemoryGB": null,
-      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": "16GB RAM",
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": null,
-      "storageGB": 512,
-      "llmCapability": "SPEC_CHECK_REQUIRED",
-      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
-      "specConfidence": "needs_review",
-      "postedAt": "2026-10-29T09:40:52.661Z",
-      "boostedAt": "2026-10-29T09:40:52.659Z",
-      "status": "Ongoing",
-      "description": "안녕하세요! 고사양 게이밍 노트북 ASUS TUF Gaming A17 판매합니다. AMD Ryzen 7 6800H 프로세서와 NVIDIA GeForce RTX 3060 그래픽 카드를 탑재하여 쾌적한 게이밍 환경을 제공해요. 16GB RAM과 512GB SSD로 넉넉한 저장 공간과 빠른 속도를 자랑합니다. 고사양 게임도 문제없이 즐길 수 있는 매력적인 노트북이에요. 램은 DDR5입니다. 이번주말까지 만 이가격에 처분 원합니다",
-      "url": "https://www.daangn.com/kr/buy-sell/asus-tuf-gaming-a17-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-rtx-3060-ajib5wi9q994/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "광명준바이크",
-      "mannerTemperature": 40.1
-    }
-  ]
+  "candidates": []
 }
