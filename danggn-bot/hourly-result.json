@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-29T03:22:25.824Z",
+  "generatedAt": "2026-10-29T04:02:18.825Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,6 +55,28 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
+            "id": "/kr/buy-sell/i7-%EB%85%B8%ED%8A%B8%EB%B6%81-12gb-ram-ssd-m8nxp8p2wke6/",
+            "href": "/kr/buy-sell/i7-%EB%85%B8%ED%8A%B8%EB%B6%81-12gb-ram-ssd-m8nxp8p2wke6/",
+            "title": "i7 노트북 12GB RAM  SSD",
+            "content": "안녕하세요! ASUS 노트북 판매합니다. 인텔 i7 7세대 프로세서와 12GB RAM, 삼성120GB SSD, 500G HDD 를 탑재하여 빠르고 넉넉한 사용이 가능해요. 사진에서 보시는 것처럼 깔끔한 상태를 유지하고 있습니다. 영상 시청이나 문서 작업 등 다양한 용도로 활용하기 좋은 제품이에요\n1. 화면에 흰색 빛번짐 있습니다. 하얀화면에서만 보입니다.\n2. 배터리 충전은 잘되는데 아답터를 빼면 노트북화면이 꺼지거나 떨립니다. 외부출력은 정상입니다.\n감안해서 올립니다.\n데스크 형태로 아답터 연결하고 쓰시면 좋을 듯 싶네요. ",
+            "price": "169000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/f25cde57-1417-491a-baa2-fc3397373384.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-29T03:53:34.631Z",
+            "boostedAt": "2026-10-29T03:53:34.628Z",
+            "region": {
+              "name": "성거읍"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 36.8773094,
+                "longitude": 127.1557558
+              }
+            ]
+          },
+          {
             "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-15%EC%9D%B8%EC%B9%98-i3-6100-u%EB%85%B8%ED%8A%B8%EB%B6%81-tetciipnz8fy/",
             "href": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-15%EC%9D%B8%EC%B9%98-i3-6100-u%EB%85%B8%ED%8A%B8%EB%B6%81-tetciipnz8fy/",
             "title": "LG 그램 15인치 i3-6100 u노트북",
@@ -73,28 +95,6 @@
               {
                 "latitude": 37.5329784,
                 "longitude": 127.0335885
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1%EC%A0%84%EC%9E%90-%EA%B8%89%EB%A7%A4-%EC%82%AC%EC%A7%84%ED%95%84%EB%8F%85-fz43vz5r65p8/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1%EC%A0%84%EC%9E%90-%EA%B8%89%EB%A7%A4-%EC%82%AC%EC%A7%84%ED%95%84%EB%8F%85-fz43vz5r65p8/",
-            "title": "삼성전자 급매-사진필독",
-            "content": "내외관양호\n부팅 빠르고 고장, 하자 없습니다.\n용량충분하고,\n간단겜.웹서핑, 유튜브.주식.영화감상용도로 아주 좋습니다.\n충전어뎁터와 마우스 포함제공\n",
-            "price": "250000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/95852d55ec45703c5d05d63bc32c7efc0668b881b821b63e5ebbc8b5ee47699b_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-29T02:34:41.489Z",
-            "boostedAt": "2026-10-29T02:34:41.487Z",
-            "region": {
-              "name": "우산동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 35.1631786,
-                "longitude": 126.8087915
               }
             ]
           },
@@ -122,14 +122,14 @@
           }
         ],
         "dateFieldSnippets": [
+          "createdAt\":\"2026-10-29T03:53:34.631Z\",\"boostedAt\":\"2026-10-29T03:53:34.628Z\",\"region\":{\"name\":\"성거읍\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-25T09:19:38.532Z\",\"boostedAt\":\"2026-10-25T09:19:38.531Z\",\"region\":{\"name\":\"압구정동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-10-29T02:34:41.489Z\",\"boostedAt\":\"2026-10-29T02:34:41.487Z\",\"region\":{\"name\":\"우산동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-27T03:06:44.428Z\",\"boostedAt\":\"2026-10-27T03:06:44.426Z\",\"region\":{\"name\":\"흥해읍\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-10-27T11:26:18.319Z\",\"boostedAt\":\"2026-10-27T11:26:18.313Z\",\"region\":{\"name\":\"논현2동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-10-28T23:11:53.429Z\",\"boostedAt\":\"2026-10-28T23:11:53.426Z\",\"region\":{\"name\":\"삼성1동\"},\"category\":null,\"contentCoo"
+          "createdAt\":\"2026-10-11T13:05:32.682Z\",\"boostedAt\":\"2026-10-11T13:05:32.678Z\",\"region\":{\"name\":\"논현동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-10-29T03:49:41.991Z\",\"boostedAt\":\"2026-10-29T03:49:41.987Z\",\"region\":{\"name\":\"양정제1동\"},\"category\":null,\"contentCo"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":263,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG 그램 15인치 i3-6100 u노트북\",\"desc",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":265,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"i7 노트북 12GB RAM  SSD\",\"descrip",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -137,24 +137,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1336,
-    "globalUniqueListings": 517,
-    "duplicateListingsRemoved": 819,
-    "detailQueueStart": 9,
-    "freshDetailTasks": 9,
+    "searchUniqueListings": 1332,
+    "globalUniqueListings": 537,
+    "duplicateListingsRemoved": 795,
+    "detailQueueStart": 13,
+    "freshDetailTasks": 13,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 9,
-    "detailSucceeded": 9,
+    "detailRequestsExecuted": 13,
+    "detailSucceeded": 13,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 517,
+    "postedAtResolvedFromSearch": 537,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 2,
-    "scanDurationMs": 91008,
+    "candidateCount": 1,
+    "scanDurationMs": 95766,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +166,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 319,
-        "durationMs": 12352
+        "uniqueListings": 273,
+        "durationMs": 12294
       },
       {
         "city": "의왕시",
@@ -182,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 379,
-        "durationMs": 25747
+        "uniqueListings": 418,
+        "durationMs": 25921
       },
       {
         "city": "안양시",
@@ -200,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 382,
-        "durationMs": 35251
+        "uniqueListings": 385,
+        "durationMs": 35437
       },
       {
         "city": "과천시",
@@ -213,87 +213,52 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 256,
-        "durationMs": 6832
+        "durationMs": 6507
       }
     ],
-    "finalCandidateCount": 2,
+    "finalCandidateCount": 1,
     "stateItemCount": 5000,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 91014
+    "durationMs": 95773
   },
   "candidates": [
     {
-      "id": "hoxauai7iykx",
-      "changeType": "new",
-      "previousPrice": null,
-      "price": 1100000,
-      "priceDropPercent": null,
-      "city": "의왕시",
-      "location": "내손2동",
-      "regionPath": "경기도 의왕시 내손2동",
-      "title": "델 G16 7630 rtx4060 240Hz 게이밍 노트북",
-      "modelHint": "델 G16 7630 rtx4060 240Hz 게이밍 노트북",
-      "cpuHint": null,
-      "cpuBaselinePass": null,
-      "gpuHint": "rtx4060",
-      "vramGB": null,
-      "ramGB": null,
-      "ambiguousMemoryGB": 16,
-      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": null,
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": "16GB",
-      "storageGB": 512,
-      "llmCapability": "SPEC_CHECK_REQUIRED",
-      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
-      "specConfidence": "needs_review",
-      "postedAt": "2026-10-29T03:14:54.905Z",
-      "boostedAt": "2026-10-29T03:14:54.904Z",
-      "status": "Ongoing",
-      "description": "i7 13650HX\nDDR5 16GB\nSSD 512GB\nRTX4060 8GB tgp140W\n16\" QHD 240Hz\n배터리사이클 29\n윈도우 11 정품(보드자동인증)\n\n2년조금안됐고 깨끗합니다",
-      "url": "https://www.daangn.com/kr/buy-sell/%EB%8D%B8-g16-7630-rtx4060-240hz-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-hoxauai7iykx/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "치즈케이크",
-      "mannerTemperature": 36.6
-    },
-    {
-      "id": "yh9rfirp27ay",
+      "id": "rejfhfiatv6h",
       "changeType": "price_drop",
-      "previousPrice": 500000,
-      "price": 480000,
-      "priceDropPercent": 4,
+      "previousPrice": 1700000,
+      "price": 1600000,
+      "priceDropPercent": 5.9,
       "city": "안양시",
-      "location": "부림동",
-      "regionPath": "경기도 안양시 동안구 부림동",
-      "title": "삼성 갤럭시북프로 NT950XDC-X71A 노트북 팝니다.",
-      "modelHint": "삼성 갤럭시북프로 NT950XDC-X71A 노트북 팝니다.",
-      "cpuHint": null,
+      "location": "충훈동",
+      "regionPath": "경기도 안양시 만안구 충훈동",
+      "title": "애플 맥북 프로 2021 16인치 M1 Max램 32GB SSD 1TB 스페이스그레이",
+      "modelHint": "애플 맥북 프로 2021 16인치 M1 Max램 32GB SSD 1TB 스페이스그레이",
+      "cpuHint": "M1 Max",
       "cpuBaselinePass": null,
-      "gpuHint": null,
+      "gpuHint": "M1 Max",
       "vramGB": null,
-      "ramGB": 16,
-      "ambiguousMemoryGB": null,
-      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": "16GB RAM",
+      "ramGB": 32,
+      "ambiguousMemoryGB": 32,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "램 32GB",
       "vramEvidence": null,
-      "ambiguousMemoryEvidence": null,
-      "storageGB": null,
-      "llmCapability": "SPEC_CHECK_REQUIRED",
-      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
-      "specConfidence": "needs_review",
-      "postedAt": "2026-10-27T07:38:01.272Z",
-      "boostedAt": "2026-10-27T07:38:01.270Z",
+      "ambiguousMemoryEvidence": "32GB",
+      "storageGB": 1024,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "specConfidence": "confirmed",
+      "postedAt": "2026-10-26T12:36:18.119Z",
+      "boostedAt": "2026-10-29T03:38:08.112Z",
       "status": "Ongoing",
-      "description": "삼성 갤럭시북프로 NT950XDC-X71A  입니다. 인텔 11세대 i7 프로세서와 16GB RAM, NVMe SSD가 탑재되어 있어 빠르고 쾌적한 사용이 가능해요. AKG 사운드를 지원하여 더욱 풍부한 음질을 즐길 수 있습니다. 깔끔한 화이트 색상으로 어디서든 잘 어울려요. 이 노트북으로 생산성을 높여보세요.\n\n윈도우 11, 오피스, 포토샾, 일러스트, 한글 설치 되어있습니다.\n배터리효율 96프로 정도 나오는거 같네요.",
-      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%81%ED%94%84%EB%A1%9C-nt950xdc-x71a-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%9D%EB%8B%88%EB%8B%A4-yh9rfirp27ay/",
+      "description": "애플 맥북 프로 2021 16인치 M1 Max A2485 램 32GB SSD 1TB 스페이스그레이\n[A등급] Refurbished Apple Macbook Pro 16 M1 Max A2485 RAM 32GB SSD 1TB Space Gray\n\n크림에서 두달전 1,989,000원 주고 구입 했습니다.\n배송오고 단 한번도 사용한적 없습니다. \n\n고민하다가 데스크탑 구입하는걸로 결정하여 판매합니다.\n\n크림에서 A등급 판정 받았구요\n\n실제 구입한 링크 아래에 남겨두겠습니다 자세한 설명 나와 있으니 참고 해주세요.!\n\n수리나 AS 받은적 없는 상품이고 애플 리퍼비시 업체에서 신규 고객에게 갈 수 있게 전체 포맷돼서 크림으로 넘어간걸 제가 구입후 놔둔 상태라 외관에 원래 있던 생활기스 빼고는 쌔거라고 보시면 됩니다.\n\nhttps://kream.co.kr/products/1003620\n\n에눌안받고 찔러보기 답장 안합니다 필요하신분들만 연락주세요\n\n직거래 - 안양 석수동\n\n맥북프로 16인치 스페이스그레이 색상이에요. 사진에서 보이는 것처럼 깔끔한 상태를 유지하고 있어요.\n\n중고품 특성상 단순 반품 교환X",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%95%A0%ED%94%8C-%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-2021-16%EC%9D%B8%EC%B9%98-m1-max%EB%9E%A8-32gb-ssd-1tb-%EC%8A%A4%ED%8E%98%EC%9D%B4%EC%8A%A4%EA%B7%B8%EB%A0%88%EC%9D%B4-rejfhfiatv6h/",
       "favoriteCount": 0,
       "chatCount": 0,
-      "sellerName": "대박파파",
-      "mannerTemperature": 76.3
+      "sellerName": "뜌우",
+      "mannerTemperature": 46.9
     }
   ]
 }
