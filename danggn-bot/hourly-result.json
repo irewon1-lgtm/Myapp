@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-30T16:32:13.019Z",
+  "generatedAt": "2026-10-30T17:11:59.186Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,6 +55,28 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
+            "id": "/kr/buy-sell/hp-probook-4230s-%EB%85%B8%ED%8A%B8%EB%B6%81-g6egiyovxoyb/",
+            "href": "/kr/buy-sell/hp-probook-4230s-%EB%85%B8%ED%8A%B8%EB%B6%81-g6egiyovxoyb/",
+            "title": "HP ProBook 4230s 노트북",
+            "content": "HP ProBook 4230s 노트북 판매해요. 인텔 i7-2620M CPU와 8GB RAM, 119GB SSD가 탑재되어 있어요. 깔끔한 디자인으로 휴대하기 좋아요. 문서 작업이나 인터넷 서핑 등 일상적인 용도로 사용하기에 충분한 성능을 갖추고 있답니다.",
+            "price": "80000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/3b5337f3-461b-43e1-8cb5-95105065f24d.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-30T16:58:55.711Z",
+            "boostedAt": "2026-10-30T16:58:55.708Z",
+            "region": {
+              "name": "금암동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 37.1804547,
+                "longitude": 127.0487975
+              }
+            ]
+          },
+          {
             "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-14%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-shcokga2m3r2/",
             "href": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-14%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-shcokga2m3r2/",
             "title": "LG 그램 노트북 14인치 화이트",
@@ -73,28 +95,6 @@
               {
                 "latitude": 37.3398686,
                 "longitude": 127.9688696
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/%EB%85%B8%ED%8A%B8%EB%B6%81-lg-%ED%83%AD%EB%B6%81-i5-hxs21k6kv9ke/",
-            "href": "/kr/buy-sell/%EB%85%B8%ED%8A%B8%EB%B6%81-lg-%ED%83%AD%EB%B6%81-i5-hxs21k6kv9ke/",
-            "title": "노트북 LG 탭북 i5",
-            "content": "LG 탭북은 LG에서 만든 태블릿PC입니다.\n화면 터치가 가능하며 키보드가 내장 수납되어있습니다\n여러대있으며 사용감은 다 비슷비슷합니다\n작동여부 검수된 제품입니다\n모델명 LG Z160-GH5WK\ni5 3337U 시피유\nDDR3 4GB램(기본)\n120~128GB SSD\n\n메모리 8기가로 업그레이드 가능하며 4만원 추가됩니다.\n\n사무용, 휴대용 노트북으로 유용합니다\n배터리는 연식이 있으며 빨리 소모될 수도 있습니다",
-            "price": "100000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/3e36d252-bf47-40b7-bf90-9e53d99fd7db.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-30T16:23:29.188Z",
-            "boostedAt": "2026-10-30T16:23:29.186Z",
-            "region": {
-              "name": "산본1동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 37.3747326,
-                "longitude": 126.9361538
               }
             ]
           },
@@ -122,14 +122,14 @@
           }
         ],
         "dateFieldSnippets": [
+          "createdAt\":\"2026-10-30T16:58:55.711Z\",\"boostedAt\":\"2026-10-30T16:58:55.708Z\",\"region\":{\"name\":\"금암동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-30T16:01:46.530Z\",\"boostedAt\":\"2026-10-30T16:01:46.526Z\",\"region\":{\"name\":\"행구동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-10-30T16:23:29.188Z\",\"boostedAt\":\"2026-10-30T16:23:29.186Z\",\"region\":{\"name\":\"산본1동\"},\"category\":null,\"contentCoo",
           "createdAt\":\"2026-10-21T11:37:23.723Z\",\"boostedAt\":\"2026-10-30T16:22:04.635Z\",\"region\":{\"name\":\"산본동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-10-30T16:16:07.284Z\",\"boostedAt\":\"2026-10-30T16:16:07.283Z\",\"region\":{\"name\":\"마두1동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-10-30T16:14:04.783Z\",\"boostedAt\":\"2026-10-30T16:14:04.778Z\",\"region\":{\"name\":\"반월동\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-10-30T16:23:29.188Z\",\"boostedAt\":\"2026-10-30T16:23:29.186Z\",\"region\":{\"name\":\"산본1동\"},\"category\":null,\"contentCoo",
+          "createdAt\":\"2026-10-30T13:06:37.116Z\",\"boostedAt\":\"2026-10-30T13:06:37.111Z\",\"region\":{\"name\":\"송산면\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":250,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG 그램 노트북 14인치 화이트\",\"descripti",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":250,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"HP ProBook 4230s 노트북\",\"descrip",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -137,24 +137,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1247,
-    "globalUniqueListings": 538,
-    "duplicateListingsRemoved": 709,
-    "detailQueueStart": 10,
-    "freshDetailTasks": 10,
+    "searchUniqueListings": 1251,
+    "globalUniqueListings": 498,
+    "duplicateListingsRemoved": 753,
+    "detailQueueStart": 1,
+    "freshDetailTasks": 1,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 10,
-    "detailSucceeded": 10,
+    "detailRequestsExecuted": 1,
+    "detailSucceeded": 1,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 538,
+    "postedAtResolvedFromSearch": 498,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 91023,
+    "scanDurationMs": 80019,
     "cities": [
       {
         "city": "군포시",
@@ -167,7 +167,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 280,
-        "durationMs": 12063
+        "durationMs": 12198
       },
       {
         "city": "의왕시",
@@ -182,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 369,
-        "durationMs": 25517
+        "uniqueListings": 371,
+        "durationMs": 25601
       },
       {
         "city": "안양시",
@@ -200,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 376,
-        "durationMs": 35179
+        "uniqueListings": 378,
+        "durationMs": 35188
       },
       {
         "city": "과천시",
@@ -213,7 +213,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 222,
-        "durationMs": 6392
+        "durationMs": 6413
       }
     ],
     "finalCandidateCount": 0,
@@ -222,7 +222,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 91031
+    "durationMs": 80026
   },
   "candidates": []
 }
