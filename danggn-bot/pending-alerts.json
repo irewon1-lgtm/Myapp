@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-30T06:42:12.607868Z",
+  "updatedAt": "2026-10-30T07:22:11.410500Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -3030,8 +3030,8 @@
     "5qrthmxadqnf": {
       "id": "5qrthmxadqnf",
       "title": "게이밍 고사양 노트북 ASUS TUF Gaming 32G 1T RTX 4060",
-      "price": 1480000,
-      "previousPrice": 1540000,
+      "price": 1430000,
+      "previousPrice": 1480000,
       "changeType": "price_drop",
       "city": "안양시",
       "location": "안양동",
@@ -3050,7 +3050,7 @@
       "postedAt": "2026-10-03T09:58:26.719Z",
       "url": "https://www.daangn.com/kr/buy-sell/%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EA%B3%A0%EC%82%AC%EC%96%91-%EB%85%B8%ED%8A%B8%EB%B6%81-asus-tuf-gaming-32g-1t-rtx-4060-5qrthmxadqnf/",
       "firstAlertedAt": "2026-10-10T12:03:01.056125Z",
-      "lastCandidateAt": "2026-10-26T05:02:16.002541Z"
+      "lastCandidateAt": "2026-10-30T07:22:11.410500Z"
     },
     "byh6cuabaept": {
       "id": "byh6cuabaept",
@@ -12701,6 +12701,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%ED%92%80%EB%B0%95%EC%8A%A4-%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%814-%ED%94%84%EB%A1%9C-nt960xgq-16%EC%9D%B8%EC%B9%98-%EC%9A%B8%ED%8A%B8%EB%9D%BC5-16g-256g-rxkhh6b85cia/",
       "firstAlertedAt": "2026-10-30T06:02:21.660276Z",
       "lastCandidateAt": "2026-10-30T06:02:21.660276Z"
+    },
+    "p7j4psy84owr": {
+      "id": "p7j4psy84owr",
+      "title": "ASUS ROG Flow Z13 게이밍 노트북",
+      "price": 4200000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "과천시",
+      "location": "별양동",
+      "cpuHint": null,
+      "gpuHint": "RTX 3050",
+      "vramGB": null,
+      "ramGB": 64,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "64GB RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "postedAt": "2026-10-30T07:07:42.016Z",
+      "url": "https://www.daangn.com/kr/buy-sell/asus-rog-flow-z13-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-p7j4psy84owr/",
+      "firstAlertedAt": "2026-10-30T07:22:11.410500Z",
+      "lastCandidateAt": "2026-10-30T07:22:11.410500Z"
     }
   }
 }
