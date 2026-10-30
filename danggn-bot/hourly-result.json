@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-30T21:21:55.109Z",
+  "generatedAt": "2026-10-30T22:01:56.004Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,6 +55,28 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
+            "id": "/kr/buy-sell/lg%EC%A0%84%EC%9E%90-xnote-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%9D%EB%8B%88%EB%8B%A4-dyows51utek1/",
+            "href": "/kr/buy-sell/lg%EC%A0%84%EC%9E%90-xnote-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%9D%EB%8B%88%EB%8B%A4-dyows51utek1/",
+            "title": "LG전자 XNOTE 노트북 팝니다",
+            "content": "LG전자 XNOTE 노트북입니다. 전원 어댑터 포함되어 있어요. 깔끔한 디자인으로 어디서든 사용하기 좋아요. 사진으로 확인해주세요. 노트북가방도 함께드릴께요 따로 구매한 가방입니다 ",
+            "price": "100000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/3997b9b6-6c98-4b89-9082-20a3e5965bb5.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-30T21:42:26.006Z",
+            "boostedAt": "2026-10-30T21:42:26.006Z",
+            "region": {
+              "name": "오류동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 37.4991491,
+                "longitude": 126.8402157
+              }
+            ]
+          },
+          {
             "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-14%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-shcokga2m3r2/",
             "href": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-14%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-shcokga2m3r2/",
             "title": "LG 그램 노트북 14인치 화이트",
@@ -73,28 +95,6 @@
               {
                 "latitude": 37.3398686,
                 "longitude": 127.9688696
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/%EA%B9%A8%EB%81%97-%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-15%EC%9D%B8%EC%B9%98-fs4bas34vob8/",
-            "href": "/kr/buy-sell/%EA%B9%A8%EB%81%97-%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-15%EC%9D%B8%EC%B9%98-fs4bas34vob8/",
-            "title": "깨끗 삼성 노트북 15인치",
-            "content": "A급으로 깨끗해요\n1.9G CPU, 8GB RAM, SSD 128 탑재되었어요 \n\n상태는 깨끗하고 안되는거 없이 멀쩡하고 바로 사용가능합니다\n\n사진에 보이는 마우스와 충전기 함께 드려요\n서든이나 메이플스토리, 마인크래프트 등  게임이랑 문서 작업이나 영상 시청 등 일상적인 용도로 사용하기 좋은 노트북이에요 \n\n윈도우11이고 오피스 엑셀 한글 포토샵 일러스트 등 있어요",
-            "price": "150000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/2e59a65d475988602257c1624e3e87b1fefe10940374dd30b1a119a15540d538_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-30T10:57:51.237Z",
-            "boostedAt": "2026-10-30T10:57:51.234Z",
-            "region": {
-              "name": "석적읍"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 36.0756776,
-                "longitude": 128.4057235
               }
             ]
           },
@@ -122,14 +122,14 @@
           }
         ],
         "dateFieldSnippets": [
+          "createdAt\":\"2026-10-30T21:42:26.006Z\",\"boostedAt\":\"2026-10-30T21:42:26.006Z\",\"region\":{\"name\":\"오류동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-30T16:01:46.530Z\",\"boostedAt\":\"2026-10-30T16:01:46.526Z\",\"region\":{\"name\":\"행구동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-10-30T10:57:51.237Z\",\"boostedAt\":\"2026-10-30T10:57:51.234Z\",\"region\":{\"name\":\"석적읍\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-25T09:19:38.532Z\",\"boostedAt\":\"2026-10-25T09:19:38.531Z\",\"region\":{\"name\":\"압구정동\"},\"category\":null,\"contentCoo",
           "createdAt\":\"2026-10-24T14:41:31.592Z\",\"boostedAt\":\"2026-10-28T01:27:58.594Z\",\"region\":{\"name\":\"서초1동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-10-30T13:06:37.116Z\",\"boostedAt\":\"2026-10-30T13:06:37.111Z\",\"region\":{\"name\":\"송산면\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-10-23T16:21:25.316Z\",\"boostedAt\":\"2026-10-30T21:17:34.431Z\",\"region\":{\"name\":\"본오동\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":261,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG 그램 노트북 14인치 화이트\",\"descripti",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":260,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG전자 XNOTE 노트북 팝니다\",\"descripti",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -137,24 +137,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1323,
-    "globalUniqueListings": 512,
-    "duplicateListingsRemoved": 811,
-    "detailQueueStart": 0,
-    "freshDetailTasks": 0,
+    "searchUniqueListings": 1285,
+    "globalUniqueListings": 487,
+    "duplicateListingsRemoved": 798,
+    "detailQueueStart": 5,
+    "freshDetailTasks": 5,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 0,
-    "detailSucceeded": 0,
+    "detailRequestsExecuted": 5,
+    "detailSucceeded": 5,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 512,
+    "postedAtResolvedFromSearch": 487,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 79994,
+    "scanDurationMs": 85186,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +166,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 267,
-        "durationMs": 12290
+        "uniqueListings": 268,
+        "durationMs": 12245
       },
       {
         "city": "의왕시",
@@ -182,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 395,
-        "durationMs": 25670
+        "uniqueListings": 374,
+        "durationMs": 25471
       },
       {
         "city": "안양시",
@@ -200,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 405,
-        "durationMs": 35093
+        "uniqueListings": 387,
+        "durationMs": 35091
       },
       {
         "city": "과천시",
@@ -213,7 +213,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 256,
-        "durationMs": 6730
+        "durationMs": 6306
       }
     ],
     "finalCandidateCount": 0,
@@ -222,7 +222,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 80001
+    "durationMs": 85192
   },
   "candidates": []
 }
