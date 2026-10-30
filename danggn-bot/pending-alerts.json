@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-30T13:02:21.384973Z",
+  "updatedAt": "2026-10-30T13:42:23.292799Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -9755,9 +9755,9 @@
     "wf7173txs7bv": {
       "id": "wf7173txs7bv",
       "title": "기가바이트 AORUS 17G YD 풀박스(i7-11800H/RTX3080/32GB)",
-      "price": 1100000,
-      "previousPrice": null,
-      "changeType": "new",
+      "price": 1050000,
+      "previousPrice": 1100000,
+      "changeType": "price_drop",
       "city": "안양시",
       "location": "평촌동",
       "cpuHint": "i7-11800H",
@@ -9775,7 +9775,7 @@
       "postedAt": "2026-10-23T13:56:24.715Z",
       "url": "https://www.daangn.com/kr/buy-sell/%EA%B8%B0%EA%B0%80%EB%B0%94%EC%9D%B4%ED%8A%B8-aorus-17g-yd-%ED%92%80%EB%B0%95%EC%8A%A4-i7-11800h-rtx3080-32gb-wf7173txs7bv/",
       "firstAlertedAt": "2026-10-23T14:02:18.192277Z",
-      "lastCandidateAt": "2026-10-23T14:02:18.192277Z"
+      "lastCandidateAt": "2026-10-30T13:42:23.292799Z"
     },
     "cssev4o8owxr": {
       "id": "cssev4o8owxr",
@@ -12380,9 +12380,9 @@
     "t1j2deoc7rdi": {
       "id": "t1j2deoc7rdi",
       "title": "맥북 프로 15인치 2018 실버 풀박스 팝니다",
-      "price": 300000,
-      "previousPrice": null,
-      "changeType": "new",
+      "price": 270000,
+      "previousPrice": 300000,
+      "changeType": "price_drop",
       "city": "과천시",
       "location": "갈현동",
       "cpuHint": null,
@@ -12400,7 +12400,7 @@
       "postedAt": "2026-10-29T12:15:29.127Z",
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-15%EC%9D%B8%EC%B9%98-2018-%EC%8B%A4%EB%B2%84-%ED%92%80%EB%B0%95%EC%8A%A4-%ED%8C%9D%EB%8B%88%EB%8B%A4-t1j2deoc7rdi/",
       "firstAlertedAt": "2026-10-29T12:32:15.989457Z",
-      "lastCandidateAt": "2026-10-29T12:32:15.989457Z"
+      "lastCandidateAt": "2026-10-30T13:42:23.292799Z"
     },
     "auuct32zq5yg": {
       "id": "auuct32zq5yg",
@@ -12826,6 +12826,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/hp-%EC%98%A4%EB%A9%98-16-ai450-5070-%EB%AF%B8%EA%B0%9C%EB%B4%89-48p9cirqokx5/",
       "firstAlertedAt": "2026-10-30T12:22:17.300723Z",
       "lastCandidateAt": "2026-10-30T12:22:17.300723Z"
+    },
+    "mx26r512efsw": {
+      "id": "mx26r512efsw",
+      "title": "(최저가)에이서 스위프트 라이트 14 노트북 실버ㅏㅇ호",
+      "price": 700000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "의왕시",
+      "location": "고천동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-30T13:27:14.333Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%B5%9C%EC%A0%80%EA%B0%80-%EC%97%90%EC%9D%B4%EC%84%9C-%EC%8A%A4%EC%9C%84%ED%94%84%ED%8A%B8-%EB%9D%BC%EC%9D%B4%ED%8A%B8-14-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%8B%A4%EB%B2%84-%ED%98%B8-mx26r512efsw/",
+      "firstAlertedAt": "2026-10-30T13:42:23.292799Z",
+      "lastCandidateAt": "2026-10-30T13:42:23.292799Z"
+    },
+    "ypojqqinw126": {
+      "id": "ypojqqinw126",
+      "title": "맥북프로 m5pro 14인치 24gb 1TB",
+      "price": 3230000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "과천시",
+      "location": "과천동",
+      "cpuHint": "Apple M5 Pro",
+      "gpuHint": "Apple M5 Pro",
+      "vramGB": null,
+      "ramGB": 24,
+      "ambiguousMemoryGB": 24,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "메모리: 24GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "24gb",
+      "storageGB": 1024,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-30T13:15:54.941Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C-m5pro-14%EC%9D%B8%EC%B9%98-24gb-1tb-ypojqqinw126/",
+      "firstAlertedAt": "2026-10-30T13:42:23.292799Z",
+      "lastCandidateAt": "2026-10-30T13:42:23.292799Z"
     }
   }
 }
