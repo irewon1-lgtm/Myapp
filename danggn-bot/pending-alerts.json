@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-29T23:26:27.246605Z",
+  "updatedAt": "2026-10-30T00:02:22.232753Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -12501,6 +12501,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%94%BD%ED%81%AC%ED%8C%A8%EB%93%9C-14%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%9D%BC%EC%9D%B4%EC%A0%A07-16g-256g-512g-pd%EC%B6%A9%EC%A0%84-8pvan1aswoxs/",
       "firstAlertedAt": "2026-10-29T17:42:06.329422Z",
       "lastCandidateAt": "2026-10-29T17:42:06.329422Z"
+    },
+    "suge4yfce86u": {
+      "id": "suge4yfce86u",
+      "title": "맥북프로 M5pro 24gb 1tb 사이클6",
+      "price": 3250000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "과천시",
+      "location": "과천동",
+      "cpuHint": "Apple M5 Pro",
+      "gpuHint": "Apple M5 Pro",
+      "vramGB": null,
+      "ramGB": 24,
+      "ambiguousMemoryGB": 24,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "메모리: 24GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "24gb",
+      "storageGB": 1024,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-29T23:56:16.396Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C-m5pro-24gb-1tb-%EC%82%AC%EC%9D%B4%ED%81%B46-suge4yfce86u/",
+      "firstAlertedAt": "2026-10-30T00:02:22.232753Z",
+      "lastCandidateAt": "2026-10-30T00:02:22.232753Z"
     }
   }
 }
