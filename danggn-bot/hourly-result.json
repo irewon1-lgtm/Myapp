@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-30T20:32:00.325Z",
+  "generatedAt": "2026-10-30T20:42:37.766Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -137,24 +137,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1278,
-    "globalUniqueListings": 518,
-    "duplicateListingsRemoved": 760,
-    "detailQueueStart": 1,
-    "freshDetailTasks": 1,
+    "searchUniqueListings": 1305,
+    "globalUniqueListings": 533,
+    "duplicateListingsRemoved": 772,
+    "detailQueueStart": 0,
+    "freshDetailTasks": 0,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 1,
-    "detailSucceeded": 1,
+    "detailRequestsExecuted": 0,
+    "detailSucceeded": 0,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 518,
+    "postedAtResolvedFromSearch": 533,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 80676,
+    "scanDurationMs": 79512,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +166,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 282,
-        "durationMs": 12133
+        "uniqueListings": 280,
+        "durationMs": 12156
       },
       {
         "city": "의왕시",
@@ -182,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 370,
-        "durationMs": 25688
+        "uniqueListings": 368,
+        "durationMs": 25575
       },
       {
         "city": "안양시",
@@ -200,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 402,
-        "durationMs": 35237
+        "uniqueListings": 401,
+        "durationMs": 35069
       },
       {
         "city": "과천시",
@@ -212,8 +212,8 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 224,
-        "durationMs": 6511
+        "uniqueListings": 256,
+        "durationMs": 6461
       }
     ],
     "finalCandidateCount": 0,
@@ -222,7 +222,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 80683
+    "durationMs": 79519
   },
   "candidates": []
 }
