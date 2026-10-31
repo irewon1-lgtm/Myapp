@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-30T23:49:59.946979Z",
+  "updatedAt": "2026-10-31T00:07:39.668394Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -12926,6 +12926,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/asus-tuf-gaming-a14-2025-32gb-512gb-rtx-5060-nqw9ugw7mskd/",
       "firstAlertedAt": "2026-10-30T14:32:12.489169Z",
       "lastCandidateAt": "2026-10-30T15:12:12.461489Z"
+    },
+    "wb1mpre3nuxs": {
+      "id": "wb1mpre3nuxs",
+      "title": "제 거래글에 있는 PC와 게이밍 노트북 교환하실분 구해요",
+      "price": 123456,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "산본동",
+      "cpuHint": "i7-9700",
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB 램",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-31T00:01:44.373Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%A0%9C-%EA%B1%B0%EB%9E%98%EA%B8%80%EC%97%90-%EC%9E%88%EB%8A%94-pc%EC%99%80-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%EA%B5%90%ED%99%98%ED%95%98%EC%8B%A4%EB%B6%84-%EA%B5%AC%ED%95%B4%EC%9A%94-wb1mpre3nuxs/",
+      "firstAlertedAt": "2026-10-31T00:07:39.668394Z",
+      "lastCandidateAt": "2026-10-31T00:07:39.668394Z"
     }
   }
 }
