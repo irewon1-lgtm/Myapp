@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-31T17:31:53.988Z",
+  "generatedAt": "2026-10-31T18:11:50.483Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -99,24 +99,24 @@
             ]
           },
           {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-i7-6%EC%84%B8%EB%8C%80-nt900x3l-uud9vrto8hcb/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-i7-6%EC%84%B8%EB%8C%80-nt900x3l-uud9vrto8hcb/",
-            "title": "삼성 노트북 i7 6세대 nt900x3l",
-            "content": "인텔 코어 i7-6500U 프로세서가 탑재된 삼성 노트북이에요. 8GB 램과 256 SSD를 갖추고 있어 작업하기에 적합해요. \n아답타 없습니다 \n밧데리는 한시간 이상 가는것 같습니다.\n액정은 좌우에 얼룩이 있고 깨끗하진 않습니다.\n중간중간 팬도는 소리도 들리네요. 윈도 새로 깔았습니다 ",
-            "price": "100000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/fbd29db4-954e-4f4c-9597-bc2e3801151b.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-14z970-gp2xb-fafnw6hwhia1/",
+            "href": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-14z970-gp2xb-fafnw6hwhia1/",
+            "title": "LG 그램 14Z970-GP2XB",
+            "content": "CPU: Intel Core i5-7200U\nRAM: 8GB\n저장장치: SSD\n그래픽: Intel HD Graphics\n화면 크기: 14인치\n\n(구매하시면 초기화해서 드립니다)\n\n\n외관상 눈에 띄는 큰 흠집은 없으며 사용도 거의 안해서 새 제품에 가깝고 생활기스도 없는 편입니다 크기도 큰 편이 아니라 쉽게 들고 다닐수 있습니다 \n\n충전기 포함된 금액입니다!\n\n직거래 희망장소(관악역,비산이마트,범계역광장)\n\n\n중고 제품인 만큼 사진 확인 후 구매 부탁드립니다!",
+            "price": "200000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/1793454941651bad16388f4604575fce6a5c7e5e7aaf2b6d2cbdc172d18fff0d471a2c08d2d1d0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-31T16:04:28.003Z",
-            "boostedAt": "2026-10-31T16:04:28.002Z",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-10-31T13:58:17.138Z",
+            "boostedAt": "2026-10-31T13:58:17.137Z",
             "region": {
-              "name": "감일동"
+              "name": "석수1동"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 37.5069723,
-                "longitude": 127.150791
+                "latitude": 37.4156948,
+                "longitude": 126.9139063
               }
             ]
           }
@@ -124,12 +124,12 @@
         "dateFieldSnippets": [
           "createdAt\":\"2026-10-31T15:59:35.834Z\",\"boostedAt\":\"2026-10-31T15:59:35.830Z\",\"region\":{\"name\":\"오금동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-31T16:09:04.124Z\",\"boostedAt\":\"2026-10-31T16:09:04.120Z\",\"region\":{\"name\":\"보라동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-10-31T16:04:28.003Z\",\"boostedAt\":\"2026-10-31T16:04:28.002Z\",\"region\":{\"name\":\"감일동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-31T13:58:17.138Z\",\"boostedAt\":\"2026-10-31T13:58:17.137Z\",\"region\":{\"name\":\"석수1동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-10-23T04:44:21.485Z\",\"boostedAt\":\"2026-10-31T14:57:11.821Z\",\"region\":{\"name\":\"부림동\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-10-23T04:44:21.485Z\",\"boostedAt\":\"2026-10-31T14:57:11.821Z\",\"region\":{\"name\":\"부림동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-10-31T14:22:12.201Z\",\"boostedAt\":\"2026-10-31T14:22:12.201Z\",\"region\":{\"name\":\"방이2동\"},\"category\":null,\"contentCoo"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":261,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성노트북 15인치\",\"description\":\"삼성노",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":258,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성노트북 15인치\",\"description\":\"삼성노",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -137,24 +137,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1295,
-    "globalUniqueListings": 523,
-    "duplicateListingsRemoved": 772,
-    "detailQueueStart": 4,
-    "freshDetailTasks": 4,
+    "searchUniqueListings": 1339,
+    "globalUniqueListings": 525,
+    "duplicateListingsRemoved": 814,
+    "detailQueueStart": 0,
+    "freshDetailTasks": 0,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 4,
-    "detailSucceeded": 4,
+    "detailRequestsExecuted": 0,
+    "detailSucceeded": 0,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 523,
+    "postedAtResolvedFromSearch": 525,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 1,
-    "scanDurationMs": 83092,
+    "candidateCount": 0,
+    "scanDurationMs": 78604,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +166,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 284,
-        "durationMs": 12203
+        "uniqueListings": 287,
+        "durationMs": 12061
       },
       {
         "city": "의왕시",
@@ -182,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 383,
-        "durationMs": 25497
+        "uniqueListings": 389,
+        "durationMs": 25349
       },
       {
         "city": "안양시",
@@ -200,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 371,
-        "durationMs": 34731
+        "uniqueListings": 406,
+        "durationMs": 34925
       },
       {
         "city": "과천시",
@@ -213,52 +213,16 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 257,
-        "durationMs": 6403
+        "durationMs": 6035
       }
     ],
-    "finalCandidateCount": 1,
+    "finalCandidateCount": 0,
     "stateItemCount": 5000,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 83099
+    "durationMs": 78610
   },
-  "candidates": [
-    {
-      "id": "w7hva3spqb9h",
-      "changeType": "new",
-      "previousPrice": null,
-      "price": 2550000,
-      "priceDropPercent": null,
-      "city": "안양시",
-      "location": "비산1동",
-      "regionPath": "경기도 안양시 동안구 비산1동",
-      "title": "Apple 맥북 에어 13 M5 실버 16GB 1TB",
-      "modelHint": "Apple 맥북 에어 13 M5 실버 16GB 1TB",
-      "cpuHint": null,
-      "cpuBaselinePass": null,
-      "gpuHint": null,
-      "vramGB": null,
-      "ramGB": 16,
-      "ambiguousMemoryGB": 16,
-      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": "램 16기가",
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": "16GB",
-      "storageGB": null,
-      "llmCapability": "SPEC_CHECK_REQUIRED",
-      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
-      "specConfidence": "needs_review",
-      "postedAt": "2026-10-31T16:58:34.160Z",
-      "boostedAt": "2026-10-31T16:58:34.158Z",
-      "status": "Ongoing",
-      "description": "미개봉 신품! 지난주에 주문해서 받았고 용량 고민중이어서 안 뜯었습니다! 반품할까 하다가 좀 할인 받아서 사서 그냥 당근으로 팔려구요!\n램 16기가 용량 1테라\n직거래만 하고 호평성당 쪽에서 합니다!",
-      "url": "https://www.daangn.com/kr/buy-sell/apple-%EB%A7%A5%EB%B6%81-%EC%97%90%EC%96%B4-13-m5-%EC%8B%A4%EB%B2%84-16gb-1tb-w7hva3spqb9h/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "아러니라",
-      "mannerTemperature": 47.2
-    }
-  ]
+  "candidates": []
 }
