@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-31T19:31:46.572Z",
+  "generatedAt": "2026-10-31T20:08:23.222Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -77,28 +77,6 @@
             ]
           },
           {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-900x-%EC%8B%A4%EB%B2%84-1zxn7caj7gic/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-900x-%EC%8B%A4%EB%B2%84-1zxn7caj7gic/",
-            "title": "삼성 노트북 900X 실버",
-            "content": "삼성 노트북 15인치 900X 실버 모델입니다. 인텔 코어 i73537u CPU, 8GB RAM, 인텔그래픽 32mb 128GB SSD가 탑재되어 있습니다. 윈도우11 한글24 오피스24 배터리 2~3시간 바로사용가능 얇고 가벼워 휴대하기 좋습니다. 사진에서 확인 가능한 정보 외에는 별도의 구성품은 없습니다. 깔끔한 디자인으로 어디서든 사용하기 좋아요.",
-            "price": "150000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/17916947651016f6b294c8ce064b636f459cb41a7ee36a5ebbd5d63c354871c1a5487c53f20fb0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-11T05:03:04.162Z",
-            "boostedAt": "2026-10-31T18:52:18.876Z",
-            "region": {
-              "name": "명륜3가"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 37.5904074,
-                "longitude": 126.9932145
-              }
-            ]
-          },
-          {
             "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1%EB%85%B8%ED%8A%B8%EB%B6%81-15%EC%9D%B8%EC%B9%98-fi9ucn1ikpbe/",
             "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1%EB%85%B8%ED%8A%B8%EB%B6%81-15%EC%9D%B8%EC%B9%98-fi9ucn1ikpbe/",
             "title": "삼성노트북 15인치",
@@ -119,17 +97,39 @@
                 "longitude": 126.9329953
               }
             ]
+          },
+          {
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-900x-%EC%8B%A4%EB%B2%84-1zxn7caj7gic/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-900x-%EC%8B%A4%EB%B2%84-1zxn7caj7gic/",
+            "title": "삼성 노트북 900X 실버",
+            "content": "삼성 노트북 15인치 900X 실버 모델입니다. 인텔 코어 i73537u CPU, 8GB RAM, 인텔그래픽 32mb 128GB SSD가 탑재되어 있습니다. 윈도우11 한글24 오피스24 배터리 2~3시간 바로사용가능 얇고 가벼워 휴대하기 좋습니다. 사진에서 확인 가능한 정보 외에는 별도의 구성품은 없습니다. 깔끔한 디자인으로 어디서든 사용하기 좋아요.",
+            "price": "150000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/17916947651016f6b294c8ce064b636f459cb41a7ee36a5ebbd5d63c354871c1a5487c53f20fb0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-11T05:03:04.162Z",
+            "boostedAt": "2026-10-31T18:52:18.876Z",
+            "region": {
+              "name": "명륜3가"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 37.5904074,
+                "longitude": 126.9932145
+              }
+            ]
           }
         ],
         "dateFieldSnippets": [
           "createdAt\":\"2026-10-11T05:07:35.567Z\",\"boostedAt\":\"2026-10-31T18:51:51.679Z\",\"region\":{\"name\":\"명륜3가\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-10-11T05:03:04.162Z\",\"boostedAt\":\"2026-10-31T18:52:18.876Z\",\"region\":{\"name\":\"명륜3가\"},\"category\":null,\"contentCoo",
           "createdAt\":\"2026-10-31T15:59:35.834Z\",\"boostedAt\":\"2026-10-31T15:59:35.830Z\",\"region\":{\"name\":\"오금동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-10-11T05:03:04.162Z\",\"boostedAt\":\"2026-10-31T18:52:18.876Z\",\"region\":{\"name\":\"명륜3가\"},\"category\":null,\"contentCoo",
           "createdAt\":\"2026-10-26T12:54:01.664Z\",\"boostedAt\":\"2026-10-31T18:15:35.680Z\",\"region\":{\"name\":\"구룡동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-10-31T14:22:12.201Z\",\"boostedAt\":\"2026-10-31T14:22:12.201Z\",\"region\":{\"name\":\"방이2동\"},\"category\":null,\"contentCoo"
+          "createdAt\":\"2026-10-31T13:58:17.138Z\",\"boostedAt\":\"2026-10-31T13:58:17.137Z\",\"region\":{\"name\":\"석수1동\"},\"category\":null,\"contentCoo"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":258,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 노트북 NT900X 실버\",\"description",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":259,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 노트북 NT900X 실버\",\"description",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -137,24 +137,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1301,
-    "globalUniqueListings": 527,
-    "duplicateListingsRemoved": 774,
-    "detailQueueStart": 1,
-    "freshDetailTasks": 1,
+    "searchUniqueListings": 1327,
+    "globalUniqueListings": 524,
+    "duplicateListingsRemoved": 803,
+    "detailQueueStart": 0,
+    "freshDetailTasks": 0,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 1,
-    "detailSucceeded": 1,
+    "detailRequestsExecuted": 0,
+    "detailSucceeded": 0,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 527,
+    "postedAtResolvedFromSearch": 524,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 79347,
+    "scanDurationMs": 78497,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +166,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 286,
-        "durationMs": 11908
+        "uniqueListings": 288,
+        "durationMs": 11734
       },
       {
         "city": "의왕시",
@@ -182,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 390,
-        "durationMs": 25705
+        "uniqueListings": 386,
+        "durationMs": 25637
       },
       {
         "city": "안양시",
@@ -200,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 368,
-        "durationMs": 35100
+        "uniqueListings": 396,
+        "durationMs": 34830
       },
       {
         "city": "과천시",
@@ -213,7 +213,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 257,
-        "durationMs": 6228
+        "durationMs": 6075
       }
     ],
     "finalCandidateCount": 0,
@@ -222,7 +222,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 79353
+    "durationMs": 78504
   },
   "candidates": []
 }
