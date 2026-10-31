@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-31T16:51:58.256Z",
+  "generatedAt": "2026-10-31T17:31:53.988Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -126,7 +126,7 @@
           "createdAt\":\"2026-10-31T16:09:04.124Z\",\"boostedAt\":\"2026-10-31T16:09:04.120Z\",\"region\":{\"name\":\"보라동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-31T16:04:28.003Z\",\"boostedAt\":\"2026-10-31T16:04:28.002Z\",\"region\":{\"name\":\"감일동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-31T13:58:17.138Z\",\"boostedAt\":\"2026-10-31T13:58:17.137Z\",\"region\":{\"name\":\"석수1동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-10-31T15:26:51.644Z\",\"boostedAt\":\"2026-10-31T15:26:51.643Z\",\"region\":{\"name\":\"장흥면\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-10-23T04:44:21.485Z\",\"boostedAt\":\"2026-10-31T14:57:11.821Z\",\"region\":{\"name\":\"부림동\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
           "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":261,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성노트북 15인치\",\"description\":\"삼성노",
@@ -137,24 +137,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1340,
-    "globalUniqueListings": 524,
-    "duplicateListingsRemoved": 816,
-    "detailQueueStart": 7,
-    "freshDetailTasks": 7,
+    "searchUniqueListings": 1295,
+    "globalUniqueListings": 523,
+    "duplicateListingsRemoved": 772,
+    "detailQueueStart": 4,
+    "freshDetailTasks": 4,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 7,
-    "detailSucceeded": 7,
+    "detailRequestsExecuted": 4,
+    "detailSucceeded": 4,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 524,
+    "postedAtResolvedFromSearch": 523,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 0,
-    "scanDurationMs": 87549,
+    "candidateCount": 1,
+    "scanDurationMs": 83092,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +166,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 289,
-        "durationMs": 12285
+        "uniqueListings": 284,
+        "durationMs": 12203
       },
       {
         "city": "의왕시",
@@ -182,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 388,
-        "durationMs": 25680
+        "uniqueListings": 383,
+        "durationMs": 25497
       },
       {
         "city": "안양시",
@@ -200,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 406,
-        "durationMs": 34903
+        "uniqueListings": 371,
+        "durationMs": 34731
       },
       {
         "city": "과천시",
@@ -213,16 +213,52 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 257,
-        "durationMs": 6441
+        "durationMs": 6403
       }
     ],
-    "finalCandidateCount": 0,
+    "finalCandidateCount": 1,
     "stateItemCount": 5000,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 87555
+    "durationMs": 83099
   },
-  "candidates": []
+  "candidates": [
+    {
+      "id": "w7hva3spqb9h",
+      "changeType": "new",
+      "previousPrice": null,
+      "price": 2550000,
+      "priceDropPercent": null,
+      "city": "안양시",
+      "location": "비산1동",
+      "regionPath": "경기도 안양시 동안구 비산1동",
+      "title": "Apple 맥북 에어 13 M5 실버 16GB 1TB",
+      "modelHint": "Apple 맥북 에어 13 M5 실버 16GB 1TB",
+      "cpuHint": null,
+      "cpuBaselinePass": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "램 16기가",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "specConfidence": "needs_review",
+      "postedAt": "2026-10-31T16:58:34.160Z",
+      "boostedAt": "2026-10-31T16:58:34.158Z",
+      "status": "Ongoing",
+      "description": "미개봉 신품! 지난주에 주문해서 받았고 용량 고민중이어서 안 뜯었습니다! 반품할까 하다가 좀 할인 받아서 사서 그냥 당근으로 팔려구요!\n램 16기가 용량 1테라\n직거래만 하고 호평성당 쪽에서 합니다!",
+      "url": "https://www.daangn.com/kr/buy-sell/apple-%EB%A7%A5%EB%B6%81-%EC%97%90%EC%96%B4-13-m5-%EC%8B%A4%EB%B2%84-16gb-1tb-w7hva3spqb9h/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "아러니라",
+      "mannerTemperature": 47.2
+    }
+  ]
 }

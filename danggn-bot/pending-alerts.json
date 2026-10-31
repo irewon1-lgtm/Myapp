@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-31T16:51:58.325199Z",
+  "updatedAt": "2026-10-31T17:31:54.055541Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -13301,6 +13301,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81-%EC%95%A0%ED%94%8C-%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-14-m5-16gb-1tb-%EC%8B%A4%EB%B2%84-%EB%8B%A8%EC%88%9C%EA%B0%9C%EB%B4%89-%EC%83%88%EC%83%81%ED%92%88-%EC%98%81%EB%AC%B8-%EC%9E%90%ED%8C%90-rnietvn68f9s/",
       "firstAlertedAt": "2026-10-31T10:52:11.800858Z",
       "lastCandidateAt": "2026-10-31T10:52:11.800858Z"
+    },
+    "w7hva3spqb9h": {
+      "id": "w7hva3spqb9h",
+      "title": "Apple 맥북 에어 13 M5 실버 16GB 1TB",
+      "price": 2550000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "비산1동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "램 16기가",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-31T16:58:34.160Z",
+      "url": "https://www.daangn.com/kr/buy-sell/apple-%EB%A7%A5%EB%B6%81-%EC%97%90%EC%96%B4-13-m5-%EC%8B%A4%EB%B2%84-16gb-1tb-w7hva3spqb9h/",
+      "firstAlertedAt": "2026-10-31T17:31:54.055541Z",
+      "lastCandidateAt": "2026-10-31T17:31:54.055541Z"
     }
   }
 }
