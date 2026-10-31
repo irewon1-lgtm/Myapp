@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-31T01:22:16.286389Z",
+  "updatedAt": "2026-10-31T02:02:10.562464Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -2305,9 +2305,9 @@
     "bgxognqnb98t": {
       "id": "bgxognqnb98t",
       "title": "레노버 씽크패드 X1 Carbon 10세대 i7  최상급 컨디션",
-      "price": 850000,
-      "previousPrice": null,
-      "changeType": "new",
+      "price": 800000,
+      "previousPrice": 830000,
+      "changeType": "price_drop",
       "city": "안양시",
       "location": "비산동",
       "cpuHint": null,
@@ -2325,7 +2325,7 @@
       "postedAt": "2026-10-09T02:18:35.772Z",
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%94%BD%ED%81%AC%ED%8C%A8%EB%93%9C-x1-carbon-10%EC%84%B8%EB%8C%80-i7-%EC%B5%9C%EC%83%81%EA%B8%89-%EC%BB%A8%EB%94%94%EC%85%98-bgxognqnb98t/",
       "firstAlertedAt": "2026-10-09T02:21:20.413910Z",
-      "lastCandidateAt": "2026-10-09T02:21:20.413910Z"
+      "lastCandidateAt": "2026-10-31T02:02:10.562464Z"
     },
     "m4dmzd77kgih": {
       "id": "m4dmzd77kgih",
@@ -12951,6 +12951,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EC%A0%9C-%EA%B1%B0%EB%9E%98%EA%B8%80%EC%97%90-%EC%9E%88%EB%8A%94-pc%EC%99%80-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%EA%B5%90%ED%99%98%ED%95%98%EC%8B%A4%EB%B6%84-%EA%B5%AC%ED%95%B4%EC%9A%94-wb1mpre3nuxs/",
       "firstAlertedAt": "2026-10-31T00:07:39.668394Z",
       "lastCandidateAt": "2026-10-31T00:07:39.668394Z"
+    },
+    "574v1u6d5xhh": {
+      "id": "574v1u6d5xhh",
+      "title": "삼성 갤럭시북5 Pro NT940XHA-K71AR ssd1테라 32램 터치스크린",
+      "price": 3000000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "안양1동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 32,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "메모리 32기가",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "postedAt": "2026-10-31T01:41:34.711Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%815-pro-nt940xha-k71ar-ssd1%ED%85%8C%EB%9D%BC-32%EB%9E%A8-%ED%84%B0%EC%B9%98%EC%8A%A4%ED%81%AC%EB%A6%B0-574v1u6d5xhh/",
+      "firstAlertedAt": "2026-10-31T02:02:10.562464Z",
+      "lastCandidateAt": "2026-10-31T02:02:10.562464Z"
     }
   }
 }
