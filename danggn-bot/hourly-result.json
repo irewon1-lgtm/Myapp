@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-31T16:13:34.631Z",
+  "generatedAt": "2026-10-31T16:51:58.256Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -80,7 +80,7 @@
             "id": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-15n54-z3amm5eqwvdi/",
             "href": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-15n54-z3amm5eqwvdi/",
             "title": "LG 노트북 15N54",
-            "content": "LG 노트북 판매해요. \n사용감 많지 않은 제품으로 배터리 효율 90% 이상입니다. (사이클수 6, 사진참조)\n\n사양은 인텔 Pentium 3560M (4세대)\n8GB RAM, 128GB SSD 탑재되어 있어요. \n\n화면(액정), 키보드, 트랙패드, 무선랜, 스피커 모두 정상 작동입니다.\n\n사진에서 보시는 것처럼 외관  깔끔한 상태로 상판 비닐도 붙어 있습니다.\n다만 하판 모서리쪽 살짝 금간 부분 있습니다.\n\n문서 작업이나 인터넷 서핑 등 일상적인 용도로 사용하기 좋아요. \n이 노트북으로 즐거운 컴퓨팅 경험을 만들어보세요.",
+            "content": "LG 노트북 판매해요. \n사용감 많지 않은 제품으로 배터리 효율 90% 이상입니다. (사이클수 6, 사진참조)\n\n사양은 인텔 Pentium 3560M (4세대)\n8GB RAM, 128GB SSD 탑재되어 있어요. \n\n화면(액정), 키보드, 힌지, 트랙패드, 무선랜, 스피커 모두 정상 작동입니다.\n\n사진에서 보시는 것처럼 외관  깔끔한 상태로 상판 비닐도 붙어 있습니다.\n다만 하판 모서리쪽 살짝 금간 부분 있습니다.\n정품 어댑터 포함입니다.\n\n직거래시 상태 확인하시고 결정하셔도 되며\n바로구매시 부팅, 사양, 작동 영상 드립니다.\n\n문서 작업이나 인터넷 서핑 등 일상적인 용도로 사용하기 좋아요. \n이 노트북으로 즐거운 컴퓨팅 경험을 만들어보세요.",
             "price": "120000",
             "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/f76bb903-928b-419c-baa1-09da4cdc1d8f.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
@@ -126,7 +126,7 @@
           "createdAt\":\"2026-10-31T16:09:04.124Z\",\"boostedAt\":\"2026-10-31T16:09:04.120Z\",\"region\":{\"name\":\"보라동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-31T16:04:28.003Z\",\"boostedAt\":\"2026-10-31T16:04:28.002Z\",\"region\":{\"name\":\"감일동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-31T13:58:17.138Z\",\"boostedAt\":\"2026-10-31T13:58:17.137Z\",\"region\":{\"name\":\"석수1동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-10-31T15:54:14.226Z\",\"boostedAt\":\"2026-10-31T15:54:14.223Z\",\"region\":{\"name\":\"대천1동\"},\"category\":null,\"contentCoo"
+          "createdAt\":\"2026-10-31T15:26:51.644Z\",\"boostedAt\":\"2026-10-31T15:26:51.643Z\",\"region\":{\"name\":\"장흥면\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
           "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":261,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성노트북 15인치\",\"description\":\"삼성노",
@@ -137,9 +137,9 @@
         ]
       }
     },
-    "searchUniqueListings": 1324,
+    "searchUniqueListings": 1340,
     "globalUniqueListings": 524,
-    "duplicateListingsRemoved": 800,
+    "duplicateListingsRemoved": 816,
     "detailQueueStart": 7,
     "freshDetailTasks": 7,
     "backlogDetailTasks": 0,
@@ -154,7 +154,7 @@
     "postedAtResolvedFromSearch": 524,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 86342,
+    "scanDurationMs": 87549,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +166,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 285,
-        "durationMs": 12042
+        "uniqueListings": 289,
+        "durationMs": 12285
       },
       {
         "city": "의왕시",
@@ -182,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 383,
-        "durationMs": 25273
+        "uniqueListings": 388,
+        "durationMs": 25680
       },
       {
         "city": "안양시",
@@ -200,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 399,
-        "durationMs": 34846
+        "uniqueListings": 406,
+        "durationMs": 34903
       },
       {
         "city": "과천시",
@@ -213,7 +213,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 257,
-        "durationMs": 5938
+        "durationMs": 6441
       }
     ],
     "finalCandidateCount": 0,
@@ -222,7 +222,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 86349
+    "durationMs": 87555
   },
   "candidates": []
 }
