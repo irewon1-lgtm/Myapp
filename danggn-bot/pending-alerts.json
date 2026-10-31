@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-31T09:32:08.729261Z",
+  "updatedAt": "2026-10-31T10:12:11.786116Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -12180,9 +12180,9 @@
     "f7wm5u1h3qmp": {
       "id": "f7wm5u1h3qmp",
       "title": "Apple MacBook Air 13인치 (2017) 풀박스",
-      "price": 300000,
-      "previousPrice": null,
-      "changeType": "new",
+      "price": 230000,
+      "previousPrice": 300000,
+      "changeType": "price_drop",
       "city": "군포시",
       "location": "도마교동",
       "cpuHint": null,
@@ -12200,7 +12200,7 @@
       "postedAt": "2026-10-29T07:48:10.723Z",
       "url": "https://www.daangn.com/kr/buy-sell/apple-macbook-air-13%EC%9D%B8%EC%B9%98-2017-%ED%92%80%EB%B0%95%EC%8A%A4-f7wm5u1h3qmp/",
       "firstAlertedAt": "2026-10-29T07:52:10.514988Z",
-      "lastCandidateAt": "2026-10-29T07:52:10.514988Z"
+      "lastCandidateAt": "2026-10-31T10:12:11.786116Z"
     },
     "76yaeinxijuy": {
       "id": "76yaeinxijuy",
@@ -13226,6 +13226,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-1650ti-24gb-1-25tb-%EC%95%84%EC%9D%B4%EB%94%94%EC%96%B4%ED%8C%A8%EB%93%9C-%EA%B2%8C%EC%9D%B4%EB%B0%8D3-dkpry7ndyiax/",
       "firstAlertedAt": "2026-10-31T08:12:06.161014Z",
       "lastCandidateAt": "2026-10-31T08:12:06.161014Z"
+    },
+    "vy5i81irs33v": {
+      "id": "vy5i81irs33v",
+      "title": "갤럭시북 5프로 U7 루나레이크 32gb 1tb",
+      "price": 1900000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "과천시",
+      "location": "갈현동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 32,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "32gb",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-31T10:01:25.745Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%81-5%ED%94%84%EB%A1%9C-u7-%EB%A3%A8%EB%82%98%EB%A0%88%EC%9D%B4%ED%81%AC-32gb-1tb-vy5i81irs33v/",
+      "firstAlertedAt": "2026-10-31T10:12:11.786116Z",
+      "lastCandidateAt": "2026-10-31T10:12:11.786116Z"
     }
   }
 }
