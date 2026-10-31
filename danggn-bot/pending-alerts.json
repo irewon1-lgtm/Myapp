@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-31T02:42:04.894059Z",
+  "updatedAt": "2026-10-31T03:07:50.543146Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -13001,6 +13001,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EA%B8%B0%EA%B0%80%EB%B0%94%EC%9D%B4%ED%8A%B8-aorus-17g-yd-%ED%92%80%EB%B0%95%EC%8A%A4-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-i7-11800h-rtx3080-32gb-xtt5neunqdjm/",
       "firstAlertedAt": "2026-10-31T02:42:04.894059Z",
       "lastCandidateAt": "2026-10-31T02:42:04.894059Z"
+    },
+    "yd5aeqzysdd5": {
+      "id": "yd5aeqzysdd5",
+      "title": "DELL Latitude 5520 15인치 비즈니스 사무용 노트북 판매합니다.",
+      "price": 420000,
+      "previousPrice": 450000,
+      "changeType": "price_drop",
+      "city": "안양시",
+      "location": "안양3동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "RAM: 16GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-01T05:24:33.138Z",
+      "url": "https://www.daangn.com/kr/buy-sell/dell-latitude-5520-15%EC%9D%B8%EC%B9%98-%EB%B9%84%EC%A6%88%EB%8B%88%EC%8A%A4-%EC%82%AC%EB%AC%B4%EC%9A%A9-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-yd5aeqzysdd5/",
+      "firstAlertedAt": "2026-10-31T03:07:50.543146Z",
+      "lastCandidateAt": "2026-10-31T03:07:50.543146Z"
     }
   }
 }
