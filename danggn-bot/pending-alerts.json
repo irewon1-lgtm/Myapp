@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-31T03:42:08.052565Z",
+  "updatedAt": "2026-10-31T04:22:08.233162Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -2005,9 +2005,9 @@
     "qd5ikj5qid44": {
       "id": "qd5ikj5qid44",
       "title": "Hp omen16 ultra7/5060/24gb/1tb",
-      "price": 1800000,
-      "previousPrice": null,
-      "changeType": "new",
+      "price": 1700000,
+      "previousPrice": 1800000,
+      "changeType": "price_drop",
       "city": "안양시",
       "location": "갈산동",
       "cpuHint": null,
@@ -2025,7 +2025,7 @@
       "postedAt": "2026-10-08T08:58:55.228Z",
       "url": "https://www.daangn.com/kr/buy-sell/hp-omen16-ultra7-5060-24gb-1tb-qd5ikj5qid44/",
       "firstAlertedAt": "2026-10-08T09:00:15.297344Z",
-      "lastCandidateAt": "2026-10-08T09:00:15.297344Z"
+      "lastCandidateAt": "2026-10-31T04:22:08.233162Z"
     },
     "sv18ajk5k7ff": {
       "id": "sv18ajk5k7ff",
@@ -11679,10 +11679,10 @@
     },
     "mxi7jeueeasb": {
       "id": "mxi7jeueeasb",
-      "title": "Dell Latitude 7400 노트북",
-      "price": 250000,
-      "previousPrice": null,
-      "changeType": "new",
+      "title": "Dell Latitude 7480 노트북",
+      "price": 225000,
+      "previousPrice": 250000,
+      "changeType": "price_drop",
       "city": "안양시",
       "location": "안양동",
       "cpuHint": null,
@@ -11694,13 +11694,13 @@
       "ramEvidence": "16GB RAM",
       "vramEvidence": null,
       "ambiguousMemoryEvidence": null,
-      "storageGB": null,
+      "storageGB": 256,
       "llmCapability": "SPEC_CHECK_REQUIRED",
       "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
       "postedAt": "2026-10-28T05:49:16.770Z",
-      "url": "https://www.daangn.com/kr/buy-sell/dell-latitude-7400-%EB%85%B8%ED%8A%B8%EB%B6%81-mxi7jeueeasb/",
+      "url": "https://www.daangn.com/kr/buy-sell/dell-latitude-7480-%EB%85%B8%ED%8A%B8%EB%B6%81-mxi7jeueeasb/",
       "firstAlertedAt": "2026-10-28T06:22:13.193124Z",
-      "lastCandidateAt": "2026-10-28T06:22:13.193124Z"
+      "lastCandidateAt": "2026-10-31T04:22:08.233162Z"
     },
     "xk4h33212f2k": {
       "id": "xk4h33212f2k",
@@ -13051,6 +13051,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%AF%B8%EA%B0%9C%EB%B4%89-%EB%A7%A5%EB%B6%81%EC%97%90%EC%96%B4-15-16gb-1tb-%EC%8B%A4%EB%B2%84-gvzafy7c5cmg/",
       "firstAlertedAt": "2026-10-31T03:42:08.052565Z",
       "lastCandidateAt": "2026-10-31T03:42:08.052565Z"
+    },
+    "iymotmybwhq9": {
+      "id": "iymotmybwhq9",
+      "title": "LG 그램 노트북 화이트",
+      "price": 900000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "범계동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 256,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-31T03:55:21.544Z",
+      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-iymotmybwhq9/",
+      "firstAlertedAt": "2026-10-31T04:22:08.233162Z",
+      "lastCandidateAt": "2026-10-31T04:22:08.233162Z"
     }
   }
 }
