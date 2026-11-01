@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-01T04:22:26.677Z",
+  "generatedAt": "2026-11-01T05:02:30.455Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -126,7 +126,7 @@
           "createdAt\":\"2026-10-30T03:24:34.121Z\",\"boostedAt\":\"2026-10-30T03:24:34.118Z\",\"region\":{\"name\":\"당정동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-25T02:16:36.872Z\",\"boostedAt\":\"2026-10-31T02:56:30.958Z\",\"region\":{\"name\":\"입북동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-29T03:14:54.905Z\",\"boostedAt\":\"2026-10-31T03:31:26.367Z\",\"region\":{\"name\":\"내손2동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-10-31T23:19:18.916Z\",\"boostedAt\":\"2026-10-31T23:19:18.916Z\",\"region\":{\"name\":\"맹동면\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-10-31T05:53:48.136Z\",\"boostedAt\":\"2026-10-31T05:53:48.131Z\",\"region\":{\"name\":\"당동\"},\"category\":null,\"contentCoord"
         ],
         "scriptHeads": [
           "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":280,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"게이밍 노트북 RTX 3050 Ti 레노버\",\"desc",
@@ -137,24 +137,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1287,
-    "globalUniqueListings": 516,
-    "duplicateListingsRemoved": 771,
-    "detailQueueStart": 13,
-    "freshDetailTasks": 13,
+    "searchUniqueListings": 1387,
+    "globalUniqueListings": 547,
+    "duplicateListingsRemoved": 840,
+    "detailQueueStart": 14,
+    "freshDetailTasks": 14,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 13,
-    "detailSucceeded": 13,
+    "detailRequestsExecuted": 14,
+    "detailSucceeded": 14,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 516,
+    "postedAtResolvedFromSearch": 547,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 2,
-    "scanDurationMs": 96330,
+    "candidateCount": 1,
+    "scanDurationMs": 96344,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +166,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 271,
-        "durationMs": 12726
+        "uniqueListings": 311,
+        "durationMs": 12219
       },
       {
         "city": "의왕시",
@@ -182,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 386,
-        "durationMs": 25917
+        "uniqueListings": 403,
+        "durationMs": 25752
       },
       {
         "city": "안양시",
@@ -200,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 376,
-        "durationMs": 35875
+        "uniqueListings": 417,
+        "durationMs": 35359
       },
       {
         "city": "과천시",
@@ -212,88 +212,53 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 254,
-        "durationMs": 6510
+        "uniqueListings": 256,
+        "durationMs": 6305
       }
     ],
-    "finalCandidateCount": 2,
+    "finalCandidateCount": 1,
     "stateItemCount": 5000,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 96336
+    "durationMs": 96351
   },
   "candidates": [
     {
-      "id": "73gnybjytxhq",
-      "changeType": "new",
-      "previousPrice": null,
-      "price": 159000,
-      "priceDropPercent": null,
-      "city": "의왕시",
-      "location": "학의동",
-      "regionPath": "경기도 의왕시 학의동",
-      "title": "맥북프로 13인치 i7 / RAM 16GB / SSD / 배터리 교체",
-      "modelHint": "맥북프로 13인치 i7 / RAM 16GB / SSD / 배터리 교체",
+      "id": "p75kcuygop9d",
+      "changeType": "price_drop",
+      "previousPrice": 1235000,
+      "price": 1090000,
+      "priceDropPercent": 11.7,
+      "city": "안양시",
+      "location": "안양3동",
+      "regionPath": "경기도 안양시 만안구 안양3동",
+      "title": "SLG 2026 그램 15 노트북 | 구매 2개월 | 2테라 32GB |",
+      "modelHint": "SLG 2026 그램 15 노트북 | 구매 2개월 | 2테라 32GB |",
       "cpuHint": null,
       "cpuBaselinePass": null,
       "gpuHint": null,
       "vramGB": null,
-      "ramGB": 16,
-      "ambiguousMemoryGB": 16,
+      "ramGB": null,
+      "ambiguousMemoryGB": 32,
       "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": "RAM 16GB",
+      "ramEvidence": null,
       "vramEvidence": null,
-      "ambiguousMemoryEvidence": "16GB",
-      "storageGB": 256,
+      "ambiguousMemoryEvidence": "32GB",
+      "storageGB": null,
       "llmCapability": "SPEC_CHECK_REQUIRED",
       "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
       "specConfidence": "needs_review",
-      "postedAt": "2026-11-01T04:09:21.421Z",
-      "boostedAt": "2026-11-01T04:09:21.420Z",
+      "postedAt": "2026-09-28T13:05:27.636Z",
+      "boostedAt": "2026-11-01T04:31:48.261Z",
       "status": "Ongoing",
-      "description": "애플 MacBook Pro 13인치 Early 2011 모델 판매합니다.\n\n기본 사양에서 RAM을 16GB로 업그레이드했고, SSD가 장착되어 있습니다. 배터리도 교체한 이력이 있습니다.\n\n제품 사양\n\n* 모델: MacBook Pro 13-inch, Early 2011\n* CPU: Intel Core i7 2.7GHz\n* RAM: 16GB DDR3\n* 저장장치: SSD (현재 시스템상 256GB 드라이브 2개 표시, 구성 확인 필요)\n* 그래픽: Intel HD Graphics 3000\n* 운영체제: macOS High Sierra 10.13.6\n* 배터리: 교체 이력 있음\n\n인터넷, 문서 작업, 간단한 개발 및 리눅스 설치용으로 활용하기 좋은 구형 맥북입니다.\n\n2011년 제품인 만큼 최신 macOS나 최신 프로그램 사용에는 제약이 있습니다.\n\n연식과 상태를 고려하여 가격 책정했습니다. 중고 제품 특성상 외관과 작동 상태는 현장에서 확인하신 후 거래하시면 됩니다.\n\n관심 있으시면 편하게 채팅 주세요.",
-      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C-13%EC%9D%B8%EC%B9%98-i7-ram-16gb-ssd-%EB%B0%B0%ED%84%B0%EB%A6%AC-%EA%B5%90%EC%B2%B4-73gnybjytxhq/",
+      "description": "LG 2026 그램 15 판매합니다 :)\n2026년 7월 24일 구매했고, 구매한 지 약 2개월 정도 된 제품입니다.\n\n구매 당시 약 200만 원에 구매했습니다.\n\n사용 기간이 짧아서 전체적으로 깔끔한 편이고\n노트북 특성상 가볍고 휴대하기 좋아서\n사무용, 업무용, 대학생 노트북으로 사용하기 좋습니다.\n\n✔ LG 2026 그램 15\n✔ 모델명 : 15U50U-GR5CK\n✔ Windows 11 Home\n✔ 구매일 : 2026.07.24\n✔ 실사용 약 2개월\n✔ 구매가 약 200만 원\n\n사용하면서 생긴 작은 흠집이 살짝 있습니다.\n이 부분은 숨기지 않고 미리 말씀드리며, 현재 위에 보호필름을 부착해둔 상태입니다.\n\n사용하는 데에는 전혀 지장 없습니다.\n\n구매한 지 얼마 되지 않은 제품이라\n오래 사용한 중고 노트북보다는 상태 좋은 제품 찾으시는 분께 추천드립니다.\n판매가 139만 원\n\n구매 의사 있으신 분은 채팅 주세요 :)\n과도한 네고는 어렵지만 빠른 거래 시 어느 정도 협의 가능합니다.",
+      "url": "https://www.daangn.com/kr/buy-sell/slg-2026-%EA%B7%B8%EB%9E%A8-15-%EB%85%B8%ED%8A%B8%EB%B6%81-%EA%B5%AC%EB%A7%A4-2%EA%B0%9C%EC%9B%94-2%ED%85%8C%EB%9D%BC-32gb-p75kcuygop9d/",
       "favoriteCount": 0,
       "chatCount": 0,
-      "sellerName": "JJ",
-      "mannerTemperature": 52.7
-    },
-    {
-      "id": "p7j4psy84owr",
-      "changeType": "price_drop",
-      "previousPrice": 4200000,
-      "price": 4000000,
-      "priceDropPercent": 4.8,
-      "city": "과천시",
-      "location": "별양동",
-      "regionPath": "경기도 과천시 별양동",
-      "title": "ASUS ROG Flow Z13 GPU CPU 통합메모리 64GB 게이밍 노트북",
-      "modelHint": "ASUS ROG Flow Z13 GPU CPU 통합메모리 64GB 게이밍 노트북",
-      "cpuHint": null,
-      "cpuBaselinePass": null,
-      "gpuHint": "RTX 3050",
-      "vramGB": null,
-      "ramGB": 64,
-      "ambiguousMemoryGB": 64,
-      "hardwareReviewStatus": "PASS_RAM",
-      "ramEvidence": "통합메모리 64GB",
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": "64GB",
-      "storageGB": null,
-      "llmCapability": "WORK_DEV_RAM32",
-      "llmReason": "RAM 32GB 이상 확정 후보",
-      "specConfidence": "confirmed",
-      "postedAt": "2026-10-30T07:07:42.016Z",
-      "boostedAt": "2026-10-30T07:07:42.012Z",
-      "status": "Ongoing",
-      "description": "안녕하세요! 고사양 게이밍 노트북 ASUS ROG Flow Z13 판매합니다.\n\n제가 맥북쓰면서 이거 게임용으로 샀는데, 게임을 이제 안함으로서 거의 새상품 판매합니다. 스타2 풀옵으로 화면 180헤르츠까지 돌아갑니다.\n\n13.4인치 디스플레이에 AMD RYZEN AI MAX+ 프로세서와 통합메모리 64GB RAM, 1테라 저장공간을 갖추고 있습니다. RTX 3050 그래픽 카드입니다\n\n사진에서 보이는 것처럼 깔끔한 상태를 유지하고 있습니다. 고성능 노트북으로 다양한 작업을 원활하게 처리해보세요.\n\n쿠팡에서 486만원에 팔고있는데 420에 팔아봅니다.",
-      "url": "https://www.daangn.com/kr/buy-sell/asus-rog-flow-z13-gpu-cpu-%ED%86%B5%ED%95%A9%EB%A9%94%EB%AA%A8%EB%A6%AC-64gb-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-p7j4psy84owr/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "비미",
-      "mannerTemperature": 37.3
+      "sellerName": "정직한직장인",
+      "mannerTemperature": 37.9
     }
   ]
 }
