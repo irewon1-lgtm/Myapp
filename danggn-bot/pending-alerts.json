@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-01T11:22:28.930231Z",
+  "updatedAt": "2026-11-01T12:02:36.663673Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -13726,6 +13726,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%B3%B4%EC%A6%9D-%EB%A7%A5%EB%B8%8D-%EC%97%90%EC%96%B4-15%EC%9D%B8%EC%B9%98-m4-24gb-512gb-%ED%92%80%EB%B0%95%EC%8A%A4-%EB%AF%B8%EB%93%9C%EB%82%98%EC%9D%B4%ED%8A%B8-%EC%BC%80%EC%9D%B4%EC%8A%A4-gn1iktq1gine/",
       "firstAlertedAt": "2026-11-01T11:22:28.930231Z",
       "lastCandidateAt": "2026-11-01T11:22:28.930231Z"
+    },
+    "pk9i4ie77mmb": {
+      "id": "pk9i4ie77mmb",
+      "title": "삼성 노트북 판매",
+      "price": 170000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "안양3동",
+      "cpuHint": "i7-4700Hq",
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "램16gb",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-01T11:45:02.748Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4-pk9i4ie77mmb/",
+      "firstAlertedAt": "2026-11-01T12:02:36.663673Z",
+      "lastCandidateAt": "2026-11-01T12:02:36.663673Z"
     }
   }
 }
