@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-01T00:02:31.484620Z",
+  "updatedAt": "2026-11-01T00:42:27.359233Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -13326,6 +13326,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/apple-%EB%A7%A5%EB%B6%81-%EC%97%90%EC%96%B4-13-m5-%EC%8B%A4%EB%B2%84-16gb-1tb-w7hva3spqb9h/",
       "firstAlertedAt": "2026-10-31T17:31:54.055541Z",
       "lastCandidateAt": "2026-10-31T17:31:54.055541Z"
+    },
+    "gmk54htxs6de": {
+      "id": "gmk54htxs6de",
+      "title": "레노버 씽크패드 E15 i7 / 램 16GB / SSD 240GB + 1TB",
+      "price": 350000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "안양동",
+      "cpuHint": null,
+      "gpuHint": "Radeon RX 640",
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "램 16GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": 1024,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-01T00:29:54.934Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%94%BD%ED%81%AC%ED%8C%A8%EB%93%9C-e15-i7-%EB%9E%A8-16gb-ssd-240gb-1tb-gmk54htxs6de/",
+      "firstAlertedAt": "2026-11-01T00:42:27.359233Z",
+      "lastCandidateAt": "2026-11-01T00:42:27.359233Z"
+    },
+    "dhs139hwtf2r": {
+      "id": "dhs139hwtf2r",
+      "title": "삼성 갤럭시북2 프로 노트북(i7-12세대)",
+      "price": 750000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "산본1동",
+      "cpuHint": "i7-1260p",
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "RAM : 16gb",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-01T00:41:11.608Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%812-%ED%94%84%EB%A1%9C-%EB%85%B8%ED%8A%B8%EB%B6%81-i7-12%EC%84%B8%EB%8C%80-dhs139hwtf2r/",
+      "firstAlertedAt": "2026-11-01T00:42:27.359233Z",
+      "lastCandidateAt": "2026-11-01T00:42:27.359233Z"
     }
   }
 }
