@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-01T12:02:36.663673Z",
+  "updatedAt": "2026-11-01T12:42:29.032773Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -13751,6 +13751,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4-pk9i4ie77mmb/",
       "firstAlertedAt": "2026-11-01T12:02:36.663673Z",
       "lastCandidateAt": "2026-11-01T12:02:36.663673Z"
+    },
+    "hs39t3jmdndt": {
+      "id": "hs39t3jmdndt",
+      "title": "레노버 요가 슬림 7 카본 노트북",
+      "price": 570000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "호계동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-01T12:07:59.199Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%9A%94%EA%B0%80-%EC%8A%AC%EB%A6%BC-7-%EC%B9%B4%EB%B3%B8-%EB%85%B8%ED%8A%B8%EB%B6%81-hs39t3jmdndt/",
+      "firstAlertedAt": "2026-11-01T12:42:29.032773Z",
+      "lastCandidateAt": "2026-11-01T12:42:29.032773Z"
+    },
+    "9edqcucayrbf": {
+      "id": "9edqcucayrbf",
+      "title": "삼성 갤럭시북4 노트북 램16Gb 인텔i5 / 256Gb 팝니다.",
+      "price": 690000,
+      "previousPrice": 750000,
+      "changeType": "price_drop",
+      "city": "안양시",
+      "location": "관양1동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "램16Gb",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-30T11:04:15.963Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%814-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%9E%A816gb-%EC%9D%B8%ED%85%94i5-256gb-%ED%8C%9D%EB%8B%88%EB%8B%A4-9edqcucayrbf/",
+      "firstAlertedAt": "2026-11-01T12:42:29.032773Z",
+      "lastCandidateAt": "2026-11-01T12:42:29.032773Z"
     }
   }
 }
