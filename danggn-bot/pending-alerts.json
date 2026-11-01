@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-01T03:42:42.724696Z",
+  "updatedAt": "2026-11-01T04:22:26.732384Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -12704,28 +12704,28 @@
     },
     "p7j4psy84owr": {
       "id": "p7j4psy84owr",
-      "title": "ASUS ROG Flow Z13 게이밍 노트북",
-      "price": 4200000,
-      "previousPrice": null,
-      "changeType": "new",
+      "title": "ASUS ROG Flow Z13 GPU CPU 통합메모리 64GB 게이밍 노트북",
+      "price": 4000000,
+      "previousPrice": 4200000,
+      "changeType": "price_drop",
       "city": "과천시",
       "location": "별양동",
       "cpuHint": null,
       "gpuHint": "RTX 3050",
       "vramGB": null,
       "ramGB": 64,
-      "ambiguousMemoryGB": null,
+      "ambiguousMemoryGB": 64,
       "hardwareReviewStatus": "PASS_RAM",
-      "ramEvidence": "64GB RAM",
+      "ramEvidence": "통합메모리 64GB",
       "vramEvidence": null,
-      "ambiguousMemoryEvidence": null,
+      "ambiguousMemoryEvidence": "64GB",
       "storageGB": null,
       "llmCapability": "WORK_DEV_RAM32",
       "llmReason": "RAM 32GB 이상 확정 후보",
       "postedAt": "2026-10-30T07:07:42.016Z",
-      "url": "https://www.daangn.com/kr/buy-sell/asus-rog-flow-z13-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-p7j4psy84owr/",
+      "url": "https://www.daangn.com/kr/buy-sell/asus-rog-flow-z13-gpu-cpu-%ED%86%B5%ED%95%A9%EB%A9%94%EB%AA%A8%EB%A6%AC-64gb-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-p7j4psy84owr/",
       "firstAlertedAt": "2026-10-30T07:22:11.410500Z",
-      "lastCandidateAt": "2026-10-30T07:22:11.410500Z"
+      "lastCandidateAt": "2026-11-01T04:22:26.732384Z"
     },
     "nnyjvk7cwzqv": {
       "id": "nnyjvk7cwzqv",
@@ -13426,6 +13426,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-rtx-3050-ti-%EB%A0%88%EB%85%B8%EB%B2%84-tvs3dvi6k7em/",
       "firstAlertedAt": "2026-11-01T03:42:42.724696Z",
       "lastCandidateAt": "2026-11-01T03:42:42.724696Z"
+    },
+    "73gnybjytxhq": {
+      "id": "73gnybjytxhq",
+      "title": "맥북프로 13인치 i7 / RAM 16GB / SSD / 배터리 교체",
+      "price": 159000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "의왕시",
+      "location": "학의동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "RAM 16GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": 256,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-01T04:09:21.421Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C-13%EC%9D%B8%EC%B9%98-i7-ram-16gb-ssd-%EB%B0%B0%ED%84%B0%EB%A6%AC-%EA%B5%90%EC%B2%B4-73gnybjytxhq/",
+      "firstAlertedAt": "2026-11-01T04:22:26.732384Z",
+      "lastCandidateAt": "2026-11-01T04:22:26.732384Z"
     }
   }
 }
