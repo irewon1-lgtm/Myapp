@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-01T23:52:15.452Z",
+  "generatedAt": "2026-11-01T23:56:08.756Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,28 +55,6 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%8B%A4%EB%B2%84-%EB%84%A4%EA%B3%A0%EA%B0%80%EB%8A%A5-hqsnzj7dcigq/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%8B%A4%EB%B2%84-%EB%84%A4%EA%B3%A0%EA%B0%80%EB%8A%A5-hqsnzj7dcigq/",
-            "title": "삼성 노트북  실버(네고가능)",
-            "content": "삼성 노트북 실버 판매해요. 윈도우 10 설치되어 있어 바로 사용 가능해요. 생활기스는 조금있고 스티커 붙여놓은거는 다이소에서 리무버 사서 지우고 쓰시면 됩니다.구매하시면 파우치도 드려요",
-            "price": "154000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/19309c52-89ea-460b-b3eb-7359f983111f.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-25T14:20:32.517Z",
-            "boostedAt": "2026-11-01T22:51:23.626Z",
-            "region": {
-              "name": "정왕본동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 37.3405242,
-                "longitude": 126.7316319
-              }
-            ]
-          },
-          {
             "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1%EB%85%B8%ED%8A%B8%EB%B6%81-15%EC%9D%B8%EC%B9%98-f68byi6sh73h/",
             "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1%EB%85%B8%ED%8A%B8%EB%B6%81-15%EC%9D%B8%EC%B9%98-f68byi6sh73h/",
             "title": "삼성노트북 15인치",
@@ -95,6 +73,28 @@
               {
                 "latitude": 36.7530143,
                 "longitude": 127.0300285
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-15%EC%9D%B8%EC%B9%98-%ED%8C%9D%EB%8B%88%EB%8B%A4-rr18br7rfnkh/",
+            "href": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-15%EC%9D%B8%EC%B9%98-%ED%8C%9D%EB%8B%88%EB%8B%A4-rr18br7rfnkh/",
+            "title": "LG 그램 노트북 (15인치) 팝니다",
+            "content": "LG 그램 노트북 판매해요. 15인치 입니다\n잘안써서 팔구요 사시면 충전기 버티컬 노트북까지 다드립니다 필요하신분 가져가세요~! 뒷면에 부품하자있음\n계속 사용하려면 충전기를 이용해야 가능합니다\n모니터 액정안깨지고 상태는 좋습니다\nCPU : i5-6200U\nRAM : 8GB\nSSD : 256GB\nOS : WIN 11 Enterprise",
+            "price": "150000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/17935143791556648124467152c65d33741e03236789bdf18b08eec27b5de340e8401d1f25cd00.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-11-01T06:27:52.307Z",
+            "boostedAt": "2026-11-01T06:27:52.304Z",
+            "region": {
+              "name": "송천2동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 35.865765,
+                "longitude": 127.1127371
               }
             ]
           },
@@ -122,14 +122,14 @@
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-10-25T14:20:32.517Z\",\"boostedAt\":\"2026-11-01T22:51:23.626Z\",\"region\":{\"name\":\"정왕본동\"},\"category\":null,\"contentCoo",
           "createdAt\":\"2026-11-01T23:09:24.617Z\",\"boostedAt\":\"2026-11-01T23:09:24.617Z\",\"region\":{\"name\":\"온양6동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-10-28T03:10:33.859Z\",\"boostedAt\":\"2026-11-01T23:01:14.014Z\",\"region\":{\"name\":\"파장동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-11-01T06:27:52.307Z\",\"boostedAt\":\"2026-11-01T06:27:52.304Z\",\"region\":{\"name\":\"송천2동\"},\"category\":null,\"contentCoo",
+          "createdAt\":\"2026-10-28T03:10:33.859Z\",\"boostedAt\":\"2026-11-01T23:01:14.014Z\",\"region\":{\"name\":\"파장동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-10-25T14:20:32.517Z\",\"boostedAt\":\"2026-11-01T22:51:23.626Z\",\"region\":{\"name\":\"정왕본동\"},\"category\":null,\"contentCoo",
           "createdAt\":\"2026-10-24T16:15:26.725Z\",\"boostedAt\":\"2026-11-01T22:39:29.047Z\",\"region\":{\"name\":\"대관령면\"},\"category\":null,\"contentCoo"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":260,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 노트북  실버(네고가능)\",\"description",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":260,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성노트북 15인치\",\"description\":\"삼성노",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -137,24 +137,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1350,
-    "globalUniqueListings": 577,
-    "duplicateListingsRemoved": 773,
-    "detailQueueStart": 7,
-    "freshDetailTasks": 7,
+    "searchUniqueListings": 1309,
+    "globalUniqueListings": 571,
+    "duplicateListingsRemoved": 738,
+    "detailQueueStart": 1,
+    "freshDetailTasks": 1,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 7,
-    "detailSucceeded": 7,
+    "detailRequestsExecuted": 1,
+    "detailSucceeded": 1,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 577,
+    "postedAtResolvedFromSearch": 571,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 88166,
+    "scanDurationMs": 80134,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +166,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 288,
-        "durationMs": 12116
+        "uniqueListings": 290,
+        "durationMs": 11821
       },
       {
         "city": "의왕시",
@@ -182,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 388,
-        "durationMs": 25823
+        "uniqueListings": 387,
+        "durationMs": 25739
       },
       {
         "city": "안양시",
@@ -200,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 417,
-        "durationMs": 35367
+        "uniqueListings": 375,
+        "durationMs": 35283
       },
       {
         "city": "과천시",
@@ -213,7 +213,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 257,
-        "durationMs": 6574
+        "durationMs": 6447
       }
     ],
     "finalCandidateCount": 0,
@@ -222,7 +222,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 88179
+    "durationMs": 80141
   },
   "candidates": []
 }
