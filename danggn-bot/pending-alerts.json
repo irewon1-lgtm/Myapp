@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-01T05:42:28.674183Z",
+  "updatedAt": "2026-11-01T06:22:29.119813Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -13476,6 +13476,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/hp-%EC%98%B4%EB%8B%88%EB%B6%81-ultra-flip-14%EC%9D%B8%EC%B9%98-%EC%BD%94%EC%96%B4ultra7-1tb-%EB%9E%A832gb-win11-home-%ED%8C%90%EB%A7%A4-v46ma46e5gpf/",
       "firstAlertedAt": "2026-11-01T05:42:28.674183Z",
       "lastCandidateAt": "2026-11-01T05:42:28.674183Z"
+    },
+    "qchz446e1kca": {
+      "id": "qchz446e1kca",
+      "title": "삼성 노트북 SENS p480",
+      "price": 30000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "호계1동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 64,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "64 기가",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-01T06:06:24.865Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-sens-p480-qchz446e1kca/",
+      "firstAlertedAt": "2026-11-01T06:22:29.119813Z",
+      "lastCandidateAt": "2026-11-01T06:22:29.119813Z"
     }
   }
 }
