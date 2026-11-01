@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-01T15:52:22.179481Z",
+  "updatedAt": "2026-11-01T16:13:59.612877Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -13851,6 +13851,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A5%98-15%EC%9D%B8%EC%B9%98-i9-16gb-512gb-2019%EB%85%84%ED%98%95-%ED%84%B0%EC%B9%98%EB%B0%94-sx5uudnj2d5d/",
       "firstAlertedAt": "2026-11-01T13:22:30.213857Z",
       "lastCandidateAt": "2026-11-01T13:22:30.213857Z"
+    },
+    "1fxxf3cir5t1": {
+      "id": "1fxxf3cir5t1",
+      "title": "🔥 ASUS TUF Gaming F16 판매합니다  i7 14650hx RTX 5060 32GB 512GB",
+      "price": 1850000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "과천시",
+      "location": "과천동",
+      "cpuHint": "i7-14650HX",
+      "gpuHint": "RTX 5060",
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 32,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "32GB",
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-01T16:07:05.164Z",
+      "url": "https://www.daangn.com/kr/buy-sell/asus-tuf-gaming-f16-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-i7-14650hx-rtx-5060-32gb-512gb-1fxxf3cir5t1/",
+      "firstAlertedAt": "2026-11-01T16:13:59.612877Z",
+      "lastCandidateAt": "2026-11-01T16:13:59.612877Z"
     }
   }
 }
