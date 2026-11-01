@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-01T10:02:30.978Z",
+  "generatedAt": "2026-11-01T10:42:31.148Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -125,8 +125,8 @@
           "createdAt\":\"2026-11-01T07:50:36.303Z\",\"boostedAt\":\"2026-11-01T07:50:36.303Z\",\"region\":{\"name\":\"정자동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-11-01T06:29:02.121Z\",\"boostedAt\":\"2026-11-01T06:29:02.119Z\",\"region\":{\"name\":\"평촌동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-30T03:24:34.121Z\",\"boostedAt\":\"2026-10-30T03:24:34.118Z\",\"region\":{\"name\":\"당정동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-01T09:57:39.727Z\",\"boostedAt\":\"2026-11-01T09:57:39.724Z\",\"region\":{\"name\":\"관양동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-10-25T02:16:36.872Z\",\"boostedAt\":\"2026-10-31T02:56:30.958Z\",\"region\":{\"name\":\"입북동\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-10-25T02:16:36.872Z\",\"boostedAt\":\"2026-10-31T02:56:30.958Z\",\"region\":{\"name\":\"입북동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-10-29T03:14:54.905Z\",\"boostedAt\":\"2026-10-31T03:31:26.367Z\",\"region\":{\"name\":\"내손2동\"},\"category\":null,\"contentCoo"
         ],
         "scriptHeads": [
           "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":280,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"기가바이트 A5 라이젠9/32GB/1TB/RTX3070",
@@ -137,24 +137,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1394,
-    "globalUniqueListings": 541,
-    "duplicateListingsRemoved": 853,
-    "detailQueueStart": 15,
-    "freshDetailTasks": 15,
+    "searchUniqueListings": 1293,
+    "globalUniqueListings": 514,
+    "duplicateListingsRemoved": 779,
+    "detailQueueStart": 18,
+    "freshDetailTasks": 18,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 15,
-    "detailSucceeded": 15,
+    "detailRequestsExecuted": 18,
+    "detailSucceeded": 18,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 541,
+    "postedAtResolvedFromSearch": 514,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 2,
-    "scanDurationMs": 97766,
+    "candidateCount": 0,
+    "scanDurationMs": 100763,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +166,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 318,
-        "durationMs": 12682
+        "uniqueListings": 273,
+        "durationMs": 12633
       },
       {
         "city": "의왕시",
@@ -182,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 404,
-        "durationMs": 25448
+        "uniqueListings": 389,
+        "durationMs": 25763
       },
       {
         "city": "안양시",
@@ -200,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 417,
-        "durationMs": 35469
+        "uniqueListings": 375,
+        "durationMs": 34867
       },
       {
         "city": "과천시",
@@ -212,88 +212,17 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 255,
-        "durationMs": 6351
+        "uniqueListings": 256,
+        "durationMs": 6045
       }
     ],
-    "finalCandidateCount": 2,
+    "finalCandidateCount": 0,
     "stateItemCount": 5000,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 97774
+    "durationMs": 100770
   },
-  "candidates": [
-    {
-      "id": "h3kszcpwg5ds",
-      "changeType": "new",
-      "previousPrice": null,
-      "price": 600000,
-      "priceDropPercent": null,
-      "city": "안양시",
-      "location": "관양동",
-      "regionPath": "경기도 안양시 동안구 관양동",
-      "title": "​[구함] 롤 / 피파용 게이밍 노트북 구합니다 (RTX 3050급 이상)",
-      "modelHint": "​[구함] 롤 / 피파용 게이밍 노트북 구합니다 (RTX 3050급 이상)",
-      "cpuHint": null,
-      "cpuBaselinePass": null,
-      "gpuHint": "RTX 3050",
-      "vramGB": null,
-      "ramGB": 16,
-      "ambiguousMemoryGB": null,
-      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": "램: 16GB",
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": null,
-      "storageGB": null,
-      "llmCapability": "SPEC_CHECK_REQUIRED",
-      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
-      "specConfidence": "needs_review",
-      "postedAt": "2026-11-01T09:57:39.727Z",
-      "boostedAt": "2026-11-01T09:57:39.724Z",
-      "status": "Ongoing",
-      "description": "​희망 사양:\n​CPU: 인텔 12세대 i5 이상 또는 라이젠 5000/6000번대 이상\n​그래픽: RTX 3050, 3050 Ti, 4050 등\n​램: 16GB 우대 (8GB도 네고 가능하면 환영)",
-      "url": "https://www.daangn.com/kr/buy-sell/%EA%B5%AC%ED%95%A8-%EB%A1%A4-%ED%94%BC%ED%8C%8C%EC%9A%A9-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%EA%B5%AC%ED%95%A9%EB%8B%88%EB%8B%A4-rtx-3050%EA%B8%89-%EC%9D%B4%EC%83%81-h3kszcpwg5ds/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "딜레마사전",
-      "mannerTemperature": 40.8
-    },
-    {
-      "id": "x19jeb5gkcpx",
-      "changeType": "price_drop",
-      "previousPrice": 500000,
-      "price": 490000,
-      "priceDropPercent": 2,
-      "city": "안양시",
-      "location": "석수동",
-      "regionPath": "경기도 안양시 만안구 석수동",
-      "title": "LG그램 14Z95N 싸게팝니다.",
-      "modelHint": "LG그램 14Z95N 싸게팝니다.",
-      "cpuHint": null,
-      "cpuBaselinePass": null,
-      "gpuHint": null,
-      "vramGB": null,
-      "ramGB": 16,
-      "ambiguousMemoryGB": null,
-      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": "RAM: 16GB",
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": null,
-      "storageGB": 256,
-      "llmCapability": "SPEC_CHECK_REQUIRED",
-      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
-      "specConfidence": "needs_review",
-      "postedAt": "2026-10-26T23:24:28.811Z",
-      "boostedAt": "2026-11-01T09:42:57.299Z",
-      "status": "Ongoing",
-      "description": "LG 노트북 판매합니다 😊\n\n📌 제품 사양\n\n브랜드: LG\nCPU: Intel Core i5-1135G7 (11세대)\nRAM: 16GB\n저장공간: 238GB (256GB급 SSD)\n그래픽: Intel Iris Xe Graphics\n운영체제: Windows 11 Pro\n배터리: 리튬이온 배터리\n🔋 배터리 상태\n\n최초 설계 용량: 72,010mWh\n현재 완충 용량: 58,010mWh\n배터리 성능 약 80.6%\n인터넷, 문서 작업, 온라인 강의, 사무용 등으로 사용하기 좋은 노트북입니다.",
-      "url": "https://www.daangn.com/kr/buy-sell/lg%EA%B7%B8%EB%9E%A8-14z95n-%EC%8B%B8%EA%B2%8C%ED%8C%9D%EB%8B%88%EB%8B%A4-x19jeb5gkcpx/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "야옹이",
-      "mannerTemperature": 36.5
-    }
-  ]
+  "candidates": []
 }
