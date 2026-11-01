@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-01T12:42:29.032773Z",
+  "updatedAt": "2026-11-01T13:22:30.213857Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -13801,6 +13801,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%814-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%9E%A816gb-%EC%9D%B8%ED%85%94i5-256gb-%ED%8C%9D%EB%8B%88%EB%8B%A4-9edqcucayrbf/",
       "firstAlertedAt": "2026-11-01T12:42:29.032773Z",
       "lastCandidateAt": "2026-11-01T12:42:29.032773Z"
+    },
+    "yodrwy8ofmza": {
+      "id": "yodrwy8ofmza",
+      "title": "마이크로 소프트 서피스 랩탑 5 S급",
+      "price": 690000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "명학동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "램 - 16GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-01T12:57:42.279Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%88%EC%9D%B4%ED%81%AC%EB%A1%9C-%EC%86%8C%ED%94%84%ED%8A%B8-%EC%84%9C%ED%94%BC%EC%8A%A4-%EB%9E%A9%ED%83%91-5-s%EA%B8%89-yodrwy8ofmza/",
+      "firstAlertedAt": "2026-11-01T13:22:30.213857Z",
+      "lastCandidateAt": "2026-11-01T13:22:30.213857Z"
+    },
+    "sx5uudnj2d5d": {
+      "id": "sx5uudnj2d5d",
+      "title": "맥북 프류 15인치 i9 16GB/ 512GB  2019년형 터치바",
+      "price": 550000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "호현동",
+      "cpuHint": null,
+      "gpuHint": "Radeon Pro 560X 4GB",
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "메모리: 16GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-01T13:05:35.025Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A5%98-15%EC%9D%B8%EC%B9%98-i9-16gb-512gb-2019%EB%85%84%ED%98%95-%ED%84%B0%EC%B9%98%EB%B0%94-sx5uudnj2d5d/",
+      "firstAlertedAt": "2026-11-01T13:22:30.213857Z",
+      "lastCandidateAt": "2026-11-01T13:22:30.213857Z"
     }
   }
 }
