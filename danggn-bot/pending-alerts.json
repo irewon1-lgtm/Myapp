@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-02T03:12:27.784478Z",
+  "updatedAt": "2026-11-02T03:52:28.115221Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -8255,9 +8255,9 @@
     "6yx7d7dmweew": {
       "id": "6yx7d7dmweew",
       "title": "LG 그램 14인치 (i7 12세대 / 16GB / SSD 512GB / 옵티컬 블랙)",
-      "price": 850000,
-      "previousPrice": null,
-      "changeType": "new",
+      "price": 800000,
+      "previousPrice": 850000,
+      "changeType": "price_drop",
       "city": "군포시",
       "location": "군포2동",
       "cpuHint": null,
@@ -8275,7 +8275,7 @@
       "postedAt": "2026-10-19T06:34:24.159Z",
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-14%EC%9D%B8%EC%B9%98-i7-12%EC%84%B8%EB%8C%80-16gb-ssd-512gb-%EC%98%B5%ED%8B%B0%EC%BB%AC-%EB%B8%94%EB%9E%99-6yx7d7dmweew/",
       "firstAlertedAt": "2026-10-19T06:52:27.468058Z",
-      "lastCandidateAt": "2026-10-19T06:52:27.468058Z"
+      "lastCandidateAt": "2026-11-02T03:52:28.115221Z"
     },
     "uww2idndub4k": {
       "id": "uww2idndub4k",
@@ -13951,6 +13951,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%ED%94%84%EB%A1%9C-ai-16-%EC%97%90%EC%84%BC%EC%8A%A4-%ED%99%94%EC%9D%B4%ED%8A%B8-%EB%AF%B8%EA%B0%9C%EB%B4%89%EC%83%88%EC%83%81%ED%92%88-njiuiikggjgf/",
       "firstAlertedAt": "2026-11-02T01:52:25.990093Z",
       "lastCandidateAt": "2026-11-02T01:52:25.990093Z"
+    },
+    "5aq5uorqgdax": {
+      "id": "5aq5uorqgdax",
+      "title": "맥북 프로 16인치 M2 Pro 32GB/512GB (A2780) 판매합니다.",
+      "price": 2000000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "안양5동",
+      "cpuHint": "Apple M2 Pro",
+      "gpuHint": "Apple M2 Pro",
+      "vramGB": null,
+      "ramGB": 32,
+      "ambiguousMemoryGB": 32,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "메모리: 32GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "32GB",
+      "storageGB": 512,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "postedAt": "2026-11-02T03:18:10.440Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-16%EC%9D%B8%EC%B9%98-m2-pro-32gb-512gb-a2780-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-5aq5uorqgdax/",
+      "firstAlertedAt": "2026-11-02T03:52:28.115221Z",
+      "lastCandidateAt": "2026-11-02T03:52:28.115221Z"
     }
   }
 }
