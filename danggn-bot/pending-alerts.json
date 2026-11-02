@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-02T12:32:30.536371Z",
+  "updatedAt": "2026-11-02T13:12:22.664601Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -10205,8 +10205,8 @@
     "2avigqms8wxu": {
       "id": "2avigqms8wxu",
       "title": "한성 보스몬스터 I9 13세대 RTX 4060 게이밍 노트북 팝니다",
-      "price": 1100000,
-      "previousPrice": 1150000,
+      "price": 1045000,
+      "previousPrice": 1100000,
       "changeType": "price_drop",
       "city": "군포시",
       "location": "군포1동",
@@ -10225,13 +10225,13 @@
       "postedAt": "2026-08-29T05:57:42.751Z",
       "url": "https://www.daangn.com/kr/buy-sell/%ED%95%9C%EC%84%B1-%EB%B3%B4%EC%8A%A4%EB%AA%AC%EC%8A%A4%ED%84%B0-i9-13%EC%84%B8%EB%8C%80-rtx-4060-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%9D%EB%8B%88%EB%8B%A4-2avigqms8wxu/",
       "firstAlertedAt": "2026-10-24T19:58:32.329796Z",
-      "lastCandidateAt": "2026-10-24T19:58:32.329796Z"
+      "lastCandidateAt": "2026-11-02T13:12:22.664601Z"
     },
     "8ev2igaic2kb": {
       "id": "8ev2igaic2kb",
       "title": "LG 그램 17인치 rtx5050 32gb ssd1테라",
-      "price": 2700000,
-      "previousPrice": 2800000,
+      "price": 2600000,
+      "previousPrice": 2700000,
       "changeType": "price_drop",
       "city": "과천시",
       "location": "갈현동",
@@ -10250,7 +10250,7 @@
       "postedAt": "2026-10-24T19:55:37.139Z",
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-17%EC%9D%B8%EC%B9%98-rtx5050-32gb-ssd1%ED%85%8C%EB%9D%BC-8ev2igaic2kb/",
       "firstAlertedAt": "2026-10-24T19:58:32.329796Z",
-      "lastCandidateAt": "2026-10-28T09:32:35.901756Z"
+      "lastCandidateAt": "2026-11-02T13:12:22.664601Z"
     },
     "f3dgr3nz8myy": {
       "id": "f3dgr3nz8myy",
@@ -14251,6 +14251,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%ED%92%80%EB%B0%95%EC%8A%A4-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%814-%ED%94%84%EB%A1%9C-nt960xgq-a51a-16%EC%9D%B8%EC%B9%98-3k-120hz-%EB%85%B8%ED%8A%B8%EB%B6%81-n121xoy8hba6/",
       "firstAlertedAt": "2026-11-02T12:32:30.536371Z",
       "lastCandidateAt": "2026-11-02T12:32:30.536371Z"
+    },
+    "dmckync8r9gn": {
+      "id": "dmckync8r9gn",
+      "title": "씽크패드 E15 라이젠5 4650U 16GB 512GB",
+      "price": 300000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "의왕시",
+      "location": "삼동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-02T11:06:04.860Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%94%BD%ED%81%AC%ED%8C%A8%EB%93%9C-e15-%EB%9D%BC%EC%9D%B4%EC%A0%A05-4650u-16gb-512gb-dmckync8r9gn/",
+      "firstAlertedAt": "2026-11-02T13:12:22.664601Z",
+      "lastCandidateAt": "2026-11-02T13:12:22.664601Z"
     }
   }
 }
