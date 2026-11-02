@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-02T10:32:29.391375Z",
+  "updatedAt": "2026-11-02T11:12:28.896377Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -13030,9 +13030,9 @@
     "gvzafy7c5cmg": {
       "id": "gvzafy7c5cmg",
       "title": "미개봉 맥북에어 15, 16GB, 1TB, 실버",
-      "price": 2390000,
-      "previousPrice": null,
-      "changeType": "new",
+      "price": 2350000,
+      "previousPrice": 2390000,
+      "changeType": "price_drop",
       "city": "군포시",
       "location": "수리동",
       "cpuHint": null,
@@ -13050,7 +13050,7 @@
       "postedAt": "2026-10-31T03:29:25.001Z",
       "url": "https://www.daangn.com/kr/buy-sell/%EB%AF%B8%EA%B0%9C%EB%B4%89-%EB%A7%A5%EB%B6%81%EC%97%90%EC%96%B4-15-16gb-1tb-%EC%8B%A4%EB%B2%84-gvzafy7c5cmg/",
       "firstAlertedAt": "2026-10-31T03:42:08.052565Z",
-      "lastCandidateAt": "2026-10-31T03:42:08.052565Z"
+      "lastCandidateAt": "2026-11-02T11:12:28.896377Z"
     },
     "iymotmybwhq9": {
       "id": "iymotmybwhq9",
@@ -14176,6 +14176,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C-%EB%B6%816-%EC%9A%B8%ED%8A%B8%EB%9D%BC-%EB%85%B8%ED%8A%B8%EB%B6%81-nt960ujh-xc72y-w9m3wbspti2v/",
       "firstAlertedAt": "2026-11-02T09:12:30.030781Z",
       "lastCandidateAt": "2026-11-02T09:12:30.030781Z"
+    },
+    "rv7u4bs3wgud": {
+      "id": "rv7u4bs3wgud",
+      "title": "프레데터 트리톤 17X (i9/RTX 4090/32GB/1TB) 하이엔드 게이밍·AI 노트북",
+      "price": 365,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "관양동",
+      "cpuHint": "i9-13900HX",
+      "gpuHint": "RTX 4090",
+      "vramGB": 16,
+      "ramGB": 32,
+      "ambiguousMemoryGB": 32,
+      "hardwareReviewStatus": "PASS_RAM_VRAM",
+      "ramEvidence": "32GB 램",
+      "vramEvidence": "VRAM 16GB",
+      "ambiguousMemoryEvidence": "/32GB",
+      "storageGB": 1024,
+      "llmCapability": "HYBRID_WORK_LOCAL_LLM",
+      "llmReason": "RAM 32GB 이상 + VRAM 16GB 이상 확정 후보",
+      "postedAt": "2026-11-02T11:02:30.505Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%ED%94%84%EB%A0%88%EB%8D%B0%ED%84%B0-%ED%8A%B8%EB%A6%AC%ED%86%A4-17x-i9-rtx-4090-32gb-1tb-%ED%95%98%EC%9D%B4%EC%97%94%EB%93%9C-%EA%B2%8C%EC%9D%B4%EB%B0%8D-ai-%EB%85%B8%ED%8A%B8%EB%B6%81-rv7u4bs3wgud/",
+      "firstAlertedAt": "2026-11-02T11:12:28.896377Z",
+      "lastCandidateAt": "2026-11-02T11:12:28.896377Z"
     }
   }
 }
