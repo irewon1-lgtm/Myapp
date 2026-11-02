@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-01T23:56:08.825695Z",
+  "updatedAt": "2026-11-02T00:32:23.641854Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -13901,6 +13901,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EA%B3%A0%EC%84%B1%EB%8A%A5-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EC%97%90%EC%9D%B4%EC%84%9C-predator-helios-neo-16-ai-%EB%85%B8%ED%8A%B8%EB%B6%81-3qmuch5fintp/",
       "firstAlertedAt": "2026-11-01T20:12:15.681914Z",
       "lastCandidateAt": "2026-11-01T20:12:15.681914Z"
+    },
+    "1i5gp1tznhp7": {
+      "id": "1i5gp1tznhp7",
+      "title": "LG그램 i7 15Z95N GP95ML 급처",
+      "price": 550000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "평촌동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "RAM 16",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-02T00:20:04.495Z",
+      "url": "https://www.daangn.com/kr/buy-sell/lg%EA%B7%B8%EB%9E%A8-i7-15z95n-gp95ml-%EA%B8%89%EC%B2%98-1i5gp1tznhp7/",
+      "firstAlertedAt": "2026-11-02T00:32:23.641854Z",
+      "lastCandidateAt": "2026-11-02T00:32:23.641854Z"
     }
   }
 }
