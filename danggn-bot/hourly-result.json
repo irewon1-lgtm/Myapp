@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-02T15:12:33.541Z",
+  "generatedAt": "2026-11-02T15:36:20.267Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -126,7 +126,7 @@
           "createdAt\":\"2026-10-31T06:13:16.490Z\",\"boostedAt\":\"2026-11-02T14:27:51.638Z\",\"region\":{\"name\":\"신월동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-11-02T13:49:19.857Z\",\"boostedAt\":\"2026-11-02T13:49:19.855Z\",\"region\":{\"name\":\"부림동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-22T00:35:10.504Z\",\"boostedAt\":\"2026-11-02T07:39:46.222Z\",\"region\":{\"name\":\"갈현동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-10-31T11:40:05.107Z\",\"boostedAt\":\"2026-11-02T14:43:18.256Z\",\"region\":{\"name\":\"정왕3동\"},\"category\":null,\"contentCoo"
+          "createdAt\":\"2026-11-02T08:13:26.600Z\",\"boostedAt\":\"2026-11-02T08:13:26.598Z\",\"region\":{\"name\":\"문산읍\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
           "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":264,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"노트북 삼성 Sens R540 (8GB RAM, 120",
@@ -137,24 +137,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1261,
-    "globalUniqueListings": 479,
-    "duplicateListingsRemoved": 782,
-    "detailQueueStart": 10,
-    "freshDetailTasks": 10,
+    "searchUniqueListings": 1295,
+    "globalUniqueListings": 515,
+    "duplicateListingsRemoved": 780,
+    "detailQueueStart": 6,
+    "freshDetailTasks": 6,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 10,
-    "detailSucceeded": 10,
+    "detailRequestsExecuted": 6,
+    "detailSucceeded": 6,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 479,
+    "postedAtResolvedFromSearch": 515,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 1,
-    "scanDurationMs": 89739,
+    "scanDurationMs": 86247,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +166,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 277,
-        "durationMs": 11855
+        "uniqueListings": 278,
+        "durationMs": 12251
       },
       {
         "city": "의왕시",
@@ -182,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 374,
-        "durationMs": 25453
+        "uniqueListings": 395,
+        "durationMs": 25654
       },
       {
         "city": "안양시",
@@ -200,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 361,
-        "durationMs": 34747
+        "uniqueListings": 372,
+        "durationMs": 35196
       },
       {
         "city": "과천시",
@@ -212,8 +212,8 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 249,
-        "durationMs": 6209
+        "uniqueListings": 250,
+        "durationMs": 6280
       }
     ],
     "finalCandidateCount": 1,
@@ -222,43 +222,43 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 89747
+    "durationMs": 86255
   },
   "candidates": [
     {
-      "id": "39j6idszvkwx",
-      "changeType": "new",
-      "previousPrice": null,
-      "price": 1000000,
-      "priceDropPercent": null,
-      "city": "군포시",
-      "location": "부곡동",
-      "regionPath": "경기도 군포시 부곡동",
-      "title": "맥북 프로 16인치 2019 i9 32GB 1TB",
-      "modelHint": "맥북 프로 16인치 2019 i9 32GB 1TB",
-      "cpuHint": null,
+      "id": "2pd7cyg8osh9",
+      "changeType": "price_drop",
+      "previousPrice": 750000,
+      "price": 600000,
+      "priceDropPercent": 20,
+      "city": "안양시",
+      "location": "안양동",
+      "regionPath": "경기도 안양시 동안구 안양동",
+      "title": "델 5340  2in1 13세대  i7-1365u 32gb",
+      "modelHint": "델 5340  2in1 13세대  i7-1365u 32gb",
+      "cpuHint": "i7-1365u",
       "cpuBaselinePass": null,
       "gpuHint": null,
       "vramGB": null,
-      "ramGB": 32,
+      "ramGB": null,
       "ambiguousMemoryGB": 32,
-      "hardwareReviewStatus": "PASS_RAM",
-      "ramEvidence": "32GB 메모리",
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
       "vramEvidence": null,
-      "ambiguousMemoryEvidence": "32GB",
-      "storageGB": 1024,
-      "llmCapability": "WORK_DEV_RAM32",
-      "llmReason": "RAM 32GB 이상 확정 후보",
-      "specConfidence": "confirmed",
-      "postedAt": "2026-11-02T14:16:23.043Z",
-      "boostedAt": "2026-11-02T14:16:23.043Z",
+      "ambiguousMemoryEvidence": "32gb",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "specConfidence": "needs_review",
+      "postedAt": "2026-10-25T05:38:49.092Z",
+      "boostedAt": "2026-11-02T15:16:19.875Z",
       "status": "Ongoing",
-      "description": "2019년형 맥북 프로 16인치 모델이에요. 인텔 코어 i9 프로세서와 32GB 메모리, 1TB SSD가 탑재되어 있어 빠르고 넉넉한 사용이 가능해요. 박스 구성품 그대로 가지고 있어요. 고성능 맥북으로 다양한 작업을 원활하게 하실 수 있을 거예요.\n\n-마지막 인텔CPU 맥북.\n-구입 후 바로 하드케이스 장착 후 탈착 안해서 외관 흠집 전혀없음.\n-트랙패드, 키보드 정도만 생활기스 있음. 원하시면 사진 촬영 해드립니다.\n-구매 후 바로 액정보호필름 부착 후 떼지않음. 디스플레이에도 흠집 전혀 없음.\n\n구매당시 재택작업용으로 구매해서 그래픽 제외 모든스펙 가장 높게 구매했습니다. 거의 전원연결하여 사용하여 배터리 사이클도 낮은편이니 참고 바랍니다.",
-      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-16%EC%9D%B8%EC%B9%98-2019-i9-32gb-1tb-39j6idszvkwx/",
+      "description": "안녕하세요! 깔끔한 DELL Latitude 5340 2-in-1 노트북을 판매합니다. 사진에서 보시는 것처럼 깨끗한 상태를 유지하고 있으며, 다양한 작업에 활용하기 좋은 성능을 갖추고 있습니다. 360도 회전하는 힌지로 노트북과 태블릿 모드를 자유롭게 전환하며 사용할 수 있어 더욱 편리해요. 이 매력적인 노트북으로 생산성을 높여보세요!\n\n\ni7-1365u / ddr5 32gb / 256gb / 윈도우프로11\n2in1 태블렛모드 터치스크린 입니다\n메모리값에 노트북을 ㅠㅠ\n저장장치 커버가 없어졌네요 뻐지지는 않아요\nlcd파손으로 교체하였습니다\n메모리는 메인보드에 붙어있는 타입입니다\n 노트북만본체만 판매합니다",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%8D%B8-5340-2in1-13%EC%84%B8%EB%8C%80-i7-1365u-32gb-2pd7cyg8osh9/",
       "favoriteCount": 0,
       "chatCount": 0,
-      "sellerName": "영차",
-      "mannerTemperature": 43.1
+      "sellerName": "사십칠점오",
+      "mannerTemperature": 47.5
     }
   ]
 }
