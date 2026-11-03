@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-03T11:51:57.973161Z",
+  "updatedAt": "2026-11-03T12:32:50.578744Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -9180,8 +9180,8 @@
     "z8yyq6a1qk3a": {
       "id": "z8yyq6a1qk3a",
       "title": "애플 맥북프로 14 M5 pro 실버 최상품 판매",
-      "price": 3900000,
-      "previousPrice": 4000000,
+      "price": 3850000,
+      "previousPrice": 3900000,
       "changeType": "price_drop",
       "city": "안양시",
       "location": "범계동",
@@ -9200,7 +9200,7 @@
       "postedAt": "2026-10-21T15:15:59.341Z",
       "url": "https://www.daangn.com/kr/buy-sell/%EC%95%A0%ED%94%8C-%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C-14-m5-pro-%EC%8B%A4%EB%B2%84-%EC%B5%9C%EC%83%81%ED%92%88-%ED%8C%90%EB%A7%A4-z8yyq6a1qk3a/",
       "firstAlertedAt": "2026-10-21T15:25:25.090170Z",
-      "lastCandidateAt": "2026-10-23T23:11:42.837427Z"
+      "lastCandidateAt": "2026-11-03T12:32:50.578744Z"
     },
     "m8gqjo2v6ct2": {
       "id": "m8gqjo2v6ct2",
@@ -14405,9 +14405,9 @@
     "6jvfqiz2mecj": {
       "id": "6jvfqiz2mecj",
       "title": "LG 그램 16인치 노트북 (i7-155H, 32GB RAM, 1TB SSD)",
-      "price": 950000,
-      "previousPrice": null,
-      "changeType": "new",
+      "price": 870000,
+      "previousPrice": 950000,
+      "changeType": "price_drop",
       "city": "군포시",
       "location": "군포2동",
       "cpuHint": null,
@@ -14425,7 +14425,7 @@
       "postedAt": "2026-11-03T02:37:05.574Z",
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-16%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-i7-155h-32gb-ram-1tb-ssd-6jvfqiz2mecj/",
       "firstAlertedAt": "2026-11-03T03:12:39.418008Z",
-      "lastCandidateAt": "2026-11-03T03:12:39.418008Z"
+      "lastCandidateAt": "2026-11-03T12:32:50.578744Z"
     },
     "dgpipsjwd5mi": {
       "id": "dgpipsjwd5mi",
@@ -14626,6 +14626,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%ED%94%84%EB%A1%9C-ai-16%EC%9D%B8%EC%B9%98-%EC%9A%B8%ED%8A%B8%EB%9D%BC5-16gb-256gb-%EC%9C%88%EB%8F%84%EC%9A%B0-%ED%8F%AC%ED%95%A8-uf51gcp2usjx/",
       "firstAlertedAt": "2026-11-03T11:51:57.973161Z",
       "lastCandidateAt": "2026-11-03T11:51:57.973161Z"
+    },
+    "up4s1y448e6a": {
+      "id": "up4s1y448e6a",
+      "title": "맥스튜디오 M1 Max (32GB , 512GB)",
+      "price": 1700000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "의왕시",
+      "location": "포일동",
+      "cpuHint": "M1 Max",
+      "gpuHint": "M1 Max",
+      "vramGB": null,
+      "ramGB": 32,
+      "ambiguousMemoryGB": 32,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "램: 32기가",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "(32GB",
+      "storageGB": null,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "postedAt": "2026-11-03T11:58:05.874Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4-m1-max-32gb-512gb-up4s1y448e6a/",
+      "firstAlertedAt": "2026-11-03T12:32:50.578744Z",
+      "lastCandidateAt": "2026-11-03T12:32:50.578744Z"
     }
   }
 }
