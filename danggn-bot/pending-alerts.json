@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-03T04:32:34.426128Z",
+  "updatedAt": "2026-11-03T05:12:33.521983Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -11754,10 +11754,10 @@
     },
     "euhwaix9t93c": {
       "id": "euhwaix9t93c",
-      "title": "삼성 갤럭시북5 Pro 노트북 팝니다.",
-      "price": 2050000,
-      "previousPrice": null,
-      "changeType": "new",
+      "title": "삼성 갤럭시북5 Pro 고성능 노트북 팝니다.",
+      "price": 1800000,
+      "previousPrice": 2050000,
+      "changeType": "price_drop",
       "city": "군포시",
       "location": "오금동",
       "cpuHint": null,
@@ -11766,16 +11766,16 @@
       "ramGB": 32,
       "ambiguousMemoryGB": 32,
       "hardwareReviewStatus": "PASS_RAM",
-      "ramEvidence": "32GB RAM",
+      "ramEvidence": "RAM: 32GB",
       "vramEvidence": null,
       "ambiguousMemoryEvidence": "32GB",
       "storageGB": 1024,
       "llmCapability": "WORK_DEV_RAM32",
       "llmReason": "RAM 32GB 이상 확정 후보",
       "postedAt": "2026-10-28T08:41:02.388Z",
-      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%815-pro-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%9D%EB%8B%88%EB%8B%A4-euhwaix9t93c/",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%815-pro-%EA%B3%A0%EC%84%B1%EB%8A%A5-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%9D%EB%8B%88%EB%8B%A4-euhwaix9t93c/",
       "firstAlertedAt": "2026-10-28T08:52:03.967257Z",
-      "lastCandidateAt": "2026-10-28T08:52:03.967257Z"
+      "lastCandidateAt": "2026-11-03T05:12:33.521983Z"
     },
     "u3d6s76yxip9": {
       "id": "u3d6s76yxip9",
@@ -14476,6 +14476,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-m1-pro-16%EC%9D%B8%EC%B9%98-16gb-1tb-%ED%8C%9D%EB%8B%88%EB%8B%A4-vwettstnbr7w/",
       "firstAlertedAt": "2026-11-03T03:12:39.418008Z",
       "lastCandidateAt": "2026-11-03T03:12:39.418008Z"
+    },
+    "xbukngbi2nr1": {
+      "id": "xbukngbi2nr1",
+      "title": "2020m1 맥북에어 SS급 판매",
+      "price": 800000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "석수동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "램 16GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-03T04:51:03.673Z",
+      "url": "https://www.daangn.com/kr/buy-sell/2020m1-%EB%A7%A5%EB%B6%81%EC%97%90%EC%96%B4-ss%EA%B8%89-%ED%8C%90%EB%A7%A4-xbukngbi2nr1/",
+      "firstAlertedAt": "2026-11-03T05:12:33.521983Z",
+      "lastCandidateAt": "2026-11-03T05:12:33.521983Z"
     }
   }
 }
