@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-03T05:52:41.797048Z",
+  "updatedAt": "2026-11-03T06:32:28.861087Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -9880,9 +9880,9 @@
     "gxat2k18nqi8": {
       "id": "gxat2k18nqi8",
       "title": "LG 그램 16인치 화이트 (SSD 512GB)",
-      "price": 1950000,
-      "previousPrice": null,
-      "changeType": "new",
+      "price": 1900000,
+      "previousPrice": 1950000,
+      "changeType": "price_drop",
       "city": "과천시",
       "location": "갈현동",
       "cpuHint": null,
@@ -9900,7 +9900,7 @@
       "postedAt": "2026-10-24T04:50:56.892Z",
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-16%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-ssd-512gb-gxat2k18nqi8/",
       "firstAlertedAt": "2026-10-24T05:22:16.213345Z",
-      "lastCandidateAt": "2026-10-24T05:22:16.213345Z"
+      "lastCandidateAt": "2026-11-03T06:32:28.861087Z"
     },
     "sycwmgbej3x1": {
       "id": "sycwmgbej3x1",
@@ -14501,6 +14501,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/2020m1-%EB%A7%A5%EB%B6%81%EC%97%90%EC%96%B4-ss%EA%B8%89-%ED%8C%90%EB%A7%A4-xbukngbi2nr1/",
       "firstAlertedAt": "2026-11-03T05:12:33.521983Z",
       "lastCandidateAt": "2026-11-03T05:12:33.521983Z"
+    },
+    "jz28vn69osja": {
+      "id": "jz28vn69osja",
+      "title": "LG 그램 16인치 노트북 (i5-1155G7)",
+      "price": 650000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "의왕시",
+      "location": "내손1동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "램 16",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-03T06:31:36.813Z",
+      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-16%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-1155g7-jz28vn69osja/",
+      "firstAlertedAt": "2026-11-03T06:32:28.861087Z",
+      "lastCandidateAt": "2026-11-03T06:32:28.861087Z"
     }
   }
 }
