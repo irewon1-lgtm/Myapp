@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-03T09:12:33.232063Z",
+  "updatedAt": "2026-11-03T09:52:32.334241Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -9430,8 +9430,8 @@
     "2wykjvp7ciji": {
       "id": "2wykjvp7ciji",
       "title": "맥북 프로 14인치 M1 Max (32GPU, 32GB, 512GB)",
-      "price": 1850000,
-      "previousPrice": 1900000,
+      "price": 1800000,
+      "previousPrice": 1850000,
       "changeType": "price_drop",
       "city": "안양시",
       "location": "귀인동",
@@ -9450,7 +9450,7 @@
       "postedAt": "2026-10-22T10:44:02.385Z",
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-14%EC%9D%B8%EC%B9%98-m1-max-32gpu-32gb-512gb-2wykjvp7ciji/",
       "firstAlertedAt": "2026-10-22T11:12:29.242920Z",
-      "lastCandidateAt": "2026-10-27T21:42:07.758567Z"
+      "lastCandidateAt": "2026-11-03T09:52:32.334241Z"
     },
     "hw3tn54kbokg": {
       "id": "hw3tn54kbokg",
@@ -14551,6 +14551,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/hp-%EC%98%A4%EB%A9%98-17-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-rtx-3080-ti-6949u2jbwy5a/",
       "firstAlertedAt": "2026-11-03T08:32:37.850369Z",
       "lastCandidateAt": "2026-11-03T08:32:37.850369Z"
+    },
+    "jq3grgvm12uj": {
+      "id": "jq3grgvm12uj",
+      "title": "삼성 갤럭시북4 울트라 팝니다",
+      "price": 2900000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "호계동",
+      "cpuHint": null,
+      "gpuHint": "RTX 4070",
+      "vramGB": null,
+      "ramGB": 32,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "32GB 램",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 2048,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "postedAt": "2026-11-03T09:51:20.651Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%814-%EC%9A%B8%ED%8A%B8%EB%9D%BC-%ED%8C%9D%EB%8B%88%EB%8B%A4-jq3grgvm12uj/",
+      "firstAlertedAt": "2026-11-03T09:52:32.334241Z",
+      "lastCandidateAt": "2026-11-03T09:52:32.334241Z"
     }
   }
 }
