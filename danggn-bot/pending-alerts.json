@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-03T10:32:35.247264Z",
+  "updatedAt": "2026-11-03T11:12:23.957934Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -14576,6 +14576,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%814-%EC%9A%B8%ED%8A%B8%EB%9D%BC-%ED%8C%9D%EB%8B%88%EB%8B%A4-jq3grgvm12uj/",
       "firstAlertedAt": "2026-11-03T09:52:32.334241Z",
       "lastCandidateAt": "2026-11-03T09:52:32.334241Z"
+    },
+    "s6h2wq8t8z1i": {
+      "id": "s6h2wq8t8z1i",
+      "title": "레노버 V15 G5 IRL 블랙 15.6인치",
+      "price": 490000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "의왕시",
+      "location": "삼동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB 램",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 256,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-03T10:31:08.034Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-v15-g5-irl-%EB%B8%94%EB%9E%99-15-6%EC%9D%B8%EC%B9%98-s6h2wq8t8z1i/",
+      "firstAlertedAt": "2026-11-03T11:12:23.957934Z",
+      "lastCandidateAt": "2026-11-03T11:12:23.957934Z"
     }
   }
 }
