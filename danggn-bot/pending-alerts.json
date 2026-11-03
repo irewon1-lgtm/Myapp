@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-03T13:52:27.217046Z",
+  "updatedAt": "2026-11-03T14:32:21.703273Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -10880,9 +10880,9 @@
     "9oh67s1o2nvg": {
       "id": "9oh67s1o2nvg",
       "title": "레노버 리전 프로5 16인치 / 게이밍노트북",
-      "price": 3500000,
-      "previousPrice": null,
-      "changeType": "new",
+      "price": 3400000,
+      "previousPrice": 3500000,
+      "changeType": "price_drop",
       "city": "안양시",
       "location": "비산1동",
       "cpuHint": "intel core ultra 9 275HX",
@@ -10900,7 +10900,7 @@
       "postedAt": "2026-10-26T07:37:22.738Z",
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EB%A6%AC%EC%A0%84-%ED%94%84%EB%A1%9C5-16%EC%9D%B8%EC%B9%98-%EA%B2%8C%EC%9D%B4%EB%B0%8D%EB%85%B8%ED%8A%B8%EB%B6%81-9oh67s1o2nvg/",
       "firstAlertedAt": "2026-10-26T07:42:07.864046Z",
-      "lastCandidateAt": "2026-10-26T07:42:07.864046Z"
+      "lastCandidateAt": "2026-11-03T14:32:21.703273Z"
     },
     "upuzus4ikg46": {
       "id": "upuzus4ikg46",
@@ -14605,9 +14605,9 @@
     "uf51gcp2usjx": {
       "id": "uf51gcp2usjx",
       "title": "LG 그램 프로 AI 16인치 울트라5 16GB 256GB (윈도우 포함)",
-      "price": 1450000,
-      "previousPrice": null,
-      "changeType": "new",
+      "price": 1440000,
+      "previousPrice": 1450000,
+      "changeType": "price_drop",
       "city": "군포시",
       "location": "오금동",
       "cpuHint": null,
@@ -14625,7 +14625,7 @@
       "postedAt": "2026-11-03T11:14:23.934Z",
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%ED%94%84%EB%A1%9C-ai-16%EC%9D%B8%EC%B9%98-%EC%9A%B8%ED%8A%B8%EB%9D%BC5-16gb-256gb-%EC%9C%88%EB%8F%84%EC%9A%B0-%ED%8F%AC%ED%95%A8-uf51gcp2usjx/",
       "firstAlertedAt": "2026-11-03T11:51:57.973161Z",
-      "lastCandidateAt": "2026-11-03T11:51:57.973161Z"
+      "lastCandidateAt": "2026-11-03T14:32:21.703273Z"
     },
     "up4s1y448e6a": {
       "id": "up4s1y448e6a",
@@ -14651,6 +14651,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4-m1-max-32gb-512gb-up4s1y448e6a/",
       "firstAlertedAt": "2026-11-03T12:32:50.578744Z",
       "lastCandidateAt": "2026-11-03T12:32:50.578744Z"
+    },
+    "i2fubrc5ebz3": {
+      "id": "i2fubrc5ebz3",
+      "title": "LG 그램 노트북 16인치 i7 32GB 팝니다",
+      "price": 950000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "안양3동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 32,
+      "ambiguousMemoryGB": 32,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "RAM : 32GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "32GB",
+      "storageGB": 512,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "postedAt": "2026-11-03T13:57:55.528Z",
+      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-16%EC%9D%B8%EC%B9%98-i7-32gb-%ED%8C%9D%EB%8B%88%EB%8B%A4-i2fubrc5ebz3/",
+      "firstAlertedAt": "2026-11-03T14:32:21.703273Z",
+      "lastCandidateAt": "2026-11-03T14:32:21.703273Z"
     }
   }
 }
