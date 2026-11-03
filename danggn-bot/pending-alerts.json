@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-03T11:12:23.957934Z",
+  "updatedAt": "2026-11-03T11:51:57.973161Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -14601,6 +14601,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-v15-g5-irl-%EB%B8%94%EB%9E%99-15-6%EC%9D%B8%EC%B9%98-s6h2wq8t8z1i/",
       "firstAlertedAt": "2026-11-03T11:12:23.957934Z",
       "lastCandidateAt": "2026-11-03T11:12:23.957934Z"
+    },
+    "uf51gcp2usjx": {
+      "id": "uf51gcp2usjx",
+      "title": "LG 그램 프로 AI 16인치 울트라5 16GB 256GB (윈도우 포함)",
+      "price": 1450000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "오금동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "램: 16GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": 256,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-03T11:14:23.934Z",
+      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%ED%94%84%EB%A1%9C-ai-16%EC%9D%B8%EC%B9%98-%EC%9A%B8%ED%8A%B8%EB%9D%BC5-16gb-256gb-%EC%9C%88%EB%8F%84%EC%9A%B0-%ED%8F%AC%ED%95%A8-uf51gcp2usjx/",
+      "firstAlertedAt": "2026-11-03T11:51:57.973161Z",
+      "lastCandidateAt": "2026-11-03T11:51:57.973161Z"
     }
   }
 }
