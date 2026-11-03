@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-02T23:52:13.143398Z",
+  "updatedAt": "2026-11-03T00:32:24.185324Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -12705,13 +12705,13 @@
     "p7j4psy84owr": {
       "id": "p7j4psy84owr",
       "title": "ASUS ROG Flow Z13 GPU CPU 통합메모리 64GB 게이밍 노트북",
-      "price": 4000000,
-      "previousPrice": 4200000,
+      "price": 3900000,
+      "previousPrice": 4000000,
       "changeType": "price_drop",
       "city": "과천시",
       "location": "별양동",
       "cpuHint": null,
-      "gpuHint": "RTX 3050",
+      "gpuHint": null,
       "vramGB": null,
       "ramGB": 64,
       "ambiguousMemoryGB": 64,
@@ -12725,7 +12725,7 @@
       "postedAt": "2026-10-30T07:07:42.016Z",
       "url": "https://www.daangn.com/kr/buy-sell/asus-rog-flow-z13-gpu-cpu-%ED%86%B5%ED%95%A9%EB%A9%94%EB%AA%A8%EB%A6%AC-64gb-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-p7j4psy84owr/",
       "firstAlertedAt": "2026-10-30T07:22:11.410500Z",
-      "lastCandidateAt": "2026-11-01T04:22:26.732384Z"
+      "lastCandidateAt": "2026-11-03T00:32:24.185324Z"
     },
     "nnyjvk7cwzqv": {
       "id": "nnyjvk7cwzqv",
@@ -14351,6 +14351,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-16%EC%9D%B8%EC%B9%98-2019-i9-32gb-1tb-39j6idszvkwx/",
       "firstAlertedAt": "2026-11-02T15:12:33.609765Z",
       "lastCandidateAt": "2026-11-02T15:12:33.609765Z"
+    },
+    "3g2fe5gqhwau": {
+      "id": "3g2fe5gqhwau",
+      "title": "HP 245 G10 14인치 노트북 7730U/16GB/256GB",
+      "price": 450000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "과천시",
+      "location": "별양동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "/16GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-03T00:08:38.233Z",
+      "url": "https://www.daangn.com/kr/buy-sell/hp-245-g10-14%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-7730u-16gb-256gb-3g2fe5gqhwau/",
+      "firstAlertedAt": "2026-11-03T00:32:24.185324Z",
+      "lastCandidateAt": "2026-11-03T00:32:24.185324Z"
+    },
+    "5iriwxt2hup8": {
+      "id": "5iriwxt2hup8",
+      "title": "LG그램 14Z90N 판매합니다",
+      "price": 580000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "석수동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 24,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "RAM: 24GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-02T22:25:59.664Z",
+      "url": "https://www.daangn.com/kr/buy-sell/lg%EA%B7%B8%EB%9E%A8-14z90n-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-5iriwxt2hup8/",
+      "firstAlertedAt": "2026-11-03T00:32:24.185324Z",
+      "lastCandidateAt": "2026-11-03T00:32:24.185324Z"
     }
   }
 }
