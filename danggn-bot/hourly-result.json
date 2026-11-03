@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-03T17:12:24.777Z",
+  "generatedAt": "2026-11-03T17:52:18.951Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,24 +55,28 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/fhd-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-13%EC%9D%B8%EC%B9%98-%ED%95%9C%EA%B8%80-%EC%98%A4%ED%94%BC%EC%8A%A4-%ED%8C%8C%EC%9B%8C%ED%8F%AC%EC%9D%B8%ED%8A%B8-uu1nszvxcsy6/",
-            "href": "/kr/buy-sell/fhd-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-13%EC%9D%B8%EC%B9%98-%ED%95%9C%EA%B8%80-%EC%98%A4%ED%94%BC%EC%8A%A4-%ED%8C%8C%EC%9B%8C%ED%8F%AC%EC%9D%B8%ED%8A%B8-uu1nszvxcsy6/",
-            "title": "FHD 노트북 i5 13인치 한글 오피스 파워포인트",
-            "content": "윈도우 10에  엑셀 워드 한글 파워포인트 포토샵 일러스트 등 있어요\n속도 빠르고​ 인터넷도 잘됩니다\n아답타랑 마우스 새거 드립니당\ncpu i5 램 8GB, 용량 SSD 128GB \n외관은 깔끔한편이고 기능도 문제없이 바로 사용하시면 됩니다",
-            "price": "150000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/87dbb691ec6c901f0e20c99e90faef77dd6170462af3d690987d4eeeb77f2312_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-7200u-8gb-ram-q544xmox2b3r/",
+            "href": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-7200u-8gb-ram-q544xmox2b3r/",
+            "title": "LG 노트북 i5-7200U 8GB RAM",
+            "content": "깔끔한 LG 노트북 판매해요. 인텔 코어 i5-4210M 프로세서와 8GB RAM으로 쾌적한 사용이 가능해요. 사진으로 확인 가능한 정보 외에는 별도 구성품은 없어요. 문서 작업이나 웹 서핑 등 일상적인 용도로 사용하기 좋아요.\n포맷안되있어서 직접 하셔야돼요 케이블 연결하고 사용가능해요",
+            "price": "60000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/179372738139088ecf06727fa52b030a76664ff70f8d8bf8bf623de4e0f81f49cbe2973bd5c580.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": true,
-            "createdAt": "2026-11-03T16:51:15.555Z",
-            "boostedAt": "2026-11-03T16:51:15.551Z",
+            "createdAt": "2026-11-03T17:37:36.731Z",
+            "boostedAt": "2026-11-03T17:37:36.731Z",
             "region": {
-              "name": "상모사곡동"
+              "name": "신창동"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 36.0881348,
-                "longitude": 128.3553159
+                "latitude": 35.1616876,
+                "longitude": 126.9017296
+              },
+              {
+                "latitude": 35.1852004,
+                "longitude": 126.8394169
               }
             ]
           },
@@ -122,14 +126,14 @@
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-11-03T16:51:15.555Z\",\"boostedAt\":\"2026-11-03T16:51:15.551Z\",\"region\":{\"name\":\"상모사곡동\"},\"category\":null,\"contentCo",
+          "createdAt\":\"2026-11-03T17:37:36.731Z\",\"boostedAt\":\"2026-11-03T17:37:36.731Z\",\"region\":{\"name\":\"신창동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-11-01T13:19:30.645Z\",\"boostedAt\":\"2026-11-03T16:44:52.036Z\",\"region\":{\"name\":\"본리동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-11-03T16:28:30.667Z\",\"boostedAt\":\"2026-11-03T16:28:30.666Z\",\"region\":{\"name\":\"오금동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-01T09:44:33.098Z\",\"boostedAt\":\"2026-11-03T16:32:04.563Z\",\"region\":{\"name\":\"산본동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-03T17:06:40.352Z\",\"boostedAt\":\"2026-11-03T17:06:40.345Z\",\"region\":{\"name\":\"역북동\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-10-11T13:23:42.441Z\",\"boostedAt\":\"2026-11-03T07:17:55.907Z\",\"region\":{\"name\":\"오전동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-11-03T16:51:15.555Z\",\"boostedAt\":\"2026-11-03T16:51:15.551Z\",\"region\":{\"name\":\"상모사곡동\"},\"category\":null,\"contentCo"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":263,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"FHD 노트북 i5 13인치 한글 오피스 파워포인트\",",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":264,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG 노트북 i5-7200U 8GB RAM\",\"desc",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -137,24 +141,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1263,
-    "globalUniqueListings": 503,
-    "duplicateListingsRemoved": 760,
-    "detailQueueStart": 7,
-    "freshDetailTasks": 7,
+    "searchUniqueListings": 1267,
+    "globalUniqueListings": 500,
+    "duplicateListingsRemoved": 767,
+    "detailQueueStart": 3,
+    "freshDetailTasks": 3,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 7,
-    "detailSucceeded": 7,
+    "detailRequestsExecuted": 3,
+    "detailSucceeded": 3,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 503,
+    "postedAtResolvedFromSearch": 500,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 87614,
+    "scanDurationMs": 82295,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +170,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 268,
-        "durationMs": 12054
+        "uniqueListings": 269,
+        "durationMs": 12006
       },
       {
         "city": "의왕시",
@@ -183,7 +187,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 367,
-        "durationMs": 26139
+        "durationMs": 25436
       },
       {
         "city": "안양시",
@@ -200,8 +204,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 382,
-        "durationMs": 35148
+        "uniqueListings": 385,
+        "durationMs": 35218
       },
       {
         "city": "과천시",
@@ -213,7 +217,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 246,
-        "durationMs": 6400
+        "durationMs": 6352
       }
     ],
     "finalCandidateCount": 0,
@@ -222,7 +226,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 87622
+    "durationMs": 82300
   },
   "candidates": []
 }
