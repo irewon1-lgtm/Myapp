@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-03T19:12:29.038Z",
+  "generatedAt": "2026-11-03T19:27:33.589Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,6 +55,28 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
+            "id": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-dnh7xz72kksz/",
+            "href": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-dnh7xz72kksz/",
+            "title": "LG 노트북",
+            "content": "LG 노트북 판매해요. 프로세서와 8GB RAM, SSD120GB HDD500GB탑재했어요. 윈도우 11 한글24 오피스21 배터리2시간정도갑니다 바로 사용 가능해요. 가볍고 성능 좋은 노트북을 찾으신다면 눈여겨봐 주세요.",
+            "price": "160000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202609/1789895507402772ed2f7130509f309df1c1289dc9cc9d87bfef2f37aab0b282e810feb04841a0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-09-20T09:15:01.336Z",
+            "boostedAt": "2026-11-03T19:23:34.941Z",
+            "region": {
+              "name": "명륜3가"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 37.5904118,
+                "longitude": 126.9932259
+              }
+            ]
+          },
+          {
             "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-swgy8dp4easn/",
             "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-swgy8dp4easn/",
             "title": "삼성 노트북 화이트",
@@ -73,28 +95,6 @@
               {
                 "latitude": 37.3074827,
                 "longitude": 126.9930611
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/%EC%95%84%EC%9D%B4%EB%AE%A4%EC%A6%88-%EC%8A%A4%ED%86%B0%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-%EB%85%B8%ED%8A%B8%EB%B6%81-748jec2vuos8/",
-            "href": "/kr/buy-sell/%EC%95%84%EC%9D%B4%EB%AE%A4%EC%A6%88-%EC%8A%A4%ED%86%B0%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-%EB%85%B8%ED%8A%B8%EB%B6%81-748jec2vuos8/",
-            "title": "아이뮤즈 스톰북 화이트 노트북",
-            "content": "깔끔한 화이트 색상의 아이뮤즈 스톰북 노트북이에요\n인텔 셀러론 프로세서가 탑재되어 문서 작업이나 웹 서핑 등 가볍게 사용하기 좋아요\n사진에서 보이는 것처럼 구성품은 노트북 본체와 전원 어댑터입니다\n새 제품 가격 대비 합리적인 가격으로 만나보세요\n영상 시청이나 온라인 강의용으로도 딱이랍니다 흠집하나 나곳 없습니다\n액정화면에 투명색 종이도 안떼고 그대롭니다",
-            "price": "140000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/895d9151-a228-46bd-9be1-75741bf0e14d.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-11-03T19:04:37.271Z",
-            "boostedAt": "2026-11-03T19:04:37.269Z",
-            "region": {
-              "name": "공덕동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 37.5509,
-                "longitude": 126.9619801
               }
             ]
           },
@@ -122,14 +122,14 @@
           }
         ],
         "dateFieldSnippets": [
+          "createdAt\":\"2026-09-20T09:15:01.336Z\",\"boostedAt\":\"2026-11-03T19:23:34.941Z\",\"region\":{\"name\":\"명륜3가\"},\"category\":null,\"contentCoo",
           "createdAt\":\"2026-11-02T00:32:49.297Z\",\"boostedAt\":\"2026-11-03T18:47:39.768Z\",\"region\":{\"name\":\"파장동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-03T19:04:37.271Z\",\"boostedAt\":\"2026-11-03T19:04:37.269Z\",\"region\":{\"name\":\"공덕동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-08-03T06:48:04.098Z\",\"boostedAt\":\"2026-11-03T11:16:30.894Z\",\"region\":{\"name\":\"봉담읍\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-11T13:23:42.441Z\",\"boostedAt\":\"2026-11-03T07:17:55.907Z\",\"region\":{\"name\":\"오전동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-03T16:28:30.667Z\",\"boostedAt\":\"2026-11-03T16:28:30.666Z\",\"region\":{\"name\":\"오금동\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-11-03T15:00:56.944Z\",\"boostedAt\":\"2026-11-03T15:00:56.941Z\",\"region\":{\"name\":\"당하동\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":264,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 노트북 화이트\",\"description\":\"깔끔한",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":264,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG 노트북\",\"description\":\"LG 노트북 ",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -137,24 +137,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1240,
-    "globalUniqueListings": 472,
-    "duplicateListingsRemoved": 768,
-    "detailQueueStart": 4,
-    "freshDetailTasks": 4,
+    "searchUniqueListings": 1246,
+    "globalUniqueListings": 475,
+    "duplicateListingsRemoved": 771,
+    "detailQueueStart": 0,
+    "freshDetailTasks": 0,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 4,
-    "detailSucceeded": 4,
+    "detailRequestsExecuted": 0,
+    "detailSucceeded": 0,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 472,
+    "postedAtResolvedFromSearch": 475,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 1,
-    "scanDurationMs": 83536,
+    "candidateCount": 0,
+    "scanDurationMs": 78688,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +166,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 271,
-        "durationMs": 12338
+        "uniqueListings": 272,
+        "durationMs": 12079
       },
       {
         "city": "의왕시",
@@ -182,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 370,
-        "durationMs": 25555
+        "uniqueListings": 372,
+        "durationMs": 25495
       },
       {
         "city": "안양시",
@@ -200,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 353,
-        "durationMs": 35085
+        "uniqueListings": 356,
+        "durationMs": 34708
       },
       {
         "city": "과천시",
@@ -213,52 +213,16 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 246,
-        "durationMs": 6348
+        "durationMs": 6209
       }
     ],
-    "finalCandidateCount": 1,
+    "finalCandidateCount": 0,
     "stateItemCount": 5000,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 83542
+    "durationMs": 78693
   },
-  "candidates": [
-    {
-      "id": "6949u2jbwy5a",
-      "changeType": "price_drop",
-      "previousPrice": 1600000,
-      "price": 1500000,
-      "priceDropPercent": 6.3,
-      "city": "안양시",
-      "location": "호계동",
-      "regionPath": "경기도 안양시 동안구 호계동",
-      "title": "HP 오멘 17 게이밍 노트북 RTX 3080 Ti",
-      "modelHint": "HP 오멘 17 게이밍 노트북 RTX 3080 Ti",
-      "cpuHint": null,
-      "cpuBaselinePass": null,
-      "gpuHint": "RTX 3080 Ti",
-      "vramGB": 16,
-      "ramGB": null,
-      "ambiguousMemoryGB": 32,
-      "hardwareReviewStatus": "PASS_VRAM",
-      "ramEvidence": null,
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": "32gb",
-      "storageGB": 1024,
-      "llmCapability": "LOCAL_LLM_GPU",
-      "llmReason": "VRAM 16GB 이상이 직접 표기되었거나 GPU 모델로 확인됨",
-      "specConfidence": "confirmed",
-      "postedAt": "2026-11-03T08:17:39.052Z",
-      "boostedAt": "2026-11-03T08:17:39.037Z",
-      "status": "Ongoing",
-      "description": "고성능 게이밍 노트북 HP 오멘 17을 판매해요. 인텔 코어 i7 12800HX CPU와 NVIDIA GeForce RTX 3080 Ti Laptop GPU가 탑재되어 있어 어떤 게임이든 부드럽게 즐기실 수 있어요. 넉넉한 저장 공간과 빠른 속도를 자랑하는 ddr5 32gb \n삼성 1tb SSD가 장착되어 있답니다. 고사양 게임을 위한 최고의 선택이 될 거예요.",
-      "url": "https://www.daangn.com/kr/buy-sell/hp-%EC%98%A4%EB%A9%98-17-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-rtx-3080-ti-6949u2jbwy5a/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "내가살게18",
-      "mannerTemperature": 43.2
-    }
-  ]
+  "candidates": []
 }
