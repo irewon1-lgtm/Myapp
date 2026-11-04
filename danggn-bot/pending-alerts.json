@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-04T08:02:20.473219Z",
+  "updatedAt": "2026-11-04T08:42:36.249322Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -15001,6 +15001,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EC%95%A0%ED%94%8C-%EB%A7%A5%EB%B6%81-%EC%97%90%EC%96%B4-m1-256-16gb-ys7exps3wbjp/",
       "firstAlertedAt": "2026-11-04T07:22:40.656987Z",
       "lastCandidateAt": "2026-11-04T07:22:40.656987Z"
+    },
+    "i3x76c185tp2": {
+      "id": "i3x76c185tp2",
+      "title": "맥북프로14 M5프로 램24GB. SSD1TB 블랙 미개봉",
+      "price": 4850000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "안양1동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 24,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "램24GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 1024,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-04T08:36:53.323Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C14-m5%ED%94%84%EB%A1%9C-%EB%9E%A824gb-ssd1tb-%EB%B8%94%EB%9E%99-%EB%AF%B8%EA%B0%9C%EB%B4%89-i3x76c185tp2/",
+      "firstAlertedAt": "2026-11-04T08:42:36.249322Z",
+      "lastCandidateAt": "2026-11-04T08:42:36.249322Z"
     }
   }
 }
