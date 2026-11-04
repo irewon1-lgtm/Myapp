@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-04T08:42:36.249322Z",
+  "updatedAt": "2026-11-04T09:22:28.211764Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -15026,6 +15026,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C14-m5%ED%94%84%EB%A1%9C-%EB%9E%A824gb-ssd1tb-%EB%B8%94%EB%9E%99-%EB%AF%B8%EA%B0%9C%EB%B4%89-i3x76c185tp2/",
       "firstAlertedAt": "2026-11-04T08:42:36.249322Z",
       "lastCandidateAt": "2026-11-04T08:42:36.249322Z"
+    },
+    "m8iyomza6eip": {
+      "id": "m8iyomza6eip",
+      "title": "ASUS ROG Strix G18 RTX 4070 게이밍 노트북",
+      "price": 1450000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "안양동",
+      "cpuHint": null,
+      "gpuHint": "RTX 4070",
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "RAM: 16GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 1024,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-04T08:48:39.906Z",
+      "url": "https://www.daangn.com/kr/buy-sell/asus-rog-strix-g18-rtx-4070-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-m8iyomza6eip/",
+      "firstAlertedAt": "2026-11-04T09:22:28.211764Z",
+      "lastCandidateAt": "2026-11-04T09:22:28.211764Z"
+    },
+    "vuf3sw333bhk": {
+      "id": "vuf3sw333bhk",
+      "title": "맥북프로14 M5 MDE54KH/A 실버 램16GB. SSD1TB 미개봉",
+      "price": 2600000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "안양1동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "램16GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 1024,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-04T08:58:00.680Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C14-m5-mde54kh-a-%EC%8B%A4%EB%B2%84-%EB%9E%A816gb-ssd1tb-%EB%AF%B8%EA%B0%9C%EB%B4%89-vuf3sw333bhk/",
+      "firstAlertedAt": "2026-11-04T09:22:28.211764Z",
+      "lastCandidateAt": "2026-11-04T09:22:28.211764Z"
     }
   }
 }
