@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-04T12:02:36.706498Z",
+  "updatedAt": "2026-11-04T12:42:29.430212Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -15126,6 +15126,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%AF%B8%EA%B0%9C%EB%B4%89-%EB%A7%A5%EB%B6%81-%EC%97%90%EC%96%B4-m5-15%EC%9D%B8%EC%B9%98-%EC%8B%A4%EB%B2%84-16gb-512gb-7jb8d84s29mp/",
       "firstAlertedAt": "2026-11-04T10:02:29.427159Z",
       "lastCandidateAt": "2026-11-04T10:02:29.427159Z"
+    },
+    "enabzmpuhy7c": {
+      "id": "enabzmpuhy7c",
+      "title": "HP 17인치 노트북 i5-1135G7 16GB RAM 238GB SSD",
+      "price": 300000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "석수동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-04T12:12:26.418Z",
+      "url": "https://www.daangn.com/kr/buy-sell/hp-17%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-1135g7-16gb-ram-238gb-ssd-enabzmpuhy7c/",
+      "firstAlertedAt": "2026-11-04T12:42:29.430212Z",
+      "lastCandidateAt": "2026-11-04T12:42:29.430212Z"
     }
   }
 }
