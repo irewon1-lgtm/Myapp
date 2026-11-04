@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-04T20:53:07.801Z",
+  "generatedAt": "2026-11-04T21:32:12.593Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -130,10 +130,10 @@
           "createdAt\":\"2026-10-28T00:34:01.040Z\",\"boostedAt\":\"2026-11-04T12:49:53.555Z\",\"region\":{\"name\":\"석현동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-11-04T16:37:01.644Z\",\"boostedAt\":\"2026-11-04T16:37:01.644Z\",\"region\":{\"name\":\"안양1동\"},\"category\":null,\"contentCoo",
           "createdAt\":\"2026-05-22T07:38:50.217Z\",\"boostedAt\":\"2026-11-04T12:48:20.627Z\",\"region\":{\"name\":\"석적읍\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-10-07T10:08:08.382Z\",\"boostedAt\":\"2026-11-04T15:00:55.679Z\",\"region\":{\"name\":\"전농동\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-11-04T13:17:39.857Z\",\"boostedAt\":\"2026-11-04T13:17:39.856Z\",\"region\":{\"name\":\"부림동\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":264,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"O.  M.  E.  N.\",\"description\":",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":263,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"O.  M.  E.  N.\",\"description\":",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -141,24 +141,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1207,
-    "globalUniqueListings": 485,
-    "duplicateListingsRemoved": 722,
-    "detailQueueStart": 0,
-    "freshDetailTasks": 0,
+    "searchUniqueListings": 1195,
+    "globalUniqueListings": 478,
+    "duplicateListingsRemoved": 717,
+    "detailQueueStart": 2,
+    "freshDetailTasks": 2,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 0,
-    "detailSucceeded": 0,
+    "detailRequestsExecuted": 2,
+    "detailSucceeded": 2,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 485,
+    "postedAtResolvedFromSearch": 478,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 78745,
+    "scanDurationMs": 81027,
     "cities": [
       {
         "city": "군포시",
@@ -170,8 +170,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 254,
-        "durationMs": 11960
+        "uniqueListings": 255,
+        "durationMs": 12178
       },
       {
         "city": "의왕시",
@@ -186,8 +186,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 342,
-        "durationMs": 25484
+        "uniqueListings": 343,
+        "durationMs": 25474
       },
       {
         "city": "안양시",
@@ -204,8 +204,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 384,
-        "durationMs": 35012
+        "uniqueListings": 370,
+        "durationMs": 35108
       },
       {
         "city": "과천시",
@@ -217,7 +217,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 227,
-        "durationMs": 6089
+        "durationMs": 6226
       }
     ],
     "finalCandidateCount": 0,
@@ -226,7 +226,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 78751
+    "durationMs": 81035
   },
   "candidates": []
 }
