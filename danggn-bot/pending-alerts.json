@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-04T04:42:28.145061Z",
+  "updatedAt": "2026-11-04T05:22:35.270738Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -14801,6 +14801,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%9D%BC%EC%9D%B4%EC%A0%A07-7703u-%EB%9E%A8-16%EA%B8%B0%EA%B0%80-nvme-256gb-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%9D%EB%8B%88%EB%8B%A4-jyorbk8ndxib/",
       "firstAlertedAt": "2026-11-04T04:02:21.271262Z",
       "lastCandidateAt": "2026-11-04T04:02:21.271262Z"
+    },
+    "kqigzddgupxq": {
+      "id": "kqigzddgupxq",
+      "title": "M1 맥북프로 13인치 16gb 512gb",
+      "price": 800000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "의왕시",
+      "location": "부곡동",
+      "cpuHint": "Apple M1",
+      "gpuHint": "Apple M1",
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16gb",
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-04T05:13:55.643Z",
+      "url": "https://www.daangn.com/kr/buy-sell/m1-%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C-13%EC%9D%B8%EC%B9%98-16gb-512gb-kqigzddgupxq/",
+      "firstAlertedAt": "2026-11-04T05:22:35.270738Z",
+      "lastCandidateAt": "2026-11-04T05:22:35.270738Z"
     }
   }
 }
