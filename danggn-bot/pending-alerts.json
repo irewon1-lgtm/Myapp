@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-04T06:42:34.266447Z",
+  "updatedAt": "2026-11-04T07:22:40.656987Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -13880,9 +13880,9 @@
     "3qmuch5fintp": {
       "id": "3qmuch5fintp",
       "title": "▶️고성능 게이밍◀️에이서 Predator Helios Neo 16 AI 노트북",
-      "price": 3200000,
-      "previousPrice": null,
-      "changeType": "new",
+      "price": 3000000,
+      "previousPrice": 3200000,
+      "changeType": "price_drop",
       "city": "안양시",
       "location": "안양동",
       "cpuHint": null,
@@ -13900,7 +13900,7 @@
       "postedAt": "2026-11-01T19:36:04.560Z",
       "url": "https://www.daangn.com/kr/buy-sell/%EA%B3%A0%EC%84%B1%EB%8A%A5-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EC%97%90%EC%9D%B4%EC%84%9C-predator-helios-neo-16-ai-%EB%85%B8%ED%8A%B8%EB%B6%81-3qmuch5fintp/",
       "firstAlertedAt": "2026-11-01T20:12:15.681914Z",
-      "lastCandidateAt": "2026-11-01T20:12:15.681914Z"
+      "lastCandidateAt": "2026-11-04T07:22:40.656987Z"
     },
     "1i5gp1tznhp7": {
       "id": "1i5gp1tznhp7",
@@ -14005,9 +14005,9 @@
     "ygnoihx5r3pe": {
       "id": "ygnoihx5r3pe",
       "title": "LG 그램 15인치 i7 13세대 노트북",
-      "price": 1200000,
-      "previousPrice": null,
-      "changeType": "new",
+      "price": 1075000,
+      "previousPrice": 1200000,
+      "changeType": "price_drop",
       "city": "군포시",
       "location": "당동",
       "cpuHint": null,
@@ -14025,7 +14025,7 @@
       "postedAt": "2026-11-02T04:35:52.703Z",
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-15%EC%9D%B8%EC%B9%98-i7-13%EC%84%B8%EB%8C%80-%EB%85%B8%ED%8A%B8%EB%B6%81-ygnoihx5r3pe/",
       "firstAlertedAt": "2026-11-02T05:12:30.641106Z",
-      "lastCandidateAt": "2026-11-02T05:12:30.641106Z"
+      "lastCandidateAt": "2026-11-04T07:22:40.656987Z"
     },
     "b9u7y3s4rvkk": {
       "id": "b9u7y3s4rvkk",
@@ -14951,6 +14951,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81%EC%97%90%EC%96%B4-15-%EC%8B%A4%EB%B2%84-16gb-1tb-%EB%AF%B8%EA%B0%9C%EB%B4%89-x23jjyxq97nd/",
       "firstAlertedAt": "2026-11-04T06:42:34.266447Z",
       "lastCandidateAt": "2026-11-04T06:42:34.266447Z"
+    },
+    "s3o1ysyhijwz": {
+      "id": "s3o1ysyhijwz",
+      "title": "삼성갤럭시북2 프로 SE NT951XGK 노트북 팝니다.",
+      "price": 840000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "부림동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB 램",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-04T07:08:07.123Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%812-%ED%94%84%EB%A1%9C-se-nt951xgk-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%9D%EB%8B%88%EB%8B%A4-s3o1ysyhijwz/",
+      "firstAlertedAt": "2026-11-04T07:22:40.656987Z",
+      "lastCandidateAt": "2026-11-04T07:22:40.656987Z"
+    },
+    "ys7exps3wbjp": {
+      "id": "ys7exps3wbjp",
+      "title": "애플 맥북 에어 M1 256 / 16GB",
+      "price": 550000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "의왕시",
+      "location": "초평동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB 램",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-04T06:43:16.311Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%95%A0%ED%94%8C-%EB%A7%A5%EB%B6%81-%EC%97%90%EC%96%B4-m1-256-16gb-ys7exps3wbjp/",
+      "firstAlertedAt": "2026-11-04T07:22:40.656987Z",
+      "lastCandidateAt": "2026-11-04T07:22:40.656987Z"
     }
   }
 }
