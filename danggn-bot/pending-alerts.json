@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-04T00:42:13.936608Z",
+  "updatedAt": "2026-11-04T01:22:33.757196Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -3855,8 +3855,8 @@
     "rtctyrypzinn": {
       "id": "rtctyrypzinn",
       "title": "레노버 아이디어패드 슬림3 노트북 (AMD 라이젠5, 16GB RAM)",
-      "price": 620000,
-      "previousPrice": 650000,
+      "price": 570000,
+      "previousPrice": 620000,
       "changeType": "price_drop",
       "city": "과천시",
       "location": "과천동",
@@ -3875,7 +3875,7 @@
       "postedAt": "2026-10-12T02:06:17.780Z",
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%95%84%EC%9D%B4%EB%94%94%EC%96%B4%ED%8C%A8%EB%93%9C-%EC%8A%AC%EB%A6%BC3-%EB%85%B8%ED%8A%B8%EB%B6%81-amd-%EB%9D%BC%EC%9D%B4%EC%A0%A05-16gb-ram-rtctyrypzinn/",
       "firstAlertedAt": "2026-10-12T02:23:11.479677Z",
-      "lastCandidateAt": "2026-10-23T11:12:15.505942Z"
+      "lastCandidateAt": "2026-11-04T01:22:33.757196Z"
     },
     "4yxhzm1y3heh": {
       "id": "4yxhzm1y3heh",
@@ -14655,9 +14655,9 @@
     "i2fubrc5ebz3": {
       "id": "i2fubrc5ebz3",
       "title": "LG 그램 노트북 16인치 i7 32GB 팝니다",
-      "price": 950000,
-      "previousPrice": null,
-      "changeType": "new",
+      "price": 900000,
+      "previousPrice": 950000,
+      "changeType": "price_drop",
       "city": "안양시",
       "location": "안양3동",
       "cpuHint": null,
@@ -14675,7 +14675,7 @@
       "postedAt": "2026-11-03T13:57:55.528Z",
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-16%EC%9D%B8%EC%B9%98-i7-32gb-%ED%8C%9D%EB%8B%88%EB%8B%A4-i2fubrc5ebz3/",
       "firstAlertedAt": "2026-11-03T14:32:21.703273Z",
-      "lastCandidateAt": "2026-11-03T14:32:21.703273Z"
+      "lastCandidateAt": "2026-11-04T01:22:33.757196Z"
     },
     "pwcmkwey4482": {
       "id": "pwcmkwey4482",
@@ -14701,6 +14701,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EC%84%9C%ED%94%BC%EC%8A%A4-%EB%9E%A9%ED%83%91-%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A42-32gb-1tb-pwcmkwey4482/",
       "firstAlertedAt": "2026-11-03T23:52:21.601777Z",
       "lastCandidateAt": "2026-11-03T23:52:21.601777Z"
+    },
+    "i4r1rb8u8r7g": {
+      "id": "i4r1rb8u8r7g",
+      "title": "LG 그램 pro (16Z90U-KS5WK) 518GB RAM 16GB 새제품",
+      "price": 2000000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "비산1동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "RAM 16GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-04T00:43:41.003Z",
+      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-pro-16z90u-ks5wk-518gb-ram-16gb-%EC%83%88%EC%A0%9C%ED%92%88-i4r1rb8u8r7g/",
+      "firstAlertedAt": "2026-11-04T01:22:33.757196Z",
+      "lastCandidateAt": "2026-11-04T01:22:33.757196Z"
     }
   }
 }
