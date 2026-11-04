@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-04T15:42:16.688052Z",
+  "updatedAt": "2026-11-04T16:22:25.133167Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -15251,6 +15251,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1%EB%85%B8%ED%8A%B8%EB%B6%81-pen-s-13-3%EC%9D%B8%EC%B9%98-i7-16gb-256gb-dtt5a7wzbh9f/",
       "firstAlertedAt": "2026-11-04T15:02:25.421505Z",
       "lastCandidateAt": "2026-11-04T15:02:25.421505Z"
+    },
+    "njxb5by8wn8j": {
+      "id": "njxb5by8wn8j",
+      "title": "HP 파빌리온 에어로 화이트 노트북 및 마우스 세트 (+장패드)",
+      "price": 510000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "안양4동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-04T16:09:22.924Z",
+      "url": "https://www.daangn.com/kr/buy-sell/hp-%ED%8C%8C%EB%B9%8C%EB%A6%AC%EC%98%A8-%EC%97%90%EC%96%B4%EB%A1%9C-%ED%99%94%EC%9D%B4%ED%8A%B8-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%B0%8F-%EB%A7%88%EC%9A%B0%EC%8A%A4-%EC%84%B8%ED%8A%B8-%EC%9E%A5%ED%8C%A8%EB%93%9C-njxb5by8wn8j/",
+      "firstAlertedAt": "2026-11-04T16:22:25.133167Z",
+      "lastCandidateAt": "2026-11-04T16:22:25.133167Z"
+    },
+    "4398w792n3ve": {
+      "id": "4398w792n3ve",
+      "title": "맥북 에어 13 M3 16/256 스페이스 그레이 영문자판 CTO",
+      "price": 1050000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "과천시",
+      "location": "별양동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "통합 메모리 16GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-04T15:49:43.787Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81-%EC%97%90%EC%96%B4-13-m3-16-256-%EC%8A%A4%ED%8E%98%EC%9D%B4%EC%8A%A4-%EA%B7%B8%EB%A0%88%EC%9D%B4-%EC%98%81%EB%AC%B8%EC%9E%90%ED%8C%90-cto-4398w792n3ve/",
+      "firstAlertedAt": "2026-11-04T16:22:25.133167Z",
+      "lastCandidateAt": "2026-11-04T16:22:25.133167Z"
     }
   }
 }
