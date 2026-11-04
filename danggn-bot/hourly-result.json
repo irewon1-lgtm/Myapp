@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-04T14:21:31.796Z",
+  "generatedAt": "2026-11-04T15:02:25.351Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,6 +55,32 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
+            "id": "/kr/buy-sell/msi-%EC%82%AC%EC%9D%B4%EB%B3%B4%EA%B7%B8-15-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%B8%94%EB%9E%99-rtx-4060-wdnueng8xmvo/",
+            "href": "/kr/buy-sell/msi-%EC%82%AC%EC%9D%B4%EB%B3%B4%EA%B7%B8-15-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%B8%94%EB%9E%99-rtx-4060-wdnueng8xmvo/",
+            "title": "MSI 사이보그 15 게이밍 노트북 블랙 RTX 4060",
+            "content": "인텔 코어 i7-12650H 프로세서와 RTX 4060 그래픽을 탑재한 모델이에요. 512GB NVMe SSD와 8GB RAM이 포함되어 있어요. \n144Hz 고주사율 디스플레이로 부드러운 화면을 즐길 수 있어요. \n게임을 즐기기에 적합한 사양이에요.\n\n구매기간은 약 3년정도이나 가끔 출장을 갈때만 사용해서\n사용횟수는 많지않아요. 큰 흠집이나 파손은 없으나\n생활 잔기스들은 있을 수 있어 너무 예민하신분들은 죄송합니다\n\nMSI 2023 CYBORG 15 15.6 코어i7 인텔 12세대 지포스 RTX 4060\nhttps://link.coupang.com/a/iplDJlYlwa",
+            "price": "700000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/e55c00b2-86f3-4d40-94c4-551b00c426e8.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-11-04T14:47:27.190Z",
+            "boostedAt": "2026-11-04T14:47:27.190Z",
+            "region": {
+              "name": "안양동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 37.3914926,
+                "longitude": 126.9228065
+              },
+              {
+                "latitude": 37.392279,
+                "longitude": 126.922984
+              }
+            ]
+          },
+          {
             "id": "/kr/buy-sell/%EA%B3%A0%EC%82%AC%EC%96%91-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-rtx5070-%EC%98%A4%EB%A9%98-16-%ED%8C%9D%EB%8B%88%EB%8B%A4-sc1wq4dd6qh9/",
             "href": "/kr/buy-sell/%EA%B3%A0%EC%82%AC%EC%96%91-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-rtx5070-%EC%98%A4%EB%A9%98-16-%ED%8C%9D%EB%8B%88%EB%8B%A4-sc1wq4dd6qh9/",
             "title": "고사양 게이밍 노트북 RTX5070 오멘 16 팝니다",
@@ -101,39 +127,17 @@
                 "longitude": 126.9664243
               }
             ]
-          },
-          {
-            "id": "/kr/buy-sell/%EC%98%9B%EB%82%A0-hp-%EB%85%B8%ED%8A%B8%EB%B6%81-2w3ss9q43nsb/",
-            "href": "/kr/buy-sell/%EC%98%9B%EB%82%A0-hp-%EB%85%B8%ED%8A%B8%EB%B6%81-2w3ss9q43nsb/",
-            "title": "옛날 hp 노트북",
-            "content": "옜날 hp 노트북 입니다.\n정상작동 화면 황변있음",
-            "price": "15000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/17938014151603fe45b4ea954418552f45b12d59c90f9af93a0f2e1b85499aa7adf42216089250.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-11-04T14:12:10.674Z",
-            "boostedAt": "2026-11-04T14:12:10.673Z",
-            "region": {
-              "name": "상계8동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 37.6651811,
-                "longitude": 127.0559622
-              }
-            ]
           }
         ],
         "dateFieldSnippets": [
+          "createdAt\":\"2026-11-04T14:47:27.190Z\",\"boostedAt\":\"2026-11-04T14:47:27.190Z\",\"region\":{\"name\":\"안양동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-28T00:34:01.040Z\",\"boostedAt\":\"2026-11-04T12:49:53.555Z\",\"region\":{\"name\":\"석현동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-11-04T13:17:39.857Z\",\"boostedAt\":\"2026-11-04T13:17:39.856Z\",\"region\":{\"name\":\"부림동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-04T14:12:10.674Z\",\"boostedAt\":\"2026-11-04T14:12:10.673Z\",\"region\":{\"name\":\"상계8동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-11-02T12:16:49.535Z\",\"boostedAt\":\"2026-11-04T13:28:51.722Z\",\"region\":{\"name\":\"오전동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-05-22T07:38:50.217Z\",\"boostedAt\":\"2026-11-04T12:48:20.627Z\",\"region\":{\"name\":\"석적읍\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-05-22T07:38:50.217Z\",\"boostedAt\":\"2026-11-04T12:48:20.627Z\",\"region\":{\"name\":\"석적읍\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-11-04T12:52:24.496Z\",\"boostedAt\":\"2026-11-04T12:52:24.496Z\",\"region\":{\"name\":\"평촌동\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":262,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"고사양 게이밍 노트북 RTX5070 오멘 16 팝니다\"",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":280,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"MSI 사이보그 15 게이밍 노트북 블랙 RTX 406",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -141,24 +145,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1160,
-    "globalUniqueListings": 427,
-    "duplicateListingsRemoved": 733,
-    "detailQueueStart": 9,
-    "freshDetailTasks": 9,
+    "searchUniqueListings": 1194,
+    "globalUniqueListings": 478,
+    "duplicateListingsRemoved": 716,
+    "detailQueueStart": 12,
+    "freshDetailTasks": 12,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 9,
-    "detailSucceeded": 9,
+    "detailRequestsExecuted": 12,
+    "detailSucceeded": 12,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 427,
+    "postedAtResolvedFromSearch": 478,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 0,
-    "scanDurationMs": 89733,
+    "candidateCount": 2,
+    "scanDurationMs": 93759,
     "cities": [
       {
         "city": "군포시",
@@ -170,8 +174,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 274,
-        "durationMs": 12253
+        "uniqueListings": 247,
+        "durationMs": 12127
       },
       {
         "city": "의왕시",
@@ -186,8 +190,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 314,
-        "durationMs": 25514
+        "uniqueListings": 345,
+        "durationMs": 25766
       },
       {
         "city": "안양시",
@@ -204,8 +208,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 336,
-        "durationMs": 34962
+        "uniqueListings": 366,
+        "durationMs": 35277
       },
       {
         "city": "과천시",
@@ -217,16 +221,87 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 236,
-        "durationMs": 6206
+        "durationMs": 6572
       }
     ],
-    "finalCandidateCount": 0,
+    "finalCandidateCount": 2,
     "stateItemCount": 5000,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 89740
+    "durationMs": 93767
   },
-  "candidates": []
+  "candidates": [
+    {
+      "id": "mac7nzu4xmhf",
+      "changeType": "new",
+      "previousPrice": null,
+      "price": 1300000,
+      "priceDropPercent": null,
+      "city": "의왕시",
+      "location": "부곡동",
+      "regionPath": "경기도 의왕시 부곡동",
+      "title": "M4 맥북에어 13인치 16gb 256gb",
+      "modelHint": "M4 맥북에어 13인치 16gb 256gb",
+      "cpuHint": "Apple M4",
+      "cpuBaselinePass": null,
+      "gpuHint": "Apple M4",
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16gb",
+      "storageGB": 256,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "specConfidence": "needs_review",
+      "postedAt": "2026-11-04T14:38:49.272Z",
+      "boostedAt": "2026-11-04T14:38:49.271Z",
+      "status": "Ongoing",
+      "description": "[판매] 맥북에어 13인치 2025년형 M4 / 16GB · 256GB\n\n■ 제품 정보\n맥북에어 13인치 2025년 M4 모델입니다.\n칩은 Apple M4, 메모리는 16GB입니다.\n저장 공간은 256GB SSD입니다.\nmacOS Tahoe 26.7.1이 설치되어 있습니다.\n배터리 사이클 수는 40회이며, 배터리 상태는 '정상'(성능 최대치 100%)입니다.\n애플 공식 제한 보증이 2026년 2월까지 남아 있습니다.\n\n■ 기기 상태\n외관은 찍힘, 기스 없이 깨끗한 상태입니다.\n외관 상태는 사진을 참고해 주세요.\n\n■ 구성품\n맥북 본체 + 정품 충전기 + 맥세이프3 케이블\n\n■ 참고\n중고 제품 특성상 사용감이 있을 수 있습니다.\n외관 상태는 사진을 참고해 주세요.",
+      "url": "https://www.daangn.com/kr/buy-sell/m4-%EB%A7%A5%EB%B6%81%EC%97%90%EC%96%B4-13%EC%9D%B8%EC%B9%98-16gb-256gb-mac7nzu4xmhf/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "YEONG",
+      "mannerTemperature": 64.4
+    },
+    {
+      "id": "dtt5a7wzbh9f",
+      "changeType": "new",
+      "previousPrice": null,
+      "price": 290000,
+      "priceDropPercent": null,
+      "city": "안양시",
+      "location": "비산2동",
+      "regionPath": "경기도 안양시 동안구 비산2동",
+      "title": "삼성노트북 Pen s 13.3인치 i7 16GB 256gb",
+      "modelHint": "삼성노트북 Pen s 13.3인치 i7 16GB 256gb",
+      "cpuHint": null,
+      "cpuBaselinePass": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": 256,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "specConfidence": "needs_review",
+      "postedAt": "2026-11-04T14:48:34.082Z",
+      "boostedAt": "2026-11-04T14:48:34.080Z",
+      "status": "Ongoing",
+      "description": "모델명 : 삼성 노트북 펜s 13.3 (NT950QAA)\n- 인텔 코어 i7 -8세대 프로세서\n- 16GB RAM, 256GB SSD\n- 터치펜 포함\n- 배터리 사이클 177회\n(2021~22년 경 배터리 교체함)\n\n어제까지 회사 현역 외근용 노트북으로 사용하다 새것을 지급받아 판매합니다. 구매 직후 커버 스티커 붙여서 뗀다면 외관은 멀쩡할 겁니다. 내부나 테두리는 연식이 있는 관계로 기스나 사용감이 다소 있습니다. \n\n전자기기를 아껴쓰고 특히 배터리에 민감해서 항상 85% 충전모드로 써서 아직 배터리 효율이 좋습니다. \n\n1kg 미만 무게로 외근용이나 서브 노트북으로 활용하기 좋으며 필기나 그림을 그릴 수 있는\n부분이 장점입니다.",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1%EB%85%B8%ED%8A%B8%EB%B6%81-pen-s-13-3%EC%9D%B8%EC%B9%98-i7-16gb-256gb-dtt5a7wzbh9f/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "jubi",
+      "mannerTemperature": 40.4
+    }
+  ]
 }

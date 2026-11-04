@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-04T14:21:31.856301Z",
+  "updatedAt": "2026-11-04T15:02:25.421505Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -15201,6 +15201,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A816-%EC%99%B8%EC%9E%A5%EA%B7%B8%EB%9E%98%ED%94%BDrtx2050-i5-1240p-%EB%AA%A8%EB%8D%B8-%ED%8C%90%EB%A7%A4-nqdj4pmfik1a/",
       "firstAlertedAt": "2026-11-04T13:22:34.576367Z",
       "lastCandidateAt": "2026-11-04T14:02:20.654462Z"
+    },
+    "mac7nzu4xmhf": {
+      "id": "mac7nzu4xmhf",
+      "title": "M4 맥북에어 13인치 16gb 256gb",
+      "price": 1300000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "의왕시",
+      "location": "부곡동",
+      "cpuHint": "Apple M4",
+      "gpuHint": "Apple M4",
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16gb",
+      "storageGB": 256,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-04T14:38:49.272Z",
+      "url": "https://www.daangn.com/kr/buy-sell/m4-%EB%A7%A5%EB%B6%81%EC%97%90%EC%96%B4-13%EC%9D%B8%EC%B9%98-16gb-256gb-mac7nzu4xmhf/",
+      "firstAlertedAt": "2026-11-04T15:02:25.421505Z",
+      "lastCandidateAt": "2026-11-04T15:02:25.421505Z"
+    },
+    "dtt5a7wzbh9f": {
+      "id": "dtt5a7wzbh9f",
+      "title": "삼성노트북 Pen s 13.3인치 i7 16GB 256gb",
+      "price": 290000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "비산2동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": 256,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-04T14:48:34.082Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1%EB%85%B8%ED%8A%B8%EB%B6%81-pen-s-13-3%EC%9D%B8%EC%B9%98-i7-16gb-256gb-dtt5a7wzbh9f/",
+      "firstAlertedAt": "2026-11-04T15:02:25.421505Z",
+      "lastCandidateAt": "2026-11-04T15:02:25.421505Z"
     }
   }
 }
