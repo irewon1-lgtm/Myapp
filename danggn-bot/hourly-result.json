@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-04T19:42:10.806Z",
+  "generatedAt": "2026-11-04T20:22:09.617Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -125,8 +125,8 @@
           "createdAt\":\"2026-10-28T00:34:01.040Z\",\"boostedAt\":\"2026-11-04T12:49:53.555Z\",\"region\":{\"name\":\"석현동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-07T10:08:08.382Z\",\"boostedAt\":\"2026-11-04T15:00:55.679Z\",\"region\":{\"name\":\"전농동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-05-22T07:38:50.217Z\",\"boostedAt\":\"2026-11-04T12:48:20.627Z\",\"region\":{\"name\":\"석적읍\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-04T14:49:12.531Z\",\"boostedAt\":\"2026-11-04T14:49:12.530Z\",\"region\":{\"name\":\"서초3동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-11-04T19:11:08.993Z\",\"boostedAt\":\"2026-11-04T19:11:08.991Z\",\"region\":{\"name\":\"탄현동\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-10-31T08:19:44.960Z\",\"boostedAt\":\"2026-11-04T02:28:35.175Z\",\"region\":{\"name\":\"사당제2동\"},\"category\":null,\"contentCo",
+          "createdAt\":\"2026-11-04T10:40:34.400Z\",\"boostedAt\":\"2026-11-04T10:40:34.397Z\",\"region\":{\"name\":\"와동동\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
           "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":258,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"고사양 게이밍 노트북 RTX5070 오멘 16 팝니다\"",
@@ -137,24 +137,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1178,
-    "globalUniqueListings": 472,
-    "duplicateListingsRemoved": 706,
-    "detailQueueStart": 1,
-    "freshDetailTasks": 1,
+    "searchUniqueListings": 1150,
+    "globalUniqueListings": 437,
+    "duplicateListingsRemoved": 713,
+    "detailQueueStart": 0,
+    "freshDetailTasks": 0,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 1,
-    "detailSucceeded": 1,
+    "detailRequestsExecuted": 0,
+    "detailSucceeded": 0,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 472,
+    "postedAtResolvedFromSearch": 437,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 79313,
+    "scanDurationMs": 78625,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +166,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 249,
-        "durationMs": 11782
+        "uniqueListings": 248,
+        "durationMs": 12085
       },
       {
         "city": "의왕시",
@@ -183,7 +183,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 342,
-        "durationMs": 25632
+        "durationMs": 25346
       },
       {
         "city": "안양시",
@@ -200,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 360,
-        "durationMs": 35148
+        "uniqueListings": 333,
+        "durationMs": 34810
       },
       {
         "city": "과천시",
@@ -213,7 +213,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 227,
-        "durationMs": 6018
+        "durationMs": 6162
       }
     ],
     "finalCandidateCount": 0,
@@ -222,7 +222,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 79320
+    "durationMs": 78632
   },
   "candidates": []
 }
