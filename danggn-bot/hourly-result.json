@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-04T17:02:17.783Z",
+  "generatedAt": "2026-11-04T17:42:18.940Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -126,10 +126,10 @@
           "createdAt\":\"2026-10-07T10:08:08.382Z\",\"boostedAt\":\"2026-11-04T15:00:55.679Z\",\"region\":{\"name\":\"전농동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-05-22T07:38:50.217Z\",\"boostedAt\":\"2026-11-04T12:48:20.627Z\",\"region\":{\"name\":\"석적읍\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-31T08:19:44.960Z\",\"boostedAt\":\"2026-11-04T02:28:35.175Z\",\"region\":{\"name\":\"사당제2동\"},\"category\":null,\"contentCo",
-          "createdAt\":\"2026-09-19T07:46:48.226Z\",\"boostedAt\":\"2026-11-04T16:18:08.346Z\",\"region\":{\"name\":\"동산동\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-11-04T17:03:55.794Z\",\"boostedAt\":\"2026-11-04T17:03:55.791Z\",\"region\":{\"name\":\"대연제1동\"},\"category\":null,\"contentCo"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":259,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"고사양 게이밍 노트북 RTX5070 오멘 16 팝니다\"",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":256,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"고사양 게이밍 노트북 RTX5070 오멘 16 팝니다\"",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -137,24 +137,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1232,
-    "globalUniqueListings": 483,
-    "duplicateListingsRemoved": 749,
-    "detailQueueStart": 4,
-    "freshDetailTasks": 4,
+    "searchUniqueListings": 1224,
+    "globalUniqueListings": 485,
+    "duplicateListingsRemoved": 739,
+    "detailQueueStart": 7,
+    "freshDetailTasks": 7,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 4,
-    "detailSucceeded": 4,
+    "detailRequestsExecuted": 7,
+    "detailSucceeded": 7,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 483,
+    "postedAtResolvedFromSearch": 485,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 0,
-    "scanDurationMs": 83466,
+    "candidateCount": 1,
+    "scanDurationMs": 86579,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +166,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 282,
-        "durationMs": 12001
+        "uniqueListings": 281,
+        "durationMs": 12096
       },
       {
         "city": "의왕시",
@@ -182,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 343,
-        "durationMs": 25714
+        "uniqueListings": 344,
+        "durationMs": 25410
       },
       {
         "city": "안양시",
@@ -200,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 379,
-        "durationMs": 35178
+        "uniqueListings": 371,
+        "durationMs": 34971
       },
       {
         "city": "과천시",
@@ -213,16 +213,52 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 228,
-        "durationMs": 6449
+        "durationMs": 6218
       }
     ],
-    "finalCandidateCount": 0,
+    "finalCandidateCount": 1,
     "stateItemCount": 5000,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 83474
+    "durationMs": 86587
   },
-  "candidates": []
+  "candidates": [
+    {
+      "id": "hnqvudbd8zw2",
+      "changeType": "price_drop",
+      "previousPrice": 650000,
+      "price": 600000,
+      "priceDropPercent": 7.7,
+      "city": "의왕시",
+      "location": "학의동",
+      "regionPath": "경기도 의왕시 학의동",
+      "title": "맥북 Pro 16인치 (2019) (60만)",
+      "modelHint": "맥북 Pro 16인치 (2019) (60만)",
+      "cpuHint": null,
+      "cpuBaselinePass": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "specConfidence": "needs_review",
+      "postedAt": "2026-10-27T08:56:52.241Z",
+      "boostedAt": "2026-11-04T17:38:17.318Z",
+      "status": "Ongoing",
+      "description": "교회영상 데이터 저장용으로 구입\n최근 4년간 미사용보관\n\n2019년형 맥북 프로 16인치\n인텔 코어 i9 프로세서와 16GB",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81-pro-16%EC%9D%B8%EC%B9%98-2019-60%EB%A7%8C-hnqvudbd8zw2/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "지중해",
+      "mannerTemperature": 36.5
+    }
+  ]
 }
