@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-04T05:22:35.270738Z",
+  "updatedAt": "2026-11-04T06:02:21.746297Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -12305,8 +12305,8 @@
     "vahstuw7o25m": {
       "id": "vahstuw7o25m",
       "title": "미개봉 맥북 에어 M5 15인치 실버 16GB 512GB",
-      "price": 2050000,
-      "previousPrice": 2150000,
+      "price": 2000000,
+      "previousPrice": 2050000,
       "changeType": "price_drop",
       "city": "안양시",
       "location": "호계2동",
@@ -12325,7 +12325,7 @@
       "postedAt": "2026-10-29T11:04:50.330Z",
       "url": "https://www.daangn.com/kr/buy-sell/%EB%AF%B8%EA%B0%9C%EB%B4%89-%EB%A7%A5%EB%B6%81-%EC%97%90%EC%96%B4-m5-15%EC%9D%B8%EC%B9%98-%EC%8B%A4%EB%B2%84-16gb-512gb-vahstuw7o25m/",
       "firstAlertedAt": "2026-10-29T11:12:28.293224Z",
-      "lastCandidateAt": "2026-11-03T22:31:31.814799Z"
+      "lastCandidateAt": "2026-11-04T06:02:21.746297Z"
     },
     "n8tzom6g3x7h": {
       "id": "n8tzom6g3x7h",
@@ -14826,6 +14826,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/m1-%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C-13%EC%9D%B8%EC%B9%98-16gb-512gb-kqigzddgupxq/",
       "firstAlertedAt": "2026-11-04T05:22:35.270738Z",
       "lastCandidateAt": "2026-11-04T05:22:35.270738Z"
+    },
+    "x5xgnzaqiwkx": {
+      "id": "x5xgnzaqiwkx",
+      "title": "삼성 갤럭시북5 Pro NT940XHA-K51AS 실버",
+      "price": 1350000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "의왕시",
+      "location": "내손1동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 128,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "128기가",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-04T05:22:40.958Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%815-pro-nt940xha-k51as-%EC%8B%A4%EB%B2%84-x5xgnzaqiwkx/",
+      "firstAlertedAt": "2026-11-04T06:02:21.746297Z",
+      "lastCandidateAt": "2026-11-04T06:02:21.746297Z"
+    },
+    "cp7oba4vcw7d": {
+      "id": "cp7oba4vcw7d",
+      "title": "애플 맥북프로 19년 16인치 스페이스그레이 팝니다",
+      "price": 590000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "부림동",
+      "cpuHint": null,
+      "gpuHint": "Radeon Pro 5500M",
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB 메모리",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-04T05:25:31.345Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%95%A0%ED%94%8C-%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C-19%EB%85%84-16%EC%9D%B8%EC%B9%98-%EC%8A%A4%ED%8E%98%EC%9D%B4%EC%8A%A4%EA%B7%B8%EB%A0%88%EC%9D%B4-%ED%8C%9D%EB%8B%88%EB%8B%A4-cp7oba4vcw7d/",
+      "firstAlertedAt": "2026-11-04T06:02:21.746297Z",
+      "lastCandidateAt": "2026-11-04T06:02:21.746297Z"
     }
   }
 }
