@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-04T09:22:28.211764Z",
+  "updatedAt": "2026-11-04T10:02:29.427159Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -15076,6 +15076,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C14-m5-mde54kh-a-%EC%8B%A4%EB%B2%84-%EB%9E%A816gb-ssd1tb-%EB%AF%B8%EA%B0%9C%EB%B4%89-vuf3sw333bhk/",
       "firstAlertedAt": "2026-11-04T09:22:28.211764Z",
       "lastCandidateAt": "2026-11-04T09:22:28.211764Z"
+    },
+    "9o9dj1sf5dfp": {
+      "id": "9o9dj1sf5dfp",
+      "title": "미개봉)삼성 갤럭시북6 16인치 (NT760VJG-KWEAV)",
+      "price": 1200000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "석수1동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "메모리: 16GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 256,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-04T09:51:37.101Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%AF%B8%EA%B0%9C%EB%B4%89-%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%816-16%EC%9D%B8%EC%B9%98-nt760vjg-kweav-9o9dj1sf5dfp/",
+      "firstAlertedAt": "2026-11-04T10:02:29.427159Z",
+      "lastCandidateAt": "2026-11-04T10:02:29.427159Z"
+    },
+    "7jb8d84s29mp": {
+      "id": "7jb8d84s29mp",
+      "title": "미개봉 맥북 에어 M5 15인치 실버 16GB 512GB",
+      "price": 1980000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "호계2동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB 메모리",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-04T09:24:16.398Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%AF%B8%EA%B0%9C%EB%B4%89-%EB%A7%A5%EB%B6%81-%EC%97%90%EC%96%B4-m5-15%EC%9D%B8%EC%B9%98-%EC%8B%A4%EB%B2%84-16gb-512gb-7jb8d84s29mp/",
+      "firstAlertedAt": "2026-11-04T10:02:29.427159Z",
+      "lastCandidateAt": "2026-11-04T10:02:29.427159Z"
     }
   }
 }
