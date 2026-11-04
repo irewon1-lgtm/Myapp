@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-04T12:42:29.430212Z",
+  "updatedAt": "2026-11-04T13:22:34.576367Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -15130,9 +15130,9 @@
     "enabzmpuhy7c": {
       "id": "enabzmpuhy7c",
       "title": "HP 17인치 노트북 i5-1135G7 16GB RAM 238GB SSD",
-      "price": 300000,
-      "previousPrice": null,
-      "changeType": "new",
+      "price": 270000,
+      "previousPrice": 300000,
+      "changeType": "price_drop",
       "city": "안양시",
       "location": "석수동",
       "cpuHint": null,
@@ -15150,7 +15150,57 @@
       "postedAt": "2026-11-04T12:12:26.418Z",
       "url": "https://www.daangn.com/kr/buy-sell/hp-17%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-1135g7-16gb-ram-238gb-ssd-enabzmpuhy7c/",
       "firstAlertedAt": "2026-11-04T12:42:29.430212Z",
-      "lastCandidateAt": "2026-11-04T12:42:29.430212Z"
+      "lastCandidateAt": "2026-11-04T13:22:34.576367Z"
+    },
+    "pps3awnaw7sg": {
+      "id": "pps3awnaw7sg",
+      "title": "HP 빅터스 16-r0088TX 고사양 업그레이드 구성 판매합니다.",
+      "price": 1520000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "과천시",
+      "location": "중앙동",
+      "cpuHint": "i7-13700HX",
+      "gpuHint": "RTX 4070",
+      "vramGB": null,
+      "ramGB": 32,
+      "ambiguousMemoryGB": 32,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "RAM: 32GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "32GB",
+      "storageGB": 1024,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "postedAt": "2026-11-04T13:17:39.857Z",
+      "url": "https://www.daangn.com/kr/buy-sell/hp-%EB%B9%85%ED%84%B0%EC%8A%A4-16-r0088tx-%EA%B3%A0%EC%82%AC%EC%96%91-%EC%97%85%EA%B7%B8%EB%A0%88%EC%9D%B4%EB%93%9C-%EA%B5%AC%EC%84%B1-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-pps3awnaw7sg/",
+      "firstAlertedAt": "2026-11-04T13:22:34.576367Z",
+      "lastCandidateAt": "2026-11-04T13:22:34.576367Z"
+    },
+    "nqdj4pmfik1a": {
+      "id": "nqdj4pmfik1a",
+      "title": "LG 그램16  외장그래픽rtx2050 i5 1240p 모델 판매",
+      "price": 770000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "대야동",
+      "cpuHint": null,
+      "gpuHint": "rtx2050",
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "램16 ",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": 256,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-04T13:03:56.983Z",
+      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A816-%EC%99%B8%EC%9E%A5%EA%B7%B8%EB%9E%98%ED%94%BDrtx2050-i5-1240p-%EB%AA%A8%EB%8D%B8-%ED%8C%90%EB%A7%A4-nqdj4pmfik1a/",
+      "firstAlertedAt": "2026-11-04T13:22:34.576367Z",
+      "lastCandidateAt": "2026-11-04T13:22:34.576367Z"
     }
   }
 }
