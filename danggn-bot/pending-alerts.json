@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-05T10:52:33.826428Z",
+  "updatedAt": "2026-11-05T11:32:29.209081Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -15105,9 +15105,9 @@
     "7jb8d84s29mp": {
       "id": "7jb8d84s29mp",
       "title": "미개봉 맥북 에어 M5 15인치 실버 16GB 512GB",
-      "price": 1980000,
-      "previousPrice": null,
-      "changeType": "new",
+      "price": 1950000,
+      "previousPrice": 1980000,
+      "changeType": "price_drop",
       "city": "안양시",
       "location": "호계2동",
       "cpuHint": null,
@@ -15125,7 +15125,7 @@
       "postedAt": "2026-11-04T09:24:16.398Z",
       "url": "https://www.daangn.com/kr/buy-sell/%EB%AF%B8%EA%B0%9C%EB%B4%89-%EB%A7%A5%EB%B6%81-%EC%97%90%EC%96%B4-m5-15%EC%9D%B8%EC%B9%98-%EC%8B%A4%EB%B2%84-16gb-512gb-7jb8d84s29mp/",
       "firstAlertedAt": "2026-11-04T10:02:29.427159Z",
-      "lastCandidateAt": "2026-11-04T10:02:29.427159Z"
+      "lastCandidateAt": "2026-11-05T11:32:29.209081Z"
     },
     "enabzmpuhy7c": {
       "id": "enabzmpuhy7c",
@@ -15626,6 +15626,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EC%95%A0%ED%94%8C-%EB%A7%A5%EB%B6%81%EC%97%90%EC%96%B4-13-m5-16gb-512gb-%EB%AF%B8%EB%93%9C%EB%82%98%EC%9D%B4%ED%8A%B8-n3fp8fsx279r/",
       "firstAlertedAt": "2026-11-05T10:52:33.826428Z",
       "lastCandidateAt": "2026-11-05T10:52:33.826428Z"
+    },
+    "fhd475s1b5bm": {
+      "id": "fhd475s1b5bm",
+      "title": "한성 tfx245 노트북",
+      "price": 200000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "호계동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16램",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-05T11:24:12.015Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%ED%95%9C%EC%84%B1-tfx245-%EB%85%B8%ED%8A%B8%EB%B6%81-fhd475s1b5bm/",
+      "firstAlertedAt": "2026-11-05T11:32:29.209081Z",
+      "lastCandidateAt": "2026-11-05T11:32:29.209081Z"
+    },
+    "2arje3tby6d5": {
+      "id": "2arje3tby6d5",
+      "title": "맥북에어 M1 16GB 실버 + 마우스 1세대 팔아요. (🔋94%, 상태 A급)",
+      "price": 750000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "비산동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB 메모리",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": 256,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-05T11:13:27.609Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81%EC%97%90%EC%96%B4-m1-16gb-%EC%8B%A4%EB%B2%84-%EB%A7%88%EC%9A%B0%EC%8A%A4-1%EC%84%B8%EB%8C%80-%ED%8C%94%EC%95%84%EC%9A%94-94-%EC%83%81%ED%83%9C-a%EA%B8%89-2arje3tby6d5/",
+      "firstAlertedAt": "2026-11-05T11:32:29.209081Z",
+      "lastCandidateAt": "2026-11-05T11:32:29.209081Z"
     }
   }
 }
