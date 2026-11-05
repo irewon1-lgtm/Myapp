@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-05T16:22:39.419Z",
+  "generatedAt": "2026-11-05T16:36:26.835Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -103,24 +103,24 @@
             ]
           },
           {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EC%84%BC%EC%8A%A4-r538-%EB%85%B8%ED%8A%B8%EB%B6%81-2h52gg7grjyd/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EC%84%BC%EC%8A%A4-r538-%EB%85%B8%ED%8A%B8%EB%B6%81-2h52gg7grjyd/",
-            "title": "삼성 센스 R538 노트북",
-            "content": "삼성 센스 R538 노트북 판매해요. 인텔 펜티엄 CPU P6100, 2.00GHz 프로세서와 4GB RAM을 탑재했어요.SSD 120G 넉넉한 저장 공간으로 다양한 작업을 하기에 좋아요. 깔끔한 디자인으로 어디서든 잘 어울려요. 이 노트북으로 즐거운 컴퓨팅 경험을 만들어보세요.\n배터리 정전대비\n노트북 본체.어뎁터포함 입니다.\n윈도우11 설치 한글.2020. 오피스2016\n옛 노래방",
-            "price": "70000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/6789e8f5-1581-4482-abbb-5f1889fd8797.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%95%84%EC%9D%B4%EB%94%94%EC%96%B4%ED%8C%A8%EB%93%9C-%EC%8A%AC%EB%A6%BC3-%ED%8C%9D%EB%8B%88%EB%8B%A4-5b9w1323qvj7/",
+            "href": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%95%84%EC%9D%B4%EB%94%94%EC%96%B4%ED%8C%A8%EB%93%9C-%EC%8A%AC%EB%A6%BC3-%ED%8C%9D%EB%8B%88%EB%8B%A4-5b9w1323qvj7/",
+            "title": "레노버 아이디어패드 슬림3 팝니다",
+            "content": "레노버 아이디어패드 슬림3 입니다\nCPU 라이젠5 4500u\nGPU 내장 그래픽\nRam ddr4 8gb\nSSD NVMe 256gb\n노트북 옆부분이 부서져서 테이프로붙여놓았습니다 \n사용에는 지장 없습니다(3번사진 참고)\n2십8만원입니다",
+            "price": "28",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/6174912f-89bf-4b2c-9a72-3471138c6909.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-25T03:56:54.272Z",
-            "boostedAt": "2026-11-05T15:58:58.912Z",
+            "createdAt": "2026-11-05T16:22:44.959Z",
+            "boostedAt": "2026-11-05T16:22:44.957Z",
             "region": {
-              "name": "반지동"
+              "name": "망포동"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 35.2401764,
-                "longitude": 128.6527982
+                "latitude": 37.2360625,
+                "longitude": 127.0575245
               }
             ]
           }
@@ -128,12 +128,12 @@
         "dateFieldSnippets": [
           "createdAt\":\"2026-08-29T11:41:20.582Z\",\"boostedAt\":\"2026-11-05T11:35:09.923Z\",\"region\":{\"name\":\"호계3동\"},\"category\":null,\"contentCoo",
           "createdAt\":\"2026-11-03T01:00:06.326Z\",\"boostedAt\":\"2026-11-05T10:47:04.183Z\",\"region\":{\"name\":\"정자동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-10-25T03:56:54.272Z\",\"boostedAt\":\"2026-11-05T15:58:58.912Z\",\"region\":{\"name\":\"반지동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-05T15:52:05.576Z\",\"boostedAt\":\"2026-11-05T15:52:05.574Z\",\"region\":{\"name\":\"청북읍\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-11-05T16:22:44.959Z\",\"boostedAt\":\"2026-11-05T16:22:44.957Z\",\"region\":{\"name\":\"망포동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-11-05T16:22:48.147Z\",\"boostedAt\":\"2026-11-05T16:22:48.145Z\",\"region\":{\"name\":\"중화산동2가\"},\"category\":null,\"contentC",
           "createdAt\":\"2026-10-15T01:56:01.727Z\",\"boostedAt\":\"2026-11-05T06:46:39.125Z\",\"region\":{\"name\":\"호계동\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":269,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"HP 오멘 16 5070게이밍 노트북\",\"descrip",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":268,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"HP 오멘 16 5070게이밍 노트북\",\"descrip",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -141,24 +141,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1202,
-    "globalUniqueListings": 468,
-    "duplicateListingsRemoved": 734,
-    "detailQueueStart": 11,
-    "freshDetailTasks": 11,
+    "searchUniqueListings": 1209,
+    "globalUniqueListings": 457,
+    "duplicateListingsRemoved": 752,
+    "detailQueueStart": 3,
+    "freshDetailTasks": 3,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 11,
-    "detailSucceeded": 11,
+    "detailRequestsExecuted": 3,
+    "detailSucceeded": 3,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 468,
+    "postedAtResolvedFromSearch": 457,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 91858,
+    "scanDurationMs": 82225,
     "cities": [
       {
         "city": "군포시",
@@ -170,8 +170,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 263,
-        "durationMs": 12149
+        "uniqueListings": 260,
+        "durationMs": 11946
       },
       {
         "city": "의왕시",
@@ -186,8 +186,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 351,
-        "durationMs": 25523
+        "uniqueListings": 362,
+        "durationMs": 25637
       },
       {
         "city": "안양시",
@@ -204,8 +204,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 349,
-        "durationMs": 35101
+        "uniqueListings": 348,
+        "durationMs": 35284
       },
       {
         "city": "과천시",
@@ -217,7 +217,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 239,
-        "durationMs": 6346
+        "durationMs": 6134
       }
     ],
     "finalCandidateCount": 0,
@@ -226,7 +226,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 91864
+    "durationMs": 82232
   },
   "candidates": []
 }
