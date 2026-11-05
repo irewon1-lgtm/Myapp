@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-04T23:32:21.185124Z",
+  "updatedAt": "2026-11-05T00:12:25.437482Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -6605,8 +6605,8 @@
     "1pf8d1sy4ix5": {
       "id": "1pf8d1sy4ix5",
       "title": "Apple Mac Pro (Late 2013) 연탄맥 64GB램, 256GB SSD",
-      "price": 400000,
-      "previousPrice": 450000,
+      "price": 380000,
+      "previousPrice": 400000,
       "changeType": "price_drop",
       "city": "안양시",
       "location": "박달동",
@@ -6625,7 +6625,7 @@
       "postedAt": "2026-10-16T16:00:23.694Z",
       "url": "https://www.daangn.com/kr/buy-sell/apple-mac-pro-late-2013-%EC%97%B0%ED%83%84%EB%A7%A5-64gb%EB%9E%A8-256gb-ssd-1pf8d1sy4ix5/",
       "firstAlertedAt": "2026-10-16T16:02:08.041361Z",
-      "lastCandidateAt": "2026-10-19T04:12:28.092346Z"
+      "lastCandidateAt": "2026-11-05T00:12:25.437482Z"
     },
     "fkspezp9trbp": {
       "id": "fkspezp9trbp",
@@ -13105,18 +13105,18 @@
     "i8vvv3x4gun9": {
       "id": "i8vvv3x4gun9",
       "title": "애플 맥북에어 M2 미드나이트 16GB 1TB",
-      "price": 1500000,
-      "previousPrice": null,
-      "changeType": "new",
+      "price": 1300000,
+      "previousPrice": 1500000,
+      "changeType": "price_drop",
       "city": "안양시",
       "location": "평촌동",
       "cpuHint": null,
       "gpuHint": null,
       "vramGB": null,
-      "ramGB": null,
+      "ramGB": 16,
       "ambiguousMemoryGB": 16,
       "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": null,
+      "ramEvidence": "메모리 16GB",
       "vramEvidence": null,
       "ambiguousMemoryEvidence": "16GB",
       "storageGB": 1024,
@@ -13125,7 +13125,7 @@
       "postedAt": "2026-10-31T04:55:42.072Z",
       "url": "https://www.daangn.com/kr/buy-sell/%EC%95%A0%ED%94%8C-%EB%A7%A5%EB%B6%81%EC%97%90%EC%96%B4-m2-%EB%AF%B8%EB%93%9C%EB%82%98%EC%9D%B4%ED%8A%B8-16gb-1tb-i8vvv3x4gun9/",
       "firstAlertedAt": "2026-10-31T05:02:18.964285Z",
-      "lastCandidateAt": "2026-10-31T05:02:18.964285Z"
+      "lastCandidateAt": "2026-11-05T00:12:25.437482Z"
     },
     "xwsh7henjcf4": {
       "id": "xwsh7henjcf4",
