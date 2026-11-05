@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-05T00:12:25.383Z",
+  "generatedAt": "2026-11-05T00:52:19.140Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,28 +55,6 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/%EB%8D%B8-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%9D%EB%8B%88%EB%8B%A4-6fm3tp7e8suj/",
-            "href": "/kr/buy-sell/%EB%8D%B8-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%9D%EB%8B%88%EB%8B%A4-6fm3tp7e8suj/",
-            "title": "델 노트북 팝니다.",
-            "content": "델 노트북 팝니다.\n모델명은 DDB16255-WH02KR 입니다.\n\n상세 스펙은 사진에 나와 있습니다.\n\n25년12월경에서 컴퓨존에서 구매했고 보증기간은 만료되었지만 구매 후 실사용시간 50시간 이내라 상태 아주 좋습니다.\n\n박스포함 구성품 전부 있습니다.",
-            "price": "850000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/76d0ff4f-7016-4805-a51d-af594246559f.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": false,
-            "createdAt": "2026-11-04T23:52:52.174Z",
-            "boostedAt": "2026-11-04T23:52:52.137Z",
-            "region": {
-              "name": "정자3동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 37.2984407,
-                "longitude": 126.9955168
-              }
-            ]
-          },
-          {
             "id": "/kr/buy-sell/%EA%B3%A0%EC%82%AC%EC%96%91-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-rtx5070-%EC%98%A4%EB%A9%98-16-%ED%8C%9D%EB%8B%88%EB%8B%A4-sc1wq4dd6qh9/",
             "href": "/kr/buy-sell/%EA%B3%A0%EC%82%AC%EC%96%91-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-rtx5070-%EC%98%A4%EB%A9%98-16-%ED%8C%9D%EB%8B%88%EB%8B%A4-sc1wq4dd6qh9/",
             "title": "고사양 게이밍 노트북 RTX5070 오멘 16 팝니다",
@@ -119,17 +97,39 @@
                 "longitude": 127.4633934
               }
             ]
+          },
+          {
+            "id": "/kr/buy-sell/%EB%8D%B8-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%9D%EB%8B%88%EB%8B%A4-6fm3tp7e8suj/",
+            "href": "/kr/buy-sell/%EB%8D%B8-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%9D%EB%8B%88%EB%8B%A4-6fm3tp7e8suj/",
+            "title": "델 노트북 팝니다.",
+            "content": "델 노트북 팝니다.\n모델명은 DDB16255-WH02KR 입니다.\n\n상세 스펙은 사진에 나와 있습니다.\n\n25년12월경에서 컴퓨존에서 구매했고 보증기간은 만료되었지만 구매 후 실사용시간 50시간 이내라 상태 아주 좋습니다.\n\n박스포함 구성품 전부 있습니다.",
+            "price": "850000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/76d0ff4f-7016-4805-a51d-af594246559f.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-11-04T23:52:52.174Z",
+            "boostedAt": "2026-11-04T23:52:52.137Z",
+            "region": {
+              "name": "정자3동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 37.2984407,
+                "longitude": 126.9955168
+              }
+            ]
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-11-04T23:52:52.174Z\",\"boostedAt\":\"2026-11-04T23:52:52.137Z\",\"region\":{\"name\":\"정자3동\"},\"category\":null,\"contentCoo",
           "createdAt\":\"2026-10-28T00:34:01.040Z\",\"boostedAt\":\"2026-11-04T12:49:53.555Z\",\"region\":{\"name\":\"석현동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-30T21:56:07.825Z\",\"boostedAt\":\"2026-11-04T20:26:17.098Z\",\"region\":{\"name\":\"산남동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-02T11:02:30.505Z\",\"boostedAt\":\"2026-11-04T22:51:50.644Z\",\"region\":{\"name\":\"관양동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-10-31T04:55:42.072Z\",\"boostedAt\":\"2026-11-04T23:51:57.786Z\",\"region\":{\"name\":\"평촌동\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-11-04T23:52:52.174Z\",\"boostedAt\":\"2026-11-04T23:52:52.137Z\",\"region\":{\"name\":\"정자3동\"},\"category\":null,\"contentCoo",
+          "createdAt\":\"2026-11-05T00:32:00.199Z\",\"boostedAt\":\"2026-11-05T00:32:00.195Z\",\"region\":{\"name\":\"군포2동\"},\"category\":null,\"contentCoo",
+          "createdAt\":\"2026-07-28T23:35:57.612Z\",\"boostedAt\":\"2026-11-05T00:38:21.508Z\",\"region\":{\"name\":\"무실동\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":266,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"델 노트북 팝니다.\",\"description\":\"델 노",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":269,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"고사양 게이밍 노트북 RTX5070 오멘 16 팝니다\"",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -137,24 +137,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1208,
-    "globalUniqueListings": 484,
-    "duplicateListingsRemoved": 724,
-    "detailQueueStart": 15,
-    "freshDetailTasks": 15,
+    "searchUniqueListings": 1211,
+    "globalUniqueListings": 478,
+    "duplicateListingsRemoved": 733,
+    "detailQueueStart": 11,
+    "freshDetailTasks": 11,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 15,
-    "detailSucceeded": 15,
+    "detailRequestsExecuted": 11,
+    "detailSucceeded": 11,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 484,
+    "postedAtResolvedFromSearch": 478,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 2,
-    "scanDurationMs": 98326,
+    "candidateCount": 1,
+    "scanDurationMs": 93012,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +166,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 262,
-        "durationMs": 12482
+        "uniqueListings": 260,
+        "durationMs": 12469
       },
       {
         "city": "의왕시",
@@ -182,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 351,
-        "durationMs": 25918
+        "uniqueListings": 349,
+        "durationMs": 25752
       },
       {
         "city": "안양시",
@@ -200,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 366,
-        "durationMs": 35654
+        "uniqueListings": 371,
+        "durationMs": 35333
       },
       {
         "city": "과천시",
@@ -212,88 +212,53 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 229,
-        "durationMs": 6449
+        "uniqueListings": 231,
+        "durationMs": 6539
       }
     ],
-    "finalCandidateCount": 2,
+    "finalCandidateCount": 1,
     "stateItemCount": 5000,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 98332
+    "durationMs": 93017
   },
   "candidates": [
     {
-      "id": "1pf8d1sy4ix5",
-      "changeType": "price_drop",
-      "previousPrice": 400000,
-      "price": 380000,
-      "priceDropPercent": 5,
-      "city": "안양시",
-      "location": "박달동",
-      "regionPath": "경기도 안양시 만안구 박달동",
-      "title": "Apple Mac Pro (Late 2013) 연탄맥 64GB램, 256GB SSD",
-      "modelHint": "Apple Mac Pro (Late 2013) 연탄맥 64GB램, 256GB SSD",
-      "cpuHint": null,
-      "cpuBaselinePass": null,
-      "gpuHint": null,
-      "vramGB": null,
-      "ramGB": 64,
-      "ambiguousMemoryGB": 64,
-      "hardwareReviewStatus": "PASS_RAM",
-      "ramEvidence": "64GB램",
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": "64GB",
-      "storageGB": 256,
-      "llmCapability": "WORK_DEV_RAM32",
-      "llmReason": "RAM 32GB 이상 확정 후보",
-      "specConfidence": "confirmed",
-      "postedAt": "2026-10-16T16:00:23.694Z",
-      "boostedAt": "2026-11-05T00:00:39.531Z",
-      "status": "Ongoing",
-      "description": "맥 프로 (Late 2013) 일명 연탄맥 팝니다.\n인텔 제온 E5 2.7GHz 12코어 프로세서와 64GB DDR3 메모리, 256GB SSD 탑재.\nAMD FirePro D300 2GB 그래픽 카드도 포함되어 있습니다.\n박스는 없고, 본체만 있습니다. \n무게가 있어 직거래만 가능합니다. 연락주세요.",
-      "url": "https://www.daangn.com/kr/buy-sell/apple-mac-pro-late-2013-%EC%97%B0%ED%83%84%EB%A7%A5-64gb%EB%9E%A8-256gb-ssd-1pf8d1sy4ix5/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "블루에떼",
-      "mannerTemperature": 47.2
-    },
-    {
-      "id": "i8vvv3x4gun9",
-      "changeType": "price_drop",
-      "previousPrice": 1500000,
-      "price": 1300000,
-      "priceDropPercent": 13.3,
-      "city": "안양시",
-      "location": "평촌동",
-      "regionPath": "경기도 안양시 동안구 평촌동",
-      "title": "애플 맥북에어 M2 미드나이트 16GB 1TB",
-      "modelHint": "애플 맥북에어 M2 미드나이트 16GB 1TB",
+      "id": "e9ugn821u1zw",
+      "changeType": "new",
+      "previousPrice": null,
+      "price": 1450000,
+      "priceDropPercent": null,
+      "city": "군포시",
+      "location": "군포2동",
+      "regionPath": "경기도 군포시 군포2동",
+      "title": "[새상품] LG 그램 15ZD90T-GX56K (미개봉)",
+      "modelHint": "[새상품] LG 그램 15ZD90T-GX56K (미개봉)",
       "cpuHint": null,
       "cpuBaselinePass": null,
       "gpuHint": null,
       "vramGB": null,
       "ramGB": 16,
-      "ambiguousMemoryGB": 16,
+      "ambiguousMemoryGB": null,
       "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": "메모리 16GB",
+      "ramEvidence": "램 : 16GB",
       "vramEvidence": null,
-      "ambiguousMemoryEvidence": "16GB",
-      "storageGB": 1024,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
       "llmCapability": "SPEC_CHECK_REQUIRED",
       "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
       "specConfidence": "needs_review",
-      "postedAt": "2026-10-31T04:55:42.072Z",
-      "boostedAt": "2026-11-04T23:51:57.786Z",
+      "postedAt": "2026-11-05T00:32:00.199Z",
+      "boostedAt": "2026-11-05T00:32:00.195Z",
       "status": "Ongoing",
-      "description": "애플 맥북에어 M2 모델이에요\n메모리 16GB와 1TB 용량으로 구성되어 있어요\n박스는 포함되어 있지 않아요\n넉넉한 용량으로 작업 효율을 높이고 싶은 분들에게 추천드려요\n\n박스없습니다\n\n초 S급..\n아깝지만..",
-      "url": "https://www.daangn.com/kr/buy-sell/%EC%95%A0%ED%94%8C-%EB%A7%A5%EB%B6%81%EC%97%90%EC%96%B4-m2-%EB%AF%B8%EB%93%9C%EB%82%98%EC%9D%B4%ED%8A%B8-16gb-1tb-i8vvv3x4gun9/",
+      "description": "품번 : 15ZD90T-GX56K \n램 : 16GB 저장용량 : 256GB \n색상 : 에센셜 화이트 (2026년 1월 제조) \n구성품 : 윈도우 11 Home 설치, 마우스 패드, 마우스, Ai 오피스 밸류팩, 한컴오피스2024 , 키보드 스킨, LG 그램 전용 파우치\n\n🚩윈도우 설치만 하였고 완전 새제품입니다. \n🚩거래 후 환불불가입니다.",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%83%88%EC%83%81%ED%92%88-lg-%EA%B7%B8%EB%9E%A8-15zd90t-gx56k-%EB%AF%B8%EA%B0%9C%EB%B4%89-e9ugn821u1zw/",
       "favoriteCount": 0,
       "chatCount": 0,
-      "sellerName": "둠칫냐옹",
-      "mannerTemperature": 42.2
+      "sellerName": "둥둥둥",
+      "mannerTemperature": 36.5
     }
   ]
 }
