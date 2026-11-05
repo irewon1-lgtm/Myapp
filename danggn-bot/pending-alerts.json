@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-05T08:52:42.968461Z",
+  "updatedAt": "2026-11-05T09:32:34.427747Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -13430,9 +13430,9 @@
     "73gnybjytxhq": {
       "id": "73gnybjytxhq",
       "title": "맥북프로 13인치 i7 / RAM 16GB / SSD / 배터리 교체",
-      "price": 159000,
-      "previousPrice": null,
-      "changeType": "new",
+      "price": 149000,
+      "previousPrice": 159000,
+      "changeType": "price_drop",
       "city": "의왕시",
       "location": "학의동",
       "cpuHint": null,
@@ -13450,7 +13450,7 @@
       "postedAt": "2026-11-01T04:09:21.421Z",
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C-13%EC%9D%B8%EC%B9%98-i7-ram-16gb-ssd-%EB%B0%B0%ED%84%B0%EB%A6%AC-%EA%B5%90%EC%B2%B4-73gnybjytxhq/",
       "firstAlertedAt": "2026-11-01T04:22:26.732384Z",
-      "lastCandidateAt": "2026-11-01T04:22:26.732384Z"
+      "lastCandidateAt": "2026-11-05T09:32:34.427747Z"
     },
     "v46ma46e5gpf": {
       "id": "v46ma46e5gpf",
@@ -15551,6 +15551,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%9A%94%EA%B0%80-%EC%8A%AC%EB%A6%BC-%EC%9A%B8%ED%8A%B8%EB%9D%BC-378h-x9-%ED%94%84%EB%A6%AC%EB%AF%B8%EC%97%84%EC%BC%80%EC%96%B4-1%EB%85%84-am4fsx5omrkz/",
       "firstAlertedAt": "2026-11-05T08:52:42.968461Z",
       "lastCandidateAt": "2026-11-05T08:52:42.968461Z"
+    },
+    "qvje7r7fjd1v": {
+      "id": "qvje7r7fjd1v",
+      "title": "삼성 갤럭시북5 프로 14인치 실버",
+      "price": 2700000,
+      "previousPrice": 2800000,
+      "changeType": "price_drop",
+      "city": "안양시",
+      "location": "안양1동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 32,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "32기가 램",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 1024,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "postedAt": "2026-11-02T14:51:40.819Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%815-%ED%94%84%EB%A1%9C-14%EC%9D%B8%EC%B9%98-%EC%8B%A4%EB%B2%84-qvje7r7fjd1v/",
+      "firstAlertedAt": "2026-11-05T09:32:34.427747Z",
+      "lastCandidateAt": "2026-11-05T09:32:34.427747Z"
     }
   }
 }
