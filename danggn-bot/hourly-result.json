@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-05T02:42:29.719Z",
+  "generatedAt": "2026-11-05T03:22:32.235Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,24 +55,28 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-3337u-128gb-ssd-wekovg4ko2nk/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-3337u-128gb-ssd-wekovg4ko2nk/",
-            "title": "삼성 노트북 i5-3337U 128GB SSD",
-            "content": "삼성 노트북 판매해요. 인텔 코어 i5-3337U CPU와 12GB RAM, 128GB SSD를 탑재했어요. 윈도우 10 Pro가 설치되어 있어 바로 사용 가능합니다. 얇고 가벼운 울트라북으로 휴대하기 좋아요. 쾌적한 사용감을 선사하는 노트북입니다.",
-            "price": "110000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/f84ca2e7-0099-4c5f-96a3-626f1551d283.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-ioarcdvf3qb4/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-ioarcdvf3qb4/",
+            "title": "삼성 노트북",
+            "content": "삼성 노트북 판매해요 \n깔끔하게 청소 및 정비했어요\n상태 양호하고 윈도우와 프로그램 설치했어요\n바로 사용할수있어요\n인터넷용이나 사무용으로 사용하시면되어요\n잘 작동합니다\n배터리 효율95프로 나옵니다\n\n시스템사양은\nCPU: 인텔 7세대 Pentium(R) CPU 4415U\n램:  삼성ddr4 4gb 두개   8기가\n그래픽: 내장그래픽\nm.2 ssd 120기가\n하드500기가\n액정 사이즈 15.6인치fhd\n아답타 있어요",
+            "price": "170000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/39246569-0edd-4647-8739-ad7bcb781203.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-16T03:57:04.861Z",
-            "boostedAt": "2026-11-05T02:22:53.266Z",
+            "createdAt": "2026-11-05T03:02:35.703Z",
+            "boostedAt": "2026-11-05T03:02:35.703Z",
             "region": {
-              "name": "고등동"
+              "name": "권선동"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 37.2679304,
-                "longitude": 127.0056502
+                "latitude": 37.253744,
+                "longitude": 127.0275408
+              },
+              {
+                "latitude": 37.2495439,
+                "longitude": 127.0731335
               }
             ]
           },
@@ -122,14 +126,14 @@
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-10-16T03:57:04.861Z\",\"boostedAt\":\"2026-11-05T02:22:53.266Z\",\"region\":{\"name\":\"고등동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-11-05T03:02:35.703Z\",\"boostedAt\":\"2026-11-05T03:02:35.703Z\",\"region\":{\"name\":\"권선동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-28T00:34:01.040Z\",\"boostedAt\":\"2026-11-04T12:49:53.555Z\",\"region\":{\"name\":\"석현동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-05-22T07:38:50.217Z\",\"boostedAt\":\"2026-11-04T12:48:20.627Z\",\"region\":{\"name\":\"석적읍\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-05T02:29:23.283Z\",\"boostedAt\":\"2026-11-05T02:29:23.283Z\",\"region\":{\"name\":\"송파동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-05T02:32:03.611Z\",\"boostedAt\":\"2026-11-05T02:32:03.608Z\",\"region\":{\"name\":\"청라1동\"},\"category\":null,\"contentCoo"
+          "createdAt\":\"2026-10-31T08:19:44.960Z\",\"boostedAt\":\"2026-11-04T02:28:35.175Z\",\"region\":{\"name\":\"사당제2동\"},\"category\":null,\"contentCo",
+          "createdAt\":\"2026-10-25T14:20:32.517Z\",\"boostedAt\":\"2026-11-05T02:58:50.276Z\",\"region\":{\"name\":\"정왕본동\"},\"category\":null,\"contentCoo"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":268,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 노트북 i5-3337U 128GB SSD\",\"de",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":267,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 노트북\",\"description\":\"삼성 노트북 ",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -137,24 +141,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1210,
-    "globalUniqueListings": 489,
-    "duplicateListingsRemoved": 721,
-    "detailQueueStart": 18,
-    "freshDetailTasks": 18,
+    "searchUniqueListings": 1171,
+    "globalUniqueListings": 455,
+    "duplicateListingsRemoved": 716,
+    "detailQueueStart": 19,
+    "freshDetailTasks": 19,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 18,
-    "detailSucceeded": 18,
+    "detailRequestsExecuted": 19,
+    "detailSucceeded": 19,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 489,
+    "postedAtResolvedFromSearch": 455,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 1,
-    "scanDurationMs": 100135,
+    "candidateCount": 3,
+    "scanDurationMs": 101210,
     "cities": [
       {
         "city": "군포시",
@@ -167,7 +171,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 249,
-        "durationMs": 12075
+        "durationMs": 12353
       },
       {
         "city": "의왕시",
@@ -182,8 +186,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 350,
-        "durationMs": 25656
+        "uniqueListings": 348,
+        "durationMs": 25473
       },
       {
         "city": "안양시",
@@ -200,8 +204,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 379,
-        "durationMs": 34971
+        "uniqueListings": 340,
+        "durationMs": 35232
       },
       {
         "city": "과천시",
@@ -212,53 +216,123 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 232,
-        "durationMs": 6113
+        "uniqueListings": 234,
+        "durationMs": 6047
       }
     ],
-    "finalCandidateCount": 1,
+    "finalCandidateCount": 3,
     "stateItemCount": 5000,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 100141
+    "durationMs": 101215
   },
   "candidates": [
     {
-      "id": "e4zkzc87jkjj",
-      "changeType": "new",
-      "previousPrice": null,
-      "price": 3200000,
-      "priceDropPercent": null,
-      "city": "안양시",
-      "location": "안양동",
-      "regionPath": "경기도 안양시 동안구 안양동",
-      "title": "[풀박스] 맥북프로 16 M4 Pro / 24G / 1TB 스페이스 블랙 (사이클 42, 성능 96%)",
-      "modelHint": "[풀박스] 맥북프로 16 M4 Pro / 24G / 1TB 스페이스 블랙 (사이클 42, 성능 96%)",
-      "cpuHint": "Apple M4 Pro",
+      "id": "a9nnita6jdyf",
+      "changeType": "price_drop",
+      "previousPrice": 2100000,
+      "price": 2000000,
+      "priceDropPercent": 4.8,
+      "city": "과천시",
+      "location": "갈현동",
+      "regionPath": "경기도 과천시 갈현동",
+      "title": "맥북프로16 M2",
+      "modelHint": "맥북프로16 M2",
+      "cpuHint": null,
       "cpuBaselinePass": null,
-      "gpuHint": "Apple M4 Pro",
+      "gpuHint": null,
       "vramGB": null,
-      "ramGB": null,
-      "ambiguousMemoryGB": 24,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
       "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": null,
+      "ramEvidence": "메모리 16GB",
       "vramEvidence": null,
-      "ambiguousMemoryEvidence": "24G",
-      "storageGB": 1024,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 512,
       "llmCapability": "SPEC_CHECK_REQUIRED",
       "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
       "specConfidence": "needs_review",
-      "postedAt": "2026-11-05T02:09:15.707Z",
-      "boostedAt": "2026-11-05T02:09:15.707Z",
+      "postedAt": "2026-11-02T09:28:50.173Z",
+      "boostedAt": "2026-11-05T03:07:23.716Z",
       "status": "Ongoing",
-      "description": "안녕하세요.\n맥북프로 16인치 M4 Pro (스페이스 블랙 / 24GB / 1TB) 풀박스 모델 판매합니다.\n\n실내 거치 위주로 깨끗하게 관리하며 사용한 기기입니다. 외관 흠집이나 기능상 문제 전혀 없으며, 배터리 사이클 42회로 컨디션 매우 좋습니다.\n\n[기기 사양 및 상태]\n\n모델: MacBook Pro 16인치 (Apple M4 Pro)\n\n메모리(RAM): 24GB\n\n저장공간(SSD): 1TB\n\n색상: 스페이스 블랙\n\n배터리 정보: 사이클 수 42회 / 성능 최대치 96%\n\n보증 정보: 기본 보증 만료 / 애플케어플러스 미가입\n\n[외관 및 기능 상태]\n\n모서리 찍힘, 긁힘, 키보드 번들거림, 액정 흠집 없이 전반적인 외관 A급입니다.\n\n트랙패드, 키보드, 포트류, 스피커, 디스플레이 등 모든 기능 정상 작동합니다.\n\n[구성품]\n\n구매 당시 제품 박스 및 내부 완충재 일체 (풀박스)\n\n정품 전원 어댑터 및 정품 맥세이프 케이블 포함\n\n[거래 안내]\n\n애플 계정 로그아웃, '나의 찾기' 해제 완료 후 완벽히 공장초기화(Hello 첫 설정 화면)해 둔 상태라 현장에서 바로 확인 및 계정 연동 가능합니다.\n\n고가 전자기기 특성상 직거래를 우선하며, 현장에서 외관 및 전원 구동 꼼꼼히 확인 후 인계드립니다.\n\n직거래 위치: [거래 희망 장소 / 역 이름 / 아파트 단지명]\n\n가격 네고 문의는 정중히 사양합니다.",
-      "url": "https://www.daangn.com/kr/buy-sell/%ED%92%80%EB%B0%95%EC%8A%A4-%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C-16-m4-pro-24g-1tb-%EC%8A%A4%ED%8E%98%EC%9D%B4%EC%8A%A4-%EB%B8%94%EB%9E%99-%EC%82%AC%EC%9D%B4%ED%81%B4-42-%EC%84%B1%EB%8A%A5-96-e4zkzc87jkjj/",
+      "description": "맥북프로16 M2\n메모리 16GB\n저장용량 512GB\n디스플레이: Liquid Retina XDR 디스플레이 40.9cm(3456 x 2234)\n배터리:98%\n\n과제 비용으로 구매했는데 맥은 손에 안맞아서 잘 사용 안해 판매합니다",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C16-m2-a9nnita6jdyf/",
       "favoriteCount": 0,
       "chatCount": 0,
-      "sellerName": "salposigo",
-      "mannerTemperature": 45
+      "sellerName": "장경희",
+      "mannerTemperature": 41.8
+    },
+    {
+      "id": "m8bmg82kejvo",
+      "changeType": "new",
+      "previousPrice": null,
+      "price": 700000,
+      "priceDropPercent": null,
+      "city": "안양시",
+      "location": "평촌동",
+      "regionPath": "경기도 안양시 동안구 평촌동",
+      "title": "레노버 씽크북 14 G8 i7 16GB 실버",
+      "modelHint": "레노버 씽크북 14 G8 i7 16GB 실버",
+      "cpuHint": null,
+      "cpuBaselinePass": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "specConfidence": "needs_review",
+      "postedAt": "2026-11-05T03:06:30.931Z",
+      "boostedAt": "2026-11-05T03:06:30.927Z",
+      "status": "Ongoing",
+      "description": "문서 작업, 영상 편집 등 다용도로 활용하기 좋은 레노버 ThinkBook 14 G8 노트북이에요\n14인치 WUXGA 디스플레이와 인텔 코어 i7 CPU 탑재로 쾌적한 사용이 가능해요\nSSD 512GB와 16GB RAM으로 넉넉한 저장 공간과 빠른 속도를 자랑합니다.\n구매후 2~3주 정도 사용후 전혀 사용을 하지 않아서 판매합니다. 상태는 거의 신품급 입니다.\n가성비 좋은 노트북을 찾으시는 분들께 추천드려요",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%94%BD%ED%81%AC%EB%B6%81-14-g8-i7-16gb-%EC%8B%A4%EB%B2%84-m8bmg82kejvo/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "지후니",
+      "mannerTemperature": 39.4
+    },
+    {
+      "id": "1mngicvxvh4q",
+      "changeType": "new",
+      "previousPrice": null,
+      "price": 450000,
+      "priceDropPercent": null,
+      "city": "과천시",
+      "location": "갈현동",
+      "regionPath": "경기도 과천시 갈현동",
+      "title": "맥북 프로 15인치 2019년 고급형 (인텔 i9)",
+      "modelHint": "맥북 프로 15인치 2019년 고급형 (인텔 i9)",
+      "cpuHint": null,
+      "cpuBaselinePass": null,
+      "gpuHint": "Radeon Pro 560X 4GB",
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "메모리: 16GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "specConfidence": "needs_review",
+      "postedAt": "2026-11-05T02:54:48.089Z",
+      "boostedAt": "2026-11-05T02:54:48.086Z",
+      "status": "Ongoing",
+      "description": "애플 맥북 프로 15인치 2019년 고급형 판매합니다\n2019년 6월 제조\n\n터치바 제품, 지문인식 가능\n\n- 프로세서:  Intel Core i9\n- 메모리: 16GB 2400 MHz DDR4\n- 그래픽: Radeon Pro 560X 4GB\n- ssd : 512GB\n\n2019년 제조된 맥북 프로 15인치 스페이스 그레이 모델이에요. 인텔 코어 i9 프로세서와 16GB 메모리, 512GB SSD를 탑재하여 빠르고 쾌적한 사용이 가능해요. 풀박스로 구성품 모두 갖추고 있답니다. 맥북 프로의 강력한 성능으로 다양한 작업을 효율적으로 처리해보세요.\n\n배터리 점검 권장 뜨는데, 금방 꺼진다는 느낌은 못받았고요, 저는 주로 집에서만 전원선 끼워놓고 사용했어요.🤣\n\n마제스탠드(5만원상당)거치대 달려있고요, 전주인분이(1차구매자) 구매 후에 바로 커버 씌워놓으셨어요. 저도 떼보지는 않았습니다.\n\n궁금하신거 있으면 연락주세요.\n맥os는 적응이 안되서 사놓고 거의 사용 하지 않았습니다.😅\n\n초기화 완료.\ni7 아닙니다. i9 고급형입니다.\n\n과천 지정타이고요, 안양권은 가져다드리기 가능합니다.\n\n배터리 사이클은 볼줄 몰라서 못올렸어요.\n어차피 점검하라고 떠있습니다. \n문의주시지 않으면 좋겠습니다 🤣🤣\n\n배터리 외 모든 기능정상 작동합니다.",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-15%EC%9D%B8%EC%B9%98-2019%EB%85%84-%EA%B3%A0%EA%B8%89%ED%98%95-%EC%9D%B8%ED%85%94-i9-1mngicvxvh4q/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "거리의시인들",
+      "mannerTemperature": 47.6
     }
   ]
 }
