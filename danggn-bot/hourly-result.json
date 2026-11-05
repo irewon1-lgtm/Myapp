@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-05T07:22:41.006Z",
+  "generatedAt": "2026-11-05T08:02:33.132Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,81 +55,89 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/hp-%EB%B9%85%ED%84%B0%EC%8A%A4-16-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-x2hn6xcdcnqz/",
-            "href": "/kr/buy-sell/hp-%EB%B9%85%ED%84%B0%EC%8A%A4-16-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-x2hn6xcdcnqz/",
-            "title": "HP 빅터스 16 게이밍 노트북",
-            "content": "HP 빅터스 16 게이밍 노트북 판매합니다.\n\n* 모델: HP Victus 16\n* CPU: Intel Core i5-14450HX (14세대)\n* GPU: NVIDIA GeForce RTX 4060\n* RAM: DDR5 5600 32GB(램슬롯1개여유)(업글가능)\n* SSD: m.2 4.0NVMe 512GB(슬롯1개여유)(업글가능)\n* 디스플레이: 16.1인치 (165헤르쯔)\n* 그래픽 TGP: 최대 120W\n구성품 정품박스 충전기 본품 입니다",
-            "price": "135",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/179386306805084decd1305f478b0355dc9911675c6eb85fc0569ff9d70f95920eb6c9e6d87c30.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-11-05T07:18:10.279Z",
-            "boostedAt": "2026-11-05T07:18:10.271Z",
-            "region": {
-              "name": "홍북읍"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 36.6447583,
-                "longitude": 126.6761034
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-ad45z8fvytis/",
-            "href": "/kr/buy-sell/%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-ad45z8fvytis/",
-            "title": "노트북 판매합니다",
-            "content": "안녕하세요\n모뉴얼 노트북13.3인치 판매해요\n사양은 CPU는 i5-430이고 램 4G입니다\n저장장치는 SSD 120입니다\n배터리 새로 장착해서 상태 좋습니다(마지막 사진)\n노트북과 어댑터, 마우스, 가방 구성입니다.\n사무용이나 학습용으로 활용하기 좋아요.",
-            "price": "80000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/a4bdd8f3-1d63-4c89-8a72-6c1920a461cb.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-11-05T07:02:33.322Z",
-            "boostedAt": "2026-11-05T07:02:33.320Z",
-            "region": {
-              "name": "수송동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 35.9626629,
-                "longitude": 126.7135114
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/asus-rog-strix-g-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-j2cn1mr9cvbp/",
-            "href": "/kr/buy-sell/asus-rog-strix-g-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-j2cn1mr9cvbp/",
-            "title": "ASUS ROG STRIX G 게이밍 노트북",
-            "content": "ASUS ROG STRIX G 게이밍 노트북이에요. 고성능 그래픽 카드와 빠른 처리 속도로 쾌적한 게이밍 환경을 제공해요. 박스 및 구성품 모두 갖춰져 있어 새 제품처럼 사용 가능해요. 게임을 즐기시는 분들께 최적의 선택이 될 거예요.",
-            "price": "4500000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202609/d0c2dc2f63a1f21ebd905f1a674f1f67376631c538f881421ea68251b84eba83_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/hp-%EC%98%A4%EB%A9%98-16-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-rtx3070-md1tru6dakt1/",
+            "href": "/kr/buy-sell/hp-%EC%98%A4%EB%A9%98-16-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-rtx3070-md1tru6dakt1/",
+            "title": "HP 오멘 16 게이밍 노트북 rtx3070",
+            "content": "전용 박스와 함께 구성되어 있어요.\n고사양 게임이나 작업용으로 활용하기 좋아요.\n\nHP OMEN 16-b1031TX\nCPU : 인텔 i7-12700H\nGPU : RTX3070 (TGP:115W)\nRAM : DDR5 / 16GB / 4800MHz\n저장장치 : PCIE4.0 SSD 512GB\n화면 : 16.1인치(40.89cm) / IPS / FHD / 300nit / 144Hz\n운영체제 : 윈도우11 홈",
+            "price": "1000000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/1793810124918b62261b5471f985bfdf33a3f8c6c6ae8da81b90db2c90f8cc12cfe477ec7bd0e0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": false,
-            "createdAt": "2026-09-28T21:52:43.881Z",
-            "boostedAt": "2026-11-05T05:54:38.381Z",
+            "createdAt": "2026-11-04T16:37:01.644Z",
+            "boostedAt": "2026-11-04T16:37:01.644Z",
             "region": {
-              "name": "성정동"
+              "name": "안양1동"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 36.8289758,
-                "longitude": 127.1407082
+                "latitude": 37.4845121,
+                "longitude": 126.9236909
+              },
+              {
+                "latitude": 37.390659,
+                "longitude": 126.9191748
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/%EC%95%84%EC%88%98%EC%8A%A4-asus-flow-x13-rtx-4070-%ED%8C%9D%EB%8B%88%EB%8B%A4-rgm1epz5btnr/",
+            "href": "/kr/buy-sell/%EC%95%84%EC%88%98%EC%8A%A4-asus-flow-x13-rtx-4070-%ED%8C%9D%EB%8B%88%EB%8B%A4-rgm1epz5btnr/",
+            "title": "아수스 ASUS Flow X13 (RTX 4070) 팝니다.",
+            "content": "아수스 Fow x13 노트북입니다 CPU: AMD 7940HS \nGPU: RTX 4070\nSSD: 1TB\nRAM: 32GB\n충전기와 펜 등 모든 구성품 포함입니다 구매시기는 2023년 가을입니다. 보증은 만료되었습니다. 사진상의 Asus 퍼펙트 워런티도 만료입니 다. 데스크탑도 있고 노트북이 여러대라 사용량이 적어 상태 좋습니다. 다만 하판에 약간의 까짐 있으니 시\n진 참고 바랍니다.\n액정보호필름 힐링쉴드로 붙여두었습니다\n직거래만 합니다.\nFow z13 키보드 탈부착 안되는 버전이라고  생각하시면 될듯합니다.\n",
+            "price": "1700000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/c7281c10-a119-406a-8385-2aa34023ee61.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-11-05T06:42:35.436Z",
+            "boostedAt": "2026-11-05T06:42:35.436Z",
+            "region": {
+              "name": "천천동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 37.29907,
+                "longitude": 126.9798377
+              },
+              {
+                "latitude": 37.4004354,
+                "longitude": 126.9269629
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/%EA%B3%A0%EC%82%AC%EC%96%91-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-rtx5070-%EC%98%A4%EB%A9%98-16-%ED%8C%9D%EB%8B%88%EB%8B%A4-sc1wq4dd6qh9/",
+            "href": "/kr/buy-sell/%EA%B3%A0%EC%82%AC%EC%96%91-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-rtx5070-%EC%98%A4%EB%A9%98-16-%ED%8C%9D%EB%8B%88%EB%8B%A4-sc1wq4dd6qh9/",
+            "title": "고사양 게이밍 노트북 RTX5070 오멘 16 팝니다",
+            "content": "26년 1월 29일 쿠팡 구매.\n\n인텔 i7 \n그래픽RTX5070\n용량1TB\n메모리32G\n윈도우 11 정품 설치\n\n윈도우정품 설치 및 업그레이드해서 나온 제품입니다.\n\n모니터 마우스 키보드 연결해서 써서 상태 최상, 성능 최고입니다.\n\n고사양 게임이나 영상작업하시는분들은 후회없는 선택이라 봅니다\n\n노트북 쿨링 거치대(약 5만원)같이 드립니다",
+            "price": "280",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/529662bf-6357-4f21-9cae-2b08f536a8e3.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-28T00:34:01.040Z",
+            "boostedAt": "2026-11-04T12:49:53.555Z",
+            "region": {
+              "name": "석현동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 34.8273954,
+                "longitude": 126.4154113
               }
             ]
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-11-05T07:18:10.279Z\",\"boostedAt\":\"2026-11-05T07:18:10.271Z\",\"region\":{\"name\":\"홍북읍\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-05T07:02:33.322Z\",\"boostedAt\":\"2026-11-05T07:02:33.320Z\",\"region\":{\"name\":\"수송동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-09-28T21:52:43.881Z\",\"boostedAt\":\"2026-11-05T05:54:38.381Z\",\"region\":{\"name\":\"성정동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-05T06:46:34.459Z\",\"boostedAt\":\"2026-11-05T06:46:34.456Z\",\"region\":{\"name\":\"오창읍\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-05T07:12:39.372Z\",\"boostedAt\":\"2026-11-05T07:12:39.371Z\",\"region\":{\"name\":\"배방읍\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-11-04T16:37:01.644Z\",\"boostedAt\":\"2026-11-04T16:37:01.644Z\",\"region\":{\"name\":\"안양1동\"},\"category\":null,\"contentCoo",
+          "createdAt\":\"2026-11-05T06:42:35.436Z\",\"boostedAt\":\"2026-11-05T06:42:35.436Z\",\"region\":{\"name\":\"천천동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-10-28T00:34:01.040Z\",\"boostedAt\":\"2026-11-04T12:49:53.555Z\",\"region\":{\"name\":\"석현동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-10-15T01:56:01.727Z\",\"boostedAt\":\"2026-11-05T06:46:39.125Z\",\"region\":{\"name\":\"호계동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-11-01T19:36:04.560Z\",\"boostedAt\":\"2026-11-05T04:59:10.120Z\",\"region\":{\"name\":\"안양동\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":266,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"HP 빅터스 16 게이밍 노트북\",\"descriptio",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":278,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"HP 오멘 16 게이밍 노트북 rtx3070\",\"des",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -137,24 +145,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1173,
-    "globalUniqueListings": 450,
-    "duplicateListingsRemoved": 723,
-    "detailQueueStart": 26,
-    "freshDetailTasks": 26,
+    "searchUniqueListings": 1188,
+    "globalUniqueListings": 470,
+    "duplicateListingsRemoved": 718,
+    "detailQueueStart": 19,
+    "freshDetailTasks": 19,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 26,
-    "detailSucceeded": 26,
+    "detailRequestsExecuted": 19,
+    "detailSucceeded": 19,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 450,
+    "postedAtResolvedFromSearch": 470,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 3,
-    "scanDurationMs": 110904,
+    "candidateCount": 0,
+    "scanDurationMs": 102433,
     "cities": [
       {
         "city": "군포시",
@@ -167,7 +175,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 250,
-        "durationMs": 12578
+        "durationMs": 12512
       },
       {
         "city": "의왕시",
@@ -182,8 +190,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 349,
-        "durationMs": 25821
+        "uniqueListings": 354,
+        "durationMs": 25772
       },
       {
         "city": "안양시",
@@ -200,8 +208,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 337,
-        "durationMs": 35400
+        "uniqueListings": 348,
+        "durationMs": 35232
       },
       {
         "city": "과천시",
@@ -212,123 +220,17 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 237,
-        "durationMs": 6440
+        "uniqueListings": 236,
+        "durationMs": 6512
       }
     ],
-    "finalCandidateCount": 3,
+    "finalCandidateCount": 0,
     "stateItemCount": 5000,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 110910
+    "durationMs": 102439
   },
-  "candidates": [
-    {
-      "id": "7edbscy6393f",
-      "changeType": "new",
-      "previousPrice": null,
-      "price": 1900000,
-      "priceDropPercent": null,
-      "city": "안양시",
-      "location": "안양1동",
-      "regionPath": "경기도 안양시 만안구 안양1동",
-      "title": "애플 맥북 프로 14인치 M4 16GB 512GB 실버 팔아봐용",
-      "modelHint": "애플 맥북 프로 14인치 M4 16GB 512GB 실버 팔아봐용",
-      "cpuHint": null,
-      "cpuBaselinePass": null,
-      "gpuHint": null,
-      "vramGB": null,
-      "ramGB": null,
-      "ambiguousMemoryGB": 16,
-      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": null,
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": "16GB",
-      "storageGB": null,
-      "llmCapability": "SPEC_CHECK_REQUIRED",
-      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
-      "specConfidence": "needs_review",
-      "postedAt": "2026-11-05T06:47:56.769Z",
-      "boostedAt": "2026-11-05T06:47:56.767Z",
-      "status": "Ongoing",
-      "description": "구매 25년 4월에 했고 작년에 좀 쓰다가 올해들어선 거의 사용을 안 하게 돼서 판매해봅니다!\n나중에 팔고 기기업글 할 생각으로 사용해서 상태 좋고, 열심히 관리하면서 사용했습니다.\n배터리 효율 97퍼이며, 구매 시 초기화해서 드리고 박스로 기존에 있던 정품 충전기랑 케이블 포함해서 드립니다!\n직거래 안양 인근 희망하며, 쿨거 시 약간의 흥정 가능합니다!",
-      "url": "https://www.daangn.com/kr/buy-sell/%EC%95%A0%ED%94%8C-%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-14%EC%9D%B8%EC%B9%98-m4-16gb-512gb-%EC%8B%A4%EB%B2%84-%ED%8C%94%EC%95%84%EB%B4%90%EC%9A%A9-7edbscy6393f/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "갱미",
-      "mannerTemperature": 37.1
-    },
-    {
-      "id": "i2fubrc5ebz3",
-      "changeType": "price_drop",
-      "previousPrice": 900000,
-      "price": 800000,
-      "priceDropPercent": 11.1,
-      "city": "안양시",
-      "location": "안양3동",
-      "regionPath": "경기도 안양시 만안구 안양3동",
-      "title": "LG 그램 노트북 16인치 i7 32GB 팝니다",
-      "modelHint": "LG 그램 노트북 16인치 i7 32GB 팝니다",
-      "cpuHint": null,
-      "cpuBaselinePass": null,
-      "gpuHint": null,
-      "vramGB": null,
-      "ramGB": 32,
-      "ambiguousMemoryGB": 32,
-      "hardwareReviewStatus": "PASS_RAM",
-      "ramEvidence": "RAM : 32GB",
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": "32GB",
-      "storageGB": 512,
-      "llmCapability": "WORK_DEV_RAM32",
-      "llmReason": "RAM 32GB 이상 확정 후보",
-      "specConfidence": "confirmed",
-      "postedAt": "2026-11-03T13:57:55.528Z",
-      "boostedAt": "2026-11-05T07:04:39.431Z",
-      "status": "Ongoing",
-      "description": "모델명 : 16Z90Q-GP79ML\nRAM : 32GB\nSSD : 512GB\n배터리효율 84%\n23년 2월 제조\n\n생활감 있어요 초기화 상태이고 윈도우 정품 달려있어요",
-      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-16%EC%9D%B8%EC%B9%98-i7-32gb-%ED%8C%9D%EB%8B%88%EB%8B%A4-i2fubrc5ebz3/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "프랑스맨",
-      "mannerTemperature": 49.4
-    },
-    {
-      "id": "xbukngbi2nr1",
-      "changeType": "price_drop",
-      "previousPrice": 780000,
-      "price": 740000,
-      "priceDropPercent": 5.1,
-      "city": "안양시",
-      "location": "석수동",
-      "regionPath": "경기도 안양시 만안구 석수동",
-      "title": "2020m1 맥북에어 SS급 판매",
-      "modelHint": "2020m1 맥북에어 SS급 판매",
-      "cpuHint": null,
-      "cpuBaselinePass": null,
-      "gpuHint": null,
-      "vramGB": null,
-      "ramGB": 16,
-      "ambiguousMemoryGB": 16,
-      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": "램 16GB",
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": "16GB",
-      "storageGB": 512,
-      "llmCapability": "SPEC_CHECK_REQUIRED",
-      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
-      "specConfidence": "needs_review",
-      "postedAt": "2026-11-03T04:51:03.673Z",
-      "boostedAt": "2026-11-05T06:36:02.748Z",
-      "status": "Ongoing",
-      "description": "맥북 에어 M1 16GB 512GB 배터리 96% 사이클 37회\n\n본문에 들어간 사양 (이 맥에서 직접 확인한 값)\n\nMacBook Air (M1, 2020), CPU 8코어 / GPU 7코어\n램 16GB, SSD 512GB\n기본 모델(8GB/256GB)보다 사양을 올려 주문한 모델이라, 이 점도 글에 넣었어요.\n배터리 최대 용량 96%, 사이클 37회, 상태 정상\nmacOS Sequoia 15.4\n\n\n충전기 꼽아두고 사용 안한 그런거 아닙니다\n정말 민트급 새것 입니다\n어중간한 중고 살바에 상태좋고 옵션 좋은거\n구매하시길 추천드립니다\n연락주세요",
-      "url": "https://www.daangn.com/kr/buy-sell/2020m1-%EB%A7%A5%EB%B6%81%EC%97%90%EC%96%B4-ss%EA%B8%89-%ED%8C%90%EB%A7%A4-xbukngbi2nr1/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "뽀드득",
-      "mannerTemperature": 45.1
-    }
-  ]
+  "candidates": []
 }
