@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-05T00:52:19.191740Z",
+  "updatedAt": "2026-11-05T01:27:26.083604Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -14380,9 +14380,9 @@
     "5iriwxt2hup8": {
       "id": "5iriwxt2hup8",
       "title": "LG그램 14Z90N 판매합니다",
-      "price": 580000,
-      "previousPrice": null,
-      "changeType": "new",
+      "price": 560000,
+      "previousPrice": 580000,
+      "changeType": "price_drop",
       "city": "안양시",
       "location": "석수동",
       "cpuHint": null,
@@ -14400,7 +14400,7 @@
       "postedAt": "2026-11-02T22:25:59.664Z",
       "url": "https://www.daangn.com/kr/buy-sell/lg%EA%B7%B8%EB%9E%A8-14z90n-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-5iriwxt2hup8/",
       "firstAlertedAt": "2026-11-03T00:32:24.185324Z",
-      "lastCandidateAt": "2026-11-03T00:32:24.185324Z"
+      "lastCandidateAt": "2026-11-05T01:27:26.083604Z"
     },
     "6jvfqiz2mecj": {
       "id": "6jvfqiz2mecj",
@@ -14955,9 +14955,9 @@
     "s3o1ysyhijwz": {
       "id": "s3o1ysyhijwz",
       "title": "삼성갤럭시북2 프로 SE NT951XGK 노트북 팝니다.",
-      "price": 840000,
-      "previousPrice": null,
-      "changeType": "new",
+      "price": 820000,
+      "previousPrice": 840000,
+      "changeType": "price_drop",
       "city": "안양시",
       "location": "부림동",
       "cpuHint": null,
@@ -14975,7 +14975,7 @@
       "postedAt": "2026-11-04T07:08:07.123Z",
       "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%812-%ED%94%84%EB%A1%9C-se-nt951xgk-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%9D%EB%8B%88%EB%8B%A4-s3o1ysyhijwz/",
       "firstAlertedAt": "2026-11-04T07:22:40.656987Z",
-      "lastCandidateAt": "2026-11-04T07:22:40.656987Z"
+      "lastCandidateAt": "2026-11-05T01:27:26.083604Z"
     },
     "ys7exps3wbjp": {
       "id": "ys7exps3wbjp",
@@ -15255,9 +15255,9 @@
     "njxb5by8wn8j": {
       "id": "njxb5by8wn8j",
       "title": "HP 파빌리온 에어로 화이트 노트북 및 마우스 세트 (+장패드)",
-      "price": 510000,
-      "previousPrice": null,
-      "changeType": "new",
+      "price": 480000,
+      "previousPrice": 510000,
+      "changeType": "price_drop",
       "city": "안양시",
       "location": "안양4동",
       "cpuHint": null,
@@ -15275,7 +15275,7 @@
       "postedAt": "2026-11-04T16:09:22.924Z",
       "url": "https://www.daangn.com/kr/buy-sell/hp-%ED%8C%8C%EB%B9%8C%EB%A6%AC%EC%98%A8-%EC%97%90%EC%96%B4%EB%A1%9C-%ED%99%94%EC%9D%B4%ED%8A%B8-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%B0%8F-%EB%A7%88%EC%9A%B0%EC%8A%A4-%EC%84%B8%ED%8A%B8-%EC%9E%A5%ED%8C%A8%EB%93%9C-njxb5by8wn8j/",
       "firstAlertedAt": "2026-11-04T16:22:25.133167Z",
-      "lastCandidateAt": "2026-11-04T16:22:25.133167Z"
+      "lastCandidateAt": "2026-11-05T01:27:26.083604Z"
     },
     "4398w792n3ve": {
       "id": "4398w792n3ve",
@@ -15326,6 +15326,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EC%83%88%EC%83%81%ED%92%88-lg-%EA%B7%B8%EB%9E%A8-15zd90t-gx56k-%EB%AF%B8%EA%B0%9C%EB%B4%89-e9ugn821u1zw/",
       "firstAlertedAt": "2026-11-05T00:52:19.191740Z",
       "lastCandidateAt": "2026-11-05T00:52:19.191740Z"
+    },
+    "3yfg761s7uyy": {
+      "id": "3yfg761s7uyy",
+      "title": "LG 그램 프로 16인치 노트북 팝니다 거의미사용",
+      "price": 1400000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "평촌동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB 메모리",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-05T01:10:47.022Z",
+      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%ED%94%84%EB%A1%9C-16%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%9D%EB%8B%88%EB%8B%A4-%EA%B1%B0%EC%9D%98%EB%AF%B8%EC%82%AC%EC%9A%A9-3yfg761s7uyy/",
+      "firstAlertedAt": "2026-11-05T01:27:26.083604Z",
+      "lastCandidateAt": "2026-11-05T01:27:26.083604Z"
     }
   }
 }
