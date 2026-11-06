@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-06T18:02:31.530Z",
+  "generatedAt": "2026-11-06T18:42:30.297Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -126,10 +126,10 @@
           "createdAt\":\"2026-11-06T16:38:47.623Z\",\"boostedAt\":\"2026-11-06T16:38:47.621Z\",\"region\":{\"name\":\"망포동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-11-06T13:08:50.964Z\",\"boostedAt\":\"2026-11-06T13:08:50.962Z\",\"region\":{\"name\":\"정자3동\"},\"category\":null,\"contentCoo",
           "createdAt\":\"2026-11-06T17:42:05.058Z\",\"boostedAt\":\"2026-11-06T17:42:05.056Z\",\"region\":{\"name\":\"화명동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-06T16:56:45.480Z\",\"boostedAt\":\"2026-11-06T16:56:45.479Z\",\"region\":{\"name\":\"일직동\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-11-06T12:30:45.160Z\",\"boostedAt\":\"2026-11-06T12:30:45.158Z\",\"region\":{\"name\":\"석적읍\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":258,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"ASUS K6502V i9-13900H 노트북 (RTX",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":259,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"ASUS K6502V i9-13900H 노트북 (RTX",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -137,24 +137,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1310,
-    "globalUniqueListings": 517,
-    "duplicateListingsRemoved": 793,
-    "detailQueueStart": 3,
-    "freshDetailTasks": 3,
+    "searchUniqueListings": 1317,
+    "globalUniqueListings": 519,
+    "duplicateListingsRemoved": 798,
+    "detailQueueStart": 4,
+    "freshDetailTasks": 4,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 3,
-    "detailSucceeded": 3,
+    "detailRequestsExecuted": 4,
+    "detailSucceeded": 4,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 517,
+    "postedAtResolvedFromSearch": 519,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 81769,
+    "scanDurationMs": 82822,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +166,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 284,
-        "durationMs": 12059
+        "uniqueListings": 286,
+        "durationMs": 12199
       },
       {
         "city": "의왕시",
@@ -182,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 380,
-        "durationMs": 25204
+        "uniqueListings": 387,
+        "durationMs": 25429
       },
       {
         "city": "안양시",
@@ -200,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 391,
-        "durationMs": 34826
+        "uniqueListings": 390,
+        "durationMs": 34721
       },
       {
         "city": "과천시",
@@ -212,8 +212,8 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 255,
-        "durationMs": 5946
+        "uniqueListings": 254,
+        "durationMs": 5998
       }
     ],
     "finalCandidateCount": 0,
@@ -222,7 +222,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 81775
+    "durationMs": 82827
   },
   "candidates": []
 }
