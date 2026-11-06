@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-06T11:12:48.847038Z",
+  "updatedAt": "2026-11-06T11:52:58.924599Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -3029,9 +3029,9 @@
     },
     "5qrthmxadqnf": {
       "id": "5qrthmxadqnf",
-      "title": "게이밍 고사양 노트북 ASUS TUF Gaming 32G 1T RTX 4060",
-      "price": 1430000,
-      "previousPrice": 1480000,
+      "title": "게이밍 고사양 노트북 ASUS TUF Gaming RAM 32G 1T RTX 4060",
+      "price": 1400000,
+      "previousPrice": 1430000,
       "changeType": "price_drop",
       "city": "안양시",
       "location": "안양동",
@@ -3041,16 +3041,16 @@
       "ramGB": 32,
       "ambiguousMemoryGB": 32,
       "hardwareReviewStatus": "PASS_RAM",
-      "ramEvidence": "32GB RAM",
+      "ramEvidence": "RAM 32G",
       "vramEvidence": null,
-      "ambiguousMemoryEvidence": "32G",
+      "ambiguousMemoryEvidence": "32GB",
       "storageGB": null,
       "llmCapability": "WORK_DEV_RAM32",
       "llmReason": "RAM 32GB 이상 확정 후보",
       "postedAt": "2026-10-03T09:58:26.719Z",
-      "url": "https://www.daangn.com/kr/buy-sell/%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EA%B3%A0%EC%82%AC%EC%96%91-%EB%85%B8%ED%8A%B8%EB%B6%81-asus-tuf-gaming-32g-1t-rtx-4060-5qrthmxadqnf/",
+      "url": "https://www.daangn.com/kr/buy-sell/%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EA%B3%A0%EC%82%AC%EC%96%91-%EB%85%B8%ED%8A%B8%EB%B6%81-asus-tuf-gaming-ram-32g-1t-rtx-4060-5qrthmxadqnf/",
       "firstAlertedAt": "2026-10-10T12:03:01.056125Z",
-      "lastCandidateAt": "2026-10-30T07:22:11.410500Z"
+      "lastCandidateAt": "2026-11-06T11:52:58.924599Z"
     },
     "byh6cuabaept": {
       "id": "byh6cuabaept",
@@ -15976,6 +15976,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/asus-tuf-gaming-a14-2025-32gb-512gb-rtx-5060-4eock1198uu1/",
       "firstAlertedAt": "2026-11-06T11:12:48.847038Z",
       "lastCandidateAt": "2026-11-06T11:12:48.847038Z"
+    },
+    "3hes4a7paiuj": {
+      "id": "3hes4a7paiuj",
+      "title": "LG 게이밍 노트북 GTX1060 1TB",
+      "price": 400000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "의왕시",
+      "location": "내손2동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16기가 램",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-06T11:33:43.487Z",
+      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-gtx1060-1tb-3hes4a7paiuj/",
+      "firstAlertedAt": "2026-11-06T11:52:58.924599Z",
+      "lastCandidateAt": "2026-11-06T11:52:58.924599Z"
     }
   }
 }
