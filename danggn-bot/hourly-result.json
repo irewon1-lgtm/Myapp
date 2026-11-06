@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-06T18:42:30.297Z",
+  "generatedAt": "2026-11-06T19:22:30.163Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -99,24 +99,28 @@
             ]
           },
           {
-            "id": "/kr/buy-sell/acer-nitro-v-16-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-obsidian-black-crodjyfeh789/",
-            "href": "/kr/buy-sell/acer-nitro-v-16-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-obsidian-black-crodjyfeh789/",
-            "title": "Acer Nitro V 16 게이밍 노트북 Obsidian Black",
-            "content": "AMD Ryzen 7 250 프로세서와 NVIDIA GeForce RTX 5050 그래픽 카드를 탑재한 고성능 게이밍 노트북입니다. 16GB DDR5 메모리와 512GB NVMe SSD로 쾌적한 게이밍 환경을 제공해요. 16인치 WUXGA IPS 디스플레이로 생생한 화면을 즐길 수 있습니다. 게임을 좋아하시는 분들께 강력 추천드려요!\n\n여친이랑 같이 게임하려고 샀는데 몇일하다 안해서 포맷하고 팝니다",
-            "price": "900000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/08940734-b703-44fc-af73-f038edbfdbef.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/asus-tuf-gaming-a14-2025-32gb-512gb-rtx-5060-4eock1198uu1/",
+            "href": "/kr/buy-sell/asus-tuf-gaming-a14-2025-32gb-512gb-rtx-5060-4eock1198uu1/",
+            "title": "ASUS TUF GAMING A14 2025 32GB 512GB RTX 5060",
+            "content": "ASUS TUF GAMING A14 2025 모델입니다.\n\n32GB 램과 512GB 용량에 RTX 5060 그래픽이 탑재된 고사양 노트북입니다.\n\n외관 상태 매우 깔끔하며 모든 기능 정상적으로 작동합니다.\n\n엄청나게 가벼워 누구든 용도에 상관없이 만족스럽게 사용할 겁니다.\n\n지금 쿠팡에서 이 무게에 비슷한 사양 노트북 거의 300 입니다.\n\n네고 사양",
+            "price": "1900000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/b83ccc36-5b8c-43dc-9f00-6bf999e897d7.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": false,
-            "createdAt": "2026-11-06T13:08:50.964Z",
-            "boostedAt": "2026-11-06T13:08:50.962Z",
+            "createdAt": "2026-11-06T10:40:21.413Z",
+            "boostedAt": "2026-11-06T10:40:21.413Z",
             "region": {
-              "name": "정자3동"
+              "name": "수리동"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 37.2925557,
-                "longitude": 126.9853798
+                "latitude": 37.35555,
+                "longitude": 126.9260088
+              },
+              {
+                "latitude": 37.35555,
+                "longitude": 126.9260088
               }
             ]
           }
@@ -124,7 +128,7 @@
         "dateFieldSnippets": [
           "createdAt\":\"2026-11-06T16:10:44.396Z\",\"boostedAt\":\"2026-11-06T16:10:44.394Z\",\"region\":{\"name\":\"와부읍\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-11-06T16:38:47.623Z\",\"boostedAt\":\"2026-11-06T16:38:47.621Z\",\"region\":{\"name\":\"망포동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-06T13:08:50.964Z\",\"boostedAt\":\"2026-11-06T13:08:50.962Z\",\"region\":{\"name\":\"정자3동\"},\"category\":null,\"contentCoo",
+          "createdAt\":\"2026-11-06T10:40:21.413Z\",\"boostedAt\":\"2026-11-06T10:40:21.413Z\",\"region\":{\"name\":\"수리동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-11-06T17:42:05.058Z\",\"boostedAt\":\"2026-11-06T17:42:05.056Z\",\"region\":{\"name\":\"화명동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-11-06T12:30:45.160Z\",\"boostedAt\":\"2026-11-06T12:30:45.158Z\",\"region\":{\"name\":\"석적읍\"},\"category\":null,\"contentCoor"
         ],
@@ -137,24 +141,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1317,
-    "globalUniqueListings": 519,
-    "duplicateListingsRemoved": 798,
-    "detailQueueStart": 4,
-    "freshDetailTasks": 4,
+    "searchUniqueListings": 1339,
+    "globalUniqueListings": 508,
+    "duplicateListingsRemoved": 831,
+    "detailQueueStart": 0,
+    "freshDetailTasks": 0,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 4,
-    "detailSucceeded": 4,
+    "detailRequestsExecuted": 0,
+    "detailSucceeded": 0,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 519,
+    "postedAtResolvedFromSearch": 508,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 82822,
+    "scanDurationMs": 78662,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +170,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 286,
-        "durationMs": 12199
+        "uniqueListings": 284,
+        "durationMs": 12011
       },
       {
         "city": "의왕시",
@@ -182,8 +186,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 387,
-        "durationMs": 25429
+        "uniqueListings": 408,
+        "durationMs": 25478
       },
       {
         "city": "안양시",
@@ -200,8 +204,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 390,
-        "durationMs": 34721
+        "uniqueListings": 393,
+        "durationMs": 34870
       },
       {
         "city": "과천시",
@@ -213,7 +217,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 254,
-        "durationMs": 5998
+        "durationMs": 6089
       }
     ],
     "finalCandidateCount": 0,
@@ -222,7 +226,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 82827
+    "durationMs": 78670
   },
   "candidates": []
 }
