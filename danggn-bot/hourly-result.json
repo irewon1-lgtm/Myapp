@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-06T17:02:33.834Z",
+  "generatedAt": "2026-11-06T17:25:08.313Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -126,10 +126,10 @@
           "createdAt\":\"2026-11-06T16:38:47.623Z\",\"boostedAt\":\"2026-11-06T16:38:47.621Z\",\"region\":{\"name\":\"망포동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-11-06T13:08:50.964Z\",\"boostedAt\":\"2026-11-06T13:08:50.962Z\",\"region\":{\"name\":\"정자3동\"},\"category\":null,\"contentCoo",
           "createdAt\":\"2026-11-06T16:56:45.480Z\",\"boostedAt\":\"2026-11-06T16:56:45.479Z\",\"region\":{\"name\":\"일직동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-06T00:52:54.759Z\",\"boostedAt\":\"2026-11-06T00:52:54.757Z\",\"region\":{\"name\":\"석사동\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-11-06T17:12:19.626Z\",\"boostedAt\":\"2026-11-06T17:12:19.625Z\",\"region\":{\"name\":\"대명4동\"},\"category\":null,\"contentCoo"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":259,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"ASUS K6502V i9-13900H 노트북 (RTX",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":258,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"ASUS K6502V i9-13900H 노트북 (RTX",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -137,24 +137,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1327,
-    "globalUniqueListings": 504,
-    "duplicateListingsRemoved": 823,
-    "detailQueueStart": 6,
-    "freshDetailTasks": 6,
+    "searchUniqueListings": 1309,
+    "globalUniqueListings": 541,
+    "duplicateListingsRemoved": 768,
+    "detailQueueStart": 5,
+    "freshDetailTasks": 5,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 6,
-    "detailSucceeded": 6,
+    "detailRequestsExecuted": 5,
+    "detailSucceeded": 5,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 504,
+    "postedAtResolvedFromSearch": 541,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 0,
-    "scanDurationMs": 86473,
+    "candidateCount": 1,
+    "scanDurationMs": 84365,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +166,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 280,
-        "durationMs": 12269
+        "uniqueListings": 281,
+        "durationMs": 12165
       },
       {
         "city": "의왕시",
@@ -182,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 402,
-        "durationMs": 25742
+        "uniqueListings": 383,
+        "durationMs": 25304
       },
       {
         "city": "안양시",
@@ -200,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 390,
-        "durationMs": 35117
+        "uniqueListings": 392,
+        "durationMs": 35254
       },
       {
         "city": "과천시",
@@ -212,17 +212,53 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 255,
-        "durationMs": 6354
+        "uniqueListings": 253,
+        "durationMs": 5963
       }
     ],
-    "finalCandidateCount": 0,
+    "finalCandidateCount": 1,
     "stateItemCount": 5000,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 86478
+    "durationMs": 84369
   },
-  "candidates": []
+  "candidates": [
+    {
+      "id": "tuu1ubbyq65b",
+      "changeType": "price_drop",
+      "previousPrice": 8250000,
+      "price": 7500000,
+      "priceDropPercent": 9.1,
+      "city": "의왕시",
+      "location": "내손1동",
+      "regionPath": "경기도 의왕시 내손1동",
+      "title": "ROG STRIX SCAR RTX5080 (SSD4TB+RAM96GB) 게이밍 노트북",
+      "modelHint": "ROG STRIX SCAR RTX5080 (SSD4TB+RAM96GB) 게이밍 노트북",
+      "cpuHint": null,
+      "cpuBaselinePass": null,
+      "gpuHint": "RTX5080",
+      "vramGB": 16,
+      "ramGB": 96,
+      "ambiguousMemoryGB": 96,
+      "hardwareReviewStatus": "PASS_RAM_VRAM",
+      "ramEvidence": "RAM96GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "96GB",
+      "storageGB": 4096,
+      "llmCapability": "HYBRID_WORK_LOCAL_LLM",
+      "llmReason": "RAM 32GB 이상 + VRAM 16GB 이상 확정 후보",
+      "specConfidence": "confirmed",
+      "postedAt": "2026-06-16T17:11:02.924Z",
+      "boostedAt": "2026-11-03T04:08:51.017Z",
+      "status": "Ongoing",
+      "description": "ROG STRIX SCAR RTX5080\nG635L\n중고, 제품 풀박스로 제공해드립니다.\n\n추가설치분 안내\nSK Hynix \nDDR5 6400  RAM 96GB\nSsd 4TB 탑재\n(2TB+2TB)\n\n가격책정안내\n노트북 본품 450만원\n+SSD 100만원\n+RAM 300만원\n\n총 가격 850만원\n현재가 네고 100",
+      "url": "https://www.daangn.com/kr/buy-sell/rog-strix-scar-rtx5080-ssd4tb-ram96gb-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-tuu1ubbyq65b/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "guswns96",
+      "mannerTemperature": 37.5
+    }
+  ]
 }
