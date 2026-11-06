@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-06T10:32:45.767163Z",
+  "updatedAt": "2026-11-06T11:12:48.847038Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -10230,8 +10230,8 @@
     "8ev2igaic2kb": {
       "id": "8ev2igaic2kb",
       "title": "LG 그램 17인치 rtx5050 32gb ssd1테라",
-      "price": 2600000,
-      "previousPrice": 2700000,
+      "price": 2470000,
+      "previousPrice": 2600000,
       "changeType": "price_drop",
       "city": "과천시",
       "location": "갈현동",
@@ -10250,7 +10250,7 @@
       "postedAt": "2026-10-24T19:55:37.139Z",
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-17%EC%9D%B8%EC%B9%98-rtx5050-32gb-ssd1%ED%85%8C%EB%9D%BC-8ev2igaic2kb/",
       "firstAlertedAt": "2026-10-24T19:58:32.329796Z",
-      "lastCandidateAt": "2026-11-02T13:12:22.664601Z"
+      "lastCandidateAt": "2026-11-06T11:12:48.847038Z"
     },
     "f3dgr3nz8myy": {
       "id": "f3dgr3nz8myy",
@@ -15951,6 +15951,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EA%B7%B8%EB%9E%A8-24g%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-%EA%B5%AC%EB%A7%A4%ED%95%98%EC%8B%9C%EA%B8%B0%EB%A1%9C-%ED%96%88%EB%8D%98-%EC%9E%90%EB%9D%BC%EB%8B%98-%EC%97%AC%EA%B8%B0%EB%A1%9C-%EC%B1%84%ED%8C%85-%EB%B6%80%ED%83%81%EB%93%9C%EB%A0%A4%EC%9A%94-efrr96d7i5hn/",
       "firstAlertedAt": "2026-11-06T08:32:50.266223Z",
       "lastCandidateAt": "2026-11-06T08:32:50.266223Z"
+    },
+    "4eock1198uu1": {
+      "id": "4eock1198uu1",
+      "title": "ASUS TUF GAMING A14 2025 32GB 512GB RTX 5060",
+      "price": 1900000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "수리동",
+      "cpuHint": null,
+      "gpuHint": "RTX 5060",
+      "vramGB": null,
+      "ramGB": 32,
+      "ambiguousMemoryGB": 32,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "32GB 램",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "32GB",
+      "storageGB": null,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "postedAt": "2026-11-06T10:40:21.413Z",
+      "url": "https://www.daangn.com/kr/buy-sell/asus-tuf-gaming-a14-2025-32gb-512gb-rtx-5060-4eock1198uu1/",
+      "firstAlertedAt": "2026-11-06T11:12:48.847038Z",
+      "lastCandidateAt": "2026-11-06T11:12:48.847038Z"
     }
   }
 }
