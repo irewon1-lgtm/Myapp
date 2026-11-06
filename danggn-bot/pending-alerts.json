@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-06T15:12:45.083717Z",
+  "updatedAt": "2026-11-06T15:44:07.291470Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -16001,6 +16001,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-gtx1060-1tb-3hes4a7paiuj/",
       "firstAlertedAt": "2026-11-06T11:52:58.924599Z",
       "lastCandidateAt": "2026-11-06T11:52:58.924599Z"
+    },
+    "van8vi2ni47e": {
+      "id": "van8vi2ni47e",
+      "title": "레노버 요가 AMD 라이젠 실버",
+      "price": 410000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "비산1동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-06T15:27:33.415Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%9A%94%EA%B0%80-amd-%EB%9D%BC%EC%9D%B4%EC%A0%A0-%EC%8B%A4%EB%B2%84-van8vi2ni47e/",
+      "firstAlertedAt": "2026-11-06T15:44:07.291470Z",
+      "lastCandidateAt": "2026-11-06T15:44:07.291470Z"
     }
   }
 }
