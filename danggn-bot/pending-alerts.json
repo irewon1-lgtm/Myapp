@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-06T03:52:50.647370Z",
+  "updatedAt": "2026-11-06T04:32:45.073194Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -15826,6 +15826,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EC%8B%A0%ED%98%95-2026-asus-%EC%A0%9C%ED%94%BC%EB%9F%AC%EC%8A%A4-g16-5090-64gb-ram-386h-i2bsrytsqw2g/",
       "firstAlertedAt": "2026-11-05T22:52:37.438395Z",
       "lastCandidateAt": "2026-11-05T22:52:37.438395Z"
+    },
+    "oduuaff4dv1p": {
+      "id": "oduuaff4dv1p",
+      "title": "삼성 노트북판매",
+      "price": 180000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "안양3동",
+      "cpuHint": "i7-4700Hq",
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "램16gb",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-06T04:02:08.103Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81%ED%8C%90%EB%A7%A4-oduuaff4dv1p/",
+      "firstAlertedAt": "2026-11-06T04:32:45.073194Z",
+      "lastCandidateAt": "2026-11-06T04:32:45.073194Z"
     }
   }
 }
