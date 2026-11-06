@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-06T21:10:45.982Z",
+  "generatedAt": "2026-11-06T21:42:30.792Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -77,28 +77,6 @@
             ]
           },
           {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-500r-%ED%99%94%EC%9D%B4%ED%8A%B8-%EC%9E%90%EC%B2%B4-%ED%82%A4%EB%B3%B4%EB%93%9C-%EC%95%88%EB%90%A8-gqad9e931rgs/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-500r-%ED%99%94%EC%9D%B4%ED%8A%B8-%EC%9E%90%EC%B2%B4-%ED%82%A4%EB%B3%B4%EB%93%9C-%EC%95%88%EB%90%A8-gqad9e931rgs/",
-            "title": "삼성 노트북 500R 화이트 (자체 키보드 안됨)",
-            "content": "인텔 펜티엄 CPU와 8GB 램이 탑재된 삼성 노트북이에요. 585GB의 넉넉한 저장 공간을 갖추고 있어요. 가벼운 사무용이나 영상 시청용으로 활용하기 좋아요.\n\n자체 키보드안되서 외부키보드 연결해서 사용해야합니다.\n\n삼성 노트북 N500R5H-K23W\n- CPU _ 인텔 펜티엄 3825U 프로세서\n- 램 _ 8GB\n- 15인치\n- C드라이브 _ SSD 128gb\n- D드라이브 _ HDD 460gb\n- Window 11pro 인증완료\n-  밧데리 _ 2시간 사용가능\n- Ms Office 설치됨\n- 구성 _ 노트북본체 + 충전기\n- 생활기스 있음, 민감하신 분은 피해주세요\n\n- 바로구매로 진행할 경우는 운송중 파손 면책 조건으로 발송해 드립니다.\n- 바로구매시에는 이에 동의 하시면  진행해주세요.",
-            "price": "70000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/ef70b70a-6226-4468-b772-90e43ed68cdf.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-11-02T13:12:49.876Z",
-            "boostedAt": "2026-11-06T19:30:10.853Z",
-            "region": {
-              "name": "동춘1동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 37.408122,
-                "longitude": 126.6766437
-              }
-            ]
-          },
-          {
             "id": "/kr/buy-sell/asus-tuf-gaming-a14-2025-32gb-512gb-rtx-5060-4eock1198uu1/",
             "href": "/kr/buy-sell/asus-tuf-gaming-a14-2025-32gb-512gb-rtx-5060-4eock1198uu1/",
             "title": "ASUS TUF GAMING A14 2025 32GB 512GB RTX 5060",
@@ -123,14 +101,36 @@
                 "longitude": 126.9260088
               }
             ]
+          },
+          {
+            "id": "/kr/buy-sell/acer-nitro-v-16-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-obsidian-black-crodjyfeh789/",
+            "href": "/kr/buy-sell/acer-nitro-v-16-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-obsidian-black-crodjyfeh789/",
+            "title": "Acer Nitro V 16 게이밍 노트북 Obsidian Black",
+            "content": "AMD Ryzen 7 250 프로세서와 NVIDIA GeForce RTX 5050 그래픽 카드를 탑재한 고성능 게이밍 노트북입니다. 16GB DDR5 메모리와 512GB NVMe SSD로 쾌적한 게이밍 환경을 제공해요. 16인치 WUXGA IPS 디스플레이로 생생한 화면을 즐길 수 있습니다. 게임을 좋아하시는 분들께 강력 추천드려요!\n\n여친이랑 같이 게임하려고 샀는데 몇일하다 안해서 포맷하고 팝니다",
+            "price": "900000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/08940734-b703-44fc-af73-f038edbfdbef.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-11-06T13:08:50.964Z",
+            "boostedAt": "2026-11-06T13:08:50.962Z",
+            "region": {
+              "name": "정자3동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 37.2925557,
+                "longitude": 126.9853798
+              }
+            ]
           }
         ],
         "dateFieldSnippets": [
           "createdAt\":\"2026-11-06T16:38:47.623Z\",\"boostedAt\":\"2026-11-06T16:38:47.621Z\",\"region\":{\"name\":\"망포동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-02T13:12:49.876Z\",\"boostedAt\":\"2026-11-06T19:30:10.853Z\",\"region\":{\"name\":\"동춘1동\"},\"category\":null,\"contentCoo",
           "createdAt\":\"2026-11-06T10:40:21.413Z\",\"boostedAt\":\"2026-11-06T10:40:21.413Z\",\"region\":{\"name\":\"수리동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-11-06T13:08:50.964Z\",\"boostedAt\":\"2026-11-06T13:08:50.962Z\",\"region\":{\"name\":\"정자3동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-11-01T11:02:26.020Z\",\"boostedAt\":\"2026-11-06T20:40:56.727Z\",\"region\":{\"name\":\"연산제9동\"},\"category\":null,\"contentCo"
+          "createdAt\":\"2026-10-24T04:50:56.892Z\",\"boostedAt\":\"2026-11-06T13:13:13.931Z\",\"region\":{\"name\":\"갈현동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-11-02T13:12:49.876Z\",\"boostedAt\":\"2026-11-06T19:30:10.853Z\",\"region\":{\"name\":\"동춘1동\"},\"category\":null,\"contentCoo"
         ],
         "scriptHeads": [
           "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":258,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"에이서 RTX4060게이밍 노트북 팝니다\",\"descr",
@@ -141,24 +141,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1320,
-    "globalUniqueListings": 514,
-    "duplicateListingsRemoved": 806,
-    "detailQueueStart": 1,
-    "freshDetailTasks": 1,
+    "searchUniqueListings": 1321,
+    "globalUniqueListings": 506,
+    "duplicateListingsRemoved": 815,
+    "detailQueueStart": 3,
+    "freshDetailTasks": 3,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 1,
-    "detailSucceeded": 1,
+    "detailRequestsExecuted": 3,
+    "detailSucceeded": 3,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 514,
+    "postedAtResolvedFromSearch": 506,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 78840,
+    "scanDurationMs": 83514,
     "cities": [
       {
         "city": "군포시",
@@ -170,8 +170,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 286,
-        "durationMs": 11995
+        "uniqueListings": 284,
+        "durationMs": 13062
       },
       {
         "city": "의왕시",
@@ -186,8 +186,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 382,
-        "durationMs": 25283
+        "uniqueListings": 396,
+        "durationMs": 25672
       },
       {
         "city": "안양시",
@@ -204,8 +204,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 397,
-        "durationMs": 34866
+        "uniqueListings": 388,
+        "durationMs": 34808
       },
       {
         "city": "과천시",
@@ -216,8 +216,8 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 255,
-        "durationMs": 6143
+        "uniqueListings": 253,
+        "durationMs": 6465
       }
     ],
     "finalCandidateCount": 0,
@@ -226,7 +226,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 78847
+    "durationMs": 83520
   },
   "candidates": []
 }
