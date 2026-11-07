@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-07T05:22:45.368054Z",
+  "updatedAt": "2026-11-07T06:02:56.113963Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -15780,8 +15780,8 @@
     "tuu1ubbyq65b": {
       "id": "tuu1ubbyq65b",
       "title": "ROG STRIX SCAR RTX5080 (SSD4TB+RAM96GB) 게이밍 노트북",
-      "price": 7500000,
-      "previousPrice": 8250000,
+      "price": 7000000,
+      "previousPrice": 7500000,
       "changeType": "price_drop",
       "city": "의왕시",
       "location": "내손1동",
@@ -15800,7 +15800,7 @@
       "postedAt": "2026-06-16T17:11:02.924Z",
       "url": "https://www.daangn.com/kr/buy-sell/rog-strix-scar-rtx5080-ssd4tb-ram96gb-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-tuu1ubbyq65b/",
       "firstAlertedAt": "2026-11-05T13:32:54.922853Z",
-      "lastCandidateAt": "2026-11-06T17:25:08.376643Z"
+      "lastCandidateAt": "2026-11-07T06:02:56.113963Z"
     },
     "i2bsrytsqw2g": {
       "id": "i2bsrytsqw2g",
@@ -16201,6 +16201,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%8D%B8-13%EC%84%B8%EB%8C%80-i5-%EB%85%B8%ED%8A%B8%EB%B6%81-7m9mi29jungx/",
       "firstAlertedAt": "2026-11-07T04:42:58.882132Z",
       "lastCandidateAt": "2026-11-07T04:42:58.882132Z"
+    },
+    "b1164oqv3wge": {
+      "id": "b1164oqv3wge",
+      "title": "애플 맥북 프로 14 M5 Pro 24GB 2TB 미개봉 판매",
+      "price": 3900000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "산본1동",
+      "cpuHint": "M5 Pro",
+      "gpuHint": "M5 Pro",
+      "vramGB": null,
+      "ramGB": 24,
+      "ambiguousMemoryGB": 24,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "메모리 : 24GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "24GB",
+      "storageGB": 2048,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-07T05:22:45.786Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%95%A0%ED%94%8C-%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-14-m5-pro-24gb-2tb-%EB%AF%B8%EA%B0%9C%EB%B4%89-%ED%8C%90%EB%A7%A4-b1164oqv3wge/",
+      "firstAlertedAt": "2026-11-07T06:02:56.113963Z",
+      "lastCandidateAt": "2026-11-07T06:02:56.113963Z"
     }
   }
 }
