@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-07T14:42:50.845240Z",
+  "updatedAt": "2026-11-07T15:12:34.043357Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -16501,6 +16501,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/11%EC%9B%948%EC%9D%BC-%EA%B1%B0%EB%9E%98%EA%B0%80%EB%8A%A5-%EC%95%A0%EC%BC%80%ED%94%8C-%ED%8F%AC%ED%95%A8-%EC%95%A0%ED%94%8C-%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-16%EC%9D%B8%EC%B9%98-%EC%8A%A4%ED%8E%98%EC%9D%B4%EC%8A%A4-%EB%B8%94%EB%9E%99-pc25dyfujbdx/",
       "firstAlertedAt": "2026-11-07T14:42:50.845240Z",
       "lastCandidateAt": "2026-11-07T14:42:50.845240Z"
+    },
+    "v9zqkm1yfzq7": {
+      "id": "v9zqkm1yfzq7",
+      "title": "삼성 노트북 i7 16GB 256GB",
+      "price": 500000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "산본1동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB 램",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": 256,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-07T15:05:21.312Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-i7-16gb-256gb-v9zqkm1yfzq7/",
+      "firstAlertedAt": "2026-11-07T15:12:34.043357Z",
+      "lastCandidateAt": "2026-11-07T15:12:34.043357Z"
     }
   }
 }
