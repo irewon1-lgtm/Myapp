@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-07T04:02:47.421028Z",
+  "updatedAt": "2026-11-07T04:42:58.882132Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -5654,9 +5654,9 @@
     },
     "oyx1y2f8ocut": {
       "id": "oyx1y2f8ocut",
-      "title": "삼성 노트북 NT551XDA 11세대 i5 16GB RAM",
-      "price": 430000,
-      "previousPrice": 450000,
+      "title": "삼성 노트북 NT551XDA 11세대 i7 16GB 주말 가격인하",
+      "price": 400000,
+      "previousPrice": 430000,
       "changeType": "price_drop",
       "city": "안양시",
       "location": "호계1동",
@@ -5673,9 +5673,9 @@
       "llmCapability": "SPEC_CHECK_REQUIRED",
       "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
       "postedAt": "2026-10-15T04:24:48.131Z",
-      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt551xda-11%EC%84%B8%EB%8C%80-i5-16gb-ram-oyx1y2f8ocut/",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt551xda-11%EC%84%B8%EB%8C%80-i7-16gb-%EC%A3%BC%EB%A7%90-%EA%B0%80%EA%B2%A9%EC%9D%B8%ED%95%98-oyx1y2f8ocut/",
       "firstAlertedAt": "2026-10-15T04:52:23.802774Z",
-      "lastCandidateAt": "2026-10-21T01:12:31.287513Z"
+      "lastCandidateAt": "2026-11-07T04:42:58.882132Z"
     },
     "uvh1h9tgrm43": {
       "id": "uvh1h9tgrm43",
@@ -15154,9 +15154,9 @@
     },
     "pps3awnaw7sg": {
       "id": "pps3awnaw7sg",
-      "title": "HP 빅터스 16-r0088TX 고사양 업그레이드 구성 판매합니다.",
-      "price": 1490000,
-      "previousPrice": 1520000,
+      "title": "HP 빅터스 16-r0088TX RTX 4070 / RAM 32GB / SSD 1TB 판매",
+      "price": 1480000,
+      "previousPrice": 1490000,
       "changeType": "price_drop",
       "city": "과천시",
       "location": "중앙동",
@@ -15166,16 +15166,16 @@
       "ramGB": 32,
       "ambiguousMemoryGB": 32,
       "hardwareReviewStatus": "PASS_RAM",
-      "ramEvidence": "RAM: 32GB",
+      "ramEvidence": "RAM 32GB",
       "vramEvidence": null,
       "ambiguousMemoryEvidence": "32GB",
       "storageGB": 1024,
       "llmCapability": "WORK_DEV_RAM32",
       "llmReason": "RAM 32GB 이상 확정 후보",
       "postedAt": "2026-11-04T13:17:39.857Z",
-      "url": "https://www.daangn.com/kr/buy-sell/hp-%EB%B9%85%ED%84%B0%EC%8A%A4-16-r0088tx-%EA%B3%A0%EC%82%AC%EC%96%91-%EC%97%85%EA%B7%B8%EB%A0%88%EC%9D%B4%EB%93%9C-%EA%B5%AC%EC%84%B1-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-pps3awnaw7sg/",
+      "url": "https://www.daangn.com/kr/buy-sell/hp-%EB%B9%85%ED%84%B0%EC%8A%A4-16-r0088tx-rtx-4070-ram-32gb-ssd-1tb-%ED%8C%90%EB%A7%A4-pps3awnaw7sg/",
       "firstAlertedAt": "2026-11-04T13:22:34.576367Z",
-      "lastCandidateAt": "2026-11-04T14:02:20.654462Z"
+      "lastCandidateAt": "2026-11-07T04:42:58.882132Z"
     },
     "nqdj4pmfik1a": {
       "id": "nqdj4pmfik1a",
@@ -16151,6 +16151,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%AF%B8%EA%B0%9C%EB%B4%89-%EC%83%88%EC%A0%9C%ED%92%88-m5-%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-14%EC%9D%B8%EC%B9%98-%EC%8B%A4%EB%B2%84-16gb-1tb-bwbokfi12m1x/",
       "firstAlertedAt": "2026-11-07T04:02:47.421028Z",
       "lastCandidateAt": "2026-11-07T04:02:47.421028Z"
+    },
+    "k49xbnvjr79i": {
+      "id": "k49xbnvjr79i",
+      "title": "맥북 프로 16인치 M5 Pro 24GB 1TB 스페이스 그레이",
+      "price": 3400000,
+      "previousPrice": 3800000,
+      "changeType": "price_drop",
+      "city": "안양시",
+      "location": "석수동",
+      "cpuHint": "M5 Pro",
+      "gpuHint": "M5 Pro",
+      "vramGB": null,
+      "ramGB": 24,
+      "ambiguousMemoryGB": 24,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "24GB 메모리",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "24GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-27T04:44:33.329Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-16%EC%9D%B8%EC%B9%98-m5-pro-24gb-1tb-%EC%8A%A4%ED%8E%98%EC%9D%B4%EC%8A%A4-%EA%B7%B8%EB%A0%88%EC%9D%B4-k49xbnvjr79i/",
+      "firstAlertedAt": "2026-11-07T04:42:58.882132Z",
+      "lastCandidateAt": "2026-11-07T04:42:58.882132Z"
+    },
+    "7m9mi29jungx": {
+      "id": "7m9mi29jungx",
+      "title": "델 13세대 i5 노트북",
+      "price": 400000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "대야동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-07T04:19:04.490Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%8D%B8-13%EC%84%B8%EB%8C%80-i5-%EB%85%B8%ED%8A%B8%EB%B6%81-7m9mi29jungx/",
+      "firstAlertedAt": "2026-11-07T04:42:58.882132Z",
+      "lastCandidateAt": "2026-11-07T04:42:58.882132Z"
     }
   }
 }
