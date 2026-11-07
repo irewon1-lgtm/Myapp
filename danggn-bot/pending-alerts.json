@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-07T01:32:44.311322Z",
+  "updatedAt": "2026-11-07T02:05:28.476571Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -16051,6 +16051,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%94%BD%ED%81%AC%EB%B6%81-14-g8-%EC%8B%A4%EB%B2%84-i7-16gb-3n5mj7c2zthh/",
       "firstAlertedAt": "2026-11-06T22:52:39.517934Z",
       "lastCandidateAt": "2026-11-06T22:52:39.517934Z"
+    },
+    "c3hpah4js36u": {
+      "id": "c3hpah4js36u",
+      "title": "갤럭시북3 노트북 판매합니다.",
+      "price": 700000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "신촌동",
+      "cpuHint": "i7-1360P",
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16G 메모리",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-07T01:41:42.562Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%813-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-c3hpah4js36u/",
+      "firstAlertedAt": "2026-11-07T02:05:28.476571Z",
+      "lastCandidateAt": "2026-11-07T02:05:28.476571Z"
+    },
+    "8huriopybz3y": {
+      "id": "8huriopybz3y",
+      "title": "맥북 프로 13인치 M1 실버",
+      "price": 800000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "금정동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-07T02:00:24.067Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-13%EC%9D%B8%EC%B9%98-m1-%EC%8B%A4%EB%B2%84-8huriopybz3y/",
+      "firstAlertedAt": "2026-11-07T02:05:28.476571Z",
+      "lastCandidateAt": "2026-11-07T02:05:28.476571Z"
     }
   }
 }
