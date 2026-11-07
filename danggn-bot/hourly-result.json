@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-07T19:02:33.000Z",
+  "generatedAt": "2026-11-07T19:31:17.854Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -129,11 +129,11 @@
           "createdAt\":\"2026-11-01T16:07:05.200Z\",\"boostedAt\":\"2026-11-07T16:05:24.378Z\",\"region\":{\"name\":\"정자동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-11-07T09:54:56.269Z\",\"boostedAt\":\"2026-11-07T09:54:56.266Z\",\"region\":{\"name\":\"수리동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-11-07T14:51:27.607Z\",\"boostedAt\":\"2026-11-07T14:51:27.607Z\",\"region\":{\"name\":\"포일동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-03T03:25:09.093Z\",\"boostedAt\":\"2026-11-07T14:18:27.250Z\",\"region\":{\"name\":\"정자1동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-11-07T15:17:35.098Z\",\"boostedAt\":\"2026-11-07T15:17:35.098Z\",\"region\":{\"name\":\"반포동\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-11-05T01:09:20.717Z\",\"boostedAt\":\"2026-11-07T19:03:21.205Z\",\"region\":{\"name\":\"부평5동\"},\"category\":null,\"contentCoo",
+          "createdAt\":\"2026-11-03T03:25:09.093Z\",\"boostedAt\":\"2026-11-07T14:18:27.250Z\",\"region\":{\"name\":\"정자1동\"},\"category\":null,\"contentCoo"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":264,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"🔥 ASUS TUF Gaming F16 판매합니다  ",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":263,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"🔥 ASUS TUF Gaming F16 판매합니다  ",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -141,24 +141,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1278,
-    "globalUniqueListings": 483,
-    "duplicateListingsRemoved": 795,
-    "detailQueueStart": 3,
-    "freshDetailTasks": 3,
+    "searchUniqueListings": 1297,
+    "globalUniqueListings": 531,
+    "duplicateListingsRemoved": 766,
+    "detailQueueStart": 0,
+    "freshDetailTasks": 0,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 3,
-    "detailSucceeded": 3,
+    "detailRequestsExecuted": 0,
+    "detailSucceeded": 0,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 483,
+    "postedAtResolvedFromSearch": 531,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 81318,
+    "scanDurationMs": 78624,
     "cities": [
       {
         "city": "군포시",
@@ -171,7 +171,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 273,
-        "durationMs": 11990
+        "durationMs": 12015
       },
       {
         "city": "의왕시",
@@ -186,8 +186,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 384,
-        "durationMs": 25329
+        "uniqueListings": 368,
+        "durationMs": 25367
       },
       {
         "city": "안양시",
@@ -204,8 +204,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 373,
-        "durationMs": 34654
+        "uniqueListings": 408,
+        "durationMs": 34949
       },
       {
         "city": "과천시",
@@ -217,7 +217,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 248,
-        "durationMs": 6267
+        "durationMs": 6062
       }
     ],
     "finalCandidateCount": 0,
@@ -226,7 +226,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 81326
+    "durationMs": 78631
   },
   "candidates": []
 }
