@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-07T10:02:43.569Z",
+  "generatedAt": "2026-11-07T10:42:54.234Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -77,6 +77,28 @@
             ]
           },
           {
+            "id": "/kr/buy-sell/%ED%92%80%EB%B0%95%EC%8A%A4-%EC%B5%9C%EC%8B%A0%ED%98%95-%EA%B3%A0%EC%82%AC%EC%96%91-%EC%98%A4%EB%A9%98-y1v8c6v4y2nh/",
+            "href": "/kr/buy-sell/%ED%92%80%EB%B0%95%EC%8A%A4-%EC%B5%9C%EC%8B%A0%ED%98%95-%EA%B3%A0%EC%82%AC%EC%96%91-%EC%98%A4%EB%A9%98-y1v8c6v4y2nh/",
+            "title": "[풀박스] 최신형 고사양 오멘",
+            "content": "두번째 사진에 상세내용 있습니다\n외관 [신품급 풀박스]\n\n쿠팡최저가 300만 이상\n\n바로구매 180\n직거래 / 일반택배 175\n",
+            "price": "1800000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/7dddb92a-7a44-4356-ba9d-44efa95b95fb.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-30T12:33:39.740Z",
+            "boostedAt": "2026-11-07T10:25:08.530Z",
+            "region": {
+              "name": "유가읍"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 35.695609,
+                "longitude": 128.4675083
+              }
+            ]
+          },
+          {
             "id": "/kr/buy-sell/hp-%EC%98%A4%EB%A9%98-17-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-rtx-3080-ti-6949u2jbwy5a/",
             "href": "/kr/buy-sell/hp-%EC%98%A4%EB%A9%98-17-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-rtx-3080-ti-6949u2jbwy5a/",
             "title": "HP 오멘 17 게이밍 노트북 RTX 3080 Ti",
@@ -97,40 +119,14 @@
                 "longitude": 126.9662398
               }
             ]
-          },
-          {
-            "id": "/kr/buy-sell/asus-tuf-gaming-f16-rtx4060-%EB%B8%94%EB%9E%99-ih48j23une9a/",
-            "href": "/kr/buy-sell/asus-tuf-gaming-f16-rtx4060-%EB%B8%94%EB%9E%99-ih48j23une9a/",
-            "title": "ASUS TUF Gaming F16 RTX4060 블랙",
-            "content": "인텔 i7-13650HX 프로세서와 RTX 4060을 탑재한 게이밍 노트북이에요. 16GB RAM과 512GB SSD를 갖추고 있으며 16인치 QHD+ 디스플레이가 적용되어 있어요. 고사양 게임을 즐기기에 적합한 모델이에요.\n\n\n실사용 10회 안됩니다\n\n모니터 앞 커버 눌림있는데 아이펜슬에 눌린 거같습니다\n\n노트북 박스 다있습니다",
-            "price": "1100000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/1794041861746d36919dd30d305560e925c3cff2bef1356ea03aa53a81ce5e96f480e7a6d8a370.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": false,
-            "createdAt": "2026-11-07T09:00:41.947Z",
-            "boostedAt": "2026-11-07T09:00:41.947Z",
-            "region": {
-              "name": "호계2동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 37.3863514,
-                "longitude": 126.9472044
-              },
-              {
-                "latitude": 37.4807491,
-                "longitude": 126.8802018
-              }
-            ]
           }
         ],
         "dateFieldSnippets": [
           "createdAt\":\"2026-11-07T09:54:56.269Z\",\"boostedAt\":\"2026-11-07T09:54:56.266Z\",\"region\":{\"name\":\"수리동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-10-30T12:33:39.740Z\",\"boostedAt\":\"2026-11-07T10:25:08.530Z\",\"region\":{\"name\":\"유가읍\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-11-03T08:17:39.052Z\",\"boostedAt\":\"2026-11-07T09:18:31.419Z\",\"region\":{\"name\":\"호계동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-11-07T09:00:41.947Z\",\"boostedAt\":\"2026-11-07T09:00:41.947Z\",\"region\":{\"name\":\"호계2동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-11-07T08:02:28.075Z\",\"boostedAt\":\"2026-11-07T08:02:28.073Z\",\"region\":{\"name\":\"관양동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-10-19T06:34:24.159Z\",\"boostedAt\":\"2026-11-07T06:49:12.724Z\",\"region\":{\"name\":\"군포2동\"},\"category\":null,\"contentCoo"
+          "createdAt\":\"2026-10-13T01:27:50.194Z\",\"boostedAt\":\"2026-11-07T10:37:02.351Z\",\"region\":{\"name\":\"관양동\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
           "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":257,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG 그램 노트북 14\",\"description\":\"l",
@@ -141,24 +137,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1298,
-    "globalUniqueListings": 493,
-    "duplicateListingsRemoved": 805,
-    "detailQueueStart": 12,
-    "freshDetailTasks": 12,
+    "searchUniqueListings": 1286,
+    "globalUniqueListings": 484,
+    "duplicateListingsRemoved": 802,
+    "detailQueueStart": 21,
+    "freshDetailTasks": 21,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 12,
-    "detailSucceeded": 12,
+    "detailRequestsExecuted": 21,
+    "detailSucceeded": 21,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 493,
+    "postedAtResolvedFromSearch": 484,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 2,
-    "scanDurationMs": 93389,
+    "candidateCount": 4,
+    "scanDurationMs": 104901,
     "cities": [
       {
         "city": "군포시",
@@ -170,8 +166,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 280,
-        "durationMs": 12183
+        "uniqueListings": 281,
+        "durationMs": 12485
       },
       {
         "city": "의왕시",
@@ -186,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 398,
-        "durationMs": 25856
+        "uniqueListings": 382,
+        "durationMs": 25824
       },
       {
         "city": "안양시",
@@ -204,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 366,
-        "durationMs": 35032
+        "uniqueListings": 370,
+        "durationMs": 35161
       },
       {
         "city": "과천시",
@@ -216,63 +212,63 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 254,
-        "durationMs": 6150
+        "uniqueListings": 253,
+        "durationMs": 6549
       }
     ],
-    "finalCandidateCount": 2,
+    "finalCandidateCount": 4,
     "stateItemCount": 5000,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 93397
+    "durationMs": 104908
   },
   "candidates": [
     {
-      "id": "u9mcd3vbr9u9",
+      "id": "zhx87vvd32st",
       "changeType": "new",
       "previousPrice": null,
-      "price": 1000000,
+      "price": 1020000,
       "priceDropPercent": null,
       "city": "군포시",
-      "location": "수리동",
-      "regionPath": "경기도 군포시 수리동",
-      "title": "LG 그램 노트북 14",
-      "modelHint": "LG 그램 노트북 14",
-      "cpuHint": null,
+      "location": "군포2동",
+      "regionPath": "경기도 군포시 군포2동",
+      "title": "맥북 m1pro 14인치 16gb",
+      "modelHint": "맥북 m1pro 14인치 16gb",
+      "cpuHint": "m1pro",
       "cpuBaselinePass": null,
-      "gpuHint": null,
+      "gpuHint": "m1pro",
       "vramGB": null,
       "ramGB": 16,
-      "ambiguousMemoryGB": null,
+      "ambiguousMemoryGB": 16,
       "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": "메모리 16 ",
+      "ramEvidence": "ram 16gb",
       "vramEvidence": null,
-      "ambiguousMemoryEvidence": null,
+      "ambiguousMemoryEvidence": "16gb",
       "storageGB": null,
       "llmCapability": "SPEC_CHECK_REQUIRED",
       "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
       "specConfidence": "needs_review",
-      "postedAt": "2026-11-07T09:54:56.269Z",
-      "boostedAt": "2026-11-07T09:54:56.266Z",
+      "postedAt": "2026-11-07T10:26:06.044Z",
+      "boostedAt": "2026-11-07T10:26:06.043Z",
       "status": "Ongoing",
-      "description": "lg gram 에센스 화이트 14인치\n코어 울트라5\n메모리 16\n하드 256\n\n원도우11홈 정품\n\n25년 구입\n\n산본역 직거래 가능",
-      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-14-u9mcd3vbr9u9/",
+      "description": "맥북 프로 m1pro 14인치 16gb\n\n프로칩달린 제품입니다 구성품은 박스랑 충전콘센트있습니다 배터리 효율 89%입니다 옆면에 까짐 있고 나머진 문제없습니다\n\n14인치 프로칩 ram 16gb 512gb",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81-m1pro-14%EC%9D%B8%EC%B9%98-16gb-zhx87vvd32st/",
       "favoriteCount": 0,
       "chatCount": 0,
-      "sellerName": "또또",
-      "mannerTemperature": 38.4
+      "sellerName": "늘르릇",
+      "mannerTemperature": 44.8
     },
     {
-      "id": "48p9cirqokx5",
+      "id": "qoozyzycbg7i",
       "changeType": "price_drop",
       "previousPrice": 2550000,
       "price": 2400000,
       "priceDropPercent": 5.9,
-      "city": "안양시",
-      "location": "귀인동",
-      "regionPath": "경기도 안양시 동안구 귀인동",
+      "city": "의왕시",
+      "location": "내손동",
+      "regionPath": "경기도 의왕시 내손동",
       "title": "HP 오멘 16 AI450 5070 미개봉",
       "modelHint": "HP 오멘 16 AI450 5070 미개봉",
       "cpuHint": "Ryzen AI 7 450",
@@ -289,15 +285,85 @@
       "llmCapability": "SPEC_CHECK_REQUIRED",
       "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
       "specConfidence": "needs_review",
-      "postedAt": "2026-10-30T12:17:38.382Z",
-      "boostedAt": "2026-11-03T09:37:56.821Z",
+      "postedAt": "2026-10-30T12:17:38.464Z",
+      "boostedAt": "2026-11-03T09:37:56.689Z",
       "status": "Ongoing",
       "description": "강력한 성능과 AI 기능을 기반으로 제작된 압도적인 퍼포먼스를 자랑하는 게이밍 노트북입니다. AMD Ryzen AI 7 450 CPU와 NVIDIA RTX 5070 그래픽카드가 탑재되어 쾌적한 게이밍 환경을 제공합니다. 165Hz 주사율과 WQXGA 해상도의 OLED 디스플레이로 생생한 화면을 경험할 수 있습니다. 게임을 더욱 즐겁게 플레이할 수 있도록 도와주는 매력적인 노트북이에요.\n\n오멘 하이퍼엑스 16 신상 미개봉 제품입니다.\n\n씨피유 AI 450 \n램 24기가(단일램, 2슬롯 확장가능)\nSSD 512기가\n그래픽  5070 TGP 115W\n윈도우11 (기본으로 깔려있습니다)\n\n평촌학원가 투썸플레이스쪽(버거킹 옆) 직거래 합니다.\n평일 오전엔 자느라 연락이 잘 안될 수 있습니다",
-      "url": "https://www.daangn.com/kr/buy-sell/hp-%EC%98%A4%EB%A9%98-16-ai450-5070-%EB%AF%B8%EA%B0%9C%EB%B4%89-48p9cirqokx5/",
+      "url": "https://www.daangn.com/kr/buy-sell/hp-%EC%98%A4%EB%A9%98-16-ai450-5070-%EB%AF%B8%EA%B0%9C%EB%B4%89-qoozyzycbg7i/",
       "favoriteCount": 0,
       "chatCount": 0,
       "sellerName": "킴당근",
       "mannerTemperature": 43.1
+    },
+    {
+      "id": "9fzciv2qntsa",
+      "changeType": "price_drop",
+      "previousPrice": 760000,
+      "price": 710000,
+      "priceDropPercent": 6.6,
+      "city": "안양시",
+      "location": "관양동",
+      "regionPath": "경기도 안양시 동안구 관양동",
+      "title": "삼성 갤럭시북2PRO360 (i7, 16인치)",
+      "modelHint": "삼성 갤럭시북2PRO360 (i7, 16인치)",
+      "cpuHint": null,
+      "cpuBaselinePass": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "RAM: 16GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "specConfidence": "needs_review",
+      "postedAt": "2026-10-13T01:27:50.194Z",
+      "boostedAt": "2026-11-07T10:37:02.351Z",
+      "status": "Ongoing",
+      "description": "모델: NT950QCG-X716S\n프로세스: i7-1065G7 CPU (1.5GHz)\nRAM: 16GB\nSDD: 1T\n그래픽카드: NVDIA GeForce MX250 (2G)\n펜&터치 지원\n사진과 같이 FULLL BOX 구성",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%812pro360-i7-16%EC%9D%B8%EC%B9%98-9fzciv2qntsa/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "교환및환불불가합니다",
+      "mannerTemperature": 50.9
+    },
+    {
+      "id": "zxp1jrjqcs2k",
+      "changeType": "price_drop",
+      "previousPrice": 1000000,
+      "price": 990000,
+      "priceDropPercent": 1,
+      "city": "안양시",
+      "location": "관양동",
+      "regionPath": "경기도 안양시 동안구 관양동",
+      "title": "S급 HP VICTUS 빅터스/빅투스 15 게이밍 노트북 RTX 4060 윈도우11정품 판매합니다",
+      "modelHint": "S급 HP VICTUS 빅터스/빅투스 15 게이밍 노트북 RTX 4060 윈도우11정품 판매합니다",
+      "cpuHint": "i7-13700H",
+      "cpuBaselinePass": null,
+      "gpuHint": "RTX 4060",
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "specConfidence": "needs_review",
+      "postedAt": "2026-11-07T08:02:28.075Z",
+      "boostedAt": "2026-11-07T08:02:28.073Z",
+      "status": "Ongoing",
+      "description": "HP 빅터스/빅투스 게이밍 노트북 판매합니다\n\n- AMD 라이젠 7 8845HS 프로세서* (동일 빅투스 라인업중 상급 CPU 탑재, 노트북에서는 인텔 i7-13700H랑 동급)\n-  NVIDIA GeForce RTX 4060 \n- 16GB RAM 512GB SSD\n- 국내 정식 구매=AS가능\n- 배터리효율 100%, 배터리사이클 17회!!! 들고다닐때마다 수시로 충전해서 그런거고 실사용 정말 적습니다\n\n- 윈도우 11정품(OEM, 메인보드 시리얼, 포맷해도 윈도우 자동인증)\n-  구성품 : 노트북 본체, 정품 충전기, 담아가실 수 있을 비닐백\n\n실물 너무 깔쌈하고 예쁜 빅투스입니다\n\n다른 라인업 게이밍노트북들 대비 가벼워서 단순 게이밍뿐만 아니라 들고다니기도 좋습니다 \n(저는 상위스펙 레노버 있는데 정말 빅투스가 가볍습니다)\n\n사무실에 거치해두기만 하고 사용을 안 했습니다...ㅠ 아까워서 팔아요\n\n제가 2차 사용자구요, 실사용은 토탈 몇개월 안됐습니다. \n정확한 실제 구매시기는 모르지만 작년 초겨울~재작년 늦겨울 사이 되는걸로 압니다. 그래서 아마 무상보증기간은 지났지만 국내 구매 모델 맞습니다\n \n아실분들 아시겠지만 RTX 3천번대 대비 전력효율능력, AI기술 퍼포먼스가 있어 가성비 \n좋습니다. 전에 테스트할때  호그와트레거시, 디트로이트비컴휴먼 풀옵으로 돌아갔어요. (거의 테스트만 해보고 사무실로 가져간거라 실제로 이 모델로 게임은 1시간도 안 했습니다!!)\n\n구매 확실해지시면 포맷해서 드립니다.\n\n진 짜 구매하실 분만 연락 주세요!! 게시글과 사진 꼼꼼히 안 읽고 찔러보기식 질문 하시면 대답 안 합니다!!!\n\n\n고가품에 전자기기라서 직거래만 합니다.\n무인카페 등에서 직접 확인해보시고 가져가세요!\n- 샛별한양, 한가람한양 아파트 상가쪽 직거래 선호\n- 외 범계역이나 평촌역에서도 거래 가능합니다.\n- 가장 빨리 구매 가능하신 분께 판매합니다.\n쿨거하시면 약간의 네고도 염두에 두고 있습니다.",
+      "url": "https://www.daangn.com/kr/buy-sell/s%EA%B8%89-hp-victus-%EB%B9%85%ED%84%B0%EC%8A%A4-%EB%B9%85%ED%88%AC%EC%8A%A4-15-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-rtx-4060-%EC%9C%88%EB%8F%84%EC%9A%B011%EC%A0%95%ED%92%88-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-zxp1jrjqcs2k/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "송송숭상",
+      "mannerTemperature": 45.8
     }
   ]
 }
