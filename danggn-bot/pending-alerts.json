@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-07T03:22:42.541182Z",
+  "updatedAt": "2026-11-07T04:02:47.421028Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -16126,6 +16126,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-15%EC%9D%B8%EC%B9%98-%EC%82%AC%EB%AC%B4%EC%9A%A9-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-23fxnbkmm625/",
       "firstAlertedAt": "2026-11-07T03:22:42.541182Z",
       "lastCandidateAt": "2026-11-07T03:22:42.541182Z"
+    },
+    "bwbokfi12m1x": {
+      "id": "bwbokfi12m1x",
+      "title": "미개봉 새제품 M5 맥북 프로 14인치 / 실버 / 16GB / 1TB",
+      "price": 2600000,
+      "previousPrice": 2700000,
+      "changeType": "price_drop",
+      "city": "안양시",
+      "location": "비산1동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB 메모리",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-29T10:33:01.097Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%AF%B8%EA%B0%9C%EB%B4%89-%EC%83%88%EC%A0%9C%ED%92%88-m5-%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-14%EC%9D%B8%EC%B9%98-%EC%8B%A4%EB%B2%84-16gb-1tb-bwbokfi12m1x/",
+      "firstAlertedAt": "2026-11-07T04:02:47.421028Z",
+      "lastCandidateAt": "2026-11-07T04:02:47.421028Z"
     }
   }
 }
