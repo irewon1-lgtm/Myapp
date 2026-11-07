@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-07T17:52:30.803169Z",
+  "updatedAt": "2026-11-07T18:24:30.037282Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -16526,6 +16526,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-i7-16gb-256gb-v9zqkm1yfzq7/",
       "firstAlertedAt": "2026-11-07T15:12:34.043357Z",
       "lastCandidateAt": "2026-11-07T15:12:34.043357Z"
+    },
+    "ipypureszqke": {
+      "id": "ipypureszqke",
+      "title": "LG 울트라PC  15UD50T-GX5JK 판매",
+      "price": 580000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "안양동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16G Ram",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-07T18:03:56.079Z",
+      "url": "https://www.daangn.com/kr/buy-sell/lg-%EC%9A%B8%ED%8A%B8%EB%9D%BCpc-15ud50t-gx5jk-%ED%8C%90%EB%A7%A4-ipypureszqke/",
+      "firstAlertedAt": "2026-11-07T18:24:30.037282Z",
+      "lastCandidateAt": "2026-11-07T18:24:30.037282Z"
     }
   }
 }
