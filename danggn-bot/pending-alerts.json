@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-07T08:02:40.567485Z",
+  "updatedAt": "2026-11-07T08:42:19.187592Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -10880,8 +10880,8 @@
     "9oh67s1o2nvg": {
       "id": "9oh67s1o2nvg",
       "title": "레노버 리전 프로5 16인치 / 게이밍노트북",
-      "price": 3400000,
-      "previousPrice": 3500000,
+      "price": 3300000,
+      "previousPrice": 3400000,
       "changeType": "price_drop",
       "city": "안양시",
       "location": "비산1동",
@@ -10900,7 +10900,7 @@
       "postedAt": "2026-10-26T07:37:22.738Z",
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EB%A6%AC%EC%A0%84-%ED%94%84%EB%A1%9C5-16%EC%9D%B8%EC%B9%98-%EA%B2%8C%EC%9D%B4%EB%B0%8D%EB%85%B8%ED%8A%B8%EB%B6%81-9oh67s1o2nvg/",
       "firstAlertedAt": "2026-10-26T07:42:07.864046Z",
-      "lastCandidateAt": "2026-11-03T14:32:21.703273Z"
+      "lastCandidateAt": "2026-11-07T08:42:19.187592Z"
     },
     "upuzus4ikg46": {
       "id": "upuzus4ikg46",
@@ -16251,6 +16251,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-17%EC%9D%B8%EC%B9%98-%EC%82%AC%EB%AC%B4%EC%9A%A9-%EB%85%B8%ED%8A%B8%EB%B6%81%ED%8C%94%EC%95%84%EC%9A%94-y6ien2391epv/",
       "firstAlertedAt": "2026-11-07T08:02:40.567485Z",
       "lastCandidateAt": "2026-11-07T08:02:40.567485Z"
+    },
+    "zxp1jrjqcs2k": {
+      "id": "zxp1jrjqcs2k",
+      "title": "상태좋은 HP VICTUS 빅터스/빅투스 15 게이밍 노트북 RTX 4060 윈도우11정품 판매합니다",
+      "price": 1000000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "관양동",
+      "cpuHint": "i7-13700H",
+      "gpuHint": "RTX 4060",
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-07T08:02:28.075Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%83%81%ED%83%9C%EC%A2%8B%EC%9D%80-hp-victus-%EB%B9%85%ED%84%B0%EC%8A%A4-%EB%B9%85%ED%88%AC%EC%8A%A4-15-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-rtx-4060-%EC%9C%88%EB%8F%84%EC%9A%B011%EC%A0%95%ED%92%88-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-zxp1jrjqcs2k/",
+      "firstAlertedAt": "2026-11-07T08:42:19.187592Z",
+      "lastCandidateAt": "2026-11-07T08:42:19.187592Z"
+    },
+    "gjm126yozhpd": {
+      "id": "gjm126yozhpd",
+      "title": "MSI GP62 7RDX Leopard 블랙 게이밍 노트북",
+      "price": 280000,
+      "previousPrice": 350000,
+      "changeType": "price_drop",
+      "city": "군포시",
+      "location": "산본동",
+      "cpuHint": "i7-7700HQ",
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 32,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "32GB",
+      "storageGB": 256,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-03T12:48:37.717Z",
+      "url": "https://www.daangn.com/kr/buy-sell/msi-gp62-7rdx-leopard-%EB%B8%94%EB%9E%99-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-gjm126yozhpd/",
+      "firstAlertedAt": "2026-11-07T08:42:19.187592Z",
+      "lastCandidateAt": "2026-11-07T08:42:19.187592Z"
     }
   }
 }
