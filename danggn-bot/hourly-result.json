@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-07T17:12:37.654Z",
+  "generatedAt": "2026-11-07T17:52:30.734Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -77,28 +77,24 @@
             ]
           },
           {
-            "id": "/kr/buy-sell/%EB%A7%A5%EB%B6%81%EC%97%90%EC%96%B4-13%EC%9D%B8%EC%B9%98-m5-16gb-512gb-%EC%8A%A4%EC%B9%B4%EC%9D%B4%EB%B8%94%EB%A3%A8-%EC%98%81%EB%AC%B8%EC%9E%90%ED%8C%90-%ED%92%80%EB%B0%95-s%EA%B8%89-q9vxkemcumw2/",
-            "href": "/kr/buy-sell/%EB%A7%A5%EB%B6%81%EC%97%90%EC%96%B4-13%EC%9D%B8%EC%B9%98-m5-16gb-512gb-%EC%8A%A4%EC%B9%B4%EC%9D%B4%EB%B8%94%EB%A3%A8-%EC%98%81%EB%AC%B8%EC%9E%90%ED%8C%90-%ED%92%80%EB%B0%95-s%EA%B8%89-q9vxkemcumw2/",
-            "title": "맥북에어 13인치 M5 16GB 512GB 스카이블루 영문자판 풀박 S급",
-            "content": "사이클 8\n배터리 100\n\n보증 내년 8월까지\n풀박 정품 아답케이블 구성\n깔끔한 영문자판\n흠잡을곳 없는 새제품급 S급\n\n천안 직거래 가능\n안전거래 수수료 부담시 결제 가능\n우체국 항시 오전 10시 접수\n네고 답변 안해요 급처 합니다",
-            "price": "155",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/17940645861834bceb9e11c06b8cd9db77812a53420a38a9d1d7d7c1632d607ebc7e4778690b40.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-14-u9mcd3vbr9u9/",
+            "href": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-14-u9mcd3vbr9u9/",
+            "title": "LG 그램 노트북 14",
+            "content": "lg gram 에센스 화이트 14인치\n코어 울트라5\n메모리 16\n하드 256\n\n원도우11홈 정품\n\n25년 구입\n14Z90T-GA5CK \n\n산본역 직거래 가능",
+            "price": "1000000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/05072032-deac-4a3f-b2a2-a37674223860.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-11-07T15:17:35.098Z",
-            "boostedAt": "2026-11-07T15:17:35.098Z",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-11-07T09:54:56.269Z",
+            "boostedAt": "2026-11-07T09:54:56.266Z",
             "region": {
-              "name": "반포동"
+              "name": "수리동"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 36.8288398,
-                "longitude": 127.1326256
-              },
-              {
-                "latitude": 37.5068862,
-                "longitude": 126.9999226
+                "latitude": 37.3434869,
+                "longitude": 126.9227146
               }
             ]
           },
@@ -131,13 +127,13 @@
         ],
         "dateFieldSnippets": [
           "createdAt\":\"2026-11-01T16:07:05.200Z\",\"boostedAt\":\"2026-11-07T16:05:24.378Z\",\"region\":{\"name\":\"정자동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-07T15:17:35.098Z\",\"boostedAt\":\"2026-11-07T15:17:35.098Z\",\"region\":{\"name\":\"반포동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-07T14:51:27.607Z\",\"boostedAt\":\"2026-11-07T14:51:27.607Z\",\"region\":{\"name\":\"포일동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-11-07T09:54:56.269Z\",\"boostedAt\":\"2026-11-07T09:54:56.266Z\",\"region\":{\"name\":\"수리동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-03T03:25:09.093Z\",\"boostedAt\":\"2026-11-07T14:18:27.250Z\",\"region\":{\"name\":\"정자1동\"},\"category\":null,\"contentCoo"
+          "createdAt\":\"2026-11-07T14:51:27.607Z\",\"boostedAt\":\"2026-11-07T14:51:27.607Z\",\"region\":{\"name\":\"포일동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-11-03T03:25:09.093Z\",\"boostedAt\":\"2026-11-07T14:18:27.250Z\",\"region\":{\"name\":\"정자1동\"},\"category\":null,\"contentCoo",
+          "createdAt\":\"2026-11-07T15:17:35.098Z\",\"boostedAt\":\"2026-11-07T15:17:35.098Z\",\"region\":{\"name\":\"반포동\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":265,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"🔥 ASUS TUF Gaming F16 판매합니다  ",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":262,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"🔥 ASUS TUF Gaming F16 판매합니다  ",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -145,24 +141,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1222,
-    "globalUniqueListings": 455,
-    "duplicateListingsRemoved": 767,
-    "detailQueueStart": 8,
-    "freshDetailTasks": 8,
+    "searchUniqueListings": 1266,
+    "globalUniqueListings": 479,
+    "duplicateListingsRemoved": 787,
+    "detailQueueStart": 2,
+    "freshDetailTasks": 2,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 8,
-    "detailSucceeded": 8,
+    "detailRequestsExecuted": 2,
+    "detailSucceeded": 2,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 455,
+    "postedAtResolvedFromSearch": 479,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 87918,
+    "scanDurationMs": 80288,
     "cities": [
       {
         "city": "군포시",
@@ -175,7 +171,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 270,
-        "durationMs": 11982
+        "durationMs": 11962
       },
       {
         "city": "의왕시",
@@ -190,8 +186,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 364,
-        "durationMs": 25550
+        "uniqueListings": 382,
+        "durationMs": 25248
       },
       {
         "city": "안양시",
@@ -208,8 +204,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 339,
-        "durationMs": 34911
+        "uniqueListings": 368,
+        "durationMs": 34841
       },
       {
         "city": "과천시",
@@ -220,8 +216,8 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 249,
-        "durationMs": 6307
+        "uniqueListings": 246,
+        "durationMs": 6126
       }
     ],
     "finalCandidateCount": 0,
@@ -230,7 +226,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 87925
+    "durationMs": 80295
   },
   "candidates": []
 }
