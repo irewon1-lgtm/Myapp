@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-07T14:02:51.846936Z",
+  "updatedAt": "2026-11-07T14:42:50.845240Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -16476,6 +16476,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C-15%EC%9D%B8%EC%B9%98-2015-%ED%92%80%EB%B0%95%EC%8A%A4-%EC%84%B8%ED%8A%B8-%ED%8C%9D%EB%8B%88%EB%8B%A4-ragb84doxfj8/",
       "firstAlertedAt": "2026-11-07T12:42:59.821334Z",
       "lastCandidateAt": "2026-11-07T12:42:59.821334Z"
+    },
+    "pc25dyfujbdx": {
+      "id": "pc25dyfujbdx",
+      "title": "11월8일 거래가능, 애케플 포함/ 애플 맥북 프로 16인치 스페이스 블랙",
+      "price": 3200000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "안양1동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 24,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "24gb",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-07T14:05:31.026Z",
+      "url": "https://www.daangn.com/kr/buy-sell/11%EC%9B%948%EC%9D%BC-%EA%B1%B0%EB%9E%98%EA%B0%80%EB%8A%A5-%EC%95%A0%EC%BC%80%ED%94%8C-%ED%8F%AC%ED%95%A8-%EC%95%A0%ED%94%8C-%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-16%EC%9D%B8%EC%B9%98-%EC%8A%A4%ED%8E%98%EC%9D%B4%EC%8A%A4-%EB%B8%94%EB%9E%99-pc25dyfujbdx/",
+      "firstAlertedAt": "2026-11-07T14:42:50.845240Z",
+      "lastCandidateAt": "2026-11-07T14:42:50.845240Z"
     }
   }
 }
