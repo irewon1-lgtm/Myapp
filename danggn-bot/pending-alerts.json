@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-08T08:23:05.510624Z",
+  "updatedAt": "2026-11-08T09:03:07.820594Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -14180,8 +14180,8 @@
     "rv7u4bs3wgud": {
       "id": "rv7u4bs3wgud",
       "title": "프레데터 트리톤 17X (i9/RTX 4090/32GB/1TB) 하이엔드 게이밍·AI 노트북",
-      "price": 3400000,
-      "previousPrice": 3500000,
+      "price": 3300000,
+      "previousPrice": 3400000,
       "changeType": "price_drop",
       "city": "안양시",
       "location": "관양동",
@@ -14200,7 +14200,7 @@
       "postedAt": "2026-11-02T11:02:30.505Z",
       "url": "https://www.daangn.com/kr/buy-sell/%ED%94%84%EB%A0%88%EB%8D%B0%ED%84%B0-%ED%8A%B8%EB%A6%AC%ED%86%A4-17x-i9-rtx-4090-32gb-1tb-%ED%95%98%EC%9D%B4%EC%97%94%EB%93%9C-%EA%B2%8C%EC%9D%B4%EB%B0%8D-ai-%EB%85%B8%ED%8A%B8%EB%B6%81-rv7u4bs3wgud/",
       "firstAlertedAt": "2026-11-02T11:12:28.896377Z",
-      "lastCandidateAt": "2026-11-06T00:52:43.572371Z"
+      "lastCandidateAt": "2026-11-08T09:03:07.820594Z"
     },
     "1v7ne7gyw8p8": {
       "id": "1v7ne7gyw8p8",
@@ -14330,9 +14330,9 @@
     "39j6idszvkwx": {
       "id": "39j6idszvkwx",
       "title": "맥북 프로 16인치 2019 i9 32GB 1TB",
-      "price": 1000000,
-      "previousPrice": null,
-      "changeType": "new",
+      "price": 900000,
+      "previousPrice": 1000000,
+      "changeType": "price_drop",
       "city": "군포시",
       "location": "부곡동",
       "cpuHint": null,
@@ -14350,7 +14350,7 @@
       "postedAt": "2026-11-02T14:16:23.043Z",
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-16%EC%9D%B8%EC%B9%98-2019-i9-32gb-1tb-39j6idszvkwx/",
       "firstAlertedAt": "2026-11-02T15:12:33.609765Z",
-      "lastCandidateAt": "2026-11-02T15:12:33.609765Z"
+      "lastCandidateAt": "2026-11-08T09:03:07.820594Z"
     },
     "3g2fe5gqhwau": {
       "id": "3g2fe5gqhwau",
@@ -16851,6 +16851,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EC%98%A4%EB%8A%98%EB%A7%8C%ED%8C%90%EB%A7%A4-%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-m4-16%EC%9D%B8%EC%B9%98-%ED%8C%8C%EC%9A%B0%EC%B9%98-%EA%B1%B0%EC%B9%98%EB%8C%80-%EC%84%B8%ED%8A%B8-tg2okv5z5uoz/",
       "firstAlertedAt": "2026-11-08T08:23:05.510624Z",
       "lastCandidateAt": "2026-11-08T08:23:05.510624Z"
+    },
+    "jt2h4xi1bx6c": {
+      "id": "jt2h4xi1bx6c",
+      "title": "게이밍노트북 RTX 3060 , 배터리 효율 100%",
+      "price": 610000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "평촌동",
+      "cpuHint": null,
+      "gpuHint": "RTX 3060",
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "램 : 16GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-08T08:56:37.370Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EA%B2%8C%EC%9D%B4%EB%B0%8D%EB%85%B8%ED%8A%B8%EB%B6%81-rtx-3060-%EB%B0%B0%ED%84%B0%EB%A6%AC-%ED%9A%A8%EC%9C%A8-100-jt2h4xi1bx6c/",
+      "firstAlertedAt": "2026-11-08T09:03:07.820594Z",
+      "lastCandidateAt": "2026-11-08T09:03:07.820594Z"
+    },
+    "ih7jxuormp24": {
+      "id": "ih7jxuormp24",
+      "title": "레노버 Legion Y549-15IRH 게이밍 노트북",
+      "price": 410000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "과천시",
+      "location": "갈현동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "RAM: 16GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-08T08:44:31.117Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-legion-y549-15irh-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-ih7jxuormp24/",
+      "firstAlertedAt": "2026-11-08T09:03:07.820594Z",
+      "lastCandidateAt": "2026-11-08T09:03:07.820594Z"
     }
   }
 }
