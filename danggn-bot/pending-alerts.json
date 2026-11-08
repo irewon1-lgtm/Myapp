@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-08T12:33:08.103815Z",
+  "updatedAt": "2026-11-08T13:12:52.068624Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -17026,6 +17026,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EC%95%A0%ED%94%8C-%EB%A7%A5%EB%B6%81%EC%97%90%EC%96%B4-15-m2-%EC%8A%A4%ED%8E%98%EC%9D%B4%EC%8A%A4-%EA%B7%B8%EB%A0%88%EC%9D%B4-16gb-t78a44ichzjh/",
       "firstAlertedAt": "2026-11-08T12:33:08.103815Z",
       "lastCandidateAt": "2026-11-08T12:33:08.103815Z"
+    },
+    "8n4upyd2a9ig": {
+      "id": "8n4upyd2a9ig",
+      "title": "맥북 에어 13인치 M3 16GB 미드나이트",
+      "price": 1200000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "충훈동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-08T12:57:28.617Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81-%EC%97%90%EC%96%B4-13%EC%9D%B8%EC%B9%98-m3-16gb-%EB%AF%B8%EB%93%9C%EB%82%98%EC%9D%B4%ED%8A%B8-8n4upyd2a9ig/",
+      "firstAlertedAt": "2026-11-08T13:12:52.068624Z",
+      "lastCandidateAt": "2026-11-08T13:12:52.068624Z"
+    },
+    "dygoozvx1fo7": {
+      "id": "dygoozvx1fo7",
+      "title": "맥북에어 15인치 M4 실버 16GB/256GB",
+      "price": 1650000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "석수동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-08T12:38:22.796Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81%EC%97%90%EC%96%B4-15%EC%9D%B8%EC%B9%98-m4-%EC%8B%A4%EB%B2%84-16gb-256gb-dygoozvx1fo7/",
+      "firstAlertedAt": "2026-11-08T13:12:52.068624Z",
+      "lastCandidateAt": "2026-11-08T13:12:52.068624Z"
     }
   }
 }
