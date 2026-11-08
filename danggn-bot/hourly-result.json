@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-08T23:32:33.052Z",
+  "generatedAt": "2026-11-08T23:53:40.366Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,81 +55,85 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-sec-nt-r580-b-qxtnxrmjt2wy/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-sec-nt-r580-b-qxtnxrmjt2wy/",
-            "title": "삼성 노트북 SEC-NT-R580(B)",
-            "content": "삼성 노트북 NT-R580 판매해요. \n운영체제:윈도우 7홈\n램 4기가, SSD 178기가 탑재되어 있어요. \n사진 속 구성품 모두 포함되어 있습니다. \n깔끔한 디자인의 노트북으로\n학생용 으로나\n세컨드 작업에 활용하기 좋아요.",
-            "price": "100000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/89d90cbd-bad7-46a3-8b9c-8ee9b554e531.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-15%EC%9D%B8%EC%B9%98-78tx6ffmft5v/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-15%EC%9D%B8%EC%B9%98-78tx6ffmft5v/",
+            "title": "삼성 노트북 15인치",
+            "content": "삼성 노트북 판매해요. 인텔 i5 7200U 프로세서와 ddr4 8GB RAM, 삼성 m.2 128GB SSD를 탑재하여 빠르고 쾌적한 사용이 가능해요. 15인치 화면으로 영상 시청이나 문서 작업 모두 편리하게 할 수 있어요. 깔끔한 화이트 색상으로 어디서든 잘 어울려요. 이 노트북으로 즐거운 컴퓨팅 경험을 만들어보세요.\n\n해상도 1920×1080\n배터리 3시간 이상\n윈도우 정품인증\n",
+            "price": "130000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/39fc86fd-ae27-4062-9327-30df6eb589e7.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": true,
-            "createdAt": "2026-11-08T23:15:39.871Z",
-            "boostedAt": "2026-11-08T23:15:39.869Z",
+            "createdAt": "2026-11-08T23:22:23.704Z",
+            "boostedAt": "2026-11-08T23:22:23.701Z",
             "region": {
-              "name": "송정동"
+              "name": "심곡본동"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 36.64144,
-                "longitude": 127.4440504
+                "latitude": 37.4786291,
+                "longitude": 126.780861
               }
             ]
           },
           {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-sens-r530-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%9D%EB%8B%88%EB%8B%A4-9asddoqf4h49/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-sens-r530-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%9D%EB%8B%88%EB%8B%A4-9asddoqf4h49/",
-            "title": "삼성  SENS  R530 노트북 팝니다",
-            "content": "사용감이 적은 노트북입니다. 사진에서 보이는 것처럼 깔끔한 상태를 유지하고 있어요. 윈도우가 설치되어 있어 바로 사용 가능합니다. 구매하시면 만족하실 거예요.",
-            "price": "50000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/167c8c20-fdb6-4e2e-8355-820d1e494ae8.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-28T22:47:21.874Z",
-            "boostedAt": "2026-11-08T23:00:50.709Z",
-            "region": {
-              "name": "용암2동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 36.6070808,
-                "longitude": 127.5224346
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/%EB%AF%B8%EA%B0%9C%EB%B4%89-apple-%EB%A7%A5%EB%B6%81-%EB%84%A4%EC%98%A4-13-a18-pro-512gb-f-a3404-6bkbunjgsfgr/",
-            "href": "/kr/buy-sell/%EB%AF%B8%EA%B0%9C%EB%B4%89-apple-%EB%A7%A5%EB%B6%81-%EB%84%A4%EC%98%A4-13-a18-pro-512gb-f-a3404-6bkbunjgsfgr/",
-            "title": "미개봉)Apple 맥북 네오 13 A18 Pro 512GB,МНFСАКН/А(A3404)",
-            "content": "미개봉)Apple 맥북 네오 13 A18 Pro 512GB 실버(Touch ID)모델명,МНFСАКН/А(A3404) 택배불가 \n코스트코에서 판매하던 정품입니다 \n제조 26년도 4월 7일\n\n중고아니고 사진그대로 미개봉입니다 ",
-            "price": "1190000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/b7821567-d603-4a2a-8c67-a218554f0086.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/lg-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-gtx1060-16gb-1tb-3hes4a7paiuj/",
+            "href": "/kr/buy-sell/lg-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-gtx1060-16gb-1tb-3hes4a7paiuj/",
+            "title": "LG 게이밍 노트북 GTX1060 16GB 1TB",
+            "content": "모델명 15G870 \n사이즈 15-16인치\ni5-7300HQ\n16GB RAM\nGTX1060 6G\n용량 1테라 입니다.\n\n내외부 말끔하고\n게임잘 돌아갑니다\n콜오브 듀티 모던 워페어 4 (2026) \n해봤는데 잘됩니다\n\n마우스. 마우스패드. 충전선. 가방 같이드려요.",
+            "price": "400000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/68c0a4eefbf19a529d767dcc396aa2224dfc63a148d78ee72d2b409db7601469_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": false,
-            "createdAt": "2026-10-19T13:18:24.512Z",
-            "boostedAt": "2026-11-08T23:17:32.825Z",
+            "createdAt": "2026-11-06T11:33:43.487Z",
+            "boostedAt": "2026-11-08T23:29:17.056Z",
             "region": {
-              "name": "정자3동"
+              "name": "내손2동"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 37.2963012,
-                "longitude": 126.995815
+                "latitude": 37.3923747,
+                "longitude": 126.987851
+              },
+              {
+                "latitude": 37.4045626,
+                "longitude": 127.116063
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt500r5m-k29w-fsdwa8twz9a3/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt500r5m-k29w-fsdwa8twz9a3/",
+            "title": "삼성 노트북 NT500R5M-K29W",
+            "content": "삼성 노트북으로, 흰색 상판에 삼성 로고가 있어요.\n하단 라벨에 모델 코드 NT500R5M-K29W가 표기되어 있어요.\n문서 작업이나 인터넷 검색용 노트북을 찾는 분께 추천해요.",
+            "price": "180000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/b0e756bb-cb58-4d59-b93c-f15449dabb71.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-21T07:48:59.803Z",
+            "boostedAt": "2026-11-08T23:40:18.741Z",
+            "region": {
+              "name": "주문진읍"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 37.8755956,
+                "longitude": 128.826265
               }
             ]
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-11-08T23:15:39.871Z\",\"boostedAt\":\"2026-11-08T23:15:39.869Z\",\"region\":{\"name\":\"송정동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-10-28T22:47:21.874Z\",\"boostedAt\":\"2026-11-08T23:00:50.709Z\",\"region\":{\"name\":\"용암2동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-10-19T13:18:24.512Z\",\"boostedAt\":\"2026-11-08T23:17:32.825Z\",\"region\":{\"name\":\"정자3동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-10-26T05:40:25.244Z\",\"boostedAt\":\"2026-11-08T22:09:33.407Z\",\"region\":{\"name\":\"상동면\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-08T22:58:09.137Z\",\"boostedAt\":\"2026-11-08T22:58:09.136Z\",\"region\":{\"name\":\"양벌동\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-11-08T23:22:23.704Z\",\"boostedAt\":\"2026-11-08T23:22:23.701Z\",\"region\":{\"name\":\"심곡본동\"},\"category\":null,\"contentCoo",
+          "createdAt\":\"2026-11-06T11:33:43.487Z\",\"boostedAt\":\"2026-11-08T23:29:17.056Z\",\"region\":{\"name\":\"내손2동\"},\"category\":null,\"contentCoo",
+          "createdAt\":\"2026-10-21T07:48:59.803Z\",\"boostedAt\":\"2026-11-08T23:40:18.741Z\",\"region\":{\"name\":\"주문진읍\"},\"category\":null,\"contentCoo",
+          "createdAt\":\"2026-11-08T23:36:56.068Z\",\"boostedAt\":\"2026-11-08T23:36:56.060Z\",\"region\":{\"name\":\"안양동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-10-28T22:47:21.874Z\",\"boostedAt\":\"2026-11-08T23:00:50.709Z\",\"region\":{\"name\":\"용암2동\"},\"category\":null,\"contentCoo"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":261,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 노트북 SEC-NT-R580(B)\",\"descri",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":261,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 노트북 15인치\",\"description\":\"삼성",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -137,24 +141,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1210,
-    "globalUniqueListings": 454,
-    "duplicateListingsRemoved": 756,
-    "detailQueueStart": 6,
-    "freshDetailTasks": 6,
+    "searchUniqueListings": 1194,
+    "globalUniqueListings": 439,
+    "duplicateListingsRemoved": 755,
+    "detailQueueStart": 8,
+    "freshDetailTasks": 8,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 6,
-    "detailSucceeded": 6,
+    "detailRequestsExecuted": 8,
+    "detailSucceeded": 8,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 454,
+    "postedAtResolvedFromSearch": 439,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 87213,
+    "scanDurationMs": 87853,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +170,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 267,
-        "durationMs": 12670
+        "uniqueListings": 266,
+        "durationMs": 11951
       },
       {
         "city": "의왕시",
@@ -182,8 +186,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 355,
-        "durationMs": 25894
+        "uniqueListings": 357,
+        "durationMs": 25495
       },
       {
         "city": "안양시",
@@ -200,8 +204,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 343,
-        "durationMs": 35299
+        "uniqueListings": 328,
+        "durationMs": 34904
       },
       {
         "city": "과천시",
@@ -212,8 +216,8 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 245,
-        "durationMs": 6581
+        "uniqueListings": 243,
+        "durationMs": 6238
       }
     ],
     "finalCandidateCount": 0,
@@ -222,7 +226,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 87218
+    "durationMs": 87859
   },
   "candidates": []
 }
