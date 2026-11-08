@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-08T07:42:57.358626Z",
+  "updatedAt": "2026-11-08T08:23:05.510624Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -16826,6 +16826,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/asus-rog-zephyrus-g15-%EB%B8%94%EB%9E%99-9pkdxgbj5uvm/",
       "firstAlertedAt": "2026-11-08T07:03:01.361441Z",
       "lastCandidateAt": "2026-11-08T07:03:01.361441Z"
+    },
+    "tg2okv5z5uoz": {
+      "id": "tg2okv5z5uoz",
+      "title": "오늘만판매/맥북 프로 m4 16인치 +파우치+거치대 세트",
+      "price": 3200000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "안양1동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 24,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "24gb",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-08T07:48:26.639Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%98%A4%EB%8A%98%EB%A7%8C%ED%8C%90%EB%A7%A4-%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-m4-16%EC%9D%B8%EC%B9%98-%ED%8C%8C%EC%9A%B0%EC%B9%98-%EA%B1%B0%EC%B9%98%EB%8C%80-%EC%84%B8%ED%8A%B8-tg2okv5z5uoz/",
+      "firstAlertedAt": "2026-11-08T08:23:05.510624Z",
+      "lastCandidateAt": "2026-11-08T08:23:05.510624Z"
     }
   }
 }
