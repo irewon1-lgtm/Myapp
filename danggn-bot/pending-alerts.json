@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-08T11:52:52.512542Z",
+  "updatedAt": "2026-11-08T12:33:08.103815Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -17001,6 +17001,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/hp-%ED%8C%8C%EB%B9%8C%EB%A6%AC%EC%98%A8-%EA%B2%8C%EC%9D%B4%EB%B0%8D-15-dk-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%B8%94%EB%9E%99-ys3v788xm2y6/",
       "firstAlertedAt": "2026-11-08T11:52:52.512542Z",
       "lastCandidateAt": "2026-11-08T11:52:52.512542Z"
+    },
+    "t78a44ichzjh": {
+      "id": "t78a44ichzjh",
+      "title": "애플 맥북에어 15 M2 스페이스 그레이 16GB",
+      "price": 970000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "재궁동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "램16GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-08T12:02:42.467Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%95%A0%ED%94%8C-%EB%A7%A5%EB%B6%81%EC%97%90%EC%96%B4-15-m2-%EC%8A%A4%ED%8E%98%EC%9D%B4%EC%8A%A4-%EA%B7%B8%EB%A0%88%EC%9D%B4-16gb-t78a44ichzjh/",
+      "firstAlertedAt": "2026-11-08T12:33:08.103815Z",
+      "lastCandidateAt": "2026-11-08T12:33:08.103815Z"
     }
   }
 }
