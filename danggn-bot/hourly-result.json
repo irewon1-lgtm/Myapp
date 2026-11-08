@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-07T23:42:36.268Z",
+  "generatedAt": "2026-11-08T00:22:39.087Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -125,8 +125,8 @@
           "createdAt\":\"2026-10-22T00:35:10.504Z\",\"boostedAt\":\"2026-11-07T22:41:16.963Z\",\"region\":{\"name\":\"갈현동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-11-07T23:21:40.983Z\",\"boostedAt\":\"2026-11-07T23:21:40.976Z\",\"region\":{\"name\":\"오전동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-11-07T09:54:56.269Z\",\"boostedAt\":\"2026-11-07T09:54:56.266Z\",\"region\":{\"name\":\"수리동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-05T07:50:21.204Z\",\"boostedAt\":\"2026-11-07T23:08:58.415Z\",\"region\":{\"name\":\"율전동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-10-16T12:28:02.196Z\",\"boostedAt\":\"2026-11-07T22:32:12.238Z\",\"region\":{\"name\":\"구월3동\"},\"category\":null,\"contentCoo"
+          "createdAt\":\"2026-10-16T12:28:02.196Z\",\"boostedAt\":\"2026-11-07T22:32:12.238Z\",\"region\":{\"name\":\"구월3동\"},\"category\":null,\"contentCoo",
+          "createdAt\":\"2026-11-08T00:14:36.763Z\",\"boostedAt\":\"2026-11-08T00:14:36.760Z\",\"region\":{\"name\":\"화명동\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
           "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":262,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG 그램 노트북\",\"description\":\"본제품 ",
@@ -137,24 +137,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1267,
-    "globalUniqueListings": 497,
-    "duplicateListingsRemoved": 770,
-    "detailQueueStart": 10,
-    "freshDetailTasks": 10,
+    "searchUniqueListings": 1270,
+    "globalUniqueListings": 499,
+    "duplicateListingsRemoved": 771,
+    "detailQueueStart": 11,
+    "freshDetailTasks": 11,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 10,
-    "detailSucceeded": 10,
+    "detailRequestsExecuted": 11,
+    "detailSucceeded": 11,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 497,
+    "postedAtResolvedFromSearch": 499,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 1,
-    "scanDurationMs": 90586,
+    "scanDurationMs": 92525,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +166,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 274,
-        "durationMs": 12334
+        "uniqueListings": 271,
+        "durationMs": 12306
       },
       {
         "city": "의왕시",
@@ -182,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 372,
-        "durationMs": 25711
+        "uniqueListings": 374,
+        "durationMs": 25830
       },
       {
         "city": "안양시",
@@ -200,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 370,
-        "durationMs": 34876
+        "uniqueListings": 374,
+        "durationMs": 35201
       },
       {
         "city": "과천시",
@@ -213,7 +213,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 251,
-        "durationMs": 6210
+        "durationMs": 6395
       }
     ],
     "finalCandidateCount": 1,
@@ -222,20 +222,20 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 90591
+    "durationMs": 92531
   },
   "candidates": [
     {
-      "id": "bqmxkc4ecjcs",
+      "id": "2smjyktutshv",
       "changeType": "new",
       "previousPrice": null,
-      "price": 1550000,
+      "price": 430000,
       "priceDropPercent": null,
-      "city": "의왕시",
-      "location": "오전동",
-      "regionPath": "경기도 의왕시 오전동",
-      "title": "[미사용 새제품] 2025 LG 그램 프로 AI 16 에센스 화이트",
-      "modelHint": "[미사용 새제품] 2025 LG 그램 프로 AI 16 에센스 화이트",
+      "city": "안양시",
+      "location": "석수동",
+      "regionPath": "경기도 안양시 만안구 석수동",
+      "title": "LG 그램 15인치 노트북 판매합니다",
+      "modelHint": "LG 그램 15인치 노트북 판매합니다",
       "cpuHint": null,
       "cpuBaselinePass": null,
       "gpuHint": null,
@@ -243,22 +243,22 @@
       "ramGB": 16,
       "ambiguousMemoryGB": null,
       "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": "16GB 램",
+      "ramEvidence": "RAM: 16GB",
       "vramEvidence": null,
       "ambiguousMemoryEvidence": null,
-      "storageGB": null,
+      "storageGB": 256,
       "llmCapability": "SPEC_CHECK_REQUIRED",
       "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
       "specConfidence": "needs_review",
-      "postedAt": "2026-11-07T23:21:40.983Z",
-      "boostedAt": "2026-11-07T23:21:40.976Z",
+      "postedAt": "2026-11-08T00:15:14.242Z",
+      "boostedAt": "2026-11-08T00:15:14.240Z",
       "status": "Ongoing",
-      "description": "코어Ultra5 프로세서와 16GB 램을 탑재한 모델이에요. 256GB 용량에 144Hz 고주사율 디스플레이를 갖추고 있어요. 에센스 화이트 색상의 깔끔한 디자인이 특징이에요. 가벼운 무게로 휴대하기 편리해요.\n\nOS미설치 제품입니다. 상세스펙 사진참조.",
-      "url": "https://www.daangn.com/kr/buy-sell/%EB%AF%B8%EC%82%AC%EC%9A%A9-%EC%83%88%EC%A0%9C%ED%92%88-2025-lg-%EA%B7%B8%EB%9E%A8-%ED%94%84%EB%A1%9C-ai-16-%EC%97%90%EC%84%BC%EC%8A%A4-%ED%99%94%EC%9D%B4%ED%8A%B8-bqmxkc4ecjcs/",
+      "description": "💻 LG 그램 15Z980-GP50ML 판매합니다.\n\n가볍고 휴대하기 좋은 LG 그램 노트북입니다.\n\n사진에 액정멍 표기하였습니다 감안해서 싸게 판매합니다.\n\n📌 상세 사양\n\n모델명: LG gram 15Z980-GP50ML\nCPU: 인텔 8세대 Core i5-8250U\nRAM: 16GB (2400MHz)\nSSD: 256GB (실제 표시 용량 233GB)\n그래픽: Intel UHD Graphics 620\n운영체제: Windows 11 Pro\n화면: 15인치급\n\n🔋 배터리 상태\n\n배터리 제조사: LG\n배터리 종류: 리튬이온\n최초 설계 용량: 72,770mWh\n현재 완전 충전 용량: 52,730mWh\n배터리 효율: 약 72.5%\n충전 사이클: 337회\n\n✨ 제품 특징\n\nLG 그램 특유의 가벼운 휴대성\nRAM 16GB로 문서 및 사무 작업에 적합\n인터넷, 유튜브, 인강, 간단한 업무용으로 추천\nWindows 11 Pro 설치 완료\n바로 사용 가능합니다.\n\n중고 노트북인 만큼 사용감은 있을 수 있습니다. 사진 참고해 주시고 궁금하신 점은 편하게 문의 주세요.\n\n직거래 환영합니다. 😊",
+      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-15%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-2smjyktutshv/",
       "favoriteCount": 0,
       "chatCount": 0,
-      "sellerName": "웁스",
-      "mannerTemperature": 36.5
+      "sellerName": "으슈으스",
+      "mannerTemperature": 37
     }
   ]
 }

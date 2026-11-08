@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-07T23:42:36.323983Z",
+  "updatedAt": "2026-11-08T00:22:39.143310Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -16601,6 +16601,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%AF%B8%EC%82%AC%EC%9A%A9-%EC%83%88%EC%A0%9C%ED%92%88-2025-lg-%EA%B7%B8%EB%9E%A8-%ED%94%84%EB%A1%9C-ai-16-%EC%97%90%EC%84%BC%EC%8A%A4-%ED%99%94%EC%9D%B4%ED%8A%B8-bqmxkc4ecjcs/",
       "firstAlertedAt": "2026-11-07T23:42:36.323983Z",
       "lastCandidateAt": "2026-11-07T23:42:36.323983Z"
+    },
+    "2smjyktutshv": {
+      "id": "2smjyktutshv",
+      "title": "LG 그램 15인치 노트북 판매합니다",
+      "price": 430000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "석수동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "RAM: 16GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 256,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-08T00:15:14.242Z",
+      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-15%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-2smjyktutshv/",
+      "firstAlertedAt": "2026-11-08T00:22:39.143310Z",
+      "lastCandidateAt": "2026-11-08T00:22:39.143310Z"
     }
   }
 }
