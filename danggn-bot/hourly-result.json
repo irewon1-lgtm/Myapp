@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-08T01:30:09.442Z",
+  "generatedAt": "2026-11-08T02:02:45.800Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -125,8 +125,8 @@
           "createdAt\":\"2026-10-22T00:35:10.504Z\",\"boostedAt\":\"2026-11-07T22:41:16.963Z\",\"region\":{\"name\":\"갈현동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-11-08T00:57:35.385Z\",\"boostedAt\":\"2026-11-08T00:57:35.383Z\",\"region\":{\"name\":\"석적읍\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-11-07T09:54:56.269Z\",\"boostedAt\":\"2026-11-07T09:54:56.266Z\",\"region\":{\"name\":\"수리동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-07T23:21:40.983Z\",\"boostedAt\":\"2026-11-07T23:21:40.976Z\",\"region\":{\"name\":\"오전동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-09-28T23:48:17.606Z\",\"boostedAt\":\"2026-11-08T01:14:30.964Z\",\"region\":{\"name\":\"정자3동\"},\"category\":null,\"contentCoo"
+          "createdAt\":\"2026-11-05T09:20:28.057Z\",\"boostedAt\":\"2026-11-08T01:46:14.308Z\",\"region\":{\"name\":\"상동\"},\"category\":null,\"contentCoord",
+          "createdAt\":\"2026-11-07T23:21:40.983Z\",\"boostedAt\":\"2026-11-07T23:21:40.976Z\",\"region\":{\"name\":\"오전동\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
           "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":267,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG 그램 노트북\",\"description\":\"본제품 ",
@@ -137,24 +137,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1268,
-    "globalUniqueListings": 485,
-    "duplicateListingsRemoved": 783,
-    "detailQueueStart": 11,
-    "freshDetailTasks": 11,
+    "searchUniqueListings": 1293,
+    "globalUniqueListings": 483,
+    "duplicateListingsRemoved": 810,
+    "detailQueueStart": 14,
+    "freshDetailTasks": 14,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 11,
-    "detailSucceeded": 11,
+    "detailRequestsExecuted": 14,
+    "detailSucceeded": 14,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 485,
+    "postedAtResolvedFromSearch": 483,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 0,
-    "scanDurationMs": 93495,
+    "candidateCount": 2,
+    "scanDurationMs": 95070,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +166,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 273,
-        "durationMs": 12400
+        "uniqueListings": 277,
+        "durationMs": 12183
       },
       {
         "city": "의왕시",
@@ -182,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 369,
-        "durationMs": 25722
+        "uniqueListings": 390,
+        "durationMs": 25654
       },
       {
         "city": "안양시",
@@ -200,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 373,
-        "durationMs": 35577
+        "uniqueListings": 372,
+        "durationMs": 34903
       },
       {
         "city": "과천시",
@@ -212,17 +212,88 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 253,
-        "durationMs": 6847
+        "uniqueListings": 254,
+        "durationMs": 6160
       }
     ],
-    "finalCandidateCount": 0,
+    "finalCandidateCount": 2,
     "stateItemCount": 5000,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 93499
+    "durationMs": 95077
   },
-  "candidates": []
+  "candidates": [
+    {
+      "id": "i3x76c185tp2",
+      "changeType": "price_drop",
+      "previousPrice": 4850000,
+      "price": 4100000,
+      "priceDropPercent": 15.5,
+      "city": "안양시",
+      "location": "안양1동",
+      "regionPath": "경기도 안양시 만안구 안양1동",
+      "title": "맥북프로14 M5프로 램24GB. SSD1TB 블랙 미개봉",
+      "modelHint": "맥북프로14 M5프로 램24GB. SSD1TB 블랙 미개봉",
+      "cpuHint": null,
+      "cpuBaselinePass": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 24,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "램24GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 1024,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "specConfidence": "needs_review",
+      "postedAt": "2026-11-04T08:36:53.323Z",
+      "boostedAt": "2026-11-08T01:46:44.469Z",
+      "status": "Ongoing",
+      "description": "CPU 18코어\nGPU 20코어",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C14-m5%ED%94%84%EB%A1%9C-%EB%9E%A824gb-ssd1tb-%EB%B8%94%EB%9E%99-%EB%AF%B8%EA%B0%9C%EB%B4%89-i3x76c185tp2/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "힘찬이",
+      "mannerTemperature": 38
+    },
+    {
+      "id": "n121xoy8hba6",
+      "changeType": "price_drop",
+      "previousPrice": 1290000,
+      "price": 1280000,
+      "priceDropPercent": 0.8,
+      "city": "과천시",
+      "location": "별양동",
+      "regionPath": "경기도 과천시 별양동",
+      "title": "[풀박스] 갤럭시북4 프로 NT960XGQ-A51A 16인치 3K 120Hz 노트북. 화면 터치 가능",
+      "modelHint": "[풀박스] 갤럭시북4 프로 NT960XGQ-A51A 16인치 3K 120Hz 노트북. 화면 터치 가능",
+      "cpuHint": null,
+      "cpuBaselinePass": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB 메모리",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "specConfidence": "needs_review",
+      "postedAt": "2026-11-02T12:21:25.975Z",
+      "boostedAt": "2026-11-08T02:01:06.609Z",
+      "status": "Ongoing",
+      "description": "삼성 갤럭시북4 프로 NT960XGQ-A51A 모델이에요. 16인치 3K 120Hz 고화질 디스플레이를 탑재했답니다. 인텔 Ultra5 프로세서와 16GB 메모리, 512GB SSD로 넉넉한 성능을 자랑해요. 구성품 모두 갖춰져 있어 새 제품처럼 사용하실 수 있어요. 고성능 노트북으로 작업 효율을 높여보세요!\n상태는 최상이고 풀박스 입니다.\n\n직거래는 서울 창동역. 경기도 정부과천청사역입니다.",
+      "url": "https://www.daangn.com/kr/buy-sell/%ED%92%80%EB%B0%95%EC%8A%A4-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%814-%ED%94%84%EB%A1%9C-nt960xgq-a51a-16%EC%9D%B8%EC%B9%98-3k-120hz-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EB%A9%B4-%ED%84%B0%EC%B9%98-%EA%B0%80%EB%8A%A5-n121xoy8hba6/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "야객",
+      "mannerTemperature": 57.7
+    }
+  ]
 }
