@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-08T06:23:02.130173Z",
+  "updatedAt": "2026-11-08T07:03:01.361441Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -15405,8 +15405,8 @@
     "a9nnita6jdyf": {
       "id": "a9nnita6jdyf",
       "title": "맥북프로16 M2",
-      "price": 2000000,
-      "previousPrice": 2100000,
+      "price": 1900000,
+      "previousPrice": 2000000,
       "changeType": "price_drop",
       "city": "과천시",
       "location": "갈현동",
@@ -15425,7 +15425,7 @@
       "postedAt": "2026-11-02T09:28:50.173Z",
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C16-m2-a9nnita6jdyf/",
       "firstAlertedAt": "2026-11-05T03:22:32.281918Z",
-      "lastCandidateAt": "2026-11-05T03:22:32.281918Z"
+      "lastCandidateAt": "2026-11-08T07:03:01.361441Z"
     },
     "m8bmg82kejvo": {
       "id": "m8bmg82kejvo",
@@ -15905,8 +15905,8 @@
     "ga15v2944nhm": {
       "id": "ga15v2944nhm",
       "title": "맥북프로 15인치 i7 16GB 배터리 301회 (충전기 포함)",
-      "price": 370000,
-      "previousPrice": 400000,
+      "price": 350000,
+      "previousPrice": 370000,
       "changeType": "price_drop",
       "city": "과천시",
       "location": "별양동",
@@ -15925,7 +15925,7 @@
       "postedAt": "2026-11-06T06:06:53.276Z",
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C-15%EC%9D%B8%EC%B9%98-i7-16gb-%EB%B0%B0%ED%84%B0%EB%A6%AC-301%ED%9A%8C-%EC%B6%A9%EC%A0%84%EA%B8%B0-%ED%8F%AC%ED%95%A8-ga15v2944nhm/",
       "firstAlertedAt": "2026-11-06T06:32:43.996790Z",
-      "lastCandidateAt": "2026-11-06T07:12:47.579449Z"
+      "lastCandidateAt": "2026-11-08T07:03:01.361441Z"
     },
     "efrr96d7i5hn": {
       "id": "efrr96d7i5hn",
@@ -16801,6 +16801,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%B6%815%ED%94%84%EB%A1%9C-360-cpu-%EC%9D%B8%ED%85%94-%EC%9A%B8%ED%8A%B8%EB%9D%BC-7-ram-32gb-ssd-1tb-afmqcka7a11q/",
       "firstAlertedAt": "2026-11-08T06:23:02.130173Z",
       "lastCandidateAt": "2026-11-08T06:23:02.130173Z"
+    },
+    "9pkdxgbj5uvm": {
+      "id": "9pkdxgbj5uvm",
+      "title": "ASUS ROG Zephyrus G15 블랙",
+      "price": 600000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "석수2동",
+      "cpuHint": null,
+      "gpuHint": "RTX2060",
+      "vramGB": null,
+      "ramGB": 32,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "RAM:32GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 1024,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "postedAt": "2026-11-08T06:27:15.626Z",
+      "url": "https://www.daangn.com/kr/buy-sell/asus-rog-zephyrus-g15-%EB%B8%94%EB%9E%99-9pkdxgbj5uvm/",
+      "firstAlertedAt": "2026-11-08T07:03:01.361441Z",
+      "lastCandidateAt": "2026-11-08T07:03:01.361441Z"
     }
   }
 }
