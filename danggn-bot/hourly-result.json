@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-08T09:03:07.760Z",
+  "generatedAt": "2026-11-08T09:16:25.913Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,50 +55,6 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/hp-jet-black-sireczev731q/",
-            "href": "/kr/buy-sell/hp-jet-black-sireczev731q/",
-            "title": "HP  jet black",
-            "content": "사양은 이미지에 올려놨습니다!\n\n직거래 택배 가능합니다~\n",
-            "price": "720000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202609/8b4f0473-ed46-42b5-9230-a344568812d2.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-09-05T15:57:27.033Z",
-            "boostedAt": "2026-11-08T08:28:54.170Z",
-            "region": {
-              "name": "신천동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 37.4425199,
-                "longitude": 126.7802728
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/macbook-pro-14-inch-m5-cqrkm8sx597t/",
-            "href": "/kr/buy-sell/macbook-pro-14-inch-m5-cqrkm8sx597t/",
-            "title": "MacBook Pro (14-inch, M5)",
-            "content": "Macbook Pro 14\nM5 / 10코어 CPU / 10코어 GPU\nRAM 16GB / SSD 512GB\n배터리 효율 96% / 사이클 수 275\n2025년 11월 18일 구매\n+충전기",
-            "price": "1900000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/529de92b-5f8c-432d-9d46-973fdaac0c33.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": false,
-            "createdAt": "2026-10-21T11:05:49.653Z",
-            "boostedAt": "2026-11-08T08:48:43.206Z",
-            "region": {
-              "name": "당동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 37.3435651,
-                "longitude": 126.9470656
-              }
-            ]
-          },
-          {
             "id": "/kr/buy-sell/%EA%B2%8C%EC%9D%B4%EB%B0%8D%EB%85%B8%ED%8A%B8%EB%B6%81-rtx-3060-%EB%B0%B0%ED%84%B0%EB%A6%AC-%ED%9A%A8%EC%9C%A8-100-jt2h4xi1bx6c/",
             "href": "/kr/buy-sell/%EA%B2%8C%EC%9D%B4%EB%B0%8D%EB%85%B8%ED%8A%B8%EB%B6%81-rtx-3060-%EB%B0%B0%ED%84%B0%EB%A6%AC-%ED%9A%A8%EC%9C%A8-100-jt2h4xi1bx6c/",
             "title": "게이밍노트북 RTX 3060 , 배터리 효율 100%",
@@ -123,17 +79,61 @@
                 "longitude": 126.9847216
               }
             ]
+          },
+          {
+            "id": "/kr/buy-sell/hp-jet-black-sireczev731q/",
+            "href": "/kr/buy-sell/hp-jet-black-sireczev731q/",
+            "title": "HP  jet black",
+            "content": "사양은 이미지에 올려놨습니다!\n\n직거래 택배 가능합니다~\n",
+            "price": "720000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202609/8b4f0473-ed46-42b5-9230-a344568812d2.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-09-05T15:57:27.033Z",
+            "boostedAt": "2026-11-08T08:28:54.170Z",
+            "region": {
+              "name": "신천동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 37.4425199,
+                "longitude": 126.7802728
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/hp-nerpxom7tkjn/",
+            "href": "/kr/buy-sell/hp-nerpxom7tkjn/",
+            "title": "HP",
+            "content": "HP OMEN\n\n자세한 내용은 아래 링크로 참고해주세요!\nhttps://link.coupang.com/a/hFFaY0EkQC",
+            "price": "1100000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/d68d03ea-ea9a-410f-8644-108f483243ab.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-08T02:15:18.892Z",
+            "boostedAt": "2026-11-08T05:38:22.158Z",
+            "region": {
+              "name": "은현면"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 37.8469355,
+                "longitude": 127.0254007
+              }
+            ]
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-09-05T15:57:27.033Z\",\"boostedAt\":\"2026-11-08T08:28:54.170Z\",\"region\":{\"name\":\"신천동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-10-21T11:05:49.653Z\",\"boostedAt\":\"2026-11-08T08:48:43.206Z\",\"region\":{\"name\":\"당동\"},\"category\":null,\"contentCoord",
           "createdAt\":\"2026-11-08T08:56:37.370Z\",\"boostedAt\":\"2026-11-08T08:56:37.370Z\",\"region\":{\"name\":\"평촌동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-01T01:13:45.562Z\",\"boostedAt\":\"2026-11-08T08:53:05.221Z\",\"region\":{\"name\":\"숭의1,3동\"},\"category\":null,\"contentC",
-          "createdAt\":\"2026-11-08T08:51:15.101Z\",\"boostedAt\":\"2026-11-08T08:51:15.098Z\",\"region\":{\"name\":\"산성동\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-09-05T15:57:27.033Z\",\"boostedAt\":\"2026-11-08T08:28:54.170Z\",\"region\":{\"name\":\"신천동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-10-08T02:15:18.892Z\",\"boostedAt\":\"2026-11-08T05:38:22.158Z\",\"region\":{\"name\":\"은현면\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-11-02T11:02:30.505Z\",\"boostedAt\":\"2026-11-08T08:28:48.751Z\",\"region\":{\"name\":\"관양동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-11-08T08:44:31.117Z\",\"boostedAt\":\"2026-11-08T08:44:31.117Z\",\"region\":{\"name\":\"갈현동\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":263,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"HP  jet black\",\"description\":\"",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":263,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"게이밍노트북 RTX 3060 , 배터리 효율 100%\"",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -141,24 +141,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1215,
-    "globalUniqueListings": 465,
-    "duplicateListingsRemoved": 750,
-    "detailQueueStart": 26,
-    "freshDetailTasks": 26,
+    "searchUniqueListings": 1242,
+    "globalUniqueListings": 496,
+    "duplicateListingsRemoved": 746,
+    "detailQueueStart": 6,
+    "freshDetailTasks": 6,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 26,
-    "detailSucceeded": 26,
+    "detailRequestsExecuted": 6,
+    "detailSucceeded": 6,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 465,
+    "postedAtResolvedFromSearch": 496,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 4,
-    "scanDurationMs": 110115,
+    "candidateCount": 0,
+    "scanDurationMs": 86083,
     "cities": [
       {
         "city": "군포시",
@@ -171,7 +171,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 263,
-        "durationMs": 12097
+        "durationMs": 12638
       },
       {
         "city": "의왕시",
@@ -186,8 +186,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 358,
-        "durationMs": 25845
+        "uniqueListings": 357,
+        "durationMs": 25284
       },
       {
         "city": "안양시",
@@ -204,8 +204,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 348,
-        "durationMs": 35115
+        "uniqueListings": 377,
+        "durationMs": 35287
       },
       {
         "city": "과천시",
@@ -216,158 +216,17 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 246,
-        "durationMs": 6533
+        "uniqueListings": 245,
+        "durationMs": 6210
       }
     ],
-    "finalCandidateCount": 4,
+    "finalCandidateCount": 0,
     "stateItemCount": 5000,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 110122
+    "durationMs": 86090
   },
-  "candidates": [
-    {
-      "id": "jt2h4xi1bx6c",
-      "changeType": "new",
-      "previousPrice": null,
-      "price": 610000,
-      "priceDropPercent": null,
-      "city": "안양시",
-      "location": "평촌동",
-      "regionPath": "경기도 안양시 동안구 평촌동",
-      "title": "게이밍노트북 RTX 3060 , 배터리 효율 100%",
-      "modelHint": "게이밍노트북 RTX 3060 , 배터리 효율 100%",
-      "cpuHint": null,
-      "cpuBaselinePass": null,
-      "gpuHint": "RTX 3060",
-      "vramGB": null,
-      "ramGB": 16,
-      "ambiguousMemoryGB": null,
-      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": "램 : 16GB",
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": null,
-      "storageGB": 512,
-      "llmCapability": "SPEC_CHECK_REQUIRED",
-      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
-      "specConfidence": "needs_review",
-      "postedAt": "2026-11-08T08:56:37.370Z",
-      "boostedAt": "2026-11-08T08:56:37.370Z",
-      "status": "Ongoing",
-      "description": "고사양 HP 빅터스 게이밍 노트북 판매합니다. \n성능면으로 고장 하자 없습니다. \n다만 사진 3번 보시면 키보드 깨짐 존재합니다. ( A, D 키 ) \n사용하는데 전혀 지장 없으며 타자나 뭐 입력 등 정상 작동합니다. 나중에 알리나. hp 매장에서 a랑 d 키만 구매해서 장착해도 되는 걸로 알고 있어요.  \n\nCPU : 라이젠 7 5800H ( 라이젠 7 모델이라 게임과 작업에 정말 빠르고 좋습니다 ) \n그래픽 카드 : RTX 3060 \n램 : 16GB \nSSD : 512GB \n배터리 효율: 100% ( 배터리 짱짱합니다 ) \n16.1인치 대화면 입니다. \n\n네고 문의에는 답변하지 않겠습니다.\n정말 시세 보시면 아시겠지만 충분히 제일 싼 시세 확인 후 올린 겁니다.",
-      "url": "https://www.daangn.com/kr/buy-sell/%EA%B2%8C%EC%9D%B4%EB%B0%8D%EB%85%B8%ED%8A%B8%EB%B6%81-rtx-3060-%EB%B0%B0%ED%84%B0%EB%A6%AC-%ED%9A%A8%EC%9C%A8-100-jt2h4xi1bx6c/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "댕근",
-      "mannerTemperature": 36.6
-    },
-    {
-      "id": "ih7jxuormp24",
-      "changeType": "new",
-      "previousPrice": null,
-      "price": 410000,
-      "priceDropPercent": null,
-      "city": "과천시",
-      "location": "갈현동",
-      "regionPath": "경기도 과천시 갈현동",
-      "title": "레노버 Legion Y549-15IRH 게이밍 노트북",
-      "modelHint": "레노버 Legion Y549-15IRH 게이밍 노트북",
-      "cpuHint": null,
-      "cpuBaselinePass": null,
-      "gpuHint": null,
-      "vramGB": null,
-      "ramGB": 16,
-      "ambiguousMemoryGB": null,
-      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": "RAM: 16GB",
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": null,
-      "storageGB": 512,
-      "llmCapability": "SPEC_CHECK_REQUIRED",
-      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
-      "specConfidence": "needs_review",
-      "postedAt": "2026-11-08T08:44:31.117Z",
-      "boostedAt": "2026-11-08T08:44:31.117Z",
-      "status": "Ongoing",
-      "description": "Legion Y540-15IRH\n\nCPU: Intel Core i5-9300HF\nRAM: 16GB DDR4\nSSD: NVMe SSD 512GB \nGPU: NVIDIA GeForce GTX 1660 Ti\n디스플레이: 15.6인치 FHD\n윈도우 정품 설치 O\n백라이트 작동 O\n\n- 구성품: 노트북 본체, 충전기\n\n- 사용하면서 떨군 적 없고, 외관 파손없습니다.\n- 키보드 간헐적으로 먹통 (키보드 따로 연결해 사용했음)\n- 외관 사용감 있습니다.\n- 배터리 소모가 빨라서 충전기 연결 권장\n- 웬만한 게임 다 돌아갑니다.\n감안하고 올려요\n\n 과천 직거래",
-      "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-legion-y549-15irh-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-ih7jxuormp24/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "하하하",
-      "mannerTemperature": 49.6
-    },
-    {
-      "id": "39j6idszvkwx",
-      "changeType": "price_drop",
-      "previousPrice": 1000000,
-      "price": 900000,
-      "priceDropPercent": 10,
-      "city": "군포시",
-      "location": "부곡동",
-      "regionPath": "경기도 군포시 부곡동",
-      "title": "맥북 프로 16인치 2019 i9 32GB 1TB",
-      "modelHint": "맥북 프로 16인치 2019 i9 32GB 1TB",
-      "cpuHint": null,
-      "cpuBaselinePass": null,
-      "gpuHint": null,
-      "vramGB": null,
-      "ramGB": 32,
-      "ambiguousMemoryGB": 32,
-      "hardwareReviewStatus": "PASS_RAM",
-      "ramEvidence": "32GB 메모리",
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": "32GB",
-      "storageGB": 1024,
-      "llmCapability": "WORK_DEV_RAM32",
-      "llmReason": "RAM 32GB 이상 확정 후보",
-      "specConfidence": "confirmed",
-      "postedAt": "2026-11-02T14:16:23.043Z",
-      "boostedAt": "2026-11-08T08:32:21.592Z",
-      "status": "Ongoing",
-      "description": "2019년형 맥북 프로 16인치 모델이에요. 인텔 코어 i9 프로세서와 32GB 메모리, 1TB SSD가 탑재되어 있어 빠르고 넉넉한 사용이 가능해요. 박스 구성품 그대로 가지고 있어요. 고성능 맥북으로 다양한 작업을 원활하게 하실 수 있을 거예요.\n\n**스티커는 투명하드케이스에 붙어있는겁니다**\n\n-마지막 인텔CPU 맥북.\n-구입 후 바로 하드케이스 장착 후 탈착 안해서 외관 흠집 전혀없음.\n-트랙패드, 키보드 정도만 생활기스 있음. 원하시면 사진 촬영 해드립니다.\n-구매 후 바로 액정보호필름 부착 후 떼지않음. 디스플레이에도 흠집 전혀 없음.\n\n구매당시 재택작업용으로 구매해서 그래픽 제외 모든스펙 가장 높게 구매했습니다. 거의 전원연결하여 사용하여 배터리 사이클도 낮은편이니 참고 바랍니다.",
-      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-16%EC%9D%B8%EC%B9%98-2019-i9-32gb-1tb-39j6idszvkwx/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "영차",
-      "mannerTemperature": 43.1
-    },
-    {
-      "id": "rv7u4bs3wgud",
-      "changeType": "price_drop",
-      "previousPrice": 3400000,
-      "price": 3300000,
-      "priceDropPercent": 2.9,
-      "city": "안양시",
-      "location": "관양동",
-      "regionPath": "경기도 안양시 동안구 관양동",
-      "title": "프레데터 트리톤 17X (i9/RTX 4090/32GB/1TB) 하이엔드 게이밍·AI 노트북",
-      "modelHint": "프레데터 트리톤 17X (i9/RTX 4090/32GB/1TB) 하이엔드 게이밍·AI 노트북",
-      "cpuHint": "i9-13900HX",
-      "cpuBaselinePass": null,
-      "gpuHint": "RTX 4090",
-      "vramGB": 16,
-      "ramGB": 32,
-      "ambiguousMemoryGB": 32,
-      "hardwareReviewStatus": "PASS_RAM_VRAM",
-      "ramEvidence": "32GB 램",
-      "vramEvidence": "VRAM 16GB",
-      "ambiguousMemoryEvidence": "/32GB",
-      "storageGB": 1024,
-      "llmCapability": "HYBRID_WORK_LOCAL_LLM",
-      "llmReason": "RAM 32GB 이상 + VRAM 16GB 이상 확정 후보",
-      "specConfidence": "confirmed",
-      "postedAt": "2026-11-02T11:02:30.505Z",
-      "boostedAt": "2026-11-08T08:28:48.751Z",
-      "status": "Ongoing",
-      "description": "사무실 작업 환경이 바뀌어 데스크톱 위주로 세팅하게 되어 내놓습니다. AAA급 게임 풀옵션 구동은 물론, 로컬 AI 학습(ComfyUI, 파이토치) 및 고해상도 4K 영상 편집용으로 완벽한 최상급 기기입니다.\n\n​[상세 스펙]\n- 모델명 : 에이서 프레데터 트리톤 17X\n- ​CPU: 인텔 Core i9-13900HX (PassMark CPU 마크 41,000점대 돌파. 최신 울트라나 라이젠 AI 프로세서들과 비교해도 다중 연산 성능이 우위에 있는 최상위 하이엔드급 퍼포먼스를 보여줍니다.)  \n- ​GPU: 엔비디아 지포스 RTX 4090 랩탑 (VRAM 16GB)\n- ​RAM: DDR5 32GB (16GB x 2 듀얼채널)\n- ​저장장치: 1TB NVMe SSD\n- Windows 11 Home 설치됨\n\n​[핵심 장점]\n- ​TGP 175W 풀성능: 얇고 가벼운 105W 제한 모델들과 체급이 다릅니다. 175W 전력을 온전히 끌어다 써서 RTX 4090의 압도적인 게이밍 프레임과 렌더링/추론 속도를 100% 뽑아냅니다.\n- ​게이밍 및 AI/영상 최적화: 16GB VRAM과 32GB 램 조합으로 최신 고사양 게임 4K 풀옵션 방어는 물론, 딥러닝 파인튜닝, 이미지 대량 생성, 무거운 영상 믹싱까지 병목 없이 쾌적하게 처리합니다.\n- ​초고속 썬더볼트 4 지원: 썬더볼트 4 포트를 2개 지원합니다. 고용량 게임 설치 파일이나 무거운 AI 모델, 4K 영상 소스 등을 담은 외장 SSD 연결 시 초고속(40Gbps)으로 쾌적하게 불러올 수 있습니다.\n- ​프리미엄 설계: 베이퍼 챔버 쿨링 시스템과 통알루미늄(CNC) 바디가 적용되어 극한의 게이밍이나 작업 부하 상태에서도 발열 제어와 내구성이 탁월합니다.\n\n​데스크톱처럼 시즈 모드로 거치해 두고 사용하여 외관 찍힘이나 쿨링팬 고주파, 디스플레이 불량 없이 상태 매우 깨끗합니다. \n작년 초에 구매하여 AS는 종료된 상태입니다.\n\n500만원이 넘었던 제품입니다. 지금은 이 정도 성능으로 마추려면 600은 넘으리라 생각됩니다. 램,글픽가격 오르기전에 구매하세요~\n\n원박스도 있어서 택배도 가능합니다만 가급적 고가의 기기인 만큼 직거래로 상태 꼼꼼히 확인하시고 거래했으면 합니다.\n​편하게 채팅 주세요!",
-      "url": "https://www.daangn.com/kr/buy-sell/%ED%94%84%EB%A0%88%EB%8D%B0%ED%84%B0-%ED%8A%B8%EB%A6%AC%ED%86%A4-17x-i9-rtx-4090-32gb-1tb-%ED%95%98%EC%9D%B4%EC%97%94%EB%93%9C-%EA%B2%8C%EC%9D%B4%EB%B0%8D-ai-%EB%85%B8%ED%8A%B8%EB%B6%81-rv7u4bs3wgud/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "시사이",
-      "mannerTemperature": 51.1
-    }
-  ]
+  "candidates": []
 }
