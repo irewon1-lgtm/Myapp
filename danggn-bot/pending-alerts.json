@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-08T03:42:55.756581Z",
+  "updatedAt": "2026-11-08T04:22:51.208752Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -8805,8 +8805,8 @@
     "fnsbbu2t636d": {
       "id": "fnsbbu2t636d",
       "title": "Mac Studio 맥스튜디오 M4 Max 36GB RAM 512GB SSD",
-      "price": 3150000,
-      "previousPrice": 3300000,
+      "price": 3050000,
+      "previousPrice": 3150000,
       "changeType": "price_drop",
       "city": "의왕시",
       "location": "내손동",
@@ -8825,7 +8825,7 @@
       "postedAt": "2026-09-28T00:21:59.363Z",
       "url": "https://www.daangn.com/kr/buy-sell/mac-studio-%EB%A7%A5%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4-m4-max-36gb-ram-512gb-ssd-fnsbbu2t636d/",
       "firstAlertedAt": "2026-10-20T13:32:32.266037Z",
-      "lastCandidateAt": "2026-10-20T13:32:32.266037Z"
+      "lastCandidateAt": "2026-11-08T04:22:51.208752Z"
     },
     "kuzy64zpvb8i": {
       "id": "kuzy64zpvb8i",
@@ -16651,6 +16651,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/hp-omen-16-slim-%ED%99%94%EC%9D%B4%ED%8A%B8-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-rtx4060-6r18e3cxq91e/",
       "firstAlertedAt": "2026-11-08T03:02:53.240391Z",
       "lastCandidateAt": "2026-11-08T03:02:53.240391Z"
+    },
+    "8ms8atvvoyro": {
+      "id": "8ms8atvvoyro",
+      "title": "레노버 씽크패드 T15 Gen 1",
+      "price": 320000,
+      "previousPrice": 350000,
+      "changeType": "price_drop",
+      "city": "과천시",
+      "location": "중앙동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-03-01T02:04:39.439Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%94%BD%ED%81%AC%ED%8C%A8%EB%93%9C-t15-gen-1-8ms8atvvoyro/",
+      "firstAlertedAt": "2026-11-08T04:22:51.208752Z",
+      "lastCandidateAt": "2026-11-08T04:22:51.208752Z"
+    },
+    "dh8bskyfazpd": {
+      "id": "dh8bskyfazpd",
+      "title": "맥북 프로 16 M5 Pro 24GB 1TB 스페이스 블랙",
+      "price": 3600000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "갈산동",
+      "cpuHint": "M5 Pro",
+      "gpuHint": "M5 Pro",
+      "vramGB": null,
+      "ramGB": 24,
+      "ambiguousMemoryGB": 24,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "24GB 메모리",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "24GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-08T03:59:53.615Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-16-m5-pro-24gb-1tb-%EC%8A%A4%ED%8E%98%EC%9D%B4%EC%8A%A4-%EB%B8%94%EB%9E%99-dh8bskyfazpd/",
+      "firstAlertedAt": "2026-11-08T04:22:51.208752Z",
+      "lastCandidateAt": "2026-11-08T04:22:51.208752Z"
     }
   }
 }
