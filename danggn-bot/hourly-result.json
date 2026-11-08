@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-08T22:22:35.268Z",
+  "generatedAt": "2026-11-08T22:56:44.032Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,6 +55,32 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
+            "id": "/kr/buy-sell/%EC%97%98%EC%A7%80-%EB%85%B8%ED%8A%B8%EB%B6%81-7ywjtrtfuh4t/",
+            "href": "/kr/buy-sell/%EC%97%98%EC%A7%80-%EB%85%B8%ED%8A%B8%EB%B6%81-7ywjtrtfuh4t/",
+            "title": "엘지 노트북",
+            "content": "LG 노트북과 충전기 일괄 판매합니다!\n왼쪽 뒤편 모서리에 약간의 파손 있으니 사진 꼼꼼히 확인 부탁드립니다😊 작동에는 아무 이상 없고 잘 되고 초기화해서 드릴게요\n\n구매 후 환불 안됩니다! 제조일자 : 2018",
+            "price": "100000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/179417816774812d5031d5243ea5f798650cf9921ab00c18c6c3a565758a816c3814b985271010.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-11-08T22:49:36.666Z",
+            "boostedAt": "2026-11-08T22:49:36.665Z",
+            "region": {
+              "name": "화명동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 35.2468025,
+                "longitude": 129.0124344
+              },
+              {
+                "latitude": 35.2227805,
+                "longitude": 129.0090255
+              }
+            ]
+          },
+          {
             "id": "/kr/buy-sell/%ED%94%84%EB%A6%AC%EB%AF%B8%EC%97%84-asus-rog-xf62fhpd5msp/",
             "href": "/kr/buy-sell/%ED%94%84%EB%A6%AC%EB%AF%B8%EC%97%84-asus-rog-xf62fhpd5msp/",
             "title": "(프리미엄)ASUS ROG",
@@ -77,63 +103,37 @@
             ]
           },
           {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt371b5l-i5-6300hq-12gb-500gb-ssd-af5caxr47p1j/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt371b5l-i5-6300hq-12gb-500gb-ssd-af5caxr47p1j/",
-            "title": "삼성 노트북 NT371B5L (i5-6300HQ/12GB/500GB SSD)",
-            "content": "삼성 노트북 NT371B5L 모델입니다. \n인텔 코어 i5-6300HQ CPU와 \n12GB RAM, 500GB 삼성 SSD\n윈도우10설치\n배터리는 방전\n전원 연결하고 사용하셔야 하고\n본체+전원선+무선마우스 판매합니다.\n\n거래는 문고리 거래 희망합니다.",
-            "price": "150000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/c0569d28a7dd77152be084efca5dfadeaee89889b8b18767bd4687898d0d27ef_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-11-08T22:13:47.535Z",
-            "boostedAt": "2026-11-08T22:13:47.534Z",
-            "region": {
-              "name": "수송동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 37.6249656,
-                "longitude": 126.9266801
-              },
-              {
-                "latitude": 37.5746707,
-                "longitude": 126.9794637
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-swgy8dp4easn/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-swgy8dp4easn/",
-            "title": "삼성 노트북 화이트",
-            "content": "깔끔한 화이트 색상의 삼성 노트북 NT550E 이에요. 사진에서 보이는 것처럼 구성품과 함께 드려요. 가볍게 사용하기 좋은 제품입니다.\n사용감이 거의없어 패트도 깨끗해 \n새거나 다름없어요",
-            "price": "230000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/532ffc2f-543d-4a5a-831a-28472ae4f636.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%EC%B4%88%EA%B3%A0%EC%82%AC%EC%96%91-%EB%81%9D%ED%8C%90%EC%99%95-msi-raider-a18-9955hx3d-rtx5090-64gb-2tb%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%9D%EB%8B%88%EB%8B%A4-wwmt26apwd7f/",
+            "href": "/kr/buy-sell/%EC%B4%88%EA%B3%A0%EC%82%AC%EC%96%91-%EB%81%9D%ED%8C%90%EC%99%95-msi-raider-a18-9955hx3d-rtx5090-64gb-2tb%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%9D%EB%8B%88%EB%8B%A4-wwmt26apwd7f/",
+            "title": "초고사양 끝판왕 msi raider a18 9955HX3D RTX5090 64gb 2tb게이밍 노트북 팝니다",
+            "content": "노트북 끝판왕 현존 최강 게이밍 시피유 9955hx3d랑 지금은 단종되서 64gb의 램과 2tb의 저장용량 rtx 5090 24gb의 브이램을 탑재한 최강 끝판왕 하이엔드 노트북 팝니다.\n4k uhd+ 120hz mini-led탑재로 선명한화면!\n한국에서는 이제 없는 매물입니다\n\n디스플레이는 18인치 UHD+ Mini-LED \nCPU는 현존 게이밍 최강 9955HX3D\nRAM  DDR5 64Gb\nSSD 2TB\nGPU RTX5090\n\n시피유때문에 이 노트북 골랐습니다 데탑으로 하이엔드 맞춰서 처분합니다\n상태는 극 최상입니다\n",
+            "price": "6200000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/46f7c2be-b72b-450c-a1c9-4bb3e0bd1417.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": false,
-            "createdAt": "2026-11-02T00:32:49.297Z",
-            "boostedAt": "2026-11-08T22:05:04.905Z",
+            "createdAt": "2026-10-26T05:40:25.244Z",
+            "boostedAt": "2026-11-08T22:09:33.407Z",
             "region": {
-              "name": "파장동"
+              "name": "상동면"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 37.3074827,
-                "longitude": 126.9930611
+                "latitude": 35.3130548,
+                "longitude": 128.9679942
               }
             ]
           }
         ],
         "dateFieldSnippets": [
+          "createdAt\":\"2026-11-08T22:49:36.666Z\",\"boostedAt\":\"2026-11-08T22:49:36.665Z\",\"region\":{\"name\":\"화명동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-25T11:07:28.025Z\",\"boostedAt\":\"2026-11-08T21:48:35.365Z\",\"region\":{\"name\":\"연산제9동\"},\"category\":null,\"contentCo",
-          "createdAt\":\"2026-11-08T22:13:47.535Z\",\"boostedAt\":\"2026-11-08T22:13:47.534Z\",\"region\":{\"name\":\"수송동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-02T00:32:49.297Z\",\"boostedAt\":\"2026-11-08T22:05:04.905Z\",\"region\":{\"name\":\"파장동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-10-26T05:40:25.244Z\",\"boostedAt\":\"2026-11-08T22:09:33.407Z\",\"region\":{\"name\":\"상동면\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-25T10:21:32.125Z\",\"boostedAt\":\"2026-11-08T21:48:39.083Z\",\"region\":{\"name\":\"연산제9동\"},\"category\":null,\"contentCo",
-          "createdAt\":\"2026-10-25T08:31:18.188Z\",\"boostedAt\":\"2026-11-08T21:48:42.513Z\",\"region\":{\"name\":\"연산제9동\"},\"category\":null,\"contentCo"
+          "createdAt\":\"2026-09-27T12:29:42.355Z\",\"boostedAt\":\"2026-11-08T22:38:39.663Z\",\"region\":{\"name\":\"송도동\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":260,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"(프리미엄)ASUS ROG\",\"description\":",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":261,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"엘지 노트북\",\"description\":\"LG 노트북과",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -141,24 +141,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1213,
-    "globalUniqueListings": 458,
-    "duplicateListingsRemoved": 755,
-    "detailQueueStart": 6,
-    "freshDetailTasks": 6,
+    "searchUniqueListings": 1197,
+    "globalUniqueListings": 437,
+    "duplicateListingsRemoved": 760,
+    "detailQueueStart": 8,
+    "freshDetailTasks": 8,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 6,
-    "detailSucceeded": 6,
+    "detailRequestsExecuted": 8,
+    "detailSucceeded": 8,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 458,
+    "postedAtResolvedFromSearch": 437,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 86406,
+    "scanDurationMs": 88585,
     "cities": [
       {
         "city": "군포시",
@@ -170,8 +170,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 267,
-        "durationMs": 12464
+        "uniqueListings": 268,
+        "durationMs": 12082
       },
       {
         "city": "의왕시",
@@ -187,7 +187,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 354,
-        "durationMs": 25716
+        "durationMs": 25725
       },
       {
         "city": "안양시",
@@ -204,8 +204,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 348,
-        "durationMs": 34869
+        "uniqueListings": 331,
+        "durationMs": 34828
       },
       {
         "city": "과천시",
@@ -217,7 +217,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 244,
-        "durationMs": 6541
+        "durationMs": 6509
       }
     ],
     "finalCandidateCount": 0,
@@ -226,7 +226,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 86413
+    "durationMs": 88591
   },
   "candidates": []
 }
