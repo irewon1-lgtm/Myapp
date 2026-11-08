@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-08T15:52:39.019Z",
+  "generatedAt": "2026-11-08T16:08:09.015Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,6 +55,28 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
+            "id": "/kr/buy-sell/lg%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%B4%EC%9A%94-15u480-igt7r31zre6t/",
+            "href": "/kr/buy-sell/lg%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%B4%EC%9A%94-15u480-igt7r31zre6t/",
+            "title": "LG노트북 판매해요.15U480",
+            "content": "모델명이15U480입니다.\n세월의 흔적이 있어 겉면은 색상이 좀 바랬으나 화면은 선명하고 깨끗히 잘나옵니다.\ni3 8세대에 메모리8기가라 요즘 나오는 노트북 스펙에도 크게 밀리지 않는거 같습니다.\n학습용.인강용으로 쓰면 좋을듯합니다.",
+            "price": "180000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202609/a73f3784-c686-4401-a2f7-64230f414499.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-09-22T22:48:54.030Z",
+            "boostedAt": "2026-11-08T15:50:41.308Z",
+            "region": {
+              "name": "성당동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 35.8404348,
+                "longitude": 128.5441247
+              }
+            ]
+          },
+          {
             "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt300e5l-k34m-39-6cm-mhkkyse2oi4n/",
             "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt300e5l-k34m-39-6cm-mhkkyse2oi4n/",
             "title": "삼성 노트북 NT300E5L-K34M 39.6cm",
@@ -77,59 +99,37 @@
             ]
           },
           {
-            "id": "/kr/buy-sell/lg%EA%B7%B8%EB%9E%A8-15%EC%9D%B8%EC%B9%98-i5-13%EC%84%B8%EB%8C%80-ram-16gb-%EB%85%B8%ED%8A%B8%EB%B6%81-r6e1tupv6foa/",
-            "href": "/kr/buy-sell/lg%EA%B7%B8%EB%9E%A8-15%EC%9D%B8%EC%B9%98-i5-13%EC%84%B8%EB%8C%80-ram-16gb-%EB%85%B8%ED%8A%B8%EB%B6%81-r6e1tupv6foa/",
-            "title": "LG그램 15인치 i5 13세대/RAM 16GB 노트북",
-            "content": "LG그램 15인치 i5 13세대/RAM 16GB 노트북\n가볍고 휴대하기 좋은 LG 그램 노트북입니다. 깔끔한 화이트 색상으로 어디서든 잘 어울려요. 사진에서 보이는 구성품 그대로 드립니다. 가벼운 작업이나 인강용으로 사용하기 좋아요.",
-            "price": "855000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/ba50e45c-5d51-4845-97e9-f5388d169c76.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%EC%95%A0%ED%94%8C-%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-%EC%8B%A4%EB%B2%84-16-m4-pro-1tb-s%EA%B8%89-sxsz8gdjcd5s/",
+            "href": "/kr/buy-sell/%EC%95%A0%ED%94%8C-%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-%EC%8B%A4%EB%B2%84-16-m4-pro-1tb-s%EA%B8%89-sxsz8gdjcd5s/",
+            "title": "애플 맥북 프로 실버 16 M4 Pro 1TB S급",
+            "content": "애플 맥북 프로 16인치 모델\nM4 Pro 칩, 24GB 메모리, 1TB, 14코어\n배터리 성능 최대치 100%\n배터리 사이클 36\n애플케어 28.12.05\n한글자판 + 풀박스\n작년 12월 6일 구매\n화면보호필름 붙어있고 상태 S급 입니다.",
+            "price": "3150000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/1792922742780bfbc788214d0443348d790e6d19c7abc7f77d9de4053ecb8e8975e0eb75ae1f70.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": false,
-            "createdAt": "2026-10-25T05:08:22.820Z",
-            "boostedAt": "2026-11-08T15:22:51.056Z",
+            "createdAt": "2026-10-25T10:07:03.907Z",
+            "boostedAt": "2026-11-08T15:52:30.422Z",
             "region": {
-              "name": "산본동"
+              "name": "안양7동"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 37.3644643,
-                "longitude": 126.9247795
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-ruoek3qdcgqy/",
-            "href": "/kr/buy-sell/%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-ruoek3qdcgqy/",
-            "title": "판매합니다",
-            "content": "자세한 내용은 사진을 참고해 주세요~\n바로구매, 직거래 둘다 가능합니다",
-            "price": "1290000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/b6f22c7f-f446-4041-a717-a77152af2583.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-11-08T14:24:35.773Z",
-            "boostedAt": "2026-11-08T14:24:35.771Z",
-            "region": {
-              "name": "물금읍"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 35.3151529,
-                "longitude": 129.0051781
+                "latitude": 37.3992871,
+                "longitude": 126.9317276
               }
             ]
           }
         ],
         "dateFieldSnippets": [
+          "createdAt\":\"2026-09-22T22:48:54.030Z\",\"boostedAt\":\"2026-11-08T15:50:41.308Z\",\"region\":{\"name\":\"성당동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-11-08T15:43:07.839Z\",\"boostedAt\":\"2026-11-08T15:43:07.837Z\",\"region\":{\"name\":\"파동\"},\"category\":null,\"contentCoord",
+          "createdAt\":\"2026-10-25T10:07:03.907Z\",\"boostedAt\":\"2026-11-08T15:52:30.422Z\",\"region\":{\"name\":\"안양7동\"},\"category\":null,\"contentCoo",
           "createdAt\":\"2026-10-25T05:08:22.820Z\",\"boostedAt\":\"2026-11-08T15:22:51.056Z\",\"region\":{\"name\":\"산본동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-08T14:24:35.773Z\",\"boostedAt\":\"2026-11-08T14:24:35.771Z\",\"region\":{\"name\":\"물금읍\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-08T15:11:42.698Z\",\"boostedAt\":\"2026-11-08T15:11:42.695Z\",\"region\":{\"name\":\"북삼읍\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-08T15:42:43.956Z\",\"boostedAt\":\"2026-11-08T15:42:43.954Z\",\"region\":{\"name\":\"호계2동\"},\"category\":null,\"contentCoo"
+          "createdAt\":\"2026-11-08T14:24:35.773Z\",\"boostedAt\":\"2026-11-08T14:24:35.771Z\",\"region\":{\"name\":\"물금읍\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":263,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 노트북 NT300E5L-K34M 39.6cm\",\"",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":262,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG노트북 판매해요.15U480\",\"descriptio",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -137,24 +137,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1221,
-    "globalUniqueListings": 462,
-    "duplicateListingsRemoved": 759,
-    "detailQueueStart": 9,
-    "freshDetailTasks": 9,
+    "searchUniqueListings": 1258,
+    "globalUniqueListings": 494,
+    "duplicateListingsRemoved": 764,
+    "detailQueueStart": 3,
+    "freshDetailTasks": 3,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 9,
-    "detailSucceeded": 9,
+    "detailRequestsExecuted": 3,
+    "detailSucceeded": 3,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 462,
+    "postedAtResolvedFromSearch": 494,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 2,
-    "scanDurationMs": 90108,
+    "candidateCount": 1,
+    "scanDurationMs": 82827,
     "cities": [
       {
         "city": "군포시",
@@ -167,7 +167,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 268,
-        "durationMs": 12354
+        "durationMs": 12386
       },
       {
         "city": "의왕시",
@@ -182,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 358,
-        "durationMs": 25751
+        "uniqueListings": 355,
+        "durationMs": 25859
       },
       {
         "city": "안양시",
@@ -200,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 347,
-        "durationMs": 35200
+        "uniqueListings": 384,
+        "durationMs": 35315
       },
       {
         "city": "과천시",
@@ -212,88 +212,53 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 248,
-        "durationMs": 6203
+        "uniqueListings": 251,
+        "durationMs": 5995
       }
     ],
-    "finalCandidateCount": 2,
+    "finalCandidateCount": 1,
     "stateItemCount": 5000,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 90116
+    "durationMs": 82833
   },
   "candidates": [
     {
-      "id": "r6e1tupv6foa",
+      "id": "sxsz8gdjcd5s",
       "changeType": "price_drop",
-      "previousPrice": 870000,
-      "price": 855000,
-      "priceDropPercent": 1.7,
-      "city": "군포시",
-      "location": "산본동",
-      "regionPath": "경기도 군포시 산본동",
-      "title": "LG그램 15인치 i5 13세대/RAM 16GB 노트북",
-      "modelHint": "LG그램 15인치 i5 13세대/RAM 16GB 노트북",
-      "cpuHint": null,
+      "previousPrice": 3190000,
+      "price": 3150000,
+      "priceDropPercent": 1.3,
+      "city": "안양시",
+      "location": "안양7동",
+      "regionPath": "경기도 안양시 만안구 안양7동",
+      "title": "애플 맥북 프로 실버 16 M4 Pro 1TB S급",
+      "modelHint": "애플 맥북 프로 실버 16 M4 Pro 1TB S급",
+      "cpuHint": "M4 Pro",
       "cpuBaselinePass": null,
-      "gpuHint": null,
+      "gpuHint": "M4 Pro",
       "vramGB": null,
-      "ramGB": 16,
-      "ambiguousMemoryGB": 16,
+      "ramGB": 24,
+      "ambiguousMemoryGB": null,
       "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": "RAM 16GB",
+      "ramEvidence": "24GB 메모리",
       "vramEvidence": null,
-      "ambiguousMemoryEvidence": "16GB",
+      "ambiguousMemoryEvidence": null,
       "storageGB": null,
       "llmCapability": "SPEC_CHECK_REQUIRED",
       "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
       "specConfidence": "needs_review",
-      "postedAt": "2026-10-25T05:08:22.820Z",
-      "boostedAt": "2026-11-08T15:22:51.056Z",
+      "postedAt": "2026-10-25T10:07:03.907Z",
+      "boostedAt": "2026-11-08T15:52:30.422Z",
       "status": "Ongoing",
-      "description": "LG그램 15인치 i5 13세대/RAM 16GB 노트북\n가볍고 휴대하기 좋은 LG 그램 노트북입니다. 깔끔한 화이트 색상으로 어디서든 잘 어울려요. 사진에서 보이는 구성품 그대로 드립니다. 가벼운 작업이나 인강용으로 사용하기 좋아요.",
-      "url": "https://www.daangn.com/kr/buy-sell/lg%EA%B7%B8%EB%9E%A8-15%EC%9D%B8%EC%B9%98-i5-13%EC%84%B8%EB%8C%80-ram-16gb-%EB%85%B8%ED%8A%B8%EB%B6%81-r6e1tupv6foa/",
+      "description": "애플 맥북 프로 16인치 모델\nM4 Pro 칩, 24GB 메모리, 1TB, 14코어\n배터리 성능 최대치 100%\n배터리 사이클 36\n애플케어 28.12.05\n한글자판 + 풀박스\n작년 12월 6일 구매\n화면보호필름 붙어있고 상태 S급 입니다.",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%95%A0%ED%94%8C-%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-%EC%8B%A4%EB%B2%84-16-m4-pro-1tb-s%EA%B8%89-sxsz8gdjcd5s/",
       "favoriteCount": 0,
       "chatCount": 0,
-      "sellerName": "그냥",
-      "mannerTemperature": 52.3
-    },
-    {
-      "id": "bjgpxd1pddb9",
-      "changeType": "price_drop",
-      "previousPrice": 1230000,
-      "price": 1160000,
-      "priceDropPercent": 5.7,
-      "city": "군포시",
-      "location": "산본2동",
-      "regionPath": "경기도 군포시 산본2동",
-      "title": "[미개봉] lg그램 14인치.",
-      "modelHint": "[미개봉] lg그램 14인치.",
-      "cpuHint": null,
-      "cpuBaselinePass": null,
-      "gpuHint": null,
-      "vramGB": null,
-      "ramGB": 16,
-      "ambiguousMemoryGB": null,
-      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": "RAM : 16GB",
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": null,
-      "storageGB": 256,
-      "llmCapability": "SPEC_CHECK_REQUIRED",
-      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
-      "specConfidence": "needs_review",
-      "postedAt": "2026-11-08T13:16:03.448Z",
-      "boostedAt": "2026-11-08T13:16:03.444Z",
-      "status": "Ongoing",
-      "description": "LG 그램 14인치 2024년형 미개봉 신품 판매\n\n모델명 : 14Z90S-G.AA50K\n\n2024년형 LG 그램 정품 노트북입니다.\n미개봉 신품이며, 박스 그대로 보관 중입니다.\n\n✅ 상세 사양\n\n- CPU : 인텔 Core Ultra 5 125H\n- CPU 성능 : 14코어 / 18스레드\n- RAM : 16GB LPDDR5x\n- SSD : 256GB NVMe (추가 확장 슬롯 있음)\n- 그래픽 : 인텔 Arc 내장그래픽\n- 화면 : 14인치 IPS 디스플레이\n- 해상도 : 1920 × 1200 (WUXGA)\n- 화면비율 : 16:10\n- 색재현율 : DCI-P3 99%\n- 운영체제 : Windows 11 Home 정품\n- 무게 : 약 1.12kg\n- 배터리 : 72Wh\n- 색상 : 에센스 화이트\n- 무선연결 : Wi-Fi 6E / 블루투스\n- 단자 : 썬더볼트4, USB-C, USB-A, HDMI\n- 기타 : 백라이트 키보드, FHD 웹캠, 얼굴인식 지원",
-      "url": "https://www.daangn.com/kr/buy-sell/%EB%AF%B8%EA%B0%9C%EB%B4%89-lg%EA%B7%B8%EB%9E%A8-14%EC%9D%B8%EC%B9%98-bjgpxd1pddb9/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": "muse",
-      "mannerTemperature": 53.1
+      "sellerName": "찹쌀떡",
+      "mannerTemperature": 83.2
     }
   ]
 }
