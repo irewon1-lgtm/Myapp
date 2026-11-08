@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-08T01:02:42.200Z",
+  "generatedAt": "2026-11-08T01:30:09.442Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -77,28 +77,6 @@
             ]
           },
           {
-            "id": "/kr/buy-sell/%EB%AF%B8%EC%82%AC%EC%9A%A9-%EC%83%88%EC%A0%9C%ED%92%88-2025-lg-%EA%B7%B8%EB%9E%A8-%ED%94%84%EB%A1%9C-ai-16-%EC%97%90%EC%84%BC%EC%8A%A4-%ED%99%94%EC%9D%B4%ED%8A%B8-bqmxkc4ecjcs/",
-            "href": "/kr/buy-sell/%EB%AF%B8%EC%82%AC%EC%9A%A9-%EC%83%88%EC%A0%9C%ED%92%88-2025-lg-%EA%B7%B8%EB%9E%A8-%ED%94%84%EB%A1%9C-ai-16-%EC%97%90%EC%84%BC%EC%8A%A4-%ED%99%94%EC%9D%B4%ED%8A%B8-bqmxkc4ecjcs/",
-            "title": "[미사용 새제품] 2025 LG 그램 프로 AI 16 에센스 화이트",
-            "content": "코어Ultra5 프로세서와 16GB 램을 탑재한 모델이에요. 256GB 용량에 144Hz 고주사율 디스플레이를 갖추고 있어요. 에센스 화이트 색상의 깔끔한 디자인이 특징이에요. 가벼운 무게로 휴대하기 편리해요.\n\nOS미설치 제품입니다. 상세스펙 사진참조.",
-            "price": "1550000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/17940936573519d4fa9fe51968a7a3fb6e42c8554ca5e446e3330c149c5a98c5ea38c1051357c0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": false,
-            "createdAt": "2026-11-07T23:21:40.983Z",
-            "boostedAt": "2026-11-07T23:21:40.976Z",
-            "region": {
-              "name": "오전동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 37.3660367,
-                "longitude": 126.963709
-              }
-            ]
-          },
-          {
             "id": "/kr/buy-sell/asus-tuf-gaming-f17-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-e2c9wuzvb3f7/",
             "href": "/kr/buy-sell/asus-tuf-gaming-f17-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-e2c9wuzvb3f7/",
             "title": "ASUS TUF Gaming F17 게이밍 노트북",
@@ -119,17 +97,39 @@
                 "longitude": 128.4161454
               }
             ]
+          },
+          {
+            "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-14-u9mcd3vbr9u9/",
+            "href": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-14-u9mcd3vbr9u9/",
+            "title": "LG 그램 노트북 14",
+            "content": "lg gram 에센스 화이트 14인치\n코어 울트라5\n메모리 16\n하드 256\n\n원도우11홈 정품\n\n25년 구입\n14Z90T-GA5CK \n\n산본역 직거래 가능",
+            "price": "1000000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/05072032-deac-4a3f-b2a2-a37674223860.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-11-07T09:54:56.269Z",
+            "boostedAt": "2026-11-07T09:54:56.266Z",
+            "region": {
+              "name": "수리동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 37.3583289,
+                "longitude": 126.9328023
+              }
+            ]
           }
         ],
         "dateFieldSnippets": [
           "createdAt\":\"2026-10-22T00:35:10.504Z\",\"boostedAt\":\"2026-11-07T22:41:16.963Z\",\"region\":{\"name\":\"갈현동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-07T23:21:40.983Z\",\"boostedAt\":\"2026-11-07T23:21:40.976Z\",\"region\":{\"name\":\"오전동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-11-08T00:57:35.385Z\",\"boostedAt\":\"2026-11-08T00:57:35.383Z\",\"region\":{\"name\":\"석적읍\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-11-07T09:54:56.269Z\",\"boostedAt\":\"2026-11-07T09:54:56.266Z\",\"region\":{\"name\":\"수리동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-05T07:50:21.204Z\",\"boostedAt\":\"2026-11-07T23:08:58.415Z\",\"region\":{\"name\":\"율전동\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-11-07T23:21:40.983Z\",\"boostedAt\":\"2026-11-07T23:21:40.976Z\",\"region\":{\"name\":\"오전동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-09-28T23:48:17.606Z\",\"boostedAt\":\"2026-11-08T01:14:30.964Z\",\"region\":{\"name\":\"정자3동\"},\"category\":null,\"contentCoo"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":266,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG 그램 노트북\",\"description\":\"본제품 ",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":267,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG 그램 노트북\",\"description\":\"본제품 ",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -137,24 +137,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1260,
-    "globalUniqueListings": 490,
-    "duplicateListingsRemoved": 770,
-    "detailQueueStart": 13,
-    "freshDetailTasks": 13,
+    "searchUniqueListings": 1268,
+    "globalUniqueListings": 485,
+    "duplicateListingsRemoved": 783,
+    "detailQueueStart": 11,
+    "freshDetailTasks": 11,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 13,
-    "detailSucceeded": 13,
+    "detailRequestsExecuted": 11,
+    "detailSucceeded": 11,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 490,
+    "postedAtResolvedFromSearch": 485,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 95694,
+    "scanDurationMs": 93495,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +166,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 269,
-        "durationMs": 12380
+        "uniqueListings": 273,
+        "durationMs": 12400
       },
       {
         "city": "의왕시",
@@ -182,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 368,
-        "durationMs": 25994
+        "uniqueListings": 369,
+        "durationMs": 25722
       },
       {
         "city": "안양시",
@@ -200,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 372,
-        "durationMs": 35466
+        "uniqueListings": 373,
+        "durationMs": 35577
       },
       {
         "city": "과천시",
@@ -212,8 +212,8 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 251,
-        "durationMs": 6620
+        "uniqueListings": 253,
+        "durationMs": 6847
       }
     ],
     "finalCandidateCount": 0,
@@ -222,7 +222,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 95698
+    "durationMs": 93499
   },
   "candidates": []
 }
