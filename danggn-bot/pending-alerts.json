@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-08T13:52:50.580267Z",
+  "updatedAt": "2026-11-08T14:32:49.925136Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -8805,8 +8805,8 @@
     "fnsbbu2t636d": {
       "id": "fnsbbu2t636d",
       "title": "Mac Studio 맥스튜디오 M4 Max 36GB RAM 512GB SSD",
-      "price": 3050000,
-      "previousPrice": 3150000,
+      "price": 3000000,
+      "previousPrice": 3050000,
       "changeType": "price_drop",
       "city": "의왕시",
       "location": "내손동",
@@ -8825,7 +8825,7 @@
       "postedAt": "2026-09-28T00:21:59.363Z",
       "url": "https://www.daangn.com/kr/buy-sell/mac-studio-%EB%A7%A5%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4-m4-max-36gb-ram-512gb-ssd-fnsbbu2t636d/",
       "firstAlertedAt": "2026-10-20T13:32:32.266037Z",
-      "lastCandidateAt": "2026-11-08T04:22:51.208752Z"
+      "lastCandidateAt": "2026-11-08T14:32:49.925136Z"
     },
     "kuzy64zpvb8i": {
       "id": "kuzy64zpvb8i",
@@ -17151,6 +17151,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EA%B9%94%EB%81%94%ED%95%9C-%EB%B2%A0%EC%9D%B4%EC%A7%81%EB%B6%8114-%ED%94%84%EB%A1%9C-%EC%9D%B8%ED%85%94-i5-%EB%85%B8%ED%8A%B8%EB%B6%81-43p352mochdz/",
       "firstAlertedAt": "2026-11-08T13:52:50.580267Z",
       "lastCandidateAt": "2026-11-08T13:52:50.580267Z"
+    },
+    "oyqiengpfyfy": {
+      "id": "oyqiengpfyfy",
+      "title": "삼성 갤럭시북2 프로 NT950XED i5 / RAM 16GB / SSD 256GB 판매합니다",
+      "price": 600000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "당동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "RAM 16GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 256,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-08T14:24:06.621Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%812-%ED%94%84%EB%A1%9C-nt950xed-i5-ram-16gb-ssd-256gb-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-oyqiengpfyfy/",
+      "firstAlertedAt": "2026-11-08T14:32:49.925136Z",
+      "lastCandidateAt": "2026-11-08T14:32:49.925136Z"
+    },
+    "xjzd38432nwn": {
+      "id": "xjzd38432nwn",
+      "title": "삼성 갤럭시북4 프로(NT960XGQ) 실버 + 윈도우11",
+      "price": 950000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "의왕시",
+      "location": "포일동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "RAM 16GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-08T13:50:13.746Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%814-%ED%94%84%EB%A1%9C-nt960xgq-%EC%8B%A4%EB%B2%84-%EC%9C%88%EB%8F%84%EC%9A%B011-xjzd38432nwn/",
+      "firstAlertedAt": "2026-11-08T14:32:49.925136Z",
+      "lastCandidateAt": "2026-11-08T14:32:49.925136Z"
     }
   }
 }
