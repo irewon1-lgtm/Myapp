@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-09T02:23:12.464494Z",
+  "updatedAt": "2026-11-09T03:02:33.696617Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -17276,6 +17276,56 @@
       "url": "https://www.daangn.com/kr/buy-sell/dell-2in1-%EC%82%AC%EB%AC%B4%EC%9A%A9-%ED%84%B0%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-6ff78xq8qcpi/",
       "firstAlertedAt": "2026-11-09T01:52:47.610847Z",
       "lastCandidateAt": "2026-11-09T01:52:47.610847Z"
+    },
+    "7qsanrqxzveb": {
+      "id": "7qsanrqxzveb",
+      "title": "맥북 프로 14인치 M4 24GB 512GB 스페이스 블랙",
+      "price": 2100000,
+      "previousPrice": 2150000,
+      "changeType": "price_drop",
+      "city": "안양시",
+      "location": "부흥동",
+      "cpuHint": "M4 Pro",
+      "gpuHint": "M4 Pro",
+      "vramGB": null,
+      "ramGB": 24,
+      "ambiguousMemoryGB": 24,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "메모리: 24GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "24GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-10-29T15:45:26.886Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-14%EC%9D%B8%EC%B9%98-m4-24gb-512gb-%EC%8A%A4%ED%8E%98%EC%9D%B4%EC%8A%A4-%EB%B8%94%EB%9E%99-7qsanrqxzveb/",
+      "firstAlertedAt": "2026-11-09T03:02:33.696617Z",
+      "lastCandidateAt": "2026-11-09T03:02:33.696617Z"
+    },
+    "xquzazsc3r4u": {
+      "id": "xquzazsc3r4u",
+      "title": "[미개봉]HP ZBook Ultra 14 G1a-C80Q9PT 라이젠 AI Max+ PRO 395 128GB",
+      "price": 5100000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "의왕시",
+      "location": "고천동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 128,
+      "ambiguousMemoryGB": 128,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "128GB RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "128GB",
+      "storageGB": null,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "postedAt": "2026-11-09T02:25:19.271Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%AF%B8%EA%B0%9C%EB%B4%89-hp-zbook-ultra-14-g1a-c80q9pt-%EB%9D%BC%EC%9D%B4%EC%A0%A0-ai-max-pro-395-128gb-xquzazsc3r4u/",
+      "firstAlertedAt": "2026-11-09T03:02:33.696617Z",
+      "lastCandidateAt": "2026-11-09T03:02:33.696617Z"
     }
   }
 }
