@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-09T08:03:17.448544Z",
+  "updatedAt": "2026-11-09T08:42:31.119683Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -13255,8 +13255,8 @@
     "soi6n83zjde5": {
       "id": "soi6n83zjde5",
       "title": "맥북프로 14인치 M4 16/512 (SS급 / 배터리100% 효율)",
-      "price": 1850000,
-      "previousPrice": 1950000,
+      "price": 1800000,
+      "previousPrice": 1850000,
       "changeType": "price_drop",
       "city": "안양시",
       "location": "호계동",
@@ -13275,7 +13275,7 @@
       "postedAt": "2026-10-31T10:41:19.682Z",
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C-14%EC%9D%B8%EC%B9%98-m4-16-512-ss%EA%B8%89-%EB%B0%B0%ED%84%B0%EB%A6%AC100-%ED%9A%A8%EC%9C%A8-soi6n83zjde5/",
       "firstAlertedAt": "2026-10-31T10:52:11.800858Z",
-      "lastCandidateAt": "2026-11-06T05:12:51.779937Z"
+      "lastCandidateAt": "2026-11-09T08:42:31.119683Z"
     },
     "rnietvn68f9s": {
       "id": "rnietvn68f9s",
@@ -17476,6 +17476,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EC%94%BD%ED%81%AC%ED%8C%A8%EB%93%9C-t460-i5-6300u-16-g-480-20-%EB%A7%8C-%EC%9B%90-koukvgr3h3gg/",
       "firstAlertedAt": "2026-11-09T06:42:37.710087Z",
       "lastCandidateAt": "2026-11-09T06:42:37.710087Z"
+    },
+    "qx38jghkdbnn": {
+      "id": "qx38jghkdbnn",
+      "title": "맥북프로14 M5프로 램24GB. SSD1TB. 블랙색상 믹ㅓ봉",
+      "price": 3990000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "안양1동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 24,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "램24GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 1024,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-09T08:29:46.151Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C14-m5%ED%94%84%EB%A1%9C-%EB%9E%A824gb-ssd1tb-%EB%B8%94%EB%9E%99%EC%83%89%EC%83%81-%EB%AF%B9-%EB%B4%89-qx38jghkdbnn/",
+      "firstAlertedAt": "2026-11-09T08:42:31.119683Z",
+      "lastCandidateAt": "2026-11-09T08:42:31.119683Z"
     }
   }
 }
