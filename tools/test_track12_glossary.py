@@ -38,7 +38,9 @@ def main():
     assert audit["physicalDeviceTest"] == "NOT_RUN"
 
     html = (ROOT / "live/reader.html").read_text(encoding="utf-8")
-    assert "VIBE_GLOSSARY_V1" in html and "vibe-copy-button" in html
+    assert "VIBE_BOOK_DARK_V2" in html and "vibe-book-copy" in html, "Approved dark book design missing"
+    assert "vibe-book-viewport" in html and "vibe-book-section" in html, "Continuous term page missing"
+    assert "vibe-book-meaning" in html and "vibe-book-judgement" in html, "Five learning sections missing"
     assert len(html.encode("utf-8")) <= 3 * 1024 * 1024, "Existing Android shell 3 MiB cap"
     m = re.search(r'<script[^>]*id="course"[^>]*>([\s\S]*?)</script>', html)
     assert m, "Embedded runtime course missing"
