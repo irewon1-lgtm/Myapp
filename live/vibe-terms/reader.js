@@ -12,6 +12,7 @@
   const TRACK=12;
   const termPages=chapters.filter(c=>c.track===TRACK).flatMap(c=>c.pages);
   let scrollWriteTimer=null;
+  let entryDirection=0;
 
   function isVibe(){
     return route==='reader'&&chapters[current.c]&&chapters[current.c].track===TRACK;
@@ -41,8 +42,106 @@
     saveScroll();
     const index=termIndex();
     const target=termPages[index+delta];
-    if(target)openPage(target.id);
+    if(target){entryDirection=delta;openPage(target.id);}
   }
+
+  /* VIBE_BOOK_SWIPE_V3 — horizontal page-turn gestures, vertical text scrolling.
+   * Native touch events are used for Android WebView; mouse pointer events are
+   * an optional desktop fallback. Do not intercept links, notes or copy buttons.
+   */
+  function installGestures(viewport){
+    let gesture=null;
+    let lastTouchEnd=0;
+    const MOVE_RATIO=1.25;
+    const blocked=target=>target&&target.closest&&
+      target.closest('button,a,input,textarea,select,summary,details,[contenteditable="true"]');
+    const page=()=>viewport.querySelector('.vibe-book-page');
+
+    function reset(){
+      const article=page();
+      if(article){
+        article.classList.remove('vibe-swipe-dragging');
+        article.style.removeProperty('--vibe-drag-x');
+      }
+      gesture=null;
+    }
+    function start(x,y,source,target,time){
+      if(gesture||blocked(target))return false;
+      gesture={x,y,source,time,axis:null,lastX:x,lastY:y};
+      return true;
+    }
+    function move(x,y,event){
+      if(!gesture)return;
+      const dx=x-gesture.x,dy=y-gesture.y;
+      gesture.lastX=x;
+      gesture.lastY=y;
+      if(!gesture.axis){
+        if(Math.max(Math.abs(dx),Math.abs(dy))<9)return;
+        gesture.axis=Math.abs(dx)>Math.abs(dy)*MOVE_RATIO?'horizontal':
+                     Math.abs(dy)>Math.abs(dx)*MOVE_RATIO?'vertical':null;
+      }
+      if(gesture.axis==='horizontal'){
+        if(event&&event.cancelable)event.preventDefault();
+        const article=page();
+        if(article){
+          article.classList.add('vibe-swipe-dragging');
+          article.style.setProperty('--vibe-drag-x',
+            Math.max(-62,Math.min(62,dx*0.42))+'px');
+        }
+      }
+    }
+    function finish(x,y,time){
+      if(!gesture)return;
+      const dx=x-gesture.x,dy=y-gesture.y;
+      const axis=gesture.axis;
+      const ms=Math.max(1,time-gesture.time);
+      const width=Math.max(260,viewport.clientWidth||360);
+      const threshold=Math.max(38,Math.min(78,width*0.12));
+      const deliberate=axis==='horizontal'&&Math.abs(dx)>=threshold;
+      const flick=axis==='horizontal'&&ms<=360&&Math.abs(dx)>=30;
+      const horizontal=Math.abs(dx)>Math.abs(dy)*MOVE_RATIO;
+      reset();
+      if(horizontal&&(deliberate||flick))goTerm(dx<0?1:-1);
+    }
+    viewport.addEventListener('touchstart',event=>{
+      if(!event.touches||event.touches.length!==1){reset();return;}
+      const p=event.touches[0];
+      start(p.clientX,p.clientY,'touch',event.target,Date.now());
+    },{passive:true});
+    viewport.addEventListener('touchmove',event=>{
+      if(!gesture||gesture.source!=='touch')return;
+      if(!event.touches||event.touches.length!==1){reset();return;}
+      const p=event.touches[0];
+      move(p.clientX,p.clientY,event);
+    },{passive:false});
+    viewport.addEventListener('touchend',event=>{
+      if(!gesture||gesture.source!=='touch')return;
+      const p=event.changedTouches&&event.changedTouches[0];
+      if(p)finish(p.clientX,p.clientY,Date.now());
+      else reset();
+      lastTouchEnd=Date.now();
+    },{passive:true});
+    viewport.addEventListener('touchcancel',reset,{passive:true});
+
+    viewport.addEventListener('pointerdown',event=>{
+      if(event.pointerType!=='mouse'||event.button!==0||Date.now()-lastTouchEnd<500)return;
+      if(start(event.clientX,event.clientY,'mouse',event.target,Date.now())
+        &&viewport.setPointerCapture){
+        try{viewport.setPointerCapture(event.pointerId)}catch(_){}
+      }
+    });
+    viewport.addEventListener('pointermove',event=>{
+      if(gesture&&gesture.source==='mouse'){
+        if((event.buttons&1)===0){reset();return;}
+        move(event.clientX,event.clientY,event);
+      }
+    });
+    viewport.addEventListener('pointerup',event=>{
+      if(gesture&&gesture.source==='mouse')finish(event.clientX,event.clientY,Date.now());
+    });
+    viewport.addEventListener('pointercancel',reset);
+  }
+
   function section(number,label,body,classname){
     return '<section class="vibe-book-section '+classname+'" aria-label="'+esc(label)+'">'+
       '<h2><span class="vibe-book-numeral">'+number+'.</span> '+esc(label)+'</h2>'+
@@ -67,7 +166,7 @@
         '<button type="button" data-action="bookmark" aria-label="북마크" aria-pressed="'+(saved?'true':'false')+'" class="vibe-book-bookmark">'+(saved?'★':'☆')+'</button>'+
       '</header>'+
       '<main id="vibe-book-viewport" class="vibe-book-viewport" tabindex="0" aria-label="'+esc(term.term)+' 한 페이지 본문">'+
-        '<article class="vibe-book-page" data-page-id="'+esc(page.id)+'">'+
+        '<article class="vibe-book-page'+(entryDirection>0?' vibe-slide-in-next':entryDirection<0?' vibe-slide-in-previous':'')+'" data-page-id="'+esc(page.id)+'">'+
           '<div class="vibe-book-meta"><span>제'+chapter.chapter+'장 · '+esc(chapter.title)+'</span><span>용어 '+term.number+' / 200</span></div>'+
           '<div class="vibe-book-title-block"><h1>'+esc(term.term)+'</h1><p class="vibe-book-english">('+esc(term.english)+')</p></div>'+
           section(1,'쉬운 설명',term.explain,'vibe-book-meaning')+
@@ -110,6 +209,7 @@
 
   render=function(){
     baseRender();
+    entryDirection=0;
     if(!isVibe())return;
     const viewport=document.getElementById('vibe-book-viewport');
     if(!viewport)return;
@@ -125,6 +225,7 @@
         saveScroll();
       },260);
     },{passive:true});
+    installGestures(viewport);
     if(document.body&&document.body.dataset){
       document.body.dataset.vibeReady='1';
       document.body.dataset.vibeTerm=String(currentTerm().vibe.number);
