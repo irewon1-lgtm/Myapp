@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-09T22:42:14.996Z",
+  "generatedAt": "2026-11-09T23:22:23.938Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,6 +55,28 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
+            "id": "/kr/buy-sell/%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%9D%EB%8B%88%EB%8B%A4-ppaqnm78nqfn/",
+            "href": "/kr/buy-sell/%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%9D%EB%8B%88%EB%8B%A4-ppaqnm78nqfn/",
+            "title": "노트북 팝니다",
+            "content": "사진 참고하세요 \n본체 ㆍ충전기 ㆍ마우스 ㆍ가방 \n중고특성상 반품ㆍ환불불가 ",
+            "price": "200000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/208a3de5-6341-4253-be13-6abf51dac294.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-11-09T23:07:51.910Z",
+            "boostedAt": "2026-11-09T23:07:51.908Z",
+            "region": {
+              "name": "가야읍"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 35.2804672,
+                "longitude": 128.4175788
+              }
+            ]
+          },
+          {
             "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-nt500r5h-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-a3zmirqy4bwj/",
             "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-nt500r5h-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-a3zmirqy4bwj/",
             "title": "삼성 NT500R5H 노트북 판매합니다",
@@ -73,32 +95,6 @@
               {
                 "latitude": 36.2355857,
                 "longitude": 129.3831317
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt371b5l-i5-6300hq-12gb-500gb-ssd-af5caxr47p1j/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt371b5l-i5-6300hq-12gb-500gb-ssd-af5caxr47p1j/",
-            "title": "삼성 노트북 NT371B5L (i5-6300HQ/12GB/500GB SSD)",
-            "content": "삼성 노트북 NT371B5L 모델입니다. \n인텔 코어 i5-6300HQ CPU와 \n12GB RAM, 500GB 삼성 SSD\n윈도우10설치\n배터리는 방전\n전원 연결하고 사용하셔야 하고\n본체+전원선+무선마우스 판매합니다.\n\n거래는 문고리 거래 희망합니다.",
-            "price": "130000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/c0569d28a7dd77152be084efca5dfadeaee89889b8b18767bd4687898d0d27ef_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-11-08T22:13:47.535Z",
-            "boostedAt": "2026-11-09T22:19:10.682Z",
-            "region": {
-              "name": "수송동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 37.6249656,
-                "longitude": 126.9266801
-              },
-              {
-                "latitude": 37.5746707,
-                "longitude": 126.9794637
               }
             ]
           },
@@ -130,14 +126,14 @@
           }
         ],
         "dateFieldSnippets": [
+          "createdAt\":\"2026-11-09T23:07:51.910Z\",\"boostedAt\":\"2026-11-09T23:07:51.908Z\",\"region\":{\"name\":\"가야읍\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-08-29T22:55:06.412Z\",\"boostedAt\":\"2026-11-09T22:19:23.768Z\",\"region\":{\"name\":\"송라면\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-08T22:13:47.535Z\",\"boostedAt\":\"2026-11-09T22:19:10.682Z\",\"region\":{\"name\":\"수송동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-11-09T11:30:51.087Z\",\"boostedAt\":\"2026-11-09T11:30:51.086Z\",\"region\":{\"name\":\"논현1동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-11-09T12:30:35.745Z\",\"boostedAt\":\"2026-11-09T12:30:35.738Z\",\"region\":{\"name\":\"읍내동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-09T16:56:32.135Z\",\"boostedAt\":\"2026-11-09T16:56:32.133Z\",\"region\":{\"name\":\"광남동\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-10-02T07:11:06.441Z\",\"boostedAt\":\"2026-11-09T22:58:10.862Z\",\"region\":{\"name\":\"구월동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-09-24T09:48:28.553Z\",\"boostedAt\":\"2026-11-09T23:06:20.376Z\",\"region\":{\"name\":\"진접읍\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":267,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 NT500R5H 노트북 판매합니다\",\"descri",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":266,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"노트북 팝니다\",\"description\":\"사진 참고하",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -145,24 +141,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1238,
-    "globalUniqueListings": 479,
-    "duplicateListingsRemoved": 759,
-    "detailQueueStart": 1,
-    "freshDetailTasks": 1,
+    "searchUniqueListings": 1243,
+    "globalUniqueListings": 498,
+    "duplicateListingsRemoved": 745,
+    "detailQueueStart": 9,
+    "freshDetailTasks": 9,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 1,
-    "detailSucceeded": 1,
+    "detailRequestsExecuted": 9,
+    "detailSucceeded": 9,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 479,
+    "postedAtResolvedFromSearch": 498,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 80220,
+    "scanDurationMs": 89295,
     "cities": [
       {
         "city": "군포시",
@@ -174,8 +170,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 280,
-        "durationMs": 12262
+        "uniqueListings": 282,
+        "durationMs": 12145
       },
       {
         "city": "의왕시",
@@ -191,7 +187,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 354,
-        "durationMs": 25802
+        "durationMs": 25474
       },
       {
         "city": "안양시",
@@ -208,7 +204,7 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 364,
+        "uniqueListings": 366,
         "durationMs": 34991
       },
       {
@@ -220,8 +216,8 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 240,
-        "durationMs": 6610
+        "uniqueListings": 241,
+        "durationMs": 6165
       }
     ],
     "finalCandidateCount": 0,
@@ -230,7 +226,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 80228
+    "durationMs": 89302
   },
   "candidates": []
 }
