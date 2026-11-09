@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-09T04:22:37.675710Z",
+  "updatedAt": "2026-11-09T05:02:29.606513Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -17401,6 +17401,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/a%EA%B8%89-lg%EA%B7%B8%EB%9E%A8-%ED%94%84%EB%A1%9C-17%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-%EB%AA%A8%EB%8D%B8-bqfq5adkxrot/",
       "firstAlertedAt": "2026-11-09T04:22:37.675710Z",
       "lastCandidateAt": "2026-11-09T04:22:37.675710Z"
+    },
+    "q4w96mg7jxvu": {
+      "id": "q4w96mg7jxvu",
+      "title": "삼성 노트북컴퓨터(NT900X5L)",
+      "price": 72000,
+      "previousPrice": 80000,
+      "changeType": "price_drop",
+      "city": "군포시",
+      "location": "군포1동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 128,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "128G",
+      "storageGB": 128,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-08-11T05:11:12.015Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81%EC%BB%B4%ED%93%A8%ED%84%B0-nt900x5l-q4w96mg7jxvu/",
+      "firstAlertedAt": "2026-11-09T05:02:29.606513Z",
+      "lastCandidateAt": "2026-11-09T05:02:29.606513Z"
     }
   }
 }
