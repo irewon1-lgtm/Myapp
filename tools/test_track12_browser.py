@@ -99,11 +99,13 @@ def check_single_page(page, n, width, height):
     assert actual["previousDisabled"] == (n == 1)
     assert actual["nextDisabled"] == (n == 50)
     for i, content in enumerate((term["explain"], term["example"],
-                                 term["contrast"], term["wrong"]+" "+term["answer"],
-                                 term["prompt"])):
+                                 term["contrast"], term["wrong"], term["prompt"])):
         assert normalize(content) in normalize(actual["sections"][i]), (
             n, i, "authored lesson text missing"
         )
+    assert normalize(term["answer"]) in normalize(actual["sections"][3]), (
+        n, "AI error question explanation lost"
+    )
     CHECKS.append({"term": n, "viewport": [width, height], "status": "PASS"})
 
 
