@@ -244,3 +244,34 @@
   .vibe-book-shell .vibe-book-page{padding-top:28px;padding-bottom:58px}
   .vibe-book-shell .vibe-book-section{margin-bottom:18px}
 }
+
+
+/* VIBE_BOOK_SWIPE_V3 — tactile horizontal term turns; scrolling stays vertical. */
+.vibe-book-shell .vibe-book-viewport{
+  touch-action:pan-y;
+  overscroll-behavior-x:contain;
+}
+.vibe-book-shell .vibe-book-page.vibe-swipe-dragging{
+  transform:translate3d(var(--vibe-drag-x,0px),0,0);
+  transition:none;
+  user-select:none;
+  -webkit-user-select:none;
+}
+.vibe-book-shell .vibe-book-page.vibe-slide-in-next{
+  animation:vibeBookFromRight 180ms cubic-bezier(.2,.8,.25,1) both;
+}
+.vibe-book-shell .vibe-book-page.vibe-slide-in-previous{
+  animation:vibeBookFromLeft 180ms cubic-bezier(.2,.8,.25,1) both;
+}
+@keyframes vibeBookFromRight{
+  from{transform:translate3d(32px,0,0);opacity:.5}
+  to{transform:translate3d(0,0,0);opacity:1}
+}
+@keyframes vibeBookFromLeft{
+  from{transform:translate3d(-32px,0,0);opacity:.5}
+  to{transform:translate3d(0,0,0);opacity:1}
+}
+@media(prefers-reduced-motion:reduce){
+  .vibe-book-shell .vibe-book-page.vibe-slide-in-next,
+  .vibe-book-shell .vibe-book-page.vibe-slide-in-previous{animation:none}
+}
