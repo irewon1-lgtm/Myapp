@@ -1,30 +1,234 @@
-/* VIBE_GLOSSARY_V1 — styles scoped to the new vocabulary track. */
-.reader-flow .vibe-lesson{padding-bottom:24px}
-.reader-flow .vibe-intro{font-size:12px;letter-spacing:.02em;color:#bba98f;margin:0 0 12px}
-.reader-flow .vibe-card{
-  margin:0 0 14px;padding:15px 16px 16px;border:1px solid #4a392e;
-  border-radius:13px;background:#201912;break-inside:auto;-webkit-column-break-inside:auto
+/* VIBE_BOOK_DARK_V2 — approved mockup 4 as a real, dark single-term book page.
+   Only Track 12 uses these styles. Other tracks preserve their own typography. */
+.reader-shell.vibe-book-shell.dark{
+  --reader:#171512;
+  --reader2:#201b16;
+  --readerInk:#eee4d8;
+  --readerMuted:#ae9d8a;
+  --readerHair:#514537;
+  --readerGold:#c9a47a;
+  box-sizing:border-box;
+  display:grid;
+  grid-template-rows:52px minmax(0,1fr) 62px;
+  width:100%;
+  height:100dvh;
+  min-height:0;
+  max-width:100%;
+  overflow:hidden;
+  background:#171512;
+  color:#eee4d8;
+  color-scheme:dark;
+  font-family:"Noto Serif KR","NanumMyeongjo",Georgia,serif;
 }
-.reader-flow .vibe-card h3{
-  color:#e9bd80;font:800 16px/1.4 system-ui,-apple-system,"Noto Sans KR",sans-serif;
-  letter-spacing:-.02em;margin:0 0 9px
+.vibe-book-shell .vibe-book-top{
+  display:flex;
+  align-items:center;
+  gap:4px;
+  min-width:0;
+  padding:0 11px;
+  background:#171512;
+  border-bottom:1px solid #403529;
+  font-family:"Noto Serif KR","NanumMyeongjo",Georgia,serif;
 }
-.reader-flow .vibe-card p{
-  font-size:var(--readerBody);line-height:var(--readerLine);color:#f0e6d9;
-  overflow-wrap:anywhere
+.vibe-book-shell .vibe-book-top button{
+  flex:none;
+  width:43px;
+  height:43px;
+  border:0;
+  border-radius:4px;
+  color:#e6d5c3;
+  background:transparent;
+  font-size:26px;
+  line-height:1;
 }
-.reader-flow .vibe-meaning{border-left:4px solid #dfae70;background:#282015}
-.reader-flow .vibe-example{border-left:4px solid #8fa983}
-.reader-flow .vibe-contrast{border-left:4px solid #97a0c2}
-.reader-flow .vibe-quiz{border-color:#ba945d}
-.reader-flow .vibe-answer{margin-top:12px;padding:10px 12px;border-radius:9px;background:#342819}
-.reader-flow .vibe-answer summary{cursor:pointer;font-weight:800;color:#f0c986;min-height:33px}
-.reader-flow .vibe-answer p{margin-top:8px;color:#e4dacf}
-.reader-flow .vibe-copy{border-color:#796645;background:#231d16}
-.reader-flow .vibe-hint{color:#c6b6a1;font-size:13px;margin-bottom:9px}
-.reader-flow .vibe-prompt{white-space:pre-wrap;padding:12px;border-radius:9px;background:#16120e;border:1px solid #4a3c2e}
-.reader-flow .vibe-copy-button{
-  display:inline-flex;align-items:center;justify-content:center;min-height:43px;
-  margin-top:12px;padding:10px 17px;border:1px solid #b48d58;border-radius:10px;
-  background:#b48d58;color:#17120c;font-weight:850;font-size:14px
+.vibe-book-shell .vibe-book-top button:focus-visible,
+.vibe-book-shell .vibe-book-footer button:focus-visible,
+.vibe-book-shell .vibe-book-copy:focus-visible{
+  outline:2px solid #d4b188;outline-offset:-2px;
+}
+.vibe-book-shell .vibe-book-app-name{
+  flex:1;min-width:0;
+  font-weight:700;
+  font-size:clamp(14px,3.8vw,17px);
+  line-height:1.35;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.vibe-book-shell .vibe-book-top .vibe-book-font{
+  font:700 17px/1.1 Georgia,serif;
+}
+.vibe-book-shell .vibe-book-top .vibe-book-bookmark{
+  font-size:29px;
+  color:#c3a17b;
+}
+.vibe-book-shell .vibe-book-viewport{
+  overflow-x:hidden;
+  overflow-y:auto;
+  -webkit-overflow-scrolling:touch;
+  overscroll-behavior-x:contain;
+  overscroll-behavior-y:contain;
+  touch-action:pan-y;
+  scrollbar-color:#554638 #171512;
+  scrollbar-width:thin;
+  min-width:0;
+  min-height:0;
+  background:#171512;
+}
+.vibe-book-shell .vibe-book-page{
+  width:min(100%,790px);
+  min-width:0;
+  margin:0 auto;
+  padding:20px clamp(19px,4.5vw,46px) 44px;
+  color:#eee4d8;
+  font-family:"Noto Serif KR","NanumMyeongjo",Georgia,serif;
+  font-size:var(--vibe-book-font,18px);
+  line-height:1.59;
+  letter-spacing:-.018em;
+  overflow-wrap:anywhere;
+  word-break:keep-all;
+}
+.vibe-book-shell .vibe-book-meta{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:10px;
+  flex-wrap:wrap;
+  padding-bottom:8px;
+  margin-bottom:13px;
+  border-bottom:1px solid #514335;
+  color:#c1a788;
+  font:600 12px/1.45 "Noto Serif KR","NanumMyeongjo",Georgia,serif;
+}
+.vibe-book-shell .vibe-book-meta span:last-child{white-space:nowrap}
+.vibe-book-shell .vibe-book-title-block{margin:0 0 16px}
+.vibe-book-shell .vibe-book-title-block h1{
+  margin:0;
+  color:#f6ede2;
+  font-size:clamp(26px,6.4vw,38px);
+  font-weight:750;
+  line-height:1.2;
+  letter-spacing:-.035em;
+}
+.vibe-book-shell .vibe-book-english{
+  margin:4px 0 0;
+  color:#b7a592;
+  font:italic 17px/1.32 Georgia,"Noto Serif KR",serif;
+  letter-spacing:-.015em;
+}
+.vibe-book-shell .vibe-book-section{
+  margin:0 0 15px;
+  padding:0;
+  background:none;
+  border:0;
+  border-radius:0;
+  box-shadow:none;
+}
+.vibe-book-shell .vibe-book-section h2{
+  margin:0 0 3px;
+  padding:0;
+  font-family:"Noto Serif KR","NanumMyeongjo",Georgia,serif;
+  font-size:calc(var(--vibe-book-font,18px) + 1px);
+  font-weight:800;
+  line-height:1.48;
+  color:#f4e8d9;
+  letter-spacing:-.022em;
+}
+.vibe-book-shell .vibe-book-section p{
+  margin:0;
+  padding:0;
+  font:400 var(--vibe-book-font,18px)/1.61 "Noto Serif KR","NanumMyeongjo",Georgia,serif;
+  color:#e8dfd4;
+  letter-spacing:-.016em;
+}
+.vibe-book-shell .vibe-book-numeral{
+  color:#d0ae87;
+  font-variant-numeric:lining-nums tabular-nums;
+}
+.vibe-book-shell .vibe-book-judgement .vibe-book-question{
+  margin:0 0 4px;
+}
+.vibe-book-shell .vibe-book-judgement .vibe-book-question b,
+.vibe-book-shell .vibe-book-judgement .vibe-book-answer strong{
+  color:#d3b28c;
+  font-weight:800;
+}
+.vibe-book-shell .vibe-book-judgement .vibe-book-answer{
+  margin-top:6px;
+  color:#dcd0c1;
+}
+.vibe-book-shell .vibe-book-codex .vibe-book-prompt{
+  margin:4px 0 0;
+  padding:9px 12px;
+  border:0;
+  border-radius:5px;
+  background:#252018;
+  color:#eadfd0;
+  font-size:calc(var(--vibe-book-font,18px) - 1px);
+  line-height:1.56;
+}
+.vibe-book-shell .vibe-book-copy{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  margin-top:9px;
+  min-height:41px;
+  padding:8px 15px;
+  border:1px solid #66543e;
+  background:#262019;
+  color:#e3c69f;
+  border-radius:5px;
+  font:650 13px/1.2 system-ui,"Noto Sans KR",sans-serif;
+}
+.vibe-book-shell .vibe-book-tail{
+  text-align:center;
+  margin-top:12px;
+  color:#776854;
+  font-size:17px;
+  letter-spacing:.3em;
+}
+.vibe-book-shell .vibe-book-footer{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);
+  align-items:center;
+  gap:3px;
+  min-width:0;
+  min-height:62px;
+  padding:5px 11px;
+  border-top:1px solid #514335;
+  background:#171512;
+  color:#dfc5a7;
+  font-family:"Noto Serif KR","NanumMyeongjo",Georgia,serif;
+}
+.vibe-book-shell .vibe-book-footer button{
+  border:0;
+  background:transparent;
+  color:#e9d7bf;
+  min-width:0;
+  min-height:45px;
+  padding:6px 4px;
+  font:650 15px/1.2 "Noto Serif KR","NanumMyeongjo",Georgia,serif;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.vibe-book-shell .vibe-book-footer button:first-child{text-align:left}
+.vibe-book-shell .vibe-book-footer button:last-child{text-align:right}
+.vibe-book-shell .vibe-book-footer button:disabled{opacity:.3}
+.vibe-book-shell .vibe-book-count{
+  text-align:center;
+  color:#d6b18b;
+  font:700 15px/1.2 Georgia,"Noto Serif KR",serif;
+  white-space:nowrap;
+  padding:0 6px;
+}
+@media(max-width:370px){
+  .vibe-book-shell .vibe-book-page{padding-inline:18px}
+  .vibe-book-shell .vibe-book-footer{padding-inline:8px}
+  .vibe-book-shell .vibe-book-footer button{font-size:13px}
+  .vibe-book-shell .vibe-book-meta{font-size:11px}
+}
+@media(min-width:700px){
+  .vibe-book-shell .vibe-book-page{padding-top:28px;padding-bottom:58px}
+  .vibe-book-shell .vibe-book-section{margin-bottom:18px}
 }
