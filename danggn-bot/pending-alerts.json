@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-09T06:03:49.595459Z",
+  "updatedAt": "2026-11-09T06:42:37.710087Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -17305,9 +17305,9 @@
     "xquzazsc3r4u": {
       "id": "xquzazsc3r4u",
       "title": "[미개봉]HP ZBook Ultra 14 G1a-C80Q9PT 라이젠 AI Max+ PRO 395 128GB",
-      "price": 5100000,
-      "previousPrice": null,
-      "changeType": "new",
+      "price": 4550000,
+      "previousPrice": 5100000,
+      "changeType": "price_drop",
       "city": "의왕시",
       "location": "고천동",
       "cpuHint": null,
@@ -17325,7 +17325,7 @@
       "postedAt": "2026-11-09T02:25:19.271Z",
       "url": "https://www.daangn.com/kr/buy-sell/%EB%AF%B8%EA%B0%9C%EB%B4%89-hp-zbook-ultra-14-g1a-c80q9pt-%EB%9D%BC%EC%9D%B4%EC%A0%A0-ai-max-pro-395-128gb-xquzazsc3r4u/",
       "firstAlertedAt": "2026-11-09T03:02:33.696617Z",
-      "lastCandidateAt": "2026-11-09T03:02:33.696617Z"
+      "lastCandidateAt": "2026-11-09T06:42:37.710087Z"
     },
     "h6ziyyxauit6": {
       "id": "h6ziyyxauit6",
@@ -17451,6 +17451,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/hp-probook-450-g8-%EC%A4%91%EA%B3%A0%EB%85%B8%ED%8A%B8%EB%B6%81-i5-11%EC%84%B8%EB%8C%80-kxgiw7o5jrau/",
       "firstAlertedAt": "2026-11-09T05:43:47.966208Z",
       "lastCandidateAt": "2026-11-09T05:43:47.966208Z"
+    },
+    "koukvgr3h3gg": {
+      "id": "koukvgr3h3gg",
+      "title": "씽크패드 T460. i5-6300U. 16 G. 480.     20 만 원",
+      "price": 200000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "안양2동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-09T06:10:57.516Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%94%BD%ED%81%AC%ED%8C%A8%EB%93%9C-t460-i5-6300u-16-g-480-20-%EB%A7%8C-%EC%9B%90-koukvgr3h3gg/",
+      "firstAlertedAt": "2026-11-09T06:42:37.710087Z",
+      "lastCandidateAt": "2026-11-09T06:42:37.710087Z"
     }
   }
 }
