@@ -83,6 +83,7 @@
             '<p class="vibe-book-prompt">'+txt(term.prompt)+'</p>'+
             '<button type="button" class="vibe-book-copy" data-action="vibe-copy" data-code="'+encodeURIComponent(term.prompt)+'">▣ 지시문 복사</button>'+
           '</section>'+
+          '<button type="button" class="vibe-book-note" data-action="note">✎ 이 용어에 메모</button>'+
           '<div class="vibe-book-tail" aria-hidden="true">· · ·</div>'+
         '</article>'+
       '</main>'+
