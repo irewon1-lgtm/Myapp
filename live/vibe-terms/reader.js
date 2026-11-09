@@ -59,7 +59,7 @@
     const next=index<termPages.length-1?termPages[index+1]:null;
     const saved=state.bookmarks.includes(page.id);
     const font=Math.max(16,Math.min(22,Number(state.vibeBookFont)||18));
-    return '<div class="reader-shell native-reader vibe-book-shell dark" style="--vibe-book-font:'+font+'px" data-vibe-term="'+term.number+'">'+
+    return '<div class="reader-shell vibe-book-shell dark '+(native?'native-reader':'')+'" style="--vibe-book-font:'+font+'px" data-vibe-term="'+term.number+'">'+
       '<header class="vibe-book-top">'+
         '<button type="button" data-action="track-current" aria-label="트랙 목차로 돌아가기" class="vibe-book-back">‹</button>'+
         '<span class="vibe-book-app-name">바이브 코딩 필수 용어 200</span>'+
