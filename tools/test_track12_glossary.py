@@ -39,6 +39,7 @@ def main():
 
     html = (ROOT / "live/reader.html").read_text(encoding="utf-8")
     assert "VIBE_BOOK_DARK_V2" in html and "vibe-book-copy" in html, "Approved dark book design missing"
+    assert "VIBE_BOOK_SWIPE_V3" in html, "Approved left/right touch swipe missing"
     assert "vibe-book-viewport" in html and "vibe-book-section" in html, "Continuous term page missing"
     assert "vibe-book-meaning" in html and "vibe-book-judgement" in html, "Five learning sections missing"
     assert len(html.encode("utf-8")) <= 3 * 1024 * 1024, "Existing Android shell 3 MiB cap"
