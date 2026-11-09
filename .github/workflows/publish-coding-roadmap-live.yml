@@ -2,7 +2,7 @@ name: Publish CodingRoadmap lessons and screen
 on:
   push:
     branches: [coding-roadmap-live, track4-continuous-book-20260925]
-    paths: ['live/content.json', 'live/reader.template.html', 'live/track3-book/**', 'live/track4-book/**', 'tools/build_content.py', 'tools/compile_track3_book.py', 'tools/compile_track4_book.py', 'tools/prepare_track4_release.py', 'tools/track4-compatibility-patches.json', 'tools/verify_reader.cjs', 'tools/test_track3_*.py', 'tools/test_track4_*.py', '.github/workflows/publish-coding-roadmap-live.yml']
+    paths: ['live/content.json', 'live/reader.template.html', 'live/track3-book/**', 'live/track4-book/**', 'live/vibe-terms/**', 'tools/build_content.py', 'tools/compile_track3_book.py', 'tools/compile_track4_book.py', 'tools/compile_track12_glossary.py', 'tools/prepare_track4_release.py', 'tools/track4-compatibility-patches.json', 'tools/verify_reader.cjs', 'tools/test_track3_*.py', 'tools/test_track4_*.py', 'tools/test_track12_*.py', '.github/workflows/publish-coding-roadmap-live.yml']
 permissions:
   contents: write
 concurrency:
@@ -46,11 +46,14 @@ jobs:
         run: |
           python tools/test_track3_book.py
           python tools/test_track4_book.py
+          python tools/test_track12_glossary.py
           node tools/verify_reader.cjs
       - name: Verify existing Track 3 reader and persisted records
         run: python tools/test_track3_browser.py
       - name: Verify Track 4 reader, web execution and complete HTTP project
         run: python tools/test_track4_browser.py
+      - name: Verify first 50 Vibe Coding terms in phone/tablet Chromium
+        run: python tools/test_track12_browser.py
       - name: Retain real Python execution verification for Track 3
         run: python tools/test_track3_worker.py
       - name: Commit verified snapshot and publish only from the canonical live branch

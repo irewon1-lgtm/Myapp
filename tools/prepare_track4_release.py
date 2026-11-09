@@ -51,15 +51,11 @@ def main():
     if old in text:text=replace_once(text,old,new)
     assert new in text
     path.write_text(text)
-    (ROOT/'tools/build_content.py').write_text('''"""Build the two authored continuous textbooks without regenerating other tracks."""
-from compile_track3_book import build
-from compile_track4_book import build as build_track4
-
-if __name__ == "__main__":
-    build()
-    build_track4()
-''')
-    path=ROOT/'CODINGROADMAP_LIVE.md';text=path.read_text()
+    # Never rewrite the reviewed multi-track compiler entrypoint.
+    entry = (ROOT / 'tools/build_content.py').read_text()
+    assert 'build_track3()' in entry and 'build_vibe()' in entry and 'build_track4()' in entry
+    path = ROOT / 'CODINGROADMAP_LIVE.md'
+    text = path.read_text()
     if '## Track 4 연속 교재' not in text:
         text+='''
 ## Track 4 연속 교재

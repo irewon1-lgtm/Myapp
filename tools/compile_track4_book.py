@@ -178,8 +178,8 @@ def build(root=ROOT):
             md.extend([f"{r['number']}. [{r['book']}]({r['url']}) — {r['author']} / {r['year']}",f"   확인 범위: {r['scope']}. {r['note']}",''])
     (root/'live/track4-book/source-map.md').write_text('\n'.join(md))
     template=(root/'live/reader.template.html').read_text()
-    css=(root/'live/track3-book/reader.css').read_text()+'\n'+(root/'live/track4-book/reader.css').read_text()
-    js=(root/'live/track3-book/reader.js').read_text()+'\n'+(root/'live/track4-book/reader.js').read_text()
+    css=(root/'live/track3-book/reader.css').read_text()+'\n'+(root/'live/track4-book/reader.css').read_text()+'\n'+(root/'live/vibe-terms/reader.css').read_text()
+    js=(root/'live/track3-book/reader.js').read_text()+'\n'+(root/'live/track4-book/reader.js').read_text()+'\n'+(root/'live/vibe-terms/reader.js').read_text()
     assert '</script' not in js.lower()
     template=template.replace('</style>','\n'+css+'\n</style>',1)
     assert template.count('\nrender();\n</script>')==1

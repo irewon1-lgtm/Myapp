@@ -50,3 +50,15 @@ Application ID는 com.codingroadmap.app이다. 네이티브 권한·WebView 외�
 - 전체 프로젝트: live/track4-book/project/index.html, style.css, app.js, topics.json.
 - 테스트: tools/test_track4_book.py, tools/test_track4_browser.py. 기존 Track 3 검사도 유지한다.
 - 전송본에서는 book.html/text의 중복 집계 문자열만 제거하고 원본 블록으로 복원한다. 내용을 요약하거나 삭제하지 않는다. 3 MiB 네이티브 다운로드 상한을 검사한다.
+
+## Track 12 바이브 코딩 필수 용어집 (추가형)
+- 사용자가 승인한 **전체 용어 200개** 가운데 **1~50번(5단원 × 10개)**만 우선 공개한다.
+- 기존 Track 5는 TypeScript 예약 트랙이다. Track 1~11의 ID·제목·기존 기록을 변경하지 않고 신규 Track 12로 추가한다.
+- 원고 정본: `live/vibe-terms/terms-001-005.json`부터 `terms-046-050.json`까지 총 10개 파일.
+- 한 용어의 다섯 요소: ① 쉬운 뜻 ② 실제 앱 개발 예시 ③ 헷갈리는 용어와 비교 ④ AI 오판 판별 문제+정답 해설 ⑤ 복사 가능한 Codex 작업 지시문.
+- 컴파일: `python tools/build_content.py`에서 기존 Track 3 → 신규 Track 12 → Track 4 순으로 실행. Track 4 빌더가 합성본 `live/reader.html`을 생성한다.
+- 격리된 새 트랙 표시: `live/vibe-terms/reader.js`, `reader.css`. 기존 독서 화면·북마크·메모·완료 기록 구조를 재사용한다.
+- 테스트: `python tools/test_track12_glossary.py` 및 `python tools/test_track12_browser.py`. 기존 3·4 트랙 검증과 전체 뷰어 검증은 유지한다.
+- 배포: 기존 `Publish CodingRoadmap lessons and screen` 성공 + `live/channel.json` 최신 커밋/해시 확인이 필요하다. 네이티브 셸은 미변경이므로 일반 교재 업데이트는 기존 수신 절차를 따른다.
+- 51~200번 원고는 아직 미구현이다. 1~50번 게시를 200개 전체 완료로 표기하지 않는다.
+- 실제 Galaxy 기기 설치·수신 검증을 실행하지 않았다면 `NOT_RUN`으로 보고한다.

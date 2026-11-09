@@ -1,0 +1,30 @@
+/* VIBE_GLOSSARY_V1 — styles scoped to the new vocabulary track. */
+.reader-flow .vibe-lesson{padding-bottom:24px}
+.reader-flow .vibe-intro{font-size:12px;letter-spacing:.02em;color:#bba98f;margin:0 0 12px}
+.reader-flow .vibe-card{
+  margin:0 0 14px;padding:15px 16px 16px;border:1px solid #4a392e;
+  border-radius:13px;background:#201912;break-inside:auto;-webkit-column-break-inside:auto
+}
+.reader-flow .vibe-card h3{
+  color:#e9bd80;font:800 16px/1.4 system-ui,-apple-system,"Noto Sans KR",sans-serif;
+  letter-spacing:-.02em;margin:0 0 9px
+}
+.reader-flow .vibe-card p{
+  font-size:var(--readerBody);line-height:var(--readerLine);color:#f0e6d9;
+  overflow-wrap:anywhere
+}
+.reader-flow .vibe-meaning{border-left:4px solid #dfae70;background:#282015}
+.reader-flow .vibe-example{border-left:4px solid #8fa983}
+.reader-flow .vibe-contrast{border-left:4px solid #97a0c2}
+.reader-flow .vibe-quiz{border-color:#ba945d}
+.reader-flow .vibe-answer{margin-top:12px;padding:10px 12px;border-radius:9px;background:#342819}
+.reader-flow .vibe-answer summary{cursor:pointer;font-weight:800;color:#f0c986;min-height:33px}
+.reader-flow .vibe-answer p{margin-top:8px;color:#e4dacf}
+.reader-flow .vibe-copy{border-color:#796645;background:#231d16}
+.reader-flow .vibe-hint{color:#c6b6a1;font-size:13px;margin-bottom:9px}
+.reader-flow .vibe-prompt{white-space:pre-wrap;padding:12px;border-radius:9px;background:#16120e;border:1px solid #4a3c2e}
+.reader-flow .vibe-copy-button{
+  display:inline-flex;align-items:center;justify-content:center;min-height:43px;
+  margin-top:12px;padding:10px 17px;border:1px solid #b48d58;border-radius:10px;
+  background:#b48d58;color:#17120c;font-weight:850;font-size:14px
+}
