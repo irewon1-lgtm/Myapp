@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-09T03:02:33.696617Z",
+  "updatedAt": "2026-11-09T03:42:36.709751Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -16105,9 +16105,9 @@
     "23fxnbkmm625": {
       "id": "23fxnbkmm625",
       "title": "LG 그램 15인치 사무용 노트북 판매합니다",
-      "price": 580000,
-      "previousPrice": null,
-      "changeType": "new",
+      "price": 570000,
+      "previousPrice": 580000,
+      "changeType": "price_drop",
       "city": "안양시",
       "location": "석수동",
       "cpuHint": null,
@@ -16125,7 +16125,7 @@
       "postedAt": "2026-11-07T03:15:24.833Z",
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-15%EC%9D%B8%EC%B9%98-%EC%82%AC%EB%AC%B4%EC%9A%A9-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-23fxnbkmm625/",
       "firstAlertedAt": "2026-11-07T03:22:42.541182Z",
-      "lastCandidateAt": "2026-11-07T03:22:42.541182Z"
+      "lastCandidateAt": "2026-11-09T03:42:36.709751Z"
     },
     "bwbokfi12m1x": {
       "id": "bwbokfi12m1x",
@@ -16355,9 +16355,9 @@
     "u9mcd3vbr9u9": {
       "id": "u9mcd3vbr9u9",
       "title": "LG 그램 노트북 14",
-      "price": 1000000,
-      "previousPrice": null,
-      "changeType": "new",
+      "price": 940000,
+      "previousPrice": 1000000,
+      "changeType": "price_drop",
       "city": "군포시",
       "location": "수리동",
       "cpuHint": null,
@@ -16375,7 +16375,7 @@
       "postedAt": "2026-11-07T09:54:56.269Z",
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-14-u9mcd3vbr9u9/",
       "firstAlertedAt": "2026-11-07T10:02:43.630648Z",
-      "lastCandidateAt": "2026-11-07T10:02:43.630648Z"
+      "lastCandidateAt": "2026-11-09T03:42:36.709751Z"
     },
     "zhx87vvd32st": {
       "id": "zhx87vvd32st",
@@ -17326,6 +17326,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%AF%B8%EA%B0%9C%EB%B4%89-hp-zbook-ultra-14-g1a-c80q9pt-%EB%9D%BC%EC%9D%B4%EC%A0%A0-ai-max-pro-395-128gb-xquzazsc3r4u/",
       "firstAlertedAt": "2026-11-09T03:02:33.696617Z",
       "lastCandidateAt": "2026-11-09T03:02:33.696617Z"
+    },
+    "h6ziyyxauit6": {
+      "id": "h6ziyyxauit6",
+      "title": "기가바이트 G6 게이밍 노트북 RTX4060",
+      "price": 941000,
+      "previousPrice": 990000,
+      "changeType": "price_drop",
+      "city": "의왕시",
+      "location": "청계동",
+      "cpuHint": "i7-13620H",
+      "gpuHint": "RTX4060",
+      "vramGB": 8,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "메모리16GB",
+      "vramEvidence": "8GB GDDR6",
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 1024,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2025-12-30T10:12:37.089Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EA%B8%B0%EA%B0%80%EB%B0%94%EC%9D%B4%ED%8A%B8-g6-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-rtx4060-h6ziyyxauit6/",
+      "firstAlertedAt": "2026-11-09T03:42:36.709751Z",
+      "lastCandidateAt": "2026-11-09T03:42:36.709751Z"
     }
   }
 }
