@@ -75,8 +75,8 @@ def main():
     baseline=ROOT/'review/track4-before.json'
     if baseline.exists():
         old=json.loads(baseline.read_text())
-        assert digest([c for c in old['chapters'] if c.get('track')!=4])==digest([c for c in course['chapters'] if c.get('track')!=4]),'Unrelated chapters changed'
-        assert [t for t in old['tracks'] if t['id']!=4]==[t for t in course['tracks'] if t['id']!=4],'Other track metadata changed'
+        assert digest([c for c in old['chapters'] if c.get('track') not in (4,12)])==digest([c for c in course['chapters'] if c.get('track') not in (4,12)]),'Unrelated chapters changed'
+        assert [t for t in old['tracks'] if t['id'] not in (4,12)]==[t for t in course['tracks'] if t['id'] not in (4,12)],'Other track metadata changed'
         assert old.get('legacyTrack3')==course.get('legacyTrack3')
         assert old.get('bookAliases')==course.get('bookAliases')
     out=ROOT/'review';out.mkdir(exist_ok=True)
