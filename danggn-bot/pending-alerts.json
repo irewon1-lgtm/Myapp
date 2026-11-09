@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-09T08:42:31.119683Z",
+  "updatedAt": "2026-11-09T09:22:31.326133Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -15004,9 +15004,9 @@
     },
     "i3x76c185tp2": {
       "id": "i3x76c185tp2",
-      "title": "맥북프로14 M5프로 램24GB. SSD1TB 블랙 미개봉",
-      "price": 4100000,
-      "previousPrice": 4850000,
+      "title": "맥북프로14 M5프로 18코어cpu 20코어gpu 램24GB. SSD1TB 블랙 미개봉",
+      "price": 3990000,
+      "previousPrice": 4100000,
       "changeType": "price_drop",
       "city": "안양시",
       "location": "안양1동",
@@ -15023,9 +15023,9 @@
       "llmCapability": "SPEC_CHECK_REQUIRED",
       "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
       "postedAt": "2026-11-04T08:36:53.323Z",
-      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C14-m5%ED%94%84%EB%A1%9C-%EB%9E%A824gb-ssd1tb-%EB%B8%94%EB%9E%99-%EB%AF%B8%EA%B0%9C%EB%B4%89-i3x76c185tp2/",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C14-m5%ED%94%84%EB%A1%9C-18%EC%BD%94%EC%96%B4cpu-20%EC%BD%94%EC%96%B4gpu-%EB%9E%A824gb-ssd1tb-%EB%B8%94%EB%9E%99-%EB%AF%B8%EA%B0%9C%EB%B4%89-i3x76c185tp2/",
       "firstAlertedAt": "2026-11-04T08:42:36.249322Z",
-      "lastCandidateAt": "2026-11-08T02:02:45.865612Z"
+      "lastCandidateAt": "2026-11-09T09:22:31.326133Z"
     },
     "m8iyomza6eip": {
       "id": "m8iyomza6eip",
@@ -17481,8 +17481,8 @@
       "id": "qx38jghkdbnn",
       "title": "맥북프로14 M5프로 램24GB. SSD1TB. 블랙색상 믹ㅓ봉",
       "price": 3990000,
-      "previousPrice": null,
-      "changeType": "new",
+      "previousPrice": 3990000,
+      "changeType": "price_drop",
       "city": "안양시",
       "location": "안양1동",
       "cpuHint": null,
@@ -17500,7 +17500,32 @@
       "postedAt": "2026-11-09T08:29:46.151Z",
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C14-m5%ED%94%84%EB%A1%9C-%EB%9E%A824gb-ssd1tb-%EB%B8%94%EB%9E%99%EC%83%89%EC%83%81-%EB%AF%B9-%EB%B4%89-qx38jghkdbnn/",
       "firstAlertedAt": "2026-11-09T08:42:31.119683Z",
-      "lastCandidateAt": "2026-11-09T08:42:31.119683Z"
+      "lastCandidateAt": "2026-11-09T09:22:31.326133Z"
+    },
+    "qyandkf76ohz": {
+      "id": "qyandkf76ohz",
+      "title": "미개봉)맥북프로14  램48gb  ssd1tg 15코어 16코어 블랙 cto",
+      "price": 4350000,
+      "previousPrice": 4400000,
+      "changeType": "price_drop",
+      "city": "안양시",
+      "location": "안양1동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 48,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "램48gb",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "postedAt": "2026-10-31T06:19:44.279Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%AF%B8%EA%B0%9C%EB%B4%89-%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C14-%EB%9E%A848gb-ssd1tg-15%EC%BD%94%EC%96%B4-16%EC%BD%94%EC%96%B4-%EB%B8%94%EB%9E%99-cto-qyandkf76ohz/",
+      "firstAlertedAt": "2026-11-09T09:22:31.326133Z",
+      "lastCandidateAt": "2026-11-09T09:22:31.326133Z"
     }
   }
 }
