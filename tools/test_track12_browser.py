@@ -27,7 +27,8 @@ def normalize(s):
 
 
 def fixture(browser, width, height):
-    page = browser.new_page(viewport={"width": width, "height": height})
+    page = browser.new_page(viewport={"width": width, "height": height},
+                            has_touch=True, is_mobile=True)
     page.on("pageerror", lambda err: ERRORS.append(str(err)))
     bridge = """window.testSaved='{}';
 window.RoadmapNative={
@@ -155,6 +156,98 @@ def navigation_and_persistence(page):
     CHECKS.append({"test": "five chapters are continuous 1-50 and stop at the last term", "status": "PASS"})
 
 
+
+def drag_touch(page, session, *, start_x, start_y, end_x, end_y, steps=7):
+    """Dispatch genuine Chrome touch events; not artificial DOM event handlers."""
+    session.send("Input.dispatchTouchEvent", {
+        "type": "touchStart",
+        "touchPoints": [{"x": start_x, "y": start_y, "id": 1}],
+    })
+    for k in range(1, steps + 1):
+        f = k / steps
+        session.send("Input.dispatchTouchEvent", {
+            "type": "touchMove",
+            "touchPoints": [{"x": start_x + (end_x-start_x)*f,
+                             "y": start_y + (end_y-start_y)*f, "id": 1}],
+        })
+        page.wait_for_timeout(9)
+    session.send("Input.dispatchTouchEvent", {"type": "touchEnd", "touchPoints": []})
+    page.wait_for_timeout(65)
+
+
+def swipe_term(page, session, direction):
+    box=page.locator("#vibe-book-viewport").bounding_box()
+    assert box and box["width"]>250 and box["height"]>240
+    y=box["y"]+min(175,box["height"]*.30)
+    x0=box["x"]+box["width"]*(.78 if direction=="left" else .22)
+    x1=box["x"]+box["width"]*(.22 if direction=="left" else .78)
+    drag_touch(page,session,start_x=x0,start_y=y,end_x=x1,end_y=y+3)
+
+
+def touch_gesture_tests(page):
+    open_term(page,1)
+    session=page.context.new_cdp_session(page)
+    try:
+        assert page.evaluate("matchMedia('(pointer: coarse)').matches"), "Touch emulation inactive"
+
+        # It must be possible to read tall text vertically without changing terms.
+        rect=page.locator("#vibe-book-viewport").bounding_box()
+        start=rect["y"]+min(320,rect["height"]*.60)
+        end=rect["y"]+min(105,rect["height"]*.18)
+        x=rect["x"]+rect["width"]*.48
+        drag_touch(page,session,start_x=x,start_y=start,end_x=x+4,end_y=end)
+        assert page.evaluate("state.location")=="t12-vibe-001", "Vertical scroll switched terms"
+        assert page.evaluate("document.getElementById('vibe-book-viewport').scrollTop")>15, (
+            "Touch vertical scrolling must remain enabled"
+        )
+        CHECKS.append({"test":"real vertical touch scroll stays within one term","status":"PASS"})
+
+        # A very short or diagonal touch must NOT turn the page.
+        rect=page.locator("#vibe-book-viewport").bounding_box()
+        x=rect["x"]+rect["width"]*.6
+        y=rect["y"]+min(150,rect["height"]*.28)
+        drag_touch(page,session,start_x=x,start_y=y,end_x=x-18,end_y=y+2)
+        assert page.evaluate("state.location")=="t12-vibe-001", "Accidental short swipe"
+        drag_touch(page,session,start_x=x,start_y=y,end_x=x-64,end_y=y-120)
+        assert page.evaluate("state.location")=="t12-vibe-001", "Diagonal scroll turned a page"
+        CHECKS.append({"test":"short and diagonal gestures do not switch terms","status":"PASS"})
+
+        # Swipe left across every vocabulary item; including chapter boundaries.
+        for number in range(1,50):
+            assert page.evaluate("state.location")==f"t12-vibe-{number:03d}",number
+            swipe_term(page,session,"left")
+            assert page.evaluate("state.location")==f"t12-vibe-{number+1:03d}",(
+                number,"left swipe must open the NEXT term"
+            )
+            assert page.evaluate("document.querySelectorAll('.vibe-book-page').length")==1
+        swipe_term(page,session,"left")
+        assert page.evaluate("state.location")=="t12-vibe-050", "51st term is not published"
+        CHECKS.append({"test":"49 native touch swipes forward (01 through 50) and right endpoint","status":"PASS"})
+
+        # Swipe right across every term, including chapter boundaries.
+        for number in range(50,1,-1):
+            swipe_term(page,session,"right")
+            assert page.evaluate("state.location")==f"t12-vibe-{number-1:03d}",(
+                number,"right swipe must open the PREVIOUS term"
+            )
+        swipe_term(page,session,"right")
+        assert page.evaluate("state.location")=="t12-vibe-001", "Cannot swipe before term 1"
+        CHECKS.append({"test":"49 native touch swipes backward (50 through 01) and left endpoint","status":"PASS"})
+
+        # Swipes on a control must not activate the page-navigation gesture.
+        button=page.locator(".vibe-book-copy")
+        page.evaluate("document.querySelector('.vibe-book-copy').scrollIntoView({block:'center'})")
+        box=button.bounding_box()
+        assert box, "Codex copy control absent"
+        x=box["x"]+box["width"]*.55
+        y=box["y"]+box["height"]*.50
+        drag_touch(page,session,start_x=x,start_y=y,end_x=max(5,x-100),end_y=y)
+        assert page.evaluate("state.location")=="t12-vibe-001", "Touching a button changed pages"
+        CHECKS.append({"test":"copy button is excluded from swipe navigation","status":"PASS"})
+    finally:
+        session.detach()
+
+
 def main():
     assert len(TERMS) == 50
     with sync_playwright() as pw:
@@ -175,6 +268,7 @@ def main():
                     page.screenshot(path=str(OUT / f"track12-darkbook-top-{n:03d}.png"))
             if width == 360:
                 navigation_and_persistence(page)
+                touch_gesture_tests(page)
                 open_term(page, 1)
                 page.evaluate("""() => {
                    const v=document.getElementById('vibe-book-viewport');
@@ -189,6 +283,8 @@ def main():
         "scope": "real Chromium; approved dark book mockup 4; not a physical Android test",
         "terms": len(TERMS), "viewports": [[360,800],[800,1280]],
         "singleTermVerticalPages": 50,
+        "genuineAndroidStyleTouchSwipes": 98,
+        "verticalTouchScrollPreserved": True,
         "fiveSectionsPerTerm": True, "paragraphBoxesRemoved": True,
         "tests": len(CHECKS), "checks": CHECKS,
         "physicalDevice": "NOT_RUN", "apkRebuild": "NOT_REQUIRED",
