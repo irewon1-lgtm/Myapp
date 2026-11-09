@@ -125,8 +125,10 @@
         saveScroll();
       },260);
     },{passive:true});
-    document.body.dataset.vibeReady='1';
-    document.body.dataset.vibeTerm=String(currentTerm().vibe.number);
+    if(document.body&&document.body.dataset){
+      document.body.dataset.vibeReady='1';
+      document.body.dataset.vibeTerm=String(currentTerm().vibe.number);
+    }
   };
 
   doAction=function(action,el){
