@@ -18,7 +18,14 @@ def fixture(browser,width=360,height=800,state=None):
     page=browser.new_page(viewport={'width':width,'height':height},device_scale_factor=1)
     page.on('pageerror',lambda error:ERRORS.append(str(error)))
     bridge='window.testSaved='+json.dumps(json.dumps(state or {},ensure_ascii=False))+';window.RoadmapNative={getState:()=>window.testSaved,saveState:s=>{window.testSaved=s},getLegacy:()=>"{}",getStatus:()=>"검증용 브리지",ready:()=>{}};'
-    page.set_content(SOURCE.replace('<script>','<script>'+bridge,1),wait_until='domcontentloaded')
+    # Use a stable HTTP origin for Chromium sandboxed srcdoc iframe navigation.
+    # about:blank + set_content crashes Chromium in GetCompatibleSandboxedSiteInstance
+    # on some CI runners; route.fulfill keeps the same HTML and native mock.
+    fixture_url='http://127.0.0.1:18762/live/reader.html'
+    page.route(fixture_url,lambda route:route.fulfill(
+        status=200,body=SOURCE,content_type='text/html; charset=utf-8'))
+    page.add_init_script(bridge)
+    page.goto(fixture_url,wait_until='domcontentloaded')
     return page
 
 
