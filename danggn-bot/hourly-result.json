@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-09T10:42:40.939Z",
+  "generatedAt": "2026-11-09T11:22:34.136Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,6 +55,28 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
+            "id": "/kr/buy-sell/asus-rog-strix-g16-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-rtx4060-i9-13%EC%84%B8%EB%8C%80-16g%EB%9E%A8-p2mndjzz4b3g/",
+            "href": "/kr/buy-sell/asus-rog-strix-g16-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-rtx4060-i9-13%EC%84%B8%EB%8C%80-16g%EB%9E%A8-p2mndjzz4b3g/",
+            "title": "ASUS ROG Strix G16 게이밍 노트북 RTX4060 i9 13세대 16g램",
+            "content": "ASUS ROG Strix G16 게이밍 노트북 판매해요. 고사양 게임도 문제없이 즐길 수 있는 성능을 갖추고 있어요. 사진에서 보이는 것처럼 구성품 모두 잘 갖춰져 있답니다. 이 노트북으로 쾌적한 게이밍 환경을 경험해보세요.",
+            "price": "1500000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/f9ddba33-c5ac-4e8a-81a7-33a0ea736f5e.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-10-14T00:45:28.048Z",
+            "boostedAt": "2026-11-09T11:02:14.846Z",
+            "region": {
+              "name": "입북동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 37.2986861,
+                "longitude": 126.9532446
+              }
+            ]
+          },
+          {
             "id": "/kr/buy-sell/%EA%B8%B0%EA%B0%80%EB%B0%94%EC%9D%B4%ED%8A%B8-%EA%B2%8C%EC%9D%B4%EB%B0%8D-a16-rtx-5070-32gb-yiunukgb2os8/",
             "href": "/kr/buy-sell/%EA%B8%B0%EA%B0%80%EB%B0%94%EC%9D%B4%ED%8A%B8-%EA%B2%8C%EC%9D%B4%EB%B0%8D-a16-rtx-5070-32gb-yiunukgb2os8/",
             "title": "기가바이트 게이밍 A16(RTX 5070/32GB)",
@@ -97,39 +119,17 @@
                 "longitude": 126.9699458
               }
             ]
-          },
-          {
-            "id": "/kr/buy-sell/hp-%EC%98%A4%EB%A9%98-16-ai450-5070-%EB%AF%B8%EA%B0%9C%EB%B4%89-qoozyzycbg7i/",
-            "href": "/kr/buy-sell/hp-%EC%98%A4%EB%A9%98-16-ai450-5070-%EB%AF%B8%EA%B0%9C%EB%B4%89-qoozyzycbg7i/",
-            "title": "HP 오멘 16 AI450 5070 미개봉",
-            "content": "강력한 성능과 AI 기능을 기반으로 제작된 압도적인 퍼포먼스를 자랑하는 게이밍 노트북입니다. AMD Ryzen AI 7 450 CPU와 NVIDIA RTX 5070 그래픽카드가 탑재되어 쾌적한 게이밍 환경을 제공합니다. 165Hz 주사율과 WQXGA 해상도의 OLED 디스플레이로 생생한 화면을 경험할 수 있습니다. 게임을 더욱 즐겁게 플레이할 수 있도록 도와주는 매력적인 노트북이에요.\n\n오멘 하이퍼엑스 16 신상 미개봉 제품입니다.\n\n씨피유 AI 450 \n램 24기가(단일램, 2슬롯 확장가능)\nSSD 512기가\n그래픽  5070 TGP 115W\n윈도우11 (기본으로 깔려있습니다)\n\n평촌학원가 투썸플레이스쪽(버거킹 옆) 직거래 합니다.\n평일 오전엔 자느라 연락이 잘 안될 수 있습니다",
-            "price": "2300000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/ff3f139c-f5fa-4f19-a65a-fb939eecac85.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": false,
-            "createdAt": "2026-10-30T12:17:38.464Z",
-            "boostedAt": "2026-11-09T04:18:44.017Z",
-            "region": {
-              "name": "내손동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 37.3824895,
-                "longitude": 126.9611289
-              }
-            ]
           }
         ],
         "dateFieldSnippets": [
+          "createdAt\":\"2026-10-14T00:45:28.048Z\",\"boostedAt\":\"2026-11-09T11:02:14.846Z\",\"region\":{\"name\":\"입북동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-15T01:56:01.727Z\",\"boostedAt\":\"2026-11-09T06:07:47.788Z\",\"region\":{\"name\":\"호계동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-08-13T13:06:35.000Z\",\"boostedAt\":\"2026-11-09T05:03:16.837Z\",\"region\":{\"name\":\"관양동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-30T12:17:38.464Z\",\"boostedAt\":\"2026-11-09T04:18:44.017Z\",\"region\":{\"name\":\"내손동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-10-31T02:15:16.193Z\",\"boostedAt\":\"2026-11-08T01:37:38.958Z\",\"region\":{\"name\":\"평촌동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-11-01T07:50:36.303Z\",\"boostedAt\":\"2026-11-07T01:30:05.586Z\",\"region\":{\"name\":\"정자동\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":278,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"기가바이트 게이밍 A16(RTX 5070/32GB)\",",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":278,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"ASUS ROG Strix G16 게이밍 노트북 RTX",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -137,24 +137,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1254,
-    "globalUniqueListings": 494,
-    "duplicateListingsRemoved": 760,
-    "detailQueueStart": 24,
-    "freshDetailTasks": 24,
+    "searchUniqueListings": 1262,
+    "globalUniqueListings": 485,
+    "duplicateListingsRemoved": 777,
+    "detailQueueStart": 18,
+    "freshDetailTasks": 18,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 24,
-    "detailSucceeded": 24,
+    "detailRequestsExecuted": 18,
+    "detailSucceeded": 18,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 494,
+    "postedAtResolvedFromSearch": 485,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 0,
-    "scanDurationMs": 107593,
+    "candidateCount": 1,
+    "scanDurationMs": 100067,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +166,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 278,
-        "durationMs": 12015
+        "uniqueListings": 287,
+        "durationMs": 12086
       },
       {
         "city": "의왕시",
@@ -182,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 363,
-        "durationMs": 25326
+        "uniqueListings": 356,
+        "durationMs": 25664
       },
       {
         "city": "안양시",
@@ -200,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 367,
-        "durationMs": 35301
+        "uniqueListings": 372,
+        "durationMs": 34962
       },
       {
         "city": "과천시",
@@ -212,17 +212,53 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 246,
-        "durationMs": 6384
+        "uniqueListings": 247,
+        "durationMs": 6018
       }
     ],
-    "finalCandidateCount": 0,
+    "finalCandidateCount": 1,
     "stateItemCount": 5000,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 107600
+    "durationMs": 100074
   },
-  "candidates": []
+  "candidates": [
+    {
+      "id": "m863pdr5prvq",
+      "changeType": "new",
+      "previousPrice": null,
+      "price": 600000,
+      "priceDropPercent": null,
+      "city": "안양시",
+      "location": "비산1동",
+      "regionPath": "경기도 안양시 동안구 비산1동",
+      "title": "LG 그램 14Z95P-GALGL I5(11세대)팝니다",
+      "modelHint": "LG 그램 14Z95P-GALGL I5(11세대)팝니다",
+      "cpuHint": null,
+      "cpuBaselinePass": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": 256,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "specConfidence": "needs_review",
+      "postedAt": "2026-11-09T11:14:08.140Z",
+      "boostedAt": "2026-11-09T11:14:08.138Z",
+      "status": "Ongoing",
+      "description": "가볍고 성능 좋은 LG 그램 노트북이에요. 14인치 화이트 입니다.\n11세대 인텔 코어 i5 프로세서\n16GB DDR4 RAM\n256GB SSD \n휴대하기 좋은 가벼운 무게로 어디든 함께하기 좋아요.\n윈도우11프로설치 되어있고요.\n오피스2019프로랑 한컴오피스2022정품 설치되어 있습니다.\n안양(임곡중)에서 직거래하고요.\n택배거래시 착불입니다.",
+      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-14z95p-galgl-i5-11%EC%84%B8%EB%8C%80-%ED%8C%9D%EB%8B%88%EB%8B%A4-m863pdr5prvq/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": "클론",
+      "mannerTemperature": 43.5
+    }
+  ]
 }

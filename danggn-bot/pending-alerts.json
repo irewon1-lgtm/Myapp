@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-09T10:42:41.006806Z",
+  "updatedAt": "2026-11-09T11:22:34.202458Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -17526,6 +17526,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%AF%B8%EA%B0%9C%EB%B4%89-%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C14-%EB%9E%A848gb-ssd1tg-15%EC%BD%94%EC%96%B4-16%EC%BD%94%EC%96%B4-%EB%B8%94%EB%9E%99-cto-qyandkf76ohz/",
       "firstAlertedAt": "2026-11-09T09:22:31.326133Z",
       "lastCandidateAt": "2026-11-09T09:22:31.326133Z"
+    },
+    "m863pdr5prvq": {
+      "id": "m863pdr5prvq",
+      "title": "LG 그램 14Z95P-GALGL I5(11세대)팝니다",
+      "price": 600000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "비산1동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": 256,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-09T11:14:08.140Z",
+      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-14z95p-galgl-i5-11%EC%84%B8%EB%8C%80-%ED%8C%9D%EB%8B%88%EB%8B%A4-m863pdr5prvq/",
+      "firstAlertedAt": "2026-11-09T11:22:34.202458Z",
+      "lastCandidateAt": "2026-11-09T11:22:34.202458Z"
     }
   }
 }
