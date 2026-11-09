@@ -11,7 +11,7 @@ import re
 from compile_track3_book import blocks_from_markdown, inline
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
-LABEL = '0.12.0 · 바이브 코딩 필수 용어 1~50 · 다크 책형'
+LABEL = '0.12.1 · 바이브 코딩 1~50 · 좌우 스와이프 넘김 복구'
 TITLES = [
     '웹페이지는 어떻게 내 화면에 나타날까?',
     'HTML로 내용의 구조와 의미 만들기',
