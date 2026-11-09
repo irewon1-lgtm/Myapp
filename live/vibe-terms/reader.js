@@ -43,7 +43,7 @@
     const output=inheritedReader();
     if(chapters[current.c].track!==12)return output;
     return output.replace(
-      /<button data-action="practice">[\\s\\S]*?<\\/button>/,
+      /<button data-action="practice">[\s\S]*?<\/button>/,
       '<button data-action="vibe-copy" aria-label="AI 지시문 복사">▣<span>지시문 복사</span></button>'
     );
   };
