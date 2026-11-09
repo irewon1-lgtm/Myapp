@@ -1,7 +1,7 @@
 name: Verify Vibe Coding Track 12 (terms 1-50)
 on:
   push:
-    branches: [feature/vibe-terms-001-050-20261110]
+    branches: [feature/vibe-terms-001-050-20261110, feature/vibe-book-dark-50-20261110]
     paths:
       - 'live/vibe-terms/**'
       - 'tools/compile_track12_glossary.py'
@@ -59,6 +59,6 @@ jobs:
           path: |
             review/track12-vibe-source-tests.json
             review/track12-vibe-browser-tests.json
-            review/track12-term-*-phone.png
+            review/track12-darkbook-*.png
             review/track3-book-compile.json
             review/track4-book-compile.json
