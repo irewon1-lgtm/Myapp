@@ -4,6 +4,8 @@ No claim about a physical Android installation or automatic app update.
 """
 from __future__ import annotations
 import json
+import os
+import shutil
 from pathlib import Path
 from urllib.parse import unquote
 
@@ -45,7 +47,11 @@ def open_term(page, n):
 
 def main():
     with sync_playwright() as pw:
-        browser = pw.chromium.launch(headless=True)
+        executable = (os.environ.get("CHROME") or shutil.which("chromium")
+                      or shutil.which("google-chrome") or shutil.which("google-chrome-stable"))
+        assert executable, "System Chromium must be available"
+        browser = pw.chromium.launch(executable_path=executable, headless=True,
+                                     args=["--no-sandbox", "--disable-dev-shm-usage"])
         for width, height in ((360, 800), (800, 1280)):
             page = fixture(browser, width, height)
             assert page.evaluate("COURSE.tracks.some(t=>t.id===12&&t.available)")
