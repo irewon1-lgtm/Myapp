@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-09T13:22:43.644576Z",
+  "updatedAt": "2026-11-09T14:02:37.790266Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -14605,8 +14605,8 @@
     "uf51gcp2usjx": {
       "id": "uf51gcp2usjx",
       "title": "LG 그램 프로 AI 16인치 울트라5 16GB 256GB (윈도우 포함)",
-      "price": 1440000,
-      "previousPrice": 1450000,
+      "price": 1380000,
+      "previousPrice": 1440000,
       "changeType": "price_drop",
       "city": "군포시",
       "location": "오금동",
@@ -14625,7 +14625,7 @@
       "postedAt": "2026-11-03T11:14:23.934Z",
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%ED%94%84%EB%A1%9C-ai-16%EC%9D%B8%EC%B9%98-%EC%9A%B8%ED%8A%B8%EB%9D%BC5-16gb-256gb-%EC%9C%88%EB%8F%84%EC%9A%B0-%ED%8F%AC%ED%95%A8-uf51gcp2usjx/",
       "firstAlertedAt": "2026-11-03T11:51:57.973161Z",
-      "lastCandidateAt": "2026-11-03T14:32:21.703273Z"
+      "lastCandidateAt": "2026-11-09T14:02:37.790266Z"
     },
     "up4s1y448e6a": {
       "id": "up4s1y448e6a",
@@ -17626,6 +17626,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-15-6%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-%EB%85%B8%ED%8A%B8%EB%B6%81-ssd-%ED%83%91%EC%9E%AC-%EC%9D%B8%EA%B0%95-%EB%AC%B8%EC%84%9C%EC%9A%A9-%EA%B3%B5%EC%9E%A5%EC%B4%88%EA%B8%B0%ED%99%94-%EC%99%84%EB%A3%8C-n28ee1kdxun5/",
       "firstAlertedAt": "2026-11-09T13:22:43.644576Z",
       "lastCandidateAt": "2026-11-09T13:22:43.644576Z"
+    },
+    "2pjnapp9e7n4": {
+      "id": "2pjnapp9e7n4",
+      "title": "2018 맥북프로 13 터치바 i5 16GB 256GB 판매합니다",
+      "price": 500000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "산본2동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "메모리: 16GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": 256,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-09T13:27:38.493Z",
+      "url": "https://www.daangn.com/kr/buy-sell/2018-%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C-13-%ED%84%B0%EC%B9%98%EB%B0%94-i5-16gb-256gb-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-2pjnapp9e7n4/",
+      "firstAlertedAt": "2026-11-09T14:02:37.790266Z",
+      "lastCandidateAt": "2026-11-09T14:02:37.790266Z"
     }
   }
 }
