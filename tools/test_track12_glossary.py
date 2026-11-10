@@ -1,4 +1,4 @@
-"""Contract tests for 100 terms and lossless preservation of first 50."""
+"""Contract tests for 150 terms and lossless preservation of approved first 100."""
 from __future__ import annotations
 import hashlib
 import json
@@ -8,7 +8,7 @@ import sys
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "tools"))
-from compile_track12_glossary import EDITION, LEGACY_EDITION, LEGACY_TERMS_SHA256, UNIT_TITLES, digest, load_terms
+from compile_track12_glossary import EDITION, LEGACY_EDITION, SECOND_EDITION, LEGACY_TERMS_SHA256, SECOND_TERMS_SHA256, UNIT_TITLES, digest, load_terms
 
 
 def main():
@@ -18,11 +18,11 @@ def main():
     assert len(new_track) == 1
     assert new_track[0]["available"] is True and new_track[0]["edition"] == EDITION
     chapters = [c for c in course["chapters"] if c["track"] == 12]
-    assert len(chapters) == 10 and [c["title"] for c in chapters] == list(UNIT_TITLES)
-    assert [len(c["pages"]) for c in chapters] == [10] * 10
+    assert len(chapters) == 15 and [c["title"] for c in chapters] == list(UNIT_TITLES)
+    assert [len(c["pages"]) for c in chapters] == [10] * 15
     pages = [p for c in chapters for p in c["pages"]]
-    assert [p["id"] for p in pages] == [f"t12-vibe-{n:03d}" for n in range(1, 101)]
-    assert [c["id"] for c in chapters] == [f"t12-vibe-ch{n:02d}" for n in range(1, 11)]
+    assert [p["id"] for p in pages] == [f"t12-vibe-{n:03d}" for n in range(1, 151)]
+    assert [c["id"] for c in chapters] == [f"t12-vibe-ch{n:02d}" for n in range(1, 16)]
     for i, (p, term) in enumerate(zip(pages, terms), start=1):
         assert p["kind"] == "vibe-term" and p["vibe"] == term, (i, "source mismatch")
         assert p["paragraphs"] == [term["explain"]]
@@ -33,10 +33,12 @@ def main():
     assert all(t["id"] in list(range(1, 13)) for t in course["tracks"])
 
     audit = course["vibeGlossaryAudit"]
-    assert audit["schema"] == EDITION and audit["termCount"] == 100 and audit["unitCount"] == 10
+    assert audit["schema"] == EDITION and audit["termCount"] == 150 and audit["unitCount"] == 15
     assert audit["sourceSha256"] == digest(terms)
     assert audit["preservedFirst50SourceSha256"] == LEGACY_TERMS_SHA256
+    assert audit["preservedFirst100SourceSha256"] == SECOND_TERMS_SHA256
     assert digest(terms[:50]) == LEGACY_TERMS_SHA256
+    assert digest(terms[:100]) == SECOND_TERMS_SHA256
     assert audit["physicalDeviceTest"] == "NOT_RUN"
 
     html = (ROOT / "live/reader.html").read_text(encoding="utf-8")
@@ -63,15 +65,17 @@ def main():
         assert [t for t in old["tracks"] if t["id"] <= 11] == [
             t for t in course["tracks"] if t["id"] <= 11
         ], "Existing track metadata changed"
-        original_five = [c for c in old["chapters"] if c.get("track") == 12]
-        new_first_five = chapters[:5]
-        assert len(original_five) == 5
-        assert digest(original_five) == digest(new_first_five), (
-            "Previously approved 1-50 chapters, page IDs or text changed"
+        original_ten = [c for c in old["chapters"] if c.get("track") == 12]
+        new_first_ten = chapters[:10]
+        assert len(original_ten) == 10
+        assert digest(original_ten) == digest(new_first_ten), (
+            "Previously approved 1-100 chapters, page IDs or text changed"
         )
-        assert all(c["edition"] == LEGACY_EDITION for c in new_first_five)
-        assert all(c["edition"] == EDITION for c in chapters[5:])
-        assert audit["preservedFirst5ChaptersSha256"] == digest(original_five)
+        assert all(c["edition"] == LEGACY_EDITION for c in chapters[:5])
+        assert all(c["edition"] == SECOND_EDITION for c in chapters[5:10])
+        assert all(c["edition"] == EDITION for c in chapters[10:])
+        assert audit["preservedFirst5ChaptersSha256"] == digest(original_ten[:5])
+        assert audit["preservedFirst10ChaptersSha256"] == digest(original_ten)
         assert old.get("legacyTrack3") == course.get("legacyTrack3")
         assert old.get("bookAliases") == course.get("bookAliases")
         prior_still_intact = True
