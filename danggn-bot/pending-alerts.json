@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-10T22:22:00.013714Z",
+  "updatedAt": "2026-11-10T23:01:59.109396Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -14180,8 +14180,8 @@
     "rv7u4bs3wgud": {
       "id": "rv7u4bs3wgud",
       "title": "프레데터 트리톤 17X (i9/RTX 4090/32GB/1TB) 하이엔드 게이밍·AI 노트북",
-      "price": 3300000,
-      "previousPrice": 3400000,
+      "price": 3200000,
+      "previousPrice": 3300000,
       "changeType": "price_drop",
       "city": "안양시",
       "location": "관양동",
@@ -14200,7 +14200,7 @@
       "postedAt": "2026-11-02T11:02:30.505Z",
       "url": "https://www.daangn.com/kr/buy-sell/%ED%94%84%EB%A0%88%EB%8D%B0%ED%84%B0-%ED%8A%B8%EB%A6%AC%ED%86%A4-17x-i9-rtx-4090-32gb-1tb-%ED%95%98%EC%9D%B4%EC%97%94%EB%93%9C-%EA%B2%8C%EC%9D%B4%EB%B0%8D-ai-%EB%85%B8%ED%8A%B8%EB%B6%81-rv7u4bs3wgud/",
       "firstAlertedAt": "2026-11-02T11:12:28.896377Z",
-      "lastCandidateAt": "2026-11-08T09:03:07.820594Z"
+      "lastCandidateAt": "2026-11-10T23:01:59.109396Z"
     },
     "1v7ne7gyw8p8": {
       "id": "1v7ne7gyw8p8",
@@ -18151,6 +18151,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/hp-15%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%8B%A4%EB%B2%84-15%EC%9D%B8%EC%B9%98-i3-12%EC%84%B8%EB%8C%80-16%EA%B8%B0%EA%B0%80%EB%9E%A8-512-ssd-udk4235x7mrm/",
       "firstAlertedAt": "2026-11-10T16:21:59.600593Z",
       "lastCandidateAt": "2026-11-10T16:21:59.600593Z"
+    },
+    "ti3xogjo8tfh": {
+      "id": "ti3xogjo8tfh",
+      "title": "LG 그램 16인치 노트북 (화이트)",
+      "price": 800000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "호계1동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "램 16",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-10T22:30:16.725Z",
+      "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-16%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-ti3xogjo8tfh/",
+      "firstAlertedAt": "2026-11-10T23:01:59.109396Z",
+      "lastCandidateAt": "2026-11-10T23:01:59.109396Z"
     }
   }
 }
