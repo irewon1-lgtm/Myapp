@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-10T14:12:18.804Z",
+  "generatedAt": "2026-11-10T14:52:09.849Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,24 +55,46 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-17%EC%9D%B8%EC%B9%98-rtx5050-32gb-ssd1%ED%85%8C%EB%9D%BC-8ev2igaic2kb/",
-            "href": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-17%EC%9D%B8%EC%B9%98-rtx5050-32gb-ssd1%ED%85%8C%EB%9D%BC-8ev2igaic2kb/",
-            "title": "LG 그램 17인치 rtx5050 32gb ssd1테라",
-            "content": "외장그램 RTX5050 32gb 1tb\n\nlg그램프로 최상위 모델입니다.상태매우좋습니다.\n\r\n모델명: 17Z90TR-ED7AL(ED7WK)\r\n인텔/코어 울트라7\r\nRAM: 32GB\r\n용량: 1TB\r\n그래픽: NVIDIA GeForce RTX 5050 Laptop GPU\r\n윈도우 11 Home\r\n제조년월 2025 10\r\n무상보증3년 적용 제품입니다.\r\n기본가방포함 충전기 포함\rusb 연결어뎁터/ 키패드 스킨 /노트북 화면 및 전체 보호필름 붙어 있습니다.\n충전기에 살짝 찍힘 있습니다.",
-            "price": "2470000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/1792871541357ab86dd372519bc755a481c81c12eef9d9722f0faec2ba2ac76df53fa59469faa0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%EA%B0%A4%EB%A0%A5%EC%8B%9C%EB%B3%B5%EB%8B%A4%EC%84%AF-%ED%8F%AC%EB%A1%9C-%EC%9A%B87-32%EA%B8%B1-2tb-8qhg3jbx2z4b/",
+            "href": "/kr/buy-sell/%EA%B0%A4%EB%A0%A5%EC%8B%9C%EB%B3%B5%EB%8B%A4%EC%84%AF-%ED%8F%AC%EB%A1%9C-%EC%9A%B87-32%EA%B8%B1-2tb-8qhg3jbx2z4b/",
+            "title": "갤력시복다섯 포로 울7, 32긱, 2tb",
+            "content": "갤력시복다섯 포로 울7, 32긱, 2tb\n세부내용 두번째사진 참고",
+            "price": "1890000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/800e79c6-a5db-4170-9b4d-3950bae70f43.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
-            "isInstantBuyAvailable": false,
-            "createdAt": "2026-10-24T19:55:37.139Z",
-            "boostedAt": "2026-11-10T13:34:41.861Z",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-11-10T14:34:49.332Z",
+            "boostedAt": "2026-11-10T14:34:49.330Z",
             "region": {
-              "name": "갈현동"
+              "name": "대소읍"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 37.3938375,
-                "longitude": 126.9572632
+                "latitude": 36.9865008,
+                "longitude": 127.4678693
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-14%EC%9D%B8%EC%B9%98-i7-12%EC%84%B8%EB%8C%80-16gb-ssd-512gb-%EC%98%B5%ED%8B%B0%EC%BB%AC-%EB%B8%94%EB%9E%99-6yx7d7dmweew/",
+            "href": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-14%EC%9D%B8%EC%B9%98-i7-12%EC%84%B8%EB%8C%80-16gb-ssd-512gb-%EC%98%B5%ED%8B%B0%EC%BB%AC-%EB%B8%94%EB%9E%99-6yx7d7dmweew/",
+            "title": "LG 그램 14인치 (i7 12세대 / 16GB / SSD 512GB / 옵티컬 블랙)",
+            "content": "제품 주요 정보\n\n• 모델명: 14ZB90Q-G.AAC6U1\n\n• CPU: 인텔 12세대 7-1260P\n\n• RAM: 16GB\n\n• NVMe SSD 512GB\n\n• 그래픽: 인텔 Iris Xe\n\n• 화면: 14인치\n\n• 무게 1.2kg\n\n• i7 고성능 프로세서와 16GB RAM이 탑재 되어 문서작업, 영상시청, 대량 작업에 매우 원활합니다.\n\n가볍고 깨끗합니다\n\n충전기 같이 드려요.\n\n휴대성 좋습니다",
+            "price": "750000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/179239145585047f6dd8b71fd04c99ce6cc90ca953b38bd4b919644e7c07c01c67b0c76503a3a0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-10-19T06:34:24.159Z",
+            "boostedAt": "2026-11-10T13:10:48.347Z",
+            "region": {
+              "name": "군포2동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 37.3442422,
+                "longitude": 126.9359263
               }
             ]
           },
@@ -101,39 +123,17 @@
                 "longitude": 126.9229982
               }
             ]
-          },
-          {
-            "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-14%EC%9D%B8%EC%B9%98-i7-12%EC%84%B8%EB%8C%80-16gb-ssd-512gb-%EC%98%B5%ED%8B%B0%EC%BB%AC-%EB%B8%94%EB%9E%99-6yx7d7dmweew/",
-            "href": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-14%EC%9D%B8%EC%B9%98-i7-12%EC%84%B8%EB%8C%80-16gb-ssd-512gb-%EC%98%B5%ED%8B%B0%EC%BB%AC-%EB%B8%94%EB%9E%99-6yx7d7dmweew/",
-            "title": "LG 그램 14인치 (i7 12세대 / 16GB / SSD 512GB / 옵티컬 블랙)",
-            "content": "제품 주요 정보\n\n• 모델명: 14ZB90Q-G.AAC6U1\n\n• CPU: 인텔 12세대 7-1260P\n\n• RAM: 16GB\n\n• NVMe SSD 512GB\n\n• 그래픽: 인텔 Iris Xe\n\n• 화면: 14인치\n\n• 무게 1.2kg\n\n• i7 고성능 프로세서와 16GB RAM이 탑재 되어 문서작업, 영상시청, 대량 작업에 매우 원활합니다.\n\n가볍고 깨끗합니다\n\n충전기 같이 드려요.\n\n휴대성 좋습니다",
-            "price": "750000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/179239145585047f6dd8b71fd04c99ce6cc90ca953b38bd4b919644e7c07c01c67b0c76503a3a0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": false,
-            "createdAt": "2026-10-19T06:34:24.159Z",
-            "boostedAt": "2026-11-10T13:10:48.347Z",
-            "region": {
-              "name": "군포2동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 37.3442422,
-                "longitude": 126.9359263
-              }
-            ]
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-10-24T19:55:37.139Z\",\"boostedAt\":\"2026-11-10T13:34:41.861Z\",\"region\":{\"name\":\"갈현동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-09T12:24:05.508Z\",\"boostedAt\":\"2026-11-10T12:33:54.966Z\",\"region\":{\"name\":\"비산1동\"},\"category\":null,\"contentCoo",
+          "createdAt\":\"2026-11-10T14:34:49.332Z\",\"boostedAt\":\"2026-11-10T14:34:49.330Z\",\"region\":{\"name\":\"대소읍\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-19T06:34:24.159Z\",\"boostedAt\":\"2026-11-10T13:10:48.347Z\",\"region\":{\"name\":\"군포2동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-03-27T12:38:07.306Z\",\"boostedAt\":\"2026-11-10T12:46:39.528Z\",\"region\":{\"name\":\"부림동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-10-11T13:23:42.441Z\",\"boostedAt\":\"2026-11-10T08:40:51.481Z\",\"region\":{\"name\":\"오전동\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-11-09T12:24:05.508Z\",\"boostedAt\":\"2026-11-10T12:33:54.966Z\",\"region\":{\"name\":\"비산1동\"},\"category\":null,\"contentCoo",
+          "createdAt\":\"2026-10-24T19:55:37.139Z\",\"boostedAt\":\"2026-11-10T13:34:41.861Z\",\"region\":{\"name\":\"갈현동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-11-06T16:38:47.623Z\",\"boostedAt\":\"2026-11-10T10:09:15.678Z\",\"region\":{\"name\":\"망포동\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":263,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG 그램 17인치 rtx5050 32gb ssd1테라",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":263,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"갤력시복다섯 포로 울7, 32긱, 2tb\",\"descr",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -141,24 +141,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1308,
-    "globalUniqueListings": 531,
-    "duplicateListingsRemoved": 777,
-    "detailQueueStart": 21,
-    "freshDetailTasks": 21,
+    "searchUniqueListings": 1264,
+    "globalUniqueListings": 508,
+    "duplicateListingsRemoved": 756,
+    "detailQueueStart": 16,
+    "freshDetailTasks": 16,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 21,
-    "detailSucceeded": 21,
+    "detailRequestsExecuted": 16,
+    "detailSucceeded": 16,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 531,
+    "postedAtResolvedFromSearch": 508,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 1,
-    "scanDurationMs": 104503,
+    "candidateCount": 0,
+    "scanDurationMs": 98430,
     "cities": [
       {
         "city": "군포시",
@@ -170,8 +170,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 259,
-        "durationMs": 12018
+        "uniqueListings": 273,
+        "durationMs": 12350
       },
       {
         "city": "의왕시",
@@ -186,8 +186,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 403,
-        "durationMs": 25845
+        "uniqueListings": 378,
+        "durationMs": 25679
       },
       {
         "city": "안양시",
@@ -204,8 +204,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 391,
-        "durationMs": 34951
+        "uniqueListings": 356,
+        "durationMs": 35178
       },
       {
         "city": "과천시",
@@ -216,53 +216,17 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 255,
-        "durationMs": 6510
+        "uniqueListings": 257,
+        "durationMs": 6305
       }
     ],
-    "finalCandidateCount": 1,
+    "finalCandidateCount": 0,
     "stateItemCount": 5000,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 104510
+    "durationMs": 98434
   },
-  "candidates": [
-    {
-      "id": "skokbrp418xw",
-      "changeType": "new",
-      "previousPrice": null,
-      "price": 1700000,
-      "priceDropPercent": null,
-      "city": "안양시",
-      "location": "호계동",
-      "regionPath": "경기도 안양시 동안구 호계동",
-      "title": "애플 맥북 프로 m1pro 16인치 32G,1T",
-      "modelHint": "애플 맥북 프로 m1pro 16인치 32G,1T",
-      "cpuHint": "m1pro",
-      "cpuBaselinePass": null,
-      "gpuHint": "m1pro",
-      "vramGB": null,
-      "ramGB": 32,
-      "ambiguousMemoryGB": 32,
-      "hardwareReviewStatus": "PASS_RAM",
-      "ramEvidence": "32GB RAM",
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": "32G",
-      "storageGB": 1024,
-      "llmCapability": "WORK_DEV_RAM32",
-      "llmReason": "RAM 32GB 이상 확정 후보",
-      "specConfidence": "confirmed",
-      "postedAt": "2026-11-10T13:35:48.905Z",
-      "boostedAt": "2026-11-10T13:35:48.904Z",
-      "status": "Ongoing",
-      "description": "맥북프로 2021년형 M1 Pro 판매합니다.\n\n사양: M1 Pro / 32GB RAM / 1TB SSD / 16인치\n색상: 실버\n배터리: 성능 93%, 사이클 113회\n구성: 본체, 정품 충전기, 박스 (풀박스)\n\n깨끗이 사용해서 찍힌건 없습니다",
-      "url": "https://www.daangn.com/kr/buy-sell/%EC%95%A0%ED%94%8C-%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-m1pro-16%EC%9D%B8%EC%B9%98-32g-1t-skokbrp418xw/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": null,
-      "mannerTemperature": null
-    }
-  ]
+  "candidates": []
 }
