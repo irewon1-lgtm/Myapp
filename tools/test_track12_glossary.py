@@ -72,12 +72,21 @@ def main():
         assert [t for t in old["tracks"] if t["id"] <= 11] == [
             t for t in course["tracks"] if t["id"] <= 11
         ], "Existing track metadata changed"
-        original_fifteen = [c for c in old["chapters"] if c.get("track") == 12]
+        previously_published = [c for c in old["chapters"] if c.get("track") == 12]
+        # A first deployment starts with 15 chapters; all subsequent rebuilds
+        # start with the already-published 20. Both must preserve 1-150 exactly.
+        assert len(previously_published) in (15, 20), (
+            "Unexpected baseline Track 12 chapter count"
+        )
+        original_fifteen = previously_published[:15]
         new_first_fifteen = chapters[:15]
-        assert len(original_fifteen) == 15
         assert digest(original_fifteen) == digest(new_first_fifteen), (
             "Previously approved 1-150 chapters, page IDs or text changed"
         )
+        if len(previously_published) == 20:
+            assert digest(previously_published) == digest(chapters), (
+                "Rebuilding the published 200-term course altered chapter text or IDs"
+            )
         assert all(c["edition"] == LEGACY_EDITION for c in chapters[:5])
         assert all(c["edition"] == SECOND_EDITION for c in chapters[5:10])
         assert all(c["edition"] == PREVIOUS_EDITION for c in chapters[10:15])
