@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-10T07:33:16.276261Z",
+  "updatedAt": "2026-11-10T08:12:24.314817Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -15680,9 +15680,9 @@
     "sh7gshh3u5a5": {
       "id": "sh7gshh3u5a5",
       "title": "삼성 갤럭시북5 프로 NT960XHA-K71AR 16인치 노트북",
-      "price": 2710000,
-      "previousPrice": null,
-      "changeType": "new",
+      "price": 2575000,
+      "previousPrice": 2910000,
+      "changeType": "price_drop",
       "city": "안양시",
       "location": "갈산동",
       "cpuHint": null,
@@ -15700,7 +15700,7 @@
       "postedAt": "2026-11-05T12:00:49.356Z",
       "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%815-%ED%94%84%EB%A1%9C-nt960xha-k71ar-16%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-sh7gshh3u5a5/",
       "firstAlertedAt": "2026-11-05T12:13:01.647149Z",
-      "lastCandidateAt": "2026-11-05T12:13:01.647149Z"
+      "lastCandidateAt": "2026-11-10T08:12:24.314817Z"
     },
     "s8tbtfvzu4mq": {
       "id": "s8tbtfvzu4mq",
@@ -17755,8 +17755,8 @@
     "46bbcuuqjb7y": {
       "id": "46bbcuuqjb7y",
       "title": "레노버 요가 슬림7 노트북 판매합니다.",
-      "price": 1600000,
-      "previousPrice": 1700000,
+      "price": 1500000,
+      "previousPrice": 1600000,
       "changeType": "price_drop",
       "city": "의왕시",
       "location": "내손1동",
@@ -17775,7 +17775,7 @@
       "postedAt": "2026-11-10T01:19:08.723Z",
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%9A%94%EA%B0%80-%EC%8A%AC%EB%A6%BC7-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-46bbcuuqjb7y/",
       "firstAlertedAt": "2026-11-10T01:22:44.137871Z",
-      "lastCandidateAt": "2026-11-10T02:02:42.195338Z"
+      "lastCandidateAt": "2026-11-10T08:12:24.314817Z"
     },
     "scbc7mse6xaz": {
       "id": "scbc7mse6xaz",
@@ -17901,6 +17901,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C-14%EC%9D%B8%EC%B9%98-m3-ram-16gb-ssd-1tb-%EC%95%A0%ED%94%8C%EC%BC%80%EC%96%B4-2027%EB%85%84%EA%B9%8C%EC%A7%80-de23hx4yr1cp/",
       "firstAlertedAt": "2026-11-10T04:42:35.650926Z",
       "lastCandidateAt": "2026-11-10T06:42:30.528412Z"
+    },
+    "j65kv1rhep8b": {
+      "id": "j65kv1rhep8b",
+      "title": "(새제품)삼성 노트북 갤럭시북6 프로 16인치 그레이 팝니다!",
+      "price": 3120000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "과천시",
+      "location": "과천동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 32,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "32GB 램",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "postedAt": "2026-11-10T07:41:46.832Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%83%88%EC%A0%9C%ED%92%88-%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%816-%ED%94%84%EB%A1%9C-16%EC%9D%B8%EC%B9%98-%EA%B7%B8%EB%A0%88%EC%9D%B4-%ED%8C%9D%EB%8B%88%EB%8B%A4-j65kv1rhep8b/",
+      "firstAlertedAt": "2026-11-10T08:12:24.314817Z",
+      "lastCandidateAt": "2026-11-10T08:12:24.314817Z"
     }
   }
 }
