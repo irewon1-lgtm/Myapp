@@ -180,7 +180,7 @@
   reader=function(){
     if(chapters[current.c].track!==TRACK)return baseReader();
     const chapter=chapters[current.c],page=currentTerm(),term=page.vibe;
-    if(!term||term.number<1||term.number>50)throw new Error('Track 12 vocabulary data missing');
+    if(!term||term.number<1||term.number>termPages.length)throw new Error('Track 12 vocabulary data missing');
     const index=termIndex();
     if(index<0)throw new Error('Track 12 term is not indexed');
     const previous=index>0?termPages[index-1]:null;
