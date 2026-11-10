@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-10T21:01:58.105Z",
+  "generatedAt": "2026-11-10T21:41:56.022Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -141,9 +141,9 @@
         ]
       }
     },
-    "searchUniqueListings": 1330,
-    "globalUniqueListings": 501,
-    "duplicateListingsRemoved": 829,
+    "searchUniqueListings": 1337,
+    "globalUniqueListings": 504,
+    "duplicateListingsRemoved": 833,
     "detailQueueStart": 3,
     "freshDetailTasks": 3,
     "backlogDetailTasks": 0,
@@ -155,10 +155,10 @@
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 501,
+    "postedAtResolvedFromSearch": 504,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 82925,
+    "scanDurationMs": 81721,
     "cities": [
       {
         "city": "군포시",
@@ -171,7 +171,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 273,
-        "durationMs": 11670
+        "durationMs": 11681
       },
       {
         "city": "의왕시",
@@ -187,7 +187,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 408,
-        "durationMs": 26516
+        "durationMs": 25685
       },
       {
         "city": "안양시",
@@ -204,8 +204,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 390,
-        "durationMs": 34869
+        "uniqueListings": 397,
+        "durationMs": 34755
       },
       {
         "city": "과천시",
@@ -217,7 +217,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 259,
-        "durationMs": 6369
+        "durationMs": 6448
       }
     ],
     "finalCandidateCount": 0,
@@ -226,7 +226,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 82931
+    "durationMs": 81728
   },
   "candidates": []
 }
