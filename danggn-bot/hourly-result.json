@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-10T06:02:18.387Z",
+  "generatedAt": "2026-11-10T06:42:30.461Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,6 +55,28 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%9D%B8%ED%85%94-i5-4gb-ram-119gb-ssd-hoh9ne98qg7a/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%9D%B8%ED%85%94-i5-4gb-ram-119gb-ssd-hoh9ne98qg7a/",
+            "title": "삼성 노트북 인텔 i5 4GB RAM 119GB SSD",
+            "content": "삼성 노트북 판매해요. 인텔 i5 프로세서와 4GB RAM, 119GB SSD를 탑재하고 있어요. 사진에서 보이는 것처럼 깔끔한 상태의 제품입니다. 문서 작업이나 인터넷 서핑 등 일상적인 용도로 사용하기 좋아요.(포멧완료)",
+            "price": "130000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/0165daa0-ed8c-43c9-a110-81b44e55733c.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-11-10T06:24:00.169Z",
+            "boostedAt": "2026-11-10T06:24:00.167Z",
+            "region": {
+              "name": "상도제4동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 37.5002645,
+                "longitude": 126.9339969
+              }
+            ]
+          },
+          {
             "id": "/kr/buy-sell/lg-%EC%9A%B8%ED%8A%B8%EB%9D%BCpc-%EB%85%B8%ED%8A%B8%EB%B6%81-15ud560-kx50k-15-6%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-8dozqmk2z3yy/",
             "href": "/kr/buy-sell/lg-%EC%9A%B8%ED%8A%B8%EB%9D%BCpc-%EB%85%B8%ED%8A%B8%EB%B6%81-15ud560-kx50k-15-6%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-8dozqmk2z3yy/",
             "title": "LG 울트라PC 노트북 15UD560-KX50K 15.6인치 노트북",
@@ -105,39 +127,17 @@
                 "longitude": 127.0601948
               }
             ]
-          },
-          {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt500r5h-k23w-%ED%99%94%EC%9D%B4%ED%8A%B8-49i475m22i2i/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt500r5h-k23w-%ED%99%94%EC%9D%B4%ED%8A%B8-49i475m22i2i/",
-            "title": "삼성 노트북 NT500R5H-K23W 화이트",
-            "content": "삼성 노트북 NT500R5H-K23W 화이트 색상입니다. \n\n인텔 펜티엄 3825 u CPU\n\n 8GB RAM, \n\nSSD. 512G 를 탑재하여 많은 내용을 저장 할수있는 용량입니다.  (  HDD 아님  )\n\n윈도우 10이 방금 설치하여  \n\n바로 사용 가능해요.\n\n깔끔한 디자인으로 흠집없어 \n \n사용하기 좋습니다.  \n\n키 스킨도 깨끗합니다..\n\n받데리시간은 100%일때 4시간 정도 표시 되나  예상은 2시간 정도 추측 합니다....\n\n충전기 같이 갑니다.  ",
-            "price": "130000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/8cfe521c-55c9-492d-a482-f96df1428c3f.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-29T03:32:39.025Z",
-            "boostedAt": "2026-11-10T05:11:41.891Z",
-            "region": {
-              "name": "평내동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 37.6515424,
-                "longitude": 127.2344051
-              }
-            ]
           }
         ],
         "dateFieldSnippets": [
+          "createdAt\":\"2026-11-10T06:24:00.169Z\",\"boostedAt\":\"2026-11-10T06:24:00.167Z\",\"region\":{\"name\":\"상도제4동\"},\"category\":null,\"contentCo",
           "createdAt\":\"2026-11-10T04:23:03.696Z\",\"boostedAt\":\"2026-11-10T04:23:03.695Z\",\"region\":{\"name\":\"역삼동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-11-09T11:30:51.087Z\",\"boostedAt\":\"2026-11-09T11:30:51.086Z\",\"region\":{\"name\":\"논현1동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-10-29T03:32:39.025Z\",\"boostedAt\":\"2026-11-10T05:11:41.891Z\",\"region\":{\"name\":\"평내동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-10T05:46:15.767Z\",\"boostedAt\":\"2026-11-10T05:46:15.767Z\",\"region\":{\"name\":\"서초1동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-11-10T01:38:26.098Z\",\"boostedAt\":\"2026-11-10T01:38:26.098Z\",\"region\":{\"name\":\"역삼동\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-11-10T06:09:12.354Z\",\"boostedAt\":\"2026-11-10T06:09:12.351Z\",\"region\":{\"name\":\"청라2동\"},\"category\":null,\"contentCoo",
+          "createdAt\":\"2026-10-09T08:13:28.209Z\",\"boostedAt\":\"2026-11-10T06:13:09.433Z\",\"region\":{\"name\":\"우면동\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":265,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG 울트라PC 노트북 15UD560-KX50K 15.",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":265,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 노트북 인텔 i5 4GB RAM 119GB SSD",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -145,24 +145,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1316,
-    "globalUniqueListings": 532,
-    "duplicateListingsRemoved": 784,
-    "detailQueueStart": 19,
-    "freshDetailTasks": 19,
+    "searchUniqueListings": 1323,
+    "globalUniqueListings": 514,
+    "duplicateListingsRemoved": 809,
+    "detailQueueStart": 31,
+    "freshDetailTasks": 31,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 19,
-    "detailSucceeded": 19,
+    "detailRequestsExecuted": 31,
+    "detailSucceeded": 31,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 532,
+    "postedAtResolvedFromSearch": 514,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 1,
-    "scanDurationMs": 104089,
+    "scanDurationMs": 115646,
     "cities": [
       {
         "city": "군포시",
@@ -175,7 +175,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 270,
-        "durationMs": 12720
+        "durationMs": 12010
       },
       {
         "city": "의왕시",
@@ -190,8 +190,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 412,
-        "durationMs": 26360
+        "uniqueListings": 404,
+        "durationMs": 25521
       },
       {
         "city": "안양시",
@@ -208,8 +208,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 380,
-        "durationMs": 35366
+        "uniqueListings": 395,
+        "durationMs": 34839
       },
       {
         "city": "과천시",
@@ -221,7 +221,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 254,
-        "durationMs": 6980
+        "durationMs": 6446
       }
     ],
     "finalCandidateCount": 1,
@@ -230,15 +230,15 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 104096
+    "durationMs": 115653
   },
   "candidates": [
     {
       "id": "de23hx4yr1cp",
       "changeType": "price_drop",
-      "previousPrice": 1600000,
-      "price": 1490000,
-      "priceDropPercent": 6.9,
+      "previousPrice": 1490000,
+      "price": 1390000,
+      "priceDropPercent": 6.7,
       "city": "안양시",
       "location": "안양동",
       "regionPath": "경기도 안양시 만안구 안양동",
