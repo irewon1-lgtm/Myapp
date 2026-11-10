@@ -20,12 +20,25 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Install real browser test tools and Korean fonts
+      - name: Install real browser test tools and Korean fonts (bounded network setup)
+        timeout-minutes: 6
+        shell: bash
         run: |
-          python -m pip install --disable-pip-version-check playwright==1.55.0
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq fonts-noto-cjk >/dev/null
-          fc-cache -f
+          set -euo pipefail
+          echo "::group::Install Playwright with bounded network requests"
+          timeout 150s python -m pip install --disable-pip-version-check --retries 2 --timeout 25 playwright==1.55.0
+          echo "::endgroup::"
+          if fc-list :lang=ko family | grep -qi 'Noto'; then
+            echo "Noto Korean font already installed; skip apt network"
+          else
+            echo "::group::Install Korean font with explicit network timeouts"
+            export DEBIAN_FRONTEND=noninteractive
+            timeout 120s sudo apt-get -o Acquire::http::Timeout=25 -o Acquire::https::Timeout=25 -o Acquire::Retries=1 update -qq
+            timeout 120s sudo apt-get -o Acquire::http::Timeout=25 -o Acquire::https::Timeout=25 -o Acquire::Retries=1 install -y -qq fonts-noto-cjk >/dev/null
+            echo "::endgroup::"
+          fi
+          timeout 60s fc-cache -f
+          fc-list :lang=ko family | grep -qi 'Noto' || { echo "::error::Korean font missing: refuse publication"; exit 1; }
       - name: Preserve baseline and prepare additive Track 4 integration
         run: |
           mkdir -p review
