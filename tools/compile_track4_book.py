@@ -11,7 +11,7 @@ import re
 from compile_track3_book import blocks_from_markdown, inline
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
-LABEL = '0.14.0 · 바이브 코딩 필수 용어 1~150 · 다크 책형'
+LABEL = '0.15.0 · 바이브 코딩 필수 용어 1~200 · 다크 책형'
 TITLES = [
     '웹페이지는 어떻게 내 화면에 나타날까?',
     'HTML로 내용의 구조와 의미 만들기',
@@ -141,6 +141,10 @@ for (const chapter of COURSE.chapters) for (const page of chapter.pages) {
   if(book.text===undefined)book.text=book.blocks.map(b=>b.text).join('\\n\\n');
   for(const sample of book.samples)if(sample.runSameCode){sample.runCode=sample.code;delete sample.runSameCode;}
 }
+/* TRACK12_LOSSLESS_TRANSPORT_V1: reconstruct duplicated paragraph from term source. */
+for(const chapter of COURSE.chapters)if(chapter.track===12)
+  for(const page of chapter.pages)if(page.kind==='vibe-term'&&!page.paragraphs)
+    page.paragraphs=[page.vibe.explain];
 """
 
 
@@ -191,6 +195,12 @@ def build(root=ROOT):
     saved=0
     for c in transport['chapters']:
         for p in c['pages']:
+            # Transport omits only redundant, losslessly recreated Track 12
+            # paragraph copies. Original content.json and page IDs are unchanged.
+            if c.get('track') == 12 and p.get('kind') == 'vibe-term':
+                assert p.get('paragraphs') == [p['vibe']['explain']]
+                saved += len(json.dumps(p['paragraphs'], ensure_ascii=False).encode())
+                p.pop('paragraphs')
             b=p.get('book')
             if not b:continue
             saved+=len(b.get('html','').encode())+len(b.get('text','').encode())

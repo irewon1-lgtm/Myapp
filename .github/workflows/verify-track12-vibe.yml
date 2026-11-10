@@ -1,7 +1,7 @@
-name: Verify Vibe Coding Track 12 (terms 1-150)
+name: Verify Vibe Coding Track 12 (terms 1-200)
 on:
   push:
-    branches: [feature/vibe-terms-001-050-20261110, feature/vibe-book-dark-50-20261110, feature/vibe-terms-051-100-20261110, feature/vibe-terms-101-150-20261110]
+    branches: [feature/vibe-terms-001-050-20261110, feature/vibe-book-dark-50-20261110, feature/vibe-terms-051-100-20261110, feature/vibe-terms-101-150-20261110, feature/vibe-terms-151-200-20261110]
     paths:
       - 'live/vibe-terms/**'
       - 'tools/compile_track12_glossary.py'
@@ -40,7 +40,7 @@ jobs:
           python tools/test_track3_book.py
           python tools/test_track4_book.py
           node tools/verify_reader.cjs
-      - name: Verify full 150-term content and first 100 record preservation
+      - name: Verify full 200-term content and first 150 record preservation
         run: python tools/test_track12_glossary.py
       - name: Regression existing phone/tablet readers
         run: |
