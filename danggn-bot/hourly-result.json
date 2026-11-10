@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-10T01:22:44.074Z",
+  "generatedAt": "2026-11-10T02:02:42.144Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,6 +55,28 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
+            "id": "/kr/buy-sell/%EC%97%98%EC%A7%80-%EB%85%B8%ED%8A%B8%EB%B6%81-67bf5ya8axts/",
+            "href": "/kr/buy-sell/%EC%97%98%EC%A7%80-%EB%85%B8%ED%8A%B8%EB%B6%81-67bf5ya8axts/",
+            "title": "엘지 노트북",
+            "content": "엘지 노트북\ni5 3230\n램8기가\nSsd120 \n윈도10 한글 오피스 설치됨 \n어댑터 드립니다 \n",
+            "price": "100000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/bd984a13-e046-4782-91a5-c26814590239.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-11-10T01:30:09.183Z",
+            "boostedAt": "2026-11-10T01:30:09.182Z",
+            "region": {
+              "name": "북삼읍"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 36.0683774,
+                "longitude": 128.3374583
+              }
+            ]
+          },
+          {
             "id": "/kr/buy-sell/5060-note%EB%B6%81-%EB%AF%BC%ED%8A%B8%EA%B8%89-7st4wje6dfx9/",
             "href": "/kr/buy-sell/5060-note%EB%B6%81-%EB%AF%BC%ED%8A%B8%EA%B8%89-7st4wje6dfx9/",
             "title": "5060 note북 민트급",
@@ -73,28 +95,6 @@
               {
                 "latitude": 37.6165563,
                 "longitude": 126.6943199
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-lg15n54-%EC%8B%A4%EB%B2%84-8%EA%B8%B0%EA%B0%80-%EB%9E%A8-%ED%8F%AC%EB%A7%B7%EC%99%84%EB%A3%8C-rhp2bbpt1u21/",
-            "href": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-lg15n54-%EC%8B%A4%EB%B2%84-8%EA%B8%B0%EA%B0%80-%EB%9E%A8-%ED%8F%AC%EB%A7%B7%EC%99%84%EB%A3%8C-rhp2bbpt1u21/",
-            "title": "LG 노트북 LG15N54 실버 8기가 램 포맷완료",
-            "content": "Intel Core i5-4310M 프로세서와 8GB RAM이 탑재된 LG 노트북이에요. NVIDIA GeForce 840M 그래픽 카드가 포함되어 있어요. 윈도우 11 프로가 설치되어 있어 바로 사용하기 좋아요. 가벼운 작업이나 영상 시청용으로 적합해요.\n배터리는 방전되어 아답터 꽂고 사용하셔야합니다",
-            "price": "150000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/805bdb12-28b4-4a1d-9145-cd43479e0f41.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-11-10T01:05:03.817Z",
-            "boostedAt": "2026-11-10T01:05:03.807Z",
-            "region": {
-              "name": "장락동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 37.1545324,
-                "longitude": 128.2226061
               }
             ]
           },
@@ -122,14 +122,14 @@
           }
         ],
         "dateFieldSnippets": [
+          "createdAt\":\"2026-11-10T01:30:09.183Z\",\"boostedAt\":\"2026-11-10T01:30:09.182Z\",\"region\":{\"name\":\"북삼읍\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-27T13:24:42.319Z\",\"boostedAt\":\"2026-11-10T01:08:56.186Z\",\"region\":{\"name\":\"불로대곡동\"},\"category\":null,\"contentCo",
-          "createdAt\":\"2026-11-10T01:05:03.817Z\",\"boostedAt\":\"2026-11-10T01:05:03.807Z\",\"region\":{\"name\":\"장락동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-11-10T00:50:42.531Z\",\"boostedAt\":\"2026-11-10T00:50:42.526Z\",\"region\":{\"name\":\"서초4동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-11-09T11:30:51.087Z\",\"boostedAt\":\"2026-11-09T11:30:51.086Z\",\"region\":{\"name\":\"논현1동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-10-27T10:08:54.530Z\",\"boostedAt\":\"2026-11-10T00:47:36.040Z\",\"region\":{\"name\":\"옥정동\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-11-10T01:38:26.098Z\",\"boostedAt\":\"2026-11-10T01:38:26.098Z\",\"region\":{\"name\":\"역삼동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-11-10T01:46:32.813Z\",\"boostedAt\":\"2026-11-10T01:46:32.812Z\",\"region\":{\"name\":\"북삼읍\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":267,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"5060 note북 민트급\",\"description\":",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":268,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"엘지 노트북\",\"description\":\"엘지 노트북\\",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -137,24 +137,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1298,
-    "globalUniqueListings": 517,
-    "duplicateListingsRemoved": 781,
-    "detailQueueStart": 26,
-    "freshDetailTasks": 26,
+    "searchUniqueListings": 1261,
+    "globalUniqueListings": 509,
+    "duplicateListingsRemoved": 752,
+    "detailQueueStart": 27,
+    "freshDetailTasks": 27,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 26,
-    "detailSucceeded": 26,
+    "detailRequestsExecuted": 27,
+    "detailSucceeded": 27,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 517,
+    "postedAtResolvedFromSearch": 509,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 1,
-    "scanDurationMs": 110859,
+    "scanDurationMs": 112775,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +166,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 290,
-        "durationMs": 12498
+        "uniqueListings": 261,
+        "durationMs": 12628
       },
       {
         "city": "의왕시",
@@ -182,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 363,
-        "durationMs": 25824
+        "uniqueListings": 362,
+        "durationMs": 25813
       },
       {
         "city": "안양시",
@@ -200,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 396,
-        "durationMs": 35271
+        "uniqueListings": 390,
+        "durationMs": 35378
       },
       {
         "city": "과천시",
@@ -212,8 +212,8 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 249,
-        "durationMs": 6568
+        "uniqueListings": 248,
+        "durationMs": 6724
       }
     ],
     "finalCandidateCount": 1,
@@ -222,15 +222,15 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 110867
+    "durationMs": 112780
   },
   "candidates": [
     {
       "id": "46bbcuuqjb7y",
-      "changeType": "new",
-      "previousPrice": null,
-      "price": 1700000,
-      "priceDropPercent": null,
+      "changeType": "price_drop",
+      "previousPrice": 1700000,
+      "price": 1600000,
+      "priceDropPercent": 5.9,
       "city": "의왕시",
       "location": "내손1동",
       "regionPath": "경기도 의왕시 내손1동",
@@ -253,7 +253,7 @@
       "postedAt": "2026-11-10T01:19:08.723Z",
       "boostedAt": "2026-11-10T01:19:08.720Z",
       "status": "Ongoing",
-      "description": "업무용으로 엑셀 작업 위주로 1년 정도 사용했습니다.\n사양은 첨부된 이미지 참고해주세요~\n사진처럼 상판에 볼펜자국(?) 같은게 있는데 참조 바랍니다.\n\nAMD 라이젠 7 프로세서와 32GB 메모리를 탑재한 고성능 노트북이에요. 14인치 2.8K OLED 디스플레이를 갖추고 있으며 1TB SSD가 포함되어 있어요. 가벼운 무게로 휴대하기에도 적합한 모델이에요.",
+      "description": "업무용으로 엑셀 작업 위주로 1년 정도 사용했습니다.\n사양은 첨부된 이미지 참고해주시고, 레노버 보증 1년 남았습니다.\n사진처럼 상판에 볼펜자국(?) 같은게 있는데 참조 바랍니다.\n\nAMD 라이젠 7 프로세서와 32GB 메모리를 탑재한 고성능 노트북이에요. 14인치 2.8K OLED 디스플레이를 갖추고 있으며 1TB SSD가 포함되어 있어요. 가벼운 무게로 휴대하기에도 적합한 모델이에요.",
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%9A%94%EA%B0%80-%EC%8A%AC%EB%A6%BC7-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-46bbcuuqjb7y/",
       "favoriteCount": 0,
       "chatCount": 0,
