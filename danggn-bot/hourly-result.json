@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-10T12:12:16.773Z",
+  "generatedAt": "2026-11-10T12:52:24.563Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -16,7 +16,9 @@
   "health": {
     "status": "ok",
     "stateCommitted": true,
-    "warnings": []
+    "warnings": [
+      "안양시: detail failed xmxogyhnq9e5: Error: HTTP 404 Not Found"
+    ]
   },
   "rules": {
     "newnessField": "postedAt",
@@ -55,24 +57,28 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/lg%EC%A0%84%EC%9E%90-%EA%B7%B8%EB%9E%A8-15%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-w3vaxtp7nvmn/",
-            "href": "/kr/buy-sell/lg%EC%A0%84%EC%9E%90-%EA%B7%B8%EB%9E%A8-15%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-w3vaxtp7nvmn/",
-            "title": "LG전자 그램 15인치 노트북",
-            "content": "LG전자 그램 노트북\n13세대 인텔 i5  1360p\n16GB RAM\n512 + 256 GB SSD\n15인치 화면\n외관 아주깔끔.\n가벼워서 휴대하기 매우 좋아요.\n화면 및 기능에 문제없어요.",
-            "price": "700000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/ab0e26c1-14ce-43d5-a25e-feed77f57600.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Reserved",
+            "id": "/kr/buy-sell/hp-omen-%EC%98%A4%EB%A9%98-16-rtx-5070-%EB%A1%A4%EC%97%90%EB%94%94%EC%85%98-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-xxghvz11tevm/",
+            "href": "/kr/buy-sell/hp-omen-%EC%98%A4%EB%A9%98-16-rtx-5070-%EB%A1%A4%EC%97%90%EB%94%94%EC%85%98-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-xxghvz11tevm/",
+            "title": "HP omen 오멘 16 RTX 5070 롤에디션 게이밍 노트북",
+            "content": "26년 8월1일에 구입했습니다.\n데스크탑이 있어 사용을 안해 정리합니다.\n램과 ssd는 업그레이드했습니다.\n박스하고 기존 구성품 다 있습니다.\n\n사양은 아래와 같습니다.\n\nCPU Intel Core i7-14650HX\nGPU NVIDIA GeForce RTX 5070 (TGP 115W)\n디스플레이   16인치 WQXGA (2560×1600)\n주사율 240Hz\n패널 IPS\nRAM   DDR5-5600 16×2 32gb\nSSD   NVMe 1tb\n오디오 HyperX 튜닝 오디오\n디자인 리그 오브 레전드 에디션\n\n",
+            "price": "2100000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/199b30e1-22a9-4801-98bd-10cdbf1d932a.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
             "isInstantBuyAvailable": false,
-            "createdAt": "2026-11-10T11:42:47.407Z",
-            "boostedAt": "2026-11-10T11:42:47.402Z",
+            "createdAt": "2026-11-09T12:24:05.508Z",
+            "boostedAt": "2026-11-10T12:33:54.966Z",
             "region": {
-              "name": "군포2동"
+              "name": "비산1동"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 37.3374906,
-                "longitude": 126.9333868
+                "latitude": 37.4288794,
+                "longitude": 126.9979138
+              },
+              {
+                "latitude": 37.4006872,
+                "longitude": 126.9229982
               }
             ]
           },
@@ -103,37 +109,37 @@
             ]
           },
           {
-            "id": "/kr/buy-sell/%EC%97%90%EC%9D%B4%EC%84%9C-rtx4060%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%9D%EB%8B%88%EB%8B%A4-zr8p3m1wng58/",
-            "href": "/kr/buy-sell/%EC%97%90%EC%9D%B4%EC%84%9C-rtx4060%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%9D%EB%8B%88%EB%8B%A4-zr8p3m1wng58/",
-            "title": "에이서 RTX4060게이밍 노트북 팝니다",
-            "content": "에이서 RTX4060게이밍 노트북 팝니다\nCPU i7 12650H(10코어16스레드)\nGPU RTX4060(140w)\nRam ddr5 16gb\nSSD NVMe 512gb\n일주일 전에 써멀 재도포 하고 내부 청소 하여 성능 상태 좋습니다\n가격대가 있는 물건이라서 직거래 선호 합니다 수원 직거래 합니다\n본체 충전기 쿨러 구성입니다",
-            "price": "100",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/e8f4523e-01ed-43a3-bc60-ff607aeb01d4.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-8gb-nt500r5l%EB%B8%94%EB%9E%99%EC%95%A4%EC%8B%A4%EB%B2%84-h2nir15ohhyf/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-8gb-nt500r5l%EB%B8%94%EB%9E%99%EC%95%A4%EC%8B%A4%EB%B2%84-h2nir15ohhyf/",
+            "title": "삼성 노트북 i5 8GB NT500R5L블랙앤실버",
+            "content": "인텔 i5 프로세서와 8GB 램이 탑재된 삼성 노트북이에요. NVIDIA GeForce 940MX 그래픽 카드가 포함되어 있어 활용도가 높아요. 512GB의 넉넉한 저장 공간을 갖추고 있어요. \n\n저는 보통 사무용이나 학습용으로 사용했는데 너무 좋았습니다 취준할때만 사용하고 거의 사용 안했습니다 감사합니다\n\n충전기랑 노트북 🧑‍💻 구성 입니다!",
+            "price": "150000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/1794314694464a4a94dc5e12d99aabb847562e274b572fc6ed2c7b9b3dd114d88fb2eb2dd83c10.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": true,
-            "createdAt": "2026-11-06T16:38:47.623Z",
-            "boostedAt": "2026-11-10T10:09:15.678Z",
+            "createdAt": "2026-11-10T12:46:26.246Z",
+            "boostedAt": "2026-11-10T12:46:26.244Z",
             "region": {
-              "name": "망포동"
+              "name": "명륜동"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 37.2360625,
-                "longitude": 127.0575245
+                "latitude": 37.3269372,
+                "longitude": 127.9408214
               }
             ]
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-11-10T11:42:47.407Z\",\"boostedAt\":\"2026-11-10T11:42:47.402Z\",\"region\":{\"name\":\"군포2동\"},\"category\":null,\"contentCoo",
+          "createdAt\":\"2026-11-09T12:24:05.508Z\",\"boostedAt\":\"2026-11-10T12:33:54.966Z\",\"region\":{\"name\":\"비산1동\"},\"category\":null,\"contentCoo",
           "createdAt\":\"2026-11-10T11:40:36.686Z\",\"boostedAt\":\"2026-11-10T11:40:36.683Z\",\"region\":{\"name\":\"입북동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-11-10T12:46:26.246Z\",\"boostedAt\":\"2026-11-10T12:46:26.244Z\",\"region\":{\"name\":\"명륜동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-11-06T16:38:47.623Z\",\"boostedAt\":\"2026-11-10T10:09:15.678Z\",\"region\":{\"name\":\"망포동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-10T12:09:23.109Z\",\"boostedAt\":\"2026-11-10T12:09:23.105Z\",\"region\":{\"name\":\"읍내동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-10T10:41:39.170Z\",\"boostedAt\":\"2026-11-10T10:41:39.170Z\",\"region\":{\"name\":\"입북동\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-10-11T13:23:42.441Z\",\"boostedAt\":\"2026-11-10T08:40:51.481Z\",\"region\":{\"name\":\"오전동\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":262,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG전자 그램 15인치 노트북\",\"description",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":267,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"HP omen 오멘 16 RTX 5070 롤에디션 게이",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -141,24 +147,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1278,
-    "globalUniqueListings": 483,
-    "duplicateListingsRemoved": 795,
-    "detailQueueStart": 20,
-    "freshDetailTasks": 20,
+    "searchUniqueListings": 1308,
+    "globalUniqueListings": 512,
+    "duplicateListingsRemoved": 796,
+    "detailQueueStart": 26,
+    "freshDetailTasks": 26,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 20,
-    "detailSucceeded": 20,
-    "detailFailed": 0,
-    "detail404": 0,
+    "detailRequestsExecuted": 26,
+    "detailSucceeded": 25,
+    "detailFailed": 1,
+    "detail404": 1,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 483,
+    "postedAtResolvedFromSearch": 512,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 1,
-    "scanDurationMs": 103047,
+    "candidateCount": 0,
+    "scanDurationMs": 111746,
     "cities": [
       {
         "city": "군포시",
@@ -170,8 +176,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 282,
-        "durationMs": 12095
+        "uniqueListings": 280,
+        "durationMs": 12671
       },
       {
         "city": "의왕시",
@@ -186,8 +192,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 379,
-        "durationMs": 25537
+        "uniqueListings": 380,
+        "durationMs": 25818
       },
       {
         "city": "안양시",
@@ -204,8 +210,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 363,
-        "durationMs": 35179
+        "uniqueListings": 392,
+        "durationMs": 35341
       },
       {
         "city": "과천시",
@@ -216,53 +222,17 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 254,
-        "durationMs": 6731
+        "uniqueListings": 256,
+        "durationMs": 6780
       }
     ],
-    "finalCandidateCount": 1,
+    "finalCandidateCount": 0,
     "stateItemCount": 5000,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 103053
+    "durationMs": 111754
   },
-  "candidates": [
-    {
-      "id": "w3vaxtp7nvmn",
-      "changeType": "new",
-      "previousPrice": null,
-      "price": 700000,
-      "priceDropPercent": null,
-      "city": "군포시",
-      "location": "군포2동",
-      "regionPath": "경기도 군포시 군포2동",
-      "title": "LG전자 그램 15인치 노트북",
-      "modelHint": "LG전자 그램 15인치 노트북",
-      "cpuHint": null,
-      "cpuBaselinePass": null,
-      "gpuHint": null,
-      "vramGB": null,
-      "ramGB": 16,
-      "ambiguousMemoryGB": null,
-      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
-      "ramEvidence": "16GB RAM",
-      "vramEvidence": null,
-      "ambiguousMemoryEvidence": null,
-      "storageGB": 256,
-      "llmCapability": "SPEC_CHECK_REQUIRED",
-      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
-      "specConfidence": "needs_review",
-      "postedAt": "2026-11-10T11:42:47.407Z",
-      "boostedAt": "2026-11-10T11:42:47.402Z",
-      "status": "Ongoing",
-      "description": "LG전자 그램 노트북\n13세대 인텔 i5  1360p\n16GB RAM\n512 + 256 GB SSD\n15인치 화면\n외관 아주깔끔.\n가벼워서 휴대하기 매우 좋아요.\n화면 및 기능에 문제없어요.",
-      "url": "https://www.daangn.com/kr/buy-sell/lg%EC%A0%84%EC%9E%90-%EA%B7%B8%EB%9E%A8-15%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-w3vaxtp7nvmn/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": null,
-      "mannerTemperature": null
-    }
-  ]
+  "candidates": []
 }
