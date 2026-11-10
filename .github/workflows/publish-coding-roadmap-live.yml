@@ -52,7 +52,7 @@ jobs:
         run: python tools/test_track3_browser.py
       - name: Verify Track 4 reader, web execution and complete HTTP project
         run: python tools/test_track4_browser.py
-      - name: Verify all 100 Vibe Coding terms, edge taps, swipes in Chromium
+      - name: Verify all 150 Vibe Coding terms, edge taps, swipes in Chromium
         run: python tools/test_track12_browser.py
       - name: Retain real Python execution verification for Track 3
         run: python tools/test_track3_worker.py

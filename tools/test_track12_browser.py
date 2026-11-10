@@ -1,4 +1,4 @@
-"""Actual Chromium acceptance for dark mockup 4: 100 words, one scrollable page each.
+"""Actual Chromium acceptance for dark mockup 4: 150 words, one scrollable page each.
 
 The test runs in a native-bridge emulator, NOT on a physical Android device.
 """
@@ -98,7 +98,7 @@ def check_single_page(page, n, width, height):
     assert actual["noteButton"] and actual["fontButton"]
     assert actual["questionLabel"].startswith("4.")
     assert actual["previousDisabled"] == (n == 1)
-    assert actual["nextDisabled"] == (n == 100)
+    assert actual["nextDisabled"] == (n == 150)
     for i, content in enumerate((term["explain"], term["example"],
                                  term["contrast"], term["wrong"], term["prompt"])):
         assert normalize(content) in normalize(actual["sections"][i]), (
@@ -145,7 +145,7 @@ def navigation_and_persistence(page):
     assert page.evaluate("state.notes['t12-vibe-001']") == "바이브 용어 첫 번째 메모 보존"
     CHECKS.append({"test": "legacy per-page notes remain available", "status": "PASS"})
 
-    for n in (10, 20, 30, 40, 50, 60, 70, 80, 90):
+    for n in (10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140):
         open_term(page, n)
         page.locator('[data-action="vibe-next"]').click()
         assert page.evaluate("state.location") == f"t12-vibe-{n+1:03d}", (
@@ -157,8 +157,13 @@ def navigation_and_persistence(page):
     page.locator('[data-action="vibe-prev"]').click()
     assert page.evaluate("state.location")=="t12-vibe-050", "51→50 term transition broken"
     open_term(page, 100)
+    page.locator('[data-action="vibe-next"]').click()
+    assert page.evaluate("state.location")=="t12-vibe-101", "100→101 term transition broken"
+    page.locator('[data-action="vibe-prev"]').click()
+    assert page.evaluate("state.location")=="t12-vibe-100", "101→100 term transition broken"
+    open_term(page, 150)
     assert page.locator('[data-action="vibe-next"]').is_disabled()
-    CHECKS.append({"test": "ten chapters are continuous 1-100 and stop at the last term", "status": "PASS"})
+    CHECKS.append({"test": "fifteen chapters are continuous 1-150 and stop at the last term", "status": "PASS"})
 
 
 
@@ -218,7 +223,7 @@ def touch_gesture_tests(page):
         CHECKS.append({"test":"short and diagonal gestures do not switch terms","status":"PASS"})
 
         # Swipe left across every vocabulary item; including chapter boundaries.
-        for number in range(1,100):
+        for number in range(1,150):
             assert page.evaluate("state.location")==f"t12-vibe-{number:03d}",number
             swipe_term(page,session,"left")
             assert page.evaluate("state.location")==f"t12-vibe-{number+1:03d}",(
@@ -226,18 +231,18 @@ def touch_gesture_tests(page):
             )
             assert page.evaluate("document.querySelectorAll('.vibe-book-page').length")==1
         swipe_term(page,session,"left")
-        assert page.evaluate("state.location")=="t12-vibe-100", "101st term is not published"
-        CHECKS.append({"test":"99 native touch swipes forward (01 through 100) and right endpoint","status":"PASS"})
+        assert page.evaluate("state.location")=="t12-vibe-150", "151st term is not published"
+        CHECKS.append({"test":"149 native touch swipes forward (01 through 150) and right endpoint","status":"PASS"})
 
         # Swipe right across every term, including chapter boundaries.
-        for number in range(100,1,-1):
+        for number in range(150,1,-1):
             swipe_term(page,session,"right")
             assert page.evaluate("state.location")==f"t12-vibe-{number-1:03d}",(
                 number,"right swipe must open the PREVIOUS term"
             )
         swipe_term(page,session,"right")
         assert page.evaluate("state.location")=="t12-vibe-001", "Cannot swipe before term 1"
-        CHECKS.append({"test":"99 native touch swipes backward (100 through 01) and left endpoint","status":"PASS"})
+        CHECKS.append({"test":"149 native touch swipes backward (150 through 01) and left endpoint","status":"PASS"})
 
         # Swipes on a control must not activate the page-navigation gesture.
         button=page.locator(".vibe-book-copy")
@@ -284,24 +289,24 @@ def edge_tap_tests(page, session):
     assert page.evaluate("state.location")=="t12-vibe-001", "Term 0 must not be opened"
 
     # All right-edge taps: 1→50, including 10→11 etc.
-    for number in range(1,100):
+    for number in range(1,150):
         tap_edge(page,session,"right")
         assert page.evaluate("state.location")==f"t12-vibe-{number+1:03d}", (
             number,"right edge must open next term"
         )
     tap_edge(page,session,"right")
-    assert page.evaluate("state.location")=="t12-vibe-100", "Term 101 is unavailable"
-    CHECKS.append({"test":"99 genuine right-edge taps from 1 to 100; last term clamped","status":"PASS"})
+    assert page.evaluate("state.location")=="t12-vibe-150", "Term 151 is unavailable"
+    CHECKS.append({"test":"149 genuine right-edge taps from 1 to 150; last term clamped","status":"PASS"})
 
     # All left-edge taps: 50→1, including all chapter boundaries.
-    for number in range(100,1,-1):
+    for number in range(150,1,-1):
         tap_edge(page,session,"left")
         assert page.evaluate("state.location")==f"t12-vibe-{number-1:03d}", (
             number,"left edge must open previous term"
         )
     tap_edge(page,session,"left")
     assert page.evaluate("state.location")=="t12-vibe-001"
-    CHECKS.append({"test":"99 genuine left-edge taps from 100 to 1; first term clamped","status":"PASS"})
+    CHECKS.append({"test":"149 genuine left-edge taps from 150 to 1; first term clamped","status":"PASS"})
 
     # A normal tap in the middle of the page is not a turn.
     rect=page.locator("#vibe-book-viewport").bounding_box()
@@ -341,7 +346,7 @@ def mouse_edge_tests(page):
 
 
 def main():
-    assert len(TERMS) == 100
+    assert len(TERMS) == 150
     with sync_playwright() as pw:
         executable = (os.environ.get("CHROME") or shutil.which("chromium")
                       or shutil.which("google-chrome") or shutil.which("google-chrome-stable"))
@@ -352,11 +357,11 @@ def main():
             page = fixture(browser, width, height)
             assert page.evaluate("COURSE.tracks.some(t=>t.id===12&&t.available)")
             page.evaluate("doAction('track',{dataset:{track:'12'}})")
-            assert page.locator(".editorial-chapter-row").count() == 10
-            for n in range(1, 101):
+            assert page.locator(".editorial-chapter-row").count() == 15
+            for n in range(1, 151):
                 open_term(page, n)
                 check_single_page(page, n, width, height)
-                if n in (1, 25, 50, 51, 75, 100) and width == 360:
+                if n in (1, 25, 50, 51, 75, 100, 101, 125, 150) and width == 360:
                     page.screenshot(path=str(OUT / f"track12-darkbook-top-{n:03d}.png"))
             if width == 360:
                 navigation_and_persistence(page)
@@ -376,9 +381,9 @@ def main():
         "status": "PASS",
         "scope": "real Chromium; approved dark book mockup 4; not a physical Android test",
         "terms": len(TERMS), "viewports": [[360,800],[800,1280]],
-        "singleTermVerticalPages": 100,
-        "genuineAndroidStyleTouchSwipes": 198,
-        "genuineLeftRightEdgeTaps": 198,
+        "singleTermVerticalPages": 150,
+        "genuineAndroidStyleTouchSwipes": 298,
+        "genuineLeftRightEdgeTaps": 298,
         "edgeTapNavigation": True,
         "verticalTouchScrollPreserved": True,
         "fiveSectionsPerTerm": True, "paragraphBoxesRemoved": True,
