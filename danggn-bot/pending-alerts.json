@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-10T23:01:59.109396Z",
+  "updatedAt": "2026-11-10T23:42:10.174782Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -17105,9 +17105,9 @@
     "iykywhcjzbhg": {
       "id": "iykywhcjzbhg",
       "title": "M5 맥북에어 13인치 기본형 실버 풀박스",
-      "price": 1750000,
-      "previousPrice": null,
-      "changeType": "new",
+      "price": 1690000,
+      "previousPrice": 1750000,
+      "changeType": "price_drop",
       "city": "안양시",
       "location": "비산1동",
       "cpuHint": null,
@@ -17125,7 +17125,7 @@
       "postedAt": "2026-11-08T13:26:24.477Z",
       "url": "https://www.daangn.com/kr/buy-sell/m5-%EB%A7%A5%EB%B6%81%EC%97%90%EC%96%B4-13%EC%9D%B8%EC%B9%98-%EA%B8%B0%EB%B3%B8%ED%98%95-%EC%8B%A4%EB%B2%84-%ED%92%80%EB%B0%95%EC%8A%A4-iykywhcjzbhg/",
       "firstAlertedAt": "2026-11-08T13:52:50.580267Z",
-      "lastCandidateAt": "2026-11-08T13:52:50.580267Z"
+      "lastCandidateAt": "2026-11-10T23:42:10.174782Z"
     },
     "43p352mochdz": {
       "id": "43p352mochdz",
@@ -17680,9 +17680,9 @@
     "py82imx1q3y6": {
       "id": "py82imx1q3y6",
       "title": "MSI 게이밍노트북 Leopard i7 RTX 2060 블랙",
-      "price": 550000,
-      "previousPrice": null,
-      "changeType": "new",
+      "price": 540000,
+      "previousPrice": 550000,
+      "changeType": "price_drop",
       "city": "안양시",
       "location": "호계1동",
       "cpuHint": null,
@@ -17700,7 +17700,7 @@
       "postedAt": "2026-11-09T21:58:15.376Z",
       "url": "https://www.daangn.com/kr/buy-sell/msi-%EA%B2%8C%EC%9D%B4%EB%B0%8D%EB%85%B8%ED%8A%B8%EB%B6%81-leopard-i7-rtx-2060-%EB%B8%94%EB%9E%99-py82imx1q3y6/",
       "firstAlertedAt": "2026-11-09T22:02:13.624186Z",
-      "lastCandidateAt": "2026-11-09T22:02:13.624186Z"
+      "lastCandidateAt": "2026-11-10T23:42:10.174782Z"
     },
     "dkta29hmtwmd": {
       "id": "dkta29hmtwmd",
@@ -18176,6 +18176,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-16%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-ti3xogjo8tfh/",
       "firstAlertedAt": "2026-11-10T23:01:59.109396Z",
       "lastCandidateAt": "2026-11-10T23:01:59.109396Z"
+    },
+    "9kjy7za1amgj": {
+      "id": "9kjy7za1amgj",
+      "title": "(미사용)MSI벤처프로 16 고사양 노트북 윈도우 포함",
+      "price": 1900000,
+      "previousPrice": 2000000,
+      "changeType": "price_drop",
+      "city": "군포시",
+      "location": "당동",
+      "cpuHint": null,
+      "gpuHint": "RTX4050",
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-09-07T12:17:53.669Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%AF%B8%EC%82%AC%EC%9A%A9-msi%EB%B2%A4%EC%B2%98%ED%94%84%EB%A1%9C-16-%EA%B3%A0%EC%82%AC%EC%96%91-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%9C%88%EB%8F%84%EC%9A%B0-%ED%8F%AC%ED%95%A8-9kjy7za1amgj/",
+      "firstAlertedAt": "2026-11-10T23:42:10.174782Z",
+      "lastCandidateAt": "2026-11-10T23:42:10.174782Z"
     }
   }
 }
