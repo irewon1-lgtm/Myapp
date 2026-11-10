@@ -244,8 +244,95 @@ def touch_gesture_tests(page):
         drag_touch(page,session,start_x=x,start_y=y,end_x=max(5,x-100),end_y=y)
         assert page.evaluate("state.location")=="t12-vibe-001", "Touching a button changed pages"
         CHECKS.append({"test":"copy button is excluded from swipe navigation","status":"PASS"})
+        edge_tap_tests(page,session)
     finally:
         session.detach()
+
+
+
+def tap_touch(page, session, x, y):
+    """Send a real mobile tap through Chrome DevTools touch input."""
+    session.send("Input.dispatchTouchEvent", {
+        "type": "touchStart",
+        "touchPoints": [{"x": x, "y": y, "id": 1}],
+    })
+    page.wait_for_timeout(32)
+    session.send("Input.dispatchTouchEvent", {
+        "type": "touchEnd", "touchPoints": [],
+    })
+    page.wait_for_timeout(75)
+
+
+def tap_edge(page, session, side):
+    bounds=page.locator("#vibe-book-viewport").bounding_box()
+    assert bounds and bounds["width"]>=300 and bounds["height"]>=250
+    x=bounds["x"]+(12 if side=="left" else bounds["width"]-12)
+    y=bounds["y"]+min(145,bounds["height"]*.30)
+    tap_touch(page,session,x,y)
+
+
+def edge_tap_tests(page, session):
+    # A drag may suppress synthetic clicks briefly. Wait before intentional taps.
+    page.wait_for_timeout(660)
+    open_term(page,1)
+    tap_edge(page,session,"left")
+    assert page.evaluate("state.location")=="t12-vibe-001", "Term 0 must not be opened"
+
+    # All right-edge taps: 1→50, including 10→11 etc.
+    for number in range(1,50):
+        tap_edge(page,session,"right")
+        assert page.evaluate("state.location")==f"t12-vibe-{number+1:03d}", (
+            number,"right edge must open next term"
+        )
+    tap_edge(page,session,"right")
+    assert page.evaluate("state.location")=="t12-vibe-050", "Term 51 is unavailable"
+    CHECKS.append({"test":"49 genuine right-edge taps from 1 to 50; last term clamped","status":"PASS"})
+
+    # All left-edge taps: 50→1, including all chapter boundaries.
+    for number in range(50,1,-1):
+        tap_edge(page,session,"left")
+        assert page.evaluate("state.location")==f"t12-vibe-{number-1:03d}", (
+            number,"left edge must open previous term"
+        )
+    tap_edge(page,session,"left")
+    assert page.evaluate("state.location")=="t12-vibe-001"
+    CHECKS.append({"test":"49 genuine left-edge taps from 50 to 1; first term clamped","status":"PASS"})
+
+    # A normal tap in the middle of the page is not a turn.
+    rect=page.locator("#vibe-book-viewport").bounding_box()
+    tap_touch(page,session,rect["x"]+rect["width"]*.50,
+              rect["y"]+rect["height"]*.25)
+    assert page.evaluate("state.location")=="t12-vibe-001","Center tap changed terms"
+    CHECKS.append({"test":"center tap does not trigger a page turn","status":"PASS"})
+
+    # At any vertical reading position, the edge taps should still work.
+    page.evaluate("""() => {
+       const vp=document.getElementById('vibe-book-viewport');
+       vp.scrollTop=Math.min(220,vp.scrollHeight-vp.clientHeight);
+    }""")
+    tap_edge(page,session,"right")
+    assert page.evaluate("state.location")=="t12-vibe-002", (
+        "Right edge must work after scrolling the text"
+    )
+    tap_edge(page,session,"left")
+    assert page.evaluate("state.location")=="t12-vibe-001"
+    CHECKS.append({"test":"edge taps work while reading long scrolled text","status":"PASS"})
+
+
+def mouse_edge_tests(page):
+    """Also check desktop/tablet pointer clicks, not only touch simulation."""
+    open_term(page,1)
+    vp=page.locator("#vibe-book-viewport").bounding_box()
+    xleft=vp["x"]+14
+    xright=vp["x"]+vp["width"]-14
+    y=vp["y"]+min(155,vp["height"]*.27)
+    page.mouse.click(xleft,y)
+    assert page.evaluate("state.location")=="t12-vibe-001"
+    page.mouse.click(xright,y)
+    assert page.evaluate("state.location")=="t12-vibe-002"
+    page.mouse.click(xleft,y)
+    assert page.evaluate("state.location")=="t12-vibe-001"
+    CHECKS.append({"test":"left/right tap zones also work with mouse/tablet pointer","status":"PASS"})
 
 
 def main():
@@ -275,6 +362,8 @@ def main():
                    v.scrollTop=v.scrollHeight;
                 }""")
                 page.screenshot(path=str(OUT / "track12-darkbook-bottom-001.png"))
+            if width == 800:
+                mouse_edge_tests(page)
             page.close()
         browser.close()
     assert not ERRORS, ERRORS
@@ -284,6 +373,8 @@ def main():
         "terms": len(TERMS), "viewports": [[360,800],[800,1280]],
         "singleTermVerticalPages": 50,
         "genuineAndroidStyleTouchSwipes": 98,
+        "genuineLeftRightEdgeTaps": 98,
+        "edgeTapNavigation": True,
         "verticalTouchScrollPreserved": True,
         "fiveSectionsPerTerm": True, "paragraphBoxesRemoved": True,
         "tests": len(CHECKS), "checks": CHECKS,
