@@ -13,6 +13,7 @@
   const termPages=chapters.filter(c=>c.track===TRACK).flatMap(c=>c.pages);
   let scrollWriteTimer=null;
   let entryDirection=0;
+  let suppressEdgeTapUntil=0;
 
   function isVibe(){
     return route==='reader'&&chapters[current.c]&&chapters[current.c].track===TRACK;
@@ -101,6 +102,9 @@
       const flick=axis==='horizontal'&&ms<=360&&Math.abs(dx)>=30;
       const horizontal=Math.abs(dx)>Math.abs(dy)*MOVE_RATIO;
       reset();
+      // Native touch can emit a synthetic click after a drag; never turn two words.
+      if(Math.max(Math.abs(dx),Math.abs(dy))>12)
+        suppressEdgeTapUntil=Date.now()+600;
       if(horizontal&&(deliberate||flick))goTerm(dx<0?1:-1);
     }
     viewport.addEventListener('touchstart',event=>{
@@ -140,6 +144,31 @@
       if(gesture&&gesture.source==='mouse')finish(event.clientX,event.clientY,Date.now());
     });
     viewport.addEventListener('pointercancel',reset);
+  }
+
+
+  /* VIBE_EDGE_TAP_V4 — restore the original reader's left/right edge taps.
+   * Use event delegation instead of overlays: text, vertical scroll and
+   * links/buttons remain interactive. Only the reading viewport responds.
+   */
+  function installEdgeTaps(viewport){
+    viewport.addEventListener('click',event=>{
+      if(!isVibe()||event.defaultPrevented||Date.now()<suppressEdgeTapUntil)return;
+      // The edge action is for an actual click/tap, not keyboard activation.
+      if(event.detail===0 || (event.button!==undefined&&event.button!==0))return;
+      const target=event.target;
+      if(target&&target.closest&&target.closest(
+        'button,a,input,textarea,select,summary,details,[contenteditable="true"]'
+      ))return;
+      const bounds=viewport.getBoundingClientRect();
+      if(!bounds.width||!bounds.height)return;
+      const x=event.clientX-bounds.left;
+      const y=event.clientY-bounds.top;
+      if(x<0||x>bounds.width||y<0||y>bounds.height)return;
+      const edgeWidth=Math.min(56,Math.max(38,bounds.width*0.12));
+      if(x<=edgeWidth)goTerm(-1);
+      else if(x>=bounds.width-edgeWidth)goTerm(1);
+    });
   }
 
   function section(number,label,body,classname){
@@ -226,6 +255,7 @@
       },260);
     },{passive:true});
     installGestures(viewport);
+    installEdgeTaps(viewport);
     if(document.body&&document.body.dataset){
       document.body.dataset.vibeReady='1';
       document.body.dataset.vibeTerm=String(currentTerm().vibe.number);
