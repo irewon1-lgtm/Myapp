@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-10T11:32:10.790Z",
+  "generatedAt": "2026-11-10T12:12:16.773Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -16,9 +16,7 @@
   "health": {
     "status": "ok",
     "stateCommitted": true,
-    "warnings": [
-      "과천시: detail failed ie9ncy6fn24t: Error: HTTP 404 Not Found"
-    ]
+    "warnings": []
   },
   "rules": {
     "newnessField": "postedAt",
@@ -57,6 +55,54 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
+            "id": "/kr/buy-sell/lg%EC%A0%84%EC%9E%90-%EA%B7%B8%EB%9E%A8-15%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-w3vaxtp7nvmn/",
+            "href": "/kr/buy-sell/lg%EC%A0%84%EC%9E%90-%EA%B7%B8%EB%9E%A8-15%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-w3vaxtp7nvmn/",
+            "title": "LG전자 그램 15인치 노트북",
+            "content": "LG전자 그램 노트북\n13세대 인텔 i5  1360p\n16GB RAM\n512 + 256 GB SSD\n15인치 화면\n외관 아주깔끔.\n가벼워서 휴대하기 매우 좋아요.\n화면 및 기능에 문제없어요.",
+            "price": "700000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/ab0e26c1-14ce-43d5-a25e-feed77f57600.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Reserved",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-11-10T11:42:47.407Z",
+            "boostedAt": "2026-11-10T11:42:47.402Z",
+            "region": {
+              "name": "군포2동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 37.3374906,
+                "longitude": 126.9333868
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%A6%AC%EC%A0%845-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%9D%BC%EC%9D%B4%EC%A0%A07-5800h-rtx-3070-wdqz4odjsfxe/",
+            "href": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%A6%AC%EC%A0%845-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%9D%BC%EC%9D%B4%EC%A0%A07-5800h-rtx-3070-wdqz4odjsfxe/",
+            "title": "레노버 게이밍 리전5 노트북 라이젠7 5800H RTX 3070",
+            "content": "고성능 게이밍 노트북 레노버 제품이에요. AMD 라이젠7 5800H 프로세서와 NVIDIA GeForce RTX 3070 그래픽 카드가 탑재되어 있어 쾌적한 게임 환경을 즐기실 수 있어요. 16GB RAM과 512GB SSD로 넉넉한 저장 공간과 빠른 속도를 자랑합니다. 박스와 구성품 모두 포함되어 있어요. 고사양 게임을 즐기시는 분들께 추천드려요.\n생활기스 이외 깨끗합니다\n",
+            "price": "900000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/b14a100e-4074-4b8b-93a6-4911d9fc272f.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-11-10T11:40:36.686Z",
+            "boostedAt": "2026-11-10T11:40:36.683Z",
+            "region": {
+              "name": "입북동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 37.2947374,
+                "longitude": 126.9594862
+              },
+              {
+                "latitude": 37.2061388,
+                "longitude": 127.0178519
+              }
+            ]
+          },
+          {
             "id": "/kr/buy-sell/%EC%97%90%EC%9D%B4%EC%84%9C-rtx4060%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%9D%EB%8B%88%EB%8B%A4-zr8p3m1wng58/",
             "href": "/kr/buy-sell/%EC%97%90%EC%9D%B4%EC%84%9C-rtx4060%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%9D%EB%8B%88%EB%8B%A4-zr8p3m1wng58/",
             "title": "에이서 RTX4060게이밍 노트북 팝니다",
@@ -77,65 +123,17 @@
                 "longitude": 127.0575245
               }
             ]
-          },
-          {
-            "id": "/kr/buy-sell/hp-omen-16-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-d1fk14nc253h/",
-            "href": "/kr/buy-sell/hp-omen-16-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-d1fk14nc253h/",
-            "title": "HP OMEN 16 게이밍 노트북",
-            "content": "HP OMEN 16 게이밍 노트북이에요. AMD Ryzen 7 7840HS CPU와 NVIDIA GeForce RTX 4060 그래픽 카드가 탑재되어 고사양 게임도 부드럽게 즐길 수 있어요. 16GB RAM과 1테라m.2 로 넉넉한 저장 공간과 빠른 속도를 자랑합니다. 깔끔한 블랙 색상으로 어떤 환경에서도 잘 어울려요. 고성능 게이밍 노트북을 찾으신다면 이 제품을 눈여겨보세요.\n특이사항 노트북 닫으면 절전모드진입 안됩니다\nOMEN 16 시리즈에서 주로 논란이 되었던 issue는 크게 2023~2024년형 특정 모델(wf0000 / xd0000 시리즈 등)의 덮개 감지 센서(Hall Sensor) 위치 결함과 메인보드 전원부(IO 커넥터/센서부) 열화 문제입니다.  \n\n 이칩셋 고칠려했으나 동일증상이 또생긴다하여 \n쓰는데 지장없기에 제거했습니다 \n다른문제없이 정상작동합니다",
-            "price": "1000000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/aff93a79-f688-40e5-80e2-e36249bd71ff.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": false,
-            "createdAt": "2026-11-10T10:41:39.170Z",
-            "boostedAt": "2026-11-10T10:41:39.170Z",
-            "region": {
-              "name": "입북동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 37.2947374,
-                "longitude": 126.9594862
-              },
-              {
-                "latitude": 37.2061388,
-                "longitude": 127.0178519
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-14%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-jnve4uxg86yd/",
-            "href": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-14%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-jnve4uxg86yd/",
-            "title": "LG 그램 14인치 노트북",
-            "content": "회사명: LG전자\n모델명: 14Z90S-GA5HK\n크기/무게 :312x1416.8(mm) 약 1,120 (g)\n색상 : 에센스 화이트\n모델 출시년월 : 2024년 1월\nCPU : 인텔® 코어™ Ultra5 프로세서 125H\n메모리 : 16(GB)  LPDDR5 6000Mhz(온보드)\n그래픽: 인텔 내장 그래픽\n저장장치 :512 GB (NVMe™) + 확장 슬롯 1 (PCIe 4.0 x 4)\n\n구매당시 써져있던 설명 그대로 입니다",
-            "price": "1130000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/17917248679151d401b91782322d1447d3949216de94052d718df32e2e8b1950020e9a86d60900.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": false,
-            "createdAt": "2026-10-11T13:23:42.441Z",
-            "boostedAt": "2026-11-10T08:40:51.481Z",
-            "region": {
-              "name": "오전동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 37.3555266,
-                "longitude": 126.9704614
-              }
-            ]
           }
         ],
         "dateFieldSnippets": [
+          "createdAt\":\"2026-11-10T11:42:47.407Z\",\"boostedAt\":\"2026-11-10T11:42:47.402Z\",\"region\":{\"name\":\"군포2동\"},\"category\":null,\"contentCoo",
+          "createdAt\":\"2026-11-10T11:40:36.686Z\",\"boostedAt\":\"2026-11-10T11:40:36.683Z\",\"region\":{\"name\":\"입북동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-11-06T16:38:47.623Z\",\"boostedAt\":\"2026-11-10T10:09:15.678Z\",\"region\":{\"name\":\"망포동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-10T10:41:39.170Z\",\"boostedAt\":\"2026-11-10T10:41:39.170Z\",\"region\":{\"name\":\"입북동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-10-11T13:23:42.441Z\",\"boostedAt\":\"2026-11-10T08:40:51.481Z\",\"region\":{\"name\":\"오전동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-09T11:13:47.396Z\",\"boostedAt\":\"2026-11-10T11:14:19.287Z\",\"region\":{\"name\":\"이충동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-10-25T17:09:10.997Z\",\"boostedAt\":\"2026-11-10T10:34:17.686Z\",\"region\":{\"name\":\"관양동\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-11-10T12:09:23.109Z\",\"boostedAt\":\"2026-11-10T12:09:23.105Z\",\"region\":{\"name\":\"읍내동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-11-10T10:41:39.170Z\",\"boostedAt\":\"2026-11-10T10:41:39.170Z\",\"region\":{\"name\":\"입북동\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":265,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"에이서 RTX4060게이밍 노트북 팝니다\",\"descr",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":262,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG전자 그램 15인치 노트북\",\"description",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -143,24 +141,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1274,
-    "globalUniqueListings": 514,
-    "duplicateListingsRemoved": 760,
-    "detailQueueStart": 17,
-    "freshDetailTasks": 17,
+    "searchUniqueListings": 1278,
+    "globalUniqueListings": 483,
+    "duplicateListingsRemoved": 795,
+    "detailQueueStart": 20,
+    "freshDetailTasks": 20,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 17,
-    "detailSucceeded": 16,
-    "detailFailed": 1,
-    "detail404": 1,
+    "detailRequestsExecuted": 20,
+    "detailSucceeded": 20,
+    "detailFailed": 0,
+    "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 514,
+    "postedAtResolvedFromSearch": 483,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 0,
-    "scanDurationMs": 98625,
+    "candidateCount": 1,
+    "scanDurationMs": 103047,
     "cities": [
       {
         "city": "군포시",
@@ -172,8 +170,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 284,
-        "durationMs": 12143
+        "uniqueListings": 282,
+        "durationMs": 12095
       },
       {
         "city": "의왕시",
@@ -188,8 +186,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 372,
-        "durationMs": 25464
+        "uniqueListings": 379,
+        "durationMs": 25537
       },
       {
         "city": "안양시",
@@ -206,8 +204,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 362,
-        "durationMs": 34798
+        "uniqueListings": 363,
+        "durationMs": 35179
       },
       {
         "city": "과천시",
@@ -218,17 +216,53 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 256,
-        "durationMs": 6244
+        "uniqueListings": 254,
+        "durationMs": 6731
       }
     ],
-    "finalCandidateCount": 0,
+    "finalCandidateCount": 1,
     "stateItemCount": 5000,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 98631
+    "durationMs": 103053
   },
-  "candidates": []
+  "candidates": [
+    {
+      "id": "w3vaxtp7nvmn",
+      "changeType": "new",
+      "previousPrice": null,
+      "price": 700000,
+      "priceDropPercent": null,
+      "city": "군포시",
+      "location": "군포2동",
+      "regionPath": "경기도 군포시 군포2동",
+      "title": "LG전자 그램 15인치 노트북",
+      "modelHint": "LG전자 그램 15인치 노트북",
+      "cpuHint": null,
+      "cpuBaselinePass": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB RAM",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 256,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "specConfidence": "needs_review",
+      "postedAt": "2026-11-10T11:42:47.407Z",
+      "boostedAt": "2026-11-10T11:42:47.402Z",
+      "status": "Ongoing",
+      "description": "LG전자 그램 노트북\n13세대 인텔 i5  1360p\n16GB RAM\n512 + 256 GB SSD\n15인치 화면\n외관 아주깔끔.\n가벼워서 휴대하기 매우 좋아요.\n화면 및 기능에 문제없어요.",
+      "url": "https://www.daangn.com/kr/buy-sell/lg%EC%A0%84%EC%9E%90-%EA%B7%B8%EB%9E%A8-15%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-w3vaxtp7nvmn/",
+      "favoriteCount": 0,
+      "chatCount": 0,
+      "sellerName": null,
+      "mannerTemperature": null
+    }
+  ]
 }
