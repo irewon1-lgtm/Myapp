@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-10T10:52:15.179Z",
+  "generatedAt": "2026-11-10T11:32:10.790Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -16,7 +16,9 @@
   "health": {
     "status": "ok",
     "stateCommitted": true,
-    "warnings": []
+    "warnings": [
+      "과천시: detail failed ie9ncy6fn24t: Error: HTTP 404 Not Found"
+    ]
   },
   "rules": {
     "newnessField": "postedAt",
@@ -55,6 +57,28 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
+            "id": "/kr/buy-sell/%EC%97%90%EC%9D%B4%EC%84%9C-rtx4060%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%9D%EB%8B%88%EB%8B%A4-zr8p3m1wng58/",
+            "href": "/kr/buy-sell/%EC%97%90%EC%9D%B4%EC%84%9C-rtx4060%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%9D%EB%8B%88%EB%8B%A4-zr8p3m1wng58/",
+            "title": "에이서 RTX4060게이밍 노트북 팝니다",
+            "content": "에이서 RTX4060게이밍 노트북 팝니다\nCPU i7 12650H(10코어16스레드)\nGPU RTX4060(140w)\nRam ddr5 16gb\nSSD NVMe 512gb\n일주일 전에 써멀 재도포 하고 내부 청소 하여 성능 상태 좋습니다\n가격대가 있는 물건이라서 직거래 선호 합니다 수원 직거래 합니다\n본체 충전기 쿨러 구성입니다",
+            "price": "100",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/e8f4523e-01ed-43a3-bc60-ff607aeb01d4.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-11-06T16:38:47.623Z",
+            "boostedAt": "2026-11-10T10:09:15.678Z",
+            "region": {
+              "name": "망포동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 37.2360625,
+                "longitude": 127.0575245
+              }
+            ]
+          },
+          {
             "id": "/kr/buy-sell/hp-omen-16-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-d1fk14nc253h/",
             "href": "/kr/buy-sell/hp-omen-16-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-d1fk14nc253h/",
             "title": "HP OMEN 16 게이밍 노트북",
@@ -81,59 +105,37 @@
             ]
           },
           {
-            "id": "/kr/buy-sell/%EC%97%90%EC%9D%B4%EC%84%9C-rtx4060%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%9D%EB%8B%88%EB%8B%A4-zr8p3m1wng58/",
-            "href": "/kr/buy-sell/%EC%97%90%EC%9D%B4%EC%84%9C-rtx4060%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%9D%EB%8B%88%EB%8B%A4-zr8p3m1wng58/",
-            "title": "에이서 RTX4060게이밍 노트북 팝니다",
-            "content": "에이서 RTX4060게이밍 노트북 팝니다\nCPU i7 12650H(10코어16스레드)\nGPU RTX4060(140w)\nRam ddr5 16gb\nSSD NVMe 512gb\n일주일 전에 써멀 재도포 하고 내부 청소 하여 성능 상태 좋습니다\n가격대가 있는 물건이라서 직거래 선호 합니다 수원 직거래 합니다\n본체 충전기 쿨러 구성입니다",
-            "price": "100",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/e8f4523e-01ed-43a3-bc60-ff607aeb01d4.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-11-06T16:38:47.623Z",
-            "boostedAt": "2026-11-10T10:09:15.678Z",
-            "region": {
-              "name": "망포동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 37.2360625,
-                "longitude": 127.0575245
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84%EB%A6%AC%EC%A0%84-pro-rtx5070ti-32gb-3tb-%EA%B2%8C%EC%9D%B4%EB%B0%8D%EB%85%B8%ED%8A%B8%EB%B6%81-fa4m1cwtfzq6/",
-            "href": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84%EB%A6%AC%EC%A0%84-pro-rtx5070ti-32gb-3tb-%EA%B2%8C%EC%9D%B4%EB%B0%8D%EB%85%B8%ED%8A%B8%EB%B6%81-fa4m1cwtfzq6/",
-            "title": "레노버리전 Pro RTX5070Ti 32GB 3TB 게이밍노트북",
-            "content": "레노버 리전 Pro 5i Gen10 판매합니다.\n25년 11월 구매, 1년 미만 사용했습니다.\n데스크탑 본체 없이 이 한 대로 작업·게임 다 되고,\n학교·회사·카페 어디든 들고 다니며 쓸 수 있습니다.\n\n★ 보증 2027년 11월까지 1년 이상 남음\n- 우발적 손상 보장(ADP): 낙하·침수·액정 파손까지 보장\n- 프리미엄 케어 디포 지원\n→ 들고 다니다 떨어뜨려도 보장되니 휴대용으로 특히 안심입니다\n\n[사양]\n- CPU: Intel Core Ultra 9 275HX (24코어)\n- GPU: RTX 5070 Ti Laptop 12GB GDDR7\n- RAM: DDR5 32GB\n- SSD: 총 3TB (기본 1TB + 2TB 추가 장착)\n- 화면: 16인치\n- OS: Windows 11 Home 정품 인증\n\n[이런 작업에 추천]\n- 3D: 블렌더(CUDA/OptiX 렌더링), 3ds Max, 마야, 시네마4D\n- 영상: 프리미어 프로, 다빈치 리졸브, 애프터이펙트 4K 편집\n- 게임 개발: 언리얼 엔진, 유니티\n- 설계: 오토캐드, 솔리드웍스, 인벤터\n- AI: Stable Diffusion, ComfyUI, 로컬 LLM (VRAM 12GB)\n- 게임: 최신 AAA 게임 QHD 고옵션\n- 3TB 저장공간이라 프로젝트 파일·게임 여러 개 넉넉히 보관 가능\n\n[상태]\n- 외관 찍힘·기스 없음\n- 단색 화면 테스트 완료, 불량화소·빛샘 없음 (사진 첨부)\n- 키보드 커버 사용으로 키캡 번들거림 없음\n\n[거래]\n- 구성품: 본체, 정품 어댑터 (박스 없음)\n- 윈도우 초기화 + 레노버 계정 등록 해제 후 판매 (구매자 명의로 등록 가능)\n- 직거래 우선, 택배 가능",
-            "price": "3200000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/17929479356043af75aa47086fd6c4600d8da34f28491bfc59b1afe78198232b0bffb5fddb19b0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-14%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-jnve4uxg86yd/",
+            "href": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-14%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-jnve4uxg86yd/",
+            "title": "LG 그램 14인치 노트북",
+            "content": "회사명: LG전자\n모델명: 14Z90S-GA5HK\n크기/무게 :312x1416.8(mm) 약 1,120 (g)\n색상 : 에센스 화이트\n모델 출시년월 : 2024년 1월\nCPU : 인텔® 코어™ Ultra5 프로세서 125H\n메모리 : 16(GB)  LPDDR5 6000Mhz(온보드)\n그래픽: 인텔 내장 그래픽\n저장장치 :512 GB (NVMe™) + 확장 슬롯 1 (PCIe 4.0 x 4)\n\n구매당시 써져있던 설명 그대로 입니다",
+            "price": "1130000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/17917248679151d401b91782322d1447d3949216de94052d718df32e2e8b1950020e9a86d60900.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": false,
-            "createdAt": "2026-10-25T17:09:10.997Z",
-            "boostedAt": "2026-11-10T10:34:17.686Z",
+            "createdAt": "2026-10-11T13:23:42.441Z",
+            "boostedAt": "2026-11-10T08:40:51.481Z",
             "region": {
-              "name": "관양동"
+              "name": "오전동"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 37.4044455,
-                "longitude": 126.9629508
+                "latitude": 37.3555266,
+                "longitude": 126.9704614
               }
             ]
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-11-10T10:41:39.170Z\",\"boostedAt\":\"2026-11-10T10:41:39.170Z\",\"region\":{\"name\":\"입북동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-11-06T16:38:47.623Z\",\"boostedAt\":\"2026-11-10T10:09:15.678Z\",\"region\":{\"name\":\"망포동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-10-25T17:09:10.997Z\",\"boostedAt\":\"2026-11-10T10:34:17.686Z\",\"region\":{\"name\":\"관양동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-10T10:42:59.336Z\",\"boostedAt\":\"2026-11-10T10:42:59.334Z\",\"region\":{\"name\":\"영월읍\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-10T10:42:47.316Z\",\"boostedAt\":\"2026-11-10T10:42:47.314Z\",\"region\":{\"name\":\"안양5동\"},\"category\":null,\"contentCoo"
+          "createdAt\":\"2026-11-10T10:41:39.170Z\",\"boostedAt\":\"2026-11-10T10:41:39.170Z\",\"region\":{\"name\":\"입북동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-10-11T13:23:42.441Z\",\"boostedAt\":\"2026-11-10T08:40:51.481Z\",\"region\":{\"name\":\"오전동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-11-09T11:13:47.396Z\",\"boostedAt\":\"2026-11-10T11:14:19.287Z\",\"region\":{\"name\":\"이충동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-10-25T17:09:10.997Z\",\"boostedAt\":\"2026-11-10T10:34:17.686Z\",\"region\":{\"name\":\"관양동\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":266,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"HP OMEN 16 게이밍 노트북\",\"descripti",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":265,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"에이서 RTX4060게이밍 노트북 팝니다\",\"descr",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -141,24 +143,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1254,
-    "globalUniqueListings": 504,
-    "duplicateListingsRemoved": 750,
-    "detailQueueStart": 16,
-    "freshDetailTasks": 16,
+    "searchUniqueListings": 1274,
+    "globalUniqueListings": 514,
+    "duplicateListingsRemoved": 760,
+    "detailQueueStart": 17,
+    "freshDetailTasks": 17,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 16,
+    "detailRequestsExecuted": 17,
     "detailSucceeded": 16,
-    "detailFailed": 0,
-    "detail404": 0,
+    "detailFailed": 1,
+    "detail404": 1,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 504,
+    "postedAtResolvedFromSearch": 514,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 99387,
+    "scanDurationMs": 98625,
     "cities": [
       {
         "city": "군포시",
@@ -170,8 +172,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 278,
-        "durationMs": 12225
+        "uniqueListings": 284,
+        "durationMs": 12143
       },
       {
         "city": "의왕시",
@@ -186,8 +188,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 366,
-        "durationMs": 25467
+        "uniqueListings": 372,
+        "durationMs": 25464
       },
       {
         "city": "안양시",
@@ -204,8 +206,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 355,
-        "durationMs": 35617
+        "uniqueListings": 362,
+        "durationMs": 34798
       },
       {
         "city": "과천시",
@@ -216,8 +218,8 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 255,
-        "durationMs": 6809
+        "uniqueListings": 256,
+        "durationMs": 6244
       }
     ],
     "finalCandidateCount": 0,
@@ -226,7 +228,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 99395
+    "durationMs": 98631
   },
   "candidates": []
 }
