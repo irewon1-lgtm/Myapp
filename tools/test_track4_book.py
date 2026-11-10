@@ -65,6 +65,11 @@ def main():
     transport=json.loads(data[1])
     for c in transport['chapters']:
         for page in c['pages']:
+            # Mirror the JavaScript hydrator: only the duplicated Track 12
+            # paragraph is removed in transit. Full source equality is required.
+            if c.get('track') == 12 and page.get('kind') == 'vibe-term':
+                assert 'paragraphs' not in page, 'Redundant paragraph not deduplicated'
+                page['paragraphs'] = [page['vibe']['explain']]
             book=page.get('book')
             if not book:continue
             book.setdefault('html','\n'.join(b['html'] for b in book['blocks']))
