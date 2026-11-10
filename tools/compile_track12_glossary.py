@@ -1,7 +1,9 @@
-"""Track 12 Vibe Coding glossary: additive 50-term compiler.
+"""Extend the approved dark-book Track 12 from 50 to 100 words without rewriting 1-50.
 
-Source of truth: live/vibe-terms/terms-*.json. Does not edit Tracks 1-11,
-existing stable page IDs, bookmarks, notes, or Android signing identity.
+The source-of-truth is the twenty sets of five terms in live/vibe-terms.
+Tracks 1-11 and the first five Track 12 chapters (page IDs, text and edition)
+are byte-for-byte equivalent after JSON serialization. Any unexpected baseline
+or source change is a hard failure rather than an implicit migration.
 """
 from __future__ import annotations
 
@@ -11,13 +13,20 @@ import pathlib
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 TRACK_ID = 12
-EDITION = "vibe-terms-v1-001-050"
+LEGACY_EDITION = "vibe-terms-v1-001-050"
+EDITION = "vibe-terms-v1-001-100"
+LEGACY_TERMS_SHA256 = "38ced95b17f009bb912ac64ec2e797436e946aacb6ae5af94639945a5a5c57a2"
 UNIT_TITLES = (
     "AI에게 앱 개발을 지시할 때 쓰는 말",
     "ChatGPT·Codex·AI 이해하기",
     "AI가 알아서 개발하게 만드는 용어",
     "AI가 작성한 코드 이해하기",
     "GitHub 코드 저장과 복구",
+    "앱을 실제로 실행하고 배포하는 용어",
+    "AI가 만든 앱이 정상인지 검수하기",
+    "오류가 발생했을 때 꼭 알아야 할 말",
+    "UI와 앱 화면을 이해하는 용어",
+    "Android 앱 완성과 보안",
 )
 FIELDS = ("number", "term", "english", "explain", "example",
           "contrast", "wrong", "answer", "prompt")
@@ -30,23 +39,31 @@ def digest(value):
 
 def load_terms(root=ROOT):
     paths = sorted((root / "live/vibe-terms").glob("terms-*.json"))
-    assert len(paths) == 10, "Exactly ten approved source files are required for terms 001-050"
+    expected = [
+        f"terms-{n:03d}-{n+4:03d}.json" for n in range(1, 101, 5)
+    ]
+    assert [p.name for p in paths] == expected, "Exactly 20 ordered five-term sources required"
     terms = []
     for path in paths:
         payload = json.loads(path.read_text(encoding="utf-8"))
         assert list(payload) == ["terms"], f"Unexpected source schema: {path.name}"
-        assert len(payload["terms"]) == 5, f"Each source file contains five complete terms: {path.name}"
+        assert len(payload["terms"]) == 5, f"Five complete entries required: {path.name}"
         terms.extend(payload["terms"])
-    assert [t["number"] for t in terms] == list(range(1, 51)), "Terms 1-50 must be continuous and ordered"
-    assert len(set(t["term"] for t in terms)) == 50, "Duplicate glossary terms"
+
+    assert [t["number"] for t in terms] == list(range(1, 101))
+    assert len(set(t["term"] for t in terms)) == 100, "Duplicate glossary titles"
+    assert digest(terms[:50]) == LEGACY_TERMS_SHA256, "Approved terms 1-50 changed"
     for term in terms:
-        assert set(term) == set(FIELDS), f"Missing or unexpected field for term {term.get('number')}"
+        assert set(term) == set(FIELDS), f"Incorrect field schema on word {term.get('number')}"
         for field in FIELDS[1:]:
-            value = term[field]
-            assert isinstance(value, str) and value.strip(), (term["number"], field)
+            assert isinstance(term[field], str) and term[field].strip(), (
+                term["number"], field
+            )
         for field in FIELDS[3:]:
-            assert len(term[field].strip()) >= 40, (term["number"], field, "Content too short")
-        assert len(term["prompt"]) < 1400, (term["number"], "Prompt should fit on a phone")
+            assert len(term[field].strip()) >= 40, (
+                term["number"], field, "Insufficient explanation"
+            )
+        assert len(term["prompt"]) < 1400, (term["number"], "Long Codex prompt")
     return terms
 
 
@@ -54,77 +71,100 @@ def build(root=ROOT):
     terms = load_terms(root)
     path = root / "live/content.json"
     course = json.loads(path.read_text(encoding="utf-8"))
-    other_chapters = [c for c in course["chapters"] if c.get("track") != TRACK_ID]
+    others = [c for c in course["chapters"] if c.get("track") != TRACK_ID]
     other_tracks = [t for t in course["tracks"] if t.get("id") != TRACK_ID]
-    before_chapters = digest(other_chapters)
-    before_tracks = digest(other_tracks)
-    existing = [c for c in course["chapters"] if c.get("track") == TRACK_ID]
-    if existing:
-        assert all(c.get("edition") == EDITION for c in existing), (
-            "An existing Track 12 has a different edition; stop instead of overwriting it"
-        )
-    existing_track = next((t for t in course["tracks"] if t["id"] == TRACK_ID), None)
-    if existing_track:
-        assert existing_track.get("edition") == EDITION, "Track 12 ID already belongs to another track"
-    else:
-        course["tracks"].append({
-            "id": TRACK_ID,
-            "title": "바이브 코딩 필수 용어 200",
-            "subtitle": "우선 공개 1~50번 · 5단원 · 뜻·실전·비교·판별·지시문",
-            "available": True,
-            "chapters": list(UNIT_TITLES),
-            "edition": EDITION,
-        })
+    other_chapters_hash, other_tracks_hash = digest(others), digest(other_tracks)
 
+    old_track = next((t for t in course["tracks"] if t["id"] == TRACK_ID), None)
+    assert old_track, "Track 12 must already exist; no blank rebuild allowed"
+    assert old_track.get("edition") in (LEGACY_EDITION, EDITION), (
+        "Unknown Track 12 edition; stop rather than overwrite existing course"
+    )
+    existing = sorted(
+        [c for c in course["chapters"] if c.get("track") == TRACK_ID],
+        key=lambda c: c["chapter"]
+    )
+    assert len(existing) in (5, 10), "Unexpected Track 12 chapter count"
+    assert [c["chapter"] for c in existing] == list(range(1, len(existing)+1))
+    first_five = existing[:5]
+    for idx, chapter in enumerate(first_five, 1):
+        assert chapter["id"] == f"t12-vibe-ch{idx:02d}"
+        assert chapter["edition"] == LEGACY_EDITION, "Original course reauthored"
+        assert chapter["title"] == UNIT_TITLES[idx-1]
+        assert len(chapter["pages"]) == 10
+        for j, page in enumerate(chapter["pages"]):
+            n = (idx-1)*10+j+1
+            assert page["id"] == f"t12-vibe-{n:03d}"
+            assert page["kind"] == "vibe-term"
+            assert page["vibe"] == terms[n-1], f"Original term {n} modified"
+
+    preserved_hash = digest(first_five)
     new_chapters = []
-    for unit_idx, unit_title in enumerate(UNIT_TITLES, 1):
-        group = terms[(unit_idx - 1) * 10:unit_idx * 10]
+    for unit_idx in range(6, 11):
+        title = UNIT_TITLES[unit_idx-1]
+        group = terms[(unit_idx-1)*10:unit_idx*10]
         pages = []
         for t in group:
             n = t["number"]
-            page = {
+            pages.append({
                 "id": f"t12-vibe-{n:03d}",
                 "kind": "vibe-term",
-                "eyebrow": f"바이브 코딩 용어 {n}/200 · 공개 1~50",
+                "eyebrow": f"바이브 코딩 용어 {n}/200 · 공개 1~100",
                 "title": f"{n}. {t['term']} ({t['english']})",
                 "paragraphs": [t["explain"]],
                 "vibe": {key: t[key] for key in FIELDS},
-            }
-            pages.append(page)
+            })
         new_chapters.append({
             "id": f"t12-vibe-ch{unit_idx:02d}",
             "track": TRACK_ID,
             "chapter": unit_idx,
-            "title": unit_title,
+            "title": title,
             "subtitle": f"{group[0]['number']}~{group[-1]['number']}번 · 실전 용어 10개",
-            "desc": f"용어 10개를 실제 앱 개발 상황에 연결해 배웁니다: {unit_title}",
+            "desc": f"용어 10개를 실제 앱 개발 상황에 연결해 배웁니다: {title}",
             "pages": pages,
             "edition": EDITION,
-            "remember": "단어를 외우기보다 AI가 한 말이 맞는지 검수하고 필요한 지시를 내리는 방법을 익힙니다.",
+            "remember": "AI의 개발 결과를 이해하고 확인하며 필요할 때 정확하게 지시하는 능력을 익힙니다.",
         })
-    course["chapters"] = other_chapters + new_chapters
+    course["chapters"] = others + first_five + new_chapters
+    old_track.update(
+        title="바이브 코딩 필수 용어 200",
+        subtitle="1~100번 공개 · 10단원 · 책형 다크모드 · 뜻·실전·비교·판별·지시문",
+        available=True,
+        chapters=list(UNIT_TITLES),
+        edition=EDITION,
+    )
 
-    assert before_chapters == digest([c for c in course["chapters"] if c.get("track") != TRACK_ID])
-    assert before_tracks == digest([t for t in course["tracks"] if t.get("id") != TRACK_ID])
-    all_page_ids = [p["id"] for c in course["chapters"] for p in c["pages"]]
-    assert len(all_page_ids) == len(set(all_page_ids)), "Colliding page ID"
-    all_chapter_ids = [c["id"] for c in course["chapters"]]
-    assert len(all_chapter_ids) == len(set(all_chapter_ids)), "Colliding chapter ID"
+    assert preserved_hash == digest([
+        c for c in course["chapters"] if c.get("track") == TRACK_ID and c["chapter"] <= 5
+    ]), "Original five chapters changed"
+    assert other_chapters_hash == digest([
+        c for c in course["chapters"] if c.get("track") != TRACK_ID
+    ]), "Other course chapters changed"
+    assert other_tracks_hash == digest([
+        t for t in course["tracks"] if t.get("id") != TRACK_ID
+    ]), "Other track metadata changed"
+
+    ids = [p["id"] for c in course["chapters"] for p in c["pages"]]
+    chapter_ids = [c["id"] for c in course["chapters"]]
+    assert len(ids) == len(set(ids)), "Page ID collision"
+    assert len(chapter_ids) == len(set(chapter_ids)), "Chapter ID collision"
 
     course["vibeGlossaryAudit"] = {
         "schema": EDITION,
-        "termCount": len(terms),
-        "unitCount": len(UNIT_TITLES),
+        "termCount": 100,
+        "unitCount": 10,
         "firstTerm": 1,
-        "lastTerm": 50,
-        "futureTerms": 150,
+        "lastTerm": 100,
+        "futureTerms": 100,
         "fieldsPerTerm": ["explain", "example", "contrast", "wrong", "answer", "prompt"],
         "sourceSha256": digest(terms),
-        "otherChaptersSha256": before_chapters,
-        "otherTracksSha256": before_tracks,
+        "preservedFirst50SourceSha256": LEGACY_TERMS_SHA256,
+        "preservedFirst5ChaptersSha256": preserved_hash,
+        "otherChaptersSha256": other_chapters_hash,
+        "otherTracksSha256": other_tracks_hash,
         "physicalDeviceTest": "NOT_RUN",
     }
-    path.write_text(json.dumps(course, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    path.write_text(json.dumps(course, ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
     print(json.dumps(course["vibeGlossaryAudit"], ensure_ascii=False))
     return course
 
