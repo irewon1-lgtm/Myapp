@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-11T20:11:55.786Z",
+  "generatedAt": "2026-11-11T20:59:05.914Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,6 +55,28 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
+            "id": "/kr/buy-sell/hp-%EC%97%98%EB%A6%AC%ED%8A%B8%EB%B6%81-8460p-i5-4gb-%EB%85%B8%ED%8A%B8%EB%B6%81-6i2yrk71tfq6/",
+            "href": "/kr/buy-sell/hp-%EC%97%98%EB%A6%AC%ED%8A%B8%EB%B6%81-8460p-i5-4gb-%EB%85%B8%ED%8A%B8%EB%B6%81-6i2yrk71tfq6/",
+            "title": "HP 엘리트북 8460p i5 4GB 노트북",
+            "content": "Intel Core i5-2520M 프로세서\n4GB RAM\n13.8인치 화면\n윈7 깔려있고 포맷했습니다\n오래되서 전원만 쓰는게 좋을 듯 하고\n병원 원무용 쓰던제품이라\n키보드쪽은 깨끗합니다\n\n무게도 좀 있고하니\n기타 작업장이나 이런곳에서 쓰실분 가져가셔요~",
+            "price": "55000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/6d907253-dffb-44d1-b735-8ac5c398b72c.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-11-11T20:52:10.920Z",
+            "boostedAt": "2026-11-11T20:52:10.918Z",
+            "region": {
+              "name": "방이2동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 37.5158737,
+                "longitude": 127.1166977
+              }
+            ]
+          },
+          {
             "id": "/kr/buy-sell/hp-omen-16-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-12500h-3060-16gb-ram-5cychnuvjjxw/",
             "href": "/kr/buy-sell/hp-omen-16-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-12500h-3060-16gb-ram-5cychnuvjjxw/",
             "title": "HP OMEN 16 게이밍 노트북 (i5-12500H, 3060, 16GB RAM)",
@@ -73,28 +95,6 @@
               {
                 "latitude": 37.4825078,
                 "longitude": 126.9944243
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/%EA%B7%B8%EB%9E%A8-14%EC%9D%B8%EC%B9%98-13%EC%84%B8%EB%8C%80-%EC%9A%A9%EB%9F%89-%ED%81%B0-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-opqzgdj8pgrh/",
-            "href": "/kr/buy-sell/%EA%B7%B8%EB%9E%A8-14%EC%9D%B8%EC%B9%98-13%EC%84%B8%EB%8C%80-%EC%9A%A9%EB%9F%89-%ED%81%B0-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-opqzgdj8pgrh/",
-            "title": "그램 14인치 13세대 용량 큰 노트북 판매합니다.",
-            "content": "재작년에 용산전자상가에서 프로그램 설치 포함 300만원에 구매했습니다.  건축사무소에서 근무하면서 도면 확인과 AutoCAD, 3D max 위주로 사용했습니다. 주로 사용하는 프로그램이 용량 큰데도 버벅임 없이 잘 사용했습니다. 현장 미팅이 많아 가벼운 모델이 필요해서 구매했는데, 최근에는 회사 장비로 업무를 보게 되어 개인 노트북을 판매하게 되었습니다.  \n\n화면은 14인치로 CPU i5 13세대, RAM 16GB,  SSD 512GB입니다. 포맷하고 윈도우11와 문서프로그램 설치되어 있어 바로 사용 가능하여 편리하실것 같습니다. 평소 업무용으로만 사용해서 상태도 깔끔한 편이며, 충전기와 마우스 함께 드릴 수 있습니다.",
-            "price": "1000000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202608/9ae15fe9686c38fd649f8b01b974ec5012ce7fc1f5d396b319e583df8fcced7e_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": false,
-            "createdAt": "2026-08-30T15:41:15.660Z",
-            "boostedAt": "2026-11-11T12:02:24.922Z",
-            "region": {
-              "name": "삼성동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 37.5140158,
-                "longitude": 127.0535953
               }
             ]
           },
@@ -122,14 +122,14 @@
           }
         ],
         "dateFieldSnippets": [
+          "createdAt\":\"2026-11-11T20:52:10.920Z\",\"boostedAt\":\"2026-11-11T20:52:10.918Z\",\"region\":{\"name\":\"방이2동\"},\"category\":null,\"contentCoo",
           "createdAt\":\"2026-11-09T05:37:54.773Z\",\"boostedAt\":\"2026-11-11T06:12:34.629Z\",\"region\":{\"name\":\"방배1동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-08-30T15:41:15.660Z\",\"boostedAt\":\"2026-11-11T12:02:24.922Z\",\"region\":{\"name\":\"삼성동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-25T03:08:05.017Z\",\"boostedAt\":\"2026-11-11T10:37:01.090Z\",\"region\":{\"name\":\"역삼2동\"},\"category\":null,\"contentCoo",
           "createdAt\":\"2026-11-11T13:20:49.628Z\",\"boostedAt\":\"2026-11-11T13:20:49.627Z\",\"region\":{\"name\":\"역삼동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-07T03:42:07.329Z\",\"boostedAt\":\"2026-11-11T08:30:14.088Z\",\"region\":{\"name\":\"역삼2동\"},\"category\":null,\"contentCoo"
+          "createdAt\":\"2026-08-30T15:41:15.660Z\",\"boostedAt\":\"2026-11-11T12:02:24.922Z\",\"region\":{\"name\":\"삼성동\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":273,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"HP OMEN 16 게이밍 노트북 (i5-12500H,",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":275,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"HP 엘리트북 8460p i5 4GB 노트북\",\"des",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -137,14 +137,14 @@
         ]
       }
     },
-    "searchUniqueListings": 1050,
+    "searchUniqueListings": 1049,
     "globalUniqueListings": 263,
-    "duplicateListingsRemoved": 787,
-    "detailQueueStart": 1,
-    "freshDetailTasks": 1,
+    "duplicateListingsRemoved": 786,
+    "detailQueueStart": 4,
+    "freshDetailTasks": 4,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 1,
-    "detailSucceeded": 1,
+    "detailRequestsExecuted": 4,
+    "detailSucceeded": 4,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
@@ -154,7 +154,7 @@
     "postedAtResolvedFromSearch": 263,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 81519,
+    "scanDurationMs": 84047,
     "cities": [
       {
         "city": "군포시",
@@ -167,7 +167,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 262,
-        "durationMs": 12392
+        "durationMs": 12450
       },
       {
         "city": "의왕시",
@@ -182,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 263,
-        "durationMs": 26120
+        "uniqueListings": 262,
+        "durationMs": 25421
       },
       {
         "city": "안양시",
@@ -201,7 +201,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 263,
-        "durationMs": 35252
+        "durationMs": 35443
       },
       {
         "city": "과천시",
@@ -213,7 +213,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 262,
-        "durationMs": 6408
+        "durationMs": 6295
       }
     ],
     "finalCandidateCount": 0,
@@ -222,7 +222,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 81526
+    "durationMs": 84053
   },
   "candidates": []
 }
