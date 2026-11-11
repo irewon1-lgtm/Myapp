@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-11T00:22:03.736700Z",
+  "updatedAt": "2026-11-11T01:02:07.596894Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -17255,9 +17255,9 @@
     "6ff78xq8qcpi": {
       "id": "6ff78xq8qcpi",
       "title": "Dell 2in1 사무용 터치 노트북 판매합니다",
-      "price": 500000,
-      "previousPrice": null,
-      "changeType": "new",
+      "price": 480000,
+      "previousPrice": 500000,
+      "changeType": "price_drop",
       "city": "안양시",
       "location": "석수동",
       "cpuHint": null,
@@ -17275,7 +17275,7 @@
       "postedAt": "2026-11-09T01:12:39.994Z",
       "url": "https://www.daangn.com/kr/buy-sell/dell-2in1-%EC%82%AC%EB%AC%B4%EC%9A%A9-%ED%84%B0%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-6ff78xq8qcpi/",
       "firstAlertedAt": "2026-11-09T01:52:47.610847Z",
-      "lastCandidateAt": "2026-11-09T01:52:47.610847Z"
+      "lastCandidateAt": "2026-11-11T01:02:07.596894Z"
     },
     "7qsanrqxzveb": {
       "id": "7qsanrqxzveb",
@@ -18201,6 +18201,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%AF%B8%EC%82%AC%EC%9A%A9-msi%EB%B2%A4%EC%B2%98%ED%94%84%EB%A1%9C-16-%EA%B3%A0%EC%82%AC%EC%96%91-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%9C%88%EB%8F%84%EC%9A%B0-%ED%8F%AC%ED%95%A8-9kjy7za1amgj/",
       "firstAlertedAt": "2026-11-10T23:42:10.174782Z",
       "lastCandidateAt": "2026-11-10T23:42:10.174782Z"
+    },
+    "jh77oq5kpm6u": {
+      "id": "jh77oq5kpm6u",
+      "title": "ASUS TUF A14 2025",
+      "price": 1800000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "수리동",
+      "cpuHint": null,
+      "gpuHint": "RTX 5060",
+      "vramGB": null,
+      "ramGB": 32,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "32기가 메모리",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "postedAt": "2026-11-11T00:31:17.145Z",
+      "url": "https://www.daangn.com/kr/buy-sell/asus-tuf-a14-2025-jh77oq5kpm6u/",
+      "firstAlertedAt": "2026-11-11T01:02:07.596894Z",
+      "lastCandidateAt": "2026-11-11T01:02:07.596894Z"
     }
   }
 }
