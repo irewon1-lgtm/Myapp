@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-11T01:31:10.803Z",
+  "generatedAt": "2026-11-11T02:12:17.226Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -16,7 +16,9 @@
   "health": {
     "status": "ok",
     "stateCommitted": true,
-    "warnings": []
+    "warnings": [
+      "군포시: detail failed 1tezk23gm23b: Error: HTTP 404 Not Found"
+    ]
   },
   "rules": {
     "newnessField": "postedAt",
@@ -55,46 +57,46 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/2024%EB%85%84%ED%98%95-lg-%EA%B7%B8%EB%9E%A8-%ED%94%84%EB%A1%9C-16%EC%9D%B8%EC%B9%98-%EC%BD%94%EC%96%B4-%EC%9A%B8%ED%8A%B8%EB%9D%BC-5-16gb-ram-256gb-ssd-tyatfqsq623o/",
-            "href": "/kr/buy-sell/2024%EB%85%84%ED%98%95-lg-%EA%B7%B8%EB%9E%A8-%ED%94%84%EB%A1%9C-16%EC%9D%B8%EC%B9%98-%EC%BD%94%EC%96%B4-%EC%9A%B8%ED%8A%B8%EB%9D%BC-5-16gb-ram-256gb-ssd-tyatfqsq623o/",
-            "title": "2024년형 LG 그램 프로 16인치 / 코어 울트라 5 / 16GB RAM / 256GB SSD",
-            "content": "2024년형 LG 그램 프로 16인치 / 코어 울트라 5 / 16GB RAM / 256GB SSD\n\n· 화면 잔상이나 이상 없이 정상 작동합니다.\n· 모서리 부분에 약간의 찍힘/사용감이 있습니다. (사진 참고 부탁드립니다)\n\nLG 정품 어댑터도 같이 드립니다",
-            "price": "900000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/1794357227047804ada9bf779a00cbb2d1ef48416360ba26c20257632d3d37cb3ae1c2853b6980.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-16%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-2022%EB%85%84-%EC%A0%9C%EC%A1%B0-6h4ejtmky8yg/",
+            "href": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-16%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-2022%EB%85%84-%EC%A0%9C%EC%A1%B0-6h4ejtmky8yg/",
+            "title": "LG 그램 16인치 노트북 (2022년 제조)",
+            "content": "LG 그램 16인치 노트북입니다. AMD Ryzen 5 5625U 프로세서와 8GB RAM, 238GB SSD를 탑재하고 있습니다. 윈도우 11 Home이 설치되어 있어 바로 사용 가능해요. 가볍고 성능 좋은 노트북으로 어디서든 편리하게 사용해보세요. \n문서작성으로쓰려구구매했는데 거의사용안했어요",
+            "price": "650000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202609/d9718b59-c865-4399-877f-3e100451efdd.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": false,
-            "createdAt": "2026-11-11T00:40:24.994Z",
-            "boostedAt": "2026-11-11T00:40:24.993Z",
+            "createdAt": "2026-09-16T09:35:07.384Z",
+            "boostedAt": "2026-11-11T02:07:00.588Z",
             "region": {
-              "name": "정자3동"
+              "name": "당정동"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 37.3054888,
-                "longitude": 126.9870446
+                "latitude": 37.3461645,
+                "longitude": 126.9570707
               }
             ]
           },
           {
-            "id": "/kr/buy-sell/asus-tuf-a14-2025-jh77oq5kpm6u/",
-            "href": "/kr/buy-sell/asus-tuf-a14-2025-jh77oq5kpm6u/",
-            "title": "ASUS TUF A14 2025",
-            "content": "32기가 메모리, RTX 5060 탑재한 고사양 게이밍 노트북입니다.\n\n깨끗하고 이상은 없어요.\n\n직거래 선호합니다.\n\n양심 네고가능",
-            "price": "1800000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/85f5d926-b8d8-4235-8557-86f2ab6046c1.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%9A%94%EA%B0%807-2in1-%EB%9D%BC%EC%9D%B4%EC%A0%A0-ai7-ram-32gb-ssd-512gb-%ED%92%80%EB%B0%95%EC%8A%A4%EA%B8%89-pcxaoyom6i6o/",
+            "href": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%9A%94%EA%B0%807-2in1-%EB%9D%BC%EC%9D%B4%EC%A0%A0-ai7-ram-32gb-ssd-512gb-%ED%92%80%EB%B0%95%EC%8A%A4%EA%B8%89-pcxaoyom6i6o/",
+            "title": "레노버 요가7 2in1 라이젠 AI7 / RAM 32GB / SSD 512GB 풀박스급",
+            "content": "레노버 요가7 14AKP10 노트북 판매합니다.\n구매 후 약 1년 정도 사용했으며, 외관 상태 매우 깨끗하고 전체적으로 신품에 가까운 상태입니다.\n주로 실내에서 사용했으며, 노트북을 가지고 외출한 적이 거의 없어 외관 관리가 잘 되어 있습니다.\n\n제품 사양\n• 모델명 : Lenovo Yoga 7 14AKP10\n• CPU : AMD Ryzen AI 7\n• RAM : 32GB\n• SSD : 512GB\n• 그래픽 : AMD Radeon Graphics\n• 디스플레이 : 14인치 터치스크린\n• 360도 회전 가능한 2in1 노트북\n• 노트북 / 태블릿 / 텐트 모드 지원\n\n제품 상태\n• 외관 상태 매우 양호\n• 액정 및 키보드 상태 깨끗함\n• 액정 보호용 부직포 보관\n• 정품 박스 및 구성품 보유\n\n32GB 메모리가 탑재된 모델이라 사무용, 대학생 과제, 문서 작업, 멀티태스킹 등 다양한 용도로 사용하기 좋습니다.\n터치스크린과 360도 회전 기능으로 태블릿처럼 활용할 수 있어 실용성이 높은 제품입니다.\n사진은 모두 직접 촬영한 실물 사진입니다.\n중고 거래 특성상 직접 상태 확인 후 거래하셔도 좋습니다.\n관심 있으신 분 편하게 채팅 주세요!",
+            "price": "130",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/9413bab8-0d90-49d7-8e5b-48a8dbc00dce.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
-            "isInstantBuyAvailable": false,
-            "createdAt": "2026-11-11T00:31:17.145Z",
-            "boostedAt": "2026-11-11T00:31:17.141Z",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-16T12:28:02.196Z",
+            "boostedAt": "2026-11-11T01:34:57.232Z",
             "region": {
-              "name": "수리동"
+              "name": "구월3동"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 37.35555,
-                "longitude": 126.9260088
+                "latitude": 37.445655,
+                "longitude": 126.7057408
               }
             ]
           },
@@ -122,14 +124,14 @@
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-11-11T00:40:24.994Z\",\"boostedAt\":\"2026-11-11T00:40:24.993Z\",\"region\":{\"name\":\"정자3동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-11-11T00:31:17.145Z\",\"boostedAt\":\"2026-11-11T00:31:17.141Z\",\"region\":{\"name\":\"수리동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-09-16T09:35:07.384Z\",\"boostedAt\":\"2026-11-11T02:07:00.588Z\",\"region\":{\"name\":\"당정동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-10-16T12:28:02.196Z\",\"boostedAt\":\"2026-11-11T01:34:57.232Z\",\"region\":{\"name\":\"구월3동\"},\"category\":null,\"contentCoo",
           "createdAt\":\"2026-11-10T15:31:35.097Z\",\"boostedAt\":\"2026-11-10T15:31:35.094Z\",\"region\":{\"name\":\"상문동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-10-11T13:23:42.441Z\",\"boostedAt\":\"2026-11-10T08:40:51.481Z\",\"region\":{\"name\":\"오전동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-06T16:38:47.623Z\",\"boostedAt\":\"2026-11-10T10:09:15.678Z\",\"region\":{\"name\":\"망포동\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-11-11T00:40:24.994Z\",\"boostedAt\":\"2026-11-11T00:40:24.993Z\",\"region\":{\"name\":\"정자3동\"},\"category\":null,\"contentCoo",
+          "createdAt\":\"2026-11-11T00:31:17.145Z\",\"boostedAt\":\"2026-11-11T00:31:17.141Z\",\"region\":{\"name\":\"수리동\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":263,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"2024년형 LG 그램 프로 16인치 / 코어 울트라 ",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":263,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG 그램 16인치 노트북 (2022년 제조)\",\"de",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -137,24 +139,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1307,
-    "globalUniqueListings": 512,
-    "duplicateListingsRemoved": 795,
-    "detailQueueStart": 12,
-    "freshDetailTasks": 12,
+    "searchUniqueListings": 1319,
+    "globalUniqueListings": 521,
+    "duplicateListingsRemoved": 798,
+    "detailQueueStart": 21,
+    "freshDetailTasks": 21,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 12,
-    "detailSucceeded": 12,
-    "detailFailed": 0,
-    "detail404": 0,
+    "detailRequestsExecuted": 21,
+    "detailSucceeded": 20,
+    "detailFailed": 1,
+    "detail404": 1,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 512,
+    "postedAtResolvedFromSearch": 521,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 94754,
+    "scanDurationMs": 104543,
     "cities": [
       {
         "city": "군포시",
@@ -167,7 +169,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 272,
-        "durationMs": 12312
+        "durationMs": 12276
       },
       {
         "city": "의왕시",
@@ -182,8 +184,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 381,
-        "durationMs": 25767
+        "uniqueListings": 385,
+        "durationMs": 25835
       },
       {
         "city": "안양시",
@@ -200,8 +202,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 395,
-        "durationMs": 35288
+        "uniqueListings": 403,
+        "durationMs": 34930
       },
       {
         "city": "과천시",
@@ -213,7 +215,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 259,
-        "durationMs": 6735
+        "durationMs": 6530
       }
     ],
     "finalCandidateCount": 0,
@@ -222,7 +224,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 94760
+    "durationMs": 104550
   },
   "candidates": []
 }
