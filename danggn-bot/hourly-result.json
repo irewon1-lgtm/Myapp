@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-11T17:01:58.819Z",
+  "generatedAt": "2026-11-11T17:42:03.586Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,28 +55,6 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/lg-z-43-%EB%85%B8%ED%8A%B8%EB%B6%81-fp2ytdnejvqi/",
-            "href": "/kr/buy-sell/lg-z-43-%EB%85%B8%ED%8A%B8%EB%B6%81-fp2ytdnejvqi/",
-            "title": "LG z 43 노트북",
-            "content": "LG z43 노트북 판매해요. 인텔 i5-2467M 프로세서와 으로  사진에서 보이는 것처럼 구성품 모두 포함되어 있어요. 깔끔한 디자인으로 어디서든 잘 어울릴 거예요. 잘사용하고있지만 부품용 사용하실분 께 드려요",
-            "price": "80000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/36a97b7d-88da-4110-928b-9fd46472bfc1.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-11-11T16:46:43.132Z",
-            "boostedAt": "2026-11-11T16:46:43.130Z",
-            "region": {
-              "name": "신매동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 35.8394711,
-                "longitude": 128.7125406
-              }
-            ]
-          },
-          {
             "id": "/kr/buy-sell/hp-omen-16-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-12500h-3060-16gb-ram-5cychnuvjjxw/",
             "href": "/kr/buy-sell/hp-omen-16-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-12500h-3060-16gb-ram-5cychnuvjjxw/",
             "title": "HP OMEN 16 게이밍 노트북 (i5-12500H, 3060, 16GB RAM)",
@@ -99,41 +77,59 @@
             ]
           },
           {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-17%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-nt550p7c-i7-%EC%BF%BC%EB%93%9C%EC%BD%94%EC%96%B4-win11-%EC%98%A4%ED%94%BC%EC%8A%A4-%ED%8F%AC%ED%86%A0%EC%83%B5-%EC%9D%BC%EB%9F%AC%EC%8A%A4%ED%8A%B8-8joqx2i5buvo/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-17%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-nt550p7c-i7-%EC%BF%BC%EB%93%9C%EC%BD%94%EC%96%B4-win11-%EC%98%A4%ED%94%BC%EC%8A%A4-%ED%8F%AC%ED%86%A0%EC%83%B5-%EC%9D%BC%EB%9F%AC%EC%8A%A4%ED%8A%B8-8joqx2i5buvo/",
-            "title": "삼성 17인치 노트북 NT550P7C(i7  쿼드코어 ,Win11, 오피스,포토샵, 일러스트)",
-            "content": "삼성 17인치 노트북 NT550P7C(i7  쿼드코어 ,Win11, 오피스,포토샵, 일러스트)\n모델 : NT550P7C\nCPU : Intel i7-3630QM@2.4GHz\n           (4코어 8쓰레드)\nRAM : DDR3 16G\nHDD : SSD 120G + HDD 750G\n그래픽\n(내장): Intel Graphics 4000\n(외장): NVIDIA GeForce GT 650M(2GB)\nODD :  CD/DVD multi\n화면 : 17.3인치(1600x 900 고해상  HD LED)\n유/무선랜, HDMI out, D-sub out\n카메라 : 있음\n배터리 : 2시간 이상\n무게 :2.7kg\n\n약간의 사용감 있지만\n전체적으로  양호하고 작동  잘됩니다.\nJBL 스피커 내장으로 사운드 좋습니다\n\nSSD 있어 부팅 및 속도 빠르고 Win 11 pro, MS Office 2024(엑셀, 파워포인트, 워드), 한글오피스 2024, 포토샵 2026 , 일러스트 2026  깔려 있습니다\n\n사무용, 인터넷 강의 수강용으로 아주 좋습니다\n듀얼그래픽이고 외장그래픽 2G로 일부 게임 및 그래픽 작업 가능합니다\n\n구성 : 노트북, 어댑터",
-            "price": "280000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/c5829dec-6a44-4612-a793-f20a37822a35.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EA%B2%8C%EC%9D%B4%EB%B9%99-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%8B%A4%EB%B2%84-15%EC%9D%B8%EC%B9%98-i7-%EC%8B%9C%ED%94%BC%EC%9C%A0-16gb-%EB%A9%94%EB%AA%A8%EB%A6%AC-gtx950-q4qfhv4hrxue/",
+            "href": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EA%B2%8C%EC%9D%B4%EB%B9%99-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%8B%A4%EB%B2%84-15%EC%9D%B8%EC%B9%98-i7-%EC%8B%9C%ED%94%BC%EC%9C%A0-16gb-%EB%A9%94%EB%AA%A8%EB%A6%AC-gtx950-q4qfhv4hrxue/",
+            "title": "레노버 게이빙 노트북 실버 15인치. i7 시피유 16Gb 메모리  Gtx950",
+            "content": " 깔끔한 레노버 노트북이에요. 15인치 화면으로 작업하기 편리하고, 실버 색상이 세련되었어요. 사진에서 보이는 구성품 그대로 드려요. 문서 작업이나 영상 시청 등 다양하게 활용하기 좋은 제품이랍니다.\n\n-사양-\n인텔 i7-6700HQ\n메모리 16GB\n저장장치 120GB SSD + 1TB HDD\nVGA GTX950M\n\n15인치 모니터라 화면도 큼직하게 좋습니다\n롤 던파 같는 온라인게임 잘 돌아갑니다\n가상비 정말 훌륭합니다\n\nn01\n",
+            "price": "200000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/fd0f5743-059f-4182-be37-73e85c1b6e59.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
-            "isInstantBuyAvailable": false,
-            "createdAt": "2026-11-11T16:47:52.184Z",
-            "boostedAt": "2026-11-11T16:47:52.184Z",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-11-11T17:01:54.358Z",
+            "boostedAt": "2026-11-11T17:01:54.357Z",
             "region": {
-              "name": "역삼동"
+              "name": "공릉동"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 37.4992599,
-                "longitude": 127.0309261
-              },
+                "latitude": 37.6169541,
+                "longitude": 127.0699521
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/%EB%AF%B8%EA%B0%9C%EB%B4%89-lg-2026-%EA%B7%B8%EB%9E%A8%EB%B6%81-ai-15-6%EC%9D%B8%EC%B9%98-%EA%B3%A0%EC%84%B1%EB%8A%A5-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%BD%94%EC%96%B4-%EC%9A%B8%ED%8A%B8%EB%9D%BC5-svcfj5q5yfzr/",
+            "href": "/kr/buy-sell/%EB%AF%B8%EA%B0%9C%EB%B4%89-lg-2026-%EA%B7%B8%EB%9E%A8%EB%B6%81-ai-15-6%EC%9D%B8%EC%B9%98-%EA%B3%A0%EC%84%B1%EB%8A%A5-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%BD%94%EC%96%B4-%EC%9A%B8%ED%8A%B8%EB%9D%BC5-svcfj5q5yfzr/",
+            "title": "미개봉) LG 2026  그램북 AI 15.6인치 고성능 노트북 코어 울트라5",
+            "content": "🥕 미개봉 새제품입니다\n★ 선물용으로도 좋아요! 💯\n\n★ 최신 2026년형 LG 그램북 AI 노트북 🔥\n★ 인텔 코어 울트라5 프로세서 탑재\n★ 15.6인치 FHD 대화면 디스플레이\n★ 윈도우11 설치되어 있어 바로 사용 가능합니다\n★ AI 비서 Copilot 기능 지원\n\n제품스펙\nLG전자 2026 그램북 AI 15.6인치\n모델명 15050U-GR5CK 타이탄 블랙\n\nCPU 인텔 코어 울트라5 115U\n그래픽 인텔 내장그래픽\nSSD NVMe 256GB\n램 8GB + 메모리 확장 슬롯\n화면 15.6인치 FHD 디스플레이\n운영체제 Windows 11 Home\n색상 타이탄 블랙\n\n\n거래장소 서울 동대문구 장안동 / 5호선 장한평역",
+            "price": "864000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/574afc68-034e-4a57-9348-79700bb918a7.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-10-25T03:08:05.017Z",
+            "boostedAt": "2026-11-11T10:37:01.090Z",
+            "region": {
+              "name": "역삼2동"
+            },
+            "category": null,
+            "contentCoordinates": [
               {
-                "latitude": 37.5435865,
-                "longitude": 126.9515881
+                "latitude": 37.5037162,
+                "longitude": 127.0487231
               }
             ]
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-11-11T16:46:43.132Z\",\"boostedAt\":\"2026-11-11T16:46:43.130Z\",\"region\":{\"name\":\"신매동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-11-09T05:37:54.773Z\",\"boostedAt\":\"2026-11-11T06:12:34.629Z\",\"region\":{\"name\":\"방배1동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-11-11T16:47:52.184Z\",\"boostedAt\":\"2026-11-11T16:47:52.184Z\",\"region\":{\"name\":\"역삼동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-11T16:41:22.859Z\",\"boostedAt\":\"2026-11-11T16:41:22.856Z\",\"region\":{\"name\":\"지산동\"},\"category\":{\"thumbnail\":\"htt",
-          "createdAt\":\"2026-11-07T03:42:07.329Z\",\"boostedAt\":\"2026-11-11T08:30:14.088Z\",\"region\":{\"name\":\"역삼2동\"},\"category\":null,\"contentCoo"
+          "createdAt\":\"2026-11-11T17:01:54.358Z\",\"boostedAt\":\"2026-11-11T17:01:54.357Z\",\"region\":{\"name\":\"공릉동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-10-25T03:08:05.017Z\",\"boostedAt\":\"2026-11-11T10:37:01.090Z\",\"region\":{\"name\":\"역삼2동\"},\"category\":null,\"contentCoo",
+          "createdAt\":\"2026-11-07T03:42:07.329Z\",\"boostedAt\":\"2026-11-11T08:30:14.088Z\",\"region\":{\"name\":\"역삼2동\"},\"category\":null,\"contentCoo",
+          "createdAt\":\"2026-10-22T09:24:27.234Z\",\"boostedAt\":\"2026-11-11T14:43:59.813Z\",\"region\":{\"name\":\"상동\"},\"category\":null,\"contentCoord"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":275,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG z 43 노트북\",\"description\":\"LG",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":273,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"HP OMEN 16 게이밍 노트북 (i5-12500H,",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -141,24 +137,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1047,
-    "globalUniqueListings": 263,
-    "duplicateListingsRemoved": 784,
-    "detailQueueStart": 5,
-    "freshDetailTasks": 5,
+    "searchUniqueListings": 1053,
+    "globalUniqueListings": 264,
+    "duplicateListingsRemoved": 789,
+    "detailQueueStart": 9,
+    "freshDetailTasks": 9,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 5,
-    "detailSucceeded": 5,
+    "detailRequestsExecuted": 9,
+    "detailSucceeded": 9,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 263,
+    "postedAtResolvedFromSearch": 264,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 85612,
+    "scanDurationMs": 89066,
     "cities": [
       {
         "city": "군포시",
@@ -170,8 +166,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 261,
-        "durationMs": 12438
+        "uniqueListings": 263,
+        "durationMs": 12190
       },
       {
         "city": "의왕시",
@@ -186,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 262,
-        "durationMs": 25449
+        "uniqueListings": 264,
+        "durationMs": 25478
       },
       {
         "city": "안양시",
@@ -204,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 263,
-        "durationMs": 35310
+        "uniqueListings": 264,
+        "durationMs": 35001
       },
       {
         "city": "과천시",
@@ -216,8 +212,8 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 261,
-        "durationMs": 6539
+        "uniqueListings": 262,
+        "durationMs": 5901
       }
     ],
     "finalCandidateCount": 0,
@@ -226,7 +222,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 85618
+    "durationMs": 89074
   },
   "candidates": []
 }
