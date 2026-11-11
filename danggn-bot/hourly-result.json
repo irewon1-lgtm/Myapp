@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-11T17:42:03.586Z",
+  "generatedAt": "2026-11-11T18:21:56.179Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,6 +55,28 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
+            "id": "/kr/buy-sell/%EB%B0%94%EB%A1%9C%EA%B5%AC%EB%A7%A4-%EA%B0%80%EB%8A%A5-s%EA%B8%89-%EA%B7%B8%EB%9E%A8%ED%8C%94%EC%95%84%EC%9A%94-w51c792uearu/",
+            "href": "/kr/buy-sell/%EB%B0%94%EB%A1%9C%EA%B5%AC%EB%A7%A4-%EA%B0%80%EB%8A%A5-s%EA%B8%89-%EA%B7%B8%EB%9E%A8%ED%8C%94%EC%95%84%EC%9A%94-w51c792uearu/",
+            "title": "(바로구매 가능) s급 그램팔아요",
+            "content": "마지막 사진 참고해주세요!!",
+            "price": "1100000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/1794420484868ee6d98ef83ae8bc884385d278acf645fa83332213a890fa3f5b956e24fa42c5c0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-11-11T18:10:14.428Z",
+            "boostedAt": "2026-11-11T18:10:14.427Z",
+            "region": {
+              "name": "둔산동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 36.3520876,
+                "longitude": 127.3875413
+              }
+            ]
+          },
+          {
             "id": "/kr/buy-sell/hp-omen-16-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-12500h-3060-16gb-ram-5cychnuvjjxw/",
             "href": "/kr/buy-sell/hp-omen-16-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-12500h-3060-16gb-ram-5cychnuvjjxw/",
             "title": "HP OMEN 16 게이밍 노트북 (i5-12500H, 3060, 16GB RAM)",
@@ -73,28 +95,6 @@
               {
                 "latitude": 37.4825078,
                 "longitude": 126.9944243
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EA%B2%8C%EC%9D%B4%EB%B9%99-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%8B%A4%EB%B2%84-15%EC%9D%B8%EC%B9%98-i7-%EC%8B%9C%ED%94%BC%EC%9C%A0-16gb-%EB%A9%94%EB%AA%A8%EB%A6%AC-gtx950-q4qfhv4hrxue/",
-            "href": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EA%B2%8C%EC%9D%B4%EB%B9%99-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%8B%A4%EB%B2%84-15%EC%9D%B8%EC%B9%98-i7-%EC%8B%9C%ED%94%BC%EC%9C%A0-16gb-%EB%A9%94%EB%AA%A8%EB%A6%AC-gtx950-q4qfhv4hrxue/",
-            "title": "레노버 게이빙 노트북 실버 15인치. i7 시피유 16Gb 메모리  Gtx950",
-            "content": " 깔끔한 레노버 노트북이에요. 15인치 화면으로 작업하기 편리하고, 실버 색상이 세련되었어요. 사진에서 보이는 구성품 그대로 드려요. 문서 작업이나 영상 시청 등 다양하게 활용하기 좋은 제품이랍니다.\n\n-사양-\n인텔 i7-6700HQ\n메모리 16GB\n저장장치 120GB SSD + 1TB HDD\nVGA GTX950M\n\n15인치 모니터라 화면도 큼직하게 좋습니다\n롤 던파 같는 온라인게임 잘 돌아갑니다\n가상비 정말 훌륭합니다\n\nn01\n",
-            "price": "200000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/fd0f5743-059f-4182-be37-73e85c1b6e59.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-11-11T17:01:54.358Z",
-            "boostedAt": "2026-11-11T17:01:54.357Z",
-            "region": {
-              "name": "공릉동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 37.6169541,
-                "longitude": 127.0699521
               }
             ]
           },
@@ -122,14 +122,14 @@
           }
         ],
         "dateFieldSnippets": [
+          "createdAt\":\"2026-11-11T18:10:14.428Z\",\"boostedAt\":\"2026-11-11T18:10:14.427Z\",\"region\":{\"name\":\"둔산동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-11-09T05:37:54.773Z\",\"boostedAt\":\"2026-11-11T06:12:34.629Z\",\"region\":{\"name\":\"방배1동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-11-11T17:01:54.358Z\",\"boostedAt\":\"2026-11-11T17:01:54.357Z\",\"region\":{\"name\":\"공릉동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-25T03:08:05.017Z\",\"boostedAt\":\"2026-11-11T10:37:01.090Z\",\"region\":{\"name\":\"역삼2동\"},\"category\":null,\"contentCoo",
           "createdAt\":\"2026-11-07T03:42:07.329Z\",\"boostedAt\":\"2026-11-11T08:30:14.088Z\",\"region\":{\"name\":\"역삼2동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-10-22T09:24:27.234Z\",\"boostedAt\":\"2026-11-11T14:43:59.813Z\",\"region\":{\"name\":\"상동\"},\"category\":null,\"contentCoord"
+          "createdAt\":\"2026-08-18T12:25:59.349Z\",\"boostedAt\":\"2026-11-10T00:59:35.457Z\",\"region\":{\"name\":\"방배1동\"},\"category\":null,\"contentCoo"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":273,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"HP OMEN 16 게이밍 노트북 (i5-12500H,",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":273,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"(바로구매 가능) s급 그램팔아요\",\"descripti",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -137,14 +137,14 @@
         ]
       }
     },
-    "searchUniqueListings": 1053,
+    "searchUniqueListings": 1051,
     "globalUniqueListings": 264,
-    "duplicateListingsRemoved": 789,
-    "detailQueueStart": 9,
-    "freshDetailTasks": 9,
+    "duplicateListingsRemoved": 787,
+    "detailQueueStart": 3,
+    "freshDetailTasks": 3,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 9,
-    "detailSucceeded": 9,
+    "detailRequestsExecuted": 3,
+    "detailSucceeded": 3,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
@@ -154,7 +154,7 @@
     "postedAtResolvedFromSearch": 264,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 89066,
+    "scanDurationMs": 82631,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +166,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 263,
-        "durationMs": 12190
+        "uniqueListings": 262,
+        "durationMs": 12473
       },
       {
         "city": "의왕시",
@@ -183,7 +183,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 264,
-        "durationMs": 25478
+        "durationMs": 25448
       },
       {
         "city": "안양시",
@@ -200,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 264,
-        "durationMs": 35001
+        "uniqueListings": 263,
+        "durationMs": 35193
       },
       {
         "city": "과천시",
@@ -213,7 +213,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 262,
-        "durationMs": 5901
+        "durationMs": 6269
       }
     ],
     "finalCandidateCount": 0,
@@ -222,7 +222,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 89074
+    "durationMs": 82638
   },
   "candidates": []
 }
