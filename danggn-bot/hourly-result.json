@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-11T16:11:57.706Z",
+  "generatedAt": "2026-11-11T16:26:49.608Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,28 +55,24 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/hp-16%EC%9D%B8%EC%B9%98-%EC%83%88%EC%83%81%ED%92%88%EA%B8%89-7yxbiebbjsa9/",
-            "href": "/kr/buy-sell/hp-16%EC%9D%B8%EC%B9%98-%EC%83%88%EC%83%81%ED%92%88%EA%B8%89-7yxbiebbjsa9/",
-            "title": "HP 16인치 (새상품급)",
-            "content": "쿠팡가-2oo만원대\n상세설명 사진 \n🔺️맨 마지막 사진🔺️꼭 !!확인해주세요\n🔺️사진은 확대해서 봐주세요^^\n\n새상품급 입니다.\n왠만한거리는 조율후 배송해드립니다\n",
-            "price": "1600000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/e303a3f4-3fe7-43e3-99ce-87220f9a3ab2.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%EB%A7%A5%EB%B6%81-%EC%97%90%EC%96%B4-15-m5-16gb-512gb-%EB%AF%B8%EA%B0%9C%EB%B4%89-%EC%8B%A4%EB%B2%84-xo75z7ji25z6/",
+            "href": "/kr/buy-sell/%EB%A7%A5%EB%B6%81-%EC%97%90%EC%96%B4-15-m5-16gb-512gb-%EB%AF%B8%EA%B0%9C%EB%B4%89-%EC%8B%A4%EB%B2%84-xo75z7ji25z6/",
+            "title": "맥북 에어 15 M5 16GB 512GB 미개봉 실버",
+            "content": "맥북 에어 15인치 M5 모델이에요. 실버\n메모리는 16GB, 저장 공간은 512GB입니다.\n미개봉 제품 입니다",
+            "price": "2150000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/1792153742137679f0c4528092164448ec24194bb6a222f5af4d49c9557e5ddee4431b223ca820.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-11-11T16:09:28.052Z",
-            "boostedAt": "2026-11-11T16:09:28.052Z",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-10-16T12:30:46.135Z",
+            "boostedAt": "2026-11-11T16:19:30.372Z",
             "region": {
-              "name": "반포본동"
+              "name": "삼성2동"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 37.4017039,
-                "longitude": 126.7098451
-              },
-              {
-                "latitude": 37.5015328,
-                "longitude": 127.0120359
+                "latitude": 37.5084547,
+                "longitude": 127.062484
               }
             ]
           },
@@ -126,14 +122,14 @@
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-11-11T16:09:28.052Z\",\"boostedAt\":\"2026-11-11T16:09:28.052Z\",\"region\":{\"name\":\"반포본동\"},\"category\":null,\"contentCoo",
+          "createdAt\":\"2026-10-16T12:30:46.135Z\",\"boostedAt\":\"2026-11-11T16:19:30.372Z\",\"region\":{\"name\":\"삼성2동\"},\"category\":null,\"contentCoo",
           "createdAt\":\"2026-11-09T05:37:54.773Z\",\"boostedAt\":\"2026-11-11T06:12:34.629Z\",\"region\":{\"name\":\"방배1동\"},\"category\":null,\"contentCoo",
           "createdAt\":\"2026-10-22T09:24:27.234Z\",\"boostedAt\":\"2026-11-11T14:43:59.813Z\",\"region\":{\"name\":\"상동\"},\"category\":null,\"contentCoord",
           "createdAt\":\"2026-11-07T03:42:07.329Z\",\"boostedAt\":\"2026-11-11T08:30:14.088Z\",\"region\":{\"name\":\"역삼2동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-10-26T15:41:41.020Z\",\"boostedAt\":\"2026-11-11T14:37:02.058Z\",\"region\":{\"name\":\"중앙동\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-11-11T16:10:50.232Z\",\"boostedAt\":\"2026-11-11T16:10:50.231Z\",\"region\":{\"name\":\"역삼동\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":276,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"HP 16인치 (새상품급)\",\"description\":",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":277,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"맥북 에어 15 M5 16GB 512GB 미개봉 실버\"",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -141,14 +137,14 @@
         ]
       }
     },
-    "searchUniqueListings": 1045,
+    "searchUniqueListings": 1047,
     "globalUniqueListings": 263,
-    "duplicateListingsRemoved": 782,
-    "detailQueueStart": 7,
-    "freshDetailTasks": 7,
+    "duplicateListingsRemoved": 784,
+    "detailQueueStart": 3,
+    "freshDetailTasks": 3,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 7,
-    "detailSucceeded": 7,
+    "detailRequestsExecuted": 3,
+    "detailSucceeded": 3,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
@@ -158,7 +154,7 @@
     "postedAtResolvedFromSearch": 263,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 87676,
+    "scanDurationMs": 83537,
     "cities": [
       {
         "city": "군포시",
@@ -171,7 +167,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 261,
-        "durationMs": 12183
+        "durationMs": 12252
       },
       {
         "city": "의왕시",
@@ -186,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 261,
-        "durationMs": 25753
+        "uniqueListings": 263,
+        "durationMs": 25837
       },
       {
         "city": "안양시",
@@ -204,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 263,
-        "durationMs": 35165
+        "uniqueListings": 262,
+        "durationMs": 35284
       },
       {
         "city": "과천시",
@@ -216,8 +212,8 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 260,
-        "durationMs": 6327
+        "uniqueListings": 261,
+        "durationMs": 6716
       }
     ],
     "finalCandidateCount": 0,
@@ -226,7 +222,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 87680
+    "durationMs": 83544
   },
   "candidates": []
 }
