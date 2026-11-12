@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-12T11:55:18.908Z",
+  "generatedAt": "2026-11-12T12:32:05.540Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -16,7 +16,9 @@
   "health": {
     "status": "ok",
     "stateCommitted": true,
-    "warnings": []
+    "warnings": [
+      "군포시: detail failed 51me6pv9x21p: Error: HTTP 404 Not Found"
+    ]
   },
   "rules": {
     "newnessField": "postedAt",
@@ -55,81 +57,85 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-6200%EC%9C%88%EB%8F%84%EC%9A%B011-%EC%B5%9C%EC%8B%A0%EC%84%A4%EC%B9%98-cun1gf7xft4y/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-6200%EC%9C%88%EB%8F%84%EC%9A%B011-%EC%B5%9C%EC%8B%A0%EC%84%A4%EC%B9%98-cun1gf7xft4y/",
-            "title": "삼성 노트북 i5 6200윈도우11 최신설치",
-            "content": "삼성 노트북 판매해요. 인텔 i5 프로세서 탑재로 빠르고 쾌적하게 사용 가능합니다\nNT500RSP-MD55\ni5 6200\ndd4 8g \nssd120g \n윈도우11 설치\n오피스2024 \n한컴2024설치 \n15,6인치액정교환했어요불량화소는없어요\n조금식스크래치중고이니까\n감안하고구매해주세요\n아답터같이드립니다\n문자주세요 답변드립니다 \n\n",
-            "price": "140000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/0baee469-53c5-4e70-9d77-f548a76fce95.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt500r5s-yd5s-vmjsguj7vtx6/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt500r5s-yd5s-vmjsguj7vtx6/",
+            "title": "삼성 노트북 NT500R5S-YD5S",
+            "content": "삼성 노트북 NT500R5S-YD5S 판매해요. 인텔 펜티엄 CPU와 8GB RAM, 119GB SSD를 탑재하여 기본적인 작업에 충분한 성능을 제공합니다. 사진에서 보이는 구성품 그대로 드려요. 깔끔한 디자인으로 어디서든 사용하기 좋아요.",
+            "price": "150000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/e15a9feb-d5dd-4209-86c5-f74e1bc77bfc.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": true,
-            "createdAt": "2026-11-12T11:44:45.380Z",
-            "boostedAt": "2026-11-12T11:44:45.378Z",
+            "createdAt": "2026-10-02T06:51:01.654Z",
+            "boostedAt": "2026-11-12T12:25:55.446Z",
             "region": {
-              "name": "신원동"
+              "name": "개운동"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 37.6606349,
-                "longitude": 126.8882915
+                "latitude": 37.3423199,
+                "longitude": 127.9738867
               }
             ]
           },
           {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-15%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-6g6zk3btrw47/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-15%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-6g6zk3btrw47/",
-            "title": "삼성 15인치 노트북",
-            "content": "삼성 노트북이에요. 15인치 화면으로 작업하기 편리하고, 인텔 i5 프로세서가 탑재되어 있어 다양한 작업을 원활하게 할 수 있어요. 사진에서 보이는 것처럼 깔끔한 상태를 유지하고 있습니다. 문서 작업이나 웹 서핑 등 일상적인 용도로 사용하기 좋은 노트북이에요.\n모델명 - 삼성 NT871Z5G-X0L\n시피유 - 인텔 i7 4710HQ\n램 - 16기가 / 저장공간 - 128GB SSD\n그래픽카드 - GT 750m\n모니터 - 15.6인치 일반배젤 60Hz 주사율\n무게 - 2.1키로",
-            "price": "200000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/e34aa311-829b-4bd6-aa60-5d82a71d8235.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-11-12T11:40:35.806Z",
-            "boostedAt": "2026-11-12T11:40:35.803Z",
-            "region": {
-              "name": "산본1동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 37.3747401,
-                "longitude": 126.9361751
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/lg-gram-2026-14%EC%9D%B8%EC%B9%98-ultra5-%ED%99%94%EC%9D%B4%ED%8A%B8-256gb-16gb-win-11-pvimmjix2sew/",
-            "href": "/kr/buy-sell/lg-gram-2026-14%EC%9D%B8%EC%B9%98-ultra5-%ED%99%94%EC%9D%B4%ED%8A%B8-256gb-16gb-win-11-pvimmjix2sew/",
-            "title": "LG gram 2026 14인치 Ultra5 화이트 256GB 16GB Win 11",
-            "content": "거래 파기 그만해주세요\nLG gram 2026 14인치\nUltra5 화이트\n256GB 16GB Win 11\n\n박스 없음 \n\n공장초기화 완료\n윈도우 11깔려있음\n충전기 및 기타 포트 이상 없음\n정상 작동\n키스킨 포함\n충전기 포함\n\n제조년월 : 2026. 01\n구매 : 2026. 02\n\n직거래요.",
-            "price": "1000000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/17944798691238ff41cea67c093bf5e1d2d0c521dd92d45876424c00867f5b4b9a94e44fb50750.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-nt550eaa-%EB%85%B8%ED%8A%B8%EB%B6%81-51me6pv9x21p/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-nt550eaa-%EB%85%B8%ED%8A%B8%EB%B6%81-51me6pv9x21p/",
+            "title": "삼성 NT550EAA 노트북",
+            "content": "삼성 노트북 NT550EAA 판매합니다!\n15.6인치 화면에 넉넉한 저장 공간을 갖추고 있어 문서 작업이나 영상 시청에 좋아요\n\n✔ 15.6인치 FHD (1920x1080)\n✔ Intel i5-8250U (8세대, 4코어 8스레드)\n✔ RAM 8GB\n✔ SSD 256GB\n✔ Intel UHD Graphics 620\n✔ 윈도우 초기화 완료\n✔️베터리 성능 좋습니다\n\n인강, 문서작업, 유튜브, 넷플릭스 등 사무용으로 사용하기 좋습니다.\n\n전체적으로 정상 작동하며 충전기 포함입니다.\n\n거래 희망 장소는 논현역,신사역입니다!",
+            "price": "240000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/17944854587177c21ad05135c65295a54d24fe5049fd17f71848a124340bc938092452b8668d20.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": false,
-            "createdAt": "2026-11-12T10:38:51.797Z",
-            "boostedAt": "2026-11-12T10:38:51.795Z",
+            "createdAt": "2026-11-12T12:13:32.734Z",
+            "boostedAt": "2026-11-12T12:13:32.732Z",
             "region": {
-              "name": "서초1동"
+              "name": "논현1동"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 37.4953213,
-                "longitude": 127.0286614
+                "latitude": 37.5143381,
+                "longitude": 127.0221922
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-8gb-ssd120gb-8dgw81nr8np5/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-8gb-ssd120gb-8dgw81nr8np5/",
+            "title": "삼성 노트북 i5 8GB SSD120GB",
+            "content": "인텔 i5-2410M 프로세서와 8GB RAM\n\n* 제품명 : 삼성 노트북\n* CPU : 인텔 코어 i5-2410M\n* 그래픽: 2GB\n* 메모리 : 8GB\n* 저장공간 : SSD120GB  \n* 디스플레이 : 15.6인치\n\nWIN 11 PRO \n최신 업데이트\n\n• 엑셀 파워포인트 워드 한글프로램\n• 간단한 웹 서핑 및 유튜브 시청\n• 업무용으로 좋습니다 \n• 영화 감상용\n• PC 카톡, 크롬 브라우저 설치\n\n엑셀 파워포인트 워드 한글 설치되어 있습니다. 인강,유튜브 시청,사무용으로 적합한 바로 사용가능 합니다.\n\n빠른거래 가능하신분  \n상식선에서 가격제안 받습니다\n\n쿨거래하시면 배달도 해 드립니다. ㅎㅎ \n\n♡노트북 가방, 아답터, 유선마우스 드립니다\n\n상판 리터치로 무광이며 세월에 따른 사용감 있지만 사용상 문제없습니다",
+            "price": "110000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/762945ec-506d-4c5e-9f28-ec66bf6d3299.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-11-12T12:23:55.071Z",
+            "boostedAt": "2026-11-12T12:23:55.071Z",
+            "region": {
+              "name": "아라동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 37.5918935,
+                "longitude": 126.7094728
+              },
+              {
+                "latitude": 37.6372687,
+                "longitude": 126.6279631
               }
             ]
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-11-12T11:44:45.380Z\",\"boostedAt\":\"2026-11-12T11:44:45.378Z\",\"region\":{\"name\":\"신원동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-12T11:40:35.806Z\",\"boostedAt\":\"2026-11-12T11:40:35.803Z\",\"region\":{\"name\":\"산본1동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-11-12T10:38:51.797Z\",\"boostedAt\":\"2026-11-12T10:38:51.795Z\",\"region\":{\"name\":\"서초1동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-11-12T11:26:01.530Z\",\"boostedAt\":\"2026-11-12T11:26:01.528Z\",\"region\":{\"name\":\"산본1동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-11-12T11:32:18.278Z\",\"boostedAt\":\"2026-11-12T11:32:18.278Z\",\"region\":{\"name\":\"상모사곡동\"},\"category\":null,\"contentCo"
+          "createdAt\":\"2026-10-02T06:51:01.654Z\",\"boostedAt\":\"2026-11-12T12:25:55.446Z\",\"region\":{\"name\":\"개운동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-11-12T12:13:32.734Z\",\"boostedAt\":\"2026-11-12T12:13:32.732Z\",\"region\":{\"name\":\"논현1동\"},\"category\":null,\"contentCoo",
+          "createdAt\":\"2026-11-12T12:23:55.071Z\",\"boostedAt\":\"2026-11-12T12:23:55.071Z\",\"region\":{\"name\":\"아라동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-11-12T12:28:49.124Z\",\"boostedAt\":\"2026-11-12T12:28:49.122Z\",\"region\":{\"name\":\"발산제1동\"},\"category\":null,\"contentCo",
+          "createdAt\":\"2026-08-22T04:06:06.188Z\",\"boostedAt\":\"2026-11-12T11:55:46.172Z\",\"region\":{\"name\":\"도곡2동\"},\"category\":null,\"contentCoo"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":280,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 노트북 i5 6200윈도우11 최신설치\",\"des",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":279,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 노트북 NT500R5S-YD5S\",\"descrip",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -137,24 +143,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1093,
-    "globalUniqueListings": 277,
-    "duplicateListingsRemoved": 816,
-    "detailQueueStart": 6,
-    "freshDetailTasks": 6,
+    "searchUniqueListings": 1090,
+    "globalUniqueListings": 278,
+    "duplicateListingsRemoved": 812,
+    "detailQueueStart": 12,
+    "freshDetailTasks": 12,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 6,
-    "detailSucceeded": 6,
-    "detailFailed": 0,
-    "detail404": 0,
+    "detailRequestsExecuted": 12,
+    "detailSucceeded": 11,
+    "detailFailed": 1,
+    "detail404": 1,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 277,
+    "postedAtResolvedFromSearch": 278,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 85792,
+    "scanDurationMs": 95141,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +172,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 273,
-        "durationMs": 12535
+        "uniqueListings": 271,
+        "durationMs": 12807
       },
       {
         "city": "의왕시",
@@ -182,8 +188,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 276,
-        "durationMs": 25631
+        "uniqueListings": 275,
+        "durationMs": 25941
       },
       {
         "city": "안양시",
@@ -201,7 +207,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 274,
-        "durationMs": 35084
+        "durationMs": 35391
       },
       {
         "city": "과천시",
@@ -213,7 +219,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 270,
-        "durationMs": 6069
+        "durationMs": 6579
       }
     ],
     "finalCandidateCount": 0,
@@ -222,7 +228,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 85798
+    "durationMs": 95146
   },
   "candidates": []
 }
