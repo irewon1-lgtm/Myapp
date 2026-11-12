@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-12T11:02:24.758399Z",
+  "updatedAt": "2026-11-12T11:42:13.211743Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -18251,6 +18251,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-15%EC%9D%B8%EC%B9%98-i5-8265u-16gb-ram-rvimnsqiues3/",
       "firstAlertedAt": "2026-11-12T00:52:13.639611Z",
       "lastCandidateAt": "2026-11-12T00:52:13.639611Z"
+    },
+    "6g6zk3btrw47": {
+      "id": "6g6zk3btrw47",
+      "title": "삼성 15인치 노트북",
+      "price": 200000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "산본1동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "램 - 16기가",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 128,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-12T11:40:35.806Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-15%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-6g6zk3btrw47/",
+      "firstAlertedAt": "2026-11-12T11:42:13.211743Z",
+      "lastCandidateAt": "2026-11-12T11:42:13.211743Z"
     }
   }
 }
