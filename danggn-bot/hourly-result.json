@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-12T03:32:03.053Z",
+  "generatedAt": "2026-11-12T03:46:30.154Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,24 +55,24 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-%EB%B6%80%ED%92%88%ED%8C%90%EB%A7%A4-ze5prn3w6x1z/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-%EB%B6%80%ED%92%88%ED%8C%90%EB%A7%A4-ze5prn3w6x1z/",
-            "title": "삼성 노트북 화이트 (부품판매)",
-            "content": "삼성 노트북 부품 판매해요\n\n노트북에 물이 들어가서 삼성 서비스 센터에서 40만원 주고 수리 하라해서 걍 부품만 팔아요\n\n네고 가능 문의 가능",
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt451r4b-x89-r-i5-4gb-ram-w16z9pgbzgtg/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt451r4b-x89-r-i5-4gb-ram-w16z9pgbzgtg/",
+            "title": "삼성 노트북 NT451R4B-X89/R i5 4GB RAM",
+            "content": "사용 하는데 아무 이상 없어요..삼성 노트북 NT451R4B-X89/R 모델입니다. 인텔 코어 i5 프로세서와 4GB RAM을 탑재하여 일상적인 작업에 충분한 성능을 제공해요. 윈도우 7이 설치되어 있어 바로 사용 가능합니다. 깔끔한 디자인으로 어디서든 잘 어울려요. 이 노트북으로 즐거운 컴퓨팅 경험을 만들어보세요.",
             "price": "100000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/17944540762054d101ca535812ba96337960dc2f071ea6132b1ed90b43ccdf33d24b46c5ae7c70.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202609/d6b737e0-31ec-40ef-9529-b63e0436acc8.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": true,
-            "createdAt": "2026-11-12T03:24:24.716Z",
-            "boostedAt": "2026-11-12T03:24:24.714Z",
+            "createdAt": "2026-09-18T08:23:45.830Z",
+            "boostedAt": "2026-11-12T03:37:34.857Z",
             "region": {
-              "name": "구월1동"
+              "name": "한림읍"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 37.4531615,
-                "longitude": 126.7136051
+                "latitude": 33.4078482,
+                "longitude": 126.2645906
               }
             ]
           },
@@ -126,14 +126,14 @@
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-11-12T03:24:24.716Z\",\"boostedAt\":\"2026-11-12T03:24:24.714Z\",\"region\":{\"name\":\"구월1동\"},\"category\":null,\"contentCoo",
+          "createdAt\":\"2026-09-18T08:23:45.830Z\",\"boostedAt\":\"2026-11-12T03:37:34.857Z\",\"region\":{\"name\":\"한림읍\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-11-12T02:41:54.985Z\",\"boostedAt\":\"2026-11-12T02:41:54.982Z\",\"region\":{\"name\":\"학성동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-11-09T07:28:34.721Z\",\"boostedAt\":\"2026-11-12T02:33:54.336Z\",\"region\":{\"name\":\"삼성동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-09T14:39:58.650Z\",\"boostedAt\":\"2026-11-12T02:47:43.498Z\",\"region\":{\"name\":\"서초3동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-11-09T00:44:32.448Z\",\"boostedAt\":\"2026-11-12T03:27:06.557Z\",\"region\":{\"name\":\"백석읍\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-11-12T03:44:10.270Z\",\"boostedAt\":\"2026-11-12T03:44:10.268Z\",\"region\":{\"name\":\"압구정동\"},\"category\":null,\"contentCoo",
+          "createdAt\":\"2026-11-12T03:24:24.716Z\",\"boostedAt\":\"2026-11-12T03:24:24.714Z\",\"region\":{\"name\":\"구월1동\"},\"category\":null,\"contentCoo"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":278,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 노트북 화이트 (부품판매)\",\"descriptio",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":280,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 노트북 NT451R4B-X89/R i5 4GB R",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -141,8 +141,8 @@
         ]
       }
     },
-    "searchUniqueListings": 1087,
-    "globalUniqueListings": 276,
+    "searchUniqueListings": 1088,
+    "globalUniqueListings": 277,
     "duplicateListingsRemoved": 811,
     "detailQueueStart": 8,
     "freshDetailTasks": 8,
@@ -155,10 +155,10 @@
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 276,
+    "postedAtResolvedFromSearch": 277,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 90694,
+    "scanDurationMs": 90473,
     "cities": [
       {
         "city": "군포시",
@@ -170,8 +170,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 272,
-        "durationMs": 12655
+        "uniqueListings": 271,
+        "durationMs": 12920
       },
       {
         "city": "의왕시",
@@ -186,8 +186,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 273,
-        "durationMs": 25746
+        "uniqueListings": 274,
+        "durationMs": 26086
       },
       {
         "city": "안양시",
@@ -204,8 +204,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 274,
-        "durationMs": 35835
+        "uniqueListings": 276,
+        "durationMs": 35193
       },
       {
         "city": "과천시",
@@ -216,8 +216,8 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 268,
-        "durationMs": 6999
+        "uniqueListings": 267,
+        "durationMs": 6567
       }
     ],
     "finalCandidateCount": 0,
@@ -226,7 +226,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 90701
+    "durationMs": 90480
   },
   "candidates": []
 }
