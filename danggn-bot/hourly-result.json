@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-13T05:02:31.101Z",
+  "generatedAt": "2026-11-13T05:42:33.310Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -16,9 +16,7 @@
   "health": {
     "status": "ok",
     "stateCommitted": true,
-    "warnings": [
-      "안양시: detail failed vuyju33joqax: Error: HTTP 404 Not Found"
-    ]
+    "warnings": []
   },
   "rules": {
     "newnessField": "postedAt",
@@ -57,85 +55,85 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-%EA%B7%B8%EB%9E%A8-13%EC%9D%B8%EC%B9%98-swpnz6y6yxhc/",
-            "href": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-%EA%B7%B8%EB%9E%A8-13%EC%9D%B8%EC%B9%98-swpnz6y6yxhc/",
-            "title": "LG 노트북 그램 13인치",
-            "content": "LG 노트북 13ZD940-LT1PK 핑크 색상입니다. 구성품으로 충전기가 포함되어 있어요. 깔끔한 디자인으로 어디서든 사용하기 좋아요.\n\n사용감잇음.보호필름 떼면\n화면상태좋아요",
-            "price": "150000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/d41b96db-7236-4cfb-a203-fb55ee22b5da.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-15%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-6300hq-8%EA%B8%B0%EA%B0%80-256-mz9ybkr16xj8/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-15%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-6300hq-8%EA%B8%B0%EA%B0%80-256-mz9ybkr16xj8/",
+            "title": "삼성 15인치 노트북 i5 6300hq 8기가 256",
+            "content": "씨피유는 저전력u 모델이 아닌 고사양 hq입니다\n\n6300hq\n8기가\n256기가\ncd룸\n\n월영동 입니다",
+            "price": "180000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/a93aa4bc-6e79-4ab7-83b5-159e0c20cda6.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": true,
-            "createdAt": "2026-11-13T04:55:55.145Z",
-            "boostedAt": "2026-11-13T04:55:55.143Z",
+            "createdAt": "2026-11-13T05:33:58.940Z",
+            "boostedAt": "2026-11-13T05:33:58.940Z",
             "region": {
-              "name": "청라2동"
+              "name": "팔룡동"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 37.5376853,
-                "longitude": 126.6374094
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-6200u-bs3qruvbewm5/",
-            "href": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-6200u-bs3qruvbewm5/",
-            "title": "LG 노트북 i5-6200U",
-            "content": "■ 사양\n- CPU : Intel Core i5-6200U 2.30GHz\n- RAM : 8GB\n- SSD : 256GB\n- 운영체제 : Windows 11 Pro 64bit\n- 충전기 포함\n다른 노트북 구매하게 되어서 싸게 판매하고 정품 충전기,마우스 같이 드려요! 완충시 3시간 사용가능합니다 외관이랑 기능상 하자 없고 사무용,영상용,작업용으로 적합합니다 쿨거래시 애누리 가능하니 연락 주세용",
-            "price": "200000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/1794544938410f9fb1ff6e1a8ae17e63d952d99979f2b5d341c0cb1f8c5e426cdbf920b17b5560.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-11-13T04:48:12.239Z",
-            "boostedAt": "2026-11-13T04:48:12.236Z",
-            "region": {
-              "name": "성곡동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 37.519617,
-                "longitude": 126.7977974
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%8B%A4%EB%B2%84-i5-6200u-940m-%EC%8B%A0%ED%92%88%EB%B0%B0%ED%84%B0%EB%A6%AC-vzkgzent719i/",
-            "href": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%8B%A4%EB%B2%84-i5-6200u-940m-%EC%8B%A0%ED%92%88%EB%B0%B0%ED%84%B0%EB%A6%AC-vzkgzent719i/",
-            "title": "LG 노트북 실버 i5 6200U 940M +신품배터리",
-            "content": "LG 노트북 실버 색상이에요. Intel Core i5 6200U\n8GB RAM이 탑재되어 있어요. NVIDIA GeForce 940M 그래픽 카드가 포함된 모델이에요. 사무용이나 학습용으로 활용하기 좋아요.\n\n가방,노트북, 마우스 포함\n추가 배터리(신품)",
-            "price": "170000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/1794543811930d4dff79a1121261930415f2b6037c196060a47191ea81f7e8999178f4687a04f0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": false,
-            "createdAt": "2026-11-13T04:25:25.336Z",
-            "boostedAt": "2026-11-13T04:25:25.336Z",
-            "region": {
-              "name": "개포4동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 37.6393624,
-                "longitude": 127.1270793
+                "latitude": 35.176024,
+                "longitude": 128.5554239
               },
               {
-                "latitude": 37.4801528,
-                "longitude": 127.046496
+                "latitude": 35.2253228,
+                "longitude": 128.6368667
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%8B%9C%EB%A6%AC%EC%A6%889-k2agrqdgrccu/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%8B%9C%EB%A6%AC%EC%A6%889-k2agrqdgrccu/",
+            "title": "삼성 노트북 시리즈9",
+            "content": "삼성 시리즈9 노트북\n2013년 제조라고 쓰여있네요.(NT900X3D)\n13인치이고, i5가 탑재되어 있습니다.\n초기화 해서 드릴 예정으로,\n최신 윈도우는 직접 설치하셔야 할지도 모르겠네요.\n어댑터도 같이 드립니다.\n마우스패드 들뜸이 있으나 작동에는 문제 없습니다.\n\n‐------아래 AI 작성--------\n삼성 New Series 9 노트북이에요.\n인텔 코어 i5 프로세서가 탑재되어 있어요.\n깔끔한 실버 색상의 제품이에요.\n가벼운 휴대성을 원하는 분들에게 적합해요.",
+            "price": "60000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/18844b03-34b0-43f5-ad94-253a9a031114.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-11-13T05:33:36.670Z",
+            "boostedAt": "2026-11-13T05:33:36.668Z",
+            "region": {
+              "name": "망포1동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 37.2350809,
+                "longitude": 127.0557409
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/%ED%92%80%EB%B0%95%EC%8A%A4-sss%EA%B8%89-msi-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%AA%A8%EB%8D%98%EC%8B%9C%EB%A6%AC%EC%A6%88-15-b7m-r5-%ED%8F%AC%EC%8A%A4-w11-%EA%B2%8C%EC%9D%B4%EB%B0%8D-ai-msi-%EB%85%B8%ED%8A%B8%EB%B6%81-umzb8ye3gmvc/",
+            "href": "/kr/buy-sell/%ED%92%80%EB%B0%95%EC%8A%A4-sss%EA%B8%89-msi-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%AA%A8%EB%8D%98%EC%8B%9C%EB%A6%AC%EC%A6%88-15-b7m-r5-%ED%8F%AC%EC%8A%A4-w11-%EA%B2%8C%EC%9D%B4%EB%B0%8D-ai-msi-%EB%85%B8%ED%8A%B8%EB%B6%81-umzb8ye3gmvc/",
+            "title": "[🔥풀박스 SSS급] MSI 노트북 모던시리즈 15 B7M-R5 포스 W11 게이밍 AI MSI 노트북",
+            "content": "🔥풀박스 SSS급\n🔥스크레치 없음\n🔥선물 받아 집에서 유튜브 보려고 10번 미만 사용\n🔥메인 컴퓨터 따로 있음\n🔥키스킨까지 장착\n\n노트북/39.6cm(15.6인치)/1.75kg/윈도우11홈\n[화면]1920x1080(FHD)\n[CPU]AMD/라이젠5(Zen3)/7430U (2.3Hz)\n[그래픽]Radeon Graphics/7코어\n[구성]RAM 16GB/용량: SSD 512GB/USB-PD(+DC)/39.3Wh\n2026년에 받은 최신상 제품",
+            "price": "700000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/fb8eb16b-0047-4282-aa49-87532b9d2d6c.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-10-31T16:42:25.889Z",
+            "boostedAt": "2026-11-13T05:15:03.041Z",
+            "region": {
+              "name": "역삼2동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 37.5024001,
+                "longitude": 127.0445469
               }
             ]
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-11-13T04:55:55.145Z\",\"boostedAt\":\"2026-11-13T04:55:55.143Z\",\"region\":{\"name\":\"청라2동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-11-13T04:48:12.239Z\",\"boostedAt\":\"2026-11-13T04:48:12.236Z\",\"region\":{\"name\":\"성곡동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-13T04:25:25.336Z\",\"boostedAt\":\"2026-11-13T04:25:25.336Z\",\"region\":{\"name\":\"개포4동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-11-09T12:20:12.416Z\",\"boostedAt\":\"2026-11-13T04:19:38.806Z\",\"region\":{\"name\":\"반포본동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-11-13T04:50:58.838Z\",\"boostedAt\":\"2026-11-13T04:50:58.835Z\",\"region\":{\"name\":\"길동\"},\"category\":null,\"contentCoord"
+          "createdAt\":\"2026-11-13T05:33:58.940Z\",\"boostedAt\":\"2026-11-13T05:33:58.940Z\",\"region\":{\"name\":\"팔룡동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-11-13T05:33:36.670Z\",\"boostedAt\":\"2026-11-13T05:33:36.668Z\",\"region\":{\"name\":\"망포1동\"},\"category\":null,\"contentCoo",
+          "createdAt\":\"2026-10-31T16:42:25.889Z\",\"boostedAt\":\"2026-11-13T05:15:03.041Z\",\"region\":{\"name\":\"역삼2동\"},\"category\":null,\"contentCoo",
+          "createdAt\":\"2026-11-13T05:28:38.109Z\",\"boostedAt\":\"2026-11-13T05:28:38.109Z\",\"region\":{\"name\":\"논현동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-11-11T02:24:01.319Z\",\"boostedAt\":\"2026-11-13T05:34:06.422Z\",\"region\":{\"name\":\"활천동\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":285,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG 노트북 그램 13인치\",\"description\":",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":287,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 15인치 노트북 i5 6300hq 8기가 256\"",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -143,24 +141,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1079,
-    "globalUniqueListings": 275,
-    "duplicateListingsRemoved": 804,
-    "detailQueueStart": 12,
-    "freshDetailTasks": 12,
+    "searchUniqueListings": 1092,
+    "globalUniqueListings": 278,
+    "duplicateListingsRemoved": 814,
+    "detailQueueStart": 14,
+    "freshDetailTasks": 14,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 12,
-    "detailSucceeded": 11,
-    "detailFailed": 1,
-    "detail404": 1,
+    "detailRequestsExecuted": 14,
+    "detailSucceeded": 14,
+    "detailFailed": 0,
+    "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 275,
+    "postedAtResolvedFromSearch": 278,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 93750,
+    "scanDurationMs": 98049,
     "cities": [
       {
         "city": "군포시",
@@ -172,8 +170,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 268,
-        "durationMs": 12564
+        "uniqueListings": 272,
+        "durationMs": 13114
       },
       {
         "city": "의왕시",
@@ -188,8 +186,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 271,
-        "durationMs": 25343
+        "uniqueListings": 276,
+        "durationMs": 25791
       },
       {
         "city": "안양시",
@@ -206,8 +204,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 274,
-        "durationMs": 35224
+        "uniqueListings": 275,
+        "durationMs": 35522
       },
       {
         "city": "과천시",
@@ -218,8 +216,8 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 266,
-        "durationMs": 6366
+        "uniqueListings": 269,
+        "durationMs": 6982
       }
     ],
     "finalCandidateCount": 0,
@@ -228,7 +226,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 93759
+    "durationMs": 98056
   },
   "candidates": []
 }
