@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-13T07:42:31.854Z",
+  "generatedAt": "2026-11-13T07:49:00.294Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,28 +55,46 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/msi-thin-15-b12ve-%EB%B8%94%EB%9E%99-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-y8ih8fiv677v/",
-            "href": "/kr/buy-sell/msi-thin-15-b12ve-%EB%B8%94%EB%9E%99-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-y8ih8fiv677v/",
-            "title": "MSI Thin 15 B12VE 블랙 게이밍 노트북",
-            "content": "Intel Core i5-12450H 프로세서와 RTX 4050 그래픽 카드가 탑재된 모델이에요. 8GB 램과 512GB SSD를 갖추고 있어 쾌적한 사용이 가능해요. 게이밍과 작업용으로 활용하기 좋은 구성이에요.\n\n2번사진참조",
-            "price": "82000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/faa44be5-20cb-40b9-8ba8-4e036925f693.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/i5-lg%EC%82%AC%EB%AC%B4%EC%9A%A9-%EB%85%B8%ED%8A%B8%EB%B6%81-qswbrc1e7aq7/",
+            "href": "/kr/buy-sell/i5-lg%EC%82%AC%EB%AC%B4%EC%9A%A9-%EB%85%B8%ED%8A%B8%EB%B6%81-qswbrc1e7aq7/",
+            "title": "i5 LG사무용 노트북",
+            "content": "프로세서:i5-4210m 메모리:8GB\nSSD:128GB 하드 1테라\n그래픽 HD4600\n\n\n계속방치만하게돼어 판매합니다\n화면크기는15.6인치입니다\n생활감있으며 속도잘나옵니다\nms 오피스 한글도있어 \n사무용으로좋은노트북입니다\n\n초기화 완료했습니다 바로사용가능\n구성품 어뎁터랑드려요\n네고X 사실분쳇주셔요",
+            "price": "190000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/d4216cc8-6e9e-4c85-aa08-572bf090aa85.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-11-13T07:30:02.843Z",
-            "boostedAt": "2026-11-13T07:30:02.842Z",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-11-13T07:44:22.590Z",
+            "boostedAt": "2026-11-13T07:44:22.589Z",
             "region": {
-              "name": "신천동"
+              "name": "역삼동"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 35.8703834,
-                "longitude": 128.6290788
-              },
+                "latitude": 37.5065326,
+                "longitude": 127.0459459
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C-13%EC%9D%B8%EC%B9%98-%EC%9D%B8%ED%85%94-%EC%BD%94%EC%96%B42%EB%93%80%EC%98%A4-2-4ghz-bdsbijo5ysky/",
+            "href": "/kr/buy-sell/%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C-13%EC%9D%B8%EC%B9%98-%EC%9D%B8%ED%85%94-%EC%BD%94%EC%96%B42%EB%93%80%EC%98%A4-2-4ghz-bdsbijo5ysky/",
+            "title": "맥북프로 13인치 인텔 코어2듀오 2.4GHz",
+            "content": "맥북프로 13인치 모델이에요. 인텔 코어2듀오 2.4GHz 프로세서와 4GB RAM, 466GB 저장 공간을 갖추고 있어요. 포로리 애니메이션 시청용으로도 충분하답니다. 깔끔한 디자인으로 어떤 공간에도 잘 어울려요.\n\n이 제품은 저장 공간이 매우 넓어 기본적인 작업에 적합하며, 특히 애플 제품을 처음 사용하는 사용자나 어린이에게 좋습니다.\n\n\n참고: 전원에 연결된 상태에서도 사용하실 수 있습니다.",
+            "price": "90000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/c69dbeb9-fcb7-403c-9beb-d355119a0e8f.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-10-02T21:33:27.322Z",
+            "boostedAt": "2026-11-13T07:46:24.482Z",
+            "region": {
+              "name": "아라일동"
+            },
+            "category": null,
+            "contentCoordinates": [
               {
-                "latitude": 35.8427804,
-                "longitude": 128.5952628
+                "latitude": 33.4491675,
+                "longitude": 126.560607
               }
             ]
           },
@@ -101,43 +119,17 @@
                 "longitude": 128.4057235
               }
             ]
-          },
-          {
-            "id": "/kr/buy-sell/9%EC%84%B8%EB%8C%80-%EC%82%BC%EC%84%B1%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%8B%B9%EA%B7%BC-mjrj57bdi4av/",
-            "href": "/kr/buy-sell/9%EC%84%B8%EB%8C%80-%EC%82%BC%EC%84%B1%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%8B%B9%EA%B7%BC-mjrj57bdi4av/",
-            "title": "9세대 삼성노트북 당근",
-            "content": "15.6인치화면 속도빠르고 화질좋아요\n배터리또한 90퍼로짱짱하며\n지문인식도가능한 노트북입니다\n생활기스있습니다\n\ni5-9300H\n메모리 8GB\nSSD 256GB\nHDD 500GB\nGPU UHD630\n\n오피스한글설치돼어있어요\n제품초기화또한완료\n충전기랑같이드리며 \n네고문의안받으며\n사실분만쳇주세요",
-            "price": "350000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/c822d060-f2b7-4100-97ed-1418c3d11322.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": false,
-            "createdAt": "2026-11-13T07:32:51.294Z",
-            "boostedAt": "2026-11-13T07:32:51.293Z",
-            "region": {
-              "name": "역삼1동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 37.5065907,
-                "longitude": 127.0459448
-              },
-              {
-                "latitude": 37.5356379,
-                "longitude": 127.1328439
-              }
-            ]
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-11-13T07:30:02.843Z\",\"boostedAt\":\"2026-11-13T07:30:02.842Z\",\"region\":{\"name\":\"신천동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-11-13T07:44:22.590Z\",\"boostedAt\":\"2026-11-13T07:44:22.589Z\",\"region\":{\"name\":\"역삼동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-10-02T21:33:27.322Z\",\"boostedAt\":\"2026-11-13T07:46:24.482Z\",\"region\":{\"name\":\"아라일동\"},\"category\":null,\"contentCoo",
           "createdAt\":\"2026-11-13T07:13:31.107Z\",\"boostedAt\":\"2026-11-13T07:13:31.105Z\",\"region\":{\"name\":\"석적읍\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-13T07:32:51.294Z\",\"boostedAt\":\"2026-11-13T07:32:51.293Z\",\"region\":{\"name\":\"역삼1동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-11-13T06:48:58.530Z\",\"boostedAt\":\"2026-11-13T06:48:58.528Z\",\"region\":{\"name\":\"신흥동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-11T06:19:53.066Z\",\"boostedAt\":\"2026-11-13T06:44:02.613Z\",\"region\":{\"name\":\"사당제1동\"},\"category\":null,\"contentCo"
+          "createdAt\":\"2026-11-13T07:42:52.911Z\",\"boostedAt\":\"2026-11-13T07:42:52.911Z\",\"region\":{\"name\":\"삼성동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-06-04T17:48:56.422Z\",\"boostedAt\":\"2026-11-13T07:40:16.601Z\",\"region\":{\"name\":\"신림동\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":278,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"MSI Thin 15 B12VE 블랙 게이밍 노트북\",",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":278,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"i5 LG사무용 노트북\",\"description\":\"프",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -145,24 +137,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1084,
-    "globalUniqueListings": 274,
-    "duplicateListingsRemoved": 810,
-    "detailQueueStart": 13,
-    "freshDetailTasks": 13,
+    "searchUniqueListings": 1061,
+    "globalUniqueListings": 322,
+    "duplicateListingsRemoved": 739,
+    "detailQueueStart": 3,
+    "freshDetailTasks": 3,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 13,
-    "detailSucceeded": 13,
+    "detailRequestsExecuted": 3,
+    "detailSucceeded": 3,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 274,
+    "postedAtResolvedFromSearch": 322,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 95214,
+    "scanDurationMs": 83509,
     "cities": [
       {
         "city": "군포시",
@@ -175,7 +167,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 270,
-        "durationMs": 12412
+        "durationMs": 12449
       },
       {
         "city": "의왕시",
@@ -190,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 273,
-        "durationMs": 25623
+        "uniqueListings": 276,
+        "durationMs": 25819
       },
       {
         "city": "안양시",
@@ -208,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 273,
-        "durationMs": 35123
+        "uniqueListings": 274,
+        "durationMs": 35461
       },
       {
         "city": "과천시",
@@ -220,8 +212,8 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 268,
-        "durationMs": 6556
+        "uniqueListings": 241,
+        "durationMs": 6426
       }
     ],
     "finalCandidateCount": 0,
@@ -230,7 +222,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 95221
+    "durationMs": 83514
   },
   "candidates": []
 }
