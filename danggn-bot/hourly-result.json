@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-13T04:22:47.716Z",
+  "generatedAt": "2026-11-13T05:02:31.101Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -16,7 +16,9 @@
   "health": {
     "status": "ok",
     "stateCommitted": true,
-    "warnings": []
+    "warnings": [
+      "안양시: detail failed vuyju33joqax: Error: HTTP 404 Not Found"
+    ]
   },
   "rules": {
     "newnessField": "postedAt",
@@ -55,85 +57,85 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-17%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-nt550p7c-i7-3632qm-16gb-256gb-%ED%8C%9D%EB%8B%88%EB%8B%A4-xz5hem6gh4na/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-17%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-nt550p7c-i7-3632qm-16gb-256gb-%ED%8C%9D%EB%8B%88%EB%8B%A4-xz5hem6gh4na/",
-            "title": "삼성 17인치 노트북 NT550P7C i7 3632QM 16GB 256GB 팝니다",
-            "content": "삼성노트북 NT550P7C i7 3632QM 3세대 17인치 팝니다\n\n제품은  2013년 제품이에요\n\nCPU:I7-3632QM\n모니터:17.3인치 \nVGA:엔비디아 GT650M  (2GB)\n          인텔 4000\nSSD:삼성전자 850 EVO 250GB\nRAM:삼성 DDR3L 16GB\n스피커:JBL\nOS:윈도우11 홈 한글 2024  오피스 2021 정품 설치\n\n제품 하자:액정 화이트 스팟 1개 미세하게 있으면 사진 6번 7번 손가락 위치 화이트 색상에서 자세히 보셔야 보여요\n\n제품 전체적으로 사용감 있으며 메모리 16gb SSD 250gb JBL 스피커 장착되어 문서 작업 게임 유튜브 인터넷 빠릿빠릿하며  JBL스피커 내장이라 유튜브 음악 게임에서도 좋은 소리 내주며 유선랜 WiFi 키보드 터치패드 정상작동하며 배터리는 완충 시 2시간~1시 30분 사용 가능해요\n제품구성은 노트북+어댑터 구성이며 거래는 직거래 선호해요",
+            "id": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-%EA%B7%B8%EB%9E%A8-13%EC%9D%B8%EC%B9%98-swpnz6y6yxhc/",
+            "href": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-%EA%B7%B8%EB%9E%A8-13%EC%9D%B8%EC%B9%98-swpnz6y6yxhc/",
+            "title": "LG 노트북 그램 13인치",
+            "content": "LG 노트북 13ZD940-LT1PK 핑크 색상입니다. 구성품으로 충전기가 포함되어 있어요. 깔끔한 디자인으로 어디서든 사용하기 좋아요.\n\n사용감잇음.보호필름 떼면\n화면상태좋아요",
+            "price": "150000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/d41b96db-7236-4cfb-a203-fb55ee22b5da.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-11-13T04:55:55.145Z",
+            "boostedAt": "2026-11-13T04:55:55.143Z",
+            "region": {
+              "name": "청라2동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 37.5376853,
+                "longitude": 126.6374094
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-6200u-bs3qruvbewm5/",
+            "href": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-6200u-bs3qruvbewm5/",
+            "title": "LG 노트북 i5-6200U",
+            "content": "■ 사양\n- CPU : Intel Core i5-6200U 2.30GHz\n- RAM : 8GB\n- SSD : 256GB\n- 운영체제 : Windows 11 Pro 64bit\n- 충전기 포함\n다른 노트북 구매하게 되어서 싸게 판매하고 정품 충전기,마우스 같이 드려요! 완충시 3시간 사용가능합니다 외관이랑 기능상 하자 없고 사무용,영상용,작업용으로 적합합니다 쿨거래시 애누리 가능하니 연락 주세용",
             "price": "200000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/9b158eb0-c442-4ac6-915c-3d0415ffc46f.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/1794544938410f9fb1ff6e1a8ae17e63d952d99979f2b5d341c0cb1f8c5e426cdbf920b17b5560.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": true,
-            "createdAt": "2026-11-13T04:13:49.566Z",
-            "boostedAt": "2026-11-13T04:13:49.566Z",
+            "createdAt": "2026-11-13T04:48:12.239Z",
+            "boostedAt": "2026-11-13T04:48:12.236Z",
             "region": {
-              "name": "아현동"
+              "name": "성곡동"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 37.5569468,
-                "longitude": 126.9561798
-              },
-              {
-                "latitude": 37.6004805,
-                "longitude": 127.0977952
+                "latitude": 37.519617,
+                "longitude": 126.7977974
               }
             ]
           },
           {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4-nt900x3b-a4qkrat94b96/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4-nt900x3b-a4qkrat94b96/",
-            "title": "삼성 노트북 판매 NT900X3B",
-            "content": "외국인과 거래하지 않습니다\n\n사용하지 않게되어 판매합니다\n모델 NT900X3B\ni5 233gbyte\n\n얇고 가볍습니다\n정상작동하며 윈도우11 초기화후\n판매합니다\n\n배터리 사용시간은 잘 모르겠고 아답터 드립니다\n\n",
-            "price": "100000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/90425931-aaf3-4b73-bf3d-4f69cdb2df3d.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-11-06T12:08:36.191Z",
-            "boostedAt": "2026-11-13T04:17:24.377Z",
-            "region": {
-              "name": "배방읍"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 36.7861592,
-                "longitude": 127.0914888
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/hp-%ED%95%98%EC%9D%B4%ED%8D%BC%EC%97%91%EC%8A%A4-%EC%98%A4%EB%A9%98-r9-rtx5070-%EB%AA%A8%EB%8D%B8-%ED%8C%9D%EB%8B%88%EB%8B%A4-19mvvoftmv2b/",
-            "href": "/kr/buy-sell/hp-%ED%95%98%EC%9D%B4%ED%8D%BC%EC%97%91%EC%8A%A4-%EC%98%A4%EB%A9%98-r9-rtx5070-%EB%AA%A8%EB%8D%B8-%ED%8C%9D%EB%8B%88%EB%8B%A4-19mvvoftmv2b/",
-            "title": "HP 하이퍼엑스 오멘 R9 / RTX5070 모델 팝니다.",
-            "content": "\n\n모델명 - 오멘 16-ap0117x\n\nCPU - R9-8940HX\nRAM - 32GB\nNVME - 1TB\nVGA - RTX5070\n하드사용시간 0시간\n배터리효율 100%\n\n구성품은 본체 아답터있음\n\n선물받은 후 윈도우 설치만 완료한상태\n\n26년1월제조로 워런티도 충분히 살아있음\n\n상태 많이 좋습니다\n\n구매 후 단순 변심 환불 불가합니다\n\n예약시 노쑈방지 예약금 받습니다\n\n노쑈시 예약금은 환불 하지 않습니다",
-            "price": "2400000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/28221d54-79ec-4181-a40c-fce9cee55f68.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%8B%A4%EB%B2%84-i5-6200u-940m-%EC%8B%A0%ED%92%88%EB%B0%B0%ED%84%B0%EB%A6%AC-vzkgzent719i/",
+            "href": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%8B%A4%EB%B2%84-i5-6200u-940m-%EC%8B%A0%ED%92%88%EB%B0%B0%ED%84%B0%EB%A6%AC-vzkgzent719i/",
+            "title": "LG 노트북 실버 i5 6200U 940M +신품배터리",
+            "content": "LG 노트북 실버 색상이에요. Intel Core i5 6200U\n8GB RAM이 탑재되어 있어요. NVIDIA GeForce 940M 그래픽 카드가 포함된 모델이에요. 사무용이나 학습용으로 활용하기 좋아요.\n\n가방,노트북, 마우스 포함\n추가 배터리(신품)",
+            "price": "170000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/1794543811930d4dff79a1121261930415f2b6037c196060a47191ea81f7e8999178f4687a04f0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": false,
-            "createdAt": "2026-10-20T12:35:47.261Z",
-            "boostedAt": "2026-11-13T04:18:53.558Z",
+            "createdAt": "2026-11-13T04:25:25.336Z",
+            "boostedAt": "2026-11-13T04:25:25.336Z",
             "region": {
-              "name": "반포동"
+              "name": "개포4동"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 37.5050753,
-                "longitude": 127.0041203
+                "latitude": 37.6393624,
+                "longitude": 127.1270793
+              },
+              {
+                "latitude": 37.4801528,
+                "longitude": 127.046496
               }
             ]
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-11-13T04:13:49.566Z\",\"boostedAt\":\"2026-11-13T04:13:49.566Z\",\"region\":{\"name\":\"아현동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-06T12:08:36.191Z\",\"boostedAt\":\"2026-11-13T04:17:24.377Z\",\"region\":{\"name\":\"배방읍\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-10-20T12:35:47.261Z\",\"boostedAt\":\"2026-11-13T04:18:53.558Z\",\"region\":{\"name\":\"반포동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-13T03:34:53.360Z\",\"boostedAt\":\"2026-11-13T03:34:53.359Z\",\"region\":{\"name\":\"개포4동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-11-13T03:59:45.477Z\",\"boostedAt\":\"2026-11-13T03:59:45.474Z\",\"region\":{\"name\":\"용호제4동\"},\"category\":null,\"contentCo"
+          "createdAt\":\"2026-11-13T04:55:55.145Z\",\"boostedAt\":\"2026-11-13T04:55:55.143Z\",\"region\":{\"name\":\"청라2동\"},\"category\":null,\"contentCoo",
+          "createdAt\":\"2026-11-13T04:48:12.239Z\",\"boostedAt\":\"2026-11-13T04:48:12.236Z\",\"region\":{\"name\":\"성곡동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-11-13T04:25:25.336Z\",\"boostedAt\":\"2026-11-13T04:25:25.336Z\",\"region\":{\"name\":\"개포4동\"},\"category\":null,\"contentCoo",
+          "createdAt\":\"2026-11-09T12:20:12.416Z\",\"boostedAt\":\"2026-11-13T04:19:38.806Z\",\"region\":{\"name\":\"반포본동\"},\"category\":null,\"contentCoo",
+          "createdAt\":\"2026-11-13T04:50:58.838Z\",\"boostedAt\":\"2026-11-13T04:50:58.835Z\",\"region\":{\"name\":\"길동\"},\"category\":null,\"contentCoord"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":284,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 17인치 노트북 NT550P7C i7 3632QM",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":285,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG 노트북 그램 13인치\",\"description\":",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -141,24 +143,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1100,
-    "globalUniqueListings": 283,
-    "duplicateListingsRemoved": 817,
-    "detailQueueStart": 28,
-    "freshDetailTasks": 28,
+    "searchUniqueListings": 1079,
+    "globalUniqueListings": 275,
+    "duplicateListingsRemoved": 804,
+    "detailQueueStart": 12,
+    "freshDetailTasks": 12,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 28,
-    "detailSucceeded": 28,
-    "detailFailed": 0,
-    "detail404": 0,
+    "detailRequestsExecuted": 12,
+    "detailSucceeded": 11,
+    "detailFailed": 1,
+    "detail404": 1,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 283,
+    "postedAtResolvedFromSearch": 275,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 113186,
+    "scanDurationMs": 93750,
     "cities": [
       {
         "city": "군포시",
@@ -170,8 +172,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 273,
-        "durationMs": 12491
+        "uniqueListings": 268,
+        "durationMs": 12564
       },
       {
         "city": "의왕시",
@@ -186,8 +188,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 280,
-        "durationMs": 25584
+        "uniqueListings": 271,
+        "durationMs": 25343
       },
       {
         "city": "안양시",
@@ -204,8 +206,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 279,
-        "durationMs": 35228
+        "uniqueListings": 274,
+        "durationMs": 35224
       },
       {
         "city": "과천시",
@@ -216,8 +218,8 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 268,
-        "durationMs": 6372
+        "uniqueListings": 266,
+        "durationMs": 6366
       }
     ],
     "finalCandidateCount": 0,
@@ -226,7 +228,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 113193
+    "durationMs": 93759
   },
   "candidates": []
 }
