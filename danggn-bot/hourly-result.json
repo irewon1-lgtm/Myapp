@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-14T17:52:27.550Z",
+  "generatedAt": "2026-11-14T18:32:30.164Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -130,10 +130,10 @@
           "createdAt\":\"2026-11-14T16:41:16.079Z\",\"boostedAt\":\"2026-11-14T16:41:16.077Z\",\"region\":{\"name\":\"양포동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-07-29T15:40:31.886Z\",\"boostedAt\":\"2026-11-14T17:00:59.682Z\",\"region\":{\"name\":\"상인2동\"},\"category\":null,\"contentCoo",
           "createdAt\":\"2026-08-27T09:35:04.734Z\",\"boostedAt\":\"2026-11-14T16:45:50.281Z\",\"region\":{\"name\":\"장림제1동\"},\"category\":null,\"contentCo",
-          "createdAt\":\"2025-09-17T23:20:27.754Z\",\"boostedAt\":\"2026-11-14T16:14:29.788Z\",\"region\":{\"name\":\"논현2동\"},\"category\":null,\"contentCoo"
+          "createdAt\":\"2026-11-14T11:41:18.342Z\",\"boostedAt\":\"2026-11-14T11:41:18.341Z\",\"region\":{\"name\":\"신사동\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":272,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG 그램 15인치 노트북 판매 (i5 / RAM 16",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":271,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG 그램 15인치 노트북 판매 (i5 / RAM 16",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -141,14 +141,14 @@
         ]
       }
     },
-    "searchUniqueListings": 1055,
+    "searchUniqueListings": 1058,
     "globalUniqueListings": 266,
-    "duplicateListingsRemoved": 789,
-    "detailQueueStart": 0,
-    "freshDetailTasks": 0,
+    "duplicateListingsRemoved": 792,
+    "detailQueueStart": 2,
+    "freshDetailTasks": 2,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 0,
-    "detailSucceeded": 0,
+    "detailRequestsExecuted": 2,
+    "detailSucceeded": 2,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
@@ -158,7 +158,7 @@
     "postedAtResolvedFromSearch": 266,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 79532,
+    "scanDurationMs": 81007,
     "cities": [
       {
         "city": "군포시",
@@ -171,7 +171,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 264,
-        "durationMs": 12392
+        "durationMs": 12316
       },
       {
         "city": "의왕시",
@@ -186,8 +186,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 264,
-        "durationMs": 25323
+        "uniqueListings": 265,
+        "durationMs": 25459
       },
       {
         "city": "안양시",
@@ -204,8 +204,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 264,
-        "durationMs": 35183
+        "uniqueListings": 265,
+        "durationMs": 34822
       },
       {
         "city": "과천시",
@@ -216,8 +216,8 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 263,
-        "durationMs": 6461
+        "uniqueListings": 264,
+        "durationMs": 6290
       }
     ],
     "finalCandidateCount": 0,
@@ -226,7 +226,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 79539
+    "durationMs": 81013
   },
   "candidates": []
 }
