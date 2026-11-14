@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-14T08:52:53.981703Z",
+  "updatedAt": "2026-11-14T09:09:06.135914Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -18301,6 +18301,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81%EC%97%90%EC%96%B4-m3-15%EC%9D%B8%EC%B9%98-512gb-16gb-ram-%EC%98%81%EB%AC%B8%EC%9E%90%ED%8C%90-d9d2r4fm8qsn/",
       "firstAlertedAt": "2026-11-13T02:22:34.556666Z",
       "lastCandidateAt": "2026-11-13T02:22:34.556666Z"
+    },
+    "hgc6gcy6curz": {
+      "id": "hgc6gcy6curz",
+      "title": "애플 맥북프로 실버 i7 16GB 1TB",
+      "price": 80000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "호계동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": 16,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16GB 메모리",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "16GB",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-14T08:52:50.949Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%95%A0%ED%94%8C-%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C-%EC%8B%A4%EB%B2%84-i7-16gb-1tb-hgc6gcy6curz/",
+      "firstAlertedAt": "2026-11-14T09:09:06.135914Z",
+      "lastCandidateAt": "2026-11-14T09:09:06.135914Z"
     }
   }
 }
