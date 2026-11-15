@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-15T21:52:19.764Z",
+  "generatedAt": "2026-11-15T22:32:19.397Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,93 +55,81 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/hp-15s-eq1153au-%EB%9D%BC%EC%9D%B4%EC%A0%A07-%EB%85%B8%ED%8A%B8%EB%B6%81-ssd-512-ram-32-rucq4c1nz9hy/",
-            "href": "/kr/buy-sell/hp-15s-eq1153au-%EB%9D%BC%EC%9D%B4%EC%A0%A07-%EB%85%B8%ED%8A%B8%EB%B6%81-ssd-512-ram-32-rucq4c1nz9hy/",
-            "title": "HP 15S-EQ1153AU 라이젠7 노트북 (SSD 512 RAM 32)",
-            "content": "HP 15S-EQ1153AU 노트북 판매해요. 라이젠7 CPU와 39.6cm(15.6인치) 화면으로 쾌적한 사용이 가능해요.\n\nSSD 512 RAM 32로 업그레이드 해놨습니다\n윈도우 edu 정품인증 되어있습니다\n\n가방포함이구 한번떨어뜨려서 마지막 사진보시면 찍힘 있습니다\n개발테스트용으로 사용하다가 안쓴지가 좀 돼서 그냥 판매합니다\n\n(포맷완료된 상태입니다)",
-            "price": "450000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/72e285e3-a0d1-4619-b799-9891080544d5.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": false,
-            "createdAt": "2026-11-13T15:12:29.173Z",
-            "boostedAt": "2026-11-15T21:37:31.097Z",
-            "region": {
-              "name": "삼성동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 37.2542554,
-                "longitude": 127.0662481
-              },
-              {
-                "latitude": 37.5129631,
-                "longitude": 127.0543339
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/%EC%95%A0%ED%94%8C-%ED%99%94%EC%9D%B4%ED%8A%B8-%EB%A7%A5%EB%B6%81-13%EC%9D%B8%EC%B9%98-a1342-2010-793jfuxdxat2/",
-            "href": "/kr/buy-sell/%EC%95%A0%ED%94%8C-%ED%99%94%EC%9D%B4%ED%8A%B8-%EB%A7%A5%EB%B6%81-13%EC%9D%B8%EC%B9%98-a1342-2010-793jfuxdxat2/",
-            "title": "애플 화이트 맥북 13인치 A1342 2010",
-            "content": "인텔 코어 2 듀오 프로세서\n4GB 메모리\n320GB 저장공간\n초기화후 macOS High Sierra가 설치\nodd에서 cd 플레이도 정상\n사용감 적은 정품 충전기 포함\n잠실역 주변에서  기능확인 모두 하고 직거래 가능\n바로구매시 반품 및 환불 불가\n\n구매취소하셔도 무방하니 편하게 연락주세여",
-            "price": "80000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/179400810398656aa2bcaffd3650fc98835bed0e5705f622872fd77b44c96e50b7e9d7f9981af0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-ativ-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-4210u-8gb-ram-ssd120g-hdd500-epo2p4qr4s12/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-ativ-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-4210u-8gb-ram-ssd120g-hdd500-epo2p4qr4s12/",
+            "title": "삼성 ATIV 노트북 (i5-4210U, 8GB RAM, SSD120g HDD500)",
+            "content": "삼성 ATIV 노트북 판매해요.\n\n 인텔 코어 i5-4210U 프로세서와 8GB RAM, 119GB SSD 및 466GB HDD를 탑재하고 있어요. \n\n본체,아답터\n\nWindows 10 Home이 설치되어 있으며, 다양한 포트와 깔끔한 디자인이 매력적인 제품이에요.",
+            "price": "150000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/2e05ee8d-f734-4d65-aa8c-c5667b87022e.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": true,
-            "createdAt": "2026-11-06T23:44:47.133Z",
-            "boostedAt": "2026-11-15T21:27:28.269Z",
+            "createdAt": "2026-10-18T15:56:16.076Z",
+            "boostedAt": "2026-11-15T22:11:05.429Z",
             "region": {
-              "name": "역삼1동"
+              "name": "반여동"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 37.5068758,
-                "longitude": 127.0960679
-              },
-              {
-                "latitude": 37.4970939,
-                "longitude": 127.0301219
+                "latitude": 35.2094369,
+                "longitude": 129.1239392
               }
             ]
           },
           {
-            "id": "/kr/buy-sell/%ED%9D%AC%EA%B7%80%EC%83%89%EC%83%81-%EA%B2%BD%EB%9F%89-%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%811-%ED%94%84%EB%A1%9C-15%EC%9D%B8%EC%B9%98-8gb-512gb-akj32p7fz942/",
-            "href": "/kr/buy-sell/%ED%9D%AC%EA%B7%80%EC%83%89%EC%83%81-%EA%B2%BD%EB%9F%89-%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%811-%ED%94%84%EB%A1%9C-15%EC%9D%B8%EC%B9%98-8gb-512gb-akj32p7fz942/",
-            "title": "(희귀색상,경량)삼성 갤럭시북1 프로 15인치 8gb/512gb",
-            "content": "갤럭시북 1프로 미스틱블루 판매합니다.\n필름 부분적으로 미개봉 된 상태로 아껴서 사용했습니다\n\n-인텔 11세대 i5/ 8GB램/ 512GB SSD /15.6인치 / 1.05kg\n- 삼성 정품 충전기 동봉\n- 윈도우 11, Word, Powerpoint, Excel, 한글 설치되어있음\n- 요청 시 초기화하고 보내드립니다\n- 썬더볼트4 / USB-C / USB-A / HDMI / microSD\n\n(지문인식 로그인\n- AKG 스피커, 돌비 애트모스 지원\n- 갤럭시 폰·갤탭과 연동)\n\n- 직거래: 강남역\n- 택배 가능\n\n궁금한 점은 편하게 채팅 주세요",
-            "price": "590000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/220ea0b4-9232-4047-8f05-1694e5560e97.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/hp-%EC%9D%B8%ED%85%94-i5-4210u-cpu-8gb-ram-256gb-gcttgfzvwuaa/",
+            "href": "/kr/buy-sell/hp-%EC%9D%B8%ED%85%94-i5-4210u-cpu-8gb-ram-256gb-gcttgfzvwuaa/",
+            "title": "HP 인텔 i5-4210U CPU, 8GB RAM, 256GB",
+            "content": "HP 프로북 430 G2 노트북 판매해요\n인텔 i5-4210U CPU, 8GB RAM, 256GB SSD 탑재되어 문서 작업, 영상 시청 등 일상적인 작업에 충분해요\nWindows 11 Pro 설치되어 바로 사용 가능합니다\n가성비 좋은 노트북 찾으시는 분들께 추천드려요\n\n밧데리상태 사진참고\n전원선드림\n",
+            "price": "115000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202607/22da4665fa9b595460f897dc065a03d236f211f400a2c483a1aa8263cfa6d7cf_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
-            "isInstantBuyAvailable": false,
-            "createdAt": "2026-11-09T13:20:59.914Z",
-            "boostedAt": "2026-11-15T21:13:10.859Z",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-07-08T05:12:09.104Z",
+            "boostedAt": "2026-11-15T22:19:35.268Z",
             "region": {
-              "name": "서초동"
+              "name": "소흘읍"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 37.4935848,
-                "longitude": 127.0285494
-              },
+                "latitude": 37.8367597,
+                "longitude": 127.1624876
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/%EA%B8%89%EC%B2%98-dell-latitude-5540-%EB%85%B8%ED%8A%B8%EB%B6%81-i7-13%EC%84%B8%EB%8C%80-16g-512ssd-%EC%A0%95%ED%92%88%EC%9C%88%EB%8F%84%EC%9A%B0-g6trdhq2qfep/",
+            "href": "/kr/buy-sell/%EA%B8%89%EC%B2%98-dell-latitude-5540-%EB%85%B8%ED%8A%B8%EB%B6%81-i7-13%EC%84%B8%EB%8C%80-16g-512ssd-%EC%A0%95%ED%92%88%EC%9C%88%EB%8F%84%EC%9A%B0-g6trdhq2qfep/",
+            "title": "급처) Dell Latitude 5540 노트북 / i7 13세대 / 16g /512ssd / 정품윈도우",
+            "content": "델 레티튜드 5540 노트북\n\n사양\n15.6인치 / 논글레어(빛 반사방지) 패널 /  인텔 i7 -13556u i7 13세대 cpu / intel iris Xe gpu / 16g ram / 512g ssd / 정품윈도우\n\n배터리성능은 사진과 같이 사이클24회 97-98%이며 충전기 제거하거나 실외에서 사용한 적 없습니다.\n\n구성품은 노트북 본체 밑 충전기, 설치된 윈도우 정품까지 포함이고 무선 마우스 같이 드립니다.\n\n2024년 3월 제조품이고 사무실에서 잠시 사용하던 제품이라 실사용 기간은 3개월도 안되고 그나마도 사용시간은 얼마안되는 키보드 사용감도 없을 만큼 컨디션 좋은 제품입니다. \n\n그래도 다만 중고 제품인 만큼 너무 예민하신분은 패스부탁드리고, 반품은 불가합니다. \n\n초기화 되어있고 바로 사용하시면 됩니다. \n\n서울 선정릉역 또는 강남 / 안양 평촌 부근 직거래 합니다.\n\n편하게 문의주세요.",
+            "price": "730000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/179437275148439cfa629cede2c855d91061d7bad710022b6ced7143837cf94f2cca0b63c1e5d0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-10-27T02:03:46.319Z",
+            "boostedAt": "2026-11-15T22:18:53.270Z",
+            "region": {
+              "name": "역삼동"
+            },
+            "category": null,
+            "contentCoordinates": [
               {
-                "latitude": 37.3017493,
-                "longitude": 126.9770971
+                "latitude": 37.5096827,
+                "longitude": 127.0432252
               }
             ]
           }
         ],
         "dateFieldSnippets": [
+          "createdAt\":\"2026-10-18T15:56:16.076Z\",\"boostedAt\":\"2026-11-15T22:11:05.429Z\",\"region\":{\"name\":\"반여동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-07-08T05:12:09.104Z\",\"boostedAt\":\"2026-11-15T22:19:35.268Z\",\"region\":{\"name\":\"소흘읍\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-10-27T02:03:46.319Z\",\"boostedAt\":\"2026-11-15T22:18:53.270Z\",\"region\":{\"name\":\"역삼동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-11-13T15:12:29.173Z\",\"boostedAt\":\"2026-11-15T21:37:31.097Z\",\"region\":{\"name\":\"삼성동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-06T23:44:47.133Z\",\"boostedAt\":\"2026-11-15T21:27:28.269Z\",\"region\":{\"name\":\"역삼1동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-11-09T13:20:59.914Z\",\"boostedAt\":\"2026-11-15T21:13:10.859Z\",\"region\":{\"name\":\"서초동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-15T21:40:56.305Z\",\"boostedAt\":\"2026-11-15T21:40:56.304Z\",\"region\":{\"name\":\"반포동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-15T20:15:12.275Z\",\"boostedAt\":\"2026-11-15T20:15:12.272Z\",\"region\":{\"name\":\"안중읍\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-11-15T21:53:42.586Z\",\"boostedAt\":\"2026-11-15T21:53:42.581Z\",\"region\":{\"name\":\"학성동\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":264,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"HP 15S-EQ1153AU 라이젠7 노트북 (SSD ",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":270,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 ATIV 노트북 (i5-4210U, 8GB RAM",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -149,24 +137,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1059,
-    "globalUniqueListings": 267,
-    "duplicateListingsRemoved": 792,
-    "detailQueueStart": 4,
-    "freshDetailTasks": 4,
+    "searchUniqueListings": 1070,
+    "globalUniqueListings": 271,
+    "duplicateListingsRemoved": 799,
+    "detailQueueStart": 6,
+    "freshDetailTasks": 6,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 4,
-    "detailSucceeded": 4,
+    "detailRequestsExecuted": 6,
+    "detailSucceeded": 6,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 267,
+    "postedAtResolvedFromSearch": 271,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 84028,
+    "scanDurationMs": 88484,
     "cities": [
       {
         "city": "군포시",
@@ -178,8 +166,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 264,
-        "durationMs": 12392
+        "uniqueListings": 266,
+        "durationMs": 12288
       },
       {
         "city": "의왕시",
@@ -194,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 266,
-        "durationMs": 25610
+        "uniqueListings": 268,
+        "durationMs": 25751
       },
       {
         "city": "안양시",
@@ -212,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 266,
-        "durationMs": 35124
+        "uniqueListings": 271,
+        "durationMs": 35256
       },
       {
         "city": "과천시",
@@ -224,8 +212,8 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 263,
-        "durationMs": 6467
+        "uniqueListings": 265,
+        "durationMs": 6646
       }
     ],
     "finalCandidateCount": 0,
@@ -234,7 +222,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 84034
+    "durationMs": 88489
   },
   "candidates": []
 }
