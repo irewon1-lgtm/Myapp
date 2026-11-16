@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-16T08:52:40.283447Z",
+  "updatedAt": "2026-11-16T09:32:41.528677Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -15455,8 +15455,8 @@
     "1mngicvxvh4q": {
       "id": "1mngicvxvh4q",
       "title": "맥북 프로 15인치 2019년 고급형 (인텔 i9)",
-      "price": 419000,
-      "previousPrice": 430000,
+      "price": 379000,
+      "previousPrice": 419000,
       "changeType": "price_drop",
       "city": "과천시",
       "location": "갈현동",
@@ -15475,7 +15475,7 @@
       "postedAt": "2026-11-05T02:54:48.089Z",
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-15%EC%9D%B8%EC%B9%98-2019%EB%85%84-%EA%B3%A0%EA%B8%89%ED%98%95-%EC%9D%B8%ED%85%94-i9-1mngicvxvh4q/",
       "firstAlertedAt": "2026-11-05T03:22:32.281918Z",
-      "lastCandidateAt": "2026-11-10T05:22:46.017880Z"
+      "lastCandidateAt": "2026-11-16T09:32:41.528677Z"
     },
     "b96p69u7ddco": {
       "id": "b96p69u7ddco",
@@ -15780,27 +15780,27 @@
     "tuu1ubbyq65b": {
       "id": "tuu1ubbyq65b",
       "title": "ROG STRIX SCAR RTX5080 TGP 175W 노트북",
-      "price": 3600000,
-      "previousPrice": 3900000,
+      "price": 3500000,
+      "previousPrice": 3600000,
       "changeType": "price_drop",
       "city": "의왕시",
       "location": "내손1동",
       "cpuHint": null,
       "gpuHint": "RTX5080",
       "vramGB": 16,
-      "ramGB": 96,
-      "ambiguousMemoryGB": null,
-      "hardwareReviewStatus": "PASS_RAM_VRAM",
-      "ramEvidence": "RAM 96GB",
+      "ramGB": 16,
+      "ambiguousMemoryGB": 32,
+      "hardwareReviewStatus": "PASS_VRAM",
+      "ramEvidence": "16GB RAM",
       "vramEvidence": "GPU 메모리 : 16GB",
-      "ambiguousMemoryEvidence": null,
+      "ambiguousMemoryEvidence": "32GB",
       "storageGB": 1024,
-      "llmCapability": "HYBRID_WORK_LOCAL_LLM",
-      "llmReason": "RAM 32GB 이상 + VRAM 16GB 이상 확정 후보",
+      "llmCapability": "LOCAL_LLM_GPU",
+      "llmReason": "VRAM 16GB 이상이 직접 표기되었거나 GPU 모델로 확인됨",
       "postedAt": "2026-06-16T17:11:02.924Z",
       "url": "https://www.daangn.com/kr/buy-sell/rog-strix-scar-rtx5080-tgp-175w-%EB%85%B8%ED%8A%B8%EB%B6%81-tuu1ubbyq65b/",
       "firstAlertedAt": "2026-11-05T13:32:54.922853Z",
-      "lastCandidateAt": "2026-11-11T04:52:16.143395Z"
+      "lastCandidateAt": "2026-11-16T09:32:41.528677Z"
     },
     "i2bsrytsqw2g": {
       "id": "i2bsrytsqw2g",
