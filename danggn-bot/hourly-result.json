@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-16T10:52:38.730Z",
+  "generatedAt": "2026-11-16T11:32:36.398Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -16,7 +16,9 @@
   "health": {
     "status": "ok",
     "stateCommitted": true,
-    "warnings": []
+    "warnings": [
+      "군포시: detail failed xb1aa5d9pvaz: Error: HTTP 404 Not Found"
+    ]
   },
   "rules": {
     "newnessField": "postedAt",
@@ -55,85 +57,89 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/tg-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%9D%B8%ED%85%94-i3-4gb-ram-8wvo4bdf6vmp/",
-            "href": "/kr/buy-sell/tg-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%9D%B8%ED%85%94-i3-4gb-ram-8wvo4bdf6vmp/",
-            "title": "TG 노트북 인텔 i3 4GB RAM",
-            "content": "TG 노트북 판매해요. 인텔 코어 i3 프로세서와 4GB RAM을 탑재하여 기본적인 작업에 충분한 성능을 제공해요. 사진에서 보이는 것처럼 깔끔한 상태이며, 다양한 포트가 있어 활용도가 높아요.  유튜브 사무용 적합합니다. 윈도 10 ssd 240g\n업글 해놨습니다.\n상태 아주 좋아요.\n초기화 시켜놓았고 설정 본인에게 맡게 새로 설정하시면 됩니다.\n\n구성은 본체 아답터입니다.",
-            "price": "90000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/5e16832f-ff70-42e5-a7d7-e915080615fd.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-01T22:37:27.759Z",
-            "boostedAt": "2026-11-16T10:48:51.364Z",
-            "region": {
-              "name": "신당동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 35.8571225,
-                "longitude": 128.499077
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1%EB%85%B8%ED%8A%B8%EB%B6%81-9hzh3yd42vyf/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1%EB%85%B8%ED%8A%B8%EB%B6%81-9hzh3yd42vyf/",
-            "title": "삼성노트북",
-            "content": "i3 6006\n램4기가 DDR4 \nSSD120 \n배터리 살아 있습니다 \n외관상태 깨끗하구요 \n윈도10 오피스설치됨\n어댑터 드립니다 \n",
-            "price": "100000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/12201509-14c9-42ca-8966-4b2632ff0852.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-11-10T01:46:32.813Z",
-            "boostedAt": "2026-11-16T10:28:29.633Z",
-            "region": {
-              "name": "북삼읍"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 36.0683774,
-                "longitude": 128.3374583
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%85%B8%ED%8A%B8%EB%B6%81%ED%94%8C%EB%9F%AC%EC%8A%A42-nt560-xda-meg3iuixg8g4/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%85%B8%ED%8A%B8%EB%B6%81%ED%94%8C%EB%9F%AC%EC%8A%A42-nt560-xda-meg3iuixg8g4/",
-            "title": "삼성 노트북(노트북플러스2 NT560-XDA)",
-            "content": "노트북 판매정보\n모델명 : 노트북플러스2 NT560-XDA\nCPU : 인텔 코어 i7-1165G7(11세대)\n그래픽 : NVIDIA GeForce GTX1650 Ti\nRAM : 16GB\n저장소 : 500GB\nWindows10 라이선스 (11로 업그레이드 가능합니다.)\n\n바로 사용할 수 있게 윈도우초기화되어있습니다\n예민,찔러보기 사양합니다~",
-            "price": "450000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/b62143f3-31c3-4bf8-a5ef-db445863ec02.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/hp-omnibook-5-%EB%85%B8%ED%8A%B8%EB%B6%81-16%EC%9D%B8%EC%B9%98-%EB%AF%B8%EA%B0%9C%EB%B4%89-%ED%8C%94%EC%95%84%EC%9A%94-1xbwxmskmp7s/",
+            "href": "/kr/buy-sell/hp-omnibook-5-%EB%85%B8%ED%8A%B8%EB%B6%81-16%EC%9D%B8%EC%B9%98-%EB%AF%B8%EA%B0%9C%EB%B4%89-%ED%8C%94%EC%95%84%EC%9A%94-1xbwxmskmp7s/",
+            "title": "HP OmniBook 5 노트북 16인치 미개봉 팔아요",
+            "content": "HP OmniBook 5 노트북이에요. 16인치 2K OLED 디스플레이와 AMD Ryzen AI 5 430 CPU를 탑재했어요. 16GB RAM과 512GB SSD로 넉넉한 저장 공간을 자랑합니다. 윈도우 11 Home이 설치되어 있어 바로 사용 가능해요. AI 작업 가속을 위한 NPU 50 TOPS와 HP IR 카메라까지 갖춘 매력적인 노트북이랍니다.\n\n직거래원해요 강남역 \n\n네고는 정중히 거절하겠습니다 ",
+            "price": "1300000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/70ed6ee2-65a6-4979-acc3-2e81a9c398cc.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": false,
-            "createdAt": "2026-11-15T07:46:53.798Z",
-            "boostedAt": "2026-11-16T09:54:35.444Z",
+            "createdAt": "2026-10-16T03:32:02.707Z",
+            "boostedAt": "2026-11-16T11:29:06.080Z",
             "region": {
-              "name": "방배2동"
+              "name": "서초1동"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 37.4835523,
-                "longitude": 126.8407631
+                "latitude": 37.4978454,
+                "longitude": 127.0273051
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/%EC%BF%A0%ED%8C%A1%EC%BC%80%EC%96%B4o-%EB%A0%88%EB%85%B8%EB%B2%84-%EB%A6%AC%EC%A0%845-5070-%ED%8C%9D%EB%8B%88%EB%8B%A4-fzx8fc34uot7/",
+            "href": "/kr/buy-sell/%EC%BF%A0%ED%8C%A1%EC%BC%80%EC%96%B4o-%EB%A0%88%EB%85%B8%EB%B2%84-%EB%A6%AC%EC%A0%845-5070-%ED%8C%9D%EB%8B%88%EB%8B%A4-fzx8fc34uot7/",
+            "title": "(쿠팡케어o) 레노버 리전5 5070 팝니다",
+            "content": "CPU - Ryzen 7 ai 350 \nGPU - 5070 \nRAM - 16GB \n프리도스 \n보증 15개월여 남음 \n풀박스\n\n쿠팡케어 양도해드립니다 \n\n상판에 찍힘이 있으나 아무이상없습니다 \n실사용이 없어 정리해요 \n사양은 사진참고해주세요 \n네고 어렵습니다 ",
+            "price": "1750000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/c47677ce-c3d2-4c3e-9d2f-6f37101a005d.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-11-16T11:28:00.542Z",
+            "boostedAt": "2026-11-16T11:28:00.540Z",
+            "region": {
+              "name": "서초1동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 37.3383068,
+                "longitude": 127.0831776
               },
               {
-                "latitude": 37.4882817,
-                "longitude": 126.9906531
+                "latitude": 37.50255,
+                "longitude": 127.0215504
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/hp-%EB%B9%85%ED%84%B0%EC%8A%A416-%EA%B2%8C%EC%9D%B4%EB%B0%8D%EB%85%B8%ED%8A%B8%EB%B6%81-7640hs-rtx4060-16gb-1tb-ezq6cq8ung8a/",
+            "href": "/kr/buy-sell/hp-%EB%B9%85%ED%84%B0%EC%8A%A416-%EA%B2%8C%EC%9D%B4%EB%B0%8D%EB%85%B8%ED%8A%B8%EB%B6%81-7640hs-rtx4060-16gb-1tb-ezq6cq8ung8a/",
+            "title": "HP 빅터스16 게이밍노트북 7640HS RTX4060 16GB 1TB",
+            "content": "CPU: AMD 라이젠 5 7640HS\n​GPU: NVIDIA GeForce RTX 4060\n​RAM: DDR5 16GB (8+8)\n​SSD: 실리콘파워 P34A80 1TB\n​무선랜: 인텔 AX210\n​디스플레이: 16.1인치 FHD 144Hz\n\n2023년 11월에 신품으로 구매하여 무선랜이랑 SSD 교체하여 사용하다 최근 잘 안써서 판매합니다. 책상위 거치대에 올리고 키보드 마우스 모니터 물려서 데스크탑 대용으로 사용해서 깨끗합니다.\n\n윈도우11 Home 설치 상태이고 ms로그인 하셔서 쓰면 됩니다. 정품 충전기 포함입니다.\n\n거래장소 :\n평일 밤, 주말 : 신월7동\n평일 낮 : 삼성역, 봉은사역\n\n",
+            "price": "880000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/53dadae8-0c38-4d88-8092-d0a3a64df216.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-11-16T11:24:52.542Z",
+            "boostedAt": "2026-11-16T11:24:52.541Z",
+            "region": {
+              "name": "삼성동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 37.5218076,
+                "longitude": 126.8350799
+              },
+              {
+                "latitude": 37.5107022,
+                "longitude": 127.0659844
               }
             ]
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-10-01T22:37:27.759Z\",\"boostedAt\":\"2026-11-16T10:48:51.364Z\",\"region\":{\"name\":\"신당동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-10T01:46:32.813Z\",\"boostedAt\":\"2026-11-16T10:28:29.633Z\",\"region\":{\"name\":\"북삼읍\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-15T07:46:53.798Z\",\"boostedAt\":\"2026-11-16T09:54:35.444Z\",\"region\":{\"name\":\"방배2동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-10-21T03:38:51.170Z\",\"boostedAt\":\"2026-11-16T10:41:41.051Z\",\"region\":{\"name\":\"서초1동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-06-03T03:15:51.451Z\",\"boostedAt\":\"2026-11-16T10:41:37.088Z\",\"region\":{\"name\":\"풍무동\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-10-16T03:32:02.707Z\",\"boostedAt\":\"2026-11-16T11:29:06.080Z\",\"region\":{\"name\":\"서초1동\"},\"category\":null,\"contentCoo",
+          "createdAt\":\"2026-11-16T11:28:00.542Z\",\"boostedAt\":\"2026-11-16T11:28:00.540Z\",\"region\":{\"name\":\"서초1동\"},\"category\":null,\"contentCoo",
+          "createdAt\":\"2026-11-16T11:24:52.542Z\",\"boostedAt\":\"2026-11-16T11:24:52.541Z\",\"region\":{\"name\":\"삼성동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-11-16T11:29:28.762Z\",\"boostedAt\":\"2026-11-16T11:29:28.761Z\",\"region\":{\"name\":\"고척동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-05-01T16:07:59.187Z\",\"boostedAt\":\"2026-11-16T11:27:23.759Z\",\"region\":{\"name\":\"송도5동\"},\"category\":null,\"contentCoo"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":267,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"TG 노트북 인텔 i3 4GB RAM\",\"descrip",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":267,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"HP OmniBook 5 노트북 16인치 미개봉 팔아요",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -141,24 +147,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1066,
-    "globalUniqueListings": 273,
-    "duplicateListingsRemoved": 793,
-    "detailQueueStart": 21,
-    "freshDetailTasks": 21,
+    "searchUniqueListings": 1063,
+    "globalUniqueListings": 271,
+    "duplicateListingsRemoved": 792,
+    "detailQueueStart": 17,
+    "freshDetailTasks": 17,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 21,
-    "detailSucceeded": 21,
-    "detailFailed": 0,
-    "detail404": 0,
+    "detailRequestsExecuted": 17,
+    "detailSucceeded": 16,
+    "detailFailed": 1,
+    "detail404": 1,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 273,
+    "postedAtResolvedFromSearch": 271,
     "postedAtResolvedFromDetail": 0,
-    "candidateCount": 1,
-    "scanDurationMs": 105381,
+    "candidateCount": 0,
+    "scanDurationMs": 99876,
     "cities": [
       {
         "city": "군포시",
@@ -170,8 +176,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 265,
-        "durationMs": 12802
+        "uniqueListings": 264,
+        "durationMs": 12417
       },
       {
         "city": "의왕시",
@@ -187,7 +193,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 267,
-        "durationMs": 25900
+        "durationMs": 25607
       },
       {
         "city": "안양시",
@@ -204,8 +210,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 273,
-        "durationMs": 35445
+        "uniqueListings": 270,
+        "durationMs": 35270
       },
       {
         "city": "과천시",
@@ -216,53 +222,17 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 261,
-        "durationMs": 6524
+        "uniqueListings": 262,
+        "durationMs": 6393
       }
     ],
-    "finalCandidateCount": 1,
+    "finalCandidateCount": 0,
     "stateItemCount": 5000,
     "pendingNewnessCount": 0,
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 105387
+    "durationMs": 99883
   },
-  "candidates": [
-    {
-      "id": "tuu1ubbyq65b",
-      "changeType": "price_drop",
-      "previousPrice": 3500000,
-      "price": 3400000,
-      "priceDropPercent": 2.9,
-      "city": "의왕시",
-      "location": "내손1동",
-      "regionPath": "경기도 의왕시 내손1동",
-      "title": "ROG STRIX SCAR RTX5080 TGP 175W 노트북",
-      "modelHint": "ROG STRIX SCAR RTX5080 TGP 175W 노트북",
-      "cpuHint": null,
-      "cpuBaselinePass": null,
-      "gpuHint": "RTX5080",
-      "vramGB": 16,
-      "ramGB": 16,
-      "ambiguousMemoryGB": 32,
-      "hardwareReviewStatus": "PASS_VRAM",
-      "ramEvidence": "16GB RAM",
-      "vramEvidence": "GPU 메모리 : 16GB",
-      "ambiguousMemoryEvidence": "32GB",
-      "storageGB": 1024,
-      "llmCapability": "LOCAL_LLM_GPU",
-      "llmReason": "VRAM 16GB 이상이 직접 표기되었거나 GPU 모델로 확인됨",
-      "specConfidence": "confirmed",
-      "postedAt": "2026-06-16T17:11:02.924Z",
-      "boostedAt": "2026-11-16T09:15:07.795Z",
-      "status": "Ongoing",
-      "description": "고가물품 택배 불가능, 직거래 안양의왕부근 필수\n(400만원짜리 노트북 배달했다가 망가져도 보상을 받을 수 없습니다. 이에 동의하시면 배달 가능합니다. 택배사가 책임지지 않습니다.)\n\n제품 참고용 리뷰영상(홍보X)\nhttps://youtu.be/o6ZMWgjJB0Q?si=NCQgO7S1We9qAOQ2\n\n아수스 스트릭스 스카 라인업은 \n아수스 제품군중 가장 비쌉니다.\n아래글을 잘 읽으시고 구매에 유의해주세요\n\n쿠팡 제품 사진은 \n해당 제품과 현재 보고 계신 이 상품이 동일한 상품이라는 의미에서 공유드렸지, \n제가 쿠팡에서 구매했다는 의미가 아닙니다.\n\n중고나라에서 26년 6월 구매한 제품이며 \n노트북은 작년 출시된 제품입니다.\n\n시리즈 : ROG Strix SCAR 16\n모델명 : G635LW\n운영체제 : 윈도우 홈(SSD, RAM 장착 요구시 무상설치)\n\n기본옵션 340만원 (램, 스스디 X)\n변경가능옵션, 보급형기준(추가금)\n1TB SSD + 16GB RAM = 25만원\n1TB SSD + 32GB RAM = 50만원\n2TB SSD + 16GB RAM = 35만원\n2TB SSD + 32GB RAM = 60만원\n3TB SSD +하이닉스 6400Mhz 96GB RAM = 200만원\n(구매자님 원하는 사양으로 맞춰드립니다)\n\n아래사양은 노트북 본품의 사양입니다.\n(공통)\n\n색상 : Off Black (AniMe Matrix)\n크기(W×D×H) : 35.4 × 26.8 × 2.28 ~ 3.08 cm\n무게 : 2.85 kg\n\nCPU 프로세서 : Intel® Core™ Ultra 9 Processor 275HX 2.7GHz (36MB Cache, up to 5.4GHz, 24코어, 24스레드)\n\nNPU : Intel® AI Boost NPU up to 13 TOPS\n\nGPU 그래픽 : NVIDIA® GeForce RTX™ 5080 Laptop GPU TGP 175W\n\nGPU 메모리 : 16GB GDDR7\n\n디스플레이 :16형 / 2.5K (2560 × 1600, WQXGA)\n16:10 비율, 240Hz, Anti-glare, Mini LED\nDCI-P3 100%, G-Sync / Adaptive-Sync\nDolby Vision HDR, Pantone Validated\nROG Nebula HDR Display\n\n메모리 슬롯 : 2 x SO-DIMM\nM.2 슬롯 개수 : 2\nM.2 SSD 지원 : 1TB / 2TB Gen4 PCIe SSD\n\nLAN : 10/100/1000/2500 Mbps (2.5G LAN)\nWi-Fi / Bluetooth : Wi-Fi 7 (802.11be, Tri-band) 2×2 + Bluetooth® 5.4 (OS 버전에 따라 변경 가능)\n\nI/O 포트 :\n1x 2.5G LAN\n\n2x Thunderbolt™ 5 (DisplayPort / Power Delivery / G-SYNC, 최대 120Gbps)\n\n3x USB 3.2 Gen2 Type-A (최대 10Gbps)\n\n1x HDMI 2.1 FRL\n\n1x 3.5mm Combo Audio Jack\n\n오디오 출력 : Built-in array microphone\n\n웹캠 : 1080P FHD IR Camera (Windows Hello 지원)\n\n마이크 : Built-in array microphone\n\n키보드 : Backlit Chiclet Keyboard Per-Key RGB (Copilot 키 포함)\n\n넘버패드(터치패드 내장) : 지원\n\n넘버패드(가상) : 미지원\n\nAura Sync : 지원\n\n스피커 : 4-speaker system with Smart Amplifier Technology\n\n오디오 기술 :…",
-      "url": "https://www.daangn.com/kr/buy-sell/rog-strix-scar-rtx5080-tgp-175w-%EB%85%B8%ED%8A%B8%EB%B6%81-tuu1ubbyq65b/",
-      "favoriteCount": 0,
-      "chatCount": 0,
-      "sellerName": null,
-      "mannerTemperature": null
-    }
-  ]
+  "candidates": []
 }
