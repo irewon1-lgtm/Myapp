@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-16T22:02:25.751Z",
+  "generatedAt": "2026-11-16T22:42:29.159Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -77,28 +77,6 @@
             ]
           },
           {
-            "id": "/kr/buy-sell/tg-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%9C%EB%8B%88%EB%8B%A4-zbjw478c9faw/",
-            "href": "/kr/buy-sell/tg-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%9C%EB%8B%88%EB%8B%A4-zbjw478c9faw/",
-            "title": "TG 노트북 팜니다",
-            "content": "TH 노트북 64g 팝니다 ",
-            "price": "130000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/4a7d1eb5-54e7-4303-b9dd-8b660de1a7f8.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-11-04T01:16:57.982Z",
-            "boostedAt": "2026-11-16T21:53:26.406Z",
-            "region": {
-              "name": "백석읍"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 37.7886018,
-                "longitude": 126.9916929
-              }
-            ]
-          },
-          {
             "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt500r5q-kd5s-iuo2c9ykpm3n/",
             "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt500r5q-kd5s-iuo2c9ykpm3n/",
             "title": "삼성 노트북 NT500R5Q-KD5S",
@@ -123,17 +101,43 @@
                 "longitude": 126.8113399
               }
             ]
+          },
+          {
+            "id": "/kr/buy-sell/%EC%95%A0%ED%94%8C-%EB%A7%A5%EB%B6%81-%EC%97%90%EC%96%B4-15%EC%9D%B8%EC%B9%98-m5-16gb-512gb-%EB%AF%B8%EB%93%9C%EB%82%98%EC%9E%87-s8gdsczbitwx/",
+            "href": "/kr/buy-sell/%EC%95%A0%ED%94%8C-%EB%A7%A5%EB%B6%81-%EC%97%90%EC%96%B4-15%EC%9D%B8%EC%B9%98-m5-16gb-512gb-%EB%AF%B8%EB%93%9C%EB%82%98%EC%9E%87-s8gdsczbitwx/",
+            "title": "애플 맥북 에어 15인치 M5 16GB 512GB 미드나잇",
+            "content": "- 맥북에어 15인치 \n- 미드나잇 색상 (짙은 남색)\n- M5 칩\n- 16GB 메모리\n- 512GB 모델\n\n풀박스 구성!\n\n배터리 성능 100%!\n\n\n(하드 케이스 끼워놓고 사용 했기에, 케이스 빼면 외관상 기스 일절 없고, 스티커는 외부 케이스 위에 붙여놓은거라 케이스 빼면 새 맥북입니다~ 거래 하실땐 케이스 빼고 드리겠습니다, 혹여나 기스 날까봐 아직은 껴서 보관해요!)",
+            "price": "1700000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/17947559375803ceb251b486108b9fd062018f0129d928e342d1ba5bced7d8c0c476ff1c7f9dd0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-11-15T15:20:54.754Z",
+            "boostedAt": "2026-11-16T21:20:02.449Z",
+            "region": {
+              "name": "역삼2동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 37.4731235,
+                "longitude": 127.0516559
+              },
+              {
+                "latitude": 37.4959513,
+                "longitude": 127.0467346
+              }
+            ]
           }
         ],
         "dateFieldSnippets": [
           "createdAt\":\"2026-10-13T12:27:06.540Z\",\"boostedAt\":\"2026-11-16T21:30:13.245Z\",\"region\":{\"name\":\"역삼2동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-11-04T01:16:57.982Z\",\"boostedAt\":\"2026-11-16T21:53:26.406Z\",\"region\":{\"name\":\"백석읍\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-11-16T21:01:03.525Z\",\"boostedAt\":\"2026-11-16T21:01:03.525Z\",\"region\":{\"name\":\"방화동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-11-15T15:20:54.754Z\",\"boostedAt\":\"2026-11-16T21:20:02.449Z\",\"region\":{\"name\":\"역삼2동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-11-16T17:48:22.950Z\",\"boostedAt\":\"2026-11-16T17:48:22.950Z\",\"region\":{\"name\":\"논현동\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-11-16T17:48:22.950Z\",\"boostedAt\":\"2026-11-16T17:48:22.950Z\",\"region\":{\"name\":\"논현동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-11-16T21:16:55.354Z\",\"boostedAt\":\"2026-11-16T21:16:55.353Z\",\"region\":{\"name\":\"진량읍\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":270,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"GIGABYTE AERO 17 에어로 17 XE5 미니",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":269,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"GIGABYTE AERO 17 에어로 17 XE5 미니",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -141,24 +145,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1055,
-    "globalUniqueListings": 266,
-    "duplicateListingsRemoved": 789,
-    "detailQueueStart": 2,
-    "freshDetailTasks": 2,
+    "searchUniqueListings": 1132,
+    "globalUniqueListings": 303,
+    "duplicateListingsRemoved": 829,
+    "detailQueueStart": 4,
+    "freshDetailTasks": 4,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 2,
-    "detailSucceeded": 2,
+    "detailRequestsExecuted": 4,
+    "detailSucceeded": 4,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 266,
+    "postedAtResolvedFromSearch": 303,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 82783,
+    "scanDurationMs": 88438,
     "cities": [
       {
         "city": "군포시",
@@ -170,8 +174,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 263,
-        "durationMs": 12335
+        "uniqueListings": 265,
+        "durationMs": 12560
       },
       {
         "city": "의왕시",
@@ -186,8 +190,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 265,
-        "durationMs": 26151
+        "uniqueListings": 302,
+        "durationMs": 29066
       },
       {
         "city": "안양시",
@@ -204,8 +208,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 264,
-        "durationMs": 35313
+        "uniqueListings": 302,
+        "durationMs": 35444
       },
       {
         "city": "과천시",
@@ -217,7 +221,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 263,
-        "durationMs": 6624
+        "durationMs": 6690
       }
     ],
     "finalCandidateCount": 0,
@@ -226,7 +230,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 82789
+    "durationMs": 88444
   },
   "candidates": []
 }
