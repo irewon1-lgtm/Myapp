@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-16T17:22:26.240Z",
+  "generatedAt": "2026-11-16T18:02:27.963Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,6 +55,32 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
+            "id": "/kr/buy-sell/asus-%EB%B9%84%EB%B3%B4%EB%B6%81-amd-%EB%9D%BC%EC%9D%B4%EC%A0%A05-7520u-16gb-ram-acwbuhjk5ptm/",
+            "href": "/kr/buy-sell/asus-%EB%B9%84%EB%B3%B4%EB%B6%81-amd-%EB%9D%BC%EC%9D%B4%EC%A0%A05-7520u-16gb-ram-acwbuhjk5ptm/",
+            "title": "ASUS 비보북 AMD 라이젠5 7520U 16GB RAM",
+            "content": "ASUS 비보북 노트북 판매합니다. \nCPU : AMD 라이젠5 7520U\n램 : DDR5 16GB\nSSD 512GB\n구매한지 딱 1년 됬고 배터리 이상X\n키보드도 이상X 흠집도 없는 S급 입니다.\n거래는 삼전초 근처입니다.\n충전기 드립니다.",
+            "price": "400000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/1794851047059528f0a8db14d2be7b4b1a511332797ef6162491eb745423c872dddfafb937e550.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-11-16T17:48:22.950Z",
+            "boostedAt": "2026-11-16T17:48:22.950Z",
+            "region": {
+              "name": "논현동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 37.5008043,
+                "longitude": 127.0916401
+              },
+              {
+                "latitude": 37.5185799,
+                "longitude": 127.0407901
+              }
+            ]
+          },
+          {
             "id": "/kr/buy-sell/15-m4-air-6wimv2wxyr2a/",
             "href": "/kr/buy-sell/15-m4-air-6wimv2wxyr2a/",
             "title": "15 m4 AIR",
@@ -97,43 +123,17 @@
                 "longitude": 127.0450272
               }
             ]
-          },
-          {
-            "id": "/kr/buy-sell/15-6%EC%9D%B8%EC%B9%98-lg-xnote-r570-%EB%85%B8%ED%8A%B8%EB%B6%81-9iwdxdaa32jd/",
-            "href": "/kr/buy-sell/15-6%EC%9D%B8%EC%B9%98-lg-xnote-r570-%EB%85%B8%ED%8A%B8%EB%B6%81-9iwdxdaa32jd/",
-            "title": "15.6인치 LG XNOTE R570 노트북",
-            "content": "LG XNOTE R510 모델이에요. \n\n인텔 펜티엄 P6200 프로세서와 4GB 램이 탑재되어 있어요. 노트북 본체와 어댑터가 포함된 구성이에요. 가벼운 웹 서핑이나 문서 작업용으로 활용하기 좋아요.\n\n삼성 SSD120GB 장착\n\n유튜브감상 영화감상 음악감상 문서작성 등으로 적당합니다 \n\n배터리는 살아있고\n\n우측 USB 2개 중 앞쪽 하나가 고장입니다.\n\n노트북과 어댑터 드립니다",
-            "price": "50000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/fff9558b-3a37-4d15-b04b-ab6b2beb0207.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-11-14T14:13:06.326Z",
-            "boostedAt": "2026-11-16T16:50:46.568Z",
-            "region": {
-              "name": "신암3동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 35.8792915,
-                "longitude": 128.6245626
-              },
-              {
-                "latitude": 35.8037903,
-                "longitude": 128.7389884
-              }
-            ]
           }
         ],
         "dateFieldSnippets": [
+          "createdAt\":\"2026-11-16T17:48:22.950Z\",\"boostedAt\":\"2026-11-16T17:48:22.950Z\",\"region\":{\"name\":\"논현동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-11-16T16:43:58.410Z\",\"boostedAt\":\"2026-11-16T16:43:58.408Z\",\"region\":{\"name\":\"방화동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-11-16T16:20:33.059Z\",\"boostedAt\":\"2026-11-16T16:20:33.056Z\",\"region\":{\"name\":\"양재동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-14T14:13:06.326Z\",\"boostedAt\":\"2026-11-16T16:50:46.568Z\",\"region\":{\"name\":\"신암3동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-11-16T17:20:16.224Z\",\"boostedAt\":\"2026-11-16T17:20:16.224Z\",\"region\":{\"name\":\"역삼동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-16T16:32:45.330Z\",\"boostedAt\":\"2026-11-16T16:32:45.329Z\",\"region\":{\"name\":\"서초동\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-11-15T17:21:11.881Z\",\"boostedAt\":\"2026-11-16T17:28:36.151Z\",\"region\":{\"name\":\"논현동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-11-16T16:04:48.807Z\",\"boostedAt\":\"2026-11-16T16:04:48.806Z\",\"region\":{\"name\":\"옥련동\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":266,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"15 m4 AIR\",\"description\":\"15 m",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":269,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"ASUS 비보북 AMD 라이젠5 7520U 16GB R",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -141,9 +141,9 @@
         ]
       }
     },
-    "searchUniqueListings": 1068,
-    "globalUniqueListings": 269,
-    "duplicateListingsRemoved": 799,
+    "searchUniqueListings": 1069,
+    "globalUniqueListings": 268,
+    "duplicateListingsRemoved": 801,
     "detailQueueStart": 3,
     "freshDetailTasks": 3,
     "backlogDetailTasks": 0,
@@ -155,10 +155,10 @@
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 269,
+    "postedAtResolvedFromSearch": 268,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 81883,
+    "scanDurationMs": 82208,
     "cities": [
       {
         "city": "군포시",
@@ -170,8 +170,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 266,
-        "durationMs": 12312
+        "uniqueListings": 267,
+        "durationMs": 12272
       },
       {
         "city": "의왕시",
@@ -187,7 +187,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 267,
-        "durationMs": 25331
+        "durationMs": 25198
       },
       {
         "city": "안양시",
@@ -205,7 +205,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 268,
-        "durationMs": 35001
+        "durationMs": 34981
       },
       {
         "city": "과천시",
@@ -217,7 +217,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 267,
-        "durationMs": 6146
+        "durationMs": 6255
       }
     ],
     "finalCandidateCount": 0,
@@ -226,7 +226,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 81888
+    "durationMs": 82215
   },
   "candidates": []
 }
