@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-16T13:32:44.322Z",
+  "generatedAt": "2026-11-16T14:12:24.991Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,28 +55,50 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/lg-%ED%83%AD%EB%B6%81-h16-%ED%99%94%EC%9D%B4%ED%8A%B8-2in1-%EB%85%B8%ED%8A%B8%EB%B6%81-dwwf1kggt3o6/",
-            "href": "/kr/buy-sell/lg-%ED%83%AD%EB%B6%81-h16-%ED%99%94%EC%9D%B4%ED%8A%B8-2in1-%EB%85%B8%ED%8A%B8%EB%B6%81-dwwf1kggt3o6/",
-            "title": "LG 탭북 H16 화이트 2in1 노트북",
-            "content": "LG 탭북 화이트 색상 모델이에요. 인텔 펜티엄 프로세서와 윈도우 운영체제가 탑재되어 있어요. 키보드가 포함된 2in1 형태라 활용도가 높아요. 가벼운 작업용으로 사용하기 좋아요.",
-            "price": "50000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/124ad718-1c19-4e8f-bff5-faff961c8c68.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/m5-max-14%EC%9D%B8%EC%B9%98-36gb-2tb-%ED%8C%9D%EB%8B%88%EB%8B%A4-r3d14pt28hvb/",
+            "href": "/kr/buy-sell/m5-max-14%EC%9D%B8%EC%B9%98-36gb-2tb-%ED%8C%9D%EB%8B%88%EB%8B%A4-r3d14pt28hvb/",
+            "title": "m5 max 14인치 36gb 2TB 팝니다.",
+            "content": "M5 max 14인치\nram : 36gb\nssd : 2TB\n제가 사용해본 맥북 중 압도적인 속도와 쾌적함을 자랑합니다. 특히 2tb ssd부터는 읽기 및 쓰기 속도가 빨라져서 현존하는 랩탑 중 압도적인 1위 입니다.\n거의 집에서만 거치대 위에서 사용하여 상태는 흠집이나 상처없이 A급입니다.\n아무래도 직무상 엔비디아 글카가 필요하여 윈도우로 넘어가서 어쩔 수 없이 판매합니다.",
+            "price": "4600000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/1794837609328dae64179f494006ba0132b401bef19834e1070906287ec16dfc586e7eb49faa60.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-11-16T13:30:13.129Z",
-            "boostedAt": "2026-11-16T13:30:13.129Z",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-11-16T14:06:49.484Z",
+            "boostedAt": "2026-11-16T14:06:49.482Z",
             "region": {
-              "name": "고덕면"
+              "name": "양재동"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 37.0230705,
-                "longitude": 127.0337192
+                "latitude": 37.4702813,
+                "longitude": 127.0389619
               },
               {
-                "latitude": 37.0027902,
-                "longitude": 126.7899735
+                "latitude": 37.4547995,
+                "longitude": 127.0677328
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/%EB%AF%B8%EA%B0%9C%EB%B4%89-%EA%B0%A4%EB%9F%AD%EC%8B%9C-%EB%B6%816-%ED%94%84%EB%A1%9C-14%EC%9D%B8%EC%B9%98-x7-32gb-1tb-2iqw9nivc8g6/",
+            "href": "/kr/buy-sell/%EB%AF%B8%EA%B0%9C%EB%B4%89-%EA%B0%A4%EB%9F%AD%EC%8B%9C-%EB%B6%816-%ED%94%84%EB%A1%9C-14%EC%9D%B8%EC%B9%98-x7-32gb-1tb-2iqw9nivc8g6/",
+            "title": "(미개봉) 갤럭시 북6 프로 14인치 X7 / 32GB / 1TB",
+            "content": "삼성 갤럭시 북6 프로 NT940XJG-KD72S 입니다. 내손에 들어왔는데, 쓸일이 없네요. 지난주에 새상품 받았고, 미개봉입니다.\nUltra X7 프로세서고 1T SSD 입니다.\n미개봉이고 고가인 만큼 직거래만 하겠습니다. 직거래 장소는 구룡중학교가 가장 좋은데 개포동, 도곡동, 역삼동, 대치동, 일원 삼성병원 인근정도? 까지는 협의 가능합니다.",
+            "price": "3400000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/986c83d9-0ea5-4ded-b438-3f9292513055.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-11-16T13:55:31.809Z",
+            "boostedAt": "2026-11-16T13:55:31.808Z",
+            "region": {
+              "name": "개포1동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 37.4862703,
+                "longitude": 127.0567023
               }
             ]
           },
@@ -105,43 +127,17 @@
                 "longitude": 126.8113399
               }
             ]
-          },
-          {
-            "id": "/kr/buy-sell/%EB%8B%A4%EC%98%A4%EB%B6%81-14n15-%ED%99%94%EC%9D%B4%ED%8A%B8-14%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-86rhvzxh771u/",
-            "href": "/kr/buy-sell/%EB%8B%A4%EC%98%A4%EB%B6%81-14n15-%ED%99%94%EC%9D%B4%ED%8A%B8-14%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-86rhvzxh771u/",
-            "title": "다오북 14N15 화이트 14인치 노트북",
-            "content": "다오북 14N15 모델 화이트 색상이에요. 인텔 N150 CPU와 LPDDR5 12GB 램을 탑재하고 있어요. 14인치 FHD IPS 디스플레이로 선명한 화면을 볼 수 있어요. 가벼운 무게로 휴대하기 편리해요.",
-            "price": "200000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/1794834252917fc66705252e2602a2a8bc155ab0cafa46eb04f13e61d89d5cb092b35a2ac33130.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Reserved",
-            "isInstantBuyAvailable": false,
-            "createdAt": "2026-11-16T13:04:32.017Z",
-            "boostedAt": "2026-11-16T13:04:32.017Z",
-            "region": {
-              "name": "역삼1동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 37.4989845,
-                "longitude": 127.0283763
-              },
-              {
-                "latitude": 35.1196547,
-                "longitude": 128.7811336
-              }
-            ]
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-11-16T13:30:13.129Z\",\"boostedAt\":\"2026-11-16T13:30:13.129Z\",\"region\":{\"name\":\"고덕면\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-11-16T14:06:49.484Z\",\"boostedAt\":\"2026-11-16T14:06:49.482Z\",\"region\":{\"name\":\"양재동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-11-16T13:55:31.809Z\",\"boostedAt\":\"2026-11-16T13:55:31.808Z\",\"region\":{\"name\":\"개포1동\"},\"category\":null,\"contentCoo",
           "createdAt\":\"2026-11-16T12:54:58.975Z\",\"boostedAt\":\"2026-11-16T12:54:58.975Z\",\"region\":{\"name\":\"방화동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-16T13:04:32.017Z\",\"boostedAt\":\"2026-11-16T13:04:32.017Z\",\"region\":{\"name\":\"역삼1동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-11-13T01:45:28.031Z\",\"boostedAt\":\"2026-11-16T13:05:20.138Z\",\"region\":{\"name\":\"역삼동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-14T11:49:00.608Z\",\"boostedAt\":\"2026-11-16T13:17:48.483Z\",\"region\":{\"name\":\"인창동\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-11-16T13:57:44.117Z\",\"boostedAt\":\"2026-11-16T13:57:44.113Z\",\"region\":{\"name\":\"답십리제1동\"},\"category\":null,\"contentC",
+          "createdAt\":\"2026-11-16T13:45:15.079Z\",\"boostedAt\":\"2026-11-16T13:45:15.079Z\",\"region\":{\"name\":\"역삼동\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":266,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG 탭북 H16 화이트 2in1 노트북\",\"descr",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":263,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"m5 max 14인치 36gb 2TB 팝니다.\",\"de",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -149,24 +145,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1267,
-    "globalUniqueListings": 404,
-    "duplicateListingsRemoved": 863,
-    "detailQueueStart": 20,
-    "freshDetailTasks": 20,
+    "searchUniqueListings": 1074,
+    "globalUniqueListings": 272,
+    "duplicateListingsRemoved": 802,
+    "detailQueueStart": 11,
+    "freshDetailTasks": 11,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 20,
-    "detailSucceeded": 20,
+    "detailRequestsExecuted": 11,
+    "detailSucceeded": 11,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 404,
+    "postedAtResolvedFromSearch": 272,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 102521,
+    "scanDurationMs": 92073,
     "cities": [
       {
         "city": "군포시",
@@ -178,8 +174,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 272,
-        "durationMs": 12276
+        "uniqueListings": 268,
+        "durationMs": 12228
       },
       {
         "city": "의왕시",
@@ -194,8 +190,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 325,
-        "durationMs": 25262
+        "uniqueListings": 269,
+        "durationMs": 25456
       },
       {
         "city": "안양시",
@@ -212,8 +208,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 402,
-        "durationMs": 35130
+        "uniqueListings": 270,
+        "durationMs": 35066
       },
       {
         "city": "과천시",
@@ -224,8 +220,8 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 268,
-        "durationMs": 6261
+        "uniqueListings": 267,
+        "durationMs": 6333
       }
     ],
     "finalCandidateCount": 0,
@@ -234,7 +230,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 102526
+    "durationMs": 92077
   },
   "candidates": []
 }
