@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-17T02:52:47.031110Z",
+  "updatedAt": "2026-11-17T03:32:47.450085Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -18426,6 +18426,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/dell-latitude-laptop-15-6-i7-13th-cpu-qvdvm7nb9e42/",
       "firstAlertedAt": "2026-11-17T02:12:56.949330Z",
       "lastCandidateAt": "2026-11-17T02:12:56.949330Z"
+    },
+    "7pxeepwxiobz": {
+      "id": "7pxeepwxiobz",
+      "title": "서피스북3 15인치 i7 10세대 32gb 512gb 1660ti",
+      "price": 550000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "의왕시",
+      "location": "부곡동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 32,
+      "ambiguousMemoryGB": 32,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "RAM : 32GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "32gb",
+      "storageGB": 512,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "postedAt": "2026-11-17T02:57:15.818Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%84%9C%ED%94%BC%EC%8A%A4%EB%B6%813-15%EC%9D%B8%EC%B9%98-i7-10%EC%84%B8%EB%8C%80-32gb-512gb-1660ti-7pxeepwxiobz/",
+      "firstAlertedAt": "2026-11-17T03:32:47.450085Z",
+      "lastCandidateAt": "2026-11-17T03:32:47.450085Z"
     }
   }
 }
