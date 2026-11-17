@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-17T01:32:44.194766Z",
+  "updatedAt": "2026-11-17T02:12:56.949330Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -15779,28 +15779,28 @@
     },
     "tuu1ubbyq65b": {
       "id": "tuu1ubbyq65b",
-      "title": "ROG STRIX SCAR RTX5080 TGP 175W 노트북",
-      "price": 3400000,
-      "previousPrice": 3500000,
+      "title": "ASUS ROG SCAR 16 / RTX5080 175W / Mini LED 240Hz / 2TB·32GB 풀박스",
+      "price": 3800000,
+      "previousPrice": 4400000,
       "changeType": "price_drop",
       "city": "의왕시",
       "location": "내손1동",
-      "cpuHint": null,
+      "cpuHint": "Core Ultra 9 275HX",
       "gpuHint": "RTX5080",
       "vramGB": 16,
-      "ramGB": 16,
+      "ramGB": null,
       "ambiguousMemoryGB": 32,
       "hardwareReviewStatus": "PASS_VRAM",
-      "ramEvidence": "16GB RAM",
-      "vramEvidence": "GPU 메모리 : 16GB",
+      "ramEvidence": null,
+      "vramEvidence": "16GB GDDR7",
       "ambiguousMemoryEvidence": "32GB",
-      "storageGB": 1024,
+      "storageGB": 2048,
       "llmCapability": "LOCAL_LLM_GPU",
       "llmReason": "VRAM 16GB 이상이 직접 표기되었거나 GPU 모델로 확인됨",
       "postedAt": "2026-06-16T17:11:02.924Z",
-      "url": "https://www.daangn.com/kr/buy-sell/rog-strix-scar-rtx5080-tgp-175w-%EB%85%B8%ED%8A%B8%EB%B6%81-tuu1ubbyq65b/",
+      "url": "https://www.daangn.com/kr/buy-sell/asus-rog-scar-16-rtx5080-175w-mini-led-240hz-2tb-32gb-%ED%92%80%EB%B0%95%EC%8A%A4-tuu1ubbyq65b/",
       "firstAlertedAt": "2026-11-05T13:32:54.922853Z",
-      "lastCandidateAt": "2026-11-16T10:52:38.790353Z"
+      "lastCandidateAt": "2026-11-17T02:12:56.949330Z"
     },
     "i2bsrytsqw2g": {
       "id": "i2bsrytsqw2g",
@@ -18401,6 +18401,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/msi-fx623-%EB%B8%94%EB%9E%99-%EB%85%B8%ED%8A%B8%EB%B6%81-fhd-15-6%EC%9D%B8%EC%B9%98-%EA%B9%A8%EB%81%97-monp5o9m8jd9/",
       "firstAlertedAt": "2026-11-16T04:32:37.049452Z",
       "lastCandidateAt": "2026-11-16T04:32:37.049452Z"
+    },
+    "qvdvm7nb9e42": {
+      "id": "qvdvm7nb9e42",
+      "title": "Dell Latitude Laptop 15.6 (I7 13th cpu)",
+      "price": 750000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "평안동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "16g ram",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": 512,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-17T01:33:45.721Z",
+      "url": "https://www.daangn.com/kr/buy-sell/dell-latitude-laptop-15-6-i7-13th-cpu-qvdvm7nb9e42/",
+      "firstAlertedAt": "2026-11-17T02:12:56.949330Z",
+      "lastCandidateAt": "2026-11-17T02:12:56.949330Z"
     }
   }
 }
