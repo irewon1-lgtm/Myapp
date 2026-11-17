@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-17T23:42:37.875Z",
+  "generatedAt": "2026-11-17T23:59:22.586Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,28 +55,54 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/%EB%A7%A5%EB%B6%81-%EC%97%90%EC%96%B4-%EC%8B%A4%EB%B2%84-13-m4-16gb-256gb-xooy5wb6b949/",
-            "href": "/kr/buy-sell/%EB%A7%A5%EB%B6%81-%EC%97%90%EC%96%B4-%EC%8B%A4%EB%B2%84-13-m4-16gb-256gb-xooy5wb6b949/",
-            "title": "맥북 에어 실버 13 M4 16gb 256gb",
-            "content": "풀박스. 깔끔한 외관. 충전기 및 케이블 다 있습니다.\n직거래 이대나 여의도에서 가능합니다",
-            "price": "1400000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/a3de391f-d2bf-4a9b-9c07-8f63280b17db.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-14%EC%9D%B8%EC%B9%98-m1-pro-16gb-%EC%8B%A4%EB%B2%84-e7sskvz7brb7/",
+            "href": "/kr/buy-sell/%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-14%EC%9D%B8%EC%B9%98-m1-pro-16gb-%EC%8B%A4%EB%B2%84-e7sskvz7brb7/",
+            "title": "맥북 프로 14인치 M1 Pro 16GB 실버",
+            "content": "2021년형 맥북 프로 14인치 M1 Pro 모델이에요. 메모리는 16GB이며, 저장 공간은 512GB에요. 배터리 성능은 90%로 양호한 상태를 유지하고 있답니다. 깔끔한 실버 색상 입니다.\n\n제품박스와 충전기 보유하고 있습니다.",
+            "price": "1200000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/1794959153072de1ddfe1df986efb6a325a6aa5d48ca7f69d234f5474ce3943dcc4a9ccaae0320.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": false,
-            "createdAt": "2026-11-17T23:32:56.138Z",
-            "boostedAt": "2026-11-17T23:32:56.137Z",
+            "createdAt": "2026-11-17T23:45:09.002Z",
+            "boostedAt": "2026-11-17T23:45:09.002Z",
             "region": {
-              "name": "논현동"
+              "name": "잠원동"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 37.5213357,
-                "longitude": 126.9240729
+                "latitude": 37.5081953,
+                "longitude": 127.0117029
               },
               {
-                "latitude": 37.5046115,
-                "longitude": 127.0250292
+                "latitude": 37.5045812,
+                "longitude": 127.0490408
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/%EB%AF%B8%EA%B0%9C%EB%B4%89-%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%816-%ED%94%84%EB%A1%9C-16%EC%9D%B8%EC%B9%98-1%ED%85%8C%EB%9D%BC-%ED%8C%9D%EB%8B%88%EB%8B%A4-nf4px2x9dyi7/",
+            "href": "/kr/buy-sell/%EB%AF%B8%EA%B0%9C%EB%B4%89-%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%816-%ED%94%84%EB%A1%9C-16%EC%9D%B8%EC%B9%98-1%ED%85%8C%EB%9D%BC-%ED%8C%9D%EB%8B%88%EB%8B%A4-nf4px2x9dyi7/",
+            "title": "미개봉 삼성 갤럭시북6 프로 16인치 1테라 팝니다",
+            "content": "갤럭시 북6 프로 (40.6cm) Core™ Ultra X7 / 1TB NVMe SSD, Copilot+ PC\nUltra X7/1TB/40.6cm/그레이\n팝니다\n\n미개봉 상품이고요 동탄이나 강남역쪽에서 직거래 희망\n상금으로 선물받은거 택배 배송중이라 수령 후 바로 거래가능\n거래일은 수령 후 따로 알려드릴게요 ",
+            "price": "2700000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/666632b0-50e3-409b-a2f6-fd6b406e0666.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-11-17T23:45:47.300Z",
+            "boostedAt": "2026-11-17T23:45:47.300Z",
+            "region": {
+              "name": "역삼동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 37.1585032,
+                "longitude": 127.1107311
+              },
+              {
+                "latitude": 37.4939658,
+                "longitude": 127.0300529
               }
             ]
           },
@@ -105,39 +131,17 @@
                 "longitude": 128.9959708
               }
             ]
-          },
-          {
-            "id": "/kr/buy-sell/hp-i7-6500u%EB%85%B8%ED%8A%B8%EB%B6%81-f9hk6cm1qbzy/",
-            "href": "/kr/buy-sell/hp-i7-6500u%EB%85%B8%ED%8A%B8%EB%B6%81-f9hk6cm1qbzy/",
-            "title": "HP i7 6500U노트북",
-            "content": "\n★모델명:HP ProBook 450 G3\n-CPU☞ i7 6500U\n-메모리☞8G\n-SSD 128G+하드 500G\n-그래픽☞ Intel HD Graphics 520\n-화면크기☞15.6인치\n-해상도☞1920*1080\n-밧데리☞완충시 2시간 이상\n*충전기 드려요\n\n미세한 생활스크레치들은 있을수 있습니다 ",
-            "price": "200000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/083186c3-8ca6-4766-bd58-b1a7f94a23ca.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-11-10T07:22:32.674Z",
-            "boostedAt": "2026-11-17T23:05:04.196Z",
-            "region": {
-              "name": "농성동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 35.1586433,
-                "longitude": 126.8858381
-              }
-            ]
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-11-17T23:32:56.138Z\",\"boostedAt\":\"2026-11-17T23:32:56.137Z\",\"region\":{\"name\":\"논현동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-11-17T23:45:09.002Z\",\"boostedAt\":\"2026-11-17T23:45:09.002Z\",\"region\":{\"name\":\"잠원동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-11-17T23:45:47.300Z\",\"boostedAt\":\"2026-11-17T23:45:47.300Z\",\"region\":{\"name\":\"역삼동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-11-15T10:20:35.227Z\",\"boostedAt\":\"2026-11-17T23:21:04.646Z\",\"region\":{\"name\":\"구포제1동\"},\"category\":null,\"contentCo",
-          "createdAt\":\"2026-11-10T07:22:32.674Z\",\"boostedAt\":\"2026-11-17T23:05:04.196Z\",\"region\":{\"name\":\"농성동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-17T23:21:32.425Z\",\"boostedAt\":\"2026-11-17T23:21:32.424Z\",\"region\":{\"name\":\"삼성동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-01T06:54:48.293Z\",\"boostedAt\":\"2026-11-17T23:23:34.209Z\",\"region\":{\"name\":\"마곡동\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-11-17T23:32:56.138Z\",\"boostedAt\":\"2026-11-17T23:32:56.137Z\",\"region\":{\"name\":\"논현동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-03-17T00:34:05.454Z\",\"boostedAt\":\"2026-11-17T23:24:52.806Z\",\"region\":{\"name\":\"평화남산동\"},\"category\":null,\"contentCo"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":269,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"맥북 에어 실버 13 M4 16gb 256gb\",\"de",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":267,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"맥북 프로 14인치 M1 Pro 16GB 실버\",\"de",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -145,24 +149,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1104,
-    "globalUniqueListings": 281,
-    "duplicateListingsRemoved": 823,
-    "detailQueueStart": 11,
-    "freshDetailTasks": 11,
+    "searchUniqueListings": 1100,
+    "globalUniqueListings": 278,
+    "duplicateListingsRemoved": 822,
+    "detailQueueStart": 5,
+    "freshDetailTasks": 5,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 11,
-    "detailSucceeded": 11,
+    "detailRequestsExecuted": 5,
+    "detailSucceeded": 5,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 281,
+    "postedAtResolvedFromSearch": 278,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 92717,
+    "scanDurationMs": 87906,
     "cities": [
       {
         "city": "군포시",
@@ -174,8 +178,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 276,
-        "durationMs": 12435
+        "uniqueListings": 274,
+        "durationMs": 12996
       },
       {
         "city": "의왕시",
@@ -190,8 +194,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 277,
-        "durationMs": 25438
+        "uniqueListings": 276,
+        "durationMs": 26432
       },
       {
         "city": "안양시",
@@ -208,8 +212,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 279,
-        "durationMs": 35012
+        "uniqueListings": 277,
+        "durationMs": 35497
       },
       {
         "city": "과천시",
@@ -220,8 +224,8 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 272,
-        "durationMs": 6593
+        "uniqueListings": 273,
+        "durationMs": 6868
       }
     ],
     "finalCandidateCount": 0,
@@ -230,7 +234,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 92723
+    "durationMs": 87915
   },
   "candidates": []
 }
