@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-17T22:22:25.975282Z",
+  "updatedAt": "2026-11-17T23:02:37.919012Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -18451,6 +18451,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EC%84%9C%ED%94%BC%EC%8A%A4%EB%B6%813-15%EC%9D%B8%EC%B9%98-i7-10%EC%84%B8%EB%8C%80-32gb-512gb-1660ti-7pxeepwxiobz/",
       "firstAlertedAt": "2026-11-17T03:32:47.450085Z",
       "lastCandidateAt": "2026-11-17T03:32:47.450085Z"
+    },
+    "bvtg2dfqdkz1": {
+      "id": "bvtg2dfqdkz1",
+      "title": "삼성노트북 15인치",
+      "price": 200000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "오금동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 16,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": "RAM : 16 GB",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-17T22:58:55.594Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1%EB%85%B8%ED%8A%B8%EB%B6%81-15%EC%9D%B8%EC%B9%98-bvtg2dfqdkz1/",
+      "firstAlertedAt": "2026-11-17T23:02:37.919012Z",
+      "lastCandidateAt": "2026-11-17T23:02:37.919012Z"
     }
   }
 }
