@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-17T17:22:33.963Z",
+  "generatedAt": "2026-11-17T17:43:26.703Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -133,8 +133,8 @@
           "createdAt\":\"2026-11-17T17:15:53.558Z\",\"boostedAt\":\"2026-11-17T17:15:53.556Z\",\"region\":{\"name\":\"역삼1동\"},\"category\":null,\"contentCoo",
           "createdAt\":\"2026-11-17T17:19:08.949Z\",\"boostedAt\":\"2026-11-17T17:19:08.949Z\",\"region\":{\"name\":\"역삼1동\"},\"category\":null,\"contentCoo",
           "createdAt\":\"2026-11-17T16:44:21.956Z\",\"boostedAt\":\"2026-11-17T16:44:21.953Z\",\"region\":{\"name\":\"양산동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-17T15:55:44.010Z\",\"boostedAt\":\"2026-11-17T15:55:44.009Z\",\"region\":{\"name\":\"망포동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-11T15:29:36.401Z\",\"boostedAt\":\"2026-11-17T16:55:53.942Z\",\"region\":{\"name\":\"서초동\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-10-14T09:15:08.707Z\",\"boostedAt\":\"2026-11-17T17:06:25.584Z\",\"region\":{\"name\":\"사당제3동\"},\"category\":null,\"contentCo",
+          "createdAt\":\"2026-11-17T15:55:44.010Z\",\"boostedAt\":\"2026-11-17T15:55:44.009Z\",\"region\":{\"name\":\"망포동\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
           "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":280,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"HP 노트북 15.6인치 6006U, DDR4 8GB,",
@@ -145,24 +145,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1092,
-    "globalUniqueListings": 274,
-    "duplicateListingsRemoved": 818,
-    "detailQueueStart": 9,
-    "freshDetailTasks": 9,
+    "searchUniqueListings": 1088,
+    "globalUniqueListings": 273,
+    "duplicateListingsRemoved": 815,
+    "detailQueueStart": 0,
+    "freshDetailTasks": 0,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 9,
-    "detailSucceeded": 9,
+    "detailRequestsExecuted": 0,
+    "detailSucceeded": 0,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 274,
+    "postedAtResolvedFromSearch": 273,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 89325,
+    "scanDurationMs": 80458,
     "cities": [
       {
         "city": "군포시",
@@ -175,7 +175,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 272,
-        "durationMs": 12190
+        "durationMs": 12561
       },
       {
         "city": "의왕시",
@@ -190,8 +190,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 274,
-        "durationMs": 25649
+        "uniqueListings": 272,
+        "durationMs": 26011
       },
       {
         "city": "안양시",
@@ -208,8 +208,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 274,
-        "durationMs": 35121
+        "uniqueListings": 272,
+        "durationMs": 35341
       },
       {
         "city": "과천시",
@@ -221,7 +221,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 272,
-        "durationMs": 6175
+        "durationMs": 6360
       }
     ],
     "finalCandidateCount": 0,
@@ -230,7 +230,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 89331
+    "durationMs": 80464
   },
   "candidates": []
 }
