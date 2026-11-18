@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-18T12:32:16.942433Z",
+  "updatedAt": "2026-11-18T13:12:24.690916Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -18501,6 +18501,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%95%98%EB%93%9C128%EA%B8%B0%EA%B0%80-%EB%9E%A84%EA%B8%B0%EA%B0%80-d3ny1j7whc66/",
       "firstAlertedAt": "2026-11-18T07:11:30.703899Z",
       "lastCandidateAt": "2026-11-18T07:11:30.703899Z"
+    },
+    "eik19k21f4i8": {
+      "id": "eik19k21f4i8",
+      "title": "가격인하MSI 게이밍노트북 램ddr5 5600 32gb,nvme.2 1TB",
+      "price": 1490000,
+      "previousPrice": 1600000,
+      "changeType": "price_drop",
+      "city": "안양시",
+      "location": "관양1동",
+      "cpuHint": "i7-13620H",
+      "gpuHint": "RTX 4060",
+      "vramGB": 8,
+      "ramGB": null,
+      "ambiguousMemoryGB": 32,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": "VRAM 8GB",
+      "ambiguousMemoryEvidence": "32gb",
+      "storageGB": 1024,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-16T16:01:58.586Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EA%B0%80%EA%B2%A9%EC%9D%B8%ED%95%98msi-%EA%B2%8C%EC%9D%B4%EB%B0%8D%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%9E%A8ddr5-5600-32gb-nvme-2-1tb-eik19k21f4i8/",
+      "firstAlertedAt": "2026-11-18T13:12:24.690916Z",
+      "lastCandidateAt": "2026-11-18T13:12:24.690916Z"
     }
   }
 }
