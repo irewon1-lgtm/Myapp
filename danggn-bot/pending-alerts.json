@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-18T06:52:15.226627Z",
+  "updatedAt": "2026-11-18T07:11:30.703899Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -18476,6 +18476,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1%EB%85%B8%ED%8A%B8%EB%B6%81-15%EC%9D%B8%EC%B9%98-bvtg2dfqdkz1/",
       "firstAlertedAt": "2026-11-17T23:02:37.919012Z",
       "lastCandidateAt": "2026-11-17T23:02:37.919012Z"
+    },
+    "d3ny1j7whc66": {
+      "id": "d3ny1j7whc66",
+      "title": "삼성 노트북 하드128기가 램4기가",
+      "price": 45000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "안양시",
+      "location": "평촌동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 128,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "128기가 램",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "postedAt": "2026-11-18T07:01:25.779Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%95%98%EB%93%9C128%EA%B8%B0%EA%B0%80-%EB%9E%A84%EA%B8%B0%EA%B0%80-d3ny1j7whc66/",
+      "firstAlertedAt": "2026-11-18T07:11:30.703899Z",
+      "lastCandidateAt": "2026-11-18T07:11:30.703899Z"
     }
   }
 }
