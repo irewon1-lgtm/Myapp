@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-18T15:51:58.860Z",
+  "generatedAt": "2026-11-18T16:31:57.755Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,24 +55,46 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/lg%EA%B7%B8%EB%9E%A8-%EC%A4%91%EA%B3%A0-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4-%ED%95%A9%EB%8B%88%EB%8B%A4-oo8thianywqx/",
-            "href": "/kr/buy-sell/lg%EA%B7%B8%EB%9E%A8-%EC%A4%91%EA%B3%A0-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4-%ED%95%A9%EB%8B%88%EB%8B%A4-oo8thianywqx/",
-            "title": "Lg그램 중고 노트북 판매 합니다",
-            "content": "사양이랑 종류는 사진에 올려놧어용",
-            "price": "130000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/179501673834895422ee380998596a9789dc82741050cf1f6c85a78c9926cf50b082f12f77a360.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-ghyd8mcwfmid/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-ghyd8mcwfmid/",
+            "title": "삼성 노트북",
+            "content": "삼성노트북 컴퓨터 \nIntel(R) Core(TM) i5-5200U\nMemory 8GB\nSSD 120GB \nLCD 39.4cm(15.6인치)\n\n배터리는 안되요.\n전원선 연결해서 쓰셔야 합니다\n포맷 초기화하고 윈도우10 설치\n오피스, 한글, 설치해놨어요.\n사무용, 유튜브나 인강, 웹서핑하기 좋아요.",
+            "price": "85000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/263fe042-8393-4b29-acdc-33961ad18936.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": true,
-            "createdAt": "2026-11-18T15:48:17.418Z",
-            "boostedAt": "2026-11-18T15:48:17.416Z",
+            "createdAt": "2026-10-31T13:18:43.354Z",
+            "boostedAt": "2026-11-18T15:57:33.758Z",
             "region": {
-              "name": "두호동"
+              "name": "청계동"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 36.0702435,
-                "longitude": 129.3822355
+                "latitude": 37.1960656,
+                "longitude": 127.1013446
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/%ED%95%9C%EC%84%B1-xf56-i7-6700hq-16g-ssd-128g-500g-gtx950-2g-23sy3t72erqa/",
+            "href": "/kr/buy-sell/%ED%95%9C%EC%84%B1-xf56-i7-6700hq-16g-ssd-128g-500g-gtx950-2g-23sy3t72erqa/",
+            "title": "한성 XF56 (i7-6700hq/16g/ssd 128G+500g/gtx950(2g))",
+            "content": "Intel Core i7-6700HQ 프로세서와 16GB RAM이 탑재된 노트북이에요. NVIDIA GeForce GTX 950M 그래픽 카드가 포함된 구성이에요. 충전 어댑터도 함께 드려요. 고사양 작업이나 게임용으로 활용하기 좋아요.\n\n한성 보몬 xf56\ni7 6700hq/ 16g(ddr3)/ ssd 128g + 500g/ gtx950(2g)\n\n액정은 밝고 좋습니다 \n 5번째 사진보시면 화살표 커서 바로 위에 \n약간 더 밝게 보이는 새끼손톱 반 크기 정도의 부분이 있는데 자세히 안보면 거의 안보입니다 \n\n밧데리는 63% 정도 남았습니다 \n\n외관은 사진처름 좋습니다\n 크랙이나 큰 기스 전혀 없습니다 \n\n사진의 노트북과 아답타만 드립니다 ",
+            "price": "150000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/d61eb99e-e216-4b3f-847d-c18cd7fba916.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-11-18T15:27:19.496Z",
+            "boostedAt": "2026-11-18T15:27:19.493Z",
+            "region": {
+              "name": "냉천동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 37.5655506,
+                "longitude": 126.9600085
               }
             ]
           },
@@ -97,39 +119,17 @@
                 "longitude": 126.9820073
               }
             ]
-          },
-          {
-            "id": "/kr/buy-sell/%ED%95%9C%EC%84%B1-xf56-i7-6700hq-16g-ssd-128g-500g-gtx950-2g-23sy3t72erqa/",
-            "href": "/kr/buy-sell/%ED%95%9C%EC%84%B1-xf56-i7-6700hq-16g-ssd-128g-500g-gtx950-2g-23sy3t72erqa/",
-            "title": "한성 XF56 (i7-6700hq/16g/ssd 128G+500g/gtx950(2g))",
-            "content": "Intel Core i7-6700HQ 프로세서와 16GB RAM이 탑재된 노트북이에요. NVIDIA GeForce GTX 950M 그래픽 카드가 포함된 구성이에요. 충전 어댑터도 함께 드려요. 고사양 작업이나 게임용으로 활용하기 좋아요.\n\n한성 보몬 xf56\ni7 6700hq/ 16g(ddr3)/ ssd 128g + 500g/ gtx950(2g)\n\n액정은 밝고 좋습니다 \n 5번째 사진보시면 화살표 커서 바로 위에 \n약간 더 밝게 보이는 새끼손톱 반 크기 정도의 부분이 있는데 자세히 안보면 거의 안보입니다 \n\n밧데리는 63% 정도 남았습니다 \n\n외관은 사진처름 좋습니다\n 크랙이나 큰 기스 전혀 없습니다 \n\n사진의 노트북과 아답타만 드립니다 ",
-            "price": "160000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/d61eb99e-e216-4b3f-847d-c18cd7fba916.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-11-18T15:27:19.496Z",
-            "boostedAt": "2026-11-18T15:27:19.493Z",
-            "region": {
-              "name": "냉천동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 37.5655506,
-                "longitude": 126.9600085
-              }
-            ]
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-11-18T15:48:17.418Z\",\"boostedAt\":\"2026-11-18T15:48:17.416Z\",\"region\":{\"name\":\"두호동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-18T15:40:34.178Z\",\"boostedAt\":\"2026-11-18T15:40:34.174Z\",\"region\":{\"name\":\"사당동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-10-31T13:18:43.354Z\",\"boostedAt\":\"2026-11-18T15:57:33.758Z\",\"region\":{\"name\":\"청계동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-11-18T15:27:19.496Z\",\"boostedAt\":\"2026-11-18T15:27:19.493Z\",\"region\":{\"name\":\"냉천동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-11-18T15:40:34.178Z\",\"boostedAt\":\"2026-11-18T15:40:34.174Z\",\"region\":{\"name\":\"사당동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-11-18T14:02:13.572Z\",\"boostedAt\":\"2026-11-18T14:02:13.572Z\",\"region\":{\"name\":\"개포4동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-11-13T08:26:40.648Z\",\"boostedAt\":\"2026-11-18T12:50:11.732Z\",\"region\":{\"name\":\"수내동\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-11-18T15:48:17.418Z\",\"boostedAt\":\"2026-11-18T15:48:17.416Z\",\"region\":{\"name\":\"두호동\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":279,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"Lg그램 중고 노트북 판매 합니다\",\"descripti",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":276,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 노트북\",\"description\":\"삼성노트북 컴",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -137,14 +137,14 @@
         ]
       }
     },
-    "searchUniqueListings": 1096,
+    "searchUniqueListings": 1095,
     "globalUniqueListings": 276,
-    "duplicateListingsRemoved": 820,
-    "detailQueueStart": 8,
-    "freshDetailTasks": 8,
+    "duplicateListingsRemoved": 819,
+    "detailQueueStart": 4,
+    "freshDetailTasks": 4,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 8,
-    "detailSucceeded": 8,
+    "detailRequestsExecuted": 4,
+    "detailSucceeded": 4,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
@@ -154,7 +154,7 @@
     "postedAtResolvedFromSearch": 276,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 90730,
+    "scanDurationMs": 85077,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +166,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 274,
-        "durationMs": 12789
+        "uniqueListings": 273,
+        "durationMs": 13000
       },
       {
         "city": "의왕시",
@@ -183,7 +183,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 275,
-        "durationMs": 25951
+        "durationMs": 25685
       },
       {
         "city": "안양시",
@@ -201,7 +201,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 276,
-        "durationMs": 35550
+        "durationMs": 35241
       },
       {
         "city": "과천시",
@@ -213,7 +213,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 271,
-        "durationMs": 6590
+        "durationMs": 6353
       }
     ],
     "finalCandidateCount": 0,
@@ -222,7 +222,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 90735
+    "durationMs": 85083
   },
   "candidates": []
 }
