@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-19T17:32:02.044Z",
+  "generatedAt": "2026-11-19T18:12:06.828Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,24 +55,46 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%94%BD%ED%81%AC%ED%8C%A8%EB%93%9C-e560p-%EB%85%B8%ED%8A%B8%EB%B6%81%ED%8C%90%EB%A7%A4-71gxkbvcfb67/",
-            "href": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%94%BD%ED%81%AC%ED%8C%A8%EB%93%9C-e560p-%EB%85%B8%ED%8A%B8%EB%B6%81%ED%8C%90%EB%A7%A4-71gxkbvcfb67/",
-            "title": "레노버 씽크패드 E560p 노트북판매",
-            "content": "i7 6700H DDR4 8GB SSD250\ngtx960m 입니다 사무용으로 사용할수있게\n엑셀,윈도우 초기화 해놨습니다\n4번째사진에 하판 파손있으며 \n뒷판 나사가없어서 싸게 판매합니다\n사용감 있는제품이며 성능상 문제는 없습니다\n시즈모드로 사용하다가 노트북을 바꾸게되어 판매합니다 충전기 어답터 가방 같이드려요",
-            "price": "150000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/fcb9347b-4665-4001-a10e-002eed8d02d2.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/hp-probook-450-g3-%EB%B8%94%EB%9E%99-%EB%85%B8%ED%8A%B8%EB%B6%81-t6n12h6o921u/",
+            "href": "/kr/buy-sell/hp-probook-450-g3-%EB%B8%94%EB%9E%99-%EB%85%B8%ED%8A%B8%EB%B6%81-t6n12h6o921u/",
+            "title": "HP ProBook 450 G3 블랙 노트북",
+            "content": "Intel Core i3-6100U 6세대 스카이레이크 프로세서와 4GB DDR4 메모리 & 120GB ssd가 탑재된 노트북이에요. \n구성품으로 전용 어댑터와  마우스가 함께 있어요. 15.6인치 화면으로서 사무용이나 학습용으로 활용하기 좋은 모델이에요.\n프로그램 실행시 버법거림 없이 상당히 빠르게 됩니다\n또한 저전압 pc로서 소비\n전력이 낮고 소음이 거의 없이 조용합니다\n배터리는 방전이라 전원 어댑터를  연결해서 사용해야   합니다\n외관은 세월의  흔적이 제법 느껴지기도 함을  감안하시기 바랍니다",
+            "price": "100000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/7be6caf6-2878-4f3d-a712-54794f18b1c8.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": true,
-            "createdAt": "2026-11-19T17:12:26.116Z",
-            "boostedAt": "2026-11-19T17:12:26.114Z",
+            "createdAt": "2026-11-19T17:59:25.609Z",
+            "boostedAt": "2026-11-19T17:59:25.608Z",
             "region": {
-              "name": "원성2동"
+              "name": "영등포동7가"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 36.799122,
-                "longitude": 127.1550952
+                "latitude": 37.523996,
+                "longitude": 126.9024586
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/dell-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-hiqitxssen9b/",
+            "href": "/kr/buy-sell/dell-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-hiqitxssen9b/",
+            "title": "DELL 노트북 판매합니다.",
+            "content": "시피유  : i7 Q740 \nRAM : 8gb \n그래픽  : GT435M \nSSD : 128gb \n\n기타\n수은전지교환했어요.\n배터리 방전아니에요. \n오래가진않습니다. 2시간55분뜨네요. \n윈도우 10 드라이버설치 OK\n\n",
+            "price": "70000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/b8c3dffe-2cfc-4137-bd51-14ca404e478b.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-11-19T18:01:22.867Z",
+            "boostedAt": "2026-11-19T18:01:22.865Z",
+            "region": {
+              "name": "원평동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 36.1231629,
+                "longitude": 128.3490108
               }
             ]
           },
@@ -97,39 +119,17 @@
                 "longitude": 126.9696246
               }
             ]
-          },
-          {
-            "id": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%95%84%EC%9D%B4%EB%94%94%EC%96%B4%ED%8C%A8%EB%93%9C-s145-%EB%85%B8%ED%8A%B8%EB%B6%81%ED%8C%9D%EB%8B%88%EB%8B%A4-67rdkeudesdb/",
-            "href": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%95%84%EC%9D%B4%EB%94%94%EC%96%B4%ED%8C%A8%EB%93%9C-s145-%EB%85%B8%ED%8A%B8%EB%B6%81%ED%8C%9D%EB%8B%88%EB%8B%A4-67rdkeudesdb/",
-            "title": "레노버 아이디어패드 S145 노트북팝니다",
-            "content": "레노버 아이디어패드 S145 모델이에요. AMD Ryzen 5 프로세서와 4GB 램, ssd120기가 탑재된 제품이에요. 깔끔한 실버 색상으로 디자인이 세련되었어요. 가벼운 사무용이나 학습용으로 활용하기 좋아요. \n키보드 정상작동 \n노트북 / 충전기 / 마우스 같이드려요\n윈도우11 업데이트 하시면 사용가능하세요 \n감사합니다\n",
-            "price": "130000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/93aa77db-a0e5-4b4b-8ed7-acf126c40009.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": false,
-            "createdAt": "2026-11-19T16:38:42.623Z",
-            "boostedAt": "2026-11-19T16:38:42.621Z",
-            "region": {
-              "name": "논현1동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 37.5138526,
-                "longitude": 127.0308107
-              }
-            ]
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-11-19T17:12:26.116Z\",\"boostedAt\":\"2026-11-19T17:12:26.114Z\",\"region\":{\"name\":\"원성2동\"},\"category\":null,\"contentCoo",
+          "createdAt\":\"2026-11-19T17:59:25.609Z\",\"boostedAt\":\"2026-11-19T17:59:25.608Z\",\"region\":{\"name\":\"영등포동7가\"},\"category\":null,\"contentC",
+          "createdAt\":\"2026-11-19T18:01:22.867Z\",\"boostedAt\":\"2026-11-19T18:01:22.865Z\",\"region\":{\"name\":\"원평동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-11-04T09:23:20.690Z\",\"boostedAt\":\"2026-11-19T05:02:28.170Z\",\"region\":{\"name\":\"사당제3동\"},\"category\":null,\"contentCo",
           "createdAt\":\"2026-11-19T16:38:42.623Z\",\"boostedAt\":\"2026-11-19T16:38:42.621Z\",\"region\":{\"name\":\"논현1동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-11-19T17:06:52.275Z\",\"boostedAt\":\"2026-11-19T17:06:52.273Z\",\"region\":{\"name\":\"신창동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-19T17:11:50.485Z\",\"boostedAt\":\"2026-11-19T17:11:50.481Z\",\"region\":{\"name\":\"송탄동\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-10-11T03:42:47.347Z\",\"boostedAt\":\"2026-11-19T17:46:28.205Z\",\"region\":{\"name\":\"동외동\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":277,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"레노버 씽크패드 E560p 노트북판매\",\"descrip",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":275,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"HP ProBook 450 G3 블랙 노트북\",\"des",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -137,9 +137,9 @@
         ]
       }
     },
-    "searchUniqueListings": 1095,
-    "globalUniqueListings": 274,
-    "duplicateListingsRemoved": 821,
+    "searchUniqueListings": 1099,
+    "globalUniqueListings": 276,
+    "duplicateListingsRemoved": 823,
     "detailQueueStart": 6,
     "freshDetailTasks": 6,
     "backlogDetailTasks": 0,
@@ -151,10 +151,10 @@
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 274,
+    "postedAtResolvedFromSearch": 276,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 86212,
+    "scanDurationMs": 86182,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +166,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 274,
-        "durationMs": 12523
+        "uniqueListings": 275,
+        "durationMs": 12441
       },
       {
         "city": "의왕시",
@@ -182,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 274,
-        "durationMs": 25757
+        "uniqueListings": 276,
+        "durationMs": 25872
       },
       {
         "city": "안양시",
@@ -200,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 274,
-        "durationMs": 34926
+        "uniqueListings": 275,
+        "durationMs": 35202
       },
       {
         "city": "과천시",
@@ -213,7 +213,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 273,
-        "durationMs": 6352
+        "durationMs": 6196
       }
     ],
     "finalCandidateCount": 0,
@@ -222,7 +222,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 86218
+    "durationMs": 86188
   },
   "candidates": []
 }
