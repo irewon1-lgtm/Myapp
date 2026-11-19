@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-19T06:12:06.097Z",
+  "generatedAt": "2026-11-19T06:52:16.109Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,6 +55,28 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
+            "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-15%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-i5-8gb-19ii9ey4wxme/",
+            "href": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-15%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-i5-8gb-19ii9ey4wxme/",
+            "title": "LG 그램 15인치 화이트 i5 8GB",
+            "content": "케이블 선 없어요\nLG 그램 15인치 화이트 모델이에요. 인텔 코어 i5 프로세서와 8GB 램이 탑재되어 있어요. 깔끔한 디자인으로 가볍게 휴대하며 사용하기 좋아요.",
+            "price": "150000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/ad9604f1-2104-4867-8abe-d211e6de8166.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-11-19T06:49:14.544Z",
+            "boostedAt": "2026-11-19T06:49:14.542Z",
+            "region": {
+              "name": "길동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 37.5385024,
+                "longitude": 127.1457924
+              }
+            ]
+          },
+          {
             "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-16%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-16z90tp-ga5ck-%ED%99%94%EC%9D%B4%ED%8A%B8-140%EB%A7%8C%EC%9B%90-3dvxtt27mgdu/",
             "href": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-16%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-16z90tp-ga5ck-%ED%99%94%EC%9D%B4%ED%8A%B8-140%EB%A7%8C%EC%9B%90-3dvxtt27mgdu/",
             "title": "LG 그램 16인치 노트북 16Z90TP-GA5CK 화이트 140만원",
@@ -77,59 +99,41 @@
             ]
           },
           {
-            "id": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-8gb-ram-%ED%99%94%EC%9D%B4%ED%8A%B8-nxxj2qw7txan/",
-            "href": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-8gb-ram-%ED%99%94%EC%9D%B4%ED%8A%B8-nxxj2qw7txan/",
-            "title": "LG 노트북 i5 8GB RAM 화이트",
-            "content": "충전선 없어요.\nIntel Core i5 프로세서와 8GB RAM이 탑재된 LG 노트북이에요. Radeon 그래픽이 포함되어 있어 다양한 작업에 활용하기 좋아요. 깔끔한 화이트 색상으로 어디서든 사용하기 편해요. 가벼운 사무용이나 학습용으로 추천드려요.",
-            "price": "50000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/c90443dc-8705-4cf5-91a9-c84f9f0dfc3c.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-11-19T05:25:15.917Z",
-            "boostedAt": "2026-11-19T05:25:15.912Z",
-            "region": {
-              "name": "길동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 37.5385024,
-                "longitude": 127.1457924
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/%ED%99%94%EB%A9%B4-%ED%81%AC%EA%B3%A0-%EA%B9%A8%EB%81%97%ED%95%98%EA%B2%8C-%EC%82%AC%EC%9A%A9%ED%95%9C-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-16%EC%9D%B8%EC%B9%98-%ED%8C%90%EB%A7%A4%ED%95%B4%EC%9A%94-a9wdk768hgoo/",
-            "href": "/kr/buy-sell/%ED%99%94%EB%A9%B4-%ED%81%AC%EA%B3%A0-%EA%B9%A8%EB%81%97%ED%95%98%EA%B2%8C-%EC%82%AC%EC%9A%A9%ED%95%9C-%EA%B7%B8%EB%9E%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-16%EC%9D%B8%EC%B9%98-%ED%8C%90%EB%A7%A4%ED%95%B4%EC%9A%94-a9wdk768hgoo/",
-            "title": "화면 크고, 깨끗하게 사용한 그램 노트북 16인치 판매해요",
-            "content": "대학원 준비하면서 논문 작성, 온라인 강의 수강, 자료 정리용으로 사용했던 노트북입니다. 졸업 후 사용할 일이 거의 없어 판매하게 되었습니다.\n\n16인치 화면이라 리포트 작성하거나 PDF 교재, 강의 자료를 여러 개 띄워놓고 보기 편했습니다. 화면이 넓어 엑셀 작업이나 과제할 때도 답답함이 적었습니다. i7 11세대 / 램 16GB / SSD 512GB 모델이며 부팅과 프로그램 실행도 빠른 편입니다.\n\n윈도우11 및 문서 프로그램 설치 정품인증완료\n받으시면 별도 설정 없이 바로 사용 가능합니다. 무게도 생각보다 가벼워 학교, 도서관, 카페에서 들고 다니며 사용하기 좋았습니다. 구성품은 노트북 본체와 충전기 그리고 마우스도 같이 드리고,  상태 확인 후 거래 가능합니다.",
-            "price": "1050000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202609/afd43742-7998-4da2-844c-065886f47d5c.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C-14%EC%9D%B8%EC%B9%98-m4-1tb-16g-%EC%8A%A4%ED%8E%98%EC%9D%B4%EC%8A%A4-%EA%B7%B8%EB%A0%88%EC%9D%B4-%ED%8C%8C%EA%B2%A9%EA%B0%80-k2u2graesohy/",
+            "href": "/kr/buy-sell/%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C-14%EC%9D%B8%EC%B9%98-m4-1tb-16g-%EC%8A%A4%ED%8E%98%EC%9D%B4%EC%8A%A4-%EA%B7%B8%EB%A0%88%EC%9D%B4-%ED%8C%8C%EA%B2%A9%EA%B0%80-k2u2graesohy/",
+            "title": "맥북프로 14인치 M4/1TB/16G 스페이스 그레이 파격가",
+            "content": "애플 맥북 프로 14인치 M4칩 모델 판매합니다.\n\n- 색상은 스페이스 그레이\n- 16GB RAM과 1TB 저장공간\n\n박스없음, 구성품 있음(충전기,충전케이블)\n\n외관과 배터리 상태 보시면 아시겠지만 사놓고 쓰지 않아 언제나 그랬듯 잽싸게 팔기위해 시세 대비 싸게 내놓습니다",
+            "price": "1790000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/1795070344903ddbe67a61da991c31ea584fa653277e35760624e455e119404b65210c2872d9e0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": false,
-            "createdAt": "2026-09-04T05:20:22.694Z",
-            "boostedAt": "2026-11-19T05:37:59.693Z",
+            "createdAt": "2026-11-19T06:44:17.631Z",
+            "boostedAt": "2026-11-19T06:44:17.631Z",
             "region": {
-              "name": "반포본동"
+              "name": "서초2동"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 37.5062323,
-                "longitude": 127.0042992
+                "latitude": 37.5250588,
+                "longitude": 127.0502241
+              },
+              {
+                "latitude": 37.5564107,
+                "longitude": 126.940355
               }
             ]
           }
         ],
         "dateFieldSnippets": [
+          "createdAt\":\"2026-11-19T06:49:14.544Z\",\"boostedAt\":\"2026-11-19T06:49:14.542Z\",\"region\":{\"name\":\"길동\"},\"category\":null,\"contentCoord",
           "createdAt\":\"2026-11-04T09:23:20.690Z\",\"boostedAt\":\"2026-11-19T05:02:28.170Z\",\"region\":{\"name\":\"사당제3동\"},\"category\":null,\"contentCo",
-          "createdAt\":\"2026-11-19T05:25:15.917Z\",\"boostedAt\":\"2026-11-19T05:25:15.912Z\",\"region\":{\"name\":\"길동\"},\"category\":null,\"contentCoord",
-          "createdAt\":\"2026-09-04T05:20:22.694Z\",\"boostedAt\":\"2026-11-19T05:37:59.693Z\",\"region\":{\"name\":\"반포본동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-11-19T05:34:36.624Z\",\"boostedAt\":\"2026-11-19T05:34:36.623Z\",\"region\":{\"name\":\"봉담읍\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-11T07:29:54.485Z\",\"boostedAt\":\"2026-11-19T05:13:31.744Z\",\"region\":{\"name\":\"월피동\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-11-19T06:44:17.631Z\",\"boostedAt\":\"2026-11-19T06:44:17.631Z\",\"region\":{\"name\":\"서초2동\"},\"category\":null,\"contentCoo",
+          "createdAt\":\"2026-11-19T06:41:47.166Z\",\"boostedAt\":\"2026-11-19T06:41:47.164Z\",\"region\":{\"name\":\"인후3동\"},\"category\":null,\"contentCoo",
+          "createdAt\":\"2026-09-20T02:14:07.086Z\",\"boostedAt\":\"2026-11-19T06:02:56.782Z\",\"region\":{\"name\":\"약대동\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":280,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG 그램 16인치 노트북 16Z90TP-GA5CK 화",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":279,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG 그램 15인치 화이트 i5 8GB\",\"descri",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -137,24 +141,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1166,
-    "globalUniqueListings": 313,
-    "duplicateListingsRemoved": 853,
-    "detailQueueStart": 13,
-    "freshDetailTasks": 13,
+    "searchUniqueListings": 1096,
+    "globalUniqueListings": 277,
+    "duplicateListingsRemoved": 819,
+    "detailQueueStart": 22,
+    "freshDetailTasks": 22,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 13,
-    "detailSucceeded": 13,
+    "detailRequestsExecuted": 22,
+    "detailSucceeded": 22,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 313,
+    "postedAtResolvedFromSearch": 277,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 96385,
+    "scanDurationMs": 106772,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +170,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 310,
-        "durationMs": 12734
+        "uniqueListings": 273,
+        "durationMs": 12431
       },
       {
         "city": "의왕시",
@@ -182,8 +186,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 308,
-        "durationMs": 25990
+        "uniqueListings": 276,
+        "durationMs": 25955
       },
       {
         "city": "안양시",
@@ -200,8 +204,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 277,
-        "durationMs": 35323
+        "uniqueListings": 275,
+        "durationMs": 35492
       },
       {
         "city": "과천시",
@@ -212,8 +216,8 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 271,
-        "durationMs": 6616
+        "uniqueListings": 272,
+        "durationMs": 6596
       }
     ],
     "finalCandidateCount": 0,
@@ -222,7 +226,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 96392
+    "durationMs": 106777
   },
   "candidates": []
 }
