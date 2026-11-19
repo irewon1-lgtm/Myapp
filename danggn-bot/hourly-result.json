@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-19T13:32:19.469Z",
+  "generatedAt": "2026-11-19T13:36:56.127Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,6 +55,32 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
+            "id": "/kr/buy-sell/asus-tuf-a14-5060-%ED%92%80%EB%B0%95%EC%8A%A4-eidqywhiczmr/",
+            "href": "/kr/buy-sell/asus-tuf-a14-5060-%ED%92%80%EB%B0%95%EC%8A%A4-eidqywhiczmr/",
+            "title": "ASUS TUF A14 5060 풀박스",
+            "content": "AMD 라이젠 7 프로세서가 탑재된 ASUS TUF 게이밍 노트북이에요. 깔끔한 블랙 컬러와 그레이 키보드 조합이 특징이에요. 노트북 본체와 구성품이 포함되어 있어요. 고사양 게임이나 작업용으로 활용하기 좋아요.\n\nr7 260 \n5060\n768gb (256 추가증설)\n32gb ram\n\n정품 박스 및 어댑터 등 풀박 풀구성\n\n담배 애견인 아니고 서브 노트북으로만 써서 매우 깨끗합니다\n\n채팅 10회 이내 쿨거래만",
+            "price": "1600000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/a8f075a3-f579-425a-a857-4069a9a39311.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-11-19T13:31:12.478Z",
+            "boostedAt": "2026-11-19T13:31:12.478Z",
+            "region": {
+              "name": "서초1동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 37.590159,
+                "longitude": 127.1385121
+              },
+              {
+                "latitude": 37.4973458,
+                "longitude": 127.0245853
+              }
+            ]
+          },
+          {
             "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt530u3c-itwnqaj4uwcm/",
             "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt530u3c-itwnqaj4uwcm/",
             "title": "삼성 노트북 NT530U3C",
@@ -97,39 +123,17 @@
                 "longitude": 126.9696246
               }
             ]
-          },
-          {
-            "id": "/kr/buy-sell/msi-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%B8%94%EB%9E%99-imiiqu8yrrav/",
-            "href": "/kr/buy-sell/msi-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%B8%94%EB%9E%99-imiiqu8yrrav/",
-            "title": "MSI 노트북 블랙",
-            "content": "Intel Core i5 프로세서와 4GB RAM을 탑재한 MSI 노트북이에요. 깔끔한 블랙 색상으로 디자인이 심플해요. 업무용이나 학습용으로 활용하기 좋은 사양이에요. 충전기가 없어 싸게 판매합니다.",
-            "price": "100000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/875aa4d5-36bf-4a3b-b3d8-8c72be86d39d.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-11-19T12:53:44.345Z",
-            "boostedAt": "2026-11-19T12:53:44.343Z",
-            "region": {
-              "name": "상계1동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 37.6803581,
-                "longitude": 127.0543212
-              }
-            ]
           }
         ],
         "dateFieldSnippets": [
+          "createdAt\":\"2026-11-19T13:31:12.478Z\",\"boostedAt\":\"2026-11-19T13:31:12.478Z\",\"region\":{\"name\":\"서초1동\"},\"category\":null,\"contentCoo",
           "createdAt\":\"2026-10-17T08:54:42.763Z\",\"boostedAt\":\"2026-11-19T13:25:23.497Z\",\"region\":{\"name\":\"침산동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-11-04T09:23:20.690Z\",\"boostedAt\":\"2026-11-19T05:02:28.170Z\",\"region\":{\"name\":\"사당제3동\"},\"category\":null,\"contentCo",
-          "createdAt\":\"2026-11-19T12:53:44.345Z\",\"boostedAt\":\"2026-11-19T12:53:44.343Z\",\"region\":{\"name\":\"상계1동\"},\"category\":null,\"contentCoo",
           "createdAt\":\"2026-11-19T13:12:16.544Z\",\"boostedAt\":\"2026-11-19T13:12:16.544Z\",\"region\":{\"name\":\"상계6.7동\"},\"category\":null,\"contentC",
-          "createdAt\":\"2026-10-06T13:19:41.258Z\",\"boostedAt\":\"2026-11-19T13:23:44.242Z\",\"region\":{\"name\":\"논현동\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-11-19T12:53:44.345Z\",\"boostedAt\":\"2026-11-19T12:53:44.343Z\",\"region\":{\"name\":\"상계1동\"},\"category\":null,\"contentCoo"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":271,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 노트북 NT530U3C\",\"description\"",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":273,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"ASUS TUF A14 5060 풀박스\",\"descri",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -137,24 +141,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1090,
-    "globalUniqueListings": 277,
-    "duplicateListingsRemoved": 813,
-    "detailQueueStart": 13,
-    "freshDetailTasks": 13,
+    "searchUniqueListings": 1098,
+    "globalUniqueListings": 280,
+    "duplicateListingsRemoved": 818,
+    "detailQueueStart": 2,
+    "freshDetailTasks": 2,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 13,
-    "detailSucceeded": 13,
+    "detailRequestsExecuted": 2,
+    "detailSucceeded": 2,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 277,
+    "postedAtResolvedFromSearch": 280,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 94439,
+    "scanDurationMs": 83331,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +170,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 272,
-        "durationMs": 12332
+        "uniqueListings": 273,
+        "durationMs": 12809
       },
       {
         "city": "의왕시",
@@ -182,8 +186,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 274,
-        "durationMs": 25583
+        "uniqueListings": 278,
+        "durationMs": 25912
       },
       {
         "city": "안양시",
@@ -200,8 +204,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 276,
-        "durationMs": 34985
+        "uniqueListings": 278,
+        "durationMs": 35472
       },
       {
         "city": "과천시",
@@ -212,8 +216,8 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 268,
-        "durationMs": 6445
+        "uniqueListings": 269,
+        "durationMs": 6798
       }
     ],
     "finalCandidateCount": 0,
@@ -222,7 +226,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 94445
+    "durationMs": 83338
   },
   "candidates": []
 }
