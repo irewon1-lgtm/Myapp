@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-21T06:12:50.247Z",
+  "generatedAt": "2026-11-21T06:52:49.699Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,81 +55,89 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EB%85%B8%ED%8A%B8%EB%B6%81-i7-2720qm-gm51gp7jd6en/",
-            "href": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EB%85%B8%ED%8A%B8%EB%B6%81-i7-2720qm-gm51gp7jd6en/",
-            "title": "레노버 노트북 i7-2720qm",
-            "content": "레노버 B570 .cpu 업글\ncpu i7-2720q\nssd 128g \n메모리 8gb\n2세대 모델이지만 웹서핑이나 동영상 속도 지체없이 빠삭하고. 충분히 현역으로 쓸만합니다.\n배터리는 오래가지 못해 아답터 꽂고 쓰는게 좋습니다. 포맷후 윈동우10 새로 설치하여 드립니다.\nusb포트 3개중 하나가 안좋아 두개로 충분했고  주로 hdmi 티비와 연결하여 1080p 영화감상이나 유튭 용으로 사용했습니다.\n바로구매는 포장 뽁뽁이 충분히 하여 발송합니다.\n노트북,어뎁터,마우스",
-            "price": "120000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/69586d80-3e44-4205-b9fe-a7db76d3ae66.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-11-19T03:41:34.666Z",
-            "boostedAt": "2026-11-21T06:05:58.601Z",
-            "region": {
-              "name": "개봉제1동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 37.5040014,
-                "longitude": 126.8478078
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-5200u-%EC%B4%88%EC%8A%AC%EB%A6%BC%ED%98%95-wmp3kh5gyvth/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-5200u-%EC%B4%88%EC%8A%AC%EB%A6%BC%ED%98%95-wmp3kh5gyvth/",
-            "title": "삼성 노트북 i5-5200U 초슬림형",
-            "content": "모델 NT910S5K\n인텔코어 I5-5200U\nRAM 8G, SSD 120G\n윈도우11 26H2 설치\n배터리효율 70% 이상\n충전기 마우스 가방포함.\n\n사무실 재택근무 업무용\n가성비 좋은 중고컴퓨터\n자세한 것은 채팅주세요.",
-            "price": "140000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/7cb4ce97-edd3-4d1b-9949-5f65d47a2ca1.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-11-21T05:55:06.309Z",
-            "boostedAt": "2026-11-21T05:55:06.304Z",
-            "region": {
-              "name": "증평읍"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 36.782807,
-                "longitude": 127.5816321
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-x1-carbon-gen-11-32gb-ssd-1tb-nfw8y8mcpzd7/",
-            "href": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-x1-carbon-gen-11-32gb-ssd-1tb-nfw8y8mcpzd7/",
-            "title": "레노버 X1 Carbon Gen 11(32GB, SSD 1TB)",
-            "content": "레노버 ThinkPad X1 Carbon Gen 11 블랙\n고성능 노트북으로 작고 가볍고 튼튼한 노트북 \n\n최근 3대 노트북을 차례로 구매하면 정리하고 있습니다. \n\n레노버 최상 모델 X 시리즈입니다\n\n인텔 13세대 i7 프로세서\nDDR5 6000, 32GB RAM\n빠르 NVME SSD 1TB \n고성능 노트북으로 장터의 다른 카본 차별, 954GB의 넉넉한 저장 공간을 갖추고 있어요. \nAI 업무용이나 학습용으로 좋은 사양이에요.",
-            "price": "1050000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/1795239790626a7fea6f13b39b37a170da5a15bed2a0cdb957245a5a751c27f99035644ecc0330.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/asus-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%94%EC%95%84%EC%9A%A9-12qtzomsmirr/",
+            "href": "/kr/buy-sell/asus-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%94%EC%95%84%EC%9A%A9-12qtzomsmirr/",
+            "title": "ASUS 게이밍 노트북 팔아용!!",
+            "content": "연락주세용",
+            "price": "229000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/1795243382908cd136aaa2ff2233dfceb770f0b2ddded3e4456219774f403498abf037c7ebf6a0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": false,
-            "createdAt": "2026-11-21T05:51:18.269Z",
-            "boostedAt": "2026-11-21T05:51:18.267Z",
+            "createdAt": "2026-11-21T06:43:45.394Z",
+            "boostedAt": "2026-11-21T06:43:45.394Z",
             "region": {
-              "name": "역삼1동"
+              "name": "역삼동"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 37.4961411,
-                "longitude": 127.0291329
+                "latitude": 37.4847648,
+                "longitude": 126.9483439
+              },
+              {
+                "latitude": 37.5010234,
+                "longitude": 127.0423681
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-i7-%EC%8B%A4%EB%B2%84-v9v2nw5bqib1/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-i7-%EC%8B%A4%EB%B2%84-v9v2nw5bqib1/",
+            "title": "삼성 노트북 i7 실버",
+            "content": "삼성 시리즈7 크로노스(모델명: NT770Z5E) 노트북 판매합니다.\n연식은 있지만 고성능 i7 쿼드코어 프로세서에 SSD가 장착되어 있어 부팅 및 인터넷, 문서 작업, 유튜브 시청 등 실사용 시 속도 빠르고 쾌적하게 잘 돌아갑니다. Windows 11 Pro 설치되어 있어 받으시면 바로 쓰실 수 있습니다. \n\n💻 주요 사양\n•모델명: 삼성 시리즈7 크로노스 (NT770Z5E / 780Z5E) \n•운영체제: Windows 11 Pro (64비트) \n•CPU: Intel Core i7-3740QM (쿼드코어, 2.70GHz) \n•메모리(RAM): 8GB \n•저장장치: SSD 256GB\n•그래픽: AMD Radeon R9 M 시리즈 (외장그래픽 탑재) \n화면 크기: 15.6인치 대화면 (우측 숫자 키패드 포함) \n\n📌 제품 상태 및 안내사항 (필독)\n•작동 상태: 키보드, 화면, 스피커, 와이파이 등 모든 기능 이상 없이 정상 작동합니다. \n•배터리: 배터리 수명이 다 되어 충전기(전원 선)를 연결한 상태로 사용하셔야 합니다. 집이나 사무실 책상에 두고 데스크톱 대용으로 쓰실 분께 추천합니다.\n•외관: 생활 스크래치 등 전반적인 사용감은 있으나 찍힘이나 파손 없이 깔끔한 편입니다. \n•구성품: 노트북 본체 + 전용 충전기 어댑터\n초기화 완료해 두었습니다.",
+            "price": "150000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/1795242509614952020ef0dcffa9afd192f485e8249b6a4a6a01b13b2ef8dd5a86b7abc07f36a0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-11-21T06:32:08.086Z",
+            "boostedAt": "2026-11-21T06:32:08.083Z",
+            "region": {
+              "name": "길음동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 37.6082476,
+                "longitude": 127.0291943
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/%EC%95%84%EC%88%98%EC%8A%A4-%ED%84%B0%ED%94%84-%EA%B2%8C%EC%9D%B4%EB%B0%8Da15-%EB%85%B8%ED%8A%B8%EB%B6%81-ptw9jdwouxu9/",
+            "href": "/kr/buy-sell/%EC%95%84%EC%88%98%EC%8A%A4-%ED%84%B0%ED%94%84-%EA%B2%8C%EC%9D%B4%EB%B0%8Da15-%EB%85%B8%ED%8A%B8%EB%B6%81-ptw9jdwouxu9/",
+            "title": "아수스 터프 게이밍a15 노트북",
+            "content": "——구성——\n-RTX 4060 8gb\n-DDR5 32gb\n-AMD ryzen 7735HS 및 Radeon 내장 그래픽\n-Micron_2400  477gb\n-\n-\n정도 이네요 실사용 1~3개월 정도고 2년동안 압수돼었다가 11/20 날 다시 돌려 받았네요 \n외관상 깨끗하고 따로 이상없습니다 구리이력 없고 그러나 사진에 보시듯 나사가 다 빠져버렸습니다 ㅠ (전에 청소할때 열었다가 잃어버렸어요..)\n인터넷에 몇천원 대에 파네요  \n주로 4호선 라인에서 합니다",
+            "price": "950000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/1795242645032f847516f7292d5bc255cfc0b4c93730787c31379f1278b31fba67dd641689ab00.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Reserved",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-11-21T06:38:11.611Z",
+            "boostedAt": "2026-11-21T06:38:11.611Z",
+            "region": {
+              "name": "방배본동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 37.4853005,
+                "longitude": 126.9825018
+              },
+              {
+                "latitude": 37.5216665,
+                "longitude": 126.975293
               }
             ]
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-11-19T03:41:34.666Z\",\"boostedAt\":\"2026-11-21T06:05:58.601Z\",\"region\":{\"name\":\"개봉제1동\"},\"category\":null,\"contentCo",
-          "createdAt\":\"2026-11-21T05:55:06.309Z\",\"boostedAt\":\"2026-11-21T05:55:06.304Z\",\"region\":{\"name\":\"증평읍\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-21T05:51:18.269Z\",\"boostedAt\":\"2026-11-21T05:51:18.267Z\",\"region\":{\"name\":\"역삼1동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-11-21T05:48:51.897Z\",\"boostedAt\":\"2026-11-21T05:48:51.896Z\",\"region\":{\"name\":\"죽동\"},\"category\":null,\"contentCoord",
-          "createdAt\":\"2026-11-21T05:36:28.774Z\",\"boostedAt\":\"2026-11-21T05:36:28.771Z\",\"region\":{\"name\":\"광명4동\"},\"category\":null,\"contentCoo"
+          "createdAt\":\"2026-11-21T06:43:45.394Z\",\"boostedAt\":\"2026-11-21T06:43:45.394Z\",\"region\":{\"name\":\"역삼동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-11-21T06:32:08.086Z\",\"boostedAt\":\"2026-11-21T06:32:08.083Z\",\"region\":{\"name\":\"길음동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-11-21T06:38:11.611Z\",\"boostedAt\":\"2026-11-21T06:38:11.611Z\",\"region\":{\"name\":\"방배본동\"},\"category\":null,\"contentCoo",
+          "createdAt\":\"2026-11-05T04:33:35.083Z\",\"boostedAt\":\"2026-11-21T06:48:05.920Z\",\"region\":{\"name\":\"용호제1동\"},\"category\":null,\"contentCo",
+          "createdAt\":\"2026-11-14T06:24:32.485Z\",\"boostedAt\":\"2026-11-21T06:18:41.612Z\",\"region\":{\"name\":\"반포본동\"},\"category\":null,\"contentCoo"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":267,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"레노버 노트북 i7-2720qm\",\"descriptio",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":268,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"ASUS 게이밍 노트북 팔아용!!\",\"descripti",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -137,24 +145,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1100,
-    "globalUniqueListings": 281,
-    "duplicateListingsRemoved": 819,
-    "detailQueueStart": 22,
-    "freshDetailTasks": 22,
+    "searchUniqueListings": 1096,
+    "globalUniqueListings": 278,
+    "duplicateListingsRemoved": 818,
+    "detailQueueStart": 21,
+    "freshDetailTasks": 21,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 22,
-    "detailSucceeded": 22,
+    "detailRequestsExecuted": 21,
+    "detailSucceeded": 21,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 281,
+    "postedAtResolvedFromSearch": 278,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 105935,
+    "scanDurationMs": 104151,
     "cities": [
       {
         "city": "군포시",
@@ -167,7 +175,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 273,
-        "durationMs": 12403
+        "durationMs": 12317
       },
       {
         "city": "의왕시",
@@ -182,8 +190,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 280,
-        "durationMs": 25506
+        "uniqueListings": 275,
+        "durationMs": 25535
       },
       {
         "city": "안양시",
@@ -201,7 +209,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 277,
-        "durationMs": 35296
+        "durationMs": 35043
       },
       {
         "city": "과천시",
@@ -212,8 +220,8 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 270,
-        "durationMs": 6466
+        "uniqueListings": 271,
+        "durationMs": 6417
       }
     ],
     "finalCandidateCount": 0,
@@ -222,7 +230,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 105943
+    "durationMs": 104156
   },
   "candidates": []
 }
