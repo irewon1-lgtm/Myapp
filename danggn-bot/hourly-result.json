@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-21T08:12:41.906Z",
+  "generatedAt": "2026-11-21T08:14:28.859Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,6 +55,28 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-pc-23jdji1tx8nw/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-pc-23jdji1tx8nw/",
+            "title": "삼성 노트북 PC",
+            "content": "WINDOWS 10 HOME\nCPU : Intel Core i5-2450M\nRAM : 6GB\n디스플레이 : 15.6인치\nSSD : SPCC Solid state disk 250GB\n그래픽(GPU):\n​Intel(R) HD Graphics 3000 (내장)  \n​NVIDIA GeForce GT 520MX (외장)\nBluetooth 3.0 지원\nCD ROM 있음\n충전케이블, 무선마우스 포함\n\n인터넷 검색, 유튜브 시청, 간단한 문서 작업(한글, 엑셀 등) 용도로 적합하고 학생 교육용으로도 가능합니다.",
+            "price": "80000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/2b6f3c40-6b55-4f1f-986e-e4ba09f8a090.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-11-18T00:48:10.956Z",
+            "boostedAt": "2026-11-21T07:58:32.600Z",
+            "region": {
+              "name": "은행동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 37.4445723,
+                "longitude": 126.8006198
+              }
+            ]
+          },
+          {
             "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-note9-nt900x3l-%EC%8B%A4%EB%B2%84-2ujbpvu4n2sa/",
             "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-note9-nt900x3l-%EC%8B%A4%EB%B2%84-2ujbpvu4n2sa/",
             "title": "삼성 노트북 Note9 NT900X3L 실버",
@@ -73,28 +95,6 @@
               {
                 "latitude": 35.1720708,
                 "longitude": 129.0278573
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%815-i5-7%EC%84%B8%EB%8C%80-%EB%9E%A8-8gb-ssd-hdd-fhd-ptmcsss4njwt/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%815-i5-7%EC%84%B8%EB%8C%80-%EB%9E%A8-8gb-ssd-hdd-fhd-ptmcsss4njwt/",
-            "title": "삼성 노트북5 i5 7세대 / 램 8GB / SSD+HDD / FHD",
-            "content": "인터넷, 유튜브, 문서 작업용 노트북 찾으시는 분께 추천드려요!\n\n삼성 노트북5 판매합니다. 😊\n\nSSD가 탑재되어 있어 기본적인 작업에 적합하고, RAM 8GB에 저장 공간도 넉넉한 편이라 가정용·학습용·사무용으로 활용하기 좋은 제품입니다. 초기화는 해놨습니다. 충전기 같이 드려요!\n\n✅ 제품 사양\n* 모델명: 삼성 노트북5 NT500R5W-LD5A\n* CPU: 인텔 코어 i5-7200U (7세대)\n* RAM: DDR4 8GB\n* 저장장치: SSD 128GB + HDD 500GB\n* 그래픽: Intel HD Graphics 620\n* 화면: 15.6인치 FHD (1920×1080)\n* 운영체제: Windows 10 설치 (미인증)\n* 배터리: 충전기 없이 약 3시간\n\nSSD와 HDD가 함께 탑재되어 있어 운영체제와 프로그램은 SSD에, 사진이나 문서 등은 HDD에 나눠 저장할 수 있다는 장점이 있습니다.\n\n중고 제품 특성상 생활 사용감은 있으며, 외관 상태는 사진 참고 부탁드립니다.\n\n부담 없이 사용할 실속형 삼성 노트북 찾으시는 분께 추천드려요!\n\n궁금하신 점은 편하게 채팅 주세요. 😊",
-            "price": "160000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/179432051262865684d5fd943c0daaca577cfaa9b08adb3e3562f8c4ff4beda685b300be71c250.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-11-10T14:32:06.925Z",
-            "boostedAt": "2026-11-21T08:04:50.736Z",
-            "region": {
-              "name": "오포2동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 37.3787919,
-                "longitude": 127.2595152
               }
             ]
           },
@@ -122,14 +122,14 @@
           }
         ],
         "dateFieldSnippets": [
+          "createdAt\":\"2026-11-18T00:48:10.956Z\",\"boostedAt\":\"2026-11-21T07:58:32.600Z\",\"region\":{\"name\":\"은행동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-11-21T07:59:01.723Z\",\"boostedAt\":\"2026-11-21T07:59:01.715Z\",\"region\":{\"name\":\"당감제4동\"},\"category\":null,\"contentCo",
-          "createdAt\":\"2026-11-10T14:32:06.925Z\",\"boostedAt\":\"2026-11-21T08:04:50.736Z\",\"region\":{\"name\":\"오포2동\"},\"category\":null,\"contentCoo",
           "createdAt\":\"2026-10-25T05:42:51.891Z\",\"boostedAt\":\"2026-11-21T07:39:39.190Z\",\"region\":{\"name\":\"도곡2동\"},\"category\":null,\"contentCoo",
           "createdAt\":\"2026-11-21T07:55:54.152Z\",\"boostedAt\":\"2026-11-21T07:55:54.150Z\",\"region\":{\"name\":\"화도읍\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-11-21T07:28:58.941Z\",\"boostedAt\":\"2026-11-21T07:28:58.941Z\",\"region\":{\"name\":\"서초4동\"},\"category\":null,\"contentCoo"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":270,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 노트북 Note9 NT900X3L 실버\",\"des",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":268,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 노트북 PC\",\"description\":\"WIND",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -137,24 +137,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1100,
-    "globalUniqueListings": 280,
-    "duplicateListingsRemoved": 820,
-    "detailQueueStart": 19,
-    "freshDetailTasks": 19,
+    "searchUniqueListings": 1102,
+    "globalUniqueListings": 279,
+    "duplicateListingsRemoved": 823,
+    "detailQueueStart": 0,
+    "freshDetailTasks": 0,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 19,
-    "detailSucceeded": 19,
+    "detailRequestsExecuted": 0,
+    "detailSucceeded": 0,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 280,
+    "postedAtResolvedFromSearch": 279,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 103064,
+    "scanDurationMs": 82848,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +166,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 274,
-        "durationMs": 12789
+        "uniqueListings": 276,
+        "durationMs": 13120
       },
       {
         "city": "의왕시",
@@ -183,7 +183,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 276,
-        "durationMs": 25711
+        "durationMs": 26426
       },
       {
         "city": "안양시",
@@ -201,7 +201,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 278,
-        "durationMs": 35361
+        "durationMs": 35912
       },
       {
         "city": "과천시",
@@ -213,7 +213,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 272,
-        "durationMs": 6808
+        "durationMs": 7143
       }
     ],
     "finalCandidateCount": 0,
@@ -222,7 +222,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 103069
+    "durationMs": 82855
   },
   "candidates": []
 }
