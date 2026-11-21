@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-21T08:14:28.928195Z",
+  "updatedAt": "2026-11-21T08:52:59.659824Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -17755,8 +17755,8 @@
     "46bbcuuqjb7y": {
       "id": "46bbcuuqjb7y",
       "title": "레노버 요가 슬림7 노트북 판매합니다.",
-      "price": 1350000,
-      "previousPrice": 1500000,
+      "price": 1330000,
+      "previousPrice": 1350000,
       "changeType": "price_drop",
       "city": "의왕시",
       "location": "내손1동",
@@ -17775,7 +17775,7 @@
       "postedAt": "2026-11-10T01:19:08.723Z",
       "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%9A%94%EA%B0%80-%EC%8A%AC%EB%A6%BC7-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-46bbcuuqjb7y/",
       "firstAlertedAt": "2026-11-10T01:22:44.137871Z",
-      "lastCandidateAt": "2026-11-18T01:32:14.573940Z"
+      "lastCandidateAt": "2026-11-21T08:52:59.659824Z"
     },
     "scbc7mse6xaz": {
       "id": "scbc7mse6xaz",
@@ -18526,6 +18526,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EA%B0%80%EA%B2%A9%EC%9D%B8%ED%95%98msi-%EA%B2%8C%EC%9D%B4%EB%B0%8D%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%9E%A8ddr5-5600-32gb-nvme-2-1tb-eik19k21f4i8/",
       "firstAlertedAt": "2026-11-18T13:12:24.690916Z",
       "lastCandidateAt": "2026-11-18T13:12:24.690916Z"
+    },
+    "fyvf4q6tb7pj": {
+      "id": "fyvf4q6tb7pj",
+      "title": "삼성 노트북 NT500R5K 화이트",
+      "price": 60000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "산본동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": 128,
+      "ambiguousMemoryGB": null,
+      "hardwareReviewStatus": "PASS_RAM",
+      "ramEvidence": "RAM 128",
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": null,
+      "storageGB": null,
+      "llmCapability": "WORK_DEV_RAM32",
+      "llmReason": "RAM 32GB 이상 확정 후보",
+      "postedAt": "2026-11-21T08:33:37.775Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt500r5k-%ED%99%94%EC%9D%B4%ED%8A%B8-fyvf4q6tb7pj/",
+      "firstAlertedAt": "2026-11-21T08:52:59.659824Z",
+      "lastCandidateAt": "2026-11-21T08:52:59.659824Z"
     }
   }
 }
