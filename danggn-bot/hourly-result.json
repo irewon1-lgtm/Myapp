@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-22T12:12:46.035Z",
+  "generatedAt": "2026-11-22T12:52:35.861Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -16,7 +16,9 @@
   "health": {
     "status": "ok",
     "stateCommitted": true,
-    "warnings": []
+    "warnings": [
+      "의왕시: detail failed tze4owoyyyfh: Error: HTTP 404 Not Found"
+    ]
   },
   "rules": {
     "newnessField": "postedAt",
@@ -55,81 +57,85 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-%EC%A7%80%ED%8F%AC%EC%8A%A4-940mx-%EC%B6%A9%EC%A0%84%EA%B8%B0-%ED%8F%AC%ED%95%A8-eo6dzsggey5e/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-%EC%A7%80%ED%8F%AC%EC%8A%A4-940mx-%EC%B6%A9%EC%A0%84%EA%B8%B0-%ED%8F%AC%ED%95%A8-eo6dzsggey5e/",
-            "title": "삼성 노트북 i5 / 지포스 940MX / 충전기 포함",
-            "content": "삼성 노트북 판매합니다.\n\n* 모델: 삼성 NT500R5M 계열\n* CPU: 인텔 i5-7200U\n* RAM: 4GB\n* 그래픽: NVIDIA GeForce 940MX\n* 저장공간: C드라이브 117GB + D드라이브 451GB\n* 운영체제: Windows 10\n* 충전기 포함\n\n인터넷, 유튜브, 문서 작업 등 기본적인 용도로 사용하기 좋습니다.\n\n외관에 사용감은 있으며 사진 참고 바랍니다.\n\n판매 전 초기화 진행 예정입니다.\n직거래 선호합니다.",
-            "price": "130000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/17953467991718b682018a4e9b8f068c7c52e4e9bee7e40719442a6f33bd813596c89e14951350.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-11-22T11:26:59.888Z",
-            "boostedAt": "2026-11-22T11:26:59.886Z",
-            "region": {
-              "name": "명지2동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 35.0856854,
-                "longitude": 128.9028156
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt900x3j-i5-7200u-8g-ij4pt5gois6i/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt900x3j-i5-7200u-8g-ij4pt5gois6i/",
-            "title": "삼성 노트북 NT900X3J i5-7200U 8G",
-            "content": "삼성 노트북 NT900X3J 실버 모델입니다.  1\nCPU 와 RAM을 확인후 구매해 주세요\n13.3인치 860g의 가벼운 노트북\n인텔 코어 i5-7200U CPU가 탑재되어 있어 빠르고 효율적인 작업이 가능해요. \n메모리 8G에 128G 입니다\n윈도우 11이 설치되어 있어 바로 사용하실 수 있습니다. 가볍고 슬림한 디자인으로 휴대하기 좋습니다. 깔끔한 실버 색상으로 어떤 환경에서도 잘 어울려요.\n베터리도 유튜브틀어 1시간 넘게 사용 가능합니다\nPD충전기와 사용 가능한 짹을 드립니다.\n테두리에 스크래치가좀 있어 저렴하게 올립니다",
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-i7-ssd-250gb-ram-8gb-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-jsfq1og5yv5h/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-i7-ssd-250gb-ram-8gb-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-jsfq1og5yv5h/",
+            "title": "삼성 노트북 i7 / SSD 250GB / RAM 8GB 판매합니다",
+            "content": "제품 사양\n\n* 모델 : 삼성 노트북 8 시리즈 (NT870Z5G 계열)\n* CPU : Intel Core i7-4710HQ\n* RAM : 8GB\n* SSD : Samsung 850 EVO 250GB\n* 그래픽 : Intel HD Graphics 4600\n* 운영체제 : Windows 8.1\n* 디스플레이 : 15.6인치\n* 색상 : 블랙\n\nSSD 장착되어 있어 기본적인 인터넷 사용이나 문서 작업 등 용도로 사용하기 좋습니다.\n\n배터리 상태 괜찮으며 충전기도 함께 드립니다.\n\n연식이 있는 제품으로 최신 고사양 게임이나 무거운 작업보다는 인터넷, 유튜브, 문서 작업 등 기본적인 용도로 추천드립니다.\n\n중고제품이므로 사용감은 있는거지만 얌전히 집에서만 사용했던겁니다.\n\n바로구매시 포장 빡세게해서 보내드립니다 걱정마세요",
             "price": "150000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/7ef25692-7a39-47ed-8ce6-81bd8eb43c35.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/1795351001776a4792b82c52b5cf42fd53eb68b2e9b5cc5e0d38c348d69b552985953a73fa0ab0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": true,
-            "createdAt": "2026-11-22T11:36:35.534Z",
-            "boostedAt": "2026-11-22T11:36:35.527Z",
+            "createdAt": "2026-11-22T12:45:58.506Z",
+            "boostedAt": "2026-11-22T12:45:58.504Z",
             "region": {
-              "name": "서초동"
+              "name": "삼교동"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 37.4888181,
-                "longitude": 127.0163544
+                "latitude": 37.2432619,
+                "longitude": 127.6434772
               }
             ]
           },
           {
-            "id": "/kr/buy-sell/asus-rog-strix-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%B8%94%EB%9E%99-y9p9a6q8phy2/",
-            "href": "/kr/buy-sell/asus-rog-strix-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%B8%94%EB%9E%99-y9p9a6q8phy2/",
-            "title": "ASUS ROG Strix 게이밍 노트북 블랙",
-            "content": "ASUS ROG Strix G G531GU-AL001 팝니다.\n\n■ 사양\n- CPU: 인텔 i7-9750H (6코어 12스레드)\n- GPU: 지포스 GTX 1660 Ti 6GB\n- RAM: 32GB (증설 완료)\n- SSD: 512GB NVMe\n- 화면: 15.6인치 FHD IPS 120Hz\n- 키보드: RGB 백라이트, 영문 자판\n  (한글 각인 없음)\n- 포트: USB-A 3개, USB-C, HDMI,\n  유선 LAN, 이어폰 단자\n\n■ 상태\n- 정상 작동합니다\n- 상판/하판 생활기스 조금 있어요\n  (사진 참고)\n- WASD 투명 키캡은 원래 ROG 디자인입니다\n- 윈도우 미설치 (OS 없음)\n\n■ 구성품\n- 노트북 본체\n- 정품 230W 어댑터 + 전원 케이블\n- 노트북 쿨링패드 (덤으로 드려요)\n\n■ 거래\n- 주말 또는 평일 저녁 8시 이후 가능\n- 네고 불가",
-            "price": "520000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/1795347093265126f419261b3d3a1abd2bb4f2c8ceb7bfc0dd594691119cc6e033dc2fd3f998b0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%816-nt760vjt-a72ar-%EC%9A%B8%ED%8A%B8%EB%9D%BC7-32gb-1tb-ssd-%EB%8B%A8%EC%88%9C%EA%B0%9C%EB%B4%89-q7fajsv9o2w9/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%816-nt760vjt-a72ar-%EC%9A%B8%ED%8A%B8%EB%9D%BC7-32gb-1tb-ssd-%EB%8B%A8%EC%88%9C%EA%B0%9C%EB%B4%89-q7fajsv9o2w9/",
+            "title": "삼성 갤럭시북6  NT760VJT-A72AR 울트라7, 32GB, 1TB SSD(단순개봉)",
+            "content": "지난주에 선물 받은 노트북입니다.\n\n컴퓨존에서 구매했고, 1TB SSD로 업그레이드 했습니다.\n\nhttps://m.compuzone.co.kr/product/product_detail.htm?ProductNo=1349958\n\n구매가격은 2,899,000원에 구매했습니다.\n\n패드종류로 다시구매하려고 하였으나,\n업그레이드된제품으로 반품이 안되어 내어 놓습니다.\n\n인텔 코어 울트라 7 프로세서와 32GB 램, 1TB SSD를 탑재한 고성능 노트북이에요. 무선 마우스와 윈도우 11 홈 소프트웨어가 함께 구성되어 있어요. 깔끔한 그레이 색상으로 세련된 느낌을 줘요. 업무나 학습용으로 활용하기 좋은 모델이에요.",
+            "price": "2500000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/1795350775900c5b4b1428ce5903e80306d30578db330cd165235f34c7d65f75254f05cbb99040.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": false,
-            "createdAt": "2026-11-22T11:34:39.677Z",
-            "boostedAt": "2026-11-22T11:34:39.673Z",
+            "createdAt": "2026-11-22T12:35:46.335Z",
+            "boostedAt": "2026-11-22T12:35:46.333Z",
             "region": {
-              "name": "사당제1동"
+              "name": "서초3동"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 37.4767268,
-                "longitude": 126.975687
+                "latitude": 37.4902347,
+                "longitude": 127.009202
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C-%EB%B6%815-%ED%94%84%EB%A1%9C-nt940xhz-a72ag-6qbfkebdqmz3/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C-%EB%B6%815-%ED%94%84%EB%A1%9C-nt940xhz-a72ag-6qbfkebdqmz3/",
+            "title": "삼성 갤럭시 북5 프로 NT940XHZ-A72AG",
+            "content": "삼성 갤럭시 북5 프로 NT940XHZ-A72AG 노트북이에요\n미개봉 새 상품\nAI노트북/35.6cm(14인치)/1.23kg/최대 21시간/OS미포함(프리도스)\n[화면]2880x1800(WQXGA+)/DCI-P3: 120%/120Hz\n[CPU]인텔/코어 울트라7(S2)/258V (4.8GHz)/47TOPS\n[그래픽]내장그래픽/Arc 140V/8core\n[구성]32GB/램 교체: 불가능/용량: 256GB/USB-PD/63Wh",
+            "price": "2200000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/6b75fe14-65f3-432d-a1f0-3a2ebcd37c43.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-11-06T12:52:48.541Z",
+            "boostedAt": "2026-11-22T12:33:27.308Z",
+            "region": {
+              "name": "신사동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 37.3880298,
+                "longitude": 127.0850885
+              },
+              {
+                "latitude": 37.5225103,
+                "longitude": 127.0283044
               }
             ]
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-11-22T11:26:59.888Z\",\"boostedAt\":\"2026-11-22T11:26:59.886Z\",\"region\":{\"name\":\"명지2동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-11-22T11:36:35.534Z\",\"boostedAt\":\"2026-11-22T11:36:35.527Z\",\"region\":{\"name\":\"서초동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-22T11:34:39.677Z\",\"boostedAt\":\"2026-11-22T11:34:39.673Z\",\"region\":{\"name\":\"사당제1동\"},\"category\":null,\"contentCo",
-          "createdAt\":\"2026-11-22T11:39:56.856Z\",\"boostedAt\":\"2026-11-22T11:39:56.853Z\",\"region\":{\"name\":\"상봉동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-22T12:07:01.443Z\",\"boostedAt\":\"2026-11-22T12:07:01.441Z\",\"region\":{\"name\":\"동탄5동\"},\"category\":null,\"contentCoo"
+          "createdAt\":\"2026-11-22T12:45:58.506Z\",\"boostedAt\":\"2026-11-22T12:45:58.504Z\",\"region\":{\"name\":\"삼교동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-11-22T12:35:46.335Z\",\"boostedAt\":\"2026-11-22T12:35:46.333Z\",\"region\":{\"name\":\"서초3동\"},\"category\":null,\"contentCoo",
+          "createdAt\":\"2026-11-06T12:52:48.541Z\",\"boostedAt\":\"2026-11-22T12:33:27.308Z\",\"region\":{\"name\":\"신사동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-11-15T03:08:15.487Z\",\"boostedAt\":\"2026-11-22T12:49:47.388Z\",\"region\":{\"name\":\"북삼읍\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-11-22T04:41:24.308Z\",\"boostedAt\":\"2026-11-22T04:41:24.308Z\",\"region\":{\"name\":\"삼성동\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":270,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 노트북 i5 / 지포스 940MX / 충전기 포함",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":270,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 노트북 i7 / SSD 250GB / RAM 8G",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -137,24 +143,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1101,
-    "globalUniqueListings": 284,
-    "duplicateListingsRemoved": 817,
-    "detailQueueStart": 29,
-    "freshDetailTasks": 29,
+    "searchUniqueListings": 1125,
+    "globalUniqueListings": 303,
+    "duplicateListingsRemoved": 822,
+    "detailQueueStart": 19,
+    "freshDetailTasks": 19,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 29,
-    "detailSucceeded": 29,
-    "detailFailed": 0,
-    "detail404": 0,
+    "detailRequestsExecuted": 19,
+    "detailSucceeded": 18,
+    "detailFailed": 1,
+    "detail404": 1,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 284,
+    "postedAtResolvedFromSearch": 303,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 114529,
+    "scanDurationMs": 103391,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +172,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 274,
-        "durationMs": 12591
+        "uniqueListings": 278,
+        "durationMs": 13281
       },
       {
         "city": "의왕시",
@@ -182,8 +188,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 276,
-        "durationMs": 25494
+        "uniqueListings": 293,
+        "durationMs": 25518
       },
       {
         "city": "안양시",
@@ -200,8 +206,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 281,
-        "durationMs": 35202
+        "uniqueListings": 283,
+        "durationMs": 35324
       },
       {
         "city": "과천시",
@@ -212,8 +218,8 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 270,
-        "durationMs": 6230
+        "uniqueListings": 271,
+        "durationMs": 6595
       }
     ],
     "finalCandidateCount": 0,
@@ -222,7 +228,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 114535
+    "durationMs": 103404
   },
   "candidates": []
 }
