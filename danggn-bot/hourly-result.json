@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-22T21:02:18.108Z",
+  "generatedAt": "2026-11-22T21:42:15.254Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,24 +55,50 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-15u340-%ED%8C%9D%EB%8B%88%EB%8B%A4-gujn81nt9h8f/",
-            "href": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-15u340-%ED%8C%9D%EB%8B%88%EB%8B%A4-gujn81nt9h8f/",
-            "title": "LG 노트북 15U340 팝니다",
-            "content": "\n\nLG 노트북 15U340-LX3FX   판매해요. \n\n인텔 셀러론 N3540 CPU, \n\n4GB RAM,\n\n 500GB SSD가 탑재되어 있어요. \n\n가볍고 휴대하기 좋은 노트북입니다.\n\n문서 작업이나 웹 서핑에 적합해요. \n\n깔끔한 디자인으로 어디서든 사용하기 좋아요.\n\n앞. 뒤. 케이스. 아주 깨끗 합니다....\n\n키보드는 약간 노란색상을 되어있음....사진참고\n\n크기가 15.4 인치 인데.   아주 가벼움\n\n\n노트북 본체와 전원 케이블 거래 입니다....",
-            "price": "100000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/ea748412-eb12-425c-9ba5-df4d25a09426.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-11%EC%84%B8%EB%8C%80-cpu-15%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-igzs5hae8u7s/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-11%EC%84%B8%EB%8C%80-cpu-15%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-igzs5hae8u7s/",
+            "title": "삼성 11세대 cpu 15인치 노트북 판매합니다",
+            "content": "삼성 11세대 cpu 15인치 노트북 판매합니다\n모델명, 제조년도, 사양 및 배터리 상태는 사진참고부탁드립니다 \n네고 문의는 답변하지 않습니다 \n판매 후 환불은 불가합니다",
+            "price": "320000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/9bdce47a-054a-4ec9-8563-3ca16b83b1f5.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-10-09T04:01:12.915Z",
-            "boostedAt": "2026-11-22T20:07:01.503Z",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-11-22T21:36:19.156Z",
+            "boostedAt": "2026-11-22T21:36:19.155Z",
             "region": {
-              "name": "금곡동"
+              "name": "삼성동"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 37.6339495,
-                "longitude": 127.1994175
+                "latitude": 37.5560227,
+                "longitude": 127.0886186
+              },
+              {
+                "latitude": 37.5082945,
+                "longitude": 127.0623928
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-4yu522zzb6e9/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-4yu522zzb6e9/",
+            "title": "삼성 노트북 화이트",
+            "content": "삼성 브랜드의 화이트 색상 노트북이에요. 깔끔한 디자인이 특징인 제품이에요. 2012년식이라 부팅과속도가 느리고\n부품용으로 사용추천드려요",
+            "price": "20000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/25e96a9c-6e68-4f65-8c09-bc242a9574d9.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-11-22T21:25:23.147Z",
+            "boostedAt": "2026-11-22T21:25:23.144Z",
+            "region": {
+              "name": "산동읍"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 36.1418059,
+                "longitude": 128.455759
               }
             ]
           },
@@ -97,39 +123,17 @@
                 "longitude": 127.0220724
               }
             ]
-          },
-          {
-            "id": "/kr/buy-sell/asus-15-6-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-%EC%A0%95%EC%83%81-%EC%9E%91%EB%8F%99-%EC%83%81%ED%83%9C-%EC%A2%8B%EC%9D%8C-e8jkb3978iwj/",
-            "href": "/kr/buy-sell/asus-15-6-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-%EC%A0%95%EC%83%81-%EC%9E%91%EB%8F%99-%EC%83%81%ED%83%9C-%EC%A2%8B%EC%9D%8C-e8jkb3978iwj/",
-            "title": "ASUS 15.6\" 노트북  [화이트] 정상 작동 /  상태 좋음",
-            "content": "ASUS 15.6\" 노트북 X541SA-DM174D [화이트]\n\n정말 좋은 노트북 판매해요!\n변색없고 작동 좋고, 사용감이 적습니다!\n\n제조사:\tASUS\n제품군\t: VivoBook Max\n출시:\t2016년 9월\nCPU:\tIntel Celeron N3060\n코어 / 스레드\t2코어 2스레드\n기본 / 최대 클럭\t1.6GHz / 2.48GHz\n그래픽:\tIntel HD Graphics 400\n메모리:\tDDR3L 4GB\n저장장치:\tSSD 128 GB\n화면: 15.6인치\n해상도:\tFHD 1920×1080\n배터리:\t36Wh\n무게:\t약 2kg\n운영체제:\t윈도우 10 홈 설치 최적화 . 정품 미인증 (기본 미포함)\n\n상태 : 사진첨부 모든 기능 정상작동 (액정,키패드,터치패드,힌지)\n상당히 깨끗합니다. 오염이나 찍힘 사용감이 거의 없습니다.\n특히 배터리가 연식에 비해 놀랄 정도로 양호 합니다.\n\n사진 보시면 아시겠지만 노트북 상태가 정말 좋습니다!\n\n중고지만 다른 저가 노트북 매물들 처럼 고장이나 제품하자 이런점이 따로 없습니다. 제품의 큰 메리트 입니다. 구매 즉시 바로 사용 가능해요.\n\n ☆☆ 배터리 리포트 첨부 : 90% 이상의 효율 \"정상\" ☆☆\n    ** 충전 사이클 : 총 64 회 **\n\n구성 : 노트북 , 호환 충전기 새제품 (사진에 있는 구성)\n\n추천용도 : 간단사무용, 유튜브, 카페 마실용, 재택근무 Zoom 정도\n\n♤ 파손면책 동의 및 환불 교환불가 동의시 바로구매 로 전국택배 가능 합니다. 뾱뾱이 가득 포장해서 튼튼하게 발송해 드릴께요.",
-            "price": "105000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/df4e3b36-719b-439a-8b81-638107b09013.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-11-20T15:23:17.092Z",
-            "boostedAt": "2026-11-22T20:40:29.153Z",
-            "region": {
-              "name": "역동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 37.402685,
-                "longitude": 127.252551
-              }
-            ]
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-10-09T04:01:12.915Z\",\"boostedAt\":\"2026-11-22T20:07:01.503Z\",\"region\":{\"name\":\"금곡동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-11-22T21:36:19.156Z\",\"boostedAt\":\"2026-11-22T21:36:19.155Z\",\"region\":{\"name\":\"삼성동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-11-22T21:25:23.147Z\",\"boostedAt\":\"2026-11-22T21:25:23.144Z\",\"region\":{\"name\":\"산동읍\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-11-22T19:43:18.196Z\",\"boostedAt\":\"2026-11-22T19:43:18.194Z\",\"region\":{\"name\":\"우면동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-20T15:23:17.092Z\",\"boostedAt\":\"2026-11-22T20:40:29.153Z\",\"region\":{\"name\":\"역동\"},\"category\":null,\"contentCoord",
-          "createdAt\":\"2026-11-22T20:40:57.855Z\",\"boostedAt\":\"2026-11-22T20:40:57.854Z\",\"region\":{\"name\":\"압구정동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-11-15T10:37:04.422Z\",\"boostedAt\":\"2026-11-22T20:14:05.409Z\",\"region\":{\"name\":\"삼학동\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-11-22T04:41:24.308Z\",\"boostedAt\":\"2026-11-22T04:41:24.308Z\",\"region\":{\"name\":\"삼성동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-10-09T04:01:12.915Z\",\"boostedAt\":\"2026-11-22T20:07:01.503Z\",\"region\":{\"name\":\"금곡동\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":276,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG 노트북 15U340 팝니다\",\"descriptio",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":276,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 11세대 cpu 15인치 노트북 판매합니다\",\"d",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -137,14 +141,14 @@
         ]
       }
     },
-    "searchUniqueListings": 1095,
+    "searchUniqueListings": 1092,
     "globalUniqueListings": 274,
-    "duplicateListingsRemoved": 821,
-    "detailQueueStart": 5,
-    "freshDetailTasks": 5,
+    "duplicateListingsRemoved": 818,
+    "detailQueueStart": 4,
+    "freshDetailTasks": 4,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 5,
-    "detailSucceeded": 5,
+    "detailRequestsExecuted": 4,
+    "detailSucceeded": 4,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
@@ -154,7 +158,7 @@
     "postedAtResolvedFromSearch": 274,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 85322,
+    "scanDurationMs": 84284,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +170,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 274,
-        "durationMs": 12362
+        "uniqueListings": 272,
+        "durationMs": 12411
       },
       {
         "city": "의왕시",
@@ -183,7 +187,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 274,
-        "durationMs": 25769
+        "durationMs": 25643
       },
       {
         "city": "안양시",
@@ -201,7 +205,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 274,
-        "durationMs": 35062
+        "durationMs": 35282
       },
       {
         "city": "과천시",
@@ -212,8 +216,8 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 273,
-        "durationMs": 6594
+        "uniqueListings": 272,
+        "durationMs": 6393
       }
     ],
     "finalCandidateCount": 0,
@@ -222,7 +226,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 85329
+    "durationMs": 84290
   },
   "candidates": []
 }
