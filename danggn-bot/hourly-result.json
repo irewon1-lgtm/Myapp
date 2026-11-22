@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-22T04:12:38.574Z",
+  "generatedAt": "2026-11-22T04:52:25.416Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,6 +55,54 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
+            "id": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-15-6%EC%9D%B8%EC%B9%98-peaqhk7pebek/",
+            "href": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-15-6%EC%9D%B8%EC%B9%98-peaqhk7pebek/",
+            "title": "LG 노트북 화이트 15.6인치",
+            "content": "엘지노트북 2대 정리합니다\n윈도우11프로 한컴오피스 설치되어 바로 사용하시면 됩니다\n\n1.LG 노트북 15U480 모델 15.6인치  화이트 색상 노트북이에요. CPU Intel Core i5-8250U 프로세서 램 8GB  저장 공간은  m.2 SSD256GB 에 추가로 HDD500GB 장착되어  넉넉하게 사용 가능해요. \n배터리는 방전이라 전원어댑터 꼽고 사용하시면 됩니다 윈도우11프로. 한컴오피스 설치되어 바로 사용하시면 됩니다(가격은 20만원 입니다)\n\n2. 2.엘지 15U370모델 15.6인치 입니다\nCPU 인텔7세대 N4200 램8기가 저장장치 SSD 128기가 이며 배터리 방전이라 전원어댑터 꼽고 사용하시면 됩니다  (가격은 15만원 입니다)",
+            "price": "150000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/17953221941467620c0e79e78d50e9911295f336eeb66cdb6092ac7ba4b75617c37883b7a31440.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-11-22T04:41:24.308Z",
+            "boostedAt": "2026-11-22T04:41:24.308Z",
+            "region": {
+              "name": "삼성동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 37.509019,
+                "longitude": 127.0637599
+              },
+              {
+                "latitude": 37.6030044,
+                "longitude": 127.1758748
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%95%84%EC%9D%B4%EB%94%94%EC%96%B4%ED%8C%A8%EB%93%9C-%EC%8A%AC%EB%A6%BC-3-%EC%8B%A4%EB%B2%84-19k5pc3695ha/",
+            "href": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%95%84%EC%9D%B4%EB%94%94%EC%96%B4%ED%8C%A8%EB%93%9C-%EC%8A%AC%EB%A6%BC-3-%EC%8B%A4%EB%B2%84-19k5pc3695ha/",
+            "title": "레노버 아이디어패드 슬림 3 실버",
+            "content": "AMD Ryzen 5 4500U 프로세서가 탑재된 레노버 노트북이에요. RAM 8GB와 238GB 저장 공간을 갖추고 있어요. 깔끔한 실버 색상으로 어디서나 잘 어울려요. 가벼운 사무용이나 학습용으로 활용하기 좋아요.\n\n사무용으로 쓰던거입니다. 사용감있습니다.",
+            "price": "180000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/def3148e-b99c-4e7c-ba56-5185988a4198.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-11-22T04:48:31.694Z",
+            "boostedAt": "2026-11-22T04:48:31.689Z",
+            "region": {
+              "name": "영등포본동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 37.5115831,
+                "longitude": 126.9106795
+              }
+            ]
+          },
+          {
             "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-7200u-%ED%99%94%EC%9D%B4%ED%8A%B8-6w2eratfuupz/",
             "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-7200u-%ED%99%94%EC%9D%B4%ED%8A%B8-6w2eratfuupz/",
             "title": "삼성 노트북 i5-7200U 화이트",
@@ -75,61 +123,17 @@
                 "longitude": 126.9712817
               }
             ]
-          },
-          {
-            "id": "/kr/buy-sell/lg-gram-13-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-8%EA%B8%B0%EA%B0%80%EC%98%88%EC%9A%94-s52o4qe3gya9/",
-            "href": "/kr/buy-sell/lg-gram-13-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-8%EA%B8%B0%EA%B0%80%EC%98%88%EC%9A%94-s52o4qe3gya9/",
-            "title": "LG gram 13 노트북 i5 8기가예요",
-            "content": "기본 구성품으로는 전원선+ 본체 있습니다\n상태는 좋은겁니다\n딸 아이가 혼자서 사용 하던거구요\n기본 부팅이 좀느리다고 하니 가져가셔서 손한번보시거나 하셔서 이용하시면합니다\n윈도우 새로다루실수 있으신분 아시는분께서 오시면합니다 \n잘아는게없어 물건은 싸게 넘겨드리네요\n직거래는 옥암푸르지오입니다",
-            "price": "140000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/18823fc3-3d8d-4be4-9ae3-57b2a739f76a.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-11-22T04:01:01.291Z",
-            "boostedAt": "2026-11-22T04:01:01.290Z",
-            "region": {
-              "name": "옥암동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 34.8105772,
-                "longitude": 126.4476151
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/%EB%85%B8%ED%8A%B8%EB%B6%81-lg-%EC%82%AC%EB%AC%B4%EC%9A%A9-%EC%9D%B8%EA%B0%95%EC%9A%A9-%EB%85%B8%ED%8A%B8%EB%B6%81-s5129snuecgm/",
-            "href": "/kr/buy-sell/%EB%85%B8%ED%8A%B8%EB%B6%81-lg-%EC%82%AC%EB%AC%B4%EC%9A%A9-%EC%9D%B8%EA%B0%95%EC%9A%A9-%EB%85%B8%ED%8A%B8%EB%B6%81-s5129snuecgm/",
-            "title": "노트북 LG 사무용 인강용 노트북",
-            "content": "LG 사무용 인강용 웹서핑용으로 좋은 노트북\n15.6인치 화면입니다\n윈도우 11 이구요 한글과 오피스 설치되있어요\n초기화 해놔서 바로 사용하심 되세요\n마지막 사진 액정 모서리 플라스틱 베젤에\n크랙 한줄 있어요 작동과 상관없습니다 잘되요\n배터리는 1시간정도 되서요  오래쓰실려면\n충전기 꼽고 쓰셔요\ni3-4005U,  8G \n삼성정품 SSD 120G\nHD Graphics Family\n\n",
-            "price": "150000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/3c2feb21-9eb6-4dd5-b0c0-872727589818.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-11-20T03:23:18.318Z",
-            "boostedAt": "2026-11-22T03:49:49.881Z",
-            "region": {
-              "name": "월피동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 37.3340585,
-                "longitude": 126.8464555
-              }
-            ]
           }
         ],
         "dateFieldSnippets": [
+          "createdAt\":\"2026-11-22T04:41:24.308Z\",\"boostedAt\":\"2026-11-22T04:41:24.308Z\",\"region\":{\"name\":\"삼성동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-11-22T04:48:31.694Z\",\"boostedAt\":\"2026-11-22T04:48:31.689Z\",\"region\":{\"name\":\"영등포본동\"},\"category\":null,\"contentCo",
           "createdAt\":\"2026-11-17T06:21:19.362Z\",\"boostedAt\":\"2026-11-22T03:25:37.928Z\",\"region\":{\"name\":\"사당제4동\"},\"category\":null,\"contentCo",
-          "createdAt\":\"2026-11-22T04:01:01.291Z\",\"boostedAt\":\"2026-11-22T04:01:01.290Z\",\"region\":{\"name\":\"옥암동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-20T03:23:18.318Z\",\"boostedAt\":\"2026-11-22T03:49:49.881Z\",\"region\":{\"name\":\"월피동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-06T09:11:26.519Z\",\"boostedAt\":\"2026-11-22T03:21:32.776Z\",\"region\":{\"name\":\"논현동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-22T04:10:11.813Z\",\"boostedAt\":\"2026-11-22T04:10:11.813Z\",\"region\":{\"name\":\"양재동\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-11-20T03:27:09.902Z\",\"boostedAt\":\"2026-11-22T04:16:43.982Z\",\"region\":{\"name\":\"서초1동\"},\"category\":null,\"contentCoo",
+          "createdAt\":\"2026-11-22T04:39:21.450Z\",\"boostedAt\":\"2026-11-22T04:39:21.447Z\",\"region\":{\"name\":\"원성동\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":276,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 노트북 i5-7200U 화이트\",\"descript",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":273,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG 노트북 화이트 15.6인치\",\"descriptio",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -137,24 +141,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1163,
-    "globalUniqueListings": 339,
-    "duplicateListingsRemoved": 824,
-    "detailQueueStart": 23,
-    "freshDetailTasks": 23,
+    "searchUniqueListings": 1131,
+    "globalUniqueListings": 311,
+    "duplicateListingsRemoved": 820,
+    "detailQueueStart": 13,
+    "freshDetailTasks": 13,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 23,
-    "detailSucceeded": 23,
+    "detailRequestsExecuted": 13,
+    "detailSucceeded": 13,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 339,
+    "postedAtResolvedFromSearch": 311,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 106305,
+    "scanDurationMs": 96146,
     "cities": [
       {
         "city": "군포시",
@@ -166,8 +170,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 277,
-        "durationMs": 12247
+        "uniqueListings": 281,
+        "durationMs": 12271
       },
       {
         "city": "의왕시",
@@ -182,8 +186,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 298,
-        "durationMs": 25317
+        "uniqueListings": 301,
+        "durationMs": 25934
       },
       {
         "city": "안양시",
@@ -200,8 +204,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 317,
-        "durationMs": 35122
+        "uniqueListings": 278,
+        "durationMs": 35235
       },
       {
         "city": "과천시",
@@ -213,7 +217,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 271,
-        "durationMs": 6359
+        "durationMs": 7168
       }
     ],
     "finalCandidateCount": 0,
@@ -222,7 +226,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 106310
+    "durationMs": 96152
   },
   "candidates": []
 }
