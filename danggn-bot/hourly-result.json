@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-23T06:12:42.961Z",
+  "generatedAt": "2026-11-23T06:52:28.544Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -16,9 +16,7 @@
   "health": {
     "status": "ok",
     "stateCommitted": true,
-    "warnings": [
-      "안양시: detail failed fuysqskep3rx: Error: HTTP 404 Not Found"
-    ]
+    "warnings": []
   },
   "rules": {
     "newnessField": "postedAt",
@@ -57,89 +55,93 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-15ub470-%ED%99%94%EC%9D%B4%ED%8A%B8-64q1gp1mgx2j/",
-            "href": "/kr/buy-sell/lg-%EB%85%B8%ED%8A%B8%EB%B6%81-15ub470-%ED%99%94%EC%9D%B4%ED%8A%B8-64q1gp1mgx2j/",
-            "title": "LG 노트북 15UB470 화이트",
-            "content": "cpu. i7-6500\n램 DDr4-8gG\nnvme 120GB\nHDD 1TB \n그래픽은 내장이에요 \n윈도우포멧후 10설치 한글 엑셀 설치해놨어요\n밧데리용량은 측정해보니  37% 남아있네요\n색상은 하얀색인데 색상이 누렇게 변했어요\n와이파이만 가능하고 마우스 패드눌르면 약간뻑뻑하고 소리가 조금나요 \n사용하시는댄 지장없어요\n구성품은 밧데리충전기만 있어요 \n안좋은 부분이있으니 싸게 올려봅니다\n중고특성상 반품은 안되오니 신중한구매 부탁합니다\n\n",
+            "id": "/kr/buy-sell/asus-rog-%EC%A0%9C%ED%94%BC%EB%9F%AC%EC%8A%A4-g14-4080-165hz-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-cbh6psqfryfi/",
+            "href": "/kr/buy-sell/asus-rog-%EC%A0%9C%ED%94%BC%EB%9F%AC%EC%8A%A4-g14-4080-165hz-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-cbh6psqfryfi/",
+            "title": "ASUS ROG 제피러스 G14 4080 165hz 게이밍 노트북 판매합니다.",
+            "content": "ASUS ROG 제피러스 G14 RTX 4080 게이밍 노트북 판매합니다.\n\n2024년 1월 구매했습니다.\n\n[제품 사양]\n* 모델명: ASUS ROG Zephyrus G14 GA402XZ\n* CPU: AMD Ryzen 9 7940HS (8코어 16스레드)\n* GPU: NVIDIA RTX 4080 Laptop GPU 12GB\n* SSD: 삼성 NVMe 1TB\n* RAM: DDR5 24GB(옵션 추가)\n* 디스플레이: 165hz QHD(2560 × 1600)\n* 무게: 약 1.65kg\n* 윈도우 11 정품\n* AniMe Matrix 외관 LED(옵션 추가, 6번째 사진)-애니메이션이나 사진 띄울 수 있음\n\n14인치에 약 1.65kg으로 고성능 게이밍 노트북임에도 휴대성이 좋습니다.\n\n주로 작업용으로 사용했으며, 포르자6, 사펑 2077, 레데리2 고사양 게임도 높은 옵션으로 잘 돌아갑니다.\n\n대부분 거치해 두고 사용하여 전반적인 외관 상태는 깔끔합니다.\n\n[제품 상태 및 참고 사항]\n* 외관 일부에 찍힘이 있습니다. 사진 참고 부탁드립니다.\n* 간헐적으로 부팅시 잠깐 키보드 인식이 지연되는 현상이 있습니다. 그러고 바로 정상으로 돌아옵니다.\n* 위 사항들을 감안하여 가격을 낮게 책정했습니다.\n\nCPU, GPU, RAM, SSD 등 상세 사양과 외관 사진 첨부했습니다.\n정품 충전기와 파우치 같이 드립니다.\n초기화 완료하여 바로 사용하시면 됩니다.\n\n쿨거래 시 네고 가능합니다.\n\n직거래 장소: 숭실대학교",
+            "price": "2500000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/17950894295530677c3dc56d4979796582ce623d599b06b0fba302e6e5efda880b6f239faeaa20.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-11-19T12:05:33.519Z",
+            "boostedAt": "2026-11-23T06:31:03.280Z",
+            "region": {
+              "name": "역삼동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 37.494105,
+                "longitude": 126.9543675
+              },
+              {
+                "latitude": 37.5020995,
+                "longitude": 127.0362969
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%81-15%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-akvcvpzpkfwe/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%81-15%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-akvcvpzpkfwe/",
+            "title": "삼성 갤럭시북 15인치 노트북 판매합니다",
+            "content": "삼성 갤럭시북 15인치 노트북 판매합니다\n\ncpu: intel Core i5-12세대\nram: 16gb ddr4\nssd: 512gb nvme\nos: windows 11 pro 정품\n기타: 좌측상단 액정스크래치 (9번째사진참고)\n구성: 노트북본체, c타입 대용량 충전기\n\n구매한지 3년 되었습니다.\n특정게임가능문의나 네고문의는 답변하지 않습니다.",
+            "price": "500000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/02401857-61f4-487b-bedf-3758c6144d38.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-11-23T06:44:50.823Z",
+            "boostedAt": "2026-11-23T06:44:50.822Z",
+            "region": {
+              "name": "서초동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 37.613928,
+                "longitude": 127.1607658
+              },
+              {
+                "latitude": 37.4878865,
+                "longitude": 127.0146354
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-a1286-ry5gzst3t8gb/",
+            "href": "/kr/buy-sell/%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-a1286-ry5gzst3t8gb/",
+            "title": "맥북 프로 A1286",
+            "content": "애플 맥북 프로 15인치 모델이에요. 인텔 코어 i7 프로세서와 16GB 메모리를 탑재하고 있어요. \nssd 256기가 저장장치,\n충전 어댑터와 케이블이 함께 구성되어 있어요. 가벼운 작업이나 영상 시청용으로 활용하기 좋아요.\n초기화후 os와 파이어폭스만 설치했고\n그저께 배터리 교체했습니다.",
             "price": "100000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/8a64d77c-e6b6-4df5-9c9b-d9b4878d02cd.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/179541588645058b7baa1653ffb4246005503631d339120268bcf53c2e45d65e9e3a963abb0160.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": true,
-            "createdAt": "2026-11-23T05:59:59.063Z",
-            "boostedAt": "2026-11-23T05:59:59.060Z",
+            "createdAt": "2026-11-23T06:43:06.733Z",
+            "boostedAt": "2026-11-23T06:43:06.733Z",
             "region": {
-              "name": "농성1동"
+              "name": "입북동"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 35.1565333,
-                "longitude": 126.8881329
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/%EC%95%A0%ED%94%8C-%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-2017-13%EC%9D%B8%EC%B9%98-%EC%8B%A4%EB%B2%84-256g-iigxasibjxjk/",
-            "href": "/kr/buy-sell/%EC%95%A0%ED%94%8C-%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-2017-13%EC%9D%B8%EC%B9%98-%EC%8B%A4%EB%B2%84-256g-iigxasibjxjk/",
-            "title": "애플 맥북 프로 2017 13인치 실버 256G",
-            "content": "사진에 보이는거처럼 기스가 조금 있습니다.\n배터리 소모가 빠른 편이라 충전기를 연결해서 사용하셔야 합니다. 다만 충전기를 연결한 상태에서는 정상적으로 작동하며 사용에 문제 없습니다.\n충전기도 함께 드립니다!\n배터리 상태를 제외한 사용에는 큰 문제가 없으며, 해당 부분 감안해서 판매합니다.\n구매 전 충분히 확인해 보시고 편하게 연락 주세요 :)",
-            "price": "280000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/1795413331557e535723340e1c8fc97f4679855aaf1155efa3fcf8ab7e9320fc4072f3069c7f00.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": false,
-            "createdAt": "2026-11-23T06:03:00.559Z",
-            "boostedAt": "2026-11-23T06:03:00.558Z",
-            "region": {
-              "name": "논현동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 37.6528599,
-                "longitude": 126.9003469
+                "latitude": 37.2959985,
+                "longitude": 126.9598397
               },
               {
-                "latitude": 37.519999,
-                "longitude": 127.0350852
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/%EC%95%A0%ED%94%8C-%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-%EC%8A%A4%ED%8E%98%EC%9D%B4%EC%8A%A4-%EA%B7%B8%EB%A0%88%EC%9D%B4-m4-24-mb-512-gb-t2ogqabaf2ye/",
-            "href": "/kr/buy-sell/%EC%95%A0%ED%94%8C-%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-%EC%8A%A4%ED%8E%98%EC%9D%B4%EC%8A%A4-%EA%B7%B8%EB%A0%88%EC%9D%B4-m4-24-mb-512-gb-t2ogqabaf2ye/",
-            "title": "애플 맥북 프로 스페이스 그레이 m4 24 mb 512 gb",
-            "content": "깔끔한 디자인의 맥북 프로예요. 스페이스 그레이 색상이며 레드 컬러의 노트북 파우치가 함께 구성되어 있어요.  디자인 영상 ai 작업이나 학습용으로 활용하기 좋아요.",
-            "price": "260",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/1795413814869b8bfeda7c5e4fed41c14305ef120ad566c5e42f4bcbd5d5e95a92aa6df09373a0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": false,
-            "createdAt": "2026-11-23T06:04:54.299Z",
-            "boostedAt": "2026-11-23T06:04:54.298Z",
-            "region": {
-              "name": "서초3동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 37.4893853,
-                "longitude": 126.9941617
-              },
-              {
-                "latitude": 37.4893853,
-                "longitude": 126.9941617
+                "latitude": 37.2741532,
+                "longitude": 127.0488027
               }
             ]
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-11-23T05:59:59.063Z\",\"boostedAt\":\"2026-11-23T05:59:59.060Z\",\"region\":{\"name\":\"농성1동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-11-23T06:03:00.559Z\",\"boostedAt\":\"2026-11-23T06:03:00.558Z\",\"region\":{\"name\":\"논현동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-23T06:04:54.299Z\",\"boostedAt\":\"2026-11-23T06:04:54.298Z\",\"region\":{\"name\":\"서초3동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-11-23T06:06:57.839Z\",\"boostedAt\":\"2026-11-23T06:06:57.838Z\",\"region\":{\"name\":\"향동동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-10-13T13:19:07.334Z\",\"boostedAt\":\"2026-11-23T05:37:37.760Z\",\"region\":{\"name\":\"석적읍\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-11-19T12:05:33.519Z\",\"boostedAt\":\"2026-11-23T06:31:03.280Z\",\"region\":{\"name\":\"역삼동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-11-23T06:44:50.823Z\",\"boostedAt\":\"2026-11-23T06:44:50.822Z\",\"region\":{\"name\":\"서초동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-11-23T06:43:06.733Z\",\"boostedAt\":\"2026-11-23T06:43:06.733Z\",\"region\":{\"name\":\"입북동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-11-05T10:45:49.473Z\",\"boostedAt\":\"2026-11-23T06:48:45.277Z\",\"region\":{\"name\":\"거제동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-09-04T05:20:22.694Z\",\"boostedAt\":\"2026-11-23T06:14:23.991Z\",\"region\":{\"name\":\"반포본동\"},\"category\":null,\"contentCoo"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":278,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG 노트북 15UB470 화이트\",\"descripti",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":277,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"ASUS ROG 제피러스 G14 4080 165hz 게",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -147,16 +149,16 @@
         ]
       }
     },
-    "searchUniqueListings": 1090,
+    "searchUniqueListings": 1095,
     "globalUniqueListings": 277,
-    "duplicateListingsRemoved": 813,
-    "detailQueueStart": 26,
-    "freshDetailTasks": 26,
+    "duplicateListingsRemoved": 818,
+    "detailQueueStart": 14,
+    "freshDetailTasks": 14,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 26,
-    "detailSucceeded": 25,
-    "detailFailed": 1,
-    "detail404": 1,
+    "detailRequestsExecuted": 14,
+    "detailSucceeded": 14,
+    "detailFailed": 0,
+    "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
@@ -164,7 +166,7 @@
     "postedAtResolvedFromSearch": 277,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 110095,
+    "scanDurationMs": 97521,
     "cities": [
       {
         "city": "군포시",
@@ -176,8 +178,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 272,
-        "durationMs": 12250
+        "uniqueListings": 273,
+        "durationMs": 13112
       },
       {
         "city": "의왕시",
@@ -192,8 +194,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 273,
-        "durationMs": 25469
+        "uniqueListings": 276,
+        "durationMs": 25644
       },
       {
         "city": "안양시",
@@ -211,7 +213,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 275,
-        "durationMs": 35022
+        "durationMs": 35360
       },
       {
         "city": "과천시",
@@ -222,8 +224,8 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 270,
-        "durationMs": 6405
+        "uniqueListings": 271,
+        "durationMs": 6830
       }
     ],
     "finalCandidateCount": 0,
@@ -232,7 +234,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 110100
+    "durationMs": 97527
   },
   "candidates": []
 }
