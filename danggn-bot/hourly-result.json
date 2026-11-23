@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-23T12:02:26.929Z",
+  "generatedAt": "2026-11-23T12:14:39.734Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,85 +55,89 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/asus-s300ca-i7-%EC%82%BC%EC%84%B1ssd256-%EB%85%B8%ED%8A%B8%EB%B6%81%ED%8C%9D%EB%8B%88%EB%8B%A4-6qv7sshgzkgg/",
-            "href": "/kr/buy-sell/asus-s300ca-i7-%EC%82%BC%EC%84%B1ssd256-%EB%85%B8%ED%8A%B8%EB%B6%81%ED%8C%9D%EB%8B%88%EB%8B%A4-6qv7sshgzkgg/",
-            "title": "ASUS S300CA i7 삼성SSD256 노트북팝니다.",
-            "content": "Intel Core i7 프로세서와 13.3인치 터치스크린을 탑재한 ASUS 노트북이에요.\n삼성 SSD 256GB가 장착되어 있어 빠른 속도로 사용 가능해요.\n사진 필히 보시고 가격제시해주세요. \n연식이 있으니 베터리는 기대하지마세요.",
-            "price": "120000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/a6b8b2b4-26c9-4a62-97d1-01f876c5de86.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt550xcr-%EC%8B%A4%EB%B2%84-23i4hqvj53vd/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt550xcr-%EC%8B%A4%EB%B2%84-23i4hqvj53vd/",
+            "title": "삼성 노트북 NT550XCR 실버",
+            "content": "인텔 CPU5205u와DDR4 4GB 램을 탑재한 삼성 노트북이에요.\n120GB SSD 저장 공간을 갖추고 있어요.\n키보드 보호용 스킨이 함께 포함되어 있어요.\n가벼운 사무용이나 학습용으로 활용하기 좋아요.",
+            "price": "100000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/ea404b06-702e-4ea2-875b-d1007fd02e0d.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": true,
-            "createdAt": "2026-11-23T11:54:10.216Z",
-            "boostedAt": "2026-11-23T11:54:10.215Z",
+            "createdAt": "2026-11-23T12:10:27.389Z",
+            "boostedAt": "2026-11-23T12:10:27.389Z",
             "region": {
-              "name": "동패동"
+              "name": "덕암동"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 37.7118478,
-                "longitude": 126.7131392
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-92ya4jbf2wae/",
-            "href": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-92ya4jbf2wae/",
-            "title": "LG 그램",
-            "content": "화이트 LG 그램 노트북이에요.\n일상적인 용도로 사용하기 좋아요.\n14인치 가볍고 작은 무게로 휴대하며 사용하기에 적합해요.\n가벼운 업무나 학습용으로 활용하기 좋은 제품이에요.\n\nS급 상태는 아니나 \n금가거나 깨진곳 기스난곳 없고 \n액정 키보드 외관 \n보존상태 좋으며 \n배터리상태 양호합니다 \n기본적인 거의 대부분의 프로그램 실행되며\n방열기능도 좋습니다 \n\n5세대 인텔\nSSD 180\nRAM 8 기가 \n충전기포함\n\n\n",
-            "price": "180000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/918887850654eb168fad704172238a1aa5a7f88ad3c00408ba2b62c1508531c4_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-11-23T11:57:41.611Z",
-            "boostedAt": "2026-11-23T11:57:41.609Z",
-            "region": {
-              "name": "연건동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 37.5777885,
-                "longitude": 126.9997566
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/%EB%8D%B8-%EC%9D%B8%EC%8A%A4%ED%94%BC%EB%A1%A0-7501-%EC%8B%A4%EB%B2%84-%EB%85%B8%ED%8A%B8%EB%B6%81-wisu6b6mpush/",
-            "href": "/kr/buy-sell/%EB%8D%B8-%EC%9D%B8%EC%8A%A4%ED%94%BC%EB%A1%A0-7501-%EC%8B%A4%EB%B2%84-%EB%85%B8%ED%8A%B8%EB%B6%81-wisu6b6mpush/",
-            "title": "델 인스피론 7501 실버 노트북",
-            "content": "집에서 가끔 쓰기만해서\n전반적으로 매우 깨끗하고 상태좋아요\n\n초기화 다 시켜놨습니다\n노트북 가방이랑 같이 드려요",
-            "price": "500000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/179543422375280613d3dacbd1300ee5262a729fd15913015e1dbe53d1b0576942e203b06b7bd0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": false,
-            "createdAt": "2026-11-23T11:44:54.894Z",
-            "boostedAt": "2026-11-23T11:44:54.894Z",
-            "region": {
-              "name": "방배동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 37.4950528,
-                "longitude": 126.9544503
+                "latitude": 36.4428236,
+                "longitude": 127.4251505
               },
               {
-                "latitude": 37.4825942,
-                "longitude": 126.9918971
+                "latitude": 36.4308231,
+                "longitude": 127.3870268
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/hp-%EB%85%B8%ED%8A%B8%EB%B6%81-z7n6stwgn6vv/",
+            "href": "/kr/buy-sell/hp-%EB%85%B8%ED%8A%B8%EB%B6%81-z7n6stwgn6vv/",
+            "title": "HP 노트북",
+            "content": "HP 노트북 팔아요.\n모델명은 15-ay093TU 입니다.\n정상 작동 합니다.\n충전기 있습니다.\n초기화 했습니다.\n사양 및 하자사항은 아랫글 참고 부탁드립니다.\n\n사양\n\nCPU: N3060\nRAM: DDR3 4GB (교체슬롯 있음)\nSSD 128GB (m.2 sata 교체 슬롯 있음)\n윈도우 10 PRO 정품인증 완료\n\n하자사항\n\n1. 뒷판과 옆판에 께짐 있습니다.\n실사용에는 불편함 없습니다.\n(2, 3번 사진 참고)\n2. 배터리가 죽어서 충전기 꼽고 사용하셔야 합니다.\n\n반품 및 내고 안됩니다.",
+            "price": "45000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/fd86129f-b632-48ea-b851-248a3b51b3d6.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-11-14T09:30:17.755Z",
+            "boostedAt": "2026-11-23T11:55:58.858Z",
+            "region": {
+              "name": "진례면"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 35.2088491,
+                "longitude": 129.074243
+              },
+              {
+                "latitude": 35.2627502,
+                "longitude": 128.7503283
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C-m4%EC%B9%A9-16gb-512gb-14%EC%9D%B8%EC%B9%98-zzg7co2odpxy/",
+            "href": "/kr/buy-sell/%EB%A7%A5%EB%B6%81%ED%94%84%EB%A1%9C-m4%EC%B9%A9-16gb-512gb-14%EC%9D%B8%EC%B9%98-zzg7co2odpxy/",
+            "title": "맥북프로 m4칩 16gb 512gb 14인치",
+            "content": "맥북 프로 M4 14인치 16GB / 512GB 판매합니다\n\n맥북 프로 M4 모델 판매합니다.\n\n[제품 스펙]\n\n모델: MacBook Pro M4\n\n칩셋: Apple M4\n\n메모리: 16GB\n\n저장 공간: SSD 512GB\n\n배터리 성능 최대치: 90%\n\n외관: 약간의 기스가 존재해서 사진 요청하시면 보내드리겠습니다.\n\n[제품 상태 및 구성품]\n\n초기화 완료 (바로 사용 가능)\n\n정상 작동 확인\n\n노트북 파우치\n\n정품 충전기 (충전케이블 미포함)\n\n구매 당시 박스는 버렸습니다(죄송합니다 ㅠㅠ)\n\n쿠팡 구매 내역(채팅으로 요청시 보내드리겠습니다)\n\n[판매 사유]\n\n새로운 기기로 교체하게 되어 판매합니다.\n\n개인적으로 이 맥북으로 정말 열심히 공부하고 취업 준비해서 취뽀까지 성공했습니다. ㅎㅎ\n\n좋은 기운도 함께 담아 보내드리겠습니다!\n\n구매하시는 분도 이 맥북으로 열공하셔서 원하시는 목표 꼭 이루셨으면 좋겠습니다.\n\n직거래로만 판매합니다! 가격 네고 가능합니다. 감사합니다",
+            "price": "1700000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/1795435099267f4eaba447a0cad89c9c597db0dfe5b3a40393d41129cd10261d6c7a7ec1004660.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-11-23T12:06:29.586Z",
+            "boostedAt": "2026-11-23T12:06:29.583Z",
+            "region": {
+              "name": "역삼1동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 37.4973565,
+                "longitude": 127.0318879
               }
             ]
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-11-23T11:54:10.216Z\",\"boostedAt\":\"2026-11-23T11:54:10.215Z\",\"region\":{\"name\":\"동패동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-23T11:57:41.611Z\",\"boostedAt\":\"2026-11-23T11:57:41.609Z\",\"region\":{\"name\":\"연건동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-23T11:44:54.894Z\",\"boostedAt\":\"2026-11-23T11:44:54.894Z\",\"region\":{\"name\":\"방배동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-10-25T06:27:50.691Z\",\"boostedAt\":\"2026-11-23T11:52:40.989Z\",\"region\":{\"name\":\"서초동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-18T22:57:41.045Z\",\"boostedAt\":\"2026-11-23T11:53:53.073Z\",\"region\":{\"name\":\"정왕2동\"},\"category\":null,\"contentCoo"
+          "createdAt\":\"2026-11-23T12:10:27.389Z\",\"boostedAt\":\"2026-11-23T12:10:27.389Z\",\"region\":{\"name\":\"덕암동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-11-14T09:30:17.755Z\",\"boostedAt\":\"2026-11-23T11:55:58.858Z\",\"region\":{\"name\":\"진례면\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-11-23T12:06:29.586Z\",\"boostedAt\":\"2026-11-23T12:06:29.583Z\",\"region\":{\"name\":\"역삼1동\"},\"category\":null,\"contentCoo",
+          "createdAt\":\"2026-05-27T08:53:55.410Z\",\"boostedAt\":\"2026-11-23T12:07:49.495Z\",\"region\":{\"name\":\"사당제2동\"},\"category\":null,\"contentCo",
+          "createdAt\":\"2026-10-05T10:07:59.114Z\",\"boostedAt\":\"2026-11-23T11:23:51.798Z\",\"region\":{\"name\":\"구미1동\"},\"category\":null,\"contentCoo"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":277,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"ASUS S300CA i7 삼성SSD256 노트북팝니다",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":278,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 노트북 NT550XCR 실버\",\"descripti",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -141,24 +145,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1088,
-    "globalUniqueListings": 277,
-    "duplicateListingsRemoved": 811,
-    "detailQueueStart": 12,
-    "freshDetailTasks": 12,
+    "searchUniqueListings": 1086,
+    "globalUniqueListings": 279,
+    "duplicateListingsRemoved": 807,
+    "detailQueueStart": 8,
+    "freshDetailTasks": 8,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 12,
-    "detailSucceeded": 12,
+    "detailRequestsExecuted": 8,
+    "detailSucceeded": 8,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 277,
+    "postedAtResolvedFromSearch": 279,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 94174,
+    "scanDurationMs": 90403,
     "cities": [
       {
         "city": "군포시",
@@ -171,7 +175,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 270,
-        "durationMs": 12981
+        "durationMs": 12736
       },
       {
         "city": "의왕시",
@@ -186,8 +190,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 274,
-        "durationMs": 25719
+        "uniqueListings": 277,
+        "durationMs": 25744
       },
       {
         "city": "안양시",
@@ -204,8 +208,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 277,
-        "durationMs": 34965
+        "uniqueListings": 273,
+        "durationMs": 35659
       },
       {
         "city": "과천시",
@@ -216,8 +220,8 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 267,
-        "durationMs": 6408
+        "uniqueListings": 266,
+        "durationMs": 7064
       }
     ],
     "finalCandidateCount": 0,
@@ -226,7 +230,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 94180
+    "durationMs": 90408
   },
   "candidates": []
 }
