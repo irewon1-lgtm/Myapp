@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-24T20:11:45.679Z",
+  "generatedAt": "2026-11-24T20:24:12.337Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -129,7 +129,7 @@
           "createdAt\":\"2026-11-07T03:42:07.329Z\",\"boostedAt\":\"2026-11-24T14:39:50.111Z\",\"region\":{\"name\":\"역삼2동\"},\"category\":null,\"contentCoo"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":269,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 노트북\",\"description\":\"3달전에 당근",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":270,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 노트북\",\"description\":\"3달전에 당근",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -137,8 +137,8 @@
         ]
       }
     },
-    "searchUniqueListings": 1113,
-    "globalUniqueListings": 279,
+    "searchUniqueListings": 1115,
+    "globalUniqueListings": 281,
     "duplicateListingsRemoved": 834,
     "detailQueueStart": 0,
     "freshDetailTasks": 0,
@@ -151,10 +151,10 @@
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 279,
+    "postedAtResolvedFromSearch": 281,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 79551,
+    "scanDurationMs": 78993,
     "cities": [
       {
         "city": "군포시",
@@ -167,7 +167,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 278,
-        "durationMs": 12476
+        "durationMs": 12298
       },
       {
         "city": "의왕시",
@@ -182,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 278,
-        "durationMs": 25471
+        "uniqueListings": 279,
+        "durationMs": 25392
       },
       {
         "city": "안양시",
@@ -200,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 279,
-        "durationMs": 35095
+        "uniqueListings": 280,
+        "durationMs": 34897
       },
       {
         "city": "과천시",
@@ -213,7 +213,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 278,
-        "durationMs": 6258
+        "durationMs": 6173
       }
     ],
     "finalCandidateCount": 0,
@@ -222,7 +222,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 79558
+    "durationMs": 79000
   },
   "candidates": []
 }
