@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-24T18:17:35.322Z",
+  "generatedAt": "2026-11-24T18:51:47.468Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,6 +55,28 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
+            "id": "/kr/buy-sell/tg-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%9C%EB%8B%88%EB%8B%A4-zbjw478c9faw/",
+            "href": "/kr/buy-sell/tg-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%9C%EB%8B%88%EB%8B%A4-zbjw478c9faw/",
+            "title": "TG 노트북 팜니다",
+            "content": "TH 노트북 64g 팝니다 ",
+            "price": "130000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/4a7d1eb5-54e7-4303-b9dd-8b660de1a7f8.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-11-04T01:16:57.982Z",
+            "boostedAt": "2026-11-24T18:27:41.671Z",
+            "region": {
+              "name": "백석읍"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 37.7886018,
+                "longitude": 126.9916929
+              }
+            ]
+          },
+          {
             "id": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%94%BD%ED%81%AC%ED%8C%A8%EB%93%9C-%EB%B8%94%EB%9E%99-%EB%85%B8%ED%8A%B8%EB%B6%81-1zfmiednuma1/",
             "href": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%94%BD%ED%81%AC%ED%8C%A8%EB%93%9C-%EB%B8%94%EB%9E%99-%EB%85%B8%ED%8A%B8%EB%B6%81-1zfmiednuma1/",
             "title": "레노버 씽크패드 블랙 노트북",
@@ -77,63 +99,37 @@
             ]
           },
           {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-celeron-4gb-ram-iqaewvcc7poy/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-celeron-4gb-ram-iqaewvcc7poy/",
-            "title": "삼성 노트북 화이트 Celeron 4GB RAM",
-            "content": "삼성 노트북 화이트 색상이에요. 인텔 셀러론 3855U 프로세서와 4GB 램이 탑재되어 있어요. 터치 스크린 기능이 포함된 모델이에요. 가벼운 웹 서핑이나 문서 작업용으로 적합해요.\n\n10년된 컴퓨터 입니다. \n조금 느리지만 영상보고 웹서핑 워드작성 정도하면 괜찮습니다. 가방까지 포함 해드려요.",
-            "price": "100000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/1795537380296a583edc017917ea68c22b03b81b6612209d3213774fee7def15c0070988a45a90.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-11-24T16:25:10.052Z",
-            "boostedAt": "2026-11-24T16:25:10.047Z",
-            "region": {
-              "name": "언남동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 37.2886788,
-                "longitude": 127.1209032
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/%EC%95%A0%ED%94%8C-%EB%A7%A5%EB%B6%81-%EC%97%90%EC%96%B4-15%EC%9D%B8%EC%B9%98-m2-%EC%8B%A4%EB%B2%84-16gb-512gb-j744ecev9f7d/",
-            "href": "/kr/buy-sell/%EC%95%A0%ED%94%8C-%EB%A7%A5%EB%B6%81-%EC%97%90%EC%96%B4-15%EC%9D%B8%EC%B9%98-m2-%EC%8B%A4%EB%B2%84-16gb-512gb-j744ecev9f7d/",
-            "title": "애플 맥북 에어 15인치 M2 실버 16GB 512gb",
-            "content": "애플 M2 칩이 탑재된 15인치 맥북 에어예요. 메모리는 16GB/ ssd 512gb이며 제품 박스와 충전기 등 구성품이 포함입니다.\n\n외관은 기스 없이 멀쩡합니다.",
-            "price": "1050000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/17946840939712bb1641a1c6986f5f4f035b23501ab9e3905a4a373ee055ecfbc805bfec9282d0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%94%BD%ED%81%AC%ED%8C%A8%EB%93%9C-x1-%EB%82%98%EB%85%B8-gen1-%EB%85%B8%ED%8A%B8%EB%B6%81-7er1cs7c12w9/",
+            "href": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%94%BD%ED%81%AC%ED%8C%A8%EB%93%9C-x1-%EB%82%98%EB%85%B8-gen1-%EB%85%B8%ED%8A%B8%EB%B6%81-7er1cs7c12w9/",
+            "title": "레노버 씽크패드 X1 나노 Gen1 노트북",
+            "content": "레노버 씽크패드 X1 Nano Gen 1 판매합니다.\n13.3인치 초경량 프리미엄 비즈니스 노트북입니다. 무게가 약 962g으로 매우 가볍고, 휴대성이 좋아 외근, 사무용, 인강용, 문서작업용으로 좋습니다.\n주요 사양\n제조사: Lenovo 레노버 모델명: ThinkPad X1 Nano Gen 1 등록년월: 2021년 3월 운영체제: Windows 10 Pro 화면크기: 13.3인치 화면비율: 16:10 해상도: 2160 × 1350 패널: IPS / 눈부심 방지 밝기: 450nit 색재현율: sRGB 100% 무게: 약 962g 두께: 13.87mm\nCPU: Intel Core i7-1160G7 코어/스레드: 4코어 8스레드 그래픽: Intel Iris Xe 내장그래픽 RAM: 16GB LPDDR4x 4266MHz 온보드 저장장치: 512GB NVMe SSD\n무선랜: Wi-Fi 6 블루투스: Bluetooth 5.0 웹캠: HD 웹캠 포트: Thunderbolt 4 / USB-C 2개 충전: USB-PD 지원 어댑터: 65W\n기타 기능\n지문인식 지원 TPM 보안칩 지원 웹캠 프라이버시 차단 지원 MIL-STD 내구성 인증 침수지연 키보드 180도 화면 펼침 지원\n가볍고 화면 품질 좋은 ThinkPad 찾으시는 분께 추천드립니다. 비즈니스용, 문서작업, 인터넷, 영상시청, 인강용으로 사용하기 좋습니다.",
+            "price": "890000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202607/178317707019418c4fca33089ddd6a6e416f9f90084c4331c0a71104ff7f59168f286605e9aad0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": false,
-            "createdAt": "2026-11-14T19:25:36.043Z",
-            "boostedAt": "2026-11-24T17:01:22.877Z",
+            "createdAt": "2026-07-04T14:59:38.468Z",
+            "boostedAt": "2026-11-24T18:31:46.887Z",
             "region": {
-              "name": "개포1동"
+              "name": "서초동"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 37.4770787,
-                "longitude": 127.046049
-              },
-              {
-                "latitude": 37.4768366,
-                "longitude": 127.0459397
+                "latitude": 37.4850866,
+                "longitude": 127.0284945
               }
             ]
           }
         ],
         "dateFieldSnippets": [
+          "createdAt\":\"2026-11-04T01:16:57.982Z\",\"boostedAt\":\"2026-11-24T18:27:41.671Z\",\"region\":{\"name\":\"백석읍\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-11-24T17:36:06.727Z\",\"boostedAt\":\"2026-11-24T17:36:06.725Z\",\"region\":{\"name\":\"역삼동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-24T16:25:10.052Z\",\"boostedAt\":\"2026-11-24T16:25:10.047Z\",\"region\":{\"name\":\"언남동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-14T19:25:36.043Z\",\"boostedAt\":\"2026-11-24T17:01:22.877Z\",\"region\":{\"name\":\"개포1동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-11-24T16:51:50.844Z\",\"boostedAt\":\"2026-11-24T16:51:50.842Z\",\"region\":{\"name\":\"압구정동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-11-24T15:56:17.313Z\",\"boostedAt\":\"2026-11-24T15:56:17.310Z\",\"region\":{\"name\":\"황지동\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-07-04T14:59:38.468Z\",\"boostedAt\":\"2026-11-24T18:31:46.887Z\",\"region\":{\"name\":\"서초동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-11-24T15:56:17.313Z\",\"boostedAt\":\"2026-11-24T15:56:17.310Z\",\"region\":{\"name\":\"황지동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-11-24T16:25:10.052Z\",\"boostedAt\":\"2026-11-24T16:25:10.047Z\",\"region\":{\"name\":\"언남동\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":269,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"레노버 씽크패드 블랙 노트북\",\"description\"",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":270,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"TG 노트북 팜니다\",\"description\":\"TH ",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -141,9 +137,9 @@
         ]
       }
     },
-    "searchUniqueListings": 1115,
-    "globalUniqueListings": 279,
-    "duplicateListingsRemoved": 836,
+    "searchUniqueListings": 1119,
+    "globalUniqueListings": 281,
+    "duplicateListingsRemoved": 838,
     "detailQueueStart": 2,
     "freshDetailTasks": 2,
     "backlogDetailTasks": 0,
@@ -155,10 +151,10 @@
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 279,
+    "postedAtResolvedFromSearch": 281,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 81667,
+    "scanDurationMs": 81409,
     "cities": [
       {
         "city": "군포시",
@@ -171,7 +167,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 279,
-        "durationMs": 12360
+        "durationMs": 12225
       },
       {
         "city": "의왕시",
@@ -186,8 +182,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 279,
-        "durationMs": 25623
+        "uniqueListings": 281,
+        "durationMs": 25517
       },
       {
         "city": "안양시",
@@ -204,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 279,
-        "durationMs": 34791
+        "uniqueListings": 281,
+        "durationMs": 35202
       },
       {
         "city": "과천시",
@@ -217,7 +213,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 278,
-        "durationMs": 6545
+        "durationMs": 6564
       }
     ],
     "finalCandidateCount": 0,
@@ -226,7 +222,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 81671
+    "durationMs": 81416
   },
   "candidates": []
 }
