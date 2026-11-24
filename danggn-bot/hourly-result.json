@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-24T06:02:05.164Z",
+  "generatedAt": "2026-11-24T06:38:17.086Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,85 +55,81 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/%EC%95%A0%ED%94%8C-%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-16%EC%9D%B8%EC%B9%98-%EC%8A%A4%ED%8E%98%EC%9D%B4%EC%8A%A4-%EA%B7%B8%EB%A0%88%EC%9D%B4-4otxe6ygijto/",
-            "href": "/kr/buy-sell/%EC%95%A0%ED%94%8C-%EB%A7%A5%EB%B6%81-%ED%94%84%EB%A1%9C-16%EC%9D%B8%EC%B9%98-%EC%8A%A4%ED%8E%98%EC%9D%B4%EC%8A%A4-%EA%B7%B8%EB%A0%88%EC%9D%B4-4otxe6ygijto/",
-            "title": "애플 맥북 프로 16인치 스페이스 그레이",
-            "content": "2019 맥북 프로 Pro 16인치 터치바 i7\n\n애플 맥북프로 16인치 2019년형 판매합니다.\n16인치라 화면이 넓고 6코어 i7, 램 16GB 사양이라 \n사무용은 물론 사진·영상 작업용으로도 사용하기 좋습니다.\n터치바 지원 모델이며,\n512 SSD입니다. \nC타입 커넥터가 4개 있어서 확장에 용이합니다.\n\n외관은 깨끗하고, 3번째 사진 보시면 약간의 찍힘 1곳 있습니다. \n\n배터리는 사이클 146으로 정상이라고 표기됩니다. \n\n박스는 없으며, 충전기와 C-C 케이블 드립니다. \n\n\n모델명: MacBook Pro A2141\n화면: 16인치 Retina 디스플레이\nCPU: Intel Core i7 2.6GHz 6코어\nRAM: 16GB 2667MHz DDR4\nSSD: 512GB",
-            "price": "450000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/17954985708188d4a4b6b504996f0942ffb6d137ce8da6fe18af6352f1d1514315f44a106ec2d0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-m8q99v7c4f8a/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-m8q99v7c4f8a/",
+            "title": "삼성 노트북",
+            "content": "두번째사진에 사양있습니다\n충전기 있습니다\n",
+            "price": "130000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/4f1a7bac-afe7-4bea-abeb-31996886b436.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-11-24T06:24:12.471Z",
+            "boostedAt": "2026-11-24T06:24:12.467Z",
+            "region": {
+              "name": "동내면"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 37.8543454,
+                "longitude": 127.7541036
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/asus-rog-strix-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%AA%A8%EB%8B%88%ED%84%B0-%EB%B8%94%EB%9E%99-2v8rrowjr4qg/",
+            "href": "/kr/buy-sell/asus-rog-strix-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%AA%A8%EB%8B%88%ED%84%B0-%EB%B8%94%EB%9E%99-2v8rrowjr4qg/",
+            "title": "ASUS ROG Strix 게이밍 모니터 블랙",
+            "content": "미사용 새제품급 입니다 \nASUS ROG Strix 게이밍 모니터 이에요. 전용 가방과 케이블 등 구성품이 모두 포함되어 있어요. 고성능 게임을 즐기기에 적합한 모델이에요.",
+            "price": "190000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/45b4a70e-5511-43a0-8c66-db578df74055.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-11-24T06:33:27.950Z",
+            "boostedAt": "2026-11-24T06:33:27.948Z",
+            "region": {
+              "name": "금천동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 36.6243896,
+                "longitude": 127.5065356
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/%EC%95%A0%ED%94%8C-%EB%A7%A5%EB%B6%81-%EC%97%90%EC%96%B4-15-m4-10%EC%BD%94%EC%96%B4-10%EC%BD%94%EC%96%B4-16gb-1tb-j8y3o5i1w8ph/",
+            "href": "/kr/buy-sell/%EC%95%A0%ED%94%8C-%EB%A7%A5%EB%B6%81-%EC%97%90%EC%96%B4-15-m4-10%EC%BD%94%EC%96%B4-10%EC%BD%94%EC%96%B4-16gb-1tb-j8y3o5i1w8ph/",
+            "title": "애플 맥북 에어 15 M4 10코어 10코어 16GB 1TB",
+            "content": "애플 맥북 에어 15인치 M4 모델이에요. \n일본에서 25년 7월에 구매한 제품이고 애플케어가 27년 7월까지로 되어있어요\n\n박스를 잃어버려서 다른 제품 박스에 넣어놨고요\n본품만 있습니다.\n",
+            "price": "2100000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/062528c8-33e7-4c4c-8a4e-4a83b07fb05a.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": false,
-            "createdAt": "2026-11-24T05:54:21.883Z",
-            "boostedAt": "2026-11-24T05:54:21.880Z",
+            "createdAt": "2026-11-24T06:33:48.837Z",
+            "boostedAt": "2026-11-24T06:33:48.830Z",
             "region": {
               "name": "논현동"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 37.5114254,
-                "longitude": 127.0236939
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/asus-i5-%EB%85%B8%ED%8A%B8%EB%B6%81-8gb-ram-250gb-ssd-9mb6fkvg7ccu/",
-            "href": "/kr/buy-sell/asus-i5-%EB%85%B8%ED%8A%B8%EB%B6%81-8gb-ram-250gb-ssd-9mb6fkvg7ccu/",
-            "title": "ASUS i5 노트북 8GB RAM 250GB SSD",
-            "content": "Intel Core i5 프로세서와 8GB RAM HP SSD 250GB가 장착되어 있어 넉넉한 저장 공간을 제공해요. 전용 어댑터와 함께 구성되어 있어요. ",
-            "price": "150000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/0267d9ca-1e4e-4f68-a447-ea7f8567689c.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-11-24T05:44:11.844Z",
-            "boostedAt": "2026-11-24T05:44:11.843Z",
-            "region": {
-              "name": "횡성읍"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 36.7473274,
-                "longitude": 126.3033822
-              },
-              {
-                "latitude": 37.4851839,
-                "longitude": 127.9954172
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-13zd980-mx30k-soxeoqmr3anr/",
-            "href": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-13zd980-mx30k-soxeoqmr3anr/",
-            "title": "LG 그램  13zd980-mx30k",
-            "content": "LG 그램 화이트 노트북이에요. \n인텔 코어 i3 7100 (13인치)\n8GB RAM, \nssd 352GB 저장 공간을 갖추고 있어요. 전용 박스와 어댑터 구성품이 포함되어 있어요. 가벼운 무게로 휴대하며 사용하기 좋아요.\n네고문의는 받지않습니다 ",
-            "price": "200000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/f718383d-e716-4a2f-8b99-4a1f53396904.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-11-24T05:53:03.648Z",
-            "boostedAt": "2026-11-24T05:53:03.647Z",
-            "region": {
-              "name": "낙양동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 37.7548609,
-                "longitude": 127.1122253
+                "latitude": 37.5219577,
+                "longitude": 127.0365004
               }
             ]
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-11-24T05:54:21.883Z\",\"boostedAt\":\"2026-11-24T05:54:21.880Z\",\"region\":{\"name\":\"논현동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-24T05:44:11.844Z\",\"boostedAt\":\"2026-11-24T05:44:11.843Z\",\"region\":{\"name\":\"횡성읍\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-24T05:53:03.648Z\",\"boostedAt\":\"2026-11-24T05:53:03.647Z\",\"region\":{\"name\":\"낙양동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-06-11T06:22:34.099Z\",\"boostedAt\":\"2026-11-24T05:47:03.706Z\",\"region\":{\"name\":\"역삼동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-01T11:56:00.174Z\",\"boostedAt\":\"2026-11-24T05:38:57.026Z\",\"region\":{\"name\":\"개포4동\"},\"category\":null,\"contentCoo"
+          "createdAt\":\"2026-11-24T06:24:12.471Z\",\"boostedAt\":\"2026-11-24T06:24:12.467Z\",\"region\":{\"name\":\"동내면\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-11-24T06:33:27.950Z\",\"boostedAt\":\"2026-11-24T06:33:27.948Z\",\"region\":{\"name\":\"금천동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-11-24T06:33:48.837Z\",\"boostedAt\":\"2026-11-24T06:33:48.830Z\",\"region\":{\"name\":\"논현동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-11-24T06:31:29.862Z\",\"boostedAt\":\"2026-11-24T06:31:29.861Z\",\"region\":{\"name\":\"반포3동\"},\"category\":null,\"contentCoo",
+          "createdAt\":\"2026-11-24T06:34:56.465Z\",\"boostedAt\":\"2026-11-24T06:34:56.457Z\",\"region\":{\"name\":\"만촌동\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":278,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"애플 맥북 프로 16인치 스페이스 그레이\",\"descr",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":278,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 노트북\",\"description\":\"두번째사진에 ",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -141,24 +137,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1142,
-    "globalUniqueListings": 290,
-    "duplicateListingsRemoved": 852,
-    "detailQueueStart": 17,
-    "freshDetailTasks": 17,
+    "searchUniqueListings": 1138,
+    "globalUniqueListings": 288,
+    "duplicateListingsRemoved": 850,
+    "detailQueueStart": 24,
+    "freshDetailTasks": 24,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 17,
-    "detailSucceeded": 17,
+    "detailRequestsExecuted": 24,
+    "detailSucceeded": 24,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 290,
+    "postedAtResolvedFromSearch": 288,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 101100,
+    "scanDurationMs": 107784,
     "cities": [
       {
         "city": "군포시",
@@ -170,8 +166,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 286,
-        "durationMs": 12727
+        "uniqueListings": 283,
+        "durationMs": 12471
       },
       {
         "city": "의왕시",
@@ -187,7 +183,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 287,
-        "durationMs": 26211
+        "durationMs": 25481
       },
       {
         "city": "안양시",
@@ -204,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 288,
-        "durationMs": 35285
+        "uniqueListings": 287,
+        "durationMs": 35097
       },
       {
         "city": "과천시",
@@ -217,7 +213,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 281,
-        "durationMs": 6464
+        "durationMs": 6302
       }
     ],
     "finalCandidateCount": 0,
@@ -226,7 +222,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 101105
+    "durationMs": 107789
   },
   "candidates": []
 }
