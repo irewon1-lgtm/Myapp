@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-24T21:42:27.587Z",
+  "generatedAt": "2026-11-24T22:22:29.690Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,24 +55,24 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/lg-xnote-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-gftr158cwiwv/",
-            "href": "/kr/buy-sell/lg-xnote-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-gftr158cwiwv/",
-            "title": "LG XNOTE 노트북 화이트",
-            "content": "LG XNOTE 노트북 화이트 색상이에요. Intel Core i5 프로세서와 4.00GB RAM을 탑재하고 있어요. 노트북 쿨러와 함께 구성되어 있어요. 가벼운 작업용으로 활용하기 좋아요.",
-            "price": "75000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/b708b26e-b165-436e-93c7-94bb074061f2.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/hp-%ED%94%84%EB%A1%9C%EB%B6%81-6570b-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-8gb-ram-%EB%B0%A7%EB%8D%B0%EB%A6%AC-%EA%B5%90%ED%99%98-xzrrbup7qmvr/",
+            "href": "/kr/buy-sell/hp-%ED%94%84%EB%A1%9C%EB%B6%81-6570b-%EB%85%B8%ED%8A%B8%EB%B6%81-i5-8gb-ram-%EB%B0%A7%EB%8D%B0%EB%A6%AC-%EA%B5%90%ED%99%98-xzrrbup7qmvr/",
+            "title": "HP 프로북 6570b 노트북 i5 8GB RAM 밧데리 교환",
+            "content": "HP ProBook 6570b 모델이에요. Intel Core i5 프로세서와 8GB RAM을 탑재하고 있어요. 112GB SSD가 장착되어 있어 사용하기 편리해요. 가벼운 사무용이나 학습용으로 활용하기 좋아요.\n호환밧데리 새걸로 교체했습니다\n키보드 하나(L자)가 빠졌습니다",
+            "price": "130000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/1fc23aab-12fd-4061-9c70-27e0aebd6dd9.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": true,
-            "createdAt": "2026-11-24T21:28:12.249Z",
-            "boostedAt": "2026-11-24T21:28:12.247Z",
+            "createdAt": "2026-11-24T22:07:59.613Z",
+            "boostedAt": "2026-11-24T22:07:59.612Z",
             "region": {
-              "name": "망월동"
+              "name": "권선동"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 37.5497561,
-                "longitude": 127.2032315
+                "latitude": 37.2456749,
+                "longitude": 127.0281264
               }
             ]
           },
@@ -122,14 +122,14 @@
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-11-24T21:28:12.249Z\",\"boostedAt\":\"2026-11-24T21:28:12.247Z\",\"region\":{\"name\":\"망월동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-11-24T22:07:59.613Z\",\"boostedAt\":\"2026-11-24T22:07:59.612Z\",\"region\":{\"name\":\"권선동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-27T13:56:51.522Z\",\"boostedAt\":\"2026-11-24T21:26:30.206Z\",\"region\":{\"name\":\"용암1동\"},\"category\":null,\"contentCoo",
           "createdAt\":\"2026-11-19T11:41:41.089Z\",\"boostedAt\":\"2026-11-24T21:09:35.302Z\",\"region\":{\"name\":\"압구정동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-11-07T03:42:07.329Z\",\"boostedAt\":\"2026-11-24T14:39:50.111Z\",\"region\":{\"name\":\"역삼2동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-10-22T13:42:38.379Z\",\"boostedAt\":\"2026-11-24T21:26:21.799Z\",\"region\":{\"name\":\"용암1동\"},\"category\":null,\"contentCoo"
+          "createdAt\":\"2026-11-24T21:28:12.249Z\",\"boostedAt\":\"2026-11-24T21:28:12.247Z\",\"region\":{\"name\":\"망월동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-11-24T09:28:34.605Z\",\"boostedAt\":\"2026-11-24T09:28:34.602Z\",\"region\":{\"name\":\"논현2동\"},\"category\":null,\"contentCoo"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":270,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"LG XNOTE 노트북 화이트\",\"description",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":268,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"HP 프로북 6570b 노트북 i5 8GB RAM 밧데",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -137,9 +137,9 @@
         ]
       }
     },
-    "searchUniqueListings": 1115,
-    "globalUniqueListings": 280,
-    "duplicateListingsRemoved": 835,
+    "searchUniqueListings": 1117,
+    "globalUniqueListings": 281,
+    "duplicateListingsRemoved": 836,
     "detailQueueStart": 3,
     "freshDetailTasks": 3,
     "backlogDetailTasks": 0,
@@ -151,10 +151,10 @@
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 280,
+    "postedAtResolvedFromSearch": 281,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 84047,
+    "scanDurationMs": 84131,
     "cities": [
       {
         "city": "군포시",
@@ -167,7 +167,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 278,
-        "durationMs": 12361
+        "durationMs": 12513
       },
       {
         "city": "의왕시",
@@ -183,7 +183,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 280,
-        "durationMs": 25919
+        "durationMs": 25590
       },
       {
         "city": "안양시",
@@ -200,8 +200,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 279,
-        "durationMs": 35403
+        "uniqueListings": 281,
+        "durationMs": 35463
       },
       {
         "city": "과천시",
@@ -213,7 +213,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 278,
-        "durationMs": 6684
+        "durationMs": 6788
       }
     ],
     "finalCandidateCount": 0,
@@ -222,7 +222,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 84054
+    "durationMs": 84139
   },
   "candidates": []
 }
