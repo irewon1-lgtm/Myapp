@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-25T13:32:19.152Z",
+  "generatedAt": "2026-11-25T13:34:04.426Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -77,28 +77,6 @@
             ]
           },
           {
-            "id": "/kr/buy-sell/%EC%A7%80-16-%EC%82%AC%EA%B3%B570-%ED%8C%9D%EB%8B%88%EB%8B%A4-4ezp2vqfgc72/",
-            "href": "/kr/buy-sell/%EC%A7%80-16-%EC%82%AC%EA%B3%B570-%ED%8C%9D%EB%8B%88%EB%8B%A4-4ezp2vqfgc72/",
-            "title": "지 16  사공70 팝니다",
-            "content": " 사공 70 모델을 판매해요. 박스와 구성품 모두 포함되어 있습니다\n\n\n\n성균관대역 앞 신일아파트에서 거래 가능합니다",
-            "price": "1750000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/f1ae39a4-ddb6-42c0-a7b9-29a6b4234bd5.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-11-11T04:48:30.666Z",
-            "boostedAt": "2026-11-25T13:15:07.106Z",
-            "region": {
-              "name": "율전동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 37.3000158,
-                "longitude": 126.9661365
-              }
-            ]
-          },
-          {
             "id": "/kr/buy-sell/%EC%97%90%EC%9D%B4%EC%84%9C-%EB%8B%88%ED%8A%B8%EB%A1%9C-v-16s-rtx5050-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%AF%B8%EA%B0%9C%EB%B4%89-kvwkuobza3z3/",
             "href": "/kr/buy-sell/%EC%97%90%EC%9D%B4%EC%84%9C-%EB%8B%88%ED%8A%B8%EB%A1%9C-v-16s-rtx5050-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%AF%B8%EA%B0%9C%EB%B4%89-kvwkuobza3z3/",
             "title": "에이서 니트로 V 16S RTX5050 게이밍 노트북 미개봉",
@@ -123,14 +101,40 @@
                 "longitude": 127.0314083
               }
             ]
+          },
+          {
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-i7-8%EC%84%B8%EB%8C%80-%EB%85%B8%ED%8A%B8%EB%B6%81-ssd-128gb-hdd-320gb-hme3mzjdv7nx/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-i7-8%EC%84%B8%EB%8C%80-%EB%85%B8%ED%8A%B8%EB%B6%81-ssd-128gb-hdd-320gb-hme3mzjdv7nx/",
+            "title": "삼성 i7 8세대 노트북 / SSD 128GB + HDD 320GB",
+            "content": "삼성 노트북 550E 판매합니다.\n\n* CPU: Intel i7-8550U (8세대)\n* RAM: 8GB DDR4\n* SSD: 128GB\n* HDD: 320GB\n* 그래픽: Intel UHD 620\n* Windows 설치 완료\n\n모든 기본 기능 정상 작동합니다.\n\n배터리 성능은 약 74%이며 사용감이 있습니다.\n\n외관에 생활 스크래치가 있습니다.\n\n\n위 내용을 충분히 확인하시고 구매 부탁드립니다.",
+            "price": "200000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/1795612292900398e5d05d7fcb15a26aa4d26c3974cbbbf7570a69954c2da66cb642b9862f53c0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-11-25T13:12:46.108Z",
+            "boostedAt": "2026-11-25T13:12:46.108Z",
+            "region": {
+              "name": "반포본동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 37.5027713,
+                "longitude": 127.0185216
+              },
+              {
+                "latitude": 37.1084596,
+                "longitude": 126.9278141
+              }
+            ]
           }
         ],
         "dateFieldSnippets": [
           "createdAt\":\"2026-11-25T12:53:07.985Z\",\"boostedAt\":\"2026-11-25T12:53:07.983Z\",\"region\":{\"name\":\"부암동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-11T04:48:30.666Z\",\"boostedAt\":\"2026-11-25T13:15:07.106Z\",\"region\":{\"name\":\"율전동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-11-25T12:11:48.753Z\",\"boostedAt\":\"2026-11-25T12:11:48.753Z\",\"region\":{\"name\":\"역삼동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-10-17T13:11:43.316Z\",\"boostedAt\":\"2026-11-25T13:19:32.096Z\",\"region\":{\"name\":\"방배3동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-11-25T13:18:29.803Z\",\"boostedAt\":\"2026-11-25T13:18:29.802Z\",\"region\":{\"name\":\"감삼동\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-11-25T13:12:46.108Z\",\"boostedAt\":\"2026-11-25T13:12:46.108Z\",\"region\":{\"name\":\"반포본동\"},\"category\":null,\"contentCoo",
+          "createdAt\":\"2026-11-23T10:26:33.721Z\",\"boostedAt\":\"2026-11-25T13:16:53.274Z\",\"region\":{\"name\":\"복대동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-11-24T12:56:22.720Z\",\"boostedAt\":\"2026-11-25T13:14:20.352Z\",\"region\":{\"name\":\"반포동\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
           "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":280,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"인텔 i7-6700HQ 15.6인치 게이밍노트북\",\"d",
@@ -141,24 +145,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1128,
-    "globalUniqueListings": 286,
-    "duplicateListingsRemoved": 842,
-    "detailQueueStart": 26,
-    "freshDetailTasks": 26,
+    "searchUniqueListings": 1130,
+    "globalUniqueListings": 287,
+    "duplicateListingsRemoved": 843,
+    "detailQueueStart": 2,
+    "freshDetailTasks": 2,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 26,
-    "detailSucceeded": 26,
+    "detailRequestsExecuted": 2,
+    "detailSucceeded": 2,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 286,
+    "postedAtResolvedFromSearch": 287,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 110879,
+    "scanDurationMs": 82268,
     "cities": [
       {
         "city": "군포시",
@@ -170,8 +174,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 281,
-        "durationMs": 12459
+        "uniqueListings": 282,
+        "durationMs": 12752
       },
       {
         "city": "의왕시",
@@ -187,7 +191,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 283,
-        "durationMs": 25583
+        "durationMs": 25623
       },
       {
         "city": "안양시",
@@ -204,8 +208,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 286,
-        "durationMs": 35225
+        "uniqueListings": 287,
+        "durationMs": 35669
       },
       {
         "city": "과천시",
@@ -217,7 +221,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 278,
-        "durationMs": 6566
+        "durationMs": 6541
       }
     ],
     "finalCandidateCount": 0,
@@ -226,7 +230,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 110886
+    "durationMs": 82273
   },
   "candidates": []
 }
