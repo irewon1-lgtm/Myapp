@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-26T14:52:51.064Z",
+  "generatedAt": "2026-11-26T14:59:57.819Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -103,28 +103,24 @@
             ]
           },
           {
-            "id": "/kr/buy-sell/%EB%A7%A5%EB%B6%81-%EC%97%90%EC%96%B4-m1-%EA%B8%B0%EB%B3%B8%ED%98%95-%EC%8A%A4%ED%8E%98%EC%9D%B4%EC%8A%A4%EA%B7%B8%EB%A0%88%EC%9D%B4-6kr92or7zvxk/",
-            "href": "/kr/buy-sell/%EB%A7%A5%EB%B6%81-%EC%97%90%EC%96%B4-m1-%EA%B8%B0%EB%B3%B8%ED%98%95-%EC%8A%A4%ED%8E%98%EC%9D%B4%EC%8A%A4%EA%B7%B8%EB%A0%88%EC%9D%B4-6kr92or7zvxk/",
-            "title": "맥북 에어 M1 기본형 스페이스그레이",
-            "content": "맥북 에어 M1 기본형(8/256)\n스페이스그레이 컬러 제품입니다\n\n외부에 힐링쉴드 필름 부착하고 사용한거라\n기스 같은거 없이 상태는 매우 좋습니다. \n\n맥북 단품으로 판매하여 가격 급처 합니다.",
-            "price": "480000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/179491389150543d8933273d6659e0ac307bea3d0876a9832c1120e81870ad05ac51bace29cac0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/nt951sbe-%EB%85%B8%ED%8A%B8%EB%B6%81-jn6vwa8ta5ba/",
+            "href": "/kr/buy-sell/nt951sbe-%EB%85%B8%ED%8A%B8%EB%B6%81-jn6vwa8ta5ba/",
+            "title": "NT951SBE 노트북",
+            "content": "펜도 포함되어있습니다\n수리 얼마전에 맡긴거라 상태 좋습니다\n\n환불 네고 불가능\n\n직거래: 서초3동사거리/서울고사거리",
+            "price": "400000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/179474389797782f1de4c9a825bb978a7f56ed0ee424750e30b89cd8c6f1a6be54dcdeebd969a0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": false,
-            "createdAt": "2026-11-17T11:13:17.876Z",
-            "boostedAt": "2026-11-26T14:40:07.085Z",
+            "createdAt": "2026-11-15T12:00:50.588Z",
+            "boostedAt": "2026-11-26T13:25:10.767Z",
             "region": {
-              "name": "역삼동"
+              "name": "서초3동"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 37.5426705,
-                "longitude": 127.1992818
-              },
-              {
-                "latitude": 37.4993441,
-                "longitude": 127.0399194
+                "latitude": 37.4840439,
+                "longitude": 127.0114635
               }
             ]
           }
@@ -132,12 +128,12 @@
         "dateFieldSnippets": [
           "createdAt\":\"2026-11-26T14:39:39.236Z\",\"boostedAt\":\"2026-11-26T14:39:39.234Z\",\"region\":{\"name\":\"용산동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-11-26T14:47:14.944Z\",\"boostedAt\":\"2026-11-26T14:47:14.944Z\",\"region\":{\"name\":\"군북면\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-17T11:13:17.876Z\",\"boostedAt\":\"2026-11-26T14:40:07.085Z\",\"region\":{\"name\":\"역삼동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-11-15T12:00:50.588Z\",\"boostedAt\":\"2026-11-26T13:25:10.767Z\",\"region\":{\"name\":\"서초3동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-11-26T14:39:57.048Z\",\"boostedAt\":\"2026-11-26T14:39:57.046Z\",\"region\":{\"name\":\"낙민동\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-08-22T21:44:19.346Z\",\"boostedAt\":\"2026-11-26T14:57:44.753Z\",\"region\":{\"name\":\"서초4동\"},\"category\":null,\"contentCoo",
+          "createdAt\":\"2026-11-26T12:28:57.686Z\",\"boostedAt\":\"2026-11-26T12:28:57.685Z\",\"region\":{\"name\":\"우면동\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":274,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"Lenovo IdeaPad 노트북\",\"descripti",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":272,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"Lenovo IdeaPad 노트북\",\"descripti",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -145,24 +141,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1123,
-    "globalUniqueListings": 283,
-    "duplicateListingsRemoved": 840,
-    "detailQueueStart": 10,
-    "freshDetailTasks": 10,
+    "searchUniqueListings": 1126,
+    "globalUniqueListings": 284,
+    "duplicateListingsRemoved": 842,
+    "detailQueueStart": 3,
+    "freshDetailTasks": 3,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 10,
-    "detailSucceeded": 10,
+    "detailRequestsExecuted": 3,
+    "detailSucceeded": 3,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 283,
+    "postedAtResolvedFromSearch": 284,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 90867,
+    "scanDurationMs": 83612,
     "cities": [
       {
         "city": "군포시",
@@ -175,7 +171,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 280,
-        "durationMs": 12392
+        "durationMs": 12557
       },
       {
         "city": "의왕시",
@@ -190,8 +186,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 282,
-        "durationMs": 25548
+        "uniqueListings": 283,
+        "durationMs": 25721
       },
       {
         "city": "안양시",
@@ -208,8 +204,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 282,
-        "durationMs": 35092
+        "uniqueListings": 284,
+        "durationMs": 35256
       },
       {
         "city": "과천시",
@@ -221,7 +217,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 279,
-        "durationMs": 6248
+        "durationMs": 6451
       }
     ],
     "finalCandidateCount": 0,
@@ -230,7 +226,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 90873
+    "durationMs": 83620
   },
   "candidates": []
 }
