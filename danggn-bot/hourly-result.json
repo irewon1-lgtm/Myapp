@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-26T22:02:16.305Z",
+  "generatedAt": "2026-11-26T22:42:48.689Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,89 +55,93 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-13-3%EC%9D%B8%EC%B9%98-%ED%8C%9D%EB%8B%88%EB%8B%A4-61d1hbj3gu79/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-13-3%EC%9D%B8%EC%B9%98-%ED%8C%9D%EB%8B%88%EB%8B%A4-61d1hbj3gu79/",
-            "title": "삼성 노트북 13.3인치 팝니다",
-            "content": "구성품 \n노트북 \n노트북 충전기 \n\n사용감 좀있고 팜프레스 왼쪽 크랙있습니다\n사용하는데 지장은 없습니다 빛샘좀 있는데 \n사용지장없습니다 \n저렴하게 그냥 막쓰기에 좋습니다 \n\n윈도우11 엑셀 한글 워드 파포 깔려있습니다\n와이파이잡아서 그냥 바로사용하면됩니다 \n\nCPU i3-4020Y 1.50Ghz\n메모리 8GB\n그래픽 intel HD Graphics Family\n저장장치 MATA SSD 128GB\n디스플레이어 13.3인치 \n",
-            "price": "60000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/f1f779b5-8bba-4232-93ac-fe0db2a66d71.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%EB%8D%B8-dell-precision-7550-%EB%85%B8%ED%8A%B8%EB%B6%81-xbo8f6zayju4/",
+            "href": "/kr/buy-sell/%EB%8D%B8-dell-precision-7550-%EB%85%B8%ED%8A%B8%EB%B6%81-xbo8f6zayju4/",
+            "title": "델(dell)  Precision 7550 노트북",
+            "content": "1. 모델명 Precision 7550 \n2. CPU Xeon-w-10885M\n3. GPU-RTX 5000 쿼드로 계열 / VRAM 16GB\n4. SSD 1TB PM91A (980 PRO 급)\n5. RAM 마이크론 2933 32GB *2 \n\n택배 거래 가능하고  (다만 포장에 시간은 걸릴듯..)\n택배비는 포함입니다.\n\n구매자 안내 사항\n\n1. 베터리 단순 계산으로도 70~75%효율 나옵니다.\n사진에도 사용 가능시간 1시간 정도 나오니 참고 바랍니다\n\n2. 키보드 왼쪽 쉬프트 근처에 가이드가 파손이 되어있습니다.\n아마 알리에 파트 찾아서 교체 하시면 될듯 합니다.\n(해당 제품은 키보드 아래에도 추가 램슬롯 2개가 더 있기에 확장이 가능한 모델입니다.)\n\n구성품은 노트북 본체 + 아답터 두가지 입니다.\n후속 모델보다 VARM이 높아 여러가지로 사용이 가능할것으로 보입니다.",
+            "price": "1300000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/05eea9cb-261e-4cbb-a927-15fbac9b25df.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-11-22T07:48:46.486Z",
+            "boostedAt": "2026-11-26T22:36:04.753Z",
+            "region": {
+              "name": "서초동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 37.6479975,
+                "longitude": 127.0260593
+              },
+              {
+                "latitude": 37.4852395,
+                "longitude": 127.0165213
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/%EB%A7%A5%EB%B6%81%EC%97%90%EC%96%B4-m2-8-256g-%EB%AF%B8%EB%93%9C%EB%82%98%EC%9D%B4%ED%8A%B8-%ED%92%80%EB%B0%95-ubwkkgtnh18c/",
+            "href": "/kr/buy-sell/%EB%A7%A5%EB%B6%81%EC%97%90%EC%96%B4-m2-8-256g-%EB%AF%B8%EB%93%9C%EB%82%98%EC%9D%B4%ED%8A%B8-%ED%92%80%EB%B0%95-ubwkkgtnh18c/",
+            "title": "맥북에어 M2 8/256G 미드나이트 풀박",
+            "content": "맥북에어 M2 8/256G 미드나이트 기본형\n배터리효율 94%\n\n제품 박스와 충전기 등 구성품이 함께 포함되어 있어요. \n\n힐링실드 붙여서 찍힘이나 기스 없습니다.\n\n애완동물 X 비흡연자에요!\n\n고민은 배송만 늦출 뿐이죠 ㅎ",
+            "price": "780000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/17957321307499d84d5d0de6f7feb94b1e6caa7cdc687352bbf768b42470bdaec7cd1664c28a70.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": false,
+            "createdAt": "2026-11-26T22:32:52.137Z",
+            "boostedAt": "2026-11-26T22:32:52.136Z",
+            "region": {
+              "name": "방배동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 37.5028975,
+                "longitude": 126.9478238
+              },
+              {
+                "latitude": 37.4831409,
+                "longitude": 126.7069792
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/%EC%95%A0%ED%94%8C-%EC%95%84%EC%9D%B4%EB%A7%A5-g4-%ED%99%94%EC%9D%B4%ED%8A%B8-%EB%85%B8%ED%8A%B8%EB%B6%81-c94b6dzc44xm/",
+            "href": "/kr/buy-sell/%EC%95%A0%ED%94%8C-%EC%95%84%EC%9D%B4%EB%A7%A5-g4-%ED%99%94%EC%9D%B4%ED%8A%B8-%EB%85%B8%ED%8A%B8%EB%B6%81-c94b6dzc44xm/",
+            "title": "애플 아이맥 G4 화이트 노트북",
+            "content": "애플의 아이북 G4 화이트 모델이에요 \n노트북 본체와 전용 충전 어댑터가 포함되어 있어요. \n2005년 구입했으니 20살이 넘었네요\n느리지만 작동은 잘 됩니다\nusb 포트도 여러 개고 cd 드라이브도 있어요\n구세대 모델이라 묵직합니다\n\n햇볕에서 찍었더니 색상이 이상해서 뒤에 사진 추가로 올립니다",
+            "price": "100000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/95127c72-78c8-434a-8c41-c29305f37fe2.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": true,
-            "createdAt": "2026-11-25T17:36:36.808Z",
-            "boostedAt": "2026-11-26T21:34:16.558Z",
+            "createdAt": "2026-11-21T04:20:23.595Z",
+            "boostedAt": "2026-11-26T21:42:49.526Z",
             "region": {
-              "name": "오창읍"
+              "name": "삼성동"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 36.6162699,
-                "longitude": 127.5232613
+                "latitude": 37.4702899,
+                "longitude": 127.1060789
               },
               {
-                "latitude": 36.7374453,
-                "longitude": 127.4588413
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%95%84%EC%9D%B4%EB%94%94%EC%96%B4%ED%8C%A8%EB%93%9C-%EC%8A%AC%EB%A6%BC-1-%EC%95%84%EC%9D%B4%EC%8A%A4-%EB%B8%94%EB%A3%A8-6u53omfrwy5c/",
-            "href": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%95%84%EC%9D%B4%EB%94%94%EC%96%B4%ED%8C%A8%EB%93%9C-%EC%8A%AC%EB%A6%BC-1-%EC%95%84%EC%9D%B4%EC%8A%A4-%EB%B8%94%EB%A3%A8-6u53omfrwy5c/",
-            "title": "레노버 아이디어패드 슬림 1 아이스 블루",
-            "content": ".레노버 아이디어패드 슬림 1 14ADA 노트북 판매해요\n집에서 영상 몇 번 보다가 보관 했어요, 웹 서핑 등 가벼운 작업에 적합한 노트북을 찾으시는 분들께 추천드려요, 충전기 포함입니다\n직거래 일요일 언주역 가능하고 그 외에 택거래 입니다!\nhttps://m.danawa.com/product/product.html?code=15456482&cateCode=112758",
-            "price": "23000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/f1fbbf16-42f9-40d6-8652-bc31b6fc821c.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": false,
-            "createdAt": "2026-11-26T21:43:29.264Z",
-            "boostedAt": "2026-11-26T21:43:29.260Z",
-            "region": {
-              "name": "논현동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 37.5071426,
-                "longitude": 127.0330367
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/lg-%EC%97%90%EB%B2%84%ED%85%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-8ris3cpcd3j9/",
-            "href": "/kr/buy-sell/lg-%EC%97%90%EB%B2%84%ED%85%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-8ris3cpcd3j9/",
-            "title": "LG 에버텍 노트북 화이트",
-            "content": "LG 에버텍 노트북 화이트 + 거치대\n에버텍 브랜드의 화이트 컬러 노트북이에요. 깔끔한 디자인과 베이지색 키보드가 특징이에요. 간단한 문서 작업이나 웹 서핑용으로 활용하기 좋아요.\n배달가능  가까운곳 먼곳 거리에따라 요금발생 해요\n찔러보기 하지마시고 구매자만 연락주세요\n환불 불가\n",
-            "price": "35000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/b4161e9f-c124-49f9-a5af-4aa983f56275.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": false,
-            "createdAt": "2026-11-21T01:18:49.249Z",
-            "boostedAt": "2026-11-26T21:40:30.635Z",
-            "region": {
-              "name": "사당제2동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 37.5837881,
-                "longitude": 126.709061
-              },
-              {
-                "latitude": 37.489673,
-                "longitude": 126.9772225
+                "latitude": 37.5098595,
+                "longitude": 127.0593301
               }
             ]
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-11-25T17:36:36.808Z\",\"boostedAt\":\"2026-11-26T21:34:16.558Z\",\"region\":{\"name\":\"오창읍\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-26T21:43:29.264Z\",\"boostedAt\":\"2026-11-26T21:43:29.260Z\",\"region\":{\"name\":\"논현동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-21T01:18:49.249Z\",\"boostedAt\":\"2026-11-26T21:40:30.635Z\",\"region\":{\"name\":\"사당제2동\"},\"category\":null,\"contentCo",
-          "createdAt\":\"2026-11-25T12:53:07.985Z\",\"boostedAt\":\"2026-11-26T21:01:33.097Z\",\"region\":{\"name\":\"부암동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-10-22T11:06:50.284Z\",\"boostedAt\":\"2026-11-26T21:52:03.764Z\",\"region\":{\"name\":\"월출동\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-11-22T07:48:46.486Z\",\"boostedAt\":\"2026-11-26T22:36:04.753Z\",\"region\":{\"name\":\"서초동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-11-26T22:32:52.137Z\",\"boostedAt\":\"2026-11-26T22:32:52.136Z\",\"region\":{\"name\":\"방배동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-11-21T04:20:23.595Z\",\"boostedAt\":\"2026-11-26T21:42:49.526Z\",\"region\":{\"name\":\"삼성동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-10-20T10:20:58.044Z\",\"boostedAt\":\"2026-11-26T22:37:14.601Z\",\"region\":{\"name\":\"장위동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-11-21T10:20:13.906Z\",\"boostedAt\":\"2026-11-26T21:47:26.587Z\",\"region\":{\"name\":\"화지동\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":274,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 노트북 13.3인치 팝니다\",\"descriptio",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":277,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"델(dell)  Precision 7550 노트북\",\"",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -145,14 +149,14 @@
         ]
       }
     },
-    "searchUniqueListings": 1134,
+    "searchUniqueListings": 1130,
     "globalUniqueListings": 286,
-    "duplicateListingsRemoved": 848,
-    "detailQueueStart": 7,
-    "freshDetailTasks": 7,
+    "duplicateListingsRemoved": 844,
+    "detailQueueStart": 8,
+    "freshDetailTasks": 8,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 7,
-    "detailSucceeded": 7,
+    "detailRequestsExecuted": 8,
+    "detailSucceeded": 8,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
@@ -162,7 +166,7 @@
     "postedAtResolvedFromSearch": 286,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 87197,
+    "scanDurationMs": 89505,
     "cities": [
       {
         "city": "군포시",
@@ -174,8 +178,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 283,
-        "durationMs": 12340
+        "uniqueListings": 282,
+        "durationMs": 12596
       },
       {
         "city": "의왕시",
@@ -190,8 +194,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 286,
-        "durationMs": 25484
+        "uniqueListings": 283,
+        "durationMs": 25618
       },
       {
         "city": "안양시",
@@ -209,7 +213,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 285,
-        "durationMs": 35278
+        "durationMs": 35373
       },
       {
         "city": "과천시",
@@ -221,7 +225,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 280,
-        "durationMs": 6255
+        "durationMs": 6263
       }
     ],
     "finalCandidateCount": 0,
@@ -230,7 +234,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 87204
+    "durationMs": 89513
   },
   "candidates": []
 }
