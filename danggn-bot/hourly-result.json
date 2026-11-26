@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-26T18:12:49.077Z",
+  "generatedAt": "2026-11-26T18:52:36.643Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,85 +55,85 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/hp-%EC%98%B4%EB%8B%88%EB%B6%81-x-%ED%94%8C%EB%A6%BD-14-%EC%BD%94%EC%96%B4ultra5-dux39xcaodzo/",
-            "href": "/kr/buy-sell/hp-%EC%98%B4%EB%8B%88%EB%B6%81-x-%ED%94%8C%EB%A6%BD-14-%EC%BD%94%EC%96%B4ultra5-dux39xcaodzo/",
-            "title": "HP 옴니북 X 플립 14 코어ultra5",
-            "content": "인텔 코어 울트라 5 프로세서가 탑재된 HP 옴니북 X 플립 모델이에요. 512GB 저장 용량과 16GB RAM을 갖추고 있으며 3K OLED 터치스크린을 지원해요. 노트북 본체와 충전 어댑터 그리고 개별구매한 파우치 함께 드립니다\n올해 01/25 구매하여 보호필름 부착하여 사용, 실사용 6개월정도 이후 가방안에 방치\n상태 S급 입니다",
-            "price": "1000000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/1793628933965d36016f901b9ef42b27b2f721a578022342b91373c9fa006eae2c76ca0eaa4240.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%EC%9D%B8%ED%85%94-%EC%BD%94%EC%96%B4-i5-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-tqzbqz3dpi2f/",
+            "href": "/kr/buy-sell/%EC%9D%B8%ED%85%94-%EC%BD%94%EC%96%B4-i5-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-tqzbqz3dpi2f/",
+            "title": "인텔 코어 i5 노트북 (화이트)",
+            "content": "깔끔한 화이트 색상의 노트북이에요. 인텔 코어 i5 프로세서와 4GB RAM으로 기본적인 작업에 충분하답니다. 사진에서 보이는 것처럼 마우스도 함께 드려요. 문서 작업이나 인터넷 서핑 등 일상적인 용도로 사용하기 좋아요.",
+            "price": "120000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202609/cad8396094d6fd6eb5199490fecbe5a69379a7ef18588a5d29b181ff34beaf51_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-09-26T09:57:29.601Z",
+            "boostedAt": "2026-11-26T18:22:41.928Z",
+            "region": {
+              "name": "아라동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 33.4491675,
+                "longitude": 126.560607
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt370r5e-8g%EC%9E%85%EB%8B%88%EB%8B%A4-oui8sybs62ou/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt370r5e-8g%EC%9E%85%EB%8B%88%EB%8B%A4-oui8sybs62ou/",
+            "title": "삼성 노트북 NT370R5E 8g입니다",
+            "content": "사무용 삼성 노트북입니다.\ncpu : 인텔 i3 3210m(@ 3.2g, 2코어 4쓰레드)\nram : ddr3 8g\ngpu : 내장그래픽\n화면 : 15.6인치(밝고 선명함)\nssd : 120g\n배터리 : 1시간 정도(정확히 못 재어봄)\n외관 : 비교적 양호함(사진 참고)\nos : 윈도우10 홈\n구성 : 본체 + 충전기 + 마우스\n\n사무용, 웹서핑용, 영상시청용, 인강용, 문서 작성용에 적합한 노트북입니다. ssd에 윈도우 설치하여 속도 빠르며 내부 청소되어 있으니 바로 쓰시면 됩니다. 네고 문의에는 답변 드리지 않으니 양해 바랍니다. 오늘도 행복한 하루 보내시고 내내 건강하시기 바랍니다.\n",
+            "price": "120000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202609/e668435c-7df3-4024-852c-16232d8e1f9e.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-09-22T13:47:13.958Z",
+            "boostedAt": "2026-11-26T18:17:33.866Z",
+            "region": {
+              "name": "대천1동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 36.3606182,
+                "longitude": 126.6001782
+              }
+            ]
+          },
+          {
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-9-lite-nt910s3l-k28p-%ED%95%91%ED%81%AC-fnao99nikh6k/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-9-lite-nt910s3l-k28p-%ED%95%91%ED%81%AC-fnao99nikh6k/",
+            "title": "삼성 노트북 9 Lite NT910S3L-K28P 핑크",
+            "content": "삼성 노트북 9 Lite NT910S3L-K28P 핑크 판매합니다.\n\n모델명: NT910S3L-K28P\nCPU: Intel 4405U (2.10GHz)\n그래픽: Intel HD 510\nRAM: 8GB RAM\nSSD: 128 GB\n화면: 13.3인치 LED (1920 X 1080 FHD)\n윈도우 : 10정품 설치 완료\n\n\n제품 상태 및 참고사항\n\n•윈도우 정품 인증 확인\n•외관 사용감 있음\n•노트북 + 충전기\n\n\n문서 작성, 사무 작업, 인터넷 강의, 웹서핑용으로 적합합니다.\n\n외관 상태 감안하여 판매합니다.\n\n\n\n\n노트북+어댑터",
+            "price": "70000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202610/1793080579356bc3d5c96f3d219d4ed6b8c72a96c1d6e22bf9cb35601a44adf58427b86f2d3e40.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": false,
-            "createdAt": "2026-11-02T14:21:19.725Z",
-            "boostedAt": "2026-11-26T17:26:00.464Z",
+            "createdAt": "2026-10-27T06:15:47.744Z",
+            "boostedAt": "2026-11-26T15:32:41.587Z",
             "region": {
-              "name": "삼성동"
+              "name": "논현동"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 37.6430228,
-                "longitude": 127.1267913
+                "latitude": 37.3504142,
+                "longitude": 127.1096811
               },
               {
-                "latitude": 37.5111433,
-                "longitude": 127.0589203
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-14%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-%EB%85%B8%ED%8A%B8%EB%B6%81-yteg8wr9c8tm/",
-            "href": "/kr/buy-sell/lg-%EA%B7%B8%EB%9E%A8-14%EC%9D%B8%EC%B9%98-%ED%99%94%EC%9D%B4%ED%8A%B8-%EB%85%B8%ED%8A%B8%EB%B6%81-yteg8wr9c8tm/",
-            "title": "LG 그램 14인치 화이트 노트북",
-            "content": "LG 그램 14인치 화이트 모델이에요. 노트북 본체와 충전기, 로지텍 무선 마우스가 함께 구성되어 있어요. 가벼운 무게로 휴대하며 사용하기 좋아요. 깔끔한 디자인을 선호하시는 분들께 추천해요.",
-            "price": "150000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/179569507456731d6c1e3c7584374117ddc377bee1e698f31107504d1010ef5a9a2267aa3cd990.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-11-26T12:12:15.159Z",
-            "boostedAt": "2026-11-26T12:12:15.132Z",
-            "region": {
-              "name": "오천읍"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 35.9689055,
-                "longitude": 129.4002358
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EC%84%BC%EC%8A%A4-r530-15-6%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-wnyhp2myxpq3/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EC%84%BC%EC%8A%A4-r530-15-6%EC%9D%B8%EC%B9%98-%EB%85%B8%ED%8A%B8%EB%B6%81-wnyhp2myxpq3/",
-            "title": "삼성 센스 R530 15.6인치 노트북",
-            "content": "삼성 센스 R530 15.6인치 모델이에요~♡♡♡\n펜티엄 듀얼코어 CPU\n6GB RAM, SSD: 120GB\nHDD: 250GB\nWindows 10 pro\n노트북은 무선와이파이 기본으로\n달려있습니다~♡간혹물어봐서~\n\n한글, 한글오피스2024최신버젼이\n깔려있어서 사무용으로 바로 사용 할\n수 있습니다.\n배터리는 사진에도 올려드렸지만\n1시간55분 사용가능한것으로 그렇게\n나쁘지는 않습니다~♡\n가벼운 사무용,인터넷뱅킹,영상 시청, 인터넷 고스톱용으로 활용하기 좋아요~♡\n\n구성품: 노트북본체, 충전기 유선마우스는 써비스로 드립니다~♡\n",
-            "price": "77000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/9b02fc2e-5bfa-46ce-95dd-78a0e9517b55.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-11-24T07:56:16.585Z",
-            "boostedAt": "2026-11-26T16:41:39.784Z",
-            "region": {
-              "name": "상남동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 35.2206534,
-                "longitude": 128.6898418
+                "latitude": 37.5172462,
+                "longitude": 127.041517
               }
             ]
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-11-02T14:21:19.725Z\",\"boostedAt\":\"2026-11-26T17:26:00.464Z\",\"region\":{\"name\":\"삼성동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-26T12:12:15.159Z\",\"boostedAt\":\"2026-11-26T12:12:15.132Z\",\"region\":{\"name\":\"오천읍\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-24T07:56:16.585Z\",\"boostedAt\":\"2026-11-26T16:41:39.784Z\",\"region\":{\"name\":\"상남동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-09-26T09:57:29.601Z\",\"boostedAt\":\"2026-11-26T18:22:41.928Z\",\"region\":{\"name\":\"아라동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-09-22T13:47:13.958Z\",\"boostedAt\":\"2026-11-26T18:17:33.866Z\",\"region\":{\"name\":\"대천1동\"},\"category\":null,\"contentCoo",
           "createdAt\":\"2026-10-27T06:15:47.744Z\",\"boostedAt\":\"2026-11-26T15:32:41.587Z\",\"region\":{\"name\":\"논현동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-26T12:28:57.686Z\",\"boostedAt\":\"2026-11-26T12:28:57.685Z\",\"region\":{\"name\":\"우면동\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-11-26T12:28:57.686Z\",\"boostedAt\":\"2026-11-26T12:28:57.685Z\",\"region\":{\"name\":\"우면동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-11-24T03:09:07.715Z\",\"boostedAt\":\"2026-11-26T18:45:05.982Z\",\"region\":{\"name\":\"낙양동\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":273,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"HP 옴니북 X 플립 14 코어ultra5\",\"desc",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":273,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"인텔 코어 i5 노트북 (화이트)\",\"descripti",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -141,9 +141,9 @@
         ]
       }
     },
-    "searchUniqueListings": 1119,
-    "globalUniqueListings": 281,
-    "duplicateListingsRemoved": 838,
+    "searchUniqueListings": 1126,
+    "globalUniqueListings": 283,
+    "duplicateListingsRemoved": 843,
     "detailQueueStart": 1,
     "freshDetailTasks": 1,
     "backlogDetailTasks": 0,
@@ -155,10 +155,10 @@
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 281,
+    "postedAtResolvedFromSearch": 283,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 84033,
+    "scanDurationMs": 80620,
     "cities": [
       {
         "city": "군포시",
@@ -170,8 +170,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 279,
-        "durationMs": 12834
+        "uniqueListings": 282,
+        "durationMs": 12561
       },
       {
         "city": "의왕시",
@@ -186,8 +186,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 280,
-        "durationMs": 27051
+        "uniqueListings": 282,
+        "durationMs": 25816
       },
       {
         "city": "안양시",
@@ -204,8 +204,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 281,
-        "durationMs": 35980
+        "uniqueListings": 282,
+        "durationMs": 35150
       },
       {
         "city": "과천시",
@@ -216,8 +216,8 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 279,
-        "durationMs": 6613
+        "uniqueListings": 280,
+        "durationMs": 6297
       }
     ],
     "finalCandidateCount": 0,
@@ -226,7 +226,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 84040
+    "durationMs": 80626
   },
   "candidates": []
 }
