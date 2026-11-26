@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-26T20:12:42.943Z",
+  "generatedAt": "2026-11-26T20:52:37.518Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -55,6 +55,28 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
+            "id": "/kr/buy-sell/%EB%84%A5%EC%8A%A4%ED%8A%B8%EB%B6%81-%EA%B2%BD%EB%9F%89-%EC%8A%AC%EB%A6%BC-%EB%85%B8%ED%8A%B8%EB%B6%81-14%EC%9D%B8%EC%B9%98-jmadx14azesa/",
+            "href": "/kr/buy-sell/%EB%84%A5%EC%8A%A4%ED%8A%B8%EB%B6%81-%EA%B2%BD%EB%9F%89-%EC%8A%AC%EB%A6%BC-%EB%85%B8%ED%8A%B8%EB%B6%81-14%EC%9D%B8%EC%B9%98-jmadx14azesa/",
+            "title": "넥스트북 경량 슬림 노트북 14인치",
+            "content": "깔끔한 화이트 색상의 넥스트북이에요. 인텔 셀러론 프로세서와 4GB 램, 297GB 저장 공간을 갖추고 있어요. 베터리성능좋아요\n가벼운 웹 서핑이나 문서 작업용으로 활용하기 좋아요.",
+            "price": "181000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/e22ec538-496b-4130-8f04-1ccd2dd6378e.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "status": "Ongoing",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-11-10T05:26:26.350Z",
+            "boostedAt": "2026-11-26T20:23:04.821Z",
+            "region": {
+              "name": "가락본동"
+            },
+            "category": null,
+            "contentCoordinates": [
+              {
+                "latitude": 37.4930668,
+                "longitude": 127.1164938
+              }
+            ]
+          },
+          {
             "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-nt300e5c-%EB%B8%94%EB%A3%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-85zmqv3wtg93/",
             "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-nt300e5c-%EB%B8%94%EB%A3%A8-%EB%85%B8%ED%8A%B8%EB%B6%81-85zmqv3wtg93/",
             "title": "삼성 NT300E5C 블루 노트북",
@@ -73,28 +95,6 @@
               {
                 "latitude": 35.2582662,
                 "longitude": 128.8664739
-              }
-            ]
-          },
-          {
-            "id": "/kr/buy-sell/%EC%9D%B8%ED%85%94-%EC%BD%94%EC%96%B4-i5-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-tqzbqz3dpi2f/",
-            "href": "/kr/buy-sell/%EC%9D%B8%ED%85%94-%EC%BD%94%EC%96%B4-i5-%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%99%94%EC%9D%B4%ED%8A%B8-tqzbqz3dpi2f/",
-            "title": "인텔 코어 i5 노트북 (화이트)",
-            "content": "깔끔한 화이트 색상의 노트북이에요. 인텔 코어 i5 프로세서와 4GB RAM으로 기본적인 작업에 충분하답니다. 사진에서 보이는 것처럼 마우스도 함께 드려요. 문서 작업이나 인터넷 서핑 등 일상적인 용도로 사용하기 좋아요.",
-            "price": "120000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202609/cad8396094d6fd6eb5199490fecbe5a69379a7ef18588a5d29b181ff34beaf51_0.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
-            "status": "Ongoing",
-            "isInstantBuyAvailable": true,
-            "createdAt": "2026-09-26T09:57:29.601Z",
-            "boostedAt": "2026-11-26T18:22:41.928Z",
-            "region": {
-              "name": "아라동"
-            },
-            "category": null,
-            "contentCoordinates": [
-              {
-                "latitude": 33.4491675,
-                "longitude": 126.560607
               }
             ]
           },
@@ -126,14 +126,14 @@
           }
         ],
         "dateFieldSnippets": [
+          "createdAt\":\"2026-11-10T05:26:26.350Z\",\"boostedAt\":\"2026-11-26T20:23:04.821Z\",\"region\":{\"name\":\"가락본동\"},\"category\":null,\"contentCoo",
           "createdAt\":\"2026-11-26T20:03:38.125Z\",\"boostedAt\":\"2026-11-26T20:03:38.123Z\",\"region\":{\"name\":\"삼계동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-09-26T09:57:29.601Z\",\"boostedAt\":\"2026-11-26T18:22:41.928Z\",\"region\":{\"name\":\"아라동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-10-27T06:15:47.744Z\",\"boostedAt\":\"2026-11-26T15:32:41.587Z\",\"region\":{\"name\":\"논현동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-11-26T12:28:57.686Z\",\"boostedAt\":\"2026-11-26T12:28:57.685Z\",\"region\":{\"name\":\"우면동\"},\"category\":null,\"contentCoor",
           "createdAt\":\"2026-11-26T12:12:15.159Z\",\"boostedAt\":\"2026-11-26T12:12:15.132Z\",\"region\":{\"name\":\"오천읍\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":275,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 NT300E5C 블루 노트북\",\"descripti",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":275,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"넥스트북 경량 슬림 노트북 14인치\",\"descript",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -141,24 +141,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1121,
-    "globalUniqueListings": 281,
+    "searchUniqueListings": 1120,
+    "globalUniqueListings": 280,
     "duplicateListingsRemoved": 840,
-    "detailQueueStart": 3,
-    "freshDetailTasks": 3,
+    "detailQueueStart": 1,
+    "freshDetailTasks": 1,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 3,
-    "detailSucceeded": 3,
+    "detailRequestsExecuted": 1,
+    "detailSucceeded": 1,
     "detailFailed": 0,
     "detail404": 0,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 281,
+    "postedAtResolvedFromSearch": 280,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 82539,
+    "scanDurationMs": 79162,
     "cities": [
       {
         "city": "군포시",
@@ -170,8 +170,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 281,
-        "durationMs": 12515
+        "uniqueListings": 280,
+        "durationMs": 12090
       },
       {
         "city": "의왕시",
@@ -187,7 +187,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 280,
-        "durationMs": 25357
+        "durationMs": 25467
       },
       {
         "city": "안양시",
@@ -205,7 +205,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 280,
-        "durationMs": 35229
+        "durationMs": 34999
       },
       {
         "city": "과천시",
@@ -217,7 +217,7 @@
         "errors": 0,
         "errorSamples": [],
         "uniqueListings": 280,
-        "durationMs": 6177
+        "durationMs": 6133
       }
     ],
     "finalCandidateCount": 0,
@@ -226,7 +226,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 82547
+    "durationMs": 79168
   },
   "candidates": []
 }
