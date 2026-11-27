@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-27T05:25:04.596159Z",
+  "updatedAt": "2026-11-27T06:02:54.807399Z",
   "items": {
     "u8eppnonopiu": {
       "id": "u8eppnonopiu",
@@ -18576,6 +18576,31 @@
       "url": "https://www.daangn.com/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-i7-%EB%9E%A816g-ssd-%EC%95%84%ED%8B%B0%EB%B8%8C%EB%B6%818-nt870z5g-%EB%B0%B0%ED%84%B0%EB%A6%AC-%EC%97%86%EC%9D%8C-bc9oxcawch7c/",
       "firstAlertedAt": "2026-11-25T17:11:57.880648Z",
       "lastCandidateAt": "2026-11-25T17:11:57.880648Z"
+    },
+    "ib79tf3gfwxr": {
+      "id": "ib79tf3gfwxr",
+      "title": "레노버 씽크패드 노트북 블랙",
+      "price": 120000,
+      "previousPrice": null,
+      "changeType": "new",
+      "city": "군포시",
+      "location": "산본2동",
+      "cpuHint": null,
+      "gpuHint": null,
+      "vramGB": null,
+      "ramGB": null,
+      "ambiguousMemoryGB": 128,
+      "hardwareReviewStatus": "CHECK_MEMORY_GPU",
+      "ramEvidence": null,
+      "vramEvidence": null,
+      "ambiguousMemoryEvidence": "128기가",
+      "storageGB": null,
+      "llmCapability": "SPEC_CHECK_REQUIRED",
+      "llmReason": "16GB 이상 메모리 표현은 확인됐지만 RAM/VRAM 구분 또는 GPU 세부사양이 불충분해 후보로 유지",
+      "postedAt": "2026-11-27T05:48:01.038Z",
+      "url": "https://www.daangn.com/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-%EC%94%BD%ED%81%AC%ED%8C%A8%EB%93%9C-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%B8%94%EB%9E%99-ib79tf3gfwxr/",
+      "firstAlertedAt": "2026-11-27T06:02:54.807399Z",
+      "lastCandidateAt": "2026-11-27T06:02:54.807399Z"
     }
   }
 }
