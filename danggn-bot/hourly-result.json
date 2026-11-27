@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-27T01:43:00.479Z",
+  "generatedAt": "2026-11-27T02:23:01.375Z",
   "expectedScheduleMinutes": [
     7,
     27,
@@ -16,7 +16,9 @@
   "health": {
     "status": "ok",
     "stateCommitted": true,
-    "warnings": []
+    "warnings": [
+      "군포시: detail failed bdd4ih9nriu6: Error: HTTP 404 Not Found"
+    ]
   },
   "rules": {
     "newnessField": "postedAt",
@@ -55,85 +57,81 @@
         "embeddedArticles": false,
         "remixArticleSamples": [
           {
-            "id": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-loq-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-luna-grey-15%EC%9D%B8%EC%B9%98-iibrcu9ryjbm/",
-            "href": "/kr/buy-sell/%EB%A0%88%EB%85%B8%EB%B2%84-loq-%EA%B2%8C%EC%9D%B4%EB%B0%8D-%EB%85%B8%ED%8A%B8%EB%B6%81-luna-grey-15%EC%9D%B8%EC%B9%98-iibrcu9ryjbm/",
-            "title": "레노버 LOQ 게이밍 노트북 Luna Grey 15인치",
-            "content": "인텔 코어 i7-13650HX 프로세서와 16GB 램을 탑재한 모델이에요. 512GB 저장 공간과 144Hz 주사율을 지원하는 15.6인치 디스플레이가 특징이에요. Luna Grey 색상의 깔끔한 디자인으로 게임이나 작업용으로 적합해요.\n\n\n윈도우 11설치 해놨습니다.\n\n\n\n8월 9일에 구매한 제품입니다.\n\n박스및 케이블등 전부 있어요.\n\n구매해서 사용한지 얼마 안됐습니다.\n\n직거래는 태평역 쪽에서 합니다.",
-            "price": "1500000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/17957423861979e921a5a35a3181d6d53561894d32d68e7be36a20c93b28ba7ab51d79d67d3540.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%816-nt760vjg-kweav-%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-w25wwwrktci6/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%816-nt760vjg-kweav-%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-w25wwwrktci6/",
+            "title": "삼성 갤럭시북6 NT760VJG KWEAV (삼성 노트북)",
+            "content": "삼성 갤럭시북6 NT760VJG KWEAV (삼성 노트북)\n\n구성품 : 노트북. 삼성 정품 충전기. 케이블\n\n처음 구성품 전부다 있어요\n노트북에 나오는 실사용 시간 17시간\n배터리 효율 100% 충전 사이클 1회예요\n기스나 흠집없이 새것처럼 깨끗해요\n\n내장된 삼성 리커버리로\n전체 초기화 후\n기본 파일 및 드라이버 설치\n초기 설정해 드려요\n윈도우11 한글 MS 오피스 포함\n\n직거래는\n2호선 구의역이에요\n\n제품상세정보\nAI노트북 / 40.6cm(16인치) / 윈도우11\n[화면] 해상도: 1920x1200(WUXGA) / 밝기: 350nit\n[CPU] 인텔 코어 울트라5(S3) / 325 (4.5GHz) / 47TOPS\n[그래픽] Intel Graphics\n[구성] 용량 SSD 256GB / RAM 16GB\n전원: USB-PD / 배터리 용량: 61.2Wh - 최대 24시간",
+            "price": "1100000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/16b199cc-d0a2-430f-91d4-f4a918310dfe.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": false,
-            "createdAt": "2026-11-27T01:23:32.530Z",
-            "boostedAt": "2026-11-27T01:23:32.529Z",
+            "createdAt": "2026-11-27T01:45:44.893Z",
+            "boostedAt": "2026-11-27T01:45:44.887Z",
             "region": {
-              "name": "역삼동"
+              "name": "사당제1동"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 37.4396713,
-                "longitude": 127.126967
-              },
-              {
-                "latitude": 37.5060616,
-                "longitude": 127.0468597
+                "latitude": 37.4765796,
+                "longitude": 126.9813644
               }
             ]
           },
           {
-            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt500r5h-k24dw-%ED%99%94%EC%9D%B4%ED%8A%B8-rs5c5bp4qq95/",
-            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-nt500r5h-k24dw-%ED%99%94%EC%9D%B4%ED%8A%B8-rs5c5bp4qq95/",
-            "title": "삼성 노트북 NT500R5H-K24DW 화이트",
-            "content": "깔끔한 화이트 색상의 삼성 노트북입니다. 15.6인치 화면으로 문서 작업 및 영상 시청에 좋아요. 가볍고 슬림해서 휴대하기 편리하답니다. 충전기랑 본체 갖고있습니다.",
-            "price": "95000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/1793886626190212161943213ad83a847b1cddc66adb43e6fc29e055390cbcec1afdf294bb8d70.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-9wcqidg3n6zc/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EB%85%B8%ED%8A%B8%EB%B6%81-9wcqidg3n6zc/",
+            "title": "삼성 노트북",
+            "content": "삼성 노트북이에요. \n깔끔한 블랙 색상이며 기본적인 노트북 구성품을 갖추고 있어요.\n 인강 시청이나 문서 작업용으로 활용하기 좋아요.",
+            "price": "150000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/3ef034d7-98f0-4ab6-a1ba-da91c490dfc2.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
             "isInstantBuyAvailable": true,
-            "createdAt": "2026-11-05T13:50:50.811Z",
-            "boostedAt": "2026-11-27T01:32:18.971Z",
+            "createdAt": "2026-11-27T02:10:26.310Z",
+            "boostedAt": "2026-11-27T02:10:26.308Z",
             "region": {
-              "name": "이의동"
+              "name": "연산동"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 37.288391,
-                "longitude": 127.0518282
+                "latitude": 35.1794558,
+                "longitude": 129.0785967
               }
             ]
           },
           {
-            "id": "/kr/buy-sell/%EB%85%B8%ED%8A%B8%EB%B6%81-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%81-%ED%94%84%EB%A1%9C360-i5-nt950qdb-qtj977o93e5a/",
-            "href": "/kr/buy-sell/%EB%85%B8%ED%8A%B8%EB%B6%81-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EB%B6%81-%ED%94%84%EB%A1%9C360-i5-nt950qdb-qtj977o93e5a/",
-            "title": "노트북 갤럭시북 프로360 i5 NT950QDB",
-            "content": "인텔 11세대 i5 프로세서와 8GB RAM을 탑재한 노트북이에요. 펜과 10개 터치 포인트를 지원하여 활용도가 높아요. 가벼운 작업이나 학습용으로 사용하기 좋아요.\n\n구성품은 본체와 펜, 케이스입니다.\n가격 제안도 받습니다.",
-            "price": "650000",
-            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/61d8c84e-b859-4216-80e4-9bb419cc07cf.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
+            "id": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EA%B3%A0-%EC%8B%A4%EB%B2%84%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-piu1mc6zfw7e/",
+            "href": "/kr/buy-sell/%EC%82%BC%EC%84%B1-%EA%B0%A4%EB%9F%AD%EC%8B%9C%EA%B3%A0-%EC%8B%A4%EB%B2%84%EB%85%B8%ED%8A%B8%EB%B6%81-%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4-piu1mc6zfw7e/",
+            "title": "삼성 갤럭시고 실버노트북 판매합니다",
+            "content": "깔끔한 디자인의 삼성 갤럭시북이에요. 슬림한 두께로 휴대하기 편리한 실버 색상 모델이에요. \nlte 모델이라 데이터로 사용가능 합니다\n가벼운 업무나 학습용으로 ott용도오 활용하기 좋아요.\n",
+            "price": "150000",
+            "thumbnail": "https://img.kr.gcp-karroter.net/origin/article/202611/511276ef-de00-4580-9502-179ca43e35d5.webp?q=95&s=1440x1440&t=inside&service=web-mixer",
             "status": "Ongoing",
-            "isInstantBuyAvailable": false,
-            "createdAt": "2026-11-27T01:01:44.900Z",
-            "boostedAt": "2026-11-27T01:01:44.898Z",
+            "isInstantBuyAvailable": true,
+            "createdAt": "2026-11-27T01:54:48.637Z",
+            "boostedAt": "2026-11-27T01:54:48.636Z",
             "region": {
-              "name": "방배2동"
+              "name": "단계동"
             },
             "category": null,
             "contentCoordinates": [
               {
-                "latitude": 37.4840309,
-                "longitude": 126.9830303
+                "latitude": 37.3445564,
+                "longitude": 127.9303888
               }
             ]
           }
         ],
         "dateFieldSnippets": [
-          "createdAt\":\"2026-11-27T01:23:32.530Z\",\"boostedAt\":\"2026-11-27T01:23:32.529Z\",\"region\":{\"name\":\"역삼동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-05T13:50:50.811Z\",\"boostedAt\":\"2026-11-27T01:32:18.971Z\",\"region\":{\"name\":\"이의동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-27T01:01:44.900Z\",\"boostedAt\":\"2026-11-27T01:01:44.898Z\",\"region\":{\"name\":\"방배2동\"},\"category\":null,\"contentCoo",
-          "createdAt\":\"2026-11-27T01:30:10.949Z\",\"boostedAt\":\"2026-11-27T01:30:10.948Z\",\"region\":{\"name\":\"서상동\"},\"category\":null,\"contentCoor",
-          "createdAt\":\"2026-11-22T01:24:07.513Z\",\"boostedAt\":\"2026-11-27T00:55:43.756Z\",\"region\":{\"name\":\"서초동\"},\"category\":null,\"contentCoor"
+          "createdAt\":\"2026-11-27T01:45:44.893Z\",\"boostedAt\":\"2026-11-27T01:45:44.887Z\",\"region\":{\"name\":\"사당제1동\"},\"category\":null,\"contentCo",
+          "createdAt\":\"2026-11-27T02:10:26.310Z\",\"boostedAt\":\"2026-11-27T02:10:26.308Z\",\"region\":{\"name\":\"연산동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-11-27T01:54:48.637Z\",\"boostedAt\":\"2026-11-27T01:54:48.636Z\",\"region\":{\"name\":\"단계동\"},\"category\":null,\"contentCoor",
+          "createdAt\":\"2026-11-27T01:58:16.447Z\",\"boostedAt\":\"2026-11-27T01:58:16.444Z\",\"region\":{\"name\":\"사당제1동\"},\"category\":null,\"contentCo",
+          "createdAt\":\"2026-10-12T13:15:46.233Z\",\"boostedAt\":\"2026-11-27T01:53:05.166Z\",\"region\":{\"name\":\"도곡동\"},\"category\":null,\"contentCoor"
         ],
         "scriptHeads": [
-          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":277,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"레노버 LOQ 게이밍 노트북 Luna Grey 15인치",
+          "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"numberOfItems\":275,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"삼성 갤럭시북6 NT760VJG KWEAV (삼성 노트",
           "(function(){document.querySelectorAll('[data-search-service-tabs]').forEach(function(a){var b=a.querySelector('[aria-current=\"page\"], [aria-pressed=\"true\"]');if(!b){return}var f=80,l=a.scrollLeft,r=a.getBoundingClientRec",
           "((STORAGE_KEY, restoreKey) => {\n    if (!window.history.state || !window.history.state.key) {\n      let key = Math.random().toString(32).slice(2);\n      window.history.replaceState({\n        key\n      }, \"\");\n    }\n    t",
           "window.__remixContext = {\"basename\":\"/\",\"future\":{\"v3_fetcherPersist\":false,\"v3_relativeSplatPath\":true,\"v3_throwAbortReason\":false,\"v3_routeConfig\":false,\"v3_singleFetch\":false,\"v3_lazyRouteDiscovery\":false,\"unstable_op",
@@ -141,24 +139,24 @@
         ]
       }
     },
-    "searchUniqueListings": 1139,
-    "globalUniqueListings": 293,
-    "duplicateListingsRemoved": 846,
-    "detailQueueStart": 17,
-    "freshDetailTasks": 17,
+    "searchUniqueListings": 1124,
+    "globalUniqueListings": 287,
+    "duplicateListingsRemoved": 837,
+    "detailQueueStart": 20,
+    "freshDetailTasks": 20,
     "backlogDetailTasks": 0,
-    "detailRequestsExecuted": 17,
-    "detailSucceeded": 17,
-    "detailFailed": 0,
-    "detail404": 0,
+    "detailRequestsExecuted": 20,
+    "detailSucceeded": 19,
+    "detailFailed": 1,
+    "detail404": 1,
     "detail429": 0,
     "detailDeferred": 0,
     "backlogStart": 0,
     "backlogEnd": 0,
-    "postedAtResolvedFromSearch": 293,
+    "postedAtResolvedFromSearch": 287,
     "postedAtResolvedFromDetail": 0,
     "candidateCount": 0,
-    "scanDurationMs": 100071,
+    "scanDurationMs": 104079,
     "cities": [
       {
         "city": "군포시",
@@ -170,8 +168,8 @@
         "succeeded": 8,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 282,
-        "durationMs": 12772
+        "uniqueListings": 280,
+        "durationMs": 12601
       },
       {
         "city": "의왕시",
@@ -186,8 +184,8 @@
         "succeeded": 20,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 289,
-        "durationMs": 25547
+        "uniqueListings": 284,
+        "durationMs": 25671
       },
       {
         "city": "안양시",
@@ -204,8 +202,8 @@
         "succeeded": 28,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 290,
-        "durationMs": 35295
+        "uniqueListings": 284,
+        "durationMs": 35249
       },
       {
         "city": "과천시",
@@ -216,8 +214,8 @@
         "succeeded": 4,
         "errors": 0,
         "errorSamples": [],
-        "uniqueListings": 278,
-        "durationMs": 6250
+        "uniqueListings": 276,
+        "durationMs": 6430
       }
     ],
     "finalCandidateCount": 0,
@@ -226,7 +224,7 @@
     "pendingUnattemptedCount": 0,
     "pendingAttemptedCount": 0,
     "skippedUnknownProbeCount": 0,
-    "durationMs": 100078
+    "durationMs": 104085
   },
   "candidates": []
 }
